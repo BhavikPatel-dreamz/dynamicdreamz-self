@@ -18,7 +18,8 @@ The agent should then read:
 3. `docs/agent-workflow.md`
 4. `docs/visual-parity-workflow.md`
 5. `docs/seo-launch-checklist.md`
-6. Relevant local Next.js docs from `node_modules/next/dist/docs/`
+6. `docs/page-content-improvements.md`
+7. Relevant local Next.js docs from `node_modules/next/dist/docs/`
 
 ## Working Loop
 
@@ -36,8 +37,10 @@ The agent should then read:
 7. For visual work, run the visual parity workflow and compare live vs local
    desktop, tablet, mobile, hover, focus, and animation states.
 8. Check responsive behavior, accessibility, performance risk, and broken links.
-9. Run verification commands.
-10. Summarize changes, verification, and any missing assets or content approvals.
+9. If SEO/content quality can improve through visible copy changes, update
+   `docs/page-content-improvements.md` with page-specific suggestions.
+10. Run verification commands.
+11. Summarize changes, verification, and any missing assets or content approvals.
 
 ## Before Editing Code
 
@@ -105,6 +108,56 @@ Every indexable page must include:
 
 Do not ship generic metadata copied from another page. Keep titles concise and
 commercially useful. Keep descriptions human-readable and specific.
+
+## Local Single-Page SEO Audit Mode
+
+Use this mode when auditing one local page while the site is still mid-migration.
+The target is a 100/100 page-level SEO result after excluding planned routes that
+have not been built yet.
+
+- Broken internal links to planned but unbuilt pages may be ignored for the
+  score only during local development.
+- Ignored links must be reported separately as "migration pending" with the
+  target hrefs listed.
+- A link is only "migration pending" when it points to an intended Dynamic
+  Dreamz route from the navigation, sitemap plan, project context, or migration
+  backlog.
+- Broken links to already-built routes, mistyped routes, assets, forms,
+  anchors, scripts, metadata URLs, or external sites are real failures.
+- Launch audits must not ignore any broken internal links.
+
+Everything else is part of the 100% gate:
+
+- Visible page copy supports the target keyword and buyer intent: title, meta
+  description, `h1`, intro paragraph, section headings, proof copy, FAQs, CTA
+  text, image alt text, and internal-link anchor text.
+- Canonical, `og:url`, sitemap URLs, and internal links follow the same trailing
+  slash policy.
+- Organization, WebSite, WebPage, BreadcrumbList, Service, FAQPage, Article, and
+  VideoObject schema match visible page content.
+- Review and aggregate rating schema matches visible review/rating claims or is
+  scoped to the exact review source. Omit uncertain ratings instead of shipping
+  inconsistent schema.
+- `datePublished` and `dateModified` are accurate and not future-dated. Derive
+  `dateModified` from content/build data where possible instead of hardcoding
+  stale dates.
+- Twitter metadata includes `twitter:site` and `twitter:creator` only when the
+  approved company handle is known; do not invent handles.
+- Visible videos that are important page content include valid `VideoObject`
+  schema when title, description, thumbnail, upload date, and embed/content URL
+  are known.
+- Heavy source images are converted to optimized formats when quality allows.
+  Prefer WebP/AVIF for photos and screenshots, keep SVG for vector logos/icons,
+  and avoid large PNGs unless transparency or fidelity requires them.
+- Videos use posters and `preload="none"` or lazy loading unless they are
+  genuinely critical above-the-fold content. Avoid autoplaying heavy video on
+  mobile unless explicitly required by the live-page parity brief.
+- No production metadata, schema, image, video, script, CSS, canonical, or OG
+  field depends on the old live site domain.
+
+If a 100% result requires visible content changes, write them to
+`docs/page-content-improvements.md` before or while implementing the page. Use
+the page name and route, and include exact suggested UI copy.
 
 ## Migration Workflow For Legacy Pages
 

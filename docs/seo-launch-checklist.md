@@ -41,6 +41,11 @@ When migrating an existing live page, compare these fields with View Page Source
 from the live URL before changing them. Preserve the current SEO intent unless
 there is a clear reason to improve it.
 
+Canonical, `og:url`, sitemap URLs, and internal links must use one consistent
+trailing-slash policy. Prefer Next.js default no-trailing-slash URLs unless
+`trailingSlash: true` is intentionally set in `next.config.ts`; then apply the
+chosen policy everywhere.
+
 ## Structured Data
 
 Use JSON-LD only when it matches visible page content.
@@ -58,6 +63,20 @@ Common page types:
 - Article or BlogPosting for blog posts
 - FAQPage only when the page visibly contains matching FAQ content
 - Person only for real team profile pages with approved details
+- VideoObject for visible YouTube/video testimonials or important page videos
+  when title, description, thumbnail, upload date, and embed/content URLs are
+  known.
+
+Schema quality rules:
+
+- Review/rating schema must match visible page claims or be scoped to the exact
+  source it represents.
+- Do not mix one aggregate rating with unrelated visible rating badges.
+- Do not invent review counts, ratings, upload dates, authors, or social URLs.
+- `datePublished` and `dateModified` must be real, not future-dated, and not
+  stale hardcoded placeholders.
+- Prefer deriving `dateModified` from content data, file metadata, release data,
+  or an explicit reviewed date field.
 
 ## Content And On-Page SEO
 
@@ -75,6 +94,12 @@ Common page types:
 - Internal links point to relevant services, case studies, contact, and blog
   resources.
 - External links use `rel="noopener noreferrer"` when opening a new tab.
+- Any suggested UI copy changes needed to improve SEO are recorded in
+  `docs/page-content-improvements.md` with page name, route, current issue,
+  suggested replacement, SEO reason, priority, and status.
+- Page copy improvement suggestions should cover visible content, not only meta
+  tags: `h1`, hero paragraph, section headings, service-card text, FAQ copy,
+  CTA labels, proof/stat copy, image alt text, and internal-link anchor text.
 
 ## Technical SEO
 
@@ -97,11 +122,36 @@ Common page types:
 - Pages do not require client JavaScript for primary content to render.
 - Canonicals match final production URLs.
 - Redirects preserve important old URLs.
+- Twitter metadata includes approved `twitter:site` and `twitter:creator`
+  handles when known; omit rather than inventing unknown handles.
+
+## Local Development Audit Rules
+
+For a one-page local audit before all routes are migrated, score the page against
+the checklist above while ignoring planned-but-unbuilt internal routes. Report
+ignored route failures separately as "migration pending".
+
+Do not ignore:
+
+- Broken links to routes that are already implemented.
+- Mistyped links.
+- Broken hash anchors on the audited page.
+- Broken asset URLs.
+- Broken metadata, schema, canonical, OG, Twitter, script, CSS, or media URLs.
+- Broken external links.
+
+Before launch, remove this exception: every internal link must resolve or
+redirect correctly, and every indexable route must be present in the sitemap.
 
 ## Performance And Core Web Vitals
 
 - Use `next/image` for meaningful raster images.
 - Use local fonts through `next/font`.
+- Convert large PNG/JPEG source assets to WebP or AVIF when practical.
+- Keep raw source assets reasonably sized; do not commit oversized originals
+  unless they are needed for generation or fidelity.
+- Use video posters plus `preload="none"` or lazy loading for below-the-fold
+  videos. Avoid mobile autoplay for heavy videos unless explicitly required.
 - Avoid unnecessary animation libraries and large client bundles.
 - Lazy load below-the-fold media and heavy client widgets.
 - Prioritize the LCP image only when it is actually the LCP element.

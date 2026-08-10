@@ -34,7 +34,8 @@ Before implementing code, read these project docs in this order:
 2. `docs/agent-workflow.md`
 3. `docs/visual-parity-workflow.md`
 4. `docs/seo-launch-checklist.md`
-5. The relevant bundled Next.js docs in `node_modules/next/dist/docs/`
+5. `docs/page-content-improvements.md`
+6. The relevant bundled Next.js docs in `node_modules/next/dist/docs/`
 
 Use this one-prompt kickoff for future sessions:
 
@@ -94,6 +95,13 @@ Core proof points from the live site:
 - Every route must ship with production SEO: metadata, canonical URL, Open Graph
   data, Twitter data, semantic headings, alt text, and structured data where it
   fits the page type.
+- For local single-page SEO audits during migration, target 100/100 after
+  excluding links to planned but not-yet-built routes. Report those links as
+  "migration pending" instead of SEO failures. Before launch, broken internal
+  links are never allowed.
+- When a page needs better SEO copy or visible UI content changes, update
+  `docs/page-content-improvements.md` with the page name, route, current issue,
+  suggested replacement copy, SEO reason, priority, and status.
 - Every image must have intentional alt handling. Use meaningful, page-specific
   alt text for all content images, preserving or improving the live site's alt
   text. Only truly decorative images may use empty alt text, and that choice
