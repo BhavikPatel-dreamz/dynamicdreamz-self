@@ -37,6 +37,10 @@ Each indexable page needs:
 - `twitter.images`
 - `robots.index` and `robots.follow` where appropriate.
 
+When migrating an existing live page, compare these fields with View Page Source
+from the live URL before changing them. Preserve the current SEO intent unless
+there is a clear reason to improve it.
+
 ## Structured Data
 
 Use JSON-LD only when it matches visible page content.
@@ -80,6 +84,8 @@ Common page types:
 - No duplicate page title/description across indexable routes.
 - No broken internal links.
 - No runtime image/script dependency on `dynamicdreamz.com`.
+- No canonical, OG, Twitter image, favicon, CSS, script, JSON-LD image, or media
+  URL depends on `dynamicdreamz.com`; migrate required files locally first.
 - Images have intrinsic dimensions or stable parent aspect ratios.
 - Important images use descriptive alt text.
 - Decorative images have empty alt text.

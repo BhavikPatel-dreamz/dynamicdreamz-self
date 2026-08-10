@@ -5,6 +5,13 @@ https://www.dynamicdreamz.com/. The live site was checked on 2026-08-10 and
 should be used as a reference for content, page intent, brand positioning, and
 legacy URL coverage. It must not be used as a runtime dependency.
 
+The migration goal is live-site parity first: rebuild the current website in
+Next.js with the same business message, core page coverage, navigation intent,
+section structure, CTAs, proof points, SEO targets, and responsive user
+experience. Improvements are welcome when they make the site more production
+ready, but they should not erase the recognizable Dynamic Dreamz site or change
+important search intent without an explicit reason.
+
 ## Current Repo Snapshot
 
 - Framework: Next.js 16.3.0 with App Router
@@ -195,6 +202,14 @@ or separately approved assets:
 - Store project-owned files under `public/assets/`.
 - Suggested folders: `brand`, `logos`, `clients`, `case-studies`, `services`,
   `team`, `testimonials`, `blog`, `og`.
+- When a live-site asset is required for parity, download or copy it as a
+  migration-time action and commit/use the local project copy. Never leave the
+  final `src`, CSS URL, OG image URL, favicon URL, or schema image URL pointing
+  at the old domain.
+- Preserve useful original asset details when moving assets locally: source
+  page, original filename, visible placement, alt text, title/caption if any,
+  intrinsic dimensions when known, and whether the image is decorative or
+  meaningful.
 - Use `next/image` for meaningful imagery with explicit dimensions, static
   imports, or stable parent aspect ratios.
 - Do not point `src` to `https://www.dynamicdreamz.com/...` in final code.
@@ -205,8 +220,13 @@ or separately approved assets:
 
 ## Content Policy
 
-- Use the live site as a migration source and rewrite where needed for clarity,
-  conversion, and SEO.
+- Use the live site as the migration source. Preserve visible copy, CTA wording,
+  heading intent, link destinations, image alt text, and SEO details by default;
+  rewrite only when needed for clarity, conversion, accessibility, or SEO.
+- Inspect View Page Source for each migrated page and capture small details that
+  are easy to miss in the rendered page, including meta tags, canonical links,
+  Open Graph/Twitter fields, JSON-LD, preload hints, favicon/app icon links,
+  image attributes, ARIA labels, form labels, and hidden-but-meaningful text.
 - Keep factual claims consistent with approved company facts.
 - Do not invent new awards, partners, review counts, revenue numbers, or client
   names.
@@ -230,3 +250,7 @@ services website for ecommerce buyers and agency partners, so prioritize:
 Avoid making the site feel like a startup landing page with oversized generic
 hero copy and decorative-only graphics. The brand and service category should be
 clear in the first viewport.
+
+Visual parity does not mean copying old technical choices. Keep the recognizable
+layout, hierarchy, content flow, and brand cues, but rebuild them with local
+assets, accessible markup, optimized images, and maintainable components.

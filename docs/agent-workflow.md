@@ -24,8 +24,9 @@ The agent should then read:
 1. Understand the task and map it to a route, component, content area, SEO
    requirement, or asset need.
 2. Inspect the current code before editing.
-3. If migrating a legacy page, inspect the old URL for content structure,
-   headings, CTAs, metadata intent, images, links, and redirect needs.
+3. If migrating a legacy page, inspect the old URL as both a rendered page and
+   View Page Source for content structure, headings, CTAs, metadata intent,
+   images, links, schema, accessibility details, and redirect needs.
 4. Decide the production structure before touching code.
 5. Implement with local data/content and project-owned assets.
 6. Add SEO metadata and structured data as part of the same change, not as a
@@ -103,27 +104,64 @@ commercially useful. Keep descriptions human-readable and specific.
 When migrating a page from the old site:
 
 1. Record the old URL and final new URL.
-2. Capture title intent, `h1`, section order, CTAs, proof points, FAQs, and
-   internal links.
-3. Identify needed assets and whether they are already local.
-4. Create or update local content/data files.
-5. Build the page using shared components where appropriate.
-6. Add page metadata, canonical URL, OG image, and structured data.
-7. Add redirect only if the final URL changes.
-8. Add the route to sitemap data.
-9. Verify no production code hotlinks the old site.
+2. Inspect the rendered live page at desktop and mobile sizes.
+3. Inspect View Page Source for the same URL before implementation.
+4. Capture title intent, `h1`, section order, visual hierarchy, CTAs, proof
+   points, FAQs, internal links, image alt text, ARIA labels, forms, schema,
+   canonical URL, OG/Twitter metadata, and responsive behavior.
+5. Capture the asset map: original URL, intended local path, alt text, visible
+   placement, dimensions if known, and whether the asset is decorative or
+   meaningful.
+6. Download or copy required live-site assets into `public/assets/**` during
+   migration and use only the local copy in final code.
+7. Copy required source content into typed local files under `src/content/**` or
+   `src/data/**`; do not read from the live site at runtime.
+8. Rebuild the page to match the live page first. Make improvements only when
+   they improve production quality, accessibility, performance, or SEO without
+   losing the original search intent.
+9. Build the page using shared components where appropriate.
+10. Add page metadata, canonical URL, OG image, and structured data.
+11. Add redirect only if the final URL changes.
+12. Add the route to sitemap data.
+13. Verify no production code hotlinks the old site.
+
+## Live Site Capture Checklist
+
+For exact migration work, capture these from the live page before building:
+
+- URL, final route, page title, meta description, canonical, robots, OG, and
+  Twitter metadata.
+- JSON-LD and any visible content it represents.
+- Header, mega menu, footer, breadcrumbs, and active navigation behavior.
+- Every visible section in order, including eyebrow text, headings, paragraphs,
+  cards, counters, buttons, forms, tabs, sliders, accordions, and FAQs.
+- Every internal and external link, including `target`, `rel`, labels, and CTA
+  wording.
+- Every image or media asset, including original URL, local destination, alt
+  text, title, caption, width, height, loading behavior, and priority/LCP role.
+- Accessibility details such as form labels, `aria-label`, `aria-expanded`,
+  landmark roles, skip links, focus states, and keyboard-relevant interactions.
+- Responsive differences between mobile, tablet, and desktop.
+
+Final code must be self-contained in this repo. Live-site URLs are allowed only
+in migration notes, comments that document provenance, or temporary local
+research; they must not remain in production image, script, stylesheet, API,
+metadata, or schema references.
 
 ## Asset Workflow
 
 1. Check `public/assets/` before using any image.
-2. If an old-site asset is needed, ask for or use an approved local copy.
+2. If an old-site asset is needed, download/copy it into a local project-owned
+   asset folder during migration.
 3. Put assets in a stable folder by purpose.
-4. Use `next/image` for photos, logos, hero images, case study screenshots, and
+4. Preserve the original asset's important attributes in local content/data:
+   alt text, caption/title, source page, and original placement.
+5. Use `next/image` for photos, logos, hero images, case study screenshots, and
    testimonial portraits.
-5. Give images meaningful alt text unless they are purely decorative.
-6. Use stable dimensions, aspect ratios, and responsive sizes to prevent layout
+6. Give images meaningful alt text unless they are purely decorative.
+7. Use stable dimensions, aspect ratios, and responsive sizes to prevent layout
    shift.
-7. Never use `dynamicdreamz.com` asset URLs in final code.
+8. Never use `dynamicdreamz.com` asset URLs in final code.
 
 ## Verification Checklist
 
