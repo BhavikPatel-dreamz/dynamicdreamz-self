@@ -1,0 +1,232 @@
+# Dynamic Dreamz Project Context
+
+This repo is the Next.js migration of the company website at
+https://www.dynamicdreamz.com/. The live site was checked on 2026-08-10 and
+should be used as a reference for content, page intent, brand positioning, and
+legacy URL coverage. It must not be used as a runtime dependency.
+
+## Current Repo Snapshot
+
+- Framework: Next.js 16.3.0 with App Router
+- React: 19.2.8
+- Styling: Tailwind CSS 4 via `@tailwindcss/postcss`
+- Language: TypeScript
+- Current state: fresh starter app with `src/app/page.tsx`,
+  `src/app/layout.tsx`, and starter public SVG assets
+- Existing scripts: `npm run dev`, `npm run build`, `npm run start`,
+  `npm run lint`
+- `CLAUDE.md` points to `AGENTS.md`, so shared agent instructions belong in
+  `AGENTS.md`
+
+## Brand Positioning
+
+Dynamic Dreamz should read as a mature ecommerce technology partner, not a
+generic software shop. The strongest positioning themes are:
+
+- Shopify Plus agency and Shopify Platinum Partner
+- Trusted ecommerce and mobile development company since 2006
+- Shopify development, Shopify migration, Shopify CRO, Shopify app work, and
+  white-label Shopify delivery
+- WordPress, WooCommerce, Magento, BigCommerce, Webflow, PHP, UI/UX, and mobile
+  app development support
+- Long-term technical support and maintenance
+- Proven work across global ecommerce brands, enterprise projects, and
+  industry-specific case studies
+
+## Live Site Observations
+
+Homepage title:
+
+- `Shopify Plus Agency & Shopify Platinum Partner | Dynamic Dreamz`
+
+Homepage hero and credibility content:
+
+- "A Trusted E-commerce & Mobile Development Company Since 2006"
+- 5000+ projects
+- 150+ experts
+- 1100+ happy clients
+- 1B+ client revenue generated
+- 4500+ Shopify stores built
+- CTA: "get a quote" / "request a quote"
+- Contact email: `info@dynamicdreamz.com`
+- Phone: `+91 9327642007`
+
+Homepage sections found:
+
+- Partnering with ambitious brands
+- Globally Trusted Web & App Development Agency
+- Our Expertise
+- Selected Shopify Plus & Enterprise Ecommerce Work
+- Brands That Have Grown With Us
+- Platforms and Integrations We Work With
+- Featured Shopify Insights
+- Large footer with company, services, mobile, white-label, and hire-developer
+  links
+
+## Core Navigation Groups
+
+Company:
+
+- `/about-us/`
+- `/career/`
+- `/life-at-dynamic-dreamz/`
+- `/resources/`
+- `/contact-us/`
+- Blog/resources route, exact final slug to confirm during migration
+
+Services:
+
+- `/shopify-development-agency/`
+- `/shopify-plus-agency/`
+- `/shopify-experts/`
+- `/shopify-theme-customization/`
+- `/shopify-migration/`
+- `/hire-shopify-developers/`
+- `/white-label-shopify-development/`
+- `/shopify-public-app-development/`
+- `/shopify-cro-services/`
+- `/shopify-plus-development-agency/`
+- `/shopify-mobile-app-development/`
+- `/buy-shopify-hours/`
+- `/wordpress-web-development/`
+- `/hire-wordpress-developers/`
+- `/wordpress-theme-customization/`
+- `/white-label-wordpress-development/`
+- `/woocommerce-development/`
+- `/magento-web-development/`
+- `/bigcommerce-development/`
+- `/webflow-development/`
+- `/ui-ux-design/`
+- `/php-development/`
+- `/android-app-development/`
+- `/ios-app-development/`
+- `/cross-platform-app-development/`
+
+Industries:
+
+- `/beauty-and-cosmetics/`
+- `/fashion-and-apparel/`
+- `/health-and-nutrition/`
+- `/food-and-beverages/`
+- `/pet-industry/`
+
+Work:
+
+- `/portfolio/`
+- `/case-study/`
+
+White label:
+
+- `/white-label-shopify-development/`
+- `/white-label-wordpress-development/`
+- `/white-label-website-design/`
+
+Confirm exact legacy slugs before adding redirects or changing a route. Preserve
+trailing slash behavior only if the production routing plan requires it.
+
+## About Page Context
+
+The about page emphasizes:
+
+- Agile. Adept. Accurate.
+- 150+ team members across design, development, project management, QA, and
+  leadership
+- Company timeline:
+  - 2006: founded by three college-passed engineers doing offshore website work
+  - 2008: early growth in Surat, India
+  - 2012: growth in projects, clients, employees, and collaboration with OneIT,
+    Australia
+  - 2015: moved to a larger Surat office; clients across USA, Canada, Europe,
+    and Australia
+  - 2020: Ahmedabad development center
+  - 2023: top 10 Shopify developers by Upwork
+  - 2024: 150+ expert team milestone
+  - 2025: Shopify Platinum Partner recognition
+- Leadership and department heads
+- Core values: integrity, adaptability, transparency, client-centric approach,
+  user-centric design, quality assurance
+
+## Shopify Development Page Context
+
+The Shopify development page is a key SEO service page. It targets "Shopify
+Development Agency" and related commercial-intent terms. It includes:
+
+- Custom store design
+- App integration
+- Migration to Shopify
+- Performance optimization
+- Scalable Shopify solutions
+- Digital agency and store-owner audience
+- Review proof:
+  - 5.0 on Clutch, 132 reviews
+  - 5.0 on Upwork, 2000+ reviews
+  - 5.0 on GoodFirms, 72 reviews
+- Service cards for Shopify Plus, theme customization, Figma/XD to Shopify,
+  app integration, migration, maintenance, Shopify 2.0 migration, and white
+  label Shopify development
+- Portfolio glimpses and project links
+
+## Case Study Page Context
+
+The case study index includes filters for technology and industry. Technologies
+include Shopify, Shopify Plus, Shopify 2.0, Shopify Dawn, Shopify Hongo,
+Shopify Minimalista, WordPress, Magento 2.0, React.js and Laravel, and custom
+web platforms. Industries include beauty, healthcare, fashion, supplements,
+food and beverage, eyewear, home improvement, luxury, education, entertainment,
+and ecommerce.
+
+Visible case studies include:
+
+- Daniel Walters Eyewear
+- Aetrex
+- Rooted Human
+- Eczema Milk
+- YHUS
+- Nandi Medical
+- Facts and Supps
+- Zedmed
+- Tankbar
+
+## Asset Policy
+
+The old site can be inspected for reference, but production code must use local
+or separately approved assets:
+
+- Store project-owned files under `public/assets/`.
+- Suggested folders: `brand`, `logos`, `clients`, `case-studies`, `services`,
+  `team`, `testimonials`, `blog`, `og`.
+- Use `next/image` for meaningful imagery with explicit dimensions, static
+  imports, or stable parent aspect ratios.
+- Do not point `src` to `https://www.dynamicdreamz.com/...` in final code.
+- Do not depend on old WordPress uploads, old scripts, old APIs, or old image
+  URLs.
+- If an asset is missing, use an approved local placeholder only temporarily and
+  document the missing asset in the task summary.
+
+## Content Policy
+
+- Use the live site as a migration source and rewrite where needed for clarity,
+  conversion, and SEO.
+- Keep factual claims consistent with approved company facts.
+- Do not invent new awards, partners, review counts, revenue numbers, or client
+  names.
+- If a claim looks outdated or unverifiable, flag it for confirmation before it
+  becomes prominent content.
+- Keep service pages specific to search intent; avoid one generic template with
+  swapped keywords.
+
+## Design Direction
+
+Dynamic Dreamz should feel confident, expert, practical, and modern. It is a
+services website for ecommerce buyers and agency partners, so prioritize:
+
+- Clean hierarchy and strong scanning
+- Service credibility and conversion CTAs
+- Real work, real proof, and clear industry capability
+- Mobile-first responsive layouts
+- Fast-loading pages and low layout shift
+- Clear header/footer navigation for many service pages
+
+Avoid making the site feel like a startup landing page with oversized generic
+hero copy and decorative-only graphics. The brand and service category should be
+clear in the first viewport.
