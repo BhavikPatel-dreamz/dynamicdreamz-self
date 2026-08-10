@@ -32,8 +32,9 @@ Before implementing code, read these project docs in this order:
 
 1. `docs/project-context.md`
 2. `docs/agent-workflow.md`
-3. `docs/seo-launch-checklist.md`
-4. The relevant bundled Next.js docs in `node_modules/next/dist/docs/`
+3. `docs/visual-parity-workflow.md`
+4. `docs/seo-launch-checklist.md`
+5. The relevant bundled Next.js docs in `node_modules/next/dist/docs/`
 
 Use this one-prompt kickoff for future sessions:
 
@@ -68,6 +69,9 @@ Core proof points from the live site:
 - Copy/match the live page styling during migration, including desktop and
   mobile variants. Do not preserve old CSS technical debt blindly; translate the
   visual result into maintainable local styles.
+- For styling and animation work, follow `docs/visual-parity-workflow.md`.
+  Inspect live CSS/JS, computed styles, keyframes, transitions, interaction
+  states, and screenshots before implementing. Static HTML alone is not enough.
 - For each migrated page, inspect both the rendered live page and View Page
   Source. Preserve page structure, metadata intent, headings, links, CTA labels,
   image alt text, ARIA labels, schema data, and other small SEO/accessibility

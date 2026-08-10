@@ -18,6 +18,10 @@ cards, borders, shadows, icons, backgrounds, animations, hover/focus states, and
 responsive behavior. Recreate the look in clean local Tailwind/CSS rather than
 depending on or pasting unmanaged old-site CSS.
 
+Exact style parity requires the visual parity workflow. Agents must inspect the
+live page, source CSS/JS, computed styles, animation timing, interaction states,
+and responsive screenshots before claiming a section matches the live site.
+
 ## Current Repo Snapshot
 
 - Framework: Next.js 16.3.0 with App Router

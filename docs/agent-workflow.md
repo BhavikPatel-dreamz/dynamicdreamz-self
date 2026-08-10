@@ -16,8 +16,9 @@ The agent should then read:
 1. `AGENTS.md`
 2. `docs/project-context.md`
 3. `docs/agent-workflow.md`
-4. `docs/seo-launch-checklist.md`
-5. Relevant local Next.js docs from `node_modules/next/dist/docs/`
+4. `docs/visual-parity-workflow.md`
+5. `docs/seo-launch-checklist.md`
+6. Relevant local Next.js docs from `node_modules/next/dist/docs/`
 
 ## Working Loop
 
@@ -32,9 +33,11 @@ The agent should then read:
 5. Implement with local data/content and project-owned assets.
 6. Add SEO metadata and structured data as part of the same change, not as a
    later cleanup.
-7. Check responsive behavior, accessibility, performance risk, and broken links.
-8. Run verification commands.
-9. Summarize changes, verification, and any missing assets or content approvals.
+7. For visual work, run the visual parity workflow and compare live vs local
+   desktop, tablet, mobile, hover, focus, and animation states.
+8. Check responsive behavior, accessibility, performance risk, and broken links.
+9. Run verification commands.
+10. Summarize changes, verification, and any missing assets or content approvals.
 
 ## Before Editing Code
 
@@ -153,6 +156,10 @@ For exact migration work, capture these from the live page before building:
 - Accessibility details such as form labels, `aria-label`, `aria-expanded`,
   landmark roles, skip links, focus states, and keyboard-relevant interactions.
 - Responsive differences between mobile, tablet, and desktop.
+
+For style and animation parity, also follow
+`docs/visual-parity-workflow.md`. Do not skip animation capture just because it
+is not obvious in View Page Source.
 
 Final code must be self-contained in this repo. Live-site URLs are allowed only
 in migration notes, comments that document provenance, or temporary local
