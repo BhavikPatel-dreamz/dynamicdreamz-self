@@ -6,8 +6,15 @@ import { siteConfig } from "@/data/site";
 
 function MailIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 26 20" width="26" height="20">
-      <path d="M2 2h22v16H2V2Zm1 1 10 8 10-8" fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="1.6" />
+    <svg aria-hidden="true" viewBox="0 0 26 19" width="26" height="19">
+      <path
+        d="M25 2.41667v14.1666c0 .3758-.1405.7361-.3905 1.0018A1.3 1.3 0 0 1 23.6667 18H2.3333a1.3 1.3 0 0 1-.9428-.4149A1.46 1.46 0 0 1 1 16.5833V2.41667m24 0c0-.37573-.1405-.73606-.3905-1.00174A1.3 1.3 0 0 0 23.6667 1H2.3333a1.3 1.3 0 0 0-.9428.41493A1.46 1.46 0 0 0 1 2.41667m24 0L14.7067 11.5301a2.58 2.58 0 0 1-3.4134 0L1 2.41667"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
     </svg>
   );
 }
@@ -15,7 +22,13 @@ function MailIcon() {
 function PhoneIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 25 25" width="25" height="25">
-      <path d="M7 2 3.5 5.5c-1.4 1.4-.8 4.8 3.8 9.4s8 5.2 9.4 3.8l3.5-3.5-4-4-2.5 2.5c-1.6-.6-3.6-2.6-4.2-4.2L12 7 7 2Z" fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="1.6" />
+      <path
+        d="M7.316 17.686A24.5 24.5 0 0 1 1.291 8.22c-.712-1.944-.06-4.08 1.405-5.545l.907-.905a2.63 2.63 0 0 1 3.713 0l2.122 2.122a2.63 2.63 0 0 1 0 3.714l-.522.522a2.25 2.25 0 0 0 0 3.183l4.774 4.775a2.25 2.25 0 0 0 3.183 0l.523-.522a2.63 2.63 0 0 1 3.714 0l2.122 2.122a2.63 2.63 0 0 1 0 3.713l-.905.905c-1.465 1.466-3.601 2.119-5.545 1.407a24.5 24.5 0 0 1-9.466-6.025Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
     </svg>
   );
 }
@@ -46,11 +59,15 @@ function ContactDetails() {
       <h3>Connect with us</h3>
       <address>
         <a href={`mailto:${siteConfig.email}`}>
-          <MailIcon />
+          <span className="footer-contact-icon">
+            <MailIcon />
+          </span>
           <span>{siteConfig.email}</span>
         </a>
         <a href={siteConfig.phoneHref}>
-          <PhoneIcon />
+          <span className="footer-contact-icon">
+            <PhoneIcon />
+          </span>
           <span>{siteConfig.phoneDisplay}</span>
         </a>
       </address>
@@ -101,8 +118,10 @@ export function SiteFooter() {
           <FooterMenu index={0} />
           <ContactDetails />
         </div>
-        <FooterMenu index={1} />
-        <FooterMenu index={2} />
+        <div className="footer-service-columns">
+          <FooterMenu index={1} />
+          <FooterMenu index={2} />
+        </div>
         <div className="footer-column footer-column-stacked">
           <FooterMenu index={3} />
           <FooterMenu index={4} />
@@ -117,15 +136,19 @@ export function SiteFooter() {
             <details key={group.label}>
               <summary>
                 <span>{group.label}</span>
-                <span aria-hidden="true">+</span>
+                <span className="footer-accordion-icon" aria-hidden="true" />
               </summary>
-              <ul>
-                {group.links.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href}>{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
+              <div className="footer-mobile-menu-panel">
+                <div className="footer-mobile-menu-panel-inner">
+                  <ul>
+                    {group.links.map((link) => (
+                      <li key={link.href}>
+                        <Link href={link.href}>{link.label}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </details>
           ))}
         </div>
@@ -155,9 +178,12 @@ export function SiteFooter() {
           © 2026 <Link href="/">{siteConfig.legalName}.</Link> All rights reserved.
         </p>
         <div>
-          <Link href="/terms-of-service/">Terms of Service</Link>
-          <span aria-hidden="true">|</span>
-          <Link href="/privacy-policy/">Privacy Policy</Link>
+          <Link href="/terms-of-service/" target="_blank" rel="noopener noreferrer">
+            Terms of Service
+          </Link>
+          <Link href="/privacy-policy/" target="_blank" rel="noopener noreferrer">
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>

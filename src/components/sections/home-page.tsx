@@ -345,7 +345,9 @@ export function HomePage() {
                   </Link>
                   <div className="insight-content">
                     <div className="insight-meta">
-                      <span>Shopify</span>
+                      <Link href="/category/shopify/">
+                        <span>Shopify</span>
+                      </Link>
                       <time dateTime={insight.date}>{insight.displayDate}</time>
                     </div>
                     <h3>

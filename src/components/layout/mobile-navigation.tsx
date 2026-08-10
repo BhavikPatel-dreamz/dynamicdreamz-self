@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import { primaryNavigation } from "@/data/navigation";
+import { primaryNavigation, type MegaMenuItem } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 
 function ChevronIcon() {
@@ -33,33 +33,73 @@ function CloseIcon() {
   );
 }
 
+function MobileItemIcon({ item }: { item: MegaMenuItem }) {
+  return (
+    <span className="mobile-nav-item-icon" aria-hidden="true">
+      <Image src={item.icon.src} alt="" width={item.icon.width} height={item.icon.height} />
+    </span>
+  );
+}
+
 export function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const [openServiceSection, setOpenServiceSection] = useState<string | null>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!isOpen) return;
 
+    const previousOverflow = document.body.style.overflow;
+    const toggleButton = toggleRef.current;
+    document.body.classList.add("mobile-menu-open");
+    closeRef.current?.focus();
+
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setIsOpen(false);
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        return;
+      }
+
+      if (event.key !== "Tab" || !panelRef.current) return;
+      const focusable = [...panelRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      )].filter((element) => !element.hasAttribute("inert") && element.offsetParent !== null);
+      if (!focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     }
 
-    document.body.classList.add("mobile-menu-open");
     window.addEventListener("keydown", onKeyDown);
-
     return () => {
       document.body.classList.remove("mobile-menu-open");
+      document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKeyDown);
+      toggleButton?.focus();
     };
   }, [isOpen]);
 
   function closeMenu() {
     setIsOpen(false);
+    setOpenGroup(null);
+    setOpenServiceSection(null);
   }
 
   return (
     <div className="mobile-navigation">
       <button
         className="menu-toggle"
+        ref={toggleRef}
         type="button"
         aria-label="Toggle menu"
         aria-expanded={isOpen}
@@ -72,6 +112,7 @@ export function MobileNavigation() {
       <div
         className={`mobile-navigation-panel${isOpen ? " is-open" : ""}`}
         id="mobile-navigation-panel"
+        ref={panelRef}
         aria-hidden={!isOpen}
         inert={!isOpen}
       >
@@ -84,37 +125,94 @@ export function MobileNavigation() {
               height={38}
             />
           </Link>
-          <button className="close-menu" type="button" aria-label="Close menu" onClick={closeMenu}>
+          <button ref={closeRef} className="close-menu" type="button" aria-label="Close menu" onClick={closeMenu}>
             <CloseIcon />
           </button>
         </div>
 
         <nav aria-label="Mobile navigation">
           <ul className="mobile-navigation-list">
-            {primaryNavigation.map((group) => (
-              <li key={group.label}>
-                <details>
-                  <summary>
+            {primaryNavigation.map((group) => {
+              const isGroupOpen = openGroup === group.slug;
+              const submenuId = `mobile-${group.slug}-menu`;
+              return (
+                <li className="mobile-nav-group" data-open={isGroupOpen} key={group.slug}>
+                  <button
+                    className="mobile-nav-group-trigger"
+                    type="button"
+                    aria-expanded={isGroupOpen}
+                    aria-controls={submenuId}
+                    onClick={() => {
+                      setOpenGroup(isGroupOpen ? null : group.slug);
+                      setOpenServiceSection(null);
+                    }}
+                  >
                     {group.label}
                     <ChevronIcon />
-                  </summary>
-                  <ul>
-                    {group.links.map((link) => (
-                      <li key={link.href}>
-                        <Link href={link.href} onClick={closeMenu}>{link.label}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              </li>
-            ))}
-            <li>
+                  </button>
+                  <div
+                    className="mobile-nav-submenu"
+                    id={submenuId}
+                    aria-hidden={!isGroupOpen}
+                    inert={!isGroupOpen}
+                  >
+                    <div>
+                      {group.kind === "services" ? (
+                        <div className="mobile-service-sections">
+                          {group.sections.map((section) => {
+                            const isSectionOpen = openServiceSection === section.label;
+                            const sectionId = `mobile-service-${section.label.toLowerCase().replaceAll(" ", "-").replaceAll("&", "and")}`;
+                            return (
+                              <section className="mobile-service-section" data-open={isSectionOpen} key={section.label}>
+                                <button
+                                  type="button"
+                                  aria-expanded={isSectionOpen}
+                                  aria-controls={sectionId}
+                                  onClick={() => setOpenServiceSection(isSectionOpen ? null : section.label)}
+                                >
+                                  <span>
+                                    <Image src={section.icon.src} alt="" width={section.icon.width} height={section.icon.height} aria-hidden="true" />
+                                    {section.label}
+                                  </span>
+                                  <ChevronIcon />
+                                </button>
+                                <div className="mobile-service-links" id={sectionId} aria-hidden={!isSectionOpen} inert={!isSectionOpen}>
+                                  <ul>
+                                    {section.links.map((link) => (
+                                      <li key={link.href}>
+                                        <Link href={link.href} onClick={closeMenu}>{link.label}</Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              </section>
+                            );
+                          })}
+                        </div>
+                      ) : (
+                        <ul className="mobile-nav-item-list">
+                          {group.items.map((item) => (
+                            <li key={item.href}>
+                              <Link href={item.href} onClick={closeMenu}>
+                                <MobileItemIcon item={item} />
+                                <span>{item.label}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+            <li className="mobile-nav-contact">
               <Link href="/contact-us/" onClick={closeMenu}>Contact us</Link>
             </li>
+            <li className="mobile-nav-email">
+              <a href={`mailto:${siteConfig.email}`} onClick={closeMenu}>{siteConfig.email}</a>
+            </li>
           </ul>
-          <Link className="button button-primary mobile-quote-button" href={siteConfig.quotePath} onClick={closeMenu}>
-            Get a quote
-          </Link>
         </nav>
       </div>
     </div>
