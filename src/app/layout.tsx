@@ -63,7 +63,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${neueMontreal.variable} ${montserrat.variable}`}>
       <body>
-        <a className="skip-link" href="#main-content">
+        <a
+          className="fixed top-3 left-3 z-[1000] -translate-y-[170%] rounded-[30px] bg-ink px-4 py-2.5 font-bold text-white transition-transform duration-160 focus:translate-y-0"
+          href="#main-content"
+        >
           Skip to content
         </a>
         <SiteHeader />

@@ -1,14 +1,20 @@
 export function ContactWidget() {
   return (
     <a
-      className="contact-widget"
+      className="fixed right-5 bottom-[15px] z-[110] flex min-w-60 items-center rounded-[100px] bg-brand-green px-2.5 py-[7px] text-white shadow-[0_10px_30px_rgb(0_0_0/15%)] transition-[transform,box-shadow] duration-300 hover:-translate-y-[3px] hover:shadow-[0_15px_40px_rgb(0_0_0/20%)] max-[767px]:bottom-2.5 max-[767px]:min-w-[200px] max-[767px]:p-[5px]"
       href="https://api.whatsapp.com/send/?phone=919825195930"
       target="_blank"
       rel="nofollow noopener noreferrer"
       aria-label="Chat with Dynamic Dreamz on WhatsApp"
     >
-      <span className="contact-widget-icon">
-        <svg aria-hidden="true" viewBox="0 0 50 50" width="55" height="55">
+      <span className="h-[55px] w-[55px] shrink-0 max-[767px]:h-10 max-[767px]:w-10">
+        <svg
+          className="h-[55px] w-[55px] max-[767px]:h-10 max-[767px]:w-10"
+          aria-hidden="true"
+          viewBox="0 0 50 50"
+          width="55"
+          height="55"
+        >
           <path
             d="M24.9719 49.6693C38.6118 49.6693 49.6692 38.6119 49.6692 24.972C49.6692 11.3321 38.6118 0.274719 24.9719 0.274719C11.332 0.274719 0.274658 11.3321 0.274658 24.972C0.274658 38.6119 11.332 49.6693 24.9719 49.6693Z"
             fill="#0b6b35"
@@ -23,10 +29,12 @@ export function ContactWidget() {
           />
         </svg>
       </span>
-      <span className="contact-widget-divider" aria-hidden="true" />
-      <span className="contact-widget-content">
-        <small>Have a project in mind?</small>
-        <strong>Let&apos;s talk</strong>
+      <span className="h-[55px] w-px shrink-0 bg-white/50 max-[767px]:h-[35px]" aria-hidden="true" />
+      <span className="flex flex-col pl-2.5 leading-[1.2]">
+        <small className="mb-[5px] text-xs font-semibold max-[767px]:mb-[3px] max-[767px]:text-[11px]">
+          Have a project in mind?
+        </small>
+        <strong className="text-lg leading-[1.1] max-[767px]:text-sm">Let&apos;s talk</strong>
       </span>
     </a>
   );

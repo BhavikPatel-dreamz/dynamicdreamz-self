@@ -1,0 +1,103 @@
+.showcaseMotion {
+  animation: showcase-vertical 40s linear infinite;
+}
+
+.projectMotion {
+  animation: project-scroll 60s linear infinite;
+}
+
+.mobileClientLeft,
+.mobileClientRight {
+  animation-duration: 25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.mobileClientLeft {
+  animation-name: mobile-client-left;
+}
+
+.mobileClientRight {
+  animation-name: mobile-client-right;
+}
+
+.integrationLeft,
+.integrationRight {
+  animation-duration: 45s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.integrationLeft {
+  animation-name: integration-left;
+}
+
+.integrationRight {
+  animation-name: integration-right;
+}
+
+@keyframes showcase-vertical {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes showcase-horizontal {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes project-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes mobile-client-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes mobile-client-right {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes integration-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes integration-right {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 991px) {
+  .showcaseMotion {
+    animation-name: showcase-horizontal;
+  }
+}
+
+@media (max-width: 767px) {
+  .projectMotion {
+    animation: none;
+  }
+}

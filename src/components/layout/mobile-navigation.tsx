@@ -6,10 +6,17 @@ import { useEffect, useRef, useState } from "react";
 
 import { primaryNavigation, type MegaMenuItem } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
+import { cn } from "@/lib/class-names";
 
-function ChevronIcon() {
+function ChevronIcon({ open = false }: { open?: boolean }) {
   return (
-    <svg aria-hidden="true" viewBox="0 0 10 6" width="10" height="6">
+    <svg
+      className={cn("h-2 w-[13px] transition-transform duration-300", open && "rotate-180")}
+      aria-hidden="true"
+      viewBox="0 0 10 6"
+      width="10"
+      height="6"
+    >
       <path d="m1 1 4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.5" />
     </svg>
   );
@@ -35,11 +42,14 @@ function CloseIcon() {
 
 function MobileItemIcon({ item }: { item: MegaMenuItem }) {
   return (
-    <span className="mobile-nav-item-icon" aria-hidden="true">
-      <Image src={item.icon.src} alt="" width={item.icon.width} height={item.icon.height} />
+    <span className="mr-[13px] flex h-6 w-6 shrink-0 items-center justify-center" aria-hidden="true">
+      <Image className="h-full w-full object-contain" src={item.icon.src} alt="" width={item.icon.width} height={item.icon.height} />
     </span>
   );
 }
+
+const topLevelLinkClass =
+  "flex w-full items-center justify-between border-0 bg-transparent p-0 pr-2 text-left text-lg leading-[normal] font-semibold text-ink";
 
 export function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +64,7 @@ export function MobileNavigation() {
 
     const previousOverflow = document.body.style.overflow;
     const toggleButton = toggleRef.current;
-    document.body.classList.add("mobile-menu-open");
+    document.body.style.overflow = "hidden";
     closeRef.current?.focus();
 
     function onKeyDown(event: KeyboardEvent) {
@@ -82,7 +92,6 @@ export function MobileNavigation() {
 
     window.addEventListener("keydown", onKeyDown);
     return () => {
-      document.body.classList.remove("mobile-menu-open");
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKeyDown);
       toggleButton?.focus();
@@ -96,9 +105,9 @@ export function MobileNavigation() {
   }
 
   return (
-    <div className="mobile-navigation">
+    <div className="mr-3 hidden w-[30px] shrink-0 max-[991px]:block max-[767px]:mr-0">
       <button
-        className="menu-toggle"
+        className="flex h-[30px] w-[30px] cursor-pointer items-center justify-center border-0 bg-transparent p-0"
         ref={toggleRef}
         type="button"
         aria-label="Toggle menu"
@@ -110,35 +119,39 @@ export function MobileNavigation() {
       </button>
 
       <div
-        className={`mobile-navigation-panel${isOpen ? " is-open" : ""}`}
+        className={cn(
+          "pointer-events-none fixed top-0 left-0 z-12 h-screen max-h-none w-full -translate-x-full overflow-visible bg-white px-5 pt-[30px] pb-[100px] transition-transform duration-800 [height:100dvh]",
+          isOpen && "pointer-events-auto translate-x-0",
+        )}
         id="mobile-navigation-panel"
         ref={panelRef}
         aria-hidden={!isOpen}
         inert={!isOpen}
       >
-        <div className="mobile-navigation-header">
+        <div className="flex min-h-[30px] items-center justify-between pb-2.5">
           <Link href="/" aria-label="Dynamic Dreamz home" onClick={closeMenu}>
             <Image
+              className="flex h-auto w-[225px] max-[767px]:w-[170px] max-[379px]:w-[150px]"
               src={siteConfig.logo}
               alt="Dynamic Dreamz - Shopify Platinum Partner"
               width={225}
               height={38}
             />
           </Link>
-          <button ref={closeRef} className="close-menu" type="button" aria-label="Close menu" onClick={closeMenu}>
+          <button ref={closeRef} className="inline-flex h-[30px] w-[30px] cursor-pointer items-center justify-center border-0 bg-transparent p-0" type="button" aria-label="Close menu" onClick={closeMenu}>
             <CloseIcon />
           </button>
         </div>
 
-        <nav aria-label="Mobile navigation">
-          <ul className="mobile-navigation-list">
+        <nav className="h-[calc(100%-40px)] overflow-auto overflow-x-hidden pt-[35px]" aria-label="Mobile navigation">
+          <ul className="m-0 list-none p-0">
             {primaryNavigation.map((group) => {
               const isGroupOpen = openGroup === group.slug;
               const submenuId = `mobile-${group.slug}-menu`;
               return (
-                <li className="mobile-nav-group" data-open={isGroupOpen} key={group.slug}>
+                <li className="py-2.5" key={group.slug}>
                   <button
-                    className="mobile-nav-group-trigger"
+                    className={cn(topLevelLinkClass, "cursor-pointer", isGroupOpen && "text-brand-red")}
                     type="button"
                     aria-expanded={isGroupOpen}
                     aria-controls={submenuId}
@@ -148,39 +161,51 @@ export function MobileNavigation() {
                     }}
                   >
                     {group.label}
-                    <ChevronIcon />
+                    <ChevronIcon open={isGroupOpen} />
                   </button>
                   <div
-                    className="mobile-nav-submenu"
+                    className={cn(
+                      "grid grid-rows-[0fr] transition-[grid-template-rows] duration-400 ease-[cubic-bezier(0.445,0.05,0.55,0.95)]",
+                      isGroupOpen && "grid-rows-[1fr]",
+                    )}
                     id={submenuId}
                     aria-hidden={!isGroupOpen}
                     inert={!isGroupOpen}
                   >
-                    <div>
+                    <div className="overflow-hidden">
                       {group.kind === "services" ? (
-                        <div className="mobile-service-sections">
-                          {group.sections.map((section) => {
+                        <div className="pt-1.5">
+                          {group.sections.map((section, sectionIndex) => {
                             const isSectionOpen = openServiceSection === section.label;
                             const sectionId = `mobile-service-${section.label.toLowerCase().replaceAll(" ", "-").replaceAll("&", "and")}`;
                             return (
-                              <section className="mobile-service-section" data-open={isSectionOpen} key={section.label}>
+                              <section className={cn("border-b border-[#efefef]", sectionIndex === group.sections.length - 1 && "border-b-0")} key={section.label}>
                                 <button
+                                  className="flex min-h-12 w-full cursor-pointer items-center justify-between border-0 bg-transparent py-3 pr-[25px] text-left text-sm leading-[normal] font-medium text-ink"
                                   type="button"
                                   aria-expanded={isSectionOpen}
                                   aria-controls={sectionId}
                                   onClick={() => setOpenServiceSection(isSectionOpen ? null : section.label)}
                                 >
-                                  <span>
-                                    <Image src={section.icon.src} alt="" width={section.icon.width} height={section.icon.height} aria-hidden="true" />
+                                  <span className="flex items-center">
+                                    <Image className="mr-[13px] h-6 w-6 object-contain" src={section.icon.src} alt="" width={section.icon.width} height={section.icon.height} aria-hidden="true" />
                                     {section.label}
                                   </span>
-                                  <ChevronIcon />
+                                  <ChevronIcon open={isSectionOpen} />
                                 </button>
-                                <div className="mobile-service-links" id={sectionId} aria-hidden={!isSectionOpen} inert={!isSectionOpen}>
-                                  <ul>
+                                <div
+                                  className={cn(
+                                    "grid grid-rows-[0fr] transition-[grid-template-rows] duration-400 ease-[cubic-bezier(0.445,0.05,0.55,0.95)]",
+                                    isSectionOpen && "grid-rows-[1fr]",
+                                  )}
+                                  id={sectionId}
+                                  aria-hidden={!isSectionOpen}
+                                  inert={!isSectionOpen}
+                                >
+                                  <ul className="overflow-hidden p-0">
                                     {section.links.map((link) => (
-                                      <li key={link.href}>
-                                        <Link href={link.href} onClick={closeMenu}>{link.label}</Link>
+                                      <li className="border-t border-[#efefef]" key={link.href}>
+                                        <Link className="block py-3 text-sm leading-[normal] font-medium text-ink" href={link.href} onClick={closeMenu}>{link.label}</Link>
                                       </li>
                                     ))}
                                   </ul>
@@ -190,10 +215,10 @@ export function MobileNavigation() {
                           })}
                         </div>
                       ) : (
-                        <ul className="mobile-nav-item-list">
-                          {group.items.map((item) => (
-                            <li key={item.href}>
-                              <Link href={item.href} onClick={closeMenu}>
+                        <ul className="pt-1.5">
+                          {group.items.map((item, itemIndex) => (
+                            <li className={cn("border-b border-[#efefef]", itemIndex === group.items.length - 1 && "border-b-0")} key={item.href}>
+                              <Link className="flex min-h-12 items-center py-3 pr-[25px] text-sm leading-[normal] font-medium text-ink" href={item.href} onClick={closeMenu}>
                                 <MobileItemIcon item={item} />
                                 <span>{item.label}</span>
                               </Link>
@@ -206,11 +231,11 @@ export function MobileNavigation() {
                 </li>
               );
             })}
-            <li className="mobile-nav-contact">
-              <Link href="/contact-us/" onClick={closeMenu}>Contact us</Link>
+            <li className="py-2.5">
+              <Link className={topLevelLinkClass} href="/contact-us/" onClick={closeMenu}>Contact us</Link>
             </li>
-            <li className="mobile-nav-email">
-              <a href={`mailto:${siteConfig.email}`} onClick={closeMenu}>{siteConfig.email}</a>
+            <li className="py-2.5">
+              <a className="block text-sm leading-[normal] font-semibold text-[#d92128] underline" href={`mailto:${siteConfig.email}`} onClick={closeMenu}>{siteConfig.email}</a>
             </li>
           </ul>
         </nav>
