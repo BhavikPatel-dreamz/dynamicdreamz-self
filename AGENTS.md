@@ -24,7 +24,7 @@ Style target: match the live site's visual system and component styling before
 introducing redesigns. Capture colors, typography, spacing, layout widths,
 section backgrounds, buttons, cards, borders, shadows, icon treatments,
 animations, hover/focus states, and responsive breakpoints, then rebuild them as
-clean local CSS/Tailwind tokens and reusable components.
+clean Tailwind utilities and reusable components.
 
 ## Start Every Task This Way
 
@@ -69,6 +69,10 @@ Core proof points from the live site:
 - Copy/match the live page styling during migration, including desktop and
   mobile variants. Do not preserve old CSS technical debt blindly; translate the
   visual result into maintainable local styles.
+- Use clean Tailwind CSS for styling. Do not add custom page, section,
+  component, animation, or one-off layout styles to `src/app/globals.css`.
+  Keep `globals.css` minimal for Tailwind setup and unavoidable app-wide base
+  rules only.
 - For styling and animation work, follow `docs/visual-parity-workflow.md`.
   Inspect live CSS/JS, computed styles, keyframes, transitions, interaction
   states, and screenshots before implementing. Static HTML alone is not enough.

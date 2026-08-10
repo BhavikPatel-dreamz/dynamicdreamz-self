@@ -5,7 +5,7 @@ or responsive layout must match the live Dynamic Dreamz site.
 
 The goal is exact visual and behavior parity, not byte-for-byte old code. Use
 the live CSS/JS as migration reference, then rebuild the same result with local,
-maintainable Next.js, Tailwind, and CSS.
+maintainable Next.js components and Tailwind utilities.
 
 ## Capture First
 
@@ -52,10 +52,13 @@ Record these values before rebuilding:
   rules from the live site during migration.
 - Port only the needed style behavior into local code. Avoid dumping large,
   unmanaged old CSS files into the app.
-- Prefer Tailwind utilities and shared components for stable patterns.
-- Use CSS variables in `src/app/globals.css` for repeated brand colors, spacing,
-  shadows, radii, and animation timings.
-- Use local `@keyframes` or scoped CSS modules for reusable animation behavior.
+- Use clean Tailwind utilities and shared components for styling.
+- Do not add custom page, section, component, animation, or one-off layout
+  styles to `src/app/globals.css`.
+- Keep `src/app/globals.css` minimal for Tailwind setup and unavoidable app-wide
+  base rules only.
+- If CSS is truly unavoidable for keyframes or complex browser behavior, scope
+  it to the component instead of putting it in `globals.css`.
 - Use a Client Component only when animation or interaction needs browser state,
   measurements, observers, timers, or event handlers.
 - Add `prefers-reduced-motion` handling for meaningful animations.

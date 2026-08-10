@@ -15,8 +15,8 @@ important search intent without an explicit reason.
 Live-site parity includes styles. Match the visual design closely: colors,
 typography, spacing scale, max widths, grids, section rhythm, button styles,
 cards, borders, shadows, icons, backgrounds, animations, hover/focus states, and
-responsive behavior. Recreate the look in clean local Tailwind/CSS rather than
-depending on or pasting unmanaged old-site CSS.
+responsive behavior. Recreate the look with clean Tailwind utilities and shared
+components rather than depending on or pasting unmanaged old-site CSS.
 
 Exact style parity requires the visual parity workflow. Agents must inspect the
 live page, source CSS/JS, computed styles, animation timing, interaction states,
@@ -275,4 +275,5 @@ assets, accessible markup, optimized images, and maintainable components.
 
 When styles are unclear, inspect the live page visually and through browser
 computed styles or source CSS. Capture the intended values, then consolidate
-them into local design tokens, utility classes, or shared components.
+them into Tailwind utilities, component props, or shared components. Do not put
+page or component styling in `src/app/globals.css`.

@@ -70,6 +70,9 @@ project uses Next.js 16.3.0 and may differ from older App Router examples.
 - Keep route files thin. Put repeated sections in `src/components/sections/`.
 - Put navigation, company stats, service lists, route metadata, and page content
   in `src/data/` or `src/content/` when reused.
+- Style with clean Tailwind utilities and reusable components. Do not add custom
+  page, section, component, animation, or one-off layout CSS to
+  `src/app/globals.css`.
 - Create metadata helpers in `src/lib/metadata.ts` once multiple routes need the
   same rules.
 - Create JSON-LD helpers in `src/lib/schema.ts` once structured data repeats.
@@ -167,8 +170,9 @@ research; they must not remain in production image, script, stylesheet, API,
 metadata, or schema references.
 
 Style implementation should match the live visual result, but use local
-maintainable code. Prefer Tailwind utilities, CSS variables in `globals.css`,
-and shared components over copying large old-site CSS files directly.
+maintainable code. Prefer Tailwind utilities and shared components over copying
+large old-site CSS files directly. Keep `src/app/globals.css` minimal; do not
+place page/component styles there.
 
 ## Asset Workflow
 
