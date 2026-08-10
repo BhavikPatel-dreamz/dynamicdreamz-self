@@ -14,6 +14,12 @@ This project is the Next.js migration of https://www.dynamicdreamz.com/.
 Treat the current live site as a migration reference only, not as a runtime
 dependency.
 
+Migration target: rebuild the live site as closely as practical in Next.js,
+including page coverage, route intent, section order, copy intent, CTA flow,
+brand feel, responsive behavior, and SEO value. Improve implementation quality,
+performance, accessibility, and maintainability while preserving the live site's
+business message and search intent.
+
 ## Start Every Task This Way
 
 Before implementing code, read these project docs in this order:
@@ -51,8 +57,17 @@ Core proof points from the live site:
 - Do not hotlink or fetch production assets from `dynamicdreamz.com` at runtime.
 - Do not use the old site as an API, CDN, image host, script host, or data
   source in shipped code.
+- Match the live site before redesigning. Any visible design, content, route, or
+  CTA change from the live site should be intentional and called out.
+- For each migrated page, inspect both the rendered live page and View Page
+  Source. Preserve page structure, metadata intent, headings, links, CTA labels,
+  image alt text, ARIA labels, schema data, and other small SEO/accessibility
+  details unless there is a production-quality reason to improve them.
 - If old-site content or assets are needed, move approved copies into local
   project-owned files such as `src/content/**` and `public/assets/**`.
+- If old-site images, documents, icons, logos, or other assets are needed,
+  download/copy them during migration into `public/assets/**` and update the
+  Next.js code to reference only those local files.
 - Build with App Router conventions for the installed Next.js version.
 - Prefer Server Components. Use `"use client"` only for the smallest interactive
   component boundary.
