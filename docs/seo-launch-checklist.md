@@ -86,9 +86,14 @@ Common page types:
 - No runtime image/script dependency on `dynamicdreamz.com`.
 - No canonical, OG, Twitter image, favicon, CSS, script, JSON-LD image, or media
   URL depends on `dynamicdreamz.com`; migrate required files locally first.
+- Local image filenames are meaningful, lowercase, kebab-case, and descriptive
+  of the asset or page context.
 - Images have intrinsic dimensions or stable parent aspect ratios.
-- Important images use descriptive alt text.
-- Decorative images have empty alt text.
+- Every image has intentional alt handling.
+- Content images use meaningful, page-specific alt text.
+- Alt text is not missing, generic, duplicated across unrelated images, or
+  keyword-stuffed.
+- Decorative images have empty alt text only when they are truly decorative.
 - Pages do not require client JavaScript for primary content to render.
 - Canonicals match final production URLs.
 - Redirects preserve important old URLs.

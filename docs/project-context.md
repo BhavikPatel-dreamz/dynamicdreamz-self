@@ -12,6 +12,12 @@ experience. Improvements are welcome when they make the site more production
 ready, but they should not erase the recognizable Dynamic Dreamz site or change
 important search intent without an explicit reason.
 
+Live-site parity includes styles. Match the visual design closely: colors,
+typography, spacing scale, max widths, grids, section rhythm, button styles,
+cards, borders, shadows, icons, backgrounds, animations, hover/focus states, and
+responsive behavior. Recreate the look in clean local Tailwind/CSS rather than
+depending on or pasting unmanaged old-site CSS.
+
 ## Current Repo Snapshot
 
 - Framework: Next.js 16.3.0 with App Router
@@ -206,10 +212,18 @@ or separately approved assets:
   migration-time action and commit/use the local project copy. Never leave the
   final `src`, CSS URL, OG image URL, favicon URL, or schema image URL pointing
   at the old domain.
+- Name local asset files clearly. Use lowercase kebab-case filenames that
+  describe the image, brand/client, service, section, or page context. Rename
+  vague live filenames such as hashes, random numbers, `image-1`, `banner`, or
+  keyword-stuffed names when storing the local copy.
 - Preserve useful original asset details when moving assets locally: source
   page, original filename, visible placement, alt text, title/caption if any,
   intrinsic dimensions when known, and whether the image is decorative or
   meaningful.
+- Every image needs intentional alt handling. Content images must have
+  meaningful alt text that describes the image in the page context. Preserve the
+  live site's alt text when it is accurate; improve it when it is missing,
+  vague, duplicated, or keyword-stuffed.
 - Use `next/image` for meaningful imagery with explicit dimensions, static
   imports, or stable parent aspect ratios.
 - Do not point `src` to `https://www.dynamicdreamz.com/...` in final code.
@@ -254,3 +268,7 @@ clear in the first viewport.
 Visual parity does not mean copying old technical choices. Keep the recognizable
 layout, hierarchy, content flow, and brand cues, but rebuild them with local
 assets, accessible markup, optimized images, and maintainable components.
+
+When styles are unclear, inspect the live page visually and through browser
+computed styles or source CSS. Capture the intended values, then consolidate
+them into local design tokens, utility classes, or shared components.

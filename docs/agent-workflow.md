@@ -26,7 +26,8 @@ The agent should then read:
 2. Inspect the current code before editing.
 3. If migrating a legacy page, inspect the old URL as both a rendered page and
    View Page Source for content structure, headings, CTAs, metadata intent,
-   images, links, schema, accessibility details, and redirect needs.
+   images, links, schema, accessibility details, style details, and redirect
+   needs.
 4. Decide the production structure before touching code.
 5. Implement with local data/content and project-owned assets.
 6. Add SEO metadata and structured data as part of the same change, not as a
@@ -108,12 +109,13 @@ When migrating a page from the old site:
 3. Inspect View Page Source for the same URL before implementation.
 4. Capture title intent, `h1`, section order, visual hierarchy, CTAs, proof
    points, FAQs, internal links, image alt text, ARIA labels, forms, schema,
-   canonical URL, OG/Twitter metadata, and responsive behavior.
+   canonical URL, OG/Twitter metadata, style rules, and responsive behavior.
 5. Capture the asset map: original URL, intended local path, alt text, visible
    placement, dimensions if known, and whether the asset is decorative or
    meaningful.
 6. Download or copy required live-site assets into `public/assets/**` during
-   migration and use only the local copy in final code.
+   migration using meaningful local filenames, then use only the local copy in
+   final code.
 7. Copy required source content into typed local files under `src/content/**` or
    `src/data/**`; do not read from the live site at runtime.
 8. Rebuild the page to match the live page first. Make improvements only when
@@ -135,10 +137,19 @@ For exact migration work, capture these from the live page before building:
 - Header, mega menu, footer, breadcrumbs, and active navigation behavior.
 - Every visible section in order, including eyebrow text, headings, paragraphs,
   cards, counters, buttons, forms, tabs, sliders, accordions, and FAQs.
+- Style details for each major pattern: colors, fonts, font sizes, weights, line
+  heights, spacing, max widths, grid/column behavior, backgrounds, borders,
+  radii, shadows, button states, card states, hover/focus states, animations,
+  sticky behavior, and responsive breakpoints.
 - Every internal and external link, including `target`, `rel`, labels, and CTA
   wording.
 - Every image or media asset, including original URL, local destination, alt
   text, title, caption, width, height, loading behavior, and priority/LCP role.
+- Final local filename for every copied asset. Use clean lowercase kebab-case
+  names that describe the asset; do not keep vague, random, hashed, or odd live
+  filenames unless the original name is already meaningful.
+- Every image's final alt decision: meaningful alt text for content images, or
+  intentional empty alt only when the image is truly decorative.
 - Accessibility details such as form labels, `aria-label`, `aria-expanded`,
   landmark roles, skip links, focus states, and keyboard-relevant interactions.
 - Responsive differences between mobile, tablet, and desktop.
@@ -148,20 +159,30 @@ in migration notes, comments that document provenance, or temporary local
 research; they must not remain in production image, script, stylesheet, API,
 metadata, or schema references.
 
+Style implementation should match the live visual result, but use local
+maintainable code. Prefer Tailwind utilities, CSS variables in `globals.css`,
+and shared components over copying large old-site CSS files directly.
+
 ## Asset Workflow
 
 1. Check `public/assets/` before using any image.
 2. If an old-site asset is needed, download/copy it into a local project-owned
    asset folder during migration.
-3. Put assets in a stable folder by purpose.
-4. Preserve the original asset's important attributes in local content/data:
+3. Rename the local copy with a meaningful lowercase kebab-case filename if the
+   live filename is unclear, random, hashed, generic, or keyword-stuffed.
+4. Put assets in a stable folder by purpose.
+5. Preserve the original asset's important attributes in local content/data:
    alt text, caption/title, source page, and original placement.
-5. Use `next/image` for photos, logos, hero images, case study screenshots, and
+6. Use `next/image` for photos, logos, hero images, case study screenshots, and
    testimonial portraits.
-6. Give images meaningful alt text unless they are purely decorative.
-7. Use stable dimensions, aspect ratios, and responsive sizes to prevent layout
+7. Give every content image meaningful, page-specific alt text. Do not use
+   generic values like "image", "banner", "logo image", or repeated keyword
+   strings.
+8. Use empty alt text only for truly decorative images, and make that decision
+   intentional.
+9. Use stable dimensions, aspect ratios, and responsive sizes to prevent layout
    shift.
-8. Never use `dynamicdreamz.com` asset URLs in final code.
+10. Never use `dynamicdreamz.com` asset URLs in final code.
 
 ## Verification Checklist
 

@@ -20,6 +20,12 @@ brand feel, responsive behavior, and SEO value. Improve implementation quality,
 performance, accessibility, and maintainability while preserving the live site's
 business message and search intent.
 
+Style target: match the live site's visual system and component styling before
+introducing redesigns. Capture colors, typography, spacing, layout widths,
+section backgrounds, buttons, cards, borders, shadows, icon treatments,
+animations, hover/focus states, and responsive breakpoints, then rebuild them as
+clean local CSS/Tailwind tokens and reusable components.
+
 ## Start Every Task This Way
 
 Before implementing code, read these project docs in this order:
@@ -59,6 +65,9 @@ Core proof points from the live site:
   source in shipped code.
 - Match the live site before redesigning. Any visible design, content, route, or
   CTA change from the live site should be intentional and called out.
+- Copy/match the live page styling during migration, including desktop and
+  mobile variants. Do not preserve old CSS technical debt blindly; translate the
+  visual result into maintainable local styles.
 - For each migrated page, inspect both the rendered live page and View Page
   Source. Preserve page structure, metadata intent, headings, links, CTA labels,
   image alt text, ARIA labels, schema data, and other small SEO/accessibility
@@ -68,12 +77,19 @@ Core proof points from the live site:
 - If old-site images, documents, icons, logos, or other assets are needed,
   download/copy them during migration into `public/assets/**` and update the
   Next.js code to reference only those local files.
+- Local asset filenames must be meaningful and descriptive. If a live-site image
+  filename is vague, hashed, keyword-stuffed, or odd, rename the local copy to a
+  clean kebab-case name that describes the asset and page/context.
 - Build with App Router conventions for the installed Next.js version.
 - Prefer Server Components. Use `"use client"` only for the smallest interactive
   component boundary.
 - Every route must ship with production SEO: metadata, canonical URL, Open Graph
   data, Twitter data, semantic headings, alt text, and structured data where it
   fits the page type.
+- Every image must have intentional alt handling. Use meaningful, page-specific
+  alt text for all content images, preserving or improving the live site's alt
+  text. Only truly decorative images may use empty alt text, and that choice
+  must be intentional.
 - Add or update `src/app/sitemap.ts` and `src/app/robots.ts` whenever routes are
   added, removed, or renamed.
 - Preserve legacy URL equity with redirects for migrated or renamed pages.
@@ -108,6 +124,7 @@ Production-ready means the page is complete enough to deploy:
   states.
 - No layout shift from images or unstable component dimensions.
 - No generic metadata copied between pages.
+- No missing, generic, keyword-stuffed, or duplicated image alt text.
 - No inaccessible interactive controls.
 - No unnecessary client JavaScript.
 - No external dependency added unless it clearly reduces risk or complexity.
