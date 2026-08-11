@@ -1,0 +1,15 @@
+.projectMotion {
+  animation: project-scroll 60s linear infinite;
+}
+
+@keyframes project-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 767px) {
+  .projectMotion {
+    animation: none;
+  }
+}

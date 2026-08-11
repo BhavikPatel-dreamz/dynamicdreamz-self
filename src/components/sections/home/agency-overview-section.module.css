@@ -1,0 +1,21 @@
+.showcaseMotion {
+  animation: showcase-vertical 40s linear infinite;
+}
+
+@keyframes showcase-vertical {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes showcase-horizontal {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 991px) {
+  .showcaseMotion {
+    animation-name: showcase-horizontal;
+  }
+}
