@@ -14,6 +14,12 @@ const organizationId = `${siteConfig.url}#organization`;
 const websiteId = `${siteConfig.url}#website`;
 const webPageId = `${siteConfig.url}#home-page`;
 const breadcrumbId = `${siteConfig.url}#breadcrumb`;
+// Site-root URL in its canonical (trailing-slash) form, matching the homepage
+// canonical/og:url. Every emitted site-root `url`/breadcrumb item resolves
+// through this so schema never disagrees with the page's canonical on slashes.
+// (The `#`-suffixed @id values above stay bare — they are opaque identifiers,
+// not page URLs, and must remain byte-stable across pages.)
+const homeUrl = absoluteUrl("/");
 const aboutPageUrl = absoluteUrl(pageSeo.about.path);
 const aboutPageId = `${aboutPageUrl}#webpage`;
 const aboutBreadcrumbId = `${aboutPageUrl}#breadcrumb`;
@@ -50,23 +56,67 @@ const careerOfficeAddresses = {
   },
 } as const;
 
+// Shared company/brand video (used on About and Resources). Same YouTube source,
+// so keep its id and real publish date in one place.
+const companyVideoId = "0GEJ928rBnM";
+const companyVideoUploadDate = "2024-10-17";
+
+/**
+ * Required shape for every VideoObject on the site. `uploadDate` is deliberately
+ * mandatory: Google treats it as a required property for video structured data,
+ * and a missing value silently disqualifies the video from rich results. Because
+ * this field is required here, `npm run build` (type-check) fails if any caller
+ * omits it — a VideoObject can never ship without an upload date again. Always
+ * pass an ISO 8601 date taken from the actual video's real publish date; never
+ * invent one.
+ */
+type VideoObjectInput = {
+  id: string;
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  contentUrl: string;
+  embedUrl: string;
+};
+
+function youTubeUrls(videoId: string) {
+  return {
+    contentUrl: `https://www.youtube.com/watch?v=${videoId}`,
+    embedUrl: `https://www.youtube-nocookie.com/embed/${videoId}`,
+  };
+}
+
+function videoObjectSchema(video: VideoObjectInput) {
+  return {
+    "@type": "VideoObject",
+    "@id": video.id,
+    name: video.name,
+    description: video.description,
+    thumbnailUrl: video.thumbnailUrl,
+    uploadDate: video.uploadDate,
+    contentUrl: video.contentUrl,
+    embedUrl: video.embedUrl,
+    publisher: { "@id": organizationId },
+    inLanguage: "en-US",
+  };
+}
+
 function testimonialVideoDescription(testimonial: (typeof testimonials)[number]) {
   return `${testimonial.name}, ${testimonial.company} client testimonial for Dynamic Dreamz. ${testimonial.quote}`;
 }
 
 function testimonialVideoSchema() {
-  return testimonials.map((testimonial) => ({
-    "@type": "VideoObject",
-    "@id": `${siteConfig.url}#testimonial-video-${testimonial.videoId}`,
-    name: testimonial.title,
-    description: testimonialVideoDescription(testimonial),
-    thumbnailUrl: `https://i.ytimg.com/vi/${testimonial.videoId}/hqdefault.jpg`,
-    uploadDate: testimonial.videoUploadDate,
-    contentUrl: `https://www.youtube.com/watch?v=${testimonial.videoId}`,
-    embedUrl: `https://www.youtube-nocookie.com/embed/${testimonial.videoId}`,
-    publisher: { "@id": organizationId },
-    inLanguage: "en-US",
-  }));
+  return testimonials.map((testimonial) =>
+    videoObjectSchema({
+      id: `${siteConfig.url}#testimonial-video-${testimonial.videoId}`,
+      name: testimonial.title,
+      description: testimonialVideoDescription(testimonial),
+      thumbnailUrl: `https://i.ytimg.com/vi/${testimonial.videoId}/hqdefault.jpg`,
+      uploadDate: testimonial.videoUploadDate,
+      ...youTubeUrls(testimonial.videoId),
+    }),
+  );
 }
 
 export function createHomePageSchema() {
@@ -80,7 +130,7 @@ export function createHomePageSchema() {
         "@id": organizationId,
         name: siteConfig.name,
         legalName: siteConfig.legalName,
-        url: siteConfig.url,
+        url: homeUrl,
         logo: absoluteUrl(siteConfig.logo),
         description:
           "Dynamic Dreamz is a Shopify Platinum Partner and Shopify Plus agency providing development, migration, B2B, CRO, mobile apps, integrations, white-label delivery and ongoing support for global brands and digital agencies.",
@@ -171,7 +221,7 @@ export function createHomePageSchema() {
       {
         "@type": "WebSite",
         "@id": websiteId,
-        url: siteConfig.url,
+        url: homeUrl,
         name: siteConfig.name,
         publisher: { "@id": organizationId },
         inLanguage: "en-US",
@@ -179,7 +229,7 @@ export function createHomePageSchema() {
       {
         "@type": "WebPage",
         "@id": webPageId,
-        url: siteConfig.url,
+        url: homeUrl,
         name: pageSeo.home.title,
         dateModified: modifiedAt,
         description: pageSeo.home.description,
@@ -196,7 +246,7 @@ export function createHomePageSchema() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: siteConfig.url,
+            item: homeUrl,
           },
         ],
       },
@@ -216,7 +266,7 @@ export function createAboutPageSchema() {
         "@id": organizationId,
         name: siteConfig.name,
         legalName: siteConfig.legalName,
-        url: siteConfig.url,
+        url: homeUrl,
         logo: absoluteUrl(siteConfig.logo),
         description:
           "Dynamic Dreamz is a Shopify Platinum Partner and ecommerce development agency founded in 2006, with more than 150 experts delivering web, mobile and digital commerce solutions.",
@@ -241,7 +291,7 @@ export function createAboutPageSchema() {
       {
         "@type": "WebSite",
         "@id": websiteId,
-        url: siteConfig.url,
+        url: homeUrl,
         name: siteConfig.name,
         publisher: { "@id": organizationId },
         inLanguage: "en-US",
@@ -272,7 +322,7 @@ export function createAboutPageSchema() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: siteConfig.url,
+            item: homeUrl,
           },
           {
             "@type": "ListItem",
@@ -282,18 +332,15 @@ export function createAboutPageSchema() {
           },
         ],
       },
-      {
-        "@type": "VideoObject",
-        "@id": `${aboutPageUrl}#company-video`,
+      videoObjectSchema({
+        id: `${aboutPageUrl}#company-video`,
         name: "Meet the team at Dynamic Dreamz",
         description:
           "An introduction to the Dynamic Dreamz ecommerce, web development and digital solutions team.",
         thumbnailUrl: absoluteUrl("/assets/about/hero-video-poster.webp"),
-        contentUrl: "https://www.youtube.com/watch?v=0GEJ928rBnM",
-        embedUrl: "https://www.youtube-nocookie.com/embed/0GEJ928rBnM",
-        publisher: { "@id": organizationId },
-        inLanguage: "en-US",
-      },
+        uploadDate: companyVideoUploadDate,
+        ...youTubeUrls(companyVideoId),
+      }),
     ],
   };
 }
@@ -328,7 +375,7 @@ export function createCareerPageSchema() {
         "@id": organizationId,
         name: siteConfig.name,
         legalName: siteConfig.legalName,
-        url: siteConfig.url,
+        url: homeUrl,
         logo: absoluteUrl(siteConfig.logo),
         foundingDate: "2006",
         numberOfEmployees: {
@@ -347,7 +394,7 @@ export function createCareerPageSchema() {
       {
         "@type": "WebSite",
         "@id": websiteId,
-        url: siteConfig.url,
+        url: homeUrl,
         name: siteConfig.name,
         publisher: { "@id": organizationId },
         inLanguage: "en-US",
@@ -380,7 +427,7 @@ export function createCareerPageSchema() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: siteConfig.url,
+            item: homeUrl,
           },
           {
             "@type": "ListItem",
@@ -404,7 +451,7 @@ export function createLifePageSchema() {
         "@id": organizationId,
         name: siteConfig.name,
         legalName: siteConfig.legalName,
-        url: siteConfig.url,
+        url: homeUrl,
         logo: absoluteUrl(siteConfig.logo),
         description:
           "Dynamic Dreamz is a Shopify Platinum Partner and ecommerce development agency founded in 2006, with more than 150 experts delivering web, mobile and digital commerce solutions.",
@@ -424,7 +471,7 @@ export function createLifePageSchema() {
       {
         "@type": "WebSite",
         "@id": websiteId,
-        url: siteConfig.url,
+        url: homeUrl,
         name: siteConfig.name,
         publisher: { "@id": organizationId },
         inLanguage: "en-US",
@@ -457,7 +504,7 @@ export function createLifePageSchema() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: siteConfig.url,
+            item: homeUrl,
           },
           {
             "@type": "ListItem",
@@ -507,7 +554,7 @@ export function createResourcesPageSchema() {
         "@id": organizationId,
         name: siteConfig.name,
         legalName: siteConfig.legalName,
-        url: siteConfig.url,
+        url: homeUrl,
         logo: absoluteUrl(siteConfig.logo),
         foundingDate: "2006",
         numberOfEmployees: { "@type": "QuantitativeValue", minValue: 150 },
@@ -520,7 +567,7 @@ export function createResourcesPageSchema() {
       {
         "@type": "WebSite",
         "@id": websiteId,
-        url: siteConfig.url,
+        url: homeUrl,
         name: siteConfig.name,
         publisher: { "@id": organizationId },
         inLanguage: "en-US",
@@ -560,17 +607,15 @@ export function createResourcesPageSchema() {
         numberOfItems: resourceArticles.length,
         itemListElement: articleItems,
       },
-      {
-        "@type": "VideoObject",
-        "@id": `${resourcesPageUrl}#company-video`,
+      videoObjectSchema({
+        id: `${resourcesPageUrl}#company-video`,
         name: "The Dynamic Dreamz story and Shopify resource guide",
-        description: "Meet the Dynamic Dreamz Shopify Platinum Partner team behind this ecommerce resource hub.",
+        description:
+          "Meet the Dynamic Dreamz Shopify Platinum Partner team behind this ecommerce resource hub.",
         thumbnailUrl: absoluteUrl("/assets/about/hero-video-poster.webp"),
-        contentUrl: "https://www.youtube.com/watch?v=0GEJ928rBnM",
-        embedUrl: "https://www.youtube-nocookie.com/embed/0GEJ928rBnM",
-        publisher: { "@id": organizationId },
-        inLanguage: "en-US",
-      },
+        uploadDate: companyVideoUploadDate,
+        ...youTubeUrls(companyVideoId),
+      }),
     ],
   };
 }

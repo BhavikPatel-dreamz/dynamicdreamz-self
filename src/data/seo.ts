@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { siteConfig } from "@/data/site";
+import { absoluteUrl } from "@/lib/seo";
 
 type OpenGraphType = "website" | "article";
 type SitemapChangeFrequency = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
@@ -88,7 +89,7 @@ export const pageSeo = {
   },
   about: {
     path: "/about-us/",
-    title: "Who we are | A crafting web development solutions",
+    title: "About Dynamic Dreamz | Shopify & Web Development Team",
     description:
       "Discover the visionary team at Dynamic Dreamz, experts in web development & digital solutions. Learn about our passion, expertise, and commitment.",
     keywords: [
@@ -103,7 +104,7 @@ export const pageSeo = {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
       height: 630,
-      alt: "Dynamic Dreamz web development and ecommerce agency",
+      alt: "Dynamic Dreamz founders and team at the Surat office",
     },
     sitemap: {
       changeFrequency: "monthly",
@@ -137,8 +138,7 @@ export const pageSeo = {
   },
   life: {
     path: "/life-dynamicdreamz/",
-    title:
-      "Discover Our Work Culture | Maintain Work-Life Balance | Equal Opportunity Employer",
+    title: "Life at Dynamic Dreamz | Culture & Work-Life Balance",
     description:
       "Discover life at Dynamic Dreamz, where collaboration, inclusion, professional growth and work-life balance shape an equal-opportunity workplace.",
     keywords: [
@@ -193,20 +193,73 @@ export type PageSeoKey = keyof typeof pageSeo;
 
 export const pageSeoEntries = Object.values(pageSeo);
 
+/**
+ * Build-time SEO length budget. These are hard ceilings/floors that fail
+ * `next build` (this runs when metadata is evaluated), NOT the soft ideals:
+ * aim for titles <=60 and descriptions ~140-160 (see docs/seo-launch-checklist.md).
+ * The hard caps sit at genuine SERP-truncation territory so an intentional
+ * live-parity title (e.g. the 63-char homepage title) passes, while an
+ * egregiously long one — like the 83-char Life title this guard was added for —
+ * cannot ship. This is the length-equivalent of the compile-time `uploadDate`
+ * guard on VideoObjects: a whole class of regression caught before deploy.
+ */
+const SEO_LENGTH_BUDGET = {
+  titleMin: 15,
+  titleMax: 65,
+  descriptionMin: 70,
+  descriptionMax: 165,
+} as const;
+
+function assertPageSeoWithinLengthBudget(pages: Record<string, PageSeoConfig>) {
+  const problems: string[] = [];
+
+  for (const [key, page] of Object.entries(pages)) {
+    const titleLength = page.title.length;
+    const descriptionLength = page.description.length;
+
+    if (titleLength < SEO_LENGTH_BUDGET.titleMin || titleLength > SEO_LENGTH_BUDGET.titleMax) {
+      problems.push(
+        `pageSeo.${key}.title is ${titleLength} chars (allowed ${SEO_LENGTH_BUDGET.titleMin}-${SEO_LENGTH_BUDGET.titleMax}).`,
+      );
+    }
+
+    if (
+      descriptionLength < SEO_LENGTH_BUDGET.descriptionMin ||
+      descriptionLength > SEO_LENGTH_BUDGET.descriptionMax
+    ) {
+      problems.push(
+        `pageSeo.${key}.description is ${descriptionLength} chars (allowed ${SEO_LENGTH_BUDGET.descriptionMin}-${SEO_LENGTH_BUDGET.descriptionMax}).`,
+      );
+    }
+  }
+
+  if (problems.length > 0) {
+    throw new Error(
+      `SEO length budget exceeded (fix in src/data/seo.ts):\n- ${problems.join("\n- ")}`,
+    );
+  }
+}
+
+assertPageSeoWithinLengthBudget(pageSeo);
+
 function createPageMetadata(page: PageSeoConfig): Metadata {
   const socialDescription = page.socialDescription ?? page.description;
+  // Canonical and og:url resolve through `absoluteUrl`, the same helper the
+  // sitemap and JSON-LD use, so every public URL shares one trailing-slash
+  // policy (aligned with `trailingSlash: true`) and cannot drift apart.
+  const canonicalUrl = absoluteUrl(page.path);
 
   return {
     title: { absolute: page.title },
     description: page.description,
     keywords: [...page.keywords],
     alternates: {
-      canonical: page.path,
+      canonical: canonicalUrl,
     },
     openGraph: {
       title: page.title,
       description: socialDescription,
-      url: page.path,
+      url: canonicalUrl,
       siteName: siteConfig.name,
       type: page.openGraphType,
       locale: "en_US",

@@ -22,8 +22,13 @@ not a final pass.
 
 Each indexable page needs:
 
-- `title`: unique, useful, normally under 60 characters.
-- `description`: unique, specific, normally around 140 to 160 characters.
+- `title`: unique, useful, normally under 60 characters. Defined in
+  `pageSeo` (`src/data/seo.ts`), where a build-time guard hard-fails
+  `npm run build` on titles outside 15-65 characters, so an over-long title
+  (Google truncates well before ~65) can never ship. 60 stays the target; 65 is
+  the backstop sized to allow exact live-parity titles.
+- `description`: unique, specific, normally around 140 to 160 characters. The
+  same build-time guard hard-fails descriptions outside 70-165 characters.
 - `alternates.canonical`: absolute or metadataBase-relative canonical path.
 - `openGraph.title`
 - `openGraph.description`
@@ -42,9 +47,16 @@ from the live URL before changing them. Preserve the current SEO intent unless
 there is a clear reason to improve it.
 
 Canonical, `og:url`, sitemap URLs, and internal links must use one consistent
-trailing-slash policy. Prefer Next.js default no-trailing-slash URLs unless
-`trailingSlash: true` is intentionally set in `next.config.ts`; then apply the
-chosen policy everywhere.
+trailing-slash policy. This project intentionally sets `trailingSlash: true` in
+`next.config.ts` because the live dynamicdreamz.com site canonicalizes to
+trailing-slash URLs and no-slash requests 301 there; serving the same URLs
+preserves indexed URL equity on migration. Do not change that value without
+re-auditing URL output. The policy has a single source of truth: `absoluteUrl`
+in `src/lib/seo.ts`. Canonical tags, `og:url`, the sitemap, and every JSON-LD
+`url`/`@id`/image all resolve through it, so build public URLs with `absoluteUrl`
+(or `page.path`, which flows through it) — never hand-format a canonical or
+`og:url`, which is how canonical and schema previously drifted to different
+slash policies.
 
 ## Structured Data
 
@@ -69,6 +81,13 @@ Common page types:
 
 Schema quality rules:
 
+- Build every `VideoObject` through the shared `videoObjectSchema()` helper in
+  `src/lib/schema.ts`. Never hand-author a `VideoObject` literal. The helper's
+  input type makes `uploadDate` mandatory, so `npm run build` fails if a video
+  ships without one. `uploadDate` is a Google-required property; a missing value
+  silently disqualifies the video from rich results. Always use the video's real
+  publish date (for YouTube, read `uploadDate` from the watch page); never invent
+  one.
 - Review/rating schema must match visible page claims or be scoped to the exact
   source it represents.
 - Do not mix one aggregate rating with unrelated visible rating badges.
