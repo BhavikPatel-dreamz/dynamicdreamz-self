@@ -95,8 +95,8 @@ function ProjectMedia({ project }: { project: Project }) {
 
   if (project.media.type === "video") {
     return (
-      <video className={mediaClass} autoPlay muted loop playsInline preload="metadata" aria-hidden="true" tabIndex={-1}>
-        <source src={project.media.src} type="video/mp4" />
+      <video className={mediaClass} autoPlay muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1}>
+        <source src={project.media.src} type="video/mp4" media="(min-width: 768px)" />
       </video>
     );
   }

@@ -90,8 +90,14 @@ Core proof points from the live site:
   filename is vague, hashed, keyword-stuffed, or odd, rename the local copy to a
   clean kebab-case name that describes the asset and page/context.
 - Build with App Router conventions for the installed Next.js version.
-- Prefer Server Components. Use `"use client"` only for the smallest interactive
-  component boundary.
+- Prefer Server Components everywhere possible. Page sections and layout
+  sections should be Server Components by default so content, headings, images,
+  links, metadata, and schema render without client JavaScript.
+- Use `"use client"` only for the smallest interactive boundary that genuinely
+  needs browser state, event handlers, timers, observers, measurements, or
+  browser APIs. Do not make an entire page or section a Client Component when
+  only a menu, accordion, carousel, tab control, form widget, or animation
+  controller needs interactivity.
 - Every route must ship with production SEO: metadata, canonical URL, Open Graph
   data, Twitter data, semantic headings, alt text, and structured data where it
   fits the page type.
@@ -131,6 +137,11 @@ public/assets/            Project-owned images, logos, icons, OG assets
 
 Keep page content structured and reusable. Avoid scattering large arrays of copy
 inside page components once content repeats across routes.
+
+Create one component for each meaningful visual/business section when it keeps a
+page readable, but keep those section components server-rendered unless they
+need direct browser interactivity. Extract the interactive part into a small
+Client Component instead of moving the full section to the client.
 
 ## Quality Bar
 

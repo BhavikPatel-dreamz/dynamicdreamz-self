@@ -1,16 +1,16 @@
 import type { MetadataRoute } from "next";
 
 import { siteConfig } from "@/data/site";
+import { absoluteUrl, getBuildDate } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${siteConfig.url}/`,
-      lastModified: new Date("2026-08-10"),
+      url: siteConfig.url,
+      lastModified: getBuildDate(),
       changeFrequency: "weekly",
       priority: 1,
-      images: [`${siteConfig.url}/assets/og/homepage.png`],
+      images: [absoluteUrl("/assets/og/homepage.png")],
     },
   ];
 }
-

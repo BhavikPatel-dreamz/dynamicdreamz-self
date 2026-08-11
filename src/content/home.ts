@@ -228,7 +228,7 @@ export const testimonials: Testimonial[] = [
     name: "Zoe Wang",
     company: "Maison Zifan",
     companyHref: "https://maisonzifan.com/",
-    avatar: "/assets/testimonials/zoe-wang.png",
+    avatar: "/assets/testimonials/zoe-wang.webp",
     portrait: "/assets/testimonials/zoe-wang-full.webp",
     logo: "/assets/testimonials/maison-zifan-logo.svg",
     logoAlt: "Maison Zifan logo",

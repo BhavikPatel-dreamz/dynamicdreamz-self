@@ -68,9 +68,20 @@ project uses Next.js 16.3.0 and may differ from older App Router examples.
 ## Implementation Standards
 
 - Use TypeScript and keep types close to shared content/data.
-- Prefer Server Components. Add client components only for state, browser APIs,
+- Prefer Server Components by default. Pages, layout pieces, and meaningful
+  page sections should render on the server unless they genuinely need browser
+  interactivity.
+- Add Client Components only for the smallest interactive island that needs
+  state, browser APIs, event handlers, timers, observers, measurements,
   animation controls, forms that need client interactivity, or UI widgets.
-- Keep route files thin. Put repeated sections in `src/components/sections/`.
+- Do not mark an entire page or section with `"use client"` when only a menu,
+  accordion, carousel, tabs, video control, header behavior, or animation
+  controller needs it.
+- Keep route files thin. Put meaningful visual/business sections in
+  `src/components/sections/`, and keep those section components as Server
+  Components whenever possible.
+- Use small Client Components inside server-rendered sections for interactive
+  controls.
 - Put navigation, company stats, service lists, route metadata, and page content
   in `src/data/` or `src/content/` when reused.
 - Style with clean Tailwind utilities and reusable components. Do not add custom
@@ -180,7 +191,8 @@ When migrating a page from the old site:
 8. Rebuild the page to match the live page first. Make improvements only when
    they improve production quality, accessibility, performance, or SEO without
    losing the original search intent.
-9. Build the page using shared components where appropriate.
+9. Build the page using shared Server Components for major sections where
+   appropriate, with tiny Client Components only for necessary interactivity.
 10. Add page metadata, canonical URL, OG image, and structured data.
 11. Add redirect only if the final URL changes.
 12. Add the route to sitemap data.

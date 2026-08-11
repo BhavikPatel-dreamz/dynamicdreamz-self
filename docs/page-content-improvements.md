@@ -42,16 +42,16 @@ Primary SEO intent:
 
 ## Home (`/`)
 
-Status: suggested
-Last reviewed: 2026-08-10
+Status: implemented
+Last reviewed: 2026-08-11
 Primary SEO intent: Shopify Plus agency, Shopify Platinum Partner, ecommerce
 and mobile development company.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Review/rating proof copy | Visible badges and schema rating may not describe the same rating source. | Keep visible rating claims source-specific, for example "Clutch 4.9 rating" and "Trustpilot 4.9 rating", or remove aggregate-style wording unless it matches schema exactly. | Prevent mismatch between visible review claims and structured data. | High | suggested |
-| Video testimonial descriptions | Video carousel has strong testimonials, but schema-ready descriptions may not be visible for every video. | Add concise visible testimonial captions with client name, company, and value outcome where approved. | Supports VideoObject schema and improves E-E-A-T. | Medium | suggested |
-| Internal-link anchor text | Many navigation/service links are migration pending. | As pages ship, use descriptive anchors such as "Shopify Plus agency", "Shopify migration services", and "white label Shopify development" instead of generic labels where natural. | Improves internal-link context after routes are built. | Medium | suggested |
+| Review/rating proof copy | Visible badges and schema rating may not describe the same rating source. | Removed the ambiguous Organization `aggregateRating`; visible source-specific badge copy remains unchanged. | Prevents mismatch between visible review claims and structured data. | High | implemented |
+| Video testimonial descriptions | Video carousel has strong testimonials, but schema-ready descriptions may not be visible for every video. | Added VideoObject schema from the visible testimonial title, client, company, quote, YouTube URL, embed URL, and thumbnail URL. | Supports video discovery and improves E-E-A-T without inventing new UI claims. | Medium | implemented |
+| Internal-link anchor text | Many navigation/service links are migration pending. | As pages ship, use descriptive anchors such as "Shopify Plus agency", "Shopify migration services", and "white label Shopify development" instead of generic labels where natural. | Improves internal-link context after routes are built. Broken planned routes are excluded from local SEO scoring until launch. | Medium | deferred |
 
 ## About Us (`/about-us`)
 

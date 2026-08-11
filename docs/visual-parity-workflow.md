@@ -59,8 +59,12 @@ Record these values before rebuilding:
   base rules only.
 - If CSS is truly unavoidable for keyframes or complex browser behavior, scope
   it to the component instead of putting it in `globals.css`.
+- Keep visually rich page sections as Server Components unless the section
+  itself needs browser-only behavior.
 - Use a Client Component only when animation or interaction needs browser state,
-  measurements, observers, timers, or event handlers.
+  measurements, observers, timers, event handlers, or browser APIs.
+- If only part of a section is interactive, extract that part as a small Client
+  Component and keep the surrounding section server-rendered.
 - Add `prefers-reduced-motion` handling for meaningful animations.
 - Prefer transform and opacity animations for performance. Avoid scroll or
   animation code that causes layout thrashing.

@@ -120,6 +120,8 @@ Schema quality rules:
   keyword-stuffed.
 - Decorative images have empty alt text only when they are truly decorative.
 - Pages do not require client JavaScript for primary content to render.
+- Major content sections are Server Components by default; Client Components are
+  limited to small interactive controls.
 - Canonicals match final production URLs.
 - Redirects preserve important old URLs.
 - Twitter metadata includes approved `twitter:site` and `twitter:creator`

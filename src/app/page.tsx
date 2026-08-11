@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 import { HomePage } from "@/components/sections/home-page";
-import { homePageSchema, serializeJsonLd } from "@/lib/schema";
+import { siteConfig } from "@/data/site";
+import { createHomePageSchema, serializeJsonLd } from "@/lib/schema";
 
 const title = "Shopify Plus Agency & Shopify Platinum Partner | Dynamic Dreamz";
 const description =
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title,
     description: socialDescription,
     url: "/",
-    siteName: title,
+    siteName: siteConfig.name,
     type: "website",
     locale: "en_US",
     images: [
@@ -62,7 +63,7 @@ export default function Home() {
     <main id="main-content">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: serializeJsonLd(homePageSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(createHomePageSchema()) }}
       />
       <HomePage />
     </main>
