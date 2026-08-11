@@ -18,6 +18,7 @@ function testimonialVideoSchema() {
     name: testimonial.title,
     description: testimonialVideoDescription(testimonial),
     thumbnailUrl: `https://i.ytimg.com/vi/${testimonial.videoId}/hqdefault.jpg`,
+    uploadDate: testimonial.videoUploadDate,
     contentUrl: `https://www.youtube.com/watch?v=${testimonial.videoId}`,
     embedUrl: `https://www.youtube-nocookie.com/embed/${testimonial.videoId}`,
     publisher: { "@id": organizationId },

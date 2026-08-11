@@ -183,6 +183,7 @@ export type Testimonial = {
   logo?: string;
   logoAlt?: string;
   videoId: string;
+  videoUploadDate: string;
 };
 
 export const testimonials: Testimonial[] = [
@@ -197,6 +198,7 @@ export const testimonials: Testimonial[] = [
     logo: "/assets/testimonials/max-sweets-logo.webp",
     logoAlt: "Max Sweets logo",
     videoId: "Vc9FH6ZeoXY",
+    videoUploadDate: "2024-08-16",
   },
   {
     title: "Fast. Reliable. Exactly What You Asked For.",
@@ -209,6 +211,7 @@ export const testimonials: Testimonial[] = [
     logo: "/assets/testimonials/myla-jane-logo.webp",
     logoAlt: "Myla Jane logo",
     videoId: "_ay_egf5GKw",
+    videoUploadDate: "2025-11-13",
   },
   {
     title: "Our trusted Shopify partner for six years and still going strong.",
@@ -221,6 +224,7 @@ export const testimonials: Testimonial[] = [
     logo: "/assets/testimonials/art-copenhagen-logo.svg",
     logoAlt: "Art Copenhagen logo",
     videoId: "_9uT-dRcQvo",
+    videoUploadDate: "2025-11-28",
   },
   {
     title: "A partner who turns challenges into clarity and fast solutions.",
@@ -233,6 +237,7 @@ export const testimonials: Testimonial[] = [
     logo: "/assets/testimonials/maison-zifan-logo.svg",
     logoAlt: "Maison Zifan logo",
     videoId: "6Ni9tlZ7HKE",
+    videoUploadDate: "2025-12-03",
   },
   {
     title: "Professional execution with outstanding support, before and after launch.",
@@ -245,6 +250,7 @@ export const testimonials: Testimonial[] = [
     logo: "/assets/testimonials/clinton-de-vere-logo.svg",
     logoAlt: "Clinton De Vere Art logo",
     videoId: "_rQeMWcz_gA",
+    videoUploadDate: "2026-02-10",
   },
   {
     title: "From planning to execution, every project is handled with precision.",
@@ -257,6 +263,7 @@ export const testimonials: Testimonial[] = [
     logo: "/assets/testimonials/lgxnds-logo.svg",
     logoAlt: "LGXNDS logo",
     videoId: "WQWG2niydpE",
+    videoUploadDate: "2026-06-03",
   },
   {
     title: "Dynamic Dreamz: Where Excellence Meets Reliable Communication",
@@ -269,6 +276,7 @@ export const testimonials: Testimonial[] = [
     logo: "/assets/testimonials/conscious-poker-logo.webp",
     logoAlt: "Conscious Poker logo",
     videoId: "o4JnTGEH-Yk",
+    videoUploadDate: "2024-05-15",
   },
   {
     title: "Delivers a Game-Changing Website, Surging Sales by 12% in Just 7 Days!",
@@ -281,6 +289,7 @@ export const testimonials: Testimonial[] = [
     logo: "/assets/testimonials/quiet-events-logo.webp",
     logoAlt: "Quiet Events logo",
     videoId: "B3KnREB4Bro",
+    videoUploadDate: "2024-05-15",
   },
   {
     title: "Transforming Web Presence: Dynamic Dreamz's Six-Month Success Story",
@@ -292,6 +301,7 @@ export const testimonials: Testimonial[] = [
     logo: "/assets/testimonials/elite-element-electronics-logo.svg",
     logoAlt: "Elite Element Electronics logo",
     videoId: "-IpNUAco1OA",
+    videoUploadDate: "2024-05-15",
   },
   {
     title: "Dynamic Dreamz, Your Go-To Digital Agency for Exceptional Web Solutions",
@@ -304,6 +314,7 @@ export const testimonials: Testimonial[] = [
     logo: "/assets/testimonials/tea-now-logo.webp",
     logoAlt: "Tea Now logo",
     videoId: "oNDPBGO83G4",
+    videoUploadDate: "2024-05-15",
   },
   {
     title: "Dynamic Dreamz: Setting the Standard in Web Development Excellence",
@@ -313,6 +324,7 @@ export const testimonials: Testimonial[] = [
     avatar: "/assets/testimonials/brandon.webp",
     portrait: "/assets/testimonials/brandon-full.webp",
     videoId: "AoglCZQC0RU",
+    videoUploadDate: "2024-05-15",
   },
 ];
 
