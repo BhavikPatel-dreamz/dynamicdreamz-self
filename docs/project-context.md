@@ -212,6 +212,14 @@ or separately approved assets:
 - Store project-owned files under `public/assets/`.
 - Suggested folders: `brand`, `logos`, `clients`, `case-studies`, `services`,
   `team`, `testimonials`, `blog`, `og`.
+- Search the full `public/assets/` tree before downloading, copying, or renaming
+  media. Compare content hashes for likely matches and visually inspect files
+  when encodings differ. Reuse an existing canonical asset whenever the visual
+  content is the same.
+- If the same asset is used on multiple pages, keep one copy in a neutral
+  purpose-based folder such as `public/assets/team/` and let each page provide
+  its own contextual alt text in content data. Do not create page-local copies
+  just to give the file a different page-specific name.
 - When a live-site asset is required for parity, download or copy it as a
   migration-time action and commit/use the local project copy. Never leave the
   final `src`, CSS URL, OG image URL, favicon URL, or schema image URL pointing
@@ -252,6 +260,23 @@ or separately approved assets:
   becomes prominent content.
 - Keep service pages specific to search intent; avoid one generic template with
   swapped keywords.
+
+## Component Reuse Policy
+
+- Search `src/components/**` and existing imports/usages before creating any
+  component, hook, interactive control, layout primitive, or page section.
+- Reuse a suitable existing component directly. When the difference is small
+  and belongs to the same visual/semantic contract, add a focused typed prop,
+  slot, or variant instead of copying the component.
+- Keep shared primitives in `src/components/ui/`, shared site chrome in
+  `src/components/layout/`, and genuinely reusable marketing sections in
+  `src/components/sections/` rather than nesting them under one page.
+- Keep page-specific content in typed content/data files so one reusable
+  component can render different copy without duplicating its implementation.
+- Do not force unrelated designs or semantics into one oversized component.
+  Create a new component when reuse would make the API confusing, introduce
+  irrelevant conditionals, or weaken accessibility; record that reason during
+  implementation review.
 
 ## Design Direction
 

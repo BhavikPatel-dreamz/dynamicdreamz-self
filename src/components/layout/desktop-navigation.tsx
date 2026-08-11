@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { ButtonLink } from "@/components/ui/button-link";
@@ -154,6 +155,7 @@ const pointerClasses: Record<string, string> = {
 export function DesktopNavigation() {
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const navigationRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     function closeOnEscape(event: KeyboardEvent) {
@@ -182,10 +184,17 @@ export function DesktopNavigation() {
         {primaryNavigation.map((group) => {
           const isOpen = openGroup === group.slug;
           const menuId = `desktop-${group.slug}-menu`;
+          const groupLinks = group.kind === "services"
+            ? group.sections.flatMap((section) => section.links)
+            : group.items;
+          const isActive = groupLinks.some(
+            (link) => pathname === link.href.replace(/\/$/, ""),
+          );
 
           return (
             <li
               className="group/desktop-nav static py-9 pr-[30px] max-[1199px]:pr-3.5"
+              data-active={isActive}
               data-open={isOpen}
               key={group.slug}
               onMouseEnter={() => setOpenGroup(group.slug)}
@@ -196,7 +205,7 @@ export function DesktopNavigation() {
               }}
             >
               <button
-                className="flex cursor-pointer items-center gap-1.5 border-0 bg-transparent p-0 text-base leading-[normal] font-medium whitespace-nowrap text-[#252c15] hover:text-brand-red group-data-[open=true]/desktop-nav:text-brand-red max-[1199px]:text-sm [&_svg]:transition-transform [&_svg]:duration-300 group-data-[open=true]/desktop-nav:[&_svg]:rotate-180"
+                className="flex cursor-pointer items-center gap-1.5 border-0 bg-transparent p-0 text-base leading-[normal] font-medium whitespace-nowrap text-[#252c15] hover:text-brand-red group-data-[active=true]/desktop-nav:text-brand-red group-data-[open=true]/desktop-nav:text-brand-red max-[1199px]:text-sm [&_svg]:transition-transform [&_svg]:duration-300 group-data-[open=true]/desktop-nav:[&_svg]:rotate-180"
                 type="button"
                 aria-expanded={isOpen}
                 aria-haspopup="true"
@@ -229,8 +238,12 @@ export function DesktopNavigation() {
         })}
         <li className="static py-9 pr-0">
           <Link
-            className="flex items-center text-base leading-[normal] font-medium whitespace-nowrap text-[#252c15] hover:text-brand-red max-[1199px]:text-sm"
+            className={cn(
+              "flex items-center text-base leading-[normal] font-medium whitespace-nowrap text-[#252c15] hover:text-brand-red max-[1199px]:text-sm",
+              pathname === "/contact-us" && "text-brand-red",
+            )}
             href="/contact-us/"
+            aria-current={pathname === "/contact-us" ? "page" : undefined}
           >
             Contact us
           </Link>

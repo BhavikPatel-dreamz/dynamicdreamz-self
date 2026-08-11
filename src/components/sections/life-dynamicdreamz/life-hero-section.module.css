@@ -1,0 +1,42 @@
+.underlinePath {
+  stroke-dasharray: 279.8335876464844px;
+  animation: life-teamwork-underline 3s cubic-bezier(0.47, 0, 0.745, 0.715)
+    both infinite;
+}
+
+.leaf {
+  animation: life-teamwork-leaf 3s ease infinite;
+}
+
+@keyframes life-teamwork-underline {
+  0% {
+    stroke-dashoffset: 279.8335876464844px;
+  }
+
+  75%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes life-teamwork-leaf {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-15deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .underlinePath,
+  .leaf {
+    animation: none;
+  }
+
+  .underlinePath {
+    stroke-dashoffset: 0;
+  }
+}

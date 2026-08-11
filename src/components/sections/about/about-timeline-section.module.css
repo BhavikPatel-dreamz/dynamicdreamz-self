@@ -1,0 +1,68 @@
+.marker {
+  position: absolute;
+  left: 50%;
+  z-index: 1;
+  width: 26px;
+  height: 26px;
+  transform: translateX(-50%);
+}
+
+.marker::before,
+.firstMarker::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  height: 2px;
+  border: 0;
+  background-image: linear-gradient(90deg, #000, #000 70%, transparent 70%, transparent 100%);
+  background-size: 20px 1px;
+  content: "";
+}
+
+.forwardMarker {
+  top: -35px;
+}
+
+.forwardMarker::before {
+  top: 30px;
+  left: 11px;
+  width: calc(100% + 390px);
+  transform: rotate(5deg);
+  transform-origin: left center;
+}
+
+.reverseMarker {
+  bottom: -110px;
+}
+
+.reverseMarker::before {
+  bottom: 28px;
+  left: 11px;
+  width: calc(100% + 390px);
+  transform: rotate(-5deg);
+  transform-origin: left center;
+}
+
+.firstMarker::after {
+  top: 5px;
+  right: 10px;
+  width: 215px;
+  transform: rotate(4deg);
+  transform-origin: right center;
+}
+
+.penultimateMarker::before {
+  width: calc(100% + 170px);
+  transform: rotate(-11deg);
+}
+
+@media (max-width: 575px) {
+  .forwardMarker::before,
+  .reverseMarker::before {
+    width: calc(100% + 290px);
+  }
+
+  .firstMarker::after {
+    top: 8px;
+  }
+}
