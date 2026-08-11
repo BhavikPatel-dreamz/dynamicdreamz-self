@@ -30,17 +30,23 @@ The agent should then read:
    View Page Source for content structure, headings, CTAs, metadata intent,
    images, links, schema, accessibility details, style details, and redirect
    needs.
-4. Decide the production structure before touching code.
-5. Implement with local data/content and project-owned assets.
-6. Add SEO metadata and structured data as part of the same change, not as a
+4. For visual work, create or update a capture note in
+   `docs/visual-captures/` before touching UI code. Record live screenshots,
+   local screenshots, CSS/JS sources inspected, computed styles, interaction
+   states, animation timings, responsive behavior, and remaining differences.
+5. Decide the production structure before touching code.
+6. Implement with local data/content and project-owned assets.
+7. Add SEO metadata and structured data as part of the same change, not as a
    later cleanup.
-7. For visual work, run the visual parity workflow and compare live vs local
-   desktop, tablet, mobile, hover, focus, and animation states.
-8. Check responsive behavior, accessibility, performance risk, and broken links.
-9. If SEO/content quality can improve through visible copy changes, update
+8. For visual work, run the visual parity workflow and compare live vs local
+   desktop, tablet, mobile, hover, focus, active/open, scrolled, and animation
+   states.
+9. Check responsive behavior, accessibility, performance risk, and broken links.
+10. If SEO/content quality can improve through visible copy changes, update
    `docs/page-content-improvements.md` with page-specific suggestions.
-10. Run verification commands.
-11. Summarize changes, verification, and any missing assets or content approvals.
+11. Run verification commands.
+12. Summarize changes, verification, visual capture notes, and any missing
+    assets or content approvals.
 
 ## Before Editing Code
 
@@ -84,6 +90,9 @@ project uses Next.js 16.3.0 and may differ from older App Router examples.
   controls.
 - Put navigation, company stats, service lists, route metadata, and page content
   in `src/data/` or `src/content/` when reused.
+- Keep static page SEO metadata in `src/data/seo.ts`. Page files should import
+  from this shared source instead of defining full metadata objects inline,
+  unless the route needs dynamic `generateMetadata`.
 - Style with clean Tailwind utilities and reusable components. Do not add custom
   page, section, component, animation, or one-off layout CSS to
   `src/app/globals.css`.
@@ -275,7 +284,7 @@ For UI work, also run:
 npm run dev
 ```
 
-Then inspect at least:
+Then capture and compare live/local screenshots at least:
 
 - Mobile width around 390px
 - Tablet width around 768px
@@ -290,6 +299,10 @@ Check for:
 - Images load with correct aspect ratio
 - Page source/head includes expected SEO metadata
 - Sitemap and robots output are valid when touched
+- Hover, focus, active/open, scrolled, and animated states match the live-site
+  capture or are documented as intentional differences
+- The relevant `docs/visual-captures/` note lists live CSS/JS sources inspected
+  and final responsive comparison results
 
 ## Done Criteria
 
@@ -299,6 +312,9 @@ A task is complete only when:
 - It follows the project structure.
 - It uses local assets/content, not old-site runtime URLs.
 - SEO was handled for touched routes.
+- Visual parity evidence was recorded for UI changes, including responsive and
+  animation checks, or the final response clearly explains why it could not be
+  verified.
 - Lint and build were run or a clear blocker is documented.
 - The final response lists changed files, verification, and open content/assets
   only if any remain.

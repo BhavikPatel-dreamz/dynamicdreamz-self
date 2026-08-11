@@ -7,12 +7,40 @@ The goal is exact visual and behavior parity, not byte-for-byte old code. Use
 the live CSS/JS as migration reference, then rebuild the same result with local,
 maintainable Next.js components and Tailwind utilities.
 
+## Non-Negotiable Gate
+
+For any visual migration or visual fix, create or update a capture note before
+editing UI code:
+
+```text
+docs/visual-captures/<route-or-component>.md
+```
+
+Skip this only for copy-only, metadata-only, or link-only work that does not
+change layout, style, assets, animation, or responsive behavior.
+
+The capture note must prove what was inspected, not just say "matched live":
+
+- Live URL, local route, date checked, browser, and viewport sizes.
+- Live screenshots captured at desktop, tablet, and mobile.
+- Local screenshots captured at the same viewport sizes after implementation.
+- CSS/JS files or DevTools panels inspected for selectors, computed styles,
+  keyframes, transitions, and scroll/interaction scripts.
+- Responsive differences observed between desktop, tablet, and mobile.
+- Interaction and animation states checked.
+- Any intentional differences from the live site and why they are acceptable.
+
+Do not claim visual parity in a final response unless this evidence exists or
+the final response clearly says visual parity was not verified.
+
 ## Capture First
 
 Before implementing visual work:
 
 1. Open the live URL and the matching local route.
-2. Capture desktop, tablet, and mobile screenshots of the live page.
+2. Capture desktop, tablet, and mobile screenshots of the live page at roughly
+   1440x900, 768x1024, and 390x844. Add extra widths if the live CSS has
+   important breakpoints.
 3. Inspect View Page Source for linked CSS, scripts, preloads, fonts, images,
    metadata, schema, and asset references.
 4. Inspect computed styles for each major pattern: header, nav, mega menu,
@@ -28,6 +56,27 @@ Before implementing visual work:
 
 If a network command is required to fetch page source, CSS, JS, or assets for
 migration-time inspection, request approval instead of guessing.
+
+## Live CSS And JS Capture
+
+The rendered page and View Page Source are not enough. Before rebuilding a
+visual section:
+
+1. Identify the live DOM selectors/classes for the section.
+2. Inspect computed styles for representative elements, including default,
+   hover, focus, active/open, and scrolled states.
+3. Open the live CSS files that affect the section and search for the relevant
+   selectors, responsive media queries, pseudo-elements, `@keyframes`,
+   `transition`, and `animation` declarations.
+4. Open the live JS files that affect motion or interaction and search for
+   slider, accordion, counter, sticky, scroll-trigger, reveal, marquee, and
+   menu behavior.
+5. Record exact values that affect visual parity: dimensions, offsets, gaps,
+   colors, type sizes, line heights, z-index, transform origins, opacity,
+   easing, duration, delay, repeat count, and final/resting state.
+6. If live scripts are bundled or minified, use DevTools computed styles,
+   Animation panel, screenshots, short recordings, and DOM state changes to
+   infer behavior. Mark inferred values clearly in the capture note.
 
 ## Style Capture Details
 
@@ -68,19 +117,34 @@ Record these values before rebuilding:
 - Add `prefers-reduced-motion` handling for meaningful animations.
 - Prefer transform and opacity animations for performance. Avoid scroll or
   animation code that causes layout thrashing.
+- Use stable dimensions and explicit responsive constraints for repeated cards,
+  sliders, accordions, logos, counters, and media frames so local content cannot
+  create layout shift or overflow that the live site does not have.
+- Preserve the live interaction model before improving it: click targets,
+  active item defaults, autoplay/pause behavior, swipe/drag behavior, keyboard
+  behavior, sticky offsets, and menu close behavior should be captured before
+  implementation.
+- When Tailwind defaults differ from the live site, use project tokens or
+  Tailwind arbitrary values to match the live value first. Refactor into shared
+  tokens/components only after the same value repeats.
 
 ## Verification Loop
 
 Before calling visual work complete:
 
 1. Run the local dev server.
-2. Compare live and local screenshots at roughly 390px, 768px, and 1440px.
-3. Check initial, hover, focus, open, scrolled, and animated states.
-4. Verify animation timing, easing, direction, delay, and final state against
+2. Capture local screenshots at the same viewport sizes used for the live
+   screenshots.
+3. Compare live and local screenshots side by side at roughly 390px, 768px, and
+   1440px.
+4. Check initial, hover, focus, open, scrolled, and animated states.
+5. Verify animation timing, easing, direction, delay, and final state against
    the live site.
-5. Verify no text overlap, layout shift, horizontal scroll, broken image crop,
+6. Verify no text overlap, layout shift, horizontal scroll, broken image crop,
    or missing responsive state.
-6. Inspect final code for live-site URLs and remove any runtime dependency.
+7. Inspect final code for live-site URLs and remove any runtime dependency.
+8. Update the capture note with remaining differences, fixed differences, and
+   the final verification result.
 
 If exact parity cannot be reached because an animation is hidden behind a script,
 asset, interaction, browser API, or approval blocker, document the missing detail

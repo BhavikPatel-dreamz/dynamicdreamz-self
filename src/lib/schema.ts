@@ -1,4 +1,5 @@
 import { testimonials } from "@/content/home";
+import { pageSeo } from "@/data/seo";
 import { siteConfig } from "@/data/site";
 import { absoluteUrl, getBuildDate } from "@/lib/seo";
 
@@ -6,7 +7,7 @@ const organizationId = `${siteConfig.url}#organization`;
 const websiteId = `${siteConfig.url}#website`;
 const webPageId = `${siteConfig.url}#home-page`;
 const breadcrumbId = `${siteConfig.url}#breadcrumb`;
-const aboutPageUrl = absoluteUrl("/about-us/");
+const aboutPageUrl = absoluteUrl(pageSeo.about.path);
 const aboutPageId = `${aboutPageUrl}#webpage`;
 const aboutBreadcrumbId = `${aboutPageUrl}#breadcrumb`;
 
@@ -140,10 +141,9 @@ export function createHomePageSchema() {
         "@type": "WebPage",
         "@id": webPageId,
         url: siteConfig.url,
-        name: "Shopify Plus Agency & Shopify Platinum Partner | Dynamic Dreamz",
+        name: pageSeo.home.title,
         dateModified: modifiedAt,
-        description:
-          "Established in 2006, Dynamic Dreamz is a Shopify Platinum Partner for Shopify Plus, migration, B2B, CRO, mobile apps, integrations and white-label delivery.",
+        description: pageSeo.home.description,
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },
         breadcrumb: { "@id": breadcrumbId },
@@ -211,9 +211,8 @@ export function createAboutPageSchema() {
         "@type": "AboutPage",
         "@id": aboutPageId,
         url: aboutPageUrl,
-        name: "Who we are | A crafting web development solutions",
-        description:
-          "Discover the visionary team at Dynamic Dreamz, experts in web development and digital solutions. Learn about our passion, expertise, and commitment.",
+        name: pageSeo.about.title,
+        description: pageSeo.about.description,
         dateModified: modifiedAt,
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },

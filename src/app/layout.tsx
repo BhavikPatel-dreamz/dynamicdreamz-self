@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import { ContactWidget } from "@/components/layout/contact-widget";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { siteConfig } from "@/data/site";
+import { rootMetadata } from "@/data/seo";
 
 import "./globals.css";
 
@@ -38,26 +38,7 @@ const montserrat = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-  title: {
-    default: "Shopify Plus Agency & Shopify Platinum Partner | Dynamic Dreamz",
-    template: "%s | Dynamic Dreamz",
-  },
-  description:
-    "Dynamic Dreamz is a Shopify Platinum Partner delivering Shopify Plus, migration, B2B, CRO, mobile apps, integrations and white-label development.",
-  applicationName: siteConfig.name,
-  creator: siteConfig.name,
-  publisher: siteConfig.legalName,
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  verification: {
-    google: "9HXcEYDK16thq7UBFdMPjzvGI4CrmknyeNJCv66f1c8",
-  },
-};
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
