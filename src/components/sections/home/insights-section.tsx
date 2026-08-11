@@ -11,7 +11,7 @@ export function InsightsSection() {
     <section className="min-h-[883px] overflow-hidden bg-white pt-20 pb-[60px] min-[768px]:max-[991px]:min-h-[806.61px] min-[768px]:max-[991px]:py-[50px] max-[767px]:min-h-[722.33px] max-[767px]:py-[50px]">
       <Container>
         <div className="mx-auto mb-[47px] max-w-[700px] text-center">
-          <h2 className="mb-6 text-[43px] leading-[1.2] font-medium max-[767px]:mb-4 max-[767px]:text-2xl">Featured Shopify Insights</h2>
+          <h2 className="mb-6 text-[43px] leading-[1.2] font-medium max-[767px]:mb-4 max-[767px]:text-2xl">Latest Blogs</h2>
           <p className="text-base leading-[1.9] font-semibold text-muted max-[767px]:text-sm">
             Practical guidance on Shopify Plus, migration, B2B, CRO, mobile commerce, performance and integrations from our in-house specialists.
           </p>

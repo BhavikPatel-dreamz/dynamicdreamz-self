@@ -66,10 +66,10 @@ export const mobileClientLogoRows = [
 ];
 
 export const companyStats = [
-  { value: "1B+", label: "Client Revenue Generated", icon: "/assets/icons/client-revenue.svg" },
-  { value: "150+", label: "Experts", icon: "/assets/icons/experts.svg" },
-  { value: "4500+", label: "Shopify stores built", icon: "/assets/icons/shopify-stores.svg" },
-  { value: "1100+", label: "Happy Clients", icon: "/assets/icons/happy-clients.svg" },
+  { value: "1B+", label: ["Client Revenue", "Generated"], icon: "/assets/icons/client-revenue.svg" },
+  { value: "150+", label: ["Experts"], icon: "/assets/icons/experts.svg" },
+  { value: "4500+", label: ["Shopify stores built"], icon: "/assets/icons/shopify-stores.svg" },
+  { value: "1100+", label: ["Happy Clients"], icon: "/assets/icons/happy-clients.svg" },
 ];
 
 export const showcaseImages: ImageItem[] = [

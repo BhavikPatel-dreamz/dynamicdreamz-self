@@ -75,8 +75,8 @@ Homepage sections found:
 - Our Expertise
 - Selected Shopify Plus & Enterprise Ecommerce Work
 - Brands That Have Grown With Us
-- Platforms and Integrations We Work With
-- Featured Shopify Insights
+- Our Partners
+- Latest Blogs
 - Large footer with company, services, mobile, white-label, and hire-developer
   links
 

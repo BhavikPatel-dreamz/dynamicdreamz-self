@@ -8,23 +8,23 @@ import { cn } from "@/lib/class-names";
 
 function DirectionArrow({ direction }: { direction: "previous" | "next" }) {
   return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
-      <path
-        d={direction === "previous" ? "m15 5-7 7 7 7M8 12h12" : "m9 5 7 7-7 7M4 12h12"}
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-      />
+    <svg
+      className={direction === "previous" ? "rotate-180" : undefined}
+      aria-hidden="true"
+      viewBox="0 0 20 19"
+      width="20"
+      height="20"
+      fill="none"
+    >
+      <path d="M1.25 7.95508C0.559644 7.95508 6.03528e-08 8.51472 0 9.20508C-6.03528e-08 9.89543 0.559644 10.4551 1.25 10.4551L1.25 9.20508L1.25 7.95508ZM19.1339 10.089C19.622 9.60081 19.622 8.80935 19.1339 8.3212L11.1789 0.366244C10.6908 -0.121911 9.89932 -0.121911 9.41117 0.366244C8.92301 0.854399 8.92301 1.64586 9.41117 2.13401L16.4822 9.20508L9.41116 16.2761C8.92301 16.7643 8.92301 17.5558 9.41116 18.0439C9.89932 18.5321 10.6908 18.5321 11.1789 18.0439L19.1339 10.089ZM1.25 9.20508L1.25 10.4551L18.25 10.4551L18.25 9.20508L18.25 7.95508L1.25 7.95508L1.25 9.20508Z" fill="#282828" />
     </svg>
   );
 }
 
 function PlayIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" width="25" height="25">
-      <path d="M8 5.5v13l10-6.5-10-6.5Z" fill="currentColor" />
+    <svg aria-hidden="true" viewBox="0 0 22 24" width="25" height="25" fill="none">
+      <path d="M19.5 8.33597C22.1667 9.87557 22.1667 13.7246 19.5 15.2642L5.99999 23.0584C3.33333 24.598 0 22.6735 0 19.5943V4.00584C0 0.926634 3.33333 -0.997863 6 0.541738L19.5 8.33597Z" fill="#282828" />
     </svg>
   );
 }
@@ -41,12 +41,12 @@ function TestimonialSlide({
   onPlay: (videoId: string) => void;
 }) {
   return (
-    <article className="flex min-h-[575.75px] w-full shrink-0 basis-full overflow-hidden rounded-[30px] min-[768px]:max-[991px]:mr-[15px] min-[768px]:max-[991px]:min-h-[806.17px] min-[768px]:max-[991px]:w-[calc(100%-15px)] min-[768px]:max-[991px]:basis-[calc(100%-15px)] max-[991px]:flex-col-reverse max-[767px]:min-h-[790.625px] max-[767px]:rounded-[20px]" aria-hidden={!isActive}>
-      <div className="flex w-1/2 flex-col justify-center rounded-[30px] border border-soft-line bg-white/50 px-[30px] py-[45px] min-[768px]:max-[991px]:min-h-[460.17px] min-[768px]:max-[991px]:p-4 max-[991px]:w-full max-[991px]:rounded-[0_0_20px_20px] max-[767px]:min-h-[447.625px] max-[767px]:p-4">
+    <article className="flex w-full shrink-0 basis-full overflow-hidden min-[768px]:max-[991px]:mr-[15px] min-[768px]:max-[991px]:w-[calc(100%-15px)] min-[768px]:max-[991px]:basis-[calc(100%-15px)] max-[991px]:flex-col-reverse max-[767px]:rounded-[20px] max-[991px]:justify-end" aria-hidden={!isActive}>
+      <div className="flex w-1/2 flex-col justify-center  overflow-hidden rounded-[30px] border border-soft-line bg-white/50 px-[30px] py-[45px] min-[768px]:max-[991px]:min-h-[460.17px] min-[768px]:max-[991px]:p-4 max-[991px]:w-full max-[991px]:rounded-[0_0_20px_20px] max-[767px]:p-4">
         <div className={cn("mb-[26px] flex h-[53px] items-center min-[768px]:max-[991px]:mb-4 max-[767px]:mb-4 max-[767px]:h-10 [&_img]:h-auto [&_img]:max-h-[53px] [&_img]:w-auto [&_img]:max-w-[225px] [&_img]:object-contain max-[767px]:[&_img]:max-h-10", !testimonial.logo && "invisible")}>
           {testimonial.logo ? <Image src={testimonial.logo} alt={testimonial.logoAlt ?? ""} width={225} height={53} /> : null}
         </div>
-        <h3 className="mb-5 max-w-[540px] pr-[78px] text-[26px] leading-[1.4] font-bold min-[768px]:max-[991px]:pr-0 min-[768px]:max-[991px]:text-[22px] max-[767px]:mb-4 max-[767px]:pr-0 max-[767px]:text-lg max-[767px]:leading-[normal]">{testimonial.title}</h3>
+        <h3 className="mb-5 max-w-[540px] pr-[78px] font-sans text-[26px] leading-[1.4] font-bold min-[768px]:max-[991px]:pr-0 min-[768px]:max-[991px]:text-[22px] max-[767px]:mb-4 max-[767px]:pr-0 max-[767px]:text-lg max-[767px]:leading-[normal]">{testimonial.title}</h3>
         <p className="mb-[26px] max-w-[90%] text-base leading-[1.72] font-medium text-muted max-[767px]:mb-4 max-[767px]:max-w-full max-[767px]:text-sm">{testimonial.quote}</p>
         <div className="flex items-center border-t border-ink/15 pt-[26px] max-[767px]:pt-4">
           <div className="flex flex-1 items-center">
@@ -67,7 +67,7 @@ function TestimonialSlide({
           </button>
         </div>
       </div>
-      <div className="relative min-h-[575.75px] w-1/2 overflow-hidden rounded-[30px] max-[991px]:h-auto max-[991px]:min-h-0 max-[991px]:w-full max-[991px]:max-h-[346px] max-[991px]:shrink-0 max-[991px]:aspect-square max-[991px]:rounded-[20px_20px_0_0]">
+      <div className="relative w-1/2 overflow-hidden rounded-[30px] max-[991px]:h-auto max-[991px]:min-h-0 max-[991px]:w-full max-[991px]:max-h-[346px] max-[991px]:shrink-0 max-[991px]:aspect-square max-[991px]:rounded-[20px_20px_0_0]">
         <Image className="object-cover" src={testimonial.portrait} alt={`${testimonial.name}, ${testimonial.company}`} fill sizes="(max-width: 767px) calc(100vw - 32px), 50vw" />
       </div>
     </article>

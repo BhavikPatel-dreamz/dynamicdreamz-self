@@ -14,9 +14,9 @@ export function BrandPartnersSection() {
             Selected brands our teams have supported across Shopify, Shopify Plus and digital commerce.
           </p>
         </div>
-        <div className="grid grid-cols-5 gap-y-[50px] min-[768px]:max-[991px]:mx-[-15px] min-[768px]:max-[991px]:h-[390px] min-[768px]:max-[991px]:grid-cols-4 min-[768px]:max-[991px]:content-between min-[768px]:max-[991px]:gap-y-[30px] max-[767px]:hidden">
+        <div className="grid grid-cols-5 -mx-3.75 gap-y-[50px] min-[768px]:max-[991px]:mx-[-15px] min-[768px]:max-[991px]:h-[390px] min-[768px]:max-[991px]:grid-cols-4 min-[768px]:max-[991px]:content-between min-[768px]:max-[991px]:gap-y-[30px] max-[767px]:hidden">
           {clientLogos.map((logo) => (
-            <div className="flex min-h-[50px] items-center justify-center px-[15px] min-[768px]:max-[991px]:mx-[15px] [&_img]:h-auto [&_img]:w-auto [&_img]:max-h-[50px] [&_img]:object-contain min-[768px]:max-[991px]:[&_img]:max-h-none" key={logo.src}>
+            <div className="flex min-h-[50px] items-center justify-center mx-[15px] min-[768px]:max-[991px]:mx-[15px] max-[991px]:px-[15px]" key={logo.src}>
               <ClientLogo logo={logo} />
             </div>
           ))}

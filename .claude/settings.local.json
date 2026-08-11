@@ -1,0 +1,19 @@
+{
+    "env": {
+        "ANTHROPIC_BASE_URL": "https://agentrouter.org/",
+        "ANTHROPIC_AUTH_TOKEN": "sk-rV9k3J278F4XmPukZkFYmYJLUiik5VLUOCDTQfk290WmchmE",
+        "ANTHROPIC_MODEL": "claude-opus-4-8",
+        "CLAUDE_CODE_USE_AUTH_TOKEN": "true"
+    },
+    "permissions": {
+        "allow": []
+    },
+    "model": "claude-opus-4-8",
+    "effortLevel": "xhigh",
+    "theme": "dark",
+    "claudeCode.allowDangerouslySkipPermissions": true,
+    "claudeCode.initialPermissionMode": "bypassPermissions",
+    "disabledMcpjsonServers": [
+        "shopify-dev-mcp"
+    ]
+}

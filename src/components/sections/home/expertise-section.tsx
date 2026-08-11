@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/container";
 
 export function ExpertiseSection() {
   return (
-    <section className="min-h-[703.94px] pt-20 pb-[74px] min-[768px]:max-[991px]:min-h-[981.67px] min-[768px]:max-[991px]:py-[50px] max-[767px]:min-h-[1071.67px] max-[767px]:py-[50px]">
+    <section className="pt-20 pb-[74px] min-[768px]:max-[991px]:py-[50px] max-[767px]:min-h-[1071.67px] max-[767px]:py-[50px]">
       <Container className="flex justify-between max-[991px]:flex-col max-[991px]:items-start">
         <div className="mr-[105px] w-[41%] max-[1199px]:mr-[60px] max-[991px]:mr-0 max-[991px]:w-full">
           <h2 className="text-[35px] leading-[1.385] font-medium min-[768px]:max-[991px]:mb-4 min-[768px]:max-[991px]:text-[30px] min-[768px]:max-[991px]:leading-10 min-[768px]:max-[991px]:tracking-[-0.7px] max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[1.2]">Our Expertise</h2>

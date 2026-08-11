@@ -107,7 +107,7 @@ export function MobileNavigation() {
   return (
     <div className="mr-3 hidden w-[30px] shrink-0 max-[991px]:block max-[767px]:mr-0">
       <button
-        className="flex h-[30px] w-[30px] cursor-pointer items-center justify-center border-0 bg-transparent p-0"
+        className="flex h-[30px] w-[30px] cursor-pointer items-center justify-start border-0 bg-transparent p-0"
         ref={toggleRef}
         type="button"
         aria-label="Toggle menu"
@@ -120,7 +120,7 @@ export function MobileNavigation() {
 
       <div
         className={cn(
-          "pointer-events-none fixed top-0 left-0 z-12 h-screen max-h-none w-full -translate-x-full overflow-visible bg-white px-5 pt-[30px] pb-[100px] transition-transform duration-800 [height:100dvh]",
+          "fixed top-0 left-0 z-12 h-screen max-h-none w-full -translate-x-full overflow-visible bg-white px-5 pt-[30px] pb-[100px] transition-transform duration-800 [height:100dvh]",
           isOpen && "pointer-events-auto translate-x-0",
         )}
         id="mobile-navigation-panel"
@@ -181,7 +181,7 @@ export function MobileNavigation() {
                             return (
                               <section className={cn("border-b border-[#efefef]", sectionIndex === group.sections.length - 1 && "border-b-0")} key={section.label}>
                                 <button
-                                  className="flex min-h-12 w-full cursor-pointer items-center justify-between border-0 bg-transparent py-3 pr-[25px] text-left text-sm leading-[normal] font-medium text-ink"
+                                  className="flex min-h-12 w-full cursor-pointer items-center justify-between border-0 bg-transparent py-3 pr-2 text-left text-sm leading-[normal] font-medium text-ink"
                                   type="button"
                                   aria-expanded={isSectionOpen}
                                   aria-controls={sectionId}
