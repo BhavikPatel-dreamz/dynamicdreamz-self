@@ -63,7 +63,7 @@ export function AboutTimelineSection() {
                 </div>
                 )}
                 {milestone.year === "2025" ? (
-                  <Image className="absolute top-1/2 left-1/2 z-10 h-9 w-[113px] -translate-x-1/2" src="/assets/about/timeline/shopify-platinum-partner-badge.svg" alt="" width={113} height={36} />
+                  <Image className="absolute top-1/2 left-1/2 z-10 h-9 w-[113px] -translate-x-1/2" src="/assets/awards/shopify-platinum-partner.svg" alt="" width={113} height={36} />
                 ) : null}
               </li>
             );

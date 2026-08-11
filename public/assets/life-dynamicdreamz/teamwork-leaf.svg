@@ -1,0 +1,25 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 38" width="31" height="38">
+	<title>left-shape-svg</title>
+	<defs>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(16.082,-14.263,11.734,13.231,-3.758,20.268)">
+			<stop offset=".285" stop-color="#15c064"/>
+			<stop offset=".918" stop-color="#00d1ff"/>
+		</linearGradient>
+		<linearGradient id="g2" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.23,.833,-4.895,7.231,12.299,25.51)">
+			<stop offset=".285" stop-color="#15c064"/>
+			<stop offset=".918" stop-color="#00d1ff"/>
+		</linearGradient>
+		<linearGradient id="g3" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(4.59,-0.877,.188,.983,23.772,35.654)">
+			<stop offset=".285" stop-color="#15c064"/>
+			<stop offset=".918" stop-color="#00d1ff"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: none;stroke: url(#g1);stroke-linecap: round;stroke-width: 4 } 
+		.s1 { fill: none;stroke: url(#g2);stroke-linecap: round;stroke-width: 4 } 
+		.s2 { fill: none;stroke: url(#g3);stroke-linecap: round;stroke-width: 4 } 
+	</style>
+	<path id="Layer" fill-rule="evenodd" class="s0" d="m2.6 23.8c1.5-9.3 0.1-12.4 3.4-21.3"/>
+	<path id="Layer" fill-rule="evenodd" class="s1" d="m12.4 25.4c3.5-3.6 2.7-2.7 6.1-6.4"/>
+	<path id="Layer" fill-rule="evenodd" class="s2" d="m23.7 35.4c4.8 0.1-0.4 0.1 4.8 0.1"/>
+</svg>

@@ -1,0 +1,54 @@
+.track {
+  display: flex;
+  width: max-content;
+  animation: resources-logo-marquee 24s linear infinite;
+}
+
+.item {
+  display: flex;
+  width: calc(100vw / 6);
+  height: 84px;
+  flex: 0 0 calc(100vw / 6);
+  align-items: center;
+  justify-content: center;
+  padding-inline: 28px;
+}
+
+.track:hover,
+.track:focus-within {
+  animation-play-state: paused;
+}
+
+@keyframes resources-logo-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .item {
+    width: 25vw;
+    flex-basis: 25vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    width: calc(100vw / 3);
+    flex-basis: calc(100vw / 3);
+    padding-inline: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .item {
+    width: 50vw;
+    flex-basis: 50vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

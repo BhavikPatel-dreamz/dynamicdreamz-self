@@ -12,6 +12,8 @@ export type PageSeoConfig = {
   socialDescription?: string;
   keywords: string[];
   openGraphType: OpenGraphType;
+  publishedTime?: string;
+  modifiedTime?: string;
   image: {
     path: string;
     width: number;
@@ -98,13 +100,90 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     image: {
-      path: "/assets/og/about-us.png",
+      path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
       height: 630,
       alt: "Dynamic Dreamz web development and ecommerce agency",
     },
     sitemap: {
       changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
+  career: {
+    path: "/career/",
+    title: "Join Our Team for Exciting Opportunities | Dynamic Dreamz",
+    description:
+      "Explore career opportunities at Dynamic Dreamz across digital marketing, ecommerce and technology. View current openings in Surat and Ahmedabad.",
+    keywords: [
+      "Dynamic Dreamz careers",
+      "IT jobs in Surat",
+      "IT jobs in Ahmedabad",
+      "digital marketing jobs",
+      "ecommerce careers",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2026-08-05T13:38:57+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Career opportunities at Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  life: {
+    path: "/life-dynamicdreamz/",
+    title:
+      "Discover Our Work Culture | Maintain Work-Life Balance | Equal Opportunity Employer",
+    description:
+      "Discover life at Dynamic Dreamz, where collaboration, inclusion, professional growth and work-life balance shape an equal-opportunity workplace.",
+    keywords: [
+      "life at Dynamic Dreamz",
+      "Dynamic Dreamz work culture",
+      "IT company culture Surat",
+      "IT careers Ahmedabad",
+      "equal opportunity employer",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2024-09-06T09:49:25+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Life and work culture at Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  },
+  resources: {
+    path: "/resources/",
+    title: "Shopify & eCommerce Resources Hub | Dynamic Dreamz",
+    description:
+      "Browse Dynamic Dreamz's Shopify resource hub for migration guides, SEO tips, white label insights, and growth strategies to scale your online store.",
+    keywords: [
+      "Shopify resources",
+      "ecommerce resources",
+      "Shopify migration guides",
+      "Shopify SEO tips",
+      "Shopify growth strategies",
+    ],
+    openGraphType: "article",
+    publishedTime: "2025-11-10T05:02:09+00:00",
+    modifiedTime: "2026-07-15T10:42:41+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Dynamic Dreamz Shopify and ecommerce resources hub",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
       priority: 0.8,
     },
   },
@@ -131,6 +210,12 @@ function createPageMetadata(page: PageSeoConfig): Metadata {
       siteName: siteConfig.name,
       type: page.openGraphType,
       locale: "en_US",
+      ...(page.openGraphType === "article"
+        ? {
+            ...(page.publishedTime ? { publishedTime: page.publishedTime } : {}),
+            ...(page.modifiedTime ? { modifiedTime: page.modifiedTime } : {}),
+          }
+        : {}),
       images: [
         {
           url: page.image.path,

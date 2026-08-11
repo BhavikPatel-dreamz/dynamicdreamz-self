@@ -25,27 +25,31 @@ The agent should then read:
 
 1. Understand the task and map it to a route, component, content area, SEO
    requirement, or asset need.
-2. Inspect the current code before editing.
-3. If migrating a legacy page, inspect the old URL as both a rendered page and
+2. Inspect the current code before editing. Search existing components, their
+   props, and their usages before deciding to create a component.
+3. Map each planned UI element to an existing reusable component or document why
+   its semantics, behavior, or visual contract requires a new component.
+4. If migrating a legacy page, inspect the old URL as both a rendered page and
    View Page Source for content structure, headings, CTAs, metadata intent,
    images, links, schema, accessibility details, style details, and redirect
    needs.
-4. For visual work, create or update a capture note in
+5. For visual work, create or update a capture note in
    `docs/visual-captures/` before touching UI code. Record live screenshots,
    local screenshots, CSS/JS sources inspected, computed styles, interaction
    states, animation timings, responsive behavior, and remaining differences.
-5. Decide the production structure before touching code.
-6. Implement with local data/content and project-owned assets.
-7. Add SEO metadata and structured data as part of the same change, not as a
+6. Decide the production structure before touching code.
+7. Implement with reusable components, local data/content, and project-owned
+   assets.
+8. Add SEO metadata and structured data as part of the same change, not as a
    later cleanup.
-8. For visual work, run the visual parity workflow and compare live vs local
+9. For visual work, run the visual parity workflow and compare live vs local
    desktop, tablet, mobile, hover, focus, active/open, scrolled, and animation
    states.
-9. Check responsive behavior, accessibility, performance risk, and broken links.
-10. If SEO/content quality can improve through visible copy changes, update
+10. Check responsive behavior, accessibility, performance risk, and broken links.
+11. If SEO/content quality can improve through visible copy changes, update
    `docs/page-content-improvements.md` with page-specific suggestions.
-11. Run verification commands.
-12. Summarize changes, verification, visual capture notes, and any missing
+12. Run verification commands.
+13. Summarize changes, verification, visual capture notes, and any missing
     assets or content approvals.
 
 ## Before Editing Code
@@ -74,6 +78,9 @@ project uses Next.js 16.3.0 and may differ from older App Router examples.
 ## Implementation Standards
 
 - Use TypeScript and keep types close to shared content/data.
+- Search `src/components/**` and current imports/usages before adding a new
+  component. Reuse an existing compatible component or add a focused typed
+  variant before creating another implementation.
 - Prefer Server Components by default. Pages, layout pieces, and meaningful
   page sections should render on the server unless they genuinely need browser
   interactivity.
@@ -88,6 +95,7 @@ project uses Next.js 16.3.0 and may differ from older App Router examples.
   Components whenever possible.
 - Use small Client Components inside server-rendered sections for interactive
   controls.
+
 - Put navigation, company stats, service lists, route metadata, and page content
   in `src/data/` or `src/content/` when reused.
 - Keep static page SEO metadata in `src/data/seo.ts`. Page files should import
@@ -105,6 +113,26 @@ project uses Next.js 16.3.0 and may differ from older App Router examples.
   equivalents unless there is a specific reason.
 - Avoid adding dependencies for simple UI. If a dependency is justified, explain
   the production benefit.
+
+## Component Reuse Workflow
+
+1. Search by component name, visible text, role, interaction, and styling pattern
+   across `src/components/**` and route-local files before implementation.
+2. Inspect candidate components and every relevant usage so reuse does not break
+   their existing visual, accessibility, server/client, or behavioral contract.
+3. Reuse the existing component unchanged when it already fits.
+4. If the requirement is a legitimate variation of the same component, extend
+   it with the smallest clear typed prop, variant, slot, or content-data change.
+5. Preserve Server Component boundaries. Do not turn a shared Server Component
+   into a Client Component merely to support one interactive usage; isolate the
+   interactive control in a small Client Component.
+6. Move a component to `ui`, `layout`, or a shared `sections` location when a
+   second page needs it and its responsibility is no longer page-specific.
+7. Create a new component only when candidates differ materially in semantics,
+   behavior, accessibility, or visual contract, or when reuse would produce a
+   confusing prop API and unrelated conditionals.
+8. Before completion, search again for equivalent implementations introduced by
+   the change and consolidate them without weakening visual parity.
 
 ## SEO Workflow
 
@@ -250,24 +278,34 @@ place page/component styles there.
 
 ## Asset Workflow
 
-1. Check `public/assets/` before using any image.
-2. If an old-site asset is needed, download/copy it into a local project-owned
-   asset folder during migration.
-3. Rename the local copy with a meaningful lowercase kebab-case filename if the
-   live filename is unclear, random, hashed, generic, or keyword-stuffed.
-4. Put assets in a stable folder by purpose.
-5. Preserve the original asset's important attributes in local content/data:
+1. Search the complete `public/assets/` tree before downloading, copying, or
+   renaming any image or media file.
+2. For likely matches, compare content hashes first. If compression or encoding
+   differs, visually compare the files before deciding they are distinct.
+3. Reuse the existing canonical local path when the asset is identical. Never
+   create a page-local copy or a new filename for the same visual media.
+4. When an asset is shared by multiple pages, store one canonical copy in a
+   neutral purpose-based folder such as `public/assets/team/**`; keep
+   page-specific alt text and captions in each page's content data.
+5. Only when no equivalent local asset exists, download/copy the required
+   old-site asset into a local project-owned folder during migration.
+6. Rename the new local copy with a meaningful lowercase kebab-case filename if
+   the live filename is unclear, random, hashed, generic, or keyword-stuffed.
+7. Put assets in a stable folder by purpose.
+8. Preserve the original asset's important attributes in local content/data:
    alt text, caption/title, source page, and original placement.
-6. Use `next/image` for photos, logos, hero images, case study screenshots, and
+9. Use `next/image` for photos, logos, hero images, case study screenshots, and
    testimonial portraits.
-7. Give every content image meaningful, page-specific alt text. Do not use
-   generic values like "image", "banner", "logo image", or repeated keyword
-   strings.
-8. Use empty alt text only for truly decorative images, and make that decision
-   intentional.
-9. Use stable dimensions, aspect ratios, and responsive sizes to prevent layout
-   shift.
-10. Never use `dynamicdreamz.com` asset URLs in final code.
+10. Give every content image meaningful, page-specific alt text. Do not use
+    generic values like "image", "banner", "logo image", or repeated keyword
+    strings.
+11. Use empty alt text only for truly decorative images, and make that decision
+    intentional.
+12. Use stable dimensions, aspect ratios, and responsive sizes to prevent layout
+    shift.
+13. Before completion, scan project-owned media by content hash and remove any
+    redundant copy after updating every reference to the canonical path.
+14. Never use `dynamicdreamz.com` asset URLs in final code.
 
 ## Verification Checklist
 
@@ -310,6 +348,8 @@ A task is complete only when:
 
 - The requested behavior/page exists.
 - It follows the project structure.
+- Existing suitable components were reused or extended; any new equivalent-looking
+  component has a clear semantic, behavioral, or visual reason to remain separate.
 - It uses local assets/content, not old-site runtime URLs.
 - SEO was handled for touched routes.
 - Visual parity evidence was recorded for UI changes, including responsive and

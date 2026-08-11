@@ -294,7 +294,7 @@ export const footerAwards = [
   },
   {
     href: "https://www.trustpilot.com/review/dynamicdreamz.com",
-    src: "/assets/awards/trustpilot-rating.svg",
+    src: "/assets/proof/trustpilot-rating.svg",
     alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
     width: 142,
     height: 46,

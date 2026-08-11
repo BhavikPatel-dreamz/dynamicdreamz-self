@@ -66,4 +66,46 @@ Shopify/ecommerce agency trust.
 | Hero description | Match live page unless too vague. | Add or preserve a concise intro covering "ecommerce development company since 2006", team size, and Shopify Platinum Partner credibility. | Strengthens E-E-A-T and first-viewport relevance. | High | suggested |
 | Timeline copy | Match live timeline facts. | Keep dates factual and concise; do not invent new milestones. | Prevents trust issues from unsupported claims. | Medium | suggested |
 
+## Career (`/career`)
+
+Status: deferred
+Last reviewed: 2026-08-11
+Primary SEO intent: Dynamic Dreamz careers, IT jobs in Surat and Ahmedabad,
+digital marketing roles, and ecommerce technology opportunities.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| H1 | Explore rewarding career in IT, where your talents thrive and possibilities flourish. | Explore a rewarding career in IT, where your talents thrive and possibilities flourish. | Corrects the missing article while preserving the live page's recruitment message. | Medium | deferred for live visual/content parity |
+| Workplace benefit | Ample of Employee Engagement Activities | Ample Employee Engagement Activities | Improves grammar without changing the benefit claim. | Low | deferred for live visual/content parity |
+| Job CTA destination | Apply now links point to `/career-apply-now/`, which is not yet migrated. | Build the application route with the selected position and location prefilled. | Completes the recruitment conversion flow without losing the live query parameters. | High | migration pending |
+
+## Life @ Dynamic Dreamz (`/life-dynamicdreamz`)
+
+Status: deferred
+Last reviewed: 2026-08-11
+Primary SEO intent: Dynamic Dreamz work culture, professional growth,
+work-life balance, inclusive workplace, and employee experience.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Hero description | Dynamic Dreamz gives ample of opportunities to amplify your potential and let you maintain work life balance. | Dynamic Dreamz provides ample opportunities to amplify your potential while maintaining a healthy work-life balance. | Corrects grammar and improves the primary work-culture message. | Medium | deferred for live content parity |
+| Hiring paragraph | Your future is full of possibilities, and at Dynamic Dreramz, we provide the tools and opportunities to explore them. | Your future is full of possibilities, and at Dynamic Dreamz, we provide the tools and opportunities to explore them. | Corrects the company-name typo in conversion copy. | High | deferred for live content parity |
+| Professional-development FAQ | There are ample of opportunities for the professional development and growth... | There are ample opportunities for professional development and growth because our clients span a broad range of industries and our teams use cutting-edge technologies. | Improves clarity and grammar while preserving the approved claim. | Medium | deferred for live content parity |
+| Health and wellbeing FAQ | We have setup a recreational zone... Fuss ball... For health point of view... | We have set up a recreation zone with indoor games such as carrom, foosball, darts and cards, along with a treadmill and Android TV to help employees recharge. | Corrects grammar, spelling and readability without changing the facilities described. | Low | deferred for live content parity |
+
 ## Add New Page Suggestions Below
+
+## Resources (`/resources`)
+
+Status: deferred
+Last reviewed: 2026-08-11
+Primary SEO intent: Shopify resources, ecommerce growth guidance, migration
+guides, performance, SEO, and white-label development insights.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Resource-hub introduction | Uses informal phrases such as "you're gonna find," inconsistent Shopify capitalization, and several long sentences. | Replace with concise professional copy addressing Shopify merchants, ecommerce founders, and agency partners while preserving the same migration, performance, design, marketing, and growth topics. | Improves readability and enterprise credibility without changing search intent. | Medium | deferred for live content parity |
+| Story proof copy | Says the team empowers "hundreds and thousands of brands" while separately citing 1,000+ stores. | Use the approved, specific proof point: "helping brands build, scale and optimise more than 1,000 Shopify stores." | Removes ambiguous claim language and strengthens trust. | High | deferred pending claim approval |
+| Category link | The live story category uses a non-functional `#` destination. | Link "Shopify" to `/blogs/category/shopify/`. | Restores useful navigation and descriptive internal-link context. | High | implemented |
+| Article image alt text | Several live WordPress image alts repeat filenames with underscores and punctuation. | Use each visible article title as its thumbnail alt text. | Gives every content image meaningful, page-specific alternative text. | Medium | implemented |
+| Heading hierarchy | The live page uses a second `h1` for "Our Dynamic Story,". | Keep the visual treatment but render the story title as an `h2`. | Produces one clear primary heading and a logical page outline. | High | implemented |
