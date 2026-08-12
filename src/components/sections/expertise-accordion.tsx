@@ -27,7 +27,7 @@ export function ExpertiseAccordion() {
               >
                 <span>{item.title}</span>
                 <Image
-                  className="ml-6 h-[24px] w-[24px] shrink-0 transition-transform duration-400 ease-[cubic-bezier(0.445,0.05,0.55,0.95)] max-[767px]:ml-4"
+                  className="ml-6 md:h-[24px] h-[30px] md:w-[24px] w-[30px] shrink-0 transition-transform duration-400 ease-[cubic-bezier(0.445,0.05,0.55,0.95)] max-[767px]:ml-4"
                   src={isOpen ? "/assets/icons/accordion-open.svg" : "/assets/icons/accordion-closed.svg"}
                   alt=""
                   width={24}

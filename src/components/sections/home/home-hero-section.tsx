@@ -7,21 +7,19 @@ import { siteConfig } from "@/data/site";
 
 export function HomeHeroSection() {
   return (
-    <section className="min-h-[682.81px] overflow-hidden bg-[linear-gradient(180deg,#fbeed5_16.38%,rgb(251_238_213/0%)_100%)] min-[768px]:max-[991px]:min-h-[580px] max-[767px]:min-h-[745px]">
+    <section className="overflow-hidden bg-[linear-gradient(180deg,#fbeed5_16.38%,rgb(251_238_213/0%)_100%)]">
       <Container className="pt-[175px] text-center min-[768px]:max-[991px]:pt-[135px] max-[767px]:pt-[95px]">
-        <p className="mx-auto mb-4 flex max-w-[1100px] translate-y-0.5 items-center justify-center text-sm leading-none font-semibold text-muted min-[768px]:max-[991px]:text-[13px] min-[768px]:max-[991px]:leading-[13px] max-[767px]:text-[10px] max-[767px]:leading-[13px]">
+        <p className="mx-auto mb-4 flex max-w-[1100px] translate-y-0.5 items-center justify-center text-sm leading-none font-semibold text-muted min-[768px]:max-[991px]:text-[13px] min-[768px]:max-[991px]:leading-[13px] max-[767px]:leading-1 uppercase">
           <span className="relative mr-2.5 inline-flex items-center pr-2.5 before:mr-3 before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] after:absolute after:right-[-2px] after:h-[3px] after:w-[3px] after:rounded-full after:bg-muted after:content-[''] max-[767px]:before:mr-2 max-[767px]:before:w-6">
             EST. 2006
           </span>
           <span>Shopify Platinum Partner</span>
         </p>
-        <h1 className="mx-auto mb-4 max-w-[1100px] text-[60px] leading-[1.14] font-medium text-ink min-[768px]:max-[991px]:text-[38px] min-[768px]:max-[991px]:leading-12 max-[767px]:max-w-[358px] max-[767px]:text-[27px] max-[767px]:leading-[37px]">
-          Shopify Plus &amp; Complete Shopify Solutions for Global Brands and Agencies
+        <h1 className="mx-auto mb-4 max-w-[1100px] text-[56px] leading-[1.14] font-medium text-ink min-[768px]:max-[991px]:text-[38px] min-[768px]:max-[991px]:leading-12 max-[767px]:text-[27px] max-[767px]:leading-[37px]">
+          Shopify Plus &amp; Enterprise Shopify Solutions
         </h1>
-        <p className="mx-auto mb-[26px] max-w-[1100px] text-lg leading-7 font-semibold text-muted/80 min-[768px]:max-[991px]:text-base min-[768px]:max-[991px]:leading-6 max-[767px]:mb-6 max-[767px]:max-w-[358px] max-[767px]:text-base max-[767px]:leading-6">
-          Dynamic Dreamz helps DTC brands, B2B merchants and agencies build,
-          migrate and scale on Shopify with expertise in custom development,
-          B2B, checkout customization, integrations, CRO and ongoing support.
+        <p className="mx-auto mb-[26px] max-w-[1100px] text-lg leading-7 font-semibold text-muted/80 min-[768px]:max-[991px]:text-base min-[768px]:max-[991px]:leading-6 max-[767px]:mb-6 max-[767px]:text-base max-[767px]:leading-6">
+          We help DTC brands, B2B businesses and digital agencies build, migrate and scale on Shopify through custom development, B2B solutions, integrations, CRO, performance optimization and ongoing support.
         </p>
         <div className="mx-auto flex max-w-[1100px] justify-center max-[767px]:flex-col max-[767px]:items-center max-[767px]:gap-3.5">
           <ButtonLink className="ml-[15px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:px-6 max-[991px]:py-3 max-[991px]:text-sm max-[767px]:ml-0" variant="primary" href={siteConfig.quotePath}>

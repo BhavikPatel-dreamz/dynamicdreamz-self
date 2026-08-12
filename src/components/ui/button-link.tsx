@@ -36,7 +36,7 @@ export function ButtonLink({ children, className, variant, ...props }: ButtonLin
   return (
     <Link
       className={cn(
-        "group/button relative z-1 inline-flex min-h-11 items-center justify-center overflow-hidden rounded-[30px] border-0 lg:px-6 px-6 lg:py-3.75 py-2.25 text-center lg:text-base text-[13px] leading-none font-bold uppercase transition-colors duration-600",
+        "group/button relative z-1 inline-flex min-h-11 items-center justify-center overflow-hidden rounded-[30px] border-0 lg:px-6 px-6 lg:py-4.25 py-2.75 text-center lg:text-base text-[13px] leading-none font-bold uppercase transition-colors duration-600",
         variantClasses[variant],
         className,
       )}

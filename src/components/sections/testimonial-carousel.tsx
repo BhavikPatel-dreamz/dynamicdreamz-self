@@ -42,9 +42,17 @@ function TestimonialSlide({
 }) {
   return (
     <article className="flex w-full shrink-0 basis-full overflow-hidden min-[768px]:max-[991px]:mr-[15px] min-[768px]:max-[991px]:w-[calc(100%-15px)] min-[768px]:max-[991px]:basis-[calc(100%-15px)] max-[991px]:flex-col-reverse max-[767px]:rounded-[20px] max-[991px]:justify-end" aria-hidden={!isActive}>
-      <div className="flex w-1/2 flex-col justify-center  overflow-hidden rounded-[30px] border border-soft-line bg-white/50 px-[30px] py-[45px] min-[768px]:max-[991px]:min-h-[460.17px] min-[768px]:max-[991px]:p-4 max-[991px]:w-full max-[991px]:rounded-[0_0_20px_20px] max-[767px]:p-4">
-        <div className={cn("mb-[26px] flex h-[53px] items-center min-[768px]:max-[991px]:mb-4 max-[767px]:mb-4 max-[767px]:h-10 [&_img]:h-auto [&_img]:max-h-[53px] [&_img]:w-auto [&_img]:max-w-[225px] [&_img]:object-contain max-[767px]:[&_img]:max-h-10", !testimonial.logo && "invisible")}>
-          {testimonial.logo ? <Image src={testimonial.logo} alt={testimonial.logoAlt ?? ""} width={225} height={53} /> : null}
+      <div className="col_content flex w-1/2 grow flex-col justify-center overflow-hidden rounded-[30px] border border-soft-line bg-white/50 px-[30px] py-[45px] min-[768px]:max-[991px]:min-h-[460.17px] min-[768px]:max-[991px]:p-4 max-[991px]:w-full max-[991px]:rounded-[0_0_20px_20px] max-[767px]:p-4">
+        <div className={cn("mb-[26px] w-full h-[53px] min-[768px]:max-[991px]:mb-4 max-[767px]:mb-4 max-[767px]:h-10 [&_img]:h-auto [&_img]:max-h-[53px] [&_img]:w-auto [&_img]:max-w-[225px] [&_img]:object-contain max-[767px]:[&_img]:max-h-10", !testimonial.logo && "invisible")}>
+          {testimonial.logo ? (
+            <Image
+              className={cn(testimonial.company === "Max Sweets" && "max-[767px]:!h-10 max-[767px]:!w-[54px]")}
+              src={testimonial.logo}
+              alt={testimonial.logoAlt ?? ""}
+              width={225}
+              height={53}
+            />
+          ) : null}
         </div>
         <h3 className="mb-5 max-w-[540px] pr-[78px] font-sans text-[26px] leading-[1.4] font-bold min-[768px]:max-[991px]:pr-0 min-[768px]:max-[991px]:text-[22px] max-[767px]:mb-4 max-[767px]:pr-0 max-[767px]:text-lg max-[767px]:leading-[normal]">{testimonial.title}</h3>
         <p className="mb-[26px] max-w-[90%] text-base leading-[1.72] font-medium text-muted max-[767px]:mb-4 max-[767px]:max-w-full max-[767px]:text-sm">{testimonial.quote}</p>

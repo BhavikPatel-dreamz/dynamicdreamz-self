@@ -151,7 +151,7 @@ export function MobileNavigation() {
               return (
                 <li className="py-2.5" key={group.slug}>
                   <button
-                    className={cn(topLevelLinkClass, "cursor-pointer", isGroupOpen && "text-brand-red")}
+                    className={cn(topLevelLinkClass, "cursor-pointer transition", isGroupOpen && "text-brand-red!")}
                     type="button"
                     aria-expanded={isGroupOpen}
                     aria-controls={submenuId}
