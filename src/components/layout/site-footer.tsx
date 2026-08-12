@@ -82,7 +82,7 @@ function ContactDetails({ mobile = false }: { mobile?: boolean }) {
           className="flex min-h-8 items-center text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:min-h-6"
           href={siteConfig.phoneHref}
         >
-          <span className="mr-[9px] flex h-8 w-8 shrink-0 items-center justify-center max-[767px]:mr-[5px] max-[767px]:h-6 max-[767px]:w-6 [&_svg]:h-auto [&_svg]:w-6 max-[767px]:[&_svg]:w-[18px]">
+          <span className="mr-[9px] flex h-8 w-8 shrink-0 items-center justify-center max-[767px]:mr-[5px]">
             <PhoneIcon />
           </span>
           <span>{siteConfig.phoneDisplay}</span>

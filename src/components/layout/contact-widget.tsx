@@ -1,15 +1,15 @@
 export function ContactWidget() {
   return (
     <a
-      className="fixed right-5 bottom-[15px] z-[110] flex min-w-60 items-center rounded-[100px] bg-brand-green px-2.5 py-[7px] text-white shadow-[0_10px_30px_rgb(0_0_0/15%)] transition-[transform,box-shadow] duration-300 hover:-translate-y-[3px] hover:shadow-[0_15px_40px_rgb(0_0_0/20%)] max-[767px]:bottom-2.5 max-[767px]:min-w-[200px] max-[767px]:p-[5px]"
+      className="fixed right-5 bottom-[80px] z-[110] flex w-[240px] items-center rounded-[100px] bg-brand-green py-[7px] px-[10px] text-white shadow-[0_10px_30px_rgb(0_0_0/15%)] transition-[transform,box-shadow] duration-300 hover:-translate-y-[3px] hover:shadow-[0_15px_40px_rgb(0_0_0/20%)] max-[767px]:right-2.5 max-[767px]:bottom-9.5"
       href="https://api.whatsapp.com/send/?phone=919825195930"
       target="_blank"
       rel="nofollow noopener noreferrer"
       aria-label="Chat with Dynamic Dreamz on WhatsApp"
     >
-      <span className="h-[55px] w-[55px] shrink-0 max-[767px]:h-10 max-[767px]:w-10">
+      <span className="h-[55px] w-[55px] shrink-0 max-[1199px]:h-10 max-[1199px]:w-10">
         <svg
-          className="h-[55px] w-[55px] max-[767px]:h-10 max-[767px]:w-10"
+          className="h-[55px] w-[55px] max-[1199px]:h-10 max-[1199px]:w-10"
           aria-hidden="true"
           viewBox="0 0 50 50"
           width="55"
@@ -29,9 +29,9 @@ export function ContactWidget() {
           />
         </svg>
       </span>
-      <span className="h-[55px] w-px shrink-0 bg-white/50 max-[767px]:h-[35px]" aria-hidden="true" />
+      <span className="h-[55px] w-px shrink-0 bg-white/50 max-[767px]:h-10" aria-hidden="true" />
       <span className="flex flex-col pl-2.5 leading-[1.2]">
-        <small className="mb-[5px] text-xs font-semibold max-[767px]:mb-[3px] max-[767px]:text-[11px]">
+        <small className="mb-[5px] text-[12px] font-semibold">
           Have a project in mind?
         </small>
         <strong className="text-lg leading-[1.1] max-[767px]:text-sm">Let&apos;s talk</strong>

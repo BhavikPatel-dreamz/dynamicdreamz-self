@@ -24,8 +24,12 @@ export type ResourceArticle = {
 
 export const resourcesHero = {
   title: "Everything You Need to Know About Shopify, eCommerce, and Digital Growth!",
-  description:
-    "Have you ever wondered what really makes only some Shopify stores scale like never before, and that too effortlessly, while others keep facing struggles just to have some conversions? Or you're just curious about the web design, some smart integrations, or simply the speed, which literally can completely transform an online business? If yes, then you're in the right place.",
+  description: [
+    "Have you ever wondered what really makes only some Shopify stores scale like never before, and that too effortlessly,",
+    "while others keep facing struggles just to have some conversions? Or you're just curious about the web design,",
+    "some smart integrations, or simply the speed, which literally can completely transform an online business?",
+    "If yes, then you're in the right place.",
+  ],
 } as const;
 
 export const resourcesHub = {

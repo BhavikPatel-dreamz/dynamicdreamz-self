@@ -6,7 +6,7 @@ export const metadata = pageMetadata.home;
 
 export default function Home() {
   return (
-    <main id="main-content">
+    <main id="main-content" data-page="home">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(createHomePageSchema()) }}

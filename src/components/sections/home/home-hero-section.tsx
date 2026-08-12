@@ -8,7 +8,7 @@ import { siteConfig } from "@/data/site";
 export function HomeHeroSection() {
   return (
     <section className="overflow-hidden bg-[linear-gradient(180deg,#fbeed5_16.38%,rgb(251_238_213/0%)_100%)]">
-      <Container className="pt-[175px] text-center min-[768px]:max-[991px]:pt-[135px] max-[767px]:pt-[95px]">
+      <Container home className="pt-[175px] text-center min-[768px]:max-[991px]:pt-[135px] max-[767px]:pt-[95px]">
         <p className="mx-auto mb-4 flex max-w-[1100px] translate-y-0.5 items-center justify-center text-sm leading-none font-semibold text-muted min-[768px]:max-[991px]:text-[13px] min-[768px]:max-[991px]:leading-[13px] max-[767px]:leading-1 uppercase">
           <span className="relative mr-2.5 inline-flex items-center pr-2.5 before:mr-3 before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] after:absolute after:right-[-2px] after:h-[3px] after:w-[3px] after:rounded-full after:bg-muted after:content-[''] max-[767px]:before:mr-2 max-[767px]:before:w-6">
             EST. 2006

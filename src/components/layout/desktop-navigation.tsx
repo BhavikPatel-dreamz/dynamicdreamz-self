@@ -156,6 +156,7 @@ export function DesktopNavigation() {
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const navigationRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
+  const normalizedPathname = pathname === "/" ? pathname : pathname.replace(/\/$/, "");
 
   useEffect(() => {
     function closeOnEscape(event: KeyboardEvent) {
@@ -176,7 +177,7 @@ export function DesktopNavigation() {
 
   return (
     <nav
-      className="mr-auto ml-10 hidden shrink-0 min-[992px]:block max-[1199px]:ml-5 min-[1440px]:ml-[68px]"
+      className="mr-auto ml-10 hidden shrink-0 min-[992px]:block max-[1199px]:ml-5 min-[1440px]:[body:has(main[data-page=home])_&]:ml-[68px]"
       aria-label="Primary navigation"
       ref={navigationRef}
     >
@@ -188,7 +189,7 @@ export function DesktopNavigation() {
             ? group.sections.flatMap((section) => section.links)
             : group.items;
           const isActive = groupLinks.some(
-            (link) => pathname === link.href.replace(/\/$/, ""),
+            (link) => normalizedPathname === link.href.replace(/\/$/, ""),
           );
 
           return (
@@ -240,10 +241,10 @@ export function DesktopNavigation() {
           <Link
             className={cn(
               "flex items-center text-base leading-[normal] font-medium whitespace-nowrap text-[#252c15] hover:text-brand-red max-[1199px]:text-sm",
-              pathname === "/contact-us" && "text-brand-red",
+              normalizedPathname === "/contact-us" && "text-brand-red",
             )}
             href="/contact-us/"
-            aria-current={pathname === "/contact-us" ? "page" : undefined}
+            aria-current={normalizedPathname === "/contact-us" ? "page" : undefined}
           >
             Contact us
           </Link>

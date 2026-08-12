@@ -56,10 +56,10 @@ export function VideoDialog({
       >
         <Image className="object-cover" src={poster} alt={posterAlt} fill sizes={sizes} />
         <span className="absolute inset-0 bg-black/10" aria-hidden="true" />
-        <span className={cn("relative z-10 w-full px-[30px] pt-[30px] pb-[50px] max-[991px]:p-[30px] max-[767px]:px-5 max-[767px]:py-3", overlayClassName)} aria-hidden="true">
+        <span className={cn("relative z-10 w-full px-7.5 pt-7.5 pb-12.5 max-[991px]:p-7.5 max-[767px]:px-5 max-[767px]:py-3 max-w-250", overlayClassName)} aria-hidden="true">
           <Image className="h-auto w-full" src={overlay} alt="" width={overlayWidth} height={overlayHeight} />
         </span>
-        <span className={cn(styles.pulse, "absolute top-1/2 left-1/2 z-10 size-[76px] -translate-x-1/2 -translate-y-1/2", playClassName)} aria-hidden="true">
+        <span className={cn(styles.pulse, "absolute top-1/2 left-1/2 z-10 size-19 -translate-x-1/2 -translate-y-1/2", playClassName)} aria-hidden="true">
           <Image className="h-full w-full" src="/assets/about/play-video.svg" alt="" width={76} height={76} />
         </span>
       </button>

@@ -23,7 +23,7 @@ export function AboutTimelineSection() {
         </div>
       </Container>
 
-      <div className="mx-auto w-full max-w-[1440px]">
+      <div className="mx-auto w-full max-w-full">
         <AboutTimelineCarousel>
           <ol className="flex h-[535px] w-max snap-x snap-mandatory">
           {milestones.map((milestone, index) => {

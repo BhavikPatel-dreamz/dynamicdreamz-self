@@ -2,7 +2,7 @@
 
 Live URL: `https://www.dynamicdreamz.com/resources/`
 Local route: `/resources`
-Date checked: 2026-08-11
+Date checked: 2026-08-12
 Browser: Microsoft Edge (Chromium, headless parity capture)
 
 ## Viewports
@@ -73,6 +73,11 @@ No horizontal document overflow was present in the live desktop, tablet, or mobi
 | Life FAQ accordion | Keep separate because Resources has different data, active-arrow treatment, empty category state, geometry, and transition contract |
 
 ## Intentional Production Improvements
+
+- 2026-08-12: Added `-1px` letter spacing to the Resources H1 at all breakpoints, per the requested typography adjustment. Existing screenshots, responsive sizes, line heights, and interaction states remain the visual baseline; a refreshed screenshot was not required for this isolated tracking change.
+- 2026-08-12: Added three explicit line breaks to the Resources hero description at the requested phrase boundaries. The copy remains one semantic paragraph.
+- 2026-08-12: Centered each desktop review-count badge horizontally over its review card; the established inline tablet/mobile layout remains unchanged.
+- 2026-08-12: Replaced the review-count badge's solid border with a 1px green-to-cyan gradient border. The implementation uses layered padding-box and border-box backgrounds so the badge retains its beige center instead of allowing the gradient layer to cover it.
 
 | Difference from live | Reason |
 | --- | --- |
