@@ -42,7 +42,7 @@ const indexableRobots: Metadata["robots"] = {
 export const rootMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Shopify Plus Agency & Shopify Platinum Partner | Dynamic Dreamz",
+    default: "Shopify Plus Agency & Platinum Partner | Dynamic Dreamz",
     template: "%s | Dynamic Dreamz",
   },
   description:
@@ -63,7 +63,7 @@ export const rootMetadata: Metadata = {
 export const pageSeo = {
   home: {
     path: "/",
-    title: "Shopify Plus Agency & Shopify Platinum Partner | Dynamic Dreamz",
+    title: "Shopify Plus Agency & Platinum Partner | Dynamic Dreamz",
     description:
       "Established in 2006, Dynamic Dreamz is a Shopify Platinum Partner for Shopify Plus, migration, B2B, CRO, mobile apps, integrations and white-label delivery.",
     socialDescription:
@@ -195,19 +195,20 @@ export const pageSeoEntries = Object.values(pageSeo);
 
 /**
  * Build-time SEO length budget. These are hard ceilings/floors that fail
- * `next build` (this runs when metadata is evaluated), NOT the soft ideals:
- * aim for titles <=60 and descriptions ~140-160 (see docs/seo-launch-checklist.md).
- * The hard caps sit at genuine SERP-truncation territory so an intentional
- * live-parity title (e.g. the 63-char homepage title) passes, while an
- * egregiously long one — like the 83-char Life title this guard was added for —
- * cannot ship. This is the length-equivalent of the compile-time `uploadDate`
- * guard on VideoObjects: a whole class of regression caught before deploy.
+ * `next build` (this runs when metadata is evaluated). The maxes are set at the
+ * SEO ideal, not at raw SERP-truncation territory: a title must stay <=60 and a
+ * description <=160 so every indexable page keeps its title/description fully
+ * visible in search results (the 100/100 on-page target in
+ * docs/seo-launch-checklist.md), and a regression above the ideal can never
+ * ship. The mins stay generous floors that only catch empty/stub copy. This is
+ * the length-equivalent of the compile-time `uploadDate` guard on VideoObjects:
+ * a whole class of regression caught before deploy.
  */
 const SEO_LENGTH_BUDGET = {
   titleMin: 15,
-  titleMax: 65,
+  titleMax: 60,
   descriptionMin: 70,
-  descriptionMax: 165,
+  descriptionMax: 160,
 } as const;
 
 function assertPageSeoWithinLengthBudget(pages: Record<string, PageSeoConfig>) {

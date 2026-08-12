@@ -22,13 +22,16 @@ not a final pass.
 
 Each indexable page needs:
 
-- `title`: unique, useful, normally under 60 characters. Defined in
+- `title`: unique, useful, and **60 characters or fewer** — this is the on-page
+  100/100 target, because search results truncate longer titles. Defined in
   `pageSeo` (`src/data/seo.ts`), where a build-time guard hard-fails
-  `npm run build` on titles outside 15-65 characters, so an over-long title
-  (Google truncates well before ~65) can never ship. 60 stays the target; 65 is
-  the backstop sized to allow exact live-parity titles.
-- `description`: unique, specific, normally around 140 to 160 characters. The
-  same build-time guard hard-fails descriptions outside 70-165 characters.
+  `npm run build` on titles outside 15-60 characters, so a title that would
+  truncate in SERPs can never ship. When a live-parity title runs long, shorten
+  it (drop a redundant word — e.g. a repeated brand/keyword — not the primary
+  keyword) rather than raising the cap.
+- `description`: unique, specific, and **160 characters or fewer** (aim for
+  ~140-160). The same build-time guard hard-fails descriptions outside 70-160
+  characters.
 - `alternates.canonical`: absolute or metadataBase-relative canonical path.
 - `openGraph.title`
 - `openGraph.description`
@@ -96,6 +99,11 @@ Schema quality rules:
   stale hardcoded placeholders.
 - Prefer deriving `dateModified` from content data, file metadata, release data,
   or an explicit reviewed date field.
+- The page-type node (`WebPage`, `AboutPage`, `CollectionPage`, etc.) should
+  include a `primaryImageOfPage` `ImageObject` that matches the page's OG image
+  (path/width/height), resolved through `absoluteUrl`. Keep this consistent
+  across every page — a missing `primaryImageOfPage` on one page while others
+  have it is a parity gap to close.
 
 ## Content And On-Page SEO
 
@@ -170,7 +178,10 @@ redirect correctly, and every indexable route must be present in the sitemap.
 - Use local fonts through `next/font`.
 - Convert large PNG/JPEG source assets to WebP or AVIF when practical.
 - Keep raw source assets reasonably sized; do not commit oversized originals
-  unless they are needed for generation or fidelity.
+  unless they are needed for generation or fidelity. `next/image` optimizes
+  delivery, but committed content-image sources should still stay roughly under
+  ~200KB each. Flag oversized sources with:
+  `find public/assets -type f \( -name '*.webp' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' \) -size +200k -printf '%s\t%p\n' | sort -rn`
 - Use video posters plus `preload="none"` or lazy loading for below-the-fold
   videos. Avoid mobile autoplay for heavy videos unless explicitly required.
 - Avoid unnecessary animation libraries and large client bundles.

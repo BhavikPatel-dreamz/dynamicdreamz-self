@@ -9,6 +9,18 @@ CTA labels, FAQ wording, proof text, image alt text, and internal-link anchor
 text. Keep metadata-only fixes in the relevant code/content files, but record
 the visible copy changes here when they affect page quality.
 
+## Relationship To The AEO/GEO Strategy
+
+`docs/aeo-geo-strategy.md` is the permanent source of truth for AEO/GEO
+findings, priorities, target prompts, evidence gaps, entity work, crawler work,
+schema work, and measurement actions. Keep those recommendations in that file
+as new pages are built.
+
+Use this file only for exact visible-copy changes that need content approval or
+implementation. When an AEO/GEO recommendation produces a copy change, keep the
+original recommendation in the strategy and add the implementation-ready copy
+here under the same route. Do not move or delete the strategy item.
+
 ## How To Use
 
 For every page build or one-page SEO audit:

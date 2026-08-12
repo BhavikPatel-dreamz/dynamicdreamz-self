@@ -18,8 +18,9 @@ The agent should then read:
 3. `docs/agent-workflow.md`
 4. `docs/visual-parity-workflow.md`
 5. `docs/seo-launch-checklist.md`
-6. `docs/page-content-improvements.md`
-7. Relevant local Next.js docs from `node_modules/next/dist/docs/`
+6. `docs/aeo-geo-strategy.md`
+7. `docs/page-content-improvements.md`
+8. Relevant local Next.js docs from `node_modules/next/dist/docs/`
 
 ## Working Loop
 
@@ -38,19 +39,26 @@ The agent should then read:
    local screenshots, CSS/JS sources inspected, computed styles, interaction
    states, animation timings, responsive behavior, and remaining differences.
 6. Decide the production structure before touching code.
-7. Implement with reusable components, local data/content, and project-owned
+7. Before implementation, add or update the route's initial section in
+   `docs/aeo-geo-strategy.md` with its page role, target prompts, evidence,
+   known gaps, and planned recommendations.
+8. Implement with reusable components, local data/content, and project-owned
    assets.
-8. Add SEO metadata and structured data as part of the same change, not as a
+9. Add SEO metadata and structured data as part of the same change, not as a
    later cleanup.
-9. For visual work, run the visual parity workflow and compare live vs local
+10. After implementation, complete the AEO/GEO audit and update that page
+    section with evidence needs, technical gaps, final recommendations,
+    priority, status, verification, and remaining improvements. Keep unresolved
+    work in that file for future page tasks.
+11. For visual work, run the visual parity workflow and compare live vs local
    desktop, tablet, mobile, hover, focus, active/open, scrolled, and animation
    states.
-10. Check responsive behavior, accessibility, performance risk, and broken links.
-11. If SEO/content quality can improve through visible copy changes, update
+12. Check responsive behavior, accessibility, performance risk, and broken links.
+13. If SEO/content quality can improve through visible copy changes, update
    `docs/page-content-improvements.md` with page-specific suggestions.
-12. Run verification commands.
-13. Summarize changes, verification, visual capture notes, and any missing
-    assets or content approvals.
+14. Run verification commands.
+15. Summarize changes, verification, visual capture notes, AEO/GEO status, and
+    any missing assets or content approvals.
 
 ## Before Editing Code
 
@@ -156,6 +164,46 @@ Every indexable page must include:
 
 Do not ship generic metadata copied from another page. Keep titles concise and
 commercially useful. Keep descriptions human-readable and specific.
+
+## AEO And GEO Workflow
+
+`docs/aeo-geo-strategy.md` is the permanent source of truth for sitewide and
+page-specific AEO/GEO findings. Update it during every new indexable page build,
+material page rewrite, structured-data change, or AEO/GEO audit.
+
+For each touched page:
+
+1. Read the sitewide principles, current blockers, fact-governance rules,
+   crawler guidance, structured-data guidance, and acceptance criteria in the
+   strategy.
+2. Inspect the live reference, local rendered page, View Page Source, metadata,
+   visible answers, evidence, entity facts, internal links, media, and schema.
+3. Add the route using the future-page template in the strategy if no section
+   exists; otherwise update the existing route section in place.
+4. Record the page role, audience, decision stage, target prompts, current
+   strengths, evidence available, missing evidence, and page-specific risks.
+5. Record each recommendation with `P0`, `P1`, or `P2` priority and one of
+   `suggested`, `approved`, `in progress`, `implemented`, `deferred`, or
+   `blocked`.
+6. Include answer-copy, internal-link, entity, authorship, freshness, crawler,
+   structured-data, and measurement actions when they apply. Do not add a
+   category merely to fill the template.
+7. Keep unresolved recommendations in `docs/aeo-geo-strategy.md` across future
+   tasks. Never remove an open recommendation just because the page shipped;
+   change its status and add a concise reason or verification note.
+8. If no additional improvement is found, update `Last reviewed` and record
+   `No new AEO/GEO gaps found` with the verification performed.
+
+Document boundaries:
+
+- `docs/aeo-geo-strategy.md` owns AEO/GEO strategy, page readiness, prompts,
+  evidence, entity, crawler, schema, citation, and measurement recommendations.
+- `docs/page-content-improvements.md` owns exact visible-copy changes queued for
+  content approval or implementation. When a copy change originates in the
+  AEO/GEO audit, keep the strategy item and cross-reference it instead of moving
+  the finding out of the strategy.
+- `docs/visual-captures/**` owns live/local visual and interaction evidence.
+- `docs/seo-launch-checklist.md` owns the general SEO production gate.
 
 ## Local Single-Page SEO Audit Mode
 
@@ -352,6 +400,8 @@ A task is complete only when:
   component has a clear semantic, behavioral, or visual reason to remain separate.
 - It uses local assets/content, not old-site runtime URLs.
 - SEO was handled for touched routes.
+- The touched route's section in `docs/aeo-geo-strategy.md` was added or updated,
+  and every unresolved AEO/GEO item remains recorded with priority and status.
 - Visual parity evidence was recorded for UI changes, including responsive and
   animation checks, or the final response clearly explains why it could not be
   verified.

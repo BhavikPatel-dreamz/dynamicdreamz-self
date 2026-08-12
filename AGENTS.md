@@ -34,8 +34,9 @@ Before implementing code, read these project docs in this order:
 2. `docs/agent-workflow.md`
 3. `docs/visual-parity-workflow.md`
 4. `docs/seo-launch-checklist.md`
-5. `docs/page-content-improvements.md`
-6. The relevant bundled Next.js docs in `node_modules/next/dist/docs/`
+5. `docs/aeo-geo-strategy.md`
+6. `docs/page-content-improvements.md`
+7. The relevant bundled Next.js docs in `node_modules/next/dist/docs/`
 
 Use this one-prompt kickoff for future sessions:
 
@@ -119,9 +120,17 @@ Core proof points from the live site:
   excluding links to planned but not-yet-built routes. Report those links as
   "migration pending" instead of SEO failures. Before launch, broken internal
   links are never allowed.
+- For every new or materially updated indexable page, audit AEO and GEO in the
+  same task and add or update that route's page-specific section in
+  `docs/aeo-geo-strategy.md`. Keep unresolved AEO/GEO improvements in that file
+  with a priority and status; if the audit finds no new gap, record the review
+  date and result instead of silently skipping it.
 - When a page needs better SEO copy or visible UI content changes, update
   `docs/page-content-improvements.md` with the page name, route, current issue,
-  suggested replacement copy, SEO reason, priority, and status.
+  suggested replacement copy, SEO reason, priority, and status. The AEO/GEO
+  strategy remains the source of truth for AEO/GEO findings; use the content
+  improvements file as the implementation queue for exact visible copy rather
+  than moving or deleting the underlying AEO/GEO recommendation.
 - Every image must have intentional alt handling. Use meaningful, page-specific
   alt text for all content images, preserving or improving the live site's alt
   text. Only truly decorative images may use empty alt text, and that choice

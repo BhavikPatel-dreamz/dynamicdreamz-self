@@ -236,6 +236,12 @@ export function createHomePageSchema() {
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },
         breadcrumb: { "@id": breadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.home.image.path),
+          width: pageSeo.home.image.width,
+          height: pageSeo.home.image.height,
+        },
         inLanguage: "en-US",
       },
       {
@@ -596,7 +602,7 @@ export function createResourcesPageSchema() {
         "@type": "BreadcrumbList",
         "@id": resourcesBreadcrumbId,
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
           { "@type": "ListItem", position: 2, name: "Resources", item: resourcesPageUrl },
         ],
       },
