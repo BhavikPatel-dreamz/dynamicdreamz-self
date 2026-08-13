@@ -221,6 +221,35 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  
+  fashion: {
+    path: "/fashion",
+    title: "Web Design Agency for Fashion Industry - Dynamic Dreamz",
+    description:
+      "Dynamic Dreamz builds ecommerce stores and digital experiences for fashion and apparel brands selling clothing, jewelry, watches, footwear and accessories.",
+    socialDescription:
+      "Ecommerce and web development for fashion and apparel brands, including Shopify storefronts, responsive merchandising and customer-engagement features.",
+    keywords: [
+      "fashion ecommerce development",
+      "fashion web design agency",
+      "Shopify fashion store development",
+      "apparel ecommerce agency",
+      "fashion website development",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-06T09:44:56+00:00",
+    modifiedTime: "2026-08-13T00:00:00+05:30",
+    image: {
+      path: "/assets/fashion/fashion-storefront-collage.webp",
+      width: 840,
+      height: 434,
+      alt: "Fashion, sportswear, footwear and jewellery ecommerce storefront collage",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   whiteLabelShopify: {
     path: "/white-label-shopify-development-services",
     title: "White Label Shopify Development Partner for Digital Agencies",

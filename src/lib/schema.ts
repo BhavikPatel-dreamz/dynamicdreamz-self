@@ -1,5 +1,6 @@
 import { founders } from "@/content/about";
-import { beautyDeliverables } from "@/content/beauty-cosmetics";
+import { beautyIndustryPage } from "@/content/beauty-cosmetics";
+import { fashionIndustryPage } from "@/content/fashion";
 import { organizationAnswerSummary, testimonials } from "@/content/home";
 import {
   careerApplicationPath,
@@ -47,6 +48,10 @@ const beautyPageUrl = absoluteUrl(pageSeo.beautyCosmetics.path);
 const beautyPageId = `${beautyPageUrl}#webpage`;
 const beautyBreadcrumbId = `${beautyPageUrl}#breadcrumb`;
 const beautyServiceId = `${beautyPageUrl}#service`;
+const fashionPageUrl = absoluteUrl(pageSeo.fashion.path);
+const fashionPageId = `${fashionPageUrl}#webpage`;
+const fashionBreadcrumbId = `${fashionPageUrl}#breadcrumb`;
+const fashionServiceId = `${fashionPageUrl}#service`;
 const whiteLabelShopifyPageUrl = absoluteUrl(pageSeo.whiteLabelShopify.path);
 const whiteLabelShopifyPageId = `${whiteLabelShopifyPageUrl}#webpage`;
 const whiteLabelShopifyServiceId = `${whiteLabelShopifyPageUrl}#service`;
@@ -572,7 +577,23 @@ export function createResourcesPageSchema() {
   };
 }
 
-export function createBeautyCosmeticsPageSchema() {
+type IndustryPageSchemaConfig = {
+  seo: PageSeoConfig;
+  pageUrl: string;
+  pageId: string;
+  breadcrumbId: string;
+  breadcrumbName: string;
+  serviceId: string;
+  serviceName: string;
+  serviceType: string;
+  audienceType: string;
+  offerCatalog: {
+    title: string;
+    items: readonly { title: string; description: string }[];
+  };
+};
+
+function createIndustryPageSchema(config: IndustryPageSchemaConfig) {
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -587,50 +608,49 @@ export function createBeautyCosmeticsPageSchema() {
       },
       {
         "@type": "WebPage",
-        "@id": beautyPageId,
-        url: beautyPageUrl,
-        name: pageSeo.beautyCosmetics.title,
-        description: pageSeo.beautyCosmetics.description,
-        datePublished: pageSeo.beautyCosmetics.publishedTime,
-        dateModified: pageSeo.beautyCosmetics.modifiedTime,
+        "@id": config.pageId,
+        url: config.pageUrl,
+        name: config.seo.title,
+        description: config.seo.description,
+        datePublished: config.seo.publishedTime,
+        dateModified: config.seo.modifiedTime,
         isPartOf: { "@id": websiteId },
-        about: { "@id": beautyServiceId },
-        mainEntity: { "@id": beautyServiceId },
-        breadcrumb: { "@id": beautyBreadcrumbId },
+        about: { "@id": config.serviceId },
+        mainEntity: { "@id": config.serviceId },
+        breadcrumb: { "@id": config.breadcrumbId },
         primaryImageOfPage: {
           "@type": "ImageObject",
-          url: absoluteUrl(pageSeo.beautyCosmetics.image.path),
-          width: pageSeo.beautyCosmetics.image.width,
-          height: pageSeo.beautyCosmetics.image.height,
-          caption: pageSeo.beautyCosmetics.image.alt,
+          url: absoluteUrl(config.seo.image.path),
+          width: config.seo.image.width,
+          height: config.seo.image.height,
+          caption: config.seo.image.alt,
         },
         inLanguage: "en-US",
       },
       {
         "@type": "BreadcrumbList",
-        "@id": beautyBreadcrumbId,
+        "@id": config.breadcrumbId,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
           {
             "@type": "ListItem",
             position: 2,
-            name: "Beauty & Cosmetics",
-            item: beautyPageUrl,
+            name: config.breadcrumbName,
+            item: config.pageUrl,
           },
         ],
       },
       {
         "@type": "Service",
-        "@id": beautyServiceId,
-        name: "Beauty & Cosmetics Ecommerce Development",
-        serviceType: "Beauty and cosmetics ecommerce development",
-        url: beautyPageUrl,
-        description: pageSeo.beautyCosmetics.description,
+        "@id": config.serviceId,
+        name: config.serviceName,
+        serviceType: config.serviceType,
+        url: config.pageUrl,
+        description: config.seo.description,
         provider: { "@id": organizationId },
         audience: {
           "@type": "BusinessAudience",
-          audienceType:
-            "Beauty, cosmetics, skincare, haircare, salon and wellness brands",
+          audienceType: config.audienceType,
         },
         areaServed: [
           "United States",
@@ -643,8 +663,8 @@ export function createBeautyCosmeticsPageSchema() {
         ],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: beautyDeliverables.title,
-          itemListElement: beautyDeliverables.items.map((item) => ({
+          name: config.offerCatalog.title,
+          itemListElement: config.offerCatalog.items.map((item) => ({
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
@@ -787,6 +807,38 @@ function createWhiteLabelServicePageSchema({
       },
     ],
   };
+}
+
+export function createBeautyCosmeticsPageSchema() {
+  return createIndustryPageSchema({
+    seo: pageSeo.beautyCosmetics,
+    pageUrl: beautyPageUrl,
+    pageId: beautyPageId,
+    breadcrumbId: beautyBreadcrumbId,
+    breadcrumbName: "Beauty & Cosmetics",
+    serviceId: beautyServiceId,
+    serviceName: "Beauty & Cosmetics Ecommerce Development",
+    serviceType: "Beauty and cosmetics ecommerce development",
+    audienceType:
+      "Beauty, cosmetics, skincare, haircare, salon and wellness brands",
+    offerCatalog: beautyIndustryPage.deliverables,
+  });
+}
+
+export function createFashionPageSchema() {
+  return createIndustryPageSchema({
+    seo: pageSeo.fashion,
+    pageUrl: fashionPageUrl,
+    pageId: fashionPageId,
+    breadcrumbId: fashionBreadcrumbId,
+    breadcrumbName: "Fashion & Apparel",
+    serviceId: fashionServiceId,
+    serviceName: "Fashion & Apparel Ecommerce Development",
+    serviceType: "Fashion and apparel ecommerce development",
+    audienceType:
+      "Fashion, apparel, jewelry, footwear, accessories and lifestyle brands",
+    offerCatalog: fashionIndustryPage.deliverables,
+  });
 }
 
 export function createWhiteLabelShopifyPageSchema() {

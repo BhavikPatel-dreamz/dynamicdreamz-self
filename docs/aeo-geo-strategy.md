@@ -26,6 +26,7 @@ It covers:
   - `/life-dynamicdreamz`
   - `/resources`
   - `/beauty-cosmetics`
+  - `/fashion`
   - `/white-label-shopify-development-services`
   - `/white-label-wordpress-development-services`
 
@@ -80,7 +81,7 @@ The highest-value work is:
 1. Complete the commercial service, work, case-study, contact, quote, job, and
    article routes referenced by the current UI and structured data before
    launch; their development-stage availability is excluded from the current
-   seven-page implementation scope.
+   eight-page implementation scope.
 2. Resolve conflicting facts, URLs, review counts, dates, and service names.
 3. Publish answer-first service content backed by project evidence.
 4. Convert portfolio items into first-party case studies with approved outcomes.
@@ -1441,6 +1442,115 @@ Exact visible proposals are tracked in `docs/page-content-improvements.md`.
   an approved delivery case study, authorship, internal links to unbuilt routes,
   operating-hours confirmation, and quote-route completion.
 
+## Fashion & Apparel (`/fashion`)
+
+Status: technical implementation complete; visible recommendations deferred for live parity
+Last reviewed: 2026-08-13
+Owner: SEO, content, development, and client success
+Primary audience: Fashion, apparel, jewelry, footwear, accessories, and
+lifestyle brand founders; ecommerce leaders; and digital-commerce teams
+Decision stage: Solution awareness through agency evaluation
+
+### Page role
+
+Industry landing page for fashion and apparel brands evaluating ecommerce,
+Shopify, Shopify Plus, responsive design, merchandising, engagement, social
+integration, and related web-development support. It differs from general
+Shopify service pages by leading with fashion-industry presentation needs and
+six visible fashion/lifestyle portfolio examples.
+
+### Target prompts
+
+- Which agency builds Shopify stores for fashion and apparel brands?
+- What ecommerce features help fashion, jewelry, footwear, and accessories brands?
+- Can Dynamic Dreamz build responsive fashion storefronts and product galleries?
+- Which fashion and apparel brands has Dynamic Dreamz supported?
+- How can a fashion brand request an ecommerce project estimate?
+
+### Current strengths and available evidence
+
+- The live page has a clear Fashion & Apparel H1, direct industry framing,
+  five visible deliverables, and six externally linked portfolio examples.
+- SomewhereCo, Donj Jewellery, Bombay Shirt Company, Tropicfeel, Raen, and TEGO
+  Fit are visibly named and linked; attribution remains subject to ongoing
+  client-permission governance.
+- The primary page content can be server rendered and shares an already-audited
+  industry layout with the Beauty & Cosmetics route.
+- The live publish date is available, and all required visual assets have been
+  captured for local ownership and duplicate checking.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | `/fashion` was linked from navigation but was not implemented locally | Built the slashless server-rendered route with shared metadata, robots, sitemap, schema, and canonical helpers | Rendered and build verification complete 2026-08-13 |
+| P0 | migration pending | Conversion routes | `/request-quote` and `/our-work` are not built | Preserve their migration-intent paths now; build or redirect and validate both before launch | Route migration |
+| P0 | implemented | Schema accuracy | Live source injects an unrelated sitewide FAQPage that is not visible on this route | Emit only page-relevant Organization, WebSite, WebPage, BreadcrumbList, and Service/OfferCatalog nodes | Rendered schema audit complete 2026-08-13 |
+| P1 | implemented | Metadata | Live description is 170 characters and exceeds the project’s 160-character target | Preserve intent in a concise route-specific title/description with canonical, Open Graph, and Twitter data | 155-character description and rendered/build audit complete |
+| P1 | implemented baseline; case studies migration pending | Evidence | Portfolio proof routes only to external storefronts and does not state scope or outcomes | Preserve the six visible links; add internal case studies only when attribution, scope, and outcomes are approved | Client-success approval and case-study migration |
+| P1 | deferred | Claim support | Visible copy says the solution increases retention and sales growth without page-level evidence | Preserve live wording during migration; later qualify it or add approved evidence | Content/client-success approval |
+| P1 | migration pending | Internal links | The page does not route to relevant built Shopify capabilities or fashion case studies | Add descriptive service and case-study links as their canonical routes ship | Route coverage and visible-link approval |
+| P2 | deferred | Answer copy and FAQs | The page lacks one concise provider/capability answer and visible evaluation FAQs | Add only useful, evidence-backed copy after exact visible wording is approved; mirror any visible FAQ exactly in schema | Content and factual approval |
+| P2 | suggested | Authorship/review | No visible practitioner reviewer or content-review label is present | Add an approved reviewer and real review date when service-page governance exists | Leadership/content approval |
+
+### Suggested answer copy
+
+Deferred under the migration live-UI gate. A future answer should identify
+Dynamic Dreamz, fashion/apparel audiences, Shopify/Shopify Plus capabilities,
+and concrete storefront deliverables without implying guaranteed revenue or
+retention outcomes. Exact visible proposals are tracked in
+`docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Model the page as a fashion and apparel ecommerce-development Service
+  provided by the shared Dynamic Dreamz Organization.
+- Keep the six visible brand names and destinations aligned with the rendered
+  portfolio; do not add outcome claims or case-study attribution without
+  approval.
+- Do not invent an author, reviewer, credential, rating, or project result.
+
+### Internal-link and conversion actions
+
+- Preserve the live Request a Quote, Get Started, portfolio, and View our work
+  CTA flow using slashless migration-intent paths.
+- Keep external project links secure and preserve the live nofollow intent.
+- Connect to Shopify development, Shopify Plus, CRO, and fashion case studies
+  only as those local destinations become available.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Organization, WebSite, WebPage, BreadcrumbList, and a page-specific
+  Service whose offers match the five visible deliverables.
+- Do not emit FAQPage because the route has no visible FAQ content.
+- Preserve the real 2024-05-06 publish timestamp and use the actual migration
+  review date for modification; never substitute deployment time.
+- Keep the page indexable and include its canonical route and local primary
+  image in the sitemap.
+
+### Measurement plan
+
+- Track impressions/clicks for fashion ecommerce, apparel Shopify, fashion web
+  design, product-gallery, jewelry ecommerce, and responsive-store queries.
+- Sample the target prompts monthly across relevant search and answer engines;
+  record page citations, claim accuracy, and competing sources.
+- Track quote, portfolio, and View our work clicks once analytics governance is
+  configured.
+
+### Verification and remaining gaps
+
+- Checks completed: live and local rendered pages, View Page Source,
+  metadata/date/canonical, heading/CTA/link/image inventory, JSON-LD, CSS/JS,
+  desktop/tablet/mobile screenshots and computed geometry, carousel and hover
+  states, page overflow, local runtime asset requests, exact/perceptual asset
+  deduplication, URL-policy guard, lint, and production build.
+- Implemented items: slashless server-rendered route, shared typed industry
+  sections/content, local canonical assets, route metadata/discovery records,
+  accurate alt text, and page-relevant WebPage/BreadcrumbList/Service schema.
+- Deferred or blocked: visible answer/grammar/claim changes, FAQ, authorship,
+  internal case studies/service links, and conversion-route completion require
+  approval or destination migration.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new
@@ -1564,6 +1674,10 @@ update its statuses, review date, verification evidence, and remaining gaps.
 | P0 | migration pending | Build quote, contact, work, case-study, blog, job-detail/application routes | Home, Career, Resources |
 | P0 | blocked | Resolve CRO experience range, Career UI/PDF location differences, and current recruitment/workplace policies | Career, Life |
 | P1 | implemented for current routes | Replace deployment dates with real content dates | Sitemap and all eight built pages |
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4be623a (feat: add fashion industry page and related components)
 | P1 | in progress | Add descriptive internal links as relevant built routes launch | Career, Life, future service pages |
 | P1 | deferred to article migration | Add approved authors/reviewers and expert profiles | Resources, future articles/services |
 | P1 | deferred to case-study migration | Turn selected work into internal evidence pages | Home, future Work/Case Study |

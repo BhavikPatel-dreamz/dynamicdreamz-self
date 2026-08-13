@@ -1,4 +1,5 @@
-import { BeautyCosmeticsPage } from "@/components/sections/beauty-cosmetics-page";
+import { IndustryPage } from "@/components/sections/industry/industry-page";
+import { beautyIndustryPage } from "@/content/beauty-cosmetics";
 import { pageMetadata } from "@/data/seo";
 import { createBeautyCosmeticsPageSchema, serializeJsonLd } from "@/lib/schema";
 
@@ -13,7 +14,7 @@ export default function BeautyCosmeticsRoute() {
           __html: serializeJsonLd(createBeautyCosmeticsPageSchema()),
         }}
       />
-      <BeautyCosmeticsPage />
+      <IndustryPage content={beautyIndustryPage} />
     </main>
   );
 }

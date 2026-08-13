@@ -69,7 +69,11 @@ export function ClientLogoSlider({ ariaLabel, items, variant }: ClientLogoSlider
 
   return (
     <div aria-label={ariaLabel} role="region">
-      <Slider {...settings} className={styles.slider}>
+      <Slider
+        {...settings}
+        className={styles.slider}
+        key={`${variant}-${slidesToShow}-${reducedMotion ? "reduced" : "motion"}`}
+      >
         {items.map((logo) => (
           <div key={logo.src}>
             <div

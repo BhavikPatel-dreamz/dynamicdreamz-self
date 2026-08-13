@@ -225,3 +225,24 @@ services.
 | Office-hours FAQ | States two offices, Monday–Friday 9 AM–7 PM IST, and off-hours client-call availability. | Retain only after operations, HR, and sales confirm that the locations, hours, and availability policy are current. | Prevents the page from setting inaccurate support and availability expectations. | High | blocked pending policy confirmation |
 | Case-study evidence | No visible WordPress white-label delivery example or approved outcome. | Add an anonymized or client-approved example covering scope, constraints, communication model, QA, confidentiality, and outcome. | Gives agency buyers evidence without exposing a confidential client or inventing a metric. | High | deferred pending evidence and client-success approval |
 | Contextual service links | WordPress, WooCommerce, themes, performance, and developer-capacity phrases are plain text. | Link each phrase to its canonical local route as that destination ships. | Improves buyer navigation and topic relationships without creating broken links. | Medium | migration pending |
+
+## Fashion & Apparel (`/fashion`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-13
+Primary SEO intent: fashion and apparel ecommerce development, Shopify fashion
+stores, responsive merchandising, product galleries, social integration, and
+fashion-industry web design.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Hero description | “Display your fashion statement with style. Let Dynamic Dreamz help you in exhibiting your apparels in the most appealing manner to your customers.” | “Present your fashion brand with style. Dynamic Dreamz can help showcase your apparel in an engaging, customer-friendly ecommerce experience.” | Replaces the nonstandard plural “apparels” and improves clarity without adding a result claim. | High | deferred pending exact visible-copy approval |
+| Industry paragraph | Uses “fast paced,” “trend driven,” “Shopify Plus based,” and “hassle free.” | Hyphenate the compound modifiers and simplify the description while preserving the seasonal-fashion and Shopify/Shopify Plus intent. | Improves grammar and extraction. | Medium | deferred pending exact visible-copy approval |
+| Deliverables introduction | Says the delivered UI/UX “increases customer retention and sales growth.” | Describe the intended merchandising and usability benefits without guaranteeing retention or sales outcomes, unless approved evidence is added. | Avoids an unsupported outcome claim. | High | deferred pending evidence and exact copy approval |
+| Fashion website-design card | Final sentence has no period and the paragraph is long. | Split the zoom/product-detail explanation into concise sentences and add final punctuation. | Improves readability while retaining the feature. | Low | deferred pending exact visible-copy approval |
+| Leverage of technology card | “make insights into powerful data analytics” is unclear. | Explain inventory/supply-chain management, engagement, analytics, and forecasting in direct language without claiming unsupported results. | Improves clarity and factual precision. | Medium | deferred pending exact visible-copy approval |
+| Portfolio introduction | “clients vision” and “customers perception” omit possessive apostrophes. | “Our Fashion and Apparel Portfolio reflects our clients’ vision and their customers’ perception of fashion.” | Corrects grammar while preserving intent. | Low | deferred pending exact visible-copy approval |
+| Donj category label | “WordPress + Wocommerce” | “WordPress + WooCommerce” | Corrects the platform spelling. | Low | deferred pending exact visible-copy approval |
+| Portfolio image alt text | Live labels incorrectly identify SomewhereCo as Sambazon and Donj Jewellery as The Huddle Sports Grill. | Use brand- and subject-specific descriptions for all six project images. | Prevents unrelated alt text and accurately describes the visible media. | High | implemented as approved nonvisual accessibility correction |
+| CTA destinations | `/request-quote` and `/our-work` are not built. | Preserve their migration-intent paths and validate or redirect both before launch. | Maintains live CTA flow during migration. | High | migration pending |
+
