@@ -25,7 +25,7 @@ export function HomeHeroSection() {
           <ButtonLink className="ml-[15px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:px-6 max-[991px]:py-3 max-[991px]:text-sm max-[767px]:ml-0" variant="primary" href={siteConfig.quotePath}>
             book a discovery call
           </ButtonLink>
-          <ButtonLink className="ml-[15px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:px-6 max-[991px]:py-3 max-[991px]:text-sm max-[767px]:ml-0" variant="outline" href="/our-work/">
+          <ButtonLink className="ml-[15px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:px-6 max-[991px]:py-3 max-[991px]:text-sm max-[767px]:ml-0" variant="outline" href="/our-work">
             VIEW OUR SHOPIFY WORK
           </ButtonLink>
         </div>

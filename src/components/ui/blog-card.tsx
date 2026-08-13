@@ -23,7 +23,7 @@ type BlogCardProps = {
 
 export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
   const category = item.category ?? "Shopify";
-  const categoryHref = item.categoryHref ?? "/category/shopify/";
+  const categoryHref = item.categoryHref ?? "/category/shopify";
 
   if (variant === "resources") {
     return (

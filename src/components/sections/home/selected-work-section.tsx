@@ -80,7 +80,7 @@ export function SelectedWorkSection() {
         </div>
       </div>
       <div className="flex justify-center">
-        <ButtonLink className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:py-3 max-[991px]:text-sm" variant="light" href="/our-work/">View our work</ButtonLink>
+        <ButtonLink className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:py-3 max-[991px]:text-sm" variant="light" href="/our-work">View our work</ButtonLink>
       </div>
     </section>
   );

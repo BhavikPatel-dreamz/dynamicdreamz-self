@@ -136,7 +136,7 @@ function FooterMenu({ index }: { index: number }) {
 
 export function SiteFooter() {
   return (
-    <footer className="min-h-213 bg-cream text-ink max-[991px]:min-h-[1023.7px] max-[767px]:min-h-[978.3px]">
+    <footer className="min-h-[852.4px] bg-cream text-ink max-[991px]:min-h-[1039.7px] max-[767px]:min-h-[1002.3px]">
       <Container footer className="hidden grid-cols-[240px_545px_260px] justify-between pt-15 pb-0 min-[1200px]:grid">
         <div className="flex flex-col">
           <FooterMenu index={0} />
@@ -228,10 +228,10 @@ export function SiteFooter() {
           © 2026 <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> All rights reserved.
         </p>
         <div className="flex max-[767px]:mt-2.5">
-          <Link className="relative mr-2.5 inline-block pr-2.5 text-sm leading-5 font-normal text-ink transition-[color,opacity] duration-300 after:absolute after:-top-px after:-right-1 after:content-['|'] hover:text-brand-red hover:opacity-80 focus-visible:text-brand-red focus-visible:opacity-80" href="/terms-of-service/" target="_blank" rel="noopener noreferrer">
+          <Link className="relative mr-2.5 inline-block pr-2.5 text-sm leading-5 font-normal text-ink transition-[color,opacity] duration-300 after:absolute after:-top-px after:-right-1 after:content-['|'] hover:text-brand-red hover:opacity-80 focus-visible:text-brand-red focus-visible:opacity-80" href="/terms-of-service" target="_blank" rel="noopener noreferrer">
             Terms of Service
           </Link>
-          <Link className="inline-block text-sm leading-5 font-normal text-ink transition-[color,opacity] duration-300 hover:text-brand-red hover:opacity-80 focus-visible:text-brand-red focus-visible:opacity-80" href="/privacy-policy/" target="_blank" rel="noopener noreferrer">
+          <Link className="inline-block text-sm leading-5 font-normal text-ink transition-[color,opacity] duration-300 hover:text-brand-red hover:opacity-80 focus-visible:text-brand-red focus-visible:opacity-80" href="/privacy-policy" target="_blank" rel="noopener noreferrer">
             Privacy Policy
           </Link>
         </div>

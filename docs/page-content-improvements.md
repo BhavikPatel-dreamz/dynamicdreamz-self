@@ -120,7 +120,7 @@ digital marketing roles, and ecommerce technology opportunities.
 | Workplace benefit | Ample of Employee Engagement Activities | Employee Engagement Activities | Corrects grammar without changing the benefit category. | Low | deferred; reverted to live copy on 2026-08-13 |
 | Culture link | Benefits do not route candidates to fuller workplace answers. | Explore life, culture, benefits, and workplace FAQs at Dynamic Dreamz. | Connects the two built recruitment pages with descriptive anchor text. | Medium | deferred; removed for live parity on 2026-08-13 |
 | CRO experience | Card/live listing says 1–3 years; PDF says 2–4 years. | Confirm one current range, then update visible content, PDF, and schema together. | Avoids giving candidates conflicting requirements. | High | blocked pending factual confirmation |
-| Job CTA destination | Apply links keep `/career-apply-now/` with role/location parameters. | Retain during active migration and validate the application flow before launch. | Preserves route intent under the approved unbuilt-route exception. | High | migration pending |
+| Job CTA destination | Apply links keep `/career-apply-now` with role/location parameters. | Retain during active migration and validate the application flow before launch. | Preserves route intent under the approved unbuilt-route exception. | High | migration pending |
 
 ## Life @ Dynamic Dreamz (`/life-dynamicdreamz`)
 
@@ -158,8 +158,29 @@ guides, performance, SEO, and white-label development insights.
 | Experience statistic | 18+ Years of Experience becomes stale each year. | Founded 2006 | Uses a stable, precise fact. | Medium | deferred; live statistic restored on 2026-08-13 |
 | Taxonomy | First category is labelled Shopify although its articles are white-label topics; Magento is empty. | Rename the first group White Label & Agency Growth and hide the empty Magento group. | Makes visible classification match actual content. | Medium | deferred; live taxonomy restored on 2026-08-13 |
 | Trust description | Uses generic phrases such as "cutting edge web technology and framework." | Dynamic Dreamz combines Shopify, ecommerce, web, and mobile expertise with design, development, quality assurance, and long-term technical support. | Replaces commodity wording with concrete capabilities. | Medium | deferred; reverted to live copy on 2026-08-13 |
-| Category link | The live story category uses a non-functional `#` destination. | Link "Shopify" to `/blogs/category/shopify/`. | Restores useful navigation and descriptive internal-link context. | High | implemented |
+| Category link | The live story category uses a non-functional `#` destination. | Link "Shopify" to `/blogs/category/shopify`. | Restores useful navigation and descriptive internal-link context. | High | implemented |
 | Article image alt text | Several live WordPress image alts repeat filenames with underscores and punctuation. | Use each visible article title as its thumbnail alt text. | Gives every content image meaningful, page-specific alternative text. | Medium | implemented |
 | Heading hierarchy | The live page uses a second `h1` for "Our Dynamic Story,". | Keep the visual treatment but render the story title as an `h2`. | Produces one clear primary heading and a logical page outline. | High | implemented |
 | Article authorship | Current hub data has no approved author or reviewer. | Add visible author, reviewer, expertise, evidence, and dates on each article during article migration. | Supports attributable expertise without inventing people or credentials. | High | deferred to article migration |
-| Article and CTA paths | Planned `/blogs/`, category, and `/request-quote/` destinations are not all built. | Retain migration-intent paths now and verify route/redirect coverage before launch. | Follows the approved unbuilt-route exception. | High | migration pending |
+| Article and CTA paths | Planned `/blogs`, category, and `/request-quote` destinations are not all built. | Retain migration-intent paths now and verify route/redirect coverage before launch. | Follows the approved unbuilt-route exception. | High | migration pending |
+
+## Beauty & Cosmetics (`/beauty-cosmetics`)
+
+Status: visible recommendations deferred; live UI preserved
+Last reviewed: 2026-08-13
+Primary SEO intent: beauty and cosmetics ecommerce development, Shopify beauty
+stores, salon booking, interactive commerce, and beauty-industry web solutions.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | Beauty & Cosmetics Industry Web Development \| eCommerce for Beauty & Cosmetics Industry \| Web Development India \| eCommerce Development Agency \| Dynamic Dreamz | Beauty & Cosmetics Ecommerce Development \| Dynamic Dreamz | Preserves provider and commercial intent within the 60-character title budget. | High | implemented |
+| Hero description | Unlock the growth of your beauty & cosmetics business with Dyamic Dreamz | Unlock the growth of your beauty and cosmetics business with Dynamic Dreamz. | Corrects the company-name typo and improves sentence grammar. | High | deferred pending exact visible-copy approval |
+| Industry paragraph | We at Dynamic Dreamz, use Shopify eCommerce platform to showcase ‘Before’ and ‘After’ effects of the beauty products. | At Dynamic Dreamz, we use Shopify ecommerce experiences to demonstrate the before-and-after effect of beauty products. | Removes the comma error and makes the capability easier to understand without adding a result claim. | Medium | deferred pending exact visible-copy approval |
+| Deliverables introduction | Uses “virtual try ons.” | Use “virtual try-ons.” | Corrects compound-word punctuation. | Low | deferred pending exact visible-copy approval |
+| Appointment card | Uses “no shows.” | Use “no-shows.” | Corrects compound-word punctuation. | Low | deferred pending exact visible-copy approval |
+| Interactive Features card | Uses “feature rich” and “virtual try ons.” | Use “feature-rich” and “virtual try-ons.” | Improves grammar while preserving the capability claim. | Low | deferred pending exact visible-copy approval |
+| Responsive Layouts card | Uses “attention grabbing.” | Use “attention-grabbing.” | Corrects compound-word punctuation. | Low | deferred pending exact visible-copy approval |
+| Portfolio introduction | Have a look at our portfolio, how we ‘beautified’ our clients online stores with our seamless IT solutions! | See how our ecommerce solutions helped beauty and cosmetics clients present their brands and products online. | Removes awkward grammar and an unsupported quality adjective while retaining the portfolio intent. | Medium | deferred pending exact visible-copy approval |
+| Industry image alt text | Live source incorrectly says “IT Solutions for Food & Beverages Industry Image.” | Makeup artist applying eye makeup for a beauty ecommerce industry section. | Corrects the subject mismatch and gives the content image meaningful alternative text without changing visual UI. | High | implemented |
+| Portfolio image alt text | Several live alts are generic or inaccurate, including “Nufyx Image.” | Use brand- and subject-specific descriptions for each visible portfolio image. | Keeps image meaning aligned with the visible brand card. | Medium | implemented |
+| CTA destinations | `/request-quote` and `/our-work` are not yet built. | Preserve their canonical path intent during migration and validate or redirect both before launch. | Maintains live CTA flow under the active-migration route exception. | High | migration pending |

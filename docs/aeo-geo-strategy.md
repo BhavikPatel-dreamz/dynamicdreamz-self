@@ -21,10 +21,10 @@ It covers:
 - A prioritized implementation roadmap.
 - Page-specific improvements for the routes currently built:
   - `/`
-  - `/about-us/`
-  - `/career/`
-  - `/life-dynamicdreamz/`
-  - `/resources/`
+  - `/about-us`
+  - `/career`
+  - `/life-dynamicdreamz`
+  - `/resources`
 
 This is the strategy and implementation record. Visible changes proposed and
 temporarily implemented on 2026-08-12 were rejected and reverted to live-site
@@ -244,7 +244,7 @@ Representative prompts:
 | --- | --- | --- |
 | Rendering | Primary content is server-rendered | Content is available without client-side execution |
 | Metadata | Unique metadata, canonical, Open Graph, Twitter, and robots directives exist for built pages | Strong conventional search foundation |
-| URL policy | Trailing-slash policy is centralized | Reduces canonical ambiguity |
+| URL policy | No-trailing-slash policy is centralized and build-enforced | Reduces canonical ambiguity and redirect hops |
 | Sitemap | Built pages are generated from shared SEO data | Creates a maintainable discovery source |
 | Entity schema | Organization and WebSite nodes use stable identifiers | Helps consolidate the Dynamic Dreamz entity |
 | Page schema | AboutPage, WebPage, CollectionPage, BreadcrumbList, FAQPage, JobPosting, BlogPosting, and VideoObject are used where intended | Provides machine-readable context when it matches visible content |
@@ -265,7 +265,7 @@ mandatory prelaunch dependencies.
 | --- | --- | --- | --- |
 | P0 | migration pending | Only five indexable routes are implemented, while navigation and CTAs reference the larger migration | Complete and validate the intended destinations before launch |
 | P0 | migration pending | Homepage `OfferCatalog`, Resources `ItemList`, and Career application URLs reference planned routes | Retain during migration; validate every final canonical destination before launch |
-| P0 | migration pending | Homepage uses root article slugs while Resources uses `/blogs/` paths | Choose the legacy-compatible canonical pattern and redirects during article migration |
+| P0 | migration pending | Homepage uses root article slugs while Resources uses `/blogs` paths | Choose the legacy-compatible canonical pattern and redirects during article migration |
 | P0 | blocked by live parity | Review scores, counts, and profile URLs are not governed by one current source | Live Resources ratings and counts were restored on 2026-08-13; verify and centralize them before launch |
 | P0 | blocked by live parity | Home displays `4500+` Shopify stores while Resources visible story copy says `1000+` | Keep the live UI during migration, then resolve the definition, provenance, and approved display value before launch |
 | P1 | implemented | Sitemap and page schema previously used build time or stale `dateModified` values | All five routes now use explicit content dates from shared SEO records |
@@ -551,7 +551,7 @@ revenue opportunities.
 
 - Complete the priority Shopify service pages.
 - Define intent boundaries for overlapping Shopify Plus routes.
-- Complete `/our-work/`, `/case-study/`, `/contact-us/`, and `/request-quote/`.
+- Complete `/our-work`, `/case-study`, `/contact-us`, and `/request-quote`.
 - Add internal links from homepage proof and work sections.
 - Publish the strongest approved case studies first.
 
@@ -596,8 +596,8 @@ delivery, and ongoing support.
 
 | Priority | Status | Area | Current issue | Suggested improvement | Verification or remaining dependency |
 | --- | --- | --- | --- | --- | --- |
-| P0 | deferred | CTA destinations | `/request-quote/`, `/our-work/`, and `/blog/` are not built | Complete the routes before launch or temporarily point only to working destinations | Project owner approved retaining migration-intent destinations while development is in progress. Original CTA labels and paths are restored; re-audit before launch. |
-| P0 | deferred | Article paths | Homepage uses root-level article slugs while Resources uses `/blogs/` | Adopt one canonical path pattern and update cards, sitemap, schema, and redirects together | Requires a cross-route canonical and redirect decision; deliberately not changed in this homepage-only task. |
+| P0 | deferred | CTA destinations | `/request-quote`, `/our-work`, and `/blog` are not built | Complete the routes before launch or temporarily point only to working destinations | Project owner approved retaining migration-intent destinations while development is in progress. Original CTA labels and paths are restored; re-audit before launch. |
+| P0 | deferred | Article paths | Homepage uses root-level article slugs while Resources uses `/blogs` | Adopt one canonical path pattern and update cards, sitemap, schema, and redirects together | Requires a cross-route canonical and redirect decision; deliberately not changed in this homepage-only task. |
 | P0 | deferred | Offer schema | The OfferCatalog includes service pages that are still being migrated | Emit only live service offers before launch | Project owner approved retaining the catalog during active migration. The original eight service offers are restored and must be revalidated when route migration is complete. |
 | P0 | blocked by live parity | Proof consistency | Review values lack governance and Home's `4500+` Shopify-store count conflicts with Resources' visible `1000+` wording | Use a centralized, verified proof-data source | Core typed facts and schema are centralized, but live Resources proof copy and numeric reviews were restored at the project owner's request. Definitions, provenance, and approved visible values remain required. |
 | P1 | deferred | Selected work | Cards link directly to client sites and do not explain Dynamic Dreamz's role | Link to internal case studies containing scope, platform, constraints, and outcomes; retain a secondary client-site link if approved | Internal case-study routes and approved scope/outcome evidence are not available in this homepage-only task. |
@@ -640,6 +640,10 @@ superlatives.
 
 ### Verification and remaining gaps
 
+- URL-policy review (2026-08-13): `/` remains the sole structural route
+  exception, the absolute homepage URL uses the bare origin, all homepage links
+  to non-root pages use slashless destinations, and the source/build guard
+  passes.
 - Checks completed: live rendered page and View Page Source, live CSS/JS,
   1440x900, 768x1024, and 390x844 live/local captures, rendered local metadata,
   rendered JSON-LD, restored migration-intent links, lint, and production build.
@@ -654,7 +658,7 @@ superlatives.
   enquiries after deployment. SEO owns monthly prompt checks; development owns
   the prelaunch route/link audit.
 
-## About Us (`/about-us/`)
+## About Us (`/about-us`)
 
 Status: technical improvements implemented; visible copy deferred and live UI
 restored on 2026-08-13
@@ -732,6 +736,9 @@ to the live H1 and introduction on 2026-08-13.
 
 ### Verification and remaining gaps
 
+- URL-policy review (2026-08-13): canonical, Open Graph, sitemap, JSON-LD, and
+  internal links use `/about-us`; `/about-us/` redirects to `/about-us`, and the
+  source/build URL guard passes.
 - Rendered output contains one AboutPage, one shared Organization, three Person
   nodes, BreadcrumbList, WebSite, and the visible company VideoObject.
 - Desktop, tablet, and mobile screenshots confirm the live heading,
@@ -740,7 +747,7 @@ to the live H1 and introduction on 2026-08-13.
 - Remaining: founder-title confirmation, richer approved leadership expertise,
   company-fact provenance, and a future contact/company-facts destination.
 
-## Career (`/career/`)
+## Career (`/career`)
 
 Status: schema improvements retained; visible listing presentation restored to
 live on 2026-08-13
@@ -770,7 +777,7 @@ and Ahmedabad.
 
 | Priority | Status | Area | Current issue | Implemented improvement or dependency |
 | --- | --- | --- | --- | --- |
-| P0 | migration pending | Application route | Apply CTAs and JobPosting URLs target planned `/career-apply-now/` | Retained with role/location parameters; validate the application flow before launch |
+| P0 | migration pending | Application route | Apply CTAs and JobPosting URLs target planned `/career-apply-now` | Retained with role/location parameters; validate the application flow before launch |
 | P0 | partially implemented; approval required | Location accuracy | The live UI represents every role in both cities, while local PDFs support seven combinations | PDF-supported locations remain in JobPosting schema, while the visible tabs were restored to live. HR must confirm whether the UI or PDFs are authoritative before launch |
 | P0 | partially implemented | Job details | Full descriptions exist in PDFs | Role summaries remain in typed data and JobPosting descriptions, but visible card summaries were removed for live parity; full HTML detail remains future work |
 | P0 | blocked | Job freshness | Listings lack a visible review date and approved expiry dates | The proposed visible review date was removed for live parity; establish an HR-owned review and expiry process |
@@ -825,6 +832,9 @@ direct answer.
 
 ### Verification and remaining gaps
 
+- URL-policy review (2026-08-13): canonical, Open Graph, sitemap, JSON-LD, and
+  internal links use `/career`; `/career/` redirects to `/career`, and the
+  source/build URL guard passes.
 - Rendered output contains seven JobPosting nodes rather than ten assumed
   combinations, and each identifier includes the supported city.
 - Responsive captures confirm the live hero, opportunities copy, five-role tabs,
@@ -835,7 +845,7 @@ direct answer.
   migration, expiry governance, full HTML qualifications, hiring-process detail,
   and CRO experience confirmation also remain open.
 
-## Life at Dynamic Dreamz (`/life-dynamicdreamz/`)
+## Life at Dynamic Dreamz (`/life-dynamicdreamz`)
 
 Status: nonvisual SEO improvements implemented; visible copy deferred and live
 UI restored on 2026-08-13
@@ -862,8 +872,8 @@ candidate questions, and the Career page.
 
 | Priority | Status | Area | Current issue | Implemented improvement or dependency |
 | --- | --- | --- | --- | --- |
-| P0 | migration pending | Legacy URL | Project context also identifies `/life-at-dynamic-dreamz/` | Confirm the legacy canonical and redirect during prelaunch route work |
-| P0 | implemented | Hiring link | CTA used `/career` | Link now uses canonical `/career/` |
+| P0 | migration pending | Legacy URL | Project context also identifies `/life-at-dynamic-dreamz` | Confirm the legacy canonical and redirect during prelaunch route work |
+| P0 | implemented | Hiring link | CTA used `/career` | Link uses canonical `/career` |
 | P0 | deferred | Typo | “Dynamic Dreramz” appears in the live hiring copy | The correction was reverted to live on 2026-08-13; change only with explicit visible-copy approval |
 | P1 | deferred | H1 entity clarity | Heading does not identify the page/entity | The entity-first H1 was reverted to the live heading on 2026-08-13 |
 | P1 | deferred | Hero grammar and context | First answer uses awkward grammar and lacks office context | Rewritten copy was reverted to live on 2026-08-13; retain as an HR/content proposal |
@@ -872,7 +882,7 @@ candidate questions, and the Career page.
 | P1 | blocked | HR policy accuracy | Work model, hours, late-evening work, pregnancy, and wellbeing language is sensitive | Current wording remains subject to formal policy confirmation |
 | P1 | deferred | Gallery context | Gallery lacks approved event names and dates | Add factual captions only when event metadata is available |
 | P1 | implemented | Freshness | Schema used an older modification date | Schema and sitemap now use the explicit 2026-08-13 final parity-review date |
-| P2 | partially implemented | Career relationship | Recruitment pages need stronger connection | Life uses the canonical `/career/` link; the proposed Career-to-Life link was removed for live parity |
+| P2 | partially implemented | Career relationship | Recruitment pages need stronger connection | Life uses the canonical `/career` link; the proposed Career-to-Life link was removed for live parity |
 
 ### Suggested hero copy
 
@@ -926,6 +936,9 @@ requires confirmation.
 
 ### Verification and remaining gaps
 
+- URL-policy review (2026-08-13): canonical, Open Graph, sitemap, JSON-LD, and
+  internal links use `/life-dynamicdreamz`; `/life-dynamicdreamz/` redirects to
+  `/life-dynamicdreamz`, and the source/build URL guard passes.
 - Rendered output contains the same six questions in visible content and
   FAQPage schema.
 - Responsive captures confirm the live heading, hero, culture, hiring, and FAQ
@@ -933,7 +946,7 @@ requires confirmation.
 - Remaining: formal policy confirmation, factual event captions, and the
   prelaunch legacy-redirect decision.
 
-## Resources (`/resources/`)
+## Resources (`/resources`)
 
 Status: technical and semantic improvements implemented; visible copy and
 layout restored to live on 2026-08-13
@@ -962,7 +975,7 @@ decision-makers, and agency partners.
 | Priority | Status | Area | Current issue | Implemented improvement or dependency |
 | --- | --- | --- | --- | --- |
 | P0 | migration pending | Article availability | Cards and ItemList use planned article routes | Retained under the route exception; migrate and validate priority articles before launch |
-| P0 | migration pending | URL consistency | Homepage root paths and Resources `/blogs/` paths differ | Decide canonical/redirect policy during article migration |
+| P0 | migration pending | URL consistency | Homepage root paths and Resources `/blogs` paths differ | Decide canonical/redirect policy during article migration |
 | P0 | blocked by live parity | Proof consistency | Numeric review values are not governed consistently | Live review counts, ratings, and labels were restored on 2026-08-13; verify and centralize them before launch |
 | P0 | blocked by live parity | Shopify-store claim | Resources says `1000+` while Home says `4500+` | The live Resources claim was restored on 2026-08-13; approve one definition and provenance before changing either page |
 | P0 | deferred | Unsupported claim | “hundreds and thousands of brands” is vague | The proposed specific-facts copy was reverted to live on 2026-08-13 |
@@ -972,7 +985,7 @@ decision-makers, and agency partners.
 | P1 | deferred to article migration | Authorship | Hub data has no approved author or reviewer | Add visible experts, evidence, and dates on each migrated article |
 | P1 | deferred to article migration | Commodity content | Several legacy titles use generic list patterns | Add practitioner examples, criteria, limitations, and original evidence when articles migrate |
 | P1 | migration pending | Schema depth | ItemList references planned articles and has no article authors | ItemList is intentionally retained now; add full, evidence-matched BlogPosting data on each article page |
-| P1 | migration pending | CTA route | `/request-quote/` is planned | Retain the CTA and validate before launch |
+| P1 | migration pending | CTA route | `/request-quote` is planned | Retain the CTA and validate before launch |
 | P2 | deferred | Trust section | “cutting edge” wording is generic | The concrete capability copy was reverted to live on 2026-08-13 |
 
 ### Suggested hero copy
@@ -1046,6 +1059,9 @@ copying an old article into the new shell is not sufficient for AEO/GEO.
 
 ### Verification and remaining gaps
 
+- URL-policy review (2026-08-13): canonical, Open Graph, sitemap, JSON-LD, and
+  internal links use `/resources`; `/resources/` redirects to `/resources`, and
+  the source/build URL guard passes.
 - Rendered output contains one CollectionPage, shared Organization, WebSite,
   BreadcrumbList, visible company VideoObject, and the intentionally retained
   64-entry ItemList.
@@ -1056,6 +1072,125 @@ copying an old article into the new shell is not sufficient for AEO/GEO.
 - Remaining: resolve the visible `1000+`/`4500+` conflict, approve review values,
   document company-fact provenance, add authorship/evidence on article pages,
   decide article canonicals, and validate routes before launch.
+
+## Beauty & Cosmetics (`/beauty-cosmetics`)
+
+Status: implemented; conversion destinations migration pending
+Last reviewed: 2026-08-13
+Owner: SEO, content, development, and client success
+Primary audience: Beauty, cosmetics, skincare, haircare, salon, and wellness
+brand founders; ecommerce leaders; and digital-commerce teams
+Decision stage: Solution awareness through agency evaluation
+
+### Page role
+
+Present Dynamic Dreamz's industry-specific ecommerce and web-development
+experience for beauty and cosmetics brands. The page should connect common
+beauty-commerce needs—visual merchandising, responsive storefronts, booking,
+virtual try-on/interactive experiences, and social integration—to relevant
+delivery capabilities and attributable portfolio evidence. It differs from a
+general Shopify service page by leading with beauty-industry context and work.
+
+### Target prompts
+
+- Which agency builds Shopify stores for beauty and cosmetics brands?
+- What ecommerce features help skincare, cosmetics, salon, and haircare brands?
+- Can Dynamic Dreamz build appointment booking or virtual try-on experiences?
+- Which beauty brands has Dynamic Dreamz supported?
+- How can a beauty brand request a Shopify or ecommerce project estimate?
+
+### Current strengths and available evidence
+
+- The live page has a clear Beauty & Cosmetics H1, direct industry framing,
+  five visible capabilities, and six externally linked portfolio examples.
+- Ranavat, Midnight Cosmetics, Conserving Beauty, Lilac ST., Perfect Locks, and
+  Luxxi Nails are visibly named and linked; attribution remains subject to
+  ongoing client-permission governance.
+- All primary content is suitable for server rendering. The migrated page uses
+  the approved slashless canonical and retains real publish/modify dates.
+- The shared company entity and independently linked partner/review profiles
+  provide broader corroboration without requiring unrelated hidden FAQ copy.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | migration pending | Conversion routes | `/request-quote` and `/our-work` are not built in the current migration | Preserve their slashless canonical intent now; build or redirect and validate both before launch | Route migration |
+| P0 | implemented | Schema accuracy | Live source injects unrelated sitewide FAQPage schema that is not visible on this route | Emit only page-relevant Organization, WebSite, WebPage, BreadcrumbList, and Service/OfferCatalog nodes | Rendered schema validated 2026-08-13 |
+| P1 | implemented | Metadata | The live title is 157 characters and is likely to truncate | Use a concise Beauty & Cosmetics ecommerce-development title and description while preserving intent | Title, description, canonical, Open Graph, and Twitter metadata validated 2026-08-13 |
+| P1 | implemented baseline; case studies migration pending | Evidence | Portfolio proof points route only to external storefronts | Preserve visible external links; add internal case studies as those routes migrate and client attribution is approved | Current links preserved; case-study migration and client approval remain |
+| P1 | deferred | Answer copy | Hero and industry paragraph do not directly summarize provider, platform, capabilities, and audience in one answer | Add an entity-first answer only after the exact visible wording is approved | Project-owner copy approval |
+| P1 | migration pending | Internal links | Page does not route users to relevant built Shopify capabilities or beauty case studies | Add descriptive service and case-study links when their canonical routes exist | Route coverage |
+| P2 | deferred | FAQ coverage | Common evaluation questions are not visibly answered | Add only genuinely useful, owner-approved visible FAQs; mirror exact text in FAQPage schema if added | Content approval and factual sourcing |
+| P2 | suggested | Authorship/review | No visible practitioner reviewer or last-reviewed label | Add a qualified reviewer and review date only after ownership and credentials are approved | Leadership/content approval |
+
+### Suggested answer copy
+
+Status: deferred pending exact visible-copy approval.
+
+> Dynamic Dreamz helps beauty and cosmetics brands design, build, and optimize
+> ecommerce experiences, including responsive Shopify storefronts, appointment
+> booking, interactive product experiences, and social integrations.
+
+The current live hero and IT-solutions copy remains the implementation source
+for this migration task.
+
+### Entity, evidence, and authorship actions
+
+- Keep Dynamic Dreamz as the provider and Beauty & Cosmetics Ecommerce
+  Development as the page's service subject.
+- Keep portfolio names, destinations, and visible platform categories aligned
+  with the rendered cards; do not add outcome claims without source approval.
+- Add internal beauty case studies only when the routes and attribution are
+  validated. Do not convert storefront links into unsupported case-study proof.
+- Do not invent an author, reviewer, credential, review value, or project result.
+
+### Internal-link and conversion actions
+
+- Retain the live Request a Quote, Get Started, and View Our Work CTA flow.
+- Preserve descriptive portfolio names and external destinations with secure
+  new-tab attributes and the live nofollow intent.
+- As routes ship, connect this page to Shopify development, Shopify Plus,
+  Shopify CRO, mobile commerce, and applicable beauty case studies.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Organization, WebSite, WebPage, BreadcrumbList, and a page-specific
+  Service node whose offers match the five visible deliverables.
+- Do not emit FAQPage because no FAQ is visible.
+- Use the original 2024-05-06 publish date and the real 2026-08-13 migration
+  review/modification date; never substitute build time.
+- Keep the page indexable, include it in `sitemap.xml`, and include its local
+  primary image in the image sitemap field.
+
+### Measurement plan
+
+- Track landing-page impressions/clicks for beauty ecommerce, cosmetics Shopify,
+  salon booking, virtual try-on, and beauty web-development queries.
+- Sample the target prompts monthly across Google, Bing/Copilot, ChatGPT Search,
+  and relevant answer engines; record whether the page or corroborating sources
+  are cited.
+- Track Request a Quote, Get Started, portfolio, and View Our Work clicks by
+  landing page once analytics governance is configured.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-13): canonical, Open Graph, sitemap, JSON-LD, and
+  internal links use `/beauty-cosmetics`; `/beauty-cosmetics/` redirects to
+  `/beauty-cosmetics`, and the source/build URL guard passes.
+- Checks completed: live rendered/source review, canonical/metadata/date audit,
+  heading and CTA inventory, 1440/768/390 visual/computed-style capture,
+  animation/hover audit, and asset hash canonicalization.
+- Implemented items: server-rendered page content; concise route metadata;
+  slashless canonical, Open Graph, and Twitter data; Organization, WebSite,
+  WebPage, BreadcrumbList, and page-specific Service/OfferCatalog schema; local
+  primary image in the sitemap; meaningful image alts; secure portfolio links;
+  and exact live section, copy, and CTA coverage. Rendered HTML checks found one
+  H1, no production-asset hotlinks, and all primary answer content before client
+  JavaScript.
+- Deferred or blocked items: visible answer copy, FAQ, authorship/reviewer,
+  internal service/case-study links, and proof outcomes require approval or
+  destination-route migration.
 
 ## Future Page Maintenance Workflow
 
@@ -1110,7 +1245,7 @@ their existing section instead of creating a second entry.
 Copy this section to the page-wise area when beginning a new route:
 
 ```md
-## Page Name (`/canonical-route/`)
+## Page Name (`/canonical-route`)
 
 Status: suggested | approved | in progress | implemented | deferred | blocked
 Last reviewed: YYYY-MM-DD

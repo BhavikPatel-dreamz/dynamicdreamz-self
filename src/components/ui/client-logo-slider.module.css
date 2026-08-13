@@ -7,14 +7,28 @@
   height: 84px;
   align-items: center;
   justify-content: center;
-  padding-inline: 28px;
 }
 
 .item img {
   width: auto;
   max-width: 100%;
-  max-height: 58px;
   object-fit: contain;
+}
+
+.resourcesItem {
+  padding-inline: 28px;
+}
+
+.resourcesItem img {
+  max-height: 58px;
+}
+
+.industryItem {
+  padding-inline: 20px;
+}
+
+.industryItem img {
+  max-height: 84px;
 }
 
 .slider :global(.slick-list),
@@ -34,7 +48,17 @@
 }
 
 @media (max-width: 768px) {
-  .item {
+  .resourcesItem {
     padding-inline: 22px;
+  }
+
+  .industryItem {
+    padding-inline: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider :global(.slick-track) {
+    transition-duration: 1ms !important;
   }
 }

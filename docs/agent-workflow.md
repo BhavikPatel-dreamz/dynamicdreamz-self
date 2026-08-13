@@ -49,21 +49,25 @@ The agent should then read:
    in `docs/page-content-improvements.md`.
 9. Implement with reusable components, local data/content, and project-owned
    assets.
-10. Add SEO metadata and structured data as part of the same change, not as a
-   later cleanup.
-11. After implementation, complete the AEO/GEO audit and update that page
+10. Apply the project URL policy while adding or editing routes: every non-root
+    page path is slashless (`/about-us`, not `/about-us/`). Keep internal links,
+    canonical and Open Graph URLs, sitemap/robots output, JSON-LD, and redirects
+    consistent through the shared URL helpers.
+11. Add SEO metadata and structured data as part of the same change, not as a
+    later cleanup.
+12. After implementation, complete the AEO/GEO audit and update that page
     section with evidence needs, technical gaps, final recommendations,
     priority, status, verification, and remaining improvements. Keep unresolved
     work in that file for future page tasks.
-12. For visual work, run the visual parity workflow and compare live vs local
+13. For visual work, run the visual parity workflow and compare live vs local
     desktop, tablet, mobile, hover, focus, active/open, scrolled, and animation
     states.
-13. Check responsive behavior, accessibility, performance risk, and broken links.
-14. If SEO/content quality can improve through visible copy changes, update
+14. Check responsive behavior, accessibility, performance risk, and broken links.
+15. If SEO/content quality can improve through visible copy changes, update
     `docs/page-content-improvements.md` with page-specific suggestions marked
     `suggested` or `deferred`; do not implement them without explicit approval.
-15. Run verification commands.
-16. Summarize changes, verification, visual capture notes, AEO/GEO status, and
+16. Run `npm run check:urls`, then the standard lint/build verification commands.
+17. Summarize changes, verification, visual capture notes, AEO/GEO status, and
     any missing assets or content approvals.
 
 ## Before Editing Code
@@ -115,6 +119,12 @@ project uses Next.js 16.3.0 and may differ from older App Router examples.
 - Keep static page SEO metadata in `src/data/seo.ts`. Page files should import
   from this shared source instead of defining full metadata objects inline,
   unless the route needs dynamic `generateMetadata`.
+- Keep all non-root internal route strings slashless. The enforced policy is
+  `trailingSlash: false`; `/about-us/` is invalid source data even though
+  Next.js redirects it. Use `/about-us` so navigation does not incur a redirect.
+- Keep `/` as the structural homepage route, but serialize its absolute
+  canonical, sitemap, and schema URL as the bare origin without a terminal
+  slash through `absoluteUrl`.
 - Style with clean Tailwind utilities and reusable components. Do not add custom
   page, section, component, animation, or one-off layout CSS to
   `src/app/globals.css`.
@@ -170,6 +180,12 @@ Every indexable page must include:
 
 Do not ship generic metadata copied from another page. Keep titles concise and
 commercially useful. Keep descriptions human-readable and specific.
+
+All page URLs use one slashless policy. `/` remains the homepage, while every
+other route ends in its final segment. Build absolute public URLs with
+`absoluteUrl`; never hand-format canonical, Open Graph, sitemap, or schema URLs.
+The `check:urls` script rejects trailing-slash route literals and a config that
+does not explicitly set `trailingSlash: false`.
 
 ## AEO And GEO Workflow
 

@@ -243,7 +243,7 @@ export function DesktopNavigation() {
               "flex items-center text-base leading-[normal] font-medium whitespace-nowrap text-[#252c15] hover:text-brand-red max-[1199px]:text-sm",
               normalizedPathname === "/contact-us" && "text-brand-red",
             )}
-            href="/contact-us/"
+            href="/contact-us"
             aria-current={normalizedPathname === "/contact-us" ? "page" : undefined}
           >
             Contact us

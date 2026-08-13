@@ -90,62 +90,64 @@ Homepage sections found:
 
 Company:
 
-- `/about-us/`
-- `/career/`
-- `/life-at-dynamic-dreamz/`
-- `/resources/`
-- `/contact-us/`
+- `/about-us`
+- `/career`
+- `/life-at-dynamic-dreamz`
+- `/resources`
+- `/contact-us`
 - Blog/resources route, exact final slug to confirm during migration
 
 Services:
 
-- `/shopify-development-agency/`
-- `/shopify-plus-agency/`
-- `/shopify-experts/`
-- `/shopify-theme-customization/`
-- `/shopify-migration/`
-- `/hire-shopify-developers/`
-- `/white-label-shopify-development/`
-- `/shopify-public-app-development/`
-- `/shopify-cro-services/`
-- `/shopify-plus-development-agency/`
-- `/shopify-mobile-app-development/`
-- `/buy-shopify-hours/`
-- `/wordpress-web-development/`
-- `/hire-wordpress-developers/`
-- `/wordpress-theme-customization/`
-- `/white-label-wordpress-development/`
-- `/woocommerce-development/`
-- `/magento-web-development/`
-- `/bigcommerce-development/`
-- `/webflow-development/`
-- `/ui-ux-design/`
-- `/php-development/`
-- `/android-app-development/`
-- `/ios-app-development/`
-- `/cross-platform-app-development/`
+- `/shopify-development-agency`
+- `/shopify-plus-agency`
+- `/shopify-experts`
+- `/shopify-theme-customization`
+- `/shopify-migration`
+- `/hire-shopify-developers`
+- `/white-label-shopify-development`
+- `/shopify-public-app-development`
+- `/shopify-cro-services`
+- `/shopify-plus-development-agency`
+- `/shopify-mobile-app-development`
+- `/buy-shopify-hours`
+- `/wordpress-web-development`
+- `/hire-wordpress-developers`
+- `/wordpress-theme-customization`
+- `/white-label-wordpress-development`
+- `/woocommerce-development`
+- `/magento-web-development`
+- `/bigcommerce-development`
+- `/webflow-development`
+- `/ui-ux-design`
+- `/php-development`
+- `/android-app-development`
+- `/ios-app-development`
+- `/cross-platform-app-development`
 
 Industries:
 
-- `/beauty-and-cosmetics/`
-- `/fashion-and-apparel/`
-- `/health-and-nutrition/`
-- `/food-and-beverages/`
-- `/pet-industry/`
+- `/beauty-and-cosmetics`
+- `/fashion-and-apparel`
+- `/health-and-nutrition`
+- `/food-and-beverages`
+- `/pet-industry`
 
 Work:
 
-- `/portfolio/`
-- `/case-study/`
+- `/portfolio`
+- `/case-study`
 
 White label:
 
-- `/white-label-shopify-development/`
-- `/white-label-wordpress-development/`
-- `/white-label-website-design/`
+- `/white-label-shopify-development`
+- `/white-label-wordpress-development`
+- `/white-label-website-design`
 
-Confirm exact legacy slugs before adding redirects or changing a route. Preserve
-trailing slash behavior only if the production routing plan requires it.
+Confirm exact legacy slugs before adding redirects or changing a route. The
+migration's production URL policy is fixed: every non-root page is canonicalized
+without a trailing slash, and legacy trailing-slash requests redirect to that
+slashless URL.
 
 ## About Page Context
 

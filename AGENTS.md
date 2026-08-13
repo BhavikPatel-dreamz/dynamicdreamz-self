@@ -133,6 +133,15 @@ Core proof points from the live site:
 - Every route must ship with production SEO: metadata, canonical URL, Open Graph
   data, Twitter data, semantic headings, alt text, and structured data where it
   fits the page type.
+- Public page URLs must use the no-trailing-slash form everywhere. The homepage
+  `/` is the only structural route exception, and absolute homepage URLs must
+  serialize as the bare origin without a terminal slash. Keep
+  `trailingSlash: false` in `next.config.ts`; write route data and internal
+  links as `/about-us`, never `/about-us/`; and ensure canonical, Open Graph,
+  sitemap, robots, redirects, and JSON-LD URLs follow the same policy. Do not
+  copy the live site's trailing slash into migrated URLs. Run
+  `npm run check:urls` before completion; the policy check must remain part of
+  both `npm run lint` and `npm run build`.
 - For local single-page SEO audits during migration, target 100/100 after
   excluding links to planned but not-yet-built routes. Report those links as
   "migration pending" instead of SEO failures. Before launch, broken internal

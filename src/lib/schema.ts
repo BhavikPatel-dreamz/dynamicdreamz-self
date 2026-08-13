@@ -1,4 +1,5 @@
 import { founders } from "@/content/about";
+import { beautyDeliverables } from "@/content/beauty-cosmetics";
 import { organizationAnswerSummary, testimonials } from "@/content/home";
 import {
   careerApplicationPath,
@@ -16,9 +17,10 @@ const organizationId = `${siteConfig.url}#organization`;
 const websiteId = `${siteConfig.url}#website`;
 const webPageId = `${siteConfig.url}#home-page`;
 const breadcrumbId = `${siteConfig.url}#breadcrumb`;
-// Site-root URL in its canonical (trailing-slash) form, matching the homepage
-// canonical/og:url. Every emitted site-root `url`/breadcrumb item resolves
-// through this so schema never disagrees with the page's canonical on slashes.
+// The homepage is emitted as the bare origin; every non-root page URL is
+// slashless. `absoluteUrl` keeps all schema identifiers on that same policy.
+// Every emitted `url`/breadcrumb item resolves through the shared helper so
+// schema never disagrees with the page's canonical URL form.
 // (The `#`-suffixed @id values above stay bare — they are opaque identifiers,
 // not page URLs, and must remain byte-stable across pages.)
 const homeUrl = absoluteUrl("/");
@@ -36,6 +38,10 @@ const resourcesPageUrl = absoluteUrl(pageSeo.resources.path);
 const resourcesPageId = `${resourcesPageUrl}#webpage`;
 const resourcesBreadcrumbId = `${resourcesPageUrl}#breadcrumb`;
 const resourcesItemListId = `${resourcesPageUrl}#articles`;
+const beautyPageUrl = absoluteUrl(pageSeo.beautyCosmetics.path);
+const beautyPageId = `${beautyPageUrl}#webpage`;
+const beautyBreadcrumbId = `${beautyPageUrl}#breadcrumb`;
+const beautyServiceId = `${beautyPageUrl}#service`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -190,14 +196,14 @@ export function createHomePageSchema() {
           "@type": "OfferCatalog",
           name: "Dynamic Dreamz Services",
           itemListElement: [
-            { name: "Shopify Plus Development", path: "/shopify-plus-agency/" },
-            { name: "Shopify Plus Migration", path: "/shopify-plus-migration-agency/" },
-            { name: "Shopify Development", path: "/shopify-development-agency/" },
-            { name: "Shopify Migration", path: "/shopify-migration/" },
-            { name: "Shopify CRO and Performance", path: "/shopify-cro-agency/" },
-            { name: "Shopify Mobile App Development", path: "/shopify-mobile-app-development/" },
-            { name: "White-Label Shopify Development", path: "/white-label-shopify-development-services/" },
-            { name: "Shopify Maintenance", path: "/shopify-maintenance-services/" },
+            { name: "Shopify Plus Development", path: "/shopify-plus-agency" },
+            { name: "Shopify Plus Migration", path: "/shopify-plus-migration-agency" },
+            { name: "Shopify Development", path: "/shopify-development-agency" },
+            { name: "Shopify Migration", path: "/shopify-migration" },
+            { name: "Shopify CRO and Performance", path: "/shopify-cro-agency" },
+            { name: "Shopify Mobile App Development", path: "/shopify-mobile-app-development" },
+            { name: "White-Label Shopify Development", path: "/white-label-shopify-development-services" },
+            { name: "Shopify Maintenance", path: "/shopify-maintenance-services" },
           ].map(({ name, path }) => ({
             "@type": "Offer",
             itemOffered: { "@type": "Service", name, url: absoluteUrl(path) },
@@ -547,6 +553,92 @@ export function createResourcesPageSchema() {
         uploadDate: companyVideoUploadDate,
         ...youTubeUrls(companyVideoId),
       }),
+    ],
+  };
+}
+
+export function createBeautyCosmeticsPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": beautyPageId,
+        url: beautyPageUrl,
+        name: pageSeo.beautyCosmetics.title,
+        description: pageSeo.beautyCosmetics.description,
+        datePublished: pageSeo.beautyCosmetics.publishedTime,
+        dateModified: pageSeo.beautyCosmetics.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": beautyServiceId },
+        mainEntity: { "@id": beautyServiceId },
+        breadcrumb: { "@id": beautyBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.beautyCosmetics.image.path),
+          width: pageSeo.beautyCosmetics.image.width,
+          height: pageSeo.beautyCosmetics.image.height,
+          caption: pageSeo.beautyCosmetics.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": beautyBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Beauty & Cosmetics",
+            item: beautyPageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "Service",
+        "@id": beautyServiceId,
+        name: "Beauty & Cosmetics Ecommerce Development",
+        serviceType: "Beauty and cosmetics ecommerce development",
+        url: beautyPageUrl,
+        description: pageSeo.beautyCosmetics.description,
+        provider: { "@id": organizationId },
+        audience: {
+          "@type": "BusinessAudience",
+          audienceType:
+            "Beauty, cosmetics, skincare, haircare, salon and wellness brands",
+        },
+        areaServed: [
+          "United States",
+          "United Kingdom",
+          "Europe",
+          "Canada",
+          "Australia",
+          "India",
+          "United Arab Emirates",
+        ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: beautyDeliverables.title,
+          itemListElement: beautyDeliverables.items.map((item) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: item.title,
+              description: item.description,
+            },
+          })),
+        },
+      },
     ],
   };
 }

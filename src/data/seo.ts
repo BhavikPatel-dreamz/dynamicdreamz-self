@@ -90,7 +90,7 @@ export const pageSeo = {
     },
   },
   about: {
-    path: "/about-us/",
+    path: "/about-us",
     title: "About Dynamic Dreamz | Shopify & Web Development Team",
     description:
       "Founded in 2006, Dynamic Dreamz is a Shopify Platinum Partner with 150+ experts delivering ecommerce, web, mobile and digital commerce solutions.",
@@ -116,7 +116,7 @@ export const pageSeo = {
     },
   },
   career: {
-    path: "/career/",
+    path: "/career",
     title: "Careers at Dynamic Dreamz | Surat & Ahmedabad Jobs",
     description:
       "Explore career opportunities at Dynamic Dreamz across digital marketing, ecommerce and technology. View current openings in Surat and Ahmedabad.",
@@ -142,7 +142,7 @@ export const pageSeo = {
     },
   },
   life: {
-    path: "/life-dynamicdreamz/",
+    path: "/life-dynamicdreamz",
     title: "Life at Dynamic Dreamz | Culture & Work-Life Balance",
     description:
       "Discover life at Dynamic Dreamz, where collaboration, inclusion, professional growth and work-life balance shape an equal-opportunity workplace.",
@@ -168,7 +168,7 @@ export const pageSeo = {
     },
   },
   resources: {
-    path: "/resources/",
+    path: "/resources",
     title: "Shopify & eCommerce Resources Hub | Dynamic Dreamz",
     description:
       "Browse Dynamic Dreamz's Shopify resource hub for migration guides, SEO tips, white label insights, and growth strategies to scale your online store.",
@@ -190,6 +190,34 @@ export const pageSeo = {
     },
     sitemap: {
       changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  beautyCosmetics: {
+    path: "/beauty-cosmetics",
+    title: "Beauty & Cosmetics Ecommerce Development | Dynamic Dreamz",
+    description:
+      "Build beauty and cosmetics ecommerce experiences with Dynamic Dreamz, including Shopify storefronts, booking, responsive design and integrations.",
+    socialDescription:
+      "Shopify and ecommerce development for beauty and cosmetics brands, including storefront design, booking, responsive layouts and interactive integrations.",
+    keywords: [
+      "beauty ecommerce development",
+      "cosmetics ecommerce agency",
+      "Shopify beauty store development",
+      "salon booking system development",
+      "beauty website development",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-06T09:44:26+00:00",
+    modifiedTime: "2026-08-13T00:00:00+05:30",
+    image: {
+      path: "/assets/beauty-cosmetics/beauty-storefront-collage.webp",
+      width: 840,
+      height: 434,
+      alt: "Beauty and cosmetics ecommerce storefronts built for consumer brands",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
       priority: 0.8,
     },
   },
@@ -252,8 +280,8 @@ assertPageSeoWithinLengthBudget(pageSeo);
 function createPageMetadata(page: PageSeoConfig): Metadata {
   const socialDescription = page.socialDescription ?? page.description;
   // Canonical and og:url resolve through `absoluteUrl`, the same helper the
-  // sitemap and JSON-LD use, so every public URL shares one trailing-slash
-  // policy (aligned with `trailingSlash: true`) and cannot drift apart.
+  // sitemap and JSON-LD use, so every non-root public URL shares the enforced
+  // no-trailing-slash policy and cannot drift apart.
   const canonicalUrl = absoluteUrl(page.path);
 
   return {

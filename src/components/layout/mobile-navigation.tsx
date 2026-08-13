@@ -232,7 +232,7 @@ export function MobileNavigation() {
               );
             })}
             <li className="py-2.5">
-              <Link className={topLevelLinkClass} href="/contact-us/" onClick={closeMenu}>Contact us</Link>
+              <Link className={topLevelLinkClass} href="/contact-us" onClick={closeMenu}>Contact us</Link>
             </li>
             <li className="py-2.5">
               <a className="block text-sm leading-[normal] font-semibold text-[#d92128] underline" href={`mailto:${siteConfig.email}`} onClick={closeMenu}>{siteConfig.email}</a>

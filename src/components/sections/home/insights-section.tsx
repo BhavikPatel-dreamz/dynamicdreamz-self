@@ -19,7 +19,7 @@ export function InsightsSection() {
           ))}
         </div>
         <div className="mt-[50px] flex justify-center max-[767px]:mt-[22px]">
-          <ButtonLink className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:py-3 max-[991px]:text-sm" variant="dark" href="/blog/">View all blogs</ButtonLink>
+          <ButtonLink className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:py-3 max-[991px]:text-sm" variant="dark" href="/blog">View all blogs</ButtonLink>
         </div>
       </Container>
     </section>

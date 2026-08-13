@@ -57,7 +57,7 @@ export function ResourcesStorySection() {
             </div>
             <StoryReviews />
             <p className="relative mt-[30px] pl-[35px] text-[16px] leading-[1.7] font-bold before:absolute before:top-0.5 before:left-0 before:size-[22px] before:bg-[url('/assets/icons/gradient-check.svg')] before:bg-contain before:bg-no-repeat">
-              <Link className="underline underline-offset-2 hover:text-brand-red focus-visible:text-brand-red" href="/blogs/category/shopify/">Shopify</Link>
+              <Link className="underline underline-offset-2 hover:text-brand-red focus-visible:text-brand-red" href="/blogs/category/shopify">Shopify</Link>
             </p>
           </div>
         </div>

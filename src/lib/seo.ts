@@ -3,19 +3,23 @@ import { siteConfig } from "@/data/site";
 /**
  * Single source of truth for every absolute public URL on the site: canonical
  * tags, og:url, the sitemap, and all JSON-LD `url`/`@id`/image values flow
- * through here. It is deliberately aligned with `trailingSlash: true` in
- * `next.config.ts`: it preserves the caller's path exactly, so route paths
- * (which carry a trailing slash, e.g. "/about-us/") stay trailing-slash and
- * match the served URL, while asset paths (files with an extension, e.g.
- * "/assets/og/x.png") stay slash-free. Keeping URL form in one function is what
- * prevents canonical/og and schema/sitemap from ever drifting to different
- * slash policies again. If the trailing-slash policy changes, change it here.
+ * through here. It is deliberately aligned with `trailingSlash: false` in
+ * `next.config.ts`: the homepage is serialized as the bare origin, while every
+ * non-root route is normalized to the no-trailing-slash form. File paths,
+ * queries, and fragments are preserved. Keeping URL form in one function
+ * prevents canonical/Open Graph, schema, and sitemap URLs from drifting to
+ * different policies.
  */
 export function absoluteUrl(path = "") {
-  if (!path || path === "/") return `${siteConfig.url}/`;
+  if (!path || path === "/") return siteConfig.url;
 
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-  return `${siteConfig.url}${normalizedPath}`;
+  const suffixIndex = normalizedPath.search(/[?#]/);
+  const pathname = suffixIndex === -1 ? normalizedPath : normalizedPath.slice(0, suffixIndex);
+  const suffix = suffixIndex === -1 ? "" : normalizedPath.slice(suffixIndex);
+  const slashlessPathname = pathname === "/" ? pathname : pathname.replace(/\/+$/, "");
+
+  return `${siteConfig.url}${slashlessPathname}${suffix}`;
 }
 
 export function getBuildDate() {

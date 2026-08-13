@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-
 import { Container } from "@/components/ui/container";
 import { resourcesHero } from "@/content/resources";
 

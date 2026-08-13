@@ -5,7 +5,7 @@ export const siteConfig = {
   email: "info@dynamicdreamz.com",
   phoneDisplay: "+91 9327642007",
   phoneHref: "tel:+919327642007",
-  quotePath: "/request-quote/",
+  quotePath: "/request-quote",
   logo: "/assets/brand/dynamic-dreamz-logo.svg",
   social: {
     linkedin: "https://in.linkedin.com/company/dynamicdreamz",
@@ -14,4 +14,3 @@ export const siteConfig = {
       "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
   },
 } as const;
-

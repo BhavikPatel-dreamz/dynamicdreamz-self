@@ -70,6 +70,14 @@ export const clientLogos: ImageItem[] = [
   { src: "/assets/clients/prolash.svg", alt: "Prolash logo", width: 164, height: 18 },
 ];
 
+const clientLogoByPath = new Map(clientLogos.map((logo) => [logo.src, logo]));
+
+export function getClientLogo(src: string): ImageItem {
+  const logo = clientLogoByPath.get(src);
+  if (!logo) throw new Error(`Missing canonical client logo: ${src}`);
+  return logo;
+}
+
 export const mobileClientLogoRows = [
   [clientLogos[8], clientLogos[12], clientLogos[19], clientLogos[7], clientLogos[9], clientLogos[3]],
   [clientLogos[10], clientLogos[6], clientLogos[0], clientLogos[13], clientLogos[18], clientLogos[14], clientLogos[16]],
@@ -359,29 +367,29 @@ export const integrationLogoRows = [integrationLogos.slice(0, 6), integrationLog
 export const insights = [
   {
     title: "Free vs Paid Shopify Themes: Which One Is Right for Your Store?",
-    href: "/blogs/free-vs-paid-shopify-themes/",
+    href: "/blogs/free-vs-paid-shopify-themes",
     image: "/assets/blog/free-vs-paid-shopify-themes.webp",
     date: "2026-08-11",
     displayDate: "August 11 2026",
     category: "Shopify",
-    categoryHref: "/blogs/category/shopify/",
+    categoryHref: "/blogs/category/shopify",
   },
   {
     title: "WooCommerce SEO Guide: How to Rank Your Store Higher in 2026",
-    href: "/blogs/woocommerce-seo/",
+    href: "/blogs/woocommerce-seo",
     image: "/assets/blog/woocommerce-seo-guide.webp",
     date: "2026-08-11",
     displayDate: "August 11 2026",
     category: "WordPress",
-    categoryHref: "/blogs/category/wordpress/",
+    categoryHref: "/blogs/category/wordpress",
   },
   {
     title: "7 Must-Have Shopify Development Tools for Agencies & Developers",
-    href: "/blogs/shopify-development-tools/",
+    href: "/blogs/shopify-development-tools",
     image: "/assets/blog/shopify-development-tools.webp",
     date: "2026-08-11",
     displayDate: "August 11 2026",
     category: "Shopify",
-    categoryHref: "/blogs/category/shopify/",
+    categoryHref: "/blogs/category/shopify",
   },
 ];

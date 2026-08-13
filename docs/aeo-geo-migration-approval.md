@@ -1,11 +1,11 @@
 # AEO/GEO Migration Approval: Live vs Migrated
 
-Routes covered: `/`, `/about-us/`, `/career/`, `/life-dynamicdreamz/`,
-`/resources/`  
-Live reference: `https://www.dynamicdreamz.com/` and the matching live routes  
-Live comparison captured: 2026-08-12 and rechecked on 2026-08-13  
-Implementation date: 2026-08-12  
-Document updated: 2026-08-13  
+Routes covered: `/`, `/about-us`, `/career`, `/life-dynamicdreamz`,
+`/resources`
+Live reference: `https://www.dynamicdreamz.com/` and the matching live routes
+Live comparison captured: 2026-08-12 and rechecked on 2026-08-13
+Implementation date: 2026-08-12
+Document updated: 2026-08-13
 Approval status: visible changes rejected and reverted; nonvisual improvements retained
 
 ## 2026-08-13 Project-Owner Decision
@@ -124,7 +124,7 @@ Evidence: [`docs/visual-captures/home.md`](visual-captures/home.md)
 | H-03 — AI-delivery paragraph | `To accelerate delivery without compromising quality, our teams use modern AI-powered tools such as Cursor, ChatGPT, Claude, Lovable, Bolt, and n8n, alongside proven development processes.` | `Our teams use AI-assisted tools selectively to accelerate research, prototyping and repetitive delivery tasks. Experienced specialists continue to own implementation, review and quality assurance before release.` | Replaces a volatile tool list and absolute quality wording with selective use and human accountability. **Changed — approve; confirm this reflects the actual process.** |
 | H-04 — Latest article cards | Live cards captured on 2026-08-13: `Free vs Paid Shopify Themes: Which One Is Right for Your Store?`, `WooCommerce SEO Guide: How to Rank Your Store Higher in 2026`, and `7 Must-Have Shopify Development Tools for Agencies & Developers`, dated August 11, 2026. | Migrated cards: `Shopify vs WooCommerce India: Which Is Better for Your Online Store?`, `How to Improve Shopify Core Web Vitals and Speed Up Your Store?`, and `7 Wonderful Ecommerce Website Design Tips for Your Shopify Store`, dated August 3, 2026. | Pre-existing migration dataset difference, not changed in the AEO/GEO pass. **Retained; approve the migrated selection or request live-card synchronization.** |
 | H-05 — Company statistics | Visible values are `1B+`, `150+`, `4500+`, and `1100+`. | The same values and labels remain visible. They now come from the shared facts source. | No visual copy change. **Implementation-only.** |
-| H-06 — Section order and CTAs | Hero, brands, company proof, expertise, selected work, testimonials, partners, and blogs; quote/work/blog CTAs use live-intent paths. | Same section order and migration-intent CTA flow. `/request-quote/`, `/our-work/`, `/blog/`, article paths, and service paths remain. | Preserves the business journey. **Retained; routes are migration pending.** |
+| H-06 — Section order and CTAs | Hero, brands, company proof, expertise, selected work, testimonials, partners, and blogs; quote/work/blog CTAs use live-intent paths. | Same section order and migration-intent CTA flow. `/request-quote`, `/our-work`, `/blog`, article paths, and service paths remain. | Preserves the business journey. **Retained; routes are migration pending.** |
 
 ### Metadata And Structured-Data Differences
 
@@ -154,10 +154,10 @@ Implementation files:
 
 <a id="about-us"></a>
 
-## About Us (`/about-us/`)
+## About Us (`/about-us`)
 
-Live page: <https://www.dynamicdreamz.com/about-us/>  
-Migration route: `/about-us/`  
+Live page: <https://www.dynamicdreamz.com/about-us/>
+Migration route: `/about-us`
 Evidence: [`docs/visual-captures/about.md`](visual-captures/about.md)
 
 ### Page Identity And Introductory Copy
@@ -220,10 +220,10 @@ Implementation files:
 
 <a id="career"></a>
 
-## Career (`/career/`)
+## Career (`/career`)
 
-Live page: <https://www.dynamicdreamz.com/career/>  
-Migration route: `/career/`  
+Live page: <https://www.dynamicdreamz.com/career/>
+Migration route: `/career`
 Evidence: [`docs/visual-captures/career.md`](visual-captures/career.md)
 
 ### Page And Section Copy Differences
@@ -238,7 +238,7 @@ Evidence: [`docs/visual-captures/career.md`](visual-captures/career.md)
 | C-06 — Visible freshness | No listing-review date is displayed. | `Current openings reviewed August 12, 2026.` | Makes listing freshness visible without inventing closing dates. **Changed — approve; requires ongoing maintenance.** |
 | C-07 — Benefits introduction | `At Dynamic Dreamz, we offer a range of employee benefits designed to maintain work life balance and professional growth of our valued team members.` | `Dynamic Dreamz offers employee benefits designed to support professional growth, wellbeing, and a healthy work-life balance.` | Corrects grammar and removes filler. **Changed — approve; benefits require policy confirmation.** |
 | C-08 — Benefit label | `Ample of Employee Engagement Activities` | `Employee Engagement Activities` | Grammar correction without changing the benefit category. **Changed — approve.** |
-| C-09 — Culture link | No descriptive link from the benefits section to the Life page. | Adds `Explore life, culture, benefits, and workplace FAQs at Dynamic Dreamz.` linking to `/life-dynamicdreamz/`. | Connects the two built recruitment pages and routes candidates to fuller answers. **Changed — approve.** |
+| C-09 — Culture link | No descriptive link from the benefits section to the Life page. | Adds `Explore life, culture, benefits, and workplace FAQs at Dynamic Dreamz.` linking to `/life-dynamicdreamz`. | Connects the two built recruitment pages and routes candidates to fuller answers. **Changed — approve.** |
 
 ### Job Summary Differences
 
@@ -278,7 +278,7 @@ location authority.**
 | C-15 — JobPosting count | Five roles are exposed under both cities; the previous migrated graph generated ten role/location nodes. | Seven JobPosting nodes are emitted only for the supported locations above. | Prevents inaccurate location-specific job discovery. **Changed — approve.** |
 | C-16 — JobPosting description | Description repeated title, job type, experience, and city. | Description includes the visible role summary, full-time/on-site context, city, and experience; `experienceRequirements` is explicit. | Improves job-search clarity and schema/HTML alignment. **Changed — approve.** |
 | C-17 — Page dates | Publication date was not centralized; modification used `2026-08-05T13:38:57+00:00`. | Publication is `2024-05-02T09:10:53+00:00`; modification is `2026-08-13T00:00:00+05:30`. | Aligns page schema and sitemap with the final parity review. **Nonvisual improvement retained.** |
-| C-18 — Application paths | Apply CTAs use `/career-apply-now/` with position and location parameters. | Same URLs and parameters remain in UI and JobPosting nodes. | Preserves the intended recruitment flow. **Retained; route is migration pending.** |
+| C-18 — Application paths | Apply CTAs use `/career-apply-now` with position and location parameters. | Same URLs and parameters remain in UI and JobPosting nodes. | Preserves the intended recruitment flow. **Retained; route is migration pending.** |
 | C-19 — Closing dates | No approved role expiry is shown. | No `validThrough` value was invented. | Avoids false job expiry data. **Retained; needs HR process.** |
 | C-20 — CRO experience conflict | Live/card says `1 year to 3 years`; the local role PDF says `2 years to 4 years`. | Visible card and schema currently retain `1 year to 3 years`; summary/location are PDF-derived. | The source conflict remains unresolved. **Needs confirmation before approval.** |
 
@@ -300,10 +300,10 @@ Implementation files:
 
 <a id="life"></a>
 
-## Life At Dynamic Dreamz (`/life-dynamicdreamz/`)
+## Life At Dynamic Dreamz (`/life-dynamicdreamz`)
 
-Live page: <https://www.dynamicdreamz.com/life-dynamicdreamz/>  
-Migration route: `/life-dynamicdreamz/`  
+Live page: <https://www.dynamicdreamz.com/life-dynamicdreamz/>
+Migration route: `/life-dynamicdreamz`
 Evidence:
 [`docs/visual-captures/life-dynamicdreamz.md`](visual-captures/life-dynamicdreamz.md)
 
@@ -332,7 +332,7 @@ Evidence:
 | ID / area | Existing live site | Migrated site | Reason / status |
 | --- | --- | --- | --- |
 | L-11 — Hiring paragraph | `Your future is full of possibilities, and at Dynamic Dreramz, we provide the tools and opportunities to explore them. Build your future with us, where professional growth is interwoven with personal development.` | `Your future is full of possibilities, and at Dynamic Dreamz, we provide opportunities to explore them. Build your future with us, where professional growth is connected with personal development.` | Corrects the company-name typo and simplifies the sentence. **Changed — approve.** |
-| L-12 — Career link | `/career` | `/career/` | Uses the migration’s canonical trailing-slash form. **Changed — approve.** |
+| L-12 — Career link | `/career` | `/career` | Uses the migration's canonical no-trailing-slash form. **Retained.** |
 
 ### FAQ Differences
 
@@ -355,7 +355,7 @@ Questions remain the same. Every answer changed as shown below:
 | L-20 — Page dates | Publication `2024-05-02T09:14:02+00:00`; modification `2024-09-06T09:49:25+00:00`. | Publication is retained; modification is `2026-08-13T00:00:00+05:30`. | Records the final parity review. **Nonvisual improvement retained.** |
 | L-21 — FAQ section intro | `Here, we have addressed your concerns and queries that you want to know.` | Same sentence. | Not changed in this pass. **Retained; may be improved later.** |
 | L-22 — Structure and interactions | Hero, six value cards, hiring block, six-item accordion, and workplace gallery. | Same section order and default states, with keyboard/ARIA and reduced-motion improvements in the migrated components. | Preserves design while improving accessibility. **Retained migrated behavior — approve.** |
-| L-23 — Legacy route | Project references also identify `/life-at-dynamic-dreamz/`. | Current built canonical is `/life-dynamicdreamz/`; no new redirect was added in this pass. | Covered by route exception. **Migration pending.** |
+| L-23 — Legacy route | Project references also identify `/life-at-dynamic-dreamz`. | Current built canonical is `/life-dynamicdreamz`; no new redirect was added in this pass. | Covered by route exception. **Migration pending.** |
 
 ### Life Approval
 
@@ -371,10 +371,10 @@ Implementation files:
 
 <a id="resources"></a>
 
-## Resources (`/resources/`)
+## Resources (`/resources`)
 
-Live page: <https://www.dynamicdreamz.com/resources/>  
-Migration route: `/resources/`  
+Live page: <https://www.dynamicdreamz.com/resources/>
+Migration route: `/resources`
 Evidence: [`docs/visual-captures/resources.md`](visual-captures/resources.md)
 
 ### Hero And Hub Differences
@@ -421,7 +421,7 @@ Evidence: [`docs/visual-captures/resources.md`](visual-captures/resources.md)
 | ID / area | Existing live site or earlier migration | Migrated site | Reason / status |
 | --- | --- | --- | --- |
 | R-20 — Story heading level | Live uses a second H1 for `Our Dynamic Story,`. | Same visual heading is rendered as H2. | Keeps one semantic page H1. **Retained migrated SEO improvement — approve.** |
-| R-21 — Story category link | Live uses a non-functional `#` destination for `Shopify`. | Link is `/blogs/category/shopify/`. | Provides a real descriptive destination. **Retained migrated link improvement; route is migration pending.** |
+| R-21 — Story category link | Live uses a non-functional `#` destination for `Shopify`. | Link is `/blogs/category/shopify`. | Provides a real descriptive destination. **Retained migrated link improvement; route is migration pending.** |
 | R-22 — Article image alt text | Several live thumbnail alts reflect filenames or inconsistent source text. | Each of the 64 article thumbnails uses its visible article title as alt text. | Provides meaningful, page-specific alternatives. **Retained migrated accessibility/SEO improvement — approve.** |
 | R-23 — Article inventory | Live renders 64 dated article cards. | All 64 cards remain server-rendered and the ItemList retains all 64 planned article URLs. | Preserves content inventory during migration. **Retained; article routes are migration pending.** |
 | R-24 — Article authorship | Hub article data does not show an approved author or reviewer for every article. | No author/reviewer was invented in the hub schema. | Authorship belongs on each migrated article with visible supporting details. **Retained; deferred to article migration.** |

@@ -1,6 +1,5 @@
 import { BlogCard } from "@/components/ui/blog-card";
 import { Container } from "@/components/ui/container";
-import { HorizontalDragScroll } from "@/components/ui/horizontal-drag-scroll";
 import { resourceArticles } from "@/content/resources";
 
 export function ResourcesBlogSection() {

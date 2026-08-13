@@ -1,8 +1,8 @@
 # About Page
 
-Live URL: `https://www.dynamicdreamz.com/about-us/`  
-Local route: `/about-us/`  
-Date checked: 2026-08-13  
+Live URL: `https://www.dynamicdreamz.com/about-us/`
+Local route: `/about-us`
+Date checked: 2026-08-13
 Browser: Google Chrome (Chromium, headless capture)
 
 ## 2026-08-13 Live-UI Parity Rollback

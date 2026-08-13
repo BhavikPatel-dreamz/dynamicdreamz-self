@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "check:urls": "node scripts/check-url-policy.mjs",
+    "build": "npm run check:urls && next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "npm run check:urls && eslint"
   },
   "dependencies": {
     "@types/react-slick": "^0.23.13",

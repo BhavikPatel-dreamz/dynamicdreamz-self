@@ -29,7 +29,7 @@ remain retained.
 
 ## 2026-08-12 AEO/GEO Scope Captured Before UI Editing
 
-- Keep the built Career CTA relationship and use its canonical trailing-slash
+- Keep the built Career CTA relationship and use its canonical no-trailing-slash
   path; planned-route availability elsewhere is outside this audit.
 - Add `Life at Dynamic Dreamz` to the H1, improve the hero and culture copy,
   and state the existing Surat and Ahmedabad office context.

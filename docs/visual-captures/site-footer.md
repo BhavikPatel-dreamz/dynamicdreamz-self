@@ -2,16 +2,16 @@
 
 Live URL: https://www.dynamicdreamz.com/
 Local route: http://localhost:3000/
-Date checked: 2026-08-12
-Browser: Chromium DevTools responsive mode at 75% preview scale (user-provided side-by-side capture)
+Date checked: 2026-08-13
+Browser: Chromium DevTools responsive mode plus Microsoft Edge headless computed-geometry audit
 
 ## Viewports
 
 | Viewport | Live screenshot | Local screenshot | Result |
 | --- | --- | --- | --- |
-| 1440x900 | Not supplied | Not captured | pending full-footer review |
+| 1440x900 | `%TEMP%/dd-beauty-parity-20260813/live-desktop-full.png` | `%TEMP%/dd-beauty-parity-20260813/local-desktop-full.png` | 852.39px / 852.39px matched |
 | 1024x1040 | User-provided left-side capture | User-provided right-side capture | desktop/tablet crossover mismatch identified |
-| 390x844 | Not supplied | Not captured | pending full-footer review |
+| 390x844 | `%TEMP%/dd-beauty-parity-20260813/live-mobile-full.png` | `%TEMP%/dd-beauty-parity-20260813/local-mobile-full.png` | 1002.30px / 1002.30px matched |
 
 ## Live Sources Inspected
 
@@ -50,5 +50,5 @@ Browser: Chromium DevTools responsive mode at 75% preview scale (user-provided s
 
 | Difference | Reason | Status |
 | --- | --- | --- |
-| Desktop and mobile screenshot comparison | Not included in the supplied focused 1024 px comparison. | pending |
-| Post-change 1024 px browser capture | Must be checked after implementation. | pending verification |
+| 768px footer height | Live 1039.70px; local 1039.69px. | matched within browser rounding |
+| Desktop and mobile footer height | Live/local are 852.39/852.39px and 1002.30/1002.30px. | matched |
