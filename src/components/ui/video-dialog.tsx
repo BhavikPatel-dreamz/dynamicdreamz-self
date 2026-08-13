@@ -41,6 +41,17 @@ export function VideoDialog({
     if (open && dialog && !dialog.open) dialog.showModal();
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [open]);
+
   function closeDialog() {
     dialogRef.current?.close();
     setOpen(false);
@@ -56,7 +67,7 @@ export function VideoDialog({
       >
         <Image className="object-cover" src={poster} alt={posterAlt} fill sizes={sizes} />
         <span className="absolute inset-0 bg-black/10" aria-hidden="true" />
-        <span className={cn("relative z-10 w-full px-7.5 pt-7.5 pb-12.5 max-[991px]:p-7.5 max-[767px]:px-5 max-[767px]:py-3 max-w-250", overlayClassName)} aria-hidden="true">
+        <span className={cn("relative z-10 w-full p-7.5 max-w-120.75 max-[991px]:max-w-120.75 h-22.5", overlayClassName)} aria-hidden="true">
           <Image className="h-auto w-full" src={overlay} alt="" width={overlayWidth} height={overlayHeight} />
         </span>
         <span className={cn(styles.pulse, "absolute top-1/2 left-1/2 z-10 size-19 -translate-x-1/2 -translate-y-1/2", playClassName)} aria-hidden="true">
@@ -68,7 +79,7 @@ export function VideoDialog({
         <dialog
           ref={dialogRef}
           aria-label={title}
-          className="m-auto w-[min(1100px,calc(100%-32px))] max-w-none overflow-visible bg-transparent p-0 text-white backdrop:bg-black/85"
+          className="popup-box m-auto overflow-visible bg-transparent p-0 text-white backdrop:bg-black/80 aspect-video w-[90%] max-w-[800px]"
           onCancel={(event) => {
             event.preventDefault();
             closeDialog();
@@ -78,7 +89,7 @@ export function VideoDialog({
           }}
           onClose={() => setOpen(false)}
         >
-          <div className="relative aspect-video overflow-hidden rounded-xl bg-black shadow-2xl">
+          <div className="relative aspect-video overflow-hidden bg-black shadow-2xl">
             <iframe
               className="h-full w-full border-0"
               src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
@@ -87,7 +98,7 @@ export function VideoDialog({
               allowFullScreen
             />
           </div>
-          <button type="button" className="absolute -top-12 right-0 flex size-10 cursor-pointer items-center justify-center rounded-full bg-white text-2xl leading-none text-black transition-transform hover:scale-105" aria-label="Close video" onClick={closeDialog}>
+          <button type="button" className="absolute -top-[57px] -right-[7px] z-11111 cursor-pointer border-0 bg-transparent p-0 text-[50px] leading-none text-white outline-0" aria-label="Close video" onClick={closeDialog}>
             <span aria-hidden="true">{"\u00d7"}</span>
           </button>
         </dialog>

@@ -27,7 +27,7 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
 
   if (variant === "resources") {
     return (
-      <article className="blog-col group/resource-card h-[405.67px] w-[calc(100%-50px)] shrink-0 snap-start min-[768px]:h-[389.39px] min-[768px]:w-[calc((100%-25px)/2)] min-[1200px]:h-[405.3px] min-[1200px]:w-[calc((100%-50px)/3)]">
+      <article className="blog-col group/resource-card h-[405.67px] w-[calc(100cqw-50px)] shrink-0 snap-start min-[768px]:h-[389.39px] min-[768px]:w-[calc((100cqw-25px)/2)] min-[1200px]:h-[405.3px] min-[1200px]:w-[calc((100cqw-50px)/3)]">
         <div className="blog-inner flex h-full flex-col border border-ink/10 bg-white p-5">
           <Link className="relative mb-7 block overflow-hidden pt-[55%]" href={item.href}>
             <Image
@@ -42,7 +42,7 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
             <Link className="transition-colors hover:text-brand-red focus-visible:text-brand-red" href={categoryHref}>{category}</Link>
             <time className="shrink-0" dateTime={item.date}>{item.displayDate}</time>
           </div>
-          <h3 className="line-clamp-4 text-[18px] leading-[1.5] font-medium tracking-[-0.32px]">
+          <h3 className="line-clamp-4 text-[18px] leading-[1.5] font-bold tracking-[-0.32px]">
             <Link className="hover:underline hover:underline-offset-2 focus-visible:underline focus-visible:underline-offset-2" href={item.href}>{item.title}</Link>
           </h3>
         </div>

@@ -850,9 +850,9 @@ export const resourcesStory = {
     "At Dynamic Dreamz, every project is built on strategy, creativity, and performance — helping your eCommerce brand reach its full potential.",
   ],
   reviews: [
-    { name: "Clutch", href: "https://clutch.co/profile/dynamic-dreamz", reviews: "132 Reviews", rating: "5.0", logo: "/assets/reviews/clutch-wordmark.svg", logoWidth: 80, logoHeight: 24 },
-    { name: "Upwork", href: "https://www.upwork.com/agencies/dynamicdreamz/", reviews: "2000+ Reviews", rating: "5.0", logo: "/assets/reviews/upwork-wordmark.svg", logoWidth: 84, logoHeight: 25 },
-    { name: "GoodFirms", href: "https://www.goodfirms.co/company/dynamic-dreamz", reviews: "72 Reviews", rating: "5.0", logo: "/assets/reviews/goodfirms-wordmark.svg", logoWidth: 104, logoHeight: 25 },
+    { name: "Clutch", href: "https://clutch.co/profile/dynamic-dreamz", reviews: "132 Reviews", rating: "5.0", logo: "/assets/reviews/clutch-wordmark.svg", logoWidth: 69, logoHeight: 19, logoClassName: "w-[69px]" },
+    { name: "Upwork", href: "https://www.upwork.com/agencies/dynamicdreamz/", reviews: "2000+ Reviews", rating: "5.0", logo: "/assets/reviews/upwork-wordmark.svg", logoWidth: 78, logoHeight: 23, logoClassName: "h-[23px] w-[78px]" },
+    { name: "GoodFirms", href: "https://www.goodfirms.co/company/dynamic-dreamz", reviews: "72 Reviews", rating: "5.0", logo: "/assets/reviews/goodfirms-wordmark.svg", logoWidth: 105, logoHeight: 16, logoClassName: "h-[16px] w-[105px]" },
   ],
 } as const;
 

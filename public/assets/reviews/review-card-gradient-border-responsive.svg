@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="96" viewBox="0 0 680 96" fill="none" preserveAspectRatio="none">
+  <rect x="0.5" y="0.5" width="679" height="95" rx="9.5" stroke="url(#review-card-gradient-responsive)"/>
+  <defs>
+    <linearGradient id="review-card-gradient-responsive" x1="0" y1="48" x2="680" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#15C064"/>
+      <stop offset="1" stop-color="#00D1FF"/>
+    </linearGradient>
+  </defs>
+</svg>

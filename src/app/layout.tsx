@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { rootMetadata } from "@/data/seo";
 
+import "slick-carousel/slick/slick.css";
 import "./globals.css";
 
 const neueMontreal = localFont({
