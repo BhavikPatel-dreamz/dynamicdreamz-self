@@ -56,7 +56,7 @@ export function ButtonLink({ children, className, variant, ...props }: ButtonLin
           fillClasses[variant],
         )}
       />
-      <span className="relative z-1 text-black">{children}</span>
+      <span className="relative z-1">{children}</span>
     </Link>
   );
 }
