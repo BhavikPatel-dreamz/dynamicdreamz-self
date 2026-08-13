@@ -12,6 +12,12 @@ experience. Improvements are welcome when they make the site more production
 ready, but they should not erase the recognizable Dynamic Dreamz site or change
 important search intent without an explicit reason.
 
+For AEO/GEO and SEO work during migration, "improvement" does not authorize a
+visible rewrite. Preserve the live rendered UI and content unless the project
+owner explicitly approves the exact visible change. Implement safe nonvisual
+improvements and keep proposed visible copy/design changes in the documented
+approval queue.
+
 Live-site parity includes styles. Match the visual design closely: colors,
 typography, spacing scale, max widths, grids, section rhythm, button styles,
 cards, borders, shadows, icons, backgrounds, animations, hover/focus states, and
@@ -247,8 +253,19 @@ or separately approved assets:
 ## Content Policy
 
 - Use the live site as the migration source. Preserve visible copy, CTA wording,
-  heading intent, link destinations, image alt text, and SEO details by default;
-  rewrite only when needed for clarity, conversion, accessibility, or SEO.
+  heading wording and casing, section order, labels, proof text, link intent,
+  image presentation, and default interaction content during migration.
+- A request to improve SEO, AEO, GEO, content quality, or an audit is not
+  approval to rewrite the visible page. Record the exact proposed replacement
+  in `docs/page-content-improvements.md` as `suggested` or `deferred`, and keep
+  the live copy until the project owner explicitly approves that exact change.
+- Implement nonvisual improvements such as metadata, canonical URLs, robots,
+  sitemap, crawlability, server rendering, schema, and appearance-preserving
+  semantics/accessibility when they are accurate. Schema and metadata must not
+  contradict the visible page or introduce unapproved facts.
+- If correcting a factual, policy, legal, accessibility, or trust problem needs
+  visible text or layout changes, document the issue and request approval rather
+  than silently changing the migration UI.
 - Inspect View Page Source for each migrated page and capture small details that
   are easy to miss in the rendered page, including meta tags, canonical links,
   Open Graph/Twitter fields, JSON-LD, preload hints, favicon/app icon links,

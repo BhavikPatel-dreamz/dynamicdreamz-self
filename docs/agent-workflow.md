@@ -42,22 +42,28 @@ The agent should then read:
 7. Before implementation, add or update the route's initial section in
    `docs/aeo-geo-strategy.md` with its page role, target prompts, evidence,
    known gaps, and planned recommendations.
-8. Implement with reusable components, local data/content, and project-owned
+8. Apply the AEO/GEO live-UI preservation gate: implement accurate nonvisual
+   improvements, but keep live-visible copy, layout, labels, proof, and
+   interactions unchanged unless the project owner explicitly approved the
+   exact visible change in the current task. Queue unapproved visible proposals
+   in `docs/page-content-improvements.md`.
+9. Implement with reusable components, local data/content, and project-owned
    assets.
-9. Add SEO metadata and structured data as part of the same change, not as a
+10. Add SEO metadata and structured data as part of the same change, not as a
    later cleanup.
-10. After implementation, complete the AEO/GEO audit and update that page
+11. After implementation, complete the AEO/GEO audit and update that page
     section with evidence needs, technical gaps, final recommendations,
     priority, status, verification, and remaining improvements. Keep unresolved
     work in that file for future page tasks.
-11. For visual work, run the visual parity workflow and compare live vs local
-   desktop, tablet, mobile, hover, focus, active/open, scrolled, and animation
-   states.
-12. Check responsive behavior, accessibility, performance risk, and broken links.
-13. If SEO/content quality can improve through visible copy changes, update
-   `docs/page-content-improvements.md` with page-specific suggestions.
-14. Run verification commands.
-15. Summarize changes, verification, visual capture notes, AEO/GEO status, and
+12. For visual work, run the visual parity workflow and compare live vs local
+    desktop, tablet, mobile, hover, focus, active/open, scrolled, and animation
+    states.
+13. Check responsive behavior, accessibility, performance risk, and broken links.
+14. If SEO/content quality can improve through visible copy changes, update
+    `docs/page-content-improvements.md` with page-specific suggestions marked
+    `suggested` or `deferred`; do not implement them without explicit approval.
+15. Run verification commands.
+16. Summarize changes, verification, visual capture notes, AEO/GEO status, and
     any missing assets or content approvals.
 
 ## Before Editing Code
@@ -171,6 +177,30 @@ commercially useful. Keep descriptions human-readable and specific.
 page-specific AEO/GEO findings. Update it during every new indexable page build,
 material page rewrite, structured-data change, or AEO/GEO audit.
 
+### Live-UI Preservation Gate During Migration
+
+AEO/GEO work is nonvisual by default during the migration. A general request to
+implement, audit, or improve AEO/GEO or SEO does not authorize changes to the
+rendered live-site presentation or content.
+
+- Preserve visible headings, paragraphs, grammar, capitalization, labels, CTA
+  text, proof/review values, counters, cards, taxonomy, section order, styling,
+  animation, and default interaction states.
+- Implement accurate nonvisual improvements such as metadata, canonicals,
+  crawl/indexing controls, sitemap dates, server rendering, semantic HTML that
+  preserves appearance, accessibility metadata, and structured data that is
+  supported by the visible page and approved facts.
+- Do not use hidden content or schema to compensate for missing visible
+  evidence. Structured data must not contradict the live-visible page.
+- Record any better visible answer, heading, FAQ, CTA, proof text, or layout in
+  `docs/page-content-improvements.md` as `suggested` or `deferred`.
+- Implement a visible proposal only when the project owner explicitly approves
+  that exact change in the current task. Prior approval of technical/schema work
+  does not imply approval of visible content.
+- If a factual, policy, legal, accessibility, or trust issue cannot be fixed
+  without changing the UI, mark it `blocked` or `deferred`, explain the risk,
+  and request approval rather than silently changing the page.
+
 For each touched page:
 
 1. Read the sitewide principles, current blockers, fact-governance rules,
@@ -251,9 +281,10 @@ Everything else is part of the 100% gate:
 - No production metadata, schema, image, video, script, CSS, canonical, or OG
   field depends on the old live site domain.
 
-If a 100% result requires visible content changes, write them to
-`docs/page-content-improvements.md` before or while implementing the page. Use
-the page name and route, and include exact suggested UI copy.
+If a 100% result would require visible content changes, write the exact proposal
+to `docs/page-content-improvements.md` as `suggested` or `deferred`. Do not lower
+the audit score silently and do not implement the proposal without explicit
+project-owner approval; report the item as an approval-dependent migration gap.
 
 ## Migration Workflow For Legacy Pages
 
@@ -273,9 +304,10 @@ When migrating a page from the old site:
    final code.
 7. Copy required source content into typed local files under `src/content/**` or
    `src/data/**`; do not read from the live site at runtime.
-8. Rebuild the page to match the live page first. Make improvements only when
-   they improve production quality, accessibility, performance, or SEO without
-   losing the original search intent.
+8. Rebuild the page to match the live page first. Implement production-quality,
+   accessibility, performance, SEO, AEO, and GEO improvements only when they do
+   not change the default visible result. Queue visible improvements for
+   explicit approval instead of including them automatically in the migration.
 9. Build the page using shared Server Components for major sections where
    appropriate, with tiny Client Components only for necessary interactivity.
 10. Add page metadata, canonical URL, OG image, and structured data.
@@ -400,6 +432,10 @@ A task is complete only when:
   component has a clear semantic, behavioral, or visual reason to remain separate.
 - It uses local assets/content, not old-site runtime URLs.
 - SEO was handled for touched routes.
+- AEO/GEO work preserves the live-visible UI and content unless the exact
+  difference has explicit project-owner approval recorded for the current task.
+- Unapproved visible SEO/AEO/GEO suggestions remain documented as `suggested`
+  or `deferred`, not implemented.
 - The touched route's section in `docs/aeo-geo-strategy.md` was added or updated,
   and every unresolved AEO/GEO item remains recorded with priority and status.
 - Visual parity evidence was recorded for UI changes, including responsive and

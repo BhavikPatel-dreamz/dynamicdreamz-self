@@ -1,5 +1,6 @@
 import { ExpertiseAccordion } from "@/components/sections/expertise-accordion";
 import { Container } from "@/components/ui/container";
+import { aiDeliveryStatement } from "@/content/home";
 
 export function ExpertiseSection() {
   return (
@@ -11,7 +12,7 @@ export function ExpertiseSection() {
             From strategy and design to development and long-term support, we help brands build, scale, and maintain high-performing digital products. Our expertise spans Shopify development, custom websites, and mobile applications, with a strong focus on performance, usability, and business growth.
           </p>
           <p className="mt-8 text-base leading-[1.9] font-semibold text-muted max-[767px]:mt-7 max-[767px]:text-sm">
-            To accelerate delivery without compromising quality, our teams use modern AI-powered tools such as Cursor, ChatGPT, Claude, Lovable, Bolt, and n8n, alongside proven development processes.
+            {aiDeliveryStatement}
           </p>
         </div>
         <ExpertiseAccordion />

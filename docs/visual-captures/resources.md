@@ -2,8 +2,51 @@
 
 Live URL: `https://www.dynamicdreamz.com/resources/`
 Local route: `/resources`
-Date checked: 2026-08-12
+Date checked: 2026-08-13
 Browser: Microsoft Edge (Chromium, headless parity capture)
+
+## 2026-08-13 Live-UI Parity Rollback
+
+The project owner requested restoration of the current live Resources UI. The
+live page and View Page Source were checked again before editing. The rollback
+restores the original hero and hub copy, Shopify and empty Magento accordion
+rows, Dynamic Story copy, numeric review/rating cards, 18+ years counter,
+trusted-company paragraph, and the corresponding live section geometry. The
+single-H1 semantic improvement, accessible controls, local assets, metadata,
+schema hygiene, focus behavior, and reduced-motion support remain where their
+default visual output is unchanged.
+
+| Viewport | Current live screenshot | Post-rollback local screenshot | Status |
+| --- | --- | --- | --- |
+| 1440x900 | `/tmp/dd-parity-live-resources-1440x900.png` | `/tmp/dd-parity-local-resources-1440x900-final.png` | passed; live copy and heading typography restored |
+| 768x1024 | `/tmp/dd-parity-live-resources-768x1024.png` | `/tmp/dd-parity-local-resources-768x1024-final.png` | passed; live tablet typography and layout restored |
+| 390x844 | `/tmp/dd-parity-live-resources-390x844.png` | `/tmp/dd-parity-local-resources-390x844-final.png` | passed; live wrapping and typography restored |
+
+Current live source: `/tmp/dd-live-resources-20260813.html`. Resources CSS/JS,
+computed-style, accordion, carousel, video, logo, counter, hover/focus, and
+responsive sources already listed below remain the interaction baseline. The
+full-page comparison is also recorded at
+`/tmp/dd-parity-live-resources-full.png` and
+`/tmp/dd-parity-local-resources-full-final.png`; the 2026-08-12 visible-copy plan
+recorded later in this note is superseded by this rollback.
+
+## 2026-08-12 AEO/GEO Scope Captured Before UI Editing
+
+- Preserve every existing article, category, and quote destination; unbuilt
+  destination availability is classified as migration pending.
+- Replace the rhetorical hero and informal hub text with an answer-first
+  Shopify/ecommerce resource summary for merchants, growth teams, developers,
+  and agency partners.
+- Relabel the white-label-heavy category, hide the empty Magento category,
+  replace ambiguous store/team claims with the approved sitewide facts, and
+  remove unverified numeric review labels while retaining independent profile
+  links.
+- Replace generic trust copy, use the real page review date in metadata/schema,
+  and retain CollectionPage, ItemList, BlogPosting, BreadcrumbList, and
+  VideoObject nodes during active migration.
+- Preserve accordion, article rail, story video, logo strip, counters, CTA,
+  hover, focus, animation, and responsive contracts. Post-change captures must
+  check copy wrapping and vertical section growth at all existing viewports.
 
 ## Viewports
 
@@ -33,9 +76,9 @@ Browser: Microsoft Edge (Chromium, headless parity capture)
 | Resource accordion | Shopify open initially; only one category open; active category can close; roughly 400ms slide; 9/4/0/4 links | Real buttons with `aria-expanded`/`aria-controls`, single-open state, equivalent height transition, and empty Magento state preserved |
 | Shopify Blogs | 64 source-rendered cards; 3/2/1-card drag layout with partial edge card; no arrows, dots, loop, or autoplay | All 64 cards remain SSR in a native horizontal scroll-snap rail; shared BlogCard primitive; local optimized images; touch, mouse-wheel, and keyboard scrolling without carousel JavaScript |
 | Dynamic story | Green-to-blue gradient; desktop title/video/reviews on left and four paragraphs on right; copy appears first on tablet/mobile | Server-rendered responsive split using the shared generic video dialog and existing About story artwork |
-| Review proof | Clutch, Upwork, and GoodFirms cards with five-star strip and responsive compact treatment | Typed review items using local wordmarks and star art; matching desktop/mobile layouts |
-| Client strip | Twelve logos; six/four/three/two visible by breakpoint; 2s autoplay with pause on hover; infinite and draggable | Existing ClientLogo component and canonical client-logo data rendered through a narrow client-side Slick carousel boundary |
-| Trust counters | Four textured white cards; 18+, 150+, 5000+, and 1100+ animate for about two seconds on entry | Small client boundary using IntersectionObserver; stable server-rendered values and reduced-motion completion |
+| Review proof | Clutch, Upwork, and GoodFirms cards with five-star strips and ungoverned numeric values | Live wordmarks, five-star strips, numeric values, and profile links restored; verification/governance remains a prelaunch blocker |
+| Client strip | Twelve logos; six/four/three/two visible by breakpoint; 2s autoplay with pause on hover | Existing ClientLogo component and canonical client-logo data in a scoped CSS marquee; pause on hover/focus and stop for reduced motion |
+| Trust counters | Four textured white cards; 18+, 150+, 5000+, and 1100+ animate for about two seconds on entry | Live 18+/150+/5000+/1100+ values and animation restored; reusable numeric facts remain typed where they do not change the visible wording |
 | Quote CTA | Compact green-to-blue banner with centered prompt and light pill button | Server-rendered section using the shared ButtonLink and canonical quote path |
 | Site chrome | Existing shared Dynamic Dreamz header, contact widget, and footer | Reuse the root layout components unchanged |
 
@@ -111,9 +154,9 @@ No horizontal document overflow was present in the live desktop, tablet, or mobi
 | Mobile geometry | All major Resources section heights match; accumulated content boundary variance is 0.45px before the shared footer |
 | Accordion | Shopify open initially; WordPress active height matches at desktop/mobile and stays within one sub-pixel line-box rounding at tablet; keyboard focus and ARIA state pass |
 | Article rail | 64 SSR cards, four/three/two partially visible cards in the measured viewport, keyboard-scrollable rail, and zero document overflow |
-| Video and counters | Privacy-enhanced video dialog opens/closes correctly; counters complete at 18+/150+/5000+/1100+; reduced-motion output is static |
+| Video and counters | Privacy-enhanced video dialog opens/closes correctly; pre-AEO counters completed at 18+/150+/5000+/1100+; reduced-motion output was static |
 | Assets and content | No runtime production images, no missing image alt attributes, no `#` links, no duplicate asset hashes, and no mojibake in visible Resources content |
-| SEO | Exact live title/description/canonical, one H1, 64 dated article headings, and Organization/WebSite/CollectionPage/BreadcrumbList/ItemList/VideoObject graph |
+| SEO | Pre-AEO capture matched live title/description/canonical, one H1, 64 dated article headings, and Organization/WebSite/CollectionPage/BreadcrumbList/ItemList/VideoObject graph |
 
 ## Remaining Differences
 
@@ -123,5 +166,24 @@ No horizontal document overflow was present in the live desktop, tablet, or mobi
 | Article rail implementation | Native scroll snap replaces Owl's drag runtime while retaining the same card widths, visible edge card, touch/keyboard access, and all 64 source-rendered articles | intentional performance/accessibility improvement |
 | Counter digit transition | Local counters use stable numeric interpolation instead of Odometer's overlapping rolling glyphs; values and two-second viewport trigger match | intentional production-quality implementation |
 | Logo position in a screenshot | The local and live autoplay loops can be at different logo positions when a full-page capture reaches the strip | accepted timing phase; item order, breakpoints, motion, and assets match |
-| Visible grammar issues | Informal and ambiguous live copy is retained for migration parity | proposed replacements are recorded in `docs/page-content-improvements.md` |
+| Visible copy | Hero, hub, story, taxonomy, review labels, trust statement, and 18+ counter | restored to live on 2026-08-13; edited alternatives remain deferred |
 | Linked destination routes | The page intentionally preserves 83 unique CTA, category, article, and resource-guide paths whose destination routes are not yet present in this migration | migration pending; excluded from this route-local SEO score and required before site launch |
+
+## 2026-08-12 AEO/GEO Verification (Superseded)
+
+| Viewport | Post-change screenshot | Result |
+| --- | --- | --- |
+| 1440x900 | `/tmp/dd-aeo-all-pages-20260812/resources/resources-1440x900.png` | passed |
+| 768x1024 | `/tmp/dd-aeo-all-pages-20260812/resources/resources-768x1024.png` | passed |
+| 390x844 | `/tmp/dd-aeo-all-pages-20260812/resources/resources-390x844.png` | passed |
+
+- The shorter H1, direct introduction, revised hub points, story proof, neutral
+  review cards, and Founded 2006 counter fit without clipping or horizontal
+  overflow.
+- Accordion, native article rail, video dialog, logo strip, animated counters,
+  CTA, focus states, and reduced-motion behavior remain intact.
+- Rendered source contains one CollectionPage, shared Organization, WebSite,
+  BreadcrumbList, company VideoObject, and the intentionally retained 64-entry
+  ItemList.
+- The shared fixed contact widget can overlay lower viewport content during a
+  capture; this is a pre-existing shared control.

@@ -1,7 +1,9 @@
 # Dynamic Dreamz AEO and GEO Strategy
 
-Status: suggested  
-Last audited: 2026-08-12  
+Status: technical work implemented for five current routes; visible AEO/GEO
+recommendations deferred for live-site parity; evidence and policy approvals
+remain
+Last audited: 2026-08-13
 Scope: current Next.js migration and the five implemented indexable routes  
 Owners: SEO, content, development, leadership, sales, HR, and client-success teams
 
@@ -24,9 +26,44 @@ It covers:
   - `/life-dynamicdreamz/`
   - `/resources/`
 
-This is a strategy and recommendation document. Visible copy changes remain
-suggested until approved. Approved changes should also be recorded in
-`docs/page-content-improvements.md` when they are implemented.
+This is the strategy and implementation record. Visible changes proposed and
+temporarily implemented on 2026-08-12 were rejected and reverted to live-site
+wording on 2026-08-13. The decision is recorded in
+`docs/aeo-geo-migration-approval.md`; exact deferred-copy status is tracked in
+`docs/page-content-improvements.md`.
+
+## Migration Live-UI Rule
+
+During the Next.js migration, implement AEO/GEO without changing the current
+live site's visible UI or page content by default. A request to audit, improve,
+or implement AEO/GEO or SEO is approval for accurate nonvisual work only; it is
+not approval for a visible rewrite or redesign.
+
+May be implemented without a separate visible-content approval when accurate:
+
+- Metadata, canonicals, robots, sitemap, crawlability, and real freshness data.
+- Stable entity relationships and structured data that match visible content
+  and approved facts.
+- Server-rendering, semantic markup, and accessibility metadata that preserve
+  the default visual result.
+- Performance and local-asset improvements that preserve appearance, content,
+  behavior, and responsive geometry.
+
+Must remain unchanged without explicit project-owner approval of the exact
+difference:
+
+- Visible headings, paragraphs, grammar, capitalization, labels, FAQs, CTA
+  text, proof/review values, counters, cards, taxonomy, and link text.
+- Section order, layout, spacing, typography, color, imagery, animation,
+  responsive behavior, and default interaction states.
+
+Record a recommended visible improvement in
+`docs/page-content-improvements.md` as `suggested` or `deferred` and preserve it
+in this strategy as an unresolved recommendation. Never use hidden text or
+schema to substitute for missing visible evidence, and never let nonvisual
+schema contradict the live-visible page. If a valid factual, policy, legal,
+accessibility, trust, or search-quality fix requires a visible change, document
+the risk and request approval before implementation.
 
 ## Executive Direction
 
@@ -38,7 +75,9 @@ systems can retrieve, understand, quote, and cite accurately.
 The highest-value work is:
 
 1. Complete the commercial service, work, case-study, contact, quote, job, and
-   article routes referenced by the current UI and structured data.
+   article routes referenced by the current UI and structured data before
+   launch; their development-stage availability is excluded from the current
+   five-page implementation scope.
 2. Resolve conflicting facts, URLs, review counts, dates, and service names.
 3. Publish answer-first service content backed by project evidence.
 4. Convert portfolio items into first-party case studies with approved outcomes.
@@ -213,27 +252,27 @@ Representative prompts:
 | Expertise | Homepage content covers Shopify Plus, migration, B2B, CRO, integrations, white-label work, mobile apps, and support | Establishes broad topical relevance |
 | Media | Local images, descriptive alt text, video metadata, and explicit dimensions are present | Supports multimodal search and accessibility |
 
-### Critical gaps and migration blockers
+### Current dependencies and prelaunch migration work
 
-These issues should be resolved before claiming AEO/GEO readiness or launching
-the migration.
+The five built pages retain the approved technical AEO/GEO work. On 2026-08-13,
+the project owner requested that visible copy and UI differences be reverted to
+the live-site presentation. Those visible recommendations remain in this file
+as deferred work rather than being removed. Planned but unbuilt URLs are
+intentionally retained and excluded from current route scoring; they remain
+mandatory prelaunch dependencies.
 
-| Priority | Issue | Why it matters | Required action |
+| Priority | Status | Issue | Required action |
 | --- | --- | --- | --- |
-| P0 | Only five indexable routes are implemented, while navigation and CTAs reference many more | Users, crawlers, and AI systems encounter incomplete journeys | Build each intended route or temporarily remove its link until the route exists |
-| P0 | Homepage `OfferCatalog` schema references unbuilt service URLs | Structured data describes destinations that currently return 404 | Emit offers only for live canonical service pages |
-| P0 | Resources `ItemList` describes many unbuilt `BlogPosting` URLs | The hub claims a large article inventory that is not available in the migration | Include only published local articles or defer the article item schema |
-| P0 | Career `JobPosting.url` targets the unbuilt `/career-apply-now/` route | Job-search systems may send candidates to a broken conversion path | Build the application route before emitting these job URLs |
-| P0 | `/request-quote/`, `/our-work/`, `/blog/`, and other primary CTA destinations are unbuilt | The main commercial conversion and evidence paths are incomplete | Complete these routes before launch |
-| P0 | Homepage blog links use root-level slugs while Resources uses `/blogs/` slugs | Conflicting paths dilute canonical clarity and create broken links | Choose one legacy-compatible canonical article pattern and update all references |
-| P0 | Review scores, counts, and profile URLs vary between sections | Conflicting proof weakens trust and can lead to incorrect AI summaries | Centralize verified review data and its last-checked date |
-| P0 | Homepage states `4500+` Shopify stores while Resources says `1000+` stores launched | The relationship between the two claims is unclear | Define each metric precisely or use one approved figure consistently |
-| P0 | Resources says the company empowers "hundreds and thousands of brands" | The claim is vague and appears unsupported | Replace it with a precise, approved fact |
-| P1 | Sitemap, homepage schema, and About schema use build time as `lastModified` | Every deployment can imply a substantive content update that did not happen | Store and emit real content review or modification dates |
-| P1 | Potential future Shopify Plus routes have overlapping intent | Similar service pages may compete and confuse retrieval | Create an intent map before building the routes |
-| P1 | Current article data does not include author or reviewer information | Expertise cannot be attributed clearly | Add approved author, reviewer, biography, and review-date fields to article content |
-| P1 | Selected work links primarily to external storefronts instead of internal case studies | The site cannot explain its contribution or outcomes | Create internal evidence pages and link the showcase to them |
-| P1 | Major proof claims are not accompanied by definitions or a verification date | AI systems may repeat numbers without useful context | Maintain a company-facts source with definitions, provenance, approval, and review dates |
+| P0 | migration pending | Only five indexable routes are implemented, while navigation and CTAs reference the larger migration | Complete and validate the intended destinations before launch |
+| P0 | migration pending | Homepage `OfferCatalog`, Resources `ItemList`, and Career application URLs reference planned routes | Retain during migration; validate every final canonical destination before launch |
+| P0 | migration pending | Homepage uses root article slugs while Resources uses `/blogs/` paths | Choose the legacy-compatible canonical pattern and redirects during article migration |
+| P0 | blocked by live parity | Review scores, counts, and profile URLs are not governed by one current source | Live Resources ratings and counts were restored on 2026-08-13; verify and centralize them before launch |
+| P0 | blocked by live parity | Home displays `4500+` Shopify stores while Resources visible story copy says `1000+` | Keep the live UI during migration, then resolve the definition, provenance, and approved display value before launch |
+| P1 | implemented | Sitemap and page schema previously used build time or stale `dateModified` values | All five routes now use explicit content dates from shared SEO records |
+| P1 | future route work | Potential Shopify Plus routes have overlapping intent | Create an intent map before building the routes |
+| P1 | deferred to article migration | Current article data does not include author or reviewer information | Add approved author, reviewer, biography, evidence, and review-date fields to each article |
+| P1 | deferred to case-study migration | Selected work links primarily to external storefronts | Create internal evidence pages with approved scope and outcomes |
+| P1 | partially implemented | Major proof claims need definitions and provenance | A typed fact source now centralizes display values and review date; add definitions, source, owner, and formal approval |
 
 ## Entity and Fact Governance
 
@@ -529,6 +568,13 @@ revenue opportunities.
 
 ## Home (`/`)
 
+Status: technical improvements implemented; visible AEO copy deferred and live
+UI restored on 2026-08-13
+
+Last reviewed: 2026-08-13
+
+Owner: SEO, content, development, leadership, and client success
+
 ### Page role
 
 Primary brand and commercial discovery page for Shopify Plus, Shopify
@@ -537,7 +583,7 @@ delivery, and ongoing support.
 
 ### Current strengths
 
-- The H1 clearly identifies Shopify Plus and global brand/agency audiences.
+- The live H1 clearly identifies Shopify Plus and enterprise Shopify intent.
 - The hero paragraph states DTC, B2B, migration, checkout, integrations, CRO,
   and support capabilities.
 - Shopify and independent review proof appears in the first viewport.
@@ -548,22 +594,23 @@ delivery, and ongoing support.
 
 ### Recommended improvements
 
-| Priority | Area | Current issue | Suggested improvement |
-| --- | --- | --- | --- |
-| P0 | CTA destinations | `/request-quote/`, `/our-work/`, and `/blog/` are not built | Complete the routes before launch or temporarily point only to working destinations |
-| P0 | Article paths | Homepage uses root-level article slugs while Resources uses `/blogs/` | Adopt one canonical path pattern and update cards, sitemap, schema, and redirects together |
-| P0 | Offer schema | The OfferCatalog includes unbuilt service pages | Emit only live service offers |
-| P0 | Proof consistency | Review values and Shopify-store counts conflict with Resources | Use a centralized, verified proof-data source |
-| P1 | Selected work | Cards link directly to client sites and do not explain Dynamic Dreamz's role | Link to internal case studies containing scope, platform, constraints, and outcomes; retain a secondary client-site link if approved |
-| P1 | Expertise | Sections explain capabilities but contain little direct evidence | Add one relevant case-study result or delivery example to each priority expertise topic |
-| P1 | Internal links | Service descriptions are not yet supported by live service pages | Add descriptive links as each service route launches |
-| P1 | Freshness | Homepage schema uses the build date as `dateModified` | Use the real approved content-review date |
-| P2 | AI-tools paragraph | A list of tools can distract from buyer outcomes and governance | Reframe around delivery speed, human review, security, QA, and where AI assistance is or is not used |
-| P2 | Answer summary | The page explains services but lacks a concise reusable company definition outside metadata/schema | Add a short visible “Who we help” or “Why Dynamic Dreamz” statement before the detailed expertise section |
+| Priority | Status | Area | Current issue | Suggested improvement | Verification or remaining dependency |
+| --- | --- | --- | --- | --- | --- |
+| P0 | deferred | CTA destinations | `/request-quote/`, `/our-work/`, and `/blog/` are not built | Complete the routes before launch or temporarily point only to working destinations | Project owner approved retaining migration-intent destinations while development is in progress. Original CTA labels and paths are restored; re-audit before launch. |
+| P0 | deferred | Article paths | Homepage uses root-level article slugs while Resources uses `/blogs/` | Adopt one canonical path pattern and update cards, sitemap, schema, and redirects together | Requires a cross-route canonical and redirect decision; deliberately not changed in this homepage-only task. |
+| P0 | deferred | Offer schema | The OfferCatalog includes service pages that are still being migrated | Emit only live service offers before launch | Project owner approved retaining the catalog during active migration. The original eight service offers are restored and must be revalidated when route migration is complete. |
+| P0 | blocked by live parity | Proof consistency | Review values lack governance and Home's `4500+` Shopify-store count conflicts with Resources' visible `1000+` wording | Use a centralized, verified proof-data source | Core typed facts and schema are centralized, but live Resources proof copy and numeric reviews were restored at the project owner's request. Definitions, provenance, and approved visible values remain required. |
+| P1 | deferred | Selected work | Cards link directly to client sites and do not explain Dynamic Dreamz's role | Link to internal case studies containing scope, platform, constraints, and outcomes; retain a secondary client-site link if approved | Internal case-study routes and approved scope/outcome evidence are not available in this homepage-only task. |
+| P1 | blocked | Expertise | Sections explain capabilities but contain little direct evidence | Add one relevant case-study result or delivery example to each priority expertise topic | Client attribution, delivery scope, and outcomes require client-success/leadership approval. |
+| P1 | deferred | Internal links | Service descriptions are not yet supported by live service pages | Add descriptive links as each service route launches | Service routes are migration pending; no broken service links were added. |
+| P1 | implemented | Freshness | Homepage schema uses the build date as `dateModified` | Use the real approved content-review date | `WebPage.datePublished` preserves the live source date and `dateModified` is the explicit 2026-08-13 final parity review, independent of deployments. |
+| P2 | deferred | AI-tools paragraph | A list of tools can distract from buyer outcomes and governance | Reframe around delivery speed, human review, security, QA, and where AI assistance is or is not used | Proposed visible copy was reverted to the live wording on 2026-08-13. Reintroduce only after explicit content approval. |
+| P2 | partially implemented | Answer summary | The page explains services but lacks a concise reusable company definition outside metadata/schema | Add a short visible “Who we help” or “Why Dynamic Dreamz” statement before the detailed expertise section | The live hero wording is restored; the entity-first description remains nonvisual in Organization schema. Visible adoption is deferred. |
 
 ### Suggested visible answer statement
 
-Status: suggested; requires content and live-parity approval.
+Status: deferred. The proposal was implemented on 2026-08-12, then reverted to
+the live hero wording on 2026-08-13 at the project owner's request.
 
 > Dynamic Dreamz is a Shopify Platinum Partner and Shopify Plus agency helping
 > established DTC brands, B2B merchants, and digital agencies build, migrate,
@@ -585,12 +632,36 @@ superlatives.
 
 - Keep the stable Organization, WebSite, WebPage, BreadcrumbList, and supported
   VideoObject nodes.
-- Remove service offers whose pages do not resolve.
+- Revalidate service offers before launch and remove any whose final canonical
+  pages do not resolve.
 - Keep ratings out of Organization schema unless one precise, visible, and
   policy-compliant rating source is selected.
 - Replace build-time page modification with a real content date.
 
+### Verification and remaining gaps
+
+- Checks completed: live rendered page and View Page Source, live CSS/JS,
+  1440x900, 768x1024, and 390x844 live/local captures, rendered local metadata,
+  rendered JSON-LD, restored migration-intent links, lint, and production build.
+- Implemented items: stable Organization description, current live article-card
+  synchronization, shared facts, and explicit content dates. Visible hero and
+  AI-delivery copy were restored to the live wording.
+- Deferred or blocked: all planned-but-unbuilt route checks during development,
+  article canonicalization, internal case studies, proof definitions/provenance,
+  current review values, and approved case-study evidence.
+- Measurement: track the six homepage target questions above, citations to `/`,
+  work/blog/quote CTA engagement after their routes ship, and qualified project
+  enquiries after deployment. SEO owns monthly prompt checks; development owns
+  the prelaunch route/link audit.
+
 ## About Us (`/about-us/`)
+
+Status: technical improvements implemented; visible copy deferred and live UI
+restored on 2026-08-13
+
+Last reviewed: 2026-08-13
+
+Owner: SEO, content, development, and business stakeholders
 
 ### Page role
 
@@ -611,22 +682,23 @@ Dynamic Dreamz.
 
 ### Recommended improvements
 
-| Priority | Area | Current issue | Suggested improvement |
-| --- | --- | --- | --- |
-| P0 | H1 clarity | “Agile. Adept. Accurate.” communicates brand tone but not page/entity identity | Use “About Dynamic Dreamz: Agile. Adept. Accurate.” or add an equally prominent visible “About Dynamic Dreamz” label |
-| P0 | Founder titles | Two founders are listed as Co-Founder & CEO | Confirm the current approved leadership titles and use them consistently in UI, schema, LinkedIn, and external profiles |
-| P0 | Milestone proof | “Top 10 Shopify developers by UpWork” is a prominent external recognition without a visible source | Link the exact source or revise/remove the claim if it cannot be verified |
-| P1 | Hero description | The introduction is broad and grammatically dated | Replace it with an entity-first statement covering founding year, ecommerce focus, team, and Shopify status |
-| P1 | Founder biographies | Biographies are brief, stylized, and incomplete as expertise evidence | Add approved experience areas, responsibilities, and relevant professional profiles without inventing credentials |
-| P1 | Person schema | Founder nodes contain only name and job title | Where approved and visible, connect founder `Person` nodes to profile URLs, images, biographies, and the Organization |
-| P1 | Office/entity facts | The page does not visibly consolidate company contact and office facts | Add a concise company-facts block linking to Contact Us |
-| P1 | Timeline copy | Several milestones contain grammar problems or vague wording | Edit for clarity while preserving facts and dates |
-| P1 | Freshness | AboutPage `dateModified` uses build time | Use a real leadership/content verification date |
-| P2 | Department expertise | Leaders are named but their areas are not connected to service authority | Link approved leaders to relevant service expertise or authored/reviewed content when those pages exist |
+| Priority | Status | Area | Current issue | Implemented improvement or dependency |
+| --- | --- | --- | --- | --- |
+| P0 | deferred | H1 clarity | “Agile. Adept. Accurate.” does not identify the page/entity | The entity-first H1 proposal was reverted to the live wording on 2026-08-13; reintroduce only after explicit content approval |
+| P0 | blocked | Founder titles | Two founders are listed as Co-Founder & CEO | Existing titles remain unchanged until authoritative confirmation is available |
+| P0 | blocked by live parity | Milestone proof | “Top 10 Shopify developers by UpWork” has no approved visible source | The live claim was restored on 2026-08-13; obtain evidence or explicit approval before launch |
+| P1 | deferred | Hero description | Introduction is broad and grammatically dated | Entity-first copy was reverted to the live introduction on 2026-08-13; retain the proposal for content approval |
+| P1 | partially implemented | Founder biographies | Visible biographies remain brief | Existing biographies, local images, and available LinkedIn profiles now supply Person nodes; deeper expertise needs approved content |
+| P1 | implemented | Person schema | Founder nodes contained only name and job title | Three stable Person nodes now include visible biography, image, profile where available, and Organization relationship |
+| P1 | partially implemented | Office/entity facts | The page does not contain a dedicated contact-facts block | Shared Organization schema contains both offices; the proposed visible hero facts were reverted and a Contact route remains migration pending |
+| P1 | deferred | Timeline copy | Several milestones have grammar problems or vague wording | Edited timeline copy was reverted to live on 2026-08-13; retain as a future content proposal |
+| P1 | implemented | Freshness | AboutPage used build time | Schema and sitemap now use the explicit 2026-08-13 final parity-review date |
+| P2 | deferred | Department expertise | Leaders are not connected to service authority | Add approved expert authorship/review relationships when service and article pages are migrated |
 
 ### Suggested hero copy
 
-Status: suggested; requires content and live-parity approval.
+Status: deferred. The proposed copy was implemented on 2026-08-12 and reverted
+to the live H1 and introduction on 2026-08-13.
 
 **H1:**
 
@@ -651,13 +723,31 @@ Status: suggested; requires content and live-parity approval.
 
 ### Structured-data actions
 
-- Confirm founder titles before expanding Person data.
-- Link Person nodes to the Organization with stable identifiers.
-- Add external profile URLs only when they are correct and approved.
-- Use one Organization fact source shared with the homepage.
-- Replace build-time modification dates with a real review date.
+- Completed: linked visible founders to the Organization with stable Person
+  identifiers, local images, existing biographies, and available profiles.
+- Completed: shared the Organization and core fact source with all built pages.
+- Completed: replaced build-time modification with the 2026-08-13 final review date.
+- Blocked: confirm founder titles before changing their visible or structured
+  representation.
+
+### Verification and remaining gaps
+
+- Rendered output contains one AboutPage, one shared Organization, three Person
+  nodes, BreadcrumbList, WebSite, and the visible company VideoObject.
+- Desktop, tablet, and mobile screenshots confirm the live heading,
+  introduction, story, timeline, and values are restored without clipping or
+  horizontal overflow.
+- Remaining: founder-title confirmation, richer approved leadership expertise,
+  company-fact provenance, and a future contact/company-facts destination.
 
 ## Career (`/career/`)
+
+Status: schema improvements retained; visible listing presentation restored to
+live on 2026-08-13
+
+Last reviewed: 2026-08-13
+
+Owner: HR, SEO, content, and development
 
 ### Page role
 
@@ -668,30 +758,33 @@ and Ahmedabad.
 
 - Current roles, experience ranges, job type, dates, positions, and job PDFs are
   structured in typed content.
-- Location filtering distinguishes Surat and Ahmedabad in the UI.
-- JobPosting schema is generated for the listed locations.
+- The live location tabs and complete five-role presentation are preserved in
+  the UI.
+- JobPosting schema uses the seven role/location combinations supported by the
+  local job PDFs.
 - Office addresses, hiring organization, date posted, and application URLs are
   represented.
 - Workplace benefits and real team imagery add useful candidate context.
 
 ### Recommended improvements
 
-| Priority | Area | Current issue | Suggested improvement |
-| --- | --- | --- | --- |
-| P0 | Application route | Every apply CTA and JobPosting URL points to unbuilt `/career-apply-now/` | Build and test the route with position/location prefill before launch |
-| P0 | Location accuracy | Schema creates every job for both Surat and Ahmedabad | Store locations per job and emit only genuine current job-location combinations |
-| P0 | Job details | The HTML card is brief and the full description is in a PDF | Create an indexable job-detail page or render the approved responsibilities, qualifications, benefits, and process as HTML |
-| P0 | Job freshness | JobPosting data needs active/expired governance | Add an expiry or review date, remove closed jobs promptly, and use IndexNow for changes |
-| P1 | H1 grammar and intent | “Explore rewarding career in IT...” is missing an article and does not lead with the company/location | Use a concise Dynamic Dreamz careers H1 while preserving the aspirational message below it |
-| P1 | Benefits grammar | “Ample of Employee Engagement Activities” is grammatically incorrect | Change to “Ample Employee Engagement Activities” or a simpler approved label |
-| P1 | Job schema description | The generated description only repeats title, type, experience, and city | Use the complete visible job description and requirements |
-| P1 | Candidate FAQs | Important policies live only on the Life page | Add or cross-link approved answers for hiring process, locations, hours, work model, growth, and benefits |
-| P1 | Office context | Candidates need a clear location and work-model summary | Add office links, location context, and an approved on-site/hybrid/remote statement |
-| P2 | JobPage structure | All jobs share one index page | Prefer canonical job-detail routes when sufficient approved content is available |
+| Priority | Status | Area | Current issue | Implemented improvement or dependency |
+| --- | --- | --- | --- | --- |
+| P0 | migration pending | Application route | Apply CTAs and JobPosting URLs target planned `/career-apply-now/` | Retained with role/location parameters; validate the application flow before launch |
+| P0 | partially implemented; approval required | Location accuracy | The live UI represents every role in both cities, while local PDFs support seven combinations | PDF-supported locations remain in JobPosting schema, while the visible tabs were restored to live. HR must confirm whether the UI or PDFs are authoritative before launch |
+| P0 | partially implemented | Job details | Full descriptions exist in PDFs | Role summaries remain in typed data and JobPosting descriptions, but visible card summaries were removed for live parity; full HTML detail remains future work |
+| P0 | blocked | Job freshness | Listings lack a visible review date and approved expiry dates | The proposed visible review date was removed for live parity; establish an HR-owned review and expiry process |
+| P1 | deferred | H1 and intent | H1 does not lead with employer/location intent | The entity-first H1 and introduction were reverted to live on 2026-08-13 |
+| P1 | deferred | Benefits grammar | “Ample of Employee Engagement Activities” is incorrect | Corrected wording was reverted to live on 2026-08-13 |
+| P1 | partially implemented | Job schema description | Visible cards do not include role summaries | JobPosting nodes retain PDF-derived summaries, experience, location, and on-site context; visible adoption is deferred |
+| P1 | deferred | Candidate FAQs | Policies live only on Life | The descriptive cross-link was removed for live parity on 2026-08-13 |
+| P1 | partially implemented; approval required | Office context | Candidates need accurate location/work-model context | Schema contains both office addresses and PDF-supported posting locations, while visible tabs preserve the live presentation pending HR confirmation |
+| P2 | migration pending | JobPage structure | All jobs share one index page | Preserve current index/application model until approved job-detail routes and full HTML descriptions are migrated |
 
 ### Suggested hero copy
 
-Status: suggested; requires HR and live-parity approval.
+Status: deferred. The proposed copy was implemented on 2026-08-12 and reverted
+to the live hero and opportunities wording on 2026-08-13.
 
 **H1:**
 
@@ -718,15 +811,38 @@ direct answer.
 
 ### Structured-data actions
 
-- Emit one JobPosting for each genuine job/location combination.
-- Ensure each JobPosting URL resolves to a complete application or job-detail
-  destination.
-- Add a real description, qualifications, and `validThrough` when an expiry is
-  known.
-- Remove expired JobPosting nodes as soon as the role closes.
-- Keep date posted and visible job dates aligned.
+- Completed: emit one JobPosting for each of the seven PDF-supported
+  job/location combinations.
+- Partially completed: structured summaries, experience, posted date, location,
+  and on-site context come from typed data and local PDFs. The live UI does not
+  expose all of these fields and location alignment awaits HR approval.
+- Migration pending: complete the retained application destinations before
+  launch.
+- Blocked: add `validThrough` only when real expiry dates are approved; remove
+  postings promptly when roles close.
+- Factual blocker: resolve the CRO `1–3 years` card versus `2–4 years` PDF
+  conflict, then update the card, PDF, and schema together.
+
+### Verification and remaining gaps
+
+- Rendered output contains seven JobPosting nodes rather than ten assumed
+  combinations, and each identifier includes the supported city.
+- Responsive captures confirm the live hero, opportunities copy, five-role tabs,
+  cards, benefits wording, and link presentation are restored without clipping
+  or horizontal overflow.
+- Remaining: confirm whether PDFs or the live tabs are authoritative for job
+  locations, then align UI and JobPosting output; application/job-detail
+  migration, expiry governance, full HTML qualifications, hiring-process detail,
+  and CRO experience confirmation also remain open.
 
 ## Life at Dynamic Dreamz (`/life-dynamicdreamz/`)
+
+Status: nonvisual SEO improvements implemented; visible copy deferred and live
+UI restored on 2026-08-13
+
+Last reviewed: 2026-08-13
+
+Owner: HR, SEO, content, and development
 
 ### Page role
 
@@ -744,23 +860,24 @@ candidate questions, and the Career page.
 
 ### Recommended improvements
 
-| Priority | Area | Current issue | Suggested improvement |
-| --- | --- | --- | --- |
-| P0 | Legacy URL | Project context identifies `/life-at-dynamic-dreamz/`, while the migration uses `/life-dynamicdreamz/` | Confirm the legacy canonical and add a permanent redirect when the final route differs |
-| P0 | Hiring link | The CTA uses `/career` instead of the canonical trailing-slash form and relies on route normalization | Use the shared canonical `/career/` path consistently |
-| P0 | Typo | “Dynamic Dreramz” appears in hiring copy | Correct it to “Dynamic Dreamz” |
-| P1 | H1 entity clarity | “Where Teamwork Takes the Lead” does not explicitly identify the page as Life at Dynamic Dreamz | Use “Life at Dynamic Dreamz: Where Teamwork Takes the Lead” or add a visible page label |
-| P1 | Hero grammar | “gives ample of opportunities” and “maintain work life balance” weaken credibility | Use the approved corrected copy below |
-| P1 | Culture copy | Several value descriptions are sentence fragments or vague | Rewrite them as complete, specific descriptions without making new HR promises |
-| P1 | FAQ grammar | Several answers contain grammar and spelling errors | Edit for clarity while preserving approved policy meaning |
-| P1 | HR policy accuracy | Work-from-home, working-hours, pregnancy, and late-evening statements are sensitive policies | Require HR review and a verification date before publishing or marking up |
-| P1 | Gallery context | Alt text identifies scenes, but the page lacks visible event context | Add factual captions or grouped event names/dates where approved |
-| P1 | Freshness | The schema modification date is older than the current migration content | Set it to the real HR/content review date, not the deployment date |
-| P2 | Career relationship | The page and Career route should reinforce one another | Add descriptive links to current openings, benefits, locations, and the hiring process |
+| Priority | Status | Area | Current issue | Implemented improvement or dependency |
+| --- | --- | --- | --- | --- |
+| P0 | migration pending | Legacy URL | Project context also identifies `/life-at-dynamic-dreamz/` | Confirm the legacy canonical and redirect during prelaunch route work |
+| P0 | implemented | Hiring link | CTA used `/career` | Link now uses canonical `/career/` |
+| P0 | deferred | Typo | “Dynamic Dreramz” appears in the live hiring copy | The correction was reverted to live on 2026-08-13; change only with explicit visible-copy approval |
+| P1 | deferred | H1 entity clarity | Heading does not identify the page/entity | The entity-first H1 was reverted to the live heading on 2026-08-13 |
+| P1 | deferred | Hero grammar and context | First answer uses awkward grammar and lacks office context | Rewritten copy was reverted to live on 2026-08-13; retain as an HR/content proposal |
+| P1 | deferred | Culture copy | Value descriptions are fragments or vague | The six revised descriptions were reverted to live on 2026-08-13 |
+| P1 | deferred | FAQ grammar | Answers contain grammar and spelling errors | The six edited answers were reverted to live on 2026-08-13 pending HR/content approval |
+| P1 | blocked | HR policy accuracy | Work model, hours, late-evening work, pregnancy, and wellbeing language is sensitive | Current wording remains subject to formal policy confirmation |
+| P1 | deferred | Gallery context | Gallery lacks approved event names and dates | Add factual captions only when event metadata is available |
+| P1 | implemented | Freshness | Schema used an older modification date | Schema and sitemap now use the explicit 2026-08-13 final parity-review date |
+| P2 | partially implemented | Career relationship | Recruitment pages need stronger connection | Life uses the canonical `/career/` link; the proposed Career-to-Life link was removed for live parity |
 
 ### Suggested hero copy
 
-Status: suggested; requires HR and live-parity approval.
+Status: deferred. The proposed copy was implemented on 2026-08-12 and reverted
+to the live hero wording on 2026-08-13; policy language still requires HR review.
 
 **H1:**
 
@@ -777,7 +894,9 @@ The exact equal-opportunity language should be reviewed by HR before approval.
 
 ### Suggested FAQ corrections
 
-Status: suggested; policy meaning requires HR approval.
+Status: deferred. The edited answers were implemented on 2026-08-12 and
+reverted to the live wording on 2026-08-13; current policy meaning still
+requires confirmation.
 
 - Replace “ample of opportunities” with “ample opportunities.”
 - Replace “five-days a week organization” with “five-day workweek.”
@@ -799,12 +918,29 @@ Status: suggested; policy meaning requires HR approval.
 ### Structured-data actions
 
 - Keep FAQPage only while every question and answer remains visible.
-- Update FAQ schema immediately when HR-approved visible answers change.
-- Use a real page review date.
+- Completed: visible answers and FAQ schema come from the same typed content.
+- Update both immediately when approved policy language changes.
+- Completed: use the explicit 2026-08-13 final review date.
 - Consider adding approved Organization workplace facts, but do not create
   ratings or employment claims that are not visibly substantiated.
 
+### Verification and remaining gaps
+
+- Rendered output contains the same six questions in visible content and
+  FAQPage schema.
+- Responsive captures confirm the live heading, hero, culture, hiring, and FAQ
+  copy are restored at desktop, tablet, and mobile sizes without overflow.
+- Remaining: formal policy confirmation, factual event captions, and the
+  prelaunch legacy-redirect decision.
+
 ## Resources (`/resources/`)
+
+Status: technical and semantic improvements implemented; visible copy and
+layout restored to live on 2026-08-13
+
+Last reviewed: 2026-08-13
+
+Owner: SEO, content, development, and business stakeholders
 
 ### Page role
 
@@ -823,26 +959,26 @@ decision-makers, and agency partners.
 
 ### Recommended improvements
 
-| Priority | Area | Current issue | Suggested improvement |
-| --- | --- | --- | --- |
-| P0 | Article availability | Resource cards and ItemList point to article routes that do not exist locally | Migrate priority articles first and include only live canonical URLs in UI/schema |
-| P0 | URL consistency | Homepage articles use root paths; Resources uses `/blogs/`; category lists also mix both patterns | Select one canonical legacy-compatible article structure and create redirects for alternatives |
-| P0 | Proof consistency | Resources shows review values and counts that differ from homepage proof | Centralize and date-stamp verified review data |
-| P0 | Shopify-store claim | Resources says `1000+` successful stores while homepage says `4500+` stores built | Define the difference or use one approved value consistently |
-| P0 | Unsupported claim | “hundreds and thousands of brands” is vague and unsupported | Replace it with an approved precise fact |
-| P1 | H1 | The current H1 is long, conversational, and unfocused | Use a concise Shopify/ecommerce resource intent |
-| P1 | Hero paragraph | The copy is a long sequence of rhetorical questions | State the audience, covered decisions, and value directly |
-| P1 | Hub copy | Informal phrases, keyword repetition, and broad claims reduce expert credibility | Replace with concise professional copy and specific topic coverage |
-| P1 | Taxonomy | The Shopify category begins with white-label agency articles, and Magento is empty | Reclassify articles by actual subject and hide or explain empty categories |
-| P1 | Authorship | Article data contains no author or reviewer | Add approved author/reviewer profiles, expertise, and real review dates to migrated articles |
-| P1 | Commodity content | Several titles use generic “top,” “ultimate,” or broad-list patterns | Add original examples, decision criteria, screenshots, field experience, and limitations |
-| P1 | Schema depth | Hub schema creates BlogPosting objects for unavailable pages and has no author details | Restrict ItemList to live pages; place complete BlogPosting schema on each actual article page |
-| P1 | CTA route | `/request-quote/` is unbuilt | Complete the route and use a topic-matched CTA where possible |
-| P2 | Trust section | “web designs” and “cutting edge web technology and framework” are generic | Use a concrete statement about Shopify, ecommerce, web, and mobile expertise |
+| Priority | Status | Area | Current issue | Implemented improvement or dependency |
+| --- | --- | --- | --- | --- |
+| P0 | migration pending | Article availability | Cards and ItemList use planned article routes | Retained under the route exception; migrate and validate priority articles before launch |
+| P0 | migration pending | URL consistency | Homepage root paths and Resources `/blogs/` paths differ | Decide canonical/redirect policy during article migration |
+| P0 | blocked by live parity | Proof consistency | Numeric review values are not governed consistently | Live review counts, ratings, and labels were restored on 2026-08-13; verify and centralize them before launch |
+| P0 | blocked by live parity | Shopify-store claim | Resources says `1000+` while Home says `4500+` | The live Resources claim was restored on 2026-08-13; approve one definition and provenance before changing either page |
+| P0 | deferred | Unsupported claim | “hundreds and thousands of brands” is vague | The proposed specific-facts copy was reverted to live on 2026-08-13 |
+| P1 | deferred | H1 and hero | Heading is conversational and hero relies on rhetorical questions | The direct heading and answer were reverted to live on 2026-08-13 |
+| P1 | deferred | Hub copy | Informal phrases and repetition weaken credibility | The concise three-point introduction was reverted to live on 2026-08-13 |
+| P1 | deferred | Taxonomy | White-label articles sit under Shopify and Magento is empty | The proposed taxonomy was reverted; the live group names and order are preserved |
+| P1 | deferred to article migration | Authorship | Hub data has no approved author or reviewer | Add visible experts, evidence, and dates on each migrated article |
+| P1 | deferred to article migration | Commodity content | Several legacy titles use generic list patterns | Add practitioner examples, criteria, limitations, and original evidence when articles migrate |
+| P1 | migration pending | Schema depth | ItemList references planned articles and has no article authors | ItemList is intentionally retained now; add full, evidence-matched BlogPosting data on each article page |
+| P1 | migration pending | CTA route | `/request-quote/` is planned | Retain the CTA and validate before launch |
+| P2 | deferred | Trust section | “cutting edge” wording is generic | The concrete capability copy was reverted to live on 2026-08-13 |
 
 ### Suggested hero copy
 
-Status: suggested; requires content and live-parity approval.
+Status: deferred. The proposed copy was implemented on 2026-08-12 and reverted
+to the live heading and introduction on 2026-08-13.
 
 **H1:**
 
@@ -856,14 +992,18 @@ Status: suggested; requires content and live-parity approval.
 
 ### Suggested resource-hub introduction
 
-Status: suggested; approved company facts must be inserted from the centralized
-fact source.
+Status: deferred. The proposed copy was implemented on 2026-08-12 and reverted
+to the live hub and story wording on 2026-08-13; fact definitions and
+provenance remain pending approval.
 
-> Use this resource hub to make better Shopify and ecommerce decisions. Our
-> specialists share implementation guidance, migration checklists, performance
-> methods, platform comparisons, and lessons from real delivery work. Each
-> article should identify its author, review date, assumptions, and supporting
-> evidence.
+> Use this resource hub to make informed Shopify and ecommerce decisions. It
+> brings together migration guidance, platform comparisons, performance
+> methods, SEO practices, and growth topics in one place.
+
+The proposal would identify the Shopify Platinum Partner team, `150+` experts,
+`4500+` Shopify store builds, topic coverage, and visible article dates. The
+live UI instead retains its current proof wording; author, reviewer,
+assumptions, and evidence remain article-level work.
 
 ### Initial article migration priorities
 
@@ -895,12 +1035,27 @@ copying an old article into the new shell is not sufficient for AEO/GEO.
 ### Structured-data actions
 
 - Keep CollectionPage and BreadcrumbList for the hub.
-- Include only live, canonical articles in ItemList.
+- Retain the migration-intent ItemList during development and validate every
+  article URL before launch.
 - Move full Article or BlogPosting detail to the corresponding article page.
 - Add author and reviewer data only when those people and roles are visible.
-- Use actual article modification dates.
+- Completed for the hub: use an explicit 2026-08-13 modification date; use
+  actual article dates when those routes are migrated.
 - Keep the company VideoObject because the video is visible and its source data
   is known.
+
+### Verification and remaining gaps
+
+- Rendered output contains one CollectionPage, shared Organization, WebSite,
+  BreadcrumbList, visible company VideoObject, and the intentionally retained
+  64-entry ItemList.
+- Responsive captures confirm the live H1, introduction, hub taxonomy, story,
+  review cards, counters, and trust copy are restored without new overflow. The
+  Resources H1, story title, and blog title now also match the live Montserrat
+  700 weight and letter spacing.
+- Remaining: resolve the visible `1000+`/`4500+` conflict, approve review values,
+  document company-fact provenance, add authorship/evidence on article pages,
+  decide article canonicals, and validate routes before launch.
 
 ## Future Page Maintenance Workflow
 
@@ -917,14 +1072,18 @@ their existing section instead of creating a second entry.
    and crawl/indexing behavior.
 3. Record recommendations with priority and status. Do not wait until the page
    is otherwise complete.
-4. Implement only the approved recommendations that fit the task scope.
+4. Implement approved nonvisual recommendations that fit the task scope.
+   Implement a visible recommendation only when the project owner explicitly
+   approved that exact copy/design difference in the current task; a general
+   AEO/GEO request is not sufficient approval.
 5. After verification, update implemented items with a concise result and leave
    every unresolved item in this file for future work.
 6. Update `Last reviewed` even when no new gap is found, and state what was
    checked.
 7. Put implementation-ready visible copy in
-   `docs/page-content-improvements.md` when content approval or implementation
-   tracking is needed; keep the originating AEO/GEO recommendation here.
+   `docs/page-content-improvements.md` as `suggested` or `deferred` until exact
+   project-owner approval is recorded; keep the originating AEO/GEO
+   recommendation here.
 
 ### Priority definitions
 
@@ -1012,21 +1171,22 @@ update its statuses, review date, verification evidence, and remaining gaps.
 
 ## Cross-Page Improvement Backlog
 
-| Priority | Improvement | Applies to |
-| --- | --- | --- |
-| P0 | Complete all primary navigation, CTA, schema, and content destinations | All pages |
-| P0 | Centralize company facts, review data, leadership titles, and profile URLs | Home, About, Resources, schema |
-| P0 | Standardize article and legacy-route policy | Home, Resources, future Blog |
-| P0 | Confirm legacy redirect for Life at Dynamic Dreamz | Life |
-| P0 | Build quote, contact, work, case-study, blog, job-detail/application routes | Home, Career, Resources |
-| P1 | Replace deployment dates with real content dates | Sitemap, Home, About, future pages |
-| P1 | Add descriptive internal links as service routes launch | Home, Resources, future service pages |
-| P1 | Add approved authors/reviewers and expert profiles | Resources, future articles/services |
-| P1 | Turn selected work into internal evidence pages | Home, future Work/Case Study |
-| P1 | Define Shopify Plus page intents before implementation | Future service routes |
-| P1 | Establish monthly AI citation and prompt measurement | Sitewide |
-| P2 | Add original research, benchmarks, checklists, and implementation examples | Resources, services, case studies |
-| P2 | Expand genuine third-party expert and client corroboration | Sitewide entity authority |
+| Priority | Status | Improvement | Applies to |
+| --- | --- | --- | --- |
+| P0 | migration pending | Complete all primary navigation, CTA, schema, and content destinations before launch | All pages |
+| P0 | partially implemented; visible conflicts blocked | Core schema facts are centralized; resolve live `1000+`/`4500+` store wording, add definitions/provenance, and centralize approved current review data and leadership titles | Home, About, Resources, schema |
+| P0 | migration pending | Standardize article and legacy-route policy | Home, Resources, future Blog |
+| P0 | migration pending | Confirm legacy redirect for Life at Dynamic Dreamz | Life |
+| P0 | migration pending | Build quote, contact, work, case-study, blog, job-detail/application routes | Home, Career, Resources |
+| P0 | blocked | Resolve CRO experience range, Career UI/PDF location differences, and current recruitment/workplace policies | Career, Life |
+| P1 | implemented for current routes | Replace deployment dates with real content dates | Sitemap and all five built pages |
+| P1 | in progress | Add descriptive internal links as relevant built routes launch | Career, Life, future service pages |
+| P1 | deferred to article migration | Add approved authors/reviewers and expert profiles | Resources, future articles/services |
+| P1 | deferred to case-study migration | Turn selected work into internal evidence pages | Home, future Work/Case Study |
+| P1 | future route work | Define Shopify Plus page intents before implementation | Future service routes |
+| P1 | pending operations setup | Establish monthly AI citation and prompt measurement | Sitewide |
+| P2 | future content work | Add original research, benchmarks, checklists, and implementation examples | Resources, services, case studies |
+| P2 | ongoing | Expand genuine third-party expert and client corroboration | Sitewide entity authority |
 
 ## Implementation Acceptance Criteria
 
@@ -1050,6 +1210,16 @@ A page is AEO/GEO-ready only when:
 - The page passes accessibility, SEO, link, schema, lint, and production build
   checks.
 - Its target prompts and measurement owner are recorded.
+
+During migration, an unmet criterion that would require an unapproved visible
+change is an approval-dependent gap, not permission to alter the UI. Record it
+as `suggested`, `deferred`, or `blocked`, preserve the live presentation, and
+report it in the task handoff.
+
+During active migration, planned-but-unbuilt destinations may remain in UI and
+schema when the project owner explicitly accepts the route exception. That
+exception does not waive the full route, redirect, link, and schema validation
+required before production launch.
 
 ## Governance
 

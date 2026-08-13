@@ -1,3 +1,5 @@
+import { companyFacts } from "@/data/company";
+
 export type NavigationLink = {
   label: string;
   href: string;
@@ -86,9 +88,9 @@ export const primaryNavigation: PrimaryNavigationGroup[] = [
       description:
         "At Dynamic Dreamz innovation meets excellence. We provide technology-driven solutions & services to empower businesses to achieve their goals.",
       stats: [
-        { label: "Projects", value: "5000+" },
-        { label: "Experts", value: "150+" },
-        { label: "Happy Clients", value: "1100+" },
+        { label: "Projects", value: companyFacts.projectsCompleted.display },
+        { label: "Experts", value: companyFacts.experts.display },
+        { label: "Happy Clients", value: companyFacts.happyClients.display },
       ],
     },
     sections: [

@@ -14,7 +14,7 @@ export type PageSeoConfig = {
   keywords: string[];
   openGraphType: OpenGraphType;
   publishedTime?: string;
-  modifiedTime?: string;
+  modifiedTime: string;
   image: {
     path: string;
     width: number;
@@ -76,6 +76,8 @@ export const pageSeo = {
       "white label Shopify development",
     ],
     openGraphType: "website",
+    publishedTime: "2025-12-12T09:55:48+00:00",
+    modifiedTime: "2026-08-13T00:00:00+05:30",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
@@ -91,7 +93,7 @@ export const pageSeo = {
     path: "/about-us/",
     title: "About Dynamic Dreamz | Shopify & Web Development Team",
     description:
-      "Discover the visionary team at Dynamic Dreamz, experts in web development & digital solutions. Learn about our passion, expertise, and commitment.",
+      "Founded in 2006, Dynamic Dreamz is a Shopify Platinum Partner with 150+ experts delivering ecommerce, web, mobile and digital commerce solutions.",
     keywords: [
       "about Dynamic Dreamz",
       "web development company",
@@ -100,6 +102,8 @@ export const pageSeo = {
       "Shopify experts",
     ],
     openGraphType: "article",
+    publishedTime: "2024-05-02T09:06:11+00:00",
+    modifiedTime: "2026-08-13T00:00:00+05:30",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
@@ -113,7 +117,7 @@ export const pageSeo = {
   },
   career: {
     path: "/career/",
-    title: "Join Our Team for Exciting Opportunities | Dynamic Dreamz",
+    title: "Careers at Dynamic Dreamz | Surat & Ahmedabad Jobs",
     description:
       "Explore career opportunities at Dynamic Dreamz across digital marketing, ecommerce and technology. View current openings in Surat and Ahmedabad.",
     keywords: [
@@ -124,7 +128,8 @@ export const pageSeo = {
       "ecommerce careers",
     ],
     openGraphType: "article",
-    modifiedTime: "2026-08-05T13:38:57+00:00",
+    publishedTime: "2024-05-02T09:10:53+00:00",
+    modifiedTime: "2026-08-13T00:00:00+05:30",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
@@ -149,7 +154,8 @@ export const pageSeo = {
       "equal opportunity employer",
     ],
     openGraphType: "article",
-    modifiedTime: "2024-09-06T09:49:25+00:00",
+    publishedTime: "2024-05-02T09:14:02+00:00",
+    modifiedTime: "2026-08-13T00:00:00+05:30",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
@@ -175,7 +181,7 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2025-11-10T05:02:09+00:00",
-    modifiedTime: "2026-07-15T10:42:41+00:00",
+    modifiedTime: "2026-08-13T00:00:00+05:30",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,

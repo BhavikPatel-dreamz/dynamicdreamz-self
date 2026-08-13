@@ -1,3 +1,5 @@
+import { companyFacts } from "@/data/company";
+
 export type AboutPerson = {
   name: string;
   role: string;
@@ -12,9 +14,9 @@ export const aboutHero = {
   description:
     "We are an enthusiastic team of 150+ creative designers, pragmatic programmers, client centric business managers, stringent testers and above all visionary leaders who are ready to help your online business to grow and flourish by offering innovative and technology enabled solutions.",
   statistics: [
-    { label: "Projects", value: "5000+" },
-    { label: "Experts", value: "150+" },
-    { label: "Happy Clients", value: "1100+" },
+    { label: "Projects", value: companyFacts.projectsCompleted.display },
+    { label: "Experts", value: companyFacts.experts.display },
+    { label: "Happy Clients", value: companyFacts.happyClients.display },
   ],
 } as const;
 

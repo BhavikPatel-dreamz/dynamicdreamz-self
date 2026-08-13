@@ -21,6 +21,22 @@ implementation. When an AEO/GEO recommendation produces a copy change, keep the
 original recommendation in the strategy and add the implementation-ready copy
 here under the same route. Do not move or delete the strategy item.
 
+## Migration Approval Gate
+
+This file is an approval queue, not automatic permission to edit the UI. During
+migration, preserve the current live-site wording and visual content. An SEO,
+AEO, GEO, audit, or content-quality request does not authorize any visible
+change listed here.
+
+- New visible proposals start as `suggested` or `deferred`.
+- Change a proposal to `approved` only when the project owner approves the exact
+  visible copy or design difference in the current task.
+- Mark it `implemented` only after that approved change is shipped and visually
+  verified.
+- Technical/schema approval does not approve visible copy.
+- If the live UI contains a factual, policy, legal, accessibility, or trust
+  problem, document and escalate it; do not silently correct the visible page.
+
 ## How To Use
 
 For every page build or one-page SEO audit:
@@ -28,10 +44,13 @@ For every page build or one-page SEO audit:
 1. Add or update a section for the page name and route.
 2. Compare live-site copy, local UI copy, SEO audit findings, and search intent.
 3. Record exact recommended replacement copy when content should change.
-4. Mark status as `suggested`, `approved`, `implemented`, or `deferred`.
+4. Mark status as `suggested` or `deferred` unless explicit project-owner
+   approval exists for the exact visible change; then use `approved`, followed
+   by `implemented` only after verification.
 5. Do not invent claims, ratings, awards, client names, dates, or metrics.
-6. Preserve live-site intent unless the change improves clarity, accessibility,
-   conversion, or SEO.
+6. Preserve the live-site UI and content during migration. Record improvements
+   for clarity, accessibility, conversion, SEO, AEO, or GEO without implementing
+   visible differences until explicitly approved.
 
 ## Suggestion Template
 
@@ -54,8 +73,8 @@ Primary SEO intent:
 
 ## Home (`/`)
 
-Status: implemented
-Last reviewed: 2026-08-11
+Status: visible recommendations deferred; live UI restored
+Last reviewed: 2026-08-13
 Primary SEO intent: Shopify Plus agency, Shopify Platinum Partner, ecommerce
 and mobile development company.
 
@@ -63,62 +82,84 @@ and mobile development company.
 | --- | --- | --- | --- | --- | --- |
 | Review/rating proof copy | Visible badges and schema rating may not describe the same rating source. | Removed the ambiguous Organization `aggregateRating`; visible source-specific badge copy remains unchanged. | Prevents mismatch between visible review claims and structured data. | High | implemented |
 | Video testimonial descriptions | Video carousel has strong testimonials, but schema-ready descriptions may not be visible for every video. | Added VideoObject schema from the visible testimonial title, client, company, quote, YouTube URL, embed URL, and thumbnail URL. | Supports video discovery and improves E-E-A-T without inventing new UI claims. | Medium | implemented |
+| Hero answer | We help DTC brands, B2B businesses and digital agencies build, migrate and scale on Shopify through custom development, B2B solutions, integrations, CRO, performance optimization and ongoing support. | Dynamic Dreamz is a Shopify Platinum Partner and Shopify Plus agency helping established DTC brands, B2B merchants, and digital agencies build, migrate, integrate, optimize, and support Shopify commerce experiences. | Supplies a concise, entity-first answer that identifies the company, credential, audience, and core work in visible server-rendered text. | High | deferred; reverted to live copy on 2026-08-13 |
+| AI delivery statement | To accelerate delivery without compromising quality, our teams use modern AI-powered tools such as Cursor, ChatGPT, Claude, Lovable, Bolt, and n8n, alongside proven development processes. | Our teams use AI-assisted tools selectively to accelerate research, prototyping and repetitive delivery tasks. Experienced specialists continue to own implementation, review and quality assurance before release. | Reframes a volatile tool list around buyer outcomes, human accountability, and QA without adding an unsupported speed or security result. | Medium | deferred; reverted to live copy on 2026-08-13 |
 | Internal-link anchor text | Many navigation/service links are migration pending. | As pages ship, use descriptive anchors such as "Shopify Plus agency", "Shopify migration services", and "white label Shopify development" instead of generic labels where natural. | Improves internal-link context after routes are built. Broken planned routes are excluded from local SEO scoring until launch. | Medium | deferred |
 
 ## About Us (`/about-us`)
 
-Status: suggested
-Last reviewed: 2026-08-10
+Status: visible recommendations deferred; live UI restored
+Last reviewed: 2026-08-13
 Primary SEO intent: company credibility, leadership, history, values, and
 Shopify/ecommerce agency trust.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| H1 | Match live page unless audit finds weak clarity. | Use a clear company-focused H1 such as "About Dynamic Dreamz" only if it improves over the live H1 while preserving brand intent. | Keeps page topic explicit for users and crawlers. | High | suggested |
-| Hero description | Match live page unless too vague. | Add or preserve a concise intro covering "ecommerce development company since 2006", team size, and Shopify Platinum Partner credibility. | Strengthens E-E-A-T and first-viewport relevance. | High | suggested |
-| Timeline copy | Match live timeline facts. | Keep dates factual and concise; do not invent new milestones. | Prevents trust issues from unsupported claims. | Medium | suggested |
+| H1 | Agile. Adept. Accurate. | About Dynamic Dreamz: Agile. Adept. Accurate. | Makes the company and page purpose explicit while preserving the live brand phrase. | High | deferred; reverted to live copy on 2026-08-13 |
+| Hero description | We are an enthusiastic team of 150+ creative designers, pragmatic programmers, client centric business managers, stringent testers and above all visionary leaders who are ready to help your online business to grow and flourish by offering innovative and technology enabled solutions. | Founded in 2006, Dynamic Dreamz is an ecommerce, web, and mobile development company with more than 150 specialists. As a Shopify Platinum Partner, we help brands and agencies plan, build, migrate, integrate, and support digital commerce experiences. | Gives a concise, entity-first answer with founding year, scale, credential, audience, and capabilities. | High | deferred; reverted to live copy on 2026-08-13 |
+| Company story | We are a strong team of 150+ creative web designers, technically sound developers, project managers and analysts ready to help you to take your world changing idea from concept to reality. | Our multidisciplinary team brings together designers, developers, project managers, analysts, and quality specialists to take ambitious digital ideas from concept to reliable delivery. | Improves clarity and removes inflated phrasing without changing the delivery intent. | Medium | deferred; reverted to live copy on 2026-08-13 |
+| 2023 milestone | Dynamic Dreamz has been declared as one of the top 10 Shopify developers by UpWork. | Dynamic Dreamz continued expanding its Shopify development capabilities and global ecommerce delivery work. | Removes a prominent ranking claim that has no approved visible source. | High | deferred; reverted to live copy on 2026-08-13 |
+| Timeline and values | Several entries contain dated grammar, fragments, or vague wording. | Use the migrated concise milestone and value descriptions while preserving dates and factual intent. | Improves extraction and trust without adding new achievements. | Medium | deferred; reverted to live copy on 2026-08-13 |
+| Founder titles | Existing founder cards use current live titles. | Keep the current titles until an authoritative confirmation is available. | Prevents an unsupported leadership change. | High | blocked pending factual confirmation |
 
 ## Career (`/career`)
 
-Status: deferred
-Last reviewed: 2026-08-11
+Status: visible recommendations deferred; live UI restored
+Last reviewed: 2026-08-13
 Primary SEO intent: Dynamic Dreamz careers, IT jobs in Surat and Ahmedabad,
 digital marketing roles, and ecommerce technology opportunities.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| H1 | Explore rewarding career in IT, where your talents thrive and possibilities flourish. | Explore a rewarding career in IT, where your talents thrive and possibilities flourish. | Corrects the missing article while preserving the live page's recruitment message. | Medium | deferred for live visual/content parity |
-| Workplace benefit | Ample of Employee Engagement Activities | Ample Employee Engagement Activities | Improves grammar without changing the benefit claim. | Low | deferred for live visual/content parity |
-| Job CTA destination | Apply now links point to `/career-apply-now/`, which is not yet migrated. | Build the application route with the selected position and location prefilled. | Completes the recruitment conversion flow without losing the live query parameters. | High | migration pending |
+| H1 | Explore rewarding career in IT, where your talents thrive and possibilities flourish. | Careers at Dynamic Dreamz | Leads with the employer entity and exact page intent. | High | deferred; reverted to live copy on 2026-08-13 |
+| Hero introduction | We are a strong team of 150+ creative designers, agile developers, quality conscious testers, adept project managers and visionary leaders and we help our clients to achieve their goals. | Explore ecommerce, technology, design, marketing, and growth opportunities with Dynamic Dreamz in Surat and Ahmedabad. Join a multidisciplinary team working with global brands and digital agencies. | Answers company, disciplines, locations, and project audience directly. | High | deferred; reverted to live copy on 2026-08-13 |
+| Opportunities introduction | Aspirational paragraph does not explain the listings. | Browse current full-time opportunities, then choose Surat or Ahmedabad to review each role's required experience, posting date, summary, and application link. | Makes the section scannable and answer-ready. | Medium | deferred; reverted to live copy on 2026-08-13 |
+| Job summaries | Full role detail is available only in linked PDFs. | Add a concise, role-specific responsibility summary to every card from its local PDF. | Gives candidates and crawlers meaningful HTML content. | High | deferred in UI; schema-only summaries retained |
+| Job locations | Every role appears under Surat and Ahmedabad on the live page. | Show only PDF-supported locations: Performance Marketing and CRO in Surat; LinkedIn Growth in Ahmedabad; SEO/AEO/GEO and Outbound Sales in both. | Prevents inaccurate job discovery and schema. | High | deferred in UI; PDF-supported schema retained pending HR approval |
+| Freshness | No visible listing review date. | Current openings reviewed August 12, 2026. | Makes freshness explicit without inventing closing dates. | High | deferred; visible date removed on 2026-08-13 |
+| Workplace benefit | Ample of Employee Engagement Activities | Employee Engagement Activities | Corrects grammar without changing the benefit category. | Low | deferred; reverted to live copy on 2026-08-13 |
+| Culture link | Benefits do not route candidates to fuller workplace answers. | Explore life, culture, benefits, and workplace FAQs at Dynamic Dreamz. | Connects the two built recruitment pages with descriptive anchor text. | Medium | deferred; removed for live parity on 2026-08-13 |
+| CRO experience | Card/live listing says 1–3 years; PDF says 2–4 years. | Confirm one current range, then update visible content, PDF, and schema together. | Avoids giving candidates conflicting requirements. | High | blocked pending factual confirmation |
+| Job CTA destination | Apply links keep `/career-apply-now/` with role/location parameters. | Retain during active migration and validate the application flow before launch. | Preserves route intent under the approved unbuilt-route exception. | High | migration pending |
 
 ## Life @ Dynamic Dreamz (`/life-dynamicdreamz`)
 
-Status: deferred
-Last reviewed: 2026-08-11
+Status: visible recommendations deferred; live UI restored
+Last reviewed: 2026-08-13
 Primary SEO intent: Dynamic Dreamz work culture, professional growth,
 work-life balance, inclusive workplace, and employee experience.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
 | Meta title | Discover Our Work Culture \| Maintain Work-Life Balance \| Equal Opportunity Employer | Life at Dynamic Dreamz \| Culture & Work-Life Balance | Live title is 83 characters and truncates in search results, burying the brand and "Equal Opportunity Employer" tail. Shortened to 52 characters, keeping the page identity plus the two highest-intent topics; equal-opportunity remains in the meta description. Intentional divergence from live. | High | implemented |
-| Hero description | Dynamic Dreamz gives ample of opportunities to amplify your potential and let you maintain work life balance. | Dynamic Dreamz provides ample opportunities to amplify your potential while maintaining a healthy work-life balance. | Corrects grammar and improves the primary work-culture message. | Medium | deferred for live content parity |
-| Hiring paragraph | Your future is full of possibilities, and at Dynamic Dreramz, we provide the tools and opportunities to explore them. | Your future is full of possibilities, and at Dynamic Dreamz, we provide the tools and opportunities to explore them. | Corrects the company-name typo in conversion copy. | High | deferred for live content parity |
-| Professional-development FAQ | There are ample of opportunities for the professional development and growth... | There are ample opportunities for professional development and growth because our clients span a broad range of industries and our teams use cutting-edge technologies. | Improves clarity and grammar while preserving the approved claim. | Medium | deferred for live content parity |
-| Health and wellbeing FAQ | We have setup a recreational zone... Fuss ball... For health point of view... | We have set up a recreation zone with indoor games such as carrom, foosball, darts and cards, along with a treadmill and Android TV to help employees recharge. | Corrects grammar, spelling and readability without changing the facilities described. | Low | deferred for live content parity |
-
-## Add New Page Suggestions Below
+| H1 | Where Teamwork Takes the Lead | Life at Dynamic Dreamz: Where Teamwork Takes the Lead | Names the entity and page purpose while preserving the live phrase. | High | deferred; reverted to live copy on 2026-08-13 |
+| Hero description | Dynamic Dreamz gives ample of opportunities to amplify your potential and let you maintain work life balance. | Dynamic Dreamz provides opportunities to develop your skills while supporting a healthy work-life balance. We are committed to an inclusive, equal-opportunity workplace across our Surat and Ahmedabad offices, regardless of caste, creed, religion, or background. | Corrects grammar and adds direct office and workplace context from existing page claims. | High | deferred; reverted to live copy on 2026-08-13 |
+| Culture introduction and values | Several descriptions are fragments or broad statements. | Use the migrated complete descriptions for inclusivity, flexibility, teamwork, adaptability, collaboration, and social connection. | Improves readability and extraction without adding guarantees. | Medium | deferred; reverted to live copy on 2026-08-13 |
+| Hiring paragraph | Your future is full of possibilities, and at Dynamic Dreramz, we provide the tools and opportunities to explore them. | Your future is full of possibilities, and at Dynamic Dreamz, we provide opportunities to explore them. Build your future with us, where professional growth is connected with personal development. | Fixes the company-name typo and removes awkward phrasing. | High | deferred; reverted to live copy on 2026-08-13 |
+| Professional-development FAQ | There are ample of opportunities for the professional development and growth... | Dynamic Dreamz offers opportunities for professional development through projects across a range of industries and technologies. Employees can gain exposure to different business domains, delivery disciplines, and technical challenges. | Improves clarity while retaining the stated development intent. | Medium | deferred; reverted to live copy on 2026-08-13 |
+| Working-hours FAQ | Live answer uses awkward five-day and late-hours wording. | Dynamic Dreamz operates a five-day workweek. Teams work day shifts in IST; client requirements can occasionally extend schedules into the late evening, but the company does not operate a night shift. | Makes a sensitive candidate answer readable without changing its stated meaning. | High | deferred; reverted to live copy on 2026-08-13 |
+| Remote-work FAQ | Live answer says permanent work from home is unavailable, with case-specific exceptions. | Dynamic Dreamz generally does not offer permanent work from home because teams primarily collaborate from the office. Temporary work-from-home arrangements may be considered in special circumstances under current company policy. | Preserves policy meaning in clearer language. | High | deferred; reverted to live copy on 2026-08-13 |
+| Health and wellbeing FAQ | We have setup a recreational zone... Fuss ball... For health point of view... | Dynamic Dreamz has a recreation zone with indoor games such as carrom, foosball, darts, and cards. A treadmill and Android TV are also available so employees can take a break and recharge. | Corrects grammar and spelling without changing the listed facilities. | Low | deferred; reverted to live copy on 2026-08-13 |
 
 ## Resources (`/resources`)
 
-Status: deferred
-Last reviewed: 2026-08-11
+Status: visible recommendations deferred; live UI restored
+Last reviewed: 2026-08-13
 Primary SEO intent: Shopify resources, ecommerce growth guidance, migration
 guides, performance, SEO, and white-label development insights.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Resource-hub introduction | Uses informal phrases such as "you're gonna find," inconsistent Shopify capitalization, and several long sentences. | Replace with concise professional copy addressing Shopify merchants, ecommerce founders, and agency partners while preserving the same migration, performance, design, marketing, and growth topics. | Improves readability and enterprise credibility without changing search intent. | Medium | deferred for live content parity |
-| Story proof copy | Says the team empowers "hundreds and thousands of brands" while separately citing 1,000+ stores. | Use the approved, specific proof point: "helping brands build, scale and optimise more than 1,000 Shopify stores." | Removes ambiguous claim language and strengthens trust. | High | deferred pending claim approval |
+| H1 | Long conversational resource heading. | Shopify and Ecommerce Resources for Growth Teams | Makes the primary topic and audience concise. | High | deferred; reverted to live copy on 2026-08-13 |
+| Hero introduction | Rhetorical questions about finding useful Shopify information. | Practical guides for merchants, ecommerce leaders, developers, and agency partners evaluating Shopify Plus, migrations, performance, CRO, integrations, mobile commerce, and white-label delivery. | Gives an answer-first summary of audience and coverage. | High | deferred; reverted to live copy on 2026-08-13 |
+| Resource-hub introduction | Uses informal phrases such as "you're gonna find," inconsistent Shopify capitalization, and several long sentences. | Use the migrated three-point professional introduction covering decisions, topics, team proof, and visible article dates. | Improves readability and enterprise credibility without changing search intent. | Medium | deferred; reverted to live copy on 2026-08-13 |
+| Story proof copy | Says the team empowers "hundreds and thousands of brands," calls 150+ people certified Shopify developers, and separately cites 1,000+ stores. | Use the shared approved proof: Shopify Platinum Partner, 150+ experts, 4500+ Shopify store builds, and 1B+ client revenue generated. | Removes ambiguity and conflicting company figures. | High | deferred; reverted to live copy on 2026-08-13 |
+| Review cards | Cards show numeric scores and review counts that are not governed by one current source. | Keep the Clutch, Upwork, and GoodFirms profile links but label them as independent review profiles without numeric values. | Prevents stale or inconsistent review claims. | High | deferred; live counts and ratings restored on 2026-08-13 |
+| Experience statistic | 18+ Years of Experience becomes stale each year. | Founded 2006 | Uses a stable, precise fact. | Medium | deferred; live statistic restored on 2026-08-13 |
+| Taxonomy | First category is labelled Shopify although its articles are white-label topics; Magento is empty. | Rename the first group White Label & Agency Growth and hide the empty Magento group. | Makes visible classification match actual content. | Medium | deferred; live taxonomy restored on 2026-08-13 |
+| Trust description | Uses generic phrases such as "cutting edge web technology and framework." | Dynamic Dreamz combines Shopify, ecommerce, web, and mobile expertise with design, development, quality assurance, and long-term technical support. | Replaces commodity wording with concrete capabilities. | Medium | deferred; reverted to live copy on 2026-08-13 |
 | Category link | The live story category uses a non-functional `#` destination. | Link "Shopify" to `/blogs/category/shopify/`. | Restores useful navigation and descriptive internal-link context. | High | implemented |
 | Article image alt text | Several live WordPress image alts repeat filenames with underscores and punctuation. | Use each visible article title as its thumbnail alt text. | Gives every content image meaningful, page-specific alternative text. | Medium | implemented |
 | Heading hierarchy | The live page uses a second `h1` for "Our Dynamic Story,". | Keep the visual treatment but render the story title as an `h2`. | Produces one clear primary heading and a logical page outline. | High | implemented |
+| Article authorship | Current hub data has no approved author or reviewer. | Add visible author, reviewer, expertise, evidence, and dates on each article during article migration. | Supports attributable expertise without inventing people or credentials. | High | deferred to article migration |
+| Article and CTA paths | Planned `/blogs/`, category, and `/request-quote/` destinations are not all built. | Retain migration-intent paths now and verify route/redirect coverage before launch. | Follows the approved unbuilt-route exception. | High | migration pending |

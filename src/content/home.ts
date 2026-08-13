@@ -1,9 +1,20 @@
+import { companyFacts } from "@/data/company";
+
 export type ImageItem = {
   src: string;
   alt: string;
   width: number;
   height: number;
 };
+
+export const homeAnswerSummary =
+  "We help DTC brands, B2B businesses and digital agencies build, migrate and scale on Shopify through custom development, B2B solutions, integrations, CRO, performance optimization and ongoing support.";
+
+export const organizationAnswerSummary =
+  "Dynamic Dreamz is a Shopify Platinum Partner and Shopify Plus agency helping established DTC brands, B2B merchants, and digital agencies build, migrate, integrate, optimize, and support Shopify commerce experiences.";
+
+export const aiDeliveryStatement =
+  "To accelerate delivery without compromising quality, our teams use modern AI-powered tools such as Cursor, ChatGPT, Claude, Lovable, Bolt, and n8n, alongside proven development processes.";
 
 export const proofLogos: (ImageItem & { href: string })[] = [
   {
@@ -66,10 +77,10 @@ export const mobileClientLogoRows = [
 ];
 
 export const companyStats = [
-  { value: "1B+", label: ["Client Revenue", "Generated"], icon: "/assets/icons/client-revenue.svg" },
-  { value: "150+", label: ["Experts"], icon: "/assets/icons/experts.svg" },
-  { value: "4500+", label: ["Shopify stores built"], icon: "/assets/icons/shopify-stores.svg" },
-  { value: "1100+", label: ["Happy Clients"], icon: "/assets/icons/happy-clients.svg" },
+  { value: companyFacts.clientRevenueGenerated.display, label: ["Client Revenue", "Generated"], icon: "/assets/icons/client-revenue.svg" },
+  { value: companyFacts.experts.display, label: ["Experts"], icon: "/assets/icons/experts.svg" },
+  { value: companyFacts.shopifyStoresBuilt.display, label: ["Shopify stores built"], icon: "/assets/icons/shopify-stores.svg" },
+  { value: companyFacts.happyClients.display, label: ["Happy Clients"], icon: "/assets/icons/happy-clients.svg" },
 ];
 
 export const showcaseImages: ImageItem[] = [
@@ -347,24 +358,30 @@ export const integrationLogoRows = [integrationLogos.slice(0, 6), integrationLog
 
 export const insights = [
   {
-    title: "Shopify vs WooCommerce India: Which Is Better for Your Online Store?",
-    href: "/shopify-vs-woocommerce/",
-    image: "/assets/blog/shopify-vs-woocommerce.webp",
-    date: "2026-08-03",
-    displayDate: "August 3 2026",
+    title: "Free vs Paid Shopify Themes: Which One Is Right for Your Store?",
+    href: "/blogs/free-vs-paid-shopify-themes/",
+    image: "/assets/blog/free-vs-paid-shopify-themes.webp",
+    date: "2026-08-11",
+    displayDate: "August 11 2026",
+    category: "Shopify",
+    categoryHref: "/blogs/category/shopify/",
   },
   {
-    title: "How to Improve Shopify Core Web Vitals and Speed Up Your Store?",
-    href: "/shopify-core-web-vitals/",
-    image: "/assets/blog/shopify-core-web-vitals.webp",
-    date: "2026-08-03",
-    displayDate: "August 3 2026",
+    title: "WooCommerce SEO Guide: How to Rank Your Store Higher in 2026",
+    href: "/blogs/woocommerce-seo/",
+    image: "/assets/blog/woocommerce-seo-guide.webp",
+    date: "2026-08-11",
+    displayDate: "August 11 2026",
+    category: "WordPress",
+    categoryHref: "/blogs/category/wordpress/",
   },
   {
-    title: "7 Wonderful Ecommerce Website Design Tips for Your Shopify Store",
-    href: "/ecommerce-website-design/",
-    image: "/assets/blog/ecommerce-design-tips.webp",
-    date: "2026-08-03",
-    displayDate: "August 3 2026",
+    title: "7 Must-Have Shopify Development Tools for Agencies & Developers",
+    href: "/blogs/shopify-development-tools/",
+    image: "/assets/blog/shopify-development-tools.webp",
+    date: "2026-08-11",
+    displayDate: "August 11 2026",
+    category: "Shopify",
+    categoryHref: "/blogs/category/shopify/",
   },
 ];
