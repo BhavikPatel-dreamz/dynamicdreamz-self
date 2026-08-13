@@ -34,7 +34,7 @@ export function ResourcesStorySection() {
         <div className="hero-wrapper flex flex-row-reverse justify-between max-[991px]:flex-col">
           <div className="left-col w-[44.5%] max-[991px]:mb-[42px] max-[991px]:w-full">
             {resourcesStory.paragraphs.map((paragraph) => (
-              <p className="mb-6 text-[18px] leading-[34.2px] font-medium text-muted last:mb-0 max-[991px]:text-[16px] max-[991px]:leading-[30.4px]" key={paragraph}>{paragraph}</p>
+              <p className="mb-6 text-[18px] leading-[34.2px] font-medium text-muted last:mb-0 max-[991px]:text-[16px] max-[991px]:leading-[30.4px] lg:text-left text-center" key={paragraph}>{paragraph}</p>
             ))}
           </div>
           <div className="right-col w-1/2 max-[991px]:min-h-[949.63px] max-[991px]:w-full max-[767px]:min-h-[809.03px]">

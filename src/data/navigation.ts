@@ -210,7 +210,6 @@ export const footerNavigation = [
         href: "/shopify-theme-customization/",
       },
       { label: "Shopify Migration", href: "/shopify-migration/" },
-      { label: "Shopify Plus Development Agency", href: "/shopify-plus-development-agency/" },
       { label: "Shopify Public App Development", href: "/shopify-apps/" },
       { label: "Shopify Mobile App Development", href: "/shopify-mobile-app-development/" },
       { label: "Buy Shopify hours", href: "/buy-shopify-development-hours/" },
