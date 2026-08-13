@@ -88,7 +88,7 @@ function ContactDetails({ mobile = false }: { mobile?: boolean }) {
           <span>{siteConfig.phoneDisplay}</span>
         </a>
       </address>
-      <div className={cn("flex gap-3 [&_svg]:h-[39px] [&_svg]:w-[39px]", mobile ? "mt-[30px] max-[767px]:mt-5 max-[767px]:[&_svg]:h-8 max-[767px]:[&_svg]:w-8" : "mt-[30px]")}>
+      <div className={cn("flex gap-3.5 [&_svg]:h-[39px] [&_svg]:w-[39px]", mobile ? "mt-[30px] max-[767px]:mt-5 max-[767px]:[&_svg]:h-8 max-[767px]:[&_svg]:w-8" : "mt-[30px]")}>
         <a
           className="flex rounded-full transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red"
           href={siteConfig.social.linkedin}
@@ -213,7 +213,7 @@ export function SiteFooter() {
             aria-label={award.alt}
           >
             <Image
-              className="h-auto w-auto max-h-12 object-contain max-[767px]:max-h-10"
+              className="object-contain"
               src={award.src}
               alt={award.alt}
               width={award.width}
@@ -223,7 +223,7 @@ export function SiteFooter() {
         ))}
       </Container>
 
-      <Container footer className="flex items-center justify-between pt-16 md:pt-10 pb-9.75 md:pb-5 min-[768px]:max-[991px]:min-h-[90.4px] min-[768px]:max-[991px]:[&_a]:leading-[30.4px] min-[768px]:max-[991px]:[&_p]:leading-[30.4px] max-[991px]:pt-10 max-[991px]:pb-5 max-[767px]:min-h-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:3.75 max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:text-center">
+      <Container footer className="flex items-center justify-between pt-16 md:pt-16 pb-9.75 md:pb-5 min-[768px]:max-[991px]:min-h-[90.4px] min-[768px]:max-[991px]:[&_a]:leading-[30.4px] min-[768px]:max-[991px]:[&_p]:leading-[30.4px] max-[991px]:pt-10 max-[991px]:pb-5 max-[767px]:min-h-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:3.75 max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:text-center">
         <p className="text-sm leading-5 font-normal text-ink max-[767px]:leading-5">
           © 2026 <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> All rights reserved.
         </p>

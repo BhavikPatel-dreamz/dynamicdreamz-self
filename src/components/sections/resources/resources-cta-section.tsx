@@ -8,7 +8,7 @@ export function ResourcesCtaSection() {
       <Container className="min-[1440px]:!max-w-[1180px]">
         <div className="flex flex-wrap items-center justify-center gap-8 text-center max-[1199px]:gap-5">
           <h2 id="resources-quote-title" className="text-[30px] leading-[43.2px] font-bold tracking-[-0.6px] text-white max-[1199px]:text-[26px] max-[1199px]:leading-9">Want us to help you with your online store?</h2>
-          <ButtonLink href={siteConfig.quotePath} variant="light" className="min-h-[42px] px-6 py-3 text-[13px]">Request a quote</ButtonLink>
+          <ButtonLink href={siteConfig.quotePath} variant="light" className="min-h-[42px] px-6 py-3 text-[13px] text-[#121212]">Request a quote</ButtonLink>
         </div>
       </Container>
     </section>
