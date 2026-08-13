@@ -2,8 +2,43 @@
 
 Live URL: `https://www.dynamicdreamz.com/life-dynamicdreamz/`
 Local route: `/life-dynamicdreamz`
-Date checked: 2026-08-11
+Date checked: 2026-08-13
 Browser: Microsoft Edge (Chromium, headless parity capture)
+
+## 2026-08-13 Live-UI Parity Rollback
+
+The project owner requested that all visible Life-page copy match the current
+live page. The live page and View Page Source were checked again before editing.
+The rollback restores the original H1, hero, work-culture, hiring, and FAQ text.
+The canonical Career destination, semantic accordion controls, local assets,
+schema synchronization, focus treatment, and reduced-motion handling remain
+where they do not change the default live appearance.
+
+| Viewport | Current live screenshot | Post-rollback local screenshot | Status |
+| --- | --- | --- | --- |
+| 1440x900 | `/tmp/dd-parity-live-life-1440x900.png` | `/tmp/dd-parity-local-life-1440x900.png` | passed; live hero and content restored |
+| 768x1024 | `/tmp/dd-parity-live-life-768x1024.png` | `/tmp/dd-parity-local-life-768x1024.png` | passed; live responsive wrapping restored |
+| 390x844 | `/tmp/dd-parity-live-life-390x844.png` | `/tmp/dd-parity-local-life-390x844.png` | passed; no clipping or overflow |
+
+Current live source: `/tmp/dd-live-life-20260813.html`. Life CSS/JS,
+computed-style, FAQ transition, gallery timing, hero keyframes, hover/focus,
+and responsive sources already listed below remain the interaction baseline.
+The rollback supersedes the visible-copy implementation recorded later in this
+note; canonical paths, FAQ/content synchronization, semantics, and accessibility
+remain retained.
+
+## 2026-08-12 AEO/GEO Scope Captured Before UI Editing
+
+- Keep the built Career CTA relationship and use its canonical trailing-slash
+  path; planned-route availability elsewhere is outside this audit.
+- Add `Life at Dynamic Dreamz` to the H1, improve the hero and culture copy,
+  and state the existing Surat and Ahmedabad office context.
+- Correct the company-name typo and FAQ grammar while preserving the current
+  work-model, hours, flexibility, development, and wellbeing policy meaning.
+- Keep the visible FAQ and FAQPage schema sourced from the same typed content.
+- Preserve hero decoration, culture-grid, accordion, gallery, hover, focus,
+  animation, and responsive contracts. Post-change captures must check the
+  longer H1 and answer wrapping at all three existing viewports.
 
 ## Viewports
 
@@ -30,7 +65,7 @@ Browser: Microsoft Edge (Chromium, headless parity capture)
 | --- | --- | --- |
 | Hero | 230px desktop/140px responsive top padding; centered 50/66 heading; animated gradient underline and leaf; 900px intro; full-width rounded team photo | Server-rendered hero with local imagery, inline underline SVG, scoped keyframes, and reduced-motion handling |
 | Our Work Culture | Centered 620px intro; six cards in a bordered 2-column table, one column at tablet, six separate centered cards on mobile | Typed content and reusable Server Component cards with local SVG icons |
-| Hiring CTA | Desktop image/text split with image extending 60px left; text appears before image below 992px; shared red CTA links to `/career` | Server-rendered split layout using the shared button component and existing Career route |
+| Hiring CTA | Desktop image/text split with image extending 60px left; text appears before image below 992px; shared red CTA links to `/career` | Server-rendered split layout using the shared button component and canonical `/career/` route |
 | FAQ | Six bordered items; first open initially; only one item remains open; 300-400ms jQuery slide behavior; plus/minus icons | Small accessible Client Component with buttons, `aria-expanded`, controlled panels, keyboard support, and equivalent transition |
 | Gallery | 19-image infinite linear Slick track; 5 slides above 1440, 4 at 1440, 3 below 1200, 2 below 768; even slides offset 40/20px | Scoped CSS marquee with local optimized images, decorative duplicate track, and reduced-motion fallback |
 
@@ -62,4 +97,21 @@ Browser: Microsoft Edge (Chromium, headless parity capture)
 | Shared responsive footer height | The existing shared footer starts within 0.30px of live but is 16px shorter at 768px and 24px shorter at 390px; desktop differs by 0.49px | pre-existing shared-layout variance outside this page's content; page sections are aligned |
 | FAQ semantics | Live controls are not keyboard-accessible; local uses real buttons and ARIA while preserving the appearance | intentional accessibility improvement |
 | Reduced motion | Live leaves the decorative hero underline running; local stops all page animation when reduced motion is requested | intentional accessibility improvement |
-| Visible grammar issues | Live copy includes "ample of opportunities," "Dynamic Dreramz," and other grammar issues | preserved for parity; suggested corrections recorded in `docs/page-content-improvements.md` |
+| Visible copy | Live H1, hero, culture, hiring, and FAQ wording | restored on 2026-08-13; edited copy remains a deferred proposal |
+
+## 2026-08-12 AEO/GEO Verification (Superseded)
+
+| Viewport | Post-change screenshot | Result |
+| --- | --- | --- |
+| 1440x900 | `/tmp/dd-aeo-all-pages-20260812/life/life-1440x900.png` | passed |
+| 768x1024 | `/tmp/dd-aeo-all-pages-20260812/life/life-768x1024.png` | passed |
+| 390x844 | `/tmp/dd-aeo-all-pages-20260812/life/life-390x844.png` | passed |
+
+- The expanded entity-first H1, decorative underline, hero answer, and image fit
+  without clipping, overlap, or horizontal document overflow.
+- FAQ controls, single-open behavior, focus states, gallery motion, and reduced
+  motion remain unchanged.
+- Rendered source contains the same six questions in visible content and
+  FAQPage schema.
+- The shared fixed contact widget can overlay lower viewport content during a
+  capture; this behavior predates the AEO/GEO copy work.

@@ -12,7 +12,9 @@ export type CareerJob = {
   postedOn: string;
   postedDate: string;
   positions: number;
+  locations: CareerLocation["slug"][];
   icon: string;
+  summary: string;
   jobDescription: string;
 };
 
@@ -61,7 +63,10 @@ export const careerJobs: CareerJob[] = [
     postedOn: "20/07/2026",
     postedDate: "2026-07-20",
     positions: 1,
+    locations: ["surat"],
     icon: "/assets/career/jobs/job-performance-marketing.svg",
+    summary:
+      "Manage paid campaigns, acquisition, tracking, A/B testing, and performance reporting across major advertising platforms.",
     jobDescription: "/assets/career/jobs/performance-marketing-specialist.pdf",
   },
   {
@@ -73,7 +78,10 @@ export const careerJobs: CareerJob[] = [
     postedOn: "20/07/2026",
     postedDate: "2026-07-20",
     positions: 1,
+    locations: ["surat", "ahmedabad"],
     icon: "/assets/career/jobs/job-seo-aeo-geo.svg",
+    summary:
+      "Improve organic and AI-search visibility through SEO, AEO, and GEO for ecommerce websites.",
     jobDescription: "/assets/career/jobs/seo-aeo-geo-specialist.pdf",
   },
   {
@@ -85,7 +93,10 @@ export const careerJobs: CareerJob[] = [
     postedOn: "20/07/2026",
     postedDate: "2026-07-20",
     positions: 1,
+    locations: ["surat"],
     icon: "/assets/career/jobs/job-conversion-rate-optimization.svg",
+    summary:
+      "Use analytics, behavior research, and experimentation to improve ecommerce conversion journeys.",
     jobDescription: "/assets/career/jobs/conversion-rate-optimization.pdf",
   },
   {
@@ -97,7 +108,10 @@ export const careerJobs: CareerJob[] = [
     postedOn: "20/07/2026",
     postedDate: "2026-07-20",
     positions: 1,
+    locations: ["ahmedabad"],
     icon: "/assets/career/jobs/job-linkedin-growth.svg",
+    summary:
+      "Grow the company's LinkedIn presence through research, relationship building, content, and profile management.",
     jobDescription: "/assets/career/jobs/linkedin-growth-executive.pdf",
   },
   {
@@ -109,7 +123,10 @@ export const careerJobs: CareerJob[] = [
     postedOn: "20/07/2026",
     postedDate: "2026-07-20",
     positions: 1,
+    locations: ["surat", "ahmedabad"],
     icon: "/assets/career/jobs/job-outbound-sales.svg",
+    summary:
+      "Develop international IT-services opportunities through research, outbound prospecting, qualification, and pipeline management.",
     jobDescription: "/assets/career/jobs/outbound-sales-executive.pdf",
   },
 ];

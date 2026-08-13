@@ -1,8 +1,8 @@
 # AEO and GEO Strategy - Simple Guide
 
-Status: working summary; recommendations still need the approvals noted below  
-Based on: [the full AEO/GEO strategy](./aeo-geo-strategy.md)  
-Source last audited: 2026-08-12  
+Status: working summary; visible recommendations are deferred during migration
+Based on: [the full AEO/GEO strategy](./docs/aeo-geo-strategy.md)
+Source last audited: 2026-08-13
 Scope: the Next.js migration and the five currently built public pages
 
 ## How to use this document
@@ -11,9 +11,27 @@ This is the easy-to-read version of the full AEO/GEO strategy. It explains the
 business decisions, priorities, owners, and expected results without most of
 the technical detail.
 
-The [full strategy](./aeo-geo-strategy.md) remains the source of truth. Update it first
+The [full strategy](./docs/aeo-geo-strategy.md) remains the source of truth. Update it first
 when facts, priorities, page status, or technical recommendations change. Then
 update this summary if the change affects leadership decisions or delivery.
+
+## Migration rule: improve AEO/GEO without changing the live UI
+
+During migration, AEO/GEO and SEO work must preserve the current live site's
+visible UI and content unless the project owner explicitly approves the exact
+visible difference.
+
+- Development may implement accurate metadata, canonicals, robots/sitemap,
+  crawlability, real dates, server rendering, appearance-preserving semantics
+  and accessibility, and schema that matches visible content.
+- Do not automatically change visible headings, paragraphs, grammar, labels,
+  FAQs, CTA text, proof/reviews, counters, cards, categories, layout, styling,
+  imagery, animation, or default interactions.
+- Put better visible-copy or design ideas in
+  `docs/page-content-improvements.md` as `suggested` or `deferred`.
+- A general request to improve AEO/GEO is not visible-content approval.
+- If a factual, policy, legal, accessibility, or trust fix requires a visible
+  change, document it and request approval before implementation.
 
 ## One-minute summary
 
@@ -201,6 +219,11 @@ Public naming should be consistent:
 - Start monthly prompt and citation tracking.
 
 ## Page-by-page action summary
+
+The visible items below are recommendations for approval, not instructions to
+change the migration UI automatically. Implement nonvisual items immediately
+when accurate; keep every visible difference deferred until its exact wording
+or design is approved.
 
 ### Home (`/`)
 
@@ -403,6 +426,8 @@ citations, qualified visits, leads, and revenue opportunities.
 6. Confirm the policy for `GPTBot` separately from search crawlers.
 7. Ensure HR reviews all job and workplace-policy statements.
 8. Approve which client names, quotes, results, and screenshots may be used.
+9. Approve the exact copy/design for any visible AEO/GEO change before
+   development implements it.
 
 ## Definition of AEO/GEO-ready
 
@@ -422,6 +447,9 @@ A page is ready only when:
 - Required search and AI crawlers are not blocked.
 - Accessibility, links, schema, SEO, lint, and production build checks pass.
 - Target questions and a measurement owner are recorded.
+
+If meeting a readiness item requires an unapproved visible change during
+migration, record it as an approval-dependent gap and preserve the live UI.
 
 ## Review schedule
 

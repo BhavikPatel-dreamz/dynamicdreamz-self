@@ -1,4 +1,5 @@
-import { testimonials } from "@/content/home";
+import { founders } from "@/content/about";
+import { organizationAnswerSummary, testimonials } from "@/content/home";
 import {
   careerApplicationPath,
   careerJobs,
@@ -6,9 +7,10 @@ import {
 } from "@/content/career";
 import { lifeFaqSection } from "@/content/life-dynamicdreamz";
 import { resourceArticles } from "@/content/resources";
+import { companyFacts } from "@/data/company";
 import { pageSeo } from "@/data/seo";
 import { siteConfig } from "@/data/site";
-import { absoluteUrl, getBuildDate } from "@/lib/seo";
+import { absoluteUrl } from "@/lib/seo";
 
 const organizationId = `${siteConfig.url}#organization`;
 const websiteId = `${siteConfig.url}#website`;
@@ -55,6 +57,65 @@ const careerOfficeAddresses = {
     addressCountry: "IN",
   },
 } as const;
+
+function organizationSchema() {
+  return {
+    "@type": "Organization",
+    "@id": organizationId,
+    name: siteConfig.name,
+    legalName: siteConfig.legalName,
+    url: homeUrl,
+    logo: absoluteUrl(siteConfig.logo),
+    description: organizationAnswerSummary,
+    foundingDate: String(companyFacts.foundedYear),
+    numberOfEmployees: {
+      "@type": "QuantitativeValue",
+      minValue: companyFacts.experts.value,
+    },
+    email: siteConfig.email,
+    telephone: siteConfig.phoneDisplay,
+    address: Object.values(careerOfficeAddresses),
+    sameAs: [
+      siteConfig.social.shopify,
+      siteConfig.social.linkedin,
+      siteConfig.social.instagram,
+      "https://clutch.co/profile/dynamic-dreamz",
+      "https://www.trustpilot.com/review/dynamicdreamz.com",
+      "https://www.goodfirms.co/company/dynamic-dreamz",
+      "https://www.upwork.com/ag/dynamicdreamz/",
+    ],
+    areaServed: [
+      "United States",
+      "United Kingdom",
+      "Europe",
+      "Canada",
+      "Australia",
+      "India",
+      "United Arab Emirates",
+    ],
+    knowsAbout: [
+      "Shopify Plus",
+      "Shopify Plus Development",
+      "Shopify Plus Migration",
+      "Shopify B2B",
+      "Shopify Checkout Extensibility",
+      "Shopify Functions",
+      "Multi-store Shopify Architecture",
+      "Shopify Markets",
+      "Shopify Mobile App Development",
+      "Enterprise Ecommerce Development",
+      "ERP Integration",
+      "Shopify",
+      "Shopify Migration",
+      "Shopify CRO",
+      "Shopify App Development",
+      "White-Label Shopify Development",
+      "Full-Stack Development",
+      "WordPress",
+      "WooCommerce",
+    ],
+  };
+}
 
 // Shared company/brand video (used on About and Resources). Same YouTube source,
 // so keep its id and real publish date in one place.
@@ -120,86 +181,11 @@ function testimonialVideoSchema() {
 }
 
 export function createHomePageSchema() {
-  const modifiedAt = getBuildDate().toISOString();
-
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": organizationId,
-        name: siteConfig.name,
-        legalName: siteConfig.legalName,
-        url: homeUrl,
-        logo: absoluteUrl(siteConfig.logo),
-        description:
-          "Dynamic Dreamz is a Shopify Platinum Partner and Shopify Plus agency providing development, migration, B2B, CRO, mobile apps, integrations, white-label delivery and ongoing support for global brands and digital agencies.",
-        foundingDate: "2006",
-        numberOfEmployees: {
-          "@type": "QuantitativeValue",
-          minValue: 150,
-        },
-        email: siteConfig.email,
-        telephone: "+91-9327642007",
-        address: [
-          {
-            "@type": "PostalAddress",
-            streetAddress:
-              "Balaji House, Chamunda Restaurant Lane, Opp. Sub Jail, Near Udhna Darwaja",
-            addressLocality: "Surat",
-            addressRegion: "Gujarat",
-            postalCode: "395002",
-            addressCountry: "IN",
-          },
-          {
-            "@type": "PostalAddress",
-            streetAddress:
-              "202 - Iscon Emporio, Pandurang Shashtri Marg, beside Star Bazaar, Satellite",
-            addressLocality: "Ahmedabad",
-            addressRegion: "Gujarat",
-            postalCode: "380015",
-            addressCountry: "IN",
-          },
-        ],
-        sameAs: [
-          siteConfig.social.shopify,
-          siteConfig.social.linkedin,
-          siteConfig.social.instagram,
-          "https://clutch.co/profile/dynamic-dreamz",
-          "https://www.trustpilot.com/review/dynamicdreamz.com",
-          "https://www.goodfirms.co/company/dynamic-dreamz",
-          "https://www.upwork.com/ag/dynamicdreamz/",
-        ],
-        areaServed: [
-          "United States",
-          "United Kingdom",
-          "Europe",
-          "Canada",
-          "Australia",
-          "India",
-          "United Arab Emirates",
-        ],
-        knowsAbout: [
-          "Shopify Plus",
-          "Shopify Plus Development",
-          "Shopify Plus Migration",
-          "Shopify B2B",
-          "Shopify Checkout Extensibility",
-          "Shopify Functions",
-          "Multi-store Shopify Architecture",
-          "Shopify Markets",
-          "Shopify Mobile App Development",
-          "Enterprise Ecommerce Development",
-          "ERP Integration",
-          "Shopify",
-          "Shopify Migration",
-          "Shopify CRO",
-          "Shopify App Development",
-          "White-Label Shopify Development",
-          "Full-Stack Development",
-          "WordPress",
-          "WooCommerce",
-        ],
+        ...organizationSchema(),
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Dynamic Dreamz Services",
@@ -231,7 +217,8 @@ export function createHomePageSchema() {
         "@id": webPageId,
         url: homeUrl,
         name: pageSeo.home.title,
-        dateModified: modifiedAt,
+        datePublished: pageSeo.home.publishedTime,
+        dateModified: pageSeo.home.modifiedTime,
         description: pageSeo.home.description,
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },
@@ -262,37 +249,27 @@ export function createHomePageSchema() {
 }
 
 export function createAboutPageSchema() {
-  const modifiedAt = getBuildDate().toISOString();
+  const founderNodes = founders.map((founder) => {
+    const personId = `${aboutPageUrl}#person-${founder.name.toLowerCase().replaceAll(" ", "-")}`;
+
+    return {
+      "@type": "Person",
+      "@id": personId,
+      name: founder.name,
+      jobTitle: founder.role,
+      description: founder.biography,
+      image: absoluteUrl(founder.image),
+      ...(founder.linkedIn ? { sameAs: [founder.linkedIn] } : {}),
+      worksFor: { "@id": organizationId },
+    };
+  });
 
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": organizationId,
-        name: siteConfig.name,
-        legalName: siteConfig.legalName,
-        url: homeUrl,
-        logo: absoluteUrl(siteConfig.logo),
-        description:
-          "Dynamic Dreamz is a Shopify Platinum Partner and ecommerce development agency founded in 2006, with more than 150 experts delivering web, mobile and digital commerce solutions.",
-        foundingDate: "2006",
-        numberOfEmployees: {
-          "@type": "QuantitativeValue",
-          minValue: 150,
-        },
-        email: siteConfig.email,
-        telephone: "+91-9327642007",
-        sameAs: [
-          siteConfig.social.shopify,
-          siteConfig.social.linkedin,
-          siteConfig.social.instagram,
-        ],
-        founder: [
-          { "@type": "Person", name: "Virag Shah", jobTitle: "Co-Founder & CEO" },
-          { "@type": "Person", name: "Gaurav Shah", jobTitle: "Co-Founder & CEO" },
-          { "@type": "Person", name: "Sanjay Patel", jobTitle: "Co-Founder & CTO" },
-        ],
+        ...organizationSchema(),
+        founder: founderNodes.map((founder) => ({ "@id": founder["@id"] })),
       },
       {
         "@type": "WebSite",
@@ -308,7 +285,8 @@ export function createAboutPageSchema() {
         url: aboutPageUrl,
         name: pageSeo.about.title,
         description: pageSeo.about.description,
-        dateModified: modifiedAt,
+        datePublished: pageSeo.about.publishedTime,
+        dateModified: pageSeo.about.modifiedTime,
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },
         breadcrumb: { "@id": aboutBreadcrumbId },
@@ -338,6 +316,7 @@ export function createAboutPageSchema() {
           },
         ],
       },
+      ...founderNodes,
       videoObjectSchema({
         id: `${aboutPageUrl}#company-video`,
         name: "Meet the team at Dynamic Dreamz",
@@ -352,17 +331,18 @@ export function createAboutPageSchema() {
 }
 
 export function createCareerPageSchema() {
-  const jobPostings = careerLocations.flatMap((location) =>
-    careerJobs.map((job) => {
+  const jobPostings = careerJobs.flatMap((job) =>
+    careerLocations.filter((location) => job.locations.includes(location.slug)).map((location) => {
       const id = `${careerPageUrl}#${job.slug}-${location.slug}`;
 
       return {
         "@type": "JobPosting",
         "@id": id,
         title: job.title,
-        description: `${job.title} is a ${job.jobType.toLowerCase()} opportunity at Dynamic Dreamz in ${location.label}. The role requires ${job.experience} of relevant work experience.`,
+        description: `${job.summary} This is a ${job.jobType.toLowerCase()} onsite opportunity at Dynamic Dreamz in ${location.label}, requiring ${job.experience} of relevant work experience.`,
         datePosted: job.postedDate,
         employmentType: "FULL_TIME",
+        experienceRequirements: job.experience,
         hiringOrganization: { "@id": organizationId },
         jobLocation: {
           "@type": "Place",
@@ -376,27 +356,7 @@ export function createCareerPageSchema() {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": organizationId,
-        name: siteConfig.name,
-        legalName: siteConfig.legalName,
-        url: homeUrl,
-        logo: absoluteUrl(siteConfig.logo),
-        foundingDate: "2006",
-        numberOfEmployees: {
-          "@type": "QuantitativeValue",
-          minValue: 150,
-        },
-        email: siteConfig.email,
-        telephone: "+91-9327642007",
-        address: Object.values(careerOfficeAddresses),
-        sameAs: [
-          siteConfig.social.shopify,
-          siteConfig.social.linkedin,
-          siteConfig.social.instagram,
-        ],
-      },
+      organizationSchema(),
       {
         "@type": "WebSite",
         "@id": websiteId,
@@ -411,8 +371,8 @@ export function createCareerPageSchema() {
         url: careerPageUrl,
         name: pageSeo.career.title,
         description: pageSeo.career.description,
-        datePublished: "2024-05-02T09:10:53+00:00",
-        dateModified: "2026-08-05T13:38:57+00:00",
+        datePublished: pageSeo.career.publishedTime,
+        dateModified: pageSeo.career.modifiedTime,
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },
         breadcrumb: { "@id": careerBreadcrumbId },
@@ -452,28 +412,7 @@ export function createLifePageSchema() {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": organizationId,
-        name: siteConfig.name,
-        legalName: siteConfig.legalName,
-        url: homeUrl,
-        logo: absoluteUrl(siteConfig.logo),
-        description:
-          "Dynamic Dreamz is a Shopify Platinum Partner and ecommerce development agency founded in 2006, with more than 150 experts delivering web, mobile and digital commerce solutions.",
-        foundingDate: "2006",
-        numberOfEmployees: {
-          "@type": "QuantitativeValue",
-          minValue: 150,
-        },
-        email: siteConfig.email,
-        telephone: "+91-9327642007",
-        sameAs: [
-          siteConfig.social.shopify,
-          siteConfig.social.linkedin,
-          siteConfig.social.instagram,
-        ],
-      },
+      organizationSchema(),
       {
         "@type": "WebSite",
         "@id": websiteId,
@@ -488,8 +427,8 @@ export function createLifePageSchema() {
         url: lifePageUrl,
         name: pageSeo.life.title,
         description: pageSeo.life.description,
-        datePublished: "2024-05-02T09:14:02+00:00",
-        dateModified: "2024-09-06T09:49:25+00:00",
+        datePublished: pageSeo.life.publishedTime,
+        dateModified: pageSeo.life.modifiedTime,
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },
         breadcrumb: { "@id": lifeBreadcrumbId },
@@ -555,21 +494,7 @@ export function createResourcesPageSchema() {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": organizationId,
-        name: siteConfig.name,
-        legalName: siteConfig.legalName,
-        url: homeUrl,
-        logo: absoluteUrl(siteConfig.logo),
-        foundingDate: "2006",
-        numberOfEmployees: { "@type": "QuantitativeValue", minValue: 150 },
-        sameAs: [
-          siteConfig.social.shopify,
-          siteConfig.social.linkedin,
-          siteConfig.social.instagram,
-        ],
-      },
+      organizationSchema(),
       {
         "@type": "WebSite",
         "@id": websiteId,
@@ -584,8 +509,8 @@ export function createResourcesPageSchema() {
         url: resourcesPageUrl,
         name: pageSeo.resources.title,
         description: pageSeo.resources.description,
-        datePublished: "2025-11-10T05:02:09+00:00",
-        dateModified: "2026-07-15T10:42:41+00:00",
+        datePublished: pageSeo.resources.publishedTime,
+        dateModified: pageSeo.resources.modifiedTime,
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },
         breadcrumb: { "@id": resourcesBreadcrumbId },

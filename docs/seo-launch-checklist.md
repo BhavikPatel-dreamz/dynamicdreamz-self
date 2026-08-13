@@ -107,6 +107,18 @@ Schema quality rules:
 
 ## Content And On-Page SEO
 
+During migration, the live-visible page is the UI/content baseline. An SEO,
+AEO, GEO, or audit task does not authorize visible copy or design changes.
+Preserve live headings, paragraphs, labels, CTAs, proof, cards, taxonomy,
+section order, and default interactions unless the project owner explicitly
+approves the exact difference. Put recommended visible changes in
+`docs/page-content-improvements.md` as `suggested` or `deferred`.
+
+Metadata and other nonvisual search output may be improved when accurate, but
+structured data must still match visible content. If a checklist item requires
+a visible change to pass, report it as approval-dependent instead of silently
+changing the migration UI.
+
 - One clear `h1` per page.
 - Headings follow a logical hierarchy.
 - First viewport makes the page topic obvious.
@@ -121,7 +133,8 @@ Schema quality rules:
 - Internal links point to relevant services, case studies, contact, and blog
   resources.
 - External links use `rel="noopener noreferrer"` when opening a new tab.
-- Any suggested UI copy changes needed to improve SEO are recorded in
+- Any suggested UI copy changes needed to improve SEO are recorded, but not
+  implemented without explicit project-owner approval, in
   `docs/page-content-improvements.md` with page name, route, current issue,
   suggested replacement, SEO reason, priority, and status.
 - Page copy improvement suggestions should cover visible content, not only meta

@@ -68,6 +68,23 @@ Core proof points from the live site:
   source in shipped code.
 - Match the live site before redesigning. Any visible design, content, route, or
   CTA change from the live site should be intentional and called out.
+- During migration, implement AEO/GEO without changing the live-visible UI or
+  page copy by default. An AEO/GEO, SEO, content-quality, or audit request does
+  not authorize edits to visible headings, paragraphs, labels, CTA copy,
+  counters, proof/review text, cards, taxonomy, section order, styling,
+  animation, or default interaction states. Preserve the current live wording
+  and visual result, including imperfect grammar or outdated-looking phrasing,
+  unless the project owner explicitly approves the exact visible change in the
+  current task. Record proposed visible improvements in
+  `docs/page-content-improvements.md` as `suggested` or `deferred`; do not
+  implement them implicitly.
+- Nonvisual AEO/GEO work may improve metadata, canonicals, crawlability,
+  sitemap/robots output, server rendering, semantic markup that preserves the
+  rendered appearance, accessibility metadata, and structured data. Nonvisual
+  work is not permission to introduce unsupported or contradictory claims:
+  schema must still match visible content and approved facts. If a valid AEO,
+  SEO, accessibility, legal, or factual fix requires a visible change, stop at
+  a documented recommendation and request explicit approval.
 - Copy/match the live page styling during migration, including desktop and
   mobile variants. Do not preserve old CSS technical debt blindly; translate the
   visual result into maintainable local styles.
@@ -127,10 +144,12 @@ Core proof points from the live site:
   date and result instead of silently skipping it.
 - When a page needs better SEO copy or visible UI content changes, update
   `docs/page-content-improvements.md` with the page name, route, current issue,
-  suggested replacement copy, SEO reason, priority, and status. The AEO/GEO
-  strategy remains the source of truth for AEO/GEO findings; use the content
-  improvements file as the implementation queue for exact visible copy rather
-  than moving or deleting the underlying AEO/GEO recommendation.
+  suggested replacement copy, SEO reason, priority, and status. During
+  migration, add the item as `suggested` or `deferred` and leave the live UI
+  unchanged until the project owner explicitly approves that exact visible
+  change. The AEO/GEO strategy remains the source of truth for AEO/GEO
+  findings; use the content improvements file as the approval queue for exact
+  visible copy rather than moving or deleting the underlying recommendation.
 - Every image must have intentional alt handling. Use meaningful, page-specific
   alt text for all content images, preserving or improving the live site's alt
   text. Only truly decorative images may use empty alt text, and that choice

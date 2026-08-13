@@ -2,8 +2,45 @@
 
 Live URL: `https://www.dynamicdreamz.com/career/`
 Local route: `/career`
-Date checked: 2026-08-11
+Date checked: 2026-08-13
 Browser: Microsoft Edge (Chromium, headless parity capture)
+
+## 2026-08-13 Live-UI Parity Rollback
+
+The project owner requested that visible Career UI return to the current live
+page. The live page and View Page Source were checked again before editing. The
+rollback restores the original hero and opportunities copy, all five job cards
+under both location tabs, the compact live card content without added summaries
+or review-date text, the live benefit copy, and the original section height.
+Job/schema facts may remain governed separately only where they do not alter the
+default UI.
+
+| Viewport | Current live screenshot | Post-rollback local screenshot | Status |
+| --- | --- | --- | --- |
+| 1440x900 | `/tmp/dd-parity-live-career-1440x900.png` | `/tmp/dd-parity-local-career-1440x900.png` | passed; live hero and card presentation restored |
+| 768x1024 | `/tmp/dd-parity-live-career-768x1024.png` | `/tmp/dd-parity-local-career-768x1024.png` | passed; live responsive layout restored |
+| 390x844 | `/tmp/dd-parity-live-career-390x844.png` | `/tmp/dd-parity-local-career-390x844.png` | passed; no card or text overflow |
+
+Current live source: `/tmp/dd-live-career-20260813.html`. Career CSS/JS,
+location-filter, card hover/focus, gallery timing, header-scroll, and responsive
+sources already listed below remain the interaction baseline. The PDF-supported
+JobPosting locations and summaries remain nonvisual pending HR confirmation;
+the live five-role-per-city UI is the rendered migration baseline.
+
+## 2026-08-12 AEO/GEO Scope Captured Before UI Editing
+
+- Keep every existing application destination unchanged and classify its route
+  availability as migration pending.
+- Replace the broad hero with a direct Careers at Dynamic Dreamz answer and
+  clarify the Surat/Ahmedabad audience.
+- Use the linked, project-owned job-description PDFs to assign each role only
+  to the office locations stated in that source and to expose a concise role
+  summary in server-rendered HTML.
+- Add a visible opportunities review date, correct benefit grammar, and link
+  candidates to the already-built Life page for culture and policy FAQs.
+- Preserve job-card, location-filter, gallery, hover, focus, animation, and
+  responsive contracts. Post-change captures must check wrapping and section
+  height at all three existing viewports.
 
 ## Viewports
 
@@ -28,7 +65,7 @@ Browser: Microsoft Edge (Chromium, headless parity capture)
 | Section or element | Live behavior/style | Local implementation notes |
 | --- | --- | --- |
 | Career hero | White background, centered 50/66 heading, team introduction, 230px top and 55px bottom padding | Copy and exact responsive typography are rendered by a Server Component |
-| Current opportunities | Split heading/intro, right-aligned location dropdown, five job cards per location | Job content is server-rendered; only the accessible location selector is a Client Component |
+| Current opportunities | Split heading/intro, right-aligned location dropdown, and live listings duplicated across locations | Job content is server-rendered; only the accessible location selector is a Client Component; the live five-role list is restored in both tabs, while PDF-supported locations remain nonvisual data pending HR confirmation |
 | Job cards | Vacancy pill, role icon/PDF link, three details, Apply now CTA, green-tinted gradient-border hover | Typed local data, local SVG/PDF assets, semantic headings and descriptive link labels |
 | Workplace benefits | Eight centered cards in a 4/2/1 grid with icon, gradient hover and 245px desktop height | Reusable server-rendered card grid with local icons and meaningful alt text |
 | Workplace gallery | Infinite linear marquee; 5 slides above 1440, then 4/3/2; alternate slides offset vertically | Scoped 96-second CSS marquee, decorative duplicate hidden from accessibility APIs, and reduced-motion fallback |
@@ -60,3 +97,21 @@ Browser: Microsoft Edge (Chromium, headless parity capture)
 | Shared footer total height | Its top edge matches within 0.08px; the existing shared footer is 16px shorter at tablet and 24px shorter at mobile | existing shared component; outside Career content |
 | Location control semantics | Live uses non-semantic `div` controls | Intentionally improved to a keyboard-operable ARIA menu without changing its visual result |
 | Local Apply-now destination page | `/career-apply-now` is a planned migration route and is not part of this task | migration pending |
+
+## 2026-08-12 AEO/GEO Verification (Superseded)
+
+| Viewport | Post-change screenshot | Result |
+| --- | --- | --- |
+| 1440x900 | `/tmp/dd-aeo-all-pages-20260812/career/career-1440x900.png` | passed |
+| 768x1024 | `/tmp/dd-aeo-all-pages-20260812/career/career-768x1024.png` | passed |
+| 390x844 | `/tmp/dd-aeo-all-pages-20260812/career/career-390x844.png` | passed |
+
+- The direct hero answer, opportunities review date, and new job summaries wrap
+  without clipping or horizontal overflow.
+- Surat renders four roles and Ahmedabad renders three, matching the local job
+  PDFs; rendered schema contains the same seven role/location combinations.
+- Location filtering, job/PDF/apply links, card states, and gallery motion remain
+  operational; the application destinations stay migration pending.
+- The existing shared contact widget can overlay content near the viewport edge
+  during captures; this is a pre-existing shared fixed control, not new page
+  overflow.

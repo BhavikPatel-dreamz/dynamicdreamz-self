@@ -33,6 +33,22 @@ The capture note must prove what was inspected, not just say "matched live":
 Do not claim visual parity in a final response unless this evidence exists or
 the final response clearly says visual parity was not verified.
 
+## AEO/GEO Live-UI Preservation Gate
+
+During migration, an AEO/GEO or SEO task must preserve the live page's default
+visible result. Do not change visible wording, heading text, CTA labels,
+taxonomy, cards, counters, proof/review text, section order, spacing, styling,
+motion, or interaction defaults unless the project owner explicitly approves
+the exact visible change in the current task.
+
+Safe nonvisual work includes accurate metadata, canonicals, robots/sitemap,
+crawlability, schema that matches visible content, server-rendering
+improvements, and semantic/accessibility changes that do not alter the default
+appearance. Put any recommended visible improvement in
+`docs/page-content-improvements.md` as `suggested` or `deferred`. If a required
+fix cannot be made without a visible difference, document it and request
+approval before editing UI code.
+
 ## Capture First
 
 Before implementing visual work:
