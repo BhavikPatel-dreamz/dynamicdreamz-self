@@ -184,3 +184,23 @@ stores, salon booking, interactive commerce, and beauty-industry web solutions.
 | Industry image alt text | Live source incorrectly says “IT Solutions for Food & Beverages Industry Image.” | Makeup artist applying eye makeup for a beauty ecommerce industry section. | Corrects the subject mismatch and gives the content image meaningful alternative text without changing visual UI. | High | implemented |
 | Portfolio image alt text | Several live alts are generic or inaccurate, including “Nufyx Image.” | Use brand- and subject-specific descriptions for each visible portfolio image. | Keeps image meaning aligned with the visible brand card. | Medium | implemented |
 | CTA destinations | `/request-quote` and `/our-work` are not yet built. | Preserve their canonical path intent during migration and validate or redirect both before launch. | Maintains live CTA flow under the active-migration route exception. | High | migration pending |
+| Article and CTA paths | Planned `/blogs/`, category, and `/request-quote/` destinations are not all built. | Retain migration-intent paths now and verify route/redirect coverage before launch. | Follows the approved unbuilt-route exception. | High | migration pending |
+
+## White Label Shopify Development Services (`/white-label-shopify-development-services/`)
+
+Status: visible recommendations deferred; live UI preserved
+Last reviewed: 2026-08-13
+Primary SEO intent: white label Shopify development partner for digital
+agencies, Shopify Plus delivery, agency outsourcing, and NDA-backed Shopify
+services.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Proof values | Hero says `100+` skilled developers and `1000+` completed Shopify projects; counters say `150+` developers and `1000+` sites; Home uses `4500+` Shopify stores. | Use one leadership-approved definition and value for team size and Shopify delivery volume across every affected page. | Conflicting proof weakens trust and cannot be reconciled safely without provenance. | High | blocked pending factual approval |
+| Pricing introduction | “no retainers and minimum hours” | “We offer scalable hiring models with no retainers and no minimum-hour commitments — providing you the flexibility to select the best fit for your agency's requirements.” | The current phrase implies minimum hours and contradicts the visible FAQ. | High | deferred pending sales/legal policy confirmation |
+| Agentic-commerce FAQ | “Yes! Every Dynamic Dremaz expert specializes in customizing themes, apps, and integrations to meet your client’s requirements.” | “Agentic commerce enables AI assistants to help shoppers discover products and complete commerce tasks. We can assess a Shopify store’s product data, structured data, integrations, and current platform capabilities, then recommend the work needed for supported agentic experiences.” | Answers the actual question and fixes the company-name typo without claiming unsupported protocol readiness. | High | deferred pending service-owner approval |
+| Agentic-commerce capability | “Ready for Shopify's Universal Commerce Protocol so AI agents can discover products and build carts.” | “We assess product data, structured data, and supported Shopify capabilities to prepare stores for emerging AI-assisted shopping experiences.” | Avoids presenting evolving protocol support as an unconditional readiness guarantee. | High | deferred pending technical verification and approval |
+| Performance claim | “Our services are fast, secure, and optimized for a smooth user experience.” | “Our delivery process includes performance review, quality assurance, and security-conscious implementation for a smooth user experience.” | Replaces absolute outcomes with an auditable delivery-process statement. | Medium | deferred pending delivery/security evidence |
+| AI search claims | “We prepare your clients' stores to be discovered, cited, and recommended by AI engines...” | “We improve the technical and content signals that can help AI-powered search systems understand your clients’ stores.” | Avoids implying that citation or recommendation can be guaranteed. | High | deferred pending content approval |
+| Final CTA | “start delivering world-class Shopify solutions under your brand.” | “start delivering Shopify solutions under your brand.” | Removes an unsupported superlative while preserving the conversion intent. | Low | deferred |
+| Contextual service links | Shopify Plus, migration, themes, apps, B2B, checkout, and CRO are plain text. | Link each service phrase to its canonical local route as that page ships. | Improves topic relationships and buyer navigation without creating broken links. | Medium | migration pending |

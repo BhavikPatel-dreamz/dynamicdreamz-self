@@ -221,6 +221,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  whiteLabelShopify: {
+    path: "/white-label-shopify-development-services/",
+    title: "White Label Shopify Development Partner for Digital Agencies",
+    description:
+      "NDA-backed white label Shopify development for agencies. Shopify Platinum Partner delivering Shopify Plus, migration, B2B and apps under your brand.",
+    keywords: [
+      "white label Shopify development",
+      "white label Shopify partner",
+      "Shopify development for digital agencies",
+      "white label Shopify Plus development",
+      "outsourced Shopify developers",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-02T09:34:33+00:00",
+    modifiedTime: "2026-08-13T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "White label Shopify development services for digital agencies",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

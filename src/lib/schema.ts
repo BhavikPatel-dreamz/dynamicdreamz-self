@@ -8,6 +8,7 @@ import {
 } from "@/content/career";
 import { lifeFaqSection } from "@/content/life-dynamicdreamz";
 import { resourceArticles } from "@/content/resources";
+import { whiteLabelShopifyFaqs } from "@/content/white-label-shopify-development";
 import { companyFacts } from "@/data/company";
 import { pageSeo } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -42,6 +43,11 @@ const beautyPageUrl = absoluteUrl(pageSeo.beautyCosmetics.path);
 const beautyPageId = `${beautyPageUrl}#webpage`;
 const beautyBreadcrumbId = `${beautyPageUrl}#breadcrumb`;
 const beautyServiceId = `${beautyPageUrl}#service`;
+const whiteLabelShopifyPageUrl = absoluteUrl(pageSeo.whiteLabelShopify.path);
+const whiteLabelShopifyPageId = `${whiteLabelShopifyPageUrl}#webpage`;
+const whiteLabelShopifyServiceId = `${whiteLabelShopifyPageUrl}#service`;
+const whiteLabelShopifyFaqId = `${whiteLabelShopifyPageUrl}#faq`;
+const whiteLabelShopifyBreadcrumbId = `${whiteLabelShopifyPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -638,6 +644,93 @@ export function createBeautyCosmeticsPageSchema() {
             },
           })),
         },
+      },
+    ],
+  };
+}
+
+export function createWhiteLabelShopifyPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": whiteLabelShopifyPageId,
+        url: whiteLabelShopifyPageUrl,
+        name: pageSeo.whiteLabelShopify.title,
+        description: pageSeo.whiteLabelShopify.description,
+        datePublished: pageSeo.whiteLabelShopify.publishedTime,
+        dateModified: pageSeo.whiteLabelShopify.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": whiteLabelShopifyServiceId },
+        breadcrumb: { "@id": whiteLabelShopifyBreadcrumbId },
+        mainEntity: [
+          { "@id": whiteLabelShopifyServiceId },
+          { "@id": whiteLabelShopifyFaqId },
+        ],
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.whiteLabelShopify.image.path),
+          width: pageSeo.whiteLabelShopify.image.width,
+          height: pageSeo.whiteLabelShopify.image.height,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "Service",
+        "@id": whiteLabelShopifyServiceId,
+        name: "White Label Shopify Development Services",
+        serviceType: "White label Shopify and Shopify Plus development",
+        url: whiteLabelShopifyPageUrl,
+        description: pageSeo.whiteLabelShopify.description,
+        provider: { "@id": organizationId },
+        audience: {
+          "@type": "BusinessAudience",
+          audienceType: "Digital agencies and ecommerce agencies",
+        },
+        areaServed: [
+          "United States",
+          "United Kingdom",
+          "Europe",
+          "Canada",
+          "Australia",
+          "India",
+          "United Arab Emirates",
+        ],
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": whiteLabelShopifyBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "White Label Shopify Development Services",
+            item: whiteLabelShopifyPageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": whiteLabelShopifyFaqId,
+        mainEntity: whiteLabelShopifyFaqs.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
       },
     ],
   };
