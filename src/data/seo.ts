@@ -222,7 +222,7 @@ export const pageSeo = {
     },
   },
   whiteLabelShopify: {
-    path: "/white-label-shopify-development-services/",
+    path: "/white-label-shopify-development-services",
     title: "White Label Shopify Development Partner for Digital Agencies",
     description:
       "NDA-backed white label Shopify development for agencies. Shopify Platinum Partner delivering Shopify Plus, migration, B2B and apps under your brand.",

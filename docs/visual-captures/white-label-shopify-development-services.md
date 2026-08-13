@@ -2,7 +2,8 @@
 
 Status: implemented and visually verified against the live reference  
 Live URL: `https://www.dynamicdreamz.com/white-label-shopify-development-services/`  
-Local route: `/white-label-shopify-development-services/`  
+Local route: `/white-label-shopify-development-services`
+
 Checked: 2026-08-13  
 Browser: Google Chrome headless (desktop, tablet, and mobile emulation)
 
@@ -134,8 +135,10 @@ FAQ, and CTA.
 
 ## Verification
 
-- `npm run lint`: passed with no errors; the two existing unused-import
-  warnings remain in the unrelated Resources section files.
+- URL policy: the canonical, Open Graph URL, JSON-LD identifiers, sitemap entry,
+  robots allow path, and internal navigation use the slashless local route. A
+  request with the legacy trailing slash returns a permanent redirect to it.
+- `npm run lint`: passed with no errors or warnings.
 - `npm run build`: passed; Next.js statically prerendered
   `/white-label-shopify-development-services` along with sitemap and robots
   outputs.

@@ -184,9 +184,8 @@ stores, salon booking, interactive commerce, and beauty-industry web solutions.
 | Industry image alt text | Live source incorrectly says “IT Solutions for Food & Beverages Industry Image.” | Makeup artist applying eye makeup for a beauty ecommerce industry section. | Corrects the subject mismatch and gives the content image meaningful alternative text without changing visual UI. | High | implemented |
 | Portfolio image alt text | Several live alts are generic or inaccurate, including “Nufyx Image.” | Use brand- and subject-specific descriptions for each visible portfolio image. | Keeps image meaning aligned with the visible brand card. | Medium | implemented |
 | CTA destinations | `/request-quote` and `/our-work` are not yet built. | Preserve their canonical path intent during migration and validate or redirect both before launch. | Maintains live CTA flow under the active-migration route exception. | High | migration pending |
-| Article and CTA paths | Planned `/blogs/`, category, and `/request-quote/` destinations are not all built. | Retain migration-intent paths now and verify route/redirect coverage before launch. | Follows the approved unbuilt-route exception. | High | migration pending |
 
-## White Label Shopify Development Services (`/white-label-shopify-development-services/`)
+## White Label Shopify Development Services (`/white-label-shopify-development-services`)
 
 Status: visible recommendations deferred; live UI preserved
 Last reviewed: 2026-08-13
