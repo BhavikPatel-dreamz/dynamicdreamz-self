@@ -4,10 +4,12 @@ import Image from "next/image";
 import { useState } from "react";
 
 import { cn } from "@/lib/class-names";
+import type { RichTextPart } from "@/types/white-label-service";
 
 export type FaqAccordionItem = {
   question: string;
   answer: string;
+  answerParts?: readonly RichTextPart[];
 };
 
 type FaqAccordionProps = {
@@ -70,7 +72,7 @@ export function FaqAccordion({
             </button>
 
             <div
-              className={`grid transition-[grid-template-rows] duration-400 ease-in-out ${
+              className={`grid transition-[grid-template-rows] duration-400 ease-in-out motion-reduce:duration-0 ${
                 isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
               }`}
               data-faq-panel
@@ -88,7 +90,17 @@ export function FaqAccordion({
                       answerClassName,
                     )}
                   >
-                    {item.answer}
+                    {item.answerParts
+                      ? item.answerParts.map((part, partIndex) =>
+                          part.strong ? (
+                            <strong className="font-bold" key={`${part.text}-${partIndex}`}>
+                              {part.text}
+                            </strong>
+                          ) : (
+                            part.text
+                          ),
+                        )
+                      : item.answer}
                   </p>
                 </div>
               </div>

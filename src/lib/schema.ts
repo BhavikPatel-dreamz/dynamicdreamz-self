@@ -9,8 +9,12 @@ import {
 import { lifeFaqSection } from "@/content/life-dynamicdreamz";
 import { resourceArticles } from "@/content/resources";
 import { whiteLabelShopifyFaqs } from "@/content/white-label-shopify-development";
+import {
+  whiteLabelWordPressFaqs,
+  whiteLabelWordPressServices,
+} from "@/content/white-label-wordpress-development";
 import { companyFacts } from "@/data/company";
-import { pageSeo } from "@/data/seo";
+import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
 import { absoluteUrl } from "@/lib/seo";
 
@@ -48,6 +52,11 @@ const whiteLabelShopifyPageId = `${whiteLabelShopifyPageUrl}#webpage`;
 const whiteLabelShopifyServiceId = `${whiteLabelShopifyPageUrl}#service`;
 const whiteLabelShopifyFaqId = `${whiteLabelShopifyPageUrl}#faq`;
 const whiteLabelShopifyBreadcrumbId = `${whiteLabelShopifyPageUrl}#breadcrumb`;
+const whiteLabelWordPressPageUrl = absoluteUrl(pageSeo.whiteLabelWordPress.path);
+const whiteLabelWordPressPageId = `${whiteLabelWordPressPageUrl}#webpage`;
+const whiteLabelWordPressServiceId = `${whiteLabelWordPressPageUrl}#service`;
+const whiteLabelWordPressFaqId = `${whiteLabelWordPressPageUrl}#faq`;
+const whiteLabelWordPressBreadcrumbId = `${whiteLabelWordPressPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -649,7 +658,35 @@ export function createBeautyCosmeticsPageSchema() {
   };
 }
 
-export function createWhiteLabelShopifyPageSchema() {
+type WhiteLabelServiceSchemaInput = {
+  page: PageSeoConfig;
+  pageUrl: string;
+  pageId: string;
+  serviceId: string;
+  faqId: string;
+  breadcrumbId: string;
+  serviceName: string;
+  serviceType: string;
+  breadcrumbName: string;
+  audienceType: string;
+  faqs: readonly { question: string; answer: string }[];
+  offers?: readonly { title: string; description: string }[];
+};
+
+function createWhiteLabelServicePageSchema({
+  page,
+  pageUrl,
+  pageId,
+  serviceId,
+  faqId,
+  breadcrumbId,
+  serviceName,
+  serviceType,
+  breadcrumbName,
+  audienceType,
+  faqs,
+  offers,
+}: WhiteLabelServiceSchemaInput) {
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -664,38 +701,38 @@ export function createWhiteLabelShopifyPageSchema() {
       },
       {
         "@type": "WebPage",
-        "@id": whiteLabelShopifyPageId,
-        url: whiteLabelShopifyPageUrl,
-        name: pageSeo.whiteLabelShopify.title,
-        description: pageSeo.whiteLabelShopify.description,
-        datePublished: pageSeo.whiteLabelShopify.publishedTime,
-        dateModified: pageSeo.whiteLabelShopify.modifiedTime,
+        "@id": pageId,
+        url: pageUrl,
+        name: page.title,
+        description: page.description,
+        datePublished: page.publishedTime,
+        dateModified: page.modifiedTime,
         isPartOf: { "@id": websiteId },
-        about: { "@id": whiteLabelShopifyServiceId },
-        breadcrumb: { "@id": whiteLabelShopifyBreadcrumbId },
+        about: { "@id": serviceId },
+        breadcrumb: { "@id": breadcrumbId },
         mainEntity: [
-          { "@id": whiteLabelShopifyServiceId },
-          { "@id": whiteLabelShopifyFaqId },
+          { "@id": serviceId },
+          { "@id": faqId },
         ],
         primaryImageOfPage: {
           "@type": "ImageObject",
-          url: absoluteUrl(pageSeo.whiteLabelShopify.image.path),
-          width: pageSeo.whiteLabelShopify.image.width,
-          height: pageSeo.whiteLabelShopify.image.height,
+          url: absoluteUrl(page.image.path),
+          width: page.image.width,
+          height: page.image.height,
         },
         inLanguage: "en-US",
       },
       {
         "@type": "Service",
-        "@id": whiteLabelShopifyServiceId,
-        name: "White Label Shopify Development Services",
-        serviceType: "White label Shopify and Shopify Plus development",
-        url: whiteLabelShopifyPageUrl,
-        description: pageSeo.whiteLabelShopify.description,
+        "@id": serviceId,
+        name: serviceName,
+        serviceType,
+        url: pageUrl,
+        description: page.description,
         provider: { "@id": organizationId },
         audience: {
           "@type": "BusinessAudience",
-          audienceType: "Digital agencies and ecommerce agencies",
+          audienceType,
         },
         areaServed: [
           "United States",
@@ -706,24 +743,40 @@ export function createWhiteLabelShopifyPageSchema() {
           "India",
           "United Arab Emirates",
         ],
+        ...(offers
+          ? {
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: `${serviceName} capabilities`,
+                itemListElement: offers.map((offer) => ({
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: offer.title,
+                    description: offer.description,
+                  },
+                })),
+              },
+            }
+          : {}),
       },
       {
         "@type": "BreadcrumbList",
-        "@id": whiteLabelShopifyBreadcrumbId,
+        "@id": breadcrumbId,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
           {
             "@type": "ListItem",
             position: 2,
-            name: "White Label Shopify Development Services",
-            item: whiteLabelShopifyPageUrl,
+            name: breadcrumbName,
+            item: pageUrl,
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": whiteLabelShopifyFaqId,
-        mainEntity: whiteLabelShopifyFaqs.map((item) => ({
+        "@id": faqId,
+        mainEntity: faqs.map((item) => ({
           "@type": "Question",
           name: item.question,
           acceptedAnswer: {
@@ -734,6 +787,39 @@ export function createWhiteLabelShopifyPageSchema() {
       },
     ],
   };
+}
+
+export function createWhiteLabelShopifyPageSchema() {
+  return createWhiteLabelServicePageSchema({
+    page: pageSeo.whiteLabelShopify,
+    pageUrl: whiteLabelShopifyPageUrl,
+    pageId: whiteLabelShopifyPageId,
+    serviceId: whiteLabelShopifyServiceId,
+    faqId: whiteLabelShopifyFaqId,
+    breadcrumbId: whiteLabelShopifyBreadcrumbId,
+    serviceName: "White Label Shopify Development Services",
+    serviceType: "White label Shopify and Shopify Plus development",
+    breadcrumbName: "White Label Shopify Development Services",
+    audienceType: "Digital agencies and ecommerce agencies",
+    faqs: whiteLabelShopifyFaqs,
+  });
+}
+
+export function createWhiteLabelWordPressPageSchema() {
+  return createWhiteLabelServicePageSchema({
+    page: pageSeo.whiteLabelWordPress,
+    pageUrl: whiteLabelWordPressPageUrl,
+    pageId: whiteLabelWordPressPageId,
+    serviceId: whiteLabelWordPressServiceId,
+    faqId: whiteLabelWordPressFaqId,
+    breadcrumbId: whiteLabelWordPressBreadcrumbId,
+    serviceName: "White Label WordPress Development Services",
+    serviceType: "White label WordPress and WooCommerce development",
+    breadcrumbName: "White Label WordPress Development Services",
+    audienceType: "Digital, web design, ecommerce, branding, and marketing agencies",
+    faqs: whiteLabelWordPressFaqs,
+    offers: whiteLabelWordPressServices,
+  });
 }
 
 export function serializeJsonLd(value: unknown) {

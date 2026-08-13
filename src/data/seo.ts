@@ -247,6 +247,32 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  whiteLabelWordPress: {
+    path: "/white-label-wordpress-development-services",
+    title: "White Label WordPress Development Company | Dynamic Dreamz",
+    description:
+      "NDA-backed white label WordPress development for agencies, covering custom sites, WooCommerce, themes, plugins, performance and support under your brand.",
+    keywords: [
+      "white label WordPress development",
+      "white label WordPress partner",
+      "WordPress development for digital agencies",
+      "white label WooCommerce development",
+      "outsourced WordPress developers",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-02T09:34:26+00:00",
+    modifiedTime: "2026-08-13T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "White label WordPress development services for digital agencies",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

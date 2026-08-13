@@ -1,10 +1,10 @@
 # Dynamic Dreamz AEO and GEO Strategy
 
-Status: technical work implemented for seven current routes; visible AEO/GEO
+Status: technical work implemented for eight current routes; visible AEO/GEO
 recommendations deferred for live-site parity; evidence and policy approvals
 remain
 Last audited: 2026-08-13
-Scope: current Next.js migration and the seven implemented indexable routes
+Scope: current Next.js migration and the eight implemented indexable routes
 Owners: SEO, content, development, leadership, sales, HR, and client-success teams
 
 ## Purpose
@@ -27,6 +27,7 @@ It covers:
   - `/resources`
   - `/beauty-cosmetics`
   - `/white-label-shopify-development-services`
+  - `/white-label-wordpress-development-services`
 
 This is the strategy and implementation record. Visible changes proposed and
 temporarily implemented on 2026-08-12 were rejected and reverted to live-site
@@ -256,7 +257,7 @@ Representative prompts:
 
 ### Current dependencies and prelaunch migration work
 
-The seven built pages retain the approved technical AEO/GEO work. On 2026-08-13,
+The eight built pages retain the approved technical AEO/GEO work. On 2026-08-13,
 the project owner requested that visible copy and UI differences be reverted to
 the live-site presentation. Those visible recommendations remain in this file
 as deferred work rather than being removed. Planned but unbuilt URLs are
@@ -265,12 +266,12 @@ mandatory prelaunch dependencies.
 
 | Priority | Status | Issue | Required action |
 | --- | --- | --- | --- |
-| P0 | migration pending | Only seven indexable routes are implemented, while navigation and CTAs reference the larger migration | Complete and validate the intended destinations before launch |
+| P0 | migration pending | Only eight indexable routes are implemented, while navigation and CTAs reference the larger migration | Complete and validate the intended destinations before launch |
 | P0 | migration pending | Homepage `OfferCatalog`, Resources `ItemList`, and Career application URLs reference planned routes | Retain during migration; validate every final canonical destination before launch |
 | P0 | migration pending | Homepage uses root article slugs while Resources uses `/blogs` paths | Choose the legacy-compatible canonical pattern and redirects during article migration |
 | P0 | blocked by live parity | Review scores, counts, and profile URLs are not governed by one current source | Live Resources ratings and counts were restored on 2026-08-13; verify and centralize them before launch |
 | P0 | blocked by live parity | Home displays `4500+` Shopify stores while Resources visible story copy says `1000+` | Keep the live UI during migration, then resolve the definition, provenance, and approved display value before launch |
-| P1 | implemented | Sitemap and page schema previously used build time or stale `dateModified` values | All seven routes now use explicit content dates from shared SEO records |
+| P1 | implemented | Sitemap and page schema previously used build time or stale `dateModified` values | All eight routes now use explicit content dates from shared SEO records |
 | P1 | future route work | Potential Shopify Plus routes have overlapping intent | Create an intent map before building the routes |
 | P1 | deferred to article migration | Current article data does not include author or reviewer information | Add approved author, reviewer, biography, evidence, and review-date fields to each article |
 | P1 | deferred to case-study migration | Selected work links primarily to external storefronts | Create internal evidence pages with approved scope and outcomes |
@@ -1314,6 +1315,132 @@ replacement copy is tracked in `docs/page-content-improvements.md`.
   language, agentic-commerce answer, claim evidence, case studies, authorship,
   internal links to unbuilt routes, and quote-route completion.
 
+## White Label WordPress Development Services (`/white-label-wordpress-development-services`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-13
+
+Owner: SEO, content, development, leadership, sales, and delivery operations
+
+Primary audience: digital, web-design, ecommerce, branding, and marketing
+agencies seeking confidential WordPress delivery capacity
+
+Decision stage: commercial evaluation and partner selection
+
+### Page role
+
+Commercial service page for agencies evaluating a white-label WordPress and
+WooCommerce development partner. It covers behind-the-scenes delivery, custom
+sites, themes, plugins, page builders, performance, engagement models,
+technology coverage, process, confidentiality, communication, and support. Its
+WordPress/WooCommerce focus distinguishes it from the white-label Shopify,
+website-design, general WordPress, and hire-developer routes.
+
+### Target prompts
+
+- How do I choose a white label WordPress development partner for my agency?
+- Can a WordPress team deliver websites under our agency brand and NDA?
+- What does white label WordPress development cost?
+- Can a white label team support WordPress, WooCommerce, custom themes, plugins, and page builders?
+- Can a white label WordPress team scale with an agency's project pipeline?
+- How does Dynamic Dreamz handle confidentiality, communication, QA, and ongoing support?
+
+### Current strengths and available evidence
+
+- The live H1, hero lead, and introduction identify agencies and the
+  behind-the-scenes WordPress delivery model.
+- Seven visible buyer FAQs cover confidentiality, ongoing capacity, NDA use,
+  preferred tools and hosting, industries, client communication, project tools,
+  office locations, and operating hours.
+- Visible prices and engagement models give buyers commercially useful context.
+- Six service rows and 24 technology marks cover WordPress, WooCommerce,
+  custom themes/plugins, Figma conversion, performance, page builders, hosting,
+  and adjacent delivery tooling.
+- Independent Clutch, Trustpilot, and Upwork profile links appear in the hero.
+- The page can be fully server-rendered apart from the two small accordion
+  controls.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The canonical migrated route was not implemented locally | Shipped the slashless route through shared metadata, sitemap, schema, robots, and canonical helpers | Route is statically prerendered; rendered and build verification passed on 2026-08-13 |
+| P0 | implemented | Structured data | Live source emits an unrelated sitewide FAQPage in addition to the seven-question page FAQ graph | Emitted Organization, WebSite, WebPage, Service, BreadcrumbList, a primary ImageObject, and exactly one FAQPage sourced from the seven visible FAQs | Rendered JSON-LD parses with seven FAQ items and six service offers |
+| P0 | blocked by live parity | Metadata/proof consistency | Live metadata says `18+` years and `97% Client Retention Rate`, while visible content says `20+` years and does not show retention | Preserve intent in accurate local metadata; obtain an owner-approved definition and source before using the retention claim anywhere | Leadership/fact-owner approval |
+| P0 | blocked by live parity | Proof governance | `20+` years, `150+` developers, `2500+` reviews, and `1000+` sites are visible but do not yet have definitions/provenance in the shared fact source | Approve definitions, sources, owners, and allowable page usage, then centralize the values | Leadership and fact-owner approval |
+| P1 | deferred | Duplicated copy | “Optimized for SEO & Performance” repeats the “Diverse Tech Stack” description | Replace it with an approved performance/SEO delivery-process statement | Content, SEO, and delivery approval |
+| P1 | deferred | Claim support | “pixel-perfect,” “faster load times,” “better rankings,” and testing a site “to be ideal” are unsupported or unclear | Use auditable process language and approved delivery controls instead of outcome guarantees | Delivery evidence and visible-copy approval |
+| P1 | deferred | Case-study evidence | The page has no visible agency delivery example, internal case study, or approved outcome | Add an anonymized or client-approved WordPress white-label case study with scope, constraints, QA, and outcome | Client-success approval and evidence |
+| P1 | migration pending | Conversion route | All primary CTAs target planned `/request-quote` | Retain migration intent and validate the quote flow before launch | Quote route implementation |
+| P1 | suggested | Internal links | WooCommerce, WordPress development, theme customization, performance, and hire-developer topics are not linked contextually | Add descriptive links as each canonical service route ships | Route migration and visible-link approval |
+| P1 | blocked pending policy review | Operating-hours FAQ | The page gives office locations, fixed hours, and off-hours availability that affect client expectations | Confirm the current locations, hours, and support/call policy before launch | Operations/HR/sales approval |
+| P1 | suggested | Measurement | White-label WordPress discovery and lead quality are not tracked as a page cohort | Track target prompts, citations, organic/AI landings, CTA clicks, qualified agency leads, and assisted conversions | SEO/analytics ownership |
+| P2 | deferred | Authorship and review | No visible subject-matter reviewer or content-review date is present | Add an approved WordPress delivery leader/reviewer and real review date when service authorship governance exists | Named expert and approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current live introduction
+identifies the delivery model, but a later approved answer should state who the
+service is for, its WordPress/WooCommerce scope, the agency/partner boundary,
+and the role of NDA-backed delivery without adding an unsupported result claim.
+Exact visible proposals are tracked in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect the route to the shared Dynamic Dreamz Organization entity and model
+  it as a Service for agency partners.
+- Do not put source-specific hero review marks into aggregate-rating schema.
+- Do not use the unverified retention claim in schema or metadata.
+- Prioritize an approved WordPress white-label case study or anonymized delivery
+  example over new superlatives.
+- Add a delivery owner/reviewer only when the person, role, and review date are
+  approved and visible.
+
+### Internal-link and conversion actions
+
+- Keep `/request-quote` as migration pending and verify every CTA occurrence
+  before launch.
+- Add WordPress, WooCommerce, theme customization, hire-developer, and evidence
+  links only as their canonical routes are available.
+- Preserve the independent review-profile links with
+  `nofollow noopener noreferrer`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit shared Organization and WebSite nodes plus WebPage, Service,
+  BreadcrumbList, primary ImageObject, and FAQPage nodes supported by visible
+  content.
+- Use the reliable live `datePublished` value of 2024-05-02 and the actual
+  migration review date for `dateModified`; never substitute deployment time.
+- Add the canonical route and local primary image to the sitemap.
+- Verify server rendering, indexability, slashless URL output, and the absence
+  of runtime WordPress/theme asset dependencies.
+
+### Measurement plan
+
+- SEO owns monthly checks of the six target prompts above and records cited
+  pages, extracted claims, and accuracy.
+- Analytics owns organic/AI landing sessions, quote CTA engagement, qualified
+  agency enquiries, and assisted conversions.
+- Sales categorizes agency leads by WordPress/WooCommerce scope, NDA need,
+  engagement model, and pipeline size.
+
+### Verification and remaining gaps
+
+- Checks completed: live and local rendered pages and View Page Source,
+  metadata and JSON-LD graphs, heading/CTA/asset inventory, CSS/JS responsive
+  rules, service and FAQ states, 1440/768/390 plus full-page comparisons,
+  descriptive asset and hash review, server rendering, link and alt handling,
+  URL policy, lint, TypeScript, and production build.
+- Implemented items: canonical route, shared metadata and discovery records,
+  server-rendered live-visible content, local assets, accessible accordions,
+  route-aware header handling, Service and BreadcrumbList nodes, and exactly
+  one FAQPage sourced from the seven visible questions.
+- Deferred or blocked: proof governance, repeated/unsupported visible copy,
+  an approved delivery case study, authorship, internal links to unbuilt routes,
+  operating-hours confirmation, and quote-route completion.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new
@@ -1436,7 +1563,7 @@ update its statuses, review date, verification evidence, and remaining gaps.
 | P0 | migration pending | Confirm legacy redirect for Life at Dynamic Dreamz | Life |
 | P0 | migration pending | Build quote, contact, work, case-study, blog, job-detail/application routes | Home, Career, Resources |
 | P0 | blocked | Resolve CRO experience range, Career UI/PDF location differences, and current recruitment/workplace policies | Career, Life |
-| P1 | implemented for current routes | Replace deployment dates with real content dates | Sitemap and all seven built pages |
+| P1 | implemented for current routes | Replace deployment dates with real content dates | Sitemap and all eight built pages |
 | P1 | in progress | Add descriptive internal links as relevant built routes launch | Career, Life, future service pages |
 | P1 | deferred to article migration | Add approved authors/reviewers and expert profiles | Resources, future articles/services |
 | P1 | deferred to case-study migration | Turn selected work into internal evidence pages | Home, future Work/Case Study |

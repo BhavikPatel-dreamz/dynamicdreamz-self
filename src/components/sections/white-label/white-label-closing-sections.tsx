@@ -6,8 +6,17 @@ import {
   whiteLabelShopifyFinalCta,
 } from "@/content/white-label-shopify-development";
 import { siteConfig } from "@/data/site";
+import type { WhiteLabelFaq, WhiteLabelFinalCta } from "@/types/white-label-service";
 
-export function WhiteLabelShopifyFaqSection() {
+type WhiteLabelFaqSectionProps = {
+  faqs?: readonly WhiteLabelFaq[];
+  idPrefix?: string;
+};
+
+export function WhiteLabelFaqSection({
+  faqs = whiteLabelShopifyFaqs,
+  idPrefix = "white-label-shopify-faq",
+}: WhiteLabelFaqSectionProps) {
   return (
     <section className="bg-[#e6ecf0] py-20 max-[991px]:py-[50px]">
       <Container className="max-[575px]:px-4">
@@ -16,8 +25,8 @@ export function WhiteLabelShopifyFaqSection() {
         </h2>
         <FaqAccordion
           answerClassName="!font-medium tracking-[0.32px] min-[1200px]:leading-8"
-          idPrefix="white-label-shopify-faq"
-          items={whiteLabelShopifyFaqs}
+          idPrefix={idPrefix}
+          items={faqs}
           questionClassName="max-[1199px]:leading-[26px] min-[1200px]:text-lg min-[1200px]:leading-[28.8px]"
         />
       </Container>
@@ -25,17 +34,23 @@ export function WhiteLabelShopifyFaqSection() {
   );
 }
 
-export function WhiteLabelShopifyFinalCtaSection() {
+type WhiteLabelFinalCtaSectionProps = {
+  cta?: WhiteLabelFinalCta;
+};
+
+export function WhiteLabelFinalCtaSection({
+  cta = whiteLabelShopifyFinalCta,
+}: WhiteLabelFinalCtaSectionProps) {
   return (
     <section className="bg-[#fafaf7] pt-[70px] pb-[60px] max-[1199px]:py-[60px] max-[991px]:py-[30px]">
       <Container className="max-[575px]:px-4">
         <div className="flex items-center justify-between max-[991px]:flex-wrap max-[991px]:gap-5">
           <div className="flex-1 pr-[46px] max-[1199px]:pr-[30px] max-[991px]:w-full max-[991px]:flex-none max-[991px]:pr-0">
             <h2 className="mb-[15px] font-sans text-[30px] leading-[42px] font-bold text-ink max-[1199px]:text-[26px] max-[1199px]:leading-9 max-[991px]:mb-2.5 max-[991px]:text-[22px] max-[991px]:leading-8 max-[767px]:tracking-[-0.48px]">
-              {whiteLabelShopifyFinalCta.title}
+              {cta.title}
             </h2>
             <p className="text-base leading-[30.4px] font-medium text-muted max-[1199px]:leading-[26px] max-[991px]:text-[15px] max-[991px]:leading-[22px]">
-              {whiteLabelShopifyFinalCta.description}
+              {cta.description}
             </p>
           </div>
           <div className="shrink-0 max-[991px]:w-full max-[991px]:pb-[10.4px]">
@@ -44,7 +59,7 @@ export function WhiteLabelShopifyFinalCtaSection() {
               href={siteConfig.quotePath}
               variant="primary"
             >
-              {whiteLabelShopifyFinalCta.label}
+              {cta.label}
             </ButtonLink>
           </div>
         </div>

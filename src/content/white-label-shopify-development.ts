@@ -1,47 +1,13 @@
-export type WhiteLabelShopifyReview = {
-  name: string;
-  href: string;
-  image: string;
-  alt: string;
-  width: number;
-  height: number;
-};
-
-export type WhiteLabelShopifyStat = {
-  value: string;
-  label: string;
-  icon: string;
-};
-
-export type WhiteLabelShopifyCard = {
-  title: string;
-  description: string;
-};
-
-export type WhiteLabelShopifyCapability = WhiteLabelShopifyCard & {
-  icon: string;
-  tools?: readonly string[];
-};
-
-export type WhiteLabelShopifyService = WhiteLabelShopifyCard & {
-  icon: string;
-};
-
-export type WhiteLabelShopifyPlan = {
-  name: string;
-  price: string;
-  bestFor: string;
-};
-
-export type WhiteLabelShopifyTool = {
-  name: string;
-  image: string;
-};
-
-export type WhiteLabelShopifyFaq = {
-  question: string;
-  answer: string;
-};
+import type {
+  WhiteLabelCapability,
+  WhiteLabelCard,
+  WhiteLabelFaq,
+  WhiteLabelHero,
+  WhiteLabelPlan,
+  WhiteLabelService,
+  WhiteLabelStat,
+  WhiteLabelTool,
+} from "@/types/white-label-service";
 
 export const whiteLabelShopifyHero = {
   title: "White Label Shopify Development for Digital Agencies",
@@ -53,59 +19,32 @@ export const whiteLabelShopifyHero = {
   cta: "get in touch",
   illustration: "/assets/white-label-shopify/hero/white-label-shopify-development-agencies.svg",
   illustrationAlt: "White label Shopify development for digital agencies",
-} as const;
+} as const satisfies WhiteLabelHero;
 
-export const whiteLabelShopifyReviews: readonly WhiteLabelShopifyReview[] = [
-  {
-    name: "Clutch",
-    href: "https://clutch.co/profile/dynamic-dreamz",
-    image: "/assets/white-label-shopify/reviews/clutch-4-9-rating.svg",
-    alt: "Dynamic Dreamz on Clutch — 4.9 rating",
-    width: 140,
-    height: 49,
-  },
-  {
-    name: "Trustpilot",
-    href: "https://www.trustpilot.com/review/dynamicdreamz.com",
-    image: "/assets/white-label-shopify/reviews/trustpilot-4-9-trustscore.svg",
-    alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
-    width: 190,
-    height: 61,
-  },
-  {
-    name: "Upwork",
-    href: "https://www.upwork.com/ag/dynamicdreamz/",
-    image: "/assets/white-label-shopify/reviews/upwork-top-rated-plus.svg",
-    alt: "Dynamic Dreamz — Upwork Top Rated Plus",
-    width: 127,
-    height: 54,
-  },
-];
-
-export const whiteLabelShopifyStats: readonly WhiteLabelShopifyStat[] = [
+export const whiteLabelShopifyStats: readonly WhiteLabelStat[] = [
   {
     value: "20+",
     label: "Years of experience",
-    icon: "/assets/white-label-shopify/proof/years-of-experience.svg",
+    icon: "/assets/proof/years-of-experience.svg",
   },
   {
     value: "150+",
     label: "Skilled Developers",
-    icon: "/assets/white-label-shopify/proof/skilled-developers.svg",
+    icon: "/assets/proof/skilled-developers.svg",
   },
   {
     value: "2500+",
     label: "Client Reviews",
-    icon: "/assets/white-label-shopify/proof/client-reviews.svg",
+    icon: "/assets/proof/client-reviews.svg",
   },
   {
     value: "1000+",
     label: "Shopify Sites Delivered",
-    icon: "/assets/white-label-shopify/proof/shopify-sites-delivered.svg",
+    icon: "/assets/proof/sites-delivered.svg",
   },
 ];
 
-export const whiteLabelShopifyReasons: readonly (WhiteLabelShopifyCard | null)[] = [
+export const whiteLabelShopifyReasons: readonly (WhiteLabelCard | null)[] = [
   {
     title: "100% White Label Solution",
     description: "Your brand, our expertise. We work behind the scenes while you take full credit.",
@@ -167,7 +106,7 @@ export const deliveredUnderBrand = {
       icon: "/assets/white-label-shopify/ai/email-retention.svg",
       tools: ["Klaviyo"],
     },
-  ] satisfies readonly WhiteLabelShopifyCapability[],
+  ] satisfies readonly WhiteLabelCapability[],
 } as const;
 
 export const aiDrivenShopping = {
@@ -195,10 +134,10 @@ export const aiDrivenShopping = {
       description: "Reviews, internal linking, and product data the full trust layer AI needs to recommend a store.",
       icon: "/assets/white-label-shopify/ai/trust-signals.svg",
     },
-  ] satisfies readonly WhiteLabelShopifyCapability[],
+  ] satisfies readonly WhiteLabelCapability[],
 } as const;
 
-export const whiteLabelShopifyServices: readonly WhiteLabelShopifyService[] = [
+export const whiteLabelShopifyServices: readonly WhiteLabelService[] = [
   {
     title: "Custom Shopify Store Development",
     description: "We can fully customize Shopify stores that match your client's brand identity.",
@@ -217,7 +156,7 @@ export const whiteLabelShopifyServices: readonly WhiteLabelShopifyService[] = [
   {
     title: "Figma to Shopify",
     description: "Our designers can convert your Figma design into fully functional Shopify stores.",
-    icon: "/assets/white-label-shopify/services/figma-to-shopify.svg",
+    icon: "/assets/services/figma-design-conversion.svg",
   },
   {
     title: "Shopify App Development",
@@ -231,7 +170,7 @@ export const whiteLabelShopifyServices: readonly WhiteLabelShopifyService[] = [
   },
 ];
 
-export const whiteLabelShopifyPlans: readonly WhiteLabelShopifyPlan[] = [
+export const whiteLabelShopifyPlans: readonly WhiteLabelPlan[] = [
   {
     name: "Hourly Development",
     price: "$25/hr",
@@ -249,7 +188,7 @@ export const whiteLabelShopifyPlans: readonly WhiteLabelShopifyPlan[] = [
   },
 ];
 
-const tool = (name: string, filename: string): WhiteLabelShopifyTool => ({
+const tool = (name: string, filename: string): WhiteLabelTool => ({
   name,
   image: `/assets/white-label-shopify/tools/${filename}.svg`,
 });
@@ -322,7 +261,7 @@ export const whiteLabelShopifyProcess = [
   },
 ] as const;
 
-export const whiteLabelShopifyFaqs: readonly WhiteLabelShopifyFaq[] = [
+export const whiteLabelShopifyFaqs: readonly WhiteLabelFaq[] = [
   {
     question: "Can you handle AI and automation work for our clients' Shopify stores?",
     answer:

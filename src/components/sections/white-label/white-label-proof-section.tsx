@@ -6,13 +6,20 @@ import {
   whiteLabelShopifyStats,
 } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
+import type { WhiteLabelCard, WhiteLabelStat } from "@/types/white-label-service";
 
-export function WhiteLabelShopifyStatsSection() {
+type WhiteLabelStatsSectionProps = {
+  stats?: readonly WhiteLabelStat[];
+};
+
+export function WhiteLabelStatsSection({
+  stats = whiteLabelShopifyStats,
+}: WhiteLabelStatsSectionProps) {
   return (
     <section className="py-20 max-[991px]:py-[50px]">
       <Container className="max-[575px]:px-4">
         <ul className="flex items-center justify-between max-[991px]:flex-wrap max-[991px]:gap-y-[30px] max-[767px]:gap-y-5">
-          {whiteLabelShopifyStats.map((stat, index) => (
+          {stats.map((stat, index) => (
             <li
               className={cn(
                 "w-1/4 border-r border-ink/10 last:border-r-0 max-[991px]:w-1/2 max-[767px]:w-full max-[767px]:border-r-0 max-[767px]:border-b max-[767px]:pb-5 max-[767px]:last:border-b-0 max-[767px]:last:pb-0",
@@ -49,17 +56,31 @@ export function WhiteLabelShopifyStatsSection() {
   );
 }
 
-export function WhiteLabelShopifyWhySection() {
+type WhiteLabelWhySectionProps = {
+  title?: string;
+  reasons?: readonly (WhiteLabelCard | null)[];
+};
+
+export function WhiteLabelWhySection({
+  title = "Why Partner with Dynamic Dreamz for White Label Shopify Development?",
+  reasons = whiteLabelShopifyReasons,
+}: WhiteLabelWhySectionProps) {
+  const lastVisibleIndex = reasons.reduce(
+    (lastIndex, reason, index) => (reason ? index : lastIndex),
+    -1,
+  );
+  const lastRowIndex = Math.ceil(reasons.length / 3) - 1;
+
   return (
     <section className="bg-[#fafaf7] pt-[70px] pb-[82px] max-[1199px]:py-20 max-[991px]:py-[50px]">
       <Container className="max-[575px]:px-4">
         <h2 className="mb-5 text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[60px] max-[991px]:mb-10 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
-          Why Partner with Dynamic Dreamz for White Label Shopify Development?
+          {title}
         </h2>
         <div className="grid grid-cols-3 max-[767px]:grid-cols-1 max-[767px]:gap-5">
-          {whiteLabelShopifyReasons.map((reason, index) => {
+          {reasons.map((reason, index) => {
             const isEmpty = reason === null;
-            const isLastVisible = index === 7;
+            const isLastVisible = index === lastVisibleIndex;
             const column = index % 3;
             const row = Math.floor(index / 3);
 
@@ -69,7 +90,7 @@ export function WhiteLabelShopifyWhySection() {
                   "relative px-[25px] py-10 text-center max-[1199px]:px-5 max-[1199px]:py-[30px] max-[991px]:py-5",
                   column !== 2 &&
                     "after:absolute after:top-0 after:right-0 after:h-full after:w-px after:bg-[linear-gradient(180deg,transparent,rgba(51,51,51,0.2),transparent)]",
-                  row < 2 &&
+                  row < lastRowIndex &&
                     "before:absolute before:right-0 before:bottom-0 before:left-0 before:h-px before:bg-[linear-gradient(90deg,transparent,rgba(51,51,51,0.2),transparent)]",
                   column === 0 && "pl-0 max-[1199px]:pl-0",
                   column === 2 && "pr-0 max-[1199px]:pr-0",

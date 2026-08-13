@@ -3,16 +3,18 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import type { WhiteLabelShopifyService } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
+import type { WhiteLabelService } from "@/types/white-label-service";
 
-type WhiteLabelShopifyServiceAccordionProps = {
-  services: readonly WhiteLabelShopifyService[];
+type WhiteLabelServiceAccordionProps = {
+  services: readonly WhiteLabelService[];
+  idPrefix: string;
 };
 
-export function WhiteLabelShopifyServiceAccordion({
+export function WhiteLabelServiceAccordion({
+  idPrefix,
   services,
-}: WhiteLabelShopifyServiceAccordionProps) {
+}: WhiteLabelServiceAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const columns = [services.slice(0, 3), services.slice(3)];
 
@@ -23,8 +25,8 @@ export function WhiteLabelShopifyServiceAccordion({
           {column.map((service, itemIndex) => {
             const index = columnIndex * 3 + itemIndex;
             const isOpen = openIndex === index;
-            const triggerId = `white-label-service-trigger-${index}`;
-            const panelId = `white-label-service-panel-${index}`;
+            const triggerId = `${idPrefix}-trigger-${index}`;
+            const panelId = `${idPrefix}-panel-${index}`;
             const isLastInColumn = itemIndex === column.length - 1;
 
             return (
@@ -69,7 +71,7 @@ export function WhiteLabelShopifyServiceAccordion({
 
                 <div
                   className={cn(
-                    "grid transition-[grid-template-rows] duration-700 ease-in-out",
+                    "grid transition-[grid-template-rows] duration-700 ease-in-out motion-reduce:duration-0",
                     isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
                   )}
                   id={panelId}
