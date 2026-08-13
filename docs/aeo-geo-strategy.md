@@ -1674,10 +1674,6 @@ update its statuses, review date, verification evidence, and remaining gaps.
 | P0 | migration pending | Build quote, contact, work, case-study, blog, job-detail/application routes | Home, Career, Resources |
 | P0 | blocked | Resolve CRO experience range, Career UI/PDF location differences, and current recruitment/workplace policies | Career, Life |
 | P1 | implemented for current routes | Replace deployment dates with real content dates | Sitemap and all eight built pages |
-<<<<<<< HEAD
-=======
-
->>>>>>> 4be623a (feat: add fashion industry page and related components)
 | P1 | in progress | Add descriptive internal links as relevant built routes launch | Career, Life, future service pages |
 | P1 | deferred to article migration | Add approved authors/reviewers and expert profiles | Resources, future articles/services |
 | P1 | deferred to case-study migration | Turn selected work into internal evidence pages | Home, future Work/Case Study |
