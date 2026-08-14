@@ -258,7 +258,7 @@ Representative prompts:
 
 ### Current dependencies and prelaunch migration work
 
-The eight built pages retain the approved technical AEO/GEO work. On 2026-08-13,
+The ten built pages retain the approved technical AEO/GEO work. On 2026-08-13,
 the project owner requested that visible copy and UI differences be reverted to
 the live-site presentation. Those visible recommendations remain in this file
 as deferred work rather than being removed. Planned but unbuilt URLs are
@@ -267,12 +267,12 @@ mandatory prelaunch dependencies.
 
 | Priority | Status | Issue | Required action |
 | --- | --- | --- | --- |
-| P0 | migration pending | Only eight indexable routes are implemented, while navigation and CTAs reference the larger migration | Complete and validate the intended destinations before launch |
+| P0 | migration pending | Only ten indexable routes are implemented, while navigation and CTAs reference the larger migration | Complete and validate the intended destinations before launch |
 | P0 | migration pending | Homepage `OfferCatalog`, Resources `ItemList`, and Career application URLs reference planned routes | Retain during migration; validate every final canonical destination before launch |
 | P0 | migration pending | Homepage uses root article slugs while Resources uses `/blogs` paths | Choose the legacy-compatible canonical pattern and redirects during article migration |
 | P0 | blocked by live parity | Review scores, counts, and profile URLs are not governed by one current source | Live Resources ratings and counts were restored on 2026-08-13; verify and centralize them before launch |
 | P0 | blocked by live parity | Home displays `4500+` Shopify stores while Resources visible story copy says `1000+` | Keep the live UI during migration, then resolve the definition, provenance, and approved display value before launch |
-| P1 | implemented | Sitemap and page schema previously used build time or stale `dateModified` values | All eight routes now use explicit content dates from shared SEO records |
+| P1 | implemented | Sitemap and page schema previously used build time or stale `dateModified` values | All ten routes now use explicit content dates from shared SEO records |
 | P1 | future route work | Potential Shopify Plus routes have overlapping intent | Create an intent map before building the routes |
 | P1 | deferred to article migration | Current article data does not include author or reviewer information | Add approved author, reviewer, biography, evidence, and review-date fields to each article |
 | P1 | deferred to case-study migration | Selected work links primarily to external storefronts | Create internal evidence pages with approved scope and outcomes |
@@ -1551,6 +1551,324 @@ retention outcomes. Exact visible proposals are tracked in
   internal case studies/service links, and conversion-route completion require
   approval or destination migration.
 
+## Health & Nutrition (`/healthcare`)
+
+Status: technical implementation and audit complete; visible recommendations deferred
+Last reviewed: 2026-08-13
+Owner: SEO, content, development, and client success
+Primary audience: Health, nutrition, supplements, wellness, healthcare-product,
+dental-practice, and digital-agency decision makers
+Decision stage: Solution awareness through agency evaluation
+
+### Page role
+
+Industry landing page for health, nutrition, wellness, healthcare-product, and
+dental organizations evaluating ecommerce and website delivery. It differs
+from the broader Shopify routes by leading with precise product information,
+online ordering, responsive presentation, white-label delivery, social
+integration, dental-practice website needs, and six visible sector examples.
+
+### Target prompts
+
+- Which agency builds ecommerce stores for health and nutrition brands?
+- Can Dynamic Dreamz build healthcare-product and supplement storefronts?
+- Does Dynamic Dreamz provide white-label health and nutrition development?
+- Can Dynamic Dreamz develop websites for dentists and dental practices?
+- Which health and nutrition brands has Dynamic Dreamz supported?
+
+### Current strengths and available evidence
+
+- The live page has a clear Health & Nutrition H1, a separate dental-solutions
+  section, five visible deliverables, and six externally linked portfolio examples.
+- Naakbar, Nordic Nutrition, Elavate, Nufyx, Turmeric Vitality, and Health Co
+  are visibly named and linked; attribution remains subject to ongoing
+  client-permission governance.
+- The page can reuse the already-audited server-rendered industry layout while
+  extending only its typed solution-row contract.
+- The live publish date and required local media have been captured and audited
+  for exact and perceptual duplicates.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | in progress | Route and discovery | `/healthcare` is linked from navigation but is not implemented locally | Build the slashless server-rendered route with shared metadata, robots, sitemap, schema, and canonical helpers | Rendered/build verification |
+| P0 | migration pending | Conversion routes | `/request-quote`, `/dental-clinic-website-development-company`, and `/our-work` are not built | Preserve migration-intent paths now; build or redirect and validate all three before launch | Route migration |
+| P0 | in progress | Schema accuracy | Live source injects an unrelated sitewide FAQPage that is not visible on this route | Emit only Organization, WebSite, WebPage, BreadcrumbList, and a page-specific Service/OfferCatalog | Rendered schema audit |
+| P1 | in progress | Metadata | The live title is far beyond the project’s 60-character target | Preserve intent in concise route-specific metadata with canonical, Open Graph, and Twitter data | Rendered/build audit |
+| P1 | baseline in progress; case studies migration pending | Evidence | Portfolio proof routes only to external storefronts and does not state approved scope or outcomes | Preserve the six visible links; add internal case studies only when attribution, scope, and outcomes are approved | Client-success approval and case-study migration |
+| P1 | deferred | Audience precision | The page combines health-product ecommerce with dental-practice website services without explaining the relationship | Preserve the live layout during migration; later add a concise scope statement if approved | Content/service-owner approval |
+| P1 | deferred | Compliance claims | The page mentions evolving compliance needs without naming jurisdictions, controls, or delivery boundaries | Avoid implying regulated-compliance guarantees; add reviewed scope only with legal/security approval | Legal, security, and delivery evidence |
+| P1 | migration pending | Internal links | The page does not connect to built Shopify capabilities or internal health/dental case studies | Add descriptive links only as their canonical local routes ship | Route coverage and visible-link approval |
+| P2 | deferred | Answer copy and FAQs | The page lacks one concise provider/capability answer and visible evaluation FAQs | Add evidence-backed copy only after exact visible wording is approved; mirror any visible FAQ exactly in schema | Content and factual approval |
+
+### Suggested answer copy
+
+Deferred under the migration live-UI gate. A future answer should identify
+Dynamic Dreamz, the health/nutrition/dental audiences, ecommerce and website
+capabilities, and concrete deliverables without implying medical, regulatory,
+security, revenue, or patient-outcome guarantees. Exact visible proposals are
+tracked in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Model the page as a health, nutrition, wellness, and dental web-development
+  Service provided by the shared Dynamic Dreamz Organization.
+- Keep the six visible brand names and destinations aligned with the rendered
+  portfolio; do not add outcomes or case-study attribution without approval.
+- Do not invent healthcare certifications, compliance guarantees, authors,
+  reviewers, credentials, ratings, or project results.
+
+### Internal-link and conversion actions
+
+- Preserve the live Request a Quote, Get Started, Dental Read More, portfolio,
+  and View our work paths using slashless migration-intent URLs.
+- Keep external project links secure and preserve the live nofollow intent.
+- Connect to Shopify development, Shopify Plus, health/dental case studies, and
+  relevant resources only as those local destinations become available.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Organization, WebSite, WebPage, BreadcrumbList, and a page-specific
+  Service whose offers match the five visible deliverables.
+- Do not emit FAQPage because the route has no visible FAQ content.
+- Preserve the real 2024-05-06 publish timestamp and use the actual migration
+  review date for modification; never substitute deployment time.
+- Keep the page indexable and include its canonical route and local primary
+  image in the sitemap.
+
+### Measurement plan
+
+- Track impressions/clicks for health ecommerce, nutrition Shopify, supplement
+  storefront, dental website development, online health-product ordering, and
+  white-label healthcare-development queries.
+- Sample the target prompts monthly across relevant search and answer engines;
+  record page citations, claim accuracy, and competing sources.
+- Track quote, dental-service, portfolio, and View our work clicks once
+  analytics governance is configured.
+
+### Verification and remaining gaps
+
+- Checks completed: rendered live page, View Page Source, metadata/date/canonical,
+  heading/CTA/link/image inventory, live JSON-LD, CSS/JS, desktop/tablet/mobile
+  screenshots, and exact/perceptual asset duplicate audit.
+- Implemented items: none yet; route work follows this required audit.
+- Deferred or blocked: visible copy changes, compliance specificity, evidence,
+  authorship, internal case studies, and unbuilt CTA destinations require
+  approval or later route coverage.
+
+## Food & Beverages (`/food-beverages`)
+
+Status: server-rendered route implemented with exact local media; visible recommendations deferred
+Last reviewed: 2026-08-14
+Owner: SEO, content, development, and client success
+Primary audience: Food, beverage, restaurant, cafe, bar, grocery, CPG, and digital-agency decision makers
+Decision stage: Solution awareness through agency evaluation
+
+### Page role
+
+Industry landing page for food and beverage businesses evaluating ecommerce,
+website, reservation, responsive-design, social-integration, and portfolio
+delivery. It differs from broader Shopify routes by leading with food and
+beverage presentation, online reservation needs, social-update workflows, and
+sector examples.
+
+### Target prompts
+
+- Which agency builds ecommerce websites for food and beverage brands?
+- Can Dynamic Dreamz build Shopify stores for food and beverage companies?
+- Does Dynamic Dreamz support restaurant or cafe reservation website features?
+- Which food and beverage brands has Dynamic Dreamz supported?
+
+### Current strengths and available evidence
+
+- The live page has a clear Food & Beverages H1, one solution section, five
+  visible deliverables, and six externally linked portfolio examples.
+- The page reuses the server-rendered shared industry layout and existing
+  brand/logo, platform, CTA, portfolio, and carousel components.
+- The exact hero, solution, and portfolio rasters were verified byte-for-byte
+  against the live page and are available under project-owned local paths.
+- Four exact deliverable icons can be reused. The live custom-branding icon has
+  no exact or visually identical local copy and needs one descriptive local
+  asset.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | `/food-beverages` was linked from navigation but not implemented locally | Build the slashless server-rendered route with metadata, robots, sitemap, schema, and canonical helpers | `npm run lint`, `npm run build`, `npm run check:urls`, and rendered audit |
+| P0 | in progress | Exact media parity | The route uses unrelated temporary Matcha and blog imagery even though exact local Food & Beverages media is available | Reference the verified exact hero, solution, and six portfolio rasters under `public/assets/food-beverages/**`; use the exact live icon variants | Live/local asset hash audit and responsive screenshot comparison |
+| P0 | migration pending | Conversion routes | `/request-quote` and `/our-work` are not built | Preserve migration-intent paths now; build or redirect and validate both before launch | Route migration |
+| P0 | implemented | Schema accuracy | The route needs schema without unsupported hidden FAQ content | Emit Organization, WebSite, WebPage, BreadcrumbList, and a page-specific Service/OfferCatalog | Rendered schema audit |
+| P1 | implemented | Metadata | The live title pattern is longer than the project title budget | Preserve intent in concise route-specific metadata with canonical, Open Graph, and Twitter data | Rendered/build audit |
+| P1 | deferred | Claim support | Visible copy says interactive features increase footfall, retention, and business growth without page-level evidence | Preserve live wording during migration; later qualify it or add approved evidence | Content/client-success approval |
+| P1 | migration pending | Internal links | The page does not connect to relevant built Shopify capabilities or food/beverage case studies | Add descriptive service and case-study links as their canonical routes ship | Route coverage and visible-link approval |
+| P2 | deferred | Answer copy and FAQs | The page lacks one concise provider/capability answer and visible evaluation FAQs | Add evidence-backed copy only after exact visible wording is approved; mirror any visible FAQ exactly in schema | Content and factual approval |
+
+### Suggested answer copy
+
+Deferred under the migration live-UI gate. A future answer should identify
+Dynamic Dreamz, the food/beverage audiences, ecommerce and reservation
+capabilities, and concrete deliverables without implying guaranteed growth,
+retention, customer traffic, compliance, revenue, or operational outcomes.
+
+### Entity, evidence, and authorship actions
+
+- Model the page as a food and beverage ecommerce-development Service provided
+  by the shared Dynamic Dreamz Organization.
+- Keep the six visible brand names and destinations aligned with the rendered
+  portfolio; do not add outcomes or case-study attribution without approval.
+- Do not invent authors, reviewers, credentials, ratings, or project results.
+
+### Internal-link and conversion actions
+
+- Preserve the live Request a Quote, Get Started, portfolio, and View our work
+  CTA flow using slashless migration-intent paths.
+- Keep external project links secure and preserve the live nofollow intent.
+- Connect to Shopify development, Shopify Plus, food/beverage case studies, and
+  relevant resources only as those local destinations become available.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Organization, WebSite, WebPage, BreadcrumbList, and a page-specific
+  Service whose offers match the five visible deliverables.
+- Do not emit FAQPage because the route has no visible FAQ content.
+- Keep the page indexable and include its canonical route and local primary
+  image in the sitemap.
+
+### Measurement plan
+
+- Track impressions/clicks for food ecommerce, beverage ecommerce, restaurant
+  reservation website, Shopify food store, and food-and-beverage web design
+  queries.
+- Sample the target prompts monthly across relevant search and answer engines;
+  record page citations, claim accuracy, and competing sources.
+- Track quote, portfolio, and View our work clicks once analytics governance is
+  configured.
+
+### Verification and remaining gaps
+
+- Checks completed: live rendered page and View Page Source, exact live
+  industry CSS/JS, desktop/tablet/mobile screenshots, asset URL inventory,
+  byte-for-byte raster/icon audit, and local component reuse audit.
+- Implemented items: slashless `/food-beverages` App Router page, shared typed
+  industry sections/content, route metadata/discovery records, no-trailing-slash
+  links, and page-relevant WebPage/BreadcrumbList/Service schema.
+- In progress: exact project-owned media references, the exact custom-branding
+  icon, real publish date, final responsive screenshots, metadata/schema audit,
+  URL-policy guard, lint, and production build.
+- Deferred or blocked: visible copy changes, evidence, authorship, internal case
+  studies/service links, and unbuilt CTA destinations require approval or later
+  route coverage.
+
+## Pet Industry (`/pet-industry`)
+
+Status: migration audit complete; technical implementation in progress; visible recommendations deferred
+Last reviewed: 2026-08-14
+Owner: SEO, content, development, and client success
+Primary audience: Pet retailers, pet-food and accessory brands, equestrian
+brands, pet-service businesses, and digital-agency decision makers
+Decision stage: Solution awareness through agency evaluation
+
+### Page role
+
+Industry landing page for pet businesses evaluating ecommerce, content
+management, responsive storefronts, interactive media, social integration, and
+related website delivery. It differs from broader Shopify routes by leading
+with pet-product presentation and six visible pet/equestrian portfolio examples.
+
+### Target prompts
+
+- Which agency builds ecommerce websites for pet brands?
+- Can Dynamic Dreamz build Shopify stores for pet food and accessories?
+- What website capabilities does Dynamic Dreamz offer pet businesses?
+- Which pet and equestrian brands has Dynamic Dreamz supported?
+- Can Dynamic Dreamz build responsive pet-product stores and content systems?
+
+### Current strengths and available evidence
+
+- The live page has a clear Pet Industry H1, one solution section, five visible
+  deliverables, and six externally linked portfolio examples.
+- Kentaur Australia, Paw Labs, My Pet Frame, Neater Pets, Supertails, and
+  Pagerie are visibly named and linked; attribution remains subject to ongoing
+  client-permission governance.
+- The route can reuse the established server-rendered industry layout and its
+  shared logo rail, deliverable carousel, portfolio interactions, and CTAs.
+- The exact live media and CSS/JavaScript behavior have been captured; three
+  icons and the Shopify mark are exact existing local matches.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | `/pet-industry` was linked from navigation but was not implemented locally | Built the slashless server-rendered route with shared metadata, sitemap, schema, and canonical helpers | Rendered/build verification complete 2026-08-14 |
+| P0 | implemented | Legacy URL equity | Live canonical and historic discovery use `/industries/pet-industry/` while the requested migration route is `/pet-industry` | Added a permanent slashless redirect from `/industries/pet-industry` to `/pet-industry` | 308 redirect and URL-policy verification complete |
+| P0 | migration pending | Conversion routes | `/request-quote` and `/our-work` are not built | Preserve migration-intent paths now; build or redirect and validate both before launch | Route migration |
+| P0 | implemented | Schema accuracy | Live source injects an unrelated sitewide FAQPage that is not visible on this route | Emit only Organization, WebSite, WebPage, BreadcrumbList, and a page-specific Service/OfferCatalog | Rendered schema audit complete |
+| P1 | implemented | Metadata | The live title is 98 characters and exceeds the project 60-character target | Preserve the ecommerce and pet-industry intent in concise route-specific metadata | Rendered/build audit complete |
+| P1 | implemented accessibility correction | Image meaning | Live hero and portfolio alts are generic brand-plus-Image labels | Keep exact media and use subject-specific alt text without changing visible UI | Rendered image audit complete |
+| P1 | implemented link-integrity correction | Kentaur project | The card image links to Kentaur Australia while the visible name link points to SomewhereCo | Use the visible Kentaur identity and its image-link destination consistently | Source comparison and link audit complete |
+| P1 | deferred | Claim support | Visible copy claims 15+ clients, client excellence, and goal achievement without page-level evidence | Preserve live wording during migration; later qualify it or add approved evidence | Client-success/content approval |
+| P1 | migration pending | Internal links | The page does not connect to relevant built Shopify capabilities or pet-industry case studies | Add descriptive links only as their canonical local routes ship | Route coverage and visible-link approval |
+| P2 | deferred | Answer copy and FAQs | The page lacks one concise provider/capability answer and useful evaluation FAQs | Add evidence-backed copy only after exact visible wording is approved; mirror any visible FAQ exactly in schema | Content and factual approval |
+
+### Suggested answer copy
+
+Deferred under the migration live-UI gate. A future answer should identify
+Dynamic Dreamz, pet/equestrian audiences, ecommerce and CMS capabilities, and
+concrete storefront deliverables without implying guaranteed growth, outcomes,
+or unsupported client counts. Exact visible proposals are tracked in
+`docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Model the page as a pet-industry ecommerce-development Service provided by
+  the shared Dynamic Dreamz Organization.
+- Keep the six visible project names and destinations aligned with the rendered
+  portfolio; do not add outcomes or case-study attribution without approval.
+- Do not invent authors, reviewers, credentials, ratings, or project results.
+
+### Internal-link and conversion actions
+
+- Preserve the live Request a Quote, Get Started, portfolio, and View our work
+  CTA flow using slashless migration-intent paths.
+- Keep external project links secure and preserve the live nofollow intent.
+- Connect to Shopify development, Shopify Plus, pet-industry case studies, and
+  relevant resources only as those local destinations become available.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Organization, WebSite, WebPage, BreadcrumbList, and a page-specific
+  Service whose offers match the five visible deliverables.
+- Do not emit FAQPage because the route has no visible FAQ content.
+- Preserve the real 2024-05-06 publish timestamp and use the migration review
+  date for modification.
+- Keep the page indexable and include its canonical route and local primary
+  image in the sitemap.
+
+### Measurement plan
+
+- Track impressions/clicks for pet ecommerce, pet Shopify store, pet website
+  development, pet CMS, pet accessories ecommerce, and equestrian ecommerce.
+- Sample the target prompts monthly across relevant search and answer engines;
+  record page citations, claim accuracy, and competing sources.
+- Track quote, portfolio, and View our work clicks once analytics governance is
+  configured.
+
+### Verification and remaining gaps
+
+- Checks completed: live/local rendered pages, View Page Source, metadata/date/
+  canonical, heading/CTA/link/image inventory, page-relevant JSON-LD, exact
+  industry CSS/JavaScript, desktop/tablet/mobile screenshots, responsive
+  overflow, loaded-image dimensions, legacy redirects, and SHA-256 asset audit.
+- Implemented items: slashless server-rendered route, permanent legacy
+  redirect, shared typed industry sections/content, exact project-owned media,
+  route metadata/discovery records, accurate alt text, consistent Kentaur link,
+  and page-relevant WebPage/BreadcrumbList/Service schema.
+- Deferred or blocked: visible copy changes, proof governance, authorship,
+  internal case studies/service links, and unbuilt CTA destinations require
+  approval or later route coverage.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new
@@ -1673,7 +1991,7 @@ update its statuses, review date, verification evidence, and remaining gaps.
 | P0 | migration pending | Confirm legacy redirect for Life at Dynamic Dreamz | Life |
 | P0 | migration pending | Build quote, contact, work, case-study, blog, job-detail/application routes | Home, Career, Resources |
 | P0 | blocked | Resolve CRO experience range, Career UI/PDF location differences, and current recruitment/workplace policies | Career, Life |
-| P1 | implemented for current routes | Replace deployment dates with real content dates | Sitemap and all eight built pages |
+| P1 | implemented for current routes | Replace deployment dates with real content dates | Sitemap and all ten built pages |
 | P1 | in progress | Add descriptive internal links as relevant built routes launch | Career, Life, future service pages |
 | P1 | deferred to article migration | Add approved authors/reviewers and expert profiles | Resources, future articles/services |
 | P1 | deferred to case-study migration | Turn selected work into internal evidence pages | Home, future Work/Case Study |

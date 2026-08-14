@@ -14,6 +14,20 @@ export type IndustryDeliverable = {
   height: number;
 };
 
+export type IndustrySolution = {
+  title: string;
+  subtitle: string;
+  description: string;
+  additionalDescriptions?: readonly string[];
+  image: IndustryImage;
+  imagePosition?: "start" | "end";
+  cta?: {
+    label: string;
+    href: string;
+    ariaLabel?: string;
+  };
+};
+
 export type IndustryPortfolioItem = {
   name: string;
   category: string;
@@ -40,12 +54,7 @@ export type IndustryPageContent = {
   brands: {
     ariaLabel: string;
   };
-  solutions: {
-    title: string;
-    subtitle: string;
-    description: string;
-    image: IndustryImage;
-  };
+  solutions: IndustrySolution | readonly IndustrySolution[];
   deliverables: {
     title: string;
     description: string;

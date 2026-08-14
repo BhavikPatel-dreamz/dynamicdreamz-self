@@ -23,11 +23,11 @@ function PortfolioCard({ item }: { item: IndustryPortfolioItem }) {
           sizes="(max-width: 575px) calc(100vw - 32px), (max-width: 991px) 330px, 370px"
         />
         <span
-          className="pointer-events-none absolute inset-0 z-1 bg-black/40 opacity-0 transition-opacity duration-300 group-hover/project:opacity-100 group-focus-visible/project:opacity-100"
+          className="pointer-events-none absolute inset-0 z-1 bg-black/40 opacity-0 transition-opacity duration-300 group-hover/project:opacity-100 group-focus/project:opacity-100"
           data-project-overlay
         />
         <span
-          className="absolute bottom-[-60px] left-1/2 z-2 flex -translate-x-1/2 items-center gap-2.5 text-lg leading-[25.2px] font-bold whitespace-nowrap text-white transition-[bottom] duration-500 ease-in-out group-hover/project:bottom-[30px] group-focus-visible/project:bottom-[30px]"
+          className="absolute bottom-[-60px] left-1/2 z-2 flex -translate-x-1/2 items-center gap-2.5 text-lg leading-[25.2px] font-bold whitespace-nowrap text-white transition-[bottom] duration-500 ease-in-out group-hover/project:bottom-[30px] group-focus/project:bottom-[30px]"
           data-project-link
         >
           View Project
@@ -41,7 +41,7 @@ function PortfolioCard({ item }: { item: IndustryPortfolioItem }) {
           />
         </span>
         <span
-          className="absolute top-[25px] right-6 z-2 translate-y-2.5 opacity-0 transition-[opacity,transform] duration-500 ease-in-out group-hover/project:translate-y-0 group-hover/project:opacity-100 group-focus-visible/project:translate-y-0 group-focus-visible/project:opacity-100"
+          className="absolute top-[25px] right-6 z-2 translate-y-2.5 opacity-0 transition-[opacity,transform] duration-500 ease-in-out group-hover/project:translate-y-0 group-hover/project:opacity-100 group-focus/project:translate-y-0 group-focus/project:opacity-100"
           data-project-platform
         >
           <Image

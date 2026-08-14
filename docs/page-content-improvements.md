@@ -246,3 +246,65 @@ fashion-industry web design.
 | Portfolio image alt text | Live labels incorrectly identify SomewhereCo as Sambazon and Donj Jewellery as The Huddle Sports Grill. | Use brand- and subject-specific descriptions for all six project images. | Prevents unrelated alt text and accurately describes the visible media. | High | implemented as approved nonvisual accessibility correction |
 | CTA destinations | `/request-quote` and `/our-work` are not built. | Preserve their migration-intent paths and validate or redirect both before launch. | Maintains live CTA flow during migration. | High | migration pending |
 
+## Health & Nutrition (`/healthcare`)
+
+Status: visible recommendations deferred; live UI will be preserved during migration
+Last reviewed: 2026-08-13
+Primary SEO intent: health and nutrition ecommerce development, supplement
+stores, healthcare-product websites, dental-practice websites, online ordering,
+responsive layouts, and white-label delivery.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | Health & Nutrition Industry Web Development \| E-Commerce for Health Industry \| E-Commerce for Nutrition Industry \| Web Development India \| Dynamic Dreamz | Health & Nutrition Ecommerce Development \| Dynamic Dreamz | Preserves the provider and primary commercial intent within the 60-character title budget. | High | planned for metadata |
+| Hero description | “The Health & Nutrition industry can thrust growth across the value chain through our technology supported web solutions.” | “Support your health and nutrition business with ecommerce and website solutions designed for clear product information, online ordering, and responsive customer experiences.” | Removes an unsupported growth implication and explains the offer directly. | High | deferred pending exact visible-copy approval |
+| Health solutions paragraph | “We emphasize on displaying the healthcare products and service description and the target customers.” | Explain accurate product/service presentation, intended audiences, ecommerce delivery, and customer experience in direct language. | Corrects unclear grammar without adding a performance claim. | Medium | deferred pending exact visible-copy approval |
+| Dental heading and paragraphs | Uses “dental business,” “brand-new,” “best,” and “allowing remarkable growth,” while combining dentist and agency audiences in long sentences. | Separate dentist and white-label-agency needs, describe the approved delivery scope, and remove the unsupported comparative and growth claim. | Improves clarity and claim safety. | High | deferred pending service-owner and exact-copy approval |
+| Deliverables introduction | Mentions healthcare outcomes, optimized cost, and evolving compliance without evidence or delivery boundaries. | Describe information architecture, ordering, responsive delivery, white-label capacity, and integrations; mention regulated requirements only with approved jurisdiction-specific scope. | Avoids implying medical outcomes, cost optimization, or compliance guarantees. | High | deferred pending legal/security/delivery approval |
+| Tailored Website Development card | Says product and medicinal information is made easily accessible. | Describe structured product and usage information while requiring client-supplied, reviewed content and applicable disclaimers. | Clarifies responsibility for regulated product information. | High | deferred pending delivery/legal approval |
+| Portfolio introduction | “We've provided Services to several clients to help them in their Food sector businesses.” | “Explore health, nutrition, supplement, and wellness storefronts supported by Dynamic Dreamz.” | Fixes the Food-sector mismatch and improves page-topic alignment. | High | deferred pending exact visible-copy approval |
+| Health Co category | Visible category says Shopify while the overlay displays Magento. | Use the verified platform consistently after the project record is confirmed. | Prevents conflicting portfolio evidence. | High | blocked pending client/project confirmation |
+| Solution image alt | Live source incorrectly says “IT Solutions for Food & Beverages Industry Image.” | “Protein powder being added to a health and nutrition drink.” | Corrects the subject mismatch and describes the visible image. | High | planned accessibility correction |
+| Portfolio image alts | Most live alts repeat brand names and “Image.” | Use brand- and subject-specific descriptions for all six project cards. | Makes each content image meaningful without changing visible UI. | Medium | planned accessibility correction |
+| CTA destinations | `/request-quote`, `/dental-clinic-website-development-company`, and `/our-work` are not yet built. | Preserve their slashless migration-intent paths and validate or redirect all three before launch. | Maintains live CTA flow under the active-migration route exception. | High | migration pending |
+
+## Food & Beverages (`/food-beverages`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-14
+Primary SEO intent: food and beverage ecommerce development, Shopify food
+stores, restaurant reservation websites, responsive food storefronts, and
+social media integrations.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | Web Design agency for Food & Beverages Industry - Dynamic Dreamz | Food & Beverages Ecommerce Development \| Dynamic Dreamz | Preserves the provider and commercial intent within the 60-character title budget. | High | implemented in metadata |
+| Hero description | Dynamic Dreamz comprehensive IT services are tailored specifically to meet the needs of food and beverage businesses, ensuring they stay ahead in an ever evolving landscape. | Dynamic Dreamz provides ecommerce and website solutions for food and beverage businesses, including product presentation, reservations, responsive layouts, and integrations. | Removes a broad competitive-positioning claim and explains the service scope more directly. | High | deferred pending exact visible-copy approval |
+| Industry paragraph | Uses "today's fast paced and competitive market" and a broad claim about overcoming challenges. | Explain food and beverage ecommerce, presentation, ordering or reservation workflows, integrations, and customer experience without promising business outcomes. | Improves clarity and claim safety. | Medium | deferred pending exact visible-copy approval |
+| Interactive Features card | Says interactive features increase customer foot fall, customer retention and growth in business. | Describe the interactive features and intended engagement benefits without guaranteeing footfall, retention, or growth. | Avoids unsupported outcome claims. | High | deferred pending evidence and exact-copy approval |
+| Social Media Integration card | Says social integration enables promotions and customers' review. | Clarify sharing promotions, updates, and customer reviews after approved copy review. | Corrects grammar and keeps the social workflow intent. | Low | deferred pending exact visible-copy approval |
+| Portfolio introduction | "Our portfolio reflects how rich and extensive domain knowledge we have gathered over the years." | "Explore food and beverage ecommerce projects supported by Dynamic Dreamz." | Gives a clearer portfolio summary without adding unsupported outcomes. | Medium | deferred pending exact visible-copy approval |
+| Portfolio image alts | Live alts are generic brand-plus-image labels. | Use brand- and subject-specific descriptions for all six exact local portfolio assets. | Prevents generic alt text and keeps media meaning accurate. | High | in progress as nonvisual accessibility correction |
+| Exact page media | The initial local route uses unrelated Matcha and blog imagery. | Use the byte-for-byte verified live hero, solution, and six portfolio rasters from `public/assets/food-beverages/**`. | Restores exact visual parity without hotlinking. | High | in progress |
+| CTA destinations | `/request-quote` and `/our-work` are not yet built. | Preserve their slashless migration-intent paths and validate or redirect both before launch. | Maintains live CTA flow under the active-migration route exception. | High | migration pending |
+
+## Pet Industry (`/pet-industry`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-14
+Primary SEO intent: pet-industry ecommerce development, Shopify pet stores,
+pet food and accessory websites, CMS development, responsive layouts, and
+interactive product presentation.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | eCommerce for Pet Industry \| Online Store for Pet Industry \| Pet Industry Website \| Dynamic Dreamz | Pet Industry Ecommerce Development \| Dynamic Dreamz | Preserves the primary commercial intent within the project 60-character title budget. | High | implemented in metadata |
+| Hero description | Says Dynamic Dreamz has served `15+` pet-industry clients and that its solutions helped clients excel. | Describe pet ecommerce, product presentation, CMS, responsive layouts, and integrations; retain the client count only after source and usage approval. | The count and outcome claim are not supported on-page by governed evidence. | High | deferred pending factual and exact-copy approval |
+| Industry paragraph | Says tailored solutions helped clients achieve their goals. | Describe the delivered pet retail, food, accessory, and ecommerce capabilities without implying guaranteed client outcomes. | Avoids an unsupported outcome claim while preserving the service scope. | High | deferred pending exact visible-copy approval |
+| Pet-centric design card | Uses `Pet centric`, `Depending upon the pets`, and `highlighted maximum`. | Use `Pet-centric` and explain species/category-specific merchandising and product discovery in direct language. | Improves grammar and extraction without adding an outcome claim. | Medium | deferred pending exact visible-copy approval |
+| CMS Development card | Uses `user freindly` and a long description about pet statistics, behavior, and upbringing. | Correct `user-friendly` and describe structured educational/product content and content-management workflows. | Corrects spelling and improves clarity. | Medium | deferred pending exact visible-copy approval |
+| Interactive Features card | Says photos, videos, and animations are integrated `to images customers`. | Explain that approved photos, videos, and animations can help customers understand products. | Fixes unclear wording without guaranteeing engagement. | High | deferred pending exact visible-copy approval |
+| Portfolio image alts | Live alts repeat each project name followed by `Image`. | Use subject-specific descriptions for all six exact local portfolio assets. | Makes each content image meaningful without changing visible UI. | High | implemented nonvisual accessibility correction |
+| Kentaur project link | The image links to Kentaur Australia, while the visible project name links to SomewhereCo. | Use `https://kentauraustralia.com/` for both Kentaur links. | Prevents one card from sending users to an unrelated fashion project. | High | implemented nonvisual link-integrity correction |
+| CTA destinations | `/request-quote` and `/our-work` are not yet built. | Preserve their slashless migration-intent paths and validate or redirect both before launch. | Maintains live CTA flow under the active-migration route exception. | High | migration pending |
+

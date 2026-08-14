@@ -1,6 +1,9 @@
 import { founders } from "@/content/about";
 import { beautyIndustryPage } from "@/content/beauty-cosmetics";
 import { fashionIndustryPage } from "@/content/fashion";
+import { foodBeveragesIndustryPage } from "@/content/food-beverages";
+import { healthcareIndustryPage } from "@/content/healthcare";
+import { petIndustryPage } from "@/content/pet-industry";
 import { organizationAnswerSummary, testimonials } from "@/content/home";
 import {
   careerApplicationPath,
@@ -52,6 +55,18 @@ const fashionPageUrl = absoluteUrl(pageSeo.fashion.path);
 const fashionPageId = `${fashionPageUrl}#webpage`;
 const fashionBreadcrumbId = `${fashionPageUrl}#breadcrumb`;
 const fashionServiceId = `${fashionPageUrl}#service`;
+const foodBeveragesPageUrl = absoluteUrl(pageSeo.foodBeverages.path);
+const foodBeveragesPageId = `${foodBeveragesPageUrl}#webpage`;
+const foodBeveragesBreadcrumbId = `${foodBeveragesPageUrl}#breadcrumb`;
+const foodBeveragesServiceId = `${foodBeveragesPageUrl}#service`;
+const healthcarePageUrl = absoluteUrl(pageSeo.healthcare.path);
+const healthcarePageId = `${healthcarePageUrl}#webpage`;
+const healthcareBreadcrumbId = `${healthcarePageUrl}#breadcrumb`;
+const healthcareServiceId = `${healthcarePageUrl}#service`;
+const petIndustryPageUrl = absoluteUrl(pageSeo.petIndustry.path);
+const petIndustryPageId = `${petIndustryPageUrl}#webpage`;
+const petIndustryBreadcrumbId = `${petIndustryPageUrl}#breadcrumb`;
+const petIndustryServiceId = `${petIndustryPageUrl}#service`;
 const whiteLabelShopifyPageUrl = absoluteUrl(pageSeo.whiteLabelShopify.path);
 const whiteLabelShopifyPageId = `${whiteLabelShopifyPageUrl}#webpage`;
 const whiteLabelShopifyServiceId = `${whiteLabelShopifyPageUrl}#service`;
@@ -838,6 +853,54 @@ export function createFashionPageSchema() {
     audienceType:
       "Fashion, apparel, jewelry, footwear, accessories and lifestyle brands",
     offerCatalog: fashionIndustryPage.deliverables,
+  });
+}
+
+export function createHealthcarePageSchema() {
+  return createIndustryPageSchema({
+    seo: pageSeo.healthcare,
+    pageUrl: healthcarePageUrl,
+    pageId: healthcarePageId,
+    breadcrumbId: healthcareBreadcrumbId,
+    breadcrumbName: "Health & Nutrition",
+    serviceId: healthcareServiceId,
+    serviceName: "Health & Nutrition Ecommerce and Website Development",
+    serviceType: "Health, nutrition, wellness and dental web development",
+    audienceType:
+      "Health, nutrition, supplement, wellness, healthcare product and dental organizations",
+    offerCatalog: healthcareIndustryPage.deliverables,
+  });
+}
+
+export function createFoodBeveragesPageSchema() {
+  return createIndustryPageSchema({
+    seo: pageSeo.foodBeverages,
+    pageUrl: foodBeveragesPageUrl,
+    pageId: foodBeveragesPageId,
+    breadcrumbId: foodBeveragesBreadcrumbId,
+    breadcrumbName: "Food & Beverages",
+    serviceId: foodBeveragesServiceId,
+    serviceName: "Food & Beverages Ecommerce Development",
+    serviceType: "Food and beverage ecommerce and website development",
+    audienceType:
+      "Food, beverage, restaurant, cafe, bar, grocery and consumer packaged goods brands",
+    offerCatalog: foodBeveragesIndustryPage.deliverables,
+  });
+}
+
+export function createPetIndustryPageSchema() {
+  return createIndustryPageSchema({
+    seo: pageSeo.petIndustry,
+    pageUrl: petIndustryPageUrl,
+    pageId: petIndustryPageId,
+    breadcrumbId: petIndustryBreadcrumbId,
+    breadcrumbName: "Pet Industry",
+    serviceId: petIndustryServiceId,
+    serviceName: "Pet Industry Ecommerce Development",
+    serviceType: "Pet industry ecommerce and website development",
+    audienceType:
+      "Pet retailers, pet food and accessory brands, equestrian brands and pet-service businesses",
+    offerCatalog: petIndustryPage.deliverables,
   });
 }
 
