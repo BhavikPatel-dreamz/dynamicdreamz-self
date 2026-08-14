@@ -11,6 +11,11 @@ export function HeaderScrollBehavior() {
     let previousPosition = window.scrollY;
     let frame = 0;
 
+    if (previousPosition > 40) {
+      siteHeader.classList.add("header-down");
+      siteHeader.classList.remove("header-up");
+    }
+
     function updateHeader() {
       const position = window.scrollY;
 

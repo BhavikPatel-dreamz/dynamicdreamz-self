@@ -74,8 +74,11 @@ export function AiDrivenShoppingSection() {
           {aiDrivenShopping.items.map((item, index) => (
             <article
               className={cn(
-                "w-1/4 border-r border-ink/10 px-5 last:border-r-0 max-[991px]:w-1/2 max-[991px]:border-b max-[991px]:nth-[2n]:border-r-0 max-[991px]:nth-[n+3]:border-b-0 max-[767px]:w-full max-[767px]:border-r-0 max-[767px]:border-b max-[767px]:px-0 max-[767px]:py-[30px] max-[767px]:last:border-b-0 max-[767px]:last:pb-0",
-                index === 0 && "pl-0",
+                "w-1/4 border-r border-ink/10 px-5 last:border-r-0 max-[991px]:w-1/2 max-[991px]:border-b max-[991px]:nth-[2n]:border-r-0 max-[991px]:nth-[n+3]:border-b-0 max-[767px]:nth-[n+3]:border-b max-[767px]:w-full max-[767px]:border-r-0 max-[767px]:border-b max-[767px]:last:border-b-0",
+                index === 0 && "max-[991px]:pb-7.5 max-[767px]:pt-7.5 max-[767px]:pl-0",
+                index === 1 && "max-[991px]:pb-7.5 max-[767px]:pt-7.5 max-[767px]:pl-0",
+                index === 2 && "max-[991px]:pt-7.5 max-[767px]:pl-0 max-[767px]:pb-7.5",
+                index === 3 && "max-[991px]:pt-7.5 max-[767px]:pl-0",
                 index === aiDrivenShopping.items.length - 1 && "pr-0",
               )}
               key={item.title}
@@ -99,3 +102,4 @@ export function AiDrivenShoppingSection() {
     </section>
   );
 }
+7
