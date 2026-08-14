@@ -92,8 +92,8 @@ function ServicesMenu({ group }: { group: Extract<PrimaryNavigationGroup, { kind
           {group.introduction.description}
         </p>
         <ButtonLink
-          className="min-h-[49px] bg-white px-6 py-[15px] text-base normal-case text-muted hover:text-brand-red [&>span:nth-child(2)]:hidden [&>span:first-child]:border-white"
-          variant="outline"
+          className="min-h-[49px] px-6 py-[15px] text-base focus-visible:text-white [&:focus-visible>span:nth-child(2)]:translate-x-full"
+          variant="light"
           href={siteConfig.quotePath}
         >
           Get a quote

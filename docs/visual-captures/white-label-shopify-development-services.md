@@ -7,6 +7,73 @@ Local route: `/white-label-shopify-development-services`
 Checked: 2026-08-13  
 Browser: Google Chrome headless (desktop, tablet, and mobile emulation)
 
+## 2026-08-14 Restored-Scroll Header Parity
+
+The supplied side-by-side screenshot was checked against the shared local
+header behavior and the current live `custom.js` scroll logic. The why-partner
+section content and grid geometry match; the apparent top-spacing mismatch is
+caused by the header state when the browser restores a nonzero scroll position.
+
+- Live behavior: `updateHeader()` runs on document ready. At an already
+  restored nonzero scroll position, it immediately applies `header-down`,
+  translating the fixed header out of view.
+- Previous local behavior: the initial scroll position was recorded, but the
+  header was not evaluated until a later scroll event, leaving it visible over
+  the section heading.
+- Local target: initialize a restored position above the existing 40px
+  threshold as `header-down`; retain the existing upward/downward scroll,
+  transition, focus, and navigation behavior.
+- Visual effect: the why-partner heading is no longer obscured and matches the
+  live screenshot without changing section spacing, copy, grid borders, or
+  cards.
+
+## 2026-08-14 Why-Partner Divider Gradients
+
+The project owner supplied the current live positional pseudo-element rules for
+the why-partner grid. The previous local implementation used the same
+transparent-center-transparent gradient for every divider; the live grid uses
+directional edge fades selected by card position.
+
+- Bottom dividers: cards 1 and 4 fade from transparent to `#333`; cards 2 and
+  5 remain `#333`; cards 3 and 6 fade from `#333` to transparent.
+- Vertical dividers: cards 1 and 2 fade from transparent at the top to `#333`
+  at the bottom; Shopify cards 4 and 5 use the supplied horizontal three-stop
+  gradient on the one-pixel pseudo-element; cards 7 and 8 use the supplied
+  zero-degree transparent-to-`#333` gradient.
+- Every divider retains the live `0.2` opacity.
+- Mobile keeps the existing single-column horizontal separator treatment and
+  hides empty grid cells.
+
+## 2026-08-14 Partnership Connector Arrow Parity
+
+The connector diamonds highlighted in the supplied Lightshot capture were
+compared with the current live `services/main.css` and `services/media.css`.
+Their dimensions, colors, and offsets were already present locally, but the
+transform operations were composed in a different order.
+
+- Desktop live transform: `rotate(45deg) translateY(-50%)` on a 30px square at
+  `top: 50%` and `right: -4px`.
+- Stacked layout at `max-width: 991px`: `rotate(45deg) translateX(-50%)`,
+  centered at `left: 50%` and positioned `25px` below the card.
+- Mobile at `max-width: 767px`: the same stacked transform on a 25px square,
+  positioned `20px` below the card.
+- The connector continues to inherit the originating card's alternating cream
+  or off-white background.
+- Rendering correction: the attempted arbitrary combined transform did not
+  survive the generated pseudo-element utility output and displayed as a
+  square. The connector therefore uses Tailwind's generated 45-degree rotation
+  and breakpoint-specific translation utilities, retaining the measured live
+  size, color, and offsets while reliably rendering the diamond shape.
+
+## 2026-08-14 AI-Shopping Intro Clearance
+
+Clarification: the requested spacing is above the lower two grid items,
+`Agentic commerce` and `Trust signals`, rather than above the section intro.
+The section retains its original 50px responsive vertical padding. At the
+two-column breakpoint, cards 3 and 4 now receive 30px top padding so their icons
+do not begin directly on the horizontal divider. The existing single-column
+mobile card padding remains unchanged.
+
 ## Screenshots
 
 | Viewport | Live screenshot | Local screenshot | Status |

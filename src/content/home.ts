@@ -56,7 +56,7 @@ export const clientLogos: ImageItem[] = [
   { src: "/assets/clients/renee.svg", alt: "Renee logo", width: 93, height: 30 },
   { src: "/assets/clients/nelter.svg", alt: "Nelter logo", width: 109, height: 41 },
   { src: "/assets/clients/tropicfeel.svg", alt: "Tropicfeel logo", width: 137, height: 29 },
-  { src: "/assets/clients/ranavat.svg", alt: "Ranavat logo", width: 176, height: 19 },
+  { src: "/assets/clients/ranavat.svg", alt: "Ranavat logo", width: 172, height: 19 },
   { src: "/assets/clients/perfect-locks.svg", alt: "Perfect Locks logo", width: 161, height: 29 },
   { src: "/assets/clients/bombay-shirt-company.svg", alt: "Bombay Shirt Company logo", width: 172, height: 22 },
   { src: "/assets/clients/kalki.svg", alt: "KALKI logo", width: 108, height: 33 },

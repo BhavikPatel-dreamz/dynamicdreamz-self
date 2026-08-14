@@ -24,9 +24,9 @@ export function WhiteLabelProcessSection({
           {steps.map((step, index) => (
             <article
               className={cn(
-                "relative flex-1 bg-[#fafaf7] p-[60px_22px_40px] text-center odd:bg-cream max-[1199px]:p-[50px_20px_30px] max-[991px]:w-full max-[991px]:flex-none max-[991px]:p-[40px_20px_30px] max-[767px]:p-[30px_15px_20px]",
+                "step_card relative flex-1 bg-[#fafaf7] p-[60px_22px_40px] text-center odd:bg-cream max-[1199px]:p-[50px_20px_30px] max-[991px]:w-full max-[991px]:flex-none max-[991px]:p-[40px_20px_30px] max-[767px]:p-[30px_15px_20px]",
                 index < steps.length - 1 &&
-                  "after:absolute after:top-1/2 after:right-[-4px] after:z-1 after:size-[30px] after:-translate-y-1/2 after:rotate-45 after:bg-[#fafaf7] odd:after:bg-cream max-[991px]:after:top-auto max-[991px]:after:right-auto max-[991px]:after:bottom-[-25px] max-[991px]:after:left-1/2 max-[991px]:after:-translate-x-1/2 max-[991px]:after:translate-y-0 max-[767px]:after:bottom-[-20px] max-[767px]:after:size-[25px]",
+                  "step-card-after after:absolute after:top-1/2 after:right-[-15px] after:z-1 after:size-[30px] after:-translate-y-1/2 after:rotate-45 after:bg-[#fafaf7] odd:after:bg-cream max-[991px]:after:top-auto max-[991px]:after:right-auto max-[991px]:after:bottom-[-15px] max-[991px]:after:left-1/2 max-[991px]:after:-translate-x-1/2 max-[991px]:after:translate-y-0 max-[767px]:after:bottom-[-10px] max-[767px]:after:size-[25px]",
               )}
               key={step.title}
             >

@@ -5,6 +5,15 @@ Local route: sitewide
 Date checked: 2026-08-12
 Browser: Chromium, using the supplied live/local comparisons
 
+## 2026-08-14 Route-Specific Bottom Position
+
+The project owner specified different fixed offsets by route. The homepage
+widget sits 15px above the viewport bottom; every other route uses an 80px
+bottom offset. The right offset, content, link behavior, hover state, and widget
+dimensions remain unchanged. The shared widget reads the App Router pathname
+inside its small client boundary so the position also updates after client-side
+navigation.
+
 ## Viewports
 
 | Viewport | Live screenshot | Local screenshot | Result |

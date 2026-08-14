@@ -5,6 +5,75 @@ Local route: `/`
 Date checked: 2026-08-13
 Browser: Google Chrome 151.0.7922.71 (headless capture)
 
+## 2026-08-14 Homepage Hero Content Parity
+
+The current live hero HTML, `style.css`, `shopify-premium-partner.css`, and
+`shopify-premium-partner-media.css` were inspected again before aligning the
+full hero content.
+
+- Badge copy: `ESTABLISHED IN 2006` and `SHOPIFY PLATINUM PARTNER`.
+- Badge sizing/spacing: 14px desktop, 13px tablet, 12px mobile; 22px space
+  below; the two labels stack with a 10px gap below 641px and the separator dot
+  is hidden there.
+- Heading: 56px/114% with 20px bottom space on desktop, 38px/48px on tablet,
+  and 27px/37px with 16px bottom space on mobile.
+- Description: maximum width 940px; 16px/28px with 30px bottom space on
+  desktop, 16px/24px on tablet, and 14px/24px with 24px bottom space on mobile.
+- Buttons: live labels, 15px horizontal offset on non-mobile layouts, stacked
+  with a 14px gap on mobile, and the existing 600ms shared hover treatment.
+- Proof row: original image dimensions, 35px desktop item gutters, 20px tablet
+  gutters, a 60px top offset, and the live two-by-two mobile separator grid.
+- Mobile container gutter: 16px.
+- Copy, links, alt text, and section order match the current live source.
+- Direct comparison captures: live and local at 1440x900, 768x1024, and
+  390x844 are stored under `/tmp/dd-live-hero-content-*.png` and
+  `/tmp/dd-home-hero-content-*.png`; hero text, wrapping, controls, proof grid,
+  section height, and spacing match at all three sizes.
+
+## 2026-08-14 Homepage Hero Height Parity
+
+The current live homepage and its public `shopify-premium-partner.css` and
+`shopify-premium-partner-media.css` files were rechecked on 2026-08-14 before
+editing the hero geometry.
+
+- Live desktop section: `height: 100vh`, flex-centered in both axes, with
+  `padding-top: 90px` for the fixed header.
+- Live tablet/mobile section at `max-width: 991px`: retains the viewport height
+  and centering, with `padding-top: 64px`.
+- Previous local difference: content-driven section height with container top
+  padding of 175px desktop, 135px tablet, and 95px mobile.
+- Interaction and animation states: none are changed by this geometry update.
+- Local screenshots: `/tmp/dd-home-hero-1440x900.png`,
+  `/tmp/dd-home-hero-768x1024.png`, and
+  `/tmp/dd-home-hero-390x844.png`.
+- Result: the hero occupies exactly one viewport at all three required sizes;
+  its content remains centered and fully visible without clipping or horizontal
+  overflow.
+- Remaining differences: none for the requested hero-height geometry.
+
+## 2026-08-14 Services Menu CTA Hover Fix
+
+The desktop Services mega-menu CTA was checked frame by frame against the
+supplied 5.68-second live-site recording, `Shopify Plus Agency & Shopify
+Platinum Partner _ Dynamic Dreamz.mp4`, and the supplied local Chrome
+screenshot at `localhost:3000`.
+
+- Sources inspected: the supplied recording,
+  `src/components/layout/desktop-navigation.tsx`, and the shared
+  `src/components/ui/button-link.tsx` variant, border, fill, and transition
+  states.
+- Affected breakpoint: desktop navigation at `min-width: 992px`; the recording
+  is 1838px wide.
+- Default state: white pill fill and border with dark-gray uppercase text.
+- Hover state: the white fill translates to the right, revealing the card's
+  green gradient while the border and text remain white.
+- Pointer-leave state: the white fill returns from the right and the text
+  returns to dark gray.
+- Animation timing: the local shared 600ms color and transform transition is
+  retained to match the recorded movement.
+- Keyboard state: focus-visible mirrors the completed hover appearance.
+- Remaining differences: none for the reported CTA hover effect.
+
 ## 2026-08-13 Live-UI Parity Rollback
 
 The project owner requested that every visible UI change that differs from the

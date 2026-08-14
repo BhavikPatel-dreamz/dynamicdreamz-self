@@ -61,6 +61,21 @@ type WhiteLabelWhySectionProps = {
   reasons?: readonly (WhiteLabelCard | null)[];
 };
 
+const whyBottomBorderClasses = [
+  "before:bg-[linear-gradient(90deg,rgba(40,40,40,0)_0%,rgba(40,40,40,0.5)_50%,#333_100%)]",
+  "before:bg-[linear-gradient(90deg,#333_0%,#333_50%,#333_100%)]",
+  "before:bg-[linear-gradient(90deg,#333_0%,rgba(40,40,40,0.5)_50%,rgba(40,40,40,0)_100%)]",
+] as const;
+
+const whyRightBorderClasses: Record<number, string> = {
+  0: "after:bg-[linear-gradient(180deg,rgba(40,40,40,0)_0%,rgba(40,40,40,0.5)_50%,#333_100%)]",
+  1: "after:bg-[linear-gradient(180deg,rgba(40,40,40,0)_0%,rgba(40,40,40,0.5)_50%,#333_100%)]",
+  3: "after:bg-[linear-gradient(90deg,rgba(40,40,40,0)_0%,#333_51.2%,rgba(51,51,51,0)_102.4%)]",
+  4: "after:bg-[linear-gradient(90deg,rgba(40,40,40,0)_0%,#333_51.2%,rgba(51,51,51,0)_102.4%)]",
+  6: "after:bg-[linear-gradient(0deg,rgba(40,40,40,0)_0%,rgba(40,40,40,0.5)_50%,#333_100%)]",
+  7: "after:bg-[linear-gradient(0deg,rgba(40,40,40,0)_0%,rgba(40,40,40,0.5)_50%,#333_100%)]",
+};
+
 export function WhiteLabelWhySection({
   title = "Why Partner with Dynamic Dreamz for White Label Shopify Development?",
   reasons = whiteLabelShopifyReasons,
@@ -89,9 +104,11 @@ export function WhiteLabelWhySection({
                 className={cn(
                   "relative px-[25px] py-10 text-center max-[1199px]:px-5 max-[1199px]:py-[30px] max-[991px]:py-5",
                   column !== 2 &&
-                    "after:absolute after:top-0 after:right-0 after:h-full after:w-px after:bg-[linear-gradient(180deg,transparent,rgba(51,51,51,0.2),transparent)]",
+                    "after:absolute after:top-0 after:right-0 after:h-full after:w-px after:opacity-20",
+                  column !== 2 && whyRightBorderClasses[index],
                   row < lastRowIndex &&
-                    "before:absolute before:right-0 before:bottom-0 before:left-0 before:h-px before:bg-[linear-gradient(90deg,transparent,rgba(51,51,51,0.2),transparent)]",
+                    "before:absolute before:right-0 before:bottom-0 before:left-0 before:h-px before:opacity-20",
+                  row < lastRowIndex && whyBottomBorderClasses[column],
                   column === 0 && "pl-0 max-[1199px]:pl-0",
                   column === 2 && "pr-0 max-[1199px]:pr-0",
                   isEmpty && "max-[767px]:hidden",
