@@ -7,10 +7,22 @@ import type { IndustryDeliverable, IndustryPageContent } from "@/types/industry"
 function DeliverableCard({ item }: { item: IndustryDeliverable }) {
   return (
     <article
-      className="group/card relative isolate h-full min-h-[335px] w-full overflow-visible rounded-[15px] border border-[#efefef] bg-white px-[27px] py-[65px] pr-[27px] pl-[35px] before:pointer-events-none before:absolute before:-inset-[3px] before:-z-2 before:invisible before:rounded-[15px] before:bg-[linear-gradient(to_right,#15c064,#00d1ff)] before:opacity-0 before:transition-opacity before:duration-300 before:content-[''] after:pointer-events-none after:absolute after:inset-0 after:z-0 after:invisible after:rounded-[15px] after:bg-[linear-gradient(179.69deg,rgba(21,192,100,0.1)_-20.68%,rgba(0,209,255,0)_49.11%)] after:opacity-0 after:content-[''] hover:before:visible hover:before:opacity-100 hover:after:visible hover:after:opacity-100 min-[768px]:min-h-[492px] min-[992px]:min-h-[434px] max-[767px]:px-5 max-[767px]:pt-[30px] max-[767px]:pb-[35px]"
+      className="delivers-box group/card relative isolate h-full min-h-[335px] w-full overflow-visible rounded-[15px] border border-[#efefef] bg-white px-[27px] py-[65px] pr-[27px] pl-[35px] min-[768px]:min-h-[492px] min-[992px]:min-h-[434px] max-[767px]:px-5 max-[767px]:pt-[30px] max-[767px]:pb-[35px]"
       data-industry-card="deliverable"
     >
-      <div className="relative z-1 mb-4 flex h-[68px] w-[68px] items-center max-[767px]:mb-2.5 max-[767px]:w-[50px]">
+      <span
+        className="pointer-events-none absolute -inset-x-[2px] -inset-y-[2px] z-0 invisible rounded-[15px] bg-[linear-gradient(to_right,#15c064,#00d1ff)] opacity-0 transition-all duration-300 ease-in-out group-hover/card:visible group-hover/card:opacity-100"
+        aria-hidden="true"
+      />
+      <span
+        className="pointer-events-none absolute inset-0 z-1 rounded-[14px] bg-white"
+        aria-hidden="true"
+      />
+      <span
+        className="pointer-events-none absolute inset-0 z-2 invisible rounded-[15px] bg-[linear-gradient(179.69deg,rgba(21,192,100,0.1)_-20.68%,rgba(0,209,255,0)_49.11%)] opacity-0 transition-all duration-300 ease-in-out group-hover/card:visible group-hover/card:opacity-100"
+        aria-hidden="true"
+      />
+      <div className="relative z-11 mb-4 flex h-[68px] w-[68px] items-center max-[767px]:mb-2.5 max-[767px]:w-[50px]">
         <Image
           className="h-auto max-h-[68px] w-auto"
           src={item.icon}
@@ -19,10 +31,10 @@ function DeliverableCard({ item }: { item: IndustryDeliverable }) {
           height={item.height}
         />
       </div>
-      <h3 className="relative z-1 mb-1.5 text-lg leading-[27px] font-bold text-ink max-[767px]:text-base">
+      <h3 className="relative z-11 mb-1.5 text-lg leading-[27px] font-bold text-ink max-[767px]:text-base">
         {item.title}
       </h3>
-      <p className="relative z-1 m-0 text-base leading-[30.88px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[26px]">
+      <p className="relative z-11 m-0 text-base leading-[30.88px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[26px]">
         {item.description}
       </p>
     </article>

@@ -5,6 +5,18 @@ Local route: `/beauty-cosmetics`
 Date checked: 2026-08-13
 Browser: Microsoft Edge (Chromium, headless screenshots and DevTools Protocol computed-style audit)
 
+## 2026-08-14 Deliverable Hover Correction
+
+The project owner supplied a side-by-side live/local hover capture and the live
+`.delivers-box` pseudo-element CSS. The local outer gradient layer was stacking
+above the white card surface, producing a saturated green/cyan card fill. The
+live target keeps that gradient visible only in the 3px outer border area and
+places a separate faint green-to-transparent wash over the white interior.
+Both layers transition opacity and visibility over 300ms; card content remains
+above them. The final supplied comparison showed the local ring slightly too
+heavy, so its horizontal and vertical expansion is 2px. Default and responsive
+card geometry remain unchanged.
+
 ## Viewports
 
 | Viewport | Live screenshot | Local screenshot | Result |
