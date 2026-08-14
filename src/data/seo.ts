@@ -221,7 +221,34 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
-  
+  healthcare: {
+    path: "/healthcare",
+    title: "Health & Nutrition Ecommerce Development | Dynamic Dreamz",
+    description:
+      "Dynamic Dreamz builds ecommerce experiences for health, nutrition and dental brands, with tailored stores, payments, responsive layouts and integrations.",
+    socialDescription:
+      "Ecommerce and website development for health, nutrition, wellness and dental organizations, including online ordering, responsive layouts and integrations.",
+    keywords: [
+      "health ecommerce development",
+      "nutrition ecommerce agency",
+      "Shopify supplement store development",
+      "healthcare website development",
+      "dental website development",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-06T09:44:35+00:00",
+    modifiedTime: "2026-08-13T00:00:00+05:30",
+    image: {
+      path: "/assets/healthcare/health-nutrition-storefront-collage.webp",
+      width: 840,
+      height: 434,
+      alt: "Health and nutrition ecommerce storefronts built for consumer brands",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   fashion: {
     path: "/fashion",
     title: "Web Design Agency for Fashion Industry - Dynamic Dreamz",
@@ -244,6 +271,62 @@ export const pageSeo = {
       width: 840,
       height: 434,
       alt: "Fashion, sportswear, footwear and jewellery ecommerce storefront collage",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
+  foodBeverages: {
+    path: "/food-beverages",
+    title: "Food & Beverages Ecommerce Development | Dynamic Dreamz",
+    description:
+      "Dynamic Dreamz builds ecommerce websites for food and beverage brands, with custom design, reservations, responsive layouts and integrations.",
+    socialDescription:
+      "Ecommerce and web development for food and beverage brands, including custom storefronts, reservation flows, responsive layouts and integrations.",
+    keywords: [
+      "food and beverage ecommerce development",
+      "food ecommerce agency",
+      "restaurant reservation website development",
+      "Shopify food store development",
+      "beverage ecommerce development",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-06T09:45:07+00:00",
+    modifiedTime: "2026-08-14T00:00:00+05:30",
+    image: {
+      path: "/assets/food-beverages/food-beverages-storefront-collage.webp",
+      width: 840,
+      height: 434,
+      alt: "Food and beverage ecommerce storefront collage for Nekter, Chinuki and Deliciou",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
+  petIndustry: {
+    path: "/pet-industry",
+    title: "Pet Industry Ecommerce Development | Dynamic Dreamz",
+    description:
+      "Dynamic Dreamz builds ecommerce websites for pet brands, with custom storefronts, CMS development, responsive layouts, interactive media and integrations.",
+    socialDescription:
+      "Ecommerce and web development for pet brands, including custom storefronts, CMS delivery, responsive layouts, interactive media and integrations.",
+    keywords: [
+      "pet industry ecommerce development",
+      "pet ecommerce agency",
+      "Shopify pet store development",
+      "pet website development",
+      "pet accessories ecommerce",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-06T09:44:49+00:00",
+    modifiedTime: "2026-08-14T00:00:00+05:30",
+    image: {
+      path: "/assets/pet-industry/pet-storefront-collage.webp",
+      width: 840,
+      height: 434,
+      alt: "Pet ecommerce storefront collage featuring Kentaur Australia, My Pet Frame and pet products",
     },
     sitemap: {
       changeFrequency: "monthly",

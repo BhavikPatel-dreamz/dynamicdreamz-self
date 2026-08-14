@@ -1,0 +1,171 @@
+import type { IndustryPageContent } from "@/types/industry";
+
+export const petIndustryPage = {
+  slug: "pet-industry",
+  hero: {
+    eyebrow: "industries",
+    title: "Pet Industry",
+    descriptionBeforeBreak:
+      "The Pet Industry is a niche market. Dynamic Dreamz has an encompassing experience of",
+    descriptionAfterBreak:
+      "serving 15+ pet industry clients. Our IT solutions have helped our clients excel in their business.",
+    image: {
+      src: "/assets/pet-industry/pet-storefront-collage.webp",
+      alt: "Pet ecommerce storefront collage featuring Kentaur Australia, My Pet Frame and pet products",
+      width: 840,
+      height: 434,
+    },
+  },
+  brands: {
+    ariaLabel: "Leading brands supported by Dynamic Dreamz",
+  },
+  solutions: {
+    title: "IT Solutions for Pet Industry",
+    subtitle: "We understand your pinpointed requirements.",
+    description:
+      "We have provided complete IT solutions for the clients who are into the business of sale of pets, pet food, and accessories of a variety of pets. Our tailored solutions have helped our clients achieve their goals.",
+    image: {
+      src: "/assets/pet-industry/puppy-pet-solutions.webp",
+      alt: "Puppy wearing a blue collar for the pet industry solutions section",
+      width: 516,
+      height: 434,
+    },
+  },
+  deliverables: {
+    title: "What We Deliver",
+    description:
+      "For online stores for pets, we take great care in highlighting the features of products for different pets. Our layouts offer your customers smooth navigation experience in finding their desired products.",
+    ariaLabel: "Pet industry deliverables",
+    items: [
+      {
+        title: "Pet centric custom web design",
+        description:
+          "Depending upon the pets, we accordingly design the store. So that the features are highlighted maximum and customers can pick the products with ease.",
+        icon: "/assets/industry-solutions/pet-centric-web-design.svg",
+        iconAlt: "Pet-centric custom web design icon",
+        width: 68,
+        height: 68,
+      },
+      {
+        title: "CMS Development",
+        description:
+          "We create a comprehensive and user freindly CMS for the pet industry to provide them in-depth knowledge and statistics about pets, their food habits, their behaviour and upbringing.",
+        icon: "/assets/industry-solutions/pet-industry-cms.svg",
+        iconAlt: "CMS Development icon",
+        width: 68,
+        height: 68,
+      },
+      {
+        title: "Responsive Layouts",
+        description:
+          "We develop attention grabbing online stores that function seamlessly across all devices, including desktops, tablets and cell phones.",
+        icon: "/assets/industry-solutions/responsive-layouts.svg",
+        iconAlt: "Responsive Layouts Icon",
+        width: 68,
+        height: 68,
+      },
+      {
+        title: "Interactive Features",
+        description:
+          "We effectively integrate interactive elements such as photographs, videos and animations to images customers and showcase the products.",
+        icon: "/assets/industry-solutions/interactive-features.svg",
+        iconAlt: "Interactive Features Icon",
+        width: 62,
+        height: 62,
+      },
+      {
+        title: "Social Media Integration",
+        description:
+          "Seamless integration with social media platforms to enable easy sharing of content, promotions, and customer reviews.",
+        icon: "/assets/industry-solutions/social-media-integration.svg",
+        iconAlt: "Social Media Integration Icon",
+        width: 62,
+        height: 62,
+      },
+    ],
+  },
+  portfolio: {
+    title: "Our Pet Industry Portfolio",
+    description: "Let our portfolio speak about our work!",
+    items: [
+      {
+        name: "Kentaur Australia",
+        category: "shopify",
+        href: "https://kentauraustralia.com/",
+        image: "/assets/pet-industry/portfolio/kentaur-australia-equestrian.webp",
+        imageAlt: "Rider standing beside a horse wearing Kentaur equestrian tack",
+        width: 370,
+        height: 422,
+        platformLogo: "/assets/platforms/shopify-white.svg",
+        platformAlt: "Shopify",
+        platformWidth: 89,
+        platformHeight: 26,
+      },
+      {
+        name: "Paw Labs",
+        category: "Shopify",
+        href: "https://pawlabs.co/",
+        image: "/assets/pet-industry/portfolio/paw-labs-pets.webp",
+        imageAlt: "Cat resting on a dog's head in an autumn woodland",
+        width: 370,
+        height: 422,
+        platformLogo: "/assets/platforms/shopify-white.svg",
+        platformAlt: "Shopify",
+        platformWidth: 89,
+        platformHeight: 26,
+      },
+      {
+        name: "My Pet Frame",
+        category: "shopify",
+        href: "https://mypetframe.co.uk/",
+        image: "/assets/pet-industry/portfolio/my-pet-frame-dogs.webp",
+        imageAlt: "Two dogs sitting behind their framed pet portrait",
+        width: 370,
+        height: 422,
+        platformLogo: "/assets/platforms/shopify-white.svg",
+        platformAlt: "Shopify",
+        platformWidth: 89,
+        platformHeight: 26,
+      },
+      {
+        name: "Neater Pets",
+        category: "shopify",
+        href: "https://neaterpets.com/",
+        image: "/assets/pet-industry/portfolio/neater-pets-dog.webp",
+        imageAlt: "Long-haired dog standing among yellow flowers",
+        width: 370,
+        height: 422,
+        platformLogo: "/assets/platforms/shopify-white.svg",
+        platformAlt: "Shopify",
+        platformWidth: 89,
+        platformHeight: 26,
+      },
+      {
+        name: "Supertails",
+        category: "shopify",
+        href: "https://supertails.com/",
+        image: "/assets/pet-industry/portfolio/supertails-dog.webp",
+        imageAlt: "Beagle running across green grass",
+        width: 370,
+        height: 422,
+        platformLogo: "/assets/platforms/shopify-white.svg",
+        platformAlt: "Shopify",
+        platformWidth: 89,
+        platformHeight: 26,
+      },
+      {
+        name: "Pagerie",
+        category: "shopify",
+        href: "https://www.pagerie.com/",
+        image: "/assets/pet-industry/portfolio/pagerie-dog-accessories.webp",
+        imageAlt: "Brown dog wearing a leather leash beside its owner",
+        width: 370,
+        height: 422,
+        platformLogo: "/assets/platforms/shopify-white.svg",
+        platformAlt: "Shopify",
+        platformWidth: 89,
+        platformHeight: 26,
+      },
+    ],
+  },
+} as const satisfies IndustryPageContent;
