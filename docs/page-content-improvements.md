@@ -310,6 +310,21 @@ social media integrations.
 | Exact page media | The initial local route uses unrelated Matcha and blog imagery. | Use the byte-for-byte verified live hero, solution, and six portfolio rasters from `public/assets/food-beverages/**`. | Restores exact visual parity without hotlinking. | High | in progress |
 | CTA destinations | `/request-quote` and `/our-work` are not yet built. | Preserve their slashless migration-intent paths and validate or redirect both before launch. | Maintains live CTA flow under the active-migration route exception. | High | migration pending |
 
+## Our Work (`/our-work`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-17
+Primary SEO intent: Dynamic Dreamz portfolio, Shopify and Shopify Plus project
+work, WordPress, mobile-app, Magento, and BigCommerce ecommerce examples.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Hero introduction | `We are excited about our work. Our solutions have yielded strong product identity and transformed clients’ business from an eCommerce to an omni channel commerce` | `Explore ecommerce work delivered by Dynamic Dreamz across Shopify, Shopify Plus, WordPress, mobile apps, Magento, and BigCommerce.` | Gives an entity-first, answer-ready summary and corrects `omni channel` without asserting unapproved outcomes. | High | deferred pending exact visible-copy approval |
+| Project filter label | `Big commerce` | `BigCommerce` | Aligns the platform name with standard capitalization. | Low | deferred pending exact visible-copy approval |
+| Project card alt text | Several live alts use generic `Image`, inconsistent names, or another project's name. | Use a subject-specific description such as `<project name> project preview for <visible platform>`. | Gives every content image an accurate, contextual alternative without changing visible UI. | High | implemented as nonvisual accessibility correction |
+| Project evidence | Cards name a platform and link externally, but do not describe Dynamic Dreamz's scope, constraints, or outcomes. | Add internal case studies with approved client attribution, delivery scope, technical constraints, and verified outcomes, while retaining the external storefront link. | Converts the portfolio from a visual proof index into citation-ready first-party evidence. | High | deferred pending client-success approval and case-study migration |
+| Hero proof claims | `helped global customers` and `yielded strong product identity` are broad outcome claims with no page-level evidence. | Qualify the claims or add approved case-study evidence when exact copy and sources are approved. | Avoids unsupported global/outcome framing while preserving the portfolio intent. | High | deferred pending factual and exact visible-copy approval |
+
 ## Pet Industry (`/pet-industry`)
 
 Status: visible recommendations deferred; live UI preserved during migration

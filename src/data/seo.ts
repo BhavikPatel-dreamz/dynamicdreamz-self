@@ -219,6 +219,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  ourWork: {
+    path: "/our-work",
+    title: "Dynamic Dreamz Portfolio | Inspiring Web Solutions & Designs",
+    description:
+      "Explore our impressive portfolio showcasing innovative web solutions and designs. Discover our range of projects and expertise. Contact us today!",
+    keywords: [
+      "Dynamic Dreamz portfolio",
+      "Shopify portfolio",
+      "Shopify Plus projects",
+      "WordPress portfolio",
+      "ecommerce development work",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-13T12:16:21+00:00",
+    modifiedTime: "2026-08-17T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Dynamic Dreamz ecommerce, web and mobile development portfolio",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   beautyCosmetics: {
     path: "/beauty-cosmetics",
     title: "Beauty & Cosmetics Ecommerce Development | Dynamic Dreamz",

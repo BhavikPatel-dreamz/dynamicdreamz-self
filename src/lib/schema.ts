@@ -6,6 +6,7 @@ import { foodBeveragesIndustryPage } from "@/content/food-beverages";
 import { healthcareIndustryPage } from "@/content/healthcare";
 import { petIndustryPage } from "@/content/pet-industry";
 import { organizationAnswerSummary, testimonials } from "@/content/home";
+import { ourWorkProjects } from "@/content/our-work";
 import {
   careerApplicationPath,
   careerJobs,
@@ -55,6 +56,10 @@ const resourcesItemListId = `${resourcesPageUrl}#articles`;
 const contactPageUrl = absoluteUrl(pageSeo.contact.path);
 const contactPageId = `${contactPageUrl}#webpage`;
 const contactBreadcrumbId = `${contactPageUrl}#breadcrumb`;
+const ourWorkPageUrl = absoluteUrl(pageSeo.ourWork.path);
+const ourWorkPageId = `${ourWorkPageUrl}#webpage`;
+const ourWorkBreadcrumbId = `${ourWorkPageUrl}#breadcrumb`;
+const ourWorkItemListId = `${ourWorkPageUrl}#projects`;
 const beautyPageUrl = absoluteUrl(pageSeo.beautyCosmetics.path);
 const beautyPageId = `${beautyPageUrl}#webpage`;
 const beautyBreadcrumbId = `${beautyPageUrl}#breadcrumb`;
@@ -671,6 +676,78 @@ export function createContactPageSchema() {
             item: contactPageUrl,
           },
         ],
+      },
+    ],
+  };
+}
+
+export function createOurWorkPageSchema() {
+  const projectItems = ourWorkProjects.map((project, index) => {
+    const destinations = project.href
+      ? [project.href]
+      : (project.appLinks?.map((link) => link.href) ?? []);
+
+    return {
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "CreativeWork",
+        name: project.name,
+        image: absoluteUrl(project.image),
+        genre: project.category,
+        ...(destinations[0] ? { url: destinations[0] } : {}),
+        ...(destinations.length > 1 ? { sameAs: destinations.slice(1) } : {}),
+      },
+    };
+  });
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": ourWorkPageId,
+        url: ourWorkPageUrl,
+        name: pageSeo.ourWork.title,
+        description: pageSeo.ourWork.description,
+        datePublished: pageSeo.ourWork.publishedTime,
+        dateModified: pageSeo.ourWork.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": ourWorkBreadcrumbId },
+        mainEntity: { "@id": ourWorkItemListId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.ourWork.image.path),
+          width: pageSeo.ourWork.image.width,
+          height: pageSeo.ourWork.image.height,
+          caption: pageSeo.ourWork.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": ourWorkBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          { "@type": "ListItem", position: 2, name: "Our Work", item: ourWorkPageUrl },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        "@id": ourWorkItemListId,
+        name: "Dynamic Dreamz portfolio projects",
+        numberOfItems: ourWorkProjects.length,
+        itemListElement: projectItems,
       },
     ],
   };

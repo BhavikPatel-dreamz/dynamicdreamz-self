@@ -1,73 +1,7 @@
-import Image from "next/image";
-
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
-import type { IndustryPageContent, IndustryPortfolioItem } from "@/types/industry";
-
-function PortfolioCard({ item }: { item: IndustryPortfolioItem }) {
-  return (
-    <article>
-      <a
-        className="group/project relative block w-full overflow-hidden pb-[115%] focus-visible:outline-offset-4"
-        href={item.href}
-        target="_blank"
-        rel="nofollow noopener noreferrer"
-        aria-label={`View ${item.name} project`}
-        data-industry-project
-      >
-        <Image
-          className="absolute inset-0 h-full w-full object-cover"
-          src={item.image}
-          alt={item.imageAlt}
-          fill
-          sizes="(max-width: 575px) calc(100vw - 32px), (max-width: 991px) 330px, 370px"
-        />
-        <span
-          className="pointer-events-none absolute inset-0 z-1 bg-black/40 opacity-0 transition-opacity duration-300 group-hover/project:opacity-100 group-focus/project:opacity-100"
-          data-project-overlay
-        />
-        <span
-          className="absolute bottom-[-60px] left-1/2 z-2 flex -translate-x-1/2 items-center gap-2.5 text-lg leading-[25.2px] font-bold whitespace-nowrap text-white transition-[bottom] duration-500 ease-in-out group-hover/project:bottom-[30px] group-focus/project:bottom-[30px]"
-          data-project-link
-        >
-          View Project
-          <Image
-            aria-hidden="true"
-            className="h-3 w-3"
-            src="/assets/icons/diagonal-arrow-white.svg"
-            alt=""
-            width={12}
-            height={12}
-          />
-        </span>
-        <span
-          className="absolute top-[25px] right-6 z-2 translate-y-2.5 opacity-0 transition-all duration-500 ease-in-out group-hover/project:translate-y-0 group-hover/project:opacity-100 group-focus/project:translate-y-0 group-focus/project:opacity-100"
-          data-project-platform
-        >
-          <Image
-            src={item.platformLogo}
-            alt={item.platformAlt}
-            width={item.platformWidth}
-            height={item.platformHeight}
-          />
-        </span>
-      </a>
-      <p className="mt-[23px] mb-2 text-sm leading-[19.6px] font-bold tracking-[1.12px] text-black/70 uppercase max-[991px]:mt-[36.8px]">
-        {item.category}
-      </p>
-      <h3 className="text-lg leading-5 font-bold text-ink capitalize">
-        <a
-          className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red"
-          href={item.href}
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-        >
-          {item.name}
-        </a>
-      </h3>
-    </article>
-  );
-}
+import { PortfolioProjectCard } from "@/components/ui/portfolio-project-card";
+import type { IndustryPageContent } from "@/types/industry";
 
 type IndustryPortfolioSectionProps = {
   content: IndustryPageContent;
@@ -101,7 +35,19 @@ export function IndustryPortfolioSection({ content }: IndustryPortfolioSectionPr
               className="w-[calc(33.33%-10px)] max-[991px]:w-[calc(50%-10px)] max-[767px]:w-full"
               key={item.name}
             >
-              <PortfolioCard item={item} />
+              <PortfolioProjectCard
+                category={item.category}
+                categoryClassName="mt-[23px] tracking-[1.12px] max-[991px]:mt-[36.8px]"
+                href={item.href}
+                image={item.image}
+                imageAlt={item.imageAlt}
+                name={item.name}
+                platformMark={{
+                  src: item.platformLogo,
+                  width: item.platformWidth,
+                  height: item.platformHeight,
+                }}
+              />
             </div>
           ))}
         </div>
