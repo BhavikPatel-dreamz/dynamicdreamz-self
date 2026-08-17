@@ -29,7 +29,7 @@ export function WhiteLabelServicesSection({
           {title}
         </h2>
         {description ? (
-          <p className="mx-auto mb-16 max-w-[760px] text-center text-base leading-[30.4px] font-medium text-white/80 max-[1199px]:mb-[50px] max-[991px]:mb-10 max-[991px]:text-[15px] max-[991px]:leading-[26px] max-[767px]:mb-[30px]">
+          <p className="mx-auto mb-16 max-w-[605px] text-center text-base leading-[30.4px] font-medium text-white/80 max-[1199px]:mb-[50px] max-[991px]:mb-10 max-[991px]:text-[15px] max-[991px]:leading-[26px] max-[767px]:mb-[30px]">
             {description}
           </p>
         ) : null}

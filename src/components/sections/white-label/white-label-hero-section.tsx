@@ -46,16 +46,22 @@ export function WhiteLabelHeroSection({
   return (
     <section className="overflow-hidden rounded-b-[50px] bg-cream pt-[120px] pb-0 max-[991px]:pt-[100px] max-[767px]:rounded-b-[30px] max-[767px]:pt-[70px] max-[767px]:pb-2.5">
       <Container className="max-[575px]:px-4">
-        <div className="flex flex-wrap items-stretch justify-center">
+        <div
+          className={cn(
+            "flex flex-wrap items-stretch justify-center",
+            isWebsiteDesign && "min-[992px]:flex-nowrap min-[992px]:justify-between",
+          )}
+        >
           <div
             className={cn(
-              "w-[55%] pb-20 max-[1199px]:w-3/5 max-[1199px]:pb-10 max-[991px]:w-full max-[991px]:pb-[30px] max-[767px]:pb-2.5",
-              isWebsiteDesign &&
-                "w-[56%] max-[1199px]:w-[56%] max-[991px]:w-full",
+              "pb-20 max-[1199px]:pb-10 max-[991px]:pb-[30px] max-[767px]:pb-2.5",
+              isWebsiteDesign
+                ? "w-[47.1%] max-[1199px]:w-[47.1%] max-[991px]:w-full"
+                : "w-[55%] max-[1199px]:w-3/5 max-[991px]:w-full",
             )}
           >
             <div>
-              <h1 className="mb-6 font-sans text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[1199px]:text-[44px] max-[1199px]:leading-[55px] max-[991px]:text-[40px] max-[991px]:leading-[50px]">
+              <h1 className="mb-6 font-sans text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[1199px]:text-[44px] max-[1199px]:leading-[55px] max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[389px]:mb-2.5 max-[389px]:text-[30px] max-[389px]:leading-10">
                 {hero.titleLines
                   ? hero.titleLines.map((line) => (
                       <span className="block" key={line}>
@@ -121,9 +127,10 @@ export function WhiteLabelHeroSection({
 
           <div
             className={cn(
-              "relative w-[45%] max-[1199px]:w-2/5 max-[991px]:w-full",
-              isWebsiteDesign &&
-                "flex w-[42%] items-end justify-end max-[991px]:mx-auto max-[991px]:w-full max-[991px]:max-w-[400px]",
+              "relative",
+              isWebsiteDesign
+                ? "flex w-[45%] items-end justify-end max-[1199px]:w-2/5 max-[991px]:mx-auto max-[991px]:w-full"
+                : "w-[45%] max-[1199px]:w-2/5 max-[991px]:w-full",
             )}
           >
             <div

@@ -7,6 +7,7 @@ import { cn } from "@/lib/class-names";
 type HorizontalDragScrollProps = {
   children: ReactNode;
   className?: string;
+  trackClassName?: string;
   ariaLabel: string;
   pagination?: {
     itemCount: number;
@@ -22,6 +23,7 @@ const dragThreshold = 4;
 export function HorizontalDragScroll({
   children,
   className,
+  trackClassName,
   ariaLabel,
   pagination,
 }: HorizontalDragScrollProps) {
@@ -115,7 +117,7 @@ export function HorizontalDragScroll({
         }}
         onDragStart={(event) => event.preventDefault()}
       >
-        {children}
+        {trackClassName ? <div className={trackClassName}>{children}</div> : children}
       </div>
       {pagination ? (
         <div className={pagination.className} aria-label={`${ariaLabel} pagination`} role="group">

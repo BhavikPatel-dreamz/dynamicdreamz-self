@@ -122,11 +122,11 @@ export function TestimonialCarousel({ items = testimonials }: TestimonialCarouse
         </div>
       </div>
 
-      <dialog className="w-[min(960px,calc(100vw-40px))] overflow-visible rounded-2xl border-0 bg-black p-0 backdrop:bg-black/80 backdrop:backdrop-blur-[4px]" ref={dialogRef} aria-label="Video testimonial" onCancel={() => setVideoId(null)} onClose={() => setVideoId(null)} onClick={(event) => { if (event.target === event.currentTarget) setVideoId(null); }}>
-        <button className="absolute top-[-42px] right-0 h-9 w-9 cursor-pointer rounded-full border-0 bg-white p-0 text-[28px] leading-none text-black" type="button" aria-label="Close video" onClick={() => setVideoId(null)}>
+      <dialog className="fixed inset-0 m-auto aspect-video w-[90%] max-w-[800px] overflow-visible rounded-lg border-0 bg-transparent p-0 shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop:bg-black/80" ref={dialogRef} aria-label="Video testimonial" onCancel={() => setVideoId(null)} onClose={() => setVideoId(null)} onClick={(event) => { if (event.target === event.currentTarget) setVideoId(null); }}>
+        <button className="absolute top-[-70px] right-[-7px] z-10 cursor-pointer border-0 bg-transparent p-0 text-[50px] leading-none text-white" type="button" aria-label="Close video" onClick={() => setVideoId(null)}>
           ×
         </button>
-        <div className="relative pb-[56.25%]">
+        <div className="relative h-full w-full overflow-hidden rounded-lg">
           {videoId ? <iframe className="absolute inset-0 h-full w-full border-0" src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`} title="Dynamic Dreamz client video testimonial" allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen /> : null}
         </div>
       </dialog>

@@ -36,10 +36,10 @@ export function WhiteLabelWebsiteDesignPage() {
         <Container className="max-[575px]:px-4">
           <div className="flex items-center justify-between gap-[60px] max-[991px]:flex-col max-[991px]:items-stretch max-[991px]:gap-5">
             <div className="w-[47%] max-[991px]:w-full">
-              <h2 className="mb-[15px] font-sans text-[35px] leading-[1.38] font-bold text-ink max-[991px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35]">
+              <h2 className="mb-[15px] font-sans text-[35px] leading-[1.38] font-bold text-ink max-[991px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35] tracking-[-.7px]">
                 Why Choose White Label Website Design?
               </h2>
-              <p className="text-base leading-[1.9] font-medium text-muted max-[767px]:text-sm">
+              <p className="text-base leading-[1.9] font-medium text-muted">
                 White label website design entrusts agencies with expanding their services, delivering high quality websites, and saving costs while maintaining their brand identity. It’s the perfect solution for scaling your business without adding complexity.
               </p>
             </div>

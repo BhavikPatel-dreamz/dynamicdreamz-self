@@ -1,18 +1,114 @@
 # White Label Website Design Services Visual Capture
 
-Status: live reference captured; local implementation in progress  
+Status: tablet parity corrections implemented and verified
 Live URL: `https://www.dynamicdreamz.com/white-label-website-design-services/`  
 Local route: `/white-label-website-design-services`
 
 Checked: 2026-08-17  
 Browser: Google Chrome headless (desktop, tablet, and mobile emulation)
 
+## 2026-08-17 Desktop Full-page Correction
+
+Fresh 1440px full-page captures (`/tmp/wl-design-local-1440-current.png`
+and `/tmp/wl-design-live-1440-current.png`) confirmed that the local hero's
+percentage columns wrap onto separate rows at desktop, while live keeps the
+copy and illustration side by side. They also confirmed that live's Benefits
+and Advantages carousel viewports continue from the container's left edge to
+the right browser edge, exposing part of the fourth card. The desktop hero is
+now explicitly non-wrapping, and only these route-local rails extend through
+the container's right gutter while retaining container-based card widths.
+
+## 2026-08-17 Full-viewport Carousel Track Correction
+
+The Benefits and Advantages rails require a full-browser-width scroll viewport
+at every breakpoint, with the responsive container gutter applied to an inner
+track instead of the viewport. This lets a previous card remain visible against
+the left browser edge after scrolling while the active card snaps back to the
+original container edge. The route now uses matching responsive track padding
+and `scroll-padding-inline-start`; the shared drag-scroll primitive exposes the
+inner track as an opt-in API so its other consumers are unchanged.
+
+## 2026-08-17 Benefits Card Geometry Correction
+
+The side-by-side desktop capture showed that the full-width rail aligned but
+the local dark cards and section were substantially shorter. The captured live
+CSS confirms desktop `.delivers-box` padding of `65px 27px 65px 35px`, 68px
+icons with a 16px bottom gap, and 16px body copy at 190% line-height. At 767px
+and below, live reduces the dark cards to `30px 20px 35px`, 50px icons with a
+10px gap, 16px headings, and 14px body copy. These values are now applied only
+to the dark Benefits variant; the light Advantages variant is unchanged.
+
+## 2026-08-17 Mobile Stage-padding Correction
+
+The numbered live/local 375px comparison confirms that Owl's 25px stage
+padding is added after the normal container gutter and removed twice from the
+available item width. The live first card is therefore approximately 293px
+wide at 375px, beginning 41px from the viewport edge, while the next card
+remains visible. Tablet widths use the same 25px stage padding with two items;
+desktop removes it at 1200px. Mobile dots use the live 20px top gap and active
+green-to-blue gradient.
+
+## 2026-08-17 Testimonial Video Dialog Correction
+
+The live popup CSS uses a fixed full-viewport flex overlay with an 80% black
+backdrop. Its video box is centered, `width: 90%`, capped at `800px`, uses a
+16:9 aspect ratio, an 8px radius, and a `0 0 20px rgba(0,0,0,.5)` shadow. The
+close control is transparent, white, 50px, and positioned 70px above the video.
+The local native dialog now reproduces those dimensions and removes its former
+960px maximum, backdrop blur, and white circular close treatment.
+
+## 2026-08-17 Development Process Desktop Correction
+
+The supplied desktop comparison shows the local process title wrapping because
+its heading block is capped at 800px; live keeps the 35px heading on one line
+and places the paragraph beneath it, moving the step row approximately 45px
+upward. Live also uses the captured `process-step-img.svg` treatment: separate
+shallow red dashed curves between each 97px numbered circle rather than one
+straight dashed rule. The desktop/tablet connector is reproduced as decorative
+inline SVG, while the existing vertical mobile timeline remains unchanged.
+
+## 2026-08-17 Hero Column-width Correction
+
+The captured live CSS identifies the website-design route as page ID 2784 and
+sets only its hero content column to `47.1%`. Its media column follows the
+shared hero widths (`45%` desktop and `40%` below 1200px), while the row uses
+`justify-content: space-between`. The local `56% / 42%` pair belongs to the
+other captured white-label page variants and is removed from this route only.
+
+The implementation selects mutually exclusive width class sets rather than
+rendering both the shared `55%` utility and the route-specific `47.1%` utility.
+This avoids Tailwind stylesheet-generation order resolving the conflict in
+favor of the shared width.
+
+## 2026-08-17 Industries Grid Separator Correction
+
+The supplied live CSS confirms a three-column desktop grid with `48px` column
+padding and `80px` row spacing, reduced to `30px`/`40px` below 1200px. Desktop
+vertical gradient separators follow columns 1, 2, and 4. At tablet widths the
+grid becomes two columns, separators move to columns 1 and 3, and horizontal
+gradient row dividers are added. Mobile becomes one column, removes vertical
+separators, and retains horizontal gradient dividers between items. The local
+Industries grid now mirrors this ownership and uses the live negative wrapper
+margins so separator height and spacing remain consistent.
+
+## 2026-08-17 Tablet Parity Correction
+
+Fresh live and local captures at the supplied 768px reference width isolated
+three route-specific differences. The local website-design hero constrained its
+artwork wrapper to 400px, while live lets the artwork fill the stacked tablet
+container. The Benefits and Advantages rails also omitted Owl's 25px stage
+padding/adjacent-card preview and showed pagination above the live mobile-only
+range. Finally, the fifth AI capability aligned left instead of occupying a
+centered half-width position. The route-specific hero variant and carousel/grid
+components now reproduce those live tablet behaviors without changing the
+default shared white-label hero or any other page.
+
 ## Screenshots
 
 | Viewport | Live screenshot | Local screenshot | Status |
 | --- | --- | --- | --- |
 | 1440x900 | `/tmp/white-label-website-design-live-1440x900.png` | Pending implementation | Hero and first counter row captured |
-| 768x1024 | `/tmp/white-label-website-design-live-768x1024.png` | Pending implementation | Tablet header, hero stack, and counters captured |
+| 768x1024 | `/tmp/white-label-website-design-live-768-current.png` | `/tmp/white-label-website-design-local-768-after.png` | Matched after route-scoped hero, carousel stage-padding, and AI-card alignment corrections |
 | 390x844 | `/tmp/white-label-website-design-live-390x844.png` | Pending implementation | Mobile header, hero copy, review marks, and artwork entry captured |
 | 1440px full page | `/tmp/white-label-website-design-live-full-1440.png` | Pending implementation | Full section order, carousels, accordions, testimonial, FAQ, and footer captured |
 | 390px full page | `/tmp/white-label-website-design-live-full-390.png` | Pending implementation | Full mobile stacking, section rhythm, and initial interactive states captured |
@@ -26,6 +122,12 @@ Browser: Google Chrome headless (desktop, tablet, and mobile emulation)
 | `assets/css/default-media.css?ver=1.0.0` | Global responsive typography, container, button, and spacing behavior |
 | `assets/css/services/main.css?ver=all` | Hero, counters, AI sections, service accordion, testimonial, FAQ, colors, dimensions, transitions, and keyframes |
 | `assets/css/services/media.css?ver=1.0.0` | 1199px, 991px, 767px, 575px, 389px, and 359px page behavior |
+
+### 2026-08-17 narrow hero heading correction
+
+- Live breakpoint inspected: `max-width: 389px`.
+- Live heading state: `30px` font size, `40px` line height, and `10px` bottom margin.
+- Scope: shared white-label hero heading only; wider breakpoints remain unchanged.
 | `assets/js/services.js?ver=1.0.0` | Single-open/closable service accordion, FAQ behavior, carousel setup, and counter observer behavior |
 | `assets/js/custom.js?ver=1.0.0` | Header scroll state, menu behavior, testimonial/video controls, and shared interaction setup |
 | Live asset set | Hero artwork, proof icons, benefit icons, AI capability icons, process icons, service icons, industry icons, tick icon, and testimonial assets identified for hash comparison and local migration |

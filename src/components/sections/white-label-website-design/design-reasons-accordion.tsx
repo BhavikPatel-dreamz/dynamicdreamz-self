@@ -33,8 +33,15 @@ export function DesignReasonsAccordion({ items }: DesignReasonsAccordionProps) {
                 {item.title}
               </span>
               <span className="relative flex size-8 shrink-0 items-center justify-center rounded-lg bg-dark-green/5" aria-hidden="true">
-                <span className="absolute h-0.5 w-[15px] bg-dark-green" />
-                <span className={cn("absolute h-[15px] w-0.5 bg-dark-green transition-transform duration-300 motion-reduce:duration-0", isOpen && "rotate-90")} />
+                <span
+                  className={cn(
+                    "relative block size-[15px] transition-transform duration-300 ease-in-out motion-reduce:duration-0",
+                    isOpen && "rotate-45",
+                  )}
+                >
+                  <span className="absolute top-[6.5px] left-0 h-0.5 w-[15px] rounded-full bg-dark-green" />
+                  <span className="absolute top-0 left-[6.5px] h-[15px] w-0.5 rounded-full bg-dark-green" />
+                </span>
               </span>
             </button>
             <div
@@ -46,7 +53,7 @@ export function DesignReasonsAccordion({ items }: DesignReasonsAccordionProps) {
               inert={!isOpen}
             >
               <div className="overflow-hidden">
-                <p className="pt-2.5 text-base leading-[1.9] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[21px]">
+                <p className="pt-2.5 text-base leading-[1.9] font-medium text-muted max-[767px]:leading-[21px]">
                   {item.description}
                 </p>
               </div>

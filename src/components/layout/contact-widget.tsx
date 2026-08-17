@@ -11,7 +11,7 @@ export function ContactWidget() {
     <a
       className={cn(
         "whatsapp-widget fixed right-5 z-[110] flex w-[240px] items-center rounded-[100px] bg-brand-green px-[10px] py-[7px] text-white shadow-[0_10px_30px_rgb(0_0_0/15%)] transition-[transform,box-shadow] duration-300 hover:-translate-y-[3px] hover:shadow-[0_15px_40px_rgb(0_0_0/20%)] max-[767px]:right-2.5",
-        pathname === "/" ? "bottom-[15px]" : "bottom-[80px]",
+        pathname === "/" ? "bottom-3.75" : "bottom-20 max-[767px]:bottom-9.5",
       )}
       href="https://api.whatsapp.com/send/?phone=919825195930"
       target="_blank"
@@ -41,7 +41,7 @@ export function ContactWidget() {
         </svg>
       </span>
       <span className="h-[55px] max-[991px]:h-[45px] w-px shrink-0 bg-white/50 max-[767px]:h-10" aria-hidden="true" />
-      <span className="flex flex-col pl-2.5 leading-[1.2]">
+      <span className="flex flex-col pl-2.5 leading-[1.2] max-[991px]:text-[11px]">
         <small className="mb-[5px] text-[12px] font-semibold">
           Have a project in mind?
         </small>
