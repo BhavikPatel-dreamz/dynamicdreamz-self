@@ -1,0 +1,734 @@
+var $ = jQuery;
+jQuery(document).ready(function () {
+
+  /* Youtube Popup JS */
+  /*     jQuery(".popup-youtube").magnificPopup({
+          type: "iframe",
+          iframe: {
+              patterns: {
+                  youtube: {
+                      index: "youtube.com/",
+                      id: "v=",
+                      src: "https://www.youtube.com/embed/%id%?autoplay=1?rel=0",
+                  },
+              },
+          },
+          callbacks: {
+              open: function () {
+                  jQuery("body").addClass("overflow-hidden");
+              },
+              close: function () {
+                  jQuery("body").removeClass("overflow-hidden");
+              },
+          },
+      }); */
+
+
+  setTimeout(function () {
+    $('.our-client-sec .wrapper').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: false,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      pauseOnHover: false,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false,
+          },
+        },
+      ],
+    });
+  }, 3000);
+
+  jQuery(document).ready(function ($) {
+    let slider = $('.owl-carousel.happy-client-slider');
+    slider.each(function () {
+      $(this).owlCarousel({
+        nav: false,
+        loop: false,
+        dots: false,
+        pagination: false,
+        margin: 25,
+        autoHeight: false,
+        stagePadding: 50,
+        responsive: {
+          0: {
+            items: 1,
+            stagePadding: 25,
+            margin: 10,
+          },
+          767: {
+            items: 2,
+            stagePadding: 25,
+          },
+          1200: {
+            items: 2,
+            stagePadding: 25,
+          }
+        }
+      });
+    });
+  });
+
+  jQuery(document).ready(function ($) {
+    let slider = $('.owl-carousel.scs-slider');
+    slider.each(function () {
+      $(this).owlCarousel({
+        nav: false,
+        loop: false,
+        dots: false,
+        pagination: false,
+        margin: 16,
+        autoHeight: false,
+        stagePadding: 25,
+        responsive: {
+          0: {
+            items: 1,
+            margin: 10,
+          },
+          767: {
+            items: 2,
+
+          },
+          1200: {
+            items: 2,
+
+          }
+        }
+      });
+    });
+  });
+
+  jQuery(document).ready(function ($) {
+    let slider = $('.owl-carousel.what-delivers-slider');
+    slider.each(function () {
+      $(this).owlCarousel({
+        nav: false,
+        loop: false,
+        dots: false,
+        pagination: false,
+        margin: 16,
+        autoHeight: false,
+        stagePadding: 50,
+        responsive: {
+          0: {
+            items: 1,
+            stagePadding: 25,
+            margin: 10,
+            dots: true,
+          },
+          767: {
+            items: 2,
+            stagePadding: 25,
+          },
+          1200: {
+            items: 3,
+            stagePadding: 0,
+          }
+        }
+      });
+    });
+  });
+
+  jQuery(document).ready(function ($) {
+    let slider = $('.owl-carousel.industries-services-carousel');
+    slider.each(function () {
+      $(this).owlCarousel({
+        nav: false,
+        loop: false,
+        dots: false,
+        pagination: false,
+        margin: 20,
+        autoHeight: false,
+        stagePadding: 50,
+        responsive: {
+          0: {
+            items: 1,
+            stagePadding: 25,
+          },
+          992: {
+            items: 2,
+            stagePadding: 30,
+          }
+        }
+      });
+    });
+  });
+
+  jQuery(document).ready(function ($) {
+    let slider = $('.owl-carousel.wls-slider');
+    slider.each(function () {
+      $(this).owlCarousel({
+        nav: false,
+        loop: false,
+        dots: false,
+        pagination: false,
+        margin: 16,
+        autoHeight: false,
+        stagePadding: 25,
+        responsive: {
+          0: {
+            items: 1,
+            stagePadding: 25,
+            margin: 10,
+          },
+          767: {
+            items: 2,
+
+          },
+          1200: {
+            items: 3,
+
+          }
+        }
+      });
+    });
+  });
+
+  /* Our Work In Mobile Slider JS */
+  /*         $('.happy-client-main .wrapper').slick({
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              centerMode: true,
+              arrows: false,
+              dots: false,
+              speed: 1000,
+              centerPadding: '17%',
+              infinite: false,
+              autoplaySpeed: 5000,
+              autoplay: false,
+              responsive: [
+                  {
+                      breakpoint: 1701,
+                      settings: {
+                          centerPadding: '19%',
+                      },
+                  },
+                  {
+                      breakpoint: 1601,
+                      settings: {
+                          centerPadding: '17%',
+                      },
+                  },
+                  {
+                      breakpoint: 1501,
+                      settings: {
+                          centerPadding: '12.4%',
+                      },
+                  },
+                  {
+                      breakpoint: 1401,
+                      settings: {
+                          centerPadding: '8%',
+                      },
+                  },
+                  {
+                      breakpoint: 992,
+                      settings: {
+                          centerPadding: '3%',
+                      },
+                  },
+                  {
+                      breakpoint: 768,
+                      settings: {
+                          centerPadding: '20px',
+                          slidesToShow: 1,
+                          slidesToScroll: 1,
+                      },
+                  },
+              ],
+      }); */
+  $(document).ready(function () {
+    $('.technologies-tabs .tab-menu li').click(function () {
+      var tab_id = $(this).data('tab');
+
+      $('.tab-menu li').removeClass('active');
+      $(this).addClass('active');
+
+      $('.tab-content.active').fadeOut(200, function () {
+        $(this).removeClass('active');
+        $(tab_id).fadeIn(200).addClass('active');
+      });
+    });
+
+    $('.tab-content').not('.active').hide();
+  });
+
+  $(document).ready(function () {
+    const $reviews = $('.review_animation');
+    let currentIndex = 0;
+
+    const starDelay = 200;
+    const ratingDelay = 5 * starDelay + 300;
+    const totalRatingDelay = 5 * starDelay + 600;
+
+    // Function to reset all reviews animations and classes
+    function resetAllReviews() {
+      $reviews.each(function () {
+        const $r = $(this);
+        $r.removeClass('zoom-in show active');
+        $r.find('.review_animation_wrapper').removeClass('show');
+        $r.find('.review_animation_stars path').removeClass('show');
+        $r.find('.review_ratings, .review_total_ratings').removeClass('show');
+      });
+    }
+
+    function animateReview($review) {
+      if (!$review.length) return;
+
+      // No need to reset here anymore because we do it globally before calling animateReview
+
+      setTimeout(() => {
+        $review.addClass('zoom-in show');
+
+        setTimeout(() => {
+          $review.find('.review_animation_wrapper').addClass('show');
+
+          $review.find('.review_animation_stars path').each((index, el) => {
+            setTimeout(() => {
+              $(el).addClass('show');
+            }, index * starDelay);
+          });
+
+          setTimeout(() => {
+            $review.find('.review_ratings').addClass('show');
+          }, ratingDelay);
+
+          setTimeout(() => {
+            $review.find('.review_total_ratings').addClass('show');
+          }, totalRatingDelay);
+
+        }, 300);
+      }, 100);
+    }
+
+    function showNextReview() {
+      resetAllReviews();
+
+      const $current = $reviews.eq(currentIndex);
+      $current.addClass('active');
+      animateReview($current);
+
+      currentIndex = (currentIndex + 1) % $reviews.length;
+    }
+
+    showNextReview(); // Show first review on page load
+    setInterval(showNextReview, 5000); // Rotate every 5 seconds
+  });
+
+
+  setTimeout(function () {
+    jQuery(document).on('click', '.accrodion-title', function () {
+      jQuery('.accrodion-item').removeClass('active');
+      jQuery('.accrodion-content').slideUp();
+      if (jQuery(this).next().is(":visible")) {
+        jQuery(this).removeClass('active');
+        jQuery(this).next().slideUp();
+      } else {
+        jQuery(this).parent().addClass('active');
+        jQuery(this).next().slideDown();
+      }
+    });
+  }, 1200);
+
+
+
+  $('.white-label-shopify-process-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    infinite: false,
+    autoplay: false,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+    ],
+  });
+
+
+});
+
+// White Label Wordpress Development Services Counter Section JS
+
+jQuery(document).ready(function ($) {
+
+  var counter_animated = false;
+
+  if ('IntersectionObserver' in window) {
+
+    var counter_observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !counter_animated) {
+          counter_animated = true;
+
+          setTimeout(function () {
+            $('#counter_1').html('20');
+            $('#counter_2').html('150');
+            $('#counter_3').html('2500');
+            $('#counter_4').html('1000');
+          }, 100);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    var section = document.querySelector('.stats_sections');
+    if (section) {
+      counter_observer.observe(section);
+    }
+
+  } else {
+
+    var scroll_timeout;
+
+    $(window).on('scroll', function () {
+
+      if (counter_animated) return;
+
+      clearTimeout(scroll_timeout);
+
+      scroll_timeout = setTimeout(function () {
+
+        var section = $('.stats_section');
+        if (!section.length) return;
+
+        var window_top = $(window).scrollTop();
+        var window_bottom = window_top + $(window).height();
+
+        var section_top = section.offset().top;
+        var section_bottom = section_top + section.outerHeight();
+
+        if (window_bottom > section_top && window_top < section_bottom) {
+          counter_animated = true;
+
+          setTimeout(function () {
+            $('#counter_1').html('18');
+            $('#counter_2').html('150');
+            $('#counter_3').html('2500');
+            $('#counter_4').html('1000');
+          }, 100);
+        }
+
+      }, 100);
+
+    });
+
+  }
+
+});
+
+function fixSlickAria($carousel) {
+  $carousel.on('init reInit afterChange', function () {
+    $(this).find('.slick-slide').each(function () {
+      var isHidden = $(this).attr('aria-hidden') === 'true';
+
+      $(this)
+        .find('a, button, input, textarea, select, [tabindex]')
+        .each(function () {
+          if (isHidden) {
+            $(this).attr('tabindex', '-1');
+          } else {
+            $(this).removeAttr('tabindex');
+          }
+        });
+    });
+  });
+}
+
+$(document).ready(function () {
+  $('.brand_testimonial_carousel').each(function () {
+    var $carousel = $(this);
+    var $section = $carousel.closest(".brand_testimonial_slider_wrap");
+    var $arrows = $section.find('.brand_testimonial_nav');
+
+    fixSlickAria($carousel);
+
+    $carousel.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      accessibility: true,
+      focusOnSelect: false,
+      prevArrow: $arrows.find('.prev'),
+      nextArrow: $arrows.find('.next'),
+      arrows: !0,
+      dots: !1,
+      speed: 600,
+      cssEase: 'ease-in-out',
+      infinite: !1,
+      adaptiveHeight: false,
+      responsive: [{
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 1
+        }
+      }, {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 1
+        }
+      }, {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1
+        }
+      }]
+    });
+  });
+});
+
+// White Label Wordpress Development Services Accordion Section JS
+
+// jQuery(document).ready(function ($) {
+//   var $items = $(".accordion_item");
+
+//   $items.filter(".active").find(".accordion_body").each(function () {
+//     $(this).css("max-height", this.scrollHeight + "px");
+//   });
+
+//   $items.find(".accordion_header").on("click", function () {
+//     var $current = $(this).closest(".accordion_item");
+//     var isActive = $current.hasClass("active");
+
+//     $items.not($current).removeClass("active").find(".accordion_body").css("max-height", 0);
+
+//     if (isActive) {
+//       $current.removeClass("active").find(".accordion_body").css("max-height", 0);
+//     } else {
+//       $current.addClass("active");
+//       var body = $current.find(".accordion_body")[0];
+//       $(body).css("max-height", body.scrollHeight + "px");
+//     }
+//   });
+// });
+
+
+
+
+
+
+
+
+
+/* jQuery(document).ready(function ($) {
+
+  var $section = $(".white_label_wp_development_service_accordion_section");
+  var $items = $section.find(".accordion_item");
+
+  // Open already active accordion on load
+  $items.filter(".active").find(".accordion_body").each(function () {
+    $(this).css("max-height", this.scrollHeight + "px");
+  });
+
+  // 🔹 Initial icon sync on load
+  $items.each(function () {
+    $(this)
+      .find(".accordion_toggle")
+      .text($(this).hasClass("active") ? "-" : "+");
+  });
+
+  // Accordion click handler
+  $section.find(".accordion_header").on("click", function () {
+    var $current = $(this).closest(".accordion_item");
+    var isActive = $current.hasClass("active");
+
+    // Close all other accordions
+    $items.not($current)
+      .removeClass("active")
+      .find(".accordion_body")
+      .css("max-height", 0);
+
+    // Reset icons of all other accordions
+    $items.not($current).find(".accordion_toggle").text("+");
+
+    // Toggle current accordion
+    if (isActive) {
+      $current
+        .removeClass("active")
+        .find(".accordion_body")
+        .css("max-height", 0);
+
+      // icon when closed
+      $current.find(".accordion_toggle").text("+");
+
+    } else {
+      $current.addClass("active");
+      var body = $current.find(".accordion_body")[0];
+      $(body).css("max-height", body.scrollHeight + "px");
+
+      // icon when open
+      $current.find(".accordion_toggle").text("-");
+    }
+  });
+});
+ */
+
+jQuery(document).ready(function ($) {
+
+  $(".white_label_wp_development_service_accordion_section").each(function () {
+
+    var $section = $(this);
+    var $items = $section.find(".accordion_item");
+
+    // Check current section only
+    var isWebsiteDesign = $section.hasClass("website-design");
+
+    // Default first accordion open for website-design
+    if (isWebsiteDesign && !$items.filter(".active").length) {
+      $items.first().addClass("active");
+    }
+
+    // Open active accordion on load
+    $items.filter(".active").find(".accordion_body").each(function () {
+      $(this).css("max-height", this.scrollHeight + "px");
+    });
+
+    // Initial icon setup
+    $items.each(function () {
+
+      if (!isWebsiteDesign) {
+
+        // Normal accordion icons
+        $(this)
+          .find(".accordion_toggle")
+          .text($(this).hasClass("active") ? "-" : "+");
+
+      } else {
+
+        // Remove text to avoid ++
+        $(this).find(".accordion_toggle").text("");
+
+      }
+
+    });
+
+    // Accordion click
+    $section.find(".accordion_header").on("click", function () {
+
+      var $current = $(this).closest(".accordion_item");
+      var isActive = $current.hasClass("active");
+
+      // Close all others
+      $items.not($current)
+        .removeClass("active")
+        .find(".accordion_body")
+        .css("max-height", 0);
+
+      // Reset icons for normal accordions only
+      if (!isWebsiteDesign) {
+
+        $items.not($current)
+          .find(".accordion_toggle")
+          .text("+");
+
+      }
+
+      // Close current
+      if (isActive) {
+
+        $current
+          .removeClass("active")
+          .find(".accordion_body")
+          .css("max-height", 0);
+
+        if (!isWebsiteDesign) {
+          $current.find(".accordion_toggle").text("+");
+        }
+
+      } else {
+
+        // Open current
+        $current.addClass("active");
+
+        var body = $current.find(".accordion_body")[0];
+
+        $(body).css("max-height", body.scrollHeight + "px");
+
+        if (!isWebsiteDesign) {
+          $current.find(".accordion_toggle").text("-");
+        }
+      }
+
+    });
+
+  });
+
+  jQuery(document).ready(function () {
+    $(function () {
+      function openTab(tab) {
+        $('.credential-tab').removeClass('active');
+        $('.panel').removeClass('active');
+
+        $(tab).addClass('active');
+        $('#' + $(tab).data('tab')).addClass('active');
+      }
+
+      $('.credential-tab').on('click', function () {
+        openTab(this);
+      });
+
+      openTab($('.credential-tab').first());
+    });
+  });
+});
+
+
+jQuery(document).ready(function($) {
+  $('.page-id-6865 .content-wrap a.btn.btn-red-brder').on('click', function(e) {
+    var href = $(this).attr('href');
+
+    if (href && href.charAt(0) === '#') {
+      e.preventDefault();
+      var $target = $(href);
+
+      if ($target.length) {
+        $('html, body').animate({
+          scrollTop: $target.offset().top
+        }, 600); // duration in ms
+      }
+    }
+  });
+});
+

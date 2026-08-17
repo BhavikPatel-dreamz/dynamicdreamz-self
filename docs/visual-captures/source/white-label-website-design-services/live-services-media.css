@@ -1,0 +1,4749 @@
+@media (max-width:1499px) {
+        .our-client-sec .wrapper .slick-list:before {
+                left: -15px;
+        }
+}
+
+@media (max-width:1399px) {
+        .our-client-sec .wrapper .slick-list:before {
+                left: -22px
+        }
+}
+
+@media (max-width:1199px) {
+        .our-client-sec .main-wrapper .left-col {
+                width: 30%;
+                padding-left: calc((100% - 920px)/ 2)
+        }
+
+        .our-client-sec .main-wrapper .right-col {
+                width: 70%
+        }
+
+        .our-client-sec .wrapper .slick-list {
+                padding-right: 50px
+        }
+
+        .our-work-sec .title-with-text p br {
+                display: none
+        }
+
+        .inner-hero-sec.custom-cross-platform .inner-wrapper .left-col,
+        .inner-wrapper .left-col,
+        .magento-to-shopify .inner-wrapper .left-col,
+        .woocommerce-to-shopify .inner-wrapper .left-col {
+                width: 100%;
+                text-align: center
+        }
+
+        .inner-hero-sec.custom-cross-platform .inner-wrapper .right-col,
+        .inner-wrapper .right-col,
+        .woocommerce-to-shopify .inner-wrapper .right-col {
+                width: 50%;
+                margin: 50px auto 0
+        }
+
+        .inner-hero-sec.custom-cross-platform .inner-wrapper .right-col,
+        .full-width-bg-color .inner-wrapper .left-col,
+        .full-width-bg-color .inner-wrapper .right-col,
+        .inner-hero-sec.webflow-development-hero .inner-wrapper .left-col {
+                width: 100%;
+        }
+
+        .services-text {
+                padding: 30px 20px
+        }
+
+        .services-text h3 {
+                margin-top: 15px;
+                margin-bottom: 10px
+        }
+
+        .inner-hero-content h1 {
+                font-size: 40px;
+                line-height: 50px
+        }
+
+        .inner-hero-content p {
+                font-size: 16px;
+                line-height: 30.4px
+        }
+
+        .rating span {
+                font-size: 16px
+        }
+
+        .review-wrap {
+                margin-top: 50px
+        }
+
+        .faq-sec .header-text,
+        .our-work-culture-sec .header-text {
+                margin-bottom: 30px
+        }
+
+        .accrodion-title h3 {
+                font-size: 18px
+        }
+
+        .accrodion-title {
+                padding: 20px 50px 20px 20px
+        }
+
+        .accrodion-content {
+                padding: 0 20px 20px 20px
+        }
+
+        .accrodion-title:after {
+                right: 20px;
+                width: 25px;
+                height: 25px
+        }
+
+        .accrodion-title h3 {
+                font-size: 16px
+        }
+
+        .accrodion-content li,
+        .accrodion-content p {
+                font-size: 14px;
+                line-height: 26px
+        }
+
+        .happy-client-main {
+                margin-right: calc(-100vw / 2 + 980px / 2)
+        }
+
+        .client-review-text {
+                padding: 20px
+        }
+
+        .card-item {
+                min-height: 240px
+        }
+
+        .client-name {
+                margin: 0 20px 20px 20px
+        }
+
+        .happy-client-main .wrapper .slick-slide {
+                margin-right: 15px
+        }
+
+        .client-name h4,
+        .client-name h3 {
+                font-size: 14px;
+                padding: 7px 14px
+        }
+
+        .client-name h4 span,
+        .client-name h3 span {
+                margin-left: 7px;
+                padding-left: 7px;
+                font-size: 12px
+        }
+
+        .qoute-icon {
+                right: 20px;
+                top: 20px;
+                width: 40px
+        }
+
+        .request-banner .request-banner-text h3 {
+                font-size: 26px;
+                line-height: 36px
+        }
+
+        .request-banner .request-banner-text {
+                gap: 20px
+        }
+
+        .why_dynamic_dreamz_main ul li {
+                padding: 30px
+        }
+
+        .get_in_touch_sec .wrapper .left-col {
+                width: 40%
+        }
+
+        .get_in_touch_form {
+                padding: 30px;
+                max-width: 500px
+        }
+
+        .text-box-wrap {
+                padding: 30px 20px;
+        }
+
+        .text-box-wrap .text {
+                margin: 0
+        }
+
+        .shopify-app-features-sec .wrapper {
+                margin: 0 -15px
+        }
+
+        .shopify-app-features-sec .wrapper>div {
+                padding: 0 15px
+        }
+
+        .features-text ul li {
+                padding: 30px 0
+        }
+
+        .benefit_text {
+                padding: 30px 20px
+        }
+
+        .features-text ul li span.icon {
+                width: 55px;
+                height: 55px;
+                margin-right: 20px
+        }
+
+        .features-text ul li span.icon img {
+                width: 30px
+        }
+
+        .features-text ul li span.text {
+                width: calc(100% - 70px)
+        }
+
+        .features-col-1,
+        .features-col-3 {
+                width: 34%
+        }
+
+        .features-col-2 {
+                width: 32%
+        }
+
+        .app-text {
+                padding: 50px 20px 40px 20px
+        }
+
+        .app-text .icon {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 10px
+        }
+
+        .app-text .icon img {
+                width: 25px
+        }
+
+        .app-text h3 {
+                font-size: 14px
+        }
+
+        .app-text p {
+                font-size: 14px;
+                line-height: 24px
+        }
+
+        .benefit_box_sec {
+                padding-bottom: 50px
+        }
+
+        .how-app-work-sec {
+                padding: 60px 0 80px 0
+        }
+
+        .how-app-work-sec .heading-text .title {
+                margin-bottom: 50px
+        }
+
+        .process-main {
+                max-width: 100%
+        }
+
+        .process-main .process-box {
+                padding: 0 20px
+        }
+
+        .process-main .process-img {
+                width: 200px
+        }
+
+        .process-main .process-box .text p {
+                font-size: 14px;
+                line-height: 26px
+        }
+
+        .logo-block-slide {
+                width: 33.33%
+        }
+
+        .process-wave-img {
+                top: 170px
+        }
+
+        .wordpress-development-process .our-process-main {
+                padding-top: 170px
+        }
+
+        .wordpress-development-process .our-process-main .process-wave-img {
+                top: 220px
+        }
+
+        .process-box h3 {
+                font-size: 16px
+        }
+
+        .our-process-sec .process-wrapper .process-box:first-child {
+                width: 25%;
+                margin-top: 80px
+        }
+
+        .our-process-sec .process-wrapper .process-box:nth-child(2) {
+                width: 27%;
+                margin-top: 20px
+        }
+
+        .our-process-sec .process-wrapper .process-box:nth-child(3) {
+                width: 23%;
+                margin-top: 0
+        }
+
+        .our-process-sec .process-wrapper .process-box:nth-child(4) {
+                width: 25%
+        }
+
+        .our-process-sec .process-wrapper .process-box {
+                padding: 0 5px
+        }
+
+        .our-process-sec .process-wrapper .process-box:first-child .icon {
+                top: -20px
+        }
+
+        .our-process-sec .process-wrapper .process-box:nth-child(2) .icon {
+                top: -65px
+        }
+
+        .wordpress-process .our-process-main {
+                padding-top: 170px
+        }
+
+        .wordpress-process .process-wave-img {
+                top: 185px
+        }
+
+        .shopify-development-process .our-process-main .process-wave-img {
+                top: 120px
+        }
+
+        .big-commerce-process .our-process-main .process-wave-img {
+                top: 220px
+        }
+
+        .big-commerce-process .our-process-main {
+                padding-top: 180px
+        }
+
+        .builder-wrapper .builder-col {
+                width: 25%
+        }
+
+        .builder-wrapper .builder-block h3 {
+                font-size: 16px
+        }
+
+        .difference_card_wrapper {
+                margin: 0 -10px;
+        }
+
+        .difference_card_wrapper .card-col {
+                padding: 0 10px;
+        }
+
+        .shopify-theme-card {
+                padding: 15px 15px 30px 15px;
+        }
+
+        .shopify-theme-card .text h3 {
+                font-size: 16px;
+                line-height: normal;
+                margin-bottom: 15px;
+        }
+
+        .shopify-theme-card .text .learn_more {
+                font-size: 12px;
+        }
+
+        .wordpress-page-builders_sec .title-with-text p br {
+                display: none;
+        }
+
+        .happy-client-sec .header-text p br {
+                display: none;
+        }
+
+        .industries-item {
+                padding: 20px;
+        }
+
+        .what-during-migration-sec .wrapper .col {
+                width: 33.33%;
+        }
+
+        .what-during-migration-sec .wrapper .col:nth-child(3) {
+                border-right: 0;
+        }
+
+        .pricing_packages_section .header-text p br {
+                display: none;
+        }
+
+        .migration-services-sec .migration-box {
+                padding: 20px
+        }
+
+        .migration-services-sec .migration-img {
+                padding: 70px 20px
+        }
+
+        .migration-services-sec .migration-box h3 {
+                font-size: 18px
+        }
+
+        .migration-services-sec .migration-box p {
+                font-size: 14px;
+                line-height: 24px
+        }
+
+        .industries-hero-content p br {
+                display: none;
+        }
+
+        .two-col-image-with-text-section .wrapper .left-col {
+                width: 43%;
+        }
+
+        .two-col-image-with-text-section .wrapper .right-col {
+                width: 53%;
+        }
+
+        .services_case_study_section .cs-listing-row {
+                padding: 50px 40px 50px 40px
+        }
+
+        .services_case_study_section .cs-col-right {
+                width: 44%
+        }
+
+        .services_case_study_section .cs-listing-row:before {
+                width: 300px
+        }
+
+        .services_case_study_section .cs-details {
+                margin: 20px 0;
+                gap: 30px
+        }
+
+        .services_case_study_section .cs-title {
+                padding-bottom: 20px
+        }
+
+        .services_case_study_section .cs-title h2 {
+                margin-bottom: 10px
+        }
+
+        .services_case_study_section .cs_list_img:before {
+                left: -30px
+        }
+
+        .services_case_study_section .cs_list_img:after {
+                right: -30px
+        }
+
+        .services_case_study_section .cs_list_img:after,
+        .cs_list_img:before {
+                width: 90px
+        }
+
+        .services_case_study_section .cs-visit a.btn {
+                min-width: unset
+        }
+
+        .services_case_study_section .cs-visit,
+        .cs-details {
+                gap: 20px
+        }
+
+        .services_case_study_section .cs-listing-sec {
+                padding: 80px 0
+        }
+
+        .services_case_study_section .cs-col {
+                min-width: 120px;
+        }
+
+        .services_case_study_section .cs-details span:last-child {
+                font-size: 14px;
+                line-height: 24px
+        }
+
+        .services_case_study_section .cs-details span:first-child {
+                margin-bottom: 5px
+        }
+
+        .services_case_study_section .cs-visit a.btn {
+                padding: 14px 24px;
+                font-size: 14px
+        }
+
+        .lets-build-section:before {
+                width: 120px;
+                height: 70px;
+        }
+
+        .lets-build-section:after {
+                width: 160px;
+                height: 80px;
+        }
+
+        .stat-infomation-box-inner .text h3 {
+                font-size: 26px;
+        }
+
+        .stat-infomation-box {
+                padding: 18px 15px;
+        }
+
+        .stat-infomation-box-inner .icon {
+                margin-right: 10px;
+                width: 35px;
+                height: 35px;
+        }
+
+        .stat-infomation-box-inner .text {
+                width: calc(100% - 45px);
+        }
+
+        .stat-infomation-box-inner .text p {
+                line-height: 20px;
+                font-size: 14px;
+        }
+
+        .full-width-bg-color {
+                padding-bottom: 100px;
+        }
+
+        .technologies-tabs ul.tab-menu li {
+                padding: 0 10px 24px 10px;
+        }
+
+        .technologies-tabs ul.tab-menu {
+                gap: 20px;
+        }
+
+        .review_animation {
+                width: 420px !important;
+                margin: 0 auto;
+        }
+
+        /* Add Read More Button */
+        .services-box a[href] .services-text {
+                padding-bottom: 85px;
+        }
+
+        .services-box a[href] .services-text .services-read-more {
+                font-size: 15px;
+                width: calc(100% - 40px);
+        }
+
+        /* WordPress Development Experience Start */
+        .experience-col {
+                width: 33.33%;
+        }
+
+        /* WordPress Development Experience End */
+
+        .white_label_wp_development_service_accordion_section h2.services_title+p {
+                margin-bottom: 40px;
+        }
+
+        .white-label-shopify-perfect-fit .perfect-fit-col {
+                width: 50%;
+        }
+
+        .white-label-shopify-development-banner {
+                padding: 150px 0px 80px 0px;
+        }
+
+        .white-label-shopify-process-slider .slick-list {
+                margin: 0 -30px;
+                overflow: inherit;
+                padding: 0% 25% 0 5%;
+        }
+
+        .white-label-shopify-process-slider .slick-slide {
+                margin: 0 30px;
+        }
+
+        .webflow-services-section .services-grid .service-card {
+                padding: 30px 20px;
+        }
+
+        .milestones-section .milestones-grid {
+                margin: 0 -10px -20px -10px;
+        }
+
+        .milestones-section .milestones-grid .milestone-col {
+                padding: 0 10px;
+        }
+
+        .milestones-section .milestones-grid .milestone-inner {
+                padding: 20px;
+        }
+
+        .white_label_counter_number_wrap {
+                margin: 0px -40px;
+        }
+
+        .white_label_counter_number_wrap .col_item {
+                padding: 0px 40px;
+        }
+
+        /* white-label-wordpress-development-services-new CSS */
+
+        .white_label_hero_section {
+                padding-top: 120px;
+        }
+
+        .white_label_hero_section .content-col {
+                padding-bottom: 40px;
+                width: 60%;
+        }
+
+        .white_label_hero_section .media-col {
+                width: 40%;
+        }
+
+        .white_label_hero_section .media-col .media-wrap {
+                right: -20%;
+                bottom: -50%;
+                width: calc(50vw + 20%);
+        }
+
+        .white_label_hero_section .content-col .content-wrap h1 {
+                font-size: 44px;
+                line-height: 55px;
+        }
+
+        .white_label_hero_section p {
+                line-height: 190%;
+                margin-bottom: 18px;
+        }
+
+        .white_label_hero_section .global_brands_grid_wrap {
+                margin-top: 35px;
+                margin-right: -20px;
+                margin-left: -20px;
+        }
+
+        .white_label_hero_section .global_brands_grid_wrap .global_brands_item {
+                padding: 0 20px;
+        }
+
+        /* White Label Counter Section CSS Starts */
+
+        .white_label_counter_section .stats_icon img {
+                width: 38px;
+                height: 38px;
+        }
+
+        .stats_number div,
+        .white_label_counter_section .stats_number .odometer-inside .odometer-digit,
+        .white_label_counter_section .stats_number .counter_icon {
+                font-size: 36px;
+                line-height: 46px;
+        }
+
+        /* White Label Why Dynamic Dreamz Section CSS Starts */
+
+        .white_label_why_dynamic_dreamz_section {
+                padding: 80px 0;
+        }
+
+        .white_label_why_dynamic_dreamz_section .white_label_title {
+                margin-bottom: 60px;
+        }
+
+        .white_label_why_dynamic_dreamz_section .white_label_item {
+                padding: 30px 20px;
+        }
+
+        .white_label_why_dynamic_dreamz_section .white_label_text {
+                line-height: 26px;
+        }
+
+        /* White Label Wordpress Development Services Accordion Section CSS Starts */
+
+        .white_label_wp_development_service_accordion_section .services_title {
+                margin-bottom: 50px;
+        }
+
+        .white_label_wp_development_service_accordion_section .services_grid {
+                gap: 50px;
+                margin-bottom: 30px;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_header {
+                padding: 18px 0;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_icon_wrap {
+                width: 48px;
+                height: 48px;
+                min-width: 48px;
+                margin-right: 15px;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_icon_wrap img {
+                width: 48px;
+                height: 48px;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_label {
+                line-height: 26px;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_toggle {
+                width: 28px;
+                height: 28px;
+                min-width: 28px;
+                font-size: 24px;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_content {
+                line-height: 26px;
+                padding: 0 0 20px 63px;
+        }
+
+        /* White Label Flexible Wordpress Development Plans Section CSS Starts */
+
+        .white_label_wp_develop_plan_section .pricing_header {
+                gap: 40px;
+                margin-bottom: 40px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_description {
+                max-width: 50%;
+                line-height: 26px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_title {
+                font-size: 28px;
+                line-height: 38px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_cards {
+                gap: 15px;
+                margin-bottom: 35px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_card {
+                padding: 25px 20px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_badge {
+                margin-bottom: 25px;
+                padding: 4px 10px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_price {
+                font-size: 20px;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_best_for_label {
+                margin-bottom: 15px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_best_for_text {
+                font-size: 15px;
+                line-height: 22px;
+        }
+
+        /* White Label Wide Range Of technologies Section CSS Starts */
+
+        .white_label_wide_range_technologies_section {
+                padding: 60px 0;
+        }
+
+        .white_label_wide_range_technologies_section .wide_range_technologies_top_part {
+                margin-bottom: 35px;
+        }
+
+        .white_label_wide_range_technologies_section .wide_range_technologies_heading h2 {
+                margin-bottom: 22px;
+        }
+
+        .white_label_wide_range_technologies_section .wide_range_technologies_para p {
+                line-height: 26px;
+        }
+
+        .white_label_wide_range_technologies_section .our_partners_logo_item img {
+                width: 200px;
+        }
+
+        /* White Label How Our Partnership Works Section CSS Starts */
+
+        .white_label_how_partnership_works_section .partnership_heading {
+                margin-bottom: 50px;
+        }
+
+        .white_label_how_partnership_works_section .step_card {
+                padding: 50px 20px 30px 20px;
+        }
+
+        .white_label_how_partnership_works_section .step_number_wrap {
+                margin-bottom: 25px;
+        }
+
+        .white_label_how_partnership_works_section .step_number {
+                font-size: 28px;
+                line-height: 38px;
+                width: 45px;
+                height: 45px;
+        }
+
+        .white_label_how_partnership_works_section .step_title {
+                margin-bottom: 22px;
+        }
+
+        .white_label_how_partnership_works_section .partnership_note {
+                margin-top: 25px;
+        }
+
+        .white_label_how_partnership_works_section .note_text {
+                font-size: 15px;
+                line-height: 22px;
+        }
+
+        .white_label_counter_section .stats_item:nth-child(1) .stats_number .odometer-inside .odometer-digit:first-child .odometer-ribbon-inner,
+        .white_label_counter_section .stats_item:nth-child(2) .stats_number .odometer-inside .odometer-digit:first-child .odometer-ribbon-inner,
+        .white_label_counter_section .stats_item:nth-child(4) .stats_number .odometer-inside .odometer-digit:first-child .odometer-ribbon-inner {
+                line-height: 1.25;
+        }
+
+        /* White Label Lets Build CTA Section CSS Starts */
+
+        .white_label_lets_build_cta_section {
+                padding: 60px 0;
+        }
+
+        .white_label_lets_build_cta_section .cta_content {
+                padding-right: 30px;
+        }
+
+        .white_label_lets_build_cta_section .cta_heading {
+                font-size: 26px;
+                line-height: 36px;
+        }
+
+        .white_label_lets_build_cta_section .cta_text {
+                line-height: 26px;
+        }
+
+        .faq-sec.bg-sky-blue .header-text {
+                margin-bottom: 30px;
+        }
+
+        .book-intro-call-section .wrapper .right-col {
+                padding: 30px;
+                padding-right: calc((100% - 960px)/2);
+        }
+
+        .book-intro-call-section .wrapper .left-col {
+                padding: 30px;
+                padding-left: calc((100% - 960px) / 2);
+        }
+
+        .what-we-delivers-sec.advantage-white-label-slider-sec.white-label-design .heading-text .title {
+                width: calc(51% - 15px);
+        }
+
+        .what-we-delivers-sec.advantage-white-label-slider-sec.white-label-design .heading-text {
+                margin-bottom: 20px;
+        }
+
+        .what-we-delivers-sec.advantage-white-label-slider-sec.white-label-design .heading-text .title {
+                width: calc(56% - 15px);
+        }
+
+        .what-we-delivers-sec.advantage-white-label-slider-sec.white-label-design .heading-text .text {
+                width: calc(45% - 15px);
+        }
+
+        .what-we-delivers-sec.advantage-white-label-slider-sec.white-label-design .heading-text .text p br {
+                display: none;
+        }
+
+        .brand_testimonial_carousel .slick-slide {
+                margin-right: 15px
+        }
+
+        .brand_testimonial .section_title {
+                max-width: 630px;
+                text-align: center;
+        }
+
+        .white_label_web_design_services_box .wl-box {
+                padding: 40px 30px;
+        }
+
+        .industries_we_have_served_box .wrapper .col {
+                padding: 0 30px;
+                margin-bottom: 40px;
+        }
+
+        .industries_we_have_served_box .wrapper {
+                margin: 0 -30px -40px -30px;
+        }
+
+        .industries_we_have_served_box .section-title {
+                margin-bottom: 50px;
+        }
+
+        /*.white_label_process_step_box_section */
+
+        .white_label_process_step_box_section .wrapper {
+                margin: 0 -15px -20px -15px;
+        }
+
+        .white_label_process_step_box_section .wrapper .col {
+                padding: 0 10px;
+                margin-bottom: 10px;
+        }
+
+        /* Our Shopify CRO Services */
+        .shopify-cro-services-grid .shopify-cro-services-item {
+                padding: 25px 25px;
+        }
+
+        /* revenue-impact-section */
+        .revenue-impact-wrapper .revenue-card .revenue-card-body {
+                padding: 50px 30px 30px 30px;
+        }
+
+        /* .cro-dynamic-dreamz */
+        .cro-dynamic-dreamz-wrap .column-row {
+                padding: 30px 30px 0;
+        }
+
+        .verified-shopify-knowledge-section .verified-wrapper .verified-col {
+                padding: 0 15px;
+        }
+
+        .verified-shopify-knowledge-section .heading-text {
+                margin-bottom: 50px;
+        }
+
+        .verified-shopify-knowledge-section .verified-wrapper {
+                margin: 0 -15px;
+        }
+
+        .verified-shopify-knowledge-section .heading-text .title {
+                width: calc(57% - 15px);
+        }
+
+        .verified-shopify-knowledge-section .heading-text .text {
+                width: calc(43% - 15px);
+        }
+
+        .shopifys_official_partner_section .sop-box-wrapper {
+                padding: 50px 40px;
+        }
+
+        .sop-state .sop-row .sop-col {
+                padding: 0 10px;
+        }
+
+        .sop-state .sop-row {
+                margin: 0 -10px;
+        }
+
+        .sop-state .sop-row .sop-item h3 {
+                font-size: 50px;
+                line-height: 44px;
+        }
+
+        .shopifys_official_partner_section .sop-box-wrapper .section-title h2 {
+                font-size: 33px;
+        }
+
+        .sop-state {
+                margin-top: 40px;
+        }
+
+        .sop-state .sop-row .sop-item p {
+                font-size: 12px;
+        }
+
+        .certified_developers_section .section-title .title {
+                width: 40%;
+        }
+
+        .certified_developers_section .section-title .text {
+                width: 55%;
+        }
+
+        .certified_developers_section .section-title {
+                align-items: flex-start;
+                margin-bottom: 30px;
+        }
+
+        .certified_developers_section .certified-item {
+                padding: 32px;
+        }
+
+        .evidence_you_can_see_section .section-title {
+                margin-bottom: 30px;
+        }
+
+        .evidence_you_can_see_section .section-title {
+                margin-bottom: 30px;
+        }
+
+        .evidence_you_can_see_section .wrapper .evidence-col {
+                padding: 0 10px;
+        }
+
+        .evidence_you_can_see_section .wrapper {
+                margin: 0 -10px;
+        }
+
+        .evidence_you_can_see_section .evidence-img img {
+                width: 165px;
+        }
+
+        .page-id-6865 .content-wrap .btn-div a.btn.btn-red-brder {
+                margin-left: 0;
+                margin-top: 10px;
+        }
+}
+
+@media (max-width:991px) {
+        .inner-hero-sec {
+                padding-top: 100px
+        }
+
+        .inner-wrapper .right-col,
+        .woocommerce-to-shopify .inner-wrapper .right-col {
+                width: 100%
+        }
+
+        .review-wrap {
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                margin: 50px 0 0 0;
+                z-index: 1;
+                position: relative
+        }
+
+        .total-review {
+                display: inline-block;
+                margin: 0
+        }
+
+        .review-wrap .review-box {
+                width: 100%;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: reverse;
+                -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                background-color: #fff;
+                z-index: unset;
+                border-radius: 10px;
+                padding: 18px 24px;
+                width: 60%
+        }
+
+        .review-wrap .review-box:before {
+                background: -o-linear-gradient(left, #15c064, #00d1ff);
+                background: -webkit-gradient(linear, left top, right top, from(#15c064), to(#00d1ff));
+                background: linear-gradient(to right, #15c064, #00d1ff);
+                position: absolute;
+                content: '';
+                width: calc(100% + 2px);
+                height: calc(100% + 2px);
+                border-radius: 10px;
+                left: -1px;
+                top: -1px;
+                right: -1px;
+                bottom: -1px;
+                display: block;
+                z-index: -1
+        }
+
+        .total-review span {
+                position: relative;
+                background-color: #fff;
+                z-index: 1;
+                border-radius: 30px
+        }
+
+        .total-review:before {
+                z-index: 1
+        }
+
+        .review-box svg {
+                min-height: 23px
+        }
+
+        .rating {
+                margin-top: 0
+        }
+
+        .heading-text {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                text-align: center;
+                margin: 0
+        }
+
+        .heading-text .text,
+        .heading-text .title {
+                width: 100%;
+                padding: 0
+        }
+
+        .benefit_box_sec .title-with-text,
+        .heading-text .title h2 {
+                margin-bottom: 30px
+        }
+
+        .migration-box,
+        .services-box {
+                width: 100%
+        }
+
+        .our-client-sec .main-wrapper {
+                display: block
+        }
+
+        .our-client-sec .main-wrapper .left-col,
+        .our-client-sec .main-wrapper .right-col {
+                width: 100%
+        }
+
+        .our-client-sec .main-wrapper .left-col {
+                text-align: center;
+                margin-bottom: 20px;
+                padding: 0
+        }
+
+        .our-client-sec .main-wrapper h2 br {
+                display: none
+        }
+
+        .our-client-sec .wrapper .slick-list {
+                padding-right: 0
+        }
+
+        .our-client-sec .wrapper .slick-list:before {
+                display: none
+        }
+
+        .our-client-sec .wrapper {
+                padding: 0 20px
+        }
+
+        .our-client-sec .wrapper.slick-initialized {
+                padding: 0
+        }
+
+        .our-work-main {
+                row-gap: 30px;
+                margin-top: 50px
+        }
+
+        .our-work-main .our_work_team {
+                width: calc(50% - 10px)
+        }
+
+        .our-work-main.grid-column-4 .our_work_team {
+                width: calc(50% - 8px)
+        }
+
+        .happy-client-sec .header-text p br {
+                display: none
+        }
+
+        .happy-client-main {
+                margin-right: calc(-100vw / 2 + 740px / 2)
+        }
+
+        .why_dynamic_dreamz_main {
+                margin-top: 20px
+        }
+
+        .two-column-top-icon-text .why_dynamic_dreamz_main {
+                max-width: 100%;
+                margin: 20px auto 0
+        }
+
+        .why_dynamic_dreamz_main ul li {
+                width: 100%;
+                border-bottom: 1px solid #efefef !important;
+                padding: 30px 20px
+        }
+
+        .why_dynamic_dreamz_main ul li:nth-child(odd) {
+                border-right: 0
+        }
+
+        .why_dynamic_dreamz_main ul li:last-child {
+                border-bottom: 0 !important
+        }
+
+        .get_in_touch_sec .wrapper .left-col {
+                width: 100%;
+                margin-bottom: 30px
+        }
+
+        .get_in_touch_form {
+                max-width: 100%;
+                position: unset;
+                -webkit-transform: unset;
+                -ms-transform: unset;
+                transform: unset
+        }
+
+        .get_in_touch_sec {
+                margin: 0;
+                padding: 50px 0
+        }
+
+        .form-group label {
+                font-size: 16px;
+                margin-bottom: 10px;
+                line-height: normal
+        }
+
+        .form-group {
+                margin-bottom: 20px
+        }
+
+        .migration-col:hover {
+                -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0)
+        }
+
+        .benefit_box_main .wrapper .benefit_box {
+                width: 50%
+        }
+
+        .benefit_text .icon {
+                margin-bottom: 20px
+        }
+
+        .benefit_box_sec.big-icon .icon {
+                width: 50px;
+                height: 50px;
+        }
+
+        .features-text ul li span.icon {
+                width: 45px;
+                height: 45px;
+                margin: 0 0 10px 0
+        }
+
+        .features-text ul li span.icon img {
+                width: 25px
+        }
+
+        .features-text ul li {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column
+        }
+
+        .features-text ul li span.text {
+                width: 100%
+        }
+
+        .features-text,
+        .features-text ul {
+                height: 100%
+        }
+
+        .features-text ul li {
+                padding: 20px 0;
+                height: 33.33%;
+                min-height: 33.33%;
+                max-height: 33.33%
+        }
+
+        .features-text p {
+                font-size: 14px;
+                line-height: 24px;
+                letter-spacing: .24px
+        }
+
+        .features-col-1,
+        .features-col-3 {
+                width: 36%
+        }
+
+        .features-col-2 {
+                width: 28%
+        }
+
+        .features-text h3 {
+                font-size: 15px
+        }
+
+        .shopify-app-features-sec .wrapper>div {
+                padding: 0 12px;
+                height: auto
+        }
+
+        .shopify-app-features-sec .wrapper {
+                margin: 0 -12px
+        }
+
+        .features-img {
+                height: 100%;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center
+        }
+
+        .features-text h3 {
+                margin-bottom: 5px
+        }
+
+        .features-text h3 {
+                margin-bottom: 5px;
+                font-size: 14px
+        }
+
+        .benefit_box_main .wrapper .benefit_box {
+                width: 100%
+        }
+
+        .shopify-app-features-sec .wrapper {
+                margin: 0;
+                -webkit-box-align: unset;
+                -ms-flex-align: unset;
+                align-items: unset
+        }
+
+        .shopify-app-features-sec .title {
+                margin-bottom: 25px
+        }
+
+        .how-app-work-sec .wrapper:after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                display: inline-block;
+                background-size: contain;
+                background-image: url("../../images/curv_shape_bg.svg");
+                height: 170px;
+                top: 0;
+                left: 0;
+                background-position: center;
+                background-repeat: no-repeat;
+                z-index: -1
+        }
+
+        .app-text .icon {
+                width: 35px;
+                height: 35px;
+                margin-bottom: 5px;
+                border-radius: 6px
+        }
+
+        .app-text h3 {
+                font-size: 12px
+        }
+
+        .app-text p {
+                font-size: 12px;
+                line-height: 22px
+        }
+
+        .app-text {
+                padding: 20px 18px 10px 14px
+        }
+
+        .full-width-sec .review-wrap {
+                margin-top: 0
+        }
+
+        .carousel-card .icon {
+                width: 50px;
+                height: 50px
+        }
+
+        .carousel-card .text p,
+        .shopify-app-features-sec {
+                padding: 0
+        }
+
+        .theme-customization-process-sec .header-text {
+                margin-bottom: 50px
+        }
+
+        .process-main .process-box {
+                padding: 0 20px;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-align: start;
+                -ms-flex-align: start;
+                align-items: flex-start
+        }
+
+        .process-main .process-box .text {
+                width: 100%
+        }
+
+        .process-main .process-box .icon {
+                margin-bottom: 15px;
+                margin-right: 0
+        }
+
+        .process-box:nth-child(2n) {
+                margin-bottom: 30px
+        }
+
+        .process-box:nth-child(odd) {
+                margin-top: 30px
+        }
+
+        .process-main .process-img {
+                width: 180px;
+                top: -40px
+        }
+
+        .process-main .process-box .icon {
+                margin-bottom: 15px;
+                margin-right: 0;
+                width: 50px;
+                height: 50px
+        }
+
+        .process-main .process-box .icon img {
+                width: 30px
+        }
+
+        .migration-list .qa-process h4 {
+                font-size: 16px
+        }
+
+        .mobile-app-wrapper {
+                margin-bottom: 25px
+        }
+
+        .hiring-services-sec {
+                margin-top: 50px
+        }
+
+        .hiring-services-sec .carousel-wrapper>div {
+                width: 50%
+        }
+
+        .process-wrapper {
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap
+        }
+
+        .our-process-main {
+                padding-top: 0 !important
+        }
+
+        .our-process-sec .process-wrapper .process-box {
+                width: 50% !important;
+                padding: 40px 15px 0 15px !important;
+                margin: 0 0 20px 0 !important;
+                text-align: center;
+                position: relative
+        }
+
+        .our-process-sec .process-wrapper {
+                padding: 0;
+                margin: 0 -15px -20px -15px
+        }
+
+        .our-process-sec .process-wrapper .process-box .icon {
+                position: static;
+                margin: 0 auto 20px;
+                width: 51px;
+                height: 51px
+        }
+
+        .our-process-sec .title-with-text {
+                margin-bottom: 50px
+        }
+
+        .our-process-sec .process-wrapper .process-box {
+                -webkit-transition-delay: unset !important;
+                -o-transition-delay: unset !important;
+                transition-delay: unset !important;
+                -webkit-transition-duration: 1.5s !important;
+                -o-transition-duration: 1.5s !important;
+                transition-duration: 1.5s !important
+        }
+
+        .process-wave-img {
+                display: none
+        }
+
+        .our-process-sec .process-wrapper .process-box .icon:before {
+                left: 50%;
+                top: 0;
+                font-size: 35px;
+                -webkit-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+                line-height: normal;
+                right: auto
+        }
+
+        .title-with-text h2 br,
+        .title-with-text p br {
+                display: none
+        }
+
+        .why-choose-wordpress-sec .wrapper {
+                margin-top: 40px
+        }
+
+        .why-choose-wordpress-sec .wrapper .col {
+                width: 100%
+        }
+
+        .why-choose-wordpress-sec .wrapper .col .main-img {
+                display: none
+        }
+
+        .why-choose-wordpress-sec .wrapper .info-box {
+                margin: 0 0 20px 0
+        }
+
+        .two-col-center-img .info-box {
+                padding: 0 !important;
+                margin: 0 0 40px !important
+        }
+
+        .two-col-center-img .info-box .icon {
+                width: 50px !important
+        }
+
+        .why-choose-wordpress-sec .wrapper .col:nth-child(2) {
+                display: none
+        }
+
+        .three-column-icon-with-text-sec .why_dynamic_dreamz_main ul li {
+                width: 50%;
+                border-right: 1px solid #efefef !important
+        }
+
+        .three-column-icon-with-text-sec .why_dynamic_dreamz_main ul li:nth-child(2n) {
+                border-right: 0 !important
+        }
+
+        .three-column-icon-with-text-sec .why_dynamic_dreamz_main ul li:nth-last-child(2) {
+                border-bottom: 0 !important
+        }
+
+        .four-column-text-with-icon-sec .benefit_box_main .wrapper .benefit_box {
+                width: 50%
+        }
+
+        .shopify-development-process {
+                padding-top: 0
+        }
+
+        .header-text p br,
+        .heading-text p br {
+                display: none
+        }
+
+        .timeline li .desc p {
+                font-size: 14px;
+                line-height: 24px
+        }
+
+        .difference_card_section .title h2 {
+                margin-bottom: 30px;
+        }
+
+        .difference_card_wrapper {
+                margin: 0
+        }
+
+        .difference_card_wrapper .card-col:not(:last-child) {
+                margin-bottom: 30px;
+        }
+
+        .difference_card_wrapper .card-col {
+                width: 100%;
+                padding: 0;
+        }
+
+        .difference_card_inner {
+                padding: 30px 30px 30px 30px;
+        }
+
+        .three_col_icon_sec .wrapper .col,
+        .shopify-themes-customize-section .wrapper .col {
+                width: 50%;
+        }
+
+        .theme-customization-service-sec .inner-wrapper .left-col {
+                width: 100%;
+                height: auto;
+                padding-bottom: 0;
+        }
+
+        .shopify-themes-customize-section .wrapper .col {
+                margin-bottom: 20px;
+        }
+
+        .shopify-theme-customization-sec .inner-hero-content p br {
+                display: none;
+        }
+
+        .what-we-delivers-sec.only-text .heading-text .title {
+                margin-bottom: 0;
+        }
+
+        .what-we-delivers-sec .heading-text {
+                margin-bottom: 30px;
+        }
+
+        .why_dynamic_dreamz_main ul li .text,
+        .two-column-icon-text-bg .why_dynamic_dreamz_main ul li .text {
+                width: 100%;
+        }
+
+        .hiring-services-sec .title p br {
+                display: none;
+        }
+
+        .hiring-services-sec .carousel-card .icon {
+                width: 50px;
+                height: 50px;
+        }
+
+        .hiring-services-sec.webflow-page .carousel-card {
+                padding: 30px;
+        }
+
+        .what-during-migration-sec .title {
+                margin-bottom: 30px;
+        }
+
+        .pricing_packages_section .pricing-header .column-title:nth-child(odd),
+        .pricing_packages_section .pricing-row .column:nth-child(odd) {
+                width: 62%;
+                padding: 20px 30px;
+        }
+
+        .pricing_packages_section .pricing-row .column:nth-child(even),
+        .pricing_packages_section .pricing-header .column-title:nth-child(even) {
+                width: 38%;
+                padding: 20px 20px;
+                border-left: 1px solid #DFDFDF;
+        }
+
+        .migration-services-sec .migration-wrapper .migration-col {
+                width: 50%
+        }
+
+        .migration-services-sec .migration-wrapper .migration-col:not(:last-child) {
+                margin-bottom: 16px
+        }
+
+        .migration-process-step-sec .title p br {
+                display: none;
+        }
+
+        .industries-hero-sec {
+                padding-top: 150px
+        }
+
+        .industries-hero-content {
+                max-width: 100%
+        }
+
+        .what-we-provide-sec:has(.bg-service) {
+                margin-bottom: 50px;
+                padding-bottom: 25px;
+        }
+
+        .two-col-image-with-text-section .wrapper .left-col,
+        .two-col-image-with-text-section .wrapper .right-col {
+                width: 100%;
+        }
+
+        .two-col-image-with-text-section .wrapper .left-col .image-block {
+                padding-bottom: 70%;
+                position: relative;
+                margin-bottom: 30px;
+        }
+
+        .services_case_study_section .cs-listing-main .cs-listing-row {
+                margin: 40px 0;
+        }
+
+        .services_case_study_section .cs-col-left,
+        .services_case_study_section .cs-col-right {
+                width: 100%
+        }
+
+        .services_case_study_section .cs-listing-row .cs-wrapper,
+        .services_case_study_section .cs-listing-row:nth-child(2n) .cs-wrapper {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column
+        }
+
+        .services_case_study_section .cs-listing-row {
+                padding: 0
+        }
+
+        .services_case_study_section .cs-listing-main .cs-listing-row:not(:last-child) {
+                margin-bottom: 30px
+        }
+
+        .services_case_study_section .cs-col-right {
+                background-color: #fff;
+                padding: 30px;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px
+        }
+
+        .services_case_study_section .cs-col-left {
+                padding: 30px
+        }
+
+        .services_case_study_section .cs-listing-row:before {
+                width: 50%
+        }
+
+        .stat-infomation-box-inner {
+                align-items: flex-start;
+        }
+
+        .stat-infomation-box-inner .text h3 {
+                font-size: 20px;
+                margin-bottom: 5px;
+        }
+
+        .stat-infomation-box-inner .icon {
+                width: 30px;
+                height: 30px;
+                margin-right: 5px;
+        }
+
+        .stat-infomation-box-inner .text {
+                width: calc(100% - 35px);
+        }
+
+        .stat-infomation-box {
+                padding: 15px;
+        }
+
+        .wordpress-pricing-section .wrapper .col {
+                padding: 0 5px;
+        }
+
+        .wordpress-pricing-section .wrapper {
+                margin: 0 -5px;
+        }
+
+        .wordpress-pricing-section .pricing-main .price-details {
+                padding: 30px 20px 73px;
+                height: 100%;
+        }
+
+        .wordpress-pricing-section .pricing-main .pricing-box .price-details h3 {
+                font-size: 14px;
+                margin-bottom: 30px;
+        }
+
+        .wordpress-pricing-section .pricing-main .price-details {
+                padding: 30px 20px 30px;
+        }
+
+        .wordpress-pricing-section .pricing-main .price-details h4 {
+                font-size: 15px;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+        }
+
+        .wordpress-pricing-section .pricing-main .price-details span {
+                font-size: 12px;
+        }
+
+        .wordpress-pricing-section .pricing-main .price-details p {
+                font-size: 14px;
+                line-height: 24px;
+        }
+
+        .technologies-tabs ul.tab-menu {
+                white-space: nowrap;
+                overflow-x: auto
+        }
+
+        .technologies-tabs .grid {
+                margin: 0 -10px
+        }
+
+        .technologies-tabs .grid .box {
+                padding: 0 10px;
+                width: 50%
+        }
+
+        .technologies-tabs .grid .box .img-wrap img {
+                max-height: 50px;
+                object-fit: contain;
+                max-width: 140px
+        }
+
+        .technologies-tabs .grid .box .img-wrap {
+                min-height: 110px
+        }
+
+        .white-label-process .wrapper .col {
+                width: 50%
+        }
+
+        .white-label-process .wrapper .arrow {
+                display: none
+        }
+
+        .services-box a[href] .services-text {
+                padding-bottom: 80px;
+        }
+
+        .services-box a[href] .services-text .services-read-more {
+                padding-top: 10px;
+                bottom: 10px;
+        }
+
+        /* WordPress Development Experience Start */
+        .experience-col {
+                width: 50%;
+                margin-bottom: 30px;
+        }
+
+        .experience-col:nth-child(2) .experience-item {
+                border-right: none;
+        }
+
+        /* WordPress Development Experience End */
+
+        /* WordPress Development Challenges Start */
+        .white-label-shopify-challenges .challenges-item {
+                padding: 30px;
+        }
+
+        .white-label-shopify-challenges .challenges-item .content .text {
+                width: 90%;
+        }
+
+        .white-label-shopify-challenges .challenges-item .content .arrow {
+                right: -30px;
+        }
+
+        /* WordPress Development Challenges end */
+
+        .white-label-shopify-development-banner {
+                padding: 120px 0px 80px 0px;
+        }
+
+        .white-label-shopify-perfect-fit.services .perfect-fit-top {
+                flex-direction: column-reverse;
+        }
+
+        .white-label-shopify-perfect-fit.services .content {
+                width: 100%;
+                margin-top: 25px;
+        }
+
+        .white-label-shopify-perfect-fit.services .perfect-fit-item .content p {
+                max-width: 100%;
+        }
+
+        .white-label-shopify-why-agencies .why-agencies-col {
+                width: 100%;
+        }
+
+        .white-label-shopify-why-agencies .container {
+                max-width: 720px;
+        }
+
+        .white-label-shopify-flexiable-engagement .flexiable-engagement-col {
+                width: 50%;
+        }
+
+        .white-label-shopify-flexiable-engagement .flexiable-engagement-col.fixed-project {
+                margin-top: 0px;
+        }
+
+        .lets-build-section.white-label-shopify .button-wrap a+a {
+                margin-left: 0px;
+                margin-top: 20px;
+        }
+
+        .lets-build-section.white-label-shopify .lets-build-text p br {
+                display: none;
+        }
+
+        .white-label-shopify-process-slider .slick-list {
+                padding: 0% 20% 0 5%;
+        }
+
+        .agency-box-col {
+                width: 50%;
+        }
+
+        .agency-box-col:not(:last-child) {
+                margin-bottom: 30px;
+        }
+
+        .comparison-table th:nth-child(2),
+        .comparison-table tr td:nth-child(2),
+        .comparison-table th:nth-child(3),
+        .comparison-table tr td:nth-child(3),
+        .comparison-table th:nth-child(3),
+        .comparison-table tr td:nth-child(4) {
+                min-width: 200px;
+        }
+
+        .slide-line {
+                background-size: 80% 15%;
+                top: 10%;
+        }
+
+        .white-label-shopify-challenges .title h2,
+        .white-label-shopify-agency-partners .title h2,
+        .white-label-shopif-in-house-teams .title h2,
+        .lets-build-section.white-label-shopify .lets-build-text h2,
+        .white-label-shopify-why-agencies .title h2,
+        .white-label-shopify-flexiable-engagement .title h2,
+        .white-label-shopify-process .title h2 {
+                font-size: 30px;
+        }
+
+        .webflow-services-section .services-grid .service-col {
+                width: 50%;
+        }
+
+        .milestones-section .milestones-grid .milestone-col {
+                padding: 0 10px;
+        }
+
+        .milestones-section .milestones-grid .milestone-inner {
+                padding: 20px;
+        }
+
+        .milestones-section .milestones-grid .milestone-col {
+                width: 50%;
+        }
+
+        .milestones-grid .milestone-col:nth-child(2) {
+                margin-top: 0;
+        }
+
+        .milestones-section .milestones-grid {
+                justify-content: center;
+        }
+
+        .milestones-section .milestones-grid .milestone-card {
+                height: 100%;
+        }
+
+        /* White Label Wordpress Page CSS */
+        .white_label_hero_section {
+                padding-top: 100px;
+        }
+
+        .white_label_hero_section .content-col,
+        .white_label_hero_section .media-col {
+                width: 100% !important;
+        }
+
+        .page-id-2784 .white_label_hero_section .media-col {
+                justify-content: center;
+        }
+
+        .white_label_hero_section .content-col .content-wrap h1 {
+                font-size: 40px;
+                line-height: 50px;
+        }
+
+        .white_label_hero_section .media-col .media-wrap {
+                position: static;
+                margin-top: 20px;
+                width: 100%;
+                margin-bottom: -5px;
+        }
+
+        .white_label_counter_number_wrap {
+                margin: 0px -20px;
+        }
+
+        .white_label_counter_number_wrap .col_item {
+                padding: 0px 20px;
+        }
+
+        /* white-label-wordpress-development-services-new CSS */
+
+        .white_label_hero_section .content-col {
+                padding-bottom: 30px;
+        }
+
+        .white_label_hero_section p {
+                margin-bottom: 15px;
+        }
+
+        .white_label_hero_section .global_brands_grid_wrap {
+                margin-top: 30px;
+        }
+
+        /* White Label Counter Section CSS Starts */
+
+        .white_label_counter_section .stats_icon img {
+                width: 34px;
+                height: 34px;
+        }
+
+        .white_label_counter_section .stats_container {
+                flex-wrap: wrap;
+                row-gap: 30px;
+        }
+
+        .white_label_counter_section .stats_item {
+                width: 50%;
+        }
+
+        .white_label_counter_section .stats_item:nth-child(2) {
+                border-right: none;
+        }
+
+        .stats_number div,
+        .white_label_counter_section .stats_number .odometer-inside .odometer-digit,
+        .white_label_counter_section .stats_number .counter_icon {
+                font-size: 32px;
+                line-height: 42px;
+        }
+
+        .white_label_counter_section .stats_item .stats_box {
+                min-width: unset;
+                position: relative;
+                padding-left: 45px;
+                width: 100%;
+                max-width: 205px;
+        }
+
+        .white_label_counter_section .stats_icon {
+                margin-bottom: 10px;
+                position: absolute;
+                left: 0;
+                top: 5px;
+        }
+
+        /* White Label Why Dynamic Dreamz Section CSS Starts */
+
+        .white_label_why_dynamic_dreamz_section {
+                padding: 50px 0;
+        }
+
+        .white_label_why_dynamic_dreamz_section .white_label_title {
+                margin-bottom: 40px;
+        }
+
+        .white_label_why_dynamic_dreamz_section .white_label_item {
+                padding: 20px 20px;
+        }
+
+        .white_label_why_dynamic_dreamz_section .white_label_heading {
+                margin-bottom: 10px;
+        }
+
+        .white_label_why_dynamic_dreamz_section .white_label_text {
+                font-size: 15px;
+                line-height: 22px;
+        }
+
+        /* White Label Wordpress Development Services Accordion Section CSS Starts */
+
+        .white_label_wp_development_service_accordion_section .services_title {
+                margin-bottom: 40px;
+        }
+
+        .white_label_wp_development_service_accordion_section .services_grid {
+                flex-direction: column;
+                gap: 0;
+                margin-bottom: 25px;
+        }
+
+        .white_label_wp_development_service_accordion_section .services_grid .services_column:first-child .accordion_item:last-child {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_header {
+                padding: 15px 0;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_icon_wrap {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+                margin-right: 10px;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_icon_wrap img {
+                width: 40px;
+                height: 40px;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_toggle {
+                width: 24px;
+                height: 24px;
+                min-width: 24px;
+                font-size: 20px;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_content {
+                line-height: 24px;
+                padding: 0 0 15px 50px;
+        }
+
+        .white_label_wp_development_service_accordion_section .services_grid .services_column:last-child .accordion_item:first-child .accordion_header {
+                padding-top: 15px;
+        }
+
+        /* White Label Flexible Wordpress Development Plans Section CSS Starts */
+
+        .white_label_wp_develop_plan_section .pricing_header {
+                gap: 30px;
+                margin-bottom: 30px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_title {
+                font-size: 24px;
+                line-height: 34px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_description {
+                font-size: 15px;
+                line-height: 22px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_cards {
+                gap: 10px;
+                margin-bottom: 30px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_card {
+                padding: 20px 15px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_card_label {
+                font-size: 15px;
+                line-height: 15px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_badge {
+                font-size: 15px;
+                line-height: 15px;
+                margin-bottom: 20px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_price {
+                font-size: 18px;
+                line-height: 26px;
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_best_for_text {
+                font-size: 14px;
+                line-height: 20px;
+        }
+
+        /* White Label Wide Range Of technologies Section CSS Starts */
+
+        .white_label_wide_range_technologies_section {
+                padding: 40px 0;
+        }
+
+        .white_label_wide_range_technologies_section .wide_range_technologies_top_part {
+                margin-bottom: 30px;
+        }
+
+        .white_label_wide_range_technologies_section .wide_range_technologies_heading h2 {
+                margin-bottom: 20px;
+        }
+
+        .white_label_wide_range_technologies_section .our_partners_logo_item img {
+                width: 180px;
+        }
+
+        /* White Label How Our Partnership Works Section CSS Starts */
+
+        .white_label_how_partnership_works_section .partnership_heading {
+                margin-bottom: 30px;
+        }
+
+        .white_label_how_partnership_works_section .partnership_steps {
+                flex-wrap: wrap;
+        }
+
+        .white_label_how_partnership_works_section .step_card {
+                flex: initial;
+                width: 100%;
+                padding: 40px 20px 30px 20px;
+        }
+
+        .white_label_how_partnership_works_section .step_card:nth-child(1)::before,
+        .white_label_how_partnership_works_section .step_card:nth-child(2)::before,
+        .white_label_how_partnership_works_section .step_card:nth-child(3)::before {
+                top: auto;
+                bottom: -25px;
+                left: 50%;
+                transform: rotate(45deg) translateX(-50%);
+        }
+
+        .white_label_how_partnership_works_section .partnership_note {
+                margin-top: 20px;
+        }
+
+        /* White Label FAQ Section CSS Starts */
+
+        .white_label_counter_section .stats_item:nth-child(1) .stats_number .odometer-inside .odometer-digit:first-child .odometer-ribbon-inner,
+        .white_label_counter_section .stats_item:nth-child(2) .stats_number .odometer-inside .odometer-digit:first-child .odometer-ribbon-inner,
+        .white_label_counter_section .stats_item:nth-child(4) .stats_number .odometer-inside .odometer-digit:first-child .odometer-ribbon-inner {
+                line-height: 1.30;
+        }
+
+        /* White Label Lets Build CTA Section CSS Starts */
+
+        .white_label_lets_build_cta_section {
+                padding: 40px 0;
+        }
+
+        .white_label_lets_build_cta_section .cta_content {
+                padding-right: 20px;
+        }
+
+        .white_label_lets_build_cta_section .cta_heading {
+                font-size: 22px;
+                line-height: 32px;
+                margin-bottom: 10px;
+        }
+
+        .white_label_lets_build_cta_section .cta_text {
+                font-size: 15px;
+                line-height: 22px;
+        }
+
+        .faq-sec.bg-sky-blue {
+                padding: 50px 0;
+        }
+
+        .book-intro-call-section .wrapper .left-col,
+        .book-intro-call-section .wrapper .right-col {
+                width: 100%;
+                padding: 50px calc((100% - 680px) / 2);
+        }
+
+        .book-intro-call-section .intro-call-text .icon {
+                width: 60px;
+                height: 60px;
+                margin: 0 auto 15px;
+        }
+
+        .book-intro-call-section .section-title {
+                text-align: center;
+        }
+
+        .intro-call-text {
+                text-align: center;
+        }
+
+        .book-intro-call-section .section-title {
+                margin-bottom: 20px;
+        }
+
+        .what-we-delivers-sec.white-label-design-sec {
+                padding: 50px 0;
+        }
+
+        .what-we-delivers-sec.white-label-design-sec .heading-text .title,
+        .what-we-delivers-sec.white-label-design-sec .heading-text .text {
+                width: 100%;
+        }
+
+        .what-we-delivers-sec.white-label-design-sec .title h2 {
+                margin-bottom: 20px;
+        }
+
+        .what-we-delivers-sec.advantage-white-label-slider-sec.white-label-design .heading-text h2 {
+                margin-bottom: 15px;
+        }
+
+        .what-we-delivers-sec.white-label-design-sec .heading-text {
+                margin-bottom: 10px;
+        }
+
+        .what-we-delivers-sec.advantage-white-label-slider-sec.white-label-design .heading-text .title,
+        .what-we-delivers-sec.advantage-white-label-slider-sec.white-label-design .heading-text .text {
+                width: 100%;
+        }
+
+        .brand_testimonial .section_title {
+                max-width: 100%
+        }
+
+        .testimonial_img_text_wrap {
+                flex-direction: column-reverse
+        }
+
+        .brand_testimonial_slider_wrap .brand_testimonial_nav {
+                position: relative;
+                margin: 24px auto 0;
+                top: unset;
+                left: unset;
+                justify-content: center
+        }
+
+        .testimonial_img_text_wrap .col_img {
+                height: auto;
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                border-radius: 20px 20px 0 0;
+                max-height: 346px
+        }
+
+        .testimonial_img_text_wrap .col_content h3 {
+                padding-right: 0;
+                line-height: 1.4;
+                font-size: 22px
+        }
+
+        .testimonial_img_text_wrap .col_content .logo_wrap {
+                margin-bottom: 16px
+        }
+
+        .testimonial_img_text_wrap .col_content {
+                padding: 16px;
+                border-radius: 0 0 20px 20px
+        }
+
+        .brand_testimonial_slider_wrap .brand_testimonial_inner {
+                border-radius: 20px 0 0 20px
+        }
+
+        .white_label_web_design_services_box .section-title {
+                margin-bottom: 30px;
+        }
+
+        .white_label_web_design_services_box .wrapper .col {
+                width: 50%;
+        }
+
+        .single-text-box-sec.white-label-design .text-box-wrap.text-center {
+                padding: 40px 20px;
+                border-radius: 20px;
+        }
+
+        .industries_we_have_served_box .wrapper .col {
+                width: 50%;
+                padding-bottom: 40px;
+                margin-bottom: 40px;
+        }
+
+        /* every even column: 2,4,6,8... */
+        .industries_we_have_served_box .wrapper .col:nth-child(even)::after {
+                display: none;
+        }
+
+        .industries_we_have_served_box .wrapper .col:not(:last-child)::before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: linear-gradient(to right,
+                                rgba(51, 51, 51, 0) 0%,
+                                rgba(51, 51, 51, 1) 50%,
+                                rgba(51, 51, 51, 0) 100%);
+                opacity: 0.2;
+        }
+
+        .industries_we_have_served_box .wrapper .col:nth-child(3):after {
+                display: block;
+        }
+
+        .white_label_wp_development_service_accordion_section.website-design .wrapper .left-col,
+        .white_label_wp_development_service_accordion_section.website-design .wrapper .right-col {
+                width: 100%;
+        }
+
+        .white_label_wp_development_service_accordion_section.website-design .wrapper .right-col {
+                margin-top: 20px;
+        }
+
+        .white_label_process_step_section .wrapper .col {
+                padding: 0 5px;
+        }
+
+        .white_label_process_step_section .wrapper .step-box .icon {
+                width: 70px;
+                height: 70px;
+        }
+
+        .white_label_process_step_section .wrapper .col:not(:last-child) .step-box .icon:after {
+                left: 70px;
+                width: 120px;
+        }
+
+        .white_label_process_step_section .section-title {
+                margin-bottom: 30px;
+        }
+
+        .white_label_process_step_section .wrapper {
+                margin: 0 -5px -30px -5px;
+        }
+
+        .ai-driven-shopping .ai-driven-col:nth-child(2n) {
+                border-right: 0px;
+        }
+
+        .ai-driven-shopping .ai-driven-col:nth-last-child(-n + 2) {
+                border-bottom: 0px;
+        }
+
+        .ai-driven-shopping .ai-driven-col {
+                width: 50%;
+                border-bottom: 1px solid #2828281A
+        }
+
+        /*-------- AI-Driven Shopping --------*/
+        .services-ai-engines .services-ai-col {
+                width: 50%;
+        }
+
+        .services-ai-engines .title {
+                margin-bottom: 50px;
+        }
+
+        /*------- Services Just Google --------*/
+        .services-just-google .services-just-google-left {
+                width: 100%;
+                padding: 0px 15px;
+        }
+
+        .services-just-google .services-just-google-right {
+                width: 100%;
+                padding: 0px 15px;
+                margin-top: 40px;
+        }
+
+        .services-just-google .bottom-text {
+                margin: 50px auto 0 auto;
+        }
+
+        .services-just-google {
+                border-radius: 30px 30px 0 0;
+        }
+
+        /*------- .conversion-cro-section  --------*/
+        .conversion-cro-col {
+                width: 33.33%;
+        }
+
+        /* Our Shopify CRO Services */
+        .page-id-6746 .white_label_hero_section .media-col .media-wrap,
+        .page-id-6865 .white_label_hero_section .media-col .media-wrap {
+                max-width: 400px;
+                margin: 0 auto;
+        }
+
+        .white_label_process_step_box_section .section-title p br {
+                display: none;
+        }
+
+        .shopify-cro-services-grid .shopify-cro-services-item {
+                width: 100%;
+                border-left: 0;
+        }
+
+        .shopify-cro-services-item:nth-last-child(-n+1) {
+                border-bottom: 0;
+        }
+
+        .shopify-cro-services-grid .shopify-cro-services-item:not(:last-child) {
+                border-bottom: 1px solid rgb(40 40 40 / 10%);
+        }
+
+        /* Flexible SOur Shopify CRO Process  Engagements */
+        .white_label_process_step_box_section.column-five .wrapper {
+                margin: 0 -10px -20px;
+        }
+
+        .white_label_process_step_box_section.column-five .wrapper .col {
+                padding: 0 10px;
+        }
+
+        .white_label_process_step_box_section.column-five .wrapper .col {
+                width: 20%;
+                padding: 0 10px;
+                margin-bottom: 20px;
+        }
+
+        .white_label_process_step_box_section.column-five .wrapper .col:not(:last-child) .step-box .icon:after {
+                width: 136px;
+        }
+
+        /* Flexible Shopify CRO Engagements */
+        .shopify-cro-engagement-box {
+                padding: 25px;
+        }
+
+        /* revenue-impact-section */
+        .revenue-impact-wrapper .revenue-card .revenue-card-body {
+                padding: 50px 20px 20px 20px;
+        }
+
+        .revenue-impact-wrapper .revenue-card {
+                width: 50%;
+                padding: 0 10px;
+                margin-bottom: 20px;
+        }
+
+        .revenue-impact-wrapper {
+                margin: 0 -10px -20px;
+        }
+
+        .revenue-impact-wrapper:before {
+                width: 91px;
+                height: 31px;
+                left: 49%;
+        }
+
+        .revenue-card-content h3,
+        .revenue-card-total h2 {
+                font-size: 26px;
+        }
+
+        /* .cro-dynamic-dreamz */
+        .cro-dynamic-dreamz-wrap .column-row {
+                padding: 30px 20px 0;
+        }
+
+        .cro-dynamic-dreamz-wrap .column-row .column-left {
+                width: 100%;
+        }
+
+        .cro-dynamic-dreamz-wrap .column-row .column-left .content-box {
+                padding-bottom: 10px;
+        }
+
+        .cro-dynamic-dreamz-wrap .column-row .column-right {
+                width: 100%;
+        }
+
+        /* White Label Lets Build CTA Section CSS Starts */
+        .white_label_lets_build_cta_section {
+                padding: 30px 0;
+        }
+
+        .white_label_lets_build_cta_section .cta_wrapper {
+                flex-wrap: wrap;
+                gap: 20px;
+        }
+
+        .white_label_lets_build_cta_section .cta_content {
+                flex: initial;
+                padding-right: 0;
+        }
+
+        .white_label_lets_build_cta_section .cta_action {
+                width: 100%;
+        }
+
+        .verified-shopify-knowledge-section .heading-text .title,
+        .verified-shopify-knowledge-section .heading-text .text {
+                width: 100%;
+        }
+
+        .verified-shopify-knowledge-section .heading-text {
+                margin-bottom: 30px;
+        }
+
+        .verified-shopify-knowledge-section .heading-text h2 {
+                margin-bottom: 15px;
+        }
+
+        .verified-shopify-knowledge-section .verified-wrapper .verified-col {
+                width: 100%;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+        }
+
+        .verified-shopify-knowledge-section .verified-wrapper {
+                justify-content: center;
+        }
+
+        .verified-shopify-knowledge-section .verified-wrapper .verified-col:nth-child(2) {
+                border-right: 0;
+        }
+
+        .verified-shopify-knowledge-section .verified-wrapper .verified-col:last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+        }
+
+        .verified-shopify-knowledge-section .verified-wrapper .verified-col:not(:last-child) {
+                border-right: 0;
+                border-bottom: 1px solid rgba(51, 51, 51, 0.10);
+        }
+
+        .certified-process-section .section-title .title,
+        .certified-process-section .section-title .text {
+                width: 100%;
+        }
+
+        .certified-process-section .section-title {
+                text-align: center;
+                margin-bottom: 30px;
+        }
+
+        .certified-process-section .section-title .title h2 {
+                margin-bottom: 15px;
+        }
+
+        .certified-process-section .cp-card-wrapper .cp-card-col {
+                width: 50%;
+        }
+
+        .certified-process-section .cp-card {
+                padding: 30px 20px;
+        }
+
+        .shopifys_official_partner_section .sop-box-wrapper {
+                padding: 40px 30px;
+        }
+
+        .shopifys_official_partner_section .sop-box-wrapper .section-title h2 {
+                font-size: 32px;
+        }
+
+        .sop-state .sop-row .sop-col {
+                width: 50%;
+                margin-bottom: 30px;
+        }
+
+        .sop-state .sop-row {
+                margin-bottom: -30px;
+        }
+
+        .certified_developers_section {
+                padding: 40px 0;
+        }
+
+        .certified_developers_section .section-title {
+                flex-direction: column;
+                text-align: center;
+        }
+
+        .certified_developers_section .section-title .title,
+        .certified_developers_section .section-title .text {
+                width: 100%;
+        }
+
+        .certified_developers_section .section-title .title {
+                margin-bottom: 10px;
+        }
+
+        .certified_developers_section .section-title .text p:not(:last-child) {
+                margin-bottom: 10px;
+        }
+
+        .certified_developers_section .certified-item {
+                padding: 30px 20px;
+        }
+
+        .certified_developers_section .certified-item .certified-text {
+                padding-left: 35px;
+        }
+
+        .evidence_you_can_see_section {
+                padding: 40px 0;
+        }
+
+        .evidence_you_can_see_section .section-title {
+                flex-direction: column;
+        }
+
+        .evidence_you_can_see_section .section-title .title {
+                width: 100%;
+                text-align: center;
+        }
+
+        .evidence_you_can_see_section .section-title .text {
+                width: 100%;
+                text-align: center;
+        }
+
+        .evidence_you_can_see_section .section-title .title {
+                margin-bottom: 10px;
+        }
+
+        .evidence_you_can_see_section .wrapper .evidence-col {
+                width: 50%;
+                margin-bottom: 30px;
+        }
+
+        .evidence_you_can_see_section .wrapper .evidence-col .evidence-item span {
+                width: fit-content;
+                margin: 0 auto;
+        }
+
+        .evidence_you_can_see_section .wrapper {
+                margin-bottom: -30px;
+        }
+
+        .evidence_you_can_see_section .evidence-img {
+                background-size: 230px;
+        }
+
+        .white_label_lets_build_cta_section.shopify-certified .cta_content {
+                max-width: 100%;
+                text-align: center;
+        }
+
+        .white_label_lets_build_cta_section.shopify-certified .cta_action {
+                text-align: center;
+        }
+
+        .credential-tabs-main .panel .intro {
+                width: 100%;
+                margin-bottom: 20px;
+        }
+
+        .credential-tabs-main .panel .info-grid {
+                width: 100%;
+        }
+
+        .credential-tabs-main .panel {
+                flex-direction: column;
+                padding: 30px;
+        }
+
+        .credential-tab {
+                font-size: 14px;
+        }
+
+        .which_shopify_credential_section .section-title {
+                margin-bottom: 30px;
+        }
+}
+
+@media (max-width:767px) {
+        .inner-hero-content h1 {
+                line-height: 40px;
+                font-size: 30px
+        }
+
+        .woocommerce-development .inner-hero-content h1 br {
+                display: none
+        }
+
+        .service-img {
+                width: 250px;
+                height: 250px
+        }
+
+        .inner-hero-sec.custom-cross-platform .service-img {
+                width: 250px
+        }
+
+        .shopify-plus-experts .service-img {
+                width: 100%;
+                height: 100%
+        }
+
+        .inner-hero-sec.migrate-shopify-store img {
+                width: auto
+        }
+
+        .shopify-plus-experts .review-wrap {
+                margin-top: 30px
+        }
+
+        .service-img img {
+                width: 150px
+        }
+
+        .our-client-sec .wrapper {
+                -ms-grid-columns: (minmax(0, 1fr))[2];
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .our-client-sec .wrapper .logo-block-slide {
+                margin: 0 10px
+        }
+
+        .our-work-sec.pt-20 {
+                padding-top: 0
+        }
+
+        .our-work-main .our_work_team,
+        .our-work-main.grid-column-4 .our_work_team {
+                width: 100%
+        }
+
+        .our-work-main.grid-column-4 .our_work_team .ourwork_team_image {
+                padding-bottom: 115%
+        }
+
+        .accrodion-title:after {
+                width: 22px;
+                height: 22px
+        }
+
+        .happy-client-sec .header-text p br {
+                display: none
+        }
+
+        .happy-client-main {
+                margin-right: 0
+        }
+
+        .happy-client-main .wrapper .slick-track {
+                margin-left: auto
+        }
+
+        .happy-client-main .wrapper .slick-slide {
+                margin: 0 5px
+        }
+
+        .why_dynamic_dreamz_main ul li span.text h3 {
+                font-size: 16px;
+                line-height: 27px;
+                letter-spacing: .32px;
+                margin-top: 15px;
+                margin-bottom: 10px
+        }
+
+        .why_dynamic_dreamz_main ul li {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                padding: 20px 0 20px
+        }
+
+        .why_dynamic_dreamz_main ul li span.icon {
+                margin: 0
+        }
+
+        .two-column-icon-text-bg .why_dynamic_dreamz_main ul li span.text,
+        .why_dynamic_dreamz_main ul li span.text {
+                width: 100%
+        }
+
+        .why_dynamic_dreamz_main ul li:last-child {
+                padding-bottom: 0
+        }
+
+        .form-row .col-md-12,
+        .form-row .col-md-6 {
+                width: 100%;
+                padding: 0
+        }
+
+        .form-row {
+                margin: 0
+        }
+
+        .form-group .btn-red {
+                width: 100%;
+                text-align: center
+        }
+
+        .get_in_touch_form {
+                padding: 30px 20px
+        }
+
+        .migration-process-inner .migration-step-details:after {
+                font-size: 34px;
+                min-width: 55px;
+                top: 55px
+        }
+
+        .migration-process-inner .migration-step-details:before {
+                font-size: 12px;
+                padding: 3px 10px 3px 10px;
+                top: 25px
+        }
+
+        .migration-list {
+                padding-top: 20px
+        }
+
+        .migration-step-details {
+                padding-left: 0;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                -webkit-box-align: start;
+                -ms-flex-align: start;
+                align-items: flex-start
+        }
+
+        .migration-step-details .number {
+                font-size: 34px
+        }
+
+        .migration-step-details .icon {
+                min-width: 55px;
+                margin-right: 15px
+        }
+
+        .migration-step-details .text {
+                width: calc(100% - 70px)
+        }
+
+        .migration-step-details .step {
+                font-size: 12px;
+                padding: 3px 10px 3px 10px
+        }
+
+        .migration-list.qa-process h4 {
+                font-size: 16px
+        }
+
+        .magento-to-shopify .service-img img,
+        .woocommerce-to-shopify .service-img img {
+                width: 100%
+        }
+
+        .migration-process-step-sec .title h2 {
+                margin-bottom: 24px
+        }
+
+        .benefit_box_main .wrapper .benefit_box {
+                width: 100%
+        }
+
+        .shopify-app-features-sec .wrapper {
+                margin: 0
+        }
+
+        .features-col-1,
+        .features-col-2,
+        .features-col-3 {
+                width: 100%
+        }
+
+        .features-text ul li {
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                border-bottom: 1px solid #efefef;
+                padding: 20px 0 !important;
+                height: auto;
+                min-height: unset;
+                max-height: unset
+        }
+
+        .features-text ul li span.icon {
+                width: 50px;
+                height: 50px;
+                margin: 0 15px 0 0;
+                border-radius: 8px
+        }
+
+        .features-text ul li span.text {
+                width: calc(100% - 65px)
+        }
+
+        .features-text ul li span.icon img {
+                width: 30px
+        }
+
+        .features-col-3 ul li:last-child {
+                border-bottom: 0
+        }
+
+        .shopify-app-features-sec .wrapper>div {
+                padding: 0
+        }
+
+        .features-col-1 {
+                -webkit-box-ordinal-group: 3;
+                -ms-flex-order: 2;
+                order: 2
+        }
+
+        .features-col-2 {
+                -webkit-box-ordinal-group: 2;
+                -ms-flex-order: 1;
+                order: 1
+        }
+
+        .features-col-3 {
+                -webkit-box-ordinal-group: 4;
+                -ms-flex-order: 3;
+                order: 3
+        }
+
+        .features-img {
+                width: 100%;
+                max-width: 70%;
+                margin: 0 auto 30px;
+                height: auto;
+                display: block
+        }
+
+        .features-text,
+        .features-text ul {
+                height: auto
+        }
+
+        .how-app-work-sec .wrapper:after {
+                background-image: url("../../images/mbl_curv_shape_bg.svg");
+                height: calc(100% + 20px);
+                background-size: 100% 100%
+        }
+
+        .app-text {
+                max-width: 230px;
+                margin: 0 auto;
+                padding: 40px 0 20px 0
+        }
+
+        .how-app-work-sec .wrapper {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                padding: 0
+        }
+
+        .how-app-work-sec .wrapper .col-block {
+                width: 100%
+        }
+
+        .app-text p {
+                font-size: 14px;
+                line-height: 26px
+        }
+
+        .app-text h3 {
+                font-size: 14px;
+                line-height: 26.72px
+        }
+
+        .app-text .icon {
+                width: 65px;
+                height: 65px;
+                border-radius: 12px;
+                margin-bottom: 15px
+        }
+
+        .app-text .icon img {
+                width: 36px
+        }
+
+        .carousel-card {
+                padding: 30px 20px 50px 20px
+        }
+
+        .process-img {
+                display: none
+        }
+
+        .process-main {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column
+        }
+
+        .process-main .process-box {
+                width: 100%;
+                padding: 0;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                position: relative;
+                margin-top: 0
+        }
+
+        .process-main .process-box .icon {
+                width: 66px;
+                height: 66px;
+                margin: 0 20px 0 0
+        }
+
+        .process-main .process-box .text {
+                width: calc(100% - 86px)
+        }
+
+        .process-main .process-box:not(:last-child) {
+                margin-bottom: 0;
+                padding-bottom: 134px
+        }
+
+        .process-main .process-box:after {
+                content: '';
+                position: absolute;
+                left: 30px;
+                width: 4px;
+                background-color: #c2c2c2;
+                height: calc(100% - 95px);
+                top: 80px;
+                z-index: -1;
+                opacity: .2;
+                border-radius: 10px
+        }
+
+        .process-main .process-box:before {
+                content: '';
+                width: 66px;
+                height: 66px;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                display: inline-block;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url("../../images/dots-icon.svg")
+        }
+
+        .process-main .process-box:last-child:after,
+        .process-main .process-box:last-child:before {
+                content: none
+        }
+
+        .process-main .process-box .icon img {
+                width: auto
+        }
+
+        .our-work-main {
+                margin-top: 30px
+        }
+
+        .logo-block-slide {
+                width: 50%
+        }
+
+        .mobile-app-wrapper img:nth-child(2) {
+                margin: 0 15px
+        }
+
+        .mobile-app-wrapper img:last-child {
+                max-width: 130px
+        }
+
+        .heading-text.only-text .text p br,
+        .hiring-services-sec .title h2 br,
+        .hiring-services-sec .title p br {
+                display: none
+        }
+
+        .hiring-services-sec .carousel-wrapper {
+                margin-bottom: -20px
+        }
+
+        .hiring-services-sec .carousel-wrapper>div {
+                width: 100%;
+                margin-bottom: 20px
+        }
+
+        .our-process-sec .process-wrapper .process-box {
+                width: 100% !important;
+                padding: 50px 21px 0 !important;
+        }
+
+        .process-box h3 {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center
+        }
+
+        .process-box h3 span {
+                margin-left: 8px
+        }
+
+        .our-process-sec .title-with-text p br,
+        .why_dynamic_dreamz_sec .heading-text h2 br,
+        .why_dynamic_dreamz_sec p br {
+                display: none
+        }
+
+        .builder-wrapper .builder-col,
+        .wordpress-page-builders_sec.column-3 .builder-wrapper .builder-col {
+                width: 50%
+        }
+
+        .three-column-icon-with-text-sec .why_dynamic_dreamz_main ul li {
+                width: 100%;
+                border-right: 0 !important
+        }
+
+        .three-column-icon-with-text-sec .why_dynamic_dreamz_main ul li:nth-last-child(2) {
+                border-bottom: 1px solid #efefef !important
+        }
+
+        .four-column-text-with-icon-sec .benefit_box_main .wrapper .benefit_box {
+                width: 100%
+        }
+
+        .direction-l,
+        .direction-r {
+                width: 100%;
+                padding: 0 0 0 40px
+        }
+
+        .timeline:before {
+                margin: 0;
+                left: 15px
+        }
+
+        .timeline li:before {
+                margin-left: 0;
+                width: 40px;
+                height: 40px;
+                left: -4px;
+                top: 44px
+        }
+
+        .timeline li .icon {
+                width: 40px;
+                margin-bottom: 0
+        }
+
+        .timeline li {
+                margin-bottom: 30px
+        }
+
+        .difference_card_inner .logo {
+                margin-bottom: 10px;
+        }
+
+        .difference_card_inner {
+                padding: 30px 20px 18px 20px;
+        }
+
+        .three_col_icon_sec .wrapper .col {
+                width: 100%;
+        }
+
+        .theme-customization-service-sec .inner-wrapper .right-col,
+        .shopify-themes-customize-section .wrapper .col {
+                width: 100%;
+        }
+
+        .single-text-box-sec h3 {
+                font-size: 16px;
+                text-align: left;
+                line-height: 30.4px;
+        }
+
+        .single-text-box-sec ul {
+                text-align: left;
+                margin-left: 20px;
+        }
+
+        .single-text-box-sec ul li:not(:last-child) {
+                margin-bottom: 5px;
+        }
+
+
+        /* .three_col_icon_sec .theme-box h3 br {display: none;} */
+        .get_in_touch_form span.wpcf7-spinner {
+                right: 5px;
+        }
+
+        .delivers-box {
+                padding: 30px 20px 35px 20px;
+        }
+
+        .delivers-box .icon {
+                width: 50px;
+                margin-bottom: 10px;
+        }
+
+        .delivers-box h3 {
+                font-size: 16px;
+        }
+
+        .delivers-box p {
+                font-size: 14px;
+                line-height: 26px;
+        }
+
+        .shopify-theme-customization-sec .inner-hero-content h1 br {
+                display: none;
+        }
+
+        /* White Label Page Only */
+        .page-id-81 .benefit_text,
+        .page-id-81 .services-text,
+        .page-id-81 .why_dynamic_dreamz_main ul li,
+        .page-id-81 .get_in_touch_sec .title,
+        .page-id-81 .why-choose-wordpress-sec .wrapper .info-box,
+        .page-id-83 .why_dynamic_dreamz_main ul li .text,
+        .page-id-83 .hiring-services-sec .carousel-card,
+        .page-id-83 .services-text {
+                text-align: center;
+        }
+
+        .white_label_wp_development_service_accordion_section h2.services_title+p br {
+                display: none;
+        }
+
+
+        .page-id-81 .benefit_text .icon,
+        .page-id-83 .hiring-services-sec .carousel-card .icon {
+                margin: 0 auto 20px;
+        }
+
+        .page-id-81 .services-text .icon,
+        .page-id-83 .services-text .icon {
+                margin: 0 auto;
+        }
+
+        .page-id-81 .why-choose-wordpress-sec .wrapper .info-box .icon {
+                margin: 0 auto 5px;
+        }
+
+        .page-id-81 .why_dynamic_dreamz_main ul li span.icon,
+        .page-id-83 .why_dynamic_dreamz_main ul li span.icon {
+                margin: 0 auto 10px;
+        }
+
+        .page-id-81 .get_in_touch_sec .title,
+        .page-id-83 .get_in_touch_sec .title {
+                text-align: center;
+        }
+
+        .page-id-81 .our-process-sec .process-wrapper .process-box .icon span,
+        .page-id-83 .our-process-sec .process-wrapper .process-box .icon span {
+                font-weight: 700;
+                opacity: .6;
+                background: var(--Shopify-Gradient-2, linear-gradient(97deg, #15c064 28.5%, #00d1ff 91.82%));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 35px;
+                margin-right: 7px;
+        }
+
+        .page-id-81 .our-process-sec .process-wrapper .process-box .icon,
+        .page-id-83 .our-process-sec .process-wrapper .process-box .icon {
+                width: 110px;
+                height: 60px;
+        }
+
+        .page-id-81 .our-process-sec .process-wrapper .process-box .icon:before,
+        .page-id-83 .our-process-sec .process-wrapper .process-box .icon:before {
+                display: none;
+        }
+
+        .page-id-81 .our-process-sec .process-wrapper .process-box,
+        .page-id-83 .our-process-sec .process-wrapper .process-box {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+                margin-bottom: 20px !important;
+        }
+
+        .white_label_why_dynamic_dreamz_section.white_label_shopify .white_label_item:nth-child(7),
+        .white_label_why_dynamic_dreamz_section.white_label_shopify .white_label_item:nth-child(9) {
+                display: none;
+        }
+
+        .what-during-migration-sec .wrapper .col {
+                width: 100%;
+        }
+
+        .what-during-migration-sec .wrapper {
+                margin: 0;
+        }
+
+        .what-during-migration-sec .wrapper .col:not(:last-child) {
+                border-right: 0;
+                border-bottom: solid 1px rgba(0, 0, 0, 0.05);
+                padding-bottom: 20px;
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 20px;
+        }
+
+        .what-during-migration-sec .wrapper .col .item .icon {
+                width: 50px;
+                margin: 0 auto;
+        }
+
+        .what-during-migration-sec .wrapper .col .item h3 {
+                margin: 0 0 10px 0;
+        }
+
+        .what-during-migration-sec .wrapper .col:last-child {
+                margin-bottom: 0;
+        }
+
+        /* White Label Page Only */
+        .pricing_packages_section .pricing-header {
+                display: none;
+        }
+
+        .pricing_packages_section .pricing-header.mobile-header {
+                display: block;
+        }
+
+        .pricing_packages_section .pricing-header,
+        .pricing_packages_section .pricing-row {
+                flex-direction: column;
+                padding: 15px 20px;
+        }
+
+        .pricing_packages_section .pricing-header .column-title:nth-child(odd),
+        .pricing_packages_section .pricing-row .column:nth-child(odd) {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 7px;
+        }
+
+        .pricing_packages_section .pricing-row .column:nth-child(even),
+        .pricing_packages_section .pricing-header .column-title:nth-child(even) {
+                width: 100%;
+                padding: 0;
+                border: 0;
+        }
+
+        .migration-services-sec .migration-wrapper .migration-col {
+                width: 100%
+        }
+
+        .single-text-box-sec .title h2 br {
+                display: none;
+        }
+
+        .industries-img {
+                margin: 20px auto -70px;
+                max-width: 100%;
+        }
+
+        .services_case_study_section .cs-col-left,
+        .services_case_study_section .cs-col-right {
+                padding: 20px 15px
+        }
+
+        .services_case_study_section .cs-col-right {
+                padding-bottom: 30px
+        }
+
+        .services_case_study_section .cs-title h2 {
+                font-size: 20px
+        }
+
+        .services_case_study_section .cs-title p {
+                font-size: 14px;
+                line-height: 26.6px
+        }
+
+        .services_case_study_section .cs-visit a.btn {
+                width: 100%
+        }
+
+        .services_case_study_section .cs-details {
+                -webkit-column-gap: 20px;
+                -moz-column-gap: 25px;
+                column-gap: 25px;
+                row-gap: 10px
+        }
+
+        .services_case_study_section .cs-visit {
+                gap: 10px
+        }
+
+        .services_case_study_section .cs_list_img:after,
+        .services_case_study_section .cs_list_img:before {
+                width: 50px
+        }
+
+        .services_case_study_section .cs_list_img:before {
+                left: -15px
+        }
+
+        .services_case_study_section .cs_list_img:after {
+                right: -15px
+        }
+
+        .services_case_study_section .cs-col {
+                min-width: unset;
+        }
+
+        .lets-build-section:before {
+                width: 90px;
+                height: 50px;
+        }
+
+        .lets-build-section:after {
+                width: 100px;
+                height: 55px;
+        }
+
+        .stats-infomation-section .wrapper {
+                flex-wrap: wrap;
+        }
+
+        .stats-infomation-section .wrapper .col {
+                width: 100%;
+                margin-bottom: 16px;
+                padding: 0 38px;
+        }
+
+        .full-width-bg-color {
+                padding-bottom: 50px;
+        }
+
+        .stats-infomation-section {
+                margin: 50px 0 0 0;
+        }
+
+        .stat-infomation-box {
+                justify-content: center;
+                text-align: center;
+        }
+
+        .stat-infomation-box-inner {
+                flex-direction: column;
+        }
+
+        .stat-infomation-box-inner .text {
+                width: 100%;
+        }
+
+        .stat-infomation-box-inner .icon {
+                margin: 0 auto 5px;
+                width: 50px;
+                height: 50px;
+        }
+
+        .wordpress-pricing-section .wrapper .col {
+                width: 100%;
+        }
+
+        .wordpress-pricing-section .lets-discuss-btn p {
+                border-radius: 20px;
+        }
+
+        .wordpress-pricing-section .wrapper .col:not(:last-child) {
+                margin-bottom: 30px;
+        }
+
+        .technologies-tabs ul.tab-menu,
+        .wide-range-technologies-section.shopify ul.tab-menu {
+                gap: 10px
+        }
+
+        .technologies-tabs .grid .box {
+                padding: 0 5px
+        }
+
+        .technologies-tabs .grid {
+                margin: 0 -5px
+        }
+
+        .technologies-tabs .grid .box .img-wrap {
+                padding: 25px 10px;
+                border-radius: 15px
+        }
+
+        .technologies-tabs .grid .box .img-wrap img {
+                max-height: 30px;
+                object-fit: contain;
+                max-width: 110px
+        }
+
+        .technologies-tabs ul.tab-menu {
+                width: 100vw
+        }
+
+        .technologies-tabs .grid .box .img-wrap {
+                min-height: 82px
+        }
+
+        .white-label-process .wrapper .col {
+                width: 100%
+        }
+
+        .white-label-process .wrapper .col:not(:last-child) {
+                margin-bottom: 30px
+        }
+
+        .white-label-note p {
+                border-radius: 20px;
+                padding: 20px
+        }
+
+        .white-label-note {
+                margin-top: 40px
+        }
+
+        .white-label-services-section {
+                border-radius: 30px 30px 0 0
+        }
+
+        .full-width-bg-color {
+                border-radius: 0 0 30px 30px
+        }
+
+        .white-label-process .heading-title {
+                margin-bottom: 30px
+        }
+
+        .white-label-process .step .icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 10px
+        }
+
+        .white-label-process .step .icon svg {
+                width: 30px
+        }
+
+        .review_animation_text {
+                font-size: 14px;
+                margin-bottom: 10px
+        }
+
+        .review_animation_box_logo {
+                margin: 0
+        }
+
+        .review_animation_box_logo svg {
+                max-width: 130px;
+                max-height: 40px
+        }
+
+        .review_animation .review_ratings {
+                font-size: 15px
+        }
+
+        .review_total_ratings a svg {
+                width: 10px;
+                margin-left: 5px
+        }
+
+        .review_animation_ratings {
+                margin-bottom: 10px
+        }
+
+        .review_animation {
+                width: 275px !important;
+                height: 275px !important
+        }
+
+        .review_total_ratings a {
+                font-size: 14px;
+                display: inline-flex;
+                align-items: center
+        }
+
+        .seo_service_list ul li {
+                text-align: left;
+                line-height: 24px;
+                font-size: 14px;
+                width: 100%;
+                padding-top: 8px;
+                padding-bottom: 8px;
+        }
+
+        .seo_service_list ul li:not(:last-child) {
+                margin-right: 0;
+        }
+
+        .seo_service_list ul li {
+                line-height: 22px;
+        }
+
+        .wordpress-page-builders_sec .bottom-text {
+                margin-top: 30px;
+        }
+
+        .industries-served-sec .bottom-text {
+                margin-top: 20px;
+        }
+
+        .white-label-shopify-development-banner .button-wrap a+a {
+                margin-left: 0px;
+                margin-top: 20px;
+        }
+
+        .white-label-shopify-development-banner .agencies-item {
+                margin: 0px 10px 20px 10px;
+        }
+
+        .white-label-shopify-development-banner .content-wrapper {
+                padding-bottom: 45px;
+        }
+
+        .white-label-shopify-development-banner .content-wrapper p {
+                margin: 0 auto 30px auto;
+        }
+
+        /* WordPress Development Experience Start */
+        .experience-col {
+                width: 100%;
+                margin-bottom: 30px;
+        }
+
+        .experience-col .experience-item {
+                border-right: none;
+                padding: 0px;
+        }
+
+        .experience-col:not(:last-child) .experience-item {
+                border-right: 0px;
+        }
+
+        .experience-item .content h2 {
+                font-size: 25px;
+        }
+
+        .experience-col:last-child {
+                margin-bottom: 0px;
+        }
+
+        .experience-item {
+                justify-content: flex-start;
+        }
+
+        /* WordPress Development Experience End */
+
+        /* WordPress Development Challenges Start */
+        .white-label-shopify-challenges .challenges-col {
+                width: 100%;
+        }
+
+        .white-label-shopify-challenges .challenges-item .icon {
+                margin-bottom: 25px;
+        }
+
+        .white-label-shopify-challenges .challenges-item {
+                border-radius: 20px;
+        }
+
+        .white-label-shopify-challenges .challenges-item .content .text {
+                width: 100%;
+        }
+
+        .white-label-shopify-challenges .challenges-col:last-child {
+                margin-bottom: 0px;
+        }
+
+        .white-label-shopify-challenges .title {
+                margin-bottom: 40px;
+        }
+
+        /* WordPress Development Challenges end */
+        .white-label-shopify-perfect-fit .perfect-fit-col {
+                width: 100%;
+        }
+
+        .white-label-shopify-perfect-fit {
+                padding: 50px 0px;
+        }
+
+        .white-label-shopify-development-banner {
+                padding: 80px 0px 80px 0px;
+        }
+
+        .white-label-shopify-perfect-fit.services .perfect-fit-col {
+                width: 100%;
+                margin-bottom: 25px;
+        }
+
+        .white-label-shopify-perfect-fit.services .perfect-fit-item {
+                padding: 20px;
+        }
+
+        .white-label-shopify-perfect-fit.services .title h2 {
+                font-size: 24px;
+        }
+
+        .white-label-shopify-perfect-fit.services .perfect-fit-item .content p {
+                font-size: 15px;
+        }
+
+        .white-label-shopify-perfect-fit .perfect-fit-item .perfect-fit-top h5 br {
+                display: none;
+        }
+
+        .white-label-shopify-perfect-fit .perfect-fit-item .perfect-fit-top {
+                margin-bottom: 20px;
+        }
+
+        .white-label-shopify-perfect-fit.services .perfect-fit-item .perfect-fit-top {
+                margin-bottom: 0px;
+        }
+
+        .white-label-shopify-why-agencies .why-agencies-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+        }
+
+        .white-label-shopify-why-agencies .why-agencies-item .icon {
+                width: 75px;
+                height: 75px;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+                margin-right: 0px;
+        }
+
+        .white-label-shopify-why-agencies .title {
+                margin-bottom: 40px;
+        }
+
+        .white-label-shopify-why-agencies {
+                padding: 50px 0px;
+        }
+
+        .white-label-shopify-flexiable-engagement .flexiable-engagement-col {
+                width: 100%;
+                margin-bottom: 20px;
+        }
+
+        .white-label-shopify-flexiable-engagement .bottom-text {
+                margin-top: 15px;
+        }
+
+        .white-label-shopify-process-slider .slick-list {
+                padding: 0% 22% 0 5%;
+                margin: 0px -15px;
+        }
+
+        .white-label-shopify-process-slider .slick-slide {
+                margin: 0 15px;
+        }
+
+        .process-slide-item .icon {
+                width: 70px;
+                height: 70px;
+                padding: 18px;
+        }
+
+        .process-slide-item .icon:before {
+                border-radius: 12px;
+        }
+
+        .process-slide-item .icon {
+                border-radius: 10px;
+        }
+
+        .white-label-shopify-process {
+                padding: 50px 0px;
+        }
+
+        .agency-box-col {
+                width: 100%;
+        }
+
+        .white-label-shopify-agency-partners .agency-box-item {
+                padding: 20px;
+        }
+
+        .white-label-shopify-agency-partners .agency-box-item {
+                height: auto;
+        }
+
+        .white-label-shopif-in-house-teams {
+                padding: 50px 0px;
+        }
+
+        .white-label-shopif-in-house-teams {
+                margin-bottom: 50px;
+        }
+
+        .slide-line {
+                background-size: 50% 15%;
+                top: 12%;
+                background-position: center 16%;
+        }
+
+        .white-label-shopify-challenges .title h2,
+        .white-label-shopify-agency-partners .title h2,
+        .white-label-shopif-in-house-teams .title h2,
+        .lets-build-section.white-label-shopify .lets-build-text h2,
+        .white-label-shopify-why-agencies .title h2,
+        .white-label-shopify-flexiable-engagement .title h2,
+        .white-label-shopify-process .title h2 {
+                font-size: 24px;
+        }
+
+        .webflow-services-section .services-grid .service-col {
+                width: 100%;
+        }
+
+        .webflow-services-section .services-grid .service-card {
+                padding: 20px;
+        }
+
+        .webflow-services-section .services-grid .service-card h3 {
+                padding-top: 20px;
+                margin-top: 20px;
+                line-height: 24px;
+                margin-bottom: 10px;
+                font-size: 16px;
+                line-height: 24px;
+        }
+
+        .webflow-services-section .services-grid .service-card p {
+                font-size: 14px;
+                line-height: 24px;
+        }
+
+        .webflow-services-section .section-head {
+                margin-bottom: 30px;
+        }
+
+        .webflow-services-section .section-btn {
+                margin-top: 30px;
+        }
+
+        .inner-hero-content .btn-work {
+                display: block;
+                width: fit-content;
+                margin: 5px auto 0;
+        }
+
+        .milestones-section .milestones-grid .milestone-col {
+                width: 100%;
+        }
+
+        .milestones-section .milestones-grid .milestone-card {
+                height: auto;
+        }
+
+        .milestones-section .milestones-grid .milestone-card .icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 15px;
+        }
+
+        .milestones-section .milestones-grid .milestone-card .milestone-count {
+                margin-top: 20px;
+                padding-top: 20px;
+        }
+
+        .milestones-section .milestones-grid .milestone-card .milestone-count strong {
+                font-size: 30px;
+                margin-bottom: 0;
+        }
+
+        .milestones-section .milestones-grid .milestone-card .milestone-count span {
+                font-size: 16px;
+        }
+
+        /* White Label Wordpress Page CSS */
+        .white_label_hero_section {
+                padding-top: 70px;
+                border-radius: 0 0 30px 30px;
+        }
+
+        .white_label_counter_number_wrap .col_item {
+                width: 50%;
+        }
+
+        .white_label_counter_number_wrap .col_item:not(:last-child):nth-child(even):after {
+                display: none;
+        }
+
+        .white_label_counter_number_wrap .col_item:not(:nth-child(-n+2)) {
+                padding-top: 60px;
+        }
+
+        .white_label_counter_number_wrap .col_item:not(:nth-child(-n+2)):before {
+                content: "";
+                display: flex;
+                height: auto;
+                height: 1px;
+                background: #2828281A;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 30px;
+                bottom: auto;
+        }
+
+        .white_label_counter_number_wrap {
+                margin: 0px;
+                justify-content: start;
+        }
+
+        .counter-text {
+                font-size: 30px;
+        }
+
+        /* white-label-wordpress-development-services-new CSS */
+
+        .white_label_hero_section .content-col {
+                padding-bottom: 10px;
+        }
+
+        .white_label_hero_section .global_brands_grid_wrap {
+                margin-top: 15px;
+                margin-right: -10px;
+                margin-left: -10px;
+        }
+
+        .white_label_hero_section .global_brands_grid_wrap .global_brands_item {
+                padding: 0 10px;
+        }
+
+        /* White Label Counter Section CSS Starts */
+
+        .white_label_counter_section .stats_icon {
+                margin-bottom: 10px;
+        }
+
+        .white_label_counter_section .stats_icon img {
+                width: 30px;
+                height: 30px;
+        }
+
+        .white_label_counter_section .stats_item {
+                width: 100%;
+        }
+
+        .white_label_counter_section .stats_item {
+                border-right: none;
+                border-bottom: 1px solid rgba(40, 40, 40, 0.10);
+                padding-bottom: 20px;
+        }
+
+        .white_label_counter_section .stats_item:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+        }
+
+        .white_label_counter_section .stats_container {
+                row-gap: 20px;
+        }
+
+        /* White Label Why Dynamic Dreamz Section CSS Starts */
+
+
+        .white_label_why_dynamic_dreamz_section .white_label_title {
+                margin-bottom: 30px;
+        }
+
+        .white_label_why_dynamic_dreamz_section .white_label_grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+        }
+
+        .white_label_why_dynamic_dreamz_section .white_label_item {
+                padding: 0 0 20px 0;
+        }
+
+
+        .white_label_why_dynamic_dreamz_section .white_label_item::after {
+                display: none;
+        }
+
+        .white_label_why_dynamic_dreamz_section .white_label_item:nth-child(1):before,
+        .white_label_why_dynamic_dreamz_section .white_label_item:nth-child(2):before,
+        .white_label_why_dynamic_dreamz_section .white_label_item:nth-child(3):before,
+        .white_label_why_dynamic_dreamz_section .white_label_item:nth-child(4):before,
+        .white_label_why_dynamic_dreamz_section .white_label_item:nth-child(5):before,
+        .white_label_why_dynamic_dreamz_section .white_label_item:nth-child(7):before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 1px;
+                width: 100%;
+                background: linear-gradient(90deg, rgba(40, 40, 40, 0.00) 0%, #333 50%, rgba(51, 51, 51, 0.00) 100%) !important;
+                opacity: 0.2;
+        }
+
+        /* White Label Wordpress Development Services Accordion Section CSS Starts */
+
+        .white_label_wp_development_service_accordion_section .services_title {
+                margin-bottom: 30px;
+        }
+
+        .white_label_wp_development_service_accordion_section .services_grid {
+                margin-bottom: 20px;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_icon_wrap {
+                width: 30px;
+                height: 30px;
+                min-width: 30px;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_icon_wrap img {
+                width: 30px;
+                height: 30px;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_label {
+                font-size: 16px;
+                line-height: 24px;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_toggle {
+                width: 22px;
+                height: 22px;
+                min-width: 22px;
+        }
+
+        .white_label_wp_development_service_accordion_section .accordion_content {
+                font-size: 15px;
+                line-height: 22px;
+                padding: 0 0 15px 40px;
+        }
+
+        /* White Label Flexible Wordpress Development Plans Section CSS Starts */
+
+        .white_label_wp_develop_plan_section .pricing_header {
+                flex-wrap: wrap;
+                gap: 15px;
+                margin-bottom: 20px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_cards {
+                flex-wrap: wrap;
+                gap: 20px;
+                margin-bottom: 20px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_card {
+                width: 100%;
+                flex: initial;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_title {
+                font-size: 22px;
+                line-height: 32px;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_description {
+                max-width: 100%;
+        }
+
+        .white_label_wp_develop_plan_section .pricing_badge {
+                margin-bottom: 15px;
+        }
+
+        /* White Label Wide Range Of technologies Section CSS Starts */
+
+        .white_label_wide_range_technologies_section {
+                padding: 30px 0;
+        }
+
+        .white_label_wide_range_technologies_section .wide_range_technologies_top_part {
+                margin-bottom: 20px;
+        }
+
+        .white_label_wide_range_technologies_section .wide_range_technologies_heading h2 {
+                margin-bottom: 15px;
+        }
+
+        .white_label_wide_range_technologies_section .wide_range_technologies_para p {
+                font-size: 14px;
+                line-height: 20px;
+        }
+
+        .white_label_wide_range_technologies_section .our_partners_logo_item img {
+                width: 170px;
+        }
+
+        /* White Label How Our Partnership Works Section CSS Starts */
+
+        .white_label_how_partnership_works_section .partnership_heading {
+                margin-bottom: 20px;
+        }
+
+        .white_label_how_partnership_works_section .step_card {
+                padding: 30px 15px 20px 15px;
+        }
+
+        .white_label_how_partnership_works_section .step_card:nth-child(1)::before,
+        .white_label_how_partnership_works_section .step_card:nth-child(2)::before,
+        .white_label_how_partnership_works_section .step_card:nth-child(3)::before {
+                width: 25px;
+                height: 25px;
+                bottom: -20px;
+        }
+
+        .white_label_how_partnership_works_section .step_title {
+                margin-bottom: 15px;
+        }
+
+        .white_label_how_partnership_works_section .partnership_note {
+                border-radius: 10px;
+        }
+
+        .white_label_how_partnership_works_section .note_text {
+                font-size: 14px;
+                line-height: 20px;
+        }
+
+        .white_label_counter_section .stats_item:nth-child(1) .stats_number .odometer-inside .odometer-digit:first-child,
+        .white_label_counter_section .stats_item:nth-child(2) .stats_number .odometer-inside .odometer-digit:first-child,
+        .white_label_counter_section .stats_item767:nth-child(4) .stats_number .odometer-inside .odometer-digit:first-child {
+                display: inline-flex;
+                width: 18px;
+        }
+
+        .white_label_counter_section .stats_item:nth-child(1) .stats_number .odometer-inside .odometer-digit:first-child .odometer-ribbon-inner,
+        .white_label_counter_section .stats_item:nth-child(2) .stats_number .odometer-inside .odometer-digit:first-child .odometer-ribbon-inner,
+        .white_label_counter_section .stats_item:nth-child(4) .stats_number .odometer-inside .odometer-digit:first-child .odometer-ribbon-inner {
+                line-height: 1.29;
+        }
+
+
+
+        .book-intro-call-section .wrapper .left-col,
+        .book-intro-call-section .wrapper .right-col {
+                width: 100%;
+                padding: 50px calc((100% - 508px) / 2);
+        }
+
+        .intro-call-from .form-group.w-fit {
+                text-align: center;
+        }
+
+        .intro-call-from .form-group.w-fit .btn-red {
+                width: fit-content;
+        }
+
+        .brand_testimonial_carousel .slick-slide {
+                margin-right: 0767
+        }
+
+        .shopify-premium-partner-page .our_partners,
+        .shopify-premium-partner-page .brand_testimonial {
+                padding: 50px 0
+        }
+
+        .our_partners .section_title h2,
+        .latest_blogs .section_title h2,
+        .brand_testimonial .section_title h2 {
+                font-size: 24px;
+                margin-bottom: 16px;
+                line-height: 1.2
+        }
+
+        .brand_testimonial .section_title p {
+                font-size: 14px
+        }
+
+        .brand_testimonial_slider_wrap .brand_testimonial_inner {
+                margin-right: 0;
+                border-radius: 20px
+        }
+
+        .brand_testimonial_carousel .slick-slide {
+                margin-right: 0
+        }
+
+        .brand_testimonial_nav .slider_arrow {
+                width: 42px;
+                height: 42px;
+                border-radius: 6px
+        }
+
+        .brand_testimonial_nav .slider_arrow svg,
+        .brand_testimonial_nav .slider_arrow img {
+                width: 15px;
+                height: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center
+        }
+
+        .testimonial_img_text_wrap .col_content h3 {
+                line-height: normal;
+                font-size: 18px;
+                margin-bottom: 16px
+        }
+
+        .testimonial_img_text_wrap .col_content p {
+                font-size: 14px;
+                letter-spacing: 0;
+                line-height: 1.72;
+                margin-bottom: 16px
+        }
+
+        .testimonial_img_text_wrap .user_content_btm {
+                padding-top: 16px
+        }
+
+        .user_content_btm .video_icon .video_btn {
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+        }
+
+        .testimonial_img_text_wrap .user_content_btm {
+                padding-top: 16px;
+        }
+
+        .testimonial_img_text_wrap .user_thumb_wrap .thumb_wrap {
+                width: 48px;
+                height: 48px;
+        }
+
+        .testimonial_img_text_wrap .user_thumb_wrap .user_content_wrap .title {
+                font-size: 16px;
+                letter-spacing: 0;
+                line-height: normal;
+        }
+
+        .testimonial_img_text_wrap .user_thumb_wrap .user_content_wrap .sub_title {
+                font-size: 14px;
+        }
+
+        .testimonial_img_text_wrap .col_content .logo_wrap img {
+                height: 40px;
+                width: auto;
+                object-fit: contain;
+                max-width: 225px;
+        }
+
+        .white_label_web_design_services_box .wrapper .col {
+                width: 100%;
+        }
+
+        .industries_we_have_served_box .wrapper .col {
+                width: 100%;
+        }
+
+        .white_label_wp_development_service_accordion_section.website-design .accordion_item {
+                padding: 18px 15px;
+                border-radius: 10px;
+        }
+
+        .white_label_wp_development_service_accordion_section.website-design .wrapper .right-col .accordion_header span.accordion_label {
+                font-size: 16px;
+        }
+
+        .white_label_wp_development_service_accordion_section.website-design .accordion_content {
+                font-size: 14px;
+                line-height: 21px;
+        }
+
+        .white_label_wp_development_service_accordion_section.website-design {
+                padding: 40px 0;
+        }
+
+        .white_label_process_step_box_section .wrapper .col {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 30px;
+        }
+
+        .white_label_process_step_box_section.column-five .wrapper .col {
+                width: 100%;
+
+        }
+
+        .white_label_process_step_box_section .wrapper {
+                border-left: 2px solid #AD5151;
+                padding-left: 20px;
+                margin: 0 0 0 5px;
+        }
+
+        .white_label_process_step_box_section .wrapper .step-box {
+                text-align: left;
+        }
+
+        .white_label_process_step_box_section .wrapper .step-box .icon {
+                margin-left: 0;
+                width: 70px;
+                height: 70px;
+        }
+
+        .white_label_process_step_box_section .wrapper .col .step-box .icon:after {
+                left: -26px !important;
+                width: 10px !important;
+                height: 10px !important;
+                border-radius: 50%;
+                background-image: none !important;
+                background-color: #AD5151;
+                content: '' !important;
+                display: block;
+                position: absolute;
+                transform: translateY(-50%);
+                top: 50%;
+                z-index: 1;
+        }
+
+        .white_label_process_step_box_section .wrapper .col:last-child {
+                margin-bottom: 0;
+        }
+
+        .industries_we_have_served_box .section-title {
+                margin-bottom: 30px;
+        }
+
+        .industries_we_have_served_box .wrapper .col {
+                width: 100%;
+                padding: 0 0 30px 0;
+                margin-bottom: 30px;
+        }
+
+        .industries_we_have_served_box .wrapper .col:last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+        }
+
+        .industries_we_have_served_box .wrapper .col .is-box h3 {
+                margin-bottom: 10px;
+        }
+
+        .industries_we_have_served_box .wrapper .col .is-box .icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 20px;
+        }
+
+        .industries_we_have_served_box .wrapper .col:not(:last-child):after {
+                display: none;
+        }
+
+        .industries_we_have_served_box .wrapper {
+                margin: 0;
+        }
+
+        .user_content_btm .video_icon .video_btn img {
+                width: 16px;
+                height: auto;
+        }
+
+        .what-we-delivers-sec.white-label-design-sec {
+                border-radius: 0 0 30px 30px;
+        }
+
+        .white_label_hero_section {
+                border-radius: 0 0 30px 30px;
+                padding-bottom: 10px;
+        }
+
+
+        .white_label_web_design_services_box {
+                border-radius: 30px 30px 0px 0px;
+        }
+
+        /*------ smarter Shopify Store --------*/
+
+        .smarter-shopify-store .store-wrap .store-col {
+                width: 100%;
+        }
+
+        .smarter-shopify-store .store-wrap .store-item {
+                padding: 30px 15px;
+        }
+
+        .smarter-shopify-store .title {
+                margin-bottom: 40px;
+        }
+
+        .smarter-shopify-store .store-wrap .store-item .icon {
+                width: 50px;
+                height: 50px;
+        }
+
+        .smarter-shopify-store .store-wrap .store-item p,
+        .smarter-shopify-store .title p {
+                font-size: 15px;
+                line-height: 26px;
+        }
+
+        /*------ AI-driven shopping --------*/
+        .ai-driven-shopping .ai-driven-col {
+                width: 100%;
+                border-right: 0px;
+                padding: 30px 0px;
+        }
+
+        .ai-driven-shopping .title {
+                margin-bottom: 25px;
+        }
+
+        .ai-driven-shopping .ai-driven-col:nth-last-child(-n + 2) {
+                border-bottom: 1px solid #2828281A;
+        }
+
+        .ai-driven-shopping .ai-driven-col:last-child {
+                padding-bottom: 0;
+                border: 0;
+        }
+
+        /*-------- AI-Driven Shopping --------*/
+        .services-ai-engines .services-ai-col {
+                width: 100%;
+        }
+
+        .services-ai-engines .title {
+                margin-bottom: 40px;
+        }
+
+        .services-ai-engines .services-ai-item {
+                padding: 40px 25px;
+        }
+
+        .preparing-store .bottom-text {
+                margin-top: 40px;
+        }
+
+        /*------- .conversion-cro-section  -------- */
+        .conversion-cro-col {
+                width: 50%;
+        }
+
+        /* Flexible Shopify CRO Engagements */
+        .shopify-cro-engagement-card {
+                width: 100%;
+        }
+
+        /* revenue-impact-section */
+        .revenue-impact-wrapper .revenue-card {
+                width: 100%;
+        }
+
+        .revenue-impact-wrapper:before {
+                display: none;
+        }
+
+        /* White Label Lets Build CTA Section CSS Starts */
+        .white_label_process_step_box_section.column-five .wrapper {
+                margin: 0 0 0 5px;
+        }
+
+        .white_label_process_step_box_section.column-five .wrapper .col {
+                padding: 0;
+        }
+
+        .sop-state .sop-row .sop-col {
+                width: 100%;
+        }
+
+        .sop-state .sop-row .sop-item p {
+                padding-top: 10px;
+                margin-top: 10px;
+        }
+
+        .shopifys_official_partner_section .sop-box-wrapper .section-title h2 {
+                font-size: 24px;
+                line-height: 33.24px;
+        }
+
+        .shopifys_official_partner_section .sop-box-wrapper {
+                padding: 30px 20px;
+                border-radius: 20px;
+        }
+
+        .sop-state .sop-row .sop-item h3 {
+                font-size: 40px;
+                line-height: 40px;
+        }
+
+        .sop-state {
+                margin-top: 30px;
+        }
+}
+
+@media (min-width:768px) {
+
+        .page-id-81 .our-process-sec .process-wrapper .process-box .icon span,
+        .page-id-83 .our-process-sec .process-wrapper .process-box .icon span {
+                display: none !important;
+        }
+}
+
+@media (max-width:575px) {
+
+        /*------- .conversion-cro-section  --------*/
+        .conversion-cro-col {
+                width: 100%;
+        }
+
+        .review-wrap .review-box {
+                width: 100%
+        }
+
+        .book-intro-call-section .wrapper .left-col,
+        .book-intro-call-section .wrapper .right-col {
+                width: 100%;
+                padding: 50px 16px;
+        }
+
+        .certified-process-section .cp-card-wrapper .cp-card-col {
+                width: 100%;
+        }
+
+        .certified-process-section .cp-card {
+                border-radius: 10px;
+        }
+}
+
+@media (max-width:389px) {
+        .services-provide-main a.btn {
+                font-size: 12px
+        }
+
+        .heading-text h2 br {
+                display: none
+        }
+
+        .app-text .icon img {
+                width: 30px
+        }
+
+        .app-text .icon {
+                width: 55px;
+                height: 55px;
+                margin-bottom: 10px
+        }
+
+        .difference_card_inner ul li span.rating-img img {
+                margin: 5px 0;
+        }
+
+        .certified_developers_section .wrapper .certified-col {
+                width: 100%;
+        }
+
+        .certified_developers_section .certified-item {
+                border-radius: 16px;
+        }
+
+        .evidence_you_can_see_section .wrapper .evidence-col {
+                width: 100%;
+        }
+
+        .evidence_you_can_see_section .evidence-img img {
+                width: 150px;
+        }
+
+        .white_label_hero_section .content-col .content-wrap h1 {
+                font-size: 30px;
+                line-height: 40px;
+                margin-bottom: 10px;
+        }
+
+        .credential-tabs-list {
+                flex-direction: column;
+        }
+
+        .credential-tab {
+                width: 100%;
+                border-radius: 0;
+                padding: 20px 10px;
+        }
+
+        .credential-tabs-main .panel .info-grid .info-box {
+                width: 100%;
+        }
+
+        .credential-tabs-main .panel {
+                padding: 30px 20px;
+        }
+
+        .credential-tabs-main .panel .intro h3 {
+                font-size: 22px;
+                line-height: 30px;
+        }
+
+        .credential-tabs-main .panel .info-grid .info-box {
+                padding: 20px;
+        }
+
+        button.credential-tab.active {
+                border-radius: 0;
+        }
+
+        .evidence_you_can_see_section .bottom-text {
+                margin-top: 30px;
+        }
+}
+
+@media (max-width:359px) {
+        .services-provide-main a.btn {
+                font-size: 12px;
+                padding: 12px
+        }
+
+        .inner-hero-content h1 {
+                font-size: 34px;
+                line-height: 44px
+        }
+
+        .app-text {
+                max-width: 230px;
+                margin: 0 auto;
+                padding: 25px 0 30px 0
+        }
+
+        .app-text .icon {
+                width: 45px;
+                height: 45px;
+                margin-bottom: 5px
+        }
+
+        .app-text .icon img {
+                width: 25px
+        }
+
+        .mobile-app-wrapper img:last-child {
+                max-width: 104px
+        }
+}

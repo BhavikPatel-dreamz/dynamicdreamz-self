@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-import { testimonials } from "@/content/home";
+import { testimonials, type Testimonial } from "@/content/home";
 import { cn } from "@/lib/class-names";
 
 function DirectionArrow({ direction }: { direction: "previous" | "next" }) {
@@ -28,8 +28,6 @@ function PlayIcon() {
     </svg>
   );
 }
-
-type Testimonial = (typeof testimonials)[number];
 
 function TestimonialSlide({
   testimonial,
@@ -82,7 +80,11 @@ function TestimonialSlide({
   );
 }
 
-export function TestimonialCarousel() {
+type TestimonialCarouselProps = {
+  items?: readonly Testimonial[];
+};
+
+export function TestimonialCarousel({ items = testimonials }: TestimonialCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [videoId, setVideoId] = useState<string | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -105,7 +107,7 @@ export function TestimonialCarousel() {
       <div className="relative" aria-live="polite">
         <div className="overflow-hidden rounded-[30px_0_0_30px] max-[991px]:rounded-[20px]">
           <div className="flex items-stretch transition-transform duration-600 ease-in-out will-change-transform" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
-            {testimonials.map((testimonial, index) => (
+            {items.map((testimonial, index) => (
               <TestimonialSlide testimonial={testimonial} isActive={activeIndex === index} onPlay={setVideoId} key={testimonial.name} />
             ))}
           </div>
@@ -114,7 +116,7 @@ export function TestimonialCarousel() {
           <button className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-[10px] border-0 bg-white p-0 transition-colors duration-300 hover:not-disabled:bg-brand-red hover:not-disabled:text-white disabled:cursor-default disabled:opacity-60 max-[767px]:h-[42px] max-[767px]:w-[42px] max-[767px]:rounded-md max-[767px]:[&_svg]:h-[15px] max-[767px]:[&_svg]:w-[15px]" type="button" aria-label="Previous testimonial" disabled={activeIndex === 0} onClick={() => moveTo(activeIndex - 1)}>
             <DirectionArrow direction="previous" />
           </button>
-          <button className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-[10px] border-0 bg-white p-0 transition-colors duration-300 hover:not-disabled:bg-brand-red hover:not-disabled:text-white disabled:cursor-default disabled:opacity-60 max-[767px]:h-[42px] max-[767px]:w-[42px] max-[767px]:rounded-md max-[767px]:[&_svg]:h-[15px] max-[767px]:[&_svg]:w-[15px]" type="button" aria-label="Next testimonial" disabled={activeIndex === testimonials.length - 1} onClick={() => moveTo(activeIndex + 1)}>
+          <button className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-[10px] border-0 bg-white p-0 transition-colors duration-300 hover:not-disabled:bg-brand-red hover:not-disabled:text-white disabled:cursor-default disabled:opacity-60 max-[767px]:h-[42px] max-[767px]:w-[42px] max-[767px]:rounded-md max-[767px]:[&_svg]:h-[15px] max-[767px]:[&_svg]:w-[15px]" type="button" aria-label="Next testimonial" disabled={activeIndex === items.length - 1} onClick={() => moveTo(activeIndex + 1)}>
             <DirectionArrow direction="next" />
           </button>
         </div>

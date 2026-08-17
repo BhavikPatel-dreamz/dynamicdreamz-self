@@ -385,6 +385,32 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  whiteLabelWebsiteDesign: {
+    path: "/white-label-website-design-services",
+    title: "White Label Website Design Services | Dynamic Dreamz",
+    description:
+      "Scale your agency with white label website design services. Get professional, custom websites delivered under your brand by a trusted web design partner.",
+    keywords: [
+      "white label website design services",
+      "white label web design agency",
+      "outsourced website design for agencies",
+      "white label web development",
+      "website design partner for agencies",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-12-09T09:29:53+00:00",
+    modifiedTime: "2026-06-03T09:07:47+00:00",
+    image: {
+      path: "/assets/white-label-website-design/hero/white-label-website-design-services.png",
+      width: 1150,
+      height: 1280,
+      alt: "White label website design services delivered under an agency's brand",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

@@ -16,8 +16,10 @@ export type WhiteLabelReview = {
 
 export type WhiteLabelHero = {
   title: string;
+  titleLines?: readonly string[];
   accent?: string;
   lead: string;
+  leadStrong?: boolean;
   paragraphs: readonly RichText[];
   cta: string;
   illustration: string;
@@ -42,6 +44,8 @@ export type WhiteLabelCapability = WhiteLabelCard & {
 
 export type WhiteLabelService = WhiteLabelCard & {
   icon: string;
+  href?: string;
+  linkLabel?: string;
 };
 
 export type WhiteLabelPlan = {

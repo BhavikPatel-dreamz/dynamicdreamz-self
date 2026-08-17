@@ -17,6 +17,10 @@ import {
   whiteLabelWordPressFaqs,
   whiteLabelWordPressServices,
 } from "@/content/white-label-wordpress-development";
+import {
+  whiteLabelWebsiteDesignFaqs,
+  whiteLabelWebsiteDesignServices,
+} from "@/content/white-label-website-design";
 import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -77,6 +81,11 @@ const whiteLabelWordPressPageId = `${whiteLabelWordPressPageUrl}#webpage`;
 const whiteLabelWordPressServiceId = `${whiteLabelWordPressPageUrl}#service`;
 const whiteLabelWordPressFaqId = `${whiteLabelWordPressPageUrl}#faq`;
 const whiteLabelWordPressBreadcrumbId = `${whiteLabelWordPressPageUrl}#breadcrumb`;
+const whiteLabelWebsiteDesignPageUrl = absoluteUrl(pageSeo.whiteLabelWebsiteDesign.path);
+const whiteLabelWebsiteDesignPageId = `${whiteLabelWebsiteDesignPageUrl}#webpage`;
+const whiteLabelWebsiteDesignServiceId = `${whiteLabelWebsiteDesignPageUrl}#service`;
+const whiteLabelWebsiteDesignFaqId = `${whiteLabelWebsiteDesignPageUrl}#faq`;
+const whiteLabelWebsiteDesignBreadcrumbId = `${whiteLabelWebsiteDesignPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -934,6 +943,23 @@ export function createWhiteLabelWordPressPageSchema() {
     audienceType: "Digital, web design, ecommerce, branding, and marketing agencies",
     faqs: whiteLabelWordPressFaqs,
     offers: whiteLabelWordPressServices,
+  });
+}
+
+export function createWhiteLabelWebsiteDesignPageSchema() {
+  return createWhiteLabelServicePageSchema({
+    page: pageSeo.whiteLabelWebsiteDesign,
+    pageUrl: whiteLabelWebsiteDesignPageUrl,
+    pageId: whiteLabelWebsiteDesignPageId,
+    serviceId: whiteLabelWebsiteDesignServiceId,
+    faqId: whiteLabelWebsiteDesignFaqId,
+    breadcrumbId: whiteLabelWebsiteDesignBreadcrumbId,
+    serviceName: "White Label Website Design Services",
+    serviceType: "White label website design and web development",
+    breadcrumbName: "White Label Website Design Services",
+    audienceType: "Digital, web design, ecommerce, branding, and marketing agencies",
+    faqs: whiteLabelWebsiteDesignFaqs,
+    offers: whiteLabelWebsiteDesignServices,
   });
 }
 

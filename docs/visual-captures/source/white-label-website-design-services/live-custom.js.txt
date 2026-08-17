@@ -1,0 +1,380 @@
+var $ = jQuery;
+jQuery(document).ready(function () {
+  /* Header Sticky JS */
+  $(".menu-item-has-children").prepend($('<div class="arrow"></div>'));
+  var position = $(window).scrollTop();
+  function updateHeader() {
+    var scroll = $(window).scrollTop();
+    if (scroll < position) {
+      $('.site-header').addClass('header-up');
+      $('body').addClass('header--is-sticky');
+      $('.site-header').removeClass('header-down');
+    } else {
+      $('.site-header').addClass('header-down');
+      $('.site-header').removeClass('header-up');
+      $('body').removeClass('header--is-sticky');
+    }
+    if (scroll == 0) {
+      $('.site-header').removeClass('header-up');
+      $('.site-header').removeClass('header-down');
+      $('body').removeClass('header--is-sticky');
+    }
+    position = scroll;
+  }
+
+  if ($('.site-header').length > 0) {
+    updateHeader();
+    $(window).on('scroll', updateHeader);
+  }
+
+  /* Mega Menu JS (Desktop) */
+  /* FIXED: handlers hamesha bind thay che, pan width + real-hover device
+     check event time par thay che (page load time par nahi). Aa thi mobile
+     tap par firing thata synthetic mouseover -> mouseout band thai jay che. */
+  $(".main-navigation > ul > li.megamenu").on('mouseover', function () {
+    if ($(window).width() > 992 && window.matchMedia('(hover: hover)').matches) {
+      $('.main-navigation > ul > li').removeClass("active");
+      $(this).addClass("active");
+    }
+  });
+  $(".main-navigation > ul > li.megamenu").on('mouseout', function () {
+    if ($(window).width() > 992 && window.matchMedia('(hover: hover)').matches) {
+      $('.main-navigation > ul > li').removeClass("active");
+    }
+  });
+
+  /* Toggle Menu JS */
+  $(".toggle-menu,.close-menu").on('click touchstart', function (e) {
+    e.preventDefault();
+    $(".header-main ").toggleClass("menu-open");
+    $("body").toggleClass("overflow-hidden");
+  });
+
+  /* Mobile Menu JS */
+  /* FIXED: bind hamesha, pan width check click time par. */
+  $('#site-navigation ul > li:first-child').find('.row').addClass('align-items-center');
+  $(".main-navigation > ul > li.megamenu > a").on('click', function (e) {
+    if ($(window).width() >= 991) {
+      return;
+    }
+    e.preventDefault();
+    if ($(this).parent().hasClass("active")) {
+      $('.main-navigation > ul').removeClass('megamenu-open');
+      $(this).parent().removeClass("active");
+      $(this).next(".dropdown-menu").slideUp();
+      $(this).parent().find(".right-col ul").slideUp();
+      $(this).parent().find(".right-col h5").removeClass('active');
+    } else {
+      $(this).parent().addClass("active");
+      $(this).next(".dropdown-menu").slideDown();
+      $('.main-navigation > ul').addClass('megamenu-open');
+    }
+    $(this).parent().siblings().removeClass('active');
+    $(this).parent().siblings().find(".menu-first").next(".dropdown-menu").slideUp();
+  });
+
+  $(".main-navigation .menu-col h5").on('click', function (e) {
+    if ($(window).width() >= 991) {
+      return;
+    }
+    e.preventDefault();
+    if ($(this).hasClass("active")) {
+      $(this).removeClass("active");
+      $(this).next("ul").slideUp();
+    } else {
+      $(this).addClass("active");
+      $(this).next("ul").slideDown();
+    }
+    $(this).parent().siblings().find("h5").removeClass('active');
+    $(this).parent().siblings().find("h5").next("ul").slideUp();
+  });
+
+  jQuery(".menu-item-has-children li.active").parents('.menu-item-has-children').addClass('current-menu-item')
+
+  /*Dropdown Menu*/
+  $('.dropdown_menu').click(function () {
+    $(this).attr('tabindex', 1).focus();
+    $(this).toggleClass('active');
+    $(this).find('.dropdown_menu_item').slideToggle(300);
+  });
+  $('.dropdown_menu').focusout(function () {
+    $(this).removeClass('active');
+    $(this).find('.dropdown_menu_item').slideUp(300);
+  });
+  $('.dropdown_menu .dropdown_menu_item li').click(function () {
+    /* console.log('click...') */
+    $(this).parents('.dropdown_menu').find('span').text($(this).text());
+    $(this).parents('.dropdown_menu').find('input').attr('value', $(this).attr('id'));
+  });
+
+  $('.current-openings-wrap .dropdown_menu .dropdown_menu_item li').on('click', function (e) {
+    e.preventDefault();
+    var _id = jQuery(this).attr('id');
+    jQuery(`.job-listing-wrap`).hide();
+    jQuery(`.job-listing-wrap.${_id}`).show();
+  });
+
+  $("#filter_case_study .services span").text($("#filter_case_study ul.services li.active").text());
+  $("#filter_case_study .industries span").text($("#filter_case_study ul.industries li.active").text());
+
+  if ($('#your_phone').length > 0) {
+    // Telephone input field
+    const input = document.querySelector("#your_phone");
+    /*window.intlTelInput(input, {
+      initialCountry: 'IN',
+      separateDialCode: true,
+      strictMode: true,
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js"
+    });*/
+
+    window.intlTelInput(input, {
+      initialCountry: "auto",
+      separateDialCode: true,
+      strictMode: true,
+      geoIpLookup: function (success, failure) {
+        fetch("https://ipapi.co/json/") // free IP geolocation API
+          .then((res) => res.json())
+          .then((data) => success(data.country_code))
+          .catch(() => success("IN")); // fallback if lookup fails
+      },
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js"
+    });
+  }
+
+  jQuery(document).on('submit', '.wpcf7-form', function () {
+    var $submitButton = jQuery(this).find('input[type="submit"], button[type="submit"]');
+    if ($submitButton.length > 0) {
+      $submitButton.prop('disabled', true);
+      /* console.log("disabled"); */
+    }
+    return true;
+  });
+
+});
+
+
+document.addEventListener('wpcf7mailsent', function (event) {
+  cf7_button_enabled(event);
+
+  let formData = event.detail.inputs;
+  let formID = event.detail.contactFormId;
+
+  let userData = {};
+  if (516 == formID) {
+    formData.forEach(function (input) {
+      switch (input.name) {
+        case "Email":
+          userData.email = input.value;
+          break;
+        case "tel":
+          userData.phone_number = input.value;
+      }
+    });
+    gtag('set', 'user_data', userData);
+  }
+
+
+
+}, false);
+
+
+document.addEventListener('wpcf7invalid', function (event) {
+  cf7_button_enabled(event);
+}, false);
+
+
+document.addEventListener('wpcf7mailfailed', function (event) {
+  cf7_button_enabled(event);
+}, false);
+
+
+function cf7_button_enabled(event) {
+  var $submitButton = $(event.target).find('input[type="submit"], button[type="submit"]');
+  if ($submitButton.length > 0) {
+    $submitButton.prop('disabled', false);
+  }
+ /*  console.log("Enabled"); */
+}
+
+/* PerformanceObserver JS */
+if ('PerformanceObserver' in window) {
+  const observer = new PerformanceObserver((list) => {
+    const entries = list.getEntries();
+    entries.forEach((entry) => {
+      /* console.log('Long Task detected:', entry);
+      console.log('Name:', entry.name);
+      console.log('Start Time:', entry.startTime);
+      console.log('Duration:', entry.duration); */
+    });
+  });
+  observer.observe({ entryTypes: ['longtask'] });
+} else {
+  console.warn('Long Tasks API is not supported in this browser.');
+}
+
+jQuery(document).ready(function ($) {
+  $('.popup-youtube').on('click', function (e) {
+    e.preventDefault();
+    var href = $(this).attr("href");
+    if (href.includes("watch?v=")) {
+      var videoId = href.split("watch?v=")[1];
+      href = "https://www.youtube.com/embed/" + videoId;
+    }
+    var videoSrc = href.includes('?') ? href + '&autoplay=1' : href + '?autoplay=1';
+    $('#youtubeVideo').attr('src', videoSrc);
+    $('#popupContainer').fadeIn();
+    $('body').addClass('no-scroll');
+  });
+
+  $('#popupContainer').on('click', function (e) {
+    if ($(e.target).is('#popupContainer, .popup-overlay, .close-btn')) {
+      $('#popupContainer').fadeOut();
+      $('#youtubeVideo').attr('src', '');
+      $('body').removeClass('no-scroll');
+    }
+  });
+});
+
+jQuery(document).ready(function($) {
+  const consentKey = 'sgcc_cookie_accepted';
+  const consentDuration = 30 * 24 * 60 * 60 * 1000;
+  const savedTime = localStorage.getItem(consentKey);
+  const now = new Date().getTime();
+
+  if (!savedTime || now - savedTime >= consentDuration) {
+      $('.sgcc-main-wrapper').fadeIn(400);
+  }
+  $('#sgcc-accept, #close-sgcc').on('click', function() {
+      $('.sgcc-main-wrapper').fadeOut(400);
+      localStorage.setItem(consentKey, new Date().getTime());
+  });
+});
+
+jQuery(document).ready(function () {
+  var currentDomain = window.location.hostname;
+  jQuery('a[href^="http"]').each(function () {
+    var $this = jQuery(this);
+    var href = $this.attr('href');
+    var linkDomain = new URL(href).hostname;
+    if (linkDomain === currentDomain) {
+      $this.attr('rel', 'dofollow');
+    } else {
+      $this.attr('rel', 'nofollow');
+    }
+  });
+});
+
+/* Review Animation */
+$(document).ready(function () {
+  const $reviews = $('.review_animation');
+  let currentIndex = 0;
+
+  const starDelay = 200;
+  const ratingDelay = 5 * starDelay + 300;
+  const totalRatingDelay = 5 * starDelay + 600;
+
+  // Function to reset all reviews animations and classes
+  function resetAllReviews() {
+    $reviews.each(function () {
+      const $r = $(this);
+      $r.removeClass('zoom-in show active');
+      $r.find('.review_animation_wrapper').removeClass('show');
+      $r.find('.review_animation_stars path').removeClass('show');
+      $r.find('.review_ratings, .review_total_ratings').removeClass('show');
+    });
+  }
+
+  function animateReview($review) {
+    if (!$review.length) return;
+
+    // No need to reset here anymore because we do it globally before calling animateReview
+
+    setTimeout(() => {
+      $review.addClass('zoom-in show');
+
+      setTimeout(() => {
+        $review.find('.review_animation_wrapper').addClass('show');
+
+        $review.find('.review_animation_stars path').each((index, el) => {
+          setTimeout(() => {
+            $(el).addClass('show');
+          }, index * starDelay);
+        });
+
+        setTimeout(() => {
+          $review.find('.review_ratings').addClass('show');
+        }, ratingDelay);
+
+        setTimeout(() => {
+          $review.find('.review_total_ratings').addClass('show');
+        }, totalRatingDelay);
+
+      }, 300);
+    }, 100);
+  }
+
+  function showNextReview() {
+    resetAllReviews();
+
+    const $current = $reviews.eq(currentIndex);
+    $current.addClass('active');
+    animateReview($current);
+
+    currentIndex = (currentIndex + 1) % $reviews.length;
+  }
+
+  showNextReview(); // Show first review on page load
+  setInterval(showNextReview, 5000); // Rotate every 5 seconds
+});
+
+
+jQuery(document).ready(function($){
+  // When a category is clicked
+  $('.blog-category-filter .cat-link').on('click', function(e){
+    e.preventDefault();
+    var cat_id = $(this).data('cat-id');
+
+    // Highlight active category
+    $('.blog-category-filter .cat-link').removeClass('active');
+    $(this).addClass('active');
+
+    // Get current URL parameters
+    var params = new URLSearchParams(window.location.search);
+
+    // Set or update the category in the URL
+    params.set('cat', cat_id);
+    params.set('post_type', 'post'); // ensure post_type is always included
+
+    // Keep search term if it exists
+    var search_val = $('.custom-blog-search .search-field').val();
+    if(search_val) {
+        params.set('s', search_val);
+    }
+
+    // Redirect to updated URL
+    window.location.href = window.location.pathname + '?' + params.toString();
+});
+
+  // When search form is submitted via button or Enter
+  $('.custom-blog-search').on('submit', function(){
+      var active_cat = $('.blog-category-filter .cat-link.active').data('cat-id');
+
+      // Ensure hidden input always has the active category
+      $('#blog-category').val(active_cat ? active_cat : '');
+  });
+
+  let title = document.querySelectorAll(".site-footer .footer-top.mobile .footer-mobile-items .h4");
+    title.forEach((qsitem) => {
+        qsitem.addEventListener("click", function (e) {
+            let sibling = qsitem.nextElementSibling;
+            title.forEach((item) => {
+                (item.nextElementSibling.style.height = "0px"),
+                    item != qsitem && item.parentNode.classList.remove("active");
+            }),
+                this.parentNode.classList.toggle("active"),
+                qsitem.parentNode.classList.contains("active")
+                    ? (sibling.style.height = sibling.scrollHeight + "px")
+                    : (sibling.style.height = "0px");
+        });
+  });
+});
