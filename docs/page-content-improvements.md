@@ -329,3 +329,18 @@ interactive product presentation.
 | Portfolio image alts | Live alts repeat each project name followed by `Image`. | Use subject-specific descriptions for all six exact local portfolio assets. | Makes each content image meaningful without changing visible UI. | High | implemented nonvisual accessibility correction |
 | Kentaur project link | The image links to Kentaur Australia, while the visible project name links to SomewhereCo. | Use `https://kentauraustralia.com/` for both Kentaur links. | Prevents one card from sending users to an unrelated fashion project. | High | implemented nonvisual link-integrity correction |
 | CTA destinations | `/request-quote` and `/our-work` are not yet built. | Preserve their slashless migration-intent paths and validate or redirect both before launch. | Maintains live CTA flow under the active-migration route exception. | High | migration pending |
+
+## Contact Us (`/contact-us`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-17
+Primary SEO intent: contact Dynamic Dreamz for ecommerce, Shopify, web, mobile,
+agency-partner, recruitment, and office-location needs.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Hero introduction | `What’s on your mind? We’re here to help! Tell us what you are looking for and we will get back to you with right solutions!` | Explain that prospects can contact Dynamic Dreamz about Shopify, ecommerce, web, mobile, or white-label requirements, without promising an unverified response time. | Makes the page purpose directly extractable and corrects the missing article in `with right solutions`. | Medium | deferred pending exact visible-copy approval |
+| Form introduction | `Please provide the information below, so we can better understand your needs and determine how we can assist you. Our sales team will be in touch with you shortly.` | Retain the request for project context, but replace `shortly` with an approved response-time expectation or remove it. | Avoids an undefined service-level implication. | High | deferred pending sales/operations policy approval |
+| Ahmedabad office image alt | Live source uses `Dynamic Dreamz Surat Office`. | `Dynamic Dreamz Ahmedabad office and surrounding city view`. | Corrects the office mismatch while keeping the visual UI unchanged. | High | implemented as a nonvisual accessibility correction |
+| Social icon alt text | LinkedIn and Instagram images both use `Facebook Icon`. | Use `Dynamic Dreamz on LinkedIn` and `Dynamic Dreamz on Instagram` as accessible names. | Correctly identifies each external profile without changing visible copy. | High | implemented as a nonvisual accessibility correction |
+| Office/contact policy | Visible office addresses, recruitment email addresses, and phone numbers have no review date or policy owner on the page. | Confirm and govern these details through sales, operations, and HR before launch; update visible content only if the approved facts differ. | Prevents stale contact details from becoming a conversion and trust failure. | High | blocked pending owner confirmation |

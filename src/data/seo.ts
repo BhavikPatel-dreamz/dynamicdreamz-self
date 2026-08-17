@@ -193,6 +193,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  contact: {
+    path: "/contact-us",
+    title: "Contact Dynamic Dreamz | Expert Web Solutions Provider",
+    description:
+      "Connect with us for custom web solutions. Our experts deliver top-notch designs and development. Contact us now!",
+    keywords: [
+      "contact Dynamic Dreamz",
+      "web development company contact",
+      "Shopify agency contact",
+      "Dynamic Dreamz Surat",
+      "Dynamic Dreamz Ahmedabad",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-01T09:32:45+00:00",
+    modifiedTime: "2026-08-17T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Contact Dynamic Dreamz for ecommerce, web and mobile development",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   beautyCosmetics: {
     path: "/beauty-cosmetics",
     title: "Beauty & Cosmetics Ecommerce Development | Dynamic Dreamz",

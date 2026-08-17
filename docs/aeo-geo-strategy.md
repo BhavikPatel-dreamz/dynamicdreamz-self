@@ -1944,6 +1944,86 @@ or unsupported client counts. Exact visible proposals are tracked in
   internal case studies/service links, and unbuilt CTA destinations require
   approval or later route coverage.
 
+## Contact Us (`/contact-us`)
+
+Status: implemented; deployment webhook configuration pending
+Last reviewed: 2026-08-17
+Owner: Sales and operations
+Primary audience: prospective ecommerce clients, agency partners, job seekers,
+and visitors looking for office or company contact details
+Decision stage: conversion and direct contact
+
+### Page role
+
+Provide the canonical contact destination for Dynamic Dreamz, preserve the live
+sales and recruitment contact paths, identify both offices, and give qualified
+visitors a direct inquiry form without depending on the legacy WordPress site.
+
+### Target prompts
+
+- How can I contact Dynamic Dreamz about an ecommerce or Shopify project?
+- Where are the Dynamic Dreamz offices in Surat and Ahmedabad?
+- What email address or phone number should I use for sales or job openings?
+
+### Current strengths and available evidence
+
+- The live page exposes distinct sales and recruitment phone/email contacts.
+- Both office addresses, map destinations, office photographs, and direct
+  contact details are visible.
+- The page contains a short inquiry form and the shared company footer links.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and conversion | The local `/contact-us` route was missing | Migrate the full live page, include it in metadata/sitemap/robots data, and provide a server-validated inquiry flow | Route, discovery data, validation, honeypot, UTM capture, and failure state verified; production delivery still requires webhook configuration |
+| P0 | implemented; deployment pending | Runtime dependency | The live form posts to WordPress Contact Form 7 | Use a local Server Action and configurable server-side webhook; never call the legacy WordPress form at runtime | `CONTACT_FORM_WEBHOOK_URL` and optional `CONTACT_FORM_WEBHOOK_TOKEN` must be provisioned by deployment |
+| P1 | implemented | Structured data | No local ContactPage graph existed | Add ContactPage, Organization, WebSite, and BreadcrumbList nodes using only visible/approved details | Rendered ContactPage graph and slashless canonical verified locally |
+| P1 | implemented | Accessibility | Live social image alt text says `Facebook Icon` for LinkedIn and Instagram; Ahmedabad office alt says Surat | Use accurate local alt text and accessible labels without changing the rendered presentation | Accurate labels/alts, required-field focus, and visible focus ring verified locally |
+| P1 | deferred | Answer clarity | The hero and form introduction do not summarize service scope or response expectations in a directly extractable answer | Add a concise approved contact summary and verified response-time statement in future | Sales/content approval and response-time policy |
+| P2 | migration pending | Internal links | The page has no contextual service or work links | Add relevant service/work links only as those canonical routes ship | Destination routes and visible-copy approval |
+
+### Entity, evidence, and authorship actions
+
+- Keep sales, recruitment, office, and social contact points consistent with the
+  shared site configuration and approved office facts.
+- Do not add service claims, response-time guarantees, or office hours without
+  owner confirmation.
+
+### Internal-link and conversion actions
+
+- Preserve the header quote CTA, footer navigation, telephone, email, maps,
+  LinkedIn, Instagram, and inquiry form destinations.
+- Treat planned but unbuilt footer/service routes under the active migration
+  exception; they remain launch dependencies.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit slashless canonical, Open Graph, sitemap, robots, breadcrumb, and JSON-LD
+  URLs through the shared helpers.
+- Use the 2026-08-17 migration review date as `dateModified`; preserve the live
+  publication date where available.
+
+### Measurement plan
+
+- Track successful inquiry submissions, webhook failures, clicks on sales and
+  recruitment contacts, map clicks, and landing queries containing company
+  contact/location intent.
+
+### Verification and remaining gaps
+
+- Checks completed: live rendered page, View Page Source, metadata, local asset
+  ownership and duplicate hashes, CSS/JS behavior, 1440px and 390px captures,
+  horizontal overflow, required-field focus, hover, reduced motion, schema,
+  canonical URL, and the no-webhook submission state.
+- Implemented items: slashless server-rendered route, live-visible section order
+  and wording, local office/contact assets, route metadata and discovery data,
+  ContactPage graph, accurate accessible labels and alt text, and a validated
+  Server Action with honeypot, UTM capture, and configurable webhook delivery.
+- Deferred or blocked items and reason: production webhook provisioning,
+  approved response-time/service-scope copy, owner confirmation of contact
+  details, and contextual links to unbuilt routes.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new

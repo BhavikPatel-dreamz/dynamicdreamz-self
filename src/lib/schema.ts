@@ -1,5 +1,6 @@
 import { founders } from "@/content/about";
 import { beautyIndustryPage } from "@/content/beauty-cosmetics";
+import { contactPageContent } from "@/content/contact";
 import { fashionIndustryPage } from "@/content/fashion";
 import { foodBeveragesIndustryPage } from "@/content/food-beverages";
 import { healthcareIndustryPage } from "@/content/healthcare";
@@ -51,6 +52,9 @@ const resourcesPageUrl = absoluteUrl(pageSeo.resources.path);
 const resourcesPageId = `${resourcesPageUrl}#webpage`;
 const resourcesBreadcrumbId = `${resourcesPageUrl}#breadcrumb`;
 const resourcesItemListId = `${resourcesPageUrl}#articles`;
+const contactPageUrl = absoluteUrl(pageSeo.contact.path);
+const contactPageId = `${contactPageUrl}#webpage`;
+const contactBreadcrumbId = `${contactPageUrl}#breadcrumb`;
 const beautyPageUrl = absoluteUrl(pageSeo.beautyCosmetics.path);
 const beautyPageId = `${beautyPageUrl}#webpage`;
 const beautyBreadcrumbId = `${beautyPageUrl}#breadcrumb`;
@@ -597,6 +601,77 @@ export function createResourcesPageSchema() {
         uploadDate: companyVideoUploadDate,
         ...youTubeUrls(companyVideoId),
       }),
+    ],
+  };
+}
+
+export function createContactPageSchema() {
+  const { jobs, sales } = contactPageContent.contacts;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        ...organizationSchema(),
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            contactType: "sales",
+            telephone: sales.phone,
+            email: sales.email,
+            availableLanguage: "English",
+          },
+          {
+            "@type": "ContactPoint",
+            contactType: "human resources",
+            telephone: jobs.phone,
+            email: jobs.email,
+            availableLanguage: "English",
+          },
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "ContactPage",
+        "@id": contactPageId,
+        url: contactPageUrl,
+        name: pageSeo.contact.title,
+        description: pageSeo.contact.description,
+        datePublished: pageSeo.contact.publishedTime,
+        dateModified: pageSeo.contact.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        mainEntity: { "@id": organizationId },
+        breadcrumb: { "@id": contactBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.contact.image.path),
+          width: pageSeo.contact.image.width,
+          height: pageSeo.contact.image.height,
+          caption: pageSeo.contact.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": contactBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Contact Us",
+            item: contactPageUrl,
+          },
+        ],
+      },
     ],
   };
 }
