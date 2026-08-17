@@ -1445,7 +1445,7 @@ Exact visible proposals are tracked in `docs/page-content-improvements.md`.
 
 ## White Label Website Design Services (`/white-label-website-design-services`)
 
-Status: implementation in progress; live-visible content preserved
+Status: technical implementation complete; live-visible content preserved
 
 Last reviewed: 2026-08-17
 
@@ -1486,8 +1486,8 @@ platform-specific Shopify and WordPress white-label routes.
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implementation in progress | Route and discovery | The canonical migrated route is not yet implemented locally | Ship the slashless route through shared metadata, robots, sitemap, canonical, and navigation helpers | Production build and rendered-output verification |
-| P0 | implementation in progress | Structured data | Live source includes an unrelated sitewide FAQ graph in addition to page content | Emit shared Organization/WebSite plus WebPage, Service, BreadcrumbList, OfferCatalog, and exactly one FAQPage sourced from the eight visible FAQs | Rendered JSON-LD verification |
+| P0 | complete | Route and discovery | The route required slashless canonical and discovery coverage | The route ships through shared metadata, robots, sitemap, canonical, and navigation helpers | URL-policy check, production build, and rendered canonical verified 2026-08-17 |
+| P0 | complete | Structured data | Live source includes an unrelated sitewide FAQ graph in addition to page content | Local output emits Organization/WebSite plus WebPage, Service with OfferCatalog, BreadcrumbList, and exactly one FAQPage sourced from the eight visible FAQs | Rendered JSON-LD verified 2026-08-17 |
 | P0 | blocked by live parity | Proof governance | `20+` years, `150+` developers, `2500+` reviews, and `1000+` WordPress sites are visible but not governed by one approved source | Approve definitions, evidence, review dates, and allowable page usage before changing UI or using the values in schema | Leadership and fact-owner approval |
 | P1 | deferred | AI discovery claims | The page states that AI engines will read, cite, trust, discover, and recommend client sites | Replace guarantees with evidence-backed technical and content practices that can improve machine understanding and retrieval | SEO, technical, legal, and content approval |
 | P1 | deferred | Outcome claims | Copy guarantees ranking, speed, security, client satisfaction, higher profit, and faster delivery without evidence or qualification | Use auditable process language and approved case evidence instead of unconditional outcomes | Delivery, security, sales, and client-success evidence |
@@ -1508,11 +1508,14 @@ platform-specific Shopify and WordPress white-label routes.
 ### Verification and remaining gaps
 
 - Completed: live rendered/source review, metadata and heading inventory,
-  desktop/tablet/mobile screenshots, CSS/JS interaction review, section map,
-  CTA inventory, and initial AEO/GEO assessment.
-- Pending: local implementation, asset canonicalization, rendered schema checks,
-  URL-policy check, lint, production build, responsive visual comparison,
-  carousel/accordion/video verification, and migration-pending route coverage.
+  local implementation and assets, rendered canonical/schema checks,
+  desktop/tablet/mobile visual comparison, CSS/JS interaction review, section
+  map, CTA inventory, URL-policy check, lint, production build, and AEO/GEO
+  assessment. The route is statically prerendered.
+- Pending: migration coverage for `/request-quote`,
+  `/schedule-your-consultation`, and `/bigcommerce-development`; proof
+  governance; approved authorship/case-study evidence; and exact approval for
+  deferred visible-copy changes.
 
 ## Fashion & Apparel (`/fashion`)
 
