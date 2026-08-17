@@ -1445,7 +1445,7 @@ Exact visible proposals are tracked in `docs/page-content-improvements.md`.
 
 ## White Label Website Design Services (`/white-label-website-design-services`)
 
-Status: technical implementation complete; live-visible content preserved
+Status: implemented; live-visible content preserved
 
 Last reviewed: 2026-08-17
 
@@ -1943,6 +1943,115 @@ or unsupported client counts. Exact visible proposals are tracked in
 - Deferred or blocked: visible copy changes, proof governance, authorship,
   internal case studies/service links, and unbuilt CTA destinations require
   approval or later route coverage.
+
+## Our Work (`/our-work`)
+
+Status: implementation in progress; live-visible content preserved
+Last reviewed: 2026-08-17
+Owner: SEO, content, development, leadership, and client success
+Primary audience: ecommerce leaders, digital-agency buyers, and brands
+evaluating Shopify, WordPress, mobile-app, Magento, or BigCommerce delivery
+Decision stage: proof review and commercial evaluation
+
+### Page role
+
+Portfolio index for visitors evaluating Dynamic Dreamz through visible project
+work across ecommerce platforms. It differs from a case-study index because it
+preserves the live card-led external-storefront exploration model without
+inventing scope, results, or client attribution beyond the visible project
+names, technologies, and destinations.
+
+### Target prompts
+
+- Which Shopify and Shopify Plus stores has Dynamic Dreamz worked on?
+- Can I see Dynamic Dreamz WordPress, mobile app, Magento, and BigCommerce work?
+- What types of ecommerce projects does Dynamic Dreamz include in its portfolio?
+- Where can I review Dynamic Dreamz projects by platform?
+
+### Current strengths and available evidence
+
+- The live page provides 126 visible project cards across Shopify / Shopify
+  Plus, WordPress, Mobile Apps, Magento, and Big commerce filters.
+- The live H1 and introductory copy establish a global ecommerce-work and
+  omnichannel-commerce positioning.
+- Every project card exposes a platform label, project name, image, and an
+  external destination or applicable app-store links.
+- A trusted-brand rail adds visible first-party brand context without requiring
+  new testimonials, outcomes, or unapproved proof.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | `/our-work` was linked throughout the migration but was not implemented locally | Ship the slashless server-rendered route through shared metadata, sitemap, canonical, and schema helpers | Rendered output, URL-policy guard, lint, and production build passed 2026-08-17 |
+| P0 | implemented | Local assets | The live grid depends on WordPress-hosted project media and platform marks | Use audited project-owned images and local platform assets only | 31 exact assets reused, 100 distinct assets added, all references local, and runtime-request audit passed |
+| P0 | implemented by design | Filter reliability | The legacy Shopify filter calls `ipapi.co` and changes results by visitor location | Preserve platform filtering without external runtime geolocation or location-dependent project visibility | Pointer/keyboard filtering, result counts, live announcement, and zero external runtime requests verified |
+| P0 | implemented | Schema relevance | Live source injects a sitewide FAQPage and aggregate rating that are not represented by this page | Emit only shared Organization/WebSite, CollectionPage, BreadcrumbList, primary ImageObject, and an ItemList matching visible projects | Rendered JSON-LD contains only Organization, WebSite, CollectionPage, BreadcrumbList, and ItemList |
+| P1 | implemented accessibility correction | Image accessibility | Many live project alts are generic or refer to another project | Use project-specific local alternative text without changing visible UI | Rendered image and broken-loaded-image audit passed |
+| P1 | migration pending | Evidence depth | Project cards link to external storefronts and do not define scope, constraints, or outcomes | Preserve the live external links; add internal case studies only when attribution and outcomes are approved | Client-success approval and case-study migration |
+| P1 | deferred | Hero clarity | The live introduction uses `omni channel` and does not directly identify platforms or delivery role | Add an approved answer-first portfolio summary only after exact visible wording is approved | Content/leadership approval |
+| P1 | migration pending | Conversion routes | Header and page-adjacent conversion links include planned `/request-quote` | Preserve migration intent during active migration and validate before launch | Quote-route implementation |
+| P2 | deferred | Project freshness | No project delivery dates or scope are visible | Add client-approved case-study dates and factual delivery context only as proof routes ship | Client-success evidence |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. A future approved summary should
+identify Dynamic Dreamz, the portfolio's Shopify, WordPress, mobile-app,
+Magento, and BigCommerce coverage, and the page's purpose as a work index
+without implying project ownership, outcomes, or client endorsement beyond
+approved evidence. Exact visible proposals are tracked in
+`docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Model the route as a CollectionPage with a visible-project ItemList, linked
+  to the shared Dynamic Dreamz Organization.
+- Keep project names, displayed categories, platform marks, and external URLs
+  aligned with the visible cards; do not add project outcomes or unsupported
+  case-study attribution.
+- Do not emit an aggregate rating, FAQPage, author, reviewer, or testimonial
+  schema on this page without matching visible, approved evidence.
+
+### Internal-link and conversion actions
+
+- Preserve the live external project destinations with `nofollow noopener
+  noreferrer` and meaningful accessible labels.
+- Keep platform filters as client-side controls while server-rendering the full
+  project inventory for discovery and accessibility.
+- Link projects to internal case studies only as client-approved routes become
+  available; retain the existing external-storefront path in the interim.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Organization, WebSite, CollectionPage, BreadcrumbList, primary
+  ImageObject, and an ItemList containing the complete visible project list.
+- Preserve the reliable live publish date of 2024-05-13 and use the actual
+  migration review date for modification, never build time.
+- Add the slashless canonical route and local primary image to the sitemap,
+  keep the route indexable, and ensure all media resolves locally.
+
+### Measurement plan
+
+- Track project-filter use by platform, project-card outbound clicks, quote CTA
+  engagement, and landing-page queries related to Shopify, WordPress, Magento,
+  BigCommerce, and mobile-app portfolios.
+- Sample the target prompts monthly and record citations, extracted project
+  claims, and the sources they link to.
+
+### Verification and remaining gaps
+
+- Completed: live/local rendered and source review; 126-project extraction;
+  duplicate/local asset audit; desktop, tablet, mobile, and project-grid
+  screenshots; slashless metadata and discovery; CollectionPage,
+  BreadcrumbList, and ItemList schema; pointer and keyboard filter checks;
+  focus, hover, reduced-motion, mobile overflow, image-loading, runtime-request,
+  URL-policy, type, lint, and production-build verification.
+- Remaining: richer internal case studies, visible answer-first copy, project
+  dates/scope/outcomes, and `/request-quote` coverage remain migration pending
+  or deferred until the required evidence and exact visible-copy approvals are
+  available.
+- Deferred or blocked: visible answer copy, approved project scope/outcomes,
+  internal case studies, project freshness data, and quote-route completion.
 
 ## Future Page Maintenance Workflow
 

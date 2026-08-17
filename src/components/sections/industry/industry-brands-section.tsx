@@ -1,22 +1,40 @@
 import { ClientLogoSlider } from "@/components/ui/client-logo-slider";
 import { industryBrandLogos } from "@/content/industries";
-import type { IndustryPageContent } from "@/types/industry";
-
+import { cn } from "@/lib/class-names";
 type IndustryBrandsSectionProps = {
-  content: IndustryPageContent;
+  content: {
+    slug: string;
+    brands: {
+      ariaLabel: string;
+    };
+  };
+  mobileSpacing?: "standard" | "spacious";
 };
 
-export function IndustryBrandsSection({ content }: IndustryBrandsSectionProps) {
+export function IndustryBrandsSection({
+  content,
+  mobileSpacing = "standard",
+}: IndustryBrandsSectionProps) {
+  const hasSpaciousMobileLayout = mobileSpacing === "spacious";
+
   return (
     <section
-      className="h-[164px] overflow-hidden bg-[#fbf7ed] py-10 max-[991px]:h-[217px]"
+      className={cn(
+        "h-[164px] overflow-hidden bg-[#fbf7ed] py-10",
+        hasSpaciousMobileLayout ? "max-[991px]:h-[270px]" : "max-[991px]:h-[217px]",
+      )}
       aria-labelledby={`${content.slug}-brands-title`}
       data-industry="brands"
     >
       <div className="flex items-center max-[991px]:block">
-        <div className="w-[31%] pl-[calc((100%-1140px)/2)] max-[1199px]:w-[30%] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991px]:mb-5 max-[991px]:w-full max-[991px]:p-0 max-[991px]:text-center">
+        <div
+          className={cn(
+            "w-[31%] pl-[calc((100%-1140px)/2)] max-[1199px]:w-[30%] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991px]:w-full max-[991px]:p-0 max-[991px]:text-center",
+            hasSpaciousMobileLayout ? "max-[991px]:mb-10" : "max-[991px]:mb-5",
+          )}
+        >
           <h2
-            className="m-0 text-[25px] leading-[33px] font-semibold tracking-[-0.5px] text-ink"
+            className="m-0 text-[25px] leading-[33px] font-medium tracking-[-0.5px] text-ink"
             id={`${content.slug}-brands-title`}
           >
             Trusted by <br className="max-[991px]:hidden" /> Leading Brands
