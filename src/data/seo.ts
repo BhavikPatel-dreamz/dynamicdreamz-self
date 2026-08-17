@@ -193,6 +193,58 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  contact: {
+    path: "/contact-us",
+    title: "Contact Dynamic Dreamz | Expert Web Solutions Provider",
+    description:
+      "Connect with us for custom web solutions. Our experts deliver top-notch designs and development. Contact us now!",
+    keywords: [
+      "contact Dynamic Dreamz",
+      "web development company contact",
+      "Shopify agency contact",
+      "Dynamic Dreamz Surat",
+      "Dynamic Dreamz Ahmedabad",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-01T09:32:45+00:00",
+    modifiedTime: "2026-08-17T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Contact Dynamic Dreamz for ecommerce, web and mobile development",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
+  ourWork: {
+    path: "/our-work",
+    title: "Dynamic Dreamz Portfolio | Inspiring Web Solutions & Designs",
+    description:
+      "Explore our impressive portfolio showcasing innovative web solutions and designs. Discover our range of projects and expertise. Contact us today!",
+    keywords: [
+      "Dynamic Dreamz portfolio",
+      "Shopify portfolio",
+      "Shopify Plus projects",
+      "WordPress portfolio",
+      "ecommerce development work",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-13T12:16:21+00:00",
+    modifiedTime: "2026-08-17T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Dynamic Dreamz ecommerce, web and mobile development portfolio",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   beautyCosmetics: {
     path: "/beauty-cosmetics",
     title: "Beauty & Cosmetics Ecommerce Development | Dynamic Dreamz",

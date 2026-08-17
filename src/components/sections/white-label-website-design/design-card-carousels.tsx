@@ -27,7 +27,7 @@ function DesignCardCarousel({ items, ariaLabel, itemLabel, variant }: DesignCard
       pagination={{
         itemCount: items.length,
         itemLabel,
-        className: "mt-5 mb-5 flex justify-center gap-3 min-[767px]:hidden",
+        className: "mt-5 mb-5 hidden justify-center gap-3 min-[767px]:hidden max-[767px]:flex",
         dotClassName: cn("size-2.5 cursor-pointer rounded-full border bg-transparent", dark ? "border-white/70" : "border-ink/70"),
         activeDotClassName: dark
           ? "border-transparent bg-linear-to-r from-[#15c064] to-[#00d1ff]"

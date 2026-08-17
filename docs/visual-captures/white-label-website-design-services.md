@@ -4,7 +4,7 @@ Status: tablet parity corrections implemented and verified
 Live URL: `https://www.dynamicdreamz.com/white-label-website-design-services/`  
 Local route: `/white-label-website-design-services`
 
-Checked: 2026-08-17  
+Checked: 2026-08-17
 Browser: Google Chrome headless (desktop, tablet, and mobile emulation)
 
 ## 2026-08-17 Desktop Full-page Correction
@@ -139,7 +139,7 @@ Captured source files are stored in
 
 | Live section | Captured behavior and styling | Local implementation decision |
 | --- | --- | --- |
-| Hero | Cream `#f7f4e9`; transparent header; 55/45 desktop split; 50/66 H1; local-brand illustration bleeds down/right; quote CTA and three review marks | Extend the existing shared white-label hero with the exact design-page copy and a project-owned hero asset |
+| Hero | Cream `#f7f4e9`; transparent header; page-specific 47.1/45 desktop split with `space-between`; 50/66 H1; local-brand illustration aligned down/right; quote CTA and three review marks | Shared hero uses a 47/45 local split, matching the live text width within about one pixel at the captured desktop container, with mutually exclusive page-variant utilities |
 | Proof counters | Four equal columns with 42px icons and dividers; 2x2 tablet and stacked mobile | Reuse the shared white-label proof section and canonical shared proof icons |
 | Why choose white label design | Off-white two-column text/accordion; five items; first open; one open at a time; active item can close | Add a focused accessible accordion variant with the live layout and timing |
 | Benefits | Dark green split heading/copy followed by a five-card horizontal carousel; one card visible on mobile with dots | Reuse the horizontal drag-scroll primitive with server-rendered cards, buttons, and reduced-motion-safe behavior |
@@ -171,7 +171,7 @@ Captured source files are stored in
 | Buttons | Red/white fill transition with uppercase labels | Shared `ButtonLink` hover and visible focus behavior |
 | Why accordion | First open; single-open; current item can close; plus/minus control | Accessible button/region relationships with comparable transition timing |
 | Service accordion | First open; one open at a time; current item can close; 700ms panel transition | Existing accessible shared accordion behavior where compatible |
-| Benefit/advantage carousels | Owl carousel; multiple cards desktop, one card mobile; arrows/dots vary by viewport | Keyboard-operable horizontal carousel with snap behavior, controls, and reduced-motion handling |
+| Benefit/advantage carousels | Owl carousel; multiple cards desktop, one card mobile; pagination dots appear only below 767px | Keyboard-operable horizontal carousel with snap behavior, mobile-only pagination, controls, and reduced-motion handling |
 | Testimonial | Previous/next navigation; YouTube lightbox/modal | Shared accessible carousel and dialog, with page-specific slide order |
 | FAQ | First open; single-open; current item can close; about 400ms slide | Existing accessible FAQ component and timing |
 | Counters | Source observer does not match the rendered counter wrapper reliably; final values remain visible | Stable server-rendered final values without counter JavaScript |
@@ -186,6 +186,9 @@ Captured source files are stored in
 
 ## Remaining Differences
 
-- Local screenshots, computed geometry, hover/focus capture, carousel movement, accordion transitions, modal playback, and full-page comparisons remain pending implementation.
-- Asset hashes and dimensions must be confirmed before finalizing the canonical local asset map.
-- Final status will be updated only after URL checks, lint, production build, responsive screenshot comparison, and interaction verification pass.
+- At 1440x900, the 1140px hero row now renders a 535.8px text column and 513px media column. Both begin at `y=120`; the hero is 780.4px tall and no longer wraps.
+- At 768x1024, the hero stacks at the live breakpoint and constrains the artwork to 400px. Carousel pagination remains hidden.
+- At 390x844, the document width equals the viewport width, the hero stacks cleanly, and both page-specific carousels expose five pagination controls.
+- The reasons and services accordions, FAQs, horizontal carousels, testimonial navigation, and video dialog were exercised successfully during the route audit.
+- `npm run check:urls`, `npm run lint`, and `npm run build` pass. Lint retains one unrelated pre-existing warning in `white-label-shopify-ai-sections.tsx`.
+- Remaining differences are limited to documented live-copy/evidence issues and migration-pending `/request-quote`, `/schedule-your-consultation`, and `/bigcommerce-development` destinations.

@@ -1,0 +1,63 @@
+.inner-hero-sec{padding-top:230px;padding-bottom:50px;position:relative;background-color:#fff;overflow:hidden}
+.inner-hero-sec .inner-hero-content{max-width:760px;margin:0 auto}
+.inner-hero-content h1{display:inline-block}
+.inner-hero-content p{margin-bottom:0}
+.connect-with-us-sec .wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;border:solid 1px #d9d9d9;border-radius:20px}
+.connect-with-us-sec .wrapper .col-block{width:33.33%;padding:42px 38px}
+.connect-with-us-sec .wrapper .col-block:nth-child(2){border-left:solid 1px #d9d9d9;border-right:solid 1px #d9d9d9}
+.contact-details ul li{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;position:relative;padding-left:85px}
+.contact-details ul li img{position:absolute;left:0;top:50%;width:63px;height:63px;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+.contact-details ul li h3,.social-details h3{font-size:18px;font-style:normal;font-weight:700;line-height:22.32px;text-transform:uppercase;margin-bottom:17px}
+.contact-details ul li a{color:#535353;font-size:16px;font-weight:500;line-height:23.28px}
+.contact-details ul li a:not(:last-child){margin-bottom:10px}
+.contact-details ul li a:hover{color:var(--txt-red)}
+.social-details ul{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;justify-content: center;}
+.social-details{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;max-width:150px;margin:0 auto}
+.social-details ul li:not(:last-child){margin-right:15px}
+.social-details ul li a{display:inline-block}
+.our-office-sec .heading-title h2{margin-bottom:40px}
+.office-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:0 -15px}
+.office-card-col{width:50%;padding:0 15px}
+.office-img img{position:absolute;left:0;top:0;width:100%;height:100%;-o-object-fit:cover;object-fit:cover;border-radius:10px 10px 0 0;-webkit-transition:all .6s;-o-transition:all .6s;transition:all .6s}
+.office-img{position:relative;min-height:248px;overflow:hidden;border-radius:10px 10px 0 0}
+.office-card{border-radius:10px;border:1.5px solid #e4e4e4;background-color:#fff}
+.office-card:hover .office-img img{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}
+.office-details{padding:32px}
+.office-details .title{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.office-details .title h3{margin:0 28px 0 0}
+.office-details .title a{background:var(--Shopify-Gradient-2,linear-gradient(97deg,#15c064 28.5%,#00d1ff 91.82%));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:-webkit-box;display:-ms-flexbox;display:flex;font-size:14px;font-weight:700;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-transform:uppercase}
+.office-details .title a img{margin-left:6px;-webkit-transition:all .3s;-o-transition:all .3s;transition:all .3s}
+.office-card:hover .office-details .title a img{margin-left:8px}
+.office-details p{margin-top:24px;font-size:16px;font-weight:500;line-height:27.68px}
+.office-details ul li a{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:16px;font-weight:700;line-height:23.28px}
+.office-details ul li a svg{margin-right:10px}
+.office-details ul li:not(:last-child){margin-bottom:10px}
+.reach-out-us-sec{padding-top:0}
+.reach-out-main{background:-o-linear-gradient(271.13deg,#15c064 11.23%,rgba(0,209,255,.660675) 33.98%,rgba(0,209,255,0) 78.28%);background:linear-gradient(178.87deg,#15c064 11.23%,rgba(0,209,255,.660675) 33.98%,rgba(0,209,255,0) 78.28%);border-radius:30px;padding:2px}
+.reach-out-main .wrapper{-ms-flex-pack:justify;background-color:#fff;padding:90px 90px 49px 90px;border-radius:30px}
+.heading-text{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 -15px;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-bottom:84px}
+.heading-text .title{width:calc(42% - 15px);padding:0 15px}
+.heading-text .text{width:calc(58% - 15px);padding:0 15px}
+.form-row{display:-webkit-box;display:-ms-flexbox;display:flex;margin:0 -7px;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.form-row .col-md-6{width:50%;padding:0 7px}
+.form-row .col-md-12{width:100%;padding:0 7px}
+.form-group{margin-bottom:28px}
+.form-row>div:last-child .form-group{margin-bottom:0}
+.form-group p{margin:0;font-weight:600;line-height:1;color:#090909}
+.form-group label{color:#090909;font-size:18px;font-weight:600;line-height:26.19px;margin-bottom:16px;display:block}
+.form-group select{width:100%;background:url('../../images/select-arrow.svg') 97%/12px no-repeat rgba(254,254,254,.93);font-weight:500;padding:14px 32px 14px 16px;border:1px solid #dfdfdf}
+input[type=submit]{background-color:transparent;border:0;color:#fff;cursor:pointer}
+.form-group .btn-red{position:relative;display:inline-block;overflow:hidden;border-radius:30px;z-index:1}
+span.wpcf7-spinner{position:absolute;right:-30px;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);margin:0}
+.form-group .btn-red::before{content:'';width:100%;height:100%;position:absolute;left:0;top:0;border:2px solid var(--theme-red);border-radius:30px}
+.form-group .btn-red::after{content:'';position:absolute;left:0;top:0;display:inline-block;background-color:var(--theme-red);width:100%;height:100%;-webkit-transition:all .6s;-o-transition:all .6s;transition:all .6s;z-index:-1;border-radius:30px}
+.form-group .btn-red:hover:after{left:100%}
+.form-group .btn-red:hover:before{border-color:var(--light-grey)}
+input[type=submit]:after,input[type=submit]:before{display:none}
+.form-group .btn-red:hover input[type=submit]{color:var(--light-grey)}
+.form-group label em{color:#d92128;font-size:18px;font-weight:600;line-height:26.19px;position:relative;top:0;left:-5px}
+.iti{width:100%}
+.form-row .col-md-12 p {margin: 0;}
+.submitting .btn-red {overflow: unset;}
+.submitting .form-group .btn-red::after {display:none;}
+.submitting input.wpcf7-submit{color: var(--light-grey);}

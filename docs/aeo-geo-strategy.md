@@ -1445,7 +1445,7 @@ Exact visible proposals are tracked in `docs/page-content-improvements.md`.
 
 ## White Label Website Design Services (`/white-label-website-design-services`)
 
-Status: implementation in progress; live-visible content preserved
+Status: implemented; live-visible content preserved
 
 Last reviewed: 2026-08-17
 
@@ -1486,8 +1486,8 @@ platform-specific Shopify and WordPress white-label routes.
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implementation in progress | Route and discovery | The canonical migrated route is not yet implemented locally | Ship the slashless route through shared metadata, robots, sitemap, canonical, and navigation helpers | Production build and rendered-output verification |
-| P0 | implementation in progress | Structured data | Live source includes an unrelated sitewide FAQ graph in addition to page content | Emit shared Organization/WebSite plus WebPage, Service, BreadcrumbList, OfferCatalog, and exactly one FAQPage sourced from the eight visible FAQs | Rendered JSON-LD verification |
+| P0 | complete | Route and discovery | The route required slashless canonical and discovery coverage | The route ships through shared metadata, robots, sitemap, canonical, and navigation helpers | URL-policy check, production build, and rendered canonical verified 2026-08-17 |
+| P0 | complete | Structured data | Live source includes an unrelated sitewide FAQ graph in addition to page content | Local output emits Organization/WebSite plus WebPage, Service with OfferCatalog, BreadcrumbList, and exactly one FAQPage sourced from the eight visible FAQs | Rendered JSON-LD verified 2026-08-17 |
 | P0 | blocked by live parity | Proof governance | `20+` years, `150+` developers, `2500+` reviews, and `1000+` WordPress sites are visible but not governed by one approved source | Approve definitions, evidence, review dates, and allowable page usage before changing UI or using the values in schema | Leadership and fact-owner approval |
 | P1 | deferred | AI discovery claims | The page states that AI engines will read, cite, trust, discover, and recommend client sites | Replace guarantees with evidence-backed technical and content practices that can improve machine understanding and retrieval | SEO, technical, legal, and content approval |
 | P1 | deferred | Outcome claims | Copy guarantees ranking, speed, security, client satisfaction, higher profit, and faster delivery without evidence or qualification | Use auditable process language and approved case evidence instead of unconditional outcomes | Delivery, security, sales, and client-success evidence |
@@ -1508,11 +1508,14 @@ platform-specific Shopify and WordPress white-label routes.
 ### Verification and remaining gaps
 
 - Completed: live rendered/source review, metadata and heading inventory,
-  desktop/tablet/mobile screenshots, CSS/JS interaction review, section map,
-  CTA inventory, and initial AEO/GEO assessment.
-- Pending: local implementation, asset canonicalization, rendered schema checks,
-  URL-policy check, lint, production build, responsive visual comparison,
-  carousel/accordion/video verification, and migration-pending route coverage.
+  local implementation and assets, rendered canonical/schema checks,
+  desktop/tablet/mobile visual comparison, CSS/JS interaction review, section
+  map, CTA inventory, URL-policy check, lint, production build, and AEO/GEO
+  assessment. The route is statically prerendered.
+- Pending: migration coverage for `/request-quote`,
+  `/schedule-your-consultation`, and `/bigcommerce-development`; proof
+  governance; approved authorship/case-study evidence; and exact approval for
+  deferred visible-copy changes.
 
 ## Fashion & Apparel (`/fashion`)
 
@@ -1940,6 +1943,195 @@ or unsupported client counts. Exact visible proposals are tracked in
 - Deferred or blocked: visible copy changes, proof governance, authorship,
   internal case studies/service links, and unbuilt CTA destinations require
   approval or later route coverage.
+
+## Contact Us (`/contact-us`)
+
+Status: implemented; deployment webhook configuration pending
+Last reviewed: 2026-08-17
+Owner: Sales and operations
+Primary audience: prospective ecommerce clients, agency partners, job seekers,
+and visitors looking for office or company contact details
+Decision stage: conversion and direct contact
+
+### Page role
+
+Provide the canonical contact destination for Dynamic Dreamz, preserve the live
+sales and recruitment contact paths, identify both offices, and give qualified
+visitors a direct inquiry form without depending on the legacy WordPress site.
+
+### Target prompts
+
+- How can I contact Dynamic Dreamz about an ecommerce or Shopify project?
+- Where are the Dynamic Dreamz offices in Surat and Ahmedabad?
+- What email address or phone number should I use for sales or job openings?
+
+### Current strengths and available evidence
+
+- The live page exposes distinct sales and recruitment phone/email contacts.
+- Both office addresses, map destinations, office photographs, and direct
+  contact details are visible.
+- The page contains a short inquiry form and the shared company footer links.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and conversion | The local `/contact-us` route was missing | Migrate the full live page, include it in metadata/sitemap/robots data, and provide a server-validated inquiry flow | Route, discovery data, validation, honeypot, UTM capture, and failure state verified; production delivery still requires webhook configuration |
+| P0 | implemented; deployment pending | Runtime dependency | The live form posts to WordPress Contact Form 7 | Use a local Server Action and configurable server-side webhook; never call the legacy WordPress form at runtime | `CONTACT_FORM_WEBHOOK_URL` and optional `CONTACT_FORM_WEBHOOK_TOKEN` must be provisioned by deployment |
+| P1 | implemented | Structured data | No local ContactPage graph existed | Add ContactPage, Organization, WebSite, and BreadcrumbList nodes using only visible/approved details | Rendered ContactPage graph and slashless canonical verified locally |
+| P1 | implemented | Accessibility | Live social image alt text says `Facebook Icon` for LinkedIn and Instagram; Ahmedabad office alt says Surat | Use accurate local alt text and accessible labels without changing the rendered presentation | Accurate labels/alts, required-field focus, and visible focus ring verified locally |
+| P1 | deferred | Answer clarity | The hero and form introduction do not summarize service scope or response expectations in a directly extractable answer | Add a concise approved contact summary and verified response-time statement in future | Sales/content approval and response-time policy |
+| P2 | migration pending | Internal links | The page has no contextual service or work links | Add relevant service/work links only as those canonical routes ship | Destination routes and visible-copy approval |
+
+### Entity, evidence, and authorship actions
+
+- Keep sales, recruitment, office, and social contact points consistent with the
+  shared site configuration and approved office facts.
+- Do not add service claims, response-time guarantees, or office hours without
+  owner confirmation.
+
+### Internal-link and conversion actions
+
+- Preserve the header quote CTA, footer navigation, telephone, email, maps,
+  LinkedIn, Instagram, and inquiry form destinations.
+- Treat planned but unbuilt footer/service routes under the active migration
+  exception; they remain launch dependencies.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit slashless canonical, Open Graph, sitemap, robots, breadcrumb, and JSON-LD
+  URLs through the shared helpers.
+- Use the 2026-08-17 migration review date as `dateModified`; preserve the live
+  publication date where available.
+
+### Measurement plan
+
+- Track successful inquiry submissions, webhook failures, clicks on sales and
+  recruitment contacts, map clicks, and landing queries containing company
+  contact/location intent.
+
+### Verification and remaining gaps
+
+- Checks completed: live rendered page, View Page Source, metadata, local asset
+  ownership and duplicate hashes, CSS/JS behavior, 1440px and 390px captures,
+  horizontal overflow, required-field focus, hover, reduced motion, schema,
+  canonical URL, and the no-webhook submission state.
+- Implemented items: slashless server-rendered route, live-visible section order
+  and wording, local office/contact assets, route metadata and discovery data,
+  ContactPage graph, accurate accessible labels and alt text, and a validated
+  Server Action with honeypot, UTM capture, and configurable webhook delivery.
+- Deferred or blocked items and reason: production webhook provisioning,
+  approved response-time/service-scope copy, owner confirmation of contact
+  details, and contextual links to unbuilt routes.
+
+## Our Work (`/our-work`)
+
+Status: implementation in progress; live-visible content preserved
+Last reviewed: 2026-08-17
+Owner: SEO, content, development, leadership, and client success
+Primary audience: ecommerce leaders, digital-agency buyers, and brands
+evaluating Shopify, WordPress, mobile-app, Magento, or BigCommerce delivery
+Decision stage: proof review and commercial evaluation
+
+### Page role
+
+Portfolio index for visitors evaluating Dynamic Dreamz through visible project
+work across ecommerce platforms. It differs from a case-study index because it
+preserves the live card-led external-storefront exploration model without
+inventing scope, results, or client attribution beyond the visible project
+names, technologies, and destinations.
+
+### Target prompts
+
+- Which Shopify and Shopify Plus stores has Dynamic Dreamz worked on?
+- Can I see Dynamic Dreamz WordPress, mobile app, Magento, and BigCommerce work?
+- What types of ecommerce projects does Dynamic Dreamz include in its portfolio?
+- Where can I review Dynamic Dreamz projects by platform?
+
+### Current strengths and available evidence
+
+- The live page provides 126 visible project cards across Shopify / Shopify
+  Plus, WordPress, Mobile Apps, Magento, and Big commerce filters.
+- The live H1 and introductory copy establish a global ecommerce-work and
+  omnichannel-commerce positioning.
+- Every project card exposes a platform label, project name, image, and an
+  external destination or applicable app-store links.
+- A trusted-brand rail adds visible first-party brand context without requiring
+  new testimonials, outcomes, or unapproved proof.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | `/our-work` was linked throughout the migration but was not implemented locally | Ship the slashless server-rendered route through shared metadata, sitemap, canonical, and schema helpers | Rendered output, URL-policy guard, lint, and production build passed 2026-08-17 |
+| P0 | implemented | Local assets | The live grid depends on WordPress-hosted project media and platform marks | Use audited project-owned images and local platform assets only | 31 exact assets reused, 100 distinct assets added, all references local, and runtime-request audit passed |
+| P0 | implemented by design | Filter reliability | The legacy Shopify filter calls `ipapi.co` and changes results by visitor location | Preserve platform filtering without external runtime geolocation or location-dependent project visibility | Pointer/keyboard filtering, result counts, live announcement, and zero external runtime requests verified |
+| P0 | implemented | Schema relevance | Live source injects a sitewide FAQPage and aggregate rating that are not represented by this page | Emit only shared Organization/WebSite, CollectionPage, BreadcrumbList, primary ImageObject, and an ItemList matching visible projects | Rendered JSON-LD contains only Organization, WebSite, CollectionPage, BreadcrumbList, and ItemList |
+| P1 | implemented accessibility correction | Image accessibility | Many live project alts are generic or refer to another project | Use project-specific local alternative text without changing visible UI | Rendered image and broken-loaded-image audit passed |
+| P1 | migration pending | Evidence depth | Project cards link to external storefronts and do not define scope, constraints, or outcomes | Preserve the live external links; add internal case studies only when attribution and outcomes are approved | Client-success approval and case-study migration |
+| P1 | deferred | Hero clarity | The live introduction uses `omni channel` and does not directly identify platforms or delivery role | Add an approved answer-first portfolio summary only after exact visible wording is approved | Content/leadership approval |
+| P1 | migration pending | Conversion routes | Header and page-adjacent conversion links include planned `/request-quote` | Preserve migration intent during active migration and validate before launch | Quote-route implementation |
+| P2 | deferred | Project freshness | No project delivery dates or scope are visible | Add client-approved case-study dates and factual delivery context only as proof routes ship | Client-success evidence |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. A future approved summary should
+identify Dynamic Dreamz, the portfolio's Shopify, WordPress, mobile-app,
+Magento, and BigCommerce coverage, and the page's purpose as a work index
+without implying project ownership, outcomes, or client endorsement beyond
+approved evidence. Exact visible proposals are tracked in
+`docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Model the route as a CollectionPage with a visible-project ItemList, linked
+  to the shared Dynamic Dreamz Organization.
+- Keep project names, displayed categories, platform marks, and external URLs
+  aligned with the visible cards; do not add project outcomes or unsupported
+  case-study attribution.
+- Do not emit an aggregate rating, FAQPage, author, reviewer, or testimonial
+  schema on this page without matching visible, approved evidence.
+
+### Internal-link and conversion actions
+
+- Preserve the live external project destinations with `nofollow noopener
+  noreferrer` and meaningful accessible labels.
+- Keep platform filters as client-side controls while server-rendering the full
+  project inventory for discovery and accessibility.
+- Link projects to internal case studies only as client-approved routes become
+  available; retain the existing external-storefront path in the interim.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Organization, WebSite, CollectionPage, BreadcrumbList, primary
+  ImageObject, and an ItemList containing the complete visible project list.
+- Preserve the reliable live publish date of 2024-05-13 and use the actual
+  migration review date for modification, never build time.
+- Add the slashless canonical route and local primary image to the sitemap,
+  keep the route indexable, and ensure all media resolves locally.
+
+### Measurement plan
+
+- Track project-filter use by platform, project-card outbound clicks, quote CTA
+  engagement, and landing-page queries related to Shopify, WordPress, Magento,
+  BigCommerce, and mobile-app portfolios.
+- Sample the target prompts monthly and record citations, extracted project
+  claims, and the sources they link to.
+
+### Verification and remaining gaps
+
+- Completed: live/local rendered and source review; 126-project extraction;
+  duplicate/local asset audit; desktop, tablet, mobile, and project-grid
+  screenshots; slashless metadata and discovery; CollectionPage,
+  BreadcrumbList, and ItemList schema; pointer and keyboard filter checks;
+  focus, hover, reduced-motion, mobile overflow, image-loading, runtime-request,
+  URL-policy, type, lint, and production-build verification.
+- Remaining: richer internal case studies, visible answer-first copy, project
+  dates/scope/outcomes, and `/request-quote` coverage remain migration pending
+  or deferred until the required evidence and exact visible-copy approvals are
+  available.
+- Deferred or blocked: visible answer copy, approved project scope/outcomes,
+  internal case studies, project freshness data, and quote-route completion.
 
 ## Future Page Maintenance Workflow
 

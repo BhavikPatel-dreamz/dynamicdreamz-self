@@ -48,15 +48,15 @@ export function WhiteLabelHeroSection({
       <Container className="max-[575px]:px-4">
         <div
           className={cn(
-            "flex flex-wrap items-stretch justify-center",
-            isWebsiteDesign && "min-[992px]:flex-nowrap min-[992px]:justify-between",
+            "flex flex-wrap items-stretch",
+            isWebsiteDesign ? "justify-between" : "justify-center",
           )}
         >
           <div
             className={cn(
               "pb-20 max-[1199px]:pb-10 max-[991px]:pb-[30px] max-[767px]:pb-2.5",
               isWebsiteDesign
-                ? "w-[47.1%] max-[1199px]:w-[47.1%] max-[991px]:w-full"
+                ? "w-[47%] max-[991px]:w-full"
                 : "w-[55%] max-[1199px]:w-3/5 max-[991px]:w-full",
             )}
           >
@@ -129,7 +129,7 @@ export function WhiteLabelHeroSection({
             className={cn(
               "relative",
               isWebsiteDesign
-                ? "flex w-[45%] items-end justify-end max-[1199px]:w-2/5 max-[991px]:mx-auto max-[991px]:w-full"
+                ? "flex w-[45%] items-end justify-end max-[991px]:mx-auto max-[991px]:w-full max-[991px]:max-w-[400px]"
                 : "w-[45%] max-[1199px]:w-2/5 max-[991px]:w-full",
             )}
           >

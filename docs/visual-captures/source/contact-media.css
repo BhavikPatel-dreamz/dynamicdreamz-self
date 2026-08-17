@@ -1,0 +1,47 @@
+@media (max-width:1199px){
+    .contact-details ul li h3,.social-details h3{font-size:16px;margin-bottom:10px}
+    .contact-details ul li img{width:50px;height:50px}
+    .contact-details ul li{padding-left:73px}
+    .contact-details ul li a{font-size:14px;line-height:20px}
+    .contact-details ul li a:not(:last-child){margin-bottom:5px}
+    .connect-with-us-sec .wrapper .col-block{padding:32px 20px}
+    .reach-out-main .wrapper{padding:40px}
+}
+@media (max-width:991px){
+    .heading-text{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;text-align:center;margin:0 0 40px 0}
+    .heading-text .text,.heading-text .title{width:100%;padding:0}
+    .form-group label{font-size:16px;margin-bottom:10px;line-height:normal}
+    .form-group{margin-bottom:20px}
+    .inner-hero-sec{padding-top:140px}
+    .inner-hero-content h1{line-height:60px}
+    .connect-with-us-sec .wrapper .col-block{width:50%}
+    .connect-with-us-sec .wrapper .col-block:nth-child(2){border-right:0}
+    .connect-with-us-sec .wrapper .col-block:not(:last-child){border-bottom:solid 1px #d9d9d9}
+    .contact-details{width:100%;max-width:266px;margin:0 auto}
+    .connect-with-us-sec .wrapper .col-block:last-child{width:100%}
+    .office-wrapper{margin:0 -10px}
+    .office-card-col{padding:0 10px}
+    .office-details{padding:20px}
+    .office-img{min-height:150px}
+    .office-details p{margin-top:15px;font-size:14px;line-height:24px;margin-bottom:15px}
+    .office-details ul li a{font-size:14px}
+    .office-details .title h3{margin:0 20px 0 0;font-size:16px}
+}
+@media (max-width:767px){
+    .connect-with-us-sec .wrapper .col-block,.office-card-col{width:100%}
+    .connect-with-us-sec .wrapper .col-block:nth-child(2){border-left:0}
+    .inner-hero-content p br{display:none}
+    .office-card-col:not(:last-child){margin-bottom:20px}
+    .reach-out-main .wrapper{padding:40px 20px 0 20px}
+    .form-row .col-md-12,.form-row .col-md-6{width:100%;padding:0}
+    .form-row{margin:0}
+    .form-group .btn-red{width:100%;text-align:center}
+    .inner-hero-content h1{line-height:40px}
+    .inner-hero-content h1 span.lead:after{width:14px;height:22px;top:-11px;right:-9px}
+}
+@media (max-width:359px){
+    .contact-details ul li h3,.social-details h3{font-size:14px}
+    .social-details h3{text-align: center;}
+    .contact-details ul li a{font-size:12px;line-height:18px}
+    
+}
