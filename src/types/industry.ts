@@ -21,6 +21,7 @@ export type IndustrySolution = {
   additionalDescriptions?: readonly string[];
   image: IndustryImage;
   imagePosition?: "start" | "end";
+  mobileOrder: "image-first" | "content-first";
   cta?: {
     label: string;
     href: string;

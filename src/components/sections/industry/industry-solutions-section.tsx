@@ -17,13 +17,18 @@ export function IndustrySolutionsSection({ content }: IndustrySolutionsSectionPr
 
   return (
     <section
-      className="py-20 max-[991px]:py-[50px]"
+      className="text-with-img-sec py-20 max-[991px]:py-[50px]"
       aria-label={`${content.hero.title} solutions`}
       data-industry="solutions"
     >
       <Container className="max-[575px]:px-4">
         {solutionRows.map((solution, index) => {
           const imageFirst = solution.imagePosition === "start";
+          const mobileImageFirst = solution.mobileOrder === "image-first";
+          const mobileDirection =
+            mobileImageFirst === imageFirst
+              ? "max-[991px]:flex-col"
+              : "max-[991px]:flex-col-reverse";
           const isLast = index === solutionRows.length - 1;
           const text = (
             <div
@@ -58,7 +63,7 @@ export function IndustrySolutionsSection({ content }: IndustrySolutionsSectionPr
           );
           const image = (
             <div
-              className="right-col w-[45.3%] max-[991px]:mt-[30px] max-[991px]:w-full"
+              className="right-col w-[45.3%] max-[991px]:mb-[30px] max-[991px]:w-full"
               key={`${solution.title}-image`}
             >
               <div className="relative h-0 overflow-hidden rounded-[10px] pb-[84%]">
@@ -75,9 +80,9 @@ export function IndustrySolutionsSection({ content }: IndustrySolutionsSectionPr
 
           return (
             <div
-              className={`flex flex-wrap items-stretch justify-between ${
-                isLast ? "mt-20 max-[991px]:mt-0" : ""
-              } max-[991px]:flex-col`}
+              className={`wrapper flex flex-wrap items-stretch justify-between ${
+                isLast ? "mt-20 max-[991px]:mt-[50px]" : ""
+              } ${mobileDirection}`}
               data-industry-solution={index + 1}
               key={solution.title}
             >

@@ -37,6 +37,13 @@ rail now places the former viewport offset plus its existing track padding on
 the inner track and uses that combined value as scroll padding. Card widths,
 gaps, initial alignment, and snap destinations remain unchanged.
 
+The responsive inset calculations use the scroll viewport's `100%` layout
+width rather than `100vw`. Viewport units include the desktop scrollbar while
+the centered `Container` does not, which shifted the card rail approximately
+half a scrollbar width to the right. Using the same layout-width basis aligns
+the first card border with the heading content edge while retaining the
+full-width carousel viewport.
+
 ## Viewports
 
 | Viewport | Live screenshot | Local screenshot | Result |
@@ -68,7 +75,7 @@ are temporary; the durable measurements and decisions follow.
 | --- | --- | --- |
 | Hero | 97.18-degree mint/cyan gradient; 190/150px top padding; 50/40/30px H1; red pill CTA; collage sinks 80/70px below the section | Server Component using Container, ButtonLink and the local optimized collage; content and geometry matched |
 | Trusted brands | Warm `#fbf7ed`; heading beside rail on desktop and above it below 992px; infinite two-second carousel; 4/3/2 logos | Shared typed client-logo slider uses the 12 existing canonical logo paths; 4/3/2 measured locally |
-| IT solutions | 49.6/45.3% split, live typography, 84% image geometry, 10px radius and red CTA; text remains before image responsively | Server Component using Container, ButtonLink and a local optimized 516x434 image; responsive ordering and corresponding image top spacing rechecked at 768px on 2026-08-17 |
+| IT solutions | 49.6/45.3% split, live typography, 84% image geometry, 10px radius and red CTA; content remains before image responsively | Server Component using Container, ButtonLink and a local optimized 516x434 image; shared data now declares `mobileOrder: "content-first"` explicitly |
 | What We Deliver | Desktop heading/copy split, responsive centered stack, five-card drag rail, partial edge preview and five mobile dots | All five cards remain in server HTML; shared drag-scroll boundary has optional labelled pagination; geometry matched |
 | Deliverable hover | Green/cyan outer border and faint wash become visible over 300ms | Both pseudo-elements measured at opacity 1 and visible on hover |
 | Portfolio | Centered intro; 3/2/1 cards; 15px columns, 60/30px rows; 115% media; category/name and CTA | Six server-rendered cards use local optimized images; card/grid dimensions matched |

@@ -5,6 +5,18 @@ Local route: `/fashion`
 Date checked: 2026-08-13
 Browser: Microsoft Edge (Chromium, headless screenshots and DevTools Protocol computed-style audit)
 
+## 2026-08-17 Portfolio Platform-Mark Motion Correction
+
+The current live `assets/css/industries/main.css` was rechecked against the
+shared local portfolio card. Live `.project-cate` starts at
+`translateY(10px)`/opacity `0` and transitions `all .5s ease-in-out` to
+`translateY(0)`/opacity `1`. The local values and timing matched, but Tailwind 4
+emits `translate-y-*` through the individual CSS `translate` property while the
+component transitioned only `opacity, transform`. Opacity therefore eased but
+the position could jump. The platform mark now transitions all changing
+properties for the same smooth 500ms live motion; keyboard focus behavior is
+retained.
+
 ## Viewports
 
 | Viewport | Live screenshot | Local screenshot | Status |
@@ -36,7 +48,7 @@ downloads used for duplicate checking.
 | --- | --- |
 | Hero | 97.18-degree mint/cyan gradient, 190px desktop and 150px tablet/mobile top padding, 50/40/30px H1, red pill CTA, and an 840x434 collage offset 80px below the section (70px on mobile) |
 | Trusted brands | Warm `#fbf7ed` background; heading beside the rail on desktop and above it below 992px; infinite 2-second carousel with 4/3/2 logos |
-| IT solutions | 49.6/45.3 desktop split, 516x434 image in an 84% ratio frame, 10px radius, and text before image in the live DOM; stacked text then image below 992px |
+| IT solutions | 49.6/45.3 desktop split, 516x434 image in an 84% ratio frame, 10px radius, and content before image below 992px | Shared solution data now declares `mobileOrder: "content-first"` explicitly instead of deriving responsive order from desktop position |
 | What We Deliver | Heading/copy split on desktop and centered stack below 992px; five-card non-looping drag rail with 3/2/1 cards, 16/10px gaps, 50/25px edge padding, and five mobile dots |
 | Deliverable hover | Three-pixel green/cyan outer gradient transitions over 300ms while the faint inner wash appears immediately, matching computed live CSS |
 | Portfolio | Centered intro, six cards in a 3/2/1 grid, 15px columns, 60/30px rows, 115% media ratio, category/name labels, and final View our work CTA |

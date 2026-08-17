@@ -20,6 +20,7 @@ export const fashionIndustryPage = {
     ariaLabel: "Leading brands supported by Dynamic Dreamz",
   },
   solutions: {
+    mobileOrder: "content-first",
     title: "IT Solutions for Fashion & Apparel Industry",
     subtitle: "Let us assist you in bringing your clothing brand to the next level",
     description:

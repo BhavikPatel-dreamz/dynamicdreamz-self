@@ -6,6 +6,18 @@ Date checked: 2026-08-13
 Local implementation verified: 2026-08-14
 Browser: Microsoft Edge (Chromium, headless screenshots and DevTools computed audit)
 
+## 2026-08-17 Responsive Solution Full-Page Correction
+
+The project owner supplied matching full-page mobile captures of the live and
+local Healthcare routes. Hero, brand-strip geometry, deliverables, portfolio,
+and footer align; the rotating brand logos were captured at different autoplay
+frames. The persistent offset starts in `text-with-img-sec`: the first local row
+already shows image then text, but the alternating Dental row showed text then
+image and omitted the live 50px inter-row gap. Responsive direction is now
+selected from the row's desktop DOM order so both rows show image then text,
+the image retains its 30px bottom spacing, and the second row restores its 50px
+top gap.
+
 ## Viewports
 
 | Viewport | Live screenshot | Local screenshot | Status |

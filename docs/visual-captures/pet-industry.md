@@ -31,7 +31,7 @@ Source, live industry CSS/JavaScript, and local asset audit.
 | --- | --- |
 | Hero | Mint/cyan gradient, `industries` eyebrow, Pet Industry H1, two-line desktop copy, Request a quote CTA, and an 840x434 three-storefront collage offset into the brand band |
 | Trusted brands | Warm `#fbf7ed` band with the shared 12-logo rail and 4/3/2 visible logos |
-| Pet solution | Text-first desktop row with H2, H3, paragraph, Get started CTA, and a 516x434 puppy image; below 992px the image stacks before the text |
+| Pet solution | Text-first desktop row with H2, H3, paragraph, Get started CTA, and a 516x434 puppy image; the supplied mobile reference keeps content and CTA before the image | Route data explicitly uses `mobileOrder: "content-first"`; no shared component or other industry configuration changed |
 | What We Deliver | Five-card rail: Pet centric custom web design, CMS Development, Responsive Layouts, Interactive Features, and Social Media Integration |
 | Portfolio | Six Shopify cards in a 3/2/1 grid: Kentaur Australia, Paw Labs, My Pet Frame, Neater Pets, Supertails, and Pagerie |
 | Shared chrome | Existing desktop/mobile header, footer, and fixed WhatsApp contact widget remain unchanged |
