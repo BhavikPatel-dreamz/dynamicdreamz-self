@@ -27,7 +27,7 @@ export function IndustrySolutionsSection({ content }: IndustrySolutionsSectionPr
           const isLast = index === solutionRows.length - 1;
           const text = (
             <div
-              className="w-[49.6%] pb-[5px] max-[991px]:w-full max-[991px]:pb-[10.4px]"
+              className="left-col w-[49.6%] pb-[5px] max-[991px]:w-full max-[991px]:pb-[10.4px]"
               key={`${solution.title}-text`}
             >
               <h2 className="mb-[15px] text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
@@ -58,7 +58,7 @@ export function IndustrySolutionsSection({ content }: IndustrySolutionsSectionPr
           );
           const image = (
             <div
-              className="w-[45.3%] max-[991px]:mb-[30px] max-[991px]:w-full"
+              className="right-col w-[45.3%] max-[991px]:mt-[30px] max-[991px]:w-full"
               key={`${solution.title}-image`}
             >
               <div className="relative h-0 overflow-hidden rounded-[10px] pb-[84%]">
@@ -76,8 +76,8 @@ export function IndustrySolutionsSection({ content }: IndustrySolutionsSectionPr
           return (
             <div
               className={`flex flex-wrap items-stretch justify-between ${
-                isLast ? "mt-20 max-[991px]:mt-[50px]" : ""
-              } ${imageFirst ? "max-[991px]:flex-col" : "max-[991px]:flex-col-reverse"}`}
+                isLast ? "mt-20 max-[991px]:mt-0" : ""
+              } max-[991px]:flex-col`}
               data-industry-solution={index + 1}
               key={solution.title}
             >

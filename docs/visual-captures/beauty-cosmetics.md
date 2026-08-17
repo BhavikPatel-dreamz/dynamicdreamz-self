@@ -17,6 +17,26 @@ above them. The final supplied comparison showed the local ring slightly too
 heavy, so its horizontal and vertical expansion is 2px. Default and responsive
 card geometry remain unchanged.
 
+## 2026-08-17 Deliverable Border Clipping Correction
+
+The horizontal scroll viewport also clips vertical overflow because its
+`overflow-x-auto` behavior computes the other overflow axis as scrollable. The
+deliverable gradient extends 2px beyond each card, so the viewport now reserves
+2px of internal space above and below the card rail. This keeps the gradient
+ring equally visible on all four sides and prevents unintended vertical
+scrolling without changing horizontal drag behavior.
+
+## 2026-08-17 Responsive Carousel Stage Geometry
+
+The supplied screenshots establish two distinct positions. Initially, the first
+card aligns with its breakpoint-specific content inset while the carousel
+viewport still spans the full browser width. After one item is scrolled, that
+first card can remain partially visible at the left browser edge and the second
+card occupies the original aligned position. At every breakpoint, the local
+rail now places the former viewport offset plus its existing track padding on
+the inner track and uses that combined value as scroll padding. Card widths,
+gaps, initial alignment, and snap destinations remain unchanged.
+
 ## Viewports
 
 | Viewport | Live screenshot | Local screenshot | Result |
@@ -48,7 +68,7 @@ are temporary; the durable measurements and decisions follow.
 | --- | --- | --- |
 | Hero | 97.18-degree mint/cyan gradient; 190/150px top padding; 50/40/30px H1; red pill CTA; collage sinks 80/70px below the section | Server Component using Container, ButtonLink and the local optimized collage; content and geometry matched |
 | Trusted brands | Warm `#fbf7ed`; heading beside rail on desktop and above it below 992px; infinite two-second carousel; 4/3/2 logos | Shared typed client-logo slider uses the 12 existing canonical logo paths; 4/3/2 measured locally |
-| IT solutions | 49.6/45.3% split, live typography, 84% image geometry, 10px radius and red CTA; text remains before image responsively | Server Component using Container, ButtonLink and a local optimized 516x434 image; matched |
+| IT solutions | 49.6/45.3% split, live typography, 84% image geometry, 10px radius and red CTA; text remains before image responsively | Server Component using Container, ButtonLink and a local optimized 516x434 image; responsive ordering and corresponding image top spacing rechecked at 768px on 2026-08-17 |
 | What We Deliver | Desktop heading/copy split, responsive centered stack, five-card drag rail, partial edge preview and five mobile dots | All five cards remain in server HTML; shared drag-scroll boundary has optional labelled pagination; geometry matched |
 | Deliverable hover | Green/cyan outer border and faint wash become visible over 300ms | Both pseudo-elements measured at opacity 1 and visible on hover |
 | Portfolio | Centered intro; 3/2/1 cards; 15px columns, 60/30px rows; 115% media; category/name and CTA | Six server-rendered cards use local optimized images; card/grid dimensions matched |

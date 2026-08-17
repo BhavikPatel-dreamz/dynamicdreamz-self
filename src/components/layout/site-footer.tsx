@@ -200,12 +200,12 @@ export function SiteFooter() {
 
       <Container
         footer
-        className="grid grid-cols-6 gap-3 pt-13.75 pb-0 min-[768px]:max-[991px]:grid-cols-2 max-[991px]:pt-8.75 max-[767px]:grid-cols-2 max-[767px]:pt-7.5"
+        className="footer-middle grid grid-cols-6 gap-5 pt-13.75 pb-0 min-[768px]:max-[991px]:grid-cols-2 max-[991px]:pt-8.75 max-[767px]:grid-cols-2 max-[767px]:pt-7.5"
         aria-label="Partner and review profiles"
       >
         {footerAwards.map((award) => (
           <a
-            className="flex items-center justify-center rounded-[20px] border border-[#efefef]/20 bg-white px-4.5 py-4  max-[991px]:rounded-[10px] max-[767px]:px-3.25 max-[767px]:1.25"
+            className="flex items-center justify-center rounded-[20px] h-20.25 border border-[#efefef]/20 bg-white px-4.5 py-4  max-[991px]:rounded-[10px] max-[767px]:px-3.25 max-[767px]:1.25"
             href={award.href}
             target="_blank"
             rel="nofollow noopener noreferrer"
@@ -223,17 +223,19 @@ export function SiteFooter() {
         ))}
       </Container>
 
-      <Container footer className="flex items-center justify-between pt-16 md:pt-16 pb-9.75 md:pb-5 min-[768px]:max-[991px]:min-h-[90.4px] min-[768px]:max-[991px]:[&_a]:leading-[30.4px] min-[768px]:max-[991px]:[&_p]:leading-[30.4px] max-[991px]:pt-10 max-[991px]:pb-5 max-[767px]:min-h-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:3.75 max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:text-center">
-        <p className="text-sm leading-5 font-normal text-ink max-[767px]:leading-5">
-          © 2026 <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> All rights reserved.
-        </p>
-        <div className="flex max-[767px]:mt-2.5">
-          <Link className="relative mr-2.5 inline-block pr-2.5 text-sm leading-5 font-normal text-ink transition-[color,opacity] duration-300 after:absolute after:-top-px after:-right-1 after:content-['|'] hover:text-brand-red hover:opacity-80 focus-visible:text-brand-red focus-visible:opacity-80" href="/terms-of-service" target="_blank" rel="noopener noreferrer">
-            Terms of Service
-          </Link>
-          <Link className="inline-block text-sm leading-5 font-normal text-ink transition-[color,opacity] duration-300 hover:text-brand-red hover:opacity-80 focus-visible:text-brand-red focus-visible:opacity-80" href="/privacy-policy" target="_blank" rel="noopener noreferrer">
-            Privacy Policy
-          </Link>
+      <Container footer>
+        <div className="footer-bottom flex items-center justify-between lg:pt-16 pt-10 lg:pb-9.75 pb-5 min-[768px]:max-[991px]:min-h-[90.4px] min-[768px]:max-[991px]:[&_a]:leading-[30.4px] min-[768px]:max-[991px]:[&_p]:leading-[30.4px] max-[767px]:min-h-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:text-center">
+          <p className="text-sm leading-5 font-normal text-ink max-[767px]:leading-5">
+            © 2026 <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> All rights reserved.
+          </p>
+          <div className="flex max-[767px]:mt-2.5">
+            <Link className="relative mr-2.5 inline-block pr-2.5 text-sm leading-5 font-normal text-ink transition-[color,opacity] duration-300 after:absolute after:-top-px after:-right-1 after:content-['|'] hover:text-brand-red hover:opacity-80 focus-visible:text-brand-red focus-visible:opacity-80" href="/terms-of-service" target="_blank" rel="noopener noreferrer">
+              Terms of Service
+            </Link>
+            <Link className="inline-block text-sm leading-5 font-normal text-ink transition-[color,opacity] duration-300 hover:text-brand-red hover:opacity-80 focus-visible:text-brand-red focus-visible:opacity-80" href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </Container>
     </footer>

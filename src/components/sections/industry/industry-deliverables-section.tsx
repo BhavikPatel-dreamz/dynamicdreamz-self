@@ -7,7 +7,7 @@ import type { IndustryDeliverable, IndustryPageContent } from "@/types/industry"
 function DeliverableCard({ item }: { item: IndustryDeliverable }) {
   return (
     <article
-      className="delivers-box group/card relative isolate h-full min-h-[335px] w-full overflow-visible rounded-[15px] border border-[#efefef] bg-white px-[27px] py-[65px] pr-[27px] pl-[35px] min-[768px]:min-h-[492px] min-[992px]:min-h-[434px] max-[767px]:px-5 max-[767px]:pt-[30px] max-[767px]:pb-[35px]"
+      className="delivers-box group/card relative isolate h-full w-full rounded-[15px] border border-[#efefef] bg-white px-[27px] py-[65px] pr-[27px] pl-[35px] max-[767px]:px-5 max-[767px]:pt-[30px] max-[767px]:pb-[35px]"
       data-industry-card="deliverable"
     >
       <span
@@ -74,7 +74,7 @@ export function IndustryDeliverablesSection({ content }: IndustryDeliverablesSec
 
       <HorizontalDragScroll
         ariaLabel={deliverables.ariaLabel}
-        className="ml-4 w-[calc(100vw-16px)] snap-x snap-mandatory scroll-p-[25px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[576px]:ml-[calc((100vw-540px)/2+20px)] min-[576px]:w-[calc(100vw-((100vw-540px)/2+20px))] min-[768px]:ml-[calc((100vw-720px)/2+20px)] min-[768px]:w-[calc(100vw-((100vw-720px)/2+20px))] min-[992px]:ml-[calc((100vw-960px)/2+20px)] min-[992px]:w-[calc(100vw-((100vw-960px)/2+20px))] min-[1200px]:ml-[calc((100vw-1180px)/2+20px)] min-[1200px]:w-[calc(100vw-((100vw-1180px)/2+20px))] min-[1200px]:scroll-p-0"
+        className="w-full snap-x snap-mandatory scroll-p-[41px] py-[2px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[576px]:scroll-p-[calc((100vw-540px)/2+45px)] min-[768px]:scroll-p-[calc((100vw-720px)/2+45px)] min-[992px]:scroll-p-[calc((100vw-960px)/2+45px)] min-[1200px]:scroll-p-[calc((100vw-1180px)/2+20px)]"
         pagination={{
           itemCount: deliverables.items.length,
           itemLabel: "deliverable",
@@ -86,7 +86,7 @@ export function IndustryDeliverablesSection({ content }: IndustryDeliverablesSec
             "border-transparent bg-[linear-gradient(to_right,#15c064,#00d1ff)]",
         }}
       >
-        <div className="flex items-stretch gap-2.5 pl-[25px] min-[768px]:gap-4 min-[1200px]:pl-0">
+        <div className="flex items-stretch gap-2.5 pl-[41px] min-[576px]:pl-[calc((100vw-540px)/2+45px)] min-[768px]:gap-4 min-[768px]:pl-[calc((100vw-720px)/2+45px)] min-[992px]:pl-[calc((100vw-960px)/2+45px)] min-[1200px]:pl-[calc((100vw-1180px)/2+20px)]">
           {deliverables.items.map((item) => (
             <div
               className="flex shrink-0 basis-[calc(100vw-82px)] snap-start min-[576px]:basis-[450px] min-[768px]:basis-[307px] min-[992px]:basis-[427px] min-[1200px]:basis-[369.333px]"
