@@ -20,6 +20,7 @@ export const foodBeveragesIndustryPage = {
     ariaLabel: "Leading brands supported by Dynamic Dreamz",
   },
   solutions: {
+    mobileOrder: "content-first",
     title: "IT Solutions for Food & Beverages Industry",
     subtitle: "We don't serve our clients only, we serve their customers as well.",
     description:

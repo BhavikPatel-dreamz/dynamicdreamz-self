@@ -20,6 +20,7 @@ export const healthcareIndustryPage = {
   },
   solutions: [
     {
+      mobileOrder: "image-first",
       title: "IT Solutions for Health & Nutrition Industry",
       subtitle: "At Dynamic Dreamz, we create next gen stores for better customer experience.",
       description:
@@ -32,6 +33,7 @@ export const healthcareIndustryPage = {
       },
     },
     {
+      mobileOrder: "image-first",
       title: "Professional Website Solutions for the Dental Industry",
       subtitle: "At Dynamic Dreamz, we develop advanced websites for dental business.",
       description:

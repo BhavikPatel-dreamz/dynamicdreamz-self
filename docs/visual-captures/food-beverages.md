@@ -32,7 +32,7 @@ Source, live industry CSS/JS, and local Microsoft Edge DevTools audit.
 | --- | --- |
 | Hero | Shared green/cyan gradient, `industries` eyebrow, Food & Beverages H1, two-line desktop copy, Request a quote CTA, and an 840x434 storefront collage offset into the brand band |
 | Trusted brands | Warm `#fbf7ed` band with 12-logo Slick carousel and 4/3/2 visible slides |
-| Food & Beverages solution | Text-first desktop row with H2, H3, paragraph, Get started CTA, and 516x434 burger image; below 992px the image stacks before the text |
+| Food & Beverages solution | Text-first desktop row with H2, H3, paragraph, Get started CTA, and 516x434 burger image; the supplied mobile reference keeps content and CTA before the image | Route data explicitly uses `mobileOrder: "content-first"`; no shared component or other industry configuration changed |
 | What We Deliver | Five-card rail: Custom Website Design, Responsive Layouts, Online Reservation System, Interactive Features, and Social Media Integration |
 | Portfolio | Six cards in a 3/2/1 grid: nekter juice bar, Chinuki, Wine Moments, Deliciou, Joburg Meats, and Banchharams |
 | Shared chrome | Existing desktop/mobile header, footer, and fixed WhatsApp contact widget remain unchanged |

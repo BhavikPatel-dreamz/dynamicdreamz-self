@@ -41,7 +41,7 @@ function PortfolioCard({ item }: { item: IndustryPortfolioItem }) {
           />
         </span>
         <span
-          className="absolute top-[25px] right-6 z-2 translate-y-2.5 opacity-0 transition-[opacity,transform] duration-500 ease-in-out group-hover/project:translate-y-0 group-hover/project:opacity-100 group-focus/project:translate-y-0 group-focus/project:opacity-100"
+          className="absolute top-[25px] right-6 z-2 translate-y-2.5 opacity-0 transition-all duration-500 ease-in-out group-hover/project:translate-y-0 group-hover/project:opacity-100 group-focus/project:translate-y-0 group-focus/project:opacity-100"
           data-project-platform
         >
           <Image

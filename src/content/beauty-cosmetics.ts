@@ -19,6 +19,7 @@ export const beautyIndustryPage = {
     ariaLabel: "Leading brands supported by Dynamic Dreamz",
   },
   solutions: {
+    mobileOrder: "content-first",
     title: "IT Solutions for Beauty & Cosmetics Industry",
     subtitle: "Let us assist you and turn your imagination into reality.",
     description:

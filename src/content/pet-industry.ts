@@ -20,6 +20,7 @@ export const petIndustryPage = {
     ariaLabel: "Leading brands supported by Dynamic Dreamz",
   },
   solutions: {
+    mobileOrder: "content-first",
     title: "IT Solutions for Pet Industry",
     subtitle: "We understand your pinpointed requirements.",
     description:
