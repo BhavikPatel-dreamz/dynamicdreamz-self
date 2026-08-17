@@ -11,10 +11,9 @@ import type {
 
 export const whiteLabelShopifyHero = {
   title: "White Label Shopify Development for Digital Agencies",
-  lead: "Expand Your Agency’s Offerings with Expert Shopify Development",
+  lead: "Your Shopify Technology Partner. An Extension of Your Team.",
   paragraphs: [
-    "At Dynamic Dreamz, we empower agencies with white label Shopify development services, allowing them to supply high-quality, conversion-driven Shopify stores without handling the technical workload.",
-    "With 20+ years of experience, a team of 100+ skilled developers, and 1000+ completed Shopify projects, we are a trusted partner for agencies worldwide. Our goal is to help your agency scale effortlessly while we take care of the Shopify development under your brand.",
+    "Dynamic Dreamz provides white label Shopify development services for agencies that need additional capacity or specialist Shopify expertise. From Shopify and Shopify Plus to B2B, migrations, custom apps, iOS & Android mobile apps, integrations, CRO, automation and ongoing development, our team works behind your agency while you stay in control of the client relationship.",
   ],
   cta: "get in touch",
   illustration: "/assets/white-label-shopify/hero/white-label-shopify-development-agencies.svg",

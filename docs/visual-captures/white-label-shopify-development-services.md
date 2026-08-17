@@ -7,6 +7,16 @@ Local route: `/white-label-shopify-development-services`
 Checked: 2026-08-13  
 Browser: Google Chrome headless (desktop, tablet, and mobile emulation)
 
+## 2026-08-17 Hero Copy Restoration
+
+The project owner supplied a side-by-side live/local desktop capture and
+explicitly approved restoring the visible live hero content. The H1, CTA, review
+marks, illustration, and styling remain unchanged. The local alternate lead and
+two-paragraph introduction are replaced by the live lead, “Your Shopify
+Technology Partner. An Extension of Your Team.”, and its single consolidated
+agency-capacity paragraph. Removing the extra paragraph also restores the live
+vertical positions of the CTA, review marks, and hero illustration.
+
 ## 2026-08-14 Restored-Scroll Header Parity
 
 The supplied side-by-side screenshot was checked against the shared local
