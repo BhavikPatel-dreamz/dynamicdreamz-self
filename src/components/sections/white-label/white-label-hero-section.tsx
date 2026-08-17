@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/container";
 import { whiteLabelReviewProfiles } from "@/content/white-label-common";
 import { whiteLabelShopifyHero } from "@/content/white-label-shopify-development";
 import { siteConfig } from "@/data/site";
+import { cn } from "@/lib/class-names";
 import type { RichText, WhiteLabelHero, WhiteLabelReview } from "@/types/white-label-service";
 
 const reviewSizeClasses = [
@@ -16,6 +17,7 @@ const reviewSizeClasses = [
 type WhiteLabelHeroSectionProps = {
   hero?: WhiteLabelHero;
   reviews?: readonly WhiteLabelReview[];
+  variant?: "default" | "websiteDesign";
 };
 
 function renderRichText(value: RichText) {
@@ -37,15 +39,30 @@ function renderRichText(value: RichText) {
 export function WhiteLabelHeroSection({
   hero = whiteLabelShopifyHero,
   reviews = whiteLabelReviewProfiles,
+  variant = "default",
 }: WhiteLabelHeroSectionProps) {
+  const isWebsiteDesign = variant === "websiteDesign";
+
   return (
     <section className="overflow-hidden rounded-b-[50px] bg-cream pt-[120px] pb-0 max-[991px]:pt-[100px] max-[767px]:rounded-b-[30px] max-[767px]:pt-[70px] max-[767px]:pb-2.5">
       <Container className="max-[575px]:px-4">
         <div className="flex flex-wrap items-stretch justify-center">
-          <div className="w-[55%] pb-20 max-[1199px]:w-3/5 max-[1199px]:pb-10 max-[991px]:w-full max-[991px]:pb-[30px] max-[767px]:pb-2.5">
+          <div
+            className={cn(
+              "w-[55%] pb-20 max-[1199px]:w-3/5 max-[1199px]:pb-10 max-[991px]:w-full max-[991px]:pb-[30px] max-[767px]:pb-2.5",
+              isWebsiteDesign &&
+                "w-[56%] max-[1199px]:w-[56%] max-[991px]:w-full",
+            )}
+          >
             <div>
               <h1 className="mb-6 font-sans text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[1199px]:text-[44px] max-[1199px]:leading-[55px] max-[991px]:text-[40px] max-[991px]:leading-[50px]">
-                {hero.title}
+                {hero.titleLines
+                  ? hero.titleLines.map((line) => (
+                      <span className="block" key={line}>
+                        {line}
+                      </span>
+                    ))
+                  : hero.title}
                 {hero.accent ? (
                   <>
                     {" "}
@@ -54,7 +71,7 @@ export function WhiteLabelHeroSection({
                 ) : null}
               </h1>
               <p className="mb-5 text-base leading-[30px] font-medium text-muted max-[1199px]:mb-[18px] max-[1199px]:leading-[30.4px] max-[991px]:mb-[15px]">
-                <strong className="font-bold">{hero.lead}</strong>
+                {hero.leadStrong === false ? hero.lead : <strong className="font-bold">{hero.lead}</strong>}
               </p>
               {hero.paragraphs.map((paragraph, index) => (
                 <p
@@ -102,10 +119,25 @@ export function WhiteLabelHeroSection({
             </div>
           </div>
 
-          <div className="relative w-[45%] max-[1199px]:w-2/5 max-[991px]:w-full">
-            <div className="absolute top-0 right-[-40%] bottom-[-20%] left-2.5 flex h-auto w-[calc(50vw+40%)] max-[1199px]:right-[-20%] max-[1199px]:bottom-[-50%] max-[1199px]:w-[calc(50vw+20%)] max-[991px]:static max-[991px]:mt-5 max-[991px]:mb-[-5px] max-[991px]:w-full">
+          <div
+            className={cn(
+              "relative w-[45%] max-[1199px]:w-2/5 max-[991px]:w-full",
+              isWebsiteDesign &&
+                "flex w-[42%] items-end justify-end max-[991px]:mx-auto max-[991px]:w-full max-[991px]:max-w-[400px]",
+            )}
+          >
+            <div
+              className={cn(
+                "absolute top-0 right-[-40%] bottom-[-20%] left-2.5 flex h-auto w-[calc(50vw+40%)] max-[1199px]:right-[-20%] max-[1199px]:bottom-[-50%] max-[1199px]:w-[calc(50vw+20%)] max-[991px]:static max-[991px]:mt-5 max-[991px]:mb-[-5px] max-[991px]:w-full",
+                isWebsiteDesign &&
+                  "static h-auto w-full max-[991px]:mt-0 max-[991px]:mb-[-5px]",
+              )}
+            >
               <Image
-                className="h-full w-full object-contain"
+                className={cn(
+                  "h-full w-full object-contain",
+                  isWebsiteDesign && "h-auto w-full",
+                )}
                 src={hero.illustration}
                 alt={hero.illustrationAlt}
                 width={945}

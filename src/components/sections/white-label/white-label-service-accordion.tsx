@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 import { cn } from "@/lib/class-names";
@@ -9,17 +10,19 @@ import type { WhiteLabelService } from "@/types/white-label-service";
 type WhiteLabelServiceAccordionProps = {
   services: readonly WhiteLabelService[];
   idPrefix: string;
+  flushEnd?: boolean;
 };
 
 export function WhiteLabelServiceAccordion({
   idPrefix,
   services,
+  flushEnd = false,
 }: WhiteLabelServiceAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const columns = [services.slice(0, 3), services.slice(3)];
 
   return (
-    <div className="mb-[43px] flex gap-[60px] max-[1199px]:mb-[30px] max-[1199px]:gap-[50px] max-[991px]:mb-[25px] max-[991px]:flex-col max-[991px]:gap-0 max-[767px]:mb-5">
+    <div className={cn("mb-[43px] flex gap-[60px] max-[1199px]:mb-[30px] max-[1199px]:gap-[50px] max-[991px]:mb-[25px] max-[991px]:flex-col max-[991px]:gap-0 max-[767px]:mb-5", flushEnd && "mb-0 max-[1199px]:mb-0 max-[991px]:mb-0 max-[767px]:mb-0")}>
       {columns.map((column, columnIndex) => (
         <div className="flex flex-1 flex-col" key={`service-column-${columnIndex}`}>
           {column.map((service, itemIndex) => {
@@ -81,9 +84,18 @@ export function WhiteLabelServiceAccordion({
                   inert={!isOpen}
                 >
                   <div className="overflow-hidden">
-                    <p className="pb-8 pl-[70px] text-base leading-[30.4px] font-medium text-white/80 max-[1199px]:pb-5 max-[1199px]:pl-[63px] max-[1199px]:leading-[26px] max-[991px]:pb-[15px] max-[991px]:pl-[50px] max-[991px]:leading-6 max-[767px]:pl-10 max-[767px]:text-[15px] max-[767px]:leading-[22px]">
+                    <div className="pb-8 pl-[70px] text-base leading-[30.4px] font-medium text-white/80 max-[1199px]:pb-5 max-[1199px]:pl-[63px] max-[1199px]:leading-[26px] max-[991px]:pb-[15px] max-[991px]:pl-[50px] max-[991px]:leading-6 max-[767px]:pl-10 max-[767px]:text-[15px] max-[767px]:leading-[22px]">
                       {service.description}
-                    </p>
+                      {service.href ? (
+                        <Link
+                          className="mt-[15px] flex w-fit items-center gap-2.5 font-semibold text-white transition-colors hover:text-brand-red"
+                          href={service.href}
+                        >
+                          {service.linkLabel ?? "Read More"}
+                          <span aria-hidden="true">←</span>
+                        </Link>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
               </article>

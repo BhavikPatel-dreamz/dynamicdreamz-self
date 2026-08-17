@@ -226,6 +226,28 @@ services.
 | Case-study evidence | No visible WordPress white-label delivery example or approved outcome. | Add an anonymized or client-approved example covering scope, constraints, communication model, QA, confidentiality, and outcome. | Gives agency buyers evidence without exposing a confidential client or inventing a metric. | High | deferred pending evidence and client-success approval |
 | Contextual service links | WordPress, WooCommerce, themes, performance, and developer-capacity phrases are plain text. | Link each phrase to its canonical local route as that destination ships. | Improves buyer navigation and topic relationships without creating broken links. | Medium | migration pending |
 
+## White Label Website Design Services (`/white-label-website-design-services`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-17
+Primary SEO intent: white label website design and development partner for
+agencies, confidential outsourced delivery, responsive ecommerce design, and
+agency service expansion.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Advantages heading | `Advantages of White Label Web Design for Agenciess` | `Advantages of White Label Web Design for Agencies` | Corrects the visible spelling error without changing intent. | Low | deferred pending exact visible-copy approval |
+| Why-choose introduction | `entrusts agencies with expanding their services` and `high quality` | Explain directly that white-label website design lets agencies offer design and development under their own brand without building an internal team; hyphenate `high-quality`. | Replaces unclear wording and fixes grammar while preserving the commercial message. | Medium | deferred pending exact visible-copy approval |
+| AI-discovery introduction | Says the sites will be `readable, citable, and trusted` and that AI engines will recommend them. | State that structured data, crawlable content, internal linking, and clear trust information can help AI-powered systems understand and retrieve a website; do not imply guaranteed citation or recommendation. | Avoids unsupported generative-search outcomes. | High | deferred pending SEO/legal/content approval |
+| Agentic-commerce card | Says stores are prepared for AI agents that discover products and complete purchases autonomously. | Describe assessment of product data, structured data, platform support, integrations, and approved agentic-commerce capabilities. | Avoids unconditional readiness claims for evolving platform/protocol support. | High | deferred pending technical verification and approval |
+| SEO-friendly feature | Says optimization helps clients `rank higher`. | Describe technical SEO and crawlability checks included in the approved project scope without guaranteeing rankings. | Rankings cannot be guaranteed by design implementation alone. | High | deferred pending delivery/content approval |
+| Performance and security features | Guarantees fast loading and protection from hackers and other cyber threats. | Describe performance review, secure-development practices, updates, validation, and scope boundaries without absolute outcomes. | Replaces guarantees with auditable practices and avoids overstating security coverage. | High | deferred pending security/delivery approval |
+| Benefit and advantage outcomes | Says work will increase client satisfaction, reduce risk, increase income/profit margins, and exceed expectations. | Qualify these as potential business benefits and support them with approved examples before using outcome language. | Commercial outcomes vary and need evidence. | High | deferred pending sales/client-success evidence |
+| Smart-support pills | Repeats `Tidio` twice. | Confirm the intended second product or show one `Tidio` pill. | Removes a visible duplicate that may be a source-data error. | Low | deferred pending exact visible-content confirmation |
+| Case-study section | The section describes case studies but shows testimonial/video slides without project scope, method, or outcome evidence. | Rename it as testimonials, or add approved project summaries with scope, constraints, work completed, and verified results. | Aligns the section label with its evidence type and improves buyer usefulness. | High | deferred pending case-study evidence and exact visible-copy approval |
+| Proof values | `20+` years, `150+` Skilled Developers, `2500+` Client Reviews, and `1000+` WP Sites Delivered. | Use only leadership-approved values with exact definitions, provenance, review dates, and page-usage rules. | The values are not yet governed by one approved shared source. | High | blocked pending factual approval |
+| CTA and service destinations | `/request-quote`, `/schedule-your-consultation`, and `/bigcommerce-development` are not yet built. | Preserve their canonical path intent during migration and validate, implement, or redirect them before launch. | Maintains the live conversion and service flow under the active migration exception. | High | migration pending |
+
 ## Fashion & Apparel (`/fashion`)
 
 Status: visible recommendations deferred; live UI preserved during migration

@@ -1,10 +1,10 @@
 # Dynamic Dreamz AEO and GEO Strategy
 
-Status: technical work implemented for eight current routes; visible AEO/GEO
+Status: technical work implemented for current migrated routes; visible AEO/GEO
 recommendations deferred for live-site parity; evidence and policy approvals
 remain
 Last audited: 2026-08-13
-Scope: current Next.js migration and the eight implemented indexable routes
+Scope: current Next.js migration and the implemented indexable routes
 Owners: SEO, content, development, leadership, sales, HR, and client-success teams
 
 ## Purpose
@@ -29,6 +29,7 @@ It covers:
   - `/fashion`
   - `/white-label-shopify-development-services`
   - `/white-label-wordpress-development-services`
+  - `/white-label-website-design-services`
 
 This is the strategy and implementation record. Visible changes proposed and
 temporarily implemented on 2026-08-12 were rejected and reverted to live-site
@@ -1441,6 +1442,77 @@ Exact visible proposals are tracked in `docs/page-content-improvements.md`.
 - Deferred or blocked: proof governance, repeated/unsupported visible copy,
   an approved delivery case study, authorship, internal links to unbuilt routes,
   operating-hours confirmation, and quote-route completion.
+
+## White Label Website Design Services (`/white-label-website-design-services`)
+
+Status: implementation in progress; live-visible content preserved
+
+Last reviewed: 2026-08-17
+
+Owner: SEO, content, development, leadership, sales, and delivery operations
+
+Primary audience: digital, branding, marketing, ecommerce, and development
+agencies seeking confidential website-design and development capacity
+
+Decision stage: commercial evaluation and white-label partner selection
+
+### Page role
+
+Commercial service page for agencies evaluating a white-label website design
+partner. It explains the delivery model, benefits, design and development
+scope, AI-assisted capabilities, AI-search preparation, process, industries,
+client proof, and common operating questions. It is broader than the
+platform-specific Shopify and WordPress white-label routes.
+
+### Target prompts
+
+- What is white label website design, and how does it work for agencies?
+- How do I choose a white label web design partner?
+- Can a white label partner design responsive ecommerce sites under our brand?
+- What process, confidentiality controls, revisions, and handoff should an agency expect?
+- Can a white label web design team support AI-assisted tools and technical SEO?
+- Which industries and web platforms can Dynamic Dreamz support for agency clients?
+
+### Current strengths and available evidence
+
+- The H1 and introduction explain the agency scaling and behind-the-scenes delivery intent.
+- The page covers services, benefits, process, platforms, industries, revision expectations, confidentiality, AI-assisted tooling, AI-search preparation, and eight buyer FAQs.
+- Independent Clutch, Trustpilot, and Upwork profile links are visible in the hero.
+- The service accordion and FAQ provide extractable answer content when server-rendered.
+- A visible testimonial carousel supplies first-party client commentary and links to the source videos.
+- Page-specific Service, OfferCatalog, BreadcrumbList, and FAQPage nodes can be supported without adding claims beyond visible copy.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implementation in progress | Route and discovery | The canonical migrated route is not yet implemented locally | Ship the slashless route through shared metadata, robots, sitemap, canonical, and navigation helpers | Production build and rendered-output verification |
+| P0 | implementation in progress | Structured data | Live source includes an unrelated sitewide FAQ graph in addition to page content | Emit shared Organization/WebSite plus WebPage, Service, BreadcrumbList, OfferCatalog, and exactly one FAQPage sourced from the eight visible FAQs | Rendered JSON-LD verification |
+| P0 | blocked by live parity | Proof governance | `20+` years, `150+` developers, `2500+` reviews, and `1000+` WordPress sites are visible but not governed by one approved source | Approve definitions, evidence, review dates, and allowable page usage before changing UI or using the values in schema | Leadership and fact-owner approval |
+| P1 | deferred | AI discovery claims | The page states that AI engines will read, cite, trust, discover, and recommend client sites | Replace guarantees with evidence-backed technical and content practices that can improve machine understanding and retrieval | SEO, technical, legal, and content approval |
+| P1 | deferred | Outcome claims | Copy guarantees ranking, speed, security, client satisfaction, higher profit, and faster delivery without evidence or qualification | Use auditable process language and approved case evidence instead of unconditional outcomes | Delivery, security, sales, and client-success evidence |
+| P1 | deferred | Case-study evidence | The section is labelled case studies but presents testimonials without project scope, constraints, or outcomes | Add client-approved case studies or anonymized agency-delivery examples with method and evidence | Client-success approval and source evidence |
+| P1 | migration pending | Conversion routes | CTAs target planned `/request-quote` and `/schedule-your-consultation` routes | Preserve migration intent now and verify both conversion flows before launch | Route implementation |
+| P1 | migration pending | Service route | BigCommerce accordion copy links to planned `/bigcommerce-development` | Keep the descriptive link intent and implement or redirect the destination before launch | BigCommerce route migration |
+| P1 | suggested | Internal links | Industry and service mentions are mostly plain text | Add contextual links only as their canonical migrated routes become available and exact visible-link changes are approved | Route migration and visible-link approval |
+| P2 | deferred | Authorship and freshness | No visible design/delivery reviewer or review date is present | Add an approved subject-matter reviewer and real review date when service-page governance exists | Named expert and approval |
+
+### Structured-data, crawler, and freshness actions
+
+- Represent the route as a Service for agency partners and expose only the six visible service offers.
+- Emit exactly the eight visible FAQs; do not reproduce the unrelated live sitewide FAQ graph.
+- Do not add review aggregate, proof counters, performance promises, AI recommendation claims, or profit claims to schema.
+- Preserve the reliable live publish date of 2024-12-09 and live modified date of 2026-06-03 until a later substantive review is approved.
+- Add the slashless route and its local primary image to the sitemap, keep it indexable in robots, and prevent any runtime dependency on the WordPress site.
+
+### Verification and remaining gaps
+
+- Completed: live rendered/source review, metadata and heading inventory,
+  desktop/tablet/mobile screenshots, CSS/JS interaction review, section map,
+  CTA inventory, and initial AEO/GEO assessment.
+- Pending: local implementation, asset canonicalization, rendered schema checks,
+  URL-policy check, lint, production build, responsive visual comparison,
+  carousel/accordion/video verification, and migration-pending route coverage.
 
 ## Fashion & Apparel (`/fashion`)
 

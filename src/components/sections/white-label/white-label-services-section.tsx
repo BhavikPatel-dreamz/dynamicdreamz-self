@@ -7,33 +7,44 @@ import type { WhiteLabelService } from "@/types/white-label-service";
 
 type WhiteLabelServicesSectionProps = {
   title?: string;
+  description?: string;
   services?: readonly WhiteLabelService[];
   idPrefix?: string;
   ctaLabel?: string;
+  showCta?: boolean;
 };
 
 export function WhiteLabelServicesSection({
   title = "Comprehensive White Label Shopify Development Services",
+  description,
   services = whiteLabelShopifyServices,
   idPrefix = "white-label-shopify-service",
   ctaLabel = "Let me give you a hand to help you",
+  showCta = true,
 }: WhiteLabelServicesSectionProps) {
   return (
     <section className="bg-[#171e16] py-20 max-[991px]:py-[50px]">
       <Container className="max-[575px]:px-4">
-        <h2 className="mb-16 text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-white max-[1199px]:mb-[50px] max-[991px]:mb-10 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
+        <h2 className={description ? "mb-5 text-center font-sans text-[35px] leading-[48.475px] font-bold text-white max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]" : "mb-16 text-center font-sans text-[35px] leading-[48.475px] font-bold text-white max-[1199px]:mb-[50px] max-[991px]:mb-10 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px]"}>
           {title}
         </h2>
-        <WhiteLabelServiceAccordion idPrefix={idPrefix} services={services} />
-        <div className="text-center max-[991px]:pb-[10.4px]">
-          <ButtonLink
-            className="max-[991px]:min-h-0 max-[991px]:py-3 max-[991px]:text-sm max-[991px]:leading-[18px]"
-            href={siteConfig.quotePath}
-            variant="light"
-          >
-            {ctaLabel}
-          </ButtonLink>
-        </div>
+        {description ? (
+          <p className="mx-auto mb-16 max-w-[760px] text-center text-base leading-[30.4px] font-medium text-white/80 max-[1199px]:mb-[50px] max-[991px]:mb-10 max-[991px]:text-[15px] max-[991px]:leading-[26px] max-[767px]:mb-[30px]">
+            {description}
+          </p>
+        ) : null}
+        <WhiteLabelServiceAccordion flushEnd={!showCta} idPrefix={idPrefix} services={services} />
+        {showCta ? (
+          <div className="text-center max-[991px]:pb-[10.4px]">
+            <ButtonLink
+              className="max-[991px]:min-h-0 max-[991px]:py-3 max-[991px]:text-sm max-[991px]:leading-[18px]"
+              href={siteConfig.quotePath}
+              variant="light"
+            >
+              {ctaLabel}
+            </ButtonLink>
+          </div>
+        ) : null}
       </Container>
     </section>
   );
