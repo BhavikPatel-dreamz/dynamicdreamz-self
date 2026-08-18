@@ -14,6 +14,7 @@ import {
 } from "@/content/career";
 import { lifeFaqSection } from "@/content/life-dynamicdreamz";
 import { resourceArticles } from "@/content/resources";
+import { shopifyPlusAgencyFaqs, shopifyPlusAgencyServices } from "@/content/shopify-plus-agency";
 import { whiteLabelShopifyFaqs } from "@/content/white-label-shopify-development";
 import {
   whiteLabelWordPressFaqs,
@@ -95,6 +96,11 @@ const whiteLabelWebsiteDesignPageId = `${whiteLabelWebsiteDesignPageUrl}#webpage
 const whiteLabelWebsiteDesignServiceId = `${whiteLabelWebsiteDesignPageUrl}#service`;
 const whiteLabelWebsiteDesignFaqId = `${whiteLabelWebsiteDesignPageUrl}#faq`;
 const whiteLabelWebsiteDesignBreadcrumbId = `${whiteLabelWebsiteDesignPageUrl}#breadcrumb`;
+const shopifyPlusPageUrl = absoluteUrl(pageSeo.shopifyPlus.path);
+const shopifyPlusPageId = `${shopifyPlusPageUrl}#webpage`;
+const shopifyPlusServiceId = `${shopifyPlusPageUrl}#service`;
+const shopifyPlusFaqId = `${shopifyPlusPageUrl}#faq`;
+const shopifyPlusBreadcrumbId = `${shopifyPlusPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1112,6 +1118,24 @@ export function createWhiteLabelWebsiteDesignPageSchema() {
     audienceType: "Digital, web design, ecommerce, branding, and marketing agencies",
     faqs: whiteLabelWebsiteDesignFaqs,
     offers: whiteLabelWebsiteDesignServices,
+  });
+}
+
+export function createShopifyPlusAgencyPageSchema() {
+  return createWhiteLabelServicePageSchema({
+    page: pageSeo.shopifyPlus,
+    pageUrl: shopifyPlusPageUrl,
+    pageId: shopifyPlusPageId,
+    serviceId: shopifyPlusServiceId,
+    faqId: shopifyPlusFaqId,
+    breadcrumbId: shopifyPlusBreadcrumbId,
+    serviceName: "Shopify Plus Agency Services",
+    serviceType: "Shopify Plus agency and Shopify development services",
+    breadcrumbName: "Shopify Plus Agency",
+    audienceType:
+      "High-growth eCommerce brands, B2B merchants, and businesses scaling on Shopify Plus",
+    faqs: shopifyPlusAgencyFaqs,
+    offers: shopifyPlusAgencyServices.items,
   });
 }
 
