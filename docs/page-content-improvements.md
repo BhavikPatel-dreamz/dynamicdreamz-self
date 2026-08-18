@@ -359,3 +359,19 @@ agency-partner, recruitment, and office-location needs.
 | Ahmedabad office image alt | Live source uses `Dynamic Dreamz Surat Office`. | `Dynamic Dreamz Ahmedabad office and surrounding city view`. | Corrects the office mismatch while keeping the visual UI unchanged. | High | implemented as a nonvisual accessibility correction |
 | Social icon alt text | LinkedIn and Instagram images both use `Facebook Icon`. | Use `Dynamic Dreamz on LinkedIn` and `Dynamic Dreamz on Instagram` as accessible names. | Correctly identifies each external profile without changing visible copy. | High | implemented as a nonvisual accessibility correction |
 | Office/contact policy | Visible office addresses, recruitment email addresses, and phone numbers have no review date or policy owner on the page. | Confirm and govern these details through sales, operations, and HR before launch; update visible content only if the approved facts differ. | Prevents stale contact details from becoming a conversion and trust failure. | High | blocked pending owner confirmation |
+
+## Shopify Plus Agency (`/shopify-plus-agency`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: Shopify Plus agency, enterprise Shopify development services, Shopify Plus migration, theme customization, checkout extensibility, B2B wholesale, and maintenance.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Shopify Plus Agency \| Shopify development services` | `Shopify Plus Agency \| Shopify Development Services \| Dynamic Dreamz` | Preserves core commercial intent within 60-character budget. | High | implemented in metadata |
+| Why Choose section | `Selecting a Shopify Plus agency means collaborating with a team that is knowledgeable about advanced eCommerce requirements and high-growth businesses. A specialized agency offers deep platform knowledge...` | Maintain live wording; optionally add verified proof points (e.g. 4500+ stores built, 19+ years experience) when approved. | Preserves live UI copy verbatim while logging future proof enhancements. | Medium | deferred pending exact visible-copy approval |
+| How to Choose section | `Selecting the correct Shopify Plus agency starts with understanding your business goals. Find out a development agency that has much experience with Shopify Plus, especially with brands that are similar to yours...` | `Selecting the right Shopify Plus agency starts with understanding your business goals. Look for a development agency with deep experience in Shopify Plus...` | Corrects slight grammatical phrasing (`Find out a development agency that has much experience`) without altering core meaning. | Low | deferred pending exact visible-copy approval |
+| Services CTA | `Let me give you a hand to help you` | `Request a Shopify Plus Consultation` or `Get a Quote` | Replaces colloquial button text with clear commercial intent action. | Medium | deferred pending exact visible-copy approval |
+| Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
+| VideoObject structured data | Live page lacked structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes in JSON-LD with authentic upload dates and YouTube URLs matching visible testimonials. | Improves video indexing and search eligibility without changing visible UI. | High | implemented in schema |
+

@@ -175,3 +175,12 @@ quotes), 5 FAQs (first open; answer links styled `#ad5151` underline).
   session (captured earlier; verify visually).
 - The industries/pricing/happy carousels render adjacent-card peeks via react-slick
   centerPadding; owl stagePadding parity is documented above.
+
+## Audit and Hardening (2026-08-18 session)
+
+- Replaced hardcoded text box section copy with live typed copy constants (`shopifyPlusAgencyWhyChoose` and `shopifyPlusAgencyHowToChoose`), restoring exact live parity for the "Why Choose" and "How to Choose" sections.
+- Emitted 11 `VideoObject` structured data items in `createShopifyPlusAgencyPageSchema` via `videoObjectSchema()` with authentic YouTube upload dates.
+- Cleaned up stray token in `white-label-shopify-ai-sections.tsx`.
+- Updated `docs/aeo-geo-strategy.md` and `docs/page-content-improvements.md` with comprehensive `/shopify-plus-agency` route entries.
+- Passed `npm run check:urls`, `npm run lint`, and `npm run build`.
+
