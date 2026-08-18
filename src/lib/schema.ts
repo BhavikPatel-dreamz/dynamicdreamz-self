@@ -31,6 +31,7 @@ import {
   whiteLabelWebsiteDesignServices,
 } from "@/content/white-label-website-design";
 import { caseStudiesContent } from "@/content/case-studies";
+import { shopifyAppsContent } from "@/content/shopify-apps";
 import { shopifyExpertsContent } from "@/content/shopify-experts";
 import {
   wordpressDevelopmentFaqs,
@@ -143,6 +144,10 @@ const caseStudiesPageUrl = absoluteUrl(pageSeo.caseStudies.path);
 const caseStudiesPageId = `${caseStudiesPageUrl}#webpage`;
 const caseStudiesBreadcrumbId = `${caseStudiesPageUrl}#breadcrumb`;
 const caseStudiesItemListId = `${caseStudiesPageUrl}#case-studies`;
+const shopifyAppsPageUrl = absoluteUrl(pageSeo.shopifyApps.path);
+const shopifyAppsPageId = `${shopifyAppsPageUrl}#webpage`;
+const shopifyAppsBreadcrumbId = `${shopifyAppsPageUrl}#breadcrumb`;
+const shopifyAppsItemListId = `${shopifyAppsPageUrl}#apps`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1480,6 +1485,89 @@ export function createCaseStudiesPageSchema() {
             position: 2,
             name: "Case Studies",
             item: caseStudiesPageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+export function createShopifyAppsPageSchema() {
+  const appItems = shopifyAppsContent.apps.map((app, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "SoftwareApplication",
+      name: app.title,
+      url: app.href,
+      description: app.description,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Shopify",
+      image: absoluteUrl(app.image),
+      offers: {
+        "@type": "Offer",
+        price: app.additionalInfo.includes("$20") ? "20" : "0",
+        priceCurrency: "USD",
+        description: app.additionalInfo,
+      },
+    },
+  }));
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": shopifyAppsPageId,
+        url: shopifyAppsPageUrl,
+        name: pageSeo.shopifyApps.title,
+        description: pageSeo.shopifyApps.description,
+        datePublished: pageSeo.shopifyApps.publishedTime,
+        dateModified: pageSeo.shopifyApps.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": shopifyAppsBreadcrumbId },
+        mainEntity: {
+          "@type": "ItemList",
+          "@id": shopifyAppsItemListId,
+          name: "Shopify Apps",
+          itemListOrder: "https://schema.org/ItemListOrderAscending",
+          numberOfItems: shopifyAppsContent.apps.length,
+          itemListElement: appItems,
+        },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.shopifyApps.image.path),
+          width: pageSeo.shopifyApps.image.width,
+          height: pageSeo.shopifyApps.image.height,
+          caption: pageSeo.shopifyApps.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": shopifyAppsBreadcrumbId,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: homeUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Shopify App",
+            item: shopifyAppsPageUrl,
           },
         ],
       },

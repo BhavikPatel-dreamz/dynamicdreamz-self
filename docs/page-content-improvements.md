@@ -478,3 +478,16 @@ Primary SEO intent: WordPress development company India, custom WordPress develo
 | Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
 | VideoObject structured data | Live page lacked structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes in JSON-LD with authentic upload dates and YouTube URLs matching visible testimonials. | Improves video indexing and search eligibility without changing visible UI. | High | implemented in schema |
 | Service card alt text | Several icons on live site had generic or empty alt text. | Descriptive, context-specific alt text (e.g. `WordPress Icon`, `WooCommerce Icon`, `Speed Up Icon`) for all service icons. | Improves accessibility and image search indexation without altering visible layout. | High | implemented as a nonvisual accessibility correction |
+
+## Shopify Apps (`/shopify-apps`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: Shopify apps archive, public Shopify app development, B2B wholesale app, hide payment terms, request a quote Shopify app, checkout upsell app, shipping rate manager.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Shopify App Archive - Shopify Plus Agency & Shopify Platinum Partner \| Dynamic Dreamz` (92 chars) | `Shopify App Archive \| Dynamic Dreamz` (38 chars) | Fits SEO 60-character budget while keeping core archive title. | High | implemented in metadata |
+| Easy Shipping Rate Manager Description | `Beat the competition by offering dynamic  shipping rates.` (double space in live copy) | `Beat the competition by offering dynamic shipping rates.` | Removes duplicate whitespace while maintaining exact live wording. | Low | deferred pending exact visible-copy approval |
+| Hero Subtitle | No subtitle present on live page | `Explore custom and public Shopify apps built by Dynamic Dreamz to scale conversions, automate checkout, and enhance store performance.` | Adds helpful descriptive copy for users and answer engines if content expansion is desired. | Medium | deferred pending content approval |
+| Structured Data | Missing CollectionPage with ItemList of SoftwareApplication entities on legacy site | Emitted CollectionPage, ItemList with 5 SoftwareApplication items, BreadcrumbList, Organization, and WebSite | Improves rich search visibility for software applications without altering visible layout. | High | implemented in schema |
