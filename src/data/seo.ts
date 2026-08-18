@@ -465,6 +465,35 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  requestQuote: {
+    path: "/request-quote",
+    title: "Request Quote Today! | Dynamic Dreamz",
+    description:
+      "Looking for custom web solutions? Request a quote from Dynamic Dreamz! offer custom websites development. Contact us now! or Call Now!",
+    socialDescription:
+      "Looking for custom web solutions? Request a quote from Dynamic Dreamz! offer custom websites development. Contact us now! or Call Now!",
+    keywords: [
+      "request quote",
+      "hire Shopify developer",
+      "Shopify development quote",
+      "web development estimate",
+      "ecommerce development quote",
+      "Dynamic Dreamz quote",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-06-21T09:23:48+00:00",
+    modifiedTime: "2024-09-06T10:07:53+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Request a Quote - Dynamic Dreamz, a Web Design Company",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   whiteLabelShopify: {
     path: "/white-label-shopify-development-services",
     title: "White Label Shopify Development Partner for Digital Agencies",

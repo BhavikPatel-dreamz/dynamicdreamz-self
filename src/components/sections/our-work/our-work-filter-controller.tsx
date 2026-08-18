@@ -47,9 +47,9 @@ export function OurWorkFilterController({ filters, counts }: OurWorkFilterContro
 
   return (
     <div>
-      <div className="max-w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <div className="mx-auto w-max min-w-full rounded-[50px] border border-[#efefef] px-[30px] py-4 max-[767px]:rounded-none max-[767px]:border-0 max-[767px]:p-0">
-          <ul className="relative flex w-max min-w-full" ref={listRef} aria-label="Filter projects by platform">
+      <div className="lg:w-fit w-full mx-auto">
+        <div className="our-work-category mx-auto lg:w-fit w-full min-w-full rounded-[50px] border border-[#efefef] px-[30px] py-4 max-[767px]:rounded-none max-[767px]:border-0 max-[767px]:p-0">
+          <ul className="relative flex w-full overflow-x-auto max-[991px]:whitespace-nowrap" id="category_filter" ref={listRef} aria-label="Filter projects by platform">
             {filters.map((filter) => (
               <li className="shrink-0" key={filter.id}>
                 <button

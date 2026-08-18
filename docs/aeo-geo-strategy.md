@@ -30,6 +30,8 @@ It covers:
   - `/white-label-shopify-development-services`
   - `/white-label-wordpress-development-services`
   - `/white-label-website-design-services`
+  - `/shopify-plus-agency`
+  - `/request-quote`
 
 This is the strategy and implementation record. Visible changes proposed and
 temporarily implemented on 2026-08-12 were rejected and reverted to live-site
@@ -2223,30 +2225,139 @@ are needed for a quote without promising an unverified delivery time or rate.
 - Deferred or blocked: governed proof definitions, approved rates, named
   authorship, case-study evidence, and destination routes still in migration.
 
-## Hire Shopify Developers (`/hire-shopify-developers`)
+## Shopify Plus Agency (`/shopify-plus-agency`)
 
-Status: implemented
+Status: implemented and verified; live-visible content preserved
+
 Last reviewed: 2026-08-18
-Primary audience: merchants, ecommerce teams, agencies, and founders evaluating dedicated Shopify development capacity.
-Decision stage: commercial investigation
+
+Owner: SEO, content, development, leadership, sales, and delivery operations
+
+Primary audience: high-growth ecommerce brands, enterprise merchants, and businesses seeking specialized Shopify Plus development, migration, theme customization, checkout extensibility, and B2B solutions
+
+Decision stage: commercial evaluation, capability verification, and agency partner selection
 
 ### Page role
 
-This page targets the dedicated Shopify developer hiring intent and complements the broader Shopify Plus agency route. It explains the hiring process, delivery services, advantages, industries, portfolio evidence, testimonials, and common hiring questions.
+Dedicated commercial service and capability page for Shopify Plus. Showcases Shopify Plus store setup, consulting, migration, theme customization, custom theme development, white label, and maintenance services, accompanied by pricing benchmarks, case studies, industry coverage, portfolio proof, 11 client video testimonials, review ratings from Clutch, Upwork, and GoodFirms, and buyer FAQs.
 
 ### Target prompts
 
-- What do Shopify developers do?
-- How much does hiring a Shopify developer cost?
-- Is it worth hiring a Shopify developer?
-- What services do Shopify developers offer?
-- How can I hire a Shopify developer from Dynamic Dreamz?
+- Who are the top Shopify Plus agencies for enterprise ecommerce development?
+- How much does Shopify Plus store setup, customization, and migration cost?
+- Can Dynamic Dreamz migrate our ecommerce store from Magento, WooCommerce, or BigCommerce to Shopify Plus?
+- Does Dynamic Dreamz provide Shopify Plus B2B functionality and checkout extensibility?
+- What case studies, portfolio projects, and client reviews exist for Dynamic Dreamz on Shopify Plus?
+- What is the difference between hiring a standard Shopify developer versus a specialized Shopify Plus agency?
 
 ### Current strengths and available evidence
 
-- Server-rendered H1, hiring process, service scope, advantages, industries, six portfolio examples, testimonials, and five FAQ answers.
-- Existing local Shopify Plus testimonial media, industry imagery, platform mark, and canonical portfolio imagery are reused.
-- Live source and responsive screenshots were inspected; the captured hiring CSS/JS records breakpoints and interaction behavior.
+- Server-rendered H1, introduction, and why-choose sections clearly establish enterprise-level Shopify Plus capabilities and positioning.
+- 7 distinct Shopify Plus services (Store Setup, Consulting, Migration, Theme Customization, Custom Theme Development, White Label, and Maintenance) with structured descriptions and CTA routing.
+- Transparent 5-tier pricing benchmarks covering new builds ($5000), customizations ($1500–$2000), standard-to-Plus migrations ($3000), replatforming ($5000–$7000), and custom estimates.
+- 4 named case studies (Trendia, Nekter Juice Bar, Calmenta, Holy Plantz) linking to dedicated case-study routes.
+- 5 industry sectors (Beauty & Cosmetics, Health & Nutrition, Pet Industry, Fashion & Apparel, Food & Beverages) with cross-links.
+- 6 live portfolio cards (Tropic Feel, Sculpt Neon, Headsets, Perfect Locks, Nekter Juice Bar, The Somewhere Co.) linking to live storefronts and our-work.
+- 11 verified video testimonials (Alec Torelli, William Petz, William ST Baker, Kerri Imrie, Brandon, Shari Leidich, Rebekah Wymer, Thommas Linnrose, Zoe Wang, Clinton De Vere, Fernando Arias) with modal players and YouTube IDs.
+- 3 independent review badges (Clutch: 132 reviews, 5.0; Upwork: 2000+ reviews, 5.0; GoodFirms: 72 reviews, 5.0) linking to external profile URLs.
+- 5 comprehensive buyer FAQs covering definition, advantages, costs, migration, and optimization.
+- Complete structured data graph emitting Organization, WebSite, WebPage, Service with OfferCatalog, BreadcrumbList, FAQPage (5 visible items), and 11 VideoObject nodes with authentic publish dates.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
+| P0 | implemented | Structured data | Live source emits incomplete graph without VideoObjects for the 11 client videos | Emit Organization, WebSite, WebPage, Service with OfferCatalog, BreadcrumbList, FAQPage (5 items), and 11 VideoObject nodes with verified upload dates | Rendered JSON-LD and build verification complete 2026-08-18 |
+| P0 | implemented | Content fidelity | Visible text box sections must strictly preserve live wording ("Why Choose Shopify Plus Agency" and "How to Choose...") | Bind sections to typed local content matching live copy verbatim | Code review and live comparison complete |
+| P0 | implemented | Slashless URL policy | Links and canonicals must comply with no-trailing-slash policy | Enforce slashless canonical, Open Graph, schema, and internal navigation | `npm run check:urls` passed |
+| P1 | migration pending | Conversion routes | CTAs target planned `/request-quote` and case studies | Preserve migration intent and validate quote and case-study routes before launch | Route implementation |
+| P1 | deferred | Review schema | Clutch, Upwork, and GoodFirms ratings are visible in hero animation | Maintain review links with `nofollow noopener`; defer aggregateRating until centralized review governance is established | Leadership / reviews governance |
+| P1 | deferred | Copy improvements | Minor grammatical enhancements in service descriptions and why-choose sections | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+| P2 | suggested | Authorship / review | No visible practitioner reviewer or review date is present | Add an approved technical lead/reviewer and review date when service-page authorship governance is finalized | Delivery lead approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered
+introduction and why-choose copy establish the agency's Shopify Plus
+capabilities. Future visible copy improvements are tracked in
+`docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz to the shared Organization entity and model this route as
+  a Shopify Plus agency and development Service.
+- Keep the 11 video testimonials, 4 case studies, 5 industries, 6 portfolio
+  projects, and 3 review platform badges strictly aligned with visible content.
+- Emit authentic YouTube upload dates for all 11 testimonial VideoObjects.
+- Do not invent unapproved ratings, guarantees, or partner tiers.
+
+### Internal-link and conversion actions
+
+- Maintain primary CTAs linking to `/request-quote` using slashless paths.
+- Route portfolio CTAs to `/our-work` and case-study cards to their respective
+  `/case-study/*` paths.
+- Preserve external review and portfolio links with `nofollow noopener noreferrer`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Organization, WebSite, WebPage, Service with OfferCatalog (7 items),
+  BreadcrumbList, FAQPage (5 visible FAQs), and 11 VideoObject nodes.
+- Use live publish date `2024-05-02T09:33:27+00:00` and explicit migration
+  review date for `dateModified`.
+- Ensure canonical route and primary image are listed in the sitemap and indexable.
+
+### Measurement plan
+
+- SEO owns monthly tracking for the six target Shopify Plus prompts.
+- Analytics tracks organic/AI search landing sessions, quote CTA conversions, and
+  case-study click-through rates.
+- Sales categorizes whether leads are Shopify Plus migrations, new store builds, or
+  custom B2B development.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD,
+  and internal links use `/shopify-plus-agency`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source,
+  metadata limits, JSON-LD graph verification (including 11 VideoObjects), local
+  assets audit (39 local assets verified), ReviewAnimation responsiveness,
+  accessible dialogs, lint, and production build.
+- Remaining: quote and case-study destination completion remain migration pending.
+
+## Request a Quote (`/request-quote`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-18
+
+Owner: SEO, content, development, leadership, sales, and delivery operations
+
+Primary audience: high-intent commercial prospects, ecommerce brands, and digital agency partners seeking custom development estimates and consultations
+
+Decision stage: inbound lead capture, project discovery, proposal estimation, and partner onboarding
+
+### Page role
+
+Primary commercial inbound conversion and project estimation route. Connects potential clients directly to Dynamic Dreamz representatives through a structured project inquiry form, supported by brand credibility proof (5000+ projects, 150+ experts, 1100+ happy clients), 4 verified partner/review badges (Shopify Platinum Partners, Clutch, Upwork Top Rated, Trustpilot), and a 7-client testimonial slider.
+
+### Target prompts
+
+- How do I request a quote for Shopify or Shopify Plus development from Dynamic Dreamz?
+- What details are needed to get a project estimate from Dynamic Dreamz?
+- How does Dynamic Dreamz handle project scope, budget estimation, and discovery calls?
+- What are client reviews and verified badges for Dynamic Dreamz?
+- Who is the best Shopify Platinum Partner for custom ecommerce development?
+
+### Current strengths and available evidence
+
+- High-visibility conversion route with minimal friction: clean 7-input inquiry form with budget selectors and project brief.
+- Server-rendered proof points: 5000+ Projects, 150+ Experts, 1100+ Happy Clients.
+- 4 independent review and partner badges linking to external verification profiles (Shopify Partner Directory, Clutch, Upwork, Trustpilot).
+- 7 authentic client testimonials with avatars and quotes (Alec Torelli, William Petz, William ST Baker, Kerri Imrie, Brandon, Shari Leidich, Rebekah Wymer).
+- Clean `header-two` layout with direct back-navigation and home branding.
+- Structured data graph emitting Organization, WebSite, ContactPage, and BreadcrumbList.
+- Production-ready Server Action with honeypot spam protection, field length limits, attribution tracking, and webhook dispatch.
 
 ### Recommended improvements
 

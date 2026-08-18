@@ -389,3 +389,32 @@ Last reviewed: 2026-08-18
 | FAQ question | `What do Shopify developers do?` | `What does a Shopify developer do?` | Corrects subject-verb agreement for clearer search extraction. | Low | deferred pending exact visible-copy approval |
 | Portfolio image alts | Live alts use generic labels such as `Nekter Juice Bar Image`. | Use descriptive brand-and-subject alt text for each local project preview. | Makes content media meaningful without changing visible UI. | High | implemented as nonvisual accessibility correction |
 | Inquiry CTA destination | Live `inquire now` points to `/career/`. | Preserve the label and route to `/request-quote`. | Fixes a conversion-path error without changing visible copy. | High | implemented as nonvisual link-integrity correction |
+
+## Shopify Plus Agency (`/shopify-plus-agency`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: Shopify Plus agency, enterprise Shopify development services, Shopify Plus migration, theme customization, checkout extensibility, B2B wholesale, and maintenance.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Shopify Plus Agency \| Shopify development services` | `Shopify Plus Agency \| Shopify Development Services \| Dynamic Dreamz` | Preserves core commercial intent within 60-character budget. | High | implemented in metadata |
+| Why Choose section | `Selecting a Shopify Plus agency means collaborating with a team that is knowledgeable about advanced eCommerce requirements and high-growth businesses. A specialized agency offers deep platform knowledge...` | Maintain live wording; optionally add verified proof points (e.g. 4500+ stores built, 19+ years experience) when approved. | Preserves live UI copy verbatim while logging future proof enhancements. | Medium | deferred pending exact visible-copy approval |
+| How to Choose section | `Selecting the correct Shopify Plus agency starts with understanding your business goals. Find out a development agency that has much experience with Shopify Plus, especially with brands that are similar to yours...` | `Selecting the right Shopify Plus agency starts with understanding your business goals. Look for a development agency with deep experience in Shopify Plus...` | Corrects slight grammatical phrasing (`Find out a development agency that has much experience`) without altering core meaning. | Low | deferred pending exact visible-copy approval |
+| Services CTA | `Let me give you a hand to help you` | `Request a Shopify Plus Consultation` or `Get a Quote` | Replaces colloquial button text with clear commercial intent action. | Medium | deferred pending exact visible-copy approval |
+| Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
+| VideoObject structured data | Live page lacked structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes in JSON-LD with authentic upload dates and YouTube URLs matching visible testimonials. | Improves video indexing and search eligibility without changing visible UI. | High | implemented in schema |
+
+## Request a Quote (`/request-quote`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: request a quote, hire Shopify developers, web development estimate, custom ecommerce consultation, project scope estimation, and discovery call booking.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Subtitle | `Please fill in the form and our representative will get back to you.` | `Please fill in the form and our team will get back to you within 24 business hours.` | Clarifies expected response turnaround time without altering core workflow. | Medium | deferred pending sales/operations policy approval |
+| Testimonial name / agency name | Rebekah Wymer quote says `I’ve worked with Dynamic Dreams on several web development projects` | `I’ve worked with Dynamic Dreamz on several web development projects` | Corrects slight brand name misspelling (`Dreams` -> `Dreamz`) in client quote text. | Low | deferred pending exact visible-copy approval |
+| Testimonial punctuation | Brandon quote ends with trailing comma: `with unmatched responsiveness, professionalism,` | `with unmatched responsiveness and professionalism.` | Fixes unfinished trailing comma in quote text. | Low | deferred pending exact visible-copy approval |
+| Review badge alt text | Live Clutch badge uses `clith Revire for the Dynamic dreamz` in source | `Clutch Dynamic Dreamz` | Improves accessibility name quality and fixes typos without altering visible UI. | High | implemented as a nonvisual accessibility correction |
+| Quote Form submission | Live site uses Contact Form 7 with Cloudflare Turnstile | Next.js Server Action with honeypot, field validation, UTM attribution, and status feedback | Enhances security, performance, and reliability while maintaining exact visual form layout. | High | implemented in server actions |
