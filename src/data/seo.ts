@@ -707,6 +707,33 @@ export const pageSeo = {
       priority: 0.7,
     },
   },
+  shopifyThemeCustomization: {
+    path: "/shopify-theme-customization",
+    title: "Shopify Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Looking for Shopify Theme Customization Services, choose Dynamic Dreamz, The #1 Shopify Development Company that provides expert solutions for your brand.",
+    keywords: [
+      "Shopify theme customization",
+      "custom Shopify themes",
+      "Shopify theme development",
+      "Liquid programming",
+      "Shopify store customization",
+      "Shopify custom design",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-07-01T00:00:00+00:00",
+    modifiedTime: "2026-08-18T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

@@ -20,12 +20,14 @@ export type HiringHeroSectionProps = {
   content: HiringHeroContent;
   ctaHref?: string;
   className?: string;
+  hideReview?: boolean;
 };
 
 export function HiringHeroSection({
   content,
   ctaHref = "/request-quote",
   className = "inner-hero-sec relative overflow-hidden bg-white pt-[215px] pb-20 max-[991px]:pt-[105px] max-[767px]:pb-10",
+  hideReview = false,
 }: HiringHeroSectionProps) {
   return (
     <section className={className}>
@@ -76,9 +78,11 @@ export function HiringHeroSection({
           ))}
         </div>
 
-        <div className="review-wrap mx-auto mt-[55px] w-[532px] max-w-full max-[767px]:mt-[35px] max-[767px]:w-[275px]">
-          <ReviewAnimation />
-        </div>
+        {!hideReview && (
+          <div className="review-wrap mx-auto mt-[55px] w-[532px] max-w-full max-[767px]:mt-[35px] max-[767px]:w-[275px]">
+            <ReviewAnimation />
+          </div>
+        )}
       </Container>
     </section>
   );

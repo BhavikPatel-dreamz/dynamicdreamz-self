@@ -84,26 +84,46 @@ export function ShopifyReasonsSection({
 
 export function ShopifyAdvantagesSection({
   content = defaultAdvantagesContent,
+  columns = 3,
+  className = "py-20 max-[767px]:py-[60px]",
+  id = "shopify-developer-advantages",
 }: {
   content?: ProofSectionContent;
+  columns?: 2 | 3;
+  className?: string;
+  id?: string;
 }) {
+  const isTwoCol = columns === 2;
+
   return (
-    <section className="py-20 max-[767px]:py-[60px]" id="shopify-developer-advantages">
+    <section className={className} id={id}>
       <Container>
-        <div className="text-center">
+        <div className="mx-auto max-w-[850px] text-center">
           <h2 className={headingClassName}>{content.heading}</h2>
           <p className="mt-2.5 text-base leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
             {content.description}
           </p>
         </div>
 
-        <div className="mt-[60px] grid grid-cols-3 max-[991px]:mt-10 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
+        <div
+          className={`mt-[60px] grid max-[767px]:grid-cols-1 ${
+            isTwoCol
+              ? "grid-cols-2 max-[991px]:grid-cols-2"
+              : "grid-cols-3 max-[991px]:grid-cols-2"
+          } max-[991px]:mt-10`}
+        >
           {content.items.map((item, index) => (
             <article
               className={`flex min-h-[250px] flex-col items-center border-[#efefef] px-8 py-[35px] text-center max-[1199px]:px-5 max-[767px]:min-h-0 max-[767px]:py-5 ${
-                index % 3 !== 2 ? "border-r max-[991px]:border-r-0" : ""
-              } ${index < 3 ? "border-b" : ""} ${index % 2 === 0 ? "max-[991px]:border-r" : ""} ${
-                index < 4 ? "max-[991px]:border-b" : ""
+                isTwoCol
+                  ? `${index % 2 === 0 ? "border-r max-[767px]:border-r-0" : ""} ${
+                      index < content.items.length - 2 ? "border-b" : ""
+                    }`
+                  : `${index % 3 !== 2 ? "border-r max-[991px]:border-r-0" : ""} ${
+                      index < 3 ? "border-b" : ""
+                    } ${index % 2 === 0 ? "max-[991px]:border-r" : ""} ${
+                      index < 4 ? "max-[991px]:border-b" : ""
+                    }`
               } ${
                 index < content.items.length - 1
                   ? "max-[767px]:border-r-0 max-[767px]:border-b"

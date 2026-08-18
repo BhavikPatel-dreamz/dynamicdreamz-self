@@ -2773,6 +2773,78 @@ Deferred under the live-UI preservation gate. The current server-rendered catalo
 - URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-apps`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits, JSON-LD graph verification, desktop/tablet/mobile screenshots captured (1440x900, 768x1024, 390x844), local assets audit, responsive layouts, lint, and production build.
 
+## Shopify Theme Customization (`/shopify-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-18
+
+Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
+
+Primary audience: Direct-to-consumer and enterprise Shopify merchants looking to customize existing Shopify themes, migrate to OS 2.0 themes, build custom Liquid sections, optimize mobile store UX, and improve conversion rates
+
+Decision stage: partner selection, theme customization scope definition, custom feature evaluation, developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Shopify theme customization capabilities. Features 6 core customization services, 4 business reasons for theme customization, 11 store benefits, a 6-step customization process, 6 technology/framework proficiencies, 31 customized Shopify themes, 4 reasons to choose Dynamic Dreamz, 6 portfolio project cards, 11 video client testimonials, 11 accordion FAQs, and quote request CTA banners.
+
+### Target prompts
+
+- Best agency for Shopify theme customization services?
+- How to customize Dawn, Prestige, Impulse, or Warehouse Shopify themes?
+- Dynamic Dreamz Shopify theme customization reviews and portfolio?
+- How much does Shopify theme customization cost and how long does it take?
+- Can Dynamic Dreamz add custom Liquid features and third-party apps to my Shopify store?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Shopify Theme Customization Services` and clear proof counters (5000+ completed projects, 150+ in-house experts, 1100+ happy clients, 1B+ revenue generated, 4500+ Shopify stores built).
+- 31 showcase cards for widely used Shopify themes (Prestige, Impulse, Expanse, Sense, Be Yours, Fabric, Savor, Vessel, Dwell, Tinker, Pitch, Atelier, Heritage, Ritual, Dawn, Studio, Origin, Publisher, Trade, Spotlight, Refresh, Woodstock, Stiletto, Colorblock, Pipeline, Vision, Craft, Broadcast, Warehouse, Startup, Impact).
+- 11 real client video testimonials with YouTube modal playback.
+- 11 comprehensive FAQ accordion items directly answering merchant questions on timeline, cost, support, and process.
+- Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (11 Question/Answer pairs), VideoObject (11 client video reviews), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, with canonical portfolio screens and review badges reused.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Missing App Router implementation for theme customization | Ship slashless `/shopify-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog, FAQPage (11 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save 31 theme screenshots, process icons, tech icons, and service graphics under `public/assets/shopify-theme-customization/` | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Grammar improvements and enhanced copywriting for why-need and benefits | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+- Attribute client video testimonials directly to their authentic founders and brand names.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/shopify-theme-customization` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 6 Offer items, 11 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-18T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.9 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Shopify theme customization", "Prestige theme customization", "Dawn theme customization", etc.
+- Analytics tracks form submissions on `/request-quote` originating from `/shopify-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 151 chars), JSON-LD graph verification, desktop/tablet/mobile screenshots captured (1440x900, 768x1024, 390x844), local assets audit, responsive layouts, lint, and production build.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new

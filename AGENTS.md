@@ -92,15 +92,11 @@ Core proof points from the live site:
   component, animation, or one-off layout styles to `src/app/globals.css`.
   Keep `globals.css` minimal for Tailwind setup and unavoidable app-wide base
   rules only.
-- Zero Redundant Components: Before creating any component, search `src/components/**`,
-  route-local components, and current imports/usages for an existing component that already
-  provides the required structure, semantics, styling, or interaction (e.g., `HiringHeroSection`,
-  `PortfolioShowcaseSection`, `FaqSection`, `CtaBannerSection`, `IndustryBrandsSection`,
-  `HappyClientSection`, `IndustriesServedSection`, `HiringProcessSection`, `ShopifyReasonsSection`,
-  `ShopifyAdvantagesSection`, `WhiteLabelHeroSection`, `PortfolioProjectCard`, `ButtonLink`,
-  `Container`, `FaqAccordion`). Reuse it directly with typed props or extend it with a small
-  typed variant. Never create route-prefixed or page-specific duplicates (such as `<Route>Hero`,
-  `<Route>FaqSection`, `<Route>PortfolioSection`, `<Route>CtaSection`).
+- Before creating a component, search `src/components/**`, route-local
+  components, and current imports/usages for an existing component that already
+  provides the required structure, semantics, styling, or interaction. Reuse it
+  directly or extend it with a small typed prop/variant when that keeps its API
+  coherent. Do not create a page-specific duplicate of an existing component.
 - For styling and animation work, follow `docs/visual-parity-workflow.md`.
   Inspect live CSS/JS, computed styles, keyframes, transitions, interaction
   states, and screenshots before implementing. Static HTML alone is not enough.
@@ -114,20 +110,17 @@ Core proof points from the live site:
   details unless there is a production-quality reason to improve them.
 - If old-site content or assets are needed, move approved copies into local
   project-owned files such as `src/content/**` and `public/assets/**`.
-- Zero Redundant Assets / Images: Before adding, downloading, or copying any image,
-  document, logo, or icon, search all of `public/assets/**` using filename search,
-  visual inspection, and sha256 checksum comparison (`find public/assets -type f -exec sha256sum {} +`).
-  If an exact or visually identical asset already exists anywhere in `public/assets/`, reuse
-  its existing canonical path. Shared assets (brand logos, platform marks, review badges,
-  client videos/posters, case study screens, UI icons) MUST live in a single canonical folder
-  (e.g., `public/assets/brands/`, `public/assets/platforms/`, `public/assets/team/`, `public/assets/icons/`)
-  and never be duplicated across page-specific directories.
+- If old-site images, documents, icons, logos, or other assets are needed,
+  download/copy them during migration into `public/assets/**` and update the
+  Next.js code to reference only those local files.
 - Local asset filenames must be meaningful and descriptive. If a live-site image
   filename is vague, hashed, keyword-stuffed, or odd, rename the local copy to a
   clean kebab-case name that describes the asset and page/context.
-- Post-Task Deduplication Audit: Before calling any task complete, run a mandatory
-  deduplication check on components and media files to ensure no redundant component or
-  duplicate media was introduced. Consolidate any duplicate files immediately.
+- Before adding an asset, search all of `public/assets/**` for an existing exact
+  or visually identical local copy. Reuse its canonical path instead of copying
+  or renaming the same media for another page. Put assets shared by multiple
+  pages in a neutral purpose-based folder such as `public/assets/team/**` rather
+  than duplicating them in page-specific folders.
 - Build with App Router conventions for the installed Next.js version.
 - Prefer Server Components everywhere possible. Page sections and layout
   sections should be Server Components by default so content, headings, images,

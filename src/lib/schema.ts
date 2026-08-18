@@ -33,6 +33,7 @@ import {
 import { caseStudiesContent } from "@/content/case-studies";
 import { shopifyAppsContent } from "@/content/shopify-apps";
 import { shopifyExpertsContent } from "@/content/shopify-experts";
+import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
 import {
   wordpressDevelopmentFaqs,
   wordpressDevelopmentServices,
@@ -148,6 +149,11 @@ const shopifyAppsPageUrl = absoluteUrl(pageSeo.shopifyApps.path);
 const shopifyAppsPageId = `${shopifyAppsPageUrl}#webpage`;
 const shopifyAppsBreadcrumbId = `${shopifyAppsPageUrl}#breadcrumb`;
 const shopifyAppsItemListId = `${shopifyAppsPageUrl}#apps`;
+const shopifyThemeCustomizationPageUrl = absoluteUrl(pageSeo.shopifyThemeCustomization.path);
+const shopifyThemeCustomizationPageId = `${shopifyThemeCustomizationPageUrl}#webpage`;
+const shopifyThemeCustomizationServiceId = `${shopifyThemeCustomizationPageUrl}#service`;
+const shopifyThemeCustomizationFaqId = `${shopifyThemeCustomizationPageUrl}#faq`;
+const shopifyThemeCustomizationBreadcrumbId = `${shopifyThemeCustomizationPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1573,6 +1579,31 @@ export function createShopifyAppsPageSchema() {
       },
     ],
   };
+}
+
+export function createShopifyThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyThemeCustomization,
+    pageUrl: shopifyThemeCustomizationPageUrl,
+    pageId: shopifyThemeCustomizationPageId,
+    serviceId: shopifyThemeCustomizationServiceId,
+    faqId: shopifyThemeCustomizationFaqId,
+    breadcrumbId: shopifyThemeCustomizationBreadcrumbId,
+    serviceName: "Shopify Theme Customization Services",
+    serviceType: "Shopify theme customization, store design, Liquid development, and UI/UX optimization",
+    breadcrumbName: "Shopify Theme Customization",
+    audienceType:
+      "eCommerce brands, direct-to-consumer businesses, and digital agencies seeking expert Shopify theme customization",
+    faqs: shopifyThemeCustomizationContent.faqs.items.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: shopifyThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
 }
 
 export function serializeJsonLd(value: unknown) {

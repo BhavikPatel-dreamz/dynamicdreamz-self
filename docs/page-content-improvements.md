@@ -491,3 +491,21 @@ Primary SEO intent: Shopify apps archive, public Shopify app development, B2B wh
 | Easy Shipping Rate Manager Description | `Beat the competition by offering dynamic  shipping rates.` (double space in live copy) | `Beat the competition by offering dynamic shipping rates.` | Removes duplicate whitespace while maintaining exact live wording. | Low | deferred pending exact visible-copy approval |
 | Hero Subtitle | No subtitle present on live page | `Explore custom and public Shopify apps built by Dynamic Dreamz to scale conversions, automate checkout, and enhance store performance.` | Adds helpful descriptive copy for users and answer engines if content expansion is desired. | Medium | deferred pending content approval |
 | Structured Data | Missing CollectionPage with ItemList of SoftwareApplication entities on legacy site | Emitted CollectionPage, ItemList with 5 SoftwareApplication items, BreadcrumbList, Organization, and WebSite | Improves rich search visibility for software applications without altering visible layout. | High | implemented in schema |
+
+## Shopify Theme Customization (`/shopify-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: Shopify theme customization services, custom Shopify theme development, Liquid programming, OS 2.0 migration, responsive store design, Dawn theme customization, Prestige theme customization.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta description | `Looking for Shopify Theme Customization Services, choose Dynamic Dreamz, The #1 Shopify Development Company that provides expert solutions for your brand.` (151 chars) | Preserved live meta description (151 chars). | Fits 70-160 char SEO budget while maintaining live site SERP snippet intent. | High | implemented in metadata |
+| Hero title | `Shopify ThemeCustomization Services` (no space in live H1) | `Shopify Theme Customization Services` | Adds space between Theme and Customization for cleaner typography while maintaining exact phrasing. | Low | deferred pending exact visible-copy approval |
+| Why need heading | `Why do you need ShopifyTheme customization services?` | `Why do you need Shopify theme customization services?` | Adds space and adjusts capitalization for better readability. | Low | deferred pending exact visible-copy approval |
+| Why choose heading | `Why Choose Dynamic Dreamz ForShopify Theme Customization?` | `Why Choose Dynamic Dreamz For Shopify Theme Customization?` | Adds space between For and Shopify. | Low | deferred pending exact visible-copy approval |
+| VideoObject structured data | Legacy site had no structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes with upload dates, YouTube URLs, and thumbnail assets. | Enables video search rich results without modifying visible layout. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site had minimal schema. | Emitted `Service` with `OfferCatalog` (6 offers) and `FAQPage` (11 questions/answers). | Enables rich answer engine visibility and FAQ SERP enhancements. | High | implemented in schema |
+
+
+
