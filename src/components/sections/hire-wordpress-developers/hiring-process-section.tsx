@@ -49,7 +49,7 @@ export function HiringProcessSection({
                     hasTabletConnector
                       ? "max-[991px]:after:block max-[991px]:after:w-[calc((720px-188px)/2)]"
                       : "max-[991px]:after:hidden"
-                  } max-[767px]:after:hidden`}
+                  } max-[991px]:after:hidden`}
                 >
                   <span className="flex size-full items-center justify-center rounded-[10px] bg-white">
                     <Image

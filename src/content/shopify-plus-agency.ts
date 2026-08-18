@@ -13,12 +13,15 @@ export type ReviewPlatform = {
   backgroundColor: string;
   wordmark: string;
   wordmarkAlt: string;
+  wordmarkWidth: number;
+  wordmarkHeight: number;
   starPaths: "red" | "blue";
   starFill: string;
   rating: string;
   pillLabel: string;
   pillHref: string;
   pillColor: string;
+  pillBorderWidth: number;
 };
 
 export const shopifyPlusAgencyReviews: readonly ReviewPlatform[] = [
@@ -27,36 +30,45 @@ export const shopifyPlusAgencyReviews: readonly ReviewPlatform[] = [
     backgroundColor: "#F8DDD7",
     wordmark: "/assets/shopify-plus-agency/reviews/clutch-wordmark.svg",
     wordmarkAlt: "Clutch",
+    wordmarkWidth: 205,
+    wordmarkHeight: 57,
     starPaths: "red",
     starFill: "#FF0000",
     rating: "5.0 RATINGS",
     pillLabel: "132 REVIEWS",
     pillHref: "https://clutch.co/profile/dynamic-dreamz",
     pillColor: "#FF0000",
+    pillBorderWidth: 1.577,
   },
   {
     name: "Upwork",
     backgroundColor: "rgba(227, 241, 213, 1)",
     wordmark: "/assets/shopify-plus-agency/reviews/upwork-wordmark.svg",
     wordmarkAlt: "Upwork",
+    wordmarkWidth: 205,
+    wordmarkHeight: 70,
     starPaths: "red",
     starFill: "#6FDA44",
     rating: "5.0 RATINGS",
     pillLabel: "2000+ REVIEWS",
     pillHref: "https://www.upwork.com/agencies/dynamicdreamz/",
     pillColor: "#6FDA44",
+    pillBorderWidth: 1.3,
   },
   {
     name: "GoodFirms",
     backgroundColor: "rgba(216, 229, 255, 1)",
     wordmark: "/assets/shopify-plus-agency/reviews/goodfirms-wordmark.svg",
     wordmarkAlt: "GoodFirms",
+    wordmarkWidth: 223,
+    wordmarkHeight: 41,
     starPaths: "blue",
     starFill: "#3A7AF3",
     rating: "5.0 RATINGS",
     pillLabel: "72 REVIEWS",
     pillHref: "https://www.goodfirms.co/company/dynamic-dreamz",
     pillColor: "#3A7AF3",
+    pillBorderWidth: 1.3,
   },
 ] as const;
 

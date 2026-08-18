@@ -9,11 +9,13 @@ type IndustryBrandsSectionProps = {
     };
   };
   mobileSpacing?: "standard" | "spacious";
+  singleLineTitleAtTablet?: boolean;
 };
 
 export function IndustryBrandsSection({
   content,
   mobileSpacing = "standard",
+  singleLineTitleAtTablet = false,
 }: IndustryBrandsSectionProps) {
   const hasSpaciousMobileLayout = mobileSpacing === "spacious";
 
@@ -37,7 +39,7 @@ export function IndustryBrandsSection({
             className="m-0 font-[Montserrat,sans-serif] text-[25px] leading-[33px] font-semibold tracking-[-.02em] text-ink"
             id={`${content.slug}-brands-title`}
           >
-            Trusted by <br/> Leading Brands
+            Trusted by <br className={singleLineTitleAtTablet ? "max-[991px]:hidden" : undefined} /> Leading Brands
           </h2>
         </div>
         <div className="w-[69%] max-[1199px]:w-[70%] max-[991px]:w-full">

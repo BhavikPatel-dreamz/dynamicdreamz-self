@@ -84,6 +84,22 @@ same viewports for side-by-side comparison.
 | Live "Read More" labels are display:none inside service cards | Omitted (invisible) | implemented |
 | Live carousels use jQuery owl-carousel | react-slick with the same item counts, margins, and stage paddings | implemented |
 | Live review animation JS | Reimplemented in React with identical timings; reduced-motion stops rotation | implemented |
+
+The shared review animation was rechecked against the supplied live CSS and
+jQuery sequence. Its circle now starts at zero opacity and scale, the content
+wrapper begins 400ms after activation, five star paths appear at 200ms
+intervals, the rating appears at 1700ms, the review-total pill at 2000ms, and
+the active review rotates every 5000ms. The 420px desktop and 275px mobile
+circle sizes, typography, spacing, border thickness, and cubic-bezier pill
+motion are represented with component-local Tailwind utilities.
+
+A follow-up comparison against the rendered hire WordPress page found that the
+React state had been applied to every stacked review instead of only the active
+review. Animation stages are now active-review scoped. Platform-specific live
+details are also preserved: Clutch uses a 205x57 wordmark and 1.577px pill
+border, Upwork uses 205x70 and 1.3px, GoodFirms uses 223x41 and 1.3px, and the
+GoodFirms star paths retain their 1.64814px blue strokes. Live CSS `ease`
+timings and the zero mobile logo margin are matched.
 | Testimonial quotes on this page differ slightly from the home page versions | Page-specific testimonial data preserves this page's exact wording | implemented |
 | Live Upwork review URL is `/agencies/dynamicdreamz/` (home uses `/ag/dynamicdreamz/`) | Preserved per live page | implemented |
 
@@ -183,4 +199,3 @@ quotes), 5 FAQs (first open; answer links styled `#ad5151` underline).
 - Cleaned up stray token in `white-label-shopify-ai-sections.tsx`.
 - Updated `docs/aeo-geo-strategy.md` and `docs/page-content-improvements.md` with comprehensive `/shopify-plus-agency` route entries.
 - Passed `npm run check:urls`, `npm run lint`, and `npm run build`.
-

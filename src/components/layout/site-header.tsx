@@ -35,7 +35,7 @@ export function SiteHeader() {
         </div>
 
         <ButtonLink
-          className="min-h-[49px] min-w-[162.36px] shrink-0 px-[23px] py-[15px] text-base normal-case max-[991px]:min-h-[34px] max-[991px]:min-w-0 max-[991px]:px-3.5 max-[991px]:py-[9px] max-[991px]:text-[13px] max-[379px]:px-2.5 max-[379px]:py-2 max-[379px]:text-[10px]"
+          className="min-h-[49px] min-w-[162.36px] shrink-0 px-[23px] py-[15px] text-base normal-case max-[991px]:min-h-[34px] max-[379px]:min-h-[29px] max-[991px]:min-w-0 max-[991px]:px-3.5 max-[991px]:py-[9px] max-[991px]:text-[13px] max-[379px]:px-2.5 max-[379px]:py-2 max-[379px]:text-[10px]"
           variant="primary"
           href={siteConfig.quotePath}
         >

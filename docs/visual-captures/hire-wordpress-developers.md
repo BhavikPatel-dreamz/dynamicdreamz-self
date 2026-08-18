@@ -8,6 +8,7 @@
 - Live screenshots: `docs/visual-captures/source/hire-wordpress-developers/live-desktop-1440x900.png`, `live-tablet-768x1024.png`, `live-mobile-390x844.png`
 - Local screenshots: `docs/visual-captures/source/hire-wordpress-developers/local-desktop-1440x900.png`, `local-tablet-768x1024.png`, `local-mobile-390x844.png`
 - Local capture wait: 2500ms before each full-page screenshot so the staged review animation and eager portfolio media were visible
+- Owner reference: attached full-page live capture representing the layout at and below the 991px navigation breakpoint; checked section order, counter spacing, review circle, brand strip, two-column grids, carousel overflow, FAQ, and responsive footer.
 
 ## Sources inspected
 
@@ -29,7 +30,8 @@
 
 ## Interaction and motion
 
-- Review circle rotates through Clutch, Upwork, and GoodFirms with staged scale/opacity, stars, rating, and review-pill reveals; approximately 5s per item and disabled/reduced for `prefers-reduced-motion`.
+- Review circle rotates through Clutch, Upwork, and GoodFirms with the live site's staged scale/opacity, stars, rating, and review-pill reveals at approximately 5s per item. The live implementation does not bypass these transitions for `prefers-reduced-motion`, so the migrated component follows that behavior for exact parity.
+- At the 991px breakpoint the five hero counters remain in one row with 18px separators and 30px vertical spacing; process connectors are removed, while process, reasons, advantages, and portfolio content use two-column layouts. The brand heading becomes a single line for this route.
 - Portfolio overlay fades in and the project link rises from the bottom on hover/focus.
 - Testimonials are draggable/swipeable; video links open a modal iframe.
 - FAQ defaults to the first panel open and toggles one panel at a time.
@@ -38,6 +40,17 @@
 
 - Local header/footer use the migrated shared shell and local assets rather than the legacy WordPress DOM.
 - Local review animation reuses the existing migrated implementation and local review assets.
+- The owner-provided 21.63-second MP4 was sampled across the circle zoom,
+  wrapper entrance, individual star reveals, rating fade, review-pill rise, and
+  platform switch. It confirmed that `.review_animation_ratings` remains
+  visible while only `.review_ratings` is initially transparent; this allows
+  the five star paths to appear one at a time before “5.0 RATINGS” fades in.
+  The recording also confirms that the animation follows the 55px bottom
+  padding of `.total-deliver-wrap` directly, without an additional top margin.
+  The animation states use explicit `transform: scale(...)` and
+  `transform: translateY(...)` values. Tailwind's individual `scale` and
+  `translate` properties cannot be paired with the legacy site's
+  `transition: transform ...` declarations.
 - The review platform/background differs between individual screenshots because the shared Clutch, Upwork, and GoodFirms animation rotates every five seconds.
 - Local portfolio images are intentionally eager on this route so full-page captures and fast scrolling do not reproduce the legacy page's tablet/mobile lazy-image gaps.
 - Local desktop testimonials align with the content edge and show two complete cards; mobile retains the centered single-card treatment with the next slide visible at the edge.
@@ -48,4 +61,4 @@
 - The first FAQ item is open by default, the remaining nine items are collapsed, and the pricing-model list remains inside its accordion panel.
 - Headings, counters, CTA labels, process steps, proof grids, portfolio names, testimonial copy, and FAQ wording preserve the live-visible content.
 - No horizontal overflow or clipped text is visible at 1440px, 768px, or 390px.
-- Remaining visual differences are limited to the migrated shared header/footer/contact widget, review-animation timing, and the intentional removal of legacy lazy-loading gaps.
+- Remaining visual differences are limited to the migrated shared header/footer/contact widget and the intentional removal of legacy lazy-loading gaps.

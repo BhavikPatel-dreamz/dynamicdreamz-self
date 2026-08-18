@@ -18,12 +18,12 @@ export function WordPressReasonsSection() {
         <div className="grid grid-cols-3 gap-[15px] max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
           {hireWordPressReasons.items.map((item) => (
             <article
-              className="flex min-h-[145px] items-center rounded-[5px] border border-[#ececec] bg-white p-[25px] max-[1199px]:p-5 max-[767px]:min-h-0"
+              className="flex min-h-[145px] items-center rounded-[15px] border-[1.5px] border-[#efefef] bg-white p-[25px] max-[1199px]:p-5 max-[767px]:min-h-0"
               key={item.description}
             >
               <Image
                 alt={item.iconAlt}
-                className="mr-5 size-[52px] shrink-0 object-contain max-[1199px]:mr-4 max-[1199px]:size-11"
+                className="mr-5 size-[52px] shrink-0 object-contain max-[991px]:mr-[15px] max-[991px]:size-10"
                 height={52}
                 src={item.icon}
                 width={52}
@@ -50,7 +50,7 @@ export function WordPressAdvantagesSection() {
         <div className="grid grid-cols-3 border-t border-l border-[#ececec] max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
           {hireWordPressAdvantages.items.map((item) => (
             <article
-              className="flex min-h-[190px] flex-col items-center justify-center border-r border-b border-[#ececec] px-7 py-[30px] text-center max-[767px]:min-h-0"
+              className="flex min-h-[190px] flex-col items-center justify-center border-r border-b border-[#ececec] px-7 py-[30px] text-center max-[991px]:px-5 max-[767px]:min-h-0"
               key={item.title}
             >
               <Image

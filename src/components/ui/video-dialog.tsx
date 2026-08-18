@@ -69,7 +69,7 @@ export function VideoDialog({
           <Image className="object-cover w-full h-full rounded-[15px]" src={poster} alt={posterAlt} fill sizes={sizes} />
         </div>
         <div className={cn("image-text min-h-13.5 flex items-center z-10 lg:px-[30px] lg:pt-[30px] lg:pb-[50px] sm:p-7.5 px-5 py-3", overlayClassName)} aria-hidden="true">
-          <Image className="aspect-[auto_940/38]" src={overlay} alt="" width={overlayWidth} height={overlayHeight} />
+          <Image className="aspect-[auto_940/38] w-auto h-auto" src={overlay} alt="" width={overlayWidth} height={overlayHeight} />
         </div>
         <div className={cn(styles.pulse, "absolute top-1/2 left-1/2 z-10 size-19 -translate-x-1/2 -translate-y-1/2", playClassName)} aria-hidden="true">
           <Image className="h-full w-full" src="/assets/about/play-video.svg" alt="" width={76} height={76} />

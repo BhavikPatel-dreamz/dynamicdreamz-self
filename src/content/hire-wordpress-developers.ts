@@ -8,11 +8,11 @@ export const hireWordPressHero = {
     "A typical WordPress development consists of project manager, designer, developer, quality assuror. Generally, it is a tedious task to hire them from different sources and align them for one project. Dynamic Dreamz simply eliminates your worries by providing all resources under one roof.",
   ctaLabel: "hire WordPress developers",
   stats: [
-    { value: "50+", label: "Agile enabled WordPress Developers" },
-    { value: "5000+", label: "Completed Projects" },
-    { value: "20+", label: "Years of Experience" },
-    { value: "1000+", label: "Happy & Satisfied Clients" },
-    { value: "1000+", label: "WordPress Developments" },
+    { value: "50+", label: "Agile enabled WordPress Developers", labelLines: ["Agile enabled", "WordPress Developers"] },
+    { value: "5000+", label: "Completed Projects", labelLines: ["Completed", "Projects"] },
+    { value: "20+", label: "Years of Experience", labelLines: ["Years of", "Experience"] },
+    { value: "1000+", label: "Happy & Satisfied Clients", labelLines: ["Happy & Satisfied", "Clients"] },
+    { value: "1000+", label: "WordPress Developments", labelLines: ["WordPress", "Developments"] },
   ],
 } as const;
 

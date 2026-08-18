@@ -21,7 +21,7 @@ export function HireWordPressDevelopersPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <HireWordPressHeroSection />
-      <IndustryBrandsSection content={brandSection} />
+      <IndustryBrandsSection content={brandSection} singleLineTitleAtTablet />
       <HiringProcessSection />
       <WordPressReasonsSection />
       <WordPressAdvantagesSection />

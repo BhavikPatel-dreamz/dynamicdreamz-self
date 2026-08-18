@@ -26,11 +26,9 @@ const STAR_PATHS = {
 function ReviewStars({
   review,
   starsVisible,
-  reducedMotion,
 }: {
   review: (typeof shopifyPlusAgencyReviews)[number];
   starsVisible: number;
-  reducedMotion: boolean;
 }) {
   const paths = STAR_PATHS[review.starPaths];
   const viewBoxHeight = review.starPaths === "blue" ? 19 : 20;
@@ -45,11 +43,13 @@ function ReviewStars({
     >
       {paths.map((d, index) => (
         <path
-          className="transition-opacity duration-300"
+          className="[transition:opacity_.3s_ease]"
           d={d}
           fill={review.starFill}
           key={d}
-          style={{ opacity: reducedMotion || index < starsVisible ? 1 : 0 }}
+          stroke={review.starPaths === "blue" ? review.starFill : undefined}
+          strokeWidth={review.starPaths === "blue" ? 1.64814 : undefined}
+          style={{ opacity: index < starsVisible ? 1 : 0 }}
         />
       ))}
     </svg>
@@ -59,7 +59,6 @@ function ReviewStars({
 function ReviewCircle({
   review,
   active,
-  reducedMotion,
   zoomed,
   wrapperVisible,
   starsVisible,
@@ -68,74 +67,79 @@ function ReviewCircle({
 }: {
   review: (typeof shopifyPlusAgencyReviews)[number];
   active: boolean;
-  reducedMotion: boolean;
   zoomed: boolean;
   wrapperVisible: boolean;
   starsVisible: number;
   ratingsVisible: boolean;
   pillVisible: boolean;
 }) {
-  const visible = reducedMotion ? active : zoomed;
+  const visible = active && zoomed;
+  const contentVisible = active && wrapperVisible;
+  const ratingIsVisible = active && ratingsVisible;
+  const pillIsVisible = active && pillVisible;
 
   return (
     <div
       className={cn(
-        "absolute inset-x-0 top-0 mx-auto flex size-[420px] items-center justify-center rounded-full text-center transition-[transform,opacity] duration-600 ease-in-out max-[767px]:size-[275px]",
+        "review_animation absolute inset-x-0 top-0 mx-auto flex size-[420px] items-center justify-center rounded-full text-center [transition:transform_.6s_ease,opacity_.6s_ease] max-[767px]:size-[275px]",
         active && "relative z-10",
-        visible ? "scale-100 opacity-100" : "scale-0 opacity-80",
+        visible
+          ? "[transform:scale(1)] opacity-100"
+          : "[transform:scale(0)] opacity-0",
       )}
       style={{ backgroundColor: review.backgroundColor }}
       aria-hidden={!active}
     >
-      <div className="px-8">
+      <div className="review_animation_box">
         <div
           className={cn(
-            "mb-6 text-base font-bold text-black transition-[opacity,transform] duration-600 ease-in-out max-[767px]:mb-[10px] max-[767px]:text-sm",
-            reducedMotion || wrapperVisible ? "translate-y-0 opacity-100" : "translate-y-[30px] opacity-0",
+            "review_animation_wrapper [transition:opacity_.6s_ease,transform_.6s_ease]",
+            contentVisible
+              ? "[transform:translateY(0)] opacity-100"
+              : "[transform:translateY(30px)] opacity-0",
           )}
         >
-          <div className="mb-6 max-[767px]:mb-0">REVIEWED ON</div>
-          <div>
+          <div className="review_animation_text mb-6 text-center text-base leading-normal font-bold text-black max-[767px]:mb-[10px] max-[767px]:text-sm">REVIEWED ON</div>
+          <div className="review_animation_box_logo mb-5 max-[767px]:mb-0">
             <Image
               className="mx-auto h-auto w-auto max-[767px]:max-h-10 max-[767px]:max-w-[130px]"
               src={review.wordmark}
               alt={review.wordmarkAlt}
-              width={205}
-              height={57}
+              width={review.wordmarkWidth}
+              height={review.wordmarkHeight}
               priority={active}
             />
           </div>
         </div>
-        <div
-          className={cn(
-            "mb-[18px] flex items-center justify-center transition-opacity duration-600 ease-in-out max-[767px]:mb-[10px]",
-            reducedMotion || ratingsVisible ? "opacity-100" : "opacity-0",
-          )}
-        >
+        <div className="review_animation_ratings mb-[18px] flex items-center max-[767px]:mb-[10px]">
           <ReviewStars
             review={review}
-            starsVisible={starsVisible}
-            reducedMotion={reducedMotion}
+            starsVisible={active ? starsVisible : 0}
           />
-          <div className="ml-[10px] text-[20px] font-semibold text-black max-[767px]:text-[15px]">
+          <div
+            className={cn(
+              "review_ratings ml-[10px] text-[20px] font-semibold text-black [transition:opacity_.6s_ease] max-[767px]:text-[15px]",
+              ratingIsVisible ? "opacity-100" : "opacity-0",
+            )}
+          >
             {review.rating}
           </div>
         </div>
         <div
           className={cn(
-            "transition-[transform,opacity] duration-1000 ease-[cubic-bezier(0.95,-0.42,0.15,1.26)] max-[767px]:inline-flex max-[767px]:items-center",
-            reducedMotion || pillVisible
-              ? "translate-y-0 opacity-100"
-              : "translate-y-[150px] opacity-0",
+            "review_total_ratings [transition:transform_1s_cubic-bezier(.95,-.42,.15,1.26),opacity_.6s_ease] max-[767px]:inline-flex max-[767px]:items-center",
+            pillIsVisible
+              ? "[transform:translateY(0)] opacity-100"
+              : "[transform:translateY(150px)] opacity-0",
           )}
         >
           <a
-            className="inline-block rounded-[60.664px] px-[18px] py-2 text-[19.413px] font-bold text-white max-[767px]:text-sm"
+            className="inline-block rounded-[60.664px] px-[18px] py-2 text-[19.413px] leading-normal font-bold text-white max-[767px]:text-sm"
             href={review.pillHref}
             rel="nofollow"
             style={{
               backgroundColor: review.pillColor,
-              border: `1.3px solid ${review.pillColor}`,
+              border: `${review.pillBorderWidth}px solid ${review.pillColor}`,
             }}
             target="_blank"
           >
@@ -155,7 +159,6 @@ function ReviewCircle({
 }
 
 export function ReviewAnimation() {
-  const [reducedMotion, setReducedMotion] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [zoomed, setZoomed] = useState(false);
   const [wrapperVisible, setWrapperVisible] = useState(false);
@@ -165,37 +168,22 @@ export function ReviewAnimation() {
   const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const updatePreference = () => setReducedMotion(mediaQuery.matches);
-    updatePreference();
-    mediaQuery.addEventListener("change", updatePreference);
-    return () => mediaQuery.removeEventListener("change", updatePreference);
-  }, []);
-
-  useEffect(() => {
     const timeouts = timeoutsRef.current;
-    if (reducedMotion) {
-      timeouts.forEach(clearTimeout);
-      timeouts.length = 0;
-      return;
-    }
-
     timeouts.push(setTimeout(() => setZoomed(true), 100));
-    timeouts.push(setTimeout(() => setWrapperVisible(true), 300));
+    timeouts.push(setTimeout(() => setWrapperVisible(true), 400));
     STAR_PATHS[shopifyPlusAgencyReviews[activeIndex].starPaths].forEach((_, index) => {
-      timeouts.push(setTimeout(() => setStarsVisible(index + 1), 300 + index * 200));
+      timeouts.push(setTimeout(() => setStarsVisible(index + 1), 400 + index * 200));
     });
-    timeouts.push(setTimeout(() => setRatingsVisible(true), 1300));
-    timeouts.push(setTimeout(() => setPillVisible(true), 1600));
+    timeouts.push(setTimeout(() => setRatingsVisible(true), 1700));
+    timeouts.push(setTimeout(() => setPillVisible(true), 2000));
 
     return () => {
       timeouts.forEach(clearTimeout);
       timeouts.length = 0;
     };
-  }, [activeIndex, reducedMotion]);
+  }, [activeIndex]);
 
   useEffect(() => {
-    if (reducedMotion) return;
     const interval = setInterval(() => {
       setZoomed(false);
       setWrapperVisible(false);
@@ -205,17 +193,16 @@ export function ReviewAnimation() {
       setActiveIndex((index) => (index + 1) % shopifyPlusAgencyReviews.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [reducedMotion]);
+  }, []);
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="review_animation_main relative overflow-hidden">
       {shopifyPlusAgencyReviews.map((review, index) => (
         <ReviewCircle
           active={index === activeIndex}
           key={review.name}
           pillVisible={pillVisible}
           ratingsVisible={ratingsVisible}
-          reducedMotion={reducedMotion}
           review={review}
           starsVisible={starsVisible}
           wrapperVisible={wrapperVisible}
