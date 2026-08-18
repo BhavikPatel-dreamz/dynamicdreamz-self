@@ -64,6 +64,9 @@ const resourcesItemListId = `${resourcesPageUrl}#articles`;
 const contactPageUrl = absoluteUrl(pageSeo.contact.path);
 const contactPageId = `${contactPageUrl}#webpage`;
 const contactBreadcrumbId = `${contactPageUrl}#breadcrumb`;
+const privacyPolicyPageUrl = absoluteUrl(pageSeo.privacyPolicy.path);
+const privacyPolicyPageId = `${privacyPolicyPageUrl}#webpage`;
+const privacyPolicyBreadcrumbId = `${privacyPolicyPageUrl}#breadcrumb`;
 const requestQuotePageUrl = absoluteUrl(pageSeo.requestQuote.path);
 const requestQuotePageId = `${requestQuotePageUrl}#webpage`;
 const requestQuoteBreadcrumbId = `${requestQuotePageUrl}#breadcrumb`;
@@ -704,6 +707,56 @@ export function createContactPageSchema() {
             position: 2,
             name: "Contact Us",
             item: contactPageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+export function createPrivacyPolicyPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": privacyPolicyPageId,
+        url: privacyPolicyPageUrl,
+        name: pageSeo.privacyPolicy.title,
+        description: pageSeo.privacyPolicy.description,
+        datePublished: pageSeo.privacyPolicy.publishedTime,
+        dateModified: pageSeo.privacyPolicy.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": privacyPolicyBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.privacyPolicy.image.path),
+          width: pageSeo.privacyPolicy.image.width,
+          height: pageSeo.privacyPolicy.image.height,
+          caption: pageSeo.privacyPolicy.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": privacyPolicyBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Privacy and Cookies Policy",
+            item: privacyPolicyPageUrl,
           },
         ],
       },

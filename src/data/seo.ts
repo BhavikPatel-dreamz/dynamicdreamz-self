@@ -219,6 +219,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  privacyPolicy: {
+    path: "/privacy-policy",
+    title: "Privacy Policy | Dynamic Dreamz",
+    description:
+      "Read Dynamic Dreamz's privacy and cookies policy to learn how we collect, use, share, retain, and protect personal information and explain your data rights.",
+    keywords: [
+      "Dynamic Dreamz privacy policy",
+      "privacy and cookies policy",
+      "personal data protection",
+      "privacy rights",
+      "Dynamic Dreamz cookies",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-03T10:53:58+00:00",
+    modifiedTime: "2024-12-13T11:57:22+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Dynamic Dreamz privacy and cookies policy",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+  },
   ourWork: {
     path: "/our-work",
     title: "Dynamic Dreamz Portfolio | Inspiring Web Solutions & Designs",

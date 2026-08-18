@@ -1,0 +1,90 @@
+﻿@media (max-width:991px) {
+
+    body,
+    p {
+        font-size: 16px;
+        line-height: 30.4px
+    }
+
+    .h1,
+    h1 {
+        font-size: 40px;
+        line-height: 50px
+    }
+
+    .h2,
+    h2 {
+        font-size: 30px;
+        line-height: 40px
+    }
+
+    .h3,
+    h3 {
+        font-size: 18px;
+        line-height: 26px
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 12px 24px
+    }
+
+    section {
+        padding: 50px 0
+    }
+
+    .pt-80 {
+        padding-top: 50px;
+    }
+
+    .pb-80 {
+        padding-bottom: 50px !important
+    }
+
+    .mt-80 {
+        margin-top: 50px;
+    }
+
+    .mb-80 {
+        margin-bottom: 50px;
+    }
+
+    input[type=email],
+    input[type=number],
+    input[type=text],
+    input[type=url],
+    select,
+    textarea {
+        font-size: 14px;
+        line-height: normal
+    }
+}
+
+@media (max-width:767px) {
+
+    .h1,
+    h1 {
+        font-size: 30px;
+        line-height: 40px
+    }
+
+    .h2,
+    h2 {
+        font-size: 24px;
+        line-height: 33.24px;
+        letter-spacing: -.48px
+    }
+
+    section {
+        padding: 50px 0
+    }
+
+    #ez-toc-container {
+        padding: 20px;
+    }
+
+    span.eyebrow:before {
+        width: 25px;
+        margin-right: 10px;
+    }
+}

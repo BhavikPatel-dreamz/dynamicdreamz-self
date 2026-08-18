@@ -2463,6 +2463,86 @@ Proposed copy improvements are tracked in `docs/page-content-improvements.md`.
   captured (1440x900, 768x1024, 390x844), local assets audit, responsive grid
   layout, lint, and production build.
 
+## Privacy and Cookies Policy (`/privacy-policy`)
+
+Status: implemented; visible legal-content recommendations remain deferred
+
+Last reviewed: 2026-08-18
+
+Owner: SEO, legal/policy, development, and leadership teams
+
+Primary audience: website visitors, prospective clients, clients, candidates,
+and other people evaluating how Dynamic Dreamz collects and uses personal data
+
+Decision stage: trust, policy review, and pre-enquiry due diligence
+
+### Page role
+
+The canonical public privacy and cookies policy. It explains the categories of
+personal data collected, processing purposes, sharing boundaries, cookies,
+retention, rights, security, policy changes, and the available contact channel.
+
+### Target prompts
+
+- What is Dynamic Dreamz's privacy and cookies policy?
+- What personal data does Dynamic Dreamz collect and why?
+- Does Dynamic Dreamz sell personal information or use cookies?
+- How can someone contact Dynamic Dreamz about their personal data?
+
+### Current strengths and available evidence
+
+- The live page provides a complete visible policy outline with headings,
+  paragraphs, lists, and a direct contact block.
+- The policy is linked from the global footer and is available as a standalone
+  indexable route.
+- The local route can render the policy server-side without client JavaScript or
+  external runtime content.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The live policy URL was not implemented in the Next.js migration, while the footer already links to it. | Ship the slashless `/privacy-policy` route, include it in metadata/sitemap/robots output, and preserve the legacy trailing-slash redirect. | Implemented route; `npm run check:urls`, lint, and build pass; sitemap and robots derive from the shared SEO entries; `/privacy-policy/` returns a permanent 308 to `/privacy-policy`. |
+| P0 | implemented | Schema accuracy | The live source contains a broad sitewide FAQ graph and trailing-slash URLs that are not part of this policy page. | Emit only Organization, WebSite, WebPage, BreadcrumbList, and the local primary image for this route. | Route-scoped WebPage/BreadcrumbList JSON-LD is rendered server-side with slashless URLs and local OG assets. |
+| P1 | deferred | Legal freshness | The live policy has no visible effective/last-updated date and its contact phone differs from the current shared site contact fact. | Have the legal/policy owner approve a visible effective date and the authoritative policy contact details, then update the copy and schema consistently. | Legal and leadership approval; source-of-truth fact review |
+| P1 | deferred | Answer extraction | The policy explains its topics but does not provide a short visible summary of the data-controller role, legal basis, or jurisdiction. | Add a concise approved summary only after legal review; do not infer legal bases or jurisdictions during migration. | Legal review and exact visible-copy approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI and legal-content preservation gates. The shipped
+route retains the live policy wording verbatim; no unsupported legal basis,
+jurisdiction, effective date, or controller claim is introduced.
+
+### Entity, evidence, and authorship actions
+
+- Keep the policy connected to the shared Dynamic Dreamz Organization entity.
+- Assign a named legal/policy owner and review cadence before changing visible
+  policy terms.
+
+### Internal-link and conversion actions
+
+- Preserve the global footer link to `/privacy-policy`.
+- Keep the policy's email, phone, and address links crawlable and accessible.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit a route-scoped WebPage graph with slashless URLs and the local OG image.
+- Include `/privacy-policy` in the canonical sitemap and allow it in robots.
+- Do not emit FAQPage, Review, or unsupported legal claims for this route.
+
+### Measurement plan
+
+- SEO and legal owners should monitor policy-page discovery, organic landings,
+  contact-link clicks, and review-date freshness after the route is published.
+
+### Verification and remaining gaps
+
+- Live HTML, metadata, rendered screenshots, CSS, and JS inspected on 2026-08-18.
+- Route/schema implementation and local responsive screenshots verified on
+  2026-08-18; true 390px emulation reports no horizontal document overflow.
+- Visible legal freshness and contact-detail changes remain deferred pending
+  policy-owner approval.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new

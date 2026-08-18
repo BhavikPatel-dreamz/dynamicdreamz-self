@@ -431,3 +431,16 @@ Primary SEO intent: Shopify case studies, Shopify Plus case study, ecommerce suc
 | Hero subtitle | `Discover how we help our clients across the globe with innovative solutions to make their businesses flourish.` | `Discover how we help our clients across the globe with innovative ecommerce, Shopify Plus, and custom web development solutions.` | Adds specific commercial keywords while retaining helpful sentence structure. | Medium | deferred pending exact visible-copy approval |
 | Empty image alt text | Several case study post thumbnails on live site had empty or minimal `alt=""` attributes. | Generated descriptive kebab-case alt attributes (e.g. `Decor That Shows Up, Does Its Job, and Disappears- Evrgreen`) for each card image. | Improves accessibility and image search indexation without changing visible layout. | High | implemented as a nonvisual accessibility correction |
 | Dropdown filter labels | `Technology` and `Industry` | Maintain live dropdown categories; support real-time searching and filtering | Retains familiar browsing taxonomy while enhancing client interactivity. | High | implemented in client filter |
+
+## Privacy and Cookies Policy (`/privacy-policy`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: privacy policy, cookies policy, personal data practices, and
+Dynamic Dreamz contact details.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Policy freshness | The live page has no visible effective or last-updated date. | Add `Last updated: [approved date]` below the policy heading after legal review. | Gives visitors and crawlers a clear freshness signal without inventing a legal date. | High | deferred pending legal approval |
+| Policy contact phone | The live policy lists `+91 63520 11266`, while the current shared site contact fact is `+91 9327642007`. | Replace the policy phone with the legal owner's approved policy contact number and keep the same value in structured data where applicable. | Prevents visitors from receiving stale or conflicting policy-contact information. | High | blocked pending legal and leadership fact approval |
+| Controller/jurisdiction summary | The policy does not state a concise data-controller identity, legal basis, or governing jurisdiction. | Add a legal-approved summary naming the responsible entity, applicable legal bases, and jurisdiction. | Improves answer extraction and legal clarity without making unsupported claims. | High | deferred pending legal review |
