@@ -2133,6 +2133,143 @@ approved evidence. Exact visible proposals are tracked in
 - Deferred or blocked: visible answer copy, approved project scope/outcomes,
   internal case studies, project freshness data, and quote-route completion.
 
+## Hire WordPress Developers (`/hire-wordpress-developers`)
+
+Status: implemented; visible recommendations deferred
+Last reviewed: 2026-08-18
+Primary audience: businesses and digital agencies looking for dedicated
+WordPress developers, a complete WordPress team, or end-to-end WordPress
+delivery.
+Decision stage: vendor selection and project inquiry.
+
+### Page role
+
+This page targets the dedicated WordPress developer and WordPress team hiring
+intent. It complements the white-label WordPress page by speaking to direct
+project owners and by preserving the live page's hiring process, team proof,
+portfolio, testimonials, and FAQ sequence.
+
+### Target prompts
+
+- How do I hire dedicated WordPress developers?
+- What is included when hiring a WordPress development team?
+- How long does it take to develop a WordPress website?
+- How much does it cost to hire a WordPress developer?
+- What communication and project-management tools can the developers use?
+
+### Current strengths and available evidence
+
+- Server-rendered H1, introduction, hiring process, reasons, advantages,
+  portfolio, testimonials, and ten-question FAQ.
+- Local WordPress portfolio media for Quite Events, Les Etoiles, Valents, Get
+  Sunsights, Lipari Design, and Nexventur.
+- Existing local review animation, client logos, video testimonials, and shared
+  organization facts.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Discovery and conversion | The live inquiry CTA points to the career route. | Route both hiring CTAs to the canonical quote flow at `/request-quote`. | Verified local route intent; quote route remains migration pending. |
+| P1 | implemented | Structured data | The live page's service and FAQ meaning is not consistently available to crawlers. | Emit WebPage, Service, BreadcrumbList, and FAQPage JSON-LD using the visible page content. | Schema serialization and build validation. |
+| P1 | implemented | Accessibility | Portfolio and process media need meaningful local alt text. | Use page-specific alt text and local project-owned assets. | Source inspection and rendered markup review. |
+| P1 | deferred | Proof and evidence | Counters, review totals, savings, and experience claims have no page-level provenance. | Add governed definitions, review dates, and approved source links for each claim. | Leadership and client-success approval. |
+| P1 | deferred | Hiring answer quality | Pricing and staffing options are described, but no approved rate bands or staffing examples are shown. | Add an approved hiring-model comparison and anonymized delivery example. | Sales, delivery, and client-success approval. |
+| P2 | deferred | Internal linking | WordPress service terms and portfolio cards mostly leave topic relationships implicit. | Link to approved WordPress, WooCommerce, migration, and case-study routes as they ship. | Destination routes and content approval. |
+
+### Suggested answer copy
+
+Keep the live visible wording for this migration. Future approved answer copy
+should define the difference between hiring one developer and hiring a complete
+team, explain the three listed pricing models, and state which project details
+are needed for a quote without promising an unverified delivery time or rate.
+
+### Entity, evidence, and authorship actions
+
+- Confirm the `50+`, `5000+`, `20+`, `1000+`, and `1000+` counter definitions and
+  ownership before treating them as cited proof.
+- Confirm portfolio attribution and approve case-study evidence for the six
+  linked projects.
+- Assign a named reviewer for future hiring-pricing and delivery guidance.
+
+### Internal-link and conversion actions
+
+- Preserve `/request-quote` as the primary conversion destination.
+- Keep `/our-work` as the portfolio continuation route and validate it when the
+  route is migrated.
+- Add contextual links to approved WordPress service routes as they become
+  available.
+
+### Structured-data, crawler, and freshness actions
+
+- Implemented slashless canonical, Open Graph, Twitter, sitemap, and robots
+  metadata through the shared page SEO map.
+- Implemented WebPage, Service, BreadcrumbList, and FAQPage JSON-LD.
+- Re-run URL policy, lint, build, and schema inspection after route changes.
+
+### Measurement plan
+
+- Track organic prompts for dedicated WordPress developers, WordPress team
+  hiring, and WordPress development pricing.
+- Track quote CTA clicks, portfolio outbound clicks, FAQ expansion, and video
+  testimonial plays; owner: SEO and sales.
+
+### Verification and remaining gaps
+
+- Checks completed: live source/CSS/JS review, three live screenshots, local
+  asset verification, route implementation, and structured-data wiring.
+- Implemented items: local route, server-rendered content, page metadata,
+  schema, accessible image alts, and corrected quote CTA destination.
+- Deferred or blocked: governed proof definitions, approved rates, named
+  authorship, case-study evidence, and destination routes still in migration.
+
+## Hire Shopify Developers (`/hire-shopify-developers`)
+
+Status: implemented
+Last reviewed: 2026-08-18
+Primary audience: merchants, ecommerce teams, agencies, and founders evaluating dedicated Shopify development capacity.
+Decision stage: commercial investigation
+
+### Page role
+
+This page targets the dedicated Shopify developer hiring intent and complements the broader Shopify Plus agency route. It explains the hiring process, delivery services, advantages, industries, portfolio evidence, testimonials, and common hiring questions.
+
+### Target prompts
+
+- What do Shopify developers do?
+- How much does hiring a Shopify developer cost?
+- Is it worth hiring a Shopify developer?
+- What services do Shopify developers offer?
+- How can I hire a Shopify developer from Dynamic Dreamz?
+
+### Current strengths and available evidence
+
+- Server-rendered H1, hiring process, service scope, advantages, industries, six portfolio examples, testimonials, and five FAQ answers.
+- Existing local Shopify Plus testimonial media, industry imagery, platform mark, and canonical portfolio imagery are reused.
+- Live source and responsive screenshots were inspected; the captured hiring CSS/JS records breakpoints and interaction behavior.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | CTA integrity | Live `inquire now` points to `/career/`. | Route the unchanged CTA label to `/request-quote`. | Conversion intent and existing quote route |
+| P1 | implemented | Structured data | Live page schema is a sitewide graph with unrelated FAQ questions and trailing-slash URLs. | Emit route-scoped WebPage, Service, BreadcrumbList, and FAQPage data with slashless URLs matching visible content. | Visible page content and local route policy |
+| P1 | deferred | Proof definitions | Counters use `50+`, `5000+`, `20+`, and `1000+` without source dates or definitions. | Add approved definitions/provenance in supporting content without changing the visible counter design. | Leadership/client-success approval |
+| P1 | deferred | Visible copy | Several headings and paragraphs contain grammar issues such as `What do Shopify developers do?` and `End to End`. | Queue exact replacements for owner approval; preserve live wording during migration. | Exact visible-copy approval |
+| P2 | deferred | Evidence depth | Portfolio cards link to external stores but lack internal scope/case-study context. | Add approved case studies with delivery scope and verified outcomes. | Client-success approval and case-study routes |
+
+### Structured-data, crawler, and freshness actions
+
+- Keep `/hire-shopify-developers` in sitemap output and use slashless canonical/Open Graph URLs.
+- Ensure FAQ structured data contains only the five visible Shopify hiring questions and answers.
+- Keep image alt text subject-specific and use local project-owned media only.
+
+### Verification and remaining gaps
+
+- Checked: live source, screenshots, metadata, JSON-LD, linked hiring CSS/JS, local assets, responsive contract, and CTA destinations.
+- Implemented: route content, local media reuse, route-scoped metadata/schema, and quote CTA correction.
+- Deferred: visible copy corrections, counter provenance, and internal case-study evidence pending approval.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new

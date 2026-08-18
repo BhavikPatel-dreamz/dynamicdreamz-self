@@ -12,7 +12,17 @@ function slidesForWidth(width: number) {
   return width < 767 ? 1 : 2;
 }
 
-export function HappyClientSection() {
+type HappyClientSectionProps = {
+  heading?: string;
+  description?: string;
+  alignDesktopToContentEdge?: boolean;
+};
+
+export function HappyClientSection({
+  heading = shopifyPlusAgencyTestimonials.heading,
+  description = shopifyPlusAgencyTestimonials.description,
+  alignDesktopToContentEdge = false,
+}: HappyClientSectionProps = {}) {
   const [slidesToShow, setSlidesToShow] = useState(2);
 
   useEffect(() => {
@@ -25,7 +35,7 @@ export function HappyClientSection() {
   const settings: Settings = {
     arrows: false,
     autoplay: false,
-    centerMode: true,
+    centerMode: alignDesktopToContentEdge ? slidesToShow === 1 : true,
     centerPadding: "25px",
     dots: false,
     draggable: true,
@@ -44,10 +54,10 @@ export function HappyClientSection() {
       <Container>
         <div className="mb-[50px] text-center">
           <h2 className="mb-2.5 font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink">
-            {shopifyPlusAgencyTestimonials.heading}
+            {heading}
           </h2>
           <p className="mb-6 text-[18px] leading-[34.2px] font-medium text-muted">
-            {shopifyPlusAgencyTestimonials.description.split("<br>").map((line, index, lines) => (
+            {description.split("<br>").map((line, index, lines) => (
               <span key={line}>
                 {line}
                 {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}

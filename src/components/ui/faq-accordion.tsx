@@ -10,6 +10,10 @@ export type FaqAccordionItem = {
   question: string;
   answer: string;
   answerParts?: readonly RichTextPart[];
+  listItems?: readonly {
+    label?: string;
+    text: string;
+  }[];
 };
 
 type FaqAccordionProps = {
@@ -86,7 +90,8 @@ export function FaqAccordion({
                 <div className="px-8 pb-6 max-[1199px]:px-5 max-[1199px]:pb-5">
                   <p
                     className={cn(
-                      "mb-6 text-base leading-[30.4px] font-normal text-muted max-[1199px]:text-sm max-[1199px]:leading-[26px]",
+                      "text-base leading-[30.4px] font-normal text-muted max-[1199px]:text-sm max-[1199px]:leading-[26px]",
+                      item.listItems?.length ? "mb-3" : "mb-6",
                       answerClassName,
                     )}
                   >
@@ -102,6 +107,21 @@ export function FaqAccordion({
                         )
                       : item.answer}
                   </p>
+                  {item.listItems?.length ? (
+                    <ul className="mb-1 space-y-2.5">
+                      {item.listItems.map((listItem) => (
+                        <li
+                          className="relative pl-[34px] text-base leading-8 font-medium tracking-[0.32px] text-muted before:absolute before:top-[8px] before:left-0 before:size-3 before:rounded-full before:border-[3px] before:border-[#15c064] max-[1199px]:text-sm max-[1199px]:leading-[26px]"
+                          key={`${listItem.label ?? "item"}-${listItem.text}`}
+                        >
+                          {listItem.label ? (
+                            <strong className="font-bold">{listItem.label} </strong>
+                          ) : null}
+                          {listItem.text}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </div>
               </div>
             </div>

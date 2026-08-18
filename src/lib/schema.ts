@@ -4,6 +4,8 @@ import { contactPageContent } from "@/content/contact";
 import { fashionIndustryPage } from "@/content/fashion";
 import { foodBeveragesIndustryPage } from "@/content/food-beverages";
 import { healthcareIndustryPage } from "@/content/healthcare";
+import { hireWordPressFaqs } from "@/content/hire-wordpress-developers";
+import { hireShopifyFaqs, hireShopifyServices } from "@/content/hire-shopify-developers";
 import { petIndustryPage } from "@/content/pet-industry";
 import { organizationAnswerSummary, testimonials } from "@/content/home";
 import { ourWorkProjects } from "@/content/our-work";
@@ -81,6 +83,16 @@ const petIndustryPageUrl = absoluteUrl(pageSeo.petIndustry.path);
 const petIndustryPageId = `${petIndustryPageUrl}#webpage`;
 const petIndustryBreadcrumbId = `${petIndustryPageUrl}#breadcrumb`;
 const petIndustryServiceId = `${petIndustryPageUrl}#service`;
+const hireWordPressDevelopersPageUrl = absoluteUrl(pageSeo.hireWordPressDevelopers.path);
+const hireWordPressDevelopersPageId = `${hireWordPressDevelopersPageUrl}#webpage`;
+const hireWordPressDevelopersServiceId = `${hireWordPressDevelopersPageUrl}#service`;
+const hireWordPressDevelopersFaqId = `${hireWordPressDevelopersPageUrl}#faq`;
+const hireWordPressDevelopersBreadcrumbId = `${hireWordPressDevelopersPageUrl}#breadcrumb`;
+const hireShopifyDevelopersPageUrl = absoluteUrl(pageSeo.hireShopifyDevelopers.path);
+const hireShopifyDevelopersPageId = `${hireShopifyDevelopersPageUrl}#webpage`;
+const hireShopifyDevelopersServiceId = `${hireShopifyDevelopersPageUrl}#service`;
+const hireShopifyDevelopersFaqId = `${hireShopifyDevelopersPageUrl}#faq`;
+const hireShopifyDevelopersBreadcrumbId = `${hireShopifyDevelopersPageUrl}#breadcrumb`;
 const whiteLabelShopifyPageUrl = absoluteUrl(pageSeo.whiteLabelShopify.path);
 const whiteLabelShopifyPageId = `${whiteLabelShopifyPageUrl}#webpage`;
 const whiteLabelShopifyServiceId = `${whiteLabelShopifyPageUrl}#service`;
@@ -860,7 +872,7 @@ function createIndustryPageSchema(config: IndustryPageSchemaConfig) {
   };
 }
 
-type WhiteLabelServiceSchemaInput = {
+type ServicePageSchemaInput = {
   page: PageSeoConfig;
   pageUrl: string;
   pageId: string;
@@ -875,7 +887,7 @@ type WhiteLabelServiceSchemaInput = {
   offers?: readonly { title: string; description: string }[];
 };
 
-function createWhiteLabelServicePageSchema({
+function createServicePageSchema({
   page,
   pageUrl,
   pageId,
@@ -888,7 +900,7 @@ function createWhiteLabelServicePageSchema({
   audienceType,
   faqs,
   offers,
-}: WhiteLabelServiceSchemaInput) {
+}: ServicePageSchemaInput) {
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -1072,7 +1084,7 @@ export function createPetIndustryPageSchema() {
 }
 
 export function createWhiteLabelShopifyPageSchema() {
-  return createWhiteLabelServicePageSchema({
+  return createServicePageSchema({
     page: pageSeo.whiteLabelShopify,
     pageUrl: whiteLabelShopifyPageUrl,
     pageId: whiteLabelShopifyPageId,
@@ -1088,7 +1100,7 @@ export function createWhiteLabelShopifyPageSchema() {
 }
 
 export function createWhiteLabelWordPressPageSchema() {
-  return createWhiteLabelServicePageSchema({
+  return createServicePageSchema({
     page: pageSeo.whiteLabelWordPress,
     pageUrl: whiteLabelWordPressPageUrl,
     pageId: whiteLabelWordPressPageId,
@@ -1105,7 +1117,7 @@ export function createWhiteLabelWordPressPageSchema() {
 }
 
 export function createWhiteLabelWebsiteDesignPageSchema() {
-  return createWhiteLabelServicePageSchema({
+  return createServicePageSchema({
     page: pageSeo.whiteLabelWebsiteDesign,
     pageUrl: whiteLabelWebsiteDesignPageUrl,
     pageId: whiteLabelWebsiteDesignPageId,
@@ -1122,7 +1134,7 @@ export function createWhiteLabelWebsiteDesignPageSchema() {
 }
 
 export function createShopifyPlusAgencyPageSchema() {
-  return createWhiteLabelServicePageSchema({
+  return createServicePageSchema({
     page: pageSeo.shopifyPlus,
     pageUrl: shopifyPlusPageUrl,
     pageId: shopifyPlusPageId,
@@ -1136,6 +1148,57 @@ export function createShopifyPlusAgencyPageSchema() {
       "High-growth eCommerce brands, B2B merchants, and businesses scaling on Shopify Plus",
     faqs: shopifyPlusAgencyFaqs,
     offers: shopifyPlusAgencyServices.items,
+  });
+}
+
+export function createHireWordPressDevelopersPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.hireWordPressDevelopers,
+    pageUrl: hireWordPressDevelopersPageUrl,
+    pageId: hireWordPressDevelopersPageId,
+    serviceId: hireWordPressDevelopersServiceId,
+    faqId: hireWordPressDevelopersFaqId,
+    breadcrumbId: hireWordPressDevelopersBreadcrumbId,
+    serviceName: "Dedicated WordPress Development Services",
+    serviceType: "Dedicated WordPress developer and WordPress team hiring",
+    breadcrumbName: "Hire WordPress Developers",
+    audienceType:
+      "Businesses and agencies seeking dedicated WordPress developers or WordPress development teams",
+    faqs: hireWordPressFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ].join(" "),
+    })),
+  });
+}
+
+export function createHireShopifyDevelopersPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.hireShopifyDevelopers,
+    pageUrl: hireShopifyDevelopersPageUrl,
+    pageId: hireShopifyDevelopersPageId,
+    serviceId: hireShopifyDevelopersServiceId,
+    faqId: hireShopifyDevelopersFaqId,
+    breadcrumbId: hireShopifyDevelopersBreadcrumbId,
+    serviceName: "Dedicated Shopify Development Services",
+    serviceType: "Dedicated Shopify developer and Shopify team hiring",
+    breadcrumbName: "Hire Shopify Developers",
+    audienceType:
+      "Businesses and agencies seeking dedicated Shopify developers or Shopify development teams",
+    faqs: hireShopifyFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ].join(" "),
+    })),
+    offers: hireShopifyServices.items,
   });
 }
 
