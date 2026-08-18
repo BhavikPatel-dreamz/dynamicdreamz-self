@@ -1,7 +1,6 @@
 import { FaqSection } from "@/components/sections/faq-section";
 import { HiringHeroSection } from "@/components/sections/hiring-hero-section";
 import { HiringProcessSection } from "@/components/sections/hire-wordpress-developers/hiring-process-section";
-import { ShopifyIndustriesSection } from "@/components/sections/hire-shopify-developers/shopify-industries-section";
 import {
   ShopifyAdvantagesSection,
   ShopifyReasonsSection,
@@ -10,9 +9,11 @@ import { ShopifyServicesSection } from "@/components/sections/hire-shopify-devel
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
+import { IndustriesServedSection } from "@/components/sections/shopify-plus-agency/industries-served-section";
 import {
   hireShopifyFaqs,
   hireShopifyHero,
+  hireShopifyIndustries,
   hireShopifyPortfolio,
   hireShopifyProcess,
   hireShopifyTestimonials,
@@ -24,6 +25,13 @@ const brandSection = {
     ariaLabel: "Brands that trust Dynamic Dreamz for Shopify development",
   },
 } as const;
+
+const industriesContent = {
+  heading: "Industries that we have Served",
+  description:
+    "Dynamic Dreamz has massive experience across multiple industries,<br> helping businesses like yours succeed online. Our expertise spans sectors such as:",
+  items: hireShopifyIndustries,
+};
 
 const portfolioContent = {
   heading: "Work of our Shopify Developers that show our Expertise",
@@ -41,11 +49,10 @@ export function HireShopifyDevelopersPage() {
       <ShopifyServicesSection />
       <ShopifyReasonsSection />
       <ShopifyAdvantagesSection />
-      <ShopifyIndustriesSection />
+      <IndustriesServedSection content={industriesContent} />
       <PortfolioShowcaseSection content={portfolioContent} />
       <div id="shopify-testimonials">
         <HappyClientSection
-          alignDesktopToContentEdge
           description={hireShopifyTestimonials.description}
           heading={hireShopifyTestimonials.heading}
         />

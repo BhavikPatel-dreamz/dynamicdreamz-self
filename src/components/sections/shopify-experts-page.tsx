@@ -57,7 +57,7 @@ export function ShopifyExpertsPage() {
       <ShopifyExpertsAiDiscovery />
       <IndustriesServedSection content={industriesContent} />
       <PortfolioShowcaseSection content={shopifyExpertsContent.work} />
-      <div id="shopify-testimonials" className="pt-20">
+      <div id="shopify-testimonials">
         <HappyClientSection
           heading={shopifyExpertsContent.testimonials.heading}
           description={shopifyExpertsContent.testimonials.description}

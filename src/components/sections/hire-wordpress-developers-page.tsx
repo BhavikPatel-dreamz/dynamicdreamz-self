@@ -43,11 +43,12 @@ export function HireWordPressDevelopersPage() {
       <WordPressReasonsSection />
       <WordPressAdvantagesSection />
       <PortfolioShowcaseSection content={portfolioContent} />
-      <HappyClientSection
-        alignDesktopToContentEdge
-        description={hireWordPressTestimonials.description}
-        heading={hireWordPressTestimonials.heading}
-      />
+      <div id="shopify-testimonials">
+        <HappyClientSection
+          description={hireWordPressTestimonials.description}
+          heading={hireWordPressTestimonials.heading}
+        />
+      </div>
       <FaqSection
         items={hireWordPressFaqs}
         idPrefix="hire-wordpress-developers-faq"
