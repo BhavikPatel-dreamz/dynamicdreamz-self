@@ -2637,6 +2637,77 @@ Future visible copy improvements are tracked in `docs/page-content-improvements.
   lint, and production build.
 >>>>>>> 229eafc0c1fbc07bc2efa962f29df778b458855f
 
+## Shopify Apps (`/shopify-apps`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-18
+
+Owner: SEO, product, development, leadership, and sales operations
+
+Primary audience: Shopify and Shopify Plus merchants seeking specialized apps for B2B wholesale, payment customization, quote requests, checkout upsell, and dynamic shipping rates
+
+Decision stage: app discovery, feature evaluation, trial installation, and Shopify App Store navigation
+
+### Page role
+
+Dedicated archive and showcase catalog for Dynamic Dreamz public Shopify apps. Features 5 published Shopify App Store applications (Smart B2B, Dynamic PayHide, Dynamic Quote Request, Dynamic Checkout Upsell, Easy Shipping Rate Manager) with direct App Store links, trial availability, pricing indicators, and descriptive feature summaries.
+
+### Target prompts
+
+- What public Shopify apps has Dynamic Dreamz built?
+- Best Shopify B2B app for wholesale portal and customer pricing?
+- How to hide payment methods in Shopify checkout dynamically?
+- Best Shopify quote request app for cart and product pages?
+- Dynamic shipping rate manager app for Shopify stores?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Shopify App` and clean responsive catalog grid.
+- Direct links to official Shopify App Store listings for all 5 apps.
+- Clear pricing and trial indicators ("Free trial available", "$20/month").
+- Structured data graph emitting CollectionPage with ItemList of 5 SoftwareApplication items, BreadcrumbList, Organization, and WebSite.
+- Canonical local asset management for all 5 app icons under `public/assets/shopify-apps/`.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Missing App Router implementation for public apps catalog | Ship slashless `/shopify-apps` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich CollectionPage and SoftwareApplication ItemList structured data | Emit CollectionPage with ItemList containing 5 SoftwareApplication items, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | Live site images required local project-owned copies | Save 5 canonical app icons into `public/assets/shopify-apps/` with kebab-case naming | Verified locally |
+| P1 | deferred | Content expansion | Archive is currently a concise 5-card list; could benefit from detailed feature lists, merchant reviews, and install CTAs | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered catalog establishes Dynamic Dreamz public app portfolio. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as the publisher/developer of the listed Shopify applications.
+- Maintain accurate App Store URLs and pricing indicators matching live listings.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/shopify-apps` navigation in the header under Services -> Shopify & Shopify Plus.
+- Direct external app store links open in new tab with `target="_blank" rel="noopener noreferrer"`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit CollectionPage with ItemList containing 5 SoftwareApplication entries, BreadcrumbList, Organization, and WebSite.
+- Use explicit migration review date for `dateModified`.
+- Ensure canonical route and primary image are listed in sitemap and indexable.
+
+### Measurement plan
+
+- SEO tracks discovery queries for Dynamic Dreamz Shopify apps on Google and AI search engines.
+- Analytics tracks outbound clicks to Shopify App Store listings.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-apps`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits, JSON-LD graph verification, desktop/tablet/mobile screenshots captured (1440x900, 768x1024, 390x844), local assets audit, responsive layouts, lint, and production build.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new

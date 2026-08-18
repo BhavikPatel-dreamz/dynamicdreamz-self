@@ -653,6 +653,34 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  shopifyApps: {
+    path: "/shopify-apps",
+    title: "Shopify App Archive | Dynamic Dreamz",
+    description:
+      "Explore top Shopify apps for conversion growth, checkout upgrades, shipping, quotes, and more- all built to scale your store’s performance.",
+    keywords: [
+      "Shopify apps",
+      "Shopify public apps",
+      "Smart B2B Shopify app",
+      "Dynamic PayHide",
+      "Dynamic Quote Request",
+      "Dynamic Checkout Upsell",
+      "Easy Shipping Rate Manager",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-08-01T00:00:00+00:00",
+    modifiedTime: "2026-08-18T00:00:00+05:30",
+    image: {
+      path: "/assets/shopify-apps/smart-b2b.png",
+      width: 300,
+      height: 300,
+      alt: "Smart B2B Shopify App",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;
