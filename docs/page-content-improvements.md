@@ -444,3 +444,21 @@ Dynamic Dreamz contact details.
 | Policy freshness | The live page has no visible effective or last-updated date. | Add `Last updated: [approved date]` below the policy heading after legal review. | Gives visitors and crawlers a clear freshness signal without inventing a legal date. | High | deferred pending legal approval |
 | Policy contact phone | The live policy lists `+91 63520 11266`, while the current shared site contact fact is `+91 9327642007`. | Replace the policy phone with the legal owner's approved policy contact number and keep the same value in structured data where applicable. | Prevents visitors from receiving stale or conflicting policy-contact information. | High | blocked pending legal and leadership fact approval |
 | Controller/jurisdiction summary | The policy does not state a concise data-controller identity, legal basis, or governing jurisdiction. | Add a legal-approved summary naming the responsible entity, applicable legal bases, and jurisdiction. | Improves answer extraction and legal clarity without making unsupported claims. | High | deferred pending legal review |
+
+## Shopify Experts (`/shopify-experts`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: hire Shopify experts, top rated Shopify developers, Shopify development agency, certified Shopify plus developers, Shopify store setup, custom theme design, app development, AI ecommerce automation.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Hero subtitle | `Hire certified Shopify experts to build, customize, scale, and optimize your online store. Seamless communication, flexible hiring models, and on-time delivery.` | Maintain live wording; optionally add specific proof points (e.g. 50+ Shopify developers, 20+ years experience). | Preserves live UI copy verbatim while logging future proof enhancements. | Medium | deferred pending exact visible-copy approval |
+| Hiring process heading | `Hassle free Hiring Process to Get Started` | `A straightforward process to hire certified Shopify experts` | Improves grammar and readability. | Low | deferred pending exact visible-copy approval |
+| Hiring choice heading | `What makes Dynamic Dreamz an excellent choice to hire for your Shopify Development?` | `Why Dynamic Dreamz is the right partner for your Shopify development` | Tightens phrasing while maintaining intent. | Low | deferred pending exact visible-copy approval |
+| Advantages heading | `Advantages of Hiring Shopify Experts from Dynamic Dreamz` | `Advantages of hiring Shopify experts from Dynamic Dreamz` | Fixes title capitalization. | Low | deferred pending exact visible-copy approval |
+| Advantage savings claim | `Save 60% on your development cost` | `Competitive agency pricing with flexible hiring models.` | Avoids an unsupported savings guarantee. | High | deferred pending sales evidence and exact visible-copy approval |
+| AI automation heading | `We Don’t Just Build Stores We Build Stores That Work Harder for You` | `We build Shopify stores that work harder for you with AI and automation` | Improves sentence flow and SEO keyword relevance. | Medium | deferred pending exact visible-copy approval |
+| Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
+| VideoObject structured data | Live page lacked structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes in JSON-LD with authentic upload dates and YouTube URLs matching visible testimonials. | Improves video indexing and search eligibility without changing visible UI. | High | implemented in schema |
+| Missing image alt text | Several icons and store project previews had generic or uninformative alt text on live site. | Descriptive, page-specific alt text for all 32 local assets. | Improves accessibility and image indexation without altering visible layout. | High | implemented as a nonvisual accessibility correction |

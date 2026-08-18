@@ -4,18 +4,22 @@ import { cn } from "@/lib/class-names";
 type IndustryBrandsSectionProps = {
   content: {
     slug: string;
-    brands: {
+    brands?: {
       ariaLabel: string;
     };
+    ariaLabel?: string;
   };
+  heading?: string;
   mobileSpacing?: "standard" | "spacious";
 };
 
 export function IndustryBrandsSection({
   content,
+  heading,
   mobileSpacing = "standard",
 }: IndustryBrandsSectionProps) {
   const hasSpaciousMobileLayout = mobileSpacing === "spacious";
+  const ariaLabel = content.brands?.ariaLabel ?? content.ariaLabel ?? "Trusted Brands";
 
   return (
     <section
@@ -37,12 +41,16 @@ export function IndustryBrandsSection({
             className="m-0 font-[Montserrat,sans-serif] text-[25px] leading-[33px] font-semibold tracking-[-.02em] text-ink"
             id={`${content.slug}-brands-title`}
           >
-            Trusted by <br/> Leading Brands
+            {heading ?? (
+              <>
+                Trusted by <br /> Leading Brands
+              </>
+            )}
           </h2>
         </div>
         <div className="w-[69%] max-[1199px]:w-[70%] max-[991px]:w-full">
           <ClientLogoSlider
-            ariaLabel={content.brands.ariaLabel}
+            ariaLabel={ariaLabel}
             items={industryBrandLogos}
             variant="industry"
           />

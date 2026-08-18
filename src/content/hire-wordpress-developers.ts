@@ -91,17 +91,17 @@ export const hireWordPressAdvantages = {
   items: [
     {
       title: "Easy and fair hiring process with no hidden cost",
-      icon: iconPath("fair-hiring-process"),
+      icon: "/assets/hire-shopify-developers/icons/fair-hiring.svg",
       iconAlt: "Fair hiring process",
     },
     {
       title: "Save up to 60% on your development cost",
-      icon: iconPath("development-cost-savings"),
+      icon: "/assets/hire-shopify-developers/icons/development-savings.svg",
       iconAlt: "Development cost savings",
     },
     {
       title: "Our developer can work as per local time zone",
-      icon: iconPath("timezone-alignment"),
+      icon: "/assets/hire-shopify-developers/icons/timezone.svg",
       iconAlt: "Local time zone alignment",
     },
     {
@@ -111,12 +111,12 @@ export const hireWordPressAdvantages = {
     },
     {
       title: "Focus on your business, we'll handle all HR needs",
-      icon: iconPath("managed-hr"),
+      icon: "/assets/hire-shopify-developers/icons/managed-hr.svg",
       iconAlt: "Managed HR needs",
     },
     {
       title: "Unmatched post production support",
-      icon: iconPath("post-production-support"),
+      icon: "/assets/hire-shopify-developers/icons/post-production-support.svg",
       iconAlt: "Post production support",
     },
   ],

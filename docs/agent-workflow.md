@@ -26,10 +26,16 @@ The agent should then read:
 
 1. Understand the task and map it to a route, component, content area, SEO
    requirement, or asset need.
-2. Inspect the current code before editing. Search existing components, their
-   props, and their usages before deciding to create a component.
+2. Inspect the current code before editing. Search existing components (`src/components/**`),
+   their props, and their usages before deciding to create a component. Check if existing
+   shared components (`HiringHeroSection`, `PortfolioShowcaseSection`, `FaqSection`,
+   `CtaBannerSection`, `IndustryBrandsSection`, `HappyClientSection`, `IndustriesServedSection`,
+   `HiringProcessSection`, `ShopifyReasonsSection`, `ShopifyAdvantagesSection`,
+   `WhiteLabelHeroSection`, `PortfolioProjectCard`, `ButtonLink`, `Container`, `FaqAccordion`)
+   can satisfy the requirement via typed props.
 3. Map each planned UI element to an existing reusable component or document why
-   its semantics, behavior, or visual contract requires a new component.
+   its semantics, behavior, or visual contract requires a new component. Never create
+   route-prefixed or duplicate copies of existing component structures.
 4. If migrating a legacy page, inspect the old URL as both a rendered page and
    View Page Source for content structure, headings, CTAs, metadata intent,
    images, links, schema, accessibility details, style details, and redirect
@@ -47,8 +53,9 @@ The agent should then read:
    interactions unchanged unless the project owner explicitly approved the
    exact visible change in the current task. Queue unapproved visible proposals
    in `docs/page-content-improvements.md`.
-9. Implement with reusable components, local data/content, and project-owned
-   assets.
+9. Implement with reusable components, local data/content, and canonical project-owned
+   assets. Search `public/assets/**` using file name, visual comparison, and sha256 checksums
+   before adding any image/icon/svg to prevent asset duplication.
 10. Apply the project URL policy while adding or editing routes: every non-root
     page path is slashless (`/about-us`, not `/about-us/`). Keep internal links,
     canonical and Open Graph URLs, sitemap/robots output, JSON-LD, and redirects
@@ -66,7 +73,8 @@ The agent should then read:
 15. If SEO/content quality can improve through visible copy changes, update
     `docs/page-content-improvements.md` with page-specific suggestions marked
     `suggested` or `deferred`; do not implement them without explicit approval.
-16. Run `npm run check:urls`, then the standard lint/build verification commands.
+16. Run component audit and asset deduplication verification (`find public/assets -type f -exec sha256sum {} + | sort | uniq -w64 -dD`),
+    `npm run check:urls`, and the standard lint/build verification commands.
 17. Summarize changes, verification, visual capture notes, AEO/GEO status, and
     any missing assets or content approvals.
 
@@ -138,13 +146,33 @@ project uses Next.js 16.3.0 and may differ from older App Router examples.
 - Avoid adding dependencies for simple UI. If a dependency is justified, explain
   the production benefit.
 
-## Component Reuse Workflow
+## Component Reuse Workflow & Canonical Component Catalog
 
+Always check the canonical shared components before writing any component code:
+
+| Component | Canonical Location | Description & Usage |
+| :--- | :--- | :--- |
+| `HiringHeroSection` | `src/components/sections/hiring-hero-section.tsx` | All hiring/expert pages hero (title, 1-2 lead paragraphs, CTA button, 5-col stats, review badge slider). |
+| `PortfolioShowcaseSection` | `src/components/sections/portfolio-showcase-section.tsx` | 3-column project showcase grid with category badge, platform mark, and "View our work" CTA button. |
+| `FaqSection` | `src/components/sections/faq-section.tsx` | Standard FAQ section wrapping `Container`, H2 heading, and `FaqAccordion`. |
+| `CtaBannerSection` | `src/components/sections/cta-banner-section.tsx` | Full-width gradient CTA banner with heading and "Request a quote" button. |
+| `IndustryBrandsSection` | `src/components/sections/industry/industry-brands-section.tsx` | Client brand partner logos marquee with customizable title. |
+| `HappyClientSection` | `src/components/sections/shopify-plus-agency/happy-client-section.tsx` | Video testimonials slider with modal video playback. |
+| `IndustriesServedSection` | `src/components/sections/shopify-plus-agency/industries-served-section.tsx` | Vertical industry cards slider. |
+| `HiringProcessSection` | `src/components/sections/hire-wordpress-developers/hiring-process-section.tsx` | 4-step hiring process with gradient step badges and dashed connectors. |
+| `ShopifyReasonsSection` / `ShopifyAdvantagesSection` | `src/components/sections/hire-shopify-developers/shopify-proof-sections.tsx` | 3-card and 6-grid agency proof cards with flexible content props. |
+| `WhiteLabelHeroSection` | `src/components/sections/white-label/white-label-hero-section.tsx` | White label service pages hero banner. |
+| `PortfolioProjectCard` | `src/components/ui/portfolio-project-card.tsx` | Canonical portfolio card with image, title, category, and platform mark. |
+| `FaqAccordion` | `src/components/ui/faq-accordion.tsx` | Accessible expandable accordion primitive. |
+| `ButtonLink` | `src/components/ui/button-link.tsx` | Canonical primary/secondary/light button link with fill-animation. |
+| `Container` | `src/components/ui/container.tsx` | Standard width container wrapper. |
+
+### Component Deduplication Rules:
 1. Search by component name, visible text, role, interaction, and styling pattern
    across `src/components/**` and route-local files before implementation.
 2. Inspect candidate components and every relevant usage so reuse does not break
    their existing visual, accessibility, server/client, or behavioral contract.
-3. Reuse the existing component unchanged when it already fits.
+3. Reuse the existing component unchanged when it already fits by passing typed content props.
 4. If the requirement is a legitimate variation of the same component, extend
    it with the smallest clear typed prop, variant, slot, or content-data change.
 5. Preserve Server Component boundaries. Do not turn a shared Server Component
@@ -152,9 +180,8 @@ project uses Next.js 16.3.0 and may differ from older App Router examples.
    interactive control in a small Client Component.
 6. Move a component to `ui`, `layout`, or a shared `sections` location when a
    second page needs it and its responsibility is no longer page-specific.
-7. Create a new component only when candidates differ materially in semantics,
-   behavior, accessibility, or visual contract, or when reuse would produce a
-   confusing prop API and unrelated conditionals.
+7. Never create page-prefixed duplicate files (such as `<Route>Hero`, `<Route>FaqSection`,
+   `<Route>PortfolioSection`, `<Route>CtaSection`).
 8. Before completion, search again for equivalent implementations introduced by
    the change and consolidate them without weakening visual parity.
 
@@ -372,43 +399,56 @@ maintainable code. Prefer Tailwind utilities and shared components over copying
 large old-site CSS files directly. Keep `src/app/globals.css` minimal; do not
 place page/component styles there.
 
-## Asset Workflow
+## Asset Workflow & Anti-Redundancy Rules
 
 1. Search the complete `public/assets/` tree before downloading, copying, or
-   renaming any image or media file.
-2. For likely matches, compare content hashes first. If compression or encoding
-   differs, visually compare the files before deciding they are distinct.
-3. Reuse the existing canonical local path when the asset is identical. Never
-   create a page-local copy or a new filename for the same visual media.
-4. When an asset is shared by multiple pages, store one canonical copy in a
-   neutral purpose-based folder such as `public/assets/team/**`; keep
-   page-specific alt text and captions in each page's content data.
+   renaming any image, svg, or media file.
+2. For likely matches, compare content hashes and visual appearance:
+   ```bash
+   find public/assets -type f -exec sha256sum {} + | sort | uniq -w64 -dD
+   ```
+3. Reuse the existing canonical local path when the asset is identical or visually equivalent.
+   Never create a page-local copy or duplicate file for the same visual media.
+4. Shared assets (brand logos, platform marks, review badges, client testimonial videos/posters,
+   case study screenshots, general UI icons) MUST be stored in a single canonical folder:
+   - `public/assets/brands/` for client logos & partner marks
+   - `public/assets/platforms/` for platform badges (Shopify, WordPress, WooCommerce, etc.)
+   - `public/assets/team/` for team members & founders
+   - `public/assets/icons/` for general UI icons
 5. Only when no equivalent local asset exists, download/copy the required
    old-site asset into a local project-owned folder during migration.
 6. Rename the new local copy with a meaningful lowercase kebab-case filename if
    the live filename is unclear, random, hashed, generic, or keyword-stuffed.
-7. Put assets in a stable folder by purpose.
-8. Preserve the original asset's important attributes in local content/data:
+7. Preserve the original asset's important attributes in local content/data:
    alt text, caption/title, source page, and original placement.
-9. Use `next/image` for photos, logos, hero images, case study screenshots, and
+8. Use `next/image` for photos, logos, hero images, case study screenshots, and
    testimonial portraits.
-10. Give every content image meaningful, page-specific alt text. Do not use
-    generic values like "image", "banner", "logo image", or repeated keyword
-    strings.
-11. Use empty alt text only for truly decorative images, and make that decision
+9. Give every content image meaningful, page-specific alt text. Do not use
+   generic values like "image", "banner", "logo image", or repeated keyword
+   strings.
+10. Use empty alt text only for truly decorative images, and make that decision
     intentional.
-12. Use stable dimensions, aspect ratios, and responsive sizes to prevent layout
+11. Use stable dimensions, aspect ratios, and responsive sizes to prevent layout
     shift.
-13. Before completion, scan project-owned media by content hash and remove any
-    redundant copy after updating every reference to the canonical path.
-14. Never use `dynamicdreamz.com` asset URLs in final code.
+12. Before completion, scan project-owned media by content hash (`find public/assets -type f -exec sha256sum {} +`)
+    and remove any redundant copy after updating every reference to the canonical path.
+13. Never use `dynamicdreamz.com` asset URLs in final code.
 
 ## Verification Checklist
 
 Run these before completing implementation work:
 
 ```bash
+# 1. Verify URL policy (no trailing slashes)
+npm run check:urls
+
+# 2. Check for duplicate image assets
+find public/assets -type f -exec sha256sum {} + | sort | uniq -w64 -dD
+
+# 3. Lint and type-check
 npm run lint
+
+# 4. Full production static build
 npm run build
 ```
 
@@ -426,6 +466,8 @@ Then capture and compare live/local screenshots at least:
 
 Check for:
 
+- No duplicate or redundant components created (reused canonical shared sections & UI primitives)
+- No duplicate or redundant images stored in `public/assets/`
 - No overlapping text or controls
 - No horizontal scroll
 - Header and footer navigation usable
@@ -444,8 +486,10 @@ A task is complete only when:
 
 - The requested behavior/page exists.
 - It follows the project structure.
-- Existing suitable components were reused or extended; any new equivalent-looking
-  component has a clear semantic, behavioral, or visual reason to remain separate.
+- Existing suitable components were reused or extended (`HiringHeroSection`, `PortfolioShowcaseSection`,
+  `FaqSection`, `CtaBannerSection`, `IndustryBrandsSection`, `HappyClientSection`, etc.); no duplicate
+  or route-prefixed copy was introduced.
+- Existing canonical assets were reused; zero redundant duplicate media files exist in `public/assets/`.
 - It uses local assets/content, not old-site runtime URLs.
 - SEO was handled for touched routes.
 - AEO/GEO work preserves the live-visible UI and content unless the exact
@@ -457,6 +501,6 @@ A task is complete only when:
 - Visual parity evidence was recorded for UI changes, including responsive and
   animation checks, or the final response clearly explains why it could not be
   verified.
-- Lint and build were run or a clear blocker is documented.
+- Lint and build were run and passed with 0 errors.
 - The final response lists changed files, verification, and open content/assets
   only if any remain.
