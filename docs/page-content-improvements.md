@@ -375,3 +375,18 @@ Primary SEO intent: Shopify Plus agency, enterprise Shopify development services
 | Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
 | VideoObject structured data | Live page lacked structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes in JSON-LD with authentic upload dates and YouTube URLs matching visible testimonials. | Improves video indexing and search eligibility without changing visible UI. | High | implemented in schema |
 
+## Request a Quote (`/request-quote`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: request a quote, hire Shopify developers, web development estimate, custom ecommerce consultation, project scope estimation, and discovery call booking.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Subtitle | `Please fill in the form and our representative will get back to you.` | `Please fill in the form and our team will get back to you within 24 business hours.` | Clarifies expected response turnaround time without altering core workflow. | Medium | deferred pending sales/operations policy approval |
+| Testimonial name / agency name | Rebekah Wymer quote says `I’ve worked with Dynamic Dreams on several web development projects` | `I’ve worked with Dynamic Dreamz on several web development projects` | Corrects slight brand name misspelling (`Dreams` -> `Dreamz`) in client quote text. | Low | deferred pending exact visible-copy approval |
+| Testimonial punctuation | Brandon quote ends with trailing comma: `with unmatched responsiveness, professionalism,` | `with unmatched responsiveness and professionalism.` | Fixes unfinished trailing comma in quote text. | Low | deferred pending exact visible-copy approval |
+| Review badge alt text | Live Clutch badge uses `clith Revire for the Dynamic dreamz` in source | `Clutch Dynamic Dreamz` | Improves accessibility name quality and fixes typos without altering visible UI. | High | implemented as a nonvisual accessibility correction |
+| Quote Form submission | Live site uses Contact Form 7 with Cloudflare Turnstile | Next.js Server Action with honeypot, field validation, UTM attribution, and status feedback | Enhances security, performance, and reliability while maintaining exact visual form layout. | High | implemented in server actions |
+
+

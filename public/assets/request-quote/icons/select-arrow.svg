@@ -1,0 +1,16 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 7" width="12" height="7">
+	<title>select-arrow-svg</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m-4-7h20v20h-20z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.s0 { fill: #000000 } 
+	</style>
+	<g id="Clip-Path" clip-path="url(#cp1)">
+		<g id="Layer">
+			<path id="Layer" fill-rule="evenodd" class="s0" d="m6.6 6.1q-0.3 0.2-0.6 0.2-0.3 0-0.6-0.2l-4.7-4.7q-0.1-0.1-0.2-0.3-0.1-0.1-0.1-0.3 0-0.2 0.1-0.3 0.1-0.2 0.2-0.3 0.1-0.1 0.3-0.2 0.1-0.1 0.3-0.1 0.1 0 0.3 0.1 0.2 0.1 0.3 0.2l4.1 4.1 4.1-4.1q0.3-0.2 0.6-0.2 0.3 0 0.6 0.2 0.2 0.2 0.2 0.6 0 0.3-0.2 0.6z"/>
+		</g>
+	</g>
+</svg>

@@ -31,6 +31,7 @@ It covers:
   - `/white-label-wordpress-development-services`
   - `/white-label-website-design-services`
   - `/shopify-plus-agency`
+  - `/request-quote`
 
 This is the strategy and implementation record. Visible changes proposed and
 temporarily implemented on 2026-08-12 were rejected and reverted to live-site
@@ -2233,6 +2234,97 @@ capabilities. Future visible copy improvements are tracked in
   assets audit (39 local assets verified), ReviewAnimation responsiveness,
   accessible dialogs, lint, and production build.
 - Remaining: quote and case-study destination completion remain migration pending.
+
+## Request a Quote (`/request-quote`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-18
+
+Owner: SEO, content, development, leadership, sales, and delivery operations
+
+Primary audience: high-intent commercial prospects, ecommerce brands, and digital agency partners seeking custom development estimates and consultations
+
+Decision stage: inbound lead capture, project discovery, proposal estimation, and partner onboarding
+
+### Page role
+
+Primary commercial inbound conversion and project estimation route. Connects potential clients directly to Dynamic Dreamz representatives through a structured project inquiry form, supported by brand credibility proof (5000+ projects, 150+ experts, 1100+ happy clients), 4 verified partner/review badges (Shopify Platinum Partners, Clutch, Upwork Top Rated, Trustpilot), and a 7-client testimonial slider.
+
+### Target prompts
+
+- How do I request a quote for Shopify or Shopify Plus development from Dynamic Dreamz?
+- What details are needed to get a project estimate from Dynamic Dreamz?
+- How does Dynamic Dreamz handle project scope, budget estimation, and discovery calls?
+- What are client reviews and verified badges for Dynamic Dreamz?
+- Who is the best Shopify Platinum Partner for custom ecommerce development?
+
+### Current strengths and available evidence
+
+- High-visibility conversion route with minimal friction: clean 7-input inquiry form with budget selectors and project brief.
+- Server-rendered proof points: 5000+ Projects, 150+ Experts, 1100+ Happy Clients.
+- 4 independent review and partner badges linking to external verification profiles (Shopify Partner Directory, Clutch, Upwork, Trustpilot).
+- 7 authentic client testimonials with avatars and quotes (Alec Torelli, William Petz, William ST Baker, Kerri Imrie, Brandon, Shari Leidich, Rebekah Wymer).
+- Clean `header-two` layout with direct back-navigation and home branding.
+- Structured data graph emitting Organization, WebSite, ContactPage, and BreadcrumbList.
+- Production-ready Server Action with honeypot spam protection, field length limits, attribution tracking, and webhook dispatch.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The canonical migrated route needed full App Router and metadata implementation | Ship slashless route via shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Header architecture | Page requires distinct HeaderTwo with "Go back" button while hiding fixed mega-menu | Render HeaderTwo and apply `[body:has(main[data-page=request-quote])_&]:hidden` to SiteHeader | Visual and functional verification complete 2026-08-18 |
+| P0 | implemented | Local assets | Page depended on remote WordPress SVG badges and WebP avatars | Download project-owned badges and reuse canonical `/assets/testimonials/` avatars | 100% project-owned assets verified |
+| P0 | implemented | Form security & reliability | Live site uses Contact Form 7 with Cloudflare Turnstile | Replaced with Next.js Server Action featuring honeypot, field validation, attribution tracking, and error/success states | Tested and verified |
+| P1 | deferred | Copy phrasing | Subtitle says `Please fill in the form and our representative will get back to you.` without stated turnaround time | Keep live wording during migration; optionally add explicit response SLA (e.g., within 24 business hours) once approved | Sales / operations policy approval |
+| P1 | deferred | Testimonial typo | Rebekah's quote references `Dynamic Dreams` and William's quote has minor punctuation quirks | Preserve live wording verbatim during migration; queue exact visible copy fixes in `docs/page-content-improvements.md` | Content approval |
+| P2 | suggested | Analytics tracking | Lead attribution and form interaction tracking | Capture UTM parameters and submission source cleanly into webhook payload | SEO / Analytics ownership |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered
+headings and proof counters establish the inbound quote request workflow.
+Proposed copy improvements are tracked in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz to the shared Organization entity and model this route as
+  a ContactPage.
+- Keep the 3 deliver counters, 4 partner badges, and 7 client testimonials
+  strictly aligned with visible content.
+- Do not inject unsupported SLA or pricing claims without sales/leadership
+  governance.
+
+### Internal-link and conversion actions
+
+- Maintain HeaderTwo logo linking to `/` and Go Back button with history-back
+  navigation.
+- Preserve external badge profile links with `nofollow noopener noreferrer`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Organization, WebSite, ContactPage, and BreadcrumbList.
+- Use live publish date `2024-06-21T09:23:48+00:00` and migration review date for
+  `dateModified`.
+- Ensure canonical `/request-quote` and primary image are in the sitemap.
+
+### Measurement plan
+
+- SEO tracks discovery prompts and organic search landings for quote queries.
+- Analytics measures form completion rate, field abandonment, and attribution
+  channels.
+- Sales categorizes lead source, project type (Shopify Plus, Migration, Custom,
+  White-Label), and estimated budget range.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD,
+  and internal links use `/request-quote`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source,
+  metadata limits, JSON-LD graph verification, desktop/tablet/mobile screenshots
+  captured (1440x900, 768x1024, 390x844), local assets audit, responsive form
+  layout, lint, and production build.
 
 ## Future Page Maintenance Workflow
 

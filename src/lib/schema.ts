@@ -61,6 +61,9 @@ const resourcesItemListId = `${resourcesPageUrl}#articles`;
 const contactPageUrl = absoluteUrl(pageSeo.contact.path);
 const contactPageId = `${contactPageUrl}#webpage`;
 const contactBreadcrumbId = `${contactPageUrl}#breadcrumb`;
+const requestQuotePageUrl = absoluteUrl(pageSeo.requestQuote.path);
+const requestQuotePageId = `${requestQuotePageUrl}#webpage`;
+const requestQuoteBreadcrumbId = `${requestQuotePageUrl}#breadcrumb`;
 const ourWorkPageUrl = absoluteUrl(pageSeo.ourWork.path);
 const ourWorkPageId = `${ourWorkPageUrl}#webpage`;
 const ourWorkBreadcrumbId = `${ourWorkPageUrl}#breadcrumb`;
@@ -684,6 +687,57 @@ export function createContactPageSchema() {
             position: 2,
             name: "Contact Us",
             item: contactPageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+export function createRequestQuotePageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "ContactPage",
+        "@id": requestQuotePageId,
+        url: requestQuotePageUrl,
+        name: pageSeo.requestQuote.title,
+        description: pageSeo.requestQuote.description,
+        datePublished: pageSeo.requestQuote.publishedTime,
+        dateModified: pageSeo.requestQuote.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        mainEntity: { "@id": organizationId },
+        breadcrumb: { "@id": requestQuoteBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.requestQuote.image.path),
+          width: pageSeo.requestQuote.image.width,
+          height: pageSeo.requestQuote.image.height,
+          caption: pageSeo.requestQuote.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": requestQuoteBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Request a Quote",
+            item: requestQuotePageUrl,
           },
         ],
       },
