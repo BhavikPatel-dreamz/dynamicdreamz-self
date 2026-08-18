@@ -7,7 +7,7 @@ import { hiringCallout } from "@/content/life-dynamicdreamz";
 export function LifeHiringSection() {
   return (
     <section className="py-20 max-[991px]:py-[50px]" data-life="hiring">
-      <Container className="min-[1200px]:!max-w-[1180px] min-[1440px]:!max-w-[1180px]">
+      <Container>
         <div
           className="flex justify-between max-[991px]:flex-col-reverse"
           data-life="hiring-layout"

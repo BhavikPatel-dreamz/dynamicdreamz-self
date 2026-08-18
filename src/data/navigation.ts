@@ -192,62 +192,40 @@ export const footerNavigation = [
       { label: "Who we are", href: "/about-us" },
       { label: "Life @ Dynamic Dreamz", href: "/life-dynamicdreamz" },
       { label: "Careers", href: "/career" },
-      { label: "Blogs", href: "/blog" },
+      { label: "Blogs", href: "/blogs" },
       { label: "Portfolio", href: "/our-work" },
       { label: "Case Studies", href: "/case-study" },
       { label: "Contact Us", href: "/contact-us" },
     ],
   },
   {
-    label: "Shopify Services",
+    label: "Shopify Solutions",
     links: [
-      {
-        label: "Shopify Development",
-        href: "/shopify-development-agency",
-      },
-      { label: "Shopify Plus Agency", href: "/shopify-plus-agency" },
-      { label: "Hire Shopify Experts", href: "/shopify-experts" },
-      {
-        label: "Shopify Theme customization",
-        href: "/shopify-theme-customization",
-      },
+      { label: "Shopify Plus Development", href: "/shopify-plus-agency" },
+      { label: "Shopify Development", href: "/shopify-development-agency" },
       { label: "Shopify Migration", href: "/shopify-migration" },
-      { label: "Shopify Plus Development Agency", href: "/shopify-plus-development-agency" },
-      { label: "Shopify Public App Development", href: "/shopify-apps" },
+      { label: "Shopify B2B & Wholesale", href: "/shopify-plus-agency" },
+      { label: "CRO & Performance", href: "/shopify-cro-agency" },
       { label: "Shopify Mobile App Development", href: "/shopify-mobile-app-development" },
-      { label: "Buy Shopify hours", href: "/buy-shopify-development-hours" },
-      { label: "Shopify CRO Services", href: "/shopify-cro-agency" },
+      { label: "Hire Shopify Developers", href: "/shopify-experts" },
+      { label: "Buy Shopify Development Hours", href: "/buy-shopify-development-hours" },
     ],
   },
   {
-    label: "Web Development Services",
+    label: "Technology Services",
     links: [
-      {
-        label: "WordPress Web Development",
-        href: "/wordpress-development-company",
-      },
-      { label: "WordPress Theme Customization", href: "/wordpress-theme-customization-services" },
-      { label: "Woocommerce Development", href: "/woocommerce-development" },
-      { label: "Bigcommerce Development", href: "/bigcommerce-development" },
-      { label: "Magento Web Development", href: "/magento-web-development" },
-      { label: "Webflow Development", href: "/webflow-development" },
-      { label: "UI/UX Design", href: "/web-design" },
-      { label: "PHP Development", href: "/php-development" },
-    ],
-  },
-  {
-    label: "Mobile Services",
-    links: [
-      { label: "Android App Development", href: "/android-app-development" },
+      { label: "AI Services", href: "/contact-us" },
+      { label: "Full-Stack Development", href: "/contact-us" },
       { label: "iOS App Development", href: "/ios-app-development" },
-      {
-        label: "Cross Platform App Development",
-        href: "/cross-platform-app-development",
-      },
+      { label: "Android App Development", href: "/android-app-development" },
+      { label: "Cross Platform App Development", href: "/cross-platform-app-development" },
+      { label: "WordPress Development", href: "/wordpress-development-company" },
+      { label: "Woocommerce Development", href: "/woocommerce-development" },
+      { label: "Magento Development", href: "/magento-web-development" },
     ],
   },
   {
-    label: "White label Services",
+    label: "Agency Partnerships",
     links: [
       {
         label: "White Label WordPress Development",
@@ -268,6 +246,13 @@ export const footerNavigation = [
     links: [
       { label: "Shopify Developers", href: "/hire-shopify-developers" },
       { label: "WordPress Developers", href: "/hire-wordpress-developers" },
+    ],
+  },
+  {
+    label: "More Services",
+    links: [
+      { label: "BigCommerce Development", href: "/bigcommerce-development" },
+      { label: "Webflow development", href: "/webflow-development" },
     ],
   },
 ] satisfies NavigationGroup[];

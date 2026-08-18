@@ -12,7 +12,7 @@ export function SiteHeader() {
   return (
     <header className="site-header fixed top-0 left-0 z-[111] w-full bg-white/60 backdrop-blur-[25px] transition-all duration-500 ease-in-out [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [&.header-down]:-translate-y-full [&.header-down]:bg-white [&.header-down]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] [&.header-up]:translate-y-0 [&.header-up]:bg-white/60 [&.header-up]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] max-[991px]:h-16 max-[991px]:py-[15px] max-[991px]:[&:not(.header-up)]:bg-transparent">
       <HeaderScrollBehavior />
-      <Container className="relative flex items-center justify-between gap-0 max-[991px]:min-h-[34px] min-[1200px]:!max-w-[1180px] min-[1440px]:[body:has(main[data-page=home])_&]:!max-w-[1360px]">
+      <Container className="relative flex items-center justify-between gap-0 max-[991px]:min-h-[34px]">
         <div className="flex items-center">
           <MobileNavigation />
 

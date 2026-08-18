@@ -17,7 +17,7 @@ export function AboutHeroSection() {
       </section>
 
       <section data-about="delivery" aria-labelledby="about-delivery-title" className="relative z-10 -mt-[78px] max-[1199px]:-mt-16">
-        <Container className="min-[1200px]:!max-w-[1180px] min-[1440px]:!max-w-[1180px]">
+        <Container>
           <div data-about="delivery-card" className="flex flex-wrap items-center justify-between rounded-[26px] bg-black px-[75px] py-[38px] text-white max-[1199px]:rounded-[20px] max-[1199px]:p-[30px] max-[991px]:px-5 max-[991px]:py-[25px]">
             <div className="w-[45%] max-[991px]:w-full">
               <h2 id="about-delivery-title" className="text-[28px] leading-[40.42px] font-bold tracking-[-0.56px] text-white max-[1199px]:text-[25px] max-[991px]:mb-5 max-[991px]:text-center max-[767px]:text-2xl max-[767px]:leading-[34px]">

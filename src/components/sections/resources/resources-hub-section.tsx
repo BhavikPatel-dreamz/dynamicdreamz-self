@@ -7,7 +7,7 @@ import { resourcesHub } from "@/content/resources";
 export function ResourcesHubSection() {
   return (
     <section className="resources-listing mt-[180px] bg-[#f7f5ef] py-[60px] max-[991px]:mt-[120px] max-[767px]:mt-[90px]" aria-labelledby="resources-hub-title">
-      <Container className="min-[1440px]:!max-w-[1180px]">
+      <Container>
         <div className="resources-listing-row flex items-start gap-[84px] max-[1199px]:gap-[50px] max-[991px]:flex-col">
           <div className="resolurces-listing-wrapper w-[560px] shrink-0 max-[1199px]:w-[450px] max-[991px]:w-full">
             <h2 id="resources-hub-title" className="relative mb-7 pl-5 text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] before:absolute before:top-1/2 before:left-0 before:h-[34px] before:w-[5px] before:-translate-y-1/2 before:bg-[linear-gradient(111.61deg,#15c064_-0.6%,#00d1ff_92.42%)] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-[24px] max-[767px]:leading-[33.24px]">{resourcesHub.title}</h2>

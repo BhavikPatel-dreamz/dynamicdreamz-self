@@ -15,7 +15,7 @@ export function AboutVideoDialog({ videoId, title }: AboutVideoDialogProps) {
       overlay="/assets/about/we-are-dynamic-dreamz.svg"
       overlayWidth={940}
       overlayHeight={38}
-      sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1199px) 680px, 1140px"
+      sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1199px) 680px, (max-width: 1399px) 1140px, 1320px"
     />
   );
 }

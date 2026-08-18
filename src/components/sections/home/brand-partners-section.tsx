@@ -7,7 +7,7 @@ import { cn } from "@/lib/class-names";
 export function BrandPartnersSection() {
   return (
     <section className="min-h-[640.78px] overflow-hidden py-20 pb-[84px] min-[768px]:max-[991px]:min-h-[614.78px] min-[768px]:max-[991px]:py-[50px] max-[767px]:min-h-[443.69px] max-[767px]:pt-10 max-[767px]:pb-[50px]">
-      <Container home>
+      <Container>
         <div className="mb-[50px] flex items-end justify-between min-[768px]:max-[991px]:mb-[30px] min-[768px]:max-[991px]:flex-col min-[768px]:max-[991px]:items-start max-[767px]:mb-[55px] max-[767px]:flex-col max-[767px]:text-center">
           <h2 className="text-2xl leading-none font-medium min-[768px]:max-[991px]:mb-2.5 min-[768px]:max-[991px]:w-full max-[767px]:mb-2.5 max-[767px]:text-[23px] max-[767px]:leading-[1.24]">Partnering with Ambitious Brands</h2>
           <p className="max-w-[482px] text-left text-base leading-[1.9] font-semibold text-muted min-[768px]:max-[991px]:max-w-full max-[767px]:mx-auto max-[767px]:max-w-[350px] max-[767px]:text-center max-[767px]:text-sm">

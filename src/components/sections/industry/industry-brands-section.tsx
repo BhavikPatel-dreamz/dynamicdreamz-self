@@ -29,7 +29,7 @@ export function IndustryBrandsSection({
       <div className="flex items-center max-[991px]:block">
         <div
           className={cn(
-            "w-[31%] pl-[calc((100%-1140px)/2)] max-[1199px]:w-[30%] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991px]:w-full max-[991px]:p-0 max-[991px]:text-center",
+            "w-[31%] pl-[calc((100%-1140px)/2)] min-[1400px]:pl-[calc((100%-1320px)/2)] max-[1199px]:w-[30%] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991px]:w-full max-[991px]:p-0 max-[991px]:text-center",
             hasSpaciousMobileLayout ? "max-[991px]:mb-10" : "max-[991px]:mb-5",
           )}
         >

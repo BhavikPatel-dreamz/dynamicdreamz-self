@@ -5,6 +5,22 @@ Local route: `/about-us`
 Date checked: 2026-08-13
 Browser: Google Chrome (Chromium, headless capture)
 
+## 2026-08-18 Video Poster Overlay
+
+- Requested live selector: `.hero-img-video .image::before`.
+- The overlay covers the full poster, uses a `15px` radius and
+  `rgb(0 0 0 / 10%)`, and has no transition or interactive state.
+- Local implementation target: Tailwind `before:` utilities on the existing
+  `.image` wrapper in the shared `VideoDialog`; retain the existing poster,
+  play control, caption overlay, dialog behavior, and responsive geometry.
+- The pseudo-element is layered above the poster and below the existing
+  foreground controls. This replaces the equivalent standalone overlay span,
+  avoiding a doubled dark overlay.
+- Applicable viewports: desktop, tablet, and mobile; the overlay geometry is
+  percentage-based and therefore unchanged across breakpoints.
+- The `.image-text` foreground uses the live spacing contract of `30px 30px
+  50px`, represented with component-scoped Tailwind utilities.
+
 ## 2026-08-13 Live-UI Parity Rollback
 
 The project owner requested restoration of all live-visible UI copy. The live

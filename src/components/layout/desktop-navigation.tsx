@@ -177,7 +177,7 @@ export function DesktopNavigation() {
 
   return (
     <nav
-      className="mr-auto ml-10 hidden shrink-0 min-[992px]:block max-[1199px]:ml-5 min-[1440px]:[body:has(main[data-page=home])_&]:ml-[68px]"
+      className="nav-menu mr-auto ml-10 min-[1440px]:ml-17 hidden shrink-0 min-[992px]:block max-[1199px]:ml-5 min-[1440px]:[body:has(main[data-page=home])_&]:ml-[68px]"
       aria-label="Primary navigation"
       ref={navigationRef}
     >

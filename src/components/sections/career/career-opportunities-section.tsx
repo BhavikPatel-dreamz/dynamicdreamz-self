@@ -26,7 +26,7 @@ export function CareerOpportunitiesSection() {
       data-career="opportunities"
       aria-labelledby="career-opportunities-title"
     >
-      <Container className="min-[1200px]:!max-w-[1180px] min-[1440px]:!max-w-[1180px]">
+      <Container>
         <CareerSectionHeading
           id="career-opportunities-title"
           title={currentOpportunities.title}

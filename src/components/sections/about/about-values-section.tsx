@@ -6,7 +6,7 @@ import { coreValues } from "@/content/about";
 export function AboutValuesSection() {
   return (
     <section data-about="values" aria-labelledby="about-values-title" className="pt-[50px] pb-20 max-[991px]:pt-5 max-[991px]:pb-[50px]">
-      <Container className="min-[1200px]:!max-w-[1180px] min-[1440px]:!max-w-[1180px]">
+      <Container>
         <header className="mx-auto mb-12 max-w-[570px] text-center max-[991px]:mb-[30px]">
           <h2 id="about-values-title" className="mb-6 text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
             Our Core Values

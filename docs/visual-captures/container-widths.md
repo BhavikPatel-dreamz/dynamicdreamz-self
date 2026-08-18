@@ -2,7 +2,7 @@
 
 Live URLs: https://www.dynamicdreamz.com/ and inner pages
 Local routes: sitewide
-Date checked: 2026-08-12
+Date checked: 2026-08-18
 Browser: CSS source comparison
 
 ## Live Sources Inspected
@@ -20,17 +20,14 @@ Browser: CSS source comparison
 | 576–767px | 540px | 540px |
 | 768–991px | 720px | 720px |
 | 992–1199px | 960px | 960px |
-| 1200–1439px | 1180px | 1180px |
-| 1440px and wider | 1180px | 1360px |
+| 1200–1399px | 1180px | 1180px |
+| 1400px and wider | 1360px | 1360px |
 
 ## Implementation Notes
 
-- The `home` prop is already applied to homepage section containers.
-- The homepage `<main>` carries a server-rendered route marker so the shared header also receives the live `.home .container` width at 1440px+.
-- At 1440px+, the homepage navigation keeps its captured 68px logo gap; standard-page navigation uses the live 40px gap. This prevents the About menu from shifting 28px to the right.
-- The shared default now remains capped at 1180px beyond the 1200px breakpoint.
-- Only the `home` variant receives the 1360px breakpoint at 1440px.
-- The footer-specific 1170px override remains unchanged because it follows a separate captured footer contract.
+- The live `1360px` rule now applies to every shared container from `1400px`, not only the homepage.
+- Previous route-level `1180px` caps and the footer-specific `1170px` cap are removed so header, main sections, and footer share one alignment system.
+- Full-viewport carousel tracks use the matching `1320px` inner content width at `1400px+` after the shared 20px horizontal padding.
 
 ## Remaining Differences
 

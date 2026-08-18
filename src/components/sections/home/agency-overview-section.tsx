@@ -57,7 +57,7 @@ function ShowcaseSet({ decorative = false }: { decorative?: boolean }) {
 export function AgencyOverviewSection() {
   return (
     <section className="agency_overview_section">
-      <Container home>
+      <Container>
         <div className="global_agency_col_wrap flex justify-between overflow-hidden rounded-[30px] bg-pale-blue min-[768px]:max-[991px]:flex-col max-[767px]:flex-col max-[767px]:rounded-[20px]">
           <div className="content_left_section mx-[37px] ml-15 w-[492px] shrink-0 py-[105px] max-[1199px]:ml-5 max-[1199px]:w-[44%] max-[1199px]:basis-[44%] max-[991px]:m-0 max-[991px]:w-full max-[991px]:px-[25px] max-[991px]:py-[50px] max-[767px]:px-[17px] max-[767px]:pt-[35px] max-[767px]:pb-[63px]">
             <h2 className="mb-6 text-[35px] leading-[1.385] font-medium min-[768px]:max-[991px]:text-[30px] min-[768px]:max-[991px]:leading-10 min-[768px]:max-[991px]:tracking-[-0.7px] max-[767px]:text-2xl max-[767px]:leading-[1.24]">Globally Trusted Web &amp; App Development Agency</h2>

@@ -7,7 +7,7 @@ export function CareerHeroSection() {
       data-career="hero"
       className="overflow-hidden bg-white pt-[230px] pb-[55px] max-[1199px]:pb-0 max-[991px]:pt-[140px]"
     >
-      <Container className="min-[1200px]:!max-w-[1180px] min-[1440px]:!max-w-[1180px]">
+      <Container>
         <div className="text-center">
           <h1 className="mb-6 inline-block text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[991px]:text-[40px] max-[991px]:leading-[60px] max-[767px]:text-[30px] max-[767px]:leading-10">
             {careerHero.title}

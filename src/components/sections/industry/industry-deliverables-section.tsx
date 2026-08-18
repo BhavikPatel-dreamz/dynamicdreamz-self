@@ -74,7 +74,7 @@ export function IndustryDeliverablesSection({ content }: IndustryDeliverablesSec
 
       <HorizontalDragScroll
         ariaLabel={deliverables.ariaLabel}
-        className="w-full snap-x snap-mandatory scroll-p-[41px] py-[2px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[576px]:scroll-p-[calc((100%-540px)/2+45px)] min-[768px]:scroll-p-[calc((100%-720px)/2+45px)] min-[992px]:scroll-p-[calc((100%-960px)/2+45px)] min-[1200px]:scroll-p-[calc((100%-1180px)/2+20px)]"
+        className="w-full snap-x snap-mandatory scroll-p-[41px] py-[2px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[576px]:scroll-p-[calc((100%-540px)/2+45px)] min-[768px]:scroll-p-[calc((100%-720px)/2+45px)] min-[992px]:scroll-p-[calc((100%-960px)/2+45px)] min-[1200px]:scroll-p-[calc((100%-1180px)/2+20px)] min-[1400px]:scroll-p-[calc((100%-1360px)/2+20px)]"
         pagination={{
           itemCount: deliverables.items.length,
           itemLabel: "deliverable",
@@ -86,7 +86,7 @@ export function IndustryDeliverablesSection({ content }: IndustryDeliverablesSec
             "border-transparent bg-[linear-gradient(to_right,#15c064,#00d1ff)]",
         }}
       >
-        <div className="flex items-stretch gap-2.5 pl-[41px] min-[576px]:pl-[calc((100%-540px)/2+45px)] min-[768px]:gap-4 min-[768px]:pl-[calc((100%-720px)/2+45px)] min-[992px]:pl-[calc((100%-960px)/2+45px)] min-[1200px]:pl-[calc((100%-1180px)/2+20px)]">
+        <div className="flex items-stretch gap-2.5 pl-[41px] min-[576px]:pl-[calc((100%-540px)/2+45px)] min-[768px]:gap-4 min-[768px]:pl-[calc((100%-720px)/2+45px)] min-[992px]:pl-[calc((100%-960px)/2+45px)] min-[1200px]:pl-[calc((100%-1180px)/2+20px)] min-[1400px]:pl-[calc((100%-1360px)/2+20px)]">
           {deliverables.items.map((item) => (
             <div
               className="flex shrink-0 basis-[calc(100vw-82px)] snap-start min-[576px]:basis-[450px] min-[768px]:basis-[307px] min-[992px]:basis-[427px] min-[1200px]:basis-[369.333px]"

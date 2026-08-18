@@ -11,7 +11,7 @@ export function CareerBenefitsSection() {
       data-career="benefits"
       aria-labelledby="career-benefits-title"
     >
-      <Container className="min-[1200px]:!max-w-[1180px] min-[1440px]:!max-w-[1180px]">
+      <Container>
         <CareerSectionHeading
           id="career-benefits-title"
           title={workplaceBenefits.title}

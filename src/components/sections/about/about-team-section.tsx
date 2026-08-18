@@ -24,7 +24,7 @@ function TeamGrid({ people }: { people: AboutPerson[] }) {
 export function AboutTeamSection() {
   return (
     <section data-about="team" aria-label="Dynamic Dreamz management and department leaders">
-      <Container className="min-[1200px]:!max-w-[1180px] min-[1440px]:!max-w-[1180px]">
+      <Container>
         <TeamGrid people={keyManagers} />
         <TeamGrid people={departmentLeaders} />
       </Container>

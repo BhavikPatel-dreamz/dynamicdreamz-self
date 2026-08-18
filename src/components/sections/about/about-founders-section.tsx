@@ -15,7 +15,7 @@ function LinkedInIcon() {
 export function AboutFoundersSection() {
   return (
     <section data-about="founders" aria-labelledby="about-founders-title" className="pt-20 max-[1199px]:pt-[60px]">
-      <Container className="min-[1200px]:!max-w-[1180px] min-[1440px]:!max-w-[1180px]">
+      <Container>
         <header className="mx-auto mb-10 max-w-[680px] text-center max-[1199px]:mb-[30px] max-[991px]:mb-5">
           <h2 id="about-founders-title" className="mb-6 text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
             The People Behind Dynamic Dreamz

@@ -30,7 +30,7 @@ function StoryReviews() {
 export function ResourcesStorySection() {
   return (
     <section className="resources-hero-div bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-[60px]" aria-labelledby="resources-story-title">
-      <Container className="min-[1440px]:!max-w-[1180px]">
+      <Container>
         <div className="hero-wrapper flex flex-row-reverse justify-between max-[991px]:flex-col">
           <div className="left-col w-[44.5%] max-[991px]:mb-[42px] max-[991px]:w-full">
             {resourcesStory.paragraphs.map((paragraph) => (

@@ -2,7 +2,7 @@
 
 Live URL: https://www.dynamicdreamz.com/
 Local route: http://localhost:3000/
-Date checked: 2026-08-12
+Date checked: 2026-08-18
 Browser: CSS source comparison
 
 ## Viewports
@@ -13,8 +13,8 @@ Browser: CSS source comparison
 | 576–767px | 540px maximum width | Homepage variant uses 540px maximum width | matched |
 | 768–991px | 720px maximum width | Shared breakpoint retained | matched |
 | 992–1199px | 960px maximum width | Shared breakpoint retained | matched |
-| 1200–1439px | 1180px maximum width | Shared breakpoint retained | matched |
-| 1440px and above | 1360px maximum width | Shared breakpoint retained | matched |
+| 1200–1399px | 1180px maximum width | Shared breakpoint retained | matched |
+| 1400px and above | 1360px maximum width | Shared breakpoint retained | matched |
 
 ## Live Sources Inspected
 
@@ -28,8 +28,8 @@ Browser: CSS source comparison
 
 | Element | Live behavior/style | Local implementation notes |
 | --- | --- | --- |
-| Homepage content containers | 100% width, 20px side padding, auto margins, responsive maximum widths. | Typed `home` variant applies the 1360px homepage content width at 1440px+. |
-| Homepage header container | The `.home .container` rule also widens the header to 1360px at 1440px+. | A server-rendered `data-page="home"` marker scopes the header’s 1360px width to `/`; inner-page headers stay at 1180px. |
+| Homepage content containers | 100% width, 20px side padding, auto margins, responsive maximum widths. | Shared container applies the 1360px width at 1400px+. |
+| Homepage header container | The global `.container` rule widens the header to 1360px at 1400px+. | Shared header follows the same sitewide container contract. |
 
 ## Motion And Interaction
 
@@ -37,7 +37,7 @@ No motion or interactive state affects the container dimensions.
 
 ## Responsive Notes
 
-The rule is scoped to homepage section containers and the homepage header. Other routes continue using the standard container behavior.
+The rule is now sitewide; homepage and inner routes use the same container behavior.
 
 ## Remaining Differences
 

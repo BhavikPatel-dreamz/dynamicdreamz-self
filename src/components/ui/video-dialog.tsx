@@ -61,18 +61,19 @@ export function VideoDialog({
     <>
       <button
         type="button"
-        className={cn("relative flex h-full w-full cursor-pointer items-end justify-center overflow-hidden rounded-[15px] bg-black text-white", className)}
+        className={cn("popup-youtube hero-img-video relative flex h-full w-full cursor-pointer items-end justify-center overflow-hidden rounded-[15px] bg-black text-white", className)}
         aria-label={`Play video: ${title}`}
         onClick={() => setOpen(true)}
       >
-        <Image className="object-cover" src={poster} alt={posterAlt} fill sizes={sizes} />
-        <span className="absolute inset-0 bg-black/10" aria-hidden="true" />
-        <span className={cn("relative z-10 w-full p-7.5 max-w-120.75 max-[991px]:max-w-200 h-22.5", overlayClassName)} aria-hidden="true">
-          <Image className="h-auto w-full" src={overlay} alt="" width={overlayWidth} height={overlayHeight} />
-        </span>
-        <span className={cn(styles.pulse, "absolute top-1/2 left-1/2 z-10 size-19 -translate-x-1/2 -translate-y-1/2", playClassName)} aria-hidden="true">
+        <div className="image absolute top-0 left-0 h-full w-full before:absolute before:top-0 before:left-0 before:z-[1] before:block before:h-full before:w-full before:rounded-[15px] before:bg-black/10 before:content-['']">
+          <Image className="object-cover w-full h-full rounded-[15px]" src={poster} alt={posterAlt} fill sizes={sizes} />
+        </div>
+        <div className={cn("image-text min-h-13.5 flex items-center z-10 lg:px-[30px] lg:pt-[30px] lg:pb-[50px] sm:p-7.5 px-5 py-3", overlayClassName)} aria-hidden="true">
+          <Image className="aspect-[auto_940/38]" src={overlay} alt="" width={overlayWidth} height={overlayHeight} />
+        </div>
+        <div className={cn(styles.pulse, "absolute top-1/2 left-1/2 z-10 size-19 -translate-x-1/2 -translate-y-1/2", playClassName)} aria-hidden="true">
           <Image className="h-full w-full" src="/assets/about/play-video.svg" alt="" width={76} height={76} />
-        </span>
+        </div>
       </button>
 
       {open ? (

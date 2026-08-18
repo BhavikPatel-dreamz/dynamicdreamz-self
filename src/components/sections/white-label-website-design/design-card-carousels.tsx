@@ -22,8 +22,8 @@ function DesignCardCarousel({ items, ariaLabel, itemLabel, variant }: DesignCard
   return (
     <HorizontalDragScroll
       ariaLabel={ariaLabel}
-      className="relative left-1/2 w-screen -translate-x-1/2 snap-x snap-mandatory [scroll-padding-inline-start:41px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[576px]:[scroll-padding-inline-start:calc((100vw-500px)/2+25px)] min-[768px]:[scroll-padding-inline-start:calc((100vw-680px)/2+25px)] min-[992px]:[scroll-padding-inline-start:calc((100vw-920px)/2+25px)] min-[1200px]:[scroll-padding-inline-start:calc((100vw-1140px)/2)]"
-      trackClassName="flex w-max gap-2.5 px-[41px] pb-1 min-[576px]:px-[calc((100vw-500px)/2+25px)] min-[767px]:gap-4 min-[768px]:px-[calc((100vw-680px)/2+25px)] min-[992px]:px-[calc((100vw-920px)/2+25px)] min-[1200px]:px-[calc((100vw-1140px)/2)]"
+      className="relative left-1/2 w-screen -translate-x-1/2 snap-x snap-mandatory [scroll-padding-inline-start:41px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[576px]:[scroll-padding-inline-start:calc((100vw-500px)/2+25px)] min-[768px]:[scroll-padding-inline-start:calc((100vw-680px)/2+25px)] min-[992px]:[scroll-padding-inline-start:calc((100vw-920px)/2+25px)] min-[1200px]:[scroll-padding-inline-start:calc((100vw-1140px)/2)] min-[1400px]:[scroll-padding-inline-start:calc((100vw-1320px)/2)]"
+      trackClassName="flex w-max gap-2.5 px-[41px] pb-1 min-[576px]:px-[calc((100vw-500px)/2+25px)] min-[767px]:gap-4 min-[768px]:px-[calc((100vw-680px)/2+25px)] min-[992px]:px-[calc((100vw-920px)/2+25px)] min-[1200px]:px-[calc((100vw-1140px)/2)] min-[1400px]:px-[calc((100vw-1320px)/2)]"
       pagination={{
         itemCount: items.length,
         itemLabel,
@@ -37,7 +37,7 @@ function DesignCardCarousel({ items, ariaLabel, itemLabel, variant }: DesignCard
       {items.map((item) => (
         <article
           className={cn(
-            "mt-5 mb-5 w-[var(--design-card-width)] min-w-0 shrink-0 snap-start rounded-[15px] [--design-card-width:calc(100vw-82px)] min-[576px]:[--design-card-width:450px] min-[767px]:[--design-card-width:217px] min-[768px]:[--design-card-width:307px] min-[992px]:[--design-card-width:427px] min-[1200px]:[--design-card-width:calc((1140px-32px)/3)]",
+            "mt-5 mb-5 w-[var(--design-card-width)] min-w-0 shrink-0 snap-start rounded-[15px] [--design-card-width:calc(100vw-82px)] min-[576px]:[--design-card-width:450px] min-[767px]:[--design-card-width:217px] min-[768px]:[--design-card-width:307px] min-[992px]:[--design-card-width:427px] min-[1200px]:[--design-card-width:calc((1140px-32px)/3)] min-[1400px]:[--design-card-width:calc((1320px-32px)/3)]",
             dark
               ? "bg-white/5 pt-[30px] pr-5 pb-[35px] pl-5 text-white min-[768px]:pt-[65px] min-[768px]:pr-[27px] min-[768px]:pb-[65px] min-[768px]:pl-[35px]"
               : "bg-cream p-[25px] text-center text-ink min-[768px]:p-8",
