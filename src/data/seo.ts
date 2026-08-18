@@ -385,6 +385,57 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  hireWordPressDevelopers: {
+    path: "/hire-wordpress-developers",
+    title: "Hire WordPress Developers | Dynamic Dreamz",
+    description:
+      "Hire dedicated WordPress developers and teams for custom websites, WooCommerce, themes, plugins, support and end-to-end delivery from Dynamic Dreamz.",
+    keywords: [
+      "hire WordPress developers",
+      "dedicated WordPress developers",
+      "hire WordPress development team",
+      "WordPress development company",
+      "WooCommerce developers",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2026-08-18T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Hire WordPress developers and dedicated WordPress teams from Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
+  hireShopifyDevelopers: {
+    path: "/hire-shopify-developers",
+    title: "Hire Shopify Developers | Dynamic Dreamz",
+    description:
+      "Hire Shopify developers for store setup, customization, migration, app integrations, maintenance and dedicated ecommerce development from Dynamic Dreamz.",
+    keywords: [
+      "hire Shopify developers",
+      "dedicated Shopify developers",
+      "Shopify development team",
+      "Shopify store developers",
+      "Shopify migration developers",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-07-24T07:16:56+00:00",
+    modifiedTime: "2026-08-18T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Hire dedicated Shopify developers from Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   shopifyPlus: {
     path: "/shopify-plus-agency",
     title: "Shopify Plus Agency | Shopify development services",
@@ -408,6 +459,35 @@ export const pageSeo = {
       width: 1200,
       height: 630,
       alt: "Shopify Plus agency and Shopify development services by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
+  requestQuote: {
+    path: "/request-quote",
+    title: "Request Quote Today! | Dynamic Dreamz",
+    description:
+      "Looking for custom web solutions? Request a quote from Dynamic Dreamz! offer custom websites development. Contact us now! or Call Now!",
+    socialDescription:
+      "Looking for custom web solutions? Request a quote from Dynamic Dreamz! offer custom websites development. Contact us now! or Call Now!",
+    keywords: [
+      "request quote",
+      "hire Shopify developer",
+      "Shopify development quote",
+      "web development estimate",
+      "ecommerce development quote",
+      "Dynamic Dreamz quote",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-06-21T09:23:48+00:00",
+    modifiedTime: "2024-09-06T10:07:53+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Request a Quote - Dynamic Dreamz, a Web Design Company",
     },
     sitemap: {
       changeFrequency: "monthly",

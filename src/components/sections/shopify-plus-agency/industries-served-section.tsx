@@ -7,6 +7,17 @@ import Slider, { type Settings } from "react-slick";
 import { Container } from "@/components/ui/container";
 import { shopifyPlusAgencyIndustries } from "@/content/shopify-plus-agency";
 
+export type IndustriesServedContent = {
+  heading: string;
+  description: string;
+  items: readonly {
+    image: string;
+    imageAlt: string;
+    title: string;
+    description: string;
+  }[];
+};
+
 function slidesForWidth(width: number) {
   return width < 992 ? 1 : 2;
 }
@@ -15,7 +26,13 @@ function centerPaddingForWidth(width: number) {
   return width < 992 ? "25px" : "30px";
 }
 
-export function IndustriesServedSection() {
+export function IndustriesServedSection({
+  content = shopifyPlusAgencyIndustries,
+  alignDesktopToContentEdge = false,
+}: {
+  content?: IndustriesServedContent;
+  alignDesktopToContentEdge?: boolean;
+}) {
   const [slidesToShow, setSlidesToShow] = useState(2);
   const [centerPadding, setCenterPadding] = useState("30px");
 
@@ -32,7 +49,7 @@ export function IndustriesServedSection() {
   const settings: Settings = {
     arrows: false,
     autoplay: false,
-    centerMode: true,
+    centerMode: alignDesktopToContentEdge ? slidesToShow === 1 : true,
     centerPadding,
     dots: false,
     draggable: true,
@@ -51,10 +68,10 @@ export function IndustriesServedSection() {
       <Container>
         <div className="mb-[50px] text-center">
           <h2 className="mb-2.5 font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink">
-            {shopifyPlusAgencyIndustries.heading}
+            {content.heading}
           </h2>
           <p className="mb-6 text-[18px] leading-[34.2px] font-medium text-muted">
-            {shopifyPlusAgencyIndustries.description.split("<br>").map((line, index, lines) => (
+            {content.description.split("<br>").map((line, index, lines) => (
               <span key={line}>
                 {line}
                 {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}
@@ -64,7 +81,7 @@ export function IndustriesServedSection() {
         </div>
         <div className="overflow-hidden py-[10px]" aria-label="Industries served by Dynamic Dreamz">
           <Slider {...settings} key={`${slidesToShow}-${centerPadding}`}>
-            {shopifyPlusAgencyIndustries.items.map((item) => (
+            {content.items.map((item) => (
               <div className="px-2.5" key={item.title}>
                 <div className="group relative h-full rounded-[10px] border-[1.5px] border-[#dfdfdf] bg-white pt-[30px] pr-[30px] pl-[30px] pb-[45px] transition-colors duration-300 hover:border-transparent max-[1199px]:p-5">
                   <span

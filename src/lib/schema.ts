@@ -4,6 +4,8 @@ import { contactPageContent } from "@/content/contact";
 import { fashionIndustryPage } from "@/content/fashion";
 import { foodBeveragesIndustryPage } from "@/content/food-beverages";
 import { healthcareIndustryPage } from "@/content/healthcare";
+import { hireWordPressFaqs } from "@/content/hire-wordpress-developers";
+import { hireShopifyFaqs, hireShopifyServices } from "@/content/hire-shopify-developers";
 import { petIndustryPage } from "@/content/pet-industry";
 import { organizationAnswerSummary, testimonials } from "@/content/home";
 import { ourWorkProjects } from "@/content/our-work";
@@ -61,6 +63,9 @@ const resourcesItemListId = `${resourcesPageUrl}#articles`;
 const contactPageUrl = absoluteUrl(pageSeo.contact.path);
 const contactPageId = `${contactPageUrl}#webpage`;
 const contactBreadcrumbId = `${contactPageUrl}#breadcrumb`;
+const requestQuotePageUrl = absoluteUrl(pageSeo.requestQuote.path);
+const requestQuotePageId = `${requestQuotePageUrl}#webpage`;
+const requestQuoteBreadcrumbId = `${requestQuotePageUrl}#breadcrumb`;
 const ourWorkPageUrl = absoluteUrl(pageSeo.ourWork.path);
 const ourWorkPageId = `${ourWorkPageUrl}#webpage`;
 const ourWorkBreadcrumbId = `${ourWorkPageUrl}#breadcrumb`;
@@ -85,6 +90,16 @@ const petIndustryPageUrl = absoluteUrl(pageSeo.petIndustry.path);
 const petIndustryPageId = `${petIndustryPageUrl}#webpage`;
 const petIndustryBreadcrumbId = `${petIndustryPageUrl}#breadcrumb`;
 const petIndustryServiceId = `${petIndustryPageUrl}#service`;
+const hireWordPressDevelopersPageUrl = absoluteUrl(pageSeo.hireWordPressDevelopers.path);
+const hireWordPressDevelopersPageId = `${hireWordPressDevelopersPageUrl}#webpage`;
+const hireWordPressDevelopersServiceId = `${hireWordPressDevelopersPageUrl}#service`;
+const hireWordPressDevelopersFaqId = `${hireWordPressDevelopersPageUrl}#faq`;
+const hireWordPressDevelopersBreadcrumbId = `${hireWordPressDevelopersPageUrl}#breadcrumb`;
+const hireShopifyDevelopersPageUrl = absoluteUrl(pageSeo.hireShopifyDevelopers.path);
+const hireShopifyDevelopersPageId = `${hireShopifyDevelopersPageUrl}#webpage`;
+const hireShopifyDevelopersServiceId = `${hireShopifyDevelopersPageUrl}#service`;
+const hireShopifyDevelopersFaqId = `${hireShopifyDevelopersPageUrl}#faq`;
+const hireShopifyDevelopersBreadcrumbId = `${hireShopifyDevelopersPageUrl}#breadcrumb`;
 const whiteLabelShopifyPageUrl = absoluteUrl(pageSeo.whiteLabelShopify.path);
 const whiteLabelShopifyPageId = `${whiteLabelShopifyPageUrl}#webpage`;
 const whiteLabelShopifyServiceId = `${whiteLabelShopifyPageUrl}#service`;
@@ -691,6 +706,57 @@ export function createContactPageSchema() {
   };
 }
 
+export function createRequestQuotePageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "ContactPage",
+        "@id": requestQuotePageId,
+        url: requestQuotePageUrl,
+        name: pageSeo.requestQuote.title,
+        description: pageSeo.requestQuote.description,
+        datePublished: pageSeo.requestQuote.publishedTime,
+        dateModified: pageSeo.requestQuote.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        mainEntity: { "@id": organizationId },
+        breadcrumb: { "@id": requestQuoteBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.requestQuote.image.path),
+          width: pageSeo.requestQuote.image.width,
+          height: pageSeo.requestQuote.image.height,
+          caption: pageSeo.requestQuote.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": requestQuoteBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Request a Quote",
+            item: requestQuotePageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
 export function createOurWorkPageSchema() {
   const projectItems = ourWorkProjects.map((project, index) => {
     const destinations = project.href
@@ -864,7 +930,7 @@ function createIndustryPageSchema(config: IndustryPageSchemaConfig) {
   };
 }
 
-type WhiteLabelServiceSchemaInput = {
+type ServicePageSchemaInput = {
   page: PageSeoConfig;
   pageUrl: string;
   pageId: string;
@@ -880,7 +946,7 @@ type WhiteLabelServiceSchemaInput = {
   videos?: ReturnType<typeof videoObjectSchema>[];
 };
 
-function createWhiteLabelServicePageSchema({
+function createServicePageSchema({
   page,
   pageUrl,
   pageId,
@@ -894,7 +960,7 @@ function createWhiteLabelServicePageSchema({
   faqs,
   offers,
   videos,
-}: WhiteLabelServiceSchemaInput) {
+}: ServicePageSchemaInput) {
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -1080,7 +1146,7 @@ export function createPetIndustryPageSchema() {
 }
 
 export function createWhiteLabelShopifyPageSchema() {
-  return createWhiteLabelServicePageSchema({
+  return createServicePageSchema({
     page: pageSeo.whiteLabelShopify,
     pageUrl: whiteLabelShopifyPageUrl,
     pageId: whiteLabelShopifyPageId,
@@ -1096,7 +1162,7 @@ export function createWhiteLabelShopifyPageSchema() {
 }
 
 export function createWhiteLabelWordPressPageSchema() {
-  return createWhiteLabelServicePageSchema({
+  return createServicePageSchema({
     page: pageSeo.whiteLabelWordPress,
     pageUrl: whiteLabelWordPressPageUrl,
     pageId: whiteLabelWordPressPageId,
@@ -1113,7 +1179,7 @@ export function createWhiteLabelWordPressPageSchema() {
 }
 
 export function createWhiteLabelWebsiteDesignPageSchema() {
-  return createWhiteLabelServicePageSchema({
+  return createServicePageSchema({
     page: pageSeo.whiteLabelWebsiteDesign,
     pageUrl: whiteLabelWebsiteDesignPageUrl,
     pageId: whiteLabelWebsiteDesignPageId,
@@ -1157,7 +1223,7 @@ function shopifyPlusTestimonialVideoSchema() {
 }
 
 export function createShopifyPlusAgencyPageSchema() {
-  return createWhiteLabelServicePageSchema({
+  return createServicePageSchema({
     page: pageSeo.shopifyPlus,
     pageUrl: shopifyPlusPageUrl,
     pageId: shopifyPlusPageId,
@@ -1172,6 +1238,57 @@ export function createShopifyPlusAgencyPageSchema() {
     faqs: shopifyPlusAgencyFaqs,
     offers: shopifyPlusAgencyServices.items,
     videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createHireWordPressDevelopersPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.hireWordPressDevelopers,
+    pageUrl: hireWordPressDevelopersPageUrl,
+    pageId: hireWordPressDevelopersPageId,
+    serviceId: hireWordPressDevelopersServiceId,
+    faqId: hireWordPressDevelopersFaqId,
+    breadcrumbId: hireWordPressDevelopersBreadcrumbId,
+    serviceName: "Dedicated WordPress Development Services",
+    serviceType: "Dedicated WordPress developer and WordPress team hiring",
+    breadcrumbName: "Hire WordPress Developers",
+    audienceType:
+      "Businesses and agencies seeking dedicated WordPress developers or WordPress development teams",
+    faqs: hireWordPressFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ].join(" "),
+    })),
+  });
+}
+
+export function createHireShopifyDevelopersPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.hireShopifyDevelopers,
+    pageUrl: hireShopifyDevelopersPageUrl,
+    pageId: hireShopifyDevelopersPageId,
+    serviceId: hireShopifyDevelopersServiceId,
+    faqId: hireShopifyDevelopersFaqId,
+    breadcrumbId: hireShopifyDevelopersBreadcrumbId,
+    serviceName: "Dedicated Shopify Development Services",
+    serviceType: "Dedicated Shopify developer and Shopify team hiring",
+    breadcrumbName: "Hire Shopify Developers",
+    audienceType:
+      "Businesses and agencies seeking dedicated Shopify developers or Shopify development teams",
+    faqs: hireShopifyFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ].join(" "),
+    })),
+    offers: hireShopifyServices.items,
   });
 }
 

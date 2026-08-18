@@ -360,6 +360,36 @@ agency-partner, recruitment, and office-location needs.
 | Social icon alt text | LinkedIn and Instagram images both use `Facebook Icon`. | Use `Dynamic Dreamz on LinkedIn` and `Dynamic Dreamz on Instagram` as accessible names. | Correctly identifies each external profile without changing visible copy. | High | implemented as a nonvisual accessibility correction |
 | Office/contact policy | Visible office addresses, recruitment email addresses, and phone numbers have no review date or policy owner on the page. | Confirm and govern these details through sales, operations, and HR before launch; update visible content only if the approved facts differ. | Prevents stale contact details from becoming a conversion and trust failure. | High | blocked pending owner confirmation |
 
+## Hire WordPress Developers (`/hire-wordpress-developers`)
+
+Status: visible recommendations deferred; live UI preserved
+Last reviewed: 2026-08-18
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Hero introduction | Uses the live wording `A typical WordPress development consists of project manager, designer, developer, quality assuror.` | `A typical WordPress project may require a project manager, designer, developer, and quality-assurance specialist. Dynamic Dreamz can coordinate those resources under one roof.` | Corrects grammar and makes the team model answer-ready without changing the hiring intent. | High | deferred pending exact visible-copy approval |
+| Process heading description | `Let Dynamic Dreamz assist you to achive your goals!` | `Let Dynamic Dreamz assist you in achieving your goals.` | Corrects the visible spelling and grammar error. | Low | deferred pending exact visible-copy approval |
+| Portfolio introduction | Ends with `We have served across various verticals` without a closing period or named scope. | `Explore WordPress projects delivered across varied industries and business needs.` | Improves extraction and gives the portfolio section a direct answer. | Medium | deferred pending exact visible-copy approval |
+| Advantage cost claim | `Save up to 60% on your development cost` | `Review a cost-conscious delivery model based on your approved scope.` | Avoids an unsupported savings guarantee until a governed comparison exists. | High | deferred pending sales evidence and exact visible-copy approval |
+| Proof counters | `50+`, `5000+`, `20+`, and `1000+` counters do not expose definitions or provenance. | Add definitions and source dates in approved supporting content without changing the visible counter design. | Improves trust and citation readiness. | High | blocked pending leadership and client-success approval |
+| Inquiry CTA | Live `inquire now` points to `/career/`. | Preserve the label and send the CTA to `/request-quote`. | Fixes a conversion-path error without changing visible copy. | High | implemented as nonvisual link-integrity correction |
+| FAQ pricing answer | Lists dedicated-team, fixed-price, and hourly models without approved rate ranges. | Add approved rate bands, assumptions, and inclusions after sales review. | Helps buyers compare models without inventing pricing. | High | deferred pending sales approval |
+
+## Hire Shopify Developers (`/hire-shopify-developers`)
+
+Status: visible recommendations deferred; live UI preserved
+Last reviewed: 2026-08-18
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Hero introduction | `Are you looking to expand your brand fast?` and a long sentence about creating, customizing, and optimizing a Shopify store. | Describe dedicated Shopify development capacity, store setup, customization, migration, integrations, and support in direct language. | Improves answer extraction and removes broad phrasing while preserving commercial intent. | High | deferred pending exact visible-copy approval |
+| Process heading | `Hassle free Hiring Process to Hire Shopify Developers` | `A straightforward process for hiring Shopify developers` | Corrects grammar and makes the process intent immediately readable. | Medium | deferred pending exact visible-copy approval |
+| Service heading | `End to End Development Services` | `End-to-end Shopify development services` | Corrects hyphenation and platform capitalization. | Low | deferred pending exact visible-copy approval |
+| Advantage savings claim | `Save 60% on your development cost` | `Use a flexible delivery model aligned to your approved scope.` | Avoids an unsupported savings guarantee. | High | deferred pending sales evidence and exact visible-copy approval |
+| FAQ question | `What do Shopify developers do?` | `What does a Shopify developer do?` | Corrects subject-verb agreement for clearer search extraction. | Low | deferred pending exact visible-copy approval |
+| Portfolio image alts | Live alts use generic labels such as `Nekter Juice Bar Image`. | Use descriptive brand-and-subject alt text for each local project preview. | Makes content media meaningful without changing visible UI. | High | implemented as nonvisual accessibility correction |
+| Inquiry CTA destination | Live `inquire now` points to `/career/`. | Preserve the label and route to `/request-quote`. | Fixes a conversion-path error without changing visible copy. | High | implemented as nonvisual link-integrity correction |
+
 ## Shopify Plus Agency (`/shopify-plus-agency`)
 
 Status: visible recommendations deferred; live UI preserved during migration
@@ -375,3 +405,16 @@ Primary SEO intent: Shopify Plus agency, enterprise Shopify development services
 | Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
 | VideoObject structured data | Live page lacked structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes in JSON-LD with authentic upload dates and YouTube URLs matching visible testimonials. | Improves video indexing and search eligibility without changing visible UI. | High | implemented in schema |
 
+## Request a Quote (`/request-quote`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: request a quote, hire Shopify developers, web development estimate, custom ecommerce consultation, project scope estimation, and discovery call booking.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Subtitle | `Please fill in the form and our representative will get back to you.` | `Please fill in the form and our team will get back to you within 24 business hours.` | Clarifies expected response turnaround time without altering core workflow. | Medium | deferred pending sales/operations policy approval |
+| Testimonial name / agency name | Rebekah Wymer quote says `I’ve worked with Dynamic Dreams on several web development projects` | `I’ve worked with Dynamic Dreamz on several web development projects` | Corrects slight brand name misspelling (`Dreams` -> `Dreamz`) in client quote text. | Low | deferred pending exact visible-copy approval |
+| Testimonial punctuation | Brandon quote ends with trailing comma: `with unmatched responsiveness, professionalism,` | `with unmatched responsiveness and professionalism.` | Fixes unfinished trailing comma in quote text. | Low | deferred pending exact visible-copy approval |
+| Review badge alt text | Live Clutch badge uses `clith Revire for the Dynamic dreamz` in source | `Clutch Dynamic Dreamz` | Improves accessibility name quality and fixes typos without altering visible UI. | High | implemented as a nonvisual accessibility correction |
+| Quote Form submission | Live site uses Contact Form 7 with Cloudflare Turnstile | Next.js Server Action with honeypot, field validation, UTM attribution, and status feedback | Enhances security, performance, and reliability while maintaining exact visual form layout. | High | implemented in server actions |

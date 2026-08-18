@@ -23,15 +23,21 @@ export type PortfolioProjectCardProps = {
   platformMark?: PortfolioPlatformMark;
   appLinks?: readonly PortfolioAppLink[];
   categoryClassName?: string;
+  eagerImage?: boolean;
 };
 
-function ProjectImage({ image, imageAlt }: Pick<PortfolioProjectCardProps, "image" | "imageAlt">) {
+function ProjectImage({
+  image,
+  imageAlt,
+  eagerImage = false,
+}: Pick<PortfolioProjectCardProps, "image" | "imageAlt" | "eagerImage">) {
   return (
     <Image
       className="absolute inset-0 h-full w-full object-cover"
       src={image}
       alt={imageAlt}
       fill
+      loading={eagerImage ? "eager" : "lazy"}
       sizes="(max-width: 575px) calc(100vw - 32px), (max-width: 991px) calc(50vw - 28px), 370px"
     />
   );
@@ -124,6 +130,7 @@ export function PortfolioProjectCard({
   platformMark,
   appLinks,
   categoryClassName,
+  eagerImage = false,
 }: PortfolioProjectCardProps) {
   const isAppProject = !href && appLinks?.length;
 
@@ -138,14 +145,14 @@ export function PortfolioProjectCard({
           aria-label={`View ${name} project`}
           data-project-card-link
         >
-          <ProjectImage image={image} imageAlt={imageAlt} />
+          <ProjectImage eagerImage={eagerImage} image={image} imageAlt={imageAlt} />
           <Overlay />
           <ProjectLinkOverlay />
           {platformMark ? <PlatformMark platformMark={platformMark} /> : null}
         </a>
       ) : (
         <div className="group/project relative block w-full overflow-hidden pb-[115%]" data-project-app-card>
-          <ProjectImage image={image} imageAlt={imageAlt} />
+          <ProjectImage eagerImage={eagerImage} image={image} imageAlt={imageAlt} />
           <Overlay persistent={Boolean(isAppProject)} />
           {isAppProject ? <AppStoreLinks appLinks={appLinks} /> : null}
         </div>
