@@ -2132,8 +2132,73 @@ approved evidence. Exact visible proposals are tracked in
   dates/scope/outcomes, and `/request-quote` coverage remain migration pending
   or deferred until the required evidence and exact visible-copy approvals are
   available.
-- Deferred or blocked: visible answer copy, approved project scope/outcomes,
-  internal case studies, project freshness data, and quote-route completion.
+## WordPress Web Development Services (`/wordpress-development`)
+
+Status: implemented; visible recommendations deferred
+Last reviewed: 2026-08-18
+Primary audience: businesses, ecommerce brands, and digital agencies seeking
+custom WordPress website development, theme customization, plugin development,
+and WooCommerce solutions.
+Decision stage: vendor selection, agency evaluation, and project quote inquiry.
+
+### Page role
+
+This page targets primary commercial intent for WordPress web development
+services. It establishes Dynamic Dreamz's custom development capabilities across
+9 specialized service offerings (theme customization, custom theme development,
+plugin development, multi-language websites, WooCommerce, white-label WordPress,
+headless WordPress CMS with Next.js, performance optimization, and ongoing
+maintenance), backed by brand proof, portfolio work, video testimonials, and
+FAQs.
+
+### Target prompts
+
+- What WordPress web development services does Dynamic Dreamz offer?
+- Can Dynamic Dreamz customize WordPress themes like Gutenberg, Elementor, and Divi?
+- Does Dynamic Dreamz offer headless WordPress development with Next.js?
+- How much does a custom WordPress website cost?
+- How long does it take to develop a custom WordPress website?
+- Can a WordPress website be converted into a WooCommerce store?
+
+### Current strengths and available evidence
+
+- Server-rendered H1, introduction, 9 service capability cards, 6 portfolio
+  showcase cards, 11 video testimonials, 10-question FAQ, and bottom CTA banner.
+- Canonical asset reuse for brand logos, platform marks, video thumbnails, and
+  portfolio media (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari
+  Design, Nexventur).
+- Production structured data graph emitting WebPage, Service, BreadcrumbList,
+  FAQPage, and VideoObject nodes.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Metadata & Schema | Live page lacks cohesive JSON-LD graph linking Service, FAQ, Breadcrumb, and Video entities. | Emit validated Service, FAQPage, BreadcrumbList, WebPage, and VideoObject JSON-LD graph. | Verified build schema serialization. |
+| P1 | implemented | Media handling | Legacy site loads unoptimized images without explicit dimensions. | Use Next.js Image with exact dimensions, responsive sizes, and canonical local paths. | Visual and build verification. |
+| P1 | deferred | Copy clarity | Service cards contain slightly redundant phrasing across theme customization. | Refine card descriptions for tighter answer-engine summarization while preserving intent. | Content team and project owner approval. |
+| P1 | deferred | Proof attribution | The 500+ WordPress sites counter and 100+ client stats lack explicit public verification references. | Add verified case study links and client reference citations. | Leadership approval. |
+| P2 | deferred | Internal linking | Service cards for WooCommerce and White Label link to landing pages; other cards are informational. | Add dedicated service pages for Headless WordPress and WordPress Maintenance as they ship. | New route roadmap approval. |
+
+### Suggested answer copy
+
+Keep live-visible wording for migration. Future approved answer copy should
+clearly summarize the 9 core WordPress capabilities, provide transparent timeline
+and pricing expectations (4-5 weeks typical delivery), and outline headless Next.js
+integration benefits.
+
+### Entity, evidence, and authorship actions
+
+- Connect WordPress development credentials with the company's 2006 founding
+  date and 5000+ completed projects.
+- Map the 6 showcase projects to published client stories where available.
+- Maintain consistency between visible FAQ answers and FAQPage structured data.
+
+### Internal-link and conversion actions
+
+- Maintain primary conversion flow via `/request-quote`.
+- Link to `/woocommerce-development` and `/white-label-wordpress-development-services`.
+- Route portfolio continuation to `/our-work`.
 
 ## Hire WordPress Developers (`/hire-wordpress-developers`)
 

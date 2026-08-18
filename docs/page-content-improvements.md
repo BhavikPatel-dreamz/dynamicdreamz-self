@@ -462,3 +462,19 @@ Primary SEO intent: hire Shopify experts, top rated Shopify developers, Shopify 
 | Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
 | VideoObject structured data | Live page lacked structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes in JSON-LD with authentic upload dates and YouTube URLs matching visible testimonials. | Improves video indexing and search eligibility without changing visible UI. | High | implemented in schema |
 | Missing image alt text | Several icons and store project previews had generic or uninformative alt text on live site. | Descriptive, page-specific alt text for all 32 local assets. | Improves accessibility and image indexation without altering visible layout. | High | implemented as a nonvisual accessibility correction |
+
+## WordPress Web Development Services (`/wordpress-development`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: WordPress development company India, custom WordPress development services, WordPress theme customization, WooCommerce development, headless WordPress with Next.js, WordPress speed optimization, WordPress maintenance services.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `WordPress Development Company India \| Dynamic Dreamz` (53 chars) | `WordPress Development Company India \| Dynamic Dreamz` (53 chars) | Preserves live primary commercial intent within 60-character budget. | High | implemented in metadata |
+| Services CTA | `Let me give you a hand to help you` | `Request a Custom WordPress Quote` or `Get a Free Estimate` | Replaces colloquial button text with clear commercial intent action. | Medium | deferred pending exact visible-copy approval |
+| Theme customization typo | `Elementer` in Theme Customization description | `Elementor` | Corrects spelling of popular WordPress page builder plugin. | Low | deferred pending exact visible-copy approval |
+| Project spelling | `Quite Events` | `Quiet Events` | Corrects the typo in the project name while preserving portfolio links. | Low | deferred pending exact visible-copy approval |
+| Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
+| VideoObject structured data | Live page lacked structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes in JSON-LD with authentic upload dates and YouTube URLs matching visible testimonials. | Improves video indexing and search eligibility without changing visible UI. | High | implemented in schema |
+| Service card alt text | Several icons on live site had generic or empty alt text. | Descriptive, context-specific alt text (e.g. `WordPress Icon`, `WooCommerce Icon`, `Speed Up Icon`) for all service icons. | Improves accessibility and image search indexation without altering visible layout. | High | implemented as a nonvisual accessibility correction |

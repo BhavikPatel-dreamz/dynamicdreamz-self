@@ -411,6 +411,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  wordpressDevelopment: {
+    path: "/wordpress-development",
+    title: "WordPress Development Company India | Dynamic Dreamz",
+    description:
+      "Dynamic Dreamz is a Custom WordPress Development Company that helped 100+ client with WordPress Development Services. Get a Quote Now!",
+    keywords: [
+      "WordPress development company India",
+      "WordPress development services",
+      "custom WordPress development",
+      "WordPress developers India",
+      "WordPress website development",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-02T09:32:52+00:00",
+    modifiedTime: "2026-08-18T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "WordPress Development Company India | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   hireWordPressDevelopers: {
     path: "/hire-wordpress-developers",
     title: "Hire WordPress Developers | Dynamic Dreamz",

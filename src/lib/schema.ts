@@ -32,6 +32,10 @@ import {
 } from "@/content/white-label-website-design";
 import { caseStudiesContent } from "@/content/case-studies";
 import { shopifyExpertsContent } from "@/content/shopify-experts";
+import {
+  wordpressDevelopmentFaqs,
+  wordpressDevelopmentServices,
+} from "@/content/wordpress-development";
 import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -95,6 +99,11 @@ const petIndustryPageUrl = absoluteUrl(pageSeo.petIndustry.path);
 const petIndustryPageId = `${petIndustryPageUrl}#webpage`;
 const petIndustryBreadcrumbId = `${petIndustryPageUrl}#breadcrumb`;
 const petIndustryServiceId = `${petIndustryPageUrl}#service`;
+const wordpressDevelopmentPageUrl = absoluteUrl(pageSeo.wordpressDevelopment.path);
+const wordpressDevelopmentPageId = `${wordpressDevelopmentPageUrl}#webpage`;
+const wordpressDevelopmentServiceId = `${wordpressDevelopmentPageUrl}#service`;
+const wordpressDevelopmentFaqId = `${wordpressDevelopmentPageUrl}#faq`;
+const wordpressDevelopmentBreadcrumbId = `${wordpressDevelopmentPageUrl}#breadcrumb`;
 const hireWordPressDevelopersPageUrl = absoluteUrl(pageSeo.hireWordPressDevelopers.path);
 const hireWordPressDevelopersPageId = `${hireWordPressDevelopersPageUrl}#webpage`;
 const hireWordPressDevelopersServiceId = `${hireWordPressDevelopersPageUrl}#service`;
@@ -1301,6 +1310,25 @@ export function createShopifyPlusAgencyPageSchema() {
       "High-growth eCommerce brands, B2B merchants, and businesses scaling on Shopify Plus",
     faqs: shopifyPlusAgencyFaqs,
     offers: shopifyPlusAgencyServices.items,
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createWordPressDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.wordpressDevelopment,
+    pageUrl: wordpressDevelopmentPageUrl,
+    pageId: wordpressDevelopmentPageId,
+    serviceId: wordpressDevelopmentServiceId,
+    faqId: wordpressDevelopmentFaqId,
+    breadcrumbId: wordpressDevelopmentBreadcrumbId,
+    serviceName: "WordPress Web Development Services",
+    serviceType: "Custom WordPress website development, theme customization, and plugin development",
+    breadcrumbName: "WordPress Web Development Services",
+    audienceType:
+      "Businesses, ecommerce brands, and digital agencies seeking custom WordPress web development services",
+    faqs: wordpressDevelopmentFaqs,
+    offers: wordpressDevelopmentServices.items,
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
