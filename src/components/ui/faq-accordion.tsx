@@ -41,7 +41,7 @@ export function FaqAccordion({
             key={item.question}
           >
             <button
-              className="relative block w-full cursor-pointer border-0 bg-transparent py-6 pr-[66px] pl-8 text-left max-[1199px]:py-5 max-[1199px]:pr-[47px] max-[1199px]:pl-5"
+              className="relative block w-full cursor-pointer border-0 bg-transparent py-6 pr-[70px] pl-8 text-left max-[1199px]:py-5 max-[1199px]:pr-[50px] max-[1199px]:pl-5"
               data-faq-trigger
               id={triggerId}
               type="button"
@@ -86,7 +86,7 @@ export function FaqAccordion({
                 <div className="px-8 pb-6 max-[1199px]:px-5 max-[1199px]:pb-5">
                   <p
                     className={cn(
-                      "text-base leading-[30.4px] font-normal text-muted max-[1199px]:text-sm max-[1199px]:leading-[26px]",
+                      "mb-6 text-base leading-[30.4px] font-normal text-muted max-[1199px]:text-sm max-[1199px]:leading-[26px]",
                       answerClassName,
                     )}
                   >

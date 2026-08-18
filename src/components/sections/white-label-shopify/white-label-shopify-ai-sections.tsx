@@ -102,4 +102,3 @@ export function AiDrivenShoppingSection() {
     </section>
   );
 }
-7

@@ -385,6 +385,35 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  shopifyPlus: {
+    path: "/shopify-plus-agency",
+    title: "Shopify Plus Agency | Shopify development services",
+    description:
+      "Dynamic Dreamz offers expert Shopify Plus development services in India. Hire our Shopify Plus experts for comprehensive e-commerce solutions.",
+    socialDescription:
+      "Expert Shopify Plus development services in India. Dynamic Dreamz designs, migrates and scales Shopify Plus stores for growing e-commerce brands.",
+    keywords: [
+      "Shopify Plus agency",
+      "Shopify Plus development services",
+      "Shopify Plus experts",
+      "Shopify Plus migration",
+      "Shopify Plus store setup",
+      "Shopify Plus eCommerce agency",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-02T09:34:33+00:00",
+    modifiedTime: "2025-09-23T04:50:03+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Plus agency and Shopify development services by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   whiteLabelShopify: {
     path: "/white-label-shopify-development-services",
     title: "White Label Shopify Development Partner for Digital Agencies",

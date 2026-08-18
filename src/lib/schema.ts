@@ -14,6 +14,11 @@ import {
 } from "@/content/career";
 import { lifeFaqSection } from "@/content/life-dynamicdreamz";
 import { resourceArticles } from "@/content/resources";
+import {
+  shopifyPlusAgencyFaqs,
+  shopifyPlusAgencyServices,
+  shopifyPlusAgencyTestimonials,
+} from "@/content/shopify-plus-agency";
 import { whiteLabelShopifyFaqs } from "@/content/white-label-shopify-development";
 import {
   whiteLabelWordPressFaqs,
@@ -95,6 +100,11 @@ const whiteLabelWebsiteDesignPageId = `${whiteLabelWebsiteDesignPageUrl}#webpage
 const whiteLabelWebsiteDesignServiceId = `${whiteLabelWebsiteDesignPageUrl}#service`;
 const whiteLabelWebsiteDesignFaqId = `${whiteLabelWebsiteDesignPageUrl}#faq`;
 const whiteLabelWebsiteDesignBreadcrumbId = `${whiteLabelWebsiteDesignPageUrl}#breadcrumb`;
+const shopifyPlusPageUrl = absoluteUrl(pageSeo.shopifyPlus.path);
+const shopifyPlusPageId = `${shopifyPlusPageUrl}#webpage`;
+const shopifyPlusServiceId = `${shopifyPlusPageUrl}#service`;
+const shopifyPlusFaqId = `${shopifyPlusPageUrl}#faq`;
+const shopifyPlusBreadcrumbId = `${shopifyPlusPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -867,6 +877,7 @@ type WhiteLabelServiceSchemaInput = {
   audienceType: string;
   faqs: readonly { question: string; answer: string }[];
   offers?: readonly { title: string; description: string }[];
+  videos?: ReturnType<typeof videoObjectSchema>[];
 };
 
 function createWhiteLabelServicePageSchema({
@@ -882,6 +893,7 @@ function createWhiteLabelServicePageSchema({
   audienceType,
   faqs,
   offers,
+  videos,
 }: WhiteLabelServiceSchemaInput) {
   return {
     "@context": "https://schema.org",
@@ -909,6 +921,7 @@ function createWhiteLabelServicePageSchema({
         mainEntity: [
           { "@id": serviceId },
           { "@id": faqId },
+          ...(videos ? videos.map((v) => ({ "@id": v["@id"] })) : []),
         ],
         primaryImageOfPage: {
           "@type": "ImageObject",
@@ -981,6 +994,7 @@ function createWhiteLabelServicePageSchema({
           },
         })),
       },
+      ...(videos ?? []),
     ],
   };
 }
@@ -1112,6 +1126,52 @@ export function createWhiteLabelWebsiteDesignPageSchema() {
     audienceType: "Digital, web design, ecommerce, branding, and marketing agencies",
     faqs: whiteLabelWebsiteDesignFaqs,
     offers: whiteLabelWebsiteDesignServices,
+  });
+}
+
+const shopifyPlusTestimonialUploadDates: Record<string, string> = {
+  "o4JnTGEH-Yk": "2024-05-15",
+  "B3KnREB4Bro": "2024-05-15",
+  "-IpNUAco1OA": "2024-05-15",
+  "oNDPBGO83G4": "2024-05-15",
+  "AoglCZQC0RU": "2024-05-15",
+  "Vc9FH6ZeoXY": "2024-08-16",
+  "_ay_egf5GKw": "2025-11-13",
+  "_9uT-dRcQvo": "2025-11-28",
+  "6Ni9tlZ7HKE": "2025-12-03",
+  "_rQeMWcz_gA": "2026-02-10",
+  "WQWG2niydpE": "2026-06-03",
+};
+
+function shopifyPlusTestimonialVideoSchema() {
+  return shopifyPlusAgencyTestimonials.items.map((testimonial) =>
+    videoObjectSchema({
+      id: `${shopifyPlusPageUrl}#testimonial-video-${testimonial.videoId}`,
+      name: `${testimonial.name} client testimonial for Dynamic Dreamz`,
+      description: `${testimonial.name}, ${testimonial.company} client testimonial for Dynamic Dreamz. ${testimonial.quote}`,
+      thumbnailUrl: `https://i.ytimg.com/vi/${testimonial.videoId}/hqdefault.jpg`,
+      uploadDate: shopifyPlusTestimonialUploadDates[testimonial.videoId] ?? "2024-05-15",
+      ...youTubeUrls(testimonial.videoId),
+    }),
+  );
+}
+
+export function createShopifyPlusAgencyPageSchema() {
+  return createWhiteLabelServicePageSchema({
+    page: pageSeo.shopifyPlus,
+    pageUrl: shopifyPlusPageUrl,
+    pageId: shopifyPlusPageId,
+    serviceId: shopifyPlusServiceId,
+    faqId: shopifyPlusFaqId,
+    breadcrumbId: shopifyPlusBreadcrumbId,
+    serviceName: "Shopify Plus Agency Services",
+    serviceType: "Shopify Plus agency and Shopify development services",
+    breadcrumbName: "Shopify Plus Agency",
+    audienceType:
+      "High-growth eCommerce brands, B2B merchants, and businesses scaling on Shopify Plus",
+    faqs: shopifyPlusAgencyFaqs,
+    offers: shopifyPlusAgencyServices.items,
+    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
