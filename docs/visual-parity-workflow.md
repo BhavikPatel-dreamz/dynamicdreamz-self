@@ -118,6 +118,11 @@ Record these values before rebuilding:
 - Port only the needed style behavior into local code. Avoid dumping large,
   unmanaged old CSS files into the app.
 - Use clean Tailwind utilities and shared components for styling.
+- Zero Redundant Components: Reuse canonical shared components (`HiringHeroSection`, `PortfolioShowcaseSection`,
+  `FaqSection`, `CtaBannerSection`, `IndustryBrandsSection`, `HappyClientSection`, etc.) instead of creating
+  route-specific duplicates.
+- Zero Redundant Assets: Check `public/assets/**` using `sha256sum` before adding images/icons. Reuse existing
+  canonical paths.
 - Do not add custom page, section, component, animation, or one-off layout
   styles to `src/app/globals.css`.
 - Keep `src/app/globals.css` minimal for Tailwind setup and unavoidable app-wide

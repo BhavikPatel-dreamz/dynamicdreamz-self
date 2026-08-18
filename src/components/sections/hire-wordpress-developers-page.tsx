@@ -1,14 +1,19 @@
-import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
-import { HireWordPressHeroSection } from "@/components/sections/hire-wordpress-developers/hire-wordpress-hero-section";
+import { FaqSection } from "@/components/sections/faq-section";
+import { HiringHeroSection } from "@/components/sections/hiring-hero-section";
 import { HiringProcessSection } from "@/components/sections/hire-wordpress-developers/hiring-process-section";
 import {
   WordPressAdvantagesSection,
   WordPressReasonsSection,
 } from "@/components/sections/hire-wordpress-developers/wordpress-proof-sections";
-import { WordPressPortfolioSection } from "@/components/sections/hire-wordpress-developers/wordpress-portfolio-section";
-import { WordPressFaqSection } from "@/components/sections/hire-wordpress-developers/wordpress-faq-section";
+import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
-import { hireWordPressTestimonials } from "@/content/hire-wordpress-developers";
+import {
+  hireWordPressFaqs,
+  hireWordPressHero,
+  hireWordPressPortfolio,
+  hireWordPressTestimonials,
+} from "@/content/hire-wordpress-developers";
 
 const brandSection = {
   slug: "hire-wordpress-developers",
@@ -17,21 +22,37 @@ const brandSection = {
   },
 } as const;
 
+const portfolioContent = {
+  heading: hireWordPressPortfolio.heading,
+  description: hireWordPressPortfolio.description,
+  items: hireWordPressPortfolio.items,
+  category: "WORDPRESS",
+  platformMark: {
+    src: "/assets/platforms/wordpress-woocommerce-white.svg",
+    width: 113,
+    height: 29,
+  },
+};
+
 export function HireWordPressDevelopersPage() {
   return (
     <div className="font-sans leading-[30.4px]">
-      <HireWordPressHeroSection />
-      <IndustryBrandsSection content={brandSection} singleLineTitleAtTablet />
+      <HiringHeroSection content={hireWordPressHero} />
+      <IndustryBrandsSection content={brandSection} />
       <HiringProcessSection />
       <WordPressReasonsSection />
       <WordPressAdvantagesSection />
-      <WordPressPortfolioSection />
-      <HappyClientSection
-        alignDesktopToContentEdge
-        description={hireWordPressTestimonials.description}
-        heading={hireWordPressTestimonials.heading}
+      <PortfolioShowcaseSection content={portfolioContent} />
+      <div id="shopify-testimonials">
+        <HappyClientSection
+          description={hireWordPressTestimonials.description}
+          heading={hireWordPressTestimonials.heading}
+        />
+      </div>
+      <FaqSection
+        items={hireWordPressFaqs}
+        idPrefix="hire-wordpress-developers-faq"
       />
-      <WordPressFaqSection />
     </div>
   );
 }

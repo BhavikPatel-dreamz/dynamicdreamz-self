@@ -2132,8 +2132,73 @@ approved evidence. Exact visible proposals are tracked in
   dates/scope/outcomes, and `/request-quote` coverage remain migration pending
   or deferred until the required evidence and exact visible-copy approvals are
   available.
-- Deferred or blocked: visible answer copy, approved project scope/outcomes,
-  internal case studies, project freshness data, and quote-route completion.
+## WordPress Web Development Services (`/wordpress-development`)
+
+Status: implemented; visible recommendations deferred
+Last reviewed: 2026-08-18
+Primary audience: businesses, ecommerce brands, and digital agencies seeking
+custom WordPress website development, theme customization, plugin development,
+and WooCommerce solutions.
+Decision stage: vendor selection, agency evaluation, and project quote inquiry.
+
+### Page role
+
+This page targets primary commercial intent for WordPress web development
+services. It establishes Dynamic Dreamz's custom development capabilities across
+9 specialized service offerings (theme customization, custom theme development,
+plugin development, multi-language websites, WooCommerce, white-label WordPress,
+headless WordPress CMS with Next.js, performance optimization, and ongoing
+maintenance), backed by brand proof, portfolio work, video testimonials, and
+FAQs.
+
+### Target prompts
+
+- What WordPress web development services does Dynamic Dreamz offer?
+- Can Dynamic Dreamz customize WordPress themes like Gutenberg, Elementor, and Divi?
+- Does Dynamic Dreamz offer headless WordPress development with Next.js?
+- How much does a custom WordPress website cost?
+- How long does it take to develop a custom WordPress website?
+- Can a WordPress website be converted into a WooCommerce store?
+
+### Current strengths and available evidence
+
+- Server-rendered H1, introduction, 9 service capability cards, 6 portfolio
+  showcase cards, 11 video testimonials, 10-question FAQ, and bottom CTA banner.
+- Canonical asset reuse for brand logos, platform marks, video thumbnails, and
+  portfolio media (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari
+  Design, Nexventur).
+- Production structured data graph emitting WebPage, Service, BreadcrumbList,
+  FAQPage, and VideoObject nodes.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Metadata & Schema | Live page lacks cohesive JSON-LD graph linking Service, FAQ, Breadcrumb, and Video entities. | Emit validated Service, FAQPage, BreadcrumbList, WebPage, and VideoObject JSON-LD graph. | Verified build schema serialization. |
+| P1 | implemented | Media handling | Legacy site loads unoptimized images without explicit dimensions. | Use Next.js Image with exact dimensions, responsive sizes, and canonical local paths. | Visual and build verification. |
+| P1 | deferred | Copy clarity | Service cards contain slightly redundant phrasing across theme customization. | Refine card descriptions for tighter answer-engine summarization while preserving intent. | Content team and project owner approval. |
+| P1 | deferred | Proof attribution | The 500+ WordPress sites counter and 100+ client stats lack explicit public verification references. | Add verified case study links and client reference citations. | Leadership approval. |
+| P2 | deferred | Internal linking | Service cards for WooCommerce and White Label link to landing pages; other cards are informational. | Add dedicated service pages for Headless WordPress and WordPress Maintenance as they ship. | New route roadmap approval. |
+
+### Suggested answer copy
+
+Keep live-visible wording for migration. Future approved answer copy should
+clearly summarize the 9 core WordPress capabilities, provide transparent timeline
+and pricing expectations (4-5 weeks typical delivery), and outline headless Next.js
+integration benefits.
+
+### Entity, evidence, and authorship actions
+
+- Connect WordPress development credentials with the company's 2006 founding
+  date and 5000+ completed projects.
+- Map the 6 showcase projects to published client stories where available.
+- Maintain consistency between visible FAQ answers and FAQPage structured data.
+
+### Internal-link and conversion actions
+
+- Maintain primary conversion flow via `/request-quote`.
+- Link to `/woocommerce-development` and `/white-label-wordpress-development-services`.
+- Route portfolio continuation to `/our-work`.
 
 ## Hire WordPress Developers (`/hire-wordpress-developers`)
 
@@ -2462,6 +2527,251 @@ Proposed copy improvements are tracked in `docs/page-content-improvements.md`.
   metadata limits, JSON-LD graph verification, desktop/tablet/mobile screenshots
   captured (1440x900, 768x1024, 390x844), local assets audit, responsive grid
   layout, lint, and production build.
+
+## Privacy and Cookies Policy (`/privacy-policy`)
+
+Status: implemented; visible legal-content recommendations remain deferred
+
+Last reviewed: 2026-08-18
+
+Owner: SEO, legal/policy, development, and leadership teams
+
+Primary audience: website visitors, prospective clients, clients, candidates,
+and other people evaluating how Dynamic Dreamz collects and uses personal data
+
+Decision stage: trust, policy review, and pre-enquiry due diligence
+
+### Page role
+
+The canonical public privacy and cookies policy. It explains the categories of
+personal data collected, processing purposes, sharing boundaries, cookies,
+retention, rights, security, policy changes, and the available contact channel.
+
+### Target prompts
+
+- What is Dynamic Dreamz's privacy and cookies policy?
+- What personal data does Dynamic Dreamz collect and why?
+- Does Dynamic Dreamz sell personal information or use cookies?
+- How can someone contact Dynamic Dreamz about their personal data?
+
+### Current strengths and available evidence
+
+- The live page provides a complete visible policy outline with headings,
+  paragraphs, lists, and a direct contact block.
+- The policy is linked from the global footer and is available as a standalone
+  indexable route.
+- The local route can render the policy server-side without client JavaScript or
+  external runtime content.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The live policy URL was not implemented in the Next.js migration, while the footer already links to it. | Ship the slashless `/privacy-policy` route, include it in metadata/sitemap/robots output, and preserve the legacy trailing-slash redirect. | Implemented route; `npm run check:urls`, lint, and build pass; sitemap and robots derive from the shared SEO entries; `/privacy-policy/` returns a permanent 308 to `/privacy-policy`. |
+| P0 | implemented | Schema accuracy | The live source contains a broad sitewide FAQ graph and trailing-slash URLs that are not part of this policy page. | Emit only Organization, WebSite, WebPage, BreadcrumbList, and the local primary image for this route. | Route-scoped WebPage/BreadcrumbList JSON-LD is rendered server-side with slashless URLs and local OG assets. |
+| P1 | deferred | Legal freshness | The live policy has no visible effective/last-updated date and its contact phone differs from the current shared site contact fact. | Have the legal/policy owner approve a visible effective date and the authoritative policy contact details, then update the copy and schema consistently. | Legal and leadership approval; source-of-truth fact review |
+| P1 | deferred | Answer extraction | The policy explains its topics but does not provide a short visible summary of the data-controller role, legal basis, or jurisdiction. | Add a concise approved summary only after legal review; do not infer legal bases or jurisdictions during migration. | Legal review and exact visible-copy approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI and legal-content preservation gates. The shipped
+route retains the live policy wording verbatim; no unsupported legal basis,
+jurisdiction, effective date, or controller claim is introduced.
+
+### Entity, evidence, and authorship actions
+
+- Keep the policy connected to the shared Dynamic Dreamz Organization entity.
+- Assign a named legal/policy owner and review cadence before changing visible
+  policy terms.
+
+### Internal-link and conversion actions
+
+- Preserve the global footer link to `/privacy-policy`.
+- Keep the policy's email, phone, and address links crawlable and accessible.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit a route-scoped WebPage graph with slashless URLs and the local OG image.
+- Include `/privacy-policy` in the canonical sitemap and allow it in robots.
+- Do not emit FAQPage, Review, or unsupported legal claims for this route.
+
+### Measurement plan
+
+- SEO and legal owners should monitor policy-page discovery, organic landings,
+  contact-link clicks, and review-date freshness after the route is published.
+
+### Verification and remaining gaps
+
+- Live HTML, metadata, rendered screenshots, CSS, and JS inspected on 2026-08-18.
+- Route/schema implementation and local responsive screenshots verified on
+  2026-08-18; true 390px emulation reports no horizontal document overflow.
+- Visible legal freshness and contact-detail changes remain deferred pending
+  policy-owner approval.
+
+## Shopify Experts (`/shopify-experts`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-18
+
+Owner: SEO, content, development, leadership, sales, and delivery operations
+
+Primary audience: brands, merchants, and enterprise businesses seeking certified Shopify experts, developers, and eCommerce consultants for custom development, migrations, theme design, AI automation, and ongoing store maintenance
+
+Decision stage: commercial evaluation, capability verification, hiring model selection, and agency partner selection
+
+### Page role
+
+Dedicated commercial landing and service page for hiring Shopify experts. Showcases flexible hiring engagement models (dedicated, hourly, fixed-price), end-to-end Shopify development services (store setup, custom themes, custom apps, migration, maintenance), AI automation capabilities (support, flow automation, content, smart email), AEO/GEO AI discovery readiness, 9 proof/advantage reasons, 5 vertical industries served, 6 selected portfolio projects, 11 client video testimonials, Clutch/Upwork/GoodFirms ratings, and buyer FAQs.
+
+### Target prompts
+
+- Who are the best certified Shopify experts and developers to hire for online store development?
+- How to hire dedicated Shopify developers with flexible pricing models?
+- Can Dynamic Dreamz build custom Shopify themes, apps, and migrate stores with zero downtime?
+- Does Dynamic Dreamz set up AI automation, smart chatbots, and Klaviyo retention flows for Shopify stores?
+- How can my Shopify store be optimized for AI search engines like ChatGPT, Google AI Overviews, and Perplexity?
+- What client reviews, video testimonials, and portfolio stores exist for Dynamic Dreamz Shopify experts?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Hire Dedicated Shopify Experts & Developers`, clear proof counters (50+ agile developers, 5000+ completed projects, 20+ years experience, 1000+ happy clients, 1000+ Shopify developments).
+- Review animation widget featuring 5.0 star ratings across Clutch (50+ reviews), Upwork (2000+ reviews), and GoodFirms (72 reviews).
+- 4-step hiring process with numbered gradient badges and clear onboarding clarity.
+- 3 hiring models (Dedicated developer, Hourly/On-demand, Fixed-price) with distinct feature breakdowns.
+- 9 clear agency advantage points covering 20+ years experience, multi-vertical expertise, in-house certified talent, 60% cost savings, NDA integrity, managed HR, timezone overlap, and post-launch support.
+- 6 modern AI & store automation capability cards (AI customer support, store workflow automation, AI product content, smart email & retention, smarter shopping experiences, cross-platform automation) with technology pill tags.
+- 4 AI search visibility cards (AEO, GEO, Agentic commerce, Trust signal architecture).
+- 5 comprehensive development service offerings with hover interactions.
+- 5 vertical industry slides with direct cross-links to industry landing pages.
+- 6 featured store projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHoc Atler) with external storefront links and CTA to `/our-work`.
+- 11 verified video testimonials with modal player and real client attribution.
+- 7 detailed FAQs answering key buyer questions about hiring, pricing, scope, AI, and ongoing retainers.
+- Complete structured data graph emitting Service, OfferCatalog, BreadcrumbList, FAQPage (7 items), 11 VideoObject nodes, Organization, and WebSite.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata implementation | Ship slashless `/shopify-experts` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, and VideoObject structured data on old site | Emit Organization, WebSite, WebPage, Service with OfferCatalog (5 items), BreadcrumbList, FAQPage (7 items), and 11 VideoObject nodes | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | 32 local icons, badges, industry images, and store screenshots downloaded into `public/assets/shopify-experts/` | 100% project-owned assets with kebab-case naming | Verified locally |
+| P1 | deferred | Copy phrasing | Minor grammatical enhancements in service descriptions and hiring advantages | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered
+copy and FAQs establish the agency's Shopify expert capabilities.
+Future visible copy improvements are tracked in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz to the shared Organization entity and model this route as
+  a dedicated Shopify Expert Service.
+- Keep the 11 video testimonials, 5 industry sectors, 6 portfolio stores, and 3 review
+  badges strictly aligned with visible content.
+- Emit authentic YouTube upload dates for all 11 testimonial VideoObjects.
+
+### Internal-link and conversion actions
+
+- Maintain primary CTAs linking to `/request-quote` using slashless paths.
+- Route portfolio CTAs to `/our-work` and industry slides to `/beauty-cosmetics`,
+  `/fashion`, `/healthcare`, `/food-beverages`, and `/pet-industry`.
+- Preserve external review and portfolio links with `nofollow noopener noreferrer`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service, OfferCatalog, FAQPage (7 items), 11 VideoObject nodes, BreadcrumbList,
+  Organization, and WebSite.
+- Use live publish date `2024-07-24T07:16:56+00:00` and explicit migration review date
+  for `dateModified`.
+- Ensure canonical route and primary image are listed in the sitemap and indexable.
+
+### Measurement plan
+
+- SEO tracks discovery prompts and organic search landings for "hire Shopify experts"
+  and "Shopify developers".
+- Analytics tracks quote form submissions and portfolio click-through rates.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD,
+  and internal links use `/shopify-experts`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source,
+  metadata limits, JSON-LD graph verification, desktop/tablet/mobile screenshots
+  captured (1440x900, 768x1024, 390x844), local assets audit, responsive layouts,
+  lint, and production build.
+
+## Shopify Apps (`/shopify-apps`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-18
+
+Owner: SEO, product, development, leadership, and sales operations
+
+Primary audience: Shopify and Shopify Plus merchants seeking specialized apps for B2B wholesale, payment customization, quote requests, checkout upsell, and dynamic shipping rates
+
+Decision stage: app discovery, feature evaluation, trial installation, and Shopify App Store navigation
+
+### Page role
+
+Dedicated archive and showcase catalog for Dynamic Dreamz public Shopify apps. Features 5 published Shopify App Store applications (Smart B2B, Dynamic PayHide, Dynamic Quote Request, Dynamic Checkout Upsell, Easy Shipping Rate Manager) with direct App Store links, trial availability, pricing indicators, and descriptive feature summaries.
+
+### Target prompts
+
+- What public Shopify apps has Dynamic Dreamz built?
+- Best Shopify B2B app for wholesale portal and customer pricing?
+- How to hide payment methods in Shopify checkout dynamically?
+- Best Shopify quote request app for cart and product pages?
+- Dynamic shipping rate manager app for Shopify stores?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Shopify App` and clean responsive catalog grid.
+- Direct links to official Shopify App Store listings for all 5 apps.
+- Clear pricing and trial indicators ("Free trial available", "$20/month").
+- Structured data graph emitting CollectionPage with ItemList of 5 SoftwareApplication items, BreadcrumbList, Organization, and WebSite.
+- Canonical local asset management for all 5 app icons under `public/assets/shopify-apps/`.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Missing App Router implementation for public apps catalog | Ship slashless `/shopify-apps` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich CollectionPage and SoftwareApplication ItemList structured data | Emit CollectionPage with ItemList containing 5 SoftwareApplication items, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | Live site images required local project-owned copies | Save 5 canonical app icons into `public/assets/shopify-apps/` with kebab-case naming | Verified locally |
+| P1 | deferred | Content expansion | Archive is currently a concise 5-card list; could benefit from detailed feature lists, merchant reviews, and install CTAs | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered catalog establishes Dynamic Dreamz public app portfolio. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as the publisher/developer of the listed Shopify applications.
+- Maintain accurate App Store URLs and pricing indicators matching live listings.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/shopify-apps` navigation in the header under Services -> Shopify & Shopify Plus.
+- Direct external app store links open in new tab with `target="_blank" rel="noopener noreferrer"`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit CollectionPage with ItemList containing 5 SoftwareApplication entries, BreadcrumbList, Organization, and WebSite.
+- Use explicit migration review date for `dateModified`.
+- Ensure canonical route and primary image are listed in sitemap and indexable.
+
+### Measurement plan
+
+- SEO tracks discovery queries for Dynamic Dreamz Shopify apps on Google and AI search engines.
+- Analytics tracks outbound clicks to Shopify App Store listings.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-apps`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits, JSON-LD graph verification, desktop/tablet/mobile screenshots captured (1440x900, 768x1024, 390x844), local assets audit, responsive layouts, lint, and production build.
 
 ## Future Page Maintenance Workflow
 

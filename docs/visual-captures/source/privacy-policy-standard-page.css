@@ -1,0 +1,61 @@
+﻿.inner-hero-sec{padding-top: 160px;padding-bottom: 85px;position:relative;background:-o-linear-gradient(352.82deg,#e8f9ef 28.5%,#e6fafd 91.82%);background:linear-gradient(97.18deg,#e8f9ef 28.5%,#e6fafd 91.82%);overflow:hidden}
+.inner-hero-content h1{display:inline-block;margin:0}
+.inner-hero-content p {margin-top: 20px;}
+.standard-text-content h2{font-size:24px;line-height:31.2px;letter-spacing:-.02em}
+.standard-text-content h3 {font-size: 18px;margin-bottom: 10px;letter-spacing: -0.36px;}
+.standard-text-content p{font-size:16px;font-weight:500;line-height:30.4px}
+.standard-text-content ol li,.standard-text-content ul li{color:#535353;font-size:16px;font-weight:500;line-height:27px;letter-spacing:.32px;margin-bottom:18px}
+.standard-text-content ol,.standard-text-content ul{margin-bottom:24px}
+.standard-text-content ul li{background:url('../../images/bullets-icon.svg') 0 3px no-repeat;background-size:22px;padding-left:34px}
+.page-template-sitemap .standard-text-content ul li a {color: #252c15;font-size: 16px;font-weight: 500;line-height: normal;}
+.page-template-sitemap .standard-text-content {padding: 150px 0 80px 0;}
+.page-template-sitemap .standard-text-content ul li:not(:last-child) {margin-bottom: 10px;}
+
+.page-id-105 .inner-hero-sec{padding-top: 160px;padding-bottom: 85px;}
+
+.page-id-105 .standard-text-content ol, .page-id-105 .standard-text-content ul,
+.page-id-5358 .standard-text-content ol,.page-id-5358 .standard-text-content ul{
+    margin-left: 20px;
+}
+
+.page-id-105 .standard-text-content ul li,
+.page-id-5358 .standard-text-content ul li {
+    background-image: none;
+    padding-left: 0;
+}
+
+.page-id-105 .standard-text-content ul,
+.page-id-5358 .standard-text-content ul {
+    list-style-type: disc;
+}
+
+.contacy_us_pp a {
+    color: #d92128;
+    text-decoration: underline;
+}
+.contacy_us_pp a:hover {
+    text-decoration: none;
+}
+
+.page-id-5292 p a {
+    color: var(--txt-red);
+    text-decoration: underline;
+}
+
+.page-id-5292 p a:hover {
+    text-decoration: none;
+}
+
+@media (max-width:991px){
+.inner-hero-sec{padding:170px 0 80px}
+.page-id-105 .inner-hero-sec {
+    padding-top: 140px;
+    padding-bottom: 46px;
+}
+}
+
+@media (max-width:767px){
+.standard-text-content h2 {font-size: 20px;margin-bottom: 10px;}
+.standard-text-content h3 {font-size: 16px;}
+}
+

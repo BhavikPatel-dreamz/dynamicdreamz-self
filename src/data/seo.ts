@@ -219,6 +219,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  privacyPolicy: {
+    path: "/privacy-policy",
+    title: "Privacy Policy | Dynamic Dreamz",
+    description:
+      "Read Dynamic Dreamz's privacy and cookies policy to learn how we collect, use, share, retain, and protect personal information and explain your data rights.",
+    keywords: [
+      "Dynamic Dreamz privacy policy",
+      "privacy and cookies policy",
+      "personal data protection",
+      "privacy rights",
+      "Dynamic Dreamz cookies",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-03T10:53:58+00:00",
+    modifiedTime: "2024-12-13T11:57:22+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Dynamic Dreamz privacy and cookies policy",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+  },
   ourWork: {
     path: "/our-work",
     title: "Dynamic Dreamz Portfolio | Inspiring Web Solutions & Designs",
@@ -385,6 +411,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  wordpressDevelopment: {
+    path: "/wordpress-development",
+    title: "WordPress Development Company India | Dynamic Dreamz",
+    description:
+      "Dynamic Dreamz is a Custom WordPress Development Company that helped 100+ client with WordPress Development Services. Get a Quote Now!",
+    keywords: [
+      "WordPress development company India",
+      "WordPress development services",
+      "custom WordPress development",
+      "WordPress developers India",
+      "WordPress website development",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-02T09:32:52+00:00",
+    modifiedTime: "2026-08-18T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "WordPress Development Company India | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   hireWordPressDevelopers: {
     path: "/hire-wordpress-developers",
     title: "Hire WordPress Developers | Dynamic Dreamz",
@@ -430,6 +482,34 @@ export const pageSeo = {
       width: 1200,
       height: 630,
       alt: "Hire dedicated Shopify developers from Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
+  shopifyExperts: {
+    path: "/shopify-experts",
+    title: "Hire Shopify Experts | Top Rated Shopify Developers",
+    description:
+      "Partner with Best Shopify Experts to develop an online store. Let's start your online journey with Dynamic Dreamz with their tailored solutions.",
+    keywords: [
+      "hire Shopify experts",
+      "Shopify experts",
+      "top rated Shopify developers",
+      "dedicated Shopify experts",
+      "Shopify development agency",
+      "Shopify store setup",
+      "Shopify Plus experts",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-07-24T07:16:56+00:00",
+    modifiedTime: "2026-08-18T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Hire dedicated Shopify experts from Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "monthly",
@@ -597,6 +677,34 @@ export const pageSeo = {
     sitemap: {
       changeFrequency: "weekly",
       priority: 0.9,
+    },
+  },
+  shopifyApps: {
+    path: "/shopify-apps",
+    title: "Shopify App Archive | Dynamic Dreamz",
+    description:
+      "Explore top Shopify apps for conversion growth, checkout upgrades, shipping, quotes, and more- all built to scale your store’s performance.",
+    keywords: [
+      "Shopify apps",
+      "Shopify public apps",
+      "Smart B2B Shopify app",
+      "Dynamic PayHide",
+      "Dynamic Quote Request",
+      "Dynamic Checkout Upsell",
+      "Easy Shipping Rate Manager",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-08-01T00:00:00+00:00",
+    modifiedTime: "2026-08-18T00:00:00+05:30",
+    image: {
+      path: "/assets/shopify-apps/smart-b2b.png",
+      width: 300,
+      height: 300,
+      alt: "Smart B2B Shopify App",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
   },
 } satisfies Record<string, PageSeoConfig>;

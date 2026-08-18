@@ -431,3 +431,63 @@ Primary SEO intent: Shopify case studies, Shopify Plus case study, ecommerce suc
 | Hero subtitle | `Discover how we help our clients across the globe with innovative solutions to make their businesses flourish.` | `Discover how we help our clients across the globe with innovative ecommerce, Shopify Plus, and custom web development solutions.` | Adds specific commercial keywords while retaining helpful sentence structure. | Medium | deferred pending exact visible-copy approval |
 | Empty image alt text | Several case study post thumbnails on live site had empty or minimal `alt=""` attributes. | Generated descriptive kebab-case alt attributes (e.g. `Decor That Shows Up, Does Its Job, and Disappears- Evrgreen`) for each card image. | Improves accessibility and image search indexation without changing visible layout. | High | implemented as a nonvisual accessibility correction |
 | Dropdown filter labels | `Technology` and `Industry` | Maintain live dropdown categories; support real-time searching and filtering | Retains familiar browsing taxonomy while enhancing client interactivity. | High | implemented in client filter |
+
+## Privacy and Cookies Policy (`/privacy-policy`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: privacy policy, cookies policy, personal data practices, and
+Dynamic Dreamz contact details.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Policy freshness | The live page has no visible effective or last-updated date. | Add `Last updated: [approved date]` below the policy heading after legal review. | Gives visitors and crawlers a clear freshness signal without inventing a legal date. | High | deferred pending legal approval |
+| Policy contact phone | The live policy lists `+91 63520 11266`, while the current shared site contact fact is `+91 9327642007`. | Replace the policy phone with the legal owner's approved policy contact number and keep the same value in structured data where applicable. | Prevents visitors from receiving stale or conflicting policy-contact information. | High | blocked pending legal and leadership fact approval |
+| Controller/jurisdiction summary | The policy does not state a concise data-controller identity, legal basis, or governing jurisdiction. | Add a legal-approved summary naming the responsible entity, applicable legal bases, and jurisdiction. | Improves answer extraction and legal clarity without making unsupported claims. | High | deferred pending legal review |
+
+## Shopify Experts (`/shopify-experts`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: hire Shopify experts, top rated Shopify developers, Shopify development agency, certified Shopify plus developers, Shopify store setup, custom theme design, app development, AI ecommerce automation.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Hero subtitle | `Hire certified Shopify experts to build, customize, scale, and optimize your online store. Seamless communication, flexible hiring models, and on-time delivery.` | Maintain live wording; optionally add specific proof points (e.g. 50+ Shopify developers, 20+ years experience). | Preserves live UI copy verbatim while logging future proof enhancements. | Medium | deferred pending exact visible-copy approval |
+| Hiring process heading | `Hassle free Hiring Process to Get Started` | `A straightforward process to hire certified Shopify experts` | Improves grammar and readability. | Low | deferred pending exact visible-copy approval |
+| Hiring choice heading | `What makes Dynamic Dreamz an excellent choice to hire for your Shopify Development?` | `Why Dynamic Dreamz is the right partner for your Shopify development` | Tightens phrasing while maintaining intent. | Low | deferred pending exact visible-copy approval |
+| Advantages heading | `Advantages of Hiring Shopify Experts from Dynamic Dreamz` | `Advantages of hiring Shopify experts from Dynamic Dreamz` | Fixes title capitalization. | Low | deferred pending exact visible-copy approval |
+| Advantage savings claim | `Save 60% on your development cost` | `Competitive agency pricing with flexible hiring models.` | Avoids an unsupported savings guarantee. | High | deferred pending sales evidence and exact visible-copy approval |
+| AI automation heading | `We Don’t Just Build Stores We Build Stores That Work Harder for You` | `We build Shopify stores that work harder for you with AI and automation` | Improves sentence flow and SEO keyword relevance. | Medium | deferred pending exact visible-copy approval |
+| Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
+| VideoObject structured data | Live page lacked structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes in JSON-LD with authentic upload dates and YouTube URLs matching visible testimonials. | Improves video indexing and search eligibility without changing visible UI. | High | implemented in schema |
+| Missing image alt text | Several icons and store project previews had generic or uninformative alt text on live site. | Descriptive, page-specific alt text for all 32 local assets. | Improves accessibility and image indexation without altering visible layout. | High | implemented as a nonvisual accessibility correction |
+
+## WordPress Web Development Services (`/wordpress-development`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: WordPress development company India, custom WordPress development services, WordPress theme customization, WooCommerce development, headless WordPress with Next.js, WordPress speed optimization, WordPress maintenance services.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `WordPress Development Company India \| Dynamic Dreamz` (53 chars) | `WordPress Development Company India \| Dynamic Dreamz` (53 chars) | Preserves live primary commercial intent within 60-character budget. | High | implemented in metadata |
+| Services CTA | `Let me give you a hand to help you` | `Request a Custom WordPress Quote` or `Get a Free Estimate` | Replaces colloquial button text with clear commercial intent action. | Medium | deferred pending exact visible-copy approval |
+| Theme customization typo | `Elementer` in Theme Customization description | `Elementor` | Corrects spelling of popular WordPress page builder plugin. | Low | deferred pending exact visible-copy approval |
+| Project spelling | `Quite Events` | `Quiet Events` | Corrects the typo in the project name while preserving portfolio links. | Low | deferred pending exact visible-copy approval |
+| Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
+| VideoObject structured data | Live page lacked structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes in JSON-LD with authentic upload dates and YouTube URLs matching visible testimonials. | Improves video indexing and search eligibility without changing visible UI. | High | implemented in schema |
+| Service card alt text | Several icons on live site had generic or empty alt text. | Descriptive, context-specific alt text (e.g. `WordPress Icon`, `WooCommerce Icon`, `Speed Up Icon`) for all service icons. | Improves accessibility and image search indexation without altering visible layout. | High | implemented as a nonvisual accessibility correction |
+
+## Shopify Apps (`/shopify-apps`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: Shopify apps archive, public Shopify app development, B2B wholesale app, hide payment terms, request a quote Shopify app, checkout upsell app, shipping rate manager.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Shopify App Archive - Shopify Plus Agency & Shopify Platinum Partner \| Dynamic Dreamz` (92 chars) | `Shopify App Archive \| Dynamic Dreamz` (38 chars) | Fits SEO 60-character budget while keeping core archive title. | High | implemented in metadata |
+| Easy Shipping Rate Manager Description | `Beat the competition by offering dynamic  shipping rates.` (double space in live copy) | `Beat the competition by offering dynamic shipping rates.` | Removes duplicate whitespace while maintaining exact live wording. | Low | deferred pending exact visible-copy approval |
+| Hero Subtitle | No subtitle present on live page | `Explore custom and public Shopify apps built by Dynamic Dreamz to scale conversions, automate checkout, and enhance store performance.` | Adds helpful descriptive copy for users and answer engines if content expansion is desired. | Medium | deferred pending content approval |
+| Structured Data | Missing CollectionPage with ItemList of SoftwareApplication entities on legacy site | Emitted CollectionPage, ItemList with 5 SoftwareApplication items, BreadcrumbList, Organization, and WebSite | Improves rich search visibility for software applications without altering visible layout. | High | implemented in schema |

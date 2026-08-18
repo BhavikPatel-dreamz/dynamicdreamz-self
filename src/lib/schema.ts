@@ -31,6 +31,12 @@ import {
   whiteLabelWebsiteDesignServices,
 } from "@/content/white-label-website-design";
 import { caseStudiesContent } from "@/content/case-studies";
+import { shopifyAppsContent } from "@/content/shopify-apps";
+import { shopifyExpertsContent } from "@/content/shopify-experts";
+import {
+  wordpressDevelopmentFaqs,
+  wordpressDevelopmentServices,
+} from "@/content/wordpress-development";
 import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -64,6 +70,9 @@ const resourcesItemListId = `${resourcesPageUrl}#articles`;
 const contactPageUrl = absoluteUrl(pageSeo.contact.path);
 const contactPageId = `${contactPageUrl}#webpage`;
 const contactBreadcrumbId = `${contactPageUrl}#breadcrumb`;
+const privacyPolicyPageUrl = absoluteUrl(pageSeo.privacyPolicy.path);
+const privacyPolicyPageId = `${privacyPolicyPageUrl}#webpage`;
+const privacyPolicyBreadcrumbId = `${privacyPolicyPageUrl}#breadcrumb`;
 const requestQuotePageUrl = absoluteUrl(pageSeo.requestQuote.path);
 const requestQuotePageId = `${requestQuotePageUrl}#webpage`;
 const requestQuoteBreadcrumbId = `${requestQuotePageUrl}#breadcrumb`;
@@ -91,6 +100,11 @@ const petIndustryPageUrl = absoluteUrl(pageSeo.petIndustry.path);
 const petIndustryPageId = `${petIndustryPageUrl}#webpage`;
 const petIndustryBreadcrumbId = `${petIndustryPageUrl}#breadcrumb`;
 const petIndustryServiceId = `${petIndustryPageUrl}#service`;
+const wordpressDevelopmentPageUrl = absoluteUrl(pageSeo.wordpressDevelopment.path);
+const wordpressDevelopmentPageId = `${wordpressDevelopmentPageUrl}#webpage`;
+const wordpressDevelopmentServiceId = `${wordpressDevelopmentPageUrl}#service`;
+const wordpressDevelopmentFaqId = `${wordpressDevelopmentPageUrl}#faq`;
+const wordpressDevelopmentBreadcrumbId = `${wordpressDevelopmentPageUrl}#breadcrumb`;
 const hireWordPressDevelopersPageUrl = absoluteUrl(pageSeo.hireWordPressDevelopers.path);
 const hireWordPressDevelopersPageId = `${hireWordPressDevelopersPageUrl}#webpage`;
 const hireWordPressDevelopersServiceId = `${hireWordPressDevelopersPageUrl}#service`;
@@ -101,6 +115,11 @@ const hireShopifyDevelopersPageId = `${hireShopifyDevelopersPageUrl}#webpage`;
 const hireShopifyDevelopersServiceId = `${hireShopifyDevelopersPageUrl}#service`;
 const hireShopifyDevelopersFaqId = `${hireShopifyDevelopersPageUrl}#faq`;
 const hireShopifyDevelopersBreadcrumbId = `${hireShopifyDevelopersPageUrl}#breadcrumb`;
+const shopifyExpertsPageUrl = absoluteUrl(pageSeo.shopifyExperts.path);
+const shopifyExpertsPageId = `${shopifyExpertsPageUrl}#webpage`;
+const shopifyExpertsServiceId = `${shopifyExpertsPageUrl}#service`;
+const shopifyExpertsFaqId = `${shopifyExpertsPageUrl}#faq`;
+const shopifyExpertsBreadcrumbId = `${shopifyExpertsPageUrl}#breadcrumb`;
 const whiteLabelShopifyPageUrl = absoluteUrl(pageSeo.whiteLabelShopify.path);
 const whiteLabelShopifyPageId = `${whiteLabelShopifyPageUrl}#webpage`;
 const whiteLabelShopifyServiceId = `${whiteLabelShopifyPageUrl}#service`;
@@ -125,6 +144,10 @@ const caseStudiesPageUrl = absoluteUrl(pageSeo.caseStudies.path);
 const caseStudiesPageId = `${caseStudiesPageUrl}#webpage`;
 const caseStudiesBreadcrumbId = `${caseStudiesPageUrl}#breadcrumb`;
 const caseStudiesItemListId = `${caseStudiesPageUrl}#case-studies`;
+const shopifyAppsPageUrl = absoluteUrl(pageSeo.shopifyApps.path);
+const shopifyAppsPageId = `${shopifyAppsPageUrl}#webpage`;
+const shopifyAppsBreadcrumbId = `${shopifyAppsPageUrl}#breadcrumb`;
+const shopifyAppsItemListId = `${shopifyAppsPageUrl}#apps`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -711,6 +734,56 @@ export function createContactPageSchema() {
   };
 }
 
+export function createPrivacyPolicyPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": privacyPolicyPageId,
+        url: privacyPolicyPageUrl,
+        name: pageSeo.privacyPolicy.title,
+        description: pageSeo.privacyPolicy.description,
+        datePublished: pageSeo.privacyPolicy.publishedTime,
+        dateModified: pageSeo.privacyPolicy.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": privacyPolicyBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.privacyPolicy.image.path),
+          width: pageSeo.privacyPolicy.image.width,
+          height: pageSeo.privacyPolicy.image.height,
+          caption: pageSeo.privacyPolicy.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": privacyPolicyBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Privacy and Cookies Policy",
+            item: privacyPolicyPageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
 export function createRequestQuotePageSchema() {
   return {
     "@context": "https://schema.org",
@@ -1246,6 +1319,25 @@ export function createShopifyPlusAgencyPageSchema() {
   });
 }
 
+export function createWordPressDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.wordpressDevelopment,
+    pageUrl: wordpressDevelopmentPageUrl,
+    pageId: wordpressDevelopmentPageId,
+    serviceId: wordpressDevelopmentServiceId,
+    faqId: wordpressDevelopmentFaqId,
+    breadcrumbId: wordpressDevelopmentBreadcrumbId,
+    serviceName: "WordPress Web Development Services",
+    serviceType: "Custom WordPress website development, theme customization, and plugin development",
+    breadcrumbName: "WordPress Web Development Services",
+    audienceType:
+      "Businesses, ecommerce brands, and digital agencies seeking custom WordPress web development services",
+    faqs: wordpressDevelopmentFaqs,
+    offers: wordpressDevelopmentServices.items,
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
 export function createHireWordPressDevelopersPageSchema() {
   return createServicePageSchema({
     page: pageSeo.hireWordPressDevelopers,
@@ -1294,6 +1386,31 @@ export function createHireShopifyDevelopersPageSchema() {
       ].join(" "),
     })),
     offers: hireShopifyServices.items,
+  });
+}
+
+export function createShopifyExpertsPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyExperts,
+    pageUrl: shopifyExpertsPageUrl,
+    pageId: shopifyExpertsPageId,
+    serviceId: shopifyExpertsServiceId,
+    faqId: shopifyExpertsFaqId,
+    breadcrumbId: shopifyExpertsBreadcrumbId,
+    serviceName: "Dedicated Shopify Expert Services",
+    serviceType: "Certified Shopify experts, developers, and eCommerce consultants",
+    breadcrumbName: "Shopify Experts",
+    audienceType:
+      "eCommerce brands, direct-to-consumer businesses, and digital agencies seeking certified Shopify experts",
+    faqs: shopifyExpertsContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: shopifyExpertsContent.aiAutomation.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -1368,6 +1485,89 @@ export function createCaseStudiesPageSchema() {
             position: 2,
             name: "Case Studies",
             item: caseStudiesPageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+export function createShopifyAppsPageSchema() {
+  const appItems = shopifyAppsContent.apps.map((app, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "SoftwareApplication",
+      name: app.title,
+      url: app.href,
+      description: app.description,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Shopify",
+      image: absoluteUrl(app.image),
+      offers: {
+        "@type": "Offer",
+        price: app.additionalInfo.includes("$20") ? "20" : "0",
+        priceCurrency: "USD",
+        description: app.additionalInfo,
+      },
+    },
+  }));
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": shopifyAppsPageId,
+        url: shopifyAppsPageUrl,
+        name: pageSeo.shopifyApps.title,
+        description: pageSeo.shopifyApps.description,
+        datePublished: pageSeo.shopifyApps.publishedTime,
+        dateModified: pageSeo.shopifyApps.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": shopifyAppsBreadcrumbId },
+        mainEntity: {
+          "@type": "ItemList",
+          "@id": shopifyAppsItemListId,
+          name: "Shopify Apps",
+          itemListOrder: "https://schema.org/ItemListOrderAscending",
+          numberOfItems: shopifyAppsContent.apps.length,
+          itemListElement: appItems,
+        },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.shopifyApps.image.path),
+          width: pageSeo.shopifyApps.image.width,
+          height: pageSeo.shopifyApps.image.height,
+          caption: pageSeo.shopifyApps.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": shopifyAppsBreadcrumbId,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: homeUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Shopify App",
+            item: shopifyAppsPageUrl,
           },
         ],
       },

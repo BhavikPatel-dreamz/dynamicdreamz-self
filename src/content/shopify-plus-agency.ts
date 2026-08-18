@@ -93,7 +93,7 @@ export const shopifyPlusAgencyServices = {
         "Our Shopify Plus consulting service aims to resolve all queries raised by the clients related to functionalities, benefits, and security features of Shopify Plus. Our consultation provides specialized support for large-scale eCommerce businesses aiming to leverage the full potential of Shopify Plus. Experts assist with custom integrations, advanced marketing tactics, performance optimization, and seamless migrations.",
     },
     {
-      icon: "/assets/shopify-plus-agency/icons/migration-icon.svg",
+      icon: "/assets/hire-shopify-developers/icons/shopify-migration.svg",
 
       iconAlt: "Migration Icon",
       title: "Shopify Plus Migration Service",
@@ -152,25 +152,25 @@ export const shopifyPlusAgencyCaseStudies = {
   items: [
     {
       name: "Trendia",
-      image: "/assets/shopify-plus-agency/case-studies/trendia-case-study.png",
+      image: "/assets/case-studies/trendia.png",
       imageAlt: "Trendia Casestudy Image",
       href: "/case-study/trendia",
     },
     {
       name: "Nekter Juice Bar",
-      image: "/assets/shopify-plus-agency/case-studies/nekter-juice-bar-case-study.jpg",
+      image: "/assets/case-studies/nekter-juice-bar.jpg",
       imageAlt: "Nekter Juice Bar Casestudy Image",
       href: "/case-study/nekter-juice-bar",
     },
     {
       name: "Calmenta",
-      image: "/assets/shopify-plus-agency/case-studies/calmenta-case-study.png",
+      image: "/assets/case-studies/calmenta.png",
       imageAlt: "Calmenta Casestudy Image",
       href: "/case-study/calmenta",
     },
     {
       name: "Holy Plantz",
-      image: "/assets/shopify-plus-agency/case-studies/holy-plantz-case-study.png",
+      image: "/assets/case-studies/holy-plantz.png",
       imageAlt: "Holy Plantz Casestudy Image",
       href: "/case-study/holy-plantz",
     },
@@ -259,11 +259,11 @@ export const shopifyPlusAgencyPortfolio = {
   description:
     "We've had the privilege to work on some challenging and impactful work over our 20-year history. Whether it's for a startup or a Fortune 500 company, every website we launch and every website we create is developed with keeping the client's goals in mind.",
   category: "SHOPIFY PLUS",
-  platformMark: "/assets/shopify-plus-agency/portfolio/shopify-plus-white.svg",
+  platformMark: "/assets/platforms/shopify-plus-white.svg",
   items: [
     {
       name: "Tropic Feel",
-      image: "/assets/shopify-plus-agency/portfolio/tropic-feel.webp",
+      image: "/assets/fashion/portfolio/tropicfeel-fashion.webp",
       imageAlt: "Tropic Feel",
       href: "https://shop.tropicfeel.com/",
     },
