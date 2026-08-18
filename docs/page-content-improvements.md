@@ -418,3 +418,16 @@ Primary SEO intent: request a quote, hire Shopify developers, web development es
 | Testimonial punctuation | Brandon quote ends with trailing comma: `with unmatched responsiveness, professionalism,` | `with unmatched responsiveness and professionalism.` | Fixes unfinished trailing comma in quote text. | Low | deferred pending exact visible-copy approval |
 | Review badge alt text | Live Clutch badge uses `clith Revire for the Dynamic dreamz` in source | `Clutch Dynamic Dreamz` | Improves accessibility name quality and fixes typos without altering visible UI. | High | implemented as a nonvisual accessibility correction |
 | Quote Form submission | Live site uses Contact Form 7 with Cloudflare Turnstile | Next.js Server Action with honeypot, field validation, UTM attribution, and status feedback | Enhances security, performance, and reliability while maintaining exact visual form layout. | High | implemented in server actions |
+
+## Case Studies (`/case-studies`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-18
+Primary SEO intent: Shopify case studies, Shopify Plus case study, ecommerce success stories, Shopify migration case study, mobile app development case study, Dynamic Dreamz portfolio archive.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Case Study Archive - Shopify Plus Agency & Shopify Platinum Partner \| Dynamic Dreamz` (83 chars) | `Case Studies & Client Success Stories \| Dynamic Dreamz` (53 chars) | Fits SEO 60-character budget while preserving primary archive intent. | High | implemented in metadata |
+| Hero subtitle | `Discover how we help our clients across the globe with innovative solutions to make their businesses flourish.` | `Discover how we help our clients across the globe with innovative ecommerce, Shopify Plus, and custom web development solutions.` | Adds specific commercial keywords while retaining helpful sentence structure. | Medium | deferred pending exact visible-copy approval |
+| Empty image alt text | Several case study post thumbnails on live site had empty or minimal `alt=""` attributes. | Generated descriptive kebab-case alt attributes (e.g. `Decor That Shows Up, Does Its Job, and Disappears- Evrgreen`) for each card image. | Improves accessibility and image search indexation without changing visible layout. | High | implemented as a nonvisual accessibility correction |
+| Dropdown filter labels | `Technology` and `Industry` | Maintain live dropdown categories; support real-time searching and filtering | Retains familiar browsing taxonomy while enhancing client interactivity. | High | implemented in client filter |

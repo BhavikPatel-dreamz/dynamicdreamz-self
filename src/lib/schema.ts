@@ -30,6 +30,7 @@ import {
   whiteLabelWebsiteDesignFaqs,
   whiteLabelWebsiteDesignServices,
 } from "@/content/white-label-website-design";
+import { caseStudiesContent } from "@/content/case-studies";
 import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -120,6 +121,10 @@ const shopifyPlusPageId = `${shopifyPlusPageUrl}#webpage`;
 const shopifyPlusServiceId = `${shopifyPlusPageUrl}#service`;
 const shopifyPlusFaqId = `${shopifyPlusPageUrl}#faq`;
 const shopifyPlusBreadcrumbId = `${shopifyPlusPageUrl}#breadcrumb`;
+const caseStudiesPageUrl = absoluteUrl(pageSeo.caseStudies.path);
+const caseStudiesPageId = `${caseStudiesPageUrl}#webpage`;
+const caseStudiesBreadcrumbId = `${caseStudiesPageUrl}#breadcrumb`;
+const caseStudiesItemListId = `${caseStudiesPageUrl}#case-studies`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1290,6 +1295,84 @@ export function createHireShopifyDevelopersPageSchema() {
     })),
     offers: hireShopifyServices.items,
   });
+}
+
+export function createCaseStudiesPageSchema() {
+  const caseStudyItems = caseStudiesContent.items.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "CreativeWork",
+      name: item.title,
+      headline: item.title,
+      description: item.excerpt,
+      image: absoluteUrl(item.image),
+      genre: item.technology || item.industry,
+      about: [item.technology, item.industry].filter(Boolean),
+      url: absoluteUrl(item.href),
+    },
+  }));
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": caseStudiesPageId,
+        url: caseStudiesPageUrl,
+        name: pageSeo.caseStudies.title,
+        description: pageSeo.caseStudies.description,
+        datePublished: pageSeo.caseStudies.publishedTime,
+        dateModified: pageSeo.caseStudies.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": caseStudiesBreadcrumbId },
+        mainEntity: {
+          "@type": "ItemList",
+          "@id": caseStudiesItemListId,
+          name: "Client Case Studies",
+          itemListOrder: "https://schema.org/ItemListOrderAscending",
+          numberOfItems: caseStudiesContent.items.length,
+          itemListElement: caseStudyItems,
+        },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.caseStudies.image.path),
+          width: pageSeo.caseStudies.image.width,
+          height: pageSeo.caseStudies.image.height,
+          caption: pageSeo.caseStudies.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": caseStudiesBreadcrumbId,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: homeUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Case Studies",
+            item: caseStudiesPageUrl,
+          },
+        ],
+      },
+    ],
+  };
 }
 
 export function serializeJsonLd(value: unknown) {

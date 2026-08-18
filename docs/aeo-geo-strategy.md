@@ -2381,6 +2381,88 @@ Primary commercial inbound conversion and project estimation route. Connects pot
 - Implemented: route content, local media reuse, route-scoped metadata/schema, and quote CTA correction.
 - Deferred: visible copy corrections, counter provenance, and internal case-study evidence pending approval.
 
+## Case Studies (`/case-studies`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-18
+
+Owner: SEO, content, development, leadership, sales, and client-success teams
+
+Primary audience: brands, merchants, and agencies researching real-world ecommerce, Shopify, Shopify Plus, and web development implementations and proof of capability
+
+Decision stage: partner evaluation, vendor validation, capability verification, and solution discovery
+
+### Page role
+
+Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep expertise across 36 client projects spanning Shopify, Shopify Plus, Magento, WordPress, React/Laravel, and custom platforms across 7 distinct industries (Beauty, Fashion, Food & Beverages, Health & Nutrition, Home & Living, Jewellery, Other).
+
+### Target prompts
+
+- What case studies and client projects has Dynamic Dreamz built?
+- What brands has Dynamic Dreamz developed Shopify Plus stores for?
+- Show examples of BigCommerce to Shopify and WooCommerce to Shopify migrations by Dynamic Dreamz.
+- What custom Shopify themes and mobile applications has Dynamic Dreamz built?
+- Who is a proven Shopify Platinum Partner with demonstrated client case studies?
+
+### Current strengths and available evidence
+
+- Comprehensive catalog of 36 authentic client projects with industry and technology categorization.
+- Real-time search by brand name, technology, industry, and solution summary.
+- Multi-faceted technology filter (Shopify, Shopify Plus, Shopify Migration, WordPress, Magento 2.0, React.js & Laravel, Custom Web Platform).
+- Multi-faceted industry filter (Beauty & Cosmetics, Fashion & Apparel, Food & Beverages, Health & Nutrition, Home & Living, Jewellery & Accessories, Other Industries).
+- Numbered pagination (9 items per page, 4 pages total).
+- Rich CollectionPage structured data with ItemList of CreativeWork entities, breadcrumbs, and Organization graph.
+- 100% project-owned local assets in `public/assets/case-studies/`.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical migrated archive needed full App Router and metadata implementation | Ship slashless `/case-studies` route with SEO data, sitemap, robots, metadata, redirects from `/case-study`, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Search & filtering | Fast client-side searching and filtering by technology and industry | Implemented accessible dropdowns with full live parity and responsive states | Verified across desktop, tablet, and mobile |
+| P0 | implemented | Local assets | 36 project screenshots downloaded and stored in project-owned kebab-case paths | Replaced remote WordPress uploads with `public/assets/case-studies/*.png` | 100% project-owned assets verified |
+| P1 | deferred | Case study detail pages | Individual case study links (`/case-studies/evrgreen`, etc.) link to future detail routes | Maintain links and migrate individual case study story pages in planned phase | Migration scope prioritization |
+| P1 | deferred | Copy phrasing | Subtitle says `Explore our clients’ success stories through case studies` | Preserve live wording verbatim during migration; queue proposed copy improvements in `docs/page-content-improvements.md` | Content approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered
+headings and client filters establish the portfolio and evidence hub.
+Proposed copy improvements are tracked in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz to the shared Organization entity and model this route as
+  a CollectionPage.
+- Keep the 36 case study entities, technologies, and industries strictly aligned
+  with visible content.
+
+### Internal-link and conversion actions
+
+- Maintain links from header and footer navigation "Case Studies" to `/case-studies`.
+- Redirect `/case-study` and legacy URLs to `/case-studies`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit CollectionPage, ItemList of CreativeWorks, WebSite, Organization, and BreadcrumbList.
+- Ensure canonical `/case-studies` and primary image are in the sitemap.
+
+### Measurement plan
+
+- SEO tracks discovery prompts and organic search landings for case study queries.
+- Analytics measures search queries, filter usage, card click-through rates, and
+  pagination engagement.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD,
+  and internal links use `/case-studies`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source,
+  metadata limits, JSON-LD graph verification, desktop/tablet/mobile screenshots
+  captured (1440x900, 768x1024, 390x844), local assets audit, responsive grid
+  layout, lint, and production build.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new

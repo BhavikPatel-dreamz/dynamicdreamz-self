@@ -158,7 +158,7 @@ export const primaryNavigation: PrimaryNavigationGroup[] = [
     kind: "compact",
     items: [
       { label: "Portfolio", href: "/our-work", icon: { src: "/assets/navigation/portfolio.svg", width: 21, height: 21 } },
-      { label: "Case Studies", href: "/case-study", icon: { src: "/assets/navigation/case-studies.svg", width: 21, height: 21 } },
+      { label: "Case Studies", href: "/case-studies", icon: { src: "/assets/navigation/case-studies.svg", width: 21, height: 21 } },
     ],
   },
   {
@@ -194,7 +194,7 @@ export const footerNavigation = [
       { label: "Careers", href: "/career" },
       { label: "Blogs", href: "/blogs" },
       { label: "Portfolio", href: "/our-work" },
-      { label: "Case Studies", href: "/case-study" },
+      { label: "Case Studies", href: "/case-studies" },
       { label: "Contact Us", href: "/contact-us" },
     ],
   },

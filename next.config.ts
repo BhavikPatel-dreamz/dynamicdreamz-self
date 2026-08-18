@@ -10,6 +10,20 @@ const nextConfig: NextConfig = {
     useTypeScriptCli: false,
   },
   reactCompiler: true,
+  async redirects() {
+    return [
+      {
+        source: "/case-study",
+        destination: "/case-studies",
+        permanent: true,
+      },
+      {
+        source: "/case-study/:slug*",
+        destination: "/case-studies/:slug*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -572,6 +572,33 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  caseStudies: {
+    path: "/case-studies",
+    title: "Case Studies & Client Success Stories | Dynamic Dreamz",
+    description:
+      "Explore every Shopify mobile app development case study from Dynamic Dreamz, and see how custom apps have helped boost engagement, retention, and growth.",
+    keywords: [
+      "Shopify case studies",
+      "Shopify Plus case study",
+      "ecommerce success stories",
+      "Shopify migration case study",
+      "mobile app development case study",
+      "Dynamic Dreamz portfolio",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-01T00:00:00+00:00",
+    modifiedTime: "2026-08-18T00:00:00+05:30",
+    image: {
+      path: "/assets/case-studies/evrgreen.png",
+      width: 571,
+      height: 421,
+      alt: "Case Study Archive - Shopify Plus Agency & Shopify Platinum Partner | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;
