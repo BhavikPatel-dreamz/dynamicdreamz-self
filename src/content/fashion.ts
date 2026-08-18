@@ -42,7 +42,7 @@ export const fashionIndustryPage = {
         title: "Website design tailored for fashion",
         description:
           "Our fashion-led web design service equips customers to see a magnified or zoomed-in version of the image. This helps users examine details more closely, such as textures, patterns, or small print, enhancing their shopping or viewing experience",
-        icon: "/assets/industry-solutions/fashion-website-design.svg",
+        icon: "/assets/industry-solutions/tailored-website-development.svg",
         iconAlt: "Website Design Tailored Icon",
         width: 68,
         height: 68,
