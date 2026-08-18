@@ -31,6 +31,7 @@ import {
   whiteLabelWebsiteDesignServices,
 } from "@/content/white-label-website-design";
 import { caseStudiesContent } from "@/content/case-studies";
+import { shopifyExpertsContent } from "@/content/shopify-experts";
 import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -101,6 +102,11 @@ const hireShopifyDevelopersPageId = `${hireShopifyDevelopersPageUrl}#webpage`;
 const hireShopifyDevelopersServiceId = `${hireShopifyDevelopersPageUrl}#service`;
 const hireShopifyDevelopersFaqId = `${hireShopifyDevelopersPageUrl}#faq`;
 const hireShopifyDevelopersBreadcrumbId = `${hireShopifyDevelopersPageUrl}#breadcrumb`;
+const shopifyExpertsPageUrl = absoluteUrl(pageSeo.shopifyExperts.path);
+const shopifyExpertsPageId = `${shopifyExpertsPageUrl}#webpage`;
+const shopifyExpertsServiceId = `${shopifyExpertsPageUrl}#service`;
+const shopifyExpertsFaqId = `${shopifyExpertsPageUrl}#faq`;
+const shopifyExpertsBreadcrumbId = `${shopifyExpertsPageUrl}#breadcrumb`;
 const whiteLabelShopifyPageUrl = absoluteUrl(pageSeo.whiteLabelShopify.path);
 const whiteLabelShopifyPageId = `${whiteLabelShopifyPageUrl}#webpage`;
 const whiteLabelShopifyServiceId = `${whiteLabelShopifyPageUrl}#service`;
@@ -1294,6 +1300,31 @@ export function createHireShopifyDevelopersPageSchema() {
       ].join(" "),
     })),
     offers: hireShopifyServices.items,
+  });
+}
+
+export function createShopifyExpertsPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyExperts,
+    pageUrl: shopifyExpertsPageUrl,
+    pageId: shopifyExpertsPageId,
+    serviceId: shopifyExpertsServiceId,
+    faqId: shopifyExpertsFaqId,
+    breadcrumbId: shopifyExpertsBreadcrumbId,
+    serviceName: "Dedicated Shopify Expert Services",
+    serviceType: "Certified Shopify experts, developers, and eCommerce consultants",
+    breadcrumbName: "Shopify Experts",
+    audienceType:
+      "eCommerce brands, direct-to-consumer businesses, and digital agencies seeking certified Shopify experts",
+    faqs: shopifyExpertsContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: shopifyExpertsContent.aiAutomation.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 

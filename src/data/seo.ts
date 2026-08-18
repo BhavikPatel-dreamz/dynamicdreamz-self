@@ -436,6 +436,34 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  shopifyExperts: {
+    path: "/shopify-experts",
+    title: "Hire Shopify Experts | Top Rated Shopify Developers",
+    description:
+      "Partner with Best Shopify Experts to develop an online store. Let's start your online journey with Dynamic Dreamz with their tailored solutions.",
+    keywords: [
+      "hire Shopify experts",
+      "Shopify experts",
+      "top rated Shopify developers",
+      "dedicated Shopify experts",
+      "Shopify development agency",
+      "Shopify store setup",
+      "Shopify Plus experts",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-07-24T07:16:56+00:00",
+    modifiedTime: "2026-08-18T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Hire dedicated Shopify experts from Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   shopifyPlus: {
     path: "/shopify-plus-agency",
     title: "Shopify Plus Agency | Shopify development services",
