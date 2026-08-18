@@ -41,7 +41,7 @@ function ContactCard({ kind }: { kind: "sales" | "jobs" }) {
 function OfficeCard({ office }: { office: (typeof contactPageContent.offices)[number] }) {
   return (
     <article className="group/office overflow-hidden rounded-[10px] border-[1.5px] border-[#e4e4e4] bg-white">
-      <div className="relative aspect-[555/248] overflow-hidden">
+      <div className="relative aspect-[555/249] overflow-hidden">
         <Image className="object-cover transition-transform duration-600 group-hover/office:scale-110" src={office.image} alt={office.imageAlt} fill sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) 350px, 555px" />
       </div>
       <div className="p-8 max-[991px]:p-5">
@@ -52,7 +52,7 @@ function OfficeCard({ office }: { office: (typeof contactPageContent.offices)[nu
             <Image className="ml-1.5 h-auto w-auto transition-transform duration-300 group-hover/office:translate-x-0.5" src="/assets/contact/icons/directions.svg" alt="" width={14} height={14} />
           </a>
         </div>
-        <address className="mt-6 mb-[15px] text-base leading-[27.68px] font-medium text-muted not-italic max-[991px]:mt-[15px] max-[991px]:text-sm max-[991px]:leading-6">{office.address}</address>
+        <address className="mt-6 mb-6 text-base leading-[27.68px] font-medium text-muted not-italic max-[991px]:mt-[15px] max-[991px]:text-sm max-[991px]:leading-6">{office.address}</address>
         <div className="space-y-2.5">
           <a className="flex items-center text-base leading-[23.28px] font-bold text-[#090909] transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[991px]:text-sm" href={office.phoneHref}>
             <span className="mr-2.5 shrink-0"><PhoneIcon /></span>
@@ -76,8 +76,8 @@ export function ContactPage() {
       <section className="overflow-hidden bg-white pt-[230px] pb-[50px] text-center max-[991px]:pt-[140px]" aria-labelledby="contact-page-title">
         <Container>
           <div className="mx-auto max-w-[760px]">
-            <h1 id="contact-page-title" className="inline-block font-sans text-[50px] leading-[66px] font-bold text-ink max-[991px]:text-[40px] max-[991px]:leading-[60px] max-[767px]:text-[30px] max-[767px]:leading-10">{hero.title}</h1>
-            <p className="mt-4 text-lg leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]">{hero.prompt}</p>
+            <h1 id="contact-page-title" className="inline-block font-sans text-[50px] leading-[1.32] font-bold text-ink max-[991px]:text-[40px] max-[991px]:leading-[1.25] max-[767px]:text-[30px] max-[767px]:leading-[1.3] tracking-[-1px]">{hero.title}</h1>
+            <p className="mt-6 text-lg leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]">{hero.prompt}</p>
             <p className="text-lg leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]">{hero.description}</p>
           </div>
         </Container>
@@ -108,7 +108,7 @@ export function ContactPage() {
 
       <section className="py-20 max-[991px]:py-[50px]" aria-labelledby="offices-title">
         <Container>
-          <h2 id="offices-title" className="mb-10 text-center font-sans text-[35px] leading-[48.475px] font-bold text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">Our Offices</h2>
+          <h2 id="offices-title" className="mb-10 text-center font-sans text-[35px] leading-[48.475px] font-bold text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] tracking-[-.7px]">Our Offices</h2>
           <div className="grid grid-cols-2 gap-[30px] max-[991px]:gap-5 max-[767px]:grid-cols-1">
             {offices.map((office) => <OfficeCard key={office.city} office={office} />)}
           </div>
@@ -118,10 +118,14 @@ export function ContactPage() {
       <section className="pt-0 pb-20 max-[991px]:pb-[50px]" aria-labelledby="inquiry-title">
         <Container>
           <div className="rounded-[30px] bg-[linear-gradient(178.87deg,#15c064_11.23%,rgba(0,209,255,0.660675)_33.98%,rgba(0,209,255,0)_78.28%)] p-0.5">
-            <div className="rounded-[28px] bg-white px-[90px] pt-[90px] pb-[49px] max-[1199px]:p-10 max-[767px]:px-5 max-[767px]:pt-10 max-[767px]:pb-0">
-              <div className="mb-[84px] grid grid-cols-[42%_58%] items-center max-[991px]:mb-10 max-[991px]:grid-cols-1 max-[991px]:text-center">
-                <h2 id="inquiry-title" className="font-sans text-[35px] leading-[48.475px] font-bold text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">{inquiry.title}</h2>
-                <p className="text-lg leading-[34.2px] font-medium text-muted max-[991px]:mt-4 max-[991px]:text-base max-[991px]:leading-[30.4px]">{inquiry.description}</p>
+            <div className="rounded-[30px] bg-white px-[90px] pt-[90px] pb-[49px] max-[1199px]:p-10 max-[767px]:px-5 max-[767px]:pt-10 max-[767px]:pb-0">
+              <div className="mb-[84px] -mx-3.75 flex items-center justify-between max-[991px]:mb-10 max-[991px]:flex-col max-[991px]:items-stretch max-[991px]:text-center">
+                <div className="title box-border min-w-0 px-3 max-[991px]:w-full lg:flex-[0_0_calc(42%-15px)]">
+                  <h2 id="inquiry-title" className="font-sans text-[35px] mb-6 leading-[48.475px] font-bold text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] tracking-[-.7px]">{inquiry.title}</h2>
+                </div>
+                <div className="text box-border min-w-0 px-3 max-[991px]:mt-4 max-[991px]:w-full lg:flex-[0_0_calc(58%-15px)]">
+                  <p className="text-lg leading-[34.2px] font-medium text-muted max-[991px]:mt-0 max-[991px]:text-base max-[991px]:leading-[30.4px]">{inquiry.description}</p>
+                </div>
               </div>
               <ContactForm />
             </div>

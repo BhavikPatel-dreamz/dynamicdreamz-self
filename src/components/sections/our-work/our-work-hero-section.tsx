@@ -18,10 +18,10 @@ export function OurWorkHeroSection() {
     <section className="overflow-hidden bg-white pt-[230px] pb-[49px] max-[991px]:pt-[140px] max-[767px]:pb-[30px]">
       <Container>
         <div className="mx-auto max-w-[900px] text-center">
-          <h1 className="font-sans text-[50px] leading-[1.28] font-bold text-ink max-[991px]:text-[40px] max-[991px]:leading-[1.25] max-[767px]:text-[30px] max-[767px]:leading-[1.3]">
+          <h1 className="font-sans text-[50px] leading-[1.32] font-bold text-ink max-[991px]:text-[40px] max-[991px]:leading-[1.25] max-[767px]:text-[30px] max-[767px]:leading-[1.3] tracking-[-1px]">
             {ourWorkPage.hero.title}
           </h1>
-          <p className="mx-auto mt-[25px] max-w-[840px] text-lg leading-[34.2px] font-medium text-muted max-[767px]:mt-[27px] max-[767px]:text-base max-[767px]:leading-[30.4px]">
+          <p className="mx-auto mt-[24px] max-w-[840px] lg:text-lg text-base leading-[34.2px] font-medium text-muted max-[767px]:mt-[27px] max-[991px]:leading-[30.4px]">
             {ourWorkPage.hero.description}
           </p>
         </div>
@@ -33,7 +33,7 @@ export function OurWorkHeroSection() {
             aria-label="Scroll to portfolio projects"
           >
             <span className="absolute inset-0 animate-spin rounded-full border-2 border-dashed border-[#8b8b8b] [animation-duration:10s] motion-reduce:animate-none" />
-            <span className="absolute top-1/2 left-1/2 flex h-[calc(100%-15px)] w-[calc(100%-15px)] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-ink text-white transition-colors duration-300 group-hover:bg-brand-red group-focus-visible:bg-brand-red max-[767px]:[&_svg]:h-[25px] max-[767px]:[&_svg]:w-[25px]">
+            <span className="absolute top-1/2 left-1/2 flex h-[calc(100%-15px)] w-[calc(100%-15px)] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-ink text-white transition-colors duration-300 max-[767px]:[&_svg]:h-[25px] max-[767px]:[&_svg]:w-[25px]">
               <DownArrowIcon />
             </span>
           </a>

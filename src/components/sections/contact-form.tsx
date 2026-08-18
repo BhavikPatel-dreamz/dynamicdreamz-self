@@ -65,7 +65,7 @@ export function ContactForm() {
         <div className="mb-7 max-[991px]:mb-5">
           <FieldLabel htmlFor="contact-name" required>Name</FieldLabel>
           <input
-            className="h-[49px] w-full rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a]"
+            className="h-[49px] w-full rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-0"
             id="contact-name"
             name="name"
             type="text"
@@ -78,7 +78,7 @@ export function ContactForm() {
         <div className="mb-7 max-[991px]:mb-5">
           <FieldLabel htmlFor="contact-email" required>Email</FieldLabel>
           <input
-            className="h-[49px] w-full rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a]"
+            className="h-[49px] w-full rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-0"
             id="contact-email"
             name="email"
             type="email"
@@ -110,7 +110,7 @@ export function ContactForm() {
         <div className="mb-7 max-[991px]:mb-5">
           <FieldLabel htmlFor="contact-company">Company name</FieldLabel>
           <input
-            className="h-[49px] w-full rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a]"
+            className="h-[49px] w-full rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-0"
             id="contact-company"
             name="company"
             type="text"
@@ -122,7 +122,7 @@ export function ContactForm() {
         <div className="col-span-2 mb-7 max-[991px]:mb-5 max-[767px]:col-span-1">
           <FieldLabel htmlFor="contact-project">Brief about the project</FieldLabel>
           <textarea
-            className="h-[136px] w-full resize-none rounded-[5px] border-[1.5px] border-soft-line px-4 py-3 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a]"
+            className="h-[136px] w-full resize-none rounded-[5px] border-[1.5px] border-soft-line px-4 py-3 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-0"
             id="contact-project"
             name="project"
             placeholder="Share your questions or comments here"
@@ -140,7 +140,7 @@ export function ContactForm() {
       </div>
 
       <button
-        className="group/contact-submit relative mt-1 inline-flex min-h-[49px] overflow-hidden rounded-[30px] border-2 border-brand-red px-6 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-600 hover:border-[#4f4f4f] hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70 max-[767px]:mt-0 max-[767px]:w-full max-[767px]:justify-center"
+        className="group/contact-submit relative mt-1 inline-flex min-h-[49px] overflow-hidden rounded-[30px] border-2 border-brand-red px-6 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-600 hover:border-[#4f4f4f] hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70 max-[767px]:mt-0 max-[767px]:w-full max-[767px]:justify-center cursor-pointer"
         type="submit"
         disabled={isPending}
       >

@@ -152,7 +152,7 @@ export function PortfolioProjectCard({
       )}
       <p
         className={cn(
-          "mt-4 mb-2 text-sm leading-[19.6px] font-bold tracking-[1px] text-black/70 uppercase",
+          "mt-5.5 mb-2.25 text-sm leading-[19.6px] font-bold tracking-[1px] text-black/70 uppercase",
           categoryClassName,
         )}
       >

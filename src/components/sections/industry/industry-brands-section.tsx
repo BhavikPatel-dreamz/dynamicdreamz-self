@@ -34,10 +34,10 @@ export function IndustryBrandsSection({
           )}
         >
           <h2
-            className="m-0 text-[25px] leading-[33px] font-medium tracking-[-0.5px] text-ink"
+            className="m-0 font-[Montserrat,sans-serif] text-[25px] leading-[33px] font-semibold tracking-[-.02em] text-ink"
             id={`${content.slug}-brands-title`}
           >
-            Trusted by <br className="max-[991px]:hidden" /> Leading Brands
+            Trusted by <br/> Leading Brands
           </h2>
         </div>
         <div className="w-[69%] max-[1199px]:w-[70%] max-[991px]:w-full">
