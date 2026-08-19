@@ -795,6 +795,32 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  prestigeThemeCustomization: {
+    path: "/prestige-theme-customization",
+    title: "Prestige Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Looking for a Prestige Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.",
+    keywords: [
+      "Prestige theme customization",
+      "Prestige Shopify theme",
+      "Prestige theme customization service",
+      "Shopify Prestige developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-12-05T08:44:49+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Prestige Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   shopifyDevelopmentAgency: {
     path: "/shopify-development-agency",
     title: "Shopify Development Agency & Services | Dynamic Dreamz",

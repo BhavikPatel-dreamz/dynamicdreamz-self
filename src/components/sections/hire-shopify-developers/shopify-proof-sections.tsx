@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { hireShopifyAdvantages, hireShopifyReasons } from "@/content/hire-shopify-developers";
+import { formatBrText } from "@/lib/text-formatting";
 
 const headingClassName = "font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]";
 
@@ -51,19 +52,10 @@ export function ShopifyReasonsSection({
       <Container>
         <div className="mb-[50px] text-center max-[767px]:mb-[35px]">
           <h2 className={headingClassName}>
-            {content.heading.includes("<br>")
-              ? content.heading.split("<br>").map((line, index, lines) => (
-                  <span key={line}>
-                    {line}
-                    {index < lines.length - 1 ? (
-                      <br className="max-[1199px]:hidden" />
-                    ) : null}
-                  </span>
-                ))
-              : content.heading}
+            {formatBrText(content.heading, "max-[1199px]:hidden")}
           </h2>
           <p className="mx-auto mt-2.5 max-w-[720px] text-base leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
-            {content.description}
+            {formatBrText(content.description, "max-[1199px]:hidden")}
           </p>
         </div>
 
@@ -81,10 +73,10 @@ export function ShopifyReasonsSection({
                 height={60}
               />
               <h3 className="mb-[5px] font-sans text-base leading-[26.72px] font-bold tracking-[0.32px] text-ink">
-                {item.title}
+                {formatBrText(item.title, "max-[767px]:hidden")}
               </h3>
               <p className="text-base leading-[27.2px] font-medium tracking-[0.32px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
-                {item.description}
+                {formatBrText(item.description, "max-[767px]:hidden")}
               </p>
             </article>
           ))}
@@ -115,19 +107,10 @@ export function ShopifyAdvantagesSection({
       <Container>
         <div className="mx-auto max-w-[850px] text-center">
           <h2 className={headingClassName}>
-            {content.heading.includes("<br>")
-              ? content.heading.split("<br>").map((line, index, lines) => (
-                  <span key={line}>
-                    {line}
-                    {index < lines.length - 1 ? (
-                      <br className="max-[1199px]:hidden" />
-                    ) : null}
-                  </span>
-                ))
-              : content.heading}
+            {formatBrText(content.heading, "max-[1199px]:hidden")}
           </h2>
           <p className="mt-2.5 text-base leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
-            {content.description}
+            {formatBrText(content.description, "max-[1199px]:hidden")}
           </p>
         </div>
 

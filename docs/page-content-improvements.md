@@ -707,4 +707,18 @@ Primary SEO intent: Dynamic Dreamz terms of service, terms and conditions, clien
 | Structured data | Legacy page had Yoast WebPage graph with breadcrumbs | Emitted `WebPage`, `BreadcrumbList`, `Organization`, and `WebSite` schema. | Connects legal terms of service to the site entity. | High | implemented in schema |
 
 
+## Prestige Theme Customization (`/prestige-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: Prestige theme customization, Prestige Shopify theme customization service, customize Prestige theme Shopify, luxury Shopify theme development, hire Prestige Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Prestige Theme Customization Service \| Dynamic Dreamz` (55 chars) | Preserved live title (55 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Looking for a Prestige Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.` (154 chars) | Preserved live meta description (154 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Benefits copy grammar | `We personalized your theme, ensuring it resonates with your unique brand identity to enhance credibility.` | `We personalize your theme, ensuring it resonates with your unique brand identity to enhance credibility.` | Changes past tense to present tense for consistency. | Low | deferred pending exact visible-copy approval |
+| Benefits copy grammar | `As we know, the number of mobile users is increasing. In that case, the theme should be optimized for mobile users to increase reach and conversion.` | `With mobile shopping driving the majority of ecommerce traffic, we ensure your Prestige theme is fully optimized for mobile devices to maximize reach and conversions.` | Improves professional tone and clarity. | Low | deferred pending exact visible-copy approval |
+| FAQ question grammar | `How much does it cost of Prestige Theme Customization Service?` | `How much does Prestige Theme Customization Service cost?` | Fixes grammatical phrasing in FAQ heading. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
 

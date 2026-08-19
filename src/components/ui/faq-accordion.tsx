@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 import { cn } from "@/lib/class-names";
+import { formatBrText } from "@/lib/text-formatting";
 import type { RichTextPart } from "@/types/white-label-service";
 
 export type FaqAccordionListItem = {
@@ -126,7 +127,7 @@ export function FaqAccordion({
                   questionClassName,
                 )}
               >
-                {item.question}
+                {formatBrText(item.question)}
               </h3>
               <Image
                 aria-hidden="true"

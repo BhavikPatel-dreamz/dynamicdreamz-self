@@ -50,6 +50,7 @@ import {
   shopifyMigrationServices,
 } from "@/content/shopify-migration";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
+import { prestigeThemeCustomizationContent } from "@/content/prestige-theme-customization";
 import {
   woocommerceDevelopmentFaqs,
   woocommerceDevelopmentServices,
@@ -213,6 +214,11 @@ const shopifyThemeCustomizationPageId = `${shopifyThemeCustomizationPageUrl}#web
 const shopifyThemeCustomizationServiceId = `${shopifyThemeCustomizationPageUrl}#service`;
 const shopifyThemeCustomizationFaqId = `${shopifyThemeCustomizationPageUrl}#faq`;
 const shopifyThemeCustomizationBreadcrumbId = `${shopifyThemeCustomizationPageUrl}#breadcrumb`;
+const prestigeThemeCustomizationPageUrl = absoluteUrl(pageSeo.prestigeThemeCustomization.path);
+const prestigeThemeCustomizationPageId = `${prestigeThemeCustomizationPageUrl}#webpage`;
+const prestigeThemeCustomizationServiceId = `${prestigeThemeCustomizationPageUrl}#service`;
+const prestigeThemeCustomizationFaqId = `${prestigeThemeCustomizationPageUrl}#faq`;
+const prestigeThemeCustomizationBreadcrumbId = `${prestigeThemeCustomizationPageUrl}#breadcrumb`;
 const shopifyDevelopmentAgencyPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentAgency.path);
 const shopifyDevelopmentAgencyPageId = `${shopifyDevelopmentAgencyPageUrl}#webpage`;
 const shopifyDevelopmentAgencyServiceId = `${shopifyDevelopmentAgencyPageUrl}#service`;
@@ -1823,6 +1829,30 @@ export function createShopifyThemeCustomizationPageSchema() {
       description: item.description,
     })),
     videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createPrestigeThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.prestigeThemeCustomization,
+    pageUrl: prestigeThemeCustomizationPageUrl,
+    pageId: prestigeThemeCustomizationPageId,
+    serviceId: prestigeThemeCustomizationServiceId,
+    faqId: prestigeThemeCustomizationFaqId,
+    breadcrumbId: prestigeThemeCustomizationBreadcrumbId,
+    serviceName: "Prestige Theme Customization Service",
+    serviceType: "Prestige Shopify theme customization, luxury store design, Liquid development, feature integration, and speed optimization",
+    breadcrumbName: "Prestige Theme Customization Service",
+    audienceType:
+      "Luxury eCommerce brands, premium Shopify merchants, and digital agencies seeking expert Prestige theme customization",
+    faqs: prestigeThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: prestigeThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
   });
 }
 

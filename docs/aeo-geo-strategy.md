@@ -3601,6 +3601,41 @@ Dedicated post-inquiry confirmation and thank-you screen for users who submitted
 - Correct `robots: { index: false, follow: false }` metadata directive matching live conversion screen behavior.
 - Complete structured data graph emitting WebPage, BreadcrumbList, Organization, and WebSite.
 - Zero duplicate assets across `public/assets/`, hosting unique local SVGs with canonical paths.
+## Prestige Theme Customization (`/prestige-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-19
+
+Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
+
+Primary audience: Luxury and premium direct-to-consumer and enterprise Shopify merchants looking to customize the Prestige Shopify theme, enhance visual product storytelling, add custom Liquid sections, optimize mobile store performance, and increase luxury ecommerce conversions
+
+Decision stage: partner selection, Prestige theme customization scope definition, custom feature evaluation, developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Prestige theme customization capabilities. Features 6 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 portfolio project cards, 6 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for Prestige Shopify theme customization services?
+- How to customize Prestige theme on Shopify?
+- Dynamic Dreamz Prestige theme customization reviews and portfolio?
+- How much does Prestige theme customization cost and how long does it take?
+- Can Dynamic Dreamz add custom filters and popups to Prestige theme?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Prestige Theme Customization Service` with direct answer paragraph.
+- 6 distinct theme features with vector icons (Slideshow with High Impact Images, Advanced Product Filtering, Image Galleries, Home Page Video Integration, Built-in Marketing & Promotion Tools, Sticky Navigation).
+- 9 core benefits of Prestige customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Apps, Higher Conversion Rates, Mobile Optimization, Safe & Secure Payments, Zero Maintenance Cost).
+- 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
+- 6 real portfolio project cards (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop).
+- 6 comprehensive FAQ accordion items directly answering merchant questions on timeline, cost, SEO, and support.
+- Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (6 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
 
 ### Recommended improvements
 
@@ -3688,12 +3723,31 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 ### Internal-link and conversion actions
 
 - Maintain slashless `/web-design` navigation across marketing pages and service menus.
+| P0 | implemented | Route and discovery | Missing App Router implementation for Prestige theme customization | Ship slashless `/prestige-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog, FAQPage (6 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Prestige hero graphic, feature icons, and portfolio screens under `public/assets/prestige-theme-customization/` | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Grammar improvements and enhanced copywriting for benefits and FAQs | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Prestige theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+- Attribute portfolio projects directly to their live brand stores (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop).
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/prestige-theme-customization` navigation across marketing pages and service menus.
 - Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
 
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service with 8 Offer items, 11 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
 - Set explicit freshness `modifiedTime` to `2025-09-23T05:29:33+00:00`.
+- Emit Service with 6 Offer items, 6 FAQ items, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
@@ -3766,6 +3820,13 @@ Deferred under the live-UI preservation gate. The current server-rendered legal 
 
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/terms-of-service`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 34 chars, Description: 143 chars), JSON-LD graph verification, responsive layouts, lint, and production build.
+- SEO tracks queries for "Prestige theme customization", "Shopify Prestige theme developers", "customize Prestige theme Shopify", and "Prestige theme experts".
+- Analytics tracks form submissions on `/request-quote` originating from `/prestige-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/prestige-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 154 chars), JSON-LD graph verification, responsive layouts (1440px, 768px, 390px), local assets audit, lint, and production build.
 
 ## Future Page Maintenance Workflow
 

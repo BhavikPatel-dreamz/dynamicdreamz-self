@@ -1,6 +1,7 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { PortfolioProjectCard } from "@/components/ui/portfolio-project-card";
+import { formatBrText } from "@/lib/text-formatting";
 
 export type PortfolioShowcaseItem = {
   name: string;
@@ -54,27 +55,11 @@ export function PortfolioShowcaseSection({
       <Container>
         <div className="text-center">
           <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
-            {content.heading.includes("<br>")
-              ? content.heading.split("<br>").map((line, index, lines) => (
-                  <span key={line}>
-                    {line}
-                    {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}
-                  </span>
-                ))
-              : content.heading}
+            {formatBrText(content.heading, "max-[1199px]:hidden")}
           </h2>
           {content.description && (
             <p className="mx-auto mt-6 max-w-[740px] text-[18px] font-medium leading-[34.2px] text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]">
-              {content.description.includes("<br>")
-                ? content.description.split("<br>").map((line, index, lines) => (
-                    <span key={line}>
-                      {line}
-                      {index < lines.length - 1 ? (
-                        <br className="max-[1199px]:hidden" />
-                      ) : null}
-                    </span>
-                  ))
-                : content.description}
+              {formatBrText(content.description, "max-[1199px]:hidden")}
             </p>
           )}
         </div>
