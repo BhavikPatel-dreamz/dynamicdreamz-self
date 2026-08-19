@@ -28,7 +28,7 @@ export const shopifyPlusAgencyReviews: readonly ReviewPlatform[] = [
   {
     name: "Clutch",
     backgroundColor: "#F8DDD7",
-    wordmark: "/assets/shopify-plus-agency/reviews/clutch-wordmark.svg",
+    wordmark: "/assets/reviews/clutch-wordmark.svg",
     wordmarkAlt: "Clutch",
     wordmarkWidth: 205,
     wordmarkHeight: 57,
@@ -43,7 +43,7 @@ export const shopifyPlusAgencyReviews: readonly ReviewPlatform[] = [
   {
     name: "Upwork",
     backgroundColor: "rgba(227, 241, 213, 1)",
-    wordmark: "/assets/shopify-plus-agency/reviews/upwork-wordmark.svg",
+    wordmark: "/assets/reviews/upwork-wordmark.svg",
     wordmarkAlt: "Upwork",
     wordmarkWidth: 205,
     wordmarkHeight: 70,
@@ -58,7 +58,7 @@ export const shopifyPlusAgencyReviews: readonly ReviewPlatform[] = [
   {
     name: "GoodFirms",
     backgroundColor: "rgba(216, 229, 255, 1)",
-    wordmark: "/assets/shopify-plus-agency/reviews/goodfirms-wordmark.svg",
+    wordmark: "/assets/reviews/goodfirms-wordmark.svg",
     wordmarkAlt: "GoodFirms",
     wordmarkWidth: 223,
     wordmarkHeight: 41,
@@ -101,7 +101,7 @@ export const shopifyPlusAgencyServices = {
         "Our agile Shopify Plus migration service ensures a seamless transition from any platform to Shopify Plus. Our expert Shopify Plus developers handle data migration, redesigning the store, integrating apps, and preserving SEO. Our expert team manages the process to minimize downtime and disruptions, ensuring a smooth move that enhances performance and scalability for high-growth businesses.",
     },
     {
-      icon: "/assets/shopify-plus-agency/icons/theme_customization_icon.svg",
+      icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
 
       iconAlt: "theme customization icon",
       title: "Shopify Plus Theme Customization Service",
@@ -117,7 +117,7 @@ export const shopifyPlusAgencyServices = {
         "Dynamic Dreamz Shopify Plus custom theme development service provides bespoke design and functionality for your online store. Our expert Shopify Plus developers create unique themes from scratch, tailored to your brand and business requirements. This service enhances user experience, boosts performance, and offers complete control over aesthetics and features, ensuring a competitive edge in the market.",
     },
     {
-      icon: "/assets/shopify-plus-agency/icons/white-label-icon.svg",
+      icon: "/assets/services/wordpress/wordpress-white-label-development.svg",
 
       iconAlt: "White Label icon",
       title: "Shopify Plus White Label Service",
@@ -125,7 +125,7 @@ export const shopifyPlusAgencyServices = {
         "Our proven Shopify Plus white label service allows agencies to offer Shopify Plus solutions under their brand. It includes custom store development, theme customization, and migration services. Agencies can expand their service portfolio, leveraging Shopify Plus's robust platform while maintaining their brand identity, thus delivering high-quality eCommerce solutions to their clients.",
     },
     {
-      icon: "/assets/shopify-plus-agency/icons/maintenance-icon.svg",
+      icon: "/assets/services/wordpress/wordpress-maintenance.svg",
 
       iconAlt: "maintenance icon",
       title: "Shopify Plus Maintenance Service",
@@ -311,7 +311,7 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "Gaurav at Dynamic Dreamz excels in web design and development, demonstrating flawless communication, reliability, and confident autonomy, streamlining project execution.",
       videoId: "o4JnTGEH-Yk",
-      image: "/assets/shopify-plus-agency/testimonials/alec-torelli.webp",
+      image: "/assets/testimonials/alec-torelli-full.webp",
       imageAlt: "Alec Torelli testimonial",
     },
     {
@@ -320,7 +320,7 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "Just 7 days post-launch, our sales surged by 12% owing to its advanced features; their expertise and swift updates impressed us, genuinely recommending their Services!",
       videoId: "B3KnREB4Bro",
-      image: "/assets/shopify-plus-agency/testimonials/william-petz.webp",
+      image: "/assets/testimonials/william-petz-full.webp",
       imageAlt: "William Petz testimonial",
     },
     {
@@ -329,7 +329,7 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "In six months, Dynamic Dreamz revamped our website, turning it from error-ridden to seamlessly functional and visually appealing, significantly enhancing our digital presence.",
       videoId: "-IpNUAco1OA",
-      image: "/assets/shopify-plus-agency/testimonials/william-st-baker.webp",
+      image: "/assets/testimonials/william-st-baker-full.webp",
       imageAlt: "William ST Baker testimonial",
     },
     {
@@ -338,7 +338,7 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "Dynamic Dreamz and Gaurav's invaluable expertise and support were instrumental in our success, making them a reliable choice for any digital agency needs.",
       videoId: "oNDPBGO83G4",
-      image: "/assets/shopify-plus-agency/testimonials/kerri-imrie.webp",
+      image: "/assets/testimonials/kerri-imrie-full.webp",
       imageAlt: "Kerri Imrie testimonial",
     },
     {
@@ -347,7 +347,7 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "Dynamic Dreamz excels in web development with unmatched responsiveness, professionalism, and quality assurance, highly recommended for all projects.",
       videoId: "AoglCZQC0RU",
-      image: "/assets/shopify-plus-agency/testimonials/brandon.webp",
+      image: "/assets/testimonials/brandon-full.webp",
       imageAlt: "Brandon testimonial",
     },
     {
@@ -356,7 +356,7 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "We have been using dynamic dreams for four, maybe five years now. I can't say anything but the most positive things. They are diligent, professional, competitively priced.",
       videoId: "Vc9FH6ZeoXY",
-      image: "/assets/shopify-plus-agency/testimonials/shari-leidich.webp",
+      image: "/assets/testimonials/shari-leidich-full.webp",
       imageAlt: "Shari Leidich testimonial",
     },
     {
@@ -365,7 +365,7 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "Hi, I'm Rebecca, owner of Myla Jane. I've worked with Dynamic Dreams on several web development projects, and they always do an excellent job.",
       videoId: "_ay_egf5GKw",
-      image: "/assets/shopify-plus-agency/testimonials/rebekah-wymer.webp",
+      image: "/assets/testimonials/rebekah-wymer-full.webp",
       imageAlt: "Rebekah Wymer testimonial",
     },
     {
@@ -383,7 +383,7 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "Gaurav always explained to me what truly happens here and how we can improve it in the future. So we are very happy with the results, and we will continue to work with Gaurav and his team in the foreseeable future. So I highly recommend him.",
       videoId: "6Ni9tlZ7HKE",
-      image: "/assets/shopify-plus-agency/testimonials/zoe-wang.webp",
+      image: "/assets/testimonials/zoe-wang-full.webp",
       imageAlt: "Zoe wang testimonial",
     },
     {
@@ -392,7 +392,7 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "In 2025, I hired Gaurav and his team at Dynamic Dreams to upgrade my Shopify art shop, and the experience was seamless from start to finish. Communication was clear and prompt, Gaurav was patient with all my questions, and every issue or request was handled quickly and effectively.",
       videoId: "_rQeMWcz_gA",
-      image: "/assets/shopify-plus-agency/testimonials/clinton-de-vere.webp",
+      image: "/assets/testimonials/clinton-de-vere-full.webp",
       imageAlt: "Clinton De Vere testimonial",
     },
     {

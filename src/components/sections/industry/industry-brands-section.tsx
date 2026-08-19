@@ -45,7 +45,9 @@ export function IndustryBrandsSection({
           >
             {heading ?? (
               <>
-                Trusted by <br /> Leading Brands
+                Trusted by{" "}
+                <br className={singleLineTitleAtTablet ? "max-[1199px]:hidden" : undefined} />
+                Leading Brands
               </>
             )}
           </h2>

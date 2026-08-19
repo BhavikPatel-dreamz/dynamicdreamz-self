@@ -61,13 +61,10 @@ export function HappyClientSection({
     <section className={className} data-section="testimonials" id="client-testimonials">
       <Container>
         <div className="mb-[50px] text-center max-[767px]:mb-[30px]">
-          <h2 className="mb-2.5 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
-        <div className="mb-[50px] text-center">
           <h2 className="mb-2.5 font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {heading}
           </h2>
-          <p className="mx-auto max-w-[800px] text-[18px] font-medium leading-[34.2px] text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
-          <p className="mb-6 text-[18px] leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[30px] max-[767px]:text-sm max-[767px]:leading-[25px]">
+          <p className="mx-auto max-w-[800px] text-[18px] leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[30px] max-[767px]:text-sm max-[767px]:leading-[25px]">
             {description.split("<br>").map((line, index, lines) => (
               <span key={line}>
                 {line}
@@ -84,7 +81,7 @@ export function HappyClientSection({
                   <div className="relative min-h-[324px] max-[1199px]:min-h-[240px]">
                     <VideoDialog
                       className="min-h-[324px] !rounded-none max-[1199px]:min-h-[240px]"
-                      overlay="/assets/shopify-plus-agency/quotes/qoute-icon.svg"
+                      overlay="/assets/request-quote/icons/quote-icon.svg"
                       overlayClassName="hidden"
                       overlayHeight={40}
                       overlayWidth={46}
@@ -108,7 +105,7 @@ export function HappyClientSection({
                     <Image
                       aria-hidden="true"
                       className="pointer-events-none absolute top-[26px] right-[26px] z-20 h-10 w-[46px]"
-                      src="/assets/shopify-plus-agency/quotes/qoute-icon.svg"
+                      src="/assets/request-quote/icons/quote-icon.svg"
                       alt=""
                       width={46}
                       height={40}

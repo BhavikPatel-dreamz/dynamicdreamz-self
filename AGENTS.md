@@ -92,11 +92,37 @@ Core proof points from the live site:
   component, animation, or one-off layout styles to `src/app/globals.css`.
   Keep `globals.css` minimal for Tailwind setup and unavoidable app-wide base
   rules only.
-- Before creating a component, search `src/components/**`, route-local
-  components, and current imports/usages for an existing component that already
-  provides the required structure, semantics, styling, or interaction. Reuse it
-  directly or extend it with a small typed prop/variant when that keeps its API
-  coherent. Do not create a page-specific duplicate of an existing component.
+- Component discovery before creation: before creating any new component or
+  section, thoroughly inspect `src/components/**`, route-local components, and
+  current usages. Do NOT search only by component name or filename; search by
+  visual layout, UI pattern (e.g. hero banners, card grids, stat counters, logo
+  sliders, review carousels, accordions, video modals, split CTA sections), DOM
+  structure, and Tailwind styling classes.
+- Safe component reuse and extension: if a similar component exists, reuse it
+  directly or extend/modify it slightly (e.g. with optional typed props, variant
+  flags, slots, or optional style modifiers) to support the new use case.
+  CRITICAL: Every extension must be backward-compatible so that all existing
+  pages and consumers remain unbroken.
+- Pragmatic component creation: if after a thorough check no similar or
+  compatible component exists in the codebase, build a new component. There is no
+  rigid rule forbidding new components when the semantics, visual layout, or
+  behavior are genuinely distinct.
+- Generalize all new components for future reuse: whenever creating a new
+  component, design it to be modular, flexible, and generalized. Decouple the UI
+  markup from page-specific hardcoded copy or data (pass content via typed props
+  or data imports), provide sensible default props, and place reusable
+  primitives in `src/components/ui/` or shared sections in
+  `src/components/sections/` so future pages can reuse them seamlessly.
+- Asset discovery and deduplication: before downloading, copying, or adding any
+  new image, icon, logo, or media file, search the complete `public/assets/**`
+  tree across all folders (including `brand/`, `clients/`, `team/`, `icons/`,
+  `proof/`, `testimonials/`, `services/`, etc.). Check visually, by brand/client
+  identity, by SVG markup/paths, and by content hash—not just by filename.
+  Reuse the canonical path when an identical or matching asset exists.
+- Clean asset ingestion: only when no matching or suitable local asset exists,
+  download or copy the asset into the appropriate `public/assets/<category>/`
+  directory during migration. Use a clean, descriptive lowercase kebab-case
+  filename; never duplicate the same media across multiple page folders.
 - For styling and animation work, follow `docs/visual-parity-workflow.md`.
   Inspect live CSS/JS, computed styles, keyframes, transitions, interaction
   states, and screenshots before implementing. Static HTML alone is not enough.
@@ -108,19 +134,6 @@ Core proof points from the live site:
   Source. Preserve page structure, metadata intent, headings, links, CTA labels,
   image alt text, ARIA labels, schema data, and other small SEO/accessibility
   details unless there is a production-quality reason to improve them.
-- If old-site content or assets are needed, move approved copies into local
-  project-owned files such as `src/content/**` and `public/assets/**`.
-- If old-site images, documents, icons, logos, or other assets are needed,
-  download/copy them during migration into `public/assets/**` and update the
-  Next.js code to reference only those local files.
-- Local asset filenames must be meaningful and descriptive. If a live-site image
-  filename is vague, hashed, keyword-stuffed, or odd, rename the local copy to a
-  clean kebab-case name that describes the asset and page/context.
-- Before adding an asset, search all of `public/assets/**` for an existing exact
-  or visually identical local copy. Reuse its canonical path instead of copying
-  or renaming the same media for another page. Put assets shared by multiple
-  pages in a neutral purpose-based folder such as `public/assets/team/**` rather
-  than duplicating them in page-specific folders.
 - Build with App Router conventions for the installed Next.js version.
 - Prefer Server Components everywhere possible. Page sections and layout
   sections should be Server Components by default so content, headings, images,
@@ -191,11 +204,17 @@ Keep page content structured and reusable. Avoid scattering large arrays of copy
 inside page components once content repeats across routes.
 
 Treat `src/components/ui/**`, `src/components/layout/**`, and existing shared
-sections as the first source for implementation. Promote a repeated pattern to
-the narrowest sensible shared location instead of maintaining equivalent copies
-across page folders. Create a separate component only when the semantics,
-behavior, or visual contract is genuinely different and extending the existing
-component would make its API unclear or tightly couple unrelated concerns.
+sections as the primary foundation for page implementation:
+1. **Search Deeply First**: Search by layout structure, visual pattern, and UI
+   role—not just filename.
+2. **Reuse & Extend Safely**: If an existing component is similar, reuse it or
+   extend it with backward-compatible optional typed props/variants. Never break
+   existing page usages.
+3. **Build Pragmatically**: If no matching or adaptable component exists, build a
+   new component without hesitation.
+4. **Generalize for Future Pages**: Whenever building a new component, ensure it
+   is generalized and modular (typed props, decoupled content/data) so future
+   pages can reuse it easily.
 
 Create one component for each meaningful visual/business section when it keeps a
 page readable, but keep those section components server-rendered unless they
@@ -214,7 +233,9 @@ Production-ready means the page is complete enough to deploy:
 - No duplicate image/media files stored under different paths or names when one
   canonical project-owned asset can serve every usage.
 - No duplicate or near-equivalent components when an existing component can
-  satisfy the requirement directly or through a focused typed variant.
+  satisfy the requirement directly or through a backward-compatible typed variant.
+- All newly created components are generalized, cleanly typed, and decoupled from
+  hardcoded page data for future reusability.
 - No inaccessible interactive controls.
 - No unnecessary client JavaScript.
 - No external dependency added unless it clearly reduces risk or complexity.

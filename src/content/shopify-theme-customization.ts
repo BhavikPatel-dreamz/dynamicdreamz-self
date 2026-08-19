@@ -147,7 +147,7 @@ export const shopifyThemeCustomizationContent = {
       {
         "title": "Custom Design and Branding",
         "description": "Our designers create a custom look that aligns with your brand\u2019s identity and appeals to your target audience.",
-        "icon": "/assets/shopify-theme-customization/services/custom-design-and-branding.svg"
+        "icon": "/assets/services/wordpress/wordpress-plugin-development.svg"
       },
       {
         "title": "Responsive Design",

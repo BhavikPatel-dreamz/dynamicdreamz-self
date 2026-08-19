@@ -26,10 +26,14 @@ The agent should then read:
 
 1. Understand the task and map it to a route, component, content area, SEO
    requirement, or asset need.
-2. Inspect the current code before editing. Search existing components, their
-   props, and their usages before deciding to create a component.
-3. Map each planned UI element to an existing reusable component or document why
-   its semantics, behavior, or visual contract requires a new component.
+2. Inspect the current codebase before editing. Search existing components and
+   media assets thoroughly across `src/components/**` and `public/assets/**`
+   using visual structure, UI layout patterns, markup, and content/brand
+   checks—not only filenames.
+3. Map each planned UI element to an existing reusable component or safely
+   extend an existing component with backward-compatible optional props/variants.
+   If no suitable component exists after searching, plan a new generalized
+   component.
 4. If migrating a legacy page, inspect the old URL as both a rendered page and
    View Page Source for content structure, headings, CTAs, metadata intent,
    images, links, schema, accessibility details, style details, and redirect
@@ -47,8 +51,8 @@ The agent should then read:
    interactions unchanged unless the project owner explicitly approved the
    exact visible change in the current task. Queue unapproved visible proposals
    in `docs/page-content-improvements.md`.
-9. Implement with reusable components, local data/content, and project-owned
-   assets.
+9. Implement with reusable or generalized components, local typed data/content,
+   and project-owned, deduplicated assets.
 10. Apply the project URL policy while adding or editing routes: every non-root
     page path is slashless (`/about-us`, not `/about-us/`). Keep internal links,
     canonical and Open Graph URLs, sitemap/robots output, JSON-LD, and redirects
@@ -99,6 +103,9 @@ project uses Next.js 16.3.0 and may differ from older App Router examples.
 - Search `src/components/**` and current imports/usages before adding a new
   component. Reuse an existing compatible component or add a focused typed
   variant before creating another implementation.
+- Design every new component to be generalized and reusable for future pages.
+  Accept structured content via typed props, separate content from presentation,
+  and avoid hardcoding page-specific copy inside the component markup.
 - Prefer Server Components by default. Pages, layout pieces, and meaningful
   page sections should render on the server unless they genuinely need browser
   interactivity.
@@ -138,25 +145,46 @@ project uses Next.js 16.3.0 and may differ from older App Router examples.
 - Avoid adding dependencies for simple UI. If a dependency is justified, explain
   the production benefit.
 
-## Component Reuse Workflow
+## Component Reuse & Generalization Workflow
 
-1. Search by component name, visible text, role, interaction, and styling pattern
-   across `src/components/**` and route-local files before implementation.
-2. Inspect candidate components and every relevant usage so reuse does not break
-   their existing visual, accessibility, server/client, or behavioral contract.
-3. Reuse the existing component unchanged when it already fits.
-4. If the requirement is a legitimate variation of the same component, extend
-   it with the smallest clear typed prop, variant, slot, or content-data change.
-5. Preserve Server Component boundaries. Do not turn a shared Server Component
-   into a Client Component merely to support one interactive usage; isolate the
-   interactive control in a small Client Component.
-6. Move a component to `ui`, `layout`, or a shared `sections` location when a
-   second page needs it and its responsibility is no longer page-specific.
-7. Create a new component only when candidates differ materially in semantics,
-   behavior, accessibility, or visual contract, or when reuse would produce a
-   confusing prop API and unrelated conditionals.
-8. Before completion, search again for equivalent implementations introduced by
-   the change and consolidate them without weakening visual parity.
+Follow this step-by-step workflow for every page or section build:
+
+### 1. Deep Pre-Creation Discovery (Beyond Names)
+- **Do not search only by filename or component name**: A component with a slightly different name (e.g. `industry-brands-section.tsx`, `client-logo-slider.tsx`, `shopify-proof-sections.tsx`, `expertise-accordion.tsx`, `hiring-hero-section.tsx`, `cta-banner-section.tsx`) may already implement the exact layout or pattern you need.
+- **Search by visual layout & pattern**:
+  - Hero banners (with badges, ratings, stats counters, CTA buttons)
+  - Card grids & feature lists (advantages, reasons, offerings, process steps)
+  - Stats & metric counters (numbers, labels, icons)
+  - Client logo sliders & partner marquees (`ClientLogoSlider`, `BrandPartnersSection`)
+  - Testimonial / review carousels & video dialogs (`HappyClientSection`, `VideoDialog`, `TestimonialsSection`)
+  - Accordion / FAQ sections (`FaqAccordion`, `FaqSection`, `ExpertiseAccordion`)
+  - Split CTA banners (`CtaBannerSection`)
+  - Horizontal drag / scroll containers (`HorizontalDragScroll`)
+  - Portfolio / case study cards (`PortfolioProjectCard`, `BlogCard`)
+- **Search by DOM structure & styling**: Inspect `src/components/ui/`, `src/components/sections/`, and `src/components/layout/` for matching Tailwind class combinations, grid setups, responsive breakpoints, and HTML elements.
+
+### 2. Safe Component Adaptation & Backward-Compatible Extension
+- **Reuse Directly**: When an existing component matches the requirements, reuse it directly.
+- **Modify / Extend Safely**: If an existing component provides 80–90% of what is needed but requires a small visual variant, optional field, extra prop, or CSS customization:
+  - Add **optional, typed props** (e.g. `variant?: "default" | "compact"`, `hideReview?: boolean`, `columns?: 2 | 3`, `className?: string`, `iconAlt?: string`).
+  - Use sensible default values that preserve the original behavior for all existing callers.
+  - **ZERO BREAKAGE RULE**: You can modify existing components a little bit to reuse them, but you MUST NEVER break existing pages or usages. Verify all existing imports and props after extending a component.
+
+### 3. Pragmatic Component Creation (No Rigid Blocker)
+- If after a thorough and multi-faceted check, no existing component can reasonably accommodate the new requirement without confusing props or bloated conditional logic:
+  - **Create a new component freely**. There is no rigid rule preventing the creation of new components when the semantics, layout, or visual contract are genuinely distinct.
+  - Choose the right location: `src/components/ui/` for small reusable UI primitives, `src/components/sections/` for marketing page sections, or `src/components/layout/` for site-wide navigation/chrome.
+
+### 4. Generalize All New Components for Future Reuse
+- When building any new component:
+  - **Decouple markup from content**: Never hardcode page-specific strings, titles, paragraphs, or links directly into the component. Accept structured content via typed TypeScript props, or import from `src/content/**` or `src/data/**`.
+  - **Expose flexible, typed props**: Accept title, description, items array, optional CTAs, optional subheadings, and optional `className` overrides.
+  - **Build modular sub-components**: Break complex sections into clean modular pieces (e.g. a grid container + a reusable item card component) so sub-pieces can also be reused independently.
+  - **Ensure clean Server / Client boundaries**: Keep the main section server-rendered; encapsulate interactive widgets (sliders, tabs, modals, accordions) into small `"use client"` controls.
+
+### 5. Post-Implementation Consolidation
+- Before completing the task, verify whether any newly created components can be consolidated or promoted to shared locations.
+- Verify that no duplicate components were introduced across page folders.
 
 ## SEO Workflow
 
@@ -374,34 +402,48 @@ place page/component styles there.
 
 ## Asset Workflow
 
-1. Search the complete `public/assets/` tree before downloading, copying, or
-   renaming any image or media file.
-2. For likely matches, compare content hashes first. If compression or encoding
-   differs, visually compare the files before deciding they are distinct.
-3. Reuse the existing canonical local path when the asset is identical. Never
-   create a page-local copy or a new filename for the same visual media.
-4. When an asset is shared by multiple pages, store one canonical copy in a
-   neutral purpose-based folder such as `public/assets/team/**`; keep
-   page-specific alt text and captions in each page's content data.
-5. Only when no equivalent local asset exists, download/copy the required
-   old-site asset into a local project-owned folder during migration.
-6. Rename the new local copy with a meaningful lowercase kebab-case filename if
+### 1. Deep Asset Discovery (Beyond Names)
+1. **Search across the complete `public/assets/` tree** before downloading, copying,
+   or creating any image or media file.
+2. Check across all asset directories: `brand/`, `clients/`, `team/`, `icons/`,
+   `proof/`, `testimonials/`, `services/`, `backgrounds/`, `awards/`, `platforms/`,
+   `case-studies/`, etc.
+3. **Do not search only by filename**: An asset with a different filename might
+   be the exact logo, icon, badge, or portrait you need.
+   - Inspect SVG vector paths and shapes for identical icons or logos.
+   - Search by brand, partner, client, or platform name.
+   - Compare content hashes and visually inspect image files.
+
+### 2. Canonical Asset Reuse
+4. **Reuse the existing canonical local path** when the asset is visually
+   identical or matching. Never create duplicate copies or rename the same image
+   for another page.
+5. When an asset is shared across multiple pages (e.g. partner logos, team photos,
+   client badges, review stars), keep one canonical copy in a neutral shared folder
+   such as `public/assets/team/**` or `public/assets/clients/**`. Keep page-specific
+   alt text and captions in each page's content/data file.
+
+### 3. Clean Ingestion for Truly New Assets
+6. Only when no matching or equivalent local asset exists in `public/assets/`,
+   download or copy the asset into the appropriate project-owned folder during
+   migration.
+7. Rename the new local copy with a meaningful lowercase kebab-case filename if
    the live filename is unclear, random, hashed, generic, or keyword-stuffed.
-7. Put assets in a stable folder by purpose.
-8. Preserve the original asset's important attributes in local content/data:
+8. Store assets in the correct categorized folder by purpose.
+9. Preserve the original asset's important attributes in local content/data:
    alt text, caption/title, source page, and original placement.
-9. Use `next/image` for photos, logos, hero images, case study screenshots, and
-   testimonial portraits.
-10. Give every content image meaningful, page-specific alt text. Do not use
+10. Use `next/image` for photos, logos, hero images, case study screenshots, and
+    testimonial portraits.
+11. Give every content image meaningful, page-specific alt text. Do not use
     generic values like "image", "banner", "logo image", or repeated keyword
     strings.
-11. Use empty alt text only for truly decorative images, and make that decision
+12. Use empty alt text only for truly decorative images, and make that decision
     intentional.
-12. Use stable dimensions, aspect ratios, and responsive sizes to prevent layout
+13. Use stable dimensions, aspect ratios, and responsive sizes to prevent layout
     shift.
-13. Before completion, scan project-owned media by content hash and remove any
-    redundant copy after updating every reference to the canonical path.
-14. Never use `dynamicdreamz.com` asset URLs in final code.
+14. Before completion, scan project-owned media and ensure no redundant duplicate
+    media files were created.
+15. Never use `dynamicdreamz.com` asset URLs in final code.
 
 ## Verification Checklist
 
@@ -444,8 +486,10 @@ A task is complete only when:
 
 - The requested behavior/page exists.
 - It follows the project structure.
-- Existing suitable components were reused or extended; any new equivalent-looking
-  component has a clear semantic, behavioral, or visual reason to remain separate.
+- Existing suitable components were discovered (beyond name matching) and reused
+  or safely extended with backward-compatible optional props/variants without breaking existing pages.
+- Any newly built component is generalized, cleanly typed, and decoupled from hardcoded page copy for future reusability.
+- Existing assets across `public/assets/**` were discovered (beyond name matching) and reused via canonical paths; no redundant duplicate image files exist.
 - It uses local assets/content, not old-site runtime URLs.
 - SEO was handled for touched routes.
 - AEO/GEO work preserves the live-visible UI and content unless the exact

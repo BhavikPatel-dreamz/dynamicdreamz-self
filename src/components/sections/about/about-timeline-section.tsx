@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import { AboutTimelineCarousel } from "@/components/sections/about/about-timeline-carousel";
 import styles from "@/components/sections/about/about-timeline-section.module.css";
 import { Container } from "@/components/ui/container";
+import { HorizontalDragScroll } from "@/components/ui/horizontal-drag-scroll";
 import { milestones } from "@/content/about";
 
 export function AboutTimelineSection() {
@@ -24,7 +24,10 @@ export function AboutTimelineSection() {
       </Container>
 
       <div className="mx-auto w-full max-w-full">
-        <AboutTimelineCarousel>
+        <HorizontalDragScroll
+          className="h-[535px] w-full cursor-grab touch-pan-y overflow-x-auto overscroll-x-contain select-none active:cursor-grabbing min-[1200px]:w-[calc(100%+max(0px,50vw-590px))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          ariaLabel="Dynamic Dreamz company milestones. Scroll horizontally to explore the timeline."
+        >
           <ol className="flex h-[535px] w-max snap-x snap-mandatory">
           {milestones.map((milestone, index) => {
             const imageFirst = index % 2 === 0;
@@ -69,7 +72,7 @@ export function AboutTimelineSection() {
             );
           })}
           </ol>
-        </AboutTimelineCarousel>
+        </HorizontalDragScroll>
       </div>
     </section>
   );

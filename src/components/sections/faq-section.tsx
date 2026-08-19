@@ -6,25 +6,47 @@ export type FaqSectionProps = {
   items: readonly FaqAccordionItem[];
   idPrefix: string;
   heading?: string;
+  description?: string;
   className?: string;
   headerClassName?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
+  sectionId?: string;
+  ariaLabelledBy?: string;
 };
 
 export function FaqSection({
   items,
   idPrefix,
   heading = "Frequently Asked Questions",
+  description,
   className = "faq-sec pb-20 max-[767px]:pb-[60px]",
   headerClassName = "mb-[64px] text-center max-[1199px]:mb-[30px]",
+  titleClassName = "font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]",
+  descriptionClassName = "text-[18px] leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]",
+  sectionId,
+  ariaLabelledBy,
 }: FaqSectionProps) {
+  const titleId = ariaLabelledBy ?? `${idPrefix}-title`;
+
   return (
-    <section className={className} data-section="faq" id={`${idPrefix}-section`}>
+    <section
+      className={className}
+      data-section="faq"
+      id={sectionId ?? `${idPrefix}-section`}
+      aria-labelledby={titleId}
+    >
       <Container>
-        <div className={headerClassName}>
-          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+        <header className={headerClassName}>
+          <h2 className={titleClassName} id={titleId}>
             {heading}
           </h2>
-        </div>
+          {description ? (
+            <p className={descriptionClassName}>
+              {description}
+            </p>
+          ) : null}
+        </header>
         <FaqAccordion
           answerClassName="!font-medium !leading-8 max-[1199px]:!leading-[26px]"
           idPrefix={idPrefix}

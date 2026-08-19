@@ -1,4 +1,3 @@
-import { CtaBannerSection } from "@/components/sections/cta-banner-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import {
   ShopifyAdvantagesSection,

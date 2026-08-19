@@ -189,7 +189,7 @@ export const whiteLabelShopifyPlans: readonly WhiteLabelPlan[] = [
 
 const tool = (name: string, filename: string): WhiteLabelTool => ({
   name,
-  image: `/assets/white-label-shopify/tools/${filename}.svg`,
+  image: `/assets/integrations/${filename}.svg`,
 });
 
 export const whiteLabelShopifyToolRows = [

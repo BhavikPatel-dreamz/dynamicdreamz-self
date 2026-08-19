@@ -1,5 +1,5 @@
-import { AboutVideoDialog } from "@/components/sections/about/about-video-dialog";
 import { Container } from "@/components/ui/container";
+import { VideoDialog } from "@/components/ui/video-dialog";
 import { aboutStory } from "@/content/about";
 
 export function AboutStorySection() {
@@ -18,7 +18,16 @@ export function AboutStorySection() {
         </div>
 
         <div className="hero-vide-wrap mt-[50px] h-[492px] max-[991px]:h-[350px] max-[767px]:mt-[30px] max-[767px]:h-[200px]">
-          <AboutVideoDialog videoId={aboutStory.videoId} title={aboutStory.videoTitle} />
+          <VideoDialog
+            overlay="/assets/about/we-are-dynamic-dreamz.svg"
+            overlayHeight={38}
+            overlayWidth={940}
+            poster="/assets/about/hero-video-poster.webp"
+            posterAlt="Dynamic Dreamz team collaborating in the Surat office"
+            sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1199px) 680px, (max-width: 1399px) 1140px, 1320px"
+            title={aboutStory.videoTitle}
+            videoId={aboutStory.videoId}
+          />
         </div>
       </Container>
     </section>

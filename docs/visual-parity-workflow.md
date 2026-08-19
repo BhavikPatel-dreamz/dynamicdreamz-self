@@ -143,6 +143,16 @@ Record these values before rebuilding:
 - When Tailwind defaults differ from the live site, use project tokens or
   Tailwind arbitrary values to match the live value first. Refactor into shared
   tokens/components only after the same value repeats.
+- Component discovery & safe reuse: inspect `src/components/**` for existing
+  visual patterns (heroes, card grids, stat counters, logo carousels, accordions,
+  video dialogs, CTA sections) before writing UI code. Extend existing
+  components with backward-compatible optional props/variants where applicable;
+  if building a new component, design it to be generalized and decoupled from
+  hardcoded page data for future reuse.
+- Asset discovery & deduplication: search all of `public/assets/**` across all
+  categories (by visual appearance, brand identity, SVG vector paths, and content
+  hashes) before adding media. Reuse canonical paths; add new assets cleanly to
+  the relevant category folder with a lowercase kebab-case filename.
 
 ## Verification Loop
 
