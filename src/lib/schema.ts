@@ -51,6 +51,7 @@ import {
 } from "@/content/shopify-migration";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
 import { prestigeThemeCustomizationContent } from "@/content/prestige-theme-customization";
+import { shopifyDevelopmentBarcelonaContent } from "@/content/shopify-development-in-barcelona-spain";
 import {
   woocommerceDevelopmentFaqs,
   woocommerceDevelopmentServices,
@@ -278,6 +279,10 @@ const webDesignBreadcrumbId = `${webDesignPageUrl}#breadcrumb`;
 const termsOfServicePageUrl = absoluteUrl(pageSeo.termsOfService.path);
 const termsOfServicePageId = `${termsOfServicePageUrl}#webpage`;
 const termsOfServiceBreadcrumbId = `${termsOfServicePageUrl}#breadcrumb`;
+const shopifyDevelopmentBarcelonaPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentBarcelona.path);
+const shopifyDevelopmentBarcelonaPageId = `${shopifyDevelopmentBarcelonaPageUrl}#webpage`;
+const shopifyDevelopmentBarcelonaServiceId = `${shopifyDevelopmentBarcelonaPageUrl}#service`;
+const shopifyDevelopmentBarcelonaBreadcrumbId = `${shopifyDevelopmentBarcelonaPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -2216,6 +2221,29 @@ export function createThankYouForEnquiryPageSchema() {
       },
     ],
   };
+}
+
+export function createShopifyDevelopmentBarcelonaPageSchema() {
+  return createIndustryPageSchema({
+    seo: pageSeo.shopifyDevelopmentBarcelona,
+    pageUrl: shopifyDevelopmentBarcelonaPageUrl,
+    pageId: shopifyDevelopmentBarcelonaPageId,
+    breadcrumbId: shopifyDevelopmentBarcelonaBreadcrumbId,
+    breadcrumbName: "Shopify Development in Barcelona",
+    serviceId: shopifyDevelopmentBarcelonaServiceId,
+    serviceName: "Shopify Development in Barcelona",
+    serviceType:
+      "Shopify store development, Shopify Plus, theme customization, Figma to Shopify, migration, and maintenance in Barcelona, Spain",
+    audienceType:
+      "eCommerce brands, direct-to-consumer businesses, and digital agencies in Barcelona and Spain seeking expert Shopify development",
+    offerCatalog: {
+      title: "Our Shopify Development Services",
+      items: shopifyDevelopmentBarcelonaContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    },
+  });
 }
 
 export function serializeJsonLd(value: unknown) {

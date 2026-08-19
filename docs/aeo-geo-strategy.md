@@ -3823,10 +3823,32 @@ Deferred under the live-UI preservation gate. The current server-rendered legal 
 - SEO tracks queries for "Prestige theme customization", "Shopify Prestige theme developers", "customize Prestige theme Shopify", and "Prestige theme experts".
 - Analytics tracks form submissions on `/request-quote` originating from `/prestige-theme-customization`.
 
-### Verification and remaining gaps
-
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/prestige-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 154 chars), JSON-LD graph verification, responsive layouts (1440px, 768px, 390px), local assets audit, lint, and production build.
+
+## Shopify Development in Barcelona (`/shopify-development-in-barcelona-spain`)
+
+Status: implemented; live-visible content preserved
+Page type: Regional Location Landing Page / Shopify Service Page
+Route: `/shopify-development-in-barcelona-spain`
+Primary audience: eCommerce brands, direct-to-consumer businesses, and digital agencies in Barcelona and Spain seeking expert Shopify and Shopify Plus development
+Last reviewed: 2026-08-19
+
+### Search and Generative Intent
+
+- "Shopify development Barcelona"
+- "Shopify agency Spain"
+- "hire Shopify developers Barcelona"
+- "Shopify Plus agency Barcelona"
+- "Shopify migration and theme customization Barcelona Spain"
+
+### Actions & Implementation
+
+- Route implemented with App Router Server Components at `/shopify-development-in-barcelona-spain`.
+- Canonical metadata configured (Title: 51 chars, Description: 140 chars).
+- Local Spain client logos (Alohas, Feners, Mille Collines, Midnight, Tropicfeel, Lobster, Metta, Manola, Peters, Aleyole) and review badges ingested with 0 duplicate assets.
+- Integrated Service, OfferCatalog, BreadcrumbList, Organization, and WebSite JSON-LD structured data.
+- Built-in lead-capture quote form connected to standard server actions with client-side feedback.
 
 ## Future Page Maintenance Workflow
 

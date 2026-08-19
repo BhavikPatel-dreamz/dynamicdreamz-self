@@ -722,3 +722,16 @@ Primary SEO intent: Prestige theme customization, Prestige Shopify theme customi
 | FAQ question grammar | `How much does it cost of Prestige Theme Customization Service?` | `How much does Prestige Theme Customization Service cost?` | Fixes grammatical phrasing in FAQ heading. | Low | deferred pending exact visible-copy approval |
 | Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
 
+## Shopify Development in Barcelona (`/shopify-development-in-barcelona-spain`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: Shopify development Barcelona, Shopify agency Spain, Shopify Plus developer Barcelona, Shopify migration Barcelona.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Shopify Development in Barcelona \| Dynamic Dreamz` (51 chars) | Preserved live title (51 chars). | Fits strict 15-60 char budget and captures primary local target intent. | High | implemented in metadata |
+| Meta description | `Boost your online store with expert Shopify development in Barcelona by Dynamic Dreamz. We offer tailored solutions to eCommerce success.` (140 chars) | Preserved live meta description (140 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Structured data | Legacy page had partial WebPage schema graph | Emitted comprehensive `Service`, `OfferCatalog` (8 items), `BreadcrumbList`, `Organization`, and `WebSite` schema. | Connects regional service offering to search crawlers and AI answer engines. | High | implemented in schema |
+
+

@@ -1175,6 +1175,33 @@ export const pageSeo = {
       priority: 0.5,
     },
   },
+  shopifyDevelopmentBarcelona: {
+    path: "/shopify-development-in-barcelona-spain",
+    title: "Shopify Development in Barcelona | Dynamic Dreamz",
+    description:
+      "Boost your online store with expert Shopify development in Barcelona by Dynamic Dreamz. We offer tailored solutions to eCommerce success.",
+    keywords: [
+      "Shopify development Barcelona",
+      "Shopify agency Spain",
+      "Shopify developer Barcelona",
+      "Shopify Plus Barcelona",
+      "ecommerce development Barcelona",
+      "Dynamic Dreamz Barcelona",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-07-01T00:00:00+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in Barcelona | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

@@ -123,7 +123,7 @@ export const webDesignServices: AgencyServicesContent = {
         "Make a stunning online presence with our excellent web design services. We design gorgeous & user friendly websites that attract more users, propel conversions, and enhance your brand.",
     },
     {
-      icon: "/assets/services/web-design/existing-app-icon.svg",
+      icon: "/assets/services/android-app-development/existing-app-icon.svg",
       iconAlt: "Mobile App Icon",
       title: "Mobile App Design",
       description:
