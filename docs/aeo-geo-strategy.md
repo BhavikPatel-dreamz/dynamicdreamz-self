@@ -31,7 +31,6 @@ It covers:
   - `/white-label-wordpress-development-services`
   - `/white-label-website-design-services`
   - `/shopify-plus-agency`
-  - `/bigcommerce-development`
   - `/request-quote`
 
 This is the strategy and implementation record. Visible changes proposed and
@@ -3246,93 +3245,334 @@ Commercial service landing page demonstrating Dynamic Dreamz's 18+ years of Word
 Status: implemented; live-visible content preserved
 Last reviewed: 2026-08-19
 Owner: SEO, content, development, leadership, sales, and ecommerce delivery operations
-Primary audience: eCommerce merchants, direct-to-consumer retailers, B2B brands, and digital agencies seeking custom BigCommerce store design, development, app configuration, Figma conversion, and maintenance
-Decision stage: Commercial evaluation and BigCommerce development partner selection
+Primary audience: eCommerce merchants, DTC retailers, B2B brands, and digital agencies seeking BigCommerce store development.
+Decision stage: commercial evaluation and partner selection
 
 ### Page role
 
-Commercial service landing page demonstrating Dynamic Dreamz's BigCommerce development expertise across custom theme customization (Cornerstone, Stencil), app configuration, bespoke private app development, Figma to BigCommerce conversions, and ongoing maintenance.
+Commercial BigCommerce service page covering theme customization, app configuration, private app development, Figma conversion, maintenance, portfolio proof, and buyer FAQs.
 
-### Target prompts
+### Recommended improvements
 
-- "What services does a BigCommerce development company provide?"
-- "How does Dynamic Dreamz customize BigCommerce themes like Cornerstone and Stencil?"
-- "Can Dynamic Dreamz convert Figma designs into custom BigCommerce stores?"
-- "Does Dynamic Dreamz build and configure private BigCommerce apps?"
-- "What is the process for developing and launching a BigCommerce store with Dynamic Dreamz?"
-- "Can Dynamic Dreamz migrate an existing online store to BigCommerce?"
-
-### Current strengths and available evidence
-
-- Live H1 clearly targets "BigCommerce Development Company".
-- Hero review wheel provides proof across Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0).
-- 12 client brand logos confirm enterprise client trust (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit).
-- 5 core BigCommerce service offerings (Theme Customization, App Configuration, Private App Creation, Figma to BigCommerce Conversion, Maintenance Service).
-- 5 platform reasons (Ease of Use, Scalable Solutions, SEO Friendly, Secure and Reliable, Customizable Design).
-- 4-step serpentine wave process (Initial Consultation, Planning and Strategy, Development and Implementation, Testing, Launch, and Support).
-- 6 agency advantages (Expertise in Custom Development, Focus on Security, Commitment to Quality, Timely Delivery, Transparent Communication, Ongoing Support and Maintenance).
-- 6 featured portfolio projects (Kayfi, Maple Syrup, Knobs, Daniel Walters, Country & Stable, Jolie Perfume) with BigCommerce badges and live external links.
-- 11 client video reviews.
-- 6 comprehensive FAQs answering migration, cost, onboarding, timelines, monitoring, and post-launch support.
-- Fully server-rendered with zero duplicate assets and App Router architecture.
-
-### Entity, evidence, and authorship actions
-
-- Connect Dynamic Dreamz as an established BigCommerce and eCommerce partner with 5,000+ completed projects.
-- Tie BigCommerce service offerings to store migration, custom development, and white-label capabilities.
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | BigCommerce route required local App Router metadata and discovery | Emit slashless canonical, sitemap, robots, metadata, and redirects through shared helpers | URL policy and production build passed |
+| P0 | implemented | Structured data | Service, FAQ, and video context needed route-scoped schema | Emit Service with 5 offers, FAQPage with 6 items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered schema verification |
+| P1 | deferred | Evidence | Portfolio cards do not expose approved scope or outcomes | Add case-study evidence only after client attribution and outcome approval | Client-success approval |
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service, OfferCatalog (5 service offers), FAQPage (6 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schemas.
-- Ensure canonical URL is slashless `/bigcommerce-development`.
-- Set freshness timestamp `2026-08-19T00:00:00+05:30`.
+- Keep `/bigcommerce-development` slashless and indexable.
+- Use the explicit 2026-08-19 migration review date for `dateModified`.
+- Keep visible review values and client claims aligned with approved sources.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): passed.
-- Production build: passed.
+- URL-policy, metadata, schema, responsive rendering, local assets, lint, and production build checks passed on 2026-08-19.
+- Remaining: approved case-study evidence and deeper internal links.
 
 ## Site Map (`/site-map`)
 
 Status: implemented; live-visible content preserved
 Last reviewed: 2026-08-19
 Owner: SEO, content, and development operations
-Primary audience: Website visitors, search engines, and AI crawlers seeking a comprehensive navigation index of all published Dynamic Dreamz pages
-Decision stage: Navigation, discovery, and complete site index exploration
+Primary audience: visitors, search engines, and AI crawlers seeking the complete page directory.
+Decision stage: navigation and discovery
 
 ### Page role
 
-Human-readable and crawler-accessible HTML Site Map organizing all 138 Dynamic Dreamz pages, service offerings, industry verticals, migration services, and theme customization resources into a single alphabetical directory.
-
-### Target prompts
-
-- "Where can I find the complete Dynamic Dreamz site map?"
-- "What services and pages are available on the Dynamic Dreamz website?"
-- "How do I navigate all Dynamic Dreamz Shopify and WordPress development offerings?"
-
-### Current strengths and available evidence
-
-- Comprehensive index covering 138 total pages (133 top-level items + 5 nested industry sectors).
-- Clean alphabetical ordering matching the live WordPress `wp_list_pages` output.
-- Custom green/cyan hexagon checkmark bullet icons matching live `.standard-text-content` styling.
-- Accessible `<h1 className="sr-only">Site Map</h1>` landmark for screen readers and SEO crawlers.
-- Fully server-rendered with zero client JavaScript.
-- Internal links mapped to slashless Next.js routes.
-
-### Entity, evidence, and authorship actions
-
-- Connect the Site Map to Dynamic Dreamz organization entity as the official website directory.
+Human-readable, server-rendered directory of published Dynamic Dreamz routes and service offerings.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit WebPage, BreadcrumbList, Organization, and WebSite JSON-LD schemas.
-- Ensure canonical URL is slashless `/site-map`.
-- Set freshness timestamp `2026-08-19T00:00:00+05:30`.
+- Emit WebPage, BreadcrumbList, Organization, and WebSite schema.
+- Keep the canonical URL slashless at `/site-map` and include it in sitemap discovery.
+- Use the explicit 2026-08-19 migration review date for `dateModified`.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): passed.
-- Production build: passed.
+- URL-policy and production-build checks passed on 2026-08-19.
+- Re-audit route inventory whenever navigation or published pages change.
+
+## Android App Development (`/android-app-development`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, mobile app development specialists, leadership, and sales operations
+Primary audience: Digital agencies, web design companies, ecommerce merchants, and businesses seeking custom Android application development, native Android apps, Material Design UI, QA testing, Google Play Store deployment, Shopify app development, hybrid apps, and ongoing maintenance.
+Decision stage: agency partner evaluation, technical capability assessment, mobile app developer hiring, quote request
+
+### Page role
+
+Dedicated commercial service landing page targeting queries for "Android App Development Services", "Custom Android App Development", and enterprise Android mobile solutions. Highlights 12 client brand trust logos, 9 structured Android service capabilities (Prototyping & Wireframes, Native Android App Development, Material Design Implementation, QA & Testing, Play Store Deployment, Maintenance & Support, Existing App Customization, Shopify App Development, Hybrid Android App Development), 4 featured real-world Android app projects (Llama – An App By CWRB, Bombay Shirt Company, Bellavita Organic, Supertails) with Google Play Store links, 11 client video reviews, 6 buyer FAQs, and quote request banners.
+
+### Target prompts
+
+- Who is the top Android app development company in India?
+- How much does custom Android app development cost and what is the typical timeline?
+- Can Dynamic Dreamz build native and hybrid Android apps using Kotlin, Java, React Native, and Flutter?
+- Does Dynamic Dreamz provide Google Play Store deployment and post-launch app support?
+- Can Dynamic Dreamz build custom Android mobile apps for Shopify stores?
+
+### Current strengths and available evidence
+
+- Server-rendered split hero with H1 `Top Notch Custom Android App Development Services` and rotating review badge.
+- 12 verified brand partner logos with infinite marquee scrolling.
+- 9 structured Android service offerings with custom and canonical SVG icons.
+- 4 featured real-world Android app portfolio projects with authentic Google Play Store links.
+- 11 client video testimonials with modal playback.
+- 6 comprehensive buyer FAQs covering Android app development scope, platform coverage, security, development timeline, and developer hiring costs.
+- Complete structured data graph emitting Service, OfferCatalog (9 service offers), FAQPage (6 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical assets and hosting unique service SVGs locally.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (9 offers), FAQPage (6 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
+| P0 | implemented | Local assets | Service icons, portfolio screens, and brand logos must be locally hosted | Save 7 unique service SVGs and 3 app screenshots under `public/assets/`, reuse canonical platform and brand assets | Verified locally with 0 runtime external dependencies and 0 duplicates |
+| P1 | deferred | Content expansion | Live paragraph in Native Android App card mentions "iOS apps ... Objective C, Swift, and SwiftUI" (legacy copy mix-up on live page) | Record proposed fix in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered hero and service descriptions establish Dynamic Dreamz Android app development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Position Dynamic Dreamz as an established mobile and web development partner founded in 2006 with 150+ specialists and 5000+ completed projects.
+- Attribute client video testimonials directly to authentic brand founders.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/android-app-development` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 9 Offer items, 6 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Android app development services", "custom Android app development", "hire Android app developers", and "Shopify Android app development".
+- Analytics tracks form submissions on `/request-quote` originating from `/android-app-development`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/android-app-development`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 49 chars, Description: 154 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## iOS App Development (`/ios-app-development`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, mobile app development specialists, leadership, and sales operations
+Primary audience: Web design agencies, ecommerce merchants, and businesses seeking custom iOS application development, native iOS apps (iPhone, iPad, Apple Watch), UI/UX design, backend development, QA testing, maintenance, existing app customization, Shopify app development, and hybrid apps.
+Decision stage: agency partner evaluation, technical capability assessment, iOS developer hiring, quote request
+
+### Page role
+
+Dedicated commercial service landing page targeting queries for "iOS App Development Services", "Custom iOS App Development", and enterprise Apple ecosystem mobile solutions. Highlights 12 client brand trust logos, 9 structured iOS service capabilities (Prototyping & Wireframes, Native iOS App Development, UI/UX Design, Backend Development, App Testing & QA, Maintenance & Support, Existing App Customization, Shopify App Development, Hybrid iOS App Development), 4 featured real-world iOS app projects (BellaVita Organic, Renee Cosmetics, Rentastic, Journal X) with Apple App Store links, 11 client video reviews, 6 buyer FAQs, and quote request banners.
+
+### Target prompts
+
+- Who is the top iOS app development company in India?
+- How much does custom iOS app development cost and what is the typical timeline?
+- Can Dynamic Dreamz build native iOS apps using Swift, SwiftUI, Objective-C, React Native, and Flutter?
+- Does Dynamic Dreamz provide Apple App Store deployment and post-launch app support?
+- Can Dynamic Dreamz build custom iOS mobile apps for Shopify stores?
+
+### Current strengths and available evidence
+
+- Server-rendered split hero with H1 `Custom iOS Mobile App Development Services` and rotating review badge.
+- 12 verified brand partner logos with infinite marquee scrolling.
+- 9 structured iOS service offerings with custom and canonical SVG icons.
+- 4 featured real-world iOS app portfolio projects with authentic Apple App Store links.
+- 11 client video testimonials with modal playback.
+- 6 comprehensive buyer FAQs covering Apple App Store deployment, third-party API integration, analytics, version control, data security, and App Store guideline compliance.
+- Complete structured data graph emitting Service, OfferCatalog (9 service offers), FAQPage (6 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical assets and hosting unique service SVGs locally.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (9 offers), FAQPage (6 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
+| P0 | implemented | Local assets | Service icons, portfolio screens, and brand logos must be locally hosted | Save 3 unique service SVGs and 2 app screenshots under `public/assets/`, reuse canonical platform, service, and brand assets | Verified locally with 0 runtime external dependencies and 0 duplicates |
+| P1 | deferred | Content expansion | Testimonials description contains minor spacing typo ("clients.Happy") | Record proposed fix in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered hero and service descriptions establish Dynamic Dreamz iOS app development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Position Dynamic Dreamz as an established mobile and web development partner founded in 2006 with 150+ specialists and 5000+ completed projects.
+- Attribute client video testimonials directly to authentic brand founders.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/ios-app-development` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 9 Offer items, 6 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "iOS app development services", "custom iOS app development", "hire iOS app developers", and "Shopify iOS app development".
+- Analytics tracks form submissions on `/request-quote` originating from `/ios-app-development`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/ios-app-development`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 45 chars, Description: 126 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Cross-Platform App Development (`/cross-platform-app-development`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, mobile app development specialists, leadership, and sales operations
+Primary audience: Web design agencies, ecommerce merchants, and businesses seeking custom cross-platform mobile application development across iOS and Android using Flutter and React Native.
+Decision stage: agency partner evaluation, technical capability assessment, cross-platform developer hiring, quote request
+
+### Page role
+
+Dedicated commercial service landing page targeting queries for "Cross Platform App Development Services", "Custom Cross Platform App Development", and multi-platform mobile solutions. Highlights 12 client brand trust logos, 8 structured service capabilities (Flutter App Development, React Native App Development, Prototyping & Wireframes, Backend Development, App Testing & QA, Maintenance & Support, Existing App Customization, Shopify App Development), 4 featured real-world cross-platform app projects (Bombay Shirt Company, Llama – An App by CWRB, Renee Cosmetics, Supertails) with React Native and Flutter platform badges and store links, 11 client video reviews, 8 buyer FAQs, and quote request banners.
+
+### Target prompts
+
+- Who is the top cross-platform app development company in India?
+- How much does custom cross-platform app development cost using Flutter or React Native?
+- Can Dynamic Dreamz build mobile apps for both iOS and Android from a single codebase?
+- What are the differences and benefits of cross-platform app development vs native development?
+- Can Dynamic Dreamz build custom cross-platform mobile apps for Shopify stores?
+
+### Current strengths and available evidence
+
+- Server-rendered split hero with H1 `Custom Cross Platform App Development Services` and rotating review badge.
+- 12 verified brand partner logos with infinite marquee scrolling.
+- 8 structured service offerings with custom and canonical SVG icons.
+- 4 featured real-world app portfolio projects with React Native and Flutter badges and verified store links.
+- 11 client video testimonials with modal playback.
+- 8 comprehensive buyer FAQs covering cross-platform definition, business benefits, frameworks used, native vs cross-platform comparison, third-party APIs, performance optimization, data security, and ongoing maintenance.
+- Complete structured data graph emitting Service, OfferCatalog (8 service offers), FAQPage (8 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical assets and hosting unique service/platform SVGs locally.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (8 offers), FAQPage (8 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
+| P0 | implemented | Local assets | Service icons, platform marks, and brand logos must be locally hosted | Save 2 unique service SVGs and 2 platform SVGs under `public/assets/`, reuse canonical assets across the codebase | Verified locally with 0 runtime external dependencies and 0 duplicates |
+| P1 | deferred | Content expansion | Live heading in portfolio contains typo ("Comapny" for Bombay Shirt Company) | Record proposed fix in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered hero and service descriptions establish Dynamic Dreamz cross-platform app development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Position Dynamic Dreamz as an established mobile and web development partner founded in 2006 with 150+ specialists and 5000+ completed projects.
+- Attribute client video testimonials directly to authentic brand founders.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/cross-platform-app-development` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 8 Offer items, 8 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "cross-platform app development services", "custom cross-platform app development", "Flutter app development", "React Native app development", and "Shopify mobile app development".
+- Analytics tracks form submissions on `/request-quote` originating from `/cross-platform-app-development`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/cross-platform-app-development`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 56 chars, Description: 153 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Shopify Mobile App Development (`/shopify-mobile-app-development`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, mobile app development specialists, leadership, and sales operations
+Primary audience: Shopify merchants, direct-to-consumer eCommerce brands, and online store owners seeking turnkey or custom Shopify mobile app solutions using Shopify AppMaker to convert stores into iOS & Android mobile applications.
+Decision stage: agency partner evaluation, technical capability assessment, Shopify mobile app developer hiring, quote request
+
+### Page role
+
+Dedicated commercial service landing page targeting queries for "Shopify Mobile App Development Services", "Shopify AppMaker", and turnkey Shopify mobile app builder solutions. Highlights 12 client brand trust logos, 3 key benefits (Increase Sales, Engage Customers, Enhance Experience) with custom interactive cards, 6 core mobile features (Customizable Themes, Push Notifications, Seamless Checkout, Product Searching, Analytics & Reporting, Customer Reviews) in a 3-column split with center app preview mockup, a 4-step process (Signup, Customize Your App, Connect your Store, Publish) with curved path background, 10 buyer FAQs, and quote request banners.
+
+### Target prompts
+
+- Who is the top Shopify mobile app development company in India?
+- How can I transform my Shopify store into a mobile app?
+- What are the benefits and features of Shopify AppMaker?
+- How long does it take to launch a Shopify mobile app on the App Store and Google Play?
+- Can Dynamic Dreamz build custom iOS and Android mobile apps for Shopify stores?
+
+### Current strengths and available evidence
+
+- Server-rendered split hero with H1 `Transform Your Shopify Store into a Mobile App in Minutes!` and rotating review badge.
+- 12 verified brand partner logos with infinite marquee scrolling.
+- 3 key benefit cards with gradient hover borders.
+- 6 comprehensive app feature items with custom SVG icons and center mobile app preview mockup.
+- 4-step process with SVG curved serpentine background line.
+- 10 comprehensive buyer FAQs covering Shopify AppMaker definition, store benefits, workflow steps, features, launch timeline, security, customer support, pricing, free trial, and cancellation policies.
+- Complete structured data graph emitting Service, OfferCatalog (9 service offers), FAQPage (10 items), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, organizing unique SVGs and WebP assets cleanly into category subdirectories.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (9 offers), FAQPage (10 items), BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
+| P0 | implemented | Local assets | Benefit icons, feature icons, process icons, and app mockup must be locally hosted | Save 13 unique SVGs and 1 WebP mockup under `public/assets/services/shopify-mobile-app-development/` | Verified locally with 0 runtime external dependencies and 0 duplicates |
+| P1 | deferred | Content expansion | FAQ answer formatting can be enhanced with rich bullet lists in visible copy | Record proposed fix in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered hero, benefits, features, and step-by-step process establish Dynamic Dreamz Shopify mobile app development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Position Dynamic Dreamz as an established Shopify Platinum Partner and mobile development agency founded in 2006 with 150+ specialists and 4500+ Shopify stores built.
+- Connect mobile app service to Shopify Plus Agency, Cross-Platform App Development, and Shopify Theme Customization offerings.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/shopify-mobile-app-development` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 9 Offer items, 10 FAQ items, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Shopify mobile app development", "Shopify AppMaker", "turn Shopify store into mobile app", and "custom Shopify mobile app".
+- Analytics tracks form submissions on `/request-quote` originating from `/shopify-mobile-app-development`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-mobile-app-development`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 56 chars, Description: 143 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Future Page Maintenance Workflow
 

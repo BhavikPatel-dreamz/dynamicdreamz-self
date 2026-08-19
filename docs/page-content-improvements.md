@@ -585,23 +585,84 @@ Primary SEO intent: WordPress theme customization services, custom WordPress the
 | --- | --- | --- | --- | --- | --- |
 | Meta title | `WordPress Theme Customization Services \| Dynamic Dreamz` (56 chars) | Preserved live meta title (56 chars). | Fits 15-60 character budget and captures primary search intent. | High | implemented in metadata |
 | Meta description | `Choose WordPress Theme Customization Services . Expert WordPress Developers with 18+ Years of Experience. Hire DynamicDreamz today!` (132 chars) | Preserved live meta description (132 chars). | Fits 70-160 character budget while preserving commercial message. | High | implemented in metadata |
+| Benefits Section heading | `Benefits of the WordPress Theme Customization Service` | `Benefits of WordPress Theme Customization Services` | Improves grammar and reads more naturally in English. | Low | deferred pending exact visible-copy approval |
+| VideoObject structured data | Legacy site had no schema for client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google. | High | implemented in schema |
 | Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (6 service offers) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO answer discovery and FAQ rich results. | High | implemented in schema |
 
 ## BigCommerce Development (`/bigcommerce-development`)
 
 Status: visible recommendations deferred; live UI preserved during migration
 Last reviewed: 2026-08-19
-Primary SEO intent: BigCommerce development company, BigCommerce development company India, hire BigCommerce developer, BigCommerce theme customization, BigCommerce app integration, BigCommerce maintenance.
+Primary SEO intent: BigCommerce development services, BigCommerce theme customization, private app development, Figma conversion, and maintenance.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | `BigCommerce Development Company India \| Dynamic Dreamz` (54 chars) | Preserved live meta title (54 chars). | Fits 15-60 character budget and captures primary search intent. | High | implemented in metadata |
-| Meta description | `Hire BigCommerce Developer for top notch eCommerce solutions. Get customisations, integrations, and support for your business. Call Now!` (137 chars) | Preserved live meta description (137 chars). | Fits 70-160 character budget while capturing core commercial message. | High | implemented in metadata |
-| Why Choose DD section description | `...we ensure your WordPress website is visually attractive...` | `...we ensure your BigCommerce store is visually attractive...` | Fixes platform copy carryover from WordPress templates. | Medium | deferred pending exact visible-copy approval |
-| Why Choose DD Item 1 | `...our WordPress developers have the skills...` | `...our BigCommerce developers have the skills...` | Fixes platform copy carryover from WordPress templates. | Medium | deferred pending exact visible-copy approval |
-| Why Choose DD Item 6 | `...keep your WordPress website safe, up to date, and performing at its peak.` | `...keep your BigCommerce store safe, up to date, and performing at its peak.` | Fixes platform copy carryover from WordPress templates. | Medium | deferred pending exact visible-copy approval |
-| VideoObject structured data | Legacy site had no schema for client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google. | High | implemented in schema |
-| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (5 service offers) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO answer discovery and FAQ rich results. | High | implemented in schema |
+| Meta title | `BigCommerce Development Company India | Dynamic Dreamz` | Preserved route metadata within the SEO title budget. | Maintains core commercial intent without truncation. | High | implemented in metadata |
+| Service and FAQ schema | Legacy page lacked complete route-scoped schema. | Emitted `Service` with `OfferCatalog` (5 offers), `FAQPage` (6 questions/answers), and 11 `VideoObject` nodes. | Improves machine-readable service and proof context without changing visible UI. | High | implemented in schema |
+| Portfolio evidence | External project links lack approved scope and outcomes. | Add internal case-study evidence when attribution and outcomes are approved. | Supports citation-worthy proof. | Medium | deferred pending client-success approval |
 
+## Site Map (`/site-map`)
 
+Status: implemented; live-visible content preserved
+Last reviewed: 2026-08-19
+Primary SEO intent: Dynamic Dreamz site map, page discovery, and complete service directory.
 
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Discovery | Human-readable page directory | Preserve the server-rendered route and slashless canonical. | Supports visitors and crawlers without changing the visible directory. | High | implemented |
+| Structured data | No route-scoped page graph | Emit `WebPage`, `BreadcrumbList`, `Organization`, and `WebSite` schema. | Connects the directory to the site entity. | High | implemented in schema |
+
+## Android App Development (`/android-app-development`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: Android app development services, custom Android app development, native Android app development, hire Android app developers, Android app development company, hybrid Android app development.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Expert Android App Development Service \| Expert App Development Service \| Custom App Development \| Mobile App Development India` (128 chars) | `Android App Development Services \| Dynamic Dreamz` (49 chars) | Shortened title to fit strict 15-60 char budget and eliminate SERP truncation while maintaining core keyword targeting. | High | implemented in metadata |
+| Meta description | `Our expert team of mobile app developers delivers custom mobile solution for your business requirement. We create high performance and engaging mobile app.` (154 chars) | Preserved live meta description (154 chars). | Fits 70-160 character budget and captures value proposition. | High | implemented in metadata |
+| Service card copy (Native Android) | `Our developers specialize in creating native iOS apps that perform smoothly on iPhone, iPad, and Apple Watch. Our expert developers leverage programming languages like Objective C, Swift, and SwiftUI...` (legacy copy mix-up on live page) | `Our developers specialize in creating native Android apps that perform smoothly across all Android devices. Our expert developers leverage programming languages like Kotlin and Java and follow industry best practices...` | Corrects copy mix-up referencing iOS/Swift on an Android service card. | Medium | deferred pending exact visible-copy approval |
+| VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (9 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## iOS App Development (`/ios-app-development`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: iOS app development services, custom iOS app development, native iOS app development, hire iOS app developers, iOS app development company, hybrid iOS app development.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Expert iOS App Development Service \| Expert App Development Service \| Custom iOS App Development \| Mobile App Development India` (124 chars) | `iOS App Development Services \| Dynamic Dreamz` (45 chars) | Shortened title to fit strict 15-60 char budget and eliminate SERP truncation while maintaining core keyword targeting. | High | implemented in metadata |
+| Meta description | `Get a user-engaging iOS app for your online business. Our expert iOS app developers provide custom solution as per your needs.` (126 chars) | Preserved live meta description (126 chars). | Fits 70-160 character budget and captures value proposition. | High | implemented in metadata |
+| Testimonial section description | `We have faith in our work, but what truly matters is the outcomes we serve our clients.Happy clients make happy stories. Check out how our services empower them to evolve.` (missing space after period) | `We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve.` | Adds missing space after sentence period. | Low | deferred pending exact visible-copy approval |
+| VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (9 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Cross-Platform App Development (`/cross-platform-app-development`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: cross-platform app development services, custom cross-platform app development, React Native app development, Flutter app development, hire cross-platform developers, cross-platform app development company.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Cross-Platform App Development Service India \| Build for iOS & Android` (70 chars) | `Cross-Platform App Development Services \| Dynamic Dreamz` (56 chars) | Shortened title to fit strict 15-60 char budget and eliminate SERP truncation while maintaining core keyword targeting. | High | implemented in metadata |
+| Meta description | `We build robust, high-performance apps that work seamlessly across iOS, Android, and other platforms. Partner with us to deliver a consistent user experience and expand your audience.` (185 chars) | `We build robust, high-performance apps that work seamlessly across iOS and Android. Partner with us to deliver consistent cross-platform user experiences.` (153 chars) | Fits 70-160 character budget while preserving all key value points. | High | implemented in metadata |
+| Portfolio card title (Bombay Shirt) | `Bombay Shirt Comapny` (typo on live page) | `Bombay Shirt Company` | Fixes typo in client brand name. | Low | deferred pending exact visible-copy approval |
+| VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (8 service items) and `FAQPage` (8 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Shopify Mobile App Development (`/shopify-mobile-app-development`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: Shopify mobile app development services, Shopify AppMaker, turnkey Shopify mobile apps, custom Shopify mobile app development, turn Shopify store into mobile app.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Get The Best Shopify Mobile App Development Services \| Dynamic Dreamz` (71 chars) | `Shopify Mobile App Development Services \| Dynamic Dreamz` (56 chars) | Shortened title to fit strict 15-60 char budget and eliminate SERP truncation while maintaining core keyword targeting. | High | implemented in metadata |
+| Meta description | `Grow your eCommerce brand with expert Shopify mobile app development by Dynamic Dreamz. Mobile apps that boost engagement, retention, and sales.` (143 chars) | Preserved live meta description (143 chars). | Fits 70-160 character budget and captures value proposition. | High | implemented in metadata |
+| Features image alt | `eatures of Shopify App maker Image` (typo in alt text on live page) | `Features of Shopify App maker Image` | Fixes typo in image alt attribute. | Low | implemented cleanly in alt attribute |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (9 service items) and `FAQPage` (10 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |

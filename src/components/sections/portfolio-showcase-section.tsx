@@ -8,6 +8,7 @@ export type PortfolioShowcaseItem = {
   image: string;
   imageAlt: string;
   category?: string;
+  platformMark?: { src: string; width: number; height: number };
 };
 
 export type PortfolioShowcaseSectionProps = {
@@ -21,6 +22,9 @@ export type PortfolioShowcaseSectionProps = {
   ctaLabel?: string;
   ctaHref?: string;
   className?: string;
+  columns?: 2 | 3 | 4;
+  imageAspectClassName?: string;
+  categoryClassName?: string;
 };
 
 export function PortfolioShowcaseSection({
@@ -28,12 +32,22 @@ export function PortfolioShowcaseSection({
   ctaLabel = "View our work",
   ctaHref = "/our-work",
   className = "our-work-sec pb-20 max-[991px]:pb-[60px]",
+  columns = 3,
+  imageAspectClassName,
+  categoryClassName,
 }: PortfolioShowcaseSectionProps) {
-  const platformMark = content.platformMark ?? {
+  const defaultPlatformMark = content.platformMark ?? {
     src: "/assets/platforms/shopify-white.svg",
     width: 89,
     height: 26,
   };
+
+  const gridColsClass =
+    columns === 4
+      ? "grid-cols-4 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1"
+      : columns === 2
+        ? "grid-cols-2 max-[767px]:grid-cols-1"
+        : "grid-cols-3 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1";
 
   return (
     <section className={className} data-section="portfolio" id="portfolio-showcase">
@@ -65,17 +79,19 @@ export function PortfolioShowcaseSection({
           )}
         </div>
 
-        <div className="mt-[42px] grid grid-cols-3 gap-x-[15px] gap-y-[60px] max-[991px]:mt-[50px] max-[991px]:grid-cols-2 max-[991px]:gap-y-[30px] max-[767px]:grid-cols-1">
+        <div className={`mt-[42px] grid gap-x-[15px] gap-y-[60px] max-[991px]:mt-[50px] max-[991px]:gap-y-[30px] ${gridColsClass}`}>
           {content.items.map((item) => (
             <PortfolioProjectCard
               category={item.category ?? content.category ?? "SHOPIFY"}
+              categoryClassName={categoryClassName}
               eagerImage
               href={item.href}
               image={item.image}
               imageAlt={item.imageAlt}
+              imageAspectClassName={imageAspectClassName}
               key={item.name}
               name={item.name}
-              platformMark={platformMark}
+              platformMark={item.platformMark ?? defaultPlatformMark}
             />
           ))}
         </div>
