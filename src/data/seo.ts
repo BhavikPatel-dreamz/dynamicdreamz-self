@@ -545,6 +545,36 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  shopifyMigration: {
+    path: "/shopify-migration",
+    title: "Seamless Shopify Migration Services | Dynamic Dreamz",
+    description:
+      "We ensure a seamless transfer of your store, preserving data integrity and minimizing downtime. Expert Shopify migration services to boost ecommerce success.",
+    socialDescription:
+      "Expert Shopify Migration Services: Efficiently Move Your Store with Ease and get the full potential of Shopify with our tailored migration solutions.",
+    keywords: [
+      "Shopify migration services",
+      "Shopify store migration",
+      "Magento to Shopify migration",
+      "WooCommerce to Shopify migration",
+      "BigCommerce to Shopify migration",
+      "Shopify 2.0 theme migration",
+      "ecommerce migration expert",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-02T09:34:33+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Seamless Shopify Migration Services by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   requestQuote: {
     path: "/request-quote",
     title: "Request Quote Today! | Dynamic Dreamz",

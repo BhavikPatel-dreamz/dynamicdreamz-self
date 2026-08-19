@@ -520,3 +520,18 @@ Primary SEO intent: Shopify development agency, Shopify development services, Sh
 | Service card copy (App Integration) | `Suppose you can’t find any Shopify themes matching your needs. In that case, our custom Shopify theme development service can create an exclusively crafted theme that perfectly fits your requirements. From concept to launch, we ensure your custom Shopify theme enhances user experience, boosts engagement, and drives sales.` | `Seamlessly integrate third-party apps, ERPs, CRMs, and custom extensions to enhance your Shopify store functionality, automate workflows, and boost sales.` | Live card paragraph describes custom themes rather than app integration. Deferred for live UI parity. | Medium | deferred pending exact visible-copy approval |
 | VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
 | Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (8 service items) and `FAQPage` (9 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Shopify Migration (`/shopify-migration`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: Shopify migration services, migrate to Shopify, Magento to Shopify migration, WooCommerce to Shopify migration, BigCommerce to Shopify migration, Shopify 2.0 theme migration, zero downtime data migration.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Seamless Shopify Migration Services \| Shopify Store Migration \| Expert Shopify Store Migration Service India` (110 chars) | `Seamless Shopify Migration Services \| Dynamic Dreamz` (52 chars) | Fits 60-character budget and avoids keyword repetition in SERPs. | High | implemented in metadata |
+| Meta description | `We ensure a seamless transfer of your online store, preserving data integrity and minimizing downtime. Let us handle your Shopify migration and boost your e-commerce success.` (176 chars) | `We ensure a seamless transfer of your store, preserving data integrity and minimizing downtime. Expert Shopify migration services to boost ecommerce success.` (158 chars) | Fits 70-160 character budget while preserving live value proposition. | High | implemented in metadata |
+| Etsy migration card alt | `Etsy to Shopify Migratio Image` (typo in live alt text) | `Etsy to Shopify Migration Image` | Corrects typo in image alt attribute for better accessibility. | Low | implemented as a nonvisual accessibility correction |
+| Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
+| VideoObject structured data | Legacy site had no structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes with upload dates, YouTube URLs, and thumbnail assets. | Enables video search rich results without modifying visible layout. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site had outdated schema mismatching modern visible FAQs. | Emitted `Service` with `OfferCatalog` (12 migration offers) and `FAQPage` matching all 5 live visible FAQs. | Enables rich answer engine visibility and FAQ SERP enhancements. | High | implemented in schema |

@@ -37,6 +37,10 @@ import {
   shopifyDevelopmentAgencyServices,
 } from "@/content/shopify-development-agency";
 import { shopifyExpertsContent } from "@/content/shopify-experts";
+import {
+  shopifyMigrationFaqs,
+  shopifyMigrationServices,
+} from "@/content/shopify-migration";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
 import {
   wordpressDevelopmentFaqs,
@@ -145,6 +149,11 @@ const shopifyPlusPageId = `${shopifyPlusPageUrl}#webpage`;
 const shopifyPlusServiceId = `${shopifyPlusPageUrl}#service`;
 const shopifyPlusFaqId = `${shopifyPlusPageUrl}#faq`;
 const shopifyPlusBreadcrumbId = `${shopifyPlusPageUrl}#breadcrumb`;
+const shopifyMigrationPageUrl = absoluteUrl(pageSeo.shopifyMigration.path);
+const shopifyMigrationPageId = `${shopifyMigrationPageUrl}#webpage`;
+const shopifyMigrationServiceId = `${shopifyMigrationPageUrl}#service`;
+const shopifyMigrationFaqId = `${shopifyMigrationPageUrl}#faq`;
+const shopifyMigrationBreadcrumbId = `${shopifyMigrationPageUrl}#breadcrumb`;
 const caseStudiesPageUrl = absoluteUrl(pageSeo.caseStudies.path);
 const caseStudiesPageId = `${caseStudiesPageUrl}#webpage`;
 const caseStudiesBreadcrumbId = `${caseStudiesPageUrl}#breadcrumb`;
@@ -1422,6 +1431,32 @@ export function createShopifyExpertsPageSchema() {
       answer: item.answer,
     })),
     offers: shopifyExpertsContent.aiAutomation.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyMigration,
+    pageUrl: shopifyMigrationPageUrl,
+    pageId: shopifyMigrationPageId,
+    serviceId: shopifyMigrationServiceId,
+    faqId: shopifyMigrationFaqId,
+    breadcrumbId: shopifyMigrationBreadcrumbId,
+    serviceName: "Shopify Store Migration Services",
+    serviceType:
+      "End-to-end platform migration to Shopify & Shopify Plus with zero downtime and full data integrity",
+    breadcrumbName: "Shopify Migration",
+    audienceType:
+      "eCommerce brands, direct-to-consumer businesses, and digital agencies migrating from Magento, WooCommerce, BigCommerce, Salesforce, PrestaShop, Squarespace, Wix, or Shopify 1.0",
+    faqs: shopifyMigrationFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: shopifyMigrationServices.map((item) => ({
       title: item.title,
       description: item.description,
     })),

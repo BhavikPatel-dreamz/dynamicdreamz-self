@@ -2883,8 +2883,8 @@ Dedicated commercial landing page targeting core search intent for "Shopify Deve
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
 | P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (8 offers), FAQPage (9 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
-| P0 | implemented | Local assets | Service icons, brand logos, portfolio assets, and testimonials must be locally hosted | Save 8 service icons, 10 brand logos, and deduplicate canonical assets | Verified locally with 0 runtime external dependencies |
-| P1 | deferred | Content expansion | Minor grammatical improvements in service descriptions | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+| P0 | implemented | Local assets | Service icons, brand logos, portfolio assets, and testimonials must be locally hosted | Save canonical local assets and deduplicate them | Verified locally with 0 runtime external dependencies |
+| P1 | deferred | Content expansion | Minor grammatical improvements in service descriptions | Record proposed improvements in `docs/page-content-improvements.md`; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
 
@@ -2908,13 +2908,88 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 ### Measurement plan
 
-- SEO tracks queries for "Shopify development agency", "Shopify development services", "Shopify development company", etc.
+- SEO tracks queries for "Shopify development agency", "Shopify development services", and "Shopify development company".
 - Analytics tracks form submissions on `/request-quote` originating from `/shopify-development-agency`.
 
 ### Verification and remaining gaps
 
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-development-agency`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 154 chars), JSON-LD graph verification, responsive layouts (1440x900, 768x1024, 390x844), local assets audit, lint, and production build.
+- Checks completed: live and local rendered page comparison, metadata limits, JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Shopify Migration (`/shopify-migration`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-19
+
+Owner: SEO, Shopify migration specialists, leadership, and sales operations
+
+Primary audience: Merchants, ecommerce managers, and direct-to-consumer/enterprise brands migrating from legacy or competing ecommerce platforms (Magento, WooCommerce, BigCommerce, Salesforce, PrestaShop, Squarespace, Wix, Ecwid, Square, Etsy) or Shopify 1.0 to modern Shopify & Shopify Plus architectures.
+
+Decision stage: platform re-platforming, migration partner selection, data integrity verification, zero-downtime scoping, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz end-to-end Shopify migration services. Highlights 12 platform-to-Shopify migration pathways, post-migration AI automation capabilities (support, workflows, content, retention), AI-driven shopping readiness (AEO, GEO, agentic commerce, trust signals), portfolio of migration projects (Capri Bikes, Atolea Jewelry, Black Opal Beauty, Nested Naturals, Mygeeni, Raen), 11 client video reviews, 5 migration & AI FAQs, and quote request banners.
+
+### Target prompts
+
+- Best Shopify migration agency for Magento or WooCommerce re-platforming?
+- How to migrate store from Magento, WooCommerce, or BigCommerce to Shopify without losing SEO and orders?
+- Dynamic Dreamz Shopify migration reviews, experience, and portfolio?
+- Will Shopify store migration cause downtime or loss of customer data?
+- How to prepare a Shopify store for AI search, ChatGPT, and agentic commerce after migration?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Seamless Shopify Migration Services` with centered layout and 5.0 rating reviews pill.
+- 12 comprehensive platform migration cards with transition SVGs and clear routing to specific migration services.
+- 4 AI automation cards covering post-migration growth (Shopify Flow, Zapier, Make, Klaviyo, Gorgias, Tidio, OpenAI).
+- 4 AI-driven shopping capabilities for AEO, GEO, Universal Commerce Protocol agentic commerce, and trust signals.
+- 6 migration portfolio project cards linking to live storefronts.
+- 11 real client video testimonials with YouTube modal playback.
+- 5 comprehensive FAQ accordion items directly answering post-migration automation, AI search visibility, agentic commerce, ongoing support, and data migration scope.
+- Structured data graph emitting Service, OfferCatalog (12 migration service offers), FAQPage (5 Question/Answer pairs), VideoObject (11 client video reviews), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical AI icons, portfolio screenshots, and review wordmarks.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The migration route required full App Router and metadata coverage | Ship the slashless route through shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (12 offers), FAQPage (5 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | 12 platform migration SVGs required local project-owned copies | Save 12 migration icons under `public/assets/shopify-migration/services/` | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Minor wording/grammar polish in FAQ answers and card descriptions | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Shopify migration authority and AI readiness. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+- Attribute client video testimonials directly to their authentic founders and brand names.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/shopify-migration` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 12 Offer items, 5 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.9 and monthly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Shopify migration services", "Magento to Shopify migration", "WooCommerce to Shopify migration", "BigCommerce to Shopify migration", etc.
+- Analytics tracks form submissions on `/request-quote` originating from `/shopify-migration`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-migration`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 52 chars, Description: 158 chars), JSON-LD graph verification, local assets audit, responsive layouts, lint, and production build.
 
 ## Future Page Maintenance Workflow
 
