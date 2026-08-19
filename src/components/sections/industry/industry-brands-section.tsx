@@ -14,6 +14,7 @@ type IndustryBrandsSectionProps = {
   heading?: string;
   items?: readonly ClientLogoSliderItem[];
   mobileSpacing?: "standard" | "spacious";
+  className?: string;
 };
 
 export function IndustryBrandsSection({
@@ -21,6 +22,7 @@ export function IndustryBrandsSection({
   heading,
   items = industryBrandLogos,
   mobileSpacing = "standard",
+  className,
 }: IndustryBrandsSectionProps) {
   const hasSpaciousMobileLayout = mobileSpacing === "spacious";
   const ariaLabel = content.brands?.ariaLabel ?? content.ariaLabel ?? "Trusted Brands";
@@ -30,6 +32,7 @@ export function IndustryBrandsSection({
       className={cn(
         "our-client-sec dev h-[164px] overflow-hidden bg-[#fbf7ed] py-10",
         hasSpaciousMobileLayout ? "max-[991px]:h-[270px]" : "max-[991px]:h-[217px]",
+        className,
       )}
       aria-labelledby={`${content.slug}-brands-title`}
       data-industry="brands"

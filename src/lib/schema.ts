@@ -62,6 +62,27 @@ import {
   wordPressThemeCustomizationContent,
   wordPressThemeCustomizationFaqs,
 } from "@/content/wordpress-theme-customization";
+import {
+  androidAppDevelopmentFaqs,
+  androidAppDevelopmentServices,
+} from "@/content/android-app-development";
+import {
+  iosAppDevelopmentFaqs,
+  iosAppDevelopmentServices,
+} from "@/content/ios-app-development";
+import {
+  crossPlatformAppDevelopmentFaqs,
+  crossPlatformAppDevelopmentServices,
+} from "@/content/cross-platform-app-development";
+import {
+  shopifyMobileAppBenefits,
+  shopifyMobileAppDevelopmentFaqs,
+  shopifyMobileAppFeatures,
+} from "@/content/shopify-mobile-app-development";
+import {
+  bigCommerceDevelopmentFaqs,
+  bigCommerceDevelopmentServices,
+} from "@/content/bigcommerce-development";
 import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -208,6 +229,34 @@ const wordPressThemeCustomizationPageId = `${wordPressThemeCustomizationPageUrl}
 const wordPressThemeCustomizationServiceId = `${wordPressThemeCustomizationPageUrl}#service`;
 const wordPressThemeCustomizationFaqId = `${wordPressThemeCustomizationPageUrl}#faq`;
 const wordPressThemeCustomizationBreadcrumbId = `${wordPressThemeCustomizationPageUrl}#breadcrumb`;
+const androidAppDevelopmentPageUrl = absoluteUrl(pageSeo.androidAppDevelopment.path);
+const androidAppDevelopmentPageId = `${androidAppDevelopmentPageUrl}#webpage`;
+const androidAppDevelopmentServiceId = `${androidAppDevelopmentPageUrl}#service`;
+const androidAppDevelopmentFaqId = `${androidAppDevelopmentPageUrl}#faq`;
+const androidAppDevelopmentBreadcrumbId = `${androidAppDevelopmentPageUrl}#breadcrumb`;
+const iosAppDevelopmentPageUrl = absoluteUrl(pageSeo.iosAppDevelopment.path);
+const iosAppDevelopmentPageId = `${iosAppDevelopmentPageUrl}#webpage`;
+const iosAppDevelopmentServiceId = `${iosAppDevelopmentPageUrl}#service`;
+const iosAppDevelopmentFaqId = `${iosAppDevelopmentPageUrl}#faq`;
+const iosAppDevelopmentBreadcrumbId = `${iosAppDevelopmentPageUrl}#breadcrumb`;
+const crossPlatformAppDevelopmentPageUrl = absoluteUrl(pageSeo.crossPlatformAppDevelopment.path);
+const crossPlatformAppDevelopmentPageId = `${crossPlatformAppDevelopmentPageUrl}#webpage`;
+const crossPlatformAppDevelopmentServiceId = `${crossPlatformAppDevelopmentPageUrl}#service`;
+const crossPlatformAppDevelopmentFaqId = `${crossPlatformAppDevelopmentPageUrl}#faq`;
+const crossPlatformAppDevelopmentBreadcrumbId = `${crossPlatformAppDevelopmentPageUrl}#breadcrumb`;
+const shopifyMobileAppDevelopmentPageUrl = absoluteUrl(pageSeo.shopifyMobileAppDevelopment.path);
+const shopifyMobileAppDevelopmentPageId = `${shopifyMobileAppDevelopmentPageUrl}#webpage`;
+const shopifyMobileAppDevelopmentServiceId = `${shopifyMobileAppDevelopmentPageUrl}#service`;
+const shopifyMobileAppDevelopmentFaqId = `${shopifyMobileAppDevelopmentPageUrl}#faq`;
+const shopifyMobileAppDevelopmentBreadcrumbId = `${shopifyMobileAppDevelopmentPageUrl}#breadcrumb`;
+const bigCommerceDevelopmentPageUrl = absoluteUrl(pageSeo.bigCommerceDevelopment.path);
+const bigCommerceDevelopmentPageId = `${bigCommerceDevelopmentPageUrl}#webpage`;
+const bigCommerceDevelopmentServiceId = `${bigCommerceDevelopmentPageUrl}#service`;
+const bigCommerceDevelopmentFaqId = `${bigCommerceDevelopmentPageUrl}#faq`;
+const bigCommerceDevelopmentBreadcrumbId = `${bigCommerceDevelopmentPageUrl}#breadcrumb`;
+const siteMapPageUrl = absoluteUrl(pageSeo.siteMap.path);
+const siteMapPageId = `${siteMapPageUrl}#webpage`;
+const siteMapBreadcrumbId = `${siteMapPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1810,6 +1859,186 @@ export function createWordPressThemeCustomizationPageSchema() {
     })),
     videos: shopifyPlusTestimonialVideoSchema(),
   });
+}
+
+export function createAndroidAppDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.androidAppDevelopment,
+    pageUrl: androidAppDevelopmentPageUrl,
+    pageId: androidAppDevelopmentPageId,
+    serviceId: androidAppDevelopmentServiceId,
+    faqId: androidAppDevelopmentFaqId,
+    breadcrumbId: androidAppDevelopmentBreadcrumbId,
+    serviceName: "Android App Development Services",
+    serviceType:
+      "Custom Android app development, native app development, Material Design implementation, QA testing, Google Play Store deployment, Shopify app development, hybrid app development, maintenance, and support",
+    breadcrumbName: "Android App Development",
+    audienceType:
+      "Digital agencies, web design companies, ecommerce merchants, and businesses looking to build high-performance custom Android applications",
+    faqs: androidAppDevelopmentFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: androidAppDevelopmentServices.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createIosAppDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.iosAppDevelopment,
+    pageUrl: iosAppDevelopmentPageUrl,
+    pageId: iosAppDevelopmentPageId,
+    serviceId: iosAppDevelopmentServiceId,
+    faqId: iosAppDevelopmentFaqId,
+    breadcrumbId: iosAppDevelopmentBreadcrumbId,
+    serviceName: "iOS App Development Services",
+    serviceType:
+      "Custom iOS mobile app development, native iOS app development, UI/UX design, backend development, QA testing, maintenance, existing app customization, Shopify app development, and hybrid iOS app development",
+    breadcrumbName: "iOS App Development",
+    audienceType:
+      "Web design agencies, ecommerce merchants, and businesses looking to build high-performance custom iOS applications",
+    faqs: iosAppDevelopmentFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: iosAppDevelopmentServices.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createCrossPlatformAppDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.crossPlatformAppDevelopment,
+    pageUrl: crossPlatformAppDevelopmentPageUrl,
+    pageId: crossPlatformAppDevelopmentPageId,
+    serviceId: crossPlatformAppDevelopmentServiceId,
+    faqId: crossPlatformAppDevelopmentFaqId,
+    breadcrumbId: crossPlatformAppDevelopmentBreadcrumbId,
+    serviceName: "Cross-Platform App Development Services",
+    serviceType:
+      "Custom cross-platform app development, React Native app development, Flutter app development, prototyping & wireframes, backend development, QA testing, maintenance, existing app customization, and Shopify cross-platform app development",
+    breadcrumbName: "Cross-Platform App Development",
+    audienceType:
+      "Web design agencies, ecommerce merchants, and businesses looking to build high-performance cross-platform applications for iOS and Android",
+    faqs: crossPlatformAppDevelopmentFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: crossPlatformAppDevelopmentServices.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyMobileAppDevelopmentPageSchema() {
+  const allOffers = [
+    ...shopifyMobileAppBenefits.items,
+    ...shopifyMobileAppFeatures.leftFeatures,
+    ...shopifyMobileAppFeatures.rightFeatures,
+  ];
+
+  return createServicePageSchema({
+    page: pageSeo.shopifyMobileAppDevelopment,
+    pageUrl: shopifyMobileAppDevelopmentPageUrl,
+    pageId: shopifyMobileAppDevelopmentPageId,
+    serviceId: shopifyMobileAppDevelopmentServiceId,
+    faqId: shopifyMobileAppDevelopmentFaqId,
+    breadcrumbId: shopifyMobileAppDevelopmentBreadcrumbId,
+    serviceName: "Shopify Mobile App Development Services",
+    serviceType:
+      "Shopify mobile app development, Shopify AppMaker, turnkey mobile commerce apps, push notifications, customizable mobile themes, seamless mobile checkout, analytics and reporting",
+    breadcrumbName: "Shopify Mobile App Development",
+    audienceType:
+      "Shopify merchants, ecommerce brands, and online store owners looking to transform their Shopify store into a native-like mobile app",
+    faqs: shopifyMobileAppDevelopmentFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: allOffers.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createBigCommerceDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.bigCommerceDevelopment,
+    pageUrl: bigCommerceDevelopmentPageUrl,
+    pageId: bigCommerceDevelopmentPageId,
+    serviceId: bigCommerceDevelopmentServiceId,
+    faqId: bigCommerceDevelopmentFaqId,
+    breadcrumbId: bigCommerceDevelopmentBreadcrumbId,
+    serviceName: "BigCommerce Development Services",
+    serviceType:
+      "Custom BigCommerce store development, theme customization, app integration, private app development, and maintenance",
+    breadcrumbName: "BigCommerce Development",
+    audienceType:
+      "eCommerce merchants, online retailers, and digital agencies seeking expert BigCommerce store development",
+    faqs: bigCommerceDevelopmentFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: bigCommerceDevelopmentServices.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createSiteMapPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": siteMapPageId,
+        url: siteMapPageUrl,
+        name: pageSeo.siteMap.title,
+        description: pageSeo.siteMap.description,
+        datePublished: pageSeo.siteMap.publishedTime,
+        dateModified: pageSeo.siteMap.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": siteMapBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.siteMap.image.path),
+          width: pageSeo.siteMap.image.width,
+          height: pageSeo.siteMap.image.height,
+          caption: pageSeo.siteMap.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": siteMapBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          { "@type": "ListItem", position: 2, name: "Site Map", item: siteMapPageUrl },
+        ],
+      },
+    ],
+  };
 }
 
 export function serializeJsonLd(value: unknown) {

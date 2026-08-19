@@ -23,6 +23,7 @@ export type PortfolioProjectCardProps = {
   platformMark?: PortfolioPlatformMark;
   appLinks?: readonly PortfolioAppLink[];
   categoryClassName?: string;
+  imageAspectClassName?: string;
   eagerImage?: boolean;
 };
 
@@ -130,6 +131,7 @@ export function PortfolioProjectCard({
   platformMark,
   appLinks,
   categoryClassName,
+  imageAspectClassName,
   eagerImage = false,
 }: PortfolioProjectCardProps) {
   const isAppProject = !href && appLinks?.length;
@@ -138,7 +140,10 @@ export function PortfolioProjectCard({
     <article>
       {href ? (
         <a
-          className="group/project relative block w-full overflow-hidden pb-[115%] focus-visible:outline-offset-4"
+          className={cn(
+            "group/project relative block w-full overflow-hidden focus-visible:outline-offset-4",
+            imageAspectClassName ?? "pb-[115%]",
+          )}
           href={href}
           target="_blank"
           rel="nofollow noopener noreferrer"
@@ -151,7 +156,13 @@ export function PortfolioProjectCard({
           {platformMark ? <PlatformMark platformMark={platformMark} /> : null}
         </a>
       ) : (
-        <div className="group/project relative block w-full overflow-hidden pb-[115%]" data-project-app-card>
+        <div
+          className={cn(
+            "group/project relative block w-full overflow-hidden",
+            imageAspectClassName ?? "pb-[115%]",
+          )}
+          data-project-app-card
+        >
           <ProjectImage eagerImage={eagerImage} image={image} imageAlt={imageAlt} />
           <Overlay persistent={Boolean(isAppProject)} />
           {isAppProject ? <AppStoreLinks appLinks={appLinks} /> : null}
