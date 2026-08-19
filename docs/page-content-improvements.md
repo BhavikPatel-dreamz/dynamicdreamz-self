@@ -666,3 +666,59 @@ Primary SEO intent: Shopify mobile app development services, Shopify AppMaker, t
 | Meta description | `Grow your eCommerce brand with expert Shopify mobile app development by Dynamic Dreamz. Mobile apps that boost engagement, retention, and sales.` (143 chars) | Preserved live meta description (143 chars). | Fits 70-160 character budget and captures value proposition. | High | implemented in metadata |
 | Features image alt | `eatures of Shopify App maker Image` (typo in alt text on live page) | `Features of Shopify App maker Image` | Fixes typo in image alt attribute. | Low | implemented cleanly in alt attribute |
 | Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (9 service items) and `FAQPage` (10 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Thank You For Enquiry (`/thank-you-for-enquiry`)
+
+Status: implemented; live-visible content preserved
+Last reviewed: 2026-08-19
+Primary SEO intent: post-inquiry confirmation screen, immediate contact information, and homepage return navigation.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Robots directive | `noindex, nofollow` on live conversion page | Preserved `robots: { index: false, follow: false }` and excluded from `sitemap.xml` | Prevents conversion confirmation screen from indexing in search engines. | High | implemented |
+| Meta title | `Thank You For Enquiry` (22 chars) | `Thank You For Enquiry \| Dynamic Dreamz` (38 chars) | Fits 15-60 character budget while identifying the brand. | High | implemented in metadata |
+| Meta description | `Thank You For Enquiry` (22 chars) | `Thank you for your enquiry. We appreciate your interest and our team will get back to you shortly.` (99 chars) | Fits 70-160 character budget while providing clear confirmation message. | High | implemented in metadata |
+| Structured data | Legacy page had Yoast WebPage graph with breadcrumbs | Emitted `WebPage`, `BreadcrumbList`, `Organization`, and `WebSite` schema. | Connects confirmation screen to the site entity without contradicting visible content. | High | implemented in schema |
+| Back Home CTA | Links to `https://www.dynamicdreamz.com` | Reused `ButtonLink` pointing to slashless `/` | Preserves internal navigation flow without redirects. | High | implemented |
+
+## Web Design (`/web-design`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: web design company, UI/UX design services, custom web design, website design company, UI UX agency India.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Web Design Company – Contact Us for Web Design Services - Shopify Plus Agency & Shopify Platinum Partner \| Dynamic Dreamz` (134 chars) | `Web Design Company & UI/UX Design Services \| Dynamic Dreamz` (59 chars) | Shortened title to fit strict 15-60 char budget and eliminate SERP truncation while maintaining core commercial keywords. | High | implemented in metadata |
+| Meta description | `Dynamic Dreamz Is the Best Web Design Company in India Who Are Familiar With Creative and Modern Web Design Concepts.` (118 chars) | Preserved live meta description (118 chars). | Fits 70-160 character budget and captures value proposition. | High | implemented in metadata |
+| VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (8 service items) and `FAQPage` (11 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Terms of Service (`/terms-of-service`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: Dynamic Dreamz terms of service, terms and conditions, client agreement, website usage policy.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Terms of Service - Shopify Plus Agency & Shopify Platinum Partner \| Dynamic Dreamz` (83 chars) | `Terms of Service \| Dynamic Dreamz` (34 chars) | Shortened title to fit strict 15-60 char budget and eliminate SERP truncation. | High | implemented in metadata |
+| Meta description | `Read the Dynamic Dreamz terms of service outlining user rights, responsibilities, and website usage policies for all visitors and customers.` (143 chars) | Preserved live meta description (143 chars). | Fits 70-160 character budget and captures terms of service scope. | High | implemented in metadata |
+| Structured data | Legacy page had Yoast WebPage graph with breadcrumbs | Emitted `WebPage`, `BreadcrumbList`, `Organization`, and `WebSite` schema. | Connects legal terms of service to the site entity. | High | implemented in schema |
+
+
+## Prestige Theme Customization (`/prestige-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: Prestige theme customization, Prestige Shopify theme customization service, customize Prestige theme Shopify, luxury Shopify theme development, hire Prestige Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Prestige Theme Customization Service \| Dynamic Dreamz` (55 chars) | Preserved live title (55 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Looking for a Prestige Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.` (154 chars) | Preserved live meta description (154 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Benefits copy grammar | `We personalized your theme, ensuring it resonates with your unique brand identity to enhance credibility.` | `We personalize your theme, ensuring it resonates with your unique brand identity to enhance credibility.` | Changes past tense to present tense for consistency. | Low | deferred pending exact visible-copy approval |
+| Benefits copy grammar | `As we know, the number of mobile users is increasing. In that case, the theme should be optimized for mobile users to increase reach and conversion.` | `With mobile shopping driving the majority of ecommerce traffic, we ensure your Prestige theme is fully optimized for mobile devices to maximize reach and conversions.` | Improves professional tone and clarity. | Low | deferred pending exact visible-copy approval |
+| FAQ question grammar | `How much does it cost of Prestige Theme Customization Service?` | `How much does Prestige Theme Customization Service cost?` | Fixes grammatical phrasing in FAQ heading. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+

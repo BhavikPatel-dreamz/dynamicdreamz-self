@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { FaqAccordion } from "@/components/ui/faq-accordion";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import { formatBrText } from "@/lib/text-formatting";
 
 export type FaqSectionProps = {
   items: readonly FaqAccordionItem[];
@@ -39,11 +40,11 @@ export function FaqSection({
       <Container>
         <header className={headerClassName}>
           <h2 className={titleClassName} id={titleId}>
-            {heading}
+            {formatBrText(heading, "max-[1199px]:hidden")}
           </h2>
           {description ? (
             <p className={descriptionClassName}>
-              {description}
+              {formatBrText(description, "max-[1199px]:hidden")}
             </p>
           ) : null}
         </header>

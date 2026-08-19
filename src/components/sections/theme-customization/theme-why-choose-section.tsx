@@ -1,0 +1,80 @@
+import Image from "next/image";
+import { Container } from "@/components/ui/container";
+import { formatBrText } from "@/lib/text-formatting";
+
+export type ThemeWhyChooseItem = {
+  title: string;
+  description: string;
+  icon: string;
+  iconAlt: string;
+};
+
+export type ThemeWhyChooseSectionProps = {
+  content: {
+    title: string;
+    subtitle: string;
+    items: readonly ThemeWhyChooseItem[];
+  };
+  className?: string;
+  id?: string;
+};
+
+export function ThemeWhyChooseSection({
+  content,
+  className = "why_dynamic_dreamz_sec dev mt-20 pb-20 pt-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] two-column-icon-text-bg max-[991px]:mt-12 max-[991px]:py-14 max-[767px]:mt-10 max-[767px]:py-10",
+  id = "why-choose-dynamic-dreamz",
+}: ThemeWhyChooseSectionProps) {
+  return (
+    <section className={className} id={id}>
+      <Container>
+        <div className="heading-text mx-auto max-w-[850px] text-center">
+          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+            {formatBrText(content.title, "max-[1199px]:hidden")}
+          </h2>
+          <p className="mt-2.5 text-base font-normal leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
+            {formatBrText(content.subtitle, "max-[1199px]:hidden")}
+          </p>
+        </div>
+
+        <div className="why_dynamic_dreamz_main mt-[60px] max-[991px]:mt-10">
+          <ul className="grid grid-cols-2 max-[991px]:grid-cols-1 list-none p-0 m-0">
+            {content.items.map((item, index) => {
+              const isEvenCol = index % 2 === 0;
+              const isLastRow = index >= content.items.length - 2;
+              const isLastItem = index === content.items.length - 1;
+
+              return (
+                <li
+                  className={`flex items-start p-[51px] max-[1199px]:p-8 max-[767px]:p-5 border-black/5 ${
+                    isEvenCol ? "border-r max-[991px]:border-r-0" : ""
+                  } ${!isLastRow ? "border-b" : "max-[991px]:border-b"} ${
+                    isLastItem ? "max-[991px]:border-b-0" : ""
+                  }`}
+                  key={item.title}
+                >
+                  <span className="icon mr-5 flex size-[66px] flex-shrink-0 items-center justify-center max-[767px]:size-[50px] max-[767px]:mr-3.5">
+                    <Image
+                      alt={item.iconAlt}
+                      className="size-[66px] object-contain max-[767px]:size-[50px]"
+                      height={66}
+                      src={item.icon}
+                      width={66}
+                    />
+                  </span>
+                  <div className="text flex-1">
+                    <h3 className="mb-[5px] font-sans text-[18px] font-bold leading-[30.6px] tracking-[0.36px] text-[#020202]">
+                      {formatBrText(item.title, "max-[767px]:hidden")}
+                    </h3>
+                    <p className="text-base font-medium leading-[27.2px] tracking-[0.32px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
+                      {formatBrText(item.description, "max-[767px]:hidden")}
+                    </p>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </Container>
+    </section>
+  );
+}

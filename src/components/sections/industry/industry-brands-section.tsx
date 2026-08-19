@@ -2,6 +2,7 @@ import { ClientLogoSlider } from "@/components/ui/client-logo-slider";
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import { industryBrandLogos } from "@/content/industries";
 import { cn } from "@/lib/class-names";
+import { formatBrText } from "@/lib/text-formatting";
 
 type IndustryBrandsSectionProps = {
   content: {
@@ -48,7 +49,9 @@ export function IndustryBrandsSection({
             className="m-0 font-[Montserrat,sans-serif] text-[25px] leading-[33px] font-semibold tracking-[-.02em] text-ink"
             id={`${content.slug}-brands-title`}
           >
-            {heading ?? (
+            {heading ? (
+              formatBrText(heading, "max-[991px]:hidden")
+            ) : (
               <>
                 Trusted by <br className="max-[991px]:hidden" /> Leading Brands
               </>

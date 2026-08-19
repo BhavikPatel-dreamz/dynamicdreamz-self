@@ -50,6 +50,7 @@ import {
   shopifyMigrationServices,
 } from "@/content/shopify-migration";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
+import { prestigeThemeCustomizationContent } from "@/content/prestige-theme-customization";
 import {
   woocommerceDevelopmentFaqs,
   woocommerceDevelopmentServices,
@@ -83,6 +84,10 @@ import {
   bigCommerceDevelopmentFaqs,
   bigCommerceDevelopmentServices,
 } from "@/content/bigcommerce-development";
+import {
+  webDesignFaqs,
+  webDesignServices,
+} from "@/content/web-design";
 import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -209,6 +214,11 @@ const shopifyThemeCustomizationPageId = `${shopifyThemeCustomizationPageUrl}#web
 const shopifyThemeCustomizationServiceId = `${shopifyThemeCustomizationPageUrl}#service`;
 const shopifyThemeCustomizationFaqId = `${shopifyThemeCustomizationPageUrl}#faq`;
 const shopifyThemeCustomizationBreadcrumbId = `${shopifyThemeCustomizationPageUrl}#breadcrumb`;
+const prestigeThemeCustomizationPageUrl = absoluteUrl(pageSeo.prestigeThemeCustomization.path);
+const prestigeThemeCustomizationPageId = `${prestigeThemeCustomizationPageUrl}#webpage`;
+const prestigeThemeCustomizationServiceId = `${prestigeThemeCustomizationPageUrl}#service`;
+const prestigeThemeCustomizationFaqId = `${prestigeThemeCustomizationPageUrl}#faq`;
+const prestigeThemeCustomizationBreadcrumbId = `${prestigeThemeCustomizationPageUrl}#breadcrumb`;
 const shopifyDevelopmentAgencyPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentAgency.path);
 const shopifyDevelopmentAgencyPageId = `${shopifyDevelopmentAgencyPageUrl}#webpage`;
 const shopifyDevelopmentAgencyServiceId = `${shopifyDevelopmentAgencyPageUrl}#service`;
@@ -257,6 +267,17 @@ const bigCommerceDevelopmentBreadcrumbId = `${bigCommerceDevelopmentPageUrl}#bre
 const siteMapPageUrl = absoluteUrl(pageSeo.siteMap.path);
 const siteMapPageId = `${siteMapPageUrl}#webpage`;
 const siteMapBreadcrumbId = `${siteMapPageUrl}#breadcrumb`;
+const thankYouForEnquiryPageUrl = absoluteUrl(pageSeo.thankYouForEnquiry.path);
+const thankYouForEnquiryPageId = `${thankYouForEnquiryPageUrl}#webpage`;
+const thankYouForEnquiryBreadcrumbId = `${thankYouForEnquiryPageUrl}#breadcrumb`;
+const webDesignPageUrl = absoluteUrl(pageSeo.webDesign.path);
+const webDesignPageId = `${webDesignPageUrl}#webpage`;
+const webDesignServiceId = `${webDesignPageUrl}#service`;
+const webDesignFaqId = `${webDesignPageUrl}#faq`;
+const webDesignBreadcrumbId = `${webDesignPageUrl}#breadcrumb`;
+const termsOfServicePageUrl = absoluteUrl(pageSeo.termsOfService.path);
+const termsOfServicePageId = `${termsOfServicePageUrl}#webpage`;
+const termsOfServiceBreadcrumbId = `${termsOfServicePageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -886,6 +907,56 @@ export function createPrivacyPolicyPageSchema() {
             position: 2,
             name: "Privacy and Cookies Policy",
             item: privacyPolicyPageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+export function createTermsOfServicePageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": termsOfServicePageId,
+        url: termsOfServicePageUrl,
+        name: pageSeo.termsOfService.title,
+        description: pageSeo.termsOfService.description,
+        datePublished: pageSeo.termsOfService.publishedTime,
+        dateModified: pageSeo.termsOfService.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": termsOfServiceBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.termsOfService.image.path),
+          width: pageSeo.termsOfService.image.width,
+          height: pageSeo.termsOfService.image.height,
+          caption: pageSeo.termsOfService.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": termsOfServiceBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Terms of Service",
+            item: termsOfServicePageUrl,
           },
         ],
       },
@@ -1761,6 +1832,30 @@ export function createShopifyThemeCustomizationPageSchema() {
   });
 }
 
+export function createPrestigeThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.prestigeThemeCustomization,
+    pageUrl: prestigeThemeCustomizationPageUrl,
+    pageId: prestigeThemeCustomizationPageId,
+    serviceId: prestigeThemeCustomizationServiceId,
+    faqId: prestigeThemeCustomizationFaqId,
+    breadcrumbId: prestigeThemeCustomizationBreadcrumbId,
+    serviceName: "Prestige Theme Customization Service",
+    serviceType: "Prestige Shopify theme customization, luxury store design, Liquid development, feature integration, and speed optimization",
+    breadcrumbName: "Prestige Theme Customization Service",
+    audienceType:
+      "Luxury eCommerce brands, premium Shopify merchants, and digital agencies seeking expert Prestige theme customization",
+    faqs: prestigeThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: prestigeThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
 export function createShopifyDevelopmentAgencyPageSchema() {
   return createServicePageSchema({
     page: pageSeo.shopifyDevelopmentAgency,
@@ -1996,6 +2091,43 @@ export function createBigCommerceDevelopmentPageSchema() {
   });
 }
 
+export function createWebDesignPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.webDesign,
+    pageUrl: webDesignPageUrl,
+    pageId: webDesignPageId,
+    serviceId: webDesignServiceId,
+    faqId: webDesignFaqId,
+    breadcrumbId: webDesignBreadcrumbId,
+    serviceName: "UI/UX Design Services",
+    serviceType:
+      "Website design, mobile app design, wireframing, UI/UX strategy development, prototyping, UI design, and UI animation",
+    breadcrumbName: "Web Design Company – Contact Us for Web Design Services",
+    audienceType:
+      "Businesses, eCommerce brands, startups, and enterprises seeking creative and modern UI/UX design and website design services",
+    faqs: webDesignFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        ...(item.listPosition === "before" && item.listItems
+          ? item.listItems.map((li) => `${li.label ? `${li.label} ` : ""}${li.text}`)
+          : []),
+        item.answer,
+        ...(item.listPosition !== "before" && item.listItems
+          ? item.listItems.map((li) => `${li.label ? `${li.label} ` : ""}${li.text}`)
+          : []),
+        item.secondaryAnswer,
+      ]
+        .filter(Boolean)
+        .join(" "),
+    })),
+    offers: webDesignServices.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
 export function createSiteMapPageSchema() {
   return {
     "@context": "https://schema.org",
@@ -2035,6 +2167,51 @@ export function createSiteMapPageSchema() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
           { "@type": "ListItem", position: 2, name: "Site Map", item: siteMapPageUrl },
+        ],
+      },
+    ],
+  };
+}
+
+export function createThankYouForEnquiryPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": thankYouForEnquiryPageId,
+        url: thankYouForEnquiryPageUrl,
+        name: pageSeo.thankYouForEnquiry.title,
+        description: pageSeo.thankYouForEnquiry.description,
+        datePublished: pageSeo.thankYouForEnquiry.publishedTime,
+        dateModified: pageSeo.thankYouForEnquiry.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": thankYouForEnquiryBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.thankYouForEnquiry.image.path),
+          width: pageSeo.thankYouForEnquiry.image.width,
+          height: pageSeo.thankYouForEnquiry.image.height,
+          caption: pageSeo.thankYouForEnquiry.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": thankYouForEnquiryBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          { "@type": "ListItem", position: 2, name: "Thank You For Enquiry", item: thankYouForEnquiryPageUrl },
         ],
       },
     ],

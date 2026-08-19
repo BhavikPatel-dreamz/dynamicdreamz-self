@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
 import { hireShopifyServices } from "@/content/hire-shopify-developers";
+import { formatBrText } from "@/lib/text-formatting";
 
 export type ShopifyServicesSectionContent = {
   heading: string;
@@ -24,10 +25,10 @@ export function ShopifyServicesSection({
       <Container>
         <div className="mx-auto max-w-[780px] text-center">
           <h2 className="font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
-            {content.heading}
+            {formatBrText(content.heading, "max-[1199px]:hidden")}
           </h2>
           <p className="mt-2.5 text-base leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
-            {content.description}
+            {formatBrText(content.description, "max-[1199px]:hidden")}
           </p>
         </div>
 
@@ -39,10 +40,10 @@ export function ShopifyServicesSection({
             >
               <Image className="h-[50px] w-[66px] object-contain object-left" src={item.icon} alt={item.iconAlt} width={66} height={50} />
               <h3 className="mt-[23px] mb-5 font-sans text-base leading-[27px] font-bold tracking-[0.32px] text-ink max-[1199px]:mt-[15px] max-[1199px]:mb-2.5">
-                {item.title}
+                {formatBrText(item.title, "max-[767px]:hidden")}
               </h3>
               <p className="text-base leading-[27px] font-medium tracking-[0.32px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
-                {item.description}
+                {formatBrText(item.description, "max-[767px]:hidden")}
               </p>
             </article>
           ))}
