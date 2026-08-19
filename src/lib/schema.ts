@@ -32,6 +32,10 @@ import {
 } from "@/content/white-label-website-design";
 import { caseStudiesContent } from "@/content/case-studies";
 import { shopifyAppsContent } from "@/content/shopify-apps";
+import {
+  shopifyDevelopmentAgencyFaqs,
+  shopifyDevelopmentAgencyServices,
+} from "@/content/shopify-development-agency";
 import { shopifyExpertsContent } from "@/content/shopify-experts";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
 import {
@@ -154,6 +158,11 @@ const shopifyThemeCustomizationPageId = `${shopifyThemeCustomizationPageUrl}#web
 const shopifyThemeCustomizationServiceId = `${shopifyThemeCustomizationPageUrl}#service`;
 const shopifyThemeCustomizationFaqId = `${shopifyThemeCustomizationPageUrl}#faq`;
 const shopifyThemeCustomizationBreadcrumbId = `${shopifyThemeCustomizationPageUrl}#breadcrumb`;
+const shopifyDevelopmentAgencyPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentAgency.path);
+const shopifyDevelopmentAgencyPageId = `${shopifyDevelopmentAgencyPageUrl}#webpage`;
+const shopifyDevelopmentAgencyServiceId = `${shopifyDevelopmentAgencyPageUrl}#service`;
+const shopifyDevelopmentAgencyFaqId = `${shopifyDevelopmentAgencyPageUrl}#faq`;
+const shopifyDevelopmentAgencyBreadcrumbId = `${shopifyDevelopmentAgencyPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1602,6 +1611,25 @@ export function createShopifyThemeCustomizationPageSchema() {
       title: item.title,
       description: item.description,
     })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentAgencyPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentAgency,
+    pageUrl: shopifyDevelopmentAgencyPageUrl,
+    pageId: shopifyDevelopmentAgencyPageId,
+    serviceId: shopifyDevelopmentAgencyServiceId,
+    faqId: shopifyDevelopmentAgencyFaqId,
+    breadcrumbId: shopifyDevelopmentAgencyBreadcrumbId,
+    serviceName: "Shopify Development Services",
+    serviceType: "Custom Shopify store development, theme customization, migration, app integration, and maintenance",
+    breadcrumbName: "Shopify Development Agency",
+    audienceType:
+      "DTC brands, B2B merchants, store owners, and digital agencies seeking comprehensive Shopify development services",
+    faqs: shopifyDevelopmentAgencyFaqs,
+    offers: shopifyDevelopmentAgencyServices.items,
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }

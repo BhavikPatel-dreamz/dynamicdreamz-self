@@ -12,15 +12,19 @@ function slidesForWidth(width: number) {
   return width < 768 ? 1 : 2;
 }
 
+export type TestimonialItem = (typeof shopifyPlusAgencyTestimonials.items)[number];
+
 type HappyClientSectionProps = {
   heading?: string;
   description?: string;
+  items?: readonly TestimonialItem[];
   className?: string;
 };
 
 export function HappyClientSection({
   heading = shopifyPlusAgencyTestimonials.heading,
   description = shopifyPlusAgencyTestimonials.description,
+  items = shopifyPlusAgencyTestimonials.items,
   className = "happy-client-sec pt-0 pb-20 overflow-hidden max-[991px]:pb-[50px]",
 }: HappyClientSectionProps = {}) {
   const [slidesToShow, setSlidesToShow] = useState(2);
@@ -75,7 +79,7 @@ export function HappyClientSection({
         </div>
         <div className="-mx-[12.5px] overflow-hidden max-[767px]:-mx-[5px]" aria-label="Client video testimonials">
           <Slider {...settings} key={`${slidesToShow}`}>
-            {shopifyPlusAgencyTestimonials.items.map((testimonial) => (
+            {items.map((testimonial) => (
               <div className="px-[12.5px] max-[767px]:px-[5px]" key={testimonial.name}>
                 <div className="h-full overflow-hidden rounded-[15px] border border-[#d9d9d9] bg-white">
                   <div className="relative min-h-[324px] max-[1199px]:min-h-[240px]">

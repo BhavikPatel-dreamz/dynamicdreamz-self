@@ -734,6 +734,34 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  shopifyDevelopmentAgency: {
+    path: "/shopify-development-agency",
+    title: "Shopify Development Agency & Services | Dynamic Dreamz",
+    description:
+      "Expert Shopify development services by Dynamic Dreamz: custom store design, app integration, migration, speed optimization and dedicated ongoing support.",
+    keywords: [
+      "Shopify development agency",
+      "Shopify development services",
+      "Shopify development company",
+      "custom Shopify store",
+      "Shopify migration",
+      "Shopify maintenance",
+      "Figma to Shopify",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-02T09:33:21+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development Agency & Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

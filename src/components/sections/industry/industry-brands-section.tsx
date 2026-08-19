@@ -1,6 +1,8 @@
 import { ClientLogoSlider } from "@/components/ui/client-logo-slider";
+import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import { industryBrandLogos } from "@/content/industries";
 import { cn } from "@/lib/class-names";
+
 type IndustryBrandsSectionProps = {
   content: {
     slug: string;
@@ -10,6 +12,7 @@ type IndustryBrandsSectionProps = {
     ariaLabel?: string;
   };
   heading?: string;
+  items?: readonly ClientLogoSliderItem[];
   mobileSpacing?: "standard" | "spacious";
   singleLineTitleAtTablet?: boolean;
 };
@@ -17,6 +20,7 @@ type IndustryBrandsSectionProps = {
 export function IndustryBrandsSection({
   content,
   heading,
+  items = industryBrandLogos,
   mobileSpacing = "standard",
   singleLineTitleAtTablet = false,
 }: IndustryBrandsSectionProps) {
@@ -55,7 +59,7 @@ export function IndustryBrandsSection({
         <div className="w-[69%] max-[1199px]:w-[70%] max-[991px]:w-full">
           <ClientLogoSlider
             ariaLabel={ariaLabel}
-            items={industryBrandLogos}
+            items={items}
             variant="industry"
           />
         </div>
