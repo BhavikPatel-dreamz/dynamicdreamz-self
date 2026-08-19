@@ -14,7 +14,6 @@ type IndustryBrandsSectionProps = {
   heading?: string;
   items?: readonly ClientLogoSliderItem[];
   mobileSpacing?: "standard" | "spacious";
-  singleLineTitleAtTablet?: boolean;
 };
 
 export function IndustryBrandsSection({
@@ -22,7 +21,6 @@ export function IndustryBrandsSection({
   heading,
   items = industryBrandLogos,
   mobileSpacing = "standard",
-  singleLineTitleAtTablet = false,
 }: IndustryBrandsSectionProps) {
   const hasSpaciousMobileLayout = mobileSpacing === "spacious";
   const ariaLabel = content.brands?.ariaLabel ?? content.ariaLabel ?? "Trusted Brands";
@@ -50,9 +48,6 @@ export function IndustryBrandsSection({
             {heading ?? (
               <>
                 Trusted by <br className="max-[991px]:hidden" /> Leading Brands
-                Trusted by{" "}
-                <br className={singleLineTitleAtTablet ? "max-[1199px]:hidden" : undefined} />
-                Leading Brands
               </>
             )}
           </h2>

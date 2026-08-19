@@ -87,7 +87,7 @@ export function HiringHeroSection({
         </div>
 
         {!hideReview && (
-          <div className="review-wrap mx-auto mt-[55px] w-[532px] max-w-full max-[991px]:mt-[30px] max-[767px]:w-[275px]">
+          <div className="review-wrap mx-auto mt-[55px] w-[532px] max-w-full max-[991px]:mt-[30px] max-[767px]:mt-[39px] max-[767px]:w-[275px]">
             <ReviewAnimation />
           </div>
         )}

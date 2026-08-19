@@ -70,3 +70,28 @@
 - Headings, counters, CTA labels, process steps, proof grids, portfolio names, testimonial copy, and FAQ wording preserve the live-visible content.
 - No horizontal overflow or clipped text is visible at 1440px, 768px, or 390px.
 - Remaining visual differences are limited to the migrated shared header/footer/contact widget and the intentional removal of legacy lazy-loading gaps.
+
+## Review Animation Owner Comparison (2026-08-19)
+
+- Owner reference: attached side-by-side crop, live on the left and local on the
+  right, showing the mobile Clutch review state.
+- Confirmed matching geometry: centered 275px circle, review label, five-star
+  row, rating text, and red review pill treatment.
+- Identified mismatch: the post-merge canonical review SVG has a compact 69px
+  intrinsic width, so `width: auto` rendered the local Clutch wordmark at about
+  half the live size even though the review data retains the inspected live
+  205x57 dimensions. The same intrinsic-size risk applies to the Upwork and
+  GoodFirms states.
+- Correction: enforce each platform's documented wordmark width from review
+  data and retain the live 130px mobile maximum. This restores the live logo
+  scale and recenters the complete content stack without changing the circle,
+  animation timing, review values, or surrounding hero layout.
+- Remaining check: recapture all three rotating platform states after merge
+  completion to confirm their platform-specific aspect ratios.
+- Follow-up GoodFirms comparison measured the remaining mobile spacing delta:
+  the local label-to-wordmark gap was about 7px too small and the
+  wordmark-to-rating gap about 21px too small. The rating-to-pill gap already
+  matched. Increasing only those two internal margins recenters the complete
+  stack within the 275px circle. The hiring-page mobile review wrapper also
+  receives a 9px top-offset correction to match the circle's live vertical
+  position in the supplied crop.
