@@ -6,6 +6,8 @@ import { Container } from "@/components/ui/container";
 import { shopifyPlusAgencyServices } from "@/content/shopify-plus-agency";
 import { cn } from "@/lib/class-names";
 
+import { formatBrText } from "@/lib/text-formatting";
+
 export type AgencyServiceItem = {
   icon: string;
   iconAlt: string;
@@ -27,40 +29,43 @@ export type AgencyServicesContent = {
 
 export type AgencyServicesSectionProps = {
   content?: AgencyServicesContent;
+  headerLayout?: "split" | "centered";
+  className?: string;
+  id?: string;
 };
 
 export function AgencyServicesSection({
   content = shopifyPlusAgencyServices,
+  headerLayout = "split",
+  className = "what-we-provide-sec pt-20 pb-0",
+  id = "shopify-services",
 }: AgencyServicesSectionProps) {
   return (
-    <section className="what-we-provide-sec pt-20 pb-0" data-section="services">
+    <section className={className} data-section="services" id={id}>
       <Container>
-        <div className="mb-5 flex items-center justify-between max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:text-center">
-          <div className="w-[calc(41%-30px)] px-[15px] max-[991px]:w-full max-[991px]:p-0">
-            <h2 className="m-0 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:mb-[30px]">
-              {content.heading.includes("<br>")
-                ? content.heading.split("<br>").map((line, index, lines) => (
-                    <span key={line}>
-                      {line}
-                      {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}
-                    </span>
-                  ))
-                : content.heading}
+        {headerLayout === "centered" ? (
+          <div className="heading-text mx-auto max-w-[780px] text-center">
+            <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+              {formatBrText(content.heading, "max-[1199px]:hidden")}
             </h2>
-          </div>
-          <div className="w-[calc(55%-30px)] px-[15px] max-[991px]:w-full max-[991px]:p-0">
-            <p className="mb-6 text-[18px] font-medium leading-[34.2px] text-muted">
-              {content.description.includes("<br>")
-                ? content.description.split("<br>").map((line, index, lines) => (
-                    <span key={line}>
-                      {line}
-                      {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}
-                    </span>
-                  ))
-                : content.description}
+            <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
+              {formatBrText(content.description, "max-[1199px]:hidden")}
             </p>
           </div>
-        </div>
+        ) : (
+          <div className="mb-5 flex items-center justify-between max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:text-center">
+            <div className="w-[calc(41%-30px)] px-[15px] max-[991px]:w-full max-[991px]:p-0">
+              <h2 className="m-0 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:mb-[30px]">
+                {formatBrText(content.heading, "max-[1199px]:hidden")}
+              </h2>
+            </div>
+            <div className="w-[calc(55%-30px)] px-[15px] max-[991px]:w-full max-[991px]:p-0">
+              <p className="mb-6 text-[18px] font-medium leading-[34.2px] text-muted">
+                {formatBrText(content.description, "max-[1199px]:hidden")}
+              </p>
+            </div>
+          </div>
+        )}
         <div className="mt-[50px]">
           <div className="-mx-2 mb-[25px] flex flex-wrap justify-center">
             {content.items.map((service) => {

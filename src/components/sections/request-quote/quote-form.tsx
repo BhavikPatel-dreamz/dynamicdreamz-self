@@ -38,7 +38,21 @@ function FieldLabel({
   );
 }
 
-export function QuoteForm() {
+export type QuoteFormProps = {
+  title?: string;
+  showTitle?: boolean;
+  className?: string;
+  submitLabel?: string;
+  submitButtonClassName?: string;
+};
+
+export function QuoteForm({
+  title = requestQuoteContent.form.title,
+  showTitle = true,
+  className = "right-col w-1/2 py-[150px] pl-[46px] pb-[110px] max-[1199px]:pl-[30px] max-[991px]:w-full max-[991px]:pt-[150px] max-[991px]:pl-0 max-[991px]:pb-[50px] max-[767px]:pt-[145px] max-[767px]:pb-[50px]",
+  submitLabel = "submit inquiry",
+  submitButtonClassName,
+}: QuoteFormProps = {}) {
   const formRef = useRef<HTMLFormElement>(null);
   const [state, formAction, isPending] = useActionState(
     submitQuoteForm,
@@ -64,10 +78,12 @@ export function QuoteForm() {
   }, []);
 
   return (
-    <div className="right-col w-1/2 py-[150px] pl-[46px] pb-[110px] max-[1199px]:pl-[30px] max-[991px]:w-full max-[991px]:pt-[150px] max-[991px]:pl-0 max-[991px]:pb-[50px] max-[767px]:pt-[145px] max-[767px]:pb-[50px]">
-      <h2 className="mb-6 font-montserrat text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:text-[29px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px] max-[991px]:mb-10 max-[359px]:text-2xl">
-        {requestQuoteContent.form.title}
-      </h2>
+    <div className={className}>
+      {showTitle && (
+        <h2 className="mb-6 font-montserrat text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:text-[29px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px] max-[991px]:mb-10 max-[359px]:text-2xl">
+          {title}
+        </h2>
+      )}
 
       <form ref={formRef} action={formAction} aria-label="Request a quote form" className="max-[767px]:relative max-[767px]:-top-0.5">
         <input
@@ -198,7 +214,10 @@ export function QuoteForm() {
 
         <div>
           <button
-            className="group/quote-submit relative inline-flex min-h-[49px] cursor-pointer items-center justify-center overflow-hidden rounded-[30px] border-2 border-brand-red lg:px-8 px-6 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-600 hover:border-[#4f4f4f] hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70"
+            className={
+              submitButtonClassName ??
+              "group/quote-submit relative inline-flex min-h-[49px] cursor-pointer items-center justify-center overflow-hidden rounded-[30px] border-2 border-brand-red lg:px-8 px-6 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-600 hover:border-[#4f4f4f] hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70"
+            }
             type="submit"
             disabled={isPending}
           >
@@ -207,7 +226,7 @@ export function QuoteForm() {
               aria-hidden="true"
             />
             <span className="relative z-1">
-              {isPending ? "sending inquiry" : "submit inquiry"}
+              {isPending ? "sending inquiry" : submitLabel}
             </span>
           </button>
         </div>

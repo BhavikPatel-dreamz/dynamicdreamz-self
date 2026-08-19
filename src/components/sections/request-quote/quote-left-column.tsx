@@ -44,13 +44,14 @@ export function QuoteLeftColumn() {
           >
             <div className="review-link relative rounded-[9px] bg-[linear-gradient(to_right,#15c064,#00d1ff)] p-[1px] after:absolute after:inset-0 after:-z-10 after:rounded-[9px] after:bg-black/10 after:blur-[9px] after:content-['']">
               <a
-                className="flex h-full w-full items-center justify-center rounded-[9px] bg-white px-2.5 py-[19.5px] transition-opacity hover:opacity-90 max-[1199px]:h-[76px] max-[1199px]:py-[15px]"
+                className="flex lg:h-21 h-19 w-full items-center justify-center rounded-[9px] bg-white px-2.5 py-[19.5px] transition-opacity hover:opacity-90  max-[1199px]:py-[15px]"
                 href={badge.href}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
                 aria-label={badge.ariaLabel}
               >
                 <Image
+                  className="w-auto object-contain max-h-full"
                   src={badge.image}
                   alt={badge.alt}
                   width={badge.width}

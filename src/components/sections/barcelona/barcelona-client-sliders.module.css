@@ -1,0 +1,36 @@
+.marqueeContainer {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.trackLeft {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 25s linear infinite;
+  will-change: transform;
+}
+
+.trackRight {
+  display: flex;
+  width: max-content;
+  animation: scrollRight 25s linear infinite;
+  will-change: transform;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
