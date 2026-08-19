@@ -26,16 +26,16 @@ export function IndustryBrandsSection({
   return (
     <section
       className={cn(
-        "h-[164px] overflow-hidden bg-[#fbf7ed] py-10",
+        "our-client-sec dev h-[164px] overflow-hidden bg-[#fbf7ed] py-10",
         hasSpaciousMobileLayout ? "max-[991px]:h-[270px]" : "max-[991px]:h-[217px]",
       )}
       aria-labelledby={`${content.slug}-brands-title`}
       data-industry="brands"
     >
-      <div className="flex items-center max-[991px]:block">
+      <div className="main-wrapper flex items-center max-[991px]:block">
         <div
           className={cn(
-            "w-[31%] pl-[calc((100%-1140px)/2)] min-[1400px]:pl-[calc((100%-1320px)/2)] max-[1199px]:w-[30%] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991px]:w-full max-[991px]:p-0 max-[991px]:text-center",
+            "left-col w-[31%] pl-[calc((100%-1140px)/2)] max-[1199px]:w-[30%] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991px]:w-full max-[991px]:p-0 max-[991px]:text-center",
             hasSpaciousMobileLayout ? "max-[991px]:mb-10" : "max-[991px]:mb-5",
           )}
         >
@@ -45,12 +45,12 @@ export function IndustryBrandsSection({
           >
             {heading ?? (
               <>
-                Trusted by <br /> Leading Brands
+                Trusted by <br className="max-[991px]:hidden" /> Leading Brands
               </>
             )}
           </h2>
         </div>
-        <div className="w-[69%] max-[1199px]:w-[70%] max-[991px]:w-full">
+        <div className="right-col w-[69%] max-[1199px]:w-[70%] max-[991px]:w-full">
           <ClientLogoSlider
             ariaLabel={ariaLabel}
             items={industryBrandLogos}

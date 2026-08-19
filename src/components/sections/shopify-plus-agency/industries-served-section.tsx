@@ -72,7 +72,7 @@ export function IndustriesServedSection({
           <h2 className="mb-2.5 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {content.heading}
           </h2>
-          <p className="mx-auto max-w-[800px] text-[18px] font-medium leading-[34.2px] text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
+          <p className="mx-auto max-w-[800px] text-[18px] font-medium leading-[34.2px] text-muted max-[991px]:text-base max-[991px]:leading-[25px]">
             {content.description.split("<br>").map((line, index, lines) => (
               <span key={line}>
                 {line}

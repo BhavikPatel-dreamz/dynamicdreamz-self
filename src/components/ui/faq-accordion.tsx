@@ -90,7 +90,7 @@ export function FaqAccordion({
                 <div className="px-8 pb-6 max-[1199px]:px-5 max-[1199px]:pb-5">
                   <p
                     className={cn(
-                      "text-base leading-[30.4px] font-normal text-muted max-[1199px]:text-sm max-[1199px]:leading-[26px]",
+                      "text-base leading-[30.4px] font-normal text-muted last:mb-0 max-[1199px]:text-sm max-[1199px]:leading-[26px]",
                       item.listItems?.length ? "mb-3" : "mb-6",
                       answerClassName,
                     )}

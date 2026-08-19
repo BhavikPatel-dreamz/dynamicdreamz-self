@@ -1,16 +1,9 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import Slider, { type Settings } from "react-slick";
 
 import { Container } from "@/components/ui/container";
+import { HorizontalDragScroll } from "@/components/ui/horizontal-drag-scroll";
 import { VideoDialog } from "@/components/ui/video-dialog";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
-
-function slidesForWidth(width: number) {
-  return width < 768 ? 1 : 2;
-}
 
 type HappyClientSectionProps = {
   heading?: string;
@@ -23,51 +16,14 @@ export function HappyClientSection({
   description = shopifyPlusAgencyTestimonials.description,
   className = "happy-client-sec pt-0 pb-20 overflow-hidden max-[991px]:pb-[50px]",
 }: HappyClientSectionProps = {}) {
-  const [slidesToShow, setSlidesToShow] = useState(2);
-
-  useEffect(() => {
-    const update = () => setSlidesToShow(slidesForWidth(window.innerWidth));
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
-  const settings: Settings = {
-    arrows: false,
-    autoplay: false,
-    centerMode: false,
-    dots: false,
-    draggable: true,
-    infinite: false,
-    pauseOnHover: false,
-    slidesToScroll: 1,
-    slidesToShow,
-    speed: 500,
-    swipe: true,
-    swipeToSlide: true,
-    touchMove: true,
-    responsive: [
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1,
-          centerMode: false,
-        },
-      },
-    ],
-  };
-
   return (
     <section className={className} data-section="testimonials" id="client-testimonials">
       <Container>
         <div className="mb-[50px] text-center max-[767px]:mb-[30px]">
-          <h2 className="mb-2.5 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
-        <div className="mb-[50px] text-center">
-          <h2 className="mb-2.5 font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="mb-6 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {heading}
           </h2>
-          <p className="mx-auto max-w-[800px] text-[18px] font-medium leading-[34.2px] text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
-          <p className="mb-6 text-[18px] leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[30px] max-[767px]:text-sm max-[767px]:leading-[25px]">
+          <p className="mx-auto max-w-[800px] text-[18px] font-medium leading-[34.2px] text-muted max-[991px]:text-base max-[991px]:leading-[25px]">
             {description.split("<br>").map((line, index, lines) => (
               <span key={line}>
                 {line}
@@ -76,11 +32,18 @@ export function HappyClientSection({
             ))}
           </p>
         </div>
-        <div className="-mx-[12.5px] overflow-hidden max-[767px]:-mx-[5px]" aria-label="Client video testimonials">
-          <Slider {...settings} key={`${slidesToShow}`}>
-            {shopifyPlusAgencyTestimonials.items.map((testimonial) => (
-              <div className="px-[12.5px] max-[767px]:px-[5px]" key={testimonial.name}>
-                <div className="h-full overflow-hidden rounded-[15px] border border-[#d9d9d9] bg-white">
+        <HorizontalDragScroll
+          ariaLabel="Client video testimonials"
+          className="relative left-1/2 w-screen -translate-x-1/2 snap-x snap-mandatory [scroll-padding-inline-start:16px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[576px]:[scroll-padding-inline-start:calc((100vw-540px)/2+16px)] min-[768px]:[scroll-padding-inline-start:calc((100vw-720px)/2+20px)] min-[992px]:[scroll-padding-inline-start:calc((100vw-960px)/2+20px)] min-[1200px]:[scroll-padding-inline-start:calc((100vw-1180px)/2+20px)] min-[1400px]:[scroll-padding-inline-start:calc((100vw-1360px)/2+20px)]"
+          trackClassName="flex w-max items-stretch gap-2.5 px-4 min-[576px]:px-[calc((100vw-540px)/2+16px)] min-[768px]:gap-[25px] min-[768px]:px-[calc((100vw-720px)/2+20px)] min-[992px]:px-[calc((100vw-960px)/2+20px)] min-[1200px]:px-[calc((100vw-1180px)/2+20px)] min-[1400px]:px-[calc((100vw-1360px)/2+20px)]"
+        >
+          {shopifyPlusAgencyTestimonials.items.map((testimonial) => (
+            <div
+              className="snap-start [flex:0_0_calc(100vw-32px)] min-[576px]:[flex-basis:508px] min-[768px]:[flex-basis:327.5px] min-[992px]:[flex-basis:447.5px] min-[1200px]:[flex-basis:557.5px] min-[1400px]:[flex-basis:647.5px]"
+              data-carousel-item
+              key={testimonial.name}
+            >
+              <div className="h-full overflow-hidden rounded-[15px] border border-[#d9d9d9] bg-white">
                   <div className="relative min-h-[324px] max-[1199px]:min-h-[240px]">
                     <VideoDialog
                       className="min-h-[324px] !rounded-none max-[1199px]:min-h-[240px]"
@@ -88,7 +51,6 @@ export function HappyClientSection({
                       overlayClassName="hidden"
                       overlayHeight={40}
                       overlayWidth={46}
-                      playClassName="max-[1199px]:size-12"
                       poster={testimonial.image}
                       posterAlt={testimonial.imageAlt}
                       sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1199px) calc((100vw - 115px)/2), 527px"
@@ -119,11 +81,10 @@ export function HappyClientSection({
                       {testimonial.quote}
                     </p>
                   </div>
-                </div>
               </div>
-            ))}
-          </Slider>
-        </div>
+            </div>
+          ))}
+        </HorizontalDragScroll>
       </Container>
     </section>
   );

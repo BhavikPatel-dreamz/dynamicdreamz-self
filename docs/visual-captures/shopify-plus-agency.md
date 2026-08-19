@@ -199,3 +199,33 @@ quotes), 5 FAQs (first open; answer links styled `#ad5151` underline).
 - Cleaned up stray token in `white-label-shopify-ai-sections.tsx`.
 - Updated `docs/aeo-geo-strategy.md` and `docs/page-content-improvements.md` with comprehensive `/shopify-plus-agency` route entries.
 - Passed `npm run check:urls`, `npm run lint`, and `npm run build`.
+
+## Testimonial Carousel Viewport Correction (2026-08-19)
+
+- Scope: testimonial carousel geometry only; visible copy, card styling, assets,
+  and section order remain unchanged.
+- Reference behavior: the carousel clipping viewport spans the browser width,
+  while the first card begins at the responsive container content edge. After
+  advancing one item, the previous card may remain partially visible between
+  that container edge and the left browser edge.
+- Responsive offsets: `16px` below 576px; centered 540px container + 16px
+  padding from 576px; centered 720/960/1180/1360px containers + 20px padding at
+  768/992/1200/1400px respectively.
+- Interaction states checked: initial first-card alignment, forward snap with a
+  previous-card peek, pointer dragging, touch panning, and scrollbar hiding.
+- Implementation decision: keep the viewport at `100vw`; apply each responsive
+  offset to the inner track and the matching `scroll-padding-inline-start` to
+  the viewport. Preserve one card below 768px, two cards at and above 768px,
+  10px mobile gaps, and 25px tablet/desktop gaps.
+- Remaining difference: final live/local pixel comparison is pending human
+  review at the documented 390px, 768px, and 1440px capture widths.
+- Video-dialog interaction correction: the shared drag viewport now captures a
+  pointer only after movement crosses its 4px drag threshold. A stationary
+  pointer press therefore reaches the testimonial play button and opens its
+  modal, while a genuine drag retains pointer capture and suppresses the
+  resulting click.
+- Mobile card-width correction: testimonial items now declare matching width,
+  minimum width, and flex basis at every breakpoint. At the supplied 375px
+  viewport the card is fixed at 343px (`100vw - 32px`), matching the live
+  one-card layout and leaving only the intended narrow next-card peek instead
+  of the old container-derived partial card.

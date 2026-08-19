@@ -3,6 +3,11 @@
 - Live URL: https://www.dynamicdreamz.com/hire-wordpress-developers/
 - Local route: `/hire-wordpress-developers`
 - Date checked: 2026-08-18
+- Counter layout rechecked: 2026-08-19 against the supplied live CSS and the existing live desktop/tablet/mobile captures.
+- Counter label wrapping rechecked: desktop/tablet use the live-authored line breaks; the breaks are hidden at 767px and below so each mobile label flows on one line when space permits.
+- Full page parity audit: 2026-08-19. Recompared the saved 1440x900, 768x1024, and 390x844 live/local full-page captures against `hiring-main.css` and `hiring-media.css`.
+- Advantage-divider comparison: 2026-08-19. Owner side-by-side capture exposed conflicting desktop `nth-*` and tablet border overrides; divider placement is now defined per cell for each 3/2/1-column layout.
+- Portfolio platform-mark motion rechecked: 2026-08-19. The shared card now uses explicit `transform: translateY(10px)` to `transform: translateY(0)` states with the live 500ms ease-in-out transition, avoiding Tailwind's separate `translate` longhand.
 - Browser: Chromium 151 (Playwright)
 - Viewports captured: 1440x900, 768x1024, 390x844 (full-page screenshots)
 - Live screenshots: `docs/visual-captures/source/hire-wordpress-developers/live-desktop-1440x900.png`, `live-tablet-768x1024.png`, `live-mobile-390x844.png`
@@ -15,6 +20,8 @@
 - View source metadata, JSON-LD, headings, CTA links, image alts, FAQ markup, and footer navigation.
 - `assets/css/hiring/main.css`: `.inner-hero-sec`, `.total-deliver-wrap`, `.hiring-process-sec`, `.what-make-dynamic-dreamz-sec`, `.why_dynamic_dreamz_sec`, `.our-work-sec`, `.happy-client-sec`, `.faq-sec`, gradients, card borders, hover states, and pulse animation.
 - `assets/css/hiring/media.css`: 1199px, 991px, 767px, 389px, and 359px responsive rules.
+- Rechecked `.total-deliver-wrap .deliver-col`: 49px left padding/margin and a 1.3px left divider on desktop; 30px spacing at 1199px; full-width stacked rows with 20px bottom padding/margin, no side border, and a 1.3px bottom divider except on the last row at 767px.
+- Full-page audit findings: restore the live two-column desktop proof-card grid and 33px/32px card padding; restore the 55px process-list offset, 28px icon gap, 12px title gap, and 70px mobile icons; remove the advantage grid's outer border while retaining its live internal dividers; use the live 50px tablet portfolio-list offset. The owner-protected `review-wrap mx-auto mt-[55px] w-[532px] max-w-full max-[991px]:mt-[30px] max-[767px]:w-[275px]` remains unchanged.
 - `assets/js/hiring.js`: review animation, carousel/accordion initialization, and video popup behavior.
 - Shared live CSS for header/footer and the rendered live page at desktop, tablet, and mobile widths.
 
@@ -57,6 +64,7 @@
 
 ## Local verification
 
+- Fresh production-build viewport captures on 2026-08-19 at 1440x900, 768x1024, and 390x844 verified the hero heading measure, paragraph wrapping, CTA geometry, counter type scale, desktop/tablet vertical separators, mobile stacked dividers, review-circle sizing, and absence of horizontal overflow. The protected review wrapper classes were not changed.
 - Desktop, tablet, and mobile screenshots show all six portfolio images with stable aspect ratios and no content overlap.
 - The first FAQ item is open by default, the remaining nine items are collapsed, and the pricing-model list remains inside its accordion panel.
 - Headings, counters, CTA labels, process steps, proof grids, portfolio names, testimonial copy, and FAQ wording preserve the live-visible content.

@@ -75,8 +75,6 @@ export function HorizontalDragScroll({
       scrollLeft: viewport.scrollLeft,
       scrollSnapType: viewport.style.scrollSnapType,
     };
-    viewport.style.scrollSnapType = "none";
-    viewport.setPointerCapture(event.pointerId);
   }
 
   function drag(event: PointerEvent<HTMLDivElement>) {
@@ -84,7 +82,11 @@ export function HorizontalDragScroll({
     if (!viewport || !dragState.current.active) return;
 
     const distance = event.clientX - dragState.current.pointerX;
-    if (Math.abs(distance) >= dragThreshold) dragState.current.moved = true;
+    if (Math.abs(distance) >= dragThreshold && !dragState.current.moved) {
+      dragState.current.moved = true;
+      viewport.style.scrollSnapType = "none";
+      viewport.setPointerCapture(event.pointerId);
+    }
     viewport.scrollLeft = dragState.current.scrollLeft - distance;
   }
 

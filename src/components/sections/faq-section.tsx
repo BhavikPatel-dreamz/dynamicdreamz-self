@@ -14,7 +14,7 @@ export function FaqSection({
   items,
   idPrefix,
   heading = "Frequently Asked Questions",
-  className = "faq-sec pb-20 max-[767px]:pb-[60px]",
+  className = "faq-sec pb-20 max-[991px]:pb-[50px]",
   headerClassName = "mb-[64px] text-center max-[1199px]:mb-[30px]",
 }: FaqSectionProps) {
   return (

@@ -77,7 +77,7 @@ function ProjectLinkOverlay() {
 function PlatformMark({ platformMark }: { platformMark: PortfolioPlatformMark }) {
   return (
     <span
-      className="absolute top-[25px] right-6 z-2 translate-y-2.5 opacity-0 transition-[opacity,transform] duration-500 ease-in-out group-hover/project:translate-y-0 group-hover/project:opacity-100 group-focus/project:translate-y-0 group-focus/project:opacity-100"
+      className="absolute top-[25px] right-6 z-1 opacity-0 [transform:translateY(10px)] transition-all duration-500 ease-in-out group-hover/project:opacity-100 group-hover/project:[transform:translateY(0)] group-focus/project:opacity-100 group-focus/project:[transform:translateY(0)]"
       data-project-platform
     >
       <Image

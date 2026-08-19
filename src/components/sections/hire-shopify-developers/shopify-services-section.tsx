@@ -20,7 +20,7 @@ export function ShopifyServicesSection({
   content?: ShopifyServicesSectionContent;
 }) {
   return (
-    <section className="pb-20 max-[767px]:pb-[60px]" id="shopify-services">
+    <section className="pb-20 max-[991px]:pb-[50px]" id="shopify-services">
       <Container>
         <div className="mx-auto max-w-[780px] text-center">
           <h2 className="font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
