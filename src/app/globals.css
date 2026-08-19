@@ -11,7 +11,8 @@
   --color-dark-green: #171e16;
   --color-soft-line: #dfdfdf;
   --color-blue-line: #bfd0de;
-  --font-sans: var(--font-montserrat), Arial, sans-serif;
+  --font-montserrat: var(--font-montserrat-local), Arial, sans-serif;
+  --font-sans: var(--font-montserrat-local), Arial, sans-serif;
   --font-display: var(--font-neue-montreal), Arial, sans-serif;
 }
 

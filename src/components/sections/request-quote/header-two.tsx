@@ -7,7 +7,7 @@ import { siteConfig } from "@/data/site";
 
 export function HeaderTwo() {
   return (
-    <header className="header-two relative z-10 w-full py-[30px] max-[991px]:py-[26.5px]">
+    <header className="header-two relative z-10 w-full py-[34.5px] max-[991px]:py-[26.5px]">
       <Container className="min-[1300px]:!max-w-[1360px] min-[1300px]:!px-10">
         <div className="flex items-center justify-between">
           <Link

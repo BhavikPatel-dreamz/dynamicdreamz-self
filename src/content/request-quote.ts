@@ -57,7 +57,7 @@ export const requestQuoteContent = {
   testimonials: [
     {
       name: "Alec Torelli",
-      avatar: "/assets/testimonials/alec-torelli.webp",
+      avatar: "/assets/testimonials/alec-torelli-striped-shirt.webp",
       quote:
         "I have used Gaurav at Dynamic Dreamz for all of my Web design and Web Development. He has great communication skills, very reliable, very consistent.",
     },

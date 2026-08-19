@@ -2394,7 +2394,7 @@ capabilities. Future visible copy improvements are tracked in
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-18
+Last reviewed: 2026-08-19
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 

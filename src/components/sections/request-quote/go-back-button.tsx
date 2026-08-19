@@ -16,7 +16,7 @@ export function GoBackButton() {
   return (
     <button
       type="button"
-      className="group flex cursor-pointer items-center border-0 bg-transparent p-0 text-base font-bold text-[#090909] transition-colors duration-300 hover:text-[#d92128] focus-visible:text-[#d92128]"
+      className="group flex cursor-pointer items-center border-0 bg-transparent p-0 text-base font-bold text-[#404040] transition-colors duration-300 hover:text-[#AD5151] focus-visible:text-[#AD5151]"
       onClick={handleGoBack}
       aria-label="Go back to previous page"
     >

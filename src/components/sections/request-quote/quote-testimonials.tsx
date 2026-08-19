@@ -61,10 +61,10 @@ export function QuoteTestimonials() {
   };
 
   return (
-    <div className="testimonial-slider relative -mx-[5px] pb-[52px] max-[575px]:[&_.slick-list]:-mr-4 max-[575px]:[&_.slick-list]:pr-10">
+    <div className="testimonial-slider relative -mx-[5px] pb-[52px] [&_.slick-slide]:h-auto [&_.slick-slide>div]:h-full [&_.slick-track]:flex max-[575px]:[&_.slick-list]:-mr-4 max-[575px]:[&_.slick-list]:pr-10">
       <Slider {...settings}>
         {requestQuoteContent.testimonials.map((testimonial) => (
-          <div key={testimonial.name} className="px-[5px]">
+          <div key={testimonial.name} className="h-full px-[5px]">
             <div className="h-full rounded-[10px] bg-[linear-gradient(to_right,#15c064,#00d1ff)] p-[1px]">
               <div className="flex h-full flex-col justify-between rounded-[10px] bg-white p-[32px_45px_32px_32px] max-[1199px]:p-5">
                 <div>

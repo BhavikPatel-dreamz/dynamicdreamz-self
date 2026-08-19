@@ -33,9 +33,9 @@ const neueMontreal = localFont({
 
 const montserrat = localFont({
   src: "./fonts/montserrat-latin.woff2",
-  weight: "400 800",
+  weight: "100 900",
   style: "normal",
-  variable: "--font-montserrat",
+  variable: "--font-montserrat-local",
   display: "swap",
 });
 

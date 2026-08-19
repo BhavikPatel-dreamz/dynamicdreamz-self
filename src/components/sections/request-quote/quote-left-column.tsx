@@ -8,10 +8,10 @@ export function QuoteLeftColumn() {
 
   return (
     <div className="left-col relative w-full py-[150px] pr-[46px] pb-[140px] max-[1199px]:pr-[30px] max-[991px]:pt-[50px] max-[991px]:pr-0 max-[991px]:pb-[100px]">
-      <h1 className="font-montserrat text-[35px] leading-[43.925px] font-bold text-black max-[1199px]:text-[29px] max-[359px]:text-2xl">
+      <h1 className="font-montserrat text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:text-[29px] max-[359px]:text-2xl">
         {hero.title}
       </h1>
-      <p className="mt-2 text-lg leading-[34.2px] font-medium text-[#535353] max-[1199px]:text-base max-[1199px]:leading-[30.4px] max-[767px]:text-sm max-[767px]:leading-7">
+      <p className="mt-2 text-lg leading-[34.2px] font-medium text-[#535353] min-[768px]:mt-5 min-[992px]:mt-6 max-[1199px]:text-base max-[1199px]:leading-[30.4px] max-[767px]:text-sm max-[767px]:leading-7">
         {hero.description}
       </p>
 
