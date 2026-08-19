@@ -722,3 +722,35 @@ Primary SEO intent: Prestige theme customization, Prestige Shopify theme customi
 | FAQ question grammar | `How much does it cost of Prestige Theme Customization Service?` | `How much does Prestige Theme Customization Service cost?` | Fixes grammatical phrasing in FAQ heading. | Low | deferred pending exact visible-copy approval |
 | Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
 
+## Impulse Theme Customization (`/impulse-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: Impulse theme customization, Impulse Shopify theme customization service, customize Impulse theme Shopify, fast-paced Shopify theme development, hire Impulse Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Impulse Theme Customization Service \| Dynamic Dreamz` (54 chars) | Preserved live title (54 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Looking for an Impulse Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.` (152 chars) | Preserved live meta description (152 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Benefits copy clarity | `We sweeten your buying experience with filtering, an improved navigation system, and product presentation.` | `We enhance the shopping experience with advanced filtering, intuitive navigation, and optimized product presentation.` | Improves professional business tone. | Low | deferred pending exact visible-copy approval |
+| Why choose copy grammar | `We are ensuring that every customization meets your business goals.` | `We ensure that every customization aligns with your business goals.` | Uses direct present tense for clarity. | Low | deferred pending exact visible-copy approval |
+| FAQ answer grammar | `There is no exact cost of theme customization service. The price depends on your requirements and the complexity of your work.` | `The cost of Impulse theme customization depends on your specific requirements and the complexity of the scope.` | Smoother phrasing and tone. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (7 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Sense Theme Customization (`/sense-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: Sense theme customization, Sense Shopify theme customization service, customize Sense theme Shopify, clean Shopify theme development, hire Sense Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Sense Theme Customization Service \| Dynamic Dreamz` (52 chars) | Preserved live title (52 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Looking for a Sense Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.` (150 chars) | Preserved live meta description (150 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Benefits copy clarity | `An optimized theme layout and better UX can be achieved by theme customization, increasing your conversion store.` | `Theme customization delivers an optimized layout and intuitive UX that increases your store's conversion rate.` | Improves grammatical accuracy and clarity. | Low | deferred pending exact visible-copy approval |
+| Why choose copy phrasing | `We obey a structured process to guarantee your project is completed on time and fulfills your expectations.` | `We follow a structured process to guarantee your project is completed on time and meets your expectations.` | Uses standard business phrasing ("follow" rather than "obey"). | Low | deferred pending exact visible-copy approval |
+| FAQ answer clarity | `We included theme installation, store optimization, custom design, and advanced custom features in our Sense theme customization services.` | `Our Sense theme customization services include theme installation, store optimization, custom design, and advanced custom features.` | Changes tense to present active for consistency. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+
+
