@@ -183,6 +183,31 @@ quotes), 5 FAQs (first open; answer links styled `#ad5151` underline).
 - Shared `FaqAccordion` tightened: title padding 70px/50px right, answer `mb-6`
   (matches global p margin on all pages using it).
 
+### Industries full-viewport track alignment follow-up (2026-08-19)
+
+- The prior React Slick viewport lived inside `Container`, so all content before
+  the container edge was permanently clipped after advancing a slide.
+- The carousel viewport now spans `100vw`. Responsive container offsets are
+  applied as equal inline padding on the inner drag track: 16px mobile, then
+  the calculated content edge for the 500px, 680px, 920px, 1140px, and 1320px
+  content widths.
+- The viewport uses the exact same values for `scroll-padding-inline-start`.
+  Therefore the initial card and every snapped card align to the container edge,
+  while an earlier card may remain partially visible between the browser edge
+  and that alignment point after scrolling.
+- Card widths preserve the former one-card layout below 992px and two-card
+  layout from 992px upward; the 20px card gap, hover treatment, typography, and
+  responsive padding are unchanged.
+- Hover-border follow-up: each industry card now establishes its own stacking
+  context, ensuring the existing `-2px` gradient layer remains directly behind
+  the card and renders as a consistent 2px outline instead of disappearing
+  behind the section background.
+- Rendered hover correction: the negative-z layer still filled the entire card
+  in the browser. Industry cards now use a real 2px outer shell and an always-
+  white inner panel. The shell changes from gray to green/cyan on hover, while
+  compensated inner padding preserves the original 30px/45px desktop and 20px
+  responsive content offsets without any hover movement.
+
 ### Pending human review (pixel-level)
 - Local screenshots recaptured for 1440x900 / 768x1024 / 390x844 (same viewports as
   live). Compare side-by-side; likely remaining deltas are sub-pixel roundings only.

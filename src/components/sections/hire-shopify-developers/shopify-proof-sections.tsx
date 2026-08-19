@@ -24,9 +24,9 @@ export type ProofSectionContent = {
 };
 
 const defaultReasonsContent: ProofSectionContent = {
-  heading: "Why Choose Dynamic Dreamz for Shopify Development",
+  heading: "Why Choose Dynamic Dreamz for <br> Shopify Development",
   description:
-    "Our Shopify developers have the ideal balance of expertise in eCommerce business and Shopify technology. For your online business, we can act as a powerful catalyst.",
+    "Our Shopify developers have the ideal balance of expertise in eCommerce <br> business and Shopify technology. For your online business, <br> we can act as a powerful catalyst.",
   items: hireShopifyReasons,
 };
 
@@ -54,7 +54,7 @@ export function ShopifyReasonsSection({
           <h2 className={headingClassName}>
             {formatBrText(content.heading, "max-[1199px]:hidden")}
           </h2>
-          <p className="mx-auto mt-2.5 max-w-[720px] text-base leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
+          <p className="mx-auto mt-2.5 max-w-[720px] text-lg leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
             {formatBrText(content.description, "max-[1199px]:hidden")}
           </p>
         </div>
@@ -62,22 +62,24 @@ export function ShopifyReasonsSection({
         <div className="grid grid-cols-3 gap-4 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
           {content.items.map((item) => (
             <article
-              className="group relative z-0 min-h-[330px] rounded-[15px] bg-white px-[30px] pt-10 pb-[60px] before:absolute before:-inset-0.5 before:-z-20 before:rounded-[15px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] before:opacity-0 before:transition-opacity hover:before:opacity-100 after:absolute after:inset-0 after:-z-10 after:rounded-[14px] after:bg-white"
+              className="group relative min-h-[330px] rounded-[15px] bg-white p-0.5 transition-[background] duration-300 hover:bg-[linear-gradient(to_right,#15c064,#00d1ff)] focus-within:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:absolute after:right-0 after:bottom-0 after:left-0 after:z-20 after:h-3 after:rounded-b-[15px] after:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:opacity-0 after:transition-opacity after:duration-300 after:content-[''] hover:after:opacity-100 focus-within:after:opacity-100"
               key={item.title}
             >
-              <Image
-                className="mb-5 size-[60px] object-contain"
-                src={item.icon}
-                alt={item.iconAlt}
-                width={60}
-                height={60}
-              />
-              <h3 className="mb-[5px] font-sans text-base leading-[26.72px] font-bold tracking-[0.32px] text-ink">
-                {formatBrText(item.title, "max-[767px]:hidden")}
-              </h3>
-              <p className="text-base leading-[27.2px] font-medium tracking-[0.32px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
-                {formatBrText(item.description, "max-[767px]:hidden")}
-              </p>
+              <div className="relative z-10 h-full rounded-[13px] bg-white px-[28px] pt-[38px] pb-[58px]">
+                <Image
+                  className="mb-5 size-[60px] object-contain"
+                  src={item.icon}
+                  alt={item.iconAlt}
+                  width={60}
+                  height={60}
+                />
+                <h3 className="mb-[5px] font-sans text-base leading-[26.72px] font-bold tracking-[0.32px] text-ink">
+                  {formatBrText(item.title, "max-[767px]:hidden")}
+                </h3>
+                <p className="text-base leading-[27.2px] font-medium tracking-[0.32px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
+                  {formatBrText(item.description, "max-[767px]:hidden")}
+                </p>
+              </div>
             </article>
           ))}
         </div>
@@ -109,7 +111,7 @@ export function ShopifyAdvantagesSection({
           <h2 className={headingClassName}>
             {formatBrText(content.heading, "max-[1199px]:hidden")}
           </h2>
-          <p className="mt-2.5 text-base leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
+          <p className="mt-2.5 text-lg leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
             {formatBrText(content.description, "max-[1199px]:hidden")}
           </p>
         </div>

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 
 /**
  * Formats a string containing `<br>`, `<br/>`, or `<br />` HTML tags into React JSX.
@@ -12,12 +12,17 @@ export function formatBrText(text: string, brClassName?: string): ReactNode {
   }
 
   const parts = text.split(/<br\s*\/?>/i);
-  return parts.map((part, index) => (
-    <span key={index}>
-      {part}
-      {index < parts.length - 1 ? (
-        brClassName ? <br className={brClassName} /> : <br />
-      ) : null}
-    </span>
-  ));
+
+  return (
+    <>
+      {parts.map((part, index) => (
+        <Fragment key={`part-${index}`}>
+          {part}
+          {index < parts.length - 1 ? (
+            brClassName ? <br className={brClassName} /> : <br />
+          ) : null}
+        </Fragment>
+      ))}
+    </>
+  );
 }

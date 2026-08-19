@@ -26,6 +26,7 @@ export type PortfolioShowcaseSectionProps = {
   columns?: 2 | 3 | 4;
   imageAspectClassName?: string;
   categoryClassName?: string;
+  headingBreakClassName?: string;
 };
 
 export function PortfolioShowcaseSection({
@@ -36,6 +37,7 @@ export function PortfolioShowcaseSection({
   columns = 3,
   imageAspectClassName,
   categoryClassName,
+  headingBreakClassName = "max-[1199px]:hidden",
 }: PortfolioShowcaseSectionProps) {
   const defaultPlatformMark = content.platformMark ?? {
     src: "/assets/platforms/shopify-white.svg",
@@ -55,7 +57,7 @@ export function PortfolioShowcaseSection({
       <Container>
         <div className="text-center">
           <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
-            {formatBrText(content.heading, "max-[1199px]:hidden")}
+            {formatBrText(content.heading, headingBreakClassName)}
           </h2>
           {content.description && (
             <p className="mx-auto mt-6 max-w-[740px] text-[18px] font-medium leading-[34.2px] text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]">

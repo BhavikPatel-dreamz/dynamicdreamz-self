@@ -50,7 +50,7 @@ export function HappyClientSection({
         >
           {items.map((testimonial) => (
             <div
-              className="snap-start [flex:0_0_calc(100vw-32px)] min-[576px]:[flex-basis:508px] min-[768px]:[flex-basis:327.5px] min-[992px]:[flex-basis:447.5px] min-[1200px]:[flex-basis:557.5px] min-[1400px]:[flex-basis:647.5px]"
+              className="snap-start [flex:0_0_calc(100vw-32px)] min-[576px]:[flex-basis:508px] min-[768px]:[flex-basis:327.5px] min-[992px]:[flex-basis:447.5px] min-[1200px]:[flex-basis:557.5px] min-[1400px]:[flex-basis:647.5px] max-[767px]:[flex-basis:calc(100vw-36px)] max-[767px]:pr-[0]"
               data-carousel-item
               key={testimonial.name}
             >

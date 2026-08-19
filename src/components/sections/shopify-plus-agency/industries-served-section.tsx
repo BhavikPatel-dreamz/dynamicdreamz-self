@@ -1,10 +1,7 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import Slider, { type Settings } from "react-slick";
 
 import { Container } from "@/components/ui/container";
+import { HorizontalDragScroll } from "@/components/ui/horizontal-drag-scroll";
 import { shopifyPlusAgencyIndustries } from "@/content/shopify-plus-agency";
 
 export type IndustriesServedContent = {
@@ -18,10 +15,6 @@ export type IndustriesServedContent = {
   }[];
 };
 
-function slidesForWidth(width: number) {
-  return width < 992 ? 1 : 2;
-}
-
 export function IndustriesServedSection({
   content = shopifyPlusAgencyIndustries,
   className = "industries-served-sec pt-0 pb-20 max-[991px]:pb-[50px]",
@@ -29,42 +22,6 @@ export function IndustriesServedSection({
   content?: IndustriesServedContent;
   className?: string;
 }) {
-  const [slidesToShow, setSlidesToShow] = useState(2);
-
-  useEffect(() => {
-    const update = () => {
-      setSlidesToShow(slidesForWidth(window.innerWidth));
-    };
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
-  const settings: Settings = {
-    arrows: false,
-    autoplay: false,
-    centerMode: false,
-    dots: false,
-    draggable: true,
-    infinite: false,
-    pauseOnHover: false,
-    slidesToScroll: 1,
-    slidesToShow,
-    speed: 500,
-    swipe: true,
-    swipeToSlide: true,
-    touchMove: true,
-    responsive: [
-      {
-        breakpoint: 991,
-        settings: {
-          slidesToShow: 1,
-          centerMode: false,
-        },
-      },
-    ],
-  };
-
   return (
     <section className={className} data-section="industries" id="industries-served">
       <Container>
@@ -81,15 +38,19 @@ export function IndustriesServedSection({
             ))}
           </p>
         </div>
-        <div className="-mx-2.5 overflow-hidden py-[10px]" aria-label="Industries served by Dynamic Dreamz">
-          <Slider {...settings} key={`${slidesToShow}`}>
-            {content.items.map((item) => (
-              <div className="px-2.5" key={item.title}>
-                <div className="group relative h-full rounded-[10px] border-[1.5px] border-[#dfdfdf] bg-white pt-[30px] pr-[30px] pl-[30px] pb-[45px] transition-colors duration-300 hover:border-transparent max-[1199px]:p-5">
-                  <span
-                    aria-hidden="true"
-                    className="absolute -inset-[2px] -z-10 rounded-[10px] bg-gradient-to-r from-[#15c064] to-[#00d1ff] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                  />
+        <HorizontalDragScroll
+          ariaLabel="Industries served by Dynamic Dreamz"
+          className="relative left-1/2 w-screen -translate-x-1/2 snap-x snap-mandatory [scroll-padding-inline-start:16px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[576px]:[scroll-padding-inline-start:calc((100vw-500px)/2)] min-[768px]:[scroll-padding-inline-start:calc((100vw-680px)/2)] min-[992px]:[scroll-padding-inline-start:calc((100vw-920px)/2)] min-[1200px]:[scroll-padding-inline-start:calc((100vw-1140px)/2)] min-[1400px]:[scroll-padding-inline-start:calc((100vw-1320px)/2)]"
+          trackClassName="flex w-max items-stretch gap-5 px-4 py-[10px] min-[576px]:px-[calc((100vw-500px)/2)] min-[768px]:px-[calc((100vw-680px)/2)] min-[992px]:px-[calc((100vw-920px)/2)] min-[1200px]:px-[calc((100vw-1140px)/2)] min-[1400px]:px-[calc((100vw-1320px)/2)]"
+        >
+          {content.items.map((item) => (
+            <div
+              className="w-[calc(100vw-32px)] shrink-0 snap-start min-[576px]:w-[500px] min-[768px]:w-[680px] min-[992px]:w-[450px] min-[1200px]:w-[560px] min-[1400px]:w-[650px]"
+              data-carousel-item
+              key={item.title}
+            >
+              <div className="group h-full rounded-[10px] bg-[#dfdfdf] p-0.5 transition-[background] duration-300 hover:bg-[linear-gradient(to_right,#15c064,#00d1ff)]">
+                <div className="h-full rounded-[8px] bg-white pt-7 pr-7 pb-[43px] pl-7 max-[1199px]:p-[18px]">
                   <div className="relative mb-[25px] overflow-hidden rounded-lg pb-[57%]">
                     <Image
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -99,7 +60,7 @@ export function IndustriesServedSection({
                       sizes="(max-width: 991px) calc(100vw - 32px), 590px"
                     />
                   </div>
-                  <h3 className="mb-[10px] text-base font-bold leading-[26.72px] tracking-[0.32px] text-ink">
+                  <h3 className="mb-[10px] font-montserrat text-base font-bold leading-[26.72px] tracking-[0.32px] text-ink">
                     {item.title}
                   </h3>
                   <p className="mb-6 text-base font-medium leading-[27.2px] tracking-[0.32px] text-[#535353]">
@@ -107,9 +68,9 @@ export function IndustriesServedSection({
                   </p>
                 </div>
               </div>
-            ))}
-          </Slider>
-        </div>
+            </div>
+          ))}
+        </HorizontalDragScroll>
       </Container>
     </section>
   );

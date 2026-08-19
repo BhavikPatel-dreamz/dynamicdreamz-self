@@ -34,7 +34,7 @@ const industriesContent = {
 };
 
 const portfolioContent = {
-  heading: "Work of our Shopify Developers that show our Expertise",
+  heading: "Work of our Shopify Developers<br>that show our Expertise",
   description:
     "We are sure you would like to hear to what our clients says about our Shopify development.",
   items: hireShopifyPortfolio,
@@ -50,7 +50,10 @@ export function HireShopifyDevelopersPage() {
       <ShopifyReasonsSection />
       <ShopifyAdvantagesSection />
       <IndustriesServedSection content={industriesContent} />
-      <PortfolioShowcaseSection content={portfolioContent} />
+      <PortfolioShowcaseSection
+        content={portfolioContent}
+        headingBreakClassName="max-[767px]:hidden"
+      />
       <div id="shopify-testimonials">
         <HappyClientSection
           description={hireShopifyTestimonials.description}

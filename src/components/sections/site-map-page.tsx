@@ -32,7 +32,7 @@ export function SiteMapPage({
                 width={22}
               />
               <Link
-                className="text-[#252c15] transition-colors duration-200 hover:text-brand-red focus-visible:text-brand-red"
+                className="text-[#252c15] transition-colors duration-200 hover:text-brand-red focus-visible:text-brand-red leading-normal tracking-[0.32px]"
                 href={item.href}
               >
                 {item.label}
@@ -53,7 +53,7 @@ export function SiteMapPage({
                         width={22}
                       />
                       <Link
-                        className="text-[#252c15] transition-colors duration-200 hover:text-brand-red focus-visible:text-brand-red"
+                        className="text-[#252c15] transition-colors duration-200 hover:text-brand-red focus-visible:text-brand-red leading-normal tracking-[0.32px]"
                         href={child.href}
                       >
                         {child.label}

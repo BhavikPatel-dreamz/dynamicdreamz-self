@@ -28,6 +28,27 @@
 - FAQ opens the first item by default and closes other items when one is opened. Portfolio and industry cards lift/scale on hover.
 - Local implementation uses eager, intrinsic-size portfolio media to avoid the live page’s lazy-image gaps while preserving the rendered composition.
 
+## Why-choose hover and typography re-audit (2026-08-19)
+
+- Rechecked saved live HTML plus `hiring-main.css` and `hiring-media.css`
+  against the supplied live/local hover screenshots.
+- Live desktop heading is 35px/48.475px/700 Montserrat with `-0.7px` tracking
+  and an intentional break before “Shopify Development”. The 16px/30.4px intro
+  uses two intentional breaks; both breaks disappear below 1200px.
+- Cards use 30px horizontal padding, 40px top padding, 60px bottom padding,
+  60px icons, 16px/26.72px headings, and 16px/27.2px body copy with `0.32px`
+  tracking.
+- Live hover/focus appearance: a 2px green-to-cyan outline surrounding the
+  15px card and a 12px green-to-cyan bar inside its bottom edge, transitioning
+  over 300ms. Local previously used its `::after` layer as a permanent white
+  cover, preventing the bottom gradient bar from rendering.
+- Hover correction after rendered comparison: a negative-z gradient
+  pseudo-element filled the entire local card because of its stacking context.
+  The card now uses an explicit 2px outer shell and a separate white inner
+  panel; only the shell background and independent 12px bottom overlay become
+  gradient on hover/focus. Text, icons, and the full card interior remain white
+  exactly as shown in the live screenshot.
+
 ## Remaining differences
 
 - Shared migrated header/footer and local contact widget differ from the legacy WordPress shell.
