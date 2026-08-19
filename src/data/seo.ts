@@ -850,6 +850,35 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  magentoDevelopment: {
+    path: "/magento-development",
+    title: "Magento Development Services | Magento Development Company",
+    description:
+      "Trusted Magento Development company for scalable solutions. Get expert services for custom Magento development. Contact us today!",
+    keywords: [
+      "Magento development services",
+      "Magento development company",
+      "custom Magento development",
+      "Magento store development",
+      "Magento migration",
+      "Magento speed optimization",
+      "Magento custom theme",
+      "Magento module development",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-02T09:33:00+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Magento Development Services | Magento Development Company",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

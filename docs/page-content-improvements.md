@@ -562,3 +562,18 @@ Primary SEO intent: Shopify CRO agency, Shopify conversion rate optimization, Sh
 | VideoObject structured data | Legacy site had no schema for client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video search rich results without modifying visible layout. | High | implemented in schema |
 | Service & FAQ structured data | Legacy site had minimal schema for CRO services. | Emitted `Service` with `OfferCatalog` (5 service offers) and `FAQPage` (6 questions/answers). | Enables rich answer engine visibility and FAQ SERP enhancements. | High | implemented in schema |
 
+## Magento Development (`/magento-development`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: Magento development services, Magento development company, custom Magento store solutions, Magento migration, Magento speed optimization, Magento custom themes, Magento module development.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Magento Development Services \| Magento Development Company` (58 chars) | Preserved live meta title (58 chars). | Fits 15-60 char budget and captures primary keyword intent. | High | implemented in metadata |
+| Meta description | `Trusted Magento Development company for scalable solutions. Get expert services for custom Magento development. Contact us today!` (129 chars) | Preserved live meta description (129 chars). | Fits 70-160 char budget while capturing core value proposition. | High | implemented in metadata |
+| Service card copy (Custom Store) | `Dynamic Dremaz helps you create Magento stores...` (typo in brand name) | `Dynamic Dreamz helps you create Magento stores...` | Fixes typo in brand name. | Low | deferred pending exact visible-copy approval |
+| VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (7 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+

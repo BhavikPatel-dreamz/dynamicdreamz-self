@@ -42,6 +42,10 @@ import {
 } from "@/content/shopify-development-agency";
 import { shopifyExpertsContent } from "@/content/shopify-experts";
 import {
+  magentoDevelopmentFaqs,
+  magentoDevelopmentServices,
+} from "@/content/magento-development";
+import {
   shopifyMigrationFaqs,
   shopifyMigrationServices,
 } from "@/content/shopify-migration";
@@ -190,6 +194,11 @@ const woocommerceDevelopmentPageId = `${woocommerceDevelopmentPageUrl}#webpage`;
 const woocommerceDevelopmentServiceId = `${woocommerceDevelopmentPageUrl}#service`;
 const woocommerceDevelopmentFaqId = `${woocommerceDevelopmentPageUrl}#faq`;
 const woocommerceDevelopmentBreadcrumbId = `${woocommerceDevelopmentPageUrl}#breadcrumb`;
+const magentoDevelopmentPageUrl = absoluteUrl(pageSeo.magentoDevelopment.path);
+const magentoDevelopmentPageId = `${magentoDevelopmentPageUrl}#webpage`;
+const magentoDevelopmentServiceId = `${magentoDevelopmentPageUrl}#service`;
+const magentoDevelopmentFaqId = `${magentoDevelopmentPageUrl}#faq`;
+const magentoDevelopmentBreadcrumbId = `${magentoDevelopmentPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1736,6 +1745,34 @@ export function createWooCommerceDevelopmentPageSchema() {
       ].join(" "),
     })),
     offers: woocommerceDevelopmentServices.items,
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createMagentoDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.magentoDevelopment,
+    pageUrl: magentoDevelopmentPageUrl,
+    pageId: magentoDevelopmentPageId,
+    serviceId: magentoDevelopmentServiceId,
+    faqId: magentoDevelopmentFaqId,
+    breadcrumbId: magentoDevelopmentBreadcrumbId,
+    serviceName: "Magento Development Services",
+    serviceType:
+      "Custom Magento store development, theme development, module development, migration, speed optimization, and ongoing support",
+    breadcrumbName: "Magento Development",
+    audienceType:
+      "Enterprise merchants, B2B companies, DTC brands, and digital agencies seeking custom Magento development services",
+    faqs: magentoDevelopmentFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ].join(" "),
+    })),
+    offers: magentoDevelopmentServices.items,
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
