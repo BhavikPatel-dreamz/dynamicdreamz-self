@@ -42,6 +42,10 @@ import {
 } from "@/content/shopify-development-agency";
 import { shopifyExpertsContent } from "@/content/shopify-experts";
 import {
+  magentoDevelopmentFaqs,
+  magentoDevelopmentServices,
+} from "@/content/magento-development";
+import {
   shopifyMigrationFaqs,
   shopifyMigrationServices,
 } from "@/content/shopify-migration";
@@ -54,6 +58,10 @@ import {
   wordpressDevelopmentFaqs,
   wordpressDevelopmentServices,
 } from "@/content/wordpress-development";
+import {
+  wordPressThemeCustomizationContent,
+  wordPressThemeCustomizationFaqs,
+} from "@/content/wordpress-theme-customization";
 import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -190,6 +198,16 @@ const woocommerceDevelopmentPageId = `${woocommerceDevelopmentPageUrl}#webpage`;
 const woocommerceDevelopmentServiceId = `${woocommerceDevelopmentPageUrl}#service`;
 const woocommerceDevelopmentFaqId = `${woocommerceDevelopmentPageUrl}#faq`;
 const woocommerceDevelopmentBreadcrumbId = `${woocommerceDevelopmentPageUrl}#breadcrumb`;
+const magentoDevelopmentPageUrl = absoluteUrl(pageSeo.magentoDevelopment.path);
+const magentoDevelopmentPageId = `${magentoDevelopmentPageUrl}#webpage`;
+const magentoDevelopmentServiceId = `${magentoDevelopmentPageUrl}#service`;
+const magentoDevelopmentFaqId = `${magentoDevelopmentPageUrl}#faq`;
+const magentoDevelopmentBreadcrumbId = `${magentoDevelopmentPageUrl}#breadcrumb`;
+const wordPressThemeCustomizationPageUrl = absoluteUrl(pageSeo.wordPressThemeCustomization.path);
+const wordPressThemeCustomizationPageId = `${wordPressThemeCustomizationPageUrl}#webpage`;
+const wordPressThemeCustomizationServiceId = `${wordPressThemeCustomizationPageUrl}#service`;
+const wordPressThemeCustomizationFaqId = `${wordPressThemeCustomizationPageUrl}#faq`;
+const wordPressThemeCustomizationBreadcrumbId = `${wordPressThemeCustomizationPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1736,6 +1754,60 @@ export function createWooCommerceDevelopmentPageSchema() {
       ].join(" "),
     })),
     offers: woocommerceDevelopmentServices.items,
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createMagentoDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.magentoDevelopment,
+    pageUrl: magentoDevelopmentPageUrl,
+    pageId: magentoDevelopmentPageId,
+    serviceId: magentoDevelopmentServiceId,
+    faqId: magentoDevelopmentFaqId,
+    breadcrumbId: magentoDevelopmentBreadcrumbId,
+    serviceName: "Magento Development Services",
+    serviceType:
+      "Custom Magento store development, theme development, module development, migration, speed optimization, and ongoing support",
+    breadcrumbName: "Magento Development",
+    audienceType:
+      "Enterprise merchants, B2B companies, DTC brands, and digital agencies seeking custom Magento development services",
+    faqs: magentoDevelopmentFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ].join(" "),
+    })),
+    offers: magentoDevelopmentServices.items,
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createWordPressThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.wordPressThemeCustomization,
+    pageUrl: wordPressThemeCustomizationPageUrl,
+    pageId: wordPressThemeCustomizationPageId,
+    serviceId: wordPressThemeCustomizationServiceId,
+    faqId: wordPressThemeCustomizationFaqId,
+    breadcrumbId: wordPressThemeCustomizationBreadcrumbId,
+    serviceName: "WordPress Theme Customization Services",
+    serviceType:
+      "Custom WordPress theme customization, responsive design, plugin integration, speed optimization, and maintenance",
+    breadcrumbName: "WordPress Theme Customization",
+    audienceType:
+      "Businesses, website owners, and digital agencies seeking expert WordPress theme customization",
+    faqs: wordPressThemeCustomizationFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: wordPressThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }

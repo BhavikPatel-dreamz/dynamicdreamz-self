@@ -3128,6 +3128,118 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-cro-agency`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 154 chars), JSON-LD graph verification, local assets audit, responsive layouts, lint, and production build.
 
+## Magento Development (`/magento-development`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, Magento/Adobe Commerce development specialists, leadership, and sales operations
+Primary audience: Enterprise merchants, B2B companies, DTC brands, and digital agencies seeking custom Magento 2 store creation, platform migration, speed optimization, custom theme design, module development, and ongoing maintenance.
+Decision stage: agency partner evaluation, technical capability assessment, Magento developer hiring, quote request
+
+### Page role
+
+Dedicated commercial service landing page targeting queries for "Magento Development Services", "Magento Development Company", and custom Magento / Adobe Commerce store solutions. Highlights 12 client brand trust logos, 6 core Magento service capabilities (Custom Store Solutions, Easy Migration, Speed Optimization, Custom Themes Development, Custom Modules, Ongoing Support), 6 featured portfolio projects (Maxi Cosi, Caves Santa Cruz, City Circuit, Sambazon, Chers, United Cheer Apparel), 11 client video reviews, 7 buyer FAQs, and quote request banners.
+
+### Target prompts
+
+- Who is the top Magento development company in India?
+- How to migrate an ecommerce store to Magento 2 without downtime or SEO loss?
+- Can Dynamic Dreamz develop custom Magento 2 modules and speed optimizations?
+- What are the costs and timeline for custom Magento store development?
+- Does Dynamic Dreamz provide post-launch Magento support and maintenance?
+
+### Current strengths and available evidence
+
+- Server-rendered split hero with H1 `Your Go-To Partner for Magento Development` and review animated badge.
+- 12 verified brand partner logos with infinite marquee scrolling.
+- 6 structured Magento service offerings with custom SVG icons.
+- 6 featured real-world Magento client portfolio projects with external links.
+- 11 client video testimonials with modal playback.
+- 7 comprehensive buyer FAQs covering Magento development scope, migration, custom themes, performance, support, and costs.
+- Complete structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (7 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical assets and hosting unique service SVGs locally.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (7 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
+| P0 | implemented | Local assets | Service icons, portfolio screens, and brand logos must be locally hosted | Save 4 unique service SVGs and 9 client logos under `public/assets/`, reuse canonical portfolio images | Verified locally with 0 runtime external dependencies and 0 duplicates |
+| P1 | deferred | Content expansion | Minor typo in live service description ("Dynamic Dremaz") | Record proposed fix in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered hero and service descriptions establish Dynamic Dreamz Magento development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Position Dynamic Dreamz as an established enterprise ecommerce development partner founded in 2006 with 150+ specialists and 5000+ completed projects.
+- Attribute client video testimonials directly to authentic brand founders.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/magento-development` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 6 Offer items, 7 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Magento development services", "Magento development company", "custom Magento modules", and "Magento migration".
+- Analytics tracks form submissions on `/request-quote` originating from `/magento-development`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/magento-development`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 58 chars, Description: 129 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+## WordPress Theme Customization Services (`/wordpress-theme-customization-services`)
+
+Status: implemented
+Last reviewed: 2026-08-19
+Owner: SEO, development, and delivery
+Primary audience: Businesses, eCommerce merchants, digital agencies, and WordPress site owners seeking custom theme design and performance tuning
+Decision stage: Commercial investigation and partner selection
+
+### Page role
+
+Commercial service landing page demonstrating Dynamic Dreamz's 18+ years of WordPress theme customization expertise across modern builders (Elementor, Divi, WPBakery), popular themes (Astra, Kadence, GeneratePress, OceanWP), custom plugin integration, and WooCommerce.
+
+### Target prompts
+
+- "Who offers custom WordPress theme customization services?"
+- "Best agency to customize Astra, Elementor, or Divi WordPress themes"
+- "How much does WordPress theme customization cost and what is the process?"
+- "Can Dynamic Dreamz customize WooCommerce and WordPress themes for speed and conversions?"
+
+### Current strengths and available evidence
+
+- Live H1 clearly targets "WordPress Theme Customization Services".
+- 6 detailed service offering cards covering theme selection, custom design, responsiveness, features, speed optimization, and maintenance.
+- 10 benefit cards, 6-step serpentine process, 12 tech frameworks, 17 customized theme showcases, 6 WordPress portfolio case studies, and 11 client video reviews.
+- 6 direct FAQ questions with answers and rich schema markup.
+- Full parity with server-rendered React Server Components and zero duplicate assets.
+
+### Entity, evidence, and authorship actions
+
+- Reinforce Dynamic Dreamz's 18+ years of WordPress experience and 5,000+ completed projects.
+- Connect theme customization service to WooCommerce, White Label WordPress, and custom development offerings.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service, OfferCatalog (6 service offers), FAQPage (6 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schemas.
+- Ensure canonical URL is slashless `/wordpress-theme-customization-services`.
+- Set freshness timestamp `2026-08-19T00:00:00+05:30`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): passed.
+- Production build: passed.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new

@@ -7,7 +7,7 @@ export type ServiceHeroContent = {
   title: string;
   description: string;
   secondaryDescription?: string;
-  ctaLabel: string;
+  ctaLabel?: string;
   ctaHref?: string;
 };
 
@@ -47,15 +47,17 @@ export function ServiceHeroSection({
                 {content.secondaryDescription}
               </p>
             )}
-            <div className="mt-2">
-              <ButtonLink
-                aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
-                href={ctaHref}
-                variant="primary"
-              >
-                {content.ctaLabel}
-              </ButtonLink>
-            </div>
+            {content.ctaLabel && (
+              <div className="mt-2">
+                <ButtonLink
+                  aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
+                  href={ctaHref}
+                  variant="primary"
+                >
+                  {content.ctaLabel}
+                </ButtonLink>
+              </div>
+            )}
           </div>
           <div className="mx-auto mt-[30px] w-full max-w-[450px]">
             <ReviewAnimation />
@@ -89,13 +91,15 @@ export function ServiceHeroSection({
                   {content.secondaryDescription}
                 </p>
               )}
-              <ButtonLink
-                aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
-                href={ctaHref}
-                variant="primary"
-              >
-                {content.ctaLabel}
-              </ButtonLink>
+              {content.ctaLabel && (
+                <ButtonLink
+                  aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
+                  href={ctaHref}
+                  variant="primary"
+                >
+                  {content.ctaLabel}
+                </ButtonLink>
+              )}
             </div>
           </div>
           <div className="w-[41%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[991px]:w-full">
