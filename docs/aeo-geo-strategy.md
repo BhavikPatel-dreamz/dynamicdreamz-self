@@ -3574,6 +3574,199 @@ Deferred under the live-UI preservation gate. The current server-rendered hero, 
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-mobile-app-development`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 56 chars, Description: 143 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
+## Thank You For Enquiry (`/thank-you-for-enquiry`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, web development specialists, leadership, and sales operations
+Primary audience: Prospective clients and merchants who have successfully submitted an inquiry or contact form.
+Decision stage: post-conversion confirmation, immediate contact outreach, return navigation
+
+### Page role
+
+Dedicated post-inquiry confirmation and thank-you screen for users who submitted an enquiry form on Dynamic Dreamz. Confirms submission receipt, provides direct contact information (phone and sales email), and supplies a return CTA to the homepage.
+
+### Target prompts
+
+- What happens after submitting an inquiry on Dynamic Dreamz?
+- How can I contact Dynamic Dreamz directly after sending an inquiry?
+- What is Dynamic Dreamz sales phone number and email address?
+
+### Current strengths and available evidence
+
+- Server-rendered confirmation screen with H1 `Thank you for your inquiry!`.
+- Clear reassurance copy explaining that our team will get back to the prospect shortly.
+- Direct phone (`+91 93276 42007`) and email (`info@dynamicdreamz.com`) links with local icons.
+- Return CTA button to the slashless homepage `/`.
+- Correct `robots: { index: false, follow: false }` metadata directive matching live conversion screen behavior.
+- Complete structured data graph emitting WebPage, BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, hosting unique local SVGs with canonical paths.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and indexing | Conversion confirmation screen must not be indexed by search engines | Set `robots: { index: false, follow: false }` and filter from XML sitemap | Verified in rendered metadata and sitemap output |
+| P0 | implemented | Local assets | Phone and mail icons must be locally hosted | Save unique call and mail SVGs under `public/assets/thank-you/` | Verified with 0 duplicates and 0 external dependencies |
+| P0 | implemented | Structured data | WebPage, BreadcrumbList, Organization, and WebSite schema required | Emit standard WebPage graph with real content dates and canonical URL | Rendered JSON-LD and build verification complete 2026-08-19 |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered confirmation copy matches the live site exactly.
+
+### Entity, evidence, and authorship actions
+
+- Maintain consistent brand contact information (+91 93276 42007 and info@dynamicdreamz.com) matching the global Organization entity.
+
+### Internal-link and conversion actions
+
+- Maintain return CTA link pointing directly to `/`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit WebPage, BreadcrumbList, Organization, and WebSite.
+- Maintain `robots: { index: false, follow: false }` to prevent conversion-screen indexing.
+- Exclude from `sitemap.xml`.
+
+### Measurement plan
+
+- Analytics tracks successful thank-you page conversions following contact and inquiry form submissions.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, JSON-LD, and internal links use `/thank-you-for-enquiry`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 38 chars, Description: 99 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Web Design (`/web-design`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, UI/UX design specialists, leadership, and sales operations
+Primary audience: Businesses, eCommerce merchants, startups, and enterprises seeking creative, modern UI/UX design, website design, mobile app design, wireframing, and design strategy services.
+Decision stage: agency partner evaluation, design capability assessment, portfolio review, quote request
+
+### Page role
+
+Dedicated commercial service landing page targeting queries for "Web Design Company", "UI/UX Design Services", and custom website design. Highlights 10 client brand trust logos, 8 structured service offerings (Consulting, Prototyping, Web Design, Mobile App Design, Wireframing, UI Design, Strategy, Animation), 6 real-world UI/UX portfolio projects, 11 client video testimonials with modal playback, 11 buyer FAQs, and quote request banners.
+
+### Target prompts
+
+- Who is the best web design company in India?
+- What UI/UX design services does Dynamic Dreamz provide?
+- How much does custom website design and UI/UX design cost?
+- What is the difference between UI and UX design?
+- Can Dynamic Dreamz design websites and mobile apps for eCommerce stores?
+
+### Current strengths and available evidence
+
+- Server-rendered split hero with H1 `UI/UX Design Services` and rotating review badge.
+- 10 verified brand partner logos with infinite marquee scrolling.
+- 8 structured service offerings with custom SVG icons and hover gradient effects.
+- 6 featured real-world UI/UX portfolio projects with live store links.
+- 11 client video testimonials with modal playback.
+- 11 comprehensive buyer FAQs covering UI vs UX differences, business value, design process, custom services, required designer skills, industry specializations, client involvement, user-centric research, timelines, dedicated designer hiring, and ongoing support.
+- Complete structured data graph emitting Service, OfferCatalog (8 service offers), FAQPage (11 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, hosting unique local SVGs with canonical paths and deduplicating shared project media.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (8 offers), FAQPage (11 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
+| P0 | implemented | Local assets | Service icons, portfolio marks, and brand logos must be locally hosted | Ingest 8 service SVGs, 1 portfolio badge, and 5 unique project images under `public/assets/`, reuse canonical assets across the codebase | Verified locally with 0 runtime external dependencies and 0 duplicates |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered hero and service descriptions establish Dynamic Dreamz web design and UI/UX capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Position Dynamic Dreamz as an established UI/UX design and web development agency founded in 2006 with 150+ specialists and 5000+ completed projects.
+- Attribute client video testimonials directly to authentic brand founders.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/web-design` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 8 Offer items, 11 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2025-09-23T05:29:33+00:00`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "web design company", "UI/UX design services", "custom web design India", and "website design company".
+- Analytics tracks form submissions on `/request-quote` originating from `/web-design`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/web-design`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 59 chars, Description: 118 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Terms of Service (`/terms-of-service`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: Legal, compliance, leadership, and customer support
+Primary audience: Website visitors, prospective clients, active clients, and partners reviewing service terms, onboarding protocols, billing, intellectual property ownership, and cancellation policies.
+Decision stage: contract engagement, service agreement review, compliance verification
+
+### Page role
+
+Official legal terms of service defining client and agency obligations, payment terms, milestone schedules, intellectual property rights, cancellation and refund policies, quality assurance warranties, third-party tool responsibilities, and dispute resolution under the laws of India.
+
+### Target prompts
+
+- What are Dynamic Dreamz terms of service?
+- What is Dynamic Dreamz refund and cancellation policy?
+- Who owns the intellectual property and code for Dynamic Dreamz projects?
+- What are Dynamic Dreamz payment terms and billing schedules?
+- How does Dynamic Dreamz handle project scope changes and bug fixes?
+
+### Current strengths and available evidence
+
+- Server-rendered policy page with H1 `Terms of Service` and clean typography.
+- 11 comprehensive operational and legal policy sections covering Services Provided, Project Onboarding, Payments & Billing, Cancellation & Refund, Intellectual Property & Ownership, Confidentiality, Third-Party Tools, QA & Support, Limitation of Liability, Governing Law, and Contact Information.
+- Complete structured data graph emitting WebPage, BreadcrumbList, Organization, and WebSite JSON-LD.
+- Direct contact link (`info@dynamicdreamz.com`) for legal and client support.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Legal route needed App Router setup and canonical metadata | Ship slashless route via shared SEO data, sitemap, metadata, and canonical helpers | Verified in rendered output and build |
+| P0 | implemented | Structured data | WebPage, BreadcrumbList, Organization, and WebSite schema required | Emit standard WebPage graph with real content dates and canonical URL | Rendered JSON-LD and build verification complete 2026-08-19 |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered legal terms clearly outline client rights and obligations.
+
+### Entity, evidence, and authorship actions
+
+- Maintain consistent brand contact information (info@dynamicdreamz.com) matching the global Organization entity.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/terms-of-service` internal link from the global footer and legal menus.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit WebPage, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-02-20T12:31:37+00:00`.
+- Include route in `sitemap.xml` with priority 0.5 and yearly change frequency.
+
+### Measurement plan
+
+- Analytics tracks visits to `/terms-of-service` during contract execution and checkout flows.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/terms-of-service`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 34 chars, Description: 143 chars), JSON-LD graph verification, responsive layouts, lint, and production build.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new

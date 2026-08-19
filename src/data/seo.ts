@@ -25,6 +25,7 @@ export type PageSeoConfig = {
     changeFrequency: SitemapChangeFrequency;
     priority: number;
   };
+  robots?: Metadata["robots"];
 };
 
 const indexableRobots: Metadata["robots"] = {
@@ -1067,11 +1068,92 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  thankYouForEnquiry: {
+    path: "/thank-you-for-enquiry",
+    title: "Thank You For Enquiry | Dynamic Dreamz",
+    description:
+      "Thank you for your enquiry. We appreciate your interest and our team will get back to you shortly.",
+    keywords: [
+      "Dynamic Dreamz enquiry",
+      "thank you for enquiry",
+      "Shopify agency contact",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-29T10:56:05+00:00",
+    modifiedTime: "2026-08-07T09:16:24+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Thank You For Enquiry — Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    robots: {
+      index: false,
+      follow: false,
+    },
+  },
+  webDesign: {
+    path: "/web-design",
+    title: "Web Design Company & UI/UX Design Services | Dynamic Dreamz",
+    description:
+      "Dynamic Dreamz Is the Best Web Design Company in India Who Are Familiar With Creative and Modern Web Design Concepts.",
+    keywords: [
+      "web design company",
+      "UI/UX design services",
+      "custom web design",
+      "UI UX agency",
+      "website design India",
+      "Dynamic Dreamz",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-08-01T04:51:58+00:00",
+    modifiedTime: "2025-09-23T05:29:33+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Web Design Company & UI/UX Design Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  termsOfService: {
+    path: "/terms-of-service",
+    title: "Terms of Service | Dynamic Dreamz",
+    description:
+      "Read the Dynamic Dreamz terms of service outlining user rights, responsibilities, and website usage policies for all visitors and customers.",
+    keywords: [
+      "terms of service",
+      "terms and conditions",
+      "Dynamic Dreamz terms",
+      "website usage policy",
+      "client agreement",
+    ],
+    openGraphType: "article",
+    publishedTime: "2025-11-18T07:01:16+00:00",
+    modifiedTime: "2026-02-20T12:31:37+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Terms of Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;
 
-export const pageSeoEntries = Object.values(pageSeo);
+export const pageSeoEntries: PageSeoConfig[] = Object.values(pageSeo);
 
 /**
  * Build-time SEO length budget. These are hard ceilings/floors that fail
@@ -1165,7 +1247,7 @@ function createPageMetadata(page: PageSeoConfig): Metadata {
       description: socialDescription,
       images: [page.image.path],
     },
-    robots: indexableRobots,
+    robots: page.robots ?? indexableRobots,
   };
 }
 
