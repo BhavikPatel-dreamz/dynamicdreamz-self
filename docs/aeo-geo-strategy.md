@@ -31,6 +31,7 @@ It covers:
   - `/white-label-wordpress-development-services`
   - `/white-label-website-design-services`
   - `/shopify-plus-agency`
+  - `/bigcommerce-development`
   - `/request-quote`
 
 This is the strategy and implementation record. Visible changes proposed and
@@ -3233,6 +3234,57 @@ Commercial service landing page demonstrating Dynamic Dreamz's 18+ years of Word
 
 - Emit Service, OfferCatalog (6 service offers), FAQPage (6 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schemas.
 - Ensure canonical URL is slashless `/wordpress-theme-customization-services`.
+- Set freshness timestamp `2026-08-19T00:00:00+05:30`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): passed.
+- Production build: passed.
+
+## BigCommerce Development (`/bigcommerce-development`)
+
+Status: implemented; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, content, development, leadership, sales, and ecommerce delivery operations
+Primary audience: eCommerce merchants, direct-to-consumer retailers, B2B brands, and digital agencies seeking custom BigCommerce store design, development, app configuration, Figma conversion, and maintenance
+Decision stage: Commercial evaluation and BigCommerce development partner selection
+
+### Page role
+
+Commercial service landing page demonstrating Dynamic Dreamz's BigCommerce development expertise across custom theme customization (Cornerstone, Stencil), app configuration, bespoke private app development, Figma to BigCommerce conversions, and ongoing maintenance.
+
+### Target prompts
+
+- "What services does a BigCommerce development company provide?"
+- "How does Dynamic Dreamz customize BigCommerce themes like Cornerstone and Stencil?"
+- "Can Dynamic Dreamz convert Figma designs into custom BigCommerce stores?"
+- "Does Dynamic Dreamz build and configure private BigCommerce apps?"
+- "What is the process for developing and launching a BigCommerce store with Dynamic Dreamz?"
+- "Can Dynamic Dreamz migrate an existing online store to BigCommerce?"
+
+### Current strengths and available evidence
+
+- Live H1 clearly targets "BigCommerce Development Company".
+- Hero review wheel provides proof across Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0).
+- 12 client brand logos confirm enterprise client trust (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit).
+- 5 core BigCommerce service offerings (Theme Customization, App Configuration, Private App Creation, Figma to BigCommerce Conversion, Maintenance Service).
+- 5 platform reasons (Ease of Use, Scalable Solutions, SEO Friendly, Secure and Reliable, Customizable Design).
+- 4-step serpentine wave process (Initial Consultation, Planning and Strategy, Development and Implementation, Testing, Launch, and Support).
+- 6 agency advantages (Expertise in Custom Development, Focus on Security, Commitment to Quality, Timely Delivery, Transparent Communication, Ongoing Support and Maintenance).
+- 6 featured portfolio projects (Kayfi, Maple Syrup, Knobs, Daniel Walters, Country & Stable, Jolie Perfume) with BigCommerce badges and live external links.
+- 11 client video reviews.
+- 6 comprehensive FAQs answering migration, cost, onboarding, timelines, monitoring, and post-launch support.
+- Fully server-rendered with zero duplicate assets and App Router architecture.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as an established BigCommerce and eCommerce partner with 5,000+ completed projects.
+- Tie BigCommerce service offerings to store migration, custom development, and white-label capabilities.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service, OfferCatalog (5 service offers), FAQPage (6 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schemas.
+- Ensure canonical URL is slashless `/bigcommerce-development`.
 - Set freshness timestamp `2026-08-19T00:00:00+05:30`.
 
 ### Verification and remaining gaps

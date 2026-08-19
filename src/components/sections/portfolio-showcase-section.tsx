@@ -49,9 +49,20 @@ export function PortfolioShowcaseSection({
                 ))
               : content.heading}
           </h2>
-          <p className="mx-auto mt-6 max-w-[740px] text-[18px] font-medium leading-[34.2px] text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]">
-            {content.description}
-          </p>
+          {content.description && (
+            <p className="mx-auto mt-6 max-w-[740px] text-[18px] font-medium leading-[34.2px] text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]">
+              {content.description.includes("<br>")
+                ? content.description.split("<br>").map((line, index, lines) => (
+                    <span key={line}>
+                      {line}
+                      {index < lines.length - 1 ? (
+                        <br className="max-[1199px]:hidden" />
+                      ) : null}
+                    </span>
+                  ))
+                : content.description}
+            </p>
+          )}
         </div>
 
         <div className="mt-[42px] grid grid-cols-3 gap-x-[15px] gap-y-[60px] max-[991px]:mt-[50px] max-[991px]:grid-cols-2 max-[991px]:gap-y-[30px] max-[767px]:grid-cols-1">

@@ -39,14 +39,15 @@ const defaultAdvantagesContent: ProofSectionContent = {
 
 export function ShopifyReasonsSection({
   content = defaultReasonsContent,
+  className = "shopify-customization-services-sec bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[767px]:py-[60px]",
+  id = "why-hire-shopify-developers",
 }: {
   content?: ProofSectionContent;
+  className?: string;
+  id?: string;
 }) {
   return (
-    <section
-      className="bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[767px]:py-[60px]"
-      id="why-hire-shopify-developers"
-    >
+    <section className={className} id={id}>
       <Container>
         <div className="mb-[50px] text-center max-[767px]:mb-[35px]">
           <h2 className={headingClassName}>
@@ -96,15 +97,18 @@ export function ShopifyReasonsSection({
 export function ShopifyAdvantagesSection({
   content = defaultAdvantagesContent,
   columns = 3,
+  align = "center",
   className = "py-20 max-[767px]:py-[60px]",
   id = "shopify-developer-advantages",
 }: {
   content?: ProofSectionContent;
   columns?: 2 | 3;
+  align?: "center" | "left";
   className?: string;
   id?: string;
 }) {
   const isTwoCol = columns === 2;
+  const isLeftAlign = align === "left";
 
   return (
     <section className={className} id={id}>
@@ -136,7 +140,9 @@ export function ShopifyAdvantagesSection({
         >
           {content.items.map((item, index) => (
             <article
-              className={`flex min-h-[250px] flex-col items-center border-[#efefef] px-8 py-[35px] text-center max-[1199px]:px-5 max-[767px]:min-h-0 max-[767px]:py-5 ${
+              className={`flex min-h-[250px] flex-col ${
+                isLeftAlign ? "items-start text-left" : "items-center text-center"
+              } border-[#efefef] px-8 py-[35px] max-[1199px]:px-5 max-[767px]:min-h-0 max-[767px]:py-5 ${
                 isTwoCol
                   ? `${index % 2 === 0 ? "border-r max-[767px]:border-r-0" : ""} ${
                       index < content.items.length - 2 ? "border-b" : ""
@@ -154,13 +160,17 @@ export function ShopifyAdvantagesSection({
               key={item.title}
             >
               <Image
-                className="size-[58px] object-contain"
+                className={`size-[58px] object-contain ${isLeftAlign ? "mb-2.5" : ""}`}
                 src={item.icon}
                 alt={item.iconAlt}
                 width={58}
                 height={58}
               />
-              <h3 className="mt-5 mb-[15px] font-sans text-base leading-[26px] font-bold text-ink max-[767px]:mt-[15px] max-[767px]:mb-2.5">
+              <h3
+                className={`${
+                  isLeftAlign ? "mt-0 mb-1.5" : "mt-5 mb-[15px]"
+                } font-sans text-base leading-[26px] font-bold text-ink max-[767px]:mt-[15px] max-[767px]:mb-2.5`}
+              >
                 {item.title}
               </h3>
               <p className="text-base leading-[27.2px] font-medium tracking-[0.32px] text-muted max-[767px]:text-sm max-[767px]:leading-6">

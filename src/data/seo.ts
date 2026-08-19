@@ -909,6 +909,34 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  bigCommerceDevelopment: {
+    path: "/bigcommerce-development",
+    title: "BigCommerce Development Company India | Dynamic Dreamz",
+    description:
+      "Hire BigCommerce Developer for top notch eCommerce solutions. Get customisations, integrations, and support for your business. Call Now!",
+    keywords: [
+      "BigCommerce development company",
+      "BigCommerce development company India",
+      "hire BigCommerce developer",
+      "BigCommerce theme customization",
+      "BigCommerce store development",
+      "BigCommerce app integration",
+      "BigCommerce maintenance",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-02T09:33:14+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "BigCommerce Development Company India | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

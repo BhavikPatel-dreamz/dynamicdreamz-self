@@ -585,8 +585,23 @@ Primary SEO intent: WordPress theme customization services, custom WordPress the
 | --- | --- | --- | --- | --- | --- |
 | Meta title | `WordPress Theme Customization Services \| Dynamic Dreamz` (56 chars) | Preserved live meta title (56 chars). | Fits 15-60 character budget and captures primary search intent. | High | implemented in metadata |
 | Meta description | `Choose WordPress Theme Customization Services . Expert WordPress Developers with 18+ Years of Experience. Hire DynamicDreamz today!` (132 chars) | Preserved live meta description (132 chars). | Fits 70-160 character budget while preserving commercial message. | High | implemented in metadata |
-| Benefits Section heading | `Benefits of the WordPress Theme Customization Service` | `Benefits of WordPress Theme Customization Services` | Improves grammar and reads more naturally in English. | Low | deferred pending exact visible-copy approval |
-| VideoObject structured data | Legacy site had no schema for client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google. | High | implemented in schema |
 | Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (6 service offers) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO answer discovery and FAQ rich results. | High | implemented in schema |
+
+## BigCommerce Development (`/bigcommerce-development`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: BigCommerce development company, BigCommerce development company India, hire BigCommerce developer, BigCommerce theme customization, BigCommerce app integration, BigCommerce maintenance.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `BigCommerce Development Company India \| Dynamic Dreamz` (54 chars) | Preserved live meta title (54 chars). | Fits 15-60 character budget and captures primary search intent. | High | implemented in metadata |
+| Meta description | `Hire BigCommerce Developer for top notch eCommerce solutions. Get customisations, integrations, and support for your business. Call Now!` (137 chars) | Preserved live meta description (137 chars). | Fits 70-160 character budget while capturing core commercial message. | High | implemented in metadata |
+| Why Choose DD section description | `...we ensure your WordPress website is visually attractive...` | `...we ensure your BigCommerce store is visually attractive...` | Fixes platform copy carryover from WordPress templates. | Medium | deferred pending exact visible-copy approval |
+| Why Choose DD Item 1 | `...our WordPress developers have the skills...` | `...our BigCommerce developers have the skills...` | Fixes platform copy carryover from WordPress templates. | Medium | deferred pending exact visible-copy approval |
+| Why Choose DD Item 6 | `...keep your WordPress website safe, up to date, and performing at its peak.` | `...keep your BigCommerce store safe, up to date, and performing at its peak.` | Fixes platform copy carryover from WordPress templates. | Medium | deferred pending exact visible-copy approval |
+| VideoObject structured data | Legacy site had no schema for client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (5 service offers) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO answer discovery and FAQ rich results. | High | implemented in schema |
+
 
 

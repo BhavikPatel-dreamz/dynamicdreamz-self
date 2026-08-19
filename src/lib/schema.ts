@@ -42,6 +42,10 @@ import {
 } from "@/content/shopify-development-agency";
 import { shopifyExpertsContent } from "@/content/shopify-experts";
 import {
+  bigCommerceDevelopmentFaqs,
+  bigCommerceDevelopmentServices,
+} from "@/content/bigcommerce-development";
+import {
   magentoDevelopmentFaqs,
   magentoDevelopmentServices,
 } from "@/content/magento-development";
@@ -208,6 +212,11 @@ const wordPressThemeCustomizationPageId = `${wordPressThemeCustomizationPageUrl}
 const wordPressThemeCustomizationServiceId = `${wordPressThemeCustomizationPageUrl}#service`;
 const wordPressThemeCustomizationFaqId = `${wordPressThemeCustomizationPageUrl}#faq`;
 const wordPressThemeCustomizationBreadcrumbId = `${wordPressThemeCustomizationPageUrl}#breadcrumb`;
+const bigCommerceDevelopmentPageUrl = absoluteUrl(pageSeo.bigCommerceDevelopment.path);
+const bigCommerceDevelopmentPageId = `${bigCommerceDevelopmentPageUrl}#webpage`;
+const bigCommerceDevelopmentServiceId = `${bigCommerceDevelopmentPageUrl}#service`;
+const bigCommerceDevelopmentFaqId = `${bigCommerceDevelopmentPageUrl}#faq`;
+const bigCommerceDevelopmentBreadcrumbId = `${bigCommerceDevelopmentPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1805,6 +1814,32 @@ export function createWordPressThemeCustomizationPageSchema() {
       answer: item.answer,
     })),
     offers: wordPressThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createBigCommerceDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.bigCommerceDevelopment,
+    pageUrl: bigCommerceDevelopmentPageUrl,
+    pageId: bigCommerceDevelopmentPageId,
+    serviceId: bigCommerceDevelopmentServiceId,
+    faqId: bigCommerceDevelopmentFaqId,
+    breadcrumbId: bigCommerceDevelopmentBreadcrumbId,
+    serviceName: "BigCommerce Development Services",
+    serviceType:
+      "Custom BigCommerce store development, theme customization, app integration, private app development, and maintenance",
+    breadcrumbName: "BigCommerce Development",
+    audienceType:
+      "eCommerce merchants, online retailers, and digital agencies seeking expert BigCommerce store development",
+    faqs: bigCommerceDevelopmentFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: bigCommerceDevelopmentServices.items.map((item) => ({
       title: item.title,
       description: item.description,
     })),
