@@ -1,15 +1,16 @@
+import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { AgencyServicesSection } from "@/components/sections/shopify-plus-agency/agency-services-section";
+import { ServiceHeroSection } from "@/components/sections/service-hero-section";
 import { CaseStudyCardsSection } from "@/components/sections/shopify-plus-agency/case-study-cards-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
 import { IndustriesServedSection } from "@/components/sections/shopify-plus-agency/industries-served-section";
 import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
-import { ShopifyPlusAgencyHeroSection } from "@/components/sections/shopify-plus-agency/shopify-plus-agency-hero-section";
 import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
 import {
   shopifyPlusAgencyFaqs,
+  shopifyPlusAgencyHero,
   shopifyPlusAgencyHowToChoose,
   shopifyPlusAgencyPortfolio,
   shopifyPlusAgencyWhyChoose,
@@ -37,7 +38,10 @@ const portfolioContent = {
 export function ShopifyPlusAgencyPage() {
   return (
     <div className="font-sans leading-[30.4px]">
-      <ShopifyPlusAgencyHeroSection />
+      <ServiceHeroSection
+        className="inner-hero-sec shopify-plus-experts relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        content={shopifyPlusAgencyHero}
+      />
       <IndustryBrandsSection content={brandSection} />
       <TextBoxSection
         className="pt-20 pb-0"

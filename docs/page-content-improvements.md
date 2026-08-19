@@ -507,5 +507,58 @@ Primary SEO intent: Shopify theme customization services, custom Shopify theme d
 | VideoObject structured data | Legacy site had no structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes with upload dates, YouTube URLs, and thumbnail assets. | Enables video search rich results without modifying visible layout. | High | implemented in schema |
 | Service & FAQ structured data | Legacy site had minimal schema. | Emitted `Service` with `OfferCatalog` (6 offers) and `FAQPage` (11 questions/answers). | Enables rich answer engine visibility and FAQ SERP enhancements. | High | implemented in schema |
 
+## Shopify Development Agency (`/shopify-development-agency`)
 
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: Shopify development agency, Shopify development services, Shopify development company, custom Shopify store design, Shopify migration, Shopify maintenance, Shopify app integration.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Comprehensive Shopify Development Services \| #1 Shopify Development Company \| Custom eCommerce Solutions \| Shopify Development India` (142 chars) | `Shopify Development Agency & Services \| Dynamic Dreamz` (54 chars) | Fits SEO 60-character budget and avoids truncation in search results while targeting primary search intent. | High | implemented in metadata |
+| Meta description | `Enhance your online store with our expert Shopify development services. From custom store design and app integration to performance optimization and ongoing support, we ensure a robust, scalable, and user friendly eCommerce experience.` (235 chars) | `Expert Shopify development services by Dynamic Dreamz: custom store design, app integration, migration, speed optimization and dedicated ongoing support.` (154 chars) | Shortens live description to fit within 70-160 char SEO length budget while preserving all core service keywords. | High | implemented in metadata |
+| Service card copy (App Integration) | `Suppose you can’t find any Shopify themes matching your needs. In that case, our custom Shopify theme development service can create an exclusively crafted theme that perfectly fits your requirements. From concept to launch, we ensure your custom Shopify theme enhances user experience, boosts engagement, and drives sales.` | `Seamlessly integrate third-party apps, ERPs, CRMs, and custom extensions to enhance your Shopify store functionality, automate workflows, and boost sales.` | Live card paragraph describes custom themes rather than app integration. Deferred for live UI parity. | Medium | deferred pending exact visible-copy approval |
+| VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (8 service items) and `FAQPage` (9 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Shopify Migration (`/shopify-migration`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: Shopify migration services, migrate to Shopify, Magento to Shopify migration, WooCommerce to Shopify migration, BigCommerce to Shopify migration, Shopify 2.0 theme migration, zero downtime data migration.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Seamless Shopify Migration Services \| Shopify Store Migration \| Expert Shopify Store Migration Service India` (110 chars) | `Seamless Shopify Migration Services \| Dynamic Dreamz` (52 chars) | Fits 60-character budget and avoids keyword repetition in SERPs. | High | implemented in metadata |
+| Meta description | `We ensure a seamless transfer of your online store, preserving data integrity and minimizing downtime. Let us handle your Shopify migration and boost your e-commerce success.` (176 chars) | `We ensure a seamless transfer of your store, preserving data integrity and minimizing downtime. Expert Shopify migration services to boost ecommerce success.` (158 chars) | Fits 70-160 character budget while preserving live value proposition. | High | implemented in metadata |
+| Etsy migration card alt | `Etsy to Shopify Migratio Image` (typo in live alt text) | `Etsy to Shopify Migration Image` | Corrects typo in image alt attribute for better accessibility. | Low | implemented as a nonvisual accessibility correction |
+| Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had outdated schema mismatching modern visible FAQs. | Emitted `Service` with `OfferCatalog` (12 migration offers) and `FAQPage` matching all 5 live visible FAQs. | Enables rich answer engine visibility and FAQ SERP enhancements. | High | implemented in schema |
+
+## WooCommerce Development (`/woocommerce-development`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: WooCommerce development company, WooCommerce development services, custom WooCommerce theme development, WooCommerce plugin development, WooCommerce migration, WooCommerce maintenance and support.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Woocommerce Development Company India \| Dynamic Dreamz` (55 chars) | Preserved live meta title (55 chars). | Fits 15-60 char budget and captures primary keyword intent. | High | implemented in metadata |
+| Meta description | `Grow your online store with professional WooCommerce development services from Dynamic Dreamz, integrations, and seamless shopping experiences.` (145 chars) | Preserved live meta description (145 chars). | Fits 70-160 char budget while capturing core value proposition. | High | implemented in metadata |
+| FAQ Q3 empty bullet | Empty bullet point `<li></li>` in live FAQ answer HTML | Omitted empty bullet point in structured list rendering. | Cleans up empty DOM node without altering visible content. | Low | implemented cleanly in content |
+| VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (9 service items) and `FAQPage` (10 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Shopify CRO Agency (`/shopify-cro-agency`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: Shopify CRO agency, Shopify conversion rate optimization, Shopify CRO audit, Shopify funnel analysis, Shopify A/B testing, ecommerce conversion rate optimization.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Shopify CRO Agency \| Increase Revenue Without Increasing Traffic` (63 chars) | `Shopify CRO Agency \| Increase Revenue \| Dynamic Dreamz` (54 chars) | Fits SEO 60-character budget and avoids truncation in SERPs. | High | implemented in metadata |
+| Meta description | `Improve your Shopify conversion rate with CRO audits, funnel analysis, A/B testing, user behavior insights, and ongoing optimization services from Dynamic Dreamz.` (166 chars) | `Improve your Shopify conversion rate with CRO audits, funnel analysis, A/B testing, user behavior insights, and ongoing optimization from Dynamic Dreamz.` (154 chars) | Fits 70-160 character budget while preserving all core service keywords. | High | implemented in metadata |
+| VideoObject structured data | Legacy site had no schema for client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video search rich results without modifying visible layout. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site had minimal schema for CRO services. | Emitted `Service` with `OfferCatalog` (5 service offers) and `FAQPage` (6 questions/answers). | Enables rich answer engine visibility and FAQ SERP enhancements. | High | implemented in schema |
 

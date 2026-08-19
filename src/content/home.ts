@@ -163,7 +163,7 @@ export const projects: Project[] = [
   {
     name: "Holy Plantz",
     href: "https://holyplantz.com/",
-    media: { type: "image", src: "/assets/portfolio/holy-plantz.webp", alt: "Holy Plantz Shopify storefront" },
+    media: { type: "image", src: "/assets/our-work/projects/holy-plantz.webp", alt: "Holy Plantz Shopify storefront" },
   },
   {
     name: "Sleepy Cat",
@@ -175,7 +175,7 @@ export const projects: Project[] = [
     href: "https://www.matcharepublic.com/",
     media: {
       type: "image",
-      src: "/assets/portfolio/matcha-republic.webp",
+      src: "/assets/our-work/projects/matcha-republic.webp",
       alt: "Matcha Republic Shopify store showing the product range and brand pages",
     },
   },

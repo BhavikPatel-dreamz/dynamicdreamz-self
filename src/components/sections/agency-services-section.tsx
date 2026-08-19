@@ -38,12 +38,26 @@ export function AgencyServicesSection({
         <div className="mb-5 flex items-center justify-between max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:text-center">
           <div className="w-[calc(41%-30px)] px-[15px] max-[991px]:w-full max-[991px]:p-0">
             <h2 className="m-0 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:mb-[30px]">
-              {content.heading}
+              {content.heading.includes("<br>")
+                ? content.heading.split("<br>").map((line, index, lines) => (
+                    <span key={line}>
+                      {line}
+                      {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}
+                    </span>
+                  ))
+                : content.heading}
             </h2>
           </div>
           <div className="w-[calc(55%-30px)] px-[15px] max-[991px]:w-full max-[991px]:p-0">
             <p className="mb-6 text-[18px] font-medium leading-[34.2px] text-muted">
-              {content.description}
+              {content.description.includes("<br>")
+                ? content.description.split("<br>").map((line, index, lines) => (
+                    <span key={line}>
+                      {line}
+                      {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}
+                    </span>
+                  ))
+                : content.description}
             </p>
           </div>
         </div>

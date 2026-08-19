@@ -63,12 +63,12 @@ export const whiteLabelWebsiteDesignAiDiscovery: readonly WhiteLabelCard[] = [
 ];
 
 export type WhiteLabelWebsiteDesignProcessStep = WhiteLabelCard & { icon: string };
-const processAsset = (filename: string) => `/assets/white-label-website-design/process/${filename}.svg`;
+const processAsset = (filename: string) => `/assets/process/${filename}.svg`;
 export const whiteLabelWebsiteDesignProcess: readonly WhiteLabelWebsiteDesignProcessStep[] = [
-  { title: "Analyze", description: "We start by analyzing your client's requirements and collecting all relevant data to ensure we understand the project's requirements.", icon: processAsset("analyze") },
-  { title: "Design", description: "Our design team creates a layout and wireframe based on the project requirements, focusing on user experience and visual attraction.", icon: processAsset("design") },
-  { title: "Build", description: "After design approval, our development team starts creating the website using the latest technologies, ensuring the website is fast, secure, and responsive.", icon: processAsset("build") },
-  { title: "Test", description: "Before delivery, we thoroughly test the site to ensure it works perfectly across all devices and browsers.", icon: processAsset("test") },
+  { title: "Analyze", description: "We start by analyzing your client's requirements and collecting all relevant data to ensure we understand the project's requirements.", icon: processAsset("step-01") },
+  { title: "Design", description: "Our design team creates a layout and wireframe based on the project requirements, focusing on user experience and visual attraction.", icon: processAsset("step-02") },
+  { title: "Build", description: "After design approval, our development team starts creating the website using the latest technologies, ensuring the website is fast, secure, and responsive.", icon: processAsset("step-03") },
+  { title: "Test", description: "Before delivery, we thoroughly test the site to ensure it works perfectly across all devices and browsers.", icon: processAsset("step-04") },
 ];
 
 export const whiteLabelWebsiteDesignFeatures: readonly WhiteLabelCard[] = [

@@ -32,8 +32,24 @@ import {
 } from "@/content/white-label-website-design";
 import { caseStudiesContent } from "@/content/case-studies";
 import { shopifyAppsContent } from "@/content/shopify-apps";
+import {
+  shopifyCroFaqs,
+  shopifyCroServices,
+} from "@/content/shopify-cro-agency";
+import {
+  shopifyDevelopmentAgencyFaqs,
+  shopifyDevelopmentAgencyServices,
+} from "@/content/shopify-development-agency";
 import { shopifyExpertsContent } from "@/content/shopify-experts";
+import {
+  shopifyMigrationFaqs,
+  shopifyMigrationServices,
+} from "@/content/shopify-migration";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
+import {
+  woocommerceDevelopmentFaqs,
+  woocommerceDevelopmentServices,
+} from "@/content/woocommerce-development";
 import {
   wordpressDevelopmentFaqs,
   wordpressDevelopmentServices,
@@ -141,6 +157,16 @@ const shopifyPlusPageId = `${shopifyPlusPageUrl}#webpage`;
 const shopifyPlusServiceId = `${shopifyPlusPageUrl}#service`;
 const shopifyPlusFaqId = `${shopifyPlusPageUrl}#faq`;
 const shopifyPlusBreadcrumbId = `${shopifyPlusPageUrl}#breadcrumb`;
+const shopifyMigrationPageUrl = absoluteUrl(pageSeo.shopifyMigration.path);
+const shopifyMigrationPageId = `${shopifyMigrationPageUrl}#webpage`;
+const shopifyMigrationServiceId = `${shopifyMigrationPageUrl}#service`;
+const shopifyMigrationFaqId = `${shopifyMigrationPageUrl}#faq`;
+const shopifyMigrationBreadcrumbId = `${shopifyMigrationPageUrl}#breadcrumb`;
+const shopifyCroPageUrl = absoluteUrl(pageSeo.shopifyCro.path);
+const shopifyCroPageId = `${shopifyCroPageUrl}#webpage`;
+const shopifyCroServiceId = `${shopifyCroPageUrl}#service`;
+const shopifyCroFaqId = `${shopifyCroPageUrl}#faq`;
+const shopifyCroBreadcrumbId = `${shopifyCroPageUrl}#breadcrumb`;
 const caseStudiesPageUrl = absoluteUrl(pageSeo.caseStudies.path);
 const caseStudiesPageId = `${caseStudiesPageUrl}#webpage`;
 const caseStudiesBreadcrumbId = `${caseStudiesPageUrl}#breadcrumb`;
@@ -154,6 +180,16 @@ const shopifyThemeCustomizationPageId = `${shopifyThemeCustomizationPageUrl}#web
 const shopifyThemeCustomizationServiceId = `${shopifyThemeCustomizationPageUrl}#service`;
 const shopifyThemeCustomizationFaqId = `${shopifyThemeCustomizationPageUrl}#faq`;
 const shopifyThemeCustomizationBreadcrumbId = `${shopifyThemeCustomizationPageUrl}#breadcrumb`;
+const shopifyDevelopmentAgencyPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentAgency.path);
+const shopifyDevelopmentAgencyPageId = `${shopifyDevelopmentAgencyPageUrl}#webpage`;
+const shopifyDevelopmentAgencyServiceId = `${shopifyDevelopmentAgencyPageUrl}#service`;
+const shopifyDevelopmentAgencyFaqId = `${shopifyDevelopmentAgencyPageUrl}#faq`;
+const shopifyDevelopmentAgencyBreadcrumbId = `${shopifyDevelopmentAgencyPageUrl}#breadcrumb`;
+const woocommerceDevelopmentPageUrl = absoluteUrl(pageSeo.woocommerceDevelopment.path);
+const woocommerceDevelopmentPageId = `${woocommerceDevelopmentPageUrl}#webpage`;
+const woocommerceDevelopmentServiceId = `${woocommerceDevelopmentPageUrl}#service`;
+const woocommerceDevelopmentFaqId = `${woocommerceDevelopmentPageUrl}#faq`;
+const woocommerceDevelopmentBreadcrumbId = `${woocommerceDevelopmentPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1420,6 +1456,58 @@ export function createShopifyExpertsPageSchema() {
   });
 }
 
+export function createShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyMigration,
+    pageUrl: shopifyMigrationPageUrl,
+    pageId: shopifyMigrationPageId,
+    serviceId: shopifyMigrationServiceId,
+    faqId: shopifyMigrationFaqId,
+    breadcrumbId: shopifyMigrationBreadcrumbId,
+    serviceName: "Shopify Store Migration Services",
+    serviceType:
+      "End-to-end platform migration to Shopify & Shopify Plus with zero downtime and full data integrity",
+    breadcrumbName: "Shopify Migration",
+    audienceType:
+      "eCommerce brands, direct-to-consumer businesses, and digital agencies migrating from Magento, WooCommerce, BigCommerce, Salesforce, PrestaShop, Squarespace, Wix, or Shopify 1.0",
+    faqs: shopifyMigrationFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: shopifyMigrationServices.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyCroPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyCro,
+    pageUrl: shopifyCroPageUrl,
+    pageId: shopifyCroPageId,
+    serviceId: shopifyCroServiceId,
+    faqId: shopifyCroFaqId,
+    breadcrumbId: shopifyCroBreadcrumbId,
+    serviceName: "Shopify Conversion Rate Optimization (CRO) Services",
+    serviceType:
+      "Data-driven Shopify CRO audits, funnel analysis, A/B testing, user behavior insights, and UX implementation",
+    breadcrumbName: "Shopify CRO Agency",
+    audienceType:
+      "Shopify and Shopify Plus merchants looking to increase store conversions, average order value (AOV), and customer retention",
+    faqs: shopifyCroFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: shopifyCroServices.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
 export function createCaseStudiesPageSchema() {
   const caseStudyItems = caseStudiesContent.items.map((item, index) => ({
     "@type": "ListItem",
@@ -1602,6 +1690,52 @@ export function createShopifyThemeCustomizationPageSchema() {
       title: item.title,
       description: item.description,
     })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentAgencyPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentAgency,
+    pageUrl: shopifyDevelopmentAgencyPageUrl,
+    pageId: shopifyDevelopmentAgencyPageId,
+    serviceId: shopifyDevelopmentAgencyServiceId,
+    faqId: shopifyDevelopmentAgencyFaqId,
+    breadcrumbId: shopifyDevelopmentAgencyBreadcrumbId,
+    serviceName: "Shopify Development Services",
+    serviceType: "Custom Shopify store development, theme customization, migration, app integration, and maintenance",
+    breadcrumbName: "Shopify Development Agency",
+    audienceType:
+      "DTC brands, B2B merchants, store owners, and digital agencies seeking comprehensive Shopify development services",
+    faqs: shopifyDevelopmentAgencyFaqs,
+    offers: shopifyDevelopmentAgencyServices.items,
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createWooCommerceDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.woocommerceDevelopment,
+    pageUrl: woocommerceDevelopmentPageUrl,
+    pageId: woocommerceDevelopmentPageId,
+    serviceId: woocommerceDevelopmentServiceId,
+    faqId: woocommerceDevelopmentFaqId,
+    breadcrumbId: woocommerceDevelopmentBreadcrumbId,
+    serviceName: "WooCommerce Development Services",
+    serviceType: "Custom WooCommerce store design, theme development, plugin development, API development, migration, and maintenance",
+    breadcrumbName: "WooCommerce Development",
+    audienceType:
+      "Store owners, merchants, digital agencies, and businesses seeking custom WooCommerce development services",
+    faqs: woocommerceDevelopmentFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ].join(" "),
+    })),
+    offers: woocommerceDevelopmentServices.items,
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }

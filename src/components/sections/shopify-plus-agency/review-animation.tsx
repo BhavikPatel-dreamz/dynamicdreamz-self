@@ -146,10 +146,10 @@ function ReviewCircle({
             {review.pillLabel}
             <Image
               className="ml-[10px] inline h-auto w-auto max-[767px]:ml-[5px] max-[767px]:w-[10px]"
-              src="/assets/shopify-plus-agency/reviews/arrow-up-right.svg"
+              src="/assets/icons/arrow-up-right.svg"
               alt=""
-              width={14}
-              height={15}
+              width={12}
+              height={12}
             />
           </a>
         </div>

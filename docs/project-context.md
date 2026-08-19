@@ -219,19 +219,19 @@ or separately approved assets:
 
 - Store project-owned files under `public/assets/`.
 - Suggested folders: `brand`, `logos`, `clients`, `case-studies`, `services`,
-  `team`, `testimonials`, `blog`, `og`.
-- Search the full `public/assets/` tree before downloading, copying, or renaming
-  media. Compare content hashes for likely matches and visually inspect files
-  when encodings differ. Reuse an existing canonical asset whenever the visual
-  content is the same.
+  `team`, `testimonials`, `blog`, `og`, `icons`, `proof`, `backgrounds`.
+- Search the full `public/assets/` tree across all categories before downloading,
+  copying, or renaming media. Check visually, by brand/client identity, by SVG
+  shapes/paths, and by content hashes—not just by filename. Reuse an existing
+  canonical asset whenever the visual content is identical or equivalent.
 - If the same asset is used on multiple pages, keep one copy in a neutral
-  purpose-based folder such as `public/assets/team/` and let each page provide
-  its own contextual alt text in content data. Do not create page-local copies
-  just to give the file a different page-specific name.
-- When a live-site asset is required for parity, download or copy it as a
-  migration-time action and commit/use the local project copy. Never leave the
-  final `src`, CSS URL, OG image URL, favicon URL, or schema image URL pointing
-  at the old domain.
+  purpose-based folder such as `public/assets/team/` or `public/assets/clients/`
+  and let each page provide its own contextual alt text in content data. Do not
+  create page-local copies just to give the file a different page-specific name.
+- When no suitable local asset exists, download or copy the required asset into
+  the appropriate `public/assets/<category>/` folder during migration. Never
+  leave final `src`, CSS URL, OG image URL, favicon URL, or schema image URL
+  pointing at the old domain.
 - Name local asset files clearly. Use lowercase kebab-case filenames that
   describe the image, brand/client, service, section, or page context. Rename
   vague live filenames such as hashes, random numbers, `image-1`, `banner`, or
@@ -280,22 +280,49 @@ or separately approved assets:
 - Keep service pages specific to search intent; avoid one generic template with
   swapped keywords.
 
-## Component Reuse Policy
+## Component Reuse & Generalization Policy
 
-- Search `src/components/**` and existing imports/usages before creating any
-  component, hook, interactive control, layout primitive, or page section.
-- Reuse a suitable existing component directly. When the difference is small
-  and belongs to the same visual/semantic contract, add a focused typed prop,
-  slot, or variant instead of copying the component.
-- Keep shared primitives in `src/components/ui/`, shared site chrome in
-  `src/components/layout/`, and genuinely reusable marketing sections in
-  `src/components/sections/` rather than nesting them under one page.
-- Keep page-specific content in typed content/data files so one reusable
-  component can render different copy without duplicating its implementation.
-- Do not force unrelated designs or semantics into one oversized component.
-  Create a new component when reuse would make the API confusing, introduce
-  irrelevant conditionals, or weaken accessibility; record that reason during
-  implementation review.
+- **Deep Pre-Creation Discovery**: Search `src/components/**` and existing
+  imports/usages before creating any component, hook, interactive control,
+  layout primitive, or page section. Search by visual pattern, UI layout (heroes,
+  card grids, metric counters, logo marquees, testimonial sliders, accordions,
+  video dialogs, CTA banners), DOM structure, and Tailwind styling—not just by
+  filename.
+- **Safe Reuse & Extension**: Reuse a suitable existing component directly. If
+  an existing component is close but needs a minor variant or additional prop,
+  extend/modify it with optional typed props, variant styles, or slots.
+  **Zero Breakage**: Always ensure changes are strictly backward-compatible so
+  all existing consumers and pages remain completely intact.
+- **Pragmatic Creation**: If no matching or adaptable component exists after a
+  proper search, build a new component freely. There is no rigid rule forbidding
+  new components when the visual design, semantics, or interaction are distinct.
+- **Generalized Component Design**: Whenever building any new component, design
+  it to be modular and generalized for future reuse across other pages:
+  - Decouple markup from hardcoded page text; pass structured content via typed
+    props or data files (`src/content/**`, `src/data/**`).
+  - Provide flexible typed props and sensible defaults.
+  - Keep shared primitives in `src/components/ui/`, shared site chrome in
+    `src/components/layout/`, and reusable marketing sections in
+    `src/components/sections/`.
+  - Preserve Server Component boundaries; isolate interactive controls in small
+    `"use client"` widgets.
+
+## Asset Deduplication & 2-Step Buffer Policy
+
+- **No Direct Downloads to `public/assets/`**: Never download live assets directly
+  into `public/assets/` during page migration.
+- **Mandatory `scratch/` Comparison Buffer**:
+  1. Download candidate assets to the temporary `scratch/` directory only.
+  2. Compute SHA-256 hashes and inspect SVG markup / visual roles against the
+     entire `public/assets/**` repository tree.
+  3. If a matching or identical asset already exists anywhere in `public/assets/`,
+     reuse the existing canonical path and delete the temporary scratch file.
+  4. Only if an asset is genuinely unique, optimize it (convert uncompressed PNG
+     to WebP, clean SVGs) and save it to the appropriate
+     `public/assets/<category>/` directory with a clean lowercase kebab-case
+     filename.
+  5. Run a SHA-256 duplicate audit before completing the task. Total duplicate
+     hash groups must remain 0.
 
 ## Design Direction
 

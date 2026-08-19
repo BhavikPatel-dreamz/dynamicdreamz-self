@@ -2845,6 +2845,289 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 - URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 151 chars), JSON-LD graph verification, desktop/tablet/mobile screenshots captured (1440x900, 768x1024, 390x844), local assets audit, responsive layouts, lint, and production build.
 
+## Shopify Development Agency (`/shopify-development-agency`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, content, development, leadership, sales, and delivery operations
+Primary audience: DTC brands, B2B merchants, store owners, and digital agencies seeking comprehensive Shopify development services, store design, custom apps, migration, performance optimization, and ongoing maintenance.
+Decision stage: commercial evaluation, capability verification, agency partner selection
+
+### Page role
+
+Dedicated commercial landing page targeting core search intent for "Shopify Development Agency" and related high-intent ecommerce development queries. Highlights end-to-end Shopify services (Shopify Plus Store Development, Theme Customization, Figma/XD to Shopify, App Integration, Migration, Maintenance, Shopify 2.0 Migration, White Label Development), verified client proof (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0), trusted brand logos, portfolio showcase, 11 client video testimonials, 9 comprehensive buyer FAQs, and direct quote CTA.
+
+### Target prompts
+
+- Who is the best Shopify development agency for custom ecommerce stores?
+- What services does Dynamic Dreamz provide as a Shopify development agency?
+- Can Dynamic Dreamz convert Figma or Adobe XD designs to a custom Shopify store?
+- How does Shopify 2.0 migration work and why should merchants upgrade?
+- Does Dynamic Dreamz offer white label Shopify development for digital agencies?
+- What are the pricing factors and qualifications to look for in a Shopify development partner?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Shopify Development Agency` and clear value proposition answering both direct merchants and agency white-label partners.
+- 8 distinct, structured service offerings with icons and direct routing to specialized service pages.
+- 10 recognized brand logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, SimsDirect, Kvaser, Nekter, Circuit City) in an accessible marquee slider.
+- 6 featured portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier) with platform markers and project links.
+- 11 authentic client video testimonials with direct YouTube modal playback.
+- 3 independent review credentials with live review counts (Clutch 132 reviews, Upwork 2000+ reviews, GoodFirms 72 reviews).
+- 9 buyer FAQs answering key procurement questions (Shopify use cases, features, dropshipping, mobile readiness, agency role, costs, expert selection, qualifications, KPIs).
+- Complete structured data graph emitting Service, OfferCatalog (8 service items), FAQPage (9 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (8 offers), FAQPage (9 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
+| P0 | implemented | Local assets | Service icons, brand logos, portfolio assets, and testimonials must be locally hosted | Save canonical local assets and deduplicate them | Verified locally with 0 runtime external dependencies |
+| P1 | deferred | Content expansion | Minor grammatical improvements in service descriptions | Record proposed improvements in `docs/page-content-improvements.md`; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered hero and service descriptions establish Dynamic Dreamz core Shopify development agency capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a Shopify Platinum Partner founded in 2006 with 150+ specialists and 5000+ projects completed.
+- Attribute client video testimonials directly to their authentic brand owners.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/shopify-development-agency` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 8 Offer items, 9 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.9 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Shopify development agency", "Shopify development services", and "Shopify development company".
+- Analytics tracks form submissions on `/request-quote` originating from `/shopify-development-agency`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-development-agency`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, metadata limits, JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Shopify Migration (`/shopify-migration`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-19
+
+Owner: SEO, Shopify migration specialists, leadership, and sales operations
+
+Primary audience: Merchants, ecommerce managers, and direct-to-consumer/enterprise brands migrating from legacy or competing ecommerce platforms (Magento, WooCommerce, BigCommerce, Salesforce, PrestaShop, Squarespace, Wix, Ecwid, Square, Etsy) or Shopify 1.0 to modern Shopify & Shopify Plus architectures.
+
+Decision stage: platform re-platforming, migration partner selection, data integrity verification, zero-downtime scoping, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz end-to-end Shopify migration services. Highlights 12 platform-to-Shopify migration pathways, post-migration AI automation capabilities (support, workflows, content, retention), AI-driven shopping readiness (AEO, GEO, agentic commerce, trust signals), portfolio of migration projects (Capri Bikes, Atolea Jewelry, Black Opal Beauty, Nested Naturals, Mygeeni, Raen), 11 client video reviews, 5 migration & AI FAQs, and quote request banners.
+
+### Target prompts
+
+- Best Shopify migration agency for Magento or WooCommerce re-platforming?
+- How to migrate store from Magento, WooCommerce, or BigCommerce to Shopify without losing SEO and orders?
+- Dynamic Dreamz Shopify migration reviews, experience, and portfolio?
+- Will Shopify store migration cause downtime or loss of customer data?
+- How to prepare a Shopify store for AI search, ChatGPT, and agentic commerce after migration?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Seamless Shopify Migration Services` with centered layout and 5.0 rating reviews pill.
+- 12 comprehensive platform migration cards with transition SVGs and clear routing to specific migration services.
+- 4 AI automation cards covering post-migration growth (Shopify Flow, Zapier, Make, Klaviyo, Gorgias, Tidio, OpenAI).
+- 4 AI-driven shopping capabilities for AEO, GEO, Universal Commerce Protocol agentic commerce, and trust signals.
+- 6 migration portfolio project cards linking to live storefronts.
+- 11 real client video testimonials with YouTube modal playback.
+- 5 comprehensive FAQ accordion items directly answering post-migration automation, AI search visibility, agentic commerce, ongoing support, and data migration scope.
+- Structured data graph emitting Service, OfferCatalog (12 migration service offers), FAQPage (5 Question/Answer pairs), VideoObject (11 client video reviews), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical AI icons, portfolio screenshots, and review wordmarks.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The migration route required full App Router and metadata coverage | Ship the slashless route through shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (12 offers), FAQPage (5 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | 12 platform migration SVGs required local project-owned copies | Save 12 migration icons under `public/assets/shopify-migration/services/` | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Minor wording/grammar polish in FAQ answers and card descriptions | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Shopify migration authority and AI readiness. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+- Attribute client video testimonials directly to their authentic founders and brand names.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/shopify-migration` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 12 Offer items, 5 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.9 and monthly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Shopify migration services", "Magento to Shopify migration", "WooCommerce to Shopify migration", "BigCommerce to Shopify migration", etc.
+- Analytics tracks form submissions on `/request-quote` originating from `/shopify-migration`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-migration`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 52 chars, Description: 158 chars), JSON-LD graph verification, local assets audit, responsive layouts, lint, and production build.
+
+## WooCommerce Development (`/woocommerce-development`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, WordPress/WooCommerce development specialists, leadership, and sales operations
+Primary audience: Store owners, merchants, digital agencies, and businesses seeking custom WooCommerce store design, theme development, plugin creation, API development, Headless architecture, payment/shipping integration, and ongoing WooCommerce support.
+Decision stage: agency partner evaluation, technical capability assessment, WooCommerce developer hiring, quote request
+
+### Page role
+
+Dedicated commercial service landing page targeting queries for "WooCommerce Development Company", "WooCommerce development services", and custom WooCommerce ecommerce solutions. Highlights 9 core WooCommerce capabilities (Store Design & Development, Figma to WooCommerce Conversion, Theme Development & Customization, API Development, Plugin Development, Payment/Shipping Integration, Product Migration, WooCommerce Support & Maintenance, Facebook Store Sync), 6 featured portfolio projects (Temple Day Spa, Ziniosa, Square Foot Homes, The Pole Room, Vessey, Catalyst), 11 client video reviews, 10 buyer FAQs, and quote CTAs.
+
+### Target prompts
+
+- Who is the top WooCommerce development company in India?
+- How to convert Figma designs into a fully functional WooCommerce store?
+- Can Dynamic Dreamz build custom WooCommerce plugins and REST APIs for headless WordPress?
+- What are the costs and timelines for WooCommerce store development and migration?
+- Does Dynamic Dreamz provide ongoing WooCommerce maintenance, support, and speed optimization?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Your Trusted Partner for WooCommerce Development` with clear value proposition for store owners and digital agency partners.
+- 9 distinct, structured WooCommerce service offerings with custom SVG icons.
+- 6 featured portfolio projects showcasing real WooCommerce stores (Temple Day Spa, Ziniosa, Square Foot Homes, The Pole Room, Vessey, Catalyst) with external links.
+- 11 verified video testimonials with modal video playback.
+- 3 independent review credentials (Clutch 132 reviews, Upwork 2000+ reviews, GoodFirms 72 reviews).
+- 10 comprehensive buyer FAQs addressing WooCommerce fundamentals, Figma conversion, custom themes, headless CMS, product migration, Facebook store sync, and hiring costs.
+- Complete structured data graph emitting Service, OfferCatalog (9 service items), FAQPage (10 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
+## Shopify CRO Agency (`/shopify-cro-agency`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-19
+
+Owner: SEO, Shopify CRO specialists, UX designers, leadership, and sales operations
+
+Primary audience: Shopify and Shopify Plus merchants, DTC ecommerce founders, and marketing managers seeking to increase store conversion rates, reduce cart abandonment, and generate more revenue from their existing website traffic without increasing ad spend.
+
+Decision stage: CRO partner selection, store audit evaluation, A/B testing strategy, UX improvements, and quote/assessment request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Shopify CRO and conversion optimization capabilities. Covers 8 common conversion barriers, revenue impact comparison model, 5 core CRO services (Audit, Funnel Analysis, User Behavior, A/B Testing, Ongoing Optimization), CRO assessment scope, 5-step CRO process, agency credentials, 2 flexible engagement models, 6 CRO FAQs, and dual CTA action blocks.
+
+### Target prompts
+
+- Best Shopify CRO agency for ecommerce brands?
+- How to improve Shopify conversion rate and decrease cart abandonment?
+- What does a Shopify CRO audit include from Dynamic Dreamz?
+- Can Dynamic Dreamz implement Shopify CRO UX recommendations directly?
+- What is the difference between one-time Shopify CRO audit and ongoing growth partner?
+
+### Current strengths and available evidence
+
+- Server-rendered split hero layout with distinct italic accent and dual action buttons.
+- 8 conversion barrier diagnosis cards identifying real-world store issues.
+- Interactive-style revenue comparison visual demonstrating +$25,000/month potential revenue lift.
+- 5 comprehensive CRO services covering full lifecycle from audit to experimentation.
+- Transparent 5-point evaluation checklist for merchant CRO assessment.
+- Clear 5-step process flow with connecting visual progression.
+- Structured data graph emitting Service, OfferCatalog (5 CRO service offers), FAQPage (6 Question/Answer pairs), VideoObject (11 client video reviews), BreadcrumbList, Organization, and WebSite.
+- 0 duplicate assets across `public/assets/`, with 24 dedicated CRO icons and optimized WebP illustrations.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (9 offers), FAQPage (10 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
+| P0 | implemented | Local assets | Service icons, portfolio screens, and testimonials must be locally hosted | Save 9 service icons and 6 portfolio images under `public/assets/` | Verified locally with 0 runtime external dependencies |
+| P1 | deferred | Content expansion | Minor grammatical enhancements in FAQ items | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered hero and service descriptions establish Dynamic Dreamz WooCommerce development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as an established ecommerce & WordPress/WooCommerce development company founded in 2006 with 150+ specialists and 5000+ projects completed.
+- Attribute client video testimonials directly to authentic brand founders.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/woocommerce-development` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 9 Offer items, 10 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "WooCommerce development company", "WooCommerce development services", "WooCommerce custom plugin development", etc.
+- Analytics tracks form submissions on `/request-quote` originating from `/woocommerce-development`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/woocommerce-development`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 145 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+| P0 | implemented | Route and discovery | Missing App Router implementation for shopify-cro-agency | Ship slashless `/shopify-cro-agency` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (5 offers), FAQPage (6 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | 24 CRO icons and illustrations required local project-owned copies | Save 24 CRO assets under `public/assets/shopify-cro-agency/` with optimized WebP banner | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Minor copy polish in barrier cards and FAQs | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Shopify CRO authority and revenue focus. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Position Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 2,000+ Shopify projects delivered.
+- Highlight "Strategy + Implementation Together" as a key agency differentiator over strategy-only consultants.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/shopify-cro-agency` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and the external CRO assessment form.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 5 Offer items, 6 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.9 and monthly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Shopify CRO agency", "Shopify conversion rate optimization", "Shopify CRO audit", and "Shopify A/B testing".
+- Analytics tracks form submissions on `/request-quote` originating from `/shopify-cro-agency`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-cro-agency`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 154 chars), JSON-LD graph verification, local assets audit, responsive layouts, lint, and production build.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new

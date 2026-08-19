@@ -92,11 +92,52 @@ Core proof points from the live site:
   component, animation, or one-off layout styles to `src/app/globals.css`.
   Keep `globals.css` minimal for Tailwind setup and unavoidable app-wide base
   rules only.
-- Before creating a component, search `src/components/**`, route-local
-  components, and current imports/usages for an existing component that already
-  provides the required structure, semantics, styling, or interaction. Reuse it
-  directly or extend it with a small typed prop/variant when that keeps its API
-  coherent. Do not create a page-specific duplicate of an existing component.
+- Component discovery before creation: before creating any new component or
+  section, thoroughly inspect `src/components/**`, route-local components, and
+  current usages. Do NOT search only by component name or filename; search by
+  visual layout, UI pattern (e.g. hero banners, card grids, stat counters, logo
+  sliders, review carousels, accordions, video modals, split CTA sections), DOM
+  structure, and Tailwind styling classes.
+- Strict component reuse & slight extension: ALWAYS prioritize reusing existing
+  components (`ButtonLink`, `Container`, `FaqSection`, `AiAutomationSection`,
+  `AiDiscoverySection`, `CtaBannerSection`, `ServiceHeroSection`, etc.) over
+  writing new code or raw inline markup (e.g. never write raw inline `<a>` tags
+  with button styling when `ButtonLink` exists). If an existing component can
+  support the requirement with a slight modification (e.g. adding an optional
+  typed prop, variant flag, slot, or optional style modifier), MODIFY the
+  existing component slightly to support the use case instead of writing extra,
+  duplicate, or one-off code.
+  CRITICAL: Every modification/extension must be backward-compatible so that all
+  existing pages and consumers remain unbroken.
+- Pragmatic component creation (only when no match exists): only if after a
+  thorough search no similar or adaptable component exists in the codebase,
+  build a new component. Do not write extra code or duplicate components when an
+  existing component can be adapted with a slight, clean extension.
+- Generalize all new components for future reuse: whenever creating a new
+  component, design it to be modular, flexible, and generalized. Decouple the UI
+  markup from page-specific hardcoded copy or data (pass content via typed props
+  or data imports), provide sensible default props, and place reusable
+  primitives in `src/components/ui/` or shared sections in
+  `src/components/sections/` so future pages can reuse them seamlessly.
+- Asset discovery and deduplication: NEVER download live assets directly into
+  `public/assets/`. Always follow the 2-step comparison buffer workflow:
+  1. **Download to `scratch/` buffer first**: If an asset is needed from the live
+     site, download it only into the temporary `scratch/` directory (outside
+     `public/assets/`).
+  2. **Hash & markup comparison**: Compute its SHA-256 hash and inspect SVG
+     paths / visual role against all existing files across the entire
+     `public/assets/**` tree (including `brand/`, `clients/`, `team/`, `icons/`,
+     `proof/`, `services/`, `process/`, etc.).
+  3. **Reuse if match exists**: If an identical or matching asset already exists
+     in `public/assets/`, reuse the existing canonical path and delete the
+     temporary file from `scratch/`. Do NOT create another copy.
+  4. **Clean ingestion only for unique assets**: Only when NO matching asset
+     exists anywhere in the project, optimize the asset (convert uncompressed PNG
+     to WebP, clean SVG markup) and move it into the appropriate canonical
+     `public/assets/<category>/` directory with a clean kebab-case filename.
+  5. **Mandatory zero-duplicate verification**: Run a SHA-256 duplicate audit on
+     `public/assets/` before completing any migration task. Total duplicate hash
+     groups must remain 0.
 - For styling and animation work, follow `docs/visual-parity-workflow.md`.
   Inspect live CSS/JS, computed styles, keyframes, transitions, interaction
   states, and screenshots before implementing. Static HTML alone is not enough.
@@ -108,19 +149,6 @@ Core proof points from the live site:
   Source. Preserve page structure, metadata intent, headings, links, CTA labels,
   image alt text, ARIA labels, schema data, and other small SEO/accessibility
   details unless there is a production-quality reason to improve them.
-- If old-site content or assets are needed, move approved copies into local
-  project-owned files such as `src/content/**` and `public/assets/**`.
-- If old-site images, documents, icons, logos, or other assets are needed,
-  download/copy them during migration into `public/assets/**` and update the
-  Next.js code to reference only those local files.
-- Local asset filenames must be meaningful and descriptive. If a live-site image
-  filename is vague, hashed, keyword-stuffed, or odd, rename the local copy to a
-  clean kebab-case name that describes the asset and page/context.
-- Before adding an asset, search all of `public/assets/**` for an existing exact
-  or visually identical local copy. Reuse its canonical path instead of copying
-  or renaming the same media for another page. Put assets shared by multiple
-  pages in a neutral purpose-based folder such as `public/assets/team/**` rather
-  than duplicating them in page-specific folders.
 - Build with App Router conventions for the installed Next.js version.
 - Prefer Server Components everywhere possible. Page sections and layout
   sections should be Server Components by default so content, headings, images,
@@ -191,11 +219,17 @@ Keep page content structured and reusable. Avoid scattering large arrays of copy
 inside page components once content repeats across routes.
 
 Treat `src/components/ui/**`, `src/components/layout/**`, and existing shared
-sections as the first source for implementation. Promote a repeated pattern to
-the narrowest sensible shared location instead of maintaining equivalent copies
-across page folders. Create a separate component only when the semantics,
-behavior, or visual contract is genuinely different and extending the existing
-component would make its API unclear or tightly couple unrelated concerns.
+sections as the primary foundation for page implementation:
+1. **Search Deeply First**: Search by layout structure, visual pattern, and UI
+   role—not just filename.
+2. **Reuse & Extend Safely**: If an existing component is similar, reuse it or
+   extend it with backward-compatible optional typed props/variants. Never break
+   existing page usages.
+3. **Build Pragmatically**: If no matching or adaptable component exists, build a
+   new component without hesitation.
+4. **Generalize for Future Pages**: Whenever building a new component, ensure it
+   is generalized and modular (typed props, decoupled content/data) so future
+   pages can reuse it easily.
 
 Create one component for each meaningful visual/business section when it keeps a
 page readable, but keep those section components server-rendered unless they
@@ -214,7 +248,9 @@ Production-ready means the page is complete enough to deploy:
 - No duplicate image/media files stored under different paths or names when one
   canonical project-owned asset can serve every usage.
 - No duplicate or near-equivalent components when an existing component can
-  satisfy the requirement directly or through a focused typed variant.
+  satisfy the requirement directly or through a backward-compatible typed variant.
+- All newly created components are generalized, cleanly typed, and decoupled from
+  hardcoded page data for future reusability.
 - No inaccessible interactive controls.
 - No unnecessary client JavaScript.
 - No external dependency added unless it clearly reduces risk or complexity.

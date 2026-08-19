@@ -545,6 +545,66 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  shopifyMigration: {
+    path: "/shopify-migration",
+    title: "Seamless Shopify Migration Services | Dynamic Dreamz",
+    description:
+      "We ensure a seamless transfer of your store, preserving data integrity and minimizing downtime. Expert Shopify migration services to boost ecommerce success.",
+    socialDescription:
+      "Expert Shopify Migration Services: Efficiently Move Your Store with Ease and get the full potential of Shopify with our tailored migration solutions.",
+    keywords: [
+      "Shopify migration services",
+      "Shopify store migration",
+      "Magento to Shopify migration",
+      "WooCommerce to Shopify migration",
+      "BigCommerce to Shopify migration",
+      "Shopify 2.0 theme migration",
+      "ecommerce migration expert",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-02T09:34:33+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Seamless Shopify Migration Services by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
+  shopifyCro: {
+    path: "/shopify-cro-agency",
+    title: "Shopify CRO Agency | Increase Revenue | Dynamic Dreamz",
+    description:
+      "Improve your Shopify conversion rate with CRO audits, funnel analysis, A/B testing, user behavior insights, and ongoing optimization from Dynamic Dreamz.",
+    socialDescription:
+      "Improve your Shopify conversion rate with CRO audits, funnel analysis, A/B testing, user behavior insights, and ongoing optimization services from Dynamic Dreamz.",
+    keywords: [
+      "Shopify CRO agency",
+      "Shopify conversion rate optimization",
+      "Shopify CRO audit",
+      "Shopify funnel analysis",
+      "Shopify A/B testing",
+      "ecommerce CRO agency",
+      "Shopify conversion optimization",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-07-24T07:16:56+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify CRO Agency services by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   requestQuote: {
     path: "/request-quote",
     title: "Request Quote Today! | Dynamic Dreamz",
@@ -732,6 +792,62 @@ export const pageSeo = {
     sitemap: {
       changeFrequency: "weekly",
       priority: 0.9,
+    },
+  },
+  shopifyDevelopmentAgency: {
+    path: "/shopify-development-agency",
+    title: "Shopify Development Agency & Services | Dynamic Dreamz",
+    description:
+      "Expert Shopify development services by Dynamic Dreamz: custom store design, app integration, migration, speed optimization and dedicated ongoing support.",
+    keywords: [
+      "Shopify development agency",
+      "Shopify development services",
+      "Shopify development company",
+      "custom Shopify store",
+      "Shopify migration",
+      "Shopify maintenance",
+      "Figma to Shopify",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-02T09:33:21+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development Agency & Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+  },
+  woocommerceDevelopment: {
+    path: "/woocommerce-development",
+    title: "Woocommerce Development Company India | Dynamic Dreamz",
+    description:
+      "Grow your online store with professional WooCommerce development services from Dynamic Dreamz, integrations, and seamless shopping experiences.",
+    keywords: [
+      "WooCommerce development company",
+      "WooCommerce development services",
+      "WooCommerce store design",
+      "WooCommerce custom theme",
+      "WooCommerce plugin development",
+      "WooCommerce migration",
+      "WooCommerce support",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-02T09:33:00+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Woocommerce Development Company India | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
     },
   },
 } satisfies Record<string, PageSeoConfig>;
