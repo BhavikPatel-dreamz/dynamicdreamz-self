@@ -3197,6 +3197,48 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/magento-development`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 58 chars, Description: 129 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+## WordPress Theme Customization Services (`/wordpress-theme-customization-services`)
+
+Status: implemented
+Last reviewed: 2026-08-19
+Owner: SEO, development, and delivery
+Primary audience: Businesses, eCommerce merchants, digital agencies, and WordPress site owners seeking custom theme design and performance tuning
+Decision stage: Commercial investigation and partner selection
+
+### Page role
+
+Commercial service landing page demonstrating Dynamic Dreamz's 18+ years of WordPress theme customization expertise across modern builders (Elementor, Divi, WPBakery), popular themes (Astra, Kadence, GeneratePress, OceanWP), custom plugin integration, and WooCommerce.
+
+### Target prompts
+
+- "Who offers custom WordPress theme customization services?"
+- "Best agency to customize Astra, Elementor, or Divi WordPress themes"
+- "How much does WordPress theme customization cost and what is the process?"
+- "Can Dynamic Dreamz customize WooCommerce and WordPress themes for speed and conversions?"
+
+### Current strengths and available evidence
+
+- Live H1 clearly targets "WordPress Theme Customization Services".
+- 6 detailed service offering cards covering theme selection, custom design, responsiveness, features, speed optimization, and maintenance.
+- 10 benefit cards, 6-step serpentine process, 12 tech frameworks, 17 customized theme showcases, 6 WordPress portfolio case studies, and 11 client video reviews.
+- 6 direct FAQ questions with answers and rich schema markup.
+- Full parity with server-rendered React Server Components and zero duplicate assets.
+
+### Entity, evidence, and authorship actions
+
+- Reinforce Dynamic Dreamz's 18+ years of WordPress experience and 5,000+ completed projects.
+- Connect theme customization service to WooCommerce, White Label WordPress, and custom development offerings.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service, OfferCatalog (6 service offers), FAQPage (6 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schemas.
+- Ensure canonical URL is slashless `/wordpress-theme-customization-services`.
+- Set freshness timestamp `2026-08-19T00:00:00+05:30`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): passed.
+- Production build: passed.
 
 ## Future Page Maintenance Workflow
 

@@ -575,5 +575,18 @@ Primary SEO intent: Magento development services, Magento development company, c
 | Service card copy (Custom Store) | `Dynamic Dremaz helps you create Magento stores...` (typo in brand name) | `Dynamic Dreamz helps you create Magento stores...` | Fixes typo in brand name. | Low | deferred pending exact visible-copy approval |
 | VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
 | Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (7 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+## WordPress Theme Customization Services (`/wordpress-theme-customization-services`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-19
+Primary SEO intent: WordPress theme customization services, custom WordPress theme development, Elementor customization, Astra theme customization, Divi customization, WooCommerce theme customization.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `WordPress Theme Customization Services \| Dynamic Dreamz` (56 chars) | Preserved live meta title (56 chars). | Fits 15-60 character budget and captures primary search intent. | High | implemented in metadata |
+| Meta description | `Choose WordPress Theme Customization Services . Expert WordPress Developers with 18+ Years of Experience. Hire DynamicDreamz today!` (132 chars) | Preserved live meta description (132 chars). | Fits 70-160 character budget while preserving commercial message. | High | implemented in metadata |
+| Benefits Section heading | `Benefits of the WordPress Theme Customization Service` | `Benefits of WordPress Theme Customization Services` | Improves grammar and reads more naturally in English. | Low | deferred pending exact visible-copy approval |
+| VideoObject structured data | Legacy site had no schema for client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (6 service offers) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO answer discovery and FAQ rich results. | High | implemented in schema |
 
 

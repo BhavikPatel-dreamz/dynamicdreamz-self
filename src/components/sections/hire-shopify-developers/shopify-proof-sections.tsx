@@ -49,7 +49,18 @@ export function ShopifyReasonsSection({
     >
       <Container>
         <div className="mb-[50px] text-center max-[767px]:mb-[35px]">
-          <h2 className={headingClassName}>{content.heading}</h2>
+          <h2 className={headingClassName}>
+            {content.heading.includes("<br>")
+              ? content.heading.split("<br>").map((line, index, lines) => (
+                  <span key={line}>
+                    {line}
+                    {index < lines.length - 1 ? (
+                      <br className="max-[1199px]:hidden" />
+                    ) : null}
+                  </span>
+                ))
+              : content.heading}
+          </h2>
           <p className="mx-auto mt-2.5 max-w-[720px] text-base leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
             {content.description}
           </p>
@@ -99,7 +110,18 @@ export function ShopifyAdvantagesSection({
     <section className={className} id={id}>
       <Container>
         <div className="mx-auto max-w-[850px] text-center">
-          <h2 className={headingClassName}>{content.heading}</h2>
+          <h2 className={headingClassName}>
+            {content.heading.includes("<br>")
+              ? content.heading.split("<br>").map((line, index, lines) => (
+                  <span key={line}>
+                    {line}
+                    {index < lines.length - 1 ? (
+                      <br className="max-[1199px]:hidden" />
+                    ) : null}
+                  </span>
+                ))
+              : content.heading}
+          </h2>
           <p className="mt-2.5 text-base leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
             {content.description}
           </p>

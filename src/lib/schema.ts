@@ -58,6 +58,10 @@ import {
   wordpressDevelopmentFaqs,
   wordpressDevelopmentServices,
 } from "@/content/wordpress-development";
+import {
+  wordPressThemeCustomizationContent,
+  wordPressThemeCustomizationFaqs,
+} from "@/content/wordpress-theme-customization";
 import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -199,6 +203,11 @@ const magentoDevelopmentPageId = `${magentoDevelopmentPageUrl}#webpage`;
 const magentoDevelopmentServiceId = `${magentoDevelopmentPageUrl}#service`;
 const magentoDevelopmentFaqId = `${magentoDevelopmentPageUrl}#faq`;
 const magentoDevelopmentBreadcrumbId = `${magentoDevelopmentPageUrl}#breadcrumb`;
+const wordPressThemeCustomizationPageUrl = absoluteUrl(pageSeo.wordPressThemeCustomization.path);
+const wordPressThemeCustomizationPageId = `${wordPressThemeCustomizationPageUrl}#webpage`;
+const wordPressThemeCustomizationServiceId = `${wordPressThemeCustomizationPageUrl}#service`;
+const wordPressThemeCustomizationFaqId = `${wordPressThemeCustomizationPageUrl}#faq`;
+const wordPressThemeCustomizationBreadcrumbId = `${wordPressThemeCustomizationPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1773,6 +1782,32 @@ export function createMagentoDevelopmentPageSchema() {
       ].join(" "),
     })),
     offers: magentoDevelopmentServices.items,
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createWordPressThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.wordPressThemeCustomization,
+    pageUrl: wordPressThemeCustomizationPageUrl,
+    pageId: wordPressThemeCustomizationPageId,
+    serviceId: wordPressThemeCustomizationServiceId,
+    faqId: wordPressThemeCustomizationFaqId,
+    breadcrumbId: wordPressThemeCustomizationBreadcrumbId,
+    serviceName: "WordPress Theme Customization Services",
+    serviceType:
+      "Custom WordPress theme customization, responsive design, plugin integration, speed optimization, and maintenance",
+    breadcrumbName: "WordPress Theme Customization",
+    audienceType:
+      "Businesses, website owners, and digital agencies seeking expert WordPress theme customization",
+    faqs: wordPressThemeCustomizationFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: wordPressThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
