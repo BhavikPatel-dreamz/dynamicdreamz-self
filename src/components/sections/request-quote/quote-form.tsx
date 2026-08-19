@@ -64,8 +64,8 @@ export function QuoteForm() {
   }, []);
 
   return (
-    <div className="right-col w-1/2 py-[150px] pl-[46px] pb-[110px] max-[1199px]:pl-[30px] max-[991px]:w-full max-[991px]:pt-[150px] max-[991px]:pl-0 max-[991px]:pb-[79px] max-[767px]:pt-[145px] max-[767px]:pb-[50px]">
-      <h2 className="mb-6 font-montserrat text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:text-[29px] max-[991px]:mb-[38px] max-[767px]:mb-[25px] max-[359px]:text-2xl">
+    <div className="right-col w-1/2 py-[150px] pl-[46px] pb-[110px] max-[1199px]:pl-[30px] max-[991px]:w-full max-[991px]:pt-[150px] max-[991px]:pl-0 max-[991px]:pb-[50px] max-[767px]:pt-[145px] max-[767px]:pb-[50px]">
+      <h2 className="mb-6 font-montserrat text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:text-[29px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px] max-[991px]:mb-10 max-[359px]:text-2xl">
         {requestQuoteContent.form.title}
       </h2>
 
@@ -98,7 +98,7 @@ export function QuoteForm() {
             />
           </div>
 
-          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[991px]:mb-[15px] max-[767px]:w-full max-[767px]:px-0">
+          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[991px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
             <FieldLabel htmlFor="quote-email" required>
               Email
             </FieldLabel>
@@ -114,7 +114,7 @@ export function QuoteForm() {
             />
           </div>
 
-          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[991px]:mb-[15px] max-[767px]:w-full max-[767px]:px-0">
+          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[991px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
             <FieldLabel htmlFor="quote-phone">Mobile Phone</FieldLabel>
             <input
               className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#e4e4e4] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[991px]:h-[44px]"
@@ -127,7 +127,7 @@ export function QuoteForm() {
             />
           </div>
 
-          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[991px]:mb-[15px] max-[767px]:w-full max-[767px]:px-0">
+          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[991px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
             <FieldLabel htmlFor="quote-company">Company name</FieldLabel>
             <input
               className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#e4e4e4] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[991px]:h-[44px]"
@@ -140,7 +140,7 @@ export function QuoteForm() {
             />
           </div>
 
-          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[991px]:mb-[15px] max-[767px]:w-full max-[767px]:px-0">
+          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[991px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
             <FieldLabel htmlFor="quote-website">Website URL</FieldLabel>
             <input
               className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#e4e4e4] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[991px]:h-[44px]"
@@ -153,7 +153,7 @@ export function QuoteForm() {
             />
           </div>
 
-          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[991px]:mb-[15px] max-[767px]:w-full max-[767px]:px-0">
+          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[991px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
             <FieldLabel htmlFor="quote-budget">Estimated Budget (in US $)</FieldLabel>
             <select
               className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#e4e4e4] bg-white bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[991px]:h-[44px]"
@@ -198,7 +198,7 @@ export function QuoteForm() {
 
         <div>
           <button
-            className="group/quote-submit relative inline-flex min-h-[49px] cursor-pointer items-center justify-center overflow-hidden rounded-[30px] border-2 border-brand-red px-8 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-600 hover:border-[#4f4f4f] hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70 max-[767px]:w-full"
+            className="group/quote-submit relative inline-flex min-h-[49px] cursor-pointer items-center justify-center overflow-hidden rounded-[30px] border-2 border-brand-red lg:px-8 px-6 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-600 hover:border-[#4f4f4f] hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70"
             type="submit"
             disabled={isPending}
           >
