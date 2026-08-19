@@ -937,6 +937,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  siteMap: {
+    path: "/site-map",
+    title: "Site Map | Dynamic Dreamz Ecommerce Agency",
+    description:
+      "HTML site map for Dynamic Dreamz. Explore all pages for Shopify, Shopify Plus, WordPress, WooCommerce, and ecommerce development services.",
+    keywords: [
+      "Dynamic Dreamz site map",
+      "sitemap",
+      "Shopify Plus agency pages",
+      "WordPress development services",
+      "ecommerce web design sitemap",
+    ],
+    openGraphType: "website",
+    publishedTime: "2023-01-01T00:00:00+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Dynamic Dreamz Site Map",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

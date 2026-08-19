@@ -3292,6 +3292,48 @@ Commercial service landing page demonstrating Dynamic Dreamz's BigCommerce devel
 - URL-policy review (2026-08-19): passed.
 - Production build: passed.
 
+## Site Map (`/site-map`)
+
+Status: implemented; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, content, and development operations
+Primary audience: Website visitors, search engines, and AI crawlers seeking a comprehensive navigation index of all published Dynamic Dreamz pages
+Decision stage: Navigation, discovery, and complete site index exploration
+
+### Page role
+
+Human-readable and crawler-accessible HTML Site Map organizing all 138 Dynamic Dreamz pages, service offerings, industry verticals, migration services, and theme customization resources into a single alphabetical directory.
+
+### Target prompts
+
+- "Where can I find the complete Dynamic Dreamz site map?"
+- "What services and pages are available on the Dynamic Dreamz website?"
+- "How do I navigate all Dynamic Dreamz Shopify and WordPress development offerings?"
+
+### Current strengths and available evidence
+
+- Comprehensive index covering 138 total pages (133 top-level items + 5 nested industry sectors).
+- Clean alphabetical ordering matching the live WordPress `wp_list_pages` output.
+- Custom green/cyan hexagon checkmark bullet icons matching live `.standard-text-content` styling.
+- Accessible `<h1 className="sr-only">Site Map</h1>` landmark for screen readers and SEO crawlers.
+- Fully server-rendered with zero client JavaScript.
+- Internal links mapped to slashless Next.js routes.
+
+### Entity, evidence, and authorship actions
+
+- Connect the Site Map to Dynamic Dreamz organization entity as the official website directory.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit WebPage, BreadcrumbList, Organization, and WebSite JSON-LD schemas.
+- Ensure canonical URL is slashless `/site-map`.
+- Set freshness timestamp `2026-08-19T00:00:00+05:30`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): passed.
+- Production build: passed.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new

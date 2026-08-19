@@ -217,6 +217,9 @@ const bigCommerceDevelopmentPageId = `${bigCommerceDevelopmentPageUrl}#webpage`;
 const bigCommerceDevelopmentServiceId = `${bigCommerceDevelopmentPageUrl}#service`;
 const bigCommerceDevelopmentFaqId = `${bigCommerceDevelopmentPageUrl}#faq`;
 const bigCommerceDevelopmentBreadcrumbId = `${bigCommerceDevelopmentPageUrl}#breadcrumb`;
+const siteMapPageUrl = absoluteUrl(pageSeo.siteMap.path);
+const siteMapPageId = `${siteMapPageUrl}#webpage`;
+const siteMapBreadcrumbId = `${siteMapPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1845,6 +1848,56 @@ export function createBigCommerceDevelopmentPageSchema() {
     })),
     videos: shopifyPlusTestimonialVideoSchema(),
   });
+}
+
+export function createSiteMapPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": siteMapPageId,
+        url: siteMapPageUrl,
+        name: pageSeo.siteMap.title,
+        description: pageSeo.siteMap.description,
+        datePublished: pageSeo.siteMap.publishedTime,
+        dateModified: pageSeo.siteMap.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": siteMapBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.siteMap.image.path),
+          width: pageSeo.siteMap.image.width,
+          height: pageSeo.siteMap.image.height,
+          caption: pageSeo.siteMap.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": siteMapBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Site Map",
+            item: siteMapPageUrl,
+          },
+        ],
+      },
+    ],
+  };
 }
 
 export function serializeJsonLd(value: unknown) {
