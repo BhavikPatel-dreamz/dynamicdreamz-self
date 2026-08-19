@@ -33,6 +33,10 @@ import {
 import { caseStudiesContent } from "@/content/case-studies";
 import { shopifyAppsContent } from "@/content/shopify-apps";
 import {
+  shopifyCroFaqs,
+  shopifyCroServices,
+} from "@/content/shopify-cro-agency";
+import {
   shopifyDevelopmentAgencyFaqs,
   shopifyDevelopmentAgencyServices,
 } from "@/content/shopify-development-agency";
@@ -158,6 +162,11 @@ const shopifyMigrationPageId = `${shopifyMigrationPageUrl}#webpage`;
 const shopifyMigrationServiceId = `${shopifyMigrationPageUrl}#service`;
 const shopifyMigrationFaqId = `${shopifyMigrationPageUrl}#faq`;
 const shopifyMigrationBreadcrumbId = `${shopifyMigrationPageUrl}#breadcrumb`;
+const shopifyCroPageUrl = absoluteUrl(pageSeo.shopifyCro.path);
+const shopifyCroPageId = `${shopifyCroPageUrl}#webpage`;
+const shopifyCroServiceId = `${shopifyCroPageUrl}#service`;
+const shopifyCroFaqId = `${shopifyCroPageUrl}#faq`;
+const shopifyCroBreadcrumbId = `${shopifyCroPageUrl}#breadcrumb`;
 const caseStudiesPageUrl = absoluteUrl(pageSeo.caseStudies.path);
 const caseStudiesPageId = `${caseStudiesPageUrl}#webpage`;
 const caseStudiesBreadcrumbId = `${caseStudiesPageUrl}#breadcrumb`;
@@ -1466,6 +1475,32 @@ export function createShopifyMigrationPageSchema() {
       answer: item.answer,
     })),
     offers: shopifyMigrationServices.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyCroPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyCro,
+    pageUrl: shopifyCroPageUrl,
+    pageId: shopifyCroPageId,
+    serviceId: shopifyCroServiceId,
+    faqId: shopifyCroFaqId,
+    breadcrumbId: shopifyCroBreadcrumbId,
+    serviceName: "Shopify Conversion Rate Optimization (CRO) Services",
+    serviceType:
+      "Data-driven Shopify CRO audits, funnel analysis, A/B testing, user behavior insights, and UX implementation",
+    breadcrumbName: "Shopify CRO Agency",
+    audienceType:
+      "Shopify and Shopify Plus merchants looking to increase store conversions, average order value (AOV), and customer retention",
+    faqs: shopifyCroFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: shopifyCroServices.items.map((item) => ({
       title: item.title,
       description: item.description,
     })),

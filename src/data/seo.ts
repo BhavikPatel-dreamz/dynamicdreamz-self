@@ -575,6 +575,36 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  shopifyCro: {
+    path: "/shopify-cro-agency",
+    title: "Shopify CRO Agency | Increase Revenue | Dynamic Dreamz",
+    description:
+      "Improve your Shopify conversion rate with CRO audits, funnel analysis, A/B testing, user behavior insights, and ongoing optimization from Dynamic Dreamz.",
+    socialDescription:
+      "Improve your Shopify conversion rate with CRO audits, funnel analysis, A/B testing, user behavior insights, and ongoing optimization services from Dynamic Dreamz.",
+    keywords: [
+      "Shopify CRO agency",
+      "Shopify conversion rate optimization",
+      "Shopify CRO audit",
+      "Shopify funnel analysis",
+      "Shopify A/B testing",
+      "ecommerce CRO agency",
+      "Shopify conversion optimization",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-07-24T07:16:56+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify CRO Agency services by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   requestQuote: {
     path: "/request-quote",
     title: "Request Quote Today! | Dynamic Dreamz",

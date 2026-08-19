@@ -3020,6 +3020,40 @@ Dedicated commercial service landing page targeting queries for "WooCommerce Dev
 - 3 independent review credentials (Clutch 132 reviews, Upwork 2000+ reviews, GoodFirms 72 reviews).
 - 10 comprehensive buyer FAQs addressing WooCommerce fundamentals, Figma conversion, custom themes, headless CMS, product migration, Facebook store sync, and hiring costs.
 - Complete structured data graph emitting Service, OfferCatalog (9 service items), FAQPage (10 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
+## Shopify CRO Agency (`/shopify-cro-agency`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-19
+
+Owner: SEO, Shopify CRO specialists, UX designers, leadership, and sales operations
+
+Primary audience: Shopify and Shopify Plus merchants, DTC ecommerce founders, and marketing managers seeking to increase store conversion rates, reduce cart abandonment, and generate more revenue from their existing website traffic without increasing ad spend.
+
+Decision stage: CRO partner selection, store audit evaluation, A/B testing strategy, UX improvements, and quote/assessment request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Shopify CRO and conversion optimization capabilities. Covers 8 common conversion barriers, revenue impact comparison model, 5 core CRO services (Audit, Funnel Analysis, User Behavior, A/B Testing, Ongoing Optimization), CRO assessment scope, 5-step CRO process, agency credentials, 2 flexible engagement models, 6 CRO FAQs, and dual CTA action blocks.
+
+### Target prompts
+
+- Best Shopify CRO agency for ecommerce brands?
+- How to improve Shopify conversion rate and decrease cart abandonment?
+- What does a Shopify CRO audit include from Dynamic Dreamz?
+- Can Dynamic Dreamz implement Shopify CRO UX recommendations directly?
+- What is the difference between one-time Shopify CRO audit and ongoing growth partner?
+
+### Current strengths and available evidence
+
+- Server-rendered split hero layout with distinct italic accent and dual action buttons.
+- 8 conversion barrier diagnosis cards identifying real-world store issues.
+- Interactive-style revenue comparison visual demonstrating +$25,000/month potential revenue lift.
+- 5 comprehensive CRO services covering full lifecycle from audit to experimentation.
+- Transparent 5-point evaluation checklist for merchant CRO assessment.
+- Clear 5-step process flow with connecting visual progression.
+- Structured data graph emitting Service, OfferCatalog (5 CRO service offers), FAQPage (6 Question/Answer pairs), VideoObject (11 client video reviews), BreadcrumbList, Organization, and WebSite.
+- 0 duplicate assets across `public/assets/`, with 24 dedicated CRO icons and optimized WebP illustrations.
 
 ### Recommended improvements
 
@@ -3059,6 +3093,40 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/woocommerce-development`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 145 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+| P0 | implemented | Route and discovery | Missing App Router implementation for shopify-cro-agency | Ship slashless `/shopify-cro-agency` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (5 offers), FAQPage (6 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | 24 CRO icons and illustrations required local project-owned copies | Save 24 CRO assets under `public/assets/shopify-cro-agency/` with optimized WebP banner | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Minor copy polish in barrier cards and FAQs | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Shopify CRO authority and revenue focus. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Position Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 2,000+ Shopify projects delivered.
+- Highlight "Strategy + Implementation Together" as a key agency differentiator over strategy-only consultants.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/shopify-cro-agency` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and the external CRO assessment form.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 5 Offer items, 6 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.9 and monthly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Shopify CRO agency", "Shopify conversion rate optimization", "Shopify CRO audit", and "Shopify A/B testing".
+- Analytics tracks form submissions on `/request-quote` originating from `/shopify-cro-agency`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-cro-agency`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 154 chars), JSON-LD graph verification, local assets audit, responsive layouts, lint, and production build.
 
 ## Future Page Maintenance Workflow
 
