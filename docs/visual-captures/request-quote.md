@@ -117,3 +117,17 @@ isolated Chrome captures were compared with the saved live captures at
   previous clone at the far left, the list uses a directional clip inset: 5px
   is clipped on the left while right overflow remains available to the browser
   edge, matching the live screenshot.
+
+## Proof-logo Equal-height Follow-up (2026-08-19)
+
+- The four source logos have different intrinsic aspect ratios and heights
+  (32–43px). Allowing those intrinsic heights to size each link produced unequal
+  proof-card heights at desktop widths.
+- Each proof link now uses the live maximum card height of 84px on desktop and
+  the existing 76px responsive height below 1200px. Logos remain undistorted in
+  a shared 44px-high contain area, so all highlighted boxes align without
+  stretching brand artwork.
+- Logo-element correction: `max-height: 44px` still allowed shorter intrinsic
+  SVGs to render at 32–43px. Every proof image now has an explicit 44px element
+  height with automatic width and `object-contain`, matching the live row's
+  shared logo height while preserving each mark's aspect ratio.
