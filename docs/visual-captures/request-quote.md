@@ -89,3 +89,31 @@ isolated Chrome captures were compared with the saved live captures at
   generated inner wrapper to the existing card.
 - Interaction states to verify: initial slide, previous/next navigation, longest
   and shortest testimonial items, desktop and mobile peek layout.
+- Attached 375px mobile reference rechecked: the carousel keeps the live 40px
+  right-side Slick padding and `-16px` list margin to reveal the next card. At
+  widths up to 575px, cards now have a 285px minimum height and the flex track
+  explicitly stretches every slide; longer content may still grow rather than
+  clip. The 10px inter-card gap, 20px inner padding, and arrow positions are
+  unchanged.
+- Follow-up: applying the mobile minimum height only to the gradient wrapper
+  exposed unused gradient space below shorter white panels. The gradient wrapper
+  and white panel now form a flex pair, so the inner panel fills the complete
+  equal-height card and leaves only the intended 1px gradient border visible.
+- Mobile width follow-up: the attached reference shows a roughly 318px primary
+  card at a 375px viewport plus a 30px preview of the following card. Slick's
+  list padding did not reduce the generated slide width reliably in the local
+  build, and fractional `slidesToShow` continued to use the full local track
+  width. The mobile Slick viewport is now explicitly 25px narrower with visible
+  overflow. Slick therefore calculates a 328px slide wrapper at 375px: after
+  the existing 5px side padding, the bordered card is about 318px wide and the
+  following card starts near 345px, matching the live screenshot. The 10px gap,
+  285px minimum height, equal-height stretching, and controls remain intact.
+- Clipping follow-up: the corrected primary card width was visible locally, but
+  Slick's packaged `.slick-list { overflow: hidden }` continued clipping the
+  next slide. Mobile list overflow is now explicitly forced visible while the
+  page-level horizontal clip remains responsible for the browser-edge cutoff.
+- Final mobile render verification at 375px confirmed the correct 318px card and
+  right-side next-slide preview. Because infinite Slick also exposed 5px of its
+  previous clone at the far left, the list uses a directional clip inset: 5px
+  is clipped on the left while right overflow remains available to the browser
+  edge, matching the live screenshot.

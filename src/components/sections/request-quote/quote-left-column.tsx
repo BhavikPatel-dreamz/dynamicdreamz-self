@@ -7,7 +7,7 @@ export function QuoteLeftColumn() {
   const { badges, counters, hero } = requestQuoteContent;
 
   return (
-    <div className="left-col relative w-full py-[150px] pr-[46px] pb-[140px] max-[1199px]:pr-[30px] max-[991px]:pt-[50px] max-[991px]:pr-0 max-[991px]:pb-[100px]">
+    <div className="left-col relative w-full py-[150px] pr-[46px] pb-[140px] max-[1199px]:pr-[30px] max-[991px]:pt-[50px] max-[991px]:pr-0 max-[991px]:pb-[50px]">
       <h1 className="font-montserrat text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:text-[29px] max-[359px]:text-2xl">
         {hero.title}
       </h1>
@@ -51,7 +51,6 @@ export function QuoteLeftColumn() {
                 aria-label={badge.ariaLabel}
               >
                 <Image
-                  className="max-h-full min-h-[44px] w-auto max-[1199px]:min-h-0"
                   src={badge.image}
                   alt={badge.alt}
                   width={badge.width}
