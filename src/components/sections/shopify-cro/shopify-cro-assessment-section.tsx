@@ -1,3 +1,4 @@
+import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { shopifyCroAssessment } from "@/content/shopify-cro-agency";
 
@@ -44,14 +45,13 @@ export function ShopifyCroAssessmentSection({
           </ul>
 
           <div className="mt-[30px]">
-            <a
+            <ButtonLink
               href={content.cta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-red inline-block rounded-[30px] border-2 border-brand-red bg-brand-red px-8 py-3 text-center font-sans text-sm font-bold uppercase leading-[18px] text-white shadow-sm transition-all duration-300 hover:bg-transparent hover:text-brand-red focus-visible:outline-none"
+              variant="primary"
+              className="px-8 text-sm max-[991px]:py-3"
             >
               {content.cta.label}
-            </a>
+            </ButtonLink>
           </div>
         </div>
       </Container>

@@ -307,6 +307,23 @@ or separately approved assets:
   - Preserve Server Component boundaries; isolate interactive controls in small
     `"use client"` widgets.
 
+## Asset Deduplication & 2-Step Buffer Policy
+
+- **No Direct Downloads to `public/assets/`**: Never download live assets directly
+  into `public/assets/` during page migration.
+- **Mandatory `scratch/` Comparison Buffer**:
+  1. Download candidate assets to the temporary `scratch/` directory only.
+  2. Compute SHA-256 hashes and inspect SVG markup / visual roles against the
+     entire `public/assets/**` repository tree.
+  3. If a matching or identical asset already exists anywhere in `public/assets/`,
+     reuse the existing canonical path and delete the temporary scratch file.
+  4. Only if an asset is genuinely unique, optimize it (convert uncompressed PNG
+     to WebP, clean SVGs) and save it to the appropriate
+     `public/assets/<category>/` directory with a clean lowercase kebab-case
+     filename.
+  5. Run a SHA-256 duplicate audit before completing the task. Total duplicate
+     hash groups must remain 0.
+
 ## Design Direction
 
 Dynamic Dreamz should feel confident, expert, practical, and modern. It is a

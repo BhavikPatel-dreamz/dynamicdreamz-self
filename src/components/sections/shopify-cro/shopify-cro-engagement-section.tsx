@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 
+import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { shopifyCroEngagements } from "@/content/shopify-cro-agency";
 
@@ -70,12 +70,13 @@ export function ShopifyCroEngagementSection({
                   </div>
                 </div>
 
-                <Link
+                <ButtonLink
                   href={item.cta.href}
-                  className="btn btn-red mt-9 inline-block w-full rounded-[30px] border-2 border-brand-red bg-brand-red px-5 py-[13px] text-center font-sans text-sm font-bold uppercase leading-[18px] text-white shadow-none transition-all duration-300 hover:bg-transparent hover:text-brand-red focus-visible:outline-none"
+                  variant="primary"
+                  className="mt-9 w-full text-sm max-[991px]:py-3"
                 >
                   {item.cta.label}
-                </Link>
+                </ButtonLink>
               </div>
             </div>
           ))}

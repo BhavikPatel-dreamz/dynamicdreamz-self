@@ -98,31 +98,46 @@ Core proof points from the live site:
   visual layout, UI pattern (e.g. hero banners, card grids, stat counters, logo
   sliders, review carousels, accordions, video modals, split CTA sections), DOM
   structure, and Tailwind styling classes.
-- Safe component reuse and extension: if a similar component exists, reuse it
-  directly or extend/modify it slightly (e.g. with optional typed props, variant
-  flags, slots, or optional style modifiers) to support the new use case.
-  CRITICAL: Every extension must be backward-compatible so that all existing
-  pages and consumers remain unbroken.
-- Pragmatic component creation: if after a thorough check no similar or
-  compatible component exists in the codebase, build a new component. There is no
-  rigid rule forbidding new components when the semantics, visual layout, or
-  behavior are genuinely distinct.
+- Strict component reuse & slight extension: ALWAYS prioritize reusing existing
+  components (`ButtonLink`, `Container`, `FaqSection`, `AiAutomationSection`,
+  `AiDiscoverySection`, `CtaBannerSection`, `ServiceHeroSection`, etc.) over
+  writing new code or raw inline markup (e.g. never write raw inline `<a>` tags
+  with button styling when `ButtonLink` exists). If an existing component can
+  support the requirement with a slight modification (e.g. adding an optional
+  typed prop, variant flag, slot, or optional style modifier), MODIFY the
+  existing component slightly to support the use case instead of writing extra,
+  duplicate, or one-off code.
+  CRITICAL: Every modification/extension must be backward-compatible so that all
+  existing pages and consumers remain unbroken.
+- Pragmatic component creation (only when no match exists): only if after a
+  thorough search no similar or adaptable component exists in the codebase,
+  build a new component. Do not write extra code or duplicate components when an
+  existing component can be adapted with a slight, clean extension.
 - Generalize all new components for future reuse: whenever creating a new
   component, design it to be modular, flexible, and generalized. Decouple the UI
   markup from page-specific hardcoded copy or data (pass content via typed props
   or data imports), provide sensible default props, and place reusable
   primitives in `src/components/ui/` or shared sections in
   `src/components/sections/` so future pages can reuse them seamlessly.
-- Asset discovery and deduplication: before downloading, copying, or adding any
-  new image, icon, logo, or media file, search the complete `public/assets/**`
-  tree across all folders (including `brand/`, `clients/`, `team/`, `icons/`,
-  `proof/`, `testimonials/`, `services/`, etc.). Check visually, by brand/client
-  identity, by SVG markup/paths, and by content hash—not just by filename.
-  Reuse the canonical path when an identical or matching asset exists.
-- Clean asset ingestion: only when no matching or suitable local asset exists,
-  download or copy the asset into the appropriate `public/assets/<category>/`
-  directory during migration. Use a clean, descriptive lowercase kebab-case
-  filename; never duplicate the same media across multiple page folders.
+- Asset discovery and deduplication: NEVER download live assets directly into
+  `public/assets/`. Always follow the 2-step comparison buffer workflow:
+  1. **Download to `scratch/` buffer first**: If an asset is needed from the live
+     site, download it only into the temporary `scratch/` directory (outside
+     `public/assets/`).
+  2. **Hash & markup comparison**: Compute its SHA-256 hash and inspect SVG
+     paths / visual role against all existing files across the entire
+     `public/assets/**` tree (including `brand/`, `clients/`, `team/`, `icons/`,
+     `proof/`, `services/`, `process/`, etc.).
+  3. **Reuse if match exists**: If an identical or matching asset already exists
+     in `public/assets/`, reuse the existing canonical path and delete the
+     temporary file from `scratch/`. Do NOT create another copy.
+  4. **Clean ingestion only for unique assets**: Only when NO matching asset
+     exists anywhere in the project, optimize the asset (convert uncompressed PNG
+     to WebP, clean SVG markup) and move it into the appropriate canonical
+     `public/assets/<category>/` directory with a clean kebab-case filename.
+  5. **Mandatory zero-duplicate verification**: Run a SHA-256 duplicate audit on
+     `public/assets/` before completing any migration task. Total duplicate hash
+     groups must remain 0.
 - For styling and animation work, follow `docs/visual-parity-workflow.md`.
   Inspect live CSS/JS, computed styles, keyframes, transitions, interaction
   states, and screenshots before implementing. Static HTML alone is not enough.

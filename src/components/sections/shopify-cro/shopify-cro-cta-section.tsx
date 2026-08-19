@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { shopifyCroBottomCta } from "@/content/shopify-cro-agency";
 
@@ -26,20 +25,20 @@ export function ShopifyCroCtaSection({
           </div>
 
           <div className="cta_action flex flex-shrink-0 flex-wrap items-center gap-[15px] max-[480px]:w-full max-[480px]:flex-col max-[480px]:items-stretch">
-            <a
+            <ButtonLink
               href={content.primaryCta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-red inline-block rounded-[30px] border-2 border-brand-red bg-brand-red px-7 py-3 text-center font-sans text-sm font-bold uppercase leading-[18px] text-white shadow-none transition-all duration-300 hover:bg-transparent hover:text-brand-red focus-visible:outline-none"
+              variant="primary"
+              className="px-7 text-sm max-[991px]:py-3"
             >
               {content.primaryCta.label}
-            </a>
-            <Link
+            </ButtonLink>
+            <ButtonLink
               href={content.secondaryCta.href}
-              className="btn btn-red-brder inline-block rounded-[30px] border-2 border-brand-red bg-transparent px-7 py-3 text-center font-sans text-sm font-bold uppercase leading-[18px] text-brand-red transition-all duration-300 hover:bg-brand-red hover:text-white focus-visible:outline-none"
+              variant="outline"
+              className="px-7 text-sm max-[991px]:py-3"
             >
               {content.secondaryCta.label}
-            </Link>
+            </ButtonLink>
           </div>
         </div>
       </Container>

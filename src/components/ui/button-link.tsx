@@ -1,15 +1,23 @@
-import Link, { type LinkProps } from "next/link";
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import Link from "next/link";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 
 import { cn } from "@/lib/class-names";
 
-type ButtonVariant = "primary" | "outline" | "dark" | "light";
+export type ButtonVariant = "primary" | "outline" | "dark" | "light";
 
-type ButtonLinkProps = LinkProps &
-  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> & {
-    children: ReactNode;
-    variant: ButtonVariant;
-  };
+export type ButtonLinkProps = {
+  children: ReactNode;
+  variant?: ButtonVariant;
+  className?: string;
+  href?: string;
+  external?: boolean;
+  target?: string;
+  rel?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  onClick?: () => void;
+} & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "onClick"> &
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, "onClick">;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary: "text-white hover:text-[#4f4f4f]",
@@ -32,16 +40,34 @@ const fillClasses: Record<ButtonVariant, string> = {
   light: "translate-x-0 bg-white group-hover/button:translate-x-full",
 };
 
-export function ButtonLink({ children, className, variant, ...props }: ButtonLinkProps) {
-  return (
-    <Link
-      className={cn(
-        "group/button relative z-1 inline-flex min-h-11 items-center justify-center overflow-hidden rounded-[30px] border-0 lg:px-6 px-6 lg:py-4.25 py-2.25 text-center lg:text-base sm:text-[13px] text-[14px] leading-none font-bold uppercase transition-colors duration-600 max-h-12.25",
-        variantClasses[variant],
-        className,
-      )}
-      {...props}
-    >
+export function ButtonLink({
+  children,
+  className,
+  variant = "primary",
+  href,
+  external,
+  target,
+  rel,
+  type = "button",
+  disabled,
+  ...props
+}: ButtonLinkProps) {
+  const isExternal =
+    external ||
+    (typeof href === "string" &&
+      (href.startsWith("http://") ||
+        href.startsWith("https://") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:")));
+
+  const commonClasses = cn(
+    "group/button relative z-1 inline-flex min-h-11 items-center justify-center overflow-hidden rounded-[30px] border-0 px-6 py-2.25 text-center text-[14px] font-bold uppercase leading-none transition-colors duration-600 lg:px-6 lg:py-4.25 lg:text-base sm:text-[13px] max-h-12.25",
+    variantClasses[variant],
+    className,
+  );
+
+  const innerContent = (
+    <>
       <span
         aria-hidden="true"
         className={cn(
@@ -57,6 +83,46 @@ export function ButtonLink({ children, className, variant, ...props }: ButtonLin
         )}
       />
       <span className="relative z-1">{children}</span>
+    </>
+  );
+
+  if (!href) {
+    return (
+      <button
+        type={type}
+        disabled={disabled}
+        className={commonClasses}
+        {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
+      >
+        {innerContent}
+      </button>
+    );
+  }
+
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target={target ?? "_blank"}
+        rel={rel ?? "noopener noreferrer"}
+        className={commonClasses}
+        {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
+        {innerContent}
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      href={href}
+      className={commonClasses}
+      {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
+    >
+      {innerContent}
     </Link>
   );
 }
+
+// Export Button alias for ergonomics
+export const Button = ButtonLink;

@@ -30,10 +30,15 @@ The agent should then read:
    media assets thoroughly across `src/components/**` and `public/assets/**`
    using visual structure, UI layout patterns, markup, and content/brand
    checks—not only filenames.
-3. Map each planned UI element to an existing reusable component or safely
-   extend an existing component with backward-compatible optional props/variants.
-   If no suitable component exists after searching, plan a new generalized
-   component.
+3. Strict Component Reuse & Slight Extension First: ALWAYS prioritize reusing
+   existing components (`ButtonLink`, `Container`, `FaqSection`, `AiAutomationSection`,
+   `AiDiscoverySection`, `CtaBannerSection`, `ServiceHeroSection`, etc.) over
+   writing new code or raw inline markup (e.g. never write raw inline `<a>` tags
+   with button styling when `ButtonLink` exists). If an existing component can
+   support the requirement with a slight modification (e.g. adding an optional
+   typed prop, variant, slot, or optional style modifier), MODIFY the existing
+   component slightly to support the use case instead of writing extra, duplicate,
+   or one-off code. Build new components only when no similar pattern exists.
 4. If migrating a legacy page, inspect the old URL as both a rendered page and
    View Page Source for content structure, headings, CTAs, metadata intent,
    images, links, schema, accessibility details, style details, and redirect
@@ -185,6 +190,25 @@ Follow this step-by-step workflow for every page or section build:
 ### 5. Post-Implementation Consolidation
 - Before completing the task, verify whether any newly created components can be consolidated or promoted to shared locations.
 - Verify that no duplicate components were introduced across page folders.
+
+## Asset Discovery & 2-Step Ingestion Workflow (Zero Duplicates)
+
+Never download assets directly from the live site into `public/assets/`. Always follow this 2-step buffer workflow:
+
+1. **Step 1: Download to Ephemeral `scratch/` Buffer First**
+   - When inspecting or migrating a page from the live site, download candidate media files only into the temporary `scratch/` directory (e.g. `/scratch/`).
+   - Do NOT save directly into `public/assets/` before comparing.
+
+2. **Step 2: SHA-256 Hash & Visual Inspection Against Existing Assets**
+   - Run a SHA-256 content hash check and inspect SVG markup / visual roles against all existing assets in `public/assets/**` (across `brand/`, `clients/`, `team/`, `icons/`, `proof/`, `services/`, `process/`, etc.).
+   - Check if an identical or visually matching asset already exists in the project.
+
+3. **Step 3: Action Based on Comparison**:
+   - **Match Found**: Use the existing canonical local path (e.g. `/assets/process/step-01.svg` or `/assets/shopify-plus-agency/icons/shopify-plus-icon.svg`) in the content file. Delete the temporary file from `scratch/`. Never create a duplicate copy.
+   - **Truly Unique Asset**: Only when no matching asset exists anywhere in `public/assets/`, optimize the asset (convert uncompressed PNG to WebP, clean SVGs) and save it to the appropriate `public/assets/<category>/` directory with a clean kebab-case filename.
+
+4. **Step 4: Mandatory Zero-Duplicate Audit**:
+   - Run the SHA-256 duplicate audit script before completing the task. Total duplicate hash groups across `public/assets/` MUST remain 0.
 
 ## SEO Workflow
 
