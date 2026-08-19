@@ -43,6 +43,10 @@ import {
 } from "@/content/shopify-migration";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
 import {
+  woocommerceDevelopmentFaqs,
+  woocommerceDevelopmentServices,
+} from "@/content/woocommerce-development";
+import {
   wordpressDevelopmentFaqs,
   wordpressDevelopmentServices,
 } from "@/content/wordpress-development";
@@ -172,6 +176,11 @@ const shopifyDevelopmentAgencyPageId = `${shopifyDevelopmentAgencyPageUrl}#webpa
 const shopifyDevelopmentAgencyServiceId = `${shopifyDevelopmentAgencyPageUrl}#service`;
 const shopifyDevelopmentAgencyFaqId = `${shopifyDevelopmentAgencyPageUrl}#faq`;
 const shopifyDevelopmentAgencyBreadcrumbId = `${shopifyDevelopmentAgencyPageUrl}#breadcrumb`;
+const woocommerceDevelopmentPageUrl = absoluteUrl(pageSeo.woocommerceDevelopment.path);
+const woocommerceDevelopmentPageId = `${woocommerceDevelopmentPageUrl}#webpage`;
+const woocommerceDevelopmentServiceId = `${woocommerceDevelopmentPageUrl}#service`;
+const woocommerceDevelopmentFaqId = `${woocommerceDevelopmentPageUrl}#faq`;
+const woocommerceDevelopmentBreadcrumbId = `${woocommerceDevelopmentPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1665,6 +1674,33 @@ export function createShopifyDevelopmentAgencyPageSchema() {
       "DTC brands, B2B merchants, store owners, and digital agencies seeking comprehensive Shopify development services",
     faqs: shopifyDevelopmentAgencyFaqs,
     offers: shopifyDevelopmentAgencyServices.items,
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createWooCommerceDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.woocommerceDevelopment,
+    pageUrl: woocommerceDevelopmentPageUrl,
+    pageId: woocommerceDevelopmentPageId,
+    serviceId: woocommerceDevelopmentServiceId,
+    faqId: woocommerceDevelopmentFaqId,
+    breadcrumbId: woocommerceDevelopmentBreadcrumbId,
+    serviceName: "WooCommerce Development Services",
+    serviceType: "Custom WooCommerce store design, theme development, plugin development, API development, migration, and maintenance",
+    breadcrumbName: "WooCommerce Development",
+    audienceType:
+      "Store owners, merchants, digital agencies, and businesses seeking custom WooCommerce development services",
+    faqs: woocommerceDevelopmentFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ].join(" "),
+    })),
+    offers: woocommerceDevelopmentServices.items,
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }

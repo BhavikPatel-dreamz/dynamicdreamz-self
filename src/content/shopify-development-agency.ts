@@ -30,7 +30,7 @@ export const shopifyDevelopmentAgencyServices = {
     "Unlock the full potential of your Shopify store with the top-notch Shopify Development Agency. We provide a wide range of Shopify development services for your online business. Hire our Shopify expert to convert your dream into reality!",
   items: [
     {
-      icon: "/assets/services/shopify-development-agency/shopify-plus-icon.svg",
+      icon: "/assets/shopify-plus-agency/icons/shopify-plus-icon.svg",
       iconAlt: "shopify plus icon",
       title: "Shopify Plus Store Development Service",
       description:
@@ -38,7 +38,7 @@ export const shopifyDevelopmentAgencyServices = {
       href: "/shopify-plus-agency",
     },
     {
-      icon: "/assets/services/shopify-development-agency/theme-customization-icon.svg",
+      icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
       iconAlt: "theme customization icon",
       title: "Shopify Theme Customization Service",
       description:
@@ -60,7 +60,7 @@ export const shopifyDevelopmentAgencyServices = {
         "Suppose you can’t find any Shopify themes matching your needs. In that case, our custom Shopify theme development service can create an exclusively crafted theme that perfectly fits your requirements. From concept to launch, we ensure your custom Shopify theme enhances user experience, boosts engagement, and drives sales.",
     },
     {
-      icon: "/assets/services/shopify-development-agency/migration-icon.svg",
+      icon: "/assets/hire-shopify-developers/icons/shopify-migration.svg",
       iconAlt: "Migration Icon",
       title: "Shopify Migration Service",
       description:
@@ -68,7 +68,7 @@ export const shopifyDevelopmentAgencyServices = {
       href: "/shopify-migration",
     },
     {
-      icon: "/assets/services/shopify-development-agency/maintenance-icon.svg",
+      icon: "/assets/services/wordpress/wordpress-maintenance.svg",
       iconAlt: "maintenance icon",
       title: "Shopify Maintenance Service",
       description:
@@ -84,7 +84,7 @@ export const shopifyDevelopmentAgencyServices = {
       href: "/migrating-a-theme-to-online-store-2-0",
     },
     {
-      icon: "/assets/services/shopify-development-agency/white-label-icon.svg",
+      icon: "/assets/services/wordpress/wordpress-white-label-development.svg",
       iconAlt: "White Label icon",
       title: "Shopify White Label Development Service",
       description:

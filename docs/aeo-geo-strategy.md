@@ -2991,6 +2991,75 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-migration`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 52 chars, Description: 158 chars), JSON-LD graph verification, local assets audit, responsive layouts, lint, and production build.
 
+## WooCommerce Development (`/woocommerce-development`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, WordPress/WooCommerce development specialists, leadership, and sales operations
+Primary audience: Store owners, merchants, digital agencies, and businesses seeking custom WooCommerce store design, theme development, plugin creation, API development, Headless architecture, payment/shipping integration, and ongoing WooCommerce support.
+Decision stage: agency partner evaluation, technical capability assessment, WooCommerce developer hiring, quote request
+
+### Page role
+
+Dedicated commercial service landing page targeting queries for "WooCommerce Development Company", "WooCommerce development services", and custom WooCommerce ecommerce solutions. Highlights 9 core WooCommerce capabilities (Store Design & Development, Figma to WooCommerce Conversion, Theme Development & Customization, API Development, Plugin Development, Payment/Shipping Integration, Product Migration, WooCommerce Support & Maintenance, Facebook Store Sync), 6 featured portfolio projects (Temple Day Spa, Ziniosa, Square Foot Homes, The Pole Room, Vessey, Catalyst), 11 client video reviews, 10 buyer FAQs, and quote CTAs.
+
+### Target prompts
+
+- Who is the top WooCommerce development company in India?
+- How to convert Figma designs into a fully functional WooCommerce store?
+- Can Dynamic Dreamz build custom WooCommerce plugins and REST APIs for headless WordPress?
+- What are the costs and timelines for WooCommerce store development and migration?
+- Does Dynamic Dreamz provide ongoing WooCommerce maintenance, support, and speed optimization?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Your Trusted Partner for WooCommerce Development` with clear value proposition for store owners and digital agency partners.
+- 9 distinct, structured WooCommerce service offerings with custom SVG icons.
+- 6 featured portfolio projects showcasing real WooCommerce stores (Temple Day Spa, Ziniosa, Square Foot Homes, The Pole Room, Vessey, Catalyst) with external links.
+- 11 verified video testimonials with modal video playback.
+- 3 independent review credentials (Clutch 132 reviews, Upwork 2000+ reviews, GoodFirms 72 reviews).
+- 10 comprehensive buyer FAQs addressing WooCommerce fundamentals, Figma conversion, custom themes, headless CMS, product migration, Facebook store sync, and hiring costs.
+- Complete structured data graph emitting Service, OfferCatalog (9 service items), FAQPage (10 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (9 offers), FAQPage (10 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
+| P0 | implemented | Local assets | Service icons, portfolio screens, and testimonials must be locally hosted | Save 9 service icons and 6 portfolio images under `public/assets/` | Verified locally with 0 runtime external dependencies |
+| P1 | deferred | Content expansion | Minor grammatical enhancements in FAQ items | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered hero and service descriptions establish Dynamic Dreamz WooCommerce development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as an established ecommerce & WordPress/WooCommerce development company founded in 2006 with 150+ specialists and 5000+ projects completed.
+- Attribute client video testimonials directly to authentic brand founders.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/woocommerce-development` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 9 Offer items, 10 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "WooCommerce development company", "WooCommerce development services", "WooCommerce custom plugin development", etc.
+- Analytics tracks form submissions on `/request-quote` originating from `/woocommerce-development`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/woocommerce-development`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 145 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new

@@ -792,6 +792,34 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  woocommerceDevelopment: {
+    path: "/woocommerce-development",
+    title: "Woocommerce Development Company India | Dynamic Dreamz",
+    description:
+      "Grow your online store with professional WooCommerce development services from Dynamic Dreamz, integrations, and seamless shopping experiences.",
+    keywords: [
+      "WooCommerce development company",
+      "WooCommerce development services",
+      "WooCommerce store design",
+      "WooCommerce custom theme",
+      "WooCommerce plugin development",
+      "WooCommerce migration",
+      "WooCommerce support",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-02T09:33:00+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Woocommerce Development Company India | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

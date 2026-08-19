@@ -55,7 +55,7 @@ export function FaqAccordion({
             >
               <h3
                 className={cn(
-                  "m-0 font-sans text-xl leading-[25px] font-semibold text-ink max-[1199px]:text-base",
+                  "m-0 font-sans text-[18px] leading-[26px] font-semibold text-ink max-[1199px]:text-base max-[1199px]:leading-[22px]",
                   questionClassName,
                 )}
               >
@@ -64,7 +64,7 @@ export function FaqAccordion({
               <Image
                 aria-hidden="true"
                 alt=""
-                className="absolute top-1/2 right-8 size-8 -translate-y-1/2 max-[1199px]:right-5 max-[1199px]:size-[25px] max-[767px]:top-[26px] max-[767px]:size-[22px] max-[767px]:translate-y-0"
+                className="absolute top-1/2 right-8 size-8 -translate-y-1/2 max-[1199px]:right-5 max-[1199px]:size-[25px] max-[767px]:size-[22px]"
                 src={
                   isOpen
                     ? "/assets/life-dynamicdreamz/faq/minus.svg"
@@ -90,8 +90,8 @@ export function FaqAccordion({
                 <div className="px-8 pb-6 max-[1199px]:px-5 max-[1199px]:pb-5">
                   <p
                     className={cn(
-                      "text-base leading-[30.4px] font-normal text-muted max-[1199px]:text-sm max-[1199px]:leading-[26px]",
-                      item.listItems?.length ? "mb-3" : "mb-6",
+                      "text-base leading-8 font-medium tracking-[0.32px] text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-[26px]",
+                      item.listItems?.length ? "mb-3" : "mb-0",
                       answerClassName,
                     )}
                   >
@@ -108,10 +108,10 @@ export function FaqAccordion({
                       : item.answer}
                   </p>
                   {item.listItems?.length ? (
-                    <ul className="mb-1 space-y-2.5">
+                    <ul className="mb-0 mt-3 space-y-2.5">
                       {item.listItems.map((listItem) => (
                         <li
-                          className="relative pl-[34px] text-base leading-8 font-medium tracking-[0.32px] text-muted before:absolute before:top-[8px] before:left-0 before:size-3 before:rounded-full before:border-[3px] before:border-[#15c064] max-[1199px]:text-sm max-[1199px]:leading-[26px]"
+                          className="relative mb-2.5 pl-[34px] text-base leading-8 font-medium tracking-[0.32px] text-[#535353] last:mb-0 max-[1199px]:text-sm max-[1199px]:leading-[26px] before:absolute before:top-[5px] before:left-0 before:size-[22px] before:bg-[url('/assets/icons/gradient-check.svg')] before:bg-contain before:bg-no-repeat max-[1199px]:before:top-[2px]"
                           key={`${listItem.label ?? "item"}-${listItem.text}`}
                         >
                           {listItem.label ? (
