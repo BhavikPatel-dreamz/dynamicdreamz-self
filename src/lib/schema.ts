@@ -51,6 +51,9 @@ import {
 } from "@/content/shopify-migration";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
 import { prestigeThemeCustomizationContent } from "@/content/prestige-theme-customization";
+import { impulseThemeCustomizationContent } from "@/content/impulse-theme-customization";
+import { senseThemeCustomizationContent } from "@/content/sense-theme-customization";
+import { shopifyDevelopmentBarcelonaContent } from "@/content/shopify-development-in-barcelona-spain";
 import {
   woocommerceDevelopmentFaqs,
   woocommerceDevelopmentServices,
@@ -219,6 +222,16 @@ const prestigeThemeCustomizationPageId = `${prestigeThemeCustomizationPageUrl}#w
 const prestigeThemeCustomizationServiceId = `${prestigeThemeCustomizationPageUrl}#service`;
 const prestigeThemeCustomizationFaqId = `${prestigeThemeCustomizationPageUrl}#faq`;
 const prestigeThemeCustomizationBreadcrumbId = `${prestigeThemeCustomizationPageUrl}#breadcrumb`;
+const impulseThemeCustomizationPageUrl = absoluteUrl(pageSeo.impulseThemeCustomization.path);
+const impulseThemeCustomizationPageId = `${impulseThemeCustomizationPageUrl}#webpage`;
+const impulseThemeCustomizationServiceId = `${impulseThemeCustomizationPageUrl}#service`;
+const impulseThemeCustomizationFaqId = `${impulseThemeCustomizationPageUrl}#faq`;
+const impulseThemeCustomizationBreadcrumbId = `${impulseThemeCustomizationPageUrl}#breadcrumb`;
+const senseThemeCustomizationPageUrl = absoluteUrl(pageSeo.senseThemeCustomization.path);
+const senseThemeCustomizationPageId = `${senseThemeCustomizationPageUrl}#webpage`;
+const senseThemeCustomizationServiceId = `${senseThemeCustomizationPageUrl}#service`;
+const senseThemeCustomizationFaqId = `${senseThemeCustomizationPageUrl}#faq`;
+const senseThemeCustomizationBreadcrumbId = `${senseThemeCustomizationPageUrl}#breadcrumb`;
 const shopifyDevelopmentAgencyPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentAgency.path);
 const shopifyDevelopmentAgencyPageId = `${shopifyDevelopmentAgencyPageUrl}#webpage`;
 const shopifyDevelopmentAgencyServiceId = `${shopifyDevelopmentAgencyPageUrl}#service`;
@@ -278,6 +291,10 @@ const webDesignBreadcrumbId = `${webDesignPageUrl}#breadcrumb`;
 const termsOfServicePageUrl = absoluteUrl(pageSeo.termsOfService.path);
 const termsOfServicePageId = `${termsOfServicePageUrl}#webpage`;
 const termsOfServiceBreadcrumbId = `${termsOfServicePageUrl}#breadcrumb`;
+const shopifyDevelopmentBarcelonaPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentBarcelona.path);
+const shopifyDevelopmentBarcelonaPageId = `${shopifyDevelopmentBarcelonaPageUrl}#webpage`;
+const shopifyDevelopmentBarcelonaServiceId = `${shopifyDevelopmentBarcelonaPageUrl}#service`;
+const shopifyDevelopmentBarcelonaBreadcrumbId = `${shopifyDevelopmentBarcelonaPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1856,6 +1873,54 @@ export function createPrestigeThemeCustomizationPageSchema() {
   });
 }
 
+export function createImpulseThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.impulseThemeCustomization,
+    pageUrl: impulseThemeCustomizationPageUrl,
+    pageId: impulseThemeCustomizationPageId,
+    serviceId: impulseThemeCustomizationServiceId,
+    faqId: impulseThemeCustomizationFaqId,
+    breadcrumbId: impulseThemeCustomizationBreadcrumbId,
+    serviceName: "Impulse Theme Customization Service",
+    serviceType: "Impulse Shopify theme customization, responsive store design, Liquid development, feature integration, and speed optimization",
+    breadcrumbName: "Impulse Theme Customization Service",
+    audienceType:
+      "Direct-to-consumer eCommerce brands, high-volume Shopify merchants, and digital agencies seeking expert Impulse theme customization",
+    faqs: impulseThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: impulseThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createSenseThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.senseThemeCustomization,
+    pageUrl: senseThemeCustomizationPageUrl,
+    pageId: senseThemeCustomizationPageId,
+    serviceId: senseThemeCustomizationServiceId,
+    faqId: senseThemeCustomizationFaqId,
+    breadcrumbId: senseThemeCustomizationBreadcrumbId,
+    serviceName: "Sense Theme Customization Service",
+    serviceType: "Sense Shopify theme customization, modern clean store design, Liquid development, speed optimization, and third-party app integration",
+    breadcrumbName: "Sense Theme Customization Service",
+    audienceType:
+      "Modern eCommerce brands, Shopify merchants, and digital agencies seeking professional Sense theme customization",
+    faqs: senseThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: senseThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
 export function createShopifyDevelopmentAgencyPageSchema() {
   return createServicePageSchema({
     page: pageSeo.shopifyDevelopmentAgency,
@@ -2216,6 +2281,29 @@ export function createThankYouForEnquiryPageSchema() {
       },
     ],
   };
+}
+
+export function createShopifyDevelopmentBarcelonaPageSchema() {
+  return createIndustryPageSchema({
+    seo: pageSeo.shopifyDevelopmentBarcelona,
+    pageUrl: shopifyDevelopmentBarcelonaPageUrl,
+    pageId: shopifyDevelopmentBarcelonaPageId,
+    breadcrumbId: shopifyDevelopmentBarcelonaBreadcrumbId,
+    breadcrumbName: "Shopify Development in Barcelona",
+    serviceId: shopifyDevelopmentBarcelonaServiceId,
+    serviceName: "Shopify Development in Barcelona",
+    serviceType:
+      "Shopify store development, Shopify Plus, theme customization, Figma to Shopify, migration, and maintenance in Barcelona, Spain",
+    audienceType:
+      "eCommerce brands, direct-to-consumer businesses, and digital agencies in Barcelona and Spain seeking expert Shopify development",
+    offerCatalog: {
+      title: "Our Shopify Development Services",
+      items: shopifyDevelopmentBarcelonaContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    },
+  });
 }
 
 export function serializeJsonLd(value: unknown) {

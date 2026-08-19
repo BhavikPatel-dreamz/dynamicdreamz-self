@@ -22,6 +22,7 @@ export type PortfolioShowcaseSectionProps = {
   };
   ctaLabel?: string;
   ctaHref?: string;
+  hideCta?: boolean;
   className?: string;
   columns?: 2 | 3 | 4;
   imageAspectClassName?: string;
@@ -33,6 +34,7 @@ export function PortfolioShowcaseSection({
   content,
   ctaLabel = "View our work",
   ctaHref = "/our-work",
+  hideCta = false,
   className = "our-work-sec pb-20 max-[991px]:pb-[60px]",
   columns = 3,
   imageAspectClassName,
@@ -83,11 +85,13 @@ export function PortfolioShowcaseSection({
           ))}
         </div>
 
-        <div className="mt-[51px] text-center max-[767px]:mt-10">
-          <ButtonLink href={ctaHref} variant="primary">
-            {ctaLabel}
-          </ButtonLink>
-        </div>
+        {!hideCta && (
+          <div className="mt-[51px] text-center max-[767px]:mt-10">
+            <ButtonLink href={ctaHref} variant="primary">
+              {ctaLabel}
+            </ButtonLink>
+          </div>
+        )}
       </Container>
     </section>
   );

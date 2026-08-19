@@ -3641,36 +3641,40 @@ Dedicated commercial landing page presenting Dynamic Dreamz Prestige theme custo
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route and indexing | Conversion confirmation screen must not be indexed by search engines | Set `robots: { index: false, follow: false }` and filter from XML sitemap | Verified in rendered metadata and sitemap output |
-| P0 | implemented | Local assets | Phone and mail icons must be locally hosted | Save unique call and mail SVGs under `public/assets/thank-you/` | Verified with 0 duplicates and 0 external dependencies |
-| P0 | implemented | Structured data | WebPage, BreadcrumbList, Organization, and WebSite schema required | Emit standard WebPage graph with real content dates and canonical URL | Rendered JSON-LD and build verification complete 2026-08-19 |
+| P0 | implemented | Route and discovery | Missing App Router implementation for Prestige theme customization | Ship slashless `/prestige-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (6 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Prestige hero graphic and feature icons under `public/assets/prestige-theme-customization/` | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Grammar improvements and enhanced copywriting for benefits and FAQs | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
 
-Deferred under the live-UI preservation gate. The current server-rendered confirmation copy matches the live site exactly.
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Prestige theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
 
 ### Entity, evidence, and authorship actions
 
-- Maintain consistent brand contact information (+91 93276 42007 and info@dynamicdreamz.com) matching the global Organization entity.
+- Connect Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+- Attribute portfolio projects directly to their live brand stores (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop).
 
 ### Internal-link and conversion actions
 
-- Maintain return CTA link pointing directly to `/`.
+- Maintain slashless `/prestige-theme-customization` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit WebPage, BreadcrumbList, Organization, and WebSite.
-- Maintain `robots: { index: false, follow: false }` to prevent conversion-screen indexing.
-- Exclude from `sitemap.xml`.
+- Emit Service with 6 Offer items, 6 FAQ items, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
 
-- Analytics tracks successful thank-you page conversions following contact and inquiry form submissions.
+- SEO tracks queries for "Prestige theme customization", "Shopify Prestige developers", and "custom Prestige Shopify theme".
+- Analytics tracks form submissions on `/request-quote` originating from `/prestige-theme-customization`.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, JSON-LD, and internal links use `/thank-you-for-enquiry`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 38 chars, Description: 99 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/prestige-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 154 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Web Design (`/web-design`)
 
@@ -3723,31 +3727,11 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 ### Internal-link and conversion actions
 
 - Maintain slashless `/web-design` navigation across marketing pages and service menus.
-| P0 | implemented | Route and discovery | Missing App Router implementation for Prestige theme customization | Ship slashless `/prestige-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog, FAQPage (6 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Prestige hero graphic, feature icons, and portfolio screens under `public/assets/prestige-theme-customization/` | Verified locally with 0 duplicate assets |
-| P1 | deferred | Content expansion | Grammar improvements and enhanced copywriting for benefits and FAQs | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
-
-### Suggested answer copy
-
-Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Prestige theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
-
-### Entity, evidence, and authorship actions
-
-- Connect Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
-- Attribute portfolio projects directly to their live brand stores (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop).
-
-### Internal-link and conversion actions
-
-- Maintain slashless `/prestige-theme-customization` navigation across marketing pages and service menus.
-- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
 
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service with 8 Offer items, 11 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
 - Set explicit freshness `modifiedTime` to `2025-09-23T05:29:33+00:00`.
-- Emit Service with 6 Offer items, 6 FAQ items, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
@@ -3759,6 +3743,148 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/web-design`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 59 chars, Description: 118 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Impulse Theme Customization (`/impulse-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
+Primary audience: Direct-to-consumer eCommerce brands, high-volume Shopify merchants, and digital agencies seeking expert Impulse theme customization, visual brand enhancement, custom Liquid sections, advanced product filtering, and mobile speed optimization.
+Decision stage: partner selection, Impulse theme customization scope definition, custom feature evaluation, developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Impulse theme customization capabilities. Features 10 client brand trust logos, 6 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 portfolio project cards, 7 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for Impulse Shopify theme customization services?
+- How to customize Impulse theme on Shopify?
+- Dynamic Dreamz Impulse theme customization reviews and portfolio?
+- How much does Impulse theme customization cost and how long does it take?
+- Can Dynamic Dreamz add custom filters, popups, and sidebar to Impulse theme?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Impulse Theme Customization Service` with direct answer paragraph.
+- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
+- 6 distinct theme features with vector icons (Advanced Product Filtering, Promotional Banner Options, Customizable Sections, Collection Page Sidebar, Fast Loading Speed, Product Quick View).
+- 9 core benefits of Impulse customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third party Apps, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost).
+- 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
+- 6 real portfolio project cards (AdHOC Atelier, Lace Laboratory, Purra Performance, Lash Affair, Iridescent Sea, Boutique Jacques).
+- 7 comprehensive FAQ accordion items directly answering merchant questions on benefits, third-party apps, SEO friendliness, turnaround time, store performance, post-launch support, and cost.
+- Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (7 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Missing App Router implementation for Impulse theme customization | Ship slashless `/impulse-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (7 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Impulse hero graphic and feature icons under `public/assets/impulse-theme-customization/` | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Grammar improvements and enhanced copywriting for benefits and FAQs | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Impulse theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+- Attribute portfolio projects directly to their live brand stores (AdHOC Atelier, Lace Laboratory, Purra Performance, Lash Affair, Iridescent Sea, Boutique Jacques).
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/impulse-theme-customization` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 6 Offer items, 7 FAQ items, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Impulse theme customization", "Shopify Impulse developers", and "custom Impulse Shopify theme".
+- Analytics tracks form submissions on `/request-quote` originating from `/impulse-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/impulse-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 152 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Sense Theme Customization (`/sense-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-19
+Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
+Primary audience: Modern direct-to-consumer eCommerce brands, Shopify merchants, and digital agencies seeking expert Sense theme customization, clean modern store design, speed optimization, and third-party app integration.
+Decision stage: partner selection, Sense theme customization scope definition, custom feature evaluation, developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Sense theme customization capabilities. Features 10 client brand trust logos, 6 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 5 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for Sense Shopify theme customization services?
+- How to customize Sense theme on Shopify?
+- Dynamic Dreamz Sense theme customization reviews?
+- How much does Sense theme customization cost and how long does it take?
+- Can Dynamic Dreamz add custom headers, footers, and filters to Sense theme?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Sense Theme Customization Service` with direct answer paragraph.
+- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
+- 6 distinct theme features with vector icons (Clean and Modern Design, Optimized for Speed, Built in Product Filtering, Customizable Header and Footer, Multiple Layout Options, Mobile Optimized).
+- 9 core benefits of Sense customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third party Apps, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost).
+- 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
+- 5 comprehensive FAQ accordion items directly answering merchant questions on scope, custom design, timeline, post-customization support, and third-party app integration.
+- Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (5 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, with canonical brand partner logos, service icons, and shared feature SVGs reused.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Missing App Router implementation for Sense theme customization | Ship slashless `/sense-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (5 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Sense hero graphic and feature icons under `public/assets/sense-theme-customization/` | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Grammar improvements and enhanced copywriting for benefits and FAQs | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Sense theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/sense-theme-customization` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 6 Offer items, 5 FAQ items, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Sense theme customization", "Shopify Sense developers", and "custom Sense Shopify theme".
+- Analytics tracks form submissions on `/request-quote` originating from `/sense-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/sense-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 52 chars, Description: 150 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Terms of Service (`/terms-of-service`)
 
@@ -3823,10 +3949,32 @@ Deferred under the live-UI preservation gate. The current server-rendered legal 
 - SEO tracks queries for "Prestige theme customization", "Shopify Prestige theme developers", "customize Prestige theme Shopify", and "Prestige theme experts".
 - Analytics tracks form submissions on `/request-quote` originating from `/prestige-theme-customization`.
 
-### Verification and remaining gaps
-
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/prestige-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 154 chars), JSON-LD graph verification, responsive layouts (1440px, 768px, 390px), local assets audit, lint, and production build.
+
+## Shopify Development in Barcelona (`/shopify-development-in-barcelona-spain`)
+
+Status: implemented; live-visible content preserved
+Page type: Regional Location Landing Page / Shopify Service Page
+Route: `/shopify-development-in-barcelona-spain`
+Primary audience: eCommerce brands, direct-to-consumer businesses, and digital agencies in Barcelona and Spain seeking expert Shopify and Shopify Plus development
+Last reviewed: 2026-08-19
+
+### Search and Generative Intent
+
+- "Shopify development Barcelona"
+- "Shopify agency Spain"
+- "hire Shopify developers Barcelona"
+- "Shopify Plus agency Barcelona"
+- "Shopify migration and theme customization Barcelona Spain"
+
+### Actions & Implementation
+
+- Route implemented with App Router Server Components at `/shopify-development-in-barcelona-spain`.
+- Canonical metadata configured (Title: 51 chars, Description: 140 chars).
+- Local Spain client logos (Alohas, Feners, Mille Collines, Midnight, Tropicfeel, Lobster, Metta, Manola, Peters, Aleyole) and review badges ingested with 0 duplicate assets.
+- Integrated Service, OfferCatalog, BreadcrumbList, Organization, and WebSite JSON-LD structured data.
+- Built-in lead-capture quote form connected to standard server actions with client-side feedback.
 
 ## Future Page Maintenance Workflow
 

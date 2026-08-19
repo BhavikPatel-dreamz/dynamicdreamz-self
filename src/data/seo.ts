@@ -821,6 +821,58 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  impulseThemeCustomization: {
+    path: "/impulse-theme-customization",
+    title: "Impulse Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Looking for an Impulse Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.",
+    keywords: [
+      "Impulse theme customization",
+      "Impulse Shopify theme",
+      "Impulse theme customization service",
+      "Shopify Impulse developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-12-05T06:43:52+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Impulse Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  senseThemeCustomization: {
+    path: "/sense-theme-customization",
+    title: "Sense Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Looking for a Sense Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.",
+    keywords: [
+      "Sense theme customization",
+      "Sense Shopify theme",
+      "Sense theme customization service",
+      "Shopify Sense developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-12-04T09:54:13+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Sense Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   shopifyDevelopmentAgency: {
     path: "/shopify-development-agency",
     title: "Shopify Development Agency & Services | Dynamic Dreamz",
@@ -1173,6 +1225,33 @@ export const pageSeo = {
     sitemap: {
       changeFrequency: "yearly",
       priority: 0.5,
+    },
+  },
+  shopifyDevelopmentBarcelona: {
+    path: "/shopify-development-in-barcelona-spain",
+    title: "Shopify Development in Barcelona | Dynamic Dreamz",
+    description:
+      "Boost your online store with expert Shopify development in Barcelona by Dynamic Dreamz. We offer tailored solutions to eCommerce success.",
+    keywords: [
+      "Shopify development Barcelona",
+      "Shopify agency Spain",
+      "Shopify developer Barcelona",
+      "Shopify Plus Barcelona",
+      "ecommerce development Barcelona",
+      "Dynamic Dreamz Barcelona",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-07-01T00:00:00+00:00",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in Barcelona | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
     },
   },
 } satisfies Record<string, PageSeoConfig>;
