@@ -628,6 +628,29 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  shopifyPlusMigrationAgency: {
+    path: "/shopify-plus-migration-agency",
+    title: "Shopify Plus Migration Agency | Shopify Migration Experts",
+    description:
+      "Hire Shopify Plus Migration Agency to Switch to Shopify Plus with expert help. Choose Dynamic Dreamz for smooth migration of your store.",
+    keywords: [
+      "Shopify Plus migration agency",
+      "Shopify Plus migration",
+      "Shopify migration experts",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2025-05-05T04:28:17+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Plus Migration Agency by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   magentoToShopifyPlusMigration: {
     path: "/magento-to-shopify-plus-migration",
     title: "Magento to Shopify Plus Migration | Dynamic Dreamz",

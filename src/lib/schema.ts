@@ -1,4 +1,5 @@
 import { ecwidFaqs, ecwidProcessContent } from "@/content/ecwid-to-shopify-migration";
+import { plusAgencyFaqs, plusAgencyProcessContent } from "@/content/shopify-plus-migration-agency";
 import { magentoPlusFaqs, magentoPlusProcessContent } from "@/content/magento-to-shopify-plus-migration";
 import { magentoFaqs, magentoProcessContent } from "@/content/magento-to-shopify-migration";
 import { woocommerceFaqs, woocommerceProcessContent } from "@/content/woocommerce-to-shopify-migration";
@@ -240,6 +241,11 @@ const ecwidToShopifyMigrationPageId = `${ecwidToShopifyMigrationPageUrl}#webpage
 const ecwidToShopifyMigrationServiceId = `${ecwidToShopifyMigrationPageUrl}#service`;
 const ecwidToShopifyMigrationFaqId = `${ecwidToShopifyMigrationPageUrl}#faq`;
 const ecwidToShopifyMigrationBreadcrumbId = `${ecwidToShopifyMigrationPageUrl}#breadcrumb`;
+const shopifyPlusMigrationAgencyPageUrl = absoluteUrl(pageSeo.shopifyPlusMigrationAgency.path);
+const shopifyPlusMigrationAgencyPageId = `${shopifyPlusMigrationAgencyPageUrl}#webpage`;
+const shopifyPlusMigrationAgencyServiceId = `${shopifyPlusMigrationAgencyPageUrl}#service`;
+const shopifyPlusMigrationAgencyFaqId = `${shopifyPlusMigrationAgencyPageUrl}#faq`;
+const shopifyPlusMigrationAgencyBreadcrumbId = `${shopifyPlusMigrationAgencyPageUrl}#breadcrumb`;
 const magentoToShopifyPlusMigrationPageUrl = absoluteUrl(pageSeo.magentoToShopifyPlusMigration.path);
 const magentoToShopifyPlusMigrationPageId = `${magentoToShopifyPlusMigrationPageUrl}#webpage`;
 const magentoToShopifyPlusMigrationServiceId = `${magentoToShopifyPlusMigrationPageUrl}#service`;
@@ -1752,7 +1758,7 @@ export function createShopifyMigrationPageSchema() {
     })),
     offers: shopifyMigrationServices.map((item) => ({
       title: item.title,
-      description: item.description,
+      description: item.description ?? "",
     })),
     videos: shopifyPlusTestimonialVideoSchema(),
   });
@@ -2745,6 +2751,32 @@ export function createEcwidToShopifyMigrationPageSchema() {
         .join(" "),
     })),
     offers: ecwidProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyPlusMigrationAgencyPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyPlusMigrationAgency,
+    pageUrl: shopifyPlusMigrationAgencyPageUrl,
+    pageId: shopifyPlusMigrationAgencyPageId,
+    serviceId: shopifyPlusMigrationAgencyServiceId,
+    faqId: shopifyPlusMigrationAgencyFaqId,
+    breadcrumbId: shopifyPlusMigrationAgencyBreadcrumbId,
+    serviceName: "Shopify Plus Migration Agency Services",
+    serviceType:
+      "Full-service enterprise store migration to Shopify Plus with zero downtime and seamless platform transition",
+    breadcrumbName: "Shopify Plus Migration Agency",
+    audienceType:
+      "Enterprise merchants, high-growth ecommerce brands, and multi-store businesses migrating to Shopify Plus",
+    faqs: plusAgencyFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: plusAgencyProcessContent.steps.map((step) => ({
       title: step.title,
       description: step.description,
     })),

@@ -128,11 +128,52 @@ export function ServiceHeroSection({
               </div>
             </div>
             <div className="right-col w-full">
-              <div className="review_animation_main my-[30px]">
-                <div className="mx-auto w-full max-w-[450px]">
-                  <ReviewAnimation />
+              {content.reviews && content.reviews.length > 0 ? (
+                <div className="review-wrap mt-[45px] flex gap-[15px] justify-center max-[991px]:flex-col max-[991px]:items-center max-[991px]:gap-4 max-[991px]:mt-8">
+                  {content.reviews.map((review) => (
+                    <a
+                      className="review-box relative z-0 w-[calc(33.33%-10px)] max-w-[360px] rounded-[8px] p-[17px_12px_10px] text-center shadow-sm transition-transform hover:-translate-y-0.5 before:absolute before:-inset-[2px] before:-z-20 before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] after:absolute after:inset-0 after:-z-10 after:rounded-[8px] after:bg-white max-[991px]:w-full max-[991px]:max-w-[400px] max-[991px]:flex max-[991px]:flex-row-reverse max-[991px]:items-center max-[991px]:justify-between max-[991px]:p-[18px_24px]"
+                      href={review.href}
+                      key={review.platform}
+                      rel="nofollow noopener noreferrer"
+                      target="_blank"
+                    >
+                      <div className="total-review relative -mt-[34px] mb-2.5 rounded-[30px] border-[1.5px] border-[#efefef] bg-white max-[991px]:m-0 max-[991px]:inline-block">
+                        <span className="block px-2.5 py-1 text-center text-[10px] font-semibold leading-normal text-ink">
+                          {review.reviewCount}
+                        </span>
+                      </div>
+                      <div className="rating-wrap flex flex-col items-center justify-center gap-1.5 max-[991px]:items-start">
+                        <Image
+                          alt={review.logoAlt}
+                          className="h-[19px] w-auto object-contain"
+                          height={review.logoHeight}
+                          src={review.logoSrc}
+                          width={review.logoWidth}
+                        />
+                        <div className="rating flex items-center justify-center gap-[7px]">
+                          <Image
+                            alt="Dynamic Dreamz Star Rating"
+                            className="h-[14px] w-[78px] object-contain"
+                            height={14}
+                            src="/assets/reviews/five-stars.svg"
+                            width={78}
+                          />
+                          <span className="font-sans text-[22px] font-bold leading-normal text-[#252c15] max-[991px]:text-[18px]">
+                            {review.rating}
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
                 </div>
-              </div>
+              ) : (
+                <div className="review_animation_main my-[30px]">
+                  <div className="mx-auto w-full max-w-[450px]">
+                    <ReviewAnimation />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </Container>
@@ -205,7 +246,7 @@ export function ServiceHeroSection({
                   <div className="review-wrap mt-[57px] flex gap-[15px] justify-center max-[991px]:flex-col max-[991px]:items-center max-[991px]:gap-4 max-[991px]:mt-8">
                     {content.reviews.map((review) => (
                       <a
-                        className="review-box relative z-1 w-[calc(33.33%-10px)] rounded-[8px] bg-white p-[17px_12px_10px] text-center shadow-sm transition-transform hover:-translate-y-0.5 before:absolute before:-inset-[2px] before:-z-1 before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] max-[991px]:w-full max-[991px]:max-w-[400px] max-[991px]:flex max-[991px]:flex-row-reverse max-[991px]:items-center max-[991px]:justify-between max-[991px]:p-[18px_24px]"
+                        className="review-box relative z-0 w-[calc(33.33%-10px)] rounded-[8px] p-[17px_12px_10px] text-center shadow-sm transition-transform hover:-translate-y-0.5 before:absolute before:-inset-[2px] before:-z-20 before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] after:absolute after:inset-0 after:-z-10 after:rounded-[8px] after:bg-white max-[991px]:w-full max-[991px]:max-w-[400px] max-[991px]:flex max-[991px]:flex-row-reverse max-[991px]:items-center max-[991px]:justify-between max-[991px]:p-[18px_24px]"
                         href={review.href}
                         key={review.platform}
                         rel="nofollow noopener noreferrer"

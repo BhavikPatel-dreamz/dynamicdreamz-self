@@ -49,7 +49,7 @@ export function ShopifyAppBenefitsSection({
                 className="benefit_box mb-[15px] w-1/3 px-[7.5px] max-[991px]:w-1/2 max-[767px]:w-full"
                 key={item.title}
               >
-                <div className="benefit_text group relative h-full rounded-[10px] border border-[#d9d9d9] bg-white p-[30px_30px_55px_30px] transition-all duration-300 hover:border-transparent hover:shadow-[0_4px_30px_0_rgba(0,0,0,0.1)] max-[767px]:p-[30px_20px] before:pointer-events-none before:absolute before:-inset-[2px] before:-z-1 before:block before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] before:opacity-0 before:transition-all before:duration-300 before:ease-in-out hover:before:opacity-100">
+                <div className="benefit_text group relative z-0 h-full rounded-[10px] border border-[#d9d9d9] p-[30px_30px_55px_30px] transition-all duration-300 hover:border-transparent hover:shadow-[0_4px_30px_0_rgba(0,0,0,0.1)] max-[767px]:p-[30px_20px] before:pointer-events-none before:absolute before:-inset-[2px] before:-z-20 before:block before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] before:opacity-0 before:transition-all before:duration-300 before:ease-in-out hover:before:opacity-100 after:pointer-events-none after:absolute after:inset-0 after:-z-10 after:rounded-[9px] after:bg-white">
                   <div className="icon mb-[30px] h-[50px] w-[50px] max-[767px]:mb-5">
                     <Image
                       alt={item.iconAlt}
