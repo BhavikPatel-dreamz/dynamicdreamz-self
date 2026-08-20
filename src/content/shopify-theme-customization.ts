@@ -87,51 +87,51 @@ export const shopifyThemeCustomizationContent = {
     "items": [
       {
         "name": "Supper Tails Logo",
-        "image": "/assets/shopify-theme-customization/brands/supper-tails-logo.svg"
+        "image": "/assets/clients/supertails.svg"
       },
       {
         "name": "Eleven Eleven",
-        "image": "/assets/shopify-theme-customization/brands/eleven-eleven.svg"
+        "image": "/assets/clients/eleven-eleven.svg"
       },
       {
         "name": "bellavita logo",
-        "image": "/assets/shopify-theme-customization/brands/bellavita.svg"
+        "image": "/assets/clients/bella-vita.svg"
       },
       {
         "name": "Bombay Shirt Company",
-        "image": "/assets/shopify-theme-customization/brands/bombay-shirt-company.svg"
+        "image": "/assets/clients/bombay-shirt-company.svg"
       },
       {
         "name": "Popclub Co",
-        "image": "/assets/shopify-theme-customization/brands/popclub-co.svg"
+        "image": "/assets/clients/popclub.svg"
       },
       {
         "name": "SriSri Tattva Logo",
-        "image": "/assets/shopify-theme-customization/brands/srisri-tattva-logo.svg"
+        "image": "/assets/clients/sri-sri-tattva.svg"
       },
       {
         "name": "tropicfeel logo",
-        "image": "/assets/shopify-theme-customization/brands/tropicfeel.svg"
+        "image": "/assets/clients/tropicfeel.svg"
       },
       {
         "name": "Renee logo",
-        "image": "/assets/shopify-theme-customization/brands/renee.svg"
+        "image": "/assets/clients/renee.svg"
       },
       {
         "name": "Royce chocolate logo",
-        "image": "/assets/shopify-theme-customization/brands/royce-chocolate-logo.svg"
+        "image": "/assets/clients/royce-chocolate.svg"
       },
       {
         "name": "tego logo",
-        "image": "/assets/shopify-theme-customization/brands/tego.svg"
+        "image": "/assets/clients/tego.svg"
       },
       {
         "name": "nekter-colored",
-        "image": "/assets/shopify-theme-customization/brands/nekter-colored.svg"
+        "image": "/assets/clients/nelter.svg"
       },
       {
         "name": "Rare Rabbit Logo",
-        "image": "/assets/shopify-theme-customization/brands/rare-rabbit.svg"
+        "image": "/assets/clients/rare-rabbit.svg"
       }
     ]
   },

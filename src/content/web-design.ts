@@ -80,7 +80,7 @@ export const webDesignBrands = [
   },
   {
     name: "Nekter",
-    src: "/assets/clients/nekter.svg",
+    src: "/assets/clients/nelter.svg",
     alt: "nekter-colored",
     width: 66,
     height: 64,

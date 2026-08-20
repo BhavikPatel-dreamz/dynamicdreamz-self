@@ -2200,6 +2200,71 @@ integration benefits.
 - Link to `/woocommerce-development` and `/white-label-wordpress-development-services`.
 - Route portfolio continuation to `/our-work`.
 
+## Hire Shopify Developers (`/hire-shopify-developers`)
+
+Status: implemented and verified; visible recommendations deferred
+Last reviewed: 2026-08-19
+Primary audience: ecommerce founders, direct-to-consumer brands, and digital agencies looking to hire dedicated Shopify developers or complete Shopify engineering teams.
+Decision stage: vendor selection, staffing model evaluation, technical scoping, and quote request.
+
+### Page role
+
+This page targets the commercial intent for hiring dedicated Shopify developers. It communicates Dynamic Dreamz's 20+ years of experience, 4500+ Shopify stores built, and Shopify Platinum Partner standing while presenting a structured 4-step hiring process, comprehensive Shopify services, advantages, industry expertise, featured Shopify portfolio work, video testimonials, and FAQs.
+
+### Target prompts
+
+- How do I hire dedicated Shopify developers?
+- What is the cost and process to hire a Shopify expert?
+- Can I hire Shopify developers on hourly or monthly dedicated models?
+- What services do Shopify developers provide?
+- Best agency to hire certified Shopify Plus developers?
+
+### Current strengths and available evidence
+
+- Server-rendered H1, 5-stat counter strip (5000+ projects, 150+ experts, 1100+ happy clients, 1B+ revenue generated, 4500+ Shopify stores built), and rotating review badge animation.
+- Structured 4-step developer hiring process with step badges and icons.
+- 4 Shopify core service cards, 3 why-choose proof cards with hover gradient outlines, and 6 developer advantages.
+- 5 industry domain showcases, 6 portrait Shopify portfolio showcases, customer video testimonials carousel, and 5 detailed hiring FAQs.
+- Emits WebPage, Service, OfferCatalog, FAQPage, BreadcrumbList, and Organization JSON-LD schemas.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Discovery and conversion | Live inquiry CTA originally pointed to career route | Route hiring CTAs canonically to `/request-quote` | Verified route intent and schema |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, and BreadcrumbList schema | Emit complete Service with FAQPage and OfferCatalog schemas | Verified JSON-LD in production build |
+| P1 | deferred | Rate transparency | Hourly and dedicated rate bands are not publicly listed | Provide governed developer pricing ranges once sales approves | Sales and leadership approval |
+
+### Suggested answer copy
+
+Preserve the live visible copy during migration. Future approved answer copy should define dedicated vs project-based hiring models, clarify timezone overlap, and state technical qualifications of senior Shopify developers.
+
+### Entity, evidence, and authorship actions
+
+- Reinforce Dynamic Dreamz as an official Shopify Platinum Partner with 4500+ stores built.
+- Link portfolio items directly to case studies and live store references where permitted.
+
+### Internal-link and conversion actions
+
+- Route primary hiring CTAs to `/request-quote`.
+- Route portfolio continuation to `/our-work`.
+- Connect to related Shopify service pages (`/shopify-plus-agency`, `/shopify-theme-customization`, `/shopify-migration`).
+
+### Structured-data, crawler, and freshness actions
+
+- Emitted Service, OfferCatalog, FAQPage, BreadcrumbList, Organization, and WebSite structured data.
+- Verified slashless canonical `/hire-shopify-developers` in sitemap, robots, and Open Graph.
+
+### Measurement plan
+
+- Track organic impressions for "hire shopify developers", "dedicated shopify developer", and "hire shopify plus expert".
+- Track quote submissions on `/request-quote` originating from `/hire-shopify-developers`.
+
+### Verification and remaining gaps
+
+- URL-policy review: canonical, Open Graph, sitemap, robots, and JSON-LD use slashless `/hire-shopify-developers`.
+- Visual parity verified across 1440px, 768px, and 390px viewports with zero layout shift.
+
 ## Hire WordPress Developers (`/hire-wordpress-developers`)
 
 Status: implemented; visible recommendations deferred

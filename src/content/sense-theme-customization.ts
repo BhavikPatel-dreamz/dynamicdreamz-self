@@ -114,7 +114,7 @@ export const senseThemeCustomizationContent = {
       },
       {
         title: "Built in Product Filtering",
-        icon: "/assets/impulse-theme-customization/features/advanced-product-filtering.svg",
+        icon: "/assets/prestige-theme-customization/features/advanced-product-filtering.svg",
         iconAlt: "Built-in Product Filtering Icon",
       },
       {

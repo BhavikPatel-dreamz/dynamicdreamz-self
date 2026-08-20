@@ -104,12 +104,12 @@ export const impulseThemeCustomizationContent = {
     items: [
       {
         title: "Advanced Product Filtering",
-        icon: "/assets/impulse-theme-customization/features/advanced-product-filtering.svg",
+        icon: "/assets/prestige-theme-customization/features/advanced-product-filtering.svg",
         iconAlt: "Advanced Product Filtering Icon",
       },
       {
         title: "Promotional Banner Options",
-        icon: "/assets/impulse-theme-customization/features/promotional-banner-options.svg",
+        icon: "/assets/prestige-theme-customization/features/slideshow-high-impact-images.svg",
         iconAlt: "Promotional Banner Options Icon",
       },
       {
