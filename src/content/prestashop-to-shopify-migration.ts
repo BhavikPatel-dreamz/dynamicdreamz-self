@@ -173,7 +173,7 @@ export const prestashopBenefitsContent: ProofSectionContent = {
       title: "Enhanced Security",
       description:
         "Shopify ensures your store's security by providing SSL certificates and PCI compliance. Shopify prioritizes protecting your data and customers' data.",
-      icon: "/assets/prestashop-to-shopify-migration/benefits/enhanced-security.svg",
+      icon: "/assets/shopify-theme-customization/benefits/enhanced-security.svg",
       iconAlt: "Enhanced Security Icon",
     },
     {

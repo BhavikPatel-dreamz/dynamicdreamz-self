@@ -91,7 +91,7 @@ export function FaqAccordion({
                     part.text
                   ),
                 )
-              : item.answer}
+              : formatBrText(item.answer)}
           </p>
         ) : null;
 
@@ -102,7 +102,7 @@ export function FaqAccordion({
               answerClassName,
             )}
           >
-            {item.secondaryAnswer}
+            {formatBrText(item.secondaryAnswer)}
           </p>
         ) : null;
 

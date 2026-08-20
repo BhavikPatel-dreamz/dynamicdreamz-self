@@ -63,6 +63,10 @@ import { kadenceThemeCustomizationContent } from "@/content/kadence-theme-custom
 import { helloElementorThemeCustomizationContent } from "@/content/hello-elementor-theme-customization";
 import { generatepressThemeCustomizationContent } from "@/content/generatepress-theme-customization";
 import { oceanwpThemeCustomizationContent } from "@/content/oceanwp-theme-customization";
+import { neveThemeCustomizationContent } from "@/content/neve-theme-customization";
+import { blocksyThemeCustomizationContent } from "@/content/blocksy-theme-customization";
+import { extendableThemeCustomizationContent } from "@/content/extendable-theme-customization";
+import { kubioThemeCustomizationContent } from "@/content/kubio-theme-customization";
 import { shopifyDevelopmentBarcelonaContent } from "@/content/shopify-development-in-barcelona-spain";
 import {
   woocommerceDevelopmentFaqs,
@@ -262,6 +266,26 @@ const oceanwpThemeCustomizationPageId = `${oceanwpThemeCustomizationPageUrl}#web
 const oceanwpThemeCustomizationServiceId = `${oceanwpThemeCustomizationPageUrl}#service`;
 const oceanwpThemeCustomizationFaqId = `${oceanwpThemeCustomizationPageUrl}#faq`;
 const oceanwpThemeCustomizationBreadcrumbId = `${oceanwpThemeCustomizationPageUrl}#breadcrumb`;
+const neveThemeCustomizationPageUrl = absoluteUrl(pageSeo.neveThemeCustomization.path);
+const neveThemeCustomizationPageId = `${neveThemeCustomizationPageUrl}#webpage`;
+const neveThemeCustomizationServiceId = `${neveThemeCustomizationPageUrl}#service`;
+const neveThemeCustomizationFaqId = `${neveThemeCustomizationPageUrl}#faq`;
+const neveThemeCustomizationBreadcrumbId = `${neveThemeCustomizationPageUrl}#breadcrumb`;
+const blocksyThemeCustomizationPageUrl = absoluteUrl(pageSeo.blocksyThemeCustomization.path);
+const blocksyThemeCustomizationPageId = `${blocksyThemeCustomizationPageUrl}#webpage`;
+const blocksyThemeCustomizationServiceId = `${blocksyThemeCustomizationPageUrl}#service`;
+const blocksyThemeCustomizationFaqId = `${blocksyThemeCustomizationPageUrl}#faq`;
+const blocksyThemeCustomizationBreadcrumbId = `${blocksyThemeCustomizationPageUrl}#breadcrumb`;
+const extendableThemeCustomizationPageUrl = absoluteUrl(pageSeo.extendableThemeCustomization.path);
+const extendableThemeCustomizationPageId = `${extendableThemeCustomizationPageUrl}#webpage`;
+const extendableThemeCustomizationServiceId = `${extendableThemeCustomizationPageUrl}#service`;
+const extendableThemeCustomizationFaqId = `${extendableThemeCustomizationPageUrl}#faq`;
+const extendableThemeCustomizationBreadcrumbId = `${extendableThemeCustomizationPageUrl}#breadcrumb`;
+const kubioThemeCustomizationPageUrl = absoluteUrl(pageSeo.kubioThemeCustomization.path);
+const kubioThemeCustomizationPageId = `${kubioThemeCustomizationPageUrl}#webpage`;
+const kubioThemeCustomizationServiceId = `${kubioThemeCustomizationPageUrl}#service`;
+const kubioThemeCustomizationFaqId = `${kubioThemeCustomizationPageUrl}#faq`;
+const kubioThemeCustomizationBreadcrumbId = `${kubioThemeCustomizationPageUrl}#breadcrumb`;
 const impulseThemeCustomizationPageUrl = absoluteUrl(pageSeo.impulseThemeCustomization.path);
 const impulseThemeCustomizationPageId = `${impulseThemeCustomizationPageUrl}#webpage`;
 const impulseThemeCustomizationServiceId = `${impulseThemeCustomizationPageUrl}#service`;
@@ -1371,7 +1395,7 @@ function createServicePageSchema({
           name: item.question,
           acceptedAnswer: {
             "@type": "Answer",
-            text: item.answer,
+            text: item.answer.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim(),
           },
         })),
       },
@@ -2066,6 +2090,102 @@ export function createOceanwpThemeCustomizationPageSchema() {
       answer: item.answer,
     })),
     offers: oceanwpThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createNeveThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.neveThemeCustomization,
+    pageUrl: neveThemeCustomizationPageUrl,
+    pageId: neveThemeCustomizationPageId,
+    serviceId: neveThemeCustomizationServiceId,
+    faqId: neveThemeCustomizationFaqId,
+    breadcrumbId: neveThemeCustomizationBreadcrumbId,
+    serviceName: "Neve Theme Customization Services",
+    serviceType: "Neve WordPress theme customization, responsive WooCommerce store design, header and footer builder configuration, AMP optimization, and page builder integration",
+    breadcrumbName: "Neve Theme Customization Service",
+    audienceType:
+      "WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking professional Neve theme customization",
+    faqs: neveThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: neveThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createBlocksyThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.blocksyThemeCustomization,
+    pageUrl: blocksyThemeCustomizationPageUrl,
+    pageId: blocksyThemeCustomizationPageId,
+    serviceId: blocksyThemeCustomizationServiceId,
+    faqId: blocksyThemeCustomizationFaqId,
+    breadcrumbId: blocksyThemeCustomizationBreadcrumbId,
+    serviceName: "Blocksy Theme Customization Services",
+    serviceType: "Blocksy WordPress theme customization, responsive WooCommerce store design, Gutenberg & page builder integration, header/footer builder, and speed optimization",
+    breadcrumbName: "Blocksy Theme Customization Service",
+    audienceType:
+      "WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking professional Blocksy theme customization",
+    faqs: blocksyThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: blocksyThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createExtendableThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.extendableThemeCustomization,
+    pageUrl: extendableThemeCustomizationPageUrl,
+    pageId: extendableThemeCustomizationPageId,
+    serviceId: extendableThemeCustomizationServiceId,
+    faqId: extendableThemeCustomizationFaqId,
+    breadcrumbId: extendableThemeCustomizationBreadcrumbId,
+    serviceName: "Extendable Theme Customization Service",
+    serviceType: "Extendable WordPress theme customization, responsive WooCommerce store design, drag-and-drop builder integration, header/footer styles, color & typography customization, and speed optimization",
+    breadcrumbName: "Extendable Theme Customization Service",
+    audienceType:
+      "WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking professional Extendable theme customization",
+    faqs: extendableThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: extendableThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createKubioThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.kubioThemeCustomization,
+    pageUrl: kubioThemeCustomizationPageUrl,
+    pageId: kubioThemeCustomizationPageId,
+    serviceId: kubioThemeCustomizationServiceId,
+    faqId: kubioThemeCustomizationFaqId,
+    breadcrumbId: kubioThemeCustomizationBreadcrumbId,
+    serviceName: "Kubio Theme Customization Service",
+    serviceType: "Kubio WordPress theme customization, responsive WooCommerce store design, block-based drag-and-drop builder integration, pre-built template customization, custom fonts & colors, and speed optimization",
+    breadcrumbName: "Kubio Theme Customization Service",
+    audienceType:
+      "WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking professional Kubio theme customization",
+    faqs: kubioThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: kubioThemeCustomizationContent.services.items.map((item) => ({
       title: item.title,
       description: item.description,
     })),

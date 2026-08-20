@@ -4159,6 +4159,246 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 - URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/oceanwp-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 141 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
+## Neve Theme Customization (`/neve-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
+Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Neve theme customization, responsive WooCommerce store design, header/footer builder customization, AMP optimization, speed optimization, and page builder integration.
+Decision stage: partner selection, Neve theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Neve theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 6 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for Neve WordPress theme customization services?
+- How to customize Neve theme for WooCommerce?
+- Dynamic Dreamz Neve theme customization reviews and portfolio?
+- Can Dynamic Dreamz build custom header and footer layouts with Neve?
+- Neve speed optimization and AMP compatibility WordPress developer?
+
+### Core answer & key facts
+
+- Server-rendered H1 `Neve Theme Customization Service` with direct answer paragraph.
+- 18+ years agency experience (founded 2006) with 150+ WordPress/Shopify experts and 5000+ completed projects.
+- 7 key Neve theme features (Lightweight & Fast, Mobile-Optimized, Customizable Header & Footer, WooCommerce Ready, Page Builder Compatibility, SEO-Friendly, AMP Compatibility).
+- 8 core benefits of Neve customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimal Maintenance Cost).
+- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
+- 6 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- 6 detailed FAQs addressing cost, customization scope, WooCommerce compatibility, project timeline, SEO best practices, and post-launch support.
+
+### Structured gap analysis
+
+| Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route and discovery | Missing App Router implementation for Neve theme customization | Ship slashless `/neve-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Neve hero graphic and unique feature/benefit icons under `public/assets/neve-theme-customization/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 6 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
+
+### Visible content and copy improvements
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Neve theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Technical requirements
+
+- App Router Server Component architecture (`src/app/neve-theme-customization/page.tsx`).
+- Canonical URL: `https://www.dynamicdreamz.com/neve-theme-customization`.
+- Maintain slashless `/neve-theme-customization` navigation across marketing pages and service menus.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Neve theme customization", "WordPress Neve developers", and "custom Neve theme WooCommerce".
+- Analytics tracks form submissions on `/request-quote` originating from `/neve-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/neve-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 51 chars, Description: 138 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Blocksy Theme Customization (`/blocksy-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
+Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Blocksy theme customization, responsive WooCommerce store design, Gutenberg & page builder integration, header/footer builder customization, global color palette management, speed optimization, and third-party plugin integration.
+Decision stage: partner selection, Blocksy theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Blocksy theme customization capabilities. Features 10 client brand trust logos, 8 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 7 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for Blocksy WordPress theme customization services?
+- How to customize Blocksy theme for WooCommerce?
+- Dynamic Dreamz Blocksy theme customization reviews and portfolio?
+- Can Dynamic Dreamz build custom header and footer layouts with Blocksy?
+- Blocksy speed optimization and Gutenberg page builder integration agency?
+
+### Core answer & key facts
+
+- Server-rendered H1 `Blocksy Theme Customization Service` with direct answer paragraph.
+- 18+ years agency experience (founded 2006) with 150+ WordPress/Shopify experts and 5000+ completed projects.
+- 8 key Blocksy theme features (Lightning-Fast Performance, Highly Customizable, Gutenberg & Page Builder Compatibility, WooCommerce Ready, Header & Footer Builder, Global Color Palette, SEO Optimized, Mobile-Friendly Design).
+- 9 core benefits of Blocksy customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
+- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
+- 6 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- 7 detailed FAQs addressing cost, customization scope, uniqueness, mobile responsiveness, project timeline, post-launch support, and third-party plugins.
+
+### Structured gap analysis
+
+| Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route and discovery | Missing App Router implementation for Blocksy theme customization | Ship slashless `/blocksy-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Blocksy hero graphic and unique feature icons under `public/assets/blocksy-theme-customization/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 7 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
+
+### Visible content and copy improvements
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Blocksy theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Technical requirements
+
+- App Router Server Component architecture (`src/app/blocksy-theme-customization/page.tsx`).
+- Canonical URL: `https://www.dynamicdreamz.com/blocksy-theme-customization`.
+- Maintain slashless `/blocksy-theme-customization` navigation across marketing pages and service menus.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Blocksy theme customization", "WordPress Blocksy developers", and "custom Blocksy theme WooCommerce".
+- Analytics tracks form submissions on `/request-quote` originating from `/blocksy-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/blocksy-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 141 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Extendable Theme Customization (`/extendable-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
+Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Extendable theme customization, responsive WooCommerce store design, drag-and-drop builder integration, multiple header/footer styles, color & typography customization, speed optimization, and third-party plugin integration.
+Decision stage: partner selection, Extendable theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Extendable theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 6 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for Extendable WordPress theme customization services?
+- How to customize Extendable theme for WooCommerce?
+- Dynamic Dreamz Extendable theme customization reviews and portfolio?
+- Can Dynamic Dreamz build custom header and footer layouts with Extendable?
+- Extendable speed optimization and drag-and-drop builder integration agency?
+
+### Core answer & key facts
+
+- Server-rendered H1 `Extendable Theme Customization Service` with direct answer paragraph.
+- 18+ years agency experience (founded 2006) with 150+ WordPress/Shopify experts and 5000+ completed projects.
+- 7 key Extendable theme features (Lightweight and Fast, Drag-and-Drop Builder, WooCommerce Integration, Responsive Design, SEO-Optimized, Multiple Header & Footer Styles, Customizable Color & Typography).
+- 9 core benefits of Extendable customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
+- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
+- 6 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- 6 detailed FAQs addressing cost, customization timeline, third-party plugins, mobile responsiveness, theme updates after customization, and ongoing maintenance.
+
+### Structured gap analysis
+
+| Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route and discovery | Missing App Router implementation for Extendable theme customization | Ship slashless `/extendable-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Extendable hero graphic under `public/assets/extendable-theme-customization/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 6 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
+
+### Visible content and copy improvements
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Extendable theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Technical requirements
+
+- App Router Server Component architecture (`src/app/extendable-theme-customization/page.tsx`).
+- Canonical URL: `https://www.dynamicdreamz.com/extendable-theme-customization`.
+- Maintain slashless `/extendable-theme-customization` navigation across marketing pages and service menus.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Extendable theme customization", "WordPress Extendable developers", and "custom Extendable theme WooCommerce".
+- Analytics tracks form submissions on `/request-quote` originating from `/extendable-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/extendable-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 140 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Kubio Theme Customization (`/kubio-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
+Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Kubio theme customization, responsive WooCommerce store design, block-based drag-and-drop page builder integration, pre-built template customization, custom typography & color palettes, speed optimization, and third-party plugin integration.
+Decision stage: partner selection, Kubio theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Kubio theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 5 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for Kubio WordPress theme customization services?
+- How to customize Kubio block-based theme for WooCommerce?
+- Dynamic Dreamz Kubio theme customization reviews and portfolio?
+- Can Dynamic Dreamz build custom page builder layouts with Kubio?
+- Kubio speed optimization and drag-and-drop builder integration agency?
+
+### Core answer & key facts
+
+- Server-rendered H1 `Kubio Theme Customization Service` with direct answer paragraph.
+- 18+ years agency experience (founded 2006) with 150+ WordPress/Shopify experts and 5000+ completed projects.
+- 7 key Kubio theme features (Drag-and-Drop Builder, Fully Responsive, WooCommerce Ready, SEO-Optimized, Pre-Built Templates, Custom Fonts & Colors, Lightweight & Fast).
+- 9 core benefits of Kubio customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
+- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
+- 6 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- 5 detailed FAQs addressing customization timeline, third-party plugins, mobile responsiveness, theme updates after customization, and post-launch support.
+
+### Structured gap analysis
+
+| Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route and discovery | Missing App Router implementation for Kubio theme customization | Ship slashless `/kubio-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Kubio hero graphic under `public/assets/kubio-theme-customization/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 5 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
+
+### Visible content and copy improvements
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Kubio theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Technical requirements
+
+- App Router Server Component architecture (`src/app/kubio-theme-customization/page.tsx`).
+- Canonical URL: `https://www.dynamicdreamz.com/kubio-theme-customization`.
+- Maintain slashless `/kubio-theme-customization` navigation across marketing pages and service menus.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Kubio theme customization", "WordPress Kubio developers", and "custom Kubio theme WooCommerce".
+- Analytics tracks form submissions on `/request-quote` originating from `/kubio-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/kubio-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 49 chars, Description: 136 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
 ## Impulse Theme Customization (`/impulse-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved

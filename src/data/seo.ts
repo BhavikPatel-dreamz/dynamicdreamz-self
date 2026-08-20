@@ -980,6 +980,110 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  neveThemeCustomization: {
+    path: "/neve-theme-customization",
+    title: "Neve Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Get professional Neve Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "Neve theme customization",
+      "Neve WordPress theme",
+      "Neve theme customization services",
+      "WordPress Neve developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-03-31T08:44:15+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Neve Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  blocksyThemeCustomization: {
+    path: "/blocksy-theme-customization",
+    title: "Blocksy Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Get professional Blocksy Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "Blocksy theme customization",
+      "Blocksy WordPress theme",
+      "Blocksy theme customization services",
+      "WordPress Blocksy developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-03-31T09:14:33+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Blocksy Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  extendableThemeCustomization: {
+    path: "/extendable-theme-customization",
+    title: "Extendable Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Get professional Extendable Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "Extendable theme customization",
+      "Extendable WordPress theme",
+      "Extendable theme customization service",
+      "WordPress Extendable developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-05-05T09:39:17+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Extendable Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  kubioThemeCustomization: {
+    path: "/kubio-theme-customization",
+    title: "Kubio Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Get professional Kubio Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "Kubio theme customization",
+      "Kubio WordPress theme",
+      "Kubio theme customization service",
+      "WordPress Kubio developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-05-13T05:27:49+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Kubio Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   impulseThemeCustomization: {
     path: "/impulse-theme-customization",
     title: "Impulse Theme Customization Service | Dynamic Dreamz",

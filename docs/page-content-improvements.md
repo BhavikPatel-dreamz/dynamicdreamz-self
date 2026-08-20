@@ -792,6 +792,59 @@ Primary SEO intent: OceanWP theme customization, OceanWP WordPress theme customi
 | Features text grammar | `Developers build it with clean, structured code for better search rankings.` | `Built with clean, structured code for better search engine rankings.` | Standardizes feature description grammar. | Low | deferred pending exact visible-copy approval |
 | Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
 
+## Neve Theme Customization (`/neve-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Neve theme customization, Neve WordPress theme customization service, customize Neve theme WordPress WooCommerce, fast lightweight WordPress theme development, hire Neve WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Neve Theme Customization Services \| Dynamic Dreamz` (51 chars) | Preserved live title (51 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional Neve Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (138 chars) | Preserved live meta description (138 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Hero description phrasing | `WordPress theme that sweetens user experience and drives conversions.` | `WordPress theme that enhances user experience and drives conversions.` | Uses "enhances" instead of "sweetens" for business tone. | Low | deferred pending exact visible-copy approval |
+| Features text grammar | `Stay ensures smooth browsing on mobile devices with AMP compatibility.` | `Ensures smooth browsing on mobile devices with built-in AMP compatibility.` | Fixes confusing grammatical phrasing. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Blocksy Theme Customization (`/blocksy-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Blocksy theme customization, Blocksy WordPress theme customization service, customize Blocksy theme WordPress WooCommerce, fast lightweight WordPress theme development, hire Blocksy WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Blocksy Theme Customization Services \| Dynamic Dreamz` (54 chars) | Preserved live title (54 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional Blocksy Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (141 chars) | Preserved live meta description (141 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Benefits text phrasing | `Our customization services help you create a unique graphical appeal that stands out from competitors.` | `Our customization services help you create a unique visual appeal that stands out from competitors.` | Uses "visual appeal" instead of "graphical appeal" for standard industry terminology. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (7 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Extendable Theme Customization (`/extendable-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Extendable theme customization, Extendable WordPress theme customization service, customize Extendable theme WordPress WooCommerce, lightweight flexible WordPress theme development, hire Extendable WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Extendable Theme Customization Service \| Dynamic Dreamz` (53 chars) | Preserved live title (53 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional Extendable Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (140 chars) | Preserved live meta description (140 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Why choose grammar | `We always give priority to our customer’s business requirements.` | `We always prioritize our customers' business requirements.` | Streamlines sentence structure and corrects plural possessive apostrophe. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Kubio Theme Customization (`/kubio-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Kubio theme customization, Kubio WordPress theme customization service, customize Kubio theme WordPress WooCommerce, block-based WordPress theme development, hire Kubio WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Kubio Theme Customization Service \| Dynamic Dreamz` (49 chars) | Preserved live title (49 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional Kubio Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (136 chars) | Preserved live meta description (136 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Features text spacing | ` Use ready-made layouts to speed up the design process.` | `Use ready-made layouts to speed up the design process.` | Removes leading space before description text. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
 ## Impulse Theme Customization (`/impulse-theme-customization`)
 
 Status: visible recommendations deferred; live UI preserved during migration
