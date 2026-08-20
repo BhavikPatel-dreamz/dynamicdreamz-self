@@ -1018,6 +1018,113 @@ Primary SEO intent: Square to Shopify migration, migrate Square to Shopify, Squa
 
 
 
+## Shopify Plus Migration Agency (`/shopify-plus-migration-agency`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Shopify Plus migration agency, Shopify Plus migration, migrate to Shopify Plus, Shopify migration experts, Shopify Plus partner agency.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Shopify Plus Migration Agency \| Shopify Migration Experts` (59 chars) | Preserved live title (59 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta description | `Hire Shopify Plus Migration Agency to Switch to Shopify Plus with expert help. Choose Dynamic Dreamz for smooth migration of your store.` (137 chars) | Preserved live description (137 chars). | Complies with repository 70-160 character limit. | High | implemented in metadata |
+| Hero heading zero-width space | `Shopify Plus Migration Agency​` | `Shopify Plus Migration Agency` | Removes invisible trailing zero-width space from heading. | Low | deferred pending exact visible-copy approval |
+| Secondary text box heading zero-width space | `Why Choose Dynamic Dreamz as a Shopify Plus Migration Agency​` | `Why Choose Dynamic Dreamz as a Shopify Plus Migration Agency` | Removes invisible trailing zero-width space from heading. | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (4 process steps), `FAQPage` (5 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
+
+## Magento to Shopify Plus Migration (`/magento-to-shopify-plus-migration`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Magento to Shopify Plus migration, migrate Magento to Shopify Plus, Magento 2 to Shopify Plus migration agency, enterprise Shopify migration partner.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Magento to Shopify Plus Migration \| Dynamic Dreamz` (55 chars) | Preserved live title (55 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta description | `Hire Magento to Shopify Plus Migration Expert. Expert Migration Services with 18+ Years of Experience. Hire DynamicDreamz today!` (130 chars) | Preserved live description (130 chars). | Complies with repository 70-160 character limit. | High | implemented in metadata |
+| Process heading casing | `How do We Migrate from Magento to Shopify plus​?` | `How do We Migrate from Magento to Shopify Plus?` | Corrects casing of Plus and removes trailing zero-width space. | Low | deferred pending exact visible-copy approval |
+| FAQ 2 spacing error | `Migrating from Magento to Shopify Plus​ process of any store...` | `The process of migrating any store from Magento to Shopify Plus...` | Grammatical sentence structure refinement. | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 process steps), `FAQPage` (8 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
+
+## Magento to Shopify Migration (`/magento-to-shopify-migration`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Magento to Shopify migration, migrate Magento to Shopify, Magento 1 to Shopify migration service, zero downtime Shopify migration partner.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Magento 1 to Shopify Migration Services \| Dynamic Dreamz` (56 chars) | Preserved live title (56 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta description | `Seamlessly migrate from Magento 1 to Shopify with Dynamic Dreamz. Our expert team ensures a smooth transition for enhanced eCommerce performance.` (147 chars) | Preserved live description (147 chars). | Complies with repository 70-160 character limit. | High | implemented in metadata |
+| Text box paragraph 1 date typo | `...from June 2000 onwards.` | `...from June 2020 onwards.` | Fixes date typo on live site ("2000" instead of "2020"). | Medium | deferred pending exact visible-copy approval |
+| Process step 1 typo | `...running on your Magneto store. We will provide support to make sure your current magneto works...` | `...running on your Magento store. We will provide support to make sure your current Magento works...` | Fixes spelling of Magento ("Magneto"). | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 process steps), `FAQPage` (9 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
+
+## WooCommerce to Shopify Migration (`/woocommerce-to-shopify-migration`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: WooCommerce to Shopify migration, migrate WooCommerce to Shopify, WooCommerce store migration service, zero downtime Shopify migration partner.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Seamless WooCommerce to Shopify Migration \| Dynamic Dreamz` (59 chars) | Preserved live title (59 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta description | `Migrate your WooCommerce store to Shopify effortlessly with Dynamic Dreamz. Experience enhanced scalability, security, and user friendliness.` (144 chars) | Preserved live description (144 chars). | Complies with repository 70-160 character limit. | High | implemented in metadata |
+| FAQ 5 question wording error | `Which data can be transferred from Shopify to WooCommerce?` | `Which data can be transferred from WooCommerce to Shopify?` | Fixes inverted platform direction on live site FAQ. | Medium | deferred pending exact visible-copy approval |
+| Hero title casing | `Migration from Woocommerce to Shopify` | `Migration from WooCommerce to Shopify` | Capitalizes WooCommerce correctly. | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 process steps), `FAQPage` (13 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
+
+## Squarespace to Shopify Migration (`/squarespace-to-shopify-migration`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Squarespace to Shopify migration, migrate Squarespace to Shopify, Squarespace store migration service, zero downtime Shopify migration partner.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Squarespace to Shopify Migration \| Take an Expert Guide` (55 chars) | Preserved live title (55 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta description | `Are you looking for Squarespace to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.` (167 chars) | `Looking for Squarespace to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.` (153 chars) | Fits 70-160 character limit while preserving all keywords and message. | High | implemented in metadata |
+| Considerations heading grammar | `Things to Consider Before Migrate from Squarespace to Shopify` | `Things to Consider Before Migrating from Squarespace to Shopify` | Grammatical verb form fix ("Migrating"). | Low | deferred pending exact visible-copy approval |
+| Considerations copy typo | `It's upto you.` | `It's up to you.` | Fixes compound word spacing. | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 process steps), `FAQPage` (7 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
+
+## Salesforce to Shopify Migration (`/salesforce-to-shopify-migration`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Salesforce to Shopify migration, migrate Salesforce Commerce Cloud to Shopify Plus, SFCC to Shopify migration service, enterprise Shopify migration partner.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Salesforce to Shopify Migration Service \| Dynamic Dreamz` (59 chars) | Preserved live title (59 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta description | `Need a reliable Salesforce to Shopify migration service? Dynamic Dreamz offers Secure, scalable, and fully optimized solutions for eCommerce Stores.` (150 chars) | Preserved live description (150 chars). | Complies with repository 70-160 character limit. | High | implemented in metadata |
+| Why choose subtitle copy error | `Dynamic Dreamz specializes in helping businesses migrate from Squarespace to Shopify...` | `Dynamic Dreamz specializes in helping businesses migrate from Salesforce to Shopify...` | Fixes platform name error in live copy ("Squarespace" used on Salesforce page). | Medium | deferred pending exact visible-copy approval |
+| Considerations center image alt | `Square Space Image` | `Salesforce Image` | Fixes alt text referencing Squarespace on Salesforce graphic. | Low | deferred pending exact visible-copy approval |
+| Considerations heading grammar | `Things to Consider Before Migrate from Salesforce to Shopify` | `Things to Consider Before Migrating from Salesforce to Shopify` | Grammatical verb form fix ("Migrating"). | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 process steps), `FAQPage` (6 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
+
+## Ecwid to Shopify Migration (`/ecwid-to-shopify-migration`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Ecwid to Shopify migration, migrate Ecwid to Shopify, Ecwid store migration service, zero downtime Shopify migration partner.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Ecwid to Shopify Migration \| Take an Expert Guide` (49 chars) | Preserved live title (49 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta description | `Are you looking for an Ecwid to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.` (162 chars) | `Are you looking for Ecwid to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.` (159 chars) | Fits 70-160 character limit while preserving all keywords and message. | High | implemented in metadata |
+| Benefits copy typo | `Shopify is better than Eciwd in terms of customization options.` | `Shopify is better than Ecwid in terms of customization options.` | Fixes typo "Eciwd" in live copy. | Low | deferred pending exact visible-copy approval |
+| Hero copy polish | `Take sales booster advantages of the eCommerce platform by migrating Ecwid to Shopify.` | `Boost your sales and leverage Shopify's powerful ecommerce platform by migrating from Ecwid.` | More idiomatic English phrasing. | Low | deferred pending exact visible-copy approval |
+| Considerations heading | `Things to Consider Before Migrate from Ecwid to Shopify` | `Things to Consider Before Migrating from Ecwid to Shopify` | Fixes verb tense ("Migrating" rather than "Migrate"). | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 process steps), `FAQPage` (6 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
+
 ## Etsy to Shopify Migration (`/etsy-to-shopify-migration`)
 
 Status: visible recommendations deferred; live UI preserved during migration

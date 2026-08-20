@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container";
 
 export type MigrationServiceCard = {
   title: string;
-  description: string;
+  description?: string;
   image: string;
   imageAlt: string;
   href: string;
@@ -13,7 +13,7 @@ export type MigrationServiceCard = {
 
 export type ShopifyMigrationServicesSectionProps = {
   heading?: string;
-  description?: string;
+  description?: React.ReactNode | string;
   items: readonly MigrationServiceCard[];
   className?: string;
 };
@@ -34,9 +34,11 @@ export function ShopifyMigrationServicesSection({
           >
             {heading}
           </h2>
-          <p className="mx-auto max-w-[800px] font-sans text-[18px] font-medium leading-[34.2px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30px] max-[767px]:text-sm max-[767px]:leading-[24px]">
-            {description}
-          </p>
+          {description && (
+            <p className="mx-auto max-w-[950px] font-sans text-[18px] font-medium leading-[34.2px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30px] max-[767px]:text-sm max-[767px]:leading-[24px]">
+              {description}
+            </p>
+          )}
         </div>
 
         <div className="migration-wrapper mt-[50px] flex flex-wrap justify-center -mx-2 max-[767px]:mt-8">
@@ -47,7 +49,7 @@ export function ShopifyMigrationServicesSection({
             >
               <Link
                 href={item.href}
-                className="migration-box group relative block h-full w-full rounded-[15px] border border-[#d9d9d9] bg-white p-[34px_34px_30px_34px] transition-all duration-300 hover:border-transparent before:absolute before:-inset-[3px] before:-z-10 before:rounded-[15px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] before:opacity-0 before:transition-opacity before:duration-300 group-hover:before:opacity-100 max-[1199px]:p-5"
+                className="migration-box group relative z-0 block h-full w-full rounded-[15px] border border-[#d9d9d9] p-[34px_34px_30px_34px] transition-all duration-300 hover:border-transparent before:absolute before:-inset-[3px] before:-z-20 before:rounded-[15px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] before:opacity-0 before:transition-opacity before:duration-300 group-hover:before:opacity-100 after:absolute after:inset-0 after:-z-10 after:rounded-[14px] after:bg-white max-[1199px]:p-5"
               >
                 <div className="migration-img mb-5 text-center">
                   <Image
@@ -61,9 +63,11 @@ export function ShopifyMigrationServicesSection({
                 <h3 className="mb-2.5 font-sans text-[18px] font-bold leading-[34px] text-ink max-[1199px]:text-[18px] max-[1199px]:leading-7">
                   {item.title}
                 </h3>
-                <p className="m-0 font-sans text-base font-medium leading-[27.2px] tracking-[0.32px] text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
-                  {item.description}
-                </p>
+                {item.description && (
+                  <p className="m-0 font-sans text-base font-medium leading-[27.2px] tracking-[0.32px] text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
+                    {item.description}
+                  </p>
+                )}
               </Link>
             </div>
           ))}

@@ -1,3 +1,10 @@
+import { ecwidFaqs, ecwidProcessContent } from "@/content/ecwid-to-shopify-migration";
+import { plusAgencyFaqs, plusAgencyProcessContent } from "@/content/shopify-plus-migration-agency";
+import { magentoPlusFaqs, magentoPlusProcessContent } from "@/content/magento-to-shopify-plus-migration";
+import { magentoFaqs, magentoProcessContent } from "@/content/magento-to-shopify-migration";
+import { woocommerceFaqs, woocommerceProcessContent } from "@/content/woocommerce-to-shopify-migration";
+import { squarespaceFaqs, squarespaceProcessContent } from "@/content/squarespace-to-shopify-migration";
+import { salesforceFaqs, salesforceProcessContent } from "@/content/salesforce-to-shopify-migration";
 import { etsyFaqs, etsyProcessContent } from "@/content/etsy-to-shopify-migration";
 import { wixFaqs, wixProcessContent } from "@/content/wix-to-shopify-migration";
 import { founders } from "@/content/about";
@@ -236,6 +243,41 @@ const squareToShopifyMigrationPageId = `${squareToShopifyMigrationPageUrl}#webpa
 const squareToShopifyMigrationServiceId = `${squareToShopifyMigrationPageUrl}#service`;
 const squareToShopifyMigrationFaqId = `${squareToShopifyMigrationPageUrl}#faq`;
 const squareToShopifyMigrationBreadcrumbId = `${squareToShopifyMigrationPageUrl}#breadcrumb`;
+const ecwidToShopifyMigrationPageUrl = absoluteUrl(pageSeo.ecwidToShopifyMigration.path);
+const ecwidToShopifyMigrationPageId = `${ecwidToShopifyMigrationPageUrl}#webpage`;
+const ecwidToShopifyMigrationServiceId = `${ecwidToShopifyMigrationPageUrl}#service`;
+const ecwidToShopifyMigrationFaqId = `${ecwidToShopifyMigrationPageUrl}#faq`;
+const ecwidToShopifyMigrationBreadcrumbId = `${ecwidToShopifyMigrationPageUrl}#breadcrumb`;
+const shopifyPlusMigrationAgencyPageUrl = absoluteUrl(pageSeo.shopifyPlusMigrationAgency.path);
+const shopifyPlusMigrationAgencyPageId = `${shopifyPlusMigrationAgencyPageUrl}#webpage`;
+const shopifyPlusMigrationAgencyServiceId = `${shopifyPlusMigrationAgencyPageUrl}#service`;
+const shopifyPlusMigrationAgencyFaqId = `${shopifyPlusMigrationAgencyPageUrl}#faq`;
+const shopifyPlusMigrationAgencyBreadcrumbId = `${shopifyPlusMigrationAgencyPageUrl}#breadcrumb`;
+const magentoToShopifyPlusMigrationPageUrl = absoluteUrl(pageSeo.magentoToShopifyPlusMigration.path);
+const magentoToShopifyPlusMigrationPageId = `${magentoToShopifyPlusMigrationPageUrl}#webpage`;
+const magentoToShopifyPlusMigrationServiceId = `${magentoToShopifyPlusMigrationPageUrl}#service`;
+const magentoToShopifyPlusMigrationFaqId = `${magentoToShopifyPlusMigrationPageUrl}#faq`;
+const magentoToShopifyPlusMigrationBreadcrumbId = `${magentoToShopifyPlusMigrationPageUrl}#breadcrumb`;
+const magentoToShopifyMigrationPageUrl = absoluteUrl(pageSeo.magentoToShopifyMigration.path);
+const magentoToShopifyMigrationPageId = `${magentoToShopifyMigrationPageUrl}#webpage`;
+const magentoToShopifyMigrationServiceId = `${magentoToShopifyMigrationPageUrl}#service`;
+const magentoToShopifyMigrationFaqId = `${magentoToShopifyMigrationPageUrl}#faq`;
+const magentoToShopifyMigrationBreadcrumbId = `${magentoToShopifyMigrationPageUrl}#breadcrumb`;
+const woocommerceToShopifyMigrationPageUrl = absoluteUrl(pageSeo.woocommerceToShopifyMigration.path);
+const woocommerceToShopifyMigrationPageId = `${woocommerceToShopifyMigrationPageUrl}#webpage`;
+const woocommerceToShopifyMigrationServiceId = `${woocommerceToShopifyMigrationPageUrl}#service`;
+const woocommerceToShopifyMigrationFaqId = `${woocommerceToShopifyMigrationPageUrl}#faq`;
+const woocommerceToShopifyMigrationBreadcrumbId = `${woocommerceToShopifyMigrationPageUrl}#breadcrumb`;
+const squarespaceToShopifyMigrationPageUrl = absoluteUrl(pageSeo.squarespaceToShopifyMigration.path);
+const squarespaceToShopifyMigrationPageId = `${squarespaceToShopifyMigrationPageUrl}#webpage`;
+const squarespaceToShopifyMigrationServiceId = `${squarespaceToShopifyMigrationPageUrl}#service`;
+const squarespaceToShopifyMigrationFaqId = `${squarespaceToShopifyMigrationPageUrl}#faq`;
+const squarespaceToShopifyMigrationBreadcrumbId = `${squarespaceToShopifyMigrationPageUrl}#breadcrumb`;
+const salesforceToShopifyMigrationPageUrl = absoluteUrl(pageSeo.salesforceToShopifyMigration.path);
+const salesforceToShopifyMigrationPageId = `${salesforceToShopifyMigrationPageUrl}#webpage`;
+const salesforceToShopifyMigrationServiceId = `${salesforceToShopifyMigrationPageUrl}#service`;
+const salesforceToShopifyMigrationFaqId = `${salesforceToShopifyMigrationPageUrl}#faq`;
+const salesforceToShopifyMigrationBreadcrumbId = `${salesforceToShopifyMigrationPageUrl}#breadcrumb`;
 const etsyToShopifyMigrationPageUrl = absoluteUrl(pageSeo.etsyToShopifyMigration.path);
 const etsyToShopifyMigrationPageId = `${etsyToShopifyMigrationPageUrl}#webpage`;
 const etsyToShopifyMigrationServiceId = `${etsyToShopifyMigrationPageUrl}#service`;
@@ -1758,7 +1800,7 @@ export function createShopifyMigrationPageSchema() {
     })),
     offers: shopifyMigrationServices.map((item) => ({
       title: item.title,
-      description: item.description,
+      description: item.description ?? "",
     })),
     videos: shopifyPlusTestimonialVideoSchema(),
   });
@@ -2891,6 +2933,209 @@ export function createShopifyDevelopmentBarcelonaPageSchema() {
 
 export function serializeJsonLd(value: unknown) {
   return JSON.stringify(value).replace(/</g, "\\u003c");
+}
+
+export function createEcwidToShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.ecwidToShopifyMigration,
+    pageUrl: ecwidToShopifyMigrationPageUrl,
+    pageId: ecwidToShopifyMigrationPageId,
+    serviceId: ecwidToShopifyMigrationServiceId,
+    faqId: ecwidToShopifyMigrationFaqId,
+    breadcrumbId: ecwidToShopifyMigrationBreadcrumbId,
+    serviceName: "Ecwid to Shopify Migration Service",
+    serviceType:
+      "Seamless Ecwid store migration to Shopify without downtime and full data integrity",
+    breadcrumbName: "Ecwid to Shopify Migration Service",
+    audienceType:
+      "Ecwid store owners, ecommerce merchants, and brands migrating to Shopify or Shopify Plus",
+    faqs: ecwidFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ]
+        .filter(Boolean)
+        .join(" "),
+    })),
+    offers: ecwidProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyPlusMigrationAgencyPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyPlusMigrationAgency,
+    pageUrl: shopifyPlusMigrationAgencyPageUrl,
+    pageId: shopifyPlusMigrationAgencyPageId,
+    serviceId: shopifyPlusMigrationAgencyServiceId,
+    faqId: shopifyPlusMigrationAgencyFaqId,
+    breadcrumbId: shopifyPlusMigrationAgencyBreadcrumbId,
+    serviceName: "Shopify Plus Migration Agency Services",
+    serviceType:
+      "Full-service enterprise store migration to Shopify Plus with zero downtime and seamless platform transition",
+    breadcrumbName: "Shopify Plus Migration Agency",
+    audienceType:
+      "Enterprise merchants, high-growth ecommerce brands, and multi-store businesses migrating to Shopify Plus",
+    faqs: plusAgencyFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: plusAgencyProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createMagentoToShopifyPlusMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.magentoToShopifyPlusMigration,
+    pageUrl: magentoToShopifyPlusMigrationPageUrl,
+    pageId: magentoToShopifyPlusMigrationPageId,
+    serviceId: magentoToShopifyPlusMigrationServiceId,
+    faqId: magentoToShopifyPlusMigrationFaqId,
+    breadcrumbId: magentoToShopifyPlusMigrationBreadcrumbId,
+    serviceName: "Magento to Shopify Plus Migration Services",
+    serviceType:
+      "Enterprise Magento to Shopify Plus migration with zero downtime and seamless B2B integration",
+    breadcrumbName: "Magento to Shopify Plus Migration",
+    audienceType:
+      "Enterprise Magento merchants, high-growth ecommerce brands, and high-volume businesses migrating to Shopify Plus",
+    faqs: magentoPlusFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: magentoPlusProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createMagentoToShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.magentoToShopifyMigration,
+    pageUrl: magentoToShopifyMigrationPageUrl,
+    pageId: magentoToShopifyMigrationPageId,
+    serviceId: magentoToShopifyMigrationServiceId,
+    faqId: magentoToShopifyMigrationFaqId,
+    breadcrumbId: magentoToShopifyMigrationBreadcrumbId,
+    serviceName: "Magento to Shopify Migration Services",
+    serviceType:
+      "Seamless Magento 1 store migration to Shopify without downtime and full data integrity",
+    breadcrumbName: "Magento to Shopify Migration",
+    audienceType:
+      "Magento merchants, enterprise ecommerce brands, and growing businesses migrating to Shopify or Shopify Plus",
+    faqs: magentoFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: magentoProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createWooCommerceToShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.woocommerceToShopifyMigration,
+    pageUrl: woocommerceToShopifyMigrationPageUrl,
+    pageId: woocommerceToShopifyMigrationPageId,
+    serviceId: woocommerceToShopifyMigrationServiceId,
+    faqId: woocommerceToShopifyMigrationFaqId,
+    breadcrumbId: woocommerceToShopifyMigrationBreadcrumbId,
+    serviceName: "WooCommerce to Shopify Migration Services",
+    serviceType:
+      "Seamless WooCommerce store migration to Shopify without downtime and full data integrity",
+    breadcrumbName: "WooCommerce to Shopify Migration",
+    audienceType:
+      "WooCommerce merchants, WordPress store owners, and growing ecommerce businesses migrating to Shopify or Shopify Plus",
+    faqs: woocommerceFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ]
+        .filter(Boolean)
+        .join(" "),
+    })),
+    offers: woocommerceProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createSquarespaceToShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.squarespaceToShopifyMigration,
+    pageUrl: squarespaceToShopifyMigrationPageUrl,
+    pageId: squarespaceToShopifyMigrationPageId,
+    serviceId: squarespaceToShopifyMigrationServiceId,
+    faqId: squarespaceToShopifyMigrationFaqId,
+    breadcrumbId: squarespaceToShopifyMigrationBreadcrumbId,
+    serviceName: "Squarespace to Shopify Migration Services",
+    serviceType:
+      "Seamless Squarespace store migration to Shopify without downtime and full data integrity",
+    breadcrumbName: "Squarespace to Shopify Migration",
+    audienceType:
+      "Squarespace merchants, ecommerce brands, and growing businesses migrating to Shopify or Shopify Plus",
+    faqs: squarespaceFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: squarespaceProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createSalesforceToShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.salesforceToShopifyMigration,
+    pageUrl: salesforceToShopifyMigrationPageUrl,
+    pageId: salesforceToShopifyMigrationPageId,
+    serviceId: salesforceToShopifyMigrationServiceId,
+    faqId: salesforceToShopifyMigrationFaqId,
+    breadcrumbId: salesforceToShopifyMigrationBreadcrumbId,
+    serviceName: "Salesforce to Shopify Migration Service",
+    serviceType:
+      "Seamless Salesforce store migration to Shopify without downtime and full data integrity",
+    breadcrumbName: "Salesforce to Shopify Migration Service",
+    audienceType:
+      "Salesforce Commerce Cloud merchants, enterprise brands, and growing ecommerce businesses migrating to Shopify or Shopify Plus",
+    faqs: salesforceFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ]
+        .filter(Boolean)
+        .join(" "),
+    })),
+    offers: salesforceProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
 }
 
 export function createEtsyToShopifyMigrationPageSchema() {

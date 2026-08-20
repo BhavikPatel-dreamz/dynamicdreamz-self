@@ -26,6 +26,7 @@ export type ServiceHeroContent = {
   title: string;
   description: string;
   secondaryDescription?: string;
+  paragraphs?: readonly string[];
   ctaLabel?: string;
   ctaHref?: string;
   image?: {
@@ -93,13 +94,25 @@ export function ServiceHeroSection({
                 <h1 className="inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[379px]:text-[28px] max-[379px]:leading-[38px]">
                   {formatBrText(content.title, "max-[1199px]:hidden")}
                 </h1>
-                <p className="mt-6 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted max-[991px]:my-4">
-                  {content.description}
-                </p>
-                {content.secondaryDescription && (
-                  <p className="mt-4 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted">
-                    {content.secondaryDescription}
-                  </p>
+                {content.paragraphs ? (
+                  content.paragraphs.map((paragraph, idx) => (
+                    <p
+                      className="mt-4 mb-4 font-sans text-base font-normal leading-[30.4px] text-muted first:mt-6 last:mb-6"
+                      key={idx}
+                      dangerouslySetInnerHTML={{ __html: paragraph }}
+                    />
+                  ))
+                ) : (
+                  <>
+                    <p className="mt-6 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted max-[991px]:my-4">
+                      {formatBrText(content.description)}
+                    </p>
+                    {content.secondaryDescription && (
+                      <p className="mt-4 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted">
+                        {formatBrText(content.secondaryDescription)}
+                      </p>
+                    )}
+                  </>
                 )}
                 {content.ctaLabel && (
                   <div className="mt-2">
@@ -115,11 +128,52 @@ export function ServiceHeroSection({
               </div>
             </div>
             <div className="right-col w-full">
-              <div className="review_animation_main my-[30px]">
-                <div className="mx-auto w-full max-w-[450px]">
-                  <ReviewAnimation />
+              {content.reviews && content.reviews.length > 0 ? (
+                <div className="review-wrap mt-[45px] flex gap-[15px] justify-center max-[991px]:flex-col max-[991px]:items-center max-[991px]:gap-4 max-[991px]:mt-8">
+                  {content.reviews.map((review) => (
+                    <a
+                      className="review-box relative z-0 w-[calc(33.33%-10px)] max-w-[360px] rounded-[8px] p-[17px_12px_10px] text-center shadow-sm transition-transform hover:-translate-y-0.5 before:absolute before:-inset-[2px] before:-z-20 before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] after:absolute after:inset-0 after:-z-10 after:rounded-[8px] after:bg-white max-[991px]:w-full max-[991px]:max-w-[400px] max-[991px]:flex max-[991px]:flex-row-reverse max-[991px]:items-center max-[991px]:justify-between max-[991px]:p-[18px_24px]"
+                      href={review.href}
+                      key={review.platform}
+                      rel="nofollow noopener noreferrer"
+                      target="_blank"
+                    >
+                      <div className="total-review relative -mt-[34px] mb-2.5 rounded-[30px] border-[1.5px] border-[#efefef] bg-white max-[991px]:m-0 max-[991px]:inline-block">
+                        <span className="block px-2.5 py-1 text-center text-[10px] font-semibold leading-normal text-ink">
+                          {review.reviewCount}
+                        </span>
+                      </div>
+                      <div className="rating-wrap flex flex-col items-center justify-center gap-1.5 max-[991px]:items-start">
+                        <Image
+                          alt={review.logoAlt}
+                          className="h-[19px] w-auto object-contain"
+                          height={review.logoHeight}
+                          src={review.logoSrc}
+                          width={review.logoWidth}
+                        />
+                        <div className="rating flex items-center justify-center gap-[7px]">
+                          <Image
+                            alt="Dynamic Dreamz Star Rating"
+                            className="h-[14px] w-[78px] object-contain"
+                            height={14}
+                            src="/assets/reviews/five-stars.svg"
+                            width={78}
+                          />
+                          <span className="font-sans text-[22px] font-bold leading-normal text-[#252c15] max-[991px]:text-[18px]">
+                            {review.rating}
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
                 </div>
-              </div>
+              ) : (
+                <div className="review_animation_main my-[30px]">
+                  <div className="mx-auto w-full max-w-[450px]">
+                    <ReviewAnimation />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </Container>
@@ -144,13 +198,25 @@ export function ServiceHeroSection({
               <h1 className="inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]">
                 {formatBrText(content.title, "max-[1199px]:hidden")}
               </h1>
-              <p className="mt-6 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
-                {content.description}
-              </p>
-              {content.secondaryDescription && (
-                <p className="mt-4 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
-                  {content.secondaryDescription}
-                </p>
+              {content.paragraphs ? (
+                content.paragraphs.map((paragraph, idx) => (
+                  <p
+                    className="mt-4 mb-4 text-base font-normal leading-[30.4px] text-muted first:mt-6 last:mb-6 max-[1199px]:text-base max-[1199px]:leading-[30.4px]"
+                    key={idx}
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  />
+                ))
+              ) : (
+                <>
+                  <p className="mt-6 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
+                    {formatBrText(content.description)}
+                  </p>
+                  {content.secondaryDescription && (
+                    <p className="mt-4 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
+                      {formatBrText(content.secondaryDescription)}
+                    </p>
+                  )}
+                </>
               )}
               {content.ctaLabel && (
                 <ButtonLink
@@ -180,7 +246,7 @@ export function ServiceHeroSection({
                   <div className="review-wrap mt-[57px] flex gap-[15px] justify-center max-[991px]:flex-col max-[991px]:items-center max-[991px]:gap-4 max-[991px]:mt-8">
                     {content.reviews.map((review) => (
                       <a
-                        className="review-box relative z-1 w-[calc(33.33%-10px)] rounded-[8px] bg-white p-[17px_12px_10px] text-center shadow-sm transition-transform hover:-translate-y-0.5 before:absolute before:-inset-[2px] before:-z-1 before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] max-[991px]:w-full max-[991px]:max-w-[400px] max-[991px]:flex max-[991px]:flex-row-reverse max-[991px]:items-center max-[991px]:justify-between max-[991px]:p-[18px_24px]"
+                        className="review-box relative z-0 w-[calc(33.33%-10px)] rounded-[8px] p-[17px_12px_10px] text-center shadow-sm transition-transform hover:-translate-y-0.5 before:absolute before:-inset-[2px] before:-z-20 before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] after:absolute after:inset-0 after:-z-10 after:rounded-[8px] after:bg-white max-[991px]:w-full max-[991px]:max-w-[400px] max-[991px]:flex max-[991px]:flex-row-reverse max-[991px]:items-center max-[991px]:justify-between max-[991px]:p-[18px_24px]"
                         href={review.href}
                         key={review.platform}
                         rel="nofollow noopener noreferrer"
