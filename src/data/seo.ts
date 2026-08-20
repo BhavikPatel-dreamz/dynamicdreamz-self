@@ -576,6 +576,35 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  prestashopToShopifyMigration: {
+    path: "/prestashop-to-shopify-migration",
+    title: "PrestaShop to Shopify Migration | Take an Expert Guide",
+    description:
+      "Looking for a PrestaShop to Shopify migration without downtime and data loss? Hire Shopify experts from Dynamic Dreamz for a smooth, successful store migration.",
+    socialDescription:
+      "Are you looking for a PrestaShop to Shopify migration without downtime and data loss? Hire Shopify experts from Dynamic Dreamz for a smooth and successful migration.",
+    keywords: [
+      "PrestaShop to Shopify migration",
+      "PrestaShop to Shopify",
+      "Shopify migration experts",
+      "migrate PrestaShop to Shopify",
+      "ecommerce migration services",
+      "PrestaShop data migration",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-10-24T10:13:32+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "PrestaShop to Shopify Migration by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   shopifyCro: {
     path: "/shopify-cro-agency",
     title: "Shopify CRO Agency | Increase Revenue | Dynamic Dreamz",

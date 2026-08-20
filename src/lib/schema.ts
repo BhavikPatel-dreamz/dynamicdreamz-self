@@ -49,6 +49,11 @@ import {
   shopifyMigrationFaqs,
   shopifyMigrationServices,
 } from "@/content/shopify-migration";
+import {
+  prestashopBenefitsContent,
+  prestashopFaqs,
+  prestashopWhyChooseContent,
+} from "@/content/prestashop-to-shopify-migration";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
 import { prestigeThemeCustomizationContent } from "@/content/prestige-theme-customization";
 import { impulseThemeCustomizationContent } from "@/content/impulse-theme-customization";
@@ -199,6 +204,11 @@ const shopifyMigrationPageId = `${shopifyMigrationPageUrl}#webpage`;
 const shopifyMigrationServiceId = `${shopifyMigrationPageUrl}#service`;
 const shopifyMigrationFaqId = `${shopifyMigrationPageUrl}#faq`;
 const shopifyMigrationBreadcrumbId = `${shopifyMigrationPageUrl}#breadcrumb`;
+const prestashopToShopifyMigrationPageUrl = absoluteUrl(pageSeo.prestashopToShopifyMigration.path);
+const prestashopToShopifyMigrationPageId = `${prestashopToShopifyMigrationPageUrl}#webpage`;
+const prestashopToShopifyMigrationServiceId = `${prestashopToShopifyMigrationPageUrl}#service`;
+const prestashopToShopifyMigrationFaqId = `${prestashopToShopifyMigrationPageUrl}#faq`;
+const prestashopToShopifyMigrationBreadcrumbId = `${prestashopToShopifyMigrationPageUrl}#breadcrumb`;
 const shopifyCroPageUrl = absoluteUrl(pageSeo.shopifyCro.path);
 const shopifyCroPageId = `${shopifyCroPageUrl}#webpage`;
 const shopifyCroServiceId = `${shopifyCroPageUrl}#service`;
@@ -1633,6 +1643,45 @@ export function createShopifyMigrationPageSchema() {
       title: item.title,
       description: item.description,
     })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createPrestashopToShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.prestashopToShopifyMigration,
+    pageUrl: prestashopToShopifyMigrationPageUrl,
+    pageId: prestashopToShopifyMigrationPageId,
+    serviceId: prestashopToShopifyMigrationServiceId,
+    faqId: prestashopToShopifyMigrationFaqId,
+    breadcrumbId: prestashopToShopifyMigrationBreadcrumbId,
+    serviceName: "PrestaShop to Shopify Migration Services",
+    serviceType:
+      "End-to-end PrestaShop store migration to Shopify with zero downtime and full data integrity",
+    breadcrumbName: "PrestaShop to Shopify Migration",
+    audienceType:
+      "PrestaShop merchants, ecommerce brands, and direct-to-consumer businesses migrating to Shopify or Shopify Plus",
+    faqs: prestashopFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ]
+        .filter(Boolean)
+        .join(" "),
+    })),
+    offers: [
+      ...prestashopBenefitsContent.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...prestashopWhyChooseContent.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
