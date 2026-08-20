@@ -1,4 +1,5 @@
 import { etsyFaqs, etsyProcessContent } from "@/content/etsy-to-shopify-migration";
+import { wixFaqs, wixProcessContent } from "@/content/wix-to-shopify-migration";
 import { founders } from "@/content/about";
 import { beautyIndustryPage } from "@/content/beauty-cosmetics";
 import { contactPageContent } from "@/content/contact";
@@ -233,6 +234,11 @@ const etsyToShopifyMigrationPageId = `${etsyToShopifyMigrationPageUrl}#webpage`;
 const etsyToShopifyMigrationServiceId = `${etsyToShopifyMigrationPageUrl}#service`;
 const etsyToShopifyMigrationFaqId = `${etsyToShopifyMigrationPageUrl}#faq`;
 const etsyToShopifyMigrationBreadcrumbId = `${etsyToShopifyMigrationPageUrl}#breadcrumb`;
+const wixToShopifyMigrationPageUrl = absoluteUrl(pageSeo.wixToShopifyMigration.path);
+const wixToShopifyMigrationPageId = `${wixToShopifyMigrationPageUrl}#webpage`;
+const wixToShopifyMigrationServiceId = `${wixToShopifyMigrationPageUrl}#service`;
+const wixToShopifyMigrationFaqId = `${wixToShopifyMigrationPageUrl}#faq`;
+const wixToShopifyMigrationBreadcrumbId = `${wixToShopifyMigrationPageUrl}#breadcrumb`;
 const shopifyCroPageUrl = absoluteUrl(pageSeo.shopifyCro.path);
 const shopifyCroPageId = `${shopifyCroPageUrl}#webpage`;
 const shopifyCroServiceId = `${shopifyCroPageUrl}#service`;
@@ -2710,3 +2716,29 @@ export function createEtsyToShopifyMigrationPageSchema() {
   });
 }
 
+
+export function createWixToShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.wixToShopifyMigration,
+    pageUrl: wixToShopifyMigrationPageUrl,
+    pageId: wixToShopifyMigrationPageId,
+    serviceId: wixToShopifyMigrationServiceId,
+    faqId: wixToShopifyMigrationFaqId,
+    breadcrumbId: wixToShopifyMigrationBreadcrumbId,
+    serviceName: "Wix to Shopify Migration Services",
+    serviceType:
+      "Seamless Wix store migration to Shopify without downtime and full data integrity",
+    breadcrumbName: "Wix to Shopify Migration",
+    audienceType:
+      "Wix sellers, ecommerce brands, and direct-to-consumer businesses migrating to Shopify or Shopify Plus",
+    faqs: wixFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: wixProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}

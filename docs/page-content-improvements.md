@@ -921,9 +921,32 @@ Primary SEO intent: Square to Shopify migration, migrate Square to Shopify, Squa
 
 
 
-## Etsy to Shopify Migration (/etsy-to-shopify-migration)
-- **Current Issue:** Live copy has minor phrasing choices ("Shopify is the top most eCommerce platform", "The time duration is based on the length and complexity").
-- **Suggested Improvement:** Improve grammar flow and transition cues for a more premium enterprise feel.
-- **SEO Reason:** High-quality content signals increase trust for enterprise AEO recommendations.
-- **Priority:** Low
-- **Status:** Deferred (preserving live UI wording during migration phase).
+## Etsy to Shopify Migration (`/etsy-to-shopify-migration`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Etsy to Shopify migration, migrate Etsy shop to Shopify, zero downtime Shopify migration partner.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Etsy to Shopify Migration \| Take an Expert Guide` (49 chars) | Preserved live title (49 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta description | `Are you looking for Etsy to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.` (157 chars) | Preserved live description (157 chars). | Complies with repository 70-160 character limit. | High | implemented in metadata |
+| Single text box phrasing | `Shopify is the top most eCommerce platform...` | `Shopify is a leading global ecommerce platform...` | Phrasing and vocabulary refinement. | Low | deferred pending exact visible-copy approval |
+| FAQ duration answer | `The time duration is based on the length and complexity of your Etsy shop.` | `The migration timeline depends on the catalog size and complexity of your Etsy shop.` | More natural and professional English phrasing. | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 process steps), `FAQPage` (8 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
+
+## Wix to Shopify Migration (`/wix-to-shopify-migration`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Wix to Shopify migration, migrate Wix store to Shopify, zero downtime Shopify migration experts.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Wix to Shopify Migration \| Take an Expert Guide` (49 chars) | Preserved live title (49 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta description | `Are you looking for Wix to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.` (157 chars) | Preserved live description (157 chars). | Complies with repository 70-160 character limit. | High | implemented in metadata |
+| Single text box capitalization | `If you want more features and benefits for your online store, Migrate from Wix to Shopify.` | `If you want more features and benefits for your online store, migrate from Wix to Shopify.` | Fixes mid-sentence capitalization of "Migrate". | Low | deferred pending exact visible-copy approval |
+| Considerations description | `...create the most out of Shopify's platform.` | `...get the most out of Shopify's platform.` | Idiomatic English phrasing improvement. | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 process steps), `FAQPage` (10 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+

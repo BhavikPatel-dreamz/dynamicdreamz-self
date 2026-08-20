@@ -4963,10 +4963,127 @@ site-architecture changes. Update recommendations when authoritative platform
 guidance changes; do not preserve a tactic solely because it is labeled AEO or
 GEO.
 
-## Etsy to Shopify Migration (/etsy-to-shopify-migration)
-**Audit Date:** 2026-08-20
-**Review:**
-- Target Keywords: Etsy to Shopify migration, migrate Etsy to Shopify.
-- Schema: Included `Service`, `OfferCatalog`, `FAQPage` (8 FAQs), `VideoObject`, `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD schemas.
-- AEO gap: The content accurately describes the 6-step migration process, considerations, and benefits. It addresses AI queries for "how to migrate from Etsy to Shopify".
-- Resolution: Compliant metadata (Title: 49 chars, Desc: 156 chars). Clean slashless URL.
+## Etsy to Shopify Migration (`/etsy-to-shopify-migration`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-20
+
+Owner: SEO, Shopify migration specialists, leadership, and sales operations
+
+Primary audience: Etsy sellers, handmade/craft/vintage merchants, and growing direct-to-consumer ecommerce brands migrating from Etsy to Shopify or Shopify Plus.
+
+Decision stage: platform re-platforming, Etsy to Shopify migration partner evaluation, zero-downtime scoping, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz end-to-end Etsy to Shopify migration services. Highlights why migrate from Etsy to Shopify, 5 benefits of moving to Shopify (Greater Control, Scalability, Multiple Channels, App Store, SEO/Marketing Tools), 4 critical migration considerations (Data Transfer, Store Design, SEO Settings, Payment & Shipping Options) with center graphic, a 6-step zero-downtime migration process with exhaustive entity migration checklist (Products, Categories, Customers, Orders, Coupons, Reviews, CMS Pages, Blogs) and site testing checklist, a 4-item post-migration optimization guide, 4 reasons to choose Dynamic Dreamz, 10 brand partners, video testimonials, 8 comprehensive migration FAQs, and quote request CTAs.
+
+### Target prompts
+
+- How to migrate store from Etsy to Shopify without losing SEO rankings or customer reviews?
+- Best Etsy to Shopify migration agency or Shopify migration experts?
+- Can I transfer products, customer data, and order history from Etsy to Shopify?
+- Will Etsy to Shopify migration cause shop downtime or lost sales?
+- Why migrate from Etsy to Shopify for brand growth and independence?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Etsy to Shopify Migration` with split hero, service illustration, primary CTA "Request a Quote", and 3 verified review badges (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0).
+- 10 trusted brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter, Circuit City).
+- Clear answer statement box answering "Why Migrate from Etsy to Shopify?".
+- 5 benefit cards detailing greater store control, scalability for growth, multiple sales channels, access to Shopify apps, and built-in SEO/marketing tools.
+- 3-column considerations layout with center illustration and 4 key pre-migration factors (Data Transfer, Store Design, SEO Settings, Payment and Shipping Options).
+- 6-step sequential migration process with gradient step badges, numbered counters, and exhaustive nested lists for data entities (Products, Categories, Customers, Orders, Coupons, Reviews, CMS Pages, Blogs) and test checklists.
+- 4 post-migration cards for Optimize Your Store, Update SEO Settings, Marketing Integration, and Monitor Store Performance.
+- 4 reasons to choose Dynamic Dreamz highlighting Skilled Migration Experts, Complete Data Transfer, Custom Shopify Themes, and Ongoing Support.
+- Real client video testimonials with YouTube modal playback.
+- 8 comprehensive FAQ accordion items directly answering buyer concerns regarding why choose Shopify, migration duration, how to start, payment/shipping options, SEO preservation, downtime, custom design replication, and post-migration support.
+- Structured data graph emitting Service, FAQPage (8 Question/Answer pairs), VideoObject (testimonial video schema), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical icons and storing unique SVGs under `public/assets/etsy-to-shopify-migration/`.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The migration route required full App Router and metadata coverage | Ship the slashless route through shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and BreadcrumbList schema | Emit Service with FAQPage (8 items), VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Asset deduplication | Reused canonical SVGs (review wordmarks, star ratings, bullets, and shared icons); stored unique SVGs under `public/assets/etsy-to-shopify-migration/` with 0 duplicate hash groups | Save unique assets under `public/assets/etsy-to-shopify-migration/` | Verified with SHA-256 audit |
+| P1 | deferred | Content expansion | Minor wording/grammar polish in FAQ answers and step descriptions | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Etsy to Shopify migration authority. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+- Attribute client video testimonials directly to their authentic founders and brand names.
+
+### Internal-link and conversion actions
+
+- Internal links to `/request-quote` and `/contact-us` for lead capture.
+- Contextual navigation to related Shopify migration and development services.
+
+
+## Wix to Shopify Migration (`/wix-to-shopify-migration`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-20
+
+Owner: SEO, Shopify migration specialists, leadership, and sales operations
+
+Primary audience: Wix store owners, direct-to-consumer ecommerce merchants, and growing brands migrating from Wix to Shopify or Shopify Plus.
+
+Decision stage: platform re-platforming, Wix to Shopify migration partner evaluation, zero-downtime scoping, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz end-to-end Wix to Shopify migration services. Highlights why migrate from Wix to Shopify, 4 critical migration considerations (SEO Settings, App Compatibility, Custom Designs, Payment & Shipping Settings) with center graphic, a 6-step zero-downtime migration process with data entity migration details (Products, Categories, Customers, Orders) and site testing checklist, a 4-item post-migration optimization guide, 4 reasons to choose Dynamic Dreamz, 10 brand partners, video testimonials, 10 comprehensive migration FAQs, and quote request CTAs.
+
+### Target prompts
+
+- How to migrate store from Wix to Shopify without losing SEO rankings or data?
+- Best Wix to Shopify migration agency or Shopify experts?
+- Can I transfer customer orders, products, and categories from Wix to Shopify?
+- Will Wix to Shopify migration cause store downtime?
+- Why migrate from Wix to Shopify for ecommerce scaling?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Wix to Shopify Migration` with split hero, service illustration, primary CTA "Request a Quote", and 3 verified review badges (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0).
+- 10 trusted brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter, Circuit City).
+- Clear answer statement box explaining "Why Migrate from Wix to Shopify?".
+- 3-column considerations layout with center illustration and 4 key pre-migration factors (SEO Settings, App Compatibility, Custom Designs, Payment & Shipping Settings).
+- 6-step sequential migration process with gradient step badges, numbered counters, and nested lists for data entities (Products, Categories, Customers, Orders) and testing validation.
+- 4 post-migration cards for SEO & Redirects, App Setup, Testing & Functionality, and Analytics & Tracking.
+- 4 reasons to choose Dynamic Dreamz highlighting Expertise, Full Data Migration, Custom Themes, and Ongoing Support.
+- Real client video testimonials with YouTube modal playback.
+- 10 comprehensive FAQ accordion items directly answering buyer concerns regarding duration, SEO preservation, downtime, payment/shipping, custom design replication, app compatibility, transferable data, security, post-launch support, and transparent costs.
+- Structured data graph emitting Service, FAQPage (10 Question/Answer pairs), VideoObject (testimonial video schema), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical icons and storing unique SVGs under `public/assets/wix-to-shopify-migration/`.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The migration route required full App Router and metadata coverage | Ship the slashless route through shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and BreadcrumbList schema | Emit Service with FAQPage (10 items), VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Asset deduplication | Reused canonical SVGs (review wordmarks, star ratings, bullets, and shared icons); stored unique SVGs under `public/assets/wix-to-shopify-migration/` with 0 duplicate hash groups | Save unique assets under `public/assets/wix-to-shopify-migration/` | Verified with SHA-256 audit |
+| P1 | deferred | Content expansion | Minor wording/grammar polish in FAQ answers and step descriptions | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Wix to Shopify migration authority. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+- Attribute client video testimonials directly to their authentic founders and brand names.
+
+### Internal-link and conversion actions
+
+- Internal links to `/request-quote` and `/contact-us` for lead capture.
+- Contextual navigation to related Shopify migration and development services.
+
