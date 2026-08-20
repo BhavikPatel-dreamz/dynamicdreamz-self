@@ -5929,6 +5929,314 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 - URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/be-yours-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 112 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
+## Fabric Theme Customization (`/fabric-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
+Primary audience: Shopify merchants, fashion and apparel brands, DTC retailers, small catalog stores, and eCommerce businesses seeking expert Fabric Shopify theme customization, product-forward design, visual storytelling, enhanced search, mega menu, mobile optimization, and conversion enhancement.
+Decision stage: partner selection, Fabric theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Fabric theme customization capabilities. Features 10 client brand trust logos, 3 feature highlight preview cards, 6 key theme feature icon cards, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards, 6 accordion FAQs, and demo store CTA buttons.
+
+### Target prompts
+
+- Best agency for Fabric Shopify theme customization services?
+- How to customize Fabric theme for Shopify and small catalog stores?
+- Dynamic Dreamz Fabric theme customization reviews and portfolio?
+- Can Dynamic Dreamz add product-forward swatches and mega menus to Fabric?
+- Fabric theme speed optimization and third-party app integration agency?
+
+### Core answer & key facts
+
+- Server-rendered H1 `Fabric Theme Customization Service` with direct answer paragraph.
+- 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
+- 3 key theme highlight cards (Product-Forward Design, Versatile and Engaging Layouts, From the Horizon collection).
+- 6 key Fabric theme features (Quick Setup, Visual Storytelling, Enhanced Search, Mega Menu, Mobile Optimization, Customizable Contact Form).
+- 9 core benefits of Fabric customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
+- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
+- 6 Shopify portfolio projects (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop).
+- 6 detailed FAQs addressing theme reversion, no-code custom functions, small catalogs suitability, third-party app integration, mobile responsiveness, and ongoing support post-customization.
+
+### Structured gap analysis
+
+| Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route and discovery | Missing App Router implementation for Fabric theme customization | Ship slashless `/fabric-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Fabric hero graphic, highlight previews, and feature icons under `public/assets/fabric-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
+| P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 6 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
+
+### Visible content and copy improvements
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Fabric theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Technical requirements
+
+- App Router Server Component architecture (`src/app/fabric-theme-customization/page.tsx`).
+- Canonical URL: `https://www.dynamicdreamz.com/fabric-theme-customization`.
+- Maintain slashless `/fabric-theme-customization` navigation across marketing pages and service menus.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Fabric theme customization", "Shopify Fabric developers", and "custom Fabric theme Shopify".
+- Analytics tracks form submissions on `/request-quote` originating from `/fabric-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/fabric-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 142 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Savor Theme Customization (`/savor-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
+Primary audience: Shopify merchants, food and beverage brands, restaurants, bakeries, gourmet retailers, and eCommerce businesses seeking expert Savor Shopify theme customization, appetizing visual displays, sensory storytelling, flexible navigation, media-rich product pages, and conversion enhancement.
+Decision stage: partner selection, Savor theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Savor theme customization capabilities. Features 10 client brand trust logos, 3 feature highlight preview cards, 8 key theme feature icon cards, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards, 6 accordion FAQs, and demo store CTA buttons.
+
+### Target prompts
+
+- Best agency for Savor Shopify theme customization services?
+- How to customize Savor theme for food and beverage Shopify stores?
+- Dynamic Dreamz Savor theme customization reviews and portfolio?
+- Can Dynamic Dreamz add story-driven sections and menus to Savor?
+- Savor theme speed optimization and third-party app integration agency?
+
+### Core answer & key facts
+
+- Server-rendered H1 `Savor Theme Customization Service` with direct answer paragraph.
+- 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
+- 3 key theme highlight cards (Bright, appetizing displays, Appeal to the senses, From the Horizon collection).
+- 8 key Savor theme features (Quick Setup, Customizable Sections, Media-Rich Product Pages, Flexible Navigation, Optimized for Food Brands, Mobile-Ready Design, Storytelling Templates, Advanced Search Features).
+- 9 core benefits of Savor customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
+- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
+- 6 Shopify portfolio projects (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop).
+- 6 detailed FAQs addressing homepage layout changes, restaurant suitability, mobile responsiveness, third-party app integration, customization timeline, and ongoing support post-customization.
+
+### Structured gap analysis
+
+| Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route and discovery | Missing App Router implementation for Savor theme customization | Ship slashless `/savor-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Savor hero graphic, highlight previews, and feature icons under `public/assets/savor-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
+| P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 6 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
+
+### Visible content and copy improvements
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Savor theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Technical requirements
+
+- App Router Server Component architecture (`src/app/savor-theme-customization/page.tsx`).
+- Canonical URL: `https://www.dynamicdreamz.com/savor-theme-customization`.
+- Maintain slashless `/savor-theme-customization` navigation across marketing pages and service menus.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Savor theme customization", "Shopify Savor developers", and "custom Savor theme Shopify".
+- Analytics tracks form submissions on `/request-quote` originating from `/savor-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/savor-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 154 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Dawn Theme Customization (`/dawn-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
+Primary audience: Shopify merchants, DTC brands, eCommerce startups, and businesses looking for expert Dawn Shopify theme customization, minimal design aesthetics, speed optimization, customizable content sections, mobile responsiveness, and higher conversion rates.
+Decision stage: partner selection, Dawn theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Dawn theme customization capabilities. Features 10 client brand trust logos, 6 key theme feature icon cards, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards, 8 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for Dawn Shopify theme customization services?
+- How to customize Dawn theme for Shopify and improve store speed?
+- Dynamic Dreamz Dawn theme customization reviews and portfolio?
+- Can Dynamic Dreamz add custom Liquid sections and features to Dawn?
+- Dawn theme speed optimization and third-party app integration agency?
+
+### Core answer & key facts
+
+- Server-rendered H1 `Dawn Theme Customization Service` with direct answer paragraph.
+- 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
+- 6 key Dawn theme features (Minimal Design Aesthetic, Built for Speed, Flexible Content Sections, High-Resolution Media Support, Mobile-Optimized, SEO-Friendly).
+- 9 core benefits of Dawn customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost).
+- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
+- 6 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier).
+- 8 detailed FAQs addressing customization scope, unique design capability, timelines, mobile responsiveness, post-launch support, third-party app integrations, SEO optimization, and pricing.
+
+### Structured gap analysis
+
+| Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route and discovery | Missing App Router implementation for Dawn theme customization | Ship slashless `/dawn-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Dawn hero graphic under `public/assets/dawn-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
+| P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 8 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
+
+### Visible content and copy improvements
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Dawn theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Technical requirements
+
+- App Router Server Component architecture (`src/app/dawn-theme-customization/page.tsx`).
+- Canonical URL: `https://www.dynamicdreamz.com/dawn-theme-customization`.
+- Maintain slashless `/dawn-theme-customization` navigation across marketing pages and service menus.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Dawn theme customization", "Shopify Dawn developers", and "custom Dawn theme Shopify".
+- Analytics tracks form submissions on `/request-quote` originating from `/dawn-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/dawn-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 52 chars, Description: 155 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Studio Theme Customization (`/studio-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
+Primary audience: Shopify merchants, artists, creators, boutique brands, and innovative eCommerce stores seeking expert Studio Shopify theme customization, gallery section styling, product discovery tools, interactive elements, and conversion enhancement.
+Decision stage: partner selection, Studio theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Studio theme customization capabilities. Features 10 client brand trust logos, 6 key theme feature icon cards, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards, 8 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for Studio Shopify theme customization services?
+- How to customize Studio theme for artists and creative Shopify stores?
+- Dynamic Dreamz Studio theme customization reviews and portfolio?
+- Can Dynamic Dreamz add interactive galleries and filters to Studio?
+- Studio theme speed optimization and third-party app integration agency?
+
+### Core answer & key facts
+
+- Server-rendered H1 `Studio Theme Customization Service` with direct answer paragraph.
+- 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
+- 6 key Studio theme features (Gallery Sections, Product Discovery Tools, Flexible Design, Mobile-Friendly Layout, Interactive Elements, User-Friendly Navigation).
+- 9 core benefits of Studio customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost).
+- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
+- 6 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier).
+- 8 detailed FAQs addressing service inclusion, customization timelines, third-party app integration, mobile friendliness, creative brand suitability, ongoing post-launch support, theme switching migration, and store security standards.
+
+### Structured gap analysis
+
+| Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route and discovery | Missing App Router implementation for Studio theme customization | Ship slashless `/studio-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Studio hero graphic under `public/assets/studio-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
+| P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 8 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
+
+### Visible content and copy improvements
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Studio theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Technical requirements
+
+- App Router Server Component architecture (`src/app/studio-theme-customization/page.tsx`).
+- Canonical URL: `https://www.dynamicdreamz.com/studio-theme-customization`.
+- Maintain slashless `/studio-theme-customization` navigation across marketing pages and service menus.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Studio theme customization", "Shopify Studio developers", and "custom Studio theme Shopify".
+- Analytics tracks form submissions on `/request-quote` originating from `/studio-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/studio-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 136 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Dwell Theme Customization (`/dwell-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
+Primary audience: Shopify merchants, home & decor retailers, lifestyle brands, baby and kids brands, fashion labels, and modern eCommerce businesses looking for expert Dwell Shopify theme customization, warm minimal design, intuitive product discovery, slide-out cart setup, and conversion optimization.
+Decision stage: partner selection, Dwell theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Dwell theme customization capabilities. Features 10 client brand trust logos, 3 visual preview highlight cards, 9 key theme feature icon cards, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards, 6 accordion FAQs, and demo store CTA buttons.
+
+### Target prompts
+
+- Best agency for Dwell Shopify theme customization services?
+- How to customize Dwell theme for Shopify home decor and fashion stores?
+- Dynamic Dreamz Dwell theme customization reviews and portfolio?
+- Can Dynamic Dreamz add custom mega menus, slide-out cart, and filters to Dwell?
+- Dwell theme speed optimization and third-party app integration agency?
+
+### Core answer & key facts
+
+- Server-rendered H1 `Dwell Theme Customization Service` with direct answer paragraph.
+- 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
+- 3 visual highlight preview cards (The warmth that welcomes, Intuitive product discovery, From the Horizon collection).
+- 9 key Dwell theme features (Quick Setup, Mobile-First Design, Customizable Content Sections, Media-Rich Layouts, Mega Menu Support, Slide-Out Cart, Cross-Selling Options, Sticky Header, Advanced Product Filtering).
+- 9 core benefits of Dwell customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimal Maintenance Cost).
+- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
+- 6 Shopify portfolio projects (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop).
+- 6 detailed FAQs addressing mobile friendliness, theme installation assistance, color/font/layout customization, project timelines, third-party app integration, and post-launch support.
+
+### Structured gap analysis
+
+| Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route and discovery | Missing App Router implementation for Dwell theme customization | Ship slashless `/dwell-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Dwell hero graphic, highlight previews, and feature icons under `public/assets/dwell-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
+| P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 6 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
+
+### Visible content and copy improvements
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Dwell theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Technical requirements
+
+- App Router Server Component architecture (`src/app/dwell-theme-customization/page.tsx`).
+- Canonical URL: `https://www.dynamicdreamz.com/dwell-theme-customization`.
+- Maintain slashless `/dwell-theme-customization` navigation across marketing pages and service menus.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Dwell theme customization", "Shopify Dwell developers", and "custom Dwell theme Shopify".
+- Analytics tracks form submissions on `/request-quote` originating from `/dwell-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/dwell-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 159 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+
+
+
+
+
 
 
 

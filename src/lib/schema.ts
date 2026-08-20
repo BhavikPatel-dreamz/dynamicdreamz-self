@@ -72,6 +72,11 @@ import { prestigeThemeCustomizationContent } from "@/content/prestige-theme-cust
 import { impulseThemeCustomizationContent } from "@/content/impulse-theme-customization";
 import { senseThemeCustomizationContent } from "@/content/sense-theme-customization";
 import { beYoursThemeCustomizationContent } from "@/content/be-yours-theme-customization";
+import { fabricThemeCustomizationContent } from "@/content/fabric-theme-customization";
+import { savorThemeCustomizationContent } from "@/content/savor-theme-customization";
+import { dawnThemeCustomizationContent } from "@/content/dawn-theme-customization";
+import { studioThemeCustomizationContent } from "@/content/studio-theme-customization";
+import { dwellThemeCustomizationContent } from "@/content/dwell-theme-customization";
 import { astraThemeCustomizationContent } from "@/content/astra-theme-customization";
 import { kadenceThemeCustomizationContent } from "@/content/kadence-theme-customization";
 import { helloElementorThemeCustomizationContent } from "@/content/hello-elementor-theme-customization";
@@ -401,6 +406,31 @@ const beYoursThemeCustomizationPageId = `${beYoursThemeCustomizationPageUrl}#web
 const beYoursThemeCustomizationServiceId = `${beYoursThemeCustomizationPageUrl}#service`;
 const beYoursThemeCustomizationFaqId = `${beYoursThemeCustomizationPageUrl}#faq`;
 const beYoursThemeCustomizationBreadcrumbId = `${beYoursThemeCustomizationPageUrl}#breadcrumb`;
+const fabricThemeCustomizationPageUrl = absoluteUrl(pageSeo.fabricThemeCustomization.path);
+const fabricThemeCustomizationPageId = `${fabricThemeCustomizationPageUrl}#webpage`;
+const fabricThemeCustomizationServiceId = `${fabricThemeCustomizationPageUrl}#service`;
+const fabricThemeCustomizationFaqId = `${fabricThemeCustomizationPageUrl}#faq`;
+const fabricThemeCustomizationBreadcrumbId = `${fabricThemeCustomizationPageUrl}#breadcrumb`;
+const savorThemeCustomizationPageUrl = absoluteUrl(pageSeo.savorThemeCustomization.path);
+const savorThemeCustomizationPageId = `${savorThemeCustomizationPageUrl}#webpage`;
+const savorThemeCustomizationServiceId = `${savorThemeCustomizationPageUrl}#service`;
+const savorThemeCustomizationFaqId = `${savorThemeCustomizationPageUrl}#faq`;
+const savorThemeCustomizationBreadcrumbId = `${savorThemeCustomizationPageUrl}#breadcrumb`;
+const dawnThemeCustomizationPageUrl = absoluteUrl(pageSeo.dawnThemeCustomization.path);
+const dawnThemeCustomizationPageId = `${dawnThemeCustomizationPageUrl}#webpage`;
+const dawnThemeCustomizationServiceId = `${dawnThemeCustomizationPageUrl}#service`;
+const dawnThemeCustomizationFaqId = `${dawnThemeCustomizationPageUrl}#faq`;
+const dawnThemeCustomizationBreadcrumbId = `${dawnThemeCustomizationPageUrl}#breadcrumb`;
+const studioThemeCustomizationPageUrl = absoluteUrl(pageSeo.studioThemeCustomization.path);
+const studioThemeCustomizationPageId = `${studioThemeCustomizationPageUrl}#webpage`;
+const studioThemeCustomizationServiceId = `${studioThemeCustomizationPageUrl}#service`;
+const studioThemeCustomizationFaqId = `${studioThemeCustomizationPageUrl}#faq`;
+const studioThemeCustomizationBreadcrumbId = `${studioThemeCustomizationPageUrl}#breadcrumb`;
+const dwellThemeCustomizationPageUrl = absoluteUrl(pageSeo.dwellThemeCustomization.path);
+const dwellThemeCustomizationPageId = `${dwellThemeCustomizationPageUrl}#webpage`;
+const dwellThemeCustomizationServiceId = `${dwellThemeCustomizationPageUrl}#service`;
+const dwellThemeCustomizationFaqId = `${dwellThemeCustomizationPageUrl}#faq`;
+const dwellThemeCustomizationBreadcrumbId = `${dwellThemeCustomizationPageUrl}#breadcrumb`;
 const shopifyDevelopmentAgencyPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentAgency.path);
 const shopifyDevelopmentAgencyPageId = `${shopifyDevelopmentAgencyPageUrl}#webpage`;
 const shopifyDevelopmentAgencyServiceId = `${shopifyDevelopmentAgencyPageUrl}#service`;
@@ -2540,6 +2570,126 @@ export function createBeYoursThemeCustomizationPageSchema() {
       answer: item.answer,
     })),
     offers: beYoursThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createFabricThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.fabricThemeCustomization,
+    pageUrl: fabricThemeCustomizationPageUrl,
+    pageId: fabricThemeCustomizationPageId,
+    serviceId: fabricThemeCustomizationServiceId,
+    faqId: fabricThemeCustomizationFaqId,
+    breadcrumbId: fabricThemeCustomizationBreadcrumbId,
+    serviceName: "Fabric Theme Customization Services",
+    serviceType: "Fabric Shopify theme customization, product-forward store design, visual storytelling, enhanced search, Liquid development, mega menu support, and third-party app integration",
+    breadcrumbName: "Fabric Theme Customization Service",
+    audienceType:
+      "Modern eCommerce brands, fashion retailers, DTC merchants, and digital agencies seeking professional Fabric theme customization",
+    faqs: fabricThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: fabricThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createSavorThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.savorThemeCustomization,
+    pageUrl: savorThemeCustomizationPageUrl,
+    pageId: savorThemeCustomizationPageId,
+    serviceId: savorThemeCustomizationServiceId,
+    faqId: savorThemeCustomizationFaqId,
+    breadcrumbId: savorThemeCustomizationBreadcrumbId,
+    serviceName: "Savor Theme Customization Service",
+    serviceType: "Savor Shopify theme customization, food and beverage store design, visual storytelling, flexible navigation, Liquid development, media-rich product pages, and third-party app integration",
+    breadcrumbName: "Savor Theme Customization Service",
+    audienceType:
+      "Modern eCommerce brands, food and beverage retailers, restaurants, bakeries, and digital agencies seeking professional Savor theme customization",
+    faqs: savorThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: savorThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createDawnThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.dawnThemeCustomization,
+    pageUrl: dawnThemeCustomizationPageUrl,
+    pageId: dawnThemeCustomizationPageId,
+    serviceId: dawnThemeCustomizationServiceId,
+    faqId: dawnThemeCustomizationFaqId,
+    breadcrumbId: dawnThemeCustomizationBreadcrumbId,
+    serviceName: "Dawn Theme Customization Service",
+    serviceType: "Dawn Shopify theme customization, minimal store design, speed optimization, flexible content sections, Liquid development, media-rich product pages, and third-party app integration",
+    breadcrumbName: "Dawn Theme Customization Service",
+    audienceType:
+      "Modern eCommerce brands, DTC retailers, Shopify merchants, and digital agencies seeking professional Dawn theme customization",
+    faqs: dawnThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: dawnThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createStudioThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.studioThemeCustomization,
+    pageUrl: studioThemeCustomizationPageUrl,
+    pageId: studioThemeCustomizationPageId,
+    serviceId: studioThemeCustomizationServiceId,
+    faqId: studioThemeCustomizationFaqId,
+    breadcrumbId: studioThemeCustomizationBreadcrumbId,
+    serviceName: "Studio Theme Customization Service",
+    serviceType: "Studio Shopify theme customization, artistic store design, visual storytelling, gallery sections, product discovery tools, Liquid development, media-rich product pages, and third-party app integration",
+    breadcrumbName: "Studio Theme Customization Service",
+    audienceType:
+      "Modern eCommerce brands, artists, creators, boutique retailers, and digital agencies seeking professional Studio theme customization",
+    faqs: studioThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: studioThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createDwellThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.dwellThemeCustomization,
+    pageUrl: dwellThemeCustomizationPageUrl,
+    pageId: dwellThemeCustomizationPageId,
+    serviceId: dwellThemeCustomizationServiceId,
+    faqId: dwellThemeCustomizationFaqId,
+    breadcrumbId: dwellThemeCustomizationBreadcrumbId,
+    serviceName: "Dwell Theme Customization Service",
+    serviceType: "Dwell Shopify theme customization, warm minimal store design, visual storytelling, intuitive product discovery, slide-out cart setup, Liquid development, and third-party app integration",
+    breadcrumbName: "Dwell Theme Customization Service",
+    audienceType:
+      "Modern eCommerce brands, home and decor retailers, lifestyle stores, fashion brands, and digital agencies seeking professional Dwell theme customization",
+    faqs: dwellThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: dwellThemeCustomizationContent.services.items.map((item) => ({
       title: item.title,
       description: item.description,
     })),

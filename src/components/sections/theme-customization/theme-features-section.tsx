@@ -9,10 +9,20 @@ export type ThemeFeatureItem = {
   iconAlt: string;
 };
 
+export type ThemeFeatureHighlightItem = {
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  imageWidth?: number;
+  imageHeight?: number;
+};
+
 export type ThemeFeaturesSectionProps = {
   content: {
     title: string;
     subtitle: string;
+    highlightItems?: readonly ThemeFeatureHighlightItem[];
     items: readonly ThemeFeatureItem[];
   };
   className?: string;
@@ -35,6 +45,37 @@ export function ThemeFeaturesSection({
             {formatBrText(content.subtitle, "max-[1199px]:hidden")}
           </p>
         </div>
+
+        {content.highlightItems && content.highlightItems.length > 0 && (
+          <div className="three_col_features_section mb-8 max-[767px]:mb-4">
+            <div className="flex flex-wrap -mx-3 justify-center">
+              {content.highlightItems.map((item) => (
+                <div
+                  className="w-1/3 px-3 mb-6 max-[991px]:w-1/2 max-[767px]:w-full"
+                  key={item.title}
+                >
+                  <article className="features_inner flex h-full flex-col items-center justify-start rounded-[15px] border border-[#efefef] bg-white p-5 text-center transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+                    <div className="features_inner_img mb-5 w-full overflow-hidden rounded-[10px]">
+                      <Image
+                        alt={item.imageAlt}
+                        className="w-full h-auto object-cover rounded-[10px]"
+                        height={item.imageHeight ?? 260}
+                        src={item.image}
+                        width={item.imageWidth ?? 369}
+                      />
+                    </div>
+                    <h3 className="font-sans text-[20px] font-bold leading-[28px] text-ink mb-2">
+                      {formatBrText(item.title, "max-[767px]:hidden")}
+                    </h3>
+                    <p className="text-sm font-normal leading-[24px] text-muted">
+                      {formatBrText(item.description, "max-[767px]:hidden")}
+                    </p>
+                  </article>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="flex flex-wrap -mx-3 justify-center">
           {content.items.map((item) => (

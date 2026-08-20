@@ -1548,6 +1548,136 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  fabricThemeCustomization: {
+    path: "/fabric-theme-customization",
+    title: "Fabric Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Get a Fabric Theme Customization Service for your Shopify store. Improve design, functionality, and conversions. Contact Dynamic Dreamz today!",
+    keywords: [
+      "Fabric theme customization",
+      "Fabric Shopify theme",
+      "Fabric theme customization services",
+      "Shopify Fabric developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-06-10T03:59:52+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Fabric Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  savorThemeCustomization: {
+    path: "/savor-theme-customization",
+    title: "Savor Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Shopify Savor Theme Customization Service to create a responsive, user-friendly store. Hire Dynamic Dreamz with 18 years of experience. Contact Us Today!",
+    keywords: [
+      "Savor theme customization",
+      "Savor Shopify theme",
+      "Savor theme customization service",
+      "Shopify Savor developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-06-13T03:44:02+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Savor Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  dawnThemeCustomization: {
+    path: "/dawn-theme-customization",
+    title: "Dawn Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Shopify Dawn theme customization services to create a responsive, user-friendly store. Hire Dynamic Dreamz with 18 years of experience. Contact Us Today!",
+    keywords: [
+      "Dawn theme customization",
+      "Dawn Shopify theme",
+      "Dawn theme customization service",
+      "Shopify Dawn developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-06-13T07:23:15+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Dawn Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  studioThemeCustomization: {
+    path: "/studio-theme-customization",
+    title: "Studio Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Want Studio theme customization Service for your Shopify store? Hire Dynamic Dreamz with 18 years of experience to optimize your store.",
+    keywords: [
+      "Studio theme customization",
+      "Studio Shopify theme",
+      "Studio theme customization service",
+      "Shopify Studio developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-06-16T03:30:31+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Studio Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  dwellThemeCustomization: {
+    path: "/dwell-theme-customization",
+    title: "Dwell Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Get the best Shopify Dwell theme customization service. Build a fast, responsive, and branded store that improves UX and increases sales with Dynamic Dreamz.",
+    keywords: [
+      "Dwell theme customization",
+      "Dwell Shopify theme",
+      "Dwell theme customization service",
+      "Shopify Dwell developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-06-18T05:07:49+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Dwell Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   shopifyDevelopmentAgency: {
     path: "/shopify-development-agency",
     title: "Shopify Development Agency & Services | Dynamic Dreamz",

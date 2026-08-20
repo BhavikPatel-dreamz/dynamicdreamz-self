@@ -861,6 +861,76 @@ Primary SEO intent: Be Yours theme customization, Be Yours Shopify theme customi
 | Hero description grammar | `The Be Yours theme Customization Service offers an elegant, user friendly online store.` | `The Be Yours Theme Customization Service offers an elegant, user-friendly online store.` | Adds hyphen in compound adjective and title cases Theme. | Low | deferred pending exact visible-copy approval |
 | Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (9 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
 
+## Fabric Theme Customization (`/fabric-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Fabric theme customization, Fabric Shopify theme customization service, customize Fabric theme Shopify, Shopify Fabric theme developers, hire Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Fabric Theme Customization Services \| Dynamic Dreamz` (54 chars) | Preserved live title (54 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get a Fabric Theme Customization Service for your Shopify store. Improve design, functionality, and conversions. Contact Dynamic Dreamz today!` (142 chars) | Preserved live meta description (142 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Highlight card title | `From the Horizon collection` | `From the Horizon Collection` | Consistent title casing. | Low | deferred pending exact visible-copy approval |
+| Benefits text spacing | ` Once customized, enjoy a hassle-free store that demands minimal maintenance.` | `Once customized, enjoy a hassle-free store that demands minimal maintenance.` | Removes leading space typo. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Savor Theme Customization (`/savor-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Savor theme customization, Savor Shopify theme customization service, customize Savor theme Shopify, Shopify Savor theme developers, hire Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Savor Theme Customization Service \| Dynamic Dreamz` (53 chars) | Preserved live title (53 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Shopify Savor Theme Customization Service to create a responsive, user-friendly store. Hire Dynamic Dreamz with 18 years of experience. Contact Us Today!` (154 chars) | Preserved live meta description (154 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Features subtitle grammar | `Made for highlight menus, product information, and engaging stories, Savor helps your brand stand out in a competitive market.` | `Made to highlight menus, product information, and engaging stories, Savor helps your brand stand out in a competitive market.` | Fixes preposition grammar ("Made to highlight"). | Low | deferred pending exact visible-copy approval |
+| Benefits heading line breaks | `Benefits of Savor </br> Theme Customization` | `Benefits of Savor <br> Theme Customization` | Normalizes invalid `</br>` tag to `<br>`. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Dawn Theme Customization (`/dawn-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Dawn theme customization, Dawn Shopify theme customization service, customize Dawn theme Shopify, Shopify Dawn theme developers, hire Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Dawn Theme Customization Service \| Dynamic Dreamz` (52 chars) | Preserved live title (52 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Shopify Dawn theme customization services to create a responsive, user-friendly store. Hire Dynamic Dreamz with 18 years of experience. Contact Us Today!` (155 chars) | Preserved live meta description (155 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Hero CTA capitalization | `request a quote` | `Request a Quote` | Title case button label. | Low | deferred pending exact visible-copy approval |
+| Features subtitle phrasing | `The feature-rich Dawn Theme is made for stores looking for a simple, modern, and valuable storefront design.` | `The feature-rich Dawn Theme is designed for stores looking for a clean, modern, and high-converting storefront design.` | Refines copy clarity and messaging. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (8 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Studio Theme Customization (`/studio-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Studio theme customization, Studio Shopify theme customization service, customize Studio theme Shopify, Shopify Studio theme developers, hire Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Studio Theme Customization Service \| Dynamic Dreamz` (54 chars) | Preserved live title (54 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Want Studio theme customization Service for your Shopify store? Hire Dynamic Dreamz with 18 years of experience to optimize your store.` (136 chars) | Preserved live meta description (136 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Hero CTA capitalization | `request a quote` | `Request a Quote` | Title case button label. | Low | deferred pending exact visible-copy approval |
+| Why choose subtitle | `At Dynamic Dreamz, we have a proven track record of delivering high quality<br /> Shopify theme customization services. Here’s why you should work with us:` | `At Dynamic Dreamz, we have a proven track record of delivering high-quality Shopify theme customization services. Here’s why you should work with us:` | Hyphenates high-quality compound adjective. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (8 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Dwell Theme Customization (`/dwell-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Dwell theme customization, Dwell Shopify theme customization service, customize Dwell theme Shopify, Shopify Dwell theme developers, hire Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Dwell Theme Customization Service \| Dynamic Dreamz` (53 chars) | Preserved live title (53 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get the best Shopify Dwell theme customization service. Build a fast, responsive, and branded store that improves UX and increases sales with Dynamic Dreamz.` (159 chars) | Preserved live meta description (159 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Benefits heading line break | `Benefits of Dwell </br> Theme Customization` | `Benefits of Dwell <br> Theme Customization` | Normalizes invalid `</br>` tag to `<br>`. | Low | deferred pending exact visible-copy approval |
+| Portfolio subtitle line break | `Explore our portfolio showcasing successful Shopify customization projects, </br>highlighting how we customize, secure, and enhance stores for peak performance.` | `Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.` | Removes stray line break tag. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
 ## GeneratePress Theme Customization (`/generatepress-theme-customization`)
 
 Status: visible recommendations deferred; live UI preserved during migration
