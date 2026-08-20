@@ -4708,6 +4708,80 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 - URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/prestashop-to-shopify-migration`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 159 chars), JSON-LD graph verification, local assets audit (0 duplicates), responsive layouts (1440px, 768px, 390px), lint, and production build.
 
+## Square to Shopify Migration (`/square-to-shopify-migration`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-20
+
+Owner: SEO, Shopify migration specialists, leadership, and sales operations
+
+Primary audience: Square merchants, retail & restaurant business owners, and ecommerce brands looking to migrate from Square to Shopify or Shopify Plus.
+
+Decision stage: platform re-platforming, Square to Shopify migration partner selection, zero downtime scoping, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz end-to-end Square to Shopify migration services. Highlights why migrate from Square, a 6-step zero-downtime migration process, 12 trusted brand partners, video testimonials, 6 comprehensive migration FAQs, and quote request CTAs.
+
+### Target prompts
+
+- How to migrate store from Square to Shopify without downtime and data loss?
+- Best Square to Shopify migration agency or experts?
+- Can I migrate customer reviews, products, and order history from Square to Shopify?
+- Will my Square store stay online while migrating to Shopify?
+- Why migrate from Square to Shopify for ecommerce growth?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Square to Shopify Migration Service` with split hero, service illustration, and 3 verified review badges (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0).
+- 12 trusted brand partner logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Pop Club, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit).
+- Clear answer statement box answering "Why do Square to Shopify Migration?".
+- 6-step sequential migration process with gradient step badges and numbered counters (Keep Your Business Running, Prepare Shopify Platform for Data Migration, Set Up a Custom Theme on Shopify, Migrate Your Data, Test the Site, Go Live).
+- Real client video testimonials with YouTube modal playback.
+- 6 comprehensive FAQ accordion items directly answering buyer concerns regarding scalability, customization, data loss, reviews, app integrations, mobile responsiveness, and turnaround time.
+- Structured data graph emitting Service, FAQPage (6 Question/Answer pairs), VideoObject (testimonial video schema), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical icons and storing unique SVGs under `public/assets/square-to-shopify-migration/`.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The migration route required full App Router and metadata coverage | Ship the slashless route through shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and BreadcrumbList schema | Emit Service with FAQPage (6 items), VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Asset deduplication | Reused canonical SVGs (including review wordmarks, star ratings, and client logos); ingested 1 unique hero SVG with 0 duplicate hash groups | Save unique assets under `public/assets/square-to-shopify-migration/` | Verified with SHA-256 audit |
+| P1 | deferred | Content expansion | Minor wording/grammar polish in FAQ answers and step descriptions | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Square to Shopify migration authority. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+- Attribute client video testimonials directly to their authentic founders and brand names.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/square-to-shopify-migration` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 6 Offer items, 6 FAQ items, VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-20T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and monthly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Square to Shopify migration", "Square to Shopify migration service", "migrate Square to Shopify", etc.
+- Analytics tracks form submissions on `/request-quote` originating from `/square-to-shopify-migration`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/square-to-shopify-migration`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 50 chars, Description: 159 chars), JSON-LD graph verification, local assets audit (0 duplicates), responsive layouts (1440px, 768px, 390px), lint, and production build.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new
@@ -4888,3 +4962,11 @@ Review this strategy quarterly and after major Google, Bing, OpenAI, schema, or
 site-architecture changes. Update recommendations when authoritative platform
 guidance changes; do not preserve a tactic solely because it is labeled AEO or
 GEO.
+
+## Etsy to Shopify Migration (/etsy-to-shopify-migration)
+**Audit Date:** 2026-08-20
+**Review:**
+- Target Keywords: Etsy to Shopify migration, migrate Etsy to Shopify.
+- Schema: Included `Service`, `OfferCatalog`, `FAQPage` (8 FAQs), `VideoObject`, `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD schemas.
+- AEO gap: The content accurately describes the 6-step migration process, considerations, and benefits. It addresses AI queries for "how to migrate from Etsy to Shopify".
+- Resolution: Compliant metadata (Title: 49 chars, Desc: 156 chars). Clean slashless URL.
