@@ -4326,6 +4326,83 @@ Last reviewed: 2026-08-19
 - Integrated Service, OfferCatalog, BreadcrumbList, Organization, and WebSite JSON-LD structured data.
 - Built-in lead-capture quote form connected to standard server actions with client-side feedback.
 
+## PrestaShop to Shopify Migration (`/prestashop-to-shopify-migration`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-08-20
+
+Owner: SEO, Shopify migration specialists, leadership, and sales operations
+
+Primary audience: PrestaShop merchants, ecommerce managers, and direct-to-consumer/enterprise brands migrating from PrestaShop to Shopify or Shopify Plus.
+
+Decision stage: platform re-platforming, PrestaShop to Shopify migration partner selection, data integrity verification, zero-downtime scoping, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz end-to-end PrestaShop to Shopify migration services. Highlights why migrate from PrestaShop, 5 benefits of moving to Shopify, 4 critical migration considerations with data mapping and SEO preservation, a 6-step zero-downtime migration process with exhaustive entity migration checklist (products, categories, customers, orders, coupons, reviews, CMS, blogs) and site testing checklist, 5 reasons to choose Dynamic Dreamz, 10 brand partners, video testimonials, 9 comprehensive migration FAQs, and quote request CTAs.
+
+### Target prompts
+
+- How to migrate store from PrestaShop to Shopify without losing SEO and data?
+- Best PrestaShop to Shopify migration agency or experts?
+- Can I migrate customer reviews, order history, and passwords from PrestaShop to Shopify?
+- Will PrestaShop to Shopify store migration cause downtime or data loss?
+- Why migrate from PrestaShop to Shopify for ecommerce growth?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `PrestaShop to Shopify Migration` with split hero, service illustration, and 3 verified review badges (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0).
+- 12 trusted brand partner logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Pop Club, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit).
+- Clear answer statement box answering "Why Migrate from PrestaShop to Shopify?".
+- 5 benefit cards detailing user-friendly interface, customization, app store, enhanced security, and scalability.
+- 3-column considerations layout with center illustration and 4 key pre-migration factors (data mapping, design preferences, SEO impact, payment/shipping).
+- 6-step sequential migration process with gradient step badges, numbered counters, and exhaustive nested lists for data entities (products, categories, customers, orders, coupons, reviews, CMS, blogs) and test checklists.
+- 5 reasons to choose Dynamic Dreamz highlighting expert migration team, custom themes, smooth data transfer, minimal downtime, and post-migration support.
+- Real client video testimonials with YouTube modal playback.
+- 9 comprehensive FAQ accordion items directly answering buyer concerns regarding reviews, data loss, performance, apps, tax/currency, integrations, and mobile responsiveness.
+- Structured data graph emitting Service, FAQPage (9 Question/Answer pairs), VideoObject (testimonial video schema), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical icons and storing unique SVGs under `public/assets/prestashop-to-shopify-migration/`.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The migration route required full App Router and metadata coverage | Ship the slashless route through shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and BreadcrumbList schema | Emit Service with FAQPage (9 items), VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Asset deduplication | Reused 10 canonical SVGs (including review wordmarks, star ratings, bullets, and shared icons); ingested 10 unique SVGs with 0 duplicate hash groups | Save unique assets under `public/assets/prestashop-to-shopify-migration/` | Verified with SHA-256 audit |
+| P1 | deferred | Content expansion | Minor wording/grammar polish in FAQ answers and step descriptions | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz PrestaShop to Shopify migration authority. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+- Attribute client video testimonials directly to their authentic founders and brand names.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/prestashop-to-shopify-migration` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 5 Offer items, 9 FAQ items, VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-20T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and monthly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "PrestaShop to Shopify migration", "PrestaShop to Shopify migration agency", "migrate PrestaShop to Shopify", etc.
+- Analytics tracks form submissions on `/request-quote` originating from `/prestashop-to-shopify-migration`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/prestashop-to-shopify-migration`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 159 chars), JSON-LD graph verification, local assets audit (0 duplicates), responsive layouts (1440px, 768px, 390px), lint, and production build.
+
 ## Future Page Maintenance Workflow
 
 This file is the permanent AEO/GEO backlog while the migration grows. Every new
