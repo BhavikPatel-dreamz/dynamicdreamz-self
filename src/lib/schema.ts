@@ -1,3 +1,4 @@
+import { etsyFaqs, etsyProcessContent } from "@/content/etsy-to-shopify-migration";
 import { founders } from "@/content/about";
 import { beautyIndustryPage } from "@/content/beauty-cosmetics";
 import { contactPageContent } from "@/content/contact";
@@ -54,6 +55,10 @@ import {
   prestashopFaqs,
   prestashopWhyChooseContent,
 } from "@/content/prestashop-to-shopify-migration";
+import {
+  squareFaqs,
+  squareProcessContent,
+} from "@/content/square-to-shopify-migration";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
 import { prestigeThemeCustomizationContent } from "@/content/prestige-theme-customization";
 import { impulseThemeCustomizationContent } from "@/content/impulse-theme-customization";
@@ -214,6 +219,16 @@ const prestashopToShopifyMigrationPageId = `${prestashopToShopifyMigrationPageUr
 const prestashopToShopifyMigrationServiceId = `${prestashopToShopifyMigrationPageUrl}#service`;
 const prestashopToShopifyMigrationFaqId = `${prestashopToShopifyMigrationPageUrl}#faq`;
 const prestashopToShopifyMigrationBreadcrumbId = `${prestashopToShopifyMigrationPageUrl}#breadcrumb`;
+const squareToShopifyMigrationPageUrl = absoluteUrl(pageSeo.squareToShopifyMigration.path);
+const squareToShopifyMigrationPageId = `${squareToShopifyMigrationPageUrl}#webpage`;
+const squareToShopifyMigrationServiceId = `${squareToShopifyMigrationPageUrl}#service`;
+const squareToShopifyMigrationFaqId = `${squareToShopifyMigrationPageUrl}#faq`;
+const squareToShopifyMigrationBreadcrumbId = `${squareToShopifyMigrationPageUrl}#breadcrumb`;
+const etsyToShopifyMigrationPageUrl = absoluteUrl(pageSeo.etsyToShopifyMigration.path);
+const etsyToShopifyMigrationPageId = `${etsyToShopifyMigrationPageUrl}#webpage`;
+const etsyToShopifyMigrationServiceId = `${etsyToShopifyMigrationPageUrl}#service`;
+const etsyToShopifyMigrationFaqId = `${etsyToShopifyMigrationPageUrl}#faq`;
+const etsyToShopifyMigrationBreadcrumbId = `${etsyToShopifyMigrationPageUrl}#breadcrumb`;
 const shopifyCroPageUrl = absoluteUrl(pageSeo.shopifyCro.path);
 const shopifyCroPageId = `${shopifyCroPageUrl}#webpage`;
 const shopifyCroServiceId = `${shopifyCroPageUrl}#service`;
@@ -1716,6 +1731,39 @@ export function createPrestashopToShopifyMigrationPageSchema() {
   });
 }
 
+export function createSquareToShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.squareToShopifyMigration,
+    pageUrl: squareToShopifyMigrationPageUrl,
+    pageId: squareToShopifyMigrationPageId,
+    serviceId: squareToShopifyMigrationServiceId,
+    faqId: squareToShopifyMigrationFaqId,
+    breadcrumbId: squareToShopifyMigrationBreadcrumbId,
+    serviceName: "Square to Shopify Migration Services",
+    serviceType:
+      "End-to-end Square store migration to Shopify with zero downtime and full data integrity",
+    breadcrumbName: "Square to Shopify Migration",
+    audienceType:
+      "Square merchants, ecommerce brands, and direct-to-consumer businesses migrating to Shopify or Shopify Plus",
+    faqs: squareFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ]
+        .filter(Boolean)
+        .join(" "),
+    })),
+    offers: squareProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
 export function createShopifyCroPageSchema() {
   return createServicePageSchema({
     page: pageSeo.shopifyCro,
@@ -2508,3 +2556,37 @@ export function createShopifyDevelopmentBarcelonaPageSchema() {
 export function serializeJsonLd(value: unknown) {
   return JSON.stringify(value).replace(/</g, "\\u003c");
 }
+
+export function createEtsyToShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.etsyToShopifyMigration,
+    pageUrl: etsyToShopifyMigrationPageUrl,
+    pageId: etsyToShopifyMigrationPageId,
+    serviceId: etsyToShopifyMigrationServiceId,
+    faqId: etsyToShopifyMigrationFaqId,
+    breadcrumbId: etsyToShopifyMigrationBreadcrumbId,
+    serviceName: "Etsy to Shopify Migration Services",
+    serviceType:
+      "Seamless Etsy store migration to Shopify without downtime and full data integrity",
+    breadcrumbName: "Etsy to Shopify Migration",
+    audienceType:
+      "Etsy sellers, ecommerce brands, and direct-to-consumer businesses migrating to Shopify or Shopify Plus",
+    faqs: etsyFaqs.map((item) => ({
+      question: item.question,
+      answer: [
+        item.answer,
+        ...(item.listItems?.map(
+          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
+        ) ?? []),
+      ]
+        .filter(Boolean)
+        .join(" "),
+    })),
+    offers: etsyProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+

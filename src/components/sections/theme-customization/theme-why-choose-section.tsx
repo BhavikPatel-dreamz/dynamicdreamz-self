@@ -17,12 +17,14 @@ export type ThemeWhyChooseSectionProps = {
   };
   className?: string;
   id?: string;
+  variant?: "left-icon" | "top-icon";
 };
 
 export function ThemeWhyChooseSection({
   content,
   className = "why_dynamic_dreamz_sec dev mt-20 pb-20 pt-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] two-column-icon-text-bg max-[991px]:mt-12 max-[991px]:py-14 max-[767px]:mt-10 max-[767px]:py-10",
   id = "why-choose-dynamic-dreamz",
+  variant = "left-icon",
 }: ThemeWhyChooseSectionProps) {
   return (
     <section className={className} id={id}>
@@ -45,14 +47,20 @@ export function ThemeWhyChooseSection({
 
               return (
                 <li
-                  className={`flex items-start p-[51px] max-[1199px]:p-8 max-[767px]:p-5 border-black/5 ${
+                  className={`flex p-[51px] max-[1199px]:p-8 max-[767px]:p-5 border-black/5 ${
+                    variant === "top-icon" ? "flex-col items-start" : "items-start"
+                  } ${
                     isEvenCol ? "border-r max-[991px]:border-r-0" : ""
                   } ${!isLastRow ? "border-b" : "max-[991px]:border-b"} ${
                     isLastItem ? "max-[991px]:border-b-0" : ""
                   }`}
                   key={item.title}
                 >
-                  <span className="icon mr-5 flex size-[66px] flex-shrink-0 items-center justify-center max-[767px]:size-[50px] max-[767px]:mr-3.5">
+                  <span
+                    className={`icon flex size-[66px] flex-shrink-0 items-center justify-center max-[767px]:size-[50px] ${
+                      variant === "top-icon" ? "mb-5 max-[767px]:mb-3.5" : "mr-5 max-[767px]:mr-3.5"
+                    }`}
+                  >
                     <Image
                       alt={item.iconAlt}
                       className="size-[66px] object-contain max-[767px]:size-[50px]"

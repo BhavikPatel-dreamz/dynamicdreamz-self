@@ -605,6 +605,52 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  squareToShopifyMigration: {
+    path: "/square-to-shopify-migration",
+    title: "Square to Shopify Migration | Take an Expert Guide",
+    description:
+      "Looking for a Square to Shopify migration without downtime and data loss? Hire Shopify migration experts from Dynamic Dreamz for a smooth, successful migration.",
+    keywords: [
+      "Square to Shopify migration",
+      "Square to Shopify",
+      "Shopify migration experts",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Square to Shopify Migration by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
+  etsyToShopifyMigration: {
+    path: "/etsy-to-shopify-migration",
+    title: "Etsy to Shopify Migration | Take an Expert Guide",
+    description:
+      "Are you looking for Etsy to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.",
+    keywords: [
+      "Etsy to Shopify migration",
+      "Etsy to Shopify",
+      "Shopify migration experts",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Etsy to Shopify Migration by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   shopifyCro: {
     path: "/shopify-cro-agency",
     title: "Shopify CRO Agency | Increase Revenue | Dynamic Dreamz",

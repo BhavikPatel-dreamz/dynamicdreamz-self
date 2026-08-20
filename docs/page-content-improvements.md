@@ -850,5 +850,27 @@ Primary SEO intent: PrestaShop to Shopify migration, migrate PrestaShop to Shopi
 | Process Step 6 grammar | `We migrate your store with proper planning and carefully take every step so your migration process will completed with minimal downtime.` | `We migrate your store with proper planning and carefully take every step so your migration process will be completed with minimal downtime.` | Fixes missing auxiliary verb "be". | Low | deferred pending exact visible-copy approval |
 | Structured data | Legacy page had Yoast WebPage schema with partial data | Emitted comprehensive `Service`, `OfferCatalog` (5 items), `FAQPage` (9 questions/answers), `VideoObject` (testimonial videos), `BreadcrumbList`, `Organization`, and `WebSite` schema. | Maximizes AEO/GEO answer extraction, rich snippet eligibility, and entity consistency. | High | implemented in schema |
 
+## Square to Shopify Migration (`/square-to-shopify-migration`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Square to Shopify migration, migrate Square to Shopify, Square to Shopify migration service, Square data migration, hire Square to Shopify expert.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Square to Shopify Migration \| Take an Expert Guide` (50 chars) | Preserved live title (50 chars). | Fits strict 15-60 char budget and preserves live search intent. | High | implemented in metadata |
+| Meta description | `Are you looking for a Square to Shopify Migration without the downtime and data loss? Hire a Shopify migration expert from Dynamic Dreamz for a successful migration.` (172 chars) | `Looking for a Square to Shopify migration without downtime and data loss? Hire Shopify migration experts from Dynamic Dreamz for a smooth, successful migration.` (159 chars) | Shortened to comply with repository 70-160 char build rule while preserving all keywords and meaning. | High | implemented in metadata |
+| Single text box punctuation | `Why do Square to Shopify Migration? ` | `Why Choose Square to Shopify Migration?` | Minor phrasing improvement for clarity. | Low | deferred pending exact visible-copy approval |
+| Process Step 1 grammar | `We won’t let you down! We will maintain your Square store and make it fully functional while we set up your new Shopify store.` | Preserved live copy. | Expressive client-reassurance phrasing. | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had Yoast WebPage schema with partial data | Emitted comprehensive `Service`, `OfferCatalog` (6 items), `FAQPage` (6 questions/answers), `VideoObject` (testimonial videos), `BreadcrumbList`, `Organization`, and `WebSite` schema. | Maximizes AEO/GEO answer extraction, rich snippet eligibility, and entity consistency. | High | implemented in schema |
 
 
+
+
+
+## Etsy to Shopify Migration (/etsy-to-shopify-migration)
+- **Current Issue:** Live copy has minor phrasing choices ("Shopify is the top most eCommerce platform", "The time duration is based on the length and complexity").
+- **Suggested Improvement:** Improve grammar flow and transition cues for a more premium enterprise feel.
+- **SEO Reason:** High-quality content signals increase trust for enterprise AEO recommendations.
+- **Priority:** Low
+- **Status:** Deferred (preserving live UI wording during migration phase).
