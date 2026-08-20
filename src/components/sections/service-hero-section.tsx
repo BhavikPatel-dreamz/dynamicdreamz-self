@@ -3,6 +3,18 @@ import { ReviewAnimation } from "@/components/sections/shopify-plus-agency/revie
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { shopifyPlusAgencyHero } from "@/content/shopify-plus-agency";
+import { formatBrText } from "@/lib/text-formatting";
+
+export type ServiceHeroReviewItem = {
+  platform: string;
+  reviewCount: string;
+  rating: string;
+  logoSrc: string;
+  logoAlt: string;
+  logoWidth: number;
+  logoHeight: number;
+  href: string;
+};
 
 export type ServiceHeroCoBranding = {
   leftLogo: { src: string; alt: string; width: number; height: number };
@@ -16,6 +28,13 @@ export type ServiceHeroContent = {
   secondaryDescription?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  image?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+  reviews?: readonly ServiceHeroReviewItem[];
   coBranding?: ServiceHeroCoBranding;
   maxWidthClassName?: string;
 };
@@ -24,12 +43,16 @@ export type ServiceHeroSectionProps = {
   content?: ServiceHeroContent;
   className?: string;
   variant?: "split" | "centered";
+  leftColClassName?: string;
+  rightColClassName?: string;
 };
 
 export function ServiceHeroSection({
   content = shopifyPlusAgencyHero,
   className = "inner-hero-sec relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]",
   variant = "split",
+  leftColClassName,
+  rightColClassName,
 }: ServiceHeroSectionProps) {
   const ctaHref = content.ctaHref ?? "/request-quote";
 
@@ -68,14 +91,7 @@ export function ServiceHeroSection({
                   </div>
                 )}
                 <h1 className="inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[379px]:text-[28px] max-[379px]:leading-[38px]">
-                  {content.title.includes("<br>")
-                    ? content.title.split("<br>").map((line, index, lines) => (
-                        <span key={line}>
-                          {line}
-                          {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}
-                        </span>
-                      ))
-                    : content.title}
+                  {formatBrText(content.title, "max-[1199px]:hidden")}
                 </h1>
                 <p className="mt-6 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted max-[991px]:my-4">
                   {content.description}
@@ -111,21 +127,22 @@ export function ServiceHeroSection({
     );
   }
 
+  const defaultLeftCol = content.image
+    ? "left-col w-[58%] max-[1199px]:w-full max-[1199px]:text-center"
+    : "left-col w-[55.7%] max-[1199px]:w-full max-[1199px]:text-center";
+
+  const defaultRightCol = content.image
+    ? "right-col w-[40%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[991px]:w-full"
+    : "right-col w-[41%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[991px]:w-full";
+
   return (
     <section className={className}>
       <Container>
-        <div className="flex flex-wrap items-center justify-between">
-          <div className="w-[55.7%] max-[1199px]:w-full max-[1199px]:text-center">
+        <div className="inner-wrapper flex flex-wrap items-center justify-between">
+          <div className={leftColClassName ?? defaultLeftCol}>
             <div className="inner-hero-content">
               <h1 className="inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]">
-                {content.title.includes("<br>")
-                  ? content.title.split("<br>").map((line, index, lines) => (
-                      <span key={line}>
-                        {line}
-                        {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}
-                      </span>
-                    ))
-                  : content.title}
+                {formatBrText(content.title, "max-[1199px]:hidden")}
               </h1>
               <p className="mt-6 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
                 {content.description}
@@ -146,8 +163,63 @@ export function ServiceHeroSection({
               )}
             </div>
           </div>
-          <div className="w-[41%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[991px]:w-full">
-            <ReviewAnimation />
+          <div className={rightColClassName ?? defaultRightCol}>
+            {content.image ? (
+              <>
+                <div className="service-img flex justify-center">
+                  <Image
+                    alt={content.image.alt}
+                    className="h-auto w-full max-w-[560px] object-contain"
+                    height={content.image.height}
+                    priority
+                    src={content.image.src}
+                    width={content.image.width}
+                  />
+                </div>
+                {content.reviews && content.reviews.length > 0 && (
+                  <div className="review-wrap mt-[57px] flex gap-[15px] justify-center max-[991px]:flex-col max-[991px]:items-center max-[991px]:gap-4 max-[991px]:mt-8">
+                    {content.reviews.map((review) => (
+                      <a
+                        className="review-box relative z-1 w-[calc(33.33%-10px)] rounded-[8px] bg-white p-[17px_12px_10px] text-center shadow-sm transition-transform hover:-translate-y-0.5 before:absolute before:-inset-[2px] before:-z-1 before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] max-[991px]:w-full max-[991px]:max-w-[400px] max-[991px]:flex max-[991px]:flex-row-reverse max-[991px]:items-center max-[991px]:justify-between max-[991px]:p-[18px_24px]"
+                        href={review.href}
+                        key={review.platform}
+                        rel="nofollow noopener noreferrer"
+                        target="_blank"
+                      >
+                        <div className="total-review relative -mt-[34px] mb-2.5 rounded-[30px] border-[1.5px] border-[#efefef] bg-white max-[991px]:m-0 max-[991px]:inline-block">
+                          <span className="block px-2.5 py-1 text-center text-[10px] font-semibold leading-normal text-ink">
+                            {review.reviewCount}
+                          </span>
+                        </div>
+                        <div className="rating-wrap flex flex-col items-center justify-center gap-1.5 max-[991px]:items-start">
+                          <Image
+                            alt={review.logoAlt}
+                            className="h-[19px] w-auto object-contain"
+                            height={review.logoHeight}
+                            src={review.logoSrc}
+                            width={review.logoWidth}
+                          />
+                          <div className="rating flex items-center justify-center gap-[7px]">
+                            <Image
+                              alt="Dynamic Dreamz Star Rating"
+                              className="h-[14px] w-[78px] object-contain"
+                              height={14}
+                              src="/assets/reviews/five-stars.svg"
+                              width={78}
+                            />
+                            <span className="font-sans text-[22px] font-bold leading-normal text-[#252c15] max-[991px]:text-[18px]">
+                              {review.rating}
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </>
+            ) : (
+              <ReviewAnimation />
+            )}
           </div>
         </div>
       </Container>

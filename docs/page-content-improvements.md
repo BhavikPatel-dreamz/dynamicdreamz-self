@@ -834,4 +834,21 @@ Primary SEO intent: Shopify development Barcelona, Shopify agency Spain, Shopify
 | Meta description | `Boost your online store with expert Shopify development in Barcelona by Dynamic Dreamz. We offer tailored solutions to eCommerce success.` (140 chars) | Preserved live meta description (140 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
 | Structured data | Legacy page had partial WebPage schema graph | Emitted comprehensive `Service`, `OfferCatalog` (8 items), `BreadcrumbList`, `Organization`, and `WebSite` schema. | Connects regional service offering to search crawlers and AI answer engines. | High | implemented in schema |
 
+## PrestaShop to Shopify Migration (`/prestashop-to-shopify-migration`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: PrestaShop to Shopify migration, migrate PrestaShop to Shopify, PrestaShop to Shopify migration service, PrestaShop data migration, hire PrestaShop to Shopify expert.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `PrestaShop to Shopify Migration \| Take an Expert Guide` (53 chars) | Preserved live title (53 chars). | Fits strict 15-60 char budget and preserves live search intent. | High | implemented in metadata |
+| Meta description | `Are you looking for a prestashop to Shopify Migration without the downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.` (169 chars) | `Looking for a PrestaShop to Shopify migration without downtime and data loss? Hire Shopify experts from Dynamic Dreamz for a smooth, successful store migration.` (159 chars) | Shortened to comply with repository 70-160 char build rule while preserving all keywords and meaning. | High | implemented in metadata |
+| Hero copy polish | `Our team can smoothly migrate your existing PrestaShop store to the Shopify store with minimal downtime.` | `Our team can smoothly migrate your existing PrestaShop store to Shopify with minimal downtime.` | Removes redundant "the" before Shopify store. | Low | deferred pending exact visible-copy approval |
+| Benefits copy grammar | `Shopify's user friendly interface makes it easy to use for beginners and non technical users.` | `Shopify's user-friendly interface makes it easy to use for beginners and non-technical store owners.` | Adds standard hyphenation and improves phrasing. | Low | deferred pending exact visible-copy approval |
+| Things to consider grammar | `Check your current PrestaShop store settings to ensure that the same or better payment gateways and shipping options.` | `Check your current PrestaShop store settings to ensure you maintain the same or better payment gateways and shipping options.` | Fixes missing verb in the description sentence. | Low | deferred pending exact visible-copy approval |
+| Process Step 6 grammar | `We migrate your store with proper planning and carefully take every step so your migration process will completed with minimal downtime.` | `We migrate your store with proper planning and carefully take every step so your migration process will be completed with minimal downtime.` | Fixes missing auxiliary verb "be". | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had Yoast WebPage schema with partial data | Emitted comprehensive `Service`, `OfferCatalog` (5 items), `FAQPage` (9 questions/answers), `VideoObject` (testimonial videos), `BreadcrumbList`, `Organization`, and `WebSite` schema. | Maximizes AEO/GEO answer extraction, rich snippet eligibility, and entity consistency. | High | implemented in schema |
+
+
 
