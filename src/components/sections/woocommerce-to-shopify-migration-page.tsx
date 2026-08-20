@@ -1,0 +1,46 @@
+import { FaqSection } from "@/components/sections/faq-section";
+import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { MigrationProcessSection } from "@/components/sections/migration-process-section";
+import { ServiceHeroSection } from "@/components/sections/service-hero-section";
+import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
+import {
+  woocommerceBrandLogos,
+  woocommerceFaqs,
+  woocommerceHeroContent,
+  woocommerceProcessContent,
+  woocommerceWhyMigrate,
+} from "@/content/woocommerce-to-shopify-migration";
+
+export function WooCommerceToShopifyMigrationPage() {
+  return (
+    <div className="font-sans leading-[30.4px]">
+      <ServiceHeroSection
+        className="inner-hero-sec woocommerce-to-shopify relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        content={woocommerceHeroContent}
+        variant="split"
+      />
+      <IndustryBrandsSection
+        content={{
+          slug: "woocommerce-to-shopify-migration",
+          ariaLabel: "Brands that trust Dynamic Dreamz for WooCommerce to Shopify migration",
+        }}
+        heading="Trusted by <br> Leading Brands"
+        items={woocommerceBrandLogos}
+      />
+      <TextBoxSection
+        className="single-text-box-sec py-20 max-[991px]:py-[50px]"
+        heading={woocommerceWhyMigrate.heading}
+        text={woocommerceWhyMigrate.text}
+      />
+      <MigrationProcessSection
+        content={woocommerceProcessContent}
+        id="migration-process"
+      />
+      <FaqSection
+        className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"
+        idPrefix="woocommerce-migration-faq"
+        items={woocommerceFaqs}
+      />
+    </div>
+  );
+}

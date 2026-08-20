@@ -26,6 +26,7 @@ export type ServiceHeroContent = {
   title: string;
   description: string;
   secondaryDescription?: string;
+  paragraphs?: readonly string[];
   ctaLabel?: string;
   ctaHref?: string;
   image?: {
@@ -93,13 +94,25 @@ export function ServiceHeroSection({
                 <h1 className="inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[379px]:text-[28px] max-[379px]:leading-[38px]">
                   {formatBrText(content.title, "max-[1199px]:hidden")}
                 </h1>
-                <p className="mt-6 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted max-[991px]:my-4">
-                  {content.description}
-                </p>
-                {content.secondaryDescription && (
-                  <p className="mt-4 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted">
-                    {content.secondaryDescription}
-                  </p>
+                {content.paragraphs ? (
+                  content.paragraphs.map((paragraph, idx) => (
+                    <p
+                      className="mt-4 mb-4 font-sans text-base font-normal leading-[30.4px] text-muted first:mt-6 last:mb-6"
+                      key={idx}
+                      dangerouslySetInnerHTML={{ __html: paragraph }}
+                    />
+                  ))
+                ) : (
+                  <>
+                    <p className="mt-6 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted max-[991px]:my-4">
+                      {formatBrText(content.description)}
+                    </p>
+                    {content.secondaryDescription && (
+                      <p className="mt-4 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted">
+                        {formatBrText(content.secondaryDescription)}
+                      </p>
+                    )}
+                  </>
                 )}
                 {content.ctaLabel && (
                   <div className="mt-2">
@@ -144,13 +157,25 @@ export function ServiceHeroSection({
               <h1 className="inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]">
                 {formatBrText(content.title, "max-[1199px]:hidden")}
               </h1>
-              <p className="mt-6 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
-                {content.description}
-              </p>
-              {content.secondaryDescription && (
-                <p className="mt-4 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
-                  {content.secondaryDescription}
-                </p>
+              {content.paragraphs ? (
+                content.paragraphs.map((paragraph, idx) => (
+                  <p
+                    className="mt-4 mb-4 text-base font-normal leading-[30.4px] text-muted first:mt-6 last:mb-6 max-[1199px]:text-base max-[1199px]:leading-[30.4px]"
+                    key={idx}
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  />
+                ))
+              ) : (
+                <>
+                  <p className="mt-6 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
+                    {formatBrText(content.description)}
+                  </p>
+                  {content.secondaryDescription && (
+                    <p className="mt-4 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
+                      {formatBrText(content.secondaryDescription)}
+                    </p>
+                  )}
+                </>
               )}
               {content.ctaLabel && (
                 <ButtonLink

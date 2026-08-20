@@ -628,6 +628,144 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  magentoToShopifyPlusMigration: {
+    path: "/magento-to-shopify-plus-migration",
+    title: "Magento to Shopify Plus Migration | Dynamic Dreamz",
+    description:
+      "Hire Magento to Shopify Plus Migration Expert. Expert Migration Services with 18+ Years of Experience. Hire DynamicDreamz today!",
+    keywords: [
+      "Magento to Shopify Plus migration",
+      "Magento to Shopify Plus",
+      "Shopify Plus migration experts",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2025-03-27T03:29:20+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Magento to Shopify Plus Migration by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
+  magentoToShopifyMigration: {
+    path: "/magento-to-shopify-migration",
+    title: "Magento 1 to Shopify Migration Services | Dynamic Dreamz",
+    description:
+      "Seamlessly migrate from Magento 1 to Shopify with Dynamic Dreamz. Our expert team ensures a smooth transition for enhanced eCommerce performance.",
+    keywords: [
+      "Magento to Shopify migration",
+      "Magento 1 to Shopify",
+      "Shopify migration experts",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2025-02-25T10:40:12+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Magento to Shopify Migration by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
+  woocommerceToShopifyMigration: {
+    path: "/woocommerce-to-shopify-migration",
+    title: "Seamless WooCommerce to Shopify Migration | Dynamic Dreamz",
+    description:
+      "Migrate your WooCommerce store to Shopify effortlessly with Dynamic Dreamz. Experience enhanced scalability, security, and user friendliness.",
+    keywords: [
+      "WooCommerce to Shopify migration",
+      "WooCommerce to Shopify",
+      "Shopify migration experts",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2025-02-25T10:39:37+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "WooCommerce to Shopify Migration by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
+  squarespaceToShopifyMigration: {
+    path: "/squarespace-to-shopify-migration",
+    title: "Squarespace to Shopify Migration | Take an Expert Guide",
+    description:
+      "Looking for Squarespace to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.",
+    keywords: [
+      "Squarespace to Shopify migration",
+      "Squarespace to Shopify",
+      "Shopify migration experts",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2025-02-25T10:09:37+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Squarespace to Shopify Migration by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
+  ecwidToShopifyMigration: {
+    path: "/ecwid-to-shopify-migration",
+    title: "Ecwid to Shopify Migration | Take an Expert Guide",
+    description:
+      "Are you looking for Ecwid to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.",
+    keywords: [
+      "Ecwid to Shopify migration",
+      "Ecwid to Shopify",
+      "Shopify migration experts",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2025-02-25T10:09:20+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Ecwid to Shopify Migration by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
+  salesforceToShopifyMigration: {
+    path: "/salesforce-to-shopify-migration",
+    title: "Salesforce to Shopify Migration Service | Dynamic Dreamz",
+    description:
+      "Need a reliable Salesforce to Shopify migration service? Dynamic Dreamz offers Secure, scalable, and fully optimized solutions for eCommerce Stores.",
+    keywords: [
+      "Salesforce to Shopify migration",
+      "Salesforce to Shopify",
+      "Shopify migration experts",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Salesforce to Shopify Migration by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   etsyToShopifyMigration: {
     path: "/etsy-to-shopify-migration",
     title: "Etsy to Shopify Migration | Take an Expert Guide",
