@@ -4,6 +4,7 @@ import { formatBrText } from "@/lib/text-formatting";
 
 export type ThemeFeatureItem = {
   title: string;
+  description?: string;
   icon: string;
   iconAlt: string;
 };
@@ -35,25 +36,34 @@ export function ThemeFeaturesSection({
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-6 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
+        <div className="flex flex-wrap -mx-3 justify-center">
           {content.items.map((item) => (
-            <article
-              className="theme-box flex h-full flex-col items-center justify-start rounded-[15px] border border-[#efefef] bg-white p-[30px_20px] text-center transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+            <div
+              className="w-1/3 px-3 mb-6 max-[991px]:w-1/2 max-[767px]:w-full"
               key={item.title}
             >
-              <div className="icon mb-[30px] flex size-[55px] items-center justify-center">
-                <Image
-                  alt={item.iconAlt}
-                  className="size-[55px] object-contain"
-                  height={55}
-                  src={item.icon}
-                  width={55}
-                />
-              </div>
-              <h3 className="font-sans text-[18px] font-semibold leading-[28px] text-ink">
-                {formatBrText(item.title, "max-[767px]:hidden")}
-              </h3>
-            </article>
+              <article
+                className="theme-box flex h-full flex-col items-center justify-start rounded-[15px] border border-[#efefef] bg-white p-[30px_20px] text-center transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+              >
+                <div className="icon mb-[30px] flex size-[55px] items-center justify-center">
+                  <Image
+                    alt={item.iconAlt}
+                    className="size-[55px] object-contain"
+                    height={55}
+                    src={item.icon}
+                    width={55}
+                  />
+                </div>
+                <h3 className="font-sans text-[18px] font-semibold leading-[28px] text-ink">
+                  {formatBrText(item.title, "max-[767px]:hidden")}
+                </h3>
+                {item.description && (
+                  <p className="mt-2 text-sm font-normal leading-[24px] text-muted">
+                    {formatBrText(item.description, "max-[767px]:hidden")}
+                  </p>
+                )}
+              </article>
+            </div>
           ))}
         </div>
       </Container>

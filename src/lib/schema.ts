@@ -53,6 +53,11 @@ import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-custom
 import { prestigeThemeCustomizationContent } from "@/content/prestige-theme-customization";
 import { impulseThemeCustomizationContent } from "@/content/impulse-theme-customization";
 import { senseThemeCustomizationContent } from "@/content/sense-theme-customization";
+import { astraThemeCustomizationContent } from "@/content/astra-theme-customization";
+import { kadenceThemeCustomizationContent } from "@/content/kadence-theme-customization";
+import { helloElementorThemeCustomizationContent } from "@/content/hello-elementor-theme-customization";
+import { generatepressThemeCustomizationContent } from "@/content/generatepress-theme-customization";
+import { oceanwpThemeCustomizationContent } from "@/content/oceanwp-theme-customization";
 import { shopifyDevelopmentBarcelonaContent } from "@/content/shopify-development-in-barcelona-spain";
 import {
   woocommerceDevelopmentFaqs,
@@ -222,6 +227,31 @@ const prestigeThemeCustomizationPageId = `${prestigeThemeCustomizationPageUrl}#w
 const prestigeThemeCustomizationServiceId = `${prestigeThemeCustomizationPageUrl}#service`;
 const prestigeThemeCustomizationFaqId = `${prestigeThemeCustomizationPageUrl}#faq`;
 const prestigeThemeCustomizationBreadcrumbId = `${prestigeThemeCustomizationPageUrl}#breadcrumb`;
+const astraThemeCustomizationPageUrl = absoluteUrl(pageSeo.astraThemeCustomization.path);
+const astraThemeCustomizationPageId = `${astraThemeCustomizationPageUrl}#webpage`;
+const astraThemeCustomizationServiceId = `${astraThemeCustomizationPageUrl}#service`;
+const astraThemeCustomizationFaqId = `${astraThemeCustomizationPageUrl}#faq`;
+const astraThemeCustomizationBreadcrumbId = `${astraThemeCustomizationPageUrl}#breadcrumb`;
+const kadenceThemeCustomizationPageUrl = absoluteUrl(pageSeo.kadenceThemeCustomization.path);
+const kadenceThemeCustomizationPageId = `${kadenceThemeCustomizationPageUrl}#webpage`;
+const kadenceThemeCustomizationServiceId = `${kadenceThemeCustomizationPageUrl}#service`;
+const kadenceThemeCustomizationFaqId = `${kadenceThemeCustomizationPageUrl}#faq`;
+const kadenceThemeCustomizationBreadcrumbId = `${kadenceThemeCustomizationPageUrl}#breadcrumb`;
+const helloElementorThemeCustomizationPageUrl = absoluteUrl(pageSeo.helloElementorThemeCustomization.path);
+const helloElementorThemeCustomizationPageId = `${helloElementorThemeCustomizationPageUrl}#webpage`;
+const helloElementorThemeCustomizationServiceId = `${helloElementorThemeCustomizationPageUrl}#service`;
+const helloElementorThemeCustomizationFaqId = `${helloElementorThemeCustomizationPageUrl}#faq`;
+const helloElementorThemeCustomizationBreadcrumbId = `${helloElementorThemeCustomizationPageUrl}#breadcrumb`;
+const generatepressThemeCustomizationPageUrl = absoluteUrl(pageSeo.generatepressThemeCustomization.path);
+const generatepressThemeCustomizationPageId = `${generatepressThemeCustomizationPageUrl}#webpage`;
+const generatepressThemeCustomizationServiceId = `${generatepressThemeCustomizationPageUrl}#service`;
+const generatepressThemeCustomizationFaqId = `${generatepressThemeCustomizationPageUrl}#faq`;
+const generatepressThemeCustomizationBreadcrumbId = `${generatepressThemeCustomizationPageUrl}#breadcrumb`;
+const oceanwpThemeCustomizationPageUrl = absoluteUrl(pageSeo.oceanwpThemeCustomization.path);
+const oceanwpThemeCustomizationPageId = `${oceanwpThemeCustomizationPageUrl}#webpage`;
+const oceanwpThemeCustomizationServiceId = `${oceanwpThemeCustomizationPageUrl}#service`;
+const oceanwpThemeCustomizationFaqId = `${oceanwpThemeCustomizationPageUrl}#faq`;
+const oceanwpThemeCustomizationBreadcrumbId = `${oceanwpThemeCustomizationPageUrl}#breadcrumb`;
 const impulseThemeCustomizationPageUrl = absoluteUrl(pageSeo.impulseThemeCustomization.path);
 const impulseThemeCustomizationPageId = `${impulseThemeCustomizationPageUrl}#webpage`;
 const impulseThemeCustomizationServiceId = `${impulseThemeCustomizationPageUrl}#service`;
@@ -1867,6 +1897,126 @@ export function createPrestigeThemeCustomizationPageSchema() {
       answer: item.answer,
     })),
     offers: prestigeThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createAstraThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.astraThemeCustomization,
+    pageUrl: astraThemeCustomizationPageUrl,
+    pageId: astraThemeCustomizationPageId,
+    serviceId: astraThemeCustomizationServiceId,
+    faqId: astraThemeCustomizationFaqId,
+    breadcrumbId: astraThemeCustomizationBreadcrumbId,
+    serviceName: "Astra Theme Customization Services",
+    serviceType: "Astra WordPress theme customization, responsive WooCommerce store design, performance optimization, feature integration, and ongoing support",
+    breadcrumbName: "Astra Theme Customization Service",
+    audienceType:
+      "WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking professional Astra theme customization",
+    faqs: astraThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: astraThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createKadenceThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.kadenceThemeCustomization,
+    pageUrl: kadenceThemeCustomizationPageUrl,
+    pageId: kadenceThemeCustomizationPageId,
+    serviceId: kadenceThemeCustomizationServiceId,
+    faqId: kadenceThemeCustomizationFaqId,
+    breadcrumbId: kadenceThemeCustomizationBreadcrumbId,
+    serviceName: "Kadence Theme Customization Services",
+    serviceType: "Kadence WordPress theme customization, responsive WooCommerce store design, drag-and-drop header/footer layout, speed optimization, and custom hooks/filters integration",
+    breadcrumbName: "Kadence Theme Customization Service",
+    audienceType:
+      "WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking professional Kadence theme customization",
+    faqs: kadenceThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: kadenceThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createHelloElementorThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.helloElementorThemeCustomization,
+    pageUrl: helloElementorThemeCustomizationPageUrl,
+    pageId: helloElementorThemeCustomizationPageId,
+    serviceId: helloElementorThemeCustomizationServiceId,
+    faqId: helloElementorThemeCustomizationFaqId,
+    breadcrumbId: helloElementorThemeCustomizationBreadcrumbId,
+    serviceName: "Hello Elementor Theme Customization Services",
+    serviceType: "Hello Elementor WordPress theme customization, Elementor page builder design, WooCommerce integration, performance optimization, and custom styling",
+    breadcrumbName: "Hello Elementor Theme Customization Service",
+    audienceType:
+      "WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking professional Hello Elementor theme customization",
+    faqs: helloElementorThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: helloElementorThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createGeneratepressThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.generatepressThemeCustomization,
+    pageUrl: generatepressThemeCustomizationPageUrl,
+    pageId: generatepressThemeCustomizationPageId,
+    serviceId: generatepressThemeCustomizationServiceId,
+    faqId: generatepressThemeCustomizationFaqId,
+    breadcrumbId: generatepressThemeCustomizationBreadcrumbId,
+    serviceName: "GeneratePress Theme Customization Services",
+    serviceType: "GeneratePress WordPress theme customization, responsive WooCommerce store design, modular layout configuration, speed optimization, and custom hook/filter development",
+    breadcrumbName: "GeneratePress Theme Customization Service",
+    audienceType:
+      "WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking professional GeneratePress theme customization",
+    faqs: generatepressThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: generatepressThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createOceanwpThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.oceanwpThemeCustomization,
+    pageUrl: oceanwpThemeCustomizationPageUrl,
+    pageId: oceanwpThemeCustomizationPageId,
+    serviceId: oceanwpThemeCustomizationServiceId,
+    faqId: oceanwpThemeCustomizationFaqId,
+    breadcrumbId: oceanwpThemeCustomizationBreadcrumbId,
+    serviceName: "OceanWP Theme Customization Services",
+    serviceType: "OceanWP WordPress theme customization, responsive WooCommerce store design, custom styling, speed optimization, and third-party plugin integration",
+    breadcrumbName: "OceanWP Theme Customization Service",
+    audienceType:
+      "WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking professional OceanWP theme customization",
+    faqs: oceanwpThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: oceanwpThemeCustomizationContent.services.items.map((item) => ({
       title: item.title,
       description: item.description,
     })),

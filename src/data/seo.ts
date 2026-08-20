@@ -821,6 +821,136 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  astraThemeCustomization: {
+    path: "/astra-theme-customization",
+    title: "Astra Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Get professional Astra Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "Astra theme customization",
+      "Astra WordPress theme",
+      "Astra theme customization services",
+      "WordPress Astra developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-03-31T05:52:19+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Astra Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  kadenceThemeCustomization: {
+    path: "/kadence-theme-customization",
+    title: "Kadence Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Get professional Kadence Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "Kadence theme customization",
+      "Kadence WordPress theme",
+      "Kadence theme customization services",
+      "WordPress Kadence developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-03-31T06:54:19+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Kadence Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  helloElementorThemeCustomization: {
+    path: "/hello-elementor-theme-customization",
+    title: "Hello Elementor Theme Customization | Dynamic Dreamz",
+    description:
+      "Get professional Hello Elementor theme customization services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "Hello Elementor theme customization",
+      "Hello Elementor WordPress theme",
+      "Hello Elementor customization services",
+      "WordPress Elementor developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-03-31T04:13:03+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Hello Elementor Theme Customization | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  generatepressThemeCustomization: {
+    path: "/generatepress-theme-customization",
+    title: "GeneratePress Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Get professional GeneratePress Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "GeneratePress theme customization",
+      "GeneratePress WordPress theme",
+      "GeneratePress theme customization services",
+      "WordPress GeneratePress developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-03-31T07:18:11+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "GeneratePress Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  oceanwpThemeCustomization: {
+    path: "/oceanwp-theme-customization",
+    title: "OceanWP Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Get professional OceanWP Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "OceanWP theme customization",
+      "OceanWP WordPress theme",
+      "OceanWP theme customization services",
+      "WordPress OceanWP developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-03-31T07:40:27+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "OceanWP Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   impulseThemeCustomization: {
     path: "/impulse-theme-customization",
     title: "Impulse Theme Customization Service | Dynamic Dreamz",

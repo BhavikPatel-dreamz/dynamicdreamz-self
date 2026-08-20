@@ -3742,7 +3742,357 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 ### Verification and remaining gaps
 
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/web-design`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 59 chars, Description: 118 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+## Astra Theme Customization (`/astra-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
+Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Astra theme customization, performance optimization, responsive layouts, WooCommerce integration, and ongoing support.
+Decision stage: partner selection, Astra theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Astra theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 5 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for Astra WordPress theme customization services?
+- How to customize Astra theme for WooCommerce?
+- Dynamic Dreamz Astra theme customization reviews and portfolio?
+- Can Dynamic Dreamz customize Astra theme with Elementor or Gutenberg?
+- Astra theme speed optimization and custom plugin integration agency?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Astra Theme Customization Service` with direct answer paragraph.
+- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
+- 7 distinct theme features with vector icons and descriptions (Lightning Fast Performance, SEO-Optimized, Fully Responsive, Highly Customizable, WooCommerce Ready, No jQuery Dependency, Pre-Built Templates).
+- 9 core benefits of Astra customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
+- 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
+- 6 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur) with WordPress/WooCommerce platform mark.
+- 5 comprehensive FAQ accordion items directly answering merchant questions on WooCommerce suitability, non-coding customization, speed optimization, third-party plugins, and post-customization support.
+- Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (5 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Missing App Router implementation for Astra theme customization | Ship slashless `/astra-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (5 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Astra hero graphic and feature icons under `public/assets/astra-theme-customization/` | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Minor phrasing and vocabulary improvements for benefits and why choose sections | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Astra theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a WordPress & WooCommerce development specialist founded in 2006 with 18+ years of experience, 5000+ completed projects, and 150+ in-house experts.
+- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/astra-theme-customization` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 6 Offer items, 5 FAQ items, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-20T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Astra theme customization", "WordPress Astra developers", and "custom Astra theme WooCommerce".
+- Analytics tracks form submissions on `/request-quote` originating from `/astra-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/astra-theme-customization`; source/build URL guard passes.
+## Kadence Theme Customization (`/kadence-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
+Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Kadence theme customization, drag-and-drop header/footer layout building, WooCommerce integration, speed optimization, and custom hooks/filters development.
+Decision stage: partner selection, Kadence theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Kadence theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 5 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for Kadence WordPress theme customization services?
+- How to customize Kadence theme for WooCommerce?
+- Dynamic Dreamz Kadence theme customization reviews and portfolio?
+- Can Dynamic Dreamz build custom header/footer layouts with Kadence?
+- Kadence theme custom hooks, filters, and speed optimization agency?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Kadence Theme Customization Service` with direct answer paragraph.
+- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
+- 7 distinct theme features with vector icons and descriptions (Ultra-Lightweight & Fast, SEO-Optimized, Fully Responsive, Drag-and-Drop Header & Footer Builder, WooCommerce Integration, Pre-Designed Starter Templates, Custom Hooks & Filters).
+- 9 core benefits of Kadence customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
+- 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
+- 6 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur) with WordPress/WooCommerce platform mark.
+- 5 comprehensive FAQ accordion items directly answering merchant questions on non-coding customization, WooCommerce compatibility, speed optimization, third-party plugins, and ongoing post-customization support.
+- Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (5 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Missing App Router implementation for Kadence theme customization | Ship slashless `/kadence-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (5 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Kadence hero graphic and unique feature icons under `public/assets/kadence-theme-customization/` | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Minor phrasing and vocabulary improvements for benefits subtitle | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Kadence theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a WordPress & WooCommerce development specialist founded in 2006 with 18+ years of experience, 5000+ completed projects, and 150+ in-house experts.
+- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/kadence-theme-customization` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 6 Offer items, 5 FAQ items, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-20T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Kadence theme customization", "WordPress Kadence developers", and "custom Kadence theme WooCommerce".
+- Analytics tracks form submissions on `/request-quote` originating from `/kadence-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/kadence-theme-customization`; source/build URL guard passes.
+## Hello Elementor Theme Customization (`/hello-elementor-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
+Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Hello Elementor theme customization, Elementor page builder styling, custom widget design, WooCommerce integration, speed optimization, and clean minimalistic development.
+Decision stage: partner selection, Hello Elementor theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz Hello Elementor theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 5 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for Hello Elementor WordPress theme customization services?
+- How to customize Hello Elementor theme for WooCommerce?
+- Dynamic Dreamz Hello Elementor theme customization reviews and portfolio?
+- Can Dynamic Dreamz build custom layouts with Hello Elementor and Elementor Pro?
+- Hello Elementor speed optimization and custom widget development agency?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Hello Elementor Theme Customization Service` with direct answer paragraph.
+- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
+- 7 distinct theme features with vector icons and descriptions (Lightning Fast, SEO-Friendly, Fully Responsive, Lightweight Structure, Easy Customization, WooCommerce Compatible, No Bloatware).
+- 9 core benefits of Hello Elementor customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
+- 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
+- 6 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur) with WordPress/WooCommerce platform mark.
+- 5 comprehensive FAQ accordion items directly answering merchant questions on non-coding customization, WooCommerce compatibility, speed optimization, third-party plugins, and ongoing post-customization support.
+- Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (5 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Missing App Router implementation for Hello Elementor theme customization | Ship slashless `/hello-elementor-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (5 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Hello Elementor hero graphic and unique feature icons under `public/assets/hello-elementor-theme-customization/` | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Minor phrasing and vocabulary improvements for services & FAQ text | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Hello Elementor theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a WordPress & WooCommerce development specialist founded in 2006 with 18+ years of experience, 5000+ completed projects, and 150+ in-house experts.
+- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/hello-elementor-theme-customization` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 6 Offer items, 5 FAQ items, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-20T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Hello Elementor theme customization", "WordPress Elementor developers", and "custom Hello Elementor theme WooCommerce".
+- Analytics tracks form submissions on `/request-quote` originating from `/hello-elementor-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/hello-elementor-theme-customization`; source/build URL guard passes.
+## GeneratePress Theme Customization (`/generatepress-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
+Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert GeneratePress theme customization, modular layout configuration, WooCommerce integration, speed optimization, and custom hook/filter development.
+Decision stage: partner selection, GeneratePress theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz GeneratePress theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 5 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for GeneratePress WordPress theme customization services?
+- How to customize GeneratePress theme for WooCommerce?
+- Dynamic Dreamz GeneratePress theme customization reviews and portfolio?
+- Can Dynamic Dreamz build custom layouts with GeneratePress Premium and Elements?
+- GeneratePress speed optimization and custom hook/filter development agency?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `GeneratePress Theme Customization Service` with direct answer paragraph.
+- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
+- 7 distinct theme features with vector icons and descriptions (Lightning-Fast Performance, SEO-Friendly Structure, Mobile Responsive Design, Modular Design, Customizable Layouts, WooCommerce Compatible, Secure & Stable).
+- 8 core benefits of GeneratePress customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimal Maintenance Cost).
+- 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
+- 6 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur) with WordPress/WooCommerce platform mark.
+- 5 comprehensive FAQ accordion items directly answering merchant questions on WooCommerce compatibility, non-coding customization, speed optimization, third-party plugins, and ongoing post-customization support.
+- Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (5 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Missing App Router implementation for GeneratePress theme customization | Ship slashless `/generatepress-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (5 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique GeneratePress hero graphic and unique feature icons under `public/assets/generatepress-theme-customization/` | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Minor phrasing and vocabulary improvements for features & why choose text | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz GeneratePress theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a WordPress & WooCommerce development specialist founded in 2006 with 18+ years of experience, 5000+ completed projects, and 150+ in-house experts.
+- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/generatepress-theme-customization` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 6 Offer items, 5 FAQ items, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-20T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "GeneratePress theme customization", "WordPress GeneratePress developers", and "custom GeneratePress theme WooCommerce".
+- Analytics tracks form submissions on `/request-quote` originating from `/generatepress-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/generatepress-theme-customization`; source/build URL guard passes.
+## OceanWP Theme Customization (`/oceanwp-theme-customization`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-20
+Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
+Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert OceanWP theme customization, responsive WooCommerce store design, custom styling, speed optimization, and third-party plugin integration.
+Decision stage: partner selection, OceanWP theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz OceanWP theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 7 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 5 accordion FAQs, and quote request CTA buttons.
+
+### Target prompts
+
+- Best agency for OceanWP WordPress theme customization services?
+- How to customize OceanWP theme for WooCommerce?
+- Dynamic Dreamz OceanWP theme customization reviews and portfolio?
+- Can Dynamic Dreamz build custom layouts with OceanWP and Elementor?
+- OceanWP speed optimization and custom third-party plugin integration agency?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `OceanWP Theme Customization Service` with direct answer paragraph.
+- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
+- 7 distinct theme features with vector icons and descriptions (Fast & Lightweight, Fully Responsive, SEO-Optimized, WooCommerce Ready, Highly Customizable, Multiple Demo Sites, Third-Party Plugin Support).
+- 7 core benefits of OceanWP customization (Fully Customizable Website, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Safe and Secure Payments, Zero Maintenance Cost).
+- 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
+- 6 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur) with WordPress/WooCommerce platform mark.
+- 5 comprehensive FAQ accordion items directly answering merchant questions on WooCommerce compatibility, non-coding customization, speed optimization, third-party plugins, and ongoing post-customization support.
+- Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (5 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Missing App Router implementation for OceanWP theme customization | Ship slashless `/oceanwp-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (5 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique OceanWP hero graphic and unique feature icons under `public/assets/oceanwp-theme-customization/` | Verified locally with 0 duplicate assets |
+| P1 | deferred | Content expansion | Minor phrasing and vocabulary improvements for hero & feature description text | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz OceanWP theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a WordPress & WooCommerce development specialist founded in 2006 with 18+ years of experience, 5000+ completed projects, and 150+ in-house experts.
+- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/oceanwp-theme-customization` navigation across marketing pages and service menus.
+- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 6 Offer items, 5 FAQ items, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-20T00:00:00+05:30`.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "OceanWP theme customization", "WordPress OceanWP developers", and "custom OceanWP theme WooCommerce".
+- Analytics tracks form submissions on `/request-quote` originating from `/oceanwp-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/oceanwp-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 141 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Impulse Theme Customization (`/impulse-theme-customization`)
 

@@ -59,28 +59,32 @@ export function ShopifyReasonsSection({
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-4 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
+        <div className="flex flex-wrap -mx-2 justify-center">
           {content.items.map((item) => (
-            <article
-              className="group relative min-h-[330px] rounded-[15px] bg-white p-0.5 transition-[background] duration-300 hover:bg-[linear-gradient(to_right,#15c064,#00d1ff)] focus-within:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:absolute after:right-0 after:bottom-0 after:left-0 after:z-20 after:h-3 after:rounded-b-[15px] after:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:opacity-0 after:transition-opacity after:duration-300 after:content-[''] hover:after:opacity-100 focus-within:after:opacity-100"
+            <div
+              className="w-1/3 px-2 mb-4 max-[991px]:w-1/2 max-[767px]:w-full"
               key={item.title}
             >
-              <div className="relative z-10 h-full rounded-[13px] bg-white px-[28px] pt-[38px] pb-[58px]">
-                <Image
-                  className="mb-5 size-[60px] object-contain"
-                  src={item.icon}
-                  alt={item.iconAlt}
-                  width={60}
-                  height={60}
-                />
-                <h3 className="mb-[5px] font-sans text-base leading-[26.72px] font-bold tracking-[0.32px] text-ink">
-                  {formatBrText(item.title, "max-[767px]:hidden")}
-                </h3>
-                <p className="text-base leading-[27.2px] font-medium tracking-[0.32px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
-                  {formatBrText(item.description, "max-[767px]:hidden")}
-                </p>
-              </div>
-            </article>
+              <article
+                className="group relative h-full min-h-[330px] rounded-[15px] bg-white p-0.5 transition-[background] duration-300 hover:bg-[linear-gradient(to_right,#15c064,#00d1ff)] focus-within:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:absolute after:right-0 after:bottom-0 after:left-0 after:z-20 after:h-3 after:rounded-b-[15px] after:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:opacity-0 after:transition-opacity after:duration-300 after:content-[''] hover:after:opacity-100 focus-within:after:opacity-100"
+              >
+                <div className="relative z-10 h-full rounded-[13px] bg-white px-[28px] pt-[38px] pb-[58px]">
+                  <Image
+                    className="mb-5 size-[60px] object-contain"
+                    src={item.icon}
+                    alt={item.iconAlt}
+                    width={60}
+                    height={60}
+                  />
+                  <h3 className="mb-[5px] font-sans text-base leading-[26.72px] font-bold tracking-[0.32px] text-ink">
+                    {formatBrText(item.title, "max-[767px]:hidden")}
+                  </h3>
+                  <p className="text-base leading-[27.2px] font-medium tracking-[0.32px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
+                    {formatBrText(item.description, "max-[767px]:hidden")}
+                  </p>
+                </div>
+              </article>
+            </div>
           ))}
         </div>
       </Container>

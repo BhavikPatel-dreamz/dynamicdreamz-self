@@ -722,6 +722,76 @@ Primary SEO intent: Prestige theme customization, Prestige Shopify theme customi
 | FAQ question grammar | `How much does it cost of Prestige Theme Customization Service?` | `How much does Prestige Theme Customization Service cost?` | Fixes grammatical phrasing in FAQ heading. | Low | deferred pending exact visible-copy approval |
 | Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
 
+## Astra Theme Customization (`/astra-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Astra theme customization, Astra WordPress theme customization service, customize Astra theme WordPress WooCommerce, fast lightweight WordPress theme development, hire Astra WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Astra Theme Customization Services \| Dynamic Dreamz` (54 chars) | Preserved live title (54 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional Astra Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (138 chars) | Preserved live meta description (138 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Benefits copy grammar | `A well-optimized and customized theme lowers the need for frequent maintenance.` | `A well-optimized and customized theme reduces the need for frequent maintenance.` | Smoother word choice ("reduces" vs "lowers"). | Low | deferred pending exact visible-copy approval |
+| Why choose copy phrasing | `We prioritize your requirements and offer customized solutions to meet your business requirements.` | `We prioritize your requirements and offer customized solutions to meet your business goals.` | Avoids repeating "requirements" twice in one sentence. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Kadence Theme Customization (`/kadence-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Kadence theme customization, Kadence WordPress theme customization service, customize Kadence theme WordPress WooCommerce, fast lightweight WordPress theme development, hire Kadence WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Kadence Theme Customization Services \| Dynamic Dreamz` (56 chars) | Preserved live title (56 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional Kadence Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (139 chars) | Preserved live meta description (139 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Benefits subtitle grammar | `Here are a few benefits you must have to know:` | `Here are a few key benefits of customizing the Kadence theme:` | Smoother business phrasing. | Low | deferred pending exact visible-copy approval |
+| Why choose copy phrasing | `Our priority is our clients' needs. We offer custom solutions designed to align with your business goals.` | Preserved live phrasing. | Clearly captures client-focused messaging. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Hello Elementor Theme Customization (`/hello-elementor-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Hello Elementor theme customization, Hello Elementor WordPress theme customization service, customize Hello Elementor theme WordPress WooCommerce, fast lightweight WordPress theme development, hire Elementor WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Hello Elementor Theme Customization \| Dynamic Dreamz` (52 chars) | Preserved live title (52 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional Hello Elementor theme customization services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (149 chars) | Preserved live meta description (149 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Services text grammar | `We set up and installed the Hello Elementor theme, ensuring proper configuration.` | `We set up and install the Hello Elementor theme, ensuring proper configuration.` | Changes past tense to present tense for consistency. | Low | deferred pending exact visible-copy approval |
+| FAQ answer phrasing | `We never let your theme down with our services.` | `Our clean development standards ensure your customized theme performs at peak speed.` | Professional refinement for clarity. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## GeneratePress Theme Customization (`/generatepress-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: GeneratePress theme customization, GeneratePress WordPress theme customization service, customize GeneratePress theme WordPress WooCommerce, fast lightweight WordPress theme development, hire GeneratePress WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `GeneratePress Theme Customization Services \| Dynamic Dreamz` (60 chars) | Preserved live title (60 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional GeneratePress Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (147 chars) | Preserved live meta description (147 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Features text grammar | `This theme is clean and optimized code for better search rankings.` | `This theme features clean and optimized code for better search engine rankings.` | Fixes sentence grammar. | Low | deferred pending exact visible-copy approval |
+| Why choose copy phrasing | `We have not stopped at the end of the customization. We provide continuous maintenance and updates for your website.` | `Our support doesn't end with customization—we provide continuous maintenance and updates for your website.` | Professional refinement for clarity. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## OceanWP Theme Customization (`/oceanwp-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: OceanWP theme customization, OceanWP WordPress theme customization service, customize OceanWP theme WordPress WooCommerce, fast lightweight WordPress theme development, hire OceanWP WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `OceanWP Theme Customization Services \| Dynamic Dreamz` (54 chars) | Preserved live title (54 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional OceanWP Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (141 chars) | Preserved live meta description (141 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Hero description phrasing | `providing a unique and engaging WordPress website that sweetens user experience and increases conversions.` | `providing a unique and engaging WordPress website that enhances user experience and increases conversions.` | Uses "enhances" instead of "sweetens" for business tone. | Low | deferred pending exact visible-copy approval |
+| Features text grammar | `Developers build it with clean, structured code for better search rankings.` | `Built with clean, structured code for better search engine rankings.` | Standardizes feature description grammar. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
 ## Impulse Theme Customization (`/impulse-theme-customization`)
 
 Status: visible recommendations deferred; live UI preserved during migration
