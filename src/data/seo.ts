@@ -997,6 +997,162 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  royalElementorKitThemeCustomization: {
+    path: "/royal-elementor-kit-theme-customization",
+    title: "Royal Elementor Kit Theme Customization | Dynamic Dreamz",
+    description:
+      "Get professional Royal Elementor Kit Theme Customization services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "Royal Elementor Kit theme customization",
+      "Royal Elementor Kit WordPress theme",
+      "Royal Elementor Kit customization services",
+      "WordPress Elementor developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-05-05T10:45:03+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Royal Elementor Kit Theme Customization | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  popularfxThemeCustomization: {
+    path: "/popularfx-theme-customization",
+    title: "PopularFX Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Get professional PopularFX theme customization services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "PopularFX theme customization",
+      "PopularFX WordPress theme",
+      "PopularFX theme customization services",
+      "WordPress PopularFX developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-05-16T10:30:21+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "PopularFX Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  bloghashThemeCustomization: {
+    path: "/bloghash-theme-customization",
+    title: "BlogHash Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Are you looking for a WordPress expert for BlogHash theme customization? Dynamic Dreamz can optimize your website for performance, SEO, and user engagement.",
+    keywords: [
+      "BlogHash theme customization",
+      "BlogHash WordPress theme",
+      "BlogHash theme customization service",
+      "WordPress BlogHash developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-05-19T03:25:55+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "BlogHash Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  goThemeCustomization: {
+    path: "/go-theme-customization",
+    title: "Go Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Get professional Go Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "Go theme customization",
+      "Go WordPress theme",
+      "Go theme customization service",
+      "WordPress Go developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-05-22T09:36:36+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Go Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  newsbloggerThemeCustomization: {
+    path: "/newsblogger-theme-customization",
+    title: "NewsBlogger Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Get professional NewsBlogger Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "NewsBlogger theme customization",
+      "NewsBlogger WordPress theme",
+      "NewsBlogger theme customization service",
+      "WordPress NewsBlogger developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-05-22T09:36:38+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "NewsBlogger Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  helloBizThemeCustomization: {
+    path: "/hello-biz-theme-customization",
+    title: "Hello Biz Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Get professional Hello Biz Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "Hello Biz theme customization",
+      "Hello Biz WordPress theme",
+      "Hello Biz theme customization services",
+      "WordPress Hello Biz developers",
+      "WordPress theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-05-23T09:19:43+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Hello Biz Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   generatepressThemeCustomization: {
     path: "/generatepress-theme-customization",
     title: "GeneratePress Theme Customization Services | Dynamic Dreamz",
@@ -1199,6 +1355,32 @@ export const pageSeo = {
       width: 1200,
       height: 630,
       alt: "Sense Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  beYoursThemeCustomization: {
+    path: "/be-yours-theme-customization",
+    title: "Be Yours Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Choose Be Yours Theme Customization Service by Dynamic Dreamz to create an elegant, user friendly online store.",
+    keywords: [
+      "Be Yours theme customization",
+      "Be Yours Shopify theme",
+      "Be Yours theme customization service",
+      "Shopify Be Yours developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-12-05T09:28:54+00:00",
+    modifiedTime: "2026-08-20T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Be Yours Theme Customization Service | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",

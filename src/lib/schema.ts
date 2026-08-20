@@ -64,9 +64,16 @@ import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-custom
 import { prestigeThemeCustomizationContent } from "@/content/prestige-theme-customization";
 import { impulseThemeCustomizationContent } from "@/content/impulse-theme-customization";
 import { senseThemeCustomizationContent } from "@/content/sense-theme-customization";
+import { beYoursThemeCustomizationContent } from "@/content/be-yours-theme-customization";
 import { astraThemeCustomizationContent } from "@/content/astra-theme-customization";
 import { kadenceThemeCustomizationContent } from "@/content/kadence-theme-customization";
 import { helloElementorThemeCustomizationContent } from "@/content/hello-elementor-theme-customization";
+import { royalElementorKitThemeCustomizationContent } from "@/content/royal-elementor-kit-theme-customization";
+import { popularfxThemeCustomizationContent } from "@/content/popularfx-theme-customization";
+import { bloghashThemeCustomizationContent } from "@/content/bloghash-theme-customization";
+import { goThemeCustomizationContent } from "@/content/go-theme-customization";
+import { newsbloggerThemeCustomizationContent } from "@/content/newsblogger-theme-customization";
+import { helloBizThemeCustomizationContent } from "@/content/hello-biz-theme-customization";
 import { generatepressThemeCustomizationContent } from "@/content/generatepress-theme-customization";
 import { oceanwpThemeCustomizationContent } from "@/content/oceanwp-theme-customization";
 import { neveThemeCustomizationContent } from "@/content/neve-theme-customization";
@@ -277,6 +284,36 @@ const helloElementorThemeCustomizationPageId = `${helloElementorThemeCustomizati
 const helloElementorThemeCustomizationServiceId = `${helloElementorThemeCustomizationPageUrl}#service`;
 const helloElementorThemeCustomizationFaqId = `${helloElementorThemeCustomizationPageUrl}#faq`;
 const helloElementorThemeCustomizationBreadcrumbId = `${helloElementorThemeCustomizationPageUrl}#breadcrumb`;
+const royalElementorKitThemeCustomizationPageUrl = absoluteUrl(pageSeo.royalElementorKitThemeCustomization.path);
+const royalElementorKitThemeCustomizationPageId = `${royalElementorKitThemeCustomizationPageUrl}#webpage`;
+const royalElementorKitThemeCustomizationServiceId = `${royalElementorKitThemeCustomizationPageUrl}#service`;
+const royalElementorKitThemeCustomizationFaqId = `${royalElementorKitThemeCustomizationPageUrl}#faq`;
+const royalElementorKitThemeCustomizationBreadcrumbId = `${royalElementorKitThemeCustomizationPageUrl}#breadcrumb`;
+const popularfxThemeCustomizationPageUrl = absoluteUrl(pageSeo.popularfxThemeCustomization.path);
+const popularfxThemeCustomizationPageId = `${popularfxThemeCustomizationPageUrl}#webpage`;
+const popularfxThemeCustomizationServiceId = `${popularfxThemeCustomizationPageUrl}#service`;
+const popularfxThemeCustomizationFaqId = `${popularfxThemeCustomizationPageUrl}#faq`;
+const popularfxThemeCustomizationBreadcrumbId = `${popularfxThemeCustomizationPageUrl}#breadcrumb`;
+const bloghashThemeCustomizationPageUrl = absoluteUrl(pageSeo.bloghashThemeCustomization.path);
+const bloghashThemeCustomizationPageId = `${bloghashThemeCustomizationPageUrl}#webpage`;
+const bloghashThemeCustomizationServiceId = `${bloghashThemeCustomizationPageUrl}#service`;
+const bloghashThemeCustomizationFaqId = `${bloghashThemeCustomizationPageUrl}#faq`;
+const bloghashThemeCustomizationBreadcrumbId = `${bloghashThemeCustomizationPageUrl}#breadcrumb`;
+const goThemeCustomizationPageUrl = absoluteUrl(pageSeo.goThemeCustomization.path);
+const goThemeCustomizationPageId = `${goThemeCustomizationPageUrl}#webpage`;
+const goThemeCustomizationServiceId = `${goThemeCustomizationPageUrl}#service`;
+const goThemeCustomizationFaqId = `${goThemeCustomizationPageUrl}#faq`;
+const goThemeCustomizationBreadcrumbId = `${goThemeCustomizationPageUrl}#breadcrumb`;
+const newsbloggerThemeCustomizationPageUrl = absoluteUrl(pageSeo.newsbloggerThemeCustomization.path);
+const newsbloggerThemeCustomizationPageId = `${newsbloggerThemeCustomizationPageUrl}#webpage`;
+const newsbloggerThemeCustomizationServiceId = `${newsbloggerThemeCustomizationPageUrl}#service`;
+const newsbloggerThemeCustomizationFaqId = `${newsbloggerThemeCustomizationPageUrl}#faq`;
+const newsbloggerThemeCustomizationBreadcrumbId = `${newsbloggerThemeCustomizationPageUrl}#breadcrumb`;
+const helloBizThemeCustomizationPageUrl = absoluteUrl(pageSeo.helloBizThemeCustomization.path);
+const helloBizThemeCustomizationPageId = `${helloBizThemeCustomizationPageUrl}#webpage`;
+const helloBizThemeCustomizationServiceId = `${helloBizThemeCustomizationPageUrl}#service`;
+const helloBizThemeCustomizationFaqId = `${helloBizThemeCustomizationPageUrl}#faq`;
+const helloBizThemeCustomizationBreadcrumbId = `${helloBizThemeCustomizationPageUrl}#breadcrumb`;
 const generatepressThemeCustomizationPageUrl = absoluteUrl(pageSeo.generatepressThemeCustomization.path);
 const generatepressThemeCustomizationPageId = `${generatepressThemeCustomizationPageUrl}#webpage`;
 const generatepressThemeCustomizationServiceId = `${generatepressThemeCustomizationPageUrl}#service`;
@@ -317,6 +354,11 @@ const senseThemeCustomizationPageId = `${senseThemeCustomizationPageUrl}#webpage
 const senseThemeCustomizationServiceId = `${senseThemeCustomizationPageUrl}#service`;
 const senseThemeCustomizationFaqId = `${senseThemeCustomizationPageUrl}#faq`;
 const senseThemeCustomizationBreadcrumbId = `${senseThemeCustomizationPageUrl}#breadcrumb`;
+const beYoursThemeCustomizationPageUrl = absoluteUrl(pageSeo.beYoursThemeCustomization.path);
+const beYoursThemeCustomizationPageId = `${beYoursThemeCustomizationPageUrl}#webpage`;
+const beYoursThemeCustomizationServiceId = `${beYoursThemeCustomizationPageUrl}#service`;
+const beYoursThemeCustomizationFaqId = `${beYoursThemeCustomizationPageUrl}#faq`;
+const beYoursThemeCustomizationBreadcrumbId = `${beYoursThemeCustomizationPageUrl}#breadcrumb`;
 const shopifyDevelopmentAgencyPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentAgency.path);
 const shopifyDevelopmentAgencyPageId = `${shopifyDevelopmentAgencyPageUrl}#webpage`;
 const shopifyDevelopmentAgencyServiceId = `${shopifyDevelopmentAgencyPageUrl}#service`;
@@ -2102,6 +2144,150 @@ export function createHelloElementorThemeCustomizationPageSchema() {
   });
 }
 
+export function createRoyalElementorKitThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.royalElementorKitThemeCustomization,
+    pageUrl: royalElementorKitThemeCustomizationPageUrl,
+    pageId: royalElementorKitThemeCustomizationPageId,
+    serviceId: royalElementorKitThemeCustomizationServiceId,
+    faqId: royalElementorKitThemeCustomizationFaqId,
+    breadcrumbId: royalElementorKitThemeCustomizationBreadcrumbId,
+    serviceName: "Royal Elementor Kit Theme Customization Services",
+    serviceType: "Royal Elementor Kit WordPress theme customization, Elementor page builder design, pre-designed templates, WooCommerce integration, speed optimization, and custom styling",
+    breadcrumbName: "Royal Elementor Kit Theme Customization Service",
+    audienceType:
+      "WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking professional Royal Elementor Kit theme customization",
+    faqs: royalElementorKitThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: royalElementorKitThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createPopularfxThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.popularfxThemeCustomization,
+    pageUrl: popularfxThemeCustomizationPageUrl,
+    pageId: popularfxThemeCustomizationPageId,
+    serviceId: popularfxThemeCustomizationServiceId,
+    faqId: popularfxThemeCustomizationFaqId,
+    breadcrumbId: popularfxThemeCustomizationBreadcrumbId,
+    serviceName: "PopularFX Theme Customization Services",
+    serviceType: "PopularFX WordPress theme customization, drag-and-drop page builder design, pre-built templates, WooCommerce integration, speed optimization, and custom styling",
+    breadcrumbName: "PopularFX Theme Customization Service",
+    audienceType:
+      "WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking professional PopularFX theme customization",
+    faqs: popularfxThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: popularfxThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createBloghashThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.bloghashThemeCustomization,
+    pageUrl: bloghashThemeCustomizationPageUrl,
+    pageId: bloghashThemeCustomizationPageId,
+    serviceId: bloghashThemeCustomizationServiceId,
+    faqId: bloghashThemeCustomizationFaqId,
+    breadcrumbId: bloghashThemeCustomizationBreadcrumbId,
+    serviceName: "BlogHash Theme Customization Services",
+    serviceType: "BlogHash WordPress theme customization, minimal blog design, custom layouts, Gutenberg block editor integration, speed optimization, and custom styling",
+    breadcrumbName: "BlogHash Theme Customization Service",
+    audienceType:
+      "WordPress site owners, bloggers, content creators, publishers, businesses, and digital agencies seeking professional BlogHash theme customization",
+    faqs: bloghashThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: bloghashThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createGoThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.goThemeCustomization,
+    pageUrl: goThemeCustomizationPageUrl,
+    pageId: goThemeCustomizationPageId,
+    serviceId: goThemeCustomizationServiceId,
+    faqId: goThemeCustomizationFaqId,
+    breadcrumbId: goThemeCustomizationBreadcrumbId,
+    serviceName: "Go Theme Customization Services",
+    serviceType: "Go WordPress theme customization, block editor optimization, custom typography, color styles, WooCommerce integration, speed optimization, and custom styling",
+    breadcrumbName: "Go Theme Customization Service",
+    audienceType:
+      "WordPress site owners, bloggers, businesses, WooCommerce merchants, and digital agencies seeking professional Go theme customization",
+    faqs: goThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: goThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createNewsbloggerThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.newsbloggerThemeCustomization,
+    pageUrl: newsbloggerThemeCustomizationPageUrl,
+    pageId: newsbloggerThemeCustomizationPageId,
+    serviceId: newsbloggerThemeCustomizationServiceId,
+    faqId: newsbloggerThemeCustomizationFaqId,
+    breadcrumbId: newsbloggerThemeCustomizationBreadcrumbId,
+    serviceName: "NewsBlogger Theme Customization Services",
+    serviceType: "NewsBlogger WordPress theme customization, magazine layouts, custom widgets, sidebar design, speed optimization, and custom styling",
+    breadcrumbName: "NewsBlogger Theme Customization Service",
+    audienceType:
+      "WordPress site owners, news publishers, bloggers, online magazines, content creators, and digital agencies seeking professional NewsBlogger theme customization",
+    faqs: newsbloggerThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: newsbloggerThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createHelloBizThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.helloBizThemeCustomization,
+    pageUrl: helloBizThemeCustomizationPageUrl,
+    pageId: helloBizThemeCustomizationPageId,
+    serviceId: helloBizThemeCustomizationServiceId,
+    faqId: helloBizThemeCustomizationFaqId,
+    breadcrumbId: helloBizThemeCustomizationBreadcrumbId,
+    serviceName: "Hello Biz Theme Customization Services",
+    serviceType: "Hello Biz WordPress theme customization, business website layouts, custom branding, Gutenberg block builder support, speed optimization, and custom styling",
+    breadcrumbName: "Hello Biz Theme Customization Service",
+    audienceType:
+      "WordPress site owners, startups, small businesses, corporate enterprises, digital agencies, and WooCommerce merchants seeking professional Hello Biz theme customization",
+    faqs: helloBizThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: helloBizThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
 export function createGeneratepressThemeCustomizationPageSchema() {
   return createServicePageSchema({
     page: pageSeo.generatepressThemeCustomization,
@@ -2288,6 +2474,30 @@ export function createSenseThemeCustomizationPageSchema() {
       answer: item.answer,
     })),
     offers: senseThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createBeYoursThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.beYoursThemeCustomization,
+    pageUrl: beYoursThemeCustomizationPageUrl,
+    pageId: beYoursThemeCustomizationPageId,
+    serviceId: beYoursThemeCustomizationServiceId,
+    faqId: beYoursThemeCustomizationFaqId,
+    breadcrumbId: beYoursThemeCustomizationBreadcrumbId,
+    serviceName: "Be Yours Theme Customization Service",
+    serviceType: "Be Yours Shopify theme customization, minimalistic store design, Liquid development, promotional banners, product filtering, mega menu support, and third-party app integration",
+    breadcrumbName: "Be Yours Theme Customization Service",
+    audienceType:
+      "Modern eCommerce brands, DTC retailers, Shopify merchants, and digital agencies seeking professional Be Yours theme customization",
+    faqs: beYoursThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: beYoursThemeCustomizationContent.services.items.map((item) => ({
       title: item.title,
       description: item.description,
     })),

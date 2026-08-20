@@ -764,6 +764,103 @@ Primary SEO intent: Hello Elementor theme customization, Hello Elementor WordPre
 | FAQ answer phrasing | `We never let your theme down with our services.` | `Our clean development standards ensure your customized theme performs at peak speed.` | Professional refinement for clarity. | Low | deferred pending exact visible-copy approval |
 | Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
 
+## Royal Elementor Kit Theme Customization (`/royal-elementor-kit-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Royal Elementor Kit theme customization, Royal Elementor Kit WordPress theme customization service, customize Royal Elementor Kit theme WordPress WooCommerce, fast lightweight WordPress theme development, hire Elementor WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Royal Elementor Kit Theme Customization \| Dynamic Dreamz` (57 chars) | Preserved live title (57 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional Royal Elementor Kit Theme Customization services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (152 chars) | Preserved live meta description (152 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Features text grammar | `With its responsive design ensures smooth display across all devices.` | `Its responsive design ensures a smooth display across all devices.` | Fixes sentence grammar. | Low | deferred pending exact visible-copy approval |
+| Why choose copy spelling | `We follow a structrued approach for project development to ensure high-quality results.` | `We follow a structured approach for project development to ensure high-quality results.` | Fixes typo in structured. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## PopularFX Theme Customization (`/popularfx-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: PopularFX theme customization, PopularFX WordPress theme customization service, customize PopularFX theme WordPress WooCommerce, fast lightweight WordPress theme development, hire PopularFX WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `PopularFX Theme Customization Services \| Dynamic Dreamz` (57 chars) | Preserved live title (57 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional PopularFX theme customization services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (145 chars) | Preserved live meta description (145 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Services title | `Our WordPress Theme <br> Customization Services` | `Our PopularFX Theme <br> Customization Services` | Improves keyword precision and matches sibling theme pages. | Low | deferred pending exact visible-copy approval |
+| FAQ answer grammar | `There is no fixed charge for the theme customization services.` | `There is no fixed charge for our theme customization services.` | Grammar refinement. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## BlogHash Theme Customization (`/bloghash-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: BlogHash theme customization, BlogHash WordPress theme customization service, customize BlogHash theme WordPress, blogging WordPress theme development, hire WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `BlogHash Theme Customization Service \| Dynamic Dreamz` (55 chars) | Preserved live title (55 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Are you looking for a WordPress expert for BlogHash theme customization? Dynamic Dreamz can optimize your website for performance, SEO, and user engagement.` (157 chars) | Preserved live meta description (157 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Services title | `Our WordPress Theme <br> Customization Services` | `Our BlogHash Theme <br> Customization Services` | Improves keyword precision and matches sibling theme pages. | Low | deferred pending exact visible-copy approval |
+| Features text grammar | `This theme offers you a distraction-free reading experience to your readers.` | `This theme offers a distraction-free reading experience to your readers.` | Eliminates redundant pronoun. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Go Theme Customization (`/go-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Go theme customization, Go WordPress theme customization service, customize Go theme WordPress WooCommerce, fast lightweight WordPress theme development, hire Go WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Go Theme Customization Service \| Dynamic Dreamz` (49 chars) | Preserved live title (49 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional Go Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (135 chars) | Preserved live meta description (135 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Services title | `Our WordPress Theme <br> Customization Services` | `Our Go Theme <br> Customization Services` | Improves keyword precision and matches sibling theme pages. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (8 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## NewsBlogger Theme Customization (`/newsblogger-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: NewsBlogger theme customization, NewsBlogger WordPress theme customization service, customize NewsBlogger theme WordPress news magazine, fast blogging WordPress theme development, hire NewsBlogger WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `NewsBlogger Theme Customization Service \| Dynamic Dreamz` (57 chars) | Preserved live title (57 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional NewsBlogger Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (143 chars) | Preserved live meta description (143 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Services title | `Our WordPress Theme <br> Customization Services` | `Our NewsBlogger Theme <br> Customization Services` | Improves keyword precision and matches sibling theme pages. | Low | deferred pending exact visible-copy approval |
+| Features subtitle grammar | `NewsBlogger theme is packed with essential features for bloggers and publishers.` | `The NewsBlogger theme is packed with essential features for bloggers and publishers.` | Adds missing article. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (8 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Hello Biz Theme Customization (`/hello-biz-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Hello Biz theme customization, Hello Biz WordPress theme customization service, customize Hello Biz theme WordPress business, business WordPress theme development, hire Hello Biz WordPress developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Hello Biz Theme Customization Services \| Dynamic Dreamz` (55 chars) | Preserved live title (55 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional Hello Biz Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (143 chars) | Preserved live meta description (143 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Services title | `Our WordPress Theme <br> Customization Services` | `Our Hello Biz Theme <br> Customization Services` | Improves keyword precision and matches sibling theme pages. | Low | deferred pending exact visible-copy approval |
+| Benefits text phrasing | `During the theme customization, we work on areas of improvement and sweeten your user experience.` | `During theme customization, we enhance key areas to improve your user experience.` | Replaces awkward word choice with professional phrasing. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Be Yours Theme Customization (`/be-yours-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-20
+Primary SEO intent: Be Yours theme customization, Be Yours Shopify theme customization service, customize Be Yours theme Shopify, RoarTheme Be Yours development, hire Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Be Yours Theme Customization Service \| Dynamic Dreamz` (54 chars) | Preserved live title (54 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Choose Be Yours Theme Customization Service by Dynamic Dreamz to create an elegant, user friendly online store.` (112 chars) | Preserved live meta description (112 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Hero title capitalization | `Be yours Theme Customization Service` | `Be Yours Theme Customization Service` | Capitalizes "Yours" to match official theme name. | Low | deferred pending exact visible-copy approval |
+| Hero description grammar | `The Be Yours theme Customization Service offers an elegant, user friendly online store.` | `The Be Yours Theme Customization Service offers an elegant, user-friendly online store.` | Adds hyphen in compound adjective and title cases Theme. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (9 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
 ## GeneratePress Theme Customization (`/generatepress-theme-customization`)
 
 Status: visible recommendations deferred; live UI preserved during migration
