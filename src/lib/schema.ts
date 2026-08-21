@@ -1,4 +1,5 @@
 import { ecwidFaqs, ecwidProcessContent } from "@/content/ecwid-to-shopify-migration";
+import { migratingThemeToOnlineStore20Content } from "@/content/migrating-a-theme-to-online-store-2-0";
 import { plusAgencyFaqs, plusAgencyProcessContent } from "@/content/shopify-plus-migration-agency";
 import { magentoPlusFaqs, magentoPlusProcessContent } from "@/content/magento-to-shopify-plus-migration";
 import { magentoFaqs, magentoProcessContent } from "@/content/magento-to-shopify-migration";
@@ -146,6 +147,9 @@ import {
   crossPlatformAppDevelopmentServices,
 } from "@/content/cross-platform-app-development";
 import { shopifyDevelopmentChennaiContent } from "@/content/shopify-development-company-in-chennai";
+import { shopifyMaintenanceServicesContent } from "@/content/shopify-maintenance-services";
+import { dentalClinicWebsiteDevelopmentCompanyContent } from "@/content/dental-clinic-website-development-company";
+import { shopifyDevelopmentDelhiContent } from "@/content/shopify-development-in-delhi";
 import {
   shopifyMobileAppBenefits,
   shopifyMobileAppDevelopmentFaqs,
@@ -300,6 +304,10 @@ const ecwidToShopifyMigrationPageId = `${ecwidToShopifyMigrationPageUrl}#webpage
 const ecwidToShopifyMigrationServiceId = `${ecwidToShopifyMigrationPageUrl}#service`;
 const ecwidToShopifyMigrationFaqId = `${ecwidToShopifyMigrationPageUrl}#faq`;
 const ecwidToShopifyMigrationBreadcrumbId = `${ecwidToShopifyMigrationPageUrl}#breadcrumb`;
+const migratingThemeToOnlineStore20PageUrl = absoluteUrl(pageSeo.migratingThemeToOnlineStore20.path);
+const migratingThemeToOnlineStore20PageId = `${migratingThemeToOnlineStore20PageUrl}#webpage`;
+const migratingThemeToOnlineStore20ServiceId = `${migratingThemeToOnlineStore20PageUrl}#service`;
+const migratingThemeToOnlineStore20BreadcrumbId = `${migratingThemeToOnlineStore20PageUrl}#breadcrumb`;
 const shopifyPlusMigrationAgencyPageUrl = absoluteUrl(pageSeo.shopifyPlusMigrationAgency.path);
 const shopifyPlusMigrationAgencyPageId = `${shopifyPlusMigrationAgencyPageUrl}#webpage`;
 const shopifyPlusMigrationAgencyServiceId = `${shopifyPlusMigrationAgencyPageUrl}#service`;
@@ -653,6 +661,21 @@ const shopifyDevelopmentChennaiPageId = `${shopifyDevelopmentChennaiPageUrl}#web
 const shopifyDevelopmentChennaiServiceId = `${shopifyDevelopmentChennaiPageUrl}#service`;
 const shopifyDevelopmentChennaiFaqId = `${shopifyDevelopmentChennaiPageUrl}#faq`;
 const shopifyDevelopmentChennaiBreadcrumbId = `${shopifyDevelopmentChennaiPageUrl}#breadcrumb`;
+const shopifyMaintenanceServicesPageUrl = absoluteUrl(pageSeo.shopifyMaintenanceServices.path);
+const shopifyMaintenanceServicesPageId = `${shopifyMaintenanceServicesPageUrl}#webpage`;
+const shopifyMaintenanceServicesServiceId = `${shopifyMaintenanceServicesPageUrl}#service`;
+const shopifyMaintenanceServicesFaqId = `${shopifyMaintenanceServicesPageUrl}#faq`;
+const shopifyMaintenanceServicesBreadcrumbId = `${shopifyMaintenanceServicesPageUrl}#breadcrumb`;
+const dentalClinicWebsiteDevelopmentPageUrl = absoluteUrl(pageSeo.dentalClinicWebsiteDevelopmentCompany.path);
+const dentalClinicWebsiteDevelopmentPageId = `${dentalClinicWebsiteDevelopmentPageUrl}#webpage`;
+const dentalClinicWebsiteDevelopmentServiceId = `${dentalClinicWebsiteDevelopmentPageUrl}#service`;
+const dentalClinicWebsiteDevelopmentFaqId = `${dentalClinicWebsiteDevelopmentPageUrl}#faq`;
+const dentalClinicWebsiteDevelopmentBreadcrumbId = `${dentalClinicWebsiteDevelopmentPageUrl}#breadcrumb`;
+const shopifyDevelopmentDelhiPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInDelhi.path);
+const shopifyDevelopmentDelhiPageId = `${shopifyDevelopmentDelhiPageUrl}#webpage`;
+const shopifyDevelopmentDelhiServiceId = `${shopifyDevelopmentDelhiPageUrl}#service`;
+const shopifyDevelopmentDelhiFaqId = `${shopifyDevelopmentDelhiPageUrl}#faq`;
+const shopifyDevelopmentDelhiBreadcrumbId = `${shopifyDevelopmentDelhiPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -3812,6 +3835,84 @@ export function createShopifyDevelopmentCompanyInChennaiPageSchema() {
   });
 }
 
+export function createShopifyMaintenanceServicesPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyMaintenanceServices,
+    pageUrl: shopifyMaintenanceServicesPageUrl,
+    pageId: shopifyMaintenanceServicesPageId,
+    serviceId: shopifyMaintenanceServicesServiceId,
+    faqId: shopifyMaintenanceServicesFaqId,
+    breadcrumbId: shopifyMaintenanceServicesBreadcrumbId,
+    serviceName: "Shopify Maintenance Services",
+    serviceType:
+      "Shopify store maintenance, regular updates, performance and speed optimization, bug fixes, troubleshooting, custom feature development, SEO support, and dedicated 24/7 technical support",
+    breadcrumbName: "Shopify Maintenance Services",
+    audienceType:
+      "eCommerce businesses, Shopify merchants, direct-to-consumer brands, and online store owners seeking expert ongoing Shopify support and maintenance",
+    faqs: shopifyMaintenanceServicesContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: shopifyMaintenanceServicesContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createDentalClinicWebsiteDevelopmentCompanyPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.dentalClinicWebsiteDevelopmentCompany,
+    pageUrl: dentalClinicWebsiteDevelopmentPageUrl,
+    pageId: dentalClinicWebsiteDevelopmentPageId,
+    serviceId: dentalClinicWebsiteDevelopmentServiceId,
+    faqId: dentalClinicWebsiteDevelopmentFaqId,
+    breadcrumbId: dentalClinicWebsiteDevelopmentBreadcrumbId,
+    serviceName: "Dental Clinic Website Development Company",
+    serviceType:
+      "Dental clinic website development, dentist website design, custom WordPress development, dental WooCommerce stores, appointment scheduling integrations, speed optimization, and ongoing maintenance for dental practices",
+    breadcrumbName: "Dental Clinic Website Development Company",
+    audienceType:
+      "Dentists, dental clinics, dental health practices, orthodontists, and dental agencies seeking custom dental website development solutions",
+    faqs: dentalClinicWebsiteDevelopmentCompanyContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: dentalClinicWebsiteDevelopmentCompanyContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentInDelhiPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInDelhi,
+    pageUrl: shopifyDevelopmentDelhiPageUrl,
+    pageId: shopifyDevelopmentDelhiPageId,
+    serviceId: shopifyDevelopmentDelhiServiceId,
+    faqId: shopifyDevelopmentDelhiFaqId,
+    breadcrumbId: shopifyDevelopmentDelhiBreadcrumbId,
+    serviceName: "Shopify Development in Delhi",
+    serviceType:
+      "Shopify store setup, custom theme development, Figma to Shopify conversion, custom app development, Shopify migration, maintenance, and 2.0 upgrades for eCommerce businesses in Delhi",
+    breadcrumbName: "Shopify Development in Delhi",
+    audienceType:
+      "eCommerce businesses, retail brands, D2C startups, and enterprise merchants in Delhi NCR seeking certified Shopify development services",
+    faqs: shopifyDevelopmentDelhiContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: shopifyDevelopmentDelhiContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
 export function serializeJsonLd(value: unknown) {
   return JSON.stringify(value).replace(/</g, "\\u003c");
 }
@@ -3846,6 +3947,31 @@ export function createEcwidToShopifyMigrationPageSchema() {
       description: step.description,
     })),
     videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createMigratingThemeToOnlineStore20PageSchema() {
+  return createIndustryPageSchema({
+    seo: pageSeo.migratingThemeToOnlineStore20,
+    pageUrl: migratingThemeToOnlineStore20PageUrl,
+    pageId: migratingThemeToOnlineStore20PageId,
+    breadcrumbId: migratingThemeToOnlineStore20BreadcrumbId,
+    breadcrumbName: "Migrate Theme to Online Store 2.0",
+    serviceId: migratingThemeToOnlineStore20ServiceId,
+    serviceName: "Complete Shopify 2.0 Migration Service",
+    serviceType:
+      "Shopify theme migration to Online Store 2.0, Liquid to JSON template conversion, app integration, SEO preservation, and store optimization",
+    audienceType:
+      "Shopify merchants, ecommerce businesses, and store owners upgrading to Shopify Online Store 2.0",
+    offerCatalog: {
+      title: "Our Shopify Migration Service",
+      items: migratingThemeToOnlineStore20Content.migrationService.sections.map(
+        (section) => ({
+          title: section.title,
+          description: section.description,
+        }),
+      ),
+    },
   });
 }
 

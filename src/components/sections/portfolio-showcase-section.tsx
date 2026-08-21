@@ -16,6 +16,7 @@ export type PortfolioShowcaseSectionProps = {
   content: {
     heading: string;
     description?: string;
+    eyebrow?: string;
     items: readonly PortfolioShowcaseItem[];
     category?: string;
     platformMark?: { src: string; width: number; height: number };
@@ -58,6 +59,11 @@ export function PortfolioShowcaseSection({
     <section className={className} data-section="portfolio" id="portfolio-showcase">
       <Container>
         <div className="text-center">
+          {content.eyebrow && (
+            <span className="eyebrow mb-2 block font-sans text-sm font-semibold tracking-wider text-[#d92128] uppercase">
+              {content.eyebrow}
+            </span>
+          )}
           <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(content.heading, headingBreakClassName)}
           </h2>

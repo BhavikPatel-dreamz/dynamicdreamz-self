@@ -1533,3 +1533,61 @@ Primary SEO intent: Shopify Certified Developers, Certified Shopify Experts, Sho
 | Services introduction | `A focused service summary captures relevant commercial searches without duplicating every Shopify service page on your website.` | `From custom storefronts and Liquid development to Shopify B2B, integrations and ongoing support, our certified developers can support focused work across your Shopify roadmap.` | Replaces internal SEO commentary with a buyer-focused service summary while preserving section intent. | High | deferred pending exact visible-copy approval |
 | FAQ outcome wording | The hiring answer says certified developers build `reliable, scalable, and future-ready ecommerce stores that support long-term business growth.` | `Combined with practical experience, credentialed developers can apply current Shopify conventions to storefront, Liquid, B2B, integration, and support requirements.` | Removes broad outcome implications and ties the answer to visible, externally evidenced capabilities. | Medium | deferred pending exact visible-copy approval |
 | Directory and credential freshness | Visible proof shows four credential counts plus Partner tier, 5.0 rating, 80+ reviews, and 2013 relationship date without a visible source-review date. | Add an approved `Evidence reviewed [date]` note and content owner; update all volatile facts together after each scheduled review. | Protects trust and citation accuracy when externally governed values change. | High | blocked pending leadership, client-success, and SEO governance approval |
+
+## Shopify Maintenance Services (`/shopify-maintenance-services`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: Shopify maintenance services, Shopify store maintenance, Shopify support agency, Shopify bug fixes, Shopify speed optimization, Shopify ongoing support.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Top Shopify Maintenance Services \| Dynamic Dreamz` (49 chars) | Preserved live title (49 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta description | Live description is 174 characters (`Ensure your Shopify store runs smoothly with expert Shopify maintenance Service from Dynamic Dreamz. We offer updates, performance optimization, bug fixes, & custom development.`) | `Ensure your Shopify store runs smoothly with expert Shopify maintenance from Dynamic Dreamz. We offer updates, performance optimization, and custom development.` (159 chars) | Fits strictly within the 70-160 character limit while preserving the live meaning and primary keywords. | High | implemented in metadata |
+| Service description grammar | `We offer complete Shopify maintenance that takes care of every facet of store maintenance.` | `We offer comprehensive Shopify maintenance that takes care of every facet of your online store.` | Avoids repetitive use of "maintenance" in the same sentence. | Low | deferred pending exact visible-copy approval |
+| FAQ password answer | `To inform customers that the store is under maintenance, you can activate the "Password Protection" feature, though there is no direct way.` | `To let customers know your store is undergoing maintenance, you can enable Shopify's Password Protection feature and add a customized maintenance message.` | Clarifies standard Shopify procedure in clearer, professional language. | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 services), `FAQPage` (12 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
+## Dental Clinic Website Development Company (`/dental-clinic-website-development-company`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: Dental Clinic Website Development Company, dental website development, dentist website design, dental clinic WordPress, dental practice web development.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Dental Clinic Website Development Company \| Dynamic Dreamz` (58 chars) | Preserved live title (58 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta description | Live description is 181 characters (`Build your dental brand with a top rated Dental Clinic Website Development Company. We offer website development, customization, optimization, and maintenance for dental websites.`) | `Build your brand with a top Dental Clinic Website Development Company. We offer custom website development, design, optimization, and ongoing maintenance.` (154 chars) | Fits strictly within the 70-160 character limit while preserving the live meaning and primary keywords. | High | implemented in metadata |
+| Hero grammar | `At Dynamic Dreamz, We are the best Dental Clinic Website Development Company and helps dentists and web development companies create websites for the dental industry.` | `At Dynamic Dreamz, we are a leading dental clinic website development company helping dentists and agencies build high-converting websites.` | Fixes subject-verb agreement ("We are... and helps") and mid-sentence capitalization. | Low | deferred pending exact visible-copy approval |
+| Process description typo | `...from planning to post-lunch support...` | `...from planning to post-launch support...` | Fixes typo ("post-lunch" -> "post-launch"). | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 services), `FAQPage` (8 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
+## Shopify Development in Delhi (`/shopify-development-in-delhi`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: Shopify development in Delhi, Shopify development company in Delhi, Shopify agency Delhi, hire Shopify developers in Delhi, Shopify experts Delhi.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `No.1 Company for Shopify Development in Delhi \| Dynamic Dreamz` (62 chars) | `No.1 Shopify Development in Delhi \| Dynamic Dreamz` (50 chars) | Fits strictly within the 15-60 character limit while preserving the live keyword intent and ranking equity. | High | implemented in metadata |
+| Meta description | Live description is 129 characters (`Choose Shopify development in Delhi. Expert Shopify development Company with 18+ Years of Experience. Hire DynamicDreamz today!`) | Preserved live description (129 chars). | Complies with repository 70-160 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Hero grammar | `...which provides customized eCommerce solutions that fit your business requirements.` | `...providing customized eCommerce solutions tailored to your business requirements.` | Enhances natural reading flow. | Low | deferred pending exact visible-copy approval |
+| Benefits copy | `Without technological knowledge, you can easily run your internet store.` / `Without technological errors, smoothly handle the expansion of your company.` | `Manage products, orders, and payments easily without requiring complex technical expertise.` / `Scale your store smoothly to support growing catalogs and high transaction volumes.` | Improves professional clarity and buyer-facing value propositions while preserving the core benefits. | Medium | deferred pending exact visible-copy approval |
+| Process description | `Dynamic Dreamz uses a structured Shopify development approach to make sure the best works for our clients.` | `Dynamic Dreamz follows a structured development approach to ensure optimal performance and outcomes for our clients.` | Clarifies phrasing without altering the process meaning. | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (8 services), `FAQPage` (5 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
+## Migrate Theme to Shopify Online Store 2.0 (`/migrating-a-theme-to-online-store-2-0`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: migrating a theme to online store 2.0, Shopify 2.0 migration service, Shopify theme migration, upgrade to Shopify 2.0, Shopify Online Store 2.0.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | Live title is 54 characters (`Complete Shopify 2.0 Migration Service \| Dynamic Dreamz`) | Preserved live title (54 chars). | Fits strictly within the 15-60 character limit while preserving the live keyword intent and ranking equity. | High | implemented in metadata |
+| Meta description | Live description is 157 characters (`Upgrade your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Our experts ensure a seamless transition for improved functionality and user experience.`) | Preserved live description (157 chars). | Complies with repository 70-160 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Hero copy | `Shopify has come up with an improvised Online Store 2.0...` | `Shopify’s Online Store 2.0 architecture offers advanced merchant tooling, streamlined theme maintenance, and effortless scalability...` | Replaces "improvised" with "advanced" for clearer technical communication. | Low | deferred pending exact visible-copy approval |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (7 migration phases), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
+

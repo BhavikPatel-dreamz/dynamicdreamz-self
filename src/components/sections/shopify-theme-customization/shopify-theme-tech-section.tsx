@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
+import { formatBrText } from "@/lib/text-formatting";
 
 const TECH_GRADIENTS: Record<string, string> = {
   Liquid: "linear-gradient(180deg, rgba(146, 0, 59, 0.06) 0%, rgba(255, 255, 255, 0) 100%)",
@@ -45,10 +46,10 @@ export function ShopifyThemeTechSection({ content }: ShopifyThemeTechSectionProp
       <Container>
         <div className="mx-auto max-w-[850px] text-center">
           <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
-            {content.title}
+            {formatBrText(content.title, "max-[1199px]:hidden")}
           </h2>
           <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
-            {content.subtitle}
+            {formatBrText(content.subtitle, "max-[1199px]:hidden")}
           </p>
         </div>
 
@@ -60,7 +61,7 @@ export function ShopifyThemeTechSection({ content }: ShopifyThemeTechSectionProp
 
             return (
               <div
-                className="w-1/4 px-2.5 pb-[30px] text-center max-[991px]:w-1/3 max-[767px]:w-1/2"
+                className="w-1/3 px-2.5 pb-[30px] text-center max-[767px]:w-1/2"
                 key={title}
               >
                 <div className="builder-block transition-transform duration-300 hover:-translate-y-2.5">

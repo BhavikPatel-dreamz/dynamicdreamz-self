@@ -13,6 +13,7 @@ export type AgencyServiceItem = {
   iconAlt: string;
   title: string;
   description: string;
+  bullets?: readonly string[];
   href?: string;
 };
 
@@ -34,6 +35,7 @@ export type AgencyServicesSectionProps = {
   className?: string;
   id?: string;
   hideCta?: boolean;
+  columns?: 2 | 3;
 };
 
 export function AgencyServicesSection({
@@ -43,6 +45,7 @@ export function AgencyServicesSection({
   className = "what-we-provide-sec pt-20 pb-0",
   id = "shopify-services",
   hideCta = false,
+  columns = 2,
 }: AgencyServicesSectionProps) {
   return (
     <section className={className} data-section="services" id={id}>
@@ -104,6 +107,25 @@ export function AgencyServicesSection({
                   <p className="mt-5 text-base font-medium leading-[27px] tracking-[0.32px] text-[#535353]">
                     {service.description}
                   </p>
+                  {service.bullets && service.bullets.length > 0 && (
+                    <ul className="mt-6 border-t border-[#d9d9d9] pt-6 font-sans text-base font-semibold leading-[27.2px] tracking-[0.32px] text-[#535353]">
+                      {service.bullets.map((bullet, idx) => (
+                        <li
+                          className="mb-4 flex items-center gap-3.5 text-base font-semibold leading-[27.2px] text-[#535353] last:mb-0"
+                          key={idx}
+                        >
+                          <Image
+                            src="/assets/icons/bullets-icon.svg"
+                            alt="Bullet point icon"
+                            width={22}
+                            height={22}
+                            className="h-[22px] w-[22px] shrink-0"
+                          />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
 
                   {hasLink && (
                     <div className="services-read-more absolute bottom-5 left-[35px] right-[40px] flex items-center border-t-[1.5px] border-[#d9d9d9] pt-5 text-base font-semibold text-[#e3342f] transition-colors max-[1199px]:bottom-[15px] max-[1199px]:left-5 max-[1199px]:right-5 max-[1199px]:pt-3.5 max-[1199px]:text-[15px] max-[767px]:bottom-2.5 max-[767px]:justify-center max-[767px]:pt-2.5">
@@ -127,9 +149,17 @@ export function AgencyServicesSection({
                 </div>
               );
 
+              const colClass =
+                columns === 3
+                  ? "w-1/3 max-[991px]:w-1/2 max-[767px]:w-full"
+                  : "w-1/2 max-[991px]:w-full";
+
               return (
                 <div
-                  className="group w-1/2 px-2 pb-6 transition-transform duration-300 ease-in-out hover:-translate-y-2.5 max-[991px]:w-full"
+                  className={cn(
+                    "group px-2 pb-6 transition-transform duration-300 ease-in-out hover:-translate-y-2.5",
+                    colClass,
+                  )}
                   key={service.title}
                 >
                   {service.href ? (

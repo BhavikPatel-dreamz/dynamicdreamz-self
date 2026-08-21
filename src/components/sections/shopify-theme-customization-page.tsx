@@ -1,16 +1,14 @@
+import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { FaqSection } from "@/components/sections/faq-section";
-import {
-  ShopifyAdvantagesSection,
-  ShopifyReasonsSection,
-} from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
-import { ShopifyServicesSection } from "@/components/sections/hire-shopify-developers/shopify-services-section";
-import { HiringHeroSection } from "@/components/sections/hiring-hero-section";
+import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
+import { ServiceHeroSection } from "@/components/sections/service-hero-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
 import { ShopifyThemeProcessSection } from "@/components/sections/shopify-theme-customization/shopify-theme-process-section";
 import { ShopifyThemeTechSection } from "@/components/sections/shopify-theme-customization/shopify-theme-tech-section";
 import { ShopifyThemesGridSection } from "@/components/sections/shopify-theme-customization/shopify-themes-grid-section";
+import { ThemeWhyChooseSection } from "@/components/sections/theme-customization/theme-why-choose-section";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
 
 export function ShopifyThemeCustomizationPage() {
@@ -19,7 +17,6 @@ export function ShopifyThemeCustomizationPage() {
     description: shopifyThemeCustomizationContent.hero.description,
     ctaLabel: shopifyThemeCustomizationContent.hero.ctaText,
     ctaHref: shopifyThemeCustomizationContent.hero.ctaHref,
-    stats: shopifyThemeCustomizationContent.hero.stats,
   };
 
   const brandsContent = {
@@ -37,18 +34,21 @@ export function ShopifyThemeCustomizationPage() {
       icon: item.icon,
       iconAlt: item.title,
     })),
+    cta: {
+      label: "request a quote",
+      href: "/request-quote",
+    },
   };
 
   const whyNeedContent = {
-    heading: shopifyThemeCustomizationContent.whyNeed.title,
-    description: shopifyThemeCustomizationContent.whyNeed.subtitle,
+    title: shopifyThemeCustomizationContent.whyNeed.title,
+    subtitle: shopifyThemeCustomizationContent.whyNeed.subtitle,
     items: shopifyThemeCustomizationContent.whyNeed.items.map((item) => ({
       title: item.title,
       description: item.description,
       icon: item.icon,
       iconAlt: item.title,
     })),
-    hideCta: true,
   };
 
   const benefitsContent = {
@@ -63,18 +63,18 @@ export function ShopifyThemeCustomizationPage() {
   };
 
   const whyChooseContent = {
-    heading: shopifyThemeCustomizationContent.whyChoose.title,
-    description: shopifyThemeCustomizationContent.whyChoose.subtitle,
+    title: shopifyThemeCustomizationContent.whyChoose.title,
+    subtitle: shopifyThemeCustomizationContent.whyChoose.subtitle,
     items: shopifyThemeCustomizationContent.whyChoose.items.map((item) => ({
       title: item.title,
       description: item.description,
       icon: item.icon,
       iconAlt: item.title,
     })),
-    hideCta: true,
   };
 
   const portfolioContent = {
+    eyebrow: "Portfolio",
     heading: shopifyThemeCustomizationContent.portfolio.title,
     description: shopifyThemeCustomizationContent.portfolio.subtitle,
     items: shopifyThemeCustomizationContent.portfolio.items.map((item) => ({
@@ -88,31 +88,50 @@ export function ShopifyThemeCustomizationPage() {
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <HiringHeroSection content={heroContent} hideReview />
+      <ServiceHeroSection
+        className="inner-hero-sec full-width-sec hide-review shopify-theme-customization-sec relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        content={heroContent}
+        variant="split"
+      />
       <IndustryBrandsSection
         content={brandsContent}
         heading={shopifyThemeCustomizationContent.brands.title}
+        items={shopifyThemeCustomizationContent.brands.items}
       />
-      <ShopifyServicesSection content={servicesContent} />
-      <ShopifyAdvantagesSection
-        columns={2}
+      <AgencyServicesSection
+        className="what-we-provide-sec pt-20 pb-0 max-[991px]:pt-[50px]"
+        columns={3}
+        content={servicesContent}
+        headerLayout="centered"
+        hideCta
+        id="what-we-provide"
+      />
+      <ThemeWhyChooseSection
+        className="why_dynamic_dreamz_sec dev pt-20 pb-20 max-[767px]:py-[50px]"
         content={whyNeedContent}
         id="why-need-customization"
+        variant="left-icon"
       />
-      <ShopifyReasonsSection content={benefitsContent} />
+      <ShopifyReasonsSection
+        className="shopify-customization-services-sec bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[767px]:py-[60px]"
+        content={benefitsContent}
+        id="benefits-of-customization"
+        layout="carousel"
+        carouselFullBleed
+      />
       <ShopifyThemeProcessSection content={shopifyThemeCustomizationContent.process} />
       <ShopifyThemeTechSection content={shopifyThemeCustomizationContent.technologies} />
       <ShopifyThemesGridSection content={shopifyThemeCustomizationContent.themes} />
-      <ShopifyAdvantagesSection
-        className="bg-[#fafaf7] py-20 max-[767px]:py-[60px]"
-        columns={2}
+      <ThemeWhyChooseSection
+        className="why_dynamic_dreamz_sec dev mt-20 pb-20 pt-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] two-column-icon-text-bg max-[991px]:mt-12.5 max-[991px]:py-14 max-[767px]:mt-10 max-[767px]:py-10"
         content={whyChooseContent}
         id="why-choose"
+        variant="left-icon"
       />
       <PortfolioShowcaseSection content={portfolioContent} />
       <div id="shopify-testimonials">
         <HappyClientSection
-          description="Our clients' success speaks for itself. Read testimonials from satisfied clients who have benefited from our Shopify theme customization services."
+          description="Our clients' success speaks for itself. Read testimonials from satisfied clients who have benefited from our Shopify maintenance services and see how we can help you achieve similar results."
           heading="Don't Just Take Our Word For It"
         />
       </div>

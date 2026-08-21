@@ -2,7 +2,7 @@
 
 - **Route**: `/shopify-theme-customization`
 - **Live URL Reference**: `https://www.dynamicdreamz.com/shopify-theme-customization/`
-- **Capture Date**: 2026-08-18
+- **Capture Date**: 2026-08-21
 - **Status**: Verified
 
 ---
@@ -20,19 +20,18 @@
 
 | Section # | Live Section Title / Purpose | Component / Implementation | Reused / Dedicated |
 |---|---|---|---|
-| 1 | Hero Section (`Shopify Theme Customization Services`) | `HiringHeroSection` / Inner Hero with `ReviewAnimation` | Reused / Composed |
+| 1 | Hero Section (`Shopify Theme Customization Services`) | `ServiceHeroSection` (`variant="split"`, left copy + right `ReviewAnimation`) | Reused |
 | 2 | Trusted by Leading Brands | `IndustryBrandsSection` | Reused |
-| 3 | Our Shopify Customization Services (6 service cards) | `ShopifyCustomizationServicesSection` | Section Component |
-| 4 | Why do you need Shopify Theme customization services? (4 reason cards) | `ShopifyThemeWhyNeedSection` | Section Component |
-| 5 | Benefits of the Shopify Theme Customization Service (11 benefit cards) | `ShopifyThemeBenefitsSection` | Section Component |
-| 6 | Process of Shopify Theme Customization Services (6 steps + center illustration) | `ShopifyThemeProcessSection` | Section Component |
-| 7 | Technology & Frameworks We Use (6 tech cards) | `ShopifyThemeTechSection` | Section Component |
-| 8 | Shopify Themes We Customize (31 theme cards) | `ShopifyThemesGridSection` | Section Component |
-| 9 | Why Choose Dynamic Dreamz For Shopify Theme Customization? (4 cards) | `ShopifyAdvantagesSection` / Why Choose Grid | Reused / Composed |
-| 10 | Snippets of Shopify Theme Customization Portfolio (6 projects) | `PortfolioShowcaseSection` & `PortfolioProjectCard` | Reused |
+| 3 | Our Shopify Customization Services (6 service cards) | `AgencyServicesSection` (`headerLayout="centered"`, `columns={3}`) | Reused |
+| 4 | Why do you need Shopify Theme customization services? (4 reason cards) | `ThemeWhyChooseSection` (`variant="left-icon"`) | Reused |
+| 5 | Benefits of the Shopify Theme Customization Service (11 benefit cards) | `ShopifyReasonsSection` (`layout="carousel"`, `carouselFullBleed`) | Reused |
+| 6 | Process of Shopify Theme Customization Services (6 steps + center illustration) | `ShopifyThemeProcessSection` | Dedicated Reusable |
+| 7 | Technology & Frameworks We Use (6 tech cards) | `ShopifyThemeTechSection` (3 columns) | Dedicated Reusable |
+| 8 | Shopify Themes We Customize (30 theme cards) | `ShopifyThemesGridSection` | Dedicated Reusable |
+| 9 | Why Choose Dynamic Dreamz For Shopify Theme Customization? (4 cards) | `ThemeWhyChooseSection` (`variant="left-icon"`, gradient background) | Reused |
+| 10 | Snippets of Shopify Theme Customization Portfolio (6 projects) | `PortfolioShowcaseSection` & `PortfolioProjectCard` (`columns={3}`) | Reused |
 | 11 | Don't Just Take Our Word For It (11 video testimonials) | `HappyClientSection` | Reused |
 | 12 | Frequently Asked Questions (11 accordion items) | `FaqSection` & `FaqAccordion` | Reused |
-| 13 | Consultation CTA Banner | `CtaBannerSection` | Reused |
 
 ---
 

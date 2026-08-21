@@ -2946,7 +2946,7 @@ Deferred under the live-UI preservation gate. The current server-rendered catalo
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-18
+Last reviewed: 2026-08-21
 
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 
@@ -3001,7 +3001,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service with 6 Offer items, 11 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-18T00:00:00+05:30`.
+- Set explicit freshness `modifiedTime` to `2026-08-21T00:00:00+05:30`.
 - Include route in `sitemap.xml` with priority 0.9 and weekly change frequency.
 
 ### Measurement plan
@@ -7781,6 +7781,162 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 - Production source verification confirms the 55-character title, 151-character description, index/follow directives, canonical, Open Graph, Twitter card, local 535 × 534 hero image, schema graph, sitemap entry, and robots allow path.
 - `npm run check:urls`, `npm run lint`, and `npm run build` pass. Next.js prerenders the route as static content, and the repository-wide SHA-256 audit reports zero duplicate asset groups.
 - Remaining governance gaps are volatile proof ownership, terminology approval, and first-party project evidence; no unsupported facts were added to schema.
+
+## Shopify Maintenance Services (`/shopify-maintenance-services`)
+
+Status: implemented; live-visible content preserved
+Last reviewed: 2026-08-21
+
+### Search and engine intent
+
+- Intent: capture high-intent commercial and informational searches for Shopify store maintenance, speed optimization, bug troubleshooting, ongoing support, and dedicated developer assistance.
+- Search audience: eCommerce store owners, Shopify merchants, direct-to-consumer brands, and digital businesses looking for reliable ongoing technical maintenance.
+
+### Target prompts
+
+- "Best Shopify maintenance and support agency"
+- "Who provides ongoing Shopify store updates, speed optimization, and bug fixes?"
+- "How much do Shopify maintenance packages cost?"
+- "Can Dynamic Dreamz handle Shopify store security audits and 24/7 technical support?"
+
+### Current strengths and available evidence
+
+- Live H1 targets "Shopify Maintenance Service" clearly.
+- 6 comprehensive service offering cards with bullet lists covering store updates & upgrades, performance optimization, bug fixes & troubleshooting, custom feature development, SEO & marketing support, and ongoing maintenance.
+- 12 in-depth FAQ items answering common maintenance questions with JSON-LD schema markup.
+- 6 verified Shopify portfolio project cards and 11 client video testimonial reviews.
+- Zero duplicate assets, clean Server Component rendering.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service, OfferCatalog (6 service offers), FAQPage (12 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schemas.
+- Ensure canonical URL is slashless `/shopify-maintenance-services`.
+- Freshness timestamp: `2026-08-21T00:00:00+05:30`.
+
+### Verification and remaining gaps
+
+- URL policy review: passed.
+- Lint and production build: passed.
+- Asset SHA-256 duplicate audit: 0 duplicates.
+
+## Dental Clinic Website Development Company (`/dental-clinic-website-development-company`)
+
+Status: implemented; live-visible content preserved
+Last reviewed: 2026-08-21
+
+### Search and engine intent
+
+- Intent: capture commercial and informational queries for dental clinic website development, dentist website design, WordPress healthcare solutions, online appointment booking systems, and dental practice WooCommerce web development.
+- Search audience: dentists, dental clinic owners, orthodontists, medical practices, and agencies looking for white-label dental web development services.
+
+### Target prompts
+
+- "Best dental clinic website development company"
+- "Who builds custom WordPress websites for dentists with appointment scheduling?"
+- "How much does dental website design and WooCommerce store development cost?"
+- "Can Dynamic Dreamz optimize and maintain my existing dental clinic website?"
+
+### Current strengths and available evidence
+
+- Live H1 targets "Dental Clinic Website Development Company" clearly.
+- 3 key benefit cards emphasizing custom design, simple patient management/booking features, and fast/secure performance.
+- 6 comprehensive service offering cards covering website development, customization, WooCommerce stores, speed optimization, custom features, and ongoing maintenance.
+- 4-step wave process (Discovery, Design & Development, Testing & Launch, Post Launch Support).
+- 6 verified WordPress portfolio case studies and 11 client video testimonial reviews.
+- 8 direct FAQ items with comprehensive answers and JSON-LD schema markup.
+- Zero duplicate assets, clean Server Component rendering.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service, OfferCatalog (6 service offers), FAQPage (8 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schemas.
+- Ensure canonical URL is slashless `/dental-clinic-website-development-company`.
+- Freshness timestamp: `2026-08-21T00:00:00+05:30`.
+
+### Verification and remaining gaps
+
+- URL policy review: passed.
+- Lint and production build: passed.
+- Asset SHA-256 duplicate audit: 0 duplicates.
+
+## Shopify Development in Delhi (`/shopify-development-in-delhi`)
+
+Status: implemented; live-visible content preserved
+Last reviewed: 2026-08-21
+
+### Search and engine intent
+
+- Intent: capture commercial and local search queries for Shopify development company in Delhi, Shopify agency Delhi, hire Shopify developers Delhi, and custom eCommerce store setup in Delhi NCR.
+- Search audience: retailers, direct-to-consumer brands, startups, and enterprise eCommerce merchants in Delhi and surrounding NCR looking for an experienced Shopify development agency.
+
+### Target prompts
+
+- "Best Shopify development company in Delhi"
+- "Top Shopify experts in Delhi NCR for custom theme and app development"
+- "How much does Shopify store development cost in Delhi?"
+- "Can Dynamic Dreamz migrate our store to Shopify and provide ongoing support in Delhi?"
+
+### Current strengths and available evidence
+
+- Live H1 targets "#1 Company For Shopify Development in Delhi" clearly.
+- 5 key benefit cards outlining why Delhi businesses choose Shopify.
+- 8 comprehensive service offering cards covering setup, custom theme design, Figma conversion, custom apps, migration, maintenance, 2.0 upgrades, and white-label development.
+- 4-step wave process (Discovery & Planning, Design & Development, Testing & Launch, Post Launch Support).
+- 5 reasons / why-choose cards detailing experience, custom solutions, SEO friendliness, end-to-end services, and proven results.
+- 6 verified Shopify portfolio case studies and 11 client video testimonial reviews.
+- 5 direct FAQ items with comprehensive answers and JSON-LD schema markup.
+- Full CTA banner leading to `/request-quote`.
+- Zero duplicate assets, clean Server Component rendering.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service, OfferCatalog (8 service offers), FAQPage (5 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schemas.
+- Ensure canonical URL is slashless `/shopify-development-in-delhi`.
+- Freshness timestamp: `2026-08-21T00:00:00+05:30`.
+
+### Verification and remaining gaps
+
+- URL policy review: passed.
+- Lint and production build: passed.
+- Asset SHA-256 duplicate audit: 0 duplicates.
+
+## Migrate Theme to Shopify Online Store 2.0 (`/migrating-a-theme-to-online-store-2-0`)
+
+Status: implemented; live-visible content preserved
+Last reviewed: 2026-08-21
+
+### Search and engine intent
+
+- Intent: capture informational, commercial, and transactional queries for Shopify Online Store 2.0 migration, migrating Shopify theme to 2.0, Liquid to JSON template conversion, and Shopify 2.0 upgrading services.
+- Search audience: eCommerce store owners, Shopify merchants, and agencies seeking expert support to upgrade existing Shopify themes to Online Store 2.0 architecture with sections everywhere and enhanced performance.
+
+### Target prompts
+
+- "How to migrate Shopify theme to Online Store 2.0"
+- "Shopify theme migration to 2.0 services"
+- "Benefits of upgrading Shopify store to 2.0"
+- "Convert Shopify Liquid template to JSON template"
+
+### Current strengths and available evidence
+
+- Live H1 targets "Migrate your Theme to Shopify’s New Online Store 2.0" clearly.
+- Comprehensive introduction outlining the importance of staying current with Shopify 2.0.
+- 4 key feature upgrade benefits: Lightning Fast Performance, Greater Flexibility, Advanced Developer Tools, Better SEO and Marketing.
+- 7 structured migration phases: Initial Assessment, Data Migration, Theme Migration & Customization, App Integration, SEO and Redirects, Testing & QA, Launch and Post-Launch Support.
+- 3 migration service value propositions: Expertise and Experience, Comprehensive Service, Custom Solutions.
+- Strategic conclusion with direct CTA to `/request-quote`.
+- Zero duplicate assets, clean Server Component rendering.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service, OfferCatalog (7 service phases), BreadcrumbList, Organization, and WebSite schemas.
+- Ensure canonical URL is slashless `/migrating-a-theme-to-online-store-2-0`.
+- Freshness timestamp: `2026-08-21T00:00:00+05:30`.
+
+### Verification and remaining gaps
+
+- URL policy review: passed.
+- Lint and production build: passed.
+- Asset SHA-256 duplicate audit: 0 duplicates.
 
 
 

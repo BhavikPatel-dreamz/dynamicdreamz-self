@@ -819,6 +819,34 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  migratingThemeToOnlineStore20: {
+    path: "/migrating-a-theme-to-online-store-2-0",
+    title: "Complete Shopify 2.0 Migration Service | Dynamic Dreamz",
+    description:
+      "Upgrade your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Our experts ensure a seamless transition for improved functionality and user experience.",
+    socialDescription:
+      "Upgrade your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Seamless transition, faster performance, sections everywhere, and improved functionality.",
+    keywords: [
+      "migrating a theme to online store 2.0",
+      "Shopify 2.0 migration service",
+      "Shopify theme migration",
+      "upgrade to Shopify 2.0",
+      "Shopify Online Store 2.0",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-07-29T10:48:47+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Migrate your Theme to Shopify Online Store 2.0 | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   salesforceToShopifyMigration: {
     path: "/salesforce-to-shopify-migration",
     title: "Salesforce to Shopify Migration Service | Dynamic Dreamz",
@@ -1095,7 +1123,7 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2024-07-01T00:00:00+00:00",
-    modifiedTime: "2026-08-18T00:00:00+05:30",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
@@ -2680,6 +2708,91 @@ export const pageSeo = {
       width: 1200,
       height: 630,
       alt: "Hire Shopify development company in Chennai | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyMaintenanceServices: {
+    path: "/shopify-maintenance-services",
+    title: "Top Shopify Maintenance Services | Dynamic Dreamz",
+    description:
+      "Ensure your Shopify store runs smoothly with expert Shopify maintenance from Dynamic Dreamz. We offer updates, performance optimization, and custom development.",
+    socialDescription:
+      "Expert Shopify maintenance services by Dynamic Dreamz: 24/7 technical support, speed optimization, bug fixes, theme updates, and dedicated ongoing maintenance.",
+    keywords: [
+      "Shopify maintenance services",
+      "Shopify store maintenance",
+      "Shopify support agency",
+      "Shopify bug fixes",
+      "Shopify speed optimization",
+      "Shopify maintenance plans",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-12-05T10:53:00+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Top Shopify Maintenance Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  dentalClinicWebsiteDevelopmentCompany: {
+    path: "/dental-clinic-website-development-company",
+    title: "Dental Clinic Website Development Company | Dynamic Dreamz",
+    description:
+      "Build your brand with a top Dental Clinic Website Development Company. We offer custom website development, design, optimization, and ongoing maintenance.",
+    socialDescription:
+      "Expert dental clinic website development company: custom WordPress design, online booking integrations, WooCommerce stores, speed optimization and maintenance.",
+    keywords: [
+      "Dental Clinic Website Development Company",
+      "dental website development",
+      "dentist website design",
+      "dental clinic WordPress",
+      "dental practice web development",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-07-23T11:19:06+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Dental Clinic Website Development Company | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInDelhi: {
+    path: "/shopify-development-in-delhi",
+    title: "No.1 Shopify Development in Delhi | Dynamic Dreamz",
+    description:
+      "Choose Shopify development in Delhi. Expert Shopify development Company with 18+ Years of Experience. Hire DynamicDreamz today!",
+    socialDescription:
+      "Expert Shopify development company in Delhi: custom theme design, app development, Shopify migration, 2.0 upgrades, and store maintenance.",
+    keywords: [
+      "Shopify development in Delhi",
+      "Shopify development company in Delhi",
+      "Shopify agency Delhi",
+      "hire Shopify developers in Delhi",
+      "Shopify experts Delhi",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-02-07T06:57:43+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in Delhi | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",

@@ -1,6 +1,7 @@
 import { ReviewAnimation } from "@/components/sections/shopify-plus-agency/review-animation";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { formatBrText } from "@/lib/text-formatting";
 
 export type HiringHeroStat = {
   value: string;
@@ -35,16 +36,16 @@ export function HiringHeroSection({
       <Container>
         <div className="inner-hero-content mx-auto max-w-[980px] text-center">
           <h1 className="font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10">
-            {content.title}
+            {formatBrText(content.title, "max-[1199px]:hidden")}
           </h1>
 
           <p className="max-w-225 mx-auto mt-6 font-medium leading-[34.2px] text-muted max-[991px]:mt-6 text-lg max-[991px]:text-base max-[991px]:leading-[30.4px]">
-            {content.description}
+            {formatBrText(content.description, "max-[1199px]:hidden")}
           </p>
 
           {content.secondaryDescription && (
             <p className="mx-auto mt-4 font-normal leading-[30.4px] text-muted text-lg max-[767px]:text-sm max-[767px]:leading-[25px]">
-              {content.secondaryDescription}
+              {formatBrText(content.secondaryDescription, "max-[1199px]:hidden")}
             </p>
           )}
 
