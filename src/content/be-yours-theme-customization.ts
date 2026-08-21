@@ -114,12 +114,12 @@ export const beYoursThemeCustomizationContent = {
       },
       {
         title: "Advanced Product Filtering",
-        icon: "/assets/be-yours-theme-customization/features/built-in-product-filtering.svg",
+        icon: "/assets/prestige-theme-customization/features/advanced-product-filtering.svg",
         iconAlt: "Advanced Product Filtering Icon",
       },
       {
         title: "Promotional Banners",
-        icon: "/assets/be-yours-theme-customization/features/promotional-banner-options.svg",
+        icon: "/assets/prestige-theme-customization/features/slideshow-high-impact-images.svg",
         iconAlt: "Promotional Banners Icon",
       },
       {

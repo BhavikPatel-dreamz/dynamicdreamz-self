@@ -33,6 +33,7 @@ export type AgencyServicesSectionProps = {
   showDescription?: boolean;
   className?: string;
   id?: string;
+  hideCta?: boolean;
 };
 
 export function AgencyServicesSection({
@@ -41,6 +42,7 @@ export function AgencyServicesSection({
   showDescription = true,
   className = "what-we-provide-sec pt-20 pb-0",
   id = "shopify-services",
+  hideCta = false,
 }: AgencyServicesSectionProps) {
   return (
     <section className={className} data-section="services" id={id}>
@@ -141,15 +143,17 @@ export function AgencyServicesSection({
               );
             })}
           </div>
-          <div className="text-center">
-            <ButtonLink
-              aria-label={content.cta.ariaLabel}
-              href={content.cta.href}
-              variant="primary"
-            >
-              {content.cta.label}
-            </ButtonLink>
-          </div>
+          {!hideCta && (
+            <div className="text-center">
+              <ButtonLink
+                aria-label={content.cta.ariaLabel}
+                href={content.cta.href}
+                variant="primary"
+              >
+                {content.cta.label}
+              </ButtonLink>
+            </div>
+          )}
         </div>
       </Container>
     </section>

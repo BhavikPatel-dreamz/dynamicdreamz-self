@@ -17,6 +17,7 @@ type ClientLogoSliderProps = {
   ariaLabel: string;
   items: readonly ClientLogoSliderItem[];
   variant: "industry" | "industryCompact" | "resources";
+  compact?: boolean;
 };
 
 function slidesForWidth(variant: ClientLogoSliderProps["variant"], width: number) {
@@ -32,7 +33,12 @@ function slidesForWidth(variant: ClientLogoSliderProps["variant"], width: number
   return 6;
 }
 
-export function ClientLogoSlider({ ariaLabel, items, variant }: ClientLogoSliderProps) {
+export function ClientLogoSlider({
+  ariaLabel,
+  items,
+  variant,
+  compact = false,
+}: ClientLogoSliderProps) {
   const [reducedMotion, setReducedMotion] = useState(false);
   const [slidesToShow, setSlidesToShow] = useState(
     variant === "industry" || variant === "industryCompact" ? 4 : 6,
@@ -73,8 +79,8 @@ export function ClientLogoSlider({ ariaLabel, items, variant }: ClientLogoSlider
     <div aria-label={ariaLabel} role="region">
       <Slider
         {...settings}
-        className={cn(styles.slider, variant === "industryCompact" && styles.compactSlider)}
-        key={`${variant}-${slidesToShow}-${reducedMotion ? "reduced" : "motion"}`}
+        className={cn(cn(styles.slider, variant === "industryCompact" && styles.compactSlider), compact && styles.compactSlider)}
+        key={`${variant}-${slidesToShow}-${reducedMotion ? "reduced" : "motion"}-${compact ? "compact" : "standard"}`}
       >
         {items.map((logo) => (
           <div key={logo.src}>

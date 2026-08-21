@@ -44,9 +44,9 @@ export function PrestigeThemeCustomizationPage() {
       />
       <IndustryBrandsSection
         content={brandsContent}
+        density="compact"
         heading={prestigeThemeCustomizationContent.brands.title}
         items={prestigeThemeCustomizationContent.brands.items}
-        variant="compact"
       />
       <ThemeFeaturesSection content={prestigeThemeCustomizationContent.features} />
       <ShopifyReasonsSection
@@ -63,7 +63,7 @@ export function PrestigeThemeCustomizationPage() {
         content={prestigeThemeCustomizationContent.whyChoose}
         preserveDesktopTypography
         preserveLiveIconSize
-        variant="top-icon"
+        variant="top-icon-mobile"
       />
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"

@@ -3,6 +3,7 @@ import { ReviewAnimation } from "@/components/sections/shopify-plus-agency/revie
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { shopifyPlusAgencyHero } from "@/content/shopify-plus-agency";
+import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
 
 export type ServiceHeroReviewItem = {
@@ -46,6 +47,9 @@ export type ServiceHeroSectionProps = {
   variant?: "split" | "centered";
   leftColClassName?: string;
   rightColClassName?: string;
+  imageClassName?: string;
+  reviewClassName?: string;
+  bodyClassName?: string;
 };
 
 export function ServiceHeroSection({
@@ -54,6 +58,9 @@ export function ServiceHeroSection({
   variant = "split",
   leftColClassName,
   rightColClassName,
+  imageClassName,
+  reviewClassName,
+  bodyClassName,
 }: ServiceHeroSectionProps) {
   const ctaHref = content.ctaHref ?? "/request-quote";
 
@@ -97,18 +104,31 @@ export function ServiceHeroSection({
                 {content.paragraphs ? (
                   content.paragraphs.map((paragraph, idx) => (
                     <p
-                      className="mt-4 mb-4 font-sans text-base font-normal leading-[30.4px] text-muted first:mt-6 last:mb-6"
+                      className={cn(
+                        "mt-4 mb-4 font-sans text-base font-normal leading-[30.4px] text-muted first:mt-6 last:mb-6",
+                        bodyClassName,
+                      )}
                       key={idx}
                       dangerouslySetInnerHTML={{ __html: paragraph }}
                     />
                   ))
                 ) : (
                   <>
-                    <p className="mt-6 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted max-[991px]:my-4">
+                    <p
+                      className={cn(
+                        "mt-6 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted max-[991px]:my-4",
+                        bodyClassName,
+                      )}
+                    >
                       {formatBrText(content.description)}
                     </p>
                     {content.secondaryDescription && (
-                      <p className="mt-4 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted">
+                      <p
+                        className={cn(
+                          "mt-4 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted",
+                          bodyClassName,
+                        )}
+                      >
                         {formatBrText(content.secondaryDescription)}
                       </p>
                     )}
@@ -201,18 +221,31 @@ export function ServiceHeroSection({
               {content.paragraphs ? (
                 content.paragraphs.map((paragraph, idx) => (
                   <p
-                    className="mt-4 mb-4 text-base font-normal leading-[30.4px] text-muted first:mt-6 last:mb-6 max-[1199px]:text-base max-[1199px]:leading-[30.4px]"
+                    className={cn(
+                      "mt-4 mb-4 text-base font-normal leading-[30.4px] text-muted first:mt-6 last:mb-6 max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
+                      bodyClassName,
+                    )}
                     key={idx}
                     dangerouslySetInnerHTML={{ __html: paragraph }}
                   />
                 ))
               ) : (
                 <>
-                  <p className="mt-6 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
+                  <p
+                    className={cn(
+                      "mt-6 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
+                      bodyClassName,
+                    )}
+                  >
                     {formatBrText(content.description)}
                   </p>
                   {content.secondaryDescription && (
-                    <p className="mt-4 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
+                    <p
+                      className={cn(
+                        "mt-4 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
+                        bodyClassName,
+                      )}
+                    >
                       {formatBrText(content.secondaryDescription)}
                     </p>
                   )}
@@ -235,7 +268,10 @@ export function ServiceHeroSection({
                 <div className="service-img flex justify-center">
                   <Image
                     alt={content.image.alt}
-                    className="h-auto w-full max-w-[560px] object-contain"
+                    className={cn(
+                      "h-auto w-full max-w-[560px] object-contain",
+                      imageClassName,
+                    )}
                     height={content.image.height}
                     priority
                     src={content.image.src}
@@ -243,7 +279,12 @@ export function ServiceHeroSection({
                   />
                 </div>
                 {content.reviews && content.reviews.length > 0 && (
-                  <div className="review-wrap mt-[57px] flex gap-[15px] justify-center max-[991px]:flex-col max-[991px]:items-center max-[991px]:gap-4 max-[991px]:mt-8">
+                  <div
+                    className={cn(
+                      "review-wrap mt-[57px] flex gap-[15px] justify-center max-[991px]:flex-col max-[991px]:items-center max-[991px]:gap-4 max-[991px]:mt-8",
+                      reviewClassName,
+                    )}
+                  >
                     {content.reviews.map((review) => (
                       <a
                         className="review-box relative z-0 w-[calc(33.33%-10px)] rounded-[8px] p-[17px_12px_10px] text-center shadow-sm transition-transform hover:-translate-y-0.5 before:absolute before:-inset-[2px] before:-z-20 before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] after:absolute after:inset-0 after:-z-10 after:rounded-[8px] after:bg-white max-[991px]:w-full max-[991px]:max-w-[400px] max-[991px]:flex max-[991px]:flex-row-reverse max-[991px]:items-center max-[991px]:justify-between max-[991px]:p-[18px_24px]"

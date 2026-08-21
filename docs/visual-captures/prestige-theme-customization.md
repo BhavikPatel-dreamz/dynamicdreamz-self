@@ -89,7 +89,7 @@
 - Brand slider: 4/3/2 visible logos across desktop/tablet/mobile, 2-second autoplay, 500ms transition, infinite looping, draggable/swipe interaction, and pause-on-focus accessibility behavior.
 - Feature grid: 3/2/1 columns across desktop/tablet/mobile.
 - Service cards: 2/1 columns; live 16px/27px paragraph typography retained on mobile for this route.
-- Why-choose grid: 2/1 columns; each card stacks its 66x70px icon, title, and description on separate lines, and the live 16px/27.2px paragraph typography is retained on mobile for this route.
+- Why-choose grid: 2/1 columns; each card places its 66x70px icon beside the title/description above 767px, then stacks the icon, title, and description into separate rows at 767px and below. The live 16px/27.2px paragraph typography is retained on mobile for this route.
 - Portfolio: 3/2/1 columns with the live hover overlay, category badge, project label, and external-link behavior.
 - FAQ: first item expanded by default; hover/focus and expanded controls preserve the shared accessible accordion behavior.
 - Hero artwork: stretched to the live desktop width, half-width at tablet, full-width on mobile, with the measured 25px tablet/mobile offset below the CTA.

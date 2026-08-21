@@ -479,6 +479,26 @@ Primary SEO intent: WordPress development company India, custom WordPress develo
 | VideoObject structured data | Live page lacked structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes in JSON-LD with authentic upload dates and YouTube URLs matching visible testimonials. | Improves video indexing and search eligibility without changing visible UI. | High | implemented in schema |
 | Service card alt text | Several icons on live site had generic or empty alt text. | Descriptive, context-specific alt text (e.g. `WordPress Icon`, `WooCommerce Icon`, `Speed Up Icon`) for all service icons. | Improves accessibility and image search indexation without altering visible layout. | High | implemented as a nonvisual accessibility correction |
 
+## WordPress Development Company in India (`/wordpress-development-company`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: WordPress development company India, custom WordPress
+website development, theme and plugin development, WooCommerce, migration,
+optimization, maintenance, and white-label WordPress delivery.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta description | Live metadata combines an unrelated Shopify-in-Chennai sentence with the WordPress description. | `Hire Dynamic Dreamz, a WordPress development company in India, for custom websites, themes, plugins, WooCommerce, migration, optimization and support.` | Removes unrelated intent and provides an accurate 150-character page summary without changing visible copy. | High | implemented in metadata |
+| Hero description | `Transform your online presence with the best WordPress development company in India.` | `Transform your online presence with an experienced WordPress development company in India.` | Replaces an unsupported superlative while preserving the service and location intent. | High | deferred pending claim evidence and exact visible-copy approval |
+| Hero secondary description | `Hire WordPress developers & designers from the best WordPress website development company in India.` | `Hire WordPress developers and designers from an experienced WordPress website development company in India.` | Improves readability and removes an unsupported ranking claim. | High | deferred pending claim evidence and exact visible-copy approval |
+| WordPress benefits conclusion | `Let’s Choose Dynamic Dreamz as a WordPress development company in India.` | `Choose Dynamic Dreamz as your WordPress development company in India.` | Corrects grammar and makes the action direct without changing intent. | Low | deferred pending exact visible-copy approval |
+| Process introduction | `As the best WordPress development company in India, we develop WordPress websites that hold customers' attention, win their hearts, and build an enduring relationship.` | `As a WordPress development company in India, we build websites designed to engage customers and support lasting relationships.` | Removes an unsupported superlative and tightens vague promotional language. | Medium | deferred pending exact visible-copy approval |
+| FAQ ranking answer | `As the top WordPress development company in India, Dynamic Dreamz is renowned for providing custom, high-quality WordPress solutions.` | `Dynamic Dreamz provides custom WordPress solutions in India, including websites, themes, plugins, WooCommerce, migration, optimization, and ongoing support.` | Replaces an unsupported ranking claim with visible, verifiable service scope. | High | deferred pending claim evidence and exact visible-copy approval |
+| Theme customization typo | `Elementer` | `Elementor` | Corrects the page-builder product name. | Low | deferred pending exact visible-copy approval |
+| Project spelling | `Quite Events` | `Quiet Events` | Corrects the project-name typo while preserving its destination. | Low | deferred pending exact visible-copy approval |
+| Image alt text | The live hero and several icons use filename-like or empty alt text. | Use purpose-specific alt text for the hero and meaningful icons; keep the timeline marker decorative. | Improves accessibility and image-search context without altering the layout. | High | implemented as a nonvisual accessibility correction |
+
 ## Shopify Apps (`/shopify-apps`)
 
 Status: visible recommendations deferred; live UI preserved during migration

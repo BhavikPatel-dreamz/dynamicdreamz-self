@@ -438,6 +438,32 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  wordpressDevelopmentCompany: {
+    path: "/wordpress-development-company",
+    title: "Hire WordPress Development Company India | Dynamic Dreamz",
+    description:
+      "Hire Dynamic Dreamz, a WordPress development company in India, for custom websites, themes, plugins, WooCommerce, migration, optimization and support.",
+    keywords: [
+      "WordPress development company India",
+      "WordPress website development company",
+      "custom WordPress development services",
+      "WordPress theme development India",
+      "WooCommerce development company",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-10-09T05:51:59+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "WordPress Development Company in India | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   hireWordPressDevelopers: {
     path: "/hire-wordpress-developers",
     title: "Hire WordPress Developers | Dynamic Dreamz",

@@ -60,6 +60,19 @@
   overflow: hidden;
 }
 
+.compactSlider,
+.compactSlider .item,
+.compactSlider :global(.slick-list),
+.compactSlider :global(.slick-track),
+.compactSlider :global(.slick-slide),
+.compactSlider :global(.slick-slide > div) {
+  height: 70px;
+}
+
+.compactSlider .industryItem img {
+  max-height: 70px;
+}
+
 .slider :global(.slick-list:active) {
   cursor: grabbing;
 }

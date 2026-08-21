@@ -19,7 +19,7 @@ export type ThemeWhyChooseSectionProps = {
   id?: string;
   preserveDesktopTypography?: boolean;
   preserveLiveIconSize?: boolean;
-  variant?: "left-icon" | "top-icon";
+  variant?: "left-icon" | "top-icon" | "top-icon-mobile";
 };
 
 export function ThemeWhyChooseSection({
@@ -43,7 +43,7 @@ export function ThemeWhyChooseSection({
         </div>
 
         <div className="why_dynamic_dreamz_main mt-[60px] max-[991px]:mt-5">
-          <ul className="grid grid-cols-2 max-[991px]:grid-cols-1 list-none p-0 m-0">
+          <ul className="why_dynamic_dreamz-grid grid grid-cols-2 max-[991px]:grid-cols-1 list-none p-0 m-0">
             {content.items.map((item, index) => {
               const isEvenCol = index % 2 === 0;
               const isLastRow = index >= content.items.length - 2;
@@ -51,8 +51,12 @@ export function ThemeWhyChooseSection({
 
               return (
                 <li
-                  className={`flex p-[51px] max-[1199px]:p-8 max-[767px]:p-5 border-black/5 ${
-                    variant === "top-icon" ? "flex-col items-start" : "items-start"
+                  className={`flex p-[51px] max-[1199px]:p-8 max-[767px]:py-5 max-[767px]:px-0 border-black/5 ${
+                    variant === "top-icon"
+                      ? "flex-col items-start"
+                      : variant === "top-icon-mobile"
+                        ? "items-start max-[767px]:flex-col"
+                        : "items-start"
                   } ${
                     isEvenCol ? "border-r max-[991px]:border-r-0" : ""
                   } ${!isLastRow ? "border-b" : "max-[991px]:border-b"} ${
@@ -66,7 +70,11 @@ export function ThemeWhyChooseSection({
                         ? "h-[70px] w-[66px]"
                         : "size-[66px] max-[767px]:size-[50px]"
                     } ${
-                      variant === "top-icon" ? "mb-5 max-[767px]:mb-3.5" : "mr-5 max-[767px]:mr-3.5"
+                      variant === "top-icon"
+                        ? "mb-5 max-[767px]:mb-3.5"
+                        : variant === "top-icon-mobile"
+                          ? "mr-5 max-[767px]:mr-0 max-[767px]:mb-3.5"
+                          : "mr-5 max-[767px]:mr-3.5"
                     }`}
                   >
                     <Image

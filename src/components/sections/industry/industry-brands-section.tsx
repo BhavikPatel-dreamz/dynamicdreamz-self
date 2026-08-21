@@ -15,7 +15,7 @@ type IndustryBrandsSectionProps = {
   heading?: string;
   items?: readonly ClientLogoSliderItem[];
   mobileSpacing?: "standard" | "spacious";
-  variant?: "default" | "compact";
+  density?: "standard" | "compact";
   className?: string;
 };
 
@@ -24,11 +24,11 @@ export function IndustryBrandsSection({
   heading,
   items = industryBrandLogos,
   mobileSpacing = "standard",
-  variant = "default",
+  density = "standard",
   className,
 }: IndustryBrandsSectionProps) {
   const hasSpaciousMobileLayout = mobileSpacing === "spacious";
-  const isCompact = variant === "compact";
+  const isCompact = density === "compact";
   const ariaLabel = content.brands?.ariaLabel ?? content.ariaLabel ?? "Trusted Brands";
 
   return (
@@ -74,6 +74,7 @@ export function IndustryBrandsSection({
         <div className={isCompact ? "right-col w-2/3 max-[1199px]:w-[70%] max-[991px]:w-full" : "right-col w-[69%] max-[1199px]:w-[70%] max-[991px]:w-full"}>
           <ClientLogoSlider
             ariaLabel={ariaLabel}
+            compact={isCompact}
             items={items}
             variant={isCompact ? "industryCompact" : "industry"}
           />

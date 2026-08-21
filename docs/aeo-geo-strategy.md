@@ -2200,6 +2200,110 @@ integration benefits.
 - Link to `/woocommerce-development` and `/white-label-wordpress-development-services`.
 - Route portfolio continuation to `/our-work`.
 
+## WordPress Development Company in India (`/wordpress-development-company`)
+
+Status: implemented and verified; visible recommendations deferred
+Last reviewed: 2026-08-21
+Owner: SEO, content, development, leadership, sales, and client success
+Primary audience: Indian and global businesses comparing custom WordPress
+development companies, plus agencies seeking WordPress and white-label delivery.
+Decision stage: provider comparison, capability validation, and quote enquiry.
+
+### Page role
+
+This is the India-focused commercial WordPress company landing page. It differs
+from `/wordpress-development` by adding vendor-selection proof, reasons to choose
+Dynamic Dreamz, platform benefits, a delivery process, and India-specific FAQs.
+The legacy route is retained canonically as `/wordpress-development-company`.
+
+### Target prompts
+
+- Which WordPress development company in India offers custom themes, plugins,
+  WooCommerce, headless WordPress, optimization, and maintenance?
+- Why choose Dynamic Dreamz for WordPress development?
+- How long does WordPress website development take in India?
+- Can Dynamic Dreamz migrate an existing website to WordPress?
+- Does Dynamic Dreamz provide support after a WordPress website launches?
+
+### Current strengths and available evidence
+
+- The live page has a direct commercial H1, two-paragraph service summary, nine
+  service cards, six provider-selection cards, eight platform-benefit entries,
+  four delivery steps, six project examples, eleven video testimonials, eight
+  buyer FAQs, and quote CTAs.
+- Existing local assets and shared components already cover client logos,
+  review marks, service icons, project imagery, testimonial media, portfolio,
+  FAQ, CTA, and four process icons without duplication.
+- The live page states 500+ WordPress websites and delivery since 2006, but the
+  portfolio counter and client claims still require centralized provenance.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The requested legacy route was not implemented locally. | Added the canonical slashless route, sitemap entry, metadata, and matching page graph. | Verified in rendered HTML, sitemap generation, URL-policy check, and production build. |
+| P0 | implemented | Structured data | Legacy Yoast output was generic and contained unrelated Shopify FAQ/entity data. | Emitted WebPage, Service, BreadcrumbList, FAQPage, and eleven visible VideoObject nodes linked to the shared Organization/WebSite graph. | Verified rendered JSON-LD against the visible page content. |
+| P1 | implemented | Media and rendering | The legacy page depended on remote WordPress assets and client-rendered carousels. | Used deduplicated local assets, explicit dimensions, server-rendered content, and minimal client islands only for slider, drag, dialog, menu, and accordion behavior. | Zero-duplicate asset audit, source scan, responsive screenshots, and interaction checks completed. |
+| P1 | deferred | Proof provenance | `500+ WordPress websites` and testimonial outcome claims lack a documented public evidence owner. | Link approved project evidence and define claim provenance in the shared fact-governance process. | Leadership and client-success approval. |
+| P1 | deferred | Overlapping intent | `/wordpress-development` and `/wordpress-development-company` target closely related commercial queries. | Document a canonical intent map and decide whether both pages remain distinct before launch. | SEO owner decision supported by search/traffic data. |
+| P2 | deferred | Visible copy quality | Live headings and paragraphs include awkward grammar, unsupported superlatives, and small inconsistencies. | Use the exact approval-ready proposals in `docs/page-content-improvements.md`; preserve live copy until approved. | Project-owner approval of each visible replacement. |
+
+### Suggested answer copy
+
+Keep the live-visible wording for migration parity. Any clearer vendor-selection
+summary, claim qualification, or grammar correction remains approval-dependent.
+
+### Entity, evidence, and authorship actions
+
+- Connect the Service node to the stable Dynamic Dreamz Organization entity.
+- Keep the founding-year and service claims consistent with approved company
+  facts and visible copy.
+- Map the six project examples and eleven testimonials to first-party case-study
+  evidence when attribution, scope, and outcomes are approved.
+
+### Internal-link and conversion actions
+
+- Preserve `get in touch` and `request a quote` flows to `/request-quote`.
+- Preserve the portfolio continuation to `/our-work`; keep the live service
+  cards non-linked unless exact visible `Read More` additions are approved.
+- Use the footer's WordPress Development link to expose this legacy route; keep
+  WooCommerce and white-label WordPress available in the shared footer.
+- Keep the distinct `/wordpress-development` header destination until the
+  overlapping-intent review is complete.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit WebPage, Service, BreadcrumbList, FAQPage, and VideoObject nodes only for
+  content visible on this route.
+- Include the slashless canonical route in the sitemap with the real migration
+  review date.
+- Keep the page server-rendered, indexable, and available to allowed crawlers.
+
+### Measurement plan
+
+- Track the five target prompts above, organic landing queries, citations,
+  portfolio engagement, and quote conversions. SEO owns monthly prompt checks;
+  development owns crawl, metadata, schema, and link verification.
+
+### Verification and remaining gaps
+
+- Checks completed: live rendered page, View Page Source, metadata, Yoast graph,
+  CSS, JavaScript, local/live desktop/tablet/mobile viewport captures, local
+  full-page captures, content order, links, rendered metadata and JSON-LD,
+  responsive document widths, menu/FAQ/carousel/reduced-motion behavior,
+  asset inventory, zero-duplicate hash audit, URL-policy check, lint, and build.
+- Local single-page SEO checklist result: 100/100 after excluding the planned
+  global-navigation routes `/blogs`, `/buy-shopify-development-hours`, and
+  `/webflow-development` as migration pending. All 38 other internal route
+  targets rendered by this page are implemented; no page-specific link or asset
+  failure was excluded.
+- Implemented items: canonical route and sitemap discovery, accurate metadata,
+  Service/FAQ/Breadcrumb/WebPage/VideoObject graph, local media, server-rendered
+  sections, minimal interactive boundaries, and shared footer discovery.
+- Deferred or blocked: proof provenance, approved visible copy corrections,
+  case-study evidence, and the final intent decision for the overlapping
+  `/wordpress-development` route.
+
 ## Hire Shopify Developers (`/hire-shopify-developers`)
 
 Status: implemented and verified; visible recommendations deferred
@@ -6232,6 +6336,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 - URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/dwell-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 159 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+
 
 
 
