@@ -43,7 +43,7 @@ function CloseIcon() {
 function MobileItemIcon({ item }: { item: MegaMenuItem }) {
   return (
     <span className="mr-[13px] flex h-6 w-6 shrink-0 items-center justify-center" aria-hidden="true">
-      <Image className="h-full w-full object-contain" src={item.icon.src} alt="" width={item.icon.width} height={item.icon.height} />
+      <Image className="h-auto max-h-full w-auto max-w-full object-contain" src={item.icon.src} alt="" width={item.icon.width} height={item.icon.height} />
     </span>
   );
 }
@@ -134,8 +134,8 @@ export function MobileNavigation() {
               className="flex h-auto w-[225px] max-[767px]:w-[170px] max-[379px]:w-[150px]"
               src={siteConfig.logo}
               alt="Dynamic Dreamz - Shopify Platinum Partner"
-              width={225}
-              height={38}
+              width={257}
+              height={39}
             />
           </Link>
           <button ref={closeRef} className="inline-flex h-[30px] w-[30px] cursor-pointer items-center justify-center border-0 bg-transparent p-0" type="button" aria-label="Close menu" onClick={closeMenu}>
@@ -188,7 +188,7 @@ export function MobileNavigation() {
                                   onClick={() => setOpenServiceSection(isSectionOpen ? null : section.label)}
                                 >
                                   <span className="flex items-center">
-                                    <Image className="mr-[13px] h-6 w-6 object-contain" src={section.icon.src} alt="" width={section.icon.width} height={section.icon.height} aria-hidden="true" />
+                                    <Image className="mr-[13px] h-auto max-h-6 w-auto max-w-6 object-contain" src={section.icon.src} alt="" width={section.icon.width} height={section.icon.height} aria-hidden="true" />
                                     {section.label}
                                   </span>
                                   <ChevronIcon open={isSectionOpen} />
