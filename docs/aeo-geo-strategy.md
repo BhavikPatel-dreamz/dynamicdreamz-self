@@ -2293,8 +2293,8 @@ summary, claim qualification, or grammar correction remains approval-dependent.
   responsive document widths, menu/FAQ/carousel/reduced-motion behavior,
   asset inventory, zero-duplicate hash audit, URL-policy check, lint, and build.
 - Local single-page SEO checklist result: 100/100 after excluding the planned
-  global-navigation routes `/blogs`, `/buy-shopify-development-hours`, and
-  `/webflow-development` as migration pending. All 38 other internal route
+  global-navigation routes `/blogs` and `/webflow-development` as migration
+  pending. All 39 other internal route
   targets rendered by this page are implemented; no page-specific link or asset
   failure was excluded.
 - Implemented items: canonical route and sitemap discovery, accurate metadata,
@@ -4608,6 +4608,12 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 49 chars, Description: 136 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Impulse Theme Customization (`/impulse-theme-customization`)
+
+Visual parity review (2026-08-21): live-visible copy, heading order, CTA intent,
+FAQ content, and server-rendered answer content remain unchanged. The update was
+limited to current live layout behavior, navigation taxonomy, local asset
+correction, and the live client-logo dataset; no new AEO/GEO content gap was
+introduced.
 
 Status: implemented and verified; live-visible content preserved
 Last reviewed: 2026-08-19
@@ -7777,7 +7783,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 - Live audit completed: rendered desktop/tablet/mobile states, View Page Source, Yoast metadata and graph, linked CSS/JavaScript, breakpoints, tab behavior, FAQ behavior, hover motion, link targets, and asset inventory.
 - Local responsive comparison completed at 1440px, 768px, and 390px. The browser audit confirmed one H1, four accessible tabs and panels, arrow-key switching, one expanded FAQ at a time, eight matching FAQ schema entries, working CTA and hash links, reduced-motion handling, and no horizontal overflow.
-- Single-page SEO review result: 100/100 against the local migration checklist after excluding the shared navigation links `/blogs`, `/buy-shopify-development-hours`, and `/webflow-development` as migration pending. All 38 linked implemented routes, both hash targets, page-owned assets, and five external Credly/Shopify evidence links resolve.
+- Single-page SEO review result: 100/100 against the local migration checklist after excluding the shared navigation links `/blogs` and `/webflow-development` as migration pending. All 39 linked implemented routes, both hash targets, page-owned assets, and five external Credly/Shopify evidence links resolve.
 - Production source verification confirms the 55-character title, 151-character description, index/follow directives, canonical, Open Graph, Twitter card, local 535 × 534 hero image, schema graph, sitemap entry, and robots allow path.
 - `npm run check:urls`, `npm run lint`, and `npm run build` pass. Next.js prerenders the route as static content, and the repository-wide SHA-256 audit reports zero duplicate asset groups.
 - Remaining governance gaps are volatile proof ownership, terminology approval, and first-party project evidence; no unsupported facts were added to schema.
@@ -7942,6 +7948,67 @@ Last reviewed: 2026-08-21
 
 
 
+## Buy Shopify Development Hours (`/buy-shopify-development-hours`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-21
+Owner: SEO, Shopify development, delivery operations, finance, leadership, and sales operations
+Primary audience: Shopify and Shopify Plus merchants, growing brands, ecommerce teams, founders, and digital agencies that need flexible prepaid development capacity without a fixed monthly commitment.
+Decision stage: engagement-model comparison, package selection, pricing review, provider validation, purchase, and custom-quote request
+
+### Page role
+
+Commercial pricing and conversion page for prepaid Shopify design and development packages. The live route lets buyers compare four hour packages, choose a package through a pricing slider, continue to the matching Razorpay purchase URL, compare bulk hours with a full-time resource, review eligible task types and engagement steps, and request a custom quote.
+
+### Target prompts
+
+- Where can I buy Shopify development hours?
+- How much do prepaid Shopify developer hours cost?
+- Can Shopify development hours be used across multiple stores?
+- Should I buy bulk Shopify hours or hire a full-time developer?
+- Do prepaid Shopify development hours expire?
+
+### Core answer and available evidence
+
+- The live H1 and introduction directly identify flexible prepaid Shopify design and development support.
+- Four visible packages disclose hours, current hourly rate, current cost, previous rate, previous cost, and an exact package-specific Razorpay destination.
+- Five visible operating-model statements cover flexible usage, team access, priority execution, multi-store usage, and time reporting.
+- The comparison panel distinguishes bulk-hour and full-time-resource engagement models using only visible buyer guidance.
+- Eleven visible task pills define the supported work categories.
+- Five visible process steps explain selection, purchase or quotation, account allocation, task sharing, and reporting.
+- Twenty client logos provide visible brand proof, and ten visible FAQs answer purchase, expiry, usage, tracking, store coverage, task size, recurring charges, onboarding speed, communication, and engagement-model questions.
+
+### Structured gap analysis
+
+| Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | No local App Router implementation existed for a live navigation destination | Ship slashless route, metadata, canonical, Open Graph, Twitter, sitemap and robots discovery | Route is statically prerendered; canonical, OG, sitemap, and robots output use the slashless URL |
+| P0 | implemented | Pricing interaction | The purchase model requires package-specific client interaction and valid payment destinations | Keep pricing content server-rendered, isolate the native range control as a small client component, preserve the four live packages and default 50-hour selection | Trusted browser input verified 10, 25, 50, and 100-hour states plus arrow-key operation and the default 50-hour href |
+| P0 | implemented | Schema accuracy | Live source emits a mismatched sitewide FAQ graph in addition to the ten visible FAQs | Emit Organization, WebSite, WebPage, BreadcrumbList, Service with visible package Offers, and only the ten visible FAQ entries | Rendered graph contains six typed nodes, four USD offers, and ten DOM-matching FAQs |
+| P1 | blocked | Price and policy governance | Rates, discounts, non-expiry language, priority execution, multi-store usage, and one-business-day contact timing are commercial commitments without a visible effective date or named content owner | Establish finance/delivery ownership and a scheduled review; update visible pricing, payment links, policy copy, metadata, and schema together | Finance, delivery, and leadership approval required |
+| P1 | implemented | Payment-link validation | Package actions rely on externally hosted Razorpay payment pages | Validate each destination before release and retain a working custom-quote fallback | All four `rzp.io` URLs resolved to their matching Razorpay Pages destination with HTTP 200 on 2026-08-21; recurring monitoring remains an operations responsibility |
+
+### Entity, crawler, and conversion actions
+
+- Connect the page Service to the existing Organization and WebSite identifiers.
+- Represent the four visible packages as offers without inventing availability, tax, currency-conversion, refund, service-area, or validity claims.
+- Keep all package facts, FAQs, CTA labels, and comparison guidance server-rendered; client JavaScript is limited to selecting a package.
+- Preserve the exact live Razorpay destinations and `/request-quote` conversion path, while adding `noopener noreferrer` to new-tab actions.
+- Include the slashless canonical path and local primary image in metadata, sitemap, robots output, and JSON-LD.
+
+### Measurement plan
+
+- SEO tracks the five target prompts plus branded and non-branded prepaid Shopify developer-hour queries.
+- Analytics tracks pricing selections, outbound package-purchase clicks by selected hours, custom-quote clicks, and completed leads originating from this route after tracking approval.
+
+### Verification and remaining gaps
+
+- Live audit completed for rendered desktop/tablet/mobile states, View Page Source, metadata, JSON-LD, CSS/JavaScript, responsive breakpoints, all four pricing states, FAQ open/close behavior, button motion, mobile brand motion, payment links, and local asset availability.
+- Local comparison completed at 1440px, 768px, and 390px. Full-page height differs from the live reference by 0.1% on desktop, 1.1% on tablet, and 0.5% on mobile, with no omitted section or horizontal overflow.
+- The browser audit confirmed one H1, the four exact pricing states, native range-keyboard operation, ten DOM/schema-matching FAQs, zero-or-one-open FAQ behavior, no unavailable local image asset, no live-site runtime dependency, and 1ms reduced-motion fallbacks.
+- Production SEO emits the 46-character title, 150-character description, slashless canonical and Open Graph URL, Twitter large-image card, local 1200 × 630 social image, and Organization/WebSite/WebPage/Service/Breadcrumb/FAQ graph. Service offers expose only visible package names, prices, USD currency, and exact purchase URLs.
+- `npm run check:urls`, `npm run lint`, and `npm run build` pass; Next.js prerenders the route as static content. The final repository-wide SHA-256 audit reports zero duplicate public-asset hash groups.
+- Remaining governance gap: commercial rates and policy promises still require a named finance/delivery owner and scheduled freshness review. No unapproved visible wording was changed.
 
 
 

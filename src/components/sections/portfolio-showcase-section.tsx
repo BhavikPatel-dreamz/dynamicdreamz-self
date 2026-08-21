@@ -28,7 +28,12 @@ export type PortfolioShowcaseSectionProps = {
   columns?: 2 | 3 | 4;
   imageAspectClassName?: string;
   categoryClassName?: string;
+  descriptionBreakClassName?: string;
+  eyebrow?: string;
+  eyebrowClassName?: string;
   headingBreakClassName?: string;
+  headerLayout?: "centered" | "split";
+  itemsClassName?: string;
 };
 
 export function PortfolioShowcaseSection({
@@ -40,7 +45,12 @@ export function PortfolioShowcaseSection({
   columns = 3,
   imageAspectClassName,
   categoryClassName,
+  descriptionBreakClassName = "max-[1199px]:hidden",
+  eyebrow,
+  eyebrowClassName,
   headingBreakClassName = "max-[1199px]:hidden",
+  headerLayout = "centered",
+  itemsClassName,
 }: PortfolioShowcaseSectionProps) {
   const defaultPlatformMark = content.platformMark ?? {
     src: "/assets/platforms/shopify-white.svg",
@@ -58,23 +68,36 @@ export function PortfolioShowcaseSection({
   return (
     <section className={className} data-section="portfolio" id="portfolio-showcase">
       <Container>
-        <div className="text-center">
-          {content.eyebrow && (
-            <span className="eyebrow mb-2 block font-sans text-sm font-semibold tracking-wider text-[#d92128] uppercase">
-              {content.eyebrow}
-            </span>
-          )}
-          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
-            {formatBrText(content.heading, headingBreakClassName)}
-          </h2>
+        {eyebrow ? (
+          <p
+            className={`mb-5 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.02em] text-muted ${eyebrowClassName ?? ""}`}
+          >
+            <span className="h-0.5 w-[30px] bg-brand-red" aria-hidden="true" />
+            {eyebrow}
+          </p>
+        ) : null}
+        <div
+          className={
+            headerLayout === "split"
+              ? "flex items-end justify-between text-left max-[991px]:flex-col max-[991px]:items-center max-[991px]:text-center"
+              : "text-center"
+          }
+        >
+          <div className={headerLayout === "split" ? "w-[43%] max-[991px]:w-full" : undefined}>
+            <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+              {formatBrText(content.heading, headingBreakClassName)}
+             </h2>
+           </div>
           {content.description && (
-            <p className="mx-auto mt-6 max-w-[740px] text-[18px] font-medium leading-[34.2px] text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]">
-              {formatBrText(content.description, "max-[1199px]:hidden")}
-            </p>
+            <div className={headerLayout === "split" ? "w-[51%] max-[991px]:mt-[15px] max-[991px]:w-full" : undefined}>
+              <p className={`${headerLayout === "split" ? "" : "mx-auto mt-6 max-w-[740px] "}our-works-desc text-[18px] font-medium leading-[34.2px] text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]`}>
+                {formatBrText(content.description, descriptionBreakClassName)}
+              </p>
+            </div>
           )}
         </div>
 
-        <div className={`mt-[42px] grid gap-x-[15px] gap-y-[60px] max-[991px]:mt-[50px] max-[991px]:gap-y-[30px] ${gridColsClass}`}>
+        <div className={`mt-[42px] grid gap-x-[15px] gap-y-[60px] max-[991px]:mt-[50px] max-[991px]:gap-y-[30px] ${gridColsClass} ${itemsClassName ?? ""}`}>
           {content.items.map((item) => (
             <PortfolioProjectCard
               category={item.category ?? content.category ?? "SHOPIFY"}

@@ -60,7 +60,7 @@ export function IndustryBrandsSection({
             className={cn(
               "left-col w-[31%] pl-[calc((100%-1140px)/2)] max-[1199px]:w-[30%] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991px]:w-full max-[991px]:p-0 max-[991px]:text-center",
               isCompact
-                ? "max-[991px]:mb-5 max-[767px]:mb-[15px]"
+                ? "w-1/3 pl-[calc((100%-1140px)/2)] min-[1400px]:pl-[calc((100%-1320px)/2)] max-[991px]:mb-5 max-[767px]:mb-[15px]"
                 : hasSpaciousMobileLayout
                   ? "max-[991px]:mb-10"
                   : "max-[991px]:mb-5",

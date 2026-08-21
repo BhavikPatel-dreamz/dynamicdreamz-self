@@ -41,7 +41,7 @@ export function ThemeFeaturesSection({
           <h2 className="theme-features-title font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(content.title, "max-[1199px]:hidden")}
           </h2>
-          <p className="theme-features mx-auto mt-2.5 max-w-[800px] text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
+          <p className="theme-features mx-auto mt-6 max-w-[800px] text-lg font-medium leading-[34.2px] text-muted max-[991px]:text-base max-[767px]:leading-[25px]">
             {formatBrText(content.subtitle, "max-[1199px]:hidden")}
           </p>
         </div>
@@ -95,7 +95,7 @@ export function ThemeFeaturesSection({
                     width={55}
                   />
                 </div>
-                <h3 className="font-sans text-[18px] font-semibold leading-[28px] text-ink">
+                <h3 className="font-sans text-[18px] font-semibold leading-[28.8px] text-ink">
                   {formatBrText(item.title, "max-[767px]:hidden")}
                 </h3>
                 {item.description && (

@@ -1591,3 +1591,16 @@ Primary SEO intent: migrating a theme to online store 2.0, Shopify 2.0 migration
 | Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (7 migration phases), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
 
 
+## Buy Shopify Development Hours (`/buy-shopify-development-hours`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: buy Shopify development hours, Shopify hours packages, prepaid Shopify developer hours, flexible Shopify development support, and bulk Shopify hours.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Hire Shopify Developer \| Flexible Shopify Hours & Packages – Dynamic Dreamz` (75 characters) | `Buy Shopify Development Hours \| Dynamic Dreamz` (46 characters) | Preserves the transactional query intent while meeting the enforced 15–60 character metadata budget. | High | implemented in metadata only |
+| Transparency statement | `Tasks is tracked, documented, and reported with clear visibility of hours remaining.` | `Tasks are tracked, documented, and reported with clear visibility of hours remaining.` | Corrects subject–verb agreement without changing the promise. | Medium | deferred pending exact visible-copy approval |
+| Pricing freshness | Four package rates, crossed-out prior rates, and total costs appear without an effective date or content owner. | Add an approved pricing-review line containing the finance-approved effective date and responsible owner; update visible prices, payment destinations, metadata, and schema together. | Price facts are volatile and should not appear stale or conflict with payment pages. | High | blocked pending finance, delivery, and leadership governance |
+| Purchase terms | The page sends buyers directly to Razorpay but does not visibly summarize tax treatment, refund/cancellation terms, scope exclusions, or where full package terms can be reviewed. | Add legal-approved package terms or a clearly labeled link to them adjacent to the purchase action before direct checkout. | Gives buyers material commercial context before payment and reduces ambiguity; exact wording requires legal and finance approval. | High | blocked pending legal and finance approval |
+| Client-logo alternatives | Live client logos use repeated generic `We are dynamic dreamz image` alternatives. | Use each brand's name followed by `logo`; keep duplicated mobile-marquee images decorative. | Improves accessibility and entity clarity without changing visible UI. | Medium | implemented as a nonvisual accessibility correction |

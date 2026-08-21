@@ -20,6 +20,10 @@ import {
   certifiedDeveloperServices,
   shopifyCertifiedDeveloperSchemaFaqs,
 } from "@/content/shopify-certified-developers";
+import {
+  shopifyHoursFaqs,
+  shopifyHoursPackages,
+} from "@/content/buy-shopify-development-hours";
 import { petIndustryPage } from "@/content/pet-industry";
 import { organizationAnswerSummary, testimonials } from "@/content/home";
 import { ourWorkProjects } from "@/content/our-work";
@@ -259,6 +263,13 @@ const shopifyCertifiedDevelopersPageId = `${shopifyCertifiedDevelopersPageUrl}#w
 const shopifyCertifiedDevelopersServiceId = `${shopifyCertifiedDevelopersPageUrl}#service`;
 const shopifyCertifiedDevelopersFaqId = `${shopifyCertifiedDevelopersPageUrl}#faq`;
 const shopifyCertifiedDevelopersBreadcrumbId = `${shopifyCertifiedDevelopersPageUrl}#breadcrumb`;
+const buyShopifyDevelopmentHoursPageUrl = absoluteUrl(
+  pageSeo.buyShopifyDevelopmentHours.path,
+);
+const buyShopifyDevelopmentHoursPageId = `${buyShopifyDevelopmentHoursPageUrl}#webpage`;
+const buyShopifyDevelopmentHoursServiceId = `${buyShopifyDevelopmentHoursPageUrl}#service`;
+const buyShopifyDevelopmentHoursFaqId = `${buyShopifyDevelopmentHoursPageUrl}#faq`;
+const buyShopifyDevelopmentHoursBreadcrumbId = `${buyShopifyDevelopmentHoursPageUrl}#breadcrumb`;
 const shopifyExpertsPageUrl = absoluteUrl(pageSeo.shopifyExperts.path);
 const shopifyExpertsPageId = `${shopifyExpertsPageUrl}#webpage`;
 const shopifyExpertsServiceId = `${shopifyExpertsPageUrl}#service`;
@@ -1598,7 +1609,13 @@ type ServicePageSchemaInput = {
   breadcrumbName: string;
   audienceType: string;
   faqs: readonly { question: string; answer: string }[];
-  offers?: readonly { title: string; description: string }[];
+  offers?: readonly {
+    title: string;
+    description: string;
+    price?: number | string;
+    priceCurrency?: string;
+    url?: string;
+  }[];
   videos?: ReturnType<typeof videoObjectSchema>[];
 };
 
@@ -1681,6 +1698,11 @@ function createServicePageSchema({
                 name: `${serviceName} capabilities`,
                 itemListElement: offers.map((offer) => ({
                   "@type": "Offer",
+                  ...(offer.price !== undefined ? { price: offer.price } : {}),
+                  ...(offer.priceCurrency
+                    ? { priceCurrency: offer.priceCurrency }
+                    : {}),
+                  ...(offer.url ? { url: offer.url } : {}),
                   itemOffered: {
                     "@type": "Service",
                     name: offer.title,
@@ -2005,6 +2027,31 @@ export function createShopifyCertifiedDevelopersPageSchema() {
     offers: certifiedDeveloperServices.items.map((item) => ({
       title: item.title,
       description: item.description,
+    })),
+  });
+}
+
+export function createBuyShopifyDevelopmentHoursPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.buyShopifyDevelopmentHours,
+    pageUrl: buyShopifyDevelopmentHoursPageUrl,
+    pageId: buyShopifyDevelopmentHoursPageId,
+    serviceId: buyShopifyDevelopmentHoursServiceId,
+    faqId: buyShopifyDevelopmentHoursFaqId,
+    breadcrumbId: buyShopifyDevelopmentHoursBreadcrumbId,
+    serviceName: "Flexible Shopify Development Hours",
+    serviceType:
+      "Prepaid Shopify design and development hours for ongoing store improvements",
+    breadcrumbName: "Buy Shopify Development Hours",
+    audienceType:
+      "Shopify and Shopify Plus brands, ecommerce teams, founders, and agencies seeking flexible development support",
+    faqs: shopifyHoursFaqs,
+    offers: shopifyHoursPackages.map((item) => ({
+      title: `${item.hours} Shopify development hours`,
+      description: `${item.hours} prepaid Shopify development hours at $${item.rate} per hour`,
+      price: item.cost,
+      priceCurrency: "USD",
+      url: item.purchaseHref,
     })),
   });
 }

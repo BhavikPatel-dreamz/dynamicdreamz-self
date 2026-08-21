@@ -542,6 +542,32 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  buyShopifyDevelopmentHours: {
+    path: "/buy-shopify-development-hours",
+    title: "Buy Shopify Development Hours | Dynamic Dreamz",
+    description:
+      "Buy flexible Shopify development hours from Dynamic Dreamz. Use prepaid Shopify hours for Shopify design, development, and ongoing store improvements.",
+    keywords: [
+      "buy Shopify development hours",
+      "Shopify hours packages",
+      "prepaid Shopify developer hours",
+      "flexible Shopify development support",
+      "bulk Shopify hours",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-01-19T07:34:36+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/buy-shopify-development-hours/shopify-development-hours-packages.webp",
+      width: 1200,
+      height: 630,
+      alt: "Flexible Shopify development hours and prepaid package selector from Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   shopifyExperts: {
     path: "/shopify-experts",
     title: "Hire Shopify Experts | Top Rated Shopify Developers",
