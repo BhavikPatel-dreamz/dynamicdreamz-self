@@ -37,7 +37,7 @@ export function WhiteLabelFaqSection({
 
 type WhiteLabelFinalCtaSectionProps = {
   cta?: WhiteLabelFinalCta;
-  variant?: "default" | "certifiedDevelopers";
+  variant?: "default" | "certifiedDevelopers" | "shopifyHours";
 };
 
 export function WhiteLabelFinalCtaSection({
@@ -45,12 +45,14 @@ export function WhiteLabelFinalCtaSection({
   variant = "default",
 }: WhiteLabelFinalCtaSectionProps) {
   const isCertifiedDevelopers = variant === "certifiedDevelopers";
+  const isShopifyHours = variant === "shopifyHours";
 
   return (
     <section
       className={cn(
         "bg-[#fafaf7] pt-[70px] pb-[60px] max-[1199px]:py-[60px] max-[991px]:py-[30px]",
         isCertifiedDevelopers && "py-[52px] max-[1199px]:py-[52px] max-[991px]:py-10",
+        isShopifyHours && "!py-[60px]",
       )}
     >
       <Container className="max-[575px]:px-4">
@@ -60,12 +62,23 @@ export function WhiteLabelFinalCtaSection({
               "flex-1 pr-[46px] max-[1199px]:pr-[30px] max-[991px]:w-full max-[991px]:flex-none max-[991px]:pr-0",
               isCertifiedDevelopers &&
                 "max-w-[560px] flex-none pr-0 max-[991px]:mx-auto max-[991px]:max-w-none max-[991px]:text-center",
+              isShopifyHours && "max-[991px]:text-center",
             )}
           >
-            <h2 className="mb-[15px] font-sans text-[30px] leading-[42px] font-bold text-ink max-[1199px]:text-[26px] max-[1199px]:leading-9 max-[991px]:mb-2.5 max-[991px]:text-[22px] max-[991px]:leading-8 max-[767px]:tracking-[-0.48px]">
+            <h2
+              className={cn(
+                "mb-[15px] font-sans text-[30px] leading-[42px] font-bold text-ink max-[1199px]:text-[26px] max-[1199px]:leading-9 max-[991px]:mb-2.5 max-[991px]:text-[22px] max-[991px]:leading-8 max-[767px]:tracking-[-0.48px]",
+                isShopifyHours && "text-[28px] leading-[39px] max-[1199px]:text-[26px] max-[991px]:text-[28px] max-[991px]:leading-[39px] max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
+              )}
+            >
               {cta.title}
             </h2>
-            <p className="text-base leading-[30.4px] font-medium text-muted max-[1199px]:leading-[26px] max-[991px]:text-[15px] max-[991px]:leading-[22px]">
+            <p
+              className={cn(
+                "text-base leading-[30.4px] font-medium text-muted max-[1199px]:leading-[26px] max-[991px]:text-[15px] max-[991px]:leading-[22px]",
+                isShopifyHours && "max-[991px]:!text-base max-[991px]:!leading-[30.4px]",
+              )}
+            >
               {cta.description}
             </p>
           </div>
@@ -73,6 +86,7 @@ export function WhiteLabelFinalCtaSection({
             className={cn(
               "shrink-0 max-[991px]:w-full max-[991px]:pb-[10.4px]",
               isCertifiedDevelopers && "max-[991px]:text-center",
+              isShopifyHours && "max-[991px]:text-center",
             )}
           >
             <ButtonLink

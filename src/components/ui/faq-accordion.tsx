@@ -26,6 +26,10 @@ type FaqAccordionProps = {
   idPrefix: string;
   answerClassName?: string;
   questionClassName?: string;
+  itemClassName?: string;
+  triggerClassName?: string;
+  panelContentClassName?: string;
+  iconClassName?: string;
 };
 
 export function FaqAccordion({
@@ -33,6 +37,10 @@ export function FaqAccordion({
   idPrefix,
   answerClassName,
   questionClassName,
+  itemClassName,
+  triggerClassName,
+  panelContentClassName,
+  iconClassName,
 }: FaqAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -108,12 +116,18 @@ export function FaqAccordion({
 
         return (
           <article
-            className="mb-5 rounded-[10px] border-[1.3px] border-[#efefef] bg-white last:mb-0"
+            className={cn(
+              "mb-5 rounded-[10px] border-[1.3px] border-[#efefef] bg-white last:mb-0",
+              itemClassName,
+            )}
             data-faq-item
             key={item.question}
           >
             <button
-              className="relative block w-full cursor-pointer border-0 bg-transparent py-6 pr-[70px] pl-8 text-left max-[1199px]:py-5 max-[1199px]:pr-[50px] max-[1199px]:pl-5"
+              className={cn(
+                "relative block w-full cursor-pointer border-0 bg-transparent py-6 pr-[70px] pl-8 text-left max-[1199px]:py-5 max-[1199px]:pr-[50px] max-[1199px]:pl-5",
+                triggerClassName,
+              )}
               data-faq-trigger
               id={triggerId}
               type="button"
@@ -132,7 +146,10 @@ export function FaqAccordion({
               <Image
                 aria-hidden="true"
                 alt=""
-                className="absolute top-1/2 right-8 size-8 -translate-y-1/2 max-[1199px]:right-5 max-[1199px]:size-[25px] max-[767px]:top-[26px] max-[767px]:size-[22px] max-[767px]:translate-y-0"
+                className={cn(
+                  "absolute top-1/2 right-8 size-8 -translate-y-1/2 max-[1199px]:right-5 max-[1199px]:size-[25px] max-[767px]:top-[26px] max-[767px]:size-[22px] max-[767px]:translate-y-0",
+                  iconClassName,
+                )}
                 src={
                   isOpen
                     ? "/assets/life-dynamicdreamz/faq/minus.svg"
@@ -155,7 +172,12 @@ export function FaqAccordion({
               inert={!isOpen}
             >
               <div className="overflow-hidden">
-                <div className="px-8 pb-6 max-[1199px]:px-5 max-[1199px]:pb-5">
+                <div
+                  className={cn(
+                    "px-8 pb-6 max-[1199px]:px-5 max-[1199px]:pb-5",
+                    panelContentClassName,
+                  )}
+                >
                   {isListBefore ? (
                     <>
                       {listContent}
