@@ -432,6 +432,24 @@ Primary SEO intent: Shopify case studies, Shopify Plus case study, ecommerce suc
 | Empty image alt text | Several case study post thumbnails on live site had empty or minimal `alt=""` attributes. | Generated descriptive kebab-case alt attributes (e.g. `Decor That Shows Up, Does Its Job, and Disappears- Evrgreen`) for each card image. | Improves accessibility and image search indexation without changing visible layout. | High | implemented as a nonvisual accessibility correction |
 | Dropdown filter labels | `Technology` and `Industry` | Maintain live dropdown categories; support real-time searching and filtering | Retains familiar browsing taxonomy while enhancing client interactivity. | High | implemented in client filter |
 
+## Case Study Detail Pages (`/case-studies/[slug]`)
+
+Status: visible recommendations deferred; migrated live UI preserved
+Last reviewed: 2026-08-21
+Primary SEO intent: client case study, Shopify case study, Shopify Plus case
+study, ecommerce migration case study, web development case study, mobile app
+case study, and Dynamic Dreamz project evidence.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Visible story copy | Live detail pages contain route-specific grammar, punctuation, and phrasing issues. | Review exact corrections client by client after migration and approval; do not normalize wording during the template import. | Preserves migration parity and avoids changing attributed project evidence implicitly. | Medium | deferred pending exact visible-copy and client-success approval |
+| Long metadata titles | Several live document titles repeat the full case-study H1 and exceed the repository's 60-character limit. | Use a concise route-specific `[Client] Case Study \| Dynamic Dreamz` or intent-preserving variant in metadata only; retain the visible H1 verbatim. | Meets the enforced metadata budget without altering visible content. | High | implemented in route-specific metadata only |
+| Missing evidence fields | Delivery dates, Dynamic Dreamz team role, constraints, integrations, source dates, and outcome provenance are inconsistent or absent. | Add a client-approved evidence summary covering only verified facts for each case study. | Improves citation quality and buyer usefulness without inventing project details. | High | deferred pending client-success and leadership approval |
+| Outcome claims | Some results and impact statements do not expose a visible source or evidence-review date. | Validate each statement and metric, then add approved provenance or qualify unsupported wording. | Protects factual consistency across visible copy and schema. | High | deferred pending source evidence and exact visible-copy approval |
+| Image alternatives | Live detail media sometimes uses empty, filename-like, repeated, or overly generic alt text. | Use concise page-specific alternatives that describe the visible project artifact; keep only genuinely decorative treatment images empty. | Improves nonvisual understanding without changing the rendered design. | High | implemented as a nonvisual accessibility correction |
+| Banchharams stale archive item | The former detail URL now resolves to the live archive, has no detail hero, and is absent from the current case-study sitemap. | Exclude the stale archive card and do not generate a local detail route until a real approved case study is published. | Prevents a self-resolving/broken evidence link and keeps the migration aligned with the current detail inventory. | High | implemented as an intentional current-inventory correction |
+| BluBox industry value | The live detail source and archive content expose an empty Industry value. | Add the client-approved industry taxonomy to both the hero and archive card. | Restores a useful project attribute and filter value without guessing the client's category. | Medium | deferred pending client-success taxonomy approval |
+
 ## Privacy and Cookies Policy (`/privacy-policy`)
 
 Status: visible recommendations deferred; live UI preserved during migration

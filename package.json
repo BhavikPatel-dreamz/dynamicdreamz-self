@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "check:asset-duplicates": "node scripts/check-asset-duplicates.mjs",
+    "check:case-studies": "node scripts/check-case-studies.mjs",
     "check:urls": "node scripts/check-url-policy.mjs",
-    "build": "npm run check:urls && next build --webpack",
+    "build": "npm run check:urls && npm run check:case-studies && npm run check:asset-duplicates && next build --webpack",
     "start": "next start",
-    "lint": "npm run check:urls && eslint"
+    "lint": "npm run check:urls && npm run check:case-studies && npm run check:asset-duplicates && eslint"
   },
   "dependencies": {
     "@types/react-slick": "^0.23.13",
