@@ -42,6 +42,7 @@ export type QuoteFormProps = {
   title?: string;
   showTitle?: boolean;
   className?: string;
+  phonePlaceholder?: string | null;
   submitLabel?: string;
   submitButtonClassName?: string;
 };
@@ -50,6 +51,7 @@ export function QuoteForm({
   title = requestQuoteContent.form.title,
   showTitle = true,
   className = "right-col w-1/2 py-[150px] pl-[46px] pb-[110px] max-[1199px]:pl-[30px] max-[991px]:w-full max-[991px]:pt-[150px] max-[991px]:pl-0 max-[991px]:pb-[50px] max-[767px]:pt-[145px] max-[767px]:pb-[50px]",
+  phonePlaceholder = "Enter Your Phone Number",
   submitLabel = "submit inquiry",
   submitButtonClassName,
 }: QuoteFormProps = {}) {
@@ -138,7 +140,7 @@ export function QuoteForm({
               name="phone"
               type="tel"
               autoComplete="tel"
-              placeholder="Enter Your Phone Number"
+              placeholder={phonePlaceholder ?? undefined}
               maxLength={400}
             />
           </div>

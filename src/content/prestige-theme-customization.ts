@@ -28,16 +28,16 @@ export const prestigeThemeCustomizationContent = {
         src: "/assets/clients/eleven-eleven.svg",
         href: "https://11-11.in/",
         alt: "Eleven Eleven",
-        width: 120,
-        height: 40,
+        width: 145,
+        height: 20,
       },
       {
         name: "bellavita logo",
         src: "/assets/clients/bella-vita.svg",
         href: "https://bellavitaorganic.com/",
         alt: "bellavita logo",
-        width: 130,
-        height: 35,
+        width: 166,
+        height: 24,
       },
       {
         name: "Bombay Shirt Company",
@@ -52,16 +52,16 @@ export const prestigeThemeCustomizationContent = {
         src: "/assets/clients/popclub.svg",
         href: "https://popclub.co/",
         alt: "Popclub Co",
-        width: 130,
-        height: 35,
+        width: 65,
+        height: 41,
       },
       {
         name: "SriSri Tattva Logo",
         src: "/assets/clients/sri-sri-tattva.svg",
         href: "https://www.srisritattva.com/",
         alt: "SriSri Tattva Logo",
-        width: 140,
-        height: 38,
+        width: 106,
+        height: 40,
       },
       {
         name: "tropicfeel logo",
@@ -76,7 +76,7 @@ export const prestigeThemeCustomizationContent = {
         src: "/assets/clients/renee.svg",
         href: "https://www.reneecosmetics.in/",
         alt: "Renee logo",
-        width: 120,
+        width: 93,
         height: 30,
       },
       {
@@ -84,16 +84,16 @@ export const prestigeThemeCustomizationContent = {
         src: "/assets/clients/royce-chocolate.svg",
         href: "https://royceindia.com/",
         alt: "Royce chocolate logo",
-        width: 135,
-        height: 32,
+        width: 132,
+        height: 38,
       },
       {
         name: "tego logo",
         src: "/assets/clients/tego.svg",
         href: "https://tego.fit/",
         alt: "tego logo",
-        width: 120,
-        height: 30,
+        width: 101,
+        height: 40,
       },
       {
         name: "nekter-colored",
@@ -108,8 +108,8 @@ export const prestigeThemeCustomizationContent = {
         src: "/assets/clients/rare-rabbit.svg",
         href: "https://thehouseofrare.com/",
         alt: "Rare Rabbit Logo",
-        width: 140,
-        height: 35,
+        width: 122,
+        height: 84,
       },
     ],
   },
@@ -120,12 +120,12 @@ export const prestigeThemeCustomizationContent = {
     items: [
       {
         title: "Slideshow with <br> High Impact Images",
-        icon: "/assets/prestige-theme-customization/features/slideshow-high-impact-images.svg",
+        icon: "/assets/be-yours-theme-customization/features/promotional-banner-options.svg",
         iconAlt: "Slideshow with High-Impact Images Icon",
       },
       {
         title: "Advanced Product Filtering",
-        icon: "/assets/prestige-theme-customization/features/advanced-product-filtering.svg",
+        icon: "/assets/be-yours-theme-customization/features/built-in-product-filtering.svg",
         iconAlt: "Advanced Product Filtering Icon",
       },
       {
@@ -145,15 +145,15 @@ export const prestigeThemeCustomizationContent = {
       },
       {
         title: "Sticky Navigation",
-        icon: "/assets/prestige-theme-customization/features/sticky-navigation.svg",
+        icon: "/assets/savor-theme-customization/features/flexible-navigation.svg",
         iconAlt: "Sticky Navigation Icon",
       },
     ],
   },
   benefits: {
-    title: "Benefits of Prestige <br> Theme Customization",
+    title: "Benefits of Prestige <br /> Theme Customization",
     subtitle:
-      "Customizing the Prestige Theme guarantees that your Shopify store’s design<br />and functionality fully match your brand and enhance customer<br />expectations. Here are the key benefits of customizing the Prestige theme:",
+      "Customizing the Prestige Theme guarantees that your Shopify store’s design<br /> and functionality fully match your brand and enhance customer<br />expectations. Here are the key benefits of customizing the Prestige theme:",
     items: [
       {
         title: "Fully Customizable Store",
@@ -311,14 +311,14 @@ export const prestigeThemeCustomizationContent = {
       {
         name: "Atolea Jewelry",
         href: "https://atoleajewelry.com/",
-        image: "/assets/our-work/projects/atolea-jewelry.webp",
+        image: "/assets/our-work/projects/atolea-jewelry-model.webp",
         imageAlt: "Atolea Jewelry",
         category: "SHOPIFY",
       },
       {
         name: "Bombay Shirt Company",
         href: "https://www.bombayshirts.com/",
-        image: "/assets/fashion/portfolio/bombay-shirt-company-fashion.webp",
+        image: "/assets/our-work/projects/bombay-shirt-company-model.webp",
         imageAlt: "Bombay Shirt Company",
         category: "SHOPIFY",
       },

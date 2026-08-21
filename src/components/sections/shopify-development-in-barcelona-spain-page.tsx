@@ -14,6 +14,7 @@ export function ShopifyDevelopmentInBarcelonaSpainPage() {
         content={shopifyDevelopmentBarcelonaContent.services}
         headerLayout="centered"
         id="shopify-services"
+        showDescription={false}
       />
       <PortfolioShowcaseSection
         className="our-work-sec pt-0 pb-20 max-[991px]:pb-[50px]"

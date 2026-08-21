@@ -710,7 +710,7 @@ Primary SEO intent: Dynamic Dreamz terms of service, terms and conditions, clien
 ## Prestige Theme Customization (`/prestige-theme-customization`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-19
+Last reviewed: 2026-08-21
 Primary SEO intent: Prestige theme customization, Prestige Shopify theme customization service, customize Prestige theme Shopify, luxury Shopify theme development, hire Prestige Shopify developers.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
@@ -1045,7 +1045,7 @@ Primary SEO intent: Sense theme customization, Sense Shopify theme customization
 ## Shopify Development in Barcelona (`/shopify-development-in-barcelona-spain`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-19
+Last reviewed: 2026-08-21
 Primary SEO intent: Shopify development Barcelona, Shopify agency Spain, Shopify Plus developer Barcelona, Shopify migration Barcelona.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
@@ -1053,6 +1053,7 @@ Primary SEO intent: Shopify development Barcelona, Shopify agency Spain, Shopify
 | Meta title | `Shopify Development in Barcelona \| Dynamic Dreamz` (51 chars) | Preserved live title (51 chars). | Fits strict 15-60 char budget and captures primary local target intent. | High | implemented in metadata |
 | Meta description | `Boost your online store with expert Shopify development in Barcelona by Dynamic Dreamz. We offer tailored solutions to eCommerce success.` (140 chars) | Preserved live meta description (140 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
 | Structured data | Legacy page had partial WebPage schema graph | Emitted comprehensive `Service`, `OfferCatalog` (8 items), `BreadcrumbList`, `Organization`, and `WebSite` schema. | Connects regional service offering to search crawlers and AI answer engines. | High | implemented in schema |
+| Shopify Migration Service description | Live page repeats the full Figma/XD-to-Shopify conversion paragraph and does not describe migration. | Replace it with approved Shopify migration copy covering platform transfer, data validation, redirects, and launch support. | Makes the service card answer its heading and avoids duplicating an unrelated service description. | High | deferred; live copy preserved pending exact visible-copy approval |
 
 ## PrestaShop to Shopify Migration (`/prestashop-to-shopify-migration`)
 
@@ -1223,4 +1224,3 @@ Primary SEO intent: Wix to Shopify migration, migrate Wix store to Shopify, zero
 | Single text box capitalization | `If you want more features and benefits for your online store, Migrate from Wix to Shopify.` | `If you want more features and benefits for your online store, migrate from Wix to Shopify.` | Fixes mid-sentence capitalization of "Migrate". | Low | deferred pending exact visible-copy approval |
 | Considerations description | `...create the most out of Shopify's platform.` | `...get the most out of Shopify's platform.` | Idiomatic English phrasing improvement. | Low | deferred pending exact visible-copy approval |
 | Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 process steps), `FAQPage` (10 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
-

@@ -2,7 +2,7 @@
 
 Live URL: https://www.dynamicdreamz.com/shopify-development-in-barcelona-spain/
 Local Route: /shopify-development-in-barcelona-spain
-Date Checked: 2026-08-19
+Date Checked: 2026-08-21
 Status: Production Ready
 
 ## Visual Layout & Section Sequence
@@ -18,7 +18,7 @@ Status: Production Ready
        - Card container with gradient border wrapper (`linear-gradient(178.87deg, #15c064 11.23%, rgba(0,209,255,0.66) 33.98%, rgba(0,209,255,0) 78.28%)`).
        - Form inside: Full Name, Email, Mobile Phone, Company Name, Website URL, Estimated Budget dropdown, Brief about the project textarea, and "submit inquiry" primary button.
 2. **Services Section (`barcelona-services-sec`)**:
-   - Centered title "Our Shopify Development Services" and intro paragraph.
+   - Centered title "Our Shopify Development Services" with no intro paragraph on this route.
    - 2-column grid of 8 service cards (Shopify Plus, Theme Customization, Figma/XD to Shopify, App Integration, Migration, Maintenance, Shopify 2.0 Migration, White-Label).
    - Card styling: 10px rounded borders, subtle border `#d9d9d9`, hover state with `-translate-y-2.5` and radiant gradient outline `#15c064` to `#00d1ff`.
    - Bottom CTA button: "Let me give you a hand to help you" -> `/request-quote`.
@@ -33,6 +33,15 @@ Status: Production Ready
 - Tablet: 992px–1199px left/right column 49%/49% split.
 - Mobile: 991px and below stacked full-width columns, centered hero text, review badges full-width horizontal rows.
 - Mobile: 768px and below single-column form inputs and portfolio cards.
+
+## 2026-08-21 Parity Correction
+
+- Live and local desktop comparison supplied by the project owner showed that the local services intro paragraph was not present on the live Barcelona page.
+- The shared services section remains unchanged by default; only the Barcelona route suppresses its heading description.
+- The rendered live page and live page source were rechecked on 2026-08-21. The first five local service cards used newer Barcelona-specific copy, while the live page currently uses the longer legacy service copy; the local route now preserves that live wording exactly.
+- The live mobile-phone input has no placeholder. The Barcelona route now suppresses the shared form's default phone placeholder without affecting other routes.
+- This is static content with no description-specific hover, focus, animation, or interaction state.
+- Remaining difference for this correction: none identified.
 
 ## Asset Verification
 

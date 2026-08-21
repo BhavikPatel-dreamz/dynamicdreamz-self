@@ -17,18 +17,20 @@ export type ShopifyServicesSectionContent = {
 
 export function ShopifyServicesSection({
   content = hireShopifyServices,
+  preserveDesktopTypography = false,
 }: {
   content?: ShopifyServicesSectionContent;
+  preserveDesktopTypography?: boolean;
 }) {
   return (
-    <section className="pb-20 max-[991px]:pb-[50px]" id="shopify-services">
+    <section className="shopify-services-sec pt-20 max-[991px]:pt-[50px]" id="shopify-services">
       <Container>
         <div className="mx-auto max-w-[780px] text-center">
-          <h2 className="font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
-            {formatBrText(content.heading, "max-[1199px]:hidden")}
+          <h2 className="aaaaaaaaa font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+            {formatBrText(content.heading, "")}
           </h2>
-          <p className="mt-2.5 text-lg leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
-            {formatBrText(content.description, "max-[1199px]:hidden")}
+          <p className="shopify-services-desc mt-5 text-lg leading-[30.4px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[25px]">
+            {formatBrText(content.description, "max-[991px]:hidden")}
           </p>
         </div>
 
@@ -42,7 +44,7 @@ export function ShopifyServicesSection({
               <h3 className="mt-[23px] mb-5 font-sans text-base leading-[27px] font-bold tracking-[0.32px] text-ink max-[1199px]:mt-[15px] max-[1199px]:mb-2.5">
                 {formatBrText(item.title, "max-[767px]:hidden")}
               </h3>
-              <p className="text-base leading-[27px] font-medium tracking-[0.32px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
+              <p className={`text-base leading-[27px] font-medium tracking-[0.32px] text-muted ${preserveDesktopTypography ? "" : "max-[767px]:text-sm max-[767px]:leading-6"}`}>
                 {formatBrText(item.description, "max-[767px]:hidden")}
               </p>
             </article>

@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { HorizontalDragScroll } from "@/components/ui/horizontal-drag-scroll";
 import { hireShopifyAdvantages, hireShopifyReasons } from "@/content/hire-shopify-developers";
 import { formatBrText } from "@/lib/text-formatting";
 
@@ -42,52 +43,96 @@ export function ShopifyReasonsSection({
   content = defaultReasonsContent,
   className = "shopify-customization-services-sec bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[767px]:py-[60px]",
   id = "why-hire-shopify-developers",
+  layout = "grid",
+  carouselFullBleed = false,
+  preserveHeadingBreaks = false,
 }: {
   content?: ProofSectionContent;
   className?: string;
   id?: string;
+  layout?: "grid" | "carousel";
+  carouselFullBleed?: boolean;
+  preserveHeadingBreaks?: boolean;
 }) {
+  const cards = content.items.map((item) => (
+    <article
+      className="group relative h-full min-h-[330px] rounded-[15px] bg-white p-0.5 transition-[background] duration-300 hover:bg-[linear-gradient(to_right,#15c064,#00d1ff)] focus-within:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:absolute after:right-0 after:bottom-0 after:left-0 after:z-20 after:h-3 after:rounded-b-[15px] after:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:opacity-0 after:transition-opacity after:duration-300 after:content-[''] hover:after:opacity-100 focus-within:after:opacity-100"
+      key={item.title}
+    >
+      <div className="relative z-10 h-full rounded-[13px] bg-white px-[28px] pt-[38px] pb-[58px]">
+        <Image
+          className="mb-5 size-[60px] object-contain"
+          src={item.icon}
+          alt={item.iconAlt}
+          width={60}
+          height={60}
+        />
+        <h3 className="mb-[5px] font-sans text-base leading-[26.72px] font-bold tracking-[0.32px] text-ink">
+          {formatBrText(item.title, "max-[767px]:hidden")}
+        </h3>
+        <p className={`text-base leading-[27.2px] font-medium tracking-[0.32px] text-muted ${layout === "grid" ? "max-[767px]:text-sm max-[767px]:leading-6" : ""}`}>
+          {formatBrText(item.description, "max-[767px]:hidden")}
+        </p>
+      </div>
+    </article>
+  ));
+
+  const carousel = (
+    <HorizontalDragScroll
+      ariaLabel={`${content.heading.replaceAll("<br>", "")} benefits`}
+      className={
+        carouselFullBleed
+          ? "[--carousel-offset:16px] [scroll-padding-inline-start:var(--carousel-offset)] [scrollbar-width:none] min-[576px]:[--carousel-offset:calc((100vw-540px)/2+16px)] min-[768px]:[--carousel-offset:calc((100vw-720px)/2+20px)] min-[992px]:[--carousel-offset:calc((100vw-960px)/2+20px)] min-[1200px]:[--carousel-offset:calc((100vw-1180px)/2+20px)] min-[1400px]:[--carousel-offset:calc((100vw-1360px)/2+20px)] [&::-webkit-scrollbar]:hidden"
+          : "-mx-[25px] px-[25px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      }
+      trackClassName={`flex items-stretch gap-4 ${carouselFullBleed ? "pr-[25px] pl-[var(--carousel-offset)]" : ""}`}
+    >
+      {cards.map((card, index) => (
+        <div
+          className={`shrink-0 snap-start ${
+            carouselFullBleed
+              ? "basis-[calc(100vw-82px)] min-[576px]:basis-[458px] min-[767px]:basis-[246px] min-[768px]:basis-[332px] min-[992px]:basis-[452px] min-[1200px]:basis-[562px] min-[1400px]:basis-[652px]"
+              : "basis-[calc(100%-50px)] min-[767px]:basis-[calc((100%-66px)/2)]"
+          }`}
+          data-carousel-item
+          key={content.items[index].title}
+        >
+          {card}
+        </div>
+      ))}
+    </HorizontalDragScroll>
+  );
+
   return (
     <section className={className} id={id}>
       <Container>
         <div className="mb-[50px] text-center max-[767px]:mb-[35px]">
           <h2 className={headingClassName}>
-            {formatBrText(content.heading, "max-[1199px]:hidden")}
+            {formatBrText(
+              content.heading,
+              preserveHeadingBreaks ? undefined : "max-[1199px]:hidden",
+            )}
           </h2>
-          <p className="mx-auto mt-2.5 max-w-[720px] text-lg leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
+          <p className="mx-auto mt-2.5 max-w-[720px] text-lg leading-[30.4px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[25px]">
             {formatBrText(content.description, "max-[1199px]:hidden")}
           </p>
         </div>
 
-        <div className="flex flex-wrap -mx-2 justify-center">
-          {content.items.map((item) => (
-            <div
-              className="w-1/3 px-2 mb-4 max-[991px]:w-1/2 max-[767px]:w-full"
-              key={item.title}
-            >
-              <article
-                className="group relative h-full min-h-[330px] rounded-[15px] bg-white p-0.5 transition-[background] duration-300 hover:bg-[linear-gradient(to_right,#15c064,#00d1ff)] focus-within:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:absolute after:right-0 after:bottom-0 after:left-0 after:z-20 after:h-3 after:rounded-b-[15px] after:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:opacity-0 after:transition-opacity after:duration-300 after:content-[''] hover:after:opacity-100 focus-within:after:opacity-100"
+        {layout === "carousel" && !carouselFullBleed ? carousel : null}
+        {layout === "grid" ? (
+          <div className="flex flex-wrap -mx-2 justify-center">
+            {cards.map((card, index) => (
+              <div
+                className="w-1/3 px-2 mb-4 max-[991px]:w-1/2 max-[767px]:w-full"
+                key={content.items[index].title}
               >
-                <div className="relative z-10 h-full rounded-[13px] bg-white px-[28px] pt-[38px] pb-[58px]">
-                  <Image
-                    className="mb-5 size-[60px] object-contain"
-                    src={item.icon}
-                    alt={item.iconAlt}
-                    width={60}
-                    height={60}
-                  />
-                  <h3 className="mb-[5px] font-sans text-base leading-[26.72px] font-bold tracking-[0.32px] text-ink">
-                    {formatBrText(item.title, "max-[767px]:hidden")}
-                  </h3>
-                  <p className="text-base leading-[27.2px] font-medium tracking-[0.32px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
-                    {formatBrText(item.description, "max-[767px]:hidden")}
-                  </p>
-                </div>
-              </article>
-            </div>
-          ))}
-        </div>
+                {card}
+              </div>
+            ))}
+          </div>
+        ) : null}
       </Container>
+      {layout === "carousel" && carouselFullBleed ? carousel : null}
     </section>
   );
 }

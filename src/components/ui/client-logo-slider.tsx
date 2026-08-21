@@ -16,11 +16,11 @@ export type ClientLogoSliderItem = ImageItem & {
 type ClientLogoSliderProps = {
   ariaLabel: string;
   items: readonly ClientLogoSliderItem[];
-  variant: "industry" | "resources";
+  variant: "industry" | "industryCompact" | "resources";
 };
 
 function slidesForWidth(variant: ClientLogoSliderProps["variant"], width: number) {
-  if (variant === "industry") {
+  if (variant === "industry" || variant === "industryCompact") {
     if (width < 768) return 2;
     if (width < 1200) return 3;
     return 4;
@@ -34,7 +34,9 @@ function slidesForWidth(variant: ClientLogoSliderProps["variant"], width: number
 
 export function ClientLogoSlider({ ariaLabel, items, variant }: ClientLogoSliderProps) {
   const [reducedMotion, setReducedMotion] = useState(false);
-  const [slidesToShow, setSlidesToShow] = useState(variant === "industry" ? 4 : 6);
+  const [slidesToShow, setSlidesToShow] = useState(
+    variant === "industry" || variant === "industryCompact" ? 4 : 6,
+  );
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -71,7 +73,7 @@ export function ClientLogoSlider({ ariaLabel, items, variant }: ClientLogoSlider
     <div aria-label={ariaLabel} role="region">
       <Slider
         {...settings}
-        className={styles.slider}
+        className={cn(styles.slider, variant === "industryCompact" && styles.compactSlider)}
         key={`${variant}-${slidesToShow}-${reducedMotion ? "reduced" : "motion"}`}
       >
         {items.map((logo) => (
@@ -79,7 +81,8 @@ export function ClientLogoSlider({ ariaLabel, items, variant }: ClientLogoSlider
             <div
               className={cn(
                 styles.item,
-                variant === "industry" ? styles.industryItem : styles.resourcesItem,
+                variant === "resources" ? styles.resourcesItem : styles.industryItem,
+                variant === "industryCompact" && styles.compactIndustryItem,
               )}
             >
               {logo.href ? (

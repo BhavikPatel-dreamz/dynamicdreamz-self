@@ -3670,7 +3670,7 @@ Dedicated post-inquiry confirmation and thank-you screen for users who submitted
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-19
+Last reviewed: 2026-08-21
 
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 
@@ -3700,7 +3700,7 @@ Dedicated commercial landing page presenting Dynamic Dreamz Prestige theme custo
 - 6 real portfolio project cards (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop).
 - 6 comprehensive FAQ accordion items directly answering merchant questions on timeline, cost, SEO, and support.
 - Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (6 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
-- Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
+- Prestige-specific asset audit verified that the two live portfolio creative variants are unique and stored once; three byte-identical feature icons now reuse their existing canonical files. Repository-wide duplicate hash groups: 0.
 
 ### Recommended improvements
 
@@ -3728,7 +3728,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service with 6 Offer items, 6 FAQ items, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Set explicit freshness `modifiedTime` to `2026-08-21T00:00:00+05:30`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
@@ -4613,7 +4613,7 @@ Status: implemented; live-visible content preserved
 Page type: Regional Location Landing Page / Shopify Service Page
 Route: `/shopify-development-in-barcelona-spain`
 Primary audience: eCommerce brands, direct-to-consumer businesses, and digital agencies in Barcelona and Spain seeking expert Shopify and Shopify Plus development
-Last reviewed: 2026-08-19
+Last reviewed: 2026-08-21
 
 ### Search and Generative Intent
 
@@ -4630,6 +4630,7 @@ Last reviewed: 2026-08-19
 - Local Spain client logos (Alohas, Feners, Mille Collines, Midnight, Tropicfeel, Lobster, Metta, Manola, Peters, Aleyole) and review badges ingested with 0 duplicate assets.
 - Integrated Service, OfferCatalog, BreadcrumbList, Organization, and WebSite JSON-LD structured data.
 - Built-in lead-capture quote form connected to standard server actions with client-side feedback.
+- Reverified the rendered live page and View Page Source on 2026-08-21; visible hero, form, service, CTA, and portfolio wording is preserved. The live duplicate Figma paragraph under "Shopify Migration Service" remains visible for parity and is tracked in the content approval queue.
 
 ## PrestaShop to Shopify Migration (`/prestashop-to-shopify-migration`)
 
@@ -6231,11 +6232,6 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 - URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/dwell-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 159 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
-
-
-
-
-
 
 
 

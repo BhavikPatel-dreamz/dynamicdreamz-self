@@ -74,37 +74,37 @@ export const shopifyDevelopmentBarcelonaContent = {
       "Dynamic Dreamz provides top-quality Shopify development services in Barcelona to help your business succeed online. Here’s what we offer:",
     items: [
       {
-        title: "Shopify Plus Development Service",
+        title: "Shopify Plus Store Development Service",
         description:
-          "Shopify Plus gives businesses maximum customization, scalability, and advanced features for high-volume sales. Dynamic Dreamz offers professional Shopify Plus development services that are tailored to your business needs.",
+          "We are a top-notch Shopify Plus development company and we have come a long way with Shopify Plus development. We effectively integrate the features of Shopify Plus so that your online store excels in functionality and user experience, driving growth and maximizing your return on investment.",
         icon: "/assets/shopify-plus-agency/icons/shopify-plus-icon.svg",
         iconAlt: "Shopify Plus Store Development Service Icon",
       },
       {
-        title: "Shopify Theme Customization",
+        title: "Shopify Theme Customization Service",
         description:
-          "Our team of Shopify developers personalizes your store's theme to align with your brand, ensuring an engaging and seamless shopping experience.",
+          "We specialize in tailoring Shopify themes to meet your unique business needs, ensuring your online store stands out. Our team of shopify experts can modify and enhance themes like Dawn, Impulse, Expanse, Refresh, Prestige, and many others to reflect your brand’s identity and improve user experience. Whether you need design adjustments, feature additions, or performance optimizations, we provide comprehensive customization solutions to help you achieve your e-commerce goals.",
         icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
         iconAlt: "Shopify Theme Customization Icon",
       },
       {
-        title: "Figma/XD to Shopify Development",
+        title: "Figma/XD to Shopify Conversion",
         description:
-          "We bring your design to reality with our Figma/XD to Shopify development service. Dynamic Dreamz makes sure that every detail of your design is accurately converted into a fully functional Shopify store.",
+          "Transform your Figma designs into fully functional Shopify stores with ease. Our Shopify expert team specializes in Figma to Shopify conversion, ensuring pixel-perfect accuracy, responsive design, and optimized performance. We handle every detail to ensure your e-commerce site looks and functions perfectly. Elevate your online business with our professional Figma to Shopify conversion services and stand out in the digital marketplace.",
         icon: "/assets/services/shopify-development-agency/figma-conversion-icon.svg",
         iconAlt: "Figma/XD to Shopify Icon",
       },
       {
         title: "Shopify App Integration Service",
         description:
-          "We provide smooth app integration services that improve your store's functionality, from payment gateways to marketing tools, ensuring peak performance.",
+          "We have proven expertise in integrating custom and private Shopify apps that enhance the capabilities of your Shopify store beyond standard functionalities. Our Shopify experts will ensure that your specific operational needs and customer expectations are met efficiently and effectively.",
         icon: "/assets/services/shopify-development-agency/app-integration-icon.svg",
         iconAlt: "Shopify App Integration Icon",
       },
       {
         title: "Shopify Migration Service",
         description:
-          "Switching from another platform to Shopify? Dynamic Dreamz ensures a hassle-free transition with our Shopify migration service, keeping your data secure and minimizing downtime.",
+          "Transform your Figma designs into fully functional Shopify stores with ease. Our Shopify expert team specializes in Figma to Shopify conversion, ensuring pixel-perfect accuracy, responsive design, and optimized performance. We handle every detail to ensure your e-commerce site looks and functions perfectly. Elevate your online business with our professional Figma to Shopify conversion services and stand out in the digital marketplace.",
         icon: "/assets/hire-shopify-developers/icons/shopify-migration.svg",
         iconAlt: "Shopify Migration Icon",
       },

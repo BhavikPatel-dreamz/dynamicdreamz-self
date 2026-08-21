@@ -1068,7 +1068,7 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2024-12-05T08:44:49+00:00",
-    modifiedTime: "2026-08-19T00:00:00+05:30",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
@@ -2047,7 +2047,7 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-07-01T00:00:00+00:00",
-    modifiedTime: "2026-08-19T00:00:00+05:30",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,

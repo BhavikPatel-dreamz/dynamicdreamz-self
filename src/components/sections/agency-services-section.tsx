@@ -30,6 +30,7 @@ export type AgencyServicesContent = {
 export type AgencyServicesSectionProps = {
   content?: AgencyServicesContent;
   headerLayout?: "split" | "centered";
+  showDescription?: boolean;
   className?: string;
   id?: string;
 };
@@ -37,6 +38,7 @@ export type AgencyServicesSectionProps = {
 export function AgencyServicesSection({
   content = shopifyPlusAgencyServices,
   headerLayout = "split",
+  showDescription = true,
   className = "what-we-provide-sec pt-20 pb-0",
   id = "shopify-services",
 }: AgencyServicesSectionProps) {
@@ -48,9 +50,11 @@ export function AgencyServicesSection({
             <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
               {formatBrText(content.heading, "max-[1199px]:hidden")}
             </h2>
-            <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
-              {formatBrText(content.description, "max-[1199px]:hidden")}
-            </p>
+            {showDescription && (
+              <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
+                {formatBrText(content.description, "max-[1199px]:hidden")}
+              </p>
+            )}
           </div>
         ) : (
           <div className="mb-5 flex items-center justify-between max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:text-center">
@@ -60,9 +64,11 @@ export function AgencyServicesSection({
               </h2>
             </div>
             <div className="w-[calc(55%-30px)] px-[15px] max-[991px]:w-full max-[991px]:p-0">
-              <p className="mb-6 text-[18px] font-medium leading-[34.2px] text-muted">
-                {formatBrText(content.description, "max-[1199px]:hidden")}
-              </p>
+              {showDescription && (
+                <p className="mb-6 text-[18px] font-medium leading-[34.2px] text-muted">
+                  {formatBrText(content.description, "max-[1199px]:hidden")}
+                </p>
+              )}
             </div>
           </div>
         )}
@@ -74,7 +80,7 @@ export function AgencyServicesSection({
               const cardContent = (
                 <div
                   className={cn(
-                    "relative h-full rounded-[10px] border-[1.5px] border-[#d9d9d9] bg-white px-[40px] pt-[45px] pb-[45px] pl-[35px] transition-colors duration-300 ease-in-out group-hover:border-transparent max-[1199px]:p-[30px_20px] max-[767px]:text-center",
+                    "relative h-full rounded-[10px] border-[1.5px] border-[#d9d9d9] bg-white px-[40px] pt-[45px] pb-[45px] pl-[35px] transition-colors duration-300 ease-in-out group-hover:border-transparent max-[1199px]:p-[30px_20px]",
                     hasLink && "pb-[85px] max-[1199px]:pb-[70px] max-[767px]:pb-[55px]",
                   )}
                 >
@@ -82,7 +88,7 @@ export function AgencyServicesSection({
                     aria-hidden="true"
                     className="absolute -inset-[3px] -z-10 rounded-[10px] bg-gradient-to-r from-[#15c064] to-[#00d1ff] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
                   />
-                  <div className="icon flex h-[50px] w-[66px] items-center max-[767px]:mx-auto">
+                  <div className="icon flex h-[50px] w-[66px] items-center">
                     <Image
                       src={service.icon}
                       alt={service.iconAlt}
@@ -90,7 +96,7 @@ export function AgencyServicesSection({
                       height={50}
                     />
                   </div>
-                  <h3 className="mt-[23px] mb-5 text-base font-bold leading-[27px] tracking-[0.32px] text-ink max-[1199px]:mt-[15px] max-[1199px]:mb-2.5">
+                  <h3 className="mt-[23px] mb-5 text-base font-bold leading-[27px] tracking-[0.32px] text-ink max-[1199px]:mt-[15px] max-[1199px]:mb-2.5 font-montserrat">
                     {service.title}
                   </h3>
                   <p className="mt-5 text-base font-medium leading-[27px] tracking-[0.32px] text-[#535353]">

@@ -15,6 +15,7 @@ type IndustryBrandsSectionProps = {
   heading?: string;
   items?: readonly ClientLogoSliderItem[];
   mobileSpacing?: "standard" | "spacious";
+  variant?: "default" | "compact";
   className?: string;
 };
 
@@ -23,16 +24,21 @@ export function IndustryBrandsSection({
   heading,
   items = industryBrandLogos,
   mobileSpacing = "standard",
+  variant = "default",
   className,
 }: IndustryBrandsSectionProps) {
   const hasSpaciousMobileLayout = mobileSpacing === "spacious";
+  const isCompact = variant === "compact";
   const ariaLabel = content.brands?.ariaLabel ?? content.ariaLabel ?? "Trusted Brands";
 
   return (
     <section
       className={cn(
-        "our-client-sec dev h-[164px] overflow-hidden bg-[#fbf7ed] py-10",
-        hasSpaciousMobileLayout ? "max-[991px]:h-[270px]" : "max-[991px]:h-[217px]",
+        "our-client-sec dev overflow-hidden",
+        isCompact
+          ? "h-[104px] bg-[#fbeed5] py-[17px] max-[991px]:h-[150px] max-[767px]:h-[135px]"
+          : "h-[164px] bg-[#fbf7ed] py-10",
+        !isCompact && (hasSpaciousMobileLayout ? "max-[991px]:h-[270px]" : "max-[991px]:h-[217px]"),
         className,
       )}
       aria-labelledby={`${content.slug}-brands-title`}
@@ -41,16 +47,23 @@ export function IndustryBrandsSection({
       <div className="main-wrapper flex items-center max-[991px]:block">
         <div
           className={cn(
-            "left-col w-[31%] pl-[calc((100%-1140px)/2)] max-[1199px]:w-[30%] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991px]:w-full max-[991px]:p-0 max-[991px]:text-center",
-            hasSpaciousMobileLayout ? "max-[991px]:mb-10" : "max-[991px]:mb-5",
+            isCompact
+              ? "left-col w-1/3 pl-[calc((100%-1320px)/2)] max-[1199px]:w-[30%] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991px]:mb-[15px] max-[991px]:w-full max-[991px]:p-0 max-[991px]:text-center"
+              : "left-col w-[31%] pl-[calc((100%-1140px)/2)] max-[1199px]:w-[30%] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991px]:w-full max-[991px]:p-0 max-[991px]:text-center",
+            !isCompact && (hasSpaciousMobileLayout ? "max-[991px]:mb-10" : "max-[991px]:mb-5"),
           )}
         >
           <h2
-            className="m-0 font-[Montserrat,sans-serif] text-[25px] leading-[33px] font-semibold tracking-[-.02em] text-ink"
+            className={cn(
+              "m-0 font-[Montserrat,sans-serif] font-semibold text-ink",
+              isCompact
+                ? "text-xl leading-[26.4px] tracking-normal max-[1199px]:text-lg"
+                : "text-[25px] leading-[33px] tracking-[-.02em]",
+            )}
             id={`${content.slug}-brands-title`}
           >
             {heading ? (
-              formatBrText(heading, "max-[991px]:hidden")
+              formatBrText(heading, isCompact ? "hidden" : "max-[991px]:hidden")
             ) : (
               <>
                 Trusted by <br className="max-[991px]:hidden" /> Leading Brands
@@ -58,11 +71,11 @@ export function IndustryBrandsSection({
             )}
           </h2>
         </div>
-        <div className="right-col w-[69%] max-[1199px]:w-[70%] max-[991px]:w-full">
+        <div className={isCompact ? "right-col w-2/3 max-[1199px]:w-[70%] max-[991px]:w-full" : "right-col w-[69%] max-[1199px]:w-[70%] max-[991px]:w-full"}>
           <ClientLogoSlider
             ariaLabel={ariaLabel}
             items={items}
-            variant="industry"
+            variant={isCompact ? "industryCompact" : "industry"}
           />
         </div>
       </div>

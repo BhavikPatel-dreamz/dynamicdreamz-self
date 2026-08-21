@@ -35,16 +35,36 @@ export function PrestigeThemeCustomizationPage() {
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ThemeHeroSection content={prestigeThemeCustomizationContent.hero} />
+      <ThemeHeroSection
+        alignItemsEnd={false}
+        content={prestigeThemeCustomizationContent.hero}
+        imageStretchesOnDesktop
+        tabletImageHalfWidth
+        tabletImageTopSpacing
+      />
       <IndustryBrandsSection
         content={brandsContent}
         heading={prestigeThemeCustomizationContent.brands.title}
         items={prestigeThemeCustomizationContent.brands.items}
+        variant="compact"
       />
       <ThemeFeaturesSection content={prestigeThemeCustomizationContent.features} />
-      <ShopifyReasonsSection content={benefitsContent} />
-      <ShopifyServicesSection content={servicesContent} />
-      <ThemeWhyChooseSection content={prestigeThemeCustomizationContent.whyChoose} />
+      <ShopifyReasonsSection
+        carouselFullBleed
+        content={benefitsContent}
+        layout="carousel"
+        preserveHeadingBreaks
+      />
+      <ShopifyServicesSection
+        content={servicesContent}
+        preserveDesktopTypography
+      />
+      <ThemeWhyChooseSection
+        content={prestigeThemeCustomizationContent.whyChoose}
+        preserveDesktopTypography
+        preserveLiveIconSize
+        variant="top-icon"
+      />
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
