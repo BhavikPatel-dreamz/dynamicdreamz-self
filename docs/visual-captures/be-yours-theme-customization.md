@@ -71,8 +71,8 @@
   - `/assets/sense-theme-customization/features/multiple-layout-options.svg`
   - `/assets/impulse-theme-customization/features/product-quick-view.svg`
 - Unique feature icons saved under `public/assets/be-yours-theme-customization/features/`:
-  - `built-in-product-filtering.svg`
-  - `promotional-banner-options.svg`
+  - `/assets/prestige-theme-customization/features/advanced-product-filtering.svg` (canonical hash match)
+  - `/assets/prestige-theme-customization/features/slideshow-high-impact-images.svg` (canonical hash match)
   - `mega-menu-support.svg`
   - `social-media-integration.svg`
 - 9 benefit icons and 6 service icons reused from `public/assets/shopify-theme-customization/`.

@@ -116,6 +116,10 @@ import {
   wordpressDevelopmentServices,
 } from "@/content/wordpress-development";
 import {
+  wordpressDevelopmentCompanyFaqs,
+  wordpressDevelopmentCompanyServices,
+} from "@/content/wordpress-development-company";
+import {
   wordPressThemeCustomizationContent,
   wordPressThemeCustomizationFaqs,
 } from "@/content/wordpress-theme-customization";
@@ -212,6 +216,13 @@ const wordpressDevelopmentPageId = `${wordpressDevelopmentPageUrl}#webpage`;
 const wordpressDevelopmentServiceId = `${wordpressDevelopmentPageUrl}#service`;
 const wordpressDevelopmentFaqId = `${wordpressDevelopmentPageUrl}#faq`;
 const wordpressDevelopmentBreadcrumbId = `${wordpressDevelopmentPageUrl}#breadcrumb`;
+const wordpressDevelopmentCompanyPageUrl = absoluteUrl(
+  pageSeo.wordpressDevelopmentCompany.path,
+);
+const wordpressDevelopmentCompanyPageId = `${wordpressDevelopmentCompanyPageUrl}#webpage`;
+const wordpressDevelopmentCompanyServiceId = `${wordpressDevelopmentCompanyPageUrl}#service`;
+const wordpressDevelopmentCompanyFaqId = `${wordpressDevelopmentCompanyPageUrl}#faq`;
+const wordpressDevelopmentCompanyBreadcrumbId = `${wordpressDevelopmentCompanyPageUrl}#breadcrumb`;
 const hireWordPressDevelopersPageUrl = absoluteUrl(pageSeo.hireWordPressDevelopers.path);
 const hireWordPressDevelopersPageId = `${hireWordPressDevelopersPageUrl}#webpage`;
 const hireWordPressDevelopersServiceId = `${hireWordPressDevelopersPageUrl}#service`;
@@ -1767,10 +1778,10 @@ const shopifyPlusTestimonialUploadDates: Record<string, string> = {
   "WQWG2niydpE": "2026-06-03",
 };
 
-function shopifyPlusTestimonialVideoSchema() {
+function shopifyPlusTestimonialVideoSchema(pageUrl = shopifyPlusPageUrl) {
   return shopifyPlusAgencyTestimonials.items.map((testimonial) =>
     videoObjectSchema({
-      id: `${shopifyPlusPageUrl}#testimonial-video-${testimonial.videoId}`,
+      id: `${pageUrl}#testimonial-video-${testimonial.videoId}`,
       name: `${testimonial.name} client testimonial for Dynamic Dreamz`,
       description: `${testimonial.name}, ${testimonial.company} client testimonial for Dynamic Dreamz. ${testimonial.quote}`,
       thumbnailUrl: `https://i.ytimg.com/vi/${testimonial.videoId}/hqdefault.jpg`,
@@ -1799,6 +1810,26 @@ export function createShopifyPlusAgencyPageSchema() {
   });
 }
 
+export function createWordPressDevelopmentCompanyPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.wordpressDevelopmentCompany,
+    pageUrl: wordpressDevelopmentCompanyPageUrl,
+    pageId: wordpressDevelopmentCompanyPageId,
+    serviceId: wordpressDevelopmentCompanyServiceId,
+    faqId: wordpressDevelopmentCompanyFaqId,
+    breadcrumbId: wordpressDevelopmentCompanyBreadcrumbId,
+    serviceName: "WordPress Development Company in India",
+    serviceType:
+      "Custom WordPress website, theme, plugin, WooCommerce, migration, optimization, and maintenance services",
+    breadcrumbName: "WordPress Development Company in India",
+    audienceType:
+      "Businesses, ecommerce brands, and digital agencies seeking WordPress development services in India",
+    faqs: wordpressDevelopmentCompanyFaqs,
+    offers: wordpressDevelopmentCompanyServices.items,
+    videos: shopifyPlusTestimonialVideoSchema(wordpressDevelopmentCompanyPageUrl),
+  });
+}
+
 export function createWordPressDevelopmentPageSchema() {
   return createServicePageSchema({
     page: pageSeo.wordpressDevelopment,
@@ -1814,7 +1845,7 @@ export function createWordPressDevelopmentPageSchema() {
       "Businesses, ecommerce brands, and digital agencies seeking custom WordPress web development services",
     faqs: wordpressDevelopmentFaqs,
     offers: wordpressDevelopmentServices.items,
-    videos: shopifyPlusTestimonialVideoSchema(),
+    videos: shopifyPlusTestimonialVideoSchema(wordpressDevelopmentPageUrl),
   });
 }
 
