@@ -24,6 +24,7 @@ export function ShopifyAppBenefitsSection({
   id = "benefits",
 }: ShopifyAppBenefitsSectionProps) {
   const isJustifyLeft = className.includes("justify-left");
+  const isFourColumn = className.includes("four-column") || content.items.length === 4;
 
   return (
     <section className={className} data-section="benefits" id={id}>
@@ -46,7 +47,9 @@ export function ShopifyAppBenefitsSection({
           >
             {content.items.map((item) => (
               <div
-                className="benefit_box mb-[15px] w-1/3 px-[7.5px] max-[991px]:w-1/2 max-[767px]:w-full"
+                className={`benefit_box mb-[15px] px-[7.5px] max-[767px]:w-full ${
+                  isFourColumn ? "w-1/4 max-[1199px]:w-1/2" : "w-1/3 max-[991px]:w-1/2"
+                }`}
                 key={item.title}
               >
                 <div className="benefit_text group relative z-0 h-full rounded-[10px] border border-[#d9d9d9] p-[30px_30px_55px_30px] transition-all duration-300 hover:border-transparent hover:shadow-[0_4px_30px_0_rgba(0,0,0,0.1)] max-[767px]:p-[30px_20px] before:pointer-events-none before:absolute before:-inset-[2px] before:-z-20 before:block before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] before:opacity-0 before:transition-all before:duration-300 before:ease-in-out hover:before:opacity-100 after:pointer-events-none after:absolute after:inset-0 after:-z-10 after:rounded-[9px] after:bg-white">

@@ -1126,8 +1126,87 @@ Primary SEO intent: Pipeline theme customization, Pipeline Shopify theme customi
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
 | Meta title | `Pipeline Theme Customization Services \| Dynamic Dreamz` (55 chars) | Preserved live title (55 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
-| Meta description | `Get a Pipeline Theme Customization Service for your Shopify store. Improve design, functionality, and conversions. Contact Dynamic Dreamz today!` (144 chars) | Preserved live meta description (144 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
 | Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (5 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Vision Theme Customization (`/vision-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: Vision theme customization, Vision Shopify theme customization service, customize Vision theme Shopify, Shopify Vision theme developers, hire Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Vision Theme Customization Services \| Dynamic Dreamz` (53 chars) | Preserved live title (53 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (5 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Craft Theme Customization (`/craft-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: Craft theme customization, Craft Shopify theme customization service, customize Craft theme Shopify, Shopify Craft theme developers, hire Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Craft Theme Customization Services \| Dynamic Dreamz` (52 chars) | Preserved live title (52 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Broadcast Theme Customization (`/broadcast-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: Broadcast theme customization, Broadcast Shopify theme customization service, customize Broadcast theme Shopify, Shopify Broadcast theme developers, hire Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Warehouse Theme Customization (`/warehouse-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: Warehouse theme customization, Warehouse Shopify theme customization service, customize Warehouse theme Shopify, Shopify Warehouse theme developers, hire Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Warehouse Theme Customization Services \| Dynamic Dreamz` (56 chars) | Preserved live title (56 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get professional Warehouse theme customization service for your Shopify store. Hire Dynamic Dreamz with 18 years of experience to optimize your store.` (151 chars) | Preserved live meta description (151 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Startup Theme Customization (`/startup-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: Startup theme customization, Startup Shopify theme customization service, customize Startup theme Shopify, Shopify Startup theme developers, hire Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Startup Theme Customization Services \| Dynamic Dreamz` (54 chars) | Preserved live title (54 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (7 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Impact Theme Customization (`/impact-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: Impact theme customization, Impact Shopify theme customization service, customize Impact theme Shopify, Shopify Impact theme developers, hire Shopify developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Impact Theme Customization Services \| Dynamic Dreamz` (53 chars) | Preserved live title (53 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Want Impact Theme Customization Service for your Shopify store? Hire Dynamic Dreamz with 18 years of experience to optimize your store.` (135 chars) | Preserved live meta description (135 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (5 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Shopify Development Company in Chennai (`/shopify-development-company-in-chennai`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: Shopify development company in Chennai, hire Shopify developers in Chennai, Shopify Plus agency Chennai, custom Shopify development company Chennai India.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Hire Shopify development company in Chennai \| Dynamic Dreamz` (60 chars) | Preserved live title (60 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Looking for a Shopify development company in Chennai? Our professional team delivers custom Ecommerce solutions that fulfill your business needs.` (145 chars) | Preserved live meta description (145 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Services intro grammar | `If you want to scale your business quickly? The Dynamic Dreamz, a Shopify Development Company in Chennai, offers the best Shopify Plus store development service.` | `Looking to scale your business quickly? Dynamic Dreamz, a leading Shopify development company in Chennai, offers comprehensive Shopify store development services.` | Fixes sentence construction and grammar. | Low | deferred pending exact visible-copy approval |
+| Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (7 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
 
 ## GeneratePress Theme Customization (`/generatepress-theme-customization`)
 

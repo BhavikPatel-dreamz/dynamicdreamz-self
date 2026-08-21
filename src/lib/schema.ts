@@ -91,6 +91,12 @@ import { originThemeCustomizationContent } from "@/content/origin-theme-customiz
 import { stilettoThemeCustomizationContent } from "@/content/stiletto-theme-customization";
 import { colorblockThemeCustomizationContent } from "@/content/colorblock-theme-customization";
 import { pipelineThemeCustomizationContent } from "@/content/pipeline-theme-customization";
+import { visionThemeCustomizationContent } from "@/content/vision-theme-customization";
+import { craftThemeCustomizationContent } from "@/content/craft-theme-customization";
+import { broadcastThemeCustomizationContent } from "@/content/broadcast-theme-customization";
+import { warehouseThemeCustomizationContent } from "@/content/warehouse-theme-customization";
+import { startupThemeCustomizationContent } from "@/content/startup-theme-customization";
+import { impactThemeCustomizationContent } from "@/content/impact-theme-customization";
 import { astraThemeCustomizationContent } from "@/content/astra-theme-customization";
 import { kadenceThemeCustomizationContent } from "@/content/kadence-theme-customization";
 import { helloElementorThemeCustomizationContent } from "@/content/hello-elementor-theme-customization";
@@ -135,6 +141,7 @@ import {
   crossPlatformAppDevelopmentFaqs,
   crossPlatformAppDevelopmentServices,
 } from "@/content/cross-platform-app-development";
+import { shopifyDevelopmentChennaiContent } from "@/content/shopify-development-company-in-chennai";
 import {
   shopifyMobileAppBenefits,
   shopifyMobileAppDevelopmentFaqs,
@@ -526,6 +533,36 @@ const pipelineThemeCustomizationPageId = `${pipelineThemeCustomizationPageUrl}#w
 const pipelineThemeCustomizationServiceId = `${pipelineThemeCustomizationPageUrl}#service`;
 const pipelineThemeCustomizationFaqId = `${pipelineThemeCustomizationPageUrl}#faq`;
 const pipelineThemeCustomizationBreadcrumbId = `${pipelineThemeCustomizationPageUrl}#breadcrumb`;
+const visionThemeCustomizationPageUrl = absoluteUrl(pageSeo.visionThemeCustomization.path);
+const visionThemeCustomizationPageId = `${visionThemeCustomizationPageUrl}#webpage`;
+const visionThemeCustomizationServiceId = `${visionThemeCustomizationPageUrl}#service`;
+const visionThemeCustomizationFaqId = `${visionThemeCustomizationPageUrl}#faq`;
+const visionThemeCustomizationBreadcrumbId = `${visionThemeCustomizationPageUrl}#breadcrumb`;
+const craftThemeCustomizationPageUrl = absoluteUrl(pageSeo.craftThemeCustomization.path);
+const craftThemeCustomizationPageId = `${craftThemeCustomizationPageUrl}#webpage`;
+const craftThemeCustomizationServiceId = `${craftThemeCustomizationPageUrl}#service`;
+const craftThemeCustomizationFaqId = `${craftThemeCustomizationPageUrl}#faq`;
+const craftThemeCustomizationBreadcrumbId = `${craftThemeCustomizationPageUrl}#breadcrumb`;
+const broadcastThemeCustomizationPageUrl = absoluteUrl(pageSeo.broadcastThemeCustomization.path);
+const broadcastThemeCustomizationPageId = `${broadcastThemeCustomizationPageUrl}#webpage`;
+const broadcastThemeCustomizationServiceId = `${broadcastThemeCustomizationPageUrl}#service`;
+const broadcastThemeCustomizationFaqId = `${broadcastThemeCustomizationPageUrl}#faq`;
+const broadcastThemeCustomizationBreadcrumbId = `${broadcastThemeCustomizationPageUrl}#breadcrumb`;
+const warehouseThemeCustomizationPageUrl = absoluteUrl(pageSeo.warehouseThemeCustomization.path);
+const warehouseThemeCustomizationPageId = `${warehouseThemeCustomizationPageUrl}#webpage`;
+const warehouseThemeCustomizationServiceId = `${warehouseThemeCustomizationPageUrl}#service`;
+const warehouseThemeCustomizationFaqId = `${warehouseThemeCustomizationPageUrl}#faq`;
+const warehouseThemeCustomizationBreadcrumbId = `${warehouseThemeCustomizationPageUrl}#breadcrumb`;
+const startupThemeCustomizationPageUrl = absoluteUrl(pageSeo.startupThemeCustomization.path);
+const startupThemeCustomizationPageId = `${startupThemeCustomizationPageUrl}#webpage`;
+const startupThemeCustomizationServiceId = `${startupThemeCustomizationPageUrl}#service`;
+const startupThemeCustomizationFaqId = `${startupThemeCustomizationPageUrl}#faq`;
+const startupThemeCustomizationBreadcrumbId = `${startupThemeCustomizationPageUrl}#breadcrumb`;
+const impactThemeCustomizationPageUrl = absoluteUrl(pageSeo.impactThemeCustomization.path);
+const impactThemeCustomizationPageId = `${impactThemeCustomizationPageUrl}#webpage`;
+const impactThemeCustomizationServiceId = `${impactThemeCustomizationPageUrl}#service`;
+const impactThemeCustomizationFaqId = `${impactThemeCustomizationPageUrl}#faq`;
+const impactThemeCustomizationBreadcrumbId = `${impactThemeCustomizationPageUrl}#breadcrumb`;
 const shopifyDevelopmentAgencyPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentAgency.path);
 const shopifyDevelopmentAgencyPageId = `${shopifyDevelopmentAgencyPageUrl}#webpage`;
 const shopifyDevelopmentAgencyServiceId = `${shopifyDevelopmentAgencyPageUrl}#service`;
@@ -589,6 +626,11 @@ const shopifyDevelopmentBarcelonaPageUrl = absoluteUrl(pageSeo.shopifyDevelopmen
 const shopifyDevelopmentBarcelonaPageId = `${shopifyDevelopmentBarcelonaPageUrl}#webpage`;
 const shopifyDevelopmentBarcelonaServiceId = `${shopifyDevelopmentBarcelonaPageUrl}#service`;
 const shopifyDevelopmentBarcelonaBreadcrumbId = `${shopifyDevelopmentBarcelonaPageUrl}#breadcrumb`;
+const shopifyDevelopmentChennaiPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentCompanyInChennai.path);
+const shopifyDevelopmentChennaiPageId = `${shopifyDevelopmentChennaiPageUrl}#webpage`;
+const shopifyDevelopmentChennaiServiceId = `${shopifyDevelopmentChennaiPageUrl}#service`;
+const shopifyDevelopmentChennaiFaqId = `${shopifyDevelopmentChennaiPageUrl}#faq`;
+const shopifyDevelopmentChennaiBreadcrumbId = `${shopifyDevelopmentChennaiPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -3147,6 +3189,150 @@ export function createPipelineThemeCustomizationPageSchema() {
   });
 }
 
+export function createVisionThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.visionThemeCustomization,
+    pageUrl: visionThemeCustomizationPageUrl,
+    pageId: visionThemeCustomizationPageId,
+    serviceId: visionThemeCustomizationServiceId,
+    faqId: visionThemeCustomizationFaqId,
+    breadcrumbId: visionThemeCustomizationBreadcrumbId,
+    serviceName: "Vision Theme Customization Service",
+    serviceType: "Vision Shopify theme customization, high-impact visual design, flexible homepage sections, mega menu support, product image zoom and hover effects, speed optimization, mobile-friendly layout, integrated social media links, built-in SEO tools, Liquid development, and third-party app integration",
+    breadcrumbName: "Vision Theme Customization Service",
+    audienceType:
+      "Stylish fashion retailers, beauty and cosmetics brands, modern tech gadget stores, lifestyle ecommerce businesses, visual catalog brands, and modern Shopify merchants seeking professional Vision theme customization",
+    faqs: visionThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: visionThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createCraftThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.craftThemeCustomization,
+    pageUrl: craftThemeCustomizationPageUrl,
+    pageId: craftThemeCustomizationPageId,
+    serviceId: craftThemeCustomizationServiceId,
+    faqId: craftThemeCustomizationFaqId,
+    breadcrumbId: craftThemeCustomizationBreadcrumbId,
+    serviceName: "Craft Theme Customization Service",
+    serviceType: "Craft Shopify theme customization, minimalist clean design, flexible sections, large image display, smooth navigation, storytelling features, SEO structure, mobile optimization, customizable typography, Liquid development, and third-party app integration",
+    breadcrumbName: "Craft Theme Customization Service",
+    audienceType:
+      "Artisanal makers, handcrafted goods brands, boutique lifestyle retailers, minimalist aesthetic businesses, storytelling-first ecommerce brands, and modern Shopify merchants seeking professional Craft theme customization",
+    faqs: craftThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: craftThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createBroadcastThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.broadcastThemeCustomization,
+    pageUrl: broadcastThemeCustomizationPageUrl,
+    pageId: broadcastThemeCustomizationPageId,
+    serviceId: broadcastThemeCustomizationServiceId,
+    faqId: broadcastThemeCustomizationFaqId,
+    breadcrumbId: broadcastThemeCustomizationBreadcrumbId,
+    serviceName: "Broadcast Theme Customization Service",
+    serviceType: "Broadcast Shopify theme customization, built-in lookbook and storytelling, high-quality video support, advanced product filtering, customizable homepage layouts, SEO optimization, one-click add to cart, product quick view, social proof reviews, Liquid development, and third-party app integration",
+    breadcrumbName: "Broadcast Theme Customization Service",
+    audienceType:
+      "Fashion apparel brands, beauty and cosmetics labels, lifestyle stores, multi-category retailers, visual storytelling ecommerce brands, and modern Shopify merchants seeking professional Broadcast theme customization",
+    faqs: broadcastThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: broadcastThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createWarehouseThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.warehouseThemeCustomization,
+    pageUrl: warehouseThemeCustomizationPageUrl,
+    pageId: warehouseThemeCustomizationPageId,
+    serviceId: warehouseThemeCustomizationServiceId,
+    faqId: warehouseThemeCustomizationFaqId,
+    breadcrumbId: warehouseThemeCustomizationBreadcrumbId,
+    serviceName: "Warehouse Theme Customization Service",
+    serviceType: "Warehouse Shopify theme customization, large catalog support, advanced search and filtering, high-performance design, mobile-friendly layout, customizable homepage sections, built-in product badges, SEO structure, cart and checkout enhancements, Liquid development, and third-party app integration",
+    breadcrumbName: "Warehouse Theme Customization Service",
+    audienceType:
+      "Large inventory stores, high-volume ecommerce retailers, multi-category department stores, electronics and industrial distributors, wholesale B2B merchants, and modern Shopify merchants seeking professional Warehouse theme customization",
+    faqs: warehouseThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: warehouseThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createStartupThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.startupThemeCustomization,
+    pageUrl: startupThemeCustomizationPageUrl,
+    pageId: startupThemeCustomizationPageId,
+    serviceId: startupThemeCustomizationServiceId,
+    faqId: startupThemeCustomizationFaqId,
+    breadcrumbId: startupThemeCustomizationBreadcrumbId,
+    serviceName: "Startup Theme Customization Service",
+    serviceType: "Startup Shopify theme customization, single-product focus, modern minimalist design, brand storytelling, quick setup, high-speed performance, SEO-optimized structure, integrated marketing sections, Liquid development, and third-party app integration",
+    breadcrumbName: "Startup Theme Customization Service",
+    audienceType:
+      "Direct-to-consumer brands, single-product ecommerce stores, tiny catalog boutique retailers, product launch founders, dropshipping entrepreneurs, and modern Shopify merchants seeking professional Startup theme customization",
+    faqs: startupThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: startupThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createImpactThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.impactThemeCustomization,
+    pageUrl: impactThemeCustomizationPageUrl,
+    pageId: impactThemeCustomizationPageId,
+    serviceId: impactThemeCustomizationServiceId,
+    faqId: impactThemeCustomizationFaqId,
+    breadcrumbId: impactThemeCustomizationBreadcrumbId,
+    serviceName: "Impact Theme Customization Service",
+    serviceType: "Impact Shopify theme customization, visual storytelling layouts, high-speed performance, advanced product displays, seamless navigation, mobile optimization, conversion-focused elements, marketing integrations, Liquid development, and third-party app integration",
+    breadcrumbName: "Impact Theme Customization Service",
+    audienceType:
+      "Visual storytelling brands, modern tech gadget retailers, bold fashion labels, beauty and lifestyle stores, high-impact ecommerce businesses, and modern Shopify merchants seeking professional Impact theme customization",
+    faqs: impactThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: impactThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
 export function createShopifyDevelopmentAgencyPageSchema() {
   return createServicePageSchema({
     page: pageSeo.shopifyDevelopmentAgency,
@@ -3529,6 +3715,31 @@ export function createShopifyDevelopmentBarcelonaPageSchema() {
         description: item.description,
       })),
     },
+  });
+}
+
+export function createShopifyDevelopmentCompanyInChennaiPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentCompanyInChennai,
+    pageUrl: shopifyDevelopmentChennaiPageUrl,
+    pageId: shopifyDevelopmentChennaiPageId,
+    serviceId: shopifyDevelopmentChennaiServiceId,
+    faqId: shopifyDevelopmentChennaiFaqId,
+    breadcrumbId: shopifyDevelopmentChennaiBreadcrumbId,
+    serviceName: "Shopify Development Company in Chennai",
+    serviceType:
+      "Shopify development services in Chennai, custom Shopify store design, Shopify Plus development, theme customization, Figma to Shopify conversion, app integrations, Shopify migration, maintenance, and white label Shopify services",
+    breadcrumbName: "Shopify Development Company in Chennai",
+    audienceType:
+      "Businesses, eCommerce retailers, direct-to-consumer brands, and enterprises in Chennai, Tamil Nadu, and across India seeking professional Shopify development",
+    faqs: shopifyDevelopmentChennaiContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: shopifyDevelopmentChennaiContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
   });
 }
 

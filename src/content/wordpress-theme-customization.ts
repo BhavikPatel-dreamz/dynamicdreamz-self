@@ -1,4 +1,5 @@
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const wordPressThemeCustomizationContent = {
   hero: {
@@ -9,12 +10,110 @@ export const wordPressThemeCustomizationContent = {
 
   brands: {
     title: "Trusted by <br>Leading Brands",
+    items: [
+      {
+        name: "Supper Tails Logo",
+        src: "/assets/clients/supertails.svg",
+        href: "https://supertails.com/",
+        alt: "Supper Tails Logo",
+        width: 164,
+        height: 41,
+      },
+      {
+        name: "Eleven Eleven",
+        src: "/assets/clients/eleven-eleven.svg",
+        href: "https://11-11.in/",
+        alt: "Eleven Eleven",
+        width: 145,
+        height: 20,
+      },
+      {
+        name: "bellavita logo",
+        src: "/assets/clients/bella-vita.svg",
+        href: "https://bellavitaorganic.com/",
+        alt: "bellavita logo",
+        width: 166,
+        height: 24,
+      },
+      {
+        name: "Bombay Shirt Company",
+        src: "/assets/clients/bombay-shirt-company.svg",
+        href: "https://www.bombayshirts.com/",
+        alt: "Bombay Shirt Company",
+        width: 204,
+        height: 26,
+      },
+      {
+        name: "popclub-co",
+        src: "/assets/clients/popclub.svg",
+        href: "https://popclub.co/",
+        alt: "popclub-co",
+        width: 65,
+        height: 41,
+      },
+      {
+        name: "SriSri Tattva Logo",
+        src: "/assets/clients/sri-sri-tattva.svg",
+        href: "https://www.srisritattva.com/",
+        alt: "SriSri Tattva Logo",
+        width: 106,
+        height: 40,
+      },
+      {
+        name: "tropicfeel logo",
+        src: "/assets/clients/tropicfeel.svg",
+        href: "https://shop.tropicfeel.com/",
+        alt: "tropicfeel logo",
+        width: 150,
+        height: 32,
+      },
+      {
+        name: "Renee logo",
+        src: "/assets/clients/renee.svg",
+        href: "https://www.reneecosmetics.in/",
+        alt: "Renee logo",
+        width: 93,
+        height: 30,
+      },
+      {
+        name: "Royce chocolate logo",
+        src: "/assets/clients/royce-chocolate.svg",
+        href: "https://royceindia.com/",
+        alt: "Royce chocolate logo",
+        width: 132,
+        height: 38,
+      },
+      {
+        name: "tego logo",
+        src: "/assets/clients/tego.svg",
+        href: "https://tego.fit/",
+        alt: "tego logo",
+        width: 101,
+        height: 40,
+      },
+      {
+        name: "nekter-colored",
+        src: "/assets/clients/nelter.svg",
+        href: "https://www.nekterjuicebar.com/",
+        alt: "nekter-colored",
+        width: 66,
+        height: 64,
+      },
+      {
+        name: "Rare Rabbit Logo",
+        src: "/assets/clients/rare-rabbit.svg",
+        href: "https://thehouseofrare.com/",
+        alt: "Rare Rabbit Logo",
+        width: 122,
+        height: 84,
+      },
+    ],
   },
 
   services: {
     title: "Our WordPress Theme Customization Services",
     subtitle:
-      "We provide end-to-end WordPress theme customization services to help you build a visually appealing, responsive, and high-performing website. From design adjustments to custom feature integrations, we ensure your WordPress website meets your exact business requirements.",
+      "We offer comprehensive WordPress customization services to ensure your website stands out and performs at its best. Our solutions maintain excellent performance, security, and usability while being customized to meet your needs.",
     items: [
       {
         title: "Theme Selection and Installation",
@@ -213,17 +312,17 @@ export const wordPressThemeCustomizationContent = {
       {
         name: "HTML5",
         image: "/assets/shopify-theme-customization/tech/html5.svg",
-        alt: "HTML5 Icon",
+        alt: "HTML5 Logo",
       },
       {
         name: "CSS3",
         image: "/assets/shopify-theme-customization/tech/css3.svg",
-        alt: "CSS3 Icon",
+        alt: "CSS3 Logo",
       },
       {
-        name: "JavaScript",
+        name: "Javascript",
         image: "/assets/shopify-theme-customization/tech/javascript.svg",
-        alt: "JavaScript Icon",
+        alt: "Javascript Logo",
       },
       {
         name: "MySQL",
@@ -233,7 +332,7 @@ export const wordPressThemeCustomizationContent = {
       {
         name: "jQuery",
         image: "/assets/shopify-theme-customization/tech/jquery.svg",
-        alt: "jQuery Icon",
+        alt: "jQuery Logo",
       },
       {
         name: "Bootstrap",
@@ -256,14 +355,9 @@ export const wordPressThemeCustomizationContent = {
         alt: "Elementor Logo",
       },
       {
-        name: "WPBakery",
+        name: "WPBakery Builder",
         image: "/assets/wordpress-theme-customization/tech/wpbakery.svg",
-        alt: "WPBakery Page Builder",
-      },
-      {
-        name: "Divi Builder",
-        image: "/assets/wordpress-theme-customization/tech/divi.svg",
-        alt: "Divi Builder Logo",
+        alt: "WPBakery Builder Logo",
       },
     ],
   },
@@ -276,87 +370,104 @@ export const wordPressThemeCustomizationContent = {
       {
         name: "Hello Elementor Theme",
         image: "/assets/wordpress-theme-customization/themes/hello-elementor.webp",
-        alt: "Hello Elementor Theme",
+        alt: "Hello Elementor Theme Image",
+        href: "/hello-elementor-theme-customization",
       },
       {
         name: "Astra Theme",
         image: "/assets/wordpress-theme-customization/themes/astra.webp",
-        alt: "Astra Theme",
+        alt: "Astra Theme Image",
+        href: "/astra-theme-customization",
       },
       {
         name: "Kadence Theme",
         image: "/assets/wordpress-theme-customization/themes/kadence.webp",
-        alt: "Kadence Theme",
+        alt: "Kadence Theme Image",
+        href: "/kadence-theme-customization",
       },
       {
         name: "GeneratePress Theme",
         image: "/assets/wordpress-theme-customization/themes/generatepress.webp",
-        alt: "GeneratePress Theme",
+        alt: "GeneratePress Theme Image",
+        href: "/generatepress-theme-customization",
       },
       {
         name: "OceanWP Theme",
         image: "/assets/wordpress-theme-customization/themes/oceanwp.webp",
-        alt: "OceanWP Theme",
+        alt: "OceanWP Theme Image",
+        href: "/oceanwp-theme-customization",
       },
       {
         name: "Neve Theme",
         image: "/assets/wordpress-theme-customization/themes/neve.webp",
-        alt: "Neve Theme",
+        alt: "Neve Theme Image",
+        href: "/neve-theme-customization",
       },
       {
         name: "Blocksy Theme",
         image: "/assets/wordpress-theme-customization/themes/blocksy.webp",
-        alt: "Blocksy Theme",
+        alt: "Blocksy Theme Image",
+        href: "/blocksy-theme-customization",
       },
       {
         name: "Extendable Theme",
         image: "/assets/wordpress-theme-customization/themes/extendable.webp",
-        alt: "Extendable Theme",
+        alt: "Extendable Theme Image",
+        href: "/extendable-theme-customization",
       },
       {
         name: "Kubio Theme",
         image: "/assets/wordpress-theme-customization/themes/kubio.webp",
-        alt: "Kubio Theme",
+        alt: "Kubio Theme Image",
+        href: "/kubio-theme-customization",
       },
       {
         name: "Royal Elementor Kit Theme",
         image: "/assets/wordpress-theme-customization/themes/royal-elementor-kit.webp",
-        alt: "Royal Elementor Kit Theme",
+        alt: "Royal Elementor Kit Image",
+        href: "/royal-elementor-kit-theme-customization",
       },
       {
         name: "YITH Wonder Theme",
         image: "/assets/wordpress-theme-customization/themes/yith-wonder.webp",
         alt: "YITH Wonder Theme",
+        href: "/request-quote",
       },
       {
         name: "PopularFX Theme",
         image: "/assets/wordpress-theme-customization/themes/popularfx.webp",
         alt: "PopularFX Theme",
+        href: "/popularfx-theme-customization",
       },
       {
         name: "BlogHash Theme",
         image: "/assets/wordpress-theme-customization/themes/bloghash.webp",
         alt: "BlogHash Theme",
+        href: "/bloghash-theme-customization",
       },
       {
         name: "Inspiro Theme",
         image: "/assets/wordpress-theme-customization/themes/inspiro.webp",
         alt: "Inspiro Theme",
+        href: "/request-quote",
       },
       {
-        name: "News Blogger Theme",
+        name: "NewsBlogger Theme",
         image: "/assets/wordpress-theme-customization/themes/news-blogger.webp",
-        alt: "News Blogger Theme",
+        alt: "NewsBlogger Theme",
+        href: "/newsblogger-theme-customization",
       },
       {
         name: "Go Theme",
         image: "/assets/wordpress-theme-customization/themes/go.webp",
         alt: "Go Theme",
+        href: "/go-theme-customization",
       },
       {
-        name: "Hello Biz Theme",
+        name: "Hello Biz Theme Theme",
         image: "/assets/wordpress-theme-customization/themes/hello-biz.webp",
-        alt: "Hello Biz Theme",
+        alt: "Hello Biz Theme Theme",
+        href: "/hello-biz-theme-customization",
       },
     ],
   },
@@ -435,6 +546,13 @@ export const wordPressThemeCustomizationContent = {
         category: "WORDPRESS",
       },
     ],
+  },
+
+  testimonials: {
+    heading: "Don't Just Take Our Word For It",
+    description:
+      "Our clients' success speaks for itself. Read testimonials from satisfied clients who have benefited from <br> our WordPress theme customization services and see how we can help you achieve similar results.",
+    items: shopifyPlusAgencyTestimonials.items,
   },
 } as const;
 

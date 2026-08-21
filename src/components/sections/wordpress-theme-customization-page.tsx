@@ -1,4 +1,5 @@
 import { FaqSection } from "@/components/sections/faq-section";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import {
   ShopifyAdvantagesSection,
   ShopifyReasonsSection,
@@ -7,7 +8,6 @@ import { ShopifyServicesSection } from "@/components/sections/hire-shopify-devel
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
 import { ShopifyThemeProcessSection } from "@/components/sections/shopify-theme-customization/shopify-theme-process-section";
 import { ShopifyThemeTechSection } from "@/components/sections/shopify-theme-customization/shopify-theme-tech-section";
 import { ShopifyThemesGridSection } from "@/components/sections/shopify-theme-customization/shopify-themes-grid-section";
@@ -17,11 +17,6 @@ import {
 } from "@/content/wordpress-theme-customization";
 
 export function WordPressThemeCustomizationPage() {
-  const heroContent = {
-    title: wordPressThemeCustomizationContent.hero.title,
-    description: wordPressThemeCustomizationContent.hero.description,
-  };
-
   const brandsContent = {
     heading: wordPressThemeCustomizationContent.brands.title,
     ariaLabel: "Brands that trust Dynamic Dreamz for WordPress theme customization",
@@ -112,10 +107,20 @@ export function WordPressThemeCustomizationPage() {
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection content={heroContent} variant="split" />
+      <ServiceHeroSection
+        bodyClassName="max-w-[920px] mx-auto text-base font-normal leading-[30.4px] text-muted my-6"
+        className="inner-hero-sec full-width-sec hide-review shopify-theme-customization-sec relative overflow-hidden bg-white pt-[190px] pb-20 max-[991px]:pt-[100px] max-[991px]:pb-10"
+        content={{
+          title: wordPressThemeCustomizationContent.hero.title,
+          description: wordPressThemeCustomizationContent.hero.description,
+        }}
+        leftColClassName="left-col w-full text-center"
+        rightColClassName="hidden"
+      />
       <IndustryBrandsSection
         content={brandsContent}
         heading={wordPressThemeCustomizationContent.brands.title}
+        items={wordPressThemeCustomizationContent.brands.items}
       />
       <ShopifyServicesSection content={servicesContent} />
       <ShopifyAdvantagesSection
@@ -128,14 +133,25 @@ export function WordPressThemeCustomizationPage() {
       <ShopifyThemeTechSection content={techContent} />
       <ShopifyThemesGridSection content={themesContent} />
       <ShopifyAdvantagesSection
-        className="py-20 max-[767px]:py-[60px] bg-[linear-gradient(180deg,#FAF8F5_0%,#FFFFFF_100%)]"
+        className="why_dynamic_dreamz_sec dev why_dynamic_dreamz_sec dev pb-80 bg-gradient-light two-column-icon-text-bg py-20 max-[767px]:py-[60px] bg-[linear-gradient(180deg,#FAF8F5_0%,#FFFFFF_100%)]"
         columns={2}
         content={whyChooseContent}
         id="why-choose-dynamic-dreamz"
       />
-      <PortfolioShowcaseSection content={portfolioContent} />
-      <HappyClientSection />
+      <PortfolioShowcaseSection
+        className="our-work-sec py-20 max-[991px]:py-[50px]"
+        content={portfolioContent}
+        ctaHref="/our-work"
+        ctaLabel="View our work"
+      />
+      <HappyClientSection
+        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[991px]:pb-[50px]"
+        description={wordPressThemeCustomizationContent.testimonials.description}
+        heading={wordPressThemeCustomizationContent.testimonials.heading}
+        items={wordPressThemeCustomizationContent.testimonials.items}
+      />
       <FaqSection
+        className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"
         heading="FAQs on WordPress Theme Customization Services"
         idPrefix="wordpress-theme-customization-faq"
         items={wordPressThemeCustomizationFaqs}

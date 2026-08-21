@@ -2068,6 +2068,162 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  visionThemeCustomization: {
+    path: "/vision-theme-customization",
+    title: "Vision Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Get a Vision Theme Customization Service for your Shopify store. Improve design, functionality, and conversions. Contact Dynamic Dreamz today!",
+    keywords: [
+      "Vision theme customization",
+      "Vision Shopify theme",
+      "Vision theme customization service",
+      "Shopify Vision developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-07-14T03:27:33+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Vision Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  craftThemeCustomization: {
+    path: "/craft-theme-customization",
+    title: "Craft Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Want Craft Theme Customization Service for your Shopify store? Hire Dynamic Dreamz with 18 years of experience to optimize your store.",
+    keywords: [
+      "Craft theme customization",
+      "Craft Shopify theme",
+      "Craft theme customization service",
+      "Shopify Craft developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-07-15T03:30:09+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Craft Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  broadcastThemeCustomization: {
+    path: "/broadcast-theme-customization",
+    title: "Broadcast Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Want Broadcast Theme Customization Service for your Shopify store? Hire Dynamic Dreamz with 18 years of experience to optimize your store.",
+    keywords: [
+      "Broadcast theme customization",
+      "Broadcast Shopify theme",
+      "Broadcast theme customization service",
+      "Shopify Broadcast developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-07-16T09:34:54+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Broadcast Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  warehouseThemeCustomization: {
+    path: "/warehouse-theme-customization",
+    title: "Warehouse Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Get professional Warehouse theme customization service for your Shopify store. Hire Dynamic Dreamz with 18 years of experience to optimize your store.",
+    keywords: [
+      "Warehouse theme customization",
+      "Warehouse Shopify theme",
+      "Warehouse theme customization service",
+      "Shopify Warehouse developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-07-17T08:02:29+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Warehouse Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  startupThemeCustomization: {
+    path: "/startup-theme-customization",
+    title: "Startup Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Get professional Startup Theme Customization Services for your Shopify store. Hire Dynamic Dreamz with 18 years of experience to optimize your store.",
+    keywords: [
+      "Startup theme customization",
+      "Startup Shopify theme",
+      "Startup theme customization service",
+      "Shopify Startup developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-07-18T03:25:16+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Startup Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  impactThemeCustomization: {
+    path: "/impact-theme-customization",
+    title: "Impact Theme Customization Services | Dynamic Dreamz",
+    description:
+      "Want Impact Theme Customization Service for your Shopify store? Hire Dynamic Dreamz with 18 years of experience to optimize your store.",
+    keywords: [
+      "Impact theme customization",
+      "Impact Shopify theme",
+      "Impact theme customization service",
+      "Shopify Impact developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-07-21T03:39:04+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Impact Theme Customization Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   shopifyDevelopmentAgency: {
     path: "/shopify-development-agency",
     title: "Shopify Development Agency & Services | Dynamic Dreamz",
@@ -2170,8 +2326,8 @@ export const pageSeo = {
       "WordPress customization agency",
     ],
     openGraphType: "website",
-    publishedTime: "2024-05-02T09:33:00+00:00",
-    modifiedTime: "2026-08-19T00:00:00+05:30",
+    publishedTime: "2025-03-10T07:37:33+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
@@ -2443,6 +2599,33 @@ export const pageSeo = {
       width: 1200,
       height: 630,
       alt: "Shopify Development in Barcelona | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentCompanyInChennai: {
+    path: "/shopify-development-company-in-chennai",
+    title: "Hire Shopify development company in Chennai | Dynamic Dreamz",
+    description:
+      "Looking for a Shopify development company in Chennai? Our professional team delivers custom Ecommerce solutions that fulfill your business needs.",
+    keywords: [
+      "Shopify development company in Chennai",
+      "Shopify developers Chennai",
+      "Shopify development agency Chennai",
+      "Shopify store design Chennai",
+      "Shopify migration Chennai",
+      "Shopify maintenance Chennai",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-10-08T13:24:33+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Hire Shopify development company in Chennai | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",
