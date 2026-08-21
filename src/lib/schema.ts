@@ -141,6 +141,10 @@ import {
   shopifyMobileAppFeatures,
 } from "@/content/shopify-mobile-app-development";
 import {
+  mobileApplicationDevelopmentOffers,
+  mobileApplicationDevelopmentSchemaFaqs,
+} from "@/content/mobile-application-development";
+import {
   bigCommerceDevelopmentFaqs,
   bigCommerceDevelopmentServices,
 } from "@/content/bigcommerce-development";
@@ -546,6 +550,13 @@ const wordPressThemeCustomizationPageId = `${wordPressThemeCustomizationPageUrl}
 const wordPressThemeCustomizationServiceId = `${wordPressThemeCustomizationPageUrl}#service`;
 const wordPressThemeCustomizationFaqId = `${wordPressThemeCustomizationPageUrl}#faq`;
 const wordPressThemeCustomizationBreadcrumbId = `${wordPressThemeCustomizationPageUrl}#breadcrumb`;
+const mobileApplicationDevelopmentPageUrl = absoluteUrl(
+  pageSeo.mobileApplicationDevelopment.path,
+);
+const mobileApplicationDevelopmentPageId = `${mobileApplicationDevelopmentPageUrl}#webpage`;
+const mobileApplicationDevelopmentServiceId = `${mobileApplicationDevelopmentPageUrl}#service`;
+const mobileApplicationDevelopmentFaqId = `${mobileApplicationDevelopmentPageUrl}#faq`;
+const mobileApplicationDevelopmentBreadcrumbId = `${mobileApplicationDevelopmentPageUrl}#breadcrumb`;
 const androidAppDevelopmentPageUrl = absoluteUrl(pageSeo.androidAppDevelopment.path);
 const androidAppDevelopmentPageId = `${androidAppDevelopmentPageUrl}#webpage`;
 const androidAppDevelopmentServiceId = `${androidAppDevelopmentPageUrl}#service`;
@@ -3270,6 +3281,31 @@ export function createAndroidAppDevelopmentPageSchema() {
       description: item.description,
     })),
     videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createMobileApplicationDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.mobileApplicationDevelopment,
+    pageUrl: mobileApplicationDevelopmentPageUrl,
+    pageId: mobileApplicationDevelopmentPageId,
+    serviceId: mobileApplicationDevelopmentServiceId,
+    faqId: mobileApplicationDevelopmentFaqId,
+    breadcrumbId: mobileApplicationDevelopmentBreadcrumbId,
+    serviceName: "Mobile Application Development Services",
+    serviceType:
+      "Custom mobile application development, Shopify add-on applications, store synchronisation, mobile app customisation, testing, and app store launch support",
+    breadcrumbName: "Mobile Application Development",
+    audienceType:
+      "Shopify merchants, ecommerce brands, and store owners looking for a customised mobile application",
+    faqs: mobileApplicationDevelopmentSchemaFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: mobileApplicationDevelopmentOffers.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
   });
 }
 

@@ -169,7 +169,7 @@ export const dwellThemeCustomizationContent = {
       },
       {
         title: "Advanced Product Filtering",
-        icon: "/assets/be-yours-theme-customization/features/built-in-product-filtering.svg",
+        icon: "/assets/prestige-theme-customization/features/advanced-product-filtering.svg",
         iconAlt: "Quick Setup Icon",
       },
     ],

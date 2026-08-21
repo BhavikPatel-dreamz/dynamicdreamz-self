@@ -2231,6 +2231,33 @@ export const pageSeo = {
     },
     sitemap: { changeFrequency: "monthly", priority: 0.5 },
   },
+  mobileApplicationDevelopment: {
+    path: "/mobile-application-development",
+    title: "Mobile Application Development Services | Dynamic Dreamz",
+    description:
+      "Get the best mobile application development services with Dynamic Dreamz—features, integrations and apps customised to your business goals, ready in weeks.",
+    keywords: [
+      "mobile application development",
+      "mobile application development services",
+      "custom mobile application development",
+      "Shopify mobile application",
+      "Shopify add-on application",
+      "Dynamic Dreamz",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-12-30T10:21:41+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Mobile Application Development Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   androidAppDevelopment: {
     path: "/android-app-development",
     title: "Android App Development Services | Dynamic Dreamz",

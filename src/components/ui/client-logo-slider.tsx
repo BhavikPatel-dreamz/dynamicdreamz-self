@@ -13,14 +13,34 @@ export type ClientLogoSliderItem = ImageItem & {
   href?: string;
 };
 
+export type ClientLogoSliderSlides = {
+  desktop: number;
+  laptop?: number;
+  tablet: number;
+  mobile: number;
+};
+
 type ClientLogoSliderProps = {
   ariaLabel: string;
   items: readonly ClientLogoSliderItem[];
   variant: "industry" | "industryCompact" | "resources";
   compact?: boolean;
+  slides?: ClientLogoSliderSlides;
+  autoplayStartDelayMs?: number;
 };
 
-function slidesForWidth(variant: ClientLogoSliderProps["variant"], width: number) {
+function slidesForWidth(
+  variant: ClientLogoSliderProps["variant"],
+  width: number,
+  slides?: ClientLogoSliderSlides,
+) {
+  if (slides) {
+    if (width < 768) return slides.mobile;
+    if (width < 992) return slides.tablet;
+    if (width < 1200) return slides.laptop ?? slides.tablet;
+    return slides.desktop;
+  }
+
   if (variant === "industry" || variant === "industryCompact") {
     if (width < 768) return 2;
     if (width < 1200) return 3;
@@ -38,16 +58,20 @@ export function ClientLogoSlider({
   items,
   variant,
   compact = false,
+  slides,
+  autoplayStartDelayMs = 0,
 }: ClientLogoSliderProps) {
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [autoplayReady, setAutoplayReady] = useState(autoplayStartDelayMs === 0);
   const [slidesToShow, setSlidesToShow] = useState(
-    variant === "industry" || variant === "industryCompact" ? 4 : 6,
+    slides?.desktop ?? (variant === "industry" ? 4 : 6),
   );
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     const updatePreference = () => setReducedMotion(mediaQuery.matches);
-    const updateSlides = () => setSlidesToShow(slidesForWidth(variant, window.innerWidth));
+    const updateSlides = () =>
+      setSlidesToShow(slidesForWidth(variant, window.innerWidth, slides));
     updatePreference();
     updateSlides();
     mediaQuery.addEventListener("change", updatePreference);
@@ -56,11 +80,18 @@ export function ClientLogoSlider({
       mediaQuery.removeEventListener("change", updatePreference);
       window.removeEventListener("resize", updateSlides);
     };
-  }, [variant]);
+  }, [slides, variant]);
+
+  useEffect(() => {
+    if (autoplayStartDelayMs === 0) return;
+
+    const timer = window.setTimeout(() => setAutoplayReady(true), autoplayStartDelayMs);
+    return () => window.clearTimeout(timer);
+  }, [autoplayStartDelayMs]);
 
   const settings: Settings = {
     arrows: false,
-    autoplay: !reducedMotion,
+    autoplay: !reducedMotion && autoplayReady,
     autoplaySpeed: 2000,
     dots: false,
     draggable: true,
@@ -79,8 +110,12 @@ export function ClientLogoSlider({
     <div aria-label={ariaLabel} role="region">
       <Slider
         {...settings}
-        className={cn(cn(styles.slider, variant === "industryCompact" && styles.compactSlider), compact && styles.compactSlider)}
-        key={`${variant}-${slidesToShow}-${reducedMotion ? "reduced" : "motion"}-${compact ? "compact" : "standard"}`}
+        className={cn(
+          styles.slider,
+          variant === "industryCompact" && styles.compactSlider,
+          compact && styles.compactSlider,
+        )}
+        key={`${variant}-${slidesToShow}-${reducedMotion ? "reduced" : "motion"}-${autoplayReady ? "ready" : "waiting"}-${compact ? "compact" : "standard"}`}
       >
         {items.map((logo) => (
           <div key={logo.src}>
