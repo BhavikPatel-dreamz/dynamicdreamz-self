@@ -219,7 +219,7 @@ export const footerNavigation = [
       { label: "iOS App Development", href: "/ios-app-development" },
       { label: "Android App Development", href: "/android-app-development" },
       { label: "Cross Platform App Development", href: "/cross-platform-app-development" },
-      { label: "WordPress Development", href: "/wordpress-development" },
+      { label: "WordPress Development", href: "/wordpress-development-company" },
       { label: "Woocommerce Development", href: "/woocommerce-development" },
       { label: "Magento Development", href: "/magento-development" },
     ],
