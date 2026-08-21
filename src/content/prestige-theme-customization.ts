@@ -130,17 +130,17 @@ export const prestigeThemeCustomizationContent = {
       },
       {
         title: "Image Galleries",
-        icon: "/assets/prestige-theme-customization/features/image-galleries.svg",
+        icon: "/assets/atelier-theme-customization/features/high-resolution-image-support.svg",
         iconAlt: "Image Galleries Icon",
       },
       {
         title: "Home Page Video Integration",
-        icon: "/assets/prestige-theme-customization/features/home-page-video-integration.svg",
+        icon: "/assets/pitch-theme-customization/features/slideshow-video-support.svg",
         iconAlt: "Home Page Video Integration Icon",
       },
       {
         title: "Built-in Marketing and <br> Promotion Tools",
-        icon: "/assets/prestige-theme-customization/features/marketing-promotion-tools.svg",
+        icon: "/assets/stiletto-theme-customization/features/built-in-marketing-and-promotional-tools.svg",
         iconAlt: "Built-in Marketing and Promotion Tools Icon",
       },
       {

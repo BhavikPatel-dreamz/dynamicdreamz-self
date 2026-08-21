@@ -15,6 +15,10 @@ import { foodBeveragesIndustryPage } from "@/content/food-beverages";
 import { healthcareIndustryPage } from "@/content/healthcare";
 import { hireWordPressFaqs } from "@/content/hire-wordpress-developers";
 import { hireShopifyFaqs, hireShopifyServices } from "@/content/hire-shopify-developers";
+import {
+  certifiedDeveloperServices,
+  shopifyCertifiedDeveloperSchemaFaqs,
+} from "@/content/shopify-certified-developers";
 import { petIndustryPage } from "@/content/pet-industry";
 import { organizationAnswerSummary, testimonials } from "@/content/home";
 import { ourWorkProjects } from "@/content/our-work";
@@ -237,6 +241,13 @@ const hireShopifyDevelopersPageId = `${hireShopifyDevelopersPageUrl}#webpage`;
 const hireShopifyDevelopersServiceId = `${hireShopifyDevelopersPageUrl}#service`;
 const hireShopifyDevelopersFaqId = `${hireShopifyDevelopersPageUrl}#faq`;
 const hireShopifyDevelopersBreadcrumbId = `${hireShopifyDevelopersPageUrl}#breadcrumb`;
+const shopifyCertifiedDevelopersPageUrl = absoluteUrl(
+  pageSeo.shopifyCertifiedDevelopers.path,
+);
+const shopifyCertifiedDevelopersPageId = `${shopifyCertifiedDevelopersPageUrl}#webpage`;
+const shopifyCertifiedDevelopersServiceId = `${shopifyCertifiedDevelopersPageUrl}#service`;
+const shopifyCertifiedDevelopersFaqId = `${shopifyCertifiedDevelopersPageUrl}#faq`;
+const shopifyCertifiedDevelopersBreadcrumbId = `${shopifyCertifiedDevelopersPageUrl}#breadcrumb`;
 const shopifyExpertsPageUrl = absoluteUrl(pageSeo.shopifyExperts.path);
 const shopifyExpertsPageId = `${shopifyExpertsPageUrl}#webpage`;
 const shopifyExpertsServiceId = `${shopifyExpertsPageUrl}#service`;
@@ -1908,6 +1919,28 @@ export function createHireShopifyDevelopersPageSchema() {
       ].join(" "),
     })),
     offers: hireShopifyServices.items,
+  });
+}
+
+export function createShopifyCertifiedDevelopersPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyCertifiedDevelopers,
+    pageUrl: shopifyCertifiedDevelopersPageUrl,
+    pageId: shopifyCertifiedDevelopersPageId,
+    serviceId: shopifyCertifiedDevelopersServiceId,
+    faqId: shopifyCertifiedDevelopersFaqId,
+    breadcrumbId: shopifyCertifiedDevelopersBreadcrumbId,
+    serviceName: "Shopify Certified Development Services",
+    serviceType:
+      "Shopify development delivered by developers holding official Shopify credentials across development fundamentals, Liquid storefronts, and Shopify B2B",
+    breadcrumbName: "Shopify Certified Developers",
+    audienceType:
+      "Shopify and Shopify Plus merchants seeking credentialed storefront, Liquid, B2B, integration, and ongoing development expertise",
+    faqs: shopifyCertifiedDeveloperSchemaFaqs,
+    offers: certifiedDeveloperServices.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
   });
 }
 

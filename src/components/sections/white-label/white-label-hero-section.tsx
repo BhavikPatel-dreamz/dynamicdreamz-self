@@ -17,7 +17,7 @@ const reviewSizeClasses = [
 type WhiteLabelHeroSectionProps = {
   hero?: WhiteLabelHero;
   reviews?: readonly WhiteLabelReview[];
-  variant?: "default" | "websiteDesign";
+  variant?: "default" | "websiteDesign" | "certifiedDevelopers";
 };
 
 function renderRichText(value: RichText) {
@@ -42,6 +42,7 @@ export function WhiteLabelHeroSection({
   variant = "default",
 }: WhiteLabelHeroSectionProps) {
   const isWebsiteDesign = variant === "websiteDesign";
+  const isCertifiedDevelopers = variant === "certifiedDevelopers";
 
   return (
     <section className="overflow-hidden rounded-b-[50px] bg-cream pt-[120px] pb-0 max-[991px]:pt-[100px] max-[767px]:rounded-b-[30px] max-[767px]:pt-[70px] max-[767px]:pb-2.5">
@@ -49,7 +50,9 @@ export function WhiteLabelHeroSection({
         <div
           className={cn(
             "flex flex-wrap items-stretch",
-            isWebsiteDesign ? "justify-between" : "justify-center",
+            isWebsiteDesign || isCertifiedDevelopers
+              ? "justify-between"
+              : "justify-center",
           )}
         >
           <div
@@ -57,6 +60,8 @@ export function WhiteLabelHeroSection({
               "pb-20 max-[1199px]:pb-10 max-[991px]:pb-[30px] max-[767px]:pb-2.5",
               isWebsiteDesign
                 ? "w-[47%] max-[991px]:w-full"
+                : isCertifiedDevelopers
+                  ? "w-[56%] max-[991px]:w-full"
                 : "w-[55%] max-[1199px]:w-3/5 max-[991px]:w-full",
             )}
           >
@@ -87,13 +92,36 @@ export function WhiteLabelHeroSection({
                   {renderRichText(paragraph)}
                 </p>
               ))}
-              <ButtonLink
-                className="mt-2.5 max-[991px]:min-h-0 max-[991px]:py-3 max-[991px]:text-sm max-[991px]:leading-[18px]"
-                href={siteConfig.quotePath}
-                variant="primary"
-              >
-                {hero.cta}
-              </ButtonLink>
+              {hero.secondaryCta ? (
+                <div className="mt-2.5 flex flex-wrap items-center gap-[15px] max-[575px]:items-stretch max-[389px]:flex-col">
+                  <ButtonLink
+                    className="max-[991px]:min-h-0 max-[991px]:py-3 max-[991px]:text-sm max-[991px]:leading-[18px]"
+                    href={hero.ctaHref ?? siteConfig.quotePath}
+                    variant="primary"
+                  >
+                    {hero.cta}
+                  </ButtonLink>
+                  <ButtonLink
+                    className={cn(
+                      "max-[991px]:min-h-0 max-[991px]:py-3 max-[991px]:text-sm max-[991px]:leading-[18px]",
+                      isCertifiedDevelopers &&
+                        "text-brand-red! hover:text-white!",
+                    )}
+                    href={hero.secondaryCta.href}
+                    variant="outline"
+                  >
+                    {hero.secondaryCta.label}
+                  </ButtonLink>
+                </div>
+              ) : (
+                <ButtonLink
+                  className="mt-2.5 max-[991px]:min-h-0 max-[991px]:py-3 max-[991px]:text-sm max-[991px]:leading-[18px]"
+                  href={hero.ctaHref ?? siteConfig.quotePath}
+                  variant="primary"
+                >
+                  {hero.cta}
+                </ButtonLink>
+              )}
 
               <div className="relative mt-[25px] -mr-[27px] -ml-[27px] flex justify-start max-[1199px]:mt-[35px] max-[1199px]:-mr-5 max-[1199px]:-ml-5 max-[991px]:mt-[38.4px] max-[767px]:mt-[25.4px] max-[767px]:-mr-2.5 max-[767px]:-ml-2.5">
                 {reviews.map((review, index) => (
@@ -130,6 +158,8 @@ export function WhiteLabelHeroSection({
               "relative",
               isWebsiteDesign
                 ? "flex w-[45%] items-end justify-end max-[991px]:mx-auto max-[991px]:w-full max-[991px]:max-w-[400px]"
+                : isCertifiedDevelopers
+                  ? "flex w-[42%] items-center justify-end max-[991px]:mx-auto max-[991px]:w-full max-[991px]:max-w-[535px]"
                 : "w-[45%] max-[1199px]:w-2/5 max-[991px]:w-full",
             )}
           >
@@ -138,17 +168,20 @@ export function WhiteLabelHeroSection({
                 "absolute top-0 right-[-40%] bottom-[-20%] left-2.5 flex h-auto w-[calc(50vw+40%)] max-[1199px]:right-[-20%] max-[1199px]:bottom-[-50%] max-[1199px]:w-[calc(50vw+20%)] max-[991px]:static max-[991px]:mt-5 max-[991px]:mb-[-5px] max-[991px]:w-full",
                 isWebsiteDesign &&
                   "static h-auto w-full max-[991px]:mt-0 max-[991px]:mb-[-5px]",
+                isCertifiedDevelopers &&
+                  "static h-auto w-full max-[991px]:mt-0 max-[991px]:mb-[-5px]",
               )}
             >
               <Image
                 className={cn(
                   "h-full w-full object-contain",
                   isWebsiteDesign && "h-auto w-full",
+                  isCertifiedDevelopers && "h-auto w-full mix-blend-darken",
                 )}
                 src={hero.illustration}
                 alt={hero.illustrationAlt}
-                width={945}
-                height={627}
+                width={hero.illustrationWidth ?? 945}
+                height={hero.illustrationHeight ?? 627}
                 sizes="(max-width: 991px) calc(100vw - 40px), 55vw"
                 priority
               />

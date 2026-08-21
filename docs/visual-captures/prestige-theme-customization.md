@@ -76,9 +76,9 @@
   - `/assets/our-work/projects/weardiop.webp`
 - Unique theme assets cleanly saved under `public/assets/prestige-theme-customization/` with clean kebab-case names:
   - `hero/prestige-theme-customization-service-img.webp`
-  - `features/image-galleries.svg`
-  - `features/home-page-video-integration.svg`
-  - `features/marketing-promotion-tools.svg`
+  - `/assets/atelier-theme-customization/features/high-resolution-image-support.svg` (shared exact-match asset)
+  - `/assets/pitch-theme-customization/features/slideshow-video-support.svg` (shared exact-match asset)
+  - `/assets/stiletto-theme-customization/features/built-in-marketing-and-promotional-tools.svg` (shared exact-match asset)
 - The slideshow, advanced-filtering, and sticky-navigation visuals reuse byte-identical canonical SVGs already stored under the Be Yours and Savor theme asset folders.
 - The two ingested portfolio images introduce no duplicate hashes. Repository-wide duplicate hash groups: 0.
 

@@ -515,6 +515,33 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  shopifyCertifiedDevelopers: {
+    path: "/shopify-certified-developers",
+    title: "Shopify Certified Developers | Shopify Platinum Partner",
+    description:
+      "Hire Shopify Certified Developers at Dynamic Dreamz, a Shopify Platinum Partner, for scalable Shopify and Shopify Plus development solutions worldwide.",
+    keywords: [
+      "Shopify Certified Developers",
+      "Certified Shopify Experts",
+      "Shopify Platinum Partner",
+      "Shopify Plus developers",
+      "Shopify B2B developers",
+      "Liquid developers",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-08-04T05:00:19+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/shopify-certified-developers/hero.webp",
+      width: 535,
+      height: 534,
+      alt: "Shopify Certified Developers at Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   shopifyExperts: {
     path: "/shopify-experts",
     title: "Hire Shopify Experts | Top Rated Shopify Developers",
