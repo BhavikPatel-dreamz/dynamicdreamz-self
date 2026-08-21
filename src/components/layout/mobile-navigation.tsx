@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { primaryNavigation, type MegaMenuItem } from "@/data/navigation";
@@ -52,6 +53,8 @@ const topLevelLinkClass =
   "flex w-full items-center justify-between border-0 bg-transparent p-0 pr-2 text-left text-lg leading-[normal] font-semibold text-ink";
 
 export function MobileNavigation() {
+  const pathname = usePathname();
+  const normalizedPathname = pathname === "/" ? pathname : pathname.replace(/\/$/, "");
   const [isOpen, setIsOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [openServiceSection, setOpenServiceSection] = useState<string | null>(null);
@@ -147,11 +150,17 @@ export function MobileNavigation() {
           <ul className="m-0 list-none p-0">
             {primaryNavigation.map((group) => {
               const isGroupOpen = openGroup === group.slug;
+              const groupLinks = group.kind === "services"
+                ? group.sections.flatMap((section) => section.links)
+                : group.items;
+              const isGroupActive = groupLinks.some(
+                (link) => normalizedPathname === link.href.replace(/\/$/, ""),
+              );
               const submenuId = `mobile-${group.slug}-menu`;
               return (
                 <li className="py-2.5" key={group.slug}>
                   <button
-                    className={cn(topLevelLinkClass, "cursor-pointer transition", isGroupOpen && "text-brand-red!")}
+                    className={cn(topLevelLinkClass, "cursor-pointer transition", (isGroupOpen || isGroupActive) && "text-brand-red!")}
                     type="button"
                     aria-expanded={isGroupOpen}
                     aria-controls={submenuId}
@@ -205,7 +214,7 @@ export function MobileNavigation() {
                                   <ul className="overflow-hidden p-0">
                                     {section.links.map((link) => (
                                       <li className="border-t border-[#efefef]" key={link.href}>
-                                        <Link className="block py-3 text-sm leading-[normal] font-medium text-ink" href={link.href} onClick={closeMenu}>{link.label}</Link>
+                                        <Link className={cn("block py-3 text-sm leading-[normal] font-medium text-ink", normalizedPathname === link.href.replace(/\/$/, "") && "text-brand-red!")} href={link.href} onClick={closeMenu}>{link.label}</Link>
                                       </li>
                                     ))}
                                   </ul>
@@ -218,9 +227,14 @@ export function MobileNavigation() {
                         <ul className="pt-1.5">
                           {group.items.map((item, itemIndex) => (
                             <li className={cn("border-b border-[#efefef]", itemIndex === group.items.length - 1 && "border-b-0")} key={item.href}>
-                              <Link className="flex min-h-12 items-center py-3 pr-[25px] text-sm leading-[normal] font-medium text-ink" href={item.href} onClick={closeMenu}>
+                              <Link className={cn("flex min-h-12 items-center py-3 pr-[25px] text-sm leading-[normal] font-medium text-ink", normalizedPathname === item.href.replace(/\/$/, "") && "text-brand-red!")} href={item.href} onClick={closeMenu}>
                                 <MobileItemIcon item={item} />
-                                <span>{item.label}</span>
+                                <span>
+                                  {item.label}
+                                  {item.badge ? (
+                                    <span className="ml-1.5 rounded bg-[#f5ebeb] px-1.5 py-px text-[10px] font-bold text-brand-red">{item.badge}</span>
+                                  ) : null}
+                                </span>
                               </Link>
                             </li>
                           ))}

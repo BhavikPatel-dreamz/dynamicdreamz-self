@@ -1,5 +1,37 @@
 # Shopify Plus Agency Page
 
+## Shared header parity follow-up — 2026-08-21
+
+- Fresh live and local captures inspected at 1440x900 and 390x844.
+- Current live header HTML plus `assets/css/header.css` were inspected at the
+  1399px, 1199px, 991px, 767px, and 379px breakpoints.
+- Desktop live navigation is 14px/500 with 24px item spacing, a 225px combined
+  brand mark, and a 162px x 49px quote CTA. Local navigation was 16px with wider
+  offsets, making `Contact us` collide with the CTA at 1440px.
+- Live dropdowns use 20px-radius white panels, 20px padding, a translucent 1px
+  border, 0 18px 48px shadow, compact icon/copy rows, and a cream hover state.
+  Local dropdowns still used the obsolete square mega-menu layout.
+- At 390px the closed header geometry already matches: 30px trigger, 170px logo,
+  34px CTA, and 15px vertical padding. The full-viewport mobile drawer, keyboard
+  dismissal, nested accordion, focus trap, and scroll locking are retained.
+- Interaction states checked: desktop hover/focus, Escape and outside-click
+  dismissal, active route, mobile open/close, nested accordion, and scroll reveal.
+- Scope is the shared header/navigation; page hero animation is excluded.
+- Icon follow-up: extracted all 36 current inline SVG menu icons from the live
+  header into the scratch comparison buffer. SHA-256 and normalized geometry
+  comparisons found no existing equivalent in `public/assets/**`, so the unique
+  SVGs were ingested under `public/assets/navigation/live-menu/` and assigned to
+  every desktop and mobile dropdown item. Their original `#AD5151` strokes and
+  intrinsic viewBoxes are preserved without CSS recoloring.
+- Content follow-up: all 36 menu labels and descriptions were extracted from the
+  current live header and synchronized across Shopify Solutions, Agency
+  Partnerships, Technology, Industries, Work, and About. The Technology `NEW`
+  badge is preserved. Live destinations are mapped to their slashless local
+  equivalents; live placeholder links continue to use `/contact-us`.
+- Desktop typography follow-up: dropdown titles use the live 14px/100% line box
+  instead of browser `normal`, and 12px/19.8px descriptions remain on one line.
+  This restores the live Technology panel row rhythm and overall panel height.
+
 Live URL: `https://www.dynamicdreamz.com/shopify-plus-agency/`
 Local route: `/shopify-plus-agency`
 Date checked: 2026-08-17

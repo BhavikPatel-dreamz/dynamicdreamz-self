@@ -28,7 +28,10 @@ export function SenseThemeCustomizationPage() {
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ThemeHeroSection content={senseThemeCustomizationContent.hero} />
+      <ThemeHeroSection
+        content={senseThemeCustomizationContent.hero}
+        tabletImageHalfWidth
+      />
       <IndustryBrandsSection
         content={brandsContent}
         heading={senseThemeCustomizationContent.brands.title}

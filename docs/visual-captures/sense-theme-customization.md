@@ -5,6 +5,8 @@
 - **Local URL**: `http://localhost:3000/sense-theme-customization`
 - **Migration Target**: 1:1 visual, copy, semantic, and structural parity with the live page in Next.js 16 App Router using clean Tailwind CSS and server components.
 - **Date**: 2026-08-19
+- **Last UI Review**: 2026-08-21
+- **Route-specific correction**: Keep the hero right column at 50% through the `max-width: 991px` tablet state; it returns to full width at `max-width: 767px`.
 
 ---
 

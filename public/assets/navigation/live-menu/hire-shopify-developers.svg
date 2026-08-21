@@ -1,0 +1,17 @@
+<svg
+                                                                    xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                    height="20" viewBox="0 0 20 20" fill="none">
+                                                                    <path d="M15 13.3346L18.3333 10.0013L15 6.66797"
+                                                                        stroke="#AD5151" stroke-width="1.8"
+                                                                        stroke-linecap="round" stroke-linejoin="round">
+                                                                    </path>
+                                                                    <path
+                                                                        d="M5.0013 6.66797L1.66797 10.0013L5.0013 13.3346"
+                                                                        stroke="#AD5151" stroke-width="1.8"
+                                                                        stroke-linecap="round" stroke-linejoin="round">
+                                                                    </path>
+                                                                    <path d="M12.0846 3.33203L7.91797 16.6654"
+                                                                        stroke="#AD5151" stroke-width="1.8"
+                                                                        stroke-linecap="round" stroke-linejoin="round">
+                                                                    </path>
+                                                                </svg>
