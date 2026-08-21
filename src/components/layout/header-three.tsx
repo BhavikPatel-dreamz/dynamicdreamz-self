@@ -17,10 +17,10 @@ export function HeaderThree() {
               <Image
                 alt="Dynamic Dreamz - Shopify Platinum Partner"
                 className="h-auto w-[225px] max-[1199px]:w-[180px] max-[991px]:w-[225px] max-[767px]:w-[170px] max-[379px]:w-[150px]"
-                height={38}
+                height={39}
                 priority
                 src={siteConfig.logo}
-                width={225}
+                width={257}
               />
             </Link>
           </div>

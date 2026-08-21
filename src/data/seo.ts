@@ -515,6 +515,33 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  shopifyCertifiedDevelopers: {
+    path: "/shopify-certified-developers",
+    title: "Shopify Certified Developers | Shopify Platinum Partner",
+    description:
+      "Hire Shopify Certified Developers at Dynamic Dreamz, a Shopify Platinum Partner, for scalable Shopify and Shopify Plus development solutions worldwide.",
+    keywords: [
+      "Shopify Certified Developers",
+      "Certified Shopify Experts",
+      "Shopify Platinum Partner",
+      "Shopify Plus developers",
+      "Shopify B2B developers",
+      "Liquid developers",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-08-04T05:00:19+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/shopify-certified-developers/hero.webp",
+      width: 535,
+      height: 534,
+      alt: "Shopify Certified Developers at Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   shopifyExperts: {
     path: "/shopify-experts",
     title: "Hire Shopify Experts | Top Rated Shopify Developers",
@@ -2386,6 +2413,33 @@ export const pageSeo = {
       alt: "Dynamic Dreamz Site Map",
     },
     sitemap: { changeFrequency: "monthly", priority: 0.5 },
+  },
+  mobileApplicationDevelopment: {
+    path: "/mobile-application-development",
+    title: "Mobile Application Development Services | Dynamic Dreamz",
+    description:
+      "Get the best mobile application development services with Dynamic Dreamz—features, integrations and apps customised to your business goals, ready in weeks.",
+    keywords: [
+      "mobile application development",
+      "mobile application development services",
+      "custom mobile application development",
+      "Shopify mobile application",
+      "Shopify add-on application",
+      "Dynamic Dreamz",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-12-30T10:21:41+00:00",
+    modifiedTime: "2026-08-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Mobile Application Development Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
   },
   androidAppDevelopment: {
     path: "/android-app-development",

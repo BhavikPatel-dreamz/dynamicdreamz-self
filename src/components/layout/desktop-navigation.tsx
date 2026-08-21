@@ -26,7 +26,7 @@ function MenuIcon({ item }: { item: MegaMenuItem }) {
   return (
     <span className="mr-[13px] flex h-[21px] w-[21px] shrink-0 items-center justify-center" aria-hidden="true">
       <Image
-        className="h-full w-full object-contain transition-[filter] duration-300 group-hover/item:[filter:invert(43%)_sepia(28%)_saturate(997%)_hue-rotate(314deg)_brightness(87%)_contrast(91%)] group-focus-visible/item:[filter:invert(43%)_sepia(28%)_saturate(997%)_hue-rotate(314deg)_brightness(87%)_contrast(91%)]"
+        className="h-auto max-h-full w-auto max-w-full object-contain transition-[filter] duration-300 group-hover/item:[filter:invert(43%)_sepia(28%)_saturate(997%)_hue-rotate(314deg)_brightness(87%)_contrast(91%)] group-focus-visible/item:[filter:invert(43%)_sepia(28%)_saturate(997%)_hue-rotate(314deg)_brightness(87%)_contrast(91%)]"
         src={item.icon.src}
         alt=""
         width={item.icon.width}

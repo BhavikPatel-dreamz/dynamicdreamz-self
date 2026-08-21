@@ -15,6 +15,10 @@ import { foodBeveragesIndustryPage } from "@/content/food-beverages";
 import { healthcareIndustryPage } from "@/content/healthcare";
 import { hireWordPressFaqs } from "@/content/hire-wordpress-developers";
 import { hireShopifyFaqs, hireShopifyServices } from "@/content/hire-shopify-developers";
+import {
+  certifiedDeveloperServices,
+  shopifyCertifiedDeveloperSchemaFaqs,
+} from "@/content/shopify-certified-developers";
 import { petIndustryPage } from "@/content/pet-industry";
 import { organizationAnswerSummary, testimonials } from "@/content/home";
 import { ourWorkProjects } from "@/content/our-work";
@@ -148,6 +152,10 @@ import {
   shopifyMobileAppFeatures,
 } from "@/content/shopify-mobile-app-development";
 import {
+  mobileApplicationDevelopmentOffers,
+  mobileApplicationDevelopmentSchemaFaqs,
+} from "@/content/mobile-application-development";
+import {
   bigCommerceDevelopmentFaqs,
   bigCommerceDevelopmentServices,
 } from "@/content/bigcommerce-development";
@@ -240,6 +248,13 @@ const hireShopifyDevelopersPageId = `${hireShopifyDevelopersPageUrl}#webpage`;
 const hireShopifyDevelopersServiceId = `${hireShopifyDevelopersPageUrl}#service`;
 const hireShopifyDevelopersFaqId = `${hireShopifyDevelopersPageUrl}#faq`;
 const hireShopifyDevelopersBreadcrumbId = `${hireShopifyDevelopersPageUrl}#breadcrumb`;
+const shopifyCertifiedDevelopersPageUrl = absoluteUrl(
+  pageSeo.shopifyCertifiedDevelopers.path,
+);
+const shopifyCertifiedDevelopersPageId = `${shopifyCertifiedDevelopersPageUrl}#webpage`;
+const shopifyCertifiedDevelopersServiceId = `${shopifyCertifiedDevelopersPageUrl}#service`;
+const shopifyCertifiedDevelopersFaqId = `${shopifyCertifiedDevelopersPageUrl}#faq`;
+const shopifyCertifiedDevelopersBreadcrumbId = `${shopifyCertifiedDevelopersPageUrl}#breadcrumb`;
 const shopifyExpertsPageUrl = absoluteUrl(pageSeo.shopifyExperts.path);
 const shopifyExpertsPageId = `${shopifyExpertsPageUrl}#webpage`;
 const shopifyExpertsServiceId = `${shopifyExpertsPageUrl}#service`;
@@ -583,6 +598,13 @@ const wordPressThemeCustomizationPageId = `${wordPressThemeCustomizationPageUrl}
 const wordPressThemeCustomizationServiceId = `${wordPressThemeCustomizationPageUrl}#service`;
 const wordPressThemeCustomizationFaqId = `${wordPressThemeCustomizationPageUrl}#faq`;
 const wordPressThemeCustomizationBreadcrumbId = `${wordPressThemeCustomizationPageUrl}#breadcrumb`;
+const mobileApplicationDevelopmentPageUrl = absoluteUrl(
+  pageSeo.mobileApplicationDevelopment.path,
+);
+const mobileApplicationDevelopmentPageId = `${mobileApplicationDevelopmentPageUrl}#webpage`;
+const mobileApplicationDevelopmentServiceId = `${mobileApplicationDevelopmentPageUrl}#service`;
+const mobileApplicationDevelopmentFaqId = `${mobileApplicationDevelopmentPageUrl}#faq`;
+const mobileApplicationDevelopmentBreadcrumbId = `${mobileApplicationDevelopmentPageUrl}#breadcrumb`;
 const androidAppDevelopmentPageUrl = absoluteUrl(pageSeo.androidAppDevelopment.path);
 const androidAppDevelopmentPageId = `${androidAppDevelopmentPageUrl}#webpage`;
 const androidAppDevelopmentServiceId = `${androidAppDevelopmentPageUrl}#service`;
@@ -1939,6 +1961,28 @@ export function createHireShopifyDevelopersPageSchema() {
       ].join(" "),
     })),
     offers: hireShopifyServices.items,
+  });
+}
+
+export function createShopifyCertifiedDevelopersPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyCertifiedDevelopers,
+    pageUrl: shopifyCertifiedDevelopersPageUrl,
+    pageId: shopifyCertifiedDevelopersPageId,
+    serviceId: shopifyCertifiedDevelopersServiceId,
+    faqId: shopifyCertifiedDevelopersFaqId,
+    breadcrumbId: shopifyCertifiedDevelopersBreadcrumbId,
+    serviceName: "Shopify Certified Development Services",
+    serviceType:
+      "Shopify development delivered by developers holding official Shopify credentials across development fundamentals, Liquid storefronts, and Shopify B2B",
+    breadcrumbName: "Shopify Certified Developers",
+    audienceType:
+      "Shopify and Shopify Plus merchants seeking credentialed storefront, Liquid, B2B, integration, and ongoing development expertise",
+    faqs: shopifyCertifiedDeveloperSchemaFaqs,
+    offers: certifiedDeveloperServices.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
   });
 }
 
@@ -3456,6 +3500,31 @@ export function createAndroidAppDevelopmentPageSchema() {
       description: item.description,
     })),
     videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createMobileApplicationDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.mobileApplicationDevelopment,
+    pageUrl: mobileApplicationDevelopmentPageUrl,
+    pageId: mobileApplicationDevelopmentPageId,
+    serviceId: mobileApplicationDevelopmentServiceId,
+    faqId: mobileApplicationDevelopmentFaqId,
+    breadcrumbId: mobileApplicationDevelopmentBreadcrumbId,
+    serviceName: "Mobile Application Development Services",
+    serviceType:
+      "Custom mobile application development, Shopify add-on applications, store synchronisation, mobile app customisation, testing, and app store launch support",
+    breadcrumbName: "Mobile Application Development",
+    audienceType:
+      "Shopify merchants, ecommerce brands, and store owners looking for a customised mobile application",
+    faqs: mobileApplicationDevelopmentSchemaFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: mobileApplicationDevelopmentOffers.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
   });
 }
 

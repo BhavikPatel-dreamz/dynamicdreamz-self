@@ -687,6 +687,23 @@ Primary SEO intent: Shopify mobile app development services, Shopify AppMaker, t
 | Features image alt | `eatures of Shopify App maker Image` (typo in alt text on live page) | `Features of Shopify App maker Image` | Fixes typo in image alt attribute. | Low | implemented cleanly in alt attribute |
 | Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (9 service items) and `FAQPage` (10 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
 
+## Mobile Application Development (`/mobile-application-development`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: mobile application development services, custom Shopify mobile app, Shopify add-on application, owned ecommerce mobile app, iOS and Android store app.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Add On mobile application development Services At Great Discount` (64 chars) | `Mobile Application Development Services \| Dynamic Dreamz` (56 chars) | Fits the enforced 15–60 character budget while preserving the core commercial intent. | High | implemented in metadata |
+| Meta description | `Get the best mobile application development services with Dynamic Dreamz- features, integrations & mobile apps customised to your business goals. ready in weeks!` (161 chars) | `Get the best mobile application development services with Dynamic Dreamz—features, integrations and apps customised to your business goals, ready in weeks.` (155 chars) | Fits the enforced 70–160 character budget and corrects punctuation/capitalization in search output without changing the visible page. | High | implemented in metadata |
+| Closing CTA | `Let’s Build Shopify Stores Under Your Brand!` followed by white-label WordPress partner copy | `Let’s Build a Mobile App for Your Store!` followed by `Looking for a trusted mobile application development partner? Together, let’s extend your store with a custom app.` | The inherited WordPress/white-label CTA is unrelated to this route and weakens relevance and conversion clarity. | High | deferred pending exact visible-copy approval |
+| Why-app paragraph | Final fragment: `Moreover.` | Remove the orphaned `Moreover.` fragment. | Fixes an incomplete sentence without changing the paragraph’s meaning. | Low | deferred pending exact visible-copy approval |
+| Benefits list | `You can easily integrate & convert 3rd third-party app into a mobile application.` | `You can easily integrate and convert a third-party app into a mobile application.` | Removes duplicated wording and improves clarity. | Low | deferred pending exact visible-copy approval |
+| Timeline step 1 | `At dynamicdreamz, we sync your existing store setup & design theme and content...` | `At Dynamic Dreamz, we sync your existing store setup, design theme, and content...` | Corrects the brand name and sentence structure. | Low | deferred pending exact visible-copy approval |
+| Proof counter | `18+ Years of Experience` | `20+ Years of Experience` only after the fact convention is approved | Aligns the visible counter with a 2006 founding date and current company positioning; requires centralized fact approval before any UI change. | High | deferred pending leadership and project-owner approval |
+| FAQ partner claim | `team Dynamic Dreamz, the only Shopify Platinum Partner in India` | `the Dynamic Dreamz team, a Shopify Platinum Partner` | Removes an unsupported exclusivity claim and improves grammar. | High | deferred pending leadership/legal verification and exact visible-copy approval |
+
 ## Thank You For Enquiry (`/thank-you-for-enquiry`)
 
 Status: implemented; live-visible content preserved
@@ -1501,3 +1518,18 @@ Primary SEO intent: Wix to Shopify migration, migrate Wix store to Shopify, zero
 | Single text box capitalization | `If you want more features and benefits for your online store, Migrate from Wix to Shopify.` | `If you want more features and benefits for your online store, migrate from Wix to Shopify.` | Fixes mid-sentence capitalization of "Migrate". | Low | deferred pending exact visible-copy approval |
 | Considerations description | `...create the most out of Shopify's platform.` | `...get the most out of Shopify's platform.` | Idiomatic English phrasing improvement. | Low | deferred pending exact visible-copy approval |
 | Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 process steps), `FAQPage` (10 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
+## Shopify Certified Developers (`/shopify-certified-developers`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-08-21
+Primary SEO intent: Shopify Certified Developers, Certified Shopify Experts, Shopify Platinum Partner, Shopify Plus developers, Shopify B2B specialists, and Liquid storefront developers.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta description | Live description is 191 characters and exceeds the repository's 160-character production limit. | `Hire Shopify Certified Developers at Dynamic Dreamz, a Shopify Platinum Partner, for scalable Shopify and Shopify Plus development solutions worldwide.` (151 characters) | Preserves the main entities and commercial intent while meeting the enforced metadata budget. | High | implemented in metadata |
+| Credential badge alt text | All four linked live credential images use empty alt text. | Use each exact visible credential name followed by `verified skill badge`; keep the linked card's accessible label explicit about opening Credly evidence. | Makes linked evidence understandable to screen-reader and nonvisual users without changing the UI. | High | implemented as a nonvisual accessibility correction |
+| Credential terminology | Explanatory copy and FAQs alternate between `certifications`, `credentials`, `certification programs`, and badges that visually say `VERIFIED SKILL`. | After Shopify program terminology is confirmed, consistently describe the items as official Shopify credentials or verified skills and define what completion verifies. | Avoids overstating the evidence type and gives answer engines one consistent entity relationship. | High | deferred pending Shopify program review and exact visible-copy approval |
+| Services introduction | `A focused service summary captures relevant commercial searches without duplicating every Shopify service page on your website.` | `From custom storefronts and Liquid development to Shopify B2B, integrations and ongoing support, our certified developers can support focused work across your Shopify roadmap.` | Replaces internal SEO commentary with a buyer-focused service summary while preserving section intent. | High | deferred pending exact visible-copy approval |
+| FAQ outcome wording | The hiring answer says certified developers build `reliable, scalable, and future-ready ecommerce stores that support long-term business growth.` | `Combined with practical experience, credentialed developers can apply current Shopify conventions to storefront, Liquid, B2B, integration, and support requirements.` | Removes broad outcome implications and ties the answer to visible, externally evidenced capabilities. | Medium | deferred pending exact visible-copy approval |
+| Directory and credential freshness | Visible proof shows four credential counts plus Partner tier, 5.0 rating, 80+ reviews, and 2013 relationship date without a visible source-review date. | Add an approved `Evidence reviewed [date]` note and content owner; update all volatile facts together after each scheduled review. | Protects trust and citation accuracy when externally governed values change. | High | blocked pending leadership, client-success, and SEO governance approval |

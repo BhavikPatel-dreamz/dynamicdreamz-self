@@ -63,7 +63,7 @@ export const primaryNavigation: PrimaryNavigationGroup[] = [
         label: "Career",
         href: "/career",
         description: "Explore dynamic career opportunities and grow with us!",
-        icon: { src: "/assets/navigation/career.svg", width: 20, height: 24 },
+        icon: { src: "/assets/navigation/career.svg", width: 24, height: 22 },
       },
       {
         label: "Life @Dynamic Dreamz",
@@ -75,7 +75,7 @@ export const primaryNavigation: PrimaryNavigationGroup[] = [
         label: "Resources",
         href: "/resources",
         description: "One hub for all the dynamic resources you will ever need!",
-        icon: { src: "/assets/navigation/resources.svg", width: 24, height: 20 },
+        icon: { src: "/assets/navigation/resources.svg", width: 20, height: 20 },
       },
     ],
   },

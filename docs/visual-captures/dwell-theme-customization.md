@@ -79,7 +79,7 @@
   - `public/assets/dwell-theme-customization/features/slide-out-cart.svg` (unique)
   - `public/assets/dwell-theme-customization/features/cross-selling-options.svg` (unique)
   - `/assets/savor-theme-customization/features/flexible-navigation.svg`
-  - `/assets/be-yours-theme-customization/features/built-in-product-filtering.svg`
+  - `/assets/prestige-theme-customization/features/advanced-product-filtering.svg`
 - 9 benefit icons and 6 service icons reused from `public/assets/shopify-theme-customization/`.
 - 4 why-choose icons reused from `public/assets/shopify-theme-customization/why-choose/`.
 - All 6 Shopify portfolio screenshots reused from canonical project paths:

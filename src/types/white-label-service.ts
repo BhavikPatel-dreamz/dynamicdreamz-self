@@ -22,8 +22,15 @@ export type WhiteLabelHero = {
   leadStrong?: boolean;
   paragraphs: readonly RichText[];
   cta: string;
+  ctaHref?: string;
+  secondaryCta?: {
+    label: string;
+    href: string;
+  };
   illustration: string;
   illustrationAlt: string;
+  illustrationWidth?: number;
+  illustrationHeight?: number;
 };
 
 export type WhiteLabelStat = {

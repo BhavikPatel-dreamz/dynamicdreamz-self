@@ -3743,6 +3743,110 @@ Deferred under the live-UI preservation gate. The current server-rendered hero, 
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-mobile-app-development`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 56 chars, Description: 143 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
+## Mobile Application Development (`/mobile-application-development`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-08-21
+Owner: SEO, mobile application specialists, Shopify specialists, leadership, and sales operations
+Primary audience: Shopify merchants and ecommerce businesses evaluating a custom iOS and Android companion application that replaces selected subscription apps and extends an existing storefront.
+Decision stage: solution evaluation, cost and timeline research, app ownership assessment, quote request
+
+### Page role
+
+Broad commercial landing page for custom mobile application development tied to
+an existing Shopify storefront. It differs from `/android-app-development`,
+`/ios-app-development`, `/cross-platform-app-development`, and
+`/shopify-mobile-app-development` by emphasizing an owned add-on app, reduced
+reliance on recurring third-party subscriptions, reuse of existing store data,
+and a three-to-four-week transition flow.
+
+### Target prompts
+
+- Can Dynamic Dreamz turn an existing Shopify store into a custom mobile app?
+- Can a custom Shopify mobile app replace paid third-party applications?
+- How long does Dynamic Dreamz take to build and launch a Shopify mobile app?
+- What does custom mobile application development cost?
+- Will products, collections, images, and content sync from an existing Shopify store?
+
+### Current strengths and available evidence
+
+- The live hero states the service proposition, ownership/subscription angle,
+  and a website-to-quotation flow in the first viewport.
+- Three detailed split sections explain the need, benefits, and ways businesses
+  can use the add-on application.
+- A four-step visible process covers store sharing, customization, build/testing,
+  and App Store/Google Play launch.
+- Visible proof includes 18+ years, 150+ experts, 5000+ completed projects, and
+  1100+ happy clients, plus twelve linked client logos.
+- Seven visible FAQs address definition, replacement of paid apps, timeline,
+  required content, platforms, customization, and cost.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical route was referenced by the HTML site map but had not been implemented in App Router SEO data | Ship the slashless route through shared metadata, sitemap, robots, canonical, and schema helpers | Verified in rendered source, sitemap, URL-policy check, and production build |
+| P0 | implemented | Structured data | Live Yoast graph did not describe this page as a Service or expose safe page-specific FAQ entities | Emit WebPage, Service, OfferCatalog, a six-item FAQPage omitting the unsupported exclusivity answer, BreadcrumbList, Organization, and WebSite nodes supported by visible content | Verified in rendered JSON-LD; unsupported exclusivity claim is absent from schema |
+| P0 | blocked by fact verification | Unsupported exclusivity claim | A visible FAQ calls Dynamic Dreamz “the only Shopify Platinum Partner in India” | Verify the claim with an approved source or remove “the only” after exact visible-copy approval | Leadership/legal evidence and project-owner copy approval |
+| P1 | implemented | Local assets | The route depended on bespoke live imagery and interface icons | Reuse canonical client/FAQ/counter assets and ingest only unique page media through the scratch hash workflow | Missing-reference check reports 0; full-tree SHA-256 audit reports 0 duplicate groups |
+| P1 | deferred | Content relevance | The closing banner contains white-label WordPress copy unrelated to the mobile-application page | Replace it with route-specific mobile-application CTA copy after exact visible approval | Project-owner copy approval |
+| P1 | deferred | Fact consistency | The live proof counter shows 18+ years while current approved company positioning uses 20+ years/founded in 2006 | Confirm the display convention and update all visible evidence consistently | Leadership fact approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. Exact visible corrections and the
+route-specific closing CTA are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect the service to the stable Dynamic Dreamz organization entity and the
+  approved founding year, team size, project count, and client count.
+- Do not encode the unsupported “only Shopify Platinum Partner in India” claim
+  in metadata or structured data.
+- Future proof expansion should link approved mobile-app case studies and named
+  technical review rather than adding unsupported outcome claims.
+
+### Internal-link and conversion actions
+
+- Keep the slashless `/mobile-application-development` path used by the HTML
+  site map and use `/request-quote?URL=<encoded-value>` for valid hero/contact
+  submissions.
+- Preserve `/contact-us` in the live closing CTA and retain related mobile
+  routes in the shared site navigation.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with visible benefit/process offers, FAQPage with the six safe
+  visible questions, BreadcrumbList, Organization, and WebSite. The visible
+  timeline FAQ is intentionally omitted from schema until its unsupported
+  exclusivity claim is verified or approved for correction.
+- Use the real live publication date and the 2026-08-21 migration review as the
+  explicit modification date.
+- Include the canonical route in `sitemap.xml` at service-page priority and
+  keep it allowed by `robots.txt`.
+
+### Measurement plan
+
+- SEO tracks prompts and queries for mobile application development services,
+  Shopify add-on applications, owned Shopify mobile apps, recurring app cost,
+  and three-to-four-week mobile app launches.
+- Analytics tracks valid website-to-quote redirects and quote submissions
+  originating from `/mobile-application-development`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-08-21): canonical, Open Graph, sitemap, robots,
+  JSON-LD, the trailing-slash redirect, and internal links use
+  `/mobile-application-development`; source/build URL guards pass.
+- Rendered-source verification confirms the H1 and all visible content are
+  server rendered, the Service graph contains six safe FAQ questions, all
+  seven FAQs remain visible, and no production asset is hotlinked.
+- Checks completed: rendered live and local comparison, View Page Source,
+  title/description limits (56/155), desktop/tablet/mobile captures at
+  1440x900, 768x1024, and 390x844, responsive full-page comparison, carousel,
+  counter, FAQ and quote-flow review, sitemap/robots/redirect checks, 0 missing
+  asset references, 0 duplicate hash groups, lint, and production build.
+
 ## Thank You For Enquiry (`/thank-you-for-enquiry`)
 
 Status: implemented and verified; live-visible content preserved
@@ -7212,7 +7316,35 @@ Dedicated commercial landing page presenting Dynamic Dreamz Vision theme customi
 - 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
 - 6 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier).
 - 5 detailed FAQs addressing customization cost, custom product filters, promotional banners, multi-currency support, and SEO ranking protection.
+## Shopify Certified Developers (`/shopify-certified-developers`)
 
+Status: implemented and verified; live-visible content preserved; visible recommendations deferred
+Last reviewed: 2026-08-21
+Owner: SEO, Shopify development, UI/UX design, leadership, sales operations, and client success
+Primary audience: Shopify and Shopify Plus merchants, B2B and wholesale businesses, ecommerce leaders, and digital agencies evaluating credentialed Shopify development expertise.
+Decision stage: credential verification, capability matching, partner evaluation, technical scoping, and quote request
+
+### Page role
+
+Dedicated commercial and evidence page for Dynamic Dreamz's Shopify-credentialed development team. The route explains how verified Shopify knowledge is applied, links four exact credentials to external Credly evidence, helps buyers match a storefront, B2B, existing-store, or support requirement to the relevant expertise, outlines six delivery capabilities, and links the agency's current Shopify Partner Directory profile.
+
+### Target prompts
+
+- What is a Shopify Certified Developer?
+- Where can I hire Shopify Certified Developers for theme and Liquid work?
+- Which Shopify credentials are relevant for B2B implementation?
+- Does Dynamic Dreamz have developers with official Shopify credentials?
+- Is Dynamic Dreamz listed as a Shopify Platinum Partner?
+
+### Core answer and available evidence
+
+- Server-rendered H1 and introductory answer identify the credentialed team, agency model, Shopify Platinum Partner positioning, and project intent.
+- Four visible credential cards preserve the exact live credential names and counts: Shopify Development Fundamentals (20), Shopify B2B Foundations, Discovery and Solution Design (7), Liquid Storefronts for Theme Developers (15), and B2B on Shopify Launch and Customization (7).
+- Every credential card links to the live page's matching Credly badge URL and has a meaningful local image alternative instead of the live empty alt.
+- The credential matcher gives direct storefront, Shopify B2B, existing-store, and ongoing-support guidance through an accessible tab interface while keeping every panel in server-rendered HTML.
+- Six visible delivery services cover custom themes, Liquid, Shopify B2B, existing-store improvements, app/API integration, and ongoing development.
+- The Partner Directory proof retains the visible live facts and links their source: Platinum Partner, 5.0 rating, 80+ directory reviews, and partner since September 2013.
+- Eight visible FAQs answer credential, partner, service, Shopify Plus, and agency-selection questions.
 ### Structured gap analysis
 
 | Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
@@ -7610,11 +7742,45 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 
 
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | No App Router implementation existed for the live URL | Ship the slashless route with shared metadata, canonical, sitemap discovery, Open Graph, Twitter, and crawl directives | Verified in the prerendered production route, sitemap, robots output, and URL-policy gate |
+| P0 | implemented | Schema accuracy | Live Yoast FAQ schema describes sitewide questions that are not visible on this route | Emit WebPage, Service, OfferCatalog, BreadcrumbList, Organization, WebSite, and FAQPage nodes using only this page's visible services and eight visible FAQs | Verified in rendered source: eight Question/Answer pairs, six service offers, and stable entity links |
+| P0 | implemented | Credential evidence accessibility | Four linked live credential images have empty alt text | Preserve the exact visible badges and links while adding descriptive accessible names | Implemented without a visible UI change |
+| P1 | blocked | Volatile directory proof | Partner tier, rating, review count, and credential counts can change without an on-page review date or named content owner | Establish a quarterly evidence review and update the visible page, metadata, and schema together when source facts change | Leadership, client-success, and SEO governance required |
+| P1 | deferred | Terminology governance | The page alternates between "certification," "credential," and badge language while Credly labels the items as verified skills | Approve one terminology standard based on Shopify's current program language, then update visible FAQ and explanatory copy consistently | Exact visible-copy approval required |
 
+### Entity, evidence, and authorship actions
 
+- Preserve stable Organization and WebSite identifiers while connecting the page Service node to the existing Dynamic Dreamz entity.
+- Treat the four Credly pages and official Shopify Partner Directory listing as the primary external evidence links for this route.
+- Assign an internal owner and evidence review date before publishing any future credential-count, partner-tier, rating, or review-count change.
+- Add first-party project evidence for Liquid, B2B, theme, and integration work when attribution, scope, and outcomes are approved.
 
+### Internal-link and conversion actions
 
+- Preserve both `Discuss your Shopify project` CTAs to `/request-quote` and the in-page `see our certifications` jump link.
+- Preserve related global navigation paths for Shopify development, Shopify Plus, B2B-adjacent services, portfolio, contact, and agency partnerships.
+- Keep all new internal route data slashless; external Credly, review-profile, and Shopify Directory links retain their authoritative destinations.
 
+### Structured-data, crawler, and freshness actions
+
+- Emit only claims and answers visible on this route; do not reproduce the mismatched live sitewide FAQ graph.
+- Include the slashless canonical route in the data-driven sitemap with the real migration review date.
+- Keep all primary headings, credentials, counts, service copy, FAQs, and links server-rendered; JavaScript is limited to the accessible tab and shared FAQ controls.
+
+### Measurement plan
+
+- SEO tracks the five target prompts, branded and non-branded credential queries, citations, and the accuracy of generated descriptions.
+- Analytics tracks certification jump-link engagement, external Credly and Partner Directory clicks, and `/request-quote` conversions originating from this route.
+
+### Verification and remaining gaps
+
+- Live audit completed: rendered desktop/tablet/mobile states, View Page Source, Yoast metadata and graph, linked CSS/JavaScript, breakpoints, tab behavior, FAQ behavior, hover motion, link targets, and asset inventory.
+- Local responsive comparison completed at 1440px, 768px, and 390px. The browser audit confirmed one H1, four accessible tabs and panels, arrow-key switching, one expanded FAQ at a time, eight matching FAQ schema entries, working CTA and hash links, reduced-motion handling, and no horizontal overflow.
+- Single-page SEO review result: 100/100 against the local migration checklist after excluding the shared navigation links `/blogs`, `/buy-shopify-development-hours`, and `/webflow-development` as migration pending. All 38 linked implemented routes, both hash targets, page-owned assets, and five external Credly/Shopify evidence links resolve.
+- Production source verification confirms the 55-character title, 151-character description, index/follow directives, canonical, Open Graph, Twitter card, local 535 × 534 hero image, schema graph, sitemap entry, and robots allow path.
+- `npm run check:urls`, `npm run lint`, and `npm run build` pass. Next.js prerenders the route as static content, and the repository-wide SHA-256 audit reports zero duplicate asset groups.
+- Remaining governance gaps are volatile proof ownership, terminology approval, and first-party project evidence; no unsupported facts were added to schema.
 
 
 
