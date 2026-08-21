@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
 
+import { caseStudyDetails } from "@/content/case-study-details";
 import { type PageSeoConfig, pageSeoEntries } from "@/data/seo";
 import { absoluteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return pageSeoEntries
+  const staticPages = pageSeoEntries
     .filter((page: PageSeoConfig) => {
       if (!page.robots) return true;
       if (typeof page.robots === "object" && "index" in page.robots && page.robots.index === false) {
@@ -19,4 +20,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: page.sitemap.priority,
       images: [absoluteUrl(page.image.path)],
     }));
+
+  const caseStudyPages: MetadataRoute.Sitemap = caseStudyDetails.map((caseStudy) => ({
+    url: absoluteUrl(`/case-studies/${caseStudy.slug}`),
+    lastModified: new Date(caseStudy.seo.lastModified),
+    changeFrequency: "monthly",
+    priority: 0.7,
+    images: [absoluteUrl(caseStudy.hero.image.src)],
+  }));
+
+  return [...staticPages, ...caseStudyPages];
 }

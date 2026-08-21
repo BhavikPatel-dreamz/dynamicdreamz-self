@@ -2881,7 +2881,7 @@ function assertPageSeoWithinLengthBudget(pages: Record<string, PageSeoConfig>) {
 
 assertPageSeoWithinLengthBudget(pageSeo);
 
-function createPageMetadata(page: PageSeoConfig): Metadata {
+export function createPageMetadata(page: PageSeoConfig): Metadata {
   const socialDescription = page.socialDescription ?? page.description;
   // Canonical and og:url resolve through `absoluteUrl`, the same helper the
   // sitemap and JSON-LD use, so every non-root public URL shares the enforced

@@ -2135,7 +2135,7 @@ approved evidence. Exact visible proposals are tracked in
 ## WordPress Web Development Services (`/wordpress-development`)
 
 Status: implemented; visible recommendations deferred
-Last reviewed: 2026-08-18
+Last reviewed: 2026-08-21
 Primary audience: businesses, ecommerce brands, and digital agencies seeking
 custom WordPress website development, theme customization, plugin development,
 and WooCommerce solutions.
@@ -2619,7 +2619,7 @@ Primary commercial inbound conversion and project estimation route. Connects pot
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-18
+Last reviewed: 2026-08-21
 
 Owner: SEO, content, development, leadership, sales, and client-success teams
 
@@ -2629,7 +2629,7 @@ Decision stage: partner evaluation, vendor validation, capability verification, 
 
 ### Page role
 
-Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep expertise across 36 client projects spanning Shopify, Shopify Plus, Magento, WordPress, React/Laravel, and custom platforms across 7 distinct industries (Beauty, Fashion, Food & Beverages, Health & Nutrition, Home & Living, Jewellery, Other).
+Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep expertise across 35 current client projects spanning Shopify, Shopify Plus, Magento, WordPress, React/Laravel, and custom platforms across 7 distinct industries (Beauty, Fashion, Food & Beverages, Health & Nutrition, Home & Living, Jewellery, Other).
 
 ### Target prompts
 
@@ -2641,7 +2641,7 @@ Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep
 
 ### Current strengths and available evidence
 
-- Comprehensive catalog of 36 authentic client projects with industry and technology categorization.
+- Comprehensive catalog of 35 current client projects with industry and technology categorization.
 - Real-time search by brand name, technology, industry, and solution summary.
 - Multi-faceted technology filter (Shopify, Shopify Plus, Shopify Migration, WordPress, Magento 2.0, React.js & Laravel, Custom Web Platform).
 - Multi-faceted industry filter (Beauty & Cosmetics, Fashion & Apparel, Food & Beverages, Health & Nutrition, Home & Living, Jewellery & Accessories, Other Industries).
@@ -2655,8 +2655,8 @@ Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Canonical migrated archive needed full App Router and metadata implementation | Ship slashless `/case-studies` route with SEO data, sitemap, robots, metadata, redirects from `/case-study`, and canonical helpers | Verified in rendered output, sitemap, and production build |
 | P0 | implemented | Search & filtering | Fast client-side searching and filtering by technology and industry | Implemented accessible dropdowns with full live parity and responsive states | Verified across desktop, tablet, and mobile |
-| P0 | implemented | Local assets | 36 project screenshots downloaded and stored in project-owned kebab-case paths | Replaced remote WordPress uploads with `public/assets/case-studies/*.png` | 100% project-owned assets verified |
-| P1 | deferred | Case study detail pages | Individual case study links (`/case-studies/evrgreen`, etc.) link to future detail routes | Maintain links and migrate individual case study story pages in planned phase | Migration scope prioritization |
+| P0 | implemented | Local assets | Current project screenshots are stored in project-owned kebab-case paths | Replaced remote WordPress uploads with `public/assets/case-studies/*.png`; retained one unused legacy Banchharams file without exposing a stale card | 100% project-owned assets and zero duplicate hashes verified |
+| P1 | implemented | Case study detail pages | Individual case study links needed canonical local detail routes | Migrated all 35 current live detail routes through one typed, static App Router template with local media, route-scoped metadata, and evidence-bound schema | Static route, source, sitemap, lint, and production-build verification |
 | P1 | deferred | Copy phrasing | Subtitle says `Explore our clients’ success stories through case studies` | Preserve live wording verbatim during migration; queue proposed copy improvements in `docs/page-content-improvements.md` | Content approval |
 
 ### Suggested answer copy
@@ -2669,7 +2669,7 @@ Proposed copy improvements are tracked in `docs/page-content-improvements.md`.
 
 - Connect Dynamic Dreamz to the shared Organization entity and model this route as
   a CollectionPage.
-- Keep the 36 case study entities, technologies, and industries strictly aligned
+- Keep the 35 current case study entities, technologies, and industries strictly aligned
   with visible content.
 
 ### Internal-link and conversion actions
@@ -2696,6 +2696,127 @@ Proposed copy improvements are tracked in `docs/page-content-improvements.md`.
   metadata limits, JSON-LD graph verification, desktop/tablet/mobile screenshots
   captured (1440x900, 768x1024, 390x844), local assets audit, responsive grid
   layout, lint, and production build.
+
+## Case Study Detail Pages (`/case-studies/[slug]`)
+
+Status: implemented and verified; live-visible content and evidence boundaries preserved
+
+Last reviewed: 2026-08-21
+
+Owner: SEO, content, development, leadership, sales, and client-success teams
+
+Primary audience: merchants, brands, and agencies evaluating Dynamic Dreamz's
+project experience, platform capability, implementation approach, and relevance
+to a comparable ecommerce or software requirement
+
+Decision stage: vendor validation, implementation-partner comparison, solution
+research, and request-for-quote preparation
+
+### Page role
+
+Canonical first-party project evidence pages for the case-study archive. Each
+route must keep its live client attribution, visible story, taxonomy, images,
+and approved qualitative or quantitative outcomes intact. The shared renderer
+must not fill a missing client fact, date, metric, testimonial, or integration
+from another route or infer one from an image.
+
+### Route inventory and indexing state
+
+The 35 routes below were present in the live XML sitemap on 2026-08-21 and are
+approved for generated local route and sitemap coverage. The former Banchharams
+detail URL now resolves to the live archive, exposes no detail hero, and is
+absent from the current sitemap. The stale local archive card was therefore
+removed and no unsupported detail route was generated.
+
+| Route group | Slugs | Migration status |
+| --- | --- | --- |
+| Current live sitemap | `evrgreen`, `tipii`, `daniel-walters`, `aetrex`, `rootedhuman`, `eczema-milk`, `yhus`, `nandi-medical`, `factsandsupps`, `zedmed`, `tankbar`, `atlantic-naturals`, `candy-prom`, `eddus-and-co`, `e2ip-technologies`, `alyve`, `santosh-jewellers`, `renee-cosmetics`, `essential-whitening`, `ranavat`, `don-j`, `d-shop`, `refacekit`, `beauti-software`, `blubox`, `furnified`, `bombay-shirt-company`, `sleepycat`, `ayusunless`, `calmenta`, `holy-plantz`, `trendia`, `quite-events`, `nekter-juice-bar`, `consciouspoker` | implemented and verified |
+| Stale legacy item | `banchharams` | intentionally excluded; former detail URL resolves to the live archive and is not in the sitemap |
+
+### Target prompts
+
+- What work did Dynamic Dreamz complete for [client]?
+- Which ecommerce platform and technology were used for [client]?
+- What challenge, solution, services, and outcome are documented in the [client] case study?
+- Has Dynamic Dreamz delivered a project in [industry] or [region]?
+- Which Dynamic Dreamz case studies are relevant to Shopify, Shopify Plus,
+  migration, WordPress, Magento, mobile app, or custom platform work?
+
+### Current strengths and available evidence
+
+- Available project facts—including named client, industry when supplied,
+  technology, location, summary, and ordered delivery narrative—are
+  server-renderable from the live first-party page.
+- Detail pages include a consistent challenge/solution/services pattern while
+  supporting optional wireframe, palette, typeface, design, and project images.
+- Every route already connects to the case-study archive and request-a-quote
+  flow, providing a natural evidence-to-conversion path.
+- Existing local archive covers can be reused for hero images where their
+  binary or visual role matches the detail page.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route coverage | Archive cards needed local detail routes | Generated all 35 typed detail pages through `/case-studies/[slug]`, preserved legacy singular-route redirects, and return a real 404 for unknown slugs | Route and production-build verification complete |
+| P0 | implemented | Local assets | Detail pages required supporting media beyond the existing archive covers | Ingested through `scratch/`, compared hashes and visual roles across all `public/assets/**`, optimized unique files, and prohibited production hotlinks | 73 references valid; zero duplicate hash groups |
+| P0 | implemented | Discovery | Local sitemap and robots output needed detail coverage | Added all 35 current live-sitemap detail routes with source last-modified dates and route-specific images | Rendered sitemap and robots verification complete |
+| P1 | implemented | Answer extraction | The live story structure was visual but not consistently modelled as project evidence | Added semantic sections, a single H1, descriptive H2s, an archive back path, breadcrumb schema, and route-scoped `WebPage` plus `CreativeWork` JSON-LD matching visible facts | Rendered/source/schema validation complete |
+| P1 | deferred | Evidence completeness | Many pages omit delivery dates, team role detail, approved results, testimonial sources, or constraint context | Add only client-success-approved facts using the case-study evidence template; do not manufacture missing fields | Client-success and leadership approval |
+| P1 | deferred | Quantified outcomes | Some live claims or numbers may lack a visible source or review date | Retain live-visible copy during migration, then verify each metric and add provenance/freshness only after approval | Source evidence and content approval |
+| P2 | deferred | Related pathways | Detail pages do not consistently expose related service or case-study links | Add descriptive related links only after exact visible placement/copy is approved | Visible-UI approval and destination coverage |
+
+### Entity, evidence, and authorship actions
+
+- Identify each client project as a `CreativeWork` connected to the Dynamic
+  Dreamz Organization, using only visible and approved facts.
+- Treat industry, technology, and location as project attributes, not as
+  organization-wide claims.
+- Do not add `author`, `dateCreated`, `datePublished`, `review`, `aggregateRating`,
+  or result metrics unless the route provides approved evidence.
+- Keep all narrative wording local and route-specific; never compose missing
+  facts from archive taxonomy or sibling pages.
+
+### Internal-link and conversion actions
+
+- Link the back control and breadcrumb to `/case-studies`.
+- Keep archive card URLs and all generated canonical URLs in the plural,
+  slashless form `/case-studies/{slug}`.
+- Preserve the live request-a-quote CTA flow using the canonical local quote
+  route and existing shared CTA/button components.
+- Retain legacy `/case-study/{slug}` redirects for external link equity.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit route-scoped `WebPage`, `CreativeWork`, and `BreadcrumbList` nodes; reuse
+  shared Organization identity rather than duplicating unsupported facts.
+- Keep JSON-LD descriptions and attributes consistent with the corresponding
+  rendered hero and content sections.
+- Use the live XML `<lastmod>` value for the initial sitemap migration and update
+  the local entry date only when its content materially changes.
+- Keep Banchharams out of archive, route, sitemap, and robots detail coverage
+  unless a real approved detail page is published in a future live inventory.
+
+### Measurement plan
+
+- SEO tracks detail-page impressions, indexed-route coverage, project/client
+  queries, and archive-to-detail organic landings.
+- Analytics measures archive card click-through, detail-to-quote conversion,
+  back-to-archive use, and related-service navigation after approval.
+
+### Verification and remaining gaps
+
+- Completed: current live sitemap inventory; representative rendered/source
+  review; shared CSS/JS inspection; desktop, tablet, and mobile live/local
+  comparison for the full SleepyCat variant; desktop comparison for lean
+  Evrgreen; Ayusunless carousel interaction; local component and asset audit.
+- All 35 routes returned expected H1 and JSON-LD content, the unknown-slug path
+  returned 404, and a legacy singular path returned the shared 308 redirect.
+- URL policy, route-scoped metadata/canonical/Open Graph/schema, 35 sitemap
+  entries, robots coverage, 73 local asset references, zero duplicate hashes,
+  lint, TypeScript, and the Next.js production build passed on 2026-08-21.
+- Remaining gaps are the explicitly deferred evidence, outcome provenance, and
+  visible-copy approvals above; no technical migration blocker remains.
 
 ## Privacy and Cookies Policy (`/privacy-policy`)
 
@@ -8009,8 +8130,6 @@ Commercial pricing and conversion page for prepaid Shopify design and developmen
 - Production SEO emits the 46-character title, 150-character description, slashless canonical and Open Graph URL, Twitter large-image card, local 1200 × 630 social image, and Organization/WebSite/WebPage/Service/Breadcrumb/FAQ graph. Service offers expose only visible package names, prices, USD currency, and exact purchase URLs.
 - `npm run check:urls`, `npm run lint`, and `npm run build` pass; Next.js prerenders the route as static content. The final repository-wide SHA-256 audit reports zero duplicate public-asset hash groups.
 - Remaining governance gap: commercial rates and policy promises still require a named finance/delivery owner and scheduled freshness review. No unapproved visible wording was changed.
-
-
 
 
 

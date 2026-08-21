@@ -5,12 +5,26 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
-import { type CaseStudyItem, caseStudiesContent } from "@/content/case-studies";
+import type { CaseStudyItem } from "@/types/case-study";
+
+type CaseStudiesListingProps = {
+  content: {
+    filter: {
+      technologies: readonly string[];
+      industries: readonly string[];
+    };
+    items: readonly CaseStudyItem[];
+    sectionTitle: {
+      heading: string;
+      description: string;
+    };
+  };
+};
 
 const ITEMS_PER_PAGE = 9;
 
-export function CaseStudiesListing() {
-  const { filter, items, sectionTitle } = caseStudiesContent;
+export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
+  const { filter, items, sectionTitle } = content;
 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTech, setSelectedTech] = useState<string>("");

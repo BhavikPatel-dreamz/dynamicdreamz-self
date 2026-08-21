@@ -14,7 +14,7 @@ function getFiles(dir, exts, files = []) {
   return files;
 }
 
-const srcFiles = getFiles("src", [".ts", ".tsx"]);
+const srcFiles = getFiles("src", [".ts", ".tsx", ".json"]);
 const missingAssets = new Set();
 const assetRegex = /["'`](\/assets\/[^"'`]+)["'`]/g;
 

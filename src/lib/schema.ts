@@ -175,6 +175,7 @@ import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
 import { absoluteUrl } from "@/lib/seo";
+import type { CaseStudyDetail } from "@/types/case-study";
 
 const organizationId = `${siteConfig.url}#organization`;
 const websiteId = `${siteConfig.url}#website`;
@@ -2276,6 +2277,88 @@ export function createCaseStudiesPageSchema() {
             position: 2,
             name: "Case Studies",
             item: caseStudiesPageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+export function createCaseStudyDetailPageSchema(caseStudy: CaseStudyDetail) {
+  const pageUrl = absoluteUrl(`/case-studies/${caseStudy.slug}`);
+  const pageId = `${pageUrl}#webpage`;
+  const creativeWorkId = `${pageUrl}#case-study`;
+  const detailBreadcrumbId = `${pageUrl}#breadcrumb`;
+  const imageUrl = absoluteUrl(caseStudy.hero.image.src);
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": pageId,
+        url: pageUrl,
+        name: caseStudy.seo.title,
+        description: caseStudy.seo.description,
+        dateModified: caseStudy.seo.lastModified,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": creativeWorkId },
+        breadcrumb: { "@id": detailBreadcrumbId },
+        mainEntity: { "@id": creativeWorkId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: imageUrl,
+          width: caseStudy.hero.image.width,
+          height: caseStudy.hero.image.height,
+          caption: caseStudy.hero.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": creativeWorkId,
+        url: pageUrl,
+        name: caseStudy.title,
+        headline: caseStudy.title,
+        description: caseStudy.summary,
+        image: imageUrl,
+        genre: caseStudy.technology,
+        about: [caseStudy.technology, caseStudy.industry].filter(Boolean),
+        spatialCoverage: caseStudy.location,
+        creator: { "@id": organizationId },
+        isPartOf: { "@id": caseStudiesPageId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": detailBreadcrumbId,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: homeUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Case Studies",
+            item: caseStudiesPageUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: caseStudy.clientName,
+            item: pageUrl,
           },
         ],
       },
