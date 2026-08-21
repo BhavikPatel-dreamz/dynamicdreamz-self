@@ -25,11 +25,11 @@ export function ShopifyServicesSection({
   return (
     <section className="shopify-services-sec pt-20 max-[991px]:pt-[50px]" id="shopify-services">
       <Container>
-        <div className="mx-auto max-w-[780px] text-center">
+        <div className="mx-auto text-center">
           <h2 className="aaaaaaaaa font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(content.heading, "")}
           </h2>
-          <p className="shopify-services-desc mt-5 text-lg leading-[30.4px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[25px]">
+          <p className="shopify-services-desc mt-5 text-lg leading-[34.5px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[25px]">
             {formatBrText(content.description, "max-[991px]:hidden")}
           </p>
         </div>

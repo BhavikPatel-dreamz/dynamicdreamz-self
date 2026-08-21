@@ -45,6 +45,8 @@ export function ShopifyReasonsSection({
   id = "why-hire-shopify-developers",
   layout = "grid",
   carouselFullBleed = false,
+  carouselItemClassName,
+  cardMinHeightClassName = "min-h-[330px]",
   preserveHeadingBreaks = false,
 }: {
   content?: ProofSectionContent;
@@ -52,14 +54,16 @@ export function ShopifyReasonsSection({
   id?: string;
   layout?: "grid" | "carousel";
   carouselFullBleed?: boolean;
+  carouselItemClassName?: string;
+  cardMinHeightClassName?: string;
   preserveHeadingBreaks?: boolean;
 }) {
   const cards = content.items.map((item) => (
     <article
-      className="group relative h-full min-h-[330px] rounded-[15px] bg-white p-0.5 transition-[background] duration-300 hover:bg-[linear-gradient(to_right,#15c064,#00d1ff)] focus-within:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:absolute after:right-0 after:bottom-0 after:left-0 after:z-20 after:h-3 after:rounded-b-[15px] after:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:opacity-0 after:transition-opacity after:duration-300 after:content-[''] hover:after:opacity-100 focus-within:after:opacity-100"
+      className={`group relative h-full ${cardMinHeightClassName} rounded-[15px] bg-white p-0.5 transition-[background] duration-300 hover:bg-[linear-gradient(to_right,#15c064,#00d1ff)] focus-within:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:absolute after:right-0 after:bottom-0 after:left-0 after:z-20 after:h-3 after:rounded-b-[15px] after:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:opacity-0 after:transition-opacity after:duration-300 after:content-[''] hover:after:opacity-100 focus-within:after:opacity-100`}
       key={item.title}
     >
-      <div className="relative z-10 h-full rounded-[13px] bg-white px-[28px] pt-[38px] pb-[58px]">
+      <div className="relative z-10 h-full rounded-[13px] bg-white pl-[30px] pr-[20px] pt-[30px] pb-[80px]">
         <Image
           className="mb-5 size-[60px] object-contain"
           src={item.icon}
@@ -90,9 +94,9 @@ export function ShopifyReasonsSection({
       {cards.map((card, index) => (
         <div
           className={`shrink-0 snap-start ${
-            carouselFullBleed
+            carouselItemClassName ?? (carouselFullBleed
               ? "basis-[calc(100vw-82px)] min-[576px]:basis-[458px] min-[767px]:basis-[246px] min-[768px]:basis-[332px] min-[992px]:basis-[452px] min-[1200px]:basis-[562px] min-[1400px]:basis-[652px]"
-              : "basis-[calc(100%-50px)] min-[767px]:basis-[calc((100%-66px)/2)]"
+              : "basis-[calc(100%-50px)] min-[767px]:basis-[calc((100%-66px)/2)]")
           }`}
           data-carousel-item
           key={content.items[index].title}
@@ -113,7 +117,7 @@ export function ShopifyReasonsSection({
               preserveHeadingBreaks ? undefined : "max-[1199px]:hidden",
             )}
           </h2>
-          <p className="mx-auto mt-2.5 max-w-[720px] text-lg leading-[30.4px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[25px]">
+          <p className="mx-auto mt-6 max-w-[720px] text-lg leading-[30.4px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[25px]">
             {formatBrText(content.description, "max-[1199px]:hidden")}
           </p>
         </div>

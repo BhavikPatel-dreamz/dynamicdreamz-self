@@ -47,7 +47,7 @@ export type PrimaryNavigationGroup =
       sections: ServiceNavigationSection[];
     };
 
-export const primaryNavigation: PrimaryNavigationGroup[] = [
+const navigationGroups: PrimaryNavigationGroup[] = [
   {
     label: "About Us",
     slug: "about",
@@ -183,6 +183,54 @@ export const primaryNavigation: PrimaryNavigationGroup[] = [
       },
     ],
   },
+];
+
+const findNavigationGroup = (slug: string) => {
+  const group = navigationGroups.find((item) => item.slug === slug);
+
+  if (!group) throw new Error(`Missing primary navigation group: ${slug}`);
+  return group;
+};
+
+const servicesNavigation = findNavigationGroup("services");
+const agencyNavigation = findNavigationGroup("white-label");
+const aboutNavigation = findNavigationGroup("about");
+
+const technologyNavigation: PrimaryNavigationGroup = {
+  label: "Technology",
+  slug: "technology",
+  kind: "compact",
+  items: [
+    {
+      label: "WordPress Development",
+      href: "/wordpress-development-company",
+      icon: { src: "/assets/navigation/wordpress.svg", width: 21, height: 21 },
+    },
+    {
+      label: "WooCommerce Development",
+      href: "/woocommerce-development",
+      icon: { src: "/assets/navigation/ecommerce.svg", width: 21, height: 21 },
+    },
+    {
+      label: "Magento Development",
+      href: "/magento-development",
+      icon: { src: "/assets/navigation/ecommerce.svg", width: 21, height: 21 },
+    },
+    {
+      label: "Mobile App Development",
+      href: "/mobile-application-development",
+      icon: { src: "/assets/navigation/mobile-app-development.svg", width: 18, height: 24 },
+    },
+  ],
+};
+
+export const primaryNavigation: PrimaryNavigationGroup[] = [
+  { ...servicesNavigation, label: "Shopify Solutions" },
+  { ...agencyNavigation, label: "Agency Partnerships", slug: "agency-partnerships" },
+  technologyNavigation,
+  findNavigationGroup("industries"),
+  findNavigationGroup("work"),
+  { ...aboutNavigation, label: "About" },
 ];
 
 export const footerNavigation = [

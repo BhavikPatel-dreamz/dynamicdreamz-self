@@ -4609,6 +4609,12 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Impulse Theme Customization (`/impulse-theme-customization`)
 
+Visual parity review (2026-08-21): live-visible copy, heading order, CTA intent,
+FAQ content, and server-rendered answer content remain unchanged. The update was
+limited to current live layout behavior, navigation taxonomy, local asset
+correction, and the live client-logo dataset; no new AEO/GEO content gap was
+introduced.
+
 Status: implemented and verified; live-visible content preserved
 Last reviewed: 2026-08-19
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
@@ -7781,7 +7787,6 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 - Production source verification confirms the 55-character title, 151-character description, index/follow directives, canonical, Open Graph, Twitter card, local 535 × 534 hero image, schema graph, sitemap entry, and robots allow path.
 - `npm run check:urls`, `npm run lint`, and `npm run build` pass. Next.js prerenders the route as static content, and the repository-wide SHA-256 audit reports zero duplicate asset groups.
 - Remaining governance gaps are volatile proof ownership, terminology approval, and first-party project evidence; no unsupported facts were added to schema.
-
 
 
 

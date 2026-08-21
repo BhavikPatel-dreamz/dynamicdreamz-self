@@ -51,7 +51,7 @@ export function ThemeWhyChooseSection({
 
               return (
                 <li
-                  className={`flex p-[51px] max-[1199px]:p-8 max-[767px]:py-5 max-[767px]:px-0 border-black/5 ${
+                  className={`flex p-[51px] max-[1199px]:p-8 max-[991px]:py-7.5 max-[991px]:px-5 border-black/5 ${
                     variant === "top-icon"
                       ? "flex-col items-start"
                       : variant === "top-icon-mobile"

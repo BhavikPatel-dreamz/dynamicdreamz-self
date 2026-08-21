@@ -30,26 +30,49 @@ export function ImpulseThemeCustomizationPage() {
   const portfolioContent = {
     heading: impulseThemeCustomizationContent.portfolio.title,
     description: impulseThemeCustomizationContent.portfolio.subtitle,
-    items: impulseThemeCustomizationContent.portfolio.items,
+    items: [],
   };
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ThemeHeroSection content={impulseThemeCustomizationContent.hero} />
+      <ThemeHeroSection
+        content={impulseThemeCustomizationContent.hero}
+        imageStretchesOnDesktop
+        tabletImageHalfWidth
+        tabletImageTopSpacing
+      />
       <IndustryBrandsSection
         content={brandsContent}
+        density="compact"
         heading={impulseThemeCustomizationContent.brands.title}
         items={impulseThemeCustomizationContent.brands.items}
       />
       <ThemeFeaturesSection content={impulseThemeCustomizationContent.features} />
-      <ShopifyReasonsSection content={benefitsContent} />
+      <ShopifyReasonsSection
+        carouselFullBleed
+        carouselItemClassName="basis-[calc(100vw-82px)] min-[576px]:basis-[458px] min-[767px]:basis-[246px] min-[768px]:basis-[308px] min-[992px]:basis-[427px] min-[1200px]:basis-[537px] min-[1400px]:basis-[627px]"
+        cardMinHeightClassName="min-h-[340px]"
+        content={benefitsContent}
+        layout="carousel"
+        preserveHeadingBreaks
+      />
       <ShopifyServicesSection content={servicesContent} />
-      <ThemeWhyChooseSection content={impulseThemeCustomizationContent.whyChoose} />
+      <ThemeWhyChooseSection
+        content={impulseThemeCustomizationContent.whyChoose}
+        preserveDesktopTypography
+        preserveLiveIconSize
+        variant="top-icon-mobile"
+      />
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
         ctaHref="/our-work"
         ctaLabel="View our work"
+        descriptionBreakClassName="hidden"
+        eyebrow="Portfolio"
+        eyebrowClassName="min-[992px]:hidden"
+        headerLayout="split"
+        itemsClassName="mb-20 max-[991px]:mb-[30px]"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

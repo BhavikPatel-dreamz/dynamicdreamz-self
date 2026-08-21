@@ -101,8 +101,7 @@ export function SiteFooter() {
       </Container>
 
       <Container className="hidden pt-10 max-[991px]:block">
-        <ContactDetails />
-        <div className="mt-5">
+        <div>
           {footerNavigation.map((group) => (
             <details className="group/footer border-b border-ink/10" key={group.label}>
               <summary className="flex cursor-pointer list-none items-center justify-between py-[18px] text-base leading-[1.66] font-bold [&::-webkit-details-marker]:hidden">
@@ -125,6 +124,9 @@ export function SiteFooter() {
               </div>
             </details>
           ))}
+        </div>
+        <div className="mt-5">
+          <ContactDetails />
         </div>
       </Container>
 

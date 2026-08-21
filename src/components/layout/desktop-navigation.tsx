@@ -41,6 +41,8 @@ const itemGridClasses: Record<string, string> = {
   industries: "grid-cols-2 gap-x-11 gap-y-[23px] [&_a]:h-[23.36px] [&_a]:items-center [&_a]:whitespace-nowrap",
   work: "grid-cols-1 gap-[15px] [&_a]:min-h-[24.27px] [&_a]:items-center [&_a]:whitespace-nowrap [&_.menu-title]:text-sm [&_.menu-title]:font-medium [&_.menu-title]:leading-[23.27px] [&_.menu-title]:tracking-[-0.02em]",
   "white-label": "grid-cols-1 gap-[15px] [&_a]:min-h-[24.27px] [&_a]:items-center [&_a]:whitespace-nowrap [&_.menu-title]:text-sm [&_.menu-title]:font-medium [&_.menu-title]:leading-[23.27px] [&_.menu-title]:tracking-[-0.02em]",
+  "agency-partnerships": "grid-cols-1 gap-[15px] [&_a]:min-h-[24.27px] [&_a]:items-center [&_a]:whitespace-nowrap [&_.menu-title]:text-sm [&_.menu-title]:font-medium [&_.menu-title]:leading-[23.27px] [&_.menu-title]:tracking-[-0.02em]",
+  technology: "grid-cols-1 gap-[15px] [&_a]:min-h-[24.27px] [&_a]:items-center [&_a]:whitespace-nowrap [&_.menu-title]:text-sm [&_.menu-title]:font-medium [&_.menu-title]:leading-[23.27px] [&_.menu-title]:tracking-[-0.02em]",
 };
 
 function ItemMenu({
@@ -142,6 +144,8 @@ const menuPositionClasses: Record<string, string> = {
   work: "right-[calc(35%+6px)] left-auto w-[163px] min-[1440px]:right-[calc(42%+3.2px)]",
   "white-label":
     "right-[calc(19%+12.4px)] left-auto w-[331px] min-[1440px]:right-[calc(27.2%+9.1px)]",
+  "agency-partnerships": "left-[31%] w-[331px]",
+  technology: "left-[46%] w-[300px]",
 };
 
 const pointerClasses: Record<string, string> = {
@@ -150,6 +154,8 @@ const pointerClasses: Record<string, string> = {
   industries: "left-[38%] min-[1440px]:left-[46%]",
   work: "left-1/2 -translate-x-1/2 rotate-45",
   "white-label": "left-1/2 -translate-x-1/2 rotate-45",
+  "agency-partnerships": "left-1/2 -translate-x-1/2 rotate-45",
+  technology: "left-1/2 -translate-x-1/2 rotate-45",
 };
 
 export function DesktopNavigation() {
@@ -177,7 +183,7 @@ export function DesktopNavigation() {
 
   return (
     <nav
-      className="nav-menu mr-auto ml-10 min-[1440px]:ml-17 hidden shrink-0 min-[992px]:block max-[1199px]:ml-5 min-[1440px]:[body:has(main[data-page=home])_&]:ml-[68px]"
+      className="nav-menu mr-auto ml-10 min-[1440px]:ml-12 hidden shrink-0 min-[992px]:block max-[1199px]:ml-5 min-[1440px]:[body:has(main[data-page=home])_&]:ml-[48px]"
       aria-label="Primary navigation"
       ref={navigationRef}
     >
@@ -194,7 +200,7 @@ export function DesktopNavigation() {
 
           return (
             <li
-              className="group/desktop-nav static py-9 pr-[30px] max-[1199px]:pr-3.5"
+              className="group/desktop-nav static py-9 pr-5 max-[1199px]:pr-3.5"
               data-active={isActive}
               data-open={isOpen}
               key={group.slug}
