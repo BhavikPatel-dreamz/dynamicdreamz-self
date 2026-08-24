@@ -85,7 +85,7 @@ export const shopifyThemeCustomizationContent = {
     ],
   },
   brands: {
-    title: "Trusted by <br>Leading Brands",
+    title: "Trusted by Leading Brands",
     ariaLabel: "Brands that trust Dynamic Dreamz for Shopify theme customization",
     items: [
       {

@@ -30,7 +30,7 @@ export function ShopifyPlusMigrationAgencyPage() {
           slug: "shopify-plus-migration-agency",
           ariaLabel: "Brands that trust Dynamic Dreamz for Shopify Plus migration",
         }}
-        heading="Trusted by <br> Leading Brands"
+        heading="Trusted by Leading Brands"
         items={plusAgencyBrandLogos}
       />
       <TextBoxSection

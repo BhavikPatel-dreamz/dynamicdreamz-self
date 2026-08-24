@@ -47,7 +47,7 @@ export const shopifyMaintenanceServicesContent = {
     ],
   },
   brands: {
-    title: "Trusted by <br>Leading Brands",
+    title: "Trusted by Leading Brands",
     items: [
       {
         name: "Supper Tails Logo",

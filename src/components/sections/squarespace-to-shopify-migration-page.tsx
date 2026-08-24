@@ -32,7 +32,7 @@ export function SquarespaceToShopifyMigrationPage() {
           slug: "squarespace-to-shopify-migration",
           ariaLabel: "Brands that trust Dynamic Dreamz for Squarespace to Shopify migration",
         }}
-        heading="Trusted by <br> Leading Brands"
+        heading="Trusted by Leading Brands"
         items={squarespaceBrandLogos}
       />
       <TextBoxSection

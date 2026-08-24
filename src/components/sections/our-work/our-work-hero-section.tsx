@@ -9,10 +9,10 @@ import { cn } from "@/lib/class-names";
 
 function ShowcaseSet({ decorative = false }: { decorative?: boolean }) {
   return (
-    <div className="grid shrink-0 grid-cols-2 gap-6 pb-6 max-[991px]:flex max-[991px]:gap-4 max-[991px]:pb-0 max-[991px]:pr-4" aria-hidden={decorative || undefined}>
-      <div className="col-span-2 overflow-hidden rounded-2xl shadow-[6px_6px_16px_rgb(0_0_0/6%)] max-[991px]:h-[227px] max-[991px]:w-[342px] max-[991px]:shrink-0 max-[991px]:rounded-[10px]">
+    <div className="grid shrink-0 grid-cols-2 gap-6 pb-6 max-[991.98px]:flex max-[991.98px]:gap-4 max-[991.98px]:pb-0 max-[991.98px]:pr-4" aria-hidden={decorative || undefined}>
+      <div className="col-span-2 overflow-hidden rounded-2xl shadow-[6px_6px_16px_rgb(0_0_0/6%)] max-[991.98px]:h-[227px] max-[991.98px]:w-[342px] max-[991.98px]:shrink-0 max-[991.98px]:rounded-[10px]">
         <Image
-          className="h-auto w-full max-[991px]:h-full max-[991px]:object-cover max-[991px]:object-top"
+          className="h-auto w-full max-[991.98px]:h-full max-[991.98px]:object-cover max-[991.98px]:object-top"
           src={showcaseImages[0].src}
           alt={decorative ? "" : showcaseImages[0].alt}
           width={showcaseImages[0].width}
@@ -22,9 +22,9 @@ function ShowcaseSet({ decorative = false }: { decorative?: boolean }) {
         />
       </div>
       {[showcaseImages[1], showcaseImages[2]].map((image) => (
-        <div className="overflow-hidden rounded-2xl shadow-[6px_6px_16px_rgb(0_0_0/6%)] max-[991px]:h-[227px] max-[991px]:w-[105px] max-[991px]:shrink-0 max-[991px]:rounded-[10px]" key={image.src}>
+        <div className="overflow-hidden rounded-2xl shadow-[6px_6px_16px_rgb(0_0_0/6%)] max-[991.98px]:h-[227px] max-[991.98px]:w-[105px] max-[991.98px]:shrink-0 max-[991.98px]:rounded-[10px]" key={image.src}>
           <Image
-            className="h-auto w-full max-[991px]:h-full max-[991px]:object-cover max-[991px]:object-top"
+            className="h-auto w-full max-[991.98px]:h-full max-[991.98px]:object-cover max-[991.98px]:object-top"
             src={image.src}
             alt={decorative ? "" : image.alt}
             width={image.width}
@@ -34,9 +34,9 @@ function ShowcaseSet({ decorative = false }: { decorative?: boolean }) {
         </div>
       ))}
       {showcaseImages.slice(3).map((image) => (
-        <div className="col-span-2 overflow-hidden rounded-2xl shadow-[6px_6px_16px_rgb(0_0_0/6%)] max-[991px]:h-[227px] max-[991px]:w-[342px] max-[991px]:shrink-0 max-[991px]:rounded-[10px]" key={image.src}>
+        <div className="col-span-2 overflow-hidden rounded-2xl shadow-[6px_6px_16px_rgb(0_0_0/6%)] max-[991.98px]:h-[227px] max-[991.98px]:w-[342px] max-[991.98px]:shrink-0 max-[991.98px]:rounded-[10px]" key={image.src}>
           <Image
-            className="h-auto w-full max-[991px]:h-full max-[991px]:object-cover max-[991px]:object-top"
+            className="h-auto w-full max-[991.98px]:h-full max-[991.98px]:object-cover max-[991.98px]:object-top"
             src={image.src}
             alt={decorative ? "" : image.alt}
             width={image.width}
@@ -65,9 +65,13 @@ export type HeroSectionContent = {
 
 type OurWorkHeroSectionProps = {
   content?: HeroSectionContent;
+  typography?: "default" | "liveMontserrat";
 };
 
-export function OurWorkHeroSection({ content }: OurWorkHeroSectionProps = {}) {
+export function OurWorkHeroSection({
+  content,
+  typography = "default",
+}: OurWorkHeroSectionProps = {}) {
   const heroContent = content ?? {
     eyebrow: ourWorkPage.hero.eyebrow,
     title: ourWorkPage.hero.title,
@@ -83,14 +87,35 @@ export function OurWorkHeroSection({ content }: OurWorkHeroSectionProps = {}) {
   };
 
   return (
-    <section className="overflow-hidden bg-cream pt-[90px] max-[767px]:pt-[74px]">
-      <Container className="relative min-h-[568px] max-[991px]:min-h-0 max-[991px]:max-w-none max-[991px]:px-0">
-        <div className="flex min-h-[568px] max-[991px]:min-h-0 max-[991px]:flex-col">
-          <div className="z-1 flex w-[58%] max-w-[710px] flex-col justify-center py-16 pr-10 max-[1199px]:w-[57%] max-[991px]:w-full max-[991px]:max-w-none max-[991px]:px-[calc((100%-680px)/2)] max-[991px]:pt-[30px] max-[991px]:pb-10 max-[767px]:items-center max-[767px]:px-5 max-[767px]:py-[34px] max-[767px]:text-center">
+    <section
+      className={cn(
+        "overflow-hidden bg-cream pt-[90px]",
+        typography === "liveMontserrat"
+          ? "max-[991.98px]:pt-16"
+          : "max-[767px]:pt-[74px]",
+      )}
+    >
+      <Container className="relative min-h-[568px] max-[991.98px]:min-h-0 max-[991.98px]:max-w-none max-[991.98px]:px-0">
+        <div className="flex min-h-[568px] max-[991.98px]:min-h-0 max-[991.98px]:flex-col">
+          <div
+            className={cn(
+              "z-1 flex w-[58%] max-w-[710px] flex-col justify-center py-16 pr-10 max-[1199px]:w-[57%] max-[991.98px]:w-full max-[991.98px]:max-w-none max-[991.98px]:px-[calc((100%-680px)/2)] max-[991.98px]:pt-[30px] max-[991.98px]:pb-10 max-[767px]:px-5 max-[767px]:py-[34px]",
+              typography === "liveMontserrat"
+                ? "max-[991.98px]:items-center max-[991.98px]:text-center"
+                : "max-[767px]:items-center max-[767px]:text-center",
+            )}
+          >
             <p className="mb-6 flex items-center text-sm leading-none font-semibold text-ink uppercase before:mr-3 before:h-px before:w-[30px] before:bg-brand-red before:content-[''] max-[767px]:mb-5 max-[767px]:text-xs">
               {heroContent.eyebrow}
             </p>
-            <h1 className="max-w-[700px] text-[50px] leading-[1.32] font-medium text-ink max-[1199px]:text-[44px] max-[991px]:max-w-[680px] max-[991px]:text-[40px] max-[767px]:text-[30px] max-[767px]:leading-[1.28]">
+            <h1
+              className={cn(
+                "max-w-[700px] text-ink max-[991.98px]:max-w-[680px]",
+                typography === "liveMontserrat"
+                  ? "font-montserrat text-[50px] leading-[66px] font-bold tracking-[-1px] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
+                  : "text-[50px] leading-[1.32] font-medium max-[1199px]:text-[44px] max-[991.98px]:text-[40px] max-[767px]:text-[30px] max-[767px]:leading-[1.28]",
+              )}
+            >
               {heroContent.title}
             </h1>
             <p className="mt-4 max-w-[690px] text-base leading-[30px] font-medium text-muted max-[767px]:mt-4 max-[767px]:text-[15px] max-[767px]:leading-[29px]">
@@ -131,8 +156,8 @@ export function OurWorkHeroSection({ content }: OurWorkHeroSectionProps = {}) {
               ))}
             </div>
           </div>
-          <div className="absolute top-0 right-0 h-full w-[42%] overflow-hidden max-[1199px]:w-[43%] max-[991px]:relative max-[991px]:h-[277px] max-[991px]:w-full max-[767px]:hidden">
-            <div className={cn("absolute top-0 right-0 w-[calc(100%-18px)] max-[991px]:left-0 max-[991px]:flex max-[991px]:w-max", styles.showcaseTrack)}>
+          <div className="absolute top-0 right-0 h-full w-[42%] overflow-hidden max-[1199px]:w-[43%] max-[991.98px]:relative max-[991.98px]:h-[277px] max-[991.98px]:w-full max-[767px]:hidden">
+            <div className={cn("absolute top-0 right-0 w-[calc(100%-18px)] max-[991.98px]:left-0 max-[991.98px]:flex max-[991.98px]:w-max", styles.showcaseTrack)}>
               <ShowcaseSet />
               <ShowcaseSet decorative />
             </div>

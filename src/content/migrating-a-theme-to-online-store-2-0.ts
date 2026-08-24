@@ -46,7 +46,7 @@ export const migratingThemeToOnlineStore20Content = {
   },
 
   brands: {
-    title: "Trusted by <br>Leading Brands",
+    title: "Trusted by Leading Brands",
     ariaLabel: "Brands that trust Dynamic Dreamz for Shopify theme migration",
     items: [
       {

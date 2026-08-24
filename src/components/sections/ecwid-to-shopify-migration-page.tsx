@@ -29,7 +29,7 @@ export function EcwidToShopifyMigrationPage() {
           slug: "ecwid-to-shopify-migration",
           ariaLabel: "Brands that trust Dynamic Dreamz for Ecwid to Shopify migration",
         }}
-        heading="Trusted by <br> Leading Brands"
+        heading="Trusted by Leading Brands"
         items={ecwidBrandLogos}
       />
       <TextBoxSection

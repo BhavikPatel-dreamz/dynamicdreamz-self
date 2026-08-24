@@ -2,6 +2,5 @@ import { OurWorkHeroSection } from "@/components/sections/our-work/our-work-hero
 import { caseStudiesContent } from "@/content/case-studies";
 
 export function CaseStudiesHero() {
-  return <OurWorkHeroSection content={caseStudiesContent.hero} />;
+  return <OurWorkHeroSection content={caseStudiesContent.hero} typography="liveMontserrat" />;
 }
-

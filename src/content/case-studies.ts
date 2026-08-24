@@ -3,6 +3,93 @@ import type { CaseStudyItem } from "@/types/case-study";
 
 export type { CaseStudyItem } from "@/types/case-study";
 
+export const caseStudiesBrandLogos = [
+  {
+    src: "/assets/case-studies/brands/supertails.svg",
+    alt: "SuperTails logo",
+    width: 164,
+    height: 41,
+    href: "https://supertails.com/",
+  },
+  {
+    src: "/assets/clients/eleven-eleven.svg",
+    alt: "11.11 logo",
+    width: 145,
+    height: 22,
+    href: "https://11-11.in/",
+  },
+  {
+    src: "/assets/clients/bellavita.svg",
+    alt: "Bella Vita logo",
+    width: 170,
+    height: 25,
+    href: "https://bellavitaorganic.com/",
+  },
+  {
+    src: "/assets/clients/bombay-shirt-company.svg",
+    alt: "Bombay Shirt Company logo",
+    width: 204,
+    height: 26,
+    href: "https://www.bombayshirts.com/",
+  },
+  {
+    src: "/assets/clients/popclub.svg",
+    alt: "Pop Club logo",
+    width: 65,
+    height: 41,
+    href: "https://popclub.co/",
+  },
+  {
+    src: "/assets/case-studies/brands/sri-sri-tattva.svg",
+    alt: "Sri Sri Tattva logo",
+    width: 106,
+    height: 40,
+    href: "https://www.srisritattva.com/",
+  },
+  {
+    src: "/assets/clients/tropicfeel.svg",
+    alt: "Tropicfeel logo",
+    width: 150,
+    height: 32,
+    href: "https://shop.tropicfeel.com/",
+  },
+  {
+    src: "/assets/clients/renee.svg",
+    alt: "RENEE Cosmetics logo",
+    width: 93,
+    height: 30,
+    href: "https://www.reneecosmetics.in/",
+  },
+  {
+    src: "/assets/clients/royce-chocolate.svg",
+    alt: "Royce Chocolate logo",
+    width: 132,
+    height: 38,
+    href: "https://royceindia.com/",
+  },
+  {
+    src: "/assets/clients/tego.svg",
+    alt: "Tego logo",
+    width: 101,
+    height: 40,
+    href: "https://tego.fit/",
+  },
+  {
+    src: "/assets/clients/nelter.svg",
+    alt: "Nékter Juice Bar logo",
+    width: 104,
+    height: 41,
+    href: "https://www.nekterjuicebar.com/",
+  },
+  {
+    src: "/assets/clients/rare-rabbit.svg",
+    alt: "Rare Rabbit logo",
+    width: 122,
+    height: 84,
+    href: "https://thehouseofrare.com/",
+  },
+] as const;
+
 const currentArchive: Record<string, Pick<CaseStudyItem, "title" | "technology" | "industry" | "excerpt" | "tags">> = {
   evrgreen: { title: "Decor That Shows Up, Does Its Job, and Disappears- Evrgreen", technology: "Shopify / Shopify Plus", industry: "Home & Living", excerpt: "Migrating an entire eCommerce store to a new platform is a tough task- and it gets even tougher if it’s about the brand having thousands of SKUs throughout the prescription eyewear, sunglasses & designer collections.", tags: ["Large Catalog / SKU Management", "Platform Migration"] },
   tipii: { title: "Your Moments, Beautifully Built- Tipii’", technology: "Shopify / Shopify Plus", industry: "Other Industries", excerpt: "Some brands sell products. Tipii sells memories carefully printed, thoughtfully personalised, and delivered with the kind of care that turns a photograph into something you’ll keep forever.", tags: ["Custom Storefront Design", "Personalization / Photo Printing"] },

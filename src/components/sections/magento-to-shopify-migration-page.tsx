@@ -24,7 +24,7 @@ export function MagentoToShopifyMigrationPage() {
           slug: "magento-to-shopify-migration",
           ariaLabel: "Brands that trust Dynamic Dreamz for Magento to Shopify migration",
         }}
-        heading="Trusted by <br> Leading Brands"
+        heading="Trusted by Leading Brands"
         items={magentoBrandLogos}
       />
       <TextBoxSection

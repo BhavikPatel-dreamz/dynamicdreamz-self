@@ -28,7 +28,7 @@ export function MagentoToShopifyPlusMigrationPage() {
           slug: "magento-to-shopify-plus-migration",
           ariaLabel: "Brands that trust Dynamic Dreamz for Magento to Shopify Plus migration",
         }}
-        heading="Trusted by <br> Leading Brands"
+        heading="Trusted by Leading Brands"
         items={magentoPlusBrandLogos}
       />
       <ShopifyAppBenefitsSection

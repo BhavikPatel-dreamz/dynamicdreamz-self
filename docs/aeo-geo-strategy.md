@@ -2219,7 +2219,7 @@ integration benefits.
 ## WordPress Development Company in India (`/wordpress-development-company`)
 
 Status: implemented and verified; visible recommendations deferred
-Last reviewed: 2026-08-21
+Last reviewed: 2026-08-24
 Owner: SEO, content, development, leadership, sales, and client success
 Primary audience: Indian and global businesses comparing custom WordPress
 development companies, plus agencies seeking WordPress and white-label delivery.
@@ -2673,6 +2673,9 @@ Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep
 | P0 | implemented | Route and discovery | Canonical migrated archive needed full App Router and metadata implementation | Ship slashless `/case-studies` route with SEO data, sitemap, robots, metadata, redirects from `/case-study`, and canonical helpers | Verified in rendered output, sitemap, and production build |
 | P0 | implemented | Search & filtering | Fast client-side searching and filtering by technology and industry | Implemented accessible dropdowns with full live parity and responsive states | Verified across desktop, tablet, and mobile |
 | P0 | implemented | Local assets | Current project screenshots are stored in project-owned kebab-case paths | Replaced remote WordPress uploads with `public/assets/case-studies/*.png`; retained one unused legacy Banchharams file without exposing a stale card | 100% project-owned assets and zero duplicate hashes verified |
+| P0 | implemented | Client-logo evidence | The archive reused the generic industry logo data instead of owning the live case-studies slider set | Added route-local logo data in the live order with accurate brand alt text and links; reused ten matching canonical assets and ingested two visually distinct local SVGs | Live markup and all 12 source SVGs refreshed and compared on 2026-08-24; other routes remain unchanged |
+| P1 | implemented | Hero typography | The archive H1 inherited Neue Montreal 500 instead of the live Montserrat 700 treatment | Added a backward-compatible route-scoped typography variant with the live 50px/66px desktop, 40px/50px tablet/laptop, and 30px/40px mobile values | Live CSS and local desktop/tablet/mobile captures verified on 2026-08-24; visible wording and heading semantics unchanged |
+| P1 | implemented | 991px responsive parity | Tailwind's exclusive `max-[991px]` range left the exact 991px viewport in the desktop hero/brand layout | Shifted the relevant shared responsive utilities to `max-[991.98px]` and applied the live centered tablet alignment/top offset to the case-studies hero variant | Exact 991×960 live/local captures verified on 2026-08-24 |
 | P1 | implemented | Case study detail pages | Individual case study links needed canonical local detail routes | Migrated all 35 current live detail routes through one typed, static App Router template with local media, route-scoped metadata, and evidence-bound schema | Static route, source, sitemap, lint, and production-build verification |
 | P1 | deferred | Copy phrasing | Subtitle says `Explore our clients’ success stories through case studies` | Preserve live wording verbatim during migration; queue proposed copy improvements in `docs/page-content-improvements.md` | Content approval |
 
@@ -8194,8 +8197,5 @@ Owner: SEO, content, design, and engineering
 - Local desktop, tablet, mobile, open-panel, open-drawer, and scroll-up comparisons are recorded in `docs/visual-captures/header.md` and `docs/visual-captures/header/`.
 - The navigation uses only project-owned SVG assets. The live site is not a runtime data, image, script, or CDN dependency.
 - No new schema claim was introduced by the header update. Visible terminology recommendations remain deferred until exact copy is approved.
-
-
-
 
 

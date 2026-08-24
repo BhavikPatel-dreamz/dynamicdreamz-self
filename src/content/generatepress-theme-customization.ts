@@ -13,7 +13,7 @@ export const generatepressThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by <br>Leading Brands",
+    title: "Trusted by Leading Brands",
     items: [
       {
         name: "Ranavat Logo",
