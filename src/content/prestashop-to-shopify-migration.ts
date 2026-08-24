@@ -14,8 +14,8 @@ export const prestashopHeroContent: ServiceHeroContent = {
   image: {
     src: "/assets/prestashop-to-shopify-migration/prestashop-to-shopify-migration-hero.svg",
     alt: "PrestaShop to Shopify Migration Image",
-    width: 560,
-    height: 440,
+    width: 469,
+    height: 224,
   },
   reviews: [
     {
