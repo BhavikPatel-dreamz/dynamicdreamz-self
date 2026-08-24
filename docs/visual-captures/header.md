@@ -1,6 +1,6 @@
 # Shared header visual parity capture
 
-Reviewed: 2026-08-21
+Reviewed: 2026-08-24
 
 ## Scope
 
@@ -62,10 +62,12 @@ Post-change local captures:
 ## Responsive breakpoints
 
 - `1400px`: expanded desktop container/nav spacing.
+- `1399px` and below: the quote CTA uses a 14px font with 13px vertical and
+  20px horizontal padding, matching the supplied production media rule.
 - `1200px`: desktop mega navigation begins.
 - `1199px`: tablet/mobile drawer replaces desktop navigation.
-- `768px`: compact mobile header/button sizing begins below this point.
-- `380px`: extra-small logo and CTA adjustments begin below this point.
+- `768px`: compact mobile header layout begins below this point.
+- `380px`: extra-small logo adjustment begins below this point.
 
 ## Interaction states
 
@@ -90,3 +92,7 @@ Post-change local captures:
 - Current production wording (`Al Services`, `IOS`, and `Food Beverages`) is preserved for visual/content parity; proposed corrections are recorded in `docs/page-content-improvements.md`.
 - Production and local headless Chromium captures occasionally show transient clipped text or delayed SVG paint inside the fixed blurred header. Geometry, content, normal browser rendering, responsive switching, and interaction state were checked independently of those capture-only paint artifacts.
 - No material visual difference remains in the shared header at the audited 1440px, 1024px, and 390px states. The inclusive production breakpoint was additionally verified locally at 1199px, with desktop navigation beginning at 1200px.
+- The quote CTA breakpoint boundary was source-verified against the supplied
+  production rule (`max-width: 1399px`). The shared button base now translates
+  the supplied canonical `.btn, input[type="submit"]` declaration, and the
+  header CTA contains only its supplied 1399px font-size and padding override.

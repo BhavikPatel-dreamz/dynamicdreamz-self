@@ -233,7 +233,7 @@ export function ServiceHeroSection({
                 <>
                   <p
                     className={cn(
-                      "mt-6 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
+                      "mt-6 mb-6 text-base font-medium leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
                       bodyClassName,
                     )}
                   >
@@ -269,7 +269,7 @@ export function ServiceHeroSection({
                   <Image
                     alt={content.image.alt}
                     className={cn(
-                      "h-auto w-full max-w-[560px] object-contain",
+                      "h-auto",
                       imageClassName,
                     )}
                     height={content.image.height}
