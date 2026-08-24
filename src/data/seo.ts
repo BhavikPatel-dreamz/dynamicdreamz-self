@@ -1094,7 +1094,7 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2024-05-01T00:00:00+00:00",
-    modifiedTime: "2026-08-18T00:00:00+05:30",
+    modifiedTime: "2026-08-24T00:00:00+05:30",
     image: {
       path: "/assets/case-studies/evrgreen.png",
       width: 571,
