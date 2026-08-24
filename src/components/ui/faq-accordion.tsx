@@ -30,6 +30,7 @@ type FaqAccordionProps = {
   triggerClassName?: string;
   panelContentClassName?: string;
   iconClassName?: string;
+  iconVariant?: "default" | "circle-cross";
 };
 
 export function FaqAccordion({
@@ -41,6 +42,7 @@ export function FaqAccordion({
   triggerClassName,
   panelContentClassName,
   iconClassName,
+  iconVariant = "default",
 }: FaqAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -143,21 +145,37 @@ export function FaqAccordion({
               >
                 {formatBrText(item.question)}
               </h3>
-              <Image
-                aria-hidden="true"
-                alt=""
-                className={cn(
-                  "absolute top-1/2 right-8 size-8 -translate-y-1/2 max-[1199px]:right-5 max-[1199px]:size-[25px] max-[767px]:top-[26px] max-[767px]:size-[22px] max-[767px]:translate-y-0",
-                  iconClassName,
-                )}
-                src={
-                  isOpen
-                    ? "/assets/life-dynamicdreamz/faq/minus.svg"
-                    : "/assets/life-dynamicdreamz/faq/plus.svg"
-                }
-                width={32}
-                height={32}
-              />
+              {iconVariant === "circle-cross" ? (
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    "absolute top-1/2 right-8 flex size-8 -translate-y-1/2 items-center justify-center rounded-full border-2 border-ink transition-colors max-[1199px]:right-5 max-[1199px]:size-[25px] max-[767px]:top-[26px] max-[767px]:size-[22px] max-[767px]:translate-y-0",
+                    isOpen && "bg-ink/10",
+                    iconClassName,
+                  )}
+                >
+                  <span className={cn("relative block size-3 transition-transform duration-300", isOpen && "rotate-45")}>
+                    <span className="absolute top-1/2 left-0 h-0.5 w-full -translate-y-1/2 rounded-full bg-current" />
+                    <span className="absolute top-0 left-1/2 h-full w-0.5 -translate-x-1/2 rounded-full bg-current" />
+                  </span>
+                </span>
+              ) : (
+                <Image
+                  aria-hidden="true"
+                  alt=""
+                  className={cn(
+                    "absolute top-1/2 right-8 size-8 -translate-y-1/2 max-[1199px]:right-5 max-[1199px]:size-[25px] max-[767px]:top-[26px] max-[767px]:size-[22px] max-[767px]:translate-y-0",
+                    iconClassName,
+                  )}
+                  src={
+                    isOpen
+                      ? "/assets/life-dynamicdreamz/faq/minus.svg"
+                      : "/assets/life-dynamicdreamz/faq/plus.svg"
+                  }
+                  width={32}
+                  height={32}
+                />
+              )}
             </button>
 
             <div

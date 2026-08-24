@@ -18,6 +18,10 @@ export type FaqSectionProps = {
   accordionTriggerClassName?: string;
   accordionPanelContentClassName?: string;
   accordionIconClassName?: string;
+  accordionIconVariant?: "default" | "circle-cross";
+  accordionQuestionClassName?: string;
+  accordionAnswerClassName?: string;
+  contentClassName?: string;
 };
 
 export function FaqSection({
@@ -35,8 +39,39 @@ export function FaqSection({
   accordionTriggerClassName,
   accordionPanelContentClassName,
   accordionIconClassName,
+  accordionIconVariant,
+  accordionQuestionClassName = "!text-lg !leading-[28.8px] max-[1199px]:!text-base",
+  accordionAnswerClassName = "!font-medium !leading-8 max-[1199px]:!leading-[26px]",
+  contentClassName,
 }: FaqSectionProps) {
   const titleId = ariaLabelledBy ?? `${idPrefix}-title`;
+
+  const header = (
+    <header className={headerClassName}>
+      <h2 className={titleClassName} id={titleId}>
+        {formatBrText(heading, "max-[1199px]:hidden")}
+      </h2>
+      {description ? (
+        <p className={descriptionClassName}>
+          {formatBrText(description, "max-[1199px]:hidden")}
+        </p>
+      ) : null}
+    </header>
+  );
+
+  const accordion = (
+    <FaqAccordion
+      answerClassName={accordionAnswerClassName}
+      iconClassName={accordionIconClassName}
+      iconVariant={accordionIconVariant}
+      idPrefix={idPrefix}
+      itemClassName={accordionItemClassName}
+      items={items}
+      panelContentClassName={accordionPanelContentClassName}
+      questionClassName={accordionQuestionClassName}
+      triggerClassName={accordionTriggerClassName}
+    />
+  );
 
   return (
     <section
@@ -46,26 +81,17 @@ export function FaqSection({
       aria-labelledby={titleId}
     >
       <Container>
-        <header className={headerClassName}>
-          <h2 className={titleClassName} id={titleId}>
-            {formatBrText(heading, "max-[1199px]:hidden")}
-          </h2>
-          {description ? (
-            <p className={descriptionClassName}>
-              {formatBrText(description, "max-[1199px]:hidden")}
-            </p>
-          ) : null}
-        </header>
-        <FaqAccordion
-          answerClassName="!font-medium !leading-8 max-[1199px]:!leading-[26px]"
-          iconClassName={accordionIconClassName}
-          idPrefix={idPrefix}
-          itemClassName={accordionItemClassName}
-          items={items}
-          panelContentClassName={accordionPanelContentClassName}
-          questionClassName="!text-lg !leading-[28.8px] max-[1199px]:!text-base"
-          triggerClassName={accordionTriggerClassName}
-        />
+        {contentClassName ? (
+          <div className={contentClassName}>
+            {header}
+            <div className="w-[57%] max-w-[654px] grow max-[991px]:w-full max-[991px]:max-w-none">{accordion}</div>
+          </div>
+        ) : (
+          <>
+            {header}
+            {accordion}
+          </>
+        )}
       </Container>
     </section>
   );

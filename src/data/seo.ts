@@ -66,7 +66,7 @@ export const pageSeo = {
     path: "/",
     title: "Shopify Plus Agency & Platinum Partner | Dynamic Dreamz",
     description:
-      "Established in 2006, Dynamic Dreamz is a Shopify Platinum Partner for Shopify Plus, migration, B2B, CRO, mobile apps, integrations and white-label delivery.",
+      "Dynamic Dreamz is a Shopify Platinum Partner helping DTC brands, B2B businesses and agencies build, migrate and scale with Shopify and Shopify Plus.",
     socialDescription:
       "Shopify Plus development, migration, B2B, mobile apps, integrations and white-label delivery for established brands and digital agencies.",
     keywords: [
@@ -78,7 +78,7 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2025-12-12T09:55:48+00:00",
-    modifiedTime: "2026-08-13T00:00:00+05:30",
+    modifiedTime: "2026-08-19T00:00:00+05:30",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
