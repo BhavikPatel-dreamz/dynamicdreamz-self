@@ -130,9 +130,9 @@ export function MobileNavigation() {
   }
 
   return (
-    <div className="hidden w-[30px] shrink-0 max-[1200px]:block">
+    <div className="hidden w-[30px] shrink-0 max-[1200px]:block lg:mr-0 mr-3">
       <button
-        className="flex h-[30px] w-[30px] cursor-pointer items-center justify-start border-0 bg-transparent p-0"
+        className="flex h-[30px] w-[30px] cursor-pointer items-center justify-start border-0 bg-transparent p-0 shrink-0"
         ref={toggleRef}
         type="button"
         aria-label="Toggle menu"
