@@ -41,7 +41,7 @@ const defaultAdvantagesContent: ProofSectionContent = {
 
 export function ShopifyReasonsSection({
   content = defaultReasonsContent,
-  className = "shopify-customization-services-sec bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[767px]:py-[60px]",
+  className = "shopify-customization-services-sec bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[991px]:py-[60px]",
   id = "why-hire-shopify-developers",
   layout = "grid",
   carouselFullBleed = false,
@@ -117,8 +117,8 @@ export function ShopifyReasonsSection({
               preserveHeadingBreaks ? undefined : "max-[1199px]:hidden",
             )}
           </h2>
-          <p className="mx-auto mt-6 max-w-[720px] text-lg leading-[30.4px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[25px]">
-            {formatBrText(content.description, "max-[1199px]:hidden")}
+          <p className="shopify-proof-sec-details mx-auto mt-6 max-w-[720px] text-base leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[25px]">
+            {formatBrText(content.description, "max-[991px]:hidden")}
           </p>
         </div>
 

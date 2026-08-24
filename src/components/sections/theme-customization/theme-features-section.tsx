@@ -41,7 +41,7 @@ export function ThemeFeaturesSection({
           <h2 className="theme-features-title font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(content.title, "max-[1199px]:hidden")}
           </h2>
-          <p className="theme-features mx-auto mt-6 max-w-[800px] text-lg font-medium leading-[34.2px] text-muted max-[991px]:text-base max-[767px]:leading-[25px]">
+          <p className="theme-features mx-auto mt-6 max-w-[800px] text-base font-medium leading-[34.2px] text-muted max-[991px]:text-base max-[767px]:leading-[25px]">
             {formatBrText(content.subtitle, "max-[1199px]:hidden")}
           </p>
         </div>
@@ -86,7 +86,7 @@ export function ThemeFeaturesSection({
               <article
                 className="theme-box flex h-full flex-col items-center justify-start rounded-[15px] border border-[#efefef] bg-white p-[30px_20px] text-center transition-all duration-300"
               >
-                <div className="icon mb-[30px] flex size-[55px] items-center justify-center">
+                <div className="icon mb-[35px] flex size-[55px] items-center justify-center">
                   <Image
                     alt={item.iconAlt}
                     className="size-[55px] object-contain"

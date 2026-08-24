@@ -366,30 +366,130 @@ export const integrationLogoRows = [integrationLogos.slice(0, 6), integrationLog
 
 export const insights = [
   {
-    title: "Free vs Paid Shopify Themes: Which One Is Right for Your Store?",
-    href: "/blogs/free-vs-paid-shopify-themes",
-    image: "/assets/blog/free-vs-paid-shopify-themes.webp",
+    title: "Shopify CRO Checklist: 10 Urgent CRO Steps You Should Know Right Now",
+    href: "/blogs/shopify-cro-checklist",
+    image: "/assets/blog/shopify-cro-checklist.webp",
+    width: 1600,
+    height: 1206,
     date: "2026-08-11",
     displayDate: "August 11 2026",
     category: "Shopify",
     categoryHref: "/blogs/category/shopify",
   },
   {
-    title: "WooCommerce SEO Guide: How to Rank Your Store Higher in 2026",
-    href: "/blogs/woocommerce-seo",
-    image: "/assets/blog/woocommerce-seo-guide.webp",
-    date: "2026-08-11",
-    displayDate: "August 11 2026",
-    category: "WordPress",
-    categoryHref: "/blogs/category/wordpress",
+    title: "Shopify Plus For Global Brands: Scale Smarter, Sell Everywhere",
+    href: "/blogs/shopify-plus-for-global-brands",
+    image: "/assets/blog/shopify-plus-for-global-brands.webp",
+    width: 1024,
+    height: 774,
+    date: "2026-04-08",
+    displayDate: "April 8 2026",
+    category: "Shopify",
+    categoryHref: "/blogs/category/shopify",
   },
   {
-    title: "7 Must-Have Shopify Development Tools for Agencies & Developers",
-    href: "/blogs/shopify-development-tools",
-    image: "/assets/blog/shopify-development-tools.webp",
-    date: "2026-08-11",
-    displayDate: "August 11 2026",
+    title: "7 Most Common Shopify Data Migration Challenges For Business",
+    href: "/blogs/shopify-data-migration-challenges",
+    image: "/assets/blog/shopify-data-migration-challenges.webp",
+    width: 1024,
+    height: 515,
+    date: "2026-02-18",
+    displayDate: "February 18 2026",
     category: "Shopify",
     categoryHref: "/blogs/category/shopify",
   },
 ];
+
+export type CommerceSolution = {
+  title: string;
+  summary: string;
+  body: string;
+  href: string;
+  cta: string;
+};
+
+export const commerceSolutions: readonly CommerceSolution[] = [
+  {
+    title: "Shopify Plus Development",
+    summary: "Enterprise storefronts, flexible checkout, and global commerce",
+    body: "Enterprise Shopify Plus development for established DTC, retail and B2B merchants. Capabilities include multi-store architecture, international expansion, checkout extensibility, Shopify Functions, complex product experiences and ERP, CRM or PIM integration.",
+    href: "/shopify-plus-agency",
+    cta: "Explore Shopify Plus",
+  },
+  {
+    title: "Shopify Migration & Replatforming",
+    summary: "Seamless migration from leading ecommerce platforms",
+    body: "We replatform businesses from Magento, Salesforce Commerce Cloud, BigCommerce, WooCommerce, and custom systems to Shopify and Shopify Plus, including data migration, URL mapping, redirects, SEO preservation, integration rebuilding, staged cutover, and post-launch stabilization.",
+    href: "/shopify-migration",
+    cta: "Explore Shopify Migration",
+  },
+  {
+    title: "CRO, Performance & Ongoing Support",
+    summary: "Conversion, Core Web Vitals, and technical optimization",
+    body: "Using analytics, user behavior, and technical reviews, we identify friction across landing pages, collections, product pages, cart, and checkout, then implement CRO, performance, Core Web Vitals, and ongoing optimization improvements.",
+    href: "/shopify-cro-agency",
+    cta: "Explore CRO & Performance",
+  },
+  {
+    title: "Shopify Custom Apps, Integrations & Full-Stack Development",
+    summary: "Custom apps, APIs, portals, and workflow integrations",
+    body: "When Shopify requires functionality beyond standard theme and app capabilities, our full-stack team builds customer portals, vendor dashboards, middleware, product configurators, custom workflows, APIs, and secure applications that connect with Shopify.",
+    href: "/contact-us",
+    cta: "Discuss Custom Development",
+  },
+  {
+    title: "Shopify Store Development & Theme Customization",
+    summary: "Custom storefronts, UX, and native themes for growing brands",
+    body: "Custom Shopify storefronts, redesigns, and native theme development for DTC brands, with scalable architecture, mobile usability, product discovery, and conversion-focused user experiences.",
+    href: "/shopify-development-agency",
+    cta: "Explore Shopify Development",
+  },
+  {
+    title: "Shopify B2B & Wholesale",
+    summary: "Company accounts, catalogs, pricing, and operations",
+    body: "We implement Shopify Plus B2B functionality, including company accounts, customer-specific catalogs and pricing, quantity rules, payment terms, quick ordering, quote workflows, and ERP, CRM, or PIM integrations.",
+    href: "/shopify-plus-agency",
+    cta: "Explore Shopify B2B",
+  },
+  {
+    title: "Shopify Mobile App Development",
+    summary: "Connected iOS and Android shopping apps beyond the storefront",
+    body: "We build Shopify-connected iOS and Android shopping apps with real-time product and order synchronization, customer accounts, push notifications, loyalty, subscriptions, and experiences designed to drive repeat purchases.",
+    href: "/shopify-mobile-app-development",
+    cta: "Explore Mobile Apps",
+  },
+  {
+    title: "WordPress & WooCommerce",
+    summary: "Custom websites, ecommerce, and ongoing development support",
+    body: "Alongside Shopify, our WordPress and WooCommerce teams provide custom websites, ecommerce development, theme customization, integrations, maintenance, and white-label delivery for businesses and digital agencies.",
+    href: "/wordpress-development",
+    cta: "Explore WordPress & WooCommerce",
+  },
+];
+
+export const homeFaqs = [
+  {
+    question: "Is Dynamic Dreamz a Shopify Platinum Partner?",
+    answer: "Yes. Dynamic Dreamz is a Shopify Platinum Partner. The company was established in 2006 and has 20+ years of experience, 150+ experts and 5,000+ projects delivered across ecommerce, mobile and full-stack development.",
+  },
+  {
+    question: "What ecommerce services does Dynamic Dreamz provide?",
+    answer: "Dynamic Dreamz provides Shopify and Shopify Plus development, migration, B2B and wholesale solutions, CRO, performance optimization, WordPress, WooCommerce, custom apps, integrations, mobile apps, maintenance and dedicated development support.",
+  },
+  {
+    question: "Do you work with Shopify Plus and B2B businesses?",
+    answer: "Yes. We support established merchants with Shopify Plus storefronts, B2B and wholesale requirements, international stores, complex catalogues, checkout customization, integrations and ongoing development.",
+  },
+  {
+    question: "Do you provide WordPress and WooCommerce development?",
+    answer: "Yes. Our WordPress and WooCommerce teams provide custom websites, ecommerce development, maintenance and white-label delivery for brands and agencies.",
+  },
+  {
+    question: "Can you build a mobile app for an ecommerce business?",
+    answer: "Yes. We build Shopify-connected and custom iOS and Android applications with features such as real-time product and order synchronization, customer accounts, loyalty, subscriptions and push notifications.",
+  },
+  {
+    question: "Do you provide white-label development for agencies?",
+    answer: "Yes. Digital agencies can use Dynamic Dreamz as a confidential delivery partner for Shopify, WordPress, WooCommerce, mobile and full-stack projects under NDA.",
+  },
+] as const;

@@ -114,7 +114,7 @@ export const senseThemeCustomizationContent = {
       },
       {
         title: "Built in Product Filtering",
-        icon: "/assets/prestige-theme-customization/features/advanced-product-filtering.svg",
+        icon: "/assets/impulse-theme-customization/features/advanced-product-filtering.svg",
         iconAlt: "Built-in Product Filtering Icon",
       },
       {
@@ -137,7 +137,7 @@ export const senseThemeCustomizationContent = {
   benefits: {
     title: "Benefits of Sense <br> Theme Customization",
     subtitle:
-      "To fulfill your business objectives, we can change your store design and<br />functionality with Sense theme customization services.",
+      "To fulfill your business objectives, we can change your store design and <br />functionality with Sense theme customization services.",
     items: [
       {
         title: "Fully Customizable Store",

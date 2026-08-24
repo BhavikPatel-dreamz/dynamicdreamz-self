@@ -1,5 +1,66 @@
 # Homepage AEO/GEO Update
 
+## 2026-08-24 Homepage Live Refresh Capture
+
+Live URL: `https://www.dynamicdreamz.com/`
+Local route: `http://127.0.0.1:3100/`
+Date checked: 2026-08-24
+Browser: Google Chrome 140 headless capture
+
+### Screenshots
+
+| Viewport | Live screenshot | Local before update | Local after update |
+| --- | --- | --- | --- |
+| 1440x900 | `scratch/home-live/live-1440x900.png` | `scratch/home-live/local-before-1440x900.png` | `scratch/home-live/local-after-1440x900.png` |
+| 768x1024 | `scratch/home-live/live-768x1024.png` | `scratch/home-live/local-before-768x1024.png` | `scratch/home-live/local-after-768x1024.png` |
+| 390x844 | `scratch/home-live/live-390x844.png` | `scratch/home-live/local-before-390x844.png` | `scratch/home-live/local-after-390x844.png` |
+
+### Sources inspected
+
+- Live View Page Source: `scratch/home-live/index.html`
+- Live styles: `scratch/home-live/style.css`, `default-media.css`, `shopify-premium-partner.css`, `shopify-premium-partner-media.css`, `header.css`, and `footer.css`
+- Live scripts: `scratch/home-live/shopify-premium-partner.js` and `custom.js`
+- Existing local homepage components, shared navigation, `ButtonLink`, `FaqSection`, `FaqAccordion`, blog cards, and all matching assets under `public/assets/**`
+
+### Refresh delta
+
+- Hero remains the same content and viewport geometry, with live proof badges retained from the canonical local SVG assets.
+- The former visible `Globally Trusted Web & App Development Agency` overview is no longer rendered by the live page.
+- The live page adds a green-tinted white-label agency banner after client brands.
+- The live page replaces the previous expertise accordion with `Commerce & technology solutions.` and eight card-style service accordions split across two columns on desktop and one column on mobile.
+- The live page adds `What Brands and Agencies Usually Want to Know` with six FAQ items before the footer.
+- Blog cards now use the August 11 2026 CRO checklist, April 8 2026 Shopify Plus global brands, and February 18 2026 Shopify migration challenge articles.
+
+### Responsive and interaction observations
+
+- Desktop: commerce accordions use two columns; the first Shopify Plus item is open with a pale green surface. FAQ uses a left heading/description column and a right accordion column on wide screens.
+- Tablet/mobile: both accordion groups collapse to one column; service cards retain rounded borders, while FAQ rows use full-width separators. The white-label CTA stays below the copy on mobile.
+- Accordion behavior: one open item at a time, first item open on initial render, keyboard-focusable controls, and plus/close icon state changes.
+- Motion: live client/partner marquees, selected-work rail, testimonial carousel, and existing local reduced-motion handling remain in scope; the new service/FAQ panels use short height transitions only.
+
+### Intentional implementation differences
+
+- Live external article and service URLs are represented by slashless local migration-intent paths, per repository URL policy.
+- The new sections use existing server-rendered containers, `ButtonLink`, `FaqAccordion`, and local assets rather than copying the legacy stylesheet or hotlinking production files.
+
+### 2026-08-24 Updated Local Capture Results
+
+- First viewport captures at 1440x900, 768x1024, and 390x844 show the current
+  hero, header variants, CTA wrapping, proof grid, and contact widget without
+  clipping or horizontal overflow.
+- `local-white-label-1440x900.png` confirms the green agency banner and its
+  desktop CTA placement before the commerce heading.
+- `local-commerce-1440x900.png` confirms the live desktop item grouping: items
+  1-4 in the left column and items 5-8 in the right column. The 390x844 capture
+  confirms the single-column mobile layout and the open first panel.
+- `local-faq-1440x900.png` and `local-faq-390x844.png` confirm the blog-to-FAQ
+  transition and responsive FAQ section. The FAQ accordion is keyboard
+  focusable, opens one item at a time, and exposes `aria-expanded` state.
+- A CDP interaction check confirmed the first commerce panel is open by
+  default and selecting item 5 closes item 1 while opening item 5.
+- Remaining difference: lower-section captures include the fixed contact
+  widget and scroll-position context, matching the local shared shell.
+
 Live URL: `https://www.dynamicdreamz.com/`
 Local route: `/`
 Date checked: 2026-08-13

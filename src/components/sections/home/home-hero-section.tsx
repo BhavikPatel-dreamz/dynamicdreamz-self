@@ -3,7 +3,6 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { homeAnswerSummary, proofLogos } from "@/content/home";
-import { siteConfig } from "@/data/site";
 
 export function HomeHeroSection() {
   return (
@@ -22,7 +21,7 @@ export function HomeHeroSection() {
           {homeAnswerSummary}
         </p>
         <div className="mx-auto flex max-w-[1100px] justify-center max-[767px]:flex-col max-[767px]:items-center max-[767px]:gap-3.5">
-          <ButtonLink className="ml-[15px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:px-6 max-[991px]:py-3 max-[991px]:text-sm max-[767px]:ml-0" variant="primary" href={siteConfig.quotePath}>
+          <ButtonLink className="ml-[15px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:px-6 max-[991px]:py-3 max-[991px]:text-sm max-[767px]:ml-0" variant="primary" href="/book-a-discovery-call">
             book a discovery call
           </ButtonLink>
           <ButtonLink className="ml-[15px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:px-6 max-[991px]:py-3 max-[991px]:text-sm max-[767px]:ml-0" variant="outline" href="/our-work">

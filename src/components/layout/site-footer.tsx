@@ -40,23 +40,29 @@ function InstagramIcon() {
   );
 }
 
-function ContactDetails() {
+function SocialLinks({ className = "" }: { className?: string }) {
+  return (
+    <div className={`flex items-center gap-2.5 ${className}`}>
+      <a className="flex transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href={siteConfig.social.linkedin} target="_blank" rel="nofollow noopener noreferrer" aria-label="Dynamic Dreamz on LinkedIn"><LinkedinIcon /></a>
+      <a className="flex transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href={siteConfig.social.instagram} target="_blank" rel="nofollow noopener noreferrer" aria-label="Dynamic Dreamz on Instagram"><InstagramIcon /></a>
+    </div>
+  );
+}
+
+function ContactDetails({ showSocial = true }: { showSocial?: boolean }) {
   return (
     <div className="border-t border-ink/10 pt-[15px] max-[991px]:border-0 max-[991px]:pt-0">
       <address className="flex flex-col gap-[15px] not-italic">
-        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828]" href={`mailto:${siteConfig.email}`}>
+        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={`mailto:${siteConfig.email}`}>
           <span className="mr-2.5 flex w-[18px] shrink-0 items-center justify-center text-[#111111]"><MailIcon /></span>
           <span>{siteConfig.email}</span>
         </a>
-        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828]" href={siteConfig.phoneHref}>
+        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.phoneHref}>
           <span className="mr-2.5 flex w-[18px] shrink-0 items-center justify-center text-[#111111]"><PhoneIcon /></span>
           <span>{siteConfig.phoneDisplay}</span>
         </a>
       </address>
-      <div className="mt-5 flex items-center gap-2.5">
-        <a className="flex transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href={siteConfig.social.linkedin} target="_blank" rel="nofollow noopener noreferrer" aria-label="Dynamic Dreamz on LinkedIn"><LinkedinIcon /></a>
-        <a className="flex transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href={siteConfig.social.instagram} target="_blank" rel="nofollow noopener noreferrer" aria-label="Dynamic Dreamz on Instagram"><InstagramIcon /></a>
-      </div>
+      {showSocial ? <SocialLinks className="mt-5" /> : null}
     </div>
   );
 }
@@ -87,7 +93,7 @@ function MoreServices() {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-cream text-ink">
+    <footer className="bg-cream text-ink max-[767px]:pb-[70px]">
       <Container className="hidden pt-15 min-[1200px]:flex min-[1200px]:justify-between">
         <div className="w-[172px]"><FooterMenu index={0} /></div>
         <div className="w-[200px] min-[1400px]:w-[238px]"><FooterMenu index={1} /></div>
@@ -126,24 +132,28 @@ export function SiteFooter() {
           ))}
         </div>
         <div className="mt-5">
-          <ContactDetails />
+          <ContactDetails showSocial={false} />
         </div>
       </Container>
 
       <Container className="grid grid-cols-6 gap-3 pt-[50px] max-[991px]:grid-cols-2 max-[991px]:gap-5 max-[991px]:pt-[35px] max-[767px]:gap-4 max-[767px]:pt-[30px]" aria-label="Partner and review profiles">
         {footerAwards.map((award) => (
           <a className="flex h-[81px] items-center justify-center rounded-[20px] bg-white px-[18px] py-4 max-[991px]:rounded-[10px] max-[767px]:h-[60px] max-[767px]:border max-[767px]:border-[#efefef]/20 max-[767px]:px-[13px] max-[767px]:py-[5px]" href={award.href} target="_blank" rel="nofollow noopener noreferrer" key={award.src} aria-label={award.alt}>
-            <Image src={award.src} alt={award.alt} width={award.width} height={award.height} />
+            <Image src={award.src} alt={award.alt} width={award.width} height={award.height} className="max-[767px]:h-10 object-conatin"/>
           </a>
         ))}
       </Container>
 
+      <Container className="hidden max-[991px]:block">
+        <SocialLinks className="mt-[30px] justify-center" />
+      </Container>
+
       <Container>
-        <div className="flex items-center justify-between pt-[30px] pb-[15px] max-[991px]:pt-10 max-[991px]:pb-5 max-[767px]:mt-10 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-10 max-[767px]:text-center">
-          <p className="text-sm leading-5 font-normal text-ink">© 2026 <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> All rights reserved.</p>
-          <div className="flex max-[767px]:mt-2.5">
-            <Link className="relative mr-2.5 inline-block pr-3.75 text-sm leading-5 font-normal text-ink transition-colors duration-300 after:absolute after:-top-px after:right-0 after:content-['|'] hover:text-brand-red focus-visible:text-brand-red" href="/terms-of-service" target="_blank" rel="noopener noreferrer">Terms of Service</Link>
-            <Link className="inline-block text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>
+        <div className="flex items-center justify-between pt-[30px] pb-[15px] max-[991px]:pt-[30px] max-[991px]:pb-5 max-[767px]:mt-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:gap-[15px] max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-[15px] max-[767px]:pb-[15px] max-[767px]:text-center">
+          <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">© 2026 <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> All rights reserved.</p>
+          <div className="flex max-[767px]:mt-0">
+            <Link className="relative mr-2.5 inline-block pr-3.75 text-sm leading-5 font-normal text-ink transition-colors duration-300 after:absolute after:-top-px after:right-0 after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href="/terms-of-service" target="_blank" rel="noopener noreferrer">Terms of Service</Link>
+            <Link className="inline-block text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>
           </div>
         </div>
       </Container>
