@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { primaryNavigation, type MegaMenuItem } from "@/data/navigation";
@@ -70,8 +69,6 @@ const topLevelLinkClass =
   "flex w-full items-center justify-between border-0 bg-transparent p-0 pr-2 text-left text-xl leading-[normal] font-semibold text-[#282828]";
 
 export function MobileNavigation() {
-  const pathname = usePathname();
-  const normalizedPathname = pathname === "/" ? pathname : pathname.replace(/\/$/, "");
   const [isOpen, setIsOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -185,12 +182,6 @@ export function MobileNavigation() {
           <ul className="m-0 list-none p-0">
             {primaryNavigation.map((group) => {
               const isGroupOpen = openGroup === group.slug;
-              const groupLinks = group.kind === "services"
-                ? group.sections.flatMap((section) => section.links)
-                : group.items;
-              const isGroupActive = groupLinks.some(
-                (link) => normalizedPathname === link.href.replace(/\/$/, ""),
-              );
               const submenuId = `mobile-${group.slug}-menu`;
 
               return (
