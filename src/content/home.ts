@@ -16,6 +16,31 @@ export const organizationAnswerSummary =
 export const aiDeliveryStatement =
   "To accelerate delivery without compromising quality, our teams use modern AI-powered tools such as Cursor, ChatGPT, Claude, Lovable, Bolt, and n8n, alongside proven development processes.";
 
+export type ShopifyPlusAgencyCounter = {
+  value: string;
+  label: string;
+  note: string;
+  tone: "green" | "stone" | "peach" | "lime";
+};
+
+export const shopifyPlusAgencyContent = {
+  eyebrow: "Why Dynamic Dreamz",
+  title: "A Shopify Plus Agency Built for Complex Ecommerce Growth",
+  intro:
+    "Dynamic Dreamz has been helping global brands and digital agencies build and grow ecommerce businesses since 2006. Today, Shopify and Shopify Plus are at the core of what we do.",
+  paragraphs: [
+    "We support established DTC, retail and B2B businesses with Shopify Plus development, migrations, B2B and wholesale, international expansion, CRO, performance optimization, custom integrations and ongoing development.",
+    "When a project needs more than the Shopify storefront, our mobile app and full-stack teams can build connected solutions around Shopify. We also support WordPress and WooCommerce for other website and ecommerce requirements.",
+  ],
+  counters: [
+    { value: "20+", label: "Years of Experience", note: "Established in 2006", tone: "green" },
+    { value: "150+", label: "Experts", note: "AI empowered. Continuously trained", tone: "stone" },
+    { value: "5,000+", label: "projects delivered", note: "Ecommerce, web and mobile", tone: "peach" },
+    { value: "2,500+", label: "Verified 5 star Reviews", note: "From Clutch, Trustpilot & Upwork", tone: "lime" },
+  ] satisfies readonly ShopifyPlusAgencyCounter[],
+  videoSrc: "/assets/home/why-dynamic-dreamz.mp4",
+} as const;
+
 export const proofLogos: (ImageItem & { href: string })[] = [
   {
     src: "/assets/proof/shopify-platinum-partner.svg",

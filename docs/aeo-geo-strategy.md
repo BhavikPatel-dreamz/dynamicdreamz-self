@@ -602,6 +602,9 @@ delivery, and ongoing support.
   server-rendered FAQ section before the footer, with matching FAQPage schema.
 - The three latest blog cards are synchronized with the current live article
   titles, dates, categories, and project-owned images.
+- The visible Shopify Plus agency section now provides the company history,
+  delivery scope, four proof counters, and a local project video before the
+  white-label partner section.
 
 ### Recommended improvements
 
@@ -618,6 +621,7 @@ delivery, and ongoing support.
 | P2 | deferred | AI-tools paragraph | A list of tools can distract from buyer outcomes and governance | Reframe around delivery speed, human review, security, QA, and where AI assistance is or is not used | Proposed visible copy was reverted to the live wording on 2026-08-13. Reintroduce only after explicit content approval. |
 | P2 | partially implemented | Answer summary | The page explains services but lacks a concise reusable company definition outside metadata/schema | Add a short visible “Who we help” or “Why Dynamic Dreamz” statement before the detailed expertise section | The live hero wording is restored; the entity-first description remains nonvisual in Organization schema. Visible adoption is deferred. |
 | P1 | implemented | Homepage FAQ | The refreshed live page adds six buyer questions before the footer | Keep the six visible questions and mirror their exact answers in FAQPage schema | Implemented and verified 2026-08-24 from the shared typed FAQ content. |
+| P1 | implemented | Shopify Plus agency proof | The refreshed live page includes a visible Why Dynamic Dreamz section with scope copy, counters, and video proof | Preserve the exact live section order and claims while using project-owned media | Implemented and verified 2026-08-24; video is stored locally at `/assets/home/why-dynamic-dreamz.mp4`. |
 
 ### Suggested visible answer statement
 
@@ -663,8 +667,9 @@ superlatives.
   rendered local metadata, rendered JSON-LD, migration-intent links, lint, and
   production build.
 - Implemented items: stable Organization description, current live article-card
-  synchronization, refreshed white-label/commerce/FAQ section order, six-item
-  visible FAQ with matching schema, shared facts, and explicit content dates.
+  synchronization, restored Shopify Plus agency proof, refreshed
+  white-label/commerce/FAQ section order, six-item visible FAQ with matching
+  schema, shared facts, and explicit content dates.
   Visible hero and AI-delivery copy remain restored to the live wording.
 - Deferred or blocked: all planned-but-unbuilt route checks during development,
   article canonicalization, internal case studies, proof definitions/provenance,
@@ -8197,5 +8202,11 @@ Owner: SEO, content, design, and engineering
 - Local desktop, tablet, mobile, open-panel, open-drawer, and scroll-up comparisons are recorded in `docs/visual-captures/header.md` and `docs/visual-captures/header/`.
 - The navigation uses only project-owned SVG assets. The live site is not a runtime data, image, script, or CDN dependency.
 - No new schema claim was introduced by the header update. Visible terminology recommendations remain deferred until exact copy is approved.
+
+
+
+
+
+
 
 

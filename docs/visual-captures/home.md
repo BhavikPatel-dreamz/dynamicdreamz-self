@@ -27,6 +27,10 @@ Browser: Google Chrome 140 headless capture
 - Hero remains the same content and viewport geometry, with live proof badges retained from the canonical local SVG assets.
 - The former visible `Globally Trusted Web & App Development Agency` overview is no longer rendered by the live page.
 - The live page adds a green-tinted white-label agency banner after client brands.
+- The live page also renders `A Shopify Plus Agency Built for Complex Ecommerce Growth`
+  between client brands and the white-label banner, with the Why Dynamic Dreamz
+  eyebrow, two supporting paragraphs, four proof counters, and an autoplaying
+  project video.
 - The live page replaces the previous expertise accordion with `Commerce & technology solutions.` and eight card-style service accordions split across two columns on desktop and one column on mobile.
 - The live page adds `What Brands and Agencies Usually Want to Know` with six FAQ items before the footer.
 - Blog cards now use the August 11 2026 CRO checklist, April 8 2026 Shopify Plus global brands, and February 18 2026 Shopify migration challenge articles.
@@ -50,6 +54,10 @@ Browser: Google Chrome 140 headless capture
   clipping or horizontal overflow.
 - `local-white-label-1440x900.png` confirms the green agency banner and its
   desktop CTA placement before the commerce heading.
+- `local-agency-1440x900.png` and `local-agency-390x844.png` confirm the restored
+  Shopify Plus agency section, responsive counter cards, and project video. At
+  1440px the local section measures 817px versus 818px in the live runtime;
+  the following white-label section starts at the corresponding position.
 - `local-commerce-1440x900.png` confirms the live desktop item grouping: items
   1-4 in the left column and items 5-8 in the right column. The 390x844 capture
   confirms the single-column mobile layout and the open first panel.
