@@ -1,0 +1,27 @@
+.showcaseTrack {
+  animation: our-work-showcase-vertical 40s linear infinite;
+}
+
+@keyframes our-work-showcase-vertical {
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes our-work-showcase-horizontal {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .showcaseTrack {
+    animation-name: our-work-showcase-horizontal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcaseTrack {
+    animation: none;
+  }
+}

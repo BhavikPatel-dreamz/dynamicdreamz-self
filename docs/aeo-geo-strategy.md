@@ -2028,8 +2028,8 @@ visitors a direct inquiry form without depending on the legacy WordPress site.
 
 ## Our Work (`/our-work`)
 
-Status: implementation in progress; live-visible content preserved
-Last reviewed: 2026-08-17
+Status: refreshed live baseline implemented; evidence improvements deferred
+Last reviewed: 2026-08-24
 Owner: SEO, content, development, leadership, and client success
 Primary audience: ecommerce leaders, digital-agency buyers, and brands
 evaluating Shopify, WordPress, mobile-app, Magento, or BigCommerce delivery
@@ -2038,10 +2038,10 @@ Decision stage: proof review and commercial evaluation
 ### Page role
 
 Portfolio index for visitors evaluating Dynamic Dreamz through visible project
-work across ecommerce platforms. It differs from a case-study index because it
-preserves the live card-led external-storefront exploration model without
-inventing scope, results, or client attribution beyond the visible project
-names, technologies, and destinations.
+work across ecommerce platforms, with a direct bridge into selected first-party
+case studies. It preserves the live card-led external-storefront exploration
+model and uses the case-study teaser only for governed entries already present
+in the local case-study archive.
 
 ### Target prompts
 
@@ -2049,13 +2049,18 @@ names, technologies, and destinations.
 - Can I see Dynamic Dreamz WordPress, mobile app, Magento, and BigCommerce work?
 - What types of ecommerce projects does Dynamic Dreamz include in its portfolio?
 - Where can I review Dynamic Dreamz projects by platform?
+- Which Dynamic Dreamz case studies explain the work behind selected projects?
 
 ### Current strengths and available evidence
 
 - The live page provides 126 visible project cards across Shopify / Shopify
   Plus, WordPress, Mobile Apps, Magento, and Big commerce filters.
-- The live H1 and introductory copy establish a global ecommerce-work and
-  omnichannel-commerce positioning.
+- The refreshed H1 identifies Shopify, web, and mobile app portfolio intent;
+  the description names Shopify Plus, WordPress, Magento, BigCommerce,
+  migrations, custom development, and ongoing optimization.
+- The refreshed page provides `Explore Our Work` portfolio context and a
+  `See the Story Behind the Work` section linking Ranavat, Bombay Shirt
+  Company, and Nekter Juice Bar case studies.
 - Every project card exposes a platform label, project name, image, and an
   external destination or applicable app-store links.
 - A trusted-brand rail adds visible first-party brand context without requiring
@@ -2072,6 +2077,7 @@ names, technologies, and destinations.
 | P1 | implemented accessibility correction | Image accessibility | Many live project alts are generic or refer to another project | Use project-specific local alternative text without changing visible UI | Rendered image and broken-loaded-image audit passed |
 | P1 | migration pending | Evidence depth | Project cards link to external storefronts and do not define scope, constraints, or outcomes | Preserve the live external links; add internal case studies only when attribution and outcomes are approved | Client-success approval and case-study migration |
 | P1 | deferred | Hero clarity | The live introduction uses `omni channel` and does not directly identify platforms or delivery role | Add an approved answer-first portfolio summary only after exact visible wording is approved | Content/leadership approval |
+| P1 | implemented | Live page refresh | The previous local route used the retired centered hero and omitted the refreshed portfolio/case-study context | Match the refreshed hero, proof badges, portfolio introduction, red filter treatment, and three governed case-study links | Live source, CSS/JS audit, refreshed screenshots, and local interaction/build checks |
 | P1 | migration pending | Conversion routes | Header and page-adjacent conversion links include planned `/request-quote` | Preserve migration intent during active migration and validate before launch | Quote-route implementation |
 | P2 | deferred | Project freshness | No project delivery dates or scope are visible | Add client-approved case-study dates and factual delivery context only as proof routes ship | Client-success evidence |
 
@@ -2100,8 +2106,9 @@ approved evidence. Exact visible proposals are tracked in
   noreferrer` and meaningful accessible labels.
 - Keep platform filters as client-side controls while server-rendering the full
   project inventory for discovery and accessibility.
-- Link projects to internal case studies only as client-approved routes become
-  available; retain the existing external-storefront path in the interim.
+- Keep the three refreshed case-study teaser links crawlable at their local
+  slashless routes; retain the existing external-storefront paths for portfolio
+  cards.
 
 ### Structured-data, crawler, and freshness actions
 
@@ -2122,16 +2129,16 @@ approved evidence. Exact visible proposals are tracked in
 
 ### Verification and remaining gaps
 
-- Completed: live/local rendered and source review; 126-project extraction;
+- Completed: refreshed live/local source review; 126-project extraction;
   duplicate/local asset audit; desktop, tablet, mobile, and project-grid
   screenshots; slashless metadata and discovery; CollectionPage,
   BreadcrumbList, and ItemList schema; pointer and keyboard filter checks;
   focus, hover, reduced-motion, mobile overflow, image-loading, runtime-request,
   URL-policy, type, lint, and production-build verification.
-- Remaining: richer internal case studies, visible answer-first copy, project
-  dates/scope/outcomes, and `/request-quote` coverage remain migration pending
-  or deferred until the required evidence and exact visible-copy approvals are
-  available.
+- Remaining: project dates/scope/outcomes and `/request-quote` coverage remain
+  migration pending or deferred until the required evidence and route coverage
+  are available. The refreshed visible copy is now implemented for this parity
+  task; broader answer-first copy recommendations remain separately governed.
 ## WordPress Web Development Services (`/wordpress-development`)
 
 Status: implemented; visible recommendations deferred

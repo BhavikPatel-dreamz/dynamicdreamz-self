@@ -26,7 +26,7 @@ import {
 } from "@/content/buy-shopify-development-hours";
 import { petIndustryPage } from "@/content/pet-industry";
 import { organizationAnswerSummary, testimonials } from "@/content/home";
-import { ourWorkProjects } from "@/content/our-work";
+import { ourWorkCaseStudies, ourWorkProjects } from "@/content/our-work";
 import {
   careerApplicationPath,
   careerJobs,
@@ -215,6 +215,7 @@ const ourWorkPageUrl = absoluteUrl(pageSeo.ourWork.path);
 const ourWorkPageId = `${ourWorkPageUrl}#webpage`;
 const ourWorkBreadcrumbId = `${ourWorkPageUrl}#breadcrumb`;
 const ourWorkItemListId = `${ourWorkPageUrl}#projects`;
+const ourWorkCaseStudyListId = `${ourWorkPageUrl}#case-studies`;
 const beautyPageUrl = absoluteUrl(pageSeo.beautyCosmetics.path);
 const beautyPageId = `${beautyPageUrl}#webpage`;
 const beautyBreadcrumbId = `${beautyPageUrl}#breadcrumb`;
@@ -1444,6 +1445,19 @@ export function createOurWorkPageSchema() {
       },
     };
   });
+  const caseStudyItems = ourWorkCaseStudies.map((caseStudy, index) => ({
+    "@type": "ListItem",
+    position: ourWorkProjects.length + index + 1,
+    item: {
+      "@type": "Article",
+      "@id": absoluteUrl(`/case-studies/${caseStudy.slug}`),
+      url: absoluteUrl(`/case-studies/${caseStudy.slug}`),
+      headline: caseStudy.title,
+      description: caseStudy.excerpt,
+      image: absoluteUrl(caseStudy.image),
+      about: caseStudy.industry,
+    },
+  }));
 
   return {
     "@context": "https://schema.org",
@@ -1492,6 +1506,16 @@ export function createOurWorkPageSchema() {
         name: "Dynamic Dreamz portfolio projects",
         numberOfItems: ourWorkProjects.length,
         itemListElement: projectItems,
+      },
+      {
+        "@type": "ItemList",
+        "@id": ourWorkCaseStudyListId,
+        name: "Dynamic Dreamz selected case studies",
+        numberOfItems: ourWorkCaseStudies.length,
+        itemListElement: caseStudyItems.map((item) => ({
+          ...item,
+          position: (item.position as number) - ourWorkProjects.length,
+        })),
       },
     ],
   };

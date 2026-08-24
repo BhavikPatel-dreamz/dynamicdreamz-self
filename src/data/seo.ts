@@ -248,9 +248,9 @@ export const pageSeo = {
   },
   ourWork: {
     path: "/our-work",
-    title: "Dynamic Dreamz Portfolio | Inspiring Web Solutions & Designs",
+    title: "Shopify, Web & Mobile App Portfolio | Dynamic Dreamz",
     description:
-      "Explore our impressive portfolio showcasing innovative web solutions and designs. Discover our range of projects and expertise. Contact us today!",
+      "Explore Shopify, ecommerce, web and mobile app projects by Dynamic Dreamz across Shopify Plus, WordPress, BigCommerce, Magento, React Native and Flutter.",
     keywords: [
       "Dynamic Dreamz portfolio",
       "Shopify portfolio",
@@ -260,7 +260,7 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-05-13T12:16:21+00:00",
-    modifiedTime: "2026-08-17T00:00:00+05:30",
+    modifiedTime: "2026-08-24T00:00:00+05:30",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
