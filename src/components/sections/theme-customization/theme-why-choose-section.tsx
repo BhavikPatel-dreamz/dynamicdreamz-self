@@ -37,7 +37,7 @@ export function ThemeWhyChooseSection({
           <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(content.title, "max-[1199px]:hidden")}
           </h2>
-          <p className="why_dynamic_dreamz_desc mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-base max-[767px]:leading-[25px]">
+          <p className="why_dynamic_dreamz_desc mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-base max-[767px]:leading-[30.4px]">
             {formatBrText(content.subtitle, "max-[1199px]:hidden")}
           </p>
         </div>
@@ -55,7 +55,7 @@ export function ThemeWhyChooseSection({
                     variant === "top-icon"
                       ? "flex-col items-start"
                       : variant === "top-icon-mobile"
-                        ? "items-start max-[767px]:flex-col"
+                        ? "items-start max-[767px]:flex-col max-[767px]:!px-0 max-[767px]:!py-5"
                         : "items-start"
                   } ${
                     isEvenCol ? "border-r max-[991px]:border-r-0" : ""
@@ -73,7 +73,7 @@ export function ThemeWhyChooseSection({
                       variant === "top-icon"
                         ? "mb-5 max-[767px]:mb-3.5"
                         : variant === "top-icon-mobile"
-                          ? "mr-5 max-[767px]:mr-0 max-[767px]:mb-3.5"
+                          ? "mr-5 max-[767px]:mr-0 max-[767px]:mb-0"
                           : "mr-5 max-[767px]:mr-3.5"
                     }`}
                   >

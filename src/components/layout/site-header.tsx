@@ -35,7 +35,7 @@ export function SiteHeader() {
         </div>
 
         <ButtonLink
-          className="min-h-[49px] min-w-[162.36px] shrink-0 px-[23px] py-[15px] text-base whitespace-nowrap normal-case max-[1400px]:px-5 max-[1400px]:py-[13px] max-[1400px]:text-sm max-[1200px]:h-[34px] max-[1200px]:min-h-[34px] max-[1200px]:max-h-[34px] max-[1200px]:w-[121px] max-[1200px]:min-w-[121px]! max-[1200px]:px-3.5 max-[1200px]:py-[9px] max-[1200px]:text-[13px] max-[768px]:h-11 max-[768px]:min-h-11 max-[768px]:max-h-11 max-[768px]:w-[140px] max-[768px]:min-w-[140px]! max-[380px]:h-[29px] max-[380px]:min-h-[29px] max-[380px]:max-h-[29px] max-[380px]:w-auto max-[380px]:min-w-0! max-[380px]:px-2.5 max-[380px]:py-2 max-[380px]:text-[10px]"
+          className="min-h-[49px] min-w-[162.36px] shrink-0 px-[23px] py-[15px] text-base whitespace-nowrap normal-case max-[1400px]:px-5 max-[1400px]:py-[13px] max-[1400px]:text-sm max-[1200px]:h-[34px] max-[1200px]:min-h-[34px] max-[1200px]:max-h-[34px] max-[1200px]:w-[121px] max-[1200px]:min-w-[121px]! max-[1200px]:px-3.5 max-[1200px]:py-[9px] max-[1200px]:text-[14px] max-[768px]:h-11 max-[768px]:min-h-11 max-[768px]:max-h-11 max-[768px]:w-[140px] max-[768px]:min-w-[140px]! max-[380px]:h-[29px] max-[380px]:min-h-[29px] max-[380px]:max-h-[29px] max-[380px]:w-auto max-[380px]:min-w-0! max-[380px]:px-2.5 max-[380px]:py-2 max-[380px]:text-[10px]"
           variant="primary"
           href={siteConfig.quotePath}
         >

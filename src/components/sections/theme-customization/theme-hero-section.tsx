@@ -41,10 +41,10 @@ export function ThemeHeroSection({
       <Container>
         <div
           className={`inner-wrapper flex flex-wrap justify-between ${
-            alignItemsEnd ? "items-end" : ""
+            alignItemsEnd ? "items-start" : "items-end"
           }`}
         >
-          <div className="left-col w-1/2 pb-[50px] max-[991px]:w-full max-[991px]:text-center max-[991px]:pb-8">
+          <div className="left-col w-1/2 pb-14 max-[991px]:w-full max-[991px]:text-center">
             <div className="inner-hero-content">
               <h1 className="inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]">
                 {formatBrText(content.title, "max-[1199px]:hidden")}

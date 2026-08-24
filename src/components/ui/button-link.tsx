@@ -61,7 +61,7 @@ export function ButtonLink({
         href.startsWith("tel:")));
 
   const commonClasses = cn(
-    "group/button relative z-1 inline-flex min-h-11 items-center justify-center overflow-hidden rounded-[30px] border-0 px-6 py-2.25 text-center text-[14px] font-bold uppercase leading-none transition-colors duration-600 lg:px-6 lg:py-4.25 lg:text-base sm:text-[13px] max-h-12.25",
+    "group/button relative z-1 inline-flex min-h-11 items-center justify-center overflow-hidden rounded-[30px] border-0 px-6 py-2.25 text-center text-[14px] font-bold uppercase leading-none transition-colors duration-600 lg:px-6 lg:py-4.25 lg:text-base sm:text-[14px] max-h-12.25",
     variantClasses[variant],
     className,
   );

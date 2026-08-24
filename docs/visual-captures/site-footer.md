@@ -42,6 +42,17 @@ and “Shopify B2B & Wholesale.” They intentionally share the migrated
 `/shopify-plus-agency` destination but remain distinct visible service labels;
 only duplicate labels are omitted.
 
+## 2026-08-24 Responsive Typography And Social Recheck
+
+The current live `assets/css/footer.css?ver=1787550780` and the owner-supplied
+mobile capture were rechecked for the 991px transition. At `max-width: 991px`,
+accordion headings are 16px with 166% line-height, accordion links are
+14px/20px, and the social row moves out of the contact block to a centered
+position after the proof badges with 30px top spacing. At `max-width: 767px`,
+contact and legal text use 11.5px/15px, the legal row uses compact 15px spacing,
+and the footer retains 70px bottom padding. Desktop menu headings remain
+18px/30px and links remain 14px at 166.182% line-height.
+
 ## Viewports
 
 | Viewport | Live screenshot | Local screenshot | Result |
