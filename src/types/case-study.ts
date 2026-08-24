@@ -78,4 +78,5 @@ export type CaseStudyItem = {
   image: string;
   alt: string;
   href: string;
+  tags: readonly string[];
 };

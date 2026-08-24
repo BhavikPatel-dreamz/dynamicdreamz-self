@@ -49,28 +49,64 @@ function ShowcaseSet({ decorative = false }: { decorative?: boolean }) {
   );
 }
 
-export function OurWorkHeroSection() {
+export type HeroSectionContent = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  primaryCta?: {
+    label: string;
+    href: string;
+  };
+  secondaryCta?: {
+    label: string;
+    href: string;
+  };
+};
+
+type OurWorkHeroSectionProps = {
+  content?: HeroSectionContent;
+};
+
+export function OurWorkHeroSection({ content }: OurWorkHeroSectionProps = {}) {
+  const heroContent = content ?? {
+    eyebrow: ourWorkPage.hero.eyebrow,
+    title: ourWorkPage.hero.title,
+    description: ourWorkPage.hero.description,
+    primaryCta: {
+      label: "Explore our work",
+      href: "#our-work-projects",
+    },
+    secondaryCta: {
+      label: "View case studies",
+      href: "/case-studies",
+    },
+  };
+
   return (
     <section className="overflow-hidden bg-cream pt-[90px] max-[767px]:pt-[74px]">
       <Container className="relative min-h-[568px] max-[991px]:min-h-0 max-[991px]:max-w-none max-[991px]:px-0">
         <div className="flex min-h-[568px] max-[991px]:min-h-0 max-[991px]:flex-col">
           <div className="z-1 flex w-[58%] max-w-[710px] flex-col justify-center py-16 pr-10 max-[1199px]:w-[57%] max-[991px]:w-full max-[991px]:max-w-none max-[991px]:px-[calc((100%-680px)/2)] max-[991px]:pt-[30px] max-[991px]:pb-10 max-[767px]:items-center max-[767px]:px-5 max-[767px]:py-[34px] max-[767px]:text-center">
             <p className="mb-6 flex items-center text-sm leading-none font-semibold text-ink uppercase before:mr-3 before:h-px before:w-[30px] before:bg-brand-red before:content-[''] max-[767px]:mb-5 max-[767px]:text-xs">
-              {ourWorkPage.hero.eyebrow}
+              {heroContent.eyebrow}
             </p>
             <h1 className="max-w-[700px] text-[50px] leading-[1.32] font-medium text-ink max-[1199px]:text-[44px] max-[991px]:max-w-[680px] max-[991px]:text-[40px] max-[767px]:text-[30px] max-[767px]:leading-[1.28]">
-              {ourWorkPage.hero.title}
+              {heroContent.title}
             </h1>
             <p className="mt-4 max-w-[690px] text-base leading-[30px] font-medium text-muted max-[767px]:mt-4 max-[767px]:text-[15px] max-[767px]:leading-[29px]">
-              {ourWorkPage.hero.description}
+              {heroContent.description}
             </p>
             <div className="mt-6 flex gap-[15px] max-[767px]:w-full max-[767px]:flex-col max-[767px]:gap-2.5">
-              <ButtonLink className="max-[767px]:w-full" href="#our-work-projects" variant="primary">
-                Explore our work
-              </ButtonLink>
-              <ButtonLink className="max-[767px]:w-full" href="/case-studies" variant="outline">
-                View case studies
-              </ButtonLink>
+              {heroContent.primaryCta ? (
+                <ButtonLink className="max-[767px]:w-full" href={heroContent.primaryCta.href} variant="primary">
+                  {heroContent.primaryCta.label}
+                </ButtonLink>
+              ) : null}
+              {heroContent.secondaryCta ? (
+                <ButtonLink className="max-[767px]:w-full" href={heroContent.secondaryCta.href} variant="outline">
+                  {heroContent.secondaryCta.label}
+                </ButtonLink>
+              ) : null}
             </div>
             <div
               className="relative mt-[30px] flex items-center max-[767px]:mt-[30px] max-[767px]:w-full max-[767px]:flex-wrap before:hidden max-[767px]:before:absolute max-[767px]:before:top-1/2 max-[767px]:before:left-0 max-[767px]:before:block max-[767px]:before:h-px max-[767px]:before:w-full max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] after:hidden max-[767px]:after:absolute max-[767px]:after:top-0 max-[767px]:after:left-1/2 max-[767px]:after:block max-[767px]:after:h-full max-[767px]:after:w-px max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']"

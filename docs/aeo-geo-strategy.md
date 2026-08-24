@@ -2151,7 +2151,7 @@ approved evidence. Exact visible proposals are tracked in
 ## WordPress Web Development Services (`/wordpress-development`)
 
 Status: implemented; visible recommendations deferred
-Last reviewed: 2026-08-21
+Last reviewed: 2026-08-24
 Primary audience: businesses, ecommerce brands, and digital agencies seeking
 custom WordPress website development, theme customization, plugin development,
 and WooCommerce solutions.
@@ -2661,7 +2661,8 @@ Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep
 - Real-time search by brand name, technology, industry, and solution summary.
 - Multi-faceted technology filter (Shopify, Shopify Plus, Shopify Migration, WordPress, Magento 2.0, React.js & Laravel, Custom Web Platform).
 - Multi-faceted industry filter (Beauty & Cosmetics, Fashion & Apparel, Food & Beverages, Health & Nutrition, Home & Living, Jewellery & Accessories, Other Industries).
-- Numbered pagination (9 items per page, 4 pages total).
+- Progressive archive loading in ten-card batches with search and taxonomy filters.
+- Current live initial order preserved: Evrgreen, Tipii, Daniel Walters Eyewear, Aetrex, Rooted Human, Eczema Milk, YHUS, Nandi Medical, Facts and Supps, and Zedmed.
 - Rich CollectionPage structured data with ItemList of CreativeWork entities, breadcrumbs, and Organization graph.
 - 100% project-owned local assets in `public/assets/case-studies/`.
 
