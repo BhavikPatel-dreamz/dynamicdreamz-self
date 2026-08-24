@@ -575,10 +575,10 @@ revenue opportunities.
 
 ## Home (`/`)
 
-Status: technical improvements implemented; visible AEO copy deferred and live
-UI restored on 2026-08-13
+Status: technical and live-section refresh implemented; visible AEO copy remains
+deferred and live wording is preserved
 
-Last reviewed: 2026-08-13
+Last reviewed: 2026-08-24
 
 Owner: SEO, content, development, leadership, and client success
 
@@ -598,21 +598,26 @@ delivery, and ongoing support.
   and expert topics provide strong entity and trust context.
 - Video testimonials already have `VideoObject` data with real upload dates.
 - Metadata and the homepage Organization graph are commercially focused.
+- The refreshed homepage visibly answers six common buyer questions in a
+  server-rendered FAQ section before the footer, with matching FAQPage schema.
+- The three latest blog cards are synchronized with the current live article
+  titles, dates, categories, and project-owned images.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Verification or remaining dependency |
 | --- | --- | --- | --- | --- | --- |
-| P0 | deferred | CTA destinations | `/request-quote`, `/our-work`, and `/blog` are not built | Complete the routes before launch or temporarily point only to working destinations | Project owner approved retaining migration-intent destinations while development is in progress. Original CTA labels and paths are restored; re-audit before launch. |
+| P0 | deferred | CTA destinations | `/request-quote`, `/our-work`, `/blog`, and `/book-a-discovery-call` remain migration-intent destinations | Complete the routes before launch or temporarily point only to working destinations | Project owner approved retaining migration-intent destinations while development is in progress. Re-audit all four paths before launch. |
 | P0 | deferred | Article paths | Homepage uses root-level article slugs while Resources uses `/blogs` | Adopt one canonical path pattern and update cards, sitemap, schema, and redirects together | Requires a cross-route canonical and redirect decision; deliberately not changed in this homepage-only task. |
 | P0 | deferred | Offer schema | The OfferCatalog includes service pages that are still being migrated | Emit only live service offers before launch | Project owner approved retaining the catalog during active migration. The original eight service offers are restored and must be revalidated when route migration is complete. |
 | P0 | blocked by live parity | Proof consistency | Review values lack governance and Home's `4500+` Shopify-store count conflicts with Resources' visible `1000+` wording | Use a centralized, verified proof-data source | Core typed facts and schema are centralized, but live Resources proof copy and numeric reviews were restored at the project owner's request. Definitions, provenance, and approved visible values remain required. |
 | P1 | deferred | Selected work | Cards link directly to client sites and do not explain Dynamic Dreamz's role | Link to internal case studies containing scope, platform, constraints, and outcomes; retain a secondary client-site link if approved | Internal case-study routes and approved scope/outcome evidence are not available in this homepage-only task. |
 | P1 | blocked | Expertise | Sections explain capabilities but contain little direct evidence | Add one relevant case-study result or delivery example to each priority expertise topic | Client attribution, delivery scope, and outcomes require client-success/leadership approval. |
 | P1 | deferred | Internal links | Service descriptions are not yet supported by live service pages | Add descriptive links as each service route launches | Service routes are migration pending; no broken service links were added. |
-| P1 | implemented | Freshness | Homepage schema uses the build date as `dateModified` | Use the real approved content-review date | `WebPage.datePublished` preserves the live source date and `dateModified` is the explicit 2026-08-13 final parity review, independent of deployments. |
+| P1 | implemented | Freshness | Homepage schema uses the build date as `dateModified` | Use the real approved content date | `WebPage.datePublished` preserves the live source date and `dateModified` reflects the live source's 2026-08-19 homepage update, independent of deployments. |
 | P2 | deferred | AI-tools paragraph | A list of tools can distract from buyer outcomes and governance | Reframe around delivery speed, human review, security, QA, and where AI assistance is or is not used | Proposed visible copy was reverted to the live wording on 2026-08-13. Reintroduce only after explicit content approval. |
 | P2 | partially implemented | Answer summary | The page explains services but lacks a concise reusable company definition outside metadata/schema | Add a short visible “Who we help” or “Why Dynamic Dreamz” statement before the detailed expertise section | The live hero wording is restored; the entity-first description remains nonvisual in Organization schema. Visible adoption is deferred. |
+| P1 | implemented | Homepage FAQ | The refreshed live page adds six buyer questions before the footer | Keep the six visible questions and mirror their exact answers in FAQPage schema | Implemented and verified 2026-08-24 from the shared typed FAQ content. |
 
 ### Suggested visible answer statement
 
@@ -643,6 +648,8 @@ superlatives.
   pages do not resolve.
 - Keep ratings out of Organization schema unless one precise, visible, and
   policy-compliant rating source is selected.
+- Keep FAQPage schema limited to the six questions and answers visible in the
+  refreshed homepage section.
 - Replace build-time page modification with a real content date.
 
 ### Verification and remaining gaps
@@ -652,11 +659,13 @@ superlatives.
   to non-root pages use slashless destinations, and the source/build guard
   passes.
 - Checks completed: live rendered page and View Page Source, live CSS/JS,
-  1440x900, 768x1024, and 390x844 live/local captures, rendered local metadata,
-  rendered JSON-LD, restored migration-intent links, lint, and production build.
+  1440x900, 768x1024, and 390x844 live/local captures, lower-section captures,
+  rendered local metadata, rendered JSON-LD, migration-intent links, lint, and
+  production build.
 - Implemented items: stable Organization description, current live article-card
-  synchronization, shared facts, and explicit content dates. Visible hero and
-  AI-delivery copy were restored to the live wording.
+  synchronization, refreshed white-label/commerce/FAQ section order, six-item
+  visible FAQ with matching schema, shared facts, and explicit content dates.
+  Visible hero and AI-delivery copy remain restored to the live wording.
 - Deferred or blocked: all planned-but-unbuilt route checks during development,
   article canonicalization, internal case studies, proof definitions/provenance,
   current review values, and approved case-study evidence.
@@ -2028,8 +2037,8 @@ visitors a direct inquiry form without depending on the legacy WordPress site.
 
 ## Our Work (`/our-work`)
 
-Status: implementation in progress; live-visible content preserved
-Last reviewed: 2026-08-17
+Status: refreshed live baseline implemented; evidence improvements deferred
+Last reviewed: 2026-08-24
 Owner: SEO, content, development, leadership, and client success
 Primary audience: ecommerce leaders, digital-agency buyers, and brands
 evaluating Shopify, WordPress, mobile-app, Magento, or BigCommerce delivery
@@ -2038,10 +2047,10 @@ Decision stage: proof review and commercial evaluation
 ### Page role
 
 Portfolio index for visitors evaluating Dynamic Dreamz through visible project
-work across ecommerce platforms. It differs from a case-study index because it
-preserves the live card-led external-storefront exploration model without
-inventing scope, results, or client attribution beyond the visible project
-names, technologies, and destinations.
+work across ecommerce platforms, with a direct bridge into selected first-party
+case studies. It preserves the live card-led external-storefront exploration
+model and uses the case-study teaser only for governed entries already present
+in the local case-study archive.
 
 ### Target prompts
 
@@ -2049,13 +2058,18 @@ names, technologies, and destinations.
 - Can I see Dynamic Dreamz WordPress, mobile app, Magento, and BigCommerce work?
 - What types of ecommerce projects does Dynamic Dreamz include in its portfolio?
 - Where can I review Dynamic Dreamz projects by platform?
+- Which Dynamic Dreamz case studies explain the work behind selected projects?
 
 ### Current strengths and available evidence
 
 - The live page provides 126 visible project cards across Shopify / Shopify
   Plus, WordPress, Mobile Apps, Magento, and Big commerce filters.
-- The live H1 and introductory copy establish a global ecommerce-work and
-  omnichannel-commerce positioning.
+- The refreshed H1 identifies Shopify, web, and mobile app portfolio intent;
+  the description names Shopify Plus, WordPress, Magento, BigCommerce,
+  migrations, custom development, and ongoing optimization.
+- The refreshed page provides `Explore Our Work` portfolio context and a
+  `See the Story Behind the Work` section linking Ranavat, Bombay Shirt
+  Company, and Nekter Juice Bar case studies.
 - Every project card exposes a platform label, project name, image, and an
   external destination or applicable app-store links.
 - A trusted-brand rail adds visible first-party brand context without requiring
@@ -2072,6 +2086,7 @@ names, technologies, and destinations.
 | P1 | implemented accessibility correction | Image accessibility | Many live project alts are generic or refer to another project | Use project-specific local alternative text without changing visible UI | Rendered image and broken-loaded-image audit passed |
 | P1 | migration pending | Evidence depth | Project cards link to external storefronts and do not define scope, constraints, or outcomes | Preserve the live external links; add internal case studies only when attribution and outcomes are approved | Client-success approval and case-study migration |
 | P1 | deferred | Hero clarity | The live introduction uses `omni channel` and does not directly identify platforms or delivery role | Add an approved answer-first portfolio summary only after exact visible wording is approved | Content/leadership approval |
+| P1 | implemented | Live page refresh | The previous local route used the retired centered hero and omitted the refreshed portfolio/case-study context | Match the refreshed hero, proof badges, portfolio introduction, red filter treatment, and three governed case-study links | Live source, CSS/JS audit, refreshed screenshots, and local interaction/build checks |
 | P1 | migration pending | Conversion routes | Header and page-adjacent conversion links include planned `/request-quote` | Preserve migration intent during active migration and validate before launch | Quote-route implementation |
 | P2 | deferred | Project freshness | No project delivery dates or scope are visible | Add client-approved case-study dates and factual delivery context only as proof routes ship | Client-success evidence |
 
@@ -2100,8 +2115,9 @@ approved evidence. Exact visible proposals are tracked in
   noreferrer` and meaningful accessible labels.
 - Keep platform filters as client-side controls while server-rendering the full
   project inventory for discovery and accessibility.
-- Link projects to internal case studies only as client-approved routes become
-  available; retain the existing external-storefront path in the interim.
+- Keep the three refreshed case-study teaser links crawlable at their local
+  slashless routes; retain the existing external-storefront paths for portfolio
+  cards.
 
 ### Structured-data, crawler, and freshness actions
 
@@ -2122,16 +2138,16 @@ approved evidence. Exact visible proposals are tracked in
 
 ### Verification and remaining gaps
 
-- Completed: live/local rendered and source review; 126-project extraction;
+- Completed: refreshed live/local source review; 126-project extraction;
   duplicate/local asset audit; desktop, tablet, mobile, and project-grid
   screenshots; slashless metadata and discovery; CollectionPage,
   BreadcrumbList, and ItemList schema; pointer and keyboard filter checks;
   focus, hover, reduced-motion, mobile overflow, image-loading, runtime-request,
   URL-policy, type, lint, and production-build verification.
-- Remaining: richer internal case studies, visible answer-first copy, project
-  dates/scope/outcomes, and `/request-quote` coverage remain migration pending
-  or deferred until the required evidence and exact visible-copy approvals are
-  available.
+- Remaining: project dates/scope/outcomes and `/request-quote` coverage remain
+  migration pending or deferred until the required evidence and route coverage
+  are available. The refreshed visible copy is now implemented for this parity
+  task; broader answer-first copy recommendations remain separately governed.
 ## WordPress Web Development Services (`/wordpress-development`)
 
 Status: implemented; visible recommendations deferred
@@ -8161,8 +8177,6 @@ Owner: SEO, content, design, and engineering
 - Local desktop, tablet, mobile, open-panel, open-drawer, and scroll-up comparisons are recorded in `docs/visual-captures/header.md` and `docs/visual-captures/header/`.
 - The navigation uses only project-owned SVG assets. The live site is not a runtime data, image, script, or CDN dependency.
 - No new schema claim was introduced by the header update. Visible terminology recommendations remain deferred until exact copy is approved.
-
-
 
 
 

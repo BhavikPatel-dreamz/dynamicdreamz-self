@@ -25,11 +25,35 @@ export type WorkProject = {
   }[];
 };
 
+export type OurWorkCaseStudy = {
+  slug: string;
+  category: string;
+  industry: string;
+  title: string;
+  excerpt: string;
+  chips: readonly string[];
+  image: string;
+  imageAlt: string;
+};
+
 export const ourWorkPage = {
   hero: {
-    title: "Our eCommerce solutions have helped global customers",
+    eyebrow: "our work",
+    title: "Shopify, Web & Mobile App Portfolio",
     description:
-      "We are excited about our work. Our solutions have yielded strong product identity and transformed clients’ business from an eCommerce to an omni channel commerce",
+      "Explore selected work across Shopify and Shopify Plus, mobile apps, WordPress, Magento and BigCommerce — from premium DTC storefronts and B2B commerce to migrations, custom development and ongoing optimization.",
+  },
+  portfolio: {
+    eyebrow: "PORTFOLIO",
+    title: "Explore Our Work",
+    description:
+      "Explore selected projects across Shopify, WordPress, mobile apps and custom development. See how we help brands and agencies build high-performing digital experiences.",
+  },
+  caseStudies: {
+    eyebrow: "CASE STUDIES",
+    title: "See the Story Behind the Work",
+    description:
+      "Portfolio shows what we built. Case studies explain the requirement, challenges, approach and solution behind selected projects.",
   },
   filters: [
     { id: "all", label: "All Projects" },
@@ -37,9 +61,42 @@ export const ourWorkPage = {
     { id: "wordpress", label: "WordPress" },
     { id: "apps", label: "Mobile Apps" },
     { id: "magento", label: "Magento" },
-    { id: "bigCommerce", label: "Big commerce" },
+    { id: "bigCommerce", label: "Bigcommerce" },
   ] satisfies readonly WorkFilter[],
 } as const;
+
+export const ourWorkCaseStudies: readonly OurWorkCaseStudy[] = [
+  {
+    slug: "ranavat",
+    category: "SHOPIFY / SHOPIFY PLUS · BEAUTY & COSMETICS",
+    industry: "Beauty & Cosmetics",
+    title: "Ranavat: 6+ Year Shopify Partnership for a Luxury Ayurvedic Skincare & Haircare Brand",
+    excerpt:"",
+    chips: ["Ayurvedic Skincare", "Long-Term Shopify Partnership"],
+    image: "/assets/case-studies/ranavat.png",
+    imageAlt: "Ranavat Shopify and Shopify Plus case study storefront",
+  },
+  {
+    slug: "bombay-shirt-company",
+    category: "SHOPIFY CUSTOM APPS & INTEGRATIONS · FASHION & APPAREL",
+    industry: "Fashion & Apparel",
+    title: "Bombay Shirt Company: 5-Year Shopify Partnership with Fit Smart Body-Type Sizing & Shirt Customizer",
+    excerpt:"",
+    chips: ["Fashion & Apparel", "Long-Term Shopify Partnership"],
+    image: "/assets/case-studies/bombay-shirt-company.png",
+    imageAlt: "Bombay Shirt Company Shopify custom apps case study storefront",
+  },
+  {
+    slug: "nekter-juice-bar",
+    category: "SHOPIFY / SHOPIFY PLUS · FOOD & BEVERAGES",
+    industry: "Food & Beverages",
+    title: "Nekter Juice Bar: Shopify Redesign with Streamlined Ordering & Multi-Location Store Pickup",
+    excerpt:"",
+    chips: ["Multi-Location Store Pickup", "Streamlined Ordering"],
+    image: "/assets/case-studies/nekter-juice-bar.jpg",
+    imageAlt: "Nekter Juice Bar Shopify case study storefront",
+  },
+];
 
 export const ourWorkProjects = [
   {

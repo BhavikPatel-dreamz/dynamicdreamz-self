@@ -73,8 +73,9 @@ Primary SEO intent:
 
 ## Home (`/`)
 
-Status: visible recommendations deferred; live UI restored
-Last reviewed: 2026-08-13
+Status: visible recommendations deferred; live UI restored and homepage section
+refresh verified
+Last reviewed: 2026-08-24
 Primary SEO intent: Shopify Plus agency, Shopify Platinum Partner, ecommerce
 and mobile development company.
 
@@ -85,6 +86,7 @@ and mobile development company.
 | Hero answer | We help DTC brands, B2B businesses and digital agencies build, migrate and scale on Shopify through custom development, B2B solutions, integrations, CRO, performance optimization and ongoing support. | Dynamic Dreamz is a Shopify Platinum Partner and Shopify Plus agency helping established DTC brands, B2B merchants, and digital agencies build, migrate, integrate, optimize, and support Shopify commerce experiences. | Supplies a concise, entity-first answer that identifies the company, credential, audience, and core work in visible server-rendered text. | High | deferred; reverted to live copy on 2026-08-13 |
 | AI delivery statement | To accelerate delivery without compromising quality, our teams use modern AI-powered tools such as Cursor, ChatGPT, Claude, Lovable, Bolt, and n8n, alongside proven development processes. | Our teams use AI-assisted tools selectively to accelerate research, prototyping and repetitive delivery tasks. Experienced specialists continue to own implementation, review and quality assurance before release. | Reframes a volatile tool list around buyer outcomes, human accountability, and QA without adding an unsupported speed or security result. | Medium | deferred; reverted to live copy on 2026-08-13 |
 | Internal-link anchor text | Many navigation/service links are migration pending. | As pages ship, use descriptive anchors such as "Shopify Plus agency", "Shopify migration services", and "white label Shopify development" instead of generic labels where natural. | Improves internal-link context after routes are built. Broken planned routes are excluded from local SEO scoring until launch. | Medium | deferred |
+| Homepage section refresh | The live homepage now places a white-label agency banner, commerce solutions accordions, current blog cards, and six FAQs before the footer. | Keep the refreshed section order and current live wording; approve any future copy changes separately. | Preserves current live search intent and buyer navigation while the migration continues. | High | implemented; verified 2026-08-24 |
 
 ## About Us (`/about-us`)
 
@@ -319,11 +321,15 @@ work, WordPress, mobile-app, Magento, and BigCommerce ecommerce examples.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Hero introduction | `We are excited about our work. Our solutions have yielded strong product identity and transformed clients’ business from an eCommerce to an omni channel commerce` | `Explore ecommerce work delivered by Dynamic Dreamz across Shopify, Shopify Plus, WordPress, mobile apps, Magento, and BigCommerce.` | Gives an entity-first, answer-ready summary and corrects `omni channel` without asserting unapproved outcomes. | High | deferred pending exact visible-copy approval |
-| Project filter label | `Big commerce` | `BigCommerce` | Aligns the platform name with standard capitalization. | Low | deferred pending exact visible-copy approval |
+| Hero eyebrow and heading | `Our eCommerce solutions have helped global customers` | `our work` / `Shopify, Web & Mobile App Portfolio` | Matches the refreshed live page's portfolio intent and removes the retired outcome-led headline. | High | implemented for live-parity task |
+| Hero description | `We are excited about our work... omni channel commerce` | `Explore selected work across Shopify and Shopify Plus, mobile apps, WordPress, Magento and BigCommerce — from premium DTC storefronts and B2B commerce to migrations, custom development and ongoing optimization.` | Matches the refreshed live copy and makes platform and delivery coverage directly extractable. | High | implemented for live-parity task |
+| Hero actions | Scroll-control-only hero | `EXPLORE OUR WORK` and `VIEW CASE STUDIES` | Restores the refreshed live CTA flow and connects the portfolio to the case-study index. | High | implemented for live-parity task |
+| Portfolio introduction | No section heading or description | `Explore Our Work` with selected-projects description | Adds the refreshed live section context above filters without changing the archive inventory. | High | implemented for live-parity task |
+| Project filter label | `Big commerce` | `Bigcommerce` | Matches the refreshed live label and standardizes the platform name. | Low | implemented for live-parity task |
 | Project card alt text | Several live alts use generic `Image`, inconsistent names, or another project's name. | Use a subject-specific description such as `<project name> project preview for <visible platform>`. | Gives every content image an accurate, contextual alternative without changing visible UI. | High | implemented as nonvisual accessibility correction |
 | Project evidence | Cards name a platform and link externally, but do not describe Dynamic Dreamz's scope, constraints, or outcomes. | Add internal case studies with approved client attribution, delivery scope, technical constraints, and verified outcomes, while retaining the external storefront link. | Converts the portfolio from a visual proof index into citation-ready first-party evidence. | High | deferred pending client-success approval and case-study migration |
 | Hero proof claims | `helped global customers` and `yielded strong product identity` are broad outcome claims with no page-level evidence. | Qualify the claims or add approved case-study evidence when exact copy and sources are approved. | Avoids unsupported global/outcome framing while preserving the portfolio intent. | High | deferred pending factual and exact visible-copy approval |
+| Case-study teaser | No internal case-study section on the local route | `See the Story Behind the Work` with Ranavat, Bombay Shirt Company, and Nekter Juice Bar cards | Matches the refreshed live discovery path using existing governed case-study content. | High | implemented for live-parity task |
 
 ## Pet Industry (`/pet-industry`)
 

@@ -25,8 +25,8 @@ import {
   shopifyHoursPackages,
 } from "@/content/buy-shopify-development-hours";
 import { petIndustryPage } from "@/content/pet-industry";
-import { organizationAnswerSummary, testimonials } from "@/content/home";
-import { ourWorkProjects } from "@/content/our-work";
+import { homeFaqs, organizationAnswerSummary, testimonials } from "@/content/home";
+import { ourWorkCaseStudies, ourWorkProjects } from "@/content/our-work";
 import {
   careerApplicationPath,
   careerJobs,
@@ -181,6 +181,7 @@ const organizationId = `${siteConfig.url}#organization`;
 const websiteId = `${siteConfig.url}#website`;
 const webPageId = `${siteConfig.url}#home-page`;
 const breadcrumbId = `${siteConfig.url}#breadcrumb`;
+const homeFaqId = `${siteConfig.url}#faq`;
 // The homepage is emitted as the bare origin; every non-root page URL is
 // slashless. `absoluteUrl` keeps all schema identifiers on that same policy.
 // Every emitted `url`/breadcrumb item resolves through the shared helper so
@@ -215,6 +216,7 @@ const ourWorkPageUrl = absoluteUrl(pageSeo.ourWork.path);
 const ourWorkPageId = `${ourWorkPageUrl}#webpage`;
 const ourWorkBreadcrumbId = `${ourWorkPageUrl}#breadcrumb`;
 const ourWorkItemListId = `${ourWorkPageUrl}#projects`;
+const ourWorkCaseStudyListId = `${ourWorkPageUrl}#case-studies`;
 const beautyPageUrl = absoluteUrl(pageSeo.beautyCosmetics.path);
 const beautyPageId = `${beautyPageUrl}#webpage`;
 const beautyBreadcrumbId = `${beautyPageUrl}#breadcrumb`;
@@ -881,6 +883,7 @@ export function createHomePageSchema() {
           width: pageSeo.home.image.width,
           height: pageSeo.home.image.height,
         },
+        mainEntity: { "@id": homeFaqId },
         inLanguage: "en-US",
       },
       {
@@ -894,6 +897,18 @@ export function createHomePageSchema() {
             item: homeUrl,
           },
         ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": homeFaqId,
+        mainEntity: homeFaqs.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
       },
       ...testimonialVideoSchema(),
     ],
@@ -1444,6 +1459,19 @@ export function createOurWorkPageSchema() {
       },
     };
   });
+  const caseStudyItems = ourWorkCaseStudies.map((caseStudy, index) => ({
+    "@type": "ListItem",
+    position: ourWorkProjects.length + index + 1,
+    item: {
+      "@type": "Article",
+      "@id": absoluteUrl(`/case-studies/${caseStudy.slug}`),
+      url: absoluteUrl(`/case-studies/${caseStudy.slug}`),
+      headline: caseStudy.title,
+      description: caseStudy.excerpt,
+      image: absoluteUrl(caseStudy.image),
+      about: caseStudy.industry,
+    },
+  }));
 
   return {
     "@context": "https://schema.org",
@@ -1492,6 +1520,16 @@ export function createOurWorkPageSchema() {
         name: "Dynamic Dreamz portfolio projects",
         numberOfItems: ourWorkProjects.length,
         itemListElement: projectItems,
+      },
+      {
+        "@type": "ItemList",
+        "@id": ourWorkCaseStudyListId,
+        name: "Dynamic Dreamz selected case studies",
+        numberOfItems: ourWorkCaseStudies.length,
+        itemListElement: caseStudyItems.map((item) => ({
+          ...item,
+          position: (item.position as number) - ourWorkProjects.length,
+        })),
       },
     ],
   };
@@ -1694,24 +1732,24 @@ function createServicePageSchema({
         ],
         ...(offers
           ? {
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
-                name: `${serviceName} capabilities`,
-                itemListElement: offers.map((offer) => ({
-                  "@type": "Offer",
-                  ...(offer.price !== undefined ? { price: offer.price } : {}),
-                  ...(offer.priceCurrency
-                    ? { priceCurrency: offer.priceCurrency }
-                    : {}),
-                  ...(offer.url ? { url: offer.url } : {}),
-                  itemOffered: {
-                    "@type": "Service",
-                    name: offer.title,
-                    description: offer.description,
-                  },
-                })),
-              },
-            }
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: `${serviceName} capabilities`,
+              itemListElement: offers.map((offer) => ({
+                "@type": "Offer",
+                ...(offer.price !== undefined ? { price: offer.price } : {}),
+                ...(offer.priceCurrency
+                  ? { priceCurrency: offer.priceCurrency }
+                  : {}),
+                ...(offer.url ? { url: offer.url } : {}),
+                itemOffered: {
+                  "@type": "Service",
+                  name: offer.title,
+                  description: offer.description,
+                },
+              })),
+            },
+          }
           : {}),
       },
       {
