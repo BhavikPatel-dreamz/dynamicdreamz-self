@@ -1622,3 +1622,16 @@ Primary SEO intent: buy Shopify development hours, Shopify hours packages, prepa
 | Pricing freshness | Four package rates, crossed-out prior rates, and total costs appear without an effective date or content owner. | Add an approved pricing-review line containing the finance-approved effective date and responsible owner; update visible prices, payment destinations, metadata, and schema together. | Price facts are volatile and should not appear stale or conflict with payment pages. | High | blocked pending finance, delivery, and leadership governance |
 | Purchase terms | The page sends buyers directly to Razorpay but does not visibly summarize tax treatment, refund/cancellation terms, scope exclusions, or where full package terms can be reviewed. | Add legal-approved package terms or a clearly labeled link to them adjacent to the purchase action before direct checkout. | Gives buyers material commercial context before payment and reduces ambiguity; exact wording requires legal and finance approval. | High | blocked pending legal and finance approval |
 | Client-logo alternatives | Live client logos use repeated generic `We are dynamic dreamz image` alternatives. | Use each brand's name followed by `logo`; keep duplicated mobile-marquee images decorative. | Improves accessibility and entity clarity without changing visible UI. | Medium | implemented as a nonvisual accessibility correction |
+
+## Shared site header
+
+Status: current live-visible navigation preserved; wording recommendations deferred
+Last reviewed: 2026-08-21
+Scope: sitewide desktop mega navigation and tablet/mobile drawer
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Technology label | `Al Services` | `AI Services` | Corrects the lowercase-L typo so the service is unambiguously identified as artificial intelligence. | Medium | suggested; deferred pending exact visible-copy approval |
+| Apple platform capitalization | `IOS App Development` and `Shared-code experiences across IOS and Android.` | `iOS App Development` and `Shared-code experiences across iOS and Android.` | Uses Apple's standard product capitalization and improves entity consistency. | Low | suggested; deferred pending exact visible-copy approval |
+| Food industry label | `Food Beverages` | `Food & Beverages` | Restores the missing conjunction and aligns the header with the established industry route terminology. | Low | suggested; deferred pending exact visible-copy approval |
+| Agency description capitalization | `Shopify/Shopify plus support under your agency.` | `Shopify and Shopify Plus support under your agency.` | Improves readability and uses consistent Shopify Plus naming. | Low | suggested; deferred pending exact visible-copy approval |

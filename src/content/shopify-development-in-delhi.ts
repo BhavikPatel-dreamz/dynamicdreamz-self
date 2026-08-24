@@ -157,7 +157,7 @@ export const shopifyDevelopmentDelhiContent = {
         title: "Flexible Design Options",
         description:
           "Customize your Shopify store to match perfectly with your brand identity.",
-        icon: "/assets/shopify-development-in-delhi/benefits/customizable-themes.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "custom themes icon",
       },
       {
@@ -171,7 +171,7 @@ export const shopifyDevelopmentDelhiContent = {
         title: "Marketing Integrations",
         description:
           "Using Shopify's tools will improve Shopify store visibility and sales.",
-        icon: "/assets/shopify-development-in-delhi/benefits/marketing-tools.svg",
+        icon: "/assets/etsy-to-shopify-migration/marketing-integration.svg",
         iconAlt: "Marketing Integration Icon",
       },
       {
@@ -196,7 +196,7 @@ export const shopifyDevelopmentDelhiContent = {
         title: "Shopify Plus Store Development",
         description:
           "We empower businesses to use the full potential of Shopify Plus, enhancing performance and user experience to drive growth and profitability.",
-        icon: "/assets/shopify-development-in-delhi/services/store-setup.svg",
+        icon: "/assets/shopify-plus-agency/icons/shopify-plus-icon.svg",
         iconAlt: "shopify plus icon",
       },
       {
@@ -312,7 +312,7 @@ export const shopifyDevelopmentDelhiContent = {
         title: "Tailored Solutions",
         description:
           "We develop custom Shopify stores designed to meet your unique business requirements.",
-        icon: "/assets/shopify-development-in-delhi/reasons/tailored-solutions.svg",
+        icon: "/assets/wix-to-shopify-migration/cs_icon.svg",
         iconAlt: "cs_icon",
       },
       {
@@ -333,7 +333,7 @@ export const shopifyDevelopmentDelhiContent = {
         title: "Proven Results",
         description:
           "Our record speaks for itself; we have many completed projects and happy customers.",
-        icon: "/assets/shopify-development-in-delhi/reasons/proven-results.svg",
+        icon: "/assets/services/wordpress-development-company/advantages/ongoing-support-maintenance.svg",
         iconAlt: "Proven Results Icon",
       },
     ],
@@ -430,4 +430,3 @@ export const shopifyDevelopmentDelhiContent = {
     ctaHref: "/request-quote",
   },
 } as const;
-

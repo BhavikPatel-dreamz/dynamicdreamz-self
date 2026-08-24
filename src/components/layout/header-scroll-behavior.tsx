@@ -11,7 +11,7 @@ export function HeaderScrollBehavior() {
     let previousPosition = window.scrollY;
     let frame = 0;
 
-    if (previousPosition > 40) {
+    if (previousPosition > 0) {
       siteHeader.classList.add("header-down");
       siteHeader.classList.remove("header-up");
     }
@@ -19,7 +19,7 @@ export function HeaderScrollBehavior() {
     function updateHeader() {
       const position = window.scrollY;
 
-      if (position <= 40) {
+      if (position <= 0) {
         siteHeader.classList.remove("header-up", "header-down");
       } else if (position < previousPosition) {
         siteHeader.classList.add("header-up");

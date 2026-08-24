@@ -10,7 +10,6 @@ import {
   type MegaMenuItem,
   type PrimaryNavigationGroup,
 } from "@/data/navigation";
-import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
 
 function ChevronIcon() {
@@ -21,11 +20,22 @@ function ChevronIcon() {
   );
 }
 
+function ArrowIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 16 12" width="16" height="12">
+      <path
+        d="M15.53 6.054a.75.75 0 0 0 0-1.061L10.757.22a.75.75 0 1 0-1.06 1.061l4.242 4.242-4.242 4.243a.75.75 0 0 0 1.06 1.06l4.773-4.772ZM0 6.273h15v-1.5H0v1.5Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
 function MenuIcon({ item }: { item: MegaMenuItem }) {
   return (
-    <span className="mr-[13px] flex h-[21px] w-[21px] shrink-0 items-center justify-center" aria-hidden="true">
+    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center" aria-hidden="true">
       <Image
-        className="h-auto max-h-full w-auto max-w-full object-contain"
+        className="h-full w-full object-contain"
         src={item.icon.src}
         alt=""
         width={item.icon.width}
@@ -35,100 +45,107 @@ function MenuIcon({ item }: { item: MegaMenuItem }) {
   );
 }
 
-const itemGridClasses: Record<string, string> = {
-  about: "grid-cols-2 gap-x-2 gap-y-0",
-  industries: "grid-cols-3 gap-x-2 gap-y-0",
-  work: "grid-cols-2 gap-x-2 gap-y-0",
-  "white-label": "grid-cols-1 gap-[15px] [&_a]:min-h-[24.27px] [&_a]:items-center [&_a]:whitespace-nowrap [&_.menu-title]:text-sm [&_.menu-title]:font-medium [&_.menu-title]:leading-[23.27px] [&_.menu-title]:tracking-[-0.02em]",
-  "agency-partnerships": "grid-cols-1 gap-y-0",
-  technology: "grid-cols-2 gap-x-2 gap-y-0",
-};
-
-function ItemMenu({
-  group,
-}: {
-  group: Extract<PrimaryNavigationGroup, { kind: "featured" | "compact" }>;
-}) {
-  const pathname = usePathname();
-  const normalizedPathname = pathname === "/" ? pathname : pathname.replace(/\/$/, "");
-
+function MenuCopy({ item }: { item: MegaMenuItem }) {
   return (
-    <ul className={cn("grid", itemGridClasses[group.slug])}>
-      {group.items.map((item) => (
-        <li key={item.href}>
-          <Link className="group/item flex w-full rounded-[11px] px-3 py-2 transition-colors duration-150 hover:bg-[#f7f4e9] focus-visible:bg-[#f7f4e9]" href={item.href}>
-            <MenuIcon item={item} />
-            <span className="block w-[calc(100%-34px)]">
-              <span
-                className={cn(
-                  "menu-title relative inline-block text-sm leading-[100%] font-bold text-ink transition-colors duration-300 group-hover/item:text-brand-red group-focus-visible/item:text-brand-red",
-                  normalizedPathname === item.href.replace(/\/$/, "") && "text-brand-red!",
-                )}
-              >
-                {item.label}
-                {item.badge ? (
-                  <span className="ml-1.5 inline-block rounded bg-[#f5ebeb] px-1.5 py-px align-middle text-[11px] leading-[16px] font-bold tracking-[0.24px] text-brand-red">
-                    {item.badge}
-                  </span>
-                ) : null}
-              </span>
-              {item.description ? (
-                <span className="mt-[5px] block whitespace-nowrap text-xs leading-[19.8px] font-normal text-muted">
-                  {item.description}
-                </span>
-              ) : null}
-            </span>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <span className="block min-w-0">
+      <strong className="flex items-center text-sm leading-none font-bold text-[#282828]">
+        {item.label}
+        {item.badge ? (
+          <span className="ml-1.5 rounded-sm bg-[#f5ebeb] px-1.5 py-px text-[11px] leading-[146.2%] font-bold tracking-[0.24px] text-[#ad5151]">
+            {item.badge}
+          </span>
+        ) : null}
+      </strong>
+      <span className="mt-[5px] block text-xs leading-[19.8px] font-normal text-[#535353]">
+        {item.description}
+      </span>
+    </span>
   );
 }
 
-function ServicesMenu({ group }: { group: Extract<PrimaryNavigationGroup, { kind: "services" }> }) {
-  const pathname = usePathname();
-  const normalizedPathname = pathname === "/" ? pathname : pathname.replace(/\/$/, "");
-  const links = group.sections.flatMap((section) =>
-    section.links.map((link) => ({ ...link, icon: link.icon ?? section.icon })),
-  );
+function MenuItem({ item, work = false }: { item: MegaMenuItem; work?: boolean }) {
+  if (work) {
+    return (
+      <li>
+        <Link
+          className="group/item flex h-full min-h-[172px] flex-col rounded-[15px] border border-[#f0f0f0] p-5 transition-colors duration-150 hover:bg-[#f7f4e9] focus-visible:bg-[#f7f4e9]"
+          href={item.href}
+        >
+          <MenuIcon item={item} />
+          <span className="mt-[15px] block">
+            <MenuCopy item={item} />
+          </span>
+          <span className="mt-2.5 inline-flex items-center text-xs leading-[166.182%] font-bold tracking-[-0.24px] text-[#ad5151] uppercase transition-colors duration-300 group-hover/item:text-[#282828] group-focus-visible/item:text-[#282828]">
+            {item.ctaLabel}
+            <span className="ml-[5px]"><ArrowIcon /></span>
+          </span>
+        </Link>
+      </li>
+    );
+  }
 
   return (
-    <div>
-      <ul className="grid grid-cols-3 gap-x-2 gap-y-0">
-        {links.map((item) => (
-          <li key={`${item.href}-${item.label}`}>
-            <Link className="group/item flex min-h-[62px] rounded-[11px] px-3 py-2 transition-colors duration-150 hover:bg-[#f7f4e9] focus-visible:bg-[#f7f4e9]" href={item.href}>
-              <MenuIcon item={item} />
-              <span className="block pt-px">
-                <strong className={cn("block text-sm leading-[100%] font-bold text-ink", normalizedPathname === item.href.replace(/\/$/, "") && "text-brand-red!")}>{item.label}</strong>
-                <span className="mt-[5px] block whitespace-nowrap text-xs leading-[19.8px] font-normal text-muted">{item.description}</span>
-              </span>
-            </Link>
-          </li>
+    <li>
+      <Link
+        className="flex min-h-16 items-start gap-[11px] rounded-[11px] px-3 py-2 transition-colors duration-[160ms] hover:bg-[#f7f4e9] focus-visible:bg-[#f7f4e9] min-[1200px]:max-[1400px]:p-2.5"
+        href={item.href}
+      >
+        <MenuIcon item={item} />
+        <MenuCopy item={item} />
+      </Link>
+    </li>
+  );
+}
+
+const panelWidthClasses: Record<string, string> = {
+  "shopify-solutions": "w-[1054px]",
+  "agency-partnerships": "w-[390px]",
+  technology: "w-[760px]",
+  industries: "w-[652px]",
+  work: "w-[666px]",
+  about: "w-[645px] min-[1200px]:max-[1400px]:w-[540px]",
+};
+
+const gridColumnClasses: Record<PrimaryNavigationGroup["columns"], string> = {
+  1: "grid-cols-1",
+  2: "grid-cols-2",
+  3: "grid-cols-3",
+};
+
+function MenuPanel({ group }: { group: PrimaryNavigationGroup }) {
+  const isWorkMenu = group.variant === "work";
+
+  return (
+    <div
+      className={cn(
+        "absolute top-full left-1/2 z-[9] -translate-x-1/2 rounded-[20px] border border-black/10 bg-white p-5 shadow-[0_18px_48px_rgb(0_0_0/10%)] min-[1200px]:max-[1400px]:p-2.5",
+        panelWidthClasses[group.slug],
+      )}
+    >
+      <ul className={cn("grid gap-x-2", gridColumnClasses[group.columns])}>
+        {group.items.map((item) => (
+          <MenuItem item={item} key={item.label} work={isWorkMenu} />
         ))}
       </ul>
-      <div className="mt-3 flex min-h-[48px] items-center justify-between border-t border-[#d9d9d9] pt-3">
-        <p className="m-0 text-xs leading-5 font-normal text-muted"><strong className="font-bold text-ink">Shopify Platinum Partner</strong> · 20+ Years · 150+ Experts · 5,000+ Projects</p>
-        <Link className="group flex items-center gap-3 text-xs font-bold text-ink uppercase hover:text-brand-red focus-visible:text-brand-red" href={siteConfig.quotePath}>
-          Discuss a Project <span className="text-xl leading-none transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
-        </Link>
-      </div>
+
+      {group.promo ? (
+        <div className="mt-3 flex items-center justify-between gap-3.5 border-t border-black/12 pt-[15px] text-xs leading-[166.182%] tracking-[-0.24px] text-[#282828]">
+          <p>
+            <strong className="font-bold">{group.promo.title}</strong>
+            <span className="font-normal"> · {group.promo.details}</span>
+          </p>
+          <Link
+            className="inline-flex shrink-0 items-center font-bold uppercase hover:text-[#ad5151] focus-visible:text-[#ad5151]"
+            href={group.promo.ctaHref}
+          >
+            {group.promo.ctaLabel}
+            <span className="ml-[5px]"><ArrowIcon /></span>
+          </Link>
+        </div>
+      ) : null}
     </div>
   );
 }
-
-const menuPositionClasses: Record<string, string> = {
-  about: "right-[150px] left-auto w-[645px] max-[1399px]:w-[540px]",
-  services:
-    "left-1/2 w-[1054px] -translate-x-1/2",
-  industries:
-    "left-1/2 w-[652px] -translate-x-1/2",
-  work: "right-[260px] left-auto w-[666px]",
-  "white-label":
-    "right-[calc(19%+12.4px)] left-auto w-[331px] min-[1440px]:right-[calc(27.2%+9.1px)]",
-  "agency-partnerships": "left-[250px] w-[390px]",
-  technology: "left-1/2 w-[760px] -translate-x-1/2",
-};
 
 export function DesktopNavigation() {
   const [openGroup, setOpenGroup] = useState<string | null>(null);
@@ -138,7 +155,11 @@ export function DesktopNavigation() {
 
   useEffect(() => {
     function closeOnEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") setOpenGroup(null);
+      if (event.key !== "Escape") return;
+
+      const openItem = navigationRef.current?.querySelector<HTMLElement>('[data-open="true"]');
+      setOpenGroup(null);
+      openItem?.querySelector<HTMLButtonElement>("button")?.focus();
     }
 
     function closeOutside(event: PointerEvent) {
@@ -155,17 +176,25 @@ export function DesktopNavigation() {
 
   return (
     <nav
-      className="nav-menu mr-auto ml-10 hidden shrink-0 min-[992px]:block max-[1199px]:ml-5"
+      className="ml-5 hidden shrink-0 min-[1200px]:block min-[1400px]:ml-[43px]"
       aria-label="Primary navigation"
       ref={navigationRef}
     >
       <ul className="flex list-none items-center p-0">
-        {primaryNavigation.map((group) => {
+        {primaryNavigation.map((group, index) => {
           const isOpen = openGroup === group.slug;
           const menuId = `desktop-${group.slug}-menu`;
+          const isActive = group.items.some(
+            (item) => normalizedPathname === item.href.replace(/\/$/, ""),
+          );
+
           return (
             <li
-              className="group/desktop-nav static py-9 pr-6 max-[1399px]:pr-4"
+              className={cn(
+                "group/desktop-nav relative py-9 pr-4 min-[1400px]:pr-6",
+                index === 0 && "static",
+              )}
+              data-active={isActive}
               data-open={isOpen}
               key={group.slug}
               onMouseEnter={() => setOpenGroup(group.slug)}
@@ -176,7 +205,7 @@ export function DesktopNavigation() {
               }}
             >
               <button
-                className="flex cursor-pointer items-center gap-1.5 border-0 bg-transparent p-0 text-sm leading-[normal] font-medium whitespace-nowrap text-[#282828] hover:text-brand-red group-data-[open=true]/desktop-nav:text-brand-red max-[1399px]:text-[13px] max-[1199px]:text-sm [&_svg]:transition-transform [&_svg]:duration-300 group-data-[open=true]/desktop-nav:[&_svg]:rotate-180"
+                className="flex cursor-pointer items-center gap-1.5 border-0 bg-transparent p-0 text-[13px] leading-[normal] font-medium whitespace-nowrap text-[#282828] hover:text-[#ad5151] group-data-[active=true]/desktop-nav:text-[#ad5151] group-data-[open=true]/desktop-nav:text-[#ad5151] min-[1400px]:text-sm [&_svg]:transition-transform [&_svg]:duration-300 group-data-[open=true]/desktop-nav:[&_svg]:rotate-180"
                 type="button"
                 aria-expanded={isOpen}
                 aria-haspopup="true"
@@ -186,25 +215,18 @@ export function DesktopNavigation() {
                 {group.label}
                 <ChevronIcon />
               </button>
-              <div
-                className={cn(
-                  "pointer-events-none invisible absolute top-full z-[9] rounded-[20px] border border-black/10 bg-white p-5 opacity-0 shadow-[0_18px_48px_rgb(0_0_0/10%)] transition-all duration-300 group-data-[open=true]/desktop-nav:pointer-events-auto group-data-[open=true]/desktop-nav:visible group-data-[open=true]/desktop-nav:opacity-100 max-[1399px]:p-2.5",
-                  menuPositionClasses[group.slug],
-                )}
-                id={menuId}
-                aria-hidden={!isOpen}
-                inert={!isOpen}
-              >
-                {group.kind === "services" ? <ServicesMenu group={group} /> : <ItemMenu group={group} />}
+
+              <div id={menuId} aria-hidden={!isOpen} inert={!isOpen} className={cn(!isOpen && "hidden")}>
+                <MenuPanel group={group} />
               </div>
             </li>
           );
         })}
-        <li className="static py-9 pr-0">
+        <li className="py-9">
           <Link
             className={cn(
-              "flex items-center text-sm leading-[normal] font-medium whitespace-nowrap text-[#282828] hover:text-brand-red max-[1399px]:text-[13px] max-[1199px]:text-sm",
-              normalizedPathname === "/contact-us" && "text-brand-red",
+              "flex items-center text-[13px] leading-[normal] font-medium whitespace-nowrap text-[#282828] hover:text-[#ad5151] min-[1400px]:text-sm",
+              normalizedPathname === "/contact-us" && "text-[#ad5151]",
             )}
             href="/contact-us"
             aria-current={normalizedPathname === "/contact-us" ? "page" : undefined}

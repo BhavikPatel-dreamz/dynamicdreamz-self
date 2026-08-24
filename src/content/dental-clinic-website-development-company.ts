@@ -175,14 +175,14 @@ export const dentalClinicWebsiteDevelopmentCompanyContent = {
         title: "Dental Clinic Website Development",
         description:
           "We develop modern, user-friendly, responsive dental clinic websites that showcase your services, clinic, and patient reviews.",
-        icon: "/assets/dental-clinic/services/website-development.svg",
+        icon: "/assets/shopify-theme-customization/process/development.svg",
         iconAlt: "Development Icon",
       },
       {
         title: "Dental Website Customization",
         description:
           "We customize your dental clinic website to match your brand, improve usability, and enhance patient engagement.",
-        icon: "/assets/dental-clinic/services/website-customization.svg",
+        icon: "/assets/shopify-plus-agency/icons/custom-theme-icon.svg",
         iconAlt: "custom theme icon",
       },
       {

@@ -8131,6 +8131,36 @@ Commercial pricing and conversion page for prepaid Shopify design and developmen
 - `npm run check:urls`, `npm run lint`, and `npm run build` pass; Next.js prerenders the route as static content. The final repository-wide SHA-256 audit reports zero duplicate public-asset hash groups.
 - Remaining governance gap: commercial rates and policy promises still require a named finance/delivery owner and scheduled freshness review. No unapproved visible wording was changed.
 
+## Shared site header and primary navigation
+
+Status: implemented and verified; current live-visible labels and descriptions preserved
+Last reviewed: 2026-08-21
+Owner: SEO, content, design, and engineering
+
+### Sitewide discovery role
+
+- The primary navigation now exposes the current live Shopify Solutions, Agency Partnerships, Technology, Industries, Work, and About hierarchy as crawlable, server-rendered links.
+- All internal destinations use the migration's slashless canonical route policy rather than copying legacy trailing slashes.
+- The Shopify menu provides direct discovery paths to the principal Shopify Plus, development, certified developer, migration, CRO, mobile app, staffing, and prepaid-hours pages.
+- Portfolio and Case Studies remain first-class Work destinations with descriptive context that clarifies the evidence available at each route.
+- Tablet and mobile users receive the same link inventory and proof strip as desktop users; the drawer does not hide navigation content behind client-only data fetching.
+
+### Structured gap analysis
+
+| Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Navigation parity | The migration retained the former large services mega menu and an outdated taxonomy | Replace the shared navigation data and desktop/mobile renderers with the current live hierarchy and descriptions | All six groups, 36 item links, Shopify proof strip, Work CTAs, and Contact route render from shared typed data |
+| P0 | implemented | Responsive discovery | The migration kept desktop navigation through 1199px while production now uses the drawer | Switch to the accessible drawer below 1200px and preserve the entire link inventory | Verified at 1440px, 1200px, 1199px, 1024px, and 390px |
+| P0 | implemented | Canonical URL consistency | Live source uses trailing-slash URLs and includes several legacy route variants | Map navigation entries to local slashless canonical destinations without depending on the live site at runtime | URL policy check covers navigation source and the production build |
+| P1 | implemented | Semantic interaction | Live pointer behavior does not provide the migration's full keyboard/focus model | Retain focus, Escape, outside-click, drawer focus containment, body locking, and focus restoration without altering default visual presentation | Desktop and mobile interaction states reviewed with rendered browser captures |
+| P2 | deferred | Visible terminology | Current live labels contain `Al`, `IOS`, and `Food Beverages` wording inconsistencies | Keep exact live wording for migration parity and route proposed corrections through the visible-copy approval queue | Recommendations recorded in `docs/page-content-improvements.md` |
+
+### Verification and remaining gaps
+
+- Live markup, CSS, JavaScript, computed dimensions, responsive states, hover panels, drawer states, and scroll direction behavior were inspected on 2026-08-21.
+- Local desktop, tablet, mobile, open-panel, open-drawer, and scroll-up comparisons are recorded in `docs/visual-captures/header.md` and `docs/visual-captures/header/`.
+- The navigation uses only project-owned SVG assets. The live site is not a runtime data, image, script, or CDN dependency.
+- No new schema claim was introduced by the header update. Visible terminology recommendations remain deferred until exact copy is approved.
 
 
 
