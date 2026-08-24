@@ -32,16 +32,16 @@ export type TwoColCenterImageSectionProps = {
 function InfoBox({ item }: { item: TwoColCenterImageItem }) {
   return (
     <article className="info-box py-10 max-[991px]:py-4">
-      <div className="icon mb-2 size-[66px] max-[767px]:size-[50px]">
+      <div className="icon mb-2 size-[66px] max-[991px]:size-[50px]">
         <Image
           alt={item.iconAlt}
-          className="size-full object-contain"
+          className="object-contain"
           height={66}
           src={item.icon}
           width={66}
         />
       </div>
-      <h3 className="mb-2 font-sans text-[20px] font-bold leading-[28px] text-ink max-[767px]:text-lg max-[767px]:leading-[26px]">
+      <h3 className="why-choose-wordpress-title mb-2 font-sans text-[20px] font-bold leading-[28px] text-ink max-[991px]:text-base max-[991px]:leading-[26px]">
         {formatBrText(item.title, "max-[767px]:hidden")}
       </h3>
       <p className="text-base font-medium leading-[27.2px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
@@ -53,7 +53,7 @@ function InfoBox({ item }: { item: TwoColCenterImageItem }) {
 
 export function TwoColCenterImageSection({
   content,
-  className = "why-choose-wordpress-sec two-col-center-img pt-0 pb-0 mb-20 max-[767px]:mb-[50px]",
+  className = "why-choose-wordpress-sec two-col-center-img pt-0 pb-0 mb-20 max-[991px]:mb-[50px]",
   id = "things-to-consider",
 }: TwoColCenterImageSectionProps) {
   return (
@@ -63,7 +63,7 @@ export function TwoColCenterImageSection({
           <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(content.heading, "max-[1199px]:hidden")}
           </h2>
-          <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
+          <p className="why-choose-wordpress-sec-desc mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[991px]:text-sm max-[991px]:leading-[30.4px]">
             {formatBrText(content.description, "max-[1199px]:hidden")}
           </p>
         </div>

@@ -114,10 +114,10 @@ export function ShopifyReasonsSection({
           <h2 className={headingClassName}>
             {formatBrText(
               content.heading,
-              preserveHeadingBreaks ? undefined : "max-[1199px]:hidden",
+              preserveHeadingBreaks ? undefined : "max-[991px]:block",
             )}
           </h2>
-          <p className="shopify-proof-sec-details mx-auto mt-6 max-w-[720px] text-base leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[25px]">
+          <p className="shopify-proof-sec-details mx-auto mt-6 max-w-[720px] text-base leading-[34.2px] font-medium text-muted max-[991px]:text-sm max-[991px]:leading-[25px]">
             {formatBrText(content.description, "max-[991px]:hidden")}
           </p>
         </div>

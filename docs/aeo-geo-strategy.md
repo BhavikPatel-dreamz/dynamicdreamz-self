@@ -4155,7 +4155,7 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 ## Astra Theme Customization (`/astra-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-08-24
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Astra theme customization, performance optimization, responsive layouts, WooCommerce integration, and ongoing support.
 Decision stage: partner selection, Astra theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
@@ -5059,6 +5059,22 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 - URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/prestashop-to-shopify-migration`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 159 chars), JSON-LD graph verification, local assets audit (0 duplicates), responsive layouts (1440px, 768px, 390px), lint, and production build.
+- Visual parity review (2026-08-24): refreshed live/local desktop and mobile
+  captures, aligned the trusted-brand strip with the live compact variant, and
+  removed the obsolete mobile hero-button padding override so the shared
+  canonical button dimensions apply. No new AEO/GEO content gap was introduced.
+- Benefits interaction review (2026-08-24): changed the existing five benefit
+  cards from a static grid to the approved full-bleed, keyboard-focusable drag
+  carousel while preserving all server-rendered headings and card content. No
+  new AEO/GEO content gap was introduced.
+- Migration-process parity review (2026-08-24): aligned the heading, step-row
+  dividers, nested entity-list structure, and responsive spacing with the live
+  source while preserving the six server-rendered steps and every migration
+  entity. No new AEO/GEO content gap was introduced.
+- Why-choose interaction review (2026-08-24): changed the existing five proof
+  cards from a static grid to the approved full-bleed, keyboard-focusable drag
+  carousel while preserving all server-rendered headings and card content. No
+  new AEO/GEO content gap was introduced.
 
 ## Square to Shopify Migration (`/square-to-shopify-migration`)
 
@@ -8177,10 +8193,6 @@ Owner: SEO, content, design, and engineering
 - Local desktop, tablet, mobile, open-panel, open-drawer, and scroll-up comparisons are recorded in `docs/visual-captures/header.md` and `docs/visual-captures/header/`.
 - The navigation uses only project-owned SVG assets. The live site is not a runtime data, image, script, or CDN dependency.
 - No new schema claim was introduced by the header update. Visible terminology recommendations remain deferred until exact copy is approved.
-
-
-
-
 
 
 

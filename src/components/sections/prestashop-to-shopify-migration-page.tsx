@@ -30,7 +30,8 @@ export function PrestashopToShopifyMigrationPage() {
           slug: "prestashop-to-shopify-migration",
           ariaLabel: "Brands that trust Dynamic Dreamz for PrestaShop to Shopify migration",
         }}
-        heading="Trusted by <br> Leading Brands"
+        density="compact"
+        heading="Trusted by Leading Brands"
         items={prestashopBrandLogos}
       />
       <TextBoxSection
@@ -39,9 +40,11 @@ export function PrestashopToShopifyMigrationPage() {
         text={prestashopWhyMigrate.text}
       />
       <ShopifyReasonsSection
-        className="shopify-customization-services-sec mb-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[767px]:mb-[50px] max-[767px]:py-[60px]"
+        carouselFullBleed
+        className="shopify-customization-services-sec mb-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[991px]:mb-[50px] max-[991px]:py-[50px]"
         content={prestashopBenefitsContent}
         id="benefits-of-moving"
+        layout="carousel"
       />
       <TwoColCenterImageSection
         content={prestashopConsiderationsContent}
@@ -50,11 +53,14 @@ export function PrestashopToShopifyMigrationPage() {
       <MigrationProcessSection
         content={prestashopProcessContent}
         id="migration-process"
+        titleAlign="center"
       />
       <ShopifyReasonsSection
-        className="shopify-customization-services-sec mb-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[767px]:mb-[50px] max-[767px]:py-[60px]"
+        carouselFullBleed
+        className="shopify-customization-services-sec mb-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[991px]:mb-[50px] max-[991px]:py-[50px]"
         content={prestashopWhyChooseContent}
         id="why-choose-dynamicdreamz"
+        layout="carousel"
       />
       <HappyClientSection
         description="We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories: Check out how our services empower them to evolve."

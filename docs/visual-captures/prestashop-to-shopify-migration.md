@@ -2,8 +2,68 @@
 
 - **Live URL**: `https://www.dynamicdreamz.com/prestashop-to-shopify-migration/`
 - **Local Route**: `/prestashop-to-shopify-migration`
-- **Date Checked**: 2026-08-20
+- **Date Checked**: 2026-08-24
 - **Viewports Inspected**: Desktop (1440x900), Tablet (768x1024), Mobile (390x844)
+
+Fresh comparison captures (live/local pairs):
+
+- `scratch/prestashop-parity/live-1440.png`
+- `scratch/prestashop-parity/local-1440.png`
+- `scratch/prestashop-parity/live-390.png`
+- `scratch/prestashop-parity/local-390.png`
+- `scratch/prestashop-parity/live-full.pdf`
+- `scratch/prestashop-parity/local-full.pdf`
+
+Owner-provided carousel references received on 2026-08-24:
+
+- Desktop: full-viewport benefits carousel with two large cards visible and a
+  third card clipped at the right browser edge.
+- 991px: two narrower cards visible with the next card clipped at the right
+  browser edge; the first card begins at the responsive container edge.
+- Required scroll behavior: keep the carousel viewport full-width, place the
+  responsive container offset on the inner track, and apply the same value as
+  `scroll-padding-inline-start` so subsequent cards snap to the original
+  container edge while earlier cards may remain visible at the browser edge.
+
+Owner-provided migration-process comparison received on 2026-08-24:
+
+- Live reference: centered section heading; every step row and optional nested
+  list is a separate sibling divided by a 1.5px `#efefef` top border.
+- Local reference before correction: left-aligned heading, step/list content
+  grouped inside one padded wrapper, divider on the nested list, and additional
+  bottom padding that changed the overall section rhythm.
+- Current live source inspected: `.migration-step-details` uses 32px vertical
+  padding, 75px counter width, 46px counter/content gap, 50px step number,
+  16px/27.2px body copy; `.migration-list` uses 32px top padding and 32px
+  bottom margin per category list. At 767px these become 20px row/list padding,
+  a 55px counter, 15px gap, 34px number, and 12px step label.
+
+Owner-provided why-choose reference received on 2026-08-24:
+
+- The former three-plus-two card grid is no longer the approved interaction.
+- Apply the same full-viewport carousel behavior as the benefits section:
+  initial card aligned to the responsive container, offset placed on the inner
+  track at every media breakpoint, and matching viewport scroll padding so a
+  prior card can remain visible at the left browser edge after snapping.
+
+Current live CSS inspected on 2026-08-24:
+
+- `style.css?ver=7.1` for canonical `.btn` and `.btn-red` states.
+- `assets/css/services/main.css?ver=1787566584` for the hero, compact client
+  logo strip, and migration sections.
+- `assets/css/services/media.css?ver=1787566584` for 1399px, 1199px, 991px,
+  767px, and 379px responsive behavior.
+
+Fresh comparison findings before refinement:
+
+- Local hero structure, typography, imagery, review cards, and desktop spacing
+  closely match the live page.
+- The local logo strip used the standard 164px variant instead of the live
+  compact 104px variant, and its heading wrapped onto two lines.
+- The shared service-hero CTA still applied an older mobile padding reduction,
+  making it narrower than the canonical live button at 390px.
+- The local mobile review stack started at 32px below the illustration; current
+  live `services/media.css` specifies a 50px top margin at the 991px breakpoint.
 
 ---
 
@@ -122,3 +182,23 @@
   - `/assets/prestashop-to-shopify-migration/considerations/payment-and-shipping.svg`
   - `/assets/prestashop-to-shopify-migration/why-choose/custom-shopify-themes.svg`
   - `/assets/prestashop-to-shopify-migration/why-choose/smooth-data-transfer.svg`
+
+## 5. Final Verification (2026-08-24)
+
+- Post-change desktop capture:
+  `scratch/prestashop-parity/local-after-1440.png`.
+- Post-change mobile capture:
+  `scratch/prestashop-parity/local-final-390.png`.
+- The hero CTA dimensions, compact brand strip height/background/heading, and
+  mobile review-stack spacing now match the current live CSS and screenshots.
+- The benefits area now uses the owner-approved full-viewport carousel shown in
+  the desktop and 991px references. Its responsive container offset lives on
+  the inner track and is mirrored by viewport scroll padding, so the initial
+  card aligns with the container and a previous card can remain visible at the
+  browser edge after snapping forward.
+- Header scroll behavior, CTA hover/focus treatment, logo-slider motion,
+  testimonial modal controls, FAQ open/closed states, and reduced-motion
+  behavior remain provided by the existing shared components.
+- Remaining capture-only differences are the autoplay position of the logo
+  track and the third-party floating chat widget timing/placement. These do not
+  change the migrated page structure or local UI implementation.

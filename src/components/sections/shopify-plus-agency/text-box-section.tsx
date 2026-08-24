@@ -26,7 +26,7 @@ export function TextBoxSection({
             </h2>
             {contentParagraphs.map((paragraph, index) => (
               <p
-                className="mb-6 text-center text-[18px] leading-[34.2px] font-medium text-[#535353] last:mb-0 max-[767px]:text-base max-[767px]:leading-[28px]"
+                className="single-text-box-desc mb-6 text-center text-[16px] leading-[34.2px] font-medium text-[#535353] last:mb-0 max-[991px]:text-sm max-[991px]:leading-[27px]"
                 key={index}
               >
                 {paragraph}

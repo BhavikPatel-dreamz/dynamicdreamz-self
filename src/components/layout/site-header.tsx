@@ -35,7 +35,7 @@ export function SiteHeader() {
         </div>
 
         <ButtonLink
-          className="max-[1399px]:px-5 max-[1399px]:py-[10.5px] max-[1399px]:text-[14px]"
+          className="max-[1399px]:px-5 max-[1399px]:py-[13px] max-[1399px]:text-[14px] max-[991px]:px-[20px] max-[991px]:py-[13px]"
           variant="primary"
           href={siteConfig.quotePath}
         >
