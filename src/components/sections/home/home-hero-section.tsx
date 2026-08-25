@@ -8,8 +8,8 @@ export function HomeHeroSection() {
   return (
     <section className="flex h-screen items-center justify-center overflow-hidden bg-[linear-gradient(180deg,#fbeed5_16.38%,rgb(251_238_213/0%)_100%)] pt-[90px] max-[991px]:pt-16">
       <Container className="text-center max-[767px]:px-4">
-        <p className="mx-auto mb-[22px] flex max-w-[1100px] translate-y-0.5 items-center justify-center text-sm leading-none font-semibold text-muted uppercase min-[768px]:max-[991px]:text-[13px] min-[768px]:max-[991px]:leading-[13px] max-[640px]:w-max max-[640px]:flex-col max-[640px]:items-stretch max-[640px]:gap-2.5 max-[640px]:text-xs max-[640px]:leading-none">
-          <span className="relative mr-2.5 inline-flex items-center pr-2.5 before:mr-3 before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] after:absolute after:right-[-2px] after:h-[3px] after:w-[3px] after:rounded-full after:bg-muted after:content-[''] max-[640px]:after:hidden max-[640px]:before:mr-2.5 max-[640px]:before:w-[25px]">
+        <p className="mx-auto mb-[24px] flex max-w-[1100px] translate-y-0.5 items-center justify-center text-sm leading-none font-semibold text-muted uppercase min-[768px]:max-[991px]:text-[13px] min-[768px]:max-[991px]:leading-[13px] max-[640px]:w-max max-[640px]:flex-col max-[640px]:items-stretch max-[640px]:gap-2.5 max-[640px]:text-xs max-[640px]:leading-none">
+          <span className="relative mr-2.5 leading-[1.2] inline-flex items-center pr-2.5 before:mr-3 before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] after:absolute after:right-[-2px] after:h-[3px] after:w-[3px] after:rounded-full after:bg-muted after:content-[''] max-[640px]:after:hidden max-[640px]:before:mr-2.5 max-[640px]:before:w-[25px]">
             {homeSectionCopy.established}
           </span>
           <span>{homeSectionCopy.partnerBadge}</span>
