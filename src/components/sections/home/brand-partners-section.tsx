@@ -44,20 +44,24 @@ export function BrandPartnersSection({
               : "mb-[50px] min-[768px]:max-[991px]:mb-[30px] min-[768px]:max-[991px]:flex-col min-[768px]:max-[991px]:items-start max-[767px]:mb-[55px] max-[767px]:flex-col max-[767px]:text-center",
           )}
         >
-          <h2
-            className={cn(
-              isShopifyHours
-                ? "font-sans text-[40px] leading-[55.4px] font-bold tracking-[-0.8px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
-                : "text-2xl leading-none font-medium min-[768px]:max-[991px]:mb-2.5 min-[768px]:max-[991px]:w-full max-[767px]:mb-2.5 max-[767px]:text-[23px] max-[767px]:leading-[1.24]",
-            )}
-          >
-            {heading}
-          </h2>
-          {description ? (
-            <p className="max-w-[482px] text-left text-base leading-[1.9] font-semibold text-muted min-[768px]:max-[991px]:max-w-full max-[767px]:mx-auto max-[767px]:max-w-[350px] max-[767px]:text-center max-[767px]:text-sm">
-              {description}
-            </p>
-          ) : null}
+          <div className="title w-[45%]">
+            <h2
+              className={cn(
+                isShopifyHours
+                  ? "font-sans text-[35px] leading-[1.4] font-bold tracking-[-0.8px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
+                  : "text-[35px] leading-[1.4] font-medium min-[768px]:max-[991px]:mb-2.5 min-[768px]:max-[991px]:w-full max-[767px]:mb-2.5 max-[767px]:text-[23px] max-[767px]:leading-[1.24]",
+              )}
+            >
+              {heading}
+            </h2>
+          </div>
+          <div className="section_text w-[48%]">
+            {description ? (
+              <p className="text-left text-base leading-7 font-semibold text-muted max-[767px]:text-center max-[767px]:text-sm">
+                {description}
+              </p>
+            ) : null}
+          </div>
         </div>
         <div
           className={cn(

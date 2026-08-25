@@ -1,5 +1,30 @@
 # Homepage AEO/GEO Update
 
+## 2026-08-25 Homepage Client Logo Monochrome Parity
+
+Owner-supplied desktop screenshots were compared for the homepage
+`Partnering with Ambitious Brands` section. The live reference uses monochrome
+logo artwork, while the local capture showed brand colors in Royce Chocolate,
+SriSri Tattva, Perfect Locks, Supertails, and PopClub.
+
+- Live screenshot: owner-supplied 1515px-wide desktop capture in the task.
+- Local screenshot: owner-supplied 1831px-wide desktop capture in the task.
+- Sources inspected: `src/content/home.ts`, `BrandPartnersSection`,
+  `ClientLogo`, all canonical SVGs under `public/assets/clients/`, and the
+  previously buffered live SVGs under `scratch/case-studies-brands/`.
+- Responsive breakpoints: the same canonical image sources feed the desktop
+  grid, tablet grid, and three mobile marquee rows, so the correction applies
+  consistently at all breakpoints without layout changes.
+- Interaction states: client logos are static on desktop; mobile marquee
+  movement and reduced-motion behavior remain unchanged.
+- Animation timings: no timing changes; existing mobile logo-row animation is
+  retained.
+- Implementation: replace the five colored SVG artworks with their monochrome
+  image variants. No CSS filter, grayscale utility, opacity treatment, or
+  runtime dependency is used.
+- Remaining differences in scope: none expected for logo color; spacing and
+  section geometry are intentionally untouched by this asset-only correction.
+
 ## 2026-08-24 Homepage Live Refresh Capture
 
 Live URL: `https://www.dynamicdreamz.com/`
