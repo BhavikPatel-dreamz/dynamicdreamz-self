@@ -6,6 +6,7 @@ import {
   type ContactFormState,
   submitContactForm,
 } from "@/app/contact-us/actions";
+import { contactFormCopy } from "@/content/forms";
 
 const attributionFields = [
   "utm_source",
@@ -55,7 +56,7 @@ export function ContactForm() {
   }, []);
 
   return (
-    <form ref={formRef} action={formAction} aria-label="Contact form">
+    <form ref={formRef} action={formAction} aria-label={contactFormCopy.ariaLabel}>
       <input name="website" tabIndex={-1} autoComplete="off" className="sr-only" aria-hidden="true" />
       {attributionFields.map((name) => (
         <input key={name} type="hidden" name={name} />
@@ -63,33 +64,33 @@ export function ContactForm() {
 
       <div className="grid grid-cols-2 gap-x-3.5 max-[767px]:grid-cols-1 max-[767px]:gap-x-0">
         <div className="mb-7 max-[991px]:mb-5">
-          <FieldLabel htmlFor="contact-name" required>Name</FieldLabel>
+          <FieldLabel htmlFor="contact-name" required>{contactFormCopy.labels.name}</FieldLabel>
           <input
             className="h-[49px] w-full rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-0"
             id="contact-name"
             name="name"
             type="text"
             autoComplete="name"
-            placeholder="Enter Your Name"
+            placeholder={contactFormCopy.placeholders.name}
             maxLength={400}
             required
           />
         </div>
         <div className="mb-7 max-[991px]:mb-5">
-          <FieldLabel htmlFor="contact-email" required>Email</FieldLabel>
+          <FieldLabel htmlFor="contact-email" required>{contactFormCopy.labels.email}</FieldLabel>
           <input
             className="h-[49px] w-full rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-0"
             id="contact-email"
             name="email"
             type="email"
             autoComplete="email"
-            placeholder="Enter Your Email Here"
+            placeholder={contactFormCopy.placeholders.email}
             maxLength={400}
             required
           />
         </div>
         <div className="mb-7 max-[991px]:mb-5">
-          <FieldLabel htmlFor="contact-phone">Mobile phone</FieldLabel>
+          <FieldLabel htmlFor="contact-phone">{contactFormCopy.labels.phone}</FieldLabel>
           <div className="flex h-[49px] w-full items-center rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] focus-within:outline-3 focus-within:outline-offset-2 focus-within:outline-[#090909]">
             <span className="mr-2.5 flex shrink-0 items-center gap-1.5 border-r border-soft-line pr-2.5 text-sm" aria-label="India country code +91">
               <span aria-hidden="true">🇮🇳</span>
@@ -102,30 +103,30 @@ export function ContactForm() {
               type="tel"
               autoComplete="tel"
               inputMode="tel"
-              placeholder="81234 56789"
+              placeholder={contactFormCopy.placeholders.phone}
               maxLength={400}
             />
           </div>
         </div>
         <div className="mb-7 max-[991px]:mb-5">
-          <FieldLabel htmlFor="contact-company">Company name</FieldLabel>
+          <FieldLabel htmlFor="contact-company">{contactFormCopy.labels.company}</FieldLabel>
           <input
             className="h-[49px] w-full rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-0"
             id="contact-company"
             name="company"
             type="text"
             autoComplete="organization"
-            placeholder="Enter Your Company name"
+            placeholder={contactFormCopy.placeholders.company}
             maxLength={400}
           />
         </div>
         <div className="col-span-2 mb-7 max-[991px]:mb-5 max-[767px]:col-span-1">
-          <FieldLabel htmlFor="contact-project">Brief about the project</FieldLabel>
+          <FieldLabel htmlFor="contact-project">{contactFormCopy.labels.project}</FieldLabel>
           <textarea
             className="h-[136px] w-full resize-none rounded-[5px] border-[1.5px] border-soft-line px-4 py-3 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-0"
             id="contact-project"
             name="project"
-            placeholder="Share your questions or comments here"
+            placeholder={contactFormCopy.placeholders.project}
             maxLength={2000}
           />
         </div>
@@ -145,7 +146,7 @@ export function ContactForm() {
         disabled={isPending}
       >
         <span className="absolute inset-0 bg-brand-red transition-transform duration-600 group-hover/contact-submit:translate-x-full" aria-hidden="true" />
-        <span className="relative">{isPending ? "sending inquiry" : "submit inquiry"}</span>
+        <span className="relative">{isPending ? contactFormCopy.sending : contactFormCopy.submit}</span>
       </button>
     </form>
   );

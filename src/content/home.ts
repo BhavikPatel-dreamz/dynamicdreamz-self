@@ -16,6 +16,48 @@ export const organizationAnswerSummary =
 export const aiDeliveryStatement =
   "To accelerate delivery without compromising quality, our teams use modern AI-powered tools such as Cursor, ChatGPT, Claude, Lovable, Bolt, and n8n, alongside proven development processes.";
 
+export const homeSectionCopy = {
+  established: "ESTABLISHED IN 2006",
+  partnerBadge: "Shopify Platinum Partner",
+  heroTitle: "Shopify Plus & Enterprise Shopify Solutions",
+  brandPartnersHeading: "Partnering with Ambitious Brands",
+  brandPartnersDescription:
+    "Selected brands our teams have supported across Shopify, Shopify Plus and digital commerce.",
+  agencyOverviewTitle: "Globally Trusted Web & App Development Agency",
+  agencyOverviewDescription:
+    "With sharp custom design, smooth development, and long-term support, build a brand that scales worldwide.",
+  commerceSolutionsTitle: "Commerce & technology solutions.",
+  commerceSolutionsDescription:
+    "From Shopify Plus and ecommerce development to mobile apps, full-stack solutions, WordPress and WooCommerce, our teams support established brands and digital agencies through one experienced delivery partner.",
+  expertiseTitle: "Our Expertise",
+  expertiseDescription:
+    "From strategy and design to development and long-term support, we help brands build, scale, and maintain high-performing digital products. Our expertise spans Shopify development, custom websites, and mobile applications, with a strong focus on performance, usability, and business growth.",
+  testimonialsTitle: "Brands That Have Grown With Us",
+  testimonialsDescription:
+    "Hear from founders, ecommerce teams and agency partners who rely on Dynamic Dreamz for Shopify builds, migrations, mobile apps, ongoing development and long-term technical support.",
+  integrationsTitle: "Our Partners",
+  integrationsDescription:
+    "Our teams work across the Shopify ecosystem to implement subscriptions, reviews, retention, customer support, search, B2B, payments and operational integrations.",
+  selectedWorkTitle: "Selected Shopify Plus & Enterprise Ecommerce Work",
+  selectedWorkDescription:
+    "Explore Shopify and Shopify Plus projects across beauty, fashion, B2B, wholesale, international commerce and large-catalogue ecommerce.",
+  insightsTitle: "Our Latest Blogs",
+  homeFaqTitle: "What Brands and Agencies Usually Want to Know",
+  homeFaqDescription:
+    "Clear answers about our Shopify, Shopify Plus, mobile app, white-label and wider technology services.",
+  whiteLabelPartnerEyebrow: "For Agencies",
+  whiteLabelPartnerTitle: "Your White Label Shopify Partner",
+  whiteLabelPartnerDescription:
+    "Digital agencies partner with Dynamic Dreamz as an extension of their team for Shopify, Shopify Plus and full-stack delivery. We support Figma-to-Shopify development, migrations, integrations, maintenance and dedicated development teams under NDA, while your agency retains the client relationship.",
+  whiteLabelPartnerBullets: ["NDA Based", "No Direct Client Solicitation", "Dedicated Teams"],
+  ctaViewWork: "View our work",
+  discoveryCta: "book a discovery call",
+  shopifyWorkCta: "VIEW OUR SHOPIFY WORK",
+  viewAllBlogsCta: "View all blogs",
+  agencyPartnershipCta: "Explore Agency Partnership",
+  portfolioEyebrow: "Portfolio",
+} as const;
+
 export type ShopifyPlusAgencyCounter = {
   value: string;
   label: string;

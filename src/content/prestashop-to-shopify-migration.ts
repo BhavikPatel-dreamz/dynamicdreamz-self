@@ -5,6 +5,8 @@ import type { MigrationProcessContent } from "@/components/sections/migration-pr
 import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
 import type { TwoColCenterImageContent } from "@/components/sections/two-col-center-image-section";
 
+export { migrationSectionCopy as prestashopMigrationSectionCopy } from "@/content/migration-common";
+
 export const prestashopHeroContent: ServiceHeroContent = {
   title: "PrestaShop to Shopify Migration",
   description:

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import { Container } from "@/components/ui/container";
+import { siteChromeCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
 
 export function HeaderThree() {
@@ -39,7 +41,7 @@ export function HeaderThree() {
                 </span>
                 <span className="text">
                   <span className="mb-2 block text-base font-medium leading-[25px] text-[#535353]">
-                    Call us on Skype
+              {siteChromeCopy.contactHeader.skypeLabel}
                   </span>
                   <a
                     className="block text-base font-bold leading-[25px] text-ink transition-colors hover:text-brand-red"
@@ -47,7 +49,7 @@ export function HeaderThree() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    dynamicdreamz
+              {siteChromeCopy.contactHeader.skypeUsername}
                   </a>
                 </span>
               </li>
@@ -64,7 +66,7 @@ export function HeaderThree() {
                 </span>
                 <span className="text">
                   <span className="mb-2 block text-base font-medium leading-[25px] text-[#535353]">
-                    Email us
+              {siteChromeCopy.contactHeader.emailLabel}
                   </span>
                   <a
                     className="block text-base font-bold leading-[25px] text-ink transition-colors hover:text-brand-red"

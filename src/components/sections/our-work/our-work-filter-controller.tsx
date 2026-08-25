@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import type { WorkFilter, WorkPlatform } from "@/content/our-work";
+import { ourWorkPage, type WorkFilter, type WorkPlatform } from "@/content/our-work";
 
 type OurWorkFilterControllerProps = {
   filters: readonly WorkFilter[];
@@ -74,7 +74,7 @@ export function OurWorkFilterController({ filters, counts }: OurWorkFilterContro
         </div>
       </div>
       <p className="sr-only" aria-live="polite">
-        Showing {counts[activeFilter]} {counts[activeFilter] === 1 ? "project" : "projects"}.
+        {ourWorkPage.ui.showing} {counts[activeFilter]} {counts[activeFilter] === 1 ? ourWorkPage.ui.project : ourWorkPage.ui.projects}.
       </p>
     </div>
   );

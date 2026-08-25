@@ -55,6 +55,13 @@ export type ShopifyThemeCustomizationWorkItem = {
 };
 
 export const shopifyThemeCustomizationContent = {
+  sectionCopy: {
+    portfolioEyebrow: "Portfolio",
+    testimonialsHeading: "Don't Just Take Our Word For It",
+    testimonialsDescription:
+      "Our clients' success speaks for itself. Read testimonials from satisfied clients who have benefited from our Shopify maintenance services and see how we can help you achieve similar results.",
+    ctaLabel: "request a quote",
+  },
   hero: {
     title: "Shopify Theme <br> Customization Services",
     description:

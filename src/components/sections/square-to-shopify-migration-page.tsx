@@ -10,6 +10,7 @@ import {
   squareHeroContent,
   squareProcessContent,
   squareWhyMigrate,
+  squareMigrationSectionCopy,
 } from "@/content/square-to-shopify-migration";
 
 export function SquareToShopifyMigrationPage() {
@@ -23,9 +24,8 @@ export function SquareToShopifyMigrationPage() {
       <IndustryBrandsSection
         content={{
           slug: "square-to-shopify-migration",
-          ariaLabel: "Brands that trust Dynamic Dreamz for Square to Shopify migration",
         }}
-        heading="Trusted by Leading Brands"
+        heading={squareMigrationSectionCopy.brandsHeading}
         items={squareBrandLogos}
       />
       <TextBoxSection
@@ -38,8 +38,8 @@ export function SquareToShopifyMigrationPage() {
         id="migration-process"
       />
       <HappyClientSection
-        description="We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories: Check out how our services empower them to evolve."
-        heading="Our Customers' Testimonials"
+        description={squareMigrationSectionCopy.testimonialsDescription}
+        heading={squareMigrationSectionCopy.testimonialsHeading}
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"

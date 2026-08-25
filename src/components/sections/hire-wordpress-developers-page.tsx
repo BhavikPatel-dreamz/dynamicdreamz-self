@@ -18,7 +18,6 @@ import {
 const brandSection = {
   slug: "hire-wordpress-developers",
   brands: {
-    ariaLabel: "Brands that trust Dynamic Dreamz for web development",
   },
 } as const;
 

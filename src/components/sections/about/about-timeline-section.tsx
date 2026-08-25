@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "@/components/sections/about/about-timeline-section.module.css";
 import { Container } from "@/components/ui/container";
 import { HorizontalDragScroll } from "@/components/ui/horizontal-drag-scroll";
-import { milestones } from "@/content/about";
+import { aboutSectionCopy, milestones } from "@/content/about";
 
 export function AboutTimelineSection() {
   return (
@@ -12,12 +12,12 @@ export function AboutTimelineSection() {
         <div className="-mx-[15px] mb-[60px] flex items-center max-[991px]:mx-0 max-[991px]:mb-0 max-[991px]:block max-[991px]:text-center">
           <div className="w-1/2 px-[15px] max-[991px]:mb-[10px] max-[991px]:w-full max-[991px]:p-0">
             <h2 id="about-timeline-title" className="text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
-              How we started
+              {aboutSectionCopy.timelineTitle}
             </h2>
           </div>
           <div className="w-1/2 px-[15px] max-[991px]:w-full max-[991px]:p-0">
             <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
-              We Create Robust Strategic Plans That Always Begin with Getting to know you and What you’re trying to achieve
+              {aboutSectionCopy.timelineDescription}
             </p>
           </div>
         </div>

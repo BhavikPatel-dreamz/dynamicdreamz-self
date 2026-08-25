@@ -2,6 +2,10 @@ import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const dentalClinicWebsiteDevelopmentCompanyContent = {
+  sectionCopy: {
+    faqHeading: "FAQs",
+    portfolioCta: "View our work",
+  },
   hero: {
     title: "Dental Clinic Website Development Company",
     description:

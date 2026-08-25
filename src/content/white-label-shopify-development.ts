@@ -9,6 +9,24 @@ import type {
   WhiteLabelTool,
 } from "@/types/white-label-service";
 
+export const whiteLabelShopifySectionCopy = {
+  toolsAriaLabel: "Shopify technologies and tools",
+  pricingTitle: "Flexible White Label Shopify Development Plans",
+  pricingDescription:
+    "We offer scalable hiring models with no retainers and minimum hours — providing you the flexibility to select the best fit for your agency's requirements.",
+  pricingCtaLabel: "LET'S DISCUSS YOUR PROJECT!",
+  processTitle: "How Our White Label Shopify Partnership Works",
+  processNote:
+    "We maintain strict confidentiality, guaranteeing that all work stays under your brand.",
+  whyTitle: "Why Partner with Dynamic Dreamz for White Label Shopify Development?",
+  servicesTitle: "Comprehensive White Label Shopify Development Services",
+  toolsTitle: "Shopify Technologies & Tools We Work With",
+  toolsDescription: "At Dynamic Dreamz, we are skilled in:",
+  faqTitle: "Frequently Asked Questions",
+  engagementModelLabel: "ENGAGEMENT MODEL",
+  bestForLabel: "BEST FOR",
+} as const;
+
 export const whiteLabelShopifyHero = {
   title: "White Label Shopify Development for Digital Agencies",
   lead: "Your Shopify Technology Partner. An Extension of Your Team.",

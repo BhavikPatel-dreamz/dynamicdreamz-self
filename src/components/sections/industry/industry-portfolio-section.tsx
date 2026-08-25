@@ -1,6 +1,7 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { PortfolioProjectCard } from "@/components/ui/portfolio-project-card";
+import { sharedUiCopy } from "@/content/common";
 import type { IndustryPageContent } from "@/types/industry";
 
 type IndustryPortfolioSectionProps = {
@@ -58,7 +59,7 @@ export function IndustryPortfolioSection({ content }: IndustryPortfolioSectionPr
             href="/our-work"
             variant="primary"
           >
-            View our work
+            {sharedUiCopy.viewOurWork}
           </ButtonLink>
         </div>
       </Container>

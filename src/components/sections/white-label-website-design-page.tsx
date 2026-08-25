@@ -24,6 +24,7 @@ import {
   whiteLabelWebsiteDesignReasons,
   whiteLabelWebsiteDesignServices,
   whiteLabelWebsiteDesignStats,
+  whiteLabelWebsiteDesignSectionCopy,
 } from "@/content/white-label-website-design";
 
 export function WhiteLabelWebsiteDesignPage() {
@@ -37,10 +38,10 @@ export function WhiteLabelWebsiteDesignPage() {
           <div className="flex items-center justify-between gap-[60px] max-[991px]:flex-col max-[991px]:items-stretch max-[991px]:gap-5">
             <div className="w-[47%] max-[991px]:w-full">
               <h2 className="mb-[15px] font-sans text-[35px] leading-[1.38] font-bold text-ink max-[991px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35] tracking-[-.7px]">
-                Why Choose White Label Website Design?
+                {whiteLabelWebsiteDesignSectionCopy.whyChooseTitle}
               </h2>
               <p className="text-base leading-[1.9] font-medium text-muted">
-                White label website design entrusts agencies with expanding their services, delivering high quality websites, and saving costs while maintaining their brand identity. It’s the perfect solution for scaling your business without adding complexity.
+                {whiteLabelWebsiteDesignSectionCopy.whyChooseDescription}
               </p>
             </div>
             <div className="w-[47%] max-[991px]:w-full">
@@ -57,11 +58,11 @@ export function WhiteLabelWebsiteDesignPage() {
       <WhiteLabelDesignFeaturesSection />
       <WhiteLabelDesignAdvantagesSection />
       <WhiteLabelServicesSection
-        description="We provide a wide selection of white label website design services customized based on your client's requirements."
+        description={whiteLabelWebsiteDesignSectionCopy.servicesDescription}
         idPrefix="white-label-website-design-service"
         services={whiteLabelWebsiteDesignServices}
         showCta={false}
-        title="Our White Label Web Design Services"
+        title={whiteLabelWebsiteDesignSectionCopy.servicesTitle}
       />
       <WhiteLabelDesignPartnerAndIndustriesSections />
       <WhiteLabelDesignTestimonialsSection />

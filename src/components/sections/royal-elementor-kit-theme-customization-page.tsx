@@ -11,7 +11,6 @@ import { royalElementorKitThemeCustomizationContent } from "@/content/royal-elem
 export function RoyalElementorKitThemeCustomizationPage() {
   const brandsContent = {
     heading: royalElementorKitThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Royal Elementor Kit theme customization",
     slug: "royal-elementor-kit-theme-customization",
   };
 
@@ -53,8 +52,6 @@ export function RoyalElementorKitThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

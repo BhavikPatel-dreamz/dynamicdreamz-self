@@ -1,7 +1,12 @@
 import { Container } from "@/components/ui/container";
 import { FaqAccordion } from "@/components/ui/faq-accordion";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import { sharedUiCopy } from "@/content/common";
 import { formatBrText } from "@/lib/text-formatting";
+
+export const defaultFaqSectionCopy = {
+  heading: sharedUiCopy.faq.heading,
+} as const;
 
 export type FaqSectionProps = {
   items: readonly FaqAccordionItem[];
@@ -27,7 +32,7 @@ export type FaqSectionProps = {
 export function FaqSection({
   items,
   idPrefix,
-  heading = "Frequently Asked Questions",
+  heading = defaultFaqSectionCopy.heading,
   description,
   className = "faq-sec pb-20 max-[991px]:pb-12.5",
   headerClassName = "mb-[64px] text-center max-[1199px]:mb-[30px]",

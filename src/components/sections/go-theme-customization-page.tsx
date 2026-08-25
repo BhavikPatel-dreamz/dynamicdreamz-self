@@ -11,7 +11,6 @@ import { goThemeCustomizationContent } from "@/content/go-theme-customization";
 export function GoThemeCustomizationPage() {
   const brandsContent = {
     heading: goThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Go theme customization",
     slug: "go-theme-customization",
   };
 
@@ -53,8 +52,6 @@ export function GoThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

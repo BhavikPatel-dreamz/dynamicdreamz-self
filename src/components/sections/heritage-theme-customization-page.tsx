@@ -11,7 +11,6 @@ import { heritageThemeCustomizationContent } from "@/content/heritage-theme-cust
 export function HeritageThemeCustomizationPage() {
   const brandsContent = {
     heading: heritageThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Heritage theme customization",
     slug: "heritage-theme-customization",
   };
 
@@ -48,8 +47,6 @@ export function HeritageThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

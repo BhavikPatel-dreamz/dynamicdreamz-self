@@ -92,8 +92,8 @@ export function WordPressAdvantagesSection() {
         </div>
 
         <div className="mt-[46px] text-center max-[767px]:mt-[35px]">
-          <ButtonLink href="/request-quote" variant="primary">
-            inquire now
+          <ButtonLink href={hireWordPressAdvantages.ctaHref} variant="primary">
+            {hireWordPressAdvantages.ctaLabel}
           </ButtonLink>
         </div>
       </Container>

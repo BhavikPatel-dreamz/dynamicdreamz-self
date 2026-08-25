@@ -8,6 +8,47 @@ import type {
   WhiteLabelStat,
 } from "@/types/white-label-service";
 
+export const whiteLabelWebsiteDesignSectionCopy = {
+  whyChooseTitle: "Why Choose White Label Website Design?",
+  whyChooseDescription:
+    "White label website design entrusts agencies with expanding their services, delivering high quality websites, and saving costs while maintaining their brand identity. It’s the perfect solution for scaling your business without adding complexity.",
+  aiEnginesTitle: "Websites Built for Today's Visitors and Tomorrow's AI Engines",
+  aiEnginesDescription:
+    "Great design is only half the job. We help your clients' websites perform better through AI-powered tools, smarter automation, and the technical foundations that AI search engines need to discover and recommend them.",
+  aiDiscoveryTitle: "Designed to be found by AI, not just Google",
+  aiDiscoveryDescription:
+    "Search is shifting. ChatGPT, Gemini, and Perplexity are now recommending businesses directly to users. We make sure the websites we build are readable, citable, and trusted by these AI engines from day one.",
+  aiDiscoveryCta: "Learn how we do it",
+  aiDiscoveryClosing:
+    "Add AI-enhanced design to your agency's offering We handle the build and the tech. You keep the client relationship.",
+  aiDiscoveryClosingCta: "Talk to an expert",
+  processTitle: "Our White Label Web Development Process",
+  processDescription:
+    "We use a structured process to ensure that every white label website development project is delivered on time and fulfills your client's expectations.",
+  featuresTitle: "Features of White Label Web Design Services",
+  featuresDescription:
+    "Our White label web design services offer several features that make it an attractive option for agencies looking to expand their offerings.",
+  partnerTitle: "Choosing the Right White Label Web Design Partner",
+  partnerDescription:
+    "Choosing the right white label website design partner is crucial for your company's success and growth. When you find a white label website design partner, consider a strong portfolio, proven track record, and effective communication. The perfect partner can offer quality work and help you grow and maintain long term client relationships.",
+  industriesTitle: "Industries We have Served",
+  industriesDescription:
+    "We offer white label web design services across various industries, guaranteeing we satisfy each client's unique requirements.",
+  testimonialsTitle: "Case Studies & Success Stories",
+  testimonialsDescription:
+    "Many companies have used our white label website design services to help their clients get high quality website designs. We take pride in our portfolio, which consists of successful website design projects that show that we can fulfill deadlines and satisfy clients' requirements. Check our case studies to learn how we have helped agencies grow their business by delivering excellent web design services with our white label services.",
+  servicesTitle: "Our White Label Web Design Services",
+  servicesDescription:
+    "We provide a wide selection of white label website design services customized based on your client's requirements.",
+  benefitsTitle: "Benefits of White Label Website Design Services",
+  benefitsDescription:
+    "White label web design services provide many advantages for agencies aiming to grow. It allows businesses to grow without worrying about managing every technical aspect.",
+  advantagesTitle: "Advantages of White Label",
+  advantagesTitleSecondLine: "Web Design for Agenciess",
+  advantagesDescription:
+    "Working with a white label partner allows agencies to offer a full suite of web design services without the hassle of handling development in house.",
+} as const;
+
 export const whiteLabelWebsiteDesignHero = {
   title: "White Label Website Design",
   titleLines: ["White Label", "Website Design"],

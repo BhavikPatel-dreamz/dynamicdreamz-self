@@ -1,6 +1,7 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { whiteLabelShopifyPlans } from "@/content/white-label-shopify-development";
+import { whiteLabelShopifySectionCopy } from "@/content/white-label-shopify-development";
 import { siteConfig } from "@/data/site";
 import type { WhiteLabelPlan } from "@/types/white-label-service";
 
@@ -12,10 +13,10 @@ type WhiteLabelPricingSectionProps = {
 };
 
 export function WhiteLabelPricingSection({
-  title = "Flexible White Label Shopify Development Plans",
-  description = "We offer scalable hiring models with no retainers and minimum hours — providing you the flexibility to select the best fit for your agency's requirements.",
+  title = whiteLabelShopifySectionCopy.pricingTitle,
+  description = whiteLabelShopifySectionCopy.pricingDescription,
   plans = whiteLabelShopifyPlans,
-  ctaLabel = "LET'S DISCUSS YOUR PROJECT!",
+  ctaLabel = whiteLabelShopifySectionCopy.pricingCtaLabel,
 }: WhiteLabelPricingSectionProps) {
   return (
     <section className="py-20 max-[991px]:py-[50px]">
@@ -33,7 +34,7 @@ export function WhiteLabelPricingSection({
           {plans.map((plan) => (
             <article className="flex-1 rounded-[20px] bg-cream p-[32px_24px] max-[1199px]:p-[25px_20px] max-[991px]:p-5 max-[991px]:px-[15px] max-[767px]:w-full max-[767px]:flex-none" key={plan.name}>
               <p className="mb-4 text-base leading-4 font-bold text-ink max-[991px]:text-[15px] max-[991px]:leading-[15px]">
-                ENGAGEMENT MODEL
+                {whiteLabelShopifySectionCopy.engagementModelLabel}
               </p>
               <p className="mb-[30px] inline-block rounded-[50px] bg-brand-red/5 px-[15px] py-1 text-base leading-4 font-semibold text-brand-red max-[1199px]:mb-[25px] max-[1199px]:px-2.5 max-[991px]:mb-5 max-[991px]:text-[15px] max-[991px]:leading-[15px] max-[767px]:mb-[15px]">
                 {plan.name}
@@ -42,7 +43,7 @@ export function WhiteLabelPricingSection({
                 {plan.price}
               </p>
               <p className="mb-5 text-sm leading-[18.48px] font-bold tracking-[0.28px] text-ink max-[1199px]:mb-[15px]">
-                BEST FOR
+                {whiteLabelShopifySectionCopy.bestForLabel}
               </p>
               <p className="text-base leading-6 font-medium text-muted max-[1199px]:text-[15px] max-[1199px]:leading-[22px] max-[991px]:text-sm max-[991px]:leading-5">
                 {plan.bestFor}

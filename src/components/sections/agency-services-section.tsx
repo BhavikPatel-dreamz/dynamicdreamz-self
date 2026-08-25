@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { sharedUiCopy } from "@/content/common";
 import { shopifyPlusAgencyServices } from "@/content/shopify-plus-agency";
 import { cn } from "@/lib/class-names";
 
@@ -129,7 +130,7 @@ export function AgencyServicesSection({
 
                   {hasLink && (
                     <div className="services-read-more absolute bottom-5 left-[35px] right-[40px] flex items-center border-t-[1.5px] border-[#d9d9d9] pt-5 text-base font-semibold text-[#e3342f] transition-colors max-[1199px]:bottom-[15px] max-[1199px]:left-5 max-[1199px]:right-5 max-[1199px]:pt-3.5 max-[1199px]:text-[15px] max-[767px]:bottom-2.5 max-[767px]:justify-center max-[767px]:pt-2.5">
-                      <span>Read More</span>
+                      <span>{sharedUiCopy.readMore}</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"

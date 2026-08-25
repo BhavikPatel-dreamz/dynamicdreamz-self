@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+import { sharedUiCopy } from "@/content/common";
 import { cn } from "@/lib/class-names";
 import type { WhiteLabelService } from "@/types/white-label-service";
 
@@ -91,7 +92,7 @@ export function WhiteLabelServiceAccordion({
                           className="mt-[15px] flex w-fit items-center gap-2.5 font-semibold text-white transition-colors hover:text-brand-red"
                           href={service.href}
                         >
-                          {service.linkLabel ?? "Read More"}
+                          {service.linkLabel ?? sharedUiCopy.readMore}
                           <span aria-hidden="true">←</span>
                         </Link>
                       ) : null}

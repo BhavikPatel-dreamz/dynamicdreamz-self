@@ -11,7 +11,6 @@ import { fabricThemeCustomizationContent } from "@/content/fabric-theme-customiz
 export function FabricThemeCustomizationPage() {
   const brandsContent = {
     heading: fabricThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Fabric theme customization",
     slug: "fabric-theme-customization",
   };
 
@@ -48,8 +47,6 @@ export function FabricThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

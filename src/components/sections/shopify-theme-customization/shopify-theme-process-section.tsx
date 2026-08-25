@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
+import { sharedUiCopy } from "@/content/common";
 
 export type ThemeCustomizationProcessStep = {
   number?: string;
@@ -128,7 +129,7 @@ export function ShopifyThemeProcessSection({ content }: ShopifyThemeProcessSecti
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-bold text-[#D92128]">
-                    STEP {step.number ?? `0${index + 1}`}
+                    {sharedUiCopy.stepUpper} {step.number ?? `0${index + 1}`}
                   </span>
                 </div>
                 <h3 className="font-sans text-base font-bold leading-6 text-ink">

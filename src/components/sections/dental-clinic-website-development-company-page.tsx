@@ -11,7 +11,6 @@ import { dentalClinicWebsiteDevelopmentCompanyContent } from "@/content/dental-c
 export function DentalClinicWebsiteDevelopmentCompanyPage() {
   const brandsContent = {
     heading: dentalClinicWebsiteDevelopmentCompanyContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for dental clinic website development",
     slug: "dental-clinic-website-development",
   };
 
@@ -62,8 +61,7 @@ export function DentalClinicWebsiteDevelopmentCompanyPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
+        ctaLabel={dentalClinicWebsiteDevelopmentCompanyContent.sectionCopy.portfolioCta}
       />
       <HappyClientSection
         className="happy-client-sec pt-0 pb-20 overflow-hidden max-[991px]:pb-[50px]"
@@ -73,7 +71,7 @@ export function DentalClinicWebsiteDevelopmentCompanyPage() {
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"
-        heading="FAQs"
+        heading={dentalClinicWebsiteDevelopmentCompanyContent.sectionCopy.faqHeading}
         idPrefix="dental-clinic-faq"
         items={dentalClinicWebsiteDevelopmentCompanyContent.faqs}
       />

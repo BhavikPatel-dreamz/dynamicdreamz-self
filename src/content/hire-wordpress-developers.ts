@@ -88,6 +88,8 @@ export const hireWordPressReasons = {
 
 export const hireWordPressAdvantages = {
   heading: "The Dynamic Dreamz Advantage",
+  ctaLabel: "inquire now",
+  ctaHref: "/request-quote",
   items: [
     {
       title: "Easy and fair hiring process with no hidden cost",

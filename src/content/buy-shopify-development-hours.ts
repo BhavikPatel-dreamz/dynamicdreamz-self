@@ -11,6 +11,20 @@ export type ShopifyHoursPackage = {
   purchaseHref: string;
 };
 
+export const shopifyHoursSectionCopy = {
+  brandsHeading: "Brands That Trust Us",
+  pricing: {
+    hours: "Hours",
+    bulkHours: "Bulk hours",
+    rate: "Rate",
+    cost: "Cost",
+    perHour: "/hour",
+    packageLabel: "Select a Shopify development hours package",
+    hoursSuffix: "HRS",
+    purchasePrefix: "Buy Shopify Hours - $",
+  },
+} as const;
+
 export const shopifyHoursPackages = [
   {
     hours: 10,

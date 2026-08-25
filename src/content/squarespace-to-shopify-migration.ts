@@ -5,6 +5,8 @@ import type { ProofSectionContent } from "@/components/sections/hire-shopify-dev
 import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
 import type { TwoColCenterImageContent } from "@/components/sections/two-col-center-image-section";
 
+export { migrationSectionCopy as squarespaceMigrationSectionCopy } from "@/content/migration-common";
+
 export const squarespaceHeroContent: ServiceHeroContent = {
   title: "Squarespace to Shopify Migration",
   description:

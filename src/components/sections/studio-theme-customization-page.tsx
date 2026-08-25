@@ -11,7 +11,6 @@ import { studioThemeCustomizationContent } from "@/content/studio-theme-customiz
 export function StudioThemeCustomizationPage() {
   const brandsContent = {
     heading: studioThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Studio theme customization",
     slug: "studio-theme-customization",
   };
 
@@ -48,8 +47,6 @@ export function StudioThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

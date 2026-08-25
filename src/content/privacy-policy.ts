@@ -12,6 +12,11 @@ export type PrivacyPolicySection = {
 
 export const privacyPolicyContent = {
   heroTitle: "Privacy and Cookies Policy",
+  contactLabels: {
+    email: "Email:",
+    phone: "Phone:",
+    address: "Address:",
+  },
   sections: [
     {
       title: "Introduction",

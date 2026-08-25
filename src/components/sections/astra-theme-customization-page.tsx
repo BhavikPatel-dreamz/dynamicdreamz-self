@@ -11,7 +11,6 @@ import { astraThemeCustomizationContent } from "@/content/astra-theme-customizat
 export function AstraThemeCustomizationPage() {
   const brandsContent = {
     heading: astraThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Astra theme customization",
     slug: "astra-theme-customization",
   };
 
@@ -53,8 +52,6 @@ export function AstraThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

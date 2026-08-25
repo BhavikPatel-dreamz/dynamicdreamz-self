@@ -3,6 +3,7 @@ import Image from "next/image";
 import { CaseStudySectionHeading } from "@/components/sections/case-study-details/case-study-section-heading";
 import { Container } from "@/components/ui/container";
 import { RichText } from "@/components/ui/rich-text";
+import { caseStudiesUiCopy } from "@/content/case-studies-ui";
 import type {
   CaseStudyColor,
   CaseStudyDesignShowcase,
@@ -62,7 +63,7 @@ export function CaseStudyShowcases({
         <section aria-labelledby="case-study-colors" className="py-20 max-[991px]:py-[60px]">
           <Container>
             <CaseStudySectionHeading id="case-study-colors" className="mb-[50px] max-[991px]:mb-10">
-              Colors
+              {caseStudiesUiCopy.colors}
             </CaseStudySectionHeading>
             <ul className="-mx-2.5 flex flex-wrap">
               {colors.map((color) => (
@@ -92,7 +93,7 @@ export function CaseStudyShowcases({
         <section aria-labelledby="case-study-typefaces" className="pb-20 max-[991px]:pb-[60px]">
           <Container>
             <CaseStudySectionHeading id="case-study-typefaces" className="mb-10">
-              Typeface
+              {caseStudiesUiCopy.typeface}
             </CaseStudySectionHeading>
             <div className="flex max-w-[890px] flex-wrap justify-between max-[991px]:-mx-2.5 max-[767px]:mx-0">
               {typefaces.map((typeface, index) => (

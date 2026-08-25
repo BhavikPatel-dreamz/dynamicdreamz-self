@@ -11,7 +11,6 @@ import { impulseThemeCustomizationContent } from "@/content/impulse-theme-custom
 export function ImpulseThemeCustomizationPage() {
   const brandsContent = {
     heading: impulseThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Impulse theme customization",
     slug: "impulse-theme-customization",
   };
 
@@ -66,10 +65,8 @@ export function ImpulseThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
         descriptionBreakClassName="hidden"
-        eyebrow="Portfolio"
+        eyebrow={impulseThemeCustomizationContent.portfolioEyebrow}
         eyebrowClassName="min-[992px]:hidden"
         headerLayout="split"
         itemsClassName="mb-20 max-[991px]:mb-[30px]"

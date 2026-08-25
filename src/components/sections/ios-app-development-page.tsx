@@ -5,6 +5,7 @@ import { IndustryBrandsSection } from "@/components/sections/industry/industry-b
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
+import { sharedUiCopy } from "@/content/common";
 import {
   iosAppDevelopmentBrands,
   iosAppDevelopmentCtaBanner,
@@ -25,7 +26,6 @@ export function IosAppDevelopmentPage() {
       <IndustryBrandsSection
         content={{
           slug: "ios-app-development",
-          ariaLabel: "Trusted Brands",
         }}
         items={iosAppDevelopmentBrands}
       />
@@ -34,8 +34,7 @@ export function IosAppDevelopmentPage() {
         className="our-work-sec pt-20 pb-20 max-[991px]:pt-10"
         columns={4}
         content={iosAppDevelopmentPortfolio}
-        ctaHref="/our-work"
-        ctaLabel="VIEW OUR WORK"
+        ctaLabel={sharedUiCopy.viewOurWorkUpper}
         imageAspectClassName="pb-[154.5%] max-[767px]:pb-[115%]"
       />
       <HappyClientSection

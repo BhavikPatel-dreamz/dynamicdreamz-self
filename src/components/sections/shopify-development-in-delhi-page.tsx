@@ -14,7 +14,6 @@ import { shopifyDevelopmentDelhiContent } from "@/content/shopify-development-in
 export function ShopifyDevelopmentInDelhiPage() {
   const brandsContent = {
     heading: shopifyDevelopmentDelhiContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Shopify development in Delhi",
     slug: "shopify-development-in-delhi",
   };
 
@@ -66,8 +65,7 @@ export function ShopifyDevelopmentInDelhiPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
+        ctaLabel={shopifyDevelopmentDelhiContent.sectionCopy.portfolioCta}
       />
       <HappyClientSection
         className="happy-client-sec pt-0 pb-20 overflow-hidden max-[991px]:pb-[50px]"
@@ -77,7 +75,7 @@ export function ShopifyDevelopmentInDelhiPage() {
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"
-        heading="Frequently Asked Questions"
+        heading={shopifyDevelopmentDelhiContent.sectionCopy.faqHeading}
         idPrefix="delhi-faq"
         items={shopifyDevelopmentDelhiContent.faqs}
       />

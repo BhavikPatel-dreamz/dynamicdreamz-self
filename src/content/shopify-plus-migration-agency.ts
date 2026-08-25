@@ -3,6 +3,8 @@ import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
 import type { MigrationServiceCard } from "@/components/sections/shopify-migration/shopify-migration-services-section";
 import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
+
+export { migrationSectionCopy as plusAgencyMigrationSectionCopy } from "@/content/migration-common";
 import type { ShopifyAppBenefitItem } from "@/components/sections/shopify-mobile-app/shopify-app-benefits-section";
 
 export const plusAgencyHeroContent: ServiceHeroContent = {

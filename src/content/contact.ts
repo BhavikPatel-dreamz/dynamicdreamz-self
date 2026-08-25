@@ -1,4 +1,6 @@
 export const contactPageContent = {
+  officesTitle: "Our Offices",
+  directionsLabel: "Get directions",
   hero: {
     title: "Connect with us",
     prompt: "What’s on your mind?",

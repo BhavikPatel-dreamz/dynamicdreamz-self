@@ -11,7 +11,6 @@ import { ritualThemeCustomizationContent } from "@/content/ritual-theme-customiz
 export function RitualThemeCustomizationPage() {
   const brandsContent = {
     heading: ritualThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Ritual theme customization",
     slug: "ritual-theme-customization",
   };
 
@@ -48,8 +47,6 @@ export function RitualThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

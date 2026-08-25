@@ -10,7 +10,6 @@ import { shopifyMaintenanceServicesContent } from "@/content/shopify-maintenance
 export function ShopifyMaintenanceServicesPage() {
   const brandsContent = {
     heading: shopifyMaintenanceServicesContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Shopify maintenance services",
     slug: "shopify-maintenance-services",
   };
 
@@ -47,8 +46,7 @@ export function ShopifyMaintenanceServicesPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
+        ctaLabel={shopifyMaintenanceServicesContent.sectionCopy.portfolioCta}
       />
       <HappyClientSection
         className="happy-client-sec pt-0 pb-20 overflow-hidden max-[991px]:pb-[50px]"
@@ -58,7 +56,7 @@ export function ShopifyMaintenanceServicesPage() {
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"
-        heading="Frequently Asked Questions"
+        heading={shopifyMaintenanceServicesContent.sectionCopy.faqHeading}
         idPrefix="shopify-maintenance-faq"
         items={shopifyMaintenanceServicesContent.faqs}
       />

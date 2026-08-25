@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button-link";
 import {
   careerApplicationPath,
+  careerSectionCopy,
   type CareerJob,
   type CareerLocation,
 } from "@/content/career";
@@ -12,12 +13,6 @@ type CareerJobCardProps = {
   job: CareerJob;
   location: CareerLocation;
 };
-
-const jobDetails = [
-  { label: "Work Experience", key: "experience" },
-  { label: "Job Type", key: "jobType" },
-  { label: "Posted On", key: "postedOn" },
-] as const;
 
 export function CareerJobCard({ job, location }: CareerJobCardProps) {
   return (
@@ -36,7 +31,7 @@ export function CareerJobCard({ job, location }: CareerJobCardProps) {
 
       <div className="absolute top-[-14px] left-[35px] rounded-[30px] bg-linear-to-r from-[#15c064] to-[#00d1ff] max-[1199px]:left-5">
         <span className="m-px inline-block rounded-[50px] bg-white px-[15px] py-1 text-base leading-[19px] font-medium text-[#090909] max-[991px]:py-1 max-[991px]:leading-[30.4px] max-[767px]:py-0 max-[767px]:text-sm">
-          {job.positions} {job.positions === 1 ? "Position" : "Positions"}
+          {job.positions} {job.positions === 1 ? careerSectionCopy.position : careerSectionCopy.positions}
         </span>
       </div>
 
@@ -61,7 +56,7 @@ export function CareerJobCard({ job, location }: CareerJobCardProps) {
 
       <div className="flex w-[68%] items-center justify-end max-[991px]:w-full max-[991px]:flex-col max-[991px]:items-start max-[991px]:justify-start">
         <div className="flex items-center max-[991px]:w-full max-[991px]:flex-col max-[991px]:items-start">
-          {jobDetails.map((detail, index) => (
+          {careerSectionCopy.jobDetails.map((detail, index) => (
             <div
               className={cn(
                 "max-[991px]:w-full max-[991px]:py-5",
@@ -86,7 +81,7 @@ export function CareerJobCard({ job, location }: CareerJobCardProps) {
             href={careerApplicationPath(job, location)}
             variant="primary"
           >
-            Apply now
+            {careerSectionCopy.applyNow}
           </ButtonLink>
         </div>
       </div>

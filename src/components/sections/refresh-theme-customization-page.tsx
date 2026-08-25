@@ -11,7 +11,6 @@ import { refreshThemeCustomizationContent } from "@/content/refresh-theme-custom
 export function RefreshThemeCustomizationPage() {
   const brandsContent = {
     heading: refreshThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Refresh theme customization",
     slug: "refresh-theme-customization",
   };
 
@@ -48,8 +47,6 @@ export function RefreshThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

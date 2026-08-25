@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
-import { coreValues } from "@/content/about";
+import { aboutSectionCopy, coreValues } from "@/content/about";
 
 export function AboutValuesSection() {
   return (
@@ -9,10 +9,10 @@ export function AboutValuesSection() {
       <Container>
         <header className="mx-auto mb-12 max-w-[570px] text-center max-[991px]:mb-[30px]">
           <h2 id="about-values-title" className="mb-6 text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
-            Our Core Values
+            {aboutSectionCopy.valuesTitle}
           </h2>
           <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
-            We have deeply imbibed accountability, quality, and innovation as our core values and will continue in doing so.
+            {aboutSectionCopy.valuesDescription}
           </p>
         </header>
 

@@ -10,6 +10,18 @@ import type {
   WhiteLabelTool,
 } from "@/types/white-label-service";
 
+export const whiteLabelWordPressSectionCopy = {
+  reasonsTitle: "Why Dynamic Dreamz for White-Label?",
+  servicesTitle: "White Label WordPress Development Services",
+  pricingTitle: "Flexible White Label WordPress Development Plans",
+  pricingDescription:
+    "We offer scalable pricing models with no retainer required. Whether you need minor changes, a full-scale project, or a dedicated developer, we offer WordPress solutions customized to your agency's workflow.",
+  toolsTitle: "We Work with a Wide Range of WordPress Technologies",
+  processTitle: "How Our White Label Partnership Works",
+  processNote:
+    "We value confidentiality and respect our partnership agreements, guaranteeing all work stays under your brand name.",
+} as const;
+
 export const whiteLabelWordPressHero = {
   title: "White label WordPress Development Services",
   accent: "for Agencies",

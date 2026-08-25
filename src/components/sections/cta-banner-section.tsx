@@ -1,6 +1,12 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { sharedUiCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
+
+export const defaultCtaBannerCopy = {
+  heading: sharedUiCopy.ctaBanner.heading,
+  ctaLabel: sharedUiCopy.ctaBanner.label,
+} as const;
 
 export type CtaBannerSectionProps = {
   heading?: string;
@@ -9,8 +15,8 @@ export type CtaBannerSectionProps = {
 };
 
 export function CtaBannerSection({
-  heading = "Want us to help you with your online store?",
-  ctaLabel = "Request a quote",
+  heading = defaultCtaBannerCopy.heading,
+  ctaLabel = defaultCtaBannerCopy.ctaLabel,
   ctaHref = siteConfig.quotePath,
 }: CtaBannerSectionProps = {}) {
   return (

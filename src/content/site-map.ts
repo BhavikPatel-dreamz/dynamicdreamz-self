@@ -4,6 +4,10 @@ export type SiteMapLinkItem = {
   readonly children?: readonly SiteMapLinkItem[];
 };
 
+export const siteMapCopy = {
+  title: "Site Map",
+} as const;
+
 export const siteMapLinks: readonly SiteMapLinkItem[] = [
   {
     "label": "#1 Company For WordPress Development in Noida",

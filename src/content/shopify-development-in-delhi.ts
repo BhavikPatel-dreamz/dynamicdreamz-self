@@ -1,6 +1,10 @@
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const shopifyDevelopmentDelhiContent = {
+  sectionCopy: {
+    faqHeading: "Frequently Asked Questions",
+    portfolioCta: "View our work",
+  },
   hero: {
     title: "#1 Company For Shopify Development in Delhi",
     description:

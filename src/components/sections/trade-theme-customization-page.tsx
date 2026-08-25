@@ -11,7 +11,6 @@ import { tradeThemeCustomizationContent } from "@/content/trade-theme-customizat
 export function TradeThemeCustomizationPage() {
   const brandsContent = {
     heading: tradeThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Trade theme customization",
     slug: "trade-theme-customization",
   };
 
@@ -48,8 +47,6 @@ export function TradeThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import { primaryNavigation, type MegaMenuItem } from "@/data/navigation";
+import { siteChromeCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
 
@@ -250,7 +251,7 @@ export function MobileNavigation() {
             })}
 
             <li className="border-b border-[#f0f0f0] py-6">
-              <Link className={topLevelLinkClass} href="/contact-us" onClick={closeMenu}>Contact us</Link>
+              <Link className={topLevelLinkClass} href="/contact-us" onClick={closeMenu}>{siteChromeCopy.contactUs}</Link>
             </li>
             <li className="py-6">
               <a className="block text-xl leading-[normal] font-semibold text-[#d92128] underline" href={`mailto:${siteConfig.email}`} onClick={closeMenu}>{siteConfig.email}</a>

@@ -11,7 +11,6 @@ import { savorThemeCustomizationContent } from "@/content/savor-theme-customizat
 export function SavorThemeCustomizationPage() {
   const brandsContent = {
     heading: savorThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Savor theme customization",
     slug: "savor-theme-customization",
   };
 
@@ -48,8 +47,6 @@ export function SavorThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

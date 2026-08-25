@@ -1,6 +1,7 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { PortfolioProjectCard } from "@/components/ui/portfolio-project-card";
+import { sharedUiCopy } from "@/content/common";
 import { formatBrText } from "@/lib/text-formatting";
 
 export type PortfolioShowcaseItem = {
@@ -38,7 +39,7 @@ export type PortfolioShowcaseSectionProps = {
 
 export function PortfolioShowcaseSection({
   content,
-  ctaLabel = "View our work",
+  ctaLabel = sharedUiCopy.viewOurWork,
   ctaHref = "/our-work",
   hideCta = false,
   className = "our-work-sec pb-20 max-[991px]:pb-[60px]",

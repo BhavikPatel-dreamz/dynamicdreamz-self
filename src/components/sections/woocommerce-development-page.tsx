@@ -22,8 +22,6 @@ export function WooCommerceDevelopmentPage() {
       <PortfolioShowcaseSection
         className="our-work-sec pt-20 pb-20 max-[991px]:pt-10"
         content={woocommerceDevelopmentPortfolio}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <HappyClientSection
         description={woocommerceDevelopmentTestimonials.description}

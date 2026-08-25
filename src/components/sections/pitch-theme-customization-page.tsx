@@ -11,7 +11,6 @@ import { pitchThemeCustomizationContent } from "@/content/pitch-theme-customizat
 export function PitchThemeCustomizationPage() {
   const brandsContent = {
     heading: pitchThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Pitch theme customization",
     slug: "pitch-theme-customization",
   };
 
@@ -48,8 +47,6 @@ export function PitchThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

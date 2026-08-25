@@ -48,7 +48,7 @@ function OfficeCard({ office }: { office: (typeof contactPageContent.offices)[nu
         <div className="flex items-center">
           <h3 className="mr-7 font-sans text-xl leading-[28.8px] font-bold text-ink max-[991px]:mr-5 max-[991px]:text-base max-[991px]:leading-[26px]">{office.city}</h3>
           <a className="inline-flex min-w-0 items-center bg-[linear-gradient(97deg,#15c064_28.5%,#00d1ff_91.82%)] bg-clip-text text-sm leading-normal font-bold text-transparent uppercase" href={office.directionsHref} target="_blank" rel="nofollow noopener noreferrer">
-            Get directions
+            {contactPageContent.directionsLabel}
             <Image className="ml-1.5 h-auto w-auto transition-transform duration-300 group-hover/office:translate-x-0.5" src="/assets/contact/icons/directions.svg" alt="" width={14} height={14} />
           </a>
         </div>
@@ -108,7 +108,7 @@ export function ContactPage() {
 
       <section className="py-20 max-[991px]:py-[50px]" aria-labelledby="offices-title">
         <Container>
-          <h2 id="offices-title" className="mb-10 text-center font-sans text-[35px] leading-[48.475px] font-bold text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] tracking-[-.7px]">Our Offices</h2>
+          <h2 id="offices-title" className="mb-10 text-center font-sans text-[35px] leading-[48.475px] font-bold text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] tracking-[-.7px]">{contactPageContent.officesTitle}</h2>
           <div className="grid grid-cols-2 gap-[30px] max-[991px]:gap-5 max-[767px]:grid-cols-1">
             {offices.map((office) => <OfficeCard key={office.city} office={office} />)}
           </div>

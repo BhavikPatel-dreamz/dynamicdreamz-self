@@ -3,6 +3,8 @@ import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
 import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
 
+export { migrationSectionCopy as magentoMigrationSectionCopy } from "@/content/migration-common";
+
 export const magentoHeroContent: ServiceHeroContent = {
   title: "Migration from Magento to Shopify",
   description:

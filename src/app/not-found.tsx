@@ -1,5 +1,6 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { notFoundCopy } from "@/content/common";
 
 export default function NotFound() {
   return (
@@ -8,20 +9,19 @@ export default function NotFound() {
       className="grid min-h-[760px] place-items-center px-0 pt-[150px] pb-20 text-center"
     >
       <Container>
-        <p className="mb-4 font-bold text-brand-red uppercase">404 — Page not found</p>
+        <p className="mb-4 font-bold text-brand-red uppercase">{notFoundCopy.eyebrow}</p>
         <h1 className="mx-auto mb-6 max-w-[760px] text-[56px] leading-[1.1] max-[767px]:text-[34px]">
-          This page has moved or doesn&apos;t exist.
+          {notFoundCopy.title}
         </h1>
         <p className="mx-auto max-w-[640px]">
-          Return to the Dynamic Dreamz homepage or tell us what you&apos;re looking
-          to build.
+          {notFoundCopy.description}
         </p>
         <div className="mt-8 flex justify-center gap-3.5 max-[390px]:flex-col">
           <ButtonLink variant="dark" href="/">
-            Back to home
+            {notFoundCopy.homeCta}
           </ButtonLink>
           <ButtonLink variant="outline" href="/contact-us">
-            Contact us
+            {notFoundCopy.contactCta}
           </ButtonLink>
         </div>
       </Container>

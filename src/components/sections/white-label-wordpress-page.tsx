@@ -21,6 +21,7 @@ import {
   whiteLabelWordPressServices,
   whiteLabelWordPressStats,
   whiteLabelWordPressToolRows,
+  whiteLabelWordPressSectionCopy,
 } from "@/content/white-label-wordpress-development";
 
 export function WhiteLabelWordPressPage() {
@@ -30,27 +31,27 @@ export function WhiteLabelWordPressPage() {
       <WhiteLabelStatsSection stats={whiteLabelWordPressStats} />
       <WhiteLabelWhySection
         reasons={whiteLabelWordPressReasons}
-        title="Why Dynamic Dreamz for White-Label?"
+        title={whiteLabelWordPressSectionCopy.reasonsTitle}
       />
       <WhiteLabelServicesSection
         idPrefix="white-label-wordpress-service"
         services={whiteLabelWordPressServices}
-        title="White Label WordPress Development Services"
+        title={whiteLabelWordPressSectionCopy.servicesTitle}
       />
       <WhiteLabelPricingSection
-        description="We offer scalable pricing models with no retainer required. Whether you need minor changes, a full-scale project, or a dedicated developer, we offer WordPress solutions customized to your agency's workflow."
+        description={whiteLabelWordPressSectionCopy.pricingDescription}
         plans={whiteLabelWordPressPlans}
-        title="Flexible White Label WordPress Development Plans"
+        title={whiteLabelWordPressSectionCopy.pricingTitle}
       />
       <WhiteLabelToolsSection
         ariaLabel="WordPress technologies and tools"
         rows={whiteLabelWordPressToolRows}
-        title="We Work with a Wide Range of WordPress Technologies"
+        title={whiteLabelWordPressSectionCopy.toolsTitle}
       />
       <WhiteLabelProcessSection
-        note="We value confidentiality and respect our partnership agreements, guaranteeing all work stays under your brand name."
+        note={whiteLabelWordPressSectionCopy.processNote}
         steps={whiteLabelWordPressProcess}
-        title="How Our White Label Partnership Works"
+        title={whiteLabelWordPressSectionCopy.processTitle}
       />
       <WhiteLabelFaqSection
         faqs={whiteLabelWordPressFaqs}

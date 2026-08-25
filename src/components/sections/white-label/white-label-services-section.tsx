@@ -1,7 +1,8 @@
 import { WhiteLabelServiceAccordion } from "@/components/sections/white-label/white-label-service-accordion";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
-import { whiteLabelShopifyServices } from "@/content/white-label-shopify-development";
+import { sharedUiCopy } from "@/content/common";
+import { whiteLabelShopifySectionCopy, whiteLabelShopifyServices } from "@/content/white-label-shopify-development";
 import { siteConfig } from "@/data/site";
 import type { WhiteLabelService } from "@/types/white-label-service";
 
@@ -15,11 +16,11 @@ type WhiteLabelServicesSectionProps = {
 };
 
 export function WhiteLabelServicesSection({
-  title = "Comprehensive White Label Shopify Development Services",
+  title = whiteLabelShopifySectionCopy.servicesTitle,
   description,
   services = whiteLabelShopifyServices,
   idPrefix = "white-label-shopify-service",
-  ctaLabel = "Let me give you a hand to help you",
+  ctaLabel = sharedUiCopy.whiteLabelServicesCta,
   showCta = true,
 }: WhiteLabelServicesSectionProps) {
   return (

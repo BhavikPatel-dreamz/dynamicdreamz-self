@@ -52,6 +52,13 @@ export const wixHeroContent: ServiceHeroContent = {
   ],
 };
 
+export const wixMigrationSectionCopy = {
+  brandsHeading: "Trusted by Leading Brands",
+  whyMigrateHeading: "Why Migrate from Wix to Shopify?",
+  whyMigrateText:
+    "If you want more features and benefits for your online store, Migrate from Wix to Shopify. Shopify is a straightforward eCommerce platform that offers a user friendly experience, robust security, advanced features, and a wide range of apps to expand the store’s functionality. If you migrate from the Wix store to Shopify, you can achieve a secure, scalable, and engaging buying experience.",
+} as const;
+
 export const wixBrandLogos: readonly ClientLogoSliderItem[] = [
   { src: "/assets/clients/ranavat.svg", href: "https://www.ranavat.com/", alt: "Ranavat Logo", width: 174, height: 19 },
   { src: "/assets/clients/prolash.svg", href: "https://prolash.com/", alt: "prolash_black", width: 204, height: 22 },

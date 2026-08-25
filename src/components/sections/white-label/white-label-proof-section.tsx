@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/container";
 import {
   whiteLabelShopifyReasons,
   whiteLabelShopifyStats,
+  whiteLabelShopifySectionCopy,
 } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
 import type { WhiteLabelCard, WhiteLabelStat } from "@/types/white-label-service";
@@ -77,7 +78,7 @@ const whyRightBorderClasses: Record<number, string> = {
 };
 
 export function WhiteLabelWhySection({
-  title = "Why Partner with Dynamic Dreamz for White Label Shopify Development?",
+  title = whiteLabelShopifySectionCopy.whyTitle,
   reasons = whiteLabelShopifyReasons,
 }: WhiteLabelWhySectionProps) {
   const lastVisibleIndex = reasons.reduce(

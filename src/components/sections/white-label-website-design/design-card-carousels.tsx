@@ -5,6 +5,7 @@ import { HorizontalDragScroll } from "@/components/ui/horizontal-drag-scroll";
 import {
   whiteLabelWebsiteDesignAdvantages,
   whiteLabelWebsiteDesignBenefits,
+  whiteLabelWebsiteDesignSectionCopy,
 } from "@/content/white-label-website-design";
 import { cn } from "@/lib/class-names";
 import type { WhiteLabelCapability } from "@/types/white-label-service";
@@ -75,12 +76,12 @@ export function WhiteLabelDesignBenefitsSection() {
         <div className="heading-text mb-5 -mx-3.75 flex items-start justify-between gap-15 max-[991px]:mb-5 max-[991px]:flex-col max-[991px]:gap-0">
           <div className="title w-[42%] px-3.75 max-[991px]:w-full">
             <h2 className="font-sans text-[35px] leading-[1.38] font-bold text-white max-[991px]:mb-5 max-[991px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35] lg:text-left text-center tracking-[-1px]">
-              Benefits of White Label Website Design Services
+              {whiteLabelWebsiteDesignSectionCopy.benefitsTitle}
             </h2>
           </div>
           <div className="text w-[calc(47%-15px)] px-3.75 max-[991px]:w-full">
             <p className="text-base leading-[1.9] font-medium text-white/80 max-[767px]:leading-[1.9] lg:text-left text-center">
-              White label web design services provide many advantages for agencies aiming to grow. It allows businesses to grow without worrying about managing every technical aspect.
+              {whiteLabelWebsiteDesignSectionCopy.benefitsDescription}
             </p>
           </div>
         </div>
@@ -97,12 +98,12 @@ export function WhiteLabelDesignAdvantagesSection() {
         <div className="mb-10 -mx-3.75 flex items-start justify-between max-[991px]:mb-[20px] max-[991px]:flex-col">
           <div className="w-[calc(45%-15px)] px-3.75 max-[991px]:w-full">
             <h2 className="font-sans text-[35px] leading-[1.38] font-bold text-ink max-[991px]:mb-[15px] max-[991px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35] lg:text-left text-center tracking-[-.7px]">
-              Advantages of White Label <br className="max-[389px]:hidden" /> Web Design for Agenciess
+              {whiteLabelWebsiteDesignSectionCopy.advantagesTitle} <br className="max-[389px]:hidden" /> {whiteLabelWebsiteDesignSectionCopy.advantagesTitleSecondLine}
             </h2>
           </div>
           <div className="w-[calc(45%-15px)] px-3.75 max-[991px]:w-full">
             <p className="text-base leading-[1.9] font-medium text-muted lg:text-left text-center">
-              Working with a white label partner allows agencies to offer a full suite of web design services without the hassle of handling development in house.
+              {whiteLabelWebsiteDesignSectionCopy.advantagesDescription}
             </p>
           </div>
         </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
 import { siteMapLinks, type SiteMapLinkItem } from "@/content/site-map";
+import { siteMapCopy } from "@/content/site-map";
 
 export type SiteMapPageProps = {
   links?: readonly SiteMapLinkItem[];
@@ -16,7 +17,7 @@ export function SiteMapPage({
   return (
     <section className={className} data-section="sitemap" id="site-map-content">
       <Container>
-        <h1 className="sr-only">Site Map</h1>
+        <h1 className="sr-only">{siteMapCopy.title}</h1>
         <ul className="list-none p-0">
           {links.map((item) => (
             <li

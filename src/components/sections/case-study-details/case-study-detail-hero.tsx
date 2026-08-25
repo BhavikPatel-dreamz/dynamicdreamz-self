@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { caseStudiesUiCopy } from "@/content/case-studies-ui";
 import type { CaseStudyDetail } from "@/types/case-study";
 
 type CaseStudyDetailHeroProps = {
@@ -10,9 +11,9 @@ type CaseStudyDetailHeroProps = {
 
 export function CaseStudyDetailHero({ caseStudy }: CaseStudyDetailHeroProps) {
   const facts = [
-    { label: "Industry", value: caseStudy.industry },
-    { label: "Technology", value: caseStudy.technology },
-    { label: "Location", value: caseStudy.location },
+    { label: caseStudiesUiCopy.facts.industry, value: caseStudy.industry },
+    { label: caseStudiesUiCopy.facts.technology, value: caseStudy.technology },
+    { label: caseStudiesUiCopy.facts.location, value: caseStudy.location },
   ];
 
   return (
@@ -33,7 +34,7 @@ export function CaseStudyDetailHero({ caseStudy }: CaseStudyDetailHeroProps) {
               fill="currentColor"
             />
           </svg>
-          Go back
+          {caseStudiesUiCopy.goBack}
         </Link>
       </Container>
 

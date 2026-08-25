@@ -6,7 +6,6 @@ import { caseStudiesBrandLogos, caseStudiesContent } from "@/content/case-studie
 const brandSection = {
   slug: "case-studies",
   brands: {
-    ariaLabel: "Brands featured in Dynamic Dreamz case studies",
   },
 } as const;
 

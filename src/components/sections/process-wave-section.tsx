@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
+import { sharedUiCopy } from "@/content/common";
 
 export type ProcessWaveStep = {
   number?: string;
@@ -207,7 +208,7 @@ export function ProcessWaveSection({
                 />
               </div>
               <span className="text-xs font-bold uppercase tracking-wider text-brand-red">
-                Step {step.number ?? `0${index + 1}`}
+                {sharedUiCopy.step} {step.number ?? `0${index + 1}`}
               </span>
               <h3 className="mt-1 mb-2 font-sans text-lg font-bold text-ink">
                 {step.title}

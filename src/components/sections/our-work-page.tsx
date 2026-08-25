@@ -6,7 +6,6 @@ import { OurWorkProjectsSection } from "@/components/sections/our-work/our-work-
 const brandSection = {
   slug: "our-work",
   brands: {
-    ariaLabel: "Brands featured in the Dynamic Dreamz portfolio",
   },
 } as const;
 

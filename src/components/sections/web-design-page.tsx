@@ -20,7 +20,6 @@ export function WebDesignPage() {
       <IndustryBrandsSection
         content={{
           slug: "web-design",
-          ariaLabel: "Trusted Brands",
         }}
         items={webDesignBrands}
       />
@@ -28,8 +27,6 @@ export function WebDesignPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[60px]"
         content={webDesignPortfolio}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <HappyClientSection
         description={webDesignTestimonials.description}

@@ -3,6 +3,7 @@ import styles from "@/components/sections/home/brand-partners-section.module.css
 import { Container } from "@/components/ui/container";
 import {
   clientLogos,
+  homeSectionCopy,
   mobileClientLogoRows,
   type ImageItem,
 } from "@/content/home";
@@ -17,9 +18,8 @@ type BrandPartnersSectionProps = {
 };
 
 export function BrandPartnersSection({
-  heading = "Partnering with Ambitious Brands",
-  description =
-    "Selected brands our teams have supported across Shopify, Shopify Plus and digital commerce.",
+  heading = homeSectionCopy.brandPartnersHeading,
+  description = homeSectionCopy.brandPartnersDescription,
   items = clientLogos,
   mobileRows = mobileClientLogoRows,
   variant = "home",

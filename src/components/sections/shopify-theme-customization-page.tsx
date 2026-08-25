@@ -21,7 +21,6 @@ export function ShopifyThemeCustomizationPage() {
 
   const brandsContent = {
     heading: shopifyThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Shopify theme customization",
     slug: "shopify-theme-customization",
   };
 
@@ -35,7 +34,7 @@ export function ShopifyThemeCustomizationPage() {
       iconAlt: item.title,
     })),
     cta: {
-      label: "request a quote",
+      label: shopifyThemeCustomizationContent.sectionCopy.ctaLabel,
       href: "/request-quote",
     },
   };
@@ -74,7 +73,7 @@ export function ShopifyThemeCustomizationPage() {
   };
 
   const portfolioContent = {
-    eyebrow: "Portfolio",
+    eyebrow: shopifyThemeCustomizationContent.sectionCopy.portfolioEyebrow,
     heading: shopifyThemeCustomizationContent.portfolio.title,
     description: shopifyThemeCustomizationContent.portfolio.subtitle,
     items: shopifyThemeCustomizationContent.portfolio.items.map((item) => ({
@@ -131,8 +130,8 @@ export function ShopifyThemeCustomizationPage() {
       <PortfolioShowcaseSection content={portfolioContent} />
       <div id="shopify-testimonials">
         <HappyClientSection
-          description="Our clients' success speaks for itself. Read testimonials from satisfied clients who have benefited from our Shopify maintenance services and see how we can help you achieve similar results."
-          heading="Don't Just Take Our Word For It"
+          description={shopifyThemeCustomizationContent.sectionCopy.testimonialsDescription}
+          heading={shopifyThemeCustomizationContent.sectionCopy.testimonialsHeading}
         />
       </div>
       <FaqSection

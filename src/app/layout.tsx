@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { ContactWidget } from "@/components/layout/contact-widget";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { siteChromeCopy } from "@/content/common";
 import { rootMetadata } from "@/data/seo";
 
 import "slick-carousel/slick/slick.css";
@@ -49,7 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           className="fixed top-3 left-3 z-[1000] -translate-y-[170%] rounded-[30px] bg-ink px-4 py-2.5 font-bold text-white transition-transform duration-160 focus:translate-y-0"
           href="#main-content"
         >
-          Skip to content
+          {siteChromeCopy.skipToContent}
         </a>
         <SiteHeader />
         {children}

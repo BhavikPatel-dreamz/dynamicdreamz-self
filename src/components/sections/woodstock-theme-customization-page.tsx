@@ -11,7 +11,6 @@ import { woodstockThemeCustomizationContent } from "@/content/woodstock-theme-cu
 export function WoodstockThemeCustomizationPage() {
   const brandsContent = {
     heading: woodstockThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Woodstock theme customization",
     slug: "woodstock-theme-customization",
   };
 
@@ -48,8 +47,6 @@ export function WoodstockThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"
