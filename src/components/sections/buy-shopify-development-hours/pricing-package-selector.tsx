@@ -3,7 +3,7 @@
 import { useId, useState } from "react";
 
 import { ButtonLink } from "@/components/ui/button-link";
-import type { ShopifyHoursPackage } from "@/content/buy-shopify-development-hours";
+import { shopifyHoursSectionCopy, type ShopifyHoursPackage } from "@/content/buy-shopify-development-hours";
 
 type PricingPackageSelectorProps = {
   packages: readonly ShopifyHoursPackage[];
@@ -41,17 +41,17 @@ export function PricingPackageSelector({
         className="mt-[25px] grid grid-cols-3 gap-2.5 max-[1199px]:grid-cols-2"
         data-pricing-stats
       >
-        <PricingStat label="Hours">
+        <PricingStat label={shopifyHoursSectionCopy.pricing.hours}>
           <strong>{selectedPackage.hours}:00</strong>
-          <span>Bulk hours</span>
+          <span>{shopifyHoursSectionCopy.pricing.bulkHours}</span>
         </PricingStat>
-        <PricingStat label="Rate">
-          <strong>${selectedPackage.rate}/hour</strong>
-          <del>${selectedPackage.previousRate}/hour</del>
+        <PricingStat label={shopifyHoursSectionCopy.pricing.rate}>
+          <strong>${selectedPackage.rate}{shopifyHoursSectionCopy.pricing.perHour}</strong>
+          <del>${selectedPackage.previousRate}{shopifyHoursSectionCopy.pricing.perHour}</del>
         </PricingStat>
         <PricingStat
           className="max-[1199px]:col-span-2"
-          label="Cost"
+          label={shopifyHoursSectionCopy.pricing.cost}
         >
           <strong>${selectedPackage.cost}</strong>
           <del>${selectedPackage.previousCost}</del>
@@ -60,7 +60,7 @@ export function PricingPackageSelector({
 
       <div className="mt-[70px] pb-[35px] max-[767px]:mt-10">
         <label className="sr-only" htmlFor={inputId}>
-          Select a Shopify development hours package
+          {shopifyHoursSectionCopy.pricing.packageLabel}
         </label>
         <div className="relative h-1.5">
           <output
@@ -87,7 +87,7 @@ export function PricingPackageSelector({
         </div>
         <div className="mt-[15px] flex justify-between text-sm leading-[16.8px] font-semibold tracking-[-0.28px] text-ink/80 max-[475px]:text-[11px]">
           {packages.map((item) => (
-            <span key={item.hours}>{item.hours} HRS</span>
+            <span key={item.hours}>{item.hours} {shopifyHoursSectionCopy.pricing.hoursSuffix}</span>
           ))}
         </div>
       </div>
@@ -99,7 +99,7 @@ export function PricingPackageSelector({
         href={selectedPackage.purchaseHref}
         data-purchase-link
       >
-        Buy Shopify Hours - ${selectedPackage.cost}
+        {shopifyHoursSectionCopy.pricing.purchasePrefix}${selectedPackage.cost}
       </ButtonLink>
       <div className="flex text-center">
         <ButtonLink

@@ -10,6 +10,7 @@ import {
   type MegaMenuItem,
   type PrimaryNavigationGroup,
 } from "@/data/navigation";
+import { siteChromeCopy } from "@/content/common";
 import { cn } from "@/lib/class-names";
 
 function ChevronIcon() {
@@ -231,7 +232,7 @@ export function DesktopNavigation() {
             href="/contact-us"
             aria-current={normalizedPathname === "/contact-us" ? "page" : undefined}
           >
-            Contact us
+            {siteChromeCopy.contactUs}
           </Link>
         </li>
       </ul>

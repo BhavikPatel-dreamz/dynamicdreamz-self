@@ -2,6 +2,7 @@ import { CaseStudyDetailHero } from "@/components/sections/case-study-details/ca
 import { CaseStudyNarrative } from "@/components/sections/case-study-details/case-study-narrative";
 import { CaseStudyShowcases } from "@/components/sections/case-study-details/case-study-showcases";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
+import { sharedUiCopy } from "@/content/common";
 import type { CaseStudyDetail } from "@/types/case-study";
 
 type CaseStudyDetailPageProps = {
@@ -20,7 +21,7 @@ export function CaseStudyDetailPage({ caseStudy }: CaseStudyDetailPageProps) {
         typefaces={caseStudy.typefaces}
         design={caseStudy.design}
       />
-      <CtaBannerSection ctaLabel="REQUEST A QUOTE" />
+      <CtaBannerSection ctaLabel={sharedUiCopy.requestQuoteUpper} />
     </div>
   );
 }

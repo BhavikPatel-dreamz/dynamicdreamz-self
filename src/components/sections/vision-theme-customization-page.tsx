@@ -11,7 +11,6 @@ import { visionThemeCustomizationContent } from "@/content/vision-theme-customiz
 export function VisionThemeCustomizationPage() {
   const brandsContent = {
     heading: visionThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Vision theme customization",
     slug: "vision-theme-customization",
   };
 
@@ -48,8 +47,6 @@ export function VisionThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

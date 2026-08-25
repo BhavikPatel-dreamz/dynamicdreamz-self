@@ -1,7 +1,7 @@
 import { ClientLogo } from "@/components/sections/home/client-logo";
 import styles from "@/components/sections/home/integrations-section.module.css";
 import { Container } from "@/components/ui/container";
-import { integrationLogoRows } from "@/content/home";
+import { homeSectionCopy, integrationLogoRows } from "@/content/home";
 import { cn } from "@/lib/class-names";
 
 export function IntegrationsSection() {
@@ -9,9 +9,9 @@ export function IntegrationsSection() {
     <section className="overflow-hidden bg-[#fafaf7] py-[55px] max-[767px]:py-[50px]">
       <Container>
         <div className="mb-[57px] flex items-center justify-between min-[768px]:max-[991px]:mb-[30px] min-[768px]:max-[991px]:flex-col min-[768px]:max-[991px]:items-start max-[767px]:mb-[29px] max-[767px]:flex-col max-[767px]:items-start">
-          <h2 className="max-w-[540px] text-[43px] leading-[1.2] font-medium min-[768px]:max-[991px]:mb-2.5 min-[768px]:max-[991px]:max-w-full min-[768px]:max-[991px]:text-[35px] min-[768px]:max-[991px]:leading-[48.475px] max-[767px]:mb-4 max-[767px]:max-w-full max-[767px]:text-2xl max-[767px]:leading-[1.2]">Our Partners</h2>
+          <h2 className="max-w-[540px] text-[43px] leading-[1.2] font-medium min-[768px]:max-[991px]:mb-2.5 min-[768px]:max-[991px]:max-w-full min-[768px]:max-[991px]:text-[35px] min-[768px]:max-[991px]:leading-[48.475px] max-[767px]:mb-4 max-[767px]:max-w-full max-[767px]:text-2xl max-[767px]:leading-[1.2]">{homeSectionCopy.integrationsTitle}</h2>
           <p className="max-w-[560px] text-lg leading-[1.9] font-medium text-muted min-[768px]:max-[991px]:max-w-full min-[768px]:max-[991px]:text-base max-[767px]:max-w-full max-[767px]:text-base">
-            Our teams work across the Shopify ecosystem to implement subscriptions, reviews, retention, customer support, search, B2B, payments and operational integrations.
+            {homeSectionCopy.integrationsDescription}
           </p>
         </div>
       </Container>

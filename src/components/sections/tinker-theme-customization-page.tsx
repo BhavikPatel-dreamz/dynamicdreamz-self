@@ -11,7 +11,6 @@ import { tinkerThemeCustomizationContent } from "@/content/tinker-theme-customiz
 export function TinkerThemeCustomizationPage() {
   const brandsContent = {
     heading: tinkerThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Tinker theme customization",
     slug: "tinker-theme-customization",
   };
 
@@ -48,8 +47,6 @@ export function TinkerThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

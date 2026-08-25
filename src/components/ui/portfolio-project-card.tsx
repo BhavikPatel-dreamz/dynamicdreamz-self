@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { sharedUiCopy } from "@/content/common";
 import { cn } from "@/lib/class-names";
 
 export type PortfolioPlatformMark = {
@@ -66,7 +67,7 @@ function ProjectLinkOverlay() {
       className="absolute bottom-[-60px] left-1/2 z-2 flex -translate-x-1/2 items-center gap-2.5 text-lg leading-[25.2px] font-bold whitespace-nowrap text-white transition-[bottom] duration-500 ease-in-out group-hover/project:bottom-[30px] group-focus/project:bottom-[30px]"
       data-project-link
     >
-      View Project
+      {sharedUiCopy.viewProject}
       <Image
         aria-hidden="true"
         className="h-3 w-3"

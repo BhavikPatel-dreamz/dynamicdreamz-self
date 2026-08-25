@@ -2,6 +2,7 @@ import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const wordPressThemeCustomizationContent = {
+  faqHeading: "FAQs on WordPress Theme Customization Services",
   hero: {
     title: "WordPress Theme <br> Customization Services",
     description:

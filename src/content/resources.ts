@@ -1,5 +1,13 @@
 import { getClientLogo, type ImageItem } from "@/content/home";
 
+export const resourcesSectionCopy = {
+  storyCategoryLabel: "Shopify",
+  blogsTitle: "Shopify Blogs",
+  trustTitle: "A Trusted Web & Mobile Development Company Since 2006",
+  trustDescription:
+    "From web designs to custom web development, we work with cutting edge web technology and framework.",
+} as const;
+
 export type ResourceLink = {
   href: string;
   title: string;

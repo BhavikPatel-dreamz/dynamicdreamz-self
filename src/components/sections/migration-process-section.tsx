@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
+import { sharedUiCopy } from "@/content/common";
 import { formatBrText } from "@/lib/text-formatting";
 
 export type MigrationProcessCategory = {
@@ -52,7 +53,7 @@ function StepItem({
           {/* Desktop Step Counter */}
           <div className="icon mr-[46px] w-[75px] min-w-[75px] text-center max-[767px]:mr-[15px] max-[767px]:min-w-[55px]">
             <span className="step mb-1 block rounded-[50px] border border-[#efefef] bg-clip-text px-[15px] pt-[7px] pb-[4px] text-[16px] font-bold leading-[19.84px] text-transparent bg-[linear-gradient(96.7deg,#15c064_37.46%,#00d1ff_120.9%)] max-[767px]:px-2.5 max-[767px]:py-0.5 max-[767px]:text-xs">
-              Step
+              {sharedUiCopy.step}
             </span>
             <span className="number block font-sans text-[50px] font-bold leading-[62px] text-transparent bg-clip-text bg-[linear-gradient(96.7deg,#15c064_37.46%,#00d1ff_120.9%)] max-[767px]:text-[34px] max-[767px]:leading-tight">
               {step.stepNumber}

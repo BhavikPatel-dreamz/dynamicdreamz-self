@@ -25,7 +25,6 @@ export function CrossPlatformAppDevelopmentPage() {
       <IndustryBrandsSection
         content={{
           slug: "cross-platform-app-development",
-          ariaLabel: "Trusted Brands",
         }}
         items={crossPlatformAppDevelopmentBrands}
       />
@@ -34,8 +33,6 @@ export function CrossPlatformAppDevelopmentPage() {
         className="our-work-sec pt-20 pb-20 max-[991px]:pt-10"
         columns={4}
         content={crossPlatformAppDevelopmentPortfolio}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
         imageAspectClassName="pb-[154.5%] max-[767px]:pb-[115%]"
       />
       <HappyClientSection

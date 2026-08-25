@@ -17,6 +17,7 @@ import {
   etsyWhatAfterContent,
   etsyWhyChooseContent,
   etsyWhyMigrate,
+  etsyMigrationSectionCopy,
 } from "@/content/etsy-to-shopify-migration";
 
 export function EtsyToShopifyMigrationPage() {
@@ -30,9 +31,8 @@ export function EtsyToShopifyMigrationPage() {
       <IndustryBrandsSection
         content={{
           slug: "etsy-to-shopify-migration",
-          ariaLabel: "Brands that trust Dynamic Dreamz for Etsy to Shopify migration",
         }}
-        heading="Trusted by Leading Brands"
+        heading={etsyMigrationSectionCopy.brandsHeading}
         items={etsyBrandLogos}
       />
       <TextBoxSection
@@ -65,8 +65,8 @@ export function EtsyToShopifyMigrationPage() {
         id="why-choose-dynamic-dreamz"
       />
       <HappyClientSection
-        description="We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories: Check out how our services empower them to evolve."
-        heading="Our Customers' Testimonials"
+        description={etsyMigrationSectionCopy.testimonialsDescription}
+        heading={etsyMigrationSectionCopy.testimonialsHeading}
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"

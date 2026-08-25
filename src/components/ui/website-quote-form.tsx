@@ -4,6 +4,7 @@ import { type FormEvent, useId, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { ButtonLink } from "@/components/ui/button-link";
+import { sharedUiCopy } from "@/content/common";
 import { cn } from "@/lib/class-names";
 
 export type WebsiteQuoteFormProps = {
@@ -16,10 +17,10 @@ export type WebsiteQuoteFormProps = {
 const websitePattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/.*)?$/i;
 
 export function WebsiteQuoteForm({
-  buttonLabel = "GET QUOTATION",
+  buttonLabel = sharedUiCopy.websiteQuote.button,
   className,
-  inputAriaLabel = "Your website URL",
-  placeholder = "www.yourwebsite.com",
+  inputAriaLabel = sharedUiCopy.websiteQuote.inputLabel,
+  placeholder = sharedUiCopy.websiteQuote.placeholder,
 }: WebsiteQuoteFormProps) {
   const router = useRouter();
   const errorId = useId();
@@ -34,7 +35,7 @@ export function WebsiteQuoteForm({
       .replace(/javascript:/gi, "");
 
     if (!websitePattern.test(website)) {
-      setError("Please enter a valid website URL.");
+      setError(sharedUiCopy.websiteQuote.invalidUrl);
       return;
     }
 

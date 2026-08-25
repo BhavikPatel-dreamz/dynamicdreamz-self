@@ -8,7 +8,7 @@ function InlineContent({ parts }: { parts: readonly PrivacyPolicyInline[] }) {
 }
 
 export function PrivacyPolicyPage() {
-  const { contact, heroTitle, sections } = privacyPolicyContent;
+  const { contact, contactLabels, heroTitle, sections } = privacyPolicyContent;
 
   return (
     <>
@@ -60,17 +60,17 @@ export function PrivacyPolicyPage() {
               {contact.name}
             </h3>
             <address className="not-italic">
-              <strong>Email:</strong>{" "}
+              <strong>{contactLabels.email}</strong>{" "}
               <a className="text-[#d92128] underline transition-colors duration-300 hover:no-underline focus-visible:text-brand-red" href={`mailto:${contact.email}`}>
                 {contact.email}
               </a>
               <br />
-              <strong>Phone:</strong>{" "}
+              <strong>{contactLabels.phone}</strong>{" "}
               <a className="text-[#d92128] underline transition-colors duration-300 hover:no-underline focus-visible:text-brand-red" href={contact.phoneHref}>
                 {contact.phone}
               </a>
               <br />
-              <strong>Address:</strong>{" "}
+              <strong>{contactLabels.address}</strong>{" "}
               <a className="text-[#d92128] underline transition-colors duration-300 hover:no-underline focus-visible:text-brand-red" href={contact.addressHref} target="_blank" rel="noopener noreferrer">
                 {contact.address}
               </a>

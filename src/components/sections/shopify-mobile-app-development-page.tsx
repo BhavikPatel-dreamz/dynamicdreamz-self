@@ -26,7 +26,6 @@ export function ShopifyMobileAppDevelopmentPage() {
       <IndustryBrandsSection
         content={{
           slug: "shopify-mobile-app-development",
-          ariaLabel: "Trusted Brands",
         }}
         items={shopifyMobileAppDevelopmentBrands}
       />

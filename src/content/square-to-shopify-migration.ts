@@ -3,6 +3,8 @@ import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
 import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
 
+export { migrationSectionCopy as squareMigrationSectionCopy } from "@/content/migration-common";
+
 export const squareHeroContent: ServiceHeroContent = {
   title: "Square to Shopify Migration Service",
   description:

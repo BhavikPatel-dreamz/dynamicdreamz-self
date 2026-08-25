@@ -11,7 +11,6 @@ import { craftThemeCustomizationContent } from "@/content/craft-theme-customizat
 export function CraftThemeCustomizationPage() {
   const brandsContent = {
     heading: craftThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Craft theme customization",
     slug: "craft-theme-customization",
   };
 
@@ -48,8 +47,6 @@ export function CraftThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

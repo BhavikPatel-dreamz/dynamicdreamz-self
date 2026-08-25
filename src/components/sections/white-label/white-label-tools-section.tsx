@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { whiteLabelShopifyToolRows } from "@/content/white-label-shopify-development";
+import { whiteLabelShopifySectionCopy, whiteLabelShopifyToolRows } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
 import type { WhiteLabelTool } from "@/types/white-label-service";
 
@@ -55,9 +55,9 @@ type WhiteLabelToolsSectionProps = {
 };
 
 export function WhiteLabelToolsSection({
-  title = "Shopify Technologies & Tools We Work With",
-  description = "At Dynamic Dreamz, we are skilled in:",
-  ariaLabel = "Shopify technologies and tools",
+  title = whiteLabelShopifySectionCopy.toolsTitle,
+  description = whiteLabelShopifySectionCopy.toolsDescription,
+  ariaLabel = whiteLabelShopifySectionCopy.toolsAriaLabel,
   rows = whiteLabelShopifyToolRows,
 }: WhiteLabelToolsSectionProps) {
   return (

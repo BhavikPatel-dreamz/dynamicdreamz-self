@@ -9,6 +9,7 @@ import {
   woocommerceHeroContent,
   woocommerceProcessContent,
   woocommerceWhyMigrate,
+  woocommerceMigrationSectionCopy,
 } from "@/content/woocommerce-to-shopify-migration";
 
 export function WooCommerceToShopifyMigrationPage() {
@@ -22,9 +23,8 @@ export function WooCommerceToShopifyMigrationPage() {
       <IndustryBrandsSection
         content={{
           slug: "woocommerce-to-shopify-migration",
-          ariaLabel: "Brands that trust Dynamic Dreamz for WooCommerce to Shopify migration",
         }}
-        heading="Trusted by Leading Brands"
+        heading={woocommerceMigrationSectionCopy.brandsHeading}
         items={woocommerceBrandLogos}
       />
       <TextBoxSection

@@ -11,7 +11,6 @@ import { atelierThemeCustomizationContent } from "@/content/atelier-theme-custom
 export function AtelierThemeCustomizationPage() {
   const brandsContent = {
     heading: atelierThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Atelier theme customization",
     slug: "atelier-theme-customization",
   };
 
@@ -48,8 +47,6 @@ export function AtelierThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

@@ -3,7 +3,11 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { HorizontalDragScroll } from "@/components/ui/horizontal-drag-scroll";
-import { hireShopifyAdvantages, hireShopifyReasons } from "@/content/hire-shopify-developers";
+import {
+  hireShopifyAdvantages,
+  hireShopifyReasons,
+  hireShopifySectionCopy,
+} from "@/content/hire-shopify-developers";
 import { formatBrText } from "@/lib/text-formatting";
 
 const headingClassName = "font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]";
@@ -25,17 +29,16 @@ export type ProofSectionContent = {
 };
 
 const defaultReasonsContent: ProofSectionContent = {
-  heading: "Why Choose Dynamic Dreamz for <br> Shopify Development",
-  description:
-    "Our Shopify developers have the ideal balance of expertise in eCommerce <br> business and Shopify technology. For your online business, <br> we can act as a powerful catalyst.",
+  heading: hireShopifySectionCopy.reasonsHeading,
+  description: hireShopifySectionCopy.reasonsDescription,
   items: hireShopifyReasons,
 };
 
 const defaultAdvantagesContent: ProofSectionContent = {
-  heading: "Our Advantages of Choosing Dynamic Dreamz as a Shopify Developer",
-  description: "Get connected with us, and you will witness the difference from day one!",
+  heading: hireShopifySectionCopy.advantagesHeading,
+  description: hireShopifySectionCopy.advantagesDescription,
   items: hireShopifyAdvantages,
-  ctaLabel: "inquire now",
+  ctaLabel: hireShopifySectionCopy.advantagesCtaLabel,
   ctaHref: "/request-quote",
 };
 

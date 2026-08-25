@@ -25,7 +25,6 @@ export function MagentoDevelopmentPage() {
       <IndustryBrandsSection
         content={{
           slug: "magento-development",
-          ariaLabel: "Trusted Brands",
         }}
         items={magentoDevelopmentBrands}
       />
@@ -33,8 +32,6 @@ export function MagentoDevelopmentPage() {
       <PortfolioShowcaseSection
         className="our-work-sec pt-20 pb-20 max-[991px]:pt-10"
         content={magentoDevelopmentPortfolio}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <HappyClientSection
         description={magentoDevelopmentTestimonials.description}

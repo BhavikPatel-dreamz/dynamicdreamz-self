@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { sharedUiCopy } from "@/content/common";
 
 export type ThemeCustomizationThemeItem = {
   title?: string;
@@ -58,7 +59,7 @@ export function ShopifyThemesGridSection({ content }: ShopifyThemesGridSectionPr
                     {title}
                   </h3>
                   <span className="inline-flex items-center font-sans text-sm font-bold uppercase tracking-[0.5px] text-[#D92128] underline">
-                    learn more
+                    {sharedUiCopy.learnMore}
                     <svg
                       className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
                       fill="none"

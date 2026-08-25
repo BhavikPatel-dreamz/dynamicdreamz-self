@@ -19,7 +19,6 @@ import {
 export function WordPressThemeCustomizationPage() {
   const brandsContent = {
     heading: wordPressThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for WordPress theme customization",
     slug: "wordpress-theme-customization",
   };
 
@@ -141,8 +140,6 @@ export function WordPressThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <HappyClientSection
         className="happy-client-sec pt-0 pb-20 overflow-hidden max-[991px]:pb-[50px]"
@@ -152,7 +149,7 @@ export function WordPressThemeCustomizationPage() {
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"
-        heading="FAQs on WordPress Theme Customization Services"
+        heading={wordPressThemeCustomizationContent.faqHeading}
         idPrefix="wordpress-theme-customization-faq"
         items={wordPressThemeCustomizationFaqs}
       />

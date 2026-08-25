@@ -11,7 +11,6 @@ import { extendableThemeCustomizationContent } from "@/content/extendable-theme-
 export function ExtendableThemeCustomizationPage() {
   const brandsContent = {
     heading: extendableThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Extendable theme customization",
     slug: "extendable-theme-customization",
   };
 
@@ -53,8 +52,6 @@ export function ExtendableThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

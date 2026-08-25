@@ -15,6 +15,7 @@ import {
   shopifyHoursFinalCta,
   shopifyHoursMobileLogoRows,
   shopifyHoursProcess,
+  shopifyHoursSectionCopy,
 } from "@/content/buy-shopify-development-hours";
 
 export function BuyShopifyDevelopmentHoursPage() {
@@ -33,7 +34,7 @@ export function BuyShopifyDevelopmentHoursPage() {
       />
       <BrandPartnersSection
         description=""
-        heading="Brands That Trust Us"
+        heading={shopifyHoursSectionCopy.brandsHeading}
         items={shopifyHoursClientLogos}
         mobileRows={shopifyHoursMobileLogoRows}
         variant="shopifyHours"

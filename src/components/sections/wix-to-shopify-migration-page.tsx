@@ -15,6 +15,7 @@ import {
   wixWhatAfterContent,
   wixWhyChooseContent,
   wixFaqs,
+  wixMigrationSectionCopy,
 } from "@/content/wix-to-shopify-migration";
 
 export function WixToShopifyMigrationPage() {
@@ -24,15 +25,14 @@ export function WixToShopifyMigrationPage() {
             <IndustryBrandsSection
         content={{
           slug: "wix-to-shopify-migration",
-          ariaLabel: "Brands that trust Dynamic Dreamz for Wix to Shopify migration",
         }}
-        heading="Trusted by Leading Brands"
+        heading={wixMigrationSectionCopy.brandsHeading}
         items={wixBrandLogos}
       />
       <TextBoxSection
         className="single-text-box-sec "
-        heading="Why Migrate from Wix to Shopify? "
-        text="If you want more features and benefits for your online store, Migrate from Wix to Shopify. Shopify is a straightforward eCommerce platform that offers a user friendly experience, robust security, advanced features, and a wide range of apps to expand the store’s functionality. If you migrate from the Wix store to Shopify, you can achieve a secure, scalable, and engaging buying experience."
+        heading={wixMigrationSectionCopy.whyMigrateHeading}
+        text={wixMigrationSectionCopy.whyMigrateText}
       />
       <TwoColCenterImageSection content={wixConsiderationsContent} />
       <MigrationProcessSection content={wixProcessContent} />

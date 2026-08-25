@@ -18,7 +18,6 @@ import {
 const brandSection = {
   slug: "shopify-development-agency",
   brands: {
-    ariaLabel: "Brands that trust Dynamic Dreamz",
   },
 } as const;
 
@@ -37,8 +36,6 @@ export function ShopifyDevelopmentAgencyPage() {
       <PortfolioShowcaseSection
         className="our-work-sec pt-20 pb-20 max-[991px]:pt-10"
         content={shopifyDevelopmentAgencyPortfolio}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <HappyClientSection
         description={shopifyDevelopmentAgencyTestimonials.description}

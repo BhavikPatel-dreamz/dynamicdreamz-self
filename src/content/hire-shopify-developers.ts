@@ -1,5 +1,20 @@
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 
+export const hireShopifySectionCopy = {
+  industriesHeading: "Industries that we have Served",
+  industriesDescription:
+    "Dynamic Dreamz has massive experience across multiple industries,<br> helping businesses like yours succeed online. Our expertise spans sectors such as:",
+  portfolioHeading: "Work of our Shopify Developers<br>that show our Expertise",
+  portfolioDescription:
+    "We are sure you would like to hear to what our clients says about our Shopify development.",
+  reasonsHeading: "Why Choose Dynamic Dreamz for <br> Shopify Development",
+  reasonsDescription:
+    "Our Shopify developers have the ideal balance of expertise in eCommerce <br> business and Shopify technology. For your online business, <br> we can act as a powerful catalyst.",
+  advantagesHeading: "Our Advantages of Choosing Dynamic Dreamz as a Shopify Developer",
+  advantagesDescription: "Get connected with us, and you will witness the difference from day one!",
+  advantagesCtaLabel: "inquire now",
+} as const;
+
 const icon = (name: string) => `/assets/hire-shopify-developers/icons/${name}.svg`;
 
 export const hireShopifyHero = {

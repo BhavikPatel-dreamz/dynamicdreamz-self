@@ -1,13 +1,13 @@
 import { FaqSection } from "@/components/sections/faq-section";
-import { homeFaqs } from "@/content/home";
+import { homeFaqs, homeSectionCopy } from "@/content/home";
 
 export function HomeFaqSection() {
   return (
     <FaqSection
       items={homeFaqs}
       idPrefix="home-faq"
-      heading="What Brands and Agencies Usually Want to Know"
-      description="Clear answers about our Shopify, Shopify Plus, mobile app, white-label and wider technology services."
+      heading={homeSectionCopy.homeFaqTitle}
+      description={homeSectionCopy.homeFaqDescription}
       className="bg-[#fafaf7] py-[60px] max-[767px]:py-10"
       contentClassName="flex justify-between gap-[105px] max-[991px]:flex-col max-[991px]:gap-2.5"
       headerClassName="mb-0 flex w-[41%] flex-col items-start text-left max-[991px]:w-full"

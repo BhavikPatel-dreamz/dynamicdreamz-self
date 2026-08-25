@@ -11,7 +11,6 @@ import { kadenceThemeCustomizationContent } from "@/content/kadence-theme-custom
 export function KadenceThemeCustomizationPage() {
   const brandsContent = {
     heading: kadenceThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Kadence theme customization",
     slug: "kadence-theme-customization",
   };
 
@@ -53,8 +52,6 @@ export function KadenceThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

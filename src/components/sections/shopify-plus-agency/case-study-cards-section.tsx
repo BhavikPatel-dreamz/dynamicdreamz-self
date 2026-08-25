@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { sharedUiCopy } from "@/content/common";
 import { shopifyPlusAgencyCaseStudies } from "@/content/shopify-plus-agency";
 
 function LearnMoreArrow() {
@@ -67,7 +68,7 @@ export function CaseStudyCardsSection() {
                     {item.name}
                   </h3>
                   <span className="flex items-center text-sm leading-none font-bold text-[#D92128] uppercase underline max-[1199px]:text-xs">
-                    learn more
+                    {sharedUiCopy.learnMore}
                     <LearnMoreArrow />
                   </span>
                 </div>

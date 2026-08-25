@@ -15,6 +15,7 @@ import {
   plusAgencyServicesContent,
   plusAgencyWhyChooseDD,
   plusAgencyWhyChooseIntro,
+  plusAgencyMigrationSectionCopy,
 } from "@/content/shopify-plus-migration-agency";
 
 export function ShopifyPlusMigrationAgencyPage() {
@@ -28,9 +29,8 @@ export function ShopifyPlusMigrationAgencyPage() {
       <IndustryBrandsSection
         content={{
           slug: "shopify-plus-migration-agency",
-          ariaLabel: "Brands that trust Dynamic Dreamz for Shopify Plus migration",
         }}
-        heading="Trusted by Leading Brands"
+        heading={plusAgencyMigrationSectionCopy.brandsHeading}
         items={plusAgencyBrandLogos}
       />
       <TextBoxSection

@@ -11,7 +11,6 @@ import { bloghashThemeCustomizationContent } from "@/content/bloghash-theme-cust
 export function BloghashThemeCustomizationPage() {
   const brandsContent = {
     heading: bloghashThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for BlogHash theme customization",
     slug: "bloghash-theme-customization",
   };
 
@@ -53,8 +52,6 @@ export function BloghashThemeCustomizationPage() {
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[991px]:py-[50px]"
         content={portfolioContent}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"

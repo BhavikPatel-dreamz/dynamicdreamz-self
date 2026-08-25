@@ -12,6 +12,7 @@ import {
   magentoPlusHeroContent,
   magentoPlusProcessContent,
   magentoPlusWhatDataContent,
+  magentoPlusMigrationSectionCopy,
   magentoPlusWhyChooseContent,
 } from "@/content/magento-to-shopify-plus-migration";
 
@@ -26,9 +27,8 @@ export function MagentoToShopifyPlusMigrationPage() {
       <IndustryBrandsSection
         content={{
           slug: "magento-to-shopify-plus-migration",
-          ariaLabel: "Brands that trust Dynamic Dreamz for Magento to Shopify Plus migration",
         }}
-        heading="Trusted by Leading Brands"
+        heading={magentoPlusMigrationSectionCopy.brandsHeading}
         items={magentoPlusBrandLogos}
       />
       <ShopifyAppBenefitsSection

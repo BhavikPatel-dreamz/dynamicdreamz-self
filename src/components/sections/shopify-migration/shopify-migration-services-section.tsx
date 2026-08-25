@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { shopifyMigrationSectionCopy } from "@/content/shopify-migration";
 
 export type MigrationServiceCard = {
   title: string;
@@ -19,8 +20,8 @@ export type ShopifyMigrationServicesSectionProps = {
 };
 
 export function ShopifyMigrationServicesSection({
-  heading = "Our Comprehensive Migration Services",
-  description = "Bespoke migration services for effortless transition to Shopify platform",
+  heading = shopifyMigrationSectionCopy.servicesHeading,
+  description = shopifyMigrationSectionCopy.servicesDescription,
   items,
   className = "migration-services-sec pt-16 pb-0 max-[991px]:pt-12",
 }: ShopifyMigrationServicesSectionProps) {

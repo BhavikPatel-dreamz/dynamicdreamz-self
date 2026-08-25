@@ -6,6 +6,7 @@ import { HeaderScrollBehavior } from "@/components/layout/header-scroll-behavior
 import { MobileNavigation } from "@/components/layout/mobile-navigation";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { siteChromeCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
 
 export function SiteHeader() {
@@ -39,7 +40,7 @@ export function SiteHeader() {
           variant="primary"
           href={siteConfig.quotePath}
         >
-          Get a quote
+          {siteChromeCopy.headerCta}
         </ButtonLink>
       </Container>
     </header>

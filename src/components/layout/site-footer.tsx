@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { siteChromeCopy } from "@/content/common";
 import { footerAwards, footerNavigation } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 
@@ -150,10 +151,10 @@ export function SiteFooter() {
 
       <Container>
         <div className="flex items-center justify-between pt-[30px] pb-[15px] max-[991px]:pt-[30px] max-[991px]:pb-5 max-[767px]:mt-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:gap-[15px] max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-[15px] max-[767px]:pb-[15px] max-[767px]:text-center">
-          <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">© 2026 <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> All rights reserved.</p>
+          <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">© 2026 <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> {siteChromeCopy.footer.copyright}</p>
           <div className="flex max-[767px]:mt-0">
-            <Link className="relative mr-2.5 inline-block pr-3.75 text-sm leading-5 font-normal text-ink transition-colors duration-300 after:absolute after:-top-px after:right-0 after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href="/terms-of-service" target="_blank" rel="noopener noreferrer">Terms of Service</Link>
-            <Link className="inline-block text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>
+            <Link className="relative mr-2.5 inline-block pr-3.75 text-sm leading-5 font-normal text-ink transition-colors duration-300 after:absolute after:-top-px after:right-0 after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href="/terms-of-service" target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.terms}</Link>
+            <Link className="inline-block text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href="/privacy-policy" target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.privacy}</Link>
           </div>
         </div>
       </Container>

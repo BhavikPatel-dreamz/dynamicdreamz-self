@@ -1,6 +1,10 @@
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const shopifyMaintenanceServicesContent = {
+  sectionCopy: {
+    faqHeading: "Frequently Asked Questions",
+    portfolioCta: "View our work",
+  },
   hero: {
     title: "Shopify Maintenance Service",
     description:

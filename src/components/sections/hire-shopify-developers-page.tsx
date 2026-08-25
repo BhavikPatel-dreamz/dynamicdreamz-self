@@ -16,27 +16,25 @@ import {
   hireShopifyIndustries,
   hireShopifyPortfolio,
   hireShopifyProcess,
+  hireShopifySectionCopy,
   hireShopifyTestimonials,
 } from "@/content/hire-shopify-developers";
 
 const brandSection = {
   slug: "hire-shopify-developers",
   brands: {
-    ariaLabel: "Brands that trust Dynamic Dreamz for Shopify development",
   },
 } as const;
 
 const industriesContent = {
-  heading: "Industries that we have Served",
-  description:
-    "Dynamic Dreamz has massive experience across multiple industries,<br> helping businesses like yours succeed online. Our expertise spans sectors such as:",
+  heading: hireShopifySectionCopy.industriesHeading,
+  description: hireShopifySectionCopy.industriesDescription,
   items: hireShopifyIndustries,
 };
 
 const portfolioContent = {
-  heading: "Work of our Shopify Developers<br>that show our Expertise",
-  description:
-    "We are sure you would like to hear to what our clients says about our Shopify development.",
+  heading: hireShopifySectionCopy.portfolioHeading,
+  description: hireShopifySectionCopy.portfolioDescription,
   items: hireShopifyPortfolio,
 };
 

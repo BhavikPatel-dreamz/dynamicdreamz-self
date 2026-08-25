@@ -76,14 +76,8 @@ export function OurWorkHeroSection({
     eyebrow: ourWorkPage.hero.eyebrow,
     title: ourWorkPage.hero.title,
     description: ourWorkPage.hero.description,
-    primaryCta: {
-      label: "Explore our work",
-      href: "#our-work-projects",
-    },
-    secondaryCta: {
-      label: "View case studies",
-      href: "/case-studies",
-    },
+    primaryCta: ourWorkPage.hero.primaryCta,
+    secondaryCta: ourWorkPage.hero.secondaryCta,
   };
 
   return (

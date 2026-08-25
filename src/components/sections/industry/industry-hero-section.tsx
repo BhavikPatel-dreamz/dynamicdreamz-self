@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { sharedUiCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
 import type { IndustryPageContent } from "@/types/industry";
 
@@ -38,7 +39,7 @@ export function IndustryHeroSection({ content }: IndustryHeroSectionProps) {
             href={siteConfig.quotePath}
             variant="primary"
           >
-            Request a quote
+              {sharedUiCopy.requestQuote}
           </ButtonLink>
         </div>
 

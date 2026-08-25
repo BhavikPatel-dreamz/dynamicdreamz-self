@@ -17,6 +17,7 @@ import {
   squarespaceWhatAfterContent,
   squarespaceWhyChooseContent,
   squarespaceWhyMigrate,
+  squarespaceMigrationSectionCopy,
 } from "@/content/squarespace-to-shopify-migration";
 
 export function SquarespaceToShopifyMigrationPage() {
@@ -30,9 +31,8 @@ export function SquarespaceToShopifyMigrationPage() {
       <IndustryBrandsSection
         content={{
           slug: "squarespace-to-shopify-migration",
-          ariaLabel: "Brands that trust Dynamic Dreamz for Squarespace to Shopify migration",
         }}
-        heading="Trusted by Leading Brands"
+        heading={squarespaceMigrationSectionCopy.brandsHeading}
         items={squarespaceBrandLogos}
       />
       <TextBoxSection
@@ -65,8 +65,8 @@ export function SquarespaceToShopifyMigrationPage() {
         id="why-choose-dynamic-dreamz"
       />
       <HappyClientSection
-        description="We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories: Check out how our services empower them to evolve."
-        heading="Our Customers' Testimonials"
+        description={squarespaceMigrationSectionCopy.testimonialsDescription}
+        heading={squarespaceMigrationSectionCopy.testimonialsHeading}
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"

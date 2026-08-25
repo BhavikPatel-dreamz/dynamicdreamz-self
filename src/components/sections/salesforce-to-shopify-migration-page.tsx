@@ -16,6 +16,7 @@ import {
   salesforceProcessContent,
   salesforceWhyChooseContent,
   salesforceWhyMigrate,
+  salesforceMigrationSectionCopy,
 } from "@/content/salesforce-to-shopify-migration";
 
 export function SalesforceToShopifyMigrationPage() {
@@ -29,9 +30,8 @@ export function SalesforceToShopifyMigrationPage() {
       <IndustryBrandsSection
         content={{
           slug: "salesforce-to-shopify-migration",
-          ariaLabel: "Brands that trust Dynamic Dreamz for Salesforce to Shopify migration",
         }}
-        heading="Trusted by Leading Brands"
+        heading={salesforceMigrationSectionCopy.brandsHeading}
         items={salesforceBrandLogos}
       />
       <TextBoxSection
@@ -58,8 +58,8 @@ export function SalesforceToShopifyMigrationPage() {
         id="why-choose-dynamic-dreamz"
       />
       <HappyClientSection
-        description="We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories: Check out how our services empower them to evolve."
-        heading="Our Customers' Testimonials"
+        description={salesforceMigrationSectionCopy.testimonialsDescription}
+        heading={salesforceMigrationSectionCopy.testimonialsHeading}
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"

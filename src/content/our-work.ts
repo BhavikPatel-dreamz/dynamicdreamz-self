@@ -37,11 +37,19 @@ export type OurWorkCaseStudy = {
 };
 
 export const ourWorkPage = {
+  ui: {
+    showing: "Showing",
+    project: "project",
+    projects: "projects",
+    viewCaseStudy: "View case study",
+  },
   hero: {
     eyebrow: "our work",
     title: "Shopify, Web & Mobile App Portfolio",
     description:
       "Explore selected work across Shopify and Shopify Plus, mobile apps, WordPress, Magento and BigCommerce — from premium DTC storefronts and B2B commerce to migrations, custom development and ongoing optimization.",
+    primaryCta: { label: "Explore our work", href: "#our-work-projects" },
+    secondaryCta: { label: "View case studies", href: "/case-studies" },
   },
   portfolio: {
     eyebrow: "PORTFOLIO",

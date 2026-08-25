@@ -1,0 +1,22 @@
+export const caseStudiesUiCopy = {
+  empty: "No case studies match your search criteria. Try adjusting your search or filter.",
+  loadingMore: "Loading more case studies…",
+  end: "You’ve reached the end of the case studies.",
+  searchLabel: "Search case studies",
+  searchPlaceholder: "Search case studies…",
+  allTechnologies: "All Technologies",
+  allIndustries: "All Industries",
+  clearFilters: "Clear all filters",
+  viewCaseStudy: "view Case study",
+  goBack: "Go back",
+  colors: "Colors",
+  typeface: "Typeface",
+  facts: {
+    industry: "Industry",
+    technology: "Technology",
+    location: "Location",
+  },
+  showing: "Showing",
+  project: "project",
+  projects: "projects",
+} as const;

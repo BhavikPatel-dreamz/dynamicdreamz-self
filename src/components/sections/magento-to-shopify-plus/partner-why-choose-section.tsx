@@ -13,6 +13,7 @@ export type PartnerWhyChooseSectionProps = {
   content: {
     heading: string;
     description: string;
+    descriptionHighlight?: string;
     ctaLabel: string;
     ctaHref: string;
     items: readonly PartnerWhyChooseItem[];
@@ -26,6 +27,11 @@ export function PartnerWhyChooseSection({
   className = "hiring-services-sec mb-20 max-[767px]:mb-[50px]",
   id = "why-choose-dynamic-dreamz",
 }: PartnerWhyChooseSectionProps) {
+  const [descriptionBeforeHighlight, descriptionAfterHighlight = ""] =
+    content.descriptionHighlight
+      ? content.description.split(content.descriptionHighlight)
+      : [content.description];
+
   return (
     <section
       className={`${className} bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[767px]:py-[50px]`}
@@ -38,14 +44,13 @@ export function PartnerWhyChooseSection({
             {content.heading}
           </h2>
           <p className="mx-auto mb-8 max-w-[850px] font-sans text-base font-medium leading-[27.2px] text-[#535353] max-[767px]:text-sm">
-            As a proud{" "}
-            <strong className="bg-[linear-gradient(97deg,#15C064_28.5%,#00D1FF_91.82%)] bg-clip-text font-bold text-transparent">
-              Shopify Plus Partner
-            </strong>
-            , we have been vetted and recognized by Shopify for our expertise in
-            delivering Shopify solutions and exceptional results. Trust us to
-            bring your business the full power of Shopify Plus with our migration
-            from Magento to Shopify Plus​.
+            {descriptionBeforeHighlight}
+            {content.descriptionHighlight ? (
+              <strong className="bg-[linear-gradient(97deg,#15C064_28.5%,#00D1FF_91.82%)] bg-clip-text font-bold text-transparent">
+                {content.descriptionHighlight}
+              </strong>
+            ) : null}
+            {descriptionAfterHighlight}
           </p>
           <ButtonLink
             aria-label="Verify Our Partnerships"

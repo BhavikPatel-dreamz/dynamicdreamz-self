@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import styles from "@/components/sections/home/agency-overview-section.module.css";
 import { Container } from "@/components/ui/container";
-import { companyStats, showcaseImages } from "@/content/home";
+import { companyStats, homeSectionCopy, showcaseImages } from "@/content/home";
 import { cn } from "@/lib/class-names";
 
 const showcaseItemClass =
@@ -60,9 +60,9 @@ export function AgencyOverviewSection() {
       <Container>
         <div className="global_agency_col_wrap flex justify-between overflow-hidden rounded-[30px] bg-pale-blue min-[768px]:max-[991px]:flex-col max-[767px]:flex-col max-[767px]:rounded-[20px]">
           <div className="content_left_section mx-[37px] ml-15 w-[492px] shrink-0 py-[105px] max-[1199px]:ml-5 max-[1199px]:w-[44%] max-[1199px]:basis-[44%] max-[991px]:m-0 max-[991px]:w-full max-[991px]:px-[25px] max-[991px]:py-[50px] max-[767px]:px-[17px] max-[767px]:pt-[35px] max-[767px]:pb-[63px]">
-            <h2 className="mb-6 text-[35px] leading-[1.385] font-medium min-[768px]:max-[991px]:text-[30px] min-[768px]:max-[991px]:leading-10 min-[768px]:max-[991px]:tracking-[-0.7px] max-[767px]:text-2xl max-[767px]:leading-[1.24]">Globally Trusted Web &amp; App Development Agency</h2>
+            <h2 className="mb-6 text-[35px] leading-[1.385] font-medium min-[768px]:max-[991px]:text-[30px] min-[768px]:max-[991px]:leading-10 min-[768px]:max-[991px]:tracking-[-0.7px] max-[767px]:text-2xl max-[767px]:leading-[1.24]">{homeSectionCopy.agencyOverviewTitle}</h2>
             <p className="text-base leading-[1.9] font-semibold text-muted max-[767px]:text-sm">
-              With sharp custom design, smooth development, and long-term support, build a brand that scales worldwide.
+              {homeSectionCopy.agencyOverviewDescription}
             </p>
             <ul className="counter_number_wrap relative mx-[-15px] mt-[53px] -mb-[46px] flex flex-wrap justify-between list-none p-0 before:absolute before:top-[calc(50%-16px)] before:left-0 before:z-[2] before:h-px before:w-full before:bg-[linear-gradient(90deg,transparent,#282828,transparent)] before:opacity-20 before:content-[''] after:absolute after:top-0 after:left-1/2 after:z-[2] after:h-full after:w-px after:bg-[linear-gradient(0deg,transparent,#282828,transparent)] after:opacity-20 after:content-[''] max-[767px]:mt-6">
               {companyStats.map((stat) => (

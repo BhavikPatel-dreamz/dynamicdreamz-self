@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "@/components/sections/home/selected-work-section.module.css";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
-import { projects, type Project } from "@/content/home";
+import { homeSectionCopy, projects, type Project } from "@/content/home";
 import { cn } from "@/lib/class-names";
 
 function DiagonalArrowIcon() {
@@ -68,9 +68,9 @@ export function SelectedWorkSection() {
   return (
     <section className="min-h-[932.83px] overflow-hidden bg-dark-green pt-[60px] pb-[52px] text-white min-[768px]:max-[991px]:min-h-[774.81px] max-[767px]:min-h-[649.77px] max-[767px]:py-[30px]">
       <Container className="flex items-center justify-between max-[991px]:flex-col max-[991px]:items-start">
-        <h2 className="mr-5 max-w-[600px] text-[40px] leading-[1.2] font-medium min-[768px]:max-[991px]:m-0 min-[768px]:max-[991px]:max-w-full min-[768px]:max-[991px]:text-[35px] min-[768px]:max-[991px]:leading-[48.475px] max-[767px]:m-0 max-[767px]:mb-4 max-[767px]:max-w-full max-[767px]:text-2xl max-[767px]:leading-[1.4]">Selected Shopify Plus &amp; Enterprise Ecommerce Work</h2>
+        <h2 className="mr-5 max-w-[600px] text-[40px] leading-[1.2] font-medium min-[768px]:max-[991px]:m-0 min-[768px]:max-[991px]:max-w-full min-[768px]:max-[991px]:text-[35px] min-[768px]:max-[991px]:leading-[48.475px] max-[767px]:m-0 max-[767px]:mb-4 max-[767px]:max-w-full max-[767px]:text-2xl max-[767px]:leading-[1.4]">{homeSectionCopy.selectedWorkTitle}</h2>
         <p className="max-w-[580px] text-base leading-[1.9] font-semibold text-white/80 min-[768px]:max-[991px]:mt-2.5 min-[768px]:max-[991px]:max-w-full max-[767px]:max-w-full max-[767px]:text-sm">
-          Explore Shopify and Shopify Plus projects across beauty, fashion, B2B, wholesale, international commerce and large-catalogue ecommerce.
+          {homeSectionCopy.selectedWorkDescription}
         </p>
       </Container>
       <div className="w-full overflow-hidden py-[57px] pb-[51px] max-[767px]:overflow-x-auto max-[767px]:px-0 max-[767px]:pt-[34px] max-[767px]:pb-[30px] max-[767px]:[container-type:inline-size] max-[767px]:[scrollbar-width:none] max-[767px]:snap-x max-[767px]:snap-mandatory max-[767px]:[&::-webkit-scrollbar]:hidden" aria-label="Selected ecommerce work">
@@ -80,7 +80,7 @@ export function SelectedWorkSection() {
         </div>
       </div>
       <div className="flex justify-center">
-        <ButtonLink className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:py-3 max-[991px]:text-sm" variant="light" href="/our-work">View our work</ButtonLink>
+        <ButtonLink className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:py-3 max-[991px]:text-sm" variant="light" href="/our-work">{homeSectionCopy.ctaViewWork}</ButtonLink>
       </div>
     </section>
   );

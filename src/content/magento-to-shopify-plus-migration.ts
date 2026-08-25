@@ -3,6 +3,8 @@ import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
 import type { PartnerWhyChooseItem } from "@/components/sections/magento-to-shopify-plus/partner-why-choose-section";
 import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
+
+export { migrationSectionCopy as magentoPlusMigrationSectionCopy } from "@/content/migration-common";
 import type { ShopifyAppBenefitItem } from "@/components/sections/shopify-mobile-app/shopify-app-benefits-section";
 import type { WhatDataTransferItem } from "@/components/sections/magento-to-shopify-plus/what-data-transfer-section";
 
@@ -340,6 +342,7 @@ export const magentoPlusProcessContent: MigrationProcessContent = {
 export const magentoPlusWhyChooseContent: {
   heading: string;
   description: string;
+  descriptionHighlight?: string;
   ctaLabel: string;
   ctaHref: string;
   items: readonly PartnerWhyChooseItem[];
@@ -347,6 +350,7 @@ export const magentoPlusWhyChooseContent: {
   heading: "Why Choose Dynamic Dreamz for Migration Services?",
   description:
     "As a proud Shopify Plus Partner, we have been vetted and recognized by Shopify for our expertise in delivering Shopify solutions and exceptional results. Trust us to bring your business the full power of Shopify Plus with our migration from Magento to Shopify Plus​.",
+  descriptionHighlight: "Shopify Plus Partner",
   ctaLabel: "Verify Our Partnership",
   ctaHref: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
   items: [

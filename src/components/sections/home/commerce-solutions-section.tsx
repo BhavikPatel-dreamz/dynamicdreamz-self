@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { Container } from "@/components/ui/container";
-import { commerceSolutions } from "@/content/home";
+import { commerceSolutions, homeSectionCopy } from "@/content/home";
 import { cn } from "@/lib/class-names";
 
 function ArrowIcon() {
@@ -31,9 +31,9 @@ export function CommerceSolutionsSection() {
     <section className="py-[60px] max-[991px]:py-[50px] max-[767px]:py-10" aria-labelledby="commerce-solutions-title">
       <Container>
         <div className="mb-[54px] flex items-center justify-between gap-10 max-[991px]:mb-8 max-[991px]:flex-col max-[991px]:items-start max-[991px]:gap-0">
-          <h2 id="commerce-solutions-title" className="w-[40%] text-[43px] leading-[1.2] font-medium max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[991px]:w-full max-[767px]:text-2xl max-[767px]:leading-[33.24px]">Commerce &amp; technology solutions.</h2>
+          <h2 id="commerce-solutions-title" className="w-[40%] text-[43px] leading-[1.2] font-medium max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[991px]:w-full max-[767px]:text-2xl max-[767px]:leading-[33.24px]">{homeSectionCopy.commerceSolutionsTitle}</h2>
           <p className="w-[47%] text-base leading-[1.9] font-medium text-muted max-[991px]:mt-2.5 max-[991px]:w-full max-[767px]:text-sm">
-            From Shopify Plus and ecommerce development to mobile apps, full-stack solutions, WordPress and WooCommerce, our teams support established brands and digital agencies through one experienced delivery partner.
+            {homeSectionCopy.commerceSolutionsDescription}
           </p>
         </div>
         <div className="grid grid-cols-2 items-start gap-3 max-[991px]:grid-cols-1" data-commerce-accordion>

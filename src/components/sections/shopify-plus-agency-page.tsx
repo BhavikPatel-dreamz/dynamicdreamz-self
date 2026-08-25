@@ -19,7 +19,6 @@ import {
 const brandSection = {
   slug: "shopify-plus-agency",
   brands: {
-    ariaLabel: "Brands that trust Dynamic Dreamz",
   },
 } as const;
 

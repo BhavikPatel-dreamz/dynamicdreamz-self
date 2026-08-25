@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
-import { founders } from "@/content/about";
+import { aboutSectionCopy, founders } from "@/content/about";
 
 function LinkedInIcon() {
   return (
@@ -18,12 +18,12 @@ export function AboutFoundersSection() {
       <Container>
         <header className="mx-auto mb-10 max-w-[680px] text-center max-[1199px]:mb-[30px] max-[991px]:mb-5">
           <h2 id="about-founders-title" className="mb-6 text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
-            The People Behind Dynamic Dreamz
+            {aboutSectionCopy.foundersTitle}
           </h2>
           <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
-            Leaders who drive creativity and technical excellence.
+            {aboutSectionCopy.foundersDescription[0]}
             <br />
-            Turning every project into a smooth, successful digital experience.
+            {aboutSectionCopy.foundersDescription[1]}
           </p>
         </header>
 

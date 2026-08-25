@@ -4,6 +4,12 @@ import type { MigrationServiceCard } from "@/components/sections/shopify-migrati
 import type { PortfolioShowcaseItem } from "@/components/sections/portfolio-showcase-section";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 
+export const shopifyMigrationSectionCopy = {
+  servicesHeading: "Our Comprehensive Migration Services",
+  servicesDescription:
+    "Bespoke migration services for effortless transition to Shopify platform",
+} as const;
+
 export const shopifyMigrationHero = {
   title: "Seamless Shopify Migration Services",
   description:

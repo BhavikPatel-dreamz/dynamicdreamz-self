@@ -10,6 +10,7 @@ import {
   whiteLabelWebsiteDesignIndustries,
   whiteLabelWebsiteDesignProcess,
   whiteLabelWebsiteDesignTestimonials,
+  whiteLabelWebsiteDesignSectionCopy,
 } from "@/content/white-label-website-design";
 import { cn } from "@/lib/class-names";
 
@@ -20,9 +21,9 @@ export function WhiteLabelDesignAiEnginesSection() {
     <section className="pt-20 max-[991px]:pt-[50px]">
       <Container className="max-[575px]:px-4">
         <div className="mx-auto mb-16 text-center max-[991px]:mb-[50px] max-[767px]:mb-10">
-          <h2 className={cn(sectionHeading, "mb-[15px]")}>Websites Built for Today&apos;s Visitors and Tomorrow&apos;s AI Engines</h2>
+          <h2 className={cn(sectionHeading, "mb-[15px]")}>{whiteLabelWebsiteDesignSectionCopy.aiEnginesTitle}</h2>
           <p className="text-base leading-[26px] font-medium text-muted max-[767px]:leading-[1.9] max-w-[800px] mx-auto">
-            Great design is only half the job. We help your clients&apos; websites perform better through AI-powered tools, smarter automation, and the technical foundations that AI search engines need to discover and recommend them.
+            {whiteLabelWebsiteDesignSectionCopy.aiEnginesDescription}
           </p>
         </div>
         <div className="grid grid-cols-6 gap-[30px] max-[991px]:grid-cols-2 max-[991px]:gap-5 max-[767px]:grid-cols-1 max-[767px]:gap-7.5">
@@ -61,11 +62,11 @@ export function WhiteLabelDesignAiDiscoverySection() {
         <div className="-mx-[15px] flex flex-wrap">
           <div className="w-1/2 px-[15px] pr-5 max-[991px]:w-full max-[991px]:pr-[15px]">
             <div className="sticky top-[100px] max-[991px]:static">
-              <h2 className={cn(sectionHeading, "mb-[15px] tracking-[-.7px]")}>Designed to be found by AI, not just Google</h2>
+              <h2 className={cn(sectionHeading, "mb-[15px] tracking-[-.7px]")}>{whiteLabelWebsiteDesignSectionCopy.aiDiscoveryTitle}</h2>
               <p className="mb-6 text-base leading-[26px] font-medium text-muted max-[767px]:leading-[1.8]">
-                Search is shifting. ChatGPT, Gemini, and Perplexity are now recommending businesses directly to users. We make sure the websites we build are readable, citable, and trusted by these AI engines from day one.
+                {whiteLabelWebsiteDesignSectionCopy.aiDiscoveryDescription}
               </p>
-              <ButtonLink href="/request-quote" rel="nofollow" variant="primary">Learn how we do it</ButtonLink>
+              <ButtonLink href="/request-quote" rel="nofollow" variant="primary">{whiteLabelWebsiteDesignSectionCopy.aiDiscoveryCta}</ButtonLink>
             </div>
           </div>
           <div className="w-1/2 px-[15px] pl-5 max-[991px]:mt-10 max-[991px]:w-full max-[991px]:pl-[15px]">
@@ -80,8 +81,8 @@ export function WhiteLabelDesignAiDiscoverySection() {
           </div>
         </div>
         <div className="mx-auto mt-[60px] max-w-[800px] text-center max-[991px]:mt-[50px]">
-          <p className="mb-6 text-base leading-[26px] font-medium text-muted max-[767px]:leading-[1.8]">Add AI-enhanced design to your agency&apos;s offering We handle the build and the tech. You keep the client relationship.</p>
-          <ButtonLink href="/schedule-your-consultation" rel="nofollow" variant="primary">Talk to an expert</ButtonLink>
+          <p className="mb-6 text-base leading-[26px] font-medium text-muted max-[767px]:leading-[1.8]">{whiteLabelWebsiteDesignSectionCopy.aiDiscoveryClosing}</p>
+          <ButtonLink href="/schedule-your-consultation" rel="nofollow" variant="primary">{whiteLabelWebsiteDesignSectionCopy.aiDiscoveryClosingCta}</ButtonLink>
         </div>
       </Container>
     </section>
@@ -93,8 +94,8 @@ export function WhiteLabelDesignProcessSection() {
     <section className="white_label_process_step_box_section py-20 max-[991px]:py-[50px]">
       <Container className="max-[575px]:px-4">
         <div className="mx-auto mb-[50px] max-w-[1000px] text-center max-[767px]:mb-[30px]">
-          <h2 className={cn(sectionHeading, "mb-2.5")}>Our White Label Web Development Process</h2>
-          <p className="mx-auto max-w-[800px] text-base leading-[1.9] font-medium text-muted">We use a structured process to ensure that every white label website development project is delivered on time and fulfills your client&apos;s expectations.</p>
+          <h2 className={cn(sectionHeading, "mb-2.5")}>{whiteLabelWebsiteDesignSectionCopy.processTitle}</h2>
+          <p className="mx-auto max-w-[800px] text-base leading-[1.9] font-medium text-muted">{whiteLabelWebsiteDesignSectionCopy.processDescription}</p>
         </div>
         <div className="wrapper relative grid grid-cols-4 xl:gap-[50px] lg:gap-[10px] max-[991px]:gap-5 max-[767px]:ml-[5px] max-[767px]:grid-cols-1 max-[767px]:gap-[30px] max-[767px]:border-l-2 max-[767px]:border-brand-red max-[767px]:pl-5">
           {whiteLabelWebsiteDesignProcess.map((step, index) => (
@@ -122,8 +123,8 @@ export function WhiteLabelDesignFeaturesSection() {
     <section className="rounded-t-[50px] bg-pale-blue py-20 max-[991px]:rounded-t-[30px] max-[991px]:py-[50px]">
       <Container className="max-[575px]:px-4">
         <div className="mx-auto mb-10 text-center max-[767px]:mb-[30px]">
-          <h2 className={cn(sectionHeading, "mb-[15px] tracking-[-.7px]")}>Features of White Label Web Design Services</h2>
-          <p className="max-w-[600px] mx-auto text-base leading-[1.9] font-medium text-muted">Our White label web design services offer several features that make it an attractive option for agencies looking to expand their offerings.</p>
+          <h2 className={cn(sectionHeading, "mb-[15px] tracking-[-.7px]")}>{whiteLabelWebsiteDesignSectionCopy.featuresTitle}</h2>
+          <p className="max-w-[600px] mx-auto text-base leading-[1.9] font-medium text-muted">{whiteLabelWebsiteDesignSectionCopy.featuresDescription}</p>
         </div>
         <div className="flex flex-wrap justify-center gap-3">
           {whiteLabelWebsiteDesignFeatures.map((item) => (
@@ -144,16 +145,16 @@ export function WhiteLabelDesignPartnerAndIndustriesSections() {
       <section className="py-20 max-[991px]:py-[50px]">
         <Container className="max-[575px]:px-4">
           <div className="rounded-[30px] bg-brand-red/10 px-5 py-[86px] text-center max-[991px]:rounded-[20px] max-[991px]:py-10">
-            <h2 className={cn(sectionHeading, "mb-[15px]")}>Choosing the Right White Label Web Design Partner </h2>
-            <p className="mx-auto max-w-[890px] text-base leading-[1.9] font-medium text-muted">Choosing the right white label website design partner is crucial for your company&apos;s success and growth. When you find a white label website design partner, consider a strong portfolio, proven track record, and effective communication. The perfect partner can offer quality work and help you grow and maintain long term client relationships.</p>
+            <h2 className={cn(sectionHeading, "mb-[15px]")}>{whiteLabelWebsiteDesignSectionCopy.partnerTitle}</h2>
+            <p className="mx-auto max-w-[890px] text-base leading-[1.9] font-medium text-muted">{whiteLabelWebsiteDesignSectionCopy.partnerDescription}</p>
           </div>
         </Container>
       </section>
       <section className="industries_we_have_served_box pb-20 max-[991px]:pb-[50px]">
         <Container className="max-[575px]:px-4">
           <div className="section-title mx-auto mb-20 max-w-[600px] text-center max-[991px]:mb-[50px] max-[767px]:mb-[30px]">
-            <h2 className={cn(sectionHeading, "mb-[15px]")}>Industries We have Served</h2>
-            <p className="text-base leading-[1.9] font-medium text-muted">We offer white label web design services across various industries, guaranteeing we satisfy each client&apos;s unique requirements.</p>
+            <h2 className={cn(sectionHeading, "mb-[15px]")}>{whiteLabelWebsiteDesignSectionCopy.industriesTitle}</h2>
+            <p className="text-base leading-[1.9] font-medium text-muted">{whiteLabelWebsiteDesignSectionCopy.industriesDescription}</p>
           </div>
           <div className="wrapper -mx-12 -mb-20 flex flex-wrap justify-center max-[1199px]:-mx-[30px] max-[1199px]:-mb-10 max-[767px]:m-0">
             {whiteLabelWebsiteDesignIndustries.map((item, index) => (
@@ -191,8 +192,8 @@ export function WhiteLabelDesignTestimonialsSection() {
     <section className="bg-cream py-[60px] max-[767px]:py-[50px]">
       <Container className="max-[575px]:px-4">
         <div className="mx-auto mb-[42px] max-w-[830px] text-center max-[767px]:mb-[30px]">
-          <h2 className={cn(sectionHeading, "mb-[15px]")}>Case Studies & Success Stories</h2>
-          <p className="text-base max-[767px]:text-sm leading-[1.9] font-medium text-muted">Many companies have used our white label website design services to help their clients get high quality website designs. We take pride in our portfolio, which consists of successful website design projects that show that we can fulfill deadlines and satisfy clients&apos; requirements. Check our case studies to learn how we have helped agencies grow their business by delivering excellent web design services with our white label services.</p>
+          <h2 className={cn(sectionHeading, "mb-[15px]")}>{whiteLabelWebsiteDesignSectionCopy.testimonialsTitle}</h2>
+          <p className="text-base max-[767px]:text-sm leading-[1.9] font-medium text-muted">{whiteLabelWebsiteDesignSectionCopy.testimonialsDescription}</p>
         </div>
         <TestimonialCarousel items={whiteLabelWebsiteDesignTestimonials} />
       </Container>

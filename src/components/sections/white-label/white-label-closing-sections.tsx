@@ -4,6 +4,7 @@ import { FaqAccordion } from "@/components/ui/faq-accordion";
 import {
   whiteLabelShopifyFaqs,
   whiteLabelShopifyFinalCta,
+  whiteLabelShopifySectionCopy,
 } from "@/content/white-label-shopify-development";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
@@ -22,7 +23,7 @@ export function WhiteLabelFaqSection({
     <section className="bg-[#e6ecf0] py-20 max-[991px]:py-[50px]">
       <Container className="max-[575px]:px-4">
         <h2 className="mb-10 text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[30px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
-          Frequently Asked Questions
+          {whiteLabelShopifySectionCopy.faqTitle}
         </h2>
         <FaqAccordion
           answerClassName="!font-medium tracking-[0.32px] min-[1200px]:leading-8"

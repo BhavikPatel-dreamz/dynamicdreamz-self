@@ -5,6 +5,8 @@ import type { ServiceHeroContent } from "@/components/sections/service-hero-sect
 import type { ProofSectionContent } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import type { TwoColCenterImageContent } from "@/components/sections/two-col-center-image-section";
 
+export { migrationSectionCopy as etsyMigrationSectionCopy } from "@/content/migration-common";
+
 export const etsyHeroContent: ServiceHeroContent = {
   title: "Etsy to Shopify Migration",
   description:

@@ -33,6 +33,18 @@ export type CareerGalleryImage = {
   height: number;
 };
 
+export const careerSectionCopy = {
+  galleryTitle: "Life at Dynamic Dreamz",
+  applyNow: "Apply now",
+  position: "Position",
+  positions: "Positions",
+  jobDetails: [
+    { label: "Work Experience", key: "experience" },
+    { label: "Job Type", key: "jobType" },
+    { label: "Posted On", key: "postedOn" },
+  ],
+} as const;
+
 export const careerHero = {
   title:
     "Explore rewarding career in IT, where your talents thrive and possibilities flourish.",

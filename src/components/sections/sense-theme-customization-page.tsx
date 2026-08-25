@@ -10,7 +10,6 @@ import { senseThemeCustomizationContent } from "@/content/sense-theme-customizat
 export function SenseThemeCustomizationPage() {
   const brandsContent = {
     heading: senseThemeCustomizationContent.brands.title,
-    ariaLabel: "Brands that trust Dynamic Dreamz for Sense theme customization",
     slug: "sense-theme-customization",
   };
 
@@ -36,7 +35,7 @@ export function SenseThemeCustomizationPage() {
       <IndustryBrandsSection
         content={brandsContent}
         density="compact"
-        heading="Trusted by Leading Brands"
+        heading={senseThemeCustomizationContent.brands.title}
       />
       <ThemeFeaturesSection content={senseThemeCustomizationContent.features} />
       <ShopifyReasonsSection

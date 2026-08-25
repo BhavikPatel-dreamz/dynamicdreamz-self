@@ -54,7 +54,7 @@ export function OurWorkCaseStudiesSection() {
                   </span>
                   <span className="mt-auto pt-5">
                     <span className="inline-flex items-center gap-2 rounded-[30px] bg-brand-red px-5 py-3 text-sm font-bold text-white">
-                      View case study
+                      {ourWorkPage.ui.viewCaseStudy}
                       <span aria-hidden="true">↗</span>
                     </span>
                   </span>

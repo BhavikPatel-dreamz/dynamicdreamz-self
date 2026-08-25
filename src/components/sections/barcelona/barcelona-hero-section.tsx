@@ -19,9 +19,9 @@ export function BarcelonaHeroSection() {
                   {hero.title}
                 </h1>
                 <p className="mt-2 text-base font-medium leading-relaxed text-[#535353]">
-                  Our Happy Clients from{" "}
+                  {hero.subtitle.replace(" Spain", "")}{" "}
                   <span className="relative font-extrabold text-[#ad5151]">
-                    Spain
+                    {hero.subtitle.split(" ")[hero.subtitle.split(" ").length - 1]}
                     <svg
                       aria-hidden="true"
                       className="absolute left-0 top-full"
@@ -94,7 +94,7 @@ export function BarcelonaHeroSection() {
                 phonePlaceholder={null}
                 showTitle={false}
                 submitButtonClassName="group/quote-submit relative inline-flex min-h-[49px] w-auto cursor-pointer items-center justify-center overflow-hidden rounded-[30px] border-2 border-brand-red lg:px-8 px-6 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-600 hover:border-[#4f4f4f] hover:text-[#4f4f4f] max-[767px]:w-full disabled:cursor-wait disabled:opacity-70"
-                submitLabel="submit inquiry"
+                submitLabel={hero.form.submitText}
               />
             </div>
           </div>

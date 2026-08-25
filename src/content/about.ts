@@ -1,5 +1,20 @@
 import { companyFacts } from "@/data/company";
 
+export const aboutSectionCopy = {
+  deliveryTitle: "A Team that always delivers",
+  foundersTitle: "The People Behind Dynamic Dreamz",
+  foundersDescription: [
+    "Leaders who drive creativity and technical excellence.",
+    "Turning every project into a smooth, successful digital experience.",
+  ],
+  timelineTitle: "How we started",
+  timelineDescription:
+    "We Create Robust Strategic Plans That Always Begin with Getting to know you and What you’re trying to achieve",
+  valuesTitle: "Our Core Values",
+  valuesDescription:
+    "We have deeply imbibed accountability, quality, and innovation as our core values and will continue in doing so.",
+} as const;
+
 export type AboutPerson = {
   name: string;
   role: string;

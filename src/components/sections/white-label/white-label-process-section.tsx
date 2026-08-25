@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/container";
-import { whiteLabelShopifyProcess } from "@/content/white-label-shopify-development";
+import { whiteLabelShopifyProcess, whiteLabelShopifySectionCopy } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
 import type { WhiteLabelProcessStep } from "@/types/white-label-service";
 
@@ -10,9 +10,9 @@ type WhiteLabelProcessSectionProps = {
 };
 
 export function WhiteLabelProcessSection({
-  title = "How Our White Label Shopify Partnership Works",
+  title = whiteLabelShopifySectionCopy.processTitle,
   steps = whiteLabelShopifyProcess,
-  note = "We maintain strict confidentiality, guaranteeing that all work stays under your brand.",
+  note = whiteLabelShopifySectionCopy.processNote,
 }: WhiteLabelProcessSectionProps) {
   return (
     <section className="py-20 max-[991px]:py-[50px]">

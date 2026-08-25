@@ -2,6 +2,8 @@
 
 import { useRouter } from "next/navigation";
 
+import { sharedUiCopy } from "@/content/common";
+
 export function GoBackButton() {
   const router = useRouter();
 
@@ -34,7 +36,7 @@ export function GoBackButton() {
           fill="currentColor"
         />
       </svg>
-      Go back
+      {sharedUiCopy.goBack}
     </button>
   );
 }

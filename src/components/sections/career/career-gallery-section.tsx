@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { careerGallery } from "@/content/career";
+import { careerGallery, careerSectionCopy } from "@/content/career";
 
 import styles from "./career-gallery-section.module.css";
 
@@ -12,7 +12,7 @@ export function CareerGallerySection() {
       aria-labelledby="career-gallery-title"
     >
       <h2 className="sr-only" id="career-gallery-title">
-        Life at Dynamic Dreamz
+        {careerSectionCopy.galleryTitle}
       </h2>
       <div className={styles.marquee}>
         <div className={styles.track}>

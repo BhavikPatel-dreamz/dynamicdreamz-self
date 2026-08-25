@@ -9,6 +9,7 @@ import {
   magentoHeroContent,
   magentoProcessContent,
   magentoWhyMigrate,
+  magentoMigrationSectionCopy,
 } from "@/content/magento-to-shopify-migration";
 
 export function MagentoToShopifyMigrationPage() {
@@ -22,9 +23,8 @@ export function MagentoToShopifyMigrationPage() {
       <IndustryBrandsSection
         content={{
           slug: "magento-to-shopify-migration",
-          ariaLabel: "Brands that trust Dynamic Dreamz for Magento to Shopify migration",
         }}
-        heading="Trusted by Leading Brands"
+        heading={magentoMigrationSectionCopy.brandsHeading}
         items={magentoBrandLogos}
       />
       <TextBoxSection

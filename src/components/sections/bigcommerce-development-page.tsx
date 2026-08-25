@@ -32,7 +32,6 @@ export function BigCommerceDevelopmentPage() {
       <IndustryBrandsSection
         content={{
           slug: "bigcommerce-development",
-          ariaLabel: "Trusted Brands",
         }}
         items={bigCommerceDevelopmentBrands}
       />
@@ -57,8 +56,6 @@ export function BigCommerceDevelopmentPage() {
       <PortfolioShowcaseSection
         className="our-work-sec pb-20 max-[991px]:pb-[60px]"
         content={bigCommerceDevelopmentPortfolio}
-        ctaHref="/our-work"
-        ctaLabel="View our work"
       />
       <HappyClientSection
         description={bigCommerceDevelopmentTestimonials.description}

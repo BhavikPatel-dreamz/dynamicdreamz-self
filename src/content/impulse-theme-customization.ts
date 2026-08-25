@@ -1,4 +1,5 @@
 export const impulseThemeCustomizationContent = {
+  portfolioEyebrow: "Portfolio",
   hero: {
     title: "Impulse Theme Customization Service",
     description:

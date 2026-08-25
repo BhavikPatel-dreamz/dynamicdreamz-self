@@ -1,4 +1,5 @@
 import { ClientLogoSlider } from "@/components/ui/client-logo-slider";
+import { brandTrustAriaLabels, migrationSectionCopy } from "@/content/migration-common";
 import type {
   ClientLogoSliderItem,
   ClientLogoSliderSlides,
@@ -11,7 +12,7 @@ type IndustryBrandsSectionProps = {
   content: {
     slug: string;
     brands?: {
-      ariaLabel: string;
+      ariaLabel?: string;
     };
     ariaLabel?: string;
   };
@@ -38,7 +39,11 @@ export function IndustryBrandsSection({
 }: IndustryBrandsSectionProps) {
   const hasSpaciousMobileLayout = mobileSpacing === "spacious";
   const isCompact = density === "compact";
-  const ariaLabel = content.brands?.ariaLabel ?? content.ariaLabel ?? "Trusted Brands";
+  const ariaLabel =
+    content.brands?.ariaLabel ??
+    content.ariaLabel ??
+    brandTrustAriaLabels[content.slug] ??
+    migrationSectionCopy.brandsAriaLabel;
 
   return (
     <section
@@ -78,7 +83,7 @@ export function IndustryBrandsSection({
               {heading ? (
                 formatBrText(heading, "max-[991.98px]:hidden")
               ) : (
-                "Trusted by Leading Brands"
+                migrationSectionCopy.brandsHeading
               )}
             </h2>
           </div>

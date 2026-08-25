@@ -27,7 +27,6 @@ export function MobileApplicationDevelopmentPage() {
         className="!bg-white"
         content={{
           slug: "mobile-application-development",
-          ariaLabel: "Trusted Brands",
         }}
         items={mobileApplicationDevelopmentBrands}
         showHeading={false}
