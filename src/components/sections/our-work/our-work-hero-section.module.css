@@ -1,27 +1,29 @@
-.showcaseTrack {
+.showcaseSet {
   animation: our-work-showcase-vertical 40s linear infinite;
 }
 
 @keyframes our-work-showcase-vertical {
+  from {
+    transform: translateY(0%);
+  }
+
   to {
-    transform: translateY(-50%);
+    transform: translateY(-100%);
   }
 }
 
 @keyframes our-work-showcase-horizontal {
+  from {
+    transform: translateX(0%);
+  }
+
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .showcaseTrack {
+@media (max-width: 991px) {
+  .showcaseSet {
     animation-name: our-work-showcase-horizontal;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .showcaseTrack {
-    animation: none;
   }
 }

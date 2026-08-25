@@ -2,7 +2,7 @@
 
 Live URL: `https://www.dynamicdreamz.com/case-studies/`
 Local route: `/case-studies`
-Date checked: 2026-08-24
+Date checked: 2026-08-25
 Browser/source: Google Chrome headless screenshots, rendered live page + View Page Source, live CSS (`assets/css/case-study/main.css`, `assets/css/case-study/media.css`, `style.css`), and local component/asset audit.
 
 ## Viewports
@@ -12,6 +12,7 @@ Browser/source: Google Chrome headless screenshots, rendered live page + View Pa
 | 1440x900 | `docs/visual-captures/source/case-studies/live-desktop-1440x900.png` | `docs/visual-captures/source/case-studies/local-desktop-1440x900.png` | updated logo set captured and visually checked |
 | 768x1024 | `docs/visual-captures/source/case-studies/live-tablet-768x1024.png` | `docs/visual-captures/source/case-studies/local-tablet-768x1024.png` | updated logo set captured and visually checked |
 | 991x960 | `scratch/case-studies-brands/live-991.png` | `docs/visual-captures/source/case-studies/local-tablet-991x960.png` | exact inclusive breakpoint captured; tablet hero and brands layout aligned |
+| 920x960 | user-supplied live/local comparison | `docs/visual-captures/source/case-studies/local-tablet-920x960.png` | showcase viewport now spans the full browser width and clips at viewport edges |
 | 390x844 | `docs/visual-captures/source/case-studies/live-mobile-390x844.png` | `docs/visual-captures/source/case-studies/local-mobile-390x844.png` | updated logo set captured and visually checked |
 
 ## Sources Inspected
@@ -29,6 +30,14 @@ Browser/source: Google Chrome headless screenshots, rendered live page + View Pa
 | 2026-08-24 exact 991px breakpoint audit | New live/local 991×960 captures exposed Tailwind range semantics: live CSS `@media (max-width: 991px)` had switched the hero and brand row to tablet layout, while local `max-[991px]` remained on the desktop layout because Tailwind emits an exclusive upper bound. Use `max-[991.98px]` for the shared hero and industry-brand section so a 991px CSS viewport matches the live inclusive breakpoint. |
 | 2026-08-24 exact 991px alignment follow-up | After correcting the exclusive breakpoint, local still retained the desktop left alignment and 90px top offset. The case-studies variant now applies the live tablet rules at 991px: centered hero content and a 64px section top offset. |
 | 2026-08-24 920px parity comparison | The supplied side-by-side and a matching local 920×960 capture exposed the remaining ≤991px difference: live `media.css` uses 64px hero top padding, centered hero content, centered CTA group, and centered proof logos, while local retained desktop alignment and 90px top padding. The correction is scoped to the case-studies hero variant; desktop and other shared consumers remain unchanged. |
+| 2026-08-25 ≤991px showcase viewport audit | The supplied comparison shows the live horizontal showcase clipping at the browser edges while local clips at the centered tablet container edge. The local `Container` can retain its 720px max-width at this range because of generated utility ordering. Keep the text constrained, but make the case-studies showcase viewport `100vw`, center it relative to the browser, and retain animation offsets only on the inner track. |
+| 2026-08-25 ≤991px showcase viewport verification | Fresh 991×960 and 920×960 local captures confirm the showcase viewport reaches both browser edges. The inner track continues its 40-second linear horizontal animation; ≥992px desktop layout and ≤767px hidden behavior remain unchanged. |
+| 2026-08-25 ≤991px hero height follow-up | The supplied side-by-side shows local ending the hero immediately after each 227px showcase card, while live keeps a 277px showcase viewport and therefore 50px of cream space below the cards. The base `h-full` utility can win over the responsive arbitrary height; enforce a 277px minimum height on the case-studies full-bleed tablet viewport. |
+| 2026-08-25 ≤991px hero height verification | Updated 920×960 capture confirms 227px cards followed by 50px of cream space inside the 277px showcase viewport before the brands section begins. |
+| 2026-08-25 owner-approved gap removal | The owner explicitly requested removal of the highlighted tablet gap. For the case-studies full-bleed variant, use a 227px viewport matching the card height so the brands section begins immediately after the showcase. This intentionally supersedes the earlier 277px-height parity decision. |
+| 2026-08-25 gap-removal verification | Updated 920×960 capture confirms the case-studies brands section begins directly below the showcase cards with no intermediate cream strip. |
+| 2026-08-25 live hero CSS handoff | The owner supplied the canonical `.hero-new-section` desktop rules: 44.697%/43.182% columns, 60px left-column padding, 30px proof-row offset with 15px item gutters, 68px showcase-track inset, 24px card spacing, 15.93px radii, 6.371px shadow offsets, and a 40-second linear marquee. These measurements are translated into the route-scoped Tailwind variant; the owner-approved 227px full-bleed tablet viewport remains the intentional ≤991px override. |
+| 2026-08-25 marquee target correction | Re-inspected the current live `case-study/main.css`, `case-study/media.css`, and rendered hero DOM. Live applies `tabscrollText 40s linear infinite` to each repeated `.scrolling_img`, translating that set to `-100%` vertically and, at ≤991px, horizontally. Local instead animated the combined two-set wrapper to `-50%`. The local DOM and CSS module are corrected to animate each repeated set by `-100%`, while the non-animated `.scrolling_track` owns the responsive row layout. The live 1399px 50/50 columns, 1199px 57/43 columns with 20px track inset, and ≤991px calculated 680px content gutter are also restored. The previous route-local reduced-motion cancellation was removed because the canonical live marquee does not disable this animation. |
 
 ## Section Inventory
 

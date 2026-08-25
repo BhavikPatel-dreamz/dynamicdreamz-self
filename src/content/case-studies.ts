@@ -33,7 +33,7 @@ export const caseStudiesBrandLogos = [
     href: "https://www.bombayshirts.com/",
   },
   {
-    src: "/assets/clients/popclub.svg",
+    src: "/assets/clients/popclub_co.svg",
     alt: "Pop Club logo",
     width: 65,
     height: 41,
@@ -61,7 +61,7 @@ export const caseStudiesBrandLogos = [
     href: "https://www.reneecosmetics.in/",
   },
   {
-    src: "/assets/clients/royce-chocolate.svg",
+    src: "/assets/clients/royce-chocolate-black.svg",
     alt: "Royce Chocolate logo",
     width: 132,
     height: 38,

@@ -2640,7 +2640,7 @@ Primary commercial inbound conversion and project estimation route. Connects pot
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-21
+Last reviewed: 2026-08-25
 
 Owner: SEO, content, development, leadership, sales, and client-success teams
 
@@ -2681,6 +2681,8 @@ Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep
 | P0 | implemented | Client-logo evidence | The archive reused the generic industry logo data instead of owning the live case-studies slider set | Added route-local logo data in the live order with accurate brand alt text and links; reused ten matching canonical assets and ingested two visually distinct local SVGs | Live markup and all 12 source SVGs refreshed and compared on 2026-08-24; other routes remain unchanged |
 | P1 | implemented | Hero typography | The archive H1 inherited Neue Montreal 500 instead of the live Montserrat 700 treatment | Added a backward-compatible route-scoped typography variant with the live 50px/66px desktop, 40px/50px tablet/laptop, and 30px/40px mobile values | Live CSS and local desktop/tablet/mobile captures verified on 2026-08-24; visible wording and heading semantics unchanged |
 | P1 | implemented | 991px responsive parity | Tailwind's exclusive `max-[991px]` range left the exact 991px viewport in the desktop hero/brand layout | Shifted the relevant shared responsive utilities to `max-[991.98px]` and applied the live centered tablet alignment/top offset to the case-studies hero variant | Exact 991×960 live/local captures verified on 2026-08-24 |
+| P1 | implemented | Tablet showcase viewport | The horizontal showcase clipped at the centered 720px container edge instead of the browser edge | Added an optional case-studies-only full-bleed showcase mode that centers a `100vw` viewport while keeping animation translation on the inner track | User-supplied comparison plus 991×960 and 920×960 local captures verified on 2026-08-25 |
+| P1 | implemented | Tablet hero height | The owner identified the 50px cream strip below the 227px showcase cards as unwanted extra space | Set the case-studies full-bleed tablet viewport to the 227px card height so the brands section follows immediately | Owner-approved result captured and verified at 920×960 on 2026-08-25 |
 | P1 | implemented | Case study detail pages | Individual case study links needed canonical local detail routes | Migrated all 35 current live detail routes through one typed, static App Router template with local media, route-scoped metadata, and evidence-bound schema | Static route, source, sitemap, lint, and production-build verification |
 | P1 | deferred | Copy phrasing | Subtitle says `Explore our clients’ success stories through case studies` | Preserve live wording verbatim during migration; queue proposed copy improvements in `docs/page-content-improvements.md` | Content approval |
 
@@ -8202,9 +8204,6 @@ Owner: SEO, content, design, and engineering
 - Local desktop, tablet, mobile, open-panel, open-drawer, and scroll-up comparisons are recorded in `docs/visual-captures/header.md` and `docs/visual-captures/header/`.
 - The navigation uses only project-owned SVG assets. The live site is not a runtime data, image, script, or CDN dependency.
 - No new schema claim was introduced by the header update. Visible terminology recommendations remain deferred until exact copy is approved.
-
-
-
 
 
 
