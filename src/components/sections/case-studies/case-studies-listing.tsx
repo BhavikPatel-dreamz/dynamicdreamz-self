@@ -81,7 +81,7 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
   return (
     <section className="cs-listing-sec bg-[#eff4ef]" ref={filterRef}>
       <div id="explore_case_studies" className="cs-main-wrapp bg-[#eff4ef] px-0 pt-[54px] pb-[120px] max-[1199px]:pt-[50px] max-[1199px]:pb-10 max-[991px]:pt-10 max-[991px]:pb-[30px]">
-        <Container className="min-[1200px]:max-w-[1140px] min-[1300px]:!max-w-[1240px]">
+        <Container>
           <div className="cs-filter-main">
             <div className="mx-auto max-w-[1170px]">
               <div className="cs-filter grid grid-cols-[minmax(260px,1fr)_260px_260px] items-center gap-3 rounded-[20px] border-[1.5px] border-[rgba(18,18,18,0.1)] bg-white p-[13px] shadow-[0_8px_30px_rgba(40,40,40,0.04)] max-[991px]:grid-cols-2 max-[991px]:gap-[13px] max-[767px]:grid-cols-1">
@@ -97,7 +97,7 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
             </div>
           </div>
 
-          <div className="cs-section-title mt-[54px] flex flex-wrap items-end justify-between border-t border-black/10 pt-[54px] max-[991px]:mt-5 max-[991px]:mb-[30px] max-[991px]:pt-5">
+          <div className="cs-section-title mt-[54px] flex flex-wrap items-end justify-between border-t border-black/10 pt-[54px] max-[991px]:mt-5 mb-10 max-[991px]:mb-[30px] max-[991px]:pt-5">
             <div className="title w-[44%] max-[1399px]:w-[35%] max-[1199px]:w-[36%] max-[991px]:w-full">
               {sectionTitle.eyebrow && <p className="mb-3.75 flex items-center text-[13px] leading-none font-semibold text-muted uppercase before:mr-3 before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[767px]:mb-5 max-[767px]:text-xs">{sectionTitle.eyebrow}</p>}
               <h2 className="m-0 font-montserrat text-[35px] font-bold leading-[1.38] text-[#090909] max-[1199px]:text-[28px] max-[991px]:mb-2.5 max-[767px]:text-2xl">{sectionTitle.heading}</h2>
