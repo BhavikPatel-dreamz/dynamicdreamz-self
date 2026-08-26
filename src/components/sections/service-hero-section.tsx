@@ -215,7 +215,7 @@ export function ServiceHeroSection({
         <div className="inner-wrapper flex flex-wrap items-center justify-between">
           <div className={leftColClassName ?? defaultLeftCol}>
             <div className="inner-hero-content">
-              <h1 className="inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]">
+              <h1 className="inline-block font-montreal-medium text-[50px] font-medium leading-[66px] tracking-[0] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px] max-w-[770px]">
                 {formatBrText(content.title, "max-[1199px]:hidden")}
               </h1>
               {content.paragraphs ? (
@@ -233,7 +233,7 @@ export function ServiceHeroSection({
                 <>
                   <p
                     className={cn(
-                      "mt-6 mb-6 text-base font-medium leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
+                      "mt-3 mb-6 text-sm font-normal leading-[24px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
                       bodyClassName,
                     )}
                   >

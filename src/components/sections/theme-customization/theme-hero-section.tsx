@@ -46,7 +46,7 @@ export function ThemeHeroSection({
         >
           <div className="left-col w-1/2 pb-14 max-[991px]:w-full max-[991px]:text-center">
             <div className="inner-hero-content">
-              <h1 className="inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]">
+              <h1 className="inline-block font-montreal-medium text-[50px] font-bold leading-[66px] tracking-[0] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]">
                 {formatBrText(content.title, "max-[1199px]:hidden")}
               </h1>
               <p className="mt-6 mb-6 text-lg font-medium leading-[34.2px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">

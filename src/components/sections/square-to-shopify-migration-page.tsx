@@ -11,6 +11,7 @@ import {
   squareProcessContent,
   squareWhyMigrate,
   squareMigrationSectionCopy,
+  squareTestimonials,
 } from "@/content/square-to-shopify-migration";
 
 export function SquareToShopifyMigrationPage() {
@@ -38,8 +39,12 @@ export function SquareToShopifyMigrationPage() {
         id="migration-process"
       />
       <HappyClientSection
+        controlsLabels={squareTestimonials.controlsLabels}
         description={squareMigrationSectionCopy.testimonialsDescription}
+        eyebrow={squareTestimonials.eyebrow}
         heading={squareMigrationSectionCopy.testimonialsHeading}
+        items={squareTestimonials.items}
+        variant="client-stories"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"

@@ -2,8 +2,19 @@ import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
 import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
+import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export { migrationSectionCopy as squareMigrationSectionCopy } from "@/content/migration-common";
+
+export const squareTestimonials = {
+  eyebrow: "Client Stories",
+  items: shopifyPlusAgencyTestimonials.items.slice(5),
+  controlsLabels: {
+    ariaLabel: "Client video testimonials",
+    previous: "Previous testimonial",
+    next: "Next testimonial",
+  },
+} as const;
 
 export const squareHeroContent: ServiceHeroContent = {
   title: "Square to Shopify Migration Service",
@@ -14,8 +25,8 @@ export const squareHeroContent: ServiceHeroContent = {
   image: {
     src: "/assets/square-to-shopify-migration/square-to-shopify-migration-hero.svg",
     alt: "Square to Shopify Migration Service Image",
-    width: 560,
-    height: 440,
+    width: 469,
+    height: 224,
   },
   reviews: [
     {

@@ -16,6 +16,13 @@ type HorizontalDragScrollProps = {
     dotClassName?: string;
     activeDotClassName?: string;
   };
+  controls?: {
+    className?: string;
+    buttonClassName?: string;
+    disabledButtonClassName?: string;
+    previousLabel: string;
+    nextLabel: string;
+  };
 };
 
 const dragThreshold = 4;
@@ -26,9 +33,12 @@ export function HorizontalDragScroll({
   trackClassName,
   ariaLabel,
   pagination,
+  controls,
 }: HorizontalDragScrollProps) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const [activeItem, setActiveItem] = useState(0);
+  const [canScrollPrevious, setCanScrollPrevious] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
   const dragState = useRef({ active: false, moved: false, pointerX: 0, scrollLeft: 0, scrollSnapType: "" });
 
   function carouselItems(viewport: HTMLDivElement) {
@@ -40,7 +50,9 @@ export function HorizontalDragScroll({
   }
 
   function updateActiveItem(viewport: HTMLDivElement) {
-    if (!pagination) return;
+    if (!pagination && !controls) return;
+    setCanScrollPrevious(viewport.scrollLeft > 1);
+    setCanScrollNext(viewport.scrollLeft + viewport.clientWidth < viewport.scrollWidth - 1);
     const target = viewport.scrollLeft + scrollPadding(viewport);
     const closest = carouselItems(viewport).reduce(
       (best, item, index) => {
@@ -50,6 +62,13 @@ export function HorizontalDragScroll({
       { distance: Number.POSITIVE_INFINITY, index: 0 },
     );
     setActiveItem(closest.index);
+  }
+
+  function moveBy(offset: number) {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+    const items = carouselItems(viewport);
+    goToItem(Math.min(Math.max(activeItem + offset, 0), items.length - 1));
   }
 
   function goToItem(index: number) {
@@ -136,6 +155,32 @@ export function HorizontalDragScroll({
               onClick={() => goToItem(index)}
             />
           ))}
+        </div>
+      ) : null}
+      {controls ? (
+        <div className={controls.className} aria-label={`${ariaLabel} controls`} role="group">
+          <button
+            className={cn(controls.buttonClassName, !canScrollPrevious && controls.disabledButtonClassName)}
+            type="button"
+            aria-label={controls.previousLabel}
+            disabled={!canScrollPrevious}
+            onClick={() => moveBy(-1)}
+          >
+            <svg aria-hidden="true" className="size-5" viewBox="0 0 20 20" fill="none">
+              <path d="m12.5 4.5-5.5 5.5 5.5 5.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <button
+            className={cn(controls.buttonClassName, !canScrollNext && controls.disabledButtonClassName)}
+            type="button"
+            aria-label={controls.nextLabel}
+            disabled={!canScrollNext}
+            onClick={() => moveBy(1)}
+          >
+            <svg aria-hidden="true" className="size-5" viewBox="0 0 20 20" fill="none">
+              <path d="m7.5 4.5 5.5 5.5-5.5 5.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
         </div>
       ) : null}
     </>

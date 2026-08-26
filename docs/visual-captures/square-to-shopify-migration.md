@@ -79,3 +79,39 @@
   - 12 Client logos in `/assets/clients/`
 - **Unique Assets Ingested**:
   - `/assets/square-to-shopify-migration/square-to-shopify-migration-hero.svg`
+
+---
+
+## 5. Testimonial Parity Update (2026-08-26)
+
+- **References compared**: owner-supplied live desktop screenshot (1850px wide)
+  and owner-supplied local desktop screenshot (1850px wide).
+- **Live layout**: `CLIENT STORIES` eyebrow with a short red rule; heading and
+  description in a two-column header; three equal testimonial cards inside the
+  content container; 285px poster area; translucent black client badge with a
+  red left border; compact quote panel; centered previous/next controls.
+- **Local difference before editing**: centered one-column header; two oversized
+  cards in a full-viewport drag rail; white pill identity badge; decorative quote
+  mark in the poster; no visible previous/next controls.
+- **Existing assets/components inspected**: both `HappyClientSection` export
+  paths, `HorizontalDragScroll`, `VideoDialog`, all current section consumers,
+  and the canonical testimonial poster assets under `public/assets/testimonials/`.
+- **Implementation decision**: retain the shared server-rendered testimonial
+  component and add a backward-compatible `client-stories` variant plus generic
+  carousel controls. Scope the new variant and Shari-first item order to this
+  route; preserve all other consumers.
+- **Responsive targets**: three cards at 1200px and wider, two cards from 768px,
+  one card below 768px; stacked heading copy below 992px; touch/drag, keyboard
+  focus, dialog playback, disabled control state, and reduced-motion scrolling
+  remain supported.
+- **Motion/interaction**: previous/next buttons smooth-scroll one testimonial at
+  a time, with motion disabled when the visitor requests reduced motion. The
+  first previous button and final next button are disabled.
+- **Post-edit captures**:
+  `docs/visual-captures/source/square-to-shopify-migration/local-testimonial-parity-1850.png`,
+  `local-testimonial-parity-768.png`, and `local-testimonial-parity-390.png`.
+  The three/two/one-card layouts, stacked mobile header, disabled first control,
+  poster crops, identity badges, quote panels, and absence of horizontal page
+  overflow were visually checked. The owner-supplied live reference does not
+  include tablet/mobile states, so those follow the established responsive
+  component behavior rather than an exact live screenshot comparison.

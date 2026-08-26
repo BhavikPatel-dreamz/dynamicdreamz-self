@@ -4241,7 +4241,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Kadence Theme Customization (`/kadence-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-08-26
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Kadence theme customization, drag-and-drop header/footer layout building, WooCommerce integration, speed optimization, and custom hooks/filters development.
 Decision stage: partner selection, Kadence theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
@@ -5165,6 +5165,10 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 - URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/square-to-shopify-migration`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 50 chars, Description: 159 chars), JSON-LD graph verification, local assets audit (0 duplicates), responsive layouts (1440px, 768px, 390px), lint, and production build.
+- Testimonial presentation review (2026-08-26): the approved client-stories
+  layout changes presentation and carousel controls only. Existing visible
+  testimonial evidence, server-rendered copy, VideoObject relationships, and
+  page intent remain intact; no new AEO/GEO gap was found.
 
 ## Future Page Maintenance Workflow
 
@@ -8209,7 +8213,6 @@ Owner: SEO, content, design, and engineering
 - Local desktop, tablet, mobile, open-panel, open-drawer, and scroll-up comparisons are recorded in `docs/visual-captures/header.md` and `docs/visual-captures/header/`.
 - The navigation uses only project-owned SVG assets. The live site is not a runtime data, image, script, or CDN dependency.
 - No new schema claim was introduced by the header update. Visible terminology recommendations remain deferred until exact copy is approved.
-
 
 
 
