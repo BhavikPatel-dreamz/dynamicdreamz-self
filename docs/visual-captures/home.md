@@ -1,5 +1,19 @@
 # Homepage AEO/GEO Update
 
+## 2026-08-26 Shopify Plus Agency Counter Typography
+
+| Check | Result |
+| --- | --- |
+| Comparison supplied by owner | Split desktop screenshot: local on the left and current live homepage on the right; local counter numerals visibly render with a lighter/different face |
+| Live sources inspected | Current rendered homepage, `style.css?ver=7.1`, `shopify-premium-partner.css?ver=1787720958`, and `shopify-premium-partner-media.css?ver=1787723456` |
+| Live font setup | Four standalone Neue Montreal families (`neue_montreallight`, `neue_montrealregular`, `neue_montrealmedium`, and `neue_montrealbold`) rather than one weight-mapped family |
+| Live counter value | `.counter-item h3`: standalone Montreal Medium family inherited from global `h3`, scoped `font-weight: 600`; local migration retains 35px/1.25 and the 30px 991px treatment |
+| Interaction and animation | Static counter typography; no hover, focus, open, or animation state affects the font |
+| Breakpoints checked | Live CSS at 1199px, 991px, and 767px; supplied comparison represents desktop |
+| Implemented correction | Registered every local WOFF2 as its own Next.js font family, matching the live family isolation; applied Montreal Medium with weight 600 to the counter value |
+| Local verification | Existing Turbopack dev server compiled and served the homepage with four distinct generated Neue Montreal variables and the scoped `font-montreal-medium` counter utility |
+| Remaining difference | A new local desktop screenshot/overlay was not captured in this environment; use the owner-supplied split comparison as the next visual recheck baseline |
+
 ## 2026-08-26 Shared H2 Primitive
 
 - Live reference: owner-supplied `.h2, h2` and responsive CSS from the current

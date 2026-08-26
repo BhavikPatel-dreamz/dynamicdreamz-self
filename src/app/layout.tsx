@@ -10,30 +10,35 @@ import { rootMetadata } from "@/data/seo";
 import "slick-carousel/slick/slick.css";
 import "./globals.css";
 
-const neueMontreal = localFont({
-  src: [
-    {
-      path: "./fonts/neuemontreal-light-webfont.woff2",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "./fonts/neuemontreal-regular-webfont.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./fonts/neuemontreal-medium-webfont.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "./fonts/neuemontreal-bold-webfont.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  variable: "--font-neue-montreal",
+const neueMontrealLight = localFont({
+  src: "./fonts/neuemontreal-light-webfont.woff2",
+  weight: "300",
+  style: "normal",
+  variable: "--font-neue-montreal-light-local",
+  display: "swap",
+});
+
+const neueMontrealRegular = localFont({
+  src: "./fonts/neuemontreal-regular-webfont.woff2",
+  weight: "400",
+  style: "normal",
+  variable: "--font-neue-montreal-regular-local",
+  display: "swap",
+});
+
+const neueMontrealMedium = localFont({
+  src: "./fonts/neuemontreal-medium-webfont.woff2",
+  weight: "500",
+  style: "normal",
+  variable: "--font-neue-montreal-medium-local",
+  display: "swap",
+});
+
+const neueMontrealBold = localFont({
+  src: "./fonts/neuemontreal-bold-webfont.woff2",
+  weight: "700",
+  style: "normal",
+  variable: "--font-neue-montreal-bold-local",
   display: "swap",
 });
 
@@ -49,7 +54,10 @@ export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${neueMontreal.variable} ${montserrat.variable}`}>
+    <html
+      lang="en"
+      className={`${neueMontrealLight.variable} ${neueMontrealRegular.variable} ${neueMontrealMedium.variable} ${neueMontrealBold.variable} ${montserrat.variable}`}
+    >
       <body>
         <a
           className="fixed top-3 left-3 z-[1000] -translate-y-[170%] rounded-[30px] bg-ink px-4 py-2.5 font-bold text-white transition-transform duration-160 focus:translate-y-0"

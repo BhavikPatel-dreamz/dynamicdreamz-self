@@ -44,7 +44,7 @@ export function ShopifyPlusAgencySection() {
                 <div className="mb-2 w-1/2 px-1 max-[767px]:w-full" key={counter.value}>
                   <div className={`flex h-full min-h-[136px] flex-col justify-between rounded-[20px] p-[18px] max-[767px]:rounded-xl ${counterToneClasses[counter.tone]}`}>
                     <div>
-                      <span className="font-montreal-semibold block text-[35px] leading-[1.25] font-semibold text-ink max-[991px]:text-[30px]">
+                      <span className="font-montreal-medium block text-[35px] leading-[1.25] font-semibold text-ink max-[991px]:text-[30px]">
                         {counter.value}
                       </span>
                       <span className="mt-[5px] block text-xs leading-none font-semibold text-[#4d5577] uppercase">{counter.label}</span>
