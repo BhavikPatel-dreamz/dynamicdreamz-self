@@ -119,6 +119,18 @@ Core proof points from the live site:
   or data imports), provide sensible default props, and place reusable
   primitives in `src/components/ui/` or shared sections in
   `src/components/sections/` so future pages can reuse them seamlessly.
+- Enforce the content boundary: do not place visible page/business copy directly
+  in `src/components/**` or `src/app/**`. This includes headings, paragraphs,
+  labels, CTA text, placeholders, validation/success/error messages, meaningful
+  prefixes/suffixes, screen-reader product copy, and content-like component
+  defaults. Store it in typed `src/content/**` or `src/data/**` modules and pass
+  it through typed props or import it into the consumer. Implementation-owned
+  accessibility/media/platform values such as technical ARIA relationships,
+  intentional image alt text, control titles, route segments, DOM IDs, and
+  protocol values may remain inline when they are not page/business copy. Run
+  `npm run check:component-content` after component or route work; the check is
+  mandatory in both `npm run lint` and `npm run build` and must not be bypassed
+  by weakening the rule for an existing violation.
 - Asset discovery and deduplication: NEVER download live assets directly into
   `public/assets/`. Always follow the 2-step comparison buffer workflow:
   1. **Download to `scratch/` buffer first**: If an asset is needed from the live
@@ -251,6 +263,8 @@ Production-ready means the page is complete enough to deploy:
   satisfy the requirement directly or through a backward-compatible typed variant.
 - All newly created components are generalized, cleanly typed, and decoupled from
   hardcoded page data for future reusability.
+- No visible page/business copy is hardcoded in `src/components/**` or
+  `src/app/**`; `npm run check:component-content` passes.
 - No inaccessible interactive controls.
 - No unnecessary client JavaScript.
 - No external dependency added unless it clearly reduces risk or complexity.

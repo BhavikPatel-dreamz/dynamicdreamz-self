@@ -38,6 +38,7 @@ export const siteChromeCopy = {
     cta: "Let's talk",
   },
   footer: {
+    copyrightPrefix: "© 2026",
     copyright: "All rights reserved.",
     terms: "Terms of Service",
     privacy: "Privacy Policy",

@@ -57,7 +57,8 @@ The agent should then read:
    exact visible change in the current task. Queue unapproved visible proposals
    in `docs/page-content-improvements.md`.
 9. Implement with reusable or generalized components, local typed data/content,
-   and project-owned, deduplicated assets.
+   and project-owned, deduplicated assets. Keep visible page/business copy out
+   of `src/components/**` and `src/app/**`.
 10. Apply the project URL policy while adding or editing routes: every non-root
     page path is slashless (`/about-us`, not `/about-us/`). Keep internal links,
     canonical and Open Graph URLs, sitemap/robots output, JSON-LD, and redirects
@@ -75,7 +76,8 @@ The agent should then read:
 15. If SEO/content quality can improve through visible copy changes, update
     `docs/page-content-improvements.md` with page-specific suggestions marked
     `suggested` or `deferred`; do not implement them without explicit approval.
-16. Run `npm run check:urls`, then the standard lint/build verification commands.
+16. Run `npm run check:urls`, `npm run check:component-content`, then the standard
+    lint/build verification commands.
 17. Summarize changes, verification, visual capture notes, AEO/GEO status, and
     any missing assets or content approvals.
 
@@ -149,6 +151,30 @@ project uses Next.js 16.3.0 and may differ from older App Router examples.
   equivalents unless there is a specific reason.
 - Avoid adding dependencies for simple UI. If a dependency is justified, explain
   the production benefit.
+
+## Content Boundary Workflow
+
+Use this check whenever creating or changing a component, route, form, or shared
+layout:
+
+1. Classify every string by ownership before adding it. Visible page/business
+   copy belongs in a typed `src/content/**` module; shared facts, navigation,
+   routes, and configuration belong in `src/data/**`.
+2. Pass content into generalized components through typed props, or import the
+   relevant content object into a page-specific consumer. Do not hardcode
+   headings, descriptions, labels, CTA copy, placeholders, status/error text,
+   content prefixes/suffixes, screen-reader product copy, or content-like
+   default prop values in `src/components/**` or `src/app/**`.
+3. Keep implementation-owned values inline only when they are not page/business
+   copy. Examples include technical ARIA relationships, DOM IDs, route segments,
+   protocol values, and intentional media/accessibility attributes such as
+   `alt`, `aria-label`, and `title`. If such an attribute communicates product
+   or page wording, source it from content/data as well.
+4. Run `npm run check:component-content` after the edit. Fix violations by moving
+   the value to the correct content/data owner; do not silence a valid finding or
+   broaden an exception merely to make the current code pass.
+5. Run `npm run lint` and `npm run build`. Both commands include the boundary
+   check so regressions fail locally and in CI/build verification.
 
 ## Component Reuse & Generalization Workflow
 
@@ -513,6 +539,8 @@ A task is complete only when:
 - Existing suitable components were discovered (beyond name matching) and reused
   or safely extended with backward-compatible optional props/variants without breaking existing pages.
 - Any newly built component is generalized, cleanly typed, and decoupled from hardcoded page copy for future reusability.
+- No visible page/business copy is hardcoded in `src/components/**` or
+  `src/app/**`, and `npm run check:component-content` passes.
 - Existing assets across `public/assets/**` were discovered (beyond name matching) and reused via canonical paths; no redundant duplicate image files exist.
 - It uses local assets/content, not old-site runtime URLs.
 - SEO was handled for touched routes.

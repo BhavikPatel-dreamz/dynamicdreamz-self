@@ -1,5 +1,7 @@
 "use server";
 
+import { contactFormCopy } from "@/content/forms";
+
 export type ContactFormState = {
   status: "idle" | "success" | "error";
   message: string;
@@ -27,7 +29,7 @@ export async function submitContactForm(
   if (fieldValue(formData, "website")) {
     return {
       status: "success",
-      message: "Thank you. Your inquiry has been received.",
+      message: contactFormCopy.status.success,
     };
   }
 
@@ -40,14 +42,14 @@ export async function submitContactForm(
   if (!name || !email) {
     return {
       status: "error",
-      message: "Please provide your name and a valid email address.",
+      message: contactFormCopy.status.missingIdentity,
     };
   }
 
   if (!isValidEmail(email)) {
     return {
       status: "error",
-      message: "Please provide a valid email address.",
+      message: contactFormCopy.status.invalidEmail,
     };
   }
 
@@ -56,7 +58,7 @@ export async function submitContactForm(
   if (!webhookUrl) {
     return {
       status: "error",
-      message: "We couldn't send your inquiry right now. Please use the sales email above.",
+      message: contactFormCopy.status.unavailable,
     };
   }
 
@@ -96,12 +98,12 @@ export async function submitContactForm(
   } catch {
     return {
       status: "error",
-      message: "We couldn't send your inquiry right now. Please use the sales email above.",
+      message: contactFormCopy.status.unavailable,
     };
   }
 
   return {
     status: "success",
-    message: "Thank you. Your inquiry has been received.",
+    message: contactFormCopy.status.success,
   };
 }

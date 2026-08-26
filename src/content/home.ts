@@ -29,6 +29,10 @@ export const homeSectionCopy = {
   commerceSolutionsTitle: "Commerce & technology solutions.",
   commerceSolutionsDescription:
     "From Shopify Plus and ecommerce development to mobile apps, full-stack solutions, WordPress and WooCommerce, our teams support established brands and digital agencies through one experienced delivery partner.",
+  commerceAccordion: {
+    close: "Close",
+    open: "Open",
+  },
   expertiseTitle: "Our Expertise",
   expertiseDescription:
     "From strategy and design to development and long-term support, we help brands build, scale, and maintain high-performing digital products. Our expertise spans Shopify development, custom websites, and mobile applications, with a strong focus on performance, usability, and business growth.",

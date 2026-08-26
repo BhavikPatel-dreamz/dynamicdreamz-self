@@ -18,6 +18,7 @@ export const shopifyHoursSectionCopy = {
     bulkHours: "Bulk hours",
     rate: "Rate",
     cost: "Cost",
+    durationMinutes: ":00",
     perHour: "/hour",
     packageLabel: "Select a Shopify development hours package",
     hoursSuffix: "HRS",

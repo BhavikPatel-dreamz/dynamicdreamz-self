@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 
 import styles from "@/components/sections/about/about-counter-stats.module.css";
+import { aboutSectionCopy } from "@/content/about";
 
 type AboutStatistic = {
   label: string;
@@ -34,7 +35,7 @@ function OdometerNumber({ value }: { value: string }) {
 
         return (
           <span className="relative inline-block h-[1lh] w-[0.64em] overflow-hidden max-[767px]:w-[0.625em]" key={`${target}-${digitIndex}`}>
-            <span className="invisible block">8</span>
+            <span className="invisible block">{aboutSectionCopy.counterDigitPlaceholder}</span>
             <span
               className={`${styles.ribbon} absolute inset-x-0 top-0 block text-left`}
               style={{ "--odometer-end": `-${ribbon.length - 1}lh` } as CSSProperties}

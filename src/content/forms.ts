@@ -1,3 +1,9 @@
+const sharedFormStatusCopy = {
+  success: "Thank you. Your inquiry has been received.",
+  missingIdentity: "Please provide your name and a valid email address.",
+  invalidEmail: "Please provide a valid email address.",
+} as const;
+
 export const contactFormCopy = {
   ariaLabel: "Contact form",
   labels: {
@@ -14,8 +20,13 @@ export const contactFormCopy = {
     company: "Enter Your Company name",
     project: "Share your questions or comments here",
   },
+  phoneCountryCode: "+91",
   submit: "submit inquiry",
   sending: "sending inquiry",
+  status: {
+    ...sharedFormStatusCopy,
+    unavailable: "We couldn't send your inquiry right now. Please use the sales email above.",
+  },
 } as const;
 
 export const quoteFormCopy = {
@@ -39,4 +50,9 @@ export const quoteFormCopy = {
     project: "Share your questions or comments here",
   },
   submit: "submit inquiry",
+  sending: "sending inquiry",
+  status: {
+    ...sharedFormStatusCopy,
+    unavailable: "We couldn't send your inquiry right now. Please email info@dynamicdreamz.com.",
+  },
 } as const;

@@ -42,7 +42,7 @@ export function PricingPackageSelector({
         data-pricing-stats
       >
         <PricingStat label={shopifyHoursSectionCopy.pricing.hours}>
-          <strong>{selectedPackage.hours}:00</strong>
+          <strong>{selectedPackage.hours}{shopifyHoursSectionCopy.pricing.durationMinutes}</strong>
           <span>{shopifyHoursSectionCopy.pricing.bulkHours}</span>
         </PricingStat>
         <PricingStat label={shopifyHoursSectionCopy.pricing.rate}>

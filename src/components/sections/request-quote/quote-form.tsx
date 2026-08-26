@@ -229,7 +229,7 @@ export function QuoteForm({
               aria-hidden="true"
             />
             <span className="relative z-1">
-              {isPending ? "sending inquiry" : submitLabel}
+              {isPending ? quoteFormCopy.sending : submitLabel}
             </span>
           </button>
         </div>

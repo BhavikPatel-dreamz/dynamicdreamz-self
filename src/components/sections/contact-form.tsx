@@ -94,7 +94,7 @@ export function ContactForm() {
           <div className="flex h-[49px] w-full items-center rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] focus-within:outline-3 focus-within:outline-offset-2 focus-within:outline-[#090909]">
             <span className="mr-2.5 flex shrink-0 items-center gap-1.5 border-r border-soft-line pr-2.5 text-sm" aria-label="India country code +91">
               <span aria-hidden="true">🇮🇳</span>
-              +91
+              {contactFormCopy.phoneCountryCode}
             </span>
             <input
               className="min-w-0 flex-1 border-0 p-0 text-base leading-[23px] font-medium outline-none placeholder:text-[#9a9a9a]"

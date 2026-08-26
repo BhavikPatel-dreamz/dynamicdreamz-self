@@ -1,6 +1,7 @@
 import { companyFacts } from "@/data/company";
 
 export const aboutSectionCopy = {
+  counterDigitPlaceholder: "8",
   deliveryTitle: "A Team that always delivers",
   foundersTitle: "The People Behind Dynamic Dreamz",
   foundersDescription: [

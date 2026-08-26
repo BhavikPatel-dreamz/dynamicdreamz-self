@@ -61,7 +61,7 @@ export function CommerceSolutionsSection() {
                         <span className={cn("absolute top-0 right-0 flex size-[30px] shrink-0 items-center justify-center rounded-full border-2 border-ink transition-colors", isOpen && "bg-ink/10")} aria-hidden="true">
                           <AccordionIcon isOpen={isOpen} />
                         </span>
-                        <span className="sr-only">{isOpen ? "Close" : "Open"} {item.title}</span>
+                        <span className="sr-only">{isOpen ? homeSectionCopy.commerceAccordion.close : homeSectionCopy.commerceAccordion.open} {item.title}</span>
                       </button>
                     </h3>
                     <p className="mt-2.5 text-sm leading-none font-medium text-muted max-[767px]:leading-[1.4]">{item.summary}</p>

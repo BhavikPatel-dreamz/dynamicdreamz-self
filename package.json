@@ -6,10 +6,11 @@
     "dev": "next dev",
     "check:asset-duplicates": "node scripts/check-asset-duplicates.mjs",
     "check:case-studies": "node scripts/check-case-studies.mjs",
+    "check:component-content": "node scripts/check-component-content.mjs",
     "check:urls": "node scripts/check-url-policy.mjs",
-    "build": "npm run check:urls && npm run check:case-studies && npm run check:asset-duplicates && next build --webpack",
+    "build": "npm run check:urls && npm run check:component-content && npm run check:case-studies && npm run check:asset-duplicates && next build --webpack",
     "start": "next start",
-    "lint": "npm run check:urls && npm run check:case-studies && npm run check:asset-duplicates && eslint",
+    "lint": "npm run check:urls && npm run check:component-content && npm run check:case-studies && npm run check:asset-duplicates && eslint",
     "prepare": "git rev-parse --is-inside-work-tree >/dev/null 2>&1 && bash .githooks/pre-commit --install || true"
   },
   "dependencies": {

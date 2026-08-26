@@ -1,5 +1,7 @@
 "use server";
 
+import { quoteFormCopy } from "@/content/forms";
+
 export type QuoteFormState = {
   status: "idle" | "success" | "error";
   message: string;
@@ -27,7 +29,7 @@ export async function submitQuoteForm(
   if (fieldValue(formData, "website")) {
     return {
       status: "success",
-      message: "Thank you. Your inquiry has been received.",
+      message: quoteFormCopy.status.success,
     };
   }
 
@@ -42,14 +44,14 @@ export async function submitQuoteForm(
   if (!name || !email) {
     return {
       status: "error",
-      message: "Please provide your name and a valid email address.",
+      message: quoteFormCopy.status.missingIdentity,
     };
   }
 
   if (!isValidEmail(email)) {
     return {
       status: "error",
-      message: "Please provide a valid email address.",
+      message: quoteFormCopy.status.invalidEmail,
     };
   }
 
@@ -58,7 +60,7 @@ export async function submitQuoteForm(
   if (!webhookUrl) {
     return {
       status: "error",
-      message: "We couldn't send your inquiry right now. Please email info@dynamicdreamz.com.",
+      message: quoteFormCopy.status.unavailable,
     };
   }
 
@@ -100,12 +102,12 @@ export async function submitQuoteForm(
   } catch {
     return {
       status: "error",
-      message: "We couldn't send your inquiry right now. Please email info@dynamicdreamz.com.",
+      message: quoteFormCopy.status.unavailable,
     };
   }
 
   return {
     status: "success",
-    message: "Thank you. Your inquiry has been received.",
+    message: quoteFormCopy.status.success,
   };
 }
