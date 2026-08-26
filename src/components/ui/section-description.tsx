@@ -18,7 +18,7 @@ export function SectionDescription({
       {children ? (
         <p
           className={cn(
-            "text-base leading-7 font-medium text-muted",
+            "text-base max-[1199px]:text-[14px] leading-7 max-[1199px]:leading-[24px] font-medium text-muted",
             textClassName,
           )}
         >
