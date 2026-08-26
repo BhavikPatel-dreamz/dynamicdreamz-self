@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { caseStudiesUiCopy } from "@/content/case-studies-ui";
 import type { CaseStudyItem } from "@/types/case-study";
 
@@ -99,7 +100,11 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
 
           <div className="cs-section-title mt-[54px] flex flex-wrap items-end justify-between border-t border-black/10 pt-[54px] max-[991px]:mt-5 mb-10 max-[991px]:mb-[30px] max-[991px]:pt-5">
             <div className="title w-[44%] max-[1399px]:w-[35%] max-[1199px]:w-[36%] max-[991px]:w-full">
-              {sectionTitle.eyebrow && <p className="mb-3.75 flex items-center text-[13px] leading-none font-semibold text-muted uppercase before:mr-3 before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[767px]:mb-5 max-[767px]:text-xs">{sectionTitle.eyebrow}</p>}
+              {sectionTitle.eyebrow ? (
+                <Eyebrow className="mb-3.75 max-[767px]:mb-5" tone="muted">
+                  {sectionTitle.eyebrow}
+                </Eyebrow>
+              ) : null}
               <h2 className="m-0 font-montserrat text-[35px] font-bold leading-[1.38] text-[#090909] max-[1199px]:text-[28px] max-[991px]:mb-2.5 max-[767px]:text-2xl">{sectionTitle.heading}</h2>
             </div>
             <div className="text w-[49%] max-[1399px]:w-[56%] max-[1199px]:w-[51%] max-[991px]:w-full"><p className="m-0 font-sans text-base font-medium leading-[30.4px] text-[#535353] max-[991px]:text-sm max-[991px]:leading-[26px]">{sectionTitle.description}</p></div>

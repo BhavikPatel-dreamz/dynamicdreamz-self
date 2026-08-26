@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "@/components/sections/home/selected-work-section.module.css";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { homeSectionCopy, projects, type Project } from "@/content/home";
 import { cn } from "@/lib/class-names";
 
@@ -68,7 +69,7 @@ export function SelectedWorkSection() {
   return (
     <section className="min-h-[932.83px] overflow-hidden bg-dark-green pt-[60px] pb-[52px] text-white min-[768px]:max-[991px]:min-h-[774.81px] max-[767px]:min-h-[649.77px] max-[767px]:py-[30px]">
       <Container className="flex items-center justify-between max-[991px]:flex-col max-[991px]:items-start">
-        <h2 className="mr-5 max-w-[600px] text-[40px] leading-[1.2] font-medium min-[768px]:max-[991px]:m-0 min-[768px]:max-[991px]:max-w-full min-[768px]:max-[991px]:text-[35px] min-[768px]:max-[991px]:leading-[48.475px] max-[767px]:m-0 max-[767px]:mb-4 max-[767px]:max-w-full max-[767px]:text-2xl max-[767px]:leading-[1.4]">{homeSectionCopy.selectedWorkTitle}</h2>
+        <SectionHeading tone="inverse" className="mr-5 max-w-[600px] min-[768px]:max-[991px]:m-0 min-[768px]:max-[991px]:max-w-full max-[767px]:m-0 max-[767px]:mb-4 max-[767px]:max-w-full">{homeSectionCopy.selectedWorkTitle}</SectionHeading>
         <p className="max-w-[580px] text-base leading-[1.9] font-semibold text-white/80 min-[768px]:max-[991px]:mt-2.5 min-[768px]:max-[991px]:max-w-full max-[767px]:max-w-full max-[767px]:text-sm">
           {homeSectionCopy.selectedWorkDescription}
         </p>

@@ -1,5 +1,29 @@
 # Homepage AEO/GEO Update
 
+## 2026-08-26 Shared H2 Primitive
+
+- Live reference: owner-supplied `.h2, h2` and responsive CSS from the current
+  homepage task; the existing 2026-08-24 desktop, tablet, and mobile captures
+  remain the visual baseline.
+- Local source inspected: all 117 current `h2` usages, existing section-heading
+  components, `src/app/globals.css`, the root font setup, and the homepage
+  Shopify Plus agency section.
+- Breakpoints: 35px/1.4 by default, 30px at 1199px and below, and
+  24px/33.24px with -0.48px tracking at 767px and below.
+- Interaction states and animations: headings are static; no hover, focus, or
+  animation behavior changes.
+- Implementation scope: introduce a Tailwind-only server-rendered heading
+  primitive with inverse-color and fully custom `unstyled` escape hatches, then
+  adopt it across the standard homepage H2s. Non-homepage intentional 43–50px,
+  bold, centered, and decorated heading variants remain unchanged until their
+  own live pages are reviewed.
+- Local verification capture: `/tmp/dynamicdreamz-home-top-1850x900.png`.
+  Header, hero geometry, typography, CTA row, proof badges, gradient, and first
+  fold align with the supplied 1850px-wide full-page reference.
+- Remaining differences: the homepage headings now match the supplied desktop,
+  1199px, and mobile H2 rules. Existing section-specific width, margin,
+  alignment, and inverse-color treatments are retained.
+
 ## 2026-08-25 Homepage Client Logo Monochrome Parity
 
 Owner-supplied desktop screenshots were compared for the homepage

@@ -11,7 +11,7 @@ export function HomeFaqSection() {
       className="bg-[#fafaf7] py-[60px] max-[767px]:py-10"
       contentClassName="flex justify-between gap-[105px] max-[991px]:flex-col max-[991px]:gap-2.5"
       headerClassName="mb-0 flex w-[41%] flex-col items-start text-left max-[991px]:w-full"
-      titleClassName="mb-[15px] text-[43px] leading-[1.2] font-medium max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]"
+      titleClassName="mb-[15px] font-display text-[35px] leading-[1.4] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
       descriptionClassName="max-w-[518px] text-base leading-[1.9] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[1.8]"
       accordionItemClassName="!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0"
       accordionTriggerClassName="!px-0 !py-6 !pr-12 max-[767px]:!py-5"

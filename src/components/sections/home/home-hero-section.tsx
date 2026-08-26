@@ -17,7 +17,7 @@ export function HomeHeroSection() {
         <h1 className="mx-auto mb-5 max-w-[1100px] text-[56px] leading-[1.14] font-medium text-ink min-[768px]:max-[991px]:text-[38px] min-[768px]:max-[991px]:leading-12 max-[767px]:mb-4 max-[767px]:max-w-[358px] max-[767px]:text-[27px] max-[767px]:leading-[37px]">
           {homeSectionCopy.heroTitle}
         </h1>
-        <p className="mx-auto mb-[30px] max-w-[940px] text-base leading-7 font-semibold text-muted/80 max-[1199px]:leading-6 max-[767px]:mb-6 max-[767px]:max-w-[358px] max-[767px]:text-sm">
+        <p className="mx-auto mb-[30px] max-w-[940px] text-base leading-7 font-medium text-muted/80 max-[1199px]:leading-6 max-[767px]:mb-6 max-[767px]:max-w-[358px] max-[767px]:text-sm">
           {homeAnswerSummary}
         </p>
         <div className="mx-auto flex max-w-[1100px] justify-center max-[767px]:flex-col max-[767px]:items-center max-[767px]:gap-3.5">

@@ -1,6 +1,7 @@
 import { ClientLogo } from "@/components/sections/home/client-logo";
 import styles from "@/components/sections/home/brand-partners-section.module.css";
 import { Container } from "@/components/ui/container";
+import { SectionHeading } from "@/components/ui/section-heading";
 import {
   clientLogos,
   homeSectionCopy,
@@ -45,19 +46,20 @@ export function BrandPartnersSection({
           )}
         >
           <div className="title w-[45%]">
-            <h2
+            <SectionHeading
+              unstyled={isShopifyHours}
               className={cn(
                 isShopifyHours
                   ? "font-sans text-[35px] leading-[1.4] font-bold tracking-[-0.8px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
-                  : "text-[35px] leading-[1.4] font-medium min-[768px]:max-[991px]:mb-2.5 min-[768px]:max-[991px]:w-full max-[767px]:mb-2.5 max-[767px]:text-[23px] max-[767px]:leading-[1.24]",
+                  : "min-[768px]:max-[991px]:mb-2.5 min-[768px]:max-[991px]:w-full max-[767px]:mb-2.5",
               )}
             >
               {heading}
-            </h2>
+            </SectionHeading>
           </div>
           <div className="section_text w-[48%]">
             {description ? (
-              <p className="text-left text-base leading-7 font-semibold text-muted max-[767px]:text-center max-[767px]:text-sm">
+              <p className="text-left text-base leading-7 font-medium text-muted max-[767px]:text-center max-[767px]:text-sm">
                 {description}
               </p>
             ) : null}

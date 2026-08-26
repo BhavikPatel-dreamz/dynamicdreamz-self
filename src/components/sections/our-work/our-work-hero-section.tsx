@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "@/components/sections/our-work/our-work-hero-section.module.css";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { proofLogos, showcaseImages } from "@/content/home";
 import { ourWorkPage } from "@/content/our-work";
 import { cn } from "@/lib/class-names";
@@ -148,9 +149,9 @@ export function OurWorkHeroSection({
             )}
           >
             <div className="hero-content">
-              <p className="mb-3.75 flex items-center lg:justify-start justify-center text-[13px] leading-none font-semibold text-muted uppercase before:mr-3 before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[767px]:mb-5 max-[767px]:text-xs">
+              <Eyebrow align="responsive-center" className="mb-3.75 max-[767px]:mb-5" tone="muted">
                 {heroContent.eyebrow}
-              </p>
+              </Eyebrow>
               <h1
                 className={cn(
                   "max-w-[700px] text-ink max-[991.98px]:max-w-[680px]",

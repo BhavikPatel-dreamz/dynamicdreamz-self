@@ -1,5 +1,7 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
+import { cn } from "@/lib/class-names";
 import { PortfolioProjectCard } from "@/components/ui/portfolio-project-card";
 import { sharedUiCopy } from "@/content/common";
 import { formatBrText } from "@/lib/text-formatting";
@@ -70,12 +72,14 @@ export function PortfolioShowcaseSection({
     <section className={className} data-section="portfolio" id="portfolio-showcase">
       <Container>
         {eyebrow ? (
-          <p
-            className={`mb-5 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.02em] text-muted ${eyebrowClassName ?? ""}`}
+          <Eyebrow
+            align="center"
+            className={cn("mb-5 tracking-[0.02em]", eyebrowClassName)}
+            lineWidth="fixed"
+            tone="muted"
           >
-            <span className="h-0.5 w-[30px] bg-brand-red" aria-hidden="true" />
             {eyebrow}
-          </p>
+          </Eyebrow>
         ) : null}
         <div
           className={

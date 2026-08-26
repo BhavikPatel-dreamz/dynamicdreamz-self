@@ -1,6 +1,7 @@
 import { BlogCard } from "@/components/ui/blog-card";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { homeSectionCopy, insights } from "@/content/home";
 
 export function InsightsSection() {
@@ -8,7 +9,7 @@ export function InsightsSection() {
     <section className="min-h-[883px] overflow-hidden bg-white pt-20 pb-[60px] min-[768px]:max-[991px]:min-h-[806.61px] min-[768px]:max-[991px]:py-[50px] max-[767px]:min-h-[722.33px] max-[767px]:py-[50px]">
       <Container>
         <div className="mx-auto mb-[47px] max-w-[700px] text-center">
-          <h2 className="mb-6 text-[43px] leading-[1.2] font-medium max-[767px]:mb-4 max-[767px]:text-2xl">{homeSectionCopy.insightsTitle}</h2>
+          <SectionHeading className="mb-6 max-[767px]:mb-4">{homeSectionCopy.insightsTitle}</SectionHeading>
         </div>
         <div className="grid grid-cols-3 gap-4 max-[991px]:flex max-[991px]:flex-col max-[991px]:gap-0">
           {insights.map((insight, insightIndex) => (

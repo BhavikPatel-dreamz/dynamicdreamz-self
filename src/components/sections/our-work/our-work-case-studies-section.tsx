@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { ourWorkCaseStudies, ourWorkPage } from "@/content/our-work";
 
 export function OurWorkCaseStudiesSection() {
@@ -10,9 +11,9 @@ export function OurWorkCaseStudiesSection() {
       <Container className="max-[575px]:px-4">
         <div className="mb-10 flex items-end justify-between gap-12 max-[767px]:flex-col max-[767px]:items-start max-[767px]:gap-4">
           <div className="shrink-0">
-            <p className="mb-5 flex items-center text-xs leading-none font-semibold text-ink uppercase before:mr-3 before:h-px before:w-[30px] before:bg-brand-red before:content-['']">
+            <Eyebrow className="mb-5" lineThickness="thin" lineWidth="fixed">
               {ourWorkPage.caseStudies.eyebrow}
-            </p>
+            </Eyebrow>
             <h2 className="max-w-[520px] text-[35px] leading-[1.38] font-medium text-ink max-[991px]:text-[30px] max-[767px]:text-2xl" id="our-work-case-studies-title">
               {ourWorkPage.caseStudies.title}
             </h2>
