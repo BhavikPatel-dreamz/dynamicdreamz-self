@@ -316,10 +316,16 @@ echo "$OUTPUT"
 # First line = "true"/"false", remaining lines = unsafe file paths.
 # Git LFS pointer files are plaintext ("version https://git-lfs.github.com/spec/...")
 # so polin-rider-scanner flags them as fake-asset. That is a false positive.
+# Vendor trees (node_modules, .next) are not committed; --all still walks them
+# and Next's compiled webpack helpers can trip unicode:invisible (MED).
 PARSED=$(printf '%s' "$OUTPUT" | node -e "
 let data='';
 process.stdin.on('data', c => data += c);
 process.stdin.on('end', () => {
+  const isVendorPath = (p) => {
+    if (!p || typeof p !== 'string') return false;
+    return /(^|[\\\\/])(node_modules|\\.next)([\\\\/]|$)/.test(p.replace(/\\\\/g, '/'));
+  };
   const isLfsPointer = (item) => {
     const blob = [item.detail, item.reason, item.label].filter(Boolean).join(' ');
     if (/git-lfs\\.github\\.com\\/spec/i.test(blob)) return true;
@@ -340,12 +346,15 @@ process.stdin.on('end', () => {
     const leftover = [];
     const keepPath = (p, item) => {
       if (!p) return;
+      if (isVendorPath(p)) return;
       if (isLfsPointer({ ...item, path: p })) return;
       leftover.push(p);
     };
     findings.forEach((f) => {
       if (isLfsPointer(f)) return;
-      leftover.push(f.path || f.file || f.filename || f.filePath || f.reason || 'unknown finding');
+      const p = f.path || f.file || f.filename || f.filePath;
+      if (isVendorPath(p)) return;
+      leftover.push(p || f.reason || 'unknown finding');
     });
     reasons.forEach((r) => {
       const files = Array.isArray(r.files) ? r.files : [];
@@ -372,6 +381,10 @@ UNSAFE_FILES=$(printf '%s\n' "$PARSED" | tail -n +2)
 
 if [ "$SAFE" = "true" ] && printf '%s' "$OUTPUT" | grep -q 'git-lfs.github.com/spec'; then
   echo -e "${YELLOW}Ignored fake-asset hit(s) on Git LFS pointer files (not JS payloads).${NC}"
+fi
+
+if [ "$SAFE" = "true" ] && printf '%s' "$OUTPUT" | grep -qE 'node_modules/|[/\\\\]\\.next[/\\\\]'; then
+  echo -e "${YELLOW}Ignored scanner hit(s) under node_modules / .next (not committed source).${NC}"
 fi
 
 if [ "$SAFE" != "true" ]; then
