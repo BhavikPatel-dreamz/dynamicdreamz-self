@@ -52,8 +52,8 @@ function TestimonialSlide({
             />
           ) : null}
         </div>
-        <h3 className="mb-5 max-w-[540px] pr-[78px] font-sans text-[26px] leading-[1.4] font-bold min-[768px]:max-[991px]:pr-0 min-[768px]:max-[991px]:text-[22px] max-[767px]:mb-4 max-[767px]:pr-0 max-[767px]:text-lg max-[767px]:leading-[normal]">{testimonial.title}</h3>
-        <p className="mb-[26px] max-w-[90%] text-base leading-[1.72] font-medium text-muted max-[767px]:mb-4 max-[767px]:max-w-full max-[767px]:text-sm">{testimonial.quote}</p>
+        <h3 className="mb-5 max-w-[540px] pr-[78px] text-[26px] leading-[1.4] font-medium min-[768px]:max-[991px]:pr-0 min-[768px]:max-[991px]:text-[22px] max-[767px]:mb-4 max-[767px]:pr-0 max-[767px]:text-lg max-[767px]:leading-[normal] font-montreal-medium">{testimonial.title}</h3>
+        <p className="mb-[26px] max-w-[90%] text-sm leading-6 font-normal text-muted max-[767px]:mb-5 max-[767px]:max-w-full max-[767px]:text-sm">{testimonial.quote}</p>
         <div className="flex items-center border-t border-ink/15 pt-[26px] max-[767px]:pt-4">
           <div className="flex flex-1 items-center">
             <Image className="mr-3.5 h-[60px] w-[60px] shrink-0 rounded-full object-cover max-[767px]:h-12 max-[767px]:w-12" src={testimonial.avatar} alt={`${testimonial.name}, ${testimonial.company}`} width={60} height={60} />
@@ -104,15 +104,15 @@ export function TestimonialCarousel({ items = testimonials }: TestimonialCarouse
 
   return (
     <>
-      <div className="relative" aria-live="polite">
-        <div className="overflow-hidden rounded-[30px_0_0_30px] max-[991px]:rounded-[20px]">
+      <div className="relative flex flex-col" aria-live="polite">
+        <div className="order-2 overflow-hidden rounded-[30px_0_0_30px] max-[991px]:order-1 max-[991px]:rounded-[20px]">
           <div className="flex items-stretch transition-transform duration-600 ease-in-out will-change-transform" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
             {items.map((testimonial, index) => (
               <TestimonialSlide testimonial={testimonial} isActive={activeIndex === index} onPlay={setVideoId} key={testimonial.name} />
             ))}
           </div>
         </div>
-        <div className="absolute top-[-96px] right-0 flex gap-3.5 max-[991px]:relative max-[991px]:top-auto max-[991px]:right-auto max-[991px]:mt-6 max-[991px]:justify-center" aria-label="Testimonial navigation">
+        <div className="order-1 mb-[19px] flex justify-end gap-3.5 max-[991px]:order-2 max-[991px]:mt-6 max-[991px]:mb-0 max-[991px]:justify-center" aria-label="Testimonial navigation">
           <button className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-[10px] border-0 bg-white p-0 transition-colors duration-300 hover:not-disabled:bg-brand-red hover:not-disabled:text-white disabled:cursor-default disabled:opacity-60 max-[767px]:h-[42px] max-[767px]:w-[42px] max-[767px]:rounded-md max-[767px]:[&_svg]:h-[15px] max-[767px]:[&_svg]:w-[15px]" type="button" aria-label="Previous testimonial" disabled={activeIndex === 0} onClick={() => moveTo(activeIndex - 1)}>
             <DirectionArrow direction="previous" />
           </button>

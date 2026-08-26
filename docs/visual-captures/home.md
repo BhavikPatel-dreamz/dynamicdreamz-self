@@ -1,5 +1,43 @@
 # Homepage AEO/GEO Update
 
+## 2026-08-26 Homepage FAQ Question Typography
+
+- Owner-supplied split screenshot shows the local FAQ question smaller than the
+  current live question at the same responsive layout.
+- Live CSS: Montreal Medium 500, 20px/120% desktop, 18px/26px at 1199px, and
+  16px/24px at 767px.
+- Root cause: `FaqSection`'s generic question override reduced the shared
+  `FaqAccordion` typography to 18px desktop and 16px at 1199px, overriding the
+  otherwise correct accordion defaults.
+- Scope: apply the live scale through the existing homepage FAQ prop; do not
+  change other shared FAQ consumers, copy, spacing, icons, or interactions.
+
+## 2026-08-26 Our Partners Heading Typography
+
+- Current live selectors inspected: `.our_partners .section_title h2` in
+  `style.css?ver=7.1`, `shopify-premium-partner.css`, and its responsive CSS.
+- Desktop: standalone Montreal Medium, weight 400, 43px/1.2, zero tracking,
+  `#282828`, maximum width 540px, and zero base margin.
+- Responsive: 35px/48.475px at 1199px, 30px/40px at 991px, and
+  24px/33.24px at 767px. The heading is static with no interaction or animation
+  states.
+- Scope: Our Partners only; visible wording, logo marquees, spacing, and Latest
+  Blogs remain unchanged in this edit.
+
+## 2026-08-26 Testimonial Navigation Clearance
+
+- Owner-supplied desktop reference shows the 56px previous/next controls in a
+  dedicated right-aligned row below the section description and 19px above the
+  testimonial card.
+- Current local implementation absolutely positioned the controls above the
+  carousel, allowing wrapped header text to occupy the same space.
+- Preserve the live 56px controls, 14px gap, desktop right alignment, hover and
+  disabled states, and the existing mobile 42px centered controls below the
+  carousel.
+- Implementation target: normal-flow ordering above the card on desktop and
+  below the card at 991px and narrower, eliminating text overlap at every
+  content height.
+
 ## 2026-08-26 Shopify Plus Agency Counter Typography
 
 | Check | Result |

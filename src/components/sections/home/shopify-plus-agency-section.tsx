@@ -33,7 +33,7 @@ export function ShopifyPlusAgencySection() {
           <div className="w-[46.816%] max-[991px]:w-full">
             <div className="mb-5 max-w-[575px]">
               {shopifyPlusAgencyContent.paragraphs.map((paragraph, index) => (
-                <p className={index === 0 ? "mb-3.75 text-sm leading-6 font-normal text-muted" : "text-sm leading-[1.8] font-medium text-muted"} key={paragraph}>
+                <p className={index === 0 ? "mb-3.75 text-sm leading-6 font-normal text-muted" : "text-sm leading-[1.8] font-normal text-muted"} key={paragraph}>
                   {paragraph}
                 </p>
               ))}

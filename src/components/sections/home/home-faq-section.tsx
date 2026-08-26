@@ -18,8 +18,8 @@ export function HomeFaqSection() {
       accordionPanelContentClassName="!px-0 !pb-6 max-[767px]:!pb-5"
       accordionIconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
       accordionIconVariant="circle-cross"
-      accordionQuestionClassName="!text-xl !leading-[1.2] !font-medium max-[1199px]:!text-lg max-[1199px]:!leading-[26px] max-[767px]:!text-base"
-      accordionAnswerClassName="!text-sm !leading-[1.8] !font-medium"
+      accordionQuestionClassName="!font-montreal-medium !text-[20px] !leading-[1.2] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6"
+      accordionAnswerClassName="!text-sm"
     />
   );
 }

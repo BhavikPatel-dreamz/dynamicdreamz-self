@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick.css";
 import "./globals.css";
 
 const neueMontrealLight = localFont({
-  src: "./fonts/neuemontreal-light-webfont.woff2",
+  src: "./fonts/neue--montreal-light-webfont.woff2",
   weight: "300",
   style: "normal",
   variable: "--font-neue-montreal-light-local",
@@ -19,7 +19,7 @@ const neueMontrealLight = localFont({
 });
 
 const neueMontrealRegular = localFont({
-  src: "./fonts/neuemontreal-regular-webfont.woff2",
+  src: "./fonts/neue--montreal-regular-webfont.woff2",
   weight: "400",
   style: "normal",
   variable: "--font-neue-montreal-regular-local",
@@ -27,7 +27,7 @@ const neueMontrealRegular = localFont({
 });
 
 const neueMontrealMedium = localFont({
-  src: "./fonts/neuemontreal-medium-webfont.woff2",
+  src: "./fonts/neue--montreal-medium-webfont.woff2",
   weight: "500",
   style: "normal",
   variable: "--font-neue-montreal-medium-local",
@@ -35,7 +35,7 @@ const neueMontrealMedium = localFont({
 });
 
 const neueMontrealBold = localFont({
-  src: "./fonts/neuemontreal-bold-webfont.woff2",
+  src: "./fonts/neue--montreal-bold-webfont.woff2",
   weight: "700",
   style: "normal",
   variable: "--font-neue-montreal-bold-local",
@@ -43,7 +43,7 @@ const neueMontrealBold = localFont({
 });
 
 const montserrat = localFont({
-  src: "./fonts/montserrat-latin.woff2",
+  src: "./fonts/montserrat-latin-fonts.woff2",
   weight: "400 800",
   style: "normal",
   variable: "--font-montserrat-local",

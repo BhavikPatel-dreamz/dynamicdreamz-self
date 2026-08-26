@@ -7,13 +7,15 @@ import { cn } from "@/lib/class-names";
 
 export function IntegrationsSection() {
   return (
-    <section className="overflow-hidden bg-[#fafaf7] py-[55px] max-[767px]:py-[50px]">
+    <section className="our_partners overflow-hidden bg-[#fafaf7] py-[55px] max-[767px]:py-[50px]">
       <Container>
-        <div className="mb-[57px] flex items-center justify-between min-[768px]:max-[991px]:mb-[30px] min-[768px]:max-[991px]:flex-col min-[768px]:max-[991px]:items-start max-[767px]:mb-[29px] max-[767px]:flex-col max-[767px]:items-start">
-          <SectionHeading className="max-w-[540px] min-[768px]:max-[991px]:mb-2.5 min-[768px]:max-[991px]:max-w-full max-[767px]:mb-4 max-[767px]:max-w-full">{homeSectionCopy.integrationsTitle}</SectionHeading>
-          <p className="max-w-[560px] text-lg leading-[1.9] font-medium text-muted min-[768px]:max-[991px]:max-w-full min-[768px]:max-[991px]:text-base max-[767px]:max-w-full max-[767px]:text-base">
-            {homeSectionCopy.integrationsDescription}
-          </p>
+        <div className="section_title mb-[57px] flex items-center justify-center min-[768px]:max-[991px]:mb-[30px] max-[767px]:mb-[29px]">
+          <SectionHeading
+            unstyled
+            className="m-0 max-w-[540px] font-montreal-medium text-[43px] leading-[1.2] font-normal tracking-normal text-ink max-[1199px]:max-w-[400px] max-[1199px]:text-[35px] max-[1199px]:leading-[48.475px] max-[991px]:mb-2.5 max-[991px]:max-w-full max-[991px]:text-left max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[33.24px]"
+          >
+            {homeSectionCopy.integrationsTitle}
+          </SectionHeading>
         </div>
       </Container>
       <div className="space-y-[50px] max-[767px]:space-y-6" aria-label="Platforms and integrations">

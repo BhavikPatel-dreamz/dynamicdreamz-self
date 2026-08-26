@@ -47,7 +47,13 @@ export function CommerceSolutionsSection() {
                 const triggerId = `commerce-solution-trigger-${index}`;
 
                 return (
-                  <article className={cn("relative rounded-[15px] border border-[#6e7590]/10 bg-white p-5 shadow-[2px_2px_4px_rgb(83_83_83/5%)]", isOpen && "bg-[#eff4ef]")} key={item.title}>
+                  <article
+                    className={cn(
+                      "relative rounded-[15px] border border-[#6e7590]/10 p-5 shadow-[2px_2px_4px_rgb(83_83_83/5%)]",
+                      isOpen ? "bg-[#eff4ef]" : "bg-white",
+                    )}
+                    key={item.title}
+                  >
                     <h3 className="m-0">
                       <button
                         id={triggerId}
@@ -57,14 +63,18 @@ export function CommerceSolutionsSection() {
                         aria-controls={panelId}
                         onClick={() => setActiveIndex(isOpen ? -1 : index)}
                       >
-                        <span>{item.title}</span>
-                        <span className={cn("absolute top-0 right-0 flex size-[30px] shrink-0 items-center justify-center rounded-full border-2 border-ink transition-colors", isOpen && "bg-ink/10")} aria-hidden="true">
+                        <span className="block">
+                          <span className="block">{item.title}</span>
+                          <span className="mt-2.5 block font-sans text-sm leading-none font-medium text-muted max-[767px]:leading-[1.4]">
+                            {item.summary}
+                          </span>
+                        </span>
+                        <span className={cn("accordion-close-icon absolute top-1/2 right-0 flex size-[30px] -translate-y-1/2 shrink-0 items-center justify-center rounded-full border-2 border-ink transition-colors max-[991px]:size-[26px]", isOpen && "bg-ink/10")} aria-hidden="true">
                           <AccordionIcon isOpen={isOpen} />
                         </span>
                         <span className="sr-only">{isOpen ? homeSectionCopy.commerceAccordion.close : homeSectionCopy.commerceAccordion.open} {item.title}</span>
                       </button>
                     </h3>
-                    <p className="mt-2.5 text-sm leading-none font-medium text-muted max-[767px]:leading-[1.4]">{item.summary}</p>
                     <div id={panelId} role="region" aria-labelledby={triggerId} aria-hidden={!isOpen} className={cn("grid grid-rows-[0fr] transition-[grid-template-rows,margin-top] duration-300", isOpen && "mt-4 grid-rows-[1fr]")}>
                       <div className="overflow-hidden">
                         <div className="border-t border-[#6e7590]/10 pt-4">

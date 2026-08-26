@@ -139,7 +139,7 @@ export function FaqAccordion({
             >
               <h3
                 className={cn(
-                  "m-0 font-sans text-xl leading-[25px] font-semibold text-ink max-[1199px]:text-base",
+                  "m-0 font-montreal-medium text-[20px] leading-[120%] tracking-0 font-medium text-ink max-[1199px]:text-[18px]",
                   questionClassName,
                 )}
               >
