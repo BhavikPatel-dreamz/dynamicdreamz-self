@@ -15,16 +15,14 @@ const nextConfig: NextConfig = {
   async headers() {
     if (allowSearchIndexing) return [];
 
+    const noIndexHeader = {
+      key: "X-Robots-Tag",
+      value: "noindex, nofollow, noarchive, nosnippet, noimageindex",
+    };
+
     return [
-      {
-        source: "/:path*",
-        headers: [
-          {
-            key: "X-Robots-Tag",
-            value: "noindex, nofollow, noarchive, nosnippet, noimageindex",
-          },
-        ],
-      },
+      { source: "/", headers: [noIndexHeader] },
+      { source: "/:path*", headers: [noIndexHeader] },
     ];
   },
   async redirects() {
