@@ -1,6 +1,7 @@
 import { ClientLogo } from "@/components/sections/home/client-logo";
 import styles from "@/components/sections/home/brand-partners-section.module.css";
 import { Container } from "@/components/ui/container";
+import { SectionDescription } from "@/components/ui/section-description";
 import { SectionHeading } from "@/components/ui/section-heading";
 import {
   clientLogos,
@@ -57,13 +58,12 @@ export function BrandPartnersSection({
               {heading}
             </SectionHeading>
           </div>
-          <div className="section_text w-[48%]">
-            {description ? (
-              <p className="text-left text-base leading-7 font-medium text-muted max-[767px]:text-center max-[767px]:text-sm">
-                {description}
-              </p>
-            ) : null}
-          </div>
+          <SectionDescription
+            className="w-[48%]"
+            textClassName="text-left max-[767px]:text-center max-[767px]:text-sm"
+          >
+            {description}
+          </SectionDescription>
         </div>
         <div
           className={cn(

@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { SectionDescription } from "@/components/ui/section-description";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { shopifyPlusAgencyContent } from "@/content/home";
 
@@ -23,11 +24,9 @@ export function ShopifyPlusAgencySection() {
               {shopifyPlusAgencyContent.title}
             </SectionHeading>
           </div>
-          <div className="section_text w-[48%] max-[1199px]:w-full">
-            <p className="text-base leading-7 font-medium text-muted">
-              {shopifyPlusAgencyContent.intro}
-            </p>
-          </div>
+          <SectionDescription className="w-[48%] max-[1199px]:w-full">
+            {shopifyPlusAgencyContent.intro}
+          </SectionDescription>
         </div>
 
         <div className="flex flex-wrap justify-between gap-8 rounded-[30px] bg-[#fafaf7] p-8 max-[1199px]:rounded-[20px] max-[1199px]:p-6 max-[991px]:gap-0">
