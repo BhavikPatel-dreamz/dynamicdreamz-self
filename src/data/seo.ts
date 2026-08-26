@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { siteConfig } from "@/data/site";
+import { blockedSearchRobots, isSearchIndexingEnabled } from "@/lib/search-indexing";
 import { absoluteUrl } from "@/lib/seo";
 
 type OpenGraphType = "website" | "article";
@@ -59,6 +60,7 @@ export const rootMetadata: Metadata = {
   verification: {
     google: "9HXcEYDK16thq7UBFdMPjzvGI4CrmknyeNJCv66f1c8",
   },
+  robots: isSearchIndexingEnabled() ? indexableRobots : blockedSearchRobots,
 };
 
 export const pageSeo = {
@@ -2923,7 +2925,7 @@ export function createPageMetadata(page: PageSeoConfig): Metadata {
       description: socialDescription,
       images: [page.image.path],
     },
-    robots: page.robots ?? indexableRobots,
+    robots: isSearchIndexingEnabled() ? (page.robots ?? indexableRobots) : blockedSearchRobots,
   };
 }
 

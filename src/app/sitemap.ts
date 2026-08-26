@@ -2,9 +2,14 @@ import type { MetadataRoute } from "next";
 
 import { caseStudyDetails } from "@/content/case-study-details";
 import { type PageSeoConfig, pageSeoEntries } from "@/data/seo";
+import { isSearchIndexingEnabled } from "@/lib/search-indexing";
 import { absoluteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  if (!isSearchIndexingEnabled()) {
+    return [];
+  }
+
   const staticPages = pageSeoEntries
     .filter((page: PageSeoConfig) => {
       if (!page.robots) return true;

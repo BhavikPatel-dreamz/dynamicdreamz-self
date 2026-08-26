@@ -7,7 +7,8 @@ not a final pass.
 
 - Root metadata has `metadataBase` set to the production domain.
 - Root metadata uses a title template such as `%s | Dynamic Dreamz`.
-- `src/app/robots.ts` allows indexable public pages and points to the sitemap.
+- Search indexing is blocked by default (`noindex` metadata, `X-Robots-Tag`, empty sitemap). Set `ALLOW_SEARCH_INDEXING=true` before launch.
+- `src/app/robots.ts` allows crawl so Google can honor `noindex`. When indexing is enabled, it allows indexable public pages and points to the sitemap.
 - `src/app/sitemap.ts` includes every indexable route.
 - `src/app/not-found.tsx` exists before launch.
 - `src/app/global-error.tsx` exists before launch if the app has meaningful

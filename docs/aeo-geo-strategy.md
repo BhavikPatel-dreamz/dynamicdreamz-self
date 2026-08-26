@@ -323,7 +323,12 @@ Facts requiring central control include:
 
 ### Google
 
-- Keep pages indexable and eligible to show a snippet.
+- Until launch, this Next.js property ships with a sitewide Google index
+  block: `robots` metadata `noindex, nofollow`, `X-Robots-Tag` on all
+  responses, no sitemap advertisement, and an empty sitemap. Crawl remains
+  allowed so Googlebot can see the noindex signal. Set
+  `ALLOW_SEARCH_INDEXING=true` when the production domain should enter Search.
+- After indexing is enabled, keep pages indexable and eligible to show a snippet.
 - Ensure important facts and answers are visible as HTML text.
 - Keep internal links descriptive and crawlable.
 - Keep canonical URLs, sitemap URLs, structured-data URLs, and navigation URLs
