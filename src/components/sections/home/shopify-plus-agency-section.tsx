@@ -32,7 +32,7 @@ export function ShopifyPlusAgencySection() {
 
         <div className="flex flex-wrap justify-between gap-8 rounded-[30px] bg-[#fafaf7] p-8 max-[1199px]:rounded-[20px] max-[1199px]:p-6 max-[991px]:gap-0">
           <div className="w-[46.816%] max-[991px]:w-full">
-            <div className="mb-5 max-w-[568px]">
+            <div className="mb-5 max-w-[575px]">
               {shopifyPlusAgencyContent.paragraphs.map((paragraph, index) => (
                 <p className={index === 0 ? "mb-3.75 text-sm leading-6 font-normal text-muted" : "text-sm leading-[1.8] font-medium text-muted"} key={paragraph}>
                   {paragraph}
