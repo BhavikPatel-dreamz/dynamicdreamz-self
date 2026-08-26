@@ -13,17 +13,22 @@ import "./globals.css";
 const neueMontreal = localFont({
   src: [
     {
-      path: "./fonts/neue-montreal-regular.woff2",
+      path: "./fonts/neuemontreal-light-webfont.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/neuemontreal-regular-webfont.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/neue-montreal-medium.woff2",
+      path: "./fonts/neuemontreal-medium-webfont.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./fonts/neue-montreal-bold.woff2",
+      path: "./fonts/neuemontreal-bold-webfont.woff2",
       weight: "700",
       style: "normal",
     },
@@ -34,7 +39,7 @@ const neueMontreal = localFont({
 
 const montserrat = localFont({
   src: "./fonts/montserrat-latin.woff2",
-  weight: "100 900",
+  weight: "400 800",
   style: "normal",
   variable: "--font-montserrat-local",
   display: "swap",

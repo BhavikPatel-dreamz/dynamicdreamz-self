@@ -14,6 +14,11 @@
   --font-montserrat: var(--font-montserrat-local), Arial, sans-serif;
   --font-sans: var(--font-montserrat-local), Arial, sans-serif;
   --font-display: var(--font-neue-montreal), Arial, sans-serif;
+  --font-montreal-semibold: var(--font-neue-montreal), sans-serif;
+  --montreal-light: var(--font-neue-montreal), sans-serif;
+  --montreal-regular: var(--font-neue-montreal), sans-serif;
+  --montreal-medium: var(--font-neue-montreal), sans-serif;
+  --montreal-bold: var(--font-neue-montreal), sans-serif;
 }
 
 @layer base {
