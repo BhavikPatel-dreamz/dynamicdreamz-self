@@ -1,7 +1,13 @@
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+
+if (!siteUrl) {
+  throw new Error("NEXT_PUBLIC_SITE_URL is not defined");
+}
+
 export const siteConfig = {
   name: "Dynamic Dreamz",
   legalName: "Dynamic Dreamz Solutions LLP",
-  url: "https://www.dynamicdreamz.com",
+  url: siteUrl || "https://dynamicdreamz-self.vercel.app",
   email: "info@dynamicdreamz.com",
   phoneDisplay: "+91 9327642007",
   phoneHref: "tel:+919327642007",
