@@ -21,7 +21,8 @@ NC='\033[0m'
 # run this script without any local git config.
 # ----------------------------------------------------------------------------
 if [ "${1:-}" = "--install" ]; then
-  ROOT=$(git rev-parse --show-toplevel)
+  SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+  ROOT=$(cd "$SCRIPT_DIR/.." && git rev-parse --show-toplevel)
   chmod +x "$ROOT/.githooks/pre-commit"
   git -C "$ROOT" update-index --chmod=+x .githooks/pre-commit 2>/dev/null || true
 
@@ -56,6 +57,11 @@ if [ "${SKIP_SECURITY_SCAN:-0}" = "1" ]; then
   exit 0
 fi
 
+CI_MODE=0
+if [ "${1:-}" = "--ci" ] || [ "${GITHUB_ACTIONS:-}" = "true" ] || [ "${CI:-}" = "true" ]; then
+  CI_MODE=1
+fi
+
 # ----------------------------------------------------------------------------
 # PATH fix — GUI git clients launch hooks with a minimal PATH
 # ----------------------------------------------------------------------------
@@ -81,6 +87,9 @@ ROOT=$(git rev-parse --show-toplevel)
 cd "$ROOT"
 GITIGNORE="$ROOT/.gitignore"
 
+if [ "$CI_MODE" = "1" ]; then
+  echo "CI mode — scan only (no .gitignore / .vscode / file deletes)."
+else
 # ----------------------------------------------------------------------------
 # 1. Ensure .gitignore entries
 # ----------------------------------------------------------------------------
@@ -120,6 +129,7 @@ if [ -n "$BAT_TRACKED" ]; then
   printf '%s\n' "$BAT_TRACKED" | while IFS= read -r f; do echo "  $f"; done
 fi
 find "$ROOT" -name "temp_auto_push.bat" -not -path "*/node_modules/*" -not -path "*/.git/*" -delete 2>/dev/null || true
+fi
 
 # ----------------------------------------------------------------------------
 # 3. Babel / config malware indicator check
