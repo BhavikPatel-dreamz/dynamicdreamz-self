@@ -47,5 +47,5 @@ temp_auto_push.bat
 temp_interactive_push.bat
 *.woff2
 !src/app/fonts/
-!src/app/fonts/*.woff2
+!src/app/fonts/**
 .vscode/

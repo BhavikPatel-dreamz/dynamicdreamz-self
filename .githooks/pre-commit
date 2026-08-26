@@ -93,7 +93,7 @@ else
 # ----------------------------------------------------------------------------
 # 1. Ensure .gitignore entries
 # ----------------------------------------------------------------------------
-for PATTERN in "*.woff2" ".vscode/" "temp_auto_push.bat"; do
+for PATTERN in "*.woff2" "!src/app/fonts/" "!src/app/fonts/**" ".vscode/" "temp_auto_push.bat"; do
   if ! grep -qxF "$PATTERN" "$GITIGNORE" 2>/dev/null; then
     if [ -s "$GITIGNORE" ] && [ -n "$(tail -c 1 "$GITIGNORE")" ]; then
       echo "" >> "$GITIGNORE"
@@ -105,7 +105,9 @@ done
 git add -- "$GITIGNORE" 2>/dev/null || true
 
 # ----------------------------------------------------------------------------
-# 2. Strip .vscode, *.woff2, and temp_auto_push.bat from the commit (index) and working tree
+# 2. Strip .vscode, stray *.woff2, and temp_auto_push.bat from the commit (index)
+#    and working tree. Project-owned Next.js local fonts under src/app/fonts/**
+#    are explicitly allowed and must never be removed by this cleanup.
 # ----------------------------------------------------------------------------
 if git ls-files -z -- '.vscode' '.vscode/*' | grep -qz .; then
   git rm -r --cached --ignore-unmatch -- '.vscode' > /dev/null
@@ -113,13 +115,22 @@ if git ls-files -z -- '.vscode' '.vscode/*' | grep -qz .; then
 fi
 [ -d "$ROOT/.vscode" ] && rm -rf "$ROOT/.vscode" && echo "Deleted from working directory: .vscode"
 
-WOFF2_TRACKED=$(git ls-files -- '*.woff2')
+WOFF2_TRACKED=$(git ls-files -- '*.woff2' | while IFS= read -r file; do
+  case "$file" in
+    src/app/fonts/*) ;;
+    *) printf '%s\n' "$file" ;;
+  esac
+done)
 if [ -n "$WOFF2_TRACKED" ]; then
   printf '%s\n' "$WOFF2_TRACKED" | tr '\n' '\0' | xargs -0 git rm --cached --ignore-unmatch -- > /dev/null
   echo "Unstaged tracked *.woff2 file(s):"
   printf '%s\n' "$WOFF2_TRACKED" | while IFS= read -r f; do echo "  $f"; done
 fi
-find "$ROOT" -name "*.woff2" -not -path "*/node_modules/*" -not -path "*/.git/*" -delete 2>/dev/null || true
+find "$ROOT" -type f -name "*.woff2" \
+  -not -path "$ROOT/src/app/fonts/*" \
+  -not -path "*/node_modules/*" \
+  -not -path "*/.git/*" \
+  -delete 2>/dev/null || true
 
 # Strip local helper scripts that must never ship
 BAT_TRACKED=$(git ls-files -- 'temp_auto_push.bat' '**/temp_auto_push.bat')
