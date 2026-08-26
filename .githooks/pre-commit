@@ -75,10 +75,10 @@ NVM_ROOT="${NVM_DIR:-$HOME/.nvm}"
 NVM_BIN=""
 if [ -s "$NVM_ROOT/alias/default" ]; then
   NVM_ALIAS=$(tr -d '[:space:]' < "$NVM_ROOT/alias/default")
-  NVM_BIN=$(ls -d "$NVM_ROOT/versions/node/v${NVM_ALIAS#v}"*/bin 2>/dev/null | sort -V | tail -1)
+  NVM_BIN=$(ls -d "$NVM_ROOT/versions/node/v${NVM_ALIAS#v}"*/bin 2>/dev/null | sort -V | tail -1 || true)
 fi
 if [ -z "$NVM_BIN" ]; then
-  NVM_BIN=$(ls -d "$NVM_ROOT/versions/node"/v*/bin 2>/dev/null | sort -V | tail -1)
+  NVM_BIN=$(ls -d "$NVM_ROOT/versions/node"/v*/bin 2>/dev/null | sort -V | tail -1 || true)
 fi
 [ -n "$NVM_BIN" ] && PATH="$NVM_BIN:$PATH"
 export PATH
@@ -383,7 +383,9 @@ if [ "$SAFE" = "true" ] && printf '%s' "$OUTPUT" | grep -q 'git-lfs.github.com/s
   echo -e "${YELLOW}Ignored fake-asset hit(s) on Git LFS pointer files (not JS payloads).${NC}"
 fi
 
-if [ "$SAFE" = "true" ] && printf '%s' "$OUTPUT" | grep -qE 'node_modules/|[/\\\\]\\.next[/\\\\]'; then
+if [ "$SAFE" = "true" ] && printf '%s' "$OUTPUT" | grep -qF 'node_modules/'; then
+  echo -e "${YELLOW}Ignored scanner hit(s) under node_modules / .next (not committed source).${NC}"
+elif [ "$SAFE" = "true" ] && printf '%s' "$OUTPUT" | grep -qF '.next/'; then
   echo -e "${YELLOW}Ignored scanner hit(s) under node_modules / .next (not committed source).${NC}"
 fi
 
