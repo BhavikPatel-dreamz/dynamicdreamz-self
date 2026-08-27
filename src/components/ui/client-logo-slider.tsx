@@ -7,8 +7,6 @@ import { ClientLogo } from "@/components/sections/home/client-logo";
 import type { ImageItem } from "@/content/home";
 import { cn } from "@/lib/class-names";
 
-import styles from "./client-logo-slider.module.css";
-
 export type ClientLogoSliderItem = ImageItem & {
   href?: string;
 };
@@ -61,6 +59,7 @@ export function ClientLogoSlider({
   slides,
   autoplayStartDelayMs = 0,
 }: ClientLogoSliderProps) {
+  const isCompactSlider = variant === "industryCompact" || compact;
   const [reducedMotion, setReducedMotion] = useState(false);
   const [autoplayReady, setAutoplayReady] = useState(autoplayStartDelayMs === 0);
   const [slidesToShow, setSlidesToShow] = useState(
@@ -111,9 +110,8 @@ export function ClientLogoSlider({
       <Slider
         {...settings}
         className={cn(
-          styles.slider,
-          variant === "industryCompact" && styles.compactSlider,
-          compact && styles.compactSlider,
+          "h-(--client-logo-slider-height) [--client-logo-slider-height:84px] [&_.slick-list]:h-(--client-logo-slider-height) [&_.slick-list]:cursor-grab [&_.slick-list]:overflow-hidden [&_.slick-list:active]:cursor-grabbing [&_.slick-slide]:h-(--client-logo-slider-height) [&_.slick-slide>div]:h-(--client-logo-slider-height) [&_.slick-track]:h-(--client-logo-slider-height) motion-reduce:[&_.slick-track]:!duration-[1ms]",
+          isCompactSlider && "[--client-logo-slider-height:70px] max-[767px]:[--client-logo-slider-height:60px]",
         )}
         key={`${variant}-${slidesToShow}-${reducedMotion ? "reduced" : "motion"}-${autoplayReady ? "ready" : "waiting"}-${compact ? "compact" : "standard"}`}
       >
@@ -121,9 +119,11 @@ export function ClientLogoSlider({
           <div key={logo.src}>
             <div
               className={cn(
-                styles.item,
-                variant === "resources" ? styles.resourcesItem : styles.industryItem,
-                variant === "industryCompact" && styles.compactIndustryItem,
+                "flex h-(--client-logo-slider-height) items-center justify-center [&_img]:h-auto [&_img]:w-auto [&_img]:max-w-full [&_img]:object-contain",
+                variant === "resources"
+                  ? "px-7 max-[768px]:px-[22px] [&_img]:max-h-[58px]"
+                  : "px-5 max-[768px]:px-2.5 [&_img]:max-h-[70px]",
+                isCompactSlider && variant !== "resources" && "[&_img]:max-h-(--client-logo-slider-height)",
               )}
             >
               {logo.href ? (

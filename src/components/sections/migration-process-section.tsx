@@ -121,7 +121,7 @@ export function MigrationProcessSection({
     <section className={className} id={id}>
       <Container>
         <div
-          className={`title mb-10 ${
+          className={`title ${
             isCentered ? "text-center mx-auto max-w-[850px]" : ""
           } max-[767px]:mb-6`}
         >

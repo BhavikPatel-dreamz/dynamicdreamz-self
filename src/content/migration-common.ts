@@ -1,7 +1,7 @@
 export const migrationSectionCopy = {
   brandsHeading: "Trusted by Leading Brands",
   brandsAriaLabel: "Trusted Brands",
-  testimonialsHeading: "Our Customers' Testimonials",
+  testimonialsHeading: "Our Customer's Testimonials",
   testimonialsDescription:
     "We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories: Check out how our services empower them to evolve.",
 } as const;

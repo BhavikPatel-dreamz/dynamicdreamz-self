@@ -1,11 +1,22 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/container";
+import { ServiceHeroReviews } from "@/components/sections/service-hero-reviews";
 import { shopifyDevelopmentBarcelonaContent } from "@/content/shopify-development-in-barcelona-spain";
 import { BarcelonaClientSliders } from "./barcelona-client-sliders";
 import { QuoteForm } from "@/components/sections/request-quote/quote-form";
 
 export function BarcelonaHeroSection() {
   const { hero } = shopifyDevelopmentBarcelonaContent;
+  const reviews = hero.reviews.map((review) => ({
+    platform: review.platform,
+    reviewCount: review.reviewsCount,
+    rating: review.rating,
+    logoSrc: review.logo,
+    logoAlt: review.alt,
+    logoWidth: review.width,
+    logoHeight: review.height,
+    href: review.href,
+    starsAlt: review.starsAlt,
+  }));
 
   return (
     <section className="barcelona-spain-sec pt-10 pb-20 max-[991px]:pb-12 max-[767px]:pt-6 max-[767px]:pb-10" id="contact-section">
@@ -49,42 +60,7 @@ export function BarcelonaHeroSection() {
               />
 
               {/* Reviews */}
-              <div className="review-wrap mt-[57px] flex justify-center gap-[15px] max-[991px]:mt-[50px] max-[991px]:flex-wrap">
-                {hero.reviews.map((review) => (
-                  <a
-                    className="review-box relative z-10 flex w-[calc(33.33%-10px)] flex-col items-center rounded-[10px] bg-white p-[17px_17px_12px_17px] text-center shadow-sm transition-transform duration-300 max-[991px]:w-full max-[991px]:flex-row-reverse max-[991px]:items-center max-[991px]:justify-between max-[991px]:p-[18px_24px] before:absolute before:-inset-[1px] before:-z-10 before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] after:absolute after:inset-0 after:-z-10 after:rounded-[8px] after:bg-white"
-                    href={review.href}
-                    key={review.platform}
-                    rel="nofollow noopener noreferrer"
-                    target="_blank"
-                  >
-                    <div className="total-review relative z-10 -mt-[34px] mb-2.5 inline-block rounded-[30px] border-[1.5px] border-[#efefef] bg-white max-[991px]:m-0">
-                      <span className="block px-[11.5px] text-[10px] font-semibold text-black">
-                        {review.reviewsCount}
-                      </span>
-                    </div>
-                    <div className="rating-wrap flex flex-col items-start">
-                      <Image
-                        alt={review.alt}
-                        height={review.height}
-                        src={review.logo}
-                        width={review.width}
-                      />
-                      <div className="rating flex items-center justify-center gap-1.5">
-                        <Image
-                          alt={review.starsAlt}
-                          height={12}
-                          src={review.starsIcon}
-                          width={64}
-                        />
-                        <span className="font-sans text-[22px] font-bold text-[#252c15] max-[1199px]:text-[20px]">
-                          {review.rating}
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-                ))}
-              </div>
+              <ServiceHeroReviews items={reviews} />
             </div>
 
             {/* Right Column Form */}

@@ -121,7 +121,7 @@ export function HorizontalDragScroll({
     <>
       <div
         ref={viewportRef}
-        className={cn("cursor-grab touch-pan-y overflow-x-auto overscroll-x-contain select-none active:cursor-grabbing", className)}
+        className={cn("cursor-grab touch-pan-y overscroll-x-contain select-none active:cursor-grabbing", className)}
         aria-label={ariaLabel}
         role="region"
         tabIndex={0}

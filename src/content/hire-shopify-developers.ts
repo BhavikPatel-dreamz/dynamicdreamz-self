@@ -84,7 +84,7 @@ export const hireShopifyPortfolio = [
   { name: "AdHOC Atler", href: "https://adhocatelier.it/", image: "/assets/hire-shopify-developers/portfolio/adhoc-atler.webp", imageAlt: "AdHOC Atelier Shopify project preview" },
 ] as const;
 
-export const hireShopifyTestimonials = { heading: "Our Customers' Testimonials", description: "We have faith in our work, but what truly matters is the outcomes we serve our clients.<br> Happy clients make happy stories. Check out how our services empower them to evolve." } as const;
+export const hireShopifyTestimonials = { heading: "Our Customer's Testimonials", description: "We have faith in our work, but what truly matters is the outcomes we serve our clients.<br> Happy clients make happy stories. Check out how our services empower them to evolve." } as const;
 
 export const hireShopifyFaqs: readonly FaqAccordionItem[] = [
   { question: "What do Shopify developers do?", answer: "Shopify store development, customization, and maintenance are the responsibilities of Shopify developers. Everything is taken care of by them, including performance optimization, app integration, and design and development." },

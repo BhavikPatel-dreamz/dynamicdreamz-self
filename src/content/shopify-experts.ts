@@ -376,7 +376,7 @@ export const shopifyExpertsContent = {
   },
 
   testimonials: {
-    heading: "Our Customers' testimonials",
+    heading: "Our Customer's Testimonials",
     description:
       "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve.",
   },

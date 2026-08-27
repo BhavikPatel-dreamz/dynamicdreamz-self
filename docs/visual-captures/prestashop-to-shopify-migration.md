@@ -108,7 +108,7 @@ Fresh comparison findings before refinement:
    - 5 Reason cards with icon, title, description, and hover gradient border.
 9. **Testimonials Section (`happy-client-sec`)**:
    - Reused shared component: `HappyClientSection`.
-   - Heading: `Our Customers' Testimonials`.
+   - Heading: `Our Customer's Testimonials`.
    - Description: `We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories: Check out how our services empower them to evolve.`
    - Video testimonial cards carousel with play modal.
 10. **FAQ Section (`faq-sec`)**:

@@ -64,6 +64,7 @@ export function IndustryBrandsSection({
           <div
             className={cn(
               "left-col w-[31%] pl-[calc((100%-1140px)/2)] max-[1199px]:w-[30%] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991.98px]:w-full max-[991.98px]:p-0 max-[991.98px]:text-center",
+              !isCompact && "min-[1400px]:pl-[calc((100%-1334px)/2)]",
               isCompact
                 ? "w-1/3 pl-[calc((100%-1140px)/2)] min-[1400px]:pl-[calc((100%-1320px)/2)] max-[991.98px]:mb-5 max-[767px]:mb-[15px]"
                 : hasSpaciousMobileLayout
@@ -73,10 +74,7 @@ export function IndustryBrandsSection({
           >
             <h2
               className={cn(
-                "m-0 font-[Montserrat,sans-serif] font-semibold text-ink",
-                isCompact
-                  ? "text-xl leading-[26.4px] tracking-normal max-[991.98px]:text-lg max-[991.98px]:leading-6"
-                  : "text-[25px] leading-[33px] tracking-[-.02em]",
+                "m-0 whitespace-nowrap font-montreal-medium text-xl leading-[26.4px] font-medium tracking-normal text-ink max-[1199px]:text-lg max-[991.98px]:whitespace-normal",
               )}
               id={`${content.slug}-brands-title`}
             >

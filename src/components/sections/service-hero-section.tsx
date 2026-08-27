@@ -1,4 +1,8 @@
 import Image from "next/image";
+import {
+  ServiceHeroReviews,
+  type ServiceHeroReviewItem,
+} from "@/components/sections/service-hero-reviews";
 import { ReviewAnimation } from "@/components/sections/shopify-plus-agency/review-animation";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
@@ -6,16 +10,7 @@ import { shopifyPlusAgencyHero } from "@/content/shopify-plus-agency";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
 
-export type ServiceHeroReviewItem = {
-  platform: string;
-  reviewCount: string;
-  rating: string;
-  logoSrc: string;
-  logoAlt: string;
-  logoWidth: number;
-  logoHeight: number;
-  href: string;
-};
+export type { ServiceHeroReviewItem } from "@/components/sections/service-hero-reviews";
 
 export type ServiceHeroCoBranding = {
   leftLogo: { src: string; alt: string; width: number; height: number };
@@ -149,44 +144,7 @@ export function ServiceHeroSection({
             </div>
             <div className="right-col w-full">
               {content.reviews && content.reviews.length > 0 ? (
-                <div className="review-wrap mt-[45px] flex gap-[15px] justify-center max-[991px]:mt-[50px] max-[991px]:flex-col max-[991px]:items-center max-[991px]:gap-4">
-                  {content.reviews.map((review) => (
-                    <a
-                      className="review-box relative z-0 w-[calc(33.33%-10px)] max-w-[360px] rounded-[8px] p-[17px_12px_10px] text-center shadow-sm transition-transform hover:-translate-y-0.5 before:absolute before:-inset-[2px] before:-z-20 before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] after:absolute after:inset-0 after:-z-10 after:rounded-[8px] after:bg-white max-[991px]:w-full max-[991px]:max-w-[400px] max-[991px]:flex max-[991px]:flex-row-reverse max-[991px]:items-center max-[991px]:justify-between max-[991px]:p-[18px_24px]"
-                      href={review.href}
-                      key={review.platform}
-                      rel="nofollow noopener noreferrer"
-                      target="_blank"
-                    >
-                      <div className="total-review relative -mt-[34px] mb-2.5 rounded-[30px] border-[1.5px] border-[#efefef] bg-white max-[991px]:m-0 max-[991px]:inline-block">
-                        <span className="block px-2.5 py-1 text-center text-[10px] font-semibold leading-normal text-black">
-                          {review.reviewCount}
-                        </span>
-                      </div>
-                      <div className="rating-wrap flex flex-col items-center justify-center max-[991px]:items-start">
-                        <Image
-                          alt={review.logoAlt}
-                          className="object-contain"
-                          height={review.logoHeight}
-                          src={review.logoSrc}
-                          width={review.logoWidth}
-                        />
-                        <div className="rating flex items-center justify-center gap-[7px]">
-                          <Image
-                            alt="Dynamic Dreamz Star Rating"
-                            className="h-[12px] w-[64px] object-contain"
-                            height={12}
-                            src="/assets/reviews/five-stars.svg"
-                            width={78}
-                          />
-                          <span className="font-sans text-[22px] font-bold leading-normal text-[#252c15] max-[991px]:text-[16px]">
-                            {review.rating}
-                          </span>
-                        </div>
-                      </div>
-                    </a>
-                  ))}
-                </div>
+                <ServiceHeroReviews items={content.reviews} />
               ) : (
                 <div className="review_animation_main my-[30px]">
                   <div className="mx-auto w-full max-w-[450px]">
@@ -233,7 +191,7 @@ export function ServiceHeroSection({
                 <>
                   <p
                     className={cn(
-                      "mt-3 mb-6 text-sm font-normal leading-[24px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
+                      "mt-3 mb-3.75 text-sm font-normal leading-[24px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
                       bodyClassName,
                     )}
                   >
@@ -280,49 +238,10 @@ export function ServiceHeroSection({
                   />
                 </div>
                 {content.reviews && content.reviews.length > 0 && (
-                  <div
-                    className={cn(
-                      "review-wrap mt-[57px] flex gap-[15px] justify-center max-[991px]:mt-[50px] max-[991px]:flex-col max-[991px]:items-center max-[991px]:gap-4",
-                      reviewClassName,
-                    )}
-                  >
-                    {content.reviews.map((review) => (
-                      <a
-                        className="review-box relative z-0 w-[calc(33.33%-10px)] rounded-[8px] p-[17px_12px_10px] text-center shadow-sm transition-transform hover:-translate-y-0.5 before:absolute before:-inset-[1px] before:-z-20 before:rounded-[10px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] after:absolute after:inset-0 after:-z-10 after:rounded-[8px] after:bg-white max-[991px]:w-full max-[991px]:max-w-[400px] max-[991px]:flex max-[991px]:flex-row-reverse max-[991px]:items-center max-[991px]:justify-between max-[991px]:p-[18px_24px]"
-                        href={review.href}
-                        key={review.platform}
-                        rel="nofollow noopener noreferrer"
-                        target="_blank"
-                      >
-                        <div className="total-review relative -mt-[34px] mb-2.5 rounded-[30px] border-[1.5px] border-[#efefef] bg-white max-[991px]:m-0 max-[991px]:inline-block">
-                          <span className="block px-2.5 py-1 text-center text-[10px] font-semibold leading-normal text-black">
-                            {review.reviewCount}
-                          </span>
-                        </div>
-                        <div className="rating-wrap flex flex-col items-center justify-center max-[991px]:items-start">
-                          <Image
-                            alt={review.logoAlt}
-                            className="object-contain"
-                            height={review.logoHeight}
-                            src={review.logoSrc}
-                            width={review.logoWidth}
-                          />
-                          <div className="rating flex items-center justify-center gap-[7px]">
-                            <Image
-                              alt="Dynamic Dreamz Star Rating"
-                              className="h-[12px] w-[64px] object-contain"
-                              height={12}
-                              src="/assets/reviews/five-stars.svg"
-                              width={64}
-                            />
-                            <span className="font-sans text-[22px] font-bold leading-normal text-[#252c15] max-[991px]:text-[16px]">
-                              {review.rating}
-                            </span>
-                          </div>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
+                  <ServiceHeroReviews
+                    className={reviewClassName}
+                    items={content.reviews}
+                  />
                 )}
               </>
             ) : (

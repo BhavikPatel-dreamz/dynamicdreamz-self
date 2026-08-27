@@ -8,6 +8,11 @@ export const resourcesSectionCopy = {
     "From web designs to custom web development, we work with cutting edge web technology and framework.",
 } as const;
 
+export const resourcesBrandsSection = {
+  slug: "resources",
+  brands: { ariaLabel: "Brands supported by Dynamic Dreamz" },
+} as const;
+
 export type ResourceLink = {
   href: string;
   title: string;
