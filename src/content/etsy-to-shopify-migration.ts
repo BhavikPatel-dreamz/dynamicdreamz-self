@@ -4,8 +4,19 @@ import type { MigrationProcessContent } from "@/components/sections/migration-pr
 import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
 import type { ProofSectionContent } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import type { TwoColCenterImageContent } from "@/components/sections/two-col-center-image-section";
+import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export { migrationSectionCopy as etsyMigrationSectionCopy } from "@/content/migration-common";
+
+export const etsyTestimonials = {
+  eyebrow: "Client Stories",
+  items: shopifyPlusAgencyTestimonials.items.slice(5),
+  controlsLabels: {
+    ariaLabel: "Etsy to Shopify migration client video testimonials",
+    previous: "Show previous client testimonial",
+    next: "Show next client testimonial",
+  },
+} as const;
 
 export const etsyHeroContent: ServiceHeroContent = {
   title: "Etsy to Shopify Migration",
@@ -16,8 +27,8 @@ export const etsyHeroContent: ServiceHeroContent = {
   image: {
     src: "/assets/etsy-to-shopify-migration/etsy-to-shopify-migration-hero.svg",
     alt: "Etsy to Shopify Migration Image",
-    width: 560,
-    height: 440,
+    width: 469,
+    height: 224,
   },
   reviews: [
     {

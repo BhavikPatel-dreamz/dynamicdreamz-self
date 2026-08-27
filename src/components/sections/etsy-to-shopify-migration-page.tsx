@@ -1,4 +1,4 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "./split-faq-section";
 import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { MigrationProcessSection } from "@/components/sections/migration-process-section";
@@ -18,6 +18,7 @@ import {
   etsyWhyChooseContent,
   etsyWhyMigrate,
   etsyMigrationSectionCopy,
+  etsyTestimonials,
 } from "@/content/etsy-to-shopify-migration";
 
 export function EtsyToShopifyMigrationPage() {
@@ -41,9 +42,10 @@ export function EtsyToShopifyMigrationPage() {
         text={etsyWhyMigrate.text}
       />
       <ShopifyReasonsSection
-        className="shopify-customization-services-sec mb-20 py-20 max-[767px]:mb-[50px] max-[767px]:py-[60px]"
+        carouselFullBleed
         content={etsyBenefitsContent}
         id="benefits-of-moving"
+        layout="carousel"
       />
       <TwoColCenterImageSection
         content={etsyConsiderationsContent}
@@ -54,25 +56,27 @@ export function EtsyToShopifyMigrationPage() {
         id="migration-process"
       />
       <ThemeWhyChooseSection
-        className="why_dynamic_dreamz_sec dev pt-0 pb-20 two-column-icon-text-bg two-column-top-icon-text max-[767px]:pb-[50px]"
+        className="why_dynamic_dreamz_sec dev pt-0 two-column-icon-text-bg two-column-top-icon-text max-[767px]:pb-[50px]"
         content={etsyWhatAfterContent}
         id="what-after-migration"
         variant="top-icon"
       />
       <ThemeWhyChooseSection
-        className="why_dynamic_dreamz_sec dev mb-20 pb-20 bg-[linear-gradient(180deg,#F2F9F5_0%,rgba(242,249,245,0)_100%)] two-column-icon-text-bg max-[767px]:mb-[50px] max-[767px]:pb-[50px]"
         content={etsyWhyChooseContent}
         id="why-choose-dynamic-dreamz"
       />
       <HappyClientSection
+        controlsLabels={etsyTestimonials.controlsLabels}
         description={etsyMigrationSectionCopy.testimonialsDescription}
+        eyebrow={etsyTestimonials.eyebrow}
         heading={etsyMigrationSectionCopy.testimonialsHeading}
+        items={etsyTestimonials.items}
+        variant="client-stories"
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"
+       <SplitFaqSection
         idPrefix="etsy-migration-faq"
         items={etsyFaqs}
-      />
+            />
     </div>
   );
 }

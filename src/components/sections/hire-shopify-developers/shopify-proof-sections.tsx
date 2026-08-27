@@ -3,6 +3,8 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { HorizontalDragScroll } from "@/components/ui/horizontal-drag-scroll";
+import { SectionDescription } from "@/components/ui/section-description";
+import { SectionHeading } from "@/components/ui/section-heading";
 import {
   hireShopifyAdvantages,
   hireShopifyReasons,
@@ -44,7 +46,7 @@ const defaultAdvantagesContent: ProofSectionContent = {
 
 export function ShopifyReasonsSection({
   content = defaultReasonsContent,
-  className = "shopify-customization-services-sec bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[991px]:py-[60px]",
+  className = "shopify-customization-services-sec mb-20 bg-linear-[97.18deg] from-[#e8f9ef] from-[28.5%] to-[#e6fafd] to-[91.82%] py-20 max-[991px]:py-[60px]",
   id = "why-hire-shopify-developers",
   layout = "grid",
   carouselFullBleed = false,
@@ -89,10 +91,10 @@ export function ShopifyReasonsSection({
       ariaLabel={`${content.heading.replaceAll("<br>", "")} benefits`}
       className={
         carouselFullBleed
-          ? "[--carousel-offset:16px] [scroll-padding-inline-start:var(--carousel-offset)] [scrollbar-width:none] min-[576px]:[--carousel-offset:calc((100vw-540px)/2+16px)] min-[768px]:[--carousel-offset:calc((100vw-720px)/2+20px)] min-[992px]:[--carousel-offset:calc((100vw-960px)/2+20px)] min-[1200px]:[--carousel-offset:calc((100vw-1180px)/2+20px)] min-[1400px]:[--carousel-offset:calc((100vw-1360px)/2+20px)] [&::-webkit-scrollbar]:hidden"
-          : "-mx-[25px] px-[25px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          ? "snap-x snap-mandatory overflow-x-auto [--carousel-offset:16px] [scroll-padding-inline-start:var(--carousel-offset)] [scrollbar-width:none] min-[576px]:[--carousel-offset:calc((100vw-540px)/2+16px)] min-[768px]:[--carousel-offset:calc((100vw-720px)/2+20px)] min-[992px]:[--carousel-offset:calc((100vw-960px)/2+20px)] min-[1200px]:[--carousel-offset:calc((100vw-1180px)/2+20px)] min-[1400px]:[--carousel-offset:calc((100vw-1360px)/2+20px)] [&::-webkit-scrollbar]:hidden"
+          : "-mx-[25px] snap-x snap-mandatory overflow-x-auto px-[25px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       }
-      trackClassName={`flex items-stretch gap-4 ${carouselFullBleed ? "pr-[25px] pl-[var(--carousel-offset)]" : ""}`}
+      trackClassName={`flex w-max items-stretch gap-4 ${carouselFullBleed ? "pr-[25px] pl-[var(--carousel-offset)]" : ""}`}
     >
       {cards.map((card, index) => (
         <div
@@ -114,15 +116,18 @@ export function ShopifyReasonsSection({
     <section className={className} id={id}>
       <Container>
         <div className="mb-[50px] text-center max-[767px]:mb-[35px]">
-          <h2 className={headingClassName}>
+          <SectionHeading>
             {formatBrText(
               content.heading,
               preserveHeadingBreaks ? undefined : "max-[991px]:block",
             )}
-          </h2>
-          <p className="shopify-proof-sec-details mx-auto mt-6 max-w-[720px] text-base leading-[34.2px] font-medium text-muted max-[991px]:text-sm max-[991px]:leading-[25px]">
+          </SectionHeading>
+          <SectionDescription
+            className="mx-auto mt-6 max-w-[720px]"
+            textClassName="shopify-proof-sec-details font-normal text-sm leading-[24px]"
+          >
             {formatBrText(content.description, "max-[991px]:hidden")}
-          </p>
+          </SectionDescription>
         </div>
 
         {layout === "carousel" && !carouselFullBleed ? carousel : null}

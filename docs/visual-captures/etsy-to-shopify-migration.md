@@ -2,8 +2,18 @@
 
 **Route**: `/etsy-to-shopify-migration`
 **Live URL**: `https://www.dynamicdreamz.com/etsy-to-shopify-migration/`
-**Date**: 2026-08-20
-**Status**: Parity Achieved
+**Date**: 2026-08-27
+**Status**: Updated for carousel parity
+
+## Benefits Carousel Update (2026-08-27)
+- **Reference state**: The benefits cards now use the shared full-bleed carousel treatment instead of the earlier grid.
+- **Desktop, tablet, and mobile viewport behavior**: The horizontal scroll viewport spans the browser width. The initial card alignment comes from a responsive container-equivalent offset on the inner track, not from padding or clipping on the viewport.
+- **Scroll alignment**: `scroll-padding-inline-start` matches the inner-track offset at every breakpoint, so snapped cards align with the original container edge.
+- **Interaction state**: The viewport uses horizontal overflow with mandatory inline snapping, and its content-width track supports mouse drag, touch swipe, trackpad, and native horizontal scrolling. After movement, preceding cards may remain partially visible between the browser edge and the container-aligned active card.
+- **Responsive offsets inspected**: 16px mobile gutter; centered 540px, 720px, 960px, 1180px, and 1360px container widths with their matching inline gutters.
+- **Background**: The benefits section uses the live-reference 97.18-degree gradient from `#e8f9ef` at 28.5% to `#e6fafd` at 91.82%, expressed with canonical Tailwind gradient utilities.
+- **Implementation source inspected**: `ShopifyReasonsSection` and its `HorizontalDragScroll` full-bleed carousel path.
+- **Remaining differences**: None identified for the requested viewport and track-offset behavior.
 
 ## Live Site Inspection
 - **URL**: `https://www.dynamicdreamz.com/etsy-to-shopify-migration/`
@@ -50,9 +60,9 @@
 
 ## Animation & Interaction
 - Interactive FAQ accordions open/close smoothly with single-open state.
+- The testimonial section uses the shared client-stories carousel with content-owned eyebrow, items, and accessible previous/next control labels.
 - Testimonial and reasons sliders support responsive swipe/drag/scroll navigation.
 - All CTA buttons and internal links resolve correctly.
 
 ## Unresolved Discrepancies
 - None. Exact live visual structure, copy, and interaction model preserved.
-

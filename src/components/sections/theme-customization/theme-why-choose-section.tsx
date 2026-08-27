@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
+import { SectionDescription } from "@/components/ui/section-description";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { formatBrText } from "@/lib/text-formatting";
 
 export type ThemeWhyChooseItem = {
@@ -33,16 +35,23 @@ export function ThemeWhyChooseSection({
   return (
     <section className={className} id={id}>
       <Container>
-        <div className="heading-text mx-auto max-w-[850px] text-center">
-          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+        <div className="heading-text mx-auto max-w-[920px] text-center">
+          <SectionHeading>
             {formatBrText(content.title, "max-[1199px]:hidden")}
-          </h2>
-          <p className="why_dynamic_dreamz_desc mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-base max-[767px]:leading-[30.4px]">
+          </SectionHeading>
+          <SectionDescription
+            className="why_dynamic_dreamz_desc mt-2.5"
+            textClassName="text-sm font-normal leading-[24px]"
+          >
             {formatBrText(content.subtitle, "max-[1199px]:hidden")}
-          </p>
+          </SectionDescription>
         </div>
 
-        <div className="why_dynamic_dreamz_main mt-[60px] max-[991px]:mt-5">
+        <div
+          className={`why_dynamic_dreamz_main mt-[60px] max-[991px]:mt-5 ${
+            variant === "top-icon" ? "mx-auto max-w-[920px]" : ""
+          }`}
+        >
           <ul className="why_dynamic_dreamz-grid grid grid-cols-2 max-[991px]:grid-cols-1 list-none p-0 m-0">
             {content.items.map((item, index) => {
               const isEvenCol = index % 2 === 0;
@@ -65,13 +74,13 @@ export function ThemeWhyChooseSection({
                   key={item.title}
                 >
                   <span
-                    className={`icon flex flex-shrink-0 items-center justify-center ${
+                    className={`icon flex flex-shrink-0 items-center justify-start ${
                       preserveLiveIconSize
-                        ? "h-[70px] w-[66px]"
-                        : "size-[66px] max-[767px]:size-[50px]"
+                        ? "w-[50px]"
+                        : ""
                     } ${
                       variant === "top-icon"
-                        ? "mb-5 max-[767px]:mb-3.5"
+                        ? "mb-2.5 max-[767px]:mb-3.5"
                         : variant === "top-icon-mobile"
                           ? "mr-5 max-[767px]:mr-0 max-[767px]:mb-0"
                           : "mr-5 max-[767px]:mr-3.5"
@@ -81,16 +90,16 @@ export function ThemeWhyChooseSection({
                       alt={item.iconAlt}
                       className={
                         preserveLiveIconSize
-                          ? "h-[70px] w-[66px] object-contain"
-                          : "size-[66px] object-contain max-[767px]:size-[50px]"
+                          ? "object-contain"
+                          : "object-contain"
                       }
-                      height={preserveLiveIconSize ? 70 : 66}
+                      height={preserveLiveIconSize ? 50 : 50}
                       src={item.icon}
-                      width={66}
+                      width={50}
                     />
                   </span>
                   <div className="text flex-1">
-                    <h3 className="mb-[5px] font-sans text-[18px] font-bold leading-[30.6px] tracking-[0.36px] text-[#020202]">
+                    <h3 className="mb-[5px] font-montreal-medium text-[18px] font-normal leading-[30.6px] tracking-[0.36px] text-[#020202]">
                       {formatBrText(item.title, "max-[767px]:hidden")}
                     </h3>
                     <p className={`text-base font-medium leading-[27.2px] tracking-[0.32px] text-[#535353] ${preserveDesktopTypography ? "" : "max-[767px]:text-sm max-[767px]:leading-6"}`}>
