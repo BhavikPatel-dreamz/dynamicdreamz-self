@@ -3,6 +3,8 @@ import { ProofSectionContent } from "@/components/sections/hire-shopify-develope
 import { TwoColCenterImageContent } from "@/components/sections/two-col-center-image-section";
 import { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import { MigrationProcessContent } from "@/components/sections/migration-process-section";
+import { migrationSectionCopy } from "@/content/migration-common";
+import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 
 
@@ -15,8 +17,8 @@ export const wixHeroContent: ServiceHeroContent = {
   image: {
     src: "/assets/wix-to-shopify-migration/wix-to-shopify-migration-img.svg",
     alt: "Wix to Shopify Migration Image",
-    width: 560,
-    height: 440,
+    width: 469,
+    height: 224,
   },
   reviews: [
     {
@@ -53,10 +55,20 @@ export const wixHeroContent: ServiceHeroContent = {
 };
 
 export const wixMigrationSectionCopy = {
-  brandsHeading: "Trusted by Leading Brands",
+  ...migrationSectionCopy,
   whyMigrateHeading: "Why Migrate from Wix to Shopify?",
   whyMigrateText:
     "If you want more features and benefits for your online store, Migrate from Wix to Shopify. Shopify is a straightforward eCommerce platform that offers a user friendly experience, robust security, advanced features, and a wide range of apps to expand the store’s functionality. If you migrate from the Wix store to Shopify, you can achieve a secure, scalable, and engaging buying experience.",
+} as const;
+
+export const wixTestimonials = {
+  eyebrow: "Client Stories",
+  items: shopifyPlusAgencyTestimonials.items.slice(5),
+  controlsLabels: {
+    ariaLabel: "Wix to Shopify migration client video testimonials",
+    previous: "Show previous client testimonial",
+    next: "Show next client testimonial",
+  },
 } as const;
 
 export const wixBrandLogos: readonly ClientLogoSliderItem[] = [

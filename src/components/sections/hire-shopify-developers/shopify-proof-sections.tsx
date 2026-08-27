@@ -76,7 +76,7 @@ export function ShopifyReasonsSection({
           width={60}
           height={60}
         />
-        <h3 className="mb-[5px] font-sans text-base leading-[26.72px] font-bold tracking-[0.32px] text-ink">
+        <h3 className="mb-[5px] font-montreal-medium text-base leading-[26.72px] font-medium tracking-[0.32px] text-ink">
           {formatBrText(item.title, "max-[767px]:hidden")}
         </h3>
         <p className={`text-base leading-[27.2px] font-medium tracking-[0.32px] text-muted ${layout === "grid" ? "max-[767px]:text-sm max-[767px]:leading-6" : ""}`}>

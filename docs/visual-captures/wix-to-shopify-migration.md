@@ -2,8 +2,8 @@
 
 **Route**: `/wix-to-shopify-migration`
 **Live URL**: `https://www.dynamicdreamz.com/wix-to-shopify-migration/`
-**Date**: 2026-08-20
-**Status**: Parity Achieved
+**Date**: 2026-08-27
+**Status**: Testimonial and FAQ wiring corrected
 
 ## Live Site Inspection
 - **URL**: `https://www.dynamicdreamz.com/wix-to-shopify-migration/`
@@ -49,9 +49,10 @@
 
 ## Animation & Interaction
 - Interactive FAQ accordions open/close smoothly with single-open state.
+- The Wix testimonial section uses the shared client-stories carousel with Wix-specific accessible control labels and locally configured testimonial items.
+- The split FAQ section uses the Wix FAQ collection and a Wix-specific accordion ID prefix.
 - Testimonial and reasons sliders support responsive swipe/drag/scroll navigation.
 - All CTA buttons and internal links resolve correctly.
 
 ## Unresolved Discrepancies
 - None. Exact live visual structure, copy, and interaction model preserved.
-

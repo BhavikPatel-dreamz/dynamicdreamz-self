@@ -48,11 +48,7 @@ export function IndustryBrandsSection({
   return (
     <section
       className={cn(
-        "our-client-sec dev overflow-hidden",
-        isCompact
-          ? "h-[104px] bg-[#fbeed5] py-[17px] max-[991.98px]:h-[150px] max-[767px]:h-[135px]"
-          : "h-[164px] bg-[#fbf7ed] py-10",
-        !isCompact && (hasSpaciousMobileLayout ? "max-[991.98px]:h-[270px]" : "max-[991.98px]:h-[217px]"),
+        "our-client-sec dev overflow-hidden bg-[#FBEED5] py-4.25",
         className,
       )}
       aria-label={showHeading ? undefined : ariaLabel}
