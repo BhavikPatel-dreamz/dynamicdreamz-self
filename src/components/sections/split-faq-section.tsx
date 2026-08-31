@@ -40,7 +40,8 @@ export function SplitFaqSection({
       contentClassName="flex justify-between gap-[105px] max-[992px]:flex-col max-[992px]:gap-2.5"
       description={description}
       descriptionClassName="max-w-[518px] text-base leading-[1.9] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[1.8]"
-      headerClassName="mb-0 flex w-[41%] flex-col items-start text-left max-[992px]:w-full"
+      headerClassName="mb-0 flex flex-col items-start text-left min-[993px]:sticky min-[993px]:top-[20px]"
+      headerWrapperClassName="w-[41%] max-[992px]:w-full"
       heading={heading}
       idPrefix={idPrefix}
       items={items}

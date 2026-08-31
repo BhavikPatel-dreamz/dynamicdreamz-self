@@ -149,7 +149,7 @@ export function FaqAccordion({
                 <span
                   aria-hidden="true"
                   className={cn(
-                    "absolute top-1/2 right-8 flex size-8 -translate-y-1/2 items-center justify-center rounded-full border-2 border-ink transition-colors max-[575px]:translate-y-0",
+                    "absolute top-1/2 right-0 flex size-8 -translate-y-1/2 items-center justify-center rounded-full border-2 border-ink transition-colors max-[575px]:translate-y-0",
                     isOpen && "bg-ink/10",
                     iconClassName,
                   )}

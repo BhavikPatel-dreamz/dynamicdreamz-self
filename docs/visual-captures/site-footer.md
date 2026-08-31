@@ -5,6 +5,24 @@ Local route: http://localhost:3000/
 Date checked: 2026-08-13
 Browser: Chromium DevTools responsive mode plus Microsoft Edge headless computed-geometry audit
 
+## 2026-08-31 Live Footer Content And Link Review
+
+- Re-inspected the rendered homepage and its HTML footer at
+  `https://www.dynamicdreamz.com/` against the owner-provided desktop capture.
+- Verified all six navigation headings, every visible link label, email, phone,
+  LinkedIn and Instagram destinations, award destinations, copyright, and legal
+  links.
+- The current live Shopify Solutions list uses `Shopify Theme Customization`
+  and `Hire Shopify Experts`; the local footer still contained the older
+  `Shopify B2B & Wholesale` and `Hire Shopify Developers` entries.
+- Local internal links continue to use the migrated canonical slashless route
+  when it differs from a legacy live slug. For example, the live `/case-study/`
+  destination maps to local `/case-studies` through the existing permanent
+  redirect, so the footer links directly to `/case-studies`.
+- This update changes footer navigation content only. Existing desktop,
+  accordion, hover, focus, contact, social, award, and legal-row behavior is
+  retained.
+
 ## 2026-08-18 Live Footer Refresh
 
 The About page live footer was re-inspected after the production footer changed.

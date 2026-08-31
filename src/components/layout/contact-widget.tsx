@@ -43,7 +43,7 @@ export function ContactWidget() {
       </span>
       <span className="h-[55px] max-[992px]:h-[45px] w-px shrink-0 bg-white/50 max-[767px]:h-10" aria-hidden="true" />
       <span className="flex flex-col pl-2.5 leading-[1.2] max-[992px]:text-[11px]">
-        <small className="mb-[5px] text-[11px] font-semibold">
+        <small className="mb-[5px] text-[12px] font-semibold">
           {siteChromeCopy.contactWidget.prompt}
         </small>
         <strong className="text-lg leading-[1.1] max-[767px]:text-sm">{siteChromeCopy.contactWidget.cta}</strong>

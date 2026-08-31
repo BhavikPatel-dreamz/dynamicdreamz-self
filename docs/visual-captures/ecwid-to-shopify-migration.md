@@ -5,6 +5,23 @@
 **Date**: 2026-08-31
 **Status**: Responsive testimonial breakpoint implemented; screenshot recapture pending
 
+## 2026-08-31 Split FAQ Sticky Heading
+
+- Owner-provided desktop screenshot shows the two-column FAQ with the section
+  heading in the left column and the accordion content in the right column.
+- The requested interaction is for the left heading/description block to remain
+  sticky while the taller right accordion scrolls, then stop at the FAQ section
+  boundary.
+- The first implementation placed sticky positioning directly on the flex
+  column, but it did not remain pinned consistently across shared consumers.
+  The final structure uses a full-height left-column wrapper as the sticky
+  containing block and applies `position: sticky` with a `100px` top offset to
+  the inner header.
+- Sticky behavior applies only above the existing stacked-layout breakpoint
+  (`993px` and wider). Tablet and mobile retain normal document flow.
+- Accordion open/close animation, focus behavior, copy, and visual styling are
+  unchanged.
+
 ## 2026-08-31 Testimonial Breakpoint Review
 
 - Compared the user-provided side-by-side screenshot of the local route and live
