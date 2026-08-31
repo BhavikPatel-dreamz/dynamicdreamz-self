@@ -7,18 +7,18 @@ import { siteConfig } from "@/data/site";
 
 export function HeaderThree() {
   return (
-    <header className="header-three w-full py-[43px] max-[991px]:py-[26.5px]">
+    <header className="header-three w-full py-[43px] max-[992px]:py-[26.5px]">
       <Container>
         <div className="header-row flex items-center justify-between">
           <div className="site-branding">
             <Link
-              className="inline-flex shrink-0 -translate-y-[2.5px] max-[991px]:translate-y-0"
+              className="inline-flex shrink-0 -translate-y-[2.5px] max-[992px]:translate-y-0"
               href="/"
               aria-label="Dynamic Dreamz home"
             >
               <Image
                 alt="Dynamic Dreamz - Shopify Platinum Partner"
-                className="h-auto w-[225px] max-[1199px]:w-[180px] max-[991px]:w-[225px] max-[767px]:w-[170px] max-[379px]:w-[150px]"
+                className="h-auto w-[225px] max-[1199px]:w-[180px] max-[992px]:w-[225px] max-[767px]:w-[170px] max-[379px]:w-[150px]"
                 height={39}
                 priority
                 src={siteConfig.logo}
@@ -54,7 +54,7 @@ export function HeaderThree() {
                 </span>
               </li>
 
-              <li className="ml-[60px] flex items-center max-[991px]:ml-5">
+              <li className="ml-[60px] flex items-center max-[992px]:ml-5">
                 <span className="icon mr-3.5 inline-block w-[37px] shrink-0">
                   <Image
                     alt="Mail Icon"

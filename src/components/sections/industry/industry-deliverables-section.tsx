@@ -55,17 +55,17 @@ export function IndustryDeliverablesSection({ content }: IndustryDeliverablesSec
       data-industry="deliverables"
     >
       <Container className="max-[575px]:px-4">
-        <div className="mb-10 -mx-[15px] flex items-center justify-between max-[991px]:mx-0 max-[991px]:flex-col max-[991px]:text-center">
-          <div className="w-[calc(35%-15px)] px-[15px] max-[1199px]:w-[calc(40%-15px)] max-[991px]:w-full max-[991px]:p-0">
+        <div className="mb-10 -mx-[15px] flex items-center justify-between max-[992px]:mx-0 max-[992px]:flex-col max-[992px]:text-center">
+          <div className="w-[calc(35%-15px)] px-[15px] max-[1199px]:w-[calc(40%-15px)] max-[992px]:w-full max-[992px]:p-0">
             <h2
-              className="m-0 text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:mb-6 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
+              className="m-0 text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[992px]:mb-6 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
               id={`${slug}-deliverables-title`}
             >
               {deliverables.title}
             </h2>
           </div>
-          <div className="w-[calc(61.5%-15px)] px-[15px] max-[1199px]:w-[calc(60%-15px)] max-[991px]:w-full max-[991px]:p-0">
-            <p className="m-0 text-lg leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]">
+          <div className="w-[calc(61.5%-15px)] px-[15px] max-[1199px]:w-[calc(60%-15px)] max-[992px]:w-full max-[992px]:p-0">
+            <p className="m-0 text-lg leading-[34.2px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
               {deliverables.description}
             </p>
           </div>

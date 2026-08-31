@@ -34,13 +34,13 @@ export function SplitFaqSection({
       accordionIconVariant="circle-cross"
       accordionItemClassName="!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0"
       accordionPanelContentClassName="!px-0 !pb-6 max-[767px]:!pb-5"
-      accordionQuestionClassName="!font-montreal-medium !text-[20px] !leading-[1.2] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6"
+      accordionQuestionClassName="!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6"
       accordionTriggerClassName="!px-0 !py-6 !pr-12 max-[767px]:!py-5"
       className={className}
-      contentClassName="flex justify-between gap-[105px] max-[991px]:flex-col max-[991px]:gap-2.5"
+      contentClassName="flex justify-between gap-[105px] max-[992px]:flex-col max-[992px]:gap-2.5"
       description={description}
       descriptionClassName="max-w-[518px] text-base leading-[1.9] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[1.8]"
-      headerClassName="mb-0 flex w-[41%] flex-col items-start text-left max-[991px]:w-full"
+      headerClassName="mb-0 flex w-[41%] flex-col items-start text-left max-[992px]:w-full"
       heading={heading}
       idPrefix={idPrefix}
       items={items}

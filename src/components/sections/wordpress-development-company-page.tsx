@@ -29,8 +29,8 @@ export function WordPressDevelopmentCompanyPage() {
         content={wordpressDevelopmentCompanyHero}
         imageClassName="!max-w-[446px]"
         leftColClassName="left-col w-[55.7%] max-[1199px]:w-full max-[1199px]:text-center"
-        reviewClassName="!mt-4 max-[991px]:!mt-4"
-        rightColClassName="right-col w-[41%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[991px]:w-full"
+        reviewClassName="!mt-4 max-[992px]:!mt-4"
+        rightColClassName="right-col w-[41%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[992px]:w-full"
       />
       <IndustryBrandsSection
         content={wordpressDevelopmentCompanyBrands.content}

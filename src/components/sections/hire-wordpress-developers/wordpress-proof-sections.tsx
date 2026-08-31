@@ -19,9 +19,9 @@ function advantageDividerClasses(index: number) {
     desktopRight && "border-r",
     desktopBottom && "border-b",
     desktopRight !== tabletRight &&
-      (tabletRight ? "max-[991px]:border-r" : "max-[991px]:border-r-0"),
+      (tabletRight ? "max-[992px]:border-r" : "max-[992px]:border-r-0"),
     desktopBottom !== tabletBottom &&
-      (tabletBottom ? "max-[991px]:border-b" : "max-[991px]:border-b-0"),
+      (tabletBottom ? "max-[992px]:border-b" : "max-[992px]:border-b-0"),
     tabletRight && "max-[767px]:border-r-0",
     tabletBottom !== mobileBottom &&
       (mobileBottom ? "max-[767px]:border-b" : "max-[767px]:border-b-0"),
@@ -30,21 +30,21 @@ function advantageDividerClasses(index: number) {
 
 export function WordPressReasonsSection() {
   return (
-    <section className="pt-0 pb-20 max-[991px]:pb-[50px]">
+    <section className="pt-0 pb-20 max-[992px]:pb-[50px]">
       <Container>
-        <h2 className="mx-auto mb-[50px] max-w-[720px] text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:max-w-[550px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px] h-full">
+        <h2 className="mx-auto mb-[50px] max-w-[720px] text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[992px]:max-w-[550px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px] h-full">
           {hireWordPressReasons.heading}
         </h2>
 
-        <div className="grid grid-cols-2 gap-x-8 gap-y-6 max-[991px]:gap-x-5 max-[767px]:grid-cols-1">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-6 max-[992px]:gap-x-5 max-[767px]:grid-cols-1">
           {hireWordPressReasons.items.map((item) => (
             <article
-              className="text-content flex items-center rounded-[15px] border-[1.5px] border-[#efefef] bg-white px-8 py-[33px] max-[1199px]:p-5 max-[991px]:items-start"
+              className="text-content flex items-center rounded-[15px] border-[1.5px] border-[#efefef] bg-white px-8 py-[33px] max-[1199px]:p-5 max-[992px]:items-start"
               key={item.description}
             >
               <Image
                 alt={item.iconAlt}
-                className="mr-5 size-[50px] shrink-0 object-contain max-[1199px]:mr-[15px] max-[1199px]:size-[45px] max-[991px]:mt-[3px] max-[991px]:size-10"
+                className="mr-5 size-[50px] shrink-0 object-contain max-[1199px]:mr-[15px] max-[1199px]:size-[45px] max-[992px]:mt-[3px] max-[992px]:size-10"
                 height={52}
                 src={item.icon}
                 width={52}
@@ -62,13 +62,13 @@ export function WordPressReasonsSection() {
 
 export function WordPressAdvantagesSection() {
   return (
-    <section className="Advantage-section pb-20 max-[991px]:pb-[60px]">
+    <section className="Advantage-section pb-20 max-[992px]:pb-[60px]">
       <Container>
-        <h2 className="mb-[60px] text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:mb-10 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+        <h2 className="mb-[60px] text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[992px]:mb-10 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
           {hireWordPressAdvantages.heading}
         </h2>
 
-        <div className="grid grid-cols-3 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
+        <div className="grid grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1">
           {hireWordPressAdvantages.items.map((item, index) => (
             <article
               className={cn(

@@ -22,8 +22,8 @@ type CaseStudyShowcasesProps = {
 function ShowcaseIntro({ showcase }: { showcase: CaseStudyShowcase }) {
   return (
     <Container>
-      <div className="grid grid-cols-[32%_68%] max-[1199px]:grid-cols-[25%_75%] max-[991px]:grid-cols-1">
-        <div className="pr-[30px] max-[991px]:mb-6 max-[991px]:pr-0">
+      <div className="grid grid-cols-[32%_68%] max-[1199px]:grid-cols-[25%_75%] max-[992px]:grid-cols-1">
+        <div className="pr-[30px] max-[992px]:mb-6 max-[992px]:pr-0">
           <CaseStudySectionHeading>{showcase.heading}</CaseStudySectionHeading>
         </div>
         <RichText html={showcase.html} />
@@ -42,10 +42,10 @@ export function CaseStudyShowcases({
   return (
     <>
       {wireframes ? (
-        <section aria-label={`${clientName} wireframes`} className="relative pt-[90px] max-[991px]:pt-[60px]">
+        <section aria-label={`${clientName} wireframes`} className="relative pt-[90px] max-[992px]:pt-[60px]">
           <ShowcaseIntro showcase={wireframes} />
           {wireframes.image ? (
-            <div className="pt-[107px] max-[991px]:pt-[60px]">
+            <div className="pt-[107px] max-[992px]:pt-[60px]">
               <Image
                 src={wireframes.image.src}
                 alt={wireframes.image.alt}
@@ -60,14 +60,14 @@ export function CaseStudyShowcases({
       ) : null}
 
       {colors.length > 0 ? (
-        <section aria-labelledby="case-study-colors" className="py-20 max-[991px]:py-[60px]">
+        <section aria-labelledby="case-study-colors" className="py-20 max-[992px]:py-[60px]">
           <Container>
-            <CaseStudySectionHeading id="case-study-colors" className="mb-[50px] max-[991px]:mb-10">
+            <CaseStudySectionHeading id="case-study-colors" className="mb-[50px] max-[992px]:mb-10">
               {caseStudiesUiCopy.colors}
             </CaseStudySectionHeading>
             <ul className="-mx-2.5 flex flex-wrap">
               {colors.map((color) => (
-                <li className="w-1/4 px-2.5 max-[991px]:mb-5 max-[991px]:w-1/2" key={`${color.label}-${color.value}`}>
+                <li className="w-1/4 px-2.5 max-[992px]:mb-5 max-[992px]:w-1/2" key={`${color.label}-${color.value}`}>
                   <div className="rounded-[25px] border-[1.3px] border-[#efefef] bg-white p-5 text-center max-[767px]:rounded-[15px] max-[767px]:p-[15px]">
                     <span
                       aria-label={`${color.label} color swatch`}
@@ -90,15 +90,15 @@ export function CaseStudyShowcases({
       ) : null}
 
       {typefaces.length > 0 ? (
-        <section aria-labelledby="case-study-typefaces" className="pb-20 max-[991px]:pb-[60px]">
+        <section aria-labelledby="case-study-typefaces" className="pb-20 max-[992px]:pb-[60px]">
           <Container>
             <CaseStudySectionHeading id="case-study-typefaces" className="mb-10">
               {caseStudiesUiCopy.typeface}
             </CaseStudySectionHeading>
-            <div className="flex max-w-[890px] flex-wrap justify-between max-[991px]:-mx-2.5 max-[767px]:mx-0">
+            <div className="flex max-w-[890px] flex-wrap justify-between max-[992px]:-mx-2.5 max-[767px]:mx-0">
               {typefaces.map((typeface, index) => (
                 <div
-                  className="w-[44.1%] max-[991px]:w-1/2 max-[991px]:px-2.5 max-[767px]:mb-[15px] max-[767px]:w-full max-[767px]:px-0"
+                  className="w-[44.1%] max-[992px]:w-1/2 max-[992px]:px-2.5 max-[767px]:mb-[15px] max-[767px]:w-full max-[767px]:px-0"
                   key={index}
                 >
                   {typeface.image ? (
@@ -122,12 +122,12 @@ export function CaseStudyShowcases({
       {design ? (
         <section
           aria-label={`${clientName} design`}
-          className="bg-top bg-[length:100%_auto] bg-no-repeat pt-[90px] pb-[110px] max-[991px]:pt-[60px] max-[991px]:pb-[60px]"
+          className="bg-top bg-[length:100%_auto] bg-no-repeat pt-[90px] pb-[110px] max-[992px]:pt-[60px] max-[992px]:pb-[60px]"
           style={design.backgroundImage ? { backgroundImage: `url(${design.backgroundImage})` } : undefined}
         >
           <ShowcaseIntro showcase={design} />
           {design.image ? (
-            <div className="overflow-hidden pt-[107px] max-[991px]:pt-[60px]">
+            <div className="overflow-hidden pt-[107px] max-[992px]:pt-[60px]">
               <Image
                 src={design.image.src}
                 alt={design.image.alt}

@@ -34,10 +34,10 @@ export function FaqSection({
   idPrefix,
   heading = defaultFaqSectionCopy.heading,
   description,
-  className = "faq-sec pb-20 max-[991px]:pb-12.5",
+  className = "faq-sec pb-20 max-[992px]:pb-12.5",
   headerClassName = "mb-[64px] text-center max-[1199px]:mb-[30px]",
-  titleClassName = "font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]",
-  descriptionClassName = "text-[18px] leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]",
+  titleClassName = "font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]",
+  descriptionClassName = "text-[18px] leading-[34.2px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]",
   sectionId,
   ariaLabelledBy,
   accordionItemClassName,
@@ -89,7 +89,7 @@ export function FaqSection({
         {contentClassName ? (
           <div className={contentClassName}>
             {header}
-            <div className="w-[57%] max-w-[654px] grow max-[991px]:w-full max-[991px]:max-w-none">{accordion}</div>
+            <div className="w-[57%] max-w-[654px] grow max-[992px]:w-full max-[992px]:max-w-none">{accordion}</div>
           </div>
         ) : (
           <>

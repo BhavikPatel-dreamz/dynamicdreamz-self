@@ -29,21 +29,21 @@ export function ShopifyServicesSection({
   const isLiveTheme = variant === "liveTheme";
 
   return (
-    <section className="shopify-services-sec pt-20 max-[991px]:pt-[50px]" id="shopify-services">
+    <section className="shopify-services-sec pt-20 max-[992px]:pt-[50px]" id="shopify-services">
       <Container>
         <div className="mx-auto max-w-[780px] text-center">
-          <h2 className="font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(content.heading, "")}
           </h2>
-          <p className="shopify-services-desc mt-5 text-base leading-[34.5px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[25px]">
-            {formatBrText(content.description, "max-[991px]:hidden")}
+          <p className="shopify-services-desc mt-5 text-base leading-[34.5px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[25px]">
+            {formatBrText(content.description, "max-[992px]:hidden")}
           </p>
         </div>
 
         <div className={`mt-[50px] grid gap-x-4 gap-y-6 max-[767px]:mt-[35px] ${
           isLiveTheme
-            ? "grid-cols-3 max-[1199px]:grid-cols-2 max-[991px]:grid-cols-1"
-            : "grid-cols-2 max-[991px]:grid-cols-1"
+            ? "grid-cols-3 max-[1199px]:grid-cols-2 max-[992px]:grid-cols-1"
+            : "grid-cols-2 max-[992px]:grid-cols-1"
         }`}>
           {content.items.map((item) => {
             const cardContent = (

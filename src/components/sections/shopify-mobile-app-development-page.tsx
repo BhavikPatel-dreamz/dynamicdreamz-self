@@ -19,7 +19,7 @@ export function ShopifyMobileAppDevelopmentPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec full-width-sec shopify-mobile-app-development relative overflow-hidden bg-white pt-[210px] pb-[55px] max-[991px]:pt-[100px]"
+        className="inner-hero-sec full-width-sec shopify-mobile-app-development relative overflow-hidden bg-white pt-[210px] pb-[55px] max-[992px]:pt-[100px]"
         content={shopifyMobileAppDevelopmentHero}
         variant="centered"
       />

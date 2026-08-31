@@ -3,7 +3,7 @@ import { Fragment, type ReactNode } from "react";
 /**
  * Formats a string containing `<br>`, `<br/>`, or `<br />` HTML tags into React JSX.
  * When `brClassName` is provided, applies that class to the `<br />` element
- * (e.g. "max-[1199px]:hidden" or "max-[991px]:hidden").
+ * (e.g. "max-[1199px]:hidden" or "max-[992px]:hidden").
  */
 function parseInlineFormatting(text: string): ReactNode {
   if (!text.includes("<strong") && !text.includes("<b")) {

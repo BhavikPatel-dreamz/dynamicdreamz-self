@@ -68,18 +68,18 @@ export function ImageListSection({
     return (
       <section className="py-20" id={id} aria-labelledby={headingId}>
         <Container>
-          <div className="flex flex-wrap overflow-hidden rounded-[34px] bg-[#f7f5ef] max-[991px]:flex-col-reverse">
-            <div className="flex w-[45%] pr-0 pb-0 pl-10 max-[1199px]:pl-5 max-[991px]:w-full">
+          <div className="flex flex-wrap overflow-hidden rounded-[34px] bg-[#f7f5ef] max-[992px]:flex-col-reverse">
+            <div className="flex w-[45%] pr-0 pb-0 pl-10 max-[1199px]:pl-5 max-[992px]:w-full">
               <Image
                 alt={content.image.alt}
-                className="mt-[33px] -mr-2.5 h-auto w-full self-end object-contain object-bottom max-[1199px]:mt-[25px] max-[991px]:mt-0 max-[991px]:mr-0"
+                className="mt-[33px] -mr-2.5 h-auto w-full self-end object-contain object-bottom max-[1199px]:mt-[25px] max-[992px]:mt-0 max-[992px]:mr-0"
                 height={content.image.height}
                 sizes="(max-width: 991px) calc(100vw - 52px), 45vw"
                 src={content.image.src}
                 width={content.image.width}
               />
             </div>
-            <div className="flex w-[55%] items-center py-[11%] pr-[7%] pl-0 max-[1199px]:py-[6%] max-[1199px]:pr-[5%] max-[991px]:w-full max-[991px]:p-[30px_20px]">
+            <div className="flex w-[55%] items-center py-[11%] pr-[7%] pl-0 max-[1199px]:py-[6%] max-[1199px]:pr-[5%] max-[992px]:w-full max-[992px]:p-[30px_20px]">
               <SectionCopy content={content} headingId={headingId} />
             </div>
           </div>
@@ -95,17 +95,17 @@ export function ImageListSection({
       <Container>
         <div
           className={cn(
-            "-mx-5 flex flex-wrap max-[991px]:flex-col",
-            reversed && "flex-row-reverse max-[991px]:flex-col",
+            "-mx-5 flex flex-wrap max-[992px]:flex-col",
+            reversed && "flex-row-reverse max-[992px]:flex-col",
           )}
         >
           <div
             className={cn(
-              "px-5 max-[991px]:mb-[30px] max-[991px]:w-full",
+              "px-5 max-[992px]:mb-[30px] max-[992px]:w-full",
               reversed ? "w-[45%]" : "w-1/2",
             )}
           >
-            <div className={cn(!reversed && "pr-5 max-[991px]:pr-5")}>
+            <div className={cn(!reversed && "pr-5 max-[992px]:pr-5")}>
               <Image
                 alt={content.image.alt}
                 className={cn(
@@ -121,7 +121,7 @@ export function ImageListSection({
           </div>
           <div
             className={cn(
-              "flex items-center px-5 max-[991px]:w-full",
+              "flex items-center px-5 max-[992px]:w-full",
               reversed ? "w-[55%]" : "w-1/2",
             )}
           >

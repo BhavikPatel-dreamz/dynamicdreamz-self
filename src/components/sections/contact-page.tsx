@@ -44,21 +44,21 @@ function OfficeCard({ office }: { office: (typeof contactPageContent.offices)[nu
       <div className="relative aspect-[555/249] overflow-hidden">
         <Image className="object-cover transition-transform duration-600 group-hover/office:scale-110" src={office.image} alt={office.imageAlt} fill sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) 350px, 555px" />
       </div>
-      <div className="p-8 max-[991px]:p-5">
+      <div className="p-8 max-[992px]:p-5">
         <div className="flex items-center">
-          <h3 className="mr-7 font-sans text-xl leading-[28.8px] font-bold text-ink max-[991px]:mr-5 max-[991px]:text-base max-[991px]:leading-[26px]">{office.city}</h3>
+          <h3 className="mr-7 font-sans text-xl leading-[28.8px] font-bold text-ink max-[992px]:mr-5 max-[992px]:text-base max-[992px]:leading-[26px]">{office.city}</h3>
           <a className="inline-flex min-w-0 items-center bg-[linear-gradient(97deg,#15c064_28.5%,#00d1ff_91.82%)] bg-clip-text text-sm leading-normal font-bold text-transparent uppercase" href={office.directionsHref} target="_blank" rel="nofollow noopener noreferrer">
             {contactPageContent.directionsLabel}
             <Image className="ml-1.5 h-auto w-auto transition-transform duration-300 group-hover/office:translate-x-0.5" src="/assets/contact/icons/directions.svg" alt="" width={14} height={14} />
           </a>
         </div>
-        <address className="mt-6 mb-6 text-base leading-[27.68px] font-medium text-muted not-italic max-[991px]:mt-[15px] max-[991px]:text-sm max-[991px]:leading-6">{office.address}</address>
+        <address className="mt-6 mb-6 text-base leading-[27.68px] font-medium text-muted not-italic max-[992px]:mt-[15px] max-[992px]:text-sm max-[992px]:leading-6">{office.address}</address>
         <div className="space-y-2.5">
-          <a className="flex items-center text-base leading-[23.28px] font-bold text-[#090909] transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[991px]:text-sm" href={office.phoneHref}>
+          <a className="flex items-center text-base leading-[23.28px] font-bold text-[#090909] transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[992px]:text-sm" href={office.phoneHref}>
             <span className="mr-2.5 shrink-0"><PhoneIcon /></span>
             {office.phone}
           </a>
-          <a className="flex items-center text-base leading-[23.28px] font-bold text-[#090909] transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[991px]:text-sm" href={`mailto:${office.email}`}>
+          <a className="flex items-center text-base leading-[23.28px] font-bold text-[#090909] transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[992px]:text-sm" href={`mailto:${office.email}`}>
             <span className="mr-2.5 shrink-0"><MailIcon /></span>
             {office.email}
           </a>
@@ -73,22 +73,22 @@ export function ContactPage() {
 
   return (
     <>
-      <section className="overflow-hidden bg-white pt-[230px] pb-[50px] text-center max-[991px]:pt-[140px]" aria-labelledby="contact-page-title">
+      <section className="overflow-hidden bg-white pt-[230px] pb-[50px] text-center max-[992px]:pt-[140px]" aria-labelledby="contact-page-title">
         <Container>
           <div className="mx-auto max-w-[760px]">
-            <h1 id="contact-page-title" className="inline-block font-sans text-[50px] leading-[1.32] font-bold text-ink max-[991px]:text-[40px] max-[991px]:leading-[1.25] max-[767px]:text-[30px] max-[767px]:leading-[1.3] tracking-[-1px]">{hero.title}</h1>
-            <p className="mt-6 text-lg leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]">{hero.prompt}</p>
-            <p className="text-lg leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]">{hero.description}</p>
+            <h1 id="contact-page-title" className="inline-block font-sans text-[50px] leading-[1.32] font-bold text-ink max-[992px]:text-[40px] max-[992px]:leading-[1.25] max-[767px]:text-[30px] max-[767px]:leading-[1.3] tracking-[-1px]">{hero.title}</h1>
+            <p className="mt-6 text-lg leading-[34.2px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">{hero.prompt}</p>
+            <p className="text-lg leading-[34.2px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">{hero.description}</p>
           </div>
         </Container>
       </section>
 
       <section aria-label="Contact details">
         <Container>
-          <div className="grid grid-cols-3 overflow-hidden rounded-[20px] border border-[#d9d9d9] max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
-            <div className="px-[38px] py-[42px] max-[1199px]:px-5 max-[1199px]:py-8 max-[991px]:border-b max-[991px]:border-[#d9d9d9]"><ContactCard kind="sales" /></div>
-            <div className="border-x border-[#d9d9d9] px-[38px] py-[42px] max-[1199px]:px-5 max-[1199px]:py-8 max-[991px]:border-r-0 max-[991px]:border-b max-[767px]:border-x-0"><ContactCard kind="jobs" /></div>
-            <div className="col-span-1 flex items-center justify-center px-[38px] py-[42px] max-[1199px]:px-5 max-[1199px]:py-8 max-[991px]:col-span-2 max-[767px]:col-span-1">
+          <div className="grid grid-cols-3 overflow-hidden rounded-[20px] border border-[#d9d9d9] max-[992px]:grid-cols-2 max-[767px]:grid-cols-1">
+            <div className="px-[38px] py-[42px] max-[1199px]:px-5 max-[1199px]:py-8 max-[992px]:border-b max-[992px]:border-[#d9d9d9]"><ContactCard kind="sales" /></div>
+            <div className="border-x border-[#d9d9d9] px-[38px] py-[42px] max-[1199px]:px-5 max-[1199px]:py-8 max-[992px]:border-r-0 max-[992px]:border-b max-[767px]:border-x-0"><ContactCard kind="jobs" /></div>
+            <div className="col-span-1 flex items-center justify-center px-[38px] py-[42px] max-[1199px]:px-5 max-[1199px]:py-8 max-[992px]:col-span-2 max-[767px]:col-span-1">
               <div className="mx-auto flex max-w-[150px] flex-col justify-center text-center">
                 <h2 className="mb-[17px] font-sans text-lg leading-[22.32px] font-bold text-ink uppercase max-[1199px]:mb-2.5 max-[1199px]:text-base">{contacts.social.title}</h2>
                 <ul className="flex items-center justify-center gap-[15px]">
@@ -106,25 +106,25 @@ export function ContactPage() {
         </Container>
       </section>
 
-      <section className="py-20 max-[991px]:py-[50px]" aria-labelledby="offices-title">
+      <section className="py-20 max-[992px]:py-[50px]" aria-labelledby="offices-title">
         <Container>
-          <h2 id="offices-title" className="mb-10 text-center font-sans text-[35px] leading-[48.475px] font-bold text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] tracking-[-.7px]">{contactPageContent.officesTitle}</h2>
-          <div className="grid grid-cols-2 gap-[30px] max-[991px]:gap-5 max-[767px]:grid-cols-1">
+          <h2 id="offices-title" className="mb-10 text-center font-sans text-[35px] leading-[48.475px] font-bold text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] tracking-[-.7px]">{contactPageContent.officesTitle}</h2>
+          <div className="grid grid-cols-2 gap-[30px] max-[992px]:gap-5 max-[767px]:grid-cols-1">
             {offices.map((office) => <OfficeCard key={office.city} office={office} />)}
           </div>
         </Container>
       </section>
 
-      <section className="pt-0 pb-20 max-[991px]:pb-[50px]" aria-labelledby="inquiry-title">
+      <section className="pt-0 pb-20 max-[992px]:pb-[50px]" aria-labelledby="inquiry-title">
         <Container>
           <div className="rounded-[30px] bg-[linear-gradient(178.87deg,#15c064_11.23%,rgba(0,209,255,0.660675)_33.98%,rgba(0,209,255,0)_78.28%)] p-0.5">
             <div className="rounded-[30px] bg-white px-[90px] pt-[90px] pb-[49px] max-[1199px]:p-10 max-[767px]:px-5 max-[767px]:pt-10 max-[767px]:pb-0">
-              <div className="mb-[84px] -mx-3.75 flex items-center justify-between max-[991px]:mb-10 max-[991px]:flex-col max-[991px]:items-stretch max-[991px]:text-center">
-                <div className="title box-border min-w-0 px-3 max-[991px]:w-full lg:flex-[0_0_calc(42%-15px)]">
-                  <h2 id="inquiry-title" className="font-sans text-[35px] mb-6 leading-[48.475px] font-bold text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] tracking-[-.7px]">{inquiry.title}</h2>
+              <div className="mb-[84px] -mx-3.75 flex items-center justify-between max-[992px]:mb-10 max-[992px]:flex-col max-[992px]:items-stretch max-[992px]:text-center">
+                <div className="title box-border min-w-0 px-3 max-[992px]:w-full lg:flex-[0_0_calc(42%-15px)]">
+                  <h2 id="inquiry-title" className="font-sans text-[35px] mb-6 leading-[48.475px] font-bold text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] tracking-[-.7px]">{inquiry.title}</h2>
                 </div>
-                <div className="text box-border min-w-0 px-3 max-[991px]:mt-4 max-[991px]:w-full lg:flex-[0_0_calc(58%-15px)]">
-                  <p className="text-lg leading-[34.2px] font-medium text-muted max-[991px]:mt-0 max-[991px]:text-base max-[991px]:leading-[30.4px]">{inquiry.description}</p>
+                <div className="text box-border min-w-0 px-3 max-[992px]:mt-4 max-[992px]:w-full lg:flex-[0_0_calc(58%-15px)]">
+                  <p className="text-lg leading-[34.2px] font-medium text-muted max-[992px]:mt-0 max-[992px]:text-base max-[992px]:leading-[30.4px]">{inquiry.description}</p>
                 </div>
               </div>
               <ContactForm />

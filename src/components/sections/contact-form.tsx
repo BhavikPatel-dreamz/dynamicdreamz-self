@@ -23,7 +23,7 @@ const initialContactFormState: ContactFormState = {
 
 function FieldLabel({ children, htmlFor, required = false }: { children: string; htmlFor: string; required?: boolean }) {
   return (
-    <label htmlFor={htmlFor} className="mb-4 block text-lg leading-[26.19px] font-semibold text-[#090909] max-[991px]:mb-2.5 max-[991px]:text-base max-[991px]:leading-normal">
+    <label htmlFor={htmlFor} className="mb-4 block text-lg leading-[26.19px] font-semibold text-[#090909] max-[992px]:mb-2.5 max-[992px]:text-base max-[992px]:leading-normal">
       {children}
       {required ? <em className="ml-0.5 not-italic text-[#d92128]">*</em> : null}
     </label>
@@ -63,7 +63,7 @@ export function ContactForm() {
       ))}
 
       <div className="grid grid-cols-2 gap-x-3.5 max-[767px]:grid-cols-1 max-[767px]:gap-x-0">
-        <div className="mb-7 max-[991px]:mb-5">
+        <div className="mb-7 max-[992px]:mb-5">
           <FieldLabel htmlFor="contact-name" required>{contactFormCopy.labels.name}</FieldLabel>
           <input
             className="h-[49px] w-full rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-0"
@@ -76,7 +76,7 @@ export function ContactForm() {
             required
           />
         </div>
-        <div className="mb-7 max-[991px]:mb-5">
+        <div className="mb-7 max-[992px]:mb-5">
           <FieldLabel htmlFor="contact-email" required>{contactFormCopy.labels.email}</FieldLabel>
           <input
             className="h-[49px] w-full rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-0"
@@ -89,7 +89,7 @@ export function ContactForm() {
             required
           />
         </div>
-        <div className="mb-7 max-[991px]:mb-5">
+        <div className="mb-7 max-[992px]:mb-5">
           <FieldLabel htmlFor="contact-phone">{contactFormCopy.labels.phone}</FieldLabel>
           <div className="flex h-[49px] w-full items-center rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] focus-within:outline-3 focus-within:outline-offset-2 focus-within:outline-[#090909]">
             <span className="mr-2.5 flex shrink-0 items-center gap-1.5 border-r border-soft-line pr-2.5 text-sm" aria-label="India country code +91">
@@ -108,7 +108,7 @@ export function ContactForm() {
             />
           </div>
         </div>
-        <div className="mb-7 max-[991px]:mb-5">
+        <div className="mb-7 max-[992px]:mb-5">
           <FieldLabel htmlFor="contact-company">{contactFormCopy.labels.company}</FieldLabel>
           <input
             className="h-[49px] w-full rounded-[5px] border-[1.5px] border-soft-line px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-0"
@@ -120,7 +120,7 @@ export function ContactForm() {
             maxLength={400}
           />
         </div>
-        <div className="col-span-2 mb-7 max-[991px]:mb-5 max-[767px]:col-span-1">
+        <div className="col-span-2 mb-7 max-[992px]:mb-5 max-[767px]:col-span-1">
           <FieldLabel htmlFor="contact-project">{contactFormCopy.labels.project}</FieldLabel>
           <textarea
             className="h-[136px] w-full resize-none rounded-[5px] border-[1.5px] border-soft-line px-4 py-3 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-0"

@@ -88,7 +88,7 @@ export function ShopifyThemeCustomizationPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec full-width-sec hide-review shopify-theme-customization-sec relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        className="inner-hero-sec full-width-sec hide-review shopify-theme-customization-sec relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
         content={heroContent}
         variant="split"
       />
@@ -98,7 +98,7 @@ export function ShopifyThemeCustomizationPage() {
         items={shopifyThemeCustomizationContent.brands.items}
       />
       <AgencyServicesSection
-        className="what-we-provide-sec pt-20 pb-0 max-[991px]:pt-[50px]"
+        className="what-we-provide-sec pt-20 pb-0 max-[992px]:pt-[50px]"
         columns={3}
         content={servicesContent}
         headerLayout="centered"
@@ -122,7 +122,7 @@ export function ShopifyThemeCustomizationPage() {
       <ShopifyThemeTechSection content={shopifyThemeCustomizationContent.technologies} />
       <ShopifyThemesGridSection content={shopifyThemeCustomizationContent.themes} />
       <ThemeWhyChooseSection
-        className="why_dynamic_dreamz_sec dev mt-20 pb-20 pt-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] two-column-icon-text-bg max-[991px]:mt-12.5 max-[991px]:py-14 max-[767px]:mt-10 max-[767px]:py-10"
+        className="why_dynamic_dreamz_sec dev mt-20 pb-20 pt-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] two-column-icon-text-bg max-[992px]:mt-12.5 max-[992px]:py-14 max-[767px]:mt-10 max-[767px]:py-10"
         content={whyChooseContent}
         id="why-choose"
         variant="left-icon"

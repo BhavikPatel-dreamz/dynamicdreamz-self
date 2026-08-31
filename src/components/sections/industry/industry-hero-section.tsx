@@ -15,7 +15,7 @@ export function IndustryHeroSection({ content }: IndustryHeroSectionProps) {
 
   return (
     <section
-      className="overflow-hidden bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-[190px] max-[991px]:pt-[150px]"
+      className="overflow-hidden bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-[190px] max-[992px]:pt-[150px]"
       aria-labelledby={`${slug}-title`}
       data-industry="hero"
     >
@@ -25,17 +25,17 @@ export function IndustryHeroSection({ content }: IndustryHeroSectionProps) {
             {hero.eyebrow}
           </span>
           <h1
-            className="mb-2.5 text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
+            className="mb-2.5 text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
             id={`${slug}-title`}
           >
             {hero.title}
           </h1>
-          <p className="mb-6 text-lg leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]">
+          <p className="mb-6 text-lg leading-[34.2px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
             {hero.descriptionBeforeBreak}
             <br className="max-[1199px]:hidden" /> {hero.descriptionAfterBreak}
           </p>
           <ButtonLink
-            className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] max-[991px]:min-h-[42px] max-[991px]:py-3 max-[991px]:text-sm"
+            className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] max-[992px]:min-h-[42px] max-[992px]:py-3 max-[992px]:text-sm"
             href={siteConfig.quotePath}
             variant="primary"
           >
@@ -43,7 +43,7 @@ export function IndustryHeroSection({ content }: IndustryHeroSectionProps) {
           </ButtonLink>
         </div>
 
-        <div className="mx-auto mt-[55px] mb-[-80px] w-full max-w-[840px] pb-[5px] max-[991px]:mt-[60.4px] max-[991px]:pb-[10px] max-[767px]:mt-[30.4px] max-[767px]:mb-[-70px] max-[575px]:pb-[10.75px]">
+        <div className="mx-auto mt-[55px] mb-[-80px] w-full max-w-[840px] pb-[5px] max-[992px]:mt-[60.4px] max-[992px]:pb-[10px] max-[767px]:mt-[30.4px] max-[767px]:mb-[-70px] max-[575px]:pb-[10.75px]">
           <Image
             className="h-auto w-full"
             src={hero.image.src}

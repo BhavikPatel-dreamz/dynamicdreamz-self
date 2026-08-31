@@ -22,7 +22,7 @@ export function CareerBenefitsSection() {
         <div className="mt-[50px] -mr-2 -mb-4 -ml-2 flex flex-wrap justify-center max-[767px]:mx-0">
           {workplaceBenefits.items.map((benefit) => (
             <article
-              className="mb-4 w-1/4 px-2 max-[991px]:w-1/2 max-[767px]:w-full max-[767px]:px-0"
+              className="mb-4 w-1/4 px-2 max-[992px]:w-1/2 max-[767px]:w-full max-[767px]:px-0"
               key={benefit.title}
             >
               <div className="group/benefit relative z-0 rounded-[10px]">

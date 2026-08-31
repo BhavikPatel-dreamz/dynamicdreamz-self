@@ -44,7 +44,7 @@ export function PortfolioShowcaseSection({
   ctaLabel = sharedUiCopy.viewOurWork,
   ctaHref = "/our-work",
   hideCta = false,
-  className = "our-work-sec pb-20 max-[991px]:pb-[60px]",
+  className = "our-work-sec pb-20 max-[992px]:pb-[60px]",
   columns = 3,
   imageAspectClassName,
   categoryClassName,
@@ -63,10 +63,10 @@ export function PortfolioShowcaseSection({
 
   const gridColsClass =
     columns === 4
-      ? "grid-cols-4 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1"
+      ? "grid-cols-4 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       : columns === 2
         ? "grid-cols-2 max-[767px]:grid-cols-1"
-        : "grid-cols-3 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1";
+        : "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1";
 
   return (
     <section className={className} data-section="portfolio" id="portfolio-showcase">
@@ -84,25 +84,25 @@ export function PortfolioShowcaseSection({
         <div
           className={
             headerLayout === "split"
-              ? "flex items-end justify-between text-left max-[991px]:flex-col max-[991px]:items-center max-[991px]:text-center"
+              ? "flex items-end justify-between text-left max-[992px]:flex-col max-[992px]:items-center max-[992px]:text-center"
               : "text-center"
           }
         >
-          <div className={headerLayout === "split" ? "w-[43%] max-[991px]:w-full" : undefined}>
-            <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <div className={headerLayout === "split" ? "w-[43%] max-[992px]:w-full" : undefined}>
+            <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
               {formatBrText(content.heading, headingBreakClassName)}
              </h2>
            </div>
           {content.description && (
-            <div className={headerLayout === "split" ? "w-[51%] max-[991px]:mt-[15px] max-[991px]:w-full" : undefined}>
-              <p className={`${headerLayout === "split" ? "" : "mx-auto mt-6 max-w-[740px] "}our-works-desc text-[18px] font-medium leading-[34.2px] text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]`}>
+            <div className={headerLayout === "split" ? "w-[51%] max-[992px]:mt-[15px] max-[992px]:w-full" : undefined}>
+              <p className={`${headerLayout === "split" ? "" : "mx-auto mt-6 max-w-[740px] "}our-works-desc text-[18px] font-medium leading-[34.2px] text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]`}>
                 {formatBrText(content.description, descriptionBreakClassName)}
               </p>
             </div>
           )}
         </div>
 
-        <div className={`mt-[42px] grid gap-x-[15px] gap-y-[60px] max-[991px]:mt-[50px] max-[991px]:gap-y-[30px] ${gridColsClass} ${itemsClassName ?? ""}`}>
+        <div className={`mt-[42px] grid gap-x-[15px] gap-y-[60px] max-[992px]:mt-[50px] max-[992px]:gap-y-[30px] ${gridColsClass} ${itemsClassName ?? ""}`}>
           {content.items.map((item) => (
             <PortfolioProjectCard
               category={item.category ?? content.category ?? "SHOPIFY"}

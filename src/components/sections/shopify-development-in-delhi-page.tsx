@@ -32,7 +32,7 @@ export function ShopifyDevelopmentInDelhiPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec single-full-img relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        className="inner-hero-sec single-full-img relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
         content={shopifyDevelopmentDelhiContent.hero}
       />
       <IndustryBrandsSection
@@ -41,40 +41,40 @@ export function ShopifyDevelopmentInDelhiPage() {
         items={shopifyDevelopmentDelhiContent.brands.items}
       />
       <TextBoxSection
-        className="single-text-box-sec pb-0 pt-20 max-[991px]:pt-[50px]"
+        className="single-text-box-sec pb-0 pt-20 max-[992px]:pt-[50px]"
         heading={shopifyDevelopmentDelhiContent.intro.heading}
         paragraphs={shopifyDevelopmentDelhiContent.intro.paragraphs}
       />
       <ShopifyAppBenefitsSection
-        className="benefit_box_sec four-column-text-with-icon-sec pb-0 pt-20 max-[991px]:pt-[50px]"
+        className="benefit_box_sec four-column-text-with-icon-sec pb-0 pt-20 max-[992px]:pt-[50px]"
         content={shopifyDevelopmentDelhiContent.benefits}
         id="why-choose-shopify-delhi"
       />
       <AgencyServicesSection
-        className="what-we-provide-sec pt-20 pb-0 max-[991px]:pt-[50px]"
+        className="what-we-provide-sec pt-20 pb-0 max-[992px]:pt-[50px]"
         content={shopifyDevelopmentDelhiContent.services}
         headerLayout="centered"
         hideCta={true}
         showDescription={false}
       />
       <ProcessWaveSection
-        className="our-process-sec inner-process-sec shopify-development-process relative overflow-hidden py-20 max-[991px]:py-12.5 max-[767px]:py-10"
+        className="our-process-sec inner-process-sec shopify-development-process relative overflow-hidden py-20 max-[992px]:py-12.5 max-[767px]:py-10"
         content={shopifyDevelopmentDelhiContent.process}
       />
       <ShopifyReasonsSection content={reasonsContent} />
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[991px]:py-[50px]"
+        className="our-work-sec py-20 max-[992px]:py-[50px]"
         content={portfolioContent}
         ctaLabel={shopifyDevelopmentDelhiContent.sectionCopy.portfolioCta}
       />
       <HappyClientSection
-        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[991px]:pb-[50px]"
+        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]"
         description={shopifyDevelopmentDelhiContent.testimonials.description}
         heading={shopifyDevelopmentDelhiContent.testimonials.heading}
         items={shopifyDevelopmentDelhiContent.testimonials.items}
       />
       <FaqSection
-        className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"
+        className="faq-sec pt-0 pb-20 max-[992px]:pb-[50px]"
         heading={shopifyDevelopmentDelhiContent.sectionCopy.faqHeading}
         idPrefix="delhi-faq"
         items={shopifyDevelopmentDelhiContent.faqs}

@@ -73,7 +73,7 @@ export function ShopifyCroEngagementSection({
                 <ButtonLink
                   href={item.cta.href}
                   variant="primary"
-                  className="mt-9 w-full text-sm max-[991px]:py-3"
+                  className="mt-9 w-full text-sm max-[992px]:py-3"
                 >
                   {item.cta.label}
                 </ButtonLink>

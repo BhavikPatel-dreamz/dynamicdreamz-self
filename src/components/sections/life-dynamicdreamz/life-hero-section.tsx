@@ -43,12 +43,12 @@ function TeamworkUnderline() {
 export function LifeHeroSection() {
   return (
     <section
-      className="overflow-hidden bg-white pt-[230px] pb-0 max-[991px]:pt-[140px]"
+      className="overflow-hidden bg-white pt-[230px] pb-0 max-[992px]:pt-[140px]"
       data-life="hero"
     >
       <Container>
         <div className="mx-auto max-w-[900px] text-center">
-          <h1 className="mb-6 inline-block text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[991px]:text-[40px] max-[991px]:leading-[60px] max-[767px]:text-[30px]">
+          <h1 className="mb-6 inline-block text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[992px]:text-[40px] max-[992px]:leading-[60px] max-[767px]:text-[30px]">
             {lifeHero.titleBeforeTeamwork}{" "}
             <span className="relative whitespace-nowrap">
               {lifeHero.teamwork}
@@ -67,13 +67,13 @@ export function LifeHeroSection() {
               />
             </span>
           </h1>
-          <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[991px]:text-base max-[991px]:leading-[30.4px]">
+          <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
             {lifeHero.description}
           </p>
         </div>
 
         <div
-          className="mt-[50px] pb-[5px] max-[991px]:pb-[10.4px]"
+          className="mt-[50px] pb-[5px] max-[992px]:pb-[10.4px]"
           data-life="team-image"
         >
           <Image

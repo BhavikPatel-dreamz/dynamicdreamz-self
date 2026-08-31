@@ -13,7 +13,7 @@ export function CredentialEvidenceSection({
 }: CredentialEvidenceSectionProps) {
   return (
     <section
-      className="scroll-mt-24 bg-[#fafaf7] py-[54px] max-[991px]:py-10"
+      className="scroll-mt-24 bg-[#fafaf7] py-[54px] max-[992px]:py-10"
       id="see-our-certifications"
       aria-labelledby="shopify-credential-evidence-title"
     >
@@ -26,7 +26,7 @@ export function CredentialEvidenceSection({
           textClassName="w-[56%]"
           titleClassName="w-[41%]"
         />
-        <div className="grid grid-cols-4 gap-x-10 max-[1199px]:gap-x-5 max-[991px]:grid-cols-2 max-[991px]:gap-y-[30px] max-[575px]:grid-cols-1">
+        <div className="grid grid-cols-4 gap-x-10 max-[1199px]:gap-x-5 max-[992px]:grid-cols-2 max-[992px]:gap-y-[30px] max-[575px]:grid-cols-1">
           {content.items.map((item) => (
             <article className="flex h-full flex-col text-center" key={item.title}>
               <a

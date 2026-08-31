@@ -21,7 +21,7 @@ export function BarcelonaClientSliders({ row1, row2 }: BarcelonaClientSlidersPro
   const duplicatedRow2 = [...row2, ...row2, ...row2, ...row2];
 
   return (
-    <div className={`barcelona-client-main mt-11 overflow-hidden max-[991px]:mt-8 ${styles.marqueeContainer}`}>
+    <div className={`barcelona-client-main mt-11 overflow-hidden max-[992px]:mt-8 ${styles.marqueeContainer}`}>
       {/* Row 1 - Scroll Left */}
       <div className={styles.trackLeft}>
         {duplicatedRow1.map((item, index) => (

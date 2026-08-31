@@ -10,7 +10,7 @@ export type ShopifyCroBarriersSectionProps = {
 
 export function ShopifyCroBarriersSection({
   content = shopifyCroBarriers,
-  className = "conversion-cro-section bg-white py-20 max-[991px]:py-12",
+  className = "conversion-cro-section bg-white py-20 max-[992px]:py-12",
 }: ShopifyCroBarriersSectionProps) {
   return (
     <section className={className}>
@@ -28,7 +28,7 @@ export function ShopifyCroBarriersSection({
           {content.items.map((item) => (
             <div
               key={item.title}
-              className="conversion-cro-col mb-6 w-1/4 px-3 max-[1199px]:w-1/3 max-[991px]:w-1/2 max-[575px]:w-full"
+              className="conversion-cro-col mb-6 w-1/4 px-3 max-[1199px]:w-1/3 max-[992px]:w-1/2 max-[575px]:w-full"
             >
               <div className="cro-card flex h-full flex-col items-center justify-center rounded-[15px] border border-black/10 bg-white p-[22px] text-center shadow-none transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
                 <div className="icon mb-[15px] flex h-[62.5px] w-[56px] items-center justify-center rounded-[10px_10px_10px_24px] bg-[rgba(173,81,81,0.11)]">

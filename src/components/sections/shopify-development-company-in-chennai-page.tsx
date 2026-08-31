@@ -38,7 +38,7 @@ export function ShopifyDevelopmentCompanyInChennaiPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec single-full-img relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        className="inner-hero-sec single-full-img relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
         content={shopifyDevelopmentChennaiContent.hero}
       />
       <IndustryBrandsSection
@@ -47,33 +47,33 @@ export function ShopifyDevelopmentCompanyInChennaiPage() {
         items={shopifyDevelopmentChennaiContent.brands.items}
       />
       <TextBoxSection
-        className="single-text-box-sec pb-0 pt-20 max-[991px]:pt-[50px]"
+        className="single-text-box-sec pb-0 pt-20 max-[992px]:pt-[50px]"
         heading={shopifyDevelopmentChennaiContent.intro.heading}
         paragraphs={shopifyDevelopmentChennaiContent.intro.paragraphs}
       />
       <ShopifyAppBenefitsSection
-        className="benefit_box_sec four-column-text-with-icon-sec pb-0 pt-20 max-[991px]:pt-[50px]"
+        className="benefit_box_sec four-column-text-with-icon-sec pb-0 pt-20 max-[992px]:pt-[50px]"
         content={shopifyDevelopmentChennaiContent.benefits}
         id="why-choose-shopify"
       />
       <ShopifyServicesSection content={servicesContent} />
       <ProcessWaveSection
-        className="our-process-sec inner-process-sec shopify-development-process relative overflow-hidden py-20 max-[991px]:py-12.5 max-[767px]:py-10"
+        className="our-process-sec inner-process-sec shopify-development-process relative overflow-hidden py-20 max-[992px]:py-12.5 max-[767px]:py-10"
         content={shopifyDevelopmentChennaiContent.process}
       />
       <ShopifyReasonsSection content={reasonsContent} />
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[991px]:py-[50px]"
+        className="our-work-sec py-20 max-[992px]:py-[50px]"
         content={portfolioContent}
       />
       <HappyClientSection
-        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[991px]:pb-[50px]"
+        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]"
         description={shopifyDevelopmentChennaiContent.testimonials.description}
         heading={shopifyDevelopmentChennaiContent.testimonials.heading}
         items={shopifyDevelopmentChennaiContent.testimonials.items}
       />
       <FaqSection
-        className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"
+        className="faq-sec pt-0 pb-20 max-[992px]:pb-[50px]"
         idPrefix="chennai-faq"
         items={shopifyDevelopmentChennaiContent.faqs}
       />

@@ -7,7 +7,7 @@ import styles from "./life-gallery-section.module.css";
 export function LifeGallerySection() {
   return (
     <section
-      className="overflow-hidden py-20 max-[991px]:py-[50px]"
+      className="overflow-hidden py-20 max-[992px]:py-[50px]"
       data-life="gallery"
       aria-label="Life at Dynamic Dreamz gallery"
     >

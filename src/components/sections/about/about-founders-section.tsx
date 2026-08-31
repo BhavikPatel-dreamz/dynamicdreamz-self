@@ -16,7 +16,7 @@ export function AboutFoundersSection() {
   return (
     <section data-about="founders" aria-labelledby="about-founders-title" className="pt-20 max-[1199px]:pt-[60px]">
       <Container>
-        <header className="mx-auto mb-10 max-w-[680px] text-center max-[1199px]:mb-[30px] max-[991px]:mb-5">
+        <header className="mx-auto mb-10 max-w-[680px] text-center max-[1199px]:mb-[30px] max-[992px]:mb-5">
           <h2 id="about-founders-title" className="mb-6 text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
             {aboutSectionCopy.foundersTitle}
           </h2>
@@ -33,7 +33,7 @@ export function AboutFoundersSection() {
               <div className="relative mb-[-5px] pb-[125%] max-[767px]:mb-0">
                 <Image className="rounded-[20px] object-cover" src={founder.image} alt={founder.alt} fill sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1199px) 31vw, 370px" />
               </div>
-              <div className="pt-6 pr-[29px] pl-6 max-[1199px]:px-0 max-[1199px]:pt-5 max-[991px]:pt-[15px]">
+              <div className="pt-6 pr-[29px] pl-6 max-[1199px]:px-0 max-[1199px]:pt-5 max-[992px]:pt-[15px]">
                 <h3 className="mb-[5px] text-xl leading-[27px] font-bold max-[1199px]:text-[18px]">{founder.name}</h3>
                 <p className="mb-4 text-[15px] leading-[22px] font-medium text-muted italic">{founder.role}</p>
                 <p className="mb-4 text-base leading-6 font-medium text-muted max-[1199px]:text-[14px]">{founder.biography}</p>

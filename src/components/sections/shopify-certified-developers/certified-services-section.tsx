@@ -12,23 +12,23 @@ export function CertifiedServicesSection({
 }: CertifiedServicesSectionProps) {
   return (
     <section
-      className="pt-20 pb-20 max-[991px]:py-[50px]"
+      className="pt-20 pb-20 max-[992px]:py-[50px]"
       aria-labelledby="certified-shopify-services-title"
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[50px] items-start max-[991px]:mb-[30px]"
+          className="mb-[50px] items-start max-[992px]:mb-[30px]"
           description={content.description}
           heading={content.heading}
           headingId="certified-shopify-services-title"
           textClassName="w-[43%]"
           titleClassName="w-[52%]"
         />
-        <div className="grid grid-cols-3 gap-5 max-[991px]:grid-cols-2 max-[575px]:grid-cols-1">
+        <div className="grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[575px]:grid-cols-1">
           {content.items.map((item, index) => (
             <article
               className={cn(
-                "h-full rounded-[20px] p-[40px_30px] max-[991px]:p-[30px_20px] max-[575px]:rounded-[10px]",
+                "h-full rounded-[20px] p-[40px_30px] max-[992px]:p-[30px_20px] max-[575px]:rounded-[10px]",
                 index % 2 === 0 ? "bg-[#f7f4e9]" : "bg-[#fafaf7]",
               )}
               key={item.title}

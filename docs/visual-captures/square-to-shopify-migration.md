@@ -363,7 +363,7 @@
   constant). FAQ items (`squareFaqs`) and their order, and any FAQ schema derived
   from them, are unchanged — no AEO/GEO or copy impact.
 - **Responsive targets**: two columns (heading left, accordion right) at ≥992px;
-  stacks to a single column below 992px (`max-[991px]:flex-col`); heading scales
+  stacks to a single column below 992px (`max-[992px]:flex-col`); heading scales
   35px → 30px (≤1199px) → 24px (≤767px); accordion trigger/panel padding tightens
   at ≤767px. Keyboard focus and accordion expand/collapse behavior inherit the
   shared `FaqAccordion` and are unchanged.

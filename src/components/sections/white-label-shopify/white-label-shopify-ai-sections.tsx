@@ -9,10 +9,10 @@ import { cn } from "@/lib/class-names";
 
 export function DeliveredUnderBrandSection() {
   return (
-    <section className="bg-[#171e16] py-20 max-[991px]:py-[50px]">
+    <section className="bg-[#171e16] py-20 max-[992px]:py-[50px]">
       <Container className="max-[575px]:px-4">
         <div className="mb-16 text-center text-white max-[767px]:mb-10">
-          <h2 className="mb-6 font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="mb-6 font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
             {deliveredUnderBrand.title}
           </h2>
           <p className="mx-auto max-w-[900px] text-base leading-[30.4px] font-medium max-[767px]:text-[15px] max-[767px]:leading-[26px]">
@@ -59,10 +59,10 @@ export function DeliveredUnderBrandSection() {
 
 export function AiDrivenShoppingSection() {
   return (
-    <section className="py-20 max-[991px]:py-[50px]">
+    <section className="py-20 max-[992px]:py-[50px]">
       <Container className="max-[575px]:px-4">
         <div className="mb-16 text-center max-[767px]:mb-[25px]">
-          <h2 className="mb-6 font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink min-[992px]:mb-[31.6px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="mb-6 font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink min-[992px]:mb-[31.6px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
             {aiDrivenShopping.title}
           </h2>
           <p className="mx-auto max-w-[900px] text-base leading-[30.4px] font-medium text-muted">
@@ -74,11 +74,11 @@ export function AiDrivenShoppingSection() {
           {aiDrivenShopping.items.map((item, index) => (
             <article
               className={cn(
-                "w-1/4 border-r border-ink/10 px-5 last:border-r-0 max-[991px]:w-1/2 max-[991px]:border-b max-[991px]:nth-[2n]:border-r-0 max-[991px]:nth-[n+3]:border-b-0 max-[767px]:nth-[n+3]:border-b max-[767px]:w-full max-[767px]:border-r-0 max-[767px]:border-b max-[767px]:last:border-b-0",
-                index === 0 && "max-[991px]:pb-7.5 max-[767px]:pt-7.5 max-[767px]:pl-0",
-                index === 1 && "max-[991px]:pb-7.5 max-[767px]:pt-7.5 max-[767px]:pl-0",
-                index === 2 && "max-[991px]:pt-7.5 max-[767px]:pl-0 max-[767px]:pb-7.5",
-                index === 3 && "max-[991px]:pt-7.5 max-[767px]:pl-0",
+                "w-1/4 border-r border-ink/10 px-5 last:border-r-0 max-[992px]:w-1/2 max-[992px]:border-b max-[992px]:nth-[2n]:border-r-0 max-[992px]:nth-[n+3]:border-b-0 max-[767px]:nth-[n+3]:border-b max-[767px]:w-full max-[767px]:border-r-0 max-[767px]:border-b max-[767px]:last:border-b-0",
+                index === 0 && "max-[992px]:pb-7.5 max-[767px]:pt-7.5 max-[767px]:pl-0",
+                index === 1 && "max-[992px]:pb-7.5 max-[767px]:pt-7.5 max-[767px]:pl-0",
+                index === 2 && "max-[992px]:pt-7.5 max-[767px]:pl-0 max-[767px]:pb-7.5",
+                index === 3 && "max-[992px]:pt-7.5 max-[767px]:pl-0",
                 index === aiDrivenShopping.items.length - 1 && "pr-0",
               )}
               key={item.title}

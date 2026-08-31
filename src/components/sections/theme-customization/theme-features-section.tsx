@@ -31,17 +31,17 @@ export type ThemeFeaturesSectionProps = {
 
 export function ThemeFeaturesSection({
   content,
-  className = "three_col_icon_sec py-20 max-[991px]:py-12.5",
+  className = "three_col_icon_sec py-20 max-[992px]:py-12.5",
   id = "theme-features",
 }: ThemeFeaturesSectionProps) {
   return (
     <section className={className} id={id}>
       <Container>
         <div className="theme-features-sec title-with-text mb-[50px] text-center max-[767px]:mb-[30px]">
-          <h2 className="theme-features-title font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="theme-features-title font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(content.title, "max-[1199px]:hidden")}
           </h2>
-          <p className="theme-features mx-auto mt-6 max-w-[800px] text-base font-medium leading-[34.2px] text-muted max-[991px]:text-base max-[767px]:leading-[25px]">
+          <p className="theme-features mx-auto mt-6 max-w-[800px] text-base font-medium leading-[34.2px] text-muted max-[992px]:text-base max-[767px]:leading-[25px]">
             {formatBrText(content.subtitle, "max-[1199px]:hidden")}
           </p>
         </div>
@@ -51,7 +51,7 @@ export function ThemeFeaturesSection({
             <div className="flex flex-wrap -mx-3 -mb-6 justify-center">
               {content.highlightItems.map((item) => (
                 <div
-                  className="w-1/3 px-3 mb-6 max-[991px]:w-1/2 max-[767px]:w-full"
+                  className="w-1/3 px-3 mb-6 max-[992px]:w-1/2 max-[767px]:w-full"
                   key={item.title}
                 >
                   <article className="features_inner flex h-full flex-col items-center justify-start rounded-[15px] border border-[#efefef] bg-white p-5 text-center transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
@@ -80,7 +80,7 @@ export function ThemeFeaturesSection({
         <div className="flex flex-wrap -mx-3 -mb-6 justify-center">
           {content.items.map((item) => (
             <div
-              className="w-1/3 px-3 mb-6 max-[991px]:w-1/2 max-[767px]:w-full"
+              className="w-1/3 px-3 mb-6 max-[992px]:w-1/2 max-[767px]:w-full"
               key={item.title}
             >
               <article

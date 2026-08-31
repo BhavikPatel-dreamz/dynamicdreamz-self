@@ -71,15 +71,15 @@ function DesignCardCarousel({ items, ariaLabel, itemLabel, variant }: DesignCard
 
 export function WhiteLabelDesignBenefitsSection() {
   return (
-    <section className="rounded-b-[50px] bg-dark-green pt-20 pb-[60px] max-[991px]:py-[50px] max-[767px]:rounded-b-[30px]">
+    <section className="rounded-b-[50px] bg-dark-green pt-20 pb-[60px] max-[992px]:py-[50px] max-[767px]:rounded-b-[30px]">
       <Container className="max-[575px]:px-4">
-        <div className="heading-text mb-5 -mx-3.75 flex items-start justify-between gap-15 max-[991px]:mb-5 max-[991px]:flex-col max-[991px]:gap-0">
-          <div className="title w-[42%] px-3.75 max-[991px]:w-full">
-            <h2 className="font-sans text-[35px] leading-[1.38] font-bold text-white max-[991px]:mb-5 max-[991px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35] lg:text-left text-center tracking-[-1px]">
+        <div className="heading-text mb-5 -mx-3.75 flex items-start justify-between gap-15 max-[992px]:mb-5 max-[992px]:flex-col max-[992px]:gap-0">
+          <div className="title w-[42%] px-3.75 max-[992px]:w-full">
+            <h2 className="font-sans text-[35px] leading-[1.38] font-bold text-white max-[992px]:mb-5 max-[992px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35] lg:text-left text-center tracking-[-1px]">
               {whiteLabelWebsiteDesignSectionCopy.benefitsTitle}
             </h2>
           </div>
-          <div className="text w-[calc(47%-15px)] px-3.75 max-[991px]:w-full">
+          <div className="text w-[calc(47%-15px)] px-3.75 max-[992px]:w-full">
             <p className="text-base leading-[1.9] font-medium text-white/80 max-[767px]:leading-[1.9] lg:text-left text-center">
               {whiteLabelWebsiteDesignSectionCopy.benefitsDescription}
             </p>
@@ -93,15 +93,15 @@ export function WhiteLabelDesignBenefitsSection() {
 
 export function WhiteLabelDesignAdvantagesSection() {
   return (
-    <section className="py-20 max-[991px]:py-[50px]">
+    <section className="py-20 max-[992px]:py-[50px]">
       <Container className="max-[575px]:px-4">
-        <div className="mb-10 -mx-3.75 flex items-start justify-between max-[991px]:mb-[20px] max-[991px]:flex-col">
-          <div className="w-[calc(45%-15px)] px-3.75 max-[991px]:w-full">
-            <h2 className="font-sans text-[35px] leading-[1.38] font-bold text-ink max-[991px]:mb-[15px] max-[991px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35] lg:text-left text-center tracking-[-.7px]">
+        <div className="mb-10 -mx-3.75 flex items-start justify-between max-[992px]:mb-[20px] max-[992px]:flex-col">
+          <div className="w-[calc(45%-15px)] px-3.75 max-[992px]:w-full">
+            <h2 className="font-sans text-[35px] leading-[1.38] font-bold text-ink max-[992px]:mb-[15px] max-[992px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35] lg:text-left text-center tracking-[-.7px]">
               {whiteLabelWebsiteDesignSectionCopy.advantagesTitle} <br className="max-[389px]:hidden" /> {whiteLabelWebsiteDesignSectionCopy.advantagesTitleSecondLine}
             </h2>
           </div>
-          <div className="w-[calc(45%-15px)] px-3.75 max-[991px]:w-full">
+          <div className="w-[calc(45%-15px)] px-3.75 max-[992px]:w-full">
             <p className="text-base leading-[1.9] font-medium text-muted lg:text-left text-center">
               {whiteLabelWebsiteDesignSectionCopy.advantagesDescription}
             </p>

@@ -10,14 +10,14 @@ export function ShopifyDevelopmentInBarcelonaSpainPage() {
       <HeaderThree />
       <BarcelonaHeroSection />
       <AgencyServicesSection
-        className="barcelona-services-sec pt-0 pb-20 max-[991px]:pb-12 max-[767px]:pb-10"
+        className="barcelona-services-sec pt-0 pb-20 max-[992px]:pb-12 max-[767px]:pb-10"
         content={shopifyDevelopmentBarcelonaContent.services}
         headerLayout="centered"
         id="shopify-services"
         showDescription={false}
       />
       <PortfolioShowcaseSection
-        className="our-work-sec pt-0 pb-20 max-[991px]:pb-[50px]"
+        className="our-work-sec pt-0 pb-20 max-[992px]:pb-[50px]"
         content={shopifyDevelopmentBarcelonaContent.portfolio}
         hideCta={true}
       />

@@ -12,7 +12,7 @@ import {
 } from "@/content/hire-shopify-developers";
 import { formatBrText } from "@/lib/text-formatting";
 
-const headingClassName = "font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]";
+const headingClassName = "font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]";
 
 export type ProofSectionItem = {
   title: string;
@@ -46,7 +46,7 @@ const defaultAdvantagesContent: ProofSectionContent = {
 
 export function ShopifyReasonsSection({
   content = defaultReasonsContent,
-  className = "shopify-customization-services-sec mb-20 bg-linear-[97.18deg] from-[#e8f9ef] from-[28.5%] to-[#e6fafd] to-[91.82%] py-20 max-[991px]:py-[60px]",
+  className = "shopify-customization-services-sec mb-20 bg-linear-[97.18deg] from-[#e8f9ef] from-[28.5%] to-[#e6fafd] to-[91.82%] py-20 max-[992px]:py-[60px]",
   id = "why-hire-shopify-developers",
   layout = "grid",
   carouselFullBleed = false,
@@ -119,14 +119,14 @@ export function ShopifyReasonsSection({
           <SectionHeading>
             {formatBrText(
               content.heading,
-              preserveHeadingBreaks ? undefined : "max-[991px]:block",
+              preserveHeadingBreaks ? undefined : "max-[992px]:block",
             )}
           </SectionHeading>
           <SectionDescription
             className="mx-auto mt-6 max-w-[720px]"
             textClassName="shopify-proof-sec-details font-normal text-sm leading-[24px]"
           >
-            {formatBrText(content.description, "max-[991px]:hidden")}
+            {formatBrText(content.description, "max-[992px]:hidden")}
           </SectionDescription>
         </div>
 
@@ -135,7 +135,7 @@ export function ShopifyReasonsSection({
           <div className="flex flex-wrap -mx-2 justify-center">
             {cards.map((card, index) => (
               <div
-                className="w-1/3 px-2 mb-4 max-[991px]:w-1/2 max-[767px]:w-full"
+                className="w-1/3 px-2 mb-4 max-[992px]:w-1/2 max-[767px]:w-full"
                 key={content.items[index].title}
               >
                 {card}
@@ -180,9 +180,9 @@ export function ShopifyAdvantagesSection({
         <div
           className={`mt-[60px] grid max-[767px]:grid-cols-1 ${
             isTwoCol
-              ? "grid-cols-2 max-[991px]:grid-cols-2"
-              : "grid-cols-3 max-[991px]:grid-cols-2"
-          } max-[991px]:mt-10`}
+              ? "grid-cols-2 max-[992px]:grid-cols-2"
+              : "grid-cols-3 max-[992px]:grid-cols-2"
+          } max-[992px]:mt-10`}
         >
           {content.items.map((item, index) => (
             <article
@@ -193,10 +193,10 @@ export function ShopifyAdvantagesSection({
                   ? `${index % 2 === 0 ? "border-r max-[767px]:border-r-0" : ""} ${
                       index < content.items.length - 2 ? "border-b" : ""
                     }`
-                  : `${index % 3 !== 2 ? "border-r max-[991px]:border-r-0" : ""} ${
+                  : `${index % 3 !== 2 ? "border-r max-[992px]:border-r-0" : ""} ${
                       index < 3 ? "border-b" : ""
-                    } ${index % 2 === 0 ? "max-[991px]:border-r" : ""} ${
-                      index < 4 ? "max-[991px]:border-b" : ""
+                    } ${index % 2 === 0 ? "max-[992px]:border-r" : ""} ${
+                      index < 4 ? "max-[992px]:border-b" : ""
                     }`
               } ${
                 index < content.items.length - 1

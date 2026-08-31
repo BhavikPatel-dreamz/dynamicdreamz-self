@@ -49,7 +49,7 @@ export type ServiceHeroSectionProps = {
 
 export function ServiceHeroSection({
   content = shopifyPlusAgencyHero,
-  className = "inner-hero-sec relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]",
+  className = "inner-hero-sec relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]",
   variant = "split",
   leftColClassName,
   rightColClassName,
@@ -86,7 +86,7 @@ export function ServiceHeroSection({
                     />
                     <Image
                       alt={content.coBranding.rightLogo.alt}
-                      className="h-[39px] w-auto max-[991px]:max-w-[130px] max-[767px]:h-[30px] max-[767px]:max-w-[104px]"
+                      className="h-[39px] w-auto max-[992px]:max-w-[130px] max-[767px]:h-[30px] max-[767px]:max-w-[104px]"
                       height={content.coBranding.rightLogo.height}
                       src={content.coBranding.rightLogo.src}
                       width={content.coBranding.rightLogo.width}
@@ -111,7 +111,7 @@ export function ServiceHeroSection({
                   <>
                     <p
                       className={cn(
-                        "mt-6 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted max-[991px]:my-4",
+                        "mt-6 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted max-[992px]:my-4",
                         bodyClassName,
                       )}
                     >
@@ -164,8 +164,8 @@ export function ServiceHeroSection({
     : "left-col w-[55.7%] max-[1199px]:w-full max-[1199px]:text-center";
 
   const defaultRightCol = content.image
-    ? "right-col w-[40%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[991px]:w-full"
-    : "right-col w-[41%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[991px]:w-full";
+    ? "right-col w-[40%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[992px]:w-full"
+    : "right-col w-[41%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[992px]:w-full";
 
   return (
     <section className={className}>

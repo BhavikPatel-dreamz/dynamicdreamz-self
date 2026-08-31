@@ -10,7 +10,7 @@ export type ShopifyCroProcessSectionProps = {
 
 export function ShopifyCroProcessSection({
   content = shopifyCroProcess,
-  className = "white_label_process_step_box_section column-five bg-white py-20 max-[991px]:py-12",
+  className = "white_label_process_step_box_section column-five bg-white py-20 max-[992px]:py-12",
 }: ShopifyCroProcessSectionProps) {
   return (
     <section className={className}>
@@ -23,7 +23,7 @@ export function ShopifyCroProcessSection({
             {content.description.split("<br>").map((line, idx, arr) => (
               <span key={idx}>
                 {line}
-                {idx < arr.length - 1 ? <br className="max-[991px]:hidden" /> : null}
+                {idx < arr.length - 1 ? <br className="max-[992px]:hidden" /> : null}
               </span>
             ))}
           </p>
@@ -36,7 +36,7 @@ export function ShopifyCroProcessSection({
             return (
               <div
                 key={step.title}
-                className="col mb-[30px] w-1/5 px-5 max-[1199px]:px-2.5 max-[991px]:w-1/3 max-[767px]:w-full"
+                className="col mb-[30px] w-1/5 px-5 max-[1199px]:px-2.5 max-[992px]:w-1/3 max-[767px]:w-full"
               >
                 <div className="step-box relative text-center">
                   <div className="icon relative mx-auto mb-5 flex size-[90px] items-center justify-center rounded-full border border-black/10 bg-[#FAF8F5] p-4 shadow-none">

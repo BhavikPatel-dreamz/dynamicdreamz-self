@@ -50,11 +50,11 @@ export function NewsbloggerThemeCustomizationPage() {
       <ShopifyServicesSection content={servicesContent} />
       <ThemeWhyChooseSection content={newsbloggerThemeCustomizationContent.whyChoose} />
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[991px]:py-[50px]"
+        className="our-work-sec py-20 max-[992px]:py-[50px]"
         content={portfolioContent}
       />
       <FaqSection
-        className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"
+        className="faq-sec pt-0 pb-20 max-[992px]:pb-[50px]"
         idPrefix="newsblogger-faq"
         items={newsbloggerThemeCustomizationContent.faqs}
       />

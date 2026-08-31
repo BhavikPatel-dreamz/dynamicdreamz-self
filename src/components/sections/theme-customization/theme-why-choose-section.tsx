@@ -26,7 +26,7 @@ export type ThemeWhyChooseSectionProps = {
 
 export function ThemeWhyChooseSection({
   content,
-  className = "why_dynamic_dreamz_sec dev mt-20 pb-20 pt-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] two-column-icon-text-bg max-[991px]:mt-12.5 max-[991px]:py-14 max-[767px]:mt-10 max-[767px]:py-10",
+  className = "why_dynamic_dreamz_sec dev mt-20 pb-20 pt-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] two-column-icon-text-bg max-[992px]:mt-12.5 max-[992px]:py-14 max-[767px]:mt-10 max-[767px]:py-10",
   id = "why-choose-dynamic-dreamz",
   preserveDesktopTypography = false,
   preserveLiveIconSize = false,
@@ -48,11 +48,11 @@ export function ThemeWhyChooseSection({
         </div>
 
         <div
-          className={`why_dynamic_dreamz_main mt-[60px] max-[991px]:mt-5 ${
+          className={`why_dynamic_dreamz_main mt-[60px] max-[992px]:mt-5 ${
             variant === "top-icon" ? "mx-auto max-w-[920px]" : ""
           }`}
         >
-          <ul className="why_dynamic_dreamz-grid grid grid-cols-2 max-[991px]:grid-cols-1 list-none p-0 m-0">
+          <ul className="why_dynamic_dreamz-grid grid grid-cols-2 max-[992px]:grid-cols-1 list-none p-0 m-0">
             {content.items.map((item, index) => {
               const isEvenCol = index % 2 === 0;
               const isLastRow = index >= content.items.length - 2;
@@ -60,16 +60,16 @@ export function ThemeWhyChooseSection({
 
               return (
                 <li
-                  className={`flex p-[51px] max-[1199px]:p-8 max-[991px]:py-7.5 max-[991px]:px-5 border-black/5 ${
+                  className={`flex p-[51px] max-[1199px]:p-8 max-[992px]:py-7.5 max-[992px]:px-5 border-black/5 ${
                     variant === "top-icon"
                       ? "flex-col items-start"
                       : variant === "top-icon-mobile"
                         ? "items-start max-[767px]:flex-col max-[767px]:!px-0 max-[767px]:!py-5"
                         : "items-start"
                   } ${
-                    isEvenCol ? "border-r max-[991px]:border-r-0" : ""
-                  } ${!isLastRow ? "border-b" : "max-[991px]:border-b"} ${
-                    isLastItem ? "max-[991px]:border-b-0" : ""
+                    isEvenCol ? "border-r max-[992px]:border-r-0" : ""
+                  } ${!isLastRow ? "border-b" : "max-[992px]:border-b"} ${
+                    isLastItem ? "max-[992px]:border-b-0" : ""
                   }`}
                   key={item.title}
                 >

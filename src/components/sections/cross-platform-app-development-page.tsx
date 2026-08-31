@@ -19,7 +19,7 @@ export function CrossPlatformAppDevelopmentPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec cross-platform-app-development relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        className="inner-hero-sec cross-platform-app-development relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
         content={crossPlatformAppDevelopmentHero}
       />
       <IndustryBrandsSection
@@ -30,7 +30,7 @@ export function CrossPlatformAppDevelopmentPage() {
       />
       <AgencyServicesSection content={crossPlatformAppDevelopmentServices} />
       <PortfolioShowcaseSection
-        className="our-work-sec pt-20 pb-20 max-[991px]:pt-10"
+        className="our-work-sec pt-20 pb-20 max-[992px]:pt-10"
         columns={4}
         content={crossPlatformAppDevelopmentPortfolio}
         imageAspectClassName="pb-[154.5%] max-[767px]:pb-[115%]"

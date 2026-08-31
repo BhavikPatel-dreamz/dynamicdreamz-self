@@ -17,7 +17,7 @@ export function MigratingThemeToOnlineStore20Page() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec migrate-shopify-store relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        className="inner-hero-sec migrate-shopify-store relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
         content={migratingThemeToOnlineStore20Content.hero}
         variant="split"
       />
@@ -27,7 +27,7 @@ export function MigratingThemeToOnlineStore20Page() {
         items={migratingThemeToOnlineStore20Content.brands.items}
       />
       <TextBoxSection
-        className="single-text-box-sec py-20 max-[991px]:py-[50px]"
+        className="single-text-box-sec py-20 max-[992px]:py-[50px]"
         heading={migratingThemeToOnlineStore20Content.intro.heading}
         text={migratingThemeToOnlineStore20Content.intro.text}
       />

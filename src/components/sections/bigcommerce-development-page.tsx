@@ -54,7 +54,7 @@ export function BigCommerceDevelopmentPage() {
         id="why-choose-dynamicdreamz"
       />
       <PortfolioShowcaseSection
-        className="our-work-sec pb-20 max-[991px]:pb-[60px]"
+        className="our-work-sec pb-20 max-[992px]:pb-[60px]"
         content={bigCommerceDevelopmentPortfolio}
       />
       <HappyClientSection

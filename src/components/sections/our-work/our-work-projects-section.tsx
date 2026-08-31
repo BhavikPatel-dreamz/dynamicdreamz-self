@@ -20,17 +20,17 @@ const projectCounts = {
 export function OurWorkProjectsSection() {
   return (
     <section
-      className="scroll-mt-20 pt-20 pb-20 max-[991px]:pt-[50px] max-[991px]:pb-[50px]"
+      className="scroll-mt-20 pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]"
       id="our-work-projects"
       aria-labelledby="our-work-projects-title"
     >
       <Container className="max-[575px]:px-4">
-        <div className="mb-10 flex items-end justify-between gap-12 max-[991px]:items-start max-[767px]:mb-[30px] max-[767px]:flex-col max-[767px]:gap-4">
+        <div className="mb-10 flex items-end justify-between gap-12 max-[992px]:items-start max-[767px]:mb-[30px] max-[767px]:flex-col max-[767px]:gap-4">
           <div className="shrink-0">
             <Eyebrow className="mb-5" lineThickness="thin" lineWidth="fixed">
               {ourWorkPage.portfolio.eyebrow}
             </Eyebrow>
-            <h2 className="text-[35px] leading-[1.38] font-medium text-ink max-[991px]:text-[30px] max-[767px]:text-2xl" id="our-work-projects-title">
+            <h2 className="text-[35px] leading-[1.38] font-medium text-ink max-[992px]:text-[30px] max-[767px]:text-2xl" id="our-work-projects-title">
               {ourWorkPage.portfolio.title}
             </h2>
           </div>
@@ -40,10 +40,10 @@ export function OurWorkProjectsSection() {
         </div>
         <OurWorkFilterController filters={ourWorkPage.filters} counts={projectCounts} />
 
-        <div className="mt-[50px] flex flex-wrap gap-x-[15px] gap-y-[60px] max-[991px]:mt-[40px] max-[991px]:gap-y-[30px]">
+        <div className="mt-[50px] flex flex-wrap gap-x-[15px] gap-y-[60px] max-[992px]:mt-[40px] max-[992px]:gap-y-[30px]">
           {ourWorkProjects.map((project) => (
             <div
-              className="w-[calc(25%_-_11.25px)] max-[991px]:w-[calc(50%_-_7.5px)] max-[767px]:w-full"
+              className="w-[calc(25%_-_11.25px)] max-[992px]:w-[calc(50%_-_7.5px)] max-[767px]:w-full"
               data-work-project
               data-work-platform={project.platform}
               key={project.id}

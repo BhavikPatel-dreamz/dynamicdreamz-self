@@ -33,16 +33,16 @@ export function HappyClientSection({
   const carouselAriaLabel = controlsLabels?.ariaLabel ?? "Client video testimonials";
 
   return (
-    <section className={cn("happy-client-sec overflow-hidden pb-20 max-[991px]:pb-[50px]", clientStories ? "pt-20 max-[991px]:pt-[50px]" : "pt-0", className)} data-section="testimonials" id="client-testimonials">
+    <section className={cn("happy-client-sec overflow-hidden pb-20 max-[992px]:pb-[50px]", clientStories ? "pt-20 max-[992px]:pt-[50px]" : "pt-0", className)} data-section="testimonials" id="client-testimonials">
       <Container>
-        <div className={cn("mb-[50px] max-[767px]:mb-[30px]", clientStories ? "grid grid-cols-2 gap-12 text-left max-[991px]:grid-cols-1 max-[991px]:gap-3" : "text-center")}>
+        <div className={cn("mb-[50px] max-[992px]:mb-[30px]", clientStories ? "grid grid-cols-2 gap-12 text-left max-[992px]:grid-cols-1 max-[992px]:gap-3" : "text-center")}>
           <div>
             {clientStories && eyebrow ? <Eyebrow className="mb-[16px] text-muted">{eyebrow}</Eyebrow> : null}
-            <h2 className={cn("font-montreal-medium text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]", clientStories ? "mb-0" : "mb-6")}>
+            <h2 className={cn("font-montreal-medium text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]", clientStories ? "mb-0" : "mb-6")}>
               {heading}
             </h2>
           </div>
-          <p className="happy-client-desc mx-auto max-w-[800px] text-[16px] font-medium leading-[30.4px] text-muted max-[991px]:text-sm max-[991px]:leading-[25px]">
+          <p className="happy-client-desc mx-auto max-w-[800px] text-[16px] font-medium leading-[30.4px] text-muted max-[992px]:text-sm max-[992px]:leading-[25px]">
             {description.split("<br>").map((line, index, lines) => (
               <Fragment key={index}>
                 {line}

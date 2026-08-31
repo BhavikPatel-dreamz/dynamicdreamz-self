@@ -25,7 +25,7 @@ export function ShopifyDevelopmentAgencyPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        className="inner-hero-sec relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
         content={shopifyDevelopmentAgencyHero}
       />
       <IndustryBrandsSection
@@ -34,7 +34,7 @@ export function ShopifyDevelopmentAgencyPage() {
       />
       <AgencyServicesSection content={shopifyDevelopmentAgencyServices} />
       <PortfolioShowcaseSection
-        className="our-work-sec pt-20 pb-20 max-[991px]:pt-10"
+        className="our-work-sec pt-20 pb-20 max-[992px]:pt-10"
         content={shopifyDevelopmentAgencyPortfolio}
       />
       <HappyClientSection

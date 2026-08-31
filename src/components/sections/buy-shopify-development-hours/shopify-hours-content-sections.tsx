@@ -10,7 +10,7 @@ import {
 } from "@/content/buy-shopify-development-hours";
 
 const sectionHeadingClass =
-  "font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]";
+  "font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]";
 
 export function ShopifyHoursCommitmentSection() {
   return (
@@ -28,7 +28,7 @@ export function ShopifyHoursCommitmentSection() {
         <div className="grid grid-cols-3 max-[767px]:grid-cols-1">
           {shopifyHoursCommitments.items.map((item, index) => (
             <article
-              className={`min-h-[193px] border-r border-b border-[#ededed] p-[42px_45px_49px_28px] max-[991px]:min-h-0 max-[991px]:p-[30px_25px] max-[767px]:border-r-0 max-[767px]:p-5 max-[767px]:px-0 ${
+              className={`min-h-[193px] border-r border-b border-[#ededed] p-[42px_45px_49px_28px] max-[992px]:min-h-0 max-[992px]:p-[30px_25px] max-[767px]:border-r-0 max-[767px]:p-5 max-[767px]:px-0 ${
                 index === 2 ? "border-r-0" : ""
               } ${index > 2 ? "border-b-0 max-[767px]:border-b" : ""}`}
               key={item.title}
@@ -51,17 +51,17 @@ export function ShopifyHoursAudienceSection() {
   return (
     <section
       aria-labelledby="shopify-hours-audience-title"
-      className="bg-dark-green py-[100px] text-white max-[1199px]:py-20 max-[991px]:py-[60px] max-[767px]:py-[50px]"
+      className="bg-dark-green py-[100px] text-white max-[1199px]:py-20 max-[992px]:py-[60px] max-[767px]:py-[50px]"
     >
       <Container>
-        <div className="grid grid-cols-[26%_1fr] items-center gap-[30px] max-[1199px]:grid-cols-[32%_1fr] max-[1199px]:gap-[50px] max-[991px]:grid-cols-1 max-[991px]:gap-[50px] max-[767px]:gap-[42px]">
+        <div className="grid grid-cols-[26%_1fr] items-center gap-[30px] max-[1199px]:grid-cols-[32%_1fr] max-[1199px]:gap-[50px] max-[992px]:grid-cols-1 max-[992px]:gap-[50px] max-[767px]:gap-[42px]">
           <h2
-            className="font-sans text-[35px] leading-[48px] font-bold tracking-[-0.7px] max-[991px]:text-center max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
+            className="font-sans text-[35px] leading-[48px] font-bold tracking-[-0.7px] max-[992px]:text-center max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
             id="shopify-hours-audience-title"
           >
             {shopifyHoursAudiences.heading.map((line, index) => (
               <span key={line}>
-                {index > 0 ? <br className="max-[991px]:hidden" /> : null}
+                {index > 0 ? <br className="max-[992px]:hidden" /> : null}
                 {index > 0 ? " " : null}
                 {line}
               </span>
@@ -93,7 +93,7 @@ export function ShopifyHoursComparisonSection() {
   return (
     <section
       aria-labelledby="shopify-hours-comparison-title"
-      className="bg-[#fafaf7] py-[75px] max-[991px]:py-[60px] max-[767px]:py-[50px]"
+      className="bg-[#fafaf7] py-[75px] max-[992px]:py-[60px] max-[767px]:py-[50px]"
     >
       <Container>
         <div className="grid grid-cols-[1fr_800px] items-center gap-0 max-[1199px]:grid-cols-1 max-[1199px]:gap-0">
@@ -110,20 +110,20 @@ export function ShopifyHoursComparisonSection() {
             <p className="relative z-1 mx-auto w-full max-w-[566px] rounded-t-[25px] bg-[#1a1e1a] px-10 py-[3px] text-center text-base leading-[30.4px] font-semibold text-white italic before:absolute before:bottom-[-1px] before:left-0 before:-z-1 before:h-full before:w-5 before:-skew-x-[27deg] before:rounded-tl-full before:bg-[#1a1e1a] after:absolute after:right-0 after:bottom-[-1px] after:-z-1 after:h-full after:w-5 after:skew-x-[26deg] after:rounded-tr-full after:bg-[#1a1e1a] max-[767px]:max-w-[457px] max-[767px]:text-sm max-[599px]:max-w-[390px] max-[599px]:text-[11px] max-[599px]:leading-[17.7px] max-[475px]:max-w-[280px] max-[374px]:max-w-[240px] max-[374px]:text-[9px]">
               {shopifyHoursComparison.ribbon}
             </p>
-            <div className="flex items-stretch rounded-[20px] border-2 border-ink bg-white p-[20px_32px_20px_20px] max-[991px]:p-[20px_10px] max-[767px]:flex-wrap max-[767px]:pt-[30px] max-[767px]:pr-[15px] max-[767px]:pb-[39px] max-[767px]:pl-[15px]">
+            <div className="flex items-stretch rounded-[20px] border-2 border-ink bg-white p-[20px_32px_20px_20px] max-[992px]:p-[20px_10px] max-[767px]:flex-wrap max-[767px]:pt-[30px] max-[767px]:pr-[15px] max-[767px]:pb-[39px] max-[767px]:pl-[15px]">
               {shopifyHoursComparison.items.map((item, index) => (
                 <article
                   className={`relative flex flex-col max-[767px]:min-h-0 max-[767px]:w-full ${
                     index === 0
-                      ? "w-[57%] rounded-[20px] bg-[#f7f4e9] pt-11 pr-[38px] pb-11 pl-6 max-[991px]:w-1/2 max-[767px]:min-h-[501px] max-[767px]:w-full max-[767px]:p-[25px_15px]"
-                      : "ml-[35px] w-[53%] bg-white pt-11 max-[991px]:w-1/2 max-[767px]:ml-0 max-[767px]:w-full max-[767px]:px-[15px] max-[767px]:pt-11"
+                      ? "w-[57%] rounded-[20px] bg-[#f7f4e9] pt-11 pr-[38px] pb-11 pl-6 max-[992px]:w-1/2 max-[767px]:min-h-[501px] max-[767px]:w-full max-[767px]:p-[25px_15px]"
+                      : "ml-[35px] w-[53%] bg-white pt-11 max-[992px]:w-1/2 max-[767px]:ml-0 max-[767px]:w-full max-[767px]:px-[15px] max-[767px]:pt-11"
                   }`}
                   key={item.title}
                 >
                   <h3 className="mb-6 font-sans text-lg leading-[25.2px] font-bold">
                     {item.title}
                   </h3>
-                  <ul className="pb-[35px] max-[991px]:pb-[25px]">
+                  <ul className="pb-[35px] max-[992px]:pb-[25px]">
                     {item.points.map((point) => (
                       <li
                         className="relative mb-4 border-b border-[#e5e5e5] pr-1 pb-4 pl-[30px] text-base leading-[30.4px] font-medium text-muted last:mb-0 last:border-b-0 last:pb-0 max-[767px]:pr-0"

@@ -7,15 +7,15 @@ import { aboutSectionCopy, milestones } from "@/content/about";
 
 export function AboutTimelineSection() {
   return (
-    <section data-about="timeline" aria-labelledby="about-timeline-title" className="overflow-hidden bg-[#fbf7ed] pt-[100px] pb-[60px] max-[991px]:py-[50px]">
+    <section data-about="timeline" aria-labelledby="about-timeline-title" className="overflow-hidden bg-[#fbf7ed] pt-[100px] pb-[60px] max-[992px]:py-[50px]">
       <Container>
-        <div className="-mx-[15px] mb-[60px] flex items-center max-[991px]:mx-0 max-[991px]:mb-0 max-[991px]:block max-[991px]:text-center">
-          <div className="w-1/2 px-[15px] max-[991px]:mb-[10px] max-[991px]:w-full max-[991px]:p-0">
+        <div className="-mx-[15px] mb-[60px] flex items-center max-[992px]:mx-0 max-[992px]:mb-0 max-[992px]:block max-[992px]:text-center">
+          <div className="w-1/2 px-[15px] max-[992px]:mb-[10px] max-[992px]:w-full max-[992px]:p-0">
             <h2 id="about-timeline-title" className="text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
               {aboutSectionCopy.timelineTitle}
             </h2>
           </div>
-          <div className="w-1/2 px-[15px] max-[991px]:w-full max-[991px]:p-0">
+          <div className="w-1/2 px-[15px] max-[992px]:w-full max-[992px]:p-0">
             <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
               {aboutSectionCopy.timelineDescription}
             </p>

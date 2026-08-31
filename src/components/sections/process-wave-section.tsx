@@ -22,7 +22,7 @@ export type ProcessWaveSectionProps = {
 
 export function ProcessWaveSection({
   content,
-  className = "our-process-sec inner-process-sec big-commerce-process relative overflow-hidden py-20 max-[991px]:py-12.5 max-[767px]:py-10",
+  className = "our-process-sec inner-process-sec big-commerce-process relative overflow-hidden py-20 max-[992px]:py-12.5 max-[767px]:py-10",
 }: ProcessWaveSectionProps) {
   const steps = content.steps;
 
@@ -30,7 +30,7 @@ export function ProcessWaveSection({
     <section className={className} data-section="process" id="our-process">
       <Container>
         <div className="title-with-text mx-auto mb-[50px] max-w-[850px] text-center max-[767px]:mb-8">
-          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {content.heading.includes("<br>")
               ? content.heading.split("<br>").map((line, index, lines) => (
                   <span key={line}>

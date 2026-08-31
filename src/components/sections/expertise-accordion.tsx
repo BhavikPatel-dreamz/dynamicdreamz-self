@@ -10,13 +10,13 @@ export function ExpertiseAccordion() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <div className="mt-[-1.21px] w-[57%] max-w-[654px] grow max-[991px]:mt-[37px] max-[991px]:w-full max-[991px]:max-w-none max-[767px]:mt-[33px]">
+    <div className="mt-[-1.21px] w-[57%] max-w-[654px] grow max-[992px]:mt-[37px] max-[992px]:w-full max-[992px]:max-w-none max-[767px]:mt-[33px]">
       {expertise.map((item, index) => {
         const isOpen = activeIndex === index;
         const panelId = `expertise-panel-${index}`;
 
         return (
-          <div className="border-b border-blue-line py-7 first:pt-0 last:border-b-0 last:pb-0 min-[768px]:max-[991px]:py-[27.25px] max-[767px]:py-5" key={item.title}>
+          <div className="border-b border-blue-line py-7 first:pt-0 last:border-b-0 last:pb-0 min-[768px]:max-[992px]:py-[27.25px] max-[767px]:py-5" key={item.title}>
             <h3>
               <button
                 className="accrodion-title flex min-h-[30px] w-full cursor-pointer items-center justify-between border-0 bg-transparent p-0 text-left font-display text-2xl leading-[1.2] font-medium max-[767px]:text-lg"

@@ -67,10 +67,10 @@ function ProjectList({ decorative = false }: { decorative?: boolean }) {
 
 export function SelectedWorkSection() {
   return (
-    <section className="min-h-[932.83px] overflow-hidden bg-dark-green pt-[60px] pb-[52px] text-white min-[768px]:max-[991px]:min-h-[774.81px] max-[767px]:min-h-[649.77px] max-[767px]:py-[30px]">
-      <Container className="flex items-center justify-between max-[991px]:flex-col max-[991px]:items-start">
-        <SectionHeading tone="inverse" className="mr-5 max-w-[600px] min-[768px]:max-[991px]:m-0 min-[768px]:max-[991px]:max-w-full max-[767px]:m-0 max-[767px]:mb-4 max-[767px]:max-w-full">{homeSectionCopy.selectedWorkTitle}</SectionHeading>
-        <p className="max-w-[580px] text-base leading-[1.9] font-semibold text-white/80 min-[768px]:max-[991px]:mt-2.5 min-[768px]:max-[991px]:max-w-full max-[767px]:max-w-full max-[767px]:text-sm">
+    <section className="min-h-[932.83px] overflow-hidden bg-dark-green pt-[60px] pb-[52px] text-white min-[768px]:max-[992px]:min-h-[774.81px] max-[767px]:min-h-[649.77px] max-[767px]:py-[30px]">
+      <Container className="flex items-center justify-between max-[992px]:flex-col max-[992px]:items-start">
+        <SectionHeading tone="inverse" className="mr-5 max-w-[600px] min-[768px]:max-[992px]:m-0 min-[768px]:max-[992px]:max-w-full max-[767px]:m-0 max-[767px]:mb-4 max-[767px]:max-w-full">{homeSectionCopy.selectedWorkTitle}</SectionHeading>
+        <p className="max-w-[580px] text-base leading-[1.9] font-semibold text-white/80 min-[768px]:max-[992px]:mt-2.5 min-[768px]:max-[992px]:max-w-full max-[767px]:max-w-full max-[767px]:text-sm">
           {homeSectionCopy.selectedWorkDescription}
         </p>
       </Container>
@@ -81,7 +81,7 @@ export function SelectedWorkSection() {
         </div>
       </div>
       <div className="flex justify-center">
-        <ButtonLink className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] normal-case max-[991px]:min-h-[42px] max-[991px]:py-3 max-[991px]:text-sm" variant="light" href="/our-work">{homeSectionCopy.ctaViewWork}</ButtonLink>
+        <ButtonLink className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:min-h-[42px] max-[992px]:py-3 max-[992px]:text-sm" variant="light" href="/our-work">{homeSectionCopy.ctaViewWork}</ButtonLink>
       </div>
     </section>
   );

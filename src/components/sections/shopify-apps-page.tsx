@@ -11,10 +11,10 @@ export function ShopifyAppsPage() {
       data-page="shopify-apps"
     >
       {/* Inner Hero Section */}
-      <div className="inner-hero-sec relative overflow-hidden bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-[160px] pb-[85px] max-[991px]:pt-[140px] max-[991px]:pb-[46px]">
+      <div className="inner-hero-sec relative overflow-hidden bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-[160px] pb-[85px] max-[992px]:pt-[140px] max-[992px]:pb-[46px]">
         <Container>
           <div className="inner-hero-content mx-auto max-w-[770px] text-center">
-            <h1 className="m-0 inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-[#282828] max-[991px]:text-[30px] max-[991px]:leading-[60px] max-[767px]:leading-[40px]">
+            <h1 className="m-0 inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-[#282828] max-[992px]:text-[30px] max-[992px]:leading-[60px] max-[767px]:leading-[40px]">
               {hero.title}
             </h1>
           </div>
@@ -22,7 +22,7 @@ export function ShopifyAppsPage() {
       </div>
 
       {/* Shopify Apps List Section */}
-      <section className="shopify-apps-list py-20 max-[991px]:py-[50px]">
+      <section className="shopify-apps-list py-20 max-[992px]:py-[50px]">
         <Container>
           <div className="wrapper -mx-[10px] flex flex-wrap list-none gap-y-[15px] max-[1199px]:gap-y-[30px] max-[767px]:mx-0">
             {apps.map((app) => (

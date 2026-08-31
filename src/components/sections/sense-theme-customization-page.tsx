@@ -58,7 +58,7 @@ export function SenseThemeCustomizationPage() {
         variant="top-icon-mobile"
       />
       <FaqSection
-        className="faq-sec pt-20 pb-20 max-[991px]:pt-[50px] max-[991px]:pb-[50px]"
+        className="faq-sec pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]"
         idPrefix="sense-theme-faq"
         items={senseThemeCustomizationContent.faqs}
       />

@@ -28,7 +28,7 @@ export function ShopifyThemeProcessSection({ content }: ShopifyThemeProcessSecti
     <section className="theme-customization-process-sec pt-10 pb-20 max-[767px]:pt-5 max-[767px]:pb-10" id="process">
       <Container>
         <div className="mx-auto max-w-[850px] text-center">
-          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {content.title}
           </h2>
           <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-6">

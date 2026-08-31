@@ -23,10 +23,10 @@ export function PricingTableSection() {
         <div className="inline-block w-full rounded-[20px] bg-gradient-to-br from-[#15C064] to-[#00E0A3] p-[2px] shadow-[0_4px_50px_rgba(19,193,110,0.10)]">
           <div className="overflow-hidden rounded-[18px] bg-white">
             <div className="flex bg-[#F7F5EF] max-[767px]:hidden">
-              <div className="w-[69.802%] py-5 pr-[30px] pl-[30px] text-lg leading-[30.6px] font-bold text-ink max-[991px]:w-[62%]">
+              <div className="w-[69.802%] py-5 pr-[30px] pl-[30px] text-lg leading-[30.6px] font-bold text-ink max-[992px]:w-[62%]">
                 {shopifyPlusAgencyPricing.columns[0]}
               </div>
-              <div className="w-[30.198%] border-l border-[#DFDFDF] py-5 pr-[30px] pl-[30px] text-lg leading-[30.6px] font-bold text-ink max-[991px]:w-[38%] max-[991px]:px-5">
+              <div className="w-[30.198%] border-l border-[#DFDFDF] py-5 pr-[30px] pl-[30px] text-lg leading-[30.6px] font-bold text-ink max-[992px]:w-[38%] max-[992px]:px-5">
                 {shopifyPlusAgencyPricing.columns[1]}
               </div>
             </div>
@@ -40,10 +40,10 @@ export function PricingTableSection() {
                 className="flex flex-wrap border-t border-[#EBEBEB] max-[767px]:flex-col max-[767px]:p-[15px_20px]"
                 key={row.requirement}
               >
-                <div className="w-[69.802%] py-5 pr-[30px] pl-[30px] text-base leading-[27.2px] font-medium text-[#535353] max-[991px]:w-[62%] max-[767px]:w-full max-[767px]:p-0 max-[767px]:mb-[7px]">
+                <div className="w-[69.802%] py-5 pr-[30px] pl-[30px] text-base leading-[27.2px] font-medium text-[#535353] max-[992px]:w-[62%] max-[767px]:w-full max-[767px]:p-0 max-[767px]:mb-[7px]">
                   {row.requirement}
                 </div>
-                <div className="w-[30.198%] border-l border-[#DFDFDF] py-5 pr-[30px] pl-[30px] text-base leading-[27.2px] font-bold text-ink max-[991px]:w-[38%] max-[991px]:px-5 max-[767px]:w-full max-[767px]:border-0 max-[767px]:p-0">
+                <div className="w-[30.198%] border-l border-[#DFDFDF] py-5 pr-[30px] pl-[30px] text-base leading-[27.2px] font-bold text-ink max-[992px]:w-[38%] max-[992px]:px-5 max-[767px]:w-full max-[767px]:border-0 max-[767px]:p-0">
                   {row.pricing === "Contact us for estimation" ? (
                     <Link
                       className="text-[#252C15] transition-colors duration-300 hover:text-[#ad5151]"

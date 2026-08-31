@@ -29,15 +29,15 @@ export function CommerceSolutionsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="py-[60px] max-[991px]:py-[50px] max-[767px]:py-10" aria-labelledby="commerce-solutions-title">
+    <section className="py-[60px] max-[992px]:py-[50px] max-[767px]:py-10" aria-labelledby="commerce-solutions-title">
       <Container>
-        <div className="mb-[54px] flex items-center justify-between gap-10 max-[991px]:mb-8 max-[991px]:flex-col max-[991px]:items-start max-[991px]:gap-0">
-          <SectionHeading id="commerce-solutions-title" className="w-[40%] max-[991px]:w-full">{homeSectionCopy.commerceSolutionsTitle}</SectionHeading>
-          <p className="w-[47%] text-base leading-[1.9] font-medium text-muted max-[991px]:mt-2.5 max-[991px]:w-full max-[767px]:text-sm">
+        <div className="mb-[54px] flex items-center justify-between gap-10 max-[992px]:mb-8 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-0">
+          <SectionHeading id="commerce-solutions-title" className="w-[40%] max-[992px]:w-full">{homeSectionCopy.commerceSolutionsTitle}</SectionHeading>
+          <p className="w-[47%] text-base leading-[1.9] font-medium text-muted max-[992px]:mt-2.5 max-[992px]:w-full max-[767px]:text-sm">
             {homeSectionCopy.commerceSolutionsDescription}
           </p>
         </div>
-        <div className="grid grid-cols-2 items-start gap-3 max-[991px]:grid-cols-1" data-commerce-accordion>
+        <div className="grid grid-cols-2 items-start gap-3 max-[992px]:grid-cols-1" data-commerce-accordion>
           {[commerceSolutions.slice(0, 4), commerceSolutions.slice(4)].map((column, columnIndex) => (
             <div className="grid gap-3" key={columnIndex}>
               {column.map((item, itemIndex) => {
@@ -69,7 +69,7 @@ export function CommerceSolutionsSection() {
                             {item.summary}
                           </span>
                         </span>
-                        <span className={cn("accordion-close-icon absolute top-1/2 right-0 flex size-[30px] -translate-y-1/2 shrink-0 items-center justify-center rounded-full border-2 border-ink transition-colors max-[991px]:size-[26px]", isOpen && "bg-ink/10")} aria-hidden="true">
+                        <span className={cn("accordion-close-icon absolute top-1/2 right-0 flex size-[30px] -translate-y-1/2 shrink-0 items-center justify-center rounded-full border-2 border-ink transition-colors max-[992px]:size-[26px]", isOpen && "bg-ink/10")} aria-hidden="true">
                           <AccordionIcon isOpen={isOpen} />
                         </span>
                         <span className="sr-only">{isOpen ? homeSectionCopy.commerceAccordion.close : homeSectionCopy.commerceAccordion.open} {item.title}</span>

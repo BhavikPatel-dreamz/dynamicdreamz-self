@@ -23,7 +23,7 @@ export function ShopifyMigrationServicesSection({
   heading = shopifyMigrationSectionCopy.servicesHeading,
   description = shopifyMigrationSectionCopy.servicesDescription,
   items,
-  className = "migration-services-sec pt-16 pb-0 max-[991px]:pt-12",
+  className = "migration-services-sec pt-16 pb-0 max-[992px]:pt-12",
 }: ShopifyMigrationServicesSectionProps) {
   return (
     <section className={className} aria-labelledby="migration-services-title">
@@ -46,7 +46,7 @@ export function ShopifyMigrationServicesSection({
           {items.map((item) => (
             <div
               key={item.title}
-              className="migration-col mb-5 w-1/3 px-2 transition-transform duration-300 ease-in-out hover:-translate-y-2.5 max-[991px]:w-1/2 max-[991px]:mb-4 max-[767px]:w-full"
+              className="migration-col mb-5 w-1/3 px-2 transition-transform duration-300 ease-in-out hover:-translate-y-2.5 max-[992px]:w-1/2 max-[992px]:mb-4 max-[767px]:w-full"
             >
               <Link
                 href={item.href}

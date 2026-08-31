@@ -25,7 +25,7 @@ export function EtsyToShopifyMigrationPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec woocommerce-to-shopify relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        className="inner-hero-sec woocommerce-to-shopify relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
         content={etsyHeroContent}
         variant="split"
       />
@@ -37,7 +37,7 @@ export function EtsyToShopifyMigrationPage() {
         items={etsyBrandLogos}
       />
       <TextBoxSection
-        className="single-text-box-sec py-20 max-[991px]:py-[50px]"
+        className="single-text-box-sec py-20 max-[992px]:py-[50px]"
         heading={etsyWhyMigrate.heading}
         text={etsyWhyMigrate.text}
       />

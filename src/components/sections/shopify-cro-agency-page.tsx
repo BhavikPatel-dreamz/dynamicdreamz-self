@@ -35,7 +35,7 @@ export function ShopifyCroAgencyPage() {
       <FaqSection
         items={shopifyCroFaqs}
         idPrefix="shopify-cro-faq"
-        className="faq-sec bg-sky-blue py-20 max-[991px]:py-12"
+        className="faq-sec bg-sky-blue py-20 max-[992px]:py-12"
       />
       <ShopifyCroCtaSection content={shopifyCroBottomCta} />
     </div>

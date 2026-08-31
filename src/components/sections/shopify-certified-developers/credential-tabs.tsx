@@ -67,7 +67,7 @@ export function CredentialTabs({
               aria-controls={panelId}
               aria-selected={isActive}
               className={cn(
-                "cursor-pointer border-t-0 border-r border-b border-l-0 border-ink/15 px-2.5 py-[26px] text-center text-base leading-none font-bold last:border-r-0 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#2f72d2] max-[991px]:text-sm max-[575px]:w-full max-[575px]:rounded-none max-[575px]:border-r-0 max-[575px]:py-5",
+                "cursor-pointer border-t-0 border-r border-b border-l-0 border-ink/15 px-2.5 py-[26px] text-center text-base leading-none font-bold last:border-r-0 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#2f72d2] max-[992px]:text-sm max-[575px]:w-full max-[575px]:rounded-none max-[575px]:border-r-0 max-[575px]:py-5",
                 isActive
                   ? "rounded-tr-[29px] bg-brand-red text-white max-[575px]:rounded-none"
                   : "bg-white text-ink",
@@ -97,14 +97,14 @@ export function CredentialTabs({
         return (
           <div
             aria-labelledby={tabId}
-            className="flex items-center justify-between bg-[#fafaf7] p-10 max-[991px]:flex-col max-[991px]:p-[30px] max-[575px]:p-[30px_20px]"
+            className="flex items-center justify-between bg-[#fafaf7] p-10 max-[992px]:flex-col max-[992px]:p-[30px] max-[575px]:p-[30px_20px]"
             hidden={!isActive}
             id={panelId}
             key={item.id}
             role="tabpanel"
             tabIndex={0}
           >
-            <div className="w-[36%] max-[991px]:mb-5 max-[991px]:w-full">
+            <div className="w-[36%] max-[992px]:mb-5 max-[992px]:w-full">
               <span className="mb-2.5 block text-xs leading-[18px] font-bold text-brand-red uppercase">
                 {item.eyebrow}
               </span>
@@ -115,7 +115,7 @@ export function CredentialTabs({
                 {item.description}
               </p>
             </div>
-            <div className="grid w-[59%] grid-cols-2 gap-3.5 max-[991px]:w-full max-[575px]:grid-cols-1">
+            <div className="grid w-[59%] grid-cols-2 gap-3.5 max-[992px]:w-full max-[575px]:grid-cols-1">
               {item.details.map((detail) => (
                 <article
                   className="rounded-[20px] border border-[#d0d0ce] bg-[#fafaf7] p-[35px_25px] shadow-[2px_2px_0_rgba(40,40,40,0.2)] max-[575px]:p-5"

@@ -31,7 +31,7 @@ export function WixToShopifyMigrationPage() {
         items={wixBrandLogos}
       />
       <TextBoxSection
-        className="single-text-box-sec py-20 max-[991px]:py-15"
+        className="single-text-box-sec py-20 max-[992px]:py-15"
         heading={wixMigrationSectionCopy.whyMigrateHeading}
         text={wixMigrationSectionCopy.whyMigrateText}
       />

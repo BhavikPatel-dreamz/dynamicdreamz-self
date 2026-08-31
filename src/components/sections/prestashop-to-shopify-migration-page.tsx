@@ -22,7 +22,7 @@ export function PrestashopToShopifyMigrationPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec woocommerce-to-shopify relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        className="inner-hero-sec woocommerce-to-shopify relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
         content={prestashopHeroContent}
         variant="split"
       />
@@ -35,13 +35,13 @@ export function PrestashopToShopifyMigrationPage() {
         items={prestashopBrandLogos}
       />
       <TextBoxSection
-        className="single-text-box-sec py-20 max-[991px]:py-[50px]"
+        className="single-text-box-sec py-20 max-[992px]:py-[50px]"
         heading={prestashopWhyMigrate.heading}
         text={prestashopWhyMigrate.text}
       />
       <ShopifyReasonsSection
         carouselFullBleed
-        className="shopify-customization-services-sec mb-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[991px]:mb-[50px] max-[991px]:py-[50px]"
+        className="shopify-customization-services-sec mb-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[992px]:mb-[50px] max-[992px]:py-[50px]"
         content={prestashopBenefitsContent}
         id="benefits-of-moving"
         layout="carousel"
@@ -57,7 +57,7 @@ export function PrestashopToShopifyMigrationPage() {
       />
       <ShopifyReasonsSection
         carouselFullBleed
-        className="shopify-customization-services-sec mb-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[991px]:mb-[50px] max-[991px]:py-[50px]"
+        className="shopify-customization-services-sec mb-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[992px]:mb-[50px] max-[992px]:py-[50px]"
         content={prestashopWhyChooseContent}
         id="why-choose-dynamicdreamz"
         layout="carousel"

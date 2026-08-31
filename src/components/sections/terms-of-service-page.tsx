@@ -7,13 +7,13 @@ export function TermsOfServicePage() {
   return (
     <>
       <section
-        className="overflow-hidden bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-40 pb-[85px] text-center max-[991px]:pt-[140px] max-[991px]:pb-[46px]"
+        className="overflow-hidden bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-40 pb-[85px] text-center max-[992px]:pt-[140px] max-[992px]:pb-[46px]"
         aria-labelledby="terms-of-service-title"
       >
         <Container>
           <h1
             id="terms-of-service-title"
-            className="inline-block max-w-full font-sans text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
+            className="inline-block max-w-full font-sans text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
           >
             {heroTitle}
           </h1>
@@ -21,7 +21,7 @@ export function TermsOfServicePage() {
       </section>
 
       <section
-        className="py-20 max-[991px]:py-[50px]"
+        className="py-20 max-[992px]:py-[50px]"
         aria-label="Terms of service details"
       >
         <Container>

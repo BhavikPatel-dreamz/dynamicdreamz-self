@@ -16,13 +16,13 @@ export function ShopifyHoursHeroSection() {
   return (
     <section
       aria-labelledby="shopify-hours-hero-title"
-      className="mb-20 rounded-b-[50px] bg-cream pt-[150px] pb-20 max-[1199px]:mb-[60px] max-[991px]:pt-[100px] max-[991px]:pb-10"
+      className="mb-20 rounded-b-[50px] bg-cream pt-[150px] pb-20 max-[1199px]:mb-[60px] max-[992px]:pt-[100px] max-[992px]:pb-10"
     >
       <Container>
-        <div className="grid grid-cols-[51%_49%] items-center max-[991px]:grid-cols-1 max-[991px]:gap-[50px]">
+        <div className="grid grid-cols-[51%_49%] items-center max-[992px]:grid-cols-1 max-[992px]:gap-[50px]">
           <div>
             <h1
-              className="font-sans text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[1199px]:text-[42px] max-[1199px]:leading-[55px] max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10 max-[767px]:tracking-[-0.6px]"
+              className="font-sans text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[1199px]:text-[42px] max-[1199px]:leading-[55px] max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10 max-[767px]:tracking-[-0.6px]"
               id="shopify-hours-hero-title"
             >
               {titleStart}
@@ -30,7 +30,7 @@ export function ShopifyHoursHeroSection() {
                 {shopifyHoursHero.emphasizedTitle}
               </em>
             </h1>
-            <p className="mt-6 max-w-[675px] text-lg leading-[34.2px] font-medium tracking-[0.18px] text-muted max-[991px]:max-w-none max-[991px]:text-base max-[991px]:leading-[30.4px]">
+            <p className="mt-6 max-w-[675px] text-lg leading-[34.2px] font-medium tracking-[0.18px] text-muted max-[992px]:max-w-none max-[992px]:text-base max-[992px]:leading-[30.4px]">
               {shopifyHoursHero.description}
             </p>
             <h2 className="mt-[34px] font-sans text-base leading-[22.36px] font-bold">
@@ -55,7 +55,7 @@ export function ShopifyHoursHeroSection() {
               ))}
             </ul>
           </div>
-          <div className="pl-[50px] max-[1199px]:pl-[30px] max-[991px]:pl-0">
+          <div className="pl-[50px] max-[1199px]:pl-[30px] max-[992px]:pl-0">
             <PricingPackageSelector
               heading={shopifyHoursHero.pricingHeading}
               packages={shopifyHoursPackages}

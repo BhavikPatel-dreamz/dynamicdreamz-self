@@ -38,7 +38,7 @@ export function ShopifyPlusAgencyPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec shopify-plus-experts relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        className="inner-hero-sec shopify-plus-experts relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
         content={shopifyPlusAgencyHero}
       />
       <IndustryBrandsSection content={brandSection} />
@@ -57,7 +57,7 @@ export function ShopifyPlusAgencyPage() {
       <PricingTableSection />
       <IndustriesServedSection />
       <PortfolioShowcaseSection
-        className="our-work-sec pt-5 pb-20 max-[991px]:pt-0"
+        className="our-work-sec pt-5 pb-20 max-[992px]:pt-0"
         content={portfolioContent}
       />
       <HappyClientSection />

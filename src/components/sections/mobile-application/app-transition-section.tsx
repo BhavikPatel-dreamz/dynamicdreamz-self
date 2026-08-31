@@ -29,7 +29,7 @@ type AppTransitionSectionProps = {
 
 function TransitionCard({ step }: { step: AppTransitionStep }) {
   return (
-    <article className="relative flex-1 overflow-hidden rounded-[20px] bg-[linear-gradient(113.35deg,rgba(21,192,100,0.1)_26.6%,rgba(0,209,255,0.1)_83.87%)] px-7 pt-10 pb-[34px] max-[1199px]:px-5 max-[1199px]:pt-[30px] max-[1199px]:pb-[25px] max-[991px]:w-[calc(50%-7px)] max-[767px]:w-full">
+    <article className="relative flex-1 overflow-hidden rounded-[20px] bg-[linear-gradient(113.35deg,rgba(21,192,100,0.1)_26.6%,rgba(0,209,255,0.1)_83.87%)] px-7 pt-10 pb-[34px] max-[1199px]:px-5 max-[1199px]:pt-[30px] max-[1199px]:pb-[25px] max-[992px]:w-[calc(50%-7px)] max-[767px]:w-full">
       <span
         aria-hidden="true"
         className="absolute top-7 right-7 text-[60px] leading-none font-bold text-black opacity-[0.06]"
@@ -66,17 +66,17 @@ export function AppTransitionSection({ content }: AppTransitionSectionProps) {
           {content.heading}
         </h2>
 
-        <div className="-m-3 flex flex-wrap max-[1199px]:-m-[7px] max-[991px]:m-0">
-          <div className="flex w-1/3 flex-col p-3 max-[1199px]:p-[7px] max-[991px]:w-full max-[991px]:flex-row max-[991px]:justify-between max-[991px]:p-0 max-[767px]:flex-wrap max-[767px]:gap-[15px]">
+        <div className="-m-3 flex flex-wrap max-[1199px]:-m-[7px] max-[992px]:m-0">
+          <div className="flex w-1/3 flex-col p-3 max-[1199px]:p-[7px] max-[992px]:w-full max-[992px]:flex-row max-[992px]:justify-between max-[992px]:p-0 max-[767px]:flex-wrap max-[767px]:gap-[15px]">
             <TransitionCard step={first} />
-            <div className="h-6 shrink-0 max-[1199px]:h-3.5 max-[991px]:hidden" />
+            <div className="h-6 shrink-0 max-[1199px]:h-3.5 max-[992px]:hidden" />
             <TransitionCard step={second} />
           </div>
 
-          <div className="flex w-1/3 p-3 max-[1199px]:p-[7px] max-[991px]:my-6 max-[991px]:w-full max-[991px]:justify-center max-[991px]:p-0">
+          <div className="flex w-1/3 p-3 max-[1199px]:p-[7px] max-[992px]:my-6 max-[992px]:w-full max-[992px]:justify-center max-[992px]:p-0">
             <Image
               alt={content.image.alt}
-              className="h-full w-full rounded-[20px] object-cover max-[991px]:h-auto max-[991px]:w-auto max-[991px]:max-w-[392px]"
+              className="h-full w-full rounded-[20px] object-cover max-[992px]:h-auto max-[992px]:w-auto max-[992px]:max-w-[392px]"
               height={content.image.height}
               sizes="(max-width: 991px) 392px, 33vw"
               src={content.image.src}
@@ -84,9 +84,9 @@ export function AppTransitionSection({ content }: AppTransitionSectionProps) {
             />
           </div>
 
-          <div className="flex w-1/3 flex-col p-3 max-[1199px]:p-[7px] max-[991px]:w-full max-[991px]:flex-row max-[991px]:justify-between max-[991px]:p-0 max-[767px]:flex-wrap max-[767px]:gap-[15px]">
+          <div className="flex w-1/3 flex-col p-3 max-[1199px]:p-[7px] max-[992px]:w-full max-[992px]:flex-row max-[992px]:justify-between max-[992px]:p-0 max-[767px]:flex-wrap max-[767px]:gap-[15px]">
             <TransitionCard step={third} />
-            <div className="h-6 shrink-0 max-[1199px]:h-3.5 max-[991px]:hidden" />
+            <div className="h-6 shrink-0 max-[1199px]:h-3.5 max-[992px]:hidden" />
             <TransitionCard step={fourth} />
           </div>
         </div>

@@ -52,7 +52,7 @@ function SocialLinks({ className = "" }: { className?: string }) {
 
 function ContactDetails({ showSocial = true }: { showSocial?: boolean }) {
   return (
-    <div className="border-t border-ink/10 pt-[15px] max-[991px]:border-0 max-[991px]:pt-0">
+    <div className="border-t border-ink/10 pt-[15px] max-[992px]:border-0 max-[992px]:pt-0">
       <address className="flex flex-col gap-[15px] not-italic">
         <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={`mailto:${siteConfig.email}`}>
           <span className="mr-2.5 flex w-[18px] shrink-0 items-center justify-center text-[#111111]"><MailIcon /></span>
@@ -72,7 +72,7 @@ function FooterMenu({ index }: { index: number }) {
   const group = footerNavigation[index];
   return (
     <nav aria-label={`${group.label} links`}>
-      <h3 className="mb-2.5 font-sans text-lg leading-[30px] font-bold">{group.label}</h3>
+      <h3 className="mb-2.5 font-montreal-medium text-lg leading-7.5 font-medium">{group.label}</h3>
       <ul className="m-0 list-none p-0">
         {group.links.map((link, linkIndex) => (
           <li className={linkIndex > 0 ? "mt-2" : undefined} key={`${link.label}-${link.href}`}>
@@ -107,7 +107,7 @@ export function SiteFooter() {
         <FooterMenu index={0} /><FooterMenu index={1} /><FooterMenu index={2} /><PartnershipMenus /><MoreServices />
       </Container>
 
-      <Container className="hidden pt-10 max-[991px]:block">
+      <Container className="hidden pt-10 max-[992px]:block">
         <div>
           {footerNavigation.map((group) => (
             <details className="group/footer border-b border-ink/10" key={group.label}>
@@ -137,20 +137,20 @@ export function SiteFooter() {
         </div>
       </Container>
 
-      <Container className="grid grid-cols-6 gap-3 pt-[50px] max-[991px]:grid-cols-2 max-[991px]:gap-5 max-[991px]:pt-[35px] max-[767px]:gap-4 max-[767px]:pt-[30px]" aria-label="Partner and review profiles">
+      <Container className="grid grid-cols-6 gap-3 pt-[50px] max-[992px]:grid-cols-2 max-[992px]:gap-5 max-[992px]:pt-[35px] max-[767px]:gap-4 max-[767px]:pt-[30px]" aria-label="Partner and review profiles">
         {footerAwards.map((award) => (
-          <a className="flex h-[81px] items-center justify-center rounded-[20px] bg-white px-[18px] py-4 max-[991px]:rounded-[10px] max-[767px]:h-[60px] max-[767px]:border max-[767px]:border-[#efefef]/20 max-[767px]:px-[13px] max-[767px]:py-[5px]" href={award.href} target="_blank" rel="nofollow noopener noreferrer" key={award.src} aria-label={award.alt}>
+          <a className="flex h-[81px] items-center justify-center rounded-[20px] bg-white px-[18px] py-4 max-[992px]:rounded-[10px] max-[767px]:h-[60px] max-[767px]:border max-[767px]:border-[#efefef]/20 max-[767px]:px-[13px] max-[767px]:py-[5px]" href={award.href} target="_blank" rel="nofollow noopener noreferrer" key={award.src} aria-label={award.alt}>
             <Image src={award.src} alt={award.alt} width={award.width} height={award.height} className="max-[767px]:h-10 object-conatin"/>
           </a>
         ))}
       </Container>
 
-      <Container className="hidden max-[991px]:block">
+      <Container className="hidden max-[992px]:block">
         <SocialLinks className="mt-[30px] justify-center" />
       </Container>
 
       <Container>
-        <div className="flex items-center justify-between pt-[30px] pb-[15px] max-[991px]:pt-[30px] max-[991px]:pb-5 max-[767px]:mt-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:gap-[15px] max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-[15px] max-[767px]:pb-[15px] max-[767px]:text-center">
+        <div className="flex items-center justify-between pt-[30px] pb-[15px] max-[992px]:pt-[30px] max-[992px]:pb-5 max-[767px]:mt-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:gap-[15px] max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-[15px] max-[767px]:pb-[15px] max-[767px]:text-center">
           <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">{siteChromeCopy.footer.copyrightPrefix} <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> {siteChromeCopy.footer.copyright}</p>
           <div className="flex max-[767px]:mt-0">
             <Link className="relative mr-2.5 inline-block pr-3.75 text-sm leading-5 font-normal text-ink transition-colors duration-300 after:absolute after:-top-px after:right-0 after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href="/terms-of-service" target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.terms}</Link>

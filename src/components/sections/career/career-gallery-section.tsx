@@ -7,7 +7,7 @@ import styles from "./career-gallery-section.module.css";
 export function CareerGallerySection() {
   return (
     <section
-      className="overflow-hidden py-20 max-[991px]:py-[50px]"
+      className="overflow-hidden py-20 max-[992px]:py-[50px]"
       data-career="gallery"
       aria-labelledby="career-gallery-title"
     >

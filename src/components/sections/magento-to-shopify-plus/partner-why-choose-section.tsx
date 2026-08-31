@@ -40,7 +40,7 @@ export function PartnerWhyChooseSection({
     >
       <Container>
         <div className="title mb-[50px] text-center">
-          <h2 className="mb-4 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
+          <h2 className="mb-4 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
             {content.heading}
           </h2>
           <p className="mx-auto mb-8 max-w-[850px] font-sans text-base font-medium leading-[27.2px] text-[#535353] max-[767px]:text-sm">
@@ -64,7 +64,7 @@ export function PartnerWhyChooseSection({
         <div className="carousel-wrapper -mx-2 -mb-[30px] flex flex-wrap justify-center">
           {content.items.map((item, index) => (
             <div
-              className="carousel-item mb-[30px] w-1/3 px-2 max-[991px]:w-1/2 max-[767px]:w-full"
+              className="carousel-item mb-[30px] w-1/3 px-2 max-[992px]:w-1/2 max-[767px]:w-full"
               key={item.title || index}
             >
               <div className="card-main group relative h-full rounded-[15px] before:pointer-events-none before:absolute before:-inset-[2px] before:z-0 before:block before:rounded-[15px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] before:opacity-0 before:transition-all before:duration-300 before:ease-in-out hover:before:opacity-100 after:pointer-events-none after:absolute after:right-0 after:bottom-0 after:left-0 after:z-[2] after:block after:h-[12px] after:rounded-b-[15px] after:bg-gradient-to-r after:from-[#15c064] after:to-[#00d1ff] after:opacity-0 after:transition-all after:duration-300 after:ease-in-out hover:after:opacity-100">

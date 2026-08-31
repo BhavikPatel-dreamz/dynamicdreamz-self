@@ -5,9 +5,9 @@ import { aboutSectionCopy, coreValues } from "@/content/about";
 
 export function AboutValuesSection() {
   return (
-    <section data-about="values" aria-labelledby="about-values-title" className="pt-[50px] pb-20 max-[991px]:pt-5 max-[991px]:pb-[50px]">
+    <section data-about="values" aria-labelledby="about-values-title" className="pt-[50px] pb-20 max-[992px]:pt-5 max-[992px]:pb-[50px]">
       <Container>
-        <header className="mx-auto mb-12 max-w-[570px] text-center max-[991px]:mb-[30px]">
+        <header className="mx-auto mb-12 max-w-[570px] text-center max-[992px]:mb-[30px]">
           <h2 id="about-values-title" className="mb-6 text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
             {aboutSectionCopy.valuesTitle}
           </h2>
@@ -16,7 +16,7 @@ export function AboutValuesSection() {
           </p>
         </header>
 
-        <div className="grid grid-cols-3 gap-5 max-[991px]:grid-cols-2 max-[575px]:grid-cols-1">
+        <div className="grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[575px]:grid-cols-1">
           {coreValues.map((value) => (
             <article className="group relative z-0 rounded-[15px]" key={value.title}>
               <span className="pointer-events-none absolute -inset-0.5 -z-10 rounded-[15px] bg-linear-to-r from-[#15c064] to-[#00d1ff] opacity-0 transition-all duration-500 group-hover:-top-[9px] group-hover:opacity-100" aria-hidden="true" />

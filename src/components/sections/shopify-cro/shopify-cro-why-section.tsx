@@ -8,15 +8,15 @@ export type ShopifyCroWhySectionProps = {
 
 export function ShopifyCroWhySection({
   content = shopifyCroWhyDynamicDreamz,
-  className = "shopify-cro-dynamic-dreamz bg-white pt-0 pb-20 max-[991px]:pb-12",
+  className = "shopify-cro-dynamic-dreamz bg-white pt-0 pb-20 max-[992px]:pb-12",
 }: ShopifyCroWhySectionProps) {
   return (
     <section className={className}>
       <Container>
         <div className="cro-dynamic-dreamz-wrap overflow-hidden rounded-[30px] bg-[#F7F4E9]">
-          <div className="column-row flex flex-wrap items-end justify-between p-[43px_57px_0] max-[991px]:p-[35px_30px_0] max-[767px]:p-[25px_20px_0]">
-            <div className="column-left w-[51%] max-[991px]:w-full">
-              <div className="content-box pb-[50px] max-[991px]:pb-8">
+          <div className="column-row flex flex-wrap items-end justify-between p-[43px_57px_0] max-[992px]:p-[35px_30px_0] max-[767px]:p-[25px_20px_0]">
+            <div className="column-left w-[51%] max-[992px]:w-full">
+              <div className="content-box pb-[50px] max-[992px]:pb-8">
                 <h3 className="mb-4 font-sans text-[35px] font-bold leading-[44px] tracking-[-0.7px] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
                   {content.heading}
                 </h3>
@@ -31,7 +31,7 @@ export function ShopifyCroWhySection({
               </div>
             </div>
 
-            <div className="column-right w-[43.5%] max-[991px]:w-full">
+            <div className="column-right w-[43.5%] max-[992px]:w-full">
               <div className="content-list rounded-t-[30px] border-[1.5px] border-[#AD5151]/40 bg-white p-[35px_26px] max-[767px]:p-5">
                 <ul className="m-0 list-none p-0">
                   {content.points.map((point) => (

@@ -11,13 +11,13 @@ export function CredentialTabsSection({
 }: CredentialTabsSectionProps) {
   return (
     <section
-      className="py-20 max-[991px]:py-[50px]"
+      className="py-20 max-[992px]:py-[50px]"
       aria-labelledby="shopify-credential-tabs-title"
     >
       <Container>
-        <header className="mx-auto mb-[54px] max-w-[560px] text-center max-[991px]:mb-[30px]">
+        <header className="mx-auto mb-[54px] max-w-[560px] text-center max-[992px]:mb-[30px]">
           <h2
-            className="mb-2.5 font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
+            className="mb-2.5 font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
             id="shopify-credential-tabs-title"
           >
             {content.heading}

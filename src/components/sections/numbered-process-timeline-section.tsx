@@ -32,7 +32,7 @@ export function NumberedProcessTimelineSection({
       <Container>
         <header className="mb-[60px] text-center max-[767px]:mb-[30px]">
           <h2
-            className="font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
+            className="font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
             id={headingId}
           >
             {heading}
@@ -57,7 +57,7 @@ export function NumberedProcessTimelineSection({
                   {index + 1}
                 </span>
                 <span aria-hidden="true" className="mt-[30px] size-[18px] rounded-[6px] bg-brand-red max-[767px]:absolute max-[767px]:top-4 max-[767px]:-left-[19px] max-[767px]:mt-0 max-[767px]:size-[15px]" />
-                <span className="mt-[30px] max-w-[210px] text-lg leading-[25.2px] font-semibold max-[1199px]:text-base max-[991px]:text-sm max-[991px]:leading-[19px] max-[767px]:mt-5 max-[767px]:max-w-none max-[767px]:text-[15px] max-[767px]:leading-5">
+                <span className="mt-[30px] max-w-[210px] text-lg leading-[25.2px] font-semibold max-[1199px]:text-base max-[992px]:text-sm max-[992px]:leading-[19px] max-[767px]:mt-5 max-[767px]:max-w-none max-[767px]:text-[15px] max-[767px]:leading-5">
                   {typeof item === "string" ? (
                     item
                   ) : (

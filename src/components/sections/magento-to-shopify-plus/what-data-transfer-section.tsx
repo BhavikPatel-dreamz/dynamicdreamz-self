@@ -32,7 +32,7 @@ export function WhatDataTransferSection({
     >
       <Container>
         <div className="title mb-11 text-center max-[767px]:mb-[30px]">
-          <h2 className="mb-4 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
+          <h2 className="mb-4 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
             {formatBrText(content.heading)}
           </h2>
           <p className="mx-auto max-w-[850px] font-sans text-base font-medium leading-[27.2px] text-[#535353] max-[767px]:text-sm">
@@ -42,7 +42,7 @@ export function WhatDataTransferSection({
         <div className="wrapper -mx-[15px] flex flex-wrap justify-center max-[767px]:mx-0">
           {content.items.map((item, index) => (
             <div
-              className="col mb-[30px] w-1/5 px-[15px] max-[991px]:w-1/3 max-[767px]:w-full max-[767px]:px-0 max-[767px]:mb-5 max-[767px]:pb-5 min-[992px]:[&:not(:last-child)]:border-r min-[992px]:[&:not(:last-child)]:border-black/5 max-[991px]:min-[768px]:[&:not(:nth-child(3n))]:border-r max-[991px]:min-[768px]:[&:not(:nth-child(3n))]:border-black/5 max-[767px]:[&:not(:last-child)]:border-b max-[767px]:[&:not(:last-child)]:border-black/5 max-[767px]:last:mb-0 max-[767px]:last:pb-0"
+              className="col mb-[30px] w-1/5 px-[15px] max-[992px]:w-1/3 max-[767px]:w-full max-[767px]:px-0 max-[767px]:mb-5 max-[767px]:pb-5 min-[992px]:[&:not(:last-child)]:border-r min-[992px]:[&:not(:last-child)]:border-black/5 max-[992px]:min-[768px]:[&:not(:nth-child(3n))]:border-r max-[992px]:min-[768px]:[&:not(:nth-child(3n))]:border-black/5 max-[767px]:[&:not(:last-child)]:border-b max-[767px]:[&:not(:last-child)]:border-black/5 max-[767px]:last:mb-0 max-[767px]:last:pb-0"
               key={item.title || index}
             >
               <div className="item text-center">

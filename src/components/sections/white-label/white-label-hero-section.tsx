@@ -45,7 +45,7 @@ export function WhiteLabelHeroSection({
   const isCertifiedDevelopers = variant === "certifiedDevelopers";
 
   return (
-    <section className="overflow-hidden rounded-b-[50px] bg-cream pt-[120px] pb-0 max-[991px]:pt-[100px] max-[767px]:rounded-b-[30px] max-[767px]:pt-[70px] max-[767px]:pb-2.5">
+    <section className="overflow-hidden rounded-b-[50px] bg-cream pt-[120px] pb-0 max-[992px]:pt-[100px] max-[767px]:rounded-b-[30px] max-[767px]:pt-[70px] max-[767px]:pb-2.5">
       <Container className="max-[575px]:px-4">
         <div
           className={cn(
@@ -57,16 +57,16 @@ export function WhiteLabelHeroSection({
         >
           <div
             className={cn(
-              "pb-20 max-[1199px]:pb-10 max-[991px]:pb-[30px] max-[767px]:pb-2.5",
+              "pb-20 max-[1199px]:pb-10 max-[992px]:pb-[30px] max-[767px]:pb-2.5",
               isWebsiteDesign
-                ? "w-[47%] max-[991px]:w-full"
+                ? "w-[47%] max-[992px]:w-full"
                 : isCertifiedDevelopers
-                  ? "w-[56%] max-[991px]:w-full"
-                : "w-[55%] max-[1199px]:w-3/5 max-[991px]:w-full",
+                  ? "w-[56%] max-[992px]:w-full"
+                : "w-[55%] max-[1199px]:w-3/5 max-[992px]:w-full",
             )}
           >
             <div>
-              <h1 className="mb-6 font-sans text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[1199px]:text-[44px] max-[1199px]:leading-[55px] max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[389px]:mb-2.5 max-[389px]:text-[30px] max-[389px]:leading-10">
+              <h1 className="mb-6 font-sans text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[1199px]:text-[44px] max-[1199px]:leading-[55px] max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[389px]:mb-2.5 max-[389px]:text-[30px] max-[389px]:leading-10">
                 {hero.titleLines
                   ? hero.titleLines.map((line) => (
                       <span className="block" key={line}>
@@ -81,12 +81,12 @@ export function WhiteLabelHeroSection({
                   </>
                 ) : null}
               </h1>
-              <p className="mb-5 text-base leading-[30px] font-medium text-muted max-[1199px]:mb-[18px] max-[1199px]:leading-[30.4px] max-[991px]:mb-[15px]">
+              <p className="mb-5 text-base leading-[30px] font-medium text-muted max-[1199px]:mb-[18px] max-[1199px]:leading-[30.4px] max-[992px]:mb-[15px]">
                 {hero.leadStrong === false ? hero.lead : <strong className="font-bold">{hero.lead}</strong>}
               </p>
               {hero.paragraphs.map((paragraph, index) => (
                 <p
-                  className="mb-5 text-base leading-[30px] font-medium text-muted max-[1199px]:mb-[18px] max-[1199px]:leading-[30.4px] max-[991px]:mb-[15px]"
+                  className="mb-5 text-base leading-[30px] font-medium text-muted max-[1199px]:mb-[18px] max-[1199px]:leading-[30.4px] max-[992px]:mb-[15px]"
                   key={typeof paragraph === "string" ? paragraph : `hero-paragraph-${index}`}
                 >
                   {renderRichText(paragraph)}
@@ -95,7 +95,7 @@ export function WhiteLabelHeroSection({
               {hero.secondaryCta ? (
                 <div className="mt-2.5 flex flex-wrap items-center gap-[15px] max-[575px]:items-stretch max-[389px]:flex-col">
                   <ButtonLink
-                    className="max-[991px]:min-h-0 max-[991px]:py-3 max-[991px]:text-sm max-[991px]:leading-[18px]"
+                    className="max-[992px]:min-h-0 max-[992px]:py-3 max-[992px]:text-sm max-[992px]:leading-[18px]"
                     href={hero.ctaHref ?? siteConfig.quotePath}
                     variant="primary"
                   >
@@ -103,7 +103,7 @@ export function WhiteLabelHeroSection({
                   </ButtonLink>
                   <ButtonLink
                     className={cn(
-                      "max-[991px]:min-h-0 max-[991px]:py-3 max-[991px]:text-sm max-[991px]:leading-[18px]",
+                      "max-[992px]:min-h-0 max-[992px]:py-3 max-[992px]:text-sm max-[992px]:leading-[18px]",
                       isCertifiedDevelopers &&
                         "text-brand-red! hover:text-white!",
                     )}
@@ -115,7 +115,7 @@ export function WhiteLabelHeroSection({
                 </div>
               ) : (
                 <ButtonLink
-                  className="mt-2.5 max-[991px]:min-h-0 max-[991px]:py-3 max-[991px]:text-sm max-[991px]:leading-[18px]"
+                  className="mt-2.5 max-[992px]:min-h-0 max-[992px]:py-3 max-[992px]:text-sm max-[992px]:leading-[18px]"
                   href={hero.ctaHref ?? siteConfig.quotePath}
                   variant="primary"
                 >
@@ -123,7 +123,7 @@ export function WhiteLabelHeroSection({
                 </ButtonLink>
               )}
 
-              <div className="relative mt-[25px] -mr-[27px] -ml-[27px] flex justify-start max-[1199px]:mt-[35px] max-[1199px]:-mr-5 max-[1199px]:-ml-5 max-[991px]:mt-[38.4px] max-[767px]:mt-[25.4px] max-[767px]:-mr-2.5 max-[767px]:-ml-2.5">
+              <div className="relative mt-[25px] -mr-[27px] -ml-[27px] flex justify-start max-[1199px]:mt-[35px] max-[1199px]:-mr-5 max-[1199px]:-ml-5 max-[992px]:mt-[38.4px] max-[767px]:mt-[25.4px] max-[767px]:-mr-2.5 max-[767px]:-ml-2.5">
                 {reviews.map((review, index) => (
                   <div
                     className="flex min-w-0 items-center justify-center border-r border-[#d9d9d9] px-[27px] last:border-r-0 max-[1199px]:px-5 max-[767px]:px-2.5"
@@ -157,19 +157,19 @@ export function WhiteLabelHeroSection({
             className={cn(
               "relative",
               isWebsiteDesign
-                ? "flex w-[45%] items-end justify-end max-[991px]:mx-auto max-[991px]:w-full max-[991px]:max-w-[400px]"
+                ? "flex w-[45%] items-end justify-end max-[992px]:mx-auto max-[992px]:w-full max-[992px]:max-w-[400px]"
                 : isCertifiedDevelopers
-                  ? "flex w-[42%] items-center justify-end max-[991px]:mx-auto max-[991px]:w-full max-[991px]:max-w-[535px]"
-                : "w-[45%] max-[1199px]:w-2/5 max-[991px]:w-full",
+                  ? "flex w-[42%] items-center justify-end max-[992px]:mx-auto max-[992px]:w-full max-[992px]:max-w-[535px]"
+                : "w-[45%] max-[1199px]:w-2/5 max-[992px]:w-full",
             )}
           >
             <div
               className={cn(
-                "absolute top-0 right-[-40%] bottom-[-20%] left-2.5 flex h-auto w-[calc(50vw+40%)] max-[1199px]:right-[-20%] max-[1199px]:bottom-[-50%] max-[1199px]:w-[calc(50vw+20%)] max-[991px]:static max-[991px]:mt-5 max-[991px]:mb-[-5px] max-[991px]:w-full",
+                "absolute top-0 right-[-40%] bottom-[-20%] left-2.5 flex h-auto w-[calc(50vw+40%)] max-[1199px]:right-[-20%] max-[1199px]:bottom-[-50%] max-[1199px]:w-[calc(50vw+20%)] max-[992px]:static max-[992px]:mt-5 max-[992px]:mb-[-5px] max-[992px]:w-full",
                 isWebsiteDesign &&
-                  "static h-auto w-full max-[991px]:mt-0 max-[991px]:mb-[-5px]",
+                  "static h-auto w-full max-[992px]:mt-0 max-[992px]:mb-[-5px]",
                 isCertifiedDevelopers &&
-                  "static h-auto w-full max-[991px]:mt-0 max-[991px]:mb-[-5px]",
+                  "static h-auto w-full max-[992px]:mt-0 max-[992px]:mb-[-5px]",
               )}
             >
               <Image

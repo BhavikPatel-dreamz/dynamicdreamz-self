@@ -26,7 +26,7 @@ export function MigrationBulletFeaturesSection({
     <section className={className} id={id}>
       <Container>
         <div className="title mb-10 text-center mx-auto max-w-[850px] max-[767px]:mb-6">
-          <h2 className="mb-1.5 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="mb-1.5 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(content.heading, "max-[1199px]:hidden")}
           </h2>
           {content.description && (

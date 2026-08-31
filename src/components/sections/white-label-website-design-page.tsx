@@ -35,16 +35,16 @@ export function WhiteLabelWebsiteDesignPage() {
 
       <section className="bg-[#fafaf7] py-[60px] max-[767px]:py-10">
         <Container className="max-[575px]:px-4">
-          <div className="flex items-center justify-between gap-[60px] max-[991px]:flex-col max-[991px]:items-stretch max-[991px]:gap-5">
-            <div className="w-[47%] max-[991px]:w-full">
-              <h2 className="mb-[15px] font-sans text-[35px] leading-[1.38] font-bold text-ink max-[991px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35] tracking-[-.7px]">
+          <div className="flex items-center justify-between gap-[60px] max-[992px]:flex-col max-[992px]:items-stretch max-[992px]:gap-5">
+            <div className="w-[47%] max-[992px]:w-full">
+              <h2 className="mb-[15px] font-sans text-[35px] leading-[1.38] font-bold text-ink max-[992px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35] tracking-[-.7px]">
                 {whiteLabelWebsiteDesignSectionCopy.whyChooseTitle}
               </h2>
               <p className="text-base leading-[1.9] font-medium text-muted">
                 {whiteLabelWebsiteDesignSectionCopy.whyChooseDescription}
               </p>
             </div>
-            <div className="w-[47%] max-[991px]:w-full">
+            <div className="w-[47%] max-[992px]:w-full">
               <DesignReasonsAccordion items={whiteLabelWebsiteDesignReasons} />
             </div>
           </div>

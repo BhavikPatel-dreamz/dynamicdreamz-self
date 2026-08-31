@@ -108,7 +108,7 @@ export function WordPressThemeCustomizationPage() {
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
         bodyClassName="max-w-[920px] mx-auto text-base font-normal leading-[30.4px] text-muted my-6"
-        className="inner-hero-sec full-width-sec hide-review shopify-theme-customization-sec relative overflow-hidden bg-white pt-[190px] pb-20 max-[991px]:pt-[100px] max-[991px]:pb-10"
+        className="inner-hero-sec full-width-sec hide-review shopify-theme-customization-sec relative overflow-hidden bg-white pt-[190px] pb-20 max-[992px]:pt-[100px] max-[992px]:pb-10"
         content={{
           title: wordPressThemeCustomizationContent.hero.title,
           description: wordPressThemeCustomizationContent.hero.description,
@@ -138,17 +138,17 @@ export function WordPressThemeCustomizationPage() {
         id="why-choose-dynamic-dreamz"
       />
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[991px]:py-[50px]"
+        className="our-work-sec py-20 max-[992px]:py-[50px]"
         content={portfolioContent}
       />
       <HappyClientSection
-        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[991px]:pb-[50px]"
+        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]"
         description={wordPressThemeCustomizationContent.testimonials.description}
         heading={wordPressThemeCustomizationContent.testimonials.heading}
         items={wordPressThemeCustomizationContent.testimonials.items}
       />
       <FaqSection
-        className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"
+        className="faq-sec pt-0 pb-20 max-[992px]:pb-[50px]"
         heading={wordPressThemeCustomizationContent.faqHeading}
         idPrefix="wordpress-theme-customization-faq"
         items={wordPressThemeCustomizationFaqs}

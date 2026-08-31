@@ -18,7 +18,7 @@ export function ThankYouForEnquiryPage({
 
   return (
     <section
-      className="thankyou-sec flex min-h-screen items-center justify-center bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-[90px] pb-10 max-[991px]:pt-[70px]"
+      className="thankyou-sec flex min-h-screen items-center justify-center bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-[90px] pb-10 max-[992px]:pt-[70px]"
       aria-labelledby="thank-you-title"
     >
       <Container>

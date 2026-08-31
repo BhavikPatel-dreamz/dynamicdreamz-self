@@ -33,8 +33,8 @@ export type TwoColCenterImageSectionProps = {
 
 function InfoBox({ item }: { item: TwoColCenterImageItem }) {
   return (
-    <article className="info-box py-10 max-[991px]:py-4">
-      <div className="icon mb-2 size-[66px] max-[991px]:size-[50px]">
+    <article className="info-box py-10 max-[992px]:py-4">
+      <div className="icon mb-2 size-[66px] max-[992px]:size-[50px]">
         <Image
           alt={item.iconAlt}
           className="object-contain"
@@ -43,7 +43,7 @@ function InfoBox({ item }: { item: TwoColCenterImageItem }) {
           width={66}
         />
       </div>
-      <h3 className="why-choose-wordpress-title mb-2 font-montreal-medium text-[16px] font-medium leading-[28px] text-ink max-[991px]:text-base max-[991px]:leading-[26px]">
+      <h3 className="why-choose-wordpress-title mb-2 font-montreal-medium text-[16px] font-medium leading-[28px] text-ink max-[992px]:text-base max-[992px]:leading-[26px]">
         {formatBrText(item.title, "max-[767px]:hidden")}
       </h3>
       <p className="text-base font-medium leading-[27.2px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
@@ -55,7 +55,7 @@ function InfoBox({ item }: { item: TwoColCenterImageItem }) {
 
 export function TwoColCenterImageSection({
   content,
-  className = "why-choose-wordpress-sec two-col-center-img pt-0 pb-0 mb-20 max-[991px]:mb-[50px]",
+  className = "why-choose-wordpress-sec two-col-center-img pt-0 pb-0 mb-20 max-[992px]:mb-[50px]",
   id = "things-to-consider",
 }: TwoColCenterImageSectionProps) {
   return (
@@ -67,22 +67,22 @@ export function TwoColCenterImageSection({
           </SectionHeading>
           <SectionDescription
             className="why-choose-wordpress-sec-desc mt-2.5 "
-            textClassName="leading-[24px] max-[991px]:leading-[24px] font-normal text-sm"
+            textClassName="leading-[24px] max-[992px]:leading-[24px] font-normal text-sm"
           >
             {formatBrText(content.description, "max-[1199px]:hidden")}
           </SectionDescription>
         </div>
 
-        <div className="wrapper flex flex-wrap items-center justify-between max-[991px]:block">
+        <div className="wrapper flex flex-wrap items-center justify-between max-[992px]:block">
           {/* Left Column */}
-          <div className="col left-col w-[33.33%] max-[991px]:w-full">
+          <div className="col left-col w-[33.33%] max-[992px]:w-full">
             {content.leftItems.map((item) => (
               <InfoBox item={item} key={item.title} />
             ))}
           </div>
 
           {/* Center Column Illustration (Hidden on mobile <992px) */}
-          <div className="col center-col flex w-[33.33%] items-center justify-center px-4 max-[991px]:hidden">
+          <div className="col center-col flex w-[33.33%] items-center justify-center px-4 max-[992px]:hidden">
             <div className="main-img w-full max-w-[380px]">
               <Image
                 alt={content.centerImage.alt}
@@ -95,7 +95,7 @@ export function TwoColCenterImageSection({
           </div>
 
           {/* Right Column */}
-          <div className="col right-col w-[33.33%] max-[991px]:w-full">
+          <div className="col right-col w-[33.33%] max-[992px]:w-full">
             {content.rightItems.map((item) => (
               <InfoBox item={item} key={item.title} />
             ))}

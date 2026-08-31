@@ -32,7 +32,7 @@ export function CertifiedAgencySupportSection({
 }: CertifiedAgencySupportSectionProps) {
   return (
     <section
-      className="bg-[#171e16] py-[60px] max-[991px]:py-10"
+      className="bg-[#171e16] py-[60px] max-[992px]:py-10"
       aria-labelledby="certified-agency-support-title"
     >
       <Container>
@@ -48,10 +48,10 @@ export function CertifiedAgencySupportSection({
         <div className="grid grid-cols-2 gap-3 max-[389px]:grid-cols-1">
           {content.items.map((item) => (
             <article
-              className="h-full rounded-[20px] bg-white/5 p-[32px_32px_32px_52px] max-[991px]:p-[30px_20px] max-[389px]:rounded-2xl"
+              className="h-full rounded-[20px] bg-white/5 p-[32px_32px_32px_52px] max-[992px]:p-[30px_20px] max-[389px]:rounded-2xl"
               key={item.title}
             >
-              <div className="relative pl-10 max-[991px]:pl-[35px]">
+              <div className="relative pl-10 max-[992px]:pl-[35px]">
                 <span className="absolute top-0 left-0">
                   <CheckIcon />
                 </span>

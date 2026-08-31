@@ -53,7 +53,7 @@ export function AgencyServicesSection({
       <Container>
         {headerLayout === "centered" ? (
           <div className="heading-text mx-auto max-w-[780px] text-center">
-            <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+            <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
               {formatBrText(content.heading, "max-[1199px]:hidden")}
             </h2>
             {showDescription && (
@@ -63,13 +63,13 @@ export function AgencyServicesSection({
             )}
           </div>
         ) : (
-          <div className="mb-5 flex items-center justify-between max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:text-center">
-            <div className="w-[calc(41%-30px)] px-[15px] max-[991px]:w-full max-[991px]:p-0">
-              <h2 className="m-0 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:mb-[30px]">
+          <div className="mb-5 flex items-center justify-between max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:text-center">
+            <div className="w-[calc(41%-30px)] px-[15px] max-[992px]:w-full max-[992px]:p-0">
+              <h2 className="m-0 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:mb-[30px]">
                 {formatBrText(content.heading, "max-[1199px]:hidden")}
               </h2>
             </div>
-            <div className="w-[calc(55%-30px)] px-[15px] max-[991px]:w-full max-[991px]:p-0">
+            <div className="w-[calc(55%-30px)] px-[15px] max-[992px]:w-full max-[992px]:p-0">
               {showDescription && (
                 <p className="mb-6 text-[18px] font-medium leading-[34.2px] text-muted">
                   {formatBrText(content.description, "max-[1199px]:hidden")}
@@ -152,8 +152,8 @@ export function AgencyServicesSection({
 
               const colClass =
                 columns === 3
-                  ? "w-1/3 max-[991px]:w-1/2 max-[767px]:w-full"
-                  : "w-1/2 max-[991px]:w-full";
+                  ? "w-1/3 max-[992px]:w-1/2 max-[767px]:w-full"
+                  : "w-1/2 max-[992px]:w-full";
 
               return (
                 <div

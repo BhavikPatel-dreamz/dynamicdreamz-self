@@ -13,22 +13,22 @@ export function VerifiedKnowledgeSection({
 }: VerifiedKnowledgeSectionProps) {
   return (
     <section
-      className="py-20 max-[991px]:py-[50px]"
+      className="py-20 max-[992px]:py-[50px]"
       aria-labelledby="verified-shopify-knowledge-title"
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[70px] max-[1199px]:mb-[50px] max-[991px]:mb-[30px]"
+          className="mb-[70px] max-[1199px]:mb-[50px] max-[992px]:mb-[30px]"
           description={content.description}
           heading={content.heading}
           headingId="verified-shopify-knowledge-title"
           textClassName="w-[calc(54%-15px)] max-[1199px]:w-[calc(43%-15px)]"
           titleClassName="w-[calc(46%-15px)] max-[1199px]:w-[calc(57%-15px)]"
         />
-        <div className="grid grid-cols-3 divide-x divide-[#333]/10 max-[991px]:grid-cols-1 max-[991px]:divide-x-0 max-[991px]:divide-y">
+        <div className="grid grid-cols-3 divide-x divide-[#333]/10 max-[992px]:grid-cols-1 max-[992px]:divide-x-0 max-[992px]:divide-y">
           {content.items.map((item) => (
             <article
-              className="px-[50px] text-center max-[1199px]:px-[15px] max-[991px]:px-0 max-[991px]:py-5 max-[991px]:first:pt-0 max-[991px]:last:pb-0"
+              className="px-[50px] text-center max-[1199px]:px-[15px] max-[992px]:px-0 max-[992px]:py-5 max-[992px]:first:pt-0 max-[992px]:last:pb-0"
               key={item.title}
             >
               <Image

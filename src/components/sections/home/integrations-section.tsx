@@ -9,10 +9,10 @@ export function IntegrationsSection() {
   return (
     <section className="our_partners overflow-hidden bg-[#fafaf7] py-[55px] max-[767px]:py-[50px]">
       <Container>
-        <div className="section_title mb-[57px] flex items-center justify-center min-[768px]:max-[991px]:mb-[30px] max-[767px]:mb-[29px]">
+        <div className="section_title mb-[57px] flex items-center justify-center min-[768px]:max-[992px]:mb-[30px] max-[767px]:mb-[29px]">
           <SectionHeading
             unstyled
-            className="m-0 max-w-[540px] font-montreal-medium text-[43px] leading-[1.2] font-normal tracking-normal text-ink max-[1199px]:max-w-[400px] max-[1199px]:text-[35px] max-[1199px]:leading-[48.475px] max-[991px]:mb-2.5 max-[991px]:max-w-full max-[991px]:text-left max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[33.24px]"
+            className="m-0 max-w-[540px] font-montreal-medium text-[43px] leading-[1.2] font-normal tracking-normal text-ink max-[1199px]:max-w-[400px] max-[1199px]:text-[35px] max-[1199px]:leading-[48.475px] max-[992px]:mb-2.5 max-[992px]:max-w-full max-[992px]:text-left max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[33.24px]"
           >
             {homeSectionCopy.integrationsTitle}
           </SectionHeading>

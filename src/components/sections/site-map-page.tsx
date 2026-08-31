@@ -12,7 +12,7 @@ export type SiteMapPageProps = {
 
 export function SiteMapPage({
   links = siteMapLinks,
-  className = "standard-text-content pt-[150px] pb-20 max-[991px]:pt-[120px] max-[767px]:pt-[100px] max-[767px]:pb-[50px]",
+  className = "standard-text-content pt-[150px] pb-20 max-[992px]:pt-[120px] max-[767px]:pt-[100px] max-[767px]:pb-[50px]",
 }: SiteMapPageProps) {
   return (
     <section className={className} data-section="sitemap" id="site-map-content">

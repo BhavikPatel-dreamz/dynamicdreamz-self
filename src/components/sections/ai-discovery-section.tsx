@@ -37,11 +37,11 @@ export function AiDiscoverySection({
       <section
         className={
           className ??
-          "preparing-store pt-20 pb-0 max-[991px]:pt-[50px]"
+          "preparing-store pt-20 pb-0 max-[992px]:pt-[50px]"
         }
       >
         <Container>
-          <div className="title mx-auto mb-16 max-w-[800px] text-center max-[991px]:mb-[50px] max-[767px]:mb-10">
+          <div className="title mx-auto mb-16 max-w-[800px] text-center max-[992px]:mb-[50px] max-[767px]:mb-10">
             <h2 className="mb-4 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[1199px]:text-[28px] max-[767px]:text-[24px]">
               {content.heading}
             </h2>
@@ -54,7 +54,7 @@ export function AiDiscoverySection({
             {content.items.map((item) => (
               <div
                 key={item.title}
-                className="ai-driven-col mb-[30px] w-1/4 px-[15px] max-[991px]:w-1/2 max-[767px]:w-full"
+                className="ai-driven-col mb-[30px] w-1/4 px-[15px] max-[992px]:w-1/2 max-[767px]:w-full"
               >
                 <div className="ai-driven-item flex h-full flex-col items-center rounded-[15px] border border-[#efefef] bg-[#F7F4E9] p-[40px_15px] text-center">
                   <div className="icon mx-auto mb-5 size-[50px]">
@@ -103,11 +103,11 @@ export function AiDiscoverySection({
   return (
     <section
       className={
-        className ?? "ai-driven-shopping py-20 max-[991px]:py-[50px]"
+        className ?? "ai-driven-shopping py-20 max-[992px]:py-[50px]"
       }
     >
       <Container>
-        <div className="title mx-auto mb-16 max-w-[900px] text-center max-[991px]:mb-10 max-[767px]:mb-[25px]">
+        <div className="title mx-auto mb-16 max-w-[900px] text-center max-[992px]:mb-10 max-[767px]:mb-[25px]">
           <h2 className="mb-4 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[1199px]:text-[28px] max-[767px]:text-[24px]">
             {content.heading}
           </h2>
@@ -125,17 +125,17 @@ export function AiDiscoverySection({
             return (
               <div
                 key={item.title}
-                className={`ai-driven-col w-1/4 px-5 max-[991px]:w-1/2 max-[991px]:border-b max-[991px]:border-[#2828281A] max-[991px]:py-5 max-[767px]:w-full max-[767px]:border-r-0 max-[767px]:px-0 max-[767px]:py-[30px] ${
+                className={`ai-driven-col w-1/4 px-5 max-[992px]:w-1/2 max-[992px]:border-b max-[992px]:border-[#2828281A] max-[992px]:py-5 max-[767px]:w-full max-[767px]:border-r-0 max-[767px]:px-0 max-[767px]:py-[30px] ${
                   !isLastDesktop
                     ? "min-[992px]:border-r min-[992px]:border-[#2828281A]"
                     : ""
                 } ${
                   !isLastTablet
-                    ? "max-[991px]:min-[768px]:border-r max-[991px]:min-[768px]:border-[#2828281A]"
+                    ? "max-[992px]:min-[768px]:border-r max-[992px]:min-[768px]:border-[#2828281A]"
                     : ""
                 } ${
                   idx >= content.items.length - 2
-                    ? "max-[991px]:min-[768px]:border-b-0"
+                    ? "max-[992px]:min-[768px]:border-b-0"
                     : ""
                 } ${
                   isLastMobile ? "max-[767px]:border-b-0 max-[767px]:pb-0" : ""

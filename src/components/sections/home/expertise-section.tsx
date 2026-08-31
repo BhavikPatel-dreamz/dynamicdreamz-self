@@ -4,10 +4,10 @@ import { aiDeliveryStatement, homeSectionCopy } from "@/content/home";
 
 export function ExpertiseSection() {
   return (
-    <section className="pt-20 pb-[74px] min-[768px]:max-[991px]:py-[50px] max-[767px]:py-[50px]">
-      <Container className="flex justify-between max-[991px]:flex-col max-[991px]:items-start">
-        <div className="mr-[105px] w-[41%] max-[1199px]:mr-[60px] max-[991px]:mr-0 max-[991px]:w-full">
-          <h2 className="text-[35px] leading-[1.385] font-medium min-[768px]:max-[991px]:mb-4 min-[768px]:max-[991px]:text-[30px] min-[768px]:max-[991px]:leading-10 min-[768px]:max-[991px]:tracking-[-0.7px] max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[1.2]">{homeSectionCopy.expertiseTitle}</h2>
+    <section className="pt-20 pb-[74px] min-[768px]:max-[992px]:py-[50px] max-[767px]:py-[50px]">
+      <Container className="flex justify-between max-[992px]:flex-col max-[992px]:items-start">
+        <div className="mr-[105px] w-[41%] max-[1199px]:mr-[60px] max-[992px]:mr-0 max-[992px]:w-full">
+          <h2 className="text-[35px] leading-[1.385] font-medium min-[768px]:max-[992px]:mb-4 min-[768px]:max-[992px]:text-[30px] min-[768px]:max-[992px]:leading-10 min-[768px]:max-[992px]:tracking-[-0.7px] max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[1.2]">{homeSectionCopy.expertiseTitle}</h2>
           <p className="text-base leading-[1.9] font-semibold text-muted max-[767px]:text-sm">
             {homeSectionCopy.expertiseDescription}
           </p>

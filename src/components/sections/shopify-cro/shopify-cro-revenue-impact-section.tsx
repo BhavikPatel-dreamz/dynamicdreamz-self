@@ -26,7 +26,7 @@ export function ShopifyCroRevenueImpactSection({
 
         <div className="revenue-impact-wrapper -mx-[30px] -mb-[30px] flex flex-wrap justify-center max-[1199px]:-mx-3">
           {/* Before Optimization */}
-          <div className="revenue-card mb-[30px] w-1/2 px-[30px] max-[991px]:w-full max-[991px]:max-w-[520px] max-[1199px]:px-3">
+          <div className="revenue-card mb-[30px] w-1/2 px-[30px] max-[992px]:w-full max-[992px]:max-w-[520px] max-[1199px]:px-3">
             <div className="revenue-card-body relative z-10 rounded-[20px] bg-[#1E251D] p-[70px_40px_40px] before:absolute before:-inset-[1.5px] before:-z-20 before:rounded-[20px] before:bg-gradient-to-b before:from-white/50 before:to-transparent max-[767px]:p-[55px_20px_25px]">
               <span className="badge absolute -top-[15px] left-1/2 z-10 -translate-x-1/2 rounded-[11px] border-[2.5px] border-white/50 bg-[#171E16] px-4 py-0.5 font-sans text-base font-semibold uppercase leading-[190%] text-white max-[767px]:text-sm">
                 {content.before.badge}
@@ -71,7 +71,7 @@ export function ShopifyCroRevenueImpactSection({
           </div>
 
           {/* After Optimization */}
-          <div className="revenue-card revenue-card-optimized mb-[30px] w-1/2 px-[30px] max-[991px]:w-full max-[991px]:max-w-[520px] max-[1199px]:px-3">
+          <div className="revenue-card revenue-card-optimized mb-[30px] w-1/2 px-[30px] max-[992px]:w-full max-[992px]:max-w-[520px] max-[1199px]:px-3">
             <div className="revenue-card-body relative z-10 rounded-[20px] bg-gradient-to-b from-[#18271C] to-transparent p-[70px_40px_40px] before:absolute before:-inset-[1.5px] before:-z-20 before:rounded-[20px] before:bg-gradient-to-b before:from-[#36F4A4] before:to-transparent after:absolute after:inset-0 after:-z-10 after:rounded-[20px] after:bg-[#1E251D]/90 max-[767px]:p-[55px_20px_25px]">
               <span className="badge absolute -top-[15px] left-1/2 z-10 -translate-x-1/2 inline-flex items-center gap-2 rounded-[11px] border-[2.5px] border-[#36F4A4] bg-[#171E16] py-0.5 pr-4 pl-8 font-sans text-base font-semibold uppercase leading-[190%] text-white max-[767px]:text-sm">
                 <span className="absolute left-[15px] top-1/2 size-[7px] -translate-y-1/2 rounded-full bg-[#36F4A4]" />

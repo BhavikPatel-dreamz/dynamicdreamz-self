@@ -119,7 +119,7 @@ export function OurWorkHeroSection({
       className={cn(
         "hero-new-section overflow-hidden bg-cream pt-[91px]",
         typography === "liveMontserrat"
-          ? "max-[991px]:pt-16"
+          ? "max-[992px]:pt-16"
           : "max-[767px]:pt-[74px]",
       )}
     >

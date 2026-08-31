@@ -21,7 +21,7 @@
 - `assets/css/hiring/main.css`: `.inner-hero-sec`, `.total-deliver-wrap`, `.hiring-process-sec`, `.what-make-dynamic-dreamz-sec`, `.why_dynamic_dreamz_sec`, `.our-work-sec`, `.happy-client-sec`, `.faq-sec`, gradients, card borders, hover states, and pulse animation.
 - `assets/css/hiring/media.css`: 1199px, 991px, 767px, 389px, and 359px responsive rules.
 - Rechecked `.total-deliver-wrap .deliver-col`: 49px left padding/margin and a 1.3px left divider on desktop; 30px spacing at 1199px; full-width stacked rows with 20px bottom padding/margin, no side border, and a 1.3px bottom divider except on the last row at 767px.
-- Full-page audit findings: restore the live two-column desktop proof-card grid and 33px/32px card padding; restore the 55px process-list offset, 28px icon gap, 12px title gap, and 70px mobile icons; remove the advantage grid's outer border while retaining its live internal dividers; use the live 50px tablet portfolio-list offset. The owner-protected `review-wrap mx-auto mt-[55px] w-[532px] max-w-full max-[991px]:mt-[30px] max-[767px]:w-[275px]` remains unchanged.
+- Full-page audit findings: restore the live two-column desktop proof-card grid and 33px/32px card padding; restore the 55px process-list offset, 28px icon gap, 12px title gap, and 70px mobile icons; remove the advantage grid's outer border while retaining its live internal dividers; use the live 50px tablet portfolio-list offset. The owner-protected `review-wrap mx-auto mt-[55px] w-[532px] max-w-full max-[992px]:mt-[30px] max-[767px]:w-[275px]` remains unchanged.
 - `assets/js/hiring.js`: review animation, carousel/accordion initialization, and video popup behavior.
 - Shared live CSS for header/footer and the rendered live page at desktop, tablet, and mobile widths.
 

@@ -31,7 +31,7 @@ export function ShopifyAppBenefitsSection({
     <section className={className} data-section="benefits" id={id}>
       <Container>
         <div className="title-with-text mb-[50px] text-center max-[767px]:mb-[30px]">
-          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(content.heading)}
           </h2>
           {content.description && (
@@ -43,13 +43,13 @@ export function ShopifyAppBenefitsSection({
         <div className="benefit_box_main">
           <div
             className={`wrapper -mx-[7.5px] -mb-[15px] flex flex-wrap ${
-              isJustifyLeft ? "justify-start max-[991px]:justify-center" : "justify-center"
+              isJustifyLeft ? "justify-start max-[992px]:justify-center" : "justify-center"
             }`}
           >
             {content.items.map((item, idx) => (
               <div
                 className={`benefit_box mb-[15px] px-[7.5px] max-[767px]:w-full ${
-                  isFourColumn ? "w-1/4 max-[1199px]:w-1/2" : "w-1/3 max-[991px]:w-1/2"
+                  isFourColumn ? "w-1/4 max-[1199px]:w-1/2" : "w-1/3 max-[992px]:w-1/2"
                 }`}
                 key={item.title ?? idx}
               >

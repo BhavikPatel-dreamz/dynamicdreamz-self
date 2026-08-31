@@ -22,7 +22,7 @@ export function ShopifyPlusMigrationAgencyPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec full-width-sec mxw-100 relative overflow-hidden bg-white pt-[210px] pb-[55px] max-[991px]:pt-[100px]"
+        className="inner-hero-sec full-width-sec mxw-100 relative overflow-hidden bg-white pt-[210px] pb-[55px] max-[992px]:pt-[100px]"
         content={plusAgencyHeroContent}
         variant="centered"
       />
@@ -34,7 +34,7 @@ export function ShopifyPlusMigrationAgencyPage() {
         items={plusAgencyBrandLogos}
       />
       <TextBoxSection
-        className="single-text-box-sec py-20 max-[991px]:py-[50px]"
+        className="single-text-box-sec py-20 max-[992px]:py-[50px]"
         heading={plusAgencyWhyChooseIntro.heading}
         paragraphs={plusAgencyWhyChooseIntro.paragraphs}
       />
@@ -48,13 +48,13 @@ export function ShopifyPlusMigrationAgencyPage() {
         id="migration-process"
       />
       <ShopifyMigrationServicesSection
-        className="migration-services-sec pt-0 pb-20 max-[991px]:pb-[50px]"
+        className="migration-services-sec pt-0 pb-20 max-[992px]:pb-[50px]"
         description={plusAgencyPlatformsHeader.description}
         heading={plusAgencyPlatformsHeader.heading}
         items={plusAgencyPlatformCards}
       />
       <TextBoxSection
-        className="single-text-box-sec py-20 max-[991px]:py-[50px]"
+        className="single-text-box-sec py-20 max-[992px]:py-[50px]"
         heading={plusAgencyWhyChooseDD.heading}
         paragraphs={plusAgencyWhyChooseDD.paragraphs}
       />

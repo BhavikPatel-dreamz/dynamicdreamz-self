@@ -17,21 +17,21 @@ export function WhiteLabelStatsSection({
   stats = whiteLabelShopifyStats,
 }: WhiteLabelStatsSectionProps) {
   return (
-    <section className="py-20 max-[991px]:py-[50px]">
+    <section className="py-20 max-[992px]:py-[50px]">
       <Container className="max-[575px]:px-4">
-        <ul className="flex items-center justify-between max-[991px]:flex-wrap max-[991px]:gap-y-[30px] max-[767px]:gap-y-5">
+        <ul className="flex items-center justify-between max-[992px]:flex-wrap max-[992px]:gap-y-[30px] max-[767px]:gap-y-5">
           {stats.map((stat, index) => (
             <li
               className={cn(
-                "w-1/4 border-r border-ink/10 last:border-r-0 max-[991px]:w-1/2 max-[767px]:w-full max-[767px]:border-r-0 max-[767px]:border-b max-[767px]:pb-5 max-[767px]:last:border-b-0 max-[767px]:last:pb-0",
-                index === 1 && "max-[991px]:border-r-0",
+                "w-1/4 border-r border-ink/10 last:border-r-0 max-[992px]:w-1/2 max-[767px]:w-full max-[767px]:border-r-0 max-[767px]:border-b max-[767px]:pb-5 max-[767px]:last:border-b-0 max-[767px]:last:pb-0",
+                index === 1 && "max-[992px]:border-r-0",
               )}
               key={stat.label}
             >
-              <div className="mx-auto w-fit max-[991px]:relative max-[991px]:w-full max-[991px]:max-w-[205px] max-[991px]:pl-[45px]">
-                <div className="mb-3 max-[991px]:absolute max-[991px]:top-[5px] max-[991px]:left-0 max-[991px]:mb-0">
+              <div className="mx-auto w-fit max-[992px]:relative max-[992px]:w-full max-[992px]:max-w-[205px] max-[992px]:pl-[45px]">
+                <div className="mb-3 max-[992px]:absolute max-[992px]:top-[5px] max-[992px]:left-0 max-[992px]:mb-0">
                   <Image
-                    className="size-[42px] object-contain max-[1199px]:size-[38px] max-[991px]:size-[34px] max-[767px]:size-[30px]"
+                    className="size-[42px] object-contain max-[1199px]:size-[38px] max-[992px]:size-[34px] max-[767px]:size-[30px]"
                     src={stat.icon}
                     alt=""
                     width={42}
@@ -40,7 +40,7 @@ export function WhiteLabelStatsSection({
                   />
                 </div>
                 <div
-                  className="flex items-center font-sans text-[40px] leading-[50.2px] font-bold tracking-[1.2px] text-black max-[1199px]:text-[36px] max-[1199px]:leading-[46px] max-[991px]:text-[32px] max-[991px]:leading-[42px]"
+                  className="flex items-center font-sans text-[40px] leading-[50.2px] font-bold tracking-[1.2px] text-black max-[1199px]:text-[36px] max-[1199px]:leading-[46px] max-[992px]:text-[32px] max-[992px]:leading-[42px]"
                   aria-label={stat.value}
                 >
                   {stat.value}
@@ -88,9 +88,9 @@ export function WhiteLabelWhySection({
   const lastRowIndex = Math.ceil(reasons.length / 3) - 1;
 
   return (
-    <section className="bg-[#fafaf7] pt-[70px] pb-[82px] max-[1199px]:py-20 max-[991px]:py-[50px]">
+    <section className="bg-[#fafaf7] pt-[70px] pb-[82px] max-[1199px]:py-20 max-[992px]:py-[50px]">
       <Container className="max-[575px]:px-4">
-        <h2 className="mb-5 text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[60px] max-[991px]:mb-10 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
+        <h2 className="mb-5 text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[60px] max-[992px]:mb-10 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
           {title}
         </h2>
         <div className="grid grid-cols-3 max-[767px]:grid-cols-1 max-[767px]:gap-5">
@@ -103,7 +103,7 @@ export function WhiteLabelWhySection({
             return (
               <article
                 className={cn(
-                  "relative px-[25px] py-10 text-center max-[1199px]:px-5 max-[1199px]:py-[30px] max-[991px]:py-5",
+                  "relative px-[25px] py-10 text-center max-[1199px]:px-5 max-[1199px]:py-[30px] max-[992px]:py-5",
                   column !== 2 &&
                     "after:absolute after:top-0 after:right-0 after:h-full after:w-px after:opacity-20",
                   column !== 2 && whyRightBorderClasses[index],
@@ -124,10 +124,10 @@ export function WhiteLabelWhySection({
               >
                 {reason ? (
                   <>
-                    <h3 className="mb-3.5 font-sans text-lg leading-[1.28] font-bold text-brand-red max-[991px]:mb-2.5">
+                    <h3 className="mb-3.5 font-sans text-lg leading-[1.28] font-bold text-brand-red max-[992px]:mb-2.5">
                       {reason.title}
                     </h3>
-                    <p className="font-sans text-base leading-[30.4px] font-medium text-muted max-[1199px]:leading-[26px] max-[991px]:text-[15px] max-[991px]:leading-[22px]">
+                    <p className="font-sans text-base leading-[30.4px] font-medium text-muted max-[1199px]:leading-[26px] max-[992px]:text-[15px] max-[992px]:leading-[22px]">
                       {reason.description}
                     </p>
                   </>

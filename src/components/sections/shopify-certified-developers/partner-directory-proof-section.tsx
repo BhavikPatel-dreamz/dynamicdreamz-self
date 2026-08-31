@@ -29,14 +29,14 @@ export function PartnerDirectoryProofSection({
 }: PartnerDirectoryProofSectionProps) {
   return (
     <section
-      className="pb-20 max-[991px]:pb-[50px]"
+      className="pb-20 max-[992px]:pb-[50px]"
       aria-labelledby="shopify-partner-directory-title"
     >
       <Container>
-        <div className="rounded-[30px] bg-[#fafaf7] p-[50px] max-[1199px]:p-[50px_40px] max-[991px]:p-[40px_30px] max-[575px]:rounded-[20px] max-[575px]:p-[30px_20px]">
+        <div className="rounded-[30px] bg-[#fafaf7] p-[50px] max-[1199px]:p-[50px_40px] max-[992px]:p-[40px_30px] max-[575px]:rounded-[20px] max-[575px]:p-[30px_20px]">
           <header className="mx-auto max-w-[875px] text-center">
             <h2
-              className="mb-[15px] font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:text-[33px] max-[991px]:text-[32px] max-[991px]:leading-10 max-[575px]:text-2xl max-[575px]:leading-[33.24px]"
+              className="mb-[15px] font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:text-[33px] max-[992px]:text-[32px] max-[992px]:leading-10 max-[575px]:text-2xl max-[575px]:leading-[33.24px]"
               id="shopify-partner-directory-title"
             >
               {content.heading}
@@ -46,7 +46,7 @@ export function PartnerDirectoryProofSection({
             </p>
           </header>
 
-          <div className="mt-[70px] grid grid-cols-4 items-end gap-10 max-[1199px]:mt-10 max-[1199px]:gap-5 max-[991px]:grid-cols-2 max-[991px]:gap-y-[30px] max-[575px]:mt-[30px] max-[575px]:grid-cols-1">
+          <div className="mt-[70px] grid grid-cols-4 items-end gap-10 max-[1199px]:mt-10 max-[1199px]:gap-5 max-[992px]:grid-cols-2 max-[992px]:gap-y-[30px] max-[575px]:mt-[30px] max-[575px]:grid-cols-1">
             {content.items.map((item) => (
               <div className="text-center" key={item.label}>
                 {item.kind === "image" ? (

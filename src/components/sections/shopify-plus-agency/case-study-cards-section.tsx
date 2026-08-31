@@ -43,7 +43,7 @@ export function CaseStudyCardsSection() {
         <div className="mt-[70px] -mb-8 -mx-2 flex flex-wrap">
           {shopifyPlusAgencyCaseStudies.items.map((item) => (
             <div
-              className="mb-8 w-1/3 px-2 max-[991px]:w-1/2 max-[991px]:mb-5 max-[767px]:w-full"
+              className="mb-8 w-1/3 px-2 max-[992px]:w-1/2 max-[992px]:mb-5 max-[767px]:w-full"
               key={item.name}
             >
               <Link

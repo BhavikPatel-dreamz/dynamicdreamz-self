@@ -19,7 +19,7 @@ export function MagentoDevelopmentPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec magento-development relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        className="inner-hero-sec magento-development relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
         content={magentoDevelopmentHero}
       />
       <IndustryBrandsSection
@@ -30,7 +30,7 @@ export function MagentoDevelopmentPage() {
       />
       <AgencyServicesSection content={magentoDevelopmentServices} />
       <PortfolioShowcaseSection
-        className="our-work-sec pt-20 pb-20 max-[991px]:pt-10"
+        className="our-work-sec pt-20 pb-20 max-[992px]:pt-10"
         content={magentoDevelopmentPortfolio}
       />
       <HappyClientSection

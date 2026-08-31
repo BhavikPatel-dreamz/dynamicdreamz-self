@@ -35,7 +35,7 @@ export function DentalClinicWebsiteDevelopmentCompanyPage() {
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
         bodyClassName="max-w-[920px] mx-auto text-base font-normal leading-[30.4px] text-muted my-6"
-        className="inner-hero-sec full-width-sec shopify-theme-customization-sec relative overflow-hidden bg-white pt-[190px] pb-20 max-[991px]:pt-[100px] max-[991px]:pb-10"
+        className="inner-hero-sec full-width-sec shopify-theme-customization-sec relative overflow-hidden bg-white pt-[190px] pb-20 max-[992px]:pt-[100px] max-[992px]:pb-10"
         content={dentalClinicWebsiteDevelopmentCompanyContent.hero}
         variant="centered"
       />
@@ -45,7 +45,7 @@ export function DentalClinicWebsiteDevelopmentCompanyPage() {
         items={dentalClinicWebsiteDevelopmentCompanyContent.brands.items}
       />
       <ShopifyAppBenefitsSection
-        className="benefit_box_sec pb-20 pt-20 max-[991px]:pt-[50px] max-[767px]:pb-[50px]"
+        className="benefit_box_sec pb-20 pt-20 max-[992px]:pt-[50px] max-[767px]:pb-[50px]"
         content={dentalClinicWebsiteDevelopmentCompanyContent.benefits}
         id="why-choose-dental"
       />
@@ -55,22 +55,22 @@ export function DentalClinicWebsiteDevelopmentCompanyPage() {
         id="dental-services"
       />
       <ProcessWaveSection
-        className="our-process-sec inner-process-sec shopify-development-process relative overflow-hidden py-20 pb-0 max-[991px]:py-12.5 max-[767px]:py-10"
+        className="our-process-sec inner-process-sec shopify-development-process relative overflow-hidden py-20 pb-0 max-[992px]:py-12.5 max-[767px]:py-10"
         content={dentalClinicWebsiteDevelopmentCompanyContent.process}
       />
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[991px]:py-[50px]"
+        className="our-work-sec py-20 max-[992px]:py-[50px]"
         content={portfolioContent}
         ctaLabel={dentalClinicWebsiteDevelopmentCompanyContent.sectionCopy.portfolioCta}
       />
       <HappyClientSection
-        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[991px]:pb-[50px]"
+        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]"
         description={dentalClinicWebsiteDevelopmentCompanyContent.testimonials.description}
         heading={dentalClinicWebsiteDevelopmentCompanyContent.testimonials.heading}
         items={dentalClinicWebsiteDevelopmentCompanyContent.testimonials.items}
       />
       <FaqSection
-        className="faq-sec pt-0 pb-20 max-[991px]:pb-[50px]"
+        className="faq-sec pt-0 pb-20 max-[992px]:pb-[50px]"
         heading={dentalClinicWebsiteDevelopmentCompanyContent.sectionCopy.faqHeading}
         idPrefix="dental-clinic-faq"
         items={dentalClinicWebsiteDevelopmentCompanyContent.faqs}

@@ -29,7 +29,7 @@ export type ThemeHeroSectionProps = {
 export function ThemeHeroSection({
   alignItemsEnd = true,
   content,
-  className = "inner-hero-sec theme-customization-service-sec relative overflow-hidden bg-white pt-[190px] pb-0 max-[991px]:pt-[100px]",
+  className = "inner-hero-sec theme-customization-service-sec relative overflow-hidden bg-white pt-[190px] pb-0 max-[992px]:pt-[100px]",
   imageStretchesOnDesktop = false,
   tabletImageHalfWidth = false,
   tabletImageTopSpacing = false,
@@ -44,7 +44,7 @@ export function ThemeHeroSection({
             alignItemsEnd ? "items-start" : "items-end"
           }`}
         >
-          <div className="left-col w-1/2 pb-14 max-[991px]:w-full max-[991px]:text-center">
+          <div className="left-col w-1/2 pb-14 max-[992px]:w-full max-[992px]:text-center">
             <div className="inner-hero-content">
               <h1 className="inline-block font-montreal-medium text-[50px] font-bold leading-[66px] tracking-[0] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]">
                 {formatBrText(content.title, "max-[1199px]:hidden")}
@@ -69,11 +69,11 @@ export function ThemeHeroSection({
             </div>
           </div>
           <div
-            className={`right-col flex w-1/2 items-end justify-end max-[991px]:mx-auto max-[991px]:justify-center ${
+            className={`right-col flex w-1/2 items-end justify-end max-[992px]:mx-auto max-[992px]:justify-center ${
               tabletImageHalfWidth
-                ? "max-[991px]:w-1/2 max-[767px]:w-full"
-                : "max-[991px]:w-full"
-            } ${tabletImageTopSpacing ? "max-[991px]:mt-[25px]" : ""}`}
+                ? "max-[992px]:w-1/2 max-[767px]:w-full"
+                : "max-[992px]:w-full"
+            } ${tabletImageTopSpacing ? "max-[992px]:mt-[25px]" : ""}`}
           >
             <div className="service-img w-full flex justify-center items-end">
               <Image

@@ -19,14 +19,14 @@ export function BarcelonaHeroSection() {
   }));
 
   return (
-    <section className="barcelona-spain-sec pt-10 pb-20 max-[991px]:pb-12 max-[767px]:pt-6 max-[767px]:pb-10" id="contact-section">
+    <section className="barcelona-spain-sec pt-10 pb-20 max-[992px]:pb-12 max-[767px]:pt-6 max-[767px]:pb-10" id="contact-section">
       <Container>
         <div className="barcelona-spain-main">
-          <div className="wrapper flex flex-wrap justify-between items-start max-[991px]:flex-col">
+          <div className="wrapper flex flex-wrap justify-between items-start max-[992px]:flex-col">
             {/* Left Column */}
-            <div className="left-col w-[40%] max-[1199px]:w-[49%] max-[991px]:w-full">
-              <div className="barcelona-text max-[991px]:text-center max-[767px]:max-w-[280px] max-[767px]:mx-auto">
-                <h1 className="font-sans text-[40px] font-bold leading-[45px] tracking-[-0.8px] text-ink max-[1199px]:text-[34px] max-[991px]:leading-10 max-[767px]:text-[28px] max-[767px]:leading-[33.24px]">
+            <div className="left-col w-[40%] max-[1199px]:w-[49%] max-[992px]:w-full">
+              <div className="barcelona-text max-[992px]:text-center max-[767px]:max-w-[280px] max-[767px]:mx-auto">
+                <h1 className="font-sans text-[40px] font-bold leading-[45px] tracking-[-0.8px] text-ink max-[1199px]:text-[34px] max-[992px]:leading-10 max-[767px]:text-[28px] max-[767px]:leading-[33.24px]">
                   {hero.title}
                 </h1>
                 <p className="mt-2 text-base font-medium leading-relaxed text-[#535353]">
@@ -64,7 +64,7 @@ export function BarcelonaHeroSection() {
             </div>
 
             {/* Right Column Form */}
-            <div className="right-col w-[57%] rounded-[30px] bg-[linear-gradient(178.87deg,#15c064_11.23%,rgba(0,209,255,0.66)_33.98%,rgba(0,209,255,0)_78.28%)] p-[3px] max-[1199px]:w-[49%] max-[991px]:mt-[50px] max-[991px]:w-full">
+            <div className="right-col w-[57%] rounded-[30px] bg-[linear-gradient(178.87deg,#15c064_11.23%,rgba(0,209,255,0.66)_33.98%,rgba(0,209,255,0)_78.28%)] p-[3px] max-[1199px]:w-[49%] max-[992px]:mt-[50px] max-[992px]:w-full">
               <QuoteForm
                 className="request-quote-form rounded-[30px] bg-white p-[42px_42px_30px_42px] max-[1199px]:p-[40px_20px_20px_20px] max-[767px]:p-[30px_20px_20px_20px]"
                 phonePlaceholder={null}

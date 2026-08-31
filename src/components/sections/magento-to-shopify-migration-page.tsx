@@ -16,7 +16,7 @@ export function MagentoToShopifyMigrationPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec magento-to-shopify relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[991px]:pt-[100px]"
+        className="inner-hero-sec magento-to-shopify relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
         content={magentoHeroContent}
         variant="split"
       />
@@ -28,7 +28,7 @@ export function MagentoToShopifyMigrationPage() {
         items={magentoBrandLogos}
       />
       <TextBoxSection
-        className="single-text-box-sec py-20 max-[991px]:py-[50px]"
+        className="single-text-box-sec py-20 max-[992px]:py-[50px]"
         heading={magentoWhyMigrate.heading}
         paragraphs={magentoWhyMigrate.paragraphs}
       />

@@ -34,10 +34,10 @@ type WebsiteQuoteHeroSectionProps = {
 export function WebsiteQuoteHeroSection({ content }: WebsiteQuoteHeroSectionProps) {
   return (
     <section className="overflow-hidden pt-20" aria-labelledby="mobile-application-title">
-      <div className="mx-[45px] overflow-hidden rounded-[34px] bg-[#f7f5ef] max-[991px]:mx-[30px] max-[575px]:mx-[15px]">
+      <div className="mx-[45px] overflow-hidden rounded-[34px] bg-[#f7f5ef] max-[992px]:mx-[30px] max-[575px]:mx-[15px]">
         <Container className="min-[1300px]:max-w-[1275px]">
           <div className="-mx-5 flex flex-wrap">
-            <div className="flex w-1/2 flex-col items-start justify-center px-5 py-[85px] pr-[70px] max-[1199px]:pr-[35px] max-[991px]:w-full max-[991px]:px-5 max-[991px]:pt-[50px] max-[991px]:pb-5 max-[767px]:px-4">
+            <div className="flex w-1/2 flex-col items-start justify-center px-5 py-[85px] pr-[70px] max-[1199px]:pr-[35px] max-[992px]:w-full max-[992px]:px-5 max-[992px]:pt-[50px] max-[992px]:pb-5 max-[767px]:px-4">
               <h1
                 className="mb-6 font-sans text-[32px] leading-[42px] font-bold tracking-[-1px] text-ink max-[1199px]:mb-5 max-[1199px]:text-[27px] max-[1199px]:leading-[38px] max-[575px]:text-[22px] max-[575px]:leading-8"
                 id="mobile-application-title"
@@ -75,13 +75,13 @@ export function WebsiteQuoteHeroSection({ content }: WebsiteQuoteHeroSectionProp
 
               <WebsiteQuoteForm
                 buttonLabel={content.form.buttonLabel}
-                className="mb-6 max-[991px]:mt-5"
+                className="mb-6 max-[992px]:mt-5"
                 inputAriaLabel={content.form.inputAriaLabel}
                 placeholder={content.form.placeholder}
               />
             </div>
 
-            <div className="flex w-1/2 items-end px-5 max-[991px]:w-full max-[767px]:px-4">
+            <div className="flex w-1/2 items-end px-5 max-[992px]:w-full max-[767px]:px-4">
               <Image
                 alt={content.image.alt}
                 className="h-auto w-full object-contain object-bottom"

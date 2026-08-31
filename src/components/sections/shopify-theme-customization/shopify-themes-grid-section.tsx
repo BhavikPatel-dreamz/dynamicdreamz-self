@@ -25,7 +25,7 @@ export function ShopifyThemesGridSection({ content }: ShopifyThemesGridSectionPr
     <section className="shopify-themes-customize-section pt-0 pb-20 max-[767px]:pb-10" id="themes">
       <Container>
         <div className="mx-auto max-w-[820px] text-center">
-          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {content.title}
           </h2>
           <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
@@ -33,7 +33,7 @@ export function ShopifyThemesGridSection({ content }: ShopifyThemesGridSectionPr
           </p>
         </div>
 
-        <div className="mt-[50px] grid grid-cols-3 gap-x-4 gap-y-8 max-[991px]:grid-cols-2 max-[767px]:mt-8 max-[767px]:grid-cols-1">
+        <div className="mt-[50px] grid grid-cols-3 gap-x-4 gap-y-8 max-[992px]:grid-cols-2 max-[767px]:mt-8 max-[767px]:grid-cols-1">
           {content.items.map((theme) => {
             const title = theme.title ?? theme.name ?? "";
             const alt = theme.alt ?? `${title} Image`;

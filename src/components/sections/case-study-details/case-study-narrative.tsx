@@ -18,7 +18,7 @@ function headingId(heading: string, index: number) {
 
 export function CaseStudyNarrative({ clientName, sections }: CaseStudyNarrativeProps) {
   return (
-    <section className="overflow-hidden py-[120px] pb-[90px] max-[991px]:py-10 max-[991px]:pb-[60px] max-[767px]:py-[50px]">
+    <section className="overflow-hidden py-[120px] pb-[90px] max-[992px]:py-10 max-[992px]:pb-[60px] max-[767px]:py-[50px]">
       <Container>
         {sections.map((section, sectionIndex) => {
           const id = headingId(section.heading, sectionIndex);
@@ -27,11 +27,11 @@ export function CaseStudyNarrative({ clientName, sections }: CaseStudyNarrativeP
           return (
             <article
               aria-labelledby={id}
-              className="border-b border-[#dfdfdf] py-[60px] first:pt-0 last:border-b-0 last:pb-0 max-[1199px]:py-[50px] max-[991px]:py-10 max-[767px]:py-[25px]"
+              className="border-b border-[#dfdfdf] py-[60px] first:pt-0 last:border-b-0 last:pb-0 max-[1199px]:py-[50px] max-[992px]:py-10 max-[767px]:py-[25px]"
               key={`${section.heading}-${sectionIndex}`}
             >
-              <div className="grid grid-cols-[32%_68%] max-[1199px]:grid-cols-[25%_75%] max-[991px]:grid-cols-1">
-                <div className="pr-[30px] max-[991px]:mb-6 max-[991px]:pr-0">
+              <div className="grid grid-cols-[32%_68%] max-[1199px]:grid-cols-[25%_75%] max-[992px]:grid-cols-1">
+                <div className="pr-[30px] max-[992px]:mb-6 max-[992px]:pr-0">
                   <CaseStudySectionHeading id={id}>{section.heading}</CaseStudySectionHeading>
                 </div>
                 <div>

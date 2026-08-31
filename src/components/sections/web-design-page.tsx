@@ -25,7 +25,7 @@ export function WebDesignPage() {
       />
       <AgencyServicesSection content={webDesignServices} />
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[991px]:py-[60px]"
+        className="our-work-sec py-20 max-[992px]:py-[60px]"
         content={webDesignPortfolio}
       />
       <HappyClientSection
