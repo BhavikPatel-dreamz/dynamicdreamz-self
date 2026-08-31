@@ -111,7 +111,7 @@ export function SiteFooter() {
         <div>
           {footerNavigation.map((group) => (
             <details className="group/footer border-b border-ink/10" key={group.label}>
-              <summary className="flex cursor-pointer list-none items-center justify-between py-[18px] text-base leading-[1.66] font-bold [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer font-montreal-medium list-none items-center justify-between py-[18px] text-base leading-[1.66] font-medium [&::-webkit-details-marker]:hidden">
                 <span>{group.label}</span>
                 <span className="relative h-3 w-3 shrink-0" aria-hidden="true">
                   <span className="absolute top-[5px] left-0 h-0.5 w-3 bg-black" />
@@ -123,7 +123,7 @@ export function SiteFooter() {
                   <ul className="m-0 list-none p-0 pb-[18px]">
                     {group.links.map((link) => (
                       <li className="leading-[30.4px]" key={`${link.label}-${link.href}`}>
-                        <Link className="text-sm leading-5 font-medium text-ink/80 capitalize transition-colors duration-300 hover:text-ink focus-visible:text-ink" href={link.href}>{link.label}</Link>
+                        <Link className="text-sm leading-5 font-normal text-[#252c15] capitalize transition-colors duration-300 hover:text-brand-red focus-visible:text-ink" href={link.href}>{link.label}</Link>
                       </li>
                     ))}
                   </ul>
