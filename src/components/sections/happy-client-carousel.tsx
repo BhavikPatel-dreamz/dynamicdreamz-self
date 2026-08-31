@@ -6,6 +6,9 @@ import Slider, { type Settings } from "react-slick";
 import { HappyClientCard, type HappyClientTestimonialItem } from "@/components/sections/happy-client-card";
 import { cn } from "@/lib/class-names";
 
+const mobileBreakpoint = 768;
+const tabletBreakpoint = 992;
+
 export type HappyClientCarouselProps = {
   items: readonly HappyClientTestimonialItem[];
   ariaLabel: string;
@@ -20,13 +23,8 @@ const baseSettings: Settings = {
   arrows: false,
   infinite: false,
   speed: 500,
-  slidesToShow: 3,
   slidesToScroll: 1,
   swipeToSlide: true,
-  responsive: [
-    { breakpoint: 1200, settings: { slidesToShow: 2 } },
-    { breakpoint: 768, settings: { slidesToShow: 1 } },
-  ],
 };
 
 const controlButtonClassName =
@@ -35,16 +33,16 @@ const controlButtonClassName =
 export function HappyClientCarousel({ items, ariaLabel, controls }: HappyClientCarouselProps) {
   const sliderRef = useRef<Slider>(null);
   const [activeSlide, setActiveSlide] = useState(0);
-  const [visibleSlides, setVisibleSlides] = useState(3);
+  const [visibleSlides, setVisibleSlides] = useState(2);
   const finalSlide = Math.max(items.length - visibleSlides, 0);
   const isAtStart = activeSlide === 0;
   const isAtEnd = activeSlide >= finalSlide;
 
   useEffect(() => {
     const updateVisibleSlides = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < mobileBreakpoint) {
         setVisibleSlides(1);
-      } else if (window.innerWidth < 1200) {
+      } else if (window.innerWidth < tabletBreakpoint) {
         setVisibleSlides(2);
       } else {
         setVisibleSlides(3);
@@ -64,6 +62,7 @@ export function HappyClientCarousel({ items, ariaLabel, controls }: HappyClientC
   const settings: Settings = {
     ...baseSettings,
     afterChange: setActiveSlide,
+    slidesToShow: visibleSlides,
   };
 
   return (
@@ -76,7 +75,7 @@ export function HappyClientCarousel({ items, ariaLabel, controls }: HappyClientC
         )}
         role="region"
       >
-        <Slider ref={sliderRef} {...settings}>
+        <Slider key={visibleSlides} ref={sliderRef} {...settings}>
           {items.map((testimonial) => (
             <div className="flex h-full flex-col px-[15px] pb-5 items-stretch" key={testimonial.name}>
               <HappyClientCard testimonial={testimonial} variant="client-stories" />

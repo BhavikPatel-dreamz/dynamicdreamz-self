@@ -2,8 +2,39 @@
 
 **Route**: `/ecwid-to-shopify-migration`
 **Live URL**: `https://www.dynamicdreamz.com/ecwid-to-shopify-migration/`
-**Date**: 2026-08-20
-**Status**: Parity Achieved
+**Date**: 2026-08-31
+**Status**: Responsive testimonial breakpoint implemented; screenshot recapture pending
+
+## 2026-08-31 Testimonial Breakpoint Review
+
+- Compared the user-provided side-by-side screenshot of the local route and live
+  page at a viewport near the `991px` breakpoint.
+- The live testimonial carousel shows two complete cards at this width; the
+  local carousel in the supplied capture shows three narrow cards.
+- Inspected local `react-slick` responsive settings, slide-count state, card
+  sizing, navigation controls, and resize handling in
+  `happy-client-carousel.tsx` and `happy-client-card.tsx`.
+- Live source URL was checked again. The supplied rendered comparison is the
+  authoritative evidence for the requested two-card tablet state.
+- Target breakpoints: three cards above `991px`, two cards from `768px` through
+  `991px`, and one card below `768px`.
+- Interaction states to retain: swipe/drag, previous/next controls, disabled
+  first/last controls, and the existing `500ms` slide transition.
+- No copy, media, card treatment, or animation timing change is approved or
+  required for this fix.
+- Implemented synchronized Slick and navigation-state breakpoints: three cards
+  at `992px+`, two cards at `768px–991px`, and one card below `768px`.
+- Follow-up verification on 2026-08-31 reproduced three cards at an exact
+  `991px` first paint because Slick rendered the desktop default before the
+  viewport effect ran. Changed the hydration-safe default to two slides and
+  retained client-side enhancement to three desktop slides or one mobile slide.
+- Captured `/tmp/ecwid-991-final.png` and the focused comparison crop
+  `/tmp/ecwid-testimonials-991-final.png` in headless Chrome at exactly
+  `991px`; the final capture shows two complete testimonial cards.
+- Verified with TypeScript, lint/policy checks, and a production build generating
+  all 145 static pages.
+- Additional boundary screenshots at `992px`, `768px`, and `767px` remain to be
+  captured if a full cross-breakpoint parity audit is requested.
 
 ## Live Site Inspection
 - **URL**: `https://www.dynamicdreamz.com/ecwid-to-shopify-migration/`

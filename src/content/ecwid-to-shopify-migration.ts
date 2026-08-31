@@ -16,8 +16,8 @@ export const ecwidHeroContent: ServiceHeroContent = {
   image: {
     src: "/assets/ecwid-to-shopify-migration/ecwid-to-shopify-migration-hero.svg",
     alt: "Ecwid to Shopify Migration Service Image",
-    width: 560,
-    height: 440,
+    width: 469,
+    height: 224,
   },
   reviews: [
     {

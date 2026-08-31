@@ -16,6 +16,8 @@ import {
   ecwidWhyMigrate,
   ecwidMigrationSectionCopy,
 } from "@/content/ecwid-to-shopify-migration";
+import { wixTestimonials } from "@/content/wix-to-shopify-migration";
+import { SplitFaqSection } from "./split-faq-section";
 
 export function EcwidToShopifyMigrationPage() {
   return (
@@ -38,9 +40,10 @@ export function EcwidToShopifyMigrationPage() {
         text={ecwidWhyMigrate.text}
       />
       <ShopifyReasonsSection
-        className="shopify-customization-services-sec mb-0 py-20 max-[767px]:py-[60px]"
+        carouselFullBleed
         content={ecwidBenefitsContent}
         id="benefits-of-moving"
+        layout="carousel"
       />
       <TwoColCenterImageSection
         content={ecwidConsiderationsContent}
@@ -51,11 +54,14 @@ export function EcwidToShopifyMigrationPage() {
         id="migration-process"
       />
       <HappyClientSection
+        controlsLabels={wixTestimonials.controlsLabels}
         description={ecwidMigrationSectionCopy.testimonialsDescription}
+        eyebrow={wixTestimonials.eyebrow}
         heading={ecwidMigrationSectionCopy.testimonialsHeading}
+        items={wixTestimonials.items}
+        variant="client-stories"
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"
+      <SplitFaqSection
         idPrefix="ecwid-migration-faq"
         items={ecwidFaqs}
       />
