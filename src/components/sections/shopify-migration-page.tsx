@@ -1,7 +1,7 @@
 import { AiAutomationSection } from "@/components/sections/ai-automation-section";
 import { AiDiscoverySection } from "@/components/sections/ai-discovery-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
@@ -40,11 +40,10 @@ export function ShopifyMigrationPage() {
         className="our-work-sec py-20 max-[992px]:py-[50px] max-[767px]:pt-0 max-[767px]:pb-[50px]"
         content={shopifyMigrationPortfolio}
       />
-      <HappyClientSection className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]" />
-      <FaqSection
+      <HappyClientSection />
+      <SplitFaqSection
         items={shopifyMigrationFaqs}
         idPrefix="shopify-migration-faq"
-        className="faq-sec pt-0 pb-20 max-[767px]:pb-[50px]"
       />
       <CtaBannerSection />
     </div>

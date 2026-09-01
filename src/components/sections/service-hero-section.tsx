@@ -49,7 +49,7 @@ export type ServiceHeroSectionProps = {
 
 export function ServiceHeroSection({
   content = shopifyPlusAgencyHero,
-  className = "inner-hero-sec relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]",
+  className = "inner-hero-sec relative overflow-hidden bg-white pt-[158px] pb-[55px] max-[992px]:pt-[100px]",
   variant = "split",
   leftColClassName,
   rightColClassName,
@@ -173,7 +173,7 @@ export function ServiceHeroSection({
         <div className="inner-wrapper flex flex-wrap items-center justify-between">
           <div className={leftColClassName ?? defaultLeftCol}>
             <div className="inner-hero-content">
-              <h1 className="inline-block font-montreal-medium text-[50px] font-medium leading-[66px] tracking-[0] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px] max-w-[770px]">
+              <h1 className="inline-block font-montreal-medium text-[50px] font-medium leading-[60px] tracking-[0] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px] max-w-[770px]">
                 {formatBrText(content.title, "max-[1199px]:hidden")}
               </h1>
               {content.paragraphs ? (
@@ -200,7 +200,7 @@ export function ServiceHeroSection({
                   {content.secondaryDescription && (
                     <p
                       className={cn(
-                        "mt-4 mb-6 text-base font-normal leading-[30.4px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
+                        "mt-3 mb-3.75 text-sm font-normal leading-[24px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
                         bodyClassName,
                       )}
                     >
@@ -231,10 +231,10 @@ export function ServiceHeroSection({
                       "h-auto",
                       imageClassName,
                     )}
-                    height={224}
+                    height={content.image.height}
                     priority
                     src={content.image.src}
-                    width={469}
+                    width={content.image.width}
                   />
                 </div>
                 {content.reviews && content.reviews.length > 0 && (

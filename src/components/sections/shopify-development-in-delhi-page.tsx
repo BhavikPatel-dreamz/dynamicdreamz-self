@@ -1,6 +1,6 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
@@ -53,7 +53,6 @@ export function ShopifyDevelopmentInDelhiPage() {
       <AgencyServicesSection
         className="what-we-provide-sec pt-20 pb-0 max-[992px]:pt-[50px]"
         content={shopifyDevelopmentDelhiContent.services}
-        headerLayout="centered"
         hideCta={true}
         showDescription={false}
       />
@@ -68,13 +67,11 @@ export function ShopifyDevelopmentInDelhiPage() {
         ctaLabel={shopifyDevelopmentDelhiContent.sectionCopy.portfolioCta}
       />
       <HappyClientSection
-        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]"
         description={shopifyDevelopmentDelhiContent.testimonials.description}
         heading={shopifyDevelopmentDelhiContent.testimonials.heading}
         items={shopifyDevelopmentDelhiContent.testimonials.items}
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[992px]:pb-[50px]"
+      <SplitFaqSection
         heading={shopifyDevelopmentDelhiContent.sectionCopy.faqHeading}
         idPrefix="delhi-faq"
         items={shopifyDevelopmentDelhiContent.faqs}

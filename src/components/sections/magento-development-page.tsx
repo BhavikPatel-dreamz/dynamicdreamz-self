@@ -1,6 +1,6 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
@@ -38,8 +38,7 @@ export function MagentoDevelopmentPage() {
         heading={magentoDevelopmentTestimonials.heading}
         items={magentoDevelopmentTestimonials.items}
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"
+      <SplitFaqSection
         idPrefix="magento-dev-faq"
         items={magentoDevelopmentFaqs}
       />

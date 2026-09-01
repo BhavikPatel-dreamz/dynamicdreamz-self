@@ -14,8 +14,8 @@ export const shopifyDevelopmentDelhiContent = {
     image: {
       src: "/assets/shopify-development-company-in-chennai/hero/shopify-development-company-chennai-img.webp",
       alt: "Shopify Development in Delhi",
-      width: 535,
-      height: 370,
+      width: 469,
+      height: 224,
     },
     reviews: [
       {

@@ -12,7 +12,6 @@ export function ShopifyDevelopmentInBarcelonaSpainPage() {
       <AgencyServicesSection
         className="barcelona-services-sec pt-0 pb-20 max-[992px]:pb-12 max-[767px]:pb-10"
         content={shopifyDevelopmentBarcelonaContent.services}
-        headerLayout="centered"
         id="shopify-services"
         showDescription={false}
       />

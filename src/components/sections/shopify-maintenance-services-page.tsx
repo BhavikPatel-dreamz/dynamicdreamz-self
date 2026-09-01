@@ -1,6 +1,6 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
@@ -40,7 +40,6 @@ export function ShopifyMaintenanceServicesPage() {
       <AgencyServicesSection
         className="what-we-provide-sec pt-20 pb-0 max-[992px]:pt-[50px]"
         content={servicesContent}
-        headerLayout="centered"
         id="what-we-provide"
       />
       <PortfolioShowcaseSection
@@ -49,13 +48,11 @@ export function ShopifyMaintenanceServicesPage() {
         ctaLabel={shopifyMaintenanceServicesContent.sectionCopy.portfolioCta}
       />
       <HappyClientSection
-        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]"
         description={shopifyMaintenanceServicesContent.testimonials.description}
         heading={shopifyMaintenanceServicesContent.testimonials.heading}
         items={shopifyMaintenanceServicesContent.testimonials.items}
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[992px]:pb-[50px]"
+      <SplitFaqSection
         heading={shopifyMaintenanceServicesContent.sectionCopy.faqHeading}
         idPrefix="shopify-maintenance-faq"
         items={shopifyMaintenanceServicesContent.faqs}

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
-import { formatBrText } from "@/lib/text-formatting";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 
 export type ServiceBenefitTimelineItem = {
   title: string;
@@ -30,54 +30,51 @@ export function ServiceBenefitsTimelineSection({
   return (
     <section className={className} id={id}>
       <Container>
-        <div className="mx-auto max-w-[900px] text-center">
-          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
-            {formatBrText(content.heading, "max-[1199px]:hidden")}
-          </h2>
-          <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
-            {formatBrText(content.description, "max-[1199px]:hidden")}
-          </p>
-        </div>
+        <SplitSectionHeading
+          description={content.description}
+          heading={content.heading}
+          variant="centered"
+        />
 
-        <ol className="relative mx-auto mt-[58px] max-w-[1030px] before:absolute before:top-[27px] before:bottom-[27px] before:left-1/2 before:border-l-2 before:border-dashed before:border-[#b7b7b7] before:content-[''] max-[992px]:before:left-[25px] max-[767px]:mt-10">
+        <ol className="relative mt-[70px] w-full list-none p-0 before:absolute before:top-0 before:bottom-0 before:left-1/2 before:z-[5] before:border-l-2 before:border-dashed before:border-[#e5e5e5] before:content-[''] max-[767px]:mt-10 max-[767px]:before:left-[15px]">
           {content.items.map((item, index) => {
             const isLeft = index % 2 === 0;
 
             return (
               <li
-                className="relative grid min-h-[155px] grid-cols-2 pb-[30px] last:pb-0 max-[992px]:block max-[992px]:min-h-0 max-[992px]:pl-[82px] max-[992px]:pb-10 max-[575px]:pl-[70px]"
+                className={`relative mb-[15px] flex w-full last:mb-0 ${
+                  isLeft ? "justify-start" : "justify-end"
+                } max-[767px]:mb-[30px] max-[767px]:block`}
                 key={item.title}
               >
                 <Image
                   alt=""
                   aria-hidden="true"
-                  className="absolute top-0 left-1/2 z-10 size-[52px] -translate-x-1/2 max-[992px]:left-[25px]"
+                  className="absolute top-[90px] left-1/2 z-10 size-[52px] -translate-x-1/2 max-[767px]:top-11 max-[767px]:left-[-4px] max-[767px]:size-10 max-[767px]:translate-x-0"
                   height={52}
                   src={markerSrc}
                   width={52}
                 />
                 <article
-                  className={`flex gap-5 rounded-[10px] bg-white px-8 py-5 shadow-[0_6px_30px_rgba(0,0,0,0.06)] max-[992px]:max-w-none max-[575px]:flex-col max-[575px]:gap-3 max-[575px]:px-5 ${
+                  className={`w-1/2 text-left max-[767px]:w-full max-[767px]:pl-10 ${
                     isLeft
-                      ? "mr-[62px] text-right max-[992px]:mr-0 max-[992px]:text-left"
-                      : "col-start-2 ml-[62px] text-left max-[992px]:ml-0"
+                      ? "pr-12 max-[767px]:pr-0"
+                      : "pl-12 max-[767px]:pl-10"
                   }`}
                 >
                   <Image
                     alt={item.iconAlt}
-                    className={`size-[50px] shrink-0 object-contain ${isLeft ? "order-2 max-[992px]:order-none" : ""}`}
+                    className="mb-2.5 size-[50px] object-contain max-[767px]:mb-0 max-[767px]:size-10"
                     height={50}
                     src={item.icon}
                     width={50}
                   />
-                  <div>
-                    <h3 className="mb-1.5 font-sans text-base font-bold leading-[26px] tracking-[0.32px] text-ink">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm font-medium leading-[24px] text-muted">
-                      {item.description}
-                    </p>
-                  </div>
+                  <h3 className="mb-[5px] font-montreal-medium text-base font-normal leading-[28.8px] text-ink">
+                    {item.title}
+                  </h3>
+                  <p className="font-sans text-base font-medium leading-[27.2px] tracking-[0.02em] text-muted max-[991px]:text-sm max-[991px]:leading-6">
+                    {item.description}
+                  </p>
                 </article>
               </li>
             );

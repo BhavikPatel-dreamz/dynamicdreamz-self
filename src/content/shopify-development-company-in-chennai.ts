@@ -250,7 +250,7 @@ export const shopifyDevelopmentChennaiContent = {
         title: "Discovery and Planning",
         description:
           "It starts with analyzing the client's requirements and the expected result. We create a set of processes that shows what the final Shopify store will do.",
-        icon: "/assets/services/shopify-mobile-app-development/process/strategy-consulting.svg",
+        icon: "/assets/services/shopify-mobile-app-development/process/design_icon.svg",
         iconAlt: "Discovery and Planning Icon",
       },
       {
@@ -258,7 +258,7 @@ export const shopifyDevelopmentChennaiContent = {
         title: "Design and Development",
         description:
           "We believe good design generates good business. As a Shopify store solution provider, we keep things simple and use space. Based on the design, we prepare the Shopify store using the best tools and apps suited to your needs.",
-        icon: "/assets/services/shopify-mobile-app-development/process/ui-ux-design.svg",
+        icon: "/assets/services/shopify-mobile-app-development/process/dnd-icon.svg",
         iconAlt: "Design and Development Icon",
       },
       {
@@ -266,7 +266,7 @@ export const shopifyDevelopmentChennaiContent = {
         title: "Testing and Launch",
         description:
           "Before launching, we conducted rigorous testing of the final Shopify store to make it fully secured and bug free.",
-        icon: "/assets/services/shopify-mobile-app-development/process/testing-qa.svg",
+        icon: "/assets/services/shopify-mobile-app-development/process/post_launch_icon.svg",
         iconAlt: "Testing and Launch Icon",
       },
       {
@@ -274,7 +274,7 @@ export const shopifyDevelopmentChennaiContent = {
         title: "Post-Launch Support",
         description:
           "After your store goes live, we continue to offer support to ensure it runs smoothly. We handle updates, monitor performance, and provide additional assistance you need to keep your store operating at its best.",
-        icon: "/assets/services/shopify-mobile-app-development/process/deployment-support.svg",
+        icon: "/assets/services/shopify-mobile-app-development/process/test_icon.svg",
         iconAlt: "Post-Launch Support Icon",
       },
     ],

@@ -1,8 +1,8 @@
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
-import { ShopifyServicesSection } from "@/components/sections/hire-shopify-developers/shopify-services-section";
+import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ProcessWaveSection } from "@/components/sections/process-wave-section";
@@ -38,7 +38,7 @@ export function ShopifyDevelopmentCompanyInChennaiPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        className="inner-hero-sec single-full-img relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
+        className="inner-hero-sec single-full-img relative overflow-hidden bg-white pt-47.5 pb-13.75 max-[992px]:pt-25"
         content={shopifyDevelopmentChennaiContent.hero}
       />
       <IndustryBrandsSection
@@ -47,33 +47,42 @@ export function ShopifyDevelopmentCompanyInChennaiPage() {
         items={shopifyDevelopmentChennaiContent.brands.items}
       />
       <TextBoxSection
-        className="single-text-box-sec pb-0 pt-20 max-[992px]:pt-[50px]"
+        className="single-text-box-sec pb-0 pt-20 max-[992px]:pt-12.5"
         heading={shopifyDevelopmentChennaiContent.intro.heading}
         paragraphs={shopifyDevelopmentChennaiContent.intro.paragraphs}
       />
       <ShopifyAppBenefitsSection
-        className="benefit_box_sec four-column-text-with-icon-sec pb-0 pt-20 max-[992px]:pt-[50px]"
+        className="benefit_box_sec four-column-text-with-icon-sec pb-0 pt-20 max-[992px]:pt-12.5"
         content={shopifyDevelopmentChennaiContent.benefits}
         id="why-choose-shopify"
       />
-      <ShopifyServicesSection content={servicesContent} />
+      <AgencyServicesSection content={servicesContent} />
       <ProcessWaveSection
-        className="our-process-sec inner-process-sec shopify-development-process relative overflow-hidden py-20 max-[992px]:py-12.5 max-[767px]:py-10"
+        className="pt-0"
         content={shopifyDevelopmentChennaiContent.process}
       />
-      <ShopifyReasonsSection content={reasonsContent} />
+      <ShopifyReasonsSection
+        carouselFullBleed
+        content={reasonsContent}
+        id="why-choose-dynamic-dreamz"
+        layout="carousel"
+      />
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
         content={portfolioContent}
+        eyebrow="PORTFOLIO"
+        eyebrowClassName="mb-4!"
+        headerLayout="split"
+        columns={4}
+        ctaHref="/our-work"
+        ctaLabel="VIEW OUR WORK"
+        variant="liveGrid"
       />
       <HappyClientSection
-        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]"
         description={shopifyDevelopmentChennaiContent.testimonials.description}
         heading={shopifyDevelopmentChennaiContent.testimonials.heading}
         items={shopifyDevelopmentChennaiContent.testimonials.items}
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[992px]:pb-[50px]"
+      <SplitFaqSection
         idPrefix="chennai-faq"
         items={shopifyDevelopmentChennaiContent.faqs}
       />

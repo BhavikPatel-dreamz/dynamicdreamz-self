@@ -15,3 +15,18 @@
   `HappyClientSection` and `HappyClientCarousel`.
 - Existing sections that already provide page-specific items or specialized
   classes were not changed.
+
+## Project-wide default — 2026-09-01
+
+- Owner direction: retire the classic `HappyClientSection` presentation on all
+  current and future pages.
+- The client-stories header, three/two/one-card carousel, video cards, and
+  previous/next controls are now the only section rendering path.
+- Calls without a variant inherit the new design automatically; existing
+  `variant="client-stories"` calls remain source-compatible.
+- Shared fallback content now supplies the `Client Stories` eyebrow and
+  accessible carousel/control labels when a page does not provide its own.
+- Legacy page-level `pt-0` testimonial class overrides are removed so spacing is
+  consistent across all consumers.
+- Page-specific headings, descriptions, testimonial items, and explicit control
+  labels remain unchanged.

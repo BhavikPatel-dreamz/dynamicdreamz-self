@@ -1,6 +1,6 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
@@ -37,7 +37,7 @@ export function WordPressDevelopmentPage() {
           variant="client-stories"
         />
       </div>
-      <FaqSection
+      <SplitFaqSection
         items={wordpressDevelopmentFaqs}
         idPrefix="wordpress-development-faq"
       />

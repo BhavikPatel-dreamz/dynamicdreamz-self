@@ -13,6 +13,19 @@ Browser/source: Google Chrome headless inspection, rendered live page + View Pag
 | 768x1024 (Tablet) | Verified responsive stacking, 420px review wheel centered below hero text, stacked brand section, 2-column service cards, 2-item carousel / 2-column benefit cards, stacked process steps with wave hidden, 2-column advantage grid, 2-column portfolio cards, 2-item testimonial carousel, touch-friendly FAQ accordions, and centered CTA banner. |
 | 390x844 (Mobile) | Verified single-column hero with 275px scaled review wheel, single-column brand section with horizontal slider, single-column service cards, 1-item carousel benefit cards, single-column process steps, 1-column advantage list, single-column portfolio cards, 1-item testimonial carousel, full-width CTA buttons, and stacked banner. |
 
+### Process wave responsive parity update — 2026-09-01
+
+- Reference: owner-provided screenshot of the four-step BigCommerce process wave.
+- Sources rechecked: bundled live `assets/css/services/main.css` and `assets/css/services/media.css` captures listed below.
+- Desktop target: continuous rising wave, four staggered unboxed steps, gradient numbers, white shadowed icon tiles, and left-aligned step copy.
+- Responsive target: hide the decorative wave below 992px; use two unboxed columns through tablet widths and one column below 576px.
+- Interaction and animation: the section is informational with no interactive state; no motion is required.
+- Local screenshots: `/tmp/process-wave-desktop.png` (1440px), `/tmp/process-wave-tablet.png` (768px), and `/tmp/process-wave-mobile.png` (390px).
+- Verification result: desktop wave/marker alignment, tablet two-column flow, mobile single-column flow, typography, icon sizing, and content overflow checked in rendered output.
+- Follow-up spacing adjustment: increased the desktop icon-to-title gap from 10px to 48px so the decorative curve remains visually separated from all step titles.
+- Marker alignment follow-up: moved the desktop wave, step numbers, and icon tiles upward by 16px while keeping titles and descriptions stationary.
+- Remaining differences: browser font rasterization only.
+
 ## Sources Inspected
 
 | Source | What was checked |

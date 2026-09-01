@@ -1,4 +1,4 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { AppTransitionSection } from "@/components/sections/mobile-application/app-transition-section";
 import { ClosingMessageSection } from "@/components/sections/mobile-application/closing-message-section";
@@ -50,11 +50,9 @@ export function MobileApplicationDevelopmentPage() {
       <AppTransitionSection content={mobileApplicationTransition} />
       <ProofCounterSection content={mobileApplicationProof} />
       <QuestionQuoteSection content={mobileApplicationQuestions} />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"
+      <SplitFaqSection
         idPrefix="mobile-application-development-faq"
         items={mobileApplicationDevelopmentFaqs}
-        titleClassName="font-sans text-[32px] leading-[42px] font-bold tracking-[-0.7px] text-ink max-[1199px]:text-[27px] max-[1199px]:leading-[38px] max-[575px]:text-[22px] max-[575px]:leading-8"
       />
       <ClosingMessageSection content={mobileApplicationClosingMessage} />
     </div>

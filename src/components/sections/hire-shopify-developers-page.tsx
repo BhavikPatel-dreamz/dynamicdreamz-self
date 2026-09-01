@@ -1,11 +1,11 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { HiringHeroSection } from "@/components/sections/hiring-hero-section";
 import { HiringProcessSection } from "@/components/sections/hire-wordpress-developers/hiring-process-section";
 import {
   ShopifyAdvantagesSection,
   ShopifyReasonsSection,
 } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
-import { ShopifyServicesSection } from "@/components/sections/hire-shopify-developers/shopify-services-section";
+import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
@@ -45,7 +45,7 @@ export function HireShopifyDevelopersPage() {
       <HiringHeroSection content={hireShopifyHero} />
       <IndustryBrandsSection content={brandSection} />
       <HiringProcessSection content={hireShopifyProcess} showStepNumbers />
-      <ShopifyServicesSection />
+      <AgencyServicesSection />
       <ShopifyReasonsSection />
       <ShopifyAdvantagesSection />
       <IndustriesServedSection content={industriesContent} />
@@ -63,7 +63,7 @@ export function HireShopifyDevelopersPage() {
           variant="client-stories"
         />
       </div>
-      <FaqSection
+      <SplitFaqSection
         items={hireShopifyFaqs}
         idPrefix="hire-shopify-developers-faq"
       />

@@ -14,8 +14,8 @@ export const magentoHeroContent: ServiceHeroContent = {
   image: {
     src: "/assets/magento-to-shopify-migration/magento-to-shopify-migration-hero.svg",
     alt: "Magento to Shopify Migration Image",
-    width: 560,
-    height: 440,
+    width: 469,
+    height: 224,
   },
   reviews: [
     {

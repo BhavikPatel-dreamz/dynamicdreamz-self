@@ -27,6 +27,12 @@ export const sharedUiCopy = {
   faq: {
     heading: "Frequently Asked Questions",
   },
+  testimonials: {
+    eyebrow: "Client Stories",
+    ariaLabel: "Client video testimonials",
+    previous: "Previous testimonial",
+    next: "Next testimonial",
+  },
 } as const;
 
 export const siteChromeCopy = {

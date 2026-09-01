@@ -1,4 +1,4 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { MigrationProcessSection } from "@/components/sections/migration-process-section";
@@ -13,11 +13,10 @@ import {
   ecwidFaqs,
   ecwidHeroContent,
   ecwidProcessContent,
+  ecwidTestimonials,
   ecwidWhyMigrate,
   ecwidMigrationSectionCopy,
 } from "@/content/ecwid-to-shopify-migration";
-import { wixTestimonials } from "@/content/wix-to-shopify-migration";
-import { SplitFaqSection } from "./split-faq-section";
 
 export function EcwidToShopifyMigrationPage() {
   return (
@@ -54,11 +53,11 @@ export function EcwidToShopifyMigrationPage() {
         id="migration-process"
       />
       <HappyClientSection
-        controlsLabels={wixTestimonials.controlsLabels}
+        controlsLabels={ecwidTestimonials.controlsLabels}
         description={ecwidMigrationSectionCopy.testimonialsDescription}
-        eyebrow={wixTestimonials.eyebrow}
+        eyebrow={ecwidTestimonials.eyebrow}
         heading={ecwidMigrationSectionCopy.testimonialsHeading}
-        items={wixTestimonials.items}
+        items={ecwidTestimonials.items}
         variant="client-stories"
       />
       <SplitFaqSection

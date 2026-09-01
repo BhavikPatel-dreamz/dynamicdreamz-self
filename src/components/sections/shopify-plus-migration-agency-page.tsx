@@ -1,4 +1,4 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { MigrationProcessSection } from "@/components/sections/migration-process-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
@@ -58,8 +58,7 @@ export function ShopifyPlusMigrationAgencyPage() {
         heading={plusAgencyWhyChooseDD.heading}
         paragraphs={plusAgencyWhyChooseDD.paragraphs}
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"
+      <SplitFaqSection
         idPrefix="shopify-plus-migration-faq"
         items={plusAgencyFaqs}
       />

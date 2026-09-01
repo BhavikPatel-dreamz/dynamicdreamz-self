@@ -16,8 +16,8 @@ export const squarespaceHeroContent: ServiceHeroContent = {
   image: {
     src: "/assets/squarespace-to-shopify-migration/squarespace-shopify-migration-hero.svg",
     alt: "Squarespace to Shopify Migration Image",
-    width: 560,
-    height: 440,
+    width: 469,
+    height: 224,
   },
   reviews: [
     {

@@ -1,4 +1,4 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { LifeGallerySection } from "@/components/sections/life-dynamicdreamz/life-gallery-section";
 import { LifeHeroSection } from "@/components/sections/life-dynamicdreamz/life-hero-section";
 import { LifeHiringSection } from "@/components/sections/life-dynamicdreamz/life-hiring-section";
@@ -11,14 +11,11 @@ export function LifeDynamicDreamzPage() {
       <LifeHeroSection />
       <WorkCultureSection />
       <LifeHiringSection />
-      <FaqSection
-        className="pt-0 pb-20 max-[992px]:pb-[50px]"
+      <SplitFaqSection
         description={lifeFaqSection.description}
-        headerClassName="mx-auto mb-16 max-w-[470px] text-center max-[1199px]:mb-[30px]"
         heading={lifeFaqSection.title}
         idPrefix="life-faq"
         items={lifeFaqSection.items}
-        titleClassName="mb-6 text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
       />
       <LifeGallerySection />
     </div>
