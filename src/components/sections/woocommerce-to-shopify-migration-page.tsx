@@ -1,4 +1,4 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { MigrationProcessSection } from "@/components/sections/migration-process-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
@@ -36,8 +36,7 @@ export function WooCommerceToShopifyMigrationPage() {
         content={woocommerceProcessContent}
         id="migration-process"
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"
+      <SplitFaqSection
         idPrefix="woocommerce-migration-faq"
         items={woocommerceFaqs}
       />

@@ -8,8 +8,8 @@ export const migratingThemeToOnlineStore20Content = {
     image: {
       src: "/assets/migrating-a-theme-to-online-store-2-0/hero/migrate-store-img.svg",
       alt: "Migrate your Theme to Shopify’s New Online Store 2.0",
-      width: 560,
-      height: 370,
+      width: 469,
+      height: 224,
     },
     reviews: [
       {

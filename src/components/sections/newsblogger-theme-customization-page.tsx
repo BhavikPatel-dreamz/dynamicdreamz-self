@@ -1,6 +1,6 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
-import { ShopifyServicesSection } from "@/components/sections/hire-shopify-developers/shopify-services-section";
+import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ThemeFeaturesSection } from "@/components/sections/theme-customization/theme-features-section";
@@ -47,14 +47,13 @@ export function NewsbloggerThemeCustomizationPage() {
       />
       <ThemeFeaturesSection content={newsbloggerThemeCustomizationContent.features} />
       <ShopifyReasonsSection content={benefitsContent} />
-      <ShopifyServicesSection content={servicesContent} />
+      <AgencyServicesSection content={servicesContent} />
       <ThemeWhyChooseSection content={newsbloggerThemeCustomizationContent.whyChoose} />
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[992px]:py-[50px]"
         content={portfolioContent}
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[992px]:pb-[50px]"
+      <SplitFaqSection
         idPrefix="newsblogger-faq"
         items={newsbloggerThemeCustomizationContent.faqs}
       />

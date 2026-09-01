@@ -14,8 +14,8 @@ export const woocommerceHeroContent: ServiceHeroContent = {
   image: {
     src: "/assets/woocommerce-to-shopify-migration/woocommerce-shopify-migration-hero.svg",
     alt: "WooCommerce to Shopify Migration Image",
-    width: 560,
-    height: 440,
+    width: 469,
+    height: 224,
   },
   reviews: [
     {

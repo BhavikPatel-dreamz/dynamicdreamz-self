@@ -1,5 +1,5 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
@@ -33,7 +33,7 @@ export function WebDesignPage() {
         heading={webDesignTestimonials.heading}
         items={webDesignTestimonials.items}
       />
-      <FaqSection idPrefix="web-design-faq" items={webDesignFaqs} />
+      <SplitFaqSection idPrefix="web-design-faq" items={webDesignFaqs} />
     </div>
   );
 }

@@ -17,8 +17,8 @@ export const wordpressDevelopmentCompanyHero = {
   image: {
     src: `${serviceAssets}/hero/wordpress-development-company.svg`,
     alt: "WordPress website development and customization illustration",
-    width: 446,
-    height: 393,
+    width: 469,
+    height: 224,
   },
   reviews: [
     {
@@ -296,10 +296,26 @@ export const wordpressDevelopmentCompanyProcess = {
 
 export const wordpressDevelopmentCompanyPortfolio = {
   ...wordpressDevelopmentPortfolio,
+  eyebrow: "PORTFOLIO",
   heading: "Our Successful WordPress Projects",
   description:
     "500+ WordPress websites meticulously crafted and counting. Our expertise <br> accelerates growth and redefines shopping experiences for clients, <br> making us the best WordPress development company in India.",
   ctaLabel: "View our work",
+  items: [
+    ...wordpressDevelopmentPortfolio.items,
+    {
+      name: "Awaken Media",
+      image: "/assets/our-work/projects/awaken-media.webp",
+      imageAlt: "Awaken Media project preview",
+      href: "https://www.awaken.media/",
+    },
+    {
+      name: "Budget Maids",
+      image: "/assets/our-work/projects/budget-maids.webp",
+      imageAlt: "Budget Maids project preview",
+      href: "https://www.budget-maids.com/",
+    },
+  ],
 } as const;
 
 export const wordpressDevelopmentCompanyTestimonials = {

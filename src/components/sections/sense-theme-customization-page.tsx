@@ -1,6 +1,6 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
-import { ShopifyServicesSection } from "@/components/sections/hire-shopify-developers/shopify-services-section";
+import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { ThemeFeaturesSection } from "@/components/sections/theme-customization/theme-features-section";
 import { ThemeHeroSection } from "@/components/sections/theme-customization/theme-hero-section";
@@ -46,19 +46,15 @@ export function SenseThemeCustomizationPage() {
         layout="carousel"
         preserveHeadingBreaks
       />
-      <ShopifyServicesSection
+      <AgencyServicesSection
         content={servicesContent}
-        preserveDesktopTypography
-        variant="liveTheme"
       />
       <ThemeWhyChooseSection
         content={senseThemeCustomizationContent.whyChoose}
-        preserveDesktopTypography
         preserveLiveIconSize
         variant="top-icon-mobile"
       />
-      <FaqSection
-        className="faq-sec pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]"
+      <SplitFaqSection
         idPrefix="sense-theme-faq"
         items={senseThemeCustomizationContent.faqs}
       />

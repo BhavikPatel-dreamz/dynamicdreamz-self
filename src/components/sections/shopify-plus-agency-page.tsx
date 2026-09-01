@@ -1,5 +1,5 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
@@ -61,10 +61,9 @@ export function ShopifyPlusAgencyPage() {
         content={portfolioContent}
       />
       <HappyClientSection />
-      <FaqSection
+      <SplitFaqSection
         items={shopifyPlusAgencyFaqs}
         idPrefix="shopify-plus-agency-faq"
-        className="faq-sec pt-0 pb-20"
       />
     </div>
   );

@@ -1,4 +1,4 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { MigrationProcessSection } from "@/components/sections/migration-process-section";
@@ -71,8 +71,7 @@ export function PrestashopToShopifyMigrationPage() {
         items={wixTestimonials.items}
         variant="client-stories"
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"
+      <SplitFaqSection
         idPrefix="prestashop-migration-faq"
         items={prestashopFaqs}
       />

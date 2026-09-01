@@ -1,4 +1,4 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
@@ -64,13 +64,11 @@ export function DentalClinicWebsiteDevelopmentCompanyPage() {
         ctaLabel={dentalClinicWebsiteDevelopmentCompanyContent.sectionCopy.portfolioCta}
       />
       <HappyClientSection
-        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]"
         description={dentalClinicWebsiteDevelopmentCompanyContent.testimonials.description}
         heading={dentalClinicWebsiteDevelopmentCompanyContent.testimonials.heading}
         items={dentalClinicWebsiteDevelopmentCompanyContent.testimonials.items}
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[992px]:pb-[50px]"
+      <SplitFaqSection
         heading={dentalClinicWebsiteDevelopmentCompanyContent.sectionCopy.faqHeading}
         idPrefix="dental-clinic-faq"
         items={dentalClinicWebsiteDevelopmentCompanyContent.faqs}

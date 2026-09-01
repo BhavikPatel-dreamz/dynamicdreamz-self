@@ -1,4 +1,4 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { ShopifyCroAssessmentSection } from "@/components/sections/shopify-cro/shopify-cro-assessment-section";
 import { ShopifyCroBarriersSection } from "@/components/sections/shopify-cro/shopify-cro-barriers-section";
 import { ShopifyCroCtaSection } from "@/components/sections/shopify-cro/shopify-cro-cta-section";
@@ -32,10 +32,9 @@ export function ShopifyCroAgencyPage() {
       <ShopifyCroProcessSection content={shopifyCroProcess} />
       <ShopifyCroWhySection content={shopifyCroWhyDynamicDreamz} />
       <ShopifyCroEngagementSection content={shopifyCroEngagements} />
-      <FaqSection
+      <SplitFaqSection
         items={shopifyCroFaqs}
         idPrefix="shopify-cro-faq"
-        className="faq-sec bg-sky-blue py-20 max-[992px]:py-12"
       />
       <ShopifyCroCtaSection content={shopifyCroBottomCta} />
     </div>

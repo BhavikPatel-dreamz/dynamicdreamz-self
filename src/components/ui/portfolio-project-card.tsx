@@ -53,7 +53,7 @@ function Overlay({ persistent = false }: { persistent?: boolean }) {
   return (
     <span
       className={cn(
-        "pointer-events-none absolute inset-0 z-1 bg-black/40 opacity-0 transition-opacity duration-300 group-hover/project:opacity-100 group-focus/project:opacity-100 group-focus-within/project:opacity-100",
+        "pointer-events-none absolute inset-0 z-1 bg-[linear-gradient(0deg,rgba(0,0,0,0.4)_0%,rgba(0,0,0,0.4)_100%)] opacity-0 transition-opacity duration-300 group-hover/project:opacity-100 group-focus/project:opacity-100 group-focus-within/project:opacity-100",
         persistent && "max-[1199px]:opacity-100",
       )}
       data-project-overlay
@@ -165,6 +165,7 @@ export function PortfolioProjectCard({
               image={image}
               imageAlt={imageAlt}
             />
+            <Overlay />
           </div>
           <div className="mt-2.5 flex items-start justify-between gap-3">
             <div>

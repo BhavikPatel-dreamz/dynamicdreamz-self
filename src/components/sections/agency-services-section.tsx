@@ -3,11 +3,16 @@ import Link from "next/link";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import { shopifyPlusAgencyServices } from "@/content/shopify-plus-agency";
 import { cn } from "@/lib/class-names";
 
 import { formatBrText } from "@/lib/text-formatting";
+
+function removeBreakTags(text: string) {
+  return text.replace(/<br\s*\/?>/gi, " ");
+}
 
 export type AgencyServiceItem = {
   icon: string;
@@ -16,13 +21,14 @@ export type AgencyServiceItem = {
   description: string;
   bullets?: readonly string[];
   href?: string;
+  link?: string;
 };
 
 export type AgencyServicesContent = {
   heading: string;
   description: string;
   items: readonly AgencyServiceItem[];
-  cta: {
+  cta?: {
     label: string;
     href: string;
     ariaLabel?: string;
@@ -31,6 +37,7 @@ export type AgencyServicesContent = {
 
 export type AgencyServicesSectionProps = {
   content?: AgencyServicesContent;
+  variant?: "compact" | "classic";
   headerLayout?: "split" | "centered";
   showDescription?: boolean;
   className?: string;
@@ -43,6 +50,7 @@ export type AgencyServicesSectionProps = {
 
 export function AgencyServicesSection({
   content = shopifyPlusAgencyServices,
+  variant = "compact",
   headerLayout = "split",
   showDescription = true,
   className = "what-we-provide-sec py-20 max-[992px]:py-[50px]",
@@ -52,19 +60,27 @@ export function AgencyServicesSection({
   cardVariant = "default",
   cardBgClassName,
 }: AgencyServicesSectionProps) {
+  const isCompact = variant === "compact";
   const isServicesBox = cardVariant === "services-box";
 
   return (
     <section className={className} data-section="services" id={id}>
       <Container>
-        {headerLayout === "centered" ? (
+        {isCompact ? (
+          <SplitSectionHeading
+            className="mb-[50px] gap-10 max-[992px]:gap-2.5"
+            description={showDescription ? content.description : undefined}
+            heading={content.heading}
+            variant="services"
+          />
+        ) : headerLayout === "centered" ? (
           <div className="heading-text mx-auto max-w-[780px] text-center">
             <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
-              {formatBrText(content.heading, "max-[1199px]:hidden")}
+              {formatBrText(removeBreakTags(content.heading))}
             </h2>
             {showDescription && (
               <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-[25px]">
-                {formatBrText(content.description, "max-[1199px]:hidden")}
+                {formatBrText(removeBreakTags(content.description))}
               </p>
             )}
           </div>
@@ -72,22 +88,23 @@ export function AgencyServicesSection({
           <div className="mb-5 flex items-center justify-between max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:items-start max-[992px]:text-left">
             <div className="w-[calc(41%-30px)] px-[15px] max-[992px]:w-full max-[992px]:p-0">
               <h2 className="m-0 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:mb-2.5">
-                {formatBrText(content.heading, "max-[1199px]:hidden")}
+                {formatBrText(removeBreakTags(content.heading))}
               </h2>
             </div>
             <div className="w-[calc(55%-30px)] px-[15px] max-[992px]:w-full max-[992px]:p-0">
               {showDescription && (
                 <p className="mb-6 max-[992px]:mb-0 text-[18px] font-medium leading-[34.2px] text-muted">
-                  {formatBrText(content.description, "max-[1199px]:hidden")}
+                  {formatBrText(removeBreakTags(content.description))}
                 </p>
               )}
             </div>
           </div>
         )}
-        <div className="mt-[50px]">
+        <div className={isCompact ? "" : "mt-[50px]"}>
           <div className="-mx-2 mb-[25px] flex flex-wrap justify-center">
             {content.items.map((service) => {
-              const hasLink = Boolean(service.href);
+              const serviceHref = service.href ?? service.link;
+              const hasLink = Boolean(serviceHref);
 
               const cardContent = isServicesBox ? (
                 <div
@@ -117,30 +134,51 @@ export function AgencyServicesSection({
               ) : (
                 <div
                   className={cn(
-                    "relative h-full rounded-[10px] border-[1.5px] border-[#d9d9d9] bg-white px-[40px] pt-[45px] pb-[45px] pl-[35px] transition-colors duration-300 ease-in-out group-hover:border-transparent max-[1199px]:p-[30px_20px]",
-                    hasLink && "pb-[85px] max-[1199px]:pb-[70px] max-[767px]:pb-[55px]",
+                    "relative h-full rounded-[10px] transition-colors duration-300 ease-in-out",
+                    isCompact
+                      ? "border border-[rgba(40,40,40,0.08)] bg-[#fafaf7] p-5 max-[767px]:p-[18px]"
+                      : "border-[1.5px] border-[#d9d9d9] bg-white px-[40px] pt-[45px] pb-[45px] pl-[35px] group-hover:border-transparent max-[1199px]:p-[30px_20px]",
+                    hasLink && (isCompact ? "pb-[70px]" : "pb-[85px] max-[1199px]:pb-[70px] max-[767px]:pb-[55px]"),
                   )}
                 >
                   <span
                     aria-hidden="true"
-                    className="absolute -inset-[3px] -z-10 rounded-[10px] bg-gradient-to-r from-[#15c064] to-[#00d1ff] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+                    className={cn(
+                      "absolute -inset-[3px] -z-10 rounded-[10px] bg-gradient-to-r from-[#15c064] to-[#00d1ff] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100",
+                      isCompact && "hidden",
+                    )}
                   />
-                  <div className="icon flex h-[50px] w-[66px] items-center">
-                    <Image
-                      src={service.icon}
-                      alt={service.iconAlt}
-                      width={50}
-                      height={50}
-                    />
+                  <div className={cn(isCompact && "flex items-start gap-4")}>
+                    <div className={cn("icon flex shrink-0 items-center", isCompact ? "size-6 justify-center" : "h-[50px] w-[66px]")}>
+                      <Image
+                        className={isCompact ? "size-6 object-contain" : undefined}
+                        src={service.icon}
+                        alt={service.iconAlt}
+                        width={50}
+                        height={50}
+                      />
+                    </div>
+                    <h3
+                      className={cn(
+                        "tracking-[0.32px] text-ink",
+                        isCompact
+                          ? "m-0 font-montreal-medium text-xl font-normal leading-[28.8px]"
+                          : "mt-[23px] mb-5 font-montserrat text-base font-bold leading-[27px] max-[1199px]:mt-[15px] max-[1199px]:mb-2.5",
+                      )}
+                    >
+                      {service.title}
+                    </h3>
                   </div>
-                  <h3 className="mt-[23px] mb-5 text-base font-bold leading-[27px] tracking-[0.32px] text-ink max-[1199px]:mt-[15px] max-[1199px]:mb-2.5 font-montserrat">
-                    {service.title}
-                  </h3>
-                  <p className="mt-5 text-base font-medium leading-[27px] tracking-[0.32px] text-[#535353]">
+                  <p
+                    className={cn(
+                      "font-sans tracking-[0.32px] text-[#535353]",
+                      isCompact ? "mt-2 pl-10 text-sm font-normal leading-6" : "mt-5 text-base font-medium leading-[27px]",
+                    )}
+                  >
                     {service.description}
                   </p>
                   {service.bullets && service.bullets.length > 0 && (
-                    <ul className="mt-6 border-t border-[#d9d9d9] pt-6 font-sans text-base font-semibold leading-[27.2px] tracking-[0.32px] text-[#535353]">
+                    <ul className={cn("mt-6 border-t border-[#d9d9d9] pt-6 font-sans text-base font-semibold leading-[27.2px] tracking-[0.32px] text-[#535353]", isCompact && "ml-[42px] max-[767px]:ml-0")}>
                       {service.bullets.map((bullet, idx) => (
                         <li
                           className="mb-4 flex items-center gap-3.5 text-base font-semibold leading-[27.2px] text-[#535353] last:mb-0"
@@ -186,20 +224,19 @@ export function AgencyServicesSection({
                   ? "w-1/4 max-[992px]:w-1/2 max-[767px]:w-full"
                   : columns === 3
                     ? "w-1/3 max-[992px]:w-1/2 max-[767px]:w-full"
-                    : "w-1/2 max-[991px]:w-full";
+                    : "w-1/2 max-[992px]:w-full";
 
               return (
                 <div
                   className={cn(
-                    isServicesBox
-                      ? "px-2 mb-4"
-                      : "group px-2 pb-6 transition-transform duration-300 ease-in-out hover:-translate-y-2.5",
+                    "px-2",
+                    isServicesBox ? "mb-4" : "group pb-6 transition-transform duration-300 ease-in-out hover:-translate-y-2.5",
                     colClass,
                   )}
                   key={service.title}
                 >
-                  {service.href ? (
-                    <Link href={service.href} className="block h-full">
+                  {serviceHref ? (
+                    <Link href={serviceHref} className="block h-full">
                       {cardContent}
                     </Link>
                   ) : (
@@ -209,7 +246,7 @@ export function AgencyServicesSection({
               );
             })}
           </div>
-          {!hideCta && (
+          {!hideCta && content.cta && (
             <div className="text-center">
               <ButtonLink
                 aria-label={content.cta.ariaLabel}

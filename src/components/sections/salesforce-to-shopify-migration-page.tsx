@@ -1,4 +1,3 @@
-import { FaqSection } from "@/components/sections/faq-section";
 import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { MigrationProcessSection } from "@/components/sections/migration-process-section";

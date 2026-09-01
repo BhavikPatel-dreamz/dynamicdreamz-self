@@ -1,10 +1,10 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
 import {
   ShopifyAdvantagesSection,
   ShopifyReasonsSection,
 } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
-import { ShopifyServicesSection } from "@/components/sections/hire-shopify-developers/shopify-services-section";
+import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
@@ -121,7 +121,7 @@ export function WordPressThemeCustomizationPage() {
         heading={wordPressThemeCustomizationContent.brands.title}
         items={wordPressThemeCustomizationContent.brands.items}
       />
-      <ShopifyServicesSection content={servicesContent} />
+      <AgencyServicesSection content={servicesContent} />
       <ShopifyAdvantagesSection
         columns={2}
         content={whyNeedContent}
@@ -142,13 +142,11 @@ export function WordPressThemeCustomizationPage() {
         content={portfolioContent}
       />
       <HappyClientSection
-        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]"
         description={wordPressThemeCustomizationContent.testimonials.description}
         heading={wordPressThemeCustomizationContent.testimonials.heading}
         items={wordPressThemeCustomizationContent.testimonials.items}
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[992px]:pb-[50px]"
+      <SplitFaqSection
         heading={wordPressThemeCustomizationContent.faqHeading}
         idPrefix="wordpress-theme-customization-faq"
         items={wordPressThemeCustomizationFaqs}

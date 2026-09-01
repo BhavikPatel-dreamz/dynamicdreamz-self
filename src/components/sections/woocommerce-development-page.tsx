@@ -1,5 +1,5 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
@@ -28,8 +28,7 @@ export function WooCommerceDevelopmentPage() {
         heading={woocommerceDevelopmentTestimonials.heading}
         items={woocommerceDevelopmentTestimonials.items}
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20"
+      <SplitFaqSection
         idPrefix="woocommerce-dev-faq"
         items={woocommerceDevelopmentFaqs}
       />

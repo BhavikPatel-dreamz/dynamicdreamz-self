@@ -1,4 +1,4 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PartnerWhyChooseSection } from "@/components/sections/magento-to-shopify-plus/partner-why-choose-section";
 import { WhatDataTransferSection } from "@/components/sections/magento-to-shopify-plus/what-data-transfer-section";
@@ -48,8 +48,7 @@ export function MagentoToShopifyPlusMigrationPage() {
         content={magentoPlusWhyChooseContent}
         id="why-choose-dynamic-dreamz"
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"
+      <SplitFaqSection
         idPrefix="magento-plus-migration-faq"
         items={magentoPlusFaqs}
       />

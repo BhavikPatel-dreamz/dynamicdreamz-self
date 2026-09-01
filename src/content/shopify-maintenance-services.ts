@@ -14,8 +14,8 @@ export const shopifyMaintenanceServicesContent = {
     image: {
       src: "/assets/shopify-maintenance-services/hero/shopify-maintenance-service-img.webp",
       alt: "Shopify Maintenance Service Image",
-      width: 467,
-      height: 351,
+      width: 469,
+      height: 224,
     },
     reviews: [
       {

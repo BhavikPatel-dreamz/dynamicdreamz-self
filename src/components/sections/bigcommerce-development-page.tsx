@@ -1,6 +1,6 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import {
   ShopifyAdvantagesSection,
   ShopifyReasonsSection,
@@ -62,7 +62,7 @@ export function BigCommerceDevelopmentPage() {
         heading={bigCommerceDevelopmentTestimonials.heading}
         items={bigCommerceDevelopmentTestimonials.items}
       />
-      <FaqSection
+      <SplitFaqSection
         idPrefix="bigcommerce-faq"
         items={bigCommerceDevelopmentFaqs}
       />

@@ -4,8 +4,19 @@ import type { MigrationProcessContent } from "@/components/sections/migration-pr
 import type { ProofSectionContent } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
 import type { TwoColCenterImageContent } from "@/components/sections/two-col-center-image-section";
+import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export { migrationSectionCopy as ecwidMigrationSectionCopy } from "@/content/migration-common";
+
+export const ecwidTestimonials = {
+  eyebrow: "Client Stories",
+  items: shopifyPlusAgencyTestimonials.items.slice(5),
+  controlsLabels: {
+    ariaLabel: "Ecwid to Shopify migration client video testimonials",
+    previous: "Show previous client testimonial",
+    next: "Show next client testimonial",
+  },
+} as const;
 
 export const ecwidHeroContent: ServiceHeroContent = {
   title: "Ecwid to Shopify Migration Service",

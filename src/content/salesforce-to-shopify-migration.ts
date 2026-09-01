@@ -16,8 +16,8 @@ export const salesforceHeroContent: ServiceHeroContent = {
   image: {
     src: "/assets/salesforce-to-shopify-migration/salesforce-shopify-migration-hero.svg",
     alt: "Salesforce to Shopify Migration Service Image",
-    width: 560,
-    height: 440,
+    width: 469,
+    height: 224,
   },
   reviews: [
     {

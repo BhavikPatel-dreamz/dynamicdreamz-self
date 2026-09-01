@@ -1,5 +1,5 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
@@ -100,9 +100,7 @@ export function ShopifyThemeCustomizationPage() {
       />
       <AgencyServicesSection
         className="what-we-provide-sec pt-20 pb-0 max-[992px]:pt-[50px]"
-        columns={3}
         content={servicesContent}
-        headerLayout="centered"
         hideCta
         id="what-we-provide"
       />
@@ -139,7 +137,7 @@ export function ShopifyThemeCustomizationPage() {
           variant="client-stories"
         />
       </div>
-      <FaqSection
+      <SplitFaqSection
         idPrefix="shopify-theme-customization-faq"
         items={shopifyThemeCustomizationContent.faqs.items}
       />

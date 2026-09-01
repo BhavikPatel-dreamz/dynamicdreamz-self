@@ -1,6 +1,6 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ProcessWaveSection } from "@/components/sections/process-wave-section";
@@ -25,7 +25,6 @@ export function WordPressDevelopmentCompanyPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        bodyClassName="min-[1200px]:!text-lg min-[1200px]:!leading-[34.2px]"
         content={wordpressDevelopmentCompanyHero}
         imageClassName="!max-w-[446px]"
         leftColClassName="left-col w-[55.7%] max-[1199px]:w-full max-[1199px]:text-center"
@@ -39,11 +38,11 @@ export function WordPressDevelopmentCompanyPage() {
       />
       <AgencyServicesSection
         content={wordpressDevelopmentCompanyServices}
-        headerLayout="centered"
         hideCta
         id="wordpress-development-services"
       />
       <ShopifyReasonsSection
+        carouselFullBleed
         content={wordpressDevelopmentCompanyReasons}
         id="why-choose-dynamic-dreamz"
         layout="carousel"
@@ -57,13 +56,14 @@ export function WordPressDevelopmentCompanyPage() {
         content={wordpressDevelopmentCompanyPortfolio}
         ctaHref={wordpressDevelopmentCompanyPortfolio.ctaHref}
         ctaLabel={wordpressDevelopmentCompanyPortfolio.ctaLabel}
+        variant="liveGrid"
       />
       <HappyClientSection
         description={wordpressDevelopmentCompanyTestimonials.description}
         heading={wordpressDevelopmentCompanyTestimonials.heading}
         items={wordpressDevelopmentCompanyTestimonials.items}
       />
-      <FaqSection
+      <SplitFaqSection
         idPrefix="wordpress-development-company-faq"
         items={wordpressDevelopmentCompanyFaqs}
       />

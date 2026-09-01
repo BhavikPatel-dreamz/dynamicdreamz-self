@@ -1,4 +1,4 @@
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { HiringHeroSection } from "@/components/sections/hiring-hero-section";
 import { HiringProcessSection } from "@/components/sections/hire-wordpress-developers/hiring-process-section";
 import {
@@ -53,7 +53,7 @@ export function HireWordPressDevelopersPage() {
           variant="client-stories"
         />
       </div>
-      <FaqSection
+      <SplitFaqSection
         items={hireWordPressFaqs}
         idPrefix="hire-wordpress-developers-faq"
       />

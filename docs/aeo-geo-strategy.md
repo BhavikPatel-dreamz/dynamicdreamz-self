@@ -717,7 +717,7 @@ navigation while removing WordPress runtime dependencies.
 Status: technical and live-section refresh implemented; visible AEO copy remains
 deferred and live wording is preserved
 
-Last reviewed: 2026-08-24
+Last reviewed: 2026-09-01
 
 Owner: SEO, content, development, leadership, and client success
 
@@ -2389,7 +2389,7 @@ The legacy route is retained canonically as `/wordpress-development-company`.
 
 - The live page has a direct commercial H1, two-paragraph service summary, nine
   service cards, six provider-selection cards, eight platform-benefit entries,
-  four delivery steps, six project examples, eleven video testimonials, eight
+  four delivery steps, eight project examples, eleven video testimonials, eight
   buyer FAQs, and quote CTAs.
 - Existing local assets and shared components already cover client logos,
   review marks, service icons, project imagery, testimonial media, portfolio,
@@ -2404,6 +2404,7 @@ The legacy route is retained canonically as `/wordpress-development-company`.
 | P0 | implemented | Route and discovery | The requested legacy route was not implemented locally. | Added the canonical slashless route, sitemap entry, metadata, and matching page graph. | Verified in rendered HTML, sitemap generation, URL-policy check, and production build. |
 | P0 | implemented | Structured data | Legacy Yoast output was generic and contained unrelated Shopify FAQ/entity data. | Emitted WebPage, Service, BreadcrumbList, FAQPage, and eleven visible VideoObject nodes linked to the shared Organization/WebSite graph. | Verified rendered JSON-LD against the visible page content. |
 | P1 | implemented | Media and rendering | The legacy page depended on remote WordPress assets and client-rendered carousels. | Used deduplicated local assets, explicit dimensions, server-rendered content, and minimal client islands only for slider, drag, dialog, menu, and accordion behavior. | Zero-duplicate asset audit, source scan, responsive screenshots, and interaction checks completed. |
+| P1 | implemented | Portfolio evidence | The project showcase exposed only six examples and used a generic centered presentation. | Restored the eight visible WordPress examples in a semantic, server-rendered 4/2/1 grid with descriptive image alternatives, external-link semantics, and keyboard-equivalent hover feedback. | Desktop, tablet, and mobile render checks completed; external destinations retained from approved local content. |
 | P1 | deferred | Proof provenance | `500+ WordPress websites` and testimonial outcome claims lack a documented public evidence owner. | Link approved project evidence and define claim provenance in the shared fact-governance process. | Leadership and client-success approval. |
 | P1 | deferred | Overlapping intent | `/wordpress-development` and `/wordpress-development-company` target closely related commercial queries. | Document a canonical intent map and decide whether both pages remain distinct before launch. | SEO owner decision supported by search/traffic data. |
 | P2 | deferred | Visible copy quality | Live headings and paragraphs include awkward grammar, unsupported superlatives, and small inconsistencies. | Use the exact approval-ready proposals in `docs/page-content-improvements.md`; preserve live copy until approved. | Project-owner approval of each visible replacement. |

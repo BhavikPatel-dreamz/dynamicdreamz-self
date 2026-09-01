@@ -1,5 +1,5 @@
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import {
   ShopifyAdvantagesSection,
   ShopifyReasonsSection,
@@ -63,7 +63,7 @@ export function ShopifyExpertsPage() {
           description={shopifyExpertsContent.testimonials.description}
         />
       </div>
-      <FaqSection
+      <SplitFaqSection
         items={shopifyExpertsContent.faqs}
         idPrefix="shopify-experts-faq"
       />
