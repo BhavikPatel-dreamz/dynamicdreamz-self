@@ -20,7 +20,6 @@ export default function robots(): MetadataRoute.Robots {
   }
 
   const caseStudyPaths = caseStudyDetails.map((caseStudy) => `/case-studies/${caseStudy.slug}`);
-
   return {
     rules: {
       userAgent: "*",

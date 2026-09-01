@@ -17,13 +17,55 @@ export type BlogCardItem = {
 
 type BlogCardProps = {
   item: BlogCardItem;
-  variant: "home" | "resources";
+  variant: "home" | "resources" | "archive";
   isLast?: boolean;
 };
 
 export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
   const category = item.category ?? "Shopify";
   const categoryHref = item.categoryHref ?? "/category/shopify";
+
+  if (variant === "archive") {
+    return (
+      <article className="group/archive-card h-full pb-[25px]">
+        <div
+          className="mb-[15px] flex overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.12)]"
+          data-blogs-image
+        >
+          <Link className="relative block w-full pb-[65.226%]" href={item.href}>
+            <Image
+              className="object-cover object-top"
+              src={item.image}
+              alt={item.title}
+              fill
+              sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 991px) calc((100vw - 64px) / 2), (max-width: 1399px) calc((100vw - 72px) / 3), 430px"
+            />
+          </Link>
+        </div>
+        <div className="-mx-1 mb-[9px] flex flex-wrap items-center">
+          <Link className="inline-flex" href={categoryHref}>
+            <span
+              className="mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-medium text-muted uppercase transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:px-[7.5px] max-[767px]:py-[3.5px] max-[767px]:text-[10px] max-[767px]:leading-[1.48] max-[767px]:tracking-[0.2px]"
+              data-blogs-meta
+            >
+              {category}
+            </span>
+          </Link>
+          <time
+            className="mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-medium text-muted uppercase max-[767px]:px-[7.5px] max-[767px]:py-[3.5px] max-[767px]:text-[10px] max-[767px]:leading-[1.48] max-[767px]:tracking-[0.2px]"
+            dateTime={item.date}
+          >
+            {item.displayDate}
+          </time>
+        </div>
+        <h3 className="font-display text-lg leading-[30px] font-medium text-ink max-[1199px]:text-base max-[1199px]:leading-[25px]" data-blogs-title>
+          <Link className="group-hover/archive-card:underline hover:underline focus-visible:underline" href={item.href}>
+            {item.title}
+          </Link>
+        </h3>
+      </article>
+    );
+  }
 
   if (variant === "resources") {
     return (

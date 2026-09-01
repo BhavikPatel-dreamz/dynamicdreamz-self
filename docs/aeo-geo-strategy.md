@@ -578,6 +578,53 @@ revenue opportunities.
 
 ## Page-Wise Improvements for Currently Built Routes
 
+## Blogs (`/blogs`)
+
+Status: implemented and verified; live-visible archive content and layout preserved
+Last reviewed: 2026-09-01
+
+### Page role and audience
+
+- Role: indexable article archive and discovery page for Dynamic Dreamz's Shopify, WordPress, and ecommerce guidance.
+- Audience: ecommerce founders, merchant teams, developers, and digital agencies researching platform, migration, CRO, SEO, design, and delivery topics.
+- Decision stage: primarily awareness and consideration, with paths into commercial service and enquiry routes through the shared site navigation.
+
+### Target prompts
+
+- What ecommerce and Shopify topics does Dynamic Dreamz publish about?
+- Where can I find Dynamic Dreamz Shopify, WordPress, and ecommerce articles?
+- What are the latest Dynamic Dreamz ecommerce insights?
+
+### Current evidence and strengths
+
+- The live archive exposes article titles, categories, publication dates, and descriptive thumbnail images in crawlable HTML.
+- The first archive page contains nine current posts and clear links to article detail pages.
+- The repository owns local copies of all 84 archive thumbnails, including 16 assets ingested through the scratch comparison buffer.
+- The live page includes CollectionPage and BreadcrumbList intent, but it does not describe the visible article list as an ItemList.
+
+### Recommendations and status
+
+| Priority | Status | Area | Recommendation | Verification / dependency |
+| --- | --- | --- | --- | --- |
+| P0 | implemented | Technical discovery | Ship `/blogs` as a server-rendered, indexable archive with unique metadata, a slashless canonical, breadcrumb schema, CollectionPage schema, and an ItemList matching the nine visible cards. | Verified server-rendered source, metadata, page-specific schema, sitemap, robots, URL policy, lint, and production build on 2026-09-01. |
+| P0 | migration pending | Article coverage | Migrate or redirect every linked `/blogs/<slug>` article before launch. | Article routes are outside this archive-page task and remain planned migration links. |
+| P1 | implemented | Internal discovery | Preserve the visible search and category controls while giving them functional, crawl-safe archive query behavior instead of the live page's `#` category destinations. | Query and category filters are server-rendered, preserve the default appearance, and keep slashless `/blogs` canonical output. |
+| P1 | implemented | Pagination | Preserve the visible page-two, page-three, and page-ten discovery intent while keeping the archive on one Next.js route with query pagination. | Query URLs `/blogs?page=2` through `/blogs?page=10` render the complete 84-post inventory; legacy `/blogs/page/N` URLs redirect to the query form. |
+| P1 | blocked | Authorship and evidence | Add governed author/editor identity and review standards to article detail pages, not the archive, when accurate editorial ownership is approved. | Requires content-governance and author evidence. |
+| P2 | suggested | Measurement | Track archive search, category selection, article-card clicks, and assisted enquiry paths without loading unapproved third-party scripts. | Requires analytics approval and event naming. |
+
+### Initial acceptance target
+
+- Preserve the live H1, category labels, first-page article inventory, dates, section order, card layout, responsive behavior, and default visual states.
+- Use project-owned assets only and keep all primary archive content server rendered.
+- Record any visible copy recommendation in `docs/page-content-improvements.md` rather than changing the migrated UI implicitly.
+
+### Verification result
+
+- The archive renders nine cards on `/blogs`, nine cards on pages 2–9, and three cards on page 10. Search, Shopify/WordPress/eCommerce filters, the hidden Big-Commerce category link, and no-result output were verified locally.
+- Metadata emits the live title and description with a slashless /blogs canonical and local Open Graph/Twitter imagery. CollectionPage, BreadcrumbList, and ItemList JSON-LD are emitted for the single archive route with page-aware positions.
+- Local desktop, tablet, and mobile captures match the live first viewport; all 84 thumbnail references resolve to project-owned assets and the repository-wide duplicate audit reports zero hash groups.
+
 ## Home (`/`)
 
 Status: technical and live-section refresh implemented; visible AEO copy remains
@@ -8213,7 +8260,4 @@ Owner: SEO, content, design, and engineering
 - Local desktop, tablet, mobile, open-panel, open-drawer, and scroll-up comparisons are recorded in `docs/visual-captures/header.md` and `docs/visual-captures/header/`.
 - The navigation uses only project-owned SVG assets. The live site is not a runtime data, image, script, or CDN dependency.
 - No new schema claim was introduced by the header update. Visible terminology recommendations remain deferred until exact copy is approved.
-
-
-
 

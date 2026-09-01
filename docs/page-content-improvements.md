@@ -143,6 +143,21 @@ work-life balance, inclusive workplace, and employee experience.
 | Remote-work FAQ | Live answer says permanent work from home is unavailable, with case-specific exceptions. | Dynamic Dreamz generally does not offer permanent work from home because teams primarily collaborate from the office. Temporary work-from-home arrangements may be considered in special circumstances under current company policy. | Preserves policy meaning in clearer language. | High | deferred; reverted to live copy on 2026-08-13 |
 | Health and wellbeing FAQ | We have setup a recreational zone... Fuss ball... For health point of view... | Dynamic Dreamz has a recreation zone with indoor games such as carrom, foosball, darts, and cards. A treadmill and Android TV are also available so employees can take a break and recharge. | Corrects grammar and spelling without changing the listed facilities. | Low | deferred; reverted to live copy on 2026-08-13 |
 
+## Blogs (`/blogs`)
+
+Status: visible recommendations deferred; live archive wording preserved
+Last reviewed: 2026-09-01
+Primary SEO intent: Dynamic Dreamz blog, Shopify insights, WordPress guidance,
+ecommerce trends, and platform migration education.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Archive introduction | The live archive begins directly with search and filters and has no answer-first summary. | Add a concise approved summary describing the archive's Shopify, WordPress, ecommerce, migration, SEO, CRO, and agency topics. | Gives answer engines and first-time visitors clear topical context without relying only on card titles. | Medium | deferred pending exact visible-copy approval |
+| Article authorship | Cards expose title, category, and date but no approved author or reviewer. | Add governed author/reviewer identity and expertise to article detail pages during article migration. | Supports attributable expertise and citation quality without inventing people or credentials. | High | deferred to article migration |
+| Taxonomy | Visible filters expose Shopify, WordPress, and eCommerce while one archived post uses the Big-Commerce category. | Approve a visible BigCommerce taxonomy treatment or redirect its category destination to an owned landing page. | Prevents a hidden taxonomy branch from becoming a dead-end navigation path. | Medium | deferred pending taxonomy decision |
+| Article routes | Archive cards link to 84 article paths that are outside this page migration. | Migrate each article route or add an approved redirect before launch. | Prevents broken internal links and preserves legacy search equity. | High | migration pending |
+| Archive pagination | The live archive exposes ten pages of posts. | Keep the current ten-page query archive and review canonical, freshness, and pagination policy during article migration. | Keeps discovery complete while article details are migrated in phases. | Medium | implemented for archive; review deferred |
+
 ## Resources (`/resources`)
 
 Status: visible recommendations deferred; live UI restored

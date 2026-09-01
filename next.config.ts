@@ -37,6 +37,31 @@ const nextConfig: NextConfig = {
         destination: "/case-studies/:slug*",
         permanent: true,
       },
+      {
+        source: "/blogs/page/:page",
+        destination: "/blogs?page=:page",
+        permanent: true,
+      },
+      {
+        source: "/blogs/category/shopify",
+        destination: "/blogs?category=shopify",
+        permanent: true,
+      },
+      {
+        source: "/blogs/category/wordpress",
+        destination: "/blogs?category=wordpress",
+        permanent: true,
+      },
+      {
+        source: "/blogs/category/ecommerce",
+        destination: "/blogs?category=ecommerce",
+        permanent: true,
+      },
+      {
+        source: "/blogs/category/big-commerce",
+        destination: "/blogs?category=big-commerce",
+        permanent: true,
+      },
     ];
   },
 };

@@ -34,6 +34,7 @@ import {
 } from "@/content/career";
 import { lifeFaqSection } from "@/content/life-dynamicdreamz";
 import { resourceArticles } from "@/content/resources";
+import { blogArchiveArticles, type BlogArchiveArticle } from "@/content/blogs";
 import {
   shopifyPlusAgencyFaqs,
   shopifyPlusAgencyServices,
@@ -1214,6 +1215,90 @@ export function createResourcesPageSchema() {
         uploadDate: companyVideoUploadDate,
         ...youTubeUrls(companyVideoId),
       }),
+    ],
+  };
+}
+
+type BlogsPageSchemaOptions = {
+  pagePath?: string;
+  itemOffset?: number;
+};
+
+export function createBlogsPageSchema(
+  articles: readonly BlogArchiveArticle[] = blogArchiveArticles,
+  options: BlogsPageSchemaOptions = {},
+) {
+  const pagePath = options.pagePath ?? pageSeo.blogs.path;
+  const pageUrl = absoluteUrl(pagePath);
+  const pageId = pageUrl + "#webpage";
+  const breadcrumbId = pageUrl + "#breadcrumb";
+  const itemListId = pageUrl + "#articles";
+  const itemOffset = options.itemOffset ?? 0;
+  const articleItems = articles.map((article, index) => ({
+    "@type": "ListItem",
+    position: itemOffset + index + 1,
+    item: {
+      "@type": "BlogPosting",
+      "@id": absoluteUrl(article.href),
+      url: absoluteUrl(article.href),
+      headline: article.title,
+      datePublished: article.date,
+      image: absoluteUrl(article.image),
+      articleSection: article.category,
+      publisher: { "@id": organizationId },
+      inLanguage: "en-US",
+    },
+  }));
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": pageId,
+        url: pageUrl,
+        name: pageSeo.blogs.title,
+        description: pageSeo.blogs.description,
+        datePublished: pageSeo.blogs.publishedTime,
+        dateModified: pageSeo.blogs.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": breadcrumbId },
+        mainEntity: { "@id": itemListId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.blogs.image.path),
+          width: pageSeo.blogs.image.width,
+          height: pageSeo.blogs.image.height,
+          caption: pageSeo.blogs.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": breadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          { "@type": "ListItem", position: 2, name: "Blogs", item: pageUrl },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        "@id": itemListId,
+        name: pageSeo.blogs.title,
+        itemListOrder: "https://schema.org/ItemListOrderDescending",
+        numberOfItems: articles.length,
+        itemListElement: articleItems,
+      },
     ],
   };
 }

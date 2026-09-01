@@ -196,6 +196,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  blogs: {
+    path: "/blogs",
+    title: "IT Services Blogs, Insights & Tips | Dynamic Dreamz Blog",
+    description:
+      "Explore the Dynamic Dreamz Blog for the latest IT trends, expert tips, and industry insights to help grow your online business effectively.",
+    keywords: [
+      "Dynamic Dreamz blog",
+      "IT services blogs",
+      "Shopify blog",
+      "WordPress tips",
+      "ecommerce insights",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-02T09:11:03+00:00",
+    modifiedTime: "2026-08-10T13:26:39+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Dynamic Dreamz ecommerce, Shopify and WordPress blog",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   contact: {
     path: "/contact-us",
     title: "Contact Dynamic Dreamz | Expert Web Solutions Provider",
