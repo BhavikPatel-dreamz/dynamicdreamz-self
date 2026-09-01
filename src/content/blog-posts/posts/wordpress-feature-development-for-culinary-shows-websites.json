@@ -1,0 +1,62 @@
+{
+  "slug": "wordpress-feature-development-for-culinary-shows-websites",
+  "title": "WordPress Feature Development for Culinary Shows Websites",
+  "date": "2024-08-29",
+  "displayDate": "August 29, 2024",
+  "modified": "2025-01-15T15:49:29",
+  "category": "WordPress",
+  "categoryValue": "wordpress",
+  "categoryHref": "/blogs?category=wordpress",
+  "featuredImage": {
+    "src": "/assets/blog/wordpress-feature-development-for-culinary-shows-websites.webp",
+    "width": 1316,
+    "height": 948,
+    "alt": "WordPress Feature Development for Culinary Shows Websites Image"
+  },
+  "excerpt": "We all have seen the culinary and cooking process and photos on different websites. on these websites, the narration of the cooking process while the entire process is shown and ingredients are listed on the screen. The Issue: There are quite a few websites and online culinary communities on which the users across the world [...]",
+  "author": {
+    "name": "Tejal Parekh",
+    "role": "Sr. SEO Expert",
+    "bio": "Tejal Parekh is a seasoned Senior SEO Expert with a proven track record of driving organic growth for businesses across diverse industries. With a deep understanding of search engine algorithms and a passion for digital marketing, Tejal brings a wealth of expertise to Dynamic Dreamz.",
+    "image": "/assets/blog/authors/tejal-parekh-img.webp",
+    "linkedin": "https://in.linkedin.com/in/tejal-parekh-814310206"
+  },
+  "contentBeforeToc": "<p>We all have seen the culinary and cooking process and photos on different websites. on these websites, the narration of the cooking process while the entire process is shown and ingredients are listed on the screen.</p>",
+  "contentAfterToc": "<h2 id=\"The_Issue\">The Issue:</h2>\n<p>There are quite a few websites and online culinary communities on which the users across the world post a variety of recipes and cuisine. One of our clients ran such a website developed in WordPress. Generally, on that site the users post a writeup of the cooking process and photos of a recipe. The users can be from any corner of the world. Many times, there are users who are not comfortable in writing the prerequisites, cooking process and ingredients of the recipe. This would make such users unable to post their scrumptious recipes. It makes no sense to post recipes without its cooking process and ingredients. Only Photos will not serve the purpose.</p>\n<p>To overcome this issue, The client approached us to come up with a solution so that their users can get the information about ingredients and the cooking process.</p>\n<h2 id=\"Search_for_the_solution\">Search for the solution:</h2>\n<p>Our <b>expert WordPress developers </b>discussed the issue with our client and obtained the detailed requirements. <b><i>Here the core issue was the inability of the users to write the cooking process in a concise form.</i></b> Our <a href=\"/wordpress-development\"><b>WordPress web development</b></a> team had a brainstorming meeting and several solutions were suggested. WordPress is a robust and flexible eCommerce platform that allows developers to develop tailored features based on client’s requirements.</p>\n<h2 id=\"The_Solution\">The Solution:</h2>\n<p>Finally our team came up with a solution. We developed a customized feature (tool) in WordPress. If any user who is not good at writing, she/ he has to upload photos of the cooking process and ingredients in proper sequence in a given form. Then our WP tool will scan those photos. After scanning the tool will display the writeup and the list of ingredients on screen. Users can go through the content and if she/ he wants to edit the content she/he can else post it as it is if found perfect.</p>\n<p>Our <a href=\"/hire-wordpress-developers\"><b>expert WordPress developers</b></a> developed a tailored feature using WordPress unmatched functionalities. Our agile quality assurers did a rigorous testing of the tool with no. of photos/ images and a thorough quality check, the tool was implemented on the website.</p>\n<h2 id=\"Outcome\">Outcome:</h2>\n<p>The client found the solution satisfactory. Many users started using this feature and found it easy to use and it was applauded by the users.</p>\n<p>Located in India, Dynamic Dreamz is a prominent ecommerce development agency using the WordPress platform with 18+ years of rich experience in WordPress development. Apart from that we provide the <a href=\"/white-label-wordpress-development-services\">White Label WordPress Development</a> services.</p>",
+  "toc": [
+    {
+      "label": "The Issue:",
+      "href": "#The_Issue",
+      "level": 2
+    },
+    {
+      "label": "Search for the solution:",
+      "href": "#Search_for_the_solution",
+      "level": 2
+    },
+    {
+      "label": "The Solution:",
+      "href": "#The_Solution",
+      "level": 2
+    },
+    {
+      "label": "Outcome:",
+      "href": "#Outcome",
+      "level": 2
+    }
+  ],
+  "faqs": [],
+  "previous": {
+    "slug": "top-5-shopify-themes-for-the-fashion-and-beauty-industry-in-2024",
+    "title": "Top 5 Shopify Themes For The Fashion And Beauty Industry In 2024"
+  },
+  "next": {
+    "slug": "shopify-launch-checklist",
+    "title": "Shopify Launch Checklist: Ultimate Guide for a Successful Store"
+  },
+  "seo": {
+    "title": "WordPress Development | Custom WordPress Development | Ex...",
+    "description": "Discover the latest WordPress feature with Dynamic Dreamz, designed to enhance your website's performance and user experience. Learn about its benefits..."
+  },
+  "wordCount": 455
+}

@@ -18,6 +18,8 @@ import {
   salesforceWhyMigrate,
   salesforceMigrationSectionCopy,
 } from "@/content/salesforce-to-shopify-migration";
+import { wixTestimonials } from "@/content/wix-to-shopify-migration";
+import { SplitFaqSection } from "./split-faq-section";
 
 export function SalesforceToShopifyMigrationPage() {
   return (
@@ -40,9 +42,10 @@ export function SalesforceToShopifyMigrationPage() {
         text={salesforceWhyMigrate.text}
       />
       <ShopifyReasonsSection
-        className="shopify-customization-services-sec mb-0 py-20 max-[767px]:py-[60px]"
+        carouselFullBleed
         content={salesforceBenefitsContent}
         id="benefits-of-moving"
+        layout="carousel"
       />
       <TwoColCenterImageSection
         content={salesforceConsiderationsContent}
@@ -53,16 +56,19 @@ export function SalesforceToShopifyMigrationPage() {
         id="migration-process"
       />
       <ThemeWhyChooseSection
-        className="why_dynamic_dreamz_sec dev mb-20 pb-20 bg-[linear-gradient(180deg,#F2F9F5_0%,rgba(242,249,245,0)_100%)] two-column-icon-text-bg max-[767px]:mb-[50px] max-[767px]:pb-[50px]"
+        backgroundVariant="gradient"
         content={salesforceWhyChooseContent}
         id="why-choose-dynamic-dreamz"
       />
       <HappyClientSection
+        controlsLabels={wixTestimonials.controlsLabels}
         description={salesforceMigrationSectionCopy.testimonialsDescription}
+        eyebrow={wixTestimonials.eyebrow}
         heading={salesforceMigrationSectionCopy.testimonialsHeading}
+        items={wixTestimonials.items}
+        variant="client-stories"
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"
+      <SplitFaqSection
         idPrefix="salesforce-migration-faq"
         items={salesforceFaqs}
       />

@@ -1,0 +1,72 @@
+{
+  "slug": "how-to-assign-and-manage-shopify-collaborator-access",
+  "title": "How to Assign and Manage Shopify Collaborator Access",
+  "date": "2025-03-17",
+  "displayDate": "March 17, 2025",
+  "modified": "2025-03-20T11:58:23",
+  "category": "Shopify",
+  "categoryValue": "shopify",
+  "categoryHref": "/blogs?category=shopify",
+  "featuredImage": {
+    "src": "/assets/blog/how-to-assign-and-manage-shopify-collaborator-access.webp",
+    "width": 329,
+    "height": 237,
+    "alt": "how-to-assign-shopify-collaborator-access"
+  },
+  "excerpt": "Collaborator access code You can assign a collaborator code in the Security section of your Users page in your Shopify admin. After the Partner, freelancer, or agency submits their collaborator request, you can accept or reject the request in the Collaborators section of your Shopify admin, where you can also find a list of your [...]",
+  "author": {
+    "name": "Tejal Parekh",
+    "role": "Sr. SEO Expert",
+    "bio": "Tejal Parekh is a seasoned Senior SEO Expert with a proven track record of driving organic growth for businesses across diverse industries. With a deep understanding of search engine algorithms and a passion for digital marketing, Tejal brings a wealth of expertise to Dynamic Dreamz.",
+    "image": "/assets/blog/authors/tejal-parekh-img.webp",
+    "linkedin": "https://in.linkedin.com/in/tejal-parekh-814310206"
+  },
+  "contentBeforeToc": "",
+  "contentAfterToc": "<h2 id=\"Collaborator_access_code\">Collaborator access code</h2>\n<p>You can assign a collaborator code in the Security section of your Users page in your Shopify admin.</p>\n<p>After the Partner, freelancer, or agency submits their collaborator request, you can accept or reject the request in the Collaborators section of your Shopify admin, where you can also find a list of your accepted collaborators.</p>\n<h2 id=\"Steps\">Steps:</h2>\n<h3 id=\"1_From_your_Shopify_admin_go_to_Settings_%3E_Users\">1. From your Shopify admin, go to Settings &gt; Users.</h3>\n<p><img src=\"/assets/blog/inline/step-one.webp\" alt=\"How to Assign and Manage Shopify Collaborator Access\" width=\"1490\" height=\"751\" loading=\"lazy\"></p>\n<h3 id=\"2_Click_Security\">2. Click Security.</h3>\n<p><img src=\"/assets/blog/inline/step-two.webp\" alt=\"How to Assign and Manage Shopify Collaborator Access\" width=\"1495\" height=\"748\" loading=\"lazy\"></p>\n<h3 id=\"3_Click_the_4-digit_code_to_copy_it_to_your_clipboard\">3. Click the 4-digit code to copy it to your clipboard.</h3>\n<p><img src=\"/assets/blog/inline/step-three.webp\" alt=\"How to Assign and Manage Shopify Collaborator Access\" width=\"1492\" height=\"751\" loading=\"lazy\"></p>\n<h3 id=\"4_Provide_the_4-digit_code_to_your_collaborator\">4. Provide the 4-digit code to your collaborator.</h3>\n<p>&nbsp;</p>",
+  "toc": [
+    {
+      "label": "Collaborator access code",
+      "href": "#Collaborator_access_code",
+      "level": 2
+    },
+    {
+      "label": "Steps:",
+      "href": "#Steps",
+      "level": 2
+    },
+    {
+      "label": "1. From your Shopify admin, go to Settings > Users.",
+      "href": "#1_From_your_Shopify_admin_go_to_Settings_%3E_Users",
+      "level": 3
+    },
+    {
+      "label": "2. Click Security.",
+      "href": "#2_Click_Security",
+      "level": 3
+    },
+    {
+      "label": "3. Click the 4-digit code to copy it to your clipboard.",
+      "href": "#3_Click_the_4-digit_code_to_copy_it_to_your_clipboard",
+      "level": 3
+    },
+    {
+      "label": "4. Provide the 4-digit code to your collaborator.",
+      "href": "#4_Provide_the_4-digit_code_to_your_collaborator",
+      "level": 3
+    }
+  ],
+  "faqs": [],
+  "previous": {
+    "slug": "shopify-expert-costs",
+    "title": "Shopify Expert Costs Explained: How Much Does It Cost?"
+  },
+  "next": {
+    "slug": "shopify-seo-apps",
+    "title": "5 Game-Changing Shopify SEO Apps to Drive More Sales"
+  },
+  "seo": {
+    "title": "How to Assign and Manage Shopify Collaborator Access",
+    "description": "Learn how to assign a Shopify collaborator access code, approve requests, and manage collaborator permissions in your Shopify admin settings."
+  },
+  "wordCount": 95
+}

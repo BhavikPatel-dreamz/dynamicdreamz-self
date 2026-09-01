@@ -1,0 +1,209 @@
+{
+  "slug": "shopify-limits",
+  "title": "Shopify Limits: The Complete Breakdown You Need In 2026",
+  "date": "2025-12-02",
+  "displayDate": "December 2, 2025",
+  "modified": "2025-12-29T18:30:19",
+  "category": "Shopify",
+  "categoryValue": "shopify",
+  "categoryHref": "/blogs?category=shopify",
+  "featuredImage": {
+    "src": "/assets/blog/shopify-limits.webp",
+    "width": 1308,
+    "height": 948,
+    "alt": "Shopify Limits: The Complete Breakdown You Need In 2026"
+  },
+  "excerpt": "Shopify has become the backbone of modern eCommerce because it’s fast, stable, secure, and built for growth. But like any platform that powers millions of stores worldwide, it works within a defined technical framework. Those guardrails, often called “Shopify limits,” exist to keep stores performant, avoid database overload, protect global uptime, and ensure every merchant [...]",
+  "author": {
+    "name": "Rizwan Shaikh",
+    "role": "Content Team Lead",
+    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that’s not just readable but also useful, relevant, and built to drive real business outcomes.",
+    "image": "/assets/blog/authors/rizwanshaikh.webp",
+    "linkedin": "https://in.linkedin.com/company/dynamic-dreamz-websolutions"
+  },
+  "contentBeforeToc": "<p>Shopify has become the backbone of modern eCommerce because it’s fast, stable, secure, and built for growth. But like any platform that powers millions of stores worldwide, it works within a defined technical framework.</p>\n<p>Those guardrails, often called “Shopify limits,” exist to keep stores performant, avoid database overload, protect global uptime, and ensure every merchant gets predictable speed, no matter their scale.</p>\n<p>So, here the challenge is quite simple: you don’t notice these limits until you grow enough to hit them, limits such as;</p>\n<ul>\n<li>A growing catalogue suddenly runs into the Shopify variation limit.</li>\n<li>A custom integration starts slowing down because of Shopify API rate limits.</li>\n<li>A bundle-heavy business discovers the constraints behind Shopify bundles limitations.</li>\n<li>A high-volume store realises why Shopify Functions limitations matter during peak traffic.</li>\n</ul>\n<p>But these limits aren’t just weaknesses; rather, you can say that they’re architectural boundaries. And once you start to understand how they work, you can easily build smarter workflows, better automation &amp; cleaner data models that scale without breaking.</p>\n<p>This is where expertise matters. As a <a href=\"/shopify-plus-agency\">Shopify Plus agency</a>, we’ve spent decades navigating such boundaries for not only national, but global brands, designing solutions, creating custom apps, restructuring catalogues &amp; using Shopify’s ecosystem to push stores far beyond their default thresholds. The right structure (and the right team) can turn these limits into strategic advantages.</p>\n<p>Henceforth, through the medium of this guide, we are gonna break down all Shopify limits with clarity &amp; authenticity, while showing where upgrades, optimisations, or hiring a dedicated expert, such as a Shopify Plus development agency or a specialised partner, make a real difference.Because when the platform’s constraints are understood, brands grow with intention, not guesswork.</p>",
+  "contentAfterToc": "<h2 id=\"The_Most_Common_Shopify_Limits\">The Most Common Shopify Limits</h2>\n<p><img src=\"/assets/blog/inline/the-most-common-shopify-limits-new.webp\" alt=\"Shopify Limits: The Complete Breakdown You Need In 2026\" width=\"1504\" height=\"756\" loading=\"lazy\"></p>\n<p>Shopify runs on a structured system, and that structure comes with boundaries every merchant eventually meets. Here’s a fast, practical snapshot of the limits most brands feel first—whether they’re scaling products, building bundles, or integrating through the API.</p>\n<ul>\n<li><strong>Product &amp; Variant Structure:</strong> Shopify caps each product at a fixed Shopify variation limit, which affects how you plan options, attributes, and catalogue depth.</li>\n<li><strong>API &amp; Automation:</strong> Every workflow, integration, and app relies on Shopify’s API. The platform uses Shopify API limits and a Shopify API rate limit to protect performance, which means high-volume stores need thoughtful design to avoid throttling.</li>\n<li><strong>Functions, Bundles &amp; Extensibility:</strong> Newer features like Functions and Bundles are powerful but still maturing. Shopify Functions limitations and Shopify bundles limitations matter when building promotions, custom logic, or complex product structures.</li>\n<li><strong>Storefront &amp; Theme Boundaries:</strong> Theme files, assets, metafields, and page structures each come with their own caps—important for brands pushing heavy customisations. These limits aren’t just regular roadblocks, but they’re engineering constraints. With the right architecture and support from a Shopify Plus agency or hire Shopify Plus developer, stores can scale cleanly while still enjoying the benefits of Shopify Plus.</li>\n</ul>\n<h2 id=\"Catalogue_Limits_Products_Variants_Collections\">Catalogue Limits (Products, Variants, Collections)</h2>\n<p>A growing catalogue is usually the first place merchants feel Shopify’s boundaries. The platform keeps product data structured for speed, which means there are limits on how deep or complex a catalogue can get.</p>\n<ul>\n<li><strong>Product &amp; Variant Caps:</strong> Shopify allows only a fixed number of variants per product. This Shopify variation limit exists to prevent oversized records that slow down storefront performance and API calls. For brands with complex sizing, colourways, or custom configurations, this cap becomes a real architectural decision.</li>\n<li><strong>Variant Options:</strong> Each product can only have a limited number of options. Stores with layered configurations often need restructuring or custom apps to support deeper variation logic.</li>\n<li><strong>Collections:</strong> Collections are flexible, but they still operate within Shopify’s indexing and rule engine. Large stores may hit practical caps where automation becomes slow, or data models get messy.</li>\n<li><strong>Collections:</strong> Collections are flexible, but they still operate within Shopify’s indexing and rule engine. Large stores may hit practical caps where automation becomes slow, or data models get messy.</li>\n</ul>\n<h2 id=\"Storefront_Theme_Limits\">Storefront &amp; Theme Limits</h2>\n<p><img src=\"/assets/blog/inline/storefront-and-theme-limits-new.webp\" alt=\"Shopify Limits: The Complete Breakdown You Need In 2026\" width=\"1504\" height=\"756\" loading=\"lazy\"><br>\nShopify’s storefront is built for speed, and speed only works when the theme stays lightweight. That’s why the platform sets boundaries on how much a theme can hold and how far customisations can stretch.</p>\n<h3 id=\"1_Theme_File_Size\">1. Theme File Size</h3>\n<p>Each theme file has a size ceiling. It prevents oversized code bundles that slow down rendering and make deployments unstable. Stores that rely heavily on custom scripts, Functions, or third-party tools often brush against this boundary.</p>\n<h3 id=\"2_Assets_Media\">2. Assets &amp; Media</h3>\n<p>Images, fonts, scripts, and styling assets each count toward theme weight. Even with Shopify’s CDN, bloated assets can push load times past recommended thresholds. This becomes more visible when handling bundle-heavy catalogues, especially since Shopify bundles limitations may require extra logic layered inside the theme.</p>\n<h3 id=\"3_Sections_Blocks\">3. Sections &amp; Blocks</h3>\n<p>There’s a limit to how many sections &amp; blocks a theme can handle cleanly. Overbuilding layouts not only complicates content management but also increases the number of API interactions—something to keep in mind when working near Shopify API limits.</p>\n<h3 id=\"4_Image_Resolution_Constraints\">4. Image &amp; Resolution Constraints</h3>\n<p>Shopify optimises aggressively, but extremely large images still hit upload caps. High-SKU or visually rich brands need a disciplined compression workflow to keep storefronts smooth.<br>\nThese theme-level constraints aren’t just deal-breakers; rather, they simply require smart engineering, clean code, structured assets &amp; thoughtful customisation. With the right front-end approach (or dedicated support from a Shopify Plus agency or a dedicated team of Shopify Plus developers), stores can get ahead of the game, be fast, stay stable, and that too while leveraging the full benefits of Shopify Plus.</p>\n<h2 id=\"Data_Import_Export_Limits\">Data Import &amp; Export Limits</h2>\n<p><img src=\"/assets/blog/inline/data-import-and-export-limits-new.webp\" alt=\"Shopify Limits: The Complete Breakdown You Need In 2026\" width=\"1504\" height=\"756\" loading=\"lazy\"><br>\nBig catalogues and busy operations rely heavily on bulk data handling. Shopify supports it, but the system protects itself with structured limits that every scaling store eventually notices.</p>\n<h3 id=\"1_CSV_File_Size\">1. CSV File Size</h3>\n<p>Bulk imports—products, customers, orders—have clear size ceilings. Larger files slow down processing and can fail mid-upload, especially when thousands of variants are involved. This becomes even more noticeable for stores already pushing the Shopify variation limit.</p>\n<h3 id=\"2_Bulk_Product_Inventory_Imports\">2. Bulk Product &amp; Inventory Imports</h3>\n<p>Shopify processes imports in queued batches. When large catalogues sync frequently, the queue can slow down, and stores that depend on heavy automation may also hit Shopify API rate limits during parallel operations.</p>\n<h3 id=\"3_Order_Customer_Data\">3. Order &amp; Customer Data</h3>\n<p>High-volume stores migrating from another platform often assume they can upload everything at once. Shopify caps how much you can push through the CSV pipeline before it triggers delays or partial processing.</p>\n<h3 id=\"4_When_the_API_Becomes_Necessary\">4. When the API Becomes Necessary</h3>\n<p>At scale, CSVs stop being practical. API-driven imports are faster, more reliable, and easier to validate—but they also run into Shopify API limits if the workflows aren’t designed well. That’s where structured batching, retry logic, and clean data modelling matter.<br>\nWhen handled properly—with help from a technical partner or a Shopify Plus development agency—these limits don’t slow you down. They simply shape smarter import strategies that fit the platform and protect store performance.</p>\n<h2 id=\"API_Limits_For_Developers_Agencies_App_Teams\">API Limits (For Developers, Agencies &amp; App Teams)</h2>\n<p><img src=\"/assets/blog/inline/api-limits-developers-agencies-app-teams-new.webp\" alt=\"Shopify Limits: The Complete Breakdown You Need In 2026\" width=\"1504\" height=\"756\" loading=\"lazy\"><br>\nEverything from apps to automations to integrations depends on Shopify’s API. And to keep the entire ecosystem stable, Shopify utilises a throttling system that sets boundaries on how many calls a store can make within a given window.</p>\n<h3 id=\"1_Rate_Limits_in_Practice\">1. Rate Limits in Practice</h3>\n<p>Every store and app operates under a defined Shopify API rate limit. When there are too many requests, Shopify slows down or they simply temporarily blocks responses. This is one of the most common challenges that fast-growing brands are facing, especially when syncing large catalogues or running complex workflows.</p>\n<h3 id=\"2_REST_vs_GraphQL\">2. REST vs. GraphQL</h3>\n<p>Both APIs have their own Shopify API limits, but GraphQL often handles bulk operations more efficiently. It’s useful for stores near the Shopify variation limit, since it retrieves structured data with fewer calls.</p>\n<h3 id=\"3_Admin_API_vs_Storefront_API\">3. Admin API vs. Storefront API</h3>\n<p>The Admin API is stricter because it touches sensitive data. The Storefront API supports higher volumes while still aligning with Shopify’s overall throttling model. Either way, high-frequency processes need batching and queuing.</p>\n<h3 id=\"4_Webhooks_Event-Based_Actions\">4. Webhooks &amp; Event-Based Actions</h3>\n<p>Webhooks also operate under thresholds. When too many events fire—common in high-order-volume stores—they can back up or time out unless the system handling them is built to scale.</p>\n<h3 id=\"5_Architecting_Around_Limits\">5. Architecting Around Limits</h3>\n<p>Large brands rarely “remove” these limits. They design around them—clean scripts, background jobs, retry logic, and optimised queries. A structured approach, often built by an experienced technical team or a Shopify Plus development agency, makes the API feel almost limitless while still staying inside what Shopify allows.<br>\nThe right setup transforms API constraints into predictable, stable automation.</p>\n<h2 id=\"Shopify_Plus_vs_Shopify_Where_Limits_Change\">Shopify Plus vs Shopify (Where Limits Change)?</h2>\n<p><img src=\"/assets/blog/inline/shopify-plus-vs-shopify-where-limits-change-new.webp\" alt=\"Shopify Limits: The Complete Breakdown You Need In 2026\" width=\"1504\" height=\"756\" loading=\"lazy\"><br>\nShopify Plus doesn’t remove every boundary, but it expands several important ones and gives growing brands more control. For merchants hitting structural ceilings—like the Shopify API rate limit, bundle complexity, or Functions-based logic—Plus creates room to scale without constant workarounds.</p>\n<ul>\n<li><strong>Higher API Capacity:</strong>  With Shopify Plus, one can enjoy generous Shopify API limits, through which one can have faster data syncs, smoother app integrations, &amp; fewer interruptions during peak operations. And the stores having large catalogues or frequent updates, this alone solves pressure points.</li>\n<li><strong>Checkout-Level Flexibility:</strong> Each product can only have a limited number of options. Stores with layered configurations often need restructuring or custom apps to support deeper variation logic.</li>\n<li><strong>Better Handling for Complex Catalogues:</strong> High-SKU stores, bundle-heavy products, and brands pushing the Shopify bundles limitations often see cleaner solutions on Plus, thanks to extended feature access and deeper control through the Admin API.</li>\n<li><strong>Scaling Without Stress:</strong> The combined benefits of Shopify Plus speed, API headroom, checkout control, and better extensibility make it ideal for those brands that outgrow standard Shopify. And that is where partnering with a specialist can really help, no matter whether it’s a Shopify Plus agency, a Shopify Plus development agency, or a dedicated Shopify Plus developer who understands how to architect long-term growth<br>\nSo, you can say that jumping to Plus isn&#8217;t a luxury, but it’s about removing friction for stores that are scaling fast..</li>\n</ul>\n<h2 id=\"Metafields_Custom_Data_Limits\">Metafields &amp; Custom Data Limits</h2>\n<p>Metafields are one of Shopify’s most useful features for structuring product data, but they still operate inside clear boundaries. As stores scale, these limitations shape how deeply you can customise your catalogue and storefront logic.</p>\n<ul>\n<li><strong>Metafield Count &amp; Type Limits:</strong> Each resource—products, variants, collections, customers—can only hold a defined number of metafields. These limits keep database entries lightweight and fast. Stores approaching the Shopify variation limit often rely heavily on variant-level metafields, which makes planning even more important.</li>\n<li><strong>File &amp; Media Field Restrictions:</strong> Metafields support files and images, but only up to specific size and type constraints. Stores with rich visual content or technical documents may hit these caps quickly unless they organise assets carefully.</li>\n<li><strong>Validation &amp; Structure Requirements:</strong> Shopify enforces strict types—integer, boolean, list, file, reference, etc.—to keep data clean. When businesses try to push complex attributes through metafields, they may run into structural limits long before storage becomes the issue.</li>\n<li><strong>Why Architecture Matters?</strong> Poor metafield planning can literally slow down APIs, create clutter in the admin, and increase the number of calls needed for storefront rendering, something that becomes critical when working near Shopify API limits or the Shopify API rate limit.<br>\nA well-designed data model, usually created with help from a technical partner or a Shopify Plus development agency, keeps metafields scalable and easy to maintain while letting you enjoy the benefits of Shopify Plus without performance bottlenecks.</li>\n</ul>\n<h2 id=\"App_Integration_Limits\">App &amp; Integration Limits</h2>\n<p>Apps make Shopify flexible, but every added integration introduces its own weight. Shopify keeps the system stable by enforcing limits on how apps interact with the store, how much data they can pull, and how often they can call the API.</p>\n<ul>\n<li><strong>App Count &amp; Theme Impact:</strong> There’s no official hard cap on how many apps a store can install, but each app injects scripts, loads assets, or adds theme code. Too many apps slow the storefront and increase the risk of conflicts. This becomes more noticeable in stores already navigating Shopify bundles limitations or complex customisation layers.</li>\n<li><strong>API Bottlenecks:</strong> Every app depends on the same pool of Shopify API limits and the same Shopify API rate limit. When several apps sync data at once—ERPs, CRMs, inventory tools, marketing platforms—throttling becomes inevitable unless the integrations are tightly managed.</li>\n<li><strong>Third-Party System Constraints:</strong> Even when Shopify allows it, external tools may have their own rate limits or data caps. This creates a combined ceiling where one slow system affects the entire workflow.</li>\n<li><strong>Custom App Advantages:</strong> Custom apps bypass a lot of the noise. They use clean logic, optimised batching, and a minimal theme footprint. For stores with heavy automation—or those moving toward Plus features like Functions—custom builds are often the smartest way around the clutter.<br>\nPartnering with a skilled development team or a Shopify Plus agency allows growing brands to replace bloated app stacks with purpose-built solutions, unlocking stability and long-term flexibility while still benefiting from Shopify Plus.</li>\n</ul>\n<h2 id=\"Checkout_Limits\">Checkout Limits</h2>\n<p><img src=\"/assets/blog/inline/checkout-limits-new.webp\" alt=\"Shopify Limits: The Complete Breakdown You Need In 2026\" width=\"1504\" height=\"756\" loading=\"lazy\"><br>\nShopify’s checkout is intentionally controlled to stay fast and secure. That means customisation is limited on standard plans, especially when brands need advanced pricing, conditional rules, or bundle-driven logic.</p>\n<ul>\n<li><strong>Customization Boundaries:</strong> Beyond basic branding, most changes aren’t allowed unless you’re on Shopify Plus. This is where Shopify Functions limitations and Shopify bundles limitations show up quickly.</li>\n<li><strong>Where Plus Helps?:</strong> Shopify Plus opens deeper checkout control and handles higher Shopify API limits, making automation and high-volume events far smoother. For brands pushing complex logic, this is often the point when working with a Shopify Plus agency or hiring a Shopify Plus developer becomes essential.<br>\nCheckout is lean by design—Plus simply gives you more space to shape it.</li>\n</ul>\n<h2 id=\"File_Storage_Media_Limits\">File Storage &amp; Media Limits</h2>\n<p>Shopify keeps store files lean so themes load fast and product pages stay performant. Each product supports multiple images, videos, and 3D models, but every file you upload has to meet size and format limits. Large images are compressed automatically, and video uploads hit a ceiling that heavier brands need to plan around.</p>\n<p>For merchants managing thousands of SKUs, these limits often shape how media is organised. High-resolution catalogues can trigger workflow bottlenecks, especially when combined with the Shopify API rate limits that regulate bulk media operations.</p>\n<p>This is where teams lean on a technical partner. A seasoned Shopify Plus agency can build optimised upload pipelines, compress assets at scale, and structure catalogues so you don’t bump into storage ceilings. When the goal is consistent performance across massive catalogues, the right Shopify Plus developer keeps your media light, fast, and aligned with the real-world benefits of Shopify Plus.</p>\n<h2 id=\"Workarounds_Solutions_How_Dynamic_Dreamz_Helps_You_Scale_Beyond_Limits\">Workarounds &amp; Solutions: How Dynamic Dreamz Helps You Scale Beyond Limits</h2>\n<p>Please don’t find these limits dead ends, and see them as engineering puzzles. Because when you see them as puzzles, you will try to find the solution, and that is where the Dynamic Dreamz come on the scene.</p>\n<p>When stores hit constraints around variants, bundles, or Shopify API rate limits, the focus shifts from “what can’t be done” to “what can be solved with the right architecture.”</p>\n<p>For catalogue complexity, we build modular product structures that stay within the Shopify variation limit while keeping the frontend experience seamless. For automation and integrations, we optimise calls to stay comfortably under Shopify API limits, or redesign workflows so they run asynchronously without slowing anything down.</p>\n<p>Checkout and pricing challenges, especially the tricky ones caused by Shopify Functions limitations or Shopify bundles limitations, get custom logic, apps, or Plus-only upgrades. And for that reason, you require an experienced Shopify Plus agency, a team that knows where native features end and where custom engineering takes over.</p>\n<p>This is also where having a dedicated Shopify Plus developer, such as <a href=\"/\">dynamicdreamz</a>, becomes powerful: someone who can bend the platform without breaking its rules.</p>\n<p>The result is simple. You grow without facing limits, and you gain the real, operational benefits of Shopify Plus through smart planning rather than short-term hacks.</p>\n<h2 id=\"Building_Stores_That_Outgrow_Limits\">Building Stores That Outgrow Limits</h2>\n<p>A modern Shopify store shouldn’t crack the moment you start scaling, no, it should not! And for that reason, you should just have to find the right architecture that can give you breathing room, freedom &amp; the confidence to grow without fearing the next big traffic spike or content upload.</p>\n<p>That’s the mindset we, the team Dynamic Dreamz, bring to every project, such as;</p>\n<ul>\n<li>Thoughtful structure.</li>\n<li>Smart performance decisions.</li>\n<li>Future-proof workflows.</li>\n<li>Everything aligned so your store can keep expanding, without tripping over platform limits.</li>\n</ul>\n<p>Your ambition deserves a store that grows with you, not against you. So, let’s build that foundation and set you up for long-term, compounding progress.</p>\n<h2 id=\"FAQ\">FAQ</h2>\n<h3 id=\"1_Does_Shopify_have_limits\">1. Does Shopify have limits?</h3>\n<p>Yes. Shopify has a few structural limits built into the platform, such as API call caps, product variant limits, file storage rules, and certain checkout customisation restrictions. These limits help keep stores stable at scale, but they can be restrictive for fast-growing brands.</p>\n<h3 id=\"2_Is_there_a_limit_to_products_on_Shopify\">2. Is there a limit to products on Shopify?</h3>\n<p>There’s no hard cap on the number of products you can add. Stores with large catalogues, tens of thousands of SKUs, can run smoothly, but performance depends on theme optimisation, app usage, and how well data is structured.</p>\n<h3 id=\"3_How_to_bypass_Shopify_100_variant_limit\">3. How to bypass Shopify 100 variant limit?</h3>\n<p>The limit can’t be removed, but it can be worked around. Brands typically use custom apps, product splitting, metafield-driven options, or third-party inventory systems to create the experience of unlimited variants without breaking Shopify’s rules.</p>\n<h3 id=\"4_Is_Shopify_still_relevant_in_2025\">4. Is Shopify still relevant in 2025?</h3>\n<p>Very much so. Shopify continues to dominate the mid-market and enterprise space with Shopify Plus, fast product releases, strong infrastructure, and a massive ecosystem. It remains one of the most reliable and future-proof platforms for e-commerce brands.</p>",
+  "toc": [
+    {
+      "label": "The Most Common Shopify Limits",
+      "href": "#The_Most_Common_Shopify_Limits",
+      "level": 2
+    },
+    {
+      "label": "Catalogue Limits (Products, Variants, Collections)",
+      "href": "#Catalogue_Limits_Products_Variants_Collections",
+      "level": 2
+    },
+    {
+      "label": "Storefront & Theme Limits",
+      "href": "#Storefront_Theme_Limits",
+      "level": 2
+    },
+    {
+      "label": "1. Theme File Size",
+      "href": "#1_Theme_File_Size",
+      "level": 3
+    },
+    {
+      "label": "2. Assets & Media",
+      "href": "#2_Assets_Media",
+      "level": 3
+    },
+    {
+      "label": "3. Sections & Blocks",
+      "href": "#3_Sections_Blocks",
+      "level": 3
+    },
+    {
+      "label": "4. Image & Resolution Constraints",
+      "href": "#4_Image_Resolution_Constraints",
+      "level": 3
+    },
+    {
+      "label": "Data Import & Export Limits",
+      "href": "#Data_Import_Export_Limits",
+      "level": 2
+    },
+    {
+      "label": "1. CSV File Size",
+      "href": "#1_CSV_File_Size",
+      "level": 3
+    },
+    {
+      "label": "2. Bulk Product & Inventory Imports",
+      "href": "#2_Bulk_Product_Inventory_Imports",
+      "level": 3
+    },
+    {
+      "label": "3. Order & Customer Data",
+      "href": "#3_Order_Customer_Data",
+      "level": 3
+    },
+    {
+      "label": "4. When the API Becomes Necessary",
+      "href": "#4_When_the_API_Becomes_Necessary",
+      "level": 3
+    },
+    {
+      "label": "API Limits (For Developers, Agencies & App Teams)",
+      "href": "#API_Limits_For_Developers_Agencies_App_Teams",
+      "level": 2
+    },
+    {
+      "label": "1. Rate Limits in Practice",
+      "href": "#1_Rate_Limits_in_Practice",
+      "level": 3
+    },
+    {
+      "label": "2. REST vs. GraphQL",
+      "href": "#2_REST_vs_GraphQL",
+      "level": 3
+    },
+    {
+      "label": "3. Admin API vs. Storefront API",
+      "href": "#3_Admin_API_vs_Storefront_API",
+      "level": 3
+    },
+    {
+      "label": "4. Webhooks & Event-Based Actions",
+      "href": "#4_Webhooks_Event-Based_Actions",
+      "level": 3
+    },
+    {
+      "label": "5. Architecting Around Limits",
+      "href": "#5_Architecting_Around_Limits",
+      "level": 3
+    },
+    {
+      "label": "Shopify Plus vs Shopify (Where Limits Change)?",
+      "href": "#Shopify_Plus_vs_Shopify_Where_Limits_Change",
+      "level": 2
+    },
+    {
+      "label": "Metafields & Custom Data Limits",
+      "href": "#Metafields_Custom_Data_Limits",
+      "level": 2
+    },
+    {
+      "label": "App & Integration Limits",
+      "href": "#App_Integration_Limits",
+      "level": 2
+    },
+    {
+      "label": "Checkout Limits",
+      "href": "#Checkout_Limits",
+      "level": 2
+    },
+    {
+      "label": "File Storage & Media Limits",
+      "href": "#File_Storage_Media_Limits",
+      "level": 2
+    },
+    {
+      "label": "Workarounds & Solutions: How Dynamic Dreamz Helps You Scale Beyond Limits",
+      "href": "#Workarounds_Solutions_How_Dynamic_Dreamz_Helps_You_Scale_Beyond_Limits",
+      "level": 2
+    },
+    {
+      "label": "Building Stores That Outgrow Limits",
+      "href": "#Building_Stores_That_Outgrow_Limits",
+      "level": 2
+    },
+    {
+      "label": "FAQ",
+      "href": "#FAQ",
+      "level": 2
+    },
+    {
+      "label": "1. Does Shopify have limits?",
+      "href": "#1_Does_Shopify_have_limits",
+      "level": 3
+    },
+    {
+      "label": "2. Is there a limit to products on Shopify?",
+      "href": "#2_Is_there_a_limit_to_products_on_Shopify",
+      "level": 3
+    },
+    {
+      "label": "3. How to bypass Shopify 100 variant limit?",
+      "href": "#3_How_to_bypass_Shopify_100_variant_limit",
+      "level": 3
+    },
+    {
+      "label": "4. Is Shopify still relevant in 2025?",
+      "href": "#4_Is_Shopify_still_relevant_in_2025",
+      "level": 3
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does Shopify have limits?",
+      "answer": "Yes. Shopify has a few structural limits built into the platform, such as API call caps, product variant limits, file storage rules, and certain checkout customisation restrictions. These limits help keep stores stable at scale, but they can be restrictive for fast-growing brands."
+    },
+    {
+      "question": "Is there a limit to products on Shopify?",
+      "answer": "There’s no hard cap on the number of products you can add. Stores with large catalogues, tens of thousands of SKUs, can run smoothly, but performance depends on theme optimisation, app usage, and how well data is structured."
+    },
+    {
+      "question": "How to bypass Shopify 100 variant limit?",
+      "answer": "The limit can’t be removed, but it can be worked around. Brands typically use custom apps, product splitting, metafield-driven options, or third-party inventory systems to create the experience of unlimited variants without breaking Shopify’s rules."
+    },
+    {
+      "question": "Is Shopify still relevant in 2025?",
+      "answer": "Very much so. Shopify continues to dominate the mid-market and enterprise space with Shopify Plus, fast product releases, strong infrastructure, and a massive ecosystem. It remains one of the most reliable and future-proof platforms for e-commerce brands."
+    }
+  ],
+  "previous": {
+    "slug": "shopify-plus-ecommerce-agency",
+    "title": "Shopify Plus Ecommerce Agency: The Key to Scaling Your Online Brand"
+  },
+  "next": {
+    "slug": "white-label-wordpress-outsourcing",
+    "title": "White Label WordPress Outsourcing That Makes Scaling Feel Simple"
+  },
+  "seo": {
+    "title": "Shopify Limits: What Holds Stores Back and How to Fix It",
+    "description": "Understand the real impact of Shopify limits and how the right technical decisions help you grow beyond them. Build a store that performs at every stage."
+  },
+  "wordCount": 2976
+}

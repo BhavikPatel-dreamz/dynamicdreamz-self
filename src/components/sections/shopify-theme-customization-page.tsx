@@ -10,6 +10,7 @@ import { ShopifyThemeTechSection } from "@/components/sections/shopify-theme-cus
 import { ShopifyThemesGridSection } from "@/components/sections/shopify-theme-customization/shopify-themes-grid-section";
 import { ThemeWhyChooseSection } from "@/components/sections/theme-customization/theme-why-choose-section";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
+import { wixTestimonials } from "@/content/wix-to-shopify-migration";
 
 export function ShopifyThemeCustomizationPage() {
   const heroContent = {
@@ -130,8 +131,12 @@ export function ShopifyThemeCustomizationPage() {
       <PortfolioShowcaseSection content={portfolioContent} />
       <div id="shopify-testimonials">
         <HappyClientSection
+          controlsLabels={wixTestimonials.controlsLabels}
           description={shopifyThemeCustomizationContent.sectionCopy.testimonialsDescription}
+          eyebrow={wixTestimonials.eyebrow}
           heading={shopifyThemeCustomizationContent.sectionCopy.testimonialsHeading}
+          items={wixTestimonials.items}
+          variant="client-stories"
         />
       </div>
       <FaqSection

@@ -38,6 +38,7 @@ import {
 } from "@/content/career";
 import { lifeFaqSection } from "@/content/life-dynamicdreamz";
 import { resourceArticles } from "@/content/resources";
+import { blogArchiveArticles, type BlogArchiveArticle } from "@/content/blogs";
 import {
   shopifyPlusAgencyFaqs,
   shopifyPlusAgencyServices,
@@ -181,6 +182,7 @@ import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
 import { absoluteUrl } from "@/lib/seo";
 import type { CaseStudyDetail } from "@/types/case-study";
+import type { BlogPostDetail } from "@/types/blog-post";
 
 const organizationId = `${siteConfig.url}#organization`;
 const websiteId = `${siteConfig.url}#website`;
@@ -1229,6 +1231,90 @@ export function createResourcesPageSchema() {
         uploadDate: companyVideoUploadDate,
         ...youTubeUrls(companyVideoId),
       }),
+    ],
+  };
+}
+
+type BlogsPageSchemaOptions = {
+  pagePath?: string;
+  itemOffset?: number;
+};
+
+export function createBlogsPageSchema(
+  articles: readonly BlogArchiveArticle[] = blogArchiveArticles,
+  options: BlogsPageSchemaOptions = {},
+) {
+  const pagePath = options.pagePath ?? pageSeo.blogs.path;
+  const pageUrl = absoluteUrl(pagePath);
+  const pageId = pageUrl + "#webpage";
+  const breadcrumbId = pageUrl + "#breadcrumb";
+  const itemListId = pageUrl + "#articles";
+  const itemOffset = options.itemOffset ?? 0;
+  const articleItems = articles.map((article, index) => ({
+    "@type": "ListItem",
+    position: itemOffset + index + 1,
+    item: {
+      "@type": "BlogPosting",
+      "@id": absoluteUrl(article.href),
+      url: absoluteUrl(article.href),
+      headline: article.title,
+      datePublished: article.date,
+      image: absoluteUrl(article.image),
+      articleSection: article.category,
+      publisher: { "@id": organizationId },
+      inLanguage: "en-US",
+    },
+  }));
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": pageId,
+        url: pageUrl,
+        name: pageSeo.blogs.title,
+        description: pageSeo.blogs.description,
+        datePublished: pageSeo.blogs.publishedTime,
+        dateModified: pageSeo.blogs.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": breadcrumbId },
+        mainEntity: { "@id": itemListId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.blogs.image.path),
+          width: pageSeo.blogs.image.width,
+          height: pageSeo.blogs.image.height,
+          caption: pageSeo.blogs.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": breadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          { "@type": "ListItem", position: 2, name: "Blogs", item: pageUrl },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        "@id": itemListId,
+        name: pageSeo.blogs.title,
+        itemListOrder: "https://schema.org/ItemListOrderDescending",
+        numberOfItems: articles.length,
+        itemListElement: articleItems,
+      },
     ],
   };
 }
@@ -2437,6 +2523,106 @@ export function createCaseStudyDetailPageSchema(caseStudy: CaseStudyDetail) {
       },
     ],
   };
+}
+
+export function createBlogPostDetailPageSchema(post: BlogPostDetail) {
+  const pageUrl = absoluteUrl(`/blogs/${post.slug}`);
+  const pageId = `${pageUrl}#webpage`;
+  const articleId = `${pageUrl}#article`;
+  const imageId = `${pageUrl}#primaryimage`;
+  const breadcrumbId = `${pageUrl}#breadcrumb`;
+  const imageUrl = absoluteUrl(post.featuredImage.src);
+  const authorId = `${siteConfig.url}#author-${post.author?.name.toLowerCase().replace(/[^a-z0-9]+/g, "-") || "dynamic-dreamz"}`;
+  const graph: Record<string, unknown>[] = [
+    organizationSchema(),
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: homeUrl,
+      name: siteConfig.name,
+      publisher: { "@id": organizationId },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "WebPage",
+      "@id": pageId,
+      url: pageUrl,
+      name: post.seo.title,
+      description: post.seo.description,
+      datePublished: `${post.date}T00:00:00+00:00`,
+      dateModified: post.modified,
+      isPartOf: { "@id": websiteId },
+      about: { "@id": articleId },
+      mainEntity: { "@id": articleId },
+      breadcrumb: { "@id": breadcrumbId },
+      primaryImageOfPage: { "@id": imageId },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": articleId,
+      url: pageUrl,
+      headline: post.title,
+      name: post.title,
+      description: post.seo.description,
+      image: { "@id": imageId },
+      datePublished: `${post.date}T00:00:00+00:00`,
+      dateModified: post.modified,
+      author: { "@id": authorId },
+      publisher: { "@id": organizationId },
+      articleSection: post.category,
+      wordCount: post.wordCount,
+      mainEntityOfPage: { "@id": pageId },
+      isPartOf: { "@id": websiteId },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "ImageObject",
+      "@id": imageId,
+      url: imageUrl,
+      contentUrl: imageUrl,
+      width: post.featuredImage.width,
+      height: post.featuredImage.height,
+      caption: post.featuredImage.alt,
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "Person",
+      "@id": authorId,
+      name: post.author?.name ?? siteConfig.name,
+      jobTitle: post.author?.role,
+      description: post.author?.bio,
+      ...(post.author?.image
+        ? { image: { "@type": "ImageObject", url: absoluteUrl(post.author.image) } }
+        : {}),
+      ...(post.author?.linkedin ? { sameAs: [post.author.linkedin] } : {}),
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": breadcrumbId,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+        { "@type": "ListItem", position: 2, name: "Blogs", item: absoluteUrl("/blogs") },
+        { "@type": "ListItem", position: 3, name: post.title, item: pageUrl },
+      ],
+    },
+  ];
+
+  if (post.faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      url: pageUrl,
+      isPartOf: { "@id": pageId },
+      mainEntity: post.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    });
+  }
+
+  return { "@context": "https://schema.org", "@graph": graph };
 }
 
 export function createShopifyAppsPageSchema() {

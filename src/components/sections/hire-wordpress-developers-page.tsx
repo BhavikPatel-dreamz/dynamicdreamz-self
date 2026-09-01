@@ -14,6 +14,7 @@ import {
   hireWordPressPortfolio,
   hireWordPressTestimonials,
 } from "@/content/hire-wordpress-developers";
+import { wixTestimonials } from "@/content/wix-to-shopify-migration";
 
 const brandSection = {
   slug: "hire-wordpress-developers",
@@ -44,8 +45,12 @@ export function HireWordPressDevelopersPage() {
       <PortfolioShowcaseSection content={portfolioContent} />
       <div id="shopify-testimonials">
         <HappyClientSection
+          controlsLabels={wixTestimonials.controlsLabels}
           description={hireWordPressTestimonials.description}
+          eyebrow={wixTestimonials.eyebrow}
           heading={hireWordPressTestimonials.heading}
+          items={wixTestimonials.items}
+          variant="client-stories"
         />
       </div>
       <FaqSection

@@ -7,6 +7,7 @@ import { HappyClientSection } from "@/components/sections/shopify-plus-agency/ha
 import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
 import { ThemeWhyChooseSection } from "@/components/sections/theme-customization/theme-why-choose-section";
 import { TwoColCenterImageSection } from "@/components/sections/two-col-center-image-section";
+import { salesforceFaqs } from "@/content/salesforce-to-shopify-migration";
 import {
   squarespaceBenefitsContent,
   squarespaceBrandLogos,
@@ -19,6 +20,8 @@ import {
   squarespaceWhyMigrate,
   squarespaceMigrationSectionCopy,
 } from "@/content/squarespace-to-shopify-migration";
+import { wixTestimonials } from "@/content/wix-to-shopify-migration";
+import { SplitFaqSection } from "./split-faq-section";
 
 export function SquarespaceToShopifyMigrationPage() {
   return (
@@ -41,9 +44,10 @@ export function SquarespaceToShopifyMigrationPage() {
         text={squarespaceWhyMigrate.text}
       />
       <ShopifyReasonsSection
-        className="shopify-customization-services-sec mb-0 py-20 max-[767px]:py-[60px]"
+        carouselFullBleed
         content={squarespaceBenefitsContent}
         id="benefits-of-moving"
+        layout="carousel"
       />
       <TwoColCenterImageSection
         content={squarespaceConsiderationsContent}
@@ -60,18 +64,21 @@ export function SquarespaceToShopifyMigrationPage() {
         variant="top-icon"
       />
       <ThemeWhyChooseSection
-        className="why_dynamic_dreamz_sec dev mb-20 pb-20 bg-[linear-gradient(180deg,#F2F9F5_0%,rgba(242,249,245,0)_100%)] two-column-icon-text-bg max-[767px]:mb-[50px] max-[767px]:pb-[50px]"
+        backgroundVariant="gradient"
         content={squarespaceWhyChooseContent}
         id="why-choose-dynamic-dreamz"
       />
       <HappyClientSection
+        controlsLabels={wixTestimonials.controlsLabels}
         description={squarespaceMigrationSectionCopy.testimonialsDescription}
+        eyebrow={wixTestimonials.eyebrow}
         heading={squarespaceMigrationSectionCopy.testimonialsHeading}
+        items={wixTestimonials.items}
+        variant="client-stories"
       />
-      <FaqSection
-        className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"
-        idPrefix="squarespace-migration-faq"
-        items={squarespaceFaqs}
+      <SplitFaqSection
+        idPrefix="salesforce-migration-faq"
+        items={salesforceFaqs}
       />
     </div>
   );

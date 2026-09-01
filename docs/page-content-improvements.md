@@ -143,6 +143,37 @@ work-life balance, inclusive workplace, and employee experience.
 | Remote-work FAQ | Live answer says permanent work from home is unavailable, with case-specific exceptions. | Dynamic Dreamz generally does not offer permanent work from home because teams primarily collaborate from the office. Temporary work-from-home arrangements may be considered in special circumstances under current company policy. | Preserves policy meaning in clearer language. | High | deferred; reverted to live copy on 2026-08-13 |
 | Health and wellbeing FAQ | We have setup a recreational zone... Fuss ball... For health point of view... | Dynamic Dreamz has a recreation zone with indoor games such as carrom, foosball, darts, and cards. A treadmill and Android TV are also available so employees can take a break and recharge. | Corrects grammar and spelling without changing the listed facilities. | Low | deferred; reverted to live copy on 2026-08-13 |
 
+## Blogs (`/blogs`)
+
+Status: visible recommendations deferred; live archive wording preserved
+Last reviewed: 2026-09-01
+Primary SEO intent: Dynamic Dreamz blog, Shopify insights, WordPress guidance,
+ecommerce trends, and platform migration education.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Archive introduction | The live archive begins directly with search and filters and has no answer-first summary. | Add a concise approved summary describing the archive's Shopify, WordPress, ecommerce, migration, SEO, CRO, and agency topics. | Gives answer engines and first-time visitors clear topical context without relying only on card titles. | Medium | deferred pending exact visible-copy approval |
+| Article authorship | Archive cards expose title, category, and date; detail pages expose the visible author profile where one is present, but no consistent reviewer policy exists. | Preserve the captured author name, role, biography, image, and approved profile link on each detail page; add reviewers only after editorial governance confirms identity and review dates. | Supports attributable expertise without inventing people or credentials. | High | implemented for author profiles; reviewer governance deferred |
+| Taxonomy | Visible filters expose Shopify, WordPress, and eCommerce while one archived post uses the Big-Commerce category. | Approve a visible BigCommerce taxonomy treatment or redirect its category destination to an owned landing page. | Prevents a hidden taxonomy branch from becoming a dead-end navigation path. | Medium | deferred pending taxonomy decision |
+| Article routes | Archive cards link to the 84 canonical article paths in the live sitemap. | Keep the typed `/blogs/[slug]` route family, canonical slashless URLs, and confirmed legacy redirects. | Prevents broken internal links and preserves legacy search equity. | High | implemented; verified 2026-09-01 |
+| Archive pagination | The live archive exposes ten pages of posts. | Keep the current ten-page query archive and review canonical, freshness, and pagination policy during article migration. | Keeps discovery complete while article details are migrated in phases. | Medium | implemented for archive; review deferred |
+
+## Blog Detail Pages (`/blogs/[slug]`)
+
+Status: visible recommendations deferred; live article wording preserved
+Last reviewed: 2026-09-01
+Primary SEO intent: route-specific Shopify, WordPress, ecommerce, migration,
+CRO, SEO, AI, design, and white-label informational queries.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Legacy article wording | Several posts contain dated grammar, repeated headings, unsupported generalizations, or year-specific phrasing. | Review exact corrections article by article after migration, with subject-matter evidence and owner approval. | Preserves migration parity and prevents silent rewrites across attributed guidance. | High | deferred pending exact visible-copy approval |
+| Thin article content | `how-to-assign-and-manage-shopify-collaborator-access` contains substantially less visible text than the rest of the archive. | Add a complete approved walkthrough, limitations, security guidance, and current Shopify references. | Improves usefulness and citation quality without hiding the current content gap. | High | deferred pending subject-matter approval |
+| Author and reviewer governance | Visible author cards are implemented from the rendered source; no consistent reviewer or review-date policy is present. | Keep the captured author profile fields and add an approved reviewer and real review date only where editorial governance confirms them. | Supports trustworthy authorship without inventing expertise. | High | author profiles implemented; reviewer governance deferred |
+| Inline image alternatives | Some content images use empty or weak filename-like alt text. | Add concise contextual alternatives for content-bearing images while keeping decorative media intentionally empty. | Improves accessibility and image understanding without changing visual copy. | High | implemented where supported as a nonvisual accessibility correction |
+| Sources and evidence | Many claims and statistics do not expose visible source links or evidence dates. | Add current first-party or authoritative sources and qualify unsupported claims after article-level review. | Improves trust and citation quality. | High | deferred pending source review and exact visible-copy approval |
+| FAQ phrasing | Some FAQ headings and answers contain grammar or clarity problems. | Review and approve exact replacements per article while keeping question intent unchanged. | Improves answer extraction and readability. | Medium | deferred pending exact visible-copy approval |
+
 ## Resources (`/resources`)
 
 Status: visible recommendations deferred; live UI restored

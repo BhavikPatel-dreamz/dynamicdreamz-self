@@ -1,5 +1,22 @@
 # Visual Parity Capture: Squarespace to Shopify Migration
 
+## 2026-09-01 benefits layout update
+
+- The `benefits-of-moving` section now uses the shared full-bleed draggable
+  carousel layout, matching the Ecwid migration page configuration.
+- Existing Squarespace benefit content and the section anchor are unchanged.
+- Interaction: horizontal drag/scroll with shared carousel snap behavior.
+- Responsive behavior: shared full-bleed widths and offsets apply at the
+  component's existing breakpoints.
+
+## 2026-09-01 why-choose background update
+
+- The `why-choose-dynamic-dreamz` section uses the owner-specified 97.18-degree
+  gradient from `#e8f9ef` at 28.5% to `#e6fafd` at 91.82%.
+- The shared `backgroundVariant="gradient"` API supplies the background with
+  50px margin/padding below 1024px and 80px margin/padding from 1024px upward.
+- Content and interaction states remain unchanged.
+
 **Route**: `/squarespace-to-shopify-migration`
 **Live URL**: `https://www.dynamicdreamz.com/squarespace-to-shopify-migration/`
 **Date**: 2026-08-20

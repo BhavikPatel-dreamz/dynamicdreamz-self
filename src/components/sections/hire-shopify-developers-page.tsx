@@ -19,6 +19,7 @@ import {
   hireShopifySectionCopy,
   hireShopifyTestimonials,
 } from "@/content/hire-shopify-developers";
+import { wixTestimonials } from "@/content/wix-to-shopify-migration";
 
 const brandSection = {
   slug: "hire-shopify-developers",
@@ -54,8 +55,12 @@ export function HireShopifyDevelopersPage() {
       />
       <div id="shopify-testimonials">
         <HappyClientSection
+          controlsLabels={wixTestimonials.controlsLabels}
           description={hireShopifyTestimonials.description}
+          eyebrow={wixTestimonials.eyebrow}
           heading={hireShopifyTestimonials.heading}
+          items={wixTestimonials.items}
+          variant="client-stories"
         />
       </div>
       <FaqSection
