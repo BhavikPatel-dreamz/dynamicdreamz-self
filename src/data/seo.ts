@@ -2909,6 +2909,34 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  wordpressDevelopmentInDelhi: {
+    path: "/wordpress-development-in-delhi",
+    title: "No.1 WordPress Development in Delhi | Dynamic Dreamz",
+    description:
+      "WordPress development in Delhi. Expert WordPress Development Company with 18+ Years of Experience. Hire DynamicDreamz today!",
+    socialDescription:
+      "Expert WordPress development company in Delhi: custom theme development, plugin integration, SEO optimization, and website maintenance.",
+    keywords: [
+      "WordPress development in Delhi",
+      "WordPress development company in Delhi",
+      "WordPress agency Delhi",
+      "hire WordPress developers in Delhi",
+      "custom WordPress development Delhi",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-02-07T06:57:43+00:00",
+    modifiedTime: "2026-09-01T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "WordPress Development in Delhi | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

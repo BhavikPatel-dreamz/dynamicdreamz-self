@@ -69,12 +69,12 @@ export function ShopifyDevelopmentCompanyInChennaiPage() {
       />
       <PortfolioShowcaseSection
         content={portfolioContent}
-        eyebrow="PORTFOLIO"
+        eyebrow={shopifyDevelopmentChennaiContent.sectionCopy.portfolioEyebrow}
         eyebrowClassName="mb-4!"
         headerLayout="split"
         columns={4}
         ctaHref="/our-work"
-        ctaLabel="VIEW OUR WORK"
+        ctaLabel={shopifyDevelopmentChennaiContent.sectionCopy.portfolioCta}
         variant="liveGrid"
       />
       <HappyClientSection

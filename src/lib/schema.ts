@@ -160,6 +160,7 @@ import { shopifyMaintenanceServicesContent } from "@/content/shopify-maintenance
 import { dentalClinicWebsiteDevelopmentCompanyContent } from "@/content/dental-clinic-website-development-company";
 import { shopifyDevelopmentDelhiContent } from "@/content/shopify-development-in-delhi";
 import { shopifyDevelopmentHyderabadContent } from "@/content/shopify-development-in-hyderabad";
+import { wordpressDevelopmentDelhiContent } from "@/content/wordpress-development-in-delhi";
 import {
   shopifyMobileAppBenefits,
   shopifyMobileAppDevelopmentFaqs,
@@ -707,6 +708,11 @@ const shopifyDevelopmentHyderabadPageId = `${shopifyDevelopmentHyderabadPageUrl}
 const shopifyDevelopmentHyderabadServiceId = `${shopifyDevelopmentHyderabadPageUrl}#service`;
 const shopifyDevelopmentHyderabadFaqId = `${shopifyDevelopmentHyderabadPageUrl}#faq`;
 const shopifyDevelopmentHyderabadBreadcrumbId = `${shopifyDevelopmentHyderabadPageUrl}#breadcrumb`;
+const wordpressDevelopmentDelhiPageUrl = absoluteUrl(pageSeo.wordpressDevelopmentInDelhi.path);
+const wordpressDevelopmentDelhiPageId = `${wordpressDevelopmentDelhiPageUrl}#webpage`;
+const wordpressDevelopmentDelhiServiceId = `${wordpressDevelopmentDelhiPageUrl}#service`;
+const wordpressDevelopmentDelhiFaqId = `${wordpressDevelopmentDelhiPageUrl}#faq`;
+const wordpressDevelopmentDelhiBreadcrumbId = `${wordpressDevelopmentDelhiPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -4321,6 +4327,32 @@ export function createShopifyDevelopmentInHyderabadPageSchema() {
       answer: item.answer.replace(/<[^>]+>/g, " "),
     })),
     offers: shopifyDevelopmentHyderabadContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createWordPressDevelopmentInDelhiPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.wordpressDevelopmentInDelhi,
+    pageUrl: wordpressDevelopmentDelhiPageUrl,
+    pageId: wordpressDevelopmentDelhiPageId,
+    serviceId: wordpressDevelopmentDelhiServiceId,
+    faqId: wordpressDevelopmentDelhiFaqId,
+    breadcrumbId: wordpressDevelopmentDelhiBreadcrumbId,
+    serviceName: "WordPress Development in Delhi",
+    serviceType:
+      "Custom WordPress development, theme customization, plugin development, website design, SEO optimization, and ongoing maintenance for businesses in Delhi",
+    breadcrumbName: "WordPress Development in Delhi",
+    audienceType:
+      "Businesses, startups, enterprises, and digital agencies in Delhi seeking custom WordPress development services",
+    faqs: wordpressDevelopmentDelhiContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: wordpressDevelopmentDelhiContent.reasons.items.map((item) => ({
       title: item.title,
       description: item.description,
     })),

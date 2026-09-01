@@ -1,6 +1,10 @@
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const shopifyDevelopmentChennaiContent = {
+  sectionCopy: {
+    portfolioEyebrow: "PORTFOLIO",
+    portfolioCta: "VIEW OUR WORK",
+  },
   hero: {
     title: "Shopify Development Company in Chennai",
     description:
