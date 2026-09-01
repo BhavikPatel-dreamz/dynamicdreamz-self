@@ -3,7 +3,7 @@
 Status: technical work implemented for current migrated routes; visible AEO/GEO
 recommendations deferred for live-site parity; evidence and policy approvals
 remain
-Last audited: 2026-08-13
+Last audited: 2026-09-01
 Scope: current Next.js migration and the implemented indexable routes
 Owners: SEO, content, development, leadership, sales, HR, and client-success teams
 
@@ -32,6 +32,8 @@ It covers:
   - `/white-label-website-design-services`
   - `/shopify-plus-agency`
   - `/request-quote`
+  - `/blogs`
+  - `/blogs/[slug]` (84 generated article routes)
 
 This is the strategy and implementation record. Visible changes proposed and
 temporarily implemented on 2026-08-12 were rejected and reverted to live-site
@@ -82,9 +84,8 @@ systems can retrieve, understand, quote, and cite accurately.
 The highest-value work is:
 
 1. Complete the commercial service, work, case-study, contact, quote, job, and
-   article routes referenced by the current UI and structured data before
-   launch; their development-stage availability is excluded from the current
-   eight-page implementation scope.
+   remaining article destinations referenced by the current UI and structured
+   data before launch; development-stage availability is documented per route.
 2. Resolve conflicting facts, URLs, review counts, dates, and service names.
 3. Publish answer-first service content backed by project evidence.
 4. Convert portfolio items into first-party case studies with approved outcomes.
@@ -261,23 +262,23 @@ Representative prompts:
 
 ### Current dependencies and prelaunch migration work
 
-The ten built pages retain the approved technical AEO/GEO work. On 2026-08-13,
-the project owner requested that visible copy and UI differences be reverted to
-the live-site presentation. Those visible recommendations remain in this file
-as deferred work rather than being removed. Planned but unbuilt URLs are
-intentionally retained and excluded from current route scoring; they remain
-mandatory prelaunch dependencies.
+The built marketing pages and 84 server-rendered blog detail routes retain the
+approved technical AEO/GEO work. On 2026-08-13, the project owner requested
+that visible copy and UI differences be reverted to the live-site presentation.
+Those visible recommendations remain in this file as deferred work rather than
+being removed. Planned but unbuilt URLs are intentionally retained and excluded
+from current route scoring; they remain mandatory prelaunch dependencies.
 
 | Priority | Status | Issue | Required action |
 | --- | --- | --- | --- |
-| P0 | migration pending | Only ten indexable routes are implemented, while navigation and CTAs reference the larger migration | Complete and validate the intended destinations before launch |
+| P0 | migration pending | Several service, contact, job, and conversion destinations remain in the broader migration while navigation and CTAs reference them | Complete and validate the intended destinations before launch |
 | P0 | migration pending | Homepage `OfferCatalog`, Resources `ItemList`, and Career application URLs reference planned routes | Retain during migration; validate every final canonical destination before launch |
-| P0 | migration pending | Homepage uses root article slugs while Resources uses `/blogs` paths | Choose the legacy-compatible canonical pattern and redirects during article migration |
+| P0 | implemented | Homepage and Resources article links use `/blogs` paths, with confirmed root-level legacy article aliases redirecting to the canonical route | Canonical article paths and redirects are implemented and covered by route checks |
 | P0 | blocked by live parity | Review scores, counts, and profile URLs are not governed by one current source | Live Resources ratings and counts were restored on 2026-08-13; verify and centralize them before launch |
 | P0 | blocked by live parity | Home displays `4500+` Shopify stores while Resources visible story copy says `1000+` | Keep the live UI during migration, then resolve the definition, provenance, and approved display value before launch |
-| P1 | implemented | Sitemap and page schema previously used build time or stale `dateModified` values | All ten routes now use explicit content dates from shared SEO records |
+| P1 | implemented | Sitemap and page schema previously used build time or stale `dateModified` values | Built routes now use explicit content dates from shared SEO records |
 | P1 | future route work | Potential Shopify Plus routes have overlapping intent | Create an intent map before building the routes |
-| P1 | deferred to article migration | Current article data does not include author or reviewer information | Add approved author, reviewer, biography, evidence, and review-date fields to each article |
+| P1 | implemented; reviewer governance deferred | Article detail records now include visible author name, role, biography, image, and approved profile links where captured; no reviewer is inferred | Keep visible author profiles and add reviewers/review dates only after editorial governance approval |
 | P1 | deferred to case-study migration | Selected work links primarily to external storefronts | Create internal evidence pages with approved scope and outcomes |
 | P1 | partially implemented | Major proof claims need definitions and provenance | A typed fact source now centralizes display values and review date; add definitions, source, owner, and formal approval |
 
@@ -607,7 +608,7 @@ Last reviewed: 2026-09-01
 | Priority | Status | Area | Recommendation | Verification / dependency |
 | --- | --- | --- | --- | --- |
 | P0 | implemented | Technical discovery | Ship `/blogs` as a server-rendered, indexable archive with unique metadata, a slashless canonical, breadcrumb schema, CollectionPage schema, and an ItemList matching the nine visible cards. | Verified server-rendered source, metadata, page-specific schema, sitemap, robots, URL policy, lint, and production build on 2026-09-01. |
-| P0 | migration pending | Article coverage | Migrate or redirect every linked `/blogs/<slug>` article before launch. | Article routes are outside this archive-page task and remain planned migration links. |
+| P0 | implemented | Article coverage | Migrate or redirect every linked `/blogs/<slug>` article before launch. | All 84 sitemap/archive article routes are statically generated and verified; unknown slugs return 404. |
 | P1 | implemented | Internal discovery | Preserve the visible search and category controls while giving them functional, crawl-safe archive query behavior instead of the live page's `#` category destinations. | Query and category filters are server-rendered, preserve the default appearance, and keep slashless `/blogs` canonical output. |
 | P1 | implemented | Pagination | Preserve the visible page-two, page-three, and page-ten discovery intent while keeping the archive on one Next.js route with query pagination. | Query URLs `/blogs?page=2` through `/blogs?page=10` render the complete 84-post inventory; legacy `/blogs/page/N` URLs redirect to the query form. |
 | P1 | blocked | Authorship and evidence | Add governed author/editor identity and review standards to article detail pages, not the archive, when accurate editorial ownership is approved. | Requires content-governance and author evidence. |
@@ -624,6 +625,92 @@ Last reviewed: 2026-09-01
 - The archive renders nine cards on `/blogs`, nine cards on pages 2–9, and three cards on page 10. Search, Shopify/WordPress/eCommerce filters, the hidden Big-Commerce category link, and no-result output were verified locally.
 - Metadata emits the live title and description with a slashless /blogs canonical and local Open Graph/Twitter imagery. CollectionPage, BreadcrumbList, and ItemList JSON-LD are emitted for the single archive route with page-aware positions.
 - Local desktop, tablet, and mobile captures match the live first viewport; all 84 thumbnail references resolve to project-owned assets and the repository-wide duplicate audit reports zero hash groups.
+
+## Blog Detail Pages (`/blogs/[slug]`)
+
+Status: implemented; live-visible article content and template contract preserved
+Last reviewed: 2026-09-01
+Owner: SEO, content, development, leadership, and subject-matter reviewers
+Primary audience: ecommerce merchants, agency teams, developers, marketers, and
+platform decision-makers researching Shopify, WordPress, ecommerce, migration,
+SEO, CRO, AI, design, and white-label delivery topics
+Decision stage: awareness, evaluation, implementation research, and service-partner discovery
+
+### Page role
+
+Canonical first-party article pages for the 84-post blog archive. Each route
+must preserve its live title, visible article body, category, dates, author
+presentation, media, FAQ content, table-of-contents intent, and previous/next
+navigation while removing WordPress runtime dependencies.
+
+### Target prompts
+
+- What does Dynamic Dreamz recommend about [article topic]?
+- Who wrote or reviewed Dynamic Dreamz's guidance on [article topic]?
+- What practical Shopify, WordPress, ecommerce, migration, CRO, SEO, AI, or
+  white-label guidance does Dynamic Dreamz publish?
+
+### Current strengths and available evidence
+
+- The live sitemap and local archive agree on all 84 canonical article slugs.
+- All article bodies, visible dates, headings, links, featured media, and inline
+  media are available from first-party rendered pages and the read-only
+  migration export.
+- The route family exposes visible author cards, article categories, FAQs,
+  tables, internal links, and post navigation suitable for server rendering.
+- The existing archive already owns local featured images for all 84 posts.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route coverage | Archive cards link to 84 article routes | Generate every route through one typed static `/blogs/[slug]` template and return a real 404 for unknown slugs | All 84 generated paths, unknown-slug 404, and production build verified on 2026-09-01 |
+| P0 | implemented | Runtime independence | Article bodies and inline media previously depended on WordPress output | Store sanitized local content and project-owned media with no production live-site dependency | Local JSON content, 283 ingested media references, rendered HTML audit, and zero duplicate asset hashes verified on 2026-09-01 |
+| P0 | implemented | Discovery | Detail routes were absent from the local sitemap | Add all 84 canonical slashless routes with accurate modification dates and local primary images | Sitemap output, canonical metadata, and route inventory verified on 2026-09-01 |
+| P1 | implemented; reviewer governance deferred | Authorship | WordPress API author IDs do not consistently match the visible author card | Model only the visible author name, role, biography, image, and approved profile link captured from the rendered page; add reviewers only after governance approval | Route-level rendered source and local author assets; reviewer identity remains intentionally absent |
+| P1 | implemented | Metadata | 26 titles exceeded the repository limit, 14 descriptions were missing/out of range, and two metadata pairs were duplicated | Preserve visible H1/body copy while using concise route-specific metadata that retains search intent | All 84 records pass the enforced 15-60 title and 70-160 description limits |
+| P1 | implemented | Structured data | Live Article and FAQ graphs varied in quality and sometimes included unrelated sitewide nodes | Emit route-scoped BlogPosting, WebPage, BreadcrumbList, Person, ImageObject, and evidence-matched FAQPage nodes | Server-rendered JSON-LD verified across representative routes and production build |
+| P1 | implemented | Internal links | Article content included historical root article paths and singular case-study paths | Normalize links to canonical local routes and preserve confirmed legacy aliases with explicit redirects | Generated content, redirect rules, and route/link audit verified on 2026-09-01 |
+| P1 | implemented | Media accessibility | Some inline images had empty or weak alternatives | Preserve accurate alternatives and add concise contextual alt text where the image is content-bearing | All generated image tags have local sources, dimensions, and intentional alt text |
+| P2 | suggested | Evidence depth | Several legacy posts are generic, dated, or weakly sourced | Add practitioner examples, limitations, review dates, and sources only after exact visible-copy approval | Subject-matter and content-owner approval |
+
+### Entity, evidence, and authorship actions
+
+- Connect every BlogPosting to the shared Organization and WebSite identities.
+- Create Person nodes only for visible, accurately captured article authors.
+- Do not infer an author from the WordPress account ID or invent a reviewer.
+- Keep published and modified dates tied to live page and sitemap evidence.
+
+### Internal-link and conversion actions
+
+- Keep canonical article routes under `/blogs/{slug}`.
+- Normalize confirmed historical root aliases to their canonical article route.
+- Normalize legacy `/case-study/{slug}` references to supported local
+  `/case-studies/{slug}` destinations or the archive when the detail is stale.
+- Preserve visible anchor text and service intent while removing redirect hops.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit BlogPosting, WebPage, BreadcrumbList, ImageObject, and visible Person
+  data for every route.
+- Emit FAQPage only when the same questions and answers remain visible.
+- Add all canonical routes to sitemap output with evidence-based modification
+  dates and project-owned images.
+- Keep every heading fragment and internal link crawlable without client JavaScript.
+
+### Measurement plan
+
+- Track indexed article coverage, article-topic queries, cited routes, archive
+  card click-through, service-link engagement, and article-assisted enquiries.
+
+### Verification and remaining gaps
+
+- Checks completed: live sitemap/archive parity, representative rendered source,
+  template CSS/JS, content-shape audit, metadata audit, local media inventory,
+  legacy-link inventory, route/schema verification, responsive captures,
+  interaction checks, full blog-content validation, lint, and production build.
+- Remaining: article-level visible copy, source/evidence enrichment, and
+  reviewer identity/review-date governance remain deferred pending approval.
 
 ## Home (`/`)
 
@@ -5337,11 +5424,11 @@ update its statuses, review date, verification evidence, and remaining gaps.
 | P0 | partially implemented; visible conflicts blocked | Core schema facts are centralized; resolve live `1000+`/`4500+` store wording, add definitions/provenance, and centralize approved current review data and leadership titles | Home, About, Resources, schema |
 | P0 | migration pending | Standardize article and legacy-route policy | Home, Resources, future Blog |
 | P0 | migration pending | Confirm legacy redirect for Life at Dynamic Dreamz | Life |
-| P0 | migration pending | Build quote, contact, work, case-study, blog, job-detail/application routes | Home, Career, Resources |
+| P0 | migration pending | Build quote, contact, work, case-study, and job-detail/application routes; the 84-post blog detail family is implemented | Home, Career, Resources |
 | P0 | blocked | Resolve CRO experience range, Career UI/PDF location differences, and current recruitment/workplace policies | Career, Life |
-| P1 | implemented for current routes | Replace deployment dates with real content dates | Sitemap and all ten built pages |
+| P1 | implemented for current routes | Replace deployment dates with real content dates | Sitemap and all built route families, including the 84 blog detail pages |
 | P1 | in progress | Add descriptive internal links as relevant built routes launch | Career, Life, future service pages |
-| P1 | deferred to article migration | Add approved authors/reviewers and expert profiles | Resources, future articles/services |
+| P1 | deferred | Add approved reviewers and expert profiles where editorial ownership is confirmed; visible blog author profiles are implemented | Resources, article reviewer governance, future services |
 | P1 | deferred to case-study migration | Turn selected work into internal evidence pages | Home, future Work/Case Study |
 | P1 | future route work | Define Shopify Plus page intents before implementation | Future service routes |
 | P1 | pending operations setup | Establish monthly AI citation and prompt measurement | Sitewide |
@@ -8260,4 +8347,3 @@ Owner: SEO, content, design, and engineering
 - Local desktop, tablet, mobile, open-panel, open-drawer, and scroll-up comparisons are recorded in `docs/visual-captures/header.md` and `docs/visual-captures/header/`.
 - The navigation uses only project-owned SVG assets. The live site is not a runtime data, image, script, or CDN dependency.
 - No new schema claim was introduced by the header update. Visible terminology recommendations remain deferred until exact copy is approved.
-
