@@ -8453,3 +8453,111 @@ Owner: SEO, content, and development
 | P0 | implemented | Asset deduplication | Reused canonical assets across portfolio, client logos, review badges, and reason icons | Reused canonical assets from `public/assets/` with zero duplicates | Verified duplicate hash groups: 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createWordPressDevelopmentInDelhiPageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Visible copy enhancement | Minor grammar/spelling optimizations in FAQ answers and reason descriptions | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+
+## WordPress Development in Noida (`/wordpress-development-in-noida`)
+
+Status: technical and schema implementation complete; visible copy preserved per live site
+Last reviewed: 2026-09-01
+Owner: SEO, content, and development
+
+### Page Role and Buyer Intent
+
+- **Primary role**: Geo-targeted commercial landing page targeting businesses, startups, enterprises, and publishers in Noida and the greater UP/NCR tech corridor seeking certified WordPress website development, custom theme design, plugin development, migration, and ongoing maintenance.
+- **Audience**: Noida-based business owners, IT managers, and digital agency partners looking for dedicated WordPress developers.
+- **Target queries**: "WordPress development in Noida", "WordPress development company in Noida", "WordPress agency Noida", "hire WordPress developers in Noida", "custom WordPress development Noida".
+
+### Visible Content and Evidence Available
+
+- H1: "#1 Company For WordPress Development in Noida" establishing regional WordPress leadership.
+- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
+- Trusted brands slider: 10 brand proof logos (Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven, Bella Vita).
+- Value proposition box: "Choose Dynamic Dreamz as the Best WordPress Development Company in Noida".
+- 4-step delivery process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support.
+- 6 agency reason cards: Expert WordPress Developers, Custom Solutions, User-Friendly Design, SEO Optimization, Comprehensive Services, Proven Track Record.
+- 8 portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
+- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
+- 7 interactive FAQs covering WordPress development offerings in Noida, agency selection, theme customization, development timeline, platform security, maintenance, and onboarding.
+- Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
+
+### Structured Gap Analysis
+
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/wordpress-development-in-noida` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | 9 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Reused canonical assets across portfolio, client logos, review badges, and reason icons | Reused canonical assets from `public/assets/` with zero duplicates | Verified duplicate hash groups: 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createWordPressDevelopmentInNoidaPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor wording nuances in FAQ answers and reason descriptions | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+
+## WordPress Development in Pune (`/wordpress-development-in-pune`)
+
+Status: technical and schema implementation complete; visible copy preserved per live site
+Last reviewed: 2026-09-01
+Owner: SEO, content, and development
+
+### Page Role and Buyer Intent
+
+- **Primary role**: Geo-targeted commercial landing page targeting businesses, startups, IT enterprises, and publishers in Pune seeking certified WordPress website development, custom theme design, plugin development, migration, and ongoing maintenance.
+- **Audience**: Pune-based business owners, marketing managers, and technology partners looking for dedicated WordPress developers.
+- **Target queries**: "WordPress development in Pune", "WordPress development company in Pune", "WordPress agency Pune", "hire WordPress developers in Pune", "custom WordPress development Pune".
+
+### Visible Content and Evidence Available
+
+- H1: "#1 Company for WordPress Development in Pune" establishing regional WordPress leadership.
+- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
+- Trusted brands slider: 10 brand proof logos (Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven, Bella Vita).
+- Value proposition box: "Why Choose Dynamic Dreamz as Your WordPress Development Company in Pune?".
+- 4-step delivery process: Discovery and Planning, Design and Development, Testing and Deployment, Ongoing Support.
+- 6 agency reason cards: Expert WordPress Developers, Custom Solutions, User-Focused Design, SEO-Optimized Websites, Comprehensive Services, Proven Track Record.
+- 8 portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
+- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
+- 7 interactive FAQs covering WordPress development offerings in Pune, agency selection, theme customization, timeline, security, maintenance, and onboarding.
+- Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
+
+### Structured Gap Analysis
+
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/wordpress-development-in-pune` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | 9 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Reused canonical assets across portfolio, client logos, review badges, and reason icons | Reused canonical assets from `public/assets/` with zero duplicates | Verified duplicate hash groups: 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createWordPressDevelopmentInPunePageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Repetitive sentences in Intro text box | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+
+## WordPress Development in Ahmedabad (`/wordpress-development-in-ahmedabad`)
+
+Status: technical and schema implementation complete; visible copy preserved per live site
+Last reviewed: 2026-09-01
+Owner: SEO, content, and development
+
+### Page Role and Buyer Intent
+
+- **Primary role**: Geo-targeted commercial landing page targeting businesses, startups, textile/manufacturing enterprises, and publishers in Ahmedabad and Gujarat seeking certified WordPress website development, custom theme design, plugin development, migration, and ongoing maintenance.
+- **Audience**: Ahmedabad-based business owners, marketing managers, and technology partners looking for dedicated WordPress developers.
+- **Target queries**: "WordPress development in Ahmedabad", "WordPress development company in Ahmedabad", "WordPress agency Ahmedabad", "hire WordPress developers in Ahmedabad", "custom WordPress development Ahmedabad".
+
+### Visible Content and Evidence Available
+
+- H1: "#1 Company For WordPress Development in Ahmedabad" establishing regional WordPress leadership.
+- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
+- Trusted brands slider: 10 brand proof logos (Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven, Bella Vita).
+- Value proposition box: "Choose Dynamic Dreamz as the Best WordPress Development Company in Ahmedabad".
+- 4-step delivery process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support.
+- 6 agency reason cards: Expert WordPress Developers, Custom Solutions, User-Friendly Design, SEO Optimization, Comprehensive Services, Proven Track Record.
+- 8 portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
+- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
+- 7 interactive FAQs covering WordPress development offerings in Ahmedabad, agency selection, theme customization, timeline, security, maintenance, and onboarding.
+- Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
+
+### Structured Gap Analysis
+
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/wordpress-development-in-ahmedabad` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | 9 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Reused canonical assets across portfolio, client logos, review badges, and reason icons | Reused canonical assets from `public/assets/` with zero duplicates | Verified duplicate hash groups: 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createWordPressDevelopmentInAhmedabadPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Run-on sentence in Intro text box | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |

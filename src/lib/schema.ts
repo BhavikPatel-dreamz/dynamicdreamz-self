@@ -161,6 +161,9 @@ import { dentalClinicWebsiteDevelopmentCompanyContent } from "@/content/dental-c
 import { shopifyDevelopmentDelhiContent } from "@/content/shopify-development-in-delhi";
 import { shopifyDevelopmentHyderabadContent } from "@/content/shopify-development-in-hyderabad";
 import { wordpressDevelopmentDelhiContent } from "@/content/wordpress-development-in-delhi";
+import { wordpressDevelopmentNoidaContent } from "@/content/wordpress-development-in-noida";
+import { wordpressDevelopmentPuneContent } from "@/content/wordpress-development-in-pune";
+import { wordpressDevelopmentAhmedabadContent } from "@/content/wordpress-development-in-ahmedabad";
 import {
   shopifyMobileAppBenefits,
   shopifyMobileAppDevelopmentFaqs,
@@ -713,6 +716,21 @@ const wordpressDevelopmentDelhiPageId = `${wordpressDevelopmentDelhiPageUrl}#web
 const wordpressDevelopmentDelhiServiceId = `${wordpressDevelopmentDelhiPageUrl}#service`;
 const wordpressDevelopmentDelhiFaqId = `${wordpressDevelopmentDelhiPageUrl}#faq`;
 const wordpressDevelopmentDelhiBreadcrumbId = `${wordpressDevelopmentDelhiPageUrl}#breadcrumb`;
+const wordpressDevelopmentNoidaPageUrl = absoluteUrl(pageSeo.wordpressDevelopmentInNoida.path);
+const wordpressDevelopmentNoidaPageId = `${wordpressDevelopmentNoidaPageUrl}#webpage`;
+const wordpressDevelopmentNoidaServiceId = `${wordpressDevelopmentNoidaPageUrl}#service`;
+const wordpressDevelopmentNoidaFaqId = `${wordpressDevelopmentNoidaPageUrl}#faq`;
+const wordpressDevelopmentNoidaBreadcrumbId = `${wordpressDevelopmentNoidaPageUrl}#breadcrumb`;
+const wordpressDevelopmentPunePageUrl = absoluteUrl(pageSeo.wordpressDevelopmentInPune.path);
+const wordpressDevelopmentPunePageId = `${wordpressDevelopmentPunePageUrl}#webpage`;
+const wordpressDevelopmentPuneServiceId = `${wordpressDevelopmentPunePageUrl}#service`;
+const wordpressDevelopmentPuneFaqId = `${wordpressDevelopmentPunePageUrl}#faq`;
+const wordpressDevelopmentPuneBreadcrumbId = `${wordpressDevelopmentPunePageUrl}#breadcrumb`;
+const wordpressDevelopmentAhmedabadPageUrl = absoluteUrl(pageSeo.wordpressDevelopmentInAhmedabad.path);
+const wordpressDevelopmentAhmedabadPageId = `${wordpressDevelopmentAhmedabadPageUrl}#webpage`;
+const wordpressDevelopmentAhmedabadServiceId = `${wordpressDevelopmentAhmedabadPageUrl}#service`;
+const wordpressDevelopmentAhmedabadFaqId = `${wordpressDevelopmentAhmedabadPageUrl}#faq`;
+const wordpressDevelopmentAhmedabadBreadcrumbId = `${wordpressDevelopmentAhmedabadPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -4353,6 +4371,84 @@ export function createWordPressDevelopmentInDelhiPageSchema() {
       answer: item.answer.replace(/<[^>]+>/g, " "),
     })),
     offers: wordpressDevelopmentDelhiContent.reasons.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createWordPressDevelopmentInNoidaPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.wordpressDevelopmentInNoida,
+    pageUrl: wordpressDevelopmentNoidaPageUrl,
+    pageId: wordpressDevelopmentNoidaPageId,
+    serviceId: wordpressDevelopmentNoidaServiceId,
+    faqId: wordpressDevelopmentNoidaFaqId,
+    breadcrumbId: wordpressDevelopmentNoidaBreadcrumbId,
+    serviceName: "WordPress Development in Noida",
+    serviceType:
+      "Custom WordPress development, theme customization, plugin development, website design, SEO optimization, and ongoing maintenance for businesses in Noida",
+    breadcrumbName: "WordPress Development in Noida",
+    audienceType:
+      "Businesses, startups, enterprises, and digital agencies in Noida seeking custom WordPress development services",
+    faqs: wordpressDevelopmentNoidaContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: wordpressDevelopmentNoidaContent.reasons.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createWordPressDevelopmentInPunePageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.wordpressDevelopmentInPune,
+    pageUrl: wordpressDevelopmentPunePageUrl,
+    pageId: wordpressDevelopmentPunePageId,
+    serviceId: wordpressDevelopmentPuneServiceId,
+    faqId: wordpressDevelopmentPuneFaqId,
+    breadcrumbId: wordpressDevelopmentPuneBreadcrumbId,
+    serviceName: "WordPress Development in Pune",
+    serviceType:
+      "Custom WordPress development, theme customization, plugin development, website design, SEO optimization, and ongoing maintenance for businesses in Pune",
+    breadcrumbName: "WordPress Development in Pune",
+    audienceType:
+      "Businesses, startups, enterprises, and digital agencies in Pune seeking custom WordPress development services",
+    faqs: wordpressDevelopmentPuneContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: wordpressDevelopmentPuneContent.reasons.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createWordPressDevelopmentInAhmedabadPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.wordpressDevelopmentInAhmedabad,
+    pageUrl: wordpressDevelopmentAhmedabadPageUrl,
+    pageId: wordpressDevelopmentAhmedabadPageId,
+    serviceId: wordpressDevelopmentAhmedabadServiceId,
+    faqId: wordpressDevelopmentAhmedabadFaqId,
+    breadcrumbId: wordpressDevelopmentAhmedabadBreadcrumbId,
+    serviceName: "WordPress Development in Ahmedabad",
+    serviceType:
+      "Custom WordPress development, theme customization, plugin development, website design, SEO optimization, and ongoing maintenance for businesses in Ahmedabad",
+    breadcrumbName: "WordPress Development in Ahmedabad",
+    audienceType:
+      "Businesses, startups, enterprises, and digital agencies in Ahmedabad seeking custom WordPress development services",
+    faqs: wordpressDevelopmentAhmedabadContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: wordpressDevelopmentAhmedabadContent.reasons.items.map((item) => ({
       title: item.title,
       description: item.description,
     })),

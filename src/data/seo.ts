@@ -2937,6 +2937,90 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  wordpressDevelopmentInNoida: {
+    path: "/wordpress-development-in-noida",
+    title: "No.1 WordPress Development in Noida | Dynamic Dreamz",
+    description:
+      "Professional WordPress Development in Noida with 18+ Years of Experience. So hire the team DynamicDreamz today, and scale your business online.",
+    socialDescription:
+      "Expert WordPress development company in Noida: custom theme development, plugin integration, SEO optimization, and website maintenance.",
+    keywords: [
+      "WordPress development in Noida",
+      "WordPress development company in Noida",
+      "WordPress agency Noida",
+      "hire WordPress developers in Noida",
+      "custom WordPress development Noida",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-02-07T06:57:43+00:00",
+    modifiedTime: "2026-09-01T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "WordPress Development in Noida | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  wordpressDevelopmentInPune: {
+    path: "/wordpress-development-in-pune",
+    title: "No.1 WordPress Development in Pune | Dynamic Dreamz",
+    description:
+      "Professional WordPress development in Pune with 18+ Years of Experience. Custom themes, plugin development, speed optimization, and ongoing support.",
+    socialDescription:
+      "Expert WordPress development company in Pune: custom theme development, plugin integration, SEO optimization, and website maintenance.",
+    keywords: [
+      "WordPress development in Pune",
+      "WordPress development company in Pune",
+      "WordPress agency Pune",
+      "hire WordPress developers in Pune",
+      "custom WordPress development Pune",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-02-07T06:57:43+00:00",
+    modifiedTime: "2026-09-01T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "WordPress Development in Pune | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  wordpressDevelopmentInAhmedabad: {
+    path: "/wordpress-development-in-ahmedabad",
+    title: "No.1 WordPress Development in Ahmedabad | Dynamic Dreamz",
+    description:
+      "Best WordPress Development in Ahmedabad with 18+ Years of Experience. Custom store setup, theme customization & migration for growing brands.",
+    socialDescription:
+      "Expert WordPress development company in Ahmedabad: custom theme development, plugin integration, SEO optimization, and website maintenance.",
+    keywords: [
+      "WordPress development in Ahmedabad",
+      "WordPress development company in Ahmedabad",
+      "WordPress agency Ahmedabad",
+      "hire WordPress developers in Ahmedabad",
+      "custom WordPress development Ahmedabad",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-02-07T06:57:43+00:00",
+    modifiedTime: "2026-09-01T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "WordPress Development in Ahmedabad | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;
