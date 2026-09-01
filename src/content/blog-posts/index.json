@@ -1,0 +1,1514 @@
+[
+  {
+    "slug": "shopify-development-tools",
+    "title": "7 Must-Have Shopify Development Tools for Agencies & Developers",
+    "href": "/blogs/shopify-development-tools",
+    "image": "/assets/blog/shopify-development-tools.webp",
+    "width": 2560,
+    "height": 1935,
+    "date": "2026-08-11",
+    "displayDate": "August 11, 2026",
+    "modified": "2026-08-11T18:55:19",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Best Shopify Development Tools for Agencies & Developers",
+      "description": "Looking for the best Shopify development tools? Here are 7 tools top agencies use daily, covering local development, version control, and app building."
+    }
+  },
+  {
+    "slug": "free-vs-paid-shopify-themes",
+    "title": "Free vs Paid Shopify Themes: Which One Is Right for Your Store?",
+    "href": "/blogs/free-vs-paid-shopify-themes",
+    "image": "/assets/blog/free-vs-paid-shopify-themes.webp",
+    "width": 2560,
+    "height": 1935,
+    "date": "2026-08-11",
+    "displayDate": "August 11, 2026",
+    "modified": "2026-08-11T18:55:24",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Free vs Paid Shopify Themes: Which One Is Right for You?",
+      "description": "Free vs paid Shopify themes: which is right for your store? Compare cost, speed, SEO, and features, and choose the best theme for your stage."
+    }
+  },
+  {
+    "slug": "shopify-cro-checklist",
+    "title": "Shopify CRO Checklist: 10 Urgent CRO Steps You Should Know Right Now",
+    "href": "/blogs/shopify-cro-checklist",
+    "image": "/assets/blog/shopify-cro-checklist.webp",
+    "width": 2560,
+    "height": 1930,
+    "date": "2026-08-11",
+    "displayDate": "August 11, 2026",
+    "modified": "2026-08-11T18:55:16",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify CRO Checklist: 10 Urgent Steps to Boost Sales",
+      "description": "Is your Shopify store converting below 2%? Follow this 10-step Shopify CRO checklist to boost conversions, reduce cart abandonment, and grow revenue fast."
+    }
+  },
+  {
+    "slug": "woocommerce-seo",
+    "title": "WooCommerce SEO Guide: How to Rank Your Store Higher in 2026",
+    "href": "/blogs/woocommerce-seo",
+    "image": "/assets/blog/woocommerce-seo-guide.webp",
+    "width": 2560,
+    "height": 1930,
+    "date": "2026-08-11",
+    "displayDate": "August 11, 2026",
+    "modified": "2026-08-11T18:55:21",
+    "category": "WordPress",
+    "categoryValue": "wordpress",
+    "categoryHref": "/blogs?category=wordpress",
+    "seo": {
+      "title": "WooCommerce SEO: How to Rank Your Online Store in 2026",
+      "description": "Master WooCommerce SEO with this complete guide: keyword research, product page optimization, technical SEO, schema markup, and site speed are all covered."
+    }
+  },
+  {
+    "slug": "ecommerce-website-design",
+    "title": "7 Wonderful Ecommerce Website Design Tips for Your Shopify Store",
+    "href": "/blogs/ecommerce-website-design",
+    "image": "/assets/blog/ecommerce-design-tips.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-08-03",
+    "displayDate": "August 3, 2026",
+    "modified": "2026-08-03T15:10:08",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Ecommerce Website Design Tips: 7 Ways to Convert More Sho...",
+      "description": "Is your Shopify store designed to convert? These 7 ecommerce website design tips cover the homepage, mobile UX, and checkout to turn visitors into buyers."
+    }
+  },
+  {
+    "slug": "shopify-core-web-vitals",
+    "title": "How to Improve Shopify Core Web Vitals and Speed Up Your Store?",
+    "href": "/blogs/shopify-core-web-vitals",
+    "image": "/assets/blog/shopify-core-web-vitals.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-08-03",
+    "displayDate": "August 3, 2026",
+    "modified": "2026-08-03T15:10:15",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "How to Improve Shopify Core Web Vitals and Store Speed",
+      "description": "Struggling with Shopify Core Web Vitals? Learn how to fix LCP, INP, and CLS issues step by step and speed up your store for better SEO and more conversions."
+    }
+  },
+  {
+    "slug": "shopify-vs-woocommerce",
+    "title": "Shopify vs WooCommerce India: Which Is Better for Your Online Store?",
+    "href": "/blogs/shopify-vs-woocommerce",
+    "image": "/assets/blog/shopify-vs-woocommerce.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-08-03",
+    "displayDate": "August 3, 2026",
+    "modified": "2026-08-03T15:10:17",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify vs WooCommerce India: Which Is Better for You?",
+      "description": "Shopify vs WooCommerce India: which platform wins for your store? Compare pricing, payment gateways, SEO, and more to make the right choice. Dynamic Dreamz"
+    }
+  },
+  {
+    "slug": "shopify-plus-for-texas-brands",
+    "title": "Shopify Plus For Texas Brands: Shopify B2B Vs Plus In 2026",
+    "href": "/blogs/shopify-plus-for-texas-brands",
+    "image": "/assets/blog/shopify-plus-for-texas-brands.webp",
+    "width": 2560,
+    "height": 1935,
+    "date": "2026-07-15",
+    "displayDate": "July 15, 2026",
+    "modified": "2026-08-05T17:20:07",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Plus for Texas Brands: Do You Still Need It for B...",
+      "description": "Shopify Plus for Texas brands is not automatic anymore. So, here's what we have listed: all the details required for B2B in 2026, and what doesn't."
+    }
+  },
+  {
+    "slug": "shopify-vs-woocommerce-vs-bigcommerce",
+    "title": "Shopify vs WooCommerce vs BigCommerce: Which One Is Better For LA Businesses?",
+    "href": "/blogs/shopify-vs-woocommerce-vs-bigcommerce",
+    "image": "/assets/blog/shopify-vs-woocommerce-vs-bigcommerce.webp",
+    "width": 2560,
+    "height": 1935,
+    "date": "2026-07-15",
+    "displayDate": "July 15, 2026",
+    "modified": "2026-08-05T17:21:19",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify vs WooCommerce vs BigCommerce: Best Ecommerce for...",
+      "description": "Which ecommerce platform fits your Los Angeles business? A 2026 breakdown of Shopify vs WooCommerce vs BigCommerce costs and features - Dynamic Dreamz"
+    }
+  },
+  {
+    "slug": "shopify-collective",
+    "title": "What is Shopify Collective? How Does It help Stores Expand Without Inventory Risk?",
+    "href": "/blogs/shopify-collective",
+    "image": "/assets/blog/shopify-collective.webp",
+    "width": 2560,
+    "height": 1935,
+    "date": "2026-07-15",
+    "displayDate": "July 15, 2026",
+    "modified": "2026-08-05T17:18:48",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "What is Shopify Collective? & How It Works? | Full Guide",
+      "description": "Shopify Collective lets stores sell each other's products with zero inventory risk. Learn how it works, eligibility, benefits, and limitations | Dynamic Dreamz"
+    }
+  },
+  {
+    "slug": "los-angeles-brands",
+    "title": "How Big Los Angeles Brands Are Using Shopify Plus To Scale In 2026",
+    "href": "/blogs/los-angeles-brands",
+    "image": "/assets/blog/los-angeles-brands.webp",
+    "width": 2560,
+    "height": 1935,
+    "date": "2026-07-08",
+    "displayDate": "July 8, 2026",
+    "modified": "2026-08-05T16:54:51",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Los Angeles Brands Using Shopify Plus To Scale | Dynamic...",
+      "description": "See how Los Angeles brands are using Shopify Plus to handle TikTok Shop spikes, omnichannel retail, and subscription growth in 2026 | Dynamic Dreamz"
+    }
+  },
+  {
+    "slug": "shopify-development-cost",
+    "title": "Shopify Development Cost in Los Angeles: Complete Price Breakdown",
+    "href": "/blogs/shopify-development-cost",
+    "image": "/assets/blog/shopify-development-cost.webp",
+    "width": 2560,
+    "height": 1935,
+    "date": "2026-07-08",
+    "displayDate": "July 8, 2026",
+    "modified": "2026-08-05T17:15:10",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Development Cost in Los Angeles: What to Budget i...",
+      "description": "See the real Shopify Development Cost in Los Angeles for 2026, including agency rates, freelancer costs, and Shopify Plus budgets | Dynamic Dreamz"
+    }
+  },
+  {
+    "slug": "how-to-do-ab-testing",
+    "title": "How To Do A/B Testing On Shopify: Everything You Need To Know",
+    "href": "/blogs/how-to-do-ab-testing",
+    "image": "/assets/blog/how-to-do-ab-testing.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-06-01",
+    "displayDate": "June 1, 2026",
+    "modified": "2026-06-03T14:17:50",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "How to Do A/B Testing on Shopify Store: Full Guide",
+      "description": "Learn how to do A/B testing on Shopify step by step. From setup to results, everything you need to optimize your store and increase conversions."
+    }
+  },
+  {
+    "slug": "what-is-ai-marketing",
+    "title": "What is AI marketing? And Why New Ecommerce Stores Need It?",
+    "href": "/blogs/what-is-ai-marketing",
+    "image": "/assets/blog/what-is-ai-marketing.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-06-01",
+    "displayDate": "June 1, 2026",
+    "modified": "2026-08-05T18:52:38",
+    "category": "eCommerce",
+    "categoryValue": "ecommerce",
+    "categoryHref": "/blogs?category=ecommerce",
+    "seo": {
+      "title": "What is AI marketing? And Why New Ecommerce Stores Need I...",
+      "description": "What is AI marketing? Learn how AI marketing for ecommerce works in 2026, from email and content to ads, and why every new online store needs it now."
+    }
+  },
+  {
+    "slug": "shopify-seo-tips",
+    "title": "10 Wonderful Shopify SEO Tips to Rank Higher in 2026",
+    "href": "/blogs/shopify-seo-tips",
+    "image": "/assets/blog/shopify-seo-tips.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-05-22",
+    "displayDate": "May 22, 2026",
+    "modified": "2026-08-05T18:56:20",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "10 Top Shopify SEO Tips to Rank Higher in 2026",
+      "description": "Looking to increase organic traffic on Shopify? These 10 Shopify SEO tips cover on-page, technical SEO, keyword research & more to help you rank higher in 2026."
+    }
+  },
+  {
+    "slug": "what-is-product-positioning",
+    "title": "What Is Product Positioning for WooCommerce? (And How to Turn Commodity Products into Branded Offers)",
+    "href": "/blogs/what-is-product-positioning",
+    "image": "/assets/blog/what-is-product-positioning.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-05-22",
+    "displayDate": "May 22, 2026",
+    "modified": "2026-05-22T12:39:58",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "What Is Product Positioning for WooCommerce? Powerful Guide",
+      "description": "Get all the needed info regarding ‘what is product positioning for WooCommerce’ with five top-class WooCommerce product positioning strategies at once."
+    }
+  },
+  {
+    "slug": "common-wordpress-mistakes",
+    "title": "7 Common WordPress Mistakes When Setting Up A New Website",
+    "href": "/blogs/common-wordpress-mistakes",
+    "image": "/assets/blog/common-wordpress-mistakes.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-05-12",
+    "displayDate": "May 12, 2026",
+    "modified": "2026-08-05T18:53:33",
+    "category": "WordPress",
+    "categoryValue": "wordpress",
+    "categoryHref": "/blogs?category=wordpress",
+    "seo": {
+      "title": "7 Common WordPress Mistakes to Avoid When Building a Site",
+      "description": "Most common WordPress website setup mistakes happen at the start, & here are the 7 beginner mistakes you should avoid & what to do instead for a faster..."
+    }
+  },
+  {
+    "slug": "ai-recommendation-system",
+    "title": "AI Product Recommendation For Ecommerce And Why Your Store Needs It In 2026?",
+    "href": "/blogs/ai-recommendation-system",
+    "image": "/assets/blog/ai-recommendation-system.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-05-12",
+    "displayDate": "May 12, 2026",
+    "modified": "2026-08-05T18:44:11",
+    "category": "eCommerce",
+    "categoryValue": "ecommerce",
+    "categoryHref": "/blogs?category=ecommerce",
+    "seo": {
+      "title": "AI Product Recommendation For Ecommerce: Complete Guide",
+      "description": "Learn how AI product recommendation for ecommerce helps Shopify & WooCommerce store owners personalise shopping, increase AOV, and reduce cart abandonment."
+    }
+  },
+  {
+    "slug": "shopify-product-page",
+    "title": "Why Shopify Product Page Isn’t Converting? Know These 5 Wonderful Fixes!",
+    "href": "/blogs/shopify-product-page",
+    "image": "/assets/blog/shopify-product-page.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-05-12",
+    "displayDate": "May 12, 2026",
+    "modified": "2026-08-05T18:52:43",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "5 Fixes to Boost Your Shopify Product Page Conversions",
+      "description": "Is your Shopify product page not converting? Learn 5 powerful fixes from product images and descriptions to trust signals and page speed to boost your sales."
+    }
+  },
+  {
+    "slug": "ai-automation-for-shopify-stores",
+    "title": "How AI Automation Helps Shopify Stores Save Time? Sell More & Scale Faster",
+    "href": "/blogs/ai-automation-for-shopify-stores",
+    "image": "/assets/blog/ai-automation-for-shopify-stores.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-05-04",
+    "displayDate": "May 4, 2026",
+    "modified": "2026-05-05T18:12:45",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "AI Automation for Shopify Stores: Tools, Tips & Benefits...",
+      "description": "Want to know how AI helps your Shopify store sell more with less effort? Explore the best AI tools for Shopify 2026- from inventory to customer support to..."
+    }
+  },
+  {
+    "slug": "best-free-wordpress-themes",
+    "title": "Best Free WordPress Themes For 2026- Tested & Ranked",
+    "href": "/blogs/best-free-wordpress-themes",
+    "image": "/assets/blog/best-free-wordpress-themes.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-04-21",
+    "displayDate": "April 21, 2026",
+    "modified": "2026-08-05T18:58:49",
+    "category": "WordPress",
+    "categoryValue": "wordpress",
+    "categoryHref": "/blogs?category=wordpress",
+    "seo": {
+      "title": "Best Free WordPress Themes For 2026- Dynamic Dreamz",
+      "description": "Looking for the best free WordPress themes in 2026? Then have a look at these 10 and find the right theme for your business, store, or blog."
+    }
+  },
+  {
+    "slug": "bigcommerce-to-woocommerce-migration",
+    "title": "BigCommerce To WooCommerce Migration: The Complete Guide For 2026",
+    "href": "/blogs/bigcommerce-to-woocommerce-migration",
+    "image": "/assets/blog/bigcommerce-to-woocommerce-migration.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-04-21",
+    "displayDate": "April 21, 2026",
+    "modified": "2026-04-21T18:42:47",
+    "category": "Big-Commerce",
+    "categoryValue": "big-commerce",
+    "categoryHref": "/blogs?category=big-commerce",
+    "seo": {
+      "title": "BigCommerce to WooCommerce Migration Services & Process",
+      "description": "Thinking about BigCommerce to WooCommerce migration? This guide will help you with migration process, challenges, tools, & how to choose the right migration..."
+    }
+  },
+  {
+    "slug": "shopify-seo-migration",
+    "title": "Shopify SEO Migration: How to Move Your Store Without Losing Organic Traffic",
+    "href": "/blogs/shopify-seo-migration",
+    "image": "/assets/blog/shopify-seo-migration.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-04-21",
+    "displayDate": "April 21, 2026",
+    "modified": "2026-04-21T18:42:48",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify SEO Migration: The Complete Checklist for Store O...",
+      "description": "Planning a Shopify SEO migration? Learn how to migrate to Shopify without losing organic traffic, with a phase-by-phase checklist and expert tips."
+    }
+  },
+  {
+    "slug": "migrate-bigcommerce-to-shopify",
+    "title": "Bigcommerce To Shopify Migration: Everything You Need To Know Before You Switch",
+    "href": "/blogs/migrate-bigcommerce-to-shopify",
+    "image": "/assets/blog/migrate-bigcommerce-to-shopify.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-04-14",
+    "displayDate": "April 14, 2026",
+    "modified": "2026-04-14T18:47:25",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Bigcommerce To Shopify Migration Without Losing Data or R...",
+      "description": "Learn the process of bigcommerce to shopify migration with this step-by-step guide, covering data migration, SEO, testing & launch without losing rankings..."
+    }
+  },
+  {
+    "slug": "digital-retail-ai-agents",
+    "title": "Digital Retail AI Agents: How They Work and Why eCommerce Managers Should Care",
+    "href": "/blogs/digital-retail-ai-agents",
+    "image": "/assets/blog/digital-retail-ai-agents.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-04-14",
+    "displayDate": "April 14, 2026",
+    "modified": "2026-04-14T18:39:22",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Digital Retail AI Agents: What eCommerce Managers Need to...",
+      "description": "Learn how digital retail AI agents are transforming eCommerce operations from AI-powered inventory management to personalisation and retail automation."
+    }
+  },
+  {
+    "slug": "digital-transformation-trends",
+    "title": "Digital Transformation Trends In Retail: What Brand Founders Need To Know",
+    "href": "/blogs/digital-transformation-trends",
+    "image": "/assets/blog/digital-transformation-trends.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-04-14",
+    "displayDate": "April 14, 2026",
+    "modified": "2026-04-14T18:39:28",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Digital Transformation Trends in Retail: The 2026 Founder...",
+      "description": "Explore the key digital transformation trends in retail for 2026- AI, unified commerce, AR, and IoT, and how brand founders can act on them today."
+    }
+  },
+  {
+    "slug": "shopify-plus-for-global-brands",
+    "title": "Shopify Plus For Global Brands: Scale Smarter, Sell Everywhere",
+    "href": "/blogs/shopify-plus-for-global-brands",
+    "image": "/assets/blog/shopify-plus-for-global-brands.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-04-08",
+    "displayDate": "April 8, 2026",
+    "modified": "2026-04-08T14:09:19",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Plus for Global Brands: Enterprise Ecommerce Growth",
+      "description": "Scale globally with Shopify Plus for global brands. Learn how enterprise ecommerce, Shopify Markets, and localisation power international growth."
+    }
+  },
+  {
+    "slug": "how-to-migrate-to-shopify-plus",
+    "title": "How to Migrate to Shopify Plus: A Step-by-Step Guide",
+    "href": "/blogs/how-to-migrate-to-shopify-plus",
+    "image": "/assets/blog/how-to-migrate-to-shopify-plus.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-03-31",
+    "displayDate": "March 31, 2026",
+    "modified": "2026-04-01T14:36:10",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "How to Migrate to Shopify Plus Without Losing Data or Ran...",
+      "description": "Learn how to migrate to Shopify Plus with this step-by-step guide, covering data migration, SEO, testing, and launch without losing rankings or data."
+    }
+  },
+  {
+    "slug": "shopify-agentic-commerce",
+    "title": "What is Shopify Agentic Commerce? The Next Big Shift in Ecommerce",
+    "href": "/blogs/shopify-agentic-commerce",
+    "image": "/assets/blog/shopify-agentic-commerce.webp",
+    "width": 1504,
+    "height": 756,
+    "date": "2026-03-19",
+    "displayDate": "March 19, 2026",
+    "modified": "2026-03-19T14:08:02",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Agentic Commerce: The Future of AI Shopping",
+      "description": "Learn what Shopify agentic commerce is, how it works, and how AI agents are transforming product discovery, conversational checkout, and the future of..."
+    }
+  },
+  {
+    "slug": "complete-shopify-outsourcing-checklist-with-10-official-tips",
+    "title": "Complete Shopify Outsourcing Checklist With 10 Official Tips",
+    "href": "/blogs/complete-shopify-outsourcing-checklist-with-10-official-tips",
+    "image": "/assets/blog/complete-shopify-outsourcing-checklist-with-10-official-tips.webp",
+    "width": 329,
+    "height": 237,
+    "date": "2026-03-14",
+    "displayDate": "March 14, 2026",
+    "modified": "2026-08-06T17:54:57",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Plus Ecommerce Agency | Scale with Dynamic Dreamz",
+      "description": "Partner with India’s only Shopify Plus Platinum Partner. Boost revenue, cut fees & scale globally with expert Shopify Plus development services."
+    }
+  },
+  {
+    "slug": "transform-your-store-with-a-complete-magento-web-development-guide",
+    "title": "Transform Your Store With A Complete Magento Web Development Guide",
+    "href": "/blogs/transform-your-store-with-a-complete-magento-web-development-guide",
+    "image": "/assets/blog/transform-your-store-with-a-complete-magento-web-development-guide.webp",
+    "width": 329,
+    "height": 237,
+    "date": "2026-03-10",
+    "displayDate": "March 10, 2026",
+    "modified": "2026-08-11T12:15:11",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Magento Web Development Explained | Complete 2025 Guide",
+      "description": "Learn everything about Magento web development, its features, benefits, migration & even comparison with Shopify Plus in this complete guide by DynamicDreamz."
+    }
+  },
+  {
+    "slug": "what-are-the-risks-of-shopify-outsourcing-get-details-now",
+    "title": "What Are The Risks Of Shopify Outsourcing? Get Details Now!",
+    "href": "/blogs/what-are-the-risks-of-shopify-outsourcing-get-details-now",
+    "image": "/assets/blog/what-are-the-risks-of-shopify-outsourcing-get-details-now.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2026-03-06",
+    "displayDate": "March 6, 2026",
+    "modified": "2026-08-06T17:53:17",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Risks of Shopify Outsourcing: Expert Breakdown For Store...",
+      "description": "Learn the real Risks of Shopify Outsourcing and protect your store from security threats, hidden costs, and miscommunication challenges- DynamicDreamz"
+    }
+  },
+  {
+    "slug": "white-label-website-design-outsourcing-2",
+    "title": "Why Agencies Prefer White Label Website Design Outsourcing For Growth!",
+    "href": "/blogs/white-label-website-design-outsourcing-2",
+    "image": "/assets/blog/white-label-website-design-outsourcing-2.webp",
+    "width": 1504,
+    "height": 756,
+    "date": "2026-03-01",
+    "displayDate": "March 1, 2026",
+    "modified": "2026-08-06T17:52:39",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "White Label Website Design Outsourcing | DynamicDreamz",
+      "description": "Scale your agency with expert white label website design outsourcing. From Shopify to WordPress, DynamicDreamz delivers high-quality builds under your brand..."
+    }
+  },
+  {
+    "slug": "shopify-plus-headless-commerce",
+    "title": "Shopify Plus Headless Commerce: The Growth Strategy Your Brand Can’t Ignore in 2026",
+    "href": "/blogs/shopify-plus-headless-commerce",
+    "image": "/assets/blog/shopify-plus-headless-commerce.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-02-25",
+    "displayDate": "February 25, 2026",
+    "modified": "2026-08-06T17:51:41",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "What Is Shopify Plus Headless Commerce & Why It Matters i...",
+      "description": "Learn how Shopify Plus Headless Commerce helps enterprise brands build faster storefronts, launch globally & scale without limits- powered by Hydrogen and..."
+    }
+  },
+  {
+    "slug": "shopify-data-migration-challenges",
+    "title": "7 Most Common Shopify Data Migration Challenges For Business",
+    "href": "/blogs/shopify-data-migration-challenges",
+    "image": "/assets/blog/shopify-data-migration-challenges.webp",
+    "width": 2560,
+    "height": 1287,
+    "date": "2026-02-18",
+    "displayDate": "February 18, 2026",
+    "modified": "2026-02-18T17:02:52",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "7 Common Shopify Data Migration Challenges and Solutions",
+      "description": "Find out the most common Shopify data migration challenges businesses face and how to avoid data loss, SEO issues, and costly migration errors."
+    }
+  },
+  {
+    "slug": "shopify-winter-edition-2026",
+    "title": "Shopify Winter Edition 2026: 11 Powerful Updates Scaling Brands Love",
+    "href": "/blogs/shopify-winter-edition-2026",
+    "image": "/assets/blog/shopify-winter-edition-2026.webp",
+    "width": 1504,
+    "height": 1137,
+    "date": "2026-02-05",
+    "displayDate": "February 5, 2026",
+    "modified": "2026-04-01T14:42:53",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Winter Edition 2026: Key Updates, AI & Commerce S...",
+      "description": "From 2,048 product variants to AI-driven insights and faster checkouts, discover how shopify winter edition 2026 helps digital stores scale smarter."
+    }
+  },
+  {
+    "slug": "white-label-wordpress-developers",
+    "title": "Why Do Agencies Love Working with White Label WordPress Developers?",
+    "href": "/blogs/white-label-wordpress-developers",
+    "image": "/assets/blog/white-label-wordpress-developers.webp",
+    "width": 1504,
+    "height": 756,
+    "date": "2026-02-05",
+    "displayDate": "February 5, 2026",
+    "modified": "2026-02-05T15:34:19",
+    "category": "WordPress",
+    "categoryValue": "wordpress",
+    "categoryHref": "/blogs?category=wordpress",
+    "seo": {
+      "title": "Why Agencies Love White Label WordPress Developers",
+      "description": "Find out why agencies choose white label WordPress developers to scale faster, save costs, and deliver top-notch websites with trusted partners"
+    }
+  },
+  {
+    "slug": "white-label-website-design-outsourcing",
+    "title": "Why Agencies Prefer White Label Website Design Outsourcing For Growth!",
+    "href": "/blogs/white-label-website-design-outsourcing",
+    "image": "/assets/blog/white-label-website-design-outsourcing.webp",
+    "width": 1308,
+    "height": 948,
+    "date": "2025-12-16",
+    "displayDate": "December 16, 2025",
+    "modified": "2026-01-06T11:49:08",
+    "category": "WordPress",
+    "categoryValue": "wordpress",
+    "categoryHref": "/blogs?category=wordpress",
+    "seo": {
+      "title": "White Label Website Design Outsourcing | DynamicDreamz",
+      "description": "Scale your agency with expert white label website design outsourcing. From Shopify to WordPress, DynamicDreamz delivers high-quality builds under your brand..."
+    }
+  },
+  {
+    "slug": "white-label-wordpress-outsourcing",
+    "title": "White Label WordPress Outsourcing That Makes Scaling Feel Simple",
+    "href": "/blogs/white-label-wordpress-outsourcing",
+    "image": "/assets/blog/white-label-wordpress-outsourcing.webp",
+    "width": 1298,
+    "height": 948,
+    "date": "2025-12-09",
+    "displayDate": "December 9, 2025",
+    "modified": "2025-12-29T21:19:43",
+    "category": "WordPress",
+    "categoryValue": "wordpress",
+    "categoryHref": "/blogs?category=wordpress",
+    "seo": {
+      "title": "White label WordPress Outsourcing | DynamicDreamz",
+      "description": "White label WordPress outsourcing for agencies seeking scalable delivery, clean workflows, and reliable WordPress development under their own brand."
+    }
+  },
+  {
+    "slug": "shopify-limits",
+    "title": "Shopify Limits: The Complete Breakdown You Need In 2026",
+    "href": "/blogs/shopify-limits",
+    "image": "/assets/blog/shopify-limits.webp",
+    "width": 1308,
+    "height": 948,
+    "date": "2025-12-02",
+    "displayDate": "December 2, 2025",
+    "modified": "2025-12-29T18:30:19",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Limits: What Holds Stores Back and How to Fix It",
+      "description": "Understand the real impact of Shopify limits and how the right technical decisions help you grow beyond them. Build a store that performs at every stage."
+    }
+  },
+  {
+    "slug": "shopify-plus-ecommerce-agency",
+    "title": "Shopify Plus Ecommerce Agency: The Key to Scaling Your Online Brand",
+    "href": "/blogs/shopify-plus-ecommerce-agency",
+    "image": "/assets/blog/shopify-plus-ecommerce-agency.webp",
+    "width": 1308,
+    "height": 948,
+    "date": "2025-09-09",
+    "displayDate": "September 9, 2025",
+    "modified": "2025-12-26T16:11:21",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Plus Ecommerce Agency | Scale with Dynamic Dreamz",
+      "description": "Partner with India’s only Shopify Plus Platinum Partner. Boost revenue, cut fees & scale globally with expert Shopify Plus development services."
+    }
+  },
+  {
+    "slug": "b2b-ecommerce-features-for-successful-business",
+    "title": "The Ultimate B2B eCommerce Features for Successful Business",
+    "href": "/blogs/b2b-ecommerce-features-for-successful-business",
+    "image": "/assets/blog/b2b-ecommerce-features-for-successful-business.webp",
+    "width": 329,
+    "height": 237,
+    "date": "2025-09-02",
+    "displayDate": "September 2, 2025",
+    "modified": "2025-12-26T16:11:12",
+    "category": "eCommerce",
+    "categoryValue": "ecommerce",
+    "categoryHref": "/blogs?category=ecommerce",
+    "seo": {
+      "title": "The Ultimate B2B Ecommerce Features for Successful Business",
+      "description": "Discover the top B2B Ecommerce Features for your store. Use this eCommerce website checklist to boost sales, improve customer loyalty, and grow your business."
+    }
+  },
+  {
+    "slug": "why-shopify-plus-is-better-than-shopify",
+    "title": "Why Shopify Plus is Better Than Shopify",
+    "href": "/blogs/why-shopify-plus-is-better-than-shopify",
+    "image": "/assets/blog/why-shopify-plus-is-better-than-shopify.webp",
+    "width": 329,
+    "height": 237,
+    "date": "2025-08-26",
+    "displayDate": "August 26, 2025",
+    "modified": "2026-08-11T14:43:52",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Plus vs Shopify: Which One Is Right for Your Busi...",
+      "description": "Compare Shopify Plus vs. Shopify to learn about their features, pricing, support & more. Discover why Shopify Plus is better than Shopify. Find out Now!"
+    }
+  },
+  {
+    "slug": "responsive-design-for-ecommerce",
+    "title": "Why Responsive Design is Important for eCommerce",
+    "href": "/blogs/responsive-design-for-ecommerce",
+    "image": "/assets/blog/responsive-design-for-ecommerce.webp",
+    "width": 329,
+    "height": 237,
+    "date": "2025-08-19",
+    "displayDate": "August 19, 2025",
+    "modified": "2025-12-26T16:08:45",
+    "category": "eCommerce",
+    "categoryValue": "ecommerce",
+    "categoryHref": "/blogs?category=ecommerce",
+    "seo": {
+      "title": "Responsive Design for eCommerce: Why It Matters",
+      "description": "Learn why Responsive Design for eCommerce is key to mobile sales, SEO, and a better user experience. Why it's key to staying competitive in today’s market."
+    }
+  },
+  {
+    "slug": "top-payment-methods-for-shopify-store",
+    "title": "Top 5 Shopify Payment Methods",
+    "href": "/blogs/top-payment-methods-for-shopify-store",
+    "image": "/assets/blog/top-payment-methods-for-shopify-store.webp",
+    "width": 329,
+    "height": 237,
+    "date": "2025-08-12",
+    "displayDate": "August 12, 2025",
+    "modified": "2026-02-20T17:57:02",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Top Payment Methods for Shopify Store | Dynamic Dreamz",
+      "description": "Discover the top 5 Shopify payment methods to boost trust, reduce cart abandonment, and offer the best checkout experience for your customers."
+    }
+  },
+  {
+    "slug": "shopify-apps-for-email-marketing",
+    "title": "Top 5 Shopify Apps for Email Marketing",
+    "href": "/blogs/shopify-apps-for-email-marketing",
+    "image": "/assets/blog/shopify-apps-for-email-marketing.webp",
+    "width": 1504,
+    "height": 756,
+    "date": "2025-08-05",
+    "displayDate": "August 5, 2025",
+    "modified": "2025-10-29T12:41:30",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Best Shopify Email Marketing Apps in 2025",
+      "description": "Explore the top 5 Shopify apps for email marketing to grow your store, send better emails, boost sales, and stay connected with customers using powerful tools."
+    }
+  },
+  {
+    "slug": "shopify-themes-for-jewelry",
+    "title": "Best 5 Shopify themes for jewelry",
+    "href": "/blogs/shopify-themes-for-jewelry",
+    "image": "/assets/blog/shopify-themes-for-jewelry.webp",
+    "width": 329,
+    "height": 237,
+    "date": "2025-07-28",
+    "displayDate": "July 28, 2025",
+    "modified": "2025-07-28T14:44:55",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Best 5 Shopify Themes For Jewelry For Shopify Store",
+      "description": "Explore the best Shopify themes for jewelry. Find premium, fast, and stylish themes for your store. Customize your theme with Dynamic Dreamz. Contact us now!"
+    }
+  },
+  {
+    "slug": "how-to-stay-competitive-in-white-label-services",
+    "title": "How to Use White Label Agency Services to Stay Competitive",
+    "href": "/blogs/how-to-stay-competitive-in-white-label-services",
+    "image": "/assets/blog/how-to-stay-competitive-in-white-label-services.webp",
+    "width": 658,
+    "height": 474,
+    "date": "2025-07-25",
+    "displayDate": "July 25, 2025",
+    "modified": "2025-07-25T08:21:22",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "How to Stay Competitive in White Label Services",
+      "description": "Learn proven ways to stay competitive in white label agency services. boost client satisfaction, innovate offerings, and maintain a competitive edge."
+    }
+  },
+  {
+    "slug": "scaling-your-agency-with-white-label-solutions",
+    "title": "Scaling Your Agency with White Label Solutions: Myths vs. Reality",
+    "href": "/blogs/scaling-your-agency-with-white-label-solutions",
+    "image": "/assets/blog/scaling-your-agency-with-white-label-solutions.webp",
+    "width": 329,
+    "height": 237,
+    "date": "2025-07-21",
+    "displayDate": "July 21, 2025",
+    "modified": "2025-07-21T09:05:43",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Scaling with White Label Services: Myths vs. Reality",
+      "description": "Learn the truth behind common myths about white-label services and see how WordPress and Shopify white-label solutions can help your agency grow faster."
+    }
+  },
+  {
+    "slug": "proven-ways-to-speed-up-your-ecommerce-site",
+    "title": "10 Proven Ways to Speed Up Your eCommerce Site and Boost Sales",
+    "href": "/blogs/proven-ways-to-speed-up-your-ecommerce-site",
+    "image": "/assets/blog/proven-ways-to-speed-up-your-ecommerce-site.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2025-07-18",
+    "displayDate": "July 18, 2025",
+    "modified": "2025-07-18T09:56:27",
+    "category": "eCommerce",
+    "categoryValue": "ecommerce",
+    "categoryHref": "/blogs?category=ecommerce",
+    "seo": {
+      "title": "How to Speed Up Your eCommerce Site: Tips for Store Owners",
+      "description": "Discover 10 actionable ways to speed up your eCommerce site. Improve site performance, reduce bounce rates, and boost conversions with these expert tips."
+    }
+  },
+  {
+    "slug": "benefits-of-white-label-web-design-services",
+    "title": "White Label Web Design Advantages: Tailored Solutions for Customers",
+    "href": "/blogs/benefits-of-white-label-web-design-services",
+    "image": "/assets/blog/benefits-of-white-label-web-design-services.webp",
+    "width": 658,
+    "height": 474,
+    "date": "2025-07-14",
+    "displayDate": "July 14, 2025",
+    "modified": "2025-07-14T08:51:40",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Benefits of White Label Web Design Services for Agencies",
+      "description": "Discover the key benefits of white label website design. It helps the agency scale faster, reduce costs, and deliver high-quality results."
+    }
+  },
+  {
+    "slug": "building-a-profitable-white-label-agency-steps-for-success",
+    "title": "Building a Profitable White Label Agency: Steps for Success",
+    "href": "/blogs/building-a-profitable-white-label-agency-steps-for-success",
+    "image": "/assets/blog/building-a-profitable-white-label-agency-steps-for-success.webp",
+    "width": 658,
+    "height": 474,
+    "date": "2025-07-10",
+    "displayDate": "July 10, 2025",
+    "modified": "2025-07-10T11:11:40",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Build Profitable White Label Agency : Steps for Success",
+      "description": "Learn how to build a white label agency with WordPress & Shopify. Use simple steps to grow your profit & scale your agency fast."
+    }
+  },
+  {
+    "slug": "how-to-choose-the-right-white-label-partner",
+    "title": "How to Choose the Right White Label Partner for Your Digital Marketing Agency",
+    "href": "/blogs/how-to-choose-the-right-white-label-partner",
+    "image": "/assets/blog/how-to-choose-the-right-white-label-partner.webp",
+    "width": 658,
+    "height": 474,
+    "date": "2025-06-05",
+    "displayDate": "June 5, 2025",
+    "modified": "2025-07-10T09:53:27",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "How to Choose the Right White-Label Partner for Your Digi...",
+      "description": "Learn how to choose the best white label service partner to grow and scale your digital agency fast."
+    }
+  },
+  {
+    "slug": "how-white-label-services-reduce-overhead-increase-revenue",
+    "title": "How White Label Services Reduce Overhead & Increase Revenue for Agencies",
+    "href": "/blogs/how-white-label-services-reduce-overhead-increase-revenue",
+    "image": "/assets/blog/how-white-label-services-reduce-overhead-increase-revenue.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2025-05-28",
+    "displayDate": "May 28, 2025",
+    "modified": "2025-05-29T10:09:04",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "How White Label Services Reduce Costs & Boost Revenue",
+      "description": "Discover how white label services help agencies reduce burden, scale faster, and increase profits without hiring full-time staff or buying costly tools."
+    }
+  },
+  {
+    "slug": "measuring-effectiveness-of-white-label-services",
+    "title": "Important Steps for Evaluating White Label Services’ Performance",
+    "href": "/blogs/measuring-effectiveness-of-white-label-services",
+    "image": "/assets/blog/measuring-effectiveness-of-white-label-services.webp",
+    "width": 1504,
+    "height": 756,
+    "date": "2025-05-28",
+    "displayDate": "May 28, 2025",
+    "modified": "2025-05-30T10:57:30",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Steps to Measure Effectiveness of White Label Service",
+      "description": "Discover the key steps to evaluate white label service performance. Learn how to track KPIs, assess quality, monitor client satisfaction, and ensure..."
+    }
+  },
+  {
+    "slug": "signs-to-start-using-white-label-services",
+    "title": "5 Signs It’s Time to Start Using White Label Services in Your Business",
+    "href": "/blogs/signs-to-start-using-white-label-services",
+    "image": "/assets/blog/signs-to-start-using-white-label-services.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2025-05-23",
+    "displayDate": "May 23, 2025",
+    "modified": "2025-05-29T09:59:32",
+    "category": "WordPress",
+    "categoryValue": "wordpress",
+    "categoryHref": "/blogs?category=wordpress",
+    "seo": {
+      "title": "5 Signs You Should Start Using White Label Services",
+      "description": "Know five signs your business needs white label services to grow your business. It's time to outsource and scale faster with white labeling."
+    }
+  },
+  {
+    "slug": "benefits-of-white-labeling-agency",
+    "title": "The Benefits of White Labeling: How Agencies Can Scale Faster",
+    "href": "/blogs/benefits-of-white-labeling-agency",
+    "image": "/assets/blog/benefits-of-white-labeling-agency.webp",
+    "width": 329,
+    "height": 237,
+    "date": "2025-05-23",
+    "displayDate": "May 23, 2025",
+    "modified": "2025-05-26T10:51:21",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Benefits of White Labeling: Scale Your Agency Faster",
+      "description": "Learn how white labeling helps agencies grow faster with Shopify, WordPress & design services."
+    }
+  },
+  {
+    "slug": "what-is-a-white-label-agency",
+    "title": "What Is a White Label Agency & How Can It Help You Grow Your Business?",
+    "href": "/blogs/what-is-a-white-label-agency",
+    "image": "/assets/blog/what-is-a-white-label-agency.webp",
+    "width": 329,
+    "height": 237,
+    "date": "2025-05-23",
+    "displayDate": "May 23, 2025",
+    "modified": "2025-05-23T15:51:31",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "What Is a White Label Agency & How It Helps Your Business",
+      "description": "Learn what a white label agency is and how white label Shopify, WordPress, and Web Design services help your agency to grow."
+    }
+  },
+  {
+    "slug": "shopify-seo-apps",
+    "title": "5 Game-Changing Shopify SEO Apps to Drive More Sales",
+    "href": "/blogs/shopify-seo-apps",
+    "image": "/assets/blog/shopify-seo-apps.webp",
+    "width": 329,
+    "height": 237,
+    "date": "2025-05-05",
+    "displayDate": "May 5, 2025",
+    "modified": "2025-05-07T09:16:02",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Top 5 Shopify SEO Apps to Boost Your Sales",
+      "description": "Discover the top 5 Shopify SEO apps to optimize your store, improve search rankings, and drive more sales. Perfect for store owners seeking SEO tools."
+    }
+  },
+  {
+    "slug": "how-to-assign-and-manage-shopify-collaborator-access",
+    "title": "How to Assign and Manage Shopify Collaborator Access",
+    "href": "/blogs/how-to-assign-and-manage-shopify-collaborator-access",
+    "image": "/assets/blog/how-to-assign-and-manage-shopify-collaborator-access.webp",
+    "width": 329,
+    "height": 237,
+    "date": "2025-03-17",
+    "displayDate": "March 17, 2025",
+    "modified": "2025-03-20T11:58:23",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "How to Assign and Manage Shopify Collaborator Access",
+      "description": "Learn how to assign a Shopify collaborator access code, approve requests, and manage collaborator permissions in your Shopify admin settings."
+    }
+  },
+  {
+    "slug": "shopify-expert-costs",
+    "title": "Shopify Expert Costs Explained: How Much Does It Cost?",
+    "href": "/blogs/shopify-expert-costs",
+    "image": "/assets/blog/shopify-expert-costs.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2025-02-05",
+    "displayDate": "February 5, 2025",
+    "modified": "2025-02-10T10:49:17",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Expert Cost: How Much Does It Cost to Hire One?",
+      "description": "Discover the costs of hiring a Shopify expert, including pricing models, services offered, and tips to choose the right Shopify developer for your Shopify..."
+    }
+  },
+  {
+    "slug": "is-shopify-plus-worth-investing",
+    "title": "Is Shopify Plus Worth Investing? The Ultimate Guide to Making the Decision",
+    "href": "/blogs/is-shopify-plus-worth-investing",
+    "image": "/assets/blog/is-shopify-plus-worth-investing.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2025-01-10",
+    "displayDate": "January 10, 2025",
+    "modified": "2025-02-05T10:29:45",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Is Shopify Plus Worth Investing? The Ultimate Guide for 2025",
+      "description": "Is Shopify Plus Worth Investing in? Learn about its features, benefits, pricing, and why it is the best solution for your business. Get the full guide by..."
+    }
+  },
+  {
+    "slug": "shopify-website-development-cost-breakdown-a-complete-guide",
+    "title": "Shopify Website Development Cost Breakdown: A Complete Guide",
+    "href": "/blogs/shopify-website-development-cost-breakdown-a-complete-guide",
+    "image": "/assets/blog/shopify-website-development-cost-breakdown-a-complete-guide.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2025-01-03",
+    "displayDate": "January 3, 2025",
+    "modified": "2025-02-05T10:31:31",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Website Development Cost Breakdown | Complete Gui...",
+      "description": "Shopify website development costs for 2025. Pricing breakdowns, key factors affecting costs, and tips to build a successful online store within your budget."
+    }
+  },
+  {
+    "slug": "how-to-use-shopify-a-beginners-guide",
+    "title": "How to Use Shopify: A Beginner’s Guide to Starting a Shopify Store",
+    "href": "/blogs/how-to-use-shopify-a-beginners-guide",
+    "image": "/assets/blog/how-to-use-shopify-a-beginners-guide.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-12-23",
+    "displayDate": "December 23, 2024",
+    "modified": "2025-02-05T10:32:52",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "How to Use Shopify: A Beginner's Guide",
+      "description": "Learn how to use Shopify to manage your online store. This beginner guide covers setup, customization, adding products, and optimizing for sales success."
+    }
+  },
+  {
+    "slug": "shopify-email-popups-alternatives",
+    "title": "Say Goodbye to Traditional Shopify Email Popups: 3 Effective Alternatives",
+    "href": "/blogs/shopify-email-popups-alternatives",
+    "image": "/assets/blog/shopify-email-popups-alternatives.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-12-06",
+    "displayDate": "December 6, 2024",
+    "modified": "2025-01-14T16:55:19",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "3 Effective Alternatives to Shopify Email Popups",
+      "description": "Discover 3 Shopify email popups alternatives that increase conversions and boost customer engagement. Let's Discover the Shopify email popups!"
+    }
+  },
+  {
+    "slug": "ecommerce-call-to-action-examples",
+    "title": "10 eCommerce Call to Action Examples to Boost Your Sales",
+    "href": "/blogs/ecommerce-call-to-action-examples",
+    "image": "/assets/blog/ecommerce-call-to-action-examples.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-10-21",
+    "displayDate": "October 21, 2024",
+    "modified": "2026-07-15T16:12:07",
+    "category": "eCommerce",
+    "categoryValue": "ecommerce",
+    "categoryHref": "/blogs?category=ecommerce",
+    "seo": {
+      "title": "10 eCommerce CTA Examples to Boost Sales | Dynamic Dreamz",
+      "description": "Find out 10 proven eCommerce call-to-action examples, design tips, and copy ideas to drive more clicks, sign-ups, and sales on your online store."
+    }
+  },
+  {
+    "slug": "shopify-summer-editions-2024",
+    "title": "Shopify Summer Editions 2024: Game Changing Features Every Store Owner Needs to Know",
+    "href": "/blogs/shopify-summer-editions-2024",
+    "image": "/assets/blog/shopify-summer-editions-2024.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-09-20",
+    "displayDate": "September 20, 2024",
+    "modified": "2025-01-14T17:39:21",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Summer Editions 2024: Must-Know Features for Stor...",
+      "description": "Explore Shopify Summer Editions 2024 updates and features. Learn how these tools can optimize your store and boost your eCommerce success."
+    }
+  },
+  {
+    "slug": "shopify-launch-checklist",
+    "title": "Shopify Launch Checklist: Ultimate Guide for a Successful Store",
+    "href": "/blogs/shopify-launch-checklist",
+    "image": "/assets/blog/shopify-launch-checklist.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-09-12",
+    "displayDate": "September 12, 2024",
+    "modified": "2025-01-15T15:53:43",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Launch Checklist: Ultimate Guide for a Successful...",
+      "description": "Ready to launch your Shopify store? Explore Our Shopify Launch Checklist that covers all the critical steps to making a successful Shopify store."
+    }
+  },
+  {
+    "slug": "top-5-shopify-themes-for-the-fashion-and-beauty-industry-in-2024",
+    "title": "Top 5 Shopify Themes For The Fashion And Beauty Industry In 2024",
+    "href": "/blogs/top-5-shopify-themes-for-the-fashion-and-beauty-industry-in-2024",
+    "image": "/assets/blog/top-5-shopify-themes-for-the-fashion-and-beauty-industry-in-2024.webp",
+    "width": 329,
+    "height": 237,
+    "date": "2024-08-29",
+    "displayDate": "August 29, 2024",
+    "modified": "2025-01-16T15:12:04",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Top 5 Shopify Themes for Fashion & Beauty in 2024",
+      "description": "Discover the best Shopify themes for fashion and beauty stores in 2024. Boost sales and reflect your brand."
+    }
+  },
+  {
+    "slug": "wordpress-feature-development-for-culinary-shows-websites",
+    "title": "WordPress Feature Development for Culinary Shows Websites",
+    "href": "/blogs/wordpress-feature-development-for-culinary-shows-websites",
+    "image": "/assets/blog/wordpress-feature-development-for-culinary-shows-websites.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-08-29",
+    "displayDate": "August 29, 2024",
+    "modified": "2025-01-15T15:49:29",
+    "category": "WordPress",
+    "categoryValue": "wordpress",
+    "categoryHref": "/blogs?category=wordpress",
+    "seo": {
+      "title": "WordPress Development | Custom WordPress Development | Ex...",
+      "description": "Discover the latest WordPress feature with Dynamic Dreamz, designed to enhance your website's performance and user experience. Learn about its benefits..."
+    }
+  },
+  {
+    "slug": "top-5-flexible-wordpress-page-builders-for-2024",
+    "title": "Top 5 Flexible WordPress Page Builders For 2024",
+    "href": "/blogs/top-5-flexible-wordpress-page-builders-for-2024",
+    "image": "/assets/blog/top-5-flexible-wordpress-page-builders-for-2024.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-07-08",
+    "displayDate": "July 8, 2024",
+    "modified": "2025-01-17T13:34:51",
+    "category": "WordPress",
+    "categoryValue": "wordpress",
+    "categoryHref": "/blogs?category=wordpress",
+    "seo": {
+      "title": "Top 5 WordPress Page Builders for 2024 | Dynamic Dreamz",
+      "description": "Discover the top 5 WordPress page builders for 2024 to create stunning, flexible websites. Read this blog to get more information."
+    }
+  },
+  {
+    "slug": "add-a-dmarc-record-to-sending-emails",
+    "title": "Authenticate and add a DMARC record to continue sending emails from your domain",
+    "href": "/blogs/add-a-dmarc-record-to-sending-emails",
+    "image": "/assets/blog/add-a-dmarc-record-to-sending-emails.webp",
+    "width": 876,
+    "height": 705,
+    "date": "2024-06-20",
+    "displayDate": "June 20, 2024",
+    "modified": "2026-08-05T18:59:44",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Add A DMARC Record To Sending Emails From Your Domain",
+      "description": "Want to send emails from Domain? Kindly add the DMARC Record to continue sending emails from your Domain. Read Blog and Get into Deep Dive!"
+    }
+  },
+  {
+    "slug": "product-bundling-in-shopify",
+    "title": "Product bundling in Shopify",
+    "href": "/blogs/product-bundling-in-shopify",
+    "image": "/assets/blog/product-bundling-in-shopify.webp",
+    "width": 1800,
+    "height": 1201,
+    "date": "2024-06-20",
+    "displayDate": "June 20, 2024",
+    "modified": "2025-01-24T17:03:29",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Product Bundling in Shopify - The Ultimate Guide | Dynami...",
+      "description": "Explore our ultimate product bundling shopify guide. we have covered what is product building, its benefit, strategy and many more."
+    }
+  },
+  {
+    "slug": "shopify-experts-vs-diy-when-to-seek-professional-help-for-your-e-commerce-site",
+    "title": "Shopify Experts vs. DIY: When to Seek Professional Help for Your eCommerce Site",
+    "href": "/blogs/shopify-experts-vs-diy-when-to-seek-professional-help-for-your-e-commerce-site",
+    "image": "/assets/blog/shopify-experts-vs-diy-when-to-seek-professional-help-for-your-e-commerce-site.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-06-20",
+    "displayDate": "June 20, 2024",
+    "modified": "2025-06-10T11:51:48",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "DIY vs. Shopify Experts: Build Your Dream eCommerce Store",
+      "description": "Craft your ideal eCommerce store! Explore the pros & cons of DIY vs. Shopify experts to make the best choice for your business."
+    }
+  },
+  {
+    "slug": "shopify-vs-wordpress-choosing-the-right-platform-for-your-e-commerce-venture",
+    "title": "Shopify vs. WordPress: Choosing the Right Platform for Your eCommerce Venture",
+    "href": "/blogs/shopify-vs-wordpress-choosing-the-right-platform-for-your-e-commerce-venture",
+    "image": "/assets/blog/shopify-vs-wordpress-choosing-the-right-platform-for-your-e-commerce-venture.webp",
+    "width": 1504,
+    "height": 756,
+    "date": "2024-06-20",
+    "displayDate": "June 20, 2024",
+    "modified": "2025-01-25T15:53:09",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify vs. WordPress - Build Your Dream E-commerce Store",
+      "description": "Stuck between Shopify and WordPress for your online store? This guide dives deep to help you choose the right platform for your E-commerce success!"
+    }
+  },
+  {
+    "slug": "types-of-shopify-experts-services",
+    "title": "Types of Shopify Experts Services: A Business Perspective",
+    "href": "/blogs/types-of-shopify-experts-services",
+    "image": "/assets/blog/types-of-shopify-experts-services.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-06-20",
+    "displayDate": "June 20, 2024",
+    "modified": "2025-01-24T11:48:47",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Types of Shopify Experts Services: A Business Perspective",
+      "description": "Boost your Shopify Expert Service! Explore expert services for design, development, marketing & more. A business owner's guide."
+    }
+  },
+  {
+    "slug": "how-to-hire-shopify-development-agency",
+    "title": "Ultimate guide to hiring Shopify Development Agency",
+    "href": "/blogs/how-to-hire-shopify-development-agency",
+    "image": "/assets/blog/how-to-hire-shopify-development-agency.webp",
+    "width": 1024,
+    "height": 774,
+    "date": "2024-06-20",
+    "displayDate": "June 20, 2024",
+    "modified": "2025-01-17T14:13:21",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Development Agency - Guide to Hiring a Shopify Ag...",
+      "description": "Stop Shopify struggles! Our in-depth guide reveals how to find & hire the perfect Shopify development agency. Read & level up your store!"
+    }
+  },
+  {
+    "slug": "guide-to-hiring-shopify-expert",
+    "title": "Ultimate Guide To Hiring Shopify Expert",
+    "href": "/blogs/guide-to-hiring-shopify-expert",
+    "image": "/assets/blog/guide-to-hiring-shopify-expert.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-06-20",
+    "displayDate": "June 20, 2024",
+    "modified": "2025-01-24T12:37:16",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "How to Hire a Shopify Expert - A Step by Step Ultimate Guide",
+      "description": "Hiring a Shopify Expert is Critical? Find our Ultimate Step by Step Guide on How to hire a Shopify Expert for your Business. Read More!"
+    }
+  },
+  {
+    "slug": "key-benefits-of-choosing-shopify",
+    "title": "10 Key Benefits of Choosing Shopify for Your eCommerce Store",
+    "href": "/blogs/key-benefits-of-choosing-shopify",
+    "image": "/assets/blog/key-benefits-of-choosing-shopify.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-06-17",
+    "displayDate": "June 17, 2024",
+    "modified": "2026-02-27T14:52:23",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "10 Key Benefits of Choosing Shopify for Your eCommerce St...",
+      "description": "Get the list of key benefits for choosing Shopify for your eCommerce store- secure hosting, scalability, easy management, apps & performance for faster growth."
+    }
+  },
+  {
+    "slug": "how-to-choose-the-right-shopify-app",
+    "title": "How to Choose the Right Shopify App: A Comprehensive Selection Guide",
+    "href": "/blogs/how-to-choose-the-right-shopify-app",
+    "image": "/assets/blog/how-to-choose-the-right-shopify-app.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-06-17",
+    "displayDate": "June 17, 2024",
+    "modified": "2025-09-22T17:54:32",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Apps: The Masterclass on Choosing the Winning Apps",
+      "description": "Feeling overwhelmed by the ocean of Shopify Apps? Dive deep with our guide & learn how to choose the perfect apps to manage & thrive!"
+    }
+  },
+  {
+    "slug": "shopify-plus-in-action-success-stories-and-case-studies",
+    "title": "Shopify Plus in Action: Success Stories and Case Studies",
+    "href": "/blogs/shopify-plus-in-action-success-stories-and-case-studies",
+    "image": "/assets/blog/shopify-plus-in-action-success-stories-and-case-studies.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-06-17",
+    "displayDate": "June 17, 2024",
+    "modified": "2026-08-05T18:59:45",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Shopify Plus in Action: Success Stories and Case Studies...",
+      "description": "Explore real Shopify Plus success stories and case studies showing how top brands scaled revenue, improved performance, and transformed their eCommerce with..."
+    }
+  },
+  {
+    "slug": "the-journey-of-a-shopify-store-from-idea-to-success",
+    "title": "The Journey Of A Shopify Store: From Idea To Success",
+    "href": "/blogs/the-journey-of-a-shopify-store-from-idea-to-success",
+    "image": "/assets/blog/the-journey-of-a-shopify-store-from-idea-to-success.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-06-17",
+    "displayDate": "June 17, 2024",
+    "modified": "2025-01-10T14:45:14",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "The Journey Of A Shopify Store: From Idea To Success - Sh...",
+      "description": "Have you ever dreamed of turning your business idea into a thriving online retail business? Or do you want to convert an existing one into a bigger one by..."
+    }
+  },
+  {
+    "slug": "wordpress-web-design-company-building-a-website-that-converts",
+    "title": "WordPress Web Design Company: Building A Website That Converts",
+    "href": "/blogs/wordpress-web-design-company-building-a-website-that-converts",
+    "image": "/assets/blog/wordpress-web-design-company-building-a-website-that-converts.webp",
+    "width": 1316,
+    "height": 948,
+    "date": "2024-06-17",
+    "displayDate": "June 17, 2024",
+    "modified": "2025-01-10T14:30:16",
+    "category": "WordPress",
+    "categoryValue": "wordpress",
+    "categoryHref": "/blogs?category=wordpress",
+    "seo": {
+      "title": "Convert Visitors into Customers | Top WordPress Company",
+      "description": "Are you struggling to convert website visitors? Get a high-converting WordPress website designed to attract and engage customers."
+    }
+  },
+  {
+    "slug": "hire-shopify-expert-freelance-vs-agency",
+    "title": "Your Expert Guide: Freelance vs. Agency for Shopify?",
+    "href": "/blogs/hire-shopify-expert-freelance-vs-agency",
+    "image": "/assets/blog/hire-shopify-expert-freelance-vs-agency.webp",
+    "width": 1504,
+    "height": 756,
+    "date": "2024-06-17",
+    "displayDate": "June 17, 2024",
+    "modified": "2025-01-25T16:41:10",
+    "category": "Shopify",
+    "categoryValue": "shopify",
+    "categoryHref": "/blogs?category=shopify",
+    "seo": {
+      "title": "Hiring Shopify Expert: Freelancers vs Agency",
+      "description": "Hire Shopify Expert: freelancers or agency? We break down the pros, cons & critical factors to help you choose the TEAM for your e-commerce store!"
+    }
+  }
+]
