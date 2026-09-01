@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { formatBrText } from "@/lib/text-formatting";
+import { SplitSectionHeading } from "../shopify-certified-developers/split-section-heading";
 
 export type WhatDataTransferItem = {
   icon: string;
@@ -31,14 +32,13 @@ export function WhatDataTransferSection({
       id={id}
     >
       <Container>
-        <div className="title mb-11 text-center max-[767px]:mb-[30px]">
-          <h2 className="mb-4 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-            {formatBrText(content.heading)}
-          </h2>
-          <p className="mx-auto max-w-[850px] font-sans text-base font-medium leading-[27.2px] text-[#535353] max-[767px]:text-sm">
-            {formatBrText(content.description)}
-          </p>
-        </div>
+
+        <SplitSectionHeading
+          variant="centered"
+          className="mb-12.5 max-[767px]:mb-7.5"
+          heading={content.heading}
+          description={content.description}
+        />
         <div className="wrapper -mx-[15px] flex flex-wrap justify-center max-[767px]:mx-0">
           {content.items.map((item, index) => (
             <div
@@ -55,7 +55,7 @@ export function WhatDataTransferSection({
                     width={50}
                   />
                 </div>
-                <h3 className="my-2.5 font-sans text-[16px] font-bold leading-[27px] tracking-[0.32px] text-[#282828] max-[767px]:my-0 max-[767px]:mb-2.5">
+                <h3 className="my-2.5 font-montreal-medium text-[16px] font-medium leading-[27px] tracking-[0.32px] text-[#282828] max-[767px]:my-0 max-[767px]:mb-2.5">
                   {item.title}
                 </h3>
                 <p className="font-sans text-[16px] font-medium leading-[27px] tracking-[0.32px] text-[#535353]">

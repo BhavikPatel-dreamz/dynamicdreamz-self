@@ -180,7 +180,7 @@ export function ServiceHeroSection({
                 content.paragraphs.map((paragraph, idx) => (
                   <p
                     className={cn(
-                      "mt-4 mb-4 text-base font-normal leading-[30.4px] text-muted first:mt-6 last:mb-6 max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
+                      "mt-4 mb-4 text-sm font-normal leading-6 text-muted first:mt-6 last:mb-6 max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
                       bodyClassName,
                     )}
                     key={idx}
@@ -191,7 +191,7 @@ export function ServiceHeroSection({
                 <>
                   <p
                     className={cn(
-                      "mt-3 mb-3.75 text-sm font-normal leading-[24px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
+                      "mt-3 mb-3.75 text-sm font-normal leading-6 text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
                       bodyClassName,
                     )}
                   >

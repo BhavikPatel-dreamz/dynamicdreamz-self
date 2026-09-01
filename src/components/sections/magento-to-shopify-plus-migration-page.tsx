@@ -47,6 +47,7 @@ export function MagentoToShopifyPlusMigrationPage() {
       <PartnerWhyChooseSection
         content={magentoPlusWhyChooseContent}
         id="why-choose-dynamic-dreamz"
+        className="mb-0"
       />
       <SplitFaqSection
         idPrefix="magento-plus-migration-faq"
