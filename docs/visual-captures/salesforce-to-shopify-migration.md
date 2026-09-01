@@ -1,5 +1,22 @@
 # Visual Parity Capture: Salesforce to Shopify Migration
 
+## 2026-09-01 benefits layout update
+
+- The `benefits-of-moving` section now uses the shared full-bleed draggable
+  carousel layout, matching the Ecwid migration page configuration.
+- Existing Salesforce benefit content and the section anchor are unchanged.
+- Interaction: horizontal drag/scroll with shared carousel snap behavior.
+- Responsive behavior: shared full-bleed widths and offsets apply at the
+  component's existing breakpoints.
+
+## 2026-09-01 why-choose shared styling
+
+- Replaced the page-local background and spacing classes with the shared
+  `backgroundVariant="gradient"` preset.
+- The section now uses the common 97.18-degree green-to-cyan gradient with 50px
+  margin/padding below 1024px and 80px margin/padding from 1024px upward.
+- Salesforce content, section ID, and internal card layout remain unchanged.
+
 **Route**: `/salesforce-to-shopify-migration`
 **Live URL**: `https://www.dynamicdreamz.com/salesforce-to-shopify-migration/`
 **Date**: 2026-08-20

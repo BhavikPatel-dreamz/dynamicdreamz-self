@@ -17,6 +17,7 @@ import {
   prestashopWhyMigrate,
   prestashopMigrationSectionCopy,
 } from "@/content/prestashop-to-shopify-migration";
+import { wixTestimonials } from "@/content/wix-to-shopify-migration";
 
 export function PrestashopToShopifyMigrationPage() {
   return (
@@ -63,8 +64,12 @@ export function PrestashopToShopifyMigrationPage() {
         layout="carousel"
       />
       <HappyClientSection
+        controlsLabels={wixTestimonials.controlsLabels}
         description={prestashopMigrationSectionCopy.testimonialsDescription}
+        eyebrow={wixTestimonials.eyebrow}
         heading={prestashopMigrationSectionCopy.testimonialsHeading}
+        items={wixTestimonials.items}
+        variant="client-stories"
       />
       <FaqSection
         className="faq-sec pt-0 pb-20 max-[767px]:pb-[60px]"

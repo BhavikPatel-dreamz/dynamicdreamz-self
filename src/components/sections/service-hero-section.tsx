@@ -231,10 +231,10 @@ export function ServiceHeroSection({
                       "h-auto",
                       imageClassName,
                     )}
-                    height={content.image.height}
+                    height={224}
                     priority
                     src={content.image.src}
-                    width={content.image.width}
+                    width={469}
                   />
                 </div>
                 {content.reviews && content.reviews.length > 0 && (

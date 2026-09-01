@@ -17,6 +17,7 @@ export type ThemeWhyChooseSectionProps = {
     subtitle: string;
     items: readonly ThemeWhyChooseItem[];
   };
+  backgroundVariant?: "gradient" | "white";
   className?: string;
   id?: string;
   preserveDesktopTypography?: boolean;
@@ -26,14 +27,23 @@ export type ThemeWhyChooseSectionProps = {
 
 export function ThemeWhyChooseSection({
   content,
-  className = "why_dynamic_dreamz_sec dev mt-20 pb-20 pt-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] two-column-icon-text-bg max-[992px]:mt-12.5 max-[992px]:py-14 max-[767px]:mt-10 max-[767px]:py-10",
+  backgroundVariant = "gradient",
+  className,
   id = "why-choose-dynamic-dreamz",
   preserveDesktopTypography = false,
   preserveLiveIconSize = false,
   variant = "left-icon",
 }: ThemeWhyChooseSectionProps) {
+  const backgroundVariantClassName = {
+    gradient:
+      "why_dynamic_dreamz_sec dev two-column-icon-text-bg mb-12.5 py-12.5 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] lg:mb-20 lg:py-20",
+    white: "why_dynamic_dreamz_sec dev two-column-icon-text-bg bg-white",
+  } as const;
+  const sectionClassName =
+    className ?? backgroundVariantClassName[backgroundVariant];
+
   return (
-    <section className={className} id={id}>
+    <section className={sectionClassName} id={id}>
       <Container>
         <div className="heading-text mx-auto max-w-[920px] text-center">
           <SectionHeading>
