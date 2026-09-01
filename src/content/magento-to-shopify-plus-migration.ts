@@ -299,6 +299,8 @@ export const magentoPlusWhatDataContent: {
 
 export const magentoPlusProcessContent: MigrationProcessContent = {
   heading: "How do We Migrate from Magento to Shopify plus​?",
+  description:
+    "Our step-by-step migration process ensures a smooth Magento to Shopify Plus migration.",
   steps: [
     {
       stepNumber: "01",

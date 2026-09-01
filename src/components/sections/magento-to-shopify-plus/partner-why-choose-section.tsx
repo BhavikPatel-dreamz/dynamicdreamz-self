@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import TitleHighlightCta from "@/components/ui/title-highlight-cta";
 
 export type PartnerWhyChooseItem = {
   icon: string;
@@ -39,28 +39,13 @@ export function PartnerWhyChooseSection({
       id={id}
     >
       <Container>
-        <div className="title mb-[50px] text-center">
-          <h2 className="mb-4 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-            {content.heading}
-          </h2>
-          <p className="mx-auto mb-8 max-w-[850px] font-sans text-base font-medium leading-[27.2px] text-[#535353] max-[767px]:text-sm">
-            {descriptionBeforeHighlight}
-            {content.descriptionHighlight ? (
-              <strong className="bg-[linear-gradient(97deg,#15C064_28.5%,#00D1FF_91.82%)] bg-clip-text font-bold text-transparent">
-                {content.descriptionHighlight}
-              </strong>
-            ) : null}
-            {descriptionAfterHighlight}
-          </p>
-          <ButtonLink
-            aria-label="Verify Our Partnerships"
-            href={content.ctaHref}
-            target="_blank"
-            variant="primary"
-          >
-            {content.ctaLabel}
-          </ButtonLink>
-        </div>
+        <TitleHighlightCta
+          heading={content.heading}
+          description={content.description}
+          descriptionHighlight={content.descriptionHighlight}
+          ctaLabel={content.ctaLabel}
+          ctaHref={content.ctaHref}
+        />
         <div className="carousel-wrapper -mx-2 -mb-[30px] flex flex-wrap justify-center">
           {content.items.map((item, index) => (
             <div
@@ -79,7 +64,7 @@ export function PartnerWhyChooseSection({
                     />
                   </div>
                   <div className="text">
-                    <h3 className="mb-[5px] font-sans text-[16px] font-bold leading-[26.72px] tracking-[0.32px] text-ink">
+                    <h3 className="mb-[5px] font-montreal-medium text-[16px] font-medium leading-[26.72px] tracking-[0.32px] text-ink">
                       {item.title}
                     </h3>
                     <p className="font-sans text-[16px] font-medium leading-[27.2px] tracking-[0.32px] text-[#535353] max-[767px]:text-sm">

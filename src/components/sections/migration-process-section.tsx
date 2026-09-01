@@ -129,7 +129,7 @@ export function MigrationProcessSection({
             {formatBrText(content.heading, "max-[1199px]:hidden")}
           </h2>
           {content.description && (
-            <p className="mt-2.5 font-sans text-base font-medium leading-[27.2px] text-[#535353] max-[767px]:text-sm">
+            <p className="mt-2.5 font-sans text-sm font-normal leading-[27.2px] text-[#535353] max-[767px]:text-sm">
               {formatBrText(content.description, "max-[1199px]:hidden")}
             </p>
           )}
