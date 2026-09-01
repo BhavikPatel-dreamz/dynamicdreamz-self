@@ -13,6 +13,10 @@ import { beautyIndustryPage } from "@/content/beauty-cosmetics";
 import { contactPageContent } from "@/content/contact";
 import { fashionIndustryPage } from "@/content/fashion";
 import { foodBeveragesIndustryPage } from "@/content/food-beverages";
+import {
+  foodBeverageShopifyPlusFaqs,
+  foodBeverageServices,
+} from "@/content/food-beverage-shopify-plus-agency";
 import { healthcareIndustryPage } from "@/content/healthcare";
 import { hireWordPressFaqs } from "@/content/hire-wordpress-developers";
 import { hireShopifyFaqs, hireShopifyServices } from "@/content/hire-shopify-developers";
@@ -154,6 +158,7 @@ import { shopifyDevelopmentChennaiContent } from "@/content/shopify-development-
 import { shopifyMaintenanceServicesContent } from "@/content/shopify-maintenance-services";
 import { dentalClinicWebsiteDevelopmentCompanyContent } from "@/content/dental-clinic-website-development-company";
 import { shopifyDevelopmentDelhiContent } from "@/content/shopify-development-in-delhi";
+import { shopifyDevelopmentHyderabadContent } from "@/content/shopify-development-in-hyderabad";
 import {
   shopifyMobileAppBenefits,
   shopifyMobileAppDevelopmentFaqs,
@@ -229,6 +234,11 @@ const foodBeveragesPageUrl = absoluteUrl(pageSeo.foodBeverages.path);
 const foodBeveragesPageId = `${foodBeveragesPageUrl}#webpage`;
 const foodBeveragesBreadcrumbId = `${foodBeveragesPageUrl}#breadcrumb`;
 const foodBeveragesServiceId = `${foodBeveragesPageUrl}#service`;
+const foodBeverageShopifyPlusAgencyPageUrl = absoluteUrl(pageSeo.foodBeverageShopifyPlusAgency.path);
+const foodBeverageShopifyPlusAgencyPageId = `${foodBeverageShopifyPlusAgencyPageUrl}#webpage`;
+const foodBeverageShopifyPlusAgencyBreadcrumbId = `${foodBeverageShopifyPlusAgencyPageUrl}#breadcrumb`;
+const foodBeverageShopifyPlusAgencyServiceId = `${foodBeverageShopifyPlusAgencyPageUrl}#service`;
+const foodBeverageShopifyPlusAgencyFaqId = `${foodBeverageShopifyPlusAgencyPageUrl}#faq`;
 const healthcarePageUrl = absoluteUrl(pageSeo.healthcare.path);
 const healthcarePageId = `${healthcarePageUrl}#webpage`;
 const healthcareBreadcrumbId = `${healthcarePageUrl}#breadcrumb`;
@@ -690,6 +700,11 @@ const shopifyDevelopmentDelhiPageId = `${shopifyDevelopmentDelhiPageUrl}#webpage
 const shopifyDevelopmentDelhiServiceId = `${shopifyDevelopmentDelhiPageUrl}#service`;
 const shopifyDevelopmentDelhiFaqId = `${shopifyDevelopmentDelhiPageUrl}#faq`;
 const shopifyDevelopmentDelhiBreadcrumbId = `${shopifyDevelopmentDelhiPageUrl}#breadcrumb`;
+const shopifyDevelopmentHyderabadPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInHyderabad.path);
+const shopifyDevelopmentHyderabadPageId = `${shopifyDevelopmentHyderabadPageUrl}#webpage`;
+const shopifyDevelopmentHyderabadServiceId = `${shopifyDevelopmentHyderabadPageUrl}#service`;
+const shopifyDevelopmentHyderabadFaqId = `${shopifyDevelopmentHyderabadPageUrl}#faq`;
+const shopifyDevelopmentHyderabadBreadcrumbId = `${shopifyDevelopmentHyderabadPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1843,6 +1858,26 @@ export function createFoodBeveragesPageSchema() {
     audienceType:
       "Food, beverage, restaurant, cafe, bar, grocery and consumer packaged goods brands",
     offerCatalog: foodBeveragesIndustryPage.deliverables,
+  });
+}
+
+export function createFoodBeverageShopifyPlusAgencyPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.foodBeverageShopifyPlusAgency,
+    pageUrl: foodBeverageShopifyPlusAgencyPageUrl,
+    pageId: foodBeverageShopifyPlusAgencyPageId,
+    serviceId: foodBeverageShopifyPlusAgencyServiceId,
+    faqId: foodBeverageShopifyPlusAgencyFaqId,
+    breadcrumbId: foodBeverageShopifyPlusAgencyBreadcrumbId,
+    serviceName: "Food & Beverage Shopify Plus Agency Services",
+    serviceType: "Shopify Plus Development, Migration, Customization & Support for Food & Beverage Brands",
+    breadcrumbName: "Food & Beverage Shopify Plus Agency",
+    audienceType: "Food and beverage brands, ecommerce merchants, and digital agencies",
+    faqs: foodBeverageShopifyPlusFaqs,
+    offers: foodBeverageServices.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
   });
 }
 
@@ -4074,6 +4109,32 @@ export function createShopifyDevelopmentInDelhiPageSchema() {
       answer: item.answer.replace(/<[^>]+>/g, " "),
     })),
     offers: shopifyDevelopmentDelhiContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentInHyderabadPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInHyderabad,
+    pageUrl: shopifyDevelopmentHyderabadPageUrl,
+    pageId: shopifyDevelopmentHyderabadPageId,
+    serviceId: shopifyDevelopmentHyderabadServiceId,
+    faqId: shopifyDevelopmentHyderabadFaqId,
+    breadcrumbId: shopifyDevelopmentHyderabadBreadcrumbId,
+    serviceName: "Shopify Development in Hyderabad",
+    serviceType:
+      "Shopify store setup, custom theme development, Figma to Shopify conversion, custom app development, Shopify migration, maintenance, and 2.0 upgrades for eCommerce businesses in Hyderabad",
+    breadcrumbName: "Shopify Development in Hyderabad",
+    audienceType:
+      "eCommerce businesses, retail brands, D2C startups, and enterprise merchants in Hyderabad seeking certified Shopify development services",
+    faqs: shopifyDevelopmentHyderabadContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: shopifyDevelopmentHyderabadContent.services.items.map((item) => ({
       title: item.title,
       description: item.description,
     })),

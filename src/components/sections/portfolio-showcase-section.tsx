@@ -29,6 +29,7 @@ export type PortfolioShowcaseSectionProps = {
   hideCta?: boolean;
   className?: string;
   columns?: 2 | 3 | 4;
+  cardVariant?: "default" | "ourWorkRefresh";
   imageAspectClassName?: string;
   categoryClassName?: string;
   descriptionBreakClassName?: string;
@@ -46,6 +47,7 @@ export function PortfolioShowcaseSection({
   hideCta = false,
   className = "our-work-sec pb-20 max-[992px]:pb-[60px]",
   columns = 3,
+  cardVariant,
   imageAspectClassName,
   categoryClassName,
   descriptionBreakClassName = "max-[1199px]:hidden",
@@ -61,6 +63,9 @@ export function PortfolioShowcaseSection({
     height: 26,
   };
 
+  const isSplit = headerLayout === "split";
+  const effectiveCardVariant = cardVariant ?? (columns === 4 ? "ourWorkRefresh" : "default");
+
   const gridColsClass =
     columns === 4
       ? "grid-cols-4 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
@@ -71,7 +76,7 @@ export function PortfolioShowcaseSection({
   return (
     <section className={className} data-section="portfolio" id="portfolio-showcase">
       <Container>
-        {eyebrow ? (
+        {!isSplit && eyebrow ? (
           <Eyebrow
             align="center"
             className={cn("mb-5 tracking-[0.02em]", eyebrowClassName)}
@@ -83,19 +88,29 @@ export function PortfolioShowcaseSection({
         ) : null}
         <div
           className={
-            headerLayout === "split"
+            isSplit
               ? "flex items-end justify-between text-left max-[992px]:flex-col max-[992px]:items-center max-[992px]:text-center"
               : "text-center"
           }
         >
-          <div className={headerLayout === "split" ? "w-[43%] max-[992px]:w-full" : undefined}>
+          <div className={isSplit ? "w-[43%] max-[992px]:w-full" : undefined}>
+            {isSplit && eyebrow ? (
+              <Eyebrow
+                align="responsive-center"
+                className={cn("mb-4 tracking-[0.02em]", eyebrowClassName)}
+                lineWidth="fixed"
+                tone="muted"
+              >
+                {eyebrow}
+              </Eyebrow>
+            ) : null}
             <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
               {formatBrText(content.heading, headingBreakClassName)}
-             </h2>
-           </div>
+            </h2>
+          </div>
           {content.description && (
-            <div className={headerLayout === "split" ? "w-[51%] max-[992px]:mt-[15px] max-[992px]:w-full" : undefined}>
-              <p className={`${headerLayout === "split" ? "" : "mx-auto mt-6 max-w-[740px] "}our-works-desc text-[18px] font-medium leading-[34.2px] text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]`}>
+            <div className={isSplit ? "w-[51%] max-[992px]:mt-[15px] max-[992px]:w-full" : undefined}>
+              <p className={`${isSplit ? "" : "mx-auto mt-6 max-w-[740px] "}our-works-desc text-[18px] font-medium leading-[34.2px] text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]`}>
                 {formatBrText(content.description, descriptionBreakClassName)}
               </p>
             </div>
@@ -115,6 +130,7 @@ export function PortfolioShowcaseSection({
               key={item.name}
               name={item.name}
               platformMark={item.platformMark ?? defaultPlatformMark}
+              variant={effectiveCardVariant}
             />
           ))}
         </div>

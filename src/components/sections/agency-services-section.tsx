@@ -36,18 +36,24 @@ export type AgencyServicesSectionProps = {
   className?: string;
   id?: string;
   hideCta?: boolean;
-  columns?: 2 | 3;
+  columns?: 2 | 3 | 4;
+  cardVariant?: "default" | "services-box";
+  cardBgClassName?: string;
 };
 
 export function AgencyServicesSection({
   content = shopifyPlusAgencyServices,
   headerLayout = "split",
   showDescription = true,
-  className = "what-we-provide-sec pt-20 pb-0",
+  className = "what-we-provide-sec py-20 max-[992px]:py-[50px]",
   id = "shopify-services",
   hideCta = false,
   columns = 2,
+  cardVariant = "default",
+  cardBgClassName,
 }: AgencyServicesSectionProps) {
+  const isServicesBox = cardVariant === "services-box";
+
   return (
     <section className={className} data-section="services" id={id}>
       <Container>
@@ -63,15 +69,15 @@ export function AgencyServicesSection({
             )}
           </div>
         ) : (
-          <div className="mb-5 flex items-center justify-between max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:text-center">
+          <div className="mb-5 flex items-center justify-between max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:items-start max-[992px]:text-left">
             <div className="w-[calc(41%-30px)] px-[15px] max-[992px]:w-full max-[992px]:p-0">
-              <h2 className="m-0 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:mb-[30px]">
+              <h2 className="m-0 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:mb-2.5">
                 {formatBrText(content.heading, "max-[1199px]:hidden")}
               </h2>
             </div>
             <div className="w-[calc(55%-30px)] px-[15px] max-[992px]:w-full max-[992px]:p-0">
               {showDescription && (
-                <p className="mb-6 text-[18px] font-medium leading-[34.2px] text-muted">
+                <p className="mb-6 max-[992px]:mb-0 text-[18px] font-medium leading-[34.2px] text-muted">
                   {formatBrText(content.description, "max-[1199px]:hidden")}
                 </p>
               )}
@@ -83,7 +89,32 @@ export function AgencyServicesSection({
             {content.items.map((service) => {
               const hasLink = Boolean(service.href);
 
-              const cardContent = (
+              const cardContent = isServicesBox ? (
+                <div
+                  className={cn(
+                    "services-text relative flex h-full items-start rounded-[10px] border border-[rgba(40,40,40,0.08)] p-5 transition-transform duration-300 ease-in-out hover:-translate-y-2.5",
+                    cardBgClassName ?? "bg-[#fafaf7]",
+                  )}
+                >
+                  <div className="icon flex size-6 shrink-0 items-center justify-center pt-0.5">
+                    <Image
+                      src={service.icon}
+                      alt={service.iconAlt}
+                      width={24}
+                      height={24}
+                      className="size-6 object-contain"
+                    />
+                  </div>
+                  <div className="text-block w-[calc(100%-24px)] pl-4">
+                    <h3 className="m-0 font-sans text-[18px] font-bold leading-[27px] tracking-[0.32px] text-ink">
+                      {service.title}
+                    </h3>
+                    <p className="mt-2.5 mb-0 font-sans text-[14px] font-medium leading-[24px] text-[#535353]">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              ) : (
                 <div
                   className={cn(
                     "relative h-full rounded-[10px] border-[1.5px] border-[#d9d9d9] bg-white px-[40px] pt-[45px] pb-[45px] pl-[35px] transition-colors duration-300 ease-in-out group-hover:border-transparent max-[1199px]:p-[30px_20px]",
@@ -151,14 +182,18 @@ export function AgencyServicesSection({
               );
 
               const colClass =
-                columns === 3
-                  ? "w-1/3 max-[992px]:w-1/2 max-[767px]:w-full"
-                  : "w-1/2 max-[992px]:w-full";
+                columns === 4
+                  ? "w-1/4 max-[992px]:w-1/2 max-[767px]:w-full"
+                  : columns === 3
+                    ? "w-1/3 max-[992px]:w-1/2 max-[767px]:w-full"
+                    : "w-1/2 max-[991px]:w-full";
 
               return (
                 <div
                   className={cn(
-                    "group px-2 pb-6 transition-transform duration-300 ease-in-out hover:-translate-y-2.5",
+                    isServicesBox
+                      ? "px-2 mb-4"
+                      : "group px-2 pb-6 transition-transform duration-300 ease-in-out hover:-translate-y-2.5",
                     colClass,
                   )}
                   key={service.title}

@@ -89,7 +89,7 @@ export function ProcessWaveSection({
             {steps[0] && (
               <div className="process-box mt-[110px] w-[28%] px-[15px]">
                 <div className="relative mb-2.5">
-                  <span className="absolute -top-[60px] left-0 right-0 text-center font-sans text-[50px] font-bold text-transparent opacity-60 [background:linear-gradient(97deg,#15c064_28.5%,#00d1ff_91.82%)] [-webkit-background-clip:text]">
+                  <span className="absolute -top-[60px] left-0 right-0 text-center font-sans text-[50px] font-bold text-transparent opacity-60 bg-clip-text bg-[linear-gradient(97deg,#15c064_28.5%,#00d1ff_91.82%)]">
                     {steps[0].number ?? "01"}
                   </span>
                   <div className="relative mx-auto flex size-[60px] items-center justify-center rounded-[9.44px] bg-white shadow-[0_4.72px_19.588px_0_rgba(0,0,0,0.05)]">
@@ -115,7 +115,7 @@ export function ProcessWaveSection({
             {steps[1] && (
               <div className="process-box mt-[30px] w-[28%] px-[15px]">
                 <div className="relative mb-2.5">
-                  <span className="absolute -top-[60px] left-0 right-0 text-center font-sans text-[50px] font-bold text-transparent opacity-60 [background:linear-gradient(97deg,#15c064_28.5%,#00d1ff_91.82%)] [-webkit-background-clip:text]">
+                  <span className="absolute -top-[60px] left-0 right-0 text-center font-sans text-[50px] font-bold text-transparent opacity-60 bg-clip-text bg-[linear-gradient(97deg,#15c064_28.5%,#00d1ff_91.82%)]">
                     {steps[1].number ?? "02"}
                   </span>
                   <div className="relative mx-auto flex size-[60px] items-center justify-center rounded-[9.44px] bg-white shadow-[0_4.72px_19.588px_0_rgba(0,0,0,0.05)]">
@@ -141,7 +141,7 @@ export function ProcessWaveSection({
             {steps[2] && (
               <div className="process-box mt-[10px] w-[21%] px-[5px]">
                 <div className="relative mb-2.5">
-                  <span className="absolute -top-[60px] left-0 right-0 text-center font-sans text-[50px] font-bold text-transparent opacity-60 [background:linear-gradient(97deg,#15c064_28.5%,#00d1ff_91.82%)] [-webkit-background-clip:text]">
+                  <span className="absolute -top-[60px] left-0 right-0 text-center font-sans text-[50px] font-bold text-transparent opacity-60 bg-clip-text bg-[linear-gradient(97deg,#15c064_28.5%,#00d1ff_91.82%)]">
                     {steps[2].number ?? "03"}
                   </span>
                   <div className="relative mx-auto flex size-[60px] items-center justify-center rounded-[9.44px] bg-white shadow-[0_4.72px_19.588px_0_rgba(0,0,0,0.05)]">
@@ -167,7 +167,7 @@ export function ProcessWaveSection({
             {steps[3] && (
               <div className="process-box -mt-[8%] w-[22%] p-0">
                 <div className="relative mb-2.5">
-                  <span className="absolute -top-[60px] left-0 right-0 text-center font-sans text-[50px] font-bold text-transparent opacity-60 [background:linear-gradient(97deg,#15c064_28.5%,#00d1ff_91.82%)] [-webkit-background-clip:text]">
+                  <span className="absolute -top-[60px] left-0 right-0 text-center font-sans text-[50px] font-bold text-transparent opacity-60 bg-clip-text bg-[linear-gradient(97deg,#15c064_28.5%,#00d1ff_91.82%)]">
                     {steps[3].number ?? "04"}
                   </span>
                   <div className="relative mx-auto flex size-[60px] items-center justify-center rounded-[9.44px] bg-white shadow-[0_4.72px_19.588px_0_rgba(0,0,0,0.05)]">

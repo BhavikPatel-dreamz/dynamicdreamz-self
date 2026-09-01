@@ -386,6 +386,34 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  foodBeverageShopifyPlusAgency: {
+    path: "/food-beverage-shopify-plus-agency",
+    title: "Food & Beverage Shopify Plus Agency | Dynamic Dreamz",
+    description:
+      "Hire a Food & Beverage Shopify Plus Agency to Grow your food & beverage business with Dynamic Dreamz. 18+ Years of agency experience. Contact Us Today!",
+    socialDescription:
+      "Hire a Food & Beverage Shopify Plus Agency to Grow your food & beverage business with Dynamic Dreamz. 18+ Years of agency experience. Contact Us Today!",
+    keywords: [
+      "Food & Beverage Shopify Plus Agency",
+      "food beverage Shopify Plus",
+      "Shopify Plus agency food beverage",
+      "Shopify food store development",
+      "food and beverage ecommerce development",
+    ],
+    openGraphType: "article",
+    publishedTime: "2025-04-18T04:26:01+00:00",
+    modifiedTime: "2025-05-06T03:33:13+00:00",
+    image: {
+      path: "/assets/food-beverage-shopify-plus-agency/hero/food-and-beverage-shopify-plus-agency.webp",
+      width: 854,
+      height: 529,
+      alt: "Food & Beverage Shopify Plus Agency storefront solutions",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   petIndustry: {
     path: "/pet-industry",
     title: "Pet Industry Ecommerce Development | Dynamic Dreamz",
@@ -2821,6 +2849,34 @@ export const pageSeo = {
       width: 1200,
       height: 630,
       alt: "Shopify Development in Delhi | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInHyderabad: {
+    path: "/shopify-development-in-hyderabad",
+    title: "No.1 Shopify Development in Hyderabad | Dynamic Dreamz",
+    description:
+      "Choose Shopify development in Hyderabad. Expert Shopify development Company with 18+ Years of Experience. Hire DynamicDreamz today!",
+    socialDescription:
+      "Expert Shopify development company in Hyderabad: custom theme design, app integration, Shopify migration, 2.0 upgrades, and store maintenance.",
+    keywords: [
+      "Shopify development in Hyderabad",
+      "Shopify development company in Hyderabad",
+      "Shopify agency Hyderabad",
+      "hire Shopify developers in Hyderabad",
+      "Shopify experts Hyderabad",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-02-07T06:57:43+00:00",
+    modifiedTime: "2026-09-01T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in Hyderabad | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",

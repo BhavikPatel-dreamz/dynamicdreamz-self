@@ -8214,6 +8214,72 @@ Owner: SEO, content, design, and engineering
 - The navigation uses only project-owned SVG assets. The live site is not a runtime data, image, script, or CDN dependency.
 - No new schema claim was introduced by the header update. Visible terminology recommendations remain deferred until exact copy is approved.
 
+## Food & Beverage Shopify Plus Agency (`/food-beverage-shopify-plus-agency`)
+
+Status: technical and schema implementation complete; visible copy preserved per live site
+Last reviewed: 2026-09-01
+Owner: SEO, content, and development
+
+### Page Role and Buyer Intent
+
+- **Primary role**: Specialized industry service landing page targeting food and beverage enterprises, FMCG brands, and high-growth DTC merchants seeking a Shopify Plus agency partner.
+- **Audience**: Food and beverage founders, ecommerce managers, and digital agencies needing Shopify Plus store setup, migrations, custom themes, and ongoing maintenance.
+- **Target queries**: "Food & Beverage Shopify Plus Agency", "Shopify Plus food and beverage agency", "food and beverage ecommerce development", "Shopify Plus migration food and beverage".
+
+### Visible Content and Evidence Available
+
+- Clear H1 ("Food & Beverage Shopify Plus Agency") defining the specific industry specialization on Shopify Plus.
+- Value proposition highlighting scalable architecture, automated workflows, and customer retention.
+- 10 client brand logos providing verifiable proof (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
+- 7 specialized Shopify Plus services (Store Setup, Consulting, Migration, Theme Customization, Custom Theme Development, White Label, Maintenance).
+- 4-step structured delivery process (Initial Consultation, Planning & Strategy, Development & Implementation, Testing, Launch & Support).
+- Verified Case Study proof: Nekter Juice Bar with multi-location store pickup and streamlined ordering.
+- 6 interactive FAQs addressing platform capability, SEO, onboarding, pricing, migration, and project management.
+
+### Structured Gap Analysis
+
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Page not yet implemented in App Router | Build `/food-beverage-shopify-plus-agency` route with canonical URL, metadata, Open Graph, and Twitter tags | Tested statically prerendered with slashless canonical |
+| P0 | implemented | Component reuse | Page requires 7 visual sections matching live layout | Reused `IndustryHeroSection` (white variant), `IndustryBrandsSection`, `TwoColImageWithTextSection`, `AgencyServicesSection` (services-box variant), `MigrationProcessSection`, `ServicesCaseStudiesSection`, `FaqSection` | Parity verified across breakpoints |
+| P0 | implemented | Asset deduplication | Live page references 2 raster images and 6 service SVGs | Ephemeral `scratch/` buffer used. Reused 10 brand logos, Nekter image, and maintenance icon; converted 2 rasters to WebP; placed 5 unique SVGs | Zero duplicate hash groups across repository |
+| P0 | implemented | Schema accuracy | Live page lacked rich structured data for services and case studies | Added `WebPage`, `Service` (with offers), `BreadcrumbList`, and `FAQPage` schema | Validated against schema.org specifications |
+| P1 | deferred | Visible copy enhancement | Heading grammar and phrasing ("Why Choose a Food & Beverage Shopify Plus Agency for your Brands?") could be tightened | Preserve exact live copy per migration rules; logged suggested copy in `docs/page-content-improvements.md` | Preserved live wording |
 
 
+## Shopify Development in Hyderabad (`/shopify-development-in-hyderabad`)
 
+Status: technical and schema implementation complete; visible copy preserved per live site
+Last reviewed: 2026-09-01
+Owner: SEO, content, and development
+
+### Page Role and Buyer Intent
+
+- **Primary role**: Geo-targeted commercial landing page targeting businesses, merchants, startups, and enterprise retailers in Hyderabad seeking certified Shopify store development, theme customization, migration, app integration, and ongoing support.
+- **Audience**: Hyderabad-based founders, ecommerce directors, D2C brands, and agencies seeking a proven Shopify Platinum Partner.
+- **Target queries**: "Shopify development in Hyderabad", "Shopify development company in Hyderabad", "Shopify agency Hyderabad", "hire Shopify developers Hyderabad", "Shopify experts Hyderabad".
+
+### Visible Content and Evidence Available
+
+- H1: "#1 Company For Shopify Development in Hyderabad" establishing local market focus.
+- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
+- Trusted brands slider: 12 brand proof logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Nekter, Rare Rabbit).
+- Value proposition box: "Choose Dynamic Dreamz as the Best Shopify Development Company in Hyderabad".
+- 5 platform benefit cards: Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure & Reliable.
+- 8 specialized services: Shopify Plus Store Development, Theme Customization, Figma/XD to Shopify Conversion, App Integration, Shopify Migration, Maintenance & Support, Shopify 2.0 Migration, White Label Shopify Development.
+- 4-step wave process: Discovery & Planning, Design & Development, Testing & Launch, Post Launch Support.
+- 6 agency reason cards: Expert Shopify Developers, Custom Solutions, User Friendly Design, SEO Optimization, Comprehensive Services, Proven Track Record.
+- 8 portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
+- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
+- 6 interactive FAQs covering agency definition, company selection, pricing, project timeline, post-launch support, and onboarding.
+- Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
+
+### Structured Gap Analysis
+
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-hyderabad` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | 11 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | 100% asset reuse across portfolio, client logos, review badges, and service icons | Reused canonical assets from `public/assets/` with zero duplicates | Verified duplicate hash groups: 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createShopifyDevelopmentInHyderabadPageSchema()` with verified rating badges and video schemas | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor grammar/spelling optimizations in FAQ answers and reason descriptions | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
