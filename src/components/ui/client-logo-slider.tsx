@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Slider, { type Settings } from "react-slick";
 
 import { ClientLogo } from "@/components/sections/home/client-logo";
-import type { ImageItem } from "@/content/home";
+import type { ImageItem } from "@/content/home-client";
 import { cn } from "@/lib/class-names";
 
 export type ClientLogoSliderItem = ImageItem & {

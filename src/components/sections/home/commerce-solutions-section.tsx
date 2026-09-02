@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { commerceSolutions, homeSectionCopy } from "@/content/home";
+import { commerceSolutions, homeSectionCopy } from "@/content/home-client";
 import { cn } from "@/lib/class-names";
 
 function ArrowIcon() {

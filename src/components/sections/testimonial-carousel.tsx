@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-import { testimonials, type Testimonial } from "@/content/home";
+import { testimonials, type Testimonial } from "@/content/home-client";
 import { cn } from "@/lib/class-names";
 
 function DirectionArrow({ direction }: { direction: "previous" | "next" }) {

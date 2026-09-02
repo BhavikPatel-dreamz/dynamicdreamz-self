@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import { expertise } from "@/content/home";
+import { expertise } from "@/content/home-client";
 import { cn } from "@/lib/class-names";
 
 export function ExpertiseAccordion() {
