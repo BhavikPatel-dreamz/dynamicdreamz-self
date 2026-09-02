@@ -3346,6 +3346,64 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  shopifyDevelopmentInLosAngeles: {
+    path: "/shopify-development-in-los-angeles",
+    title: "Shopify Development Company in Los Angeles | Dynamic Dreamz",
+    description:
+      "Looking for expert Shopify development in Los Angeles? Dynamic Dreamz builds high-performance, custom Shopify stores for your business. Get a free quote today!",
+    socialDescription:
+      "Top-rated Shopify development company in Los Angeles. Certified Shopify developers for custom stores, Plus builds, theme customization, and migrations.",
+    keywords: [
+      "Shopify development in Los Angeles",
+      "Shopify development company in Los Angeles",
+      "Shopify developers Los Angeles",
+      "hire Shopify developers Los Angeles",
+      "Shopify agency Los Angeles",
+      "Shopify Plus Los Angeles",
+    ],
+    openGraphType: "website",
+    publishedTime: "2026-04-03T09:01:10+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/shopify-development-company-in-chennai/hero/shopify-development-company-chennai-img.webp",
+      width: 520,
+      height: 480,
+      alt: "Shopify Development Company in Los Angeles | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInMiami: {
+    path: "/shopify-development-in-miami",
+    title: "Best Shopify Development in Miami | Dynamic Dreamz",
+    description:
+      "Need expert Shopify development in Miami? We build high-performance stores, handle migrations & offer white-label solutions. 18+ yrs exp. Get a quote!",
+    socialDescription:
+      "Top-rated Shopify development company in Miami. Certified Shopify developers for custom stores, Plus builds, theme customization, and migrations.",
+    keywords: [
+      "Shopify development in Miami",
+      "Shopify development company in Miami",
+      "Shopify developers Miami",
+      "hire Shopify developers Miami",
+      "Shopify agency Miami",
+      "Shopify Plus Miami",
+    ],
+    openGraphType: "website",
+    publishedTime: "2026-05-04T12:54:15+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/shopify-development-company-in-chennai/hero/shopify-development-company-chennai-img.webp",
+      width: 520,
+      height: 480,
+      alt: "Best Shopify Development in Miami | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

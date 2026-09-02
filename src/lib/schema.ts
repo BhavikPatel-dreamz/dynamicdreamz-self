@@ -170,6 +170,8 @@ import { shopifyDevelopmentPuneContent } from "@/content/shopify-development-in-
 import { shopifyDevelopmentBangaloreContent } from "@/content/shopify-development-in-bangalore";
 import { shopifyDevelopmentTexasContent } from "@/content/shopify-development-in-texas";
 import { shopifyDevelopmentNewYorkContent } from "@/content/shopify-development-in-new-york";
+import { shopifyDevelopmentLosAngelesContent } from "@/content/shopify-development-in-los-angeles";
+import { shopifyDevelopmentMiamiContent } from "@/content/shopify-development-in-miami";
 import { shopifyDevelopmentMumbaiContent } from "@/content/shopify-development-in-mumbai";
 import { wordpressDevelopmentDelhiContent } from "@/content/wordpress-development-in-delhi";
 import { wordpressDevelopmentNoidaContent } from "@/content/wordpress-development-in-noida";
@@ -807,6 +809,16 @@ const expanseThemeCustomizationPageId = `${expanseThemeCustomizationPageUrl}#web
 const expanseThemeCustomizationServiceId = `${expanseThemeCustomizationPageUrl}#service`;
 const expanseThemeCustomizationFaqId = `${expanseThemeCustomizationPageUrl}#faq`;
 const expanseThemeCustomizationBreadcrumbId = `${expanseThemeCustomizationPageUrl}#breadcrumb`;
+const shopifyDevelopmentLosAngelesPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInLosAngeles.path);
+const shopifyDevelopmentLosAngelesPageId = `${shopifyDevelopmentLosAngelesPageUrl}#webpage`;
+const shopifyDevelopmentLosAngelesServiceId = `${shopifyDevelopmentLosAngelesPageUrl}#service`;
+const shopifyDevelopmentLosAngelesFaqId = `${shopifyDevelopmentLosAngelesPageUrl}#faq`;
+const shopifyDevelopmentLosAngelesBreadcrumbId = `${shopifyDevelopmentLosAngelesPageUrl}#breadcrumb`;
+const shopifyDevelopmentMiamiPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInMiami.path);
+const shopifyDevelopmentMiamiPageId = `${shopifyDevelopmentMiamiPageUrl}#webpage`;
+const shopifyDevelopmentMiamiServiceId = `${shopifyDevelopmentMiamiPageUrl}#service`;
+const shopifyDevelopmentMiamiFaqId = `${shopifyDevelopmentMiamiPageUrl}#faq`;
+const shopifyDevelopmentMiamiBreadcrumbId = `${shopifyDevelopmentMiamiPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -4849,6 +4861,70 @@ export function createShopifyDevelopmentInNewYorkPageSchema() {
         description: item.description,
       })),
       ...shopifyDevelopmentNewYorkContent.reasons.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentInLosAngelesPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInLosAngeles,
+    pageUrl: shopifyDevelopmentLosAngelesPageUrl,
+    pageId: shopifyDevelopmentLosAngelesPageId,
+    serviceId: shopifyDevelopmentLosAngelesServiceId,
+    faqId: shopifyDevelopmentLosAngelesFaqId,
+    breadcrumbId: shopifyDevelopmentLosAngelesBreadcrumbId,
+    serviceName: "Shopify Development in Los Angeles",
+    serviceType:
+      "Custom Shopify development, theme engineering, Shopify Plus, app integration, migration, and store maintenance for businesses across Los Angeles",
+    breadcrumbName: "Shopify Development in Los Angeles",
+    audienceType:
+      "Enterprises, startups, D2C brands, and retail businesses in Los Angeles seeking custom Shopify development services",
+    faqs: shopifyDevelopmentLosAngelesContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: [
+      ...shopifyDevelopmentLosAngelesContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentLosAngelesContent.reasons.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentInMiamiPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInMiami,
+    pageUrl: shopifyDevelopmentMiamiPageUrl,
+    pageId: shopifyDevelopmentMiamiPageId,
+    serviceId: shopifyDevelopmentMiamiServiceId,
+    faqId: shopifyDevelopmentMiamiFaqId,
+    breadcrumbId: shopifyDevelopmentMiamiBreadcrumbId,
+    serviceName: "Shopify Development in Miami",
+    serviceType:
+      "Custom Shopify development, theme engineering, Shopify Plus, app integration, migration, and store maintenance for businesses across Miami and South Florida",
+    breadcrumbName: "Shopify Development in Miami",
+    audienceType:
+      "Enterprises, startups, D2C brands, luxury retailers, and cross-border ecommerce businesses in Miami seeking custom Shopify development services",
+    faqs: shopifyDevelopmentMiamiContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: [
+      ...shopifyDevelopmentMiamiContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentMiamiContent.reasons.items.map((item) => ({
         title: item.title,
         description: item.description,
       })),

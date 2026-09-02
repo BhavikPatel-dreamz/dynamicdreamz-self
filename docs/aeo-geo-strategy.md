@@ -9049,3 +9049,69 @@ Owner: SEO, content, and development
 | P0 | implemented | Asset deduplication | Reused canonical assets across all sections | 0 new downloads required; all assets mapped to existing canonical paths | Total asset duplicates remain 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createShopifyDevelopmentInMumbaiPageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Visible copy enhancement | Phrasing variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+## Shopify Development in Los Angeles (`/shopify-development-in-los-angeles`)
+
+### Page Intent and Query Scope
+- **Primary Search Intent**: Businesses, DTC brands, and ecommerce merchants in Los Angeles seeking professional Shopify development, theme customization, migrations, and ongoing maintenance.
+- **Audience**: Los Angeles and Southern California-based fashion, lifestyle, beauty, entertainment, retail brands, and digital agencies looking for verified Shopify Plus partners.
+- **Target queries**: "Shopify development in Los Angeles", "Shopify development company in Los Angeles", "Shopify developers Los Angeles", "hire Shopify developers Los Angeles", "Shopify agency Los Angeles", "Shopify Plus Los Angeles".
+
+### Visible Content and Evidence Available
+- H1: "Ending Your Search For Shopify Development in Los Angeles".
+- Primary CTA: "get in touch" -> "/request-quote".
+- Hero graphic: Custom Shopify store illustration with independent review marks (Clutch 132 reviews / 5.0, Upwork 2000+ reviews / 5.0, GoodFirms 72 reviews / 5.0).
+- Trusted brands slider: 10 enterprise ecommerce brands.
+- Why Dynamic Dreamz single text box: LA-focused narrative emphasizing speed, results, 18+ years experience, 150+ developers, and 5000+ delivered projects.
+- 5 Platform benefits: Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable.
+- 8 Shopify development services: Shopify Plus Store Development, Shopify Theme Customization, Figma / XD to Shopify Conversion, Shopify App Integration, Shopify Migration, Shopify Maintenance & Support, Shopify 2.0 Migration, White Label Shopify Development.
+- 4-step process: Discovery & Planning, Design and Development, Testing & Launch, Post-Launch Support.
+- 6 Agency reasons carousel: Shopify Platinum Partner, 150+ Expert Developers, 5000+ Projects Delivered, Custom-First Approach, On-Time. Every Time., Long-Term Partnership.
+- 8 Shopify portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
+- Client stories video testimonial carousel.
+- Contact form ("Enquiry Or Just To Say Hi!") & Book an Intro Call card.
+- 6 interactive FAQs answering agency definition, agency selection in LA, development cost, build timelines, ongoing support, and getting started.
+- Bottom CTA banner: "Want us to help you with your online store?" -> "request a quote".
+
+### Structured Gap Analysis
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-los-angeles` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | Page requires standard location landing layout | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `BookIntroCallSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Reused canonical assets across all sections | 0 new downloads required; all assets mapped to existing canonical paths | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createShopifyDevelopmentInLosAngelesPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor colloquialisms in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+## Shopify Development in Miami (`/shopify-development-in-miami`)
+
+### Page Intent and Query Scope
+- **Primary Search Intent**: Businesses, DTC brands, luxury/lifestyle retailers, and cross-border ecommerce merchants in Miami seeking certified Shopify development, custom theme design, migrations, and ongoing maintenance.
+- **Audience**: Miami, Fort Lauderdale, Coral Gables, Brickell, and South Florida ecommerce brands, plus US brands expanding into Latin America via Miami.
+- **Target queries**: "Shopify development in Miami", "Shopify development company in Miami", "Shopify developers Miami", "hire Shopify developers Miami", "Shopify agency Miami", "Shopify Plus Miami".
+
+### Visible Content and Evidence Available
+- H1: "Shopify Development in Miami That Moves as Fast as the City".
+- Primary CTA: "get in touch" -> "/request-quote".
+- Hero graphic: Custom Shopify store illustration with independent review marks (Clutch 132 reviews / 5.0, Upwork 2000+ reviews / 5.0, GoodFirms 72 reviews / 5.0).
+- Trusted brands slider: 10 enterprise ecommerce brands.
+- Why Dynamic Dreamz single text box: Miami & LATAM market positioning narrative with subtitle "Have a look at our numbers:" and 5-bullet proof list (18+ yrs, 150+ devs, 5000+ projects, Shopify Platinum Partner, trusted globally).
+- 5 Platform benefits: Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable (with Miami & LATAM contextualized copy).
+- 8 Shopify development services: Shopify Plus Store Development, Shopify Theme Customization, Figma / XD to Shopify Conversion, Shopify App Integration, Shopify Migration, Shopify Maintenance & Support, Shopify 2.0 Migration, White Label Shopify Development.
+- 4-step process: Discovery & Planning, Design & Development, Testing & Launch, Post-Launch Support.
+- 6 Agency reasons carousel: We're a Shopify Platinum Partner, Scale That Local Agencies Simply Can't Match, We Understand Miami's Market, Your LATAM Growth Partner, Transparent Every Step of the Way, Long-Term Partnership Not Just a Project.
+- 8 Shopify portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
+- Client stories video testimonial carousel ("Rather, check out how our services have empowered our clients to evolve.").
+- Contact form ("Let's Build Something Great Together") & Book an Intro Call card.
+- 8 interactive FAQs answering agency qualifications, top developers in Miami, costs, hiring steps, migration services, full-service agency scope, Shopify Plus capabilities, and development timelines.
+- Bottom CTA banner: "Want us to help you with your online store?" -> "request a quote".
+
+### Structured Gap Analysis
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-miami` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | Page requires standard location landing layout | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `BookIntroCallSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Reused canonical assets across all sections | 0 new downloads required; all assets mapped to existing canonical paths | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createShopifyDevelopmentInMiamiPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor colloquialisms in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+
