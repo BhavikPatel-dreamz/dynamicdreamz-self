@@ -15,6 +15,7 @@ const neueMontrealMedium = localFont({
   style: "normal",
   variable: "--font-neue-montreal-medium-local",
   display: "swap",
+  preload: true,
 });
 
 const montserrat = localFont({
@@ -23,6 +24,7 @@ const montserrat = localFont({
   style: "normal",
   variable: "--font-montserrat-local",
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = rootMetadata;

@@ -37,6 +37,9 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
   experimental: {
     useTypeScriptCli: false,
+    // App Router: emit imported CSS as <style> in HTML instead of render-blocking
+    // <link rel="stylesheet"> (production only). Tailwind + next/font CSS is ~42 KiB.
+    inlineCss: true,
   },
   reactCompiler: true,
   images: {
