@@ -52,12 +52,7 @@ export function WordPressDevelopmentCompanyPage() {
         id="why-choose-wordpress"
       />
       <ProcessWaveSection content={wordpressDevelopmentCompanyProcess} />
-      <PortfolioShowcaseSection
-        content={wordpressDevelopmentCompanyPortfolio}
-        ctaHref={wordpressDevelopmentCompanyPortfolio.ctaHref}
-        ctaLabel={wordpressDevelopmentCompanyPortfolio.ctaLabel}
-        variant="liveGrid"
-      />
+      <PortfolioShowcaseSection content={wordpressDevelopmentCompanyPortfolio} />
       <HappyClientSection
         description={wordpressDevelopmentCompanyTestimonials.description}
         heading={wordpressDevelopmentCompanyTestimonials.heading}

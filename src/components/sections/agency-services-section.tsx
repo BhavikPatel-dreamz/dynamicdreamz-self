@@ -47,6 +47,8 @@ export type AgencyServicesSectionProps = {
   cardVariant?: "default" | "services-box";
   cardBgClassName?: string;
   eyebrow?: string;
+  headerTitleColumnClassName?: string;
+  headerTextColumnClassName?: string;
 };
 
 export function AgencyServicesSection({
@@ -61,6 +63,8 @@ export function AgencyServicesSection({
   cardVariant = "default",
   cardBgClassName,
   eyebrow,
+  headerTitleColumnClassName,
+  headerTextColumnClassName,
 }: AgencyServicesSectionProps) {
   const isCompact = variant === "compact";
   const isServicesBox = cardVariant === "services-box";
@@ -74,6 +78,8 @@ export function AgencyServicesSection({
             description={showDescription ? content.description : undefined}
             eyebrow={eyebrow}
             heading={content.heading}
+            textColumnClassName={headerTextColumnClassName}
+            titleColumnClassName={headerTitleColumnClassName}
             variant="services"
           />
         ) : headerLayout === "centered" ? (
@@ -112,7 +118,7 @@ export function AgencyServicesSection({
               const cardContent = isServicesBox ? (
                 <div
                   className={cn(
-                    "services-text relative flex h-full items-start rounded-[10px] border border-[rgba(40,40,40,0.08)] p-5 transition-transform duration-300 ease-in-out hover:-translate-y-2.5",
+                    "services-text relative flex h-full items-start rounded-[10px] border border-[rgba(40,40,40,0.08)] p-5 transition-transform duration-300 ease-in-out",
                     cardBgClassName ?? "bg-[#fafaf7]",
                   )}
                 >
@@ -231,7 +237,7 @@ export function AgencyServicesSection({
                         height="12"
                         viewBox="0 0 20 12"
                         fill="none"
-                        className="ml-2.5 inline-block shrink-0 -scale-100 transition-transform duration-300 group-hover:-translate-x-1"
+                        className="ml-2.5 inline-block shrink-0 -scale-100 transition-transform duration-300"
                         aria-hidden="true"
                       >
                         <path
@@ -255,7 +261,7 @@ export function AgencyServicesSection({
                 <div
                   className={cn(
                     "px-2",
-                    isServicesBox ? "mb-4" : "group pb-6 transition-transform duration-300 ease-in-out hover:-translate-y-2.5",
+                    isServicesBox ? "mb-4" : "group pb-6 transition-transform duration-300 ease-in-out",
                     colClass,
                   )}
                   key={service.title}

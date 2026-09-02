@@ -39,20 +39,32 @@ export function AstraThemeCustomizationPage() {
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ThemeHeroSection content={astraThemeCustomizationContent.hero} />
+      <ThemeHeroSection
+        content={astraThemeCustomizationContent.hero}
+        descriptionClassName="mt-3 mb-4 text-sm font-normal leading-[24px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]"
+        imageStretchesOnDesktop
+        titleClassName="inline-block font-montreal-medium text-[50px] font-medium leading-[60px] tracking-[0] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]"
+      />
       <IndustryBrandsSection
         content={brandsContent}
         heading={astraThemeCustomizationContent.brands.title}
         items={astraThemeCustomizationContent.brands.items}
       />
       <ThemeFeaturesSection content={astraThemeCustomizationContent.features} />
-      <ShopifyReasonsSection content={benefitsContent} />
-      <AgencyServicesSection content={servicesContent} />
-      <ThemeWhyChooseSection content={astraThemeCustomizationContent.whyChoose} />
-      <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
-        content={portfolioContent}
+      <ShopifyReasonsSection
+        carouselFullBleed
+        className="shopify-customization-services-sec mb-0 bg-linear-[97.18deg] from-[#e8f9ef] from-[28.5%] to-[#e6fafd] to-[91.82%] py-20 max-[992px]:py-[60px]"
+        content={benefitsContent}
+        id="benefits-of-moving"
+        layout="carousel"
       />
+      <AgencyServicesSection
+        content={servicesContent}
+        headerTitleColumnClassName="w-[44%]"
+        headerTextColumnClassName="w-[48%]"
+      />
+      <ThemeWhyChooseSection content={astraThemeCustomizationContent.whyChoose} />
+      <PortfolioShowcaseSection content={portfolioContent} />
       <SplitFaqSection
         idPrefix="astra-theme-faq"
         items={astraThemeCustomizationContent.faqs}

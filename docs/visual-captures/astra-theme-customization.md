@@ -2,8 +2,8 @@
 
 - **Route**: `/astra-theme-customization`
 - **Live URL Reference**: `https://www.dynamicdreamz.com/astra-theme-customization/`
-- **Capture Date**: 2026-08-20
-- **Status**: Verified
+- **Capture Date**: 2026-09-02 (hero comparison refreshed)
+- **Status**: Hero parity correction implemented and responsively verified
 - **Viewports Inspected**:
   - Desktop: 1440x900
   - Tablet: 768x1024
@@ -50,6 +50,43 @@
 - **Body / Subtitles**: `text-base leading-[30.4px] font-normal text-muted` (hero), `text-base leading-[27px]` (cards).
 - **Hero Image**: Bottom-aligned 601x474 WebP image (`astra-theme-customization-service-img.webp`).
 - **Brand Colors**: Light gradient `linear-gradient(97.18deg, #e8f9ef 28.5%, #e6fafd 91.82%)`, red primary CTA `#df4644` / `#cd3735`.
+
+### FAQ reveal animation reference (2026-09-02)
+
+- User-provided live desktop DevTools capture inspected on the Astra route.
+- Each `.accordion-item` uses AOS `fade-up` and remains independently observed.
+- Captured delays are `0`, `150`, `300`, `450`, and `600` milliseconds for the
+  five visible FAQ rows; additional rows continue the same 150ms increment.
+- Live `custom.js` initializes AOS with `duration: 800`,
+  `easing: ease-out-cubic`, `once: true`, `offset: 80`, and `mirror: false`.
+- Live `aos.css` defines `ease-out-cubic` as
+  `cubic-bezier(.25,.46,.45,.94)` and `fade-up` as opacity plus a 100px
+  `translate3d` vertical offset.
+- Recreate those exact animation values locally rather than adding the full AOS
+  runtime dependency.
+- Reveal each row once when it enters the viewport; preserve accordion open/close
+  transitions and interaction states independently from the entrance animation.
+- Reduced-motion users receive the final visible state without movement or
+  stagger delay.
+
+### 2026-09-02 Hero Comparison
+
+- Live and local desktop screenshots inspected at approximately 1850x790.
+- The local body copy rendered at 18px/34.2px with medium weight; desktop
+  screenshot line wrapping confirms the live service-body treatment is
+  14px/24px with normal weight, expanding to the shared 16px/30.4px treatment
+  below 1200px.
+- The local artwork was capped at 570px; the live artwork fills its 50% column
+  and remains bottom-aligned.
+- The live desktop title uses a tighter 60px line height and a smaller gap before
+  the description than the previous local implementation.
+- CTA hover/focus behavior remains provided by the shared `ButtonLink`; no
+  animation timing or interaction behavior changed in this correction.
+- Fresh local screenshots captured after the correction at 1852x790, 768x1024,
+  and 390x844. The tablet and mobile layouts retain the shared stacked hero,
+  centered copy, responsive heading, CTA, and full-width artwork behavior.
+- Remaining known difference: browser scrollbar position and viewport crop can
+  change how much of the bottom-aligned artwork is visible in a screenshot.
 
 ---
 

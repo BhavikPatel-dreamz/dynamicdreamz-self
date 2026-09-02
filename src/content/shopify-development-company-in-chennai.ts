@@ -1,10 +1,6 @@
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const shopifyDevelopmentChennaiContent = {
-  sectionCopy: {
-    portfolioEyebrow: "PORTFOLIO",
-    portfolioCta: "VIEW OUR WORK",
-  },
   hero: {
     title: "Shopify Development Company in Chennai",
     description:
@@ -333,9 +329,12 @@ export const shopifyDevelopmentChennaiContent = {
     ],
   },
   portfolio: {
+    eyebrow: "PORTFOLIO",
     heading: "Our Work",
     description:
       "Lots of Shopify stores are precisely crafted and counting.  Our expertise <br> accelerates evolution and redefines shopping experiences for customers.",
+    ctaLabel: "VIEW OUR WORK",
+    ctaHref: "/our-work",
     items: [
       {
         name: "Nufyx",
