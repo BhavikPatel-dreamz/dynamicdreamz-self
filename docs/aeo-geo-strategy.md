@@ -8318,6 +8318,59 @@ Commercial pricing and conversion page for prepaid Shopify design and developmen
 - `npm run check:urls`, `npm run lint`, and `npm run build` pass; Next.js prerenders the route as static content. The final repository-wide SHA-256 audit reports zero duplicate public-asset hash groups.
 - Remaining governance gap: commercial rates and policy promises still require a named finance/delivery owner and scheduled freshness review. No unapproved visible wording was changed.
 
+## Risks of Shopify Outsourcing (`/risks-of-shopify-outsourcing`)
+
+Status: implemented and verified; live-visible wording preserved
+Last reviewed: 2026-09-01
+Owner: SEO, content, Shopify delivery, security, and sales operations
+Primary audience: Shopify merchants, ecommerce teams, founders, and agencies evaluating outsourced Shopify store, app, or maintenance work.
+Decision stage: risk education, partner evaluation, due diligence, and quote request
+
+### Page role
+
+This is a standalone informational page, not a blog post. It explains the operational, financial, and security risks associated with Shopify outsourcing, then moves readers through risk-management practices, provider evaluation, FAQs, and two quote CTAs. It intentionally does not use the `/blogs/[slug]` article renderer even though the blog archive contains a similarly titled post.
+
+### Target prompts
+
+- What are the risks of Shopify outsourcing?
+- What are the three main types of Shopify outsourcing risks?
+- How do Shopify outsourcing services handle risk management?
+- How can I evaluate a Shopify outsourcing company in India?
+- What are the financial, legal, and security risks of outsourcing Shopify work?
+
+### Current strengths and available evidence
+
+- The live H1 and hero introduction answer the page topic immediately.
+- Four visible topic sections cover risk definition, the three risk categories, risk management, and reliable-provider selection.
+- Six visible FAQ items address operational, evaluation, Indian-market, data-security, freelancer-financial, and legal-risk questions.
+- The page includes a dark project CTA and the shared online-store quote banner, both pointing to `/request-quote`.
+- Local implementation uses server-rendered headings and content, a small client island only for the internal topic scroller, the existing FAQ accordion behavior, and a localized CTA background asset.
+- No author, publication date, or Article/BlogPosting schema is added because this route is not a blog page.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The live standalone page had no local App Router route | Ship `/risks-of-shopify-outsourcing` with slashless metadata, canonical, Open Graph, Twitter, sitemap, and robots handling | Verified in rendered route, shared SEO data, URL check, and build |
+| P0 | implemented | Structured data | Live source exposes a WebPage/Breadcrumb graph and visible FAQs | Emit Organization, WebSite, WebPage, BreadcrumbList, and FAQPage matching the six visible questions; omit blog schema | Verified against route content and serialized JSON-LD |
+| P0 | implemented | Content boundary | The page needs substantial copy without hardcoding business text in components | Store hero, topic, FAQ, and CTA copy in `src/content/risks-of-shopify-outsourcing.ts` and pass typed props into reusable sections | `npm run check:component-content` and lint |
+| P1 | deferred | Claim evidence | The live page says DynamicDreamz is the only Shopify Platinum Partner in India and references major data-protection standards without evidence links | Add approved partner-directory and security-process evidence, or qualify the wording, after factual and legal review | Shopify partner listing, security owner, legal/content approval |
+| P1 | deferred | Visible copy | Several sentences use informal or grammatically awkward phrasing | Review exact replacements for the H1 introduction, topic paragraphs, and FAQ answers while preserving risk intent | Project-owner approval for each visible replacement; queued in `docs/page-content-improvements.md` |
+| P2 | deferred | Measurement | No route-specific conversion or question engagement events are defined | Track topic-link usage, FAQ expansion, and quote CTA conversions once analytics instrumentation is approved | Analytics owner and consent policy |
+
+### Entity, evidence, and conversion actions
+
+- Connect the page to the existing Dynamic Dreamz Organization and WebSite entities.
+- Keep the four risk topics and six FAQ answers server-rendered for answer-engine extraction.
+- Preserve `/request-quote` as the sole conversion destination and keep the page linked separately from blog taxonomy.
+- Use the local `think-migration.png` background and canonical local FAQ/check assets; no live-domain runtime dependency is shipped.
+
+### Verification and remaining gaps
+
+- Live source, metadata, section CSS, responsive media rules, and the `risks-shopify.js` topic/accordion behavior were inspected on 2026-09-01.
+- Local verification covers 1440px, 768px, and 390px layouts, topic focus/click scrolling, FAQ open/close states, CTA focus/hover, and reduced-motion behavior.
+- Remaining gaps are evidence and owner approval for visible claim/copy improvements; no visible rewrite was made during migration.
+
 ## Shared site header and primary navigation
 
 Status: implemented and verified; current live-visible labels and descriptions preserved

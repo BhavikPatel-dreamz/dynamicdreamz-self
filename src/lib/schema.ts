@@ -63,6 +63,9 @@ import {
   shopifyDevelopmentAgencyFaqs,
   shopifyDevelopmentAgencyServices,
 } from "@/content/shopify-development-agency";
+import {
+  risksShopifyOutsourcingFaqs,
+} from "@/content/risks-of-shopify-outsourcing";
 import { shopifyExpertsContent } from "@/content/shopify-experts";
 import {
   magentoDevelopmentFaqs,
@@ -621,6 +624,10 @@ const shopifyDevelopmentAgencyPageId = `${shopifyDevelopmentAgencyPageUrl}#webpa
 const shopifyDevelopmentAgencyServiceId = `${shopifyDevelopmentAgencyPageUrl}#service`;
 const shopifyDevelopmentAgencyFaqId = `${shopifyDevelopmentAgencyPageUrl}#faq`;
 const shopifyDevelopmentAgencyBreadcrumbId = `${shopifyDevelopmentAgencyPageUrl}#breadcrumb`;
+const risksShopifyOutsourcingPageUrl = absoluteUrl(pageSeo.risksOfShopifyOutsourcing.path);
+const risksShopifyOutsourcingPageId = `${risksShopifyOutsourcingPageUrl}#webpage`;
+const risksShopifyOutsourcingFaqId = `${risksShopifyOutsourcingPageUrl}#faq`;
+const risksShopifyOutsourcingBreadcrumbId = `${risksShopifyOutsourcingPageUrl}#breadcrumb`;
 const woocommerceDevelopmentPageUrl = absoluteUrl(pageSeo.woocommerceDevelopment.path);
 const woocommerceDevelopmentPageId = `${woocommerceDevelopmentPageUrl}#webpage`;
 const woocommerceDevelopmentServiceId = `${woocommerceDevelopmentPageUrl}#service`;
@@ -3830,6 +3837,69 @@ export function createShopifyDevelopmentAgencyPageSchema() {
     offers: shopifyDevelopmentAgencyServices.items,
     videos: shopifyPlusTestimonialVideoSchema(),
   });
+}
+
+export function createRisksOfShopifyOutsourcingPageSchema() {
+  const page = pageSeo.risksOfShopifyOutsourcing;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": risksShopifyOutsourcingPageId,
+        url: risksShopifyOutsourcingPageUrl,
+        name: page.title,
+        description: page.description,
+        datePublished: page.publishedTime,
+        dateModified: page.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        breadcrumb: { "@id": risksShopifyOutsourcingBreadcrumbId },
+        mainEntity: { "@id": risksShopifyOutsourcingFaqId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(page.image.path),
+          width: page.image.width,
+          height: page.image.height,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": risksShopifyOutsourcingBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Risks of Shopify Outsourcing",
+            item: risksShopifyOutsourcingPageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": risksShopifyOutsourcingFaqId,
+        mainEntity: risksShopifyOutsourcingFaqs.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim(),
+          },
+        })),
+      },
+    ],
+  };
 }
 
 export function createWooCommerceDevelopmentPageSchema() {

@@ -1661,6 +1661,20 @@ Primary SEO intent: buy Shopify development hours, Shopify hours packages, prepa
 | Purchase terms | The page sends buyers directly to Razorpay but does not visibly summarize tax treatment, refund/cancellation terms, scope exclusions, or where full package terms can be reviewed. | Add legal-approved package terms or a clearly labeled link to them adjacent to the purchase action before direct checkout. | Gives buyers material commercial context before payment and reduces ambiguity; exact wording requires legal and finance approval. | High | blocked pending legal and finance approval |
 | Client-logo alternatives | Live client logos use repeated generic `We are dynamic dreamz image` alternatives. | Use each brand's name followed by `logo`; keep duplicated mobile-marquee images decorative. | Improves accessibility and entity clarity without changing visible UI. | Medium | implemented as a nonvisual accessibility correction |
 
+## Risks of Shopify Outsourcing (`/risks-of-shopify-outsourcing`)
+
+Status: visible recommendations deferred; live UI preserved
+Last reviewed: 2026-09-01
+Primary SEO intent: Shopify outsourcing risks, vendor due diligence, security, cost control, and reliable Shopify development partners.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Hero introduction | People nowadays are really concerned with the potential risks of Shopify outsourcing, because there are not one but many challenges with outsourcing nowadays! | Shopify outsourcing can reduce delivery pressure, but teams should plan for communication, cost, quality, and security risks before work begins. | Gives an answer-first summary while preserving the page's risk-education intent. | High | deferred pending exact visible-copy approval |
+| Topic introductions | Several paragraphs use informal phrasing such as “before, let us help you” and repeated “easily”. | Rewrite each topic introduction for concise, evidence-backed risk guidance after subject-matter review. | Improves readability and answer extraction without changing the four-topic structure. | Medium | deferred pending exact visible-copy approval |
+| Platinum Partner claim | “they are the only Shopify Platinum Partner in India” | Retain only with a current Shopify partner-directory reference, or use the approved partner description without an exclusivity claim. | Prevents an unsupported superlative from weakening trust. | High | deferred pending factual and legal approval |
+| FAQ grammar | “Why is outsource a problem” | “Why can Shopify outsourcing become a problem?” | Corrects grammar while keeping the user question and risk intent. | Medium | deferred pending exact visible-copy approval |
+| Security wording | “follows all major data protection standards” | Identify the applicable security controls and standards, then state only what the delivery team can evidence. | Avoids an unqualified compliance implication. | High | deferred pending security-owner and legal approval |
+
 ## Shared site header
 
 Status: current live-visible navigation preserved; wording recommendations deferred
