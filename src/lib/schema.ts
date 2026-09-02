@@ -1,3 +1,4 @@
+import { bigcommerceFaqs, bigcommerceProcessContent } from "@/content/bigcommerce-to-shopify-migration";
 import { ecwidFaqs, ecwidProcessContent } from "@/content/ecwid-to-shopify-migration";
 import { migratingThemeToOnlineStore20Content } from "@/content/migrating-a-theme-to-online-store-2-0";
 import { plusAgencyFaqs, plusAgencyProcessContent } from "@/content/shopify-plus-migration-agency";
@@ -365,6 +366,11 @@ const magentoToShopifyMigrationPageId = `${magentoToShopifyMigrationPageUrl}#web
 const magentoToShopifyMigrationServiceId = `${magentoToShopifyMigrationPageUrl}#service`;
 const magentoToShopifyMigrationFaqId = `${magentoToShopifyMigrationPageUrl}#faq`;
 const magentoToShopifyMigrationBreadcrumbId = `${magentoToShopifyMigrationPageUrl}#breadcrumb`;
+const bigcommerceToShopifyMigrationPageUrl = absoluteUrl(pageSeo.bigcommerceToShopifyMigration.path);
+const bigcommerceToShopifyMigrationPageId = `${bigcommerceToShopifyMigrationPageUrl}#webpage`;
+const bigcommerceToShopifyMigrationServiceId = `${bigcommerceToShopifyMigrationPageUrl}#service`;
+const bigcommerceToShopifyMigrationFaqId = `${bigcommerceToShopifyMigrationPageUrl}#faq`;
+const bigcommerceToShopifyMigrationBreadcrumbId = `${bigcommerceToShopifyMigrationPageUrl}#breadcrumb`;
 const woocommerceToShopifyMigrationPageUrl = absoluteUrl(pageSeo.woocommerceToShopifyMigration.path);
 const woocommerceToShopifyMigrationPageId = `${woocommerceToShopifyMigrationPageUrl}#webpage`;
 const woocommerceToShopifyMigrationServiceId = `${woocommerceToShopifyMigrationPageUrl}#service`;
@@ -4878,6 +4884,32 @@ export function createMagentoToShopifyMigrationPageSchema() {
       answer: item.answer,
     })),
     offers: magentoProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createBigCommerceToShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.bigcommerceToShopifyMigration,
+    pageUrl: bigcommerceToShopifyMigrationPageUrl,
+    pageId: bigcommerceToShopifyMigrationPageId,
+    serviceId: bigcommerceToShopifyMigrationServiceId,
+    faqId: bigcommerceToShopifyMigrationFaqId,
+    breadcrumbId: bigcommerceToShopifyMigrationBreadcrumbId,
+    serviceName: "BigCommerce to Shopify Migration",
+    serviceType:
+      "Seamless BigCommerce store migration to Shopify without downtime and full data integrity",
+    breadcrumbName: "BigCommerce to Shopify Migration",
+    audienceType:
+      "BigCommerce merchants, ecommerce brands, and direct-to-consumer businesses migrating to Shopify or Shopify Plus",
+    faqs: bigcommerceFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: bigcommerceProcessContent.steps.map((step) => ({
       title: step.title,
       description: step.description,
     })),

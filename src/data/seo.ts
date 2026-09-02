@@ -832,6 +832,29 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  bigcommerceToShopifyMigration: {
+    path: "/bigcommerce-to-shopify-migration",
+    title: "BigCommerce to Shopify Migration | Take an Expert Guide",
+    description:
+      "Looking for BigCommerce to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.",
+    keywords: [
+      "BigCommerce to Shopify migration",
+      "BigCommerce to Shopify",
+      "Shopify migration experts",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2026-08-05T13:38:54+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "BigCommerce to Shopify Migration by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   woocommerceToShopifyMigration: {
     path: "/woocommerce-to-shopify-migration",
     title: "Seamless WooCommerce to Shopify Migration | Dynamic Dreamz",
