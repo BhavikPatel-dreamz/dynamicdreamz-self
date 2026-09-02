@@ -8806,3 +8806,123 @@ Owner: SEO, content, and development
 | P0 | implemented | Asset deduplication | Vector phone icon required for intro call card | Ingested into `public/assets/services/shopify-development-in-texas/call-icon.svg`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createShopifyDevelopmentInTexasPageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Visible copy enhancement | Minor typo in FAQ 2 ("it’s very complexity" should be "its complexity") | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+## Inspiro Theme Customization (`/inspiro-theme-customization`)
+
+### Page Intent and Query Scope
+- **Primary Search Intent**: Users looking for professional WordPress theme customization services specifically for the Inspiro theme by WPZOOM, known for video backgrounds and photography portfolios.
+- **Audience**: Photographers, videographers, creative agencies, and ecommerce merchants using WordPress/WooCommerce.
+- **Target queries**: "Inspiro theme customization", "Inspiro theme customization service", "customize Inspiro WordPress theme", "hire Inspiro theme developers".
+
+### Visible Content and Evidence Available
+- H1: "Inspiro Theme Customization Service".
+- Primary CTA: "request a quote" -> "/request-quote".
+- Hero graphic: Inspiro theme preview with WordPress badge.
+- Trusted brands slider: 10 enterprise ecommerce and retail brands.
+- 8 Theme features: Full-Screen Video Backgrounds, Lightweight & Fast Performance, Multiple Gallery Layouts, Gutenberg & Elementor Compatibility, WooCommerce Ready, Mobile & SEO Friendly, Custom Widgets & Sidebars, One-Click Demo Import.
+- 7 Theme benefits: Fully Customizable Store, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimal Maintenance Cost.
+- 6 WordPress customization services: Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance.
+- 4 Agency reasons: Expert Team, Proven Process, Ongoing Support, Client-Focused Approach.
+- 8 WordPress portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
+- 5 interactive FAQs answering questions on pricing, eCommerce/WooCommerce usage, customization scope, SEO, and turnaround time.
+
+### Structured Gap Analysis
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/inspiro-theme-customization` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | Page requires standard theme customization layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesSection`, `ShopifyReasonsSection`, `AgencyServicesSection`, `ThemeWhyChooseSection`, `PortfolioShowcaseSection`, `SplitFaqSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Unique SVGs for video background and demo import | Ingested into `public/assets/inspiro-theme-customization/features/`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createInspiroThemeCustomizationPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Accidental duplicate section | Live site rendered "Features Of Inspiro Theme" section twice consecutively | Render single clean section; logged to `docs/page-content-improvements.md` | Cleaner DOM and accessibility |
+
+## Expanse Theme Customization (`/expanse-theme-customization`)
+
+### Page Intent and Query Scope
+- **Primary Search Intent**: Shopify store merchants with large catalogs seeking expert Expanse theme customization services by Archetype Themes.
+- **Audience**: High-SKU Shopify and Shopify Plus merchants, dropshippers, and retail brands.
+- **Target queries**: "Expanse theme customization", "Expanse theme customization service", "customize Expanse Shopify theme", "hire Expanse theme developers".
+
+### Visible Content and Evidence Available
+- H1: "Expanse Theme Customization Service".
+- Primary CTA: "request a quote" -> "/request-quote".
+- Hero graphic: Expanse theme preview with Shopify bag badge.
+- Trusted brands slider: 10 enterprise ecommerce brands.
+- 6 Theme features: Product Filtering, Customizable Homepage Sections, Product Quick View, Wide Layout Design, Product Badges, Optimized for Large Inventories.
+- 9 Theme benefits: Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third party Apps, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost.
+- 6 Shopify customization services: Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance.
+- 4 Agency reasons: Expert Team, Proven Process, Ongoing Support, Client-Focused Approach.
+- 8 Shopify portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
+- 6 interactive FAQs answering questions on customization benefits, inventory handling, third-party apps, speed impact, ongoing support, and costs.
+
+### Structured Gap Analysis
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/expanse-theme-customization` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | Page requires standard theme customization layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesSection`, `ShopifyReasonsSection`, `AgencyServicesSection`, `ThemeWhyChooseSection`, `PortfolioShowcaseSection`, `SplitFaqSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Product filtering icon required | Ingested into `public/assets/expanse-theme-customization/features/`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createExpanseThemeCustomizationPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Empty portfolio container | Live site rendered an empty portfolio grid on Expanse page | Populated standard Shopify showcase portfolio items | Complete UX |
+
+## Shopify Development in New York (`/shopify-development-in-new-york`)
+
+### Page Intent and Query Scope
+- **Primary Search Intent**: Businesses, startups, and enterprises in New York looking for expert Shopify development, custom theme design, migrations, and ongoing maintenance.
+- **Audience**: NYC-based retail brands, DTC companies, fashion and lifestyle businesses, and digital agencies seeking high-performing Shopify partner solutions.
+- **Target queries**: "Shopify development in New York", "Shopify development company in New York", "Shopify developers New York", "hire Shopify developer in New York", "Shopify Plus New York".
+
+### Visible Content and Evidence Available
+- H1: "Shopify Development in New York That Drives Real Results".
+- Primary CTA: "get in touch" -> "/request-quote".
+- Hero graphic: Custom Shopify store illustration with independent review marks (Clutch 132 reviews / 5.0, Upwork 2000+ reviews / 5.0, GoodFirms 72 reviews / 5.0).
+- Trusted brands slider: 10 enterprise ecommerce brands.
+- Why Dynamic Dreamz single text box: NYC-focused narrative emphasizing speed, results, 18+ years experience, 150+ developers, and 5000+ delivered projects.
+- 5 Platform benefits: Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable.
+- 8 Shopify development services: Shopify Plus Store Development, Shopify Theme Customization, Figma / XD to Shopify Conversion, Shopify App Integration, Shopify Migration, Shopify Maintenance & Support, Shopify 2.0 Migration, White Label Shopify Development.
+- 4-step process: Discovery & Planning, Design and Development, Testing & Launch, Post-Launch Support.
+- 6 Agency reasons carousel: Shopify Platinum Partner, 150+ Expert Developers, 5000+ Projects Delivered, Custom-First Approach, On-Time. Every Time., Long-Term Partnership.
+- 8 Shopify portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
+- Client stories video testimonial carousel.
+- Contact form ("Enquiry Or Just To Say Hi!") & Book an Intro Call card.
+- 6 interactive FAQs answering agency selection, development cost, turnaround time, post-launch support, and onboarding.
+- Bottom CTA banner: "Want us to help you with your online store?" -> "request a quote".
+
+### Structured Gap Analysis
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-new-york` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | Page requires standard location landing layout | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `BookIntroCallSection`, `FaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Unique fixed price projects icon | Ingested into `public/assets/services/shopify-development-in-new-york/fixed-price-projects.svg`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createShopifyDevelopmentInNewYorkPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor grammatical variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+## Shopify Development in Mumbai (`/shopify-development-in-mumbai`)
+
+### Page Intent and Query Scope
+- **Primary Search Intent**: Businesses, DTC brands, and enterprise merchants in Mumbai seeking top-tier Shopify development, store migration, and custom ecommerce solutions.
+- **Audience**: Mumbai and India-based retail brands, manufacturers, digital agencies, and startups looking for verified Shopify Plus partners.
+- **Target queries**: "Shopify development in Mumbai", "Shopify development company in Mumbai", "Shopify developers Mumbai", "hire Shopify developers Mumbai", "Shopify web development Mumbai".
+
+### Visible Content and Evidence Available
+- H1: "#1 Shopify Development Company in Mumbai".
+- Primary CTA: "get in touch" -> "/request-quote".
+- Hero graphic: Custom Shopify store illustration with independent review marks (Clutch 132 reviews / 5.0, Upwork 2000+ reviews / 5.0, GoodFirms 72 reviews / 5.0).
+- Trusted brands slider: 10 enterprise ecommerce brands.
+- Why Dynamic Dreamz single text box: Mumbai market positioning focusing on scalability, quality, and measurable outcomes.
+- 5 Platform benefits: Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable.
+- 6 Shopify development services: Shopify Plus Store Development Service, Shopify Theme Customization Service, Shopify White Label Development Service, Shopify App Integration Service, Shopify Migration Service, Shopify Maintenance Service.
+- 4-step process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support.
+- 6 Agency reasons carousel: Expert Shopify Developers, Custom Solutions, User-Focused Design, SEO-Optimized Websites, Comprehensive Services, Proven Results.
+- 8 Shopify portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
+- Client stories video testimonial carousel.
+- Contact form ("Enquiry Or Just To Say Hi!") & Book an Intro Call card.
+- 7 interactive FAQs answering cost, timelines, migration, theme customization, SEO services, mobile-readiness, and maintenance.
+- Bottom CTA banner: "Want us to help you with your online store?" -> "request a quote".
+
+### Structured Gap Analysis
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-mumbai` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | Page requires standard location landing layout | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `BookIntroCallSection`, `FaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Reused canonical assets across all sections | 0 new downloads required; all assets mapped to existing canonical paths | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createShopifyDevelopmentInMumbaiPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Phrasing variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |

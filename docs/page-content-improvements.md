@@ -1832,3 +1832,17 @@ Primary SEO intent: Shopify development in Texas, Shopify development company in
 | FAQ 2 Answer | The cost of Shopify development in Texas entirely depends on the scope of your project, it’s very complexity, and the level of customization you need. | The cost of Shopify development in Texas depends on the scope of your project, its complexity, and the level of customization you need. | Fixes possessive contraction error ("it’s very complexity" -> "its complexity") | High | suggested |
 | Reasons Header | Why Choose Us for Your<br> Shopify Development Needs? | Why Choose Dynamic Dreamz for Your Shopify Development Needs? | Strengthens brand association in entity search graph | Low | suggested |
 | FAQ 5 Answer | Yes, you can call Dynamic Dreamz a trusted white-label Shopify development partner for agencies across Texas and the US. Because we are already working behind the scenes under many brand names, delivering expert-quality Shopify development with complete confidentiality. | Dynamic Dreamz is a trusted white-label Shopify development partner for digital agencies across Texas and the United States, delivering expert-quality development under your brand with complete confidentiality. | Replaces colloquial sentence fragment ("Because we are already...") with cohesive prose | Medium | suggested |
+
+## Inspiro Theme Customization (`/inspiro-theme-customization`)
+- **Current Issue**: Live page duplicates the entire "Features Of Inspiro Theme" block twice back-to-back due to an ACF/elementor template repeater duplication.
+- **Suggested Replacement**: Render single clean section with 8 feature cards.
+- **SEO Reason**: Eliminates duplicate heading and text blocks, improving content density and user experience.
+- **Priority**: P1
+- **Status**: suggested
+
+## Expanse Theme Customization (`/expanse-theme-customization`)
+- **Current Issue**: Live page has an empty `<div class="our-work-main">` container in the portfolio section.
+- **Suggested Replacement**: Populate with 8 standard verified Shopify client store showcase cards.
+- **SEO Reason**: Demonstrates genuine portfolio evidence, improving conversion confidence and content completeness.
+- **Priority**: P1
+- **Status**: suggested

@@ -3187,6 +3187,114 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  shopifyDevelopmentInNewYork: {
+    path: "/shopify-development-in-new-york",
+    title: "Shopify Development Company in New York | Dynamic Dreamz",
+    description:
+      "Looking for expert Shopify development in New York? Dynamic Dreamz builds high-performance custom Shopify stores tailored to your business. Get a quote today!",
+    socialDescription:
+      "Top-rated Shopify development company in New York. Certified Shopify developers for custom stores, Plus builds, theme customization, and migrations.",
+    keywords: [
+      "Shopify development in New York",
+      "Shopify development company in New York",
+      "Shopify developers New York",
+      "hire Shopify developers New York",
+      "Shopify Plus New York",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in New York | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInMumbai: {
+    path: "/shopify-development-in-mumbai",
+    title: "Top Shopify Development Company in Mumbai - Dynamic Dreamz",
+    description:
+      "Partner with the best Shopify development company in Mumbai, which offers custom Shopify web development, migration, and scalable ecommerce solutions.",
+    socialDescription:
+      "Partner with the top Shopify development company in Mumbai for custom store design, theme customization, migrations, and scalable ecommerce growth.",
+    keywords: [
+      "Shopify development in Mumbai",
+      "Shopify development company in Mumbai",
+      "Shopify developers Mumbai",
+      "hire Shopify developers Mumbai",
+      "Shopify web development Mumbai",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in Mumbai | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  inspiroThemeCustomization: {
+    path: "/inspiro-theme-customization",
+    title: "Inspiro Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Get professional Inspiro Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "Inspiro theme customization",
+      "Inspiro theme customization service",
+      "customize Inspiro WordPress theme",
+      "hire Inspiro theme developers",
+      "WordPress theme customization",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/inspiro-theme-customization/hero/inspiro-theme-customization-service-img.webp",
+      width: 1202,
+      height: 948,
+      alt: "Inspiro Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  expanseThemeCustomization: {
+    path: "/expanse-theme-customization",
+    title: "Expanse Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Looking for an Expanse Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.",
+    keywords: [
+      "Expanse theme customization",
+      "Expanse theme customization service",
+      "customize Expanse Shopify theme",
+      "hire Expanse theme developers",
+      "Shopify theme customization",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/expanse-theme-customization/hero/expanse-theme-customization-service-img.webp",
+      width: 570,
+      height: 441,
+      alt: "Expanse Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

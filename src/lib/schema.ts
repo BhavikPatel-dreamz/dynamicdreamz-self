@@ -129,6 +129,8 @@ import { neveThemeCustomizationContent } from "@/content/neve-theme-customizatio
 import { blocksyThemeCustomizationContent } from "@/content/blocksy-theme-customization";
 import { extendableThemeCustomizationContent } from "@/content/extendable-theme-customization";
 import { kubioThemeCustomizationContent } from "@/content/kubio-theme-customization";
+import { inspiroThemeCustomizationContent } from "@/content/inspiro-theme-customization";
+import { expanseThemeCustomizationContent } from "@/content/expanse-theme-customization";
 import { shopifyDevelopmentBarcelonaContent } from "@/content/shopify-development-in-barcelona-spain";
 import {
   woocommerceDevelopmentFaqs,
@@ -166,6 +168,8 @@ import { shopifyDevelopmentHyderabadContent } from "@/content/shopify-developmen
 import { shopifyDevelopmentPuneContent } from "@/content/shopify-development-in-pune";
 import { shopifyDevelopmentBangaloreContent } from "@/content/shopify-development-in-bangalore";
 import { shopifyDevelopmentTexasContent } from "@/content/shopify-development-in-texas";
+import { shopifyDevelopmentNewYorkContent } from "@/content/shopify-development-in-new-york";
+import { shopifyDevelopmentMumbaiContent } from "@/content/shopify-development-in-mumbai";
 import { wordpressDevelopmentDelhiContent } from "@/content/wordpress-development-in-delhi";
 import { wordpressDevelopmentNoidaContent } from "@/content/wordpress-development-in-noida";
 import { wordpressDevelopmentPuneContent } from "@/content/wordpress-development-in-pune";
@@ -768,6 +772,26 @@ const shopifyDevelopmentTexasPageId = `${shopifyDevelopmentTexasPageUrl}#webpage
 const shopifyDevelopmentTexasServiceId = `${shopifyDevelopmentTexasPageUrl}#service`;
 const shopifyDevelopmentTexasFaqId = `${shopifyDevelopmentTexasPageUrl}#faq`;
 const shopifyDevelopmentTexasBreadcrumbId = `${shopifyDevelopmentTexasPageUrl}#breadcrumb`;
+const shopifyDevelopmentNewYorkPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInNewYork.path);
+const shopifyDevelopmentNewYorkPageId = `${shopifyDevelopmentNewYorkPageUrl}#webpage`;
+const shopifyDevelopmentNewYorkServiceId = `${shopifyDevelopmentNewYorkPageUrl}#service`;
+const shopifyDevelopmentNewYorkFaqId = `${shopifyDevelopmentNewYorkPageUrl}#faq`;
+const shopifyDevelopmentNewYorkBreadcrumbId = `${shopifyDevelopmentNewYorkPageUrl}#breadcrumb`;
+const shopifyDevelopmentMumbaiPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInMumbai.path);
+const shopifyDevelopmentMumbaiPageId = `${shopifyDevelopmentMumbaiPageUrl}#webpage`;
+const shopifyDevelopmentMumbaiServiceId = `${shopifyDevelopmentMumbaiPageUrl}#service`;
+const shopifyDevelopmentMumbaiFaqId = `${shopifyDevelopmentMumbaiPageUrl}#faq`;
+const shopifyDevelopmentMumbaiBreadcrumbId = `${shopifyDevelopmentMumbaiPageUrl}#breadcrumb`;
+const inspiroThemeCustomizationPageUrl = absoluteUrl(pageSeo.inspiroThemeCustomization.path);
+const inspiroThemeCustomizationPageId = `${inspiroThemeCustomizationPageUrl}#webpage`;
+const inspiroThemeCustomizationServiceId = `${inspiroThemeCustomizationPageUrl}#service`;
+const inspiroThemeCustomizationFaqId = `${inspiroThemeCustomizationPageUrl}#faq`;
+const inspiroThemeCustomizationBreadcrumbId = `${inspiroThemeCustomizationPageUrl}#breadcrumb`;
+const expanseThemeCustomizationPageUrl = absoluteUrl(pageSeo.expanseThemeCustomization.path);
+const expanseThemeCustomizationPageId = `${expanseThemeCustomizationPageUrl}#webpage`;
+const expanseThemeCustomizationServiceId = `${expanseThemeCustomizationPageUrl}#service`;
+const expanseThemeCustomizationFaqId = `${expanseThemeCustomizationPageUrl}#faq`;
+const expanseThemeCustomizationBreadcrumbId = `${expanseThemeCustomizationPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -3178,6 +3202,56 @@ export function createKubioThemeCustomizationPageSchema() {
   });
 }
 
+export function createInspiroThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.inspiroThemeCustomization,
+    pageUrl: inspiroThemeCustomizationPageUrl,
+    pageId: inspiroThemeCustomizationPageId,
+    serviceId: inspiroThemeCustomizationServiceId,
+    faqId: inspiroThemeCustomizationFaqId,
+    breadcrumbId: inspiroThemeCustomizationBreadcrumbId,
+    serviceName: "Inspiro Theme Customization Service",
+    serviceType:
+      "Inspiro WordPress theme customization, responsive WooCommerce store design, full-screen video backgrounds, gallery layouts, Elementor & Gutenberg integration, and speed optimization",
+    breadcrumbName: "Inspiro Theme Customization Service",
+    audienceType:
+      "Photographers, videographers, creative agencies, WordPress site owners, and WooCommerce merchants seeking professional Inspiro theme customization",
+    faqs: inspiroThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: inspiroThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createExpanseThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.expanseThemeCustomization,
+    pageUrl: expanseThemeCustomizationPageUrl,
+    pageId: expanseThemeCustomizationPageId,
+    serviceId: expanseThemeCustomizationServiceId,
+    faqId: expanseThemeCustomizationFaqId,
+    breadcrumbId: expanseThemeCustomizationBreadcrumbId,
+    serviceName: "Expanse Theme Customization Service",
+    serviceType:
+      "Expanse Shopify theme customization, large inventory catalog design, product filtering, quick view, wide layout design, and speed optimization",
+    breadcrumbName: "Expanse Theme Customization Service",
+    audienceType:
+      "Shopify merchants, high-SKU ecommerce store owners, and digital agencies seeking professional Expanse theme customization",
+    faqs: expanseThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: expanseThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
 export function createImpulseThemeCustomizationPageSchema() {
   return createServicePageSchema({
     page: pageSeo.impulseThemeCustomization,
@@ -4702,6 +4776,70 @@ export function createShopifyDevelopmentInTexasPageSchema() {
         description: item.description,
       })),
       ...shopifyDevelopmentTexasContent.reasons.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentInNewYorkPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInNewYork,
+    pageUrl: shopifyDevelopmentNewYorkPageUrl,
+    pageId: shopifyDevelopmentNewYorkPageId,
+    serviceId: shopifyDevelopmentNewYorkServiceId,
+    faqId: shopifyDevelopmentNewYorkFaqId,
+    breadcrumbId: shopifyDevelopmentNewYorkBreadcrumbId,
+    serviceName: "Shopify Development in New York",
+    serviceType:
+      "Custom Shopify development, theme engineering, Shopify Plus, app integration, migration, and store maintenance for businesses across New York",
+    breadcrumbName: "Shopify Development in New York",
+    audienceType:
+      "Enterprises, startups, D2C brands, and retail businesses in New York seeking custom Shopify development services",
+    faqs: shopifyDevelopmentNewYorkContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: [
+      ...shopifyDevelopmentNewYorkContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentNewYorkContent.reasons.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentInMumbaiPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInMumbai,
+    pageUrl: shopifyDevelopmentMumbaiPageUrl,
+    pageId: shopifyDevelopmentMumbaiPageId,
+    serviceId: shopifyDevelopmentMumbaiServiceId,
+    faqId: shopifyDevelopmentMumbaiFaqId,
+    breadcrumbId: shopifyDevelopmentMumbaiBreadcrumbId,
+    serviceName: "Shopify Development in Mumbai",
+    serviceType:
+      "Custom Shopify development, theme engineering, Shopify Plus, app integration, migration, and store maintenance for businesses in Mumbai",
+    breadcrumbName: "Shopify Development in Mumbai",
+    audienceType:
+      "Enterprises, startups, D2C brands, and retail businesses in Mumbai seeking custom Shopify development services",
+    faqs: shopifyDevelopmentMumbaiContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: [
+      ...shopifyDevelopmentMumbaiContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentMumbaiContent.reasons.items.map((item) => ({
         title: item.title,
         description: item.description,
       })),
