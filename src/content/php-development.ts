@@ -114,7 +114,7 @@ export const phpDevelopmentContent = {
         title: "Laravel Maintenance & Support",
         description:
           "We offer ongoing maintenance and support for your Laravel applications. Our team ensures your web app remains updated, secure, and operates smoothly without any issues.",
-        icon: "/assets/php-development/services/laravel-maintenance-support.svg",
+      icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
         iconAlt: "Maintenance and Support Icon",
       },
       {
@@ -170,7 +170,7 @@ export const phpDevelopmentContent = {
         title: "Custom App Development",
         description:
           "We create custom web apps based on your business requirements. Our team makes sure the apps are effective, safe, and user friendly.",
-        icon: "/assets/php-development/services/custom-app-development.svg",
+        icon: "/assets/shopify-theme-customization/services/ongoing-support-and-maintenance.svg",
         iconAlt: "Custom App Development Icon",
       },
       {
