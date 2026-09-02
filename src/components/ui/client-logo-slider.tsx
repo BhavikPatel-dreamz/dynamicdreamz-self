@@ -29,30 +29,6 @@ type ClientLogoSliderProps = {
   autoplayStartDelayMs?: number;
 };
 
-function slidesForWidth(
-  variant: ClientLogoSliderProps["variant"],
-  width: number,
-  slides?: ClientLogoSliderSlides,
-) {
-  if (slides) {
-    if (width < 768) return slides.mobile;
-    if (width < 992) return slides.tablet;
-    if (width < 1200) return slides.laptop ?? slides.tablet;
-    return slides.desktop;
-  }
-
-  if (variant === "industry" || variant === "industryCompact") {
-    if (width < 768) return 2;
-    if (width < 1200) return 3;
-    return 4;
-  }
-
-  if (width < 577) return 2;
-  if (width < 769) return 3;
-  if (width < 1025) return 4;
-  return 6;
-}
-
 export function ClientLogoSlider({
   ariaLabel,
   items,
@@ -70,16 +46,44 @@ export function ClientLogoSlider({
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    const tabletQuery = window.matchMedia("(max-width: 991px)");
+    const laptopQuery = window.matchMedia("(max-width: 1199px)");
+    const compactMobileQuery = window.matchMedia("(max-width: 576px)");
+    const compactTabletQuery = window.matchMedia("(max-width: 768px)");
+    const compactLaptopQuery = window.matchMedia("(max-width: 1024px)");
     const updatePreference = () => setReducedMotion(mediaQuery.matches);
-    const updateSlides = () =>
-      setSlidesToShow(slidesForWidth(variant, window.innerWidth, slides));
+    const updateSlides = () => {
+      if (slides) {
+        if (mobileQuery.matches) {
+          setSlidesToShow(slides.mobile);
+        } else if (tabletQuery.matches) {
+          setSlidesToShow(slides.tablet);
+        } else if (laptopQuery.matches) {
+          setSlidesToShow(slides.laptop ?? slides.tablet);
+        } else {
+          setSlidesToShow(slides.desktop);
+        }
+        return;
+      }
+
+      if (variant === "industry" || variant === "industryCompact") {
+        setSlidesToShow(mobileQuery.matches ? 2 : laptopQuery.matches ? 3 : 4);
+        return;
+      }
+
+      setSlidesToShow(
+        compactMobileQuery.matches ? 2 : compactTabletQuery.matches ? 3 : compactLaptopQuery.matches ? 4 : 6,
+      );
+    };
     updatePreference();
     updateSlides();
     mediaQuery.addEventListener("change", updatePreference);
-    window.addEventListener("resize", updateSlides);
+    const queries = [mobileQuery, tabletQuery, laptopQuery, compactMobileQuery, compactTabletQuery, compactLaptopQuery];
+    queries.forEach((query) => query.addEventListener("change", updateSlides));
     return () => {
       mediaQuery.removeEventListener("change", updatePreference);
-      window.removeEventListener("resize", updateSlides);
+      queries.forEach((query) => query.removeEventListener("change", updateSlides));
     };
   }, [slides, variant]);
 

@@ -82,7 +82,7 @@ export function MobileNavigation() {
     const previousOverflow = document.body.style.overflow;
     const toggleButton = toggleRef.current;
     document.body.style.overflow = "hidden";
-    panelRef.current?.focus();
+    const focusFrame = window.requestAnimationFrame(() => panelRef.current?.focus());
 
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -94,7 +94,7 @@ export function MobileNavigation() {
       if (event.key !== "Tab" || !panelRef.current) return;
       const focusable = [...panelRef.current.querySelectorAll<HTMLElement>(
         'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
-      )].filter((element) => !element.closest("[inert]") && element.offsetParent !== null);
+      )].filter((element) => !element.closest("[inert]"));
       if (!focusable.length) return;
 
       const first = focusable[0];
@@ -108,19 +108,21 @@ export function MobileNavigation() {
       }
     }
 
-    function onResize() {
-      if (window.innerWidth >= 1200) {
+    function onResize(event: MediaQueryListEvent) {
+      if (event.matches) {
         setIsOpen(false);
         setOpenGroup(null);
       }
     }
 
+    const desktopQuery = window.matchMedia("(min-width: 1200px)");
     window.addEventListener("keydown", onKeyDown);
-    window.addEventListener("resize", onResize);
+    desktopQuery.addEventListener("change", onResize);
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKeyDown);
-      window.removeEventListener("resize", onResize);
+      desktopQuery.removeEventListener("change", onResize);
+      window.cancelAnimationFrame(focusFrame);
       toggleButton?.focus();
     };
   }, [isOpen]);

@@ -391,6 +391,10 @@ Implemented nonvisual delivery work in the same review:
   stale-while-revalidate window) so Lighthouse repeat-visit cache checks pass.
   Optimized images use the same one-year `minimumCacheTTL`. Rename an asset
   when its bytes change so long-lived caches do not keep a replaced file.
+- Avoid forced layout during the load trace: `scroll-behavior: smooth` waits
+  for the first pointer or key input; header class updates skip unchanged
+  frames; carousel and filter code reads geometry on animation frames and
+  uses `matchMedia` instead of `innerWidth` / `offsetParent`.
 - Prefer AVIF then WebP for `next/image` output, and give header, proof, and
   client logos explicit `sizes` so the browser does not download full-viewport
   rasters.

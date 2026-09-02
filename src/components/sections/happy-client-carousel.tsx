@@ -8,9 +8,6 @@ import "slick-carousel/slick/slick.css";
 import { HappyClientCard, type HappyClientTestimonialItem } from "@/components/sections/happy-client-card";
 import { cn } from "@/lib/class-names";
 
-const mobileBreakpoint = 768;
-const tabletBreakpoint = 992;
-
 export type HappyClientCarouselProps = {
   items: readonly HappyClientTestimonialItem[];
   ariaLabel: string;
@@ -41,19 +38,19 @@ export function HappyClientCarousel({ items, ariaLabel, controls }: HappyClientC
   const isAtEnd = activeSlide >= finalSlide;
 
   useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    const tabletQuery = window.matchMedia("(max-width: 991px)");
     const updateVisibleSlides = () => {
-      if (window.innerWidth < mobileBreakpoint) {
-        setVisibleSlides(1);
-      } else if (window.innerWidth < tabletBreakpoint) {
-        setVisibleSlides(2);
-      } else {
-        setVisibleSlides(3);
-      }
+      setVisibleSlides(mobileQuery.matches ? 1 : tabletQuery.matches ? 2 : 3);
     };
 
     updateVisibleSlides();
-    window.addEventListener("resize", updateVisibleSlides);
-    return () => window.removeEventListener("resize", updateVisibleSlides);
+    mobileQuery.addEventListener("change", updateVisibleSlides);
+    tabletQuery.addEventListener("change", updateVisibleSlides);
+    return () => {
+      mobileQuery.removeEventListener("change", updateVisibleSlides);
+      tabletQuery.removeEventListener("change", updateVisibleSlides);
+    };
   }, []);
 
   useEffect(() => {

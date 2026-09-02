@@ -20,20 +20,34 @@ export function OurWorkFilterController({ filters, counts }: OurWorkFilterContro
     );
 
     if (!activeButton) return;
-    setIndicator({ left: activeButton.offsetLeft, width: activeButton.offsetWidth });
+    const left = activeButton.offsetLeft;
+    const width = activeButton.offsetWidth;
+    setIndicator((current) =>
+      current.left === left && current.width === width ? current : { left, width },
+    );
   }, [activeFilter]);
 
   useEffect(() => {
-    updateIndicator();
+    let frame = 0;
+    function scheduleUpdate() {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        updateIndicator();
+      });
+    }
+
+    scheduleUpdate();
     const list = listRef.current;
     if (!list) return;
 
-    const resizeObserver = new ResizeObserver(updateIndicator);
+    const resizeObserver = new ResizeObserver(scheduleUpdate);
     resizeObserver.observe(list);
-    window.addEventListener("resize", updateIndicator);
+    window.addEventListener("resize", scheduleUpdate);
     return () => {
       resizeObserver.disconnect();
-      window.removeEventListener("resize", updateIndicator);
+      window.removeEventListener("resize", scheduleUpdate);
+      if (frame) window.cancelAnimationFrame(frame);
     };
   }, [updateIndicator]);
 

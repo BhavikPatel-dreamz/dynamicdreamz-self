@@ -40,28 +40,45 @@ export function HorizontalDragScroll({
   const [canScrollPrevious, setCanScrollPrevious] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(true);
   const dragState = useRef({ active: false, moved: false, pointerX: 0, scrollLeft: 0, scrollSnapType: "" });
+  const scrollPaddingRef = useRef<number | null>(null);
+  const scrollFrame = useRef(0);
 
   function carouselItems(viewport: HTMLDivElement) {
     return [...viewport.querySelectorAll<HTMLElement>("[data-carousel-item]")];
   }
 
   function scrollPadding(viewport: HTMLDivElement) {
-    return Number.parseFloat(getComputedStyle(viewport).scrollPaddingInlineStart) || 0;
+    if (scrollPaddingRef.current == null) {
+      scrollPaddingRef.current = Number.parseFloat(getComputedStyle(viewport).scrollPaddingInlineStart) || 0;
+    }
+    return scrollPaddingRef.current;
   }
 
   function updateActiveItem(viewport: HTMLDivElement) {
     if (!pagination && !controls) return;
-    setCanScrollPrevious(viewport.scrollLeft > 1);
-    setCanScrollNext(viewport.scrollLeft + viewport.clientWidth < viewport.scrollWidth - 1);
-    const target = viewport.scrollLeft + scrollPadding(viewport);
-    const closest = carouselItems(viewport).reduce(
-      (best, item, index) => {
-        const distance = Math.abs(item.offsetLeft - target);
-        return distance < best.distance ? { distance, index } : best;
-      },
-      { distance: Number.POSITIVE_INFINITY, index: 0 },
-    );
-    setActiveItem(closest.index);
+    if (scrollFrame.current) return;
+
+    scrollFrame.current = window.requestAnimationFrame(() => {
+      scrollFrame.current = 0;
+      if (!viewport.isConnected) return;
+      const scrollLeft = viewport.scrollLeft;
+      const clientWidth = viewport.clientWidth;
+      const scrollWidth = viewport.scrollWidth;
+      const padding = scrollPadding(viewport);
+      const items = carouselItems(viewport);
+      const target = scrollLeft + padding;
+      const closest = items.reduce(
+        (best, item, index) => {
+          const distance = Math.abs(item.offsetLeft - target);
+          return distance < best.distance ? { distance, index } : best;
+        },
+        { distance: Number.POSITIVE_INFINITY, index: 0 },
+      );
+
+      setCanScrollPrevious(scrollLeft > 1);
+      setCanScrollNext(scrollLeft + clientWidth < scrollWidth - 1);
+      setActiveItem(closest.index);
+    });
   }
 
   function moveBy(offset: number) {
