@@ -3021,6 +3021,118 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  wordpressDevelopmentInBangalore: {
+    path: "/wordpress-development-in-bangalore",
+    title: "No.1 WordPress Development in Bangalore | Dynamic Dreamz",
+    description:
+      "Professional WordPress Development in Bangalore with 18+ Years of Experience. Get custom themes, SEO-ready builds, and ongoing support for your business.",
+    socialDescription:
+      "Expert WordPress development company in Bangalore: custom theme development, plugin integration, SEO optimization, and website maintenance.",
+    keywords: [
+      "WordPress development in Bangalore",
+      "WordPress development company in Bangalore",
+      "WordPress agency Bangalore",
+      "hire WordPress developers in Bangalore",
+      "custom WordPress development Bangalore",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-02-07T06:57:43+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "WordPress Development in Bangalore | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  wordpressDevelopmentInMumbai: {
+    path: "/wordpress-development-in-mumbai",
+    title: "WordPress Development Company in Mumbai | Dynamic Dreamz",
+    description:
+      "Partner with a professional WordPress development company in Mumbai offering custom development, scalable solutions, and reliable website maintenance.",
+    socialDescription:
+      "Expert WordPress development company in Mumbai: custom theme development, plugin integration, headless WordPress, and website maintenance.",
+    keywords: [
+      "WordPress development in Mumbai",
+      "WordPress development company in Mumbai",
+      "WordPress agency Mumbai",
+      "hire WordPress developers in Mumbai",
+      "custom WordPress development Mumbai",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-02-07T06:57:43+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "WordPress Development in Mumbai | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInPune: {
+    path: "/shopify-development-in-pune",
+    title: "No.1 Shopify Development in Pune | Dynamic Dreamz",
+    description:
+      "Best Shopify development in Pune. Expert Shopify Development Company with 18+ years of experience for custom store setup, theme customization, migration & more.",
+    socialDescription:
+      "Top-rated Shopify development company in Pune. Certified developers for custom stores, Plus upgrades, themes, app integrations, and migrations.",
+    keywords: [
+      "Shopify development in Pune",
+      "Shopify development company in Pune",
+      "Shopify agency Pune",
+      "hire Shopify developers in Pune",
+      "Shopify Plus Pune",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in Pune | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInBangalore: {
+    path: "/shopify-development-in-bangalore",
+    title: "No.1 Shopify Development in Bangalore | Dynamic Dreamz",
+    description:
+      "Best Shopify development in Bangalore. Custom store setup, theme customization, migration & performance optimization for growing brands. Hire Dynamic Dreamz!",
+    socialDescription:
+      "Top-rated Shopify development company in Bangalore. Certified Shopify developers for custom stores, Plus upgrades, theme engineering, and migrations.",
+    keywords: [
+      "Shopify development in Bangalore",
+      "Shopify development company in Bangalore",
+      "Shopify agency Bangalore",
+      "Shopify Development Company in Bengaluru",
+      "hire Shopify developers Bangalore",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in Bangalore | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

@@ -46,6 +46,7 @@ export type AgencyServicesSectionProps = {
   columns?: 2 | 3 | 4;
   cardVariant?: "default" | "services-box";
   cardBgClassName?: string;
+  eyebrow?: string;
 };
 
 export function AgencyServicesSection({
@@ -59,6 +60,7 @@ export function AgencyServicesSection({
   columns = 2,
   cardVariant = "default",
   cardBgClassName,
+  eyebrow,
 }: AgencyServicesSectionProps) {
   const isCompact = variant === "compact";
   const isServicesBox = cardVariant === "services-box";
@@ -70,6 +72,7 @@ export function AgencyServicesSection({
           <SplitSectionHeading
             className="mb-[50px] gap-10 max-[992px]:gap-2.5"
             description={showDescription ? content.description : undefined}
+            eyebrow={eyebrow}
             heading={content.heading}
             variant="services"
           />
@@ -129,6 +132,28 @@ export function AgencyServicesSection({
                     <p className="mt-2.5 mb-0 font-sans text-[14px] font-medium leading-[24px] text-[#535353]">
                       {service.description}
                     </p>
+                    {serviceHref && (
+                      <div className="services-read-more btn-link-arrow mt-4 flex items-center text-sm font-semibold uppercase tracking-[0.32px] text-[#ad5151]">
+                        <span>{sharedUiCopy.readMore}</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          className="ml-1.5 inline-block shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    )}
                   </div>
                 </div>
               ) : (

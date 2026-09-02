@@ -160,10 +160,14 @@ import { shopifyMaintenanceServicesContent } from "@/content/shopify-maintenance
 import { dentalClinicWebsiteDevelopmentCompanyContent } from "@/content/dental-clinic-website-development-company";
 import { shopifyDevelopmentDelhiContent } from "@/content/shopify-development-in-delhi";
 import { shopifyDevelopmentHyderabadContent } from "@/content/shopify-development-in-hyderabad";
+import { shopifyDevelopmentPuneContent } from "@/content/shopify-development-in-pune";
+import { shopifyDevelopmentBangaloreContent } from "@/content/shopify-development-in-bangalore";
 import { wordpressDevelopmentDelhiContent } from "@/content/wordpress-development-in-delhi";
 import { wordpressDevelopmentNoidaContent } from "@/content/wordpress-development-in-noida";
 import { wordpressDevelopmentPuneContent } from "@/content/wordpress-development-in-pune";
 import { wordpressDevelopmentAhmedabadContent } from "@/content/wordpress-development-in-ahmedabad";
+import { wordpressDevelopmentBangaloreContent } from "@/content/wordpress-development-in-bangalore";
+import { wordpressDevelopmentMumbaiContent } from "@/content/wordpress-development-in-mumbai";
 import {
   shopifyMobileAppBenefits,
   shopifyMobileAppDevelopmentFaqs,
@@ -731,6 +735,26 @@ const wordpressDevelopmentAhmedabadPageId = `${wordpressDevelopmentAhmedabadPage
 const wordpressDevelopmentAhmedabadServiceId = `${wordpressDevelopmentAhmedabadPageUrl}#service`;
 const wordpressDevelopmentAhmedabadFaqId = `${wordpressDevelopmentAhmedabadPageUrl}#faq`;
 const wordpressDevelopmentAhmedabadBreadcrumbId = `${wordpressDevelopmentAhmedabadPageUrl}#breadcrumb`;
+const wordpressDevelopmentBangalorePageUrl = absoluteUrl(pageSeo.wordpressDevelopmentInBangalore.path);
+const wordpressDevelopmentBangalorePageId = `${wordpressDevelopmentBangalorePageUrl}#webpage`;
+const wordpressDevelopmentBangaloreServiceId = `${wordpressDevelopmentBangalorePageUrl}#service`;
+const wordpressDevelopmentBangaloreFaqId = `${wordpressDevelopmentBangalorePageUrl}#faq`;
+const wordpressDevelopmentBangaloreBreadcrumbId = `${wordpressDevelopmentBangalorePageUrl}#breadcrumb`;
+const wordpressDevelopmentMumbaiPageUrl = absoluteUrl(pageSeo.wordpressDevelopmentInMumbai.path);
+const wordpressDevelopmentMumbaiPageId = `${wordpressDevelopmentMumbaiPageUrl}#webpage`;
+const wordpressDevelopmentMumbaiServiceId = `${wordpressDevelopmentMumbaiPageUrl}#service`;
+const wordpressDevelopmentMumbaiFaqId = `${wordpressDevelopmentMumbaiPageUrl}#faq`;
+const wordpressDevelopmentMumbaiBreadcrumbId = `${wordpressDevelopmentMumbaiPageUrl}#breadcrumb`;
+const shopifyDevelopmentPunePageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInPune.path);
+const shopifyDevelopmentPunePageId = `${shopifyDevelopmentPunePageUrl}#webpage`;
+const shopifyDevelopmentPuneServiceId = `${shopifyDevelopmentPunePageUrl}#service`;
+const shopifyDevelopmentPuneFaqId = `${shopifyDevelopmentPunePageUrl}#faq`;
+const shopifyDevelopmentPuneBreadcrumbId = `${shopifyDevelopmentPunePageUrl}#breadcrumb`;
+const shopifyDevelopmentBangalorePageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInBangalore.path);
+const shopifyDevelopmentBangalorePageId = `${shopifyDevelopmentBangalorePageUrl}#webpage`;
+const shopifyDevelopmentBangaloreServiceId = `${shopifyDevelopmentBangalorePageUrl}#service`;
+const shopifyDevelopmentBangaloreFaqId = `${shopifyDevelopmentBangalorePageUrl}#faq`;
+const shopifyDevelopmentBangaloreBreadcrumbId = `${shopifyDevelopmentBangalorePageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -4452,6 +4476,128 @@ export function createWordPressDevelopmentInAhmedabadPageSchema() {
       title: item.title,
       description: item.description,
     })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createWordPressDevelopmentInBangalorePageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.wordpressDevelopmentInBangalore,
+    pageUrl: wordpressDevelopmentBangalorePageUrl,
+    pageId: wordpressDevelopmentBangalorePageId,
+    serviceId: wordpressDevelopmentBangaloreServiceId,
+    faqId: wordpressDevelopmentBangaloreFaqId,
+    breadcrumbId: wordpressDevelopmentBangaloreBreadcrumbId,
+    serviceName: "WordPress Development in Bangalore",
+    serviceType:
+      "Custom WordPress development, theme customization, plugin development, website design, SEO optimization, and ongoing maintenance for businesses in Bangalore",
+    breadcrumbName: "WordPress Development in Bangalore",
+    audienceType:
+      "Businesses, startups, enterprises, and digital agencies in Bangalore seeking custom WordPress development services",
+    faqs: wordpressDevelopmentBangaloreContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: wordpressDevelopmentBangaloreContent.reasons.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createWordPressDevelopmentInMumbaiPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.wordpressDevelopmentInMumbai,
+    pageUrl: wordpressDevelopmentMumbaiPageUrl,
+    pageId: wordpressDevelopmentMumbaiPageId,
+    serviceId: wordpressDevelopmentMumbaiServiceId,
+    faqId: wordpressDevelopmentMumbaiFaqId,
+    breadcrumbId: wordpressDevelopmentMumbaiBreadcrumbId,
+    serviceName: "WordPress Development in Mumbai",
+    serviceType:
+      "Custom WordPress development, theme customization, plugin development, headless WordPress, website design, SEO optimization, and ongoing maintenance for businesses in Mumbai",
+    breadcrumbName: "WordPress Development in Mumbai",
+    audienceType:
+      "Businesses, startups, enterprises, and digital agencies in Mumbai seeking custom WordPress development services",
+    faqs: wordpressDevelopmentMumbaiContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: [
+      ...wordpressDevelopmentMumbaiContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...wordpressDevelopmentMumbaiContent.reasons.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentInPunePageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInPune,
+    pageUrl: shopifyDevelopmentPunePageUrl,
+    pageId: shopifyDevelopmentPunePageId,
+    serviceId: shopifyDevelopmentPuneServiceId,
+    faqId: shopifyDevelopmentPuneFaqId,
+    breadcrumbId: shopifyDevelopmentPuneBreadcrumbId,
+    serviceName: "Shopify Development in Pune",
+    serviceType:
+      "Custom Shopify development, theme customization, Shopify Plus, app integration, migration, and store maintenance for businesses in Pune",
+    breadcrumbName: "Shopify Development in Pune",
+    audienceType:
+      "Businesses, startups, enterprises, and digital agencies in Pune seeking custom Shopify development services",
+    faqs: shopifyDevelopmentPuneContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: [
+      ...shopifyDevelopmentPuneContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentPuneContent.reasons.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentInBangalorePageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInBangalore,
+    pageUrl: shopifyDevelopmentBangalorePageUrl,
+    pageId: shopifyDevelopmentBangalorePageId,
+    serviceId: shopifyDevelopmentBangaloreServiceId,
+    faqId: shopifyDevelopmentBangaloreFaqId,
+    breadcrumbId: shopifyDevelopmentBangaloreBreadcrumbId,
+    serviceName: "Shopify Development in Bangalore",
+    serviceType:
+      "Custom Shopify development, theme engineering, Shopify Plus, app integration, migration, and store maintenance for businesses in Bangalore",
+    breadcrumbName: "Shopify Development in Bangalore",
+    audienceType:
+      "Enterprises, startups, D2C brands, and retail businesses in Bangalore seeking custom Shopify development services",
+    faqs: shopifyDevelopmentBangaloreContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: [
+      ...shopifyDevelopmentBangaloreContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentBangaloreContent.reasons.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }

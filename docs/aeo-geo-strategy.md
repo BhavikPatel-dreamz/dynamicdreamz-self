@@ -8561,3 +8561,155 @@ Owner: SEO, content, and development
 | P0 | implemented | Asset deduplication | Reused canonical assets across portfolio, client logos, review badges, and reason icons | Reused canonical assets from `public/assets/` with zero duplicates | Verified duplicate hash groups: 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createWordPressDevelopmentInAhmedabadPageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Visible copy enhancement | Run-on sentence in Intro text box | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+
+## WordPress Development in Bangalore (`/wordpress-development-in-bangalore`)
+
+Status: technical and schema implementation complete; visible copy preserved per live site
+Last reviewed: 2026-09-02
+Owner: SEO, content, and development
+
+### Page Role and Buyer Intent
+
+- **Primary role**: Geo-targeted commercial landing page targeting startups, technology firms, enterprises, and digital businesses in Bangalore seeking certified WordPress website development, custom theme design, plugin development, migration, and ongoing maintenance.
+- **Audience**: Bangalore-based business owners, marketing managers, and technology partners looking for dedicated WordPress developers.
+- **Target queries**: "WordPress development in Bangalore", "WordPress development company in Bangalore", "WordPress agency Bangalore", "hire WordPress developers in Bangalore", "custom WordPress development Bangalore".
+
+### Visible Content and Evidence Available
+
+- H1: "#1 Company For WordPress Development in Bangalore" establishing regional WordPress leadership.
+- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
+- Trusted brands slider: 10 brand proof logos (Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven, Bella Vita).
+- Value proposition box: "Why Choose Dynamic Dreamz as Your WordPress Development Company in Bangalore?".
+- 4-step delivery process: Discovery and Planning, Design and Development, Testing and Deployment, Ongoing Support.
+- 6 agency reason cards: Skilled WordPress Developers, Custom Solutions, Focus on User Experience, SEO-Friendly Websites, End-to-End Services, Proven Expertise.
+- 8 portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
+- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
+- 7 interactive FAQs covering WordPress development offerings in Bangalore, agency selection, theme customization, timeline, security, maintenance, and onboarding.
+- Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
+
+### Structured Gap Analysis
+
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/wordpress-development-in-bangalore` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | 9 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Reused canonical assets across portfolio, client logos, review badges, and reason icons | Reused canonical assets from `public/assets/` with zero duplicates | Verified duplicate hash groups: 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createWordPressDevelopmentInBangalorePageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Redundant phrasing in Intro text box | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+
+## WordPress Development in Mumbai (`/wordpress-development-in-mumbai`)
+
+Status: technical and schema implementation complete; visible copy preserved per live site
+Last reviewed: 2026-09-02
+Owner: SEO, content, and development
+
+### Page Role and Buyer Intent
+
+- **Primary role**: Geo-targeted commercial landing page targeting financial services, media houses, ecommerce enterprises, and corporate businesses in Mumbai seeking certified WordPress website development, custom theme design, plugin development, headless architecture, and ongoing maintenance.
+- **Audience**: Mumbai-based business leaders, CTOs, marketing heads, and technology partners looking for dedicated WordPress developers.
+- **Target queries**: "WordPress development in Mumbai", "WordPress development company in Mumbai", "WordPress agency Mumbai", "hire WordPress developers in Mumbai", "custom WordPress development Mumbai".
+
+### Visible Content and Evidence Available
+
+- H1: "#1 WordPress Development Company in Mumbai" establishing regional WordPress leadership.
+- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
+- Trusted brands slider: 10 brand proof logos (Bella Vita, Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven).
+- Value proposition box: "Why Dynamic Dreamz is the Best WordPress Development Company?".
+- CMS benefit cards (5 cards): Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable.
+- Service offerings grid (6 services): Custom WordPress Development, WordPress Plugin Development Services, Headless WordPress Development, WordPress Design & Theme Development, WordPress Website Maintenance Services, Small Business WordPress Support.
+- 4-step delivery process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support.
+- 6 agency reason cards: Expert WordPress Developers, Custom Solutions, User-Focused Design, SEO-Optimized Websites, Comprehensive Services, Proven Results.
+- 8 portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
+- Industries served slider: Beauty & Cosmetics, Fashion & Apparel, Health & Nutrition, Food & Beverages, Pet Industry, etc.
+- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
+- 6 interactive FAQs covering development timeline, custom WordPress services, maintenance, redesigns, SEO readiness, and small business support.
+- Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
+
+### Structured Gap Analysis
+
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/wordpress-development-in-mumbai` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | 12 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `IndustriesServedSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Reused canonical assets across portfolio, client logos, review badges, and reason icons; ingested 2 unique SVGs cleanly | Zero duplicate hash groups across all 1556 public assets | Verified duplicate hash groups: 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createWordPressDevelopmentInMumbaiPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Incomplete sentence in Theme Development card | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+
+## Shopify Development in Pune (`/shopify-development-in-pune`)
+
+Status: technical and schema implementation complete; visible copy preserved per live site
+Last reviewed: 2026-09-02
+Owner: SEO, content, and development
+
+### Page Role and Buyer Intent
+
+- **Primary role**: Geo-targeted commercial landing page targeting manufacturing enterprises, automotive businesses, tech startups, and direct-to-consumer brands in Pune looking for certified Shopify and Shopify Plus store development, migration, theme customization, and maintenance services.
+- **Audience**: Pune-based ecommerce founders, operations heads, and digital agency partners.
+- **Target queries**: "Shopify development in Pune", "Shopify development company in Pune", "Shopify agency Pune", "hire Shopify developers in Pune", "Shopify Plus partners Pune".
+
+### Visible Content and Evidence Available
+
+- H1: "#1 Company For Shopify Development in Pune" establishing local leadership.
+- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
+- Trusted brands slider: 10 brand proof logos (POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company).
+- Value proposition box: "Choose Dynamic Dreamz as the Best Shopify Development Company in Pune".
+- Platform benefit cards (5 cards): Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable.
+- Service offerings grid (8 services): Shopify Plus Store Development Service, Shopify Theme Customization Service, Figma/XD to Shopify Conversion, Shopify App Integration Service, Shopify Migration Service, Shopify Maintenance Service, Shopify 2.0 Migration Service, Shopify White Label Development Service.
+- 4-step delivery process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support.
+- 5 agency reason cards: Skilled Shopify Developers, Tailored Solutions, User Centric Design, Comprehensive Services, Proven Success.
+- 8 portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
+- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
+- 5 interactive FAQs covering development agency definition, reasons to choose Shopify, store pricing, post-launch support, and onboarding steps.
+- Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
+
+### Structured Gap Analysis
+
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-pune` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | 11 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | 100% canonical assets available in codebase | Reused existing assets across hero graphic, brand logos, badges, service icons, and portfolio images | Verified duplicate hash groups: 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createShopifyDevelopmentInPunePageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor phrasing redundancy in FAQ 5 ("As the best Shopify development company in Pune, so We’ll schedule a consultation") | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+
+## Shopify Development in Bangalore (`/shopify-development-in-bangalore`)
+
+Status: technical and schema implementation complete; visible copy preserved per live site
+Last reviewed: 2026-09-02
+Owner: SEO, content, and development
+
+### Page Role and Buyer Intent
+
+- **Primary role**: Geo-targeted commercial landing page targeting enterprise tech companies, ecommerce unicorns, D2C startups, and retail brands in Bangalore (Silicon Valley of India / Bengaluru) looking for top-tier Shopify Plus and custom Shopify development, migration, theme engineering, and store maintenance.
+- **Audience**: Bangalore/Bengaluru tech founders, ecommerce directors, venture-backed D2C brands, and retail managers.
+- **Target queries**: "Shopify development in Bangalore", "Shopify development company in Bangalore", "Shopify agency Bangalore", "Shopify Development Company in Bengaluru", "hire Shopify developers Bangalore".
+
+### Visible Content and Evidence Available
+
+- H1: "#1 Company For Shopify Development in Bangalore" with city pills ("Shopify Development", "Bangalore / Bengaluru").
+- Hero dual CTAs: "Get In Touch" -> "/request-quote" and "Explore Shopify Services" -> "#services".
+- Hero trust badges: Shopify Platinum Partner, Clutch (4.9 rating), Trustpilot (4.9 rating), Upwork Top Rated Plus.
+- Trusted brands slider: 10 enterprise ecommerce brands (POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company).
+- Value proposition and proof counters (4 stats): 20+ Years Ecommerce & web development experience, 60+ Shopify specialists, 150+ Cross-functional experts, 5,000+ Projects delivered across industries.
+- Why Choose Shopify grid (5 cards): User Friendly Interface, Customizable Themes, Scalability, Marketing Tools, Security and Reliability.
+- Service offerings grid (8 services with "READ MORE" links): Shopify Plus Store Development, Custom Shopify Theme Design & Customization, Figma/XD to Shopify Conversion, Shopify App Integration & Customization, Seamless Shopify Migration, Shopify Store Maintenance & Support, Shopify 2.0 Upgrade & Migration, White Label Shopify Development.
+- 4-step delivery process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support.
+- 6 agency reason cards: Expert Developers, Custom Solutions, Intuitive Design, SEO Expertise, Comprehensive Services, Proven Track Record.
+- 8 portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
+- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
+- 5 interactive FAQs covering development agency role, platform advantages, pricing expectations, ongoing maintenance, and project kickoff.
+- Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
+
+### Structured Gap Analysis
+
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-bangalore` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse & creation | Specialized modern city page sections required (`city-page-counter`, `city-page-why-choose-boxes`, `hero-new-section`) | Created generalized `CityPageHeroSection`, `CityPageCounterSection`, and `CityWhyChooseBoxesSection`; reused `IndustryBrandsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | 13 clean vector icons required for why-choose and services boxes | Ingested into `public/assets/services/shopify-development-in-bangalore/`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createShopifyDevelopmentInBangalorePageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor capitalization inconsistency in FAQ 5 ("Reach out to Shopify Development Company in Bengaluru, like Dynamic Dreamz, with your project requirements, and we’ll guide you via the entire process") | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
