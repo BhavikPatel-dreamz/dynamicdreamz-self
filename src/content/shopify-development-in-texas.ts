@@ -92,7 +92,7 @@ export const shopifyDevelopmentTexasContent = {
         title: "Customizable Themes",
         description:
           "Here, you can either select a theme from hundreds of professionally designed themes or simply work with experts for fully custom Shopify theme customization in Texas.",
-        icon: "/assets/services/shopify-development-in-texas/custom-themes-icon.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "Customizable Themes Icon",
       },
       {
