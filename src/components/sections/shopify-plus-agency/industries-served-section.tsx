@@ -6,7 +6,8 @@ import { shopifyPlusAgencyIndustries } from "@/content/shopify-plus-agency";
 
 export type IndustriesServedContent = {
   heading: string;
-  description: string;
+  description?: string;
+  bottomDescription?: string;
   items: readonly {
     image: string;
     imageAlt: string;
@@ -29,14 +30,16 @@ export function IndustriesServedSection({
           <h2 className="mb-2.5 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {content.heading}
           </h2>
-          <p className="mx-auto max-w-[800px] text-[18px] font-medium leading-[34.2px] text-muted max-[992px]:text-base max-[992px]:leading-[25px]">
-            {content.description.split("<br>").map((line, index, lines) => (
-              <span key={line}>
-                {line}
-                {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}
-              </span>
-            ))}
-          </p>
+          {content.description && (
+            <p className="mx-auto max-w-[800px] text-[18px] font-medium leading-[34.2px] text-muted max-[992px]:text-base max-[992px]:leading-[25px]">
+              {content.description.split("<br>").map((line, index, lines) => (
+                <span key={line}>
+                  {line}
+                  {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}
+                </span>
+              ))}
+            </p>
+          )}
         </div>
         <HorizontalDragScroll
           ariaLabel="Industries served by Dynamic Dreamz"
@@ -71,6 +74,13 @@ export function IndustriesServedSection({
             </div>
           ))}
         </HorizontalDragScroll>
+        {content.bottomDescription && (
+          <div className="bottom-text mt-[50px] text-center max-[767px]:mt-[30px]">
+            <p className="mx-auto max-w-[800px] text-base font-normal leading-[30.4px] text-muted max-[992px]:text-sm max-[992px]:leading-6">
+              {content.bottomDescription}
+            </p>
+          </div>
+        )}
       </Container>
     </section>
   );

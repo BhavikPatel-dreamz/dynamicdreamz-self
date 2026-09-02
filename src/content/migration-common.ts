@@ -12,6 +12,7 @@ export const brandTrustAriaLabels: Readonly<Record<string, string>> = {
   "atelier-theme-customization": "Brands that trust Dynamic Dreamz for Atelier theme customization",
   "be-yours-theme-customization": "Brands that trust Dynamic Dreamz for Be Yours theme customization",
   "bigcommerce-development": "Trusted Brands",
+  "bigcommerce-to-shopify-migration": "Brands that trust Dynamic Dreamz for BigCommerce to Shopify migration",
   "blocksy-theme-customization": "Brands that trust Dynamic Dreamz for Blocksy theme customization",
   "bloghash-theme-customization": "Brands that trust Dynamic Dreamz for BlogHash theme customization",
   "broadcast-theme-customization": "Brands that trust Dynamic Dreamz for Broadcast theme customization",

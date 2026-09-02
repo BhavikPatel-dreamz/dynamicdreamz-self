@@ -2,7 +2,7 @@
 
 - **Route**: `/shopify-theme-customization`
 - **Live URL Reference**: `https://www.dynamicdreamz.com/shopify-theme-customization/`
-- **Capture Date**: 2026-08-21
+- **Capture Date**: 2026-09-02
 - **Status**: Verified
 
 ---
@@ -20,7 +20,7 @@
 
 | Section # | Live Section Title / Purpose | Component / Implementation | Reused / Dedicated |
 |---|---|---|---|
-| 1 | Hero Section (`Shopify Theme Customization Services`) | `ServiceHeroSection` (`variant="split"`, left copy + right `ReviewAnimation`) | Reused |
+| 1 | Hero Section (`Shopify Theme Customization Services`) | `ServiceHeroSection` (`variant="split"`, left copy + 4 partner badges + right looping video `why-dynamic-dreamz.mp4`) | Reused |
 | 2 | Trusted by Leading Brands | `IndustryBrandsSection` | Reused |
 | 3 | Our Shopify Customization Services (6 service cards) | `AgencyServicesSection` (`headerLayout="centered"`, `columns={3}`) | Reused |
 | 4 | Why do you need Shopify Theme customization services? (4 reason cards) | `ThemeWhyChooseSection` (`variant="left-icon"`) | Reused |
@@ -29,9 +29,10 @@
 | 7 | Technology & Frameworks We Use (6 tech cards) | `ShopifyThemeTechSection` (3 columns) | Dedicated Reusable |
 | 8 | Shopify Themes We Customize (30 theme cards) | `ShopifyThemesGridSection` | Dedicated Reusable |
 | 9 | Why Choose Dynamic Dreamz For Shopify Theme Customization? (4 cards) | `ThemeWhyChooseSection` (`variant="left-icon"`, gradient background) | Reused |
-| 10 | Snippets of Shopify Theme Customization Portfolio (6 projects) | `PortfolioShowcaseSection` & `PortfolioProjectCard` (`columns={3}`) | Reused |
+| 10 | Snippets of Shopify Theme Customization Portfolio (8 projects) | `PortfolioShowcaseSection` & `PortfolioProjectCard` (`columns={3}`) | Reused |
 | 11 | Don't Just Take Our Word For It (11 video testimonials) | `HappyClientSection` | Reused |
-| 12 | Frequently Asked Questions (11 accordion items) | `FaqSection` & `FaqAccordion` | Reused |
+| 12 | Frequently Asked Questions (11 accordion items) | `SplitFaqSection` & `FaqAccordion` | Reused |
+| 13 | Bottom CTA Banner (`Want us to help you with your online store?`) | `CtaBannerSection` | Reused |
 
 ---
 

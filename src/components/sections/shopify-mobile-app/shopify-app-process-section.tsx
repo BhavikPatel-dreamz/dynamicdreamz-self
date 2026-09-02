@@ -2,8 +2,8 @@ import Image from "next/image";
 import { Container } from "@/components/ui/container";
 
 export type ShopifyAppProcessStep = {
-  icon: string;
-  iconAlt: string;
+  icon?: string;
+  iconAlt?: string;
   title: string;
   description: string;
 };
@@ -46,14 +46,16 @@ export function ShopifyAppProcessSection({
               key={step.title}
             >
               <div className="app-text px-[25px] py-[60px] max-[992px]:px-0 max-[992px]:py-[30px]">
-                <div className="icon mb-[20px] flex h-[66px] w-[66px] items-center justify-center rounded-[12px] border-[1.5px] border-[#efefef] bg-white">
-                  <Image
-                    alt={step.iconAlt}
-                    height={36}
-                    src={step.icon}
-                    width={36}
-                  />
-                </div>
+                {step.icon && step.iconAlt ? (
+                  <div className="icon mb-[20px] flex h-[66px] w-[66px] items-center justify-center rounded-[12px] border-[1.5px] border-[#efefef] bg-white">
+                    <Image
+                      alt={step.iconAlt}
+                      height={36}
+                      src={step.icon}
+                      width={36}
+                    />
+                  </div>
+                ) : null}
                 <h3 className="mb-[5px] font-sans text-[16px] font-bold leading-[26.72px] tracking-[0.32px] text-ink">
                   {step.title}
                 </h3>

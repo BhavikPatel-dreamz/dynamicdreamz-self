@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
+import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
 
 const TECH_GRADIENTS: Record<string, string> = {
@@ -27,17 +28,25 @@ export type ThemeCustomizationTechItem = {
   icon?: string;
   image?: string;
   alt?: string;
+  gradient?: string;
 };
 
 export type ShopifyThemeTechSectionProps = {
   content: {
     title: string;
-    subtitle: string;
+    subtitle?: string;
+    bottomDescription?: string;
     items: readonly ThemeCustomizationTechItem[];
   };
+  columns?: 3 | 5;
 };
 
-export function ShopifyThemeTechSection({ content }: ShopifyThemeTechSectionProps) {
+export function ShopifyThemeTechSection({
+  content,
+  columns = 3,
+}: ShopifyThemeTechSectionProps) {
+  const isFiveCol = columns === 5;
+
   return (
     <section
       className="wordpress-page-builders_sec pt-0 pb-20 max-[767px]:pb-10"
@@ -48,12 +57,19 @@ export function ShopifyThemeTechSection({ content }: ShopifyThemeTechSectionProp
           <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(content.title, "max-[1199px]:hidden")}
           </h2>
-          <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
-            {formatBrText(content.subtitle, "max-[1199px]:hidden")}
-          </p>
+          {content.subtitle && (
+            <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
+              {formatBrText(content.subtitle, "max-[1199px]:hidden")}
+            </p>
+          )}
         </div>
 
-        <div className="mx-auto mt-[50px] flex max-w-[900px] flex-wrap justify-center max-[767px]:mt-[35px]">
+        <div
+          className={cn(
+            "builder-wrapper mx-auto mt-[50px] flex flex-wrap justify-center max-[767px]:mt-[35px]",
+            isFiveCol ? "max-w-[1140px] -mx-2" : "max-w-[900px]",
+          )}
+        >
           {content.items.map((tech) => {
             const title = tech.title ?? tech.name ?? "";
             const icon = tech.icon ?? tech.image ?? "";
@@ -61,27 +77,50 @@ export function ShopifyThemeTechSection({ content }: ShopifyThemeTechSectionProp
 
             return (
               <div
-                className="w-1/3 px-2.5 pb-[30px] text-center max-[767px]:w-1/2"
+                className={cn(
+                  "builder-col pb-[30px] text-center",
+                  isFiveCol
+                    ? "w-1/5 px-2 max-[1199px]:w-1/4 max-[767px]:w-1/2"
+                    : "w-1/3 px-2.5 max-[767px]:w-1/2",
+                )}
                 key={title}
               >
-                <div className="builder-block transition-transform duration-300 hover:-translate-y-2.5">
+                <div className="builder-block transition-transform duration-300 hover:-translate-y-1">
                   <div
-                    className="mx-auto mb-4 flex size-[100px] items-center justify-center rounded-[15px] p-4 max-[767px]:size-[80px]"
+                    className={cn(
+                      "builder-logo mx-auto flex items-center justify-center rounded-[10px] p-4",
+                      isFiveCol
+                        ? "min-h-[146px] border border-[#d9d9d9] mb-4 max-[767px]:min-h-[120px]"
+                        : "size-[100px] rounded-[15px] mb-4 max-[767px]:size-[80px]",
+                    )}
                     style={{
                       background:
+                        tech.gradient ??
                         TECH_GRADIENTS[title] ??
                         "linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(255, 255, 255, 0) 100%)",
                     }}
                   >
                     <Image
                       alt={alt}
-                      className="max-h-[60px] max-w-[60px] object-contain max-[767px]:max-h-[48px] max-[767px]:max-w-[48px]"
-                      height={60}
+                      className={cn(
+                        "object-contain",
+                        isFiveCol
+                          ? "max-h-[70px] max-w-[120px] max-[767px]:max-h-[50px] max-[767px]:max-w-[100px]"
+                          : "max-h-[60px] max-w-[60px] max-[767px]:max-h-[48px] max-[767px]:max-w-[48px]",
+                      )}
+                      height={70}
                       src={icon}
-                      width={60}
+                      width={120}
                     />
                   </div>
-                  <h3 className="font-sans text-[18px] font-bold leading-[30.6px] tracking-[0.36px] text-ink max-[767px]:text-base">
+                  <h3
+                    className={cn(
+                      "font-sans text-ink",
+                      isFiveCol
+                        ? "text-base font-normal leading-[25.92px] tracking-[0.54px]"
+                        : "text-[18px] font-bold leading-[30.6px] tracking-[0.36px] max-[767px]:text-base",
+                    )}
+                  >
                     {title}
                   </h3>
                 </div>
@@ -89,6 +128,14 @@ export function ShopifyThemeTechSection({ content }: ShopifyThemeTechSectionProp
             );
           })}
         </div>
+
+        {content.bottomDescription && (
+          <div className="bottom-text mt-10 text-center">
+            <p className="mx-auto max-w-[850px] font-sans text-base font-semibold italic leading-[26px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
+              {formatBrText(content.bottomDescription)}
+            </p>
+          </div>
+        )}
       </Container>
     </section>
   );

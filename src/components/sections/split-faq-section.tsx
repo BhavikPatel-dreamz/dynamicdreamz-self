@@ -11,6 +11,7 @@ export type SplitFaqSectionProps = {
   description?: string;
   className?: string;
   sectionId?: string;
+  animateOnReveal?: boolean;
 };
 
 /**
@@ -29,6 +30,7 @@ export function SplitFaqSection({
   description,
   className,
   sectionId,
+  animateOnReveal = false,
 }: SplitFaqSectionProps) {
   const titleId = `${idPrefix}-title`;
 
@@ -58,7 +60,7 @@ export function SplitFaqSection({
           </div>
           <div className="w-[57%] max-w-[654px] grow max-[992px]:w-full max-[992px]:max-w-none">
             <FaqAccordion
-              animateOnReveal
+              animateOnReveal={animateOnReveal}
               answerClassName="!text-sm"
               iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
               iconVariant="circle-cross"

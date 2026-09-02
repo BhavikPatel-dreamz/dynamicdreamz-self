@@ -28,6 +28,7 @@ export function SiteHeader() {
               alt="Dynamic Dreamz - Shopify Platinum Partner"
               width={257}
               height={39}
+              sizes="(max-width: 380px) 150px, (max-width: 768px) 170px, 225px"
               preload
             />
           </Link>

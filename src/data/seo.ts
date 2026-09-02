@@ -832,6 +832,29 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  bigcommerceToShopifyMigration: {
+    path: "/bigcommerce-to-shopify-migration",
+    title: "BigCommerce to Shopify Migration | Take an Expert Guide",
+    description:
+      "Looking for BigCommerce to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.",
+    keywords: [
+      "BigCommerce to Shopify migration",
+      "BigCommerce to Shopify",
+      "Shopify migration experts",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2026-08-05T13:38:54+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "BigCommerce to Shopify Migration by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   woocommerceToShopifyMigration: {
     path: "/woocommerce-to-shopify-migration",
     title: "Seamless WooCommerce to Shopify Migration | Dynamic Dreamz",
@@ -998,6 +1021,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  seoServices: {
+    path: "/seo-services",
+    title: "#1 SEO Services | Best SEO Company in India | Dynamic Dreamz",
+    description:
+      "Customized SEO services that deliver real results. Trusted SEO services from India’s top SEO company. Increase your rankings, traffic, and conversions.",
+    keywords: [
+      "SEO services",
+      "best SEO company in India",
+      "top SEO company",
+      "eCommerce SEO",
+      "Shopify SEO",
+      "organic marketing",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2026-08-05T13:38:54+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "SEO Services by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   shopifyCro: {
     path: "/shopify-cro-agency",
     title: "Shopify CRO Agency | Increase Revenue | Dynamic Dreamz",
@@ -1051,6 +1100,34 @@ export const pageSeo = {
       width: 1200,
       height: 630,
       alt: "Request a Quote - Dynamic Dreamz, a Web Design Company",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
+  bookDiscoveryCall: {
+    path: "/book-a-discovery-call",
+    title: "Book a Discovery Call | Dynamic Dreamz",
+    description:
+      "Book a 30-minute discovery call with Dynamic Dreamz to discuss your project requirements, challenges and the best way forward.",
+    socialDescription:
+      "Discuss your project requirements with our CTO and explore the right approach and next steps.",
+    keywords: [
+      "book a discovery call",
+      "Dynamic Dreamz discovery call",
+      "Shopify consultation",
+      "ecommerce consultation",
+      "book Shopify call",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-08-19T08:47:22+00:00",
+    modifiedTime: "2026-08-19T09:04:59+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Book a discovery call with Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "monthly",
@@ -3209,6 +3286,256 @@ export const pageSeo = {
       width: 1200,
       height: 630,
       alt: "Shopify Development in Texas | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInNewYork: {
+    path: "/shopify-development-in-new-york",
+    title: "Shopify Development Company in New York | Dynamic Dreamz",
+    description:
+      "Looking for expert Shopify development in New York? Dynamic Dreamz builds high-performance custom Shopify stores tailored to your business. Get a quote today!",
+    socialDescription:
+      "Top-rated Shopify development company in New York. Certified Shopify developers for custom stores, Plus builds, theme customization, and migrations.",
+    keywords: [
+      "Shopify development in New York",
+      "Shopify development company in New York",
+      "Shopify developers New York",
+      "hire Shopify developers New York",
+      "Shopify Plus New York",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in New York | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInMumbai: {
+    path: "/shopify-development-in-mumbai",
+    title: "Top Shopify Development Company in Mumbai - Dynamic Dreamz",
+    description:
+      "Partner with the best Shopify development company in Mumbai, which offers custom Shopify web development, migration, and scalable ecommerce solutions.",
+    socialDescription:
+      "Partner with the top Shopify development company in Mumbai for custom store design, theme customization, migrations, and scalable ecommerce growth.",
+    keywords: [
+      "Shopify development in Mumbai",
+      "Shopify development company in Mumbai",
+      "Shopify developers Mumbai",
+      "hire Shopify developers Mumbai",
+      "Shopify web development Mumbai",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in Mumbai | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  inspiroThemeCustomization: {
+    path: "/inspiro-theme-customization",
+    title: "Inspiro Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Get professional Inspiro Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    keywords: [
+      "Inspiro theme customization",
+      "Inspiro theme customization service",
+      "customize Inspiro WordPress theme",
+      "hire Inspiro theme developers",
+      "WordPress theme customization",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/inspiro-theme-customization/hero/inspiro-theme-customization-service-img.webp",
+      width: 1202,
+      height: 948,
+      alt: "Inspiro Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  expanseThemeCustomization: {
+    path: "/expanse-theme-customization",
+    title: "Expanse Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Looking for an Expanse Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.",
+    keywords: [
+      "Expanse theme customization",
+      "Expanse theme customization service",
+      "customize Expanse Shopify theme",
+      "hire Expanse theme developers",
+      "Shopify theme customization",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/expanse-theme-customization/hero/expanse-theme-customization-service-img.webp",
+      width: 570,
+      height: 441,
+      alt: "Expanse Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInLosAngeles: {
+    path: "/shopify-development-in-los-angeles",
+    title: "Shopify Development Company in Los Angeles | Dynamic Dreamz",
+    description:
+      "Looking for expert Shopify development in Los Angeles? Dynamic Dreamz builds high-performance, custom Shopify stores for your business. Get a free quote today!",
+    socialDescription:
+      "Top-rated Shopify development company in Los Angeles. Certified Shopify developers for custom stores, Plus builds, theme customization, and migrations.",
+    keywords: [
+      "Shopify development in Los Angeles",
+      "Shopify development company in Los Angeles",
+      "Shopify developers Los Angeles",
+      "hire Shopify developers Los Angeles",
+      "Shopify agency Los Angeles",
+      "Shopify Plus Los Angeles",
+    ],
+    openGraphType: "website",
+    publishedTime: "2026-04-03T09:01:10+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/shopify-development-company-in-chennai/hero/shopify-development-company-chennai-img.webp",
+      width: 520,
+      height: 480,
+      alt: "Shopify Development Company in Los Angeles | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInMiami: {
+    path: "/shopify-development-in-miami",
+    title: "Best Shopify Development in Miami | Dynamic Dreamz",
+    description:
+      "Need expert Shopify development in Miami? We build high-performance stores, handle migrations & offer white-label solutions. 18+ yrs exp. Get a quote!",
+    socialDescription:
+      "Top-rated Shopify development company in Miami. Certified Shopify developers for custom stores, Plus builds, theme customization, and migrations.",
+    keywords: [
+      "Shopify development in Miami",
+      "Shopify development company in Miami",
+      "Shopify developers Miami",
+      "hire Shopify developers Miami",
+      "Shopify agency Miami",
+      "Shopify Plus Miami",
+    ],
+    openGraphType: "website",
+    publishedTime: "2026-05-04T12:54:15+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/shopify-development-company-in-chennai/hero/shopify-development-company-chennai-img.webp",
+      width: 520,
+      height: 480,
+      alt: "Best Shopify Development in Miami | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  yithWonderThemeCustomization: {
+    path: "/yith-wonder-theme-customization",
+    title: "YITH Wonder Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Get professional YITH Wonder Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    socialDescription:
+      "Expert YITH Wonder theme customization services for WordPress and WooCommerce. Custom styling, speed optimization, and responsive design by Dynamic Dreamz.",
+    keywords: [
+      "YITH Wonder Theme Customization",
+      "YITH Wonder WordPress Theme",
+      "YITH Wonder WooCommerce Customization",
+      "WordPress Theme Customization",
+      "Dynamic Dreamz WordPress",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-05-06T06:43:09+00:00",
+    modifiedTime: "2026-08-05T13:26:33+00:00",
+    image: {
+      path: "/assets/yith-wonder-theme-customization/hero/yith-wonder-theme-customization-service-img.webp",
+      width: 601,
+      height: 474,
+      alt: "YITH Wonder Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  vesselThemeCustomization: {
+    path: "/vessel-theme-customization",
+    title: "Vessel Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Get Vessel Theme Customization Service to Enhance your Shopify store. Improve user experience, boost conversions with Dynamic Dreamz.",
+    socialDescription:
+      "Expert Vessel theme customization for Shopify stores. Transform your ecommerce storefront with bespoke design, speed optimization, and higher conversions.",
+    keywords: [
+      "Vessel Theme Customization",
+      "Vessel Shopify Theme",
+      "Shopify Theme Customization",
+      "Dynamic Dreamz Shopify",
+      "Vessel Theme Developer",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-06-16T03:29:55+00:00",
+    modifiedTime: "2026-08-05T13:35:08+00:00",
+    image: {
+      path: "/assets/vessel-theme-customization/hero/vessel-theme-customization-service-img.webp",
+      width: 617,
+      height: 474,
+      alt: "Vessel Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  phpDevelopment: {
+    path: "/php-development",
+    title: "PHP Web Development Company in India | Dynamic Dreamz",
+    description:
+      "Top PHP Web Development Company. Our experts craft scalable, efficient solutions for your online presence. Contact us today! or Call Now!",
+    socialDescription:
+      "Top PHP Web Development Company in India. Expert PHP/MySQL developers crafting custom Laravel, Craft CMS, Prestashop, and scalable web solutions.",
+    keywords: [
+      "PHP Development Company in India",
+      "PHP Web Development Company",
+      "Custom Laravel Development",
+      "PHP MySQL Developers",
+      "Dynamic Dreamz PHP",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-07-22T05:03:27+00:00",
+    modifiedTime: "2026-02-16T09:22:22+00:00",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "PHP Web Development Company in India | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",

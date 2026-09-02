@@ -1,3 +1,5 @@
+import { seoServicesFaqs, seoServicesWhatWeProvide } from "@/content/seo-services";
+import { bigcommerceFaqs, bigcommerceProcessContent } from "@/content/bigcommerce-to-shopify-migration";
 import { ecwidFaqs, ecwidProcessContent } from "@/content/ecwid-to-shopify-migration";
 import { migratingThemeToOnlineStore20Content } from "@/content/migrating-a-theme-to-online-store-2-0";
 import { plusAgencyFaqs, plusAgencyProcessContent } from "@/content/shopify-plus-migration-agency";
@@ -129,6 +131,11 @@ import { neveThemeCustomizationContent } from "@/content/neve-theme-customizatio
 import { blocksyThemeCustomizationContent } from "@/content/blocksy-theme-customization";
 import { extendableThemeCustomizationContent } from "@/content/extendable-theme-customization";
 import { kubioThemeCustomizationContent } from "@/content/kubio-theme-customization";
+import { inspiroThemeCustomizationContent } from "@/content/inspiro-theme-customization";
+import { expanseThemeCustomizationContent } from "@/content/expanse-theme-customization";
+import { yithWonderThemeCustomizationContent } from "@/content/yith-wonder-theme-customization";
+import { vesselThemeCustomizationContent } from "@/content/vessel-theme-customization";
+import { phpDevelopmentContent } from "@/content/php-development";
 import { shopifyDevelopmentBarcelonaContent } from "@/content/shopify-development-in-barcelona-spain";
 import {
   woocommerceDevelopmentFaqs,
@@ -166,6 +173,10 @@ import { shopifyDevelopmentHyderabadContent } from "@/content/shopify-developmen
 import { shopifyDevelopmentPuneContent } from "@/content/shopify-development-in-pune";
 import { shopifyDevelopmentBangaloreContent } from "@/content/shopify-development-in-bangalore";
 import { shopifyDevelopmentTexasContent } from "@/content/shopify-development-in-texas";
+import { shopifyDevelopmentNewYorkContent } from "@/content/shopify-development-in-new-york";
+import { shopifyDevelopmentLosAngelesContent } from "@/content/shopify-development-in-los-angeles";
+import { shopifyDevelopmentMiamiContent } from "@/content/shopify-development-in-miami";
+import { shopifyDevelopmentMumbaiContent } from "@/content/shopify-development-in-mumbai";
 import { wordpressDevelopmentDelhiContent } from "@/content/wordpress-development-in-delhi";
 import { wordpressDevelopmentNoidaContent } from "@/content/wordpress-development-in-noida";
 import { wordpressDevelopmentPuneContent } from "@/content/wordpress-development-in-pune";
@@ -235,6 +246,9 @@ const privacyPolicyBreadcrumbId = `${privacyPolicyPageUrl}#breadcrumb`;
 const requestQuotePageUrl = absoluteUrl(pageSeo.requestQuote.path);
 const requestQuotePageId = `${requestQuotePageUrl}#webpage`;
 const requestQuoteBreadcrumbId = `${requestQuotePageUrl}#breadcrumb`;
+const bookDiscoveryCallPageUrl = absoluteUrl(pageSeo.bookDiscoveryCall.path);
+const bookDiscoveryCallPageId = `${bookDiscoveryCallPageUrl}#webpage`;
+const bookDiscoveryCallBreadcrumbId = `${bookDiscoveryCallPageUrl}#breadcrumb`;
 const ourWorkPageUrl = absoluteUrl(pageSeo.ourWork.path);
 const ourWorkPageId = `${ourWorkPageUrl}#webpage`;
 const ourWorkBreadcrumbId = `${ourWorkPageUrl}#breadcrumb`;
@@ -365,6 +379,11 @@ const magentoToShopifyMigrationPageId = `${magentoToShopifyMigrationPageUrl}#web
 const magentoToShopifyMigrationServiceId = `${magentoToShopifyMigrationPageUrl}#service`;
 const magentoToShopifyMigrationFaqId = `${magentoToShopifyMigrationPageUrl}#faq`;
 const magentoToShopifyMigrationBreadcrumbId = `${magentoToShopifyMigrationPageUrl}#breadcrumb`;
+const bigcommerceToShopifyMigrationPageUrl = absoluteUrl(pageSeo.bigcommerceToShopifyMigration.path);
+const bigcommerceToShopifyMigrationPageId = `${bigcommerceToShopifyMigrationPageUrl}#webpage`;
+const bigcommerceToShopifyMigrationServiceId = `${bigcommerceToShopifyMigrationPageUrl}#service`;
+const bigcommerceToShopifyMigrationFaqId = `${bigcommerceToShopifyMigrationPageUrl}#faq`;
+const bigcommerceToShopifyMigrationBreadcrumbId = `${bigcommerceToShopifyMigrationPageUrl}#breadcrumb`;
 const woocommerceToShopifyMigrationPageUrl = absoluteUrl(pageSeo.woocommerceToShopifyMigration.path);
 const woocommerceToShopifyMigrationPageId = `${woocommerceToShopifyMigrationPageUrl}#webpage`;
 const woocommerceToShopifyMigrationServiceId = `${woocommerceToShopifyMigrationPageUrl}#service`;
@@ -390,6 +409,11 @@ const wixToShopifyMigrationPageId = `${wixToShopifyMigrationPageUrl}#webpage`;
 const wixToShopifyMigrationServiceId = `${wixToShopifyMigrationPageUrl}#service`;
 const wixToShopifyMigrationFaqId = `${wixToShopifyMigrationPageUrl}#faq`;
 const wixToShopifyMigrationBreadcrumbId = `${wixToShopifyMigrationPageUrl}#breadcrumb`;
+const seoServicesPageUrl = absoluteUrl(pageSeo.seoServices.path);
+const seoServicesPageId = `${seoServicesPageUrl}#webpage`;
+const seoServicesServiceId = `${seoServicesPageUrl}#service`;
+const seoServicesFaqId = `${seoServicesPageUrl}#faq`;
+const seoServicesBreadcrumbId = `${seoServicesPageUrl}#breadcrumb`;
 const shopifyCroPageUrl = absoluteUrl(pageSeo.shopifyCro.path);
 const shopifyCroPageId = `${shopifyCroPageUrl}#webpage`;
 const shopifyCroServiceId = `${shopifyCroPageUrl}#service`;
@@ -777,6 +801,51 @@ const shopifyDevelopmentTexasPageId = `${shopifyDevelopmentTexasPageUrl}#webpage
 const shopifyDevelopmentTexasServiceId = `${shopifyDevelopmentTexasPageUrl}#service`;
 const shopifyDevelopmentTexasFaqId = `${shopifyDevelopmentTexasPageUrl}#faq`;
 const shopifyDevelopmentTexasBreadcrumbId = `${shopifyDevelopmentTexasPageUrl}#breadcrumb`;
+const shopifyDevelopmentNewYorkPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInNewYork.path);
+const shopifyDevelopmentNewYorkPageId = `${shopifyDevelopmentNewYorkPageUrl}#webpage`;
+const shopifyDevelopmentNewYorkServiceId = `${shopifyDevelopmentNewYorkPageUrl}#service`;
+const shopifyDevelopmentNewYorkFaqId = `${shopifyDevelopmentNewYorkPageUrl}#faq`;
+const shopifyDevelopmentNewYorkBreadcrumbId = `${shopifyDevelopmentNewYorkPageUrl}#breadcrumb`;
+const shopifyDevelopmentMumbaiPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInMumbai.path);
+const shopifyDevelopmentMumbaiPageId = `${shopifyDevelopmentMumbaiPageUrl}#webpage`;
+const shopifyDevelopmentMumbaiServiceId = `${shopifyDevelopmentMumbaiPageUrl}#service`;
+const shopifyDevelopmentMumbaiFaqId = `${shopifyDevelopmentMumbaiPageUrl}#faq`;
+const shopifyDevelopmentMumbaiBreadcrumbId = `${shopifyDevelopmentMumbaiPageUrl}#breadcrumb`;
+const inspiroThemeCustomizationPageUrl = absoluteUrl(pageSeo.inspiroThemeCustomization.path);
+const inspiroThemeCustomizationPageId = `${inspiroThemeCustomizationPageUrl}#webpage`;
+const inspiroThemeCustomizationServiceId = `${inspiroThemeCustomizationPageUrl}#service`;
+const inspiroThemeCustomizationFaqId = `${inspiroThemeCustomizationPageUrl}#faq`;
+const inspiroThemeCustomizationBreadcrumbId = `${inspiroThemeCustomizationPageUrl}#breadcrumb`;
+const expanseThemeCustomizationPageUrl = absoluteUrl(pageSeo.expanseThemeCustomization.path);
+const expanseThemeCustomizationPageId = `${expanseThemeCustomizationPageUrl}#webpage`;
+const expanseThemeCustomizationServiceId = `${expanseThemeCustomizationPageUrl}#service`;
+const expanseThemeCustomizationFaqId = `${expanseThemeCustomizationPageUrl}#faq`;
+const expanseThemeCustomizationBreadcrumbId = `${expanseThemeCustomizationPageUrl}#breadcrumb`;
+const yithWonderThemeCustomizationPageUrl = absoluteUrl(pageSeo.yithWonderThemeCustomization.path);
+const yithWonderThemeCustomizationPageId = `${yithWonderThemeCustomizationPageUrl}#webpage`;
+const yithWonderThemeCustomizationServiceId = `${yithWonderThemeCustomizationPageUrl}#service`;
+const yithWonderThemeCustomizationFaqId = `${yithWonderThemeCustomizationPageUrl}#faq`;
+const yithWonderThemeCustomizationBreadcrumbId = `${yithWonderThemeCustomizationPageUrl}#breadcrumb`;
+const vesselThemeCustomizationPageUrl = absoluteUrl(pageSeo.vesselThemeCustomization.path);
+const vesselThemeCustomizationPageId = `${vesselThemeCustomizationPageUrl}#webpage`;
+const vesselThemeCustomizationServiceId = `${vesselThemeCustomizationPageUrl}#service`;
+const vesselThemeCustomizationFaqId = `${vesselThemeCustomizationPageUrl}#faq`;
+const vesselThemeCustomizationBreadcrumbId = `${vesselThemeCustomizationPageUrl}#breadcrumb`;
+const phpDevelopmentPageUrl = absoluteUrl(pageSeo.phpDevelopment.path);
+const phpDevelopmentPageId = `${phpDevelopmentPageUrl}#webpage`;
+const phpDevelopmentServiceId = `${phpDevelopmentPageUrl}#service`;
+const phpDevelopmentFaqId = `${phpDevelopmentPageUrl}#faq`;
+const phpDevelopmentBreadcrumbId = `${phpDevelopmentPageUrl}#breadcrumb`;
+const shopifyDevelopmentLosAngelesPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInLosAngeles.path);
+const shopifyDevelopmentLosAngelesPageId = `${shopifyDevelopmentLosAngelesPageUrl}#webpage`;
+const shopifyDevelopmentLosAngelesServiceId = `${shopifyDevelopmentLosAngelesPageUrl}#service`;
+const shopifyDevelopmentLosAngelesFaqId = `${shopifyDevelopmentLosAngelesPageUrl}#faq`;
+const shopifyDevelopmentLosAngelesBreadcrumbId = `${shopifyDevelopmentLosAngelesPageUrl}#breadcrumb`;
+const shopifyDevelopmentMiamiPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInMiami.path);
+const shopifyDevelopmentMiamiPageId = `${shopifyDevelopmentMiamiPageUrl}#webpage`;
+const shopifyDevelopmentMiamiServiceId = `${shopifyDevelopmentMiamiPageUrl}#service`;
+const shopifyDevelopmentMiamiFaqId = `${shopifyDevelopmentMiamiPageUrl}#faq`;
+const shopifyDevelopmentMiamiBreadcrumbId = `${shopifyDevelopmentMiamiPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -1611,6 +1680,57 @@ export function createRequestQuotePageSchema() {
   };
 }
 
+export function createBookDiscoveryCallPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "ContactPage",
+        "@id": bookDiscoveryCallPageId,
+        url: bookDiscoveryCallPageUrl,
+        name: pageSeo.bookDiscoveryCall.title,
+        description: pageSeo.bookDiscoveryCall.description,
+        datePublished: pageSeo.bookDiscoveryCall.publishedTime,
+        dateModified: pageSeo.bookDiscoveryCall.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        mainEntity: { "@id": organizationId },
+        breadcrumb: { "@id": bookDiscoveryCallBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.bookDiscoveryCall.image.path),
+          width: pageSeo.bookDiscoveryCall.image.width,
+          height: pageSeo.bookDiscoveryCall.image.height,
+          caption: pageSeo.bookDiscoveryCall.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": bookDiscoveryCallBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Book a Discovery Call",
+            item: bookDiscoveryCallPageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
 export function createOurWorkPageSchema() {
   const projectItems = ourWorkProjects.map((project, index) => {
     const destinations = project.href
@@ -2409,6 +2529,31 @@ export function createSquareToShopifyMigrationPageSchema() {
   });
 }
 
+export function createSeoServicesPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.seoServices,
+    pageUrl: seoServicesPageUrl,
+    pageId: seoServicesPageId,
+    serviceId: seoServicesServiceId,
+    faqId: seoServicesFaqId,
+    breadcrumbId: seoServicesBreadcrumbId,
+    serviceName: "SEO Services",
+    serviceType:
+      "Comprehensive search engine optimization services including technical SEO, link building, keyword strategy, and on-page optimization",
+    breadcrumbName: "SEO Services",
+    audienceType:
+      "Businesses, eCommerce stores, service providers, and brands looking to increase organic search rankings and reduce paid ad spend",
+    faqs: seoServicesFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, ""),
+    })),
+    offers: seoServicesWhatWeProvide.items.map((service) => ({
+      title: service.title,
+      description: service.description,
+    })),
+  });
+}
+
 export function createShopifyCroPageSchema() {
   return createServicePageSchema({
     page: pageSeo.shopifyCro,
@@ -3181,6 +3326,131 @@ export function createKubioThemeCustomizationPageSchema() {
       answer: item.answer,
     })),
     offers: kubioThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createInspiroThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.inspiroThemeCustomization,
+    pageUrl: inspiroThemeCustomizationPageUrl,
+    pageId: inspiroThemeCustomizationPageId,
+    serviceId: inspiroThemeCustomizationServiceId,
+    faqId: inspiroThemeCustomizationFaqId,
+    breadcrumbId: inspiroThemeCustomizationBreadcrumbId,
+    serviceName: "Inspiro Theme Customization Service",
+    serviceType:
+      "Inspiro WordPress theme customization, responsive WooCommerce store design, full-screen video backgrounds, gallery layouts, Elementor & Gutenberg integration, and speed optimization",
+    breadcrumbName: "Inspiro Theme Customization Service",
+    audienceType:
+      "Photographers, videographers, creative agencies, WordPress site owners, and WooCommerce merchants seeking professional Inspiro theme customization",
+    faqs: inspiroThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: inspiroThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createExpanseThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.expanseThemeCustomization,
+    pageUrl: expanseThemeCustomizationPageUrl,
+    pageId: expanseThemeCustomizationPageId,
+    serviceId: expanseThemeCustomizationServiceId,
+    faqId: expanseThemeCustomizationFaqId,
+    breadcrumbId: expanseThemeCustomizationBreadcrumbId,
+    serviceName: "Expanse Theme Customization Service",
+    serviceType:
+      "Expanse Shopify theme customization, large inventory catalog design, product filtering, quick view, wide layout design, and speed optimization",
+    breadcrumbName: "Expanse Theme Customization Service",
+    audienceType:
+      "Shopify merchants, high-SKU ecommerce store owners, and digital agencies seeking professional Expanse theme customization",
+    faqs: expanseThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: expanseThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createYithWonderThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.yithWonderThemeCustomization,
+    pageUrl: yithWonderThemeCustomizationPageUrl,
+    pageId: yithWonderThemeCustomizationPageId,
+    serviceId: yithWonderThemeCustomizationServiceId,
+    faqId: yithWonderThemeCustomizationFaqId,
+    breadcrumbId: yithWonderThemeCustomizationBreadcrumbId,
+    serviceName: "YITH Wonder Theme Customization Service",
+    serviceType:
+      "YITH Wonder WordPress and WooCommerce theme customization, full-site editing, block customization, performance optimization, and custom plugin integration",
+    breadcrumbName: "YITH Wonder Theme Customization Service",
+    audienceType:
+      "WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking professional YITH Wonder theme customization",
+    faqs: yithWonderThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: yithWonderThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createVesselThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.vesselThemeCustomization,
+    pageUrl: vesselThemeCustomizationPageUrl,
+    pageId: vesselThemeCustomizationPageId,
+    serviceId: vesselThemeCustomizationServiceId,
+    faqId: vesselThemeCustomizationFaqId,
+    breadcrumbId: vesselThemeCustomizationBreadcrumbId,
+    serviceName: "Vessel Theme Customization Service",
+    serviceType:
+      "Vessel Shopify theme customization, visual storytelling storefront layout, nested theme blocks, speed optimization, and third-party app integration",
+    breadcrumbName: "Vessel Theme Customization Service",
+    audienceType:
+      "Shopify store owners, lifestyle and apparel brands, and ecommerce merchants seeking professional Vessel theme customization",
+    faqs: vesselThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: vesselThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createPhpDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.phpDevelopment,
+    pageUrl: phpDevelopmentPageUrl,
+    pageId: phpDevelopmentPageId,
+    serviceId: phpDevelopmentServiceId,
+    faqId: phpDevelopmentFaqId,
+    breadcrumbId: phpDevelopmentBreadcrumbId,
+    serviceName: "PHP Web Development Services",
+    serviceType:
+      "Custom PHP web development, Laravel framework engineering, Craft CMS development, Prestashop solutions, custom API integration, and ongoing PHP maintenance",
+    breadcrumbName: "PHP Development Company in India",
+    audienceType:
+      "Businesses, startups, digital agencies, and CTOs seeking enterprise-grade PHP/MySQL web development and white-label delivery",
+    faqs: phpDevelopmentContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: phpDevelopmentContent.services.items.map((item) => ({
       title: item.title,
       description: item.description,
     })),
@@ -4745,6 +5015,134 @@ export function createShopifyDevelopmentInTexasPageSchema() {
   });
 }
 
+export function createShopifyDevelopmentInNewYorkPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInNewYork,
+    pageUrl: shopifyDevelopmentNewYorkPageUrl,
+    pageId: shopifyDevelopmentNewYorkPageId,
+    serviceId: shopifyDevelopmentNewYorkServiceId,
+    faqId: shopifyDevelopmentNewYorkFaqId,
+    breadcrumbId: shopifyDevelopmentNewYorkBreadcrumbId,
+    serviceName: "Shopify Development in New York",
+    serviceType:
+      "Custom Shopify development, theme engineering, Shopify Plus, app integration, migration, and store maintenance for businesses across New York",
+    breadcrumbName: "Shopify Development in New York",
+    audienceType:
+      "Enterprises, startups, D2C brands, and retail businesses in New York seeking custom Shopify development services",
+    faqs: shopifyDevelopmentNewYorkContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: [
+      ...shopifyDevelopmentNewYorkContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentNewYorkContent.reasons.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentInLosAngelesPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInLosAngeles,
+    pageUrl: shopifyDevelopmentLosAngelesPageUrl,
+    pageId: shopifyDevelopmentLosAngelesPageId,
+    serviceId: shopifyDevelopmentLosAngelesServiceId,
+    faqId: shopifyDevelopmentLosAngelesFaqId,
+    breadcrumbId: shopifyDevelopmentLosAngelesBreadcrumbId,
+    serviceName: "Shopify Development in Los Angeles",
+    serviceType:
+      "Custom Shopify development, theme engineering, Shopify Plus, app integration, migration, and store maintenance for businesses across Los Angeles",
+    breadcrumbName: "Shopify Development in Los Angeles",
+    audienceType:
+      "Enterprises, startups, D2C brands, and retail businesses in Los Angeles seeking custom Shopify development services",
+    faqs: shopifyDevelopmentLosAngelesContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: [
+      ...shopifyDevelopmentLosAngelesContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentLosAngelesContent.reasons.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentInMiamiPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInMiami,
+    pageUrl: shopifyDevelopmentMiamiPageUrl,
+    pageId: shopifyDevelopmentMiamiPageId,
+    serviceId: shopifyDevelopmentMiamiServiceId,
+    faqId: shopifyDevelopmentMiamiFaqId,
+    breadcrumbId: shopifyDevelopmentMiamiBreadcrumbId,
+    serviceName: "Shopify Development in Miami",
+    serviceType:
+      "Custom Shopify development, theme engineering, Shopify Plus, app integration, migration, and store maintenance for businesses across Miami and South Florida",
+    breadcrumbName: "Shopify Development in Miami",
+    audienceType:
+      "Enterprises, startups, D2C brands, luxury retailers, and cross-border ecommerce businesses in Miami seeking custom Shopify development services",
+    faqs: shopifyDevelopmentMiamiContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: [
+      ...shopifyDevelopmentMiamiContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentMiamiContent.reasons.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentInMumbaiPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInMumbai,
+    pageUrl: shopifyDevelopmentMumbaiPageUrl,
+    pageId: shopifyDevelopmentMumbaiPageId,
+    serviceId: shopifyDevelopmentMumbaiServiceId,
+    faqId: shopifyDevelopmentMumbaiFaqId,
+    breadcrumbId: shopifyDevelopmentMumbaiBreadcrumbId,
+    serviceName: "Shopify Development in Mumbai",
+    serviceType:
+      "Custom Shopify development, theme engineering, Shopify Plus, app integration, migration, and store maintenance for businesses in Mumbai",
+    breadcrumbName: "Shopify Development in Mumbai",
+    audienceType:
+      "Enterprises, startups, D2C brands, and retail businesses in Mumbai seeking custom Shopify development services",
+    faqs: shopifyDevelopmentMumbaiContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: [
+      ...shopifyDevelopmentMumbaiContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentMumbaiContent.reasons.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
 export function serializeJsonLd(value: unknown) {
   return JSON.stringify(value).replace(/</g, "\\u003c");
 }
@@ -4878,6 +5276,32 @@ export function createMagentoToShopifyMigrationPageSchema() {
       answer: item.answer,
     })),
     offers: magentoProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createBigCommerceToShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.bigcommerceToShopifyMigration,
+    pageUrl: bigcommerceToShopifyMigrationPageUrl,
+    pageId: bigcommerceToShopifyMigrationPageId,
+    serviceId: bigcommerceToShopifyMigrationServiceId,
+    faqId: bigcommerceToShopifyMigrationFaqId,
+    breadcrumbId: bigcommerceToShopifyMigrationBreadcrumbId,
+    serviceName: "BigCommerce to Shopify Migration",
+    serviceType:
+      "Seamless BigCommerce store migration to Shopify without downtime and full data integrity",
+    breadcrumbName: "BigCommerce to Shopify Migration",
+    audienceType:
+      "BigCommerce merchants, ecommerce brands, and direct-to-consumer businesses migrating to Shopify or Shopify Plus",
+    faqs: bigcommerceFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: bigcommerceProcessContent.steps.map((step) => ({
       title: step.title,
       description: step.description,
     })),

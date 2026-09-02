@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Slider, { type Settings } from "react-slick";
 
+import "slick-carousel/slick/slick.css";
+
 import { HappyClientCard, type HappyClientTestimonialItem } from "@/components/sections/happy-client-card";
 import { cn } from "@/lib/class-names";
 
