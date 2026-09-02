@@ -348,6 +348,54 @@ Temporary source files:
 - The captured live first viewport has no horizontal document overflow at the
   three required widths.
 
+## Video Deferral Update (2026-09-02)
+
+Captures inspected: live First View + View Page Source, local `home.ts`
+media entries, local selected-work + shopify-plus-agency sections, Verdaccio
+Layout Shift. Screenshots: local homepage before/after at `/` 1440/768/390;
+poster images inspected in `public/assets/about/`, `public/assets/case-studies/`,
+`public/assets/fashion/portfolio/`.
+
+Change applied: the three below-the-fold autoplay MP4s
+(`/assets/home/why-dynamic-dreamz.mp4` ~5.3 MB, `/assets/portfolio/sleepy-cat.mp4`
+~3.6 MB, `/assets/portfolio/tropicfeel.mp4` ~6.3 MB) no longer download during
+initial page load. A new reusable client component
+`src/components/ui/deferred-autoplay-video.tsx` gates each MP4 behind an
+IntersectionObserver:
+
+- Server HTML renders the `<video>` with NO `<source>` child, so the initial
+  HTML contains no eager MP4 request (verified: 5 `<video>` tags, 0
+  `<source>` in `.next/server/app/index.html`).
+- A static poster `<Image fill>` placeholder shows until the video approaches
+  (default `rootMargin: 600px`); the `<source>` is attached only on approach,
+  `play()` runs on viewport entry, `pause()` on exit.
+- Existing semantics preserved: same classes (`absolute inset-0 h-full w-full
+  object-cover`, selected-work `transition-transform duration-300
+  group-hover/project:scale-[1.06]`), `muted loop playsInline`,
+  `aria-hidden tabIndex={-1}`, `preload` values (`metadata` on shopify,
+  `none` on selected work), and source `media="(min-width: 768px)"`.
+- Selected-work videos intentionally never load below 768px (unchanged
+  behavior); their posters use `max-[767px]:hidden` so mobile appearance is
+  unchanged. The decorative duplicate `ProjectList` is kept and deferred
+  identically.
+- Posters reused from existing canonical assets (no new assets added):
+  - `why-dynamic-dreamz.mp4` → `/assets/about/hero-video-poster.webp`
+    (1140x492, ~38 KB, team collab). Best existing candidate; not confirmed
+    to represent the montage content.
+  - `sleepy-cat.mp4` → `/assets/case-studies/sleepycat.png` (571x405,
+    SleepyCat migration storefront).
+  - `tropicfeel.mp4` → `/assets/fashion/portfolio/tropicfeel-fashion.webp`
+    (369x422, portrait 0.87 aspect in a ~1.47 landscape box; 782x892 default
+    render size; object-cover crops). Only project-owned tropicfeel raster.
+- Interaction state verified in DOM: video `preload` preserved; poster shown
+  until first frame of attached source paints, then the poster is covered by
+  the playing video (no removal flash).
+
+Remaining differences: poster choices are the best existing canonical assets,
+not pixel recreations of the first MP4 frames; please confirm the shopify
+`why-dynamic-dreamz` poster and the tropicfeel portrait crop are acceptable, or
+supply approved poster frames.
+
 ## Final Verification
 
 - The live and updated local first viewport were visually inspected at 1440,

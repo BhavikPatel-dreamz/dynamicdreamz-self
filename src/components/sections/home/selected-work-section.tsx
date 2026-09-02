@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "@/components/sections/home/selected-work-section.module.css";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { DeferredAutoplayVideo } from "@/components/ui/deferred-autoplay-video";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { homeSectionCopy, projects, type Project } from "@/content/home";
 import { cn } from "@/lib/class-names";
@@ -16,15 +17,27 @@ function DiagonalArrowIcon() {
   );
 }
 
+const projectVideoPosters: Record<string, string> = {
+  "/assets/portfolio/sleepy-cat.mp4": "/assets/case-studies/sleepycat.png",
+  "/assets/portfolio/tropicfeel.mp4": "/assets/fashion/portfolio/tropicfeel-fashion.webp",
+};
+
 function ProjectMedia({ project }: { project: Project }) {
   const mediaClass =
     "absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover/project:scale-[1.06]";
 
   if (project.media.type === "video") {
     return (
-      <video className={mediaClass} autoPlay muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1}>
-        <source src={project.media.src} type="video/mp4" media="(min-width: 768px)" />
-      </video>
+      <DeferredAutoplayVideo
+        className={mediaClass}
+        decorative
+        poster={projectVideoPosters[project.media.src]}
+        posterClassName="object-cover max-[767px]:hidden"
+        posterSizes="(max-width: 767px) calc(100vw - 50px), 50vw"
+        preload="none"
+        sourceMedia="(min-width: 768px)"
+        src={project.media.src}
+      />
     );
   }
 

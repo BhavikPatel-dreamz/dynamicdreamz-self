@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/container";
+import { DeferredAutoplayVideo } from "@/components/ui/deferred-autoplay-video";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { SectionDescription } from "@/components/ui/section-description";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -55,9 +56,15 @@ export function ShopifyPlusAgencySection() {
             </div>
           </div>
           <div className="relative w-1/2 min-h-[380px] overflow-hidden rounded-[20px] max-[992px]:mt-5 max-[992px]:w-full max-[992px]:min-h-0 max-[992px]:aspect-[1.37] max-[767px]:rounded-xl">
-            <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-hidden="true" tabIndex={-1}>
-              <source src={shopifyPlusAgencyContent.videoSrc} type="video/mp4" />
-            </video>
+            <DeferredAutoplayVideo
+              className="absolute inset-0 h-full w-full object-cover"
+              decorative
+              poster="/assets/about/hero-video-poster.webp"
+              posterClassName="object-cover"
+              posterSizes="(max-width: 991px) 100vw, 50vw"
+              preload="metadata"
+              src={shopifyPlusAgencyContent.videoSrc}
+            />
           </div>
         </div>
       </Container>
