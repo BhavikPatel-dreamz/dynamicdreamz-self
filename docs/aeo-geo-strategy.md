@@ -7754,6 +7754,68 @@ Dedicated commercial landing page presenting Dynamic Dreamz Vision theme customi
 - 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
 - 6 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier).
 - 5 detailed FAQs addressing customization cost, custom product filters, promotional banners, multi-currency support, and SEO ranking protection.
+
+## SEO Services (`/seo-services`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-09-02
+
+Owner: SEO, organic marketing specialists, leadership, and sales operations
+
+Primary audience: Business owners, ecommerce brands, service providers, and marketing leaders looking to reduce paid ad dependency, increase search engine rankings, and generate high-intent organic traffic through comprehensive SEO services.
+
+Decision stage: SEO agency evaluation, organic marketing strategy scoping, technical audit assessment, and discovery call booking
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz end-to-end SEO services. Highlights reducing ad spend by 70% with organic marketing, why choose SEO services (5 common pain points), 12 core SEO services (Keyword Research & Strategy, Link Building, Technical SEO, Local SEO, On-Page SEO, Off-Page SEO, Franchise SEO, Shopify SEO, Amazon SEO, eCommerce SEO, Content Writing, Conversion Rate Optimization), a 7-stage outcome-driven SEO process (Site Audit, Competition Analysis, Keyword Research, Keyword Gap Analysis, On-Page Optimization, Off-Page Optimization, Tracking and Reporting), 11 specialized SEO tools utilized (Google Analytics, Google Search Console, Ahrefs, SEMrush, Moz, Screaming Frog, Ubersuggest, Surfer SEO, Yoast SEO, GTmetrix, PageSpeed Insights), 6 reasons to choose Dynamic Dreamz (Experience Matters, Dedicated SEO Professionals, Relationships & Results, We Are Consistently Getting Better, We Play Fair, Transparent Reporting), 13 industries served (Beauty & Cosmetics, Fashion & Apparel, Health & Nutrition, Food & Beverages, Pet Industry, eCommerce & Online Stores, Real Estate, Education & Online Courses, Travel & Hospitality, Finance & Insurance, Legal Services, Local Businesses, IT & Tech Startups), 8 comprehensive FAQs, and CTA banner.
+
+### Target prompts
+
+- Best SEO services and top SEO company in India?
+- How to reduce paid ad spend by 70% using organic SEO marketing?
+- Does Dynamic Dreamz provide Shopify SEO and eCommerce SEO services?
+- What tools does Dynamic Dreamz use for SEO audits, keyword research, and rank tracking?
+- How long does it take for SEO to generate results and leads?
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `Reduce Ad Spend by 70% With Organic Marketing` with split hero and 3 verified review badges (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0).
+- 5 bullet-point pill cards addressing common merchant pain points and ad-spend waste.
+- 12 comprehensive SEO service boxes in a 4-column responsive grid.
+- 7-step outcome-oriented process flow in a draggable carousel.
+- 11 industry-standard SEO tools with dedicated brand gradient badges and logos.
+- 6 agency differentiation cards in a 2-column bordered grid.
+- 13 industry cards in horizontal draggable carousel with custom imagery.
+- 8 detailed FAQ accordion items answering timeline, ad comparison, audits, guarantees, costs, and reporting.
+- Bottom CTA section linking directly to `/request-quote`.
+- Structured data graph emitting Service, OfferCatalog (12 SEO offers), FAQPage (8 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical badges and storing dedicated assets under `public/assets/seo-services/`.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The SEO services route required full App Router and metadata coverage | Ship the slashless route through shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, OfferCatalog, and BreadcrumbList schema | Emit Service with OfferCatalog (12 items), FAQPage (8 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Asset deduplication | Reused canonical SVGs and industry slides; stored dedicated assets under `public/assets/seo-services/` with 0 duplicate hash groups | Save dedicated assets under `public/assets/seo-services/` | Verified with SHA-256 audit |
+| P1 | deferred | Content expansion | Minor wording/grammar refinements in service descriptions and FAQ answers | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz SEO and organic growth authority. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as an established SEO and digital agency founded in 2006 with 150+ specialists and 5000+ completed projects.
+- Highlight Google-approved white-hat SEO methodologies and verifiable client reviews across Clutch, Upwork, and GoodFirms.
+
+### Internal-link and conversion actions
+
+- Internal links to `/request-quote` and `/contact-us` for lead capture and free SEO audit requests.
+- Contextual navigation to related Shopify, eCommerce, and web development services.
+
 ## Shopify Certified Developers (`/shopify-certified-developers`)
 
 Status: implemented and verified; live-visible content preserved; visible recommendations deferred

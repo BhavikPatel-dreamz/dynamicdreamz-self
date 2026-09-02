@@ -114,7 +114,7 @@ export function AgencyServicesSection({
           <div className="-mx-2 mb-[25px] flex flex-wrap justify-center">
             {content.items.map((service) => {
               const serviceHref = service.href ?? service.link;
-              const hasLink = Boolean(serviceHref);
+              const hasLink = typeof service.href === "string" || typeof service.link === "string";
 
               const cardContent = isWebflow ? (
                 <div className="h-full rounded-[15px] border border-[#f7f4e9] bg-[#f7f4e9] p-[35px_36px] max-[1199px]:p-[30px_20px] max-[767px]:p-5">
@@ -137,7 +137,7 @@ export function AgencyServicesSection({
               ) : isServicesBox ? (
                 <div
                   className={cn(
-                    "services-text relative flex h-full items-start rounded-[10px] border border-[rgba(40,40,40,0.08)] p-5 transition-transform duration-300 ease-in-out",
+                    "services-text relative flex h-full items-start rounded-[10px] border border-[rgba(40,40,40,0.08)] p-5 transition-all duration-300 ease-in-out hover:border-transparent hover:shadow-md",
                     cardBgClassName ?? "bg-[#fafaf7]",
                   )}
                 >
@@ -157,7 +157,7 @@ export function AgencyServicesSection({
                     <p className="mt-2.5 mb-0 font-sans text-[14px] font-medium leading-[24px] text-[#535353]">
                       {service.description}
                     </p>
-                    {serviceHref && (
+                    {hasLink && (
                       <div className="services-read-more btn-link-arrow mt-4 flex items-center text-sm font-semibold uppercase tracking-[0.32px] text-[#ad5151]">
                         <span>{sharedUiCopy.readMore}</span>
                         <svg

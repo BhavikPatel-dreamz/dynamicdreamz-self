@@ -136,9 +136,8 @@ export function ServiceHeroSection({
                           "mt-4 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted",
                           bodyClassName,
                         )}
-                      >
-                        {formatBrText(content.secondaryDescription)}
-                      </p>
+                        dangerouslySetInnerHTML={{ __html: content.secondaryDescription }}
+                      />
                     )}
                   </>
                 )}
@@ -175,7 +174,7 @@ export function ServiceHeroSection({
               </div>
             </div>
             {showReviews ? (
-              <div className="right-col w-full">
+              <div className="right-col mx-auto w-full max-w-[480px]">
                 {content.reviews && content.reviews.length > 0 ? (
                   <ServiceHeroReviews items={content.reviews} />
                 ) : (

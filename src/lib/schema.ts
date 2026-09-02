@@ -1,3 +1,4 @@
+import { seoServicesFaqs, seoServicesWhatWeProvide } from "@/content/seo-services";
 import { bigcommerceFaqs, bigcommerceProcessContent } from "@/content/bigcommerce-to-shopify-migration";
 import { ecwidFaqs, ecwidProcessContent } from "@/content/ecwid-to-shopify-migration";
 import { migratingThemeToOnlineStore20Content } from "@/content/migrating-a-theme-to-online-store-2-0";
@@ -400,6 +401,11 @@ const wixToShopifyMigrationPageId = `${wixToShopifyMigrationPageUrl}#webpage`;
 const wixToShopifyMigrationServiceId = `${wixToShopifyMigrationPageUrl}#service`;
 const wixToShopifyMigrationFaqId = `${wixToShopifyMigrationPageUrl}#faq`;
 const wixToShopifyMigrationBreadcrumbId = `${wixToShopifyMigrationPageUrl}#breadcrumb`;
+const seoServicesPageUrl = absoluteUrl(pageSeo.seoServices.path);
+const seoServicesPageId = `${seoServicesPageUrl}#webpage`;
+const seoServicesServiceId = `${seoServicesPageUrl}#service`;
+const seoServicesFaqId = `${seoServicesPageUrl}#faq`;
+const seoServicesBreadcrumbId = `${seoServicesPageUrl}#breadcrumb`;
 const shopifyCroPageUrl = absoluteUrl(pageSeo.shopifyCro.path);
 const shopifyCroPageId = `${shopifyCroPageUrl}#webpage`;
 const shopifyCroServiceId = `${shopifyCroPageUrl}#service`;
@@ -2436,6 +2442,31 @@ export function createSquareToShopifyMigrationPageSchema() {
       description: step.description,
     })),
     videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createSeoServicesPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.seoServices,
+    pageUrl: seoServicesPageUrl,
+    pageId: seoServicesPageId,
+    serviceId: seoServicesServiceId,
+    faqId: seoServicesFaqId,
+    breadcrumbId: seoServicesBreadcrumbId,
+    serviceName: "SEO Services",
+    serviceType:
+      "Comprehensive search engine optimization services including technical SEO, link building, keyword strategy, and on-page optimization",
+    breadcrumbName: "SEO Services",
+    audienceType:
+      "Businesses, eCommerce stores, service providers, and brands looking to increase organic search rankings and reduce paid ad spend",
+    faqs: seoServicesFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, ""),
+    })),
+    offers: seoServicesWhatWeProvide.items.map((service) => ({
+      title: service.title,
+      description: service.description,
+    })),
   });
 }
 
