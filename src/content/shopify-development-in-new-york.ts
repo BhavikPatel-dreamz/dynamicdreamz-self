@@ -164,7 +164,7 @@ export const shopifyDevelopmentNewYorkContent = {
         title: "Customizable Themes",
         description:
           "Shopify's theme library helps you ensure the freedom required to build a storefront that truly represents your brand, so it can be further customized with custom modifications tailored to your vision.",
-        icon: "/assets/services/shopify-development-in-texas/custom-themes-icon.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "Customizable Themes",
       },
       {

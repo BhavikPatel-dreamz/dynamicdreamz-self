@@ -246,6 +246,9 @@ const privacyPolicyBreadcrumbId = `${privacyPolicyPageUrl}#breadcrumb`;
 const requestQuotePageUrl = absoluteUrl(pageSeo.requestQuote.path);
 const requestQuotePageId = `${requestQuotePageUrl}#webpage`;
 const requestQuoteBreadcrumbId = `${requestQuotePageUrl}#breadcrumb`;
+const bookDiscoveryCallPageUrl = absoluteUrl(pageSeo.bookDiscoveryCall.path);
+const bookDiscoveryCallPageId = `${bookDiscoveryCallPageUrl}#webpage`;
+const bookDiscoveryCallBreadcrumbId = `${bookDiscoveryCallPageUrl}#breadcrumb`;
 const ourWorkPageUrl = absoluteUrl(pageSeo.ourWork.path);
 const ourWorkPageId = `${ourWorkPageUrl}#webpage`;
 const ourWorkBreadcrumbId = `${ourWorkPageUrl}#breadcrumb`;
@@ -1670,6 +1673,57 @@ export function createRequestQuotePageSchema() {
             position: 2,
             name: "Request a Quote",
             item: requestQuotePageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+export function createBookDiscoveryCallPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "ContactPage",
+        "@id": bookDiscoveryCallPageId,
+        url: bookDiscoveryCallPageUrl,
+        name: pageSeo.bookDiscoveryCall.title,
+        description: pageSeo.bookDiscoveryCall.description,
+        datePublished: pageSeo.bookDiscoveryCall.publishedTime,
+        dateModified: pageSeo.bookDiscoveryCall.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        mainEntity: { "@id": organizationId },
+        breadcrumb: { "@id": bookDiscoveryCallBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.bookDiscoveryCall.image.path),
+          width: pageSeo.bookDiscoveryCall.image.width,
+          height: pageSeo.bookDiscoveryCall.image.height,
+          caption: pageSeo.bookDiscoveryCall.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": bookDiscoveryCallBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Book a Discovery Call",
+            item: bookDiscoveryCallPageUrl,
           },
         ],
       },

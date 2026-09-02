@@ -1106,6 +1106,34 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  bookDiscoveryCall: {
+    path: "/book-a-discovery-call",
+    title: "Book a Discovery Call | Dynamic Dreamz",
+    description:
+      "Book a 30-minute discovery call with Dynamic Dreamz to discuss your project requirements, challenges and the best way forward.",
+    socialDescription:
+      "Discuss your project requirements with our CTO and explore the right approach and next steps.",
+    keywords: [
+      "book a discovery call",
+      "Dynamic Dreamz discovery call",
+      "Shopify consultation",
+      "ecommerce consultation",
+      "book Shopify call",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-08-19T08:47:22+00:00",
+    modifiedTime: "2026-08-19T09:04:59+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Book a discovery call with Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   whiteLabelShopify: {
     path: "/white-label-shopify-development-services",
     title: "White Label Shopify Development Partner for Digital Agencies",

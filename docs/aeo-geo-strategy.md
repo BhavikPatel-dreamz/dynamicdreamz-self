@@ -32,6 +32,7 @@ It covers:
   - `/white-label-website-design-services`
   - `/shopify-plus-agency`
   - `/request-quote`
+  - `/book-a-discovery-call`
   - `/blogs`
   - `/blogs/[slug]` (84 generated article routes)
 
@@ -9300,4 +9301,42 @@ Owner: SEO, content, and development
 
 
 
+## Book a Discovery Call (`/book-a-discovery-call`)
+Status: implemented; visible live wording preserved
+Last reviewed: 2026-09-02
+Owner: Sales, operations, SEO, and development
+Primary audience: ecommerce brands, Shopify merchants, digital agencies, and
+prospective clients who need an initial technical discussion
+Decision stage: conversion and project qualification
 
+### Page role and target prompts
+
+- Role: direct consultation-booking destination for a 30-minute technical discovery call.
+- Target prompts: "How can I book a Shopify consultation with Dynamic Dreamz?", "Can I speak with a Dynamic Dreamz CTO about my ecommerce project?", and "How long is the Dynamic Dreamz discovery call?"
+- Conversion action: select a date and time in the visible Calendly booking widget.
+
+### Visible evidence and implementation
+
+- The page visibly identifies a 30-Minute Discovery Call and invites visitors to talk directly with the CTO.
+- The explanatory copy describes discussing plans, blockers, improvements, technical direction, and practical next steps.
+- Sanjay Patel is identified as Co-Founder & CTO, with the project-owned portrait reused from the About page asset inventory.
+- Three visible benefits explain the focused 30-minute format, technical discussion, and no-obligation next step.
+- The calendar card visibly states "30 minutes · Online meeting" and embeds the approved Calendly event URL.
+- The route is server-rendered with local metadata, a slashless canonical, Open Graph/Twitter data, sitemap discovery, and page-scoped ContactPage/BreadcrumbList schema.
+
+### Structured gap analysis
+
+| Priority | Status | Area | Current issue | Recommendation | Verification / dependency |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route discovery | The live booking destination was referenced by the homepage but had no local App Router route | Ship `/book-a-discovery-call` with shared metadata, canonical, sitemap, robots, and server-rendered content | Route appears in the production build and sitemap data; URL-policy check passed on 2026-09-02 |
+| P0 | implemented | Conversion runtime | The live page depends on a Calendly inline widget | Use a direct Calendly iframe with a stable 500px frame and accessible title; keep the external booking provider as the only required runtime dependency | Local route renders the frame without any legacy Dynamic Dreamz scripts or assets |
+| P0 | implemented | Asset ownership | The host portrait is loaded from a WordPress upload on the live page | Reuse the byte-identical local `/assets/about/team/sanjay-patel.jpg` asset | SHA-256 comparison matched exactly; repository duplicate audit reports zero groups |
+| P1 | implemented | Structured data | Live source exposes a broad sitewide graph on the booking page | Emit scoped Organization, WebSite, ContactPage, primary ImageObject, and BreadcrumbList nodes matching the page intent | JSON-LD function is route-scoped and uses slashless absolute URLs |
+| P1 | deferred | Answer evidence | The page does not publish a verified response-time promise, agenda details beyond the visible benefits, or qualification criteria | Add only sales-approved response expectations, agenda, and fit guidance as visible copy; mirror any approved FAQ in schema | Requires sales/operations approval; visible UI remains unchanged |
+| P2 | suggested | Measurement | Booking completion and pre-booking CTA engagement are not instrumented | Track Calendly load, date selection, booking completion, and assisted quote paths after analytics/consent approval | Analytics governance and Calendly event access required |
+
+### Verification result
+
+- Live rendered page, View Page Source, scoped CSS/media CSS, shared header/footer CSS, and desktop/tablet/mobile captures were inspected.
+- Local lint, build, URL policy, component-content, case-study, blog, and asset-duplicate checks pass.
+- Local responsive screenshots and iframe availability remain the final browser smoke-test dependency; Calendly schedule availability may vary by network and time.

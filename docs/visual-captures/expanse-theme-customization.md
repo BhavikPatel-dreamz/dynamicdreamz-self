@@ -67,7 +67,7 @@
   - `nelter.svg`
   - `circuit-city.svg`
 - Feature icons reused directly from canonical paths:
-  - `/assets/expanse-theme-customization/features/built-in-product-filtering.svg`
+  - `/assets/be-yours-theme-customization/features/built-in-product-filtering.svg`
   - `/assets/impulse-theme-customization/features/customizable-sections.svg`
   - `/assets/impulse-theme-customization/features/product-quick-view.svg`
   - `/assets/savor-theme-customization/features/customizable-sections.svg`

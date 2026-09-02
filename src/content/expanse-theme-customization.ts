@@ -105,7 +105,7 @@ export const expanseThemeCustomizationContent = {
       {
         title: "Product Filtering",
         description: "",
-        icon: "/assets/expanse-theme-customization/features/built-in-product-filtering.svg",
+        icon: "/assets/be-yours-theme-customization/features/built-in-product-filtering.svg",
         iconAlt: "Product Filtering Icon",
       },
       {

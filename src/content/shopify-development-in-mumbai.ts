@@ -163,7 +163,7 @@ export const shopifyDevelopmentMumbaiContent = {
         title: "Customizable Themes",
         description:
           "Personalize your storefront using customizable Shopify themes that reflect your brand identity.",
-        icon: "/assets/services/shopify-development-in-texas/custom-themes-icon.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "Customizable Themes",
       },
       {

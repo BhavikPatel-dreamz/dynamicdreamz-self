@@ -71,7 +71,7 @@
   - `ranavat.svg`, `prolash.svg`, `tropicfeel.svg`, `perfect-locks.svg`, `bombay-shirt-company.svg`, `kayfi.svg`, `simsdirect.svg`, `kvaser.svg`, `nelter.svg`, `circuit-city.svg`
 - Benefit icons reused directly from canonical paths:
   - `/assets/shopify-development-company-in-chennai/benefits/user-friendly.svg`
-  - `/assets/services/shopify-development-in-texas/custom-themes-icon.svg`
+  - `/assets/shopify-theme-customization/services/responsive-design.svg`
   - `/assets/shopify-development-company-in-chennai/benefits/scalable.svg`
   - `/assets/etsy-to-shopify-migration/marketing-integration.svg`
   - `/assets/shopify-development-company-in-chennai/benefits/secure.svg`

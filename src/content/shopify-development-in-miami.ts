@@ -172,7 +172,7 @@ export const shopifyDevelopmentMiamiContent = {
         title: "Customizable Themes",
         description:
           "From bold, fashion-forward designs to sleek, luxury aesthetics, Shopify gives you the flexibility to build a storefront that truly reflects the energy of your Miami brand. We take it further with fully custom theme development tailored to your market.",
-        icon: "/assets/services/shopify-development-in-texas/custom-themes-icon.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "custom themes icon",
       },
       {

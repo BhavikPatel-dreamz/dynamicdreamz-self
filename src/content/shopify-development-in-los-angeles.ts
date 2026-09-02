@@ -164,7 +164,7 @@ export const shopifyDevelopmentLosAngelesContent = {
         title: "Customizable Themes",
         description:
           "Choose from hundreds of themes or work with our Shopify experts to build a storefront that truly reflects your brand.",
-        icon: "/assets/services/shopify-development-in-texas/custom-themes-icon.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "custom themes icon",
       },
       {

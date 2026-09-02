@@ -2017,5 +2017,16 @@ Primary SEO intent: Shopify theme customization services, Shopify theme customiz
 
 
 
+## Book a Discovery Call (`/book-a-discovery-call`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-09-02
+Primary SEO intent: book a discovery call, Shopify consultation, ecommerce project consultation, and technical consultation with Dynamic Dreamz.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Response expectation | The page explains the call but does not state a response or booking follow-up expectation. | Add a sales-approved statement describing what happens after a visitor selects a time and how follow-up is handled. | Clarifies the conversion flow for buyers and answer engines without inventing an SLA. | Medium | deferred pending sales/operations approval |
+| Call agenda | The visible benefits describe a focused call, technical discussion, and no obligation. | Add an approved concise agenda covering project context, constraints, technical direction, and next steps if sales confirms the wording. | Makes the consultation value more extractable while preserving the current booking layout. | Low | suggested |
+| Fit guidance | The page does not state which project types or decision-makers are best suited for the call. | Add approved fit guidance for ecommerce brands, Shopify merchants, and digital agencies after sales review. | Helps visitors self-qualify without changing the current Calendly interaction. | Low | suggested |
 
 
