@@ -109,7 +109,7 @@ export function ThemeWhyChooseSection({
                     />
                   </span>
                   <div className="text flex-1">
-                    <h3 className="mb-[5px] font-montreal-medium text-[18px] font-normal leading-[30.6px] tracking-[0.36px] text-[#020202]">
+                    <h3 className="mb-[5px] font-montreal-medium text-[18px] font-medium leading-[30.6px] tracking-[0.36px] text-[#020202]">
                       {formatBrText(item.title, "max-[767px]:hidden")}
                     </h3>
                     <p className={`text-base font-medium leading-[27.2px] tracking-[0.32px] text-[#535353] ${preserveDesktopTypography ? "" : "max-[767px]:text-sm max-[767px]:leading-6"}`}>

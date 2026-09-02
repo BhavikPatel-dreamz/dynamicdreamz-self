@@ -300,6 +300,10 @@ export const astraThemeCustomizationContent = {
     ],
   },
   portfolio: {
+    sectionCopy: {
+      portfolioEyebrow: "PORTFOLIO",
+      portfolioCta: "VIEW OUR WORK",
+    },
     title: "Snippets of WordPress Theme Customization Portfolio",
     subtitle:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",

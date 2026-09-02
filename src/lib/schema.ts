@@ -1,3 +1,4 @@
+import { bigcommerceFaqs, bigcommerceProcessContent } from "@/content/bigcommerce-to-shopify-migration";
 import { ecwidFaqs, ecwidProcessContent } from "@/content/ecwid-to-shopify-migration";
 import { migratingThemeToOnlineStore20Content } from "@/content/migrating-a-theme-to-online-store-2-0";
 import { plusAgencyFaqs, plusAgencyProcessContent } from "@/content/shopify-plus-migration-agency";
@@ -193,6 +194,10 @@ import {
   webDesignFaqs,
   webDesignServices,
 } from "@/content/web-design";
+import {
+  webflowDevelopmentFaqs,
+  webflowDevelopmentServices,
+} from "@/content/webflow-development";
 import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -365,6 +370,11 @@ const magentoToShopifyMigrationPageId = `${magentoToShopifyMigrationPageUrl}#web
 const magentoToShopifyMigrationServiceId = `${magentoToShopifyMigrationPageUrl}#service`;
 const magentoToShopifyMigrationFaqId = `${magentoToShopifyMigrationPageUrl}#faq`;
 const magentoToShopifyMigrationBreadcrumbId = `${magentoToShopifyMigrationPageUrl}#breadcrumb`;
+const bigcommerceToShopifyMigrationPageUrl = absoluteUrl(pageSeo.bigcommerceToShopifyMigration.path);
+const bigcommerceToShopifyMigrationPageId = `${bigcommerceToShopifyMigrationPageUrl}#webpage`;
+const bigcommerceToShopifyMigrationServiceId = `${bigcommerceToShopifyMigrationPageUrl}#service`;
+const bigcommerceToShopifyMigrationFaqId = `${bigcommerceToShopifyMigrationPageUrl}#faq`;
+const bigcommerceToShopifyMigrationBreadcrumbId = `${bigcommerceToShopifyMigrationPageUrl}#breadcrumb`;
 const woocommerceToShopifyMigrationPageUrl = absoluteUrl(pageSeo.woocommerceToShopifyMigration.path);
 const woocommerceToShopifyMigrationPageId = `${woocommerceToShopifyMigrationPageUrl}#webpage`;
 const woocommerceToShopifyMigrationServiceId = `${woocommerceToShopifyMigrationPageUrl}#service`;
@@ -695,6 +705,11 @@ const webDesignPageId = `${webDesignPageUrl}#webpage`;
 const webDesignServiceId = `${webDesignPageUrl}#service`;
 const webDesignFaqId = `${webDesignPageUrl}#faq`;
 const webDesignBreadcrumbId = `${webDesignPageUrl}#breadcrumb`;
+const webflowDevelopmentPageUrl = absoluteUrl(pageSeo.webflowDevelopment.path);
+const webflowDevelopmentPageId = `${webflowDevelopmentPageUrl}#webpage`;
+const webflowDevelopmentServiceId = `${webflowDevelopmentPageUrl}#service`;
+const webflowDevelopmentFaqId = `${webflowDevelopmentPageUrl}#faq`;
+const webflowDevelopmentBreadcrumbId = `${webflowDevelopmentPageUrl}#breadcrumb`;
 const termsOfServicePageUrl = absoluteUrl(pageSeo.termsOfService.path);
 const termsOfServicePageId = `${termsOfServicePageUrl}#webpage`;
 const termsOfServiceBreadcrumbId = `${termsOfServicePageUrl}#breadcrumb`;
@@ -4284,6 +4299,32 @@ export function createWebDesignPageSchema() {
   });
 }
 
+export function createWebflowDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.webflowDevelopment,
+    pageUrl: webflowDevelopmentPageUrl,
+    pageId: webflowDevelopmentPageId,
+    serviceId: webflowDevelopmentServiceId,
+    faqId: webflowDevelopmentFaqId,
+    breadcrumbId: webflowDevelopmentBreadcrumbId,
+    serviceName: "Webflow Development Services",
+    serviceType:
+      "Custom Webflow website development, Figma to Webflow development, Webflow CMS development, migration, integrations, automations, and ongoing support",
+    breadcrumbName: "Webflow Development",
+    audienceType:
+      "Businesses, startups, enterprises, and digital agencies seeking custom Webflow websites and dedicated Webflow developers",
+    faqs: webflowDevelopmentFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: webflowDevelopmentServices.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
 export function createSiteMapPageSchema() {
   return {
     "@context": "https://schema.org",
@@ -4981,6 +5022,32 @@ export function createMagentoToShopifyMigrationPageSchema() {
       answer: item.answer,
     })),
     offers: magentoProcessContent.steps.map((step) => ({
+      title: step.title,
+      description: step.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createBigCommerceToShopifyMigrationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.bigcommerceToShopifyMigration,
+    pageUrl: bigcommerceToShopifyMigrationPageUrl,
+    pageId: bigcommerceToShopifyMigrationPageId,
+    serviceId: bigcommerceToShopifyMigrationServiceId,
+    faqId: bigcommerceToShopifyMigrationFaqId,
+    breadcrumbId: bigcommerceToShopifyMigrationBreadcrumbId,
+    serviceName: "BigCommerce to Shopify Migration",
+    serviceType:
+      "Seamless BigCommerce store migration to Shopify without downtime and full data integrity",
+    breadcrumbName: "BigCommerce to Shopify Migration",
+    audienceType:
+      "BigCommerce merchants, ecommerce brands, and direct-to-consumer businesses migrating to Shopify or Shopify Plus",
+    faqs: bigcommerceFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: bigcommerceProcessContent.steps.map((step) => ({
       title: step.title,
       description: step.description,
     })),

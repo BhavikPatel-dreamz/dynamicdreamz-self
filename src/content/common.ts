@@ -7,6 +7,7 @@ export const sharedUiCopy = {
   requestQuote: "Request a quote",
   requestQuoteUpper: "REQUEST A QUOTE",
   reviewedOn: "REVIEWED ON",
+  portfolioEyebrow: "PORTFOLIO",
   step: "Step",
   stepUpper: "STEP",
   viewCaseStudy: "View case study",

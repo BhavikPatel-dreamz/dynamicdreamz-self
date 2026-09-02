@@ -49,7 +49,7 @@ export const foodBeverageServices: AgencyServicesContent = {
       title: "Shopify Plus Consulting Service",
       description:
         "Our consulting service offers guidance on the best Shopify Plus strategies for developing your food and beverage business.",
-      icon: "/assets/food-beverage-shopify-plus-agency/services/app-maintenance-icon.svg",
+      icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
       iconAlt: "Maintenance and Support Icon",
     },
     {
@@ -84,7 +84,7 @@ export const foodBeverageServices: AgencyServicesContent = {
       title: "Shopify Plus Maintenance Service",
       description:
         "We ensure your store runs smoothly with ongoing maintenance, updates, and performance optimization.",
-      icon: "/assets/food-beverage-shopify-plus-agency/services/app-maintenance-icon.svg",
+      icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
       iconAlt: "Support and Maintenance Service Icon",
     },
   ],
@@ -180,4 +180,3 @@ export const foodBeverageFaqs = {
   heading: "FAQs",
   items: foodBeverageShopifyPlusFaqs,
 } as const;
-

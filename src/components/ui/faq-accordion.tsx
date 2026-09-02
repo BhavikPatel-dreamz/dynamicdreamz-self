@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
@@ -31,6 +31,10 @@ type FaqAccordionProps = {
   panelContentClassName?: string;
   iconClassName?: string;
   iconVariant?: "default" | "circle-cross";
+  animateOnReveal?: boolean;
+  revealDelayStepMs?: number;
+  revealDurationMs?: number;
+  revealOffsetPx?: number;
 };
 
 export function FaqAccordion({
@@ -43,13 +47,72 @@ export function FaqAccordion({
   panelContentClassName,
   iconClassName,
   iconVariant = "default",
+  animateOnReveal = false,
+  revealDelayStepMs = 150,
+  revealDurationMs = 800,
+  revealOffsetPx = 80,
 }: FaqAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [revealedItems, setRevealedItems] = useState<ReadonlySet<number>>(
+    () => new Set(),
+  );
+  const listRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!animateOnReveal) return;
+
+    const elements = listRef.current?.querySelectorAll<HTMLElement>(
+      "[data-faq-reveal-index]",
+    );
+    if (!elements?.length) return;
+
+    const revealAll = () => {
+      setRevealedItems(new Set(items.map((_, index) => index)));
+    };
+
+    if (
+      typeof IntersectionObserver === "undefined" ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      revealAll();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const enteredIndexes = entries
+          .filter((entry) => entry.isIntersecting)
+          .map((entry) =>
+            Number((entry.target as HTMLElement).dataset.faqRevealIndex),
+          );
+
+        if (!enteredIndexes.length) return;
+
+        setRevealedItems((current) => {
+          const next = new Set(current);
+          enteredIndexes.forEach((index) => next.add(index));
+          return next;
+        });
+
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) observer.unobserve(entry.target);
+        });
+      },
+      {
+        rootMargin: `0px 0px -${revealOffsetPx}px`,
+        threshold: 0,
+      },
+    );
+
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, [animateOnReveal, items, revealOffsetPx]);
 
   return (
-    <div data-faq-list>
+    <div data-faq-list ref={listRef}>
       {items.map((item, index) => {
         const isOpen = openIndex === index;
+        const isRevealed = !animateOnReveal || revealedItems.has(index);
         const triggerId = `${idPrefix}-trigger-${index}`;
         const panelId = `${idPrefix}-panel-${index}`;
         const isListBefore = item.listPosition === "before";
@@ -120,10 +183,32 @@ export function FaqAccordion({
           <article
             className={cn(
               "mb-5 rounded-[10px] border-[1.3px] border-[#efefef] bg-white last:mb-0",
+              animateOnReveal && "aos-init transition-[opacity,transform] motion-reduce:opacity-100 motion-reduce:transition-none motion-reduce:[transform:translate3d(0,0,0)]",
+              animateOnReveal && isRevealed && "aos-animate",
+              isRevealed
+                ? "opacity-100 [transform:translate3d(0,0,0)]"
+                : "opacity-0 [transform:translate3d(0,100px,0)]",
               itemClassName,
             )}
+            data-aos={animateOnReveal ? "fade-up" : undefined}
+            data-aos-delay={
+              animateOnReveal ? index * revealDelayStepMs : undefined
+            }
             data-faq-item
+            data-faq-reveal-index={animateOnReveal ? index : undefined}
             key={item.question}
+            style={
+              animateOnReveal
+                ? {
+                    transitionDelay: isRevealed
+                      ? `${index * revealDelayStepMs}ms`
+                      : "0ms",
+                    transitionDuration: `${revealDurationMs}ms`,
+                    transitionTimingFunction:
+                      "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                  }
+                : undefined
+            }
           >
             <button
               className={cn(

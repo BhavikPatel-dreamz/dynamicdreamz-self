@@ -24,6 +24,8 @@ export type PortfolioShowcaseSectionProps = {
     items: readonly PortfolioShowcaseItem[];
     category?: string;
     platformMark?: { src: string; width: number; height: number };
+    ctaLabel?: string;
+    ctaHref?: string;
   };
   ctaLabel?: string;
   ctaHref?: string;
@@ -44,25 +46,29 @@ export type PortfolioShowcaseSectionProps = {
 
 export function PortfolioShowcaseSection({
   content,
-  ctaLabel = sharedUiCopy.viewOurWork,
-  ctaHref = "/our-work",
+  ctaLabel,
+  ctaHref,
   hideCta = false,
   className = "our-work-sec pb-20 max-[992px]:pb-[60px]",
-  columns = 3,
+  columns = 4,
   cardVariant,
   imageAspectClassName,
   categoryClassName,
   descriptionBreakClassName = "max-[1199px]:hidden",
   eyebrow,
-  eyebrowClassName,
+  eyebrowClassName = "mb-4!",
   headingBreakClassName = "max-[1199px]:hidden",
-  headerLayout = "centered",
+  headerLayout = "split",
   itemsClassName,
-  variant = "default",
+  variant = "liveGrid",
 }: PortfolioShowcaseSectionProps) {
   const isLiveGrid = variant === "liveGrid";
   const resolvedColumns = columns ?? (isLiveGrid ? 4 : 3);
-  const resolvedEyebrow = isLiveGrid ? (eyebrow ?? content.eyebrow) : eyebrow;
+  const resolvedEyebrow =
+    eyebrow ?? content.eyebrow ?? sharedUiCopy.portfolioEyebrow;
+  const resolvedCtaLabel =
+    ctaLabel ?? content.ctaLabel ?? sharedUiCopy.viewOurWork;
+  const resolvedCtaHref = ctaHref ?? content.ctaHref ?? "/our-work";
   const defaultPlatformMark = content.platformMark ?? {
     src: "/assets/platforms/shopify-white.svg",
     width: 89,
@@ -82,7 +88,7 @@ export function PortfolioShowcaseSection({
   return (
     <section className={className} data-section="portfolio" id="portfolio-showcase">
       <Container>
-        {isLiveGrid ? (
+        {isLiveGrid || isSplit ? (
           <SplitSectionHeading
             description={content.description}
             eyebrow={resolvedEyebrow}
@@ -92,7 +98,7 @@ export function PortfolioShowcaseSection({
           />
         ) : (
           <>
-            {!isSplit && resolvedEyebrow ? (
+            {resolvedEyebrow ? (
               <Eyebrow
                 align="center"
                 className={cn("mb-5 tracking-[0.02em]", eyebrowClassName)}
@@ -103,31 +109,15 @@ export function PortfolioShowcaseSection({
               </Eyebrow>
             ) : null}
 
-            <div
-              className={
-                isSplit
-                  ? "flex items-end justify-between text-left max-[992px]:flex-col max-[992px]:items-center max-[992px]:text-center"
-                  : "text-center"
-              }
-            >
-              <div className={isSplit ? "w-[43%] max-[992px]:w-full" : undefined}>
-                {isSplit && resolvedEyebrow ? (
-                  <Eyebrow
-                    align="responsive-center"
-                    className={cn("mb-4 tracking-[0.02em]", eyebrowClassName)}
-                    lineWidth="fixed"
-                    tone="muted"
-                  >
-                    {resolvedEyebrow}
-                  </Eyebrow>
-                ) : null}
+            <div className="text-center">
+              <div>
                 <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
                   {formatBrText(content.heading, headingBreakClassName)}
                 </h2>
               </div>
               {content.description && (
-                <div className={isSplit ? "w-[51%] max-[992px]:mt-[15px] max-[992px]:w-full" : undefined}>
-                  <p className={`${isSplit ? "" : "mx-auto mt-6 max-w-[740px] "}our-works-desc text-[18px] font-medium leading-[34.2px] text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]`}>
+                <div>
+                  <p className="our-works-desc mx-auto mt-6 max-w-[740px] text-[18px] font-medium leading-[34.2px] text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
                     {formatBrText(content.description, descriptionBreakClassName)}
                   </p>
                 </div>
@@ -156,8 +146,8 @@ export function PortfolioShowcaseSection({
 
         {!hideCta && (
           <div className="mt-[51px] text-center max-[767px]:mt-10">
-            <ButtonLink href={ctaHref} variant="primary">
-              {ctaLabel}
+            <ButtonLink href={resolvedCtaHref} variant="primary">
+              {resolvedCtaLabel}
             </ButtonLink>
           </div>
         )}

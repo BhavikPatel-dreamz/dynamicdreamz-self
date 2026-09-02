@@ -11,7 +11,9 @@ export type SplitSectionHeadingProps = {
   eyebrowClassName?: string;
   className?: string;
   titleClassName?: string;
+  titleColumnClassName?: string;
   textClassName?: string;
+  textColumnClassName?: string;
   dark?: boolean;
   variant?: "centered" | "default" | "portfolio" | "services";
 };
@@ -29,7 +31,9 @@ export function SplitSectionHeading({
   eyebrowClassName,
   className,
   titleClassName,
+  titleColumnClassName,
   textClassName,
+  textColumnClassName,
   dark = false,
   variant = "default",
 }: SplitSectionHeadingProps) {
@@ -83,7 +87,8 @@ export function SplitSectionHeading({
     >
       <div
         className={cn(
-          services ? "w-[48%]" : portfolio ? "w-[50%]" : "w-[46%]",
+          titleColumnClassName ??
+            (services ? "w-[48%]" : portfolio ? "w-[50%]" : "w-[46%]"),
           "max-[992px]:w-full",
           titleClassName,
         )}
@@ -113,7 +118,8 @@ export function SplitSectionHeading({
       {body.length > 0 ? (
         <div
           className={cn(
-            services || portfolio ? "w-[48%]" : "w-[50%]",
+            textColumnClassName ??
+              (services || portfolio ? "w-[48%]" : "w-[50%]"),
             "max-[992px]:w-full",
             textClassName,
           )}

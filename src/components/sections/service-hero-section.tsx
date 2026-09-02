@@ -25,12 +25,18 @@ export type ServiceHeroContent = {
   paragraphs?: readonly string[];
   ctaLabel?: string;
   ctaHref?: string;
+  secondaryCta?: {
+    label: string;
+    href: string;
+    ariaLabel?: string;
+  };
   image?: {
     src: string;
     alt: string;
     width: number;
     height: number;
   };
+  imageContainerClassName?: string;
   reviews?: readonly ServiceHeroReviewItem[];
   coBranding?: ServiceHeroCoBranding;
   maxWidthClassName?: string;
@@ -136,7 +142,26 @@ export function ServiceHeroSection({
                     )}
                   </>
                 )}
-                {content.ctaLabel && (
+                {content.secondaryCta ? (
+                  <div className="mt-2 flex flex-wrap items-center justify-center gap-[15px] max-[575px]:flex-col">
+                    {content.ctaLabel && (
+                      <ButtonLink
+                        aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
+                        href={ctaHref}
+                        variant="primary"
+                      >
+                        {content.ctaLabel}
+                      </ButtonLink>
+                    )}
+                    <ButtonLink
+                      aria-label={content.secondaryCta.ariaLabel ?? `Dynamic Dreamz - ${content.secondaryCta.label}`}
+                      href={content.secondaryCta.href}
+                      variant="outline"
+                    >
+                      {content.secondaryCta.label}
+                    </ButtonLink>
+                  </div>
+                ) : content.ctaLabel ? (
                   <div className="mt-2">
                     <ButtonLink
                       aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
@@ -146,7 +171,7 @@ export function ServiceHeroSection({
                       {content.ctaLabel}
                     </ButtonLink>
                   </div>
-                )}
+                ) : null}
               </div>
             </div>
             {showReviews ? (
@@ -221,7 +246,26 @@ export function ServiceHeroSection({
                   )}
                 </>
               )}
-              {content.ctaLabel && (
+              {content.secondaryCta ? (
+                <div className="services-hero-btn mt-2.5 flex flex-wrap items-center gap-5 max-[1199px]:justify-center max-[575px]:flex-col max-[575px]:items-center max-[575px]:gap-[13px]">
+                  {content.ctaLabel && (
+                    <ButtonLink
+                      aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
+                      href={ctaHref}
+                      variant="primary"
+                    >
+                      {content.ctaLabel}
+                    </ButtonLink>
+                  )}
+                  <ButtonLink
+                    aria-label={content.secondaryCta.ariaLabel ?? `Dynamic Dreamz - ${content.secondaryCta.label}`}
+                    href={content.secondaryCta.href}
+                    variant="outline"
+                  >
+                    {content.secondaryCta.label}
+                  </ButtonLink>
+                </div>
+              ) : content.ctaLabel ? (
                 <ButtonLink
                   className="services-hero-btn"
                   aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
@@ -230,13 +274,13 @@ export function ServiceHeroSection({
                 >
                   {content.ctaLabel}
                 </ButtonLink>
-              )}
+              ) : null}
             </div>
           </div>
           <div className={rightColClassName ?? defaultRightCol}>
             {content.image ? (
               <>
-                <div className="service-img flex justify-center">
+                <div className={cn("service-img flex justify-center", content.imageContainerClassName)}>
                   <Image
                     alt={content.image.alt}
                     className={cn(

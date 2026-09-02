@@ -29,12 +29,6 @@ export function ShopifyDevelopmentCompanyInChennaiPage() {
     items: shopifyDevelopmentChennaiContent.reasons.items,
   };
 
-  const portfolioContent = {
-    heading: shopifyDevelopmentChennaiContent.portfolio.heading,
-    description: shopifyDevelopmentChennaiContent.portfolio.description,
-    items: shopifyDevelopmentChennaiContent.portfolio.items,
-  };
-
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
@@ -68,14 +62,7 @@ export function ShopifyDevelopmentCompanyInChennaiPage() {
         layout="carousel"
       />
       <PortfolioShowcaseSection
-        content={portfolioContent}
-        eyebrow={shopifyDevelopmentChennaiContent.sectionCopy.portfolioEyebrow}
-        eyebrowClassName="mb-4!"
-        headerLayout="split"
-        columns={4}
-        ctaHref="/our-work"
-        ctaLabel={shopifyDevelopmentChennaiContent.sectionCopy.portfolioCta}
-        variant="liveGrid"
+        content={shopifyDevelopmentChennaiContent.portfolio}
       />
       <HappyClientSection
         description={shopifyDevelopmentChennaiContent.testimonials.description}

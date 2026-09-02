@@ -4303,6 +4303,69 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 ### Verification and remaining gaps
 
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/web-design`; source/build URL guard passes.
+
+## Webflow Development (`/webflow-development`)
+
+Status: implemented; live-visible content preserved
+Last reviewed: 2026-09-02
+Owner: SEO, content, development, leadership, and sales operations
+Primary audience: Growing brands, startups, enterprises, and digital agencies seeking custom Webflow website development, CMS builds, Figma conversion, migrations, integrations, and ongoing support.
+Decision stage: commercial evaluation, platform selection, and Webflow developer hiring
+
+### Page role
+
+Dedicated commercial service landing page for Webflow development, with buyer-facing service capabilities, growth-oriented implementation proof, client stories, milestones, FAQs, and quote conversion.
+
+### Target prompts
+
+- Who is a Webflow development company and what does it deliver?
+- Can Dynamic Dreamz convert a Figma design into a custom Webflow website?
+- Should a growing brand choose Webflow over WordPress for speed and content management?
+- Does Dynamic Dreamz provide Webflow migration, integrations, and ongoing maintenance?
+- How long does a typical Webflow website project take?
+
+### Current strengths and available evidence
+
+- Server-rendered split hero with H1 `Webflow Development Services That Turn Design Into Scalable Websites`, local Webflow illustration, quote and portfolio CTAs, and Clutch, Upwork, and GoodFirms review badges.
+- 12 trusted brand logos reused from the canonical client asset set.
+- Six structured Webflow service offers: custom builds, Figma conversion, CMS development, migration/rebuilds, integrations/automations, and ongoing support.
+- Three growth cards covering performance-first development, conversion-focused design, and future-ready scalability.
+- Client Stories carousel with 11 attributed video testimonials and accessible video dialogs.
+- Three milestone cards for clients worldwide, projects completed, and revenue influenced.
+- Eight buyer FAQs covering platform choice, Figma conversion, migration, hiring, timelines, support, and ownership.
+- Service, OfferCatalog (6 offers), FAQPage (8 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schema emitted through shared helpers.
+- Unique Webflow SVGs stored locally under `public/assets/services/webflow-development/`; no runtime dependency on the live site.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Webflow route required App Router implementation and slashless URL policy | Ship `/webflow-development` through shared metadata, canonical, sitemap, robots, and URL helpers | Verified in rendered output and production build |
+| P0 | implemented | Structured data | Live source exposed only WebPage/BreadcrumbList and FAQ markup | Emit route-scoped Service, OfferCatalog, FAQPage, VideoObject, BreadcrumbList, Organization, and WebSite schema | Rendered JSON-LD and build verification |
+| P0 | implemented | Local assets | Live Webflow illustration and 12 section icons were remote | Ingest unique SVGs through the scratch/hash workflow and reuse existing brand, review, and testimonial assets | Duplicate audit and local asset checks |
+| P1 | deferred | Evidence | Recent Projects grid is empty on the live page and does not identify Webflow project outcomes | Add approved Webflow case studies with scope, platform details, and measurable outcomes when client attribution is approved | Client-success and leadership approval |
+| P1 | deferred | Visible copy | Several live descriptions use informal or repetitive phrasing | Queue exact copy improvements in `docs/page-content-improvements.md`; retain live wording until owner approval | Content-owner approval |
+
+### Entity, evidence, and authorship actions
+
+- Position Dynamic Dreamz as a Webflow-capable web and ecommerce development partner founded in 2006 with 150+ experts and 5000+ completed projects.
+- Attribute video testimonial names and companies to the existing approved testimonial records; do not add unsupported Webflow-specific outcomes.
+
+### Internal-link and conversion actions
+
+- Keep slashless `/webflow-development`, `/our-work`, and `/request-quote` paths in route data and CTAs.
+- Add Webflow case-study links only when the corresponding approved project pages are migrated.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit Service with 6 Offer items, 8 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Use `2026-08-05T13:22:37+00:00` as the migrated `dateModified` value captured from the live source.
+- Include the route in the generated sitemap with weekly change frequency and priority 0.8 when indexing is enabled.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-09-02): source route, canonical, Open Graph, sitemap, robots, and schema use `/webflow-development` without a trailing slash.
+- Visual parity review (2026-09-02): live/local screenshots at 1440x900, 768x1024, and 390x844 are recorded in `docs/visual-captures/webflow-development.md`; remaining pixel-level differences are documented there.
 ## Astra Theme Customization (`/astra-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
@@ -6021,6 +6084,67 @@ Dedicated commercial landing page presenting Dynamic Dreamz end-to-end Wix to Sh
 ### Suggested answer copy
 
 Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Wix to Shopify migration authority. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+- Attribute client video testimonials directly to their authentic founders and brand names.
+
+### Internal-link and conversion actions
+
+- Internal links to `/request-quote` and `/contact-us` for lead capture.
+- Contextual navigation to related Shopify migration and development services.
+
+## BigCommerce to Shopify Migration (`/bigcommerce-to-shopify-migration`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-09-02
+
+Owner: SEO, Shopify migration specialists, leadership, and sales operations
+
+Primary audience: BigCommerce store owners, scaling DTC brands, and enterprise eCommerce businesses evaluating migration to Shopify or Shopify Plus.
+
+Decision stage: platform re-platforming, BigCommerce to Shopify migration partner evaluation, zero-downtime architecture scoping, and quote request
+
+### Page role
+
+Dedicated commercial landing page presenting Dynamic Dreamz end-to-end BigCommerce to Shopify migration services. Highlights why migrate from BigCommerce to Shopify, platform comparison between BigCommerce and Shopify (ratings, pricing, trials, templates, pros/cons), a 6-step zero-downtime migration process with exhaustive entity migration scope (Products, Product Categories, Customers, Orders, Coupon, Reviews, CMS Pages, Blogs) and site testing checklist, 5 reasons to choose Dynamic Dreamz (Professional Squad of Shopify Experts, End to End Migration Support, Customizable Shopify Solutions, Minimal Downtime Guarantee, Post Migration Support), 5 migration data security assurances (Encrypted Data Transfer, Comprehensive Backup Plans, Secure Server Environment, Data Integrity Checks, Compliance with Shopify's Security Standards), 10 brand partners, video testimonials, 9 comprehensive migration FAQs, and quote request CTAs.
+
+### Target prompts
+
+- How to migrate store from BigCommerce to Shopify or Shopify Plus?
+- Best BigCommerce to Shopify migration agency or certified Shopify Plus experts?
+- Can I transfer products, customers, orders, categories, and reviews from BigCommerce to Shopify?
+- How to manage SEO 301 redirects and avoid downtime during BigCommerce to Shopify migration?
+- BigCommerce vs Shopify comparison for scaling ecommerce businesses.
+
+### Current strengths and available evidence
+
+- Server-rendered H1 `BigCommerce to Shopify Migration` with split hero, service illustration, primary CTA "Request a Quote", and 3 verified review badges (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0).
+- 10 trusted brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, SimsDirect, Kvaser, Nekter Juice Bar, Circuit City).
+- Clear answer statement box answering "Why Migrate from BigCommerce to Shopify?".
+- Side-by-side platform comparison cards for BigCommerce vs Shopify detailing overall rating, starting price, free trial, templates, pros, and cons.
+- 6-step sequential migration process with gradient step badges, numbered counters, and exhaustive nested lists for data entities (Products, Categories, Customers, Orders, Coupon, Reviews, CMS Pages, Blogs) and testing validation.
+- 5 reasons to choose Dynamic Dreamz highlighting Professional Squad of Shopify Experts, End to End Migration Support, Customizable Shopify Solutions, Minimal Downtime Guarantee, and Post Migration Support.
+- 5 data security assurance boxes covering Encrypted Data Transfer, Comprehensive Backup Plans, Secure Server Environment, Data Integrity Checks, and Compliance with Shopify's Security Standards.
+- Real client video testimonials with YouTube modal playback.
+- 9 comprehensive FAQ accordion items directly answering buyer concerns regarding switching reasons, migration duration, downtime prevention, design replication, transferable data, issue handling, transparent costs, customer transition, and post-migration support.
+- Structured data graph emitting Service, FAQPage (9 Question/Answer pairs), VideoObject (testimonial video schema), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical icons and storing unique SVGs under `public/assets/bigcommerce-to-shopify-migration/`.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | The migration route required full App Router and metadata coverage | Ship the slashless route through shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and BreadcrumbList schema | Emit Service with FAQPage (9 items), VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Asset deduplication | Reused canonical SVGs (review wordmarks, star ratings, client logos, and shared icons); stored unique SVGs under `public/assets/bigcommerce-to-shopify-migration/` with 0 duplicate hash groups | Save unique assets under `public/assets/bigcommerce-to-shopify-migration/` | Verified with SHA-256 audit |
+| P1 | deferred | Content expansion | Minor wording/grammar polish in FAQ answers and step descriptions | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz BigCommerce to Shopify migration authority. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
 
 ### Entity, evidence, and authorship actions
 

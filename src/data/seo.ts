@@ -832,6 +832,29 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  bigcommerceToShopifyMigration: {
+    path: "/bigcommerce-to-shopify-migration",
+    title: "BigCommerce to Shopify Migration | Take an Expert Guide",
+    description:
+      "Looking for BigCommerce to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.",
+    keywords: [
+      "BigCommerce to Shopify migration",
+      "BigCommerce to Shopify",
+      "Shopify migration experts",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2026-08-05T13:38:54+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "BigCommerce to Shopify Migration by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   woocommerceToShopifyMigration: {
     path: "/woocommerce-to-shopify-migration",
     title: "Seamless WooCommerce to Shopify Migration | Dynamic Dreamz",
@@ -2736,6 +2759,34 @@ export const pageSeo = {
       width: 1200,
       height: 630,
       alt: "Web Design Company & UI/UX Design Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  webflowDevelopment: {
+    path: "/webflow-development",
+    title: "Webflow Development Company | Dynamic Dreamz",
+    description:
+      "Custom Webflow websites, scalable solutions, and dedicated Webflow developers from Dynamic Dreamz for fast, flexible, conversion-focused experiences.",
+    keywords: [
+      "Webflow development company",
+      "Webflow development services",
+      "custom Webflow website development",
+      "Figma to Webflow development",
+      "Webflow developers",
+      "Webflow CMS development",
+      "Webflow migration services",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-01-28T07:12:21+00:00",
+    modifiedTime: "2026-08-05T13:22:37+00:00",
+    image: {
+      path: "/assets/services/webflow-development/hero/webflow-img.svg",
+      width: 213,
+      height: 219,
+      alt: "Webflow development services illustration",
     },
     sitemap: {
       changeFrequency: "weekly",
