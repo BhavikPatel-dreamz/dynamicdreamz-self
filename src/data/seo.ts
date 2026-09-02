@@ -2742,6 +2742,34 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  webflowDevelopment: {
+    path: "/webflow-development",
+    title: "Webflow Development Company | Dynamic Dreamz",
+    description:
+      "Custom Webflow websites, scalable solutions, and dedicated Webflow developers from Dynamic Dreamz for fast, flexible, conversion-focused experiences.",
+    keywords: [
+      "Webflow development company",
+      "Webflow development services",
+      "custom Webflow website development",
+      "Figma to Webflow development",
+      "Webflow developers",
+      "Webflow CMS development",
+      "Webflow migration services",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-01-28T07:12:21+00:00",
+    modifiedTime: "2026-08-05T13:22:37+00:00",
+    image: {
+      path: "/assets/services/webflow-development/hero/webflow-img.svg",
+      width: 213,
+      height: 219,
+      alt: "Webflow development services illustration",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   termsOfService: {
     path: "/terms-of-service",
     title: "Terms of Service | Dynamic Dreamz",

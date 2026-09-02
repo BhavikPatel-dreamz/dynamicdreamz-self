@@ -44,7 +44,7 @@ export type AgencyServicesSectionProps = {
   id?: string;
   hideCta?: boolean;
   columns?: 2 | 3 | 4;
-  cardVariant?: "default" | "services-box";
+  cardVariant?: "default" | "services-box" | "webflow";
   cardBgClassName?: string;
   eyebrow?: string;
   headerTitleColumnClassName?: string;
@@ -68,6 +68,7 @@ export function AgencyServicesSection({
 }: AgencyServicesSectionProps) {
   const isCompact = variant === "compact";
   const isServicesBox = cardVariant === "services-box";
+  const isWebflow = cardVariant === "webflow";
 
   return (
     <section className={className} data-section="services" id={id}>
@@ -115,7 +116,25 @@ export function AgencyServicesSection({
               const serviceHref = service.href ?? service.link;
               const hasLink = Boolean(serviceHref);
 
-              const cardContent = isServicesBox ? (
+              const cardContent = isWebflow ? (
+                <div className="h-full rounded-[15px] border border-[#f7f4e9] bg-[#f7f4e9] p-[35px_36px] max-[1199px]:p-[30px_20px] max-[767px]:p-5">
+                  <div className="h-12 w-12">
+                    <Image
+                      src={service.icon}
+                      alt={service.iconAlt}
+                      width={48}
+                      height={48}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <h3 className="mt-[30px] border-t border-[rgba(37,44,21,0.1)] pt-[30px] font-sans text-base font-bold leading-7 tracking-[0.32px] text-ink max-[767px]:mt-5 max-[767px]:pt-5 max-[767px]:text-base max-[767px]:leading-6">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2.5 font-sans text-base font-medium leading-[26px] tracking-[0.32px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
+                    {service.description}
+                  </p>
+                </div>
+              ) : isServicesBox ? (
                 <div
                   className={cn(
                     "services-text relative flex h-full items-start rounded-[10px] border border-[rgba(40,40,40,0.08)] p-5 transition-transform duration-300 ease-in-out",
@@ -261,7 +280,11 @@ export function AgencyServicesSection({
                 <div
                   className={cn(
                     "px-2",
-                    isServicesBox ? "mb-4" : "group pb-6 transition-transform duration-300 ease-in-out",
+                    isWebflow
+                      ? "mb-5"
+                      : isServicesBox
+                        ? "mb-4"
+                        : "group pb-6 transition-transform duration-300 ease-in-out hover:-translate-y-2.5",
                     colClass,
                   )}
                   key={service.title}

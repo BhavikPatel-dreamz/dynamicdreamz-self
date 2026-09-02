@@ -189,6 +189,10 @@ import {
   webDesignFaqs,
   webDesignServices,
 } from "@/content/web-design";
+import {
+  webflowDevelopmentFaqs,
+  webflowDevelopmentServices,
+} from "@/content/webflow-development";
 import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -691,6 +695,11 @@ const webDesignPageId = `${webDesignPageUrl}#webpage`;
 const webDesignServiceId = `${webDesignPageUrl}#service`;
 const webDesignFaqId = `${webDesignPageUrl}#faq`;
 const webDesignBreadcrumbId = `${webDesignPageUrl}#breadcrumb`;
+const webflowDevelopmentPageUrl = absoluteUrl(pageSeo.webflowDevelopment.path);
+const webflowDevelopmentPageId = `${webflowDevelopmentPageUrl}#webpage`;
+const webflowDevelopmentServiceId = `${webflowDevelopmentPageUrl}#service`;
+const webflowDevelopmentFaqId = `${webflowDevelopmentPageUrl}#faq`;
+const webflowDevelopmentBreadcrumbId = `${webflowDevelopmentPageUrl}#breadcrumb`;
 const termsOfServicePageUrl = absoluteUrl(pageSeo.termsOfService.path);
 const termsOfServicePageId = `${termsOfServicePageUrl}#webpage`;
 const termsOfServiceBreadcrumbId = `${termsOfServicePageUrl}#breadcrumb`;
@@ -4203,6 +4212,32 @@ export function createWebDesignPageSchema() {
         .join(" "),
     })),
     offers: webDesignServices.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createWebflowDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.webflowDevelopment,
+    pageUrl: webflowDevelopmentPageUrl,
+    pageId: webflowDevelopmentPageId,
+    serviceId: webflowDevelopmentServiceId,
+    faqId: webflowDevelopmentFaqId,
+    breadcrumbId: webflowDevelopmentBreadcrumbId,
+    serviceName: "Webflow Development Services",
+    serviceType:
+      "Custom Webflow website development, Figma to Webflow development, Webflow CMS development, migration, integrations, automations, and ongoing support",
+    breadcrumbName: "Webflow Development",
+    audienceType:
+      "Businesses, startups, enterprises, and digital agencies seeking custom Webflow websites and dedicated Webflow developers",
+    faqs: webflowDevelopmentFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: webflowDevelopmentServices.items.map((item) => ({
       title: item.title,
       description: item.description,
     })),
