@@ -31,7 +31,7 @@ export function HomeHeroSection() {
         <div className="relative flex justify-center pt-[60px] max-[1199px]:pb-[60px] max-[767px]:-mb-10 max-[767px]:flex-wrap max-[767px]:pb-10 before:hidden max-[767px]:before:absolute max-[767px]:before:top-[calc(50%-20px)] max-[767px]:before:left-0 max-[767px]:before:block max-[767px]:before:h-px max-[767px]:before:w-full max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] after:hidden max-[767px]:after:absolute max-[767px]:after:top-10 max-[767px]:after:left-[calc(50%-1px)] max-[767px]:after:block max-[767px]:after:h-[calc(100%-120px)] max-[767px]:after:w-px max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']" aria-label="Partnerships and independent review profiles">
           {proofLogos.map((logo) => (
             <a className="relative flex w-max items-center justify-center border-r border-[#d9d9d9] lg:px-[35px] px-[20px] last:border-r-0 max-[767px]:mb-10 max-[767px]:w-1/2 max-[767px]:max-w-1/2 max-[767px]:border-r-0 max-[767px]:px-[15px]" key={logo.src} href={logo.href} target="_blank" rel="nofollow noopener noreferrer">
-              <Image className="h-auto w-auto max-h-[54px] min-[768px]:max-[992px]:max-h-11 max-[767px]:max-h-11 max-[767px]:max-w-[126px]" src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} />
+              <Image className="h-auto w-auto max-h-[54px] min-[768px]:max-[992px]:max-h-11 max-[767px]:max-h-11 max-[767px]:max-w-[126px]" src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} sizes="(max-width: 767px) 126px, 160px" />
             </a>
           ))}
         </div>

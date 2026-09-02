@@ -41,6 +41,7 @@ function MenuIcon({ item }: { item: MegaMenuItem }) {
         alt=""
         width={item.icon.width}
         height={item.icon.height}
+        sizes="20px"
       />
     </span>
   );

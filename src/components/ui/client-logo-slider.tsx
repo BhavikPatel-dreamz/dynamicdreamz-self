@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Slider, { type Settings } from "react-slick";
 
+import "slick-carousel/slick/slick.css";
+
 import { ClientLogo } from "@/components/sections/home/client-logo";
 import type { ImageItem } from "@/content/home";
 import { cn } from "@/lib/class-names";

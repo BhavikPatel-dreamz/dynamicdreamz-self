@@ -114,7 +114,7 @@ export const phpDevelopmentContent = {
         title: "Laravel Maintenance & Support",
         description:
           "We offer ongoing maintenance and support for your Laravel applications. Our team ensures your web app remains updated, secure, and operates smoothly without any issues.",
-      icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
+        icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
         iconAlt: "Maintenance and Support Icon",
       },
       {

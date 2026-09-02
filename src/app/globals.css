@@ -16,10 +16,7 @@
   --font-display: var(--font-neue-montreal-medium-local), Arial, sans-serif;
   --font-montreal-medium: var(--font-neue-montreal-medium-local), sans-serif;
   --font-montreal-semibold: var(--font-neue-montreal-medium-local), sans-serif;
-  --montreal-light: var(--font-neue-montreal-light-local), sans-serif;
-  --montreal-regular: var(--font-neue-montreal-regular-local), sans-serif;
   --montreal-medium: var(--font-neue-montreal-medium-local), sans-serif;
-  --montreal-bold: var(--font-neue-montreal-bold-local), sans-serif;
 }
 
 @layer base {

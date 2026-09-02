@@ -7,38 +7,13 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { siteChromeCopy } from "@/content/common";
 import { rootMetadata } from "@/data/seo";
 
-import "slick-carousel/slick/slick.css";
 import "./globals.css";
-
-const neueMontrealLight = localFont({
-  src: "./fonts/neue--montreal-light-webfont.woff2",
-  weight: "300",
-  style: "normal",
-  variable: "--font-neue-montreal-light-local",
-  display: "swap",
-});
-
-const neueMontrealRegular = localFont({
-  src: "./fonts/neue--montreal-regular-webfont.woff2",
-  weight: "400",
-  style: "normal",
-  variable: "--font-neue-montreal-regular-local",
-  display: "swap",
-});
 
 const neueMontrealMedium = localFont({
   src: "./fonts/neue--montreal-medium-webfont.woff2",
   weight: "500",
   style: "normal",
   variable: "--font-neue-montreal-medium-local",
-  display: "swap",
-});
-
-const neueMontrealBold = localFont({
-  src: "./fonts/neue--montreal-bold-webfont.woff2",
-  weight: "700",
-  style: "normal",
-  variable: "--font-neue-montreal-bold-local",
   display: "swap",
 });
 
@@ -56,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${neueMontrealLight.variable} ${neueMontrealRegular.variable} ${neueMontrealMedium.variable} ${neueMontrealBold.variable} ${montserrat.variable}`}
+      className={`${neueMontrealMedium.variable} ${montserrat.variable}`}
     >
       <body>
         <a

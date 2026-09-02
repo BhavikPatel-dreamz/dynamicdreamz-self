@@ -3,7 +3,7 @@
 Status: technical work implemented for current migrated routes; visible AEO/GEO
 recommendations deferred for live-site parity; evidence and policy approvals
 remain
-Last audited: 2026-09-01
+Last audited: 2026-09-02
 Scope: current Next.js migration and the implemented indexable routes
 Owners: SEO, content, development, leadership, sales, HR, and client-success teams
 
@@ -373,6 +373,29 @@ Facts requiring central control include:
 - Notify IndexNow only when a URL was added, materially updated, redirected, or
   deleted.
 
+### Delivery performance
+
+Reviewed 2026-09-02. IndexedDB / client databases are not used: they cannot
+speed first paint on this static marketing site and would add client JavaScript.
+Repeat visits already benefit from HTTP cache, Next.js image optimization, and
+the App Router client cache.
+
+Implemented nonvisual delivery work in the same review:
+
+- Stop loading unused Neue Montreal light, regular, and bold files on every
+  route. Headings already use the medium face; body copy uses Montserrat.
+- Load slick-carousel CSS only on routes that render a slider.
+- Serve the WhatsApp widget as a Server Component so pathname checks do not
+  add layout JavaScript.
+- Cache public `/assets` for one day with a seven-day stale-while-revalidate
+  window, and cache optimized images for 30 days.
+- Prefer AVIF then WebP for `next/image` output, and give header, proof, and
+  client logos explicit `sizes` so the browser does not download full-viewport
+  rasters.
+
+No new AEO/GEO gaps found. Visible copy, section order, and interaction
+defaults were not changed.
+
 ## Structured-Data Strategy
 
 Structured data should reinforce visible content and entity relationships. It
@@ -718,7 +741,7 @@ navigation while removing WordPress runtime dependencies.
 Status: technical and live-section refresh implemented; visible AEO copy remains
 deferred and live wording is preserved
 
-Last reviewed: 2026-09-01
+Last reviewed: 2026-09-02
 
 Owner: SEO, content, development, leadership, and client success
 

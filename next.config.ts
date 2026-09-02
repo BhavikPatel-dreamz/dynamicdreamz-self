@@ -24,6 +24,11 @@ const legacyBlogSlugs = [
   "shopify-plus-in-action-success-stories-and-case-studies",
 ] as const;
 
+const assetCacheControl = {
+  key: "Cache-Control",
+  value: "public, max-age=86400, stale-while-revalidate=604800",
+};
+
 const nextConfig: NextConfig = {
   // Public page URLs never end in a slash (the homepage `/` is the only
   // structural exception). Next.js redirects `/about-us/` to `/about-us`, and
@@ -34,8 +39,16 @@ const nextConfig: NextConfig = {
     useTypeScriptCli: false,
   },
   reactCompiler: true,
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 60 * 60 * 24 * 30,
+  },
   async headers() {
-    if (allowSearchIndexing) return [];
+    const assetCacheHeaders = [
+      { source: "/assets/:path*", headers: [assetCacheControl] },
+    ];
+
+    if (allowSearchIndexing) return assetCacheHeaders;
 
     const noIndexHeader = {
       key: "X-Robots-Tag",
@@ -45,6 +58,7 @@ const nextConfig: NextConfig = {
     return [
       { source: "/", headers: [noIndexHeader] },
       { source: "/:path*", headers: [noIndexHeader] },
+      ...assetCacheHeaders,
     ];
   },
   async redirects() {
