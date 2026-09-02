@@ -387,8 +387,10 @@ Implemented nonvisual delivery work in the same review:
 - Load slick-carousel CSS only on routes that render a slider.
 - Serve the WhatsApp widget as a Server Component so pathname checks do not
   add layout JavaScript.
-- Cache public `/assets` for one day with a seven-day stale-while-revalidate
-  window, and cache optimized images for 30 days.
+- Cache public `/assets` and `/_next/image` for one year (with the same
+  stale-while-revalidate window) so Lighthouse repeat-visit cache checks pass.
+  Optimized images use the same one-year `minimumCacheTTL`. Rename an asset
+  when its bytes change so long-lived caches do not keep a replaced file.
 - Prefer AVIF then WebP for `next/image` output, and give header, proof, and
   client logos explicit `sizes` so the browser does not download full-viewport
   rasters.

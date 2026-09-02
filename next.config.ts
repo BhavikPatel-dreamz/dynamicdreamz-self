@@ -24,9 +24,11 @@ const legacyBlogSlugs = [
   "shopify-plus-in-action-success-stories-and-case-studies",
 ] as const;
 
-const assetCacheControl = {
+const oneYearInSeconds = 60 * 60 * 24 * 365;
+
+const staticAssetCacheControl = {
   key: "Cache-Control",
-  value: "public, max-age=86400, stale-while-revalidate=604800",
+  value: `public, max-age=${oneYearInSeconds}, stale-while-revalidate=${oneYearInSeconds}`,
 };
 
 const nextConfig: NextConfig = {
@@ -44,11 +46,14 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   images: {
     formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 60 * 60 * 24 * 30,
+    minimumCacheTTL: oneYearInSeconds,
   },
   async headers() {
     const assetCacheHeaders = [
-      { source: "/assets/:path*", headers: [assetCacheControl] },
+      { source: "/assets/:path*", headers: [staticAssetCacheControl] },
+      // Overrides Vercel's short browser TTL on the image optimizer so
+      // Lighthouse "efficient cache lifetimes" can credit repeat visits.
+      { source: "/_next/image", headers: [staticAssetCacheControl] },
     ];
 
     if (allowSearchIndexing) return assetCacheHeaders;
