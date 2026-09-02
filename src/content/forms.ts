@@ -56,3 +56,27 @@ export const quoteFormCopy = {
     unavailable: "We couldn't send your inquiry right now. Please email info@dynamicdreamz.com.",
   },
 } as const;
+
+export const bookIntroCallFormCopy = {
+  ariaLabel: "Intro call contact form",
+  labels: {
+    name: "Full Name",
+    company: "Business name",
+    email: "Email",
+    website: "Website URL",
+    message: "What are you looking for?",
+  },
+  placeholders: {
+    name: "Enter Your Name",
+    company: "Enter Your Business name",
+    email: "Enter Your Email Here",
+    website: "Enter Your Website Here",
+    message: "Share your questions or comments here",
+  },
+  submit: "submit inquiry",
+  sending: "sending inquiry",
+  status: {
+    ...sharedFormStatusCopy,
+    unavailable: "We couldn't send your inquiry right now. Please email info@dynamicdreamz.com.",
+  },
+} as const;

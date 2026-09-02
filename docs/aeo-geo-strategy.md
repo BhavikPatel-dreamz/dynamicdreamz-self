@@ -8766,3 +8766,43 @@ Owner: SEO, content, and development
 | P0 | implemented | Asset deduplication | 13 clean vector icons required for why-choose and services boxes | Ingested into `public/assets/services/shopify-development-in-bangalore/`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createShopifyDevelopmentInBangalorePageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Visible copy enhancement | Minor capitalization inconsistency in FAQ 5 ("Reach out to Shopify Development Company in Bengaluru, like Dynamic Dreamz, with your project requirements, and we’ll guide you via the entire process") | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+
+## Shopify Development in Texas (`/shopify-development-in-texas`)
+
+Status: technical and schema implementation complete; visible copy preserved per live site
+Last reviewed: 2026-09-02
+Owner: SEO, content, and development
+
+### Page Role and Buyer Intent
+
+- **Primary role**: US commercial state landing page targeting high-growth enterprise ecommerce brands, D2C merchants, retail groups, and startups across Texas (Houston, Dallas, Austin, San Antonio, Fort Worth, etc.) seeking certified Shopify Plus, custom theme development, app integrations, store migration, and white-label development.
+- **Audience**: Texas business owners, ecommerce executives, digital agency directors, and marketing managers.
+- **Target queries**: "Shopify development in Texas", "Shopify development company in Texas", "Shopify developers in Texas", "hire Shopify developers Texas", "Shopify Plus Texas".
+
+### Visible Content and Evidence Available
+
+- H1: "Shopify Development in Texas That’s Built To Convert".
+- Primary CTA: "get in touch" -> "/request-quote".
+- Hero trust badges: Clutch (132 reviews / 5.0), Upwork (2000+ reviews / 5.0), GoodFirms (72 reviews / 5.0).
+- Trusted brands slider: 10 enterprise ecommerce brands.
+- Proof and numbers box (Why Dynamic Dreamz?): 18+ Years of eCommerce Experience, 150+ Skilled Shopify Developers & Designers, 5,000+ Shopify Projects Delivered, Shopify Platinum Partner, Trusted by Startups, SMBs, and Enterprise Brands Across Texas.
+- Platform benefits grid (Why Shopify is the Right Platform for Texas Businesses?): Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable.
+- Service offerings grid (8 services with "READ MORE" links): Shopify Plus Store Development, Shopify Theme Customization, Figma / XD to Shopify Conversion, Shopify App Integration, Shopify Migration, Shopify Maintenance & Support, Shopify 2.0 Migration, White Label Shopify Development.
+- 4-step delivery process: Discovery & Planning, Design & Development, Testing & Launch, Post-Launch Support.
+- 6 agency reason cards: We're a Shopify Platinum Partner, Scale Without Compromise, Built for Texas Business, Transparent, Always, Long-Term Partnership, Not Just a Project, White-Label Ready.
+- 8 portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
+- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
+- Intro call & contact form section: "Let's Build Something Great Together" (with 24-hr response guarantee) and "Book an Intro Call".
+- 8 interactive FAQs answering questions on agency credentials, pricing, Shopify Plus, theme customization, white-label services, timelines, industry coverage, and migration.
+- Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
+
+### Structured Gap Analysis
+
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-texas` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component creation & reuse | Split contact form + intro call section required (`book-intro-call-section`) | Created generalized `BookIntroCallSection` with `BookIntroCallForm`; reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Vector phone icon required for intro call card | Ingested into `public/assets/services/shopify-development-in-texas/call-icon.svg`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createShopifyDevelopmentInTexasPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor typo in FAQ 2 ("it’s very complexity" should be "its complexity") | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |

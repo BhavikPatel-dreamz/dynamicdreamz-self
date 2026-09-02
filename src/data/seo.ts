@@ -3159,6 +3159,34 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  shopifyDevelopmentInTexas: {
+    path: "/shopify-development-in-texas",
+    title: "Best Shopify Development in Texas | Dynamic Dreamz",
+    description:
+      "Best Shopify development in Texas. Dynamic Dreamz delivers custom Shopify stores, Plus builds & white-label solutions across Houston, Dallas, Austin & beyond.",
+    socialDescription:
+      "Top-rated Shopify development company in Texas. Certified Shopify developers for custom stores, Plus builds, theme customization, and migrations.",
+    keywords: [
+      "Shopify development in Texas",
+      "Shopify development company in Texas",
+      "Shopify developers in Texas",
+      "hire Shopify developers Texas",
+      "Shopify Plus Texas",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in Texas | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

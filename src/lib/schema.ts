@@ -165,6 +165,7 @@ import { shopifyDevelopmentDelhiContent } from "@/content/shopify-development-in
 import { shopifyDevelopmentHyderabadContent } from "@/content/shopify-development-in-hyderabad";
 import { shopifyDevelopmentPuneContent } from "@/content/shopify-development-in-pune";
 import { shopifyDevelopmentBangaloreContent } from "@/content/shopify-development-in-bangalore";
+import { shopifyDevelopmentTexasContent } from "@/content/shopify-development-in-texas";
 import { wordpressDevelopmentDelhiContent } from "@/content/wordpress-development-in-delhi";
 import { wordpressDevelopmentNoidaContent } from "@/content/wordpress-development-in-noida";
 import { wordpressDevelopmentPuneContent } from "@/content/wordpress-development-in-pune";
@@ -762,6 +763,11 @@ const shopifyDevelopmentBangalorePageId = `${shopifyDevelopmentBangalorePageUrl}
 const shopifyDevelopmentBangaloreServiceId = `${shopifyDevelopmentBangalorePageUrl}#service`;
 const shopifyDevelopmentBangaloreFaqId = `${shopifyDevelopmentBangalorePageUrl}#faq`;
 const shopifyDevelopmentBangaloreBreadcrumbId = `${shopifyDevelopmentBangalorePageUrl}#breadcrumb`;
+const shopifyDevelopmentTexasPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInTexas.path);
+const shopifyDevelopmentTexasPageId = `${shopifyDevelopmentTexasPageUrl}#webpage`;
+const shopifyDevelopmentTexasServiceId = `${shopifyDevelopmentTexasPageUrl}#service`;
+const shopifyDevelopmentTexasFaqId = `${shopifyDevelopmentTexasPageUrl}#faq`;
+const shopifyDevelopmentTexasBreadcrumbId = `${shopifyDevelopmentTexasPageUrl}#breadcrumb`;
 
 const careerOfficeAddresses = {
   surat: {
@@ -4664,6 +4670,38 @@ export function createShopifyDevelopmentInBangalorePageSchema() {
         description: item.description,
       })),
       ...shopifyDevelopmentBangaloreContent.reasons.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createShopifyDevelopmentInTexasPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInTexas,
+    pageUrl: shopifyDevelopmentTexasPageUrl,
+    pageId: shopifyDevelopmentTexasPageId,
+    serviceId: shopifyDevelopmentTexasServiceId,
+    faqId: shopifyDevelopmentTexasFaqId,
+    breadcrumbId: shopifyDevelopmentTexasBreadcrumbId,
+    serviceName: "Shopify Development in Texas",
+    serviceType:
+      "Custom Shopify development, theme engineering, Shopify Plus, app integration, migration, and store maintenance for businesses across Texas",
+    breadcrumbName: "Shopify Development in Texas",
+    audienceType:
+      "Enterprises, startups, D2C brands, and retail businesses in Texas seeking custom Shopify development services",
+    faqs: shopifyDevelopmentTexasContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: [
+      ...shopifyDevelopmentTexasContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentTexasContent.reasons.items.map((item) => ({
         title: item.title,
         description: item.description,
       })),
