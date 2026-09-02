@@ -1021,6 +1021,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  seoServices: {
+    path: "/seo-services",
+    title: "#1 SEO Services | Best SEO Company in India | Dynamic Dreamz",
+    description:
+      "Customized SEO services that deliver real results. Trusted SEO services from India’s top SEO company. Increase your rankings, traffic, and conversions.",
+    keywords: [
+      "SEO services",
+      "best SEO company in India",
+      "top SEO company",
+      "eCommerce SEO",
+      "Shopify SEO",
+      "organic marketing",
+    ],
+    openGraphType: "article",
+    modifiedTime: "2026-08-05T13:38:54+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "SEO Services by Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   shopifyCro: {
     path: "/shopify-cro-agency",
     title: "Shopify CRO Agency | Increase Revenue | Dynamic Dreamz",

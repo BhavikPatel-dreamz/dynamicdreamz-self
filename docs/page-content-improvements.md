@@ -1914,6 +1914,19 @@ Primary SEO intent: Expanse theme customization, Expanse theme customization ser
 | Benefit 9 (Zero Maintenance Cost) | After our theme customization services, you get a lower maintenance cost, which saves an extra penny. | Our clean, modular theme development reduces long-term maintenance overhead and ongoing operational costs. | Replaces awkward idiom "saves an extra penny" with professional B2B value proposition | Low | suggested |
 | FAQ 1 Answer | Customizing the Expanse theme lets you customize the design and functionality to match your brand, sweeten user experience, and encourage sales by building a personalized shopping environment. | Customizing the Expanse theme tailors the storefront design, navigation, and features to your brand identity, delivering an intuitive user experience that drives higher conversion rates and customer retention. | Eliminates repetitive "customize ... customize" and replaces informal "sweeten user experience" | Low | suggested |
 | FAQ 3 Answer | You can do it! Our customization service helps you add third party apps to your Shopify store for inventory management, customer support, marketing, and many more features. | Yes. Our team seamlessly integrates third-party Shopify apps for inventory management, customer reviews, loyalty programs, email marketing, and advanced analytics without compromising site speed. | Replaces casual exclamation "You can do it!" with authoritative technical confirmation | Low | suggested |
+## SEO Services (`/seo-services`)
+
+Status: suggested
+Last reviewed: 2026-09-02
+Primary SEO intent: SEO services, SEO company in India, best SEO agency, eCommerce SEO, Shopify SEO, organic marketing.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Hero Paragraph 2 | SEO can be a game-changing move if you do it in the right way. It can help you save a significant amount of money that you spend on ads. | SEO is a game-changing investment when executed strategically, helping you significantly reduce reliance on paid advertising. | Refines colloquial tone ("if you do it in the right way") | Low | suggested |
+| Why Choose SEO Pill 2 | You have spent lots of money on ads, but still get nothing. | You have invested significantly in paid ads without seeing meaningful ROI. | Elevates B2B copy professionalism | Low | suggested |
+| FAQ 6 Answer | Any trustworthy SEO agency does not guarantee rankings. However, we follow best practices that maximize your chances of ranking higher in the SERP (Search Engine Results Page). | No reputable SEO agency can guarantee specific rankings, as search algorithms evolve constantly. However, our proven white-hat methodologies maximize your search visibility and ranking potential. | Enhances professional tone and clarity | Low | suggested |
+| FAQ 7 Answer | ...To obtain an accurate estimate of the cost, please contact us with your detailed requirements. | ...To obtain a tailored cost estimate, contact our team with your project requirements. | Improves CTA fluency | Low | suggested |
+
 
 ## Shopify Development in Los Angeles (`/shopify-development-in-los-angeles`)
 
