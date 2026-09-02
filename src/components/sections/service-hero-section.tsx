@@ -40,6 +40,8 @@ export type ServiceHeroSectionProps = {
   content?: ServiceHeroContent;
   className?: string;
   variant?: "split" | "centered";
+  showReviews?: boolean;
+  headingClassName?: string;
   leftColClassName?: string;
   rightColClassName?: string;
   imageClassName?: string;
@@ -51,6 +53,8 @@ export function ServiceHeroSection({
   content = shopifyPlusAgencyHero,
   className = "inner-hero-sec relative overflow-hidden bg-white pt-[158px] pb-[55px] max-[992px]:pt-[100px]",
   variant = "split",
+  showReviews = true,
+  headingClassName,
   leftColClassName,
   rightColClassName,
   imageClassName,
@@ -93,7 +97,10 @@ export function ServiceHeroSection({
                     />
                   </div>
                 )}
-                <h1 className="inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[379px]:text-[28px] max-[379px]:leading-[38px]">
+                <h1 className={cn(
+                  "inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[379px]:text-[28px] max-[379px]:leading-[38px]",
+                  headingClassName,
+                )}>
                   {formatBrText(content.title, "max-[1199px]:hidden")}
                 </h1>
                 {content.paragraphs ? (
@@ -142,17 +149,19 @@ export function ServiceHeroSection({
                 )}
               </div>
             </div>
-            <div className="right-col w-full">
-              {content.reviews && content.reviews.length > 0 ? (
-                <ServiceHeroReviews items={content.reviews} />
-              ) : (
-                <div className="review_animation_main my-[30px]">
-                  <div className="mx-auto w-full max-w-[450px]">
-                    <ReviewAnimation />
+            {showReviews ? (
+              <div className="right-col w-full">
+                {content.reviews && content.reviews.length > 0 ? (
+                  <ServiceHeroReviews items={content.reviews} />
+                ) : (
+                  <div className="review_animation_main my-[30px]">
+                    <div className="mx-auto w-full max-w-[450px]">
+                      <ReviewAnimation />
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
+            ) : null}
           </div>
         </Container>
       </section>
@@ -173,7 +182,10 @@ export function ServiceHeroSection({
         <div className="inner-wrapper flex flex-wrap items-center justify-between">
           <div className={leftColClassName ?? defaultLeftCol}>
             <div className="inner-hero-content">
-              <h1 className="inline-block font-montreal-medium text-[50px] font-medium leading-[60px] tracking-[0] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px] max-w-[770px]">
+              <h1 className={cn(
+                "inline-block max-w-[770px] font-montreal-medium text-[50px] font-medium leading-[66px] tracking-[0] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]",
+                headingClassName,
+              )}>
                 {formatBrText(content.title, "max-[1199px]:hidden")}
               </h1>
               {content.paragraphs ? (

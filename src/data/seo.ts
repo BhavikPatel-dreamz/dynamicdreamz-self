@@ -2389,6 +2389,32 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  risksOfShopifyOutsourcing: {
+    path: "/risks-of-shopify-outsourcing",
+    title: "Risks of Shopify Outsourcing: Expert Breakdown",
+    description:
+      "Learn the real Risks of Shopify Outsourcing and protect your store from security threats, hidden costs, and miscommunication challenges- DynamicDreamz",
+    keywords: [
+      "risks of Shopify outsourcing",
+      "Shopify outsourcing risks",
+      "Shopify development outsourcing",
+      "Shopify outsourcing security",
+      "Shopify outsourcing companies",
+    ],
+    openGraphType: "article",
+    publishedTime: "2025-11-20T12:41:26+00:00",
+    modifiedTime: "2026-08-05T13:38:53+00:00",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Risks of Shopify Outsourcing: Expert Breakdown",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  },
   woocommerceDevelopment: {
     path: "/woocommerce-development",
     title: "Woocommerce Development Company India | Dynamic Dreamz",
