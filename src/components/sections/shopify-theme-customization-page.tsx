@@ -1,4 +1,5 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import { CtaBannerSection } from "@/components/sections/cta-banner-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
@@ -14,10 +15,13 @@ import { wixTestimonials } from "@/content/wix-to-shopify-migration";
 
 export function ShopifyThemeCustomizationPage() {
   const heroContent = {
+    eyebrows: shopifyThemeCustomizationContent.hero.eyebrows,
     title: shopifyThemeCustomizationContent.hero.title,
     description: shopifyThemeCustomizationContent.hero.description,
     ctaLabel: shopifyThemeCustomizationContent.hero.ctaText,
     ctaHref: shopifyThemeCustomizationContent.hero.ctaHref,
+    videoSrc: shopifyThemeCustomizationContent.hero.videoSrc,
+    badges: shopifyThemeCustomizationContent.hero.badges,
   };
 
   const brandsContent = {
@@ -140,6 +144,11 @@ export function ShopifyThemeCustomizationPage() {
       <SplitFaqSection
         idPrefix="shopify-theme-customization-faq"
         items={shopifyThemeCustomizationContent.faqs.items}
+      />
+      <CtaBannerSection
+        ctaHref={shopifyThemeCustomizationContent.ctaBanner.ctaHref}
+        ctaLabel={shopifyThemeCustomizationContent.ctaBanner.ctaLabel}
+        heading={shopifyThemeCustomizationContent.ctaBanner.heading}
       />
     </div>
   );

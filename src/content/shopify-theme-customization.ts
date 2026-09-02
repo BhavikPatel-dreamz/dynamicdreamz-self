@@ -63,11 +63,47 @@ export const shopifyThemeCustomizationContent = {
     ctaLabel: "request a quote",
   },
   hero: {
+    eyebrows: ["Established in 2006", "Shopify Platinum Partner"],
     title: "Shopify Theme <br> Customization Services",
     description:
       "At Dynamic Dreamz, we specialize in Shopify theme customization Services, creating unique, visually appealing, and functional designs tailored to your brand’s identity. Our Shopify experts work closely with you to bring your vision to life, ensuring your online store stands out in the competitive eCommerce market. Whether starting from scratch or improving an existing theme, we ensure your store is unique and optimized for success.",
     ctaText: "request a quote",
     ctaHref: "/request-quote",
+    videoSrc: "/assets/home/why-dynamic-dreamz.mp4",
+    badges: [
+      {
+        name: "Shopify Platinum Partner",
+        src: "/assets/proof/shopify-platinum-partner.svg",
+        href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+        alt: "Dynamic Dreamz - Shopify Platinum Partner",
+        width: 136,
+        height: 44,
+      },
+      {
+        name: "Clutch 4.9 Rating",
+        src: "/assets/reviews/clutch-4-9-rating.svg",
+        href: "https://clutch.co/profile/dynamic-dreamz",
+        alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+        width: 111,
+        height: 44,
+      },
+      {
+        name: "Trustpilot 4.9 TrustScore",
+        src: "/assets/reviews/trustpilot-4-9-trustscore.svg",
+        href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+        alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+        width: 148,
+        height: 50,
+      },
+      {
+        name: "Upwork Top Rated Plus",
+        src: "/assets/reviews/upwork-top-rated-plus.svg",
+        href: "https://www.upwork.com/ag/dynamicdreamz/",
+        alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+        width: 126,
+        height: 54,
+      },
+    ],
     stats: [
       {
         value: "5000+",
@@ -700,6 +736,20 @@ export const shopifyThemeCustomizationContent = {
         image: "/assets/hire-shopify-developers/portfolio/adhoc-atler.webp",
         href: "https://adhocatelier.it/",
       },
+      {
+        title: "Bombay Shirt Company",
+        category: "Shopify Theme Customization",
+        description: "",
+        image: "/assets/fashion/portfolio/bombay-shirt-company-fashion.webp",
+        href: "https://bombayshirts.com/",
+      },
+      {
+        title: "Holy Plantz",
+        category: "Shopify Theme Customization",
+        description: "",
+        image: "/assets/our-work/projects/holy-plantz.webp",
+        href: "https://holyplantz.com/",
+      },
     ],
   },
   faqs: {
@@ -764,5 +814,10 @@ export const shopifyThemeCustomizationContent = {
           "You can customize an existing Shopify theme to fulfill your requirements. Suppose your current theme does not offer enough flexibility. In that case, we can extend it or recommend a new one better suited to your goals.",
       },
     ],
+  },
+  ctaBanner: {
+    heading: "Want us to help you with your online store?",
+    ctaLabel: "request a quote",
+    ctaHref: "/request-quote",
   },
 } as const;

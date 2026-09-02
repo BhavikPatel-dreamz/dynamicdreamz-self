@@ -40,6 +40,16 @@ export type ServiceHeroContent = {
   reviews?: readonly ServiceHeroReviewItem[];
   coBranding?: ServiceHeroCoBranding;
   maxWidthClassName?: string;
+  eyebrows?: readonly string[];
+  videoSrc?: string;
+  badges?: readonly {
+    name: string;
+    src: string;
+    href: string;
+    alt: string;
+    width: number;
+    height: number;
+  }[];
 };
 
 export type ServiceHeroSectionProps = {
@@ -206,6 +216,18 @@ export function ServiceHeroSection({
         <div className="inner-wrapper flex flex-wrap items-center justify-between">
           <div className={leftColClassName ?? defaultLeftCol}>
             <div className="inner-hero-content">
+              {content.eyebrows && content.eyebrows.length > 0 && (
+                <div className="eyebrow mb-[15px] flex flex-wrap items-center gap-[15px] text-[13px] font-bold uppercase tracking-[1px] text-[#555]">
+                  {content.eyebrows.map((item, idx) => (
+                    <span
+                      className="after:ml-[15px] after:inline-block after:h-[12px] after:w-px after:bg-[#d9d9d9] after:content-[''] last:after:hidden"
+                      key={idx}
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              )}
               <h1 className={cn(
                 "inline-block max-w-[770px] font-montreal-medium text-[50px] font-medium leading-[66px] tracking-[0] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]",
                 headingClassName,
@@ -274,10 +296,54 @@ export function ServiceHeroSection({
                   {content.ctaLabel}
                 </ButtonLink>
               ) : null}
+
+              {content.badges && content.badges.length > 0 && (
+                <div
+                  className="global_brands_grid_wrap relative mt-10 flex items-center max-[1199px]:justify-center max-[767px]:-mx-[15px] max-[767px]:w-[calc(100%+30px)] max-[767px]:flex-wrap max-[767px]:overflow-hidden max-[767px]:before:absolute max-[767px]:before:top-0 max-[767px]:before:left-1/2 max-[767px]:before:block max-[767px]:before:h-full max-[767px]:before:w-px max-[767px]:before:-translate-x-1/2 max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] max-[767px]:after:absolute max-[767px]:after:top-1/2 max-[767px]:after:left-5 max-[767px]:after:block max-[767px]:after:h-px max-[767px]:after:w-[calc(100%-40px)] max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']"
+                  aria-label="Partnerships and independent review profiles"
+                >
+                  {content.badges.map((badge, idx) => (
+                    <div
+                      className="global_brands_item relative border-r border-[#d9d9d9] px-4 first:pl-0 last:border-r-0 max-[767px]:w-1/2 max-[767px]:border-0 max-[767px]:p-3.5 max-[767px]:text-center"
+                      key={`${badge.href}-${idx}`}
+                    >
+                      <a
+                        className="flex items-center justify-center"
+                        href={badge.href}
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                      >
+                        <Image
+                          className="h-auto max-h-11 w-auto object-contain"
+                          src={badge.src}
+                          alt={badge.alt}
+                          width={badge.width}
+                          height={badge.height}
+                        />
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
           <div className={rightColClassName ?? defaultRightCol}>
-            {content.image ? (
+            {content.videoSrc ? (
+              <div className="video-wrapper overflow-hidden rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+                <video
+                  aria-hidden="true"
+                  autoPlay
+                  className="h-full w-full object-cover"
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  tabIndex={-1}
+                >
+                  <source src={content.videoSrc} type="video/mp4" />
+                </video>
+              </div>
+            ) : content.image ? (
               <>
                 <div className={cn("service-img flex justify-center", content.imageContainerClassName)}>
                   <Image

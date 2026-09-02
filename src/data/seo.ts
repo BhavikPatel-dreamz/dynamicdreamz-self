@@ -3430,6 +3430,90 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  yithWonderThemeCustomization: {
+    path: "/yith-wonder-theme-customization",
+    title: "YITH Wonder Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Get professional YITH Wonder Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+    socialDescription:
+      "Expert YITH Wonder theme customization services for WordPress and WooCommerce. Custom styling, speed optimization, and responsive design by Dynamic Dreamz.",
+    keywords: [
+      "YITH Wonder Theme Customization",
+      "YITH Wonder WordPress Theme",
+      "YITH Wonder WooCommerce Customization",
+      "WordPress Theme Customization",
+      "Dynamic Dreamz WordPress",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-05-06T06:43:09+00:00",
+    modifiedTime: "2026-08-05T13:26:33+00:00",
+    image: {
+      path: "/assets/yith-wonder-theme-customization/hero/yith-wonder-theme-customization-service-img.webp",
+      width: 601,
+      height: 474,
+      alt: "YITH Wonder Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  vesselThemeCustomization: {
+    path: "/vessel-theme-customization",
+    title: "Vessel Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Get Vessel Theme Customization Service to Enhance your Shopify store. Improve user experience, boost conversions with Dynamic Dreamz.",
+    socialDescription:
+      "Expert Vessel theme customization for Shopify stores. Transform your ecommerce storefront with bespoke design, speed optimization, and higher conversions.",
+    keywords: [
+      "Vessel Theme Customization",
+      "Vessel Shopify Theme",
+      "Shopify Theme Customization",
+      "Dynamic Dreamz Shopify",
+      "Vessel Theme Developer",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-06-16T03:29:55+00:00",
+    modifiedTime: "2026-08-05T13:35:08+00:00",
+    image: {
+      path: "/assets/vessel-theme-customization/hero/vessel-theme-customization-service-img.webp",
+      width: 617,
+      height: 474,
+      alt: "Vessel Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  phpDevelopment: {
+    path: "/php-development",
+    title: "PHP Web Development Company in India | Dynamic Dreamz",
+    description:
+      "Top PHP Web Development Company. Our experts craft scalable, efficient solutions for your online presence. Contact us today! or Call Now!",
+    socialDescription:
+      "Top PHP Web Development Company in India. Expert PHP/MySQL developers crafting custom Laravel, Craft CMS, Prestashop, and scalable web solutions.",
+    keywords: [
+      "PHP Development Company in India",
+      "PHP Web Development Company",
+      "Custom Laravel Development",
+      "PHP MySQL Developers",
+      "Dynamic Dreamz PHP",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-07-22T05:03:27+00:00",
+    modifiedTime: "2026-02-16T09:22:22+00:00",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "PHP Web Development Company in India | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
 } satisfies Record<string, PageSeoConfig>;
 
 export type PageSeoKey = keyof typeof pageSeo;

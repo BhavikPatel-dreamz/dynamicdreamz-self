@@ -133,6 +133,9 @@ import { extendableThemeCustomizationContent } from "@/content/extendable-theme-
 import { kubioThemeCustomizationContent } from "@/content/kubio-theme-customization";
 import { inspiroThemeCustomizationContent } from "@/content/inspiro-theme-customization";
 import { expanseThemeCustomizationContent } from "@/content/expanse-theme-customization";
+import { yithWonderThemeCustomizationContent } from "@/content/yith-wonder-theme-customization";
+import { vesselThemeCustomizationContent } from "@/content/vessel-theme-customization";
+import { phpDevelopmentContent } from "@/content/php-development";
 import { shopifyDevelopmentBarcelonaContent } from "@/content/shopify-development-in-barcelona-spain";
 import {
   woocommerceDevelopmentFaqs,
@@ -815,6 +818,21 @@ const expanseThemeCustomizationPageId = `${expanseThemeCustomizationPageUrl}#web
 const expanseThemeCustomizationServiceId = `${expanseThemeCustomizationPageUrl}#service`;
 const expanseThemeCustomizationFaqId = `${expanseThemeCustomizationPageUrl}#faq`;
 const expanseThemeCustomizationBreadcrumbId = `${expanseThemeCustomizationPageUrl}#breadcrumb`;
+const yithWonderThemeCustomizationPageUrl = absoluteUrl(pageSeo.yithWonderThemeCustomization.path);
+const yithWonderThemeCustomizationPageId = `${yithWonderThemeCustomizationPageUrl}#webpage`;
+const yithWonderThemeCustomizationServiceId = `${yithWonderThemeCustomizationPageUrl}#service`;
+const yithWonderThemeCustomizationFaqId = `${yithWonderThemeCustomizationPageUrl}#faq`;
+const yithWonderThemeCustomizationBreadcrumbId = `${yithWonderThemeCustomizationPageUrl}#breadcrumb`;
+const vesselThemeCustomizationPageUrl = absoluteUrl(pageSeo.vesselThemeCustomization.path);
+const vesselThemeCustomizationPageId = `${vesselThemeCustomizationPageUrl}#webpage`;
+const vesselThemeCustomizationServiceId = `${vesselThemeCustomizationPageUrl}#service`;
+const vesselThemeCustomizationFaqId = `${vesselThemeCustomizationPageUrl}#faq`;
+const vesselThemeCustomizationBreadcrumbId = `${vesselThemeCustomizationPageUrl}#breadcrumb`;
+const phpDevelopmentPageUrl = absoluteUrl(pageSeo.phpDevelopment.path);
+const phpDevelopmentPageId = `${phpDevelopmentPageUrl}#webpage`;
+const phpDevelopmentServiceId = `${phpDevelopmentPageUrl}#service`;
+const phpDevelopmentFaqId = `${phpDevelopmentPageUrl}#faq`;
+const phpDevelopmentBreadcrumbId = `${phpDevelopmentPageUrl}#breadcrumb`;
 const shopifyDevelopmentLosAngelesPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInLosAngeles.path);
 const shopifyDevelopmentLosAngelesPageId = `${shopifyDevelopmentLosAngelesPageUrl}#webpage`;
 const shopifyDevelopmentLosAngelesServiceId = `${shopifyDevelopmentLosAngelesPageUrl}#service`;
@@ -3304,6 +3322,81 @@ export function createExpanseThemeCustomizationPageSchema() {
       answer: item.answer,
     })),
     offers: expanseThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createYithWonderThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.yithWonderThemeCustomization,
+    pageUrl: yithWonderThemeCustomizationPageUrl,
+    pageId: yithWonderThemeCustomizationPageId,
+    serviceId: yithWonderThemeCustomizationServiceId,
+    faqId: yithWonderThemeCustomizationFaqId,
+    breadcrumbId: yithWonderThemeCustomizationBreadcrumbId,
+    serviceName: "YITH Wonder Theme Customization Service",
+    serviceType:
+      "YITH Wonder WordPress and WooCommerce theme customization, full-site editing, block customization, performance optimization, and custom plugin integration",
+    breadcrumbName: "YITH Wonder Theme Customization Service",
+    audienceType:
+      "WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking professional YITH Wonder theme customization",
+    faqs: yithWonderThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: yithWonderThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createVesselThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.vesselThemeCustomization,
+    pageUrl: vesselThemeCustomizationPageUrl,
+    pageId: vesselThemeCustomizationPageId,
+    serviceId: vesselThemeCustomizationServiceId,
+    faqId: vesselThemeCustomizationFaqId,
+    breadcrumbId: vesselThemeCustomizationBreadcrumbId,
+    serviceName: "Vessel Theme Customization Service",
+    serviceType:
+      "Vessel Shopify theme customization, visual storytelling storefront layout, nested theme blocks, speed optimization, and third-party app integration",
+    breadcrumbName: "Vessel Theme Customization Service",
+    audienceType:
+      "Shopify store owners, lifestyle and apparel brands, and ecommerce merchants seeking professional Vessel theme customization",
+    faqs: vesselThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: vesselThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
+export function createPhpDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.phpDevelopment,
+    pageUrl: phpDevelopmentPageUrl,
+    pageId: phpDevelopmentPageId,
+    serviceId: phpDevelopmentServiceId,
+    faqId: phpDevelopmentFaqId,
+    breadcrumbId: phpDevelopmentBreadcrumbId,
+    serviceName: "PHP Web Development Services",
+    serviceType:
+      "Custom PHP web development, Laravel framework engineering, Craft CMS development, Prestashop solutions, custom API integration, and ongoing PHP maintenance",
+    breadcrumbName: "PHP Development Company in India",
+    audienceType:
+      "Businesses, startups, digital agencies, and CTOs seeking enterprise-grade PHP/MySQL web development and white-label delivery",
+    faqs: phpDevelopmentContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: phpDevelopmentContent.services.items.map((item) => ({
       title: item.title,
       description: item.description,
     })),

@@ -9173,7 +9173,131 @@ Owner: SEO, content, and development
 | P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-miami` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
 | P0 | implemented | Component reuse | Page requires standard location landing layout | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `BookIntroCallSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
 | P0 | implemented | Asset deduplication | Reused canonical assets across all sections | 0 new downloads required; all assets mapped to existing canonical paths | Total asset duplicates remain 0 |
-| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createShopifyDevelopmentInMiamiPageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Visible copy enhancement | Minor colloquialisms in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+## YITH Wonder Theme Customization (`/yith-wonder-theme-customization`)
+
+### Page Intent and Query Scope
+- **Primary Search Intent**: Store owners, bloggers, and businesses using or considering the YITH Wonder WordPress/WooCommerce theme seeking expert customization, block layout optimization, WooCommerce setup, and performance tuning.
+- **Audience**: Ecommerce merchants, digital agencies, and WordPress website administrators looking for experienced developers to modify and optimize the YITH Wonder block-based theme.
+- **Target queries**: "YITH Wonder theme customization", "YITH Wonder WordPress theme customization service", "customize YITH Wonder theme", "YITH Wonder WooCommerce theme customization", "YITH Wonder theme developer".
+
+### Visible Content and Evidence Available
+- H1: "YITH Wonder Theme Customization Service".
+- Primary CTA: "request a quote" -> "/request-quote".
+- Hero graphic: Custom YITH Wonder theme preview with review badges (Clutch 132 reviews / 5.0, Upwork 2000+ reviews / 5.0, GoodFirms 72 reviews / 5.0).
+- Trusted brands slider: 10 enterprise ecommerce brands.
+- 8 Theme Features: WooCommerce Compatibility, Drag-and-Drop Customization, Fully Responsive, SEO-Optimized, Fast Loading Speed, Multiple Pre-Built Templates, Cross-Browser Compatibility, Custom Widgets & Elements.
+- 8 Customization Benefits: Fully Customizable Store, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost.
+- 6 Theme Customization Services: Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance.
+- 4 Why Choose Dynamic Dreamz pillars: Expert Team, Proven Process, Ongoing Support, Client-Focused Approach.
+- 8 WordPress Portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
+- 6 interactive FAQs covering customization cost, timelines, WooCommerce integration, SEO preservation, custom features, and ongoing maintenance.
+
+### Structured Gap Analysis
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/yith-wonder-theme-customization` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | Page requires theme customization landing layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesSection`, `ShopifyReasonsSection`, `AgencyServicesSection`, `ThemeWhyChooseSection`, `PortfolioShowcaseSection`, `SplitFaqSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Hero image downloaded to buffer, optimized to WebP; icons mapped to existing canonical paths | 0 duplicate hash groups across `public/assets/` | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createYithWonderThemeCustomizationPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor phrasing variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+## Vessel Theme Customization (`/vessel-theme-customization`)
+
+### Page Intent and Query Scope
+- **Primary Search Intent**: Shopify store owners, lifestyle and apparel brands, and ecommerce merchants using or considering the Vessel Shopify theme seeking expert customization, visual storytelling layouts, nested block configurations, and performance optimization.
+- **Audience**: Ecommerce merchants, creative DTC brands, and digital agencies requiring custom Liquid engineering and bespoke design on Shopify's Vessel theme.
+- **Target queries**: "Vessel theme customization", "Vessel Shopify theme customization service", "customize Vessel theme", "Shopify Vessel theme developer", "Vessel theme expert".
+
+### Visible Content and Evidence Available
+- H1: "Vessel Theme Customization Service".
+- Primary CTA: "View Demo Store" -> official Shopify themes preview.
+- Hero graphic: Custom Vessel theme preview with review badges (Clutch 132 reviews / 5.0, Upwork 2000+ reviews / 5.0, GoodFirms 72 reviews / 5.0).
+- Trusted brands slider: 10 enterprise ecommerce brands.
+- Features of Vessel Theme: 3 visual highlight cards (Let your products speak, Inviting shopping journey, From the Horizon collection) + 8 feature icon boxes (Quick Setup, Visual Storytelling, Nested Theme Blocks, Slide-out Cart, Product Filtering and Sorting, High-Resolution Images, Mega Menu, Cross-Selling).
+- 9 Customization Benefits: Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost.
+- 6 Theme Customization Services: Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance.
+- 4 Why Choose Dynamic Dreamz pillars: Expert Team, Proven Process, Ongoing Support, Client Focused Approach.
+- 6 Shopify Portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier.
+- 6 interactive FAQs covering design customization, mobile responsiveness, third-party app integration, delivery timelines, ongoing maintenance, and performance guarantees.
+
+### Structured Gap Analysis
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/vessel-theme-customization` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | Page requires theme customization landing layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesSection`, `ShopifyReasonsSection`, `AgencyServicesSection`, `ThemeWhyChooseSection`, `PortfolioShowcaseSection`, `SplitFaqSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Hero image downloaded to buffer, converted to WebP; highlight cards mapped to canonicals; icons mapped | 0 duplicate hash groups across `public/assets/` | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createVesselThemeCustomizationPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor phrasing variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+## PHP Development (`/php-development`)
+
+### Page Intent and Query Scope
+- **Primary Search Intent**: Businesses, digital agencies, and startups seeking custom PHP, Laravel, Craft CMS, Prestashop, and MySQL web development services from an experienced agency in India.
+- **Audience**: CTOs, product managers, agencies seeking white-label PHP delivery, and businesses requiring scalable custom web applications and API integrations.
+- **Target queries**: "PHP development company in India", "PHP web development company", "hire PHP developers India", "custom Laravel development", "PHP MySQL development services", "Craft CMS development".
+
+### Visible Content and Evidence Available
+- H1: "PHP Development Company in India".
+- Primary CTA: "request a quote" -> `/request-quote`.
+- Hero right side: Animated review badges for Clutch (132 reviews / 5.0), Upwork (2000+ reviews / 5.0), and GoodFirms (72 reviews / 5.0).
+- Trusted brands slider: 10 enterprise ecommerce brands.
+- 12 PHP Web Development Services: Custom Laravel Development, Laravel API Development, Laravel Maintenance & Support, Custom Craft CMS Development, Craft CMS Maintenance, Plugin Development, Custom Prestashop Development, Module Development, Prestashop Maintenance & Support, API Integration, Custom App Development, Ongoing Support.
+- Why Choose Dynamic Dreamz text box: Scalable, secure, and reliable custom PHP solutions.
+- 4 Process Steps: Discovery and Planning, Design and Development, Testing and Deployment, Ongoing Support.
+- 6 PHP Portfolio projects: Kask, No Lawyer, Sims Direct, Glass Fit, Intapol, Go Sport Me.
+- Happy Clients: Video testimonials and reviews from established clients.
+- 7 interactive FAQs covering PHP/MySQL technology stack, custom web apps, Laravel framework, project timelines, security, and cost estimation.
+- CTA Banner: "Want us to help you with your online store?" pointing to `/request-quote`.
+
+### Structured Gap Analysis
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/php-development` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | Page requires mixed service landing layout | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `AgencyServicesSection`, `TextBoxSection`, `ShopifyAppProcessSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Ingested unique portfolio and service SVGs via buffer comparison; reused existing canonicals | 0 duplicate hash groups across `public/assets/` | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createPhpDevelopmentPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor phrasing variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+## Shopify Theme Customization (`/shopify-theme-customization`)
+
+### Page Intent and Query Scope
+- **Primary Search Intent**: Businesses, DTC merchants, and digital agencies looking for professional Shopify theme customization services, Liquid theme developers, and custom UI/UX design.
+- **Audience**: Ecommerce managers, merchants using existing or premium Shopify themes, and brands requiring tailored storefront layouts, speed optimization, and custom Liquid development.
+- **Target queries**: "Shopify theme customization services", "Shopify theme customization company", "customize Shopify theme", "Shopify Liquid developers", "Shopify custom theme design", "Shopify theme development agency".
+
+### Visible Content and Evidence Available
+- Eyebrows: "Established in 2006", "Shopify Platinum Partner".
+- H1: "Shopify Theme Customization Services".
+- Primary CTA: "Request a Quote" -> `/request-quote`.
+- Proof Badges: Shopify Platinum Partner, Clutch (4.9 rating), Trustpilot (4.9 TrustScore), Upwork (Top Rated Plus).
+- Hero Media: Looping agency highlight video (`why-dynamic-dreamz.mp4`).
+- Trusted brands marquee: 10 enterprise ecommerce brands.
+- 6 Shopify Customization Services: Theme Selection and Installation, Custom Design and Branding, Responsive Design, App Integration, Conversion Rate Optimization, Ongoing Support and Maintenance.
+- 4 Reasons to Customize: Unique Brand Identity, Enhanced User Experience, Better Performance, Scalability.
+- 11 Benefits: Enhanced Brand Image, Better User Experience, Scalability, Faster Loading Times, Advanced Features, Competitive Advantage, Mobile Optimization, Improved Conversion Rates, Flexible Integration, SEO Optimization, Higher ROI.
+- 6-Step Process: Discovery and Planning, Design Mockups, Development and Customization, Testing and Quality Assurance, Launch and Deployment, Post-Launch Support.
+- 6 Technology & Framework items: Liquid, HTML5 & CSS3, JavaScript & jQuery, Shopify Theme Kit & CLI, GraphQL & REST APIs, Git & GitHub.
+- 30 Shopify Themes Grid: Detailed catalog of popular Shopify themes customized by Dynamic Dreamz.
+- 4 Why Choose Dynamic Dreamz Cards: Proven Track Record, Certified Shopify Experts, Transparent Communication, Tailored Solutions.
+- 8 Portfolio Projects: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
+- Happy Clients: 11 client video stories and testimonials.
+- 11 interactive FAQs covering customization scope, timelines, self-updates, pricing, downtime, and existing themes.
+- Bottom CTA Banner: "Want us to help you with your online store?" pointing to `/request-quote`.
+
+### Structured Gap Analysis
+| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route discovery | Route existing in App Router; needed verification and synchronization with latest live site changes | Verified static prerender of `/shopify-theme-customization` | Verified static prerender |
+| P0 | implemented | Hero visual fidelity | Live site added video-wrapper and 4 partner badges | Updated `ServiceHeroSection` to support `eyebrows`, `badges`, and `videoSrc` backward-compatibly | 100% visual parity across viewports |
+| P0 | implemented | Section completeness | Live site has bottom CTA banner and 8 portfolio items (local had 6 and lacked CTA banner) | Ingested canonical portfolio references and added `CtaBannerSection` | Full section order parity |
+| P0 | implemented | Asset deduplication | Bombay Shirt Company and Holy Plantz portfolio images mapped to canonicals; 4 badges mapped to canonical SVGs | 0 duplicate hash groups across `public/assets/` | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createShopifyThemeCustomizationPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor grammatical variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+
+
+
+
 
 
