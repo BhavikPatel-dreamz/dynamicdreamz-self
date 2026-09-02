@@ -1,4 +1,3 @@
-import { industryBrandLogos } from "@/content/industries";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const shopifyDevelopmentMumbaiContent = {
@@ -56,7 +55,88 @@ export const shopifyDevelopmentMumbaiContent = {
 
   brands: {
     title: "Trusted by Leading Brands",
-    items: industryBrandLogos,
+    items: [
+      {
+        name: "Ranavat Logo",
+        src: "/assets/clients/ranavat.svg",
+        href: "https://www.ranavat.com/",
+        alt: "Ranavat Logo",
+        width: 174,
+        height: 19,
+      },
+      {
+        name: "prolash_black",
+        src: "/assets/clients/prolash.svg",
+        href: "https://prolash.com/",
+        alt: "prolash_black",
+        width: 204,
+        height: 22,
+      },
+      {
+        name: "Tropicfeel Logo",
+        src: "/assets/clients/tropicfeel.svg",
+        href: "https://shop.tropicfeel.com/",
+        alt: "Tropicfeel Logo",
+        width: 150,
+        height: 32,
+      },
+      {
+        name: "perfect_locks_color_logo",
+        src: "/assets/clients/perfect-locks.svg",
+        href: "https://www.perfectlocks.com/",
+        alt: "perfect_locks_color_logo",
+        width: 175,
+        height: 32,
+      },
+      {
+        name: "Bombay Shirt Company Logo",
+        src: "/assets/clients/bombay-shirt-company.svg",
+        href: "https://www.bombayshirts.com/",
+        alt: "Bombay Shirt Company Logo",
+        width: 204,
+        height: 26,
+      },
+      {
+        name: "kayfi-colored",
+        src: "/assets/clients/kayfi.svg",
+        href: "https://kayfi.com/",
+        alt: "kayfi-colored",
+        width: 90,
+        height: 49,
+      },
+      {
+        name: "simdirect_logo_color",
+        src: "/assets/clients/simsdirect.svg",
+        href: "https://simsdirect.com.au/",
+        alt: "simdirect_logo_color",
+        width: 143,
+        height: 49,
+      },
+      {
+        name: "Kvaser Logo",
+        src: "/assets/clients/kvaser.svg",
+        href: "https://www.kvaser.com/",
+        alt: "Kvaser Logo",
+        width: 135,
+        height: 25,
+      },
+      {
+        name: "nekter-colored",
+        src: "/assets/clients/nelter.svg",
+        href: "https://www.nekterjuicebar.com/",
+        alt: "nekter-colored",
+        width: 66,
+        height: 64,
+      },
+      {
+        name: "Circuit City Logo",
+        src: "/assets/clients/circuit-city.svg",
+        href: "https://circuitcity.com/",
+        alt: "Circuit City Logo",
+        width: 64,
+        height: 64,
+      },
+    ],
   },
 
   whyDynamicDreamz: {
@@ -363,32 +443,32 @@ export const shopifyDevelopmentMumbaiContent = {
     {
       question: "How long does it take to develop a Shopify store?",
       answer:
-        "The timeline varies depending on the project scope. A standard store with basic customization can take 2 to 4 weeks, while a fully custom Shopify store with advanced integrations and features may take 6 to 12 weeks.",
+        "Well, first of all, it entirely depends on the given requirements, but you can say that a standard Shopify store can be developed in 2–4 weeks. On the contrary, some custom Shopify web development projects may take 6–10 weeks, and that too entirely depends on design, integrations & functionality requirements.",
     },
     {
       question: "Do you provide Shopify migration services?",
       answer:
-        "Yes, we specialize in migrating ecommerce stores from platforms like WooCommerce, Magento, BigCommerce, and others to Shopify, ensuring zero data loss and minimal downtime.",
+        "Yes, we offer complete Shopify migration services, securely transferring products, customer data, and content from platforms like WooCommerce, Magento, or custom ecommerce systems without affecting performance.",
     },
     {
       question: "Can you customize Shopify themes according to my brand?",
       answer:
-        "Absolutely. We create custom Shopify themes tailored to your brand identity, business goals, and target audience, ensuring a unique and engaging storefront.",
+        "Absolutely, our experts, Shopify developers, continue to create customized themes tailored to your branding, user experience goals & and the very conversion optimization requirements.",
     },
     {
       question: "Do you offer Shopify SEO services?",
       answer:
-        "Yes, our Shopify web development process includes built-in SEO best practices such as clean code, mobile optimization, fast loading speeds, and structured data to help improve your search engine rankings.",
+        "Yes, it's positive, because we do build SEO-friendly Shopify stores and provide numerous optimization services, so we can improve search visibility, performance & organic traffic growth.",
     },
     {
       question: "Will my Shopify store be mobile-friendly?",
       answer:
-        "Yes, every Shopify store we build is fully responsive and optimized to deliver a seamless shopping experience across mobile, tablet, and desktop devices.",
+        "Yes, each one of the Shopify stores we have developed till now is fully responsive and optimized to ensure a fine and seamless shopping experience across mobile, tablet & desktop devices.",
     },
     {
       question: "Do you provide post-launch support and maintenance?",
       answer:
-        "Yes, we offer ongoing Shopify maintenance, security updates, performance monitoring, and feature enhancements to ensure your store continues to perform at its best.",
+        "Yes, we offer ongoing maintenance, updates, and seamless technical support, with which we can ensure your Shopify store remains secure, updated & high-performing after launch.",
     },
   ],
 

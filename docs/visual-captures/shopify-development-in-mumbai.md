@@ -64,13 +64,10 @@
    - Heading: `Voices of Our Clients`
    - Description: `Hear directly from the brands that have partnered with Dynamic Dreamz to build and grow their Shopify stores successfully.`
    - Video testimonial cards carousel
-10. **Book Intro Call Section** (`BookIntroCallSection`):
-    - Left column: Contact Form (`Enquiry Or Just To Say Hi!`)
-    - Right column: Call Out Box (`Book an Intro Call`)
-11. **FAQ Section** (`FaqSection`):
+10. **FAQ Section** (`FaqSection`):
     - Heading: `Frequently Asked Questions`
-    - 7 accordion items with circle-cross toggle icon
-12. **Bottom CTA Banner** (`CtaBannerSection`):
+    - 7 accordion items with circle-cross toggle icon, centered heading
+11. **Bottom CTA Banner** (`CtaBannerSection`):
     - Heading: `Want us to help you with your online store?`
     - Button: `request a quote` -> `/request-quote`
 

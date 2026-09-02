@@ -8954,7 +8954,7 @@ Owner: SEO, content, and development
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
 | P0 | implemented | Route discovery | Route not yet created in App Router | Build `/inspiro-theme-customization` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | Page requires standard theme customization layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesSection`, `ShopifyReasonsSection`, `AgencyServicesSection`, `ThemeWhyChooseSection`, `PortfolioShowcaseSection`, `SplitFaqSection` | 100% visual parity across viewports |
+| P0 | implemented | Component reuse | Page requires standard theme customization layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesSection`, `ShopifyReasonsSection`, `AgencyServicesSection`, `ThemeWhyChooseSection`, `PortfolioShowcaseSection`, `FaqSection` | 100% visual parity across viewports |
 | P0 | implemented | Asset deduplication | Unique SVGs for video background and demo import | Ingested into `public/assets/inspiro-theme-customization/features/`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createInspiroThemeCustomizationPageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Accidental duplicate section | Live site rendered "Features Of Inspiro Theme" section twice consecutively | Render single clean section; logged to `docs/page-content-improvements.md` | Cleaner DOM and accessibility |
@@ -8982,7 +8982,7 @@ Owner: SEO, content, and development
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
 | P0 | implemented | Route discovery | Route not yet created in App Router | Build `/expanse-theme-customization` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | Page requires standard theme customization layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesSection`, `ShopifyReasonsSection`, `AgencyServicesSection`, `ThemeWhyChooseSection`, `PortfolioShowcaseSection`, `SplitFaqSection` | 100% visual parity across viewports |
+| P0 | implemented | Component reuse | Page requires standard theme customization layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesSection`, `ShopifyReasonsSection`, `AgencyServicesSection`, `ThemeWhyChooseSection`, `PortfolioShowcaseSection`, `FaqSection` | 100% visual parity across viewports |
 | P0 | implemented | Asset deduplication | Product filtering icon required | Ingested into `public/assets/expanse-theme-customization/features/`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createExpanseThemeCustomizationPageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Empty portfolio container | Live site rendered an empty portfolio grid on Expanse page | Populated standard Shopify showcase portfolio items | Complete UX |
@@ -9038,7 +9038,6 @@ Owner: SEO, content, and development
 - 6 Agency reasons carousel: Expert Shopify Developers, Custom Solutions, User-Focused Design, SEO-Optimized Websites, Comprehensive Services, Proven Results.
 - 8 Shopify portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
 - Client stories video testimonial carousel.
-- Contact form ("Enquiry Or Just To Say Hi!") & Book an Intro Call card.
 - 7 interactive FAQs answering cost, timelines, migration, theme customization, SEO services, mobile-readiness, and maintenance.
 - Bottom CTA banner: "Want us to help you with your online store?" -> "request a quote".
 
@@ -9046,7 +9045,7 @@ Owner: SEO, content, and development
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
 | P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-mumbai` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | Page requires standard location landing layout | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `BookIntroCallSection`, `FaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Component reuse | Page requires standard location landing layout | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `FaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
 | P0 | implemented | Asset deduplication | Reused canonical assets across all sections | 0 new downloads required; all assets mapped to existing canonical paths | Total asset duplicates remain 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createShopifyDevelopmentInMumbaiPageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Visible copy enhancement | Phrasing variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |

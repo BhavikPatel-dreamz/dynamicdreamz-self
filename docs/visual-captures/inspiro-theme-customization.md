@@ -50,9 +50,9 @@
    - Eyebrow: `PORTFOLIO`
    - Heading: `Snippets of WordPress Theme<br> Customization Portfolio`
    - 8 WordPress projects with external links and modal preview
-8. **FAQ Accordion** (`SplitFaqSection`):
+8. **FAQ Accordion** (`FaqSection`):
    - Heading: `Frequently Asked Questions`
-   - 5 comprehensive FAQs covering costs, eCommerce/WooCommerce compatibility, customization depth, SEO, and turnaround time
+   - 5 comprehensive FAQs with circle-cross toggle icon covering costs, eCommerce/WooCommerce compatibility, customization depth, SEO, and turnaround time
 
 ## Remaining Differences
 - None. All typography, colors, grid layouts, and responsive breakpoints match the live site reference.

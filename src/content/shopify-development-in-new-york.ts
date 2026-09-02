@@ -1,4 +1,3 @@
-import { industryBrandLogos } from "@/content/industries";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const shopifyDevelopmentNewYorkContent = {
@@ -56,7 +55,88 @@ export const shopifyDevelopmentNewYorkContent = {
 
   brands: {
     title: "Trusted by Leading Brands",
-    items: industryBrandLogos,
+    items: [
+      {
+        name: "Ranavat Logo",
+        src: "/assets/clients/ranavat.svg",
+        href: "https://www.ranavat.com/",
+        alt: "Ranavat Logo",
+        width: 174,
+        height: 19,
+      },
+      {
+        name: "prolash_black",
+        src: "/assets/clients/prolash.svg",
+        href: "https://prolash.com/",
+        alt: "prolash_black",
+        width: 204,
+        height: 22,
+      },
+      {
+        name: "Tropicfeel Logo",
+        src: "/assets/clients/tropicfeel.svg",
+        href: "https://shop.tropicfeel.com/",
+        alt: "Tropicfeel Logo",
+        width: 150,
+        height: 32,
+      },
+      {
+        name: "perfect_locks_color_logo",
+        src: "/assets/clients/perfect-locks.svg",
+        href: "https://www.perfectlocks.com/",
+        alt: "perfect_locks_color_logo",
+        width: 175,
+        height: 32,
+      },
+      {
+        name: "Bombay Shirt Company Logo",
+        src: "/assets/clients/bombay-shirt-company.svg",
+        href: "https://www.bombayshirts.com/",
+        alt: "Bombay Shirt Company Logo",
+        width: 204,
+        height: 26,
+      },
+      {
+        name: "kayfi-colored",
+        src: "/assets/clients/kayfi.svg",
+        href: "https://kayfi.com/",
+        alt: "kayfi-colored",
+        width: 90,
+        height: 49,
+      },
+      {
+        name: "simdirect_logo_color",
+        src: "/assets/clients/simsdirect.svg",
+        href: "https://simsdirect.com.au/",
+        alt: "simdirect_logo_color",
+        width: 143,
+        height: 49,
+      },
+      {
+        name: "Kvaser Logo",
+        src: "/assets/clients/kvaser.svg",
+        href: "https://www.kvaser.com/",
+        alt: "Kvaser Logo",
+        width: 135,
+        height: 25,
+      },
+      {
+        name: "nekter-colored",
+        src: "/assets/clients/nelter.svg",
+        href: "https://www.nekterjuicebar.com/",
+        alt: "nekter-colored",
+        width: 66,
+        height: 64,
+      },
+      {
+        name: "Circuit City Logo",
+        src: "/assets/clients/circuit-city.svg",
+        href: "https://circuitcity.com/",
+        alt: "Circuit City Logo",
+        width: 64,
+        height: 64,
+      },
+    ],
   },
 
   whyDynamicDreamz: {

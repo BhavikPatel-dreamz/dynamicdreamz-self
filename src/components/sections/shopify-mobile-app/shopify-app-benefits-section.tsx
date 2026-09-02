@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
-import { formatBrText } from "@/lib/text-formatting";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 
 export type ShopifyAppBenefitItem = {
