@@ -375,7 +375,7 @@ Facts requiring central control include:
 
 ### Delivery performance
 
-Reviewed 2026-09-02. IndexedDB / client databases are not used: they cannot
+Reviewed 2026-09-03. IndexedDB / client databases are not used: they cannot
 speed first paint on this static marketing site and would add client JavaScript.
 Repeat visits already benefit from HTTP cache, Next.js image optimization, and
 the App Router client cache.
@@ -398,6 +398,12 @@ Implemented nonvisual delivery work in the same review:
 - Prefer AVIF then WebP for `next/image` output, and give header, proof, and
   client logos explicit `sizes` so the browser does not download full-viewport
   rasters.
+- Target Next.js modern browsers (`chrome 111`, `edge 111`, `firefox 111`,
+  `safari 16.4`) and replace the always-on `polyfill-module` with a
+  `URL.canParse` shim only, so Lighthouse does not credit unused Baseline
+  polyfills (`Array.flat`, `Object.hasOwn`, `Array.at`, and similar) in the
+  App Router runtime chunk. The `nomodule` polyfill file is unchanged and
+  still loads only in browsers without ES modules.
 
 No new AEO/GEO gaps found. Visible copy, section order, and interaction
 defaults were not changed.

@@ -1,4 +1,7 @@
+import path from "node:path";
 import type { NextConfig } from "next";
+
+const modernBrowserPolyfills = path.join(process.cwd(), "src/lib/modern-browser-polyfills.js");
 
 const allowSearchIndexing = process.env.ALLOW_SEARCH_INDEXING === "true";
 
@@ -44,6 +47,28 @@ const nextConfig: NextConfig = {
     inlineCss: true,
   },
   reactCompiler: true,
+  // Next.js always bundles `polyfill-module` (Array.flat, Object.hasOwn, …)
+  // into the client runtime. Those APIs are Baseline for the browserslist
+  // below; keep only `URL.canParse` for Safari 16.4 / Chrome 111 / Firefox 111.
+  turbopack: {
+    resolveAlias: {
+      "../build/polyfills/polyfill-module": "./src/lib/modern-browser-polyfills.js",
+      "next/dist/build/polyfills/polyfill-module": "./src/lib/modern-browser-polyfills.js",
+    },
+  },
+  webpack(config) {
+    const polyfillAliases = {
+      "../build/polyfills/polyfill-module": modernBrowserPolyfills,
+      "next/dist/build/polyfills/polyfill-module": modernBrowserPolyfills,
+    };
+    const { alias } = config.resolve;
+
+    config.resolve.alias = Array.isArray(alias)
+      ? [...alias, polyfillAliases]
+      : { ...alias, ...polyfillAliases };
+
+    return config;
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: oneYearInSeconds,
