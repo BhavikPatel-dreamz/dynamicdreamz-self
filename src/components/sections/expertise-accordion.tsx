@@ -43,6 +43,7 @@ export function ExpertiseAccordion() {
               )}
               id={panelId}
               aria-hidden={!isOpen}
+              inert={!isOpen}
             >
               <div className="overflow-hidden">
                 <p className="text-base leading-[1.9] font-semibold text-muted max-[767px]:text-sm">{item.body}</p>

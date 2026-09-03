@@ -37,6 +37,7 @@ export function ResourcesCategoryAccordion({ categories }: { categories: readonl
               role="region"
               aria-labelledby={buttonId}
               aria-hidden={!open}
+              inert={!open}
             >
               <div className="min-h-0 overflow-hidden">
                 {category.links.length ? (

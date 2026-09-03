@@ -39,7 +39,7 @@ function TestimonialSlide({
   onPlay: (videoId: string) => void;
 }) {
   return (
-    <article className="flex w-full shrink-0 basis-full overflow-hidden min-[768px]:max-[992px]:mr-[15px] min-[768px]:max-[992px]:w-[calc(100%-15px)] min-[768px]:max-[992px]:basis-[calc(100%-15px)] max-[992px]:flex-col-reverse max-[767px]:rounded-[20px] max-[992px]:justify-end" aria-hidden={!isActive}>
+    <article className="flex w-full shrink-0 basis-full overflow-hidden min-[768px]:max-[992px]:mr-[15px] min-[768px]:max-[992px]:w-[calc(100%-15px)] min-[768px]:max-[992px]:basis-[calc(100%-15px)] max-[992px]:flex-col-reverse max-[767px]:rounded-[20px] max-[992px]:justify-end" aria-hidden={!isActive} inert={!isActive}>
       <div className="col_content flex w-1/2 grow flex-col justify-center overflow-hidden rounded-[30px] border border-soft-line bg-white/50 px-[30px] py-[45px] min-[768px]:max-[992px]:min-h-[460.17px] min-[768px]:max-[992px]:p-4 max-[992px]:w-full max-[992px]:rounded-[0_0_20px_20px] max-[767px]:p-4">
         <div className={cn("mb-[26px] w-full h-[53px] min-[768px]:max-[992px]:mb-4 max-[767px]:mb-4 max-[767px]:h-10 [&_img]:h-auto [&_img]:max-h-[53px] [&_img]:w-auto [&_img]:max-w-[225px] [&_img]:object-contain max-[767px]:[&_img]:max-h-10", !testimonial.logo && "invisible")}>
           {testimonial.logo ? (

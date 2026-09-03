@@ -747,7 +747,7 @@ navigation while removing WordPress runtime dependencies.
 Status: technical and live-section refresh implemented; visible AEO copy remains
 deferred and live wording is preserved
 
-Last reviewed: 2026-09-02
+Last reviewed: 2026-09-03
 
 Owner: SEO, content, development, leadership, and client success
 
@@ -847,6 +847,8 @@ superlatives.
   work/blog/quote CTA engagement after their routes ship, and qualified project
   enquiries after deployment. SEO owns monthly prompt checks; development owns
   the prelaunch route/link audit.
+- Accessibility (2026-09-03): closed commerce-solution panels keep `aria-hidden`
+  and now also use `inert`, so collapsed Explore links are not keyboard-focusable.
 
 ## About Us (`/about-us`)
 
