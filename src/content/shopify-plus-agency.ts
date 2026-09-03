@@ -2,10 +2,58 @@ import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 
 export const shopifyPlusAgencyHero = {
   title: "Shopify Plus Agency",
+  subheading: "Your Shopify Plus technology partner for high-growth and enterprise brands.",
   description:
-    "Our Shopify Plus Agency provides a robust, scalable eCommerce platform designed for high-growth businesses. It offers advanced customization, checkout extensibility, automation, B2B functionality, and reliable support, enabling companies to drive significant growth. We also provide advanced theme customization for B2B, providing enterprises with the tools to manage wholesale operations efficiently.",
-  ctaLabel: "request a quote",
-  ctaHref: "/request-quote",
+    "Dynamic Dreamz is a Shopify Platinum Partner helping DTC brands, B2B businesses and enterprise ecommerce teams build, migrate and scale on Shopify Plus. Our team supports custom storefront development, B2B solutions, integrations, checkout extensibility, CRO, performance optimization and ongoing technical delivery.",
+  ctaLabel: "Book a Discovery Call",
+  ctaHref: "/book-a-discovery-call",
+  secondaryCta: {
+    label: "View Shopify Plus Work",
+    href: "#our-work",
+    ariaLabel: "View Shopify Plus Work",
+  },
+  eyebrows: ["Established in 2006", "Shopify Platinum Partner"],
+  videoSrc: "/assets/home/why-dynamic-dreamz.mp4",
+  badges: [
+    {
+      name: "Shopify Platinum Partner",
+      src: "/assets/proof/shopify-platinum-partner.svg",
+      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+      alt: "Dynamic Dreamz - Shopify Platinum Partner",
+      width: 136,
+      height: 44,
+    },
+    {
+      name: "Clutch",
+      src: "/assets/proof/clutch-rating.svg",
+      href: "https://clutch.co/profile/dynamic-dreamz",
+      alt: "Dynamic Dreamz on Clutch - 4.9 rating",
+      width: 111,
+      height: 44,
+    },
+    {
+      name: "Trustpilot",
+      src: "/assets/proof/trustpilot-rating.svg",
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+      alt: "Dynamic Dreamz on Trustpilot - 4.9 TrustScore",
+      width: 148,
+      height: 50,
+    },
+    {
+      name: "Upwork",
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      href: "https://www.upwork.com/ag/dynamicdreamz/",
+      alt: "Dynamic Dreamz - Upwork Top Rated Plus",
+      width: 126,
+      height: 54,
+    },
+  ],
+  videoLogo: {
+    src: "/assets/platforms/shopify-plus-white.svg",
+    alt: "Shopify Plus",
+    width: 143,
+    height: 30,
+  },
 } as const;
 
 export type ReviewPlatform = {
@@ -73,194 +121,278 @@ export const shopifyPlusAgencyReviews: readonly ReviewPlatform[] = [
 ] as const;
 
 export const shopifyPlusAgencyServices = {
-  heading: "Shopify Plus Agency Services",
-  description: "Shopify experts are here to guide you through every step of your eCommerce journey.",
+  heading: "Shopify Plus Services for High-Growth Brands",
+  eyebrow: "End-to-End Shopify Plus",
+  description:
+    "Dynamic Dreamz provides end-to-end Shopify Plus development for brands that need scalable storefronts, complex integrations, migration support and ongoing technical capacity. The service content remains detailed so enterprise buyers can understand exactly where our Shopify Plus team can support them.",
   items: [
     {
-      icon: "/assets/shopify-plus-agency/icons/shopify-plus-icon.svg",
+      icon: "/assets/services/shopify-development-in-bangalore/services/shopify-plus-store-development.svg",
 
       iconAlt: "shopify plus icon",
       title: "Shopify Plus Store Setup",
       description:
-        "Our expert Shopify Plus store setup service involves leveraging advanced tools for customization, automation, and integration. We seamlessly configure checkout extensibility, product launch & flash promotion using Launchpad, Shopify's flash selling tool. It includes designing a tailored storefront, configuring powerful apps, optimizing for performance, and ensuring a seamless user experience.",
+        "Launch a scalable Shopify Plus store with custom storefront development, checkout extensibility, integrations, automation and performance optimization built for long-term growth.",
     },
     {
-      icon: "/assets/shopify-plus-agency/icons/consulting-icon.svg",
+      icon: "/assets/services/shopify-development-in-bangalore/services/figma-xd-to-shopify-conversion.svg",
 
-      iconAlt: "",
+      iconAlt: "Shopify Plus consulting icon",
       title: "Shopify Plus Consulting Service",
       description:
-        "Our Shopify Plus consulting service aims to resolve all queries raised by the clients related to functionalities, benefits, and security features of Shopify Plus. Our consultation provides specialized support for large-scale eCommerce businesses aiming to leverage the full potential of Shopify Plus. Experts assist with custom integrations, advanced marketing tactics, performance optimization, and seamless migrations.",
+        "Get expert Shopify Plus consulting for platform architecture, B2B, Markets, Shopify Functions, integrations, migrations and optimization before committing to development.",
     },
     {
-      icon: "/assets/hire-shopify-developers/icons/shopify-migration.svg",
+      icon: "/assets/services/shopify-development-in-bangalore/services/seamless-shopify-migration.svg",
 
       iconAlt: "Migration Icon",
       title: "Shopify Plus Migration Service",
       description:
-        "Our agile Shopify Plus migration service ensures a seamless transition from any platform to Shopify Plus. Our expert Shopify Plus developers handle data migration, redesigning the store, integrating apps, and preserving SEO. Our expert team manages the process to minimize downtime and disruptions, ensuring a smooth move that enhances performance and scalability for high-growth businesses.",
+        "Migrate to Shopify Plus from Magento, WooCommerce, BigCommerce or custom platforms with secure data migration, 301 redirects, SEO preservation and integration planning.",
     },
     {
-      icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+      icon: "/assets/services/shopify-development-in-bangalore/services/shopify-app-integration-customization.svg",
 
       iconAlt: "theme customization icon",
-      title: "Shopify Plus Theme Customization Service",
+      title: "Shopify Plus Mobile App Development.",
       description:
-        "Our Shopify Plus theme customization service offers tailored design solutions to create a unique, branded online store. Our expert developers modify themes to enhance user experience, align with brand identity, and optimize performance. These customizations ensure a distinctive, engaging storefront that meets specific business needs and drives higher conversion rates. We tailor the end-to-end experience for each buyer with customized product and pricing publishing, quantity rules, and payment terms.",
+        "Build high-performance iOS and Android shopping apps integrated with Shopify Plus, including real-time products, customer accounts, checkout, push notifications and loyalty features.",
     },
     {
-      icon: "/assets/shopify-plus-agency/icons/custom-theme-icon.svg",
+      icon: "/assets/services/shopify-development-in-bangalore/services/shopify-plus-store-development.svg",
 
       iconAlt: "custom theme icon",
-      title: "Shopify Plus Custom Theme Development Service",
+      title: "Shopify Plus B2B & Wholesale Development",
       description:
-        "Dynamic Dreamz Shopify Plus custom theme development service provides bespoke design and functionality for your online store. Our expert Shopify Plus developers create unique themes from scratch, tailored to your brand and business requirements. This service enhances user experience, boosts performance, and offers complete control over aesthetics and features, ensuring a competitive edge in the market.",
+        "Build Shopify Plus B2B and wholesale experiences with company accounts, custom catalogs, price lists, payment terms, buyer permissions and ERP or CRM integrations.",
     },
     {
-      icon: "/assets/services/wordpress/wordpress-white-label-development.svg",
+      icon: "/assets/services/shopify-development-in-bangalore/services/custom-shopify-theme-design-customization.svg",
 
       iconAlt: "White Label icon",
-      title: "Shopify Plus White Label Service",
+      title: "Shopify Plus Custom Theme Development Service",
       description:
-        "Our proven Shopify Plus white label service allows agencies to offer Shopify Plus solutions under their brand. It includes custom store development, theme customization, and migration services. Agencies can expand their service portfolio, leveraging Shopify Plus's robust platform while maintaining their brand identity, thus delivering high-quality eCommerce solutions to their clients.",
+        "Develop a custom Shopify Plus theme from Figma with flexible sections, tailored PDP and PLP experiences, responsive interactions and performance-focused development.",
     },
     {
-      icon: "/assets/services/wordpress/wordpress-maintenance.svg",
+      icon: "/assets/services/shopify-development-in-bangalore/services/white-label-shopify-development.svg",
 
+      iconAlt: "maintenance icon",
+      title: "Shopify Plus White Label Service",
+      description:
+        "Partner with Dynamic Dreamz for white-label Shopify Plus development, migrations, custom integrations, B2B solutions, QA and ongoing technical support for your agency clients.",
+    },
+    {
+      icon: "/assets/services/shopify-development-in-bangalore/services/shopify-store-maintenance-support.svg",
       iconAlt: "maintenance icon",
       title: "Shopify Plus Maintenance Service",
       description:
-        "We offer a prompt Shopify Plus maintenance service to ensure your online store operates smoothly and efficiently. It includes regular updates, performance optimization, security monitoring, and troubleshooting. Our Expert team of Shopify Plus handles all technical aspects, allowing you to focus on growth while maintaining a seamless and secure shopping experience for your customers.",
+        "Keep your Shopify Plus store evolving with ongoing development, bug fixes, CRO implementation, performance improvements, app changes, integrations and dedicated technical support.",
     },
   ],
-  cta: {
-    label: "Let me give you a hand to help you",
-    href: "/request-quote",
-    ariaLabel: "Dynamic Dreamz - Let me give you a hand to help you",
-  },
 } as const;
 
 export const shopifyPlusAgencyWhyChoose = {
-  heading: "Why Choose Shopify Plus Agency",
-  text: "Selecting a Shopify Plus agency means collaborating with a team that is knowledgeable about advanced eCommerce requirements and high-growth businesses. A specialized agency offers deep platform knowledge, strategic insights, and tried-and-true workflows designed for Shopify Plus, in comparison to regular developers. A Shopify Plus agency helps you in making the most of the platform by helping you scale operations, customize B2B experiences, and optimize performance. With access to advanced features, dedicated support, and a team that stays ahead of the latest updates, you gain a true partner in growth.",
-} as const;
-
-export const shopifyPlusAgencyCaseStudies = {
-  heading: "Shopify Plus Case Studies",
-  description:
-    "We have helped several high-growth brands to improve their online visibility, sell more effectively,<br> and scale more quickly. Our Shopify Plus case studies highlight the results of both established enterprises<br> converting to a premium digital experience and startups making their first impression.",
-  items: [
-    {
-      name: "Trendia",
-      image: "/assets/case-studies/trendia.png",
-      imageAlt: "Trendia Casestudy Image",
-      href: "/case-study/trendia",
-    },
-    {
-      name: "Nekter Juice Bar",
-      image: "/assets/case-studies/nekter-juice-bar.jpg",
-      imageAlt: "Nekter Juice Bar Casestudy Image",
-      href: "/case-study/nekter-juice-bar",
-    },
-    {
-      name: "Calmenta",
-      image: "/assets/case-studies/calmenta.png",
-      imageAlt: "Calmenta Casestudy Image",
-      href: "/case-study/calmenta",
-    },
-    {
-      name: "Holy Plantz",
-      image: "/assets/case-studies/holy-plantz.png",
-      imageAlt: "Holy Plantz Casestudy Image",
-      href: "/case-study/holy-plantz",
-    },
+  eyebrow: "Dynamic Dreamz · Shopify Platinum Partner",
+  heading: "Why Shopify Plus Brands Choose Dynamic Dreamz",
+  intro:
+    "Dynamic Dreamz delivers end-to-end Shopify Plus development, migrations, B2B solutions, integrations and ongoing support for high-growth and enterprise ecommerce brands.",
+  text:
+    "Dynamic Dreamz has delivered ecommerce solutions since 2006 and supports brands worldwide through an experienced India-based delivery team. As a Shopify Platinum Partner, we bring Shopify specialists together with designers, mobile app developers, full-stack engineers and QA resources so Shopify Plus brands can work with one technology partner across complex commerce requirements.",
+  stats: [
+    "Shopify Platinum Partner",
+    "20+ years in ecommerce",
+    "150+ cross-functional experts",
+    "5,000+ projects delivered",
   ],
 } as const;
 
+export const shopifyPlusAgencyCaseStudies = {
+  eyebrow: "Case Studies",
+  heading: "Explore Our Client Case Studies",
+  description:
+    "See how Dynamic Dreamz approaches Shopify and Shopify Plus requirements across redesigns, custom commerce, integrations and long-term development partnerships.",
+  items: [
+    {
+      name: "Calmenta: Custom Shopify Impact Theme Redesign for a Luxury Wellness Brand",
+      image: "/assets/shopify-plus-agency/case-studies/calmenta.jpg",
+      imageAlt: "Calmenta Shopify Impact theme redesign for a luxury wellness brand",
+      href: "/case-studies/calmenta",
+      platform: "Shopify / Shopify Plus",
+      industry: "Healthcare & Medical",
+      description: "See how Dynamic Dreamz redesigned Calmenta's Shopify storefront using the Impact theme for a more premium wellness shopping experience.",
+      chips: ["Impact Theme Customization", "Shopify Plus"],
+    },
+    {
+      name: "Trendia: Shopify + Unicommerce Integration for 300+ Vendor Inventory & Local-First Fulfillment",
+      image: "/assets/shopify-plus-agency/case-studies/trendia.jpg",
+      imageAlt: "Trendia Shopify and Unicommerce inventory integration",
+      href: "/case-studies/trendia",
+      platform: "Shopify / Shopify Plus",
+      industry: "Fashion & Apparel",
+      description: "See how Dynamic Dreamz connected Shopify and Unicommerce for Trendia to support inventory and fulfillment workflows across 300+ vendors.",
+      chips: ["Multi-Vendor Inventory", "Unicommerce Integration"],
+    },
+    {
+      name: "Nekter Juice Bar: Shopify Redesign with Streamlined Ordering & Multi-Location Store Pickup",
+      image: "/assets/shopify-plus-agency/case-studies/nekter-juice-bar.jpg",
+      imageAlt: "Nekter Juice Bar Shopify redesign with multi-location store pickup",
+      href: "/case-studies/nekter-juice-bar",
+      platform: "Shopify / Shopify Plus",
+      industry: "Food & Beverages",
+      description: "See how Dynamic Dreamz improved Nekter Juice Bar's Shopify experience with streamlined ordering and multi-location store pickup functionality.",
+      chips: ["Multi-Location Store Pickup", "Streamlined Ordering"],
+    },
+  ],
+  ctaLabel: "View Case study",
+} as const;
+
+export const shopifyPlusAgencyFaqDescription =
+  "Clear answers about our Shopify Plus capabilities, developers, B2B services, migrations, pricing and ongoing support.";
+
 export const shopifyPlusAgencyHowToChoose = {
+  eyebrow: "Evaluation Framework",
   heading: "How to Choose the Right Shopify Plus Agency",
-  text: "Selecting the correct Shopify Plus agency starts with understanding your business goals. Find out a development agency that has much experience with Shopify Plus, especially with brands that are similar to yours. Check out their portfolio, client testimonials, custom solutions, and their ability to deliver scalable solutions. Ask about their entire development process, including research, deployment, and support, and make sure they provide full services like performance optimization, app integration, and theme customization. A trustworthy agency should serve as a long-term partner, not just a vendor, guiding you through strategy, execution, and growth.",
+  description:
+    "When comparing Shopify Plus partners, evaluate relevant project experience, technical breadth,delivery process, case studies and long-term support. Dynamic Dreamz is structured to support brands from initial planning through implementation and ongoing Shopify Plus development.",
+  items: [
+    { title: "Relevant Shopify Plus Experience", description: "Look for evidence across complex storefronts, B2B, migrations, custom functionality and enterprise integrations." },
+    { title: "Strong Portfolio & Case Studies", description: "Review projects in comparable industries and understand what the agency actually delivered, not only the final visual design." },
+    { title: "Clear Delivery Process", description: "Ask how discovery, implementation, QA, migration, deployment and support are managed across the project lifecycle." },
+    { title: "Long-Term Technical Partner", description: "Choose a team that can continue supporting performance, integrations, CRO and new requirements after launch." },
+  ],
 } as const;
 
 export const shopifyPlusAgencyPricing = {
-  heading: "Pricing",
+  eyebrow: "Flexible Shopify Plus Engagements",
+  heading: "Choose the Right Shopify Plus Engagement",
   description:
-    "Our Shopify Plus development pricing is flexible and tailored to your specific business requirements,<br> complexity, and size. Whether you're launching a new store, migrating from another platform, or creating <br> custom B2B features, we deliver competitive pricing packages that reflect our value and expertise.",
-  columns: ["Requirements", "Pricing"],
-  rows: [
+    "Start with one Shopify Plus project, use flexible hourly support, or add a dedicated developer / team around your ongoing ecommerce roadmap.",
+  items: [
     {
-      requirement: "Shopify Plus store from scratch:",
-      pricing: "$5000",
+      label: "Project-Based",
+      badge: "Have One Project?",
+      price: "Custom Quote",
+      description: "For complete Shopify Plus builds, migrations, redesigns, B2B requirements, custom apps, integrations and technically complex ecommerce projects.",
+      ctaLabel: "Send Brief — Get a Quote in 24 Hours",
+      ctaHref: "/request-quote",
     },
     {
-      requirement: "Shopify Plus store customization:",
-      pricing: "$1500 - $2000",
+      label: "Flexible Hourly Support",
+      badge: "Need Extra Shopify Capacity?",
+      price: "$25/hour",
+      description: "For ongoing maintenance, enhancements, troubleshooting, performance improvements and changing Shopify Plus development requirements.",
+      ctaLabel: "Buy Shopify Development Hours",
+      ctaHref: "/buy-shopify-development-hours",
     },
     {
-      requirement: "Shopify to Shopify Plus store migration:",
-      pricing: "$3000",
-    },
-    {
-      requirement: "Other eCommerce store to Shopify Plus store migration:",
-      pricing: "$5000 - $7000",
-    },
-    {
-      requirement: "Custom Shopify Plus requirements:",
-      pricing: "Contact us for estimation",
+      label: "Dedicated Developer / Team",
+      badge: "Need Ongoing Capacity?",
+      price: "From $2,000/month",
+      description: "For brands with a steady Shopify roadmap, multiple storefronts or a need for a dedicated developer or wider delivery team.",
+      ctaLabel: "Discuss a Dedicated Team",
+      ctaHref: "/book-a-discovery-call",
     },
   ],
 } as const;
 
 export const shopifyPlusAgencyIndustries = {
-  heading: "Industries that we have served",
+  eyebrow: "Industries that we have served",
+  heading: "Shopify Plus Experience Across Leading Industries",
   description:
-    "Dynamic Dreamz has massive experience across multiple industries,<br> helping businesses like yours succeed online. Our expertise spans sectors such as:",
+    "Dynamic Dreamz supports Shopify Plus and high-growth ecommerce brands across eight core industries where merchandising, customer experience, subscriptions, B2B, integrations and operational complexity can directly affect growth.",
   items: [
     {
-      image: "/assets/shopify-plus-agency/industries/beauty-cosmetics.webp",
-      imageAlt: "Beauty and cosmetics Shopify Plus store",
-      title: "Beauty & Cosmetics",
-      description:
-        "The beauty industry requires visually stunning and high-converting Shopify stores. We build Shopify Plus solutions that improve brand appeal and deliver smooth shopping experiences.",
-    },
-    {
       image: "/assets/shopify-plus-agency/industries/health-nutrition.webp",
-      imageAlt: "Health and nutrition Shopify Plus store",
+      imageAlt: "Health and nutrition Shopify Plus storefront",
       title: "Health & Nutrition",
-      description:
-        "Our Shopify Plus solutions for health and nutrition brands guarantee compliance, secure transactions, and a smooth user experience for customers buying supplements and wellness products.",
-    },
-    {
-      image: "/assets/shopify-plus-agency/industries/pet-industry.webp",
-      imageAlt: "Pet industry Shopify Plus store",
-      title: "Pet Industry",
-      description:
-        "We design Shopify Plus stores that attract pet lovers, offering everything from pet food to accessories. We ensure easy navigation, secure checkout, and engaging shopping experiences.",
+      eyebrow: "Shopify Plus Industry",
+      description: "Shopify Plus experiences for supplement and wellness brands with trust-led UX, subscriptions, education and repeat-purchase journeys.",
+      href: "/healthcare",
     },
     {
       image: "/assets/shopify-plus-agency/industries/fashion-apparel.webp",
-      imageAlt: "Fashion and apparel Shopify Plus store",
+      imageAlt: "Fashion and apparel Shopify Plus storefront",
       title: "Fashion & Apparel",
-      description:
-        "Fashion and apparel stores require high-end graphics and smooth functionality. Our Shopify Plus stores offer fast loading speed, customizable designs, and smooth user experiences.",
+      eyebrow: "Shopify Plus Industry",
+      description: "Premium commerce experiences with merchandising depth, variant complexity, product discovery and mobile-first shopping journeys.",
+      href: "/fashion",
+    },
+    {
+      image: "/assets/shopify-plus-agency/industries/beauty-cosmetics.webp",
+      imageAlt: "Beauty and cosmetics Shopify Plus storefront",
+      title: "Beauty & Cosmetics",
+      eyebrow: "Shopify Plus Industry",
+      description: "High-converting storefronts for beauty brands that need visual storytelling, product education, subscriptions and stronger merchandising.",
+      href: "/beauty-cosmetics",
     },
     {
       image: "/assets/shopify-plus-agency/industries/food-beverages.webp",
-      imageAlt: "Food and beverages Shopify Plus store",
-      title: "Food & Beverages",
-      description:
-        "Accurate order management and secure payment processing are necessary for online food and beverage services. We develop Shopify Plus stores optimized for smooth transactions and recurring subscriptions.",
+      imageAlt: "Food and beverage Shopify Plus storefront",
+      title: "Food & Beverage",
+      eyebrow: "Shopify Plus Industry",
+      description: "Commerce experiences supporting repeat purchase, subscriptions, bundles, promotions and streamlined ordering workflows.",
+      href: "/food-beverages",
+    },
+    {
+      image: "/assets/shopify-plus-agency/industries/sports-outdoors.png",
+      imageAlt: "Sports and outdoors Shopify Plus storefront",
+      title: "Sports & Outdoors",
+      eyebrow: "Shopify Plus Industry",
+      description: "Fast, mobile-led ecommerce experiences for active and outdoor brands with rich product discovery and global commerce requirements.",
+      href: "/contact-us",
+    },
+    {
+      image: "/assets/shopify-plus-agency/industries/home-living.png",
+      imageAlt: "Home and living Shopify Plus storefront",
+      title: "Home & Living",
+      eyebrow: "Shopify Plus Industry",
+      description: "Shopify Plus solutions for home brands with large catalogs, configurable products, visual merchandising and complex product journeys.",
+      href: "/contact-us",
+    },
+    {
+      image: "/assets/shopify-plus-agency/industries/jewellery-accessories.png",
+      imageAlt: "Jewellery and accessories Shopify Plus storefront",
+      title: "Jewellery & Accessories",
+      eyebrow: "Shopify Plus Industry",
+      description: "Premium product experiences for jewellery and accessory brands, including rich presentation and sophisticated customization requirements.",
+      href: "/contact-us",
+    },
+    {
+      image: "/assets/shopify-plus-agency/industries/pet-industry.webp",
+      imageAlt: "Pet industry Shopify Plus storefront",
+      title: "Pet Industry",
+      eyebrow: "Shopify Plus Industry",
+      description: "Conversion-focused Shopify stores with clearer category navigation, trust-building product content and strong repeat-purchase journeys.",
+      href: "/pet-industry",
     },
   ],
 } as const;
 
 export const shopifyPlusAgencyPortfolio = {
-  heading: "Quick Looks at our Shopify Plus Development",
+  eyebrow: "Portfolio",
+  heading: "Explore Our Work",
   description:
-    "We've had the privilege to work on some challenging and impactful work over our 20-year history. Whether it's for a startup or a Fortune 500 company, every website we launch and every website we create is developed with keeping the client's goals in mind.",
+    "For 20 years, we’ve worked on challenging and impactful projects for startups and leading global brands. Every website we create is designed around our clients’ goals.",
   category: "SHOPIFY PLUS",
   platformMark: "/assets/platforms/shopify-plus-white.svg",
+  ctaLabel: "View our work",
+  ctaHref: "/our-work",
+  secondaryCtaLabel: "View Pricing",
+  secondaryCtaHref: "#pricing",
   items: [
+    {
+      name: "Ranavat",
+      image: "/assets/beauty-cosmetics/portfolio/ranavat-skincare.webp",
+      imageAlt: "Ranavat Shopify storefront",
+      href: "https://www.ranavat.com/",
+    },
+    {
+      name: "Atolea Jewelry",
+      image: "/assets/our-work/projects/atolea-jewelry.webp",
+      imageAlt: "Atolea Jewelry Shopify storefront",
+      href: "https://atoleajewelry.com/",
+    },
     {
       name: "Tropic Feel",
       image: "/assets/fashion/portfolio/tropicfeel-fashion.webp",
@@ -303,70 +435,33 @@ export const shopifyPlusAgencyPortfolio = {
 export const shopifyPlusAgencyTestimonials = {
   heading: "Don't Just Take Our Word For It",
   description:
-    "We have faith in our work, but what truly matters is the outcomes we serve our clients.<br> Happy clients make happy stories: Check out how our services empower them to evolve.",
+    "Hear directly from clients who have worked with Dynamic Dreamz across Shopify, ecommerce and long-term development engagements.",
   items: [
-    {
-      name: "Alec Torelli",
-      company: "(Conscious Poker)",
-      quote:
-        "Gaurav at Dynamic Dreamz excels in web design and development, demonstrating flawless communication, reliability, and confident autonomy, streamlining project execution.",
-      videoId: "o4JnTGEH-Yk",
-      image: "/assets/testimonials/alec-torelli-full.webp",
-      imageAlt: "Alec Torelli testimonial",
-    },
-    {
-      name: "William Petz",
-      company: "(Quite Events)",
-      quote:
-        "Just 7 days post-launch, our sales surged by 12% owing to its advanced features; their expertise and swift updates impressed us, genuinely recommending their Services!",
-      videoId: "B3KnREB4Bro",
-      image: "/assets/testimonials/william-petz-full.webp",
-      imageAlt: "William Petz testimonial",
-    },
-    {
-      name: "William ST Baker",
-      company: "Elite Element Electronics",
-      quote:
-        "In six months, Dynamic Dreamz revamped our website, turning it from error-ridden to seamlessly functional and visually appealing, significantly enhancing our digital presence.",
-      videoId: "-IpNUAco1OA",
-      image: "/assets/testimonials/william-st-baker-full.webp",
-      imageAlt: "William ST Baker testimonial",
-    },
-    {
-      name: "Kerri Imrie",
-      company: "(teanow.com.au)",
-      quote:
-        "Dynamic Dreamz and Gaurav's invaluable expertise and support were instrumental in our success, making them a reliable choice for any digital agency needs.",
-      videoId: "oNDPBGO83G4",
-      image: "/assets/testimonials/kerri-imrie-full.webp",
-      imageAlt: "Kerri Imrie testimonial",
-    },
-    {
-      name: "Brandon",
-      company: "USA",
-      quote:
-        "Dynamic Dreamz excels in web development with unmatched responsiveness, professionalism, and quality assurance, highly recommended for all projects.",
-      videoId: "AoglCZQC0RU",
-      image: "/assets/testimonials/brandon-full.webp",
-      imageAlt: "Brandon testimonial",
-    },
     {
       name: "Shari Leidich",
       company: "Max Sweets",
       quote:
         "We have been using dynamic dreams for four, maybe five years now. I can't say anything but the most positive things. They are diligent, professional, competitively priced.",
       videoId: "Vc9FH6ZeoXY",
-      image: "/assets/testimonials/shari-leidich-full.webp",
-      imageAlt: "Shari Leidich testimonial",
+      image: "/assets/shopify-plus-agency/testimonials/shari-leidich.webp",
+      imageAlt: "Shari Leidich client testimonial",
+      logo: "/assets/testimonials/max-sweets-logo.webp",
+      logoAlt: "Max Sweets",
+      logoWidth: 72,
+      logoHeight: 53,
     },
     {
       name: "Rebekah Wymer",
       company: "Myla Jane",
       quote:
-        "Hi, I'm Rebecca, owner of Myla Jane. I've worked with Dynamic Dreams on several web development projects, and they always do an excellent job.",
+        "Hi, I’m Rebecca, owner of Myla Jane. I’ve worked with Dynamic Dreams on several web development projects, and they always do an excellent job.",
       videoId: "_ay_egf5GKw",
-      image: "/assets/testimonials/rebekah-wymer-full.webp",
-      imageAlt: "Rebekah Wymer testimonial",
+      image: "/assets/shopify-plus-agency/testimonials/rebekah-wymer.webp",
+      imageAlt: "Rebekah Wymer client testimonial",
+      logo: "/assets/testimonials/myla-jane-logo.webp",
+      logoAlt: "Myla Jane",
+      logoWidth: 120,
+      logoHeight: 49,
     },
     {
       name: "Thommas Linnrose",
@@ -375,7 +470,11 @@ export const shopifyPlusAgencyTestimonials = {
         "Their support has allowed us to focus on growing our brand instead of worrying about technical issues and using time on this. Their support has allowed us to focus on growing our brand instead of worrying about technical issues and using time on this.",
       videoId: "_9uT-dRcQvo",
       image: "/assets/testimonials/thommas-linnrose.webp",
-      imageAlt: "Thommas Linnrose testimonial",
+      imageAlt: "Thommas Linnrose client testimonial",
+      logo: "/assets/shopify-plus-agency/brands/art-copenhagen.png",
+      logoAlt: "Art Copenhagen",
+      logoWidth: 180,
+      logoHeight: 52,
     },
     {
       name: "Zoe wang",
@@ -383,8 +482,12 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "Gaurav always explained to me what truly happens here and how we can improve it in the future. So we are very happy with the results, and we will continue to work with Gaurav and his team in the foreseeable future. So I highly recommend him.",
       videoId: "6Ni9tlZ7HKE",
-      image: "/assets/testimonials/zoe-wang-full.webp",
-      imageAlt: "Zoe wang testimonial",
+      image: "/assets/shopify-plus-agency/testimonials/zoe-wang.webp",
+      imageAlt: "Zoe Wang client testimonial",
+      logo: "/assets/shopify-plus-agency/brands/maison-zifan.png",
+      logoAlt: "Maison Zifan",
+      logoWidth: 72,
+      logoHeight: 126,
     },
     {
       name: "Clinton De Vere",
@@ -392,8 +495,12 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "In 2025, I hired Gaurav and his team at Dynamic Dreams to upgrade my Shopify art shop, and the experience was seamless from start to finish. Communication was clear and prompt, Gaurav was patient with all my questions, and every issue or request was handled quickly and effectively.",
       videoId: "_rQeMWcz_gA",
-      image: "/assets/testimonials/clinton-de-vere-full.webp",
-      imageAlt: "Clinton De Vere testimonial",
+      image: "/assets/shopify-plus-agency/testimonials/clinton-de-vere.webp",
+      imageAlt: "Clinton De Vere client testimonial",
+      logo: "/assets/testimonials/clinton-de-vere-logo.svg",
+      logoAlt: "Clinton De Vere Art",
+      logoWidth: 120,
+      logoHeight: 44,
     },
     {
       name: "Fernando Arias",
@@ -402,35 +509,146 @@ export const shopifyPlusAgencyTestimonials = {
         "Dynamic Dreamz is amazing because they're able to work on Shopify and WordPress platforms, which are essential to my businesses, and being able to scale them. And if you are looking for an amazing website developer on Shopify or WordPress, I recommend Dynamic Dreamz.",
       videoId: "WQWG2niydpE",
       image: "/assets/testimonials/fernando-arias.webp",
-      imageAlt: "Fernando Arias testimonial",
+      imageAlt: "Fernando Arias client testimonial",
+      logo: "/assets/shopify-plus-agency/brands/lgxnds.png",
+      logoAlt: "LGXNDS",
+      logoWidth: 160,
+      logoHeight: 38,
+    },
+    {
+      name: "Alec Torelli",
+      company: "(Conscious Poker)",
+      quote:
+        "Gaurav at Dynamic Dreamz excels in web design and development, demonstrating flawless communication, reliability, and confident autonomy, streamlining project execution.",
+      videoId: "o4JnTGEH-Yk",
+      image: "/assets/testimonials/alec-torelli-striped-shirt.webp",
+      imageAlt: "Alec Torelli testimonial",
+      logo: "/assets/testimonials/conscious-poker-logo.webp",
+      logoAlt: "Conscious Poker",
+      logoWidth: 200,
+      logoHeight: 40,
+    },
+    {
+      name: "William Petz",
+      company: "(Quite Events)",
+      quote:
+        "Just 7 days post-launch, our sales surged by 12% owing to its advanced features; their expertise and swift updates impressed us, genuinely recommending their Services!",
+      videoId: "B3KnREB4Bro",
+      image: "/assets/shopify-plus-agency/testimonials/william-petz.webp",
+      imageAlt: "William Petz testimonial",
+      logo: "/assets/testimonials/quiet-events-logo.webp",
+      logoAlt: "Quite Events",
+      logoWidth: 160,
+      logoHeight: 42,
+    },
+    {
+      name: "William ST Baker",
+      company: "Elite Element Electronics",
+      quote:
+        "In six months, Dynamic Dreamz revamped our website, turning it from error-ridden to seamlessly functional and visually appealing, significantly enhancing our digital presence.",
+      videoId: "-IpNUAco1OA",
+      image: "/assets/shopify-plus-agency/testimonials/william-st-baker.webp",
+      imageAlt: "William ST Baker testimonial",
+      logo: "/assets/testimonials/elite-element-electronics-logo.svg",
+      logoAlt: "Elite Element Electronics",
+      logoWidth: 160,
+      logoHeight: 42,
+    },
+    {
+      name: "Kerri Imrie",
+      company: "(teanow.com.au)",
+      quote:
+        "Dynamic Dreamz and Gaurav's invaluable expertise and support were instrumental in our success, making them a reliable choice for any digital agency needs.",
+      videoId: "oNDPBGO83G4",
+      image: "/assets/shopify-plus-agency/testimonials/kerri-imrie.webp",
+      imageAlt: "Kerri Imrie testimonial",
+      logo: "/assets/shopify-plus-agency/brands/tea-now.png",
+      logoAlt: "teanow",
+      logoWidth: 160,
+      logoHeight: 42,
+    },
+    {
+      name: "Brandon",
+      company: "USA",
+      quote:
+        "Dynamic Dreamz excels in web development with unmatched responsiveness, professionalism, and quality assurance, highly recommended for all projects.",
+      videoId: "AoglCZQC0RU",
+      image: "/assets/shopify-plus-agency/testimonials/brandon.webp",
+      imageAlt: "Brandon testimonial",
+      logo: "/assets/shopify-plus-agency/brands/quiet-events.png",
+      logoAlt: "Brandon testimonial company",
+      logoWidth: 100,
+      logoHeight: 40,
     },
   ],
 } as const;
 
+export const shopifyPlusAgencyPageTestimonials = {
+  ...shopifyPlusAgencyTestimonials,
+  items: shopifyPlusAgencyTestimonials.items.map((item) => {
+    if (item.name === "Alec Torelli") {
+      return { ...item, company: "Conscious Poker" };
+    }
+    if (item.name === "William Petz") {
+      return { ...item, company: "Quite Events" };
+    }
+    if (item.name === "Kerri Imrie") {
+      return { ...item, company: "teanow.com.au" };
+    }
+    if (item.name === "Fernando Arias") {
+      return {
+        ...item,
+        quote: item.quote.replace("them. And if", "them.<br />And if"),
+      };
+    }
+    return item;
+  }),
+} as const;
+
 export const shopifyPlusAgencyFaqs: readonly FaqAccordionItem[] = [
   {
-    question: "What is a Shopify Plus agency?",
+    question: "Is Dynamic Dreamz a Shopify Plus agency?",
     answer:
-      "Using Shopify Plus to design, develop, and scale eCommerce stores is the expertise of a Shopify Plus agency. These agencies have in-depth knowledge of the platform's advanced features and help enterprise-level brands create high-performing online experiences.",
+      "Yes. Dynamic Dreamz is a Shopify Platinum Partner and Shopify Plus agency supporting high-growth DTC, B2B and enterprise ecommerce brands. We provide Shopify Plus strategy, storefront development, migrations, integrations, B2B development, CRO, performance optimization and ongoing technical support.",
   },
   {
-    question: "Why should I hire a Shopify Plus agency instead of a regular Shopify expert?",
+    question: "Is Dynamic Dreamz a Shopify Platinum Partner?",
     answer:
-      "More services, more in-depth knowledge, and scalable solutions designed for growing brands are delivered by a Shopify Plus agency. Unlike freelance developers or general Shopify experts, an agency has a dedicated team with experience in high-volume sales, B2B features, automation, and advanced customization.",
+      "Yes. Dynamic Dreamz is a Shopify Platinum Partner. We combine that Shopify partner credential with more than 20 years of ecommerce experience, a 60+ Shopify team and broader design, mobile app, full-stack and QA capabilities.",
   },
   {
-    question: "How much does it cost to work with a Shopify Plus agency?",
+    question: "What Shopify Plus development services does Dynamic Dreamz provide?",
     answer:
-      "The size, complexity, and specific service requirements of the project all affect the cost. The initial cost of simple projects could be a few thousand dollars. At the same time, custom development, large-scale migrations, or long-term support plans may require a higher investment. We offer flexible pricing to fit different budgets. Check out our pricing section.",
+      "Dynamic Dreamz provides Shopify Plus store development, custom theme development, theme customization, Shopify Plus migrations, B2B and wholesale development, custom apps and integrations, checkout extensibility, Shopify Functions, CRO, performance optimization and ongoing maintenance.",
   },
   {
-    question: "Can a Shopify Plus agency help with store migration?",
+    question: "Does Dynamic Dreamz have experienced Shopify Plus developers?",
     answer:
-      "Absolutely. A Shopify Plus agency ensures a smooth migration from platforms like Magento, WooCommerce, or BigCommerce. It includes secure data transfer, theme rebuilding, app setup, and preserving your SEO and performance throughout the process.",
+      "Yes. Dynamic Dreamz has a 60+ Shopify team with developers experienced in Shopify and Shopify Plus projects. Depending on the project, the Shopify team can also work with our designers, mobile app developers, full-stack engineers and QA specialists for more complex commerce requirements.",
   },
   {
-    question: "Can a Shopify Plus agency optimize my existing store?",
+    question: "Can Dynamic Dreamz build Shopify Plus B2B and wholesale stores?",
     answer:
-      "Yes. A Shopify Plus agency can analyze your current setup and improve performance, user experience, and conversion rates. From theme enhancements and checkout optimization to faster load times and better mobile experiences, we help you get the most from your store.",
+      "Yes. We support Shopify Plus B2B and wholesale requirements including company accounts, customer-specific catalogs, price lists, quantity rules, payment terms, buyer permissions and integrations with ERP, CRM, fulfillment and other business systems.",
+  },
+  {
+    question: "Can Dynamic Dreamz migrate Magento, WooCommerce or BigCommerce stores to Shopify Plus?",
+    answer:
+      "Yes. Dynamic Dreamz handles Shopify Plus migrations from Magento or Adobe Commerce, WooCommerce, BigCommerce and other ecommerce platforms. Migration planning can include products, customers, orders, content, integrations, URL redirects, SEO preservation, staging QA and launch support.",
+  },
+  {
+    question: "How much does Shopify Plus development with Dynamic Dreamz cost?",
+    answer:
+      "Shopify Plus development cost depends on the scope and technical complexity. Dynamic Dreamz offers project-based custom quotes, flexible Shopify development support from $25 per hour and dedicated developer or team engagements from $2,000 per month.",
+  },
+  {
+    question: "Does Dynamic Dreamz provide ongoing Shopify Plus maintenance and CRO support?",
+    answer:
+      "Yes. We provide ongoing Shopify Plus maintenance, bug fixing, new feature development, theme updates, app changes, performance optimization, CRO implementation and integration support after launch.",
+  },
+  {
+    question: "Does Dynamic Dreamz work with Shopify Plus brands outside India?",
+    answer:
+      "Yes. Dynamic Dreamz supports Shopify and Shopify Plus brands globally, including clients in the United States, Canada, Europe, Australia and other markets. Our delivery team is based in India and works remotely with brand and agency teams across time zones.",
   },
 ];

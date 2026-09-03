@@ -21,6 +21,7 @@ export type ServiceHeroCoBranding = {
 export type ServiceHeroContent = {
   title: string;
   description: string;
+  subheading?: string;
   secondaryDescription?: string;
   paragraphs?: readonly string[];
   ctaLabel?: string;
@@ -50,6 +51,12 @@ export type ServiceHeroContent = {
     width: number;
     height: number;
   }[];
+  videoLogo?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
 };
 
 export type ServiceHeroSectionProps = {
@@ -63,6 +70,7 @@ export type ServiceHeroSectionProps = {
   imageClassName?: string;
   reviewClassName?: string;
   bodyClassName?: string;
+  videoLogoClassName?: string;
 };
 
 export function ServiceHeroSection({
@@ -76,6 +84,7 @@ export function ServiceHeroSection({
   imageClassName,
   reviewClassName,
   bodyClassName,
+  videoLogoClassName,
 }: ServiceHeroSectionProps) {
   const ctaHref = content.ctaHref ?? "/request-quote";
 
@@ -119,6 +128,11 @@ export function ServiceHeroSection({
                 )}>
                   {formatBrText(content.title, "max-[1199px]:hidden")}
                 </h1>
+                {content.subheading ? (
+                  <p className="mt-2.5 mb-0 font-montserrat text-base font-semibold leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
+                    {content.subheading}
+                  </p>
+                ) : null}
                 {content.paragraphs ? (
                   content.paragraphs.map((paragraph, idx) => (
                     <p
@@ -155,6 +169,7 @@ export function ServiceHeroSection({
                   <div className="mt-2 flex flex-wrap items-center justify-center gap-[15px] max-[575px]:flex-col">
                     {content.ctaLabel && (
                       <ButtonLink
+                        className="max-[575px]:mx-1 max-[575px]:w-[calc(100%-8px)]"
                         aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
                         href={ctaHref}
                         variant="primary"
@@ -163,6 +178,7 @@ export function ServiceHeroSection({
                       </ButtonLink>
                     )}
                     <ButtonLink
+                      className="max-[575px]:mx-1 max-[575px]:w-[calc(100%-8px)]"
                       aria-label={content.secondaryCta.ariaLabel ?? `Dynamic Dreamz - ${content.secondaryCta.label}`}
                       href={content.secondaryCta.href}
                       variant="outline"
@@ -173,6 +189,7 @@ export function ServiceHeroSection({
                 ) : content.ctaLabel ? (
                   <div className="mt-2">
                     <ButtonLink
+                      className="max-[575px]:mx-1 max-[575px]:w-[calc(100%-8px)]"
                       aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
                       href={ctaHref}
                       variant="primary"
@@ -217,10 +234,10 @@ export function ServiceHeroSection({
           <div className={leftColClassName ?? defaultLeftCol}>
             <div className="inner-hero-content">
               {content.eyebrows && content.eyebrows.length > 0 && (
-                <div className="eyebrow mb-[15px] flex flex-wrap items-center gap-[15px] text-[13px] font-bold uppercase tracking-[1px] text-[#555]">
+                <div className="eyebrow mb-[15px] flex flex-nowrap items-center gap-[15px] whitespace-nowrap text-[13px] font-bold uppercase tracking-[1px] text-[#555] before:mr-3 before:block before:h-0.5 before:w-[30px] before:shrink-0 before:bg-brand-red before:content-[''] max-[992px]:mb-[9px] max-[767px]:gap-2 max-[767px]:mb-[5px] max-[767px]:text-[11px] max-[767px]:tracking-[0.5px] max-[767px]:before:mr-2 max-[767px]:before:w-[15px]">
                   {content.eyebrows.map((item, idx) => (
                     <span
-                      className="after:ml-[15px] after:inline-block after:h-[12px] after:w-px after:bg-[#d9d9d9] after:content-[''] last:after:hidden"
+                      className="after:ml-[15px] after:inline-block after:h-[12px] after:w-px after:bg-[#d9d9d9] after:content-[''] last:after:hidden max-[767px]:after:ml-2 max-[767px]:after:h-[10px]"
                       key={idx}
                     >
                       {item}
@@ -234,6 +251,11 @@ export function ServiceHeroSection({
               )}>
                 {formatBrText(content.title, "max-[1199px]:hidden")}
               </h1>
+              {content.subheading ? (
+                <p className="mt-2.5 mb-0 font-montserrat text-base font-semibold leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
+                  {content.subheading}
+                </p>
+              ) : null}
               {content.paragraphs ? (
                 content.paragraphs.map((paragraph, idx) => (
                   <p
@@ -271,6 +293,7 @@ export function ServiceHeroSection({
                 <div className="services-hero-btn mt-2.5 flex flex-wrap items-center gap-5 max-[1199px]:justify-center max-[575px]:flex-col max-[575px]:items-center max-[575px]:gap-[13px]">
                   {content.ctaLabel && (
                     <ButtonLink
+                      className="max-[575px]:mx-1 max-[575px]:w-[calc(100%-8px)]"
                       aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
                       href={ctaHref}
                       variant="primary"
@@ -279,6 +302,7 @@ export function ServiceHeroSection({
                     </ButtonLink>
                   )}
                   <ButtonLink
+                    className="max-[575px]:mx-1 max-[575px]:w-[calc(100%-8px)]"
                     aria-label={content.secondaryCta.ariaLabel ?? `Dynamic Dreamz - ${content.secondaryCta.label}`}
                     href={content.secondaryCta.href}
                     variant="outline"
@@ -327,21 +351,34 @@ export function ServiceHeroSection({
               )}
             </div>
           </div>
-          <div className={rightColClassName ?? defaultRightCol}>
+          <div className={cn(rightColClassName ?? defaultRightCol, content.videoSrc && "max-[992px]:hidden")}>
             {content.videoSrc ? (
-              <div className="video-wrapper overflow-hidden rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-                <video
-                  aria-hidden="true"
-                  autoPlay
-                  className="h-full w-full object-cover"
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  tabIndex={-1}
-                >
-                  <source src={content.videoSrc} type="video/mp4" />
-                </video>
+              <div className="video-wrapper relative aspect-[1.5] max-[992px]:hidden">
+                <div className="absolute inset-0 overflow-hidden rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+                  <video
+                    aria-hidden="true"
+                    autoPlay
+                    className="h-full w-full object-cover"
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    tabIndex={-1}
+                  >
+                    <source src={content.videoSrc} type="video/mp4" />
+                  </video>
+                </div>
+                {content.videoLogo ? (
+                  <span className={cn("absolute top-[70px] left-[-120px] z-10 flex h-[61px] w-[174px] items-center justify-center rounded-[16px] bg-white px-4 shadow-[0_6px_18px_rgba(0,0,0,0.04)] max-[1199px]:left-5", videoLogoClassName)}>
+                    <Image
+                      alt={content.videoLogo.alt}
+                      className="h-auto w-auto brightness-0"
+                      height={content.videoLogo.height}
+                      src={content.videoLogo.src}
+                      width={content.videoLogo.width}
+                    />
+                  </span>
+                ) : null}
               </div>
             ) : content.image ? (
               <>

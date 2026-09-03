@@ -1,5 +1,23 @@
 # Shopify Plus Agency Page
 
+## Live refresh capture — 2026-09-03
+
+- Live URL: `https://www.dynamicdreamz.com/shopify-plus-agency/`
+- Local route: `/shopify-plus-agency`
+- Date checked: 2026-09-03
+- Browser: Google Chrome headless (live screenshots captured from the rendered page)
+- Live screenshots: `source/shopify-plus-agency/live-2026-09-03-desktop-1440x900.png`, `source/shopify-plus-agency/live-2026-09-03-tablet-768x1024.png`, `source/shopify-plus-agency/live-2026-09-03-mobile-390x844.png`
+- Local screenshots: `source/shopify-plus-agency/local-desktop-1440x900.png`, `source/shopify-plus-agency/local-tablet-768x1024.png`, `source/shopify-plus-agency/local-mobile-390x844.png`.
+- View Page Source and refreshed section styles inspected: `hero_new_section.css`, `trusted_by_leading_brands_section.css`, `why_shopify_plus_brands_choose_section.css`, `projects_section.css`, `delivery_section.css`, `services_case_study_section.css`, `industries_box_section.css`, `client_review_section.css`, `how_to_choose_the_right_shopify_plus_agency_sec.css`, and `faqs_section.css`.
+- Refreshed structure: hero with two CTAs and four trust badges; trusted-brand rail; proof/stat block; eight-project work grid; eight Shopify Plus services; three client case studies; eight industries; three engagement packages; client-story carousel; four evaluation cards; nine FAQs.
+- Responsive observations: desktop shows the hero video and two-column content; tablet centers the hero and hides the video while keeping badges and the trust rail; mobile stacks full-width CTAs and renders the four badges as a 2x2 grid. Work and industry grids collapse from 4/3/2/1 columns at the live breakpoints; service cards remain readable as a two-column layout until the mobile breakpoint.
+- Interaction states checked: hero CTA hover, work-card overlay/CTA hover, service-card hover border, industry image hover, testimonial play target, FAQ first-open plus/minus state, and carousel peeking behavior from the live CSS/HTML.
+- Motion: hero video autoplay/muted/loop; work and industry image scale/overlay transitions; testimonial play pulse; brand/testimonial/industry rails use the live carousel behavior. Reduced motion will disable nonessential local transitions where supported.
+- Intentional implementation differences: local URLs remain slashless; all media is project-owned under `public/assets`; the live external video testimonial dialogs remain YouTube links inside the existing local dialog component.
+- Remaining differences: autoplay rails can show a different logo frame than the captured live moment, and the hero video frame varies by capture time; the desktop/tablet/mobile layout, spacing, content inventory, and interaction states are aligned with the 2026-09-03 reference.
+- Parity follow-up (2026-09-03): the live hero includes a Shopify Plus logo badge over the video; the local implementation now uses the project-owned Shopify Plus mark. Proof stats now include the live `01`-`04` numeric prefixes, case-study cards expose the live platform/industry taxonomy and `View Case study` CTA, pricing CTAs use the live text-link treatment, and industry cards expose the live `Shopify Plus Industry` label. Portfolio and metadata casing/date values are synchronized with the current live source where the project URL policy permits.
+- Verification note: a full-page 1440x5000 capture was attempted but discarded after a transient Turbopack cache panic produced a browser error page. Lower-page sections were still validated through the server-rendered DOM, production build, route checks, and the component-level responsive implementation.
+
 ## Shared header parity follow-up — 2026-08-21
 
 - Fresh live and local captures inspected at 1440x900 and 390x844.
@@ -50,9 +68,9 @@ same viewports for side-by-side comparison.
 
 | Viewport | Live screenshot | Local screenshot | Status |
 | --- | --- | --- | --- |
-| 1440x900 | `docs/visual-captures/source/shopify-plus-agency/live-desktop-1440x900.png` | `docs/visual-captures/source/shopify-plus-agency/local-desktop-1440x900.png` | pending human review |
-| 768x1024 | `docs/visual-captures/source/shopify-plus-agency/live-tablet-768x1024.png` | `docs/visual-captures/source/shopify-plus-agency/local-tablet-768x1024.png` | pending human review |
-| 390x844 | `docs/visual-captures/source/shopify-plus-agency/live-mobile-390x844.png` | `docs/visual-captures/source/shopify-plus-agency/local-mobile-390x844.png` | pending human review |
+| 1440x900 | `docs/visual-captures/source/shopify-plus-agency/live-2026-09-03-desktop-1440x900.png` | `docs/visual-captures/source/shopify-plus-agency/local-desktop-1440x900.png` | captured; desktop hero and first proof sections reviewed |
+| 768x1024 | `docs/visual-captures/source/shopify-plus-agency/live-2026-09-03-tablet-768x1024.png` | `docs/visual-captures/source/shopify-plus-agency/local-tablet-768x1024.png` | captured; centered hero and hidden video behavior reviewed |
+| 390x844 | `docs/visual-captures/source/shopify-plus-agency/live-2026-09-03-mobile-390x844.png` | `docs/visual-captures/source/shopify-plus-agency/local-mobile-390x844.png` | captured; stacked CTAs and badge grid reviewed |
 
 ## Sources Inspected
 
@@ -241,8 +259,9 @@ quotes), 5 FAQs (first open; answer links styled `#ad5151` underline).
   responsive content offsets without any hover movement.
 
 ### Pending human review (pixel-level)
-- Local screenshots recaptured for 1440x900 / 768x1024 / 390x844 (same viewports as
-  live). Compare side-by-side; likely remaining deltas are sub-pixel roundings only.
+- Local screenshots recaptured after the final parity pass for 1440x900 / 768x1024 /
+  390x844 (same viewports as live). Remaining deltas are limited to autoplay frame
+  timing and sub-pixel rounding.
 - `min-h-[324px]`/`240px` on happy-client image area and `VideoDialog` play button
   pulse ring timing were not re-measured against the live pulse keyframes this
   session (captured earlier; verify visually).

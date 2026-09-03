@@ -2,8 +2,30 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import { shopifyPlusAgencyCaseStudies } from "@/content/shopify-plus-agency";
+import { cn } from "@/lib/class-names";
+
+export type CaseStudyCardItem = {
+  name: string;
+  image: string;
+  imageAlt: string;
+  href: string;
+  platform?: string;
+  industry?: string;
+  ctaLabel?: string;
+  description?: string;
+  chips?: readonly string[];
+};
+
+export type CaseStudyCardsContent = {
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  ctaLabel?: string;
+  items: readonly CaseStudyCardItem[];
+};
 
 function LearnMoreArrow() {
   return (
@@ -23,52 +45,72 @@ function LearnMoreArrow() {
   );
 }
 
-export function CaseStudyCardsSection() {
+export function CaseStudyCardsSection({
+  content = shopifyPlusAgencyCaseStudies,
+  className,
+}: {
+  content?: CaseStudyCardsContent;
+  className?: string;
+}) {
   return (
-    <section className="py-20" data-section="case-studies">
+    <section className={cn("bg-[#eff4ef] py-20 max-[992px]:py-[50px]", className)} data-section="case-studies" id="case-studies">
       <Container>
-        <div className="flex flex-col items-center justify-center text-center">
-          <h2 className="mb-5 m-0 font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink">
-            {shopifyPlusAgencyCaseStudies.heading}
-          </h2>
-          <p className="mb-6 text-[18px] leading-[34.2px] font-medium text-muted">
-            {shopifyPlusAgencyCaseStudies.description.split("<br>").map((line, index, lines) => (
-              <span key={line}>
-                {line}
-                {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}
-              </span>
-            ))}
-          </p>
-        </div>
-        <div className="mt-[70px] -mb-8 -mx-2 flex flex-wrap">
-          {shopifyPlusAgencyCaseStudies.items.map((item) => (
+        <SplitSectionHeading
+          className="mb-[50px] gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
+          description={content.description}
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          variant="left"
+        />
+        <div className="grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[992px]:gap-4 max-[767px]:grid-cols-1">
+          {content.items.map((item) => (
             <div
-              className="mb-8 w-1/3 px-2 max-[992px]:w-1/2 max-[992px]:mb-5 max-[767px]:w-full"
+              className="group/case relative overflow-hidden rounded-[15px] border border-[#efefef] bg-white transition-shadow duration-300 hover:shadow-[0_10px_50px_rgba(94,94,94,0.08)]"
               key={item.name}
             >
               <Link
-                className="group/case relative block rounded-[15px] border border-[#EFEFEF] bg-white p-5 pb-[34px] transition-shadow duration-300 hover:shadow-[0_10px_50px_rgba(94,94,94,0.08)] max-[1199px]:p-[15px_15px_30px]"
+                className="relative block h-full"
                 href={item.href}
               >
-                <span
-                  aria-hidden="true"
-                  className="absolute -inset-[2px] -z-10 rounded-[15px] bg-gradient-to-r from-[#15c064] to-[#00d1ff] opacity-0 transition-opacity duration-300 group-hover/case:opacity-100"
-                />
-                <div className="relative mb-5 pb-[90.75%]">
+                <div className="relative aspect-[1.9] overflow-hidden">
                   <Image
-                    className="absolute inset-0 h-full w-full rounded-[10px] border border-[#EFEFEF] object-cover"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover/case:scale-105"
                     src={item.image}
                     alt={item.imageAlt}
                     fill
-                    sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 991px) calc(50vw - 28px), 370px"
+                    sizes="(max-width: 767px) calc(100vw - 64px), (max-width: 991px) calc(50vw - 40px), 390px"
                   />
                 </div>
-                <div className="text">
-                  <h3 className="mb-[10px] text-lg leading-[30.6px] font-bold tracking-[0.36px] text-ink max-[1199px]:text-base max-[1199px]:leading-normal max-[1199px]:mb-[15px]">
+                <div className="p-5 max-[1199px]:p-4">
+                  {item.platform || item.industry ? (
+                    <div className="mb-3 flex flex-wrap items-center gap-2 text-xs font-semibold leading-5 text-muted">
+                      {item.platform ? <span>{item.platform}</span> : null}
+                      {item.industry ? (
+                        <span className="border-l border-black/20 pl-2">
+                          {item.industry}
+                        </span>
+                      ) : null}
+                    </div>
+                  ) : null}
+                  <h3 className="mb-3 text-lg leading-[27px] font-bold tracking-[0.2px] text-ink max-[1199px]:text-base max-[1199px]:leading-6">
                     {item.name}
                   </h3>
-                  <span className="flex items-center text-sm leading-none font-bold text-[#D92128] uppercase underline max-[1199px]:text-xs">
-                    {sharedUiCopy.learnMore}
+                  {item.description ? (
+                    <p className="mb-4 text-sm font-medium leading-6 text-muted">
+                      {item.description}
+                    </p>
+                  ) : null}
+                  {item.chips?.length ? (
+                    <div className="mb-5 flex flex-wrap gap-2">
+                      {item.chips.map((chip) => (
+                        <span className="rounded-full border border-[#ead7d7] bg-[#fff7f7] px-2.5 py-1 text-[11px] font-semibold leading-4 text-brand-red" key={chip}>
+                          {chip}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
+                  <span className="flex items-center text-sm leading-none font-bold uppercase text-brand-red underline max-[1199px]:text-xs">
+                    {item.ctaLabel ?? content.ctaLabel ?? sharedUiCopy.learnMore}
                     <LearnMoreArrow />
                   </span>
                 </div>

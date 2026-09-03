@@ -1,63 +1,82 @@
+import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
+import { shopifyPlusAgencyPricing } from "@/content/shopify-plus-agency";
+import { cn } from "@/lib/class-names";
 import Link from "next/link";
 
-import { Container } from "@/components/ui/container";
-import { shopifyPlusAgencyPricing } from "@/content/shopify-plus-agency";
+export type PricingEngagementItem = {
+  label: string;
+  badge: string;
+  price: string;
+  description: string;
+  ctaLabel: string;
+  ctaHref: string;
+};
 
-export function PricingTableSection() {
+export type PricingEngagementContent = {
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  items: readonly PricingEngagementItem[];
+};
+
+export function PricingTableSection({
+  content = shopifyPlusAgencyPricing,
+  className,
+}: {
+  content?: PricingEngagementContent;
+  className?: string;
+}) {
   return (
-    <section className="pricing_packages_section pt-0 pb-20" data-section="pricing">
+    <section className={cn("bg-[#edf2ee] py-20 max-[992px]:py-[50px]", className)} data-section="pricing" id="pricing">
       <Container>
-        <div className="mb-[50px] text-center">
-          <h2 className="mb-2.5 font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink">
-            {shopifyPlusAgencyPricing.heading}
-          </h2>
-          <p className="mb-6 text-[18px] leading-[34.2px] font-medium text-muted">
-            {shopifyPlusAgencyPricing.description.split("<br>").map((line, index, lines) => (
-              <span key={line}>
-                {line}
-                {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}
+        <SplitSectionHeading
+          className="mb-[50px] gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
+          description={content.description}
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          variant="left"
+        />
+
+        <div className="grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1">
+          {content.items.map((item) => (
+            <article className="flex h-full flex-col rounded-[16px] border border-[#e8e4da] bg-white p-7 shadow-[0_4px_18px_rgba(40,40,40,0.05)] max-[1199px]:p-5" key={item.label}>
+              <h3 className="mb-3 font-montreal-medium text-2xl font-medium leading-8 text-ink max-[1199px]:text-xl max-[767px]:text-lg">
+                {item.label}
+              </h3>
+              <span className="mb-4 inline-flex w-fit rounded-full bg-[#fbefd7] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.5px] text-brand-red">
+                {item.badge}
               </span>
-            ))}
-          </p>
-        </div>
-        <div className="inline-block w-full rounded-[20px] bg-gradient-to-br from-[#15C064] to-[#00E0A3] p-[2px] shadow-[0_4px_50px_rgba(19,193,110,0.10)]">
-          <div className="overflow-hidden rounded-[18px] bg-white">
-            <div className="flex bg-[#F7F5EF] max-[767px]:hidden">
-              <div className="w-[69.802%] py-5 pr-[30px] pl-[30px] text-lg leading-[30.6px] font-bold text-ink max-[992px]:w-[62%]">
-                {shopifyPlusAgencyPricing.columns[0]}
-              </div>
-              <div className="w-[30.198%] border-l border-[#DFDFDF] py-5 pr-[30px] pl-[30px] text-lg leading-[30.6px] font-bold text-ink max-[992px]:w-[38%] max-[992px]:px-5">
-                {shopifyPlusAgencyPricing.columns[1]}
-              </div>
-            </div>
-            <div className="hidden bg-[#F7F5EF] max-[767px]:block max-[767px]:p-[15px_20px]">
-              <div className="text-lg leading-[30.6px] font-bold text-ink">
-                {shopifyPlusAgencyPricing.columns[0]} / {shopifyPlusAgencyPricing.columns[1]}
-              </div>
-            </div>
-            {shopifyPlusAgencyPricing.rows.map((row) => (
-              <div
-                className="flex flex-wrap border-t border-[#EBEBEB] max-[767px]:flex-col max-[767px]:p-[15px_20px]"
-                key={row.requirement}
+              <p className="mb-4 font-montserrat text-[26px] font-bold leading-8 text-ink max-[1199px]:text-2xl">
+                {item.price}
+              </p>
+              <p className="mb-4 text-sm font-medium leading-6 text-muted">
+                {item.description}
+              </p>
+              <Link
+                className="mt-auto inline-flex items-center text-sm font-bold uppercase leading-5 text-brand-red underline decoration-1 underline-offset-2 transition-opacity hover:opacity-80"
+                href={item.ctaHref}
               >
-                <div className="w-[69.802%] py-5 pr-[30px] pl-[30px] text-base leading-[27.2px] font-medium text-[#535353] max-[992px]:w-[62%] max-[767px]:w-full max-[767px]:p-0 max-[767px]:mb-[7px]">
-                  {row.requirement}
-                </div>
-                <div className="w-[30.198%] border-l border-[#DFDFDF] py-5 pr-[30px] pl-[30px] text-base leading-[27.2px] font-bold text-ink max-[992px]:w-[38%] max-[992px]:px-5 max-[767px]:w-full max-[767px]:border-0 max-[767px]:p-0">
-                  {row.pricing === "Contact us for estimation" ? (
-                    <Link
-                      className="text-[#252C15] transition-colors duration-300 hover:text-[#ad5151]"
-                      href="/request-quote"
-                    >
-                      {row.pricing}
-                    </Link>
-                  ) : (
-                    row.pricing
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+                {item.ctaLabel}
+                <svg
+                  aria-hidden="true"
+                  className="ml-2 shrink-0"
+                  fill="none"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  width="12"
+                >
+                  <path
+                    d="M1 11L11 1M11 1H2M11 1V10"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.5"
+                  />
+                </svg>
+              </Link>
+            </article>
+          ))}
         </div>
       </Container>
     </section>

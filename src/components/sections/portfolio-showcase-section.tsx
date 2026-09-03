@@ -26,6 +26,8 @@ export type PortfolioShowcaseSectionProps = {
     platformMark?: { src: string; width: number; height: number };
     ctaLabel?: string;
     ctaHref?: string;
+    secondaryCtaLabel?: string;
+    secondaryCtaHref?: string;
   };
   ctaLabel?: string;
   ctaHref?: string;
@@ -42,6 +44,7 @@ export type PortfolioShowcaseSectionProps = {
   headerLayout?: "centered" | "split";
   itemsClassName?: string;
   variant?: "default" | "liveGrid";
+  sectionId?: string;
 };
 
 export function PortfolioShowcaseSection({
@@ -61,6 +64,7 @@ export function PortfolioShowcaseSection({
   headerLayout = "split",
   itemsClassName,
   variant = "liveGrid",
+  sectionId = "portfolio-showcase",
 }: PortfolioShowcaseSectionProps) {
   const isLiveGrid = variant === "liveGrid";
   const resolvedColumns = columns ?? (isLiveGrid ? 4 : 3);
@@ -86,7 +90,7 @@ export function PortfolioShowcaseSection({
         : "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1";
 
   return (
-    <section className={className} data-section="portfolio" id="portfolio-showcase">
+    <section className={className} data-section="portfolio" id={sectionId}>
       <Container>
         {isLiveGrid || isSplit ? (
           <SplitSectionHeading
@@ -145,10 +149,15 @@ export function PortfolioShowcaseSection({
         </div>
 
         {!hideCta && (
-          <div className="mt-[51px] text-center max-[767px]:mt-10">
+          <div className="mt-[51px] flex flex-wrap justify-center gap-4 max-[767px]:mt-10 max-[575px]:flex-col">
             <ButtonLink href={resolvedCtaHref} variant="primary">
               {resolvedCtaLabel}
             </ButtonLink>
+            {content.secondaryCtaLabel && content.secondaryCtaHref ? (
+              <ButtonLink href={content.secondaryCtaHref} variant="outline">
+                {content.secondaryCtaLabel}
+              </ButtonLink>
+            ) : null}
           </div>
         )}
       </Container>

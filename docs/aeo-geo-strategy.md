@@ -2670,7 +2670,7 @@ are needed for a quote without promising an unverified delivery time or rate.
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-18
+Last reviewed: 2026-09-03
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -2680,7 +2680,7 @@ Decision stage: commercial evaluation, capability verification, and agency partn
 
 ### Page role
 
-Dedicated commercial service and capability page for Shopify Plus. Showcases Shopify Plus store setup, consulting, migration, theme customization, custom theme development, white label, and maintenance services, accompanied by pricing benchmarks, case studies, industry coverage, portfolio proof, 11 client video testimonials, review ratings from Clutch, Upwork, and GoodFirms, and buyer FAQs.
+Dedicated commercial service and capability page for Shopify Plus. Showcases Shopify Plus store setup, consulting, migration, mobile app, B2B and wholesale, custom theme, white-label, and maintenance services, accompanied by engagement options, case studies, industry coverage, portfolio proof, 11 client video testimonials, Shopify partner/review badges, and buyer FAQs.
 
 ### Target prompts
 
@@ -2694,22 +2694,22 @@ Dedicated commercial service and capability page for Shopify Plus. Showcases Sho
 ### Current strengths and available evidence
 
 - Server-rendered H1, introduction, and why-choose sections clearly establish enterprise-level Shopify Plus capabilities and positioning.
-- 7 distinct Shopify Plus services (Store Setup, Consulting, Migration, Theme Customization, Custom Theme Development, White Label, and Maintenance) with structured descriptions and CTA routing.
-- Transparent 5-tier pricing benchmarks covering new builds ($5000), customizations ($1500–$2000), standard-to-Plus migrations ($3000), replatforming ($5000–$7000), and custom estimates.
-- 4 named case studies (Trendia, Nekter Juice Bar, Calmenta, Holy Plantz) linking to dedicated case-study routes.
-- 5 industry sectors (Beauty & Cosmetics, Health & Nutrition, Pet Industry, Fashion & Apparel, Food & Beverages) with cross-links.
-- 6 live portfolio cards (Tropic Feel, Sculpt Neon, Headsets, Perfect Locks, Nekter Juice Bar, The Somewhere Co.) linking to live storefronts and our-work.
+- 8 distinct Shopify Plus services (Store Setup, Consulting, Migration, Mobile App Development, B2B & Wholesale, Custom Theme Development, White Label, and Maintenance) with structured descriptions and CTA routing.
+- 3 engagement options covering project-based delivery, flexible hourly support from $25/hour, and dedicated developer or team engagements from $2,000/month.
+- 3 named case studies (Calmenta, Trendia, Nekter Juice Bar) linking to dedicated case-study routes.
+- 8 industry sectors (Health & Nutrition, Fashion & Apparel, Beauty & Cosmetics, Food & Beverage, Sports & Outdoors, Home & Living, Jewellery & Accessories, and Pet Industry) with cross-links where routes exist.
+- 8 portfolio cards (Ranavat, Atolea Jewelry, Tropic Feel, Sculpt Neon, Headsets, Perfect Locks, Nekter Juice Bar, and The Somewhere Co.) linking to live storefronts or the work archive.
 - 11 verified video testimonials (Alec Torelli, William Petz, William ST Baker, Kerri Imrie, Brandon, Shari Leidich, Rebekah Wymer, Thommas Linnrose, Zoe Wang, Clinton De Vere, Fernando Arias) with modal players and YouTube IDs.
-- 3 independent review badges (Clutch: 132 reviews, 5.0; Upwork: 2000+ reviews, 5.0; GoodFirms: 72 reviews, 5.0) linking to external profile URLs.
-- 5 comprehensive buyer FAQs covering definition, advantages, costs, migration, and optimization.
-- Complete structured data graph emitting Organization, WebSite, WebPage, Service with OfferCatalog, BreadcrumbList, FAQPage (5 visible items), and 11 VideoObject nodes with authentic publish dates.
+- 4 hero trust badges for Shopify Platinum Partner, Clutch, Trustpilot, and Upwork, with the three review badges linking to external profile URLs.
+- 9 comprehensive buyer FAQs covering agency credentials, services, team experience, B2B, migration, cost, maintenance, and global delivery.
+- Complete structured data graph emitting Organization, WebSite, WebPage, Service with OfferCatalog, BreadcrumbList, FAQPage (9 visible items), and 11 VideoObject nodes with authentic publish dates.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Live source emits incomplete graph without VideoObjects for the 11 client videos | Emit Organization, WebSite, WebPage, Service with OfferCatalog, BreadcrumbList, FAQPage (5 items), and 11 VideoObject nodes with verified upload dates | Rendered JSON-LD and build verification complete 2026-08-18 |
+| P0 | implemented | Structured data | Live source emits incomplete graph without VideoObjects for the 11 client videos | Emit Organization, WebSite, WebPage, Service with OfferCatalog, BreadcrumbList, FAQPage (9 items), and 11 VideoObject nodes with verified upload dates | Rendered JSON-LD and build verification complete 2026-09-03 |
 | P0 | implemented | Content fidelity | Visible text box sections must strictly preserve live wording ("Why Choose Shopify Plus Agency" and "How to Choose...") | Bind sections to typed local content matching live copy verbatim | Code review and live comparison complete |
 | P0 | implemented | Slashless URL policy | Links and canonicals must comply with no-trailing-slash policy | Enforce slashless canonical, Open Graph, schema, and internal navigation | `npm run check:urls` passed |
 | P1 | migration pending | Conversion routes | CTAs target planned `/request-quote` and case studies | Preserve migration intent and validate quote and case-study routes before launch | Route implementation |
@@ -2728,23 +2728,23 @@ capabilities. Future visible copy improvements are tracked in
 
 - Connect Dynamic Dreamz to the shared Organization entity and model this route as
   a Shopify Plus agency and development Service.
-- Keep the 11 video testimonials, 4 case studies, 5 industries, 6 portfolio
+- Keep the 11 video testimonials, 3 case studies, 8 industries, 8 portfolio
   projects, and 3 review platform badges strictly aligned with visible content.
 - Emit authentic YouTube upload dates for all 11 testimonial VideoObjects.
 - Do not invent unapproved ratings, guarantees, or partner tiers.
 
 ### Internal-link and conversion actions
 
-- Maintain primary CTAs linking to `/request-quote` using slashless paths.
+- Maintain the primary hero CTA at `/book-a-discovery-call` and the project-based engagement CTA at `/request-quote` using slashless paths.
 - Route portfolio CTAs to `/our-work` and case-study cards to their respective
-  `/case-study/*` paths.
+  `/case-studies/*` paths.
 - Preserve external review and portfolio links with `nofollow noopener noreferrer`.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Organization, WebSite, WebPage, Service with OfferCatalog (7 items),
-  BreadcrumbList, FAQPage (5 visible FAQs), and 11 VideoObject nodes.
-- Use live publish date `2024-05-02T09:33:27+00:00` and explicit migration
+- Emit Organization, WebSite, WebPage, Service with OfferCatalog (8 items),
+  BreadcrumbList, FAQPage (9 visible FAQs), and 11 VideoObject nodes.
+- Use live publish date `2024-05-02T09:33:27+00:00` and the refreshed route
   review date for `dateModified`.
 - Ensure canonical route and primary image are listed in the sitemap and indexable.
 
@@ -2758,13 +2758,13 @@ capabilities. Future visible copy improvements are tracked in
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD,
+- URL-policy review (2026-09-03): canonical, Open Graph, sitemap, robots, JSON-LD,
   and internal links use `/shopify-plus-agency`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source,
   metadata limits, JSON-LD graph verification (including 11 VideoObjects), local
-  assets audit (39 local assets verified), ReviewAnimation responsiveness,
-  accessible dialogs, lint, and production build.
-- Remaining: quote and case-study destination completion remain migration pending.
+  assets audit, responsive hero video/logo behavior, accessible dialogs, and
+  route checks. Final lint and production build are run as part of this refresh.
+- Remaining: continue monitoring CTA conversion and visual parity as the live page evolves; all current quote, booking, and case-study destinations resolve locally.
 
 ## Request a Quote (`/request-quote`)
 

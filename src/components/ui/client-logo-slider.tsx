@@ -118,6 +118,7 @@ export function ClientLogoSlider({
         className={cn(
           "h-(--client-logo-slider-height) [--client-logo-slider-height:84px] [&_.slick-list]:h-(--client-logo-slider-height) [&_.slick-list]:cursor-grab [&_.slick-list]:overflow-hidden [&_.slick-list:active]:cursor-grabbing [&_.slick-slide]:h-(--client-logo-slider-height) [&_.slick-slide>div]:h-(--client-logo-slider-height) [&_.slick-track]:h-(--client-logo-slider-height) motion-reduce:[&_.slick-track]:!duration-[1ms]",
           isCompactSlider && "[--client-logo-slider-height:70px] max-[767px]:[--client-logo-slider-height:60px]",
+          variant === "industry" && "max-[767px]:[--client-logo-slider-height:60px]",
         )}
         key={`${variant}-${slidesToShow}-${reducedMotion ? "reduced" : "motion"}-${autoplayReady ? "ready" : "waiting"}-${compact ? "compact" : "standard"}`}
       >
