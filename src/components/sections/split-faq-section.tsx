@@ -1,5 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { FaqAccordion, type FaqAccordionItem } from "@/components/ui/faq-accordion";
+import { LazyFaqAccordion } from "@/components/sections/lazy-faq-accordion";
+import { StaticFaqAccordion } from "@/components/sections/static-faq-accordion";
 import { sharedUiCopy } from "@/content/common";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
@@ -12,6 +14,8 @@ export type SplitFaqSectionProps = {
   className?: string;
   sectionId?: string;
   animateOnReveal?: boolean;
+  lazyAccordion?: boolean;
+  lazyRootMargin?: string;
 };
 
 /**
@@ -31,6 +35,8 @@ export function SplitFaqSection({
   className,
   sectionId,
   animateOnReveal = false,
+  lazyAccordion = false,
+  lazyRootMargin,
 }: SplitFaqSectionProps) {
   const titleId = `${idPrefix}-title`;
 
@@ -59,18 +65,47 @@ export function SplitFaqSection({
             </header>
           </div>
           <div className="w-[57%] max-w-[654px] grow max-[992px]:w-full max-[992px]:max-w-none">
-            <FaqAccordion
-              animateOnReveal={animateOnReveal}
-              answerClassName="!text-sm"
-              iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
-              iconVariant="circle-cross"
-              idPrefix={idPrefix}
-              itemClassName="!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0"
-              items={items}
-              panelContentClassName="!px-0 !pb-6 max-[767px]:!pb-5"
-              questionClassName="!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6"
-              triggerClassName="!px-0 !py-6 !pr-12 max-[767px]:!py-5"
-            />
+            {lazyAccordion ? (
+              <LazyFaqAccordion
+                animateOnReveal={animateOnReveal}
+                answerClassName="!text-sm"
+                fallback={
+                  <StaticFaqAccordion
+                    answerClassName="!text-sm"
+                    iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
+                    iconVariant="circle-cross"
+                    idPrefix={idPrefix}
+                    itemClassName="!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0"
+                    items={items}
+                    panelContentClassName="!px-0 !pb-6 max-[767px]:!pb-5"
+                    questionClassName="!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6"
+                    triggerClassName="!px-0 !py-6 !pr-12 max-[767px]:!py-5"
+                  />
+                }
+                iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
+                iconVariant="circle-cross"
+                idPrefix={idPrefix}
+                itemClassName="!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0"
+                items={items}
+                panelContentClassName="!px-0 !pb-6 max-[767px]:!pb-5"
+                questionClassName="!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6"
+                triggerClassName="!px-0 !py-6 !pr-12 max-[767px]:!py-5"
+                rootMargin={lazyRootMargin}
+              />
+            ) : (
+              <FaqAccordion
+                animateOnReveal={animateOnReveal}
+                answerClassName="!text-sm"
+                iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
+                iconVariant="circle-cross"
+                idPrefix={idPrefix}
+                itemClassName="!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0"
+                items={items}
+                panelContentClassName="!px-0 !pb-6 max-[767px]:!pb-5"
+                questionClassName="!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6"
+                triggerClassName="!px-0 !py-6 !pr-12 max-[767px]:!py-5"
+              />
+            )}
           </div>
         </div>
       </Container>
