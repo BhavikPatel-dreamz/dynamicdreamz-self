@@ -1,0 +1,104 @@
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import { cn } from "@/lib/class-names";
+import { formatBrText } from "@/lib/text-formatting";
+
+type StaticFaqAccordionProps = {
+  items: readonly FaqAccordionItem[];
+  idPrefix: string;
+  answerClassName?: string;
+  questionClassName?: string;
+  itemClassName?: string;
+  triggerClassName?: string;
+  panelContentClassName?: string;
+  iconClassName?: string;
+  iconVariant?: "default" | "circle-cross";
+};
+
+export function StaticFaqAccordion({
+  items,
+  idPrefix,
+  answerClassName,
+  questionClassName,
+  itemClassName,
+  triggerClassName,
+  panelContentClassName,
+  iconClassName,
+  iconVariant = "default",
+}: StaticFaqAccordionProps) {
+  return (
+    <div data-faq-list>
+      {items.map((item, index) => {
+        const isOpen = index === 0;
+        const triggerId = `${idPrefix}-trigger-${index}`;
+        const panelId = `${idPrefix}-panel-${index}`;
+
+        const mainAnswerContent = item.answer ? (
+          <p className={cn("text-base leading-6 font-medium text-muted last:mb-0 max-[1199px]:text-sm", answerClassName)}>
+            {formatBrText(item.answer)}
+          </p>
+        ) : null;
+
+        return (
+          <article
+            className={cn(
+              "mb-5 rounded-[10px] border-[1.3px] border-[#efefef] bg-white last:mb-0",
+              itemClassName,
+            )}
+            data-faq-item
+            key={item.question}
+          >
+            <button
+              className={cn(
+                "relative block w-full cursor-default border-0 bg-transparent py-6 pr-[70px] pl-8 text-left max-[1199px]:py-5 max-[1199px]:pr-[50px] max-[1199px]:pl-5",
+                triggerClassName,
+              )}
+              data-faq-trigger
+              id={triggerId}
+              type="button"
+              tabIndex={-1}
+              aria-disabled="true"
+              aria-controls={panelId}
+              aria-expanded={isOpen}
+            >
+              <h3 className={cn("m-0 font-montreal-medium text-[20px] leading-[120%] tracking-0 font-medium text-ink max-[1199px]:text-[18px]", questionClassName)}>
+                {formatBrText(item.question)}
+              </h3>
+              {iconVariant === "circle-cross" ? (
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    "absolute top-1/2 right-0 flex size-8 -translate-y-1/2 items-center justify-center rounded-full border-2 border-ink max-[575px]:translate-y-0",
+                    isOpen && "bg-ink/10",
+                    iconClassName,
+                  )}
+                >
+                  <span className={cn("relative block size-3", isOpen && "rotate-45")}>
+                    <span className="absolute top-1/2 left-0 h-0.5 w-full -translate-y-1/2 rounded-full bg-current" />
+                    <span className="absolute top-0 left-1/2 h-full w-0.5 -translate-x-1/2 rounded-full bg-current" />
+                  </span>
+                </span>
+              ) : null}
+            </button>
+
+            <div
+              className={`grid transition-[grid-template-rows] duration-400 ease-in-out motion-reduce:duration-0 ${
+                isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+              }`}
+              data-faq-panel
+              id={panelId}
+              role="region"
+              aria-labelledby={triggerId}
+              aria-hidden={!isOpen}
+            >
+              <div className="overflow-hidden">
+                <div className={cn("px-8 pb-6 max-[1199px]:px-5 max-[1199px]:pb-5", panelContentClassName)}>
+                  {mainAnswerContent}
+                </div>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  );
+}

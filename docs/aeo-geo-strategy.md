@@ -751,6 +751,14 @@ Last reviewed: 2026-09-03
 
 Owner: SEO, content, development, leadership, and client success
 
+> Performance note (2026-09-03): The below-the-fold `TestimonialCarousel` and home
+> FAQ `FaqAccordion` are now lazy-hydrated client islands. SSR/SEO is preserved:
+> the first testimonial slide and all six FAQ Q&A pairs still render in the initial
+> server HTML (verified in production output), and FAQPage schema is unchanged. The
+> interactive client code for both islands is code-split into on-demand chunks and
+> mounts only as the user scrolls near each section. Visible layout, wording, and
+> interaction are unchanged.
+
 ### Page role
 
 Primary brand and commercial discovery page for Shopify Plus, Shopify

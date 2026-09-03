@@ -8,6 +8,7 @@ export function HomeFaqSection() {
       heading={homeSectionCopy.homeFaqTitle}
       idPrefix="home-faq"
       items={homeFaqs}
+      lazyAccordion
     />
   );
 }

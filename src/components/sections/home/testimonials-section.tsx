@@ -1,4 +1,5 @@
-import { TestimonialCarousel } from "@/components/sections/testimonial-carousel";
+import { LazyTestimonialCarousel } from "@/components/sections/home/lazy-testimonial-carousel";
+import { TestimonialCarouselPlaceholder } from "@/components/sections/home/testimonial-carousel-placeholder";
 import { Container } from "@/components/ui/container";
 import { SectionDescription } from "@/components/ui/section-description";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -25,7 +26,7 @@ export function TestimonialsSection() {
             {homeSectionCopy.testimonialsDescription}
           </p>
         </div> */}
-        <TestimonialCarousel />
+        <LazyTestimonialCarousel fallback={<TestimonialCarouselPlaceholder />} />
       </Container>
     </section>
   );
