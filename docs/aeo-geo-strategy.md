@@ -3359,42 +3359,55 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Shopify Development Agency (`/shopify-development-agency`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-04
 Owner: SEO, content, development, leadership, sales, and delivery operations
-Primary audience: DTC brands, B2B merchants, store owners, and digital agencies seeking comprehensive Shopify development services, store design, custom apps, migration, performance optimization, and ongoing maintenance.
+Primary audience: DTC brands, B2B merchants, store owners, and digital agencies seeking comprehensive Shopify development services, custom storefronts, Figma implementation, theme customization, integrations, migration, CRO, performance, and ongoing technical support.
 Decision stage: commercial evaluation, capability verification, agency partner selection
 
 ### Page role
 
-Dedicated commercial landing page targeting core search intent for "Shopify Development Agency" and related high-intent ecommerce development queries. Highlights end-to-end Shopify services (Shopify Plus Store Development, Theme Customization, Figma/XD to Shopify, App Integration, Migration, Maintenance, Shopify 2.0 Migration, White Label Development), verified client proof (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0), trusted brand logos, portfolio showcase, 11 client video testimonials, 9 comprehensive buyer FAQs, and direct quote CTA.
+Dedicated commercial landing page targeting core search intent for "Shopify Development Agency" and related high-intent ecommerce development queries. Rebuilt to match the 2026-09-04 live site redesign with 10 structured sections:
+1. Hero with dual eyebrow ("Established in 2006 • Shopify Platinum Partner"), H1, subtitle, description, 2 CTAs, 4 trust badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), and right-column video player (`why-dynamic-dreamz.mp4`).
+2. "Trusted by Leading Brands" 10-logo marquee slider.
+3. 9 stage service cards in an asymmetric 3-column grid (`1.2fr 0.8fr 0.8fr`) with category tags, pills, and CTAs.
+4. 8 featured portfolio showcase projects in a 4-column grid (2-column on mobile with visible circular arrow button) with "View Our Work" button.
+5. Multidisciplinary Shopify team section with dark container (`#192019`) and 4 competency boxes with theme red active card.
+6. 3 flexible engagement pricing plans (Project-Based Custom Quote, Flexible Hourly Support at $25/hour, Dedicated Developer / Team from $2,000/month).
+7. 5-step horizontal development process timeline (Assess, Plan, Develop, QA, Launch & Improve) with numbered circles "01"–"05" and connecting line (stacks vertically on mobile).
+8. "Client Stories" / "Don't Just Take Our Word For It" with 11 video testimonial cards and next/previous controls.
+9. 10 buyer FAQs with rich text markup and first item open by default.
+10. Closing gradient CTA banner linking to `/request-quote`.
 
 ### Target prompts
 
 - Who is the best Shopify development agency for custom ecommerce stores?
 - What services does Dynamic Dreamz provide as a Shopify development agency?
 - Can Dynamic Dreamz convert Figma or Adobe XD designs to a custom Shopify store?
-- How does Shopify 2.0 migration work and why should merchants upgrade?
-- Does Dynamic Dreamz offer white label Shopify development for digital agencies?
-- What are the pricing factors and qualifications to look for in a Shopify development partner?
+- How much does Shopify development cost with Dynamic Dreamz?
+- Does Dynamic Dreamz provide Shopify Plus development and B2B capabilities?
+- What is Dynamic Dreamz's development process from assessment to launch?
 
 ### Current strengths and available evidence
 
-- Server-rendered H1 `Shopify Development Agency` and clear value proposition answering both direct merchants and agency white-label partners.
-- 8 distinct, structured service offerings with icons and direct routing to specialized service pages.
+- Server-rendered H1 `Shopify Development Agency` with clear value proposition answering both direct merchants and digital agencies.
+- 9 distinct, structured service offerings covering all stages (Custom Store Development, Figma/XD Conversion, Theme Customization, App Integration, Migration, Maintenance, 2.0 Migration, White Label, Plus Mobile App).
 - 10 recognized brand logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, SimsDirect, Kvaser, Nekter, Circuit City) in an accessible marquee slider.
-- 6 featured portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier) with platform markers and project links.
-- 11 authentic client video testimonials with direct YouTube modal playback.
-- 3 independent review credentials with live review counts (Clutch 132 reviews, Upwork 2000+ reviews, GoodFirms 72 reviews).
-- 9 buyer FAQs answering key procurement questions (Shopify use cases, features, dropshipping, mobile readiness, agency role, costs, expert selection, qualifications, KPIs).
-- Complete structured data graph emitting Service, OfferCatalog (8 service items), FAQPage (9 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
+- 8 featured portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, Bombay Shirt Company, Holy Plantz, Atolea Jewelry) with platform markers, mobile-responsive 2-column grid, and project links.
+- 4 multidisciplinary team boxes showing certified Shopify developers, UI/UX designers, QA specialists, and integration engineers.
+- 3 transparent pricing engagement options ($25/hour, $2,000/month, custom quote).
+- 5-step structured process timeline with clear milestones.
+- 11 authentic client video testimonials with direct modal playback.
+- 10 comprehensive buyer FAQs answering core agency procurement questions.
+- Complete structured data graph emitting Service, OfferCatalog (9 service items), FAQPage (10 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (8 offers), FAQPage (9 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
-| P0 | implemented | Local assets | Service icons, brand logos, portfolio assets, and testimonials must be locally hosted | Save canonical local assets and deduplicate them | Verified locally with 0 runtime external dependencies |
+| P0 | implemented | Redesign migration | Live site redesigned structure with video hero, stage services grid, team boxes, pricing cards, and process timeline | Remigrate all 10 sections with visual parity, responsive desktop/tablet/mobile layouts, and Server Components | Verified against live site captures 2026-09-04 |
+| P0 | implemented | Route and discovery | Slashless canonical URL policy and SEO metadata limits | Ship slashless route with title (55 chars), description (151 chars), Open Graph card, and robots/sitemap | URL policy and build guards pass |
+| P0 | implemented | Structured data | Updated schema with 9 offers, 10 FAQs, and 11 video objects | Emit Service with OfferCatalog (9 offers), FAQPage (10 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in JSON-LD serialization 2026-09-04 |
+| P0 | implemented | Local assets & deduplication | Dedicated OG card image and local media assets | Reused canonical assets and added unique OG image with 0 duplicates verified | `npm run check:asset-duplicates` passes (0 duplicate hash groups) |
 | P1 | deferred | Content expansion | Minor grammatical improvements in service descriptions | Record proposed improvements in `docs/page-content-improvements.md`; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -3403,18 +3416,18 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 ### Entity, evidence, and authorship actions
 
-- Connect Dynamic Dreamz as a Shopify Platinum Partner founded in 2006 with 150+ specialists and 5000+ projects completed.
+- Connect Dynamic Dreamz as a Shopify Platinum Partner founded in 2006 with 150+ specialists, 4500+ Shopify stores built, and 5000+ projects completed.
 - Attribute client video testimonials directly to their authentic brand owners.
 
 ### Internal-link and conversion actions
 
 - Maintain slashless `/shopify-development-agency` navigation across marketing pages and service menus.
-- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+- Direct conversion actions route to `/request-quote`, `/book-a-discovery-call`, `/buy-shopify-development-hours`, `/shopify-plus-agency`, and `/our-work`.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service with 8 Offer items, 9 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Emit Service with 9 Offer items, 10 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-31T13:14:09+00:00`.
 - Include route in `sitemap.xml` with priority 0.9 and weekly change frequency.
 
 ### Measurement plan
@@ -3424,8 +3437,8 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-development-agency`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, metadata limits, JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-04): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-development-agency`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, desktop/tablet/mobile screenshots (1440x900, 768x1024, 390x844), JSON-LD graph verification, zero duplicate assets audit, component content boundary check, lint, and production build.
 
 ## Shopify Migration (`/shopify-migration`)
 

@@ -1,44 +1,55 @@
-import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
+import { ShopifyHorizontalProcessSection } from "@/components/sections/shopify-horizontal-process-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
+import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
+import { ShopifyStageServicesSection } from "@/components/sections/shopify-stage-services-section";
+import { ShopifyTeamBoxesSection } from "@/components/sections/shopify-team-boxes-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import {
+  shopifyDevelopmentAgencyBrandConfig,
   shopifyDevelopmentAgencyBrands,
+  shopifyDevelopmentAgencyBrandsHeading,
   shopifyDevelopmentAgencyCtaBanner,
   shopifyDevelopmentAgencyFaqs,
   shopifyDevelopmentAgencyHero,
   shopifyDevelopmentAgencyPortfolio,
+  shopifyDevelopmentAgencyPricing,
+  shopifyDevelopmentAgencyProcess,
   shopifyDevelopmentAgencyServices,
+  shopifyDevelopmentAgencyTeam,
   shopifyDevelopmentAgencyTestimonials,
 } from "@/content/shopify-development-agency";
-
-const brandSection = {
-  slug: "shopify-development-agency",
-  brands: {
-  },
-} as const;
 
 export function ShopifyDevelopmentAgencyPage() {
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
-        content={shopifyDevelopmentAgencyHero}
-      />
+      <ServiceHeroVideoSection content={shopifyDevelopmentAgencyHero} />
       <IndustryBrandsSection
-        content={brandSection}
+        content={shopifyDevelopmentAgencyBrandConfig}
+        heading={shopifyDevelopmentAgencyBrandsHeading}
         items={shopifyDevelopmentAgencyBrands}
       />
-      <AgencyServicesSection content={shopifyDevelopmentAgencyServices} />
+      <ShopifyStageServicesSection content={shopifyDevelopmentAgencyServices} />
       <PortfolioShowcaseSection
-        className="our-work-sec pt-20 pb-20 max-[992px]:pt-10"
+        className="our-work-sec pt-20 pb-20 max-[992px]:pt-10 max-[767px]:pt-0"
+        columns={4}
         content={shopifyDevelopmentAgencyPortfolio}
+        headerLayout="split"
+        mobileColumns={2}
+        sectionId="our_work"
+        showMobileArrow={true}
+        variant="liveGrid"
       />
+      <ShopifyTeamBoxesSection content={shopifyDevelopmentAgencyTeam} />
+      <PricingTableSection content={shopifyDevelopmentAgencyPricing} />
+      <ShopifyHorizontalProcessSection content={shopifyDevelopmentAgencyProcess} />
       <HappyClientSection
+        className="pt-0 max-[992px]:pt-0"
         description={shopifyDevelopmentAgencyTestimonials.description}
+        eyebrow={shopifyDevelopmentAgencyTestimonials.eyebrow}
         heading={shopifyDevelopmentAgencyTestimonials.heading}
         items={shopifyDevelopmentAgencyTestimonials.items}
       />
@@ -54,3 +65,4 @@ export function ShopifyDevelopmentAgencyPage() {
     </div>
   );
 }
+

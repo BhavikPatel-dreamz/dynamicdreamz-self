@@ -2,13 +2,54 @@ import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const shopifyDevelopmentAgencyHero = {
+  eyebrow: "Established in 2006 • Shopify Platinum Partner",
+  eyebrowSpans: ["Established in 2006", "Shopify Platinum Partner"] as const,
   title: "Shopify Development Agency",
-  description:
-    "Are you finding the best Shopify development agency for your Shopify development work? Dynamic Dreamz offers Shopify development services, including custom store design, app integration, migration to Shopify, and performance optimization. Our Shopify experts ensure smooth user experiences, customized functionalities, and scalable Shopify solutions. We help businesses succeed in the competitive online marketplace from initial setup to ongoing support.",
-  secondaryDescription:
-    "If you’re a digital agency seeking a reliable partner or an individual store owner who wants to create or enhance your Shopify store, our team of expert Shopify developers and designers is here to convert your dream into reality.",
-  ctaLabel: "request a quote",
-  ctaHref: "/request-quote",
+  subtitle: "Custom Shopify development for brands that need more than a theme setup.",
+  paragraphs: [
+    "Dynamic Dreamz designs, develops, migrates and continuously improves Shopify stores for DTC brands, ecommerce businesses and digital agencies. Our Shopify development services cover custom storefronts, Figma implementation, theme customization, integrations, migration, CRO, performance and ongoing technical support.",
+  ],
+  cta: "Discuss Shopify Project",
+  ctaHref: "/book-a-discovery-call",
+  secondaryCta: {
+    label: "Explore Shopify Services",
+    href: "#shopify-services",
+  },
+  video: "/assets/home/why-dynamic-dreamz.mp4",
+  badges: [
+    {
+      label: "Shopify Platinum Partner",
+      icon: "/assets/proof/shopify-platinum-partner.svg",
+      alt: "Dynamic Dreamz - Shopify Platinum Partner",
+      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+      width: 136,
+      height: 44,
+    },
+    {
+      label: "Clutch 130+ Reviews",
+      icon: "/assets/proof/clutch-rating.svg",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      href: "https://clutch.co/profile/dynamic-dreamz",
+      width: 111,
+      height: 44,
+    },
+    {
+      label: "Trustpilot 4.9",
+      icon: "/assets/proof/trustpilot-rating.svg",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 rating",
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+      width: 148,
+      height: 50,
+    },
+    {
+      label: "Upwork Top Rated Plus",
+      icon: "/assets/proof/upwork-top-rated-plus.svg",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      href: "https://www.upwork.com/ag/dynamicdreamz/",
+      width: 126,
+      height: 54,
+    },
+  ],
 } as const;
 
 export const shopifyDevelopmentAgencyBrands = [
@@ -24,86 +65,137 @@ export const shopifyDevelopmentAgencyBrands = [
   { src: "/assets/clients/circuit-city.svg", href: "https://circuitcity.com/", alt: "Circuit City Logo", width: 64, height: 64 },
 ] as const;
 
-export const shopifyDevelopmentAgencyServices = {
-  heading: "What We Provide",
-  description:
-    "Unlock the full potential of your Shopify store with the top-notch Shopify Development Agency. We provide a wide range of Shopify development services for your online business. Hire our Shopify expert to convert your dream into reality!",
-  items: [
-    {
-      icon: "/assets/shopify-plus-agency/icons/shopify-plus-icon.svg",
-      iconAlt: "shopify plus icon",
-      title: "Shopify Plus Store Development Service",
-      description:
-        "We are a top notch Shopify Plus development company, and we have come a long way with Shopify Plus development. We effectively integrate the features of Shopify Plus so that your online store excels in functionality and user experience, driving growth and maximizing your return on investment.",
-      href: "/shopify-plus-agency",
-    },
-    {
-      icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
-      iconAlt: "theme customization icon",
-      title: "Shopify Theme Customization Service",
-      description:
-        "We specialize in tailoring Shopify themes to meet your unique business needs, ensuring your online store stands out. Our team of Shopify experts can modify and enhance themes like Dawn, Impulse, Expanse, Refresh, Prestige, and many others to reflect your brand’s identity and improve user experience. Whether you need design adjustments, feature additions, or performance optimizations, we provide comprehensive customization solutions to help you achieve your eCommerce goals.",
-      href: "/shopify-theme-customization",
-    },
-    {
-      icon: "/assets/services/shopify-development-agency/figma-conversion-icon.svg",
-      iconAlt: "figma conversion icon",
-      title: "Figma/XD to Shopify Conversion",
-      description:
-        "Transform your Figma designs into fully functional Shopify stores with ease. Our Shopify expert team specializes in Figma to Shopify conversion, ensuring pixel perfect accuracy, responsive design, and optimized performance. We handle every detail to ensure your eCommerce site looks and functions perfectly. Elevate your online business with our professional Figma to Shopify conversion services and stand out in the digital marketplace.",
-    },
-    {
-      icon: "/assets/services/shopify-development-agency/app-integration-icon.svg",
-      iconAlt: "app integration icon",
-      title: "Shopify App Integration Service",
-      description:
-        "Suppose you can’t find any Shopify themes matching your needs. In that case, our custom Shopify theme development service can create an exclusively crafted theme that perfectly fits your requirements. From concept to launch, we ensure your custom Shopify theme enhances user experience, boosts engagement, and drives sales.",
-    },
-    {
-      icon: "/assets/hire-shopify-developers/icons/shopify-migration.svg",
-      iconAlt: "Migration Icon",
-      title: "Shopify Migration Service",
-      description:
-        "Our Shopify migration service smoothly transfers data from your existing platform to Shopify. As India's best Shopify development company, We transfer your customer data, products, and content without harming your store's SEO ranking and functionality.",
-      href: "/shopify-migration",
-    },
-    {
-      icon: "/assets/services/wordpress/wordpress-maintenance.svg",
-      iconAlt: "maintenance icon",
-      title: "Shopify Maintenance Service",
-      description:
-        "Dynamic Dreamz offers end to end Shopify maintenance service, ensuring your online store runs smoothly. We provide ongoing support for a seamless eCommerce experience, from updates and security to performance optimization.",
-      href: "/shopify-maintenance-services",
-    },
-    {
-      icon: "/assets/services/shopify-development-agency/shopify-upgrading-icon.svg",
-      iconAlt: "shopify upgrading icon",
-      title: "Shopify 2.0 Migration Service",
-      description:
-        "Upgrading from an older version of Shopify or an outdated theme to Shopify 2.0 can benefit your business. Contact us for our Shopify 2.0 migration service to keep your online store up to date, ensuring optimal performance, access to new features, and compatibility with the latest apps, providing a better experience for you and your customers.",
-      href: "/migrating-a-theme-to-online-store-2-0",
-    },
-    {
-      icon: "/assets/services/wordpress/wordpress-white-label-development.svg",
-      iconAlt: "White Label icon",
-      title: "Shopify White Label Development Service",
-      description:
-        "Maintain your brand's integrity with our white label Shopify development service. We work behind the scenes to ensure your clients receive the best service without ever knowing an external team is involved.",
-      href: "/white-label-shopify-development-services",
-    },
-  ],
-  cta: {
-    label: "Let me give you a hand to help you",
-    href: "/request-quote",
-    ariaLabel: "Dynamic Dreamz - Let me give you a hand to help you",
+export const shopifyDevelopmentAgencyBrandsHeading = "Trusted by <br>Leading Brands";
+
+export const shopifyDevelopmentAgencyBrandConfig = {
+  slug: "shopify-development-agency",
+  brands: {
+    ariaLabel: "Brands that trust Dynamic Dreamz",
   },
 } as const;
 
+export const shopifyDevelopmentAgencyServices = {
+  eyebrow: "Shopify Development Services",
+  heading: "Shopify development for every stage",
+  description:
+    "Dynamic Dreamz is a Shopify Platinum Partner and Shopify development agency helping brands build, redesign, migrate and continuously improve Shopify stores. Our team covers the core development needs behind a modern Shopify storefront without turning this page into a long service catalogue.",
+  items: [
+    {
+      tag: "Core Capability",
+      title: "Custom Shopify Store Development",
+      description:
+        "Build a flexible Shopify storefront around your brand, products and customer journey. We develop reusable sections, tailored PDP and collection experiences, responsive interactions, custom functionality and merchant-friendly theme architecture.",
+      pills: [
+        "Online Store 2.0",
+        "PDP / PLP",
+        "Custom Sections",
+        "Metafields",
+        "Responsive QA",
+      ],
+      cta: {
+        label: "Discuss a custom build",
+        href: "/request-quote",
+      },
+    },
+    {
+      tag: "Design to Storefront",
+      title: "Figma/XD to Shopify Conversion",
+      description:
+        "Turn approved Figma or XD designs into responsive Shopify storefronts with reusable sections, accurate responsive states and performance-conscious front-end development.",
+      pills: [],
+      cta: {
+        label: "Send your design brief",
+        href: "/request-quote",
+      },
+    },
+    {
+      tag: "Improve Existing Theme",
+      title: "Shopify Theme Customization Service",
+      description:
+        "Improve Dawn, Prestige, Impulse and other Shopify themes with better UX, new sections, custom functionality and responsive refinements.",
+      pills: [],
+      cta: {
+        label: "Explore theme customization",
+        href: "/shopify-theme-customization",
+      },
+    },
+    {
+      tag: "Connected Commerce",
+      title: "Shopify App Integration Service & Custom Functionality",
+      description:
+        "Connect subscriptions, reviews, search, loyalty, payments, fulfillment, ERP, CRM and operational tools — or build custom functionality when standard apps do not fit the requirement.",
+      pills: [
+        "Apps",
+        "APIs",
+        "ERP / CRM",
+        "Automation",
+        "Custom Logic",
+      ],
+      cta: null,
+    },
+    {
+      tag: "Replatforming",
+      title: "Shopify Migration Service",
+      description:
+        "Move products, customers, orders and content to Shopify with URL mapping, 301 redirects, SEO preservation, integration planning and staged launch validation.",
+      pills: [],
+      cta: {
+        label: "Explore migration",
+        href: "/shopify-migration",
+      },
+    },
+    {
+      tag: "Keep Evolving",
+      title: "Shopify Maintenance Service",
+      description:
+        "Ongoing fixes, features, theme updates, app changes, CRO implementation and performance improvements for live Shopify stores.",
+      pills: [],
+      cta: {
+        label: "View flexible Shopify hours",
+        href: "/buy-shopify-development-hours",
+      },
+    },
+    {
+      tag: "Modernize",
+      title: "Shopify 2.0 Migration Service",
+      description:
+        "Upgrade legacy themes and older setups to modern Online Store 2.0 architecture with flexible sections, metafields, metaobjects and a cleaner foundation for future development.",
+      pills: [],
+      cta: null,
+    },
+    {
+      tag: "Agency Delivery",
+      title: "Shopify White Label Development Service",
+      description:
+        "Shopify delivery behind digital and creative agencies, with NDA-friendly collaboration, structured QA and flexible development capacity.",
+      pills: [],
+      cta: {
+        label: "Explore white-label Shopify",
+        href: "/white-label-shopify-development-services",
+      },
+    },
+    {
+      tag: "Agency Delivery",
+      title: "Shopify Plus Mobile App Development.",
+      description:
+        "Build high-performance iOS and Android shopping apps integrated with Shopify Plus, including real-time products, customer accounts, checkout, push notifications and loyalty features.",
+      pills: [],
+      cta: {
+        label: "Explore Shopify Mobile Apps",
+        href: "/shopify-mobile-app-development",
+      },
+    },
+  ],
+} as const;
+
 export const shopifyDevelopmentAgencyPortfolio = {
-  heading: "Glimpses of Our Shopify Development",
+  eyebrow: "Portfolio",
+  heading: "Explore Our Work",
   description:
     "We've come across to work on quite a few challenging and critical issues in our professional journey and have come up with outstanding solutions! Whether it's a startup of a Fortune 500 company, every site we have developed has surpassed the client's expectations.",
   category: "SHOPIFY",
+  ctaLabel: "View Our Work",
+  ctaHref: "/portfolio",
   platformMark: {
     src: "/assets/platforms/shopify-white.svg",
     width: 89,
@@ -112,95 +204,220 @@ export const shopifyDevelopmentAgencyPortfolio = {
   items: [
     {
       name: "Nufyx",
+      category: "SHOPIFY",
       image: "/assets/healthcare/portfolio/nufyx-protein-products.webp",
-      imageAlt: "Nufyx",
+      imageAlt: "Nufyx Image",
       href: "https://nufyx.com/",
     },
     {
       name: "Nekter Juice Bar",
+      category: "SHOPIFY PLUS",
       image: "/assets/food-beverages/portfolio/nekter-juice-bar.webp",
-      imageAlt: "Nekter Juice Bar",
+      imageAlt: "nekter juice bar Image",
       href: "https://www.nekterjuicebar.com/",
     },
     {
       name: "Pagerie",
+      category: "SHOPIFY",
       image: "/assets/pet-industry/portfolio/pagerie-dog-accessories.webp",
-      imageAlt: "Pagerie",
+      imageAlt: "Pagerie Image",
       href: "https://www.pagerie.com/",
     },
     {
       name: "Luxxi Nails",
+      category: "SHOPIFY",
       image: "/assets/beauty-cosmetics/portfolio/luxxi-nails.webp",
-      imageAlt: "Luxxi Nails",
+      imageAlt: "Luxxi nails Image",
       href: "https://luxxinails.com/",
     },
     {
       name: "Eco Soul",
+      category: "SHOPIFY",
       image: "/assets/our-work/projects/eco-soul.webp",
-      imageAlt: "Eco Soul",
+      imageAlt: "Eco Soul Image",
       href: "https://www.ecosoulhome.com/",
     },
     {
-      name: "AdHOC Atelier",
-      image: "/assets/hire-shopify-developers/portfolio/adhoc-atler.webp",
-      imageAlt: "AdHOC Atelier",
-      href: "https://adhocatelier.it/",
+      name: "Bombay Shirt Company",
+      category: "SHOPIFY",
+      image: "/assets/our-work/projects/bombay-shirt-company-model.webp",
+      imageAlt: "Bombay Shirt Company Image",
+      href: "https://www.bombayshirts.com/",
+    },
+    {
+      name: "Holy Plantz",
+      category: "SHOPIFY",
+      image: "/assets/our-work/projects/holy-plantz.webp",
+      imageAlt: "Holy Plantz Image",
+      href: "https://holyplantz.com/",
+    },
+    {
+      name: "Atolea Jewelry",
+      category: "SHOPIFY PLUS",
+      image: "/assets/our-work/projects/atolea-jewelry.webp",
+      imageAlt: "Atolea Jewelry Image",
+      href: "https://atoleajewelry.com/",
+    },
+  ],
+} as const;
+
+export const shopifyDevelopmentAgencyTeam = {
+  eyebrow: "More Than One Developer",
+  heading: "A Shopify team around your project",
+  description:
+    "Great Shopify work often needs more than development alone. Dynamic Dreamz brings certified Shopify developers, UI/UX designers, QA specialists and technical support into one coordinated team — helping protect design intent, functionality and launch quality without making you manage multiple vendors.",
+  items: [
+    {
+      title: "Certified Shopify Developers",
+      description:
+        "Custom storefronts, Liquid and theme architecture, Shopify functionality and ongoing development.",
+    },
+    {
+      title: "UI/UX & Figma",
+      description:
+        "Design interpretation, responsive states, PDP/PLP experiences and implementation detail.",
+    },
+    {
+      title: "QA & Project Coordination",
+      description:
+        "Functional, device and browser testing with clear milestones, communication and delivery oversight.",
+    },
+    {
+      title: "Integration & Technical Support",
+      description:
+        "Apps, APIs, ERP/CRM, custom systems and full-stack support when the Shopify project requires it.",
+    },
+  ],
+} as const;
+
+export const shopifyDevelopmentAgencyPricing = {
+  eyebrow: "Flexible Shopify Engagements",
+  heading: "Choose the Right Shopify Development Engagement.",
+  description:
+    "Start with one Shopify Plus project, use flexible hourly support, or add a dedicated developer / team around your ongoing ecommerce roadmap.",
+  items: [
+    {
+      label: "Project-Based",
+      badge: "Have One Project?",
+      price: "Custom Quote",
+      description:
+        "For complete Shopify Plus builds, migrations, redesigns, B2B requirements, custom apps, integrations and technically complex ecommerce projects.",
+      ctaLabel: "Send Brief — Get a Quote in 24 Hours",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Flexible Hourly Support",
+      badge: "Need Extra Shopify Capacity?",
+      price: "$25/hour",
+      description:
+        "For ongoing maintenance, enhancements, troubleshooting, performance improvements and changing Shopify Plus development requirements.",
+      ctaLabel: "Buy Shopify Development Hours",
+      ctaHref: "/buy-shopify-development-hours",
+    },
+    {
+      label: "Dedicated Developer / Team",
+      badge: "Need Ongoing Capacity?",
+      price: "From $2,000/month",
+      description:
+        "For brands with a steady Shopify roadmap, multiple storefronts or a need for a dedicated developer or wider delivery team.",
+      ctaLabel: "Discuss a Dedicated Team",
+      ctaHref: "/book-a-discovery-call",
+    },
+  ],
+} as const;
+
+export const shopifyDevelopmentAgencyProcess = {
+  eyebrow: "Our Shopify Development Process",
+  heading: "Built for quality and launch stability",
+  description:
+    "We validate the brief, plan the Shopify build, develop in stages, QA across devices and support launch — keeping design intent and technical quality aligned from start to finish.",
+  steps: [
+    {
+      number: "01",
+      title: "Assess",
+      description: "Goals, current setup, requirements and technical constraints.",
+    },
+    {
+      number: "02",
+      title: "Plan",
+      description: "Templates, reusable sections, integrations and delivery milestones.",
+    },
+    {
+      number: "03",
+      title: "Develop",
+      description: "Build in staging with scalable, manageable Shopify components.",
+    },
+    {
+      number: "04",
+      title: "QA",
+      description: "Functionality, responsive behavior, browsers and launch-readiness checks.",
+    },
+    {
+      number: "05",
+      title: "Launch & Improve",
+      description: "Go-live support followed by fixes, CRO, performance and ongoing development.",
     },
   ],
 } as const;
 
 export const shopifyDevelopmentAgencyTestimonials = {
+  eyebrow: "Client Stories",
   heading: "Don't Just Take Our Word For It",
   description:
-    "We have faith in our work, but what truly matters is the outcomes we serve our clients.<br> Happy clients make happy stories. Check out how our services empower them to evolve.",
+    "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve.",
   items: shopifyPlusAgencyTestimonials.items,
 } as const;
 
 export const shopifyDevelopmentAgencyFaqs: readonly FaqAccordionItem[] = [
   {
-    question: "What is Shopify used for?",
+    question: "Is Dynamic Dreamz a Shopify development agency?",
     answer:
-      "Shopify is a prominent eCommerce platform for all businesses that want to create online stores. Shopify is used to build an online store and run an eCommerce business. You can use Shopify's suite of tools to manage your inventory, accept online payments, ship products, and more.",
+      "Yes. Dynamic Dreamz is a <strong>Shopify Platinum Partner and Shopify development agency</strong> established in 2006. We help brands and digital agencies build, redesign, migrate, integrate and continuously improve Shopify stores.",
   },
   {
-    question: "What are the key features of Shopify and Shopify Plus?",
+    question: "What Shopify development services does Dynamic Dreamz provide?",
     answer:
-      "Shopify supports different categories of business. Shopify is the most secure, self hosted, and easy to set up eCommerce platform. Shopify provides 24/7 customer support. Shopify websites are SEO friendly. Shopify offers a variety of stunning products for different categories of business. Shopify also provides ample design customization and plugins.",
+      "We provide custom Shopify store development, Figma/XD to Shopify conversion, theme development and customization, app integrations, migrations, Shopify 2.0 theme upgrades, CRO, performance improvements, maintenance and white-label Shopify development.",
   },
   {
-    question: "What is a Dropshipping business and why Shopify is used for such a business?",
+    question: "Why hire a Shopify development agency instead of one developer?",
     answer:
-      "Dropshipping is an order fulfillment option that allows ecommerce businesses to outsource the processes of procuring, storing, and shipping products to a third party—typically a supplier.\n\nShopify is a preferred choice for dropshipping businesses. With seamless integration of numerous apps, it lets you easily import products from various suppliers directly into your Shopify store. It eliminates the need for physical inventory and simplifies inventory management and shipping logistics.",
+      "A larger Shopify project often needs development, design interpretation, QA, project coordination and integration knowledge.<br />Dynamic Dreamz brings the right mix of specialists around the project instead of expecting one developer to cover every discipline.",
   },
   {
-    question: "Are Shopify websites mobile friendly?",
+    question: "Can Dynamic Dreamz build a Shopify store from Figma or customize an existing theme?",
     answer:
-      "When it comes to mobile friendly websites, Shopify's themes guarantee an exceptional user experience on any device. No matter if they’re browsing on a smartphone, tablet, or desktop, your customers can easily navigate and view with optimal performance.",
+      "Yes. We implement approved Figma/XD designs in Shopify and customize existing themes with reusable sections, product and collection templates, responsive behavior and custom functionality.",
   },
   {
-    question: "What is a Shopify development agency?",
+    question: "Can you migrate Magento, WooCommerce or BigCommerce to Shopify without losing SEO?",
     answer:
-      "A Shopify development agency or Shopify developer is a web development business specializing in developing online stores using Shopify or Shopify Plus platforms. Such agencies offer web design, marketing, content creation, SEO, and more services. They also provide tech support and post installation services to their clients.",
+      "We plan migrations around data transfer, URL mapping, 301 redirects, metadata, canonical handling, analytics validation and launch QA. No migration can guarantee unchanged rankings, but SEO preservation is treated as a core part of the replatforming process.",
   },
   {
-    question: "How much does it cost to hire a Shopify expert?",
+    question: "How much does Shopify development cost with Dynamic Dreamz?",
     answer:
-      "It is an obvious question. Generally, a project's cost depends on the project's scope, major client requirements, customization, and location. Depending upon their expertise and ranking by rating agencies like Clutch and Upwork, it also varies from one Shopify expert to another.\n\nProject costs can be decided on; either you hire Shopify experts hourly or opt to outsource the entire project with a Shopify development agency.",
+      "Cost depends on scope and engagement model. We offer project-based custom quotes, flexible Shopify development support from $25/hour, and dedicated Shopify developer or team options from $2,000/month.",
   },
   {
-    question: "Which type of specific Shopify expert do I need?",
+    question: "How long does a Shopify development project take?",
     answer:
-      "It depends on the requirements of your project. You must have crystal clear goals for what you want to achieve through your online store. You need to carry out a SWOT analysis of your business, which will help you find the best Shopify expert for your project. You can also hire a Shopify development agency for a better quality of work and a professional touch.",
+      "Timeline depends on design readiness, catalog size, custom functionality, migration requirements and integrations. After reviewing the scope, Dynamic Dreamz provides milestones and a realistic delivery plan rather than applying one timeline to every project.",
   },
   {
-    question: "What qualifications should I look for in a Shopify expert?",
+    question: "Does Dynamic Dreamz provide ongoing Shopify maintenance and support?",
     answer:
-      "Your Shopify expert must have: Relevant experience in handling Shopify projects; A diversified portfolio of projects undertaken by the Shopify developer; Excellent communication skills: A Shopify expert should thoroughly understand your business requirements, and in turn, he should be able to convert them into technical specifications; The Shopify expert must be aware of the latest trends in the industry.",
+      "Yes. We support live Shopify stores with fixes, theme updates, new features, app changes, CRO implementation, performance improvements, integrations and ongoing development capacity.",
   },
   {
-    question: "How can I measure the success of my Shopify expert partnership?",
+    question: "Does Dynamic Dreamz provide Shopify Plus development?",
     answer:
-      "It's no secret that eCommerce website development requires careful monitoring. Without some form of tracking, projects may go off the direction. Therefore, tracking metrics and key performance indicators (KPIs) are essential tools to ensure that goals are being achieved, performance issues are resolved on time, and opportunities for improvement can be identified.\n\nKPIs in store development serve as a guiding light for taking the right course of action. Like navigating an uncharted sea, these indicators provide the relative insights necessary for each situation. At the same time, store metrics help businesses bridge the gap between quality and product development.\n\nKnowing which key performance indicators (KPIs) and online store development metrics are essential when developing a successful website can be incredibly helpful for better understanding your projects' success.",
+      "Yes. High-growth, B2B and enterprise requirements are supported through our dedicated <a href=\"/shopify-plus-agency\">Shopify Plus Agency</a> capability, including B2B, migrations, integrations, checkout extensibility and ongoing technical support.",
+  },
+  {
+    question: "Where is Dynamic Dreamz based, and do you work with global Shopify clients?",
+    answer:
+      "Dynamic Dreamz is an India-based Shopify development company serving brands and agencies globally. Project communication and delivery are structured around client requirements and working time zones.",
   },
 ];
 
@@ -209,3 +426,4 @@ export const shopifyDevelopmentAgencyCtaBanner = {
   ctaLabel: "REQUEST A QUOTE",
   ctaHref: "/request-quote",
 } as const;
+

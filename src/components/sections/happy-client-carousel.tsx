@@ -24,6 +24,20 @@ const baseSettings: Settings = {
   speed: 500,
   slidesToScroll: 1,
   swipeToSlide: true,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
 };
 
 const controlButtonClassName =

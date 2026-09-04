@@ -1,58 +1,59 @@
-﻿# Shopify Development Agency Page
+# Shopify Development Agency Page
 
 Live URL: https://www.dynamicdreamz.com/shopify-development-agency/
 Local route: /shopify-development-agency
-Date checked: 2026-08-19
-Browser/source: Google Chrome headless inspection, rendered live page + View Page Source, live page-specific CSS (ssets/css/services/main.css, ssets/css/services/media.css, ssets/css/default-media.css, style.css), live JS (ssets/js/custom.js, ssets/js/services.js), and local component/asset audit.
+Date checked: 2026-09-04
+Browser/source: Headless Google Chrome full & viewport captures, rendered live DOM inspection (`scratch/live-page.html`, `scratch/live-main-content.html`), section CSS extraction (`scratch/css/hero_new_section.css`, `scratch/css/shopify_development_services.css`, `scratch/css/our_work_section.css`, `scratch/css/shopify_team_boxes.css`, `scratch/css/shopify_development_process.css`, `scratch/css/client_review_section.css`, `scratch/css/faqs_section.css`), visual slice comparison (`scratch/compare-hero.png`, `compare-services.png`, `compare-portfolio.png`, `compare-team-pricing.png`, `compare-process-testi.png`, `compare-faq-cta.png`, `compare-mob-hero.png`, `compare-mob-work.png`, `compare-mob-bottom.png`), and local component/asset audit.
 
 ## Viewports
 
 | Viewport | Status |
 | --- | --- |
-| 1440x900 (Desktop) | Verified layout structure, heading hierarchy, 2-column hero with 420px animated review wheel, 10 brand logos marquee, 8 service cards, 6 portfolio showcase cards, 11 video testimonials slider, 9 FAQ accordions, and bottom CTA banner. |
-| 768x1024 (Tablet) | Verified responsive stacking, 420px review wheel centered below hero text, 3-visible brand logos, 2-column service cards, 2-column portfolio cards, 2-item testimonial carousel, and touch-friendly FAQ accordions. |
-| 390x844 (Mobile) | Verified single-column hero with 275px scaled review wheel, 2-visible brand logos, single-column service cards, single-column portfolio cards, 1-item testimonial carousel, and full-width CTA banner. |
+| 1440x900 (Desktop) | Verified redesigned layout: 2-column hero with video player and 4 proof badges, 10-logo marquee, 9 stage service cards (asymmetric 3-col grid with 2-row span Card 1, 2-col span Cards 4 & 8), 8 portfolio showcase cards in 4-column grid, 4 dark team boxes with red active card, 3 engagement pricing cards, 5-step horizontal process timeline, 11 video testimonials carousel, 10 FAQ accordions (first active), and gradient CTA banner. |
+| 768x1024 (Tablet) | Verified responsive stacking: hero video hidden on tablet per live CSS (`.video-wrapper { display: none }` ≤991px), centered hero content and button group, 2-column service cards, 2-column portfolio cards, 2-column team boxes, 2-column pricing cards, horizontal process timeline, 2-item testimonial carousel, and touch-friendly FAQ accordions. |
+| 390x844 (Mobile) | Verified single-column hero with single-line eyebrow (`— ESTABLISHED IN 2006 • SHOPIFY PLATINUM PARTNER`), 2x2 proof badge grid with gray container for Clutch/Upwork, single-column service cards with tags & pills, 2-column portfolio cards with visible circular arrow button, single-column team cards, single-column pricing cards, vertical process timeline with numbered circles & connecting line, 1-item testimonial carousel, and full-width CTA banner. |
 
 ## Sources Inspected
 
 | Source | What was checked |
 | --- | --- |
-| Rendered live page and View Page Source | Title, description, canonical, publish/modified dates, Open Graph, Yoast JSON-LD, H1, hero copy, review animation markup (3 inline wordmark SVGs + star SVGs + review pills), 10 brand logo links, 8 service cards (What We Provide), 6 portfolio cards (Glimpses of Our Shopify Development), 11 video testimonials (Don't Just Take Our Word For It), 9 FAQ items, and bottom CTA banner (Want us to help you with your online store?). |
-| Live ssets/css/services/main.css | .inner-hero-sec (pt 190px, pb 55px, #fff, overflow hidden), .inner-wrapper flex (left 55.7% / right 41%), .inner-hero-content h1 (base h1 50px/66px/700/-1px Montserrat), .review_animation 420px circle opacity .8 absolute top/left/right 0, .review_animation.active relative z-1, wrapper/ratings/pill transitions, .review_total_ratings a red pill (border-radius 60.664px, 19.413px/700, padding 8px 18px), .our-client-sec (32px py, bg --bg-theme-color #fbf7ed, left 33% / right 67%, 84px logo rail), .what-we-provide-sec heading-text (title 41% / text 55%), .services-box 2-col cards (50% width, 8px padding, hover translateY(-10px), .services-text gradient border on hover), .our-work-sec (.our-work-main 3-col, 15px column gap, 60px row gap, .ourwork_team_image pb 115%, overlay gradient rgba(0,0,0,.4), View Project slides to bottom 30px on hover, .project-cate platform mark top-right fade/translate, .ourwork_team_content h6 eyebrow rgba(0,0,0,.7) 19.6px tracking 1.12px uppercase + h4 18px/700), .happy-client-sec (.happy-client-col 15px radius 1px #d9d9d9, .card-item min-height 324px, .client-img 100% cover + rgba(0,0,0,.3) overlay, .client-name white pill radius 30px 16px/600, .play-video 76px centered with pulse-border keyframe, .qoute-icon top-right 46x40, .client-review-text 16px/400 28.64px padding 33px 36px 39px), .faq-sec (.accrodion-item 10px radius 1.3px #efefef border, .accrodion-title 24px 70px 24px 32px padding, plus/minus 32px icon, .accrodion-content 16px/500/32px #535353, first item open), .request-banner (gradient bg, center aligned CTA). |
-| Live ssets/css/services/media.css | ≤1199px: h1 40/50, p 16/30.4, left-col 100% centered, right-col 50% margin 50px auto 0, review_animation 420px; ≤991px: right-col 100%, services-box 100%, portfolio 2-col; ≤767px: h1 30/40, review_animation 275px circle, text 14px, logo max 130x40, ratings 15px, portfolio 1-col; ≤359px: h1 34/44. |
-| Live ssets/js/custom.js | Review animation: showNextReview() on load, then every 5000ms; active circle gets zoom-in show active at +100ms, wrapper show at +300ms, 5 star paths show staggered 200ms each, ratings show at 1300ms, pill show at 1600ms; reset removes all classes first; pill 	ranslateY(150px)→0 over 1s cubic-bezier(.95,-.42,.15,1.26). |
-| Live ssets/js/services.js | .owl-carousel.happy-client-slider: items 1 (<767) / 2 (≥767, ≥1200), margin 25 (10 mobile), stagePadding 50 (25 mobile). |
-| Assets | 8 service icons in public/assets/services/shopify-development-agency/, 10 brand logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, SimsDirect, Kvaser, Nekter, Circuit City), 6 portfolio screenshots (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier), 11 testimonial photos and video IDs. |
+| Rendered live page & View Page Source | Title ("Shopify Development Agency & Services | Dynamic Dreamz"), description, canonical (`https://www.dynamicdreamz.com/shopify-development-agency/`), publish/modified dates (`2026-08-31T13:14:09+00:00`), Open Graph card image (`/assets/og/shopify-development-agency.png`), JSON-LD schema, H1, hero copy, 4 proof badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), hero video (`why-dynamic-dreamz.mp4`), 10 brand logos marquee, 9 service cards (Custom Store Development, Figma/XD Conversion, Theme Customization, App Integration, Migration, Maintenance, 2.0 Migration, White Label, Plus Mobile App), 8 portfolio cards (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, Bombay Shirt Company, Holy Plantz, Atolea Jewelry), 4 multidisciplinary team boxes, 3 engagement pricing models ($25/hr support, $2000/mo team, custom quote), 5 process steps (Assess, Plan, Develop, QA, Launch & Improve), 11 video testimonials, 10 FAQs, and bottom CTA banner. |
+| Live CSS (`scratch/css/`) | Extracted CSS rules for `.hero-new-section`, `.shopify-development-services`, `.our-work-sec`, `.shopify-dev-team`, `.white_label_wp_develop_plan_section`, `.shopify-development-process`, `.happy-client-sec`, `.faq-sec`, `.request-banner`. |
+| Assets & Deduplication | Reused canonical assets across `public/assets/` (`why-dynamic-dreamz.mp4`, 4 proof SVGs, 10 brand SVGs, 8 portfolio WebPs). Added unique OG card image `public/assets/og/shopify-development-agency.png`. `npm run check:asset-duplicates` verified 0 duplicate hash groups across 1,677 public assets. |
 
 ## Section Inventory
 
 | Section | Live behavior/style | Local implementation notes |
 | --- | --- | --- |
-| Hero | .inner-hero-sec: left h1 Shopify Development Agency (50/66 → 40/50 → 30/40 → 34/44), 2 paragraphs, equest a quote red pill to /request-quote; right: 3 rotating 420px circles (Clutch #F8DDD7, Upwork #E3F1D5, GoodFirms #D8E5FF) with ratings & review counts; 275px circle ≤767px. | Reused ServiceHeroSection + client ReviewAnimation component with full timing parity; links to internal /request-quote. |
-| Trusted brands | .our-client-sec bg #fbf7ed: Trusted by Leading Brands h2 25px/600 left, 10-logo autoplay rail right (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, SimsDirect, Kvaser, Nekter, Circuit City). | Reused IndustryBrandsSection + ClientLogoSlider with local SVG client assets. |
-| Services (What We Provide) | .what-we-provide-sec heading-text + 8 .services-box cards (Shopify Plus Store Development, Shopify Theme Customization, Figma/XD to Shopify, Shopify App Integration, Shopify Migration, Shopify Maintenance, Shopify 2.0 Migration, Shopify White Label Development) + centered Let me give you a hand to help you red pill. | Reused AgencyServicesSection with typed shopifyDevelopmentAgencyServices. |
-| Portfolio (Glimpses of Our Shopify Development) | .our-work-sec 3-col grid of .our_work_team cards (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier) with SHOPIFY eyebrow, dark hover overlay, and View Project link + View our work CTA. | Reused PortfolioShowcaseSection with typed shopifyDevelopmentAgencyPortfolio. |
-| Testimonials (Don't Just Take Our Word For It) | .happy-client-sec header Don't Just Take Our Word For It + carousel of 11 video testimonial cards (Alec Torelli, William Petz, William ST Baker, Kerri Imrie, Brandon, Shari Leidich, Rebekah Wymer, Thommas Linnrose, Zoe wang, Clinton De Vere, Fernando Arias). | Reused HappyClientSection with shopifyDevelopmentAgencyTestimonials.items. |
-| FAQs | .faq-sec white bg: h2 Frequently Asked Questions + 9 accordion items (first open), plus/minus icon, 16px/500 answers. | Reused FaqSection with shopifyDevelopmentAgencyFaqs. |
-| Closing CTA | .request-banner: gradient banner with Want us to help you with your online store? + REQUEST A QUOTE button. | Reused CtaBannerSection. |
+| 1. Hero | `.hero-new-section`: Eyebrow ("Established in 2006 • Shopify Platinum Partner" rendered with two `<span>` elements, a 30px red line `::before` at desktop / 15px at mobile, and a 3px circular dot separator), H1 ("Shopify Development Agency" in `neue_montrealmedium` 50px/60px desktop, 40px/50px tablet, 30px/40px mobile), H4 subtitle ("Custom Shopify development for brands that need more than a theme setup." in Montserrat 16px/28px), description (16px/28px), 2 pill CTAs (Primary red fill `#ad5151`, secondary outline `#4f4f4f`), 4 trust badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus) separated by vertical `#d9d9d9` borders on desktop and a 2x2 crosshair divider on mobile, and right-column video player (`why-dynamic-dreamz.mp4`, rounded 20px). Video hides on tablet/mobile (<=991px). | Implemented via `ServiceHeroVideoSection` using Server Component with typed props from `shopifyDevelopmentAgencyHero`. Verified parity across 1440px desktop, 768px tablet, and 390px mobile viewports. |
+| 2. Trusted Brands | `.our-client-sec`: "Trusted by Leading Brands" heading with 10-brand logo marquee (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, SimsDirect, Kvaser, Nekter, Circuit City). | Implemented via `IndustryBrandsSection` with `shopifyDevelopmentAgencyBrandConfig` and `shopifyDevelopmentAgencyBrands`. |
+| 3. Stage Services | `.shopify-development-services`: Asymmetric 3-column CSS grid (`1.2fr 0.8fr 0.8fr`) with 9 service cards. Card 1 spans 2 rows with `#f7f4ee` background, red tags, pill badges, and CTA arrow button. Cards 4 and 8 span 2 columns. | Implemented via `ShopifyStageServicesSection` with `shopifyDevelopmentAgencyServices`. |
+| 4. Portfolio Showcase | `.our-work-sec` (`#our_work`): 4-column grid (2-column on mobile) displaying 8 projects with circular arrow button (`showMobileArrow={true}`), category pill, and "View Our Work" button. | Implemented via `PortfolioShowcaseSection` with `cardVariant="ourWorkRefresh"`, `columns={4}`, `mobileColumns={2}`, `showMobileArrow={true}`. |
+| 5. Team Behind It | `.shopify-dev-team`: Dark background (`#192019`) with left-column copy and 4 team boxes. Active card has theme red background (`#ad5151`), others have dark cards with subtle borders. | Implemented via `ShopifyTeamBoxesSection` with `shopifyDevelopmentAgencyTeam`. |
+| 6. Pricing Models | `.white_label_wp_develop_plan_section` (`#our_white_label_pricing`): 3 pricing cards (Project-Based, Flexible Hourly Support from $25/hour, Dedicated Developer / Team from $2,000/month). | Implemented via `PricingTableSection` with `shopifyDevelopmentAgencyPricing`. |
+| 7. Development Process | `.shopify-development-process`: 5-step horizontal timeline (Assess, Plan, Develop, QA, Launch & Improve) with numbered circles "01"–"05" and connecting line. Stacks vertically on mobile. | Implemented via `ShopifyHorizontalProcessSection` with `shopifyDevelopmentAgencyProcess`. |
+| 8. Client Stories | `.happy-client-sec`: Eyebrow "Client Stories", H2 "Don't Just Take Our Word For It", carousel with 11 video testimonial cards and next/previous controls. | Implemented via `HappyClientSection` with `shopifyDevelopmentAgencyTestimonials`. |
+| 9. FAQs | `.faq-sec`: "Frequently Asked Questions" heading with 10 accordion items (first item open by default), plus/minus icon, and rich text answer markup. | Implemented via `SplitFaqSection` with `shopifyDevelopmentAgencyFaqs`. |
+| 10. Closing CTA | `.request-banner`: Gradient background with "Want us to help you with your online store?" and "REQUEST A QUOTE" button linking to `/request-quote`. | Implemented via `CtaBannerSection` with `shopifyDevelopmentAgencyCtaBanner`. |
 
 ## Motion And Interaction
 
 | State | Live behavior | Local behavior | Result |
 | --- | --- | --- | --- |
-| Initial | First review circle activates on load with timed animations | Replicated with effect timers in ReviewAnimation | verified |
-| Rotating | Circles swap every 5000ms; paused under prefers-reduced-motion | Replicated | verified |
-| Service cards hover | translateY(-10px) over .3s, gradient border | CSS transition + gradient border pseudo | verified |
-| Portfolio hover | 40% black overlay, View Project rises to 30px, platform mark fades in | Matches PortfolioProjectCard | verified |
-| Testimonials carousel | Drag/swipe carousel with responsive slide count (1 on mobile, 2 on desktop) | react-slick configured to match live owl-carousel | verified |
-| Accordion | First item open; plus/minus swap | FaqAccordion | verified |
-| Brands rail | Autoplay every 2s, no hover pause | ClientLogoSlider industry variant | verified |
+| Hero video | Autoplays muted, loops continuously, playsinline | Implemented with native video element | verified |
+| Brand marquee | Seamless infinite scrolling marquee | Implemented via ClientLogoSlider | verified |
+| Service card hover | Hover borders, button text transition, pill hover | CSS transitions | verified |
+| Portfolio card hover | Scale zoom on image, circular arrow turns theme-red | CSS transitions | verified |
+| Team cards | Active card in red `#ad5151`, hover on other cards transitions background | CSS transitions | verified |
+| Process timeline | Hover on circles transitions border and number color | CSS transitions | verified |
+| Video testimonials | Drag/swipe react-slick carousel with responsive slide count (1 mobile, 2 tablet, 3 desktop) | Configured with responsive breakpoints | verified |
+| Accordion | First item open by default; click toggles single open item | FaqAccordion state | verified |
 
 ## Pre-Implementation Differences and Decisions
 
 | Difference | Decision | Status |
 | --- | --- | --- |
-| Live canonical/og:url have trailing slash | Slashless /shopify-development-agency per project URL policy | implemented |
-| Live title exceeds the 60-char build guard | Shortened to Shopify Development Agency & Services | Dynamic Dreamz (54 chars) | implemented |
-| Live description exceeds 160 chars | Shortened to 154 chars preserving all core services and keywords | implemented |
-| Live carousels use jQuery owl-carousel | react-slick with identical items, margin, and responsive breakpoints | implemented |
+| Live canonical/og:url have trailing slash | Slashless `/shopify-development-agency` per project URL policy | implemented |
+| Live title exceeds 60 chars | Kept within 60 chars: "Shopify Development Agency & Services | Dynamic Dreamz" (55 chars) | implemented |
+| Live description exceeds 160 chars | Kept at 151 chars: "Dynamic Dreamz is a Shopify Platinum Partner offering custom Shopify development, theme customization, integrations, migrations and ongoing maintenance." | implemented |
+| Zero asset duplicates | Reused existing project assets and stored unique OG image | verified 0 duplicates |

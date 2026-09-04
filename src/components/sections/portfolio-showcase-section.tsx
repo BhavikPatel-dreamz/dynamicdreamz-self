@@ -45,6 +45,8 @@ export type PortfolioShowcaseSectionProps = {
   itemsClassName?: string;
   variant?: "default" | "liveGrid";
   sectionId?: string;
+  showMobileArrow?: boolean;
+  mobileColumns?: 1 | 2;
 };
 
 export function PortfolioShowcaseSection({
@@ -65,6 +67,8 @@ export function PortfolioShowcaseSection({
   itemsClassName,
   variant = "liveGrid",
   sectionId = "portfolio-showcase",
+  showMobileArrow = false,
+  mobileColumns = 1,
 }: PortfolioShowcaseSectionProps) {
   const isLiveGrid = variant === "liveGrid";
   const resolvedColumns = columns ?? (isLiveGrid ? 4 : 3);
@@ -84,10 +88,16 @@ export function PortfolioShowcaseSection({
 
   const gridColsClass =
     resolvedColumns === 4
-      ? "grid-cols-4 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
+      ? mobileColumns === 2
+        ? "grid-cols-4 max-[992px]:grid-cols-2 max-[767px]:grid-cols-2"
+        : "grid-cols-4 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       : resolvedColumns === 2
-        ? "grid-cols-2 max-[767px]:grid-cols-1"
-        : "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1";
+        ? mobileColumns === 2
+          ? "grid-cols-2 max-[767px]:grid-cols-2"
+          : "grid-cols-2 max-[767px]:grid-cols-1"
+        : mobileColumns === 2
+          ? "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-2"
+          : "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1";
 
   return (
     <section className={className} data-section="portfolio" id={sectionId}>
@@ -143,6 +153,7 @@ export function PortfolioShowcaseSection({
               key={item.name}
               name={item.name}
               platformMark={item.platformMark ?? defaultPlatformMark}
+              showMobileArrow={showMobileArrow}
               variant={effectiveCardVariant}
             />
           ))}
