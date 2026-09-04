@@ -1,15 +1,21 @@
 # Runs the same security hook as local pre-commit.
 # Git cannot enable local commit hooks from a pull (that would be RCE).
 # This job is the check that always runs after push / PR with no developer setup.
+# A failing scan marks the GitHub check failed so Vercel should not ship that
+# commit (set this check as required, or rely on `npm run build` which scans
+# when VERCEL=1).
 name: Security pre-commit scan
 
 on:
   push:
   pull_request:
+  workflow_call:
 
 jobs:
   scan:
+    name: Virus / malware scan
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -18,4 +24,7 @@ jobs:
         with:
           node-version: "22"
       - name: Run malware indicator + scanner
-        run: bash .githooks/pre-commit --ci
+        run: |
+          set -euo pipefail
+          bash .githooks/pre-commit --ci
+          echo "Security scan passed."
