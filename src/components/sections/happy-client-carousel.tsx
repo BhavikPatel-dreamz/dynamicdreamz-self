@@ -32,7 +32,7 @@ const controlButtonClassName =
 export function HappyClientCarousel({ items, ariaLabel, controls }: HappyClientCarouselProps) {
   const sliderRef = useRef<Slider>(null);
   const [activeSlide, setActiveSlide] = useState(0);
-  const [visibleSlides, setVisibleSlides] = useState(2);
+  const [visibleSlides, setVisibleSlides] = useState(3);
   const finalSlide = Math.max(items.length - visibleSlides, 0);
   const isAtStart = activeSlide === 0;
   const isAtEnd = activeSlide >= finalSlide;

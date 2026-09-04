@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyPlusAgencyWhyChoose } from "@/content/shopify-plus-agency";
 
 export type ShopifyPlusProofContent = typeof shopifyPlusAgencyWhyChoose;
@@ -10,45 +10,50 @@ export function ShopifyPlusProofSection({
   content: ShopifyPlusProofContent;
 }) {
   return (
-    <section className="bg-white py-20 max-[992px]:py-[50px] max-[992px]:pt-[25px] max-[767px]:pt-[50px]" data-section="why-shopify-plus" id="why-shopify-plus">
+    <section
+      className="why_shopify_plus_brands_choose_section bg-white pt-20 pb-0 max-[992px]:pt-[50px]"
+      data-section="why-shopify-plus"
+      id="why-shopify-plus"
+    >
       <Container>
-        <div className="flex flex-wrap border-b border-black/10">
-          <div className="w-1/2 py-[30px] pr-[30px] max-[1199px]:py-5 max-[1199px]:pr-5 max-[991px]:w-full max-[767px]:p-0">
-            <Eyebrow className="mb-4" lineThickness="thin" lineWidth="fixed">
-              {content.eyebrow}
-            </Eyebrow>
-            <h2 className="mb-4 font-montreal-medium text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-              {content.heading}
-            </h2>
-            <p className="m-0 text-base font-medium leading-[27px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
-              {content.intro}
-            </p>
+        <SplitSectionHeading
+          className="mb-10 max-[1199px]:mb-[30px]"
+          description={content.intro}
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          textColumnClassName="w-[48%] max-[992px]:w-full"
+          titleColumnClassName="w-[44%] max-[992px]:w-full"
+          variant="left"
+        />
+        <div className="wrapper flex flex-wrap justify-between">
+          <div className="left-col w-1/2 max-[767px]:w-full">
+            <div className="text-block h-full border-y border-[#2828281c] py-[30px] pr-[30px] max-[1399px]:py-5 max-[1399px]:pr-[30px] max-[1199px]:pr-5 max-[767px]:border-0 max-[767px]:p-0">
+              <p className="m-0 font-sans text-base font-medium leading-[28px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
+                {content.text}
+              </p>
+            </div>
           </div>
-          <div className="w-1/2 py-[30px] pl-10 max-[1199px]:py-5 max-[1199px]:pl-5 max-[991px]:w-full max-[991px]:pl-0 max-[767px]:mt-5 max-[767px]:p-0">
-            <p className="m-0 text-base font-medium leading-[27px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
-              {content.intro}
-            </p>
-          </div>
-        </div>
-        <div className="flex flex-wrap border-b border-black/10">
-          <div className="w-1/2 py-[30px] pr-[30px] max-[1199px]:py-5 max-[1199px]:pr-5 max-[991px]:w-full max-[767px]:p-0">
-            <p className="m-0 text-base font-medium leading-[27px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
-              {content.text}
-            </p>
-          </div>
-          <div className="w-1/2 border-l border-black/10 py-[30px] pl-10 max-[1199px]:py-5 max-[1199px]:pl-5 max-[991px]:w-full max-[991px]:border-l-0 max-[991px]:pl-0 max-[767px]:mt-5 max-[767px]:p-0">
-            <ul className="grid grid-cols-2 gap-x-5 gap-y-5 max-[767px]:mt-0">
+          <div className="right-col w-1/2 max-[767px]:mt-5 max-[767px]:w-full">
+            <div className="list-box flex h-full flex-wrap border-y border-l border-[#2828281c] py-[30px] pr-0 pl-10 max-[1399px]:py-5 max-[1399px]:pl-5 max-[1199px]:pl-2.5 max-[991px]:pl-5 max-[767px]:border-0 max-[767px]:p-0">
               {content.stats.map((stat, index) => (
-                <li className="pt-0 max-[767px]:border-t max-[767px]:border-black/10 max-[767px]:pt-4 max-[767px]:first:border-t-0 max-[767px]:first:pt-0" key={stat}>
-                  <span aria-hidden="true" className="mb-2 block font-montserrat text-xs font-bold leading-4 text-brand-red">
-                    {String(index + 1).padStart(2, "0")}.
-                  </span>
-                  <span className="block font-montserrat text-base font-medium leading-6 text-ink">
-                    {stat}
-                  </span>
-                </li>
+                <div
+                  className="list-col mb-5 w-1/2 px-2.5 max-[1399px]:mb-[15px] max-[767px]:mb-[15px] max-[767px]:w-full max-[767px]:border-b max-[767px]:border-[#2828281c] max-[767px]:p-0 max-[767px]:pb-[15px] max-[767px]:last:mb-0 max-[767px]:last:border-b-0 max-[767px]:last:pb-0 [&:nth-last-child(-n+2)]:mb-0"
+                  key={stat}
+                >
+                  <div className="list-item">
+                    <span
+                      aria-hidden="true"
+                      className="mb-[5px] block font-montserrat text-sm font-semibold leading-[22px] text-brand-red"
+                    >
+                      {String(index + 1).padStart(2, "0")}.
+                    </span>
+                    <h3 className="m-0 font-montserrat text-base font-medium leading-6 text-ink max-[1399px]:text-sm max-[1399px]:leading-[22px] max-[767px]:max-w-[171px]">
+                      {stat}
+                    </h3>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </Container>

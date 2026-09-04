@@ -9,7 +9,7 @@ export const shopifyPlusAgencyHero = {
   ctaHref: "/book-a-discovery-call",
   secondaryCta: {
     label: "View Shopify Plus Work",
-    href: "#our-work",
+    href: "#our_work",
     ariaLabel: "View Shopify Plus Work",
   },
   eyebrows: ["Established in 2006", "Shopify Platinum Partner"],
@@ -379,7 +379,7 @@ export const shopifyPlusAgencyPortfolio = {
   ctaLabel: "View our work",
   ctaHref: "/our-work",
   secondaryCtaLabel: "View Pricing",
-  secondaryCtaHref: "#pricing",
+  secondaryCtaHref: "#our_white_label_pricing",
   items: [
     {
       name: "Ranavat",

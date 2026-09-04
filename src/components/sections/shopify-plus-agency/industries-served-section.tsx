@@ -44,10 +44,10 @@ export function IndustriesServedSection({
           <div className="grid grid-cols-4 gap-[18px] max-[1199px]:grid-cols-3 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
             {content.items.map((item) => {
               const card = (
-                <div className="h-full overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.06)] bg-[#fafaf7] transition-transform duration-300 hover:-translate-y-1">
+                <div className="h-full overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.06)] bg-[#fafaf7]">
                   <div className="relative h-[185px] overflow-hidden">
                     <Image
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover/industry:scale-105"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover/industry:scale-105"
                       src={item.image}
                       alt={item.imageAlt}
                       fill
@@ -56,14 +56,14 @@ export function IndustriesServedSection({
                   </div>
                   <div className="p-5">
                     {item.eyebrow ? (
-                      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.7px] text-muted">
+                      <span className="mb-2 block font-montserrat text-[10px] font-bold uppercase tracking-[0.05em] text-[#ad5151]">
                         {item.eyebrow}
                       </span>
                     ) : null}
-                    <h3 className="mb-2.5 font-montserrat text-base font-bold leading-6 text-ink">
+                    <h3 className="mb-2.5 font-montserrat text-xl font-bold leading-6 text-ink max-[1399px]:text-[18px]">
                       {item.title}
                     </h3>
-                    <p className="m-0 text-sm font-medium leading-6 text-muted">
+                    <p className="m-0 text-sm font-medium leading-6 text-[#535353]">
                       {item.description}
                     </p>
                   </div>

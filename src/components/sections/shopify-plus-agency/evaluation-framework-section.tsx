@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyPlusAgencyHowToChoose } from "@/content/shopify-plus-agency";
 
 export type EvaluationFrameworkContent = typeof shopifyPlusAgencyHowToChoose;
@@ -10,35 +10,47 @@ export function EvaluationFrameworkSection({
   content: EvaluationFrameworkContent;
 }) {
   return (
-    <section className="bg-white py-20 max-[992px]:py-[50px]" data-section="evaluation-framework" id="evaluation-framework">
+    <section
+      className="how-to-choose-spa-sec bg-white py-20 max-[992px]:py-[50px]"
+      data-section="evaluation-framework"
+      id="evaluation-framework"
+    >
       <Container>
-        <div className="mb-[50px] flex flex-wrap items-end justify-between gap-6 max-[991px]:mb-[30px] max-[991px]:items-start">
-          <div className="w-[42%] max-[991px]:w-full">
-            <Eyebrow className="mb-4" lineThickness="thin" lineWidth="fixed">
-              {content.eyebrow}
-            </Eyebrow>
-            <h2 className="m-0 font-montreal-medium text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-              {content.heading}
-            </h2>
-          </div>
-          <p className="m-0 w-[50%] text-base font-medium leading-[27px] text-muted max-[991px]:w-full max-[767px]:text-sm max-[767px]:leading-6">
-            {content.description}
-          </p>
-        </div>
+        <SplitSectionHeading
+          className="mb-[50px] gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
+          description={content.description}
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          textColumnClassName="w-[48%] max-[992px]:w-full"
+          titleColumnClassName="w-[44%] max-[992px]:w-full"
+          variant="left"
+        />
 
-        <div className="grid grid-cols-4 border-t border-l border-black/10 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
-          {content.items.map((item) => (
-            <article className="border-r border-b border-black/10 p-6 max-[1199px]:p-5" key={item.title}>
-              <span aria-hidden="true" className="mb-5 flex size-[52px] items-center justify-center rounded-full bg-[#f7f4e9] font-montreal-medium text-base font-medium leading-none text-brand-red">
-                {String(content.items.indexOf(item) + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mb-2.5 font-montserrat text-base font-bold leading-6 text-ink">
-                {item.title}
-              </h3>
-              <p className="m-0 text-sm font-medium leading-[22px] text-muted">
-                {item.description}
-              </p>
-            </article>
+        <div className="spa-wrapper flex flex-wrap border-t border-l border-[#2828281c]">
+          {content.items.map((item, index) => (
+            <div
+              className="spa-col w-1/4 max-[991px]:w-1/2 max-[767px]:w-full"
+              key={item.title}
+            >
+              <article className="spa-item flex h-full flex-col border-r border-b border-[#2828281c] p-6 max-[1399px]:p-5">
+                <div className="spa-title">
+                  <span
+                    aria-hidden="true"
+                    className="mb-5 flex size-[34px] items-center justify-center rounded-full bg-[#fbefd7] font-montserrat text-[10px] font-bold text-brand-red max-[991px]:mb-2.5"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="m-0 mb-2.5 font-montserrat text-base font-bold leading-6 text-ink">
+                    {item.title}
+                  </h3>
+                </div>
+                <div className="spa-text">
+                  <p className="m-0 font-sans text-sm font-medium leading-[22px] text-[#535353]">
+                    {item.description}
+                  </p>
+                </div>
+              </article>
+            </div>
           ))}
         </div>
       </Container>

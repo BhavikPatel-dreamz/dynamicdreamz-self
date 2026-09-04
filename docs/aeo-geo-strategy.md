@@ -2670,7 +2670,7 @@ are needed for a quote without promising an unverified delivery time or rate.
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-09-03
+Last reviewed: 2026-09-04
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -2758,12 +2758,19 @@ capabilities. Future visible copy improvements are tracked in
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-09-03): canonical, Open Graph, sitemap, robots, JSON-LD,
+- URL-policy review (2026-09-04): canonical, Open Graph, sitemap, robots, JSON-LD,
   and internal links use `/shopify-plus-agency`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source,
-  metadata limits, JSON-LD graph verification (including 11 VideoObjects), local
-  assets audit, responsive hero video/logo behavior, accessible dialogs, and
-  route checks. Final lint and production build are run as part of this refresh.
+- Checks completed (2026-09-04): Visual parity audit and fixes completed against live site:
+  - Hero: secondary CTA href updated to `#our_work`, video right column displays on tablet (768px-991px), video logo includes dashed tail SVG matching live `.video-logo::after`.
+  - Why Shopify Plus Brands Choose: fixed duplicate intro rendering, matched split section heading with two-column bottom row, left text block with top/bottom border, right 2x2 grid with red 01-04 numbers and dividers.
+  - Explore Our Work: fixed secondary CTA href to `#our_white_label_pricing`, round 34px arrow icon remains visible across all breakpoints.
+  - Shopify Plus Services: set `cardVariant="services-box"` and `id="services"` to render 2-column icon + text layout with `#fafaf7` background.
+  - Case Studies: matched live `.cs-chip` white pill styling and `.cs-visit` uppercase CTA link with diagonal arrow and top divider line.
+  - Industries: updated eyebrow to `#ad5151` uppercase, title typography, and card radius matching live `.industries_box`.
+  - Pricing: set `id="our_white_label_pricing"`, updated white card radius, label, badge, price bottom border, and bottom diagonal arrow link.
+  - Testimonials: set desktop-first `useState(3)` in `HappyClientCarousel` to render 3 cards on desktop view.
+  - How to Choose: updated `.spa-wrapper`, `.spa-item`, and 34px `#fbefd7` badge matching live `.how-to-choose-spa-sec`.
+  - Responsive verification across desktop (1440px), tablet (991px), and mobile (390px) screenshots confirmed visual parity.
 - Remaining: continue monitoring CTA conversion and visual parity as the live page evolves; all current quote, booking, and case-study destinations resolve locally.
 
 ## Request a Quote (`/request-quote`)

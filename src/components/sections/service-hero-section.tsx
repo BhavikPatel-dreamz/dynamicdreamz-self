@@ -351,9 +351,9 @@ export function ServiceHeroSection({
               )}
             </div>
           </div>
-          <div className={cn(rightColClassName ?? defaultRightCol, content.videoSrc && "max-[992px]:hidden")}>
+          <div className={cn(rightColClassName ?? defaultRightCol, content.videoSrc && "max-[767px]:hidden")}>
             {content.videoSrc ? (
-              <div className="video-wrapper relative aspect-[1.5] max-[992px]:hidden">
+              <div className="video-wrapper relative aspect-[1.5] max-[767px]:hidden">
                 <div className="absolute inset-0 overflow-hidden rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
                   <video
                     aria-hidden="true"
@@ -369,7 +369,7 @@ export function ServiceHeroSection({
                   </video>
                 </div>
                 {content.videoLogo ? (
-                  <span className={cn("absolute top-[70px] left-[-120px] z-10 flex h-[61px] w-[174px] items-center justify-center rounded-[16px] bg-white px-4 shadow-[0_6px_18px_rgba(0,0,0,0.04)] max-[1199px]:left-5", videoLogoClassName)}>
+                  <span className={cn("video-logo absolute top-[70px] left-[-90px] z-10 flex h-[61px] w-[174px] items-center justify-center rounded-[16px] bg-white px-4 shadow-[0_6px_18px_rgba(0,0,0,0.04)] max-[1199px]:left-5", videoLogoClassName)}>
                     <Image
                       alt={content.videoLogo.alt}
                       className="h-auto w-auto brightness-0"
@@ -377,6 +377,23 @@ export function ServiceHeroSection({
                       src={content.videoLogo.src}
                       width={content.videoLogo.width}
                     />
+                    <svg
+                      aria-hidden="true"
+                      className="pointer-events-none absolute right-[83px] top-full z-1 hidden h-[53px] w-[38px] min-[1200px]:block"
+                      fill="none"
+                      height="53"
+                      viewBox="0 0 38 53"
+                      width="38"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M37.2609 50.6641C18.0942 52.6641 -5.73839 50.6641 2.76131 0.164062"
+                        stroke="#AD5151"
+                        strokeDasharray="5 3"
+                        strokeOpacity="0.3"
+                        strokeWidth="2"
+                      />
+                    </svg>
                   </span>
                 ) : null}
               </div>

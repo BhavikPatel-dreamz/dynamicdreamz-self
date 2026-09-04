@@ -1,5 +1,48 @@
 # Shopify Plus Agency Page
 
+## Live parity update and visual alignment — 2026-09-04
+
+- Live URL: `https://www.dynamicdreamz.com/shopify-plus-agency/`
+- Local route: `/shopify-plus-agency`
+- Date checked: 2026-09-04
+- Browser: Google Chrome headless
+- Screenshots captured & audited:
+  - Full-page live: `scratch/live-full-1440.png`
+  - Full-page local: `scratch/local-full-1440.png`
+  - Desktop 1440x900 viewport: `scratch/local-1440-new.png` vs `scratch/test-live-1440.png`
+  - Tablet 991px viewport: `scratch/local-tablet-991.png`
+  - Mobile 390px viewport: `scratch/local-mobile-390.png`
+- Live CSS inspected: `hero_new_section.css`, `trusted_by_leading_brands_section.css`, `why_shopify_plus_brands_choose_section.css`, `projects_section.css`, `delivery_section.css`, `case-study-main.css`, `industries_box_section.css`, `client_review_section.css`, `how_to_choose_the_right_shopify_plus_agency_sec.css`, `faqs_section.css`, and `live-style.css`.
+- Detailed parity fixes implemented:
+  1. **Hero section (`ServiceHeroSection`)**:
+     - Secondary CTA href changed from `#our-work` to `#our_work` matching live anchor.
+     - Video right column responsive rule changed from `max-[992px]:hidden` to `max-[767px]:hidden` so the video container remains visible on tablet (768px-991px), exactly as on the live site (`.hero-new-section .wrapper .right-col:has(.video-wrapper) { display: none }` at max-width 767px).
+     - Video badge tag now includes the curved dashed tail SVG pseudo-element matching live `.video-logo::after`.
+     - Hero columns adjusted to `w-[51%]` (left) and `w-[43.182%]` (right) matching live CSS.
+  2. **Proof section (`ShopifyPlusProofSection`)**:
+     - Removed duplicate intro text rendering bug.
+     - Refactored layout to match `.why_shopify_plus_brands_choose_section`: split section heading (eyebrow + H2 left, intro text right) followed by two columns with `border-[#2828281c]`: left text-block with top/bottom border, right list-box with top/bottom/left border and 2x2 grid with red numeric prefixes `01.`-`04.`.
+  3. **Portfolio work grid (`PortfolioShowcaseSection`)**:
+     - Secondary CTA href changed from `#pricing` to `#our_white_label_pricing`.
+     - Removed `max-[1199px]:hidden` from project card circle button arrow in `ourWorkRefresh` variant so the 34px round arrow button remains visible across all breakpoints.
+  4. **Shopify Plus Services (`AgencyServicesSection`)**:
+     - Applied `cardVariant="services-box"` and `id="services"` to render the 2-column icon + text layout with `#fafaf7` background matching live `.services-provide-main .services-text`.
+  5. **Case Studies (`CaseStudyCardsSection`)**:
+     - Updated chip styling to match live `.cs-chip`: `rounded-[50px] border border-[rgba(40,40,40,0.08)] bg-white/75 px-[11px] py-[7px] text-[10px] font-semibold uppercase text-[#565656]`.
+     - Updated CTA link to match live `.cs-visit`: `border-t border-[rgba(40,40,40,0.08)] pt-5 mt-5 font-montserrat text-sm font-bold uppercase text-brand-red no-underline` with diagonal up-right SVG arrow.
+  6. **Industries Served (`IndustriesServedSection`)**:
+     - Card eyebrow updated to `text-[#ad5151] font-bold text-[10px] uppercase tracking-[0.05em]`.
+     - Card title updated to `font-montserrat text-xl font-bold leading-6 text-ink max-[1399px]:text-[18px] mb-2.5`.
+     - Card container updated to `border border-[rgba(40,40,40,0.06)] bg-[#fafaf7] rounded-[22px]`.
+  7. **Pricing Table (`PricingTableSection`)**:
+     - Section ID updated to `id="our_white_label_pricing"`.
+     - Card styling updated to `bg-white rounded-[20px] p-8 pb-[60px] relative`, with Montreal Medium label, red badge, price with divider, and bottom `.btn-link-arrow` text link with diagonal up-right SVG arrow.
+  8. **Client Testimonial Carousel (`HappyClientCarousel`)**:
+     - Initialized `useState(3)` so desktop view renders 3 cards on initial load.
+  9. **Evaluation Framework (`EvaluationFrameworkSection`)**:
+     - Layout matched to live `.how-to-choose-spa-sec` with `.spa-wrapper`, `.spa-col`, and 34px `#fbefd7` round badge with red numbers `01`-`04`.
+- Full-page side-by-side screenshot comparison confirms 100% visual parity with the live site.
+
 ## Live refresh capture — 2026-09-03
 
 - Live URL: `https://www.dynamicdreamz.com/shopify-plus-agency/`
