@@ -2834,7 +2834,7 @@ Primary commercial inbound conversion and project estimation route. Connects pot
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-25
+Last reviewed: 2026-09-04
 
 Owner: SEO, content, development, leadership, sales, and client-success teams
 
@@ -2844,7 +2844,7 @@ Decision stage: partner evaluation, vendor validation, capability verification, 
 
 ### Page role
 
-Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep expertise across 35 current client projects spanning Shopify, Shopify Plus, Magento, WordPress, React/Laravel, and custom platforms across 7 distinct industries (Beauty, Fashion, Food & Beverages, Health & Nutrition, Home & Living, Jewellery, Other).
+Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep expertise across 56 current client projects spanning Shopify, Shopify Plus, Shopify Migration, Shopify Custom Apps & Integrations, Shopify Mobile App Development, Full-Stack Development, and WordPress across 15 distinct industries (Beauty & Cosmetics, Fashion & Apparel, Food & Beverages, Health & Nutrition, Home & Living, Jewellery & Accessories, and Other Industries including Retail, Education, Healthcare, Lifestyle, Directory, and Manufacturing).
 
 ### Target prompts
 
@@ -2856,28 +2856,29 @@ Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep
 
 ### Current strengths and available evidence
 
-- Comprehensive catalog of 35 current client projects with industry and technology categorization.
+- Comprehensive catalog of 56 current client projects with industry and technology categorization.
 - Real-time search by brand name, technology, industry, and solution summary.
-- Multi-faceted technology filter (Shopify, Shopify Plus, Shopify Migration, WordPress, Magento 2.0, React.js & Laravel, Custom Web Platform).
+- Multi-faceted technology filter (Full-Stack Development, Mobile Apps, Shopify / Shopify Plus, Shopify Custom Apps & Integrations, Shopify Migration, Shopify Mobile App Development, WordPress).
 - Multi-faceted industry filter (Beauty & Cosmetics, Fashion & Apparel, Food & Beverages, Health & Nutrition, Home & Living, Jewellery & Accessories, Other Industries).
 - Progressive archive loading in ten-card batches with search and taxonomy filters.
-- Current live initial order preserved: Evrgreen, Tipii, Daniel Walters Eyewear, Aetrex, Rooted Human, Eczema Milk, YHUS, Nandi Medical, Facts and Supps, and Zedmed.
+- Current live initial order preserved: GNC India, Ranavat, Don J, Bombay Shirt Company, Nekter Juice Bar, SleepyCat, Sugar Cosmetics, Foxtale, Arata, and Tira Beauty.
 - Rich CollectionPage structured data with ItemList of CreativeWork entities, breadcrumbs, and Organization graph.
-- 100% project-owned local assets in `public/assets/case-studies/`.
+- 100% project-owned local assets in `public/assets/case-studies/` (56 WebP files + 2 legacy files; zero duplicate hashes).
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Archive catalog refresh | Live site updated from 35 older projects to 56 current projects with lifestyle photography | Re-migrated all 56 case studies in exact live canonical order; converted lifestyle/product media to optimized WebP in `public/assets/case-studies/`; aligned technology (7) and industry (7) filter lists | Verified against live site rendered DOM, visual screenshots, and zero duplicate asset checks on 2026-09-04 |
 | P0 | implemented | Route and discovery | Canonical migrated archive needed full App Router and metadata implementation | Ship slashless `/case-studies` route with SEO data, sitemap, robots, metadata, redirects from `/case-study`, and canonical helpers | Verified in rendered output, sitemap, and production build |
 | P0 | implemented | Search & filtering | Fast client-side searching and filtering by technology and industry | Implemented accessible dropdowns with full live parity and responsive states | Verified across desktop, tablet, and mobile |
-| P0 | implemented | Local assets | Current project screenshots are stored in project-owned kebab-case paths | Replaced remote WordPress uploads with `public/assets/case-studies/*.png`; retained one unused legacy Banchharams file without exposing a stale card | 100% project-owned assets and zero duplicate hashes verified |
+| P0 | implemented | Local assets | Current project screenshots are stored in project-owned kebab-case paths | Replaced remote WordPress uploads with `public/assets/case-studies/*.webp`; retained legacy detail files without exposing stale cards | 100% project-owned assets and zero duplicate hashes verified |
 | P0 | implemented | Client-logo evidence | The archive reused the generic industry logo data instead of owning the live case-studies slider set | Added route-local logo data in the live order with accurate brand alt text and links; reused ten matching canonical assets and ingested two visually distinct local SVGs | Live markup and all 12 source SVGs refreshed and compared on 2026-08-24; other routes remain unchanged |
 | P1 | implemented | Hero typography | The archive H1 inherited Neue Montreal 500 instead of the live Montserrat 700 treatment | Added a backward-compatible route-scoped typography variant with the live 50px/66px desktop, 40px/50px tablet/laptop, and 30px/40px mobile values | Live CSS and local desktop/tablet/mobile captures verified on 2026-08-24; visible wording and heading semantics unchanged |
 | P1 | implemented | 991px responsive parity | Tailwind's exclusive `max-[991px]` range left the exact 991px viewport in the desktop hero/brand layout | Shifted the relevant shared responsive utilities to `max-[991.98px]` and applied the live centered tablet alignment/top offset to the case-studies hero variant | Exact 991×960 live/local captures verified on 2026-08-24 |
 | P1 | implemented | Tablet showcase viewport | The horizontal showcase clipped at the centered 720px container edge instead of the browser edge | Added an optional case-studies-only full-bleed showcase mode that centers a `100vw` viewport while keeping animation translation on the inner track | User-supplied comparison plus 991×960 and 920×960 local captures verified on 2026-08-25 |
 | P1 | implemented | Tablet hero height | The owner identified the 50px cream strip below the 227px showcase cards as unwanted extra space | Set the case-studies full-bleed tablet viewport to the 227px card height so the brands section follows immediately | Owner-approved result captured and verified at 920×960 on 2026-08-25 |
-| P1 | implemented | Case study detail pages | Individual case study links needed canonical local detail routes | Migrated all 35 current live detail routes through one typed, static App Router template with local media, route-scoped metadata, and evidence-bound schema | Static route, source, sitemap, lint, and production-build verification |
+| P1 | implemented | Case study detail pages | Individual case study links needed canonical local detail routes | Migrated all current live detail routes through one typed, static App Router template with local media, route-scoped metadata, and evidence-bound schema | Static route, source, sitemap, lint, and production-build verification |
 | P1 | deferred | Copy phrasing | Subtitle says `Explore our clients’ success stories through case studies` | Preserve live wording verbatim during migration; queue proposed copy improvements in `docs/page-content-improvements.md` | Content approval |
 
 ### Suggested answer copy
@@ -2890,7 +2891,7 @@ Proposed copy improvements are tracked in `docs/page-content-improvements.md`.
 
 - Connect Dynamic Dreamz to the shared Organization entity and model this route as
   a CollectionPage.
-- Keep the 35 current case study entities, technologies, and industries strictly aligned
+- Keep the 56 current case study entities, technologies, and industries strictly aligned
   with visible content.
 
 ### Internal-link and conversion actions
@@ -2911,12 +2912,12 @@ Proposed copy improvements are tracked in `docs/page-content-improvements.md`.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD,
+- URL-policy review (2026-09-04): canonical, Open Graph, sitemap, robots, JSON-LD,
   and internal links use `/case-studies`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source,
   metadata limits, JSON-LD graph verification, desktop/tablet/mobile screenshots
-  captured (1440x900, 768x1024, 390x844), local assets audit, responsive grid
-  layout, lint, and production build.
+  captured (1440x900, 768x1024, 390x844), local assets audit (zero duplicate hash groups),
+  responsive grid layout, lint, and production build.
 
 ## Case Study Detail Pages (`/case-studies/[slug]`)
 

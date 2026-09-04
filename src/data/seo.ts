@@ -1227,11 +1227,11 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2024-05-01T00:00:00+00:00",
-    modifiedTime: "2026-08-24T00:00:00+05:30",
+    modifiedTime: "2026-09-04T00:00:00+05:30",
     image: {
-      path: "/assets/case-studies/evrgreen.png",
-      width: 571,
-      height: 421,
+      path: "/assets/case-studies/gnc-india.webp",
+      width: 1296,
+      height: 648,
       alt: "Case Study Archive - Shopify Plus Agency & Shopify Platinum Partner | Dynamic Dreamz",
     },
     sitemap: {

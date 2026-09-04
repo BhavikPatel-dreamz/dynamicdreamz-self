@@ -1,0 +1,788 @@
+[
+  {
+    "slug": "gnc-india",
+    "title": "GNC India: Conversion-Focused Shopify Redesign with Goal-Based Navigation & Trust Signals",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Health & Nutrition",
+    "excerpt": "See how Dynamic Dreamz redesigned GNC India on Shopify with goal-based navigation, trust signals and a conversion-focused shopping experience.",
+    "image": "/assets/case-studies/gnc-india.webp",
+    "alt": "GNC India: Conversion-Focused Shopify Redesign with Goal-Based Navigation & Trust Signals project preview",
+    "href": "/case-studies/gnc-india",
+    "tags": [
+      "Shopify Store Development",
+      "Shopify Theme Customization"
+    ]
+  },
+  {
+    "slug": "ranavat",
+    "title": "Ranavat: 6+ Year Shopify Partnership for a Luxury Ayurvedic Skincare & Haircare Brand",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Beauty & Cosmetics",
+    "excerpt": "Explore our long-term Shopify partnership with Ranavat, supporting the luxury Ayurvedic beauty brand with ongoing ecommerce development and growth.",
+    "image": "/assets/case-studies/ranavat.webp",
+    "alt": "Ranavat: 6+ Year Shopify Partnership for a Luxury Ayurvedic Skincare & Haircare Brand project preview",
+    "href": "/case-studies/ranavat",
+    "tags": [
+      "Ayurvedic Skincare",
+      "Long-Term Shopify Partnership"
+    ]
+  },
+  {
+    "slug": "don-j",
+    "title": "Crafting a Diamond-Perfect Online Experience for Don J",
+    "technology": "WordPress",
+    "industry": "Jewellery & Accessories",
+    "excerpt": "See how Dynamic Dreamz built a React.js and Next.js jewellery experience for Don J with dynamic ring browsing and interactive product experiences.",
+    "image": "/assets/case-studies/don-j.webp",
+    "alt": "Crafting a Diamond-Perfect Online Experience for Don J project preview",
+    "href": "/case-studies/don-j",
+    "tags": [
+      "Jewellery & Accessories",
+      "WordPress Development"
+    ]
+  },
+  {
+    "slug": "bombay-shirt-company",
+    "title": "Bombay Shirt Company: 5-Year Shopify Partnership with Fit Smart Body-Type Sizing & Shirt Customizer",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Fashion & Apparel",
+    "excerpt": "See how Dynamic Dreamz supported Bombay Shirt Company with Shopify development, body-type sizing and a custom shirt configuration experience.",
+    "image": "/assets/case-studies/bombay-shirt-company.webp",
+    "alt": "Bombay Shirt Company: 5-Year Shopify Partnership with Fit Smart Body-Type Sizing & Shirt Customizer project preview",
+    "href": "/case-studies/bombay-shirt-company",
+    "tags": [
+      "Fashion & Apparel",
+      "Long-Term Shopify Partnership"
+    ]
+  },
+  {
+    "slug": "nekter-juice-bar",
+    "title": "Nekter Juice Bar: Shopify Redesign with Streamlined Ordering & Multi-Location Store Pickup",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Food & Beverages",
+    "excerpt": "See how Dynamic Dreamz improved Nekter Juice Bar\u2019s Shopify experience with streamlined ordering and multi-location store pickup functionality.",
+    "image": "/assets/case-studies/nekter-juice-bar.webp",
+    "alt": "Nekter Juice Bar: Shopify Redesign with Streamlined Ordering & Multi-Location Store Pickup project preview",
+    "href": "/case-studies/nekter-juice-bar",
+    "tags": [
+      "Multi-Location Store Pickup",
+      "Streamlined Ordering"
+    ]
+  },
+  {
+    "slug": "sleepycat",
+    "title": "Sleepycat: WooCommerce to Shopify Plus Migration with Custom Bundle Builder, SKU-Splitting & WhatsApp Automation",
+    "technology": "Shopify Migration",
+    "industry": "Home & Living",
+    "excerpt": "See how Dynamic Dreamz migrated SleepyCat from WooCommerce to Shopify Plus with custom bundles, SKU splitting and WhatsApp automation.",
+    "image": "/assets/case-studies/sleepycat.webp",
+    "alt": "Sleepycat: WooCommerce to Shopify Plus Migration with Custom Bundle Builder, SKU-Splitting & WhatsApp Automation project preview",
+    "href": "/case-studies/sleepycat",
+    "tags": [
+      "Mattress & Sleep",
+      "WooCommerce to Shopify"
+    ]
+  },
+  {
+    "slug": "renee-cosmetics",
+    "title": "REN\u00c9E Cosmetics: End-to-End Figma-to-Shopify Dawn Theme Store for a Bold Beauty Brand",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Beauty & Cosmetics",
+    "excerpt": "See how Dynamic Dreamz developed REN\u00c9E Cosmetics\u2019 Shopify store from Figma using a customized Dawn theme for a scalable beauty experience.",
+    "image": "/assets/case-studies/renee-cosmetics.webp",
+    "alt": "REN\u00c9E Cosmetics: End-to-End Figma-to-Shopify Dawn Theme Store for a Bold Beauty Brand project preview",
+    "href": "/case-studies/renee-cosmetics",
+    "tags": [
+      "Figma to Shopify",
+      "Shopify Development"
+    ]
+  },
+  {
+    "slug": "custom-neon",
+    "title": "Custom Neon: Interactive Shopify Neon Sign Designer with Live Pricing",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Home & Living",
+    "excerpt": "See how Dynamic Dreamz built an interactive Shopify neon sign configurator for Custom Neon with product customization and live pricing.",
+    "image": "/assets/case-studies/custom-neon.webp",
+    "alt": "Custom Neon: Interactive Shopify Neon Sign Designer with Live Pricing project preview",
+    "href": "/case-studies/custom-neon",
+    "tags": [
+      "Frontend Development",
+      "Shopify Store Development"
+    ]
+  },
+  {
+    "slug": "furnified",
+    "title": "Furnified: Shopify Plus B2B Commerce System with Custom ERP Middleware Integration",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Home & Living",
+    "excerpt": "See how Dynamic Dreamz developed a Shopify Plus B2B solution for Furnified with custom ERP middleware and connected commerce workflows.",
+    "image": "/assets/case-studies/furnified.webp",
+    "alt": "Furnified: Shopify Plus B2B Commerce System with Custom ERP Middleware Integration project preview",
+    "href": "/case-studies/furnified",
+    "tags": [
+      "B2B Ecommerce",
+      "Furniture"
+    ]
+  },
+  {
+    "slug": "kalki-fashion-mobile-app",
+    "title": "KALKI Fashion: Shopify-Integrated Luxury Ethnic Wear Shopping App",
+    "technology": "Shopify Mobile App Development",
+    "industry": "Fashion & Apparel",
+    "excerpt": "See how Dynamic Dreamz built a Shopify-connected mobile app for KALKI Fashion with React Native, dynamic pricing, cart sync and localization.",
+    "image": "/assets/case-studies/kalki-fashion-mobile-app.webp",
+    "alt": "KALKI Fashion: Shopify-Integrated Luxury Ethnic Wear Shopping App project preview",
+    "href": "/case-studies/kalki-fashion-mobile-app",
+    "tags": [
+      "Mobile Application Development",
+      "React Native Development"
+    ]
+  },
+  {
+    "slug": "d-shop-shipping-app",
+    "title": "D Shop: Custom Shopify Plus Shipping App with Real-Time Multi-Courier Rate Comparison",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Retail",
+    "excerpt": "See how Dynamic Dreamz built a custom Shopify Plus shipping app for D Shop with real-time rate comparison across multiple courier providers.",
+    "image": "/assets/case-studies/d-shop-shipping-app.webp",
+    "alt": "D Shop: Custom Shopify Plus Shipping App with Real-Time Multi-Courier Rate Comparison project preview",
+    "href": "/case-studies/d-shop-shipping-app",
+    "tags": [
+      "Shopify App Development",
+      "Third-Party API Integration"
+    ]
+  },
+  {
+    "slug": "aetrex",
+    "title": "Aetrex: Shopify Version Upgrade, Product Variants & UI Optimisation for Orthotic Footwear",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Health & Nutrition",
+    "excerpt": "See how Dynamic Dreamz supported Aetrex with Shopify version upgrades, product variant improvements and storefront UI optimization.",
+    "image": "/assets/case-studies/aetrex.webp",
+    "alt": "Aetrex: Shopify Version Upgrade, Product Variants & UI Optimisation for Orthotic Footwear project preview",
+    "href": "/case-studies/aetrex",
+    "tags": [
+      "Footwear",
+      "Version Upgrade"
+    ]
+  },
+  {
+    "slug": "trendia",
+    "title": "Trendia: Shopify + Unicommerce Integration for 300+ Vendor Inventory & Local-First Fulfillment",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Fashion & Apparel",
+    "excerpt": "See how Dynamic Dreamz connected Shopify and Unicommerce for Trendia to support inventory and fulfillment workflows across 300+ vendors.",
+    "image": "/assets/case-studies/trendia.webp",
+    "alt": "Trendia: Shopify + Unicommerce Integration for 300+ Vendor Inventory & Local-First Fulfillment project preview",
+    "href": "/case-studies/trendia",
+    "tags": [
+      "Multi-Vendor Inventory",
+      "Unicommerce Integration"
+    ]
+  },
+  {
+    "slug": "alyve",
+    "title": "ALYVE: Shopify Quiz Result Redesign & AI Chatbot Account Page for Personalised Vitamins",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Health & Nutrition",
+    "excerpt": "See how Dynamic Dreamz enhanced ALYVE\u2019s Shopify experience with personalized quiz results, account improvements and an AI chatbot experience.",
+    "image": "/assets/case-studies/alyve.webp",
+    "alt": "ALYVE: Shopify Quiz Result Redesign & AI Chatbot Account Page for Personalised Vitamins project preview",
+    "href": "/case-studies/alyve",
+    "tags": [
+      "AI Chatbot Integration",
+      "Personalization"
+    ]
+  },
+  {
+    "slug": "zetheta",
+    "title": "ZeTheta: FinTech Learning Platform with WooCommerce & Sensei LMS Integration",
+    "technology": "WordPress",
+    "industry": "Education (EdTech)",
+    "excerpt": "See how Dynamic Dreamz developed ZeTheta\u2019s FinTech learning platform using WordPress, WooCommerce and Sensei LMS for online education.",
+    "image": "/assets/case-studies/zetheta.webp",
+    "alt": "ZeTheta: FinTech Learning Platform with WooCommerce & Sensei LMS Integration project preview",
+    "href": "/case-studies/zetheta",
+    "tags": [
+      "Frontend Development",
+      "Website Development"
+    ]
+  },
+  {
+    "slug": "tap-your-talents",
+    "title": "Tap Your Talents: Talent Discovery & Networking Platform Built with Flutter",
+    "technology": "Mobile Apps",
+    "industry": "Education (EdTech)",
+    "excerpt": "See how Dynamic Dreamz developed the Tap Your Talents mobile platform with Flutter for talent discovery, networking and community engagement.",
+    "image": "/assets/case-studies/tap-your-talents.webp",
+    "alt": "Tap Your Talents: Talent Discovery & Networking Platform Built with Flutter project preview",
+    "href": "/case-studies/tap-your-talents",
+    "tags": [
+      "Web Application Development",
+      "Website Development"
+    ]
+  },
+  {
+    "slug": "utsah-health-app",
+    "title": "Utsah Health App: CGM Device Integration & Wellness E-Commerce Platform",
+    "technology": "Mobile Apps",
+    "industry": "Health & Nutrition",
+    "excerpt": "See how Dynamic Dreamz developed Utsah\u2019s wellness mobile app with CGM device integration, health data experiences and ecommerce functionality.",
+    "image": "/assets/case-studies/utsah-health-app.webp",
+    "alt": "Utsah Health App: CGM Device Integration & Wellness E-Commerce Platform project preview",
+    "href": "/case-studies/utsah-health-app",
+    "tags": [
+      "Mobile Application Development",
+      "UI/UX Design"
+    ]
+  },
+  {
+    "slug": "atlantic-naturals",
+    "title": "Atlantic Naturals: Organic Supplement Shopify Store with Wellness Quiz & Trust-First Design",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Food & Beverages",
+    "excerpt": "See how Dynamic Dreamz developed Atlantic Naturals\u2019 Shopify store with wellness-focused navigation, product education and a personalized quiz.",
+    "image": "/assets/case-studies/atlantic-naturals.webp",
+    "alt": "Atlantic Naturals: Organic Supplement Shopify Store with Wellness Quiz & Trust-First Design project preview",
+    "href": "/case-studies/atlantic-naturals",
+    "tags": [
+      "Quiz Builder Integration",
+      "Trust-First UX Design"
+    ]
+  },
+  {
+    "slug": "santosh-jewellers",
+    "title": "Santosh Jewellers: Custom Shopify Dawn Theme Store for a Five-Decade Luxury Jewellery Legacy",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Jewellery & Accessories",
+    "excerpt": "See how Dynamic Dreamz created a custom Shopify storefront for Santosh Jewellers, translating a five-decade jewellery legacy into digital commerce.",
+    "image": "/assets/case-studies/santosh-jewellers.webp",
+    "alt": "Santosh Jewellers: Custom Shopify Dawn Theme Store for a Five-Decade Luxury Jewellery Legacy project preview",
+    "href": "/case-studies/santosh-jewellers",
+    "tags": [
+      "Jewellery & Accessories",
+      "Luxury Brand Storytelling"
+    ]
+  },
+  {
+    "slug": "refacekit",
+    "title": "RefaceKit: Custom Shopify Kitchen Cabinet Refacing Configurator with Dynamic Pricing Logic",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Home & Living",
+    "excerpt": "See how Dynamic Dreamz built a Shopify kitchen cabinet configurator for RefaceKit with complex product options and dynamic pricing logic.",
+    "image": "/assets/case-studies/refacekit.webp",
+    "alt": "RefaceKit: Custom Shopify Kitchen Cabinet Refacing Configurator with Dynamic Pricing Logic project preview",
+    "href": "/case-studies/refacekit",
+    "tags": [
+      "Dynamic Pricing Logic",
+      "Product Configurator"
+    ]
+  },
+  {
+    "slug": "house-of-good-vibes",
+    "title": "House of Good Vibes: React Native Shopify App with Drag-and-Drop CMS Page Builder & Daily Meditation Scheduler",
+    "technology": "Shopify Mobile App Development",
+    "industry": "Lifestyle",
+    "excerpt": "See how Dynamic Dreamz built a Shopify-connected React Native app with CMS page building, meditation scheduling and customer engagement features.",
+    "image": "/assets/case-studies/house-of-good-vibes.webp",
+    "alt": "House of Good Vibes: React Native Shopify App with Drag-and-Drop CMS Page Builder & Daily Meditation Scheduler project preview",
+    "href": "/case-studies/house-of-good-vibes",
+    "tags": [
+      "Mobile Application Development",
+      "React Native Development"
+    ]
+  },
+  {
+    "slug": "d-shop",
+    "title": "D Shop: Custom Shopify Plus Shipping App with Real-Time Multi-Courier Rate Comparison",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Retail",
+    "excerpt": "See how Dynamic Dreamz migrated D Shop from Adobe Commerce to Shopify while transferring ecommerce data and rebuilding the storefront experience.",
+    "image": "/assets/case-studies/d-shop.webp",
+    "alt": "D Shop: Custom Shopify Plus Shipping App with Real-Time Multi-Courier Rate Comparison project preview",
+    "href": "/case-studies/d-shop",
+    "tags": [
+      "Custom Shipping App",
+      "Multi-Courier Rate Comparison"
+    ]
+  },
+  {
+    "slug": "american-socks",
+    "title": "American Socks: Shopify as Central Hub for Zoho, Revo POS & WooCommerce Integration",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Fashion & Apparel",
+    "excerpt": "See how Dynamic Dreamz connected Shopify with Zoho, Revo POS and WooCommerce for American Socks to streamline connected commerce operations.",
+    "image": "/assets/case-studies/american-socks.webp",
+    "alt": "American Socks: Shopify as Central Hub for Zoho, Revo POS & WooCommerce Integration project preview",
+    "href": "/case-studies/american-socks",
+    "tags": [
+      "ERP / CRM Integration",
+      "Third-Party API Integration"
+    ]
+  },
+  {
+    "slug": "facts-and-supps",
+    "title": "Facts and Supps: End-to-End Shopify Redesign with Custom Animations & Subscription Engine",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Health & Nutrition",
+    "excerpt": "See how Dynamic Dreamz redesigned Facts and Supps on Shopify with custom interactions, subscription functionality and an improved buying experience.",
+    "image": "/assets/case-studies/facts-and-supps.webp",
+    "alt": "Facts and Supps: End-to-End Shopify Redesign with Custom Animations & Subscription Engine project preview",
+    "href": "/case-studies/facts-and-supps",
+    "tags": [
+      "Custom Animations",
+      "Subscription Engine"
+    ]
+  },
+  {
+    "slug": "daniel-walters",
+    "title": "Daniel Walters Eyewear: BigCommerce to Shopify Migration & Custom Dawn Theme Redesign",
+    "technology": "Shopify Migration",
+    "industry": "Jewellery & Accessories",
+    "excerpt": "See how Dynamic Dreamz migrated Daniel Walters Eyewear from BigCommerce to Shopify and rebuilt the storefront using a customized Dawn theme.",
+    "image": "/assets/case-studies/daniel-walters.webp",
+    "alt": "Daniel Walters Eyewear: BigCommerce to Shopify Migration & Custom Dawn Theme Redesign project preview",
+    "href": "/case-studies/daniel-walters",
+    "tags": [
+      "Eyewear",
+      "Jewellery & Accessories"
+    ]
+  },
+  {
+    "slug": "forma-prior",
+    "title": "Forma Prior: Custom Shopify Footwear Configurator for Bespoke Shoemaking",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Fashion & Apparel",
+    "excerpt": "See how Dynamic Dreamz developed a custom Shopify footwear configurator for Forma Prior to support bespoke product selection and customization.",
+    "image": "/assets/case-studies/forma-prior.webp",
+    "alt": "Forma Prior: Custom Shopify Footwear Configurator for Bespoke Shoemaking project preview",
+    "href": "/case-studies/forma-prior",
+    "tags": [
+      "Backend API Development",
+      "Shopify App Development"
+    ]
+  },
+  {
+    "slug": "renee-cosmetics-mobile-app",
+    "title": "REN\u00c9E Cosmetics: Shopify-Integrated Beauty & Cosmetics Shopping App",
+    "technology": "Shopify Mobile App Development",
+    "industry": "Beauty & Cosmetics",
+    "excerpt": "See how Dynamic Dreamz developed a Shopify-connected mobile shopping app for REN\u00c9E Cosmetics across iOS and Android.",
+    "image": "/assets/case-studies/renee-cosmetics-mobile-app.webp",
+    "alt": "REN\u00c9E Cosmetics: Shopify-Integrated Beauty & Cosmetics Shopping App project preview",
+    "href": "/case-studies/renee-cosmetics-mobile-app",
+    "tags": [
+      "React Native Development",
+      "Shopify App Development"
+    ]
+  },
+  {
+    "slug": "holy-plantz",
+    "title": "Holy Plantz: Figma-to-Shopify Redesign with Custom Sections for a Plant-Based Food Brand",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Food & Beverages",
+    "excerpt": "See how Dynamic Dreamz transformed Holy Plantz\u2019s Figma designs into a custom Shopify storefront with reusable sections and responsive development.",
+    "image": "/assets/case-studies/holy-plantz.webp",
+    "alt": "Holy Plantz: Figma-to-Shopify Redesign with Custom Sections for a Plant-Based Food Brand project preview",
+    "href": "/case-studies/holy-plantz",
+    "tags": [
+      "Figma to Shopify",
+      "Plant-Based Food"
+    ]
+  },
+  {
+    "slug": "tankbar",
+    "title": "Tankbar: Custom Shopify Hongo Theme Store with Smoothie Bundle & Subscription Functionality",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Health & Nutrition",
+    "excerpt": "See how Dynamic Dreamz built Tankbar\u2019s Shopify store with smoothie bundle functionality, subscriptions and a customized Hongo theme experience.",
+    "image": "/assets/case-studies/tankbar.webp",
+    "alt": "Tankbar: Custom Shopify Hongo Theme Store with Smoothie Bundle & Subscription Functionality project preview",
+    "href": "/case-studies/tankbar",
+    "tags": [
+      "Health & Nutrition",
+      "Hongo Theme Customization",
+      "Shopify Custom Apps & Integrations",
+      "Subscription & Bundles"
+    ]
+  },
+  {
+    "slug": "essential-whitening",
+    "title": "Essential Whitening: Custom Shopify 2.0 Store with B2B Pricing Tiers for Dental Professionals",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Health & Nutrition",
+    "excerpt": "See how Dynamic Dreamz developed Essential Whitening\u2019s Shopify 2.0 store with B2B pricing tiers for dental professionals and DTC customers.",
+    "image": "/assets/case-studies/essential-whitening.webp",
+    "alt": "Essential Whitening: Custom Shopify 2.0 Store with B2B Pricing Tiers for Dental Professionals project preview",
+    "href": "/case-studies/essential-whitening",
+    "tags": [
+      "B2B Pricing Tiers",
+      "Dental Industry"
+    ]
+  },
+  {
+    "slug": "rooted-human",
+    "title": "Rooted Human: Custom Shopify Dawn Theme Store for Women\u2019s Wellness Supplements",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Health & Nutrition",
+    "excerpt": "See how Dynamic Dreamz created a custom Shopify storefront for Rooted Human\u2019s women\u2019s wellness and supplement product range.",
+    "image": "/assets/case-studies/rooted-human.webp",
+    "alt": "Rooted Human: Custom Shopify Dawn Theme Store for Women\u2019s Wellness Supplements project preview",
+    "href": "/case-studies/rooted-human",
+    "tags": [
+      "Subscription & Bundles",
+      "Women's Wellness"
+    ]
+  },
+  {
+    "slug": "first-aid-distributions-migration",
+    "title": "Adobe Commerce to Shopify Migration: Zero Data-Loss Replatform for First Aid Distributions",
+    "technology": "Shopify Migration",
+    "industry": "Health & Nutrition",
+    "excerpt": "See how Dynamic Dreamz migrated First Aid Distributions from Adobe Commerce to Shopify while preserving key ecommerce data and functionality.",
+    "image": "/assets/case-studies/first-aid-distributions-migration.webp",
+    "alt": "Adobe Commerce to Shopify Migration: Zero Data-Loss Replatform for First Aid Distributions project preview",
+    "href": "/case-studies/first-aid-distributions-migration",
+    "tags": [
+      "Data Migration",
+      "Third-Party API Integration"
+    ]
+  },
+  {
+    "slug": "the-indus-valley",
+    "title": "The Indus Valley: Shopify Store Development for Premium Kitchenware & Cookware",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Home & Living",
+    "excerpt": "See how Dynamic Dreamz developed a Shopify ecommerce experience for The Indus Valley\u2019s premium kitchenware and cookware product range.",
+    "image": "/assets/case-studies/the-indus-valley.webp",
+    "alt": "The Indus Valley: Shopify Store Development for Premium Kitchenware & Cookware project preview",
+    "href": "/case-studies/the-indus-valley",
+    "tags": [
+      "Shopify Store Development",
+      "Shopify Theme Customization"
+    ]
+  },
+  {
+    "slug": "danario",
+    "title": "Danario : Shopify Redesign with configuration product for self-adhesive kitchen panels",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Home & Living",
+    "excerpt": "See how Dynamic Dreamz redesigned Danario on Shopify with configurable products for custom self-adhesive kitchen panel requirements.",
+    "image": "/assets/case-studies/danario.webp",
+    "alt": "Danario : Shopify Redesign with configuration product for self-adhesive kitchen panels project preview",
+    "href": "/case-studies/danario",
+    "tags": [
+      "Custom Shopify Development",
+      "Shopify Store Development"
+    ]
+  },
+  {
+    "slug": "yhus",
+    "title": "YHUS: Custom Shopify Minimalista Theme Store with m\u00b2 Calculator & Cart Upsell",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Home & Living",
+    "excerpt": "See how Dynamic Dreamz developed YHUS on Shopify with a custom square-metre calculator, product logic and cart upsell functionality.",
+    "image": "/assets/case-studies/yhus.webp",
+    "alt": "YHUS: Custom Shopify Minimalista Theme Store with m\u00b2 Calculator & Cart Upsell project preview",
+    "href": "/case-studies/yhus",
+    "tags": [
+      "Cart Upsell",
+      "Custom Calculator Tool"
+    ]
+  },
+  {
+    "slug": "nandi-medical",
+    "title": "Nandi Medical: Custom Shopify Dawn Theme Store with Individually Structured PDPs for HRT Clinics",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Health & Nutrition",
+    "excerpt": "See how Dynamic Dreamz developed Nandi Medical\u2019s Shopify store with structured product pages tailored to medical and HRT clinic requirements.",
+    "image": "/assets/case-studies/nandi-medical.webp",
+    "alt": "Nandi Medical: Custom Shopify Dawn Theme Store with Individually Structured PDPs for HRT Clinics project preview",
+    "href": "/case-studies/nandi-medical",
+    "tags": [
+      "B2B Ecommerce",
+      "Custom Product Pages"
+    ]
+  },
+  {
+    "slug": "zedmed",
+    "title": "Zedmed: Custom Shopify Dawn Theme Store for UK B2B Medical & NHS Supplies",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Health & Nutrition",
+    "excerpt": "See how Dynamic Dreamz built a B2B Shopify storefront for Zedmed to support medical supplies, professional buyers and NHS-focused requirements.",
+    "image": "/assets/case-studies/zedmed.webp",
+    "alt": "Zedmed: Custom Shopify Dawn Theme Store for UK B2B Medical & NHS Supplies project preview",
+    "href": "/case-studies/zedmed",
+    "tags": [
+      "B2B Ecommerce",
+      "Medical Supplies"
+    ]
+  },
+  {
+    "slug": "calmenta",
+    "title": "Calmenta: Custom Shopify Impact Theme Redesign for a Luxury Wellness Brand",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Healthcare & Medical",
+    "excerpt": "See how Dynamic Dreamz redesigned Calmenta\u2019s Shopify storefront using the Impact theme for a more premium wellness shopping experience.",
+    "image": "/assets/case-studies/calmenta.webp",
+    "alt": "Calmenta: Custom Shopify Impact Theme Redesign for a Luxury Wellness Brand project preview",
+    "href": "/case-studies/calmenta",
+    "tags": [
+      "Impact Theme Customization",
+      "Shopify Plus"
+    ]
+  },
+  {
+    "slug": "ayusunless",
+    "title": "Ayusunless: Custom B2B Wholesale Channel with Role-Based Pricing on Standard Shopify",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Beauty & Cosmetics",
+    "excerpt": "See how Dynamic Dreamz built a custom B2B wholesale experience on standard Shopify with customer roles and differentiated pricing.",
+    "image": "/assets/case-studies/ayusunless.webp",
+    "alt": "Ayusunless: Custom B2B Wholesale Channel with Role-Based Pricing on Standard Shopify project preview",
+    "href": "/case-studies/ayusunless",
+    "tags": [
+      "B2B Wholesale",
+      "Beauty & Cosmetics"
+    ]
+  },
+  {
+    "slug": "pins-by-design",
+    "title": "Pins by Design: Custom Shopify Configurator with Google Sheets-Driven Dynamic Pricing",
+    "technology": "Shopify Custom Apps & Integrations",
+    "industry": "Manufacturing",
+    "excerpt": "See how Dynamic Dreamz built a custom Shopify product configurator for Pins by Design with dynamic pricing powered by Google Sheets data.",
+    "image": "/assets/case-studies/pins-by-design.webp",
+    "alt": "Pins by Design: Custom Shopify Configurator with Google Sheets-Driven Dynamic Pricing project preview",
+    "href": "/case-studies/pins-by-design",
+    "tags": [
+      "Shopify App Development",
+      "Third-Party API Integration"
+    ]
+  },
+  {
+    "slug": "llama-by-cwrb",
+    "title": "Llama by CWRB: Women\u2019s Cycling Community App Built with Flutter & Laravel",
+    "technology": "Mobile Apps",
+    "industry": "Social Networking",
+    "excerpt": "See how Dynamic Dreamz developed a Flutter and Laravel mobile platform for Llama by CWRB\u2019s women\u2019s cycling community.",
+    "image": "/assets/case-studies/llama-by-cwrb.webp",
+    "alt": "Llama by CWRB: Women\u2019s Cycling Community App Built with Flutter & Laravel project preview",
+    "href": "/case-studies/llama-by-cwrb",
+    "tags": [
+      "Backend Development",
+      "Mobile Application Development"
+    ]
+  },
+  {
+    "slug": "blubox",
+    "title": "BluBox Medical: Custom ERP Platform Unifying Customer, Vendor, Pricing & Order Management",
+    "technology": "Full-Stack Development",
+    "industry": "Healthcare & Medical",
+    "excerpt": "See how Dynamic Dreamz developed a custom ERP platform for BluBox Medical covering customer, vendor, pricing and order management workflows.",
+    "image": "/assets/case-studies/blubox.webp",
+    "alt": "BluBox Medical: Custom ERP Platform Unifying Customer, Vendor, Pricing & Order Management project preview",
+    "href": "/case-studies/blubox",
+    "tags": [
+      "Custom ERP Platform",
+      "Enterprise Software"
+    ]
+  },
+  {
+    "slug": "beauty-software",
+    "title": "Beauty Software: Cloud-Based Salon, Spa & Beauty Clinic Management Platform",
+    "technology": "Full-Stack Development",
+    "industry": "Beauty & Cosmetics",
+    "excerpt": "See how Dynamic Dreamz developed a cloud-based salon, spa and beauty clinic management platform with connected operational workflows.",
+    "image": "/assets/case-studies/beauty-software.webp",
+    "alt": "Beauty Software: Cloud-Based Salon, Spa & Beauty Clinic Management Platform project preview",
+    "href": "/case-studies/beauty-software",
+    "tags": [
+      "Booking & Management System",
+      "Full-Stack Development"
+    ]
+  },
+  {
+    "slug": "sandf-product-group",
+    "title": "S&F Product Group: Full-Stack SaaS Inventory Management Platform with Real-Time Stock Control",
+    "technology": "Full-Stack Development",
+    "industry": "Retail",
+    "excerpt": "See how Dynamic Dreamz developed a full-stack SaaS inventory management platform for S&F Product Group with real-time stock control.",
+    "image": "/assets/case-studies/sandf-product-group.webp",
+    "alt": "S&F Product Group: Full-Stack SaaS Inventory Management Platform with Real-Time Stock Control project preview",
+    "href": "/case-studies/sandf-product-group",
+    "tags": [
+      "Mobile Application Development",
+      "Web Application Development"
+    ]
+  },
+  {
+    "slug": "care-e-well",
+    "title": "Care-E-Well: BuddyBoss-Powered Digital Parenting & Healthcare Community Platform",
+    "technology": "WordPress",
+    "industry": "Health & Nutrition",
+    "excerpt": "See how Dynamic Dreamz developed Care-E-Well\u2019s digital parenting and healthcare community platform using WordPress and BuddyBoss.",
+    "image": "/assets/case-studies/care-e-well.webp",
+    "alt": "Care-E-Well: BuddyBoss-Powered Digital Parenting & Healthcare Community Platform project preview",
+    "href": "/case-studies/care-e-well",
+    "tags": [
+      "Frontend Development",
+      "Website Development"
+    ]
+  },
+  {
+    "slug": "vital-mobility",
+    "title": "Vital Mobility: WooCommerce Healthcare E-Commerce Platform for Mobility Equipment",
+    "technology": "WordPress",
+    "industry": "Health & Nutrition",
+    "excerpt": "See how Dynamic Dreamz developed a WooCommerce ecommerce platform for Vital Mobility\u2019s healthcare and mobility equipment business.",
+    "image": "/assets/case-studies/vital-mobility.webp",
+    "alt": "Vital Mobility: WooCommerce Healthcare E-Commerce Platform for Mobility Equipment project preview",
+    "href": "/case-studies/vital-mobility",
+    "tags": [
+      "Frontend Development",
+      "Website Development"
+    ]
+  },
+  {
+    "slug": "aziz-art",
+    "title": "Aziz Art: Multi-Vendor WooCommerce Marketplace for Latin American Artists",
+    "technology": "WordPress",
+    "industry": "E-commerce",
+    "excerpt": "See how Dynamic Dreamz built a multi-vendor WooCommerce marketplace for Aziz Art to showcase and sell work from Latin American artists.",
+    "image": "/assets/case-studies/aziz-art.webp",
+    "alt": "Aziz Art: Multi-Vendor WooCommerce Marketplace for Latin American Artists project preview",
+    "href": "/case-studies/aziz-art",
+    "tags": [
+      "UI/UX Design",
+      "Website Development"
+    ]
+  },
+  {
+    "slug": "eczema-milk",
+    "title": "Eczema Milk: Figma-to-Shopify Dawn Theme Build with Judge.me Reviews Integration",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Beauty & Cosmetics",
+    "excerpt": "See how Dynamic Dreamz converted Eczema Milk\u2019s Figma designs into a responsive Shopify storefront with Judge.me review integration.",
+    "image": "/assets/case-studies/eczema-milk.webp",
+    "alt": "Eczema Milk: Figma-to-Shopify Dawn Theme Build with Judge.me Reviews Integration project preview",
+    "href": "/case-studies/eczema-milk",
+    "tags": [
+      "Figma to Shopify",
+      "Judge.me Integration"
+    ]
+  },
+  {
+    "slug": "eddus-and-co",
+    "title": "EDDUS & Co: Custom Shopify Dawn Theme Store for Clean, Refillable Skincare",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Beauty & Cosmetics",
+    "excerpt": "See how Dynamic Dreamz developed a custom Shopify storefront for EDDUS & Co\u2019s clean and refillable skincare product range.",
+    "image": "/assets/case-studies/eddus-and-co.webp",
+    "alt": "EDDUS & Co: Custom Shopify Dawn Theme Store for Clean, Refillable Skincare project preview",
+    "href": "/case-studies/eddus-and-co",
+    "tags": [
+      "Dawn Theme Customization",
+      "Refillable Packaging Brand"
+    ]
+  },
+  {
+    "slug": "candy-prom-and-evening",
+    "title": "Candy Prom & Evening: Custom Shopify Broadcast Theme Store with Colour-Variant Swatches",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Fashion & Apparel",
+    "excerpt": "See how Dynamic Dreamz developed Candy Prom & Evening\u2019s Shopify store with the Broadcast theme and improved color-variant shopping.",
+    "image": "/assets/case-studies/candy-prom-and-evening.webp",
+    "alt": "Candy Prom & Evening: Custom Shopify Broadcast Theme Store with Colour-Variant Swatches project preview",
+    "href": "/case-studies/candy-prom-and-evening",
+    "tags": [
+      "Colour-Variant Swatches",
+      "Fashion & Apparel"
+    ]
+  },
+  {
+    "slug": "e2ip-technologies",
+    "title": "E2IP Technologies: B2B Shopify Trade Theme Store with Persistent \u2018Buy Product\u2019 Header",
+    "technology": "Shopify / Shopify Plus",
+    "industry": "Manufacturing",
+    "excerpt": "See how Dynamic Dreamz created a B2B Shopify storefront for E2IP Technologies with a customized Trade theme and streamlined product purchasing.",
+    "image": "/assets/case-studies/e2ip-technologies.webp",
+    "alt": "E2IP Technologies: B2B Shopify Trade Theme Store with Persistent \u2018Buy Product\u2019 Header project preview",
+    "href": "/case-studies/e2ip-technologies",
+    "tags": [
+      "B2B Ecommerce",
+      "Trade Theme Customization"
+    ]
+  },
+  {
+    "slug": "join-rax",
+    "title": "Join RAX: Custom WordPress LMS with LearnDash & Membership Access Control",
+    "technology": "WordPress",
+    "industry": "Education (EdTech)",
+    "excerpt": "See how Dynamic Dreamz developed Join RAX\u2019s WordPress learning platform with LearnDash, membership controls and restricted course access.",
+    "image": "/assets/case-studies/join-rax.webp",
+    "alt": "Join RAX: Custom WordPress LMS with LearnDash & Membership Access Control project preview",
+    "href": "/case-studies/join-rax",
+    "tags": [
+      "UI/UX Design",
+      "Website Development"
+    ]
+  },
+  {
+    "slug": "consciouspoker",
+    "title": "ConsciousPoker: WordPress Membership Site with ActiveMember360 Course Management",
+    "technology": "WordPress",
+    "industry": "Education (EdTech)",
+    "excerpt": "See how Dynamic Dreamz developed ConsciousPoker\u2019s WordPress membership and online learning platform with ActiveMember360 integrations.",
+    "image": "/assets/case-studies/consciouspoker.webp",
+    "alt": "ConsciousPoker: WordPress Membership Site with ActiveMember360 Course Management project preview",
+    "href": "/case-studies/consciouspoker",
+    "tags": [
+      "Course / LMS Management",
+      "Membership Site"
+    ]
+  },
+  {
+    "slug": "sooqselect",
+    "title": "SooqSelect: Kuwait\u2019s Business Directory & Lead Generation Platform on WordPress",
+    "technology": "WordPress",
+    "industry": "Directory",
+    "excerpt": "See how Dynamic Dreamz developed SooqSelect\u2019s WordPress business directory and lead-generation platform for the Kuwait market.",
+    "image": "/assets/case-studies/sooqselect.webp",
+    "alt": "SooqSelect: Kuwait\u2019s Business Directory & Lead Generation Platform on WordPress project preview",
+    "href": "/case-studies/sooqselect",
+    "tags": [
+      "UI/UX Design",
+      "Website Development"
+    ]
+  },
+  {
+    "slug": "avmh",
+    "title": "AVMH: WordPress & WooCommerce Music Class Subscription Platform",
+    "technology": "WordPress",
+    "industry": "Education (EdTech)",
+    "excerpt": "See how Dynamic Dreamz developed AVMH\u2019s WordPress and WooCommerce platform for music classes, subscriptions and online customer management.",
+    "image": "/assets/case-studies/avmh.webp",
+    "alt": "AVMH: WordPress & WooCommerce Music Class Subscription Platform project preview",
+    "href": "/case-studies/avmh",
+    "tags": [
+      "Frontend Development",
+      "Website Development"
+    ]
+  },
+  {
+    "slug": "quite-events",
+    "title": "Quiet Events: Mobile-Friendly WordPress Redesign on Avada Theme for a Silent Disco Brand",
+    "technology": "WordPress",
+    "industry": "Entertainment",
+    "excerpt": "See how Dynamic Dreamz redesigned Quiet Events\u2019 WordPress website using Avada with a responsive experience for its silent disco business.",
+    "image": "/assets/case-studies/quite-events.webp",
+    "alt": "Quiet Events: Mobile-Friendly WordPress Redesign on Avada Theme for a Silent Disco Brand project preview",
+    "href": "/case-studies/quite-events",
+    "tags": [
+      "Events & Entertainment",
+      "Mobile-Friendly Redesign"
+    ]
+  }
+]
