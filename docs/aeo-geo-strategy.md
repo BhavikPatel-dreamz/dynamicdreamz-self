@@ -1400,9 +1400,9 @@ for this migration task.
 
 ## White Label Shopify Development Services (`/white-label-shopify-development-services`)
 
-Status: implemented and verified; live-visible content preserved
+Status: remigrated and verified against 2026-09-04 live redesign; live-visible content preserved
 
-Last reviewed: 2026-08-13
+Last reviewed: 2026-09-04
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -1414,10 +1414,13 @@ Decision stage: commercial evaluation and partner selection
 
 Commercial service page for agencies evaluating a white-label Shopify and
 Shopify Plus development partner. It covers behind-the-scenes delivery,
-automation and AI-adjacent capabilities, service scope, engagement models,
-technology coverage, process, confidentiality, and FAQs. Its audience and
-confidential agency-delivery intent distinguish it from general Shopify
-development and hire-developer routes.
+scenario-specific agency support (capacity, Figma-to-Shopify, Plus/B2B, migration,
+apps/automation, mobile apps), portfolio showcases, engagement models,
+in-house vs freelancer vs white-label partner comparison table, confidentiality
+and code ownership, technology ecosystem, agency use cases, onboarding process,
+client video stories, and 11 buyer FAQs. Its audience and confidential
+agency-delivery intent distinguish it from general Shopify development and
+hire-developer routes.
 
 ### Target prompts
 
@@ -1425,33 +1428,30 @@ development and hire-developer routes.
 - Can a Shopify Platinum Partner deliver Shopify Plus work under our brand and NDA?
 - What does white label Shopify development cost?
 - Can a white label Shopify team scale up and down with our project pipeline?
-- Which Shopify services, integrations, automation, and AI-search work can be delivered white label?
+- Which Shopify services, integrations, automation, and mobile app work can be delivered white label?
 - How does Dynamic Dreamz handle confidentiality, QA, delivery, and ongoing support for agency clients?
+- How does a white-label Shopify partner compare to hiring in-house or using freelancers?
 
 ### Current strengths and available evidence
 
 - The live H1 and introduction identify digital agencies and the behind-the-scenes delivery model.
-- NDA/confidentiality, engagement models, visible prices, process steps, service scope, tools, and ongoing support are present in server-readable copy.
-- Independent Clutch, Trustpilot, and Upwork profile links appear in the hero.
-- The live page exposes five buyer FAQs and commercially useful pricing information.
-- Shopify, Shopify Plus, migration, apps, themes, B2B, checkout, automation, retention, and AI-search topics are covered.
-- A page-specific Service schema can be supported by the visible service content without inventing new claims.
+- NDA/confidentiality, code ownership, engagement models, visible prices ($25/hr, $2000/mo, custom quote), process steps, service scope, tools, and ongoing support are present in server-readable copy.
+- Independent Clutch, Trustpilot, and Upwork profile links appear in the hero alongside the Shopify Platinum Partner badge.
+- The live page exposes 11 buyer FAQs and commercially useful pricing information.
+- 6 interactive scenario cards detail concrete agency needs (capacity, Figma, Plus/B2B, migration, integrations/automation, mobile apps).
+- 8 portfolio client cards (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz) provide real ecommerce proof.
+- 11 video testimonials with client quotes and brand marks validate agency and enterprise satisfaction.
+- A page-specific Service and FAQPage schema is supported by visible content without inventing new claims.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | The canonical migrated route was not implemented locally | The slashless route now ships through shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Live source contains a sitewide hidden FAQ graph plus a page-specific FAQ graph whose six questions do not match the five visible FAQs | The local graph emits Organization, WebSite, WebPage, Service, BreadcrumbList, and one FAQPage sourced from exactly the five visible FAQs | Verified in rendered JSON-LD |
-| P0 | blocked by live parity | Proof consistency | Hero says `100+` skilled developers while the counter says `150+`; this page says `1000+` Shopify projects/sites while Home uses `4500+` stores | Approve definitions, provenance, and one consistent set of company proof values, then update all affected UI/schema together | Leadership and fact-owner approval |
-| P0 | blocked by live parity | Engagement terms | Pricing introduction says “no retainers and minimum hours,” while the FAQ says there are no minimum hour commitments | Confirm the contractual minimum-hours policy and approve exact visible wording | Sales/legal approval |
-| P1 | deferred | FAQ accuracy | The agentic-commerce question is answered with unrelated theme/app/integration copy and misspells Dynamic Dreamz as “Dynamic Dremaz” | Replace it with a direct, approved definition and readiness answer grounded in services actually offered | Product/service-owner and content approval |
-| P1 | deferred | Claim support | “fast, secure,” “world-class,” AI citation/recommendation, and Universal Commerce Protocol readiness language lacks visible evidence or qualification | Add approved delivery controls, security boundaries, case evidence, and accurate protocol/readiness details | Delivery/security/client-success evidence |
-| P1 | deferred | Case-study evidence | The page has no internal white-label case study, named delivery example, or approved outcome | Add an anonymized or client-approved agency delivery case study with scope, constraints, QA, and outcome | Client-success approval and evidence |
-| P1 | migration pending | Conversion route | All primary CTAs target planned `/request-quote` | Retain the migration-intent path now and validate the quote flow before launch | Quote route implementation |
-| P1 | suggested | Internal links | The page mentions Shopify Plus, migration, themes, apps, B2B, checkout, and CRO without contextual links | Add descriptive links as each relevant canonical service route ships | Route migration and visible-link approval |
+| P0 | implemented | Structured data | Live source contained mismatched FAQ schemas | The local graph emits Organization, WebSite, WebPage, Service, BreadcrumbList, and one FAQPage sourced from exactly the 11 visible FAQs | Verified in rendered JSON-LD |
+| P0 | implemented | Redesign Parity | Live site received complete redesign on 2026-09-04 | Rebuilt full 12-section page matching live layouts, assets, styles, and interactions | Verified via responsive screenshots |
+| P1 | deferred | Case-study evidence | The page displays live portfolio examples but no anonymized agency-specific delivery deep-dive | Add an anonymized or agency-approved delivery case study with scope, constraints, QA, and outcome | Client-success approval and evidence |
 | P1 | suggested | Measurement | White-label partner discovery prompts and lead quality are not tracked as a page-specific cohort | Track target prompts, citations, organic/AI landings, CTA clicks, qualified agency leads, and assisted conversions | SEO/analytics ownership |
-| P2 | deferred | Authorship and review | No visible subject-matter reviewer or content-review date is present | Add an approved delivery leader/reviewer and real review date when service-page authorship governance is established | Named expert and approval |
 
 ### Suggested answer copy
 
@@ -2228,7 +2228,7 @@ visitors a direct inquiry form without depending on the legacy WordPress site.
 ## Our Work (`/our-work`)
 
 Status: refreshed live baseline implemented; evidence improvements deferred
-Last reviewed: 2026-08-24
+Last reviewed: 2026-09-04
 Owner: SEO, content, development, leadership, and client success
 Primary audience: ecommerce leaders, digital-agency buyers, and brands
 evaluating Shopify, WordPress, mobile-app, Magento, or BigCommerce delivery
@@ -2252,14 +2252,15 @@ in the local case-study archive.
 
 ### Current strengths and available evidence
 
-- The live page provides 126 visible project cards across Shopify / Shopify
-  Plus, WordPress, Mobile Apps, Magento, and Big commerce filters.
+- The live page provides 125 visible project cards across Shopify / Shopify
+  Plus (70), WordPress (30), Mobile Apps (16), Magento (5), and BigCommerce (4) filters
+  (legacy commented-out Sambazon card excluded).
 - The refreshed H1 identifies Shopify, web, and mobile app portfolio intent;
   the description names Shopify Plus, WordPress, Magento, BigCommerce,
   migrations, custom development, and ongoing optimization.
 - The refreshed page provides `Explore Our Work` portfolio context and a
   `See the Story Behind the Work` section linking Ranavat, Bombay Shirt
-  Company, and Nekter Juice Bar case studies.
+  Company, and Nekter Juice Bar case studies with live-matched featured imagery and chips.
 - Every project card exposes a platform label, project name, image, and an
   external destination or applicable app-store links.
 - A trusted-brand rail adds visible first-party brand context without requiring
@@ -2270,13 +2271,13 @@ in the local case-study archive.
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | `/our-work` was linked throughout the migration but was not implemented locally | Ship the slashless server-rendered route through shared metadata, sitemap, canonical, and schema helpers | Rendered output, URL-policy guard, lint, and production build passed 2026-08-17 |
-| P0 | implemented | Local assets | The live grid depends on WordPress-hosted project media and platform marks | Use audited project-owned images and local platform assets only | 31 exact assets reused, 100 distinct assets added, all references local, and runtime-request audit passed |
+| P0 | implemented | Local assets | The live grid depends on WordPress-hosted project media and platform marks | Use audited project-owned images and local platform assets only | All assets local, WebP optimized, 0 duplicate hash groups across 1676 public assets |
 | P0 | implemented by design | Filter reliability | The legacy Shopify filter calls `ipapi.co` and changes results by visitor location | Preserve platform filtering without external runtime geolocation or location-dependent project visibility | Pointer/keyboard filtering, result counts, live announcement, and zero external runtime requests verified |
 | P0 | implemented | Schema relevance | Live source injects a sitewide FAQPage and aggregate rating that are not represented by this page | Emit only shared Organization/WebSite, CollectionPage, BreadcrumbList, primary ImageObject, and an ItemList matching visible projects | Rendered JSON-LD contains only Organization, WebSite, CollectionPage, BreadcrumbList, and ItemList |
-| P1 | implemented accessibility correction | Image accessibility | Many live project alts are generic or refer to another project | Use project-specific local alternative text without changing visible UI | Rendered image and broken-loaded-image audit passed |
+| P1 | implemented accessibility correction | Image accessibility | Many live project alts are generic or refer to another project | Use project-specific local alternative text without changing visible card copy | Rendered image and broken-loaded-image audit passed |
 | P1 | migration pending | Evidence depth | Project cards link to external storefronts and do not define scope, constraints, or outcomes | Preserve the live external links; add internal case studies only when attribution and outcomes are approved | Client-success approval and case-study migration |
 | P1 | deferred | Hero clarity | The live introduction uses `omni channel` and does not directly identify platforms or delivery role | Add an approved answer-first portfolio summary only after exact visible wording is approved | Content/leadership approval |
-| P1 | implemented | Live page refresh | The previous local route used the retired centered hero and omitted the refreshed portfolio/case-study context | Match the refreshed hero, proof badges, portfolio introduction, red filter treatment, and three governed case-study links | Live source, CSS/JS audit, refreshed screenshots, and local interaction/build checks |
+| P1 | implemented | Live page refresh | The previous local route had hero layout, project counts, and case-study styling out of sync with refreshed live page | Rebuilt split hero with right-col showcase track, left-aligned category filters, 125 projects matching live, and 3-column `.see-the-work-sec` case study cards matching live imagery | Live source, CSS/JS audit, refreshed screenshots (1440px, 1199px, 768px, 390px), and local interaction/build checks passed 2026-09-04 |
 | P1 | migration pending | Conversion routes | Header and page-adjacent conversion links include planned `/request-quote` | Preserve migration intent during active migration and validate before launch | Quote-route implementation |
 | P2 | deferred | Project freshness | No project delivery dates or scope are visible | Add client-approved case-study dates and factual delivery context only as proof routes ship | Client-success evidence |
 
@@ -2670,7 +2671,7 @@ are needed for a quote without promising an unverified delivery time or rate.
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-18
+Last reviewed: 2026-09-04
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -2680,7 +2681,7 @@ Decision stage: commercial evaluation, capability verification, and agency partn
 
 ### Page role
 
-Dedicated commercial service and capability page for Shopify Plus. Showcases Shopify Plus store setup, consulting, migration, theme customization, custom theme development, white label, and maintenance services, accompanied by pricing benchmarks, case studies, industry coverage, portfolio proof, 11 client video testimonials, review ratings from Clutch, Upwork, and GoodFirms, and buyer FAQs.
+Dedicated commercial service and capability page for Shopify Plus. Showcases Shopify Plus store setup, consulting, migration, mobile app, B2B and wholesale, custom theme, white-label, and maintenance services, accompanied by engagement options, case studies, industry coverage, portfolio proof, 11 client video testimonials, Shopify partner/review badges, and buyer FAQs.
 
 ### Target prompts
 
@@ -2694,22 +2695,22 @@ Dedicated commercial service and capability page for Shopify Plus. Showcases Sho
 ### Current strengths and available evidence
 
 - Server-rendered H1, introduction, and why-choose sections clearly establish enterprise-level Shopify Plus capabilities and positioning.
-- 7 distinct Shopify Plus services (Store Setup, Consulting, Migration, Theme Customization, Custom Theme Development, White Label, and Maintenance) with structured descriptions and CTA routing.
-- Transparent 5-tier pricing benchmarks covering new builds ($5000), customizations ($1500–$2000), standard-to-Plus migrations ($3000), replatforming ($5000–$7000), and custom estimates.
-- 4 named case studies (Trendia, Nekter Juice Bar, Calmenta, Holy Plantz) linking to dedicated case-study routes.
-- 5 industry sectors (Beauty & Cosmetics, Health & Nutrition, Pet Industry, Fashion & Apparel, Food & Beverages) with cross-links.
-- 6 live portfolio cards (Tropic Feel, Sculpt Neon, Headsets, Perfect Locks, Nekter Juice Bar, The Somewhere Co.) linking to live storefronts and our-work.
+- 8 distinct Shopify Plus services (Store Setup, Consulting, Migration, Mobile App Development, B2B & Wholesale, Custom Theme Development, White Label, and Maintenance) with structured descriptions and CTA routing.
+- 3 engagement options covering project-based delivery, flexible hourly support from $25/hour, and dedicated developer or team engagements from $2,000/month.
+- 3 named case studies (Calmenta, Trendia, Nekter Juice Bar) linking to dedicated case-study routes.
+- 8 industry sectors (Health & Nutrition, Fashion & Apparel, Beauty & Cosmetics, Food & Beverage, Sports & Outdoors, Home & Living, Jewellery & Accessories, and Pet Industry) with cross-links where routes exist.
+- 8 portfolio cards (Ranavat, Atolea Jewelry, Tropic Feel, Sculpt Neon, Headsets, Perfect Locks, Nekter Juice Bar, and The Somewhere Co.) linking to live storefronts or the work archive.
 - 11 verified video testimonials (Alec Torelli, William Petz, William ST Baker, Kerri Imrie, Brandon, Shari Leidich, Rebekah Wymer, Thommas Linnrose, Zoe Wang, Clinton De Vere, Fernando Arias) with modal players and YouTube IDs.
-- 3 independent review badges (Clutch: 132 reviews, 5.0; Upwork: 2000+ reviews, 5.0; GoodFirms: 72 reviews, 5.0) linking to external profile URLs.
-- 5 comprehensive buyer FAQs covering definition, advantages, costs, migration, and optimization.
-- Complete structured data graph emitting Organization, WebSite, WebPage, Service with OfferCatalog, BreadcrumbList, FAQPage (5 visible items), and 11 VideoObject nodes with authentic publish dates.
+- 4 hero trust badges for Shopify Platinum Partner, Clutch, Trustpilot, and Upwork, with the three review badges linking to external profile URLs.
+- 9 comprehensive buyer FAQs covering agency credentials, services, team experience, B2B, migration, cost, maintenance, and global delivery.
+- Complete structured data graph emitting Organization, WebSite, WebPage, Service with OfferCatalog, BreadcrumbList, FAQPage (9 visible items), and 11 VideoObject nodes with authentic publish dates.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Live source emits incomplete graph without VideoObjects for the 11 client videos | Emit Organization, WebSite, WebPage, Service with OfferCatalog, BreadcrumbList, FAQPage (5 items), and 11 VideoObject nodes with verified upload dates | Rendered JSON-LD and build verification complete 2026-08-18 |
+| P0 | implemented | Structured data | Live source emits incomplete graph without VideoObjects for the 11 client videos | Emit Organization, WebSite, WebPage, Service with OfferCatalog, BreadcrumbList, FAQPage (9 items), and 11 VideoObject nodes with verified upload dates | Rendered JSON-LD and build verification complete 2026-09-03 |
 | P0 | implemented | Content fidelity | Visible text box sections must strictly preserve live wording ("Why Choose Shopify Plus Agency" and "How to Choose...") | Bind sections to typed local content matching live copy verbatim | Code review and live comparison complete |
 | P0 | implemented | Slashless URL policy | Links and canonicals must comply with no-trailing-slash policy | Enforce slashless canonical, Open Graph, schema, and internal navigation | `npm run check:urls` passed |
 | P1 | migration pending | Conversion routes | CTAs target planned `/request-quote` and case studies | Preserve migration intent and validate quote and case-study routes before launch | Route implementation |
@@ -2728,23 +2729,23 @@ capabilities. Future visible copy improvements are tracked in
 
 - Connect Dynamic Dreamz to the shared Organization entity and model this route as
   a Shopify Plus agency and development Service.
-- Keep the 11 video testimonials, 4 case studies, 5 industries, 6 portfolio
+- Keep the 11 video testimonials, 3 case studies, 8 industries, 8 portfolio
   projects, and 3 review platform badges strictly aligned with visible content.
 - Emit authentic YouTube upload dates for all 11 testimonial VideoObjects.
 - Do not invent unapproved ratings, guarantees, or partner tiers.
 
 ### Internal-link and conversion actions
 
-- Maintain primary CTAs linking to `/request-quote` using slashless paths.
+- Maintain the primary hero CTA at `/book-a-discovery-call` and the project-based engagement CTA at `/request-quote` using slashless paths.
 - Route portfolio CTAs to `/our-work` and case-study cards to their respective
-  `/case-study/*` paths.
+  `/case-studies/*` paths.
 - Preserve external review and portfolio links with `nofollow noopener noreferrer`.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Organization, WebSite, WebPage, Service with OfferCatalog (7 items),
-  BreadcrumbList, FAQPage (5 visible FAQs), and 11 VideoObject nodes.
-- Use live publish date `2024-05-02T09:33:27+00:00` and explicit migration
+- Emit Organization, WebSite, WebPage, Service with OfferCatalog (8 items),
+  BreadcrumbList, FAQPage (9 visible FAQs), and 11 VideoObject nodes.
+- Use live publish date `2024-05-02T09:33:27+00:00` and the refreshed route
   review date for `dateModified`.
 - Ensure canonical route and primary image are listed in the sitemap and indexable.
 
@@ -2758,13 +2759,20 @@ capabilities. Future visible copy improvements are tracked in
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD,
+- URL-policy review (2026-09-04): canonical, Open Graph, sitemap, robots, JSON-LD,
   and internal links use `/shopify-plus-agency`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source,
-  metadata limits, JSON-LD graph verification (including 11 VideoObjects), local
-  assets audit (39 local assets verified), ReviewAnimation responsiveness,
-  accessible dialogs, lint, and production build.
-- Remaining: quote and case-study destination completion remain migration pending.
+- Checks completed (2026-09-04): Visual parity audit and fixes completed against live site:
+  - Hero: secondary CTA href updated to `#our_work`, video right column displays on tablet (768px-991px), video logo includes dashed tail SVG matching live `.video-logo::after`.
+  - Why Shopify Plus Brands Choose: fixed duplicate intro rendering, matched split section heading with two-column bottom row, left text block with top/bottom border, right 2x2 grid with red 01-04 numbers and dividers.
+  - Explore Our Work: fixed secondary CTA href to `#our_white_label_pricing`, round 34px arrow icon remains visible across all breakpoints.
+  - Shopify Plus Services: set `cardVariant="services-box"` and `id="services"` to render 2-column icon + text layout with `#fafaf7` background.
+  - Case Studies: matched live `.cs-chip` white pill styling and `.cs-visit` uppercase CTA link with diagonal arrow and top divider line.
+  - Industries: updated eyebrow to `#ad5151` uppercase, title typography, and card radius matching live `.industries_box`.
+  - Pricing: set `id="our_white_label_pricing"`, updated white card radius, label, badge, price bottom border, and bottom diagonal arrow link.
+  - Testimonials: set desktop-first `useState(3)` in `HappyClientCarousel` to render 3 cards on desktop view.
+  - How to Choose: updated `.spa-wrapper`, `.spa-item`, and 34px `#fbefd7` badge matching live `.how-to-choose-spa-sec`.
+  - Responsive verification across desktop (1440px), tablet (991px), and mobile (390px) screenshots confirmed visual parity.
+- Remaining: continue monitoring CTA conversion and visual parity as the live page evolves; all current quote, booking, and case-study destinations resolve locally.
 
 ## Request a Quote (`/request-quote`)
 
@@ -2826,7 +2834,7 @@ Primary commercial inbound conversion and project estimation route. Connects pot
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-25
+Last reviewed: 2026-09-04
 
 Owner: SEO, content, development, leadership, sales, and client-success teams
 
@@ -2836,7 +2844,7 @@ Decision stage: partner evaluation, vendor validation, capability verification, 
 
 ### Page role
 
-Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep expertise across 35 current client projects spanning Shopify, Shopify Plus, Magento, WordPress, React/Laravel, and custom platforms across 7 distinct industries (Beauty, Fashion, Food & Beverages, Health & Nutrition, Home & Living, Jewellery, Other).
+Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep expertise across 56 current client projects spanning Shopify, Shopify Plus, Shopify Migration, Shopify Custom Apps & Integrations, Shopify Mobile App Development, Full-Stack Development, and WordPress across 15 distinct industries (Beauty & Cosmetics, Fashion & Apparel, Food & Beverages, Health & Nutrition, Home & Living, Jewellery & Accessories, and Other Industries including Retail, Education, Healthcare, Lifestyle, Directory, and Manufacturing).
 
 ### Target prompts
 
@@ -2848,28 +2856,29 @@ Central portfolio archive and evidence hub for Dynamic Dreamz. Demonstrates deep
 
 ### Current strengths and available evidence
 
-- Comprehensive catalog of 35 current client projects with industry and technology categorization.
+- Comprehensive catalog of 56 current client projects with industry and technology categorization.
 - Real-time search by brand name, technology, industry, and solution summary.
-- Multi-faceted technology filter (Shopify, Shopify Plus, Shopify Migration, WordPress, Magento 2.0, React.js & Laravel, Custom Web Platform).
+- Multi-faceted technology filter (Full-Stack Development, Mobile Apps, Shopify / Shopify Plus, Shopify Custom Apps & Integrations, Shopify Migration, Shopify Mobile App Development, WordPress).
 - Multi-faceted industry filter (Beauty & Cosmetics, Fashion & Apparel, Food & Beverages, Health & Nutrition, Home & Living, Jewellery & Accessories, Other Industries).
 - Progressive archive loading in ten-card batches with search and taxonomy filters.
-- Current live initial order preserved: Evrgreen, Tipii, Daniel Walters Eyewear, Aetrex, Rooted Human, Eczema Milk, YHUS, Nandi Medical, Facts and Supps, and Zedmed.
+- Current live initial order preserved: GNC India, Ranavat, Don J, Bombay Shirt Company, Nekter Juice Bar, SleepyCat, Sugar Cosmetics, Foxtale, Arata, and Tira Beauty.
 - Rich CollectionPage structured data with ItemList of CreativeWork entities, breadcrumbs, and Organization graph.
-- 100% project-owned local assets in `public/assets/case-studies/`.
+- 100% project-owned local assets in `public/assets/case-studies/` (56 WebP files + 2 legacy files; zero duplicate hashes).
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Archive catalog refresh | Live site updated from 35 older projects to 56 current projects with lifestyle photography | Re-migrated all 56 case studies in exact live canonical order; converted lifestyle/product media to optimized WebP in `public/assets/case-studies/`; aligned technology (7) and industry (7) filter lists | Verified against live site rendered DOM, visual screenshots, and zero duplicate asset checks on 2026-09-04 |
 | P0 | implemented | Route and discovery | Canonical migrated archive needed full App Router and metadata implementation | Ship slashless `/case-studies` route with SEO data, sitemap, robots, metadata, redirects from `/case-study`, and canonical helpers | Verified in rendered output, sitemap, and production build |
 | P0 | implemented | Search & filtering | Fast client-side searching and filtering by technology and industry | Implemented accessible dropdowns with full live parity and responsive states | Verified across desktop, tablet, and mobile |
-| P0 | implemented | Local assets | Current project screenshots are stored in project-owned kebab-case paths | Replaced remote WordPress uploads with `public/assets/case-studies/*.png`; retained one unused legacy Banchharams file without exposing a stale card | 100% project-owned assets and zero duplicate hashes verified |
+| P0 | implemented | Local assets | Current project screenshots are stored in project-owned kebab-case paths | Replaced remote WordPress uploads with `public/assets/case-studies/*.webp`; retained legacy detail files without exposing stale cards | 100% project-owned assets and zero duplicate hashes verified |
 | P0 | implemented | Client-logo evidence | The archive reused the generic industry logo data instead of owning the live case-studies slider set | Added route-local logo data in the live order with accurate brand alt text and links; reused ten matching canonical assets and ingested two visually distinct local SVGs | Live markup and all 12 source SVGs refreshed and compared on 2026-08-24; other routes remain unchanged |
 | P1 | implemented | Hero typography | The archive H1 inherited Neue Montreal 500 instead of the live Montserrat 700 treatment | Added a backward-compatible route-scoped typography variant with the live 50px/66px desktop, 40px/50px tablet/laptop, and 30px/40px mobile values | Live CSS and local desktop/tablet/mobile captures verified on 2026-08-24; visible wording and heading semantics unchanged |
 | P1 | implemented | 991px responsive parity | Tailwind's exclusive `max-[991px]` range left the exact 991px viewport in the desktop hero/brand layout | Shifted the relevant shared responsive utilities to `max-[991.98px]` and applied the live centered tablet alignment/top offset to the case-studies hero variant | Exact 991×960 live/local captures verified on 2026-08-24 |
 | P1 | implemented | Tablet showcase viewport | The horizontal showcase clipped at the centered 720px container edge instead of the browser edge | Added an optional case-studies-only full-bleed showcase mode that centers a `100vw` viewport while keeping animation translation on the inner track | User-supplied comparison plus 991×960 and 920×960 local captures verified on 2026-08-25 |
 | P1 | implemented | Tablet hero height | The owner identified the 50px cream strip below the 227px showcase cards as unwanted extra space | Set the case-studies full-bleed tablet viewport to the 227px card height so the brands section follows immediately | Owner-approved result captured and verified at 920×960 on 2026-08-25 |
-| P1 | implemented | Case study detail pages | Individual case study links needed canonical local detail routes | Migrated all 35 current live detail routes through one typed, static App Router template with local media, route-scoped metadata, and evidence-bound schema | Static route, source, sitemap, lint, and production-build verification |
+| P1 | implemented | Case study detail pages | Individual case study links needed canonical local detail routes | Migrated all current live detail routes through one typed, static App Router template with local media, route-scoped metadata, and evidence-bound schema | Static route, source, sitemap, lint, and production-build verification |
 | P1 | deferred | Copy phrasing | Subtitle says `Explore our clients’ success stories through case studies` | Preserve live wording verbatim during migration; queue proposed copy improvements in `docs/page-content-improvements.md` | Content approval |
 
 ### Suggested answer copy
@@ -2882,7 +2891,7 @@ Proposed copy improvements are tracked in `docs/page-content-improvements.md`.
 
 - Connect Dynamic Dreamz to the shared Organization entity and model this route as
   a CollectionPage.
-- Keep the 35 current case study entities, technologies, and industries strictly aligned
+- Keep the 56 current case study entities, technologies, and industries strictly aligned
   with visible content.
 
 ### Internal-link and conversion actions
@@ -2903,12 +2912,12 @@ Proposed copy improvements are tracked in `docs/page-content-improvements.md`.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD,
+- URL-policy review (2026-09-04): canonical, Open Graph, sitemap, robots, JSON-LD,
   and internal links use `/case-studies`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source,
   metadata limits, JSON-LD graph verification, desktop/tablet/mobile screenshots
-  captured (1440x900, 768x1024, 390x844), local assets audit, responsive grid
-  layout, lint, and production build.
+  captured (1440x900, 768x1024, 390x844), local assets audit (zero duplicate hash groups),
+  responsive grid layout, lint, and production build.
 
 ## Case Study Detail Pages (`/case-studies/[slug]`)
 
@@ -3351,42 +3360,55 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Shopify Development Agency (`/shopify-development-agency`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-04
 Owner: SEO, content, development, leadership, sales, and delivery operations
-Primary audience: DTC brands, B2B merchants, store owners, and digital agencies seeking comprehensive Shopify development services, store design, custom apps, migration, performance optimization, and ongoing maintenance.
+Primary audience: DTC brands, B2B merchants, store owners, and digital agencies seeking comprehensive Shopify development services, custom storefronts, Figma implementation, theme customization, integrations, migration, CRO, performance, and ongoing technical support.
 Decision stage: commercial evaluation, capability verification, agency partner selection
 
 ### Page role
 
-Dedicated commercial landing page targeting core search intent for "Shopify Development Agency" and related high-intent ecommerce development queries. Highlights end-to-end Shopify services (Shopify Plus Store Development, Theme Customization, Figma/XD to Shopify, App Integration, Migration, Maintenance, Shopify 2.0 Migration, White Label Development), verified client proof (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0), trusted brand logos, portfolio showcase, 11 client video testimonials, 9 comprehensive buyer FAQs, and direct quote CTA.
+Dedicated commercial landing page targeting core search intent for "Shopify Development Agency" and related high-intent ecommerce development queries. Rebuilt to match the 2026-09-04 live site redesign with 10 structured sections:
+1. Hero with dual eyebrow ("Established in 2006 • Shopify Platinum Partner"), H1, subtitle, description, 2 CTAs, 4 trust badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), and right-column video player (`why-dynamic-dreamz.mp4`).
+2. "Trusted by Leading Brands" 10-logo marquee slider.
+3. 9 stage service cards in an asymmetric 3-column grid (`1.2fr 0.8fr 0.8fr`) with category tags, pills, and CTAs.
+4. 8 featured portfolio showcase projects in a 4-column grid (2-column on mobile with visible circular arrow button) with "View Our Work" button.
+5. Multidisciplinary Shopify team section with dark container (`#192019`) and 4 competency boxes with theme red active card.
+6. 3 flexible engagement pricing plans (Project-Based Custom Quote, Flexible Hourly Support at $25/hour, Dedicated Developer / Team from $2,000/month).
+7. 5-step horizontal development process timeline (Assess, Plan, Develop, QA, Launch & Improve) with numbered circles "01"–"05" and connecting line (stacks vertically on mobile).
+8. "Client Stories" / "Don't Just Take Our Word For It" with 11 video testimonial cards and next/previous controls.
+9. 10 buyer FAQs with rich text markup and first item open by default.
+10. Closing gradient CTA banner linking to `/request-quote`.
 
 ### Target prompts
 
 - Who is the best Shopify development agency for custom ecommerce stores?
 - What services does Dynamic Dreamz provide as a Shopify development agency?
 - Can Dynamic Dreamz convert Figma or Adobe XD designs to a custom Shopify store?
-- How does Shopify 2.0 migration work and why should merchants upgrade?
-- Does Dynamic Dreamz offer white label Shopify development for digital agencies?
-- What are the pricing factors and qualifications to look for in a Shopify development partner?
+- How much does Shopify development cost with Dynamic Dreamz?
+- Does Dynamic Dreamz provide Shopify Plus development and B2B capabilities?
+- What is Dynamic Dreamz's development process from assessment to launch?
 
 ### Current strengths and available evidence
 
-- Server-rendered H1 `Shopify Development Agency` and clear value proposition answering both direct merchants and agency white-label partners.
-- 8 distinct, structured service offerings with icons and direct routing to specialized service pages.
+- Server-rendered H1 `Shopify Development Agency` with clear value proposition answering both direct merchants and digital agencies.
+- 9 distinct, structured service offerings covering all stages (Custom Store Development, Figma/XD Conversion, Theme Customization, App Integration, Migration, Maintenance, 2.0 Migration, White Label, Plus Mobile App).
 - 10 recognized brand logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, SimsDirect, Kvaser, Nekter, Circuit City) in an accessible marquee slider.
-- 6 featured portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier) with platform markers and project links.
-- 11 authentic client video testimonials with direct YouTube modal playback.
-- 3 independent review credentials with live review counts (Clutch 132 reviews, Upwork 2000+ reviews, GoodFirms 72 reviews).
-- 9 buyer FAQs answering key procurement questions (Shopify use cases, features, dropshipping, mobile readiness, agency role, costs, expert selection, qualifications, KPIs).
-- Complete structured data graph emitting Service, OfferCatalog (8 service items), FAQPage (9 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
+- 8 featured portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, Bombay Shirt Company, Holy Plantz, Atolea Jewelry) with platform markers, mobile-responsive 2-column grid, and project links.
+- 4 multidisciplinary team boxes showing certified Shopify developers, UI/UX designers, QA specialists, and integration engineers.
+- 3 transparent pricing engagement options ($25/hour, $2,000/month, custom quote).
+- 5-step structured process timeline with clear milestones.
+- 11 authentic client video testimonials with direct modal playback.
+- 10 comprehensive buyer FAQs answering core agency procurement questions.
+- Complete structured data graph emitting Service, OfferCatalog (9 service items), FAQPage (10 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (8 offers), FAQPage (9 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
-| P0 | implemented | Local assets | Service icons, brand logos, portfolio assets, and testimonials must be locally hosted | Save canonical local assets and deduplicate them | Verified locally with 0 runtime external dependencies |
+| P0 | implemented | Redesign migration | Live site redesigned structure with video hero, stage services grid, team boxes, pricing cards, and process timeline | Remigrate all 10 sections with visual parity, responsive desktop/tablet/mobile layouts, and Server Components | Verified against live site captures 2026-09-04 |
+| P0 | implemented | Route and discovery | Slashless canonical URL policy and SEO metadata limits | Ship slashless route with title (55 chars), description (151 chars), Open Graph card, and robots/sitemap | URL policy and build guards pass |
+| P0 | implemented | Structured data | Updated schema with 9 offers, 10 FAQs, and 11 video objects | Emit Service with OfferCatalog (9 offers), FAQPage (10 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in JSON-LD serialization 2026-09-04 |
+| P0 | implemented | Local assets & deduplication | Dedicated OG card image and local media assets | Reused canonical assets and added unique OG image with 0 duplicates verified | `npm run check:asset-duplicates` passes (0 duplicate hash groups) |
 | P1 | deferred | Content expansion | Minor grammatical improvements in service descriptions | Record proposed improvements in `docs/page-content-improvements.md`; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -3395,18 +3417,18 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 ### Entity, evidence, and authorship actions
 
-- Connect Dynamic Dreamz as a Shopify Platinum Partner founded in 2006 with 150+ specialists and 5000+ projects completed.
+- Connect Dynamic Dreamz as a Shopify Platinum Partner founded in 2006 with 150+ specialists, 4500+ Shopify stores built, and 5000+ projects completed.
 - Attribute client video testimonials directly to their authentic brand owners.
 
 ### Internal-link and conversion actions
 
 - Maintain slashless `/shopify-development-agency` navigation across marketing pages and service menus.
-- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+- Direct conversion actions route to `/request-quote`, `/book-a-discovery-call`, `/buy-shopify-development-hours`, `/shopify-plus-agency`, and `/our-work`.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service with 8 Offer items, 9 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Emit Service with 9 Offer items, 10 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-08-31T13:14:09+00:00`.
 - Include route in `sitemap.xml` with priority 0.9 and weekly change frequency.
 
 ### Measurement plan
@@ -3416,8 +3438,8 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-development-agency`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, metadata limits, JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-04): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-development-agency`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, desktop/tablet/mobile screenshots (1440x900, 768x1024, 390x844), JSON-LD graph verification, zero duplicate assets audit, component content boundary check, lint, and production build.
 
 ## Shopify Migration (`/shopify-migration`)
 

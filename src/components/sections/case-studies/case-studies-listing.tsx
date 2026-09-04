@@ -42,14 +42,26 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
 
   const filteredItems = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
+    const primaryIndustries = new Set([
+      "Beauty & Cosmetics",
+      "Fashion & Apparel",
+      "Food & Beverages",
+      "Health & Nutrition",
+      "Home & Living",
+      "Jewellery & Accessories",
+    ]);
+
     return items.filter((item) => {
       const searchable = [item.title, item.excerpt, item.technology, item.industry, ...item.tags].join(" ").toLowerCase();
       const matchesTechnology = !selectedTech ||
         (selectedTech === "Shopify / Shopify Plus"
           ? ["shopify / shopify plus", "shopify"].includes(item.technology.toLowerCase()) || item.technology.toLowerCase().startsWith("shopify (")
           : item.technology === selectedTech);
-      return (!query || searchable.includes(query)) && matchesTechnology &&
-        (!selectedIndustry || item.industry === selectedIndustry);
+      const matchesIndustry = !selectedIndustry ||
+        (selectedIndustry === "Other Industries"
+          ? !primaryIndustries.has(item.industry) || item.industry === "Other Industries"
+          : item.industry === selectedIndustry);
+      return (!query || searchable.includes(query)) && matchesTechnology && matchesIndustry;
     });
   }, [items, searchQuery, selectedTech, selectedIndustry]);
 
@@ -123,5 +135,76 @@ function FilterMenu({ id, label, value, options, open, onToggle, onSelect }: { i
 }
 
 function CaseStudyCard({ item }: { item: CaseStudyItem }) {
-  return <article className="cs-listing-row mb-5 flex w-[calc(50%-10px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[992px]:mb-5 max-[992px]:w-full"><div className="flex h-full flex-col"><Link href={item.href} className="relative block overflow-hidden pb-[50%] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#ad5151]"><Image src={item.image} alt={item.alt} fill sizes="(max-width: 991px) 100vw, (max-width: 1300px) 50vw, 610px" className="object-cover transition-transform duration-1000 hover:scale-105" /></Link><div className="flex flex-grow flex-col p-5 max-[767px]:p-[15px]"><div className="flex h-full flex-col justify-between"><div><Link href={item.href} className="group/title block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151]"><div className="mb-2.5 flex flex-wrap items-center"><span className="relative mr-2.5 mb-1 pr-2.5 font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151] after:absolute after:top-1/2 after:right-0 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#ad5151] after:content-['']">{item.technology}</span><span className="mb-1 font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151]">{item.industry}</span></div><h3 className="mb-2.5 font-montserrat text-[24px] max-[767px]:text-[20px] font-semibold leading-8 tracking-[-.48px] text-[#090909] transition-colors group-hover/title:text-[#ad5151]">{item.title}</h3></Link><p className="m-0 font-sans text-[13px] font-medium leading-[1.75] text-[#535353] max-[767px]:text-sm max-[767px]:leading-[26.6px]">{item.excerpt}</p><div className="mt-4 flex flex-wrap gap-2">{item.tags.map((tag) => <span key={tag} className="inline-flex items-center rounded-full border border-[rgba(40,40,40,0.08)] bg-white/75 px-[11px] py-[7px] text-[10px] font-semibold uppercase leading-none text-[#565656]">{tag}</span>)}</div></div><div className="mt-5 border-t border-[rgba(40,40,40,0.08)] pt-5"><Link href={item.href} className="group/visit inline-flex items-center gap-2 font-montserrat text-sm font-bold uppercase text-[#ad5151] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ad5151]">{caseStudiesUiCopy.viewCaseStudy}<svg aria-hidden="true" viewBox="0 0 12 12" className="size-3 transition-transform group-hover/visit:translate-x-1"><path d="m.33 10.26 11.34-9.26M11.99 2.05 11.05 11.04M11.99 2.05 2.07 1.53" fill="none" stroke="currentColor" strokeWidth="1.2" /></svg></Link></div></div></div></div></article>;
+  return (
+    <article className="cs-listing-row mb-5 flex w-[calc(50%-10px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[992px]:mb-5 max-[992px]:w-full">
+      <div className="cs-wrapper flex h-full flex-col">
+        <div className="cs-col-left w-full">
+          <Link
+            href={item.href}
+            className="cs_list_img relative block overflow-hidden pb-[50%] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#ad5151]"
+          >
+            <Image
+              src={item.image}
+              alt={item.alt}
+              fill
+              sizes="(max-width: 991px) 100vw, (max-width: 1300px) 50vw, 610px"
+              className="object-cover transition-transform duration-1000 hover:scale-105"
+            />
+          </Link>
+        </div>
+        <div className="cs-col-right flex flex-grow flex-col p-5 max-[767px]:p-[15px]">
+          <div className="cs-text flex h-full flex-col justify-between">
+            <div className="cs-title">
+              <Link
+                href={item.href}
+                className="group/title block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151]"
+              >
+                <div className="cs-cate-wrapp mb-2.5 flex flex-wrap items-center">
+                  <span className="relative mr-2.5 mb-1 pr-2.5 font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151] after:absolute after:top-1/2 after:right-0 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#ad5151] after:content-['']">
+                    {item.technology}
+                  </span>
+                  <span className="mb-1 font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151]">
+                    {item.industry}
+                  </span>
+                </div>
+                <h2 className="h3 mb-2.5 font-montserrat text-[24px] font-semibold leading-8 tracking-[-.48px] text-[#090909] transition-colors group-hover/title:text-[#ad5151] max-[767px]:text-[20px]">
+                  {item.title}
+                </h2>
+              </Link>
+              <p className="m-0 font-sans text-[13px] font-medium leading-[1.75] text-[#535353] max-[767px]:text-sm max-[767px]:leading-[26.6px]">
+                {item.excerpt}
+              </p>
+              {item.tags.length > 0 && (
+                <div className="cs-meta mt-4 flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="cs-chip inline-flex items-center rounded-full border border-[rgba(40,40,40,0.08)] bg-white/75 px-[11px] py-[7px] font-montserrat text-[10px] font-semibold uppercase leading-none text-[#565656]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className="cs-visit mt-5 border-t border-[rgba(40,40,40,0.08)] pt-5">
+              <Link
+                href={item.href}
+                className="group/visit inline-flex items-center gap-2 font-montserrat text-sm font-bold uppercase text-[#ad5151] transition-colors hover:text-[#282828] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ad5151]"
+              >
+                {caseStudiesUiCopy.viewCaseStudy}
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 12 12"
+                  className="size-3 fill-current transition-transform group-hover/visit:translate-x-1"
+                >
+                  <path d="M0.331035 10.2567C-0.0794748 10.6262 -0.112753 11.2585 0.256706 11.669C0.626165 12.0795 1.25845 12.1128 1.66896 11.7433L0.331035 10.2567ZM11.9986 2.05256C12.0276 1.50104 11.6041 1.03041 11.0526 1.00138L2.065 0.528352C1.51348 0.499324 1.04285 0.922889 1.01382 1.47441C0.984795 2.02593 1.40836 2.49656 1.95988 2.52559L9.94882 2.94606L9.52835 10.935C9.49933 11.4865 9.92289 11.9572 10.4744 11.9862C11.0259 12.0152 11.4966 11.5916 11.5256 11.0401L11.9986 2.05256ZM1.66896 11.7433L11.669 2.74329L10.331 1.25671L0.331035 10.2567L1.66896 11.7433Z" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
 }

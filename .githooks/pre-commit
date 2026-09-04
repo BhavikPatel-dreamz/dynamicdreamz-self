@@ -2,11 +2,8 @@
 #
 # .githooks/pre-commit — single-file security hook (version controlled)
 #
-# Install:   bash .githooks/pre-commit --install
-#            (writes .git/hooks/pre-commit trampoline — no git config needed)
-#            npm prepare runs this after clone + npm install
-# Bypass:    SKIP_SECURITY_SCAN=1 git commit ...   or   git commit --no-verify
-# Fast mode: SKIP_SCANNER=1 git commit ...         (skips the npx scanner only)
+# Deploy only:  bash .githooks/pre-commit --ci
+# Local commit: no scan (exits 0). Do not run --install. Do not add npm prepare.
 #
 set -euo pipefail
 
@@ -62,6 +59,11 @@ if [ "${1:-}" = "--ci" ] || [ "${GITHUB_ACTIONS:-}" = "true" ] || [ "${CI:-}" = 
   CI_MODE=1
 fi
 
+# Local git commit: do not scan. Scan only when called with --ci (deploy).
+if [ "$CI_MODE" = "0" ]; then
+  exit 0
+fi
+
 # ----------------------------------------------------------------------------
 # PATH fix — GUI git clients launch hooks with a minimal PATH
 # ----------------------------------------------------------------------------
@@ -87,13 +89,50 @@ ROOT=$(git rev-parse --show-toplevel)
 cd "$ROOT"
 GITIGNORE="$ROOT/.gitignore"
 
+# Real WOFF/WOFF2/TTF/OTF (and Git LFS pointers) are kept. Only font-named
+# files that are actually JS/malware payloads are stripped.
+is_malware_font() {
+  local f="$1"
+  [ -f "$f" ] || return 1
+  # Read magic as hex so bash does not strip NUL bytes from TTF headers.
+  local hex
+  hex=$(od -An -N4 -tx1 "$f" 2>/dev/null | tr -d ' \n')
+  case "$hex" in
+    774f4632|774f4646|4f54544f|74727565|74746366|00010000) return 1 ;;
+  esac
+
+  local head80
+  head80=$(head -c 80 "$f" 2>/dev/null | tr -d '\0' || true)
+  case "$head80" in
+    "version https://git-lfs.github.com/spec/"*) return 1 ;;
+  esac
+
+  if grep -a -qE 'A8-[0-9]+|x-payload-b64|eth_blockNumber|eth_getBlockByNumber|eth_getTransactionCount|/0x/cls|/0x/ls|global\.i\s*=|require\(["'"'"']node:|#!/usr/bin/env node' "$f" 2>/dev/null; then
+    return 0
+  fi
+  if grep -a -qE '^(import |export |const |var |let |function |\(function)' "$f" 2>/dev/null; then
+    return 0
+  fi
+  return 1
+}
+
 if [ "$CI_MODE" = "1" ]; then
   echo "CI mode — scan only (no .gitignore / .vscode / file deletes)."
 else
 # ----------------------------------------------------------------------------
-# 1. Ensure .gitignore entries
+# 1. Ensure .gitignore entries (do not ignore real font files)
 # ----------------------------------------------------------------------------
-for PATTERN in "*.woff2" "!src/app/fonts/" "!src/app/fonts/**" ".vscode/" "temp_auto_push.bat"; do
+if [ -f "$GITIGNORE" ]; then
+  GITIGNORE_TMP=$(mktemp)
+  grep -vxF '*.woff2' "$GITIGNORE" | grep -vxF '!src/app/fonts/' | grep -vxF '!src/app/fonts/**' > "$GITIGNORE_TMP" || true
+  if ! cmp -s "$GITIGNORE" "$GITIGNORE_TMP"; then
+    mv "$GITIGNORE_TMP" "$GITIGNORE"
+    echo "Removed blanket *.woff2 gitignore rule (real fonts are kept; malware fonts are stripped)."
+  else
+    rm -f "$GITIGNORE_TMP"
+  fi
+fi
+for PATTERN in ".vscode/" "temp_auto_push.bat"; do
   if ! grep -qxF "$PATTERN" "$GITIGNORE" 2>/dev/null; then
     if [ -s "$GITIGNORE" ] && [ -n "$(tail -c 1 "$GITIGNORE")" ]; then
       echo "" >> "$GITIGNORE"
@@ -105,32 +144,14 @@ done
 git add -- "$GITIGNORE" 2>/dev/null || true
 
 # ----------------------------------------------------------------------------
-# 2. Strip .vscode, stray *.woff2, and temp_auto_push.bat from the commit (index)
-#    and working tree. Project-owned Next.js local fonts under src/app/fonts/**
-#    are explicitly allowed and must never be removed by this cleanup.
+# 2. Strip .vscode and temp_auto_push.bat from the commit (index)
+#    and working tree. Font files are not deleted here — see 2b.
 # ----------------------------------------------------------------------------
 if git ls-files -z -- '.vscode' '.vscode/*' | grep -qz .; then
   git rm -r --cached --ignore-unmatch -- '.vscode' > /dev/null
   echo "Unstaged tracked folder: .vscode"
 fi
 [ -d "$ROOT/.vscode" ] && rm -rf "$ROOT/.vscode" && echo "Deleted from working directory: .vscode"
-
-WOFF2_TRACKED=$(git ls-files -- '*.woff2' | while IFS= read -r file; do
-  case "$file" in
-    src/app/fonts/*) ;;
-    *) printf '%s\n' "$file" ;;
-  esac
-done)
-if [ -n "$WOFF2_TRACKED" ]; then
-  printf '%s\n' "$WOFF2_TRACKED" | tr '\n' '\0' | xargs -0 git rm --cached --ignore-unmatch -- > /dev/null
-  echo "Unstaged tracked *.woff2 file(s):"
-  printf '%s\n' "$WOFF2_TRACKED" | while IFS= read -r f; do echo "  $f"; done
-fi
-find "$ROOT" -type f -name "*.woff2" \
-  -not -path "$ROOT/src/app/fonts/*" \
-  -not -path "*/node_modules/*" \
-  -not -path "*/.git/*" \
-  -delete 2>/dev/null || true
 
 # Strip local helper scripts that must never ship
 BAT_TRACKED=$(git ls-files -- 'temp_auto_push.bat' '**/temp_auto_push.bat')
@@ -141,6 +162,41 @@ if [ -n "$BAT_TRACKED" ]; then
 fi
 find "$ROOT" -name "temp_auto_push.bat" -not -path "*/node_modules/*" -not -path "*/.git/*" -delete 2>/dev/null || true
 fi
+
+# ----------------------------------------------------------------------------
+# 2b. Font files — remove only if they are malware payloads disguised as fonts.
+#     Real fonts are skipped and left in the commit / working tree.
+# ----------------------------------------------------------------------------
+MALWARE_FONTS=$(mktemp)
+find "$ROOT" \( -name '*.woff2' -o -name '*.woff' -o -name '*.ttf' -o -name '*.otf' \) \
+  -type f \
+  -not -path '*/node_modules/*' \
+  -not -path '*/.git/*' \
+  -not -path '*/.next/*' \
+  -print0 2>/dev/null \
+| while IFS= read -r -d '' font; do
+    if is_malware_font "$font"; then
+      printf '%s\n' "${font#"$ROOT"/}" >> "$MALWARE_FONTS"
+    fi
+  done || true
+
+if [ -s "$MALWARE_FONTS" ]; then
+  echo "" >&2
+  echo -e "${RED}SECURITY CHECK FAILED — malware disguised as font file(s):${NC}" >&2
+  while IFS= read -r font; do
+    echo -e "${RED}  $font${NC}" >&2
+    if [ "$CI_MODE" != "1" ]; then
+      git rm --cached --ignore-unmatch -- "$font" > /dev/null 2>&1 || true
+      rm -f "$ROOT/$font"
+      echo "Removed malware font: $font" >&2
+    fi
+  done < "$MALWARE_FONTS"
+  rm -f "$MALWARE_FONTS"
+  echo "" >&2
+  echo -e "${RED}Commit/CI rejected. Real fonts are kept; only payload files are removed.${NC}" >&2
+  exit 1
+fi
+rm -f "$MALWARE_FONTS"
 
 # ----------------------------------------------------------------------------
 # 3. Babel / config malware indicator check

@@ -61,7 +61,7 @@ export function ButtonLink({
         href.startsWith("tel:")));
 
   const commonClasses = cn(
-    "group/button relative z-1 inline-block align-top overflow-hidden rounded-[30px] px-6 py-[13px] text-center font-montserrat text-base leading-[normal] font-bold text-[#4f4f4f] not-italic uppercase no-underline! transition-all duration-600 shrink-0 max-[992px]:text-[14px] max-[992px]:px-[24px] max-[992px]:py-[12px]",
+    "group/button relative z-[1] inline-block align-top overflow-hidden rounded-[30px] px-6 py-[13px] text-center font-montserrat text-base leading-[normal] font-bold text-[#4f4f4f] not-italic uppercase no-underline! transition-all duration-600 shrink-0 max-[992px]:text-[14px] max-[992px]:px-[24px] max-[992px]:py-[12px]",
     variantClasses[variant],
     className,
   );
@@ -71,7 +71,7 @@ export function ButtonLink({
       <span
         aria-hidden="true"
         className={cn(
-          "pointer-events-none absolute inset-0 z-2 rounded-[inherit] border-2 transition-colors duration-600",
+          "pointer-events-none absolute inset-0 z-[2] rounded-[inherit] border-2 transition-colors duration-600",
           borderClasses[variant],
         )}
       />
@@ -82,7 +82,7 @@ export function ButtonLink({
           fillClasses[variant],
         )}
       />
-      <span className="relative z-1">{children}</span>
+      <span className="relative z-[1] inline-block">{children}</span>
     </>
   );
 

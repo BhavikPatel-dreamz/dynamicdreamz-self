@@ -12,6 +12,8 @@ export type FaqSectionProps = {
   items: readonly FaqAccordionItem[];
   idPrefix: string;
   heading?: string;
+  eyebrow?: string;
+  eyebrowClassName?: string;
   description?: string;
   className?: string;
   headerWrapperClassName?: string;
@@ -33,6 +35,8 @@ export type FaqSectionProps = {
 export function FaqSection({
   items,
   idPrefix,
+  eyebrow,
+  eyebrowClassName = "mb-2.5 text-[13px] font-bold uppercase tracking-[1.5px] text-[#e33d37]",
   heading = defaultFaqSectionCopy.heading,
   description,
   className = "faq-sec pb-20 max-[992px]:pb-12.5",
@@ -55,6 +59,11 @@ export function FaqSection({
 
   const header = (
     <header className={headerClassName}>
+      {eyebrow ? (
+        <div className={eyebrowClassName}>
+          <span>{eyebrow}</span>
+        </div>
+      ) : null}
       <h2 className={titleClassName} id={titleId}>
         {formatBrText(heading, "max-[1199px]:hidden")}
       </h2>

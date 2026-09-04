@@ -2,78 +2,122 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import { shopifyPlusAgencyCaseStudies } from "@/content/shopify-plus-agency";
+import { cn } from "@/lib/class-names";
 
-function LearnMoreArrow() {
+export type CaseStudyCardItem = {
+  name: string;
+  image: string;
+  imageAlt: string;
+  href: string;
+  platform?: string;
+  industry?: string;
+  ctaLabel?: string;
+  description?: string;
+  chips?: readonly string[];
+};
+
+export type CaseStudyCardsContent = {
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  ctaLabel?: string;
+  items: readonly CaseStudyCardItem[];
+};
+
+
+export function CaseStudyCardsSection({
+  content = shopifyPlusAgencyCaseStudies,
+  className,
+}: {
+  content?: CaseStudyCardsContent;
+  className?: string;
+}) {
   return (
-    <svg
-      aria-hidden="true"
-      className="ml-2 transition-[margin] duration-300 group-hover/case:ml-3"
-      fill="none"
-      height="12"
-      viewBox="0 0 12 12"
-      width="12"
+    <section
+      className={cn("see-the-work-sec bg-[#eff4ef] py-20 max-[992px]:py-[50px]", className)}
+      data-section="case-studies"
+      id="case-studies"
     >
-      <path
-        d="M0.996094 5.25C0.58188 5.25 0.246094 5.58579 0.246094 6C0.246094 6.41421 0.58188 6.75 0.996094 6.75V5.25ZM11.5264 6.53033C11.8193 6.23744 11.8193 5.76256 11.5264 5.46967L6.75345 0.696699C6.46056 0.403806 5.98569 0.403806 5.69279 0.696699C5.3999 0.989593 5.3999 1.46447 5.69279 1.75736L9.93543 6L5.69279 10.2426C5.3999 10.5355 5.3999 11.0104 5.69279 11.3033C5.98569 11.5962 6.46056 11.5962 6.75345 11.3033L11.5264 6.53033ZM0.996094 6.75L10.9961 6.75V5.25L0.996094 5.25V6.75Z"
-        fill="#D92128"
-      />
-    </svg>
-  );
-}
-
-export function CaseStudyCardsSection() {
-  return (
-    <section className="py-20" data-section="case-studies">
       <Container>
-        <div className="flex flex-col items-center justify-center text-center">
-          <h2 className="mb-5 m-0 font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink">
-            {shopifyPlusAgencyCaseStudies.heading}
-          </h2>
-          <p className="mb-6 text-[18px] leading-[34.2px] font-medium text-muted">
-            {shopifyPlusAgencyCaseStudies.description.split("<br>").map((line, index, lines) => (
-              <span key={line}>
-                {line}
-                {index < lines.length - 1 ? <br className="max-[1199px]:hidden" /> : null}
-              </span>
-            ))}
-          </p>
-        </div>
-        <div className="mt-[70px] -mb-8 -mx-2 flex flex-wrap">
-          {shopifyPlusAgencyCaseStudies.items.map((item) => (
-            <div
-              className="mb-8 w-1/3 px-2 max-[992px]:w-1/2 max-[992px]:mb-5 max-[767px]:w-full"
+        <SplitSectionHeading
+          className="mb-[50px] gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
+          description={content.description}
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          variant="left"
+        />
+        <div className="cs-listing-main three-col grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[992px]:gap-4 max-[767px]:grid-cols-1">
+          {content.items.map((item) => (
+            <article
+              className="group/case cs-listing-row flex flex-col justify-between overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-all duration-300 hover:shadow-[0_10px_50px_rgba(94,94,94,0.08)]"
               key={item.name}
             >
               <Link
-                className="group/case relative block rounded-[15px] border border-[#EFEFEF] bg-white p-5 pb-[34px] transition-shadow duration-300 hover:shadow-[0_10px_50px_rgba(94,94,94,0.08)] max-[1199px]:p-[15px_15px_30px]"
+                className="cs-wrapper flex h-full flex-col justify-between"
                 href={item.href}
               >
-                <span
-                  aria-hidden="true"
-                  className="absolute -inset-[2px] -z-10 rounded-[15px] bg-gradient-to-r from-[#15c064] to-[#00d1ff] opacity-0 transition-opacity duration-300 group-hover/case:opacity-100"
-                />
-                <div className="relative mb-5 pb-[90.75%]">
+                <div className="cs_list_img relative block w-full overflow-hidden pb-[50%]">
                   <Image
-                    className="absolute inset-0 h-full w-full rounded-[10px] border border-[#EFEFEF] object-cover"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover/case:scale-105"
                     src={item.image}
                     alt={item.imageAlt}
                     fill
-                    sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 991px) calc(50vw - 28px), 370px"
+                    sizes="(max-width: 767px) calc(100vw - 64px), (max-width: 991px) calc(50vw - 40px), 390px"
                   />
                 </div>
-                <div className="text">
-                  <h3 className="mb-[10px] text-lg leading-[30.6px] font-bold tracking-[0.36px] text-ink max-[1199px]:text-base max-[1199px]:leading-normal max-[1199px]:mb-[15px]">
-                    {item.name}
-                  </h3>
-                  <span className="flex items-center text-sm leading-none font-bold text-[#D92128] uppercase underline max-[1199px]:text-xs">
-                    {sharedUiCopy.learnMore}
-                    <LearnMoreArrow />
-                  </span>
+                <div className="cs-col-right flex flex-1 flex-col justify-between p-[18px]">
+                  <div className="cs-title">
+                    {item.platform || item.industry ? (
+                      <div className="cs-cate-wrapp mb-[7px] flex flex-wrap items-center">
+                        {item.platform && (
+                          <span className="text-[10px] font-bold uppercase leading-[1.4] tracking-[0.8px] text-brand-red">
+                            {item.platform}
+                          </span>
+                        )}
+                        {item.industry && (
+                          <>
+                            <span className="relative mx-[7px] inline-block size-[3px] rounded-full bg-brand-red align-middle" />
+                            <span className="text-[10px] font-bold uppercase leading-[1.4] tracking-[0.8px] text-brand-red">
+                              {item.industry}
+                            </span>
+                          </>
+                        )}
+                      </div>
+                    ) : null}
+                    <h3 className="mb-[15px] font-montserrat text-[20px] font-bold leading-[1.4] text-ink line-clamp-2">
+                      {item.name}
+                    </h3>
+                    {item.chips?.length ? (
+                      <div className="cs-meta flex flex-wrap gap-2">
+                        {item.chips.map((chip) => (
+                          <span
+                            className="cs-chip inline-flex items-center rounded-[50px] border border-[rgba(40,40,40,0.08)] bg-white/75 px-[11px] py-[7px] text-[10px] font-semibold uppercase leading-normal text-[#565656]"
+                            key={chip}
+                          >
+                            {chip}
+                          </span>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+                  <div className="cs-visit mt-5 border-t border-[rgba(40,40,40,0.08)] pt-5">
+                    <span className="inline-flex items-center font-montserrat text-sm font-bold uppercase leading-none text-brand-red transition-colors duration-300 group-hover/case:text-[#282828]">
+                      {item.ctaLabel ?? content.ctaLabel ?? sharedUiCopy.learnMore}
+                      <svg
+                        aria-hidden="true"
+                        className="ml-2.5 h-[12px] w-[10px] shrink-0 fill-brand-red transition-colors duration-300 group-hover/case:fill-[#282828]"
+                        viewBox="0 0 12 12"
+                      >
+                        <path d="M0.331035 10.2567C-0.0794748 10.6262 -0.112753 11.2585 0.256706 11.669C0.626165 12.0795 1.25845 12.1128 1.66896 11.7433L0.331035 10.2567ZM11.9986 2.05256C12.0276 1.50104 11.6041 1.03041 11.0526 1.00138L2.065 0.528352C1.51348 0.499324 1.04285 0.922889 1.01382 1.47441C0.984795 2.02593 1.40836 2.49656 1.95988 2.52559L9.94882 2.94606L9.52835 10.935C9.49933 11.4865 9.92289 11.9572 10.4744 11.9862C11.0259 12.0152 11.4966 11.5916 11.5256 11.0401L11.9986 2.05256ZM1.66896 11.7433L11.669 2.74329L10.331 1.25671L0.331035 10.2567L1.66896 11.7433Z" />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
               </Link>
-            </div>
+            </article>
           ))}
         </div>
       </Container>

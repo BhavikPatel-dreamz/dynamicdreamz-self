@@ -58,6 +58,7 @@ export function WhiteLabelStatsSection({
 }
 
 type WhiteLabelWhySectionProps = {
+  eyebrow?: string;
   title?: string;
   reasons?: readonly (WhiteLabelCard | null)[];
 };
@@ -78,6 +79,7 @@ const whyRightBorderClasses: Record<number, string> = {
 };
 
 export function WhiteLabelWhySection({
+  eyebrow,
   title = whiteLabelShopifySectionCopy.whyTitle,
   reasons = whiteLabelShopifyReasons,
 }: WhiteLabelWhySectionProps) {
@@ -90,6 +92,11 @@ export function WhiteLabelWhySection({
   return (
     <section className="bg-[#fafaf7] pt-[70px] pb-[82px] max-[1199px]:py-20 max-[992px]:py-[50px]">
       <Container className="max-[575px]:px-4">
+        {eyebrow ? (
+          <div className="mb-2.5 text-center text-[13px] font-bold uppercase tracking-[1.5px] text-[#e33d37]">
+            <span>{eyebrow}</span>
+          </div>
+        ) : null}
         <h2 className="mb-5 text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[60px] max-[992px]:mb-10 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
           {title}
         </h2>

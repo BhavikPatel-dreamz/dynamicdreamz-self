@@ -654,11 +654,11 @@ export const pageSeo = {
   },
   shopifyPlus: {
     path: "/shopify-plus-agency",
-    title: "Shopify Plus Agency | Shopify development services",
+    title: "Shopify Plus Agency | Shopify Plus Development Services",
     description:
-      "Dynamic Dreamz offers expert Shopify Plus development services in India. Hire our Shopify Plus experts for comprehensive e-commerce solutions.",
+      "Need a Shopify Plus agency? Dynamic Dreamz is a Shopify Platinum Partner for builds, migrations, B2B, integrations and ongoing support. Book a discovery call.",
     socialDescription:
-      "Expert Shopify Plus development services in India. Dynamic Dreamz designs, migrates and scales Shopify Plus stores for growing e-commerce brands.",
+      "Need a Shopify Plus agency? Dynamic Dreamz helps high-growth and enterprise brands build, migrate and scale on Shopify Plus.",
     keywords: [
       "Shopify Plus agency",
       "Shopify Plus development services",
@@ -668,8 +668,8 @@ export const pageSeo = {
       "Shopify Plus eCommerce agency",
     ],
     openGraphType: "article",
-    publishedTime: "2024-05-02T09:34:33+00:00",
-    modifiedTime: "2025-09-23T04:50:03+00:00",
+    publishedTime: "2024-05-02T09:33:27+00:00",
+    modifiedTime: "2026-09-02T13:30:22+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
@@ -1227,11 +1227,11 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2024-05-01T00:00:00+00:00",
-    modifiedTime: "2026-08-24T00:00:00+05:30",
+    modifiedTime: "2026-09-04T00:00:00+05:30",
     image: {
-      path: "/assets/case-studies/evrgreen.png",
-      width: 571,
-      height: 421,
+      path: "/assets/case-studies/gnc-india.webp",
+      width: 1296,
+      height: 648,
       alt: "Case Study Archive - Shopify Plus Agency & Shopify Platinum Partner | Dynamic Dreamz",
     },
     sitemap: {
@@ -2442,7 +2442,7 @@ export const pageSeo = {
     path: "/shopify-development-agency",
     title: "Shopify Development Agency & Services | Dynamic Dreamz",
     description:
-      "Expert Shopify development services by Dynamic Dreamz: custom store design, app integration, migration, speed optimization and dedicated ongoing support.",
+      "Looking for a Shopify development agency? Work with a Shopify Platinum Partner for custom builds, migrations, integrations, CRO and ongoing support.",
     keywords: [
       "Shopify development agency",
       "Shopify development services",
@@ -2454,9 +2454,9 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2024-05-02T09:33:21+00:00",
-    modifiedTime: "2026-08-19T00:00:00+05:30",
+    modifiedTime: "2026-08-31T13:14:09+00:00",
     image: {
-      path: "/assets/og/homepage.png",
+      path: "/assets/og/shopify-development-agency.png",
       width: 1200,
       height: 630,
       alt: "Shopify Development Agency & Services | Dynamic Dreamz",

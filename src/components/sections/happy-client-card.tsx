@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { VideoDialog } from "@/components/ui/video-dialog";
 import { cn } from "@/lib/class-names";
+import { formatBrText } from "@/lib/text-formatting";
 
 export type HappyClientTestimonialItem = {
   name: string;
@@ -10,6 +11,10 @@ export type HappyClientTestimonialItem = {
   videoId: string;
   image: string;
   imageAlt: string;
+  logo?: string;
+  logoAlt?: string;
+  logoWidth?: number;
+  logoHeight?: number;
 };
 
 export type HappyClientCardProps = {
@@ -49,6 +54,17 @@ export function HappyClientCard({
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0 bg-black/30"
         />
+        {clientStories && testimonial.logo ? (
+          <span className="pointer-events-none absolute top-5 right-5 z-20 flex h-[70px] w-[140px] items-center justify-end max-[1199px]:top-4 max-[1199px]:right-4 max-[1199px]:h-[50px] max-[1199px]:w-[120px] max-[767px]:top-3 max-[767px]:right-3 max-[767px]:h-[45px] max-[767px]:w-[90px]">
+            <Image
+              alt={testimonial.logoAlt ?? `${testimonial.company} logo`}
+              className="h-auto max-h-full w-auto max-w-full object-contain"
+              height={testimonial.logoHeight ?? 70}
+              src={testimonial.logo}
+              width={testimonial.logoWidth ?? 140}
+            />
+          </span>
+        ) : null}
         <h3 className={cn("pointer-events-none font-montserrat absolute z-20 m-0 inline-block text-[15px] font-semibold leading-[21px] max-[1199px]:text-sm max-[1199px]:leading-[21px]", clientStories ? "bottom-[15px] left-[15px] rounded-[4px] border-l-[3px] border-brand-red bg-black/80 px-[14px] py-[10px] text-left text-white" : "bottom-[22px] left-[36px] rounded-[30px] bg-white px-4 py-[10px] text-center text-ink max-[1199px]:bottom-5 max-[1199px]:left-5 max-[1199px]:px-3.5 max-[1199px]:py-[7px]")}>
           {testimonial.name}
           <span className={cn("font-medium", clientStories ? "mt-1 block text-[15px] leading-5" : "ml-[11px] border-l border-[#dbdbdb] pr-0 pl-[11px] text-base leading-[21px] max-[1199px]:ml-[7px] max-[1199px]:pl-[7px] max-[1199px]:text-xs")}>
@@ -68,7 +84,7 @@ export function HappyClientCard({
       </div>
       <div className={cn(clientStories ? "client-review-text min-h-[184px] h-full grow px-5 py-[18px]" : "p-[33px_36px_39px] max-[1199px]:p-5")}>
         <p className={cn("text-sm font-medium text-[#535353]", clientStories ? "mb-0 leading-6 before:mr-2 before:inline-block before:h-[15px] before:w-[20px] before:align-top before:bg-[url('/assets/testimonials/quote-mark.svg')] before:bg-contain before:bg-no-repeat before:content-['']" : "mb-6 leading-[28.64px]")}>
-          {testimonial.quote}
+          {formatBrText(testimonial.quote)}
         </p>
       </div>
     </div>

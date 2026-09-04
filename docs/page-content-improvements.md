@@ -346,7 +346,7 @@ social media integrations.
 ## Our Work (`/our-work`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-17
+Last reviewed: 2026-09-04
 Primary SEO intent: Dynamic Dreamz portfolio, Shopify and Shopify Plus project
 work, WordPress, mobile-app, Magento, and BigCommerce ecommerce examples.
 
@@ -360,7 +360,7 @@ work, WordPress, mobile-app, Magento, and BigCommerce ecommerce examples.
 | Project card alt text | Several live alts use generic `Image`, inconsistent names, or another project's name. | Use a subject-specific description such as `<project name> project preview for <visible platform>`. | Gives every content image an accurate, contextual alternative without changing visible UI. | High | implemented as nonvisual accessibility correction |
 | Project evidence | Cards name a platform and link externally, but do not describe Dynamic Dreamz's scope, constraints, or outcomes. | Add internal case studies with approved client attribution, delivery scope, technical constraints, and verified outcomes, while retaining the external storefront link. | Converts the portfolio from a visual proof index into citation-ready first-party evidence. | High | deferred pending client-success approval and case-study migration |
 | Hero proof claims | `helped global customers` and `yielded strong product identity` are broad outcome claims with no page-level evidence. | Qualify the claims or add approved case-study evidence when exact copy and sources are approved. | Avoids unsupported global/outcome framing while preserving the portfolio intent. | High | deferred pending factual and exact visible-copy approval |
-| Case-study teaser | No internal case-study section on the local route | `See the Story Behind the Work` with Ranavat, Bombay Shirt Company, and Nekter Juice Bar cards | Matches the refreshed live discovery path using existing governed case-study content. | High | implemented for live-parity task |
+| Case-study teaser | No internal case-study section on the local route | `See the Story Behind the Work` with Ranavat, Bombay Shirt Company, and Nekter Juice Bar cards | Matches the refreshed live discovery path using 3-col card grid, live featured imagery, red categories, and chips. | High | implemented for live-parity task |
 
 ## Pet Industry (`/pet-industry`)
 
@@ -435,10 +435,11 @@ Primary SEO intent: Shopify Plus agency, enterprise Shopify development services
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | `Shopify Plus Agency \| Shopify development services` | `Shopify Plus Agency \| Shopify Development Services \| Dynamic Dreamz` | Preserves core commercial intent within 60-character budget. | High | implemented in metadata |
+| Meta title | `Shopify Plus Agency \| Shopify Plus Development Services` | `Shopify Plus Agency \| Shopify Plus Development Services` | Refreshed metadata matches the current live intent while staying within the repository title-length guard. | High | implemented in metadata |
+| Meta description | Previous generic Shopify Plus description | `Need a Shopify Plus agency? Dynamic Dreamz is a Shopify Platinum Partner for builds, migrations, B2B, integrations and ongoing support. Book a discovery call.` | Matches the refreshed live commercial page and gives search engines a concise service, credential, and CTA summary. | High | implemented in metadata |
 | Why Choose section | `Selecting a Shopify Plus agency means collaborating with a team that is knowledgeable about advanced eCommerce requirements and high-growth businesses. A specialized agency offers deep platform knowledge...` | Maintain live wording; optionally add verified proof points (e.g. 4500+ stores built, 19+ years experience) when approved. | Preserves live UI copy verbatim while logging future proof enhancements. | Medium | deferred pending exact visible-copy approval |
 | How to Choose section | `Selecting the correct Shopify Plus agency starts with understanding your business goals. Find out a development agency that has much experience with Shopify Plus, especially with brands that are similar to yours...` | `Selecting the right Shopify Plus agency starts with understanding your business goals. Look for a development agency with deep experience in Shopify Plus...` | Corrects slight grammatical phrasing (`Find out a development agency that has much experience`) without altering core meaning. | Low | deferred pending exact visible-copy approval |
-| Services CTA | `Let me give you a hand to help you` | `Request a Shopify Plus Consultation` or `Get a Quote` | Replaces colloquial button text with clear commercial intent action. | Medium | deferred pending exact visible-copy approval |
+| Services CTA | Current live services section has no standalone CTA | Keep the services section CTA-free and use the hero and engagement CTAs | Avoids duplicate conversion content that is not present in the current live page. | Medium | implemented for live parity |
 | Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
 | VideoObject structured data | Live page lacked structured data for 11 visible client video testimonials. | Emitted 11 `VideoObject` nodes in JSON-LD with authentic upload dates and YouTube URLs matching visible testimonials. | Improves video indexing and search eligibility without changing visible UI. | High | implemented in schema |
 
@@ -2028,5 +2029,3 @@ Primary SEO intent: book a discovery call, Shopify consultation, ecommerce proje
 | Response expectation | The page explains the call but does not state a response or booking follow-up expectation. | Add a sales-approved statement describing what happens after a visitor selects a time and how follow-up is handled. | Clarifies the conversion flow for buyers and answer engines without inventing an SLA. | Medium | deferred pending sales/operations approval |
 | Call agenda | The visible benefits describe a focused call, technical discussion, and no obligation. | Add an approved concise agenda covering project context, constraints, technical direction, and next steps if sales confirms the wording. | Makes the consultation value more extractable while preserving the current booking layout. | Low | suggested |
 | Fit guidance | The page does not state which project types or decision-makers are best suited for the call. | Add approved fit guidance for ecommerce brands, Shopify merchants, and digital agencies after sales review. | Helps visitors self-qualify without changing the current Calendly interaction. | Low | suggested |
-
-

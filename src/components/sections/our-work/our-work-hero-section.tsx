@@ -216,8 +216,8 @@ export function OurWorkHeroSection({
           <div
             className={cn(
               liveCaseStudiesLayout
-                ? "right-col relative flex w-[43.182%] shrink-0 overflow-hidden max-[1399px]:w-1/2 max-[1199px]:w-[43%] max-[991.98px]:h-[227px] max-[991.98px]:w-full"
-                : "right-col absolute top-0 right-0 h-full w-[42%] overflow-hidden max-[1199px]:w-[43%] max-[991.98px]:relative max-[991.98px]:h-[277px] max-[991.98px]:w-full",
+                ? "right-col relative flex w-[43.182%] shrink-0 overflow-hidden max-[1399px]:w-1/2 max-[1199px]:w-[43%] max-[991.98px]:h-[227px] max-[991.98px]:w-full max-[767px]:hidden"
+                : "right-col absolute top-0 right-0 h-full w-[42%] overflow-hidden max-[1199px]:w-[43%] max-[991.98px]:relative max-[991.98px]:h-[277px] max-[991.98px]:w-full max-[767px]:hidden",
               fullBleedShowcaseAtTablet &&
               "max-[991.98px]:right-auto max-[991.98px]:left-1/2 max-[991.98px]:h-[227px]! max-[991.98px]:min-h-[227px] max-[991.98px]:w-screen max-[991.98px]:max-w-[100vw] max-[991.98px]:-translate-x-1/2",
             )}

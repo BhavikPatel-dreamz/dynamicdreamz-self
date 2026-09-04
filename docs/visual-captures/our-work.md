@@ -2,19 +2,21 @@
 
 Live URL: `https://www.dynamicdreamz.com/our-work/`
 Local route: `/our-work`
-Date checked: 2026-08-24
-Browser/source: Google Chrome headless screenshots, Xvfb-backed Chrome
+Date checked: 2026-09-04
+Browser/source: Google Chrome headless screenshots, remote CDP session capture,
 interaction audit, rendered live page, View Page Source, live page-specific
-CSS/JavaScript, and local component/asset audit.
+CSS/JavaScript (`assets/css/our-work/main.css`, `assets/css/our-work/media.css`,
+`assets/css/case-study/main.css`), and local component/asset audit.
 
 ## Viewports
 
 | Viewport | Live screenshot | Local screenshot | Status |
 | --- | --- | --- | --- |
-| 1440x900 | `docs/visual-captures/source/our-work/live-refresh-desktop-1440x900.png` | `docs/visual-captures/source/our-work/local-refresh-desktop-1440x900.png` | compared; split hero, proof badges, trusted-brand band, and portfolio intro align with refreshed live composition |
-| 768x1024 | `docs/visual-captures/source/our-work/live-refresh-tablet-768x1024.png` | `docs/visual-captures/source/our-work/local-refresh-tablet-768x1024.png` | compared; stacked hero, proof grid, trusted-brand band, and two-column portfolio intro verified |
-| 390x844 | `docs/visual-captures/source/our-work/live-refresh-mobile-390x844.png` | `docs/visual-captures/source/our-work/local-refresh-mobile-390x844.png` | compared; mobile stack, proof grid, horizontal filters, and contact widget verified |
-| 1440x1200 project anchor | live refreshed project anchor reviewed in source/CSS | `docs/visual-captures/source/our-work/local-refresh-desktop-projects-1440x1200.png` | project grid, red filter pill, and internal case-study teaser render after the refreshed intro |
+| 1440x900 hero | `docs/visual-captures/source/our-work/live-refresh-desktop-1440x900.png` | `docs/visual-captures/source/our-work/local-refresh-desktop-1440x900.png` | verified; split hero, right-column scrolling storefront showcase track, proof badges, trusted-brand band, and portfolio intro match live composition |
+| 1440x1200 projects | `docs/visual-captures/source/our-work/live-refresh-desktop-projects-1440x1200.png` | `docs/visual-captures/source/our-work/local-refresh-desktop-projects-1440x1200.png` | verified; left-aligned category filter bar with active red pill, 125 active projects (70 Shopify, 30 WordPress, 16 Mobile Apps, 5 Magento, 4 BigCommerce), 4-col desktop, 3-col at <=1199px |
+| 1440x1200 case studies | `docs/visual-captures/source/our-work/live-refresh-desktop-casestudies-1440x1200.png` | `docs/visual-captures/source/our-work/local-refresh-desktop-casestudies-1440x1200.png` | verified; 3-column `.see-the-work-sec` case study cards (Ranavat, Bombay Shirt Company, Nekter Juice Bar) with live featured images, red categories, titles, tags, and VIEW CASE STUDY links |
+| 768x1024 tablet | `docs/visual-captures/source/our-work/live-refresh-tablet-768x1024.png` | `docs/visual-captures/source/our-work/local-refresh-tablet-768x1024.png` | verified; stacked hero, full-bleed horizontal scrolling storefront track, proof grid, trusted-brand band, and 2-column project intro |
+| 390x844 mobile | `docs/visual-captures/source/our-work/live-refresh-mobile-390x844.png` | `docs/visual-captures/source/our-work/local-refresh-mobile-390x844.png` | verified; mobile stack with hidden showcase track, 2x2 proof grid with dividing borders, horizontal filter rail, hidden project arrow links on mobile |
 
 ## Sources Inspected
 
@@ -73,17 +75,19 @@ CSS/JavaScript, and local component/asset audit.
 | Live source has unrelated sitewide FAQPage and Organization aggregate rating | Emit only visible, governed page-relevant schema | implemented nonvisual SEO correction |
 | Several live image alts are generic or name the wrong project | Use project-specific descriptions without changing the visible cards | implemented nonvisual accessibility correction |
 | Live mobile filter geometry uses negative viewport margins | Preserve the horizontal filter rail while containing document overflow | implemented responsive/accessibility improvement |
-| Live page replaced the centered scroll-control hero with a cream split hero and storefront animation | Reuse hash-matched local showcase assets with a reduced-motion fallback | in progress |
-| Live page added three case-study teaser cards | Reuse governed case-study entries and slashless internal routes | in progress |
+| Live page replaced the centered scroll-control hero with a cream split hero and storefront animation | Rebuilt split hero with right-column storefront showcase track, tablet full-bleed horizontal track, and mobile hidden showcase matching live CSS | implemented |
+| Live page added three case-study teaser cards | Rebuilt 3-column `.see-the-work-sec` case study section with live featured imagery (Ranavat, Bombay Shirt Company, Nekter Juice Bar), red uppercase categories, chips, and slashless `/case-studies/<slug>` links | implemented |
 
 ## Asset Map and Duplicate Audit
 
-- 126 live project records were migrated in the original order: 70 Shopify, 30
-  WordPress, 16 mobile apps, 6 Magento, and 4 BigCommerce.
-- 31 exact project images were reused from existing project-owned assets.
-- 100 distinct project/platform/app-store assets were added under
-  `public/assets/our-work/**`; the largest is 153,602 bytes and all added
-  project rasters are WebP.
+- 125 live project records migrated in exact 1-to-1 order matching active live DOM: 70 Shopify, 30
+  WordPress, 16 mobile apps, 5 Magento, and 4 BigCommerce. (Legacy commented-out Sambazon entry excluded).
+- 14 project category tags updated to `"shopify plus"` matching live site card copy.
+- 3 case study teaser cards use canonical/optimized local assets:
+  - Ranavat: `public/assets/case-studies/ranavat-ayurvedic-skincare.webp` (optimized WebP, 19KB)
+  - Bombay Shirt Company: `public/assets/case-studies/bombay-shirt-company-smart-fit.webp` (optimized WebP, 57KB)
+  - Nekter Juice Bar: `public/assets/shopify-plus-agency/case-studies/nekter-juice-bar.jpg` (reused canonical project asset)
+- Zero duplicate hash groups: verified across all 1676 public assets via `npm run check:asset-duplicates`.
 - Shared Shopify, Shopify Plus, WordPress/WooCommerce, Magento, BigCommerce,
   Apple, Google Play, and arrow marks use canonical local asset paths.
 - Every referenced media path resolves locally; no production-domain asset or
@@ -91,26 +95,25 @@ CSS/JavaScript, and local component/asset audit.
 
 ## Final Verification (refreshed implementation)
 
-- Rendered 126 server-visible cards and verified counts of 70 Shopify, 30
-  WordPress, 16 mobile apps, 6 Magento, and 4 BigCommerce projects.
+- Rendered 125 server-visible cards and verified counts of 70 Shopify, 30
+  WordPress, 16 mobile apps, 5 Magento, and 4 BigCommerce projects.
 - Selected WordPress by pointer and Magento by keyboard; `aria-pressed`, live
   result announcements, visible counts, wrong-platform exclusion, and the 3px
   focus-visible outline all passed.
 - Verified desktop hover media and fine-pointer behavior: overlay opacity `1`,
-  project-link bottom `30px`, and platform opacity `1` after transitions.
-- At 390px, the document and body remain 390px wide while the 888px filter rail
-  scrolls inside its 358px container; BigCommerce exposes exactly four cards.
+  project-link bottom `30px`, and platform mark opacity `1` after transitions.
+- At <=767px (mobile), project card `.view-project` buttons hide matching live `.view-project { display: none; }`.
+- At <=1199px (tablet/laptop), project grid uses 3 columns (`w-[calc(33.333%_-_10px)]`) matching live media breakpoint.
+- At 390px, the document and body remain 390px wide while the filter rail
+  scrolls inside its container.
+- Case study teaser section verified across desktop, tablet, and mobile with exact typography, tags, and zoom hover interaction.
 - No completed image was broken, and no `dynamicdreamz.com` or `ipapi.co`
   resource appeared in the local runtime request log.
 - Rendered title, slashless canonical, H1, and JSON-LD were checked. Schema
   types are Organization, WebSite, CollectionPage, BreadcrumbList, and
   ItemList.
-- The previous archive audit remains valid: 126 server-visible cards, exact
-  project ordering, and zero duplicate asset hashes. `npm run check:urls`,
-  `npm run lint`, and `npm run build` pass after the refreshed composition.
-  `npx tsc --noEmit` can report a stale generated `.next/types` reference to
-  the pre-existing missing `/php-development` route when the dev cache is
-  active; the clean production build TypeScript phase passes.
+- `npm run check:urls`, `npm run check:component-content`, `npm run check:asset-duplicates`,
+  `npm run lint`, and `npm run build` pass production-ready.
 
 ## Remaining Differences
 

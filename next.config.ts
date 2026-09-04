@@ -107,6 +107,26 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/case-studies/rootedhuman",
+        destination: "/case-studies/rooted-human",
+        permanent: true,
+      },
+      {
+        source: "/case-studies/factsandsupps",
+        destination: "/case-studies/facts-and-supps",
+        permanent: true,
+      },
+      {
+        source: "/case-studies/candy-prom",
+        destination: "/case-studies/candy-prom-and-evening",
+        permanent: true,
+      },
+      {
+        source: "/case-studies/beauti-software",
+        destination: "/case-studies/beauty-software",
+        permanent: true,
+      },
+      {
         source: "/blogs/page/:page",
         destination: "/blogs?page=:page",
         permanent: true,

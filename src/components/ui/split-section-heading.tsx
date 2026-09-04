@@ -15,7 +15,7 @@ export type SplitSectionHeadingProps = {
   textClassName?: string;
   textColumnClassName?: string;
   dark?: boolean;
-  variant?: "centered" | "default" | "portfolio" | "services";
+  variant?: "centered" | "default" | "portfolio" | "services" | "left";
 };
 
 function removeBreakTags(text: string) {
@@ -40,6 +40,7 @@ export function SplitSectionHeading({
   const body = paragraphs ?? (description ? [description] : []);
   const services = variant === "services";
   const portfolio = variant === "portfolio";
+  const leftAligned = variant === "left";
 
   if (variant === "centered") {
     return (
@@ -77,7 +78,7 @@ export function SplitSectionHeading({
     <header
       className={cn(
         "flex items-end justify-between max-[992px]:flex-col",
-        services
+        services || leftAligned
           ? "max-[992px]:items-start max-[992px]:text-left"
           : portfolio
             ? "items-end max-[992px]:items-end max-[992px]:text-center"
@@ -105,7 +106,7 @@ export function SplitSectionHeading({
         ) : null}
         <h2
           className={cn(
-            services || portfolio
+            services || portfolio || leftAligned
               ? "font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]"
               : "font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] max-[992px]:mb-[15px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]",
             dark ? "text-white" : "text-ink",
@@ -127,7 +128,7 @@ export function SplitSectionHeading({
           {body.map((paragraph) => (
             <p
               className={cn(
-                services
+                services || leftAligned
                   ? "font-sans xl:text-base text-sm font-medium leading-6"
                   : portfolio
                     ? "font-sans text-[16px] font-medium leading-7 max-[992px]:mt-3.75 max-[992px]:text-sm max-[992px]:leading-[24px] max-[767px]:text-sm max-[767px]:leading-6"
