@@ -1,21 +1,50 @@
 # White Label Shopify Development Services Visual Capture
 
-Status: implemented and visually verified against the live reference  
+Status: remigrated and visually verified against the redesigned live reference  
 Live URL: `https://www.dynamicdreamz.com/white-label-shopify-development-services/`  
 Local route: `/white-label-shopify-development-services`
 
-Checked: 2026-08-13  
-Browser: Google Chrome headless (desktop, tablet, and mobile emulation)
+Checked: 2026-09-04  
+Browser: Google Chrome headless (desktop 1440px, tablet 768px, mobile 390px emulation)
 
-## 2026-08-17 Hero Copy Restoration
+## 2026-09-04 Full Live Site Redesign Remigration
 
-The project owner supplied a side-by-side live/local desktop capture and
-explicitly approved restoring the visible live hero content. The H1, CTA, review
-marks, illustration, and styling remain unchanged. The local alternate lead and
-two-paragraph introduction are replaced by the live lead, “Your Shopify
-Technology Partner. An Extension of Your Team.”, and its single consolidated
-agency-capacity paragraph. Removing the extra paragraph also restores the live
-vertical positions of the CTA, review marks, and hero illustration.
+The live page has undergone a comprehensive redesign with complete layout, section order, and content updates across the entire page:
+
+1. **Hero Section (`hero-new-section`)**:
+   - Background `#f7f4e9` (cream), 91px top padding.
+   - Left column: H1 with italic accent "White label Shopify Development *for Digital Agencies*", H4 kicker "Your Shopify Technology Partner. An Extension of Your Team.", paragraph explaining overflow/specialist capacity, dual CTAs ("book an agency intro" -> `/book-a-discovery-call/`, "see pricing" -> `#our_white_label_pricing`), and 4 trust/review badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus) with clean dividers.
+   - Right column: Video container with rounded corners (20px radius) playing `why-dynamic-dreamz.mp4` (`autoplay`, `muted`, `loop`, `playsinline`). On tablet/mobile (<992px), right column video hides per live CSS rules.
+2. **Stats Counter Section (`white_label_counter_section`)**:
+   - 4 metrics: 50+ Agencies (Supported Worldwide), Platinum Partner (Shopify-focused delivery), 20+ Years (Web & Ecommerce Experience), 150+ Experts (Commerce & Technology). Soft horizontal top/bottom borders and vertical column dividers. Stable text values without layout shift.
+3. **Scenario Tabs Section (`scenario-tab-sec`)**:
+   - Split layout with "start with your agency" eyebrow, H2 "Where Does Your Agency Need Shopify Support?", and intro paragraph.
+   - Left: 6 interactive scenario tabs (Scale Shopify Capacity, Build from Figma, Launch Shopify Plus / B2B, Migrate to Shopify, Integrate & Automate, Build a Mobile App). Active state with red border and subtle tint.
+   - Right: Sticky content panel (`#EFF4EF`) showing kicker, heading, description, 6 feature tags with soft shadow, meta recommendation note, and dual CTAs. On mobile, tabs hide and panels stack/scroll.
+4. **Portfolio Section (`our-work-sec`)**:
+   - Split header with "Portfolio" eyebrow, H2 "Explore Our Work", and 20-year proof paragraph.
+   - 4-column responsive grid with 8 verified Shopify project cards: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, and Holy Plantz. Hover zoom and circular arrow button.
+   - Dual CTAs: "VIEW OUR WORK" (primary) and "VIEW PRICING" (outline).
+5. **Pricing / Engagement Models (`white_label_wp_develop_plan_section shopify-plus-engagement`)**:
+   - Reuses `PricingTableSection` with 3 engagement cards: "Project-Based" (Custom Quote), "Flexible Hourly Support" ($25/hour), and "Dedicated Developer / Team" (From $2,000/month), each with its badge, description, and link with arrow.
+6. **Delivery Model Comparison Table (`choose_the_right_delivery_model_section`)**:
+   - Eyebrow "Choose the Right Delivery Model", H2 "In-House, Freelancer or a White-Label Shopify Partner?", subtext.
+   - Horizontal scrolling responsive table comparing What matters, In-House Hire, Freelancer, and Dynamic Dreamz. Winner column highlighted with cream background, red border, and checkmarks.
+   - Dual CTAs: "BOOK AN AGENCY INTRO CALL" and "SEE PRICING AND ENGAGEMENT OPTIONS".
+7. **Brand Protection & Confidentiality (`our_shopify_team_behind_it_section`)**:
+   - Eyebrow "Your Brand in Front", H2 "Our Shopify Team Behind It.", subtext.
+   - 6 white cards on light mint background: NDA & Confidentiality, White-Label Delivery, Your Workflow, Your Client Your Relationship, Private Client Work, Clear Delivery Visibility.
+   - Dual CTAs: "BOOK AN AGENCY INTRO CALL" and "About Dynamic Dreamz ->".
+8. **Shopify Technologies & Tools Marquee (`white_label_wide_range_technologies_section`)**:
+   - Continuous 100s dual-row opposing marquee of Shopify ecosystem logos, pauses on reduced-motion.
+9. **Agency Use Cases (`how_agencies_use_dynamic_dreamz_section`)**:
+   - 3 regional/agency profile cards: USA Agency (Performance Marketing), UK / Europe (Branding Agency), Australia / Canada (Ecommerce Agency) with pills and text arrow links.
+10. **Partnership Onboarding Steps (`white_label_why_dynamic_dreamz_section white_label_shopify`)**:
+    - 6-step onboarding process (Agency Intro Call, NDA & Brief, Scope & Estimate, Join Your Workflow, Build QA & Review, Continue or Scale) rendered in the classic 3-column subtle gradient rule grid.
+11. **Client Stories Video Testimonials (`happy-client-sec`)**:
+    - Reuses `HappyClientSection` with 11 video testimonial cards, quotes, and brand marks.
+12. **FAQ Accordion (`faq-sec bg-sky-blue`)**:
+    - Reuses `SplitFaqSection` with "Agency Due Diligence" eyebrow, H2 "White Label Shopify Development FAQ", and 11 buyer FAQs. No post-FAQ CTA banner on the live site.
 
 ## 2026-08-14 Restored-Scroll Header Parity
 

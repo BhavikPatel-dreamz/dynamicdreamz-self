@@ -48,6 +48,7 @@ function ToolRow({ direction, row }: ToolRowProps) {
 }
 
 type WhiteLabelToolsSectionProps = {
+  eyebrow?: string;
   title?: string;
   description?: string;
   ariaLabel?: string;
@@ -55,6 +56,7 @@ type WhiteLabelToolsSectionProps = {
 };
 
 export function WhiteLabelToolsSection({
+  eyebrow,
   title = whiteLabelShopifySectionCopy.toolsTitle,
   description = whiteLabelShopifySectionCopy.toolsDescription,
   ariaLabel = whiteLabelShopifySectionCopy.toolsAriaLabel,
@@ -63,6 +65,11 @@ export function WhiteLabelToolsSection({
   return (
     <section className="overflow-hidden bg-[#fafaf7] py-[70px] max-[1199px]:py-[60px] max-[992px]:py-10 max-[767px]:py-[30px]">
       <div className="mb-10 px-4 text-center max-[1199px]:mb-[35px] max-[992px]:mb-[30px] max-[767px]:mb-5">
+        {eyebrow ? (
+          <div className="mb-2.5 text-[13px] font-bold uppercase tracking-[1.5px] text-[#e33d37]">
+            <span>{eyebrow}</span>
+          </div>
+        ) : null}
         <h2 className="mx-auto mb-6 max-w-[600px] font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[22px] max-[992px]:mb-5 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-[15px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
           {title}
         </h2>

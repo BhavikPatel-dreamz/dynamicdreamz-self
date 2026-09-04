@@ -1400,9 +1400,9 @@ for this migration task.
 
 ## White Label Shopify Development Services (`/white-label-shopify-development-services`)
 
-Status: implemented and verified; live-visible content preserved
+Status: remigrated and verified against 2026-09-04 live redesign; live-visible content preserved
 
-Last reviewed: 2026-08-13
+Last reviewed: 2026-09-04
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -1414,10 +1414,13 @@ Decision stage: commercial evaluation and partner selection
 
 Commercial service page for agencies evaluating a white-label Shopify and
 Shopify Plus development partner. It covers behind-the-scenes delivery,
-automation and AI-adjacent capabilities, service scope, engagement models,
-technology coverage, process, confidentiality, and FAQs. Its audience and
-confidential agency-delivery intent distinguish it from general Shopify
-development and hire-developer routes.
+scenario-specific agency support (capacity, Figma-to-Shopify, Plus/B2B, migration,
+apps/automation, mobile apps), portfolio showcases, engagement models,
+in-house vs freelancer vs white-label partner comparison table, confidentiality
+and code ownership, technology ecosystem, agency use cases, onboarding process,
+client video stories, and 11 buyer FAQs. Its audience and confidential
+agency-delivery intent distinguish it from general Shopify development and
+hire-developer routes.
 
 ### Target prompts
 
@@ -1425,33 +1428,30 @@ development and hire-developer routes.
 - Can a Shopify Platinum Partner deliver Shopify Plus work under our brand and NDA?
 - What does white label Shopify development cost?
 - Can a white label Shopify team scale up and down with our project pipeline?
-- Which Shopify services, integrations, automation, and AI-search work can be delivered white label?
+- Which Shopify services, integrations, automation, and mobile app work can be delivered white label?
 - How does Dynamic Dreamz handle confidentiality, QA, delivery, and ongoing support for agency clients?
+- How does a white-label Shopify partner compare to hiring in-house or using freelancers?
 
 ### Current strengths and available evidence
 
 - The live H1 and introduction identify digital agencies and the behind-the-scenes delivery model.
-- NDA/confidentiality, engagement models, visible prices, process steps, service scope, tools, and ongoing support are present in server-readable copy.
-- Independent Clutch, Trustpilot, and Upwork profile links appear in the hero.
-- The live page exposes five buyer FAQs and commercially useful pricing information.
-- Shopify, Shopify Plus, migration, apps, themes, B2B, checkout, automation, retention, and AI-search topics are covered.
-- A page-specific Service schema can be supported by the visible service content without inventing new claims.
+- NDA/confidentiality, code ownership, engagement models, visible prices ($25/hr, $2000/mo, custom quote), process steps, service scope, tools, and ongoing support are present in server-readable copy.
+- Independent Clutch, Trustpilot, and Upwork profile links appear in the hero alongside the Shopify Platinum Partner badge.
+- The live page exposes 11 buyer FAQs and commercially useful pricing information.
+- 6 interactive scenario cards detail concrete agency needs (capacity, Figma, Plus/B2B, migration, integrations/automation, mobile apps).
+- 8 portfolio client cards (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz) provide real ecommerce proof.
+- 11 video testimonials with client quotes and brand marks validate agency and enterprise satisfaction.
+- A page-specific Service and FAQPage schema is supported by visible content without inventing new claims.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | The canonical migrated route was not implemented locally | The slashless route now ships through shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Live source contains a sitewide hidden FAQ graph plus a page-specific FAQ graph whose six questions do not match the five visible FAQs | The local graph emits Organization, WebSite, WebPage, Service, BreadcrumbList, and one FAQPage sourced from exactly the five visible FAQs | Verified in rendered JSON-LD |
-| P0 | blocked by live parity | Proof consistency | Hero says `100+` skilled developers while the counter says `150+`; this page says `1000+` Shopify projects/sites while Home uses `4500+` stores | Approve definitions, provenance, and one consistent set of company proof values, then update all affected UI/schema together | Leadership and fact-owner approval |
-| P0 | blocked by live parity | Engagement terms | Pricing introduction says “no retainers and minimum hours,” while the FAQ says there are no minimum hour commitments | Confirm the contractual minimum-hours policy and approve exact visible wording | Sales/legal approval |
-| P1 | deferred | FAQ accuracy | The agentic-commerce question is answered with unrelated theme/app/integration copy and misspells Dynamic Dreamz as “Dynamic Dremaz” | Replace it with a direct, approved definition and readiness answer grounded in services actually offered | Product/service-owner and content approval |
-| P1 | deferred | Claim support | “fast, secure,” “world-class,” AI citation/recommendation, and Universal Commerce Protocol readiness language lacks visible evidence or qualification | Add approved delivery controls, security boundaries, case evidence, and accurate protocol/readiness details | Delivery/security/client-success evidence |
-| P1 | deferred | Case-study evidence | The page has no internal white-label case study, named delivery example, or approved outcome | Add an anonymized or client-approved agency delivery case study with scope, constraints, QA, and outcome | Client-success approval and evidence |
-| P1 | migration pending | Conversion route | All primary CTAs target planned `/request-quote` | Retain the migration-intent path now and validate the quote flow before launch | Quote route implementation |
-| P1 | suggested | Internal links | The page mentions Shopify Plus, migration, themes, apps, B2B, checkout, and CRO without contextual links | Add descriptive links as each relevant canonical service route ships | Route migration and visible-link approval |
+| P0 | implemented | Structured data | Live source contained mismatched FAQ schemas | The local graph emits Organization, WebSite, WebPage, Service, BreadcrumbList, and one FAQPage sourced from exactly the 11 visible FAQs | Verified in rendered JSON-LD |
+| P0 | implemented | Redesign Parity | Live site received complete redesign on 2026-09-04 | Rebuilt full 12-section page matching live layouts, assets, styles, and interactions | Verified via responsive screenshots |
+| P1 | deferred | Case-study evidence | The page displays live portfolio examples but no anonymized agency-specific delivery deep-dive | Add an anonymized or agency-approved delivery case study with scope, constraints, QA, and outcome | Client-success approval and evidence |
 | P1 | suggested | Measurement | White-label partner discovery prompts and lead quality are not tracked as a page-specific cohort | Track target prompts, citations, organic/AI landings, CTA clicks, qualified agency leads, and assisted conversions | SEO/analytics ownership |
-| P2 | deferred | Authorship and review | No visible subject-matter reviewer or content-review date is present | Add an approved delivery leader/reviewer and real review date when service-page authorship governance is established | Named expert and approval |
 
 ### Suggested answer copy
 
