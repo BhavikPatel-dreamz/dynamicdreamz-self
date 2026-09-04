@@ -61,8 +61,8 @@ export function OurWorkFilterController({ filters, counts }: OurWorkFilterContro
 
   return (
     <div>
-      <div className="lg:w-fit w-full mx-auto">
-        <div className="our-work-category mx-auto w-full min-w-full max-[767px]:p-0">
+      <div className="w-full">
+        <div className="our-work-category w-full min-w-full max-[767px]:p-0">
           <ul className="relative flex w-full gap-2 overflow-x-auto max-[992px]:whitespace-nowrap" id="category_filter" ref={listRef} aria-label="Filter projects by platform">
             {filters.map((filter) => (
               <li className="shrink-0" key={filter.id}>

@@ -12,7 +12,11 @@ const brandSection = {
 export function OurWorkPage() {
   return (
     <>
-      <OurWorkHeroSection />
+      <OurWorkHeroSection
+        fullBleedShowcaseAtTablet
+        layout="caseStudiesLive"
+        typography="liveMontserrat"
+      />
       <IndustryBrandsSection content={brandSection} density="compact" mobileSpacing="standard" />
       <OurWorkProjectsSection />
       <OurWorkCaseStudiesSection />

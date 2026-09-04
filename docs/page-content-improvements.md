@@ -346,7 +346,7 @@ social media integrations.
 ## Our Work (`/our-work`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-17
+Last reviewed: 2026-09-04
 Primary SEO intent: Dynamic Dreamz portfolio, Shopify and Shopify Plus project
 work, WordPress, mobile-app, Magento, and BigCommerce ecommerce examples.
 
@@ -360,7 +360,7 @@ work, WordPress, mobile-app, Magento, and BigCommerce ecommerce examples.
 | Project card alt text | Several live alts use generic `Image`, inconsistent names, or another project's name. | Use a subject-specific description such as `<project name> project preview for <visible platform>`. | Gives every content image an accurate, contextual alternative without changing visible UI. | High | implemented as nonvisual accessibility correction |
 | Project evidence | Cards name a platform and link externally, but do not describe Dynamic Dreamz's scope, constraints, or outcomes. | Add internal case studies with approved client attribution, delivery scope, technical constraints, and verified outcomes, while retaining the external storefront link. | Converts the portfolio from a visual proof index into citation-ready first-party evidence. | High | deferred pending client-success approval and case-study migration |
 | Hero proof claims | `helped global customers` and `yielded strong product identity` are broad outcome claims with no page-level evidence. | Qualify the claims or add approved case-study evidence when exact copy and sources are approved. | Avoids unsupported global/outcome framing while preserving the portfolio intent. | High | deferred pending factual and exact visible-copy approval |
-| Case-study teaser | No internal case-study section on the local route | `See the Story Behind the Work` with Ranavat, Bombay Shirt Company, and Nekter Juice Bar cards | Matches the refreshed live discovery path using existing governed case-study content. | High | implemented for live-parity task |
+| Case-study teaser | No internal case-study section on the local route | `See the Story Behind the Work` with Ranavat, Bombay Shirt Company, and Nekter Juice Bar cards | Matches the refreshed live discovery path using 3-col card grid, live featured imagery, red categories, and chips. | High | implemented for live-parity task |
 
 ## Pet Industry (`/pet-industry`)
 

@@ -2228,7 +2228,7 @@ visitors a direct inquiry form without depending on the legacy WordPress site.
 ## Our Work (`/our-work`)
 
 Status: refreshed live baseline implemented; evidence improvements deferred
-Last reviewed: 2026-08-24
+Last reviewed: 2026-09-04
 Owner: SEO, content, development, leadership, and client success
 Primary audience: ecommerce leaders, digital-agency buyers, and brands
 evaluating Shopify, WordPress, mobile-app, Magento, or BigCommerce delivery
@@ -2252,14 +2252,15 @@ in the local case-study archive.
 
 ### Current strengths and available evidence
 
-- The live page provides 126 visible project cards across Shopify / Shopify
-  Plus, WordPress, Mobile Apps, Magento, and Big commerce filters.
+- The live page provides 125 visible project cards across Shopify / Shopify
+  Plus (70), WordPress (30), Mobile Apps (16), Magento (5), and BigCommerce (4) filters
+  (legacy commented-out Sambazon card excluded).
 - The refreshed H1 identifies Shopify, web, and mobile app portfolio intent;
   the description names Shopify Plus, WordPress, Magento, BigCommerce,
   migrations, custom development, and ongoing optimization.
 - The refreshed page provides `Explore Our Work` portfolio context and a
   `See the Story Behind the Work` section linking Ranavat, Bombay Shirt
-  Company, and Nekter Juice Bar case studies.
+  Company, and Nekter Juice Bar case studies with live-matched featured imagery and chips.
 - Every project card exposes a platform label, project name, image, and an
   external destination or applicable app-store links.
 - A trusted-brand rail adds visible first-party brand context without requiring
@@ -2270,13 +2271,13 @@ in the local case-study archive.
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | `/our-work` was linked throughout the migration but was not implemented locally | Ship the slashless server-rendered route through shared metadata, sitemap, canonical, and schema helpers | Rendered output, URL-policy guard, lint, and production build passed 2026-08-17 |
-| P0 | implemented | Local assets | The live grid depends on WordPress-hosted project media and platform marks | Use audited project-owned images and local platform assets only | 31 exact assets reused, 100 distinct assets added, all references local, and runtime-request audit passed |
+| P0 | implemented | Local assets | The live grid depends on WordPress-hosted project media and platform marks | Use audited project-owned images and local platform assets only | All assets local, WebP optimized, 0 duplicate hash groups across 1676 public assets |
 | P0 | implemented by design | Filter reliability | The legacy Shopify filter calls `ipapi.co` and changes results by visitor location | Preserve platform filtering without external runtime geolocation or location-dependent project visibility | Pointer/keyboard filtering, result counts, live announcement, and zero external runtime requests verified |
 | P0 | implemented | Schema relevance | Live source injects a sitewide FAQPage and aggregate rating that are not represented by this page | Emit only shared Organization/WebSite, CollectionPage, BreadcrumbList, primary ImageObject, and an ItemList matching visible projects | Rendered JSON-LD contains only Organization, WebSite, CollectionPage, BreadcrumbList, and ItemList |
-| P1 | implemented accessibility correction | Image accessibility | Many live project alts are generic or refer to another project | Use project-specific local alternative text without changing visible UI | Rendered image and broken-loaded-image audit passed |
+| P1 | implemented accessibility correction | Image accessibility | Many live project alts are generic or refer to another project | Use project-specific local alternative text without changing visible card copy | Rendered image and broken-loaded-image audit passed |
 | P1 | migration pending | Evidence depth | Project cards link to external storefronts and do not define scope, constraints, or outcomes | Preserve the live external links; add internal case studies only when attribution and outcomes are approved | Client-success approval and case-study migration |
 | P1 | deferred | Hero clarity | The live introduction uses `omni channel` and does not directly identify platforms or delivery role | Add an approved answer-first portfolio summary only after exact visible wording is approved | Content/leadership approval |
-| P1 | implemented | Live page refresh | The previous local route used the retired centered hero and omitted the refreshed portfolio/case-study context | Match the refreshed hero, proof badges, portfolio introduction, red filter treatment, and three governed case-study links | Live source, CSS/JS audit, refreshed screenshots, and local interaction/build checks |
+| P1 | implemented | Live page refresh | The previous local route had hero layout, project counts, and case-study styling out of sync with refreshed live page | Rebuilt split hero with right-col showcase track, left-aligned category filters, 125 projects matching live, and 3-column `.see-the-work-sec` case study cards matching live imagery | Live source, CSS/JS audit, refreshed screenshots (1440px, 1199px, 768px, 390px), and local interaction/build checks passed 2026-09-04 |
 | P1 | migration pending | Conversion routes | Header and page-adjacent conversion links include planned `/request-quote` | Preserve migration intent during active migration and validate before launch | Quote-route implementation |
 | P2 | deferred | Project freshness | No project delivery dates or scope are visible | Add client-approved case-study dates and factual delivery context only as proof routes ship | Client-success evidence |
 

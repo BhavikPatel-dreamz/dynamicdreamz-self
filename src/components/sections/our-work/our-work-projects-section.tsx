@@ -43,7 +43,7 @@ export function OurWorkProjectsSection() {
         <div className="mt-[50px] flex flex-wrap gap-x-[15px] gap-y-[60px] max-[992px]:mt-[40px] max-[992px]:gap-y-[30px]">
           {ourWorkProjects.map((project) => (
             <div
-              className="w-[calc(25%_-_11.25px)] max-[992px]:w-[calc(50%_-_7.5px)] max-[767px]:w-full"
+              className="w-[calc(25%_-_11.25px)] max-[1199px]:w-[calc(33.333%_-_10px)] max-[992px]:w-[calc(50%_-_7.5px)] max-[767px]:w-full"
               data-work-project
               data-work-platform={project.platform}
               key={project.id}

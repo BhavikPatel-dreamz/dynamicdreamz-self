@@ -142,52 +142,82 @@ export function PortfolioProjectCard({
 }: PortfolioProjectCardProps) {
   const isAppProject = !href && appLinks?.length;
 
-  if (variant === "ourWorkRefresh" && href) {
+  if (variant === "ourWorkRefresh") {
     return (
       <article>
-        <a
-          className="group/project block focus-visible:outline-offset-4"
-          href={href}
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-          aria-label={`View ${name} project`}
-          data-project-card-link
-        >
-          <div
-            className={cn(
-              "relative block w-full overflow-hidden",
-              imageAspectClassName ?? "pb-[115%]",
-            )}
+        {href ? (
+          <a
+            className="group/project block focus-visible:outline-offset-4"
+            href={href}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            aria-label={`View ${name} project`}
+            data-project-card-link
           >
-            <ProjectImage
-              className="transition-transform duration-1000 group-hover/project:scale-105 group-focus/project:scale-105"
-              eagerImage={eagerImage}
-              image={image}
-              imageAlt={imageAlt}
-            />
-            <Overlay />
-          </div>
-          <div className="mt-2.5 flex items-start justify-between gap-3">
-            <div>
-              <p className="text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px]">
-                {category}
-              </p>
-              <h3 className="mt-2.5 font-sans text-lg leading-5 font-bold text-ink capitalize max-[1199px]:mt-[3px] max-[1199px]:text-sm max-[1199px]:font-semibold">
-                {name}
-              </h3>
-            </div>
-            <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red">
-              <Image
-                aria-hidden="true"
-                className="h-[9px] w-[9px] brightness-0 transition-[filter] duration-300 group-hover/project:brightness-100 group-focus/project:brightness-100"
-                src="/assets/icons/diagonal-arrow-white.svg"
-                alt=""
-                width={12}
-                height={12}
+            <div
+              className={cn(
+                "relative block w-full overflow-hidden",
+                imageAspectClassName ?? "pb-[115%]",
+              )}
+            >
+              <ProjectImage
+                className="transition-transform duration-1000 group-hover/project:scale-105 group-focus/project:scale-105"
+                eagerImage={eagerImage}
+                image={image}
+                imageAlt={imageAlt}
               />
-            </span>
+              <Overlay />
+            </div>
+            <div className="mt-2.5 flex items-start justify-between gap-3">
+              <div>
+                <p className="text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px]">
+                  {category}
+                </p>
+                <h3 className="mt-2.5 font-sans text-lg leading-5 font-bold text-ink capitalize max-[1199px]:mt-[3px] max-[1199px]:text-sm max-[1199px]:font-semibold">
+                  {name}
+                </h3>
+              </div>
+              <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red max-[767px]:hidden">
+                <Image
+                  aria-hidden="true"
+                  className="h-[9px] w-[9px] brightness-0 transition-[filter] duration-300 group-hover/project:brightness-100 group-focus/project:brightness-100"
+                  src="/assets/icons/diagonal-arrow-white.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                />
+              </span>
+            </div>
+          </a>
+        ) : (
+          <div className="group/project block" data-project-app-card>
+            <div
+              className={cn(
+                "relative block w-full overflow-hidden",
+                imageAspectClassName ?? "pb-[115%]",
+              )}
+            >
+              <ProjectImage
+                className="transition-transform duration-1000 group-hover/project:scale-105 group-focus/project:scale-105"
+                eagerImage={eagerImage}
+                image={image}
+                imageAlt={imageAlt}
+              />
+              <Overlay persistent={Boolean(isAppProject)} />
+              {isAppProject ? <AppStoreLinks appLinks={appLinks} /> : null}
+            </div>
+            <div className="mt-2.5 flex items-start justify-between gap-3">
+              <div>
+                <p className="text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px]">
+                  {category}
+                </p>
+                <h3 className="mt-2.5 font-sans text-lg leading-5 font-bold text-ink capitalize max-[1199px]:mt-[3px] max-[1199px]:text-sm max-[1199px]:font-semibold">
+                  {name}
+                </h3>
+              </div>
+            </div>
           </div>
-        </a>
+        )}
       </article>
     );
   }
