@@ -69,7 +69,7 @@
 10. **Book an Intro Call & Contact Form** (`BookIntroCallSection`):
     - Split section:
       - Left: `Let's Build Something Great Together` + 24-hr response guarantee + 5-field inquiry form
-      - Right: Phone call icon + `Book an Intro Call` + copy + `Book A Call` button -> `/schedule-your-consultation`
+      - Right: Phone call icon + `Book an Intro Call` + copy + `Book A Call` button -> local `/book-a-discovery-call` (authorized replacement for the unbuilt live consultation destination)
 11. **FAQ Section** (`FaqSection`):
     - Centered heading: `Frequently Asked Questions`
     - Full-width accordion with `circle-cross` plus/minus toggle and structured bullet lists
@@ -79,4 +79,4 @@
     - CTA: `REQUEST A QUOTE` -> `/request-quote`
 
 ## Remaining Differences
-- None. All visual styling, typography, spacing, component layouts, and responsive breakpoints match the live site reference.
+- The `Book A Call` CTA intentionally routes to the implemented local `/book-a-discovery-call` page instead of the unbuilt live consultation destination. Visual styling, typography, spacing, component layouts, and responsive breakpoints remain matched to the live reference.

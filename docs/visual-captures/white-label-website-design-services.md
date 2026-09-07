@@ -182,7 +182,7 @@ Captured source files are stored in
 - Preserve repeated pill copy (`Tidio`, `Tidio`) and awkward visible grammar for migration parity.
 - The live page makes unqualified ranking, security, AI citation/recommendation, client-satisfaction, speed, and profit claims. These remain visible for parity but must not be expanded in metadata or schema.
 - The live source includes a sitewide FAQ graph unrelated to this page. Local structured data must emit only the visible page FAQs.
-- `/request-quote`, `/schedule-your-consultation`, and `/bigcommerce-development` remain migration-intent destinations and require launch coverage.
+- `/request-quote` and `/bigcommerce-development` remain migration-intent destinations and require launch coverage. The local `Talk to an expert` CTA intentionally uses the implemented `/book-a-discovery-call` route instead of the unbuilt live consultation destination.
 
 ## Remaining Differences
 
@@ -191,4 +191,4 @@ Captured source files are stored in
 - At 390x844, the document width equals the viewport width, the hero stacks cleanly, and both page-specific carousels expose five pagination controls.
 - The reasons and services accordions, FAQs, horizontal carousels, testimonial navigation, and video dialog were exercised successfully during the route audit.
 - `npm run check:urls`, `npm run lint`, and `npm run build` pass. Lint retains one unrelated pre-existing warning in `white-label-shopify-ai-sections.tsx`.
-- Remaining differences are limited to documented live-copy/evidence issues and migration-pending `/request-quote`, `/schedule-your-consultation`, and `/bigcommerce-development` destinations.
+- Remaining differences are limited to documented live-copy/evidence issues and migration-pending `/request-quote` and `/bigcommerce-development` destinations. The local `Talk to an expert` CTA is intentionally remapped to `/book-a-discovery-call`.

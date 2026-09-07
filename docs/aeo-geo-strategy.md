@@ -1648,7 +1648,7 @@ Exact visible proposals are tracked in `docs/page-content-improvements.md`.
 
 Status: implemented; live-visible content preserved
 
-Last reviewed: 2026-08-17
+Last reviewed: 2026-09-07
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -1693,7 +1693,7 @@ platform-specific Shopify and WordPress white-label routes.
 | P1 | deferred | AI discovery claims | The page states that AI engines will read, cite, trust, discover, and recommend client sites | Replace guarantees with evidence-backed technical and content practices that can improve machine understanding and retrieval | SEO, technical, legal, and content approval |
 | P1 | deferred | Outcome claims | Copy guarantees ranking, speed, security, client satisfaction, higher profit, and faster delivery without evidence or qualification | Use auditable process language and approved case evidence instead of unconditional outcomes | Delivery, security, sales, and client-success evidence |
 | P1 | deferred | Case-study evidence | The section is labelled case studies but presents testimonials without project scope, constraints, or outcomes | Add client-approved case studies or anonymized agency-delivery examples with method and evidence | Client-success approval and source evidence |
-| P1 | migration pending | Conversion routes | CTAs target planned `/request-quote` and `/schedule-your-consultation` routes | Preserve migration intent now and verify both conversion flows before launch | Route implementation |
+| P1 | partially implemented | Conversion routes | The local `Talk to an expert` CTA formerly targeted the unbuilt consultation route; the `/request-quote` CTA remains unbuilt | The consultation CTA now uses the implemented `/book-a-discovery-call` route. Preserve `/request-quote` intent and verify it before launch | Local route verification; request-quote implementation |
 | P1 | migration pending | Service route | BigCommerce accordion copy links to planned `/bigcommerce-development` | Keep the descriptive link intent and implement or redirect the destination before launch | BigCommerce route migration |
 | P1 | suggested | Internal links | Industry and service mentions are mostly plain text | Add contextual links only as their canonical migrated routes become available and exact visible-link changes are approved | Route migration and visible-link approval |
 | P2 | deferred | Authorship and freshness | No visible design/delivery reviewer or review date is present | Add an approved subject-matter reviewer and real review date when service-page governance exists | Named expert and approval |
@@ -1713,10 +1713,11 @@ platform-specific Shopify and WordPress white-label routes.
   desktop/tablet/mobile visual comparison, CSS/JS interaction review, section
   map, CTA inventory, URL-policy check, lint, production build, and AEO/GEO
   assessment. The route is statically prerendered.
-- Pending: migration coverage for `/request-quote`,
-  `/schedule-your-consultation`, and `/bigcommerce-development`; proof
-  governance; approved authorship/case-study evidence; and exact approval for
-  deferred visible-copy changes.
+- Completed: the local consultation CTA now routes to
+  `/book-a-discovery-call`, which returns the implemented discovery-call page.
+- Pending: migration coverage for `/request-quote` and
+  `/bigcommerce-development`; proof governance; approved authorship/case-study
+  evidence; and exact approval for deferred visible-copy changes.
 
 ## Fashion & Apparel (`/fashion`)
 

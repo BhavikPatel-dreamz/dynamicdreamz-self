@@ -361,7 +361,7 @@ export const siteMapLinks: readonly SiteMapLinkItem[] = [
   },
   {
     "label": "Schedule Your Consultation",
-    "href": "/schedule-your-consultation"
+    "href": "/book-a-discovery-call"
   },
   {
     "label": "Sense Theme Customization Service",

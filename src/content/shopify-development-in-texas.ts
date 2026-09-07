@@ -360,7 +360,7 @@ export const shopifyDevelopmentTexasContent = {
     callDescription:
       "Let’s have a friendly conversation about the Shopify Store. Whether you’re ready to kick off your Shopify store or still figuring out where to start, we’re happy to jump on a quick call and help you think it through.",
     callCtaLabel: "Book A Call",
-    callCtaHref: "/schedule-your-consultation",
+    callCtaHref: "/book-a-discovery-call",
     callIconSrc: "/assets/services/shopify-development-in-texas/call-icon.svg",
     callIconAlt: "Book an Intro Call Icon",
   },

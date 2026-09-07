@@ -82,7 +82,7 @@ export function WhiteLabelDesignAiDiscoverySection() {
         </div>
         <div className="mx-auto mt-[60px] max-w-[800px] text-center max-[992px]:mt-[50px]">
           <p className="mb-6 text-base leading-[26px] font-medium text-muted max-[767px]:leading-[1.8]">{whiteLabelWebsiteDesignSectionCopy.aiDiscoveryClosing}</p>
-          <ButtonLink href="/schedule-your-consultation" rel="nofollow" variant="primary">{whiteLabelWebsiteDesignSectionCopy.aiDiscoveryClosingCta}</ButtonLink>
+          <ButtonLink href="/book-a-discovery-call" rel="nofollow" variant="primary">{whiteLabelWebsiteDesignSectionCopy.aiDiscoveryClosingCta}</ButtonLink>
         </div>
       </Container>
     </section>
