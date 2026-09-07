@@ -42,3 +42,7 @@ Browser/source: Google Chrome headless inspection, rendered live page + View Pag
 | Live canonical has trailing slash | Slashless `/site-map` per repo URL policy | implemented |
 | Live page has no explicit visible H1 | Added `<h1 className="sr-only">Site Map</h1>` for accessibility/SEO standard landmark | implemented |
 | Industry subpage paths | Localized `/industries/beauty-cosmetics` -> `/beauty-cosmetics` to match repo App Router structure | implemented |
+| Dead `/new-header` draft link | Removed non-existent WordPress draft link (404 on live site) from sitemap items | implemented |
+| Duplicate home link | Removed duplicate `/dynamic-dreamz-a-trusted-...` entry, preserving canonical `/` homepage link | implemented |
+| Legacy thank-you slug | Updated `/thank-you-for-shopify-plus-enquiry` directly to canonical `/thank-you-for-enquiry` | implemented |
+| Parent `/industries` link | Updated parent category href to `#` matching header menu pattern to prevent 404 | implemented |

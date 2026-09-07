@@ -99,10 +99,6 @@ export const siteMapLinks: readonly SiteMapLinkItem[] = [
   },
   {
     "label": "Dynamic Dreamz – A Trusted Web Design & Development Company in India.",
-    "href": "/dynamic-dreamz-a-trusted-web-design-development-company-in-india"
-  },
-  {
-    "label": "Dynamic Dreamz – A Trusted Web Design & Development Company in India.",
     "href": "/"
   },
   {
@@ -175,7 +171,7 @@ export const siteMapLinks: readonly SiteMapLinkItem[] = [
   },
   {
     "label": "Industries",
-    "href": "/industries",
+    "href": "#",
     "children": [
       {
         "label": "Beauty & Cosmetics",
@@ -250,10 +246,6 @@ export const siteMapLinks: readonly SiteMapLinkItem[] = [
   {
     "label": "Neve Theme Customization Service",
     "href": "/neve-theme-customization"
-  },
-  {
-    "label": "New Header",
-    "href": "/new-header"
   },
   {
     "label": "NewsBlogger Theme Customization Service",
@@ -477,7 +469,7 @@ export const siteMapLinks: readonly SiteMapLinkItem[] = [
   },
   {
     "label": "Thank You For Shopify Plus Enquiry",
-    "href": "/thank-you-for-shopify-plus-enquiry"
+    "href": "/thank-you-for-enquiry"
   },
   {
     "label": "Tinker Theme Customization Service",
