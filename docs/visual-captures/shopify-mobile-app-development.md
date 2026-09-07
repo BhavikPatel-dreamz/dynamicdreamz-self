@@ -2,54 +2,55 @@
 
 Live URL: `https://www.dynamicdreamz.com/shopify-mobile-app-development/`
 Local route: `/shopify-mobile-app-development`
-Date checked: 2026-08-19
-Browser/source: Google Chrome headless inspection, rendered live page + View Page Source, live page-specific CSS (`assets/css/services/main.css`, `assets/css/services/media.css`, `assets/css/default-media.css`, `style.css`), live JS (`assets/js/custom.js`, `assets/js/services.js`), and local component/asset audit.
+Date checked: 2026-09-07
+Browser/source: Headless Chrome rendered inspection, View Page Source, live page stylesheets (`scratch/css/hero_new_section.css`, `scratch/css/white_label_counter_section.css`, `scratch/css/shopify_mobile_app_development_for_dtc_brands.css`, `scratch/css/projects_section.css`, `scratch/css/why_build_a_custom_shopify_mobile_app.css`, `scratch/css/design_every_important_shopping_moment_for_mobile.css`, `scratch/css/services_case_study_section.css`, `scratch/css/faqs_section.css`, `style.css`), live custom script (`scratch/js/custom.js`), and pixel-by-pixel local screenshot audit across breakpoints.
 
-## Viewports
+## Viewports & Parity Audit
 
-| Viewport | Status |
-| --- | --- |
-| 1440x900 (Desktop) | Verified layout structure, heading hierarchy, 2-column hero with 420px animated review wheel, 12-logo brand slider, 3-card key benefits section ("Key benefits of Shopify Appmaker"), 3-column features split section ("Features of Shopify App Maker") with center mobile phone mockup and 6 feature items, 4-step process section ("How Does the Shopify App Maker Work?") with curved background line, 10 FAQ accordions, and bottom CTA banner. |
-| 768x1024 (Tablet) | Verified responsive stacking, 420px review wheel centered below hero text, stacked brand section, 2-column benefit cards, responsive features section (center phone mockup above left/right feature lists), 4-column stacked process steps with curved line, touch-friendly FAQ accordions, and centered CTA banner. |
-| 390x844 (Mobile) | Verified single-column hero with 275px scaled review wheel, single-column brand section with horizontal slider, single-column benefit cards, single-column features with phone mockup on top (order-1), vertically connected process step cards with mobile curved path, full-width CTA buttons, and stacked banner. |
-
-## Sources Inspected
-
-| Source | What was checked |
-| --- | --- |
-| Rendered live page and View Page Source | Title, description, canonical, publish/modified dates, Open Graph, Yoast JSON-LD, H1 (`Transform Your Shopify Store into a Mobile App in Minutes!`), hero copy, review animation markup (3 inline wordmark SVGs + star SVGs + review pills), 12 client brand logos, 3 key benefits cards with gradient border on hover, 6 app features in 3-column split with center mockup, 4-step process cards with curved serpentine path background, 10 FAQ items, and request CTA banner. |
-| Live `assets/css/services/main.css` | `.inner-hero-sec.full-width-sec` (pt 190px, pb 55px, #fff, overflow hidden), `.benefit_box_sec` (pb 80px, `.benefit_box_main .wrapper` flex justify-center margin 0 -7.5px, `.benefit_box` width 33.33% padding 0 7.5px, `.benefit_text` radius 10px 1px #d9d9d9 border padding 30px 30px 55px 30px hover shadow and gradient border before:inset -2px), `.shopify-app-features-sec` (pt 25px, `.wrapper` flex items-center margin 0 -25px, `.features-col-1` 32.19%, `.features-col-2` 35.6% center img, `.features-col-3` 32.19%, `.features-text ul li` flex py 40px with 66x66 radius-12 icon container and 16px/700 title + 16px/500 desc), `.how-app-work-sec` (overflow hidden, padding 120px 0 75px 0, `.wrapper:after` curv_shape_bg.svg height 287px, `.col-block` width 25%, `.app-text` padding 60px 25px with 66x66 icon and 16px title/desc), `.faq-sec` (10 accordion items, plus/minus icon, 16px/500 answers), `.request-banner` (gradient banner, h3, white CTA button). |
-| Live `assets/css/services/media.css` | ≤1199px: h1 40/50, p 16/30.4, review_animation 420px, features-col 34%/32%/34%; ≤991px: features-col 36%/28%/36%, benefit_box 50%, how-app-work padding 60px 0 80px 0 with col-block 100%; ≤767px: h1 30/40, review_animation 275px circle, benefit_box 100%, features-col-2 order 1, features-col-1 order 2, features-col-3 order 3, how-app-work mbl_curv_shape_bg.svg. |
-| Live `assets/js/custom.js` | Review animation: `showNextReview()` on load, then every 5000ms; active circle gets `zoom-in show active` at +100ms, wrapper `show` at +300ms, 5 star paths `show` staggered 200ms each, ratings `show` at 1300ms, pill `show` at 1600ms; reset removes all classes first. |
-| Assets | Canonical brand logos in `public/assets/clients/`, 3 unique benefit SVGs in `public/assets/services/shopify-mobile-app-development/benefits/`, 6 feature SVGs + 1 center mockup WebP in `public/assets/services/shopify-mobile-app-development/features/`, 4 process SVGs + 2 curved background SVGs in `public/assets/services/shopify-mobile-app-development/process/`. |
-
-## Section Inventory
-
-| Section | Live behavior/style | Local implementation notes |
+| Viewport | Status | Visual Parity Evidence |
 | --- | --- | --- |
-| Hero | `.inner-hero-sec`: left h1 `Transform Your Shopify Store into a Mobile App in Minutes!`, paragraph, `start your free trial today!` red pill to `/request-quote`; right: 3 rotating 420px circles with ratings & review counts; 275px circle ≤767px. | Reused `ServiceHeroSection` + client `ReviewAnimation` component with full timing parity; links to internal `/request-quote`. |
-| Brands | `.our-client-sec` #faf4ee with heading `Trusted by <br>Leading Brands` + 12 brand logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirts, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit). | Reused `IndustryBrandsSection` with typed `shopifyMobileAppDevelopmentBrands`. |
-| Benefits ("Key benefits of Shopify Appmaker") | `.benefit_box_sec` with title `Key benefits of Shopify Appmaker` + 3 benefit cards (Increase Sales, Engage Customers, Enhance Experience) with 50x50 icons, 10px rounded borders, hover shadow, and gradient border pseudo. | Implemented `ShopifyAppBenefitsSection` with typed `shopifyMobileAppBenefits`. |
-| Features ("Features of Shopify App Maker") | `.shopify-app-features-sec` with title `Features of Shopify App Maker` + 3-column layout: left column (Customizable Themes, Push Notifications, Seamless Checkout), center column (mobile app preview image), right column (Product Searching, Analytics and Reporting, Customer Reviews) with 66x66 rounded icon frames. | Implemented `ShopifyAppFeaturesSection` with typed `shopifyMobileAppFeatures`. |
-| Process ("How Does the Shopify App Maker Work?") | `.how-app-work-sec` with title `How Does the Shopify <br/> App Maker Work?` + 4 step cards (Signup, Customize Your App, Connect your Store, Publish) with curved path SVG background line. | Implemented `ShopifyAppProcessSection` with typed `shopifyMobileAppProcess`. |
-| FAQs | `.faq-sec` white bg: h2 `Frequently Asked Questions` + 10 accordion items (first open), plus/minus icon, 16px/500 answers. | Reused `FaqSection` with `shopifyMobileAppDevelopmentFaqs`. |
-| CTA Banner | `.request-banner` gradient background, h3 `Want us to help you with your online store?`, and `REQUEST A QUOTE` white pill to `/request-quote`. | Reused `CtaBannerSection`. |
+| 1440x900 (Desktop) | Verified 1:1 Parity | Verified warm cream `#f7f4e9` hero section, red dash eyebrow `Established in 2006 • Shopify Platinum Partner`, bold Montserrat H1 with red accent `for iOS & Android`, dual CTAs ("DISCUSS YOUR MOBILE APP" & "SEE MOBILE APP WORK"), 4 trust partner badges (Shopify Platinum Partner, Clutch, Trustpilot, Upwork) with vertical separators, and 3D layered phone mockup slider with continuous 3000ms transition loop between Bella Vita, Kalki, and House of Good Vibes. Subsequent sections match 1:1: 4-metric counter strip, DTC brand explanation with 2 feature cards, 8-card mobile app portfolio grid with custom diagonal arrow badges, 9-row comparison table with check/cross icons, 4 shopping moment step cards, 3 case study spotlight cards, 4-step development process, 6 custom FAQs, and bottom CTA banner. |
+| 768x1024 (Tablet) | Verified 1:1 Parity | Responsive stacking verified: hero centered layout, eyebrow centered with red dash, right-column phone slider cleanly hidden via `max-[991px]:hidden` (matching live CSS `.hero-new-section .wrapper .right-col:has(.app-slider-wrap) { display: none; }`), 4-counter strip in 2x2 grid, 2-column feature blocks, 2-column portfolio cards, responsive comparison table with horizontal scrollable layout, 2-column shopping moments, stacked case studies, and centered FAQ accordions. |
+| 390x844 (Mobile) | Verified 1:1 Parity | Single-column mobile experience verified: centered hero text, full-width pill CTA buttons, 2x2 trust badges with `#d9d9d9` horizontal and vertical divider cross lines, phone slider hidden, 2-column mobile counters, stacked DTC feature cards, single-column portfolio cards with direct case study/inquiry links, swipe-friendly comparison table, vertical 4-step shopping moment journey, full-width case study cards, and touch-optimized FAQ accordion toggles. |
 
-## Motion And Interaction
+## Screenshot Evidence
 
-| State | Live behavior | Local behavior | Result |
+- Live screenshots:
+  - `docs/visual-captures/shopify-mobile-app-development/live-desktop-1440x900.png`
+  - `docs/visual-captures/shopify-mobile-app-development/live-tablet-768x1024.png`
+  - `docs/visual-captures/shopify-mobile-app-development/live-mobile-390x844.png`
+- Local screenshots:
+  - `docs/visual-captures/shopify-mobile-app-development/local-desktop-1440x900.png`
+  - `docs/visual-captures/shopify-mobile-app-development/local-tablet-768x1024.png`
+  - `docs/visual-captures/shopify-mobile-app-development/local-mobile-390x844.png`
+
+## Section Inventory (Refreshed Live Hierarchy)
+
+| # | Section | Live CSS & Markup Role | Local Implementation & Reuse Notes |
 | --- | --- | --- | --- |
-| Initial | First review circle activates on load with timed animations | Replicated with effect timers in `ReviewAnimation` | verified |
-| Rotating | Circles swap every 5000ms; paused under `prefers-reduced-motion` | Replicated | verified |
-| Brands marquee | Infinite smooth horizontal scroll across viewports | `ClientLogoSlider` | verified |
-| Benefit cards hover | Gradient border on hover, shadow | CSS transition + gradient border before pseudo | verified |
-| Accordion | First item open; plus/minus swap | `FaqAccordion` | verified |
+| 1 | Hero | `.hero-new-section`: bg `#f7f4e9`, red dash eyebrow, H1 Montserrat bold with `not-italic text-[#ad5151]` accent, 2 CTAs (`ButtonLink` primary & outline), 4 trust badges (Shopify Platinum Partner, Clutch, Trustpilot, Upwork), 3D phone app slider. Slider hidden on screens ≤991px. | Reusable `ShopifyMobileAppHeroSection` + client `PhoneAppSlider` (3000ms CSS 3D layered phone carousel). |
+| 2 | Stats Counters | `.white_label_counter_section`: 4 key proof metrics (`Platinum Partner`, `20+ Years`, `150+ Experts`, `5000+ Projects`). | Extended reusable `WhiteLabelCounterSection` with typed `counters` prop. |
+| 3 | DTC Brands | `.shopify_mobile_app_development_for_dtc_brands`: `SplitSectionHeading`, 3 cards (`Shopify + Mobile + Full-Stack`, `Independent Proof` with Clutch & Trustpilot 4.9 badges, `Long-Term Flexibility`). | Server component `ShopifyMobileAppDtcSection` with `SplitSectionHeading` and clean responsive grid. |
+| 4 | Explore Our Work | `.our-work-sec` (`#our_work`): `SplitSectionHeading`, 8 mobile app project cards (House of Rare, Kalki Fashion, RENÉE Cosmetics, Bellavita Organic, Bombay Shirt Company, Supertails, GNC India, House of Good Vibes) with Android/iOS store badges, plus bottom "View our work" `ButtonLink`. | Server component `ShopifyMobileAppWorkSection` reusing `SplitSectionHeading` and `PortfolioProjectCard` (`variant="ourWorkRefresh"`). |
+| 5 | Comparison Table | `.why_build_a_custom_shopify_mobile_app`: `SplitSectionHeading`, 9-row comparison matrix between `What Matters`, `App Builder`, and `Custom Shopify Mobile App` with `#EFF4EF` highlighted custom column. | Server component `ShopifyMobileAppComparisonSection` with `SplitSectionHeading` and clean responsive table. |
+| 6 | Shopping Moments | `.mobile-shopping-eperience-sec`: `SplitSectionHeading`, 4 sequential user shopping touchpoints (01 · Discover, 02 · Convert, 03 · Engage, 04 · Retain). | Server component `ShopifyMobileAppExperienceSection` with `SplitSectionHeading` and numbered step cards. |
+| 7 | Case Studies | `.see-the-work-sec`: `SplitSectionHeading`, 3 featured mobile app case studies (RENÉE Cosmetics, KALKI Fashion, House of Good Vibes). | Reused `ServicesCaseStudiesSection` with 3 filtered mobile app case studies and `formatBrText`. |
+| 8 | Process | `.white_label_how_partnership_works_section`: 4 numbered workflow steps (1 Discover & Architect, 2 Design & Build, 3 QA & Launch, 4 Improve & Scale). | Reused `WhiteLabelProcessSection` with optional eyebrow, description, and `note=""`. |
+| 9 | FAQs | `.faq-sec`: 2-column split FAQ layout with left heading/eyebrow and right underlined accordion with circle-cross icons. | Reused shared `SplitFaqSection` with `shopifyMobileAppDevelopmentFaqs`. |
+| 10 | Bottom CTA Banner | `.request-banner`: gradient background with H2 and white pill button linking to `/request-quote`. | Reused shared `CtaBannerSection`. |
 
-## Pre-Implementation Differences and Decisions
+## Motion, Interaction & Responsive States
 
-| Difference | Decision | Status |
-| --- | --- | --- |
-| Live canonical/og:url have trailing slash | Slashless `/shopify-mobile-app-development` per project URL policy | implemented |
-| Live title length | `Shopify Mobile App Development Services | Dynamic Dreamz` (56 chars - within 60-char budget) | implemented |
-| Live description length | Preserved live description (143 chars - within 70-160 char budget) | implemented |
-| Brand & Service assets deduplication | Reused canonical files across `public/assets/` without creating duplicate copies | implemented |
+- **Phone App Slider**: Automated 3000ms interval rotating between Bella Vita, Kalki, and House of Good Vibes. Center slide features fixed iPhone frame with scaled screen content; left and right slides are scaled down and positioned in 3D perspective. Transitions pause when window is not focused or user prefers reduced motion. Hidden automatically below 992px (`max-[991px]:hidden`) to match live site CSS.
+- **Project Cards**: Hover state activates subtle image scale (`scale-105`) and dark overlay opacity transition with white diagonal arrow icon.
+- **FAQ Accordion**: Single active item expansion state with smooth height transition and plus/minus icon toggle.
+- **Internal Anchor Scrolling**: "SEE MOBILE APP WORK" CTA navigates directly to `#our_work` section with smooth scroll.
+
+## SEO & Content Boundary Compliance
+
+- Zero visible copy hardcoded inside components (`src/content/shopify-mobile-app-development.ts` houses all 10 sections).
+- Passed `npm run check:component-content` across all 481 codebase files.
+- Passed `npm run check:urls` with no trailing slashes.
+- Passed `npm run check:asset-duplicates` (0 duplicate hash groups across 1,737 public assets).
+- Updated `src/data/seo.ts` with live meta title (55 characters), meta description (150 characters), and updated publication dates (`2026-09-04`).
+- Updated `src/lib/schema.ts` with matching Service, FAQPage, and Offer structured data.

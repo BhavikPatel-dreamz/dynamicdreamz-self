@@ -1,41 +1,74 @@
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { ShopifyAppBenefitsSection } from "@/components/sections/shopify-mobile-app/shopify-app-benefits-section";
-import { ShopifyAppFeaturesSection } from "@/components/sections/shopify-mobile-app/shopify-app-features-section";
-import { ShopifyAppProcessSection } from "@/components/sections/shopify-mobile-app/shopify-app-process-section";
+import { ServicesCaseStudiesSection } from "@/components/sections/services-case-studies-section";
+import { WhiteLabelProcessSection } from "@/components/sections/white-label/white-label-process-section";
+import { WhiteLabelCounterSection } from "@/components/sections/white-label-shopify/white-label-counter-section";
+import { ShopifyMobileAppHeroSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-hero-section";
+import { ShopifyMobileAppDtcSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-dtc-section";
+import { ShopifyMobileAppWorkSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-work-section";
+import { ShopifyMobileAppComparisonSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-comparison-section";
+import { ShopifyMobileAppExperienceSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-experience-section";
 import {
-  shopifyMobileAppBenefits,
-  shopifyMobileAppDevelopmentBrands,
+  shopifyMobileAppCaseStudies,
+  shopifyMobileAppComparison,
+  shopifyMobileAppCounters,
   shopifyMobileAppDevelopmentCtaBanner,
   shopifyMobileAppDevelopmentFaqs,
-  shopifyMobileAppDevelopmentHero,
-  shopifyMobileAppFeatures,
+  shopifyMobileAppDtcBrands,
+  shopifyMobileAppExperience,
+  shopifyMobileAppExploreWork,
+  shopifyMobileAppFaqCopy,
+  shopifyMobileAppHero,
   shopifyMobileAppProcess,
 } from "@/content/shopify-mobile-app-development";
 
 export function ShopifyMobileAppDevelopmentPage() {
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec full-width-sec shopify-mobile-app-development relative overflow-hidden bg-white pt-[210px] pb-[55px] max-[992px]:pt-[100px]"
-        content={shopifyMobileAppDevelopmentHero}
-        variant="centered"
+      {/* 1. Hero Section */}
+      <ShopifyMobileAppHeroSection content={shopifyMobileAppHero} />
+
+      {/* 2. Stats / Counters Section */}
+      <WhiteLabelCounterSection counters={shopifyMobileAppCounters} />
+
+      {/* 3. DTC Brands / Why Dynamic Dreamz */}
+      <ShopifyMobileAppDtcSection content={shopifyMobileAppDtcBrands} />
+
+      {/* 4. Explore Our Work (Portfolio Apps) */}
+      <ShopifyMobileAppWorkSection content={shopifyMobileAppExploreWork} />
+
+      {/* 5. App Builder vs Custom Development Table */}
+      <ShopifyMobileAppComparisonSection content={shopifyMobileAppComparison} />
+
+      {/* 6. Shopping Moments / Experience */}
+      <ShopifyMobileAppExperienceSection content={shopifyMobileAppExperience} />
+
+      {/* 7. Case Studies */}
+      <ServicesCaseStudiesSection
+        eyebrow={shopifyMobileAppCaseStudies.eyebrow}
+        heading={shopifyMobileAppCaseStudies.heading}
+        description={shopifyMobileAppCaseStudies.description}
+        items={shopifyMobileAppCaseStudies.items}
       />
-      <IndustryBrandsSection
-        content={{
-          slug: "shopify-mobile-app-development",
-        }}
-        items={shopifyMobileAppDevelopmentBrands}
+
+      {/* 8. Process */}
+      <WhiteLabelProcessSection
+        eyebrow={shopifyMobileAppProcess.eyebrow}
+        title={shopifyMobileAppProcess.title}
+        description={shopifyMobileAppProcess.description}
+        steps={shopifyMobileAppProcess.steps}
+        note=""
       />
-      <ShopifyAppBenefitsSection content={shopifyMobileAppBenefits} />
-      <ShopifyAppFeaturesSection content={shopifyMobileAppFeatures} />
-      <ShopifyAppProcessSection content={shopifyMobileAppProcess} />
+
+      {/* 9. FAQs */}
       <SplitFaqSection
         idPrefix="shopify-mobile-app-faq"
+        eyebrow={shopifyMobileAppFaqCopy.eyebrow}
+        heading={shopifyMobileAppFaqCopy.heading}
         items={shopifyMobileAppDevelopmentFaqs}
       />
+
+      {/* 10. CTA Banner */}
       <CtaBannerSection
         ctaHref={shopifyMobileAppDevelopmentCtaBanner.ctaHref}
         ctaLabel={shopifyMobileAppDevelopmentCtaBanner.ctaLabel}

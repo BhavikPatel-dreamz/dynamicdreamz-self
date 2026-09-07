@@ -1,8 +1,13 @@
 import { Container } from "@/components/ui/container";
 import { whiteLabelShopifyCounters } from "@/content/white-label-shopify-development";
 
+export type CounterItem = {
+  value: string;
+  label: string;
+};
+
 type WhiteLabelCounterSectionProps = {
-  counters?: typeof whiteLabelShopifyCounters;
+  counters?: readonly CounterItem[];
 };
 
 export function WhiteLabelCounterSection({

@@ -1,25 +1,56 @@
 import { Container } from "@/components/ui/container";
 import { whiteLabelShopifyProcess, whiteLabelShopifySectionCopy } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
+import { formatBrText } from "@/lib/text-formatting";
 import type { WhiteLabelProcessStep } from "@/types/white-label-service";
 
 type WhiteLabelProcessSectionProps = {
+  eyebrow?: string;
   title?: string;
+  description?: string;
   steps?: readonly WhiteLabelProcessStep[];
   note?: string;
+  className?: string;
 };
 
 export function WhiteLabelProcessSection({
+  eyebrow,
   title = whiteLabelShopifySectionCopy.processTitle,
+  description,
   steps = whiteLabelShopifyProcess,
   note = whiteLabelShopifySectionCopy.processNote,
+  className,
 }: WhiteLabelProcessSectionProps) {
   return (
-    <section className="py-20 max-[992px]:py-[50px]">
+    <section className={cn("py-20 max-[992px]:py-[50px]", className)}>
       <Container className="max-[575px]:px-4">
-        <h2 className="mb-[60px] text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[50px] max-[992px]:mb-[30px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-5 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
-          {title}
-        </h2>
+        {eyebrow || description ? (
+          <div className="section_title_with_eyebrow mb-[60px] max-[1199px]:mb-[50px] max-[992px]:mb-[30px] max-[767px]:mb-5">
+            <div className="title">
+              {eyebrow && (
+                <div className="eyebrow mb-2">
+                  <span className="inline-flex items-center gap-2 font-montserrat text-xs font-bold uppercase tracking-[1px] text-brand-red before:inline-block before:h-[2px] before:w-5 before:bg-brand-red before:content-['']">
+                    {eyebrow}
+                  </span>
+                </div>
+              )}
+              <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
+                {formatBrText(title, "max-[767px]:hidden")}
+              </h2>
+            </div>
+            {description && (
+              <div className="section_text mt-2.5">
+                <p className="font-sans text-base font-medium leading-[30.4px] text-muted">
+                  {description}
+                </p>
+              </div>
+            )}
+          </div>
+        ) : (
+          <h2 className="mb-[60px] text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[50px] max-[992px]:mb-[30px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-5 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
+            {title}
+          </h2>
+        )}
         <div className="flex max-[992px]:flex-wrap">
           {steps.map((step, index) => (
             <article
@@ -42,11 +73,13 @@ export function WhiteLabelProcessSection({
             </article>
           ))}
         </div>
-        <div className="mt-8 rounded-[50px] border border-brand-red bg-brand-red/3 p-2.5 text-center max-[1199px]:mt-[25px] max-[992px]:mt-5 max-[767px]:rounded-[10px]">
-          <p className="text-base leading-4 font-semibold text-muted max-[1199px]:text-[15px] max-[1199px]:leading-[22px] max-[767px]:text-sm max-[767px]:leading-5">
-            {note}
-          </p>
-        </div>
+        {note ? (
+          <div className="mt-8 rounded-[50px] border border-brand-red bg-brand-red/3 p-2.5 text-center max-[1199px]:mt-[25px] max-[992px]:mt-5 max-[767px]:rounded-[10px]">
+            <p className="text-base leading-4 font-semibold text-muted max-[1199px]:text-[15px] max-[1199px]:leading-[22px] max-[767px]:text-sm max-[767px]:leading-5">
+              {note}
+            </p>
+          </div>
+        ) : null}
       </Container>
     </section>
   );

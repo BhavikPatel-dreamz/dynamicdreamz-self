@@ -4032,72 +4032,74 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 ## Shopify Mobile App Development (`/shopify-mobile-app-development`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-07
 Owner: SEO, mobile app development specialists, leadership, and sales operations
-Primary audience: Shopify merchants, direct-to-consumer eCommerce brands, and online store owners seeking turnkey or custom Shopify mobile app solutions using Shopify AppMaker to convert stores into iOS & Android mobile applications.
-Decision stage: agency partner evaluation, technical capability assessment, Shopify mobile app developer hiring, quote request
+Primary audience: Shopify merchants, DTC brands, Shopify Plus brands, and enterprise ecommerce businesses seeking custom native or cross-platform (React Native) iOS and Android mobile app development directly connected to their Shopify backend.
+Decision stage: agency partner evaluation, technical capability assessment, custom mobile app vs generic builder comparison, quote request, discovery call booking
 
 ### Page role
 
-Dedicated commercial service landing page targeting queries for "Shopify Mobile App Development Services", "Shopify AppMaker", and turnkey Shopify mobile app builder solutions. Highlights 12 client brand trust logos, 3 key benefits (Increase Sales, Engage Customers, Enhance Experience) with custom interactive cards, 6 core mobile features (Customizable Themes, Push Notifications, Seamless Checkout, Product Searching, Analytics & Reporting, Customer Reviews) in a 3-column split with center app preview mockup, a 4-step process (Signup, Customize Your App, Connect your Store, Publish) with curved path background, 10 buyer FAQs, and quote request banners.
+Dedicated commercial service landing page targeting queries for "Shopify Mobile App Development Company", "Custom Shopify Mobile App Development for iOS & Android", and "DTC Shopify Mobile App Development". Replaced former AppMaker builder focus with enterprise custom development positioning: highlights 4 company scale counters (Platinum Partner, 20+ Years, 150+ Experts, 5000+ Projects), DTC brands value proposition, 8 React Native mobile app portfolio cards with direct case study links, an authoritative 9-row comparison table ("Custom App by Dynamic Dreamz" vs "Generic App Builders / Off-The-Shelf Tools"), a 4-stage mobile shopping moment architecture (Home & Discovery, Variant Exploration, Seamless Checkout, Retention), 3 in-depth mobile case studies (RENÉE Cosmetics, KALKI Fashion, House of Good Vibes), a 4-step execution process (Audit, UX/UI, Engineering, Scale), 6 custom FAQs, and discovery call booking CTAs.
 
 ### Target prompts
 
-- Who is the top Shopify mobile app development company in India?
-- How can I transform my Shopify store into a mobile app?
-- What are the benefits and features of Shopify AppMaker?
-- How long does it take to launch a Shopify mobile app on the App Store and Google Play?
-- Can Dynamic Dreamz build custom iOS and Android mobile apps for Shopify stores?
+- Who is the best Shopify mobile app development company for DTC brands?
+- What are the differences between custom Shopify mobile app development and generic off-the-shelf app builders?
+- Can Dynamic Dreamz build custom iOS and Android apps using React Native connected to Shopify?
+- How does Dynamic Dreamz design mobile shopping experiences for Shopify stores?
+- What Shopify mobile apps has Dynamic Dreamz built for brands like Bella Vita, Kalki, and RENÉE?
 
 ### Current strengths and available evidence
 
-- Server-rendered split hero with H1 `Transform Your Shopify Store into a Mobile App in Minutes!` and rotating review badge.
-- 12 verified brand partner logos with infinite marquee scrolling.
-- 3 key benefit cards with gradient hover borders.
-- 6 comprehensive app feature items with custom SVG icons and center mobile app preview mockup.
-- 4-step process with SVG curved serpentine background line.
-- 10 comprehensive buyer FAQs covering Shopify AppMaker definition, store benefits, workflow steps, features, launch timeline, security, customer support, pricing, free trial, and cancellation policies.
-- Complete structured data graph emitting Service, OfferCatalog (9 service offers), FAQPage (10 items), BreadcrumbList, Organization, and WebSite.
-- Zero duplicate assets across `public/assets/`, organizing unique SVGs and WebP assets cleanly into category subdirectories.
+- Server-rendered hero with Montserrat bold typography, warm cream `#f7f4e9` background, red dash eyebrow, dual CTAs, 4 trust partner badges (Shopify Platinum Partner, Clutch, Trustpilot, Upwork), and responsive 3D layered phone mockup slider rotating featured apps (Bella Vita, Kalki, House of Good Vibes) every 3000ms.
+- 4 company scale proof points: Platinum Partner, 20+ Years web & ecommerce experience, 150+ commerce & tech experts, 5000+ projects delivered.
+- 2 comprehensive DTC feature blocks: Shopify-Native Experience and Growth & Retention Infrastructure.
+- 8 real-world mobile app portfolio projects with interactive hover, zoom, and custom diagonal arrow badges (House of Good Vibes, GNC India, Suta, Bella Vita Organic, Nestasia, The Indian Face, The Bear House, Kalki Fashion).
+- 9-row detailed comparison matrix demonstrating clear technical and business advantages of custom development over generic off-the-shelf app builders across performance, checkout flexibility, and brand identity.
+- 4 sequential mobile shopping moments optimizing mobile shopper conversion and retention.
+- 3 validated case studies showcasing measurable client growth (RENÉE Cosmetics, KALKI Fashion, House of Good Vibes).
+- 4-step execution roadmap and 6 custom FAQs addressing custom app development, cross-platform architecture, timelines, and maintenance.
+- Complete structured data graph emitting Service, OfferCatalog (10 service offers), FAQPage (6 items), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, with 0 runtime external dependencies.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (9 offers), FAQPage (10 items), BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
-| P0 | implemented | Local assets | Benefit icons, feature icons, process icons, and app mockup must be locally hosted | Save 13 unique SVGs and 1 WebP mockup under `public/assets/services/shopify-mobile-app-development/` | Verified locally with 0 runtime external dependencies and 0 duplicates |
-| P1 | deferred | Content expansion | FAQ answer formatting can be enhanced with rich bullet lists in visible copy | Record proposed fix in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+| P0 | implemented | Route and discovery | Refreshed live route needed full App Router migration and updated metadata | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build 2026-09-07 |
+| P0 | implemented | Structured data | Updated live page moved from AppMaker to custom development offering | Emit updated Service with 10 Offer items, 6 custom FAQPage items, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-09-07 |
+| P0 | implemented | Local assets & Parity | Responsive 3D phone mockup slider and unique brand card assets must be locally hosted | Saved optimized WebP/PNG assets in `public/assets/services/shopify-mobile-app-development/hero/` and `public/assets/our-work/projects/` | Verified locally with 0 runtime external dependencies and 0 duplicate hash groups |
+| P1 | deferred | Content expansion | FAQ answer formatting can include expandable deep-dive links to case studies | Record proposed enhancement in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
 
-Deferred under the live-UI preservation gate. The current server-rendered hero, benefits, features, and step-by-step process establish Dynamic Dreamz Shopify mobile app development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+Deferred under the live-UI preservation gate. The current server-rendered hero, DTC features, comparison table, shopping moments, case studies, and step-by-step roadmap clearly establish Dynamic Dreamz custom Shopify mobile app development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
 
 ### Entity, evidence, and authorship actions
 
-- Position Dynamic Dreamz as an established Shopify Platinum Partner and mobile development agency founded in 2006 with 150+ specialists and 4500+ Shopify stores built.
-- Connect mobile app service to Shopify Plus Agency, Cross-Platform App Development, and Shopify Theme Customization offerings.
+- Position Dynamic Dreamz as an established Shopify Platinum Partner and custom mobile development agency founded in 2006 with 150+ specialists and 5,000+ projects delivered.
+- Connect mobile app service to Shopify Plus Agency, React Native Development, Cross-Platform App Development, and Case Studies.
 
 ### Internal-link and conversion actions
 
 - Maintain slashless `/shopify-mobile-app-development` navigation across marketing pages and service menus.
-- Direct conversion actions route to `/request-quote`.
+- Direct conversion actions route to `/book-a-discovery-call` and in-page `#our_work`.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service with 9 Offer items, 10 FAQ items, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Emit Service with 10 Offer items, 6 FAQ items, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-09-04T00:00:00+05:30`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
 
-- SEO tracks queries for "Shopify mobile app development", "Shopify AppMaker", "turn Shopify store into mobile app", and "custom Shopify mobile app".
-- Analytics tracks form submissions on `/request-quote` originating from `/shopify-mobile-app-development`.
+- SEO tracks queries for "Shopify mobile app development company", "Shopify mobile app development", "custom Shopify mobile app", and "Shopify React Native app".
+- Analytics tracks form submissions on `/book-a-discovery-call` originating from `/shopify-mobile-app-development`.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-mobile-app-development`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 56 chars, Description: 143 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-07): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-mobile-app-development`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison across desktop (1440x900), tablet (768x1024), and mobile (390x844), View Page Source, metadata limits (Title: 55 chars, Description: 150 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Mobile Application Development (`/mobile-application-development`)
 

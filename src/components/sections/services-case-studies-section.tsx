@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/class-names";
+import { formatBrText } from "@/lib/text-formatting";
 
 export type CaseStudyPreviewItem = {
   title: string;
@@ -51,7 +52,7 @@ export function ServicesCaseStudiesSection({
               </div>
             )}
             <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-              {heading}
+              {formatBrText(heading, "max-[767px]:hidden")}
             </h2>
           </div>
           {description && (

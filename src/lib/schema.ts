@@ -184,9 +184,9 @@ import { wordpressDevelopmentAhmedabadContent } from "@/content/wordpress-develo
 import { wordpressDevelopmentBangaloreContent } from "@/content/wordpress-development-in-bangalore";
 import { wordpressDevelopmentMumbaiContent } from "@/content/wordpress-development-in-mumbai";
 import {
-  shopifyMobileAppBenefits,
   shopifyMobileAppDevelopmentFaqs,
-  shopifyMobileAppFeatures,
+  shopifyMobileAppDtcBrands,
+  shopifyMobileAppExperience,
 } from "@/content/shopify-mobile-app-development";
 import {
   mobileApplicationDevelopmentOffers,
@@ -4397,9 +4397,14 @@ export function createCrossPlatformAppDevelopmentPageSchema() {
 
 export function createShopifyMobileAppDevelopmentPageSchema() {
   const allOffers = [
-    ...shopifyMobileAppBenefits.items,
-    ...shopifyMobileAppFeatures.leftFeatures,
-    ...shopifyMobileAppFeatures.rightFeatures,
+    ...shopifyMobileAppDtcBrands.cards.map((card) => ({
+      title: card.title,
+      description: card.description,
+    })),
+    ...shopifyMobileAppExperience.moments.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
   ];
 
   return createServicePageSchema({
@@ -4409,20 +4414,16 @@ export function createShopifyMobileAppDevelopmentPageSchema() {
     serviceId: shopifyMobileAppDevelopmentServiceId,
     faqId: shopifyMobileAppDevelopmentFaqId,
     breadcrumbId: shopifyMobileAppDevelopmentBreadcrumbId,
-    serviceName: "Shopify Mobile App Development Services",
-    serviceType:
-      "Shopify mobile app development, Shopify AppMaker, turnkey mobile commerce apps, push notifications, customizable mobile themes, seamless mobile checkout, analytics and reporting",
+    serviceName: "Shopify Mobile App Development",
+    serviceType: "Custom Shopify mobile app development for iOS and Android",
     breadcrumbName: "Shopify Mobile App Development",
     audienceType:
-      "Shopify merchants, ecommerce brands, and online store owners looking to transform their Shopify store into a native-like mobile app",
+      "Shopify merchants, DTC brands, Shopify Plus brands and ecommerce businesses",
     faqs: shopifyMobileAppDevelopmentFaqs.map((item) => ({
       question: item.question,
       answer: item.answer,
     })),
-    offers: allOffers.map((item) => ({
-      title: item.title,
-      description: item.description,
-    })),
+    offers: allOffers,
   });
 }
 

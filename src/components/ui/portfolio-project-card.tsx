@@ -28,6 +28,7 @@ export type PortfolioProjectCardProps = {
   eagerImage?: boolean;
   variant?: "default" | "ourWorkRefresh";
   showMobileArrow?: boolean;
+  showArrow?: boolean;
 };
 
 function ProjectImage({
@@ -141,6 +142,7 @@ export function PortfolioProjectCard({
   eagerImage = false,
   variant = "default",
   showMobileArrow = false,
+  showArrow = false,
 }: PortfolioProjectCardProps) {
   const isAppProject = !href && appLinks?.length;
 
@@ -222,6 +224,23 @@ export function PortfolioProjectCard({
                   {name}
                 </h3>
               </div>
+              {showArrow && (
+                <span
+                  className={cn(
+                    "flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red",
+                    !showMobileArrow && "max-[767px]:hidden",
+                  )}
+                >
+                  <Image
+                    aria-hidden="true"
+                    className="h-[9px] w-[9px] brightness-0 transition-[filter] duration-300 group-hover/project:brightness-100 group-focus/project:brightness-100"
+                    src="/assets/icons/diagonal-arrow-white.svg"
+                    alt=""
+                    width={12}
+                    height={12}
+                  />
+                </span>
+              )}
             </div>
           </div>
         )}
