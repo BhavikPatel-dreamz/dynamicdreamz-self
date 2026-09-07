@@ -57,39 +57,39 @@ export const resourcesHub = {
     "title": "Shopify",
     "links": [
       {
-        "href": "/how-to-stay-competitive-in-white-label-services",
+        "href": "/blogs/how-to-stay-competitive-in-white-label-services",
         "title": "How to Use White Label Agency Services to Stay Competitive"
       },
       {
-        "href": "/scaling-your-agency-with-white-label-solutions",
+        "href": "/blogs/scaling-your-agency-with-white-label-solutions",
         "title": "Scaling Your Agency with White Label Solutions: Myths vs. Reality"
       },
       {
-        "href": "/benefits-of-white-label-web-design-services",
+        "href": "/blogs/benefits-of-white-label-web-design-services",
         "title": "White Label Web Design Advantages: Tailored Solutions for Customers"
       },
       {
-        "href": "/building-a-profitable-white-label-agency-steps-for-success",
+        "href": "/blogs/building-a-profitable-white-label-agency-steps-for-success",
         "title": "Building a Profitable White Label Agency: Steps for Success"
       },
       {
-        "href": "/how-to-choose-the-right-white-label-partner",
+        "href": "/blogs/how-to-choose-the-right-white-label-partner",
         "title": "How to Choose the Right White Label Partner for Your Digital Marketing Agency"
       },
       {
-        "href": "/measuring-effectiveness-of-white-label-services",
+        "href": "/blogs/measuring-effectiveness-of-white-label-services",
         "title": "Important Steps for Evaluating White Label Services’ Performance"
       },
       {
-        "href": "/how-white-label-services-reduce-overhead-increase-revenue",
+        "href": "/blogs/how-white-label-services-reduce-overhead-increase-revenue",
         "title": "How White Label Services Reduce Overhead & Increase Revenue for Agencies"
       },
       {
-        "href": "/benefits-of-white-labeling-agency",
+        "href": "/blogs/benefits-of-white-labeling-agency",
         "title": "The Benefits of White Labeling: How Agencies Can Scale Faster"
       },
       {
-        "href": "/what-is-a-white-label-agency",
+        "href": "/blogs/what-is-a-white-label-agency",
         "title": "What Is a White Label Agency & How Can It Help You Grow Your Business?"
       }
     ]
@@ -98,19 +98,19 @@ export const resourcesHub = {
     "title": "WordPress",
     "links": [
       {
-        "href": "/signs-to-start-using-white-label-services",
+        "href": "/blogs/signs-to-start-using-white-label-services",
         "title": "5 Signs It’s Time to Start Using White Label Services in Your Business"
       },
       {
-        "href": "/wordpress-feature-development-for-culinary-shows-websites",
+        "href": "/blogs/wordpress-feature-development-for-culinary-shows-websites",
         "title": "WordPress Feature Development for Culinary Shows Websites"
       },
       {
-        "href": "/top-5-flexible-wordpress-page-builders-for-2024",
+        "href": "/blogs/top-5-flexible-wordpress-page-builders-for-2024",
         "title": "Top 5 Flexible WordPress Page Builders For 2024"
       },
       {
-        "href": "/wordpress-web-design-company-building-a-website-that-converts",
+        "href": "/blogs/wordpress-web-design-company-building-a-website-that-converts",
         "title": "WordPress Web Design Company: Building A Website That Converts"
       }
     ]
@@ -123,19 +123,19 @@ export const resourcesHub = {
     "title": "e-Commerce",
     "links": [
       {
-        "href": "/b2b-ecommerce-features-for-successful-business",
+        "href": "/blogs/b2b-ecommerce-features-for-successful-business",
         "title": "The Ultimate B2B eCommerce Features for Successful Business"
       },
       {
-        "href": "/responsive-design-for-ecommerce",
+        "href": "/blogs/responsive-design-for-ecommerce",
         "title": "Why Responsive Design is Important for eCommerce"
       },
       {
-        "href": "/proven-ways-to-speed-up-your-ecommerce-site",
+        "href": "/blogs/proven-ways-to-speed-up-your-ecommerce-site",
         "title": "10 Proven Ways to Speed Up Your eCommerce Site and Boost Sales"
       },
       {
-        "href": "/ecommerce-call-to-action-examples",
+        "href": "/blogs/ecommerce-call-to-action-examples",
         "title": "10 eCommerce Call to Action Examples to Boost Your Sales"
       }
     ]

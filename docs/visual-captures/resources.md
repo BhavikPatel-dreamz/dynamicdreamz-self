@@ -167,7 +167,7 @@ No horizontal document overflow was present in the live desktop, tablet, or mobi
 | Counter digit transition | Local counters use stable numeric interpolation instead of Odometer's overlapping rolling glyphs; values and two-second viewport trigger match | intentional production-quality implementation |
 | Logo position in a screenshot | The local and live autoplay loops can be at different logo positions when a full-page capture reaches the strip | accepted timing phase; item order, breakpoints, motion, and assets match |
 | Visible copy | Hero, hub, story, taxonomy, review labels, trust statement, and 18+ counter | restored to live on 2026-08-13; edited alternatives remain deferred |
-| Linked destination routes | The page intentionally preserves 83 unique CTA, category, article, and resource-guide paths whose destination routes are not yet present in this migration | migration pending; excluded from this route-local SEO score and required before site launch |
+| Linked destination routes | All 17 Resource Hub article links now resolve directly to their canonical migrated `/blogs/<slug>` destinations (with legacy root paths 301-redirected in `next.config.ts`); 404s resolved | verified; 0 broken links in resources hub |
 
 ## 2026-08-12 AEO/GEO Verification (Superseded)
 

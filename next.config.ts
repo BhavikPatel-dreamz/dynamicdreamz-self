@@ -25,6 +25,18 @@ const legacyBlogSlugs = [
   "how-to-hire-shopify-development-agency",
   "key-benefits-of-choosing-shopify",
   "shopify-plus-in-action-success-stories-and-case-studies",
+  "how-to-stay-competitive-in-white-label-services",
+  "scaling-your-agency-with-white-label-solutions",
+  "benefits-of-white-label-web-design-services",
+  "building-a-profitable-white-label-agency-steps-for-success",
+  "how-to-choose-the-right-white-label-partner",
+  "measuring-effectiveness-of-white-label-services",
+  "how-white-label-services-reduce-overhead-increase-revenue",
+  "wordpress-feature-development-for-culinary-shows-websites",
+  "top-5-flexible-wordpress-page-builders-for-2024",
+  "wordpress-web-design-company-building-a-website-that-converts",
+  "b2b-ecommerce-features-for-successful-business",
+  "proven-ways-to-speed-up-your-ecommerce-site",
 ] as const;
 
 const oneYearInSeconds = 60 * 60 * 24 * 365;
