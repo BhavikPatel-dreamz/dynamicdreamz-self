@@ -2549,6 +2549,33 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  magentoWebDevelopment: {
+    path: "/magento-web-development",
+    title: "Magento Web Development Explained | Complete 2026 Guide",
+    description:
+      "Learn everything about Magento web development, its features, benefits, migration & even comparison with Shopify Plus in this complete guide by DynamicDreamz.",
+    keywords: [
+      "Magento web development",
+      "Magento development guide",
+      "Magento vs Shopify Plus",
+      "Magento ecommerce",
+      "Adobe Commerce",
+      "Magento migration",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-11-10T12:02:16+00:00",
+    modifiedTime: "2026-08-04T13:01:35+00:00",
+    image: {
+      path: "/assets/magento-web-development/magento-web-development-hero.webp",
+      width: 1200,
+      height: 630,
+      alt: "Magento Web Development Explained | Complete 2026 Guide",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  },
   wordPressThemeCustomization: {
     path: "/wordpress-theme-customization-services",
     title: "WordPress Theme Customization Services | Dynamic Dreamz",

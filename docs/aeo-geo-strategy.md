@@ -3722,6 +3722,80 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 - URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/magento-development`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 58 chars, Description: 129 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
+## Magento Web Development (`/magento-web-development`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-09-07
+Owner: SEO, Magento/Adobe Commerce development specialists, leadership, and sales operations
+Primary audience: Merchants, ecommerce managers, enterprise brands, and developers seeking comprehensive knowledge on Magento web development, architecture, features, platform comparison with Shopify Plus, migration processes, and agency partner support.
+Decision stage: informational research, platform evaluation (Magento vs. Shopify Plus), replatforming/migration consideration, and developer consultation.
+
+### Page role
+
+Comprehensive guide and commercial service landing page targeting "Magento Web Development", "Magento web development guide", "Magento vs Shopify Plus", and platform migration. Features an interactive 10-part sticky guide (Magento definition, benefits, development process in stages, core features, Magento vs Shopify Plus comparison with interactive table, migration guide, Dynamic Dreamz agency capabilities, conclusion), embedded demo CTA box, 5 buyer FAQs, migration inquiry box, and request quote banner.
+
+### Target prompts
+
+- What is Magento web development and how does it work?
+- What are the differences between Magento Open Source and Adobe Commerce?
+- How does Magento compare to Shopify Plus in scalability, customization, and cost?
+- What is the step-by-step Magento web development process?
+- How do I migrate my ecommerce store to Magento from Shopify, WooCommerce, or BigCommerce?
+- How does Dynamic Dreamz help businesses build and scale custom Magento stores?
+
+### Current strengths and available evidence
+
+- Server-rendered split hero with H1 `Transform Your Store With A Complete Magento Web Development Guide`, introductory overview, and animated floating graphic.
+- 10 distinct content sections organized with interactive sticky tab navigation and smooth container scrolling.
+- Detailed multi-stage Magento development process (Discovery & Planning, Design, Development, QA, Deployment & Maintenance).
+- In-depth platform comparison (Flexibility, Scalability, Cost, Integrations, Hosting) with structured table comparison against Shopify Plus.
+- Interactive drag-to-scroll comparison table with gradient border styling.
+- 5 visible buyer FAQs with collapsible accordion interactions.
+- Multiple conversion touchpoints routing to `/request-quote` ("Book A DEMO", "request a quote").
+- Complete structured data graph emitting WebPage with `primaryImageOfPage`, BreadcrumbList, Service, and FAQPage (5 items matching visible content).
+- Zero duplicate assets across `public/assets/`, with optimized WebP images under 25KB each and local SVG assets.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Canonical migrated route needed App Router and metadata setup | Ship slashless `/magento-web-development` route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
+| P0 | implemented | Structured data | Missing rich Service, BreadcrumbList, and FAQPage schema | Emit WebPage with primaryImageOfPage, Service, BreadcrumbList, and FAQPage (5 visible items) | Rendered JSON-LD and build verification complete 2026-09-07 |
+| P0 | implemented | Local assets | Live assets must be locally hosted and optimized | Save WebP optimized hero and banner assets in `public/assets/magento-web-development/`, reuse canonical gradient-check and migration background assets | Verified locally with 0 runtime external dependencies and 0 duplicates |
+| P1 | deferred | Content expansion / typos | Live FAQ answers 2, 3, 4, 5 contain copy pasted from Laravel/PHP FAQs on the live site | Record proposed accurate FAQ answers in `docs/page-content-improvements.md` as suggested/deferred; preserve live visible copy verbatim per migration rules | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered hero and guide copy establish Dynamic Dreamz's Magento capabilities. Proposed copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Connect Dynamic Dreamz as an established ecommerce and Magento web development partner founded in 2006.
+- Maintain consistency across ecommerce service offerings and platform comparisons.
+
+### Internal-link and conversion actions
+
+- Maintain slashless `/magento-web-development` canonical and sitemap entries.
+- Route conversion CTAs ("Book A DEMO", "request a quote") to `/request-quote`.
+- Preserve internal links to `/shopify-plus-agency`, `/shopify-development-agency`, `/wordpress-web-development`, and `/bigcommerce-development`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emit WebPage with `primaryImageOfPage`, BreadcrumbList, Service, and FAQPage with 5 visible FAQs.
+- Use live publish date `2025-11-10T12:02:16+00:00` and modified time `2026-08-04T13:01:35+00:00`.
+- Include route in `sitemap.xml` with priority 0.7.
+
+### Measurement plan
+
+- Track impressions and clicks for "Magento web development", "Magento web development guide", and "Magento vs Shopify Plus".
+- Analytics tracks form conversions on `/request-quote` originating from `/magento-web-development`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-09-07): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use slashless `/magento-web-development`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 157 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+
 ## WordPress Theme Customization Services (`/wordpress-theme-customization-services`)
 
 Status: implemented

@@ -652,6 +652,22 @@ Primary SEO intent: Magento development services, Magento development company, c
 | Service card copy (Custom Store) | `Dynamic Dremaz helps you create Magento stores...` (typo in brand name) | `Dynamic Dreamz helps you create Magento stores...` | Fixes typo in brand name. | Low | deferred pending exact visible-copy approval |
 | VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
 | Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (7 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
+## Magento Web Development (`/magento-web-development`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-09-07
+Primary SEO intent: Magento web development, Magento web development guide, Magento vs Shopify Plus, Magento ecommerce development, Magento store migration, Adobe Commerce.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Meta title | `Magento Web Development Explained \| Complete 2026 Guide` (55 chars) | Preserved live meta title (55 chars). | Complies with 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta description | `Learn everything about Magento web development, its features, benefits, migration & even comparison with Shopify Plus in this complete guide by DynamicDreamz.` (157 chars) | Preserved live meta description (157 chars). | Complies with 70-160 character limit. | High | implemented in metadata |
+| FAQ 2 answer | `We have a skilled team with years of experience in PHP/MySQL development. We provide customized solutions that meet your business requirements and ensure high performance and security.` (copy-pasted from PHP FAQ on live site) | Provide direct guidance comparing Magento Open Source with Adobe Commerce (e.g. licensing, enterprise features, scale, support). | Aligns FAQ answer with the specific question asked while keeping factual accuracy. | Medium | deferred pending exact visible-copy approval |
+| FAQ 3 answer | `Yes, we are developing custom web applications tailored to your specific needs. Our team ensures the applications are secure, scalable, and user friendly.` | Provide concrete advantages of Magento (scalability, flexibility, multi-store architecture, open source ownership). | Fixes non-sequitur answer on live site. | Medium | deferred pending exact visible-copy approval |
+| FAQ 4 answer | `The well liked PHP framework Laravel is famous for its effectiveness and simplicity. It facilitates the speedy and safe development of web applications.` (mentions Laravel instead of Magento) | State typical Magento development timelines based on store size, custom features, integrations, and migration complexity. | Corrects mention of unrelated framework. | High | deferred pending exact visible-copy approval |
+| Schema data | Live page only had generic WebPage and sitewide FAQ schema. | Emit WebPage with `primaryImageOfPage`, BreadcrumbList, Service, and FAQPage with 5 questions. | Enhances AEO and rich snippet eligibility without changing visible page. | High | implemented in schema |
+
 ## WordPress Theme Customization Services (`/wordpress-theme-customization-services`)
 
 Status: visible recommendations deferred; live UI preserved during migration

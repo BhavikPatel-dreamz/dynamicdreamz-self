@@ -73,6 +73,7 @@ import {
   magentoDevelopmentFaqs,
   magentoDevelopmentServices,
 } from "@/content/magento-development";
+import { magentoWebFaqs } from "@/content/magento-web-development";
 import {
   shopifyMigrationFaqs,
   shopifyMigrationServices,
@@ -671,6 +672,11 @@ const magentoDevelopmentPageId = `${magentoDevelopmentPageUrl}#webpage`;
 const magentoDevelopmentServiceId = `${magentoDevelopmentPageUrl}#service`;
 const magentoDevelopmentFaqId = `${magentoDevelopmentPageUrl}#faq`;
 const magentoDevelopmentBreadcrumbId = `${magentoDevelopmentPageUrl}#breadcrumb`;
+const magentoWebDevelopmentPageUrl = absoluteUrl(pageSeo.magentoWebDevelopment.path);
+const magentoWebDevelopmentPageId = `${magentoWebDevelopmentPageUrl}#webpage`;
+const magentoWebDevelopmentServiceId = `${magentoWebDevelopmentPageUrl}#service`;
+const magentoWebDevelopmentFaqId = `${magentoWebDevelopmentPageUrl}#faq`;
+const magentoWebDevelopmentBreadcrumbId = `${magentoWebDevelopmentPageUrl}#breadcrumb`;
 const wordPressThemeCustomizationPageUrl = absoluteUrl(pageSeo.wordPressThemeCustomization.path);
 const wordPressThemeCustomizationPageId = `${wordPressThemeCustomizationPageUrl}#webpage`;
 const wordPressThemeCustomizationServiceId = `${wordPressThemeCustomizationPageUrl}#service`;
@@ -4263,6 +4269,27 @@ export function createMagentoDevelopmentPageSchema() {
     })),
     offers: magentoDevelopmentServices.items,
     videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createMagentoWebDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.magentoWebDevelopment,
+    pageUrl: magentoWebDevelopmentPageUrl,
+    pageId: magentoWebDevelopmentPageId,
+    serviceId: magentoWebDevelopmentServiceId,
+    faqId: magentoWebDevelopmentFaqId,
+    breadcrumbId: magentoWebDevelopmentBreadcrumbId,
+    serviceName: "Magento Web Development Guide & Services",
+    serviceType:
+      "Comprehensive guide to Magento web development, Magento vs Shopify Plus comparison, platform architecture, and custom Magento store development",
+    breadcrumbName: "Magento Web Development",
+    audienceType:
+      "Merchants, ecommerce managers, enterprise brands, and developers seeking Magento web development and migration solutions",
+    faqs: magentoWebFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
   });
 }
 
