@@ -2818,6 +2818,34 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  thankYouForApplying: {
+    path: "/thank-you-for-applying",
+    title: "Thank You For Applying | Dynamic Dreamz",
+    description:
+      "Thank you for applying to Dynamic Dreamz. We have received your application and will get back to you as soon as possible.",
+    keywords: [
+      "Dynamic Dreamz job application",
+      "thank you for applying",
+      "careers Dynamic Dreamz",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-29T11:49:33+00:00",
+    modifiedTime: "2026-08-07T09:18:38+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Thank You For Applying — Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    robots: {
+      index: false,
+      follow: false,
+    },
+  },
   thankYouForEnquiry: {
     path: "/thank-you-for-enquiry",
     title: "Thank You For Enquiry | Dynamic Dreamz",

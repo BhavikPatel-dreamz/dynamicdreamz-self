@@ -805,6 +805,20 @@ Primary SEO intent: post-inquiry confirmation screen, immediate contact informat
 | Structured data | Legacy page had Yoast WebPage graph with breadcrumbs | Emitted `WebPage`, `BreadcrumbList`, `Organization`, and `WebSite` schema. | Connects confirmation screen to the site entity without contradicting visible content. | High | implemented in schema |
 | Back Home CTA | Links to `https://www.dynamicdreamz.com` | Reused `ButtonLink` pointing to slashless `/` | Preserves internal navigation flow without redirects. | High | implemented |
 
+## Thank You For Applying (`/thank-you-for-applying`)
+
+Status: implemented; live-visible content preserved
+Last reviewed: 2026-09-07
+Primary SEO intent: post-application confirmation screen, HR contact information, and homepage return navigation.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Robots directive | `noindex, nofollow` on live application confirmation page | Preserved `robots: { index: false, follow: false }` and excluded from `sitemap.xml` | Prevents application confirmation screen from indexing in search engines. | High | implemented |
+| Meta title | `Thank you - Dynamic Dreamz` (26 chars) | `Thank You For Applying \| Dynamic Dreamz` (39 chars) | Fits 15-60 character budget while clearly specifying application confirmation. | High | implemented in metadata |
+| Meta description | `Thank you - Dynamic Dreamz` (26 chars) | `Thank you for applying to Dynamic Dreamz. We have received your application and will get back to you as soon as possible.` (122 chars) | Fits 70-160 character budget while providing clear confirmation message. | High | implemented in metadata |
+| Structured data | Legacy page had Yoast WebPage graph with breadcrumbs | Emitted `WebPage`, `BreadcrumbList`, `Organization`, and `WebSite` schema. | Connects confirmation screen to the site entity without contradicting visible content. | High | implemented in schema |
+| Back Home CTA | Links to `https://www.dynamicdreamz.com` | Reused `ButtonLink` pointing to slashless `/` | Preserves internal navigation flow without redirects. | High | implemented |
+
 ## Web Design (`/web-design`)
 
 Status: visible recommendations deferred; live UI preserved during migration

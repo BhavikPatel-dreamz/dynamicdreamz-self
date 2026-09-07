@@ -4351,6 +4351,35 @@ Dedicated post-inquiry confirmation and thank-you screen for users who submitted
 - Correct `robots: { index: false, follow: false }` metadata directive matching live conversion screen behavior.
 - Complete structured data graph emitting WebPage, BreadcrumbList, Organization, and WebSite.
 - Zero duplicate assets across `public/assets/`, hosting unique local SVGs with canonical paths.
+
+## Thank You For Applying (`/thank-you-for-applying`)
+
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-09-07
+Owner: HR, talent acquisition, recruitment, and web development
+Primary audience: Candidates and job applicants who have submitted an application on Dynamic Dreamz.
+Decision stage: post-application confirmation, recruitment contact outreach, return navigation
+
+### Page role
+
+Dedicated post-application confirmation and thank-you screen for job applicants who submitted a career form on Dynamic Dreamz. Confirms application receipt, provides direct HR contact information (phone and HR email), and supplies a return CTA to the homepage.
+
+### Target prompts
+
+- What happens after applying for a job at Dynamic Dreamz?
+- How can I follow up on my job application with Dynamic Dreamz HR?
+- What is the Dynamic Dreamz HR phone number and email address?
+
+### Current strengths and available evidence
+
+- Server-rendered confirmation screen with H1 `Thank you for applying to Dynamic Dreamz`.
+- Clear reassurance copy explaining that our recruitment team will get back to the applicant via email or phone as soon as possible.
+- Direct HR phone (`+91 63520 11266`) and HR email (`hr@dynamicdreamz.com`) links with local icons.
+- Return CTA button to the slashless homepage `/`.
+- Correct `robots: { index: false, follow: false }` metadata directive matching live application confirmation screen behavior.
+- Complete structured data graph emitting WebPage, BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, hosting unique local SVGs with canonical paths.
+
 ## Prestige Theme Customization (`/prestige-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved

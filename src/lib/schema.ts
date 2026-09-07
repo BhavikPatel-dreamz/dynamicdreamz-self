@@ -720,6 +720,9 @@ const bigCommerceDevelopmentBreadcrumbId = `${bigCommerceDevelopmentPageUrl}#bre
 const siteMapPageUrl = absoluteUrl(pageSeo.siteMap.path);
 const siteMapPageId = `${siteMapPageUrl}#webpage`;
 const siteMapBreadcrumbId = `${siteMapPageUrl}#breadcrumb`;
+const thankYouForApplyingPageUrl = absoluteUrl(pageSeo.thankYouForApplying.path);
+const thankYouForApplyingPageId = `${thankYouForApplyingPageUrl}#webpage`;
+const thankYouForApplyingBreadcrumbId = `${thankYouForApplyingPageUrl}#breadcrumb`;
 const thankYouForEnquiryPageUrl = absoluteUrl(pageSeo.thankYouForEnquiry.path);
 const thankYouForEnquiryPageId = `${thankYouForEnquiryPageUrl}#webpage`;
 const thankYouForEnquiryBreadcrumbId = `${thankYouForEnquiryPageUrl}#breadcrumb`;
@@ -4639,6 +4642,51 @@ export function createSiteMapPageSchema() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
           { "@type": "ListItem", position: 2, name: "Site Map", item: siteMapPageUrl },
+        ],
+      },
+    ],
+  };
+}
+
+export function createThankYouForApplyingPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": thankYouForApplyingPageId,
+        url: thankYouForApplyingPageUrl,
+        name: pageSeo.thankYouForApplying.title,
+        description: pageSeo.thankYouForApplying.description,
+        datePublished: pageSeo.thankYouForApplying.publishedTime,
+        dateModified: pageSeo.thankYouForApplying.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": thankYouForApplyingBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.thankYouForApplying.image.path),
+          width: pageSeo.thankYouForApplying.image.width,
+          height: pageSeo.thankYouForApplying.image.height,
+          caption: pageSeo.thankYouForApplying.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": thankYouForApplyingBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          { "@type": "ListItem", position: 2, name: "Thank You For Applying", item: thankYouForApplyingPageUrl },
         ],
       },
     ],
