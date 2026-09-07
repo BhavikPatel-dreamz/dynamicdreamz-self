@@ -23,6 +23,7 @@ It covers:
   - `/`
   - `/about-us`
   - `/career`
+  - `/career-apply-now`
   - `/life-dynamicdreamz`
   - `/resources`
   - `/beauty-cosmetics`
@@ -983,7 +984,7 @@ and Ahmedabad.
 
 | Priority | Status | Area | Current issue | Implemented improvement or dependency |
 | --- | --- | --- | --- | --- |
-| P0 | migration pending | Application route | Apply CTAs and JobPosting URLs target planned `/career-apply-now` | Retained with role/location parameters; validate the application flow before launch |
+| P0 | implemented | Application route | Apply CTAs and JobPosting URLs targeted planned `/career-apply-now` | Route migrated production-ready with role/location pre-selection and active application flow |
 | P0 | partially implemented; approval required | Location accuracy | The live UI represents every role in both cities, while local PDFs support seven combinations | PDF-supported locations remain in JobPosting schema, while the visible tabs were restored to live. HR must confirm whether the UI or PDFs are authoritative before launch |
 | P0 | partially implemented | Job details | Full descriptions exist in PDFs | Role summaries remain in typed data and JobPosting descriptions, but visible card summaries were removed for live parity; full HTML detail remains future work |
 | P0 | blocked | Job freshness | Listings lack a visible review date and approved expiry dates | The proposed visible review date was removed for live parity; establish an HR-owned review and expiry process |
@@ -1051,7 +1052,50 @@ direct answer.
   migration, expiry governance, full HTML qualifications, hiring-process detail,
   and CRO experience confirmation also remain open.
 
+## Career Application (`/career-apply-now`)
+
+Status: implemented with live UI parity and structured data; application flow active
+
+Last reviewed: 2026-09-07
+
+Owner: HR, recruitment, SEO, and development
+
+### Page role
+
+Dedicated job application submission and interview scheduling destination for candidates applying to Dynamic Dreamz in Surat and Ahmedabad.
+
+### Current strengths
+
+- Preserves the live layout, header chrome (`HeaderTwo`), gradient border wrapper, direct HR phone and resume submission email links.
+- Full application form with Position Applying For, Location, Name, Email, Phone, Years of Experience, Message, and Resume File Upload.
+- Pre-fills position and location dynamically from `/career` job cards via URL query parameters (`PositionAppliedFor`, `Location`).
+- Clean server action with validation, file type/size restrictions, and honeypot spam protection.
+- Valid WebPage and BreadcrumbList structured data with canonical URL normalization.
+
+### Target prompts and retrieval queries
+
+- "Dynamic Dreamz job application"
+- "How to apply for a job at Dynamic Dreamz"
+- "Dynamic Dreamz HR contact email and phone number"
+- "Dynamic Dreamz Surat job interview schedule"
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Implemented improvement or dependency |
+| --- | --- | --- | --- | --- |
+| P0 | implemented | Application route | `/career` CTAs previously targeted an unbuilt `/career-apply-now` route | Production-ready route migrated with full parity and functional application flow |
+| P0 | implemented | Metadata and Schema | Missing canonical, Open Graph, and BreadcrumbList schema | Implemented canonical, Open Graph, and schema aligned with live intent |
+| P1 | suggested | Form confirmation UX | Live site relies on basic CF7 alert feedback | Enhanced with inline accessible state feedback while preserving live visual aesthetics |
+| P1 | deferred | Copy polish | Minor grammatical quirks in live copy ("call us on our {hr}", "No file choosen") | Preserved live wording per migration live-UI rules; queued in `page-content-improvements.md` |
+
+### Verification
+
+- URL-policy review (2026-09-07): canonical, Open Graph, sitemap, JSON-LD, and internal links use `/career-apply-now`; `/career-apply-now/` redirects to `/career-apply-now`, and the source/build URL guard passes.
+- Schema emits WebPage and BreadcrumbList matching the live page source.
+- Responsive captures confirm header chrome, form fields, upload control, and submit button render without layout shift or horizontal overflow at 1440px, 768px, and 390px.
+
 ## Life at Dynamic Dreamz (`/life-dynamicdreamz`)
+
 
 Status: nonvisual SEO improvements implemented; visible copy deferred and live
 UI restored on 2026-08-13

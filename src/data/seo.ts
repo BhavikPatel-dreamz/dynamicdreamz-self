@@ -144,6 +144,33 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  careerApplyNow: {
+    path: "/career-apply-now",
+    title: "Job Apply Now - Dynamic Dreamz, Surat, Gujarat, India",
+    description:
+      "Apply for career opportunities and web developer jobs at Dynamic Dreamz, Surat and Ahmedabad, Gujarat, India. Submit your resume today.",
+    keywords: [
+      "Dynamic Dreamz job apply",
+      "career apply now",
+      "IT jobs in Surat",
+      "IT jobs in Ahmedabad",
+      "web developer jobs Surat",
+      "apply for developer job",
+    ],
+    openGraphType: "article",
+    publishedTime: "2024-05-28T08:57:31+00:00",
+    modifiedTime: "2026-08-05T13:22:51+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Dynamic Dreamz job application and interview scheduling",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+  },
   life: {
     path: "/life-dynamicdreamz",
     title: "Life at Dynamic Dreamz | Culture & Work-Life Balance",

@@ -80,3 +80,42 @@ export const bookIntroCallFormCopy = {
     unavailable: "We couldn't send your inquiry right now. Please email info@dynamicdreamz.com.",
   },
 } as const;
+
+export const careerApplyFormCopy = {
+  ariaLabel: "Contact form",
+  labels: {
+    position: "Position Applying For",
+    location: "Location",
+    name: "Name",
+    email: "Email",
+    phone: "Mobile phone",
+    experience: "Years of Exp",
+    message: "Your Message",
+    resume: "Upload Your Resume Here",
+  },
+  placeholders: {
+    position: "Select Position",
+    name: "Enter Your Name",
+    email: "info@email.com",
+    experience: "1.5 Exp",
+    message: "Enter Your Message",
+  },
+  phoneCountryCode: "+91",
+  phoneAriaLabel: "India country code +91",
+  upload: {
+    button: "Upload a File",
+    helpText: "(Only doc, docx and pdf file format allow. Max file upload limit: 5MB)",
+    noFileChosen: "No file choosen",
+  },
+  submit: "apply now",
+  submitting: "submitting...",
+  status: {
+    success: "Thank you. Your job application has been submitted successfully.",
+    missingRequired: "Please provide your name and a valid email address.",
+    invalidEmail: "Please provide a valid email address.",
+    invalidFileType: "Only .pdf, .doc, .docx, and .txt files are allowed.",
+    fileTooLarge: "File size exceeds the 5MB limit.",
+    unavailable: "We couldn't submit your application right now. Please email hr@dynamicdreamz.com.",
+  },
+} as const;
+

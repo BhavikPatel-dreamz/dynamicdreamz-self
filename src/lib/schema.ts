@@ -230,6 +230,9 @@ const aboutBreadcrumbId = `${aboutPageUrl}#breadcrumb`;
 const careerPageUrl = absoluteUrl(pageSeo.career.path);
 const careerPageId = `${careerPageUrl}#webpage`;
 const careerBreadcrumbId = `${careerPageUrl}#breadcrumb`;
+const careerApplyNowPageUrl = absoluteUrl(pageSeo.careerApplyNow.path);
+const careerApplyNowPageId = `${careerApplyNowPageUrl}#webpage`;
+const careerApplyNowBreadcrumbId = `${careerApplyNowPageUrl}#breadcrumb`;
 const lifePageUrl = absoluteUrl(pageSeo.life.path);
 const lifePageId = `${lifePageUrl}#webpage`;
 const lifeBreadcrumbId = `${lifePageUrl}#breadcrumb`;
@@ -1233,6 +1236,60 @@ export function createCareerPageSchema() {
         ],
       },
       ...jobPostings,
+    ],
+  };
+}
+
+export function createCareerApplyNowPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": careerApplyNowPageId,
+        url: careerApplyNowPageUrl,
+        name: pageSeo.careerApplyNow.title,
+        description: pageSeo.careerApplyNow.description,
+        datePublished: pageSeo.careerApplyNow.publishedTime,
+        dateModified: pageSeo.careerApplyNow.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": careerApplyNowBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.careerApplyNow.image.path),
+          width: pageSeo.careerApplyNow.image.width,
+          height: pageSeo.careerApplyNow.image.height,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": careerApplyNowBreadcrumbId,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: homeUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Job Apply Now",
+            item: careerApplyNowPageUrl,
+          },
+        ],
+      },
     ],
   };
 }

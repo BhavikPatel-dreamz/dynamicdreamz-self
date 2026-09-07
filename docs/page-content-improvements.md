@@ -121,10 +121,24 @@ digital marketing roles, and ecommerce technology opportunities.
 | Freshness | No visible listing review date. | Current openings reviewed August 12, 2026. | Makes freshness explicit without inventing closing dates. | High | deferred; visible date removed on 2026-08-13 |
 | Workplace benefit | Ample of Employee Engagement Activities | Employee Engagement Activities | Corrects grammar without changing the benefit category. | Low | deferred; reverted to live copy on 2026-08-13 |
 | Culture link | Benefits do not route candidates to fuller workplace answers. | Explore life, culture, benefits, and workplace FAQs at Dynamic Dreamz. | Connects the two built recruitment pages with descriptive anchor text. | Medium | deferred; removed for live parity on 2026-08-13 |
-| CRO experience | Card/live listing says 1–3 years; PDF says 2–4 years. | Confirm one current range, then update visible content, PDF, and schema together. | Avoids giving candidates conflicting requirements. | High | blocked pending factual confirmation |
-| Job CTA destination | Apply links keep `/career-apply-now` with role/location parameters. | Retain during active migration and validate the application flow before launch. | Preserves route intent under the approved unbuilt-route exception. | High | migration pending |
+| Job CTA destination | Apply links target `/career-apply-now` with role/location parameters. | Production-ready route migrated with functional application flow. | Preserves route intent and seamless application submission. | High | implemented |
+
+## Career Apply Now (`/career-apply-now`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-09-07
+Primary SEO intent: Dynamic Dreamz job apply now, submit resume, developer jobs in Surat and Ahmedabad, interview scheduling.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Phone label | `call us on our {hr}` | `Call Our HR Team` | More professional and removes awkward bracketed casing. | Low | deferred pending exact visible-copy approval |
+| File status label | `No file choosen` | `No file chosen` | Corrects typographical spelling while preserving field functionality. | Low | deferred pending exact visible-copy approval |
+| Meta title | `Job Apply Now - Dynamic Dreamz, Surat, Gujarat, India` (52 chars) | Preserved live title intent within 15-60 char budget. | Fits strict 15-60 character SEO budget. | High | implemented in metadata |
+| Meta description | `Apply for career opportunities and web developer jobs at Dynamic Dreamz, Surat and Ahmedabad, Gujarat, India. Submit your resume today.` (136 chars) | Preserved live intent expanded to meet length budget. | Live description (68 chars) was under 70 char minimum budget. | High | implemented in metadata |
+| Structured data | Legacy site had incomplete schema graph. | Emitted `WebPage` and `BreadcrumbList` with canonical URLs. | Enhances rich snippet eligibility and search indexing. | High | implemented in schema |
 
 ## Life @ Dynamic Dreamz (`/life-dynamicdreamz`)
+
 
 Status: visible recommendations deferred; live UI restored
 Last reviewed: 2026-08-13
