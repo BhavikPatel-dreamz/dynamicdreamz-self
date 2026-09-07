@@ -60,6 +60,8 @@ export function ButtonLink({
         href.startsWith("mailto:") ||
         href.startsWith("tel:")));
 
+  const isAnchor = typeof href === "string" && href.startsWith("#");
+
   const commonClasses = cn(
     "group/button relative z-[1] inline-block align-top overflow-hidden rounded-[30px] px-6 py-[13px] text-center font-montserrat text-base leading-[normal] font-bold text-[#4f4f4f] not-italic uppercase no-underline! transition-all duration-600 shrink-0 max-[992px]:text-[14px] max-[992px]:px-[24px] max-[992px]:py-[12px]",
     variantClasses[variant],
@@ -105,6 +107,18 @@ export function ButtonLink({
         href={href}
         target={target ?? "_blank"}
         rel={rel ?? "noopener noreferrer"}
+        className={commonClasses}
+        {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
+        {innerContent}
+      </a>
+    );
+  }
+
+  if (isAnchor) {
+    return (
+      <a
+        href={href}
         className={commonClasses}
         {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
       >

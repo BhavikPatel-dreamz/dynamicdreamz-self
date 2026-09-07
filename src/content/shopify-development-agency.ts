@@ -194,8 +194,8 @@ export const shopifyDevelopmentAgencyPortfolio = {
   description:
     "We've come across to work on quite a few challenging and critical issues in our professional journey and have come up with outstanding solutions! Whether it's a startup of a Fortune 500 company, every site we have developed has surpassed the client's expectations.",
   category: "SHOPIFY",
-  ctaLabel: "View Our Work",
-  ctaHref: "/portfolio",
+  ctaLabel: "View our work",
+  ctaHref: "/our-work",
   platformMark: {
     src: "/assets/platforms/shopify-white.svg",
     width: 89,

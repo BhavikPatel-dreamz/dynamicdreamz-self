@@ -56,4 +56,8 @@ Browser/source: Headless Google Chrome full & viewport captures, rendered live D
 | Live canonical/og:url have trailing slash | Slashless `/shopify-development-agency` per project URL policy | implemented |
 | Live title exceeds 60 chars | Kept within 60 chars: "Shopify Development Agency & Services | Dynamic Dreamz" (55 chars) | implemented |
 | Live description exceeds 160 chars | Kept at 151 chars: "Dynamic Dreamz is a Shopify Platinum Partner offering custom Shopify development, theme customization, integrations, migrations and ongoing maintenance." | implemented |
+| Portfolio CTA link destination | Live site links to `/our-work` with label "View our work"; updated from broken `/portfolio` | implemented |
+| Hero secondary anchor CTA | Native `<a>` rendering enabled in `ButtonLink` for in-page `#shopify-services` hash navigation | implemented |
+| FAQ 9 raw HTML code rendering | Updated `formatBrText` to parse `<a>` tags into interactive Next.js `<Link>` elements with live styling (`#ad5151` underline hover:no-underline) | implemented |
 | Zero asset duplicates | Reused existing project assets and stored unique OG image | verified 0 duplicates |
+
