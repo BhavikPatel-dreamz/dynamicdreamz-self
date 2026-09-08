@@ -11,6 +11,7 @@ import {
   type PrimaryNavigationGroup,
 } from "@/data/navigation";
 import { siteChromeCopy } from "@/content/common";
+import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
 
 function ChevronIcon() {
@@ -228,10 +229,10 @@ export function DesktopNavigation() {
           <Link
             className={cn(
               "flex items-center text-[13px] leading-[normal] font-medium whitespace-nowrap text-[#282828] hover:text-[#ad5151] min-[1400px]:text-sm",
-              normalizedPathname === "/contact-us" && "text-[#ad5151]",
+              normalizedPathname === siteConfig.contactPath && "text-[#ad5151]",
             )}
-            href="/contact-us"
-            aria-current={normalizedPathname === "/contact-us" ? "page" : undefined}
+            href={siteConfig.contactPath}
+            aria-current={normalizedPathname === siteConfig.contactPath ? "page" : undefined}
           >
             {siteChromeCopy.contactUs}
           </Link>

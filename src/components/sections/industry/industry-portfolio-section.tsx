@@ -2,6 +2,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { PortfolioProjectCard } from "@/components/ui/portfolio-project-card";
 import { sharedUiCopy } from "@/content/common";
+import { siteConfig } from "@/data/site";
 import type { IndustryPageContent } from "@/types/industry";
 
 type IndustryPortfolioSectionProps = {
@@ -56,7 +57,7 @@ export function IndustryPortfolioSection({ content }: IndustryPortfolioSectionPr
         <div className="mt-[51px] text-center">
           <ButtonLink
             className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] max-[992px]:min-h-[42px] max-[992px]:py-3 max-[992px]:text-sm"
-            href="/our-work"
+            href={siteConfig.ourWorkPath}
             variant="primary"
           >
             {sharedUiCopy.viewOurWork}

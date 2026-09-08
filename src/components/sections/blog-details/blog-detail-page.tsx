@@ -5,6 +5,7 @@ import { BlogTableOfContents } from "@/components/sections/blog-details/blog-tab
 import { Container } from "@/components/ui/container";
 import { RichText } from "@/components/ui/rich-text";
 import { blogDetailUiCopy } from "@/content/blog-post-details";
+import { siteConfig } from "@/data/site";
 import { absoluteUrl } from "@/lib/seo";
 import type { BlogPostDetail, BlogPostNavigationItem } from "@/types/blog-post";
 
@@ -174,7 +175,7 @@ export function BlogDetailPage({ post }: BlogDetailPageProps) {
       <section className="pt-[180px] max-[992px]:pt-[140px]" aria-labelledby="blog-post-title">
         <Container className="max-[575px]:px-4">
           <Link
-            href="/blogs"
+            href={siteConfig.blogsPath}
             className="group inline-flex items-center gap-2 rounded-sm text-[16px] font-bold text-[#15190f] transition-colors duration-300 hover:text-brand-red focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red"
           >
             <BackArrow />

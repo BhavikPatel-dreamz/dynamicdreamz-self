@@ -10,6 +10,7 @@ import {
   hireShopifyReasons,
   hireShopifySectionCopy,
 } from "@/content/hire-shopify-developers";
+import { siteConfig } from "@/data/site";
 import { formatBrText } from "@/lib/text-formatting";
 
 const headingClassName = "font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]";
@@ -41,7 +42,7 @@ const defaultAdvantagesContent: ProofSectionContent = {
   description: hireShopifySectionCopy.advantagesDescription,
   items: hireShopifyAdvantages,
   ctaLabel: hireShopifySectionCopy.advantagesCtaLabel,
-  ctaHref: "/request-quote",
+  ctaHref: siteConfig.quotePath,
 };
 
 export function ShopifyReasonsSection({
@@ -228,7 +229,7 @@ export function ShopifyAdvantagesSection({
 
         {!content.hideCta && (
           <div className="mt-[46px] text-center">
-            <ButtonLink href={content.ctaHref ?? "/request-quote"} variant="primary">
+            <ButtonLink href={content.ctaHref ?? siteConfig.quotePath} variant="primary">
               {content.ctaLabel ?? "inquire now"}
             </ButtonLink>
           </div>

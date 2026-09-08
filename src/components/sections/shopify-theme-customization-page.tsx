@@ -40,7 +40,7 @@ export function ShopifyThemeCustomizationPage() {
     })),
     cta: {
       label: shopifyThemeCustomizationContent.sectionCopy.ctaLabel,
-      href: "/request-quote",
+      href: shopifyThemeCustomizationContent.hero.ctaHref,
     },
   };
 

@@ -44,10 +44,15 @@ export const homeSectionCopy = {
     "Digital agencies partner with Dynamic Dreamz as an extension of their team for Shopify, Shopify Plus and full-stack delivery. We support Figma-to-Shopify development, migrations, integrations, maintenance and dedicated development teams under NDA, while your agency retains the client relationship.",
   whiteLabelPartnerBullets: ["NDA Based", "No Direct Client Solicitation", "Dedicated Teams"],
   ctaViewWork: "View our work",
+  ctaViewWorkHref: "/our-work",
   discoveryCta: "book a discovery call",
+  discoveryCtaHref: "/book-a-discovery-call",
   shopifyWorkCta: "VIEW OUR SHOPIFY WORK",
+  shopifyWorkCtaHref: "/our-work",
   viewAllBlogsCta: "View all blogs",
+  viewAllBlogsCtaHref: "/blogs",
   agencyPartnershipCta: "Explore Agency Partnership",
+  agencyPartnershipCtaHref: "/white-label-shopify-development-services",
   portfolioEyebrow: "Portfolio",
 } as const;
 

@@ -1,6 +1,7 @@
 import { ReviewAnimation } from "@/components/sections/shopify-plus-agency/review-animation";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { siteConfig } from "@/data/site";
 import { formatBrText } from "@/lib/text-formatting";
 
 export type HiringHeroStat = {
@@ -27,7 +28,7 @@ export type HiringHeroSectionProps = {
 
 export function HiringHeroSection({
   content,
-  ctaHref = "/request-quote",
+  ctaHref = siteConfig.quotePath,
   className = "inner-hero-sec relative overflow-hidden bg-white pt-[215px] pb-20 max-[992px]:pt-[140px] max-[767px]:pb-10",
   hideReview = false,
 }: HiringHeroSectionProps) {

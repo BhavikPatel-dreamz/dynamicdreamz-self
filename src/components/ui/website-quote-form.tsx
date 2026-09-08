@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { sharedUiCopy } from "@/content/common";
+import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
 
 export type WebsiteQuoteFormProps = {
@@ -40,7 +41,7 @@ export function WebsiteQuoteForm({
     }
 
     setError("");
-    router.push(`/request-quote?URL=${encodeURIComponent(website)}`);
+    router.push(`${siteConfig.quotePath}?URL=${encodeURIComponent(website)}`);
   }
 
   return (

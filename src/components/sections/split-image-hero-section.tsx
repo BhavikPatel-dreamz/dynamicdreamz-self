@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
 
@@ -43,7 +44,7 @@ export function SplitImageHeroText({
   description,
   secondaryDescription,
   ctaLabel,
-  ctaHref = "/request-quote",
+  ctaHref = siteConfig.quotePath,
   ctaAriaLabel,
   className,
   titleClassName,

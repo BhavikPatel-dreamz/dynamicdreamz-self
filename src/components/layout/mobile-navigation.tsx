@@ -253,7 +253,7 @@ export function MobileNavigation() {
             })}
 
             <li className="border-b border-[#f0f0f0] py-6">
-              <Link className={topLevelLinkClass} href="/contact-us" onClick={closeMenu}>{siteChromeCopy.contactUs}</Link>
+              <Link className={topLevelLinkClass} href={siteConfig.contactPath} onClick={closeMenu}>{siteChromeCopy.contactUs}</Link>
             </li>
             <li className="py-6">
               <a className="block text-xl leading-[normal] font-semibold text-[#d92128] underline" href={`mailto:${siteConfig.email}`} onClick={closeMenu}>{siteConfig.email}</a>

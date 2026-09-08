@@ -19,9 +19,11 @@ export const whiteLabelWebsiteDesignSectionCopy = {
   aiDiscoveryDescription:
     "Search is shifting. ChatGPT, Gemini, and Perplexity are now recommending businesses directly to users. We make sure the websites we build are readable, citable, and trusted by these AI engines from day one.",
   aiDiscoveryCta: "Learn how we do it",
+  aiDiscoveryCtaHref: "/request-quote",
   aiDiscoveryClosing:
     "Add AI-enhanced design to your agency's offering We handle the build and the tech. You keep the client relationship.",
   aiDiscoveryClosingCta: "Talk to an expert",
+  aiDiscoveryClosingCtaHref: "/book-a-discovery-call",
   processTitle: "Our White Label Web Development Process",
   processDescription:
     "We use a structured process to ensure that every white label website development project is delivered on time and fulfills your client's expectations.",

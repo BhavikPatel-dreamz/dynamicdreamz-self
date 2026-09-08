@@ -2,6 +2,7 @@ import { getClientLogo, type ImageItem } from "@/content/home";
 
 export const resourcesSectionCopy = {
   storyCategoryLabel: "Shopify",
+  storyCategoryHref: "/blogs?category=shopify",
   blogsTitle: "Shopify Blogs",
   trustTitle: "A Trusted Web & Mobile Development Company Since 2006",
   trustDescription:

@@ -5,6 +5,7 @@ import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
 import { PortfolioProjectCard } from "@/components/ui/portfolio-project-card";
 import { sharedUiCopy } from "@/content/common";
+import { siteConfig } from "@/data/site";
 import { formatBrText } from "@/lib/text-formatting";
 
 export type PortfolioShowcaseItem = {
@@ -76,7 +77,7 @@ export function PortfolioShowcaseSection({
     eyebrow ?? content.eyebrow ?? sharedUiCopy.portfolioEyebrow;
   const resolvedCtaLabel =
     ctaLabel ?? content.ctaLabel ?? sharedUiCopy.viewOurWork;
-  const resolvedCtaHref = ctaHref ?? content.ctaHref ?? "/our-work";
+  const resolvedCtaHref = ctaHref ?? content.ctaHref ?? siteConfig.ourWorkPath;
   const defaultPlatformMark = content.platformMark ?? {
     src: "/assets/platforms/shopify-white.svg",
     width: 89,

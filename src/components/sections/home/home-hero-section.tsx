@@ -21,10 +21,10 @@ export function HomeHeroSection() {
           {homeAnswerSummary}
         </p>
         <div className="mx-auto flex max-w-[1100px] justify-center max-[767px]:flex-col max-[767px]:items-center max-[767px]:gap-3.5">
-          <ButtonLink className="ml-[15px] px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:min-h-[42px] max-[992px]:px-6 max-[992px]:py-3 max-[992px]:text-sm max-[767px]:ml-0" variant="primary" href="/book-a-discovery-call">
+          <ButtonLink className="ml-[15px] px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:min-h-[42px] max-[992px]:px-6 max-[992px]:py-3 max-[992px]:text-sm max-[767px]:ml-0" variant="primary" href={homeSectionCopy.discoveryCtaHref}>
             {homeSectionCopy.discoveryCta}
           </ButtonLink>
-          <ButtonLink className="ml-[15px] px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:min-h-[42px] max-[992px]:px-6 max-[992px]:py-3 max-[992px]:text-sm max-[767px]:ml-0" variant="outline" href="/our-work">
+          <ButtonLink className="ml-[15px] px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:min-h-[42px] max-[992px]:px-6 max-[992px]:py-3 max-[992px]:text-sm max-[767px]:ml-0" variant="outline" href={homeSectionCopy.shopifyWorkCtaHref}>
             {homeSectionCopy.shopifyWorkCta}
           </ButtonLink>
         </div>

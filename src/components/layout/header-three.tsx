@@ -45,7 +45,7 @@ export function HeaderThree() {
                   </span>
                   <a
                     className="block text-base font-bold leading-[25px] text-ink transition-colors hover:text-brand-red"
-                    href="skype:dynamicdreamz?chat"
+                    href={siteConfig.skypeHref}
                     rel="noopener noreferrer"
                     target="_blank"
                   >

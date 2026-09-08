@@ -66,7 +66,7 @@ export function WhiteLabelDesignAiDiscoverySection() {
               <p className="mb-6 text-base leading-[26px] font-medium text-muted max-[767px]:leading-[1.8]">
                 {whiteLabelWebsiteDesignSectionCopy.aiDiscoveryDescription}
               </p>
-              <ButtonLink href="/request-quote" rel="nofollow" variant="primary">{whiteLabelWebsiteDesignSectionCopy.aiDiscoveryCta}</ButtonLink>
+              <ButtonLink href={whiteLabelWebsiteDesignSectionCopy.aiDiscoveryCtaHref} rel="nofollow" variant="primary">{whiteLabelWebsiteDesignSectionCopy.aiDiscoveryCta}</ButtonLink>
             </div>
           </div>
           <div className="w-1/2 px-[15px] pl-5 max-[992px]:mt-10 max-[992px]:w-full max-[992px]:pl-[15px]">
@@ -82,7 +82,7 @@ export function WhiteLabelDesignAiDiscoverySection() {
         </div>
         <div className="mx-auto mt-[60px] max-w-[800px] text-center max-[992px]:mt-[50px]">
           <p className="mb-6 text-base leading-[26px] font-medium text-muted max-[767px]:leading-[1.8]">{whiteLabelWebsiteDesignSectionCopy.aiDiscoveryClosing}</p>
-          <ButtonLink href="/book-a-discovery-call" rel="nofollow" variant="primary">{whiteLabelWebsiteDesignSectionCopy.aiDiscoveryClosingCta}</ButtonLink>
+          <ButtonLink href={whiteLabelWebsiteDesignSectionCopy.aiDiscoveryClosingCtaHref} rel="nofollow" variant="primary">{whiteLabelWebsiteDesignSectionCopy.aiDiscoveryClosingCta}</ButtonLink>
         </div>
       </Container>
     </section>

@@ -20,7 +20,7 @@ export function WhiteLabelPartnerSection() {
               ))}
             </div>
           </div>
-          <ButtonLink className="btn-explore" variant="primary" href="/white-label-shopify-development-services">
+          <ButtonLink className="btn-explore" variant="primary" href={homeSectionCopy.agencyPartnershipCtaHref}>
             {homeSectionCopy.agencyPartnershipCta}
           </ButtonLink>
         </div>

@@ -1,10 +1,11 @@
 import { siteChromeCopy } from "@/content/common";
+import { siteConfig } from "@/data/site";
 
 export function ContactWidget() {
   return (
     <a
       className="whatsapp-widget fixed right-5 bottom-20 z-110 flex min-[991px]:w-60 items-center rounded-[100px] bg-brand-green px-2.5 py-1.75 text-white shadow-[0_10px_30px_rgb(0_0_0/15%)] transition-[transform,box-shadow] duration-300 hover:-translate-y-0.75 hover:shadow-[0_15px_40px_rgb(0_0_0/20%)] max-[767px]:right-2.5 max-[767px]:bottom-9.5 [body:has(main[data-page=home])_&]:bottom-3.75 [body:has(main[data-page=home])_&]:max-[767px]:bottom-3.75"
-      href="https://api.whatsapp.com/send/?phone=919825195930"
+      href={siteConfig.whatsappHref}
       target="_blank"
       rel="nofollow noopener noreferrer"
       aria-label="Chat with Dynamic Dreamz on WhatsApp"

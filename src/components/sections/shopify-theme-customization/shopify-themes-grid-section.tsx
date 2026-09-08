@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
 import { sharedUiCopy } from "@/content/common";
+import { siteConfig } from "@/data/site";
 
 export type ThemeCustomizationThemeItem = {
   title?: string;
@@ -37,7 +38,7 @@ export function ShopifyThemesGridSection({ content }: ShopifyThemesGridSectionPr
           {content.items.map((theme) => {
             const title = theme.title ?? theme.name ?? "";
             const alt = theme.alt ?? `${title} Image`;
-            const href = theme.href ?? "/request-quote";
+            const href = theme.href ?? siteConfig.quotePath;
 
             return (
               <Link

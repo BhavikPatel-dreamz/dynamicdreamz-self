@@ -7,6 +7,7 @@ import { ReviewAnimation } from "@/components/sections/shopify-plus-agency/revie
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { shopifyPlusAgencyHero } from "@/content/shopify-plus-agency";
+import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
 
@@ -86,7 +87,7 @@ export function ServiceHeroSection({
   bodyClassName,
   videoLogoClassName,
 }: ServiceHeroSectionProps) {
-  const ctaHref = content.ctaHref ?? "/request-quote";
+  const ctaHref = content.ctaHref ?? siteConfig.quotePath;
 
   if (variant === "centered") {
     const maxWidth = content.maxWidthClassName ?? "max-w-[770px]";

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
 import { caseStudiesUiCopy } from "@/content/case-studies-ui";
+import { siteConfig } from "@/data/site";
 import type { CaseStudyDetail } from "@/types/case-study";
 
 type CaseStudyDetailHeroProps = {
@@ -20,7 +21,7 @@ export function CaseStudyDetailHero({ caseStudy }: CaseStudyDetailHeroProps) {
     <section className="relative pt-[190px] max-[992px]:pt-[140px]" aria-labelledby="case-study-title">
       <Container className="max-[575px]:px-5">
         <Link
-          href="/case-studies"
+          href={siteConfig.caseStudiesPath}
           className="group inline-flex items-center gap-2 rounded-sm text-[16px] font-bold text-[#15190f] transition-colors duration-300 hover:text-brand-red focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red"
         >
           <svg
