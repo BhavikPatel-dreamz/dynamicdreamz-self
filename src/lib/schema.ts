@@ -3,6 +3,10 @@ import { bigcommerceFaqs, bigcommerceProcessContent } from "@/content/bigcommerc
 import { ecwidFaqs, ecwidProcessContent } from "@/content/ecwid-to-shopify-migration";
 import { migratingThemeToOnlineStore20Content } from "@/content/migrating-a-theme-to-online-store-2-0";
 import { plusAgencyFaqs, plusAgencyProcessContent } from "@/content/shopify-plus-migration-agency";
+import {
+  upgradeShopifyPlusExclusiveTools,
+  upgradeShopifyPlusFaqs,
+} from "@/content/upgrade-to-shopify-plus";
 import { magentoPlusFaqs, magentoPlusProcessContent } from "@/content/magento-to-shopify-plus-migration";
 import { magentoFaqs, magentoProcessContent } from "@/content/magento-to-shopify-migration";
 import { woocommerceFaqs, woocommerceProcessContent } from "@/content/woocommerce-to-shopify-migration";
@@ -373,6 +377,11 @@ const shopifyPlusMigrationAgencyPageId = `${shopifyPlusMigrationAgencyPageUrl}#w
 const shopifyPlusMigrationAgencyServiceId = `${shopifyPlusMigrationAgencyPageUrl}#service`;
 const shopifyPlusMigrationAgencyFaqId = `${shopifyPlusMigrationAgencyPageUrl}#faq`;
 const shopifyPlusMigrationAgencyBreadcrumbId = `${shopifyPlusMigrationAgencyPageUrl}#breadcrumb`;
+const upgradeToShopifyPlusPageUrl = absoluteUrl(pageSeo.upgradeToShopifyPlus.path);
+const upgradeToShopifyPlusPageId = `${upgradeToShopifyPlusPageUrl}#webpage`;
+const upgradeToShopifyPlusServiceId = `${upgradeToShopifyPlusPageUrl}#service`;
+const upgradeToShopifyPlusFaqId = `${upgradeToShopifyPlusPageUrl}#faq`;
+const upgradeToShopifyPlusBreadcrumbId = `${upgradeToShopifyPlusPageUrl}#breadcrumb`;
 const magentoToShopifyPlusMigrationPageUrl = absoluteUrl(pageSeo.magentoToShopifyPlusMigration.path);
 const magentoToShopifyPlusMigrationPageId = `${magentoToShopifyPlusMigrationPageUrl}#webpage`;
 const magentoToShopifyPlusMigrationServiceId = `${magentoToShopifyPlusMigrationPageUrl}#service`;
@@ -5361,6 +5370,31 @@ export function createShopifyPlusMigrationAgencyPageSchema() {
       description: step.description,
     })),
     videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+export function createUpgradeToShopifyPlusPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.upgradeToShopifyPlus,
+    pageUrl: upgradeToShopifyPlusPageUrl,
+    pageId: upgradeToShopifyPlusPageId,
+    serviceId: upgradeToShopifyPlusServiceId,
+    faqId: upgradeToShopifyPlusFaqId,
+    breadcrumbId: upgradeToShopifyPlusBreadcrumbId,
+    serviceName: "Upgrade to Shopify Plus",
+    serviceType:
+      "Enterprise Shopify Plus upgrade and migration services for high-growth DTC and B2B ecommerce brands",
+    breadcrumbName: "Upgrade to Shopify Plus",
+    audienceType:
+      "Established DTC brands, high-growth merchants, and enterprise B2B ecommerce businesses upgrading to Shopify Plus",
+    faqs: upgradeShopifyPlusFaqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: upgradeShopifyPlusExclusiveTools.cards.map((tool) => ({
+      title: tool.title,
+      description: tool.description,
+    })),
   });
 }
 

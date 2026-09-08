@@ -813,6 +813,33 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  upgradeToShopifyPlus: {
+    path: "/upgrade-to-shopify-plus",
+    title: "Upgrade to Shopify Plus - Shopify Plus Agency",
+    description:
+      "Upgrade to Shopify Plus with Dynamic Dreamz. Scale your ecommerce store with exclusive enterprise tools, lower transaction fees, and B2B capabilities.",
+    keywords: [
+      "Upgrade to Shopify Plus",
+      "Shopify Plus upgrade",
+      "Shopify Plus agency",
+      "Shopify Platinum Partner",
+      "Shopify Plus migration",
+      "enterprise ecommerce",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-09-04T11:45:16+00:00",
+    modifiedTime: "2026-09-07T05:31:10+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Upgrade to Shopify Plus - Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   magentoToShopifyPlusMigration: {
     path: "/magento-to-shopify-plus-migration",
     title: "Magento to Shopify Plus Migration | Dynamic Dreamz",

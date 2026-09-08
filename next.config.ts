@@ -109,6 +109,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/upgrade-to-shopify-plus-2",
+        destination: "/upgrade-to-shopify-plus",
+        permanent: true,
+      },
+      {
         source: "/case-study",
         destination: "/case-studies",
         permanent: true,

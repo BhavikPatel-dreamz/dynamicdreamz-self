@@ -2073,3 +2073,16 @@ Primary SEO intent: book a discovery call, Shopify consultation, ecommerce proje
 | Response expectation | The page explains the call but does not state a response or booking follow-up expectation. | Add a sales-approved statement describing what happens after a visitor selects a time and how follow-up is handled. | Clarifies the conversion flow for buyers and answer engines without inventing an SLA. | Medium | deferred pending sales/operations approval |
 | Call agenda | The visible benefits describe a focused call, technical discussion, and no obligation. | Add an approved concise agenda covering project context, constraints, technical direction, and next steps if sales confirms the wording. | Makes the consultation value more extractable while preserving the current booking layout. | Low | suggested |
 | Fit guidance | The page does not state which project types or decision-makers are best suited for the call. | Add approved fit guidance for ecommerce brands, Shopify merchants, and digital agencies after sales review. | Helps visitors self-qualify without changing the current Calendly interaction. | Low | suggested |
+
+## Upgrade to Shopify Plus (`/upgrade-to-shopify-plus`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-09-08
+Primary SEO intent: Upgrade to Shopify Plus, Shopify Plus upgrade agency, enterprise Shopify migration, Shopify Platinum Partner.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Hero Description | Want to know how? Book your Free eCommerce Growth consultation call now! | Discover how upgrading to Shopify Plus empowers your business with enterprise checkout extensibility, B2B wholesale, multi-store expansion, and dedicated Platinum Partner support. | Clarifies core enterprise value proposition and target buyer outcomes | Low | suggested |
+| Section Heading | Why Upgrading to Shopify Plus | Why Upgrade to Shopify Plus | Improves grammatical phrasing while preserving original search intent | Low | suggested |
+| Exclusive Tools Card 1 | Run up to 9 stores with local currencies, languages, content. | Operate up to 9 expansion stores with localized currencies, international checkout, and regional pricing. | Enhances technical clarity for enterprise global merchants | Low | suggested |
+| FAQ 4 Grammar | ...platforms like Magento,WooCommerce, or BigCommerce... | ...platforms like Magento, WooCommerce, or BigCommerce... | Adds missing space after comma in live copy | Medium | suggested |

@@ -9557,3 +9557,62 @@ Decision stage: conversion and project qualification
 - Live rendered page, View Page Source, scoped CSS/media CSS, shared header/footer CSS, and desktop/tablet/mobile captures were inspected.
 - Local lint, build, URL policy, component-content, case-study, blog, and asset-duplicate checks pass.
 - Local responsive screenshots and iframe availability remain the final browser smoke-test dependency; Calendly schedule availability may vary by network and time.
+
+## Upgrade to Shopify Plus (`/upgrade-to-shopify-plus`)
+
+Status: implemented and verified; live-visible content preserved
+
+Last reviewed: 2026-09-08
+
+Owner: SEO, Shopify Plus specialists, enterprise sales, and client-success teams
+
+Primary audience: Growing DTC brands, high-volume merchants, and B2B ecommerce businesses evaluating an upgrade from standard Shopify or legacy platforms to Shopify Plus.
+
+Decision stage: platform scaling decision, Shopify Plus feature evaluation, conversion rate optimization, and consultation booking
+
+### Page role
+
+High-conversion commercial landing page focusing on why established merchants upgrade to Shopify Plus. Features conversion-focused hero with 25–30% conversion rate increase proof point, 4 partner trust badges, background video, 4-stat agency credibility strip, 20 partner brand logos with animated marquee, 4 statistical growth metrics (34% revenue growth, 2784% YoY US customers, 15% AOV, 100% international growth MoM), 8 exclusive enterprise tools and features, 8 real-world client portfolio projects (Ranavat, Atolea Jewelry, Naakbar, Tropicfeel, Sculpt Neon, Headsets, Bella Vita, Renee), 4-step development process (Analyze, Design, Build, Test), 6 core reasons to choose Dynamic Dreamz, and 5 comprehensive Shopify Plus FAQs.
+
+### Target prompts
+
+- Why should I upgrade to Shopify Plus?
+- What are the main benefits of upgrading to Shopify Plus?
+- How much conversion rate increase can Shopify Plus provide?
+- Which agency is best to help upgrade and migrate to Shopify Plus?
+- What exclusive tools and features does Shopify Plus offer compared to standard Shopify?
+
+### Current strengths and available evidence
+
+- Direct proof and conversion hook in H1: "Did you know Shopify Plus brands often see 25–30% increase in conversion rate?".
+- 4 verified credentials and ratings: Shopify Platinum Partner, Clutch (4.9), Trustpilot (4.9), Upwork Top Rated Plus.
+- Agency scale proof: 50+ Agencies Supported Worldwide, Platinum Partner, 20+ Years Web & Ecommerce Experience, 150+ Experts.
+- 20 enterprise brand logos: Royce Chocolate, Jacadi Paris, Rare Rabbit, Bella Vita, Sri Sri Tattva, Renee, Nelter, Tropicfeel, Ranavat, Perfect Locks, Bombay Shirt Company, KALKI, Kvaser, Tego, Sleepy Cat, Supertails, SIM Direct, Eleven Eleven, PopClub, Prolash.
+- 8 real-world client storefront showcases with direct external links.
+- 8 exclusive tools detailed: 9 Global Stores, Lower Your Transaction Fees, B2B on Shopify, ShopifyQL Notebooks, Launchpad, International expansion, Customise with Shopify Functions, Priority support.
+- 5 comprehensive FAQs addressing definition, agency vs expert, costs, migration, and store optimization.
+- Fully structured JSON-LD with WebPage, Service, FAQPage (5 Q&As), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical assets and adding clean vector SVGs under `public/assets/services/upgrade-to-shopify-plus/why-choose/`.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route & migration URL | Legacy URL was `/upgrade-to-shopify-plus-2/` | Migrate as clean slashless `/upgrade-to-shopify-plus` with 301 permanent redirect from `/upgrade-to-shopify-plus-2` | Verified with route tests and build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, BreadcrumbList schema | Emit complete schema graph matching page facts | Verified in JSON-LD output |
+| P0 | implemented | Asset deduplication | Reused canonical images, video, badges, and logos; added 6 unique SVGs | Store unique assets under `public/assets/services/upgrade-to-shopify-plus/why-choose/` with 0 duplicate hash groups | Verified with SHA-256 audit |
+| P1 | deferred | Content expansion | Informal copy elements (e.g. hero CTA phrasing, comma spacing) | Logged in `docs/page-content-improvements.md` as suggested; live UI preserved | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz authority in Shopify Plus upgrades. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Entity, evidence, and authorship actions
+
+- Reinforces Dynamic Dreamz entity status as an official Shopify Platinum Partner and Shopify Plus Agency founded in 2006.
+- Direct evidence from real Shopify Plus client implementations (Ranavat, Atolea Jewelry, Tropicfeel, Bella Vita, Renee).
+
+### Internal-link and conversion actions
+
+- Primary CTA links directly to `/book-a-discovery-call` for consultation scheduling.
+- Canonical path `/upgrade-to-shopify-plus` added to sitemap and route metadata.

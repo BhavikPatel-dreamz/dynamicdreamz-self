@@ -6,7 +6,9 @@ import { cn } from "@/lib/class-names";
 
 export type HeroBadge = {
   label?: string;
-  icon: string;
+  name?: string;
+  icon?: string;
+  src?: string;
   alt: string;
   href: string;
   width: number;
@@ -34,11 +36,15 @@ export type ServiceHeroVideoContent = {
 export type ServiceHeroVideoSectionProps = {
   content: ServiceHeroVideoContent;
   className?: string;
+  titleAccentTag?: "i" | "span";
+  titleAccentClassName?: string;
 };
 
 export function ServiceHeroVideoSection({
   content,
   className,
+  titleAccentTag = "i",
+  titleAccentClassName,
 }: ServiceHeroVideoSectionProps) {
   return (
     <section
@@ -81,9 +87,25 @@ export function ServiceHeroVideoSection({
                   ? content.title.replace(content.titleAccent, "").trim() + " "
                   : content.title}
                 {content.titleAccent ? (
-                  <i className="font-editorial-italic font-normal italic text-[#ad5151]">
-                    {content.titleAccent}
-                  </i>
+                  titleAccentTag === "span" ? (
+                    <span
+                      className={cn(
+                        "font-normal not-italic text-[#ad5151]",
+                        titleAccentClassName,
+                      )}
+                    >
+                      {content.titleAccent}
+                    </span>
+                  ) : (
+                    <i
+                      className={cn(
+                        "font-editorial-italic font-normal italic text-[#ad5151]",
+                        titleAccentClassName,
+                      )}
+                    >
+                      {content.titleAccent}
+                    </i>
+                  )
                 ) : null}
               </h1>
 
@@ -133,7 +155,7 @@ export function ServiceHeroVideoSection({
                       "border-r border-[#d9d9d9] last:border-r-0 max-[767px]:border-r-0",
                       "max-[767px]:w-1/2 max-[767px]:p-[15px] max-[767px]:text-center",
                     )}
-                    key={badge.label || idx}
+                    key={badge.label || badge.name || idx}
                   >
                     <a
                       className="flex items-center justify-center"
@@ -145,7 +167,7 @@ export function ServiceHeroVideoSection({
                         alt={badge.alt}
                         className="h-auto max-w-[100px] object-contain max-[767px]:max-h-[44px]"
                         height={badge.height}
-                        src={badge.icon}
+                        src={badge.icon || badge.src || ""}
                         width={badge.width}
                       />
                     </a>

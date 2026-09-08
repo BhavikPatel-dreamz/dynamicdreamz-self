@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { cn } from "@/lib/class-names";
 
 export type CityWhyChooseBoxItem = {
@@ -20,18 +21,25 @@ export type CityWhyChooseBoxesSectionProps = {
   content: CityWhyChooseBoxesContent;
   className?: string;
   id?: string;
+  columns?: 3 | 5;
+  bgClassName?: string;
+  eyebrowVariant?: "pill" | "dash";
 };
 
 export function CityWhyChooseBoxesSection({
   content,
   className,
   id,
+  columns = 5,
+  bgClassName = "bg-[#eff4ef]",
+  eyebrowVariant = "pill",
 }: CityWhyChooseBoxesSectionProps) {
   return (
     <section
       id={id}
       className={cn(
-        "city-page-why-choose-boxes bg-[#eff4ef] py-20 max-[992px]:py-[50px]",
+        "city-page-why-choose-boxes py-20 max-[992px]:py-[50px]",
+        bgClassName,
         className,
       )}
     >
@@ -40,9 +48,13 @@ export function CityWhyChooseBoxesSection({
           <div className="title max-w-[620px]">
             {content.eyebrow && (
               <div className="eyebrow mb-3">
-                <span className="inline-block rounded-[30px] border border-[rgba(40,40,40,0.12)] bg-white px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.5px] text-[#4d5577]">
-                  {content.eyebrow}
-                </span>
+                {eyebrowVariant === "dash" ? (
+                  <Eyebrow>{content.eyebrow}</Eyebrow>
+                ) : (
+                  <span className="inline-block rounded-[30px] border border-[rgba(40,40,40,0.12)] bg-white px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.5px] text-[#4d5577]">
+                    {content.eyebrow}
+                  </span>
+                )}
               </div>
             )}
             <h2 className="font-sans text-[35px] font-bold leading-[48px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
@@ -57,7 +69,14 @@ export function CityWhyChooseBoxesSection({
         </div>
 
         <div className="why-choose-box-main">
-          <div className="wrapper grid grid-cols-5 gap-[15px] max-[1199px]:grid-cols-3 max-[767px]:grid-cols-1">
+          <div
+            className={cn(
+              "wrapper grid gap-[15px] max-[767px]:grid-cols-1",
+              columns === 3
+                ? "grid-cols-3 max-[1199px]:grid-cols-3"
+                : "grid-cols-5 max-[1199px]:grid-cols-3",
+            )}
+          >
             {content.items.map((item) => (
               <div
                 key={item.title}
