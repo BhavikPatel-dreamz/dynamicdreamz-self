@@ -84,6 +84,42 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: oneYearInSeconds,
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "1337",
+        pathname: "/uploads/**",
+      },
+      {
+        protocol: "http",
+        hostname: "127.0.0.1",
+        port: "1337",
+        pathname: "/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cms.dynamicdreamz.com",
+        pathname: "/uploads/**",
+      },
+      ...(process.env.STRAPI_API_URL
+        ? (() => {
+            try {
+              const parsed = new URL(process.env.STRAPI_API_URL);
+              return [
+                {
+                  protocol: parsed.protocol.replace(":", "") as "http" | "https",
+                  hostname: parsed.hostname,
+                  port: parsed.port || undefined,
+                  pathname: "/uploads/**",
+                },
+              ];
+            } catch {
+              return [];
+            }
+          })()
+        : []),
+    ],
   },
   async headers() {
     const assetCacheHeaders = [

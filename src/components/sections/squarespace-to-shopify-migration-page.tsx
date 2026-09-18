@@ -6,7 +6,6 @@ import { HappyClientSection } from "@/components/sections/shopify-plus-agency/ha
 import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
 import { ThemeWhyChooseSection } from "@/components/sections/theme-customization/theme-why-choose-section";
 import { TwoColCenterImageSection } from "@/components/sections/two-col-center-image-section";
-import { salesforceFaqs } from "@/content/salesforce-to-shopify-migration";
 import {
   squarespaceBenefitsContent,
   squarespaceBrandLogos,
@@ -76,8 +75,8 @@ export function SquarespaceToShopifyMigrationPage() {
         variant="client-stories"
       />
       <SplitFaqSection
-        idPrefix="salesforce-migration-faq"
-        items={salesforceFaqs}
+        idPrefix="squarespace-migration-faq"
+        items={squarespaceFaqs}
       />
     </div>
   );

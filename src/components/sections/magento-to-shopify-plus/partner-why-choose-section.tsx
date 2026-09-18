@@ -27,11 +27,6 @@ export function PartnerWhyChooseSection({
   className = "hiring-services-sec mb-20 max-[767px]:mb-[50px]",
   id = "why-choose-dynamic-dreamz",
 }: PartnerWhyChooseSectionProps) {
-  const [descriptionBeforeHighlight, descriptionAfterHighlight = ""] =
-    content.descriptionHighlight
-      ? content.description.split(content.descriptionHighlight)
-      : [content.description];
-
   return (
     <section
       className={`${className} bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[767px]:py-[50px]`}

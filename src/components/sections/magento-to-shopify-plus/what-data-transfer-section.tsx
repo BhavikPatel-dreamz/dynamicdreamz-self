@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
-import { formatBrText } from "@/lib/text-formatting";
 import { SplitSectionHeading } from "../shopify-certified-developers/split-section-heading";
 
 export type WhatDataTransferItem = {
