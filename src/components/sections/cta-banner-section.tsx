@@ -10,12 +10,14 @@ export const defaultCtaBannerCopy = {
 
 export type CtaBannerSectionProps = {
   heading?: string;
+  description?: string;
   ctaLabel?: string;
   ctaHref?: string;
 };
 
 export function CtaBannerSection({
   heading = defaultCtaBannerCopy.heading,
+  description,
   ctaLabel = defaultCtaBannerCopy.ctaLabel,
   ctaHref = siteConfig.quotePath,
 }: CtaBannerSectionProps = {}) {
@@ -26,12 +28,19 @@ export function CtaBannerSection({
     >
       <Container>
         <div className="flex flex-wrap items-center justify-center gap-8 text-center max-[1199px]:gap-5">
-          <h2
-            id="cta-banner-title"
-            className="font-montserrat text-[30px] font-bold leading-[43.2px] tracking-[-0.6px] text-white max-[1199px]:text-[26px] max-[1199px]:leading-9 max-[767px]:text-[20px] max-[767px]:leading-7"
-          >
-            {heading}
-          </h2>
+          <div className="text-center">
+            <h2
+              id="cta-banner-title"
+              className="font-montserrat text-[30px] font-bold leading-[43.2px] tracking-[-0.6px] text-white max-[1199px]:text-[26px] max-[1199px]:leading-9 max-[767px]:text-[20px] max-[767px]:leading-7"
+            >
+              {heading}
+            </h2>
+            {description ? (
+              <p className="mt-2 text-base font-medium text-white/90 max-[767px]:text-sm">
+                {description}
+              </p>
+            ) : null}
+          </div>
           <ButtonLink
             href={ctaHref}
             variant="light"

@@ -10,7 +10,7 @@ export type ProcessStepItem = {
 export type OurDevelopmentProcessContent = {
   eyebrow?: string;
   heading: string;
-  description: string;
+  description?: string;
   steps: readonly ProcessStepItem[];
 };
 
