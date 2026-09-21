@@ -235,7 +235,7 @@ export function AgencyServicesSection({
                           key={idx}
                         >
                           <Image
-                            src="/assets/icons/bullets-icon.svg"
+                            src="/assets/icons/gradient-check.svg"
                             alt="Bullet point icon"
                             width={22}
                             height={22}

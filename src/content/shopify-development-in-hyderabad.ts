@@ -129,7 +129,7 @@ export const shopifyDevelopmentHyderabadContent = {
         title: "Shopify Theme Customization Service",
         description:
           "We specialize in tailoring Shopify themes to meet your unique business needs, ensuring your online store stands out. Our team of Shopify experts can modify and enhance themes like Dawn, Impulse, Expanse, Refresh, Prestige, and many others to reflect your brand's identity and improve user experience. Whether you need design adjustments, feature additions, or performance optimizations, we provide comprehensive customization solutions to help you achieve your eCommerce goals.",
-        icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "theme customization icon",
         href: "/shopify-theme-customization",
       },

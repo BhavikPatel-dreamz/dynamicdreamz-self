@@ -207,7 +207,7 @@ export const shopifyDevelopmentDelhiContent = {
         title: "Shopify Theme Customization",
         description:
           "Our team specializes in customizing Shopify themes to match your brand identity and satisfy your unique business needs. From design changes to advanced features, we make sure your Shopify store satisfies and converts visitors.",
-        icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "theme customization icon",
         href: "/shopify-theme-customization",
       },

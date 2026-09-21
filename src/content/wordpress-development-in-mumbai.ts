@@ -86,7 +86,7 @@ export const wordpressDevelopmentMumbaiContent = {
         title: "Customizable Themes",
         description:
           "Flexible design options help create a website that reflects your brand while maintaining performance.",
-        icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "Customizable Themes",
       },
       {
@@ -121,7 +121,7 @@ export const wordpressDevelopmentMumbaiContent = {
         title: "Custom WordPress Development",
         description:
           "We create fully customized WordPress websites tailored to your business goals, ensuring scalable architecture, optimized performance, and a seamless user experience built for long-term growth.",
-        icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "Custom WordPress Development Icon",
       },
       {

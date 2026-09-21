@@ -165,7 +165,7 @@ export const shopifyMaintenanceServicesContent = {
           "Theme updates and customizations",
           "App updates and new app installations",
         ],
-        icon: "/assets/shopify-maintenance-services/services/store-updates-and-upgrades.svg",
+        icon: "/assets/services/shopify-mobile-app-development/benefits/increase-sale-icon.svg",
         iconAlt: "Store Updates and Upgrades Icon",
       },
       {

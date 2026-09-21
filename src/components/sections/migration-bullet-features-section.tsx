@@ -46,7 +46,7 @@ export function MigrationBulletFeaturesSection({
                 <div className="migration-step-details">
                   <h3 className="mb-2.5 flex items-start gap-3.5 font-sans text-[20px] font-bold leading-[28px] text-ink max-[767px]:text-lg max-[767px]:leading-[26px]">
                     <Image
-                      src="/assets/icons/bullets-icon.svg"
+                      src="/assets/icons/gradient-check.svg"
                       alt=""
                       width={22}
                       height={22}

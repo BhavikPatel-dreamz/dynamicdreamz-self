@@ -212,7 +212,7 @@ export const shopifyDevelopmentLosAngelesContent = {
         title: "Shopify Theme Customization",
         description:
           "Our team works with themes like Dawn, Impulse, Expanse, Refresh, and Prestige, customizing every element to align with your brand identity. Whether it’s design tweaks, feature additions, or full layout overhauls, we make your storefront stand out in a crowded market.",
-        icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "theme customization icon",
         href: "/shopify-theme-customization",
       },

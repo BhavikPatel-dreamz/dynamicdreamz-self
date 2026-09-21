@@ -91,7 +91,7 @@ export const seoServicesWhatWeProvide: AgencyServicesContent = {
       title: "Technical SEO",
       description:
         "From website speed to mobile responsiveness, our technical SEO services resolve bugs and issues that stop your website from ranking higher.",
-      icon: "/assets/seo-services/services/technical-seo.svg",
+      icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
       iconAlt: "app-maintenance-icon",
       href: "",
     },

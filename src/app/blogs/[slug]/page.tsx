@@ -33,12 +33,19 @@ export async function generateMetadata({ params }: BlogRouteProps): Promise<Meta
     openGraphType: "article",
     publishedTime: `${post.date}T00:00:00+00:00`,
     modifiedTime: post.modified,
-    image: {
-      path: post.featuredImage.src,
-      width: post.featuredImage.width,
-      height: post.featuredImage.height,
-      alt: post.featuredImage.alt,
-    },
+    image: post.featuredImage
+      ? {
+          path: post.featuredImage.src,
+          width: post.featuredImage.width,
+          height: post.featuredImage.height,
+          alt: post.featuredImage.alt,
+        }
+      : {
+          path: "/assets/og/homepage.png",
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
     sitemap: {
       changeFrequency: "monthly",
       priority: 0.6,

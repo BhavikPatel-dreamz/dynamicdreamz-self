@@ -211,7 +211,7 @@ export const shopifyDevelopmentNewYorkContent = {
         title: "Shopify Theme Customization",
         description:
           "Your store should feel yours, right? Henceforth, Shopify experts in New York work with various themes for customizing every detail to reflect your brand's identity, improve user experience, and set you apart from the competition.",
-        icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "theme customization icon",
         href: "/shopify-theme-customization",
       },

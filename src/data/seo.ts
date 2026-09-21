@@ -2154,6 +2154,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  horizonThemeCustomization: {
+    path: "/horizon-theme-customization",
+    title: "Horizon Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Expert Shopify Horizon theme customization by Dynamic Dreamz. Optimize design, templates, blocks, speed, and conversions. Get a custom quote today!",
+    keywords: [
+      "Horizon theme customization",
+      "Horizon Shopify theme",
+      "Shopify Horizon theme customization",
+      "Shopify Horizon developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-07-07T12:25:01+00:00",
+    modifiedTime: "2026-09-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Horizon Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   spotlightThemeCustomization: {
     path: "/spotlight-theme-customization",
     title: "Spotlight Theme Customization Services | Dynamic Dreamz",
@@ -2845,6 +2871,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  appmakerShopifyMobileAppDevelopment: {
+    path: "/appmaker-shopify-mobile-app-development",
+    title: "Appmaker Shopify Mobile App Development | Dynamic Dreamz",
+    description:
+      "Launch a branded iOS and Android app for your Shopify store with Appmaker and Dynamic Dreamz, with customization, integrations and app launch support.",
+    keywords: [
+      "Appmaker Shopify mobile app development",
+      "Shopify Appmaker partner",
+      "Shopify mobile app builder",
+      "iOS and Android Shopify apps",
+      "Dynamic Dreamz mobile development",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-02T09:34:22+00:00",
+    modifiedTime: "2026-09-03T00:00:00+00:00",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Appmaker Shopify Mobile App Development | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   thankYouForApplying: {
     path: "/thank-you-for-applying",
     title: "Thank You For Applying | Dynamic Dreamz",
@@ -2875,6 +2927,34 @@ export const pageSeo = {
   },
   thankYouForEnquiry: {
     path: "/thank-you-for-enquiry",
+    title: "Thank You For Enquiry | Dynamic Dreamz",
+    description:
+      "Thank you for your enquiry. We appreciate your interest and our team will get back to you shortly.",
+    keywords: [
+      "Dynamic Dreamz enquiry",
+      "thank you for enquiry",
+      "Shopify agency contact",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-29T10:56:05+00:00",
+    modifiedTime: "2026-08-07T09:16:24+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Thank You For Enquiry — Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    robots: {
+      index: false,
+      follow: false,
+    },
+  },
+  thankYouForShopifyPlusEnquiry: {
+    path: "/thank-you-for-shopify-plus-enquiry",
     title: "Thank You For Enquiry | Dynamic Dreamz",
     description:
       "Thank you for your enquiry. We appreciate your interest and our team will get back to you shortly.",

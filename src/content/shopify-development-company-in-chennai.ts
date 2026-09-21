@@ -221,7 +221,7 @@ export const shopifyDevelopmentChennaiContent = {
         title: "Shopify Maintenance Service",
         description:
           "Use our Shopify maintenance service to keep your store operating efficiently. We offer continuous assistance, upgrades, and troubleshooting to guarantee that your store stays safe, quick, and equipped with the newest features. With the peace of mind that comes with our maintenance services, you can concentrate on expanding your company while we handle the technical details.",
-        icon: "/assets/shopify-development-company-in-chennai/services/maintenance.svg",
+        icon: "/assets/services/wordpress/wordpress-maintenance.svg",
         iconAlt: "Support and Maintenance Service Icon",
       },
       {

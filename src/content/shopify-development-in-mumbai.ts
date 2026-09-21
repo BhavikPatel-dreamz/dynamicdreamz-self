@@ -209,7 +209,7 @@ export const shopifyDevelopmentMumbaiContent = {
         title: "Shopify Theme Customization Service",
         description:
           "Enhance your store's appearance and functionality with custom theme development tailored to your brand identity, ensuring a seamless and engaging shopping experience.",
-        icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "theme customization icon",
         href: "/shopify-theme-customization",
       },

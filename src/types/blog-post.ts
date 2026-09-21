@@ -43,7 +43,7 @@ export type BlogPostDetail = {
   category: string;
   categoryValue: string;
   categoryHref: string;
-  featuredImage: BlogImage;
+  featuredImage: BlogImage | null;
   excerpt: string;
   author: BlogAuthor | null;
   contentBeforeToc: string;

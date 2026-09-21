@@ -40,7 +40,7 @@ export function PillListSection({
                     alt="Bullet point icon"
                     className="h-[22px] w-[22px] shrink-0"
                     height={22}
-                    src="/assets/icons/bullets-icon.svg"
+                    src="/assets/icons/gradient-check.svg"
                     width={22}
                   />
                 </span>

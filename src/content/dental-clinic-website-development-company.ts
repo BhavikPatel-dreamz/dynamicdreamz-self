@@ -152,7 +152,7 @@ export const dentalClinicWebsiteDevelopmentCompanyContent = {
       "We have expertise in creating and customizing dental websites to fulfill dentist’s unique requirements.<br />Dentists need an accurate and functional website since we understand this is important. That’s why we offer:",
     items: [
       {
-        icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "theme customization icon",
         description: "<b>Custom website designs</b> that match your brand.",
       },
@@ -193,7 +193,7 @@ export const dentalClinicWebsiteDevelopmentCompanyContent = {
         title: "Dental WooCommerce Development",
         description:
           "Do you want to sell dental hygiene products online? We develop and customize secure and reliable WooCommerce stores for your dental clinic website.",
-        icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "Development Icon",
       },
       {

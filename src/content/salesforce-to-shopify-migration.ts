@@ -167,7 +167,7 @@ export const salesforceBenefitsContent: ProofSectionContent = {
       title: "Secure and Reliable",
       description:
         "You don't have to worry about security features. Shopify will manage it for your Shopify store. It offers SSL certificates and keeps your payment data safe. With Shopify, you can focus on expanding your business while trusting that your customers' data is protected.",
-      icon: "/assets/salesforce-to-shopify-migration/secure-reliable.svg",
+      icon: "/assets/shopify-theme-customization/benefits/enhanced-security.svg",
       iconAlt: "secure-reliable-img",
     },
     {
@@ -208,7 +208,7 @@ export const salesforceConsiderationsContent: TwoColCenterImageContent = {
       title: "SEO Considerations",
       description:
         "When swapping platforms, SEO can be affected. Ensure your product URLs, page titles, and meta descriptions are optimized on Shopify to keep your search engine rankings.",
-      icon: "/assets/salesforce-to-shopify-migration/seo-considerations.svg",
+      icon: "/assets/prestashop-to-shopify-migration/considerations/seo-considerations.svg",
       iconAlt: "SEO Considerations",
     },
   ],

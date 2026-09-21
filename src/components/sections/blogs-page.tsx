@@ -12,10 +12,20 @@ type BlogsPageProps = {
   query: string;
   activeCategory?: BlogArchiveCategoryValue;
   currentPage?: number;
+  totalPages?: number;
 };
 
-export function BlogsPage({ articles, query, activeCategory, currentPage = 1 }: BlogsPageProps) {
-  const hasArchiveFilter = Boolean(query || activeCategory);
+export function BlogsPage({
+  articles,
+  query,
+  activeCategory,
+  currentPage = 1,
+  totalPages = 1,
+}: BlogsPageProps) {
+  const pagination = getBlogArchivePagination(currentPage, totalPages, {
+    category: activeCategory,
+    query,
+  });
 
   return (
     <div className="font-sans">
@@ -27,9 +37,9 @@ export function BlogsPage({ articles, query, activeCategory, currentPage = 1 }: 
         categories={blogsPageContent.categories}
         categoriesLabel={blogsPageContent.categoriesLabel}
         activeCategory={activeCategory}
-        pagination={getBlogArchivePagination(currentPage)}
+        pagination={pagination}
         paginationLabel={blogsPageContent.paginationLabel}
-        showPagination={!hasArchiveFilter}
+        showPagination={totalPages > 1}
       />
     </div>
   );

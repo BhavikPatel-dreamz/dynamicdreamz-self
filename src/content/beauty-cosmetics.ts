@@ -41,7 +41,7 @@ export const beautyIndustryPage = {
         title: "Custom Website Design",
         description:
           "Based on your products, we customize the website. Our tailored layouts precisely reflect the quality of the products that you sell.",
-        icon: "/assets/industry-solutions/custom-website-design.svg",
+        icon: "/assets/industry-solutions/tailored-website-development.svg",
         iconAlt: "Custom Website Design Icon",
         width: 68,
         height: 68,

@@ -76,10 +76,10 @@ export const primaryNavigation: PrimaryNavigationGroup[] = [
         icon: headerIcon("shopify-migration"),
       },
       {
-        label: "Shopify B2B & Wholesale",
-        href: "/shopify-plus-agency",
-        description: "Company accounts, catalogues and pricing.",
-        icon: headerIcon("shopify-b2b-and-wholesale"),
+        label: "Shopify Theme Customization",
+        href: "/shopify-theme-customization",
+        description: "Theme design & UX enhancements",
+        icon: headerIcon("shopify-theme-customization"),
       },
       {
         label: "Shopify CRO & Performance",

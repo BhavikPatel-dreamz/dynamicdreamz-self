@@ -139,7 +139,7 @@ export const shopifyDevelopmentTexasContent = {
         title: "Shopify Theme Customization",
         description:
           "Your store should feel like yours. And with Shopify theme customization in Texas, you can. We craft visually stunning, high-converting themes that align with your brand identity, improve user experience, and are built to drive sales.",
-        icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "Shopify Theme Customization Icon",
         href: "/shopify-theme-customization",
       },

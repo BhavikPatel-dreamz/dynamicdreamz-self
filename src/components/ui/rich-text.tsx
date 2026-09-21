@@ -32,7 +32,7 @@ const blogClasses =
   "[&_h4]:mb-2.5 [&_h4]:text-[17px] [&_h4]:leading-[24.92px] [&_h4]:font-normal [&_h4]:text-[#282828] " +
   "[&_ol]:mb-6 [&_ul]:mb-6 [&_ol>li]:mb-[18px] [&_ul>li]:mb-[18px] [&_ol>li]:text-[16px] [&_ul>li]:text-[16px] [&_ol>li]:leading-[27px] [&_ul>li]:leading-[27px] [&_ol>li]:tracking-[0.32px] [&_ul>li]:tracking-[0.32px] " +
   "[&_ul>li]:relative [&_ul>li]:pl-[34px] [&_ul>li]:before:absolute [&_ul>li]:before:top-[3px] [&_ul>li]:before:left-0 [&_ul>li]:before:size-[22px] " +
-  "[&_ul>li]:before:bg-[url('/assets/icons/bullets-icon.svg')] [&_ul>li]:before:bg-contain [&_ul>li]:before:bg-no-repeat [&_ul>li]:before:content-[''] " +
+  "[&_ul>li]:before:bg-[url('/assets/icons/gradient-check.svg')] [&_ul>li]:before:bg-contain [&_ul>li]:before:bg-no-repeat [&_ul>li]:before:content-[''] " +
   "[&_ol_ol]:list-[lower-alpha] [&_ol>li::marker]:font-bold [&_table]:my-6 [&_table]:text-[16px] [&_table]:font-medium [&_img]:h-auto [&_img]:w-full [&_img]:max-w-full [&_figure]:my-6 [&_figure]:text-center [&_figcaption]:mt-2 [&_figcaption]:text-center [&_figcaption]:text-sm " +
   "[&_a]:text-brand-red [&_a]:underline [&_a:hover]:no-underline [&_br]:hidden [&_ul>li>ul]:mt-6 [&_ul>li>ul]:ml-0 " +
   "[&_h2_strong]:font-normal [&_h3_strong]:font-normal [&_h4_strong]:font-normal [&_h5_strong]:font-normal [&_h6_strong]:font-normal " +

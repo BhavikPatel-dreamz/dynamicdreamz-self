@@ -83,7 +83,7 @@ export const shopifyDevelopmentPuneContent = {
         title: "Customizable Themes",
         description:
           "Select and customize Shopify themes to match your brand's identity.",
-        icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "Customizable Themes",
       },
       {
@@ -129,7 +129,7 @@ export const shopifyDevelopmentPuneContent = {
         title: "Shopify Theme Customization Service",
         description:
           "Our Shopify experts develop custom Shopify themes that satisfy your brand’s vision. From famous Shopify themes like Dawn and Prestige to fully custom designs, we ensure your store is unique and engaging.",
-        icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "theme customization icon",
         href: "/shopify-theme-customization",
       },

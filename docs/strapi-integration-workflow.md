@@ -12,6 +12,15 @@ No code edits, developer intervention, or Git commits will be required for non-I
 
 ---
 
+## Architectural Policy: Legacy Design Freeze & Next.js-First Section Development
+
+> **Effective Strategy Decision**:
+> 1. **Legacy Design Freeze**: The legacy WordPress live site is under an official **Design Freeze**. No new designs, layout overhauls, or custom section templates are to be built on the legacy WordPress site.
+> 2. **Next.js & Strapi First**: All new section designs and layout requirements are built directly in **Next.js** (`src/components/sections/`) and registered in **Strapi Dynamic Zones** (`cms/src/components/sections/` + `src/components/cms/BlockRenderer.tsx`).
+> 3. **Single Direction Progress**: This prevents the "moving target trap" and eliminates double-work. Non-IT staff will visually manage and assemble these new sections directly inside Strapi.
+
+---
+
 ## Workspace Directory Map for AI Agents
 
 This project consists of two independent directories located side-by-side:
@@ -103,13 +112,34 @@ flowchart TD
 
 ## The 3 Pillars of 100% Site Content in Strapi
 
-To control everything on the site without code, Strapi is divided into 3 pillars:
+To control **every single word, image, metric, button, and layout across the entire site without code**, all site content is categorized into 3 pillars:
 
-| Pillar | Strapi Content Type | What It Controls |
-|---|---|---|
-| **1. Global Settings** | Single Types | Header, Footer, Menus, Phone, Email, Social Links, Announcement Bar |
-| **2. Dynamic Collections** | Collection Types | Blogs, Authors, Categories, Case Studies, Testimonials, Team Members |
-| **3. Modular Page Builder** | Dynamic Zones (`Page` Collection) | Homepage, About Us, 70+ Service Pages, Theme Pages, City Landing Pages |
+| Pillar | Strapi Content Type | What It Controls | Scope |
+|---|---|---|---|
+| **1. Global Site Chrome** | Single Types (`global`) | Header navigation, footer columns, contact details (phone, email, WhatsApp, address), social links, legal links | App-wide |
+| **2. Dynamic Content Collections** | Collection Types (`articles`, `authors`, `categories`, `case-studies`, `testimonials`) | 84 Blog Posts, 58 Case Studies, 11+ Client Testimonials, Authors, Categories | High-frequency editorial content |
+| **3. Modular Dynamic Zone Pages** | Dynamic Zones (`pages` Collection) | 130+ Service Pages, Theme Customization Pages, Platform Migration Pages, Regional/City Pages, Company Pages (About Us, Life at DD, Career, Contact) | 100% of all marketing and landing pages |
+
+---
+
+## Migration Master Roadmap & Status Tracker
+
+| Phase | Title | Scope & Workspaces Involved | Status |
+|---|---|---|---|
+| **Phase 0** | Strapi Infrastructure & Local Environment | Neon DB setup, local uploads, API token, environment sync | ✅ Completed |
+| **Phase 1** | Content Modeling in Strapi | Schemas for Global, Article, Case Study, Author, Category, Testimonial, Page & 8 Section components | ✅ Completed |
+| **Phase 2** | Next.js Strapi Client & Media Normalizer | `src/lib/strapi.ts` typed fetch client, image normalizer, adapters | ✅ Completed |
+| **Phase 3** | Universal Block Renderer Component | `BlockRenderer` mapping Strapi dynamic zone blocks to UI components | ✅ Completed |
+| **Phase 4** | Global Header & Footer Navigation Sync | Strapi `api::global.global` bootstrap seeding, RootLayout integration | ✅ Completed |
+| **Phase 5** | Catch-all Dynamic Page Route & Revalidation | `src/app/[...slug]/page.tsx`, `/api/revalidate` webhook with tag/path purging | ✅ Completed |
+| **Phase 6** | Live Draft Preview Mode | `/api/preview`, `/api/exit-preview`, Strapi `admin.preview` handler, draft indicator | ✅ Completed |
+| **Phase 7** | Automated Blog Posts Migration | 84 blog posts migrated into Strapi with categories, authors, FAQs, SEO (`scripts/migrate-blogs-to-strapi.mjs`) | ✅ Completed |
+| **Phase 8** | 100% Case Studies Migration | 58 case studies migrated into Strapi (`api::case-study.case-study`) with metrics, hero, narrative sections, tags, SEO | 📋 Ready for Execution |
+| **Phase 9** | Client Testimonials & Video Reviews Migration | Client quotes, VideoObject reviews, ratings, client roles (`api::testimonial.testimonial`) | 📋 Ready for Execution |
+| **Phase 10** | Full-Site Service & Theme Pages Migration (130+ Pages) | Automated parser & seeder (`scripts/migrate-pages-to-strapi.mjs`) converting all `src/content/*.ts` service pages into Strapi modular pages | 📋 Ready for Execution |
+| **Phase 11** | Company, Career & Legal Pages Migration | About Us, Life at DD, Career, Contact Us, Privacy Policy, Terms of Service into Strapi | 📋 Ready for Execution |
+| **Phase 12** | Media Asset Library Ingestion | Upload local WebP/SVG images into Strapi Media Library for non-IT visual management (`scripts/migrate-media-to-strapi.mjs`) | 📋 Ready for Execution |
+| **Phase 13** | Non-IT Staff Visual CMS Operations & Governance Manual | Complete user manual for non-technical staff (editing pages, building funnels, publishing, drafting) | 📋 Ready for Execution |
 
 ---
 
@@ -461,76 +491,254 @@ export async function POST(req: NextRequest) {
 
 ---
 
-## Phase 7: Automated Migration of Existing Site Content
+## Phase 7: Automated Migration of Existing Blog Posts (84 Posts) - ✅ Completed
 
 > **Working Directory**: `/home/ubuntu/Vatsal/DD/dynamicdreamz-self`
 
-Script reads existing JSON blog posts from `/home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/content/blog-posts/posts/` and pushes them to Strapi API at `http://localhost:1337/api/articles`.
+Script reads all 84 existing JSON blog posts from `src/content/blog-posts/posts/` and pushes them to Strapi API at `http://localhost:1337/api/articles`.
 
-### Script: `/home/ubuntu/Vatsal/DD/dynamicdreamz-self/scripts/migrate-blogs-to-strapi.mjs`
-```javascript
-import fs from "node:fs";
-import path from "node:path";
+### Execution Summary & Results:
+- **Categories**: Automatically provisioned `Shopify`, `eCommerce`, `WordPress`, and `Big-Commerce` in Strapi (`api::category.category`).
+- **Authors**: Automatically provisioned `Tejal Parekh` (Sr. SEO Expert) and `Rizwan Shaikh` (Content Team Lead) in Strapi (`api::author.author`).
+- **Articles Migrated**: **84 of 84 (100% success rate, 0 failures)**.
+- **Data Imported**: Title, slug, publication date, display date, excerpt, content before/after TOC, FAQs (`elements.faq-item`), author relations, category relations, and full SEO metadata (`shared.seo`).
 
-const STRAPI_URL = process.env.STRAPI_API_URL || "http://localhost:1337";
-const STRAPI_ADMIN_TOKEN = process.env.STRAPI_API_TOKEN;
-
-const POSTS_DIR = path.resolve(process.cwd(), "src/content/blog-posts/posts");
-const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".json"));
-
-async function migrate() {
-  console.log(`Starting migration of ${files.length} blog posts to Strapi at ${STRAPI_URL}...`);
-
-  for (const file of files) {
-    const filePath = path.join(POSTS_DIR, file);
-    const post = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-
-    const payload = {
-      data: {
-        title: post.title,
-        slug: post.slug,
-        date: post.date,
-        displayDate: post.displayDate,
-        excerpt: post.excerpt,
-        contentBeforeToc: post.contentBeforeToc,
-        contentAfterToc: post.contentAfterToc,
-        faqs: post.faqs,
-        seo: {
-          metaTitle: post.seo?.title || post.title,
-          metaDescription: post.seo?.description || post.excerpt,
-        },
-        publishedAt: new Date().toISOString(),
-      },
-    };
-
-    try {
-      const res = await fetch(`${STRAPI_URL}/api/articles`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${STRAPI_ADMIN_TOKEN}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) {
-        console.error(`❌ Failed to migrate ${post.slug}:`, await res.text());
-      } else {
-        console.log(`✅ Successfully migrated: ${post.slug}`);
-      }
-    } catch (err) {
-      console.error(`❌ Error migrating ${post.slug}:`, err);
-    }
-  }
-
-  console.log("Migration complete!");
-}
-
-migrate();
-```
-
-To run the migration from the Next.js workspace:
+### Migration Script: [`scripts/migrate-blogs-to-strapi.mjs`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/scripts/migrate-blogs-to-strapi.mjs)
+Run anytime to sync or update blog posts:
 ```bash
-cd /home/ubuntu/Vatsal/DD/dynamicdreamz-self
-STRAPI_API_URL="http://localhost:1337" STRAPI_API_TOKEN="your_full_access_token" node scripts/migrate-blogs-to-strapi.mjs
+npm run migrate:blogs
 ```
+
+---
+
+## Phase 8: 100% Case Studies Migration & Dynamic Routing (58 Projects)
+
+> **Goal**: Enable non-IT staff to manage, edit, add, or unpublish any client case study and project portfolio item from Strapi without code.
+
+### 1. Source Data Inventory
+- **Location**: `/home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/content/case-studies-items.json` and `src/content/case-study-details.json`.
+- **Count**: 58 detailed portfolio case studies (e.g., GNC India, Ranavat, Don J, etc.).
+
+### 2. Strapi Schema: `api::case-study.case-study`
+File: `/home/ubuntu/Vatsal/DD/cms/src/api/case-study/content-types/case-study/schema.json`
+
+| Field | Type | Description |
+|---|---|---|
+| `title` | `string` (required) | Project title (e.g. "GNC India: Conversion-Focused Shopify Redesign") |
+| `slug` | `uid` (required) | URL slug (`gnc-india`, `/case-studies/gnc-india`) |
+| `client` | `string` | Client brand name (e.g. "GNC India", "Ranavat") |
+| `industry` | `string` | Industry taxonomy (e.g. "Health & Nutrition", "Beauty & Cosmetics") |
+| `technology` | `string` | Tech stack (e.g. "Shopify / Shopify Plus", "WordPress") |
+| `location` | `string` | Geographical location (e.g. "India", "USA") |
+| `excerpt` | `text` | Card summary for archive index |
+| `content` | `richtext` | Editorial overview |
+| `heroImage` | `media` (single) | High-res showcase banner |
+| `sections` | `json` | Structured narrative sections (Problem, Approach, Delivered Features) |
+| `metrics` | `component` (repeatable `elements.counter`) | Key results (e.g. +45% Speed, 2.4x Conversion Lift) |
+| `tags` | `json` | Taxonomy tags for filtering |
+| `testimonial` | `relation` (`oneToOne` to `api::testimonial.testimonial`) | Client review quote link |
+| `seo` | `component` (`shared.seo`) | Meta title, description, keywords, OG image |
+
+### 3. Migration Script: `scripts/migrate-case-studies-to-strapi.mjs`
+Automated migration script that:
+1. Reads all 58 case study records from `src/content/case-study-details.json` and `src/content/case-studies-items.json`.
+2. Checks Strapi for existing entries by `slug` (`GET /api/case-studies?filters[slug][$eq]=slug&status=draft`).
+3. Maps client, metrics, narrative sections, hero image paths, and SEO metadata into Strapi format.
+4. Inserts new entries via `POST /api/case-studies` or updates via `PUT /api/case-studies/:documentId`.
+5. Publishes all records (`publishedAt`).
+
+To run:
+```bash
+node scripts/migrate-case-studies-to-strapi.mjs
+```
+
+### 4. Next.js Route Integration
+- Update `src/app/case-studies/page.tsx` to query Strapi's `getCaseStudies()` with fallback to local JSON.
+- Update `src/app/case-studies/[slug]/page.tsx` to dynamically query Strapi's `getCaseStudyBySlug(slug)` with `preview: draft.isEnabled`.
+- Wire cache tags `case-studies` and `case-study-[slug]` into `/api/revalidate` for instant publishing updates.
+
+---
+
+## Phase 9: Client Testimonials & Video Reviews Migration
+
+> **Goal**: Allow non-technical staff to add new client reviews, video testimonials, quotes, and star ratings directly in Strapi.
+
+### 1. Source Data Inventory
+- **Location**: `src/content/home.ts`, `src/content/about-us.ts`, `src/content/shopify-plus-agency.ts`, and `src/content/service-hero-reviews.ts`.
+- **Count**: 11+ featured video reviews, 50+ client quotes and star ratings.
+
+### 2. Strapi Schema: `api::testimonial.testimonial`
+File: `/home/ubuntu/Vatsal/DD/cms/src/api/testimonial/content-types/testimonial/schema.json`
+
+| Field | Type | Description |
+|---|---|---|
+| `clientName` | `string` (required) | Client full name (e.g. "Rohan Sharma") |
+| `clientRole` | `string` | Role/Title (e.g. "Founder & CEO", "Ecommerce Director") |
+| `company` | `string` | Company or Brand name (e.g. "Ranavat", "GNC") |
+| `quote` | `text` (required) | Full testimonial text quote |
+| `rating` | `integer` (1-5) | Star rating (default 5) |
+| `avatar` | `media` (single) | Client photo |
+| `videoUrl` | `string` | YouTube/Vimeo video interview URL |
+| `videoThumbnail` | `media` (single) | Video thumbnail poster image |
+| `platform` | `enumeration` | `clutch`, `shopify_plus`, `google`, `direct` |
+| `featured` | `boolean` | Display on homepage hero review rail |
+
+### 3. Migration Script: `scripts/migrate-testimonials-to-strapi.mjs`
+- Extracts all testimonials from Next.js content files.
+- Creates entries in `api::testimonial.testimonial`.
+- Next.js testimonial components (`HappyClientCard`, `ServiceHeroReviews`, video modals) query `getTestimonials()` from Strapi.
+
+---
+
+## Phase 10: Full-Site Service & Theme Pages Migration (130+ Pages)
+
+> **Goal**: Migrate 100% of all marketing, service, theme customization, platform migration, and regional city landing pages into Strapi's **Modular Dynamic Zone Page Builder** (`api::page.page`). Non-IT staff will have full visual control to edit every section, copy, button, and image on all 130+ pages.
+
+### 1. Comprehensive Page Inventory (130+ Pages)
+
+| Page Category | Routes Included | Source Files |
+|---|---|---|
+| **Core Shopify Services (25+)** | `/shopify-plus-agency`, `/shopify-development-agency`, `/shopify-migration`, `/shopify-cro-agency`, `/shopify-experts`, `/hire-shopify-developers`, `/shopify-certified-developers`, `/shopify-apps`, `/shopify-maintenance-services`, `/shopify-mobile-app-development`, `/upgrade-to-shopify-plus`, `/white-label-shopify-development-services`, etc. | `src/content/shopify-*.ts`, `src/content/hire-*.ts` |
+| **Theme Customization (35+)** | `/impulse-theme-customization`, `/prestige-theme-customization`, `/broadcast-theme-customization`, `/dawn-theme-customization`, `/warehouse-theme-customization`, `/refresh-theme-customization`, `/impact-theme-customization`, `/expanse-theme-customization`, `/motion-theme-customization`, etc. | `src/content/*-theme-customization.ts` |
+| **Platform Migrations (15+)** | `/magento-to-shopify-migration`, `/magento-to-shopify-plus-migration`, `/woocommerce-to-shopify-migration`, `/bigcommerce-to-shopify-migration`, `/wix-to-shopify-migration`, `/squarespace-to-shopify-migration`, `/prestashop-to-shopify-migration`, `/etsy-to-shopify-migration`, `/salesforce-to-shopify-migration`, etc. | `src/content/*-to-shopify-migration.ts` |
+| **Regional & City Pages (15+)** | `/shopify-development-in-texas`, `/shopify-development-in-los-angeles`, `/shopify-development-in-new-york`, `/shopify-development-in-miami`, `/shopify-development-in-mumbai`, `/shopify-development-in-delhi`, `/shopify-development-in-bangalore`, `/shopify-development-in-barcelona-spain`, etc. | `src/content/shopify-development-in-*.ts` |
+| **WordPress & Custom Dev (15+)** | `/wordpress-development`, `/wordpress-development-company`, `/wordpress-theme-customization-services`, `/woocommerce-development`, `/php-development`, `/webflow-development`, `/web-design`, `/white-label-wordpress-development-services`, etc. | `src/content/wordpress-*.ts`, `src/content/web-*.ts` |
+| **Industry Solutions (10+)** | `/fashion`, `/food-beverages`, `/healthcare`, `/pet-industry`, `/beauty-cosmetics`, etc. | `src/content/fashion.ts`, `src/content/food-beverages.ts`, etc. |
+| **Company & Support (10+)** | `/about-us`, `/life-dynamicdreamz`, `/career`, `/career-apply-now`, `/contact-us`, `/request-quote`, `/resources`, `/privacy-policy`, `/terms-of-service`, `/site-map` | `src/content/about-us.ts`, `src/content/career.ts`, etc. |
+
+### 2. Complete Strapi Dynamic Zone Section Library
+
+All 130+ pages are built from reusable, modular section components in `cms/src/components/sections/`:
+
+1. **`sections.hero`**:
+   - `title`, `description`, `subheading`, `eyebrow`, `ctaLabel`, `ctaHref`, `variant` (`standard`, `split`, `centered`), `showReviews`, `image`
+2. **`sections.proof-counters`**:
+   - `heading`, `description`, `counters` list (`value`, `suffix`, `label`, `description`)
+3. **`sections.faq-accordion`**:
+   - `heading`, `eyebrow`, `description`, `faqs` list (`question`, `answer`)
+4. **`sections.cta-banner`**:
+   - `heading`, `description`, `btnText`, `btnUrl`
+5. **`sections.features-grid`**:
+   - `heading`, `description`, `items` (`title`, `description`, `icon`, `link`)
+6. **`sections.process-timeline`**:
+   - `heading`, `description`, `steps` (`stepNumber`, `title`, `description`)
+7. **`sections.happy-clients`**:
+   - `heading`, `description`, `clientLogos` list
+8. **`sections.case-studies`**:
+   - `heading`, `description`, `categoryFilter`, `limit`
+9. **`sections.rich-text`**:
+   - `heading`, `contentHtml` (WYSIWYG editor for long-form explanatory copy)
+10. **`sections.split-content`**:
+    - `heading`, `subheading`, `body`, `image`, `imagePosition` (`left` or `right`), `ctaLabel`, `ctaHref`
+11. **`sections.comparison-table`**:
+    - `heading`, `description`, `headers` list, `rows` list (e.g., Shopify vs WooCommerce, Plus vs Standard)
+
+### 3. Automated Page Migration Script: `scripts/migrate-pages-to-strapi.mjs`
+
+An automated migration script that iterates over all 130+ page data definitions in `src/content/*.ts`:
+1. **Dynamic Content Parsing**: Analyzes each page's content export (hero copy, counters, cards, timelines, FAQs, CTA banners, SEO).
+2. **Section Normalization**: Transforms the page's structure into Strapi 5 Dynamic Zone blocks matching the component schemas.
+3. **Idempotent Seeding**: Queries Strapi by slug; creates new page entries or updates existing ones.
+4. **SEO Attributes**: Maps page meta title, meta description, keywords, and canonical paths to `shared.seo`.
+5. **Batch Publishing**: Automatically publishes all 130+ pages with `publishedAt` timestamps.
+
+Execution:
+```bash
+node scripts/migrate-pages-to-strapi.mjs
+```
+
+### 4. Next.js Routing Architecture for 100% Strapi-Powered Pages
+
+- **Catch-All Route**: [`src/app/[...slug]/page.tsx`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/app/[...slug]/page.tsx) handles all incoming requests dynamically.
+- **Priority & Coexistence**:
+  1. Next.js queries Strapi via `getPageBySlug(slug, { preview: isDraft })`.
+  2. If page exists in Strapi, renders dynamically with [`BlockRenderer`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/blocks/block-renderer.tsx).
+  3. If a legacy static route exists, Strapi CMS overrides it seamlessly once published in CMS.
+  4. If draft mode is active, live preview reflects real-time CMS changes immediately.
+
+---
+
+## Phase 11: Company, Career & Legal Pages Migration
+
+> **Goal**: Move core brand and institutional pages into Strapi so HR, recruiting, and operations teams can update job openings, policies, and company culture content without developer assistance.
+
+### 1. Target Pages
+- `/about-us` (Our history, mission, leadership, milestones)
+- `/life-dynamicdreamz` (Work culture, perks, gallery photos)
+- `/career` & `/career-apply-now` (Open roles, job requirements, salary ranges, benefits)
+- `/contact-us` & `/request-quote` (Inquiry form content, offices, branch emails)
+- `/privacy-policy` & `/terms-of-service` (Legal disclosures, policy updates)
+
+### 2. Implementation
+- Model specific career roles in Strapi (`api::job-posting.job-posting`) with department, location, experience, and JD richtext.
+- Model company legal/institutional pages in `pages` with `sections.rich-text` and `sections.split-content`.
+
+---
+
+## Phase 12: Media Asset Library Ingestion to Strapi Local Storage
+
+> **Goal**: Ingest all existing project images, logos, banners, and icons from `public/assets/` into Strapi's Media Library so non-technical staff can browse, select, replace, and upload assets visually.
+
+### 1. Ingestion Script: `scripts/migrate-media-to-strapi.mjs`
+- Recursively scans `public/assets/` for all WebP, SVG, and PNG assets.
+- Uploads assets to Strapi Media Library via `POST /api/upload` multipart API.
+- Stores mapping of local asset path (`/assets/...`) to Strapi media file ID/URL.
+- Updates references in Strapi pages, articles, and case studies to point to the uploaded Strapi media entities.
+
+### 2. Result for Non-IT Staff:
+- Non-IT editors can open the Strapi **Media Library** tab.
+- Drag-and-drop new images directly from their desktop.
+- Re-use existing media across any page without developer involvement.
+
+---
+
+## Phase 13: Non-IT Staff Visual Operations & Governance Manual
+
+> **Goal**: Provide a clear, visual reference manual for non-technical team members on how to edit and manage every part of the site.
+
+### 1. Content Editing Guide for Non-IT Editors
+
+#### A. Editing Global Navigation & Footer
+1. Log in to Strapi Admin (`http://localhost:1337/admin`).
+2. Go to **Single Types → Global Settings**.
+3. Under **Navigation Groups**, click on any menu (e.g. "Services", "Shopify").
+4. Add, edit, or remove menu links, labels, and descriptions.
+5. Under **Footer Columns**, adjust footer links or copyright text.
+6. Click **Save** → Changes reflect on the live site immediately via instant cache revalidation.
+
+#### B. Editing Existing Service or Landing Pages
+1. Go to **Content Manager → Collection Types → Page**.
+2. Search or select the page you want to edit (e.g. `shopify-plus-agency`).
+3. Under **Sections (Dynamic Zone)**:
+   - Expand **Hero Block** to change heading, subheading, CTA text, or banner image.
+   - Expand **Proof Counters** to update numbers (e.g. "1200+ Happy Clients").
+   - Expand **FAQ Accordion** to add new questions and answers.
+   - Drag and drop sections up or down to re-order the visual page layout.
+4. Click **Preview** to view your edits in real-time in Next.js Draft Mode.
+5. Click **Publish** → Webhook purges Next.js cache; changes go live instantly.
+
+#### C. Creating a Brand New Landing Page or Campaign Funnel
+1. Go to **Collection Types → Page → Create New Entry**.
+2. Enter **Title** (e.g. `Shopify Headless Launch`) and **Slug** (e.g. `shopify-headless-launch`).
+3. Click **Add a component to Sections**:
+   - Choose **Hero Block** → Fill in copy and button URL.
+   - Choose **Features Grid** → Add 4 feature cards with icons.
+   - Choose **Proof Counters** → Add 3 key stats.
+   - Choose **CTA Banner** → Add final closing offer.
+4. Configure **SEO**: Fill in Meta Title and Description.
+5. Click **Preview** to verify the page in Draft Mode.
+6. Click **Publish** → The new route `dynamicdreamz.com/shopify-headless-launch` is immediately live!
+
+#### D. Publishing New Blog Articles & Case Studies
+1. Go to **Collection Types → Articles** or **Case Studies**.
+2. Click **Create new entry**.
+3. Write content using the Richtext WYSIWYG editor.
+4. Select the Author and Categories from the dropdowns.
+5. Upload or choose a cover image from the Media Library.
+6. Click **Publish**.
+
+### 2. User Roles & Governance (RBAC)
+- **Author**: Can create and edit their own drafts; cannot publish directly to live site.
+- **Editor**: Can review drafts, make edits, and trigger Live Preview.
+- **Publisher / Admin**: Has full permissions to publish, unpublish, and configure site-wide settings.
+

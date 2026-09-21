@@ -108,6 +108,8 @@ import { heritageThemeCustomizationContent } from "@/content/heritage-theme-cust
 import { ritualThemeCustomizationContent } from "@/content/ritual-theme-customization";
 import { publisherThemeCustomizationContent } from "@/content/publisher-theme-customization";
 import { tradeThemeCustomizationContent } from "@/content/trade-theme-customization";
+import { horizonThemeCustomizationContent } from "@/content/horizon-theme-customization";
+import { appmakerShopifyMobileAppDevelopmentContent } from "@/content/appmaker-shopify-mobile-app-development";
 import { spotlightThemeCustomizationContent } from "@/content/spotlight-theme-customization";
 import { refreshThemeCustomizationContent } from "@/content/refresh-theme-customization";
 import { woodstockThemeCustomizationContent } from "@/content/woodstock-theme-customization";
@@ -600,6 +602,11 @@ const tradeThemeCustomizationPageId = `${tradeThemeCustomizationPageUrl}#webpage
 const tradeThemeCustomizationServiceId = `${tradeThemeCustomizationPageUrl}#service`;
 const tradeThemeCustomizationFaqId = `${tradeThemeCustomizationPageUrl}#faq`;
 const tradeThemeCustomizationBreadcrumbId = `${tradeThemeCustomizationPageUrl}#breadcrumb`;
+const horizonThemeCustomizationPageUrl = absoluteUrl(pageSeo.horizonThemeCustomization.path);
+const horizonThemeCustomizationPageId = `${horizonThemeCustomizationPageUrl}#webpage`;
+const horizonThemeCustomizationServiceId = `${horizonThemeCustomizationPageUrl}#service`;
+const horizonThemeCustomizationFaqId = `${horizonThemeCustomizationPageUrl}#faq`;
+const horizonThemeCustomizationBreadcrumbId = `${horizonThemeCustomizationPageUrl}#breadcrumb`;
 const spotlightThemeCustomizationPageUrl = absoluteUrl(pageSeo.spotlightThemeCustomization.path);
 const spotlightThemeCustomizationPageId = `${spotlightThemeCustomizationPageUrl}#webpage`;
 const spotlightThemeCustomizationServiceId = `${spotlightThemeCustomizationPageUrl}#service`;
@@ -721,6 +728,11 @@ const shopifyMobileAppDevelopmentPageId = `${shopifyMobileAppDevelopmentPageUrl}
 const shopifyMobileAppDevelopmentServiceId = `${shopifyMobileAppDevelopmentPageUrl}#service`;
 const shopifyMobileAppDevelopmentFaqId = `${shopifyMobileAppDevelopmentPageUrl}#faq`;
 const shopifyMobileAppDevelopmentBreadcrumbId = `${shopifyMobileAppDevelopmentPageUrl}#breadcrumb`;
+const appmakerShopifyMobileAppDevelopmentPageUrl = absoluteUrl(pageSeo.appmakerShopifyMobileAppDevelopment.path);
+const appmakerShopifyMobileAppDevelopmentPageId = `${appmakerShopifyMobileAppDevelopmentPageUrl}#webpage`;
+const appmakerShopifyMobileAppDevelopmentServiceId = `${appmakerShopifyMobileAppDevelopmentPageUrl}#service`;
+const appmakerShopifyMobileAppDevelopmentFaqId = `${appmakerShopifyMobileAppDevelopmentPageUrl}#faq`;
+const appmakerShopifyMobileAppDevelopmentBreadcrumbId = `${appmakerShopifyMobileAppDevelopmentPageUrl}#breadcrumb`;
 const bigCommerceDevelopmentPageUrl = absoluteUrl(pageSeo.bigCommerceDevelopment.path);
 const bigCommerceDevelopmentPageId = `${bigCommerceDevelopmentPageUrl}#webpage`;
 const bigCommerceDevelopmentServiceId = `${bigCommerceDevelopmentPageUrl}#service`;
@@ -735,6 +747,9 @@ const thankYouForApplyingBreadcrumbId = `${thankYouForApplyingPageUrl}#breadcrum
 const thankYouForEnquiryPageUrl = absoluteUrl(pageSeo.thankYouForEnquiry.path);
 const thankYouForEnquiryPageId = `${thankYouForEnquiryPageUrl}#webpage`;
 const thankYouForEnquiryBreadcrumbId = `${thankYouForEnquiryPageUrl}#breadcrumb`;
+const thankYouForShopifyPlusEnquiryPageUrl = absoluteUrl(pageSeo.thankYouForShopifyPlusEnquiry.path);
+const thankYouForShopifyPlusEnquiryPageId = `${thankYouForShopifyPlusEnquiryPageUrl}#webpage`;
+const thankYouForShopifyPlusEnquiryBreadcrumbId = `${thankYouForShopifyPlusEnquiryPageUrl}#breadcrumb`;
 const webDesignPageUrl = absoluteUrl(pageSeo.webDesign.path);
 const webDesignPageId = `${webDesignPageUrl}#webpage`;
 const webDesignServiceId = `${webDesignPageUrl}#service`;
@@ -1473,7 +1488,7 @@ export function createBlogsPageSchema(
       url: absoluteUrl(article.href),
       headline: article.title,
       datePublished: article.date,
-      image: absoluteUrl(article.image),
+      ...(article.image ? { image: absoluteUrl(article.image) } : {}),
       articleSection: article.category,
       publisher: { "@id": organizationId },
       inLanguage: "en-US",
@@ -2821,7 +2836,8 @@ export function createBlogPostDetailPageSchema(post: BlogPostDetail) {
   const articleId = `${pageUrl}#article`;
   const imageId = `${pageUrl}#primaryimage`;
   const breadcrumbId = `${pageUrl}#breadcrumb`;
-  const imageUrl = absoluteUrl(post.featuredImage.src);
+  const hasImage = Boolean(post.featuredImage);
+  const imageUrl = post.featuredImage ? absoluteUrl(post.featuredImage.src) : null;
   const authorId = `${siteConfig.url}#author-${post.author?.name.toLowerCase().replace(/[^a-z0-9]+/g, "-") || "dynamic-dreamz"}`;
   const graph: Record<string, unknown>[] = [
     organizationSchema(),
@@ -2845,7 +2861,7 @@ export function createBlogPostDetailPageSchema(post: BlogPostDetail) {
       about: { "@id": articleId },
       mainEntity: { "@id": articleId },
       breadcrumb: { "@id": breadcrumbId },
-      primaryImageOfPage: { "@id": imageId },
+      ...(hasImage ? { primaryImageOfPage: { "@id": imageId } } : {}),
       inLanguage: "en-US",
     },
     {
@@ -2855,7 +2871,7 @@ export function createBlogPostDetailPageSchema(post: BlogPostDetail) {
       headline: post.title,
       name: post.title,
       description: post.seo.description,
-      image: { "@id": imageId },
+      ...(hasImage ? { image: { "@id": imageId } } : {}),
       datePublished: `${post.date}T00:00:00+00:00`,
       dateModified: post.modified,
       author: { "@id": authorId },
@@ -2866,16 +2882,20 @@ export function createBlogPostDetailPageSchema(post: BlogPostDetail) {
       isPartOf: { "@id": websiteId },
       inLanguage: "en-US",
     },
-    {
-      "@type": "ImageObject",
-      "@id": imageId,
-      url: imageUrl,
-      contentUrl: imageUrl,
-      width: post.featuredImage.width,
-      height: post.featuredImage.height,
-      caption: post.featuredImage.alt,
-      inLanguage: "en-US",
-    },
+    ...(hasImage && post.featuredImage && imageUrl
+      ? [
+          {
+            "@type": "ImageObject",
+            "@id": imageId,
+            url: imageUrl,
+            contentUrl: imageUrl,
+            width: post.featuredImage.width,
+            height: post.featuredImage.height,
+            caption: post.featuredImage.alt,
+            inLanguage: "en-US",
+          },
+        ]
+      : []),
     {
       "@type": "Person",
       "@id": authorId,
@@ -3892,6 +3912,30 @@ export function createTradeThemeCustomizationPageSchema() {
   });
 }
 
+export function createHorizonThemeCustomizationPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.horizonThemeCustomization,
+    pageUrl: horizonThemeCustomizationPageUrl,
+    pageId: horizonThemeCustomizationPageId,
+    serviceId: horizonThemeCustomizationServiceId,
+    faqId: horizonThemeCustomizationFaqId,
+    breadcrumbId: horizonThemeCustomizationBreadcrumbId,
+    serviceName: "Horizon Theme Customization Service",
+    serviceType: "Shopify Horizon theme customization, nested theme blocks, product discovery, merchandising, responsive design, conversion optimization, Liquid development, and third-party app integration",
+    breadcrumbName: "Horizon Theme Customization Service",
+    audienceType:
+      "eCommerce brands, DTC businesses, and Shopify store owners seeking professional Horizon theme customization",
+    faqs: horizonThemeCustomizationContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: horizonThemeCustomizationContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
 export function createSpotlightThemeCustomizationPageSchema() {
   return createServicePageSchema({
     page: pageSeo.spotlightThemeCustomization,
@@ -4523,6 +4567,30 @@ export function createShopifyMobileAppDevelopmentPageSchema() {
   });
 }
 
+export function createAppmakerShopifyMobileAppDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.appmakerShopifyMobileAppDevelopment,
+    pageUrl: appmakerShopifyMobileAppDevelopmentPageUrl,
+    pageId: appmakerShopifyMobileAppDevelopmentPageId,
+    serviceId: appmakerShopifyMobileAppDevelopmentServiceId,
+    faqId: appmakerShopifyMobileAppDevelopmentFaqId,
+    breadcrumbId: appmakerShopifyMobileAppDevelopmentBreadcrumbId,
+    serviceName: "Appmaker Shopify Mobile App Development",
+    serviceType: "Shopify mobile app builder, iOS app development, Android app development, Appmaker integration, push notifications, native checkout, and mobile app launch",
+    breadcrumbName: "Appmaker Shopify Mobile App Development",
+    audienceType:
+      "Shopify store owners, eCommerce brands, and merchants launching branded iOS and Android apps with Appmaker",
+    faqs: appmakerShopifyMobileAppDevelopmentContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: appmakerShopifyMobileAppDevelopmentContent.features.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+  });
+}
+
 export function createBigCommerceDevelopmentPageSchema() {
   return createServicePageSchema({
     page: pageSeo.bigCommerceDevelopment,
@@ -4741,6 +4809,56 @@ export function createThankYouForEnquiryPageSchema() {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
           { "@type": "ListItem", position: 2, name: "Thank You For Enquiry", item: thankYouForEnquiryPageUrl },
+        ],
+      },
+    ],
+  };
+}
+
+export function createThankYouForShopifyPlusEnquiryPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": thankYouForShopifyPlusEnquiryPageId,
+        url: thankYouForShopifyPlusEnquiryPageUrl,
+        name: pageSeo.thankYouForShopifyPlusEnquiry.title,
+        description: pageSeo.thankYouForShopifyPlusEnquiry.description,
+        datePublished: pageSeo.thankYouForShopifyPlusEnquiry.publishedTime,
+        dateModified: pageSeo.thankYouForShopifyPlusEnquiry.modifiedTime,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        breadcrumb: { "@id": thankYouForShopifyPlusEnquiryBreadcrumbId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl(pageSeo.thankYouForShopifyPlusEnquiry.image.path),
+          width: pageSeo.thankYouForShopifyPlusEnquiry.image.width,
+          height: pageSeo.thankYouForShopifyPlusEnquiry.image.height,
+          caption: pageSeo.thankYouForShopifyPlusEnquiry.image.alt,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": thankYouForShopifyPlusEnquiryBreadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Thank You For Shopify Plus Enquiry",
+            item: thankYouForShopifyPlusEnquiryPageUrl,
+          },
         ],
       },
     ],

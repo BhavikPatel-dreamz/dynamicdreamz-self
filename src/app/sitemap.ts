@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.modified),
     changeFrequency: "monthly",
     priority: 0.6,
-    images: [absoluteUrl(post.image)],
+    images: post.image ? [absoluteUrl(post.image)] : [],
   }));
 
   return [...staticPages, ...caseStudyPages, ...blogPages];

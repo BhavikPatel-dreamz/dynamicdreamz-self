@@ -35,7 +35,7 @@ It covers:
   - `/request-quote`
   - `/book-a-discovery-call`
   - `/blogs`
-  - `/blogs/[slug]` (84 generated article routes)
+  - `/blogs/[slug]` (104 generated article routes)
 
 This is the strategy and implementation record. Visible changes proposed and
 temporarily implemented on 2026-08-12 were rejected and reverted to live-site
@@ -618,12 +618,12 @@ revenue opportunities.
 
 ## Blogs (`/blogs`)
 
-Status: implemented and verified; live-visible archive content and layout preserved
-Last reviewed: 2026-09-01
+Status: implemented and verified; live-visible archive content, Faqs category, and layout preserved
+Last reviewed: 2026-09-21
 
 ### Page role and audience
 
-- Role: indexable article archive and discovery page for Dynamic Dreamz's Shopify, WordPress, and ecommerce guidance.
+- Role: indexable article archive and discovery page for Dynamic Dreamz's Shopify, WordPress, eCommerce, and Faqs guidance.
 - Audience: ecommerce founders, merchant teams, developers, and digital agencies researching platform, migration, CRO, SEO, design, and delivery topics.
 - Decision stage: primarily awareness and consideration, with paths into commercial service and enquiry routes through the shared site navigation.
 
@@ -635,19 +635,20 @@ Last reviewed: 2026-09-01
 
 ### Current evidence and strengths
 
-- The live archive exposes article titles, categories, publication dates, and descriptive thumbnail images in crawlable HTML.
+- The live archive exposes article titles, categories, publication dates, and descriptive thumbnail images in crawlable HTML (or text-only excerpt cards for the Faqs category).
 - The first archive page contains nine current posts and clear links to article detail pages.
-- The repository owns local copies of all 84 archive thumbnails, including 16 assets ingested through the scratch comparison buffer.
+- The repository owns local copies of all archive thumbnails, while FAQ articles intentionally omit thumbnail assets matching live site behavior.
 - The live page includes CollectionPage and BreadcrumbList intent, but it does not describe the visible article list as an ItemList.
 
 ### Recommendations and status
 
 | Priority | Status | Area | Recommendation | Verification / dependency |
 | --- | --- | --- | --- | --- |
-| P0 | implemented | Technical discovery | Ship `/blogs` as a server-rendered, indexable archive with unique metadata, a slashless canonical, breadcrumb schema, CollectionPage schema, and an ItemList matching the nine visible cards. | Verified server-rendered source, metadata, page-specific schema, sitemap, robots, URL policy, lint, and production build on 2026-09-01. |
-| P0 | implemented | Article coverage | Migrate or redirect every linked `/blogs/<slug>` article before launch. | All 84 sitemap/archive article routes are statically generated and verified; unknown slugs return 404. |
-| P1 | implemented | Internal discovery | Preserve the visible search and category controls while giving them functional, crawl-safe archive query behavior instead of the live page's `#` category destinations. | Query and category filters are server-rendered, preserve the default appearance, and keep slashless `/blogs` canonical output. |
-| P1 | implemented | Pagination | Preserve the visible page-two, page-three, and page-ten discovery intent while keeping the archive on one Next.js route with query pagination. | Query URLs `/blogs?page=2` through `/blogs?page=10` render the complete 84-post inventory; legacy `/blogs/page/N` URLs redirect to the query form. |
+| P0 | implemented | Technical discovery | Ship `/blogs` as a server-rendered, indexable archive with unique metadata, a slashless canonical, breadcrumb schema, CollectionPage schema, and an ItemList matching the visible cards. | Verified server-rendered source, metadata, page-specific schema, sitemap, robots, URL policy, lint, and production build on 2026-09-21. |
+| P0 | implemented | Article coverage | Migrate or redirect every linked `/blogs/<slug>` article before launch. | All 104 sitemap/archive article routes (including 19 Faqs category articles) are statically generated and verified; unknown slugs return 404. |
+| P1 | implemented | Internal discovery | Preserve the visible search and category controls (Shopify, WordPress, eCommerce, Faqs) while giving them functional, crawl-safe archive query behavior instead of the live page's `#` category destinations. | Query and category filters are server-rendered, preserve the default appearance, and keep slashless `/blogs` canonical output. |
+| P1 | implemented | Layout fidelity | Support `.blog-col-274` full-width text-only card layout for Faqs category articles without dummy image placeholders. | Verified text-only card rendering with excerpt, no hero image on detail pages, and clean schema generation. |
+| P1 | implemented | Pagination | Preserve the visible page discovery intent while keeping the archive on one Next.js route with query pagination. | Query URLs render the complete 104-post inventory; legacy `/blogs/page/N` URLs redirect to the query form. |
 | P1 | blocked | Authorship and evidence | Add governed author/editor identity and review standards to article detail pages, not the archive, when accurate editorial ownership is approved. | Requires content-governance and author evidence. |
 | P2 | suggested | Measurement | Track archive search, category selection, article-card clicks, and assisted enquiry paths without loading unapproved third-party scripts. | Requires analytics approval and event naming. |
 
@@ -659,14 +660,14 @@ Last reviewed: 2026-09-01
 
 ### Verification result
 
-- The archive renders nine cards on `/blogs`, nine cards on pages 2–9, and three cards on page 10. Search, Shopify/WordPress/eCommerce filters, the hidden Big-Commerce category link, and no-result output were verified locally.
+- The archive renders cards across pages, supports category filtering including `Faqs`, and preserves search and pagination.
 - Metadata emits the live title and description with a slashless /blogs canonical and local Open Graph/Twitter imagery. CollectionPage, BreadcrumbList, and ItemList JSON-LD are emitted for the single archive route with page-aware positions.
-- Local desktop, tablet, and mobile captures match the live first viewport; all 84 thumbnail references resolve to project-owned assets and the repository-wide duplicate audit reports zero hash groups.
+- Local desktop, tablet, and mobile captures match the live first viewport; thumbnail references resolve to project-owned assets and the repository-wide duplicate audit reports zero hash groups.
 
 ## Blog Detail Pages (`/blogs/[slug]`)
 
 Status: implemented; live-visible article content and template contract preserved
-Last reviewed: 2026-09-01
+Last reviewed: 2026-09-21
 Owner: SEO, content, development, leadership, and subject-matter reviewers
 Primary audience: ecommerce merchants, agency teams, developers, marketers, and
 platform decision-makers researching Shopify, WordPress, ecommerce, migration,
@@ -675,7 +676,7 @@ Decision stage: awareness, evaluation, implementation research, and service-part
 
 ### Page role
 
-Canonical first-party article pages for the 84-post blog archive. Each route
+Canonical first-party article pages for the 104-post blog archive. Each route
 must preserve its live title, visible article body, category, dates, author
 presentation, media, FAQ content, table-of-contents intent, and previous/next
 navigation while removing WordPress runtime dependencies.
@@ -689,25 +690,25 @@ navigation while removing WordPress runtime dependencies.
 
 ### Current strengths and available evidence
 
-- The live sitemap and local archive agree on all 84 canonical article slugs.
+- The live sitemap and local archive agree on all 104 canonical article slugs.
 - All article bodies, visible dates, headings, links, featured media, and inline
   media are available from first-party rendered pages and the read-only
   migration export.
 - The route family exposes visible author cards, article categories, FAQs,
   tables, internal links, and post navigation suitable for server rendering.
-- The existing archive already owns local featured images for all 84 posts.
+- Standard posts include local featured images, while Faqs posts omit featured images matching live behavior.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
-| --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route coverage | Archive cards link to 84 article routes | Generate every route through one typed static `/blogs/[slug]` template and return a real 404 for unknown slugs | All 84 generated paths, unknown-slug 404, and production build verified on 2026-09-01 |
-| P0 | implemented | Runtime independence | Article bodies and inline media previously depended on WordPress output | Store sanitized local content and project-owned media with no production live-site dependency | Local JSON content, 283 ingested media references, rendered HTML audit, and zero duplicate asset hashes verified on 2026-09-01 |
-| P0 | implemented | Discovery | Detail routes were absent from the local sitemap | Add all 84 canonical slashless routes with accurate modification dates and local primary images | Sitemap output, canonical metadata, and route inventory verified on 2026-09-01 |
+| --- | --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route coverage | Archive cards link to 104 article routes | Generate every route through one typed static `/blogs/[slug]` template and return a real 404 for unknown slugs | All 104 generated paths, unknown-slug 404, and production build verified on 2026-09-21 |
+| P0 | implemented | Runtime independence | Article bodies and inline media previously depended on WordPress output | Store sanitized local content and project-owned media with no production live-site dependency | Local JSON content, ingested media references, rendered HTML audit, and zero duplicate asset hashes verified |
+| P0 | implemented | Discovery | Detail routes were absent from the local sitemap | Add all 104 canonical slashless routes with accurate modification dates and local primary images (when present) | Sitemap output, canonical metadata, and route inventory verified |
 | P1 | implemented; reviewer governance deferred | Authorship | WordPress API author IDs do not consistently match the visible author card | Model only the visible author name, role, biography, image, and approved profile link captured from the rendered page; add reviewers only after governance approval | Route-level rendered source and local author assets; reviewer identity remains intentionally absent |
-| P1 | implemented | Metadata | 26 titles exceeded the repository limit, 14 descriptions were missing/out of range, and two metadata pairs were duplicated | Preserve visible H1/body copy while using concise route-specific metadata that retains search intent | All 84 records pass the enforced 15-60 title and 70-160 description limits |
-| P1 | implemented | Structured data | Live Article and FAQ graphs varied in quality and sometimes included unrelated sitewide nodes | Emit route-scoped BlogPosting, WebPage, BreadcrumbList, Person, ImageObject, and evidence-matched FAQPage nodes | Server-rendered JSON-LD verified across representative routes and production build |
-| P1 | implemented | Internal links | Article content included historical root article paths and singular case-study paths | Normalize links to canonical local routes and preserve confirmed legacy aliases with explicit redirects | Generated content, redirect rules, and route/link audit verified on 2026-09-01 |
+| P1 | implemented | Metadata | Titles and descriptions conform to repository limits | Preserve visible H1/body copy while using concise route-specific metadata that retains search intent | All 104 records pass the enforced 15-60 title and 70-160 description limits |
+| P1 | implemented | Structured data | Live Article and FAQ graphs varied in quality and sometimes included unrelated sitewide nodes | Emit route-scoped BlogPosting, WebPage, BreadcrumbList, Person, ImageObject (when featured image exists), and evidence-matched FAQPage nodes | Server-rendered JSON-LD verified across representative routes and production build |
+| P1 | implemented | Internal links | Article content included historical root article paths and singular case-study paths | Normalize links to canonical local routes and preserve confirmed legacy aliases with explicit redirects | Generated content, redirect rules, and route/link audit verified |
 | P1 | implemented | Media accessibility | Some inline images had empty or weak alternatives | Preserve accurate alternatives and add concise contextual alt text where the image is content-bearing | All generated image tags have local sources, dimensions, and intentional alt text |
 | P2 | suggested | Evidence depth | Several legacy posts are generic, dated, or weakly sourced | Add practitioner examples, limitations, review dates, and sources only after exact visible-copy approval | Subject-matter and content-owner approval |
 
@@ -9616,3 +9617,112 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 - Primary CTA links directly to `/book-a-discovery-call` for consultation scheduling.
 - Canonical path `/upgrade-to-shopify-plus` added to sitemap and route metadata.
+
+## Route-Specific Strategy: `/horizon-theme-customization`
+
+Audit date: 2026-09-21
+Auditor: Antigravity Migration Team
+Scope: Next.js migration of Horizon theme customization landing page
+Primary search intent: commercial investigation and transactional hiring intent for Shopify merchants seeking expert Horizon theme customization, bespoke Liquid sections, speed optimization, and responsive styling.
+
+Decision stage: platform customization, theme development, store launch, and agency hiring
+
+### Page role
+
+Dedicated commercial theme service landing page providing specialized customization, responsive optimization, custom Liquid block development, and app integration for Shopify's Horizon theme. Features service hero with optimized asset, 6 comprehensive theme customization services, 4-step agile delivery process, 6 reasons to partner with Dynamic Dreamz, client work showcase, and 6 technical FAQs.
+
+### Target prompts
+
+- How to customize Shopify Horizon theme?
+- Who are the best Shopify Horizon theme customization experts?
+- Can I add custom Liquid sections to Shopify Horizon theme?
+- How to optimize Shopify Horizon theme for mobile speed and conversions?
+- What are the costs and timeline for customizing a Shopify Horizon theme?
+
+### Current strengths and available evidence
+
+- 20+ years ecommerce experience and Shopify Platinum Partner credentials.
+- 5,000+ completed projects, 150+ in-house experts, 1,100+ happy clients.
+- 6 targeted service offerings: Custom Design & Layout Modifications, Responsive Mobile Optimization, Custom Liquid & Section Architecture, App & API Integrations, Conversion Rate Optimization (CRO), and Ongoing Support & Maintenance.
+- 6 comprehensive FAQs answering technical Liquid questions, timeline, update compatibility, and pricing.
+- Complete structured data graph: WebPage, Service, FAQPage (6 items), BreadcrumbList, Organization, and WebSite.
+- Clean zero-duplicate asset handling under `public/assets/horizon-theme-customization/hero/`.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route & migration URL | Route required migration | Implemented clean `/horizon-theme-customization` with App Router | Verified with route tests and build |
+| P0 | implemented | Structured data | Missing rich Service and FAQ schema | Emitted complete JSON-LD schema graph matching page facts | Verified in JSON-LD output |
+| P0 | implemented | Asset deduplication | Hero image ingested into buffer, verified SHA-256, optimized WebP | Stored at `public/assets/horizon-theme-customization/hero/horizon-theme-customization-service-img.webp` with 0 duplicate hash groups | Verified with audit script |
+| P1 | deferred | Content expansion | Case studies specific to Horizon theme builds | Queued for future case study expansion once merchant outcomes are documented | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz authority in Shopify Horizon theme customization.
+
+### Entity, evidence, and authorship actions
+
+- Connects directly to the Dynamic Dreamz Organization entity as a Shopify Platinum Partner.
+- Reuses verified agency proof points and customer ratings.
+
+### Internal-link and conversion actions
+
+- Primary CTA links directly to `/contact-us`.
+- Included in sitemap and routes via canonical `/horizon-theme-customization`.
+
+## Route-Specific Strategy: `/appmaker-shopify-mobile-app-development`
+
+Audit date: 2026-09-21
+Auditor: Antigravity Migration Team
+Scope: Next.js migration of Appmaker Shopify Mobile App Development landing page
+Primary search intent: commercial and transactional intent for Shopify and Shopify Plus merchants looking to build native mobile apps using Appmaker with expert agency implementation.
+
+Decision stage: mobile app launch, store-to-app conversion, Appmaker partner selection, and push-notification marketing strategy
+
+### Page role
+
+Dedicated commercial partnership landing page highlighting Dynamic Dreamz's official collaboration with Appmaker to transform Shopify stores into native iOS and Android mobile apps. Features hero with Appmaker integration badge, 4 proof metrics, 6 key benefits of Shopify Appmaker, 4-step seamless transition timeline, client app showcase (Bellavita, Kalki, House of Good Vibes), and 5 detailed FAQs.
+
+### Target prompts
+
+- How to build a Shopify mobile app using Appmaker?
+- What are the benefits of using Appmaker for Shopify stores?
+- Which agency specializes in Appmaker Shopify mobile app development?
+- How does the Appmaker Shopify mobile app transition process work?
+- Is Appmaker secure and scalable for Shopify Plus merchants?
+
+### Current strengths and available evidence
+
+- Official Appmaker partnership positioning alongside Shopify Platinum Partner credentials.
+- 4 verified proof counters: 20+ Years, Platinum Partner, 5,000+ Projects, 150+ In-House Experts.
+- 6 key Appmaker benefits: Fast Time to Market, Native iOS & Android Performance, Real-Time Shopify Catalog Sync, Automated Push Notifications, Higher Mobile Conversion Rates, and Reduced App Overhead.
+- 4-phase transition timeline: Store Analysis, Custom UX/UI Design, Appmaker Configuration & Integration, and App Store Launch.
+- Real client app showcases: Bellavita, Kalki Fashion, and House of Good Vibes.
+- 5 comprehensive FAQs addressing platform capabilities, timeline, security, and pricing.
+- Complete structured data graph: WebPage, Service, FAQPage (5 items), BreadcrumbList, Organization, and WebSite.
+- Reuses existing canonical Appmaker assets with zero asset duplication.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route & migration URL | Route required migration | Implemented clean `/appmaker-shopify-mobile-app-development` with App Router | Verified with route tests and build |
+| P0 | implemented | Structured data | Missing rich Service and FAQ schema | Emitted complete JSON-LD schema graph matching page facts | Verified in JSON-LD output |
+| P0 | implemented | Asset deduplication | Canonical reuse of Appmaker assets | Reused existing assets from `public/assets/services/shopify-mobile-app-development/` with 0 duplicate hash groups | Verified with SHA-256 audit |
+| P1 | deferred | Content expansion | Download links and app store ratings | Queued in `docs/page-content-improvements.md` as suggested; live UI preserved | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz authority in Appmaker Shopify mobile app development.
+
+### Entity, evidence, and authorship actions
+
+- Connects Appmaker partner entity with Dynamic Dreamz Shopify Platinum Partner entity.
+- References real mobile app client deliverables and outcomes.
+
+### Internal-link and conversion actions
+
+- Primary CTA links directly to `/book-a-discovery-call` and secondary CTA links to `#our_work`.
+- Included in sitemap and route metadata via canonical `/appmaker-shopify-mobile-app-development`.
+
