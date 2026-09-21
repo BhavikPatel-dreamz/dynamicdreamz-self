@@ -551,7 +551,15 @@ export async function getPageBySlug(
       preview: options.preview,
     });
 
-    return res?.data?.[0] || null;
+    const first = res?.data?.[0] as
+      | StrapiPage
+      | { id: number; attributes?: Record<string, unknown> }
+      | undefined;
+    if (!first) return null;
+    if ("attributes" in first && first.attributes) {
+      return { ...first.attributes, id: first.id } as unknown as StrapiPage;
+    }
+    return first as StrapiPage;
   } catch (err) {
     console.warn(`Strapi getPageBySlug(${slug}) warning:`, err);
     return null;
