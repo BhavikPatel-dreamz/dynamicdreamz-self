@@ -103,7 +103,6 @@ export async function fetchFromStrapi<T>(
   }
 
   if (options.preview) {
-    url.searchParams.append("publicationState", "preview");
     url.searchParams.append("status", "draft");
   }
 
@@ -115,13 +114,20 @@ export async function fetchFromStrapi<T>(
     headers.Authorization = `Bearer ${STRAPI_TOKEN}`;
   }
 
-  const res = await fetch(url.toString(), {
+  const fetchInit: RequestInit = {
     headers,
-    next: {
+  };
+
+  if (options.preview) {
+    fetchInit.cache = "no-store";
+  } else {
+    fetchInit.next = {
       tags: options.tags || [],
       revalidate: options.revalidate !== undefined ? options.revalidate : 3600,
-    },
-  });
+    };
+  }
+
+  const res = await fetch(url.toString(), fetchInit);
 
   if (!res.ok) {
     throw new Error(`Strapi fetch error [${res.status}]: ${res.statusText} at ${url.pathname}`);
