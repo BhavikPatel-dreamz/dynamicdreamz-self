@@ -117,6 +117,10 @@ export interface StrapiNavGroupElement {
   columns?: number;
   variant?: "default" | "work";
   items?: StrapiNavLinkElement[];
+  promoTitle?: string;
+  promoDetails?: string;
+  promoCtaLabel?: string;
+  promoCtaHref?: string;
 }
 
 export interface StrapiFooterColumnElement {

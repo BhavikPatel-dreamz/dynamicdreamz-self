@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { siteChromeCopy } from "@/content/common";
 import { rootMetadata } from "@/data/seo";
+import { getGlobalSettings } from "@/lib/strapi";
 
 import "./globals.css";
 
@@ -29,7 +30,9 @@ const montserrat = localFont({
 
 export const metadata: Metadata = rootMetadata;
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const globalData = await getGlobalSettings();
+
   return (
     <html
       lang="en"
@@ -42,10 +45,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           {siteChromeCopy.skipToContent}
         </a>
-        <SiteHeader />
+        <SiteHeader globalData={globalData} />
         {children}
-        <SiteFooter />
-        <ContactWidget />
+        <SiteFooter globalData={globalData} />
+        <ContactWidget whatsappNumber={globalData?.whatsappNumber} />
       </body>
     </html>
   );

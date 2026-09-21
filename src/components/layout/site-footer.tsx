@@ -41,7 +41,45 @@ function InstagramIcon() {
   );
 }
 
-function SocialLinks({ className = "" }: { className?: string }) {
+import { cn } from "@/lib/class-names";
+import { adaptStrapiFooterColumns } from "@/lib/strapi";
+import type { NavigationGroup } from "@/data/navigation";
+import type {
+  StrapiFooterColumnElement,
+  StrapiGlobal,
+  StrapiNavLinkElement,
+  StrapiSocialLinkElement,
+} from "@/types/strapi";
+
+function SocialLinks({
+  className = "",
+  socialLinks,
+}: {
+  className?: string;
+  socialLinks?: StrapiSocialLinkElement[] | null;
+}) {
+  if (socialLinks && socialLinks.length > 0) {
+    return (
+      <div className={`flex items-center gap-2.5 ${className}`}>
+        {socialLinks.map((item) => {
+          const isInsta = item.platform.toLowerCase().includes("instagram");
+          return (
+            <a
+              key={`${item.platform}-${item.url}`}
+              className="flex transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red"
+              href={item.url}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              aria-label={`Dynamic Dreamz on ${item.platform}`}
+            >
+              {isInsta ? <InstagramIcon /> : <LinkedinIcon />}
+            </a>
+          );
+        })}
+      </div>
+    );
+  }
+
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
       <a className="flex transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href={siteConfig.social.linkedin} target="_blank" rel="nofollow noopener noreferrer" aria-label="Dynamic Dreamz on LinkedIn"><LinkedinIcon /></a>
@@ -50,26 +88,43 @@ function SocialLinks({ className = "" }: { className?: string }) {
   );
 }
 
-function ContactDetails({ showSocial = true }: { showSocial?: boolean }) {
+function ContactDetails({
+  showSocial = true,
+  email,
+  phoneDisplay,
+  phoneHref,
+  socialLinks,
+}: {
+  showSocial?: boolean;
+  email?: string;
+  phoneDisplay?: string;
+  phoneHref?: string;
+  socialLinks?: StrapiSocialLinkElement[] | null;
+}) {
+  const displayEmail = email || siteConfig.email;
+  const displayPhone = phoneDisplay || siteConfig.phoneDisplay;
+  const hrefPhone = phoneHref || siteConfig.phoneHref;
+
   return (
     <div className="border-t border-ink/10 pt-[15px] max-[992px]:border-0 max-[992px]:pt-0">
       <address className="flex flex-col gap-[15px] not-italic">
-        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={`mailto:${siteConfig.email}`}>
+        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={`mailto:${displayEmail}`}>
           <span className="mr-2.5 flex w-[18px] shrink-0 items-center justify-center text-[#111111]"><MailIcon /></span>
-          <span>{siteConfig.email}</span>
+          <span>{displayEmail}</span>
         </a>
-        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.phoneHref}>
+        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={hrefPhone}>
           <span className="mr-2.5 flex w-[18px] shrink-0 items-center justify-center text-[#111111]"><PhoneIcon /></span>
-          <span>{siteConfig.phoneDisplay}</span>
+          <span>{displayPhone}</span>
         </a>
       </address>
-      {showSocial ? <SocialLinks className="mt-5" /> : null}
+      {showSocial ? <SocialLinks className="mt-5" socialLinks={socialLinks} /> : null}
     </div>
   );
 }
 
-function FooterMenu({ index }: { index: number }) {
-  const group = footerNavigation[index];
+function FooterMenu({ index, navigation }: { index: number; navigation: NavigationGroup[] }) {
+  const group = navigation[index];
+  if (!group) return null;
   return (
     <nav aria-label={`${group.label} links`}>
       <h3 className="mb-2.5 font-montreal-medium text-lg leading-7.5 font-medium">{group.label}</h3>
@@ -84,32 +139,125 @@ function FooterMenu({ index }: { index: number }) {
   );
 }
 
-function PartnershipMenus() {
-  return <div className="flex flex-col gap-[30px]"><FooterMenu index={3} /><FooterMenu index={4} /></div>;
+function PartnershipMenus({ navigation }: { navigation: NavigationGroup[] }) {
+  return (
+    <div className="flex flex-col gap-[30px]">
+      <FooterMenu index={3} navigation={navigation} />
+      <FooterMenu index={4} navigation={navigation} />
+    </div>
+  );
 }
 
-function MoreServices() {
-  return <div className="flex flex-col gap-[15px]"><FooterMenu index={5} /><ContactDetails /></div>;
+function MoreServices({
+  navigation,
+  email,
+  phoneDisplay,
+  phoneHref,
+  socialLinks,
+}: {
+  navigation: NavigationGroup[];
+  email?: string;
+  phoneDisplay?: string;
+  phoneHref?: string;
+  socialLinks?: StrapiSocialLinkElement[] | null;
+}) {
+  return (
+    <div className="flex flex-col gap-[15px]">
+      <FooterMenu index={5} navigation={navigation} />
+      <ContactDetails
+        email={email}
+        phoneDisplay={phoneDisplay}
+        phoneHref={phoneHref}
+        socialLinks={socialLinks}
+      />
+    </div>
+  );
 }
 
-export function SiteFooter() {
+export interface SiteFooterProps {
+  globalData?: StrapiGlobal | null;
+  footerData?: {
+    columns?: StrapiFooterColumnElement[];
+    bottomLinks?: StrapiNavLinkElement[];
+  } | null;
+  company?: {
+    email?: string;
+    phone?: string;
+    address?: string;
+  } | null;
+  footerColumns?: StrapiFooterColumnElement[] | null;
+  footerBottomLinks?: StrapiNavLinkElement[] | null;
+  socialLinks?: StrapiSocialLinkElement[] | null;
+  contactEmail?: string | null;
+  contactPhone?: string | null;
+  copyrightText?: string | null;
+}
+
+export function SiteFooter({
+  globalData,
+  footerData,
+  company,
+  footerColumns,
+  footerBottomLinks,
+  socialLinks,
+  contactEmail,
+  contactPhone,
+  copyrightText,
+}: SiteFooterProps = {}) {
+  const effectiveEmail =
+    contactEmail || company?.email || globalData?.contactEmail || siteConfig.email;
+  const effectivePhone =
+    contactPhone || company?.phone || globalData?.contactPhone || siteConfig.phoneDisplay;
+  const effectivePhoneHref = effectivePhone
+    ? `tel:${effectivePhone.replace(/[^0-9+]/g, "")}`
+    : siteConfig.phoneHref;
+
+  const rawColumns =
+    footerColumns || footerData?.columns || globalData?.footerColumns;
+  const effectiveNavigation: NavigationGroup[] = rawColumns && rawColumns.length > 0
+    ? adaptStrapiFooterColumns(rawColumns)
+    : footerNavigation;
+
+  const effectiveSocial = socialLinks || globalData?.socialLinks;
+  const effectiveBottomLinks =
+    footerBottomLinks || footerData?.bottomLinks || globalData?.footerBottomLinks;
+  const effectiveCopyright = copyrightText || globalData?.copyrightText;
+
   return (
     <footer className="bg-cream text-ink max-[767px]:pb-[70px]">
       <Container className="hidden pt-15 min-[1200px]:flex min-[1200px]:justify-between">
-        <div className="w-[172px]"><FooterMenu index={0} /></div>
-        <div className="w-[200px] min-[1400px]:w-[238px]"><FooterMenu index={1} /></div>
-        <div className="w-[200px] min-[1400px]:w-[235px]"><FooterMenu index={2} /></div>
-        <div className="w-[259px]"><PartnershipMenus /></div>
-        <div className="w-[220px]"><MoreServices /></div>
+        <div className="w-[172px]"><FooterMenu index={0} navigation={effectiveNavigation} /></div>
+        <div className="w-[200px] min-[1400px]:w-[238px]"><FooterMenu index={1} navigation={effectiveNavigation} /></div>
+        <div className="w-[200px] min-[1400px]:w-[235px]"><FooterMenu index={2} navigation={effectiveNavigation} /></div>
+        <div className="w-[259px]"><PartnershipMenus navigation={effectiveNavigation} /></div>
+        <div className="w-[220px]">
+          <MoreServices
+            navigation={effectiveNavigation}
+            email={effectiveEmail}
+            phoneDisplay={effectivePhone}
+            phoneHref={effectivePhoneHref}
+            socialLinks={effectiveSocial}
+          />
+        </div>
       </Container>
 
       <Container className="hidden grid-cols-3 gap-x-10 gap-y-[38px] pt-10 min-[992px]:max-[1199px]:grid">
-        <FooterMenu index={0} /><FooterMenu index={1} /><FooterMenu index={2} /><PartnershipMenus /><MoreServices />
+        <FooterMenu index={0} navigation={effectiveNavigation} />
+        <FooterMenu index={1} navigation={effectiveNavigation} />
+        <FooterMenu index={2} navigation={effectiveNavigation} />
+        <PartnershipMenus navigation={effectiveNavigation} />
+        <MoreServices
+          navigation={effectiveNavigation}
+          email={effectiveEmail}
+          phoneDisplay={effectivePhone}
+          phoneHref={effectivePhoneHref}
+          socialLinks={effectiveSocial}
+        />
       </Container>
 
       <Container className="hidden pt-10 max-[992px]:block">
         <div>
-          {footerNavigation.map((group) => (
+          {effectiveNavigation.map((group) => (
             <details className="group/footer border-b border-ink/10" key={group.label}>
               <summary className="flex cursor-pointer font-montreal-medium list-none items-center justify-between py-[18px] text-base leading-[1.66] font-medium [&::-webkit-details-marker]:hidden">
                 <span>{group.label}</span>
@@ -133,7 +281,13 @@ export function SiteFooter() {
           ))}
         </div>
         <div className="mt-5">
-          <ContactDetails showSocial={false} />
+          <ContactDetails
+            showSocial={false}
+            email={effectiveEmail}
+            phoneDisplay={effectivePhone}
+            phoneHref={effectivePhoneHref}
+            socialLinks={effectiveSocial}
+          />
         </div>
       </Container>
 
@@ -146,16 +300,40 @@ export function SiteFooter() {
       </Container>
 
       <Container className="hidden max-[992px]:block">
-        <SocialLinks className="mt-[30px] justify-center" />
+        <SocialLinks className="mt-[30px] justify-center" socialLinks={effectiveSocial} />
       </Container>
 
       <Container>
         <div className="flex items-center justify-between pt-[30px] pb-[15px] max-[992px]:pt-[30px] max-[992px]:pb-5 max-[767px]:mt-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:gap-[15px] max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-[15px] max-[767px]:pb-[15px] max-[767px]:text-center">
-          <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">{siteChromeCopy.footer.copyrightPrefix} <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> {siteChromeCopy.footer.copyright}</p>
-          <div className="flex max-[767px]:mt-0">
-            <Link className="relative mr-2.5 inline-block pr-3.75 text-sm leading-5 font-normal text-ink transition-colors duration-300 after:absolute after:-top-px after:right-0 after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.termsPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.terms}</Link>
-            <Link className="inline-block text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.privacyPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.privacy}</Link>
-          </div>
+          {effectiveCopyright ? (
+            <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">{effectiveCopyright}</p>
+          ) : (
+            <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">{siteChromeCopy.footer.copyrightPrefix} <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> {siteChromeCopy.footer.copyright}</p>
+          )}
+
+          {effectiveBottomLinks && effectiveBottomLinks.length > 0 ? (
+            <div className="flex max-[767px]:mt-0">
+              {effectiveBottomLinks.map((link, idx) => (
+                <Link
+                  key={`${link.label}-${link.href}`}
+                  className={cn(
+                    "inline-block text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]",
+                    idx < effectiveBottomLinks.length - 1 && "relative mr-2.5 pr-3.75 after:absolute after:-top-px after:right-0 after:content-['|']",
+                  )}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="flex max-[767px]:mt-0">
+              <Link className="relative mr-2.5 inline-block pr-3.75 text-sm leading-5 font-normal text-ink transition-colors duration-300 after:absolute after:-top-px after:right-0 after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.termsPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.terms}</Link>
+              <Link className="inline-block text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.privacyPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.privacy}</Link>
+            </div>
+          )}
         </div>
       </Container>
     </footer>

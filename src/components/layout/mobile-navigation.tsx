@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-import { primaryNavigation, type MegaMenuItem } from "@/data/navigation";
+import { primaryNavigation, type MegaMenuItem, type PrimaryNavigationGroup } from "@/data/navigation";
 import { siteChromeCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
@@ -69,12 +69,19 @@ function MobileItemIcon({ item }: { item: MegaMenuItem }) {
 const topLevelLinkClass =
   "flex w-full items-center justify-between border-0 bg-transparent p-0 pr-2 text-left text-xl leading-[normal] font-semibold text-[#282828]";
 
-export function MobileNavigation() {
+export interface MobileNavigationProps {
+  navigation?: PrimaryNavigationGroup[];
+  contactEmail?: string;
+}
+
+export function MobileNavigation({ navigation, contactEmail }: MobileNavigationProps = {}) {
   const [isOpen, setIsOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const groups = navigation && navigation.length > 0 ? navigation : primaryNavigation;
+  const email = contactEmail || siteConfig.email;
 
   useEffect(() => {
     if (!isOpen) return;
@@ -183,7 +190,7 @@ export function MobileNavigation() {
 
         <nav className="h-[calc(100%-40px)] overflow-y-auto overflow-x-hidden pt-[15px]" aria-label="Mobile navigation">
           <ul className="m-0 list-none p-0">
-            {primaryNavigation.map((group) => {
+            {groups.map((group) => {
               const isGroupOpen = openGroup === group.slug;
               const submenuId = `mobile-${group.slug}-menu`;
 
@@ -256,7 +263,7 @@ export function MobileNavigation() {
               <Link className={topLevelLinkClass} href={siteConfig.contactPath} onClick={closeMenu}>{siteChromeCopy.contactUs}</Link>
             </li>
             <li className="py-6">
-              <a className="block text-xl leading-[normal] font-semibold text-[#d92128] underline" href={`mailto:${siteConfig.email}`} onClick={closeMenu}>{siteConfig.email}</a>
+              <a className="block text-xl leading-[normal] font-semibold text-[#d92128] underline" href={`mailto:${email}`} onClick={closeMenu}>{email}</a>
             </li>
           </ul>
         </nav>
