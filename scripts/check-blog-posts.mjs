@@ -23,7 +23,7 @@ function assertAsset(asset, label) {
 }
 
 const index = JSON.parse(fs.readFileSync(indexPath, "utf8"));
-if (!Array.isArray(index) || index.length !== 104) fail(`Expected 104 blog index entries; found ${index.length}.`);
+if (!Array.isArray(index) || index.length !== 103) fail(`Expected 103 blog index entries; found ${index.length}.`);
 const slugs = new Set();
 for (const entry of index) {
   if (slugs.has(entry.slug)) fail(`Duplicate blog slug: ${entry.slug}`);

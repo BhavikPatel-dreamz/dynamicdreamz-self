@@ -94,8 +94,8 @@ export const primaryNavigation: PrimaryNavigationGroup[] = [
         icon: headerIcon("shopify-mobile-app-development"),
       },
       {
-        label: "Hire Shopify Developers",
-        href: "/hire-shopify-developers",
+        label: "Hire Shopify Experts",
+        href: "/shopify-experts",
         description: "Experienced Shopify capacity for your team.",
         icon: headerIcon("hire-shopify-developers"),
       },

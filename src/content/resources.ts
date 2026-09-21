@@ -377,18 +377,18 @@ export const resourceArticles = [
     "title": "Complete Shopify Outsourcing Checklist With 10 Official Tips"
   },
   {
-    "href": "/blogs/transform-your-store-with-a-complete-magento-web-development-guide",
+    "href": "/blogs/magento-web-development",
     "image": "/assets/blog/transform-your-store-with-a-complete-magento-web-development-guide.webp",
     "width": 1024,
     "height": 515,
-    "categoryHref": "/blogs/category/shopify",
-    "category": "Shopify",
+    "categoryHref": "/blogs/category/ecommerce",
+    "category": "eCommerce",
     "displayDate": "March 10, 2026",
     "date": "2026-03-10",
     "title": "Transform Your Store With A Complete Magento Web Development Guide"
   },
   {
-    "href": "/blogs/what-are-the-risks-of-shopify-outsourcing-get-details-now",
+    "href": "/blogs/risks-of-shopify-outsourcing",
     "image": "/assets/blog/what-are-the-risks-of-shopify-outsourcing-get-details-now.webp",
     "width": 1024,
     "height": 515,

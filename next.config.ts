@@ -209,6 +209,26 @@ const nextConfig: NextConfig = {
         destination: "/blogs/:slug",
         permanent: true,
       },
+      {
+        source: "/blogs/what-are-the-risks-of-shopify-outsourcing-get-details-now",
+        destination: "/blogs/risks-of-shopify-outsourcing",
+        permanent: true,
+      },
+      {
+        source: "/blogs/transform-your-store-with-a-complete-magento-web-development-guide",
+        destination: "/blogs/magento-web-development",
+        permanent: true,
+      },
+      {
+        source: "/what-are-the-risks-of-shopify-outsourcing-get-details-now",
+        destination: "/blogs/risks-of-shopify-outsourcing",
+        permanent: true,
+      },
+      {
+        source: "/transform-your-store-with-a-complete-magento-web-development-guide",
+        destination: "/blogs/magento-web-development",
+        permanent: true,
+      },
       ...legacyBlogSlugs.map((slug) => ({
         source: `/${slug}`,
         destination: `/blogs/${slug}`,
