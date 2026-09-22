@@ -2,10 +2,31 @@
 
 Live URL: `https://www.dynamicdreamz.com/request-quote/`
 Local route: `/request-quote`
-Date checked: 2026-08-19
+Date checked: 2026-09-22
 Browser/source: Google Chrome headless screenshots, rendered live page + View Page Source, live page-specific CSS (`assets/css/request-quote/main.css`, `assets/css/request-quote/media.css`, `assets/css/header-two.css`, `assets/css/default-media.css`, `style.css`), and local component/asset audit.
 
-## Viewports
+## 2026-09-22 Full 1:1 Live Parity Remigration
+
+- Complete structural, content, counter, and visual audit of `https://www.dynamicdreamz.com/request-quote/`.
+- Updated Left-column Deliver Counters:
+  - Live active `deliver-wrapper` has 3 counters: `Experience: 20+ Years`, `Projects: 5000+`, `Experts: 150+` (previously local had `Happy Clients: 1100+`).
+  - Added optional `unit` support in `QuoteLeftColumn` for `Years` sub-label (`text-base font-bold ml-2`).
+- Form Field Parity:
+  - Verified `Full Name *`, `Email *`, `Mobile Phone` (empty placeholder matching live `<input type="tel">`), `Company name`, `Website URL`, `Estimated Budget (in US $)` with `Select your budget` default option, `Brief about the project` textarea, and `submit inquiry` button.
+- Badges & Testimonial Slider:
+  - 4 verified review/partner badges (Shopify Platinum Partners, Clutch, Upwork Top Rated, Trustpilot).
+  - 7 authentic client testimonials with 48px avatars, 5 stars, quotes, and prev/next slider navigation.
+- Header & Footer:
+  - `HeaderTwo` dedicated logo + Go Back button with `history.back()`.
+  - Global `SiteHeader` cleanly hidden on `[data-page="request-quote"]`.
+  - Live site `footer.site-footer` rendered via root layout.
+
+| Viewport | Live screenshot | Local screenshot | Status |
+| --- | --- | --- | --- |
+| 1440x900 | `docs/visual-captures/source/request-quote/live-desktop-1440x900.png` | `docs/visual-captures/source/request-quote/local-desktop-1440x900.png` | passed; 1:1 visual match |
+| 375x812 | `docs/visual-captures/source/request-quote/live-mobile-375x812.png` | `docs/visual-captures/source/request-quote/local-mobile-375x812.png` | passed; responsive alignment matching |
+
+## Viewports (Historical)
 
 | Viewport | Live screenshot | Local screenshot | Status |
 | --- | --- | --- | --- |

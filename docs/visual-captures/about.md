@@ -2,8 +2,37 @@
 
 Live URL: `https://www.dynamicdreamz.com/about-us/`
 Local route: `/about-us`
-Date checked: 2026-08-13
+Date checked: 2026-09-22
 Browser: Google Chrome (Chromium, headless capture)
+
+## 2026-09-22 Full 1:1 Live Parity Remigration
+
+- Complete structural, content, and visual audit of `https://www.dynamicdreamz.com/about-us/`.
+- 8-Section Live Architecture:
+  1. Hero: `inner-hero-sec left-shape right-shape`, H1 `Agile. Adept. Accurate.`, live description paragraph.
+  2. Delivery Counter: `team-deliver-sec` (`id="team_deliver_sec"`), H2 `A Team that always delivers`, 3 counter blocks matching live odometer values (`Years of Experience: 20+`, `Projects: 5000+`, `Experts: 150+`).
+  3. Story / Video: `we-are-dyanamic-dreamz-sec`, H2 `Hey, We Are Dynamic Dreamz`, live description, YouTube dialog (`0GEJ928rBnM`), poster `/assets/about/hero-video-poster.webp`, overlay `/assets/about/we-are-dynamic-dreamz.svg`, and live caption `Inside Dynamic Dreamz — a look at our office, team and everyday work.`.
+  4. Timeline: `how-we-started`, H2 `How we started`, live description, 10 milestones:
+     - 2006: Foundation by 3 engineers
+     - 2008: First 2 hires & Surat office
+     - 2012: Collaboration with OneIT Australia
+     - 2015: Spacious central Surat office
+     - 2020: Ahmedabad development centre
+     - 2023: Top 10 Shopify developers by Upwork
+     - 2024: 150+ strong expert team and **Shopify Plus Partner**
+     - 2025: **Shopify Premier Partner** status
+     - 2026: **Shopify Platinum Partner** and full-stack/AI capabilities expansion
+     - Future milestones card
+  5. Founders: `our-founders-sec`, Eyebrow `Our Team`, H2 `The People Behind Dynamic Dreamz`, description, 3 co-founders (Virag Shah, Gaurav Shah, Sanjay Patel) with LinkedIn buttons.
+  6. Key Managers: `our-founders-sec other-team key-managers`, 4 key managers (Mr. Tejal Parekh, Mr. Rishabh Shah, Ms. Mahima Vyas, Mr. Ravindra Chauhan).
+  7. Department Leads: `our-founders-sec other-team`, 16 department leads and associate team leads.
+  8. Core Values: `theme-customization-services transparent`, H2 `Our Core Values`, live description, 6 white card boxes with red vector SVG icons (`Integrity`, `Adaptability`, `Transparency`, `Client Centric Approach`, `User Centric Design`, `Quality Assurance`) reusing `ThemeCustomizationServicesSection` with `variant="transparent"`.
+  - No bottom CTA banner (matches live site directly followed by footer).
+
+| Viewport | Current live screenshot | Post-migration local screenshot | Status |
+| --- | --- | --- | --- |
+| 1440x900 | `docs/visual-captures/source/about/live-desktop-1440x900.png` | `docs/visual-captures/source/about/local-desktop-1440x900.png` | passed; 1:1 visual match |
+| 375x812 | `docs/visual-captures/source/about/live-mobile-375x812.png` | `docs/visual-captures/source/about/local-mobile-375x812.png` | passed; responsive layout matching |
 
 ## 2026-08-18 Video Poster Overlay
 

@@ -868,10 +868,9 @@ superlatives.
 
 ## About Us (`/about-us`)
 
-Status: technical improvements implemented; visible copy deferred and live UI
-restored on 2026-08-13
+Status: 1:1 live parity remigrated; metadata, schema, timeline (through 2026 Platinum Partner), counters (20+ years, 5000+ projects, 150+ experts), and transparent core values updated on 2026-09-22
 
-Last reviewed: 2026-08-13
+Last reviewed: 2026-09-22
 
 Owner: SEO, content, development, and business stakeholders
 
@@ -884,27 +883,26 @@ Dynamic Dreamz.
 ### Current strengths
 
 - The page includes founding history from 2006 through Shopify Platinum Partner
-  recognition in 2025.
-- Leadership and department expertise are visible.
-- Founder LinkedIn links and biographies are present.
-- The page includes a company video, team size, project/client statistics, and
-  values.
+  expansion in 2026 across ecommerce, web, mobile, full-stack, and AI solutions.
+- Leadership and department expertise are visible with 3 co-founders, 4 key managers, and 16 department leads.
+- Founder LinkedIn links and biographies are present and linked in Person structured data.
+- The page includes a company video with caption, team size (150+ experts), experience (20+ years), projects delivered (5000+), and 6 core values.
 - `AboutPage`, Organization, founder Person, breadcrumb, primary image, and
   VideoObject nodes are present.
+- 1:1 parity with live 8-section layout without trailing slash or extraneous bottom CTA banner.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Implemented improvement or dependency |
 | --- | --- | --- | --- | --- |
-| P0 | deferred | H1 clarity | “Agile. Adept. Accurate.” does not identify the page/entity | The entity-first H1 proposal was reverted to the live wording on 2026-08-13; reintroduce only after explicit content approval |
-| P0 | blocked | Founder titles | Two founders are listed as Co-Founder & CEO | Existing titles remain unchanged until authoritative confirmation is available |
-| P0 | blocked by live parity | Milestone proof | “Top 10 Shopify developers by UpWork” has no approved visible source | The live claim was restored on 2026-08-13; obtain evidence or explicit approval before launch |
-| P1 | deferred | Hero description | Introduction is broad and grammatically dated | Entity-first copy was reverted to the live introduction on 2026-08-13; retain the proposal for content approval |
-| P1 | partially implemented | Founder biographies | Visible biographies remain brief | Existing biographies, local images, and available LinkedIn profiles now supply Person nodes; deeper expertise needs approved content |
-| P1 | implemented | Person schema | Founder nodes contained only name and job title | Three stable Person nodes now include visible biography, image, profile where available, and Organization relationship |
-| P1 | partially implemented | Office/entity facts | The page does not contain a dedicated contact-facts block | Shared Organization schema contains both offices; the proposed visible hero facts were reverted and a Contact route remains migration pending |
-| P1 | deferred | Timeline copy | Several milestones have grammar problems or vague wording | Edited timeline copy was reverted to live on 2026-08-13; retain as a future content proposal |
-| P1 | implemented | Freshness | AboutPage used build time | Schema and sitemap now use the explicit 2026-08-13 final parity-review date |
+| P0 | implemented | Live parity | Previous timeline ended at 2025; counters did not include years of experience; core values lacked 1:1 layout | Remigrated on 2026-09-22 with live 3-stat counter (20+ years, 5000+ projects, 150+ experts), 2026 Platinum Partner milestone, and transparent core values grid |
+| P0 | deferred | H1 clarity | “Agile. Adept. Accurate.” does not identify the page/entity | Preserved live wording per migration rules; reintroduce entity-first H1 only after explicit content approval |
+| P0 | blocked | Founder titles | Two founders are listed as Co-Founder & CEO | Existing live titles remain unchanged until authoritative confirmation is available |
+| P0 | blocked by live parity | Milestone proof | “Top 10 Shopify developers by UpWork” has no approved visible source | Preserved exact live claim per migration rules; obtain evidence or explicit approval before launch |
+| P1 | implemented | Freshness | AboutPage dateModified needed live sync | Updated metadata and schema to match live Yoast modified date 2026-09-18T09:50:40+00:00 |
+| P1 | partially implemented | Founder biographies | Visible biographies remain brief | Existing biographies, local images, and available LinkedIn profiles supply Person nodes; deeper expertise needs approved content |
+| P1 | implemented | Person schema | Founder nodes contained only name and job title | Three stable Person nodes include visible biography, image, profile where available, and Organization relationship |
+| P1 | partially implemented | Office/entity facts | The page does not contain a dedicated contact-facts block | Shared Organization schema contains both offices; Contact route remains migration pending |
 | P2 | deferred | Department expertise | Leaders are not connected to service authority | Add approved expert authorship/review relationships when service and article pages are migrated |
 
 ### Suggested hero copy
@@ -2560,14 +2558,14 @@ summary, claim qualification, or grammar correction remains approval-dependent.
 
 ## Hire Shopify Developers (`/hire-shopify-developers`)
 
-Status: implemented and verified; visible recommendations deferred
-Last reviewed: 2026-08-19
+Status: implemented and verified; full 1:1 live parity with refreshed 9-section architecture
+Last reviewed: 2026-09-22
 Primary audience: ecommerce founders, direct-to-consumer brands, and digital agencies looking to hire dedicated Shopify developers or complete Shopify engineering teams.
 Decision stage: vendor selection, staffing model evaluation, technical scoping, and quote request.
 
 ### Page role
 
-This page targets the commercial intent for hiring dedicated Shopify developers. It communicates Dynamic Dreamz's 20+ years of experience, 4500+ Shopify stores built, and Shopify Platinum Partner standing while presenting a structured 4-step hiring process, comprehensive Shopify services, advantages, industry expertise, featured Shopify portfolio work, video testimonials, and FAQs.
+This page targets the commercial intent for hiring dedicated Shopify developers. It communicates Dynamic Dreamz's 20+ years of experience, 4500+ Shopify stores built, and Shopify Platinum Partner standing while presenting a structured 4-step hiring process, comprehensive Shopify services, advantages, featured Shopify portfolio work, video testimonials, and FAQs.
 
 ### Target prompts
 
@@ -2579,17 +2577,23 @@ This page targets the commercial intent for hiring dedicated Shopify developers.
 
 ### Current strengths and available evidence
 
-- Server-rendered H1, 5-stat counter strip (5000+ projects, 150+ experts, 1100+ happy clients, 1B+ revenue generated, 4500+ Shopify stores built), and rotating review badge animation.
-- Structured 4-step developer hiring process with step badges and icons.
-- 4 Shopify core service cards, 3 why-choose proof cards with hover gradient outlines, and 6 developer advantages.
-- 5 industry domain showcases, 6 portrait Shopify portfolio showcases, customer video testimonials carousel, and 5 detailed hiring FAQs.
+- Server-rendered H1 hero with dual eyebrow ("Established in 2006" & "Shopify Platinum Partner"), single CTA button (`Hire Shopify Developers` -> `/request-quote`), 4 partner badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), and right-side video preview (`why-dynamic-dreamz.mp4`).
+- Trusted by Leading Brands strip with 12 client logos on `#FBEED5`.
+- Why Choose Dynamic Dreamz for Shopify Development section on `#fafaf7` with 3 feature cards and red vector SVG icons.
+- Hassle free Hiring Process section with 4 numbered steps on transparent background.
+- Advantages section on pista background `#eff4ef` with 6 card boxes and red vector SVG icons.
+- End to End Development Services grid with 4 cards and red vector SVG icons on `#fafaf7`.
+- Portfolio work section with 8 featured Shopify projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz) and "View our work" CTA.
+- Customer Testimonials section with 11 video testimonial cards carousel and YouTube popup triggers.
+- Frequently Asked Questions section with 5 comprehensive accordion items in split layout.
+- Bottom CTA banner omitted to match the live site layout exactly.
 - Emits WebPage, Service, OfferCatalog, FAQPage, BreadcrumbList, and Organization JSON-LD schemas.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Discovery and conversion | Live inquiry CTA originally pointed to career route | Route hiring CTAs canonically to `/request-quote` | Verified route intent and schema |
+| P0 | implemented | Route parity | Live site refreshed section architecture | Rebuilt 9-section architecture matching live site 1:1 | Inspected live DOM & CSS |
 | P0 | implemented | Structured data | Missing rich Service, FAQPage, and BreadcrumbList schema | Emit complete Service with FAQPage and OfferCatalog schemas | Verified JSON-LD in production build |
 | P1 | deferred | Rate transparency | Hourly and dedicated rate bands are not publicly listed | Provide governed developer pricing ranges once sales approves | Sales and leadership approval |
 
@@ -2621,7 +2625,9 @@ Preserve the live visible copy during migration. Future approved answer copy sho
 ### Verification and remaining gaps
 
 - URL-policy review: canonical, Open Graph, sitemap, robots, and JSON-LD use slashless `/hire-shopify-developers`.
-- Visual parity verified across 1440px, 768px, and 390px viewports with zero layout shift.
+- Visual parity verified across 1440px desktop and 375px mobile viewports with zero layout shift.
+- Component content check passed with zero violations.
+- Asset duplicate audit verified with 0 duplicate groups.
 
 ## Hire WordPress Developers (`/hire-wordpress-developers`)
 
@@ -2822,9 +2828,9 @@ capabilities. Future visible copy improvements are tracked in
 
 ## Request a Quote (`/request-quote`)
 
-Status: implemented and verified; live-visible content preserved
+Status: implemented and verified; 1:1 live parity confirmed on 2026-09-22
 
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-22
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -2834,7 +2840,7 @@ Decision stage: inbound lead capture, project discovery, proposal estimation, an
 
 ### Page role
 
-Primary commercial inbound conversion and project estimation route. Connects potential clients directly to Dynamic Dreamz representatives through a structured project inquiry form, supported by brand credibility proof (5000+ projects, 150+ experts, 1100+ happy clients), 4 verified partner/review badges (Shopify Platinum Partners, Clutch, Upwork Top Rated, Trustpilot), and a 7-client testimonial slider.
+Primary commercial inbound conversion and project estimation route. Connects potential clients directly to Dynamic Dreamz representatives through a structured project inquiry form, supported by brand credibility proof (Experience 20+ Years, 5000+ Projects, 150+ Experts), 4 verified partner/review badges (Shopify Platinum Partners, Clutch, Upwork Top Rated, Trustpilot), and a 7-client testimonial slider.
 
 ### Target prompts
 
@@ -2847,7 +2853,7 @@ Primary commercial inbound conversion and project estimation route. Connects pot
 ### Current strengths and available evidence
 
 - High-visibility conversion route with minimal friction: clean 7-input inquiry form with budget selectors and project brief.
-- Server-rendered proof points: 5000+ Projects, 150+ Experts, 1100+ Happy Clients.
+- Server-rendered proof points: Experience 20+ Years, 5000+ Projects, 150+ Experts matching live deliver-wrapper.
 - 4 independent review and partner badges linking to external verification profiles (Shopify Partner Directory, Clutch, Upwork, Trustpilot).
 - 7 authentic client testimonials with avatars and quotes (Alec Torelli, William Petz, William ST Baker, Kerri Imrie, Brandon, Shari Leidich, Rebekah Wymer).
 - Clean `header-two` layout with direct back-navigation and home branding.
@@ -2858,23 +2864,22 @@ Primary commercial inbound conversion and project estimation route. Connects pot
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | CTA integrity | Live `inquire now` points to `/career/`. | Route the unchanged CTA label to `/request-quote`. | Conversion intent and existing quote route |
-| P1 | implemented | Structured data | Live page schema is a sitewide graph with unrelated FAQ questions and trailing-slash URLs. | Emit route-scoped WebPage, Service, BreadcrumbList, and FAQPage data with slashless URLs matching visible content. | Visible page content and local route policy |
-| P1 | deferred | Proof definitions | Counters use `50+`, `5000+`, `20+`, and `1000+` without source dates or definitions. | Add approved definitions/provenance in supporting content without changing the visible counter design. | Leadership/client-success approval |
-| P1 | deferred | Visible copy | Several headings and paragraphs contain grammar issues such as `What do Shopify developers do?` and `End to End`. | Queue exact replacements for owner approval; preserve live wording during migration. | Exact visible-copy approval |
-| P2 | deferred | Evidence depth | Portfolio cards link to external stores but lack internal scope/case-study context. | Add approved case studies with delivery scope and verified outcomes. | Client-success approval and case-study routes |
+| P0 | implemented | Counter parity | Previous counters displayed Happy Clients instead of Experience; live site displays Experience 20+ Years, 5000+ Projects, 150+ Experts | Remigrated on 2026-09-22 with live 3-stat counter block | Live deliver-wrapper inspection |
+| P0 | implemented | Form fields | Phone placeholder and budget option styling verified against live WP form | Empty phone placeholder matching live `<input type="tel">` and live budget selector options | Live form inspection |
+| P1 | implemented | Structured data | Live page emits a sitewide graph with trailing-slash URLs | Emit route-scoped ContactPage, Organization, WebSite, and BreadcrumbList with slashless URLs matching visible content | Visible page content and local route policy |
+| P1 | deferred | Copy clarity | Form heading uses conversational tone `Let’s schedule a call or chat :)` | Retain live heading per migration rules; propose formal alternative only with explicit stakeholder approval | Exact visible-copy approval |
 
 ### Structured-data, crawler, and freshness actions
 
-- Keep `/hire-shopify-developers` in sitemap output and use slashless canonical/Open Graph URLs.
-- Ensure FAQ structured data contains only the five visible Shopify hiring questions and answers.
-- Keep image alt text subject-specific and use local project-owned media only.
+- Keep `/request-quote` in sitemap output and use slashless canonical/Open Graph URLs.
+- Ensure ContactPage structured data accurately represents the inbound consultation and quote workflow.
+- Keep testimonial avatars and proof badges project-owned and locally served.
 
 ### Verification and remaining gaps
 
-- Checked: live source, screenshots, metadata, JSON-LD, linked hiring CSS/JS, local assets, responsive contract, and CTA destinations.
-- Implemented: route content, local media reuse, route-scoped metadata/schema, and quote CTA correction.
-- Deferred: visible copy corrections, counter provenance, and internal case-study evidence pending approval.
+- Checked: live source, screenshots, metadata, JSON-LD, header-two layout, deliver-wrapper counters, review badges, testimonial slider, form fields, and responsive behavior.
+- Implemented: route content, local media reuse, route-scoped metadata/schema, 20+ Years experience counter, and live form field matching.
+- Verified: `check:urls`, `check:component-content`, `check:asset-duplicates`, `npm run lint`, and `npm run build` pass.
 
 ## Case Studies (`/case-studies`)
 
