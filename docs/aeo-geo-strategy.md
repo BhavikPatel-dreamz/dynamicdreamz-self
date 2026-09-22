@@ -9104,8 +9104,8 @@ Owner: SEO, content, and development
 
 ## Shopify Development in Pune (`/shopify-development-in-pune`)
 
-Status: technical and schema implementation complete; visible copy preserved per live site
-Last reviewed: 2026-09-02
+Status: technical and schema implementation complete; remigrated to exact live site visual parity with 11 sections
+Last reviewed: 2026-09-22
 Owner: SEO, content, and development
 
 ### Page Role and Buyer Intent
@@ -9116,28 +9116,31 @@ Owner: SEO, content, and development
 
 ### Visible Content and Evidence Available
 
-- H1: "#1 Company For Shopify Development in Pune" establishing local leadership.
-- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
-- Trusted brands slider: 10 brand proof logos (POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company).
-- Value proposition box: "Choose Dynamic Dreamz as the Best Shopify Development Company in Pune".
-- Platform benefit cards (5 cards): Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable.
-- Service offerings grid (8 services): Shopify Plus Store Development Service, Shopify Theme Customization Service, Figma/XD to Shopify Conversion, Shopify App Integration Service, Shopify Migration Service, Shopify Maintenance Service, Shopify 2.0 Migration Service, Shopify White Label Development Service.
-- 4-step delivery process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support.
-- 5 agency reason cards: Skilled Shopify Developers, Tailored Solutions, User Centric Design, Comprehensive Services, Proven Success.
-- 8 portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
-- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
-- 5 interactive FAQs covering development agency definition, reasons to choose Shopify, store pricing, post-launch support, and onboarding steps.
-- Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
+- Eyebrows: "Shopify Development" • "Pune" with red-dash styling.
+- H1: "#1 Company For Shopify Development in Pune".
+- Primary CTA: "Get In Touch" -> "/request-quote".
+- Secondary CTA: "Explore Shopify Services" -> "#services".
+- Hero graphic: Interactive 7-slide tablet showcase slider (Bella Vita, Bombay Shirt Company, Kalki Fashion, Nokt-1, Ranavat, Rare Rabbit, Renee Cosmetics) with 4 verified partner badges (Shopify Platinum Partner, Clutch 4.9 rating, Trustpilot 4.9 TrustScore, Upwork Top Rated Plus).
+- Trusted brands slider: 12 canonical brand logos (`industryBrandLogos`).
+- Counter section: Eyebrow "Shopify Development Company in Pune", H2 "Choose Dynamic Dreamz as the Best Shopify Development Company in Pune", description, and 4 stat counters (20+ Years, 60+, 150+, 5,000+).
+- Platform benefit cards (5 cards): Eyebrow "Why Shopify", H2 "Why Choose Shopify for Your Business?", description, and 5 cards with 24x24 icons (Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable).
+- Service offerings grid (8 services): Eyebrow "Shopify Services in Bangalore / Bengaluru" (preserved live wording), H2 "Our Shopify Development Services", description, and 8 service cards (Shopify Plus Store Development, Custom Shopify Theme Design & Customization, Figma/XD to Shopify Conversion, Shopify App Integration & Customization, Seamless Shopify Migration, Shopify Store Maintenance & Support, Shopify 2.0 Upgrade & Migration, White Label Shopify Development).
+- 4-step delivery process: Eyebrow "How We Work", H2 "Our Development Process", description, and 4 process steps (Step 01 to Step 04).
+- 5 agency reason cards: Eyebrow "Why Dynamic Dreamz", H2 "Why Choose Us for Your Shopify Development Needs?", description, and 5 cards in a 5-column grid (Skilled Shopify Developers, Tailored Solutions, User Centric Design, Comprehensive Services, Proven Success).
+- 8 portfolio showcase items: Eyebrow "Portfolio", H2 "Our Work", description, 8 live project cards (Renee, 11 11, Bombay Shirt Company, Royce Chocolate, Tropicfeel, TEGO Fit, nekter juice bar, Rare Rabbit) with `cardVariant="ourWorkRefresh"` and "View our work" CTA.
+- Verified client video testimonials carousel: Eyebrow "Client Stories", H2 "Don't Just Take Our Word For It", description, and 11 video testimonial cards with modal video player.
+- 5 interactive FAQs in split 2-column layout (`SplitFaqSection`) covering development agency definition, reasons to choose Shopify, store pricing, post-launch support, and onboarding steps.
+- Primary conversion CTA banner: "Want us to help you with your online store?" -> "request a quote" (`/request-quote`).
 
 ### Structured Gap Analysis
 
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-pune` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | 11 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | 100% canonical assets available in codebase | Reused existing assets across hero graphic, brand logos, badges, service icons, and portfolio images | Verified duplicate hash groups: 0 |
+| P0 | implemented | Route discovery | Route migrated in App Router | Build `/shopify-development-in-pune` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | Full visual parity with live site | Implemented 11 exact live sections using `CityPageHeroSection`, `IndustryBrandsSection`, `CityPageCounterSection`, `CityWhyChooseBoxesSection`, `AgencyServicesSection`, `OurDevelopmentProcessSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across desktop, tablet, and mobile |
+| P0 | implemented | Asset deduplication | 100% canonical assets available in codebase | Reused existing canonical assets across hero tablet slider, brand logos, badges, service icons, and portfolio images; 0 new files ingested | Verified duplicate hash groups: 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createShopifyDevelopmentInPunePageSchema()` | Validated JSON-LD graph |
-| P1 | deferred | Visible copy enhancement | Minor phrasing redundancy in FAQ 5 ("As the best Shopify development company in Pune, so We’ll schedule a consultation") | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+| P1 | deferred | Visible copy enhancement | Minor phrasing redundancy in FAQ 5 ("As the best Shopify development company in Pune, so We’ll schedule a consultation") and Bangalore eyebrow in services section | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
 
 
 ## Shopify Development in Bangalore (`/shopify-development-in-bangalore`)

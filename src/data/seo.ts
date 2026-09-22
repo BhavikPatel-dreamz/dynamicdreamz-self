@@ -3400,11 +3400,11 @@ export const pageSeo = {
   },
   shopifyDevelopmentInPune: {
     path: "/shopify-development-in-pune",
-    title: "No.1 Shopify Development in Pune | Dynamic Dreamz",
+    title: "Shopify Development Company in Pune | Dynamic Dreamz",
     description:
-      "Best Shopify development in Pune. Expert Shopify Development Company with 18+ years of experience for custom store setup, theme customization, migration & more.",
+      "Shopify development company in Pune offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     socialDescription:
-      "Top-rated Shopify development company in Pune. Certified developers for custom stores, Plus upgrades, themes, app integrations, and migrations.",
+      "Shopify development services in Pune for custom stores, themes, migrations, app integrations, Shopify Plus and ongoing support.",
     keywords: [
       "Shopify development in Pune",
       "Shopify development company in Pune",

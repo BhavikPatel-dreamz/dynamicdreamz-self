@@ -5204,16 +5204,10 @@ export function createShopifyDevelopmentInPunePageSchema() {
       question: item.question,
       answer: item.answer.replace(/<[^>]+>/g, " "),
     })),
-    offers: [
-      ...shopifyDevelopmentPuneContent.services.items.map((item) => ({
-        title: item.title,
-        description: item.description,
-      })),
-      ...shopifyDevelopmentPuneContent.reasons.items.map((item) => ({
-        title: item.title,
-        description: item.description,
-      })),
-    ],
+    offers: shopifyDevelopmentPuneContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
