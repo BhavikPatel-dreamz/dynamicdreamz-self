@@ -94,9 +94,9 @@ export const pageSeo = {
   },
   about: {
     path: "/about-us",
-    title: "About Dynamic Dreamz | Shopify & Web Development Team",
+    title: "About Dynamic Dreamz | Web,Ecommerce & App Development",
     description:
-      "Founded in 2006, Dynamic Dreamz is a Shopify Platinum Partner with 150+ experts delivering ecommerce, web, mobile and digital commerce solutions.",
+      "Learn about Dynamic Dreamz, a web,ecommerce and app developmentcompany established in 2006 with 150+experts and 5,000+ projects deliveredworldwide.",
     keywords: [
       "about Dynamic Dreamz",
       "web development company",
@@ -106,7 +106,7 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-05-02T09:06:11+00:00",
-    modifiedTime: "2026-08-13T00:00:00+05:30",
+    modifiedTime: "2026-09-18T09:50:40+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,

@@ -22,6 +22,7 @@ export function AboutStorySection() {
             overlay="/assets/about/we-are-dynamic-dreamz.svg"
             overlayHeight={38}
             overlayWidth={940}
+            overlayCaption={aboutStory.caption}
             poster="/assets/about/hero-video-poster.webp"
             posterAlt="Dynamic Dreamz team collaborating in the Surat office"
             sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1199px) 680px, (max-width: 1399px) 1140px, 1320px"

@@ -868,10 +868,9 @@ superlatives.
 
 ## About Us (`/about-us`)
 
-Status: technical improvements implemented; visible copy deferred and live UI
-restored on 2026-08-13
+Status: 1:1 live parity remigrated; metadata, schema, timeline (through 2026 Platinum Partner), counters (20+ years, 5000+ projects, 150+ experts), and transparent core values updated on 2026-09-22
 
-Last reviewed: 2026-08-13
+Last reviewed: 2026-09-22
 
 Owner: SEO, content, development, and business stakeholders
 
@@ -884,27 +883,26 @@ Dynamic Dreamz.
 ### Current strengths
 
 - The page includes founding history from 2006 through Shopify Platinum Partner
-  recognition in 2025.
-- Leadership and department expertise are visible.
-- Founder LinkedIn links and biographies are present.
-- The page includes a company video, team size, project/client statistics, and
-  values.
+  expansion in 2026 across ecommerce, web, mobile, full-stack, and AI solutions.
+- Leadership and department expertise are visible with 3 co-founders, 4 key managers, and 16 department leads.
+- Founder LinkedIn links and biographies are present and linked in Person structured data.
+- The page includes a company video with caption, team size (150+ experts), experience (20+ years), projects delivered (5000+), and 6 core values.
 - `AboutPage`, Organization, founder Person, breadcrumb, primary image, and
   VideoObject nodes are present.
+- 1:1 parity with live 8-section layout without trailing slash or extraneous bottom CTA banner.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Implemented improvement or dependency |
 | --- | --- | --- | --- | --- |
-| P0 | deferred | H1 clarity | “Agile. Adept. Accurate.” does not identify the page/entity | The entity-first H1 proposal was reverted to the live wording on 2026-08-13; reintroduce only after explicit content approval |
-| P0 | blocked | Founder titles | Two founders are listed as Co-Founder & CEO | Existing titles remain unchanged until authoritative confirmation is available |
-| P0 | blocked by live parity | Milestone proof | “Top 10 Shopify developers by UpWork” has no approved visible source | The live claim was restored on 2026-08-13; obtain evidence or explicit approval before launch |
-| P1 | deferred | Hero description | Introduction is broad and grammatically dated | Entity-first copy was reverted to the live introduction on 2026-08-13; retain the proposal for content approval |
-| P1 | partially implemented | Founder biographies | Visible biographies remain brief | Existing biographies, local images, and available LinkedIn profiles now supply Person nodes; deeper expertise needs approved content |
-| P1 | implemented | Person schema | Founder nodes contained only name and job title | Three stable Person nodes now include visible biography, image, profile where available, and Organization relationship |
-| P1 | partially implemented | Office/entity facts | The page does not contain a dedicated contact-facts block | Shared Organization schema contains both offices; the proposed visible hero facts were reverted and a Contact route remains migration pending |
-| P1 | deferred | Timeline copy | Several milestones have grammar problems or vague wording | Edited timeline copy was reverted to live on 2026-08-13; retain as a future content proposal |
-| P1 | implemented | Freshness | AboutPage used build time | Schema and sitemap now use the explicit 2026-08-13 final parity-review date |
+| P0 | implemented | Live parity | Previous timeline ended at 2025; counters did not include years of experience; core values lacked 1:1 layout | Remigrated on 2026-09-22 with live 3-stat counter (20+ years, 5000+ projects, 150+ experts), 2026 Platinum Partner milestone, and transparent core values grid |
+| P0 | deferred | H1 clarity | “Agile. Adept. Accurate.” does not identify the page/entity | Preserved live wording per migration rules; reintroduce entity-first H1 only after explicit content approval |
+| P0 | blocked | Founder titles | Two founders are listed as Co-Founder & CEO | Existing live titles remain unchanged until authoritative confirmation is available |
+| P0 | blocked by live parity | Milestone proof | “Top 10 Shopify developers by UpWork” has no approved visible source | Preserved exact live claim per migration rules; obtain evidence or explicit approval before launch |
+| P1 | implemented | Freshness | AboutPage dateModified needed live sync | Updated metadata and schema to match live Yoast modified date 2026-09-18T09:50:40+00:00 |
+| P1 | partially implemented | Founder biographies | Visible biographies remain brief | Existing biographies, local images, and available LinkedIn profiles supply Person nodes; deeper expertise needs approved content |
+| P1 | implemented | Person schema | Founder nodes contained only name and job title | Three stable Person nodes include visible biography, image, profile where available, and Organization relationship |
+| P1 | partially implemented | Office/entity facts | The page does not contain a dedicated contact-facts block | Shared Organization schema contains both offices; Contact route remains migration pending |
 | P2 | deferred | Department expertise | Leaders are not connected to service authority | Add approved expert authorship/review relationships when service and article pages are migrated |
 
 ### Suggested hero copy

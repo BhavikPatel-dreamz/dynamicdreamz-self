@@ -24,7 +24,7 @@ export type ThemeCustomizationServicesSectionProps = {
   content: ThemeCustomizationServicesContent;
   className?: string;
   id?: string;
-  variant?: "green" | "yellow";
+  variant?: "green" | "yellow" | "transparent";
 };
 
 export function ThemeCustomizationServicesSection({
@@ -37,7 +37,11 @@ export function ThemeCustomizationServicesSection({
     <section
       className={cn(
         "theme-customization-services py-20 max-[992px]:py-[50px]",
-        variant === "green" ? "green bg-[#eff4ef]" : "yellow bg-[#fafaf7]",
+        variant === "green"
+          ? "green bg-[#eff4ef]"
+          : variant === "yellow"
+            ? "yellow bg-[#fafaf7]"
+            : "transparent bg-transparent",
         className,
       )}
       id={id}

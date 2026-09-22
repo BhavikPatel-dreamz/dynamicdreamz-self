@@ -34,7 +34,7 @@ export function AboutTimelineSection() {
             const isLast = !milestone.year;
 
             return (
-              <li className="relative h-[535px] w-[410px] shrink-0 snap-start px-[15px] text-center max-[575px]:w-[320px]" key={milestone.image}>
+              <li className="relative h-[535px] w-[410px] shrink-0 snap-start px-[15px] text-center max-[575px]:w-[320px]" key={milestone.year || "future"}>
                 {isLast ? (
                   <div className="flex h-full items-center justify-center">
                     <Image className="h-auto max-w-full" src={milestone.image} alt={milestone.alt} width={milestone.width} height={milestone.height} sizes="(max-width: 575px) 290px, 380px" draggable={false} />
@@ -59,15 +59,13 @@ export function AboutTimelineSection() {
                     <div className="bg-[linear-gradient(97deg,#15c064_37.46%,#00d1ff_120.9%)] bg-clip-text text-[70px] leading-[86px] font-bold text-transparent max-[767px]:text-[50px]">
                       {milestone.year}
                     </div>
-                    <p className="line-clamp-5 h-[139px] text-base leading-7 font-normal text-muted max-[1199px]:text-[14px] max-[1199px]:leading-6">
-                      {milestone.description}
-                    </p>
+                    <p
+                      className="line-clamp-5 h-[139px] text-base leading-7 font-normal text-muted max-[1199px]:text-[14px] max-[1199px]:leading-6 [&_strong]:font-bold [&_strong]:text-ink"
+                      dangerouslySetInnerHTML={{ __html: milestone.description }}
+                    />
                   </div>
                 </div>
                 )}
-                {milestone.year === "2025" ? (
-                  <Image className="absolute top-1/2 left-1/2 z-10 h-9 w-[113px] -translate-x-1/2" src="/assets/awards/shopify-platinum-partner.svg" alt="" width={113} height={36} />
-                ) : null}
               </li>
             );
           })}
