@@ -9136,8 +9136,8 @@ Owner: SEO, content, and development
 
 ## Shopify Development in Bangalore (`/shopify-development-in-bangalore`)
 
-Status: technical and schema implementation complete; visible copy preserved per live site
-Last reviewed: 2026-09-02
+Status: technical, visual parity, and schema implementation complete; remigrated to match live site exactly
+Last reviewed: 2026-09-22
 Owner: SEO, content, and development
 
 ### Page Role and Buyer Intent
@@ -9151,25 +9151,26 @@ Owner: SEO, content, and development
 - H1: "#1 Company For Shopify Development in Bangalore" with city pills ("Shopify Development", "Bangalore / Bengaluru").
 - Hero dual CTAs: "Get In Touch" -> "/request-quote" and "Explore Shopify Services" -> "#services".
 - Hero trust badges: Shopify Platinum Partner, Clutch (4.9 rating), Trustpilot (4.9 rating), Upwork Top Rated Plus.
+- Hero right-col tablet showcase: Autoplaying infinite tablet slider with 7 brand store showcases (Bella Vita, Bombay Shirt Company, Kalki, Nokt-1, Ranavat, Rare Rabbit, Renee Cosmetics) and floating Platinum Partner and Shopify logo badges.
 - Trusted brands slider: 10 enterprise ecommerce brands (POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company).
 - Value proposition and proof counters (4 stats): 20+ Years Ecommerce & web development experience, 60+ Shopify specialists, 150+ Cross-functional experts, 5,000+ Projects delivered across industries.
-- Why Choose Shopify grid (5 cards): User Friendly Interface, Customizable Themes, Scalability, Marketing Tools, Security and Reliability.
-- Service offerings grid (8 services with "READ MORE" links): Shopify Plus Store Development, Custom Shopify Theme Design & Customization, Figma/XD to Shopify Conversion, Shopify App Integration & Customization, Seamless Shopify Migration, Shopify Store Maintenance & Support, Shopify 2.0 Upgrade & Migration, White Label Shopify Development.
-- 4-step delivery process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support.
-- 6 agency reason cards: Expert Developers, Custom Solutions, Intuitive Design, SEO Expertise, Comprehensive Services, Proven Track Record.
-- 8 portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
+- Why Choose Shopify grid (5 cards, eyebrow "Why Shopify"): User Friendly Interface, Customizable Themes, Scalability, Marketing Tools, Security and Reliability.
+- Service offerings grid (8 services with "READ MORE" links): Shopify Plus Store Development, Custom Shopify Theme Design & Customization, Figma/XD to Shopify Conversion, Shopify App Integration & Customization, Seamless Shopify Migration, Shopify Store Maintenance & Support (pointing to `/buy-shopify-development-hours`), Shopify 2.0 Upgrade & Migration, White Label Shopify Development.
+- 4-step delivery process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support (`OurDevelopmentProcessSection` with eyebrow "How We Work").
+- 6 agency reason cards: Expert Developers, Custom Solutions, Intuitive Design, SEO Expertise, Comprehensive Services, Proven Track Record (`CityWhyChooseBoxesSection`, 3 columns, eyebrow "Why Dynamic Dreamz").
+- 8 portfolio showcase items: Renee, 11 11, Bombay Shirt Company, Royce Chocolate, Tropicfeel, TEGO Fit, nekter juice bar, Rare Rabbit (`PortfolioShowcaseSection`, 4 columns, `ourWorkRefresh` variant with "View our work" CTA to `/our-work`).
 - Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
-- 5 interactive FAQs covering development agency role, platform advantages, pricing expectations, ongoing maintenance, and project kickoff.
+- 5 interactive FAQs covering development agency role, platform advantages, pricing expectations, ongoing maintenance, and project kickoff (`FaqSection`, centered layout).
 - Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
 
 ### Structured Gap Analysis
 
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-bangalore` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse & creation | Specialized modern city page sections required (`city-page-counter`, `city-page-why-choose-boxes`, `hero-new-section`) | Created generalized `CityPageHeroSection`, `CityPageCounterSection`, and `CityWhyChooseBoxesSection`; reused `IndustryBrandsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | 13 clean vector icons required for why-choose and services boxes | Ingested into `public/assets/services/shopify-development-in-bangalore/`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
-| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createShopifyDevelopmentInBangalorePageSchema()` | Validated JSON-LD graph |
+| P0 | implemented | Route discovery | Route created in App Router | Verified `/shopify-development-in-bangalore` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component parity | Remigrated sections to match live site exactly | Reused and enhanced `CityPageHeroSection` (with `CityHeroTabletSlider`), `IndustryBrandsSection`, `CityPageCounterSection`, `CityWhyChooseBoxesSection` (for both Section 4 and Section 7), `AgencyServicesSection`, `OurDevelopmentProcessSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `FaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Hero tablet slider assets and Section 7 SVGs ingested | Cleaned and ingested to `public/assets/services/shopify-development-in-bangalore/`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createShopifyDevelopmentInBangalorePageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Visible copy enhancement | Minor capitalization inconsistency in FAQ 5 ("Reach out to Shopify Development Company in Bengaluru, like Dynamic Dreamz, with your project requirements, and we’ll guide you via the entire process") | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
 
 

@@ -23,7 +23,7 @@ export type CityPageCounterSectionProps = {
 export function CityPageCounterSection({
   content,
   className,
-  eyebrowVariant = "pill",
+  eyebrowVariant = "dash",
 }: CityPageCounterSectionProps) {
   return (
     <section
