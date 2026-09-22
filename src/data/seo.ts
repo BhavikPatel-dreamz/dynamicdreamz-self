@@ -574,9 +574,9 @@ export const pageSeo = {
   },
   hireShopifyDevelopers: {
     path: "/hire-shopify-developers",
-    title: "Hire Shopify Developers | Dynamic Dreamz",
+    title: "Hire Shopify Developers | Custom Shopify Store Development",
     description:
-      "Hire Shopify developers for store setup, customization, migration, app integrations, maintenance and dedicated ecommerce development from Dynamic Dreamz.",
+      "Hire expert Shopify developers with 20+ years of experience and 1,100+ happy clients. Build a high-performing, scalable Shopify store with Dynamic Dreamz.",
     keywords: [
       "hire Shopify developers",
       "dedicated Shopify developers",
@@ -586,7 +586,7 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-07-24T07:16:56+00:00",
-    modifiedTime: "2026-08-18T00:00:00+05:30",
+    modifiedTime: "2026-09-17T05:06:10+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,

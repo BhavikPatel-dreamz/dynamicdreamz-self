@@ -1,65 +1,117 @@
-# Hire Shopify Developers
+# Hire Shopify Developers Visual Parity Capture
 
 - Live URL: https://www.dynamicdreamz.com/hire-shopify-developers/
 - Local route: `/hire-shopify-developers`
-- Date checked: 2026-08-18
-- Viewports captured: 1440x900, 768x1024, 390x844
-- Live screenshots: `docs/visual-captures/source/hire-shopify-developers/live-desktop-1440x900.png`, `live-tablet-768x1024.png`, `live-mobile-390x844.png`
-- Local screenshots: `docs/visual-captures/source/hire-shopify-developers/local-desktop-1440x900.png`, `local-tablet-768x1024.png`, `local-mobile-390x844.png`
-- Local capture wait: 5000ms before each tall viewport screenshot so the review animation, carousels, testimonial media, and eager portfolio images were rendered
+- Date refreshed: 2026-09-22
+- Viewports captured: 1440x3000 (desktop), 375x3000 (mobile)
+- Live screenshots: `docs/visual-captures/source/hire-shopify-developers/live-1440.png`, `docs/visual-captures/source/hire-shopify-developers/live-375.png`
+- Local screenshots: `docs/visual-captures/source/hire-shopify-developers/local-1440.png`, `docs/visual-captures/source/hire-shopify-developers/local-375.png`
 
-## Sources inspected
+## Sources Inspected
 
-- Saved live page source, metadata, headings, CTA destinations, image alts, FAQ markup and JSON-LD.
-- `assets/css/hiring/main.css` and `media.css`, captured locally as `source/hire-shopify-developers/hiring-main.css` and `hiring-media.css`.
-- `assets/js/hiring.js`, captured locally as `source/hire-shopify-developers/hiring.js`.
-- Shared header/footer styles and migrated local components.
+- Live DOM inspection (`/tmp/hire_shopify_developers_live.html`) & live screenshots.
+- Live flexible CSS modules:
+  - `hero_new_section.css`
+  - `trusted_by_leading_brands_section.css`
+  - `shopify_theme_customization_services.css`
+  - `our_development_process.css`
+  - `delivery_section.css`
+  - `projects_section.css`
+  - `client_review_section.css`
+  - `faqs_section.css`
+- Live Yoast SEO metadata and JSON-LD schema.
 
-## Visual contract
+## 9-Section Architecture (1:1 Live Parity)
 
-- White hero with centered 50px desktop heading, paragraph, red pill CTA, five counters, and the animated review circle. Counters stack with separators on mobile.
-- Cream trusted-brand strip, four-step hiring process with gradient icon tiles/connectors, four Shopify service cards, cyan/mint three-card proof section, six-item advantages grid, five horizontally browsable industry cards, six portrait Shopify portfolio cards, testimonial carousel, and five-item FAQ.
-- Cards use subtle gray borders, 10-15px radii, gradient hover outlines, and stable image dimensions. Portfolio overlays reveal “View Project” and the Shopify mark on hover/focus.
+1. **Section 1: Hero (`hero-new-section`)**
+   - Dual eyebrow spans: `["Established in 2006", "Shopify Platinum Partner"]`
+   - Title: `Hire Shopify Developers`
+   - Lead paragraph: `Are you looking to expand your brand fast? Hire Shopify developers from Dynamic Dreamz to create, customize, and optimize your online Shopify store. Our experienced Shopify developers can help you achieve high quality, scalable solutions based on your business requirements. Let us handle the technicalities while you concentrate on developing your brand.`
+   - Single CTA button: `Hire Shopify Developers` -> `/request-quote`
+   - 4 partner proof badges: Shopify Platinum Partner, Clutch (4.9 rating), Trustpilot (4.9 rating), Upwork Top Rated Plus.
+   - Right-side video preview: `/assets/home/why-dynamic-dreamz.mp4`.
 
-## Responsive and interaction states
+2. **Section 2: Trusted Brands (`our-client-sec`)**
+   - Warm background `#FBEED5`.
+   - Heading: `Trusted by Leading Brands`.
+   - Infinite animated logo carousel with 12 client logos.
 
-- Live breakpoints are 1199px, 991px, 767px, 389px and 359px. Industry/testimonial carousels show two cards on desktop/tablet and one on mobile with stage padding.
-- Review animation rotates Clutch, Upwork and GoodFirms approximately every five seconds; local shared animation is reused.
-- FAQ opens the first item by default and closes other items when one is opened. Portfolio and industry cards lift/scale on hover.
-- Local implementation uses eager, intrinsic-size portfolio media to avoid the live page’s lazy-image gaps while preserving the rendered composition.
+3. **Section 3: Why Choose Dynamic Dreamz (`theme-customization-services yellow`)**
+   - Light cream background `#fafaf7`.
+   - Eyebrow: `Why Dynamic Dreamz`
+   - Heading: `Why Choose Dynamic Dreamz for Shopify Development`
+   - Description: `Our Shopify developers have the ideal balance of expertise in eCommerce business and Shopify technology. For your online business, we can act as a powerful catalyst.`
+   - 3 white card boxes with red SVG icons:
+     1. `Experience says it all` (badge SVG icon)
+     2. `Extensive Shopify development in different verticals` (folder code SVG icon)
+     3. `Talented Pool of Shopify Developer` (team users SVG icon)
 
-## Why-choose hover and typography re-audit (2026-08-19)
+4. **Section 4: Hiring Process (`our-development-process bg-transparent`)**
+   - Transparent background.
+   - Eyebrow: `Hiring Process`
+   - Heading: `Hassle free Hiring Process to Hire Shopify Developers`
+   - Description: `Hiring Shopify developers from Dynamic Dreamz is like smooth sailing. With a practical pricing structure, we provide hiring at competitive prices.`
+   - 4 numbered steps with top/bottom/side border grid layout:
+     - Step 01: `Share Requirements`
+     - Step 02: `Expert Talent Selection`
+     - Step 03: `Select the Developer`
+     - Step 04: `Project Initiation`
 
-- Rechecked saved live HTML plus `hiring-main.css` and `hiring-media.css`
-  against the supplied live/local hover screenshots.
-- Live desktop heading is 35px/48.475px/700 Montserrat with `-0.7px` tracking
-  and an intentional break before “Shopify Development”. The 16px/30.4px intro
-  uses two intentional breaks; both breaks disappear below 1200px.
-- Cards use 30px horizontal padding, 40px top padding, 60px bottom padding,
-  60px icons, 16px/26.72px headings, and 16px/27.2px body copy with `0.32px`
-  tracking.
-- Live hover/focus appearance: a 2px green-to-cyan outline surrounding the
-  15px card and a 12px green-to-cyan bar inside its bottom edge, transitioning
-  over 300ms. Local previously used its `::after` layer as a permanent white
-  cover, preventing the bottom gradient bar from rendering.
-- Hover correction after rendered comparison: a negative-z gradient
-  pseudo-element filled the entire local card because of its stacking context.
-  The card now uses an explicit 2px outer shell and a separate white inner
-  panel; only the shell background and independent 12px bottom overlay become
-  gradient on hover/focus. Text, icons, and the full card interior remain white
-  exactly as shown in the live screenshot.
+5. **Section 5: Advantages (`theme-customization-services green`)**
+   - Pista background `#eff4ef`.
+   - Eyebrow: `Advantages of Dynamic Dreamz`
+   - Heading: `Our Advantages of Choosing Dynamic Dreamz as a Shopify Developer`
+   - Description: `Get connected with us, and you will witness the difference from day one!`
+   - 6 white card boxes with red SVG icons:
+     1. `The easy and fair hiring process`
+     2. `Save 50% on your development cost`
+     3. `Integrity is our core value`
+     4. `We handle your HR needs`
+     5. `We work as per your time zone`
+     6. `Unmatched post production support`
 
-## Remaining differences
+6. **Section 6: End to End Development Services (`what-we-provide-sec` id="services")**
+   - Heading: `Get Started with Shopify Developers for End to End Development Services`
+   - Description: `Are you looking for a professional team to help you create and expand your online store? Our Shopify developers offer complete services, from setup to ongoing support. Let us handle the technical side so you can focus on your core business.`
+   - 2-column grid of 4 service cards with red vector SVG icons and light cream background `#fafaf7`:
+     1. `Shopify Store Setup & Configuration`
+     2. `Third party App Integration`
+     3. `Shopify Migration`
+     4. `Shopify Post launch Maintenance & Support`
 
-- Shared migrated header/footer and local contact widget differ from the legacy WordPress shell.
-- The live “inquire now” CTA points to `/career/`; local migration routes it to `/request-quote` because it is an obvious conversion-path error.
-- Local portfolio images are intentionally eager and visible; the live desktop/mobile captures contain legacy lazy-loading gaps.
+7. **Section 7: Portfolio Work (`our-work-sec pt-0` id="our_work")**
+   - Eyebrow: `Portfolio`
+   - Heading: `Work of our Shopify Developers that show our Expertise`
+   - Description: `We are sure you would like to hear to what our clients says about our Shopify development.`
+   - 4-column desktop grid (2-column tablet/mobile) with 8 Shopify portfolio projects:
+     1. Nufyx
+     2. Nekter Juice Bar
+     3. Pagerie
+     4. Luxxi Nails
+     5. Eco Soul
+     6. AdHOC Atelier
+     7. Bombay Shirt Company
+     8. Holy Plantz
+   - Primary CTA: `View our work` -> `/our-work`.
 
-## Local verification
+8. **Section 8: Customer Testimonials (`happy-client-sec`)**
+   - Eyebrow: `Client Stories`
+   - Heading: `Our Customers' Testimonials`
+   - Description: `We have faith in our work, but what truly matters is the outcomes we serve our clients.`
+   - 11 video testimonial cards carousel with company logos and YouTube popup triggers.
 
-- Desktop, tablet, and narrow captures show the expected section order with no overlapping content.
-- The Shopify process includes numbered badges; service cards are two columns on desktop and one column below 992px.
-- Proof and advantage grids use three desktop columns, two tablet columns, and one mobile column.
-- The industry carousel starts at the content edge on desktop and retains a single-card swipe treatment below 992px.
-- All six portfolio images render from canonical local asset paths with stable 115% card aspect ratios.
-- The testimonial carousel renders local poster media, and the FAQ defaults to its first panel open.
+9. **Section 9: FAQs (`faq-sec`)**
+   - Split layout with sticky left heading column and right accordion.
+   - 5 comprehensive questions covering developer roles, hiring costs, ROI, process, and services offered.
+
+- **Bottom CTA Banner**: Explicitly omitted to match the live site layout.
+
+## Verification Checklist
+
+- [x] Exact 9-section architecture matching live site.
+- [x] No bottom CTA banner (matches live).
+- [x] Zero duplicate assets in `public/assets/` (`check:asset-duplicates` passes).
+- [x] Strict content boundary preserved (`check:component-content` passes, 513 files clean).
+- [x] No-trailing-slash URL policy enforced (`check:urls` passes).
+- [x] Production build and TypeScript compilation pass (`npm run build`).
+- [x] ESLint passes with zero warnings or errors (`npm run lint`).

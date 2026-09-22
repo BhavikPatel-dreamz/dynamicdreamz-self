@@ -15,8 +15,9 @@ function removeBreakTags(text: string) {
 }
 
 export type AgencyServiceItem = {
-  icon: string;
-  iconAlt: string;
+  icon?: string;
+  iconAlt?: string;
+  iconSvg?: React.ReactNode;
   title: string;
   description: string;
   bullets?: readonly string[];
@@ -119,13 +120,17 @@ export function AgencyServicesSection({
               const cardContent = isWebflow ? (
                 <div className="h-full rounded-[15px] border border-[#f7f4e9] bg-[#f7f4e9] p-[35px_36px] max-[1199px]:p-[30px_20px] max-[767px]:p-5">
                   <div className="h-12 w-12">
-                    <Image
-                      src={service.icon}
-                      alt={service.iconAlt}
-                      width={48}
-                      height={48}
-                      className="h-full w-full object-contain"
-                    />
+                    {service.iconSvg ? (
+                      service.iconSvg
+                    ) : service.icon ? (
+                      <Image
+                        src={service.icon}
+                        alt={service.iconAlt ?? ""}
+                        width={48}
+                        height={48}
+                        className="h-full w-full object-contain"
+                      />
+                    ) : null}
                   </div>
                   <h3 className="mt-[30px] border-t border-[rgba(37,44,21,0.1)] pt-[30px] font-sans text-base font-bold leading-7 tracking-[0.32px] text-ink max-[767px]:mt-5 max-[767px]:pt-5 max-[767px]:text-base max-[767px]:leading-6">
                     {service.title}
@@ -141,14 +146,18 @@ export function AgencyServicesSection({
                     cardBgClassName ?? "bg-[#fafaf7]",
                   )}
                 >
-                  <div className="icon flex size-6 shrink-0 items-center justify-center pt-0.5">
-                    <Image
-                      src={service.icon}
-                      alt={service.iconAlt}
-                      width={24}
-                      height={24}
-                      className="size-6 object-contain"
-                    />
+                  <div className="icon flex size-6 shrink-0 items-center justify-center pt-0.5 [&>svg]:size-6 [&>svg]:h-auto">
+                    {service.iconSvg ? (
+                      service.iconSvg
+                    ) : service.icon ? (
+                      <Image
+                        src={service.icon}
+                        alt={service.iconAlt ?? ""}
+                        width={24}
+                        height={24}
+                        className="size-6 object-contain"
+                      />
+                    ) : null}
                   </div>
                   <div className="text-block w-[calc(100%-24px)] pl-4">
                     <h3 className="m-0 font-sans text-[18px] font-bold leading-[27px] tracking-[0.32px] text-ink">
@@ -199,14 +208,18 @@ export function AgencyServicesSection({
                     )}
                   />
                   <div className={cn(isCompact && "flex items-start gap-4")}>
-                    <div className={cn("icon flex shrink-0 items-center", isCompact ? "size-6 justify-center" : "h-[50px] w-[66px]")}>
-                      <Image
-                        className={isCompact ? "size-6 object-contain" : undefined}
-                        src={service.icon}
-                        alt={service.iconAlt}
-                        width={50}
-                        height={50}
-                      />
+                    <div className={cn("icon flex shrink-0 items-center [&>svg]:size-6 [&>svg]:h-auto", isCompact ? "size-6 justify-center" : "h-[50px] w-[66px]")}>
+                      {service.iconSvg ? (
+                        service.iconSvg
+                      ) : service.icon ? (
+                        <Image
+                          className={isCompact ? "size-6 object-contain" : undefined}
+                          src={service.icon}
+                          alt={service.iconAlt ?? ""}
+                          width={50}
+                          height={50}
+                        />
+                      ) : null}
                     </div>
                     <h3
                       className={cn(
