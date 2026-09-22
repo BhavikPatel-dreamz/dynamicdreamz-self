@@ -8579,8 +8579,8 @@ Last reviewed: 2026-08-21
 
 ## Shopify Development in Delhi (`/shopify-development-in-delhi`)
 
-Status: implemented; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented; live-visible content and section order preserved exactly matching live site
+Last reviewed: 2026-09-22
 
 ### Search and engine intent
 
@@ -8596,13 +8596,16 @@ Last reviewed: 2026-08-21
 
 ### Current strengths and available evidence
 
-- Live H1 targets "#1 Company For Shopify Development in Delhi" clearly.
-- 5 key benefit cards outlining why Delhi businesses choose Shopify.
-- 8 comprehensive service offering cards covering setup, custom theme design, Figma conversion, custom apps, migration, maintenance, 2.0 upgrades, and white-label development.
-- 4-step wave process (Discovery & Planning, Design & Development, Testing & Launch, Post Launch Support).
-- 5 reasons / why-choose cards detailing experience, custom solutions, SEO friendliness, end-to-end services, and proven results.
-- 6 verified Shopify portfolio case studies and 11 client video testimonial reviews.
-- 5 direct FAQ items with comprehensive answers and JSON-LD schema markup.
+- Live H1 targets "#1 Company For Shopify Development in Delhi" clearly, with live dual red-dash eyebrows, 4 award badges, and 7-slide interactive tablet showcase.
+- 12 verified brand partners slider matching live site exactly.
+- City page counter section with 4 verified statistics (20+ Years experience, 60+ specialists, 150+ experts, 5,000+ projects).
+- 5 benefit cards outlining why Delhi businesses choose Shopify with 24x24 SVGs.
+- 8 comprehensive service offering cards (`services-box`) covering Shopify Plus, theme customization, Figma conversion, custom theme development, migration, maintenance, 2.0 upgrades, and white-label development with live Read More links.
+- 4-step structured development process (Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support) with red-dash eyebrow.
+- 5 reasons / why-choose Dynamic Dreamz cards with red-dash eyebrow and 24x24 SVGs.
+- 8 verified live portfolio case studies (Renee, 11 11, Bombay Shirt Company, Royce Chocolate, Tropicfeel, TEGO Fit, nekter juice bar, Rare Rabbit) + `/our-work` CTA.
+- 11 client video testimonial reviews with modal player.
+- 5 direct FAQ items with comprehensive answers in split 2-column layout and JSON-LD schema markup.
 - Full CTA banner leading to `/request-quote`.
 - Zero duplicate assets, clean Server Component rendering.
 
@@ -8610,13 +8613,14 @@ Last reviewed: 2026-08-21
 
 - Emit Service, OfferCatalog (8 service offers), FAQPage (5 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schemas.
 - Ensure canonical URL is slashless `/shopify-development-in-delhi`.
-- Freshness timestamp: `2026-08-21T00:00:00+05:30`.
+- Freshness timestamp: `2026-09-22T00:00:00+05:30`.
 
 ### Verification and remaining gaps
 
-- URL policy review: passed.
-- Lint and production build: passed.
-- Asset SHA-256 duplicate audit: 0 duplicates.
+- URL policy review: passed (`npm run check:urls`).
+- Component content boundary: passed (`npm run check:component-content`).
+- Lint and production build: passed (`npm run lint`, `npx next build --webpack`).
+- Asset SHA-256 duplicate audit: 0 duplicates (`npm run check:asset-duplicates`).
 
 ## Migrate Theme to Shopify Online Store 2.0 (`/migrating-a-theme-to-online-store-2-0`)
 
