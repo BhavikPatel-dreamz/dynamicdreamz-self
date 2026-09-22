@@ -2883,9 +2883,9 @@ export const pageSeo = {
       "iOS and Android Shopify apps",
       "Dynamic Dreamz mobile development",
     ],
-    openGraphType: "website",
-    publishedTime: "2024-05-02T09:34:22+00:00",
-    modifiedTime: "2026-09-03T00:00:00+00:00",
+    openGraphType: "article",
+    publishedTime: "2026-09-03T13:12:29+00:00",
+    modifiedTime: "2026-09-03T13:33:55+00:00",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,

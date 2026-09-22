@@ -9673,7 +9673,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Route-Specific Strategy: `/appmaker-shopify-mobile-app-development`
 
-Audit date: 2026-09-21
+Audit date: 2026-09-22
 Auditor: Antigravity Migration Team
 Scope: Next.js migration of Appmaker Shopify Mobile App Development landing page
 Primary search intent: commercial and transactional intent for Shopify and Shopify Plus merchants looking to build native mobile apps using Appmaker with expert agency implementation.
@@ -9682,33 +9682,33 @@ Decision stage: mobile app launch, store-to-app conversion, Appmaker partner sel
 
 ### Page role
 
-Dedicated commercial partnership landing page highlighting Dynamic Dreamz's official collaboration with Appmaker to transform Shopify stores into native iOS and Android mobile apps. Features hero with Appmaker integration badge, 4 proof metrics, 6 key benefits of Shopify Appmaker, 4-step seamless transition timeline, client app showcase (Bellavita, Kalki, House of Good Vibes), and 5 detailed FAQs.
+Dedicated co-branded partnership landing page highlighting Dynamic Dreamz's collaboration with Appmaker to transform Shopify stores into native iOS and Android mobile apps in minutes. Features centered hero with co-branding header (DD logo + cross icon + Appmaker logo), review rotation animation circle, 12 trusted brand logos on custom amber-cream background, 3 key benefits of Shopify mobile apps, 6 features split around a center smartphone mockup, 4-step process timeline with curved SVG background, 10-item split FAQ section, and bottom CTA banner.
 
 ### Target prompts
 
-- How to build a Shopify mobile app using Appmaker?
-- What are the benefits of using Appmaker for Shopify stores?
-- Which agency specializes in Appmaker Shopify mobile app development?
-- How does the Appmaker Shopify mobile app transition process work?
-- Is Appmaker secure and scalable for Shopify Plus merchants?
+- How to transform a Shopify store into a mobile app using Appmaker?
+- What are the benefits of creating a mobile app for my Shopify store with Appmaker?
+- Which Shopify partner agency specializes in Appmaker mobile app development?
+- How does the Appmaker Shopify mobile app setup process work?
+- Is Shopify Appmaker secure and scalable for eCommerce brands?
 
 ### Current strengths and available evidence
 
-- Official Appmaker partnership positioning alongside Shopify Platinum Partner credentials.
-- 4 verified proof counters: 20+ Years, Platinum Partner, 5,000+ Projects, 150+ In-House Experts.
-- 6 key Appmaker benefits: Fast Time to Market, Native iOS & Android Performance, Real-Time Shopify Catalog Sync, Automated Push Notifications, Higher Mobile Conversion Rates, and Reduced App Overhead.
-- 4-phase transition timeline: Store Analysis, Custom UX/UI Design, Appmaker Configuration & Integration, and App Store Launch.
-- Real client app showcases: Bellavita, Kalki Fashion, and House of Good Vibes.
-- 5 comprehensive FAQs addressing platform capabilities, timeline, security, and pricing.
-- Complete structured data graph: WebPage, Service, FAQPage (5 items), BreadcrumbList, Organization, and WebSite.
-- Reuses existing canonical Appmaker assets with zero asset duplication.
+- Official Appmaker partnership co-branding alongside Dynamic Dreamz verified credentials and rotating review highlights (Clutch, Upwork, Goodfirms).
+- 12 verified brand logos: Supertails, 11-11, Bella Vita, Bombay Shirt Company, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce, Tego, Nekter, Rare Rabbit.
+- 3 key mobile app benefits: Increase Sales (reach customers on mobile), Engage Customers (push notifications & loyalty programs), Enhance Experience (faster loading & personalized shopping).
+- 6 key Appmaker features: Customizable Themes, Push Notifications, Fast & Seamless Checkout, Easy Integration, Analytics & Insights, Multi-Platform Support.
+- 4-step setup timeline: Signup, Customize Your App, Connect your Store, Publish.
+- 10 comprehensive FAQs addressing platform capabilities, process steps, features, security, trial, pricing, and support.
+- Complete structured data graph: WebPage, Service, FAQPage (10 items including list items), BreadcrumbList, Organization, and WebSite.
+- Reuses existing canonical Appmaker assets with zero duplicate assets.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route & migration URL | Route required migration | Implemented clean `/appmaker-shopify-mobile-app-development` with App Router | Verified with route tests and build |
-| P0 | implemented | Structured data | Missing rich Service and FAQ schema | Emitted complete JSON-LD schema graph matching page facts | Verified in JSON-LD output |
+| P0 | implemented | Structured data | Missing rich Service and FAQ schema | Emitted complete JSON-LD schema graph matching page facts (Service, 10 FAQs) | Verified in JSON-LD output |
 | P0 | implemented | Asset deduplication | Canonical reuse of Appmaker assets | Reused existing assets from `public/assets/services/shopify-mobile-app-development/` with 0 duplicate hash groups | Verified with SHA-256 audit |
 | P1 | deferred | Content expansion | Download links and app store ratings | Queued in `docs/page-content-improvements.md` as suggested; live UI preserved | Project owner approval |
 
@@ -9718,11 +9718,12 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Entity, evidence, and authorship actions
 
-- Connects Appmaker partner entity with Dynamic Dreamz Shopify Platinum Partner entity.
-- References real mobile app client deliverables and outcomes.
+- Connects Appmaker partner entity with Dynamic Dreamz verified ratings and client brands.
+- References 12 real eCommerce brand implementations.
 
 ### Internal-link and conversion actions
 
-- Primary CTA links directly to `/book-a-discovery-call` and secondary CTA links to `#our_work`.
+- Hero CTA links directly to external Appmaker affiliate signup (`https://dashboard.appmaker.xyz/signup?ref=dynamicdreamz`).
+- Bottom banner CTA links directly to `/contact-us` (via `/request-quote` redirect).
 - Included in sitemap and route metadata via canonical `/appmaker-shopify-mobile-app-development`.
 

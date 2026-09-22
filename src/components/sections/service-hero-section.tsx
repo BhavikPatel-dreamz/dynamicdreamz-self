@@ -21,7 +21,7 @@ export type ServiceHeroCoBranding = {
 
 export type ServiceHeroContent = {
   title: string;
-  description: string;
+  description?: string;
   subheading?: string;
   secondaryDescription?: string;
   paragraphs?: readonly string[];
@@ -145,7 +145,7 @@ export function ServiceHeroSection({
                       dangerouslySetInnerHTML={{ __html: paragraph }}
                     />
                   ))
-                ) : (
+                ) : content.description ? (
                   <>
                     <p
                       className={cn(
@@ -165,7 +165,7 @@ export function ServiceHeroSection({
                       />
                     )}
                   </>
-                )}
+                ) : null}
                 {content.secondaryCta ? (
                   <div className="mt-2 flex flex-wrap items-center justify-center gap-[15px] max-[575px]:flex-col">
                     {content.ctaLabel && (
@@ -268,7 +268,7 @@ export function ServiceHeroSection({
                     dangerouslySetInnerHTML={{ __html: paragraph }}
                   />
                 ))
-              ) : (
+              ) : content.description ? (
                 <>
                   <p
                     className={cn(
@@ -289,7 +289,7 @@ export function ServiceHeroSection({
                     </p>
                   )}
                 </>
-              )}
+              ) : null}
               {content.secondaryCta ? (
                 <div className="services-hero-btn mt-2.5 flex flex-wrap items-center gap-5 max-[1199px]:justify-center max-[575px]:flex-col max-[575px]:items-center max-[575px]:gap-[13px]">
                   {content.ctaLabel && (

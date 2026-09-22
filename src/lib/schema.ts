@@ -4582,7 +4582,14 @@ export function createAppmakerShopifyMobileAppDevelopmentPageSchema() {
       "Shopify store owners, eCommerce brands, and merchants launching branded iOS and Android apps with Appmaker",
     faqs: appmakerShopifyMobileAppDevelopmentContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer,
+      answer: [
+        item.answer,
+        ...("listItems" in item && item.listItems
+          ? item.listItems.map((li) => li.text)
+          : []),
+      ]
+        .filter(Boolean)
+        .join(" "),
     })),
     offers: appmakerShopifyMobileAppDevelopmentContent.features.items.map((item) => ({
       title: item.title,
