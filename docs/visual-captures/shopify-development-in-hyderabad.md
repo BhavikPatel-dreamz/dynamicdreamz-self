@@ -2,51 +2,40 @@
 
 - **Route**: `/shopify-development-in-hyderabad`
 - **Live Reference**: `https://www.dynamicdreamz.com/shopify-development-in-hyderabad/`
-- **Capture Date**: 2026-09-01
+- **Capture Date**: 2026-09-22
 - **Target Breakpoints**: Desktop (1440px), Tablet (768px), Mobile (390px)
 
 ---
 
-## 1. Sources Inspected
+## 1. Page Composition & Component Reuse
 
-| Source | Details |
-|---|---|
-| Rendered Live Page & View Page Source | Captured title ("No.1 Company For Shopify Development in Hyderabad | Dynamic Dream"), description, canonical (`https://www.dynamicdreamz.com/shopify-development-in-hyderabad/`), 11 content sections, images, alts, and links |
-| Live CSS Files | Inspected `services_main.css`, `services_media.css`, and flexible CSS modules for hero, single-text-box, benefit_box_sec, what-we-provide-sec, process, why-choose-us, portfolio (`.our-work-sec`, `.our_work_team`), happy-client, and split FAQ sections |
-| Live Screenshots Captured | Edge headless captures at 1440px (`scratch/hyderabad/live-desktop-full.png`), 768px (`scratch/hyderabad/live-tablet.png`), and 390px (`scratch/hyderabad/live-mobile.png`) |
-| Local Component Discovery | Selected and refined `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` |
-| Local Asset Tree | 100% of images and icons reused from existing canonical assets in `public/assets/` (zero new duplicate files required) |
-
----
-
-## 2. Page Composition & Component Styling Updates
-
-| Section # | Visual Role | Component & Styling Implementation |
-|---|---|---|
-| 1 | Hero Banner | `ServiceHeroSection` with verified review badges (Clutch, Upwork, GoodFirms) and store graphic |
-| 2 | Trusted Brands Slider | `IndustryBrandsSection` with `#fbeed5` background and 12 live brand logos |
-| 3 | Single Text Box | `TextBoxSection` with centered `#fdfbf6` rounded card and 2 paragraphs |
-| 4 | Benefits | `ShopifyAppBenefitsSection` with 5 benefit cards (4 top, 1 centered bottom) |
-| 5 | Services | `AgencyServicesSection` with 8 cards, 1.5px border, icons, and `READ MORE ↗` links |
-| 6 | Process | `ProcessWaveSection` with wave timeline and gradient step numbers (`01`-`04`) |
-| 7 | Why Choose Us | `ShopifyReasonsSection` with mint-cyan gradient background and 6 proof cards |
-| 8 | **Our Work (Portfolio)** | **`PortfolioShowcaseSection`** updated with: <br>• Split header with left-aligned `— PORTFOLIO` eyebrow and description on right <br>• 4×2 grid (8 cards) on desktop, 2-col on tablet, 1-col on mobile <br>• `variant="ourWorkRefresh"` card layout matching live site: image with 1000ms hover zoom, red `SHOPIFY` category, project title, and circular arrow icon button that transitions to red background on card hover <br>• Centered `VIEW OUR WORK` primary button |
-| 9 | Client Stories | `HappyClientSection` with `— CLIENT STORIES` eyebrow, 3 video cards visible per slide, and video player modal |
-| 10 | FAQs Accordion | `SplitFaqSection` with 2-column layout, circle-cross toggle icons, first item open by default |
-| 11 | CTA Banner | `CtaBannerSection` with cyan-to-green gradient and `REQUEST A QUOTE` button |
+| Section # | Visual Role | Reused / Generalized Component | Assets Reused |
+|---|---|---|---|
+| 1 | Hero Banner | `CityPageHeroSection` | Eyebrow red-dash ("Shopify Development" • "Hyderabad"), live H1, live description, 4 award badges (Shopify Platinum, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), tablet slider with 7 WebP slides (`bellavita`, `bombay-tshirt`, `kalki`, `nokt-1`, `ranavat`, `rarerabbit`, `renee-cosmetics`), top and bottom badges, and background shape |
+| 2 | Brand Partners Slider | `IndustryBrandsSection` | 12 client brand SVGs from `public/assets/clients/` (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter Juice Bar, Rare Rabbit) |
+| 3 | City Page Counter (Intro + Stats) | `CityPageCounterSection` (`eyebrowVariant="dash"`) | Eyebrow with red dash ("Shopify Development Company in Hyderabad"), H2, intro description, and 4 stat counters (`20+ Years`, `60+`, `150+`, `5,000+`) |
+| 4 | Why Choose Shopify (5 Cards) | `CityWhyChooseBoxesSection` (`eyebrowVariant="dash"`) | Eyebrow with red dash ("Why Shopify"), H2, description, 5 cards with 24x24 SVGs (`user-friendly-interface`, `customizable-themes`, `scalability`, `marketing-tools`, `security-and-reliability`) |
+| 5 | Services (8 Cards Grid) | `AgencyServicesSection` (`cardVariant="services-box"`, `columns={2}`, `showDescription={false}`) | Eyebrow with red dash ("Shopify Services in Hyderabad"), H2, 8 service cards with 24x24 icons and Read More links with directional arrows |
+| 6 | Development Process (4 Steps) | `OurDevelopmentProcessSection` (`eyebrowVariant="dash"`) | Eyebrow with red dash ("How We Work"), H2, description, 4 steps ("Step 01" to "Step 04") in 4-column border grid |
+| 7 | Why Dynamic Dreamz (6 Cards) | `CityWhyChooseBoxesSection` (`columns={3}`, `eyebrowVariant="dash"`) | Eyebrow with red dash ("Why Dynamic Dreamz"), H2, description, 6 cards with 24x24 SVGs (`expert-developers`, `custom-solutions`, `intuitive-design`, `seo-expertise`, `comprehensive-services`, `proven-track-record`) |
+| 8 | Our Work / Portfolio (8 Projects) | `PortfolioShowcaseSection` (`cardVariant="ourWorkRefresh"`, `columns={4}`) | Eyebrow with red dash ("Portfolio"), H2, description, 8 live project cards (Renee, 11 11, Bombay Shirt Company, Royce Chocolate, Tropicfeel, TEGO Fit, nekter juice bar, Rare Rabbit) + `/our-work` CTA |
+| 9 | Client Stories (Happy Clients) | `HappyClientSection` | Eyebrow with red dash ("Client Stories"), H2, description, 11 video testimonial cards with modal video players |
+| 10 | Frequently Asked Questions (6 Q&As) | `SplitFaqSection` | Split 2-column layout matching live site, 6 accordion items with question and answer copy matching live site |
+| 11 | Bottom CTA Banner | `CtaBannerSection` | Heading "Want us to help you with your online store?" and button "request a quote" -> `/request-quote` |
 
 ---
 
-## 3. Asset Deduplication Audit
+## 2. Asset Deduplication Audit
 
 - **Buffer Method**: 2-step ephemeral comparison buffer.
-- **Deduplication Result**: Reused 100% canonical assets across `public/assets/` for hero image, brand logos, benefit icons, service icons, process icons, reason icons, portfolio images, and review badges.
-- **SHA-256 Duplicate Groups**: 0.
+- **Deduplication Result**: Reused 100% canonical assets across `public/assets/` for 12 brand logos, 8 portfolio showcase images, 11 Why-Choose SVGs, 8 services SVGs, 4 award badges, and 7 hero tablet slider WebP images.
+- **Unique Assets Stored**: 0 new assets needed (100% reuse of verified canonical assets).
+- **SHA-256 Duplicate Groups**: 0 (audited via `npm run check:asset-duplicates`).
 
 ---
 
-## 4. Responsive & Visual Parity Verification
+## 3. Responsive & Interactive Behavior
 
-- **Desktop (1440px)**: 100% visual parity verified via Edge headless capture (`scratch/hyderabad/local-desktop-full.png`).
-- **Tablet (768px)**: 2-column card layouts and fluid typography verified (`scratch/hyderabad/local-tablet.png`).
-- **Mobile (390px)**: Single column stacked layout and touch-friendly controls verified (`scratch/hyderabad/local-mobile.png`).
+- **Desktop (>=1200px)**: 2-column hero with live tablet slider, 4-stat counter layout, 5-column benefit cards, 2-column service cards with Read More arrow links, 4-step process grid, 3-column Why Dynamic Dreamz cards (2 rows of 3), 4-column portfolio showcase grid, split 2-column FAQ layout.
+- **Tablet (768px-1199px)**: Responsive 2-column and 3-column card layouts, centered headlines, stacked hero illustration.
+- **Mobile (<=767px)**: Stacked single-column layouts, touch-friendly accordion FAQs, responsive video modal dialogs.

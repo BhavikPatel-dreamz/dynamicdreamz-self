@@ -8843,8 +8843,8 @@ Owner: SEO, content, and development
 
 ## Shopify Development in Hyderabad (`/shopify-development-in-hyderabad`)
 
-Status: technical and schema implementation complete; visible copy preserved per live site
-Last reviewed: 2026-09-01
+Status: implemented; live-visible content and section order preserved exactly matching live site
+Last reviewed: 2026-09-22
 Owner: SEO, content, and development
 
 ### Page Role and Buyer Intent
@@ -8855,17 +8855,16 @@ Owner: SEO, content, and development
 
 ### Visible Content and Evidence Available
 
-- H1: "#1 Company For Shopify Development in Hyderabad" establishing local market focus.
-- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
-- Trusted brands slider: 12 brand proof logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Nekter, Rare Rabbit).
-- Value proposition box: "Choose Dynamic Dreamz as the Best Shopify Development Company in Hyderabad".
-- 5 platform benefit cards: Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure & Reliable.
-- 8 specialized services: Shopify Plus Store Development, Theme Customization, Figma/XD to Shopify Conversion, App Integration, Shopify Migration, Maintenance & Support, Shopify 2.0 Migration, White Label Shopify Development.
-- 4-step wave process: Discovery & Planning, Design & Development, Testing & Launch, Post Launch Support.
-- 6 agency reason cards: Expert Shopify Developers, Custom Solutions, User Friendly Design, SEO Optimization, Comprehensive Services, Proven Track Record.
-- 8 portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
-- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
-- 6 interactive FAQs covering agency definition, company selection, pricing, project timeline, post-launch support, and onboarding.
+- H1: "#1 Company For Shopify Development in Hyderabad" with live dual red-dash eyebrows (`Shopify Development` • `Hyderabad`), 4 award badges (Shopify Platinum, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), and 7-slide interactive tablet showcase.
+- Trusted brands slider: 12 brand proof logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter Juice Bar, Rare Rabbit).
+- City counter section: "Choose Dynamic Dreamz as the Best Shopify Development Company in Hyderabad" with red-dash eyebrow and 4 counters (20+ Years, 60+, 150+, 5,000+).
+- 5 platform benefit cards: Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure & Reliable with red-dash eyebrow and 24x24 SVGs.
+- 8 specialized services (`services-box`): Shopify Plus Store Development Service, Shopify Theme Customization Service, Figma/XD to Shopify Conversion, Shopify App Integration Service, Shopify Migration Service, Shopify Maintenance Service, Shopify 2.0 Migration Service, Shopify White Label Development Service with red-dash eyebrow and live Read More arrow links.
+- 4-step delivery process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support in 4-column border grid with red-dash eyebrow.
+- 6 agency reason cards: Expert Shopify Developers, Custom Solutions, User Friendly Design, SEO Optimization, Comprehensive Services, Proven Track Record in 3-column layout with red-dash eyebrow.
+- 8 live portfolio showcase items: Renee, 11 11, Bombay Shirt Company, Royce Chocolate, Tropicfeel, TEGO Fit, nekter juice bar, Rare Rabbit with `cardVariant="ourWorkRefresh"` and `/our-work` CTA.
+- Verified client video testimonials carousel: 11 video review cards with modal video players and red-dash eyebrow.
+- 6 interactive FAQs in split 2-column layout covering agency definition, company selection, pricing, project timeline, post-launch support, and onboarding.
 - Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
 
 ### Structured Gap Analysis
@@ -8873,7 +8872,7 @@ Owner: SEO, content, and development
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
 | P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-hyderabad` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | 11 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Component reuse | 11 sections required matching live visual design | Reused `CityPageHeroSection`, `IndustryBrandsSection`, `CityPageCounterSection`, `CityWhyChooseBoxesSection`, `AgencyServicesSection`, `OurDevelopmentProcessSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
 | P0 | implemented | Asset deduplication | 100% asset reuse across portfolio, client logos, review badges, and service icons | Reused canonical assets from `public/assets/` with zero duplicates | Verified duplicate hash groups: 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createShopifyDevelopmentInHyderabadPageSchema()` with verified rating badges and video schemas | Validated JSON-LD graph |
 | P1 | deferred | Visible copy enhancement | Minor grammar/spelling optimizations in FAQ answers and reason descriptions | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
