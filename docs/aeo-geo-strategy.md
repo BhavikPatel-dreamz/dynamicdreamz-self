@@ -3409,23 +3409,23 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Shopify Development Agency (`/shopify-development-agency`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-09-04
+Last reviewed: 2026-09-22
 Owner: SEO, content, development, leadership, sales, and delivery operations
 Primary audience: DTC brands, B2B merchants, store owners, and digital agencies seeking comprehensive Shopify development services, custom storefronts, Figma implementation, theme customization, integrations, migration, CRO, performance, and ongoing technical support.
 Decision stage: commercial evaluation, capability verification, agency partner selection
 
 ### Page role
 
-Dedicated commercial landing page targeting core search intent for "Shopify Development Agency" and related high-intent ecommerce development queries. Rebuilt to match the 2026-09-04 live site redesign with 10 structured sections:
-1. Hero with dual eyebrow ("Established in 2006 • Shopify Platinum Partner"), H1, subtitle, description, 2 CTAs, 4 trust badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), and right-column video player (`why-dynamic-dreamz.mp4`).
-2. "Trusted by Leading Brands" 10-logo marquee slider.
+Dedicated commercial landing page targeting core search intent for "Shopify Development Agency" and related high-intent ecommerce development queries. Rebuilt to match the 2026-09-22 live site state with 10 structured sections:
+1. Hero with dual eyebrow ("Established in 2006 • Shopify Platinum Partner"), H1 ("Shopify Development Agency"), description, 2 CTAs, 4 trust badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9 TrustScore, Upwork Top Rated Plus), and right-column video player (`why-dynamic-dreamz.mp4`). (Phantom subtitle removed to match live DOM).
+2. "Trusted by Leading Brands" 12-logo marquee slider (Tego, Nekter, Rare Rabbit, Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce).
 3. 9 stage service cards in an asymmetric 3-column grid (`1.2fr 0.8fr 0.8fr`) with category tags, pills, and CTAs.
 4. 8 featured portfolio showcase projects in a 4-column grid (2-column on mobile with visible circular arrow button) with "View Our Work" button.
 5. Multidisciplinary Shopify team section with dark container (`#192019`) and 4 competency boxes with theme red active card.
 6. 3 flexible engagement pricing plans (Project-Based Custom Quote, Flexible Hourly Support at $25/hour, Dedicated Developer / Team from $2,000/month).
 7. 5-step horizontal development process timeline (Assess, Plan, Develop, QA, Launch & Improve) with numbered circles "01"–"05" and connecting line (stacks vertically on mobile).
 8. "Client Stories" / "Don't Just Take Our Word For It" with 11 video testimonial cards and next/previous controls.
-9. 10 buyer FAQs with rich text markup and first item open by default.
+9. 10 buyer FAQs with rich text markup (including formatted bold rates in FAQ 6) and first item open by default.
 10. Closing gradient CTA banner linking to `/request-quote`.
 
 ### Target prompts
@@ -3441,7 +3441,7 @@ Dedicated commercial landing page targeting core search intent for "Shopify Deve
 
 - Server-rendered H1 `Shopify Development Agency` with clear value proposition answering both direct merchants and digital agencies.
 - 9 distinct, structured service offerings covering all stages (Custom Store Development, Figma/XD Conversion, Theme Customization, App Integration, Migration, Maintenance, 2.0 Migration, White Label, Plus Mobile App).
-- 10 recognized brand logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, SimsDirect, Kvaser, Nekter, Circuit City) in an accessible marquee slider.
+- 12 recognized brand logos (Tego, Nekter, Rare Rabbit, Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce) in an accessible marquee slider.
 - 8 featured portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, Bombay Shirt Company, Holy Plantz, Atolea Jewelry) with platform markers, mobile-responsive 2-column grid, and project links.
 - 4 multidisciplinary team boxes showing certified Shopify developers, UI/UX designers, QA specialists, and integration engineers.
 - 3 transparent pricing engagement options ($25/hour, $2,000/month, custom quote).
@@ -3454,10 +3454,10 @@ Dedicated commercial landing page targeting core search intent for "Shopify Deve
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Redesign migration | Live site redesigned structure with video hero, stage services grid, team boxes, pricing cards, and process timeline | Remigrate all 10 sections with visual parity, responsive desktop/tablet/mobile layouts, and Server Components | Verified against live site captures 2026-09-04 |
-| P0 | implemented | Route and discovery | Slashless canonical URL policy and SEO metadata limits | Ship slashless route with title (55 chars), description (151 chars), Open Graph card, and robots/sitemap | URL policy and build guards pass |
-| P0 | implemented | Structured data | Updated schema with 9 offers, 10 FAQs, and 11 video objects | Emit Service with OfferCatalog (9 offers), FAQPage (10 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in JSON-LD serialization 2026-09-04 |
-| P0 | implemented | Local assets & deduplication | Dedicated OG card image and local media assets | Reused canonical assets and added unique OG image with 0 duplicates verified | `npm run check:asset-duplicates` passes (0 duplicate hash groups) |
+| P0 | implemented | Redesign migration | Live site redesigned structure with video hero, stage services grid, team boxes, pricing cards, and process timeline | Remigrate all 10 sections with visual parity, responsive desktop/tablet/mobile layouts, and Server Components | Verified against live site captures 2026-09-22 |
+| P0 | implemented | Route and discovery | Slashless canonical URL policy and SEO metadata limits | Ship slashless route with title (55 chars), description (154 chars), Open Graph card, and robots/sitemap | URL policy and build guards pass |
+| P0 | implemented | Structured data | Updated schema with 9 offers, 10 FAQs, and 11 video objects | Emit Service with OfferCatalog (9 offers), FAQPage (10 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in JSON-LD serialization |
+| P0 | implemented | Local assets & deduplication | Dedicated OG card image and local media assets | Reused canonical assets and added unique OG image with 0 duplicates verified | `npm run check:asset-duplicates` passes (0 duplicate hash groups across 1,707 assets) |
 | P1 | deferred | Content expansion | Minor grammatical improvements in service descriptions | Record proposed improvements in `docs/page-content-improvements.md`; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -3487,8 +3487,8 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-09-04): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-development-agency`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, desktop/tablet/mobile screenshots (1440x900, 768x1024, 390x844), JSON-LD graph verification, zero duplicate assets audit, component content boundary check, lint, and production build.
+- URL-policy review (2026-09-22): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-development-agency`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, desktop/tablet/mobile screenshots (1440x900, 768x1024, 375x812), JSON-LD graph verification, zero duplicate assets audit (1,707 assets), component content boundary check (514 source files), lint, and production build.
 
 ## Shopify Migration (`/shopify-migration`)
 
