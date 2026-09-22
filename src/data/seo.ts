@@ -2857,7 +2857,7 @@ export const pageSeo = {
       "Shopify app development",
       "Dynamic Dreamz",
     ],
-    openGraphType: "website",
+    openGraphType: "article",
     publishedTime: "2024-05-02T09:34:22+00:00",
     modifiedTime: "2026-09-04T07:26:42+00:00",
     image: {

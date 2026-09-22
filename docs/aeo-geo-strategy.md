@@ -4152,7 +4152,7 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 ## Shopify Mobile App Development (`/shopify-mobile-app-development`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-09-07
+Last reviewed: 2026-09-22
 Owner: SEO, mobile app development specialists, leadership, and sales operations
 Primary audience: Shopify merchants, DTC brands, Shopify Plus brands, and enterprise ecommerce businesses seeking custom native or cross-platform (React Native) iOS and Android mobile app development directly connected to their Shopify backend.
 Decision stage: agency partner evaluation, technical capability assessment, custom mobile app vs generic builder comparison, quote request, discovery call booking
@@ -4218,8 +4218,8 @@ Deferred under the live-UI preservation gate. The current server-rendered hero, 
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-09-07): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-mobile-app-development`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison across desktop (1440x900), tablet (768x1024), and mobile (390x844), View Page Source, metadata limits (Title: 55 chars, Description: 150 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-22): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-mobile-app-development`; source/build URL guard passes.
+- Checks completed (2026-09-22): live and local rendered page comparison across desktop (1440x900), tablet (768x1024), and mobile (390x844), View Page Source, Yoast article og:type alignment, 2-column SplitFaqSection visual parity alignment (sticky left header, circle-cross accordion icons, exact responsive font size and padding), RENÉE and KALKI case study slug and title verification, metadata limits (Title: 55 chars, Description: 150 chars), JSON-LD graph verification, responsive layouts, local assets audit (0 duplicates), lint, and production build.
 
 ## Mobile Application Development (`/mobile-application-development`)
 

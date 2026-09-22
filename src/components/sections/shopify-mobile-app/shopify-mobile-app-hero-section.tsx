@@ -37,9 +37,9 @@ export function ShopifyMobileAppHeroSection({
 
               <h1 className="font-montserrat text-[50px] font-bold leading-[66px] tracking-[-1px] text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
                 {content.title}{" "}
-                <span className="font-bold text-[#ad5151]">
+                <i className="font-bold not-italic text-[#ad5151]">
                   {content.titleAccent}
-                </span>
+                </i>
               </h1>
 
               <p className="mt-3 text-base font-medium leading-[190%] text-[#535353] max-[992px]:text-[14px] max-[992px]:leading-[25.2px]">
