@@ -5,6 +5,8 @@ export const shopifyDevelopmentAgencyHero = {
   eyebrow: "Established in 2006 • Shopify Platinum Partner",
   eyebrowSpans: ["Established in 2006", "Shopify Platinum Partner"] as const,
   title: "Shopify Development Agency",
+  subtitle:
+    "Custom Shopify development for brands that need more than a theme setup.",
   paragraphs: [
     "Dynamic Dreamz designs, develops, migrates and continuously improves Shopify stores for DTC brands, ecommerce businesses and digital agencies. Our Shopify development services cover custom storefronts, Figma implementation, theme customization, integrations, migration, CRO, performance and ongoing technical support.",
   ],

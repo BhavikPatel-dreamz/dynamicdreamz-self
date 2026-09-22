@@ -111,7 +111,7 @@ export function ServiceHeroVideoSection({
               </h1>
 
               {content.subtitle ? (
-                <span className="h4 mb-2.5 block font-montserrat text-base font-semibold leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6 max-[767px]:text-sm max-[767px]:leading-[27px]">
+                <span className="h4 mb-2.5 block font-montserrat text-base font-semibold leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6 max-[767px]:text-base max-[767px]:leading-[27px]">
                   {content.subtitle}
                 </span>
               ) : content.lead ? (
