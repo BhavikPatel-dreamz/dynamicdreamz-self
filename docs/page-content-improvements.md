@@ -601,16 +601,17 @@ Primary SEO intent: Shopify theme customization services, custom Shopify theme d
 ## Shopify Development Agency (`/shopify-development-agency`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-22
 Primary SEO intent: Shopify development agency, Shopify development services, Shopify development company, custom Shopify store design, Shopify migration, Shopify maintenance, Shopify app integration.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | `Comprehensive Shopify Development Services \| #1 Shopify Development Company \| Custom eCommerce Solutions \| Shopify Development India` (142 chars) | `Shopify Development Agency & Services \| Dynamic Dreamz` (54 chars) | Fits SEO 60-character budget and avoids truncation in search results while targeting primary search intent. | High | implemented in metadata |
-| Meta description | `Enhance your online store with our expert Shopify development services. From custom store design and app integration to performance optimization and ongoing support, we ensure a robust, scalable, and user friendly eCommerce experience.` (235 chars) | `Expert Shopify development services by Dynamic Dreamz: custom store design, app integration, migration, speed optimization and dedicated ongoing support.` (154 chars) | Shortens live description to fit within 70-160 char SEO length budget while preserving all core service keywords. | High | implemented in metadata |
-| Service card copy (App Integration) | `Suppose you can’t find any Shopify themes matching your needs. In that case, our custom Shopify theme development service can create an exclusively crafted theme that perfectly fits your requirements. From concept to launch, we ensure your custom Shopify theme enhances user experience, boosts engagement, and drives sales.` | `Seamlessly integrate third-party apps, ERPs, CRMs, and custom extensions to enhance your Shopify store functionality, automate workflows, and boost sales.` | Live card paragraph describes custom themes rather than app integration. Deferred for live UI parity. | Medium | deferred pending exact visible-copy approval |
+| Meta title | `Shopify Development Agency & Services \| Dynamic Dreamz` (55 chars) | `Shopify Development Agency & Services \| Dynamic Dreamz` (55 chars) | Preserves live title; fits SEO 60-character budget and avoids truncation in search results while targeting primary search intent. | High | implemented in metadata |
+| Meta description | `Looking for a Shopify development agency? Work with a Shopify Platinum Partner for custom builds, migrations, integrations, CRO and ongoing support.` (154 chars) | `Looking for a Shopify development agency? Work with a Shopify Platinum Partner for custom builds, migrations, integrations, CRO and ongoing support.` (154 chars) | Preserves live Yoast SEO description; fits 70-160 character budget and accurately reflects full service capabilities. | High | implemented in metadata |
+| Hero subtitle removal | Phantom `subtitle` element was present in local content | Removed subtitle so H1 is directly followed by lead paragraph matching live DOM structure. | Aligns with live DOM hierarchy. | High | implemented |
+| Brand logo set | Outdated 10 brand logos | Updated to 12 exact live client brands (Tego, Nekter, Rare Rabbit, Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce). | Replaces outdated client list with 1:1 live parity. | High | implemented |
 | VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
-| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (8 service items) and `FAQPage` (9 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (9 service items) and `FAQPage` (10 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
 
 ## Shopify Migration (`/shopify-migration`)
 
