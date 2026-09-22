@@ -3170,7 +3170,7 @@ jurisdiction, effective date, or controller claim is introduced.
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-18
+Last reviewed: 2026-09-22
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -3180,40 +3180,39 @@ Decision stage: commercial evaluation, capability verification, hiring model sel
 
 ### Page role
 
-Dedicated commercial landing and service page for hiring Shopify experts. Showcases flexible hiring engagement models (dedicated, hourly, fixed-price), end-to-end Shopify development services (store setup, custom themes, custom apps, migration, maintenance), AI automation capabilities (support, flow automation, content, smart email), AEO/GEO AI discovery readiness, 9 proof/advantage reasons, 5 vertical industries served, 6 selected portfolio projects, 11 client video testimonials, Clutch/Upwork/GoodFirms ratings, and buyer FAQs.
+Dedicated commercial landing and service page for hiring Shopify experts. Showcases the refreshed live site 11-section architecture: certified Shopify Platinum Partner positioning with video and partner badges, 12 trusted brand logos, a 4-step hiring process, dark-themed partner proof section with 4 stats, 6 core Shopify services under one roof, 6 brand choice advantages with savings note, modern AI development tools and human oversight safeguards, 8 featured Shopify store projects with pricing/portfolio CTAs, 3 flexible engagement pricing models, 11 video client testimonials, and 8 buyer FAQs in a split layout.
 
 ### Target prompts
 
 - Who are the best certified Shopify experts and developers to hire for online store development?
 - How to hire dedicated Shopify developers with flexible pricing models?
 - Can Dynamic Dreamz build custom Shopify themes, apps, and migrate stores with zero downtime?
-- Does Dynamic Dreamz set up AI automation, smart chatbots, and Klaviyo retention flows for Shopify stores?
-- How can my Shopify store be optimized for AI search engines like ChatGPT, Google AI Overviews, and Perplexity?
+- Does Dynamic Dreamz use modern AI tools like Claude and Cursor with human QA for Shopify stores?
+- What are the engagement models for hiring Shopify experts (project-based, hourly support, dedicated team)?
 - What client reviews, video testimonials, and portfolio stores exist for Dynamic Dreamz Shopify experts?
 
 ### Current strengths and available evidence
 
-- Server-rendered H1 `Hire Dedicated Shopify Experts & Developers`, clear proof counters (50+ agile developers, 5000+ completed projects, 20+ years experience, 1000+ happy clients, 1000+ Shopify developments).
-- Review animation widget featuring 5.0 star ratings across Clutch (50+ reviews), Upwork (2000+ reviews), and GoodFirms (72 reviews).
-- 4-step hiring process with numbered gradient badges and clear onboarding clarity.
-- 3 hiring models (Dedicated developer, Hourly/On-demand, Fixed-price) with distinct feature breakdowns.
-- 9 clear agency advantage points covering 20+ years experience, multi-vertical expertise, in-house certified talent, 60% cost savings, NDA integrity, managed HR, timezone overlap, and post-launch support.
-- 6 modern AI & store automation capability cards (AI customer support, store workflow automation, AI product content, smart email & retention, smarter shopping experiences, cross-platform automation) with technology pill tags.
-- 4 AI search visibility cards (AEO, GEO, Agentic commerce, Trust signal architecture).
-- 5 comprehensive development service offerings with hover interactions.
-- 5 vertical industry slides with direct cross-links to industry landing pages.
-- 6 featured store projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHoc Atler) with external storefront links and CTA to `/our-work`.
-- 11 verified video testimonials with modal player and real client attribution.
-- 7 detailed FAQs answering key buyer questions about hiring, pricing, scope, AI, and ongoing retainers.
-- Complete structured data graph emitting Service, OfferCatalog, BreadcrumbList, FAQPage (7 items), 11 VideoObject nodes, Organization, and WebSite.
+- Server-rendered H1 `Hire Shopify Experts`, dual eyebrow spans (`Established in 2006`, `Shopify Platinum Partner`), lead copy, and 4 partner badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus) with right video.
+- 12 trusted brand client logo slider on `#FBEED5` background.
+- 4-step hiring process (`Hassle-Free Hiring Process to Get Started`) with clear step-by-step clarity.
+- Dark proof section (`Why Hire Shopify Experts from Dynamic Dreamz?`) with 3 feature cards, Shopify Platinum Partner verification link, and 4 stats (`20+`, `150+`, `5k+`, `2.5k+`).
+- 6 comprehensive development service offerings (`Complete Shopify Expertise Under One Roof`) with Liquid/tech pills and mobile app cross-link.
+- 6 numbered agency advantage cards on pista green (`Why Brands Choose Our Shopify Experts`) with savings disclaimer note.
+- AI tools container (`Shopify experts empowered by modern AI development tools.`) highlighting Claude, Cursor, Human Review, and QA with human oversight callout.
+- 8 featured Shopify store projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz) with external storefront links and 2 CTA buttons (`Explore More Shopify Work` & `View Pricing`).
+- 3 flexible engagement cards (`Project-Based`, `Flexible Hourly Support`, `Dedicated Developer / Team`) linking to respective quote/hours/dedicated pages.
+- 11 verified video testimonials with carousel controls and modal playback.
+- 8 detailed FAQs answering key buyer questions about hiring, pricing, scope, AI, certification, and ongoing retainers.
+- Complete structured data graph emitting Service, OfferCatalog (6 service offers), BreadcrumbList, FAQPage (8 items), 11 VideoObject nodes, Organization, and WebSite.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata implementation | Ship slashless `/shopify-experts` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, and VideoObject structured data on old site | Emit Organization, WebSite, WebPage, Service with OfferCatalog (5 items), BreadcrumbList, FAQPage (7 items), and 11 VideoObject nodes | Verified in rendered JSON-LD and build |
-| P0 | implemented | Local assets | 32 local icons, badges, industry images, and store screenshots downloaded into `public/assets/shopify-experts/` | 100% project-owned assets with kebab-case naming | Verified locally |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, and VideoObject structured data on old site | Emit Organization, WebSite, WebPage, Service with OfferCatalog (6 items), BreadcrumbList, FAQPage (8 items), and 11 VideoObject nodes | Verified in rendered JSON-LD and build |
+| P0 | implemented | Refreshed layout parity | Live site overhauled layout from old hiring format to 11 modular sections | Rebuilt hero with video, 12 brands, process, dark why-choose, 6 services, 6 brand choice cards, AI tools, 8 projects, 3 pricing cards, 11 testimonials, 8 FAQs | Verified 1:1 against live site DOM and screenshots |
 | P1 | deferred | Copy phrasing | Minor grammatical enhancements in service descriptions and hiring advantages | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -3226,38 +3225,37 @@ Future visible copy improvements are tracked in `docs/page-content-improvements.
 
 - Connect Dynamic Dreamz to the shared Organization entity and model this route as
   a dedicated Shopify Expert Service.
-- Keep the 11 video testimonials, 5 industry sectors, 6 portfolio stores, and 3 review
-  badges strictly aligned with visible content.
+- Keep the 11 video testimonials, 8 portfolio stores, and partner badges strictly
+  aligned with visible content.
 - Emit authentic YouTube upload dates for all 11 testimonial VideoObjects.
 
 ### Internal-link and conversion actions
 
-- Maintain primary CTAs linking to `/request-quote` using slashless paths.
-- Route portfolio CTAs to `/our-work` and industry slides to `/beauty-cosmetics`,
-  `/fashion`, `/healthcare`, `/food-beverages`, and `/pet-industry`.
-- Preserve external review and portfolio links with `nofollow noopener noreferrer`.
+- Maintain primary CTAs linking to `/request-quote` and pricing anchor `#our_white_label_pricing`.
+- Route portfolio CTAs to `/our-work`, mobile app service to `/shopify-mobile-app-development`,
+  hourly support to `/buy-shopify-development-hours`, and dedicated team to `/hire-shopify-developers`.
+- Preserve external partner and portfolio links with `nofollow noopener noreferrer`.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service, OfferCatalog, FAQPage (7 items), 11 VideoObject nodes, BreadcrumbList,
+- Emit Service, OfferCatalog (6 items), FAQPage (8 items), 11 VideoObject nodes, BreadcrumbList,
   Organization, and WebSite.
-- Use live publish date `2024-07-24T07:16:56+00:00` and explicit migration review date
-  for `dateModified`.
+- Use live publish date `2024-07-24T07:16:56+00:00` and updated modified date `2026-09-16T06:21:22+00:00`.
 - Ensure canonical route and primary image are listed in the sitemap and indexable.
 
 ### Measurement plan
 
 - SEO tracks discovery prompts and organic search landings for "hire Shopify experts"
   and "Shopify developers".
-- Analytics tracks quote form submissions and portfolio click-through rates.
+- Analytics tracks quote form submissions and engagement model click-through rates.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-18): canonical, Open Graph, sitemap, robots, JSON-LD,
+- URL-policy review (2026-09-22): canonical, Open Graph, sitemap, robots, JSON-LD,
   and internal links use `/shopify-experts`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source,
-  metadata limits, JSON-LD graph verification, desktop/tablet/mobile screenshots
-  captured (1440x900, 768x1024, 390x844), local assets audit, responsive layouts,
+  metadata limits, JSON-LD graph verification, desktop/mobile screenshots captured
+  (1440x900, 375x812), zero asset duplicates audit, responsive layouts,
   lint, and production build.
 
 ## Shopify Apps (`/shopify-apps`)

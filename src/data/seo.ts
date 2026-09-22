@@ -653,26 +653,27 @@ export const pageSeo = {
   },
   shopifyExperts: {
     path: "/shopify-experts",
-    title: "Hire Shopify Experts | Top Rated Shopify Developers",
+    title: "Hire Shopify Experts | Shopify Platinum Partner",
     description:
-      "Partner with Best Shopify Experts to develop an online store. Let's start your online journey with Dynamic Dreamz with their tailored solutions.",
+      "Hire Shopify experts from a Shopify Platinum Partner for storesetup, themes, custom apps, migrations, CRO, integrations andongoing Shopify support.",
     keywords: [
       "hire Shopify experts",
       "Shopify experts",
+      "Shopify Platinum Partner",
       "top rated Shopify developers",
       "dedicated Shopify experts",
       "Shopify development agency",
       "Shopify store setup",
       "Shopify Plus experts",
     ],
-    openGraphType: "website",
+    openGraphType: "article",
     publishedTime: "2024-07-24T07:16:56+00:00",
-    modifiedTime: "2026-08-18T00:00:00+05:30",
+    modifiedTime: "2026-09-16T06:21:22+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
       height: 630,
-      alt: "Hire dedicated Shopify experts from Dynamic Dreamz",
+      alt: "Hire Shopify Experts | Shopify Platinum Partner | DynamicDreamz",
     },
     sitemap: {
       changeFrequency: "monthly",

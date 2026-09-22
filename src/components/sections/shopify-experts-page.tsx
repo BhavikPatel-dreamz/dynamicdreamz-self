@@ -1,76 +1,52 @@
-import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import {
-  ShopifyAdvantagesSection,
-  ShopifyReasonsSection,
-} from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
-import { HiringHeroSection } from "@/components/sections/hiring-hero-section";
-import { HiringProcessSection } from "@/components/sections/hire-wordpress-developers/hiring-process-section";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
+import { WhyChooseShopifyMigrationSection } from "@/components/sections/why-choose-shopify-migration-section";
+import { ShopifyStageServicesSection } from "@/components/sections/shopify-stage-services-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
+import { AiEmpoweredDeliverySection } from "@/components/sections/ai-empowered-delivery-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ShopifyExpertsAiAutomation } from "@/components/sections/shopify-experts/shopify-experts-ai-automation";
-import { ShopifyExpertsAiDiscovery } from "@/components/sections/shopify-experts/shopify-experts-ai-discovery";
+import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
-import { IndustriesServedSection } from "@/components/sections/shopify-plus-agency/industries-served-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { shopifyExpertsContent } from "@/content/shopify-experts";
-
-const industriesContent = {
-  heading: shopifyExpertsContent.industries.heading,
-  description: shopifyExpertsContent.industries.description,
-  items: shopifyExpertsContent.industries.slides.map((slide) => ({
-    image: slide.image,
-    imageAlt: slide.alt,
-    title: slide.title,
-    description: slide.description,
-  })),
-};
-
-const reasonsContent = {
-  heading: shopifyExpertsContent.hiringChoice.heading,
-  description: shopifyExpertsContent.hiringChoice.description,
-  items: shopifyExpertsContent.hiringChoice.items,
-};
-
-const advantagesContent = {
-  heading: shopifyExpertsContent.advantages.heading,
-  description: shopifyExpertsContent.advantages.description,
-  items: shopifyExpertsContent.advantages.items,
-  ctaLabel: shopifyExpertsContent.advantages.ctaLabel,
-  ctaHref: shopifyExpertsContent.advantages.ctaHref,
-};
 
 export function ShopifyExpertsPage() {
   return (
     <div className="font-sans leading-[30.4px]">
-      <HiringHeroSection content={shopifyExpertsContent.hero} />
+      <ServiceHeroVideoSection content={shopifyExpertsContent.hero} />
       <IndustryBrandsSection
         content={shopifyExpertsContent.brands}
         heading={shopifyExpertsContent.brands.heading}
       />
-      <HiringProcessSection
-        content={shopifyExpertsContent.process}
-        showStepNumbers
+      <OurDevelopmentProcessSection content={shopifyExpertsContent.process} />
+      <WhyChooseShopifyMigrationSection content={shopifyExpertsContent.whyChoose} />
+      <ShopifyStageServicesSection
+        content={shopifyExpertsContent.services}
+        lastColFull
       />
-      <ShopifyReasonsSection content={reasonsContent} />
-      <ShopifyAdvantagesSection content={advantagesContent} />
-      <ShopifyExpertsAiAutomation />
-      <ShopifyExpertsAiDiscovery />
-      <IndustriesServedSection content={industriesContent} />
-      <PortfolioShowcaseSection content={shopifyExpertsContent.work} />
+      <ThemeCustomizationServicesSection
+        content={shopifyExpertsContent.whyBrandsChoose}
+      />
+      <AiEmpoweredDeliverySection content={shopifyExpertsContent.aiTools} />
+      <PortfolioShowcaseSection
+        className="our-work-sec pt-0 pb-20 max-[992px]:pb-[60px]"
+        content={shopifyExpertsContent.work}
+        sectionId="our_work"
+      />
+      <PricingTableSection content={shopifyExpertsContent.pricing} />
       <div id="shopify-testimonials">
         <HappyClientSection
-          heading={shopifyExpertsContent.testimonials.heading}
           description={shopifyExpertsContent.testimonials.description}
+          eyebrow={shopifyExpertsContent.testimonials.eyebrow}
+          heading={shopifyExpertsContent.testimonials.heading}
         />
       </div>
       <SplitFaqSection
-        items={shopifyExpertsContent.faqs}
+        eyebrow={shopifyExpertsContent.faqs.eyebrow}
+        heading={shopifyExpertsContent.faqs.heading}
         idPrefix="shopify-experts-faq"
-      />
-      <CtaBannerSection
-        heading={shopifyExpertsContent.ctaBanner.heading}
-        ctaLabel={shopifyExpertsContent.ctaBanner.ctaLabel}
-        ctaHref={shopifyExpertsContent.ctaBanner.ctaHref}
+        items={shopifyExpertsContent.faqs.items}
       />
     </div>
   );

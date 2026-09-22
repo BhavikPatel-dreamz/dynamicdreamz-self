@@ -26,17 +26,20 @@ export type ShopifyStageServicesSectionProps = {
   content: ShopifyStageServicesContent;
   className?: string;
   id?: string;
+  lastColFull?: boolean;
 };
 
 export function ShopifyStageServicesSection({
   content,
   className,
   id = "shopify-services",
+  lastColFull = false,
 }: ShopifyStageServicesSectionProps) {
   return (
     <section
       className={cn(
         "shopify-development-services bg-[#fafaf7] py-20 max-[992px]:py-[50px]",
+        lastColFull && "last-col-100",
         className,
       )}
       id={id}
@@ -56,6 +59,7 @@ export function ShopifyStageServicesSection({
             const isFourth = index === 3;
             const isSeventh = index === 6;
             const isEighth = index === 7;
+            const isLast = index === content.items.length - 1;
 
             return (
               <article
@@ -69,7 +73,9 @@ export function ShopifyStageServicesSection({
                         ? "bg-white max-[1199px]:row-span-2 max-[1199px]:bg-[#eef4ef] flex flex-col justify-between"
                         : isEighth
                           ? "col-span-2 bg-[rgba(239,244,239,1)] max-[1199px]:col-span-1 max-[1199px]:bg-transparent flex flex-col justify-between"
-                          : "bg-white flex flex-col justify-between",
+                          : lastColFull && isLast
+                            ? "col-span-2 max-[1199px]:col-span-1 bg-white flex flex-col justify-between"
+                            : "bg-white flex flex-col justify-between",
                 )}
                 key={item.title}
               >

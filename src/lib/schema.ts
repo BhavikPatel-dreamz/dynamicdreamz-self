@@ -2509,11 +2509,11 @@ export function createShopifyExpertsPageSchema() {
     breadcrumbName: "Shopify Experts",
     audienceType:
       "eCommerce brands, direct-to-consumer businesses, and digital agencies seeking certified Shopify experts",
-    faqs: shopifyExpertsContent.faqs.map((item) => ({
+    faqs: shopifyExpertsContent.faqs.items.map((item) => ({
       question: item.question,
       answer: item.answer,
     })),
-    offers: shopifyExpertsContent.aiAutomation.items.map((item) => ({
+    offers: shopifyExpertsContent.services.items.map((item) => ({
       title: item.title,
       description: item.description,
     })),
