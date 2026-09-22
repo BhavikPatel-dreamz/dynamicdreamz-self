@@ -3092,9 +3092,9 @@ export const pageSeo = {
   },
   shopifyDevelopmentCompanyInChennai: {
     path: "/shopify-development-company-in-chennai",
-    title: "Hire Shopify development company in Chennai | Dynamic Dreamz",
+    title: "Shopify Development Company in Chennai | Dynamic Dreamz",
     description:
-      "Looking for a Shopify development company in Chennai? Our professional team delivers custom Ecommerce solutions that fulfill your business needs.",
+      "Shopify development company in Chennai offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     keywords: [
       "Shopify development company in Chennai",
       "Shopify developers Chennai",
@@ -3105,12 +3105,12 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2024-10-08T13:24:33+00:00",
-    modifiedTime: "2026-08-21T00:00:00+05:30",
+    modifiedTime: "2026-09-22T00:00:00+05:30",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
       height: 630,
-      alt: "Hire Shopify development company in Chennai | Dynamic Dreamz",
+      alt: "Shopify Development Company in Chennai | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",

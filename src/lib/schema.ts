@@ -4911,12 +4911,19 @@ export function createShopifyDevelopmentCompanyInChennaiPageSchema() {
       "Businesses, eCommerce retailers, direct-to-consumer brands, and enterprises in Chennai, Tamil Nadu, and across India seeking professional Shopify development",
     faqs: shopifyDevelopmentChennaiContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
     })),
-    offers: shopifyDevelopmentChennaiContent.services.items.map((item) => ({
-      title: item.title,
-      description: item.description,
-    })),
+    offers: [
+      ...shopifyDevelopmentChennaiContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentChennaiContent.whyDynamicDreamz.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 

@@ -1,14 +1,13 @@
-import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import { HappyClientSection } from "@/components/sections/happy-client-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import { CityPageCounterSection } from "@/components/sections/city-page-counter-section";
+import { CityPageHeroSection } from "@/components/sections/city-page-hero-section";
+import { CityWhyChooseBoxesSection } from "@/components/sections/city-why-choose-boxes-section";
+import { CtaBannerSection } from "@/components/sections/cta-banner-section";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ProcessWaveSection } from "@/components/sections/process-wave-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { ShopifyAppBenefitsSection } from "@/components/sections/shopify-mobile-app/shopify-app-benefits-section";
-import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { shopifyDevelopmentChennaiContent } from "@/content/shopify-development-company-in-chennai";
 
 export function ShopifyDevelopmentCompanyInChennaiPage() {
@@ -17,60 +16,69 @@ export function ShopifyDevelopmentCompanyInChennaiPage() {
     slug: "shopify-development-company-in-chennai",
   };
 
-  const servicesContent = {
-    heading: shopifyDevelopmentChennaiContent.services.heading,
-    description: shopifyDevelopmentChennaiContent.services.description,
-    items: shopifyDevelopmentChennaiContent.services.items,
-  };
-
-  const reasonsContent = {
-    heading: shopifyDevelopmentChennaiContent.reasons.heading,
-    description: shopifyDevelopmentChennaiContent.reasons.description,
-    items: shopifyDevelopmentChennaiContent.reasons.items,
+  const portfolioContent = {
+    heading: shopifyDevelopmentChennaiContent.portfolio.heading,
+    description: shopifyDevelopmentChennaiContent.portfolio.description,
+    items: shopifyDevelopmentChennaiContent.portfolio.items,
   };
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec single-full-img relative overflow-hidden bg-white pt-47.5 pb-13.75 max-[992px]:pt-25"
-        content={shopifyDevelopmentChennaiContent.hero}
-      />
+      <CityPageHeroSection content={shopifyDevelopmentChennaiContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}
         heading={shopifyDevelopmentChennaiContent.brands.title}
         items={shopifyDevelopmentChennaiContent.brands.items}
       />
-      <TextBoxSection
-        className="single-text-box-sec pb-0 pt-20 max-[992px]:pt-12.5"
-        heading={shopifyDevelopmentChennaiContent.intro.heading}
-        paragraphs={shopifyDevelopmentChennaiContent.intro.paragraphs}
+      <CityPageCounterSection
+        content={shopifyDevelopmentChennaiContent.counter}
+        eyebrowVariant="dash"
       />
-      <ShopifyAppBenefitsSection
-        className="benefit_box_sec four-column-text-with-icon-sec pb-0 pt-20 max-[992px]:pt-12.5"
-        content={shopifyDevelopmentChennaiContent.benefits}
-        id="why-choose-shopify"
+      <CityWhyChooseBoxesSection
+        content={shopifyDevelopmentChennaiContent.whyChoose}
+        eyebrowVariant="dash"
       />
-      <AgencyServicesSection content={servicesContent} />
-      <ProcessWaveSection
-        className="pt-0"
+      <AgencyServicesSection
+        cardBgClassName="bg-white"
+        cardVariant="services-box"
+        className="what-we-provide-sec py-20 max-[992px]:py-[50px]"
+        columns={2}
+        content={shopifyDevelopmentChennaiContent.services}
+        eyebrow={shopifyDevelopmentChennaiContent.services.eyebrow}
+        hideCta={true}
+        id="services"
+        showDescription={true}
+      />
+      <OurDevelopmentProcessSection
         content={shopifyDevelopmentChennaiContent.process}
+        eyebrowVariant="dash"
       />
-      <ShopifyReasonsSection
-        carouselFullBleed
-        content={reasonsContent}
-        id="why-choose-dynamic-dreamz"
-        layout="carousel"
+      <CityWhyChooseBoxesSection
+        bgClassName="bg-white"
+        className="city-page-why-choose-dynamic !pb-0"
+        columns={3}
+        content={shopifyDevelopmentChennaiContent.whyDynamicDreamz}
+        eyebrowVariant="dash"
       />
       <PortfolioShowcaseSection
-        content={shopifyDevelopmentChennaiContent.portfolio}
+        cardVariant="ourWorkRefresh"
+        className="our-work-sec py-20 max-[992px]:py-[50px]"
+        columns={4}
+        content={portfolioContent}
+        ctaHref={shopifyDevelopmentChennaiContent.portfolio.ctaHref}
+        ctaLabel={shopifyDevelopmentChennaiContent.sectionCopy.portfolioCta}
+        eyebrow={shopifyDevelopmentChennaiContent.sectionCopy.portfolioEyebrow}
+        headerLayout="split"
       />
       <HappyClientSection
         description={shopifyDevelopmentChennaiContent.testimonials.description}
+        eyebrow={shopifyDevelopmentChennaiContent.sectionCopy.testimonialsEyebrow}
         heading={shopifyDevelopmentChennaiContent.testimonials.heading}
         items={shopifyDevelopmentChennaiContent.testimonials.items}
       />
       <SplitFaqSection
         idPrefix="chennai-faq"
+        heading={shopifyDevelopmentChennaiContent.sectionCopy.faqHeading}
         items={shopifyDevelopmentChennaiContent.faqs}
       />
       <CtaBannerSection
