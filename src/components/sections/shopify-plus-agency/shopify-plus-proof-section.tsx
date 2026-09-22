@@ -40,7 +40,7 @@ export function ShopifyPlusProofSection({
                   className="list-col mb-5 w-1/2 px-2.5 max-[1399px]:mb-[15px] max-[767px]:mb-[15px] max-[767px]:w-full max-[767px]:border-b max-[767px]:border-[#2828281c] max-[767px]:p-0 max-[767px]:pb-[15px] max-[767px]:last:mb-0 max-[767px]:last:border-b-0 max-[767px]:last:pb-0 [&:nth-last-child(-n+2)]:mb-0"
                   key={stat}
                 >
-                  <div className="list-item">
+                  <div className="flex flex-col list-none">
                     <span
                       aria-hidden="true"
                       className="mb-[5px] block font-montserrat text-sm font-semibold leading-[22px] text-brand-red"

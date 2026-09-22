@@ -5,7 +5,6 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
-import { shopifyPlusAgencyServices } from "@/content/shopify-plus-agency";
 import { cn } from "@/lib/class-names";
 
 import { formatBrText } from "@/lib/text-formatting";
@@ -36,6 +35,12 @@ export type AgencyServicesContent = {
   };
 };
 
+const defaultAgencyServicesContent: AgencyServicesContent = {
+  heading: "",
+  description: "",
+  items: [],
+};
+
 export type AgencyServicesSectionProps = {
   content?: AgencyServicesContent;
   variant?: "compact" | "classic";
@@ -53,7 +58,7 @@ export type AgencyServicesSectionProps = {
 };
 
 export function AgencyServicesSection({
-  content = shopifyPlusAgencyServices,
+  content = defaultAgencyServicesContent,
   variant = "compact",
   headerLayout = "split",
   showDescription = true,

@@ -2721,9 +2721,9 @@ are needed for a quote without promising an unverified delivery time or rate.
 
 ## Shopify Plus Agency (`/shopify-plus-agency`)
 
-Status: implemented and verified; live-visible content preserved
+Status: implemented and verified; live-visible content and section parity complete
 
-Last reviewed: 2026-09-04
+Last reviewed: 2026-09-22
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -2747,22 +2747,23 @@ Dedicated commercial service and capability page for Shopify Plus. Showcases Sho
 ### Current strengths and available evidence
 
 - Server-rendered H1, introduction, and why-choose sections clearly establish enterprise-level Shopify Plus capabilities and positioning.
-- 8 distinct Shopify Plus services (Store Setup, Consulting, Migration, Mobile App Development, B2B & Wholesale, Custom Theme Development, White Label, and Maintenance) with structured descriptions and CTA routing.
+- 10 verified brand logos in the client rail (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, SimsDirect, Kvaser, Nekter Juice Bar, Circuit City) linking directly to live storefronts.
+- 9 distinct Shopify Plus services rendered in `.shopify-development-services` grid (`ShopifyStageServicesSection`): Store Setup, Consulting, Migration, Connected Commerce / App Integration, Mobile App Development, B2B & Wholesale, Custom Theme Development, White Label, and Maintenance, complete with category tags, capability pills, and contextual text arrow CTAs.
 - 3 engagement options covering project-based delivery, flexible hourly support from $25/hour, and dedicated developer or team engagements from $2,000/month.
 - 3 named case studies (Calmenta, Trendia, Nekter Juice Bar) linking to dedicated case-study routes.
 - 8 industry sectors (Health & Nutrition, Fashion & Apparel, Beauty & Cosmetics, Food & Beverage, Sports & Outdoors, Home & Living, Jewellery & Accessories, and Pet Industry) with cross-links where routes exist.
 - 8 portfolio cards (Ranavat, Atolea Jewelry, Tropic Feel, Sculpt Neon, Headsets, Perfect Locks, Nekter Juice Bar, and The Somewhere Co.) linking to live storefronts or the work archive.
 - 11 verified video testimonials (Alec Torelli, William Petz, William ST Baker, Kerri Imrie, Brandon, Shari Leidich, Rebekah Wymer, Thommas Linnrose, Zoe Wang, Clinton De Vere, Fernando Arias) with modal players and YouTube IDs.
 - 4 hero trust badges for Shopify Platinum Partner, Clutch, Trustpilot, and Upwork, with the three review badges linking to external profile URLs.
-- 9 comprehensive buyer FAQs covering agency credentials, services, team experience, B2B, migration, cost, maintenance, and global delivery.
-- Complete structured data graph emitting Organization, WebSite, WebPage, Service with OfferCatalog, BreadcrumbList, FAQPage (9 visible items), and 11 VideoObject nodes with authentic publish dates.
+- 9 comprehensive buyer FAQs in centered `.faq-sec` layout covering agency credentials, services, team experience, B2B, migration, cost, maintenance, and global delivery.
+- Complete structured data graph emitting Organization, WebSite, WebPage, Service with OfferCatalog (9 items), BreadcrumbList, FAQPage (9 visible items), and 11 VideoObject nodes with authentic publish dates.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Live source emits incomplete graph without VideoObjects for the 11 client videos | Emit Organization, WebSite, WebPage, Service with OfferCatalog, BreadcrumbList, FAQPage (9 items), and 11 VideoObject nodes with verified upload dates | Rendered JSON-LD and build verification complete 2026-09-03 |
+| P0 | implemented | Structured data | Live source emits incomplete graph without VideoObjects for the 11 client videos | Emit Organization, WebSite, WebPage, Service with OfferCatalog, BreadcrumbList, FAQPage (9 items), and 11 VideoObject nodes with verified upload dates | Rendered JSON-LD and build verification complete 2026-09-22 |
 | P0 | implemented | Content fidelity | Visible text box sections must strictly preserve live wording ("Why Choose Shopify Plus Agency" and "How to Choose...") | Bind sections to typed local content matching live copy verbatim | Code review and live comparison complete |
 | P0 | implemented | Slashless URL policy | Links and canonicals must comply with no-trailing-slash policy | Enforce slashless canonical, Open Graph, schema, and internal navigation | `npm run check:urls` passed |
 | P1 | migration pending | Conversion routes | CTAs target planned `/request-quote` and case studies | Preserve migration intent and validate quote and case-study routes before launch | Route implementation |
@@ -2788,17 +2789,17 @@ capabilities. Future visible copy improvements are tracked in
 
 ### Internal-link and conversion actions
 
-- Maintain the primary hero CTA at `/book-a-discovery-call` and the project-based engagement CTA at `/request-quote` using slashless paths.
+- Maintain the primary hero CTA at `/request-quote` and secondary CTA at `#our_work`.
 - Route portfolio CTAs to `/our-work` and case-study cards to their respective
   `/case-studies/*` paths.
 - Preserve external review and portfolio links with `nofollow noopener noreferrer`.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Organization, WebSite, WebPage, Service with OfferCatalog (8 items),
+- Emit Organization, WebSite, WebPage, Service with OfferCatalog (9 items),
   BreadcrumbList, FAQPage (9 visible FAQs), and 11 VideoObject nodes.
-- Use live publish date `2024-05-02T09:33:27+00:00` and the refreshed route
-  review date for `dateModified`.
+- Use live publish date `2024-05-02T09:33:27+00:00` and `2026-09-17T07:16:48+00:00`
+  for `dateModified` matching live Yoast SEO metadata.
 - Ensure canonical route and primary image are listed in the sitemap and indexable.
 
 ### Measurement plan
@@ -2811,20 +2812,20 @@ capabilities. Future visible copy improvements are tracked in
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-09-04): canonical, Open Graph, sitemap, robots, JSON-LD,
+- URL-policy review (2026-09-22): canonical, Open Graph, sitemap, robots, JSON-LD,
   and internal links use `/shopify-plus-agency`; source/build URL guard passes.
-- Checks completed (2026-09-04): Visual parity audit and fixes completed against live site:
-  - Hero: secondary CTA href updated to `#our_work`, video right column displays on tablet (768px-991px), video logo includes dashed tail SVG matching live `.video-logo::after`.
-  - Why Shopify Plus Brands Choose: fixed duplicate intro rendering, matched split section heading with two-column bottom row, left text block with top/bottom border, right 2x2 grid with red 01-04 numbers and dividers.
-  - Explore Our Work: fixed secondary CTA href to `#our_white_label_pricing`, round 34px arrow icon remains visible across all breakpoints.
-  - Shopify Plus Services: set `cardVariant="services-box"` and `id="services"` to render 2-column icon + text layout with `#fafaf7` background.
-  - Case Studies: matched live `.cs-chip` white pill styling and `.cs-visit` uppercase CTA link with diagonal arrow and top divider line.
-  - Industries: updated eyebrow to `#ad5151` uppercase, title typography, and card radius matching live `.industries_box`.
-  - Pricing: set `id="our_white_label_pricing"`, updated white card radius, label, badge, price bottom border, and bottom diagonal arrow link.
-  - Testimonials: set desktop-first `useState(3)` in `HappyClientCarousel` to render 3 cards on desktop view.
-  - How to Choose: updated `.spa-wrapper`, `.spa-item`, and 34px `#fbefd7` badge matching live `.how-to-choose-spa-sec`.
-  - Responsive verification across desktop (1440px), tablet (991px), and mobile (390px) screenshots confirmed visual parity.
-- Remaining: continue monitoring CTA conversion and visual parity as the live page evolves; all current quote, booking, and case-study destinations resolve locally.
+- Checks completed (2026-09-22): Full remigration parity audit against live site:
+  - Hero: primary CTA updated to `/request-quote`, trust badge alts synchronized with live em dashes, secondary CTA anchor `#our_work`.
+  - Brand Rail: synchronized 12 live client brand logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit) with live dimensions, links, and heading `Trusted by <br>Leading Brands`.
+  - Proof Section: resolved unwanted list-style markers before numeric prefixes `01.`-`04.`.
+  - Services: migrated to 9-item `ShopifyStageServicesSection` matching live `.shopify-development-services` layout, tags ("Core Capability", "Consulting", "Replatforming", "Connected Commerce", etc.), bullet list tags for item 1 and item 4, and text arrow links.
+  - FAQ: implemented two-column `SplitFaqSection` matching live `.faq-sec` (`#fafaf7` background, sticky header on desktop, borderless items with bottom-border only, circular plus/cross icons, first item open by default) with 9 verified FAQs.
+  - Case Studies: 3 cards (Calmenta, Trendia, Nekter Juice Bar) with taxonomy chips and `View Case study` arrow CTA.
+  - Industries: 8 industries grid matching `.industries_box_section`.
+  - Engagement Pricing: 3 model cards matching `.white_label_wp_develop_plan_section.shopify-plus-engagement` at `#our_white_label_pricing`.
+  - Testimonials: 11 video testimonial cards in `.happy-client-sec` with modal players.
+  - Evaluation Framework: 4 numbered criteria matching `.how-to-choose-spa-sec`.
+  - Automated verification: `npm run check:urls`, `npm run check:component-content`, `npm run check:case-studies`, `npm run check:blog-posts`, `npm run check:asset-duplicates`, `npx tsc --noEmit`, `npm run lint`, and `npm run build` all pass with 0 errors.
 
 ## Request a Quote (`/request-quote`)
 

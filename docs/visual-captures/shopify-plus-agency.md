@@ -1,5 +1,39 @@
 # Shopify Plus Agency Page
 
+## Live parity remigration and visual alignment — 2026-09-22
+
+- Live URL: `https://www.dynamicdreamz.com/shopify-plus-agency/`
+- Local route: `/shopify-plus-agency`
+- Date checked: 2026-09-22
+- Last live modified time: `2026-09-17T07:16:48+00:00`
+- Browser/Source: Scraped rendered HTML and live CSS/DOM inspection from `https://www.dynamicdreamz.com/shopify-plus-agency/`.
+- Summary of remigration alignment & parity fixes:
+  1. **Services section modernized to `.shopify-development-services` grid (`ShopifyStageServicesSection`)**:
+     - Live site updated from older `.services-box` cards to `.shopify-development-services pt-80` featuring 9 capability cards with category tag eyebrows ("Core Capability", "Consulting", "Replatforming", "Connected Commerce", "Agency Delivery", "Commerce B2B", "Theme Development", "Keep Evolving"), capability pill tags (e.g. `Online Store 2.0`, `PDP / PLP`, `Custom Sections`, `Metafields`, `Responsive QA`), and targeted CTA links (`/request-quote`, `/book-a-discovery-call`, `/shopify-migration`, `/shopify-mobile-app-development`, `/white-label-shopify-development-services`, `/buy-shopify-development-hours`).
+     - Reused existing modular `ShopifyStageServicesSection` instead of duplicating card layouts. Decoupled `AgencyServicesSection` default props to eliminate unused coupling.
+  2. **FAQ Section aligned to two-column split layout (`SplitFaqSection`)**:
+     - Live site uses `.faq-sec` (`#fafaf7` background) with two-column split layout: left column has sticky header ("Frequently Asked Questions") and description ("Clear answers about our Shopify Plus capabilities, developers, B2B services, migrations, pricing and ongoing support."); right column features 9 borderless FAQ accordions with bottom borders only and circular plus/cross (`circle-cross`) toggle icons, with the first item open by default.
+     - Implemented with `SplitFaqSection` with `shopifyPlusAgencyFaqHeading` and `shopifyPlusAgencyFaqDescription` exported from the content boundary.
+  3. **List points bug resolved in Proof Section (`ShopifyPlusProofSection`)**:
+     - Removed `list-item` class (which triggered browser `display: list-item` disc bullets) and replaced with `flex flex-col list-none`, restoring clean `01.`-`04.` red numeric badges without unwanted bullet points.
+  4. **Brand logos synchronized with live 12-brand trust rail**:
+     - Aligned `shopifyPlusAgencyBrandLogos` to the exact 12 brand partners rendered on the live site: Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit.
+     - All 12 brand marks use canonical local SVG assets under `/assets/clients/` with identical visual fidelity.
+     - Updated rail heading to `Trusted by <br>Leading Brands`.
+  5. **Hero CTA & Trust Badges**:
+     - Primary hero CTA points to `/request-quote` (matching live href `https://www.dynamicdreamz.com/request-quote/`).
+     - Trust badge alt attributes aligned to live copy with proper typography (`Clutch — 4.9 rating`, `Trustpilot — 4.9 TrustScore`, `Upwork Top Rated Plus`).
+  6. **SEO & Structured Data**:
+     - Synchronized title to `Shopify Plus Agency & Shopify Plus Development Services`.
+     - Synchronized `socialDescription` to live `og:description` ("Shopify Plus development for high-growth and enterprise brands, including B2B, migrations, custom integrations, CRO and ongoing technical support.").
+     - Synchronized `modifiedTime` to `2026-09-17T07:16:48+00:00`.
+- Automated check scripts verified:
+  - `npm run check:urls`: Passed (0 trailing slash violations).
+  - `npm run check:component-content`: Passed (0 content boundary violations across 514 source files).
+  - `npm run check:asset-duplicates`: Passed (1707 public assets, 0 byte/visual/pixel duplicates).
+  - `npm run lint`: Passed (0 ESLint errors/warnings).
+  - `npm run build`: Passed (clean production App Router build with prerendered `/shopify-plus-agency`).
+
 ## Live parity update and visual alignment — 2026-09-04
 
 - Live URL: `https://www.dynamicdreamz.com/shopify-plus-agency/`
