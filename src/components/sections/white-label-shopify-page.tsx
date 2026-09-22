@@ -9,7 +9,7 @@ import { HowAgenciesUseSection } from "@/components/sections/white-label-shopify
 import { ShopifySupportScenariosSection } from "@/components/sections/white-label-shopify/shopify-support-scenarios-section";
 import { ShopifyTeamBehindItSection } from "@/components/sections/white-label-shopify/shopify-team-behind-it-section";
 import { WhiteLabelCounterSection } from "@/components/sections/white-label-shopify/white-label-counter-section";
-import { WhiteLabelShopifyHeroSection } from "@/components/sections/white-label-shopify/white-label-shopify-hero-section";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
 import {
   whiteLabelShopifyBrandProtection,
   whiteLabelShopifyCounters,
@@ -27,7 +27,7 @@ export function WhiteLabelShopifyPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       {/* 1. Hero Section */}
-      <WhiteLabelShopifyHeroSection content={whiteLabelShopifyHero} />
+      <ServiceHeroVideoSection content={whiteLabelShopifyHero} titleAccentTag="i" />
 
       {/* 2. Stats Counter Section */}
       <WhiteLabelCounterSection counters={whiteLabelShopifyCounters} />
@@ -37,10 +37,11 @@ export function WhiteLabelShopifyPage() {
 
       {/* 4. Portfolio Section */}
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[992px]:py-12.5"
+        className="our-work-sec pt-0 pb-20 max-[992px]:pb-12.5"
         columns={4}
         content={whiteLabelShopifyPortfolio}
         headerLayout="split"
+        sectionId="our_work"
         variant="liveGrid"
       />
 
@@ -54,15 +55,14 @@ export function WhiteLabelShopifyPage() {
       <ShopifyTeamBehindItSection content={whiteLabelShopifyBrandProtection} />
 
       {/* 8. Shopify Technologies & Tools Marquee */}
-      <WhiteLabelToolsSection
-        eyebrow={whiteLabelShopifySectionCopy.toolsEyebrow}
-      />
+      <WhiteLabelToolsSection />
 
       {/* 9. Agency Use Cases */}
       <HowAgenciesUseSection />
 
       {/* 10. Partnership Onboarding Steps */}
       <WhiteLabelWhySection
+        className="bg-[#EFF4EF]"
         eyebrow={whiteLabelShopifySectionCopy.processEyebrow}
         reasons={whiteLabelShopifyPartnershipSteps}
         title={whiteLabelShopifySectionCopy.processTitle}

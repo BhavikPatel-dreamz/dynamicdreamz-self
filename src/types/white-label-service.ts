@@ -18,6 +18,7 @@ export type WhiteLabelHero = {
   title: string;
   titleLines?: readonly string[];
   accent?: string;
+  subtitle?: string;
   lead: string;
   leadStrong?: boolean;
   paragraphs: readonly RichText[];

@@ -1445,9 +1445,9 @@ for this migration task.
 
 ## White Label Shopify Development Services (`/white-label-shopify-development-services`)
 
-Status: remigrated and verified against 2026-09-04 live redesign; live-visible content preserved
+Status: remigrated and verified against 2026-09-22 live site state; live-visible content preserved
 
-Last reviewed: 2026-09-04
+Last reviewed: 2026-09-22
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 

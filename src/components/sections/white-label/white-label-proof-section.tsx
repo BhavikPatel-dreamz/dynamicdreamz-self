@@ -61,6 +61,7 @@ type WhiteLabelWhySectionProps = {
   eyebrow?: string;
   title?: string;
   reasons?: readonly (WhiteLabelCard | null)[];
+  className?: string;
 };
 
 const whyBottomBorderClasses = [
@@ -82,6 +83,7 @@ export function WhiteLabelWhySection({
   eyebrow,
   title = whiteLabelShopifySectionCopy.whyTitle,
   reasons = whiteLabelShopifyReasons,
+  className,
 }: WhiteLabelWhySectionProps) {
   const lastVisibleIndex = reasons.reduce(
     (lastIndex, reason, index) => (reason ? index : lastIndex),
@@ -90,7 +92,12 @@ export function WhiteLabelWhySection({
   const lastRowIndex = Math.ceil(reasons.length / 3) - 1;
 
   return (
-    <section className="bg-[#fafaf7] pt-[70px] pb-[82px] max-[1199px]:py-20 max-[992px]:py-[50px]">
+    <section
+      className={cn(
+        "bg-[#fafaf7] pt-[70px] pb-[82px] max-[1199px]:py-20 max-[992px]:py-[50px]",
+        className,
+      )}
+    >
       <Container className="max-[575px]:px-4">
         {eyebrow ? (
           <div className="mb-2.5 text-center text-[13px] font-bold uppercase tracking-[1.5px] text-[#e33d37]">

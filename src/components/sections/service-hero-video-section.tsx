@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { formatBrText } from "@/lib/text-formatting";
 import { cn } from "@/lib/class-names";
 
 export type HeroBadge = {
@@ -124,7 +125,7 @@ export function ServiceHeroVideoSection({
                   className="mb-[15px] font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6 max-[767px]:text-sm max-[767px]:leading-[27px]"
                   key={index}
                 >
-                  {p}
+                  {formatBrText(p)}
                 </p>
               ))}
 

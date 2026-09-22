@@ -44,11 +44,18 @@ export function DeliveryModelComparisonSection({
                       key={col.label}
                     >
                       {col.isWinner && col.kicker ? (
-                        <span className="mb-1.5 block text-[10px] font-bold uppercase text-[#AD5151]">
+                        <span className="mb-1.5 block font-montserrat text-[10px] font-bold uppercase text-[#AD5151]">
                           {col.kicker}
                         </span>
                       ) : null}
-                      <span>{col.label}</span>
+                      <span className="inline-flex items-center">
+                        {col.label}
+                        {"pill" in col && col.pill ? (
+                          <span className="platinum-pill ml-2 inline-flex items-center rounded-full bg-[#AD5151] px-2.5 py-1 text-[10px] font-bold uppercase text-white">
+                            {col.pill}
+                          </span>
+                        ) : null}
+                      </span>
                     </th>
                   ))}
                 </tr>

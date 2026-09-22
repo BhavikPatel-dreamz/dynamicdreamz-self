@@ -4,8 +4,48 @@ Status: remigrated and visually verified against the redesigned live reference
 Live URL: `https://www.dynamicdreamz.com/white-label-shopify-development-services/`  
 Local route: `/white-label-shopify-development-services`
 
-Checked: 2026-09-04  
+Checked: 2026-09-22  
 Browser: Google Chrome headless (desktop 1440px, tablet 768px, mobile 390px emulation)
+
+## 2026-09-22 Visual Parity & Component Generalization Update
+
+A thorough audit against the live site (`https://www.dynamicdreamz.com/white-label-shopify-development-services/`) and its live stylesheets was performed, completing full production parity:
+
+1. **Hero Section (`ServiceHeroVideoSection` Consolidation)**:
+   - Replaced ad-hoc `WhiteLabelShopifyHeroSection` with canonical `ServiceHeroVideoSection`.
+   - Live H1 styling matched using `titleAccentTag="i"` with `font-editorial-italic font-normal italic text-[#ad5151]`.
+   - Subtitle rendered via `.h4` class (`Your Shopify Technology Partner. An Extension of Your Team.`).
+   - Paragraph lead text matches live: `Dynamic Dreamz provides <strong>white label Shopify development services for agencies</strong> that need additional capacity or specialist Shopify expertise...`
+   - Primary CTA path aligned to live `/request-quote` ("book an agency intro").
+   - Badges rendered with mobile cross dividers and desktop vertical dividers.
+2. **Stats Counter Section (`white_label_counter_section`)**:
+   - Dividers updated to match live CSS: 4 columns on desktop with vertical divider, 2x2 grid on tablet & mobile with horizontal dividing line across the center (`after:content-[''] after:absolute after:bg-[rgba(40,40,40,0.10)] after:top-1/2 after:-translate-y-1/2 after:w-full after:h-[1px] after:left-0`).
+   - Responsive typography matched: 24px desktop, 20px tablet, 16px mobile.
+3. **Portfolio Section (`our-work-sec`)**:
+   - Added live section anchor `id="our_work"`.
+   - Adjusted top/bottom padding to live CSS (`pt-0 pb-20 max-[992px]:pb-12.5`).
+   - CTAs aligned to live: Primary "View our work" (`/our-work`), Secondary "View Pricing" (`#our_white_label_pricing`).
+4. **Delivery Model Comparison Table (`choose_the_right_delivery_model_section`)**:
+   - Winner column header reflects live badge: `Dynamic Dreamz <span class="platinum-pill">Shopify Platinum Partner</span>` with red pill background `#AD5151`.
+   - Kicker aligned to "Recommended for agencies".
+5. **Brand Protection & Confidentiality (`our_shopify_team_behind_it_section`)**:
+   - Secondary link rendered as `.text-arrow-link` to `/about-us` using the new generalized `TextArrowLink` primitive.
+6. **Shopify Technologies & Tools Marquee**:
+   - Removed eyebrow to match live section markup (no eyebrow on live page).
+   - Paragraph text matches live: "Our teams work across the Shopify ecosystem — from storefront development and Shopify APIs to payments, subscriptions, retention, support, automation and enterprise integrations."
+7. **Agency Use Cases (`how_agencies_use_dynamic_dreamz_section`)**:
+   - Replaced inline link styling with generalized `TextArrowLink` (`#AD5151` font-bold uppercase with hover to `#282828`).
+8. **Onboarding Steps (`white_label_why_dynamic_dreamz_section`)**:
+   - Background set to `#EFF4EF` to match live section styling with eyebrow "Simple Agency Onboarding".
+9. **SEO Metadata & Structured Data**:
+   - `dateModified` in `src/data/seo.ts` aligned to live Yoast timestamp `"2026-09-17T05:34:55+00:00"`.
+   - Structured data validates cleanly with Service, WebPage, BreadcrumbList, Organization, and FAQPage nodes.
+10. **Code Quality & Verification**:
+    - `npm run check:urls`: 0 errors.
+    - `npm run check:component-content`: 0 errors across all 510 source files.
+    - `npm run check:asset-duplicates`: 0 byte, visual SVG, or raster duplicates across 1686 assets.
+    - `npm run lint`: 0 errors.
+    - `npm run build`: 0 errors, prerendered cleanly.
 
 ## 2026-09-04 Full Live Site Redesign Remigration
 
