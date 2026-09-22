@@ -2828,9 +2828,9 @@ capabilities. Future visible copy improvements are tracked in
 
 ## Request a Quote (`/request-quote`)
 
-Status: implemented and verified; live-visible content preserved
+Status: implemented and verified; 1:1 live parity confirmed on 2026-09-22
 
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-22
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -2840,7 +2840,7 @@ Decision stage: inbound lead capture, project discovery, proposal estimation, an
 
 ### Page role
 
-Primary commercial inbound conversion and project estimation route. Connects potential clients directly to Dynamic Dreamz representatives through a structured project inquiry form, supported by brand credibility proof (5000+ projects, 150+ experts, 1100+ happy clients), 4 verified partner/review badges (Shopify Platinum Partners, Clutch, Upwork Top Rated, Trustpilot), and a 7-client testimonial slider.
+Primary commercial inbound conversion and project estimation route. Connects potential clients directly to Dynamic Dreamz representatives through a structured project inquiry form, supported by brand credibility proof (Experience 20+ Years, 5000+ Projects, 150+ Experts), 4 verified partner/review badges (Shopify Platinum Partners, Clutch, Upwork Top Rated, Trustpilot), and a 7-client testimonial slider.
 
 ### Target prompts
 
@@ -2853,7 +2853,7 @@ Primary commercial inbound conversion and project estimation route. Connects pot
 ### Current strengths and available evidence
 
 - High-visibility conversion route with minimal friction: clean 7-input inquiry form with budget selectors and project brief.
-- Server-rendered proof points: 5000+ Projects, 150+ Experts, 1100+ Happy Clients.
+- Server-rendered proof points: Experience 20+ Years, 5000+ Projects, 150+ Experts matching live deliver-wrapper.
 - 4 independent review and partner badges linking to external verification profiles (Shopify Partner Directory, Clutch, Upwork, Trustpilot).
 - 7 authentic client testimonials with avatars and quotes (Alec Torelli, William Petz, William ST Baker, Kerri Imrie, Brandon, Shari Leidich, Rebekah Wymer).
 - Clean `header-two` layout with direct back-navigation and home branding.
@@ -2864,23 +2864,22 @@ Primary commercial inbound conversion and project estimation route. Connects pot
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | CTA integrity | Live `inquire now` points to `/career/`. | Route the unchanged CTA label to `/request-quote`. | Conversion intent and existing quote route |
-| P1 | implemented | Structured data | Live page schema is a sitewide graph with unrelated FAQ questions and trailing-slash URLs. | Emit route-scoped WebPage, Service, BreadcrumbList, and FAQPage data with slashless URLs matching visible content. | Visible page content and local route policy |
-| P1 | deferred | Proof definitions | Counters use `50+`, `5000+`, `20+`, and `1000+` without source dates or definitions. | Add approved definitions/provenance in supporting content without changing the visible counter design. | Leadership/client-success approval |
-| P1 | deferred | Visible copy | Several headings and paragraphs contain grammar issues such as `What do Shopify developers do?` and `End to End`. | Queue exact replacements for owner approval; preserve live wording during migration. | Exact visible-copy approval |
-| P2 | deferred | Evidence depth | Portfolio cards link to external stores but lack internal scope/case-study context. | Add approved case studies with delivery scope and verified outcomes. | Client-success approval and case-study routes |
+| P0 | implemented | Counter parity | Previous counters displayed Happy Clients instead of Experience; live site displays Experience 20+ Years, 5000+ Projects, 150+ Experts | Remigrated on 2026-09-22 with live 3-stat counter block | Live deliver-wrapper inspection |
+| P0 | implemented | Form fields | Phone placeholder and budget option styling verified against live WP form | Empty phone placeholder matching live `<input type="tel">` and live budget selector options | Live form inspection |
+| P1 | implemented | Structured data | Live page emits a sitewide graph with trailing-slash URLs | Emit route-scoped ContactPage, Organization, WebSite, and BreadcrumbList with slashless URLs matching visible content | Visible page content and local route policy |
+| P1 | deferred | Copy clarity | Form heading uses conversational tone `Let’s schedule a call or chat :)` | Retain live heading per migration rules; propose formal alternative only with explicit stakeholder approval | Exact visible-copy approval |
 
 ### Structured-data, crawler, and freshness actions
 
-- Keep `/hire-shopify-developers` in sitemap output and use slashless canonical/Open Graph URLs.
-- Ensure FAQ structured data contains only the five visible Shopify hiring questions and answers.
-- Keep image alt text subject-specific and use local project-owned media only.
+- Keep `/request-quote` in sitemap output and use slashless canonical/Open Graph URLs.
+- Ensure ContactPage structured data accurately represents the inbound consultation and quote workflow.
+- Keep testimonial avatars and proof badges project-owned and locally served.
 
 ### Verification and remaining gaps
 
-- Checked: live source, screenshots, metadata, JSON-LD, linked hiring CSS/JS, local assets, responsive contract, and CTA destinations.
-- Implemented: route content, local media reuse, route-scoped metadata/schema, and quote CTA correction.
-- Deferred: visible copy corrections, counter provenance, and internal case-study evidence pending approval.
+- Checked: live source, screenshots, metadata, JSON-LD, header-two layout, deliver-wrapper counters, review badges, testimonial slider, form fields, and responsive behavior.
+- Implemented: route content, local media reuse, route-scoped metadata/schema, 20+ Years experience counter, and live form field matching.
+- Verified: `check:urls`, `check:component-content`, `check:asset-duplicates`, `npm run lint`, and `npm run build` pass.
 
 ## Case Studies (`/case-studies`)
 
