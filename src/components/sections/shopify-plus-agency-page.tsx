@@ -1,8 +1,8 @@
-import { AgencyServicesSection } from "@/components/sections/agency-services-section";
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
+import { ShopifyStageServicesSection } from "@/components/sections/shopify-stage-services-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { CaseStudyCardsSection } from "@/components/sections/shopify-plus-agency/case-study-cards-section";
 import { EvaluationFrameworkSection } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
@@ -10,17 +10,20 @@ import { IndustriesServedSection } from "@/components/sections/shopify-plus-agen
 import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import { ShopifyPlusProofSection } from "@/components/sections/shopify-plus-agency/shopify-plus-proof-section";
 import {
+  shopifyPlusAgencyBrandLogos,
+  shopifyPlusAgencyBrandTrustHeading,
+  shopifyPlusAgencyCaseStudies,
+  shopifyPlusAgencyFaqDescription,
+  shopifyPlusAgencyFaqHeading,
   shopifyPlusAgencyFaqs,
   shopifyPlusAgencyHero,
-  shopifyPlusAgencyFaqDescription,
   shopifyPlusAgencyHowToChoose,
   shopifyPlusAgencyIndustries,
+  shopifyPlusAgencyPageTestimonials,
   shopifyPlusAgencyPortfolio,
+  shopifyPlusAgencyPricing,
   shopifyPlusAgencyServices,
   shopifyPlusAgencyWhyChoose,
-  shopifyPlusAgencyCaseStudies,
-  shopifyPlusAgencyPricing,
-  shopifyPlusAgencyPageTestimonials,
 } from "@/content/shopify-plus-agency";
 
 const brandSection = {
@@ -45,6 +48,8 @@ export function ShopifyPlusAgencyPage() {
       <IndustryBrandsSection
         className="max-[991px]:pb-[4px] max-[767px]:pb-4.25"
         content={brandSection}
+        heading={shopifyPlusAgencyBrandTrustHeading}
+        items={shopifyPlusAgencyBrandLogos}
       />
       <ShopifyPlusProofSection content={shopifyPlusAgencyWhyChoose} />
       <PortfolioShowcaseSection
@@ -59,12 +64,10 @@ export function ShopifyPlusAgencyPage() {
         }}
         sectionId="our_work"
       />
-      <AgencyServicesSection
-        cardVariant="services-box"
-        className="what-we-provide-sec bg-white py-20 max-[992px]:py-[50px]"
+      <ShopifyStageServicesSection
+        className="shopify-development-services bg-[#fafaf7] py-20 max-[992px]:py-[50px]"
         content={shopifyPlusAgencyServices}
-        eyebrow={shopifyPlusAgencyServices.eyebrow}
-        id="services"
+        id="shopify-services"
       />
       <CaseStudyCardsSection content={shopifyPlusAgencyCaseStudies} />
       <IndustriesServedSection
@@ -74,16 +77,19 @@ export function ShopifyPlusAgencyPage() {
       />
       <PricingTableSection content={shopifyPlusAgencyPricing} />
       <HappyClientSection
-        heading={shopifyPlusAgencyPageTestimonials.heading}
-        description={shopifyPlusAgencyPageTestimonials.description}
-        items={shopifyPlusAgencyPageTestimonials.items}
         className="bg-white"
+        description={shopifyPlusAgencyPageTestimonials.description}
+        heading={shopifyPlusAgencyPageTestimonials.heading}
+        items={shopifyPlusAgencyPageTestimonials.items}
       />
       <EvaluationFrameworkSection content={shopifyPlusAgencyHowToChoose} />
       <SplitFaqSection
+        answerClassName="!text-base !leading-[28px] !font-medium text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-[24px]"
+        className="faq-sec"
         description={shopifyPlusAgencyFaqDescription}
-        items={shopifyPlusAgencyFaqs}
+        heading={shopifyPlusAgencyFaqHeading}
         idPrefix="shopify-plus-agency-faq"
+        items={shopifyPlusAgencyFaqs}
       />
     </div>
   );
