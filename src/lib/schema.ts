@@ -5396,16 +5396,10 @@ export function createShopifyDevelopmentInMumbaiPageSchema() {
       question: item.question,
       answer: item.answer.replace(/<[^>]+>/g, " "),
     })),
-    offers: [
-      ...shopifyDevelopmentMumbaiContent.services.items.map((item) => ({
-        title: item.title,
-        description: item.description,
-      })),
-      ...shopifyDevelopmentMumbaiContent.reasons.items.map((item) => ({
-        title: item.title,
-        description: item.description,
-      })),
-    ],
+    offers: shopifyDevelopmentMumbaiContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }

@@ -3512,11 +3512,11 @@ export const pageSeo = {
   },
   shopifyDevelopmentInMumbai: {
     path: "/shopify-development-in-mumbai",
-    title: "Top Shopify Development Company in Mumbai - Dynamic Dreamz",
+    title: "Shopify Development Company in Mumbai | Dynamic Dreamz",
     description:
-      "Partner with the best Shopify development company in Mumbai, which offers custom Shopify web development, migration, and scalable ecommerce solutions.",
+      "Shopify development company in Mumbai offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     socialDescription:
-      "Partner with the top Shopify development company in Mumbai for custom store design, theme customization, migrations, and scalable ecommerce growth.",
+      "Shopify development services in Mumbai for custom stores, themes, migrations, app integrations, Shopify Plus and ongoing support.",
     keywords: [
       "Shopify development in Mumbai",
       "Shopify development company in Mumbai",

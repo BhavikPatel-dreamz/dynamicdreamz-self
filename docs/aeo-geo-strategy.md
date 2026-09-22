@@ -9309,32 +9309,38 @@ Owner: SEO, content, and development
 
 ## Shopify Development in Mumbai (`/shopify-development-in-mumbai`)
 
+Status: technical and schema implementation complete; remigrated to exact live site visual parity with 11 sections
+Last reviewed: 2026-09-22
+Owner: SEO, content, and development
+
 ### Page Intent and Query Scope
 - **Primary Search Intent**: Businesses, DTC brands, and enterprise merchants in Mumbai seeking top-tier Shopify development, store migration, and custom ecommerce solutions.
 - **Audience**: Mumbai and India-based retail brands, manufacturers, digital agencies, and startups looking for verified Shopify Plus partners.
 - **Target queries**: "Shopify development in Mumbai", "Shopify development company in Mumbai", "Shopify developers Mumbai", "hire Shopify developers Mumbai", "Shopify web development Mumbai".
 
 ### Visible Content and Evidence Available
+- Eyebrows: "Shopify Development" • "Mumbai" with red-dash styling.
 - H1: "#1 Shopify Development Company in Mumbai".
-- Primary CTA: "get in touch" -> "/request-quote".
-- Hero graphic: Custom Shopify store illustration with independent review marks (Clutch 132 reviews / 5.0, Upwork 2000+ reviews / 5.0, GoodFirms 72 reviews / 5.0).
-- Trusted brands slider: 10 enterprise ecommerce brands.
-- Why Dynamic Dreamz single text box: Mumbai market positioning focusing on scalability, quality, and measurable outcomes.
-- 5 Platform benefits: Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable.
-- 6 Shopify development services: Shopify Plus Store Development Service, Shopify Theme Customization Service, Shopify White Label Development Service, Shopify App Integration Service, Shopify Migration Service, Shopify Maintenance Service.
-- 4-step process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support.
-- 6 Agency reasons carousel: Expert Shopify Developers, Custom Solutions, User-Focused Design, SEO-Optimized Websites, Comprehensive Services, Proven Results.
-- 8 Shopify portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
-- Client stories video testimonial carousel.
-- 7 interactive FAQs answering cost, timelines, migration, theme customization, SEO services, mobile-readiness, and maintenance.
-- Bottom CTA banner: "Want us to help you with your online store?" -> "request a quote".
+- Primary CTA: "Get In Touch" -> "/request-quote".
+- Secondary CTA: "Explore Shopify Services" -> "#services".
+- Hero graphic: Interactive 7-slide tablet showcase slider (Bella Vita, Bombay Shirt Company, Kalki Fashion, Nokt-1, Ranavat, Rare Rabbit, Renee Cosmetics) with 4 verified partner badges.
+- Trusted brands slider: Canonical brand logos (`industryBrandLogos`).
+- Counter section: Eyebrow "Shopify Development Company in Mumbai", H2 "Why Dynamic Dreamz is the Best Shopify Development Company?", and 4 stat counters (20+ Years, 60+, 150+, 5,000+).
+- 5 Platform benefits: Eyebrow "Why Shopify", H2 "Why Choose Shopify for Your Business?", 5 cards with 24x24 icons (Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable).
+- 6 Shopify development services: Eyebrow "Shopify Services in Mumbai", H2 "Our Shopify Development Services", description, and 6 service cards (Expert Shopify Developers, Custom Solutions, User-Focused Design, SEO-Optimized Websites, Comprehensive Services, Proven Results).
+- 4-step process: Eyebrow "How We Work", H2 "Our Shopify Development Process", description, and 4 process steps (Step 01 to Step 04).
+- 6 Agency reasons: Eyebrow "Why Dynamic Dreamz", H2 "Why You Should Partner with the Shopify Development Company in Mumbai?", description, and 6 cards in a 3-column grid.
+- 8 Shopify portfolio showcase items: Eyebrow "Portfolio", H2 "Our Work", description, and 8 live project cards (Renee, 11 11, Bombay Shirt Company, Royce Chocolate, Tropicfeel, TEGO Fit, nekter juice bar, Rare Rabbit) with `cardVariant="ourWorkRefresh"` and "View our work" CTA.
+- Client stories: Eyebrow "Client Stories", H2 "Voices of Our Clients", description, and 11 video testimonial cards with modal video playback.
+- 7 interactive FAQs in split 2-column layout (`SplitFaqSection`) answering cost, timelines, migration, theme customization, SEO services, mobile-readiness, and maintenance.
+- Bottom CTA banner: "Want us to help you with your online store?" -> "request a quote" (`/request-quote`).
 
 ### Structured Gap Analysis
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-mumbai` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | Page requires standard location landing layout | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `FaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | Reused canonical assets across all sections | 0 new downloads required; all assets mapped to existing canonical paths | Total asset duplicates remain 0 |
+| P0 | implemented | Route discovery | Route migrated in App Router | Build `/shopify-development-in-mumbai` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | Full visual parity with live site | Implemented 11 exact live sections using `CityPageHeroSection`, `IndustryBrandsSection`, `CityPageCounterSection`, `CityWhyChooseBoxesSection`, `AgencyServicesSection`, `OurDevelopmentProcessSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across desktop, tablet, and mobile |
+| P0 | implemented | Asset deduplication | Reused canonical assets across all sections | 100% of SVGs and rasters matched existing canonical paths; 0 new assets downloaded | Total asset duplicates remain 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createShopifyDevelopmentInMumbaiPageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Visible copy enhancement | Phrasing variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
 
