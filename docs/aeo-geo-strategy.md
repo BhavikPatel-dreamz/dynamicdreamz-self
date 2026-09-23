@@ -5402,24 +5402,23 @@ Status: implemented; live-visible content preserved
 Page type: Regional Location Landing Page / Shopify Service Page
 Route: `/shopify-development-in-barcelona-spain`
 Primary audience: eCommerce brands, direct-to-consumer businesses, and digital agencies in Barcelona and Spain seeking expert Shopify and Shopify Plus development
-Last reviewed: 2026-08-21
+Last reviewed: 2026-09-23
 
 ### Search and Generative Intent
 
 - "Shopify development Barcelona"
 - "Shopify agency Spain"
+- "Shopify development company in Barcelona Spain"
 - "hire Shopify developers Barcelona"
-- "Shopify Plus agency Barcelona"
-- "Shopify migration and theme customization Barcelona Spain"
+- "Shopify Plus agency Spain"
+- "Shopify migration and theme customization Spain"
 
 ### Actions & Implementation
 
-- Route implemented with App Router Server Components at `/shopify-development-in-barcelona-spain`.
-- Canonical metadata configured (Title: 51 chars, Description: 140 chars).
-- Local Spain client logos (Alohas, Feners, Mille Collines, Midnight, Tropicfeel, Lobster, Metta, Manola, Peters, Aleyole) and review badges ingested with 0 duplicate assets.
-- Integrated Service, OfferCatalog, BreadcrumbList, Organization, and WebSite JSON-LD structured data.
-- Built-in lead-capture quote form connected to standard server actions with client-side feedback.
-- Reverified the rendered live page and View Page Source on 2026-08-21; visible hero, form, service, CTA, and portfolio wording is preserved. The live duplicate Figma paragraph under "Shopify Migration Service" remains visible for parity and is tracked in the content approval queue.
+- Remigrated to 11-section city landing page architecture matching live site: CityPageHeroSection with tablet frame slider and dual CTAs, IndustryBrandsSection continuous logo slider, CityPageCounterSection with 4 verified proof metrics, CityWhyChooseBoxesSection (5 Shopify advantages), AgencyServicesSection (8 Shopify services with deep-links), OurDevelopmentProcessSection (4 development stages), CityWhyChooseBoxesSection (6 Dynamic Dreamz differentiators), PortfolioShowcaseSection (8 recent Shopify store builds), HappyClientSection (client testimonial video carousel), SplitFaqSection (8 FAQs with schema), and CtaBannerSection.
+- Canonical metadata configured (Title: 64 chars, Description: 147 chars).
+- Preserved exact live-visible copy, headings, and CTA flow with 0 duplicate assets.
+- Integrated Service, FAQPage, BreadcrumbList, Organization, and WebSite JSON-LD structured data via createShopifyDevelopmentBarcelonaPageSchema.
 
 ## PrestaShop to Shopify Migration (`/prestashop-to-shopify-migration`)
 

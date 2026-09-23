@@ -767,6 +767,7 @@ const shopifyDevelopmentBarcelonaPageUrl = absoluteUrl(pageSeo.shopifyDevelopmen
 const shopifyDevelopmentBarcelonaPageId = `${shopifyDevelopmentBarcelonaPageUrl}#webpage`;
 const shopifyDevelopmentBarcelonaServiceId = `${shopifyDevelopmentBarcelonaPageUrl}#service`;
 const shopifyDevelopmentBarcelonaBreadcrumbId = `${shopifyDevelopmentBarcelonaPageUrl}#breadcrumb`;
+const shopifyDevelopmentBarcelonaFaqId = `${shopifyDevelopmentBarcelonaPageUrl}#faq`;
 const shopifyDevelopmentChennaiPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentCompanyInChennai.path);
 const shopifyDevelopmentChennaiPageId = `${shopifyDevelopmentChennaiPageUrl}#webpage`;
 const shopifyDevelopmentChennaiServiceId = `${shopifyDevelopmentChennaiPageUrl}#service`;
@@ -4873,25 +4874,34 @@ export function createThankYouForShopifyPlusEnquiryPageSchema() {
 }
 
 export function createShopifyDevelopmentBarcelonaPageSchema() {
-  return createIndustryPageSchema({
-    seo: pageSeo.shopifyDevelopmentBarcelona,
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentBarcelona,
     pageUrl: shopifyDevelopmentBarcelonaPageUrl,
     pageId: shopifyDevelopmentBarcelonaPageId,
-    breadcrumbId: shopifyDevelopmentBarcelonaBreadcrumbId,
-    breadcrumbName: "Shopify Development in Barcelona",
     serviceId: shopifyDevelopmentBarcelonaServiceId,
-    serviceName: "Shopify Development in Barcelona",
+    faqId: shopifyDevelopmentBarcelonaFaqId,
+    breadcrumbId: shopifyDevelopmentBarcelonaBreadcrumbId,
+    serviceName: "Shopify Development in Barcelona, Spain",
     serviceType:
-      "Shopify store development, Shopify Plus, theme customization, Figma to Shopify, migration, and maintenance in Barcelona, Spain",
+      "Custom Shopify development, theme engineering, Shopify Plus, app integration, migration, and store maintenance for businesses across Barcelona and Spain",
+    breadcrumbName: "Shopify Development in Barcelona, Spain",
     audienceType:
-      "eCommerce brands, direct-to-consumer businesses, and digital agencies in Barcelona and Spain seeking expert Shopify development",
-    offerCatalog: {
-      title: "Our Shopify Development Services",
-      items: shopifyDevelopmentBarcelonaContent.services.items.map((item) => ({
+      "Enterprises, startups, D2C brands, and retail businesses in Barcelona and Spain seeking custom Shopify development services",
+    faqs: shopifyDevelopmentBarcelonaContent.faqs.map((item) => ({
+      question: item.question,
+      answer: item.answer.replace(/<[^>]+>/g, " "),
+    })),
+    offers: [
+      ...shopifyDevelopmentBarcelonaContent.services.items.map((item) => ({
         title: item.title,
         description: item.description,
       })),
-    },
+      ...shopifyDevelopmentBarcelonaContent.whyDynamicDreamz.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 

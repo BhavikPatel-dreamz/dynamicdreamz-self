@@ -3065,25 +3065,28 @@ export const pageSeo = {
   },
   shopifyDevelopmentBarcelona: {
     path: "/shopify-development-in-barcelona-spain",
-    title: "Shopify Development in Barcelona | Dynamic Dreamz",
+    title: "Shopify Development in Barcelona, Spain | Dynamic Dreamz",
     description:
-      "Boost your online store with expert Shopify development in Barcelona by Dynamic Dreamz. We offer tailored solutions to eCommerce success.",
+      "Shopify development company in Barcelona, Spain offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
+    socialDescription:
+      "Shopify development services in Barcelona, Spain for custom stores, themes, migrations, app integrations, Shopify Plus and ongoing support.",
     keywords: [
       "Shopify development Barcelona",
       "Shopify agency Spain",
+      "Shopify development company in Barcelona Spain",
       "Shopify developer Barcelona",
       "Shopify Plus Barcelona",
       "ecommerce development Barcelona",
       "Dynamic Dreamz Barcelona",
     ],
-    openGraphType: "article",
+    openGraphType: "website",
     publishedTime: "2024-07-01T00:00:00+00:00",
-    modifiedTime: "2026-08-21T00:00:00+05:30",
+    modifiedTime: "2026-09-23T00:00:00+05:30",
     image: {
-      path: "/assets/og/dynamic-dreamz-company.png",
+      path: "/assets/og/homepage.png",
       width: 1200,
       height: 630,
-      alt: "Shopify Development in Barcelona | Dynamic Dreamz",
+      alt: "Shopify Development Company in Barcelona, Spain | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",

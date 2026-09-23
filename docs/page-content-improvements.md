@@ -1441,15 +1441,15 @@ Primary SEO intent: Sense theme customization, Sense Shopify theme customization
 ## Shopify Development in Barcelona (`/shopify-development-in-barcelona-spain`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-21
-Primary SEO intent: Shopify development Barcelona, Shopify agency Spain, Shopify Plus developer Barcelona, Shopify migration Barcelona.
+Last reviewed: 2026-09-23
+Primary SEO intent: Shopify development Barcelona, Shopify agency Spain, Shopify development company in Barcelona Spain, hire Shopify developers Barcelona, Shopify Plus Spain.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | `Shopify Development in Barcelona \| Dynamic Dreamz` (51 chars) | Preserved live title (51 chars). | Fits strict 15-60 char budget and captures primary local target intent. | High | implemented in metadata |
-| Meta description | `Boost your online store with expert Shopify development in Barcelona by Dynamic Dreamz. We offer tailored solutions to eCommerce success.` (140 chars) | Preserved live meta description (140 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
-| Structured data | Legacy page had partial WebPage schema graph | Emitted comprehensive `Service`, `OfferCatalog` (8 items), `BreadcrumbList`, `Organization`, and `WebSite` schema. | Connects regional service offering to search crawlers and AI answer engines. | High | implemented in schema |
-| Shopify Migration Service description | Live page repeats the full Figma/XD-to-Shopify conversion paragraph and does not describe migration. | Replace it with approved Shopify migration copy covering platform transfer, data validation, redirects, and launch support. | Makes the service card answer its heading and avoids duplicating an unrelated service description. | High | deferred; live copy preserved pending exact visible-copy approval |
+| Meta title | `Shopify Development in Barcelona, Spain \| Dynamic Dreamz` (56 chars) | Preserved live intent; formatted to fit 15-60 char budget. | Fits strict 15-60 char budget and captures primary local target intent. | High | implemented in metadata |
+| Meta description | `Shopify development company in Barcelona, Spain offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.` (147 chars) | Preserved live meta description (147 chars). | Fits 70-160 character budget and preserves live search snippet copy. | High | implemented in metadata |
+| Structured data | Replaced legacy partial schema with complete schema | Emitted comprehensive `Service`, `OfferCatalog` (8 items), `FAQPage` (8 items), `BreadcrumbList`, `Organization`, and `WebSite` schema. | Connects regional service offering to search crawlers and AI answer engines. | High | implemented in schema |
+| Hero duplicate paragraph | Hero contains two identical paragraphs mentioning Houston/Dallas/Austin/San Antonio. | Replace the duplicate second paragraph with a Barcelona & Spain regional focus paragraph. | The live page inadvertently copied Texas regional copy into Spain; preserving for live parity until approved. | Medium | deferred; live copy preserved pending exact visible-copy approval |
 
 ## PrestaShop to Shopify Migration (`/prestashop-to-shopify-migration`)
 
