@@ -16,7 +16,7 @@ export const foodBeverageHero = {
 } as const;
 
 export const foodBeverageBrands = {
-  heading: "Trusted by <br>Leading Brands",
+  heading: "Trusted by Leading Brands",
   slug: "food-beverage-shopify-plus-agency",
   items: industryBrandLogos,
 } as const;

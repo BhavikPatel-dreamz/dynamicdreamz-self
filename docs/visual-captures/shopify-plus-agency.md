@@ -19,7 +19,7 @@
   4. **Brand logos synchronized with live 12-brand trust rail**:
      - Aligned `shopifyPlusAgencyBrandLogos` to the exact 12 brand partners rendered on the live site: Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit.
      - All 12 brand marks use canonical local SVG assets under `/assets/clients/` with identical visual fidelity.
-     - Updated rail heading to `Trusted by <br>Leading Brands`.
+     - Updated rail heading to `Trusted by Leading Brands`.
   5. **Hero CTA & Trust Badges**:
      - Primary hero CTA points to `/request-quote` (matching live href `https://www.dynamicdreamz.com/request-quote/`).
      - Trust badge alt attributes aligned to live copy with proper typography (`Clutch — 4.9 rating`, `Trustpilot — 4.9 TrustScore`, `Upwork Top Rated Plus`).

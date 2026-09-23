@@ -25,7 +25,7 @@
 | Section # | Visual Role | Reused / Generalized Component | Assets Reused / Sourced |
 |---|---|---|---|
 | 1 | Hero Banner | `IndustryHeroSection` (`variant="white"`, `showEyebrow={false}`, `showCta={false}`) | `/assets/food-beverage-shopify-plus-agency/hero/food-and-beverage-shopify-plus-agency.webp` (854x529) |
-| 2 | Trusted Brands Slider | `IndustryBrandsSection` (`heading="Trusted by <br>Leading Brands"`, `items={industryBrandLogos}`) | Canonical brand SVGs matching live site (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, POP Club, SriSri Tattva, Tropicfeel, etc.) |
+| 2 | Trusted Brands Slider | `IndustryBrandsSection` (`heading="Trusted by Leading Brands"`, `items={industryBrandLogos}`) | Canonical brand SVGs matching live site (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, POP Club, SriSri Tattva, Tropicfeel, etc.) |
 | 3 | Two-Col Image with Text | `TwoColImageWithTextSection` | `/assets/food-beverage-shopify-plus-agency/why-choose/why-choose-food-beverage-shopify-plus.webp` (469x500) |
 | 4 | Services (7 Cards) | `AgencyServicesSection` (`headerLayout="split"`, `columns={2}`, `cardVariant="services-box"`, `cardBgClassName="bg-white"`, mint gradient section background) | 5 SVGs from `public/assets/food-beverage-shopify-plus-agency/services/` |
 | 5 | Our Process (4 Steps) | `MigrationProcessSection` (`titleAlign="center"`) | Gradient number badges (`Step 01` - `Step 04`), clean divider lines |
