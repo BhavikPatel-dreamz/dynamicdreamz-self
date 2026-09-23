@@ -1,165 +1,249 @@
 import { industryBrandLogos } from "@/content/industries";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
+const whyChooseItems = [
+  {
+    title: "Expert WordPress Developers",
+    description:
+      "Our team consists of skilled developers with extensive experience in WordPress development, ensuring high-quality and efficient solutions.",
+    icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/expert-developers.svg",
+    iconAlt: "Expert WordPress Developers Icon",
+  },
+  {
+    title: "Custom Solutions",
+    description:
+      "We provide custom WordPress development services, including theme and plugin development, to meet your unique business needs.",
+    icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/custom-solutions.svg",
+    iconAlt: "Custom Solutions Icon",
+  },
+  {
+    title: "User-Friendly Design",
+    description:
+      "Our designs focus on providing a user-friendly and engaging user experience, helping you retain and attract customers.",
+    icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/intuitive-design.svg",
+    iconAlt: "User-Friendly Design Icon",
+  },
+  {
+    title: "SEO Optimization",
+    description:
+      "We implement best SEO practices to improve your website's visibility and ranking on search engines, driving more organic traffic.",
+    icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/seo-expertise.svg",
+    iconAlt: "SEO Optimization Icon",
+  },
+  {
+    title: "Comprehensive Services",
+    description:
+      "From development to maintenance, we offer a full range of services to ensure your website remains up-to-date and performs optimally.",
+    icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/comprehensive-services.svg",
+    iconAlt: "Comprehensive Services Icon",
+  },
+  {
+    title: "Proven Track Record",
+    description:
+      "With years of experience and numerous successful projects, we have established ourselves as a trusted WordPress development agency in Noida.",
+    icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/proven-track-record.svg",
+    iconAlt: "Proven Track Record Icon",
+  },
+] as const;
+
 export const wordpressDevelopmentNoidaContent = {
   sectionCopy: {
     faqHeading: "Frequently Asked Questions",
     portfolioCta: "View our work",
-    portfolioEyebrow: "PORTFOLIO",
-    testimonialsEyebrow: "CLIENT STORIES",
+    portfolioEyebrow: "Portfolio",
+    testimonialsEyebrow: "Client Stories",
   },
+
   hero: {
+    eyebrows: ["Wordpress Development", "Noida"],
     title: "#1 Company For WordPress Development in Noida",
     description:
       "Dynamic Dreamz is a leading WordPress development company in Noida dedicated to building custom WordPress websites that match your business goals. Our team of talented developers is an expert in delivering customized solutions, including WordPress theme and plugin development, to ensure your website stands out.",
-    ctaLabel: "get in touch",
-    ctaHref: "/request-quote",
-    image: {
-      src: "/assets/services/wordpress-development-company/hero/wordpress-development-company.svg",
-      alt: "WordPress Development in Noida",
-      width: 469,
-      height: 224,
+    primaryCta: {
+      label: "Get in Touch",
+      href: "/request-quote",
     },
-    reviews: [
+    badges: [
       {
-        platform: "Clutch",
-        reviewCount: "132 Reviews",
-        rating: "5.0",
-        logoSrc: "/assets/reviews/clutch-wordmark.svg",
-        logoAlt: "Clutch Review Dynamic Dreamz",
-        logoWidth: 57,
-        logoHeight: 19,
+        src: "/assets/awards/shopify-platinum-partner.svg",
+        alt: "Dynamic Dreamz - Shopify Platinum Partner",
+        width: 136,
+        height: 44,
+        href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+      },
+      {
+        src: "/assets/awards/clutch-rating.svg",
+        alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+        width: 111,
+        height: 44,
         href: "https://clutch.co/profile/dynamic-dreamz",
       },
       {
-        platform: "Upwork",
-        reviewCount: "2000+ Reviews",
-        rating: "5.0",
-        logoSrc: "/assets/reviews/upwork-wordmark.svg",
-        logoAlt: "Upwork Review Dynamic Dreamz",
-        logoWidth: 64,
-        logoHeight: 19,
-        href: "https://www.upwork.com/agencies/dynamicdreamz/",
+        src: "/assets/proof/trustpilot-rating.svg",
+        alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+        width: 148,
+        height: 50,
+        href: "https://www.trustpilot.com/review/dynamicdreamz.com",
       },
       {
-        platform: "GoodFirms",
-        reviewCount: "72 Reviews",
-        rating: "5.0",
-        logoSrc: "/assets/reviews/goodfirms-wordmark.svg",
-        logoAlt: "Goodfirms Review Dynamic Dreamz",
-        logoWidth: 86,
-        logoHeight: 19,
-        href: "https://www.goodfirms.co/company/dynamic-dreamz",
+        src: "/assets/awards/upwork-top-rated-plus.svg",
+        alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+        width: 126,
+        height: 54,
+        href: "https://www.upwork.com/ag/dynamicdreamz/",
       },
     ],
+    tabletSlider: {
+      bgShapeSrc:
+        "/assets/services/shopify-development-in-bangalore/hero/slide-bg-shape.svg",
+      topBadge: {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/woocommerce-agency-partner.png",
+        alt: "WooCommerce_Apgency_Partner",
+        width: 173,
+        height: 106,
+      },
+      bottomBadge: {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/wordpress-logo.png",
+        alt: "WordPress_Logo",
+        width: 130,
+        height: 126,
+      },
+      slides: [
+        {
+          src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-green-future-energy.webp",
+          alt: "greenfutureenergy",
+          width: 1600,
+          height: 2380,
+        },
+        {
+          src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-avm.webp",
+          alt: "avm",
+          width: 1600,
+          height: 2380,
+        },
+        {
+          src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-homepage-revised.webp",
+          alt: "HomepageRevised",
+          width: 1600,
+          height: 2380,
+        },
+        {
+          src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-lipari-design.webp",
+          alt: "liparidesign",
+          width: 1600,
+          height: 2380,
+        },
+        {
+          src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-ornago.webp",
+          alt: "ornago",
+          width: 1600,
+          height: 2380,
+        },
+        {
+          src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-syrene.webp",
+          alt: "syrene",
+          width: 1600,
+          height: 2380,
+        },
+        {
+          src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-the-huddle-sports-grill.webp",
+          alt: "thehuddlesportsgrill",
+          width: 1600,
+          height: 2380,
+        },
+      ],
+    },
   },
 
   brands: {
-    title: "Trusted by Leading Brands",
+    title: "Trusted by <br>Leading Brands",
     items: industryBrandLogos,
   },
 
-  intro: {
-    heading: "Choose Dynamic Dreamz as the Best <br> WordPress Development Company in Noida",
-    paragraphs: [
+  counter: {
+    eyebrow: "Wordpress Development Company in Noida",
+    heading:
+      "Choose Dynamic Dreamz as the Best WordPress Development Company in Noida",
+    description:
       "We understand the unique requirements of businesses in Noida. Our WordPress development services in Noida are developed to provide you with a website that is visually appealing and highly functional. We focus on making user-friendly designs that offer an excellent user experience, helping you engage your audience effectively. Our dedication to quality and attention to detail make us the preferred choice for WordPress development services in Noida.",
+    items: [
+      {
+        value: "20+",
+        label: "Years of Experience",
+        subLabel: "Established in 2006",
+      },
+      {
+        value: "150+",
+        label: "Experts",
+        subLabel: "AI empowered. Continuously trained",
+      },
+      {
+        value: "5,000+",
+        label: "projects delivered",
+        subLabel: "Ecommerce, web and mobile",
+      },
+      {
+        value: "2500+",
+        label: "Verified 5 star Reviews",
+        subLabel: "From Clutch, Trustpilot & Upwork",
+      },
     ],
   },
 
   process: {
+    eyebrow: "How We Work",
     heading: "Our Development Process",
     description:
-      "We follow a structured development process to provide the successful delivery <br> of your WordPress website.",
+      "We follow a structured development process to provide the successful delivery of your WordPress website.",
     steps: [
       {
-        number: "01",
+        step: "Step 01",
         title: "Discovery and Planning",
         description:
           "We start by understanding your business purposes and target audience. This phase affects collecting requirements and planning the project to align with your goals.",
-        icon: "/assets/services/bigcommerce-development/process/initial-consultation.svg",
-        iconAlt: "Discovery and Planning Icon",
       },
       {
-        number: "02",
+        step: "Step 02",
         title: "Design and Development",
         description:
-          "Our designers create simple and stunning layouts, while our Shopify developers build strong and scalable WordPress websites. We ensure that the design reflects your brand identity and that the development satisfies industry standards.",
-        icon: "/assets/services/bigcommerce-development/process/planning-and-strategy.svg",
-        iconAlt: "Design and Development Icon",
+          "Our designers create simple and stunning layouts, while our developers build strong and scalable WordPress websites. We ensure that the design reflects your brand identity and that the development satisfies industry standards.",
       },
       {
-        number: "03",
+        step: "Step 03",
         title: "Testing and Launch",
         description:
           "Before launching, we perform detailed testing to identify and fix any issues. It guarantees that your website functions smoothly across all devices and browsers.",
-        icon: "/assets/services/bigcommerce-development/process/development-and-implementation.svg",
-        iconAlt: "Testing and Launch Icon",
       },
       {
-        number: "04",
+        step: "Step 04",
         title: "Post Launch Support",
         description:
           "After the launch, we offer ongoing support and maintenance to keep your website updated and secure. Our team is always available to assist with any concerns or updates you may require.",
-        icon: "/assets/services/bigcommerce-development/process/testing-launch-support.svg",
-        iconAlt: "Post-Launch Support Icon",
       },
     ],
   },
 
+  whyDynamicDreamz: {
+    eyebrow: "Why Dynamic Dreamz",
+    heading: "Why Choose Us for Your WordPress Development Needs?",
+    description:
+      "Dynamic Dreamz is a trusted WordPress Development agency in Noida that offers vast WordPress development services tailored to your specific requirements.",
+    items: whyChooseItems,
+  },
+
+  // Backward-compatible alias for existing consumers / schema
   reasons: {
     heading: "Why Choose Us for Your <br> WordPress Development Needs?",
     description:
-      "Dynamic Dreamz is a trusted WordPress Development agency in Noida that offers vast <br> WordPress development services tailored to your specific requirements.",
-    items: [
-      {
-        title: "Expert WordPress Developers",
-        description:
-          "Our team consists of skilled developers with extensive experience in WordPress development, ensuring high-quality and efficient solutions.",
-        icon: "/assets/services/bigcommerce-development/advantages/expertise-in-custom-development.svg",
-        iconAlt: "expertise_icon",
-      },
-      {
-        title: "Custom Solutions",
-        description:
-          "We provide custom WordPress development services, including theme and plugin development, to meet your unique business needs.",
-        icon: "/assets/wix-to-shopify-migration/cs_icon.svg",
-        iconAlt: "cs_icon",
-      },
-      {
-        title: "User-Friendly Design",
-        description:
-          "Our designs focus on providing a user-friendly and engaging user experience, helping you retain and attract customers.",
-        icon: "/assets/shopify-development-company-in-chennai/benefits/user-friendly.svg",
-        iconAlt: "uf-icon",
-      },
-      {
-        title: "SEO Optimization",
-        description:
-          "We implement best SEO practices to improve your website's visibility and ranking on search engines, driving more organic traffic.",
-        icon: "/assets/shopify-development-company-in-chennai/reasons/seo-optimization.svg",
-        iconAlt: "seo_icon",
-      },
-      {
-        title: "Comprehensive Services",
-        description:
-          "From development to maintenance, we offer a full range of services to ensure your website remains up-to-date and performs optimally.",
-        icon: "/assets/shopify-development-company-in-chennai/reasons/comprehensive-services.svg",
-        iconAlt: "comprehensive_icon",
-      },
-      {
-        title: "Proven Track Record",
-        description:
-          "With years of experience and numerous successful projects, we have established ourselves as a trusted WordPress development agency in Noida.",
-        icon: "/assets/services/wordpress-development-company/advantages/ongoing-support-maintenance.svg",
-        iconAlt: "proven-track-icon",
-      },
-    ],
+      "Dynamic Dreamz is a trusted WordPress Development agency in Noida that offers vast WordPress development services tailored to your specific requirements.",
+    items: whyChooseItems,
   },
 
   portfolio: {
+    eyebrow: "Portfolio",
     heading: "Our Successful WordPress Projects",
     description:
-      "500+ WordPress websites meticulously crafted and counting. Our expertise <br> accelerates growth and redefines shopping experiences for clients, making us <br> the best WordPress development company in India.",
+      "500+ WordPress websites meticulously crafted and counting. Our expertise <br> accelerates growth and redefines shopping experiences for clients, <br> making us the best WordPress development company in India.",
     items: [
       {
         name: "Quite Events",
@@ -221,9 +305,10 @@ export const wordpressDevelopmentNoidaContent = {
   },
 
   testimonials: {
+    eyebrow: "Client Stories",
     heading: "Our Customers' Testimonials",
     description:
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve.",
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories. Check out how our services empower them to evolve.",
     items: shopifyPlusAgencyTestimonials.items,
   },
 
@@ -234,7 +319,8 @@ export const wordpressDevelopmentNoidaContent = {
         "We provide a wide range of services, including custom WordPress development, theme and plugin development, website design, and ongoing maintenance and support.",
     },
     {
-      question: "Why should I choose your company for WordPress development in Noida?",
+      question:
+        "Why should I choose your company for WordPress development in Noida?",
       answer:
         "Our regional expertise, combined with our dedication to providing high-quality, customized solutions, makes us the best WordPress website design agency in Noida, aka the ideal partner for businesses in Noida seeking professional WordPress development services.",
     },
@@ -244,7 +330,8 @@ export const wordpressDevelopmentNoidaContent = {
         "Yes, we specialize in customizing existing WordPress themes to align with your brand and meet your specific business requirements.",
     },
     {
-      question: "What length of time does the development of a WordPress website take?",
+      question:
+        "What length of time does the development of a WordPress website take?",
       answer:
         "The development timeline varies based on the complexity and specific features required. We collaborate closely with you to set a reasonable deadline and guarantee on-time delivery.",
     },
@@ -259,7 +346,8 @@ export const wordpressDevelopmentNoidaContent = {
         "Absolutely, other than WordPress website designing company Noida, we also provide ongoing maintenance services to keep your website updated, secure, and performing at its best.",
     },
     {
-      question: "How can I start using your services for WordPress development?",
+      question:
+        "How can I start using your services for WordPress development?",
       answer:
         "Whenever you require WordPress development service in Noida or anywhere else, you can contact us through our website to discuss your project requirements. Our team will guide you through the process and provide a tailored solution for your business.",
     },
@@ -267,7 +355,7 @@ export const wordpressDevelopmentNoidaContent = {
 
   ctaBanner: {
     heading: "Want us to help you with your online store?",
-    ctaLabel: "REQUEST A QUOTE",
+    ctaLabel: "request a quote",
     ctaHref: "/request-quote",
   },
 } as const;

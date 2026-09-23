@@ -1,12 +1,12 @@
+import { CityPageCounterSection } from "@/components/sections/city-page-counter-section";
+import { CityPageHeroSection } from "@/components/sections/city-page-hero-section";
+import { CityWhyChooseBoxesSection } from "@/components/sections/city-why-choose-boxes-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ProcessWaveSection } from "@/components/sections/process-wave-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { wordpressDevelopmentNoidaContent } from "@/content/wordpress-development-in-noida";
 
 export function WordPressDevelopmentInNoidaPage() {
@@ -15,13 +15,8 @@ export function WordPressDevelopmentInNoidaPage() {
     slug: "wordpress-development-in-noida",
   };
 
-  const reasonsContent = {
-    heading: wordpressDevelopmentNoidaContent.reasons.heading,
-    description: wordpressDevelopmentNoidaContent.reasons.description,
-    items: wordpressDevelopmentNoidaContent.reasons.items,
-  };
-
   const portfolioContent = {
+    eyebrow: wordpressDevelopmentNoidaContent.portfolio.eyebrow,
     heading: wordpressDevelopmentNoidaContent.portfolio.heading,
     description: wordpressDevelopmentNoidaContent.portfolio.description,
     items: wordpressDevelopmentNoidaContent.portfolio.items,
@@ -29,8 +24,7 @@ export function WordPressDevelopmentInNoidaPage() {
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec single-full-img relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
+      <CityPageHeroSection
         content={wordpressDevelopmentNoidaContent.hero}
       />
       <IndustryBrandsSection
@@ -38,38 +32,44 @@ export function WordPressDevelopmentInNoidaPage() {
         heading={wordpressDevelopmentNoidaContent.brands.title}
         items={wordpressDevelopmentNoidaContent.brands.items}
       />
-      <TextBoxSection
-        className="single-text-box-sec pb-0 pt-20 max-[992px]:pt-[50px]"
-        heading={wordpressDevelopmentNoidaContent.intro.heading}
-        paragraphs={wordpressDevelopmentNoidaContent.intro.paragraphs}
+      <CityPageCounterSection
+        content={wordpressDevelopmentNoidaContent.counter}
+        eyebrowVariant="dash"
       />
-      <ProcessWaveSection
-        className="our-process-sec inner-process-sec wordpress-development-process relative overflow-hidden py-20 max-[992px]:py-12.5 max-[767px]:py-10"
+      <OurDevelopmentProcessSection
         content={wordpressDevelopmentNoidaContent.process}
+        eyebrowVariant="dash"
       />
-      <ShopifyReasonsSection content={reasonsContent} />
+      <CityWhyChooseBoxesSection
+        bgClassName="bg-white"
+        className="city-page-why-choose-dynamic !pb-0"
+        columns={3}
+        content={wordpressDevelopmentNoidaContent.whyDynamicDreamz}
+        eyebrowVariant="dash"
+      />
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[992px]:py-[50px]"
         content={portfolioContent}
         columns={4}
         headerLayout="split"
         cardVariant="ourWorkRefresh"
-        eyebrow={wordpressDevelopmentNoidaContent.sectionCopy.portfolioEyebrow}
-        ctaLabel={wordpressDevelopmentNoidaContent.sectionCopy.portfolioCta}
+        eyebrow={wordpressDevelopmentNoidaContent.portfolio.eyebrow}
+        hideCta={false}
       />
       <HappyClientSection
         className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]"
         description={wordpressDevelopmentNoidaContent.testimonials.description}
         heading={wordpressDevelopmentNoidaContent.testimonials.heading}
-        eyebrow={wordpressDevelopmentNoidaContent.sectionCopy.testimonialsEyebrow}
+        eyebrow={wordpressDevelopmentNoidaContent.testimonials.eyebrow}
         variant="client-stories"
         items={wordpressDevelopmentNoidaContent.testimonials.items}
       />
       <SplitFaqSection
-        className="faq-sec bg-white py-20 max-[992px]:py-[50px]"
+        className="faq-sec"
         heading={wordpressDevelopmentNoidaContent.sectionCopy.faqHeading}
         idPrefix="noida-wp-faq"
         items={wordpressDevelopmentNoidaContent.faqs}
+        answerClassName="!text-sm !leading-6 font-medium text-[#535353]"
       />
       <CtaBannerSection
         ctaHref={wordpressDevelopmentNoidaContent.ctaBanner.ctaHref}
