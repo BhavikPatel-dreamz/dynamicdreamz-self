@@ -3319,11 +3319,11 @@ export const pageSeo = {
   },
   wordpressDevelopmentInAhmedabad: {
     path: "/wordpress-development-in-ahmedabad",
-    title: "No.1 WordPress Development in Ahmedabad | Dynamic Dreamz",
+    title: "Wordpress Development Company in Ahmedabad | Dynamic Dreamz",
     description:
-      "Best WordPress Development in Ahmedabad with 18+ Years of Experience. Custom store setup, theme customization & migration for growing brands.",
+      "Wordpress development company in Ahmedabad offering Custom Wordpress Development, WooCommerce Development, Plugin & Theme Development and ongoing support.",
     socialDescription:
-      "Expert WordPress development company in Ahmedabad: custom theme development, plugin integration, SEO optimization, and website maintenance.",
+      "Wordpress development services in Ahmedabad for custom websites, themes, plugins and ongoing support.",
     keywords: [
       "WordPress development in Ahmedabad",
       "WordPress development company in Ahmedabad",

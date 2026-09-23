@@ -8999,8 +8999,8 @@ Owner: SEO, content, and development
 
 ## WordPress Development in Ahmedabad (`/wordpress-development-in-ahmedabad`)
 
-Status: technical and schema implementation complete; visible copy preserved per live site
-Last reviewed: 2026-09-01
+Status: technical and schema implementation complete; remigrated to exact live design; visible copy preserved per live site
+Last reviewed: 2026-09-23
 Owner: SEO, content, and development
 
 ### Page Role and Buyer Intent
@@ -9012,13 +9012,14 @@ Owner: SEO, content, and development
 ### Visible Content and Evidence Available
 
 - H1: "#1 Company For WordPress Development in Ahmedabad" establishing regional WordPress leadership.
-- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
-- Trusted brands slider: 10 brand proof logos (Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven, Bella Vita).
-- Value proposition box: "Choose Dynamic Dreamz as the Best WordPress Development Company in Ahmedabad".
+- Hero tablet slider with 7 project slides and WooCommerce Agency Partner + WordPress Logo badges.
+- Hero social proof: Shopify Platinum Partner, Clutch 4.9 rating, Trustpilot 4.9 TrustScore, and Upwork Top Rated Plus badges.
+- Trusted brands slider: 12 brand proof logos (Supertails, Eleven Eleven, Bellavita, Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Nekter, Rare Rabbit).
+- City Page Counter: "Choose Dynamic Dreamz as the Best Wordpress Development Company in Ahmedabad" with 4 metrics: 20+ Years of Experience, 150+ Experts, 5,000+ projects delivered, 2500+ Verified 5-star Reviews.
 - 4-step delivery process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support.
 - 6 agency reason cards: Expert WordPress Developers, Custom Solutions, User-Friendly Design, SEO Optimization, Comprehensive Services, Proven Track Record.
 - 8 portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
-- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
+- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thommas Linnrose (Art Copenhagen).
 - 7 interactive FAQs covering WordPress development offerings in Ahmedabad, agency selection, theme customization, timeline, security, maintenance, and onboarding.
 - Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
 
@@ -9026,11 +9027,11 @@ Owner: SEO, content, and development
 
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/wordpress-development-in-ahmedabad` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | 9 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | Reused canonical assets across portfolio, client logos, review badges, and reason icons | Reused canonical assets from `public/assets/` with zero duplicates | Verified duplicate hash groups: 0 |
+| P0 | implemented | Route discovery | Remigrate route to exact live site | Remigrated `/wordpress-development-in-ahmedabad` with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | 9 sections required matching live visual design | Reused `CityPageHeroSection`, `IndustryBrandsSection`, `CityPageCounterSection`, `OurDevelopmentProcessSection`, `CityWhyChooseBoxesSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Reused canonical assets across portfolio, client logos, review badges, and reason icons; ingested 9 unique hero assets | Ingested into `public/assets/services/wordpress-development-in-ahmedabad/hero/` with zero duplicates | Verified duplicate hash groups: 0 across 1716 assets |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createWordPressDevelopmentInAhmedabadPageSchema()` | Validated JSON-LD graph |
-| P1 | deferred | Visible copy enhancement | Run-on sentence in Intro text box | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+| P1 | deferred | Visible copy enhancement | Run-on sentence in Counter text box | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
 
 
 ## WordPress Development in Bangalore (`/wordpress-development-in-bangalore`)
