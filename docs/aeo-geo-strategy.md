@@ -8891,8 +8891,8 @@ Owner: SEO, content, and development
 
 ## WordPress Development in Delhi (`/wordpress-development-in-delhi`)
 
-Status: technical and schema implementation complete; visible copy preserved per live site
-Last reviewed: 2026-09-01
+Status: technical and schema implementation complete; visible copy and city page layout preserved per live site
+Last reviewed: 2026-09-23
 Owner: SEO, content, and development
 
 ### Page Role and Buyer Intent
@@ -8903,14 +8903,15 @@ Owner: SEO, content, and development
 
 ### Visible Content and Evidence Available
 
-- H1: "#1 Company For WordPress Development in Delhi" establishing regional WordPress leadership.
-- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
-- Trusted brands slider: 10 brand proof logos (Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven, Bella Vita).
-- Value proposition box: "Choose Dynamic Dreamz as the Best WordPress Development Company in Delhi".
+- H1: "#1 Company For WordPress Development in Delhi" establishing regional WordPress leadership with eyebrow `Shopify Development` and `Delhi`.
+- Hero social proof: Shopify Platinum Partner, Clutch (4.9 rating), Trustpilot (4.9 TrustScore), and Upwork Top Rated Plus badges.
+- Hero tablet mockup slider: 7 portfolio showcase slides with WooCommerce Agency Partner and WordPress Logo partner badges.
+- Trusted brands slider: 10 brand proof logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter, Circuit City).
+- City Page Counter: "Choose Dynamic Dreamz as the Best WordPress Development Company in Delhi" with 4 stats counters (`20+` Years, `150+` Experts, `5,000+` projects, `2500+` 5-star reviews).
 - 4-step delivery process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support.
-- 6 agency reason cards: Expert WordPress Developers, Custom Solutions, User-Friendly Design, SEO Optimization, Comprehensive Services, Proven Track Record.
-- 8 portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
-- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
+- 6 agency reason cards: Expert WordPress Developers, Custom Solutions, User-Friendly Design, SEO Optimization, Comprehensive Services, Proven Track Record in 3-column grid.
+- 8 portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids in 4×2 grid with "View our work" CTA button.
+- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thommas Linnrose (Art Copenhagen), Zoe wang (Maison Zifan), Clinton De Vere (Clinton De Vere Art), Fernando Arias (LGXNDS), Alec Torelli (Conscious Poker), William Petz (Quite Events), William ST Baker (Elite Element Electronics), Kerri Imrie (teanow.com.au), Brandon (USA).
 - 7 interactive FAQs covering WordPress development offerings, company selection, theme customization, development timeline, platform security, maintenance, and onboarding.
 - Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
 
@@ -8918,9 +8919,9 @@ Owner: SEO, content, and development
 
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/wordpress-development-in-delhi` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | 9 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | Reused canonical assets across portfolio, client logos, review badges, and reason icons | Reused canonical assets from `public/assets/` with zero duplicates | Verified duplicate hash groups: 0 |
+| P0 | implemented | Route discovery | Route migrated in App Router | Verify `/wordpress-development-in-delhi` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | Remigrated page to match exact live city page layout and components | Reused `CityPageHeroSection`, `IndustryBrandsSection`, `CityPageCounterSection`, `OurDevelopmentProcessSection`, `CityWhyChooseBoxesSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Reused canonical assets across hero tablet slider, partner badges, portfolio, client logos, review badges, and reason icons | Reused canonical assets from `public/assets/` with zero duplicates | Verified duplicate hash groups: 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createWordPressDevelopmentInDelhiPageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Visible copy enhancement | Minor grammar/spelling optimizations in FAQ answers and reason descriptions | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
 

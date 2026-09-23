@@ -1,12 +1,12 @@
+import { CityPageCounterSection } from "@/components/sections/city-page-counter-section";
+import { CityPageHeroSection } from "@/components/sections/city-page-hero-section";
+import { CityWhyChooseBoxesSection } from "@/components/sections/city-why-choose-boxes-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ProcessWaveSection } from "@/components/sections/process-wave-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { wordpressDevelopmentDelhiContent } from "@/content/wordpress-development-in-delhi";
 
 export function WordPressDevelopmentInDelhiPage() {
@@ -15,13 +15,8 @@ export function WordPressDevelopmentInDelhiPage() {
     slug: "wordpress-development-in-delhi",
   };
 
-  const reasonsContent = {
-    heading: wordpressDevelopmentDelhiContent.reasons.heading,
-    description: wordpressDevelopmentDelhiContent.reasons.description,
-    items: wordpressDevelopmentDelhiContent.reasons.items,
-  };
-
   const portfolioContent = {
+    eyebrow: wordpressDevelopmentDelhiContent.portfolio.eyebrow,
     heading: wordpressDevelopmentDelhiContent.portfolio.heading,
     description: wordpressDevelopmentDelhiContent.portfolio.description,
     items: wordpressDevelopmentDelhiContent.portfolio.items,
@@ -29,8 +24,7 @@ export function WordPressDevelopmentInDelhiPage() {
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec single-full-img relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
+      <CityPageHeroSection
         content={wordpressDevelopmentDelhiContent.hero}
       />
       <IndustryBrandsSection
@@ -38,38 +32,44 @@ export function WordPressDevelopmentInDelhiPage() {
         heading={wordpressDevelopmentDelhiContent.brands.title}
         items={wordpressDevelopmentDelhiContent.brands.items}
       />
-      <TextBoxSection
-        className="single-text-box-sec pb-0 pt-20 max-[992px]:pt-[50px]"
-        heading={wordpressDevelopmentDelhiContent.intro.heading}
-        paragraphs={wordpressDevelopmentDelhiContent.intro.paragraphs}
+      <CityPageCounterSection
+        content={wordpressDevelopmentDelhiContent.counter}
+        eyebrowVariant="dash"
       />
-      <ProcessWaveSection
-        className="our-process-sec inner-process-sec wordpress-development-process relative overflow-hidden py-20 max-[992px]:py-12.5 max-[767px]:py-10"
+      <OurDevelopmentProcessSection
         content={wordpressDevelopmentDelhiContent.process}
+        eyebrowVariant="dash"
       />
-      <ShopifyReasonsSection content={reasonsContent} />
+      <CityWhyChooseBoxesSection
+        bgClassName="bg-white"
+        className="city-page-why-choose-dynamic !pb-0"
+        columns={3}
+        content={wordpressDevelopmentDelhiContent.whyDynamicDreamz}
+        eyebrowVariant="dash"
+      />
       <PortfolioShowcaseSection
         className="our-work-sec py-20 max-[992px]:py-[50px]"
         content={portfolioContent}
         columns={4}
         headerLayout="split"
         cardVariant="ourWorkRefresh"
-        eyebrow={wordpressDevelopmentDelhiContent.sectionCopy.portfolioEyebrow}
-        ctaLabel={wordpressDevelopmentDelhiContent.sectionCopy.portfolioCta}
+        eyebrow={wordpressDevelopmentDelhiContent.portfolio.eyebrow}
+        hideCta={false}
       />
       <HappyClientSection
         className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]"
         description={wordpressDevelopmentDelhiContent.testimonials.description}
         heading={wordpressDevelopmentDelhiContent.testimonials.heading}
-        eyebrow={wordpressDevelopmentDelhiContent.sectionCopy.testimonialsEyebrow}
+        eyebrow={wordpressDevelopmentDelhiContent.testimonials.eyebrow}
         variant="client-stories"
         items={wordpressDevelopmentDelhiContent.testimonials.items}
       />
       <SplitFaqSection
-        className="faq-sec bg-white py-20 max-[992px]:py-[50px]"
+        className="faq-sec"
         heading={wordpressDevelopmentDelhiContent.sectionCopy.faqHeading}
         idPrefix="delhi-wp-faq"
         items={wordpressDevelopmentDelhiContent.faqs}
+        answerClassName="!text-sm !leading-6 font-medium text-[#535353]"
       />
       <CtaBannerSection
         ctaHref={wordpressDevelopmentDelhiContent.ctaBanner.ctaHref}

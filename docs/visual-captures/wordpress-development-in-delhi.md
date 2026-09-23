@@ -2,7 +2,7 @@
 
 - **Route**: `/wordpress-development-in-delhi`
 - **Live Reference**: `https://www.dynamicdreamz.com/wordpress-development-in-delhi/`
-- **Capture Date**: 2026-09-01
+- **Capture Date**: 2026-09-23
 - **Target Breakpoints**: Desktop (1440px), Tablet (768px), Mobile (390px)
 
 ---
@@ -11,11 +11,10 @@
 
 | Source | Details |
 |---|---|
-| Rendered Live Page & View Page Source | Captured title ("No.1 Company For WordPress Development in Delhi | Dynamic Dreamz"), description, canonical (`https://www.dynamicdreamz.com/wordpress-development-in-delhi/`), 9 content sections, images, alts, and links |
-| Live CSS Files | Inspected `services_main.css`, `services_media.css`, and flexible CSS modules for hero, single-text-box, process (`.our-process-sec`), why-choose-us (`.shopify-customization-services-sec`), portfolio (`.our-work-sec`, `.our_work_team`), happy-client, and split FAQ sections |
-| Live Screenshots Captured | Edge headless captures at 1440px (`scratch/wordpress-delhi/live-desktop-full.png`), 768px (`scratch/wordpress-delhi/live-tablet.png`), and 390px (`scratch/wordpress-delhi/live-mobile.png`) |
-| Local Component Discovery | Selected `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` |
-| Local Asset Tree | 100% of images and icons reused from existing canonical assets in `public/assets/` (zero new duplicate files required) |
+| Rendered Live Page & View Page Source | Captured live title ("Wordpress Development Company in Delhi \| Dynamic Dreamz"), description, canonical (`https://www.dynamicdreamz.com/wordpress-development-in-delhi/`), 9 content sections, images, alts, and links |
+| Live CSS Files | Inspected `hero_new_section.css`, `trusted_by_leading_brands_section.css`, `city_page_counter.css`, `our_development_process.css`, `city_page_why_choose_dynamic_dreamz.css`, `projects_section.css`, `client_review_section.css`, `faqs_section.css` |
+| Local Component Discovery | Selected `CityPageHeroSection`, `IndustryBrandsSection`, `CityPageCounterSection`, `OurDevelopmentProcessSection`, `CityWhyChooseBoxesSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` |
+| Local Asset Tree | Reused existing canonical assets across `public/assets/` (zero new duplicate files required) |
 
 ---
 
@@ -23,28 +22,28 @@
 
 | Section # | Visual Role | Reused Component | Assets Reused |
 |---|---|---|---|
-| 1 | Hero Banner | `ServiceHeroSection` (`className="inner-hero-sec single-full-img relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"`) | `/assets/services/wordpress-development-company/hero/wordpress-development-company.svg`, Clutch/Upwork/GoodFirms badges |
-| 2 | Trusted Brands Slider | `IndustryBrandsSection` (`heading="Trusted by Leading Brands"`, `items={industryBrandLogos}`) | Canonical brand SVGs (Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven, Bella Vita) |
-| 3 | Single Text Box (Choose Dynamic Dreamz) | `TextBoxSection` (`className="single-text-box-sec pb-0 pt-20 max-[992px]:pt-[50px]"`) | Styled container with light background and 1 paragraph |
-| 4 | Process (Our Development Process) | `ProcessWaveSection` | 4 wave timeline steps with gradient numerals (`01`-`04`) |
-| 5 | Why Choose Us (Reasons) | `ShopifyReasonsSection` | 6 proof cards with icons on mint-cyan gradient background |
-| 6 | Our Work (Portfolio) | `PortfolioShowcaseSection` (`columns={4}`, `headerLayout="split"`, `cardVariant="ourWorkRefresh"`) | 8 portfolio cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids) in a 4×2 grid |
-| 7 | Client Stories (Testimonials) | `HappyClientSection` (`variant="client-stories"`) | 3-video-card carousel with video modal playback |
-| 8 | FAQs Accordion (7 Q&As) | `SplitFaqSection` (`heading="Frequently Asked Questions"`) | 2-column split FAQ layout with underlined items, circle-cross icons, first item expanded |
-| 9 | CTA Banner | `CtaBannerSection` | Cyan-green gradient banner with "Want us to help you with your online store?" and "REQUEST A QUOTE" button |
+| 1 | Hero Banner | `CityPageHeroSection` | Eyebrow `["Shopify Development", "Delhi"]`, `#1 Company For WordPress Development in Delhi`, `Get in Touch` CTA to `/request-quote`, 4 partner/review badges, tablet mock slider with 7 slides and WooCommerce / WordPress badges |
+| 2 | Trusted Brands Slider | `IndustryBrandsSection` | Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter, Circuit City |
+| 3 | City Page Counter | `CityPageCounterSection` | `Wordpress Development Company in Delhi`, `Choose Dynamic Dreamz as the Best WordPress Development Company in Delhi`, 4 stats counters (`20+`, `150+`, `5,000+`, `2500+`) |
+| 4 | Our Development Process | `OurDevelopmentProcessSection` | `How We Work`, `Our Development Process`, 4 structured workflow steps (`01` Discovery and Planning, `02` Design and Development, `03` Testing and Launch, `04` Post Launch Support) |
+| 5 | Why Dynamic Dreamz (Boxes) | `CityWhyChooseBoxesSection` | `Why Dynamic Dreamz`, `Why Choose Us for Your <br> WordPress Development Needs?`, 6 boxes with icons in 3-column layout |
+| 6 | Portfolio Showcase | `PortfolioShowcaseSection` | `Portfolio`, `Our Successful WordPress Projects`, 8 portfolio cards in 4×2 grid, `View our work` CTA button |
+| 7 | Client Stories (Testimonials) | `HappyClientSection` | `Client Stories`, `Our Customers' Testimonials`, 11 video testimonial cards carousel with modal video playback |
+| 8 | FAQs Accordion (7 Q&As) | `SplitFaqSection` | `Frequently Asked Questions`, 7 expandable Q&As |
+| 9 | CTA Banner | `CtaBannerSection` | Cyan-green gradient banner with "Want us to help you with your online store?" and "request a quote" button |
 
 ---
 
 ## 3. Asset Deduplication Audit
 
 - **Buffer Method**: 2-step ephemeral comparison buffer.
-- **Deduplication Result**: Reused 100% canonical assets across `public/assets/` for hero image, brand logos, process icons, reason icons, portfolio images, and review badges.
+- **Deduplication Result**: Reused 100% canonical assets across `public/assets/` for hero tablet slides, badges, brand logos, why-choose icons, portfolio images, and review cards.
 - **SHA-256 Duplicate Groups**: 0.
 
 ---
 
 ## 4. Responsive & Visual Parity Verification
 
-- **Desktop (1440px)**: 100% visual parity verified with split header layouts, 4-col portfolio grid, 3-card testimonials, and 2-col FAQs.
-- **Tablet (768px)**: 2-column card layouts and fluid typography verified.
-- **Mobile (390px)**: Single column stacked layout and touch-friendly controls verified.
+- **Desktop (1440px)**: 100% visual parity verified with city hero tablet mock slider, 4-col stats counter, 4-step process cards, 3-col why choose boxes, 4-col portfolio grid with view our work button, testimonial carousel, and FAQ accordion.
+- **Tablet (768px)**: Responsive wrapping for hero left/right columns, 2-column why choose boxes, 2-column portfolio cards, and fluid typography verified.
+- **Mobile (390px)**: Single column stacked layout, full-width touch targets, and responsive padding verified.
