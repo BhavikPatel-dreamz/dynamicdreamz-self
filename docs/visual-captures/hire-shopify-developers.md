@@ -1,15 +1,23 @@
 # Hire Shopify Developers Visual Parity Capture
 
-- Live URL: https://www.dynamicdreamz.com/hire-shopify-developers/
-- Local route: `/hire-shopify-developers`
-- Date refreshed: 2026-09-22
-- Viewports captured: 1440x3000 (desktop), 375x3000 (mobile)
-- Live screenshots: `docs/visual-captures/source/hire-shopify-developers/live-1440.png`, `docs/visual-captures/source/hire-shopify-developers/live-375.png`
-- Local screenshots: `docs/visual-captures/source/hire-shopify-developers/local-1440.png`, `docs/visual-captures/source/hire-shopify-developers/local-375.png`
+Route: `/hire-shopify-developers`
+Live reference: `https://www.dynamicdreamz.com/hire-shopify-developers/`
+Capture date: 2026-09-23
+Status: implementation and live/local visual verification complete
+
+## Screenshots
+
+- Live desktop, 1440 × 900: `docs/visual-captures/hire-shopify-developers/live-desktop-1440.png`
+- Live tablet, 768 × 1024: `docs/visual-captures/hire-shopify-developers/live-tablet-768.png`
+- Live mobile, 390 × 844: `docs/visual-captures/hire-shopify-developers/live-mobile-390.png`
+- Local desktop, 1440 × 900: `docs/visual-captures/hire-shopify-developers/local-desktop-1440.png`
+- Local tablet, 768 × 1024: `docs/visual-captures/hire-shopify-developers/local-tablet-768.png`
+- Local mobile, 390 × 844: `docs/visual-captures/hire-shopify-developers/local-mobile-390.png`
+- Full-page captures were compared in 700px vertical increments from 0000 to 9500 across 1440px, 768px, and 390px viewports.
 
 ## Sources Inspected
 
-- Live DOM inspection (`/tmp/hire_shopify_developers_live.html`) & live screenshots.
+- Live DOM inspection (`scratch/hire-shopify-developers/live.html`) & live screenshots.
 - Live flexible CSS modules:
   - `hero_new_section.css`
   - `trusted_by_leading_brands_section.css`
@@ -19,7 +27,7 @@
   - `projects_section.css`
   - `client_review_section.css`
   - `faqs_section.css`
-- Live Yoast SEO metadata and JSON-LD schema.
+- Live Yoast SEO metadata and JSON-LD schema graph.
 
 ## 9-Section Architecture (1:1 Live Parity)
 
@@ -27,14 +35,18 @@
    - Dual eyebrow spans: `["Established in 2006", "Shopify Platinum Partner"]`
    - Title: `Hire Shopify Developers`
    - Lead paragraph: `Are you looking to expand your brand fast? Hire Shopify developers from Dynamic Dreamz to create, customize, and optimize your online Shopify store. Our experienced Shopify developers can help you achieve high quality, scalable solutions based on your business requirements. Let us handle the technicalities while you concentrate on developing your brand.`
-   - Single CTA button: `Hire Shopify Developers` -> `/request-quote`
-   - 4 partner proof badges: Shopify Platinum Partner, Clutch (4.9 rating), Trustpilot (4.9 rating), Upwork Top Rated Plus.
-   - Right-side video preview: `/assets/home/why-dynamic-dreamz.mp4`.
+   - Primary CTA button: `Hire Shopify Developers` -> `/request-quote`
+   - 4 partner proof badges:
+     - Shopify Platinum Partner (`/assets/proof/shopify-platinum-partner.svg`, 136x44)
+     - Clutch 4.9 rating (`/assets/proof/clutch-rating.svg`, 111x44)
+     - Trustpilot 4.9 TrustScore (`/assets/proof/trustpilot-rating.svg`, 148x50)
+     - Upwork Top Rated Plus (`/assets/proof/upwork-top-rated-plus.svg`, 126x54)
+   - Right-side video preview: `/assets/home/why-dynamic-dreamz.mp4` with autoplay, loop, muted, playsInline.
 
 2. **Section 2: Trusted Brands (`our-client-sec`)**
-   - Warm background `#FBEED5`.
+   - Warm background `#fbeed5`.
    - Heading: `Trusted by Leading Brands`.
-   - Infinite animated logo carousel with 12 client logos.
+   - Infinite animated logo carousel with 12 client brand logos.
 
 3. **Section 3: Why Choose Dynamic Dreamz (`theme-customization-services yellow`)**
    - Light cream background `#fafaf7`.
@@ -42,9 +54,9 @@
    - Heading: `Why Choose Dynamic Dreamz for Shopify Development`
    - Description: `Our Shopify developers have the ideal balance of expertise in eCommerce business and Shopify technology. For your online business, we can act as a powerful catalyst.`
    - 3 white card boxes with red SVG icons:
-     1. `Experience says it all` (badge SVG icon)
-     2. `Extensive Shopify development in different verticals` (folder code SVG icon)
-     3. `Talented Pool of Shopify Developer` (team users SVG icon)
+     1. `Experience says it all`
+     2. `Extensive Shopify development in different verticals`
+     3. `Talented Pool of Shopify Developer`
 
 4. **Section 4: Hiring Process (`our-development-process bg-transparent`)**
    - Transparent background.
@@ -101,17 +113,27 @@
    - 11 video testimonial cards carousel with company logos and YouTube popup triggers.
 
 9. **Section 9: FAQs (`faq-sec`)**
-   - Split layout with sticky left heading column and right accordion.
+   - Split layout (`#fafaf7`) with sticky left heading column (`w-[41%]`) and right accordion (`w-[57%]`, max-width 654px).
    - 5 comprehensive questions covering developer roles, hiring costs, ROI, process, and services offered.
+   - Circle-cross expand/collapse icons.
 
 - **Bottom CTA Banner**: Explicitly omitted to match the live site layout.
+
+## Responsive Behavior and Breakpoints
+
+- `1199px`: desktop typography and column gutters tighten; portfolio grid transitions to tablet spacing.
+- `991px`: hero video hides; split section headings stack and center; FAQ becomes single column; brand logo carousel adjusts item width.
+- `767px`: shared section padding and heading sizes reduce; hero buttons stack full-width; mobile navigation active.
+- `575px`: service and advantage cards stack into single column.
+- `390px`: mobile hero H1 is 30px/40px; badges render in 2x2 grid with subtle divider lines matching live.
 
 ## Verification Checklist
 
 - [x] Exact 9-section architecture matching live site.
+- [x] Hero badges match live (Shopify Platinum Partner, Clutch, Trustpilot, Upwork Top Rated Plus).
 - [x] No bottom CTA banner (matches live).
 - [x] Zero duplicate assets in `public/assets/` (`check:asset-duplicates` passes).
-- [x] Strict content boundary preserved (`check:component-content` passes, 513 files clean).
+- [x] Strict content boundary preserved (`check:component-content` passes).
 - [x] No-trailing-slash URL policy enforced (`check:urls` passes).
 - [x] Production build and TypeScript compilation pass (`npm run build`).
 - [x] ESLint passes with zero warnings or errors (`npm run lint`).

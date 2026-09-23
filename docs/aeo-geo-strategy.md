@@ -2559,7 +2559,7 @@ summary, claim qualification, or grammar correction remains approval-dependent.
 ## Hire Shopify Developers (`/hire-shopify-developers`)
 
 Status: implemented and verified; full 1:1 live parity with refreshed 9-section architecture
-Last reviewed: 2026-09-22
+Last reviewed: 2026-09-23
 Primary audience: ecommerce founders, direct-to-consumer brands, and digital agencies looking to hire dedicated Shopify developers or complete Shopify engineering teams.
 Decision stage: vendor selection, staffing model evaluation, technical scoping, and quote request.
 
@@ -2625,7 +2625,7 @@ Preserve the live visible copy during migration. Future approved answer copy sho
 ### Verification and remaining gaps
 
 - URL-policy review: canonical, Open Graph, sitemap, robots, and JSON-LD use slashless `/hire-shopify-developers`.
-- Visual parity verified across 1440px desktop and 375px mobile viewports with zero layout shift.
+- Visual parity verified across 1440px desktop, 768px tablet, and 390px mobile viewports with zero layout shift.
 - Component content check passed with zero violations.
 - Asset duplicate audit verified with 0 duplicate groups.
 
