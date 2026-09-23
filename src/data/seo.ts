@@ -3291,11 +3291,11 @@ export const pageSeo = {
   },
   wordpressDevelopmentInPune: {
     path: "/wordpress-development-in-pune",
-    title: "No.1 WordPress Development in Pune | Dynamic Dreamz",
+    title: "Wordpress Development Company in Pune | Dynamic Dreamz",
     description:
-      "Professional WordPress development in Pune with 18+ Years of Experience. Custom themes, plugin development, speed optimization, and ongoing support.",
+      "Wordpress development company in Pune offering Custom Wordpress Development, WooCommerce Development, Custom Plugin & Theme Development and ongoing support.",
     socialDescription:
-      "Expert WordPress development company in Pune: custom theme development, plugin integration, SEO optimization, and website maintenance.",
+      "Wordpress development services in Pune for custom websites, themes, plugins and ongoing support.",
     keywords: [
       "WordPress development in Pune",
       "WordPress development company in Pune",
@@ -3304,13 +3304,13 @@ export const pageSeo = {
       "custom WordPress development Pune",
     ],
     openGraphType: "website",
-    publishedTime: "2025-02-07T06:57:43+00:00",
-    modifiedTime: "2026-09-01T00:00:00+05:30",
+    publishedTime: "2025-02-07T06:45:18+00:00",
+    modifiedTime: "2026-09-04T07:52:32+00:00",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
       height: 630,
-      alt: "WordPress Development in Pune | Dynamic Dreamz",
+      alt: "Wordpress Development Company in Pune | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",

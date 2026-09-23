@@ -8969,8 +8969,8 @@ Owner: SEO, content, and development
 
 ## WordPress Development in Pune (`/wordpress-development-in-pune`)
 
-Status: technical and schema implementation complete; visible copy preserved per live site
-Last reviewed: 2026-09-01
+Status: technical and schema implementation complete; remigrated to exact live site visual parity with 9 city sections
+Last reviewed: 2026-09-23
 Owner: SEO, content, and development
 
 ### Page Role and Buyer Intent
@@ -8981,14 +8981,15 @@ Owner: SEO, content, and development
 
 ### Visible Content and Evidence Available
 
-- H1: "#1 Company for WordPress Development in Pune" establishing regional WordPress leadership.
-- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
-- Trusted brands slider: 10 brand proof logos (Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven, Bella Vita).
-- Value proposition box: "Why Choose Dynamic Dreamz as Your WordPress Development Company in Pune?".
+- H1: "#1 Company for WordPress Development in Pune" establishing regional WordPress leadership with "Get in Touch" CTA.
+- Hero tablet slider mockup (7 slides: greenfutureenergy, avm, HomepageRevised, liparidesign, ornago, syrene, thehuddlesportsgrill) with top WooCommerce Agency Partner badge and bottom WordPress logo.
+- Hero partner badges: Shopify Platinum Partner, Clutch (4.9 rating), Trustpilot (4.9 TrustScore), and Upwork (Top Rated Plus).
+- Trusted brands slider: 10 brand proof logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Simsdirect, Kvaser, Nekter, Circuit City).
+- City stat counter: "Why Choose Dynamic Dreamz as Your WordPress Development Company in Pune?" with 4 metrics (20+ Years of Experience, 150+ Experts, 5,000+ projects delivered, 2500+ Verified 5 star Reviews).
 - 4-step delivery process: Discovery and Planning, Design and Development, Testing and Deployment, Ongoing Support.
 - 6 agency reason cards: Expert WordPress Developers, Custom Solutions, User-Focused Design, SEO-Optimized Websites, Comprehensive Services, Proven Track Record.
-- 8 portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
-- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
+- 8 portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids, and "View our work" CTA -> `/our-work`.
+- Verified client video testimonials carousel: Shari Leidich, Rebekah Wymer, Thommas Linnrose, Zoe wang, Clinton De Vere, Fernando Arias, Alec Torelli, William Petz, William ST Baker, Kerri Imrie, Brandon.
 - 7 interactive FAQs covering WordPress development offerings in Pune, agency selection, theme customization, timeline, security, maintenance, and onboarding.
 - Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
 
@@ -8996,11 +8997,11 @@ Owner: SEO, content, and development
 
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/wordpress-development-in-pune` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | 9 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | Reused canonical assets across portfolio, client logos, review badges, and reason icons | Reused canonical assets from `public/assets/` with zero duplicates | Verified duplicate hash groups: 0 |
+| P0 | implemented | Route parity | Live site upgraded to modern 9-section city architecture | Remigrated `/wordpress-development-in-pune` with exact 9-section structure matching live site | Static prerender verified |
+| P0 | implemented | Component reuse | Replaced obsolete section stack with standard city components | Reused `CityPageHeroSection`, `IndustryBrandsSection`, `CityPageCounterSection`, `OurDevelopmentProcessSection`, `CityWhyChooseBoxesSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Reused canonical assets across hero tablet slider, partner badges, counter icons, process icons, portfolio cards, and client videos | Zero duplicate hash groups across public assets | Verified duplicate hash groups: 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createWordPressDevelopmentInPunePageSchema()` | Validated JSON-LD graph |
-| P1 | deferred | Visible copy enhancement | Repetitive sentences in Intro text box | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+| P1 | deferred | Content expansion | FAQ and counter copy can be enriched with Pune tech-corridor specificity | Kept exact live text per migration policy; proposals logged to `docs/page-content-improvements.md` | Live UI preserved |
 
 
 ## WordPress Development in Ahmedabad (`/wordpress-development-in-ahmedabad`)
