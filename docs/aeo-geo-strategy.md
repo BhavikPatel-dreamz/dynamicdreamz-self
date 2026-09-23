@@ -9078,8 +9078,8 @@ Owner: SEO, content, and development
 
 ## WordPress Development in Mumbai (`/wordpress-development-in-mumbai`)
 
-Status: technical and schema implementation complete; visible copy preserved per live site
-Last reviewed: 2026-09-02
+Status: technical and schema implementation complete; remigrated to exact live site visual parity with 9 city sections
+Last reviewed: 2026-09-23
 Owner: SEO, content, and development
 
 ### Page Role and Buyer Intent
@@ -9090,29 +9090,26 @@ Owner: SEO, content, and development
 
 ### Visible Content and Evidence Available
 
-- H1: "#1 WordPress Development Company in Mumbai" establishing regional WordPress leadership.
-- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
-- Trusted brands slider: 10 brand proof logos (Bella Vita, Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven).
-- Value proposition box: "Why Dynamic Dreamz is the Best WordPress Development Company?".
-- CMS benefit cards (5 cards): Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable.
-- Service offerings grid (6 services): Custom WordPress Development, WordPress Plugin Development Services, Headless WordPress Development, WordPress Design & Theme Development, WordPress Website Maintenance Services, Small Business WordPress Support.
+- H1: "Top WordPress Development Company in Mumbai" establishing regional WordPress leadership with "Get a Free Proposal" CTA.
+- Hero tablet slider mockup (4 work showcases: Quite Events, Lipari Design, Valents, Les Etoiles) + verified review ratings (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0).
+- Trusted brands slider: 10 brand proof logos (Bella Vita Organic, Bombay Shirt Company, POP, Sri Sri Tattva, Tropicfeel, Renee Cosmetics, Royce' Chocolate, Tego, Supertails, Eleven Eleven).
+- City stat counter: 4 metrics (500+ eCommerce Store Built, 10+ Years Experience, 150+ Team Member, 98% Happy Clients).
 - 4-step delivery process: Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support.
 - 6 agency reason cards: Expert WordPress Developers, Custom Solutions, User-Focused Design, SEO-Optimized Websites, Comprehensive Services, Proven Results.
-- 8 portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
-- Industries served slider: Beauty & Cosmetics, Fashion & Apparel, Health & Nutrition, Food & Beverages, Pet Industry, etc.
+- 8 portfolio showcase items with heading "Our Work": Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
 - Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
-- 6 interactive FAQs covering development timeline, custom WordPress services, maintenance, redesigns, SEO readiness, and small business support.
+- 6 interactive FAQs covering development timeline (4-8 weeks), custom WordPress services, maintenance, redesigns, SEO readiness, and small business support.
 - Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
 
 ### Structured Gap Analysis
 
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/wordpress-development-in-mumbai` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | 12 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `IndustriesServedSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | Reused canonical assets across portfolio, client logos, review badges, and reason icons; ingested 2 unique SVGs cleanly | Zero duplicate hash groups across all 1556 public assets | Verified duplicate hash groups: 0 |
+| P0 | implemented | Route parity | Live site upgraded to modern 9-section city architecture | Remigrated `/wordpress-development-in-mumbai` with exact 9-section structure matching live site | Static prerender verified |
+| P0 | implemented | Component reuse | Replaced obsolete 12-section layout with standard city components | Reused `CityPageHeroSection`, `IndustryBrandsSection`, `CityPageCounterSection`, `OurDevelopmentProcessSection`, `CityWhyChooseBoxesSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Reused canonical assets across hero tablet slider, partner badges, counter icons, process icons, portfolio cards, and client videos | Zero duplicate hash groups across public assets | Verified duplicate hash groups: 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createWordPressDevelopmentInMumbaiPageSchema()` | Validated JSON-LD graph |
-| P1 | deferred | Visible copy enhancement | Incomplete sentence in Theme Development card | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+| P1 | deferred | Content expansion | FAQ and reason copy can be enriched with Mumbai-specific industry examples | Kept exact live text per migration policy; proposals logged to `docs/page-content-improvements.md` | Live UI preserved |
 
 
 ## Shopify Development in Pune (`/shopify-development-in-pune`)

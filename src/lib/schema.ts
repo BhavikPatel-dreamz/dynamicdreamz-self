@@ -5189,16 +5189,10 @@ export function createWordPressDevelopmentInMumbaiPageSchema() {
       question: item.question,
       answer: item.answer.replace(/<[^>]+>/g, " "),
     })),
-    offers: [
-      ...wordpressDevelopmentMumbaiContent.services.items.map((item) => ({
-        title: item.title,
-        description: item.description,
-      })),
-      ...wordpressDevelopmentMumbaiContent.reasons.items.map((item) => ({
-        title: item.title,
-        description: item.description,
-      })),
-    ],
+    offers: wordpressDevelopmentMumbaiContent.reasons.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }

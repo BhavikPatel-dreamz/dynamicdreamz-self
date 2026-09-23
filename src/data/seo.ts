@@ -3375,11 +3375,11 @@ export const pageSeo = {
   },
   wordpressDevelopmentInMumbai: {
     path: "/wordpress-development-in-mumbai",
-    title: "WordPress Development Company in Mumbai | Dynamic Dreamz",
+    title: "Wordpress Development Company in Mumbai | Dynamic Dreamz",
     description:
-      "Partner with a professional WordPress development company in Mumbai offering custom development, scalable solutions, and reliable website maintenance.",
+      "Wordpress development company in Mumbai offering Custom Wordpress Development, WooCommerce Development, Custom Plugin & Theme Development and ongoing support.",
     socialDescription:
-      "Expert WordPress development company in Mumbai: custom theme development, plugin integration, headless WordPress, and website maintenance.",
+      "Wordpress development services in Mumbai for custom websites, themes, plugins and ongoing support.",
     keywords: [
       "WordPress development in Mumbai",
       "WordPress development company in Mumbai",
@@ -3388,13 +3388,13 @@ export const pageSeo = {
       "custom WordPress development Mumbai",
     ],
     openGraphType: "website",
-    publishedTime: "2025-02-07T06:57:43+00:00",
-    modifiedTime: "2026-09-02T00:00:00+05:30",
+    publishedTime: "2026-03-27T11:13:03+00:00",
+    modifiedTime: "2026-09-04T07:52:28+00:00",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
       height: 630,
-      alt: "WordPress Development in Mumbai | Dynamic Dreamz",
+      alt: "Wordpress Development Company in Mumbai | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",
