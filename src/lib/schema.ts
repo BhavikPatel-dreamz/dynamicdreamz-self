@@ -5332,7 +5332,7 @@ export function createShopifyDevelopmentInLosAngelesPageSchema() {
         title: item.title,
         description: item.description,
       })),
-      ...shopifyDevelopmentLosAngelesContent.reasons.items.map((item) => ({
+      ...shopifyDevelopmentLosAngelesContent.whyDynamicDreamz.items.map((item) => ({
         title: item.title,
         description: item.description,
       })),

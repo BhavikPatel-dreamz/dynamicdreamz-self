@@ -3594,7 +3594,7 @@ export const pageSeo = {
     path: "/shopify-development-in-los-angeles",
     title: "Shopify Development Company in Los Angeles | Dynamic Dreamz",
     description:
-      "Looking for expert Shopify development in Los Angeles? Dynamic Dreamz builds high-performance, custom Shopify stores for your business. Get a free quote today!",
+      "Shopify development company in Los Angeles offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     socialDescription:
       "Top-rated Shopify development company in Los Angeles. Certified Shopify developers for custom stores, Plus builds, theme customization, and migrations.",
     keywords: [
@@ -3607,7 +3607,7 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2026-04-03T09:01:10+00:00",
-    modifiedTime: "2026-09-02T00:00:00+05:30",
+    modifiedTime: "2026-09-23T00:00:00+05:30",
     image: {
       path: "/assets/shopify-development-company-in-chennai/hero/shopify-development-company-chennai-img.webp",
       width: 520,
