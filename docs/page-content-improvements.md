@@ -2054,6 +2054,7 @@ Primary SEO intent: Shopify theme customization services, Shopify theme customiz
 | Services Card 3 Description | Ensure your mobile friendly store looks great on any device. | Ensure seamless responsiveness, touch-optimized layouts, and fast loading across every mobile device and screen size. | Expands terse fragment into clear benefit | Low | suggested |
 | FAQ 3 Answer | ...Generally, the theme customization process can take a few days to several weeks. | ...Depending on scope and complexity, standard customizations typically take 1 to 2 weeks, while extensive redesigns or bespoke features take 3 to 5 weeks. | Provides clearer client expectation without overpromising | Low | suggested |
 | FAQ 11 Answer | ...Suppose your current theme does not offer enough flexibility. In that case, we can extend it or recommend a new one better suited to your goals. | ...If your current theme lacks flexibility, our Liquid developers can extend its section blocks or recommend an architecture better aligned with your growth goals. | Improves flow and removes informal conditional syntax ("Suppose... In that case") | Low | suggested |
+| Testimonials Description | Hear directly from our clients about how our Shopify maintenance services helped their businesses thrive. | Hear directly from our clients about how our Shopify theme customization services helped their businesses thrive. | Fixes reference to "maintenance services" on a theme customization service landing page | Low | suggested |
 
 
 

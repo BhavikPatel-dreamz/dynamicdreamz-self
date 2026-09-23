@@ -1326,7 +1326,7 @@ export const pageSeo = {
     path: "/shopify-theme-customization",
     title: "Shopify Theme Customization Services | Dynamic Dreamz",
     description:
-      "Looking for Shopify Theme Customization Services, choose Dynamic Dreamz, The #1 Shopify Development Company that provides expert solutions for your brand.",
+      "Shopify theme customization services from a Platinum Partner. Customize purchased themes for branding, UX, sections, functionality, performance and launch.",
     keywords: [
       "Shopify theme customization",
       "custom Shopify themes",

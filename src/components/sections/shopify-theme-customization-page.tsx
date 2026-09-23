@@ -1,154 +1,112 @@
-import { AgencyServicesSection } from "@/components/sections/agency-services-section";
-import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
+import { AiEmpoweredDeliverySection } from "@/components/sections/ai-empowered-delivery-section";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
-import { ShopifyThemeProcessSection } from "@/components/sections/shopify-theme-customization/shopify-theme-process-section";
-import { ShopifyThemeTechSection } from "@/components/sections/shopify-theme-customization/shopify-theme-tech-section";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
+import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
+import { ShopifyTeamBoxesSection } from "@/components/sections/shopify-team-boxes-section";
+import { ShopifyThemeServiceIcon } from "@/components/sections/shopify-theme-customization/service-icons";
 import { ShopifyThemesGridSection } from "@/components/sections/shopify-theme-customization/shopify-themes-grid-section";
-import { ThemeWhyChooseSection } from "@/components/sections/theme-customization/theme-why-choose-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { ThemeCustomizationApproachSection } from "@/components/sections/theme-customization-approach-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
+import { WhyChooseShopifyMigrationSection } from "@/components/sections/why-choose-shopify-migration-section";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
-import { wixTestimonials } from "@/content/wix-to-shopify-migration";
 
 export function ShopifyThemeCustomizationPage() {
-  const heroContent = {
-    eyebrows: shopifyThemeCustomizationContent.hero.eyebrows,
-    title: shopifyThemeCustomizationContent.hero.title,
-    description: shopifyThemeCustomizationContent.hero.description,
-    ctaLabel: shopifyThemeCustomizationContent.hero.ctaText,
-    ctaHref: shopifyThemeCustomizationContent.hero.ctaHref,
-    videoSrc: shopifyThemeCustomizationContent.hero.videoSrc,
-    badges: shopifyThemeCustomizationContent.hero.badges,
-  };
-
-  const brandsContent = {
-    heading: shopifyThemeCustomizationContent.brands.title,
-    slug: "shopify-theme-customization",
-  };
-
   const servicesContent = {
-    heading: shopifyThemeCustomizationContent.services.title,
-    description: shopifyThemeCustomizationContent.services.subtitle,
-    items: shopifyThemeCustomizationContent.services.items.map((item) => ({
+    eyebrow: shopifyThemeCustomizationContent.services.eyebrow,
+    heading: shopifyThemeCustomizationContent.services.heading,
+    description: shopifyThemeCustomizationContent.services.description,
+    boxes: shopifyThemeCustomizationContent.services.items.map((item) => ({
+      icon: <ShopifyThemeServiceIcon name={item.iconName} />,
       title: item.title,
       description: item.description,
-      icon: item.icon,
-      iconAlt: item.title,
-    })),
-    cta: {
-      label: shopifyThemeCustomizationContent.sectionCopy.ctaLabel,
-      href: shopifyThemeCustomizationContent.hero.ctaHref,
-    },
-  };
-
-  const whyNeedContent = {
-    title: shopifyThemeCustomizationContent.whyNeed.title,
-    subtitle: shopifyThemeCustomizationContent.whyNeed.subtitle,
-    items: shopifyThemeCustomizationContent.whyNeed.items.map((item) => ({
-      title: item.title,
-      description: item.description,
-      icon: item.icon,
-      iconAlt: item.title,
-    })),
-  };
-
-  const benefitsContent = {
-    heading: shopifyThemeCustomizationContent.benefits.title,
-    description: shopifyThemeCustomizationContent.benefits.subtitle ?? "",
-    items: shopifyThemeCustomizationContent.benefits.items.map((item) => ({
-      title: item.title,
-      description: item.description,
-      icon: item.icon,
-      iconAlt: item.title,
-    })),
-  };
-
-  const whyChooseContent = {
-    title: shopifyThemeCustomizationContent.whyChoose.title,
-    subtitle: shopifyThemeCustomizationContent.whyChoose.subtitle,
-    items: shopifyThemeCustomizationContent.whyChoose.items.map((item) => ({
-      title: item.title,
-      description: item.description,
-      icon: item.icon,
-      iconAlt: item.title,
-    })),
-  };
-
-  const portfolioContent = {
-    eyebrow: shopifyThemeCustomizationContent.sectionCopy.portfolioEyebrow,
-    heading: shopifyThemeCustomizationContent.portfolio.title,
-    description: shopifyThemeCustomizationContent.portfolio.subtitle,
-    items: shopifyThemeCustomizationContent.portfolio.items.map((item) => ({
-      name: item.title,
-      href: item.href,
-      image: item.image,
-      imageAlt: item.title,
-      category: item.category,
     })),
   };
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec full-width-sec hide-review shopify-theme-customization-sec relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
-        content={heroContent}
-        variant="split"
+      {/* 1. Hero */}
+      <ServiceHeroVideoSection
+        content={shopifyThemeCustomizationContent.hero}
       />
+
+      {/* 2. Client Logos */}
       <IndustryBrandsSection
-        content={brandsContent}
-        heading={shopifyThemeCustomizationContent.brands.title}
+        content={shopifyThemeCustomizationContent.brands}
+        heading={shopifyThemeCustomizationContent.brands.heading}
         items={shopifyThemeCustomizationContent.brands.items}
       />
-      <AgencyServicesSection
-        className="what-we-provide-sec pt-20 pb-0 max-[992px]:pt-[50px]"
+
+      {/* 3. Services */}
+      <ThemeCustomizationServicesSection
         content={servicesContent}
-        hideCta
-        id="what-we-provide"
+        variant="yellow"
       />
-      <ThemeWhyChooseSection
-        className="why_dynamic_dreamz_sec dev pt-20 pb-20 max-[767px]:py-[50px]"
-        content={whyNeedContent}
-        id="why-need-customization"
-        variant="left-icon"
+
+      {/* 4. Dev Team / You like the theme */}
+      <ShopifyTeamBoxesSection
+        content={shopifyThemeCustomizationContent.devTeam}
       />
-      <ShopifyReasonsSection
-        className="shopify-customization-services-sec bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[767px]:py-[60px]"
-        content={benefitsContent}
-        id="benefits-of-customization"
-        layout="carousel"
-        carouselFullBleed
+
+      {/* 5. Development Process (6 steps, 3 cols) */}
+      <OurDevelopmentProcessSection
+        columns={3}
+        content={shopifyThemeCustomizationContent.process}
       />
-      <ShopifyThemeProcessSection content={shopifyThemeCustomizationContent.process} />
-      <ShopifyThemeTechSection content={shopifyThemeCustomizationContent.technologies} />
-      <ShopifyThemesGridSection content={shopifyThemeCustomizationContent.themes} />
-      <ThemeWhyChooseSection
-        className="why_dynamic_dreamz_sec dev mt-20 pb-20 pt-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] two-column-icon-text-bg max-[992px]:mt-12.5 max-[992px]:py-14 max-[767px]:mt-10 max-[767px]:py-10"
-        content={whyChooseContent}
-        id="why-choose"
-        variant="left-icon"
+
+      {/* 6. Choose the Right Approach */}
+      <ThemeCustomizationApproachSection
+        content={shopifyThemeCustomizationContent.approach}
       />
-      <PortfolioShowcaseSection content={portfolioContent} />
-      <div id="shopify-testimonials">
-        <HappyClientSection
-          controlsLabels={wixTestimonials.controlsLabels}
-          description={shopifyThemeCustomizationContent.sectionCopy.testimonialsDescription}
-          eyebrow={wixTestimonials.eyebrow}
-          heading={shopifyThemeCustomizationContent.sectionCopy.testimonialsHeading}
-          items={wixTestimonials.items}
-          variant="client-stories"
-        />
-      </div>
+
+      {/* 7. Shopify Themes We Customize (32 themes) */}
+      <ShopifyThemesGridSection
+        content={shopifyThemeCustomizationContent.themes}
+        id="customized-theme"
+        variant="pista"
+      />
+
+      {/* 8. AI-Assisted Delivery */}
+      <AiEmpoweredDeliverySection
+        content={shopifyThemeCustomizationContent.aiDelivery}
+      />
+
+      {/* 9. Why Choose Dynamic Dreamz */}
+      <WhyChooseShopifyMigrationSection
+        content={shopifyThemeCustomizationContent.whyChoose}
+      />
+
+      {/* 10. Portfolio Showcase */}
+      <PortfolioShowcaseSection
+        className="our-work-sec py-20 max-[992px]:py-[50px]"
+        columns={4}
+        content={shopifyThemeCustomizationContent.portfolio}
+        sectionId="our_work"
+      />
+
+      {/* 11. Pricing Engagement */}
+      <PricingTableSection
+        content={shopifyThemeCustomizationContent.pricing}
+      />
+
+      {/* 12. Client Stories / Testimonials */}
+      <HappyClientSection
+        description={shopifyThemeCustomizationContent.testimonials.description}
+        eyebrow={shopifyThemeCustomizationContent.testimonials.eyebrow}
+        heading={shopifyThemeCustomizationContent.testimonials.heading}
+        items={shopifyThemeCustomizationContent.testimonials.items}
+      />
+
+      {/* 13. Frequently Asked Questions */}
       <SplitFaqSection
+        answerClassName="!text-base !font-medium !leading-7 !text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-6"
+        className="faq-sec"
+        heading={shopifyThemeCustomizationContent.faqs.heading}
         idPrefix="shopify-theme-customization-faq"
         items={shopifyThemeCustomizationContent.faqs.items}
-      />
-      <CtaBannerSection
-        ctaHref={shopifyThemeCustomizationContent.ctaBanner.ctaHref}
-        ctaLabel={shopifyThemeCustomizationContent.ctaBanner.ctaLabel}
-        heading={shopifyThemeCustomizationContent.ctaBanner.heading}
       />
     </div>
   );

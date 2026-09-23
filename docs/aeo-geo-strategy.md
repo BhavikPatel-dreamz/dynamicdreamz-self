@@ -3340,7 +3340,7 @@ Deferred under the live-UI preservation gate. The current server-rendered catalo
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-21
+Last reviewed: 2026-09-23
 
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 
@@ -3350,12 +3350,12 @@ Decision stage: partner selection, theme customization scope definition, custom 
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Shopify theme customization capabilities. Features 6 core customization services, 4 business reasons for theme customization, 11 store benefits, a 6-step customization process, 6 technology/framework proficiencies, 31 customized Shopify themes, 4 reasons to choose Dynamic Dreamz, 6 portfolio project cards, 11 video client testimonials, 11 accordion FAQs, and quote request CTA banners.
+Dedicated commercial landing page presenting Dynamic Dreamz Shopify theme customization capabilities. Features 13 distinct sections matching the live site: Hero with dual eyebrows and looping agency video, 12 trusted brand logos, 6 core theme customization services, 4 developer team value boxes ("You like the theme. We make it work for your brand"), 6-step theme customization process in a 3-column layout, comparison section ("Theme Customization vs. Custom Shopify Theme Development"), 32 customized Shopify theme cards, AI tools section with 4 capability cards, why choose us section with 4 value cards and 4 proof counters, 8 portfolio project showcases, 3 flexible engagement models (Hourly, Dedicated, Fixed Scope), 11 client video testimonials with YouTube playback, and 10 accordion FAQs.
 
 ### Target prompts
 
 - Best agency for Shopify theme customization services?
-- How to customize Dawn, Prestige, Impulse, or Warehouse Shopify themes?
+- How to customize Dawn, Prestige, Impulse, Horizon, or Warehouse Shopify themes?
 - Dynamic Dreamz Shopify theme customization reviews and portfolio?
 - How much does Shopify theme customization cost and how long does it take?
 - Can Dynamic Dreamz add custom Liquid features and third-party apps to my Shopify store?
@@ -3363,11 +3363,12 @@ Dedicated commercial landing page presenting Dynamic Dreamz Shopify theme custom
 ### Current strengths and available evidence
 
 - Server-rendered H1 `Shopify Theme Customization Services` and clear proof counters (5000+ completed projects, 150+ in-house experts, 1100+ happy clients, 1B+ revenue generated, 4500+ Shopify stores built).
-- 31 showcase cards for widely used Shopify themes (Prestige, Impulse, Expanse, Sense, Be Yours, Fabric, Savor, Vessel, Dwell, Tinker, Pitch, Atelier, Heritage, Ritual, Dawn, Studio, Origin, Publisher, Trade, Spotlight, Refresh, Woodstock, Stiletto, Colorblock, Pipeline, Vision, Craft, Broadcast, Warehouse, Startup, Impact).
+- 32 showcase cards for widely used Shopify themes (Horizon, Prestige, Impulse, Expanse, Sense, Be Yours, Fabric, Savor, Vessel, Dwell, Tinker, Pitch, Atelier, Heritage, Ritual, Dawn, Studio, Origin, Publisher, Trade, Spotlight, Refresh, Woodstock, Stiletto, Colorblock, Pipeline, Vision, Craft, Broadcast, Warehouse, Startup, Impact).
 - 11 real client video testimonials with YouTube modal playback.
-- 11 comprehensive FAQ accordion items directly answering merchant questions on timeline, cost, support, and process.
-- Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (11 Question/Answer pairs), VideoObject (11 client video reviews), BreadcrumbList, Organization, and WebSite.
+- 10 comprehensive FAQ accordion items directly answering merchant questions on timeline, cost, support, and process.
+- Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (10 Question/Answer pairs), VideoObject (11 client video reviews), BreadcrumbList, Organization, and WebSite.
 - Zero duplicate assets across `public/assets/`, with canonical portfolio screens and review badges reused.
+
 
 ### Recommended improvements
 
@@ -9525,31 +9526,32 @@ Owner: SEO, content, and development
 ### Visible Content and Evidence Available
 - Eyebrows: "Established in 2006", "Shopify Platinum Partner".
 - H1: "Shopify Theme Customization Services".
-- Primary CTA: "Request a Quote" -> `/request-quote`.
+- Primary CTAs: "Request a Quote" -> `/request-quote`, "Book a Discovery Call" -> `/book-a-discovery-call`.
 - Proof Badges: Shopify Platinum Partner, Clutch (4.9 rating), Trustpilot (4.9 TrustScore), Upwork (Top Rated Plus).
 - Hero Media: Looping agency highlight video (`why-dynamic-dreamz.mp4`).
-- Trusted brands marquee: 10 enterprise ecommerce brands.
-- 6 Shopify Customization Services: Theme Selection and Installation, Custom Design and Branding, Responsive Design, App Integration, Conversion Rate Optimization, Ongoing Support and Maintenance.
-- 4 Reasons to Customize: Unique Brand Identity, Enhanced User Experience, Better Performance, Scalability.
-- 11 Benefits: Enhanced Brand Image, Better User Experience, Scalability, Faster Loading Times, Advanced Features, Competitive Advantage, Mobile Optimization, Improved Conversion Rates, Flexible Integration, SEO Optimization, Higher ROI.
-- 6-Step Process: Discovery and Planning, Design Mockups, Development and Customization, Testing and Quality Assurance, Launch and Deployment, Post-Launch Support.
-- 6 Technology & Framework items: Liquid, HTML5 & CSS3, JavaScript & jQuery, Shopify Theme Kit & CLI, GraphQL & REST APIs, Git & GitHub.
-- 30 Shopify Themes Grid: Detailed catalog of popular Shopify themes customized by Dynamic Dreamz.
-- 4 Why Choose Dynamic Dreamz Cards: Proven Track Record, Certified Shopify Experts, Transparent Communication, Tailored Solutions.
+- Trusted brands marquee: 12 enterprise ecommerce brands (Rare Beauty, Clove, etc.).
+- 6 Shopify Customization Services: Theme Setup & Configuration, Custom Feature Development, Mobile Optimization & Responsiveness, Shopify 2.0 & Section Customization, App Integration & Customization, Checkout & Conversion Optimization.
+- 4 Team Developer Boxes: "You like the theme. We make it work for your brand." (Custom Theme Tweaks Without Breaking the Code, Shopify 2.0 & Section Architecture, App & Third-Party Integration, Speed, Responsiveness & Mobile First).
+- 6-Step Process (3-column layout): Discovery & Goal Alignment, Theme Analysis & Architecture, Custom Design & Wireframing, Development & Configuration, Quality Assurance & Testing, Deployment & Handover.
+- Comparison Section: "Theme Customization vs. Custom Shopify Theme Development" (Customizing an Existing Theme vs Building from Scratch).
+- 32 Shopify Themes Grid: Catalog of popular Shopify themes customized by Dynamic Dreamz (Horizon, Prestige, Impulse, Expanse, etc.) with direct links to dedicated theme landing routes.
+- 4 AI Cards: "Experienced Shopify theme developers, supported by modern AI tools." with callout box.
+- Why Choose Section: "Why choose us for Shopify theme customization?" (4 capability items) + "20+ Years of Ecommerce Delivery" (4 proof statistics).
 - 8 Portfolio Projects: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
-- Happy Clients: 11 client video stories and testimonials.
-- 11 interactive FAQs covering customization scope, timelines, self-updates, pricing, downtime, and existing themes.
-- Bottom CTA Banner: "Want us to help you with your online store?" pointing to `/request-quote`.
+- 3 Engagement Models: Hourly, Dedicated, Fixed Scope.
+- Happy Clients: 11 client video stories and testimonials with modal playback.
+- 10 interactive FAQs covering scope, turnaround time, updating existing themes, downtime, and post-launch support.
+- Live Bottom Flow: Clean termination at FAQ section (exact live parity; no bottom CTA banner on live site).
 
 ### Structured Gap Analysis
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route existing in App Router; needed verification and synchronization with latest live site changes | Verified static prerender of `/shopify-theme-customization` | Verified static prerender |
-| P0 | implemented | Hero visual fidelity | Live site added video-wrapper and 4 partner badges | Updated `ServiceHeroSection` to support `eyebrows`, `badges`, and `videoSrc` backward-compatibly | 100% visual parity across viewports |
-| P0 | implemented | Section completeness | Live site has bottom CTA banner and 8 portfolio items (local had 6 and lacked CTA banner) | Ingested canonical portfolio references and added `CtaBannerSection` | Full section order parity |
-| P0 | implemented | Asset deduplication | Bombay Shirt Company and Holy Plantz portfolio images mapped to canonicals; 4 badges mapped to canonical SVGs | 0 duplicate hash groups across `public/assets/` | Total asset duplicates remain 0 |
-| P0 | implemented | Schema accuracy | Comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createShopifyThemeCustomizationPageSchema()` | Validated JSON-LD graph |
-| P1 | deferred | Visible copy enhancement | Minor grammatical variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+| P0 | implemented | Route discovery | Route existing in App Router; verified and synchronized with latest live site changes | Verified static prerender of `/shopify-theme-customization` | Verified static prerender |
+| P0 | implemented | Section completeness & order | Previous local implementation diverged from live site (missing team boxes, approach comparison, AI tools, pricing models; had obsolete sections) | Rebuilt all 13 sections in exact 1-to-1 live sequence | 100% section parity |
+| P0 | implemented | Process layout & styling | Live process section uses 3 columns with custom responsive borders | Extended `OurDevelopmentProcessSection` with `columns={3}` | Exact visual parity |
+| P0 | implemented | Asset deduplication | Horizon theme asset ingested via comparison buffer; all portfolio, brand, and partner assets mapped to canonicals | 0 duplicate hash groups across `public/assets/` | Total asset duplicates remain 0 |
+| P0 | implemented | Schema accuracy | Comprehensive Service, WebPage, BreadcrumbList, OfferCatalog, and FAQPage structured data | Generated JSON-LD via `createShopifyThemeCustomizationPageSchema()` | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor phrasing variations in live copy (e.g. testimonials description mentioning "maintenance services") | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
 
 
 

@@ -11,7 +11,7 @@ export type TeamBoxItem = {
 export type ShopifyTeamBoxesContent = {
   eyebrow?: string;
   heading: string;
-  description: string;
+  description: string | readonly string[];
   cta?: {
     label: string;
     href: string;
@@ -52,10 +52,21 @@ export function ShopifyTeamBoxesSection({
             <h2 className="font-sans text-[44px] font-bold leading-[56px] text-white max-[1199px]:text-[38px] max-[1199px]:leading-[48px] max-[767px]:text-[28px] max-[767px]:leading-[38px]">
               {content.heading}
             </h2>
-            <div className="section_text mt-5 max-[1199px]:mt-4">
-              <p className="font-sans text-base font-medium leading-7 text-white/80 max-[767px]:text-sm max-[767px]:leading-6">
-                {content.description}
-              </p>
+            <div className="section_text mt-5 space-y-4 max-[1199px]:mt-4">
+              {Array.isArray(content.description) ? (
+                content.description.map((paragraph, idx) => (
+                  <p
+                    className="font-sans text-base font-medium leading-7 text-white/80 max-[767px]:text-sm max-[767px]:leading-6"
+                    key={idx}
+                  >
+                    {paragraph}
+                  </p>
+                ))
+              ) : (
+                <p className="font-sans text-base font-medium leading-7 text-white/80 max-[767px]:text-sm max-[767px]:leading-6">
+                  {content.description}
+                </p>
+              )}
             </div>
             {content.cta ? (
               <div className="bottom-block mt-[30px] flex">

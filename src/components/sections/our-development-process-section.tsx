@@ -20,6 +20,7 @@ export type OurDevelopmentProcessSectionProps = {
   className?: string;
   id?: string;
   eyebrowVariant?: "pill" | "dash";
+  columns?: 3 | 4;
 };
 
 export function OurDevelopmentProcessSection({
@@ -27,7 +28,9 @@ export function OurDevelopmentProcessSection({
   className,
   id,
   eyebrowVariant = "dash",
+  columns,
 }: OurDevelopmentProcessSectionProps) {
+  const is3Col = columns === 3 || content.steps.length === 6;
   return (
     <section
       id={id}
@@ -66,10 +69,28 @@ export function OurDevelopmentProcessSection({
             <div
               key={item.step}
               className={cn(
-                "item w-1/4 p-5 border-t border-r border-b border-[rgba(40,40,40,0.11)]",
-                idx === 0 && "border-l",
-                "max-[1199px]:w-1/2 max-[1199px]:[&:nth-child(odd)]:border-l max-[1199px]:[&:nth-child(n+3)]:border-t-0",
-                "max-[767px]:w-full max-[767px]:border-t max-[767px]:border-l max-[767px]:border-r max-[767px]:border-b-0 max-[767px]:p-[18px] max-[767px]:last:border-b",
+                is3Col
+                  ? cn(
+                      "item p-5 border-[rgba(40,40,40,0.11)]",
+                      // Desktop 3-col
+                      "min-[1200px]:w-1/3 min-[1200px]:border-t min-[1200px]:border-r",
+                      idx < 3 ? "min-[1200px]:border-b-0" : "min-[1200px]:border-b",
+                      idx % 3 === 0 && "min-[1200px]:border-l",
+                      // Tablet 2-col
+                      "max-[1199px]:w-1/2 max-[1199px]:border-b",
+                      idx < 2 ? "max-[1199px]:border-t" : "max-[1199px]:border-t-0",
+                      idx % 2 === 0
+                        ? "max-[1199px]:border-l max-[1199px]:border-r-0"
+                        : "max-[1199px]:border-l max-[1199px]:border-r",
+                      // Mobile 1-col
+                      "max-[767px]:w-full max-[767px]:border-t max-[767px]:border-l max-[767px]:border-r max-[767px]:border-b-0 max-[767px]:p-[18px] max-[767px]:last:border-b",
+                    )
+                  : cn(
+                      "item w-1/4 p-5 border-t border-r border-b border-[rgba(40,40,40,0.11)]",
+                      idx === 0 && "border-l",
+                      "max-[1199px]:w-1/2 max-[1199px]:[&:nth-child(odd)]:border-l max-[1199px]:[&:nth-child(n+3)]:border-t-0",
+                      "max-[767px]:w-full max-[767px]:border-t max-[767px]:border-l max-[767px]:border-r max-[767px]:border-b-0 max-[767px]:p-[18px] max-[767px]:last:border-b",
+                    ),
               )}
             >
               <span className="mb-[15px] block text-xs font-semibold uppercase text-brand-red">
