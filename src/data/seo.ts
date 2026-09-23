@@ -3486,7 +3486,7 @@ export const pageSeo = {
     path: "/shopify-development-in-new-york",
     title: "Shopify Development Company in New York | Dynamic Dreamz",
     description:
-      "Looking for expert Shopify development in New York? Dynamic Dreamz builds high-performance custom Shopify stores tailored to your business. Get a quote today!",
+      "Shopify development company in New York offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     socialDescription:
       "Top-rated Shopify development company in New York. Certified Shopify developers for custom stores, Plus builds, theme customization, and migrations.",
     keywords: [

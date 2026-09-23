@@ -5,6 +5,7 @@ import { cn } from "@/lib/class-names";
 export type CityPageCounterItem = {
   value: string;
   label: string;
+  subLabel?: string;
 };
 
 export type CityPageCounterContent = {
@@ -71,9 +72,20 @@ export function CityPageCounterSection({
               <h3 className="text-[28px] font-bold leading-tight text-ink mb-1.5 max-[767px]:text-[22px] max-[767px]:mb-1">
                 {item.value}
               </h3>
-              <p className="text-sm font-medium leading-[22px] text-[#535353]">
-                {item.label}
-              </p>
+              {item.subLabel ? (
+                <>
+                  <span className="mb-4 block text-xs font-semibold uppercase leading-none text-brand-red">
+                    {item.label}
+                  </span>
+                  <p className="text-sm font-medium leading-[22px] text-[#535353]">
+                    {item.subLabel}
+                  </p>
+                </>
+              ) : (
+                <p className="text-sm font-medium leading-[22px] text-[#535353]">
+                  {item.label}
+                </p>
+              )}
             </div>
           ))}
         </div>

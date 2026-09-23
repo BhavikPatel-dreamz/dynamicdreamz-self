@@ -9281,35 +9281,41 @@ Owner: SEO, content, and development
 
 ## Shopify Development in New York (`/shopify-development-in-new-york`)
 
+Status: technical and schema implementation complete; remigrated to exact live site visual parity with 11 sections
+Last reviewed: 2026-09-23
+Owner: SEO, content, and development
+
 ### Page Intent and Query Scope
 - **Primary Search Intent**: Businesses, startups, and enterprises in New York looking for expert Shopify development, custom theme design, migrations, and ongoing maintenance.
 - **Audience**: NYC-based retail brands, DTC companies, fashion and lifestyle businesses, and digital agencies seeking high-performing Shopify partner solutions.
 - **Target queries**: "Shopify development in New York", "Shopify development company in New York", "Shopify developers New York", "hire Shopify developer in New York", "Shopify Plus New York".
 
 ### Visible Content and Evidence Available
+- Eyebrows: "Shopify Development" • "New York" with red-dash styling.
 - H1: "Shopify Development in New York That Drives Real Results".
-- Primary CTA: "get in touch" -> "/request-quote".
-- Hero graphic: Custom Shopify store illustration with independent review marks (Clutch 132 reviews / 5.0, Upwork 2000+ reviews / 5.0, GoodFirms 72 reviews / 5.0).
-- Trusted brands slider: 10 enterprise ecommerce brands.
-- Why Dynamic Dreamz single text box: NYC-focused narrative emphasizing speed, results, 18+ years experience, 150+ developers, and 5000+ delivered projects.
-- 5 Platform benefits: Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable.
-- 8 Shopify development services: Shopify Plus Store Development, Shopify Theme Customization, Figma / XD to Shopify Conversion, Shopify App Integration, Shopify Migration, Shopify Maintenance & Support, Shopify 2.0 Migration, White Label Shopify Development.
-- 4-step process: Discovery & Planning, Design and Development, Testing & Launch, Post-Launch Support.
-- 6 Agency reasons carousel: Shopify Platinum Partner, 150+ Expert Developers, 5000+ Projects Delivered, Custom-First Approach, On-Time. Every Time., Long-Term Partnership.
-- 8 Shopify portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
-- Client stories video testimonial carousel.
-- Contact form ("Enquiry Or Just To Say Hi!") & Book an Intro Call card.
-- 6 interactive FAQs answering agency selection, development cost, turnaround time, post-launch support, and onboarding.
-- Bottom CTA banner: "Want us to help you with your online store?" -> "request a quote".
+- Primary CTA: "Get In Touch" -> "/request-quote".
+- Secondary CTA: "Explore Shopify Services" -> "#services".
+- Hero graphic: Interactive 7-slide tablet showcase slider (Bella Vita, Bombay Shirt Company, Kalki Fashion, Nokt-1, Ranavat, Rare Rabbit, Renee Cosmetics) with 4 verified partner badges.
+- Trusted brands slider: 12 canonical brand logos (`industryBrandLogos`).
+- Counter section: Eyebrow "Shopify Development Company in New York", H2 "Choose Dynamic Dreamz as the Best Shopify Development Company in New York", description, and 4 stat counters with sublabel layout (20+ Years, 150+ In-house, 5,000+ Projects, 2500+ Satisfied Clients).
+- 5 Platform benefits: Eyebrow "Why Shopify", H2 "Why Choose Shopify for Your Business?", description, and 5 benefit cards with 24x24 icons (Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable).
+- 8 Shopify development services: Eyebrow "Shopify Services in New York", H2 "Our Shopify Development Services", description, and 8 two-column service cards with READ MORE links (Shopify Plus Store Development, Shopify Theme Customization, Figma / XD to Shopify Conversion, Shopify App Integration, Shopify Migration, Shopify Maintenance & Support, Shopify 2.0 Migration, White Label Shopify Development).
+- 4-step process: Eyebrow "How We Work", H2 "Our Shopify Development Process", description, and 4 process steps (Discovery & Planning, Design and Development, Testing & Launch, Post-Launch Support).
+- 6 Agency reasons: Eyebrow "Why Dynamic Dreamz", H2 "Why Choose Us for Your Shopify Development Needs?", description, and 6 cards in a 3-column grid (`whyChooseGrid`).
+- 8 Shopify portfolio showcase items: Eyebrow "Portfolio", H2 "Our Work", description, and 8 live project cards (Ranavat, Supertails, Atolea Jewelry, Matcha Republic, Sims Direct, Luxxi nails, Holy Plantz, Nufyx) with "View our work" CTA.
+- Client stories: Eyebrow "Client Stories", H2 "Don't Just Take Our Word For It", description, and 11 video testimonial cards starting with Shari Leidich (`Vc9FH6ZeoXY`) with interactive modal video playback.
+- 6 interactive FAQs in 2-column split layout (`SplitFaqSection`) answering agency definition, agency selection, developer cost, turnaround time, post-launch support, and onboarding.
+- Bottom CTA banner: "Want us to help you with your online store?" -> "request a quote" (`/request-quote`).
 
 ### Structured Gap Analysis
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-new-york` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | Page requires standard location landing layout | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `BookIntroCallSection`, `FaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | Unique fixed price projects icon | Ingested into `public/assets/services/shopify-development-in-new-york/fixed-price-projects.svg`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
+| P0 | implemented | Route discovery | Route migrated in App Router | Build `/shopify-development-in-new-york` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse & live parity | Eliminate non-live sections and match exact live 11 sections | Implemented 11 exact live sections using `CityPageHeroSection`, `IndustryBrandsSection`, `CityPageCounterSection`, `CityWhyChooseBoxesSection`, `AgencyServicesSection`, `OurDevelopmentProcessSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Reused canonical assets across all sections | 100% of SVGs and rasters matched existing canonical paths; 0 new assets downloaded | Total asset duplicates remain 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createShopifyDevelopmentInNewYorkPageSchema()` | Validated JSON-LD graph |
-| P1 | deferred | Visible copy enhancement | Minor grammatical variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+| P1 | deferred | Visible copy enhancement | Phrasing variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+
 
 ## Shopify Development in Mumbai (`/shopify-development-in-mumbai`)
 

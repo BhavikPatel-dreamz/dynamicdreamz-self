@@ -5301,16 +5301,10 @@ export function createShopifyDevelopmentInNewYorkPageSchema() {
       question: item.question,
       answer: item.answer.replace(/<[^>]+>/g, " "),
     })),
-    offers: [
-      ...shopifyDevelopmentNewYorkContent.services.items.map((item) => ({
-        title: item.title,
-        description: item.description,
-      })),
-      ...shopifyDevelopmentNewYorkContent.reasons.items.map((item) => ({
-        title: item.title,
-        description: item.description,
-      })),
-    ],
+    offers: shopifyDevelopmentNewYorkContent.services.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
