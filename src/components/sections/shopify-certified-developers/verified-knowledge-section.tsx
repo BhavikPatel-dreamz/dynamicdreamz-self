@@ -33,13 +33,13 @@ export function VerifiedKnowledgeSection({
             >
               <Image
                 alt={item.iconAlt}
-                aria-hidden={item.iconAlt === ""}
+                aria-hidden={!item.iconAlt || undefined}
                 className="mx-auto mb-5 size-[62px] object-contain"
                 height={62}
                 src={item.icon}
                 width={62}
               />
-              <h3 className="mb-2.5 text-center font-sans text-lg leading-[23px] font-bold text-brand-red">
+              <h3 className="mb-2.5 text-center font-sans text-lg leading-[23px] font-normal text-brand-red">
                 {item.title}
               </h3>
               <p className="text-base leading-[30.4px] font-medium text-muted">

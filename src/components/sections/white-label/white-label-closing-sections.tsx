@@ -51,9 +51,11 @@ export function WhiteLabelFinalCtaSection({
   return (
     <section
       className={cn(
-        "bg-[#fafaf7] pt-[70px] pb-[60px] max-[1199px]:py-[60px] max-[992px]:py-[30px]",
-        isCertifiedDevelopers && "py-[52px] max-[1199px]:py-[52px] max-[992px]:py-10",
-        isShopifyHours && "!py-[60px]",
+        isCertifiedDevelopers
+          ? "bg-white py-[52px] max-[1199px]:py-[52px] max-[992px]:py-10"
+          : isShopifyHours
+            ? "bg-[#fafaf7] !py-[60px]"
+            : "bg-[#fafaf7] pt-[70px] pb-[60px] max-[1199px]:py-[60px] max-[992px]:py-[30px]",
       )}
     >
       <Container className="max-[575px]:px-4">

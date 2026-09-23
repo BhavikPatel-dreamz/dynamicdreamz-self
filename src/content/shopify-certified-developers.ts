@@ -1,23 +1,55 @@
+import type { HeroBadge, ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-import type { WhiteLabelFinalCta, WhiteLabelHero } from "@/types/white-label-service";
+import type { WhiteLabelFinalCta } from "@/types/white-label-service";
 
 export const shopifyCertifiedDevelopersHero = {
+  eyebrowSpans: ["Established in 2006", "Shopify Platinum Partner"] as const,
   title: "Hire Shopify Certified Developers for work that needs to be done right.",
-  lead:
+  paragraphs: [
     "Build, customize or improve your Shopify store with developers who hold official Shopify credentials—and work within Dynamic Dreamz, a Shopify Platinum Partner agency with deep ecommerce experience.",
-  leadStrong: false,
-  paragraphs: [],
+  ],
   cta: "Discuss your Shopify project",
   ctaHref: "/request-quote",
   secondaryCta: {
     label: "see our certifications",
-    href: "#see-our-certifications",
+    href: "#see_our_certifications",
   },
-  illustration: "/assets/shopify-certified-developers/hero.webp",
-  illustrationAlt: "Hire Shopify Certified Developers",
-  illustrationWidth: 535,
-  illustrationHeight: 534,
-} as const satisfies WhiteLabelHero;
+  video: "/assets/home/why-dynamic-dreamz.mp4",
+  badges: [
+    {
+      name: "Shopify Platinum Partner",
+      src: "/assets/proof/shopify-platinum-partner.svg",
+      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+      alt: "Dynamic Dreamz - Shopify Platinum Partner",
+      width: 136,
+      height: 44,
+    },
+    {
+      name: "Clutch",
+      src: "/assets/proof/clutch-rating.svg",
+      href: "https://clutch.co/profile/dynamic-dreamz",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      width: 111,
+      height: 44,
+    },
+    {
+      name: "Trustpilot",
+      src: "/assets/proof/trustpilot-rating.svg",
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      width: 148,
+      height: 50,
+    },
+    {
+      name: "Upwork",
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      href: "https://www.upwork.com/ag/dynamicdreamz/",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      width: 126,
+      height: 54,
+    },
+  ] as const satisfies readonly HeroBadge[],
+} satisfies ServiceHeroVideoContent;
 
 export const verifiedShopifyKnowledge = {
   heading: "Verified Shopify knowledge applied to real business requirements.",
@@ -26,21 +58,21 @@ export const verifiedShopifyKnowledge = {
   items: [
     {
       icon: "/assets/process/step-01.svg",
-      iconAlt: "",
+      iconAlt: "Clearer technical decisions Image",
       title: "Clearer technical decisions",
       description:
         "Recommendations are grounded in Shopify capabilities and platform conventions.",
     },
     {
       icon: "/assets/process/step-02.svg",
-      iconAlt: "",
+      iconAlt: "More maintainable development Image",
       title: "More maintainable development",
       description:
         "Theme and Liquid work is planned with future updates and store management in mind.",
     },
     {
       icon: "/assets/process/step-03.svg",
-      iconAlt: "",
+      iconAlt: "Relevant specialist knowledge Image",
       title: "Relevant specialist knowledge",
       description:
         "You can match the project with developers credentialed in storefront or B2B work.",

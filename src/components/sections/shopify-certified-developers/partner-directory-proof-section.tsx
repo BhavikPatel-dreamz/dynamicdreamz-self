@@ -66,10 +66,10 @@ export function PartnerDirectoryProofSection({
                     />
                   </a>
                 ) : (
-                  <p className="flex min-h-11 items-center justify-center text-[60px] leading-[49px] font-bold text-ink max-[1199px]:text-[50px] max-[1199px]:leading-11 max-[575px]:text-[40px] max-[575px]:leading-10">
+                  <h3 className="flex min-h-11 items-center justify-center text-[60px] leading-[49px] font-bold text-ink max-[1199px]:text-[50px] max-[1199px]:leading-11 max-[575px]:text-[40px] max-[575px]:leading-10">
                     {item.kind === "rating" ? <StarIcon /> : null}
                     {item.value}
-                  </p>
+                  </h3>
                 )}
                 <p className="mt-[15px] border-t-[1.5px] border-ink/10 pt-[15px] text-sm leading-[21px] font-bold text-ink uppercase max-[1199px]:text-xs max-[575px]:mt-2.5 max-[575px]:pt-2.5">
                   {item.label}

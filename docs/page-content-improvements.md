@@ -1624,7 +1624,7 @@ Primary SEO intent: Wix to Shopify migration, migrate Wix store to Shopify, zero
 ## Shopify Certified Developers (`/shopify-certified-developers`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-21
+Last reviewed: 2026-09-23
 Primary SEO intent: Shopify Certified Developers, Certified Shopify Experts, Shopify Platinum Partner, Shopify Plus developers, Shopify B2B specialists, and Liquid storefront developers.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |

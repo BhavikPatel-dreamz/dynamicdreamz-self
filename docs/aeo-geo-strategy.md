@@ -8042,8 +8042,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Shopify Certified Developers (`/shopify-certified-developers`)
 
-Status: implemented and verified; live-visible content preserved; visible recommendations deferred
-Last reviewed: 2026-08-21
+Status: implemented and verified; live-visible content preserved; visual parity complete with live hero video, credentials, tabs, directory proof, split FAQs, and closing CTA
+Last reviewed: 2026-09-23
 Owner: SEO, Shopify development, UI/UX design, leadership, sales operations, and client success
 Primary audience: Shopify and Shopify Plus merchants, B2B and wholesale businesses, ecommerce leaders, and digital agencies evaluating credentialed Shopify development expertise.
 Decision stage: credential verification, capability matching, partner evaluation, technical scoping, and quote request
@@ -8063,40 +8063,44 @@ Dedicated commercial and evidence page for Dynamic Dreamz's Shopify-credentialed
 ### Core answer and available evidence
 
 - Server-rendered H1 and introductory answer identify the credentialed team, agency model, Shopify Platinum Partner positioning, and project intent.
+- Hero section (`.hero-new-section`) includes eyebrow ("Established in 2006 • Shopify Platinum Partner"), two button CTAs, four partner/review badges (Shopify Platinum Partner, Clutch 130+ reviews, Trustpilot 4.9, Upwork Top Rated Plus), and right-column video wrapper playing `why-dynamic-dreamz.mp4`.
 - Four visible credential cards preserve the exact live credential names and counts: Shopify Development Fundamentals (20), Shopify B2B Foundations, Discovery and Solution Design (7), Liquid Storefronts for Theme Developers (15), and B2B on Shopify Launch and Customization (7).
-- Every credential card links to the live page's matching Credly badge URL and has a meaningful local image alternative instead of the live empty alt.
+- Every credential card links to the live page's matching Credly badge URL and has a meaningful local image alternative.
 - The credential matcher gives direct storefront, Shopify B2B, existing-store, and ongoing-support guidance through an accessible tab interface while keeping every panel in server-rendered HTML.
 - Six visible delivery services cover custom themes, Liquid, Shopify B2B, existing-store improvements, app/API integration, and ongoing development.
 - The Partner Directory proof retains the visible live facts and links their source: Platinum Partner, 5.0 rating, 80+ directory reviews, and partner since September 2013.
-- Eight visible FAQs answer credential, partner, service, Shopify Plus, and agency-selection questions.
+- Eight visible FAQs answer credential, partner, service, Shopify Plus, and agency-selection questions in a two-column split FAQ layout matching the live site.
+- White closing CTA with "discuss your shopify project" button.
+
 ### Structured gap analysis
 
 | Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route and discovery | Missing App Router implementation for Vision theme customization | Ship slashless `/vision-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Vision hero graphic under `public/assets/vision-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
-| P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 5 service offers), and FAQPage (with 5 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
+| P0 | implemented | Hero visual parity | Local used WhiteLabel hero illustration instead of live video hero with badges | Use `ServiceHeroVideoSection` with why-dynamic-dreamz video, eyebrow, and 4 badges | Verified exact visual parity across 1440px, 768px, and 390px viewports |
+| P0 | implemented | FAQ layout parity | Local used centered WhiteLabel FAQ card design instead of live two-column split FAQ | Replace with `SplitFaqSection` matching live `.faq-sec.bg-sky-blue` layout | Verified exact layout, styling, and accordion functionality |
+| P0 | implemented | Route and discovery | Canonical slashless route `/shopify-certified-developers` required production SEO | Provide complete metadata, Open Graph, Twitter, and structured data | Verified canonical, sitemap, robots, and JSON-LD schema |
+| P1 | implemented | Closing CTA styling | Background was warm off-white `#fafaf7` instead of live `#ffffff` | Set `variant="certifiedDevelopers"` to render clean `bg-white` with 560px content block | Verified responsive desktop, tablet, and mobile presentation |
 
 ### Visible content and copy improvements
 
-Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Vision theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Shopify Certified Developers expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
 
 ### Technical requirements
 
-- App Router Server Component architecture (`src/app/vision-theme-customization/page.tsx`).
-- Canonical URL: `https://www.dynamicdreamz.com/vision-theme-customization`.
-- Maintain slashless `/vision-theme-customization` navigation across marketing pages and service menus.
+- App Router Server Component architecture (`src/app/shopify-certified-developers/page.tsx`).
+- Canonical URL: `https://www.dynamicdreamz.com/shopify-certified-developers`.
+- Maintain slashless `/shopify-certified-developers` navigation across marketing pages and service menus.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
 
-- SEO tracks queries for "Vision theme customization", "Shopify Vision developers", and "custom Vision theme Shopify".
-- Analytics tracks form submissions on `/request-quote` originating from `/vision-theme-customization`.
+- SEO tracks queries for "Shopify certified developers", "hire certified Shopify developer", and "certified Shopify Plus experts".
+- Analytics tracks form submissions on `/request-quote` originating from `/shopify-certified-developers`.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-21): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/vision-theme-customization`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 142 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-23): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-certified-developers`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 39 chars, Description: 151 chars), JSON-LD graph verification (WebPage, BreadcrumbList, Service, FAQPage), responsive layouts at 1440px, 768px, and 390px, local assets audit, lint, and production build.
 
 ## Craft Theme Customization (`/craft-theme-customization`)
 

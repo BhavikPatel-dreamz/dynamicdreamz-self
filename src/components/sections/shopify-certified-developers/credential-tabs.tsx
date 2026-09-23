@@ -67,7 +67,7 @@ export function CredentialTabs({
               aria-controls={panelId}
               aria-selected={isActive}
               className={cn(
-                "cursor-pointer border-t-0 border-r border-b border-l-0 border-ink/15 px-2.5 py-[26px] text-center text-base leading-none font-bold last:border-r-0 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#2f72d2] max-[992px]:text-sm max-[575px]:w-full max-[575px]:rounded-none max-[575px]:border-r-0 max-[575px]:py-5",
+                "cursor-pointer border-t-0 border-r border-b border-l-0 border-ink/15 px-2.5 py-[26px] text-center text-base leading-none font-normal last:border-r-0 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#2f72d2] max-[992px]:text-sm max-[575px]:w-full max-[575px]:rounded-none max-[575px]:border-r-0 max-[575px]:py-5",
                 isActive
                   ? "rounded-tr-[29px] bg-brand-red text-white max-[575px]:rounded-none"
                   : "bg-white text-ink",

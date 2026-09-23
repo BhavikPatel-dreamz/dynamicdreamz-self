@@ -14,7 +14,7 @@ export function CredentialEvidenceSection({
   return (
     <section
       className="scroll-mt-24 bg-[#fafaf7] py-[54px] max-[992px]:py-10"
-      id="see-our-certifications"
+      id="see_our_certifications"
       aria-labelledby="shopify-credential-evidence-title"
     >
       <Container>
