@@ -5364,7 +5364,7 @@ export function createShopifyDevelopmentInMiamiPageSchema() {
         title: item.title,
         description: item.description,
       })),
-      ...shopifyDevelopmentMiamiContent.reasons.items.map((item) => ({
+      ...shopifyDevelopmentMiamiContent.whyDynamicDreamz.items.map((item) => ({
         title: item.title,
         description: item.description,
       })),

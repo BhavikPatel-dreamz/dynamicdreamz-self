@@ -9400,27 +9400,30 @@ Owner: SEO, content, and development
 
 ### Visible Content and Evidence Available
 - H1: "Shopify Development in Miami That Moves as Fast as the City".
-- Primary CTA: "get in touch" -> "/request-quote".
-- Hero graphic: Custom Shopify store illustration with independent review marks (Clutch 132 reviews / 5.0, Upwork 2000+ reviews / 5.0, GoodFirms 72 reviews / 5.0).
-- Trusted brands slider: 10 enterprise ecommerce brands.
-- Why Dynamic Dreamz single text box: Miami & LATAM market positioning narrative with subtitle "Have a look at our numbers:" and 5-bullet proof list (18+ yrs, 150+ devs, 5000+ projects, Shopify Platinum Partner, trusted globally).
-- 5 Platform benefits: Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable (with Miami & LATAM contextualized copy).
+- Eyebrow badges: "Shopify Development" • "Miami".
+- Dual CTAs: Primary "Get In Touch" -> "/request-quote" and secondary "Explore Shopify Services" -> "#services".
+- 4 partner recognition badges: Shopify Platinum Partner, Clutch 4.9 rating, Trustpilot 4.9 TrustScore, Upwork Top Rated Plus.
+- 7-slide tablet mockup slider (`CityHeroTabletSlider`) with floating badges.
+- Trusted brands slider: 12 enterprise ecommerce brands (`industryBrandLogos`).
+- Counter proof section: Eyebrow "Shopify Development Company in Miami", H2 "Choose Dynamic Dreamz as the Best Shopify Development Company in Miami", description, and 4 counters (20+ Years, 150+ Experts, 5,000+ projects delivered, 2500+ Verified 5 star Reviews).
+- 5 Platform benefits (Why Shopify): Ease of Use, Customizable Themes, Scalability, Integrated Marketing Tools, Secure and Reliable.
 - 8 Shopify development services: Shopify Plus Store Development, Shopify Theme Customization, Figma / XD to Shopify Conversion, Shopify App Integration, Shopify Migration, Shopify Maintenance & Support, Shopify 2.0 Migration, White Label Shopify Development.
-- 4-step process: Discovery & Planning, Design & Development, Testing & Launch, Post-Launch Support.
-- 6 Agency reasons carousel: We're a Shopify Platinum Partner, Scale That Local Agencies Simply Can't Match, We Understand Miami's Market, Your LATAM Growth Partner, Transparent Every Step of the Way, Long-Term Partnership Not Just a Project.
-- 8 Shopify portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
-- Client stories video testimonial carousel ("Rather, check out how our services have empowered our clients to evolve.").
-- Contact form ("Let's Build Something Great Together") & Book an Intro Call card.
-- 8 interactive FAQs answering agency qualifications, top developers in Miami, costs, hiring steps, migration services, full-service agency scope, Shopify Plus capabilities, and development timelines.
+- 4-step process: Step 01 Discovery & Planning, Step 02 Design & Development, Step 03 Testing & Launch, Step 04 Post-Launch Support.
+- 6 Why Dynamic Dreamz benefits: We're a Shopify Platinum Partner, Scale Without Compromise, Built for Miami Business, Transparent, Always, Long-Term Partnership, Not Just a Project, White-Label Ready.
+- 8 Shopify portfolio showcase items: Ranavat, Supertails, Atolea Jewelry, Matcha Republic, Sims Direct, Luxxi nails, Holy Plantz, Nufyx.
+- Client stories video testimonial carousel starting with Shari Leidich (Max Sweets).
+- 8 interactive FAQs answering qualifications, costs, Shopify Plus, theme customization, white-label, timelines, industries, and migration.
 - Bottom CTA banner: "Want us to help you with your online store?" -> "request a quote".
+- Book an Intro Call section: Left column inquiry contact form ("Let's Build Something Great Together") and Right column intro call card ("Book an Intro Call") with "Book A Call" CTA.
 
 ### Structured Gap Analysis
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/shopify-development-in-miami` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | Page requires standard location landing layout | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `AgencyServicesSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `BookIntroCallSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | Reused canonical assets across all sections | 0 new downloads required; all assets mapped to existing canonical paths | Total asset duplicates remain 0 |
-| P1 | deferred | Visible copy enhancement | Minor colloquialisms in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+| P0 | implemented | Live Parity Layout | Legacy implementation used `ServiceHeroSection`, `TextBoxSection`, `ShopifyAppBenefitsSection`, `ProcessWaveSection`, `ShopifyReasonsSection` | Reconstructed exact 12 live sections in order using `CityPageHeroSection`, `IndustryBrandsSection`, `CityPageCounterSection`, `CityWhyChooseBoxesSection`, `AgencyServicesSection`, `OurDevelopmentProcessSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection`, `BookIntroCallSection` | Verified 100% section parity with live site |
+| P0 | implemented | Content Boundary | Visible copy must reside outside component files | Extracted 100% of visible headings, paragraphs, labels, CTAs, counters, card copy, and FAQs into `src/content/shopify-development-in-miami.ts` | `npm run check:component-content` passes |
+| P0 | implemented | Asset Deduplication | Reused canonical assets across all sections | 0 new downloads required; all assets mapped to existing canonical paths | 0 byte, SVG, or pixel duplicates across 1,707 assets |
+| P0 | implemented | Structured Data | Service page schema must match visible content | Generated `createShopifyDevelopmentInMiamiPageSchema` with LocalBusiness, WebPage, FAQPage, BreadcrumbList, and Service/Offer catalog matching visible content | Valid JSON-LD schema |
+| P1 | deferred | FAQ Content Correction | Live FAQ questions reference "Texas" instead of "Miami" | Preserved exact live text per migration rules; recorded proposed improvement in `docs/page-content-improvements.md` | Live UI preserved; queued for explicit project owner approval |
 
 ## YITH Wonder Theme Customization (`/yith-wonder-theme-customization`)
 

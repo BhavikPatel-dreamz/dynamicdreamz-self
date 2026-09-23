@@ -74,7 +74,7 @@ export const shopifyDevelopmentLosAngelesContent = {
           height: 2380,
         },
         {
-          src: "/assets/services/shopify-development-in-bangalore/hero/slide-bombay-shirt-company.webp",
+          src: "/assets/services/shopify-development-in-bangalore/hero/slide-bombay-tshirt.webp",
           alt: "Bombay Shirt Company",
           width: 1600,
           height: 2380,
@@ -98,7 +98,7 @@ export const shopifyDevelopmentLosAngelesContent = {
           height: 2380,
         },
         {
-          src: "/assets/services/shopify-development-in-bangalore/hero/slide-rare-rabbit.webp",
+          src: "/assets/services/shopify-development-in-bangalore/hero/slide-rarerabbit.webp",
           alt: "Rare Rabbit",
           width: 1600,
           height: 2380,
@@ -158,7 +158,7 @@ export const shopifyDevelopmentLosAngelesContent = {
         title: "Ease of Use",
         description:
           "Shopify's intuitive dashboard makes it easy to manage products, orders, and customers, no technical expertise required.",
-        icon: "/assets/services/shopify-development-in-bangalore/why-choose/easy-to-use.svg",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose/user-friendly-interface.svg",
         iconAlt: "Ease of Use Icon",
       },
       {
@@ -251,14 +251,14 @@ export const shopifyDevelopmentLosAngelesContent = {
         title: "Shopify 2.0 Migration",
         description:
           "Still on an older Shopify theme? Upgrading to Shopify 2.0 unlocks a more flexible editing experience, better app compatibility, and improved performance. Our team handles the entire migration, cleanly, efficiently, and without disrupting your live store.",
-        icon: "/assets/services/shopify-development-in-delhi/services/shopify-20-migration.svg",
+        icon: "/assets/services/shopify-development-in-delhi/services/shopify-2-0-upgrades.svg",
         iconAlt: "Shopify 2.0 Migration Icon",
       },
       {
         title: "White Label Shopify Development",
         description:
           "Agencies and freelancers looking for a reliable development partner, we work behind the scenes so you don’t have to. Our white-label Shopify development service delivers high-quality work under your brand name, with full confidentiality and no compromise on quality.",
-        icon: "/assets/services/shopify-development-in-delhi/services/white-label-shopify-development.svg",
+        icon: "/assets/services/shopify-development-in-bangalore/services/white-label-shopify-development.svg",
         iconAlt: "White Label Shopify Development Icon",
         href: "/white-label-shopify-development-services",
       },

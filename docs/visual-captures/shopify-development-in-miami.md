@@ -2,97 +2,115 @@
 
 - **Route**: `/shopify-development-in-miami`
 - **Live URL Reference**: `https://www.dynamicdreamz.com/shopify-development-in-miami/`
-- **Capture Date**: 2026-09-02
+- **Capture Date**: 2026-09-23
 - **Status**: Verified
 - **Viewports Inspected**:
   - Desktop: 1440x900
   - Tablet: 768x1024
   - Mobile: 390x844
+- **Captured Artifacts**:
+  - `scratch/live-miami-desktop-1440.png`
+  - `scratch/live-miami-desktop-full.png`
+  - `scratch/live-miami-tablet-768.png`
+  - `scratch/live-miami-tablet-full.png`
+  - `scratch/live-miami-mobile-390.png`
+  - `scratch/live-miami-mobile-full.png`
 
 ---
 
 ## 1. Visual References & Page Structure
 
 ### Live CSS Sources Inspected
-- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/hero_section.css`
-  - `.inner-hero-sec.single-full-img` (hero layout, 50%/50% split, review badges for Clutch, Upwork, GoodFirms with 5.0 rating, red CTA button "get in touch")
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/hero_new_section.css`
+  - `.hero-new-section` with dual eyebrow badges (`Shopify Development` • `Miami`), H1 heading, dual CTAs ("Get In Touch", "Explore Shopify Services"), 4 partner recognition badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), and 7-slide tablet mockup slider (`CityHeroTabletSlider`) with floating badges.
 - `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/trusted_by_leading_brands_section.css`
-  - `.our-client-sec` (trusted brand partner logo marquee/slider with 10 client logos)
-- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/text_content_section.css`
-  - `.single-text-box-sec.pb-0` (centered text container with 3 narrative paragraphs, an H3 subtitle "Have a look at our numbers:", and a 5-item bulleted proof list)
+  - `.our-client-sec` with eyebrow "Trusted by Leading Brands" and 12 brand logos (`industryBrandLogos`).
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/city_page_counter.css`
+  - `.city-page-counter` with eyebrow "Shopify Development Company in Miami", H2 "Choose Dynamic Dreamz as the Best Shopify Development Company in Miami", description, and 4 stat counter cards (20+, 150+, 5,000+, 2500+).
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/city_page_why_choose_boxes.css`
+  - `.city-page-why-choose-boxes` with eyebrow "Why Shopify", H2 "Why Shopify is the Right Platform for Miami Businesses?", and 5 feature cards.
 - `/wp-content/themes/dynamicdreamz/assets/css/services/main.css`
-  - `.benefit_box_sec.four-column-text-with-icon-sec.pb-0` (5 platform benefit cards with icons, titles, and descriptions tailored to Miami / LATAM commerce)
-  - `.what-we-provide-sec` (2-column services grid, 8 cards with hover gradient border, icons, descriptions, and arrow links)
-  - `.our-process-sec.inner-process-sec` (4-step wave process layout with SVG connector and numbered cards)
-  - `.shopify-customization-services-sec` (6 reasons carousel cards with gradient background)
-  - `.our-work-sec` (4-column Shopify portfolio project grid with 8 projects)
-  - `.happy-client-sec` (video testimonial carousel with modal playback)
-  - `.book-intro-call-section.pt-0` (split layout with inquiry contact form "Let's Build Something Great Together" on left and "Book an Intro Call" card on right)
-  - `.faq-sec` (8 accordion FAQ items with active states)
-  - `.request-banner` (bottom full-width red gradient CTA banner with white button)
-- `/wp-content/themes/dynamicdreamz/assets/css/services/media.css`
-  - Breakpoints: desktop (>=1200px), tablet (768px-1199px / <=991px), mobile (<=767px / <=575px).
+  - `.what-we-provide-sec` (2-column services grid, 8 cards with icons, descriptions, and read-more links where present).
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/our_development_process.css`
+  - `.our-development-process` with eyebrow "How We Work", H2 "Our Shopify Development Process", description, and 4 sequential process cards (`Step 01` to `Step 04`).
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/city_page_why_choose_dynamic_dreamz.css`
+  - `.city-page-why-choose-dynamic.pb-0` (3-column benefits grid, 6 cards with icons and descriptions).
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/projects_section.css`
+  - `.our-work-sec` (4-column Shopify portfolio showcase with 8 featured projects, split-header layout, and CTA button "View our work" linking to `/our-work`).
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/client_review_section.css`
+  - `.happy-client-sec` (video testimonial carousel starting with Shari Leidich from Max Sweets).
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/faqs_section.css`
+  - `.faq-sec` (2-column split FAQ layout with sticky left heading and 8 accordion items with circular +/- indicators).
+- Bottom CTAs:
+  - `.request-banner`: centered H3 ("Want us to help you with your online store?") with button "request a quote" linking to `/request-quote`.
+  - `.book-intro-call-section.pt-0`: split layout with inquiry form ("Let's Build Something Great Together") on the left and "Book an Intro Call" card on the right with button "Book A Call".
 
 ---
 
 ## 2. Page Section Order & Component Mapping
 
-| Section # | Live Section Title / Purpose | Component / Implementation | Reused / Dedicated |
+| Section # | Live Section Class / Purpose | Component / Implementation | Status |
 |---|---|---|---|
-| 1 | Hero (`Shopify Development in Miami That Moves as Fast as the City`) | `ServiceHeroSection` | Reused |
-| 2 | Trusted by Leading Brands (10 client logos) | `IndustryBrandsSection` | Reused |
-| 3 | Why Dynamic Dreamz? (3 paragraphs + H3 + 5 bullet points) | `TextBoxSection` | Reused |
-| 4 | Why Shopify is the Right Platform for Miami Businesses? (5 cards) | `ShopifyAppBenefitsSection` | Reused |
-| 5 | Shopify Development Services in Miami (8 service cards) | `AgencyServicesSection` | Reused |
-| 6 | How We Work: Our Shopify Development Process (4 steps with wave SVG) | `ProcessWaveSection` | Reused |
-| 7 | Why Choose Dynamic Dreamz for Shopify Development in Miami? (6 cards) | `ShopifyReasonsSection` | Reused |
-| 8 | Our Work (8 Shopify portfolio project cards) | `PortfolioShowcaseSection` & `PortfolioProjectCard` | Reused |
-| 9 | Don't Just Take Our Word For It (Client Stories video slider) | `HappyClientSection` | Reused |
-| 10 | Let's Build Something Great Together & Book an Intro Call | `BookIntroCallSection` | Reused |
-| 11 | Frequently Asked Questions (8 accordion items) | `SplitFaqSection` & `FaqAccordion` | Reused |
-| 12 | Want us to help you with your online store? | `CtaBannerSection` | Reused |
+| 1 | `hero-new-section` (dual eyebrow, H1, dual CTAs, 4 partner badges, 7-slide tablet mockup slider) | `CityPageHeroSection` | Replaced legacy `ServiceHeroSection` |
+| 2 | `our-client-sec` (12 brand logos) | `IndustryBrandsSection` | Reused (`industryBrandLogos`) |
+| 3 | `city-page-counter` (4 counters: 20+, 150+, 5,000+, 2500+) | `CityPageCounterSection` | Replaced legacy `TextBoxSection` |
+| 4 | `city-page-why-choose-boxes` (Why Shopify: 5 cards) | `CityWhyChooseBoxesSection` | Replaced legacy `ShopifyAppBenefitsSection` |
+| 5 | `what-we-provide-sec` (Our Shopify Development Services: 8 cards) | `AgencyServicesSection` | Reused |
+| 6 | `our-development-process` (Our Shopify Development Process: 4 steps) | `OurDevelopmentProcessSection` | Replaced legacy `ProcessWaveSection` |
+| 7 | `city-page-why-choose-dynamic pb-0` (Why Dynamic Dreamz: 6 cards) | `CityWhyChooseBoxesSection` (`columns={3}`) | Replaced legacy `ShopifyReasonsSection` |
+| 8 | `our-work-sec` (Our Work: 8 portfolio cards, split header, "View our work" CTA) | `PortfolioShowcaseSection` | Reused |
+| 9 | `happy-client-sec` (Client Stories: 11 video testimonial cards) | `HappyClientSection` | Reused |
+| 10 | `faq-sec` (Frequently Asked Questions: 8 items in 2-column split layout) | `SplitFaqSection` | Reused |
+| 11 | `request-banner` (Bottom CTA banner: "Want us to help you with your online store?") | `CtaBannerSection` | Reused |
+| 12 | `book-intro-call-section pt-0` (Contact form + Book an Intro Call) | `BookIntroCallSection` | Reused (ordered exactly as live site) |
 
 ---
 
-## 3. Typography & Styling Specifications
+## 3. Responsive Breakpoints & Visual Inspection
 
-- **Heading Font**: Montserrat (`font-sans font-bold text-ink`).
-- **Hero Title**: `text-[50px] leading-[66px]` on desktop, `text-[40px] leading-[50px]` on tablet, `text-[30px] leading-[40px]` on mobile.
-- **Section Headings**: `text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink` (desktop), `text-[30px] leading-10` (tablet), `text-2xl leading-[33px]` (mobile).
-- **Body / Subtitles**: `text-base leading-[30.4px] font-normal text-muted` (hero), `text-base leading-[27px]` (cards).
-- **Hero Image**: Graphic `shopify-development-company-chennai-img.webp` (520x480).
-- **Brand Colors**: Light gradient `linear-gradient(97.18deg, #e8f9ef 28.5%, #e6fafd 91.82%)`, red primary CTA `#df4644` / `#cd3735`.
+- **Desktop (1440px)**:
+  - Hero displays split layout: left content (eyebrows, H1, description, dual CTAs, 4 badges in a row) and right tablet mockup with auto-sliding project screenshots.
+  - Counters display in a 4-column row.
+  - Why Shopify displays in 5 equal columns.
+  - Services display in a 2-column grid.
+  - Process steps display in 4 horizontal cards.
+  - Why Dynamic Dreamz displays in a 3-column grid.
+  - Portfolio displays in a 4-column grid.
+  - Testimonials display as carousel with full cards.
+  - FAQ displays sticky left title and right accordion list.
+  - Request banner and Book an Intro Call sections render cleanly with full styling.
+- **Tablet (768px)**:
+  - Hero stacks vertically with full-width text and centered tablet mockup slider.
+  - Counters wrap to 2x2 grid.
+  - Why Shopify wraps to 2-3 columns.
+  - Services stack to 1 column or 2 columns with appropriate spacing.
+  - Process steps stack vertically.
+  - Why Dynamic Dreamz wraps to 2 columns.
+  - Portfolio wraps to 2 columns.
+  - FAQ header centers above the accordion list.
+  - Book an Intro Call stacks form and call card vertically.
+- **Mobile (390px)**:
+  - Hero padding reduced, badges wrap cleanly, tablet slider scales within viewport width.
+  - Counters stack in 1 column.
+  - Why Shopify cards stack vertically with clean icon and typography alignment.
+  - Services, process, and why-choose cards stack in 1 column.
+  - Portfolio cards display in 1 column.
+  - FAQ accordions expand/collapse smoothly.
+  - All form inputs and buttons maintain full touch targets (minimum 44x44px).
 
 ---
 
-## 4. Asset Deduplication & Integrity
+## 4. SVG & Asset Parity Verification
 
-- 10 brand partner logos reused directly from `public/assets/clients/`:
-  - `ranavat.svg`, `prolash.svg`, `tropicfeel.svg`, `perfect-locks.svg`, `bombay-shirt-company.svg`, `kayfi.svg`, `simsdirect.svg`, `kvaser.svg`, `nelter.svg`, `circuit-city.svg`
-- Benefit icons reused directly from canonical paths:
-  - `/assets/shopify-development-company-in-chennai/benefits/user-friendly.svg`
-  - `/assets/shopify-theme-customization/services/responsive-design.svg`
-  - `/assets/shopify-development-company-in-chennai/benefits/scalable.svg`
-  - `/assets/etsy-to-shopify-migration/marketing-integration.svg`
-  - `/assets/shopify-development-company-in-chennai/benefits/secure.svg`
-- Service icons reused from canonical paths across `public/assets/`:
-  - `/assets/shopify-plus-agency/icons/shopify-plus-icon.svg`
-  - `/assets/services/wordpress/wordpress-custom-theme-development.svg`
-  - `/assets/services/shopify-development-agency/figma-conversion-icon.svg`
-  - `/assets/services/shopify-development-agency/app-integration-icon.svg`
-  - `/assets/hire-shopify-developers/icons/shopify-migration.svg`
-  - `/assets/services/wordpress/wordpress-maintenance.svg`
-  - `/assets/services/shopify-development-agency/shopify-upgrading-icon.svg`
-  - `/assets/services/wordpress/wordpress-white-label-development.svg`
-- Process icons reused from `/assets/services/bigcommerce-development/process/`:
-  - `initial-consultation.svg`, `planning-and-strategy.svg`, `development-and-implementation.svg`, `testing-launch-support.svg`
-- 6 reasons carousel icons reused from canonical paths:
-  - `/assets/shopify-plus-agency/icons/shopify-plus-icon.svg`
-  - `/assets/services/shopify-mobile-app-development/benefits/enhance-experience-icon.svg`
-  - `/assets/services/shopify-development-in-new-york/fixed-price-projects.svg`
-  - `/assets/impulse-theme-customization/features/customizable-sections.svg`
-  - `/assets/services/bigcommerce-development/advantages/timely-delivery.svg`
-  - `/assets/shopify-development-company-in-chennai/benefits/user-friendly.svg`
-- 8 portfolio project cards reused from canonical paths:
-  - `nufyx-protein-products.webp`, `nekter-juice-bar.webp`, `pagerie-dog-accessories.webp`, `luxxi-nails.webp`, `eco-soul.webp`, `adhoc-atler.webp`, `bombay-shirt-company-model.webp`, `holy-plantz.webp`
-- Total duplicate hash groups across `public/assets/`: 0.
+- **Asset Alignment**:
+  - `hero.tabletSlider.slides`: Replaced missing `slide-bombay-shirt-company.webp` and `slide-rare-rabbit.webp` with canonical `/assets/services/shopify-development-in-bangalore/hero/slide-bombay-tshirt.webp` and `/assets/services/shopify-development-in-bangalore/hero/slide-rarerabbit.webp`.
+  - `whyChoose` item 0 ("Ease of Use"): Replaced missing `easy-to-use.svg` with canonical `/assets/services/shopify-development-in-bangalore/why-choose/user-friendly-interface.svg` (exact matching SVG vector path).
+  - `services` item 6 ("Shopify 2.0 Migration"): Replaced missing `shopify-20-migration.svg` with canonical `/assets/services/shopify-development-in-delhi/services/shopify-2-0-upgrades.svg`.
+  - `services` item 7 ("White Label Shopify Development"): Replaced missing `delhi/services/white-label-shopify-development.svg` with canonical `/assets/services/shopify-development-in-bangalore/services/white-label-shopify-development.svg`.
+- **Render Verification**:
+  - All 5 SVGs in `whyChoose` render cleanly with 24x24 viewBox and `#AD5151` brand stroke.
+  - All 8 SVGs in `services` render cleanly inside the services cards.
+  - All 6 SVGs in `whyDynamicDreamz` render with high visual parity.
+  - All partner badges and brand logos render without 404s.
+  - Zero duplicate assets across `public/assets/`.
+

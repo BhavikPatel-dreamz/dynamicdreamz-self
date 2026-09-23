@@ -3621,9 +3621,9 @@ export const pageSeo = {
   },
   shopifyDevelopmentInMiami: {
     path: "/shopify-development-in-miami",
-    title: "Best Shopify Development in Miami | Dynamic Dreamz",
+    title: "Shopify Development Company in Miami | Dynamic Dreamz",
     description:
-      "Need expert Shopify development in Miami? We build high-performance stores, handle migrations & offer white-label solutions. 18+ yrs exp. Get a quote!",
+      "Shopify development company in Miami offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     socialDescription:
       "Top-rated Shopify development company in Miami. Certified Shopify developers for custom stores, Plus builds, theme customization, and migrations.",
     keywords: [
@@ -3636,12 +3636,12 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2026-05-04T12:54:15+00:00",
-    modifiedTime: "2026-09-02T00:00:00+05:30",
+    modifiedTime: "2026-09-23T00:00:00+05:30",
     image: {
       path: "/assets/shopify-development-company-in-chennai/hero/shopify-development-company-chennai-img.webp",
       width: 520,
       height: 480,
-      alt: "Best Shopify Development in Miami | Dynamic Dreamz",
+      alt: "Shopify Development Company in Miami | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",
