@@ -5274,7 +5274,7 @@ export function createShopifyDevelopmentInTexasPageSchema() {
         title: item.title,
         description: item.description,
       })),
-      ...shopifyDevelopmentTexasContent.reasons.items.map((item) => ({
+      ...shopifyDevelopmentTexasContent.whyDynamicDreamz.items.map((item) => ({
         title: item.title,
         description: item.description,
       })),

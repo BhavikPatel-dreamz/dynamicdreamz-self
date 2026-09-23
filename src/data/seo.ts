@@ -3456,11 +3456,11 @@ export const pageSeo = {
   },
   shopifyDevelopmentInTexas: {
     path: "/shopify-development-in-texas",
-    title: "Best Shopify Development in Texas | Dynamic Dreamz",
+    title: "Shopify Development Company in Texas | Dynamic Dreamz",
     description:
-      "Best Shopify development in Texas. Dynamic Dreamz delivers custom Shopify stores, Plus builds & white-label solutions across Houston, Dallas, Austin & beyond.",
+      "Shopify development company in Texas offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     socialDescription:
-      "Top-rated Shopify development company in Texas. Certified Shopify developers for custom stores, Plus builds, theme customization, and migrations.",
+      "Shopify development services in Texas for custom stores, themes, migrations, app integrations, Shopify Plus and ongoing support.",
     keywords: [
       "Shopify development in Texas",
       "Shopify development company in Texas",
@@ -3475,7 +3475,7 @@ export const pageSeo = {
       path: "/assets/og/homepage.png",
       width: 1200,
       height: 630,
-      alt: "Shopify Development in Texas | Dynamic Dreamz",
+      alt: "Shopify Development Company in Texas | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",
