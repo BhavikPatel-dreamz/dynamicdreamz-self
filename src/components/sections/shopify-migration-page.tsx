@@ -1,51 +1,113 @@
-import { AiAutomationSection } from "@/components/sections/ai-automation-section";
-import { AiDiscoverySection } from "@/components/sections/ai-discovery-section";
-import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
+import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
+import { ServicesCaseStudiesSection } from "@/components/sections/services-case-studies-section";
+import { SeoSafeMigrationSection } from "@/components/sections/shopify-migration/seo-safe-migration-section";
+import { ShopifyMigrationNumberedGridSection } from "@/components/sections/shopify-migration/shopify-migration-numbered-grid-section";
 import { ShopifyMigrationServicesSection } from "@/components/sections/shopify-migration/shopify-migration-services-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { WhyChooseShopifyMigrationSection } from "@/components/sections/why-choose-shopify-migration-section";
 import {
-  shopifyMigrationAiAutomation,
-  shopifyMigrationAiDiscovery,
-  shopifyMigrationFaqs,
+  shopifyMigrationBrands,
+  shopifyMigrationCaseStudies,
+  shopifyMigrationFaqsContent,
   shopifyMigrationHero,
   shopifyMigrationPortfolio,
-  shopifyMigrationServices,
+  shopifyMigrationProcess,
+  shopifyMigrationScope,
+  shopifyMigrationSeoSafe,
+  shopifyMigrationServicesContent,
+  shopifyMigrationTestimonials,
+  shopifyMigrationWhyChoose,
 } from "@/content/shopify-migration";
 
 export function ShopifyMigrationPage() {
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
+      {/* 1. Hero */}
+      <ServiceHeroVideoSection
         content={shopifyMigrationHero}
-        variant="centered"
-        className="inner-hero-sec relative overflow-hidden bg-white pt-[250px] pb-16 border-b-[1.5px] border-[#dfdfdf] max-[1199px]:pt-[200px] max-[992px]:pt-[140px] max-[992px]:pb-[50px]"
+        wrapperClassName="hero-shopify-migration"
       />
+
+      {/* 2. Client Logos */}
+      <IndustryBrandsSection
+        content={shopifyMigrationBrands}
+        heading={shopifyMigrationBrands.heading}
+        items={shopifyMigrationBrands.items}
+      />
+
+      {/* 3. Platform-Specific Shopify Migration */}
       <ShopifyMigrationServicesSection
-        items={shopifyMigrationServices}
-        className="migration-services-sec pt-16 pb-0 max-[992px]:pt-[50px]"
+        banner={shopifyMigrationServicesContent.banner}
+        description={shopifyMigrationServicesContent.description}
+        eyebrow={shopifyMigrationServicesContent.eyebrow}
+        heading={shopifyMigrationServicesContent.heading}
+        id="explore_migration_options"
+        items={shopifyMigrationServicesContent.items}
       />
-      <AiAutomationSection
-        content={shopifyMigrationAiAutomation}
-        className="smarter-shopify-store mt-20 bg-[#171E16] py-20 text-white max-[992px]:mt-10 max-[992px]:py-[50px]"
+
+      {/* 4. Migration Scope */}
+      <ShopifyMigrationNumberedGridSection
+        description={shopifyMigrationScope.description}
+        eyebrow={shopifyMigrationScope.eyebrow}
+        heading={shopifyMigrationScope.heading}
+        items={shopifyMigrationScope.items}
+        variant={shopifyMigrationScope.variant}
       />
-      <AiDiscoverySection
-        content={shopifyMigrationAiDiscovery}
-        variant="cards"
-        className="preparing-store pt-20 pb-0 max-[992px]:pt-[50px]"
+
+      {/* 5. Shopify Migration Process */}
+      <ShopifyMigrationNumberedGridSection
+        description={shopifyMigrationProcess.description}
+        eyebrow={shopifyMigrationProcess.eyebrow}
+        heading={shopifyMigrationProcess.heading}
+        items={shopifyMigrationProcess.items}
+        variant={shopifyMigrationProcess.variant}
       />
+
+      {/* 6. SEO-Safe Shopify Migration */}
+      <SeoSafeMigrationSection content={shopifyMigrationSeoSafe} />
+
+      {/* 7. Why Choose Dynamic Dreamz for Shopify Migration */}
+      <WhyChooseShopifyMigrationSection content={shopifyMigrationWhyChoose} />
+
+      {/* 8. Portfolio of Shopify Migration */}
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[992px]:py-[50px] max-[767px]:pt-0 max-[767px]:pb-[50px]"
+        className="our-work-sec py-20 max-[992px]:py-[50px]"
+        columns={4}
         content={shopifyMigrationPortfolio}
+        sectionId="our_work"
+        variant="liveGrid"
       />
-      <HappyClientSection />
+
+      {/* 9. Client Stories / Testimonials */}
+      <HappyClientSection
+        className="pt-0 max-[992px]:pt-0"
+        description={shopifyMigrationTestimonials.description}
+        eyebrow={shopifyMigrationTestimonials.eyebrow}
+        heading={shopifyMigrationTestimonials.heading}
+        items={shopifyMigrationTestimonials.items}
+      />
+
+      {/* 10. Case Studies */}
+      <ServicesCaseStudiesSection
+        description={shopifyMigrationCaseStudies.description}
+        eyebrow={shopifyMigrationCaseStudies.eyebrow}
+        heading={shopifyMigrationCaseStudies.heading}
+        items={shopifyMigrationCaseStudies.items}
+      />
+
+      {/* 11. FAQs */}
       <SplitFaqSection
-        items={shopifyMigrationFaqs}
+        answerClassName="!text-base !font-medium !leading-7 !text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-6"
+        className="faq-sec"
+        description={shopifyMigrationFaqsContent.description}
+        eyebrow={shopifyMigrationFaqsContent.eyebrow}
+        heading={shopifyMigrationFaqsContent.heading}
         idPrefix="shopify-migration-faq"
+        items={shopifyMigrationFaqsContent.items}
       />
-      <CtaBannerSection />
     </div>
   );
 }

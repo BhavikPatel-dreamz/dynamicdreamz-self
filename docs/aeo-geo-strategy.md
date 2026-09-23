@@ -3497,7 +3497,7 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-23
 
 Owner: SEO, Shopify migration specialists, leadership, and sales operations
 
@@ -3507,7 +3507,7 @@ Decision stage: platform re-platforming, migration partner selection, data integ
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz end-to-end Shopify migration services. Highlights 12 platform-to-Shopify migration pathways, post-migration AI automation capabilities (support, workflows, content, retention), AI-driven shopping readiness (AEO, GEO, agentic commerce, trust signals), portfolio of migration projects (Capri Bikes, Atolea Jewelry, Black Opal Beauty, Nested Naturals, Mygeeni, Raen), 11 client video reviews, 5 migration & AI FAQs, and quote request banners.
+Dedicated commercial landing page presenting Dynamic Dreamz end-to-end Shopify migration services. Exactly matches the 11-section live site structure: dual-eyebrow video hero with partner badges, 12 trusted brand logos slider, 12 platform-specific migration cards plus Shopify Plus migration banner, 6-item migration scope grid ("What we migrate to Shopify."), 6-step migration process grid ("How we migrate your store to Shopify."), SEO-safe migration interactive mapping module with 8 pill tags and 301 redirect mapping, Why Choose Dynamic Dreamz with 4 proof stats, 8-project migration portfolio showcase in 4 columns, 11 client video testimonials, 3 featured Shopify migration case studies (First Aid Distributions, Daniel Walters Eyewear, Sleepycat), and 8 comprehensive migration FAQs.
 
 ### Target prompts
 
@@ -3515,27 +3515,31 @@ Dedicated commercial landing page presenting Dynamic Dreamz end-to-end Shopify m
 - How to migrate store from Magento, WooCommerce, or BigCommerce to Shopify without losing SEO and orders?
 - Dynamic Dreamz Shopify migration reviews, experience, and portfolio?
 - Will Shopify store migration cause downtime or loss of customer data?
-- How to prepare a Shopify store for AI search, ChatGPT, and agentic commerce after migration?
+- How do 301 redirects and SEO data mapping work during Shopify migration?
 
 ### Current strengths and available evidence
 
-- Server-rendered H1 `Seamless Shopify Migration Services` with centered layout and 5.0 rating reviews pill.
-- 12 comprehensive platform migration cards with transition SVGs and clear routing to specific migration services.
-- 4 AI automation cards covering post-migration growth (Shopify Flow, Zapier, Make, Klaviyo, Gorgias, Tidio, OpenAI).
-- 4 AI-driven shopping capabilities for AEO, GEO, Universal Commerce Protocol agentic commerce, and trust signals.
-- 6 migration portfolio project cards linking to live storefronts.
-- 11 real client video testimonials with YouTube modal playback.
-- 5 comprehensive FAQ accordion items directly answering post-migration automation, AI search visibility, agentic commerce, ongoing support, and data migration scope.
-- Structured data graph emitting Service, OfferCatalog (12 migration service offers), FAQPage (5 Question/Answer pairs), VideoObject (11 client video reviews), BreadcrumbList, Organization, and WebSite.
-- Zero duplicate assets across `public/assets/`, reusing canonical AI icons, portfolio screenshots, and review wordmarks.
+- Server-rendered H1 `Shopify Migration Services` with dual eyebrows ("Established in 2006", "Shopify Platinum Partner"), looping agency video, and 4 partner badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus).
+- 12 trusted brand logos slider (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Nekter, Rare Rabbit).
+- 12 platform-specific migration cards with clean SVGs and direct routing, plus a dedicated Shopify Plus migration replatforming banner.
+- 6-item migration scope section ("What we migrate to Shopify.") detailing catalog, customers, orders, content, SEO, apps, and storefront.
+- 6-step migration process section ("How we migrate your store to Shopify.") covering audit, data mapping, build, integrations, QA & SEO validation, and launch.
+- SEO-Safe Shopify Migration module highlighting 8 technical pills, 3 URL mapping rows with 301 redirect indicators, and 4 SEO checks.
+- Why Choose Dynamic Dreamz section with 4 capability boxes and right dark block highlighting 20+ years, 150+ experts, 5k+ projects, and 2.5k+ reviews.
+- 8 migration portfolio projects (Capri Bikes, Atolea Jewelry, Black Opal Beauty, Nested Naturals, Mygeeni, Raen, Try Nokt, Cool Flags) in 4-column layout.
+- 11 client video testimonials with authentic founders and brand names.
+- 3 featured case studies linking to full migration case study pages.
+- 8 comprehensive FAQ accordion items directly answering migration scope, platforms, SEO protection, apps, Shopify Plus, timelines, redesigns, and post-launch support.
+- Structured data graph emitting Service, OfferCatalog (12 migration service offers), FAQPage (8 Question/Answer pairs), VideoObject (11 client video reviews), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical icons, portfolio screenshots, and review wordmarks.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | The migration route required full App Router and metadata coverage | Ship the slashless route through shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (12 offers), FAQPage (5 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Local assets | 12 platform migration SVGs required local project-owned copies | Save 12 migration icons under `public/assets/shopify-migration/services/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (12 offers), FAQPage (8 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Exact section parity | The previous page lacked 5 live sections and included non-live AI sections | Rebuild all 11 live sections in exact sequence with zero non-live sections | Verified in rendered output, component content, and build |
 | P1 | deferred | Content expansion | Minor wording/grammar polish in FAQ answers and card descriptions | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -3554,7 +3558,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service with 12 Offer items, 5 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Emit Service with 12 Offer items, 8 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
 - Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
 - Include route in `sitemap.xml` with priority 0.9 and monthly change frequency.
 
@@ -3565,7 +3569,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-migration`; source/build URL guard passes.
+- URL-policy review (2026-09-23): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-migration`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 52 chars, Description: 158 chars), JSON-LD graph verification, local assets audit, responsive layouts, lint, and production build.
 
 ## WooCommerce Development (`/woocommerce-development`)

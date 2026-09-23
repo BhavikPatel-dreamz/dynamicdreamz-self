@@ -2,70 +2,159 @@
 
 **Route**: `/shopify-migration`
 **Live URL**: `https://www.dynamicdreamz.com/shopify-migration/`
-**Capture Date**: 2026-08-19
+**Capture Date**: 2026-09-23
 
 ## Page Overview & Structure
-The `/shopify-migration` page is a core service landing page targeting merchants and enterprises migrating from other platforms (Magento, WooCommerce, BigCommerce, Salesforce, PrestaShop, Squarespace, Wix, Ecwid, Square, Etsy) or Shopify 1.0 themes to Shopify & Shopify Plus.
+The `/shopify-migration` page is a core commercial landing page presenting Dynamic Dreamz end-to-end Shopify and Shopify Plus migration services. It matches the live site exactly across 11 sections.
 
 ### Sections (in visual order):
-1. **Inner Hero Banner (`.inner-hero-sec`)**:
-   - Centered typography: H1 "Seamless Shopify Migration Services", subtext with `<br>` for readability, red CTA button "request a quote" pointing to `/request-quote`.
-   - Review animation pill container (`.review_animation_main`) displaying Clutch, Upwork, and GoodFirms 5.0 ratings and reviews counter.
-2. **Our Comprehensive Migration Services (`.migration-services-sec`)**:
-   - Section heading "Our Comprehensive Migration Services" + subtitle "Bespoke migration services for effortless transition to Shopify platform".
-   - 12 migration platform cards (Shopify Theme, Magento to Shopify Plus, Magento, WooCommerce, BigCommerce, Salesforce, PrestaShop, Squarespace, Wix, Ecwid, Square, Etsy).
-   - Card layout: SVG platform transition icon (245x92), H3 title, descriptive paragraph, hover animation with border/shadow enhancement.
-3. **Built for the Next Era of Shopify Commerce (`.smarter-shopify-store`)**:
-   - Dark background (`#171E16`), white typography.
-   - Section heading + description.
-   - 4-card 2x2 grid with icon, H3, description, and interactive pill tags (e.g. Gorgias, Tidio, Shopify Flow, Zapier, Klaviyo, Make, Shopify Magic, Sidekick, OpenAI).
-4. **Preparing Your Store for AI-Driven Shopping (`.preparing-store`)**:
-   - Light background, section heading + description.
-   - 4 horizontal/vertical column cards with border dividers: AEO, GEO, Agentic Commerce Readiness, Trust Signal Strengthening.
-   - Bottom CTA: "Ready to build a Shopify store that performs today and tomorrow?" + "Talk to an Expert" button.
-5. **Portfolio of Shopify Migration (`.our-work-sec`)**:
-   - Section heading "Portfolio of Shopify Migration".
-   - 6 project cards: Capri Bikes, Atolea Jewelry, Black Opal Beauty, Nested Naturals, Mygeeni, Raen.
-   - Project preview image, hover state with "View Project" link + diagonal arrow, platform badge ("shopify"), category subtitle and project name.
-   - Bottom CTA link "View our work" pointing to `/our-work`.
-6. **Don't Just Take Our Word For It (`.happy-client-sec`)**:
-   - Section heading + subtitle.
-   - Testimonial video slider showcasing real client video stories with YouTube video modal popup, client avatar/poster, quote badge, client name and company.
-7. **Frequently Asked Questions (`.faq-sec`)**:
-   - Section heading "Frequently Asked Questions".
-   - 5 accordion items with expandable answers.
-8. **Bottom CTA Banner (`.request-banner`)**:
-   - Gradient banner (`linear-gradient(97.18deg, #15c064 28.5%, #00d1ff 91.82%)`).
-   - Title "Want us to help you with your online store?" + light CTA button "REQUEST A QUOTE".
+1. **Hero Section (`.hero-new-section`)**:
+   - Dual eyebrows: "Established in 2006" and "Shopify Platinum Partner" with red horizontal line divider.
+   - H1: "Shopify Migration Services".
+   - Paragraph: "Migrate your ecommerce store to Shopify or Shopify Plus with Dynamic Dreamz. We handle data migration, storefront development, apps and integrations, SEO redirects, QA, launch and post-migration support — with a structured plan built around your existing store."
+   - Button group:
+     - Primary button: "Request a Migration Assessment" -> `/request-quote`
+     - Secondary button: "Explore Migration Options" -> `#explore_migration_options`
+   - 4 partner proof badges:
+     - Shopify Platinum Partner (`/assets/proof/shopify-platinum-partner.svg`)
+     - Clutch 4.9 rating (`/assets/proof/clutch-rating.svg`)
+     - Trustpilot 4.9 TrustScore (`/assets/proof/trustpilot-rating.svg`)
+     - Upwork Top Rated Plus (`/assets/proof/upwork-top-rated-plus.svg`)
+   - Right-side agency looping video: `why-dynamic-dreamz.mp4` with custom poster.
+
+2. **Trusted by Leading Brands (`.our-client-sec`)**:
+   - Section heading: "Trusted by\nLeading Brands".
+   - Infinite logo marquee slider with 12 client brand logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Nekter, Rare Rabbit).
+
+3. **Platform-Specific Shopify Migration (`#explore_migration_options.migration-services-sec`)**:
+   - Section title with eyebrow:
+     - Eyebrow: "Platform-Specific Shopify Migration"
+     - H2: "Migrate to Shopify from\nyour current platform."
+     - Paragraph: "Choose your current platform to explore the right Shopify migration path."
+   - 12 platform cards in a 3-column grid (2-column tablet, 1-column mobile):
+     1. Shopify 2.0 Theme Migration -> `/migrating-a-theme-to-online-store-2-0`
+     2. Magento to Shopify Plus Migration -> `/magento-to-shopify-plus-migration`
+     3. Magento to Shopify Migration -> `/magento-to-shopify-migration`
+     4. WooCommerce to Shopify Migration -> `/woocommerce-to-shopify-migration`
+     5. BigCommerce to Shopify Migration -> `/bigcommerce-to-shopify-migration`
+     6. Salesforce Commerce Cloud to Shopify Migration -> `/salesforce-to-shopify-migration`
+     7. PrestaShop to Shopify Migration -> `/prestashop-to-shopify-migration`
+     8. Squarespace to Shopify Migration -> `/squarespace-to-shopify-migration`
+     9. Wix to Shopify Migration -> `/wix-to-shopify-migration`
+     10. Ecwid to Shopify Migration -> `/ecwid-to-shopify-migration`
+     11. Square to Shopify Migration -> `/square-to-shopify-migration`
+     12. Etsy to Shopify Migration -> `/etsy-to-shopify-migration`
+   - Bottom banner (`.wrapper`):
+     - Badge: "Complex / Enterprise Replatforming"
+     - Title: "Planning a larger move to Shopify Plus?"
+     - Description: "For complex catalogs, B2B, international stores, custom integrations or heavier replatforming requirements, plan the migration around Shopify Plus architecture from the beginning."
+     - Action button: "Shopify Plus Migration" -> `/shopify-plus-migration-agency`
+
+4. **Migration Scope (`.our_shopify_team_behind_it_section.bg-white`)**:
+   - Eyebrow: "Migration Scope"
+   - H2: "What we migrate to Shopify."
+   - Paragraph: "We define what can be transferred, what needs rebuilding and what should be replaced before development starts."
+   - 6 items in a 3-column grid with 45px rounded square `#EFF4EF` number badges (`01`-`06`):
+     - 01: Products & Catalog
+     - 02: Customers & Orders
+     - 03: Content & Navigation
+     - 04: SEO Data & Redirects
+     - 05: Apps & Functionality
+     - 06: Storefront & Integrations
+
+5. **Shopify Migration Process (`.our_shopify_team_behind_it_section`)**:
+   - Eyebrow: "Shopify Migration Process"
+   - H2: "How we migrate your store to Shopify."
+   - Paragraph: "From audit and data migration to development, testing and launch, we manage each step of the move to Shopify."
+   - 6 items in a 3-column grid with 34px circular `#fbefd7` number badges (`01`-`06`):
+     - 01: Audit & Planning
+     - 02: Data Mapping
+     - 03: Shopify Store Build
+     - 04: Apps & Integrations
+     - 05: 05 QA & SEO Validation
+     - 06: Launch & Post-Launch
+
+6. **SEO-Safe Shopify Migration (`.seo_safe_shopify_migration_section`)**:
+   - Split 2-column card with `#EFF4EF` container, rounded 30px:
+     - Left column:
+       - Eyebrow: "SEO-Safe Shopify Migration"
+       - H2: "Protect the organic value you have already built."
+       - Paragraph: "We plan URL mapping, redirects and key SEO signals as part of the migration—not after launch."
+       - 8 technical pill tags: Existing URL Crawl, URL Mapping, 301 Redirects, Metadata, Canonicals, Structured Data, Analytics, Search Console.
+     - Right column:
+       - 3 interactive URL mapping rows (`/category/product-a` -> `301 →` -> `/products/product-a`, etc.).
+       - 4 SEO check badges with red left border: Preserve useful content, Validate redirects, Check canonical signals, Post-launch crawl.
+
+7. **Why Choose Dynamic Dreamz for Shopify Migration (`.why_choose_dynamic_dreamz_for_shopify_migration`)**:
+   - Background `#171E16`, dark split heading.
+   - Left column: 4 capability boxes with light `#EFF4EF` icons:
+     - Shopify Platinum Partner
+     - Shopify-Certified Expertise
+     - Cross-Functional Team
+     - Ongoing Shopify Support
+   - Right column: Dark card with Platinum Partner logo, "20+ Years of Ecommerce Delivery", description, and 4 proof stat boxes (20+ Years of Experience, 150+ Experts, 5k+ projects delivered, 2.5k+ Verified 5 star Reviews), plus "About Dynamic Dreamz" button link to `/about-us`.
+
+8. **Portfolio of Shopify Migration (`#our_work.our-work-sec`)**:
+   - Eyebrow: "Portfolio"
+   - H2: "Portfolio of Shopify Migration"
+   - Paragraph: "Explore selected projects across Shopify, WordPress, mobile apps and custom development. See how we help brands and agencies build high-performing digital experiences."
+   - 8 projects in 4 columns:
+     1. Capri Bikes (`/assets/our-work/projects/capri-bikes.webp`)
+     2. Atolea Jewelry (`/assets/our-work/projects/atolea-jewelry.webp`)
+     3. Blackopalbeauty (`/assets/our-work/projects/blackopalbeauty.webp`)
+     4. Nested Naturals (`/assets/our-work/projects/nested-naturals.webp`)
+     5. Mygeeni (`/assets/our-work/projects/mygeeni.webp`)
+     6. Raen (`/assets/fashion/portfolio/raen-eyewear-fashion.webp`)
+     7. Try Nokt (`/assets/our-work/projects/try-nokt.webp`)
+     8. Cool Flags (`/assets/our-work/projects/cool-flags.webp`)
+   - Bottom CTA button: "View our work" -> `/our-work`.
+
+9. **Don't Just Take Our Word For It (`.happy-client-sec`)**:
+   - Eyebrow: "Client Stories"
+   - H2: "Don't Just Take Our Word For It"
+   - Paragraph: "Our client's satisfaction is the real test of our success. Discover how our specialized app development services have enabled companies to grow in the digital economy."
+   - 11 client video stories in carousel with YouTube dialog playback.
+
+10. **Shopify Migration Case Studies (`.see-the-work-sec`)**:
+    - Eyebrow: "CASE STUDIES"
+    - H2: "Shopify migration case studies"
+    - Paragraph: "Selected examples of ecommerce stores migrated to Shopify and Shopify Plus."
+    - 3 featured case study cards:
+      1. First Aid Distributions (Adobe Commerce to Shopify Migration)
+      2. Daniel Walters Eyewear (BigCommerce to Shopify Migration & Custom Dawn Theme Redesign)
+      3. Sleepycat (WooCommerce to Shopify Plus Migration)
+
+11. **Shopify Migration FAQs (`.faq-sec`)**:
+    - Eyebrow: "Frequently Asked Questions"
+    - H2: "Shopify migration FAQs."
+    - Paragraph: "Answers about data, SEO, functionality, timelines and launch."
+    - 2-column split sticky layout with SplitFaqSection, borderless bottom-border accordion items with circular plus/minus icons, and #fafaf7 background.
 
 ## Responsive Breakpoints & Visual Parity
 - **Desktop (>=1200px)**:
-  - Hero: Centered layout with `pt-[250px] pb-16 border-b-[1.5px] border-[#dfdfdf]`, H1 50px/66px, subtitle 16px/30.4px max-w-[950px], red CTA button, review animation pill.
-  - Migration Services: 3-column grid (`w-1/3 px-2 mb-5`), card padding `34px 34px 30px 34px`, hover border gradient `before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff]`, hover lift `translateY(-10px)`.
-  - Smarter Shopify Store: 2-column dark grid (`bg-[#171E16]`), card background `rgb(243 243 243 / 10%)`, rounded 15px, padding 30px, pill tags.
-  - Preparing Store: 4-column card grid (`w-1/4 px-[15px] mb-[30px]`), card background `#F7F4E9`, border `1px solid #efefef`, padding `40px 15px`, center bottom CTA with red button.
-  - Portfolio: 3-column grid (`grid-cols-3 gap-x-[15px] gap-y-[60px]`), project aspect ratio `pb-[115%]`, hover dark overlay + rising "View Project" link + platform badge in top right.
-  - Happy Clients: 2-column testimonial card carousel with YouTube video dialog.
-  - FAQs: 5 accordion items with `#efefef` border and 10px rounded corners.
-  - Bottom Banner: 119px gradient banner with white CTA button.
+  - Hero: 51%/49% split with full video looping, dual eyebrows, 4 partner badges.
+  - Migration Services: 3-column grid with 20px padding and bottom banner.
+  - Scope & Process: 3-column grid with custom number badges.
+  - SEO Safe: 49%/49% split with 8 pills and 3 URL mapping rows.
+  - Why Choose: 50%/50% split with 4 stat counters.
+  - Portfolio: 4 columns with project overlays.
+  - Case Studies: 3 columns.
+  - FAQs: Centered container with 10px rounded accordion items.
 - **Tablet (768px - 1199px)**:
-  - Hero: `pt-[200px]` (down to `pt-[140px] pb-[50px]` on <=991px), H1 46px/36px.
-  - Migration Services: 2-column grid (`w-1/2 mb-4`), card padding 20px.
-  - Smarter Shopify Store: 2-column grid, margin-top 40px, padding 50px 0.
-  - Preparing Store: 2-column grid (`w-1/2`), padding-top 50px.
-  - Portfolio: 2-column grid (`grid-cols-2 gap-y-[30px]`).
-  - Happy Clients: 2-column carousel.
+  - Hero wraps video below content on smaller screens.
+  - Migration Services: 2 columns.
+  - Scope & Process: 2 columns.
+  - SEO Safe: Left/Right stack vertically with full width.
+  - Why Choose: Stacks vertically.
+  - Portfolio: 2 columns.
+  - Case Studies: 1 column.
 - **Mobile (<768px)**:
-  - Hero: `pt-[140px] pb-[50px]`, H1 30px/40px.
-  - Migration Services: 1-column grid (`w-full mb-4`).
-  - Smarter Shopify Store: 1-column grid (`w-full`), card padding `30px 15px`.
-  - Preparing Store: 1-column grid (`w-full`).
-  - Portfolio: 1-column grid (`grid-cols-1`).
-  - Happy Clients: 1-slide carousel.
+  - Migration Services: 1 column.
+  - Scope & Process: 1 column.
+  - SEO Safe: 1 column, URL mapping rows stack vertically.
+  - Portfolio: 1 column.
+  - Full touch targets and responsive typography applied.
 
-## Assets Used
-- 12 platform migration SVGs in `public/assets/shopify-migration/services/`
-- AI store & discovery icons in `public/assets/white-label-shopify/ai/`
-- Portfolio images in `public/assets/our-work/projects/` and `public/assets/fashion/portfolio/`
-- Testimonial video posters in `public/assets/testimonials/`
-- Review badges in `public/assets/reviews/`
+## Zero Asset Duplication
+- Verified 0 exact byte, SVG path, or pixel raster duplicates across all 1708 assets.
+- Canonical assets reused for proof badges, client logos, portfolio previews, and case study hero images.

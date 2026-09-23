@@ -37,6 +37,7 @@ export type ServiceHeroVideoContent = {
 export type ServiceHeroVideoSectionProps = {
   content: ServiceHeroVideoContent;
   className?: string;
+  wrapperClassName?: string;
   titleAccentTag?: "i" | "span";
   titleAccentClassName?: string;
 };
@@ -44,9 +45,12 @@ export type ServiceHeroVideoSectionProps = {
 export function ServiceHeroVideoSection({
   content,
   className,
+  wrapperClassName,
   titleAccentTag = "i",
   titleAccentClassName,
 }: ServiceHeroVideoSectionProps) {
+  const isShopifyMigration = wrapperClassName?.includes("hero-shopify-migration");
+
   return (
     <section
       className={cn(
@@ -55,8 +59,13 @@ export function ServiceHeroVideoSection({
       )}
     >
       <Container>
-        <div className="wrapper flex flex-wrap items-center justify-between">
-          <div className="left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1399px]:w-[50%] max-[1199px]:w-full max-[1199px]:items-center max-[1199px]:py-10 max-[1199px]:text-center max-[767px]:py-8">
+        <div className={cn("wrapper flex flex-wrap items-center justify-between", wrapperClassName)}>
+          <div
+            className={cn(
+              "left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1199px]:w-full max-[1199px]:items-center max-[1199px]:py-10 max-[1199px]:text-center max-[767px]:py-8",
+              isShopifyMigration ? "max-[1399px]:w-[59%]" : "max-[1399px]:w-[50%]",
+            )}
+          >
             <div className="hero-content w-full">
               {content.eyebrowSpans && content.eyebrowSpans.length > 0 ? (
                 <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:justify-center max-[767px]:flex max-[767px]:w-full max-[767px]:justify-start max-[767px]:pl-6 max-[767px]:text-left max-[767px]:before:hidden">
@@ -131,7 +140,7 @@ export function ServiceHeroVideoSection({
 
               <div className="btn-group flex items-center pt-2.5 max-[1199px]:justify-center max-[767px]:w-full max-[767px]:flex-col max-[767px]:items-center">
                 <ButtonLink
-                  className="min-h-[50px] px-6 py-[15px] font-montserrat text-base font-bold uppercase max-[767px]:w-full"
+                  className="min-h-[50px] px-5 py-[15px] max-[991px]:py-3 max-[991px]:px-5 font-montserrat text-base font-bold uppercase max-[767px]:w-full"
                   href={content.ctaHref}
                   variant="primary"
                 >
@@ -139,7 +148,7 @@ export function ServiceHeroVideoSection({
                 </ButtonLink>
                 {content.secondaryCta ? (
                   <ButtonLink
-                    className="ml-[15px] min-h-[50px] px-6 py-[15px] font-montserrat text-base font-bold uppercase max-[767px]:ml-0 max-[767px]:mt-2.5 max-[767px]:w-full"
+                    className="ml-2.5 min-h-[50px] px-5 py-[15px] max-[991px]:py-3 max-[991px]:px-5 font-montserrat text-base font-bold uppercase max-[767px]:ml-0 max-[767px]:mt-2.5 max-[767px]:w-full"
                     href={content.secondaryCta.href}
                     variant="outline"
                   >

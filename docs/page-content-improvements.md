@@ -617,16 +617,17 @@ Primary SEO intent: Shopify development agency, Shopify development services, Sh
 ## Shopify Migration (`/shopify-migration`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-23
 Primary SEO intent: Shopify migration services, migrate to Shopify, Magento to Shopify migration, WooCommerce to Shopify migration, BigCommerce to Shopify migration, Shopify 2.0 theme migration, zero downtime data migration.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
 | Meta title | `Seamless Shopify Migration Services \| Shopify Store Migration \| Expert Shopify Store Migration Service India` (110 chars) | `Seamless Shopify Migration Services \| Dynamic Dreamz` (52 chars) | Fits 60-character budget and avoids keyword repetition in SERPs. | High | implemented in metadata |
 | Meta description | `We ensure a seamless transfer of your online store, preserving data integrity and minimizing downtime. Let us handle your Shopify migration and boost your e-commerce success.` (176 chars) | `We ensure a seamless transfer of your store, preserving data integrity and minimizing downtime. Expert Shopify migration services to boost ecommerce success.` (158 chars) | Fits 70-160 character budget while preserving live value proposition. | High | implemented in metadata |
-| Etsy migration card alt | `Etsy to Shopify Migratio Image` (typo in live alt text) | `Etsy to Shopify Migration Image` | Corrects typo in image alt attribute for better accessibility. | Low | implemented as a nonvisual accessibility correction |
+| Process Step 05 Title | `05 QA & SEO Validation` (duplicate number in title) | `QA & SEO Validation` | Removes redundant "05" from heading text since step number is already displayed in badge. | Low | deferred pending exact visible-copy approval |
+| Testimonials Description | `Discover how our specialized app development services have enabled companies to grow in the digital economy.` | `Discover how our specialized ecommerce migration services have enabled companies to grow in the digital economy.` | Aligns testimonial subtitle with migration intent rather than app development. | Low | deferred pending exact visible-copy approval |
 | Testimonial company name | `(Quite Events)` | `(Quiet Events)` | Corrects the typo in William Petz's company name. | Low | deferred pending exact visible-copy approval |
-| Service & FAQ structured data | Legacy site had outdated schema mismatching modern visible FAQs. | Emitted `Service` with `OfferCatalog` (12 migration offers) and `FAQPage` matching all 5 live visible FAQs. | Enables rich answer engine visibility and FAQ SERP enhancements. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site had outdated schema mismatching modern visible FAQs. | Emitted `Service` with `OfferCatalog` (12 migration offers) and `FAQPage` matching all 8 live visible FAQs. | Enables rich answer engine visibility and FAQ SERP enhancements. | High | implemented in schema |
 
 ## WooCommerce Development (`/woocommerce-development`)
 
