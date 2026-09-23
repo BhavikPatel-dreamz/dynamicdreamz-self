@@ -429,7 +429,7 @@ Last reviewed: 2026-08-18
 ## Hire Shopify Developers (`/hire-shopify-developers`)
 
 Status: visible recommendations deferred; live UI preserved
-Last reviewed: 2026-08-18
+Last reviewed: 2026-09-23
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
