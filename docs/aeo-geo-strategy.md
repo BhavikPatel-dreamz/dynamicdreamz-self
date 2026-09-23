@@ -2816,7 +2816,7 @@ capabilities. Future visible copy improvements are tracked in
   and internal links use `/shopify-plus-agency`; source/build URL guard passes.
 - Checks completed (2026-09-22): Full remigration parity audit against live site:
   - Hero: primary CTA updated to `/request-quote`, trust badge alts synchronized with live em dashes, secondary CTA anchor `#our_work`.
-  - Brand Rail: synchronized 12 live client brand logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit) with live dimensions, links, and heading `Trusted by <br>Leading Brands`.
+  - Brand Rail: synchronized 12 live client brand logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit) with live dimensions, links, and heading `Trusted by Leading Brands`.
   - Proof Section: resolved unwanted list-style markers before numeric prefixes `01.`-`04.`.
   - Services: migrated to 9-item `ShopifyStageServicesSection` matching live `.shopify-development-services` layout, tags ("Core Capability", "Consulting", "Replatforming", "Connected Commerce", etc.), bullet list tags for item 1 and item 4, and text arrow links.
   - FAQ: implemented two-column `SplitFaqSection` matching live `.faq-sec` (`#fafaf7` background, sticky header on desktop, borderless items with bottom-border only, circular plus/cross icons, first item open by default) with 9 verified FAQs.

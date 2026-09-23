@@ -33,7 +33,7 @@
    - Partner Badges: 4 badges (Shopify Platinum Partner, Clutch 4.9 rating, Trustpilot 4.9 TrustScore, Upwork Top Rated Plus).
    - Interactive Tablet Showcase: 7-slide rotating showcase (Bella Vita, Bombay Shirt Company, Kalki Fashion, Nokt-1, Ranavat, Rare Rabbit, Renee Cosmetics).
 2. **Brands Slider** (`IndustryBrandsSection`):
-   - Heading: `Trusted by <br>Leading Brands`
+   - Heading: `Trusted by Leading Brands`
    - Canonical brand logos (`industryBrandLogos`).
 3. **Counter Section** (`CityPageCounterSection`):
    - Eyebrow: `Shopify Development Company in Mumbai` (red-dash styling).

@@ -68,7 +68,7 @@ export const shopifyDevelopmentAgencyBrands = [
   { src: "/assets/clients/royce-chocolate.svg", href: "https://royceindia.com/", alt: "Royce chocolate logo", width: 132, height: 38 },
 ] as const;
 
-export const shopifyDevelopmentAgencyBrandsHeading = "Trusted by <br>Leading Brands";
+export const shopifyDevelopmentAgencyBrandsHeading = "Trusted by Leading Brands";
 
 export const shopifyDevelopmentAgencyBrandConfig = {
   slug: "shopify-development-agency",

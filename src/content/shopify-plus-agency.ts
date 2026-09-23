@@ -6,7 +6,7 @@ export const shopifyPlusAgencyHero = {
   description:
     "Dynamic Dreamz is a Shopify Platinum Partner helping DTC brands, B2B businesses and enterprise ecommerce teams build, migrate and scale on Shopify Plus. Our team supports custom storefront development, B2B solutions, integrations, checkout extensibility, CRO, performance optimization and ongoing technical delivery.",
   ctaLabel: "Book a Discovery Call",
-  ctaHref: "/request-quote",
+  ctaHref: "/book-a-discovery-call",
   secondaryCta: {
     label: "View Shopify Plus Work",
     href: "#our_work",
@@ -143,7 +143,7 @@ export const shopifyPlusAgencyBrandLogos = [
   },
 ] as const;
 
-export const shopifyPlusAgencyBrandTrustHeading = "Trusted by <br>Leading Brands";
+export const shopifyPlusAgencyBrandTrustHeading = "Trusted by Leading Brands";
 
 export const shopifyPlusAgencyFaqHeading = "Frequently Asked Questions";
 
