@@ -667,7 +667,7 @@ export const pageSeo = {
       "Shopify Plus experts",
     ],
     openGraphType: "article",
-    publishedTime: "2024-07-24T07:16:56+00:00",
+    publishedTime: "2024-09-16T11:41:37+00:00",
     modifiedTime: "2026-09-16T06:21:22+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",

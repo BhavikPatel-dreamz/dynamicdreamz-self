@@ -3176,7 +3176,7 @@ jurisdiction, effective date, or controller claim is introduced.
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-09-22
+Last reviewed: 2026-09-23
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -3186,7 +3186,7 @@ Decision stage: commercial evaluation, capability verification, hiring model sel
 
 ### Page role
 
-Dedicated commercial landing and service page for hiring Shopify experts. Showcases the refreshed live site 11-section architecture: certified Shopify Platinum Partner positioning with video and partner badges, 12 trusted brand logos, a 4-step hiring process, dark-themed partner proof section with 4 stats, 6 core Shopify services under one roof, 6 brand choice advantages with savings note, modern AI development tools and human oversight safeguards, 8 featured Shopify store projects with pricing/portfolio CTAs, 3 flexible engagement pricing models, 11 video client testimonials, and 8 buyer FAQs in a split layout.
+Dedicated commercial landing and service page for hiring Shopify experts. Showcases the refreshed live site 11-section architecture: certified Shopify Platinum Partner positioning with video and partner badges, 10 trusted brand logos, a 4-step hiring process, dark-themed partner proof section with 4 stats and About Dynamic Dreamz link, 6 core Shopify services under one roof, 6 brand choice advantages with savings note, modern AI development tools and human oversight safeguards, 8 featured Shopify store projects with pricing/portfolio CTAs, 3 flexible engagement pricing models, 11 video client testimonials, and 8 buyer FAQs in a split layout.
 
 ### Target prompts
 
@@ -3200,16 +3200,16 @@ Dedicated commercial landing and service page for hiring Shopify experts. Showca
 ### Current strengths and available evidence
 
 - Server-rendered H1 `Hire Shopify Experts`, dual eyebrow spans (`Established in 2006`, `Shopify Platinum Partner`), lead copy, and 4 partner badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus) with right video.
-- 12 trusted brand client logo slider on `#FBEED5` background.
+- 10 trusted brand client logo slider on `#FBEED5` background (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sim Direct, Kvaser, Nékter, Circuit City).
 - 4-step hiring process (`Hassle-Free Hiring Process to Get Started`) with clear step-by-step clarity.
-- Dark proof section (`Why Hire Shopify Experts from Dynamic Dreamz?`) with 3 feature cards, Shopify Platinum Partner verification link, and 4 stats (`20+`, `150+`, `5k+`, `2.5k+`).
+- Dark proof section (`Why Hire Shopify Experts from Dynamic Dreamz?`) with 3 feature cards, right card with Platinum Partner logo linking to Shopify directory, `20+ Years of Ecommerce Delivery` heading, 4 stats (`20+`, `150+`, `5k+`, `2.5k+`), and `About Dynamic Dreamz` link to `/about-us`.
 - 6 comprehensive development service offerings (`Complete Shopify Expertise Under One Roof`) with Liquid/tech pills and mobile app cross-link.
 - 6 numbered agency advantage cards on pista green (`Why Brands Choose Our Shopify Experts`) with savings disclaimer note.
 - AI tools container (`Shopify experts empowered by modern AI development tools.`) highlighting Claude, Cursor, Human Review, and QA with human oversight callout.
 - 8 featured Shopify store projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz) with external storefront links and 2 CTA buttons (`Explore More Shopify Work` & `View Pricing`).
 - 3 flexible engagement cards (`Project-Based`, `Flexible Hourly Support`, `Dedicated Developer / Team`) linking to respective quote/hours/dedicated pages.
 - 11 verified video testimonials with carousel controls and modal playback.
-- 8 detailed FAQs answering key buyer questions about hiring, pricing, scope, AI, certification, and ongoing retainers.
+- 8 detailed FAQs answering key buyer questions about hiring, pricing, scope, AI, certification, and ongoing retainers in a sticky split layout.
 - Complete structured data graph emitting Service, OfferCatalog (6 service offers), BreadcrumbList, FAQPage (8 items), 11 VideoObject nodes, Organization, and WebSite.
 
 ### Recommended improvements
@@ -3218,7 +3218,7 @@ Dedicated commercial landing and service page for hiring Shopify experts. Showca
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata implementation | Ship slashless `/shopify-experts` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
 | P0 | implemented | Structured data | Missing rich Service, FAQPage, and VideoObject structured data on old site | Emit Organization, WebSite, WebPage, Service with OfferCatalog (6 items), BreadcrumbList, FAQPage (8 items), and 11 VideoObject nodes | Verified in rendered JSON-LD and build |
-| P0 | implemented | Refreshed layout parity | Live site overhauled layout from old hiring format to 11 modular sections | Rebuilt hero with video, 12 brands, process, dark why-choose, 6 services, 6 brand choice cards, AI tools, 8 projects, 3 pricing cards, 11 testimonials, 8 FAQs | Verified 1:1 against live site DOM and screenshots |
+| P0 | implemented | Refreshed layout parity | Live site overhauled layout from old hiring format to 11 modular sections | Rebuilt hero with video, 10 brands, process, dark why-choose with 20+ years delivery & About DD link, 6 services, 6 brand choice cards, AI tools, 8 projects, 3 pricing cards, 11 testimonials, 8 FAQs | Verified 1:1 against live site DOM and screenshots |
 | P1 | deferred | Copy phrasing | Minor grammatical enhancements in service descriptions and hiring advantages | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -3239,14 +3239,15 @@ Future visible copy improvements are tracked in `docs/page-content-improvements.
 
 - Maintain primary CTAs linking to `/request-quote` and pricing anchor `#our_white_label_pricing`.
 - Route portfolio CTAs to `/our-work`, mobile app service to `/shopify-mobile-app-development`,
-  hourly support to `/buy-shopify-development-hours`, and dedicated team to `/hire-shopify-developers`.
+  hourly support to `/buy-shopify-development-hours`, dedicated team to `/hire-shopify-developers`,
+  and why-choose CTA to `/about-us`.
 - Preserve external partner and portfolio links with `nofollow noopener noreferrer`.
 
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service, OfferCatalog (6 items), FAQPage (8 items), 11 VideoObject nodes, BreadcrumbList,
   Organization, and WebSite.
-- Use live publish date `2024-07-24T07:16:56+00:00` and updated modified date `2026-09-16T06:21:22+00:00`.
+- Use live publish date `2024-09-16T11:41:37+00:00` and updated modified date `2026-09-16T06:21:22+00:00`.
 - Ensure canonical route and primary image are listed in the sitemap and indexable.
 
 ### Measurement plan
@@ -3257,11 +3258,11 @@ Future visible copy improvements are tracked in `docs/page-content-improvements.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-09-22): canonical, Open Graph, sitemap, robots, JSON-LD,
+- URL-policy review (2026-09-23): canonical, Open Graph, sitemap, robots, JSON-LD,
   and internal links use `/shopify-experts`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source,
-  metadata limits, JSON-LD graph verification, desktop/mobile screenshots captured
-  (1440x900, 375x812), zero asset duplicates audit, responsive layouts,
+  metadata limits, JSON-LD graph verification, desktop/tablet/mobile screenshots captured
+  (1440x900, 768x1024, 390x844, 375x812), zero asset duplicates audit, responsive layouts,
   lint, and production build.
 
 ## Shopify Apps (`/shopify-apps`)

@@ -7,6 +7,7 @@ import type { ThemeCustomizationServicesContent } from "@/components/sections/th
 import type { AiEmpoweredDeliveryContent } from "@/components/sections/ai-empowered-delivery-section";
 import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import type { PortfolioShowcaseItem } from "@/components/sections/portfolio-showcase-section";
+import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 
 export const shopifyExpertsContent = {
   hero: {
@@ -59,9 +60,81 @@ export const shopifyExpertsContent = {
   } satisfies ServiceHeroVideoContent,
 
   brands: {
-    heading: "Trusted by<br>Leading Brands",
+    heading: "Trusted by Leading Brands",
     ariaLabel: "Brands that trust Dynamic Dreamz for Shopify development",
     slug: "shopify-experts",
+    items: [
+      {
+        src: "/assets/clients/ranavat.svg",
+        href: "https://www.ranavat.com/",
+        alt: "Ranavat Logo",
+        width: 174,
+        height: 19,
+      },
+      {
+        src: "/assets/clients/prolash.svg",
+        href: "https://prolash.com/",
+        alt: "prolash_black",
+        width: 204,
+        height: 22,
+      },
+      {
+        src: "/assets/clients/tropicfeel.svg",
+        href: "https://shop.tropicfeel.com/",
+        alt: "Tropicfeel Logo",
+        width: 150,
+        height: 32,
+      },
+      {
+        src: "/assets/clients/perfect-locks.svg",
+        href: "https://www.perfectlocks.com/",
+        alt: "perfect_locks_color_logo",
+        width: 175,
+        height: 32,
+      },
+      {
+        src: "/assets/clients/bombay-shirt-company.svg",
+        href: "https://www.bombayshirts.com/",
+        alt: "Bombay Shirt Company Logo",
+        width: 204,
+        height: 26,
+      },
+      {
+        src: "/assets/clients/kayfi.svg",
+        href: "https://kayfi.com/",
+        alt: "kayfi-colored",
+        width: 90,
+        height: 49,
+      },
+      {
+        src: "/assets/clients/simsdirect.svg",
+        href: "https://simsdirect.com.au/",
+        alt: "simdirect_logo_color",
+        width: 143,
+        height: 49,
+      },
+      {
+        src: "/assets/clients/kvaser.svg",
+        href: "https://www.kvaser.com/",
+        alt: "Kvaser Logo",
+        width: 135,
+        height: 25,
+      },
+      {
+        src: "/assets/clients/nelter.svg",
+        href: "https://www.nekterjuicebar.com/",
+        alt: "nekter-colored",
+        width: 66,
+        height: 64,
+      },
+      {
+        src: "/assets/clients/circuit-city.svg",
+        href: "https://circuitcity.com/",
+        alt: "Circuit City Logo",
+        width: 64,
+        height: 64,
+      },
+    ] as readonly ClientLogoSliderItem[],
   },
 
   process: {
@@ -124,9 +197,10 @@ export const shopifyExpertsContent = {
     ],
     partnerLogo: "/assets/proof/shopify-platinum-partner.svg",
     partnerLogoAlt: "Dynamic Dreamz - Shopify Platinum Partner",
-    partnerHeading: "Shopify Platinum Partner",
+    logoHref: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+    partnerHeading: "20+ Years of Ecommerce Delivery",
     partnerDescription:
-      "Dynamic Dreamz combines Platinum Partner status with deep Shopify and Shopify Plus delivery experience across brands, ecommerce teams and agency partners.",
+      "Dynamic Dreamz combines long-term web and ecommerce experience with a broader 150+ expert in-house team and more than 5,000 delivered projects.",
     stats: [
       { value: "20+", label: "Years of Experience" },
       { value: "150+", label: "Experts" },
@@ -134,13 +208,13 @@ export const shopifyExpertsContent = {
       { value: "2.5k+", label: "Verified 5 star Reviews" },
     ],
     partnerLink: {
-      label: "Verify on Shopify Partner Directory",
-      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+      label: "About Dynamic Dreamz",
+      href: "/about-us",
     },
   } satisfies WhyChooseMigrationContent,
 
   services: {
-    eyebrow: "COMPLETE SHOPIFY CAPABILITY",
+    eyebrow: "Complete Shopify Capability",
     heading: "Complete Shopify Expertise Under One Roof",
     description:
       "From front-end storefront work to custom apps, integrations and migrations, our Shopify experts can bring in the right technical depth as your requirement grows.",

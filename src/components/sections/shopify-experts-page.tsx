@@ -18,6 +18,7 @@ export function ShopifyExpertsPage() {
       <IndustryBrandsSection
         content={shopifyExpertsContent.brands}
         heading={shopifyExpertsContent.brands.heading}
+        items={shopifyExpertsContent.brands.items}
       />
       <OurDevelopmentProcessSection content={shopifyExpertsContent.process} />
       <WhyChooseShopifyMigrationSection content={shopifyExpertsContent.whyChoose} />
