@@ -5,7 +5,8 @@ export const shopifyDevelopmentAgencyHero = {
   eyebrow: "Established in 2006 • Shopify Platinum Partner",
   eyebrowSpans: ["Established in 2006", "Shopify Platinum Partner"] as const,
   title: "Shopify Development Agency",
-  subtitle: "Custom Shopify development for brands that need more than a theme setup.",
+  subtitle:
+    "Custom Shopify development for brands that need more than a theme setup.",
   paragraphs: [
     "Dynamic Dreamz designs, develops, migrates and continuously improves Shopify stores for DTC brands, ecommerce businesses and digital agencies. Our Shopify development services cover custom storefronts, Figma implementation, theme customization, integrations, migration, CRO, performance and ongoing technical support.",
   ],
@@ -36,7 +37,7 @@ export const shopifyDevelopmentAgencyHero = {
     {
       label: "Trustpilot 4.9",
       icon: "/assets/proof/trustpilot-rating.svg",
-      alt: "Dynamic Dreamz on Trustpilot — 4.9 rating",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
       href: "https://www.trustpilot.com/review/dynamicdreamz.com",
       width: 148,
       height: 50,
@@ -53,16 +54,18 @@ export const shopifyDevelopmentAgencyHero = {
 } as const;
 
 export const shopifyDevelopmentAgencyBrands = [
-  { src: "/assets/clients/ranavat.svg", href: "https://www.ranavat.com/", alt: "Ranavat Logo", width: 174, height: 19 },
-  { src: "/assets/clients/prolash.svg", href: "https://prolash.com/", alt: "prolash_black", width: 204, height: 22 },
-  { src: "/assets/clients/tropicfeel.svg", href: "https://shop.tropicfeel.com/", alt: "Tropicfeel Logo", width: 150, height: 32 },
-  { src: "/assets/clients/perfect-locks.svg", href: "https://www.perfectlocks.com/", alt: "perfect_locks_color_logo", width: 175, height: 32 },
-  { src: "/assets/clients/bombay-shirt-company.svg", href: "https://www.bombayshirts.com/", alt: "Bombay Shirt Company Logo", width: 204, height: 26 },
-  { src: "/assets/clients/kayfi.svg", href: "https://kayfi.com/", alt: "kayfi-colored", width: 90, height: 49 },
-  { src: "/assets/clients/sim-direct.svg", href: "https://simsdirect.com.au/", alt: "simdirect_logo_color", width: 143, height: 49 },
-  { src: "/assets/clients/kvaser.svg", href: "https://www.kvaser.com/", alt: "Kvaser Logo", width: 135, height: 25 },
-  { src: "/assets/clients/nelter.svg", href: "https://www.nekterjuicebar.com/", alt: "nekter-colored", width: 66, height: 64 },
-  { src: "/assets/clients/circuit-city.svg", href: "https://circuitcity.com/", alt: "Circuit City Logo", width: 64, height: 64 },
+  { src: "/assets/clients/tego.svg", href: "https://tego.fit/", alt: "tego logo", width: 101, height: 40 },
+  { src: "/assets/clients/nekter-colored.svg", href: "https://www.nekterjuicebar.com/", alt: "nekter-colored", width: 66, height: 64 },
+  { src: "/assets/clients/rare-rabbit.svg", href: "https://thehouseofrare.com/", alt: "Rare Rabbit Logo", width: 122, height: 84 },
+  { src: "/assets/clients/supertails.svg", href: "https://supertails.com/", alt: "Supper Tails Logo", width: 164, height: 41 },
+  { src: "/assets/clients/eleven-eleven.svg", href: "https://11-11.in/", alt: "Eleven Eleven", width: 145, height: 20 },
+  { src: "/assets/clients/bellavita.svg", href: "https://bellavitaorganic.com/", alt: "bellavita logo", width: 166, height: 24 },
+  { src: "/assets/clients/bombay-shirt-company.svg", href: "https://www.bombayshirts.com/", alt: "Bombay Shirt Company", width: 172, height: 22 },
+  { src: "/assets/clients/popclub_co.svg", href: "https://popclub.co/", alt: "popclub", width: 65, height: 41 },
+  { src: "/assets/clients/sri-sri-tattva.svg", href: "https://www.srisritattva.com/", alt: "SriSri Tattva Logo", width: 106, height: 40 },
+  { src: "/assets/clients/tropicfeel.svg", href: "https://shop.tropicfeel.com/", alt: "tropicfeel logo", width: 137, height: 29 },
+  { src: "/assets/clients/renee.svg", href: "https://www.reneecosmetics.in/", alt: "Renee logo", width: 93, height: 30 },
+  { src: "/assets/clients/royce-chocolate.svg", href: "https://royceindia.com/", alt: "Royce chocolate logo", width: 132, height: 38 },
 ] as const;
 
 export const shopifyDevelopmentAgencyBrandsHeading = "Trusted by <br>Leading Brands";
@@ -176,7 +179,7 @@ export const shopifyDevelopmentAgencyServices = {
     },
     {
       tag: "Agency Delivery",
-      title: "Shopify Plus Mobile App Development.",
+      title: "Shopify Plus Mobile App Development",
       description:
         "Build high-performance iOS and Android shopping apps integrated with Shopify Plus, including real-time products, customer accounts, checkout, push notifications and loyalty features.",
       pills: [],
@@ -397,7 +400,7 @@ export const shopifyDevelopmentAgencyFaqs: readonly FaqAccordionItem[] = [
   {
     question: "How much does Shopify development cost with Dynamic Dreamz?",
     answer:
-      "Cost depends on scope and engagement model. We offer project-based custom quotes, flexible Shopify development support from $25/hour, and dedicated Shopify developer or team options from $2,000/month.",
+      "Cost depends on scope and engagement model. We offer project-based<br />custom quotes, flexible Shopify development support from <strong>$25/hour</strong>, and dedicated Shopify developer or team<br />options from <strong>$2,000/month</strong>.",
   },
   {
     question: "How long does a Shopify development project take?",
@@ -405,9 +408,9 @@ export const shopifyDevelopmentAgencyFaqs: readonly FaqAccordionItem[] = [
       "Timeline depends on design readiness, catalog size, custom functionality, migration requirements and integrations. After reviewing the scope, Dynamic Dreamz provides milestones and a realistic delivery plan rather than applying one timeline to every project.",
   },
   {
-    question: "Does Dynamic Dreamz provide ongoing Shopify maintenance and support?",
+    question: "Does Dynamic Dreamz provide ongoing Shopify maintenance and  support?",
     answer:
-      "Yes. We support live Shopify stores with fixes, theme updates, new features, app changes, CRO implementation, performance improvements, integrations and ongoing development capacity.",
+      "Yes. We support live Shopify stores with fixes, theme updates, new<br />features, app changes, CRO implementation, performance improvements, integrations and ongoing development capacity.",
   },
   {
     question: "Does Dynamic Dreamz provide Shopify Plus development?",
@@ -415,7 +418,7 @@ export const shopifyDevelopmentAgencyFaqs: readonly FaqAccordionItem[] = [
       "Yes. High-growth, B2B and enterprise requirements are supported through our dedicated <a href=\"/shopify-plus-agency\">Shopify Plus Agency</a> capability, including B2B, migrations, integrations, checkout extensibility and ongoing technical support.",
   },
   {
-    question: "Where is Dynamic Dreamz based, and do you work with global Shopify clients?",
+    question: "Where is Dynamic Dreamz based, and do you work with global Shopify  clients?",
     answer:
       "Dynamic Dreamz is an India-based Shopify development company serving brands and agencies globally. Project communication and delivery are structured around client requirements and working time zones.",
   },

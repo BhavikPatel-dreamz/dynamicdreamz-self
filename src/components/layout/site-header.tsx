@@ -9,13 +9,50 @@ import { Container } from "@/components/ui/container";
 import { siteChromeCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
 
-export function SiteHeader() {
+import { primaryNavigation, type PrimaryNavigationGroup } from "@/data/navigation";
+import { adaptStrapiNavToPrimary, getStrapiMediaAlt, getStrapiMediaUrl } from "@/lib/strapi";
+import type { StrapiGlobal, StrapiMedia, StrapiNavGroupElement } from "@/types/strapi";
+
+export interface SiteHeaderProps {
+  globalData?: StrapiGlobal | null;
+  navigation?: PrimaryNavigationGroup[] | StrapiNavGroupElement[];
+  logo?: StrapiMedia | string | null;
+  ctaLabel?: string | null;
+  ctaHref?: string | null;
+}
+
+export function SiteHeader({
+  globalData,
+  navigation,
+  logo,
+  ctaLabel,
+  ctaHref,
+}: SiteHeaderProps = {}) {
+  const effectiveLogo =
+    (typeof logo === "string" ? logo : getStrapiMediaUrl(logo)) ||
+    getStrapiMediaUrl(globalData?.logo) ||
+    siteConfig.logo;
+
+  const effectiveLogoAlt =
+    (logo && typeof logo !== "string" ? getStrapiMediaAlt(logo) : "") ||
+    getStrapiMediaAlt(globalData?.logo) ||
+    "Dynamic Dreamz - Shopify Platinum Partner";
+
+  const effectiveCtaLabel = ctaLabel || globalData?.headerCtaLabel || siteChromeCopy.headerCta;
+  const effectiveCtaHref = ctaHref || globalData?.headerCtaHref || siteConfig.quotePath;
+
+  const effectiveNav: PrimaryNavigationGroup[] = navigation
+    ? adaptStrapiNavToPrimary(navigation as StrapiNavGroupElement[])
+    : globalData?.headerNav
+      ? adaptStrapiNavToPrimary(globalData.headerNav)
+      : primaryNavigation;
+
   return (
     <header className="site-header fixed top-0 left-0 z-[111] w-full bg-white/60 backdrop-blur-[25px] transition-all duration-500 ease-in-out [body:has(main[data-page=career-apply-now])_&]:hidden [body:has(main[data-page=request-quote])_&]:hidden [body:has(main[data-page=shopify-development-in-barcelona-spain])_&]:hidden [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [&.header-down]:-translate-y-full [&.header-down]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] [&.header-up]:translate-y-0 [&.header-up]:bg-white/60 [&.header-up]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] max-[1200px]:py-[15px] max-[768px]:[&:not(.header-up)]:bg-transparent">
       <HeaderScrollBehavior />
       <Container className="relative flex items-center justify-between gap-0 max-[1200px]:min-h-[34px]">
         <div className="flex items-center">
-          <MobileNavigation />
+          <MobileNavigation navigation={effectiveNav} contactEmail={globalData?.contactEmail} />
 
           <Link
             className="inline-flex shrink-0 -translate-y-[2.5px] max-[1200px]:mr-auto max-[1200px]:translate-y-0"
@@ -24,8 +61,8 @@ export function SiteHeader() {
           >
             <Image
               className="h-auto w-[225px] max-[768px]:w-[170px] max-[380px]:w-[150px]"
-              src={siteConfig.logo}
-              alt="Dynamic Dreamz - Shopify Platinum Partner"
+              src={effectiveLogo}
+              alt={effectiveLogoAlt}
               width={257}
               height={39}
               sizes="(max-width: 380px) 150px, (max-width: 768px) 170px, 225px"
@@ -33,15 +70,15 @@ export function SiteHeader() {
             />
           </Link>
 
-          <DesktopNavigation />
+          <DesktopNavigation navigation={effectiveNav} />
         </div>
 
         <ButtonLink
           className="---site-header-btn py-3.75 max-[1399px]:px-5 max-[1399px]:py-3.25 max-[1399px]:text-[14px] max-[992px]:px-5! max-[992px]:py-3.25! max-[379px]:text-[10px] max-[379px]:px-2.5 max-[379px]:py-2"
           variant="primary"
-          href={siteConfig.quotePath}
+          href={effectiveCtaHref}
         >
-          {siteChromeCopy.headerCta}
+          {effectiveCtaLabel}
         </ButtonLink>
       </Container>
     </header>

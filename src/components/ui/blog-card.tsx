@@ -6,13 +6,14 @@ import { cn } from "@/lib/class-names";
 export type BlogCardItem = {
   title: string;
   href: string;
-  image: string;
+  image?: string | null;
   date: string;
   displayDate: string;
   category?: string;
   categoryHref?: string;
-  width?: number;
-  height?: number;
+  width?: number | null;
+  height?: number | null;
+  excerpt?: string;
 };
 
 type BlogCardProps = {
@@ -26,6 +27,28 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
   const categoryHref = item.categoryHref ?? "/blogs?category=shopify";
 
   if (variant === "archive") {
+    if (!item.image || item.category === "Faqs") {
+      return (
+        <article className="blog-col-274 h-full" data-blogs-card-faq>
+          <div className="rounded-[15px] border border-[rgba(110,117,143,0.1)] bg-white p-5 shadow-[2px_2px_4px_0px_rgba(83,83,83,0.05)] transition-all duration-300">
+            <Link className="group/faq-card block" href={item.href}>
+              <h3
+                className="font-display text-[20px] font-normal leading-[28.8px] text-[#282828] transition-colors duration-300 group-hover/faq-card:text-brand-red"
+                data-blogs-title
+              >
+                {item.title}
+              </h3>
+              {item.excerpt ? (
+                <p className="mt-2 text-sm leading-relaxed text-[#535353] line-clamp-3">
+                  {item.excerpt}
+                </p>
+              ) : null}
+            </Link>
+          </div>
+        </article>
+      );
+    }
+
     return (
       <article className="group/archive-card h-full pb-[25px]">
         <div
@@ -74,7 +97,7 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
           <Link className="relative mb-7 block overflow-hidden pt-[55%]" href={item.href}>
             <Image
               className="object-cover transition-transform duration-300 group-hover/resource-card:scale-[1.03]"
-              src={item.image}
+              src={item.image ?? "/assets/og/homepage.png"}
               alt={item.title}
               fill
               sizes="(max-width: 767px) calc(100vw - 90px), (max-width: 1199px) calc((100vw - 113px) / 2), 324px"
@@ -96,7 +119,7 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
     <article className={cn("group/insight min-w-0 max-[992px]:mb-6 max-[992px]:block max-[992px]:border-b max-[992px]:border-[#efefef] max-[992px]:pb-6", isLast && "max-[992px]:mb-0 max-[992px]:border-b-0 max-[992px]:pb-0")}>
       <div className="contents max-[992px]:flex max-[992px]:items-stretch max-[992px]:justify-between max-[992px]:gap-5">
         <Link className="mb-5 block overflow-hidden rounded-[20px] max-[992px]:relative max-[992px]:m-0 max-[992px]:w-2/5 max-[992px]:flex-[1_1_40%] max-[992px]:rounded-[10px]" href={item.href}>
-          <Image className="h-auto w-full object-cover transition-transform duration-300 [aspect-ratio:1504/1137] group-hover/insight:scale-[1.03] max-[992px]:absolute max-[992px]:inset-0 max-[992px]:h-full max-[992px]:[aspect-ratio:auto]" src={item.image} alt={item.title} width={item.width ?? 1504} height={item.height ?? 1137} sizes="(max-width: 991px) 40vw, 33vw" />
+          <Image className="h-auto w-full object-cover transition-transform duration-300 [aspect-ratio:1504/1137] group-hover/insight:scale-[1.03] max-[992px]:absolute max-[992px]:inset-0 max-[992px]:h-full max-[992px]:[aspect-ratio:auto]" src={item.image ?? "/assets/og/homepage.png"} alt={item.title} width={item.width ?? 1504} height={item.height ?? 1137} sizes="(max-width: 991px) 40vw, 33vw" />
         </Link>
         <div className="max-[992px]:w-[calc(100%-110px)] max-[992px]:flex-[1_1_calc(100%-110px)]">
           <div className="mb-[9px] flex flex-wrap gap-2 max-[767px]:mx-[-4px] max-[767px]:mb-[3px] max-[767px]:gap-0">

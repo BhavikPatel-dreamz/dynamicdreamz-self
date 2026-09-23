@@ -1,3 +1,4 @@
+import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { cn } from "@/lib/class-names";
@@ -11,6 +12,10 @@ export type ShopifyTeamBoxesContent = {
   eyebrow?: string;
   heading: string;
   description: string;
+  cta?: {
+    label: string;
+    href: string;
+  };
   items: readonly TeamBoxItem[];
 };
 
@@ -52,37 +57,30 @@ export function ShopifyTeamBoxesSection({
                 {content.description}
               </p>
             </div>
+            {content.cta ? (
+              <div className="bottom-block mt-[30px] flex">
+                <ButtonLink href={content.cta.href} variant="primary">
+                  {content.cta.label}
+                </ButtonLink>
+              </div>
+            ) : null}
           </div>
 
           <div className="right-block w-[50%] max-[1199px]:w-full">
             <div className="boxes-wrapper grid grid-cols-2 gap-3 max-[767px]:flex max-[767px]:flex-col">
-              {content.items.map((item, index) => {
-                const isFirst = index === 0;
-
-                return (
-                  <div
-                    className={cn(
-                      "item group rounded-[18px] border border-white/12 p-[22px] transition-all duration-200 max-[767px]:rounded-[16px] max-[767px]:p-5",
-                      isFirst
-                        ? "bg-[#ad5151]"
-                        : "bg-white/[0.045] hover:bg-[#ad5151]",
-                    )}
-                    key={item.title}
-                  >
-                    <h3 className="font-sans text-[18px] font-bold leading-[1.4] text-white">
-                      {item.title}
-                    </h3>
-                    <p
-                      className={cn(
-                        "mt-2 font-sans text-sm leading-relaxed transition-colors",
-                        isFirst ? "text-white" : "text-white/60 group-hover:text-white",
-                      )}
-                    >
-                      {item.description}
-                    </p>
-                  </div>
-                );
-              })}
+              {content.items.map((item) => (
+                <div
+                  className="item rounded-[18px] border border-white/12 bg-white/[0.045] p-[22px] transition-all duration-200 max-[767px]:rounded-[16px] max-[767px]:p-5 hover:border-white/20 hover:bg-white/[0.07]"
+                  key={item.title}
+                >
+                  <h3 className="font-sans text-[18px] font-bold leading-[1.4] text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 font-sans text-sm leading-relaxed text-white/[0.58]">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

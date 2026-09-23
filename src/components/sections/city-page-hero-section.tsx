@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/class-names";
+import {
+  CityHeroTabletSlider,
+  type CityPageHeroTabletSlider,
+} from "@/components/sections/city-hero-tablet-slider";
 
 export type CityPageHeroBadge = {
   src: string;
@@ -24,6 +28,7 @@ export type CityPageHeroContent = {
     href: string;
   };
   badges?: readonly CityPageHeroBadge[];
+  tabletSlider?: CityPageHeroTabletSlider;
 };
 
 export type CityPageHeroSectionProps = {
@@ -35,23 +40,43 @@ export function CityPageHeroSection({
   content,
   className,
 }: CityPageHeroSectionProps) {
+  const hasTabletSlider = Boolean(content.tabletSlider);
+
   return (
     <section
       className={cn(
-        "hero-new-section relative overflow-hidden bg-[#fafaf7] pt-[150px] pb-10 max-[992px]:pt-[100px] max-[767px]:pt-20",
+        "hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[150px] pb-10 max-[992px]:pt-[100px] max-[767px]:pt-20",
         className,
       )}
     >
       <Container>
-        <div className="wrapper flex max-[991px]:flex-col">
-          <div className="left-col z-1 flex w-full max-w-[760px] flex-col justify-center max-[1199px]:max-w-none max-[1199px]:text-center">
+        <div
+          className={cn(
+            "wrapper flex",
+            hasTabletSlider
+              ? "flex-wrap items-end justify-between max-[991px]:flex-col max-[991px]:items-center"
+              : "max-[991px]:flex-col",
+          )}
+        >
+          <div
+            className={cn(
+              "left-col z-1 flex flex-col justify-center",
+              hasTabletSlider
+                ? "w-[51%] py-[60px] max-[1199px]:w-1/2 max-[991px]:w-full max-[991px]:text-center max-[991px]:py-8"
+                : "w-full max-w-[760px] max-[1199px]:max-w-none max-[1199px]:text-center",
+            )}
+          >
             <div className="hero-content">
               {content.eyebrows && content.eyebrows.length > 0 && (
-                <div className="eyebrow mb-3 flex flex-wrap items-center gap-2 max-[1199px]:justify-center">
-                  {content.eyebrows.map((item) => (
+                <div className="eyebrow mb-4 inline-flex items-center text-[14px] leading-1.2 font-semibold uppercase text-ink relative pl-10 before:content-[''] before:w-[30px] before:h-0.5 before:bg-brand-red before:absolute before:left-0 before:top-1.5 max-[1199px]:text-[12px] max-[767px]:text-[10px] max-[1199px]:justify-center">
+                  {content.eyebrows.map((item, idx) => (
                     <span
                       key={item}
-                      className="inline-block rounded-[30px] border border-[rgba(40,40,40,0.12)] bg-white px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.5px] text-[#4d5577]"
+                      className={cn(
+                        "relative inline-flex items-center",
+                        idx > 0 &&
+                          "ml-2.5 pl-2.5 after:content-[''] after:absolute after:-left-[2px] after:size-[3px] after:rounded-full after:bg-[#535353]",
+                      )}
                     >
                       {item}
                     </span>
@@ -115,6 +140,12 @@ export function CityPageHeroSection({
               </div>
             )}
           </div>
+
+          {content.tabletSlider && (
+            <div className="right-col flex w-[43.182%] items-end max-[1199px]:w-[48%] max-[991px]:hidden">
+              <CityHeroTabletSlider slider={content.tabletSlider} />
+            </div>
+          )}
         </div>
       </Container>
     </section>

@@ -1,26 +1,19 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import { CityPageCounterSection } from "@/components/sections/city-page-counter-section";
+import { CityPageHeroSection } from "@/components/sections/city-page-hero-section";
+import { CityWhyChooseBoxesSection } from "@/components/sections/city-why-choose-boxes-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ProcessWaveSection } from "@/components/sections/process-wave-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { ShopifyAppBenefitsSection } from "@/components/sections/shopify-mobile-app/shopify-app-benefits-section";
-import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { shopifyDevelopmentDelhiContent } from "@/content/shopify-development-in-delhi";
 
 export function ShopifyDevelopmentInDelhiPage() {
   const brandsContent = {
     heading: shopifyDevelopmentDelhiContent.brands.title,
     slug: "shopify-development-in-delhi",
-  };
-
-  const reasonsContent = {
-    heading: shopifyDevelopmentDelhiContent.reasons.heading,
-    description: shopifyDevelopmentDelhiContent.reasons.description,
-    items: shopifyDevelopmentDelhiContent.reasons.items,
   };
 
   const portfolioContent = {
@@ -31,43 +24,55 @@ export function ShopifyDevelopmentInDelhiPage() {
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec single-full-img relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
-        content={shopifyDevelopmentDelhiContent.hero}
-      />
+      <CityPageHeroSection content={shopifyDevelopmentDelhiContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}
         heading={shopifyDevelopmentDelhiContent.brands.title}
         items={shopifyDevelopmentDelhiContent.brands.items}
       />
-      <TextBoxSection
-        className="single-text-box-sec pb-0 pt-20 max-[992px]:pt-[50px]"
-        heading={shopifyDevelopmentDelhiContent.intro.heading}
-        paragraphs={shopifyDevelopmentDelhiContent.intro.paragraphs}
+      <CityPageCounterSection
+        content={shopifyDevelopmentDelhiContent.counter}
+        eyebrowVariant="dash"
       />
-      <ShopifyAppBenefitsSection
-        className="benefit_box_sec four-column-text-with-icon-sec pb-0 pt-20 max-[992px]:pt-[50px]"
-        content={shopifyDevelopmentDelhiContent.benefits}
-        id="why-choose-shopify-delhi"
+      <CityWhyChooseBoxesSection
+        content={shopifyDevelopmentDelhiContent.whyChoose}
+        eyebrowVariant="dash"
       />
       <AgencyServicesSection
-        className="what-we-provide-sec pt-20 pb-0 max-[992px]:pt-[50px]"
+        cardBgClassName="bg-white"
+        cardVariant="services-box"
+        className="what-we-provide-sec py-20 max-[992px]:py-[50px]"
+        columns={2}
         content={shopifyDevelopmentDelhiContent.services}
+        eyebrow={shopifyDevelopmentDelhiContent.services.eyebrow}
         hideCta={true}
-        showDescription={false}
+        id="services"
+        showDescription={true}
       />
-      <ProcessWaveSection
-        className="our-process-sec inner-process-sec shopify-development-process relative overflow-hidden py-20 max-[992px]:py-12.5 max-[767px]:py-10"
+      <OurDevelopmentProcessSection
         content={shopifyDevelopmentDelhiContent.process}
+        eyebrowVariant="dash"
       />
-      <ShopifyReasonsSection content={reasonsContent} />
+      <CityWhyChooseBoxesSection
+        bgClassName="bg-white"
+        className="city-page-why-choose-dynamic !pb-0"
+        columns={3}
+        content={shopifyDevelopmentDelhiContent.whyDynamicDreamz}
+        eyebrowVariant="dash"
+      />
       <PortfolioShowcaseSection
+        cardVariant="ourWorkRefresh"
         className="our-work-sec py-20 max-[992px]:py-[50px]"
+        columns={4}
         content={portfolioContent}
+        ctaHref={shopifyDevelopmentDelhiContent.portfolio.ctaHref}
         ctaLabel={shopifyDevelopmentDelhiContent.sectionCopy.portfolioCta}
+        eyebrow={shopifyDevelopmentDelhiContent.sectionCopy.portfolioEyebrow}
+        headerLayout="split"
       />
       <HappyClientSection
         description={shopifyDevelopmentDelhiContent.testimonials.description}
+        eyebrow={shopifyDevelopmentDelhiContent.sectionCopy.testimonialsEyebrow}
         heading={shopifyDevelopmentDelhiContent.testimonials.heading}
         items={shopifyDevelopmentDelhiContent.testimonials.items}
       />

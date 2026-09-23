@@ -2,42 +2,43 @@
 
 Live URL: `https://www.dynamicdreamz.com/shopify-experts/`
 Local route: `/shopify-experts`
-Date checked: 2026-08-18
+Date checked: 2026-09-22
 Browser/source: Google Chrome headless screenshots (stored for evidence),
 rendered live page + View Page Source, live page-specific CSS
-(`hiring-main.css`, `hiring-media.css`, `style.css`), live JS
-(`assets/js/custom.js`), and local component/asset audit.
+(`hero_new_section.css`, `trusted_by_leading_brands_section.css`, `our_development_process.css`,
+`why_choose_dynamic_dreamz_for_shopify_migration.css`, `shopify_development_services.css`,
+`shopify_theme_customization_services.css`, `seo_safe_shopify_migration_section.css`,
+`projects_section.css`, `white_label_flexible_wordpress_development_plans_section.css`,
+`client_review_section.css`, `faqs_section.css`), and local component/asset audit.
 
 ## Viewports
 
 | Viewport | Live screenshot | Local screenshot | Status |
 | --- | --- | --- | --- |
-| 1440x900 | `docs/visual-captures/source/shopify-experts/live-desktop-1440x900.png` | `docs/visual-captures/source/shopify-experts/local-desktop-1440x900.png` | captured |
-| 768x1024 | `docs/visual-captures/source/shopify-experts/live-tablet-768x1024.png` | `docs/visual-captures/source/shopify-experts/local-tablet-768x1024.png` | captured |
-| 390x844 | `docs/visual-captures/source/shopify-experts/live-mobile-390x844.png` | `docs/visual-captures/source/shopify-experts/local-mobile-390x844.png` | captured |
+| 1440x900 | `docs/visual-captures/source/shopify-experts/live-desktop-1440x900.png` | `docs/visual-captures/source/shopify-experts/local-desktop-1440x900.png` | captured & verified |
+| 375x812 | - | `docs/visual-captures/source/shopify-experts/local-mobile-375x812.png` | captured & verified |
 
 ## Sources Inspected
 
 | Source | What was checked |
 | --- | --- |
-| Rendered live page and View Page Source | Title, description, canonical, Open Graph, Yoast JSON-LD, H1 `Hire Dedicated Shopify Experts & Developers`, hero proof counters (50+ Agile developers, 5000+ Completed Projects, 20+ Years Experience, 1000+ Happy Clients, 1000+ Shopify Developments), Review animation widget (Clutch 5.0 50+ reviews, Upwork 5.0 2000+ reviews, GoodFirms 5.0 72 reviews), 12 client logos strip, 4-step hiring process cards with numbered badges, 3 hiring choice cards (Experience, Extensive verticals, Talented pool), 6 advantages cards in 3x2 grid, 6 AI & automation cards with tool pills, 4 AI search visibility cards (AEO, GEO, Agentic commerce, Trust signals), 5 Shopify development service cards, 5 industries served slides, 6 selected portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHoc Atler), 11 video client testimonials with modal player, 7 accordion FAQs, closing CTA banner |
-| Live CSS (`hiring-main.css`, `hiring-media.css`) | Hero padding (pt 215px, pb 80px), heading typography (50px / 66px Montserrat), client rail (#fbf7ed background), process step numbered badge (34px circle gradient #15c064→#00d1ff with white border), choice cards (linear-gradient #e8f9ef→#e6fafd background, white cards with hover shadow), advantages 3x3/3x2 grid with subtle borders (#efefef), darker AI automation section (#171E16 background with 10% opacity card fills and tool pills), 4-col AI discovery layout with right border dividers (#2828281A), service cards hover lift (-10px), portfolio cards (pb 115% image ratio with View Project hover slide), testimonial cards (rounded-15px with border and video modal), FAQ accordion styling, gradient CTA banner (#15c064→#00d1ff) |
-| Local Assets | Review badges, process icons, choice icons, advantage icons, service icons, industry slide images, project store thumbnails, client logos, testimonial avatars and quote marks |
+| Rendered live page and View Page Source | Title, description, canonical, Open Graph, Yoast JSON-LD, H1 `Hire Shopify Experts`, eyebrow spans (`Established in 2006`, `Shopify Platinum Partner`), 2 CTA buttons (`Hire Shopify Experts` -> `/request-quote`, `View Pricing` -> `#our_white_label_pricing`), 4 partner badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), right-col video (`/assets/home/why-dynamic-dreamz.mp4`), 12 client logos strip on `#FBEED5`, 4-step hiring process cards (`Hassle-Free Hiring Process to Get Started`), dark section `Why Hire Shopify Experts from Dynamic Dreamz?` with 3 feature cards, right card with Platinum Partner logo, 4 stats (`20+`, `150+`, `5k+`, `2.5k+`) and directory link, 6 services under `Complete Shopify Expertise Under One Roof` (`last-col-100`), 6 numbered cards on pista green (`#eff4ef`) under `Why Brands Choose Our Shopify Experts` with savings note, AI tools container (`#EFF4EF`) under `Shopify experts empowered by modern AI development tools.` with 4 tools and human oversight code callout, 8 portfolio projects under `Explore Our Shopify Work` with 2 CTA buttons, 3 engagement pricing cards under `Choose the Right Shopify Expert Engagement`, 11 video client testimonials with carousel under `Don't Just Take Our Word For It`, 8 accordion FAQs in split layout under `Questions Buyers Ask Before Hiring Shopify Experts`, no bottom CTA banner (matching live site structure) |
+| Live CSS (`flexible-css/*`) | Hero layout (left 51%, right 43%), client rail (#FBEED5 background), 4-step process borders, dark background (#171e16) with white cards for why-choose section, services grid (row-span-2, col-span-2, last col-span-2 with mobile app CTA), pista green (#eff4ef) for theme customization services grid, light green (#EFF4EF) for AI tools card container, 4-col portfolio grid with primary + outline CTA buttons, white pricing cards on light green background, testimonial cards with YouTube modal playback, split FAQ layout with sticky left column and circular cross expand/collapse icons |
+| Local Assets | Verified zero duplicates across public/assets/; all 56 assets (video, partner logos, 12 client logos, 8 portfolio images, 11 testimonial cards) reuse canonical existing project assets |
 
 ## Section Inventory
 
 | Section | Live behavior/style | Local implementation notes |
 | --- | --- | --- |
-| 1. Hero | `.inner-hero-sec`: H1, subtitle, 5 stat counters, review animation slider, CTA button `Schedule a Consultation` | `ShopifyExpertsHero` |
-| 2. Client Logos | `.our-client-sec dev` bg #fbf7ed: `Trusted by high-growth eCommerce brands worldwide` H2 left (31%), 12-brand logo slider right (69%) | `IndustryBrandsSection` using `ClientLogoSlider` |
-| 3. Hiring Process | `.hiring-process-sec`: H2, subtitle, 4 `.process-col` cards (25% width desktop, 50% tablet, 100% mobile) with numbered gradient badge (1, 2, 3, 4) and icon | `HiringProcessSection` with `showStepNumbers` |
-| 4. Hiring Choice | `.hiring-services-sec` bg gradient: H2, subtitle, 3 `.carousel-card` items | `ShopifyReasonsSection` |
-| 5. Advantages | `.why_dynamic_dreamz_sec`: H2, subtitle, 6 advantage items in bordered 3x2 grid | `ShopifyAdvantagesSection` |
-| 6. AI & Automation | `.smarter-shopify-store` bg #171E16: H2, subtitle, 6 cards with tool pill badges (Gorgias, Klaviyo, Zapier, etc.) | `ShopifyExpertsAiAutomation` |
-| 7. AI Discovery | `.ai-driven-shopping`: H2, subtitle, 4 column cards (AEO, GEO, Agentic Commerce, Trust Signals) | `ShopifyExpertsAiDiscovery` |
-| 8. Services | `.shopify-development-services`: H2, subtitle, 5 service cards with hover lift | `ShopifyServicesSection` |
-| 9. Industries | `.industries-served-sec`: H2, subtitle, 5 industry vertical cards (Beauty, Fashion, Health, Food, Pet) | `IndustriesServedSection` |
-| 10. Selected Work | `.our-work-sec`: H2, subtitle, 6 project cards with hover dark overlay, View Project slide, Shopify mark, View Our Work CTA | `ShopifyPortfolioSection` using `PortfolioProjectCard` |
-| 11. Testimonials | `.happy-client-sec`: H2, subtitle, 11 video testimonial cards with modal playback | `HappyClientSection` |
-| 12. FAQ | `.faq-sec`: H2, 7 accordion FAQs | `ShopifyFaqSection` using `FaqAccordion` |
-| 13. CTA Banner | `.request-banner` bg gradient: H3 `Want us to help you with your online store?` + white pill CTA button `REQUEST A QUOTE` | `ResourcesCtaSection` |
+| 1. Hero | `.hero-new-section`: H1, eyebrow spans, lead paragraph, 2 CTA buttons, 4 partner badges, right video | `ServiceHeroVideoSection` |
+| 2. Client Logos | `.our-client-sec dev` bg #FBEED5: `Trusted by<br>Leading Brands` H2 left (31%), 12-brand logo slider right (69%) | `IndustryBrandsSection` using `ClientLogoSlider` |
+| 3. Hiring Process | `.our-development-process last-col-100`: H2, subtitle, 4 `.item` step boxes with border styling | `OurDevelopmentProcessSection` |
+| 4. Why Choose DD | `.why_choose_dynamic_dreamz_for_shopify_migration` bg #171e16: Split heading, 3 white feature boxes left with SVG icons, right white card with Platinum Partner badge, 4 stats, directory link | `WhyChooseShopifyMigrationSection` |
+| 5. Services | `.shopify-development-services.pt-80.last-col-100`: Split heading, 6 service cards (first row-span-2, fourth col-span-2, last col-span-2 with mobile app CTA link) | `ShopifyStageServicesSection` with `lastColFull` |
+| 6. Why Brands Choose | `.theme-customization-services.green` bg #eff4ef: Split heading, 6 numbered card boxes (`01`-`06`), savings disclaimer note | `ThemeCustomizationServicesSection` |
+| 7. AI Delivery | `.seo_safe_shopify_migration_section`: Light green `#EFF4EF` container, left text, right 4 AI tool boxes (`Claude`, `Cursor`, `Human Review`, `QA`) + human oversight quote callout | `AiEmpoweredDeliverySection` |
+| 8. Selected Work | `.our-work-sec.pt-0`: Split heading, 8 Shopify projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz), 2 bottom CTA buttons (`Explore More Shopify Work` & `View Pricing`) | `PortfolioShowcaseSection` with `ourWorkRefresh` variant |
+| 9. Pricing | `.white_label_wp_develop_plan_section.shopify-plus-engagement.mb-0`: Split heading, 3 engagement cards (Project-Based, Flexible Hourly Support, Dedicated Developer / Team) | `PricingTableSection` |
+| 10. Testimonials | `.happy-client-sec.pt-80`: Split heading, 11 video testimonial cards with carousel controls | `HappyClientSection` |
+| 11. FAQ | `.faq-sec`: Split heading left, 8 accordion FAQs right with circle-cross icons | `SplitFaqSection` |
+| 12. CTA Banner | Omitted on live site | Omitted locally to match live |

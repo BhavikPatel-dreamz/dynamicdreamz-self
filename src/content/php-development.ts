@@ -121,7 +121,7 @@ export const phpDevelopmentContent = {
         title: "Custom Craft CMS Development",
         description:
           "Our expert team creates custom websites using Craft CMS, a flexible content management system. We build user friendly and feature rich websites to meet your specific requirements.",
-        icon: "/assets/php-development/services/craft-cms-development.svg",
+        icon: "/assets/services/wordpress/wordpress-cms-development.svg",
         iconAlt: "Custom Craft CMS Development Icon",
       },
       {

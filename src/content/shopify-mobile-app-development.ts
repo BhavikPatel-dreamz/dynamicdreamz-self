@@ -449,28 +449,29 @@ export const shopifyMobileAppCaseStudies = {
   items: [
     {
       title:
-        "RENÉE Cosmetics: Custom Shopify Mobile App (React Native) for iOS & Android",
-      href: "/case-studies/renee-cosmetics",
+        "RENÉE Cosmetics: Shopify-Integrated Beauty & Cosmetics Shopping App",
+      href: "/case-studies/renee-cosmetics-mobile-app",
       image: "/assets/case-studies/renee-cosmetics-mobile-app.webp",
       imageAlt:
-        "RENÉE Cosmetics: Custom Shopify Mobile App (React Native) for iOS & Android",
+        "RENÉE Cosmetics: Shopify-Integrated Beauty & Cosmetics Shopping App",
       technology: "Shopify Mobile App Development",
       industry: "Beauty & Cosmetics",
       description:
-        "Explore how Dynamic Dreamz developed a custom Shopify-connected React Native mobile app for RENÉE Cosmetics across iOS and Android.",
-      tags: ["Mobile Application Development", "React Native Development"],
+        "See how Dynamic Dreamz developed a Shopify-connected mobile shopping app for RENÉE Cosmetics across iOS and Android.",
+      tags: ["React Native Development", "Shopify App Development"],
       ctaLabel: "View Case study",
     },
     {
-      title: "KALKI Fashion: Omnichannel Mobile App connected with Shopify Plus",
+      title:
+        "KALKI Fashion: Shopify-Integrated Luxury Ethnic Wear Shopping App",
       href: "/case-studies/kalki-fashion-mobile-app",
       image: "/assets/case-studies/kalki-fashion-mobile-app.webp",
       imageAlt:
-        "KALKI Fashion: Omnichannel Mobile App connected with Shopify Plus",
+        "KALKI Fashion: Shopify-Integrated Luxury Ethnic Wear Shopping App",
       technology: "Shopify Mobile App Development",
       industry: "Fashion & Apparel",
       description:
-        "See how Dynamic Dreamz built an omnichannel React Native mobile shopping experience connected to Shopify Plus for KALKI Fashion.",
+        "See how Dynamic Dreamz built a Shopify-connected mobile app for KALKI Fashion with React Native, dynamic pricing, cart sync and localization.",
       tags: ["Mobile Application Development", "React Native Development"],
       ctaLabel: "View Case study",
     },

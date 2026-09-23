@@ -30,7 +30,9 @@ export function QuoteLeftColumn() {
             </div>
             <div className="counter-text flex items-center text-left text-[35px] leading-[43.925px] font-bold text-black max-[1199px]:text-[30px] max-[767px]:text-[26px] max-[359px]:text-2xl">
               <div>{counter.count}</div>
-              <span>{counter.suffix}</span>
+              {"unit" in counter && counter.unit ? (
+                <span className="ml-2 text-base font-bold">{counter.unit}</span>
+              ) : null}
             </div>
           </div>
         ))}

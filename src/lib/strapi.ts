@@ -8,12 +8,20 @@
 import type {
   StrapiArticle,
   StrapiCaseStudy,
+  StrapiFooterColumnElement,
   StrapiGlobal,
   StrapiMedia,
+  StrapiNavGroupElement,
   StrapiPage,
   StrapiResponse,
   StrapiTestimonial,
 } from "@/types/strapi";
+import {
+  footerNavigation,
+  primaryNavigation,
+  type NavigationGroup,
+  type PrimaryNavigationGroup,
+} from "@/data/navigation";
 import type { BlogPostDetail } from "@/types/blog-post";
 import type { CaseStudyDetail, CaseStudyItem } from "@/types/case-study";
 import type { HappyClientTestimonialItem } from "@/components/sections/happy-client-card";
@@ -95,7 +103,6 @@ export async function fetchFromStrapi<T>(
   }
 
   if (options.preview) {
-    url.searchParams.append("publicationState", "preview");
     url.searchParams.append("status", "draft");
   }
 
@@ -107,13 +114,20 @@ export async function fetchFromStrapi<T>(
     headers.Authorization = `Bearer ${STRAPI_TOKEN}`;
   }
 
-  const res = await fetch(url.toString(), {
+  const fetchInit: RequestInit = {
     headers,
-    next: {
+  };
+
+  if (options.preview) {
+    fetchInit.cache = "no-store";
+  } else {
+    fetchInit.next = {
       tags: options.tags || [],
       revalidate: options.revalidate !== undefined ? options.revalidate : 3600,
-    },
-  });
+    };
+  }
+
+  const res = await fetch(url.toString(), fetchInit);
 
   if (!res.ok) {
     throw new Error(`Strapi fetch error [${res.status}]: ${res.statusText} at ${url.pathname}`);
@@ -262,6 +276,98 @@ export function adaptStrapiTestimonial(
     logoWidth: testimonial.logo?.width,
     logoHeight: testimonial.logo?.height,
   };
+}
+
+/**
+ * Adapts Strapi navigation groups into Next.js PrimaryNavigationGroup models.
+ * Falls back to canonical local navigation definitions if Strapi data is missing.
+ */
+export function adaptStrapiNavToPrimary(
+  strapiGroups?: StrapiNavGroupElement[] | null,
+): PrimaryNavigationGroup[] {
+  if (!strapiGroups || !Array.isArray(strapiGroups) || strapiGroups.length === 0) {
+    return primaryNavigation;
+  }
+
+  return strapiGroups.map((group) => {
+    const localMatch = primaryNavigation.find(
+      (g) => g.slug === group.slug || g.label.toLowerCase() === group.label.toLowerCase(),
+    );
+
+    const columns: 1 | 2 | 3 =
+      group.columns === 1 || group.columns === 2 || group.columns === 3
+        ? group.columns
+        : localMatch?.columns || 2;
+
+    const items =
+      group.items && group.items.length > 0
+        ? group.items.map((item) => {
+            const localItem = localMatch?.items.find(
+              (li) => li.href === item.href || li.label.toLowerCase() === item.label.toLowerCase(),
+            );
+            const customIcon = getStrapiMediaUrl(item.icon);
+            return {
+              label: item.label,
+              href: item.href,
+              description: item.description || localItem?.description || "",
+              badge: item.badge || localItem?.badge,
+              ctaLabel: item.ctaLabel || localItem?.ctaLabel,
+              icon: customIcon
+                ? { src: customIcon, width: 20, height: 20 }
+                : localItem?.icon || {
+                    src: "/assets/navigation/header/shopify-development.svg",
+                    width: 20,
+                    height: 20,
+                  },
+            };
+          })
+        : localMatch?.items || [];
+
+    const promo = group.promoTitle
+      ? {
+          title: group.promoTitle,
+          details: group.promoDetails || "",
+          ctaLabel: group.promoCtaLabel || "Discuss a project",
+          ctaHref: group.promoCtaHref || "/contact-us",
+        }
+      : localMatch?.promo;
+
+    return {
+      label: group.label,
+      slug: group.slug || localMatch?.slug || group.label.toLowerCase().replace(/\s+/g, "-"),
+      columns,
+      variant: group.variant === "work" ? "work" : localMatch?.variant || "default",
+      items,
+      promo,
+    };
+  });
+}
+
+/**
+ * Adapts Strapi footer column elements into NavigationGroup models.
+ * Falls back to canonical local footer navigation definitions if Strapi data is missing.
+ */
+export function adaptStrapiFooterColumns(
+  columns?: StrapiFooterColumnElement[] | null,
+): NavigationGroup[] {
+  if (!columns || !Array.isArray(columns) || columns.length === 0) {
+    return footerNavigation;
+  }
+
+  return columns.map((col, idx) => {
+    const localMatch = footerNavigation[idx];
+    return {
+      label: col.title || localMatch?.label || `Column ${idx + 1}`,
+      links:
+        col.links && col.links.length > 0
+          ? col.links.map((l) => ({
+              label: l.label,
+              href: l.href,
+              description: l.description,
+            }))
+          : localMatch?.links || [],
+    };
+  });
 }
 
 // ==============================================================================
@@ -417,7 +523,15 @@ export async function getGlobalSettings(
       preview: options.preview,
     });
 
-    return res?.data || null;
+    const raw = res?.data as
+      | StrapiGlobal
+      | { id: number; attributes?: Record<string, unknown> }
+      | undefined;
+    if (!raw) return null;
+    if ("attributes" in raw && raw.attributes) {
+      return { ...raw.attributes, id: raw.id } as unknown as StrapiGlobal;
+    }
+    return raw as StrapiGlobal;
   } catch (err) {
     console.warn("Strapi getGlobalSettings warning, falling back to local config:", err);
     return null;
@@ -443,7 +557,15 @@ export async function getPageBySlug(
       preview: options.preview,
     });
 
-    return res?.data?.[0] || null;
+    const first = res?.data?.[0] as
+      | StrapiPage
+      | { id: number; attributes?: Record<string, unknown> }
+      | undefined;
+    if (!first) return null;
+    if ("attributes" in first && first.attributes) {
+      return { ...first.attributes, id: first.id } as unknown as StrapiPage;
+    }
+    return first as StrapiPage;
   } catch (err) {
     console.warn(`Strapi getPageBySlug(${slug}) warning:`, err);
     return null;

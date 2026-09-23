@@ -5,7 +5,7 @@ const rootDir = process.cwd();
 const indexPath = path.join(rootDir, "src", "content", "blog-posts", "index.json");
 const postsDir = path.join(rootDir, "src", "content", "blog-posts", "posts");
 const seoLimits = { titleMin: 15, titleMax: 60, descriptionMin: 70, descriptionMax: 160 };
-const categories = new Set(["Shopify", "WordPress", "eCommerce", "Big-Commerce"]);
+const categories = new Set(["Shopify", "WordPress", "eCommerce", "Big-Commerce", "Faqs"]);
 const localAssetPattern = /^\/assets\/[a-zA-Z0-9._/-]+$/;
 
 function fail(message) {
@@ -23,14 +23,16 @@ function assertAsset(asset, label) {
 }
 
 const index = JSON.parse(fs.readFileSync(indexPath, "utf8"));
-if (!Array.isArray(index) || index.length !== 84) fail(`Expected 84 blog index entries; found ${index.length}.`);
+if (!Array.isArray(index) || index.length !== 103) fail(`Expected 103 blog index entries; found ${index.length}.`);
 const slugs = new Set();
 for (const entry of index) {
   if (slugs.has(entry.slug)) fail(`Duplicate blog slug: ${entry.slug}`);
   slugs.add(entry.slug);
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.slug)) fail(`Invalid blog slug: ${entry.slug}`);
   if (!categories.has(entry.category)) fail(`Invalid category for ${entry.slug}: ${entry.category}`);
-  assertAsset({ src: entry.image, width: entry.width, height: entry.height, alt: entry.title }, `${entry.slug} featured image`);
+  if (entry.category !== "Faqs" && entry.image) {
+    assertAsset({ src: entry.image, width: entry.width, height: entry.height, alt: entry.title }, `${entry.slug} featured image`);
+  }
   if (entry.seo.title.length < seoLimits.titleMin || entry.seo.title.length > seoLimits.titleMax) fail(`${entry.slug} SEO title is outside ${seoLimits.titleMin}-${seoLimits.titleMax} characters.`);
   if (entry.seo.description.length < seoLimits.descriptionMin || entry.seo.description.length > seoLimits.descriptionMax) fail(`${entry.slug} SEO description is outside ${seoLimits.descriptionMin}-${seoLimits.descriptionMax} characters.`);
 }
@@ -43,7 +45,9 @@ for (const slug of slugs) {
   if (!fs.existsSync(file)) fail(`Missing detail file for ${slug}.`);
   const post = JSON.parse(fs.readFileSync(file, "utf8"));
   if (post.slug !== slug) fail(`Detail slug mismatch in ${slug}.`);
-  assertAsset(post.featuredImage, `${slug} featured image`);
+  if (post.category !== "Faqs" && post.featuredImage) {
+    assertAsset(post.featuredImage, `${slug} featured image`);
+  }
   if (post.author?.image) {
     const authorAsset = { src: post.author.image, width: 150, height: 150, alt: post.author.name };
     assertAsset(authorAsset, `${slug} author image`);

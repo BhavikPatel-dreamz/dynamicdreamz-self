@@ -2,7 +2,7 @@
 
 Live URL: `https://www.dynamicdreamz.com/shopify-mobile-app-development/`
 Local route: `/shopify-mobile-app-development`
-Date checked: 2026-09-07
+Date checked: 2026-09-22
 Browser/source: Headless Chrome rendered inspection, View Page Source, live page stylesheets (`scratch/css/hero_new_section.css`, `scratch/css/white_label_counter_section.css`, `scratch/css/shopify_mobile_app_development_for_dtc_brands.css`, `scratch/css/projects_section.css`, `scratch/css/why_build_a_custom_shopify_mobile_app.css`, `scratch/css/design_every_important_shopping_moment_for_mobile.css`, `scratch/css/services_case_study_section.css`, `scratch/css/faqs_section.css`, `style.css`), live custom script (`scratch/js/custom.js`), and pixel-by-pixel local screenshot audit across breakpoints.
 
 ## Viewports & Parity Audit
@@ -36,7 +36,7 @@ Browser/source: Headless Chrome rendered inspection, View Page Source, live page
 | 6 | Shopping Moments | `.mobile-shopping-eperience-sec`: `SplitSectionHeading`, 4 sequential user shopping touchpoints (01 · Discover, 02 · Convert, 03 · Engage, 04 · Retain). | Server component `ShopifyMobileAppExperienceSection` with `SplitSectionHeading` and numbered step cards. |
 | 7 | Case Studies | `.see-the-work-sec`: `SplitSectionHeading`, 3 featured mobile app case studies (RENÉE Cosmetics, KALKI Fashion, House of Good Vibes). | Reused `ServicesCaseStudiesSection` with 3 filtered mobile app case studies and `formatBrText`. |
 | 8 | Process | `.white_label_how_partnership_works_section`: 4 numbered workflow steps (1 Discover & Architect, 2 Design & Build, 3 QA & Launch, 4 Improve & Scale). | Reused `WhiteLabelProcessSection` with optional eyebrow, description, and `note=""`. |
-| 9 | FAQs | `.faq-sec`: 2-column split FAQ layout with left heading/eyebrow and right underlined accordion with circle-cross icons. | Reused shared `SplitFaqSection` with `shopifyMobileAppDevelopmentFaqs`. |
+| 9 | FAQs | `.faq-sec`: 2-column split FAQ layout with left sticky heading/eyebrow and right underlined accordion with circle-cross icons. | Reused shared `SplitFaqSection` with `shopifyMobileAppDevelopmentFaqs`. |
 | 10 | Bottom CTA Banner | `.request-banner`: gradient background with H2 and white pill button linking to `/request-quote`. | Reused shared `CtaBannerSection`. |
 
 ## Motion, Interaction & Responsive States

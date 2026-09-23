@@ -25,7 +25,8 @@ export const whiteLabelShopifySectionCopy = {
   servicesTitle: "Comprehensive White Label Shopify Development Services",
   toolsTitle: "Shopify Technologies & Tools We Work With",
   toolsEyebrow: "Technical Ecosystem",
-  toolsDescription: "At Dynamic Dreamz, we are skilled in:",
+  toolsDescription:
+    "Our teams work across the Shopify ecosystem — from storefront development and Shopify APIs to payments, subscriptions, retention, support, automation and enterprise integrations.",
   faqEyebrow: "Agency Due Diligence",
   faqTitle: "White Label Shopify <br/> Development FAQ",
   faqDescription:
@@ -38,12 +39,13 @@ export const whiteLabelShopifySectionCopy = {
 export const whiteLabelShopifyHero = {
   title: "White label Shopify Development for Digital Agencies",
   titleAccent: "for Digital Agencies",
+  subtitle: "Your Shopify Technology Partner. An Extension of Your Team.",
   lead: "Your Shopify Technology Partner. An Extension of Your Team.",
   paragraphs: [
-    "Dynamic Dreamz provides white label Shopify development services for agencies that need additional capacity or specialist Shopify expertise. From Shopify and Shopify Plus to B2B, migrations, custom apps, iOS & Android mobile apps, integrations, CRO, automation and ongoing development, our team works behind your agency while you stay in control of the client relationship.",
+    "Dynamic Dreamz provides <strong>white label Shopify development services for agencies</strong> that need additional capacity or specialist Shopify expertise. From Shopify and Shopify Plus to B2B, migrations, custom apps, iOS & Android mobile apps, integrations, CRO, automation and ongoing development, our team works behind your agency while you stay in control of the client relationship.",
   ],
   cta: "book an agency intro",
-  ctaHref: "/book-a-discovery-call",
+  ctaHref: "/request-quote",
   secondaryCta: {
     label: "see pricing",
     href: "#our_white_label_pricing",
@@ -330,9 +332,9 @@ export const whiteLabelShopifyPortfolio: PortfolioShowcaseSectionProps["content"
   heading: "Explore Our Work",
   description:
     "For 20 years, we’ve worked on challenging and impactful projects for startups and leading global brands. Every website we create is designed around our clients’ goals.",
-  ctaLabel: "View All Work",
+  ctaLabel: "View our work",
   ctaHref: "/our-work",
-  secondaryCtaLabel: "View Pricing & Plans",
+  secondaryCtaLabel: "View Pricing",
   secondaryCtaHref: "#our_white_label_pricing",
   items: [
     {
@@ -419,12 +421,12 @@ export const whiteLabelShopifyPricing: PricingEngagementContent = {
     },
     {
       label: "Dedicated Developer / Team",
-      badge: "Consistent Shopify Pipeline?",
+      badge: "Need Ongoing Capacity?",
       price: "From $2,000/month",
       description:
-        "For agencies wanting ongoing delivery capacity without hiring in-house. Full-time or dedicated developer setups aligned to your workflow.",
-      ctaLabel: "Discuss a Dedicated Setup",
-      ctaHref: "/contact-us",
+        "For brands with a steady Shopify roadmap, multiple storefronts or a need for a dedicated developer or wider delivery team.",
+      ctaLabel: "Discuss a Dedicated Team",
+      ctaHref: "/book-a-discovery-call",
     },
   ],
 };
@@ -439,8 +441,9 @@ export const whiteLabelShopifyDeliveryComparison = {
     { label: "In-House Hire", isWinner: false },
     { label: "Freelancer", isWinner: false },
     {
-      kicker: "RECOMMENDED FOR AGENCIES",
-      label: "Dynamic Dreamz Shopify Platinum Partner",
+      kicker: "Recommended for agencies",
+      label: "Dynamic Dreamz",
+      pill: "Shopify Platinum Partner",
       isWinner: true,
     },
   ],
@@ -539,6 +542,7 @@ export const whiteLabelShopifyBrandProtection = {
     secondary: {
       label: "About Dynamic Dreamz",
       href: "/about-us",
+      variant: "arrowLink",
     },
   },
 } as const;

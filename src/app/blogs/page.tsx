@@ -1,9 +1,7 @@
 import { BlogsPage } from "@/components/sections/blogs-page";
 import {
   BLOGS_PAGE_SIZE,
-  BLOGS_TOTAL_PAGES,
   filterBlogArchiveArticles,
-  getBlogArchivePage,
   normalizeBlogArchiveCategory,
 } from "@/content/blogs";
 import { pageMetadata } from "@/data/seo";
@@ -28,16 +26,15 @@ export default async function BlogsRoute({ searchParams }: BlogsRouteProps) {
   const query = firstValue(params.s).trim();
   const requestedCategory = firstValue(params.category).toLowerCase();
   const activeCategory = normalizeBlogArchiveCategory(requestedCategory);
+  const filteredArticles = filterBlogArchiveArticles(query, activeCategory);
+  const totalPages = Math.max(1, Math.ceil(filteredArticles.length / BLOGS_PAGE_SIZE));
   const requestedPage = Number(firstValue(params.page));
   const currentPage = Number.isInteger(requestedPage) && requestedPage >= 1
-    ? Math.min(requestedPage, BLOGS_TOTAL_PAGES)
+    ? Math.min(requestedPage, totalPages)
     : 1;
-  const filteredArticles = filterBlogArchiveArticles(query, activeCategory);
-  const hasArchiveFilter = Boolean(query || activeCategory);
-  const articles = hasArchiveFilter
-    ? filteredArticles
-    : getBlogArchivePage(currentPage);
-  const itemOffset = hasArchiveFilter ? 0 : (currentPage - 1) * BLOGS_PAGE_SIZE;
+  const start = (currentPage - 1) * BLOGS_PAGE_SIZE;
+  const articles = filteredArticles.slice(start, start + BLOGS_PAGE_SIZE);
+  const itemOffset = start;
 
   return (
     <main id="main-content">
@@ -47,7 +44,13 @@ export default async function BlogsRoute({ searchParams }: BlogsRouteProps) {
           __html: serializeJsonLd(createBlogsPageSchema(articles, { itemOffset })),
         }}
       />
-      <BlogsPage articles={articles} query={query} activeCategory={activeCategory} currentPage={currentPage} />
+      <BlogsPage
+        articles={articles}
+        query={query}
+        activeCategory={activeCategory}
+        currentPage={currentPage}
+        totalPages={totalPages}
+      />
     </main>
   );
 }

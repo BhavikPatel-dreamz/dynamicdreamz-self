@@ -122,7 +122,7 @@ function MenuPanel({ group }: { group: PrimaryNavigationGroup }) {
     <div
       className={cn(
         "absolute top-full left-1/2 z-[9] -translate-x-1/2 rounded-[20px] border border-black/10 bg-white p-5 shadow-[0_18px_48px_rgb(0_0_0/10%)] min-[1200px]:max-[1400px]:p-2.5",
-        panelWidthClasses[group.slug],
+        panelWidthClasses[group.slug] || "w-[650px]",
       )}
     >
       <ul className={cn("grid gap-x-2", gridColumnClasses[group.columns])}>
@@ -150,11 +150,16 @@ function MenuPanel({ group }: { group: PrimaryNavigationGroup }) {
   );
 }
 
-export function DesktopNavigation() {
+export interface DesktopNavigationProps {
+  navigation?: PrimaryNavigationGroup[];
+}
+
+export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const navigationRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
   const normalizedPathname = pathname === "/" ? pathname : pathname.replace(/\/$/, "");
+  const groups = navigation && navigation.length > 0 ? navigation : primaryNavigation;
 
   useEffect(() => {
     function closeOnEscape(event: KeyboardEvent) {
@@ -184,7 +189,7 @@ export function DesktopNavigation() {
       ref={navigationRef}
     >
       <ul className="flex list-none items-center p-0">
-        {primaryNavigation.map((group, index) => {
+        {groups.map((group, index) => {
           const isOpen = openGroup === group.slug;
           const menuId = `desktop-${group.slug}-menu`;
           const isActive = group.items.some(

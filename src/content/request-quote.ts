@@ -1,3 +1,5 @@
+import { companyFacts } from "@/data/company";
+
 export const requestQuoteContent = {
   hero: {
     title: "Get a quote",
@@ -5,19 +7,17 @@ export const requestQuoteContent = {
   },
   counters: [
     {
+      label: "Experience",
+      count: companyFacts.yearsOfExperience.display,
+      unit: "Years",
+    },
+    {
       label: "Projects",
-      count: "5000",
-      suffix: "+",
+      count: companyFacts.projectsCompleted.display,
     },
     {
       label: "Experts",
-      count: "150",
-      suffix: "+",
-    },
-    {
-      label: "Happy Clients",
-      count: "1100",
-      suffix: "+",
+      count: companyFacts.experts.display,
     },
   ],
   badges: [

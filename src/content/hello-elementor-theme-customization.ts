@@ -129,7 +129,7 @@ export const helloElementorThemeCustomizationContent = {
       {
         title: "Easy Customization",
         description: "Fully compatible with Elementor, allowing for drag-and-drop customization.",
-        icon: "/assets/hello-elementor-theme-customization/features/easy-customization.svg",
+        icon: "/assets/be-yours-theme-customization/features/built-in-product-filtering.svg",
         iconAlt: "Easy Customization Icon",
       },
       {

@@ -11,6 +11,7 @@ export type SplitFaqSectionProps = {
   items: readonly FaqAccordionItem[];
   idPrefix: string;
   heading?: string;
+  headingBrClassName?: string;
   description?: string;
   eyebrow?: string;
   eyebrowClassName?: string;
@@ -39,6 +40,7 @@ export function SplitFaqSection({
   items,
   idPrefix,
   heading = sharedUiCopy.faq.heading,
+  headingBrClassName,
   description,
   eyebrow,
   eyebrowClassName,
@@ -58,24 +60,24 @@ export function SplitFaqSection({
   return (
     <section
       aria-labelledby={titleId}
-      className={cn("bg-[#fafaf7] py-[60px] max-[767px]:py-10", className)}
+      className={cn("bg-[#fafaf7] py-[60px] max-[991px]:py-10", className)}
       data-section="faq"
       id={sectionId ?? `${idPrefix}-section`}
     >
       <Container>
-        <div className="flex justify-between gap-[105px] max-[992px]:flex-col max-[992px]:gap-[30px]">
-          <div className="w-[41%] max-[992px]:w-full">
-            <header className="mb-0 flex flex-col items-start text-left min-[993px]:sticky min-[993px]:top-[20px]">
+        <div className="flex justify-between gap-[105px] max-[1399px]:gap-8 max-[991px]:flex-col max-[991px]:gap-[30px]">
+          <div className="w-[41%] max-[1199px]:w-[44%] max-[991px]:w-full">
+            <header className="mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
               {eyebrow ? (
                 <Eyebrow as="span" className={cn("mb-4", eyebrowClassName)}>
                   {eyebrow}
                 </Eyebrow>
               ) : null}
               <h2
-                className="mb-[15px] font-display text-[35px] leading-[1.4] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
+                className="mb-[10px] font-display text-[35px] leading-[1.4] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
                 id={titleId}
               >
-                {formatBrText(heading, "max-[1199px]:hidden")}
+                {formatBrText(heading, headingBrClassName ?? "max-[1199px]:hidden")}
               </h2>
               {description ? (
                 <p className="max-w-[500px] text-base leading-[28px] font-medium text-[#535353] max-[767px]:text-sm max-[767px]:leading-[24px]">
@@ -84,7 +86,7 @@ export function SplitFaqSection({
               ) : null}
             </header>
           </div>
-          <div className="w-[57%] max-w-[654px] grow max-[992px]:w-full max-[992px]:max-w-none">
+          <div className="w-[57%] max-w-[654px] grow max-[1199px]:w-[53%] max-[1199px]:max-w-none max-[991px]:w-full">
             {lazyAccordion ? (
               <LazyFaqAccordion
                 animateOnReveal={animateOnReveal}

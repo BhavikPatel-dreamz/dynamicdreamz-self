@@ -5,8 +5,8 @@ export const shopifyDevelopmentBangaloreContent = {
   sectionCopy: {
     faqHeading: "Frequently Asked Questions",
     portfolioCta: "View our work",
-    portfolioEyebrow: "PORTFOLIO",
-    testimonialsEyebrow: "CLIENT STORIES",
+    portfolioEyebrow: "Portfolio",
+    testimonialsEyebrow: "Client Stories",
   },
   hero: {
     eyebrows: ["Shopify Development", "Bangalore / Bengaluru"],
@@ -51,6 +51,66 @@ export const shopifyDevelopmentBangaloreContent = {
         href: "https://www.upwork.com/agencies/dynamicdreamz/",
       },
     ],
+    tabletSlider: {
+      bgShapeSrc:
+        "/assets/services/shopify-development-in-bangalore/hero/slide-bg-shape.svg",
+      topBadge: {
+        src: "/assets/services/shopify-development-in-bangalore/hero/dynamic-dreamz-shopify-platinum-partner.png",
+        alt: "Dynamic Dreamz Shopify Platinum Partner",
+        width: 173,
+        height: 106,
+      },
+      bottomBadge: {
+        src: "/assets/services/shopify-development-in-bangalore/hero/shopify-logo.png",
+        alt: "Shopify Logo",
+        width: 130,
+        height: 126,
+      },
+      slides: [
+        {
+          src: "/assets/services/shopify-development-in-bangalore/hero/slide-bellavita.webp",
+          alt: "Bella Vita Organic store showcase",
+          width: 1600,
+          height: 2380,
+        },
+        {
+          src: "/assets/services/shopify-development-in-bangalore/hero/slide-bombay-tshirt.webp",
+          alt: "Bombay Shirt Company store showcase",
+          width: 1600,
+          height: 2380,
+        },
+        {
+          src: "/assets/services/shopify-development-in-bangalore/hero/slide-kalki.webp",
+          alt: "Kalki Fashion store showcase",
+          width: 1600,
+          height: 2380,
+        },
+        {
+          src: "/assets/services/shopify-development-in-bangalore/hero/slide-nokt-1.webp",
+          alt: "Nokt-1 store showcase",
+          width: 1600,
+          height: 2380,
+        },
+        {
+          src: "/assets/services/shopify-development-in-bangalore/hero/slide-ranavat.webp",
+          alt: "Ranavat store showcase",
+          width: 1600,
+          height: 2380,
+        },
+        {
+          src: "/assets/services/shopify-development-in-bangalore/hero/slide-rarerabbit.webp",
+          alt: "Rare Rabbit store showcase",
+          width: 1600,
+          height: 2380,
+        },
+        {
+          src: "/assets/services/shopify-development-in-bangalore/hero/slide-renee-cosmetics.webp",
+          alt: "Renee Cosmetics store showcase",
+          width: 1600,
+          height: 2380,
+        },
+      ],
+    },
   },
 
   brands: {
@@ -85,7 +145,7 @@ export const shopifyDevelopmentBangaloreContent = {
   },
 
   whyChoose: {
-    eyebrow: "Shopify Development Company in Bengaluru",
+    eyebrow: "Why Shopify",
     heading: "Why Choose Shopify for Your Business?",
     description:
       "Shopify is a preferred platform for building robust and scalable ecommerce stores. Its straightforward interface, reliable features and extensive customization options make it a practical choice for businesses launching a new store or scaling an existing one.",
@@ -181,7 +241,7 @@ export const shopifyDevelopmentBangaloreContent = {
           "Our team provides continuous maintenance and support services to keep your Shopify store running smoothly. From regular updates and security patches to troubleshooting and performance optimization, we offer the support required to ensure your store stays secure, up to date, and prepared to satisfy your business demands.",
         icon: "/assets/services/shopify-development-in-bangalore/services/shopify-store-maintenance-support.svg",
         iconAlt: "Shopify Store Maintenance Icon",
-        href: "/shopify-maintenance-services",
+        href: "/buy-shopify-development-hours",
       },
       {
         title: "Shopify 2.0 Upgrade & Migration",
@@ -203,90 +263,135 @@ export const shopifyDevelopmentBangaloreContent = {
   },
 
   process: {
+    eyebrow: "How We Work",
     heading: "Our Development Process",
     description:
-      "At Dynamic Dreamz, Shopify Development Company in Bengaluru, our organized approach guarantees your Shopify store is designed and developed to meet your specific business objectives. Here’s how we work:",
+      "At Dynamic Dreamz, our Shopify development team in Bengaluru follows an organized process designed to align each store with the client’s business objectives from discovery through launch and ongoing support.",
     steps: [
       {
-        number: "01",
+        step: "Step 01",
         title: "Discovery and Planning",
         description:
-          "We start by studying your business requirements and goals to create a roadmap tailored to your requirements. Our planning phase ensures every part of the project is aligned with your vision.",
-        icon: "/assets/services/bigcommerce-development/process/initial-consultation.svg",
-        iconAlt: "Discovery and Planning Icon",
+          "We start by understanding your business requirements and goals, then create a practical roadmap aligned with the project.",
       },
       {
-        number: "02",
+        step: "Step 02",
         title: "Design and Development",
         description:
-          "We create visually stunning and user friendly store designs that improve your brand identity. Our Shopify developers then turn these designs into high performing Shopify stores optimized for functionality and performance.",
-        icon: "/assets/services/bigcommerce-development/process/planning-and-strategy.svg",
-        iconAlt: "Design and Development Icon",
+          "We create or implement user-friendly designs and develop Shopify functionality around performance, usability and maintainability.",
       },
       {
-        number: "03",
+        step: "Step 03",
         title: "Testing and Launch",
         description:
-          "Before launching, we strictly test your store to ensure it is secure, bug free, and fully optimized. Once all looks good, we launch the store and ensure a smooth transition to the live environment.",
-        icon: "/assets/services/bigcommerce-development/process/development-and-implementation.svg",
-        iconAlt: "Testing and Launch Icon",
+          "Before launch, we test the store across functionality, responsiveness and key user journeys, then coordinate a smooth go-live.",
       },
       {
-        number: "04",
+        step: "Step 04",
         title: "Post Launch Support",
         description:
-          "Our support doesn’t end at launch. We offer ongoing maintenance, updates, and performance optimization to keep your Shopify store running smoothly and meeting evolving customer expectations.",
-        icon: "/assets/services/bigcommerce-development/process/testing-launch-support.svg",
-        iconAlt: "Post Launch Support Icon",
+          "We continue with maintenance, updates, troubleshooting and performance improvements as your Shopify store evolves.",
       },
     ],
   },
 
-  reasons: {
-    heading: "Why Choose Us for Your <br> Shopify Development Needs?",
+  whyDynamicDreamz: {
+    eyebrow: "Why Dynamic Dreamz",
+    heading: "Why Choose Us for Your Shopify Development Needs?",
     description:
-      "With our expertise, innovative approach, and commitment to excellence, we guarantee<br> your Shopify store achieves ultimate performance, scalability, and user attention.<br> Partner with us for a seamless and results driven eCommerce experience.",
+      "With our Shopify experience, practical delivery approach and long-term support capability, we help businesses build ecommerce experiences designed for performance, scalability and continuous improvement.",
     items: [
       {
         title: "Expert Developers",
         description:
-          "Our experienced team crafts high performing stores tailored to your vision.",
-        icon: "/assets/services/bigcommerce-development/advantages/expertise-in-custom-development.svg",
+          "Experienced Shopify developers focused on high-performing stores tailored to your requirements.",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/expert-developers.svg",
         iconAlt: "Expert Developers Icon",
       },
       {
         title: "Custom Solutions",
         description:
-          "We align our services with your specific business goals for maximum results.",
-        icon: "/assets/wix-to-shopify-migration/cs_icon.svg",
+          "Shopify solutions aligned with your business goals, workflows and customer experience.",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/custom-solutions.svg",
         iconAlt: "Custom Solutions Icon",
       },
       {
         title: "Intuitive Design",
         description:
-          "Focus on user friendly layouts that enhance customer engagement and satisfaction.",
-        icon: "/assets/shopify-development-company-in-chennai/benefits/user-friendly.svg",
+          "User-friendly layouts designed to make shopping and store management easier.",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/intuitive-design.svg",
         iconAlt: "Intuitive Design Icon",
       },
       {
         title: "SEO Expertise",
         description:
-          "Improve your online visibility with effective SEO strategies.",
-        icon: "/assets/etsy-to-shopify-migration/marketing-integration.svg",
+          "Technical and structural considerations that support a search-friendly Shopify storefront.",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/seo-expertise.svg",
         iconAlt: "SEO Expertise Icon",
       },
       {
         title: "Comprehensive Services",
         description:
-          "From development to ongoing support, we cover all your Shopify needs.",
-        icon: "/assets/shopify-development-company-in-chennai/reasons/comprehensive-services.svg",
+          "From development and migration to integrations, optimization and ongoing support.",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/comprehensive-services.svg",
         iconAlt: "Comprehensive Services Icon",
       },
       {
         title: "Proven Track Record",
         description:
-          "We've successfully delivered Shopify solutions for clients across diverse industries.",
-        icon: "/assets/services/wordpress-development-company/advantages/ongoing-support-maintenance.svg",
+          "Shopify and ecommerce delivery experience across brands, industries and project types.",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/proven-track-record.svg",
+        iconAlt: "Proven Track Record Icon",
+      },
+    ],
+  },
+
+  reasons: {
+    eyebrow: "Why Dynamic Dreamz",
+    heading: "Why Choose Us for Your Shopify Development Needs?",
+    description:
+      "With our Shopify experience, practical delivery approach and long-term support capability, we help businesses build ecommerce experiences designed for performance, scalability and continuous improvement.",
+    items: [
+      {
+        title: "Expert Developers",
+        description:
+          "Experienced Shopify developers focused on high-performing stores tailored to your requirements.",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/expert-developers.svg",
+        iconAlt: "Expert Developers Icon",
+      },
+      {
+        title: "Custom Solutions",
+        description:
+          "Shopify solutions aligned with your business goals, workflows and customer experience.",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/custom-solutions.svg",
+        iconAlt: "Custom Solutions Icon",
+      },
+      {
+        title: "Intuitive Design",
+        description:
+          "User-friendly layouts designed to make shopping and store management easier.",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/intuitive-design.svg",
+        iconAlt: "Intuitive Design Icon",
+      },
+      {
+        title: "SEO Expertise",
+        description:
+          "Technical and structural considerations that support a search-friendly Shopify storefront.",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/seo-expertise.svg",
+        iconAlt: "SEO Expertise Icon",
+      },
+      {
+        title: "Comprehensive Services",
+        description:
+          "From development and migration to integrations, optimization and ongoing support.",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/comprehensive-services.svg",
+        iconAlt: "Comprehensive Services Icon",
+      },
+      {
+        title: "Proven Track Record",
+        description:
+          "Shopify and ecommerce delivery experience across brands, industries and project types.",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/proven-track-record.svg",
         iconAlt: "Proven Track Record Icon",
       },
     ],
@@ -296,62 +401,64 @@ export const shopifyDevelopmentBangaloreContent = {
     heading: "Our Work",
     description:
       "Lots of Shopify stores are precisely crafted and counting. Our expertise <br> accelerates evolution and redefines shopping experiences for customers.",
+    ctaHref: "/our-work",
     items: [
       {
-        name: "Nufyx",
-        href: "https://nufyx.com/",
-        image: "/assets/healthcare/portfolio/nufyx-protein-products.webp",
-        imageAlt: "Nufyx Image",
-        category: "SHOPIFY",
+        name: "Renee",
+        href: "https://www.reneecosmetics.in/",
+        image: "/assets/our-work/projects/renee.webp",
+        imageAlt: "Renee Image",
+        category: "Shopify / Shopify Plus",
       },
       {
-        name: "Nekter Juice Bar",
-        href: "https://www.nekterjuicebar.com/",
-        image: "/assets/food-beverages/portfolio/nekter-juice-bar.webp",
-        imageAlt: "Nekter Juice Bar Image",
-        category: "SHOPIFY",
-      },
-      {
-        name: "Pagerie",
-        href: "https://www.pagerie.com/",
-        image: "/assets/pet-industry/portfolio/pagerie-dog-accessories.webp",
-        imageAlt: "Pagerie Image",
-        category: "SHOPIFY",
-      },
-      {
-        name: "Luxxi Nails",
-        href: "https://luxxinails.com/",
-        image: "/assets/beauty-cosmetics/portfolio/luxxi-nails.webp",
-        imageAlt: "Luxxi Nails Image",
-        category: "SHOPIFY",
-      },
-      {
-        name: "Eco Soul",
-        href: "https://www.ecosoulhome.com/",
-        image: "/assets/our-work/projects/eco-soul.webp",
-        imageAlt: "Eco Soul Image",
-        category: "SHOPIFY",
-      },
-      {
-        name: "AdHOC Atelier",
-        href: "https://adhocatelier.it/",
-        image: "/assets/hire-shopify-developers/portfolio/adhoc-atler.webp",
-        imageAlt: "AdHOC Atelier Image",
-        category: "SHOPIFY",
+        name: "11 11",
+        href: "https://11-11.in/",
+        image: "/assets/our-work/projects/11-11.webp",
+        imageAlt: "11 11 Image",
+        category: "Shopify / Shopify Plus",
       },
       {
         name: "Bombay Shirt Company",
         href: "https://www.bombayshirts.com/",
-        image: "/assets/our-work/projects/bombay-shirt-company-model.webp",
+        image:
+          "/assets/fashion/portfolio/bombay-shirt-company-fashion.webp",
         imageAlt: "Bombay Shirt Company Image",
-        category: "SHOPIFY",
+        category: "Shopify / Shopify Plus",
       },
       {
-        name: "Holy Plantz",
-        href: "https://holyplantz.de/",
-        image: "/assets/our-work/projects/holy-plantz.webp",
-        imageAlt: "Holy Plantz Image",
-        category: "SHOPIFY",
+        name: "Royce Chocolate",
+        href: "https://royceindia.com/",
+        image: "/assets/our-work/projects/royce-chocolate.webp",
+        imageAlt: "Royce Chocolate Image",
+        category: "Shopify / Shopify Plus",
+      },
+      {
+        name: "Tropicfeel",
+        href: "https://shop.tropicfeel.com/",
+        image: "/assets/fashion/portfolio/tropicfeel-fashion.webp",
+        imageAlt: "Tropicfeel Image",
+        category: "Shopify / Shopify Plus",
+      },
+      {
+        name: "TEGO Fit",
+        href: "https://tego.fit/",
+        image: "/assets/fashion/portfolio/tego-fit-activewear.webp",
+        imageAlt: "TEGO Fit Image",
+        category: "Shopify / Shopify Plus",
+      },
+      {
+        name: "nekter juice bar",
+        href: "https://www.nekterjuicebar.com/",
+        image: "/assets/food-beverages/portfolio/nekter-juice-bar.webp",
+        imageAlt: "nekter juice bar Image",
+        category: "Shopify / Shopify Plus",
+      },
+      {
+        name: "Rare Rabbit",
+        href: "https://thehouseofrare.com/",
+        image: "/assets/our-work/projects/rare-rabbit.webp",
+        imageAlt: "Rare Rabbit Image",
+        category: "Shopify / Shopify Plus",
       },
     ],
   },
@@ -359,7 +466,7 @@ export const shopifyDevelopmentBangaloreContent = {
   testimonials: {
     heading: "Don't Just Take Our Word For It",
     description:
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve.",
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve and choose Dynamic Dreamz as a Shopify Development Partner in Bengaluru.",
     items: shopifyPlusAgencyTestimonials.items,
   },
 

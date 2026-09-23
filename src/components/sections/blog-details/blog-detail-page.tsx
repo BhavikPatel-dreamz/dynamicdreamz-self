@@ -197,17 +197,19 @@ export function BlogDetailPage({ post }: BlogDetailPageProps) {
             {post.author ? <span> {post.author.name}</span> : null}
           </div>
         </Container>
-        <Container className="max-[575px]:px-4">
-          <Image
-            src={post.featuredImage.src}
-            alt={post.featuredImage.alt}
-            width={post.featuredImage.width}
-            height={post.featuredImage.height}
-            sizes="(max-width: 575px) calc(100vw - 32px), (max-width: 1199px) calc(100vw - 40px), 1360px"
-            className="h-auto w-full"
-            priority
-          />
-        </Container>
+        {post.featuredImage ? (
+          <Container className="max-[575px]:px-4">
+            <Image
+              src={post.featuredImage.src}
+              alt={post.featuredImage.alt}
+              width={post.featuredImage.width}
+              height={post.featuredImage.height}
+              sizes="(max-width: 575px) calc(100vw - 32px), (max-width: 1199px) calc(100vw - 40px), 1360px"
+              className="h-auto w-full"
+              priority
+            />
+          </Container>
+        ) : null}
       </section>
 
       <section className="pt-10 max-[767px]:pt-[28px]" aria-label={post.title}>

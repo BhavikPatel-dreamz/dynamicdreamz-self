@@ -1,6 +1,7 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { TextArrowLink } from "@/components/ui/text-arrow-link";
 import { whiteLabelShopifyBrandProtection } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
 
@@ -22,6 +23,7 @@ export type ShopifyTeamBehindItContent = {
     secondary?: {
       label: string;
       href: string;
+      variant?: "outline" | "arrowLink";
     };
   };
 };
@@ -90,9 +92,18 @@ export function ShopifyTeamBehindItSection({
               {content.ctas.primary.label}
             </ButtonLink>
             {content.ctas.secondary ? (
-              <ButtonLink href={content.ctas.secondary.href} variant="outline">
-                {content.ctas.secondary.label}
-              </ButtonLink>
+              content.ctas.secondary.variant === "arrowLink" ? (
+                <TextArrowLink
+                  className="ml-5 max-[767px]:ml-0 max-[767px]:mt-5"
+                  href={content.ctas.secondary.href}
+                >
+                  {content.ctas.secondary.label}
+                </TextArrowLink>
+              ) : (
+                <ButtonLink href={content.ctas.secondary.href} variant="outline">
+                  {content.ctas.secondary.label}
+                </ButtonLink>
+              )
             ) : null}
           </div>
         ) : null}

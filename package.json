@@ -12,6 +12,7 @@
     "security:scan": "bash .githooks/pre-commit --ci",
     "build": "bash -c 'if [ \"${VERCEL:-}\" = \"1\" ] || [ \"${GITHUB_ACTIONS:-}\" = \"true\" ]; then bash .githooks/pre-commit --ci; fi' && npm run check:urls && npm run check:component-content && npm run check:case-studies && npm run check:blog-posts && npm run check:asset-duplicates && next build --webpack",
     "start": "next start",
+    "migrate:blogs": "node scripts/migrate-blogs-to-strapi.mjs",
     "lint": "npm run check:urls && npm run check:component-content && npm run check:case-studies && npm run check:blog-posts && npm run check:asset-duplicates && eslint"
   },
   "dependencies": {

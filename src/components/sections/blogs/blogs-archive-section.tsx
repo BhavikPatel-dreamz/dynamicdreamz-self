@@ -120,11 +120,21 @@ export function BlogsArchiveSection({
 
         {articles.length > 0 ? (
           <div className="-mx-2 flex flex-wrap gap-y-6" data-blogs-grid>
-            {articles.map((article) => (
-              <div className="w-1/3 px-2 max-[991px]:w-1/2 max-[767px]:w-full" data-blogs-card key={article.href}>
-                <BlogCard item={article} variant="archive" />
-              </div>
-            ))}
+            {articles.map((article) => {
+              const isFaq = !article.image || article.category === "Faqs";
+              return (
+                <div
+                  className={cn(
+                    "px-2",
+                    isFaq ? "w-full" : "w-1/3 max-[991px]:w-1/2 max-[767px]:w-full"
+                  )}
+                  data-blogs-card
+                  key={article.href}
+                >
+                  <BlogCard item={article} variant="archive" />
+                </div>
+              );
+            })}
 
             {showPagination ? (
               <nav className="mt-[42px] h-6 w-full text-center leading-6" aria-label={paginationLabel} data-blogs-pagination>

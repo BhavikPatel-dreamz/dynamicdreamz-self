@@ -94,9 +94,9 @@ export const pageSeo = {
   },
   about: {
     path: "/about-us",
-    title: "About Dynamic Dreamz | Shopify & Web Development Team",
+    title: "About Dynamic Dreamz | Web,Ecommerce & App Development",
     description:
-      "Founded in 2006, Dynamic Dreamz is a Shopify Platinum Partner with 150+ experts delivering ecommerce, web, mobile and digital commerce solutions.",
+      "Learn about Dynamic Dreamz, a web,ecommerce and app developmentcompany established in 2006 with 150+experts and 5,000+ projects deliveredworldwide.",
     keywords: [
       "about Dynamic Dreamz",
       "web development company",
@@ -106,7 +106,7 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-05-02T09:06:11+00:00",
-    modifiedTime: "2026-08-13T00:00:00+05:30",
+    modifiedTime: "2026-09-18T09:50:40+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
@@ -574,9 +574,9 @@ export const pageSeo = {
   },
   hireShopifyDevelopers: {
     path: "/hire-shopify-developers",
-    title: "Hire Shopify Developers | Dynamic Dreamz",
+    title: "Hire Shopify Developers | Custom Shopify Store Development",
     description:
-      "Hire Shopify developers for store setup, customization, migration, app integrations, maintenance and dedicated ecommerce development from Dynamic Dreamz.",
+      "Hire expert Shopify developers with 20+ years of experience and 1,100+ happy clients. Build a high-performing, scalable Shopify store with Dynamic Dreamz.",
     keywords: [
       "hire Shopify developers",
       "dedicated Shopify developers",
@@ -586,7 +586,7 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-07-24T07:16:56+00:00",
-    modifiedTime: "2026-08-18T00:00:00+05:30",
+    modifiedTime: "2026-09-17T05:06:10+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
@@ -653,26 +653,27 @@ export const pageSeo = {
   },
   shopifyExperts: {
     path: "/shopify-experts",
-    title: "Hire Shopify Experts | Top Rated Shopify Developers",
+    title: "Hire Shopify Experts | Shopify Platinum Partner",
     description:
-      "Partner with Best Shopify Experts to develop an online store. Let's start your online journey with Dynamic Dreamz with their tailored solutions.",
+      "Hire Shopify experts from a Shopify Platinum Partner for storesetup, themes, custom apps, migrations, CRO, integrations andongoing Shopify support.",
     keywords: [
       "hire Shopify experts",
       "Shopify experts",
+      "Shopify Platinum Partner",
       "top rated Shopify developers",
       "dedicated Shopify experts",
       "Shopify development agency",
       "Shopify store setup",
       "Shopify Plus experts",
     ],
-    openGraphType: "website",
+    openGraphType: "article",
     publishedTime: "2024-07-24T07:16:56+00:00",
-    modifiedTime: "2026-08-18T00:00:00+05:30",
+    modifiedTime: "2026-09-16T06:21:22+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
       height: 630,
-      alt: "Hire dedicated Shopify experts from Dynamic Dreamz",
+      alt: "Hire Shopify Experts | Shopify Platinum Partner | DynamicDreamz",
     },
     sitemap: {
       changeFrequency: "monthly",
@@ -681,11 +682,11 @@ export const pageSeo = {
   },
   shopifyPlus: {
     path: "/shopify-plus-agency",
-    title: "Shopify Plus Agency | Shopify Plus Development Services",
+    title: "Shopify Plus Agency & Shopify Plus Development Services",
     description:
       "Need a Shopify Plus agency? Dynamic Dreamz is a Shopify Platinum Partner for builds, migrations, B2B, integrations and ongoing support. Book a discovery call.",
     socialDescription:
-      "Need a Shopify Plus agency? Dynamic Dreamz helps high-growth and enterprise brands build, migrate and scale on Shopify Plus.",
+      "Shopify Plus development for high-growth and enterprise brands, including B2B, migrations, custom integrations, CRO and ongoing technical support.",
     keywords: [
       "Shopify Plus agency",
       "Shopify Plus development services",
@@ -696,7 +697,7 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-05-02T09:33:27+00:00",
-    modifiedTime: "2026-09-02T13:30:22+00:00",
+    modifiedTime: "2026-09-17T07:16:48+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
@@ -1202,7 +1203,7 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-05-02T09:34:33+00:00",
-    modifiedTime: "2026-08-13T00:00:00+05:30",
+    modifiedTime: "2026-09-17T05:34:55+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
@@ -2154,6 +2155,32 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  horizonThemeCustomization: {
+    path: "/horizon-theme-customization",
+    title: "Horizon Theme Customization Service | Dynamic Dreamz",
+    description:
+      "Expert Shopify Horizon theme customization by Dynamic Dreamz. Optimize design, templates, blocks, speed, and conversions. Get a custom quote today!",
+    keywords: [
+      "Horizon theme customization",
+      "Horizon Shopify theme",
+      "Shopify Horizon theme customization",
+      "Shopify Horizon developers",
+      "Shopify theme customization agency",
+    ],
+    openGraphType: "website",
+    publishedTime: "2025-07-07T12:25:01+00:00",
+    modifiedTime: "2026-09-21T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Horizon Theme Customization Service | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   spotlightThemeCustomization: {
     path: "/spotlight-theme-customization",
     title: "Spotlight Theme Customization Services | Dynamic Dreamz",
@@ -2831,7 +2858,7 @@ export const pageSeo = {
       "Shopify app development",
       "Dynamic Dreamz",
     ],
-    openGraphType: "website",
+    openGraphType: "article",
     publishedTime: "2024-05-02T09:34:22+00:00",
     modifiedTime: "2026-09-04T07:26:42+00:00",
     image: {
@@ -2839,6 +2866,32 @@ export const pageSeo = {
       width: 1200,
       height: 630,
       alt: "Shopify Mobile App Development Company | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  appmakerShopifyMobileAppDevelopment: {
+    path: "/appmaker-shopify-mobile-app-development",
+    title: "Appmaker Shopify Mobile App Development | Dynamic Dreamz",
+    description:
+      "Launch a branded iOS and Android app for your Shopify store with Appmaker and Dynamic Dreamz, with customization, integrations and app launch support.",
+    keywords: [
+      "Appmaker Shopify mobile app development",
+      "Shopify Appmaker partner",
+      "Shopify mobile app builder",
+      "iOS and Android Shopify apps",
+      "Dynamic Dreamz mobile development",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-09-03T13:12:29+00:00",
+    modifiedTime: "2026-09-03T13:33:55+00:00",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Appmaker Shopify Mobile App Development | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",
@@ -2875,6 +2928,34 @@ export const pageSeo = {
   },
   thankYouForEnquiry: {
     path: "/thank-you-for-enquiry",
+    title: "Thank You For Enquiry | Dynamic Dreamz",
+    description:
+      "Thank you for your enquiry. We appreciate your interest and our team will get back to you shortly.",
+    keywords: [
+      "Dynamic Dreamz enquiry",
+      "thank you for enquiry",
+      "Shopify agency contact",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-29T10:56:05+00:00",
+    modifiedTime: "2026-08-07T09:16:24+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Thank You For Enquiry — Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    robots: {
+      index: false,
+      follow: false,
+    },
+  },
+  thankYouForShopifyPlusEnquiry: {
+    path: "/thank-you-for-shopify-plus-enquiry",
     title: "Thank You For Enquiry | Dynamic Dreamz",
     description:
       "Thank you for your enquiry. We appreciate your interest and our team will get back to you shortly.",
@@ -3011,9 +3092,9 @@ export const pageSeo = {
   },
   shopifyDevelopmentCompanyInChennai: {
     path: "/shopify-development-company-in-chennai",
-    title: "Hire Shopify development company in Chennai | Dynamic Dreamz",
+    title: "Shopify Development Company in Chennai | Dynamic Dreamz",
     description:
-      "Looking for a Shopify development company in Chennai? Our professional team delivers custom Ecommerce solutions that fulfill your business needs.",
+      "Shopify development company in Chennai offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     keywords: [
       "Shopify development company in Chennai",
       "Shopify developers Chennai",
@@ -3024,12 +3105,12 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2024-10-08T13:24:33+00:00",
-    modifiedTime: "2026-08-21T00:00:00+05:30",
+    modifiedTime: "2026-09-22T00:00:00+05:30",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
       height: 630,
-      alt: "Hire Shopify development company in Chennai | Dynamic Dreamz",
+      alt: "Shopify Development Company in Chennai | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",
@@ -3319,11 +3400,11 @@ export const pageSeo = {
   },
   shopifyDevelopmentInPune: {
     path: "/shopify-development-in-pune",
-    title: "No.1 Shopify Development in Pune | Dynamic Dreamz",
+    title: "Shopify Development Company in Pune | Dynamic Dreamz",
     description:
-      "Best Shopify development in Pune. Expert Shopify Development Company with 18+ years of experience for custom store setup, theme customization, migration & more.",
+      "Shopify development company in Pune offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     socialDescription:
-      "Top-rated Shopify development company in Pune. Certified developers for custom stores, Plus upgrades, themes, app integrations, and migrations.",
+      "Shopify development services in Pune for custom stores, themes, migrations, app integrations, Shopify Plus and ongoing support.",
     keywords: [
       "Shopify development in Pune",
       "Shopify development company in Pune",
@@ -3431,11 +3512,11 @@ export const pageSeo = {
   },
   shopifyDevelopmentInMumbai: {
     path: "/shopify-development-in-mumbai",
-    title: "Top Shopify Development Company in Mumbai - Dynamic Dreamz",
+    title: "Shopify Development Company in Mumbai | Dynamic Dreamz",
     description:
-      "Partner with the best Shopify development company in Mumbai, which offers custom Shopify web development, migration, and scalable ecommerce solutions.",
+      "Shopify development company in Mumbai offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     socialDescription:
-      "Partner with the top Shopify development company in Mumbai for custom store design, theme customization, migrations, and scalable ecommerce growth.",
+      "Shopify development services in Mumbai for custom stores, themes, migrations, app integrations, Shopify Plus and ongoing support.",
     keywords: [
       "Shopify development in Mumbai",
       "Shopify development company in Mumbai",

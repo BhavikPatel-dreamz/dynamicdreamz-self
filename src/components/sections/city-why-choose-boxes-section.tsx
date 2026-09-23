@@ -32,7 +32,7 @@ export function CityWhyChooseBoxesSection({
   id,
   columns = 5,
   bgClassName = "bg-[#eff4ef]",
-  eyebrowVariant = "pill",
+  eyebrowVariant = "dash",
 }: CityWhyChooseBoxesSectionProps) {
   return (
     <section

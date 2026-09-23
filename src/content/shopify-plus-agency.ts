@@ -6,7 +6,7 @@ export const shopifyPlusAgencyHero = {
   description:
     "Dynamic Dreamz is a Shopify Platinum Partner helping DTC brands, B2B businesses and enterprise ecommerce teams build, migrate and scale on Shopify Plus. Our team supports custom storefront development, B2B solutions, integrations, checkout extensibility, CRO, performance optimization and ongoing technical delivery.",
   ctaLabel: "Book a Discovery Call",
-  ctaHref: "/book-a-discovery-call",
+  ctaHref: "/request-quote",
   secondaryCta: {
     label: "View Shopify Plus Work",
     href: "#our_work",
@@ -27,7 +27,7 @@ export const shopifyPlusAgencyHero = {
       name: "Clutch",
       src: "/assets/proof/clutch-rating.svg",
       href: "https://clutch.co/profile/dynamic-dreamz",
-      alt: "Dynamic Dreamz on Clutch - 4.9 rating",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
       width: 111,
       height: 44,
     },
@@ -35,7 +35,7 @@ export const shopifyPlusAgencyHero = {
       name: "Trustpilot",
       src: "/assets/proof/trustpilot-rating.svg",
       href: "https://www.trustpilot.com/review/dynamicdreamz.com",
-      alt: "Dynamic Dreamz on Trustpilot - 4.9 TrustScore",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
       width: 148,
       height: 50,
     },
@@ -43,7 +43,7 @@ export const shopifyPlusAgencyHero = {
       name: "Upwork",
       src: "/assets/proof/upwork-top-rated-plus.svg",
       href: "https://www.upwork.com/ag/dynamicdreamz/",
-      alt: "Dynamic Dreamz - Upwork Top Rated Plus",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
       width: 126,
       height: 54,
     },
@@ -55,6 +55,97 @@ export const shopifyPlusAgencyHero = {
     height: 30,
   },
 } as const;
+
+export const shopifyPlusAgencyBrandLogos = [
+  {
+    src: "/assets/clients/supertails.svg",
+    alt: "Supper Tails Logo",
+    width: 164,
+    height: 41,
+    href: "https://supertails.com/",
+  },
+  {
+    src: "/assets/clients/eleven-eleven.svg",
+    alt: "Eleven Eleven",
+    width: 145,
+    height: 20,
+    href: "https://11-11.in/",
+  },
+  {
+    src: "/assets/clients/bellavita.svg",
+    alt: "bellavita logo",
+    width: 166,
+    height: 24,
+    href: "https://bellavitaorganic.com/",
+  },
+  {
+    src: "/assets/clients/bombay-shirt-company.svg",
+    alt: "Bombay Shirt Company Logo",
+    width: 204,
+    height: 26,
+    href: "https://www.bombayshirts.com/",
+  },
+  {
+    src: "/assets/clients/popclub_co.svg",
+    alt: "popclub",
+    width: 65,
+    height: 41,
+    href: "https://popclub.co/",
+  },
+  {
+    src: "/assets/clients/sri-sri-tattva.svg",
+    alt: "SriSri Tattva Logo",
+    width: 106,
+    height: 40,
+    href: "https://www.srisritattva.com/",
+  },
+  {
+    src: "/assets/clients/tropicfeel.svg",
+    alt: "tropicfeel logo",
+    width: 150,
+    height: 32,
+    href: "https://shop.tropicfeel.com/",
+  },
+  {
+    src: "/assets/clients/renee.svg",
+    alt: "Renee logo",
+    width: 93,
+    height: 30,
+    href: "https://www.reneecosmetics.in/",
+  },
+  {
+    src: "/assets/clients/royce-chocolate.svg",
+    alt: "Royce chocolate logo",
+    width: 132,
+    height: 38,
+    href: "https://royceindia.com/",
+  },
+  {
+    src: "/assets/clients/tego.svg",
+    alt: "tego logo",
+    width: 101,
+    height: 40,
+    href: "https://tego.fit/",
+  },
+  {
+    src: "/assets/clients/nekter-colored.svg",
+    alt: "nekter-colored",
+    width: 66,
+    height: 64,
+    href: "https://www.nekterjuicebar.com/",
+  },
+  {
+    src: "/assets/clients/rare-rabbit.svg",
+    alt: "Rare Rabbit Logo",
+    width: 122,
+    height: 84,
+    href: "https://thehouseofrare.com/",
+  },
+] as const;
+
+export const shopifyPlusAgencyBrandTrustHeading = "Trusted by <br>Leading Brands";
+
+export const shopifyPlusAgencyFaqHeading = "Frequently Asked Questions";
 
 export type ReviewPlatform = {
   name: string;
@@ -127,67 +218,105 @@ export const shopifyPlusAgencyServices = {
     "Dynamic Dreamz provides end-to-end Shopify Plus development for brands that need scalable storefronts, complex integrations, migration support and ongoing technical capacity. The service content remains detailed so enterprise buyers can understand exactly where our Shopify Plus team can support them.",
   items: [
     {
-      icon: "/assets/services/shopify-development-in-bangalore/services/shopify-plus-store-development.svg",
-
-      iconAlt: "shopify plus icon",
+      tag: "Core Capability",
       title: "Shopify Plus Store Setup",
       description:
         "Launch a scalable Shopify Plus store with custom storefront development, checkout extensibility, integrations, automation and performance optimization built for long-term growth.",
+      pills: [
+        "Online Store 2.0",
+        "PDP / PLP",
+        "Custom Sections",
+        "Metafields",
+        "Responsive QA",
+      ],
+      cta: {
+        label: "Discuss a custom build",
+        href: "/request-quote",
+      },
     },
     {
-      icon: "/assets/services/shopify-development-in-bangalore/services/figma-xd-to-shopify-conversion.svg",
-
-      iconAlt: "Shopify Plus consulting icon",
+      tag: "Consulting",
       title: "Shopify Plus Consulting Service",
       description:
         "Get expert Shopify Plus consulting for platform architecture, B2B, Markets, Shopify Functions, integrations, migrations and optimization before committing to development.",
+      cta: {
+        label: "Book a Consultation",
+        href: "/book-a-discovery-call",
+      },
     },
     {
-      icon: "/assets/services/shopify-development-in-bangalore/services/seamless-shopify-migration.svg",
-
-      iconAlt: "Migration Icon",
+      tag: "Replatforming",
       title: "Shopify Plus Migration Service",
       description:
         "Migrate to Shopify Plus from Magento, WooCommerce, BigCommerce or custom platforms with secure data migration, 301 redirects, SEO preservation and integration planning.",
+      cta: {
+        label: "Explore migration",
+        href: "/shopify-migration",
+      },
     },
     {
-      icon: "/assets/services/shopify-development-in-bangalore/services/shopify-app-integration-customization.svg",
-
-      iconAlt: "theme customization icon",
-      title: "Shopify Plus Mobile App Development.",
+      tag: "Connected Commerce",
+      title: "Shopify App Integration Service & Custom Functionality",
+      description:
+        "Connect subscriptions, reviews, search, loyalty, payments, fulfillment, ERP, CRM and operational tools — or build custom functionality when standard apps do not fit the requirement.",
+      pills: [
+        "Apps",
+        "APIs",
+        "ERP / CRM",
+        "Automation",
+        "Custom Logic",
+      ],
+      cta: null,
+    },
+    {
+      tag: "Agency Delivery",
+      title: "Shopify Plus Mobile App Development",
       description:
         "Build high-performance iOS and Android shopping apps integrated with Shopify Plus, including real-time products, customer accounts, checkout, push notifications and loyalty features.",
+      cta: {
+        label: "Explore Shopify Mobile Apps",
+        href: "/shopify-mobile-app-development",
+      },
     },
     {
-      icon: "/assets/services/shopify-development-in-bangalore/services/shopify-plus-store-development.svg",
-
-      iconAlt: "custom theme icon",
+      tag: "Commerce B2B",
       title: "Shopify Plus B2B & Wholesale Development",
       description:
         "Build Shopify Plus B2B and wholesale experiences with company accounts, custom catalogs, price lists, payment terms, buyer permissions and ERP or CRM integrations.",
+      cta: {
+        label: "Explore B2B Solutions",
+        href: "/request-quote",
+      },
     },
     {
-      icon: "/assets/services/shopify-development-in-bangalore/services/custom-shopify-theme-design-customization.svg",
-
-      iconAlt: "White Label icon",
+      tag: "Theme Development",
       title: "Shopify Plus Custom Theme Development Service",
       description:
         "Develop a custom Shopify Plus theme from Figma with flexible sections, tailored PDP and PLP experiences, responsive interactions and performance-focused development.",
+      cta: {
+        label: "Explore Custom Themes",
+        href: "/request-quote",
+      },
     },
     {
-      icon: "/assets/services/shopify-development-in-bangalore/services/white-label-shopify-development.svg",
-
-      iconAlt: "maintenance icon",
+      tag: "Agency Delivery",
       title: "Shopify Plus White Label Service",
       description:
         "Partner with Dynamic Dreamz for white-label Shopify Plus development, migrations, custom integrations, B2B solutions, QA and ongoing technical support for your agency clients.",
+      cta: {
+        label: "Explore white-label Shopify",
+        href: "/white-label-shopify-development-services",
+      },
     },
     {
-      icon: "/assets/services/shopify-development-in-bangalore/services/shopify-store-maintenance-support.svg",
-      iconAlt: "maintenance icon",
+      tag: "Keep Evolving",
       title: "Shopify Plus Maintenance Service",
       description:
         "Keep your Shopify Plus store evolving with ongoing development, bug fixes, CRO implementation, performance improvements, app changes, integrations and dedicated technical support.",
+      cta: {
+        label: "View flexible Shopify hours",
+        href: "/buy-shopify-development-hours",
+      },
     },
   ],
 } as const;

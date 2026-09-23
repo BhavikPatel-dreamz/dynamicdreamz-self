@@ -37,7 +37,7 @@ export const wordpressDevelopmentServices = {
         "Our expert WordPress developers can customize popular WordPress themes such as Gutenberg, Elementer, Divi Builder, Flatsome UX Builder, etc., to cater to your diverse business requirements. Boost your online presence with our custom WordPress website service. We create unique sites tailored to your brand. Our team ensures your website is easy to use and looks great. Let us help you shine online with our simple, effective solutions.",
     },
     {
-      icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+      icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
       iconAlt: "theme customization icon",
       title: "WordPress Custom Theme Development Service",
       description:

@@ -43,7 +43,7 @@ export const quoteFormCopy = {
   placeholders: {
     name: "Enter Your Name",
     email: "Enter Your Email",
-    phone: "Enter Your Phone Number",
+    phone: "",
     company: "Enter Your Company Name",
     website: "Enter Your Website Url",
     budget: "Select your budget",

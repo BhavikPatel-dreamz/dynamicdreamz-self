@@ -1,434 +1,426 @@
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-
-export type ShopifyExpertsStat = {
-  value: string;
-  label: string;
-};
-
-export type ShopifyExpertsCard = {
-  title: string;
-  description: string;
-  icon: string;
-  iconAlt: string;
-};
-
-export type ShopifyExpertsAutomationItem = {
-  title: string;
-  description: string;
-  icon: string;
-  alt: string;
-  pills: string[];
-};
-
-export type ShopifyExpertsAiDiscoveryItem = {
-  title: string;
-  description: string;
-  icon: string;
-  alt: string;
-};
-
-export type ShopifyExpertsIndustry = {
-  title: string;
-  description: string;
-  image: string;
-  alt: string;
-  href: string;
-};
-
-export type ShopifyExpertsWorkItem = {
-  name: string;
-  href: string;
-  image: string;
-  imageAlt: string;
-  category: string;
-};
+import type { HeroBadge, ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
+import type { OurDevelopmentProcessContent } from "@/components/sections/our-development-process-section";
+import type { WhyChooseMigrationContent } from "@/components/sections/why-choose-shopify-migration-section";
+import type { ShopifyStageServicesContent } from "@/components/sections/shopify-stage-services-section";
+import type { ThemeCustomizationServicesContent } from "@/components/sections/theme-customization-services-section";
+import type { AiEmpoweredDeliveryContent } from "@/components/sections/ai-empowered-delivery-section";
+import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
+import type { PortfolioShowcaseItem } from "@/components/sections/portfolio-showcase-section";
 
 export const shopifyExpertsContent = {
   hero: {
-    title: "Hire Shopify Experts for Rapid growth of your brand",
-    description:
-      "Want to create a stunning Shopify store or determined to take your Shopify store to the next level?",
-    secondaryDescription:
-      "Hire our experienced Shopify experts who specialize in creating custom themes, optimizing store performance, and enhancing user experience. Whether you need help with design, development, or marketing, our Shopify professionals can tailor solutions to fit your business needs. Boost sales, improve site functionality, highlight your brand, and stand out in the crowded eCommerce market with the help of skilled Shopify experts.",
-    ctaLabel: "get started today",
+    eyebrowSpans: ["Established in 2006", "Shopify Platinum Partner"] as const,
+    title: "Hire Shopify Experts",
+    paragraphs: [
+      "Hire experienced Shopify experts for store setup, theme customization, custom development, Shopify apps, migrations, CRO and ongoing support. Dynamic Dreamz combines certified Shopify expertise with an in-house ecommerce team, structured QA and modern AI-assisted development workflows.",
+    ],
+    cta: "Hire Shopify Experts",
     ctaHref: "/request-quote",
-    stats: [
-      { value: "50+", label: "Agile enabled Shopify Developers" },
-      { value: "5000+", label: "Completed Projects" },
-      { value: "20+", label: "Years of Experience" },
-      { value: "1000+", label: "Happy & Satisfied Clients" },
-      { value: "1000+", label: "Shopify Developments" },
-    ] as ShopifyExpertsStat[],
-  },
+    secondaryCta: {
+      label: "View Pricing",
+      href: "#our_white_label_pricing",
+    },
+    video: "/assets/home/why-dynamic-dreamz.mp4",
+    badges: [
+      {
+        name: "Shopify Platinum Partner",
+        src: "/assets/proof/shopify-platinum-partner.svg",
+        href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+        alt: "Dynamic Dreamz - Shopify Platinum Partner",
+        width: 136,
+        height: 44,
+      },
+      {
+        name: "Clutch",
+        src: "/assets/proof/clutch-rating.svg",
+        href: "https://clutch.co/profile/dynamic-dreamz",
+        alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+        width: 111,
+        height: 44,
+      },
+      {
+        name: "Trustpilot",
+        src: "/assets/proof/trustpilot-rating.svg",
+        href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+        alt: "Dynamic Dreamz on Trustpilot — 4.9 rating",
+        width: 124,
+        height: 44,
+      },
+      {
+        name: "Upwork",
+        src: "/assets/proof/upwork-top-rated-plus.svg",
+        href: "https://www.upwork.com/ag/dynamicdreamz/",
+        alt: "Dynamic Dreamz — Top Rated Plus on Upwork",
+        width: 134,
+        height: 44,
+      },
+    ] as readonly HeroBadge[],
+  } satisfies ServiceHeroVideoContent,
 
   brands: {
-    heading: "Trusted by Leading Brands",
+    heading: "Trusted by<br>Leading Brands",
     ariaLabel: "Brands that trust Dynamic Dreamz for Shopify development",
     slug: "shopify-experts",
   },
 
   process: {
-    heading: "Hassle free Hiring Process to Get Started",
+    eyebrow: "Simple Shopify Hiring",
+    heading: "Hassle-Free Hiring Process to Get Started",
     description:
-      "Hiring Shopify experts at Dynamic Dreamz is like smooth sailing. We offer competitive pricing to hire with a convenient pricing model.",
-    items: [
+      "Hire Shopify expertise without a lengthy recruitment cycle. Share your requirement, review the recommended fit and start with the engagement model that works for you.",
+    steps: [
       {
-        title: "Share Requirements",
+        step: "Step 01",
+        title: "Share Your Requirements",
         description:
-          "Post your project requirements. Let us know the outcome you want from your project.",
-        icon: "/assets/hire-wordpress-developers/icons/share-requirements.svg",
-        iconAlt: "Share Requirements Icon",
+          "Send your store URL, task, design, backlog or project brief and tell us what you want to achieve.",
       },
       {
-        title: "Expert Talent Selection",
+        step: "Step 02",
+        title: "We Select the Right Expert",
         description:
-          "We scrutinize your requirements and shortlist Shopify experts profiles best fit for your project.",
-        icon: "/assets/hire-wordpress-developers/icons/expert-talent-selection.svg",
-        iconAlt: "Expert Talent Selection Icon",
+          "We assess the work and recommend the Shopify developer or team best matched to the requirement.",
       },
       {
-        title: "Select the Expert",
+        step: "Step 03",
+        title: "Review & Approve",
         description:
-          "Select the best talent that matches your requirements from the shortlisted talents.",
-        icon: "/assets/hire-wordpress-developers/icons/matching-business-talent.svg",
-        iconAlt: "Matching Business Talent Icon",
+          "Review the proposed expertise, clarify the scope and confirm the engagement model you prefer.",
       },
       {
-        title: "Project Initiation",
+        step: "Step 04",
+        title: "Start the Work",
         description:
-          "Get engaged with the selected Shopify expert and you can kickstart your project!",
-        icon: "/assets/hire-wordpress-developers/icons/project-kickstart.svg",
-        iconAlt: "Project Kickstart Phase Icon",
+          "Share the required access, align priorities and move into development with a clear communication process.",
       },
     ],
-  },
+  } satisfies OurDevelopmentProcessContent,
 
-  hiringChoice: {
-    heading:
-      "What makes Dynamic Dreamz an excellent choice to hire for your Shopify Development?",
+  whyChoose: {
+    eyebrow: "Why Dynamic Dreamz",
+    heading: "Why Hire Shopify Experts from Dynamic Dreamz?",
     description:
-      "Our Shopify experts are a perfect blend of Shopify technology and eCommerce business knowledge. We can be an effective catalyst for your online business.",
+      "Get Shopify-certified expertise backed by an experienced in-house team and a verifiable Shopify Platinum Partner relationship.",
     items: [
       {
-        title: "Experience says it all",
+        icon: "certified",
+        title: "Certified Shopify Expertise",
         description:
-          "We are a seasoned Shopify development agency with 20+ years of rich experience in Shopify development.",
-        icon: "/assets/hire-shopify-developers/icons/experience.svg",
-        iconAlt: "Experience says it all icon",
+          "Shopify certifications across development, Liquid storefronts and B2B are combined with hands-on ecommerce delivery experience.",
       },
       {
-        title: "Extensive Shopify development in different verticals",
+        icon: "verticals",
+        title: "Experience Across Multiple Verticals",
         description:
-          "We have crafted Shopify stores for Fashion & Apparels, Beauty & Cosmetics, Food & Beverages, Retail, Pet, and others. We have in-depth knowledge of how eCommerce is done in these industries.",
-        icon: "/assets/hire-shopify-developers/icons/industry-experience.svg",
-        iconAlt: "Extensive Shopify development icon",
+          "Experience Across Multiple Verticals\nFashion, beauty, health & nutrition, jewellery, food & beverage, home & living, sports and other product-led categories.",
       },
       {
-        title: "Talented Pool of Shopify Experts",
+        icon: "team",
+        title: "150+ In-House Experts",
         description:
-          "We have a team of dedicated and full time Shopify experts consisting of designers, developers, project managers and QA guys. We hire them after a rigorous selection process to ensure that our clients get the best of the talents.",
-        icon: "/assets/hire-shopify-developers/icons/shopify-team.svg",
-        iconAlt: "Talented Pool of Shopify Experts icon",
+          "Shopify developers can be supported by UI/UX, QA, integrations, mobile and full-stack specialists when the project needs broader expertise.",
       },
-    ] as ShopifyExpertsCard[],
-  },
+    ],
+    partnerLogo: "/assets/proof/shopify-platinum-partner.svg",
+    partnerLogoAlt: "Dynamic Dreamz - Shopify Platinum Partner",
+    partnerHeading: "Shopify Platinum Partner",
+    partnerDescription:
+      "Dynamic Dreamz combines Platinum Partner status with deep Shopify and Shopify Plus delivery experience across brands, ecommerce teams and agency partners.",
+    stats: [
+      { value: "20+", label: "Years of Experience" },
+      { value: "150+", label: "Experts" },
+      { value: "5k+", label: "projects delivered" },
+      { value: "2.5k+", label: "Verified 5 star Reviews" },
+    ],
+    partnerLink: {
+      label: "Verify on Shopify Partner Directory",
+      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+    },
+  } satisfies WhyChooseMigrationContent,
 
-  advantages: {
-    heading: "Advantages of Choosing Dynamic Dreamz as a Shopify Expert",
+  services: {
+    eyebrow: "COMPLETE SHOPIFY CAPABILITY",
+    heading: "Complete Shopify Expertise Under One Roof",
     description:
-      "Get connected with us, and you will witness the difference from day one!",
+      "From front-end storefront work to custom apps, integrations and migrations, our Shopify experts can bring in the right technical depth as your requirement grows.",
     items: [
       {
-        title: "Easy and fair hiring process",
-        description: "We use a hassle free hiring procedure with no hidden fee.",
-        icon: "/assets/hire-shopify-developers/icons/fair-hiring.svg",
-        iconAlt: "Fair hiring process icon",
+        tag: "Front-End Development",
+        title: "Shopify storefronts, themes and customer experience",
+        description:
+          "Liquid, custom themes, sections, templates, metafields, product pages, collections, navigation, responsive implementation and Figma-to-Shopify development.",
+        pills: ["Liquid", "Figma", "PDP", "PLP", "OS 2.0", "Responsive QA"],
       },
       {
-        title: "Save 60% on your development cost",
+        tag: "Back-End & APIs",
+        title: "Shopify Integrations",
         description:
-          "Our agency offers competitive prices. Our pricing standards are flexible and convenient for all kinds of customers.",
-        icon: "/assets/hire-shopify-developers/icons/development-savings.svg",
-        iconAlt: "Development cost savings icon",
+          "Admin API, Storefront API, third-party services, ERP, CRM, 3PL and operational integrations.",
       },
       {
-        title: "Integrity is our core value",
+        tag: "Custom Apps",
+        title: "Shopify App Development",
         description:
-          "We stick to strict data security guidelines to ensure clients' data stays secure and confidential.",
-        icon: "/assets/hire-shopify-developers/icons/integrity.svg",
-        iconAlt: "Data security and integrity icon",
+          "Custom functionality and private/public app requirements when an off-the-shelf app is not the right fit.",
       },
       {
-        title: "We handle your HR needs",
+        tag: "Replatforming & Growth",
+        title: "Migration, CRO, Shopify Plus & B2B",
         description:
-          "We handle paperwork and HR related issues so you may concentrate on your core business.",
-        icon: "/assets/hire-shopify-developers/icons/managed-hr.svg",
-        iconAlt: "Managed HR needs icon",
+          "Platform migrations, SEO-aware launch planning, CRO implementation, performance improvements and higher-complexity Shopify Plus or B2B requirements.",
+        pills: ["Migration", "CRO", "Performance", "Shopify Plus", "B2B"],
       },
       {
-        title: "We work as per your time zone",
+        tag: "Support",
+        title: "Ongoing Development",
         description:
-          "Our Shopify developers can work whenever it suits you or by your time zone.",
-        icon: "/assets/hire-shopify-developers/icons/timezone.svg",
-        iconAlt: "Timezone flexibility icon",
+          "Fixes, enhancements, releases, app changes and long-term Shopify development capacity after launch.",
       },
       {
-        title: "Unmatched post production support",
+        tag: "Mobile App",
+        title: "Shopify Plus Mobile App Development",
         description:
-          "Our work does not stop when the project is finished, we provide you with continuous support.",
-        icon: "/assets/hire-shopify-developers/icons/post-production-support.svg",
-        iconAlt: "Post-production support icon",
+          "Build high-performance iOS and Android shopping apps integrated with Shopify Plus, including real-time products, customer accounts, checkout, push notifications and loyalty features.",
+        cta: {
+          label: "Explore Shopify Mobile Apps",
+          href: "/shopify-mobile-app-development",
+        },
       },
-    ] as ShopifyExpertsCard[],
-    ctaLabel: "inquire now",
-    ctaHref: "/request-quote",
-  },
+    ],
+  } satisfies ShopifyStageServicesContent,
 
-  aiAutomation: {
-    heading:
-      "Shopify Experts Who Build Stores That Think, Automate, and Convert",
+  whyBrandsChoose: {
+    eyebrow: "Why Brands Choose Us",
+    heading: "Why Brands Choose Our Shopify Experts",
     description:
-      "Great Shopify stores aren't just well-built, they're smart. Our experts go beyond design and development to set up the AI tools, automation flows, and customer journeys that keep your store converting and retaining around the clock.",
-    items: [
+      "Flexible hiring, broader technical coverage and reliable delivery make it easier to start small, scale support and keep the same Shopify partner as your store evolves.",
+    boxes: [
       {
-        title: "AI customer support",
+        number: "01",
+        title: "Easy Hiring. No Long-Term Commitment.",
         description:
-          "Resolve tier-1 tickets, answer product questions, and capture leads automatically across live chat, email, and social before a human agent ever needs to step in.",
-        icon: "/assets/white-label-shopify/ai/ai-customer-support.svg",
-        alt: "AI customer support",
-        pills: ["Gorgias", "Tidio", "ChatGPT / OpenAI"],
+          "Start with one task, one project, flexible development hours or dedicated monthly capacity. You choose the level of commitment that fits the current requirement.",
       },
       {
-        title: "Store Workflow Automation",
+        number: "02",
+        title: "Lower Cost Than Expanding In-House",
+        badge: "Up to 50% lower development cost*",
         description:
-          "Automate fulfilment triggers, inventory alerts, order tagging, and post-purchase flows, eliminating manual tasks that slow your operations down.",
-        icon: "/assets/white-label-shopify/ai/store-automation.svg",
-        alt: "Store automation",
-        pills: ["Shopify Flow", "Zapier", "Make"],
+          "Access experienced Shopify capacity without the recruitment, employment and infrastructure overhead of expanding an equivalent in-house team.",
       },
       {
-        title: "AI product content",
+        number: "03",
+        title: "Complete Shopify Development Knowledge",
         description:
-          "Generate compelling, SEO-ready product descriptions, collection copy, and meta content at scale using Shopify's own AI tools and OpenAI integrations.",
-        icon: "/assets/white-label-shopify/ai/ai-product-content.svg",
-        alt: "AI product content",
-        pills: ["Shopify Magic", "Shopify Sidekick", "OpenAI"],
+          "Front-end, Liquid, custom themes, Shopify APIs, custom apps, integrations, migrations, CRO, Shopify Plus and B2B expertise can be supported within one organization.",
       },
       {
-        title: "Smart Email & Retention",
+        number: "04",
+        title: "Post-Launch Shopify Support",
         description:
-          "Behaviour-triggered email flows that recover abandoned carts, re-engage lapsed customers, and build loyalty running on autopilot after setup.",
-        icon: "/assets/white-label-shopify/ai/email-retention.svg",
-        alt: "Email & retention",
-        pills: ["Klaviyo", "Shopify Flow", "Make"],
+          "Continue with the same team for fixes, enhancements, performance work, CRO implementation, app changes and new ecommerce functionality after launch.",
       },
       {
-        title: "Smarter Shopping Experiences",
+        number: "05",
+        title: "Time-Zone Friendly Delivery",
         description:
-          "From personalised product recommendations to AI-powered search and upsell logic, build experiences that guide shoppers confidently toward buying.",
-        icon: "/assets/white-label-shopify/ai/email-retention.svg",
-        alt: "Smarter Shopping Experiences",
-        pills: ["Shopify Sidekick", "OpenAI", "Zapier"],
+          "Our team works with brands and agencies globally and can structure communication, meetings and delivery around agreed project working hours.",
       },
       {
-        title: "Cross-Platform Automation",
+        number: "06",
+        title: "Development + QA + Project Oversight",
         description:
-          "Connect your Shopify store to your CRM, ERP, fulfilment systems, and marketing stack, with no manual data entry, no broken handoffs between tools.",
-        icon: "/assets/white-label-shopify/ai/email-retention.svg",
-        alt: "Cross-Platform Automation",
-        pills: ["Make", "Zapier", "Shopify Flow"],
+          "Important Shopify releases can be supported through project coordination, technical review and device/browser QA rather than relying only on the person writing the code.",
       },
-    ] as ShopifyExpertsAutomationItem[],
-  },
+    ],
+    bottomNote:
+      "*Potential savings depend on geography, role seniority and engagement model when compared with building equivalent in-house capacity.",
+  } satisfies ThemeCustomizationServicesContent,
 
-  aiDiscovery: {
-    heading: "Your Store, Visible Where Tomorrow's Shoppers Are Looking",
+  aiTools: {
+    eyebrow: "AI-Empowered Shopify Delivery",
+    heading: "Shopify experts empowered by modern AI development tools.",
     description:
-      "Search is changing. Customers are asking ChatGPT, Google AI Overviews, and Perplexity for product recommendations and buying through AI agents without visiting a store at all. Our Shopify experts structure your product pages, schema, FAQs, and trust signals so your store is the one AI engines recommend. And through Shopify's Universal Commerce Protocol, we help your store get discovered by the AI shopping agents of the future.",
-    items: [
+      "Our developers use AI-assisted tools such as Claude and Cursor where they can improve code exploration, debugging, documentation, refactoring and repetitive development work. AI helps accelerate the workflow — but architecture, business logic, security, code quality and production releases remain under the control of experienced developers and our QA process.",
+    tools: [
       {
-        title: "Answer Engine Optimisation (AEO)",
-        description:
-          "FAQs, schema, and product data are structured so AI assistants can cite your store directly.",
-        icon: "/assets/white-label-shopify/ai/ai-search-visibility.svg",
-        alt: "Answer Engine Optimisation (AEO)",
+        name: "Claude",
+        description: "Code analysis & development assistance",
       },
       {
-        title: "Generative Engine Optimisation (GEO)",
-        description:
-          "Product and collection pages tuned for ChatGPT, Gemini, and Perplexity recommendations.",
-        icon: "/assets/white-label-shopify/ai/structured-data.svg",
-        alt: "Generative Engine Optimisation (GEO)",
+        name: "Cursor",
+        description: "AI-assisted coding & codebase exploration",
       },
       {
-        title: "Agentic Commerce Readiness",
-        description:
-          "Store architecture aligned with Shopify's Universal Commerce Protocol for AI agent shopping.",
-        icon: "/assets/white-label-shopify/ai/agentic-commerce.svg",
-        alt: "Agentic Commerce Readiness",
+        name: "Human Review",
+        description: "Architecture, security & maintainability",
       },
       {
-        title: "Trust Signal Architecture",
-        description:
-          "Reviews, internal linking, structured data, and product quality signals are built for AI and human trust.",
-        icon: "/assets/white-label-shopify/ai/trust-signals.svg",
-        alt: "Trust Signal Architecture",
+        name: "QA",
+        description: "Device, browser & ecommerce-flow validation",
       },
-    ] as ShopifyExpertsAiDiscoveryItem[],
-  },
-
-  industries: {
-    heading: "Industries that we have Served",
-    description:
-      "Having technical expertise has never been enough to fulfill clients’ requirements. Without domain knowledge, one cannot cater to the requirements and expectations of clients in a specific industry. Dynamic Dreamz with its vast experience in diverse industries has the following verticals to offer.",
-    slides: [
-      {
-        title: "Beauty & Cosmetics",
-        description:
-          "The beauty and cosmetics industry is a dynamic sector encompassing a wide range of products designed to enhance personal appearance and skincare. Here the outcome of the application of beauty products matters the most. We at Dynamic Dreamz, use Shopify eCommerce platform to showcase ‘Before’ and ‘After’ effects of the beauty products.",
-        image: "/assets/shopify-plus-agency/industries/beauty-cosmetics.webp",
-        alt: "Beauty & Cosmetics Industry",
-        href: "/beauty-cosmetics",
-      },
-      {
-        title: "Fashion & Apparel",
-        description:
-          "The fashion industry is dynamic, fast paced, and trend driven, characterized by constant innovation and seasonal changes. Our Shopify and Shopify Plus based holistic IT solutions enable you to offer your customers the latest fashion clothing with hassle free configuration of your online store.",
-        image: "/assets/shopify-plus-agency/industries/fashion-apparel.webp",
-        alt: "Fashion & Apparel Industry",
-        href: "/fashion",
-      },
-      {
-        title: "Health & Nutrition",
-        description:
-          "Health & nutrition industry requires precise product display with accurate information readily available on their website for the customers. We at Dynamic Dreamz leverage the latest eCommerce technology to make product and its medicinal information easily accessible.",
-        image: "/assets/shopify-plus-agency/industries/health-nutrition.webp",
-        alt: "Health & Nutrition Industry",
-        href: "/healthcare",
-      },
-      {
-        title: "Food & Beverages",
-        description:
-          "Food and beverages industry is one of the most dynamic industries in the world. Dynamic Dreamz’ innovative IT solutions help you in overcoming the challenges faced in today's fast paced and competitive market.",
-        image: "/assets/shopify-plus-agency/industries/food-beverages.webp",
-        alt: "Food & Beverages Industry",
-        href: "/food-beverages",
-      },
-      {
-        title: "Pet Industry",
-        description:
-          "The Pet Industry is a niche market. The businesses have to adopt different strategies from pet to pet to target their customers because each pet has different needs and food habits. Dynamic Dreamz has an encompassing experience of serving 15+ pet industry clients.",
-        image: "/assets/shopify-plus-agency/industries/pet-industry.webp",
-        alt: "Pet Industry",
-        href: "/pet-industry",
-      },
-    ] as ShopifyExpertsIndustry[],
-  },
+    ],
+    callout:
+      "Modern tools help our developers move faster. Human Shopify expertise remains responsible for the final solution.",
+  } satisfies AiEmpoweredDeliveryContent,
 
   work: {
-    heading: "The Shopify Stores That Reflect Our Success",
+    eyebrow: "Portfolio",
+    heading: "Explore Our Shopify Work",
     description:
-      "We are sure you would like to listen to what our enraptured clients have responded to our Shopify development.",
+      "See real Shopify storefronts across different industries, customer journeys and levels of customization.",
+    ctaLabel: "Explore More Shopify Work",
+    ctaHref: "/our-work",
+    secondaryCtaLabel: "View Pricing",
+    secondaryCtaHref: "#our_white_label_pricing",
     items: [
       {
         name: "Nufyx",
         href: "https://nufyx.com/",
         image: "/assets/healthcare/portfolio/nufyx-protein-products.webp",
-        imageAlt: "Nufyx Shopify Store",
-        category: "shopify",
+        imageAlt: "Nufyx Image",
+        category: "SHOPIFY",
       },
       {
-        name: "nekter juice bar",
+        name: "Nekter Juice Bar",
         href: "https://www.nekterjuicebar.com/",
         image: "/assets/food-beverages/portfolio/nekter-juice-bar.webp",
         imageAlt: "Nekter Juice Bar Image",
-        category: "shopify",
+        category: "SHOPIFY",
       },
       {
         name: "Pagerie",
         href: "https://www.pagerie.com/",
         image: "/assets/pet-industry/portfolio/pagerie-dog-accessories.webp",
         imageAlt: "Pagerie Image",
-        category: "shopify",
+        category: "SHOPIFY",
       },
       {
-        name: "Luxxi nails",
+        name: "Luxxi Nails",
         href: "https://luxxinails.com/",
         image: "/assets/beauty-cosmetics/portfolio/luxxi-nails.webp",
         imageAlt: "Luxxi Nails Image",
-        category: "shopify",
+        category: "SHOPIFY",
       },
       {
         name: "Eco Soul",
         href: "https://www.ecosoulhome.com/",
         image: "/assets/our-work/projects/eco-soul.webp",
         imageAlt: "Eco Soul Image",
-        category: "shopify",
+        category: "SHOPIFY",
       },
       {
-        name: "AdHOC Atler",
+        name: "AdHOC Atelier",
         href: "https://adhocatelier.it/",
         image: "/assets/hire-shopify-developers/portfolio/adhoc-atler.webp",
-        imageAlt: "AdHOC Atler Image",
-        category: "shopify",
+        imageAlt: "AdHOC Atelier Image",
+        category: "SHOPIFY",
       },
-    ] as ShopifyExpertsWorkItem[],
+      {
+        name: "Bombay Shirt Company",
+        href: "https://bombayshirts.com/",
+        image: "/assets/our-work/projects/bombay-shirt-company-model.webp",
+        imageAlt: "Bombay Shirt Company Image",
+        category: "SHOPIFY",
+      },
+      {
+        name: "Holy Plantz",
+        href: "https://holyplantz.com/",
+        image: "/assets/our-work/projects/holy-plantz.webp",
+        imageAlt: "Holy Plantz Image",
+        category: "SHOPIFY",
+      },
+    ] as readonly PortfolioShowcaseItem[],
   },
+
+  pricing: {
+    eyebrow: "Flexible Shopify Engagements",
+    heading: "Choose the Right Shopify Expert Engagement",
+    description:
+      "Use the same flexible engagement model available across our Shopify services — from one defined project to ongoing development capacity.",
+    items: [
+      {
+        label: "Project-Based",
+        badge: "Have One Shopify Project?",
+        price: "Custom Quote",
+        description:
+          "For Shopify builds, redesigns, migrations, custom functionality, integrations and other clearly defined requirements.",
+        ctaLabel: "Send Brief — Get a Quote",
+        ctaHref: "/request-quote",
+      },
+      {
+        label: "Flexible Hourly Support",
+        badge: "Need Extra Shopify Capacity?",
+        price: "From $25/hour",
+        description:
+          "For maintenance, enhancements, troubleshooting, CRO implementation and changing Shopify development priorities.",
+        ctaLabel: "Buy Shopify Development Hours",
+        ctaHref: "/buy-shopify-development-hours",
+      },
+      {
+        label: "Dedicated Developer / Team",
+        badge: "Need Ongoing Capacity?",
+        price: "From $2,000/month",
+        description:
+          "For brands or agencies with a steady Shopify roadmap, recurring releases or a need for consistent development continuity.",
+        ctaLabel: "Discuss Dedicated Capacity",
+        ctaHref: "/hire-shopify-developers",
+      },
+    ],
+  } satisfies PricingEngagementContent,
 
   testimonials: {
-    heading: "Our Customer's Testimonials",
+    eyebrow: "Client Stories",
+    heading: "Don't Just Take Our Word For It",
     description:
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve.",
+      "Hear from clients who have worked with Dynamic Dreamz across Shopify, ecommerce and long-term development engagements.",
   },
 
-  faqs: [
-    {
-      question:
-        "What's the difference between hiring a Shopify expert and a Shopify developer?",
-      answer:
-        "A Shopify developer handles the technical build, code, integrations, and functionality. A Shopify expert brings both technical depth and ecommerce strategy. They understand what converts, how to structure a store for growth, and how to connect design decisions to business outcomes. At Dynamic Dreamz, our experts do both: build and advise.",
-    },
-    {
-      question:
-        "How long does it take to build a Shopify store from scratch?",
-      answer:
-        "Timelines depend on scope. A basic Shopify store with a pre-built theme takes 3–5 business days. A custom-designed Shopify store takes 2–3 weeks. A Shopify Plus store with custom checkout, B2B features, or third-party integrations typically takes 4–6 weeks. We share a detailed project timeline at kickoff so there are no surprises.",
-    },
-    {
-      question:
-        "Can your Shopify experts set up AI and automation for my store?",
-      answer:
-        "Yes, this is part of what makes our experts different. We implement AI-powered customer support (Gorgias, Tidio), smart email and retention flows (Klaviyo), workflow automation (Shopify Flow, Make, Zapier), and AI product content generation (Shopify Magic, OpenAI). You get a store that works harder after launch, not just a well-built one at delivery.",
-    },
-    {
-      question:
-        "Can you help my Shopify store appear in ChatGPT, Google AI Overviews, and Perplexity?",
-      answer:
-        "Yes, we optimise Shopify stores for AI search visibility through AEO (Answer Engine Optimisation) and GEO (Generative Engine Optimisation). This involves structuring product pages, FAQs, schema markup, internal linking, and trust signals so AI engines like ChatGPT, Gemini, and Perplexity can understand, trust, and recommend your store. Most Shopify agencies don't offer this yet — we do.",
-    },
-    {
-      question:
-        "How do I know the quality will be good before I commit to a full project?",
-      answer:
-        "Most clients start with a small scope, a single page, a theme fix, or a feature build before moving to a full store project. We're happy to start small. You can also browse our portfolio (50+ Shopify projects across fashion, beauty, health, and more) or check our reviews 5.0 across Clutch, Upwork, and GoodFirms, with 2,000+ Upwork reviews alone.",
-    },
-    {
-      question:
-        "Why hire Dynamic Dreamz over a freelancer or another Shopify agency?",
-      answer:
-        "Three things set us apart: depth (20+ years, 5,000+ projects, 50+ Shopify developers on one team), breadth (design, development, migration, apps, AI, and automation all in-house), and price (up to 60% more cost-effective than equivalent US or UK agencies, with no compromise on quality or communication). We also work across your time zone, not just IST hours.",
-    },
-    {
-      question:
-        "What happens after my Shopify store goes live? Do you offer ongoing support?",
-      answer:
-        "Yes, we offer post-launch support covering bug fixes, performance optimisation, feature additions, app integrations, and ongoing AI or automation setup. You can retain us on an hourly basis for ad-hoc work or on a monthly retainer for continuous improvements. Launching is the beginning, not the end, of our engagement.",
-    },
-  ] as readonly FaqAccordionItem[],
-
-  ctaBanner: {
-    heading: "Want us to help you with your online store?",
-    ctaLabel: "REQUEST A QUOTE",
-    ctaHref: "/request-quote",
+  faqs: {
+    eyebrow: "Shopify Expert FAQ",
+    heading: "Questions Buyers Ask Before Hiring Shopify Experts",
+    items: [
+      {
+        question: "Why should I hire Shopify experts from Dynamic Dreamz?",
+        answer:
+          "Dynamic Dreamz is a Shopify Platinum Partner with Shopify-certified expertise, 20+ years of ecommerce delivery, an in-house cross-functional team and structured QA. That gives merchants access to the right Shopify skills without relying on one person for every requirement.",
+      },
+      {
+        question: "What can your Shopify experts help with?",
+        answer:
+          "Our Shopify experts can help with store setup and redesign, Figma-to-Shopify development, theme customization, Liquid development, custom functionality, Shopify apps, APIs and integrations, CRO, performance improvements, migrations, Shopify Plus, B2B and ongoing support.",
+      },
+      {
+        question: "How does the Shopify expert hiring process work?",
+        answer:
+          "Share your store URL, business goal, design or backlog. We review the requirement, identify the expertise needed, recommend the right Shopify profile or team, and then start with the agreed project, hourly or dedicated engagement.",
+      },
+      {
+        question: "How much does it cost to hire Shopify experts?",
+        answer:
+          "Pricing depends on the scope and engagement model. Defined projects are quoted after reviewing requirements. Flexible Shopify development support is available from $25 per hour through development-hour packages, and dedicated Shopify developer or team options start from $2,000 per month.",
+      },
+      {
+        question: "Can I hire a Shopify expert for a small task?",
+        answer:
+          "Yes. You can start with a clearly defined task such as a theme change, PDP improvement, bug fix, integration or storefront enhancement before moving into a larger project or ongoing engagement.",
+      },
+      {
+        question: "Do your Shopify experts use AI tools such as Claude and Cursor?",
+        answer:
+          "Yes. Our team uses AI-assisted development tools such as Claude and Cursor where appropriate for code exploration, debugging, documentation, refactoring and repetitive development work. Architecture, implementation decisions, security, code quality and QA remain developer-controlled.",
+      },
+      {
+        question: "Are your Shopify experts certified?",
+        answer:
+          "Dynamic Dreamz is a Shopify Platinum Partner and has team members with documented Shopify certifications across development fundamentals, Liquid storefronts and Shopify B2B. We match the relevant expertise to the project rather than treating one certification as proof of every Shopify skill.",
+      },
+      {
+        question: "Do you provide post-launch and ongoing Shopify support?",
+        answer:
+          "Yes. We support live Shopify stores with bug fixes, theme updates, new features, CRO implementation, performance work, app and integration changes and recurring development through flexible hours or dedicated monthly capacity.",
+      },
+    ] as readonly FaqAccordionItem[],
   },
 } as const;

@@ -65,7 +65,9 @@ export function ShopifyMobileAppDevelopmentPage() {
         idPrefix="shopify-mobile-app-faq"
         eyebrow={shopifyMobileAppFaqCopy.eyebrow}
         heading={shopifyMobileAppFaqCopy.heading}
+        headingBrClassName="max-[991px]:hidden"
         items={shopifyMobileAppDevelopmentFaqs}
+        answerClassName="!text-base !leading-[28px] max-[1199px]:!text-sm max-[1199px]:!leading-[24px] !font-medium !text-[#535353]"
       />
 
       {/* 10. CTA Banner */}

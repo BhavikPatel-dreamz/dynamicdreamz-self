@@ -220,7 +220,7 @@ export const shopifyDevelopmentMiamiContent = {
         title: "Shopify Theme Customization",
         description:
           "Miami has its own energy, and your store should too. Our designers craft visually stunning, high-converting Shopify themes that capture your brand’s identity and speak directly to your audience. Whether we’re customizing an existing theme or building a completely bespoke design from scratch, every detail is purposeful, and every pixel is built to convert.",
-        icon: "/assets/services/wordpress/wordpress-custom-theme-development.svg",
+        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
         iconAlt: "theme customization icon",
         href: "/shopify-theme-customization",
       },

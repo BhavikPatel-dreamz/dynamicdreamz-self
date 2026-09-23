@@ -64,3 +64,9 @@ export const notFoundCopy = {
   homeCta: "Back to home",
   contactCta: "Contact us",
 } as const;
+
+export const draftPreviewCopy = {
+  badge: "Draft Preview",
+  exit: "Exit",
+  separator: "•",
+} as const;

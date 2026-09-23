@@ -67,7 +67,7 @@ export function MigrationChecklistSection({
                             aria-hidden="true"
                             className="absolute top-[3px] left-0 size-[22px] object-contain"
                             height={22}
-                            src="/assets/icons/bullets-icon.svg"
+                            src="/assets/icons/gradient-check.svg"
                             width={22}
                           />
                           {bullet.label && (
