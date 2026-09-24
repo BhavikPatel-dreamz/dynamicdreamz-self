@@ -11,6 +11,7 @@ export type SplitFaqSectionProps = {
   items: readonly FaqAccordionItem[];
   idPrefix: string;
   heading?: string;
+  headingClassName?: string;
   headingBrClassName?: string;
   description?: string;
   eyebrow?: string;
@@ -40,6 +41,7 @@ export function SplitFaqSection({
   items,
   idPrefix,
   heading = sharedUiCopy.faq.heading,
+  headingClassName,
   headingBrClassName,
   description,
   eyebrow,
@@ -74,7 +76,10 @@ export function SplitFaqSection({
                 </Eyebrow>
               ) : null}
               <h2
-                className="mb-[10px] font-display text-[35px] leading-[1.4] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
+                className={cn(
+                  "mb-[10px] font-display text-[35px] leading-[1.4] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]",
+                  headingClassName,
+                )}
                 id={titleId}
               >
                 {formatBrText(heading, headingBrClassName ?? "max-[1199px]:hidden")}

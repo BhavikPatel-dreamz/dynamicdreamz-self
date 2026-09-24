@@ -2086,3 +2086,15 @@ Primary SEO intent: Upgrade to Shopify Plus, Shopify Plus upgrade agency, enterp
 | Section Heading | Why Upgrading to Shopify Plus | Why Upgrade to Shopify Plus | Improves grammatical phrasing while preserving original search intent | Low | suggested |
 | Exclusive Tools Card 1 | Run up to 9 stores with local currencies, languages, content. | Operate up to 9 expansion stores with localized currencies, international checkout, and regional pricing. | Enhances technical clarity for enterprise global merchants | Low | suggested |
 | FAQ 4 Grammar | ...platforms like Magento,WooCommerce, or BigCommerce... | ...platforms like Magento, WooCommerce, or BigCommerce... | Adds missing space after comma in live copy | Medium | suggested |
+
+## Horizon Theme Customization (`/horizon-theme-customization`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-09-24
+Primary SEO intent: Shopify Horizon theme customization, Horizon theme developers, Shopify theme customization agency.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Hero Description | Like Shopify’s Horizon theme but want it to look and work more like your brand? Dynamic Dreamz customizes Horizon around your colors, typography, products, content, customer journey and required functionality—without rebuilding everything from scratch. | Discover bespoke Shopify Horizon theme development tailored to your brand identity, nested theme blocks, speed optimization, and seamless app integrations. | More concise, professional B2B phrasing highlighting core architecture benefits | Low | suggested |
+| Why Choose Item 4 | We research and nearly understand your objectives and give solutions that fulfill your business requirements. | We thoroughly research and understand your objectives to deliver solutions that fulfill your business requirements. | Fixes awkward phrasing ("nearly understand") in live copy | Medium | suggested |
+

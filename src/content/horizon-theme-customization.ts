@@ -1,5 +1,8 @@
+import { industryBrandLogos } from "@/content/industries";
+
 export const horizonThemeCustomizationContent = {
   hero: {
+    eyebrow: ["Shopify Platinum Partner", "Theme Customization"] as const,
     title: "Horizon Theme Customization Service",
     description:
       "Like Shopify’s Horizon theme but want it to look and work more like your brand? Dynamic Dreamz customizes Horizon around your colors, typography, products, content, customer journey and required functionality—without rebuilding everything from scratch.",
@@ -7,327 +10,269 @@ export const horizonThemeCustomizationContent = {
     ctaHref: "/request-quote",
     secondaryCtaText: "View Horizon on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/horizon/presets/horizon",
+    secondaryCtaTarget: "_blank",
     image: {
       src: "/assets/horizon-theme-customization/hero/horizon-theme-customization-service-img.webp",
-      alt: "Horizon Theme Customization Service Image",
+      alt: "Horizon Theme Customization Service",
       width: 1224,
       height: 948,
     },
   },
   brands: {
-    title: "Trusted by Leading Brands",
-    items: [
-      {
-        name: "Ranavat Logo",
-        src: "/assets/clients/ranavat.svg",
-        href: "https://www.ranavat.com/",
-        alt: "Ranavat Logo",
-        width: 174,
-        height: 19,
-      },
-      {
-        name: "prolash_black",
-        src: "/assets/clients/prolash.svg",
-        href: "https://prolash.com/",
-        alt: "prolash_black",
-        width: 204,
-        height: 22,
-      },
-      {
-        name: "Tropicfeel Logo",
-        src: "/assets/clients/tropicfeel.svg",
-        href: "https://shop.tropicfeel.com/",
-        alt: "Tropicfeel Logo",
-        width: 150,
-        height: 32,
-      },
-      {
-        name: "perfect_locks_color_logo",
-        src: "/assets/clients/perfect-locks.svg",
-        href: "https://www.perfectlocks.com/",
-        alt: "perfect_locks_color_logo",
-        width: 175,
-        height: 32,
-      },
-      {
-        name: "Bombay Shirt Company Logo",
-        src: "/assets/clients/bombay-shirt-company.svg",
-        href: "https://www.bombayshirts.com/",
-        alt: "Bombay Shirt Company Logo",
-        width: 204,
-        height: 26,
-      },
-      {
-        name: "kayfi-colored",
-        src: "/assets/clients/kayfi.svg",
-        href: "https://kayfi.com/",
-        alt: "kayfi-colored",
-        width: 80,
-        height: 28,
-      },
-    ],
+    title: "Trusted by <br>Leading Brands",
+    items: industryBrandLogos,
   },
   features: {
+    eyebrow: "Features",
     title: "Features of Horizon Theme",
-    subtitle:
+    description:
       "Horizon is part of Shopify’s newer theme architecture and combines a clean storefront with nested theme blocks, product-discovery tools and built-in merchandising features. We preserve the useful foundation and customize what your brand actually needs.",
     items: [
-      {
-        title: "Product Filtering and Sorting",
-        description: "Give customers flexible sorting and multi-attribute filters across collections.",
-        icon: "/assets/trade-theme-customization/features/flexible-design-options.svg",
-        iconAlt: "Product Filtering and Sorting Icon",
-      },
-      {
-        title: "Enhanced Search",
-        description: "Predictive search and quick suggestions for seamless product discovery.",
-        icon: "/assets/astra-theme-customization/features/lightning-fast-performance.svg",
-        iconAlt: "Enhanced Search Icon",
-      },
-      {
-        title: "Promo Banners",
-        description: "Highlight seasonal campaigns, sales, and announcements right on the homepage.",
-        icon: "/assets/generatepress-theme-customization/features/customizable-layouts.svg",
-        iconAlt: "Promo Banners Icon",
-      },
-      {
-        title: "Quick View",
-        description: "Allow shoppers to preview product details and add to cart without leaving the page.",
-        icon: "/assets/impulse-theme-customization/features/product-quick-view.svg",
-        iconAlt: "Quick View Icon",
-      },
-      {
-        title: "Mobile Optimized",
-        description: "Flawless mobile user experience designed for high smartphone conversions.",
-        icon: "/assets/astra-theme-customization/features/fully-responsive.svg",
-        iconAlt: "Mobile Optimized Icon",
-      },
-      {
-        title: "Flexible Cart Experience",
-        description: "Slide-out cart with notes, upsells, and express checkout options.",
-        icon: "/assets/trade-theme-customization/features/advanced-product-filtering.svg",
-        iconAlt: "Flexible Cart Experience Icon",
-      },
-      {
-        title: "Customizable Contact Form",
-        description: "Capture customer inquiries and B2B quote requests with tailored form fields.",
-        icon: "/assets/trade-theme-customization/features/customizable-sections-and-blocks.svg",
-        iconAlt: "Customizable Contact Form Icon",
-      },
-      {
-        title: "Size Chart",
-        description: "Clear fit guidance to reduce product returns and increase buyer confidence.",
-        icon: "/assets/trade-theme-customization/features/robust-navigation-menus.svg",
-        iconAlt: "Size Chart Icon",
-      },
-    ],
+      "Product Filtering and Sorting",
+      "Enhanced Search",
+      "Promo Banners",
+      "Quick View",
+      "Mobile Optimized",
+      "Flexible Cart Experience",
+      "Customizable Contact Form",
+      "Size Chart",
+    ] as const,
   },
   benefits: {
-    title: "Benefits of Horizon Theme Customization",
-    subtitle:
+    eyebrow: "Benefits",
+    heading: "Benefits of Horizon Theme Customization",
+    description:
       "Horizon is part of Shopify’s newer theme architecture and combines a clean storefront with nested theme blocks, product-discovery tools and built-in merchandising features. We preserve the useful foundation and customize what your brand actually needs.",
     items: [
       {
         title: "Nested Theme Blocks",
-        description: "Build more flexible page compositions with Shopify's latest theme-block architecture.",
-        icon: "/assets/trade-theme-customization/reasons/why-choose-icon-1.svg",
-        iconAlt: "Nested Theme Blocks Icon",
+        description:
+          "Build more flexible page compositions with Shopify's latest theme-block architecture.",
+        icon: "/assets/horizon-theme-customization/benefits/nested-theme-blocks.svg",
+        iconAlt: "Nested Theme Blocks",
       },
       {
         title: "Product Discovery",
-        description: "Enhanced search, mega menu, filtering, sorting, infinite scroll and swatch filters.",
-        icon: "/assets/trade-theme-customization/reasons/why-choose-icon-2.svg",
-        iconAlt: "Product Discovery Icon",
+        description:
+          "Enhanced search, mega menu, filtering, sorting, infinite scroll and swatch filters.",
+        icon: "/assets/horizon-theme-customization/benefits/product-discovery.svg",
+        iconAlt: "Product Discovery",
       },
       {
         title: "Product Merchandising",
-        description: "Large product cards, galleries, zoom, video, lookbooks, color swatches and product options.",
-        icon: "/assets/trade-theme-customization/reasons/why-choose-icon-3.svg",
-        iconAlt: "Product Merchandising Icon",
+        description:
+          "Large product cards, galleries, zoom, video, lookbooks, color swatches and product options.",
+        icon: "/assets/horizon-theme-customization/benefits/product-merchandising.svg",
+        iconAlt: "Product Merchandising",
       },
       {
         title: "Conversion Features",
-        description: "Quick buy, quick view, cross-selling, recommended products, stock counters and promo content.",
-        icon: "/assets/trade-theme-customization/reasons/why-choose-icon-4.svg",
-        iconAlt: "Conversion Features Icon",
+        description:
+          "Quick buy, quick view, cross-selling, recommended products, stock counters and promo content.",
+        icon: "/assets/horizon-theme-customization/benefits/conversion-features.svg",
+        iconAlt: "Conversion Features",
       },
       {
         title: "Flexible Cart Experience",
-        description: "Slide-out cart, cart notes, pre-order support, in-store pickup and Sign in with Shop.",
-        icon: "/assets/trade-theme-customization/reasons/why-choose-icon-5.svg",
-        iconAlt: "Flexible Cart Experience Icon",
+        description:
+          "Slide-out cart, cart notes, pre-order support, in-store pickup and Sign in with Shop.",
+        icon: "/assets/horizon-theme-customization/benefits/flexible-cart-experience.svg",
+        iconAlt: "Flexible Cart Experience",
       },
       {
         title: "Modern Brand Styling",
-        description: "Use Horizon's clean visual system as the base for your own colors, typography and content hierarchy.",
-        icon: "/assets/trade-theme-customization/reasons/why-choose-icon-6.svg",
-        iconAlt: "Modern Brand Styling Icon",
+        description:
+          "Use Horizon's clean visual system as the base for your own colors, typography and content hierarchy.",
+        icon: "/assets/horizon-theme-customization/benefits/modern-brand-styling.svg",
+        iconAlt: "Modern Brand Styling",
       },
-    ],
+    ] as const,
   },
   services: {
-    title: "Our Horizon Theme Customization Services",
-    subtitle:
+    eyebrow: "Our Services",
+    heading: "Our Horizon Theme Customization Services",
+    description:
       "From basic visual changes to custom blocks, templates and integrations, we can scale the Horizon customization scope to match your store rather than forcing every project into the same package.",
     items: [
       {
         title: "Horizon Setup & Configuration",
-        description: "Install or configure Horizon, review theme settings, menus, templates, apps and store structure.",
-        icon: "/assets/trade-theme-customization/services/theme-installation-and-setup.svg",
-        iconAlt: "Horizon Setup & Configuration Icon",
+        description:
+          "Install or configure Horizon, review theme settings, menus, templates, apps and store structure.",
+        icon: "/assets/horizon-theme-customization/services/horizon-setup-configuration.svg",
+        iconAlt: "Horizon Setup & Configuration",
       },
       {
         title: "Branding & Visual Customization",
-        description: "Apply your logo, brand colors, typography, imagery and design system so Horizon feels like your store.",
-        icon: "/assets/trade-theme-customization/services/custom-layout-design.svg",
-        iconAlt: "Branding & Visual Customization Icon",
+        description:
+          "Apply your logo, brand colors, typography, imagery and design system so Horizon feels like your store.",
+        icon: "/assets/horizon-theme-customization/services/branding-visual-customization.svg",
+        iconAlt: "Branding & Visual Customization",
       },
       {
         title: "Custom Sections & Theme Blocks",
-        description: "Create or extend reusable sections and nested theme blocks for more flexible merchandising and landing pages.",
-        icon: "/assets/trade-theme-customization/services/feature-integration.svg",
-        iconAlt: "Custom Sections & Theme Blocks Icon",
+        description:
+          "Create or extend reusable sections and nested theme blocks for more flexible merchandising and landing pages.",
+        icon: "/assets/horizon-theme-customization/services/custom-sections-theme-blocks.svg",
+        iconAlt: "Custom Sections & Theme Blocks",
       },
       {
         title: "PDP & Collection Customization",
-        description: "Improve product templates, collection layouts, product cards, swatches, filters, metafields and discovery journeys.",
-        icon: "/assets/trade-theme-customization/services/product-page-optimization.svg",
-        iconAlt: "PDP & Collection Customization Icon",
+        description:
+          "Improve product templates, collection layouts, product cards, swatches, filters, metafields and discovery journeys.",
+        icon: "/assets/horizon-theme-customization/services/pdp-collection-customization.svg",
+        iconAlt: "PDP & Collection Customization",
       },
       {
         title: "Apps, Metafields & Integrations",
-        description: "Integrate app blocks, metafield-driven content and other Shopify functionality needed by your storefront.",
-        icon: "/assets/trade-theme-customization/services/third-party-app-integration.svg",
-        iconAlt: "Apps, Metafields & Integrations Icon",
+        description:
+          "Integrate app blocks, metafield-driven content and other Shopify functionality needed by your storefront.",
+        icon: "/assets/horizon-theme-customization/services/apps-metafields-integrations.svg",
+        iconAlt: "Apps, Metafields & Integrations",
       },
       {
         title: "Performance, QA & Support",
-        description: "Review custom code, responsive behavior and key shopping flows before launch, then continue with ongoing support.",
-        icon: "/assets/trade-theme-customization/services/speed-and-performance-enhancement.svg",
-        iconAlt: "Performance, QA & Support Icon",
+        description:
+          "Review custom code, responsive behavior and key shopping flows before launch, then continue with ongoing support.",
+        icon: "/assets/horizon-theme-customization/services/performance-qa-support.svg",
+        iconAlt: "Performance, QA & Support",
       },
-    ],
+    ] as const,
   },
   whyChoose: {
-    title: "Why Choose Dynamic Dreamz",
-    subtitle:
+    eyebrow: "Why Us",
+    heading: "Why Choose Dynamic Dreamz",
+    description:
       "Here are some key factors why you need to consider Dynamic Dreamz for your Horizon theme customization requirements:",
     items: [
       {
         title: "Expert Team",
-        description: "Our professional Shopify developers and designers know how to build a Shopify store that echoes your brand identity and enhances performance.",
-        icon: "/assets/trade-theme-customization/why-choose/expert-team.svg",
-        iconAlt: "Expert Team Icon",
+        description:
+          "Our professional Shopify developers and designers know how to build a Shopify store that echoes your brand identity and enhances performance.",
       },
       {
         title: "Proven Process",
-        description: "We use a simple process to ensure that every customization is pixel perfect and according to your requirements.",
-        icon: "/assets/trade-theme-customization/why-choose/proven-process.svg",
-        iconAlt: "Proven Process Icon",
+        description:
+          "We use a simple process to ensure that every customization is pixel perfect and according to your requirements.",
       },
       {
         title: "Ongoing Support",
-        description: "We offer support after your store is live if you need any help or new functionality.",
-        icon: "/assets/trade-theme-customization/why-choose/ongoing-support.svg",
-        iconAlt: "Ongoing Support Icon",
+        description:
+          "We offer support after your store is live if you need any help or new functionality.",
       },
       {
         title: "Client Focused Approach",
-        description: "We research and nearly understand your objectives and give solutions that fulfill your business requirements.",
-        icon: "/assets/trade-theme-customization/why-choose/client-focused-approach.svg",
-        iconAlt: "Client Focused Approach Icon",
+        description:
+          "We research and nearly understand your objectives and give solutions that fulfill your business requirements.",
       },
-    ],
+    ] as const,
   },
   portfolio: {
-    title: "Snippets of Horizon Theme Customization Portfolio",
-    subtitle:
+    eyebrow: "Portfolio",
+    heading: "Snippets of Horizon Theme Customization Portfolio",
+    description:
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     items: [
       {
         name: "Bombay Shirt Company",
         category: "Shopify / Shopify Plus",
-        href: "/portfolio",
-        image: "/assets/portfolio/bombay-shirt-company.webp",
-        imageAlt: "Bombay Shirt Company Storefront Mockup",
+        href: "https://www.bombayshirts.com/",
+        image:
+          "/assets/fashion/portfolio/bombay-shirt-company-fashion.webp",
+        imageAlt: "Bombay Shirt Company Image",
       },
       {
         name: "Weardiop",
         category: "Shopify / Shopify Plus",
-        href: "/portfolio",
-        image: "/assets/trade-theme-customization/portfolio/weardiop-img.webp",
-        imageAlt: "Weardiop Storefront Mockup",
+        href: "https://weardiop.com/",
+        image: "/assets/our-work/projects/weardiop.webp",
+        imageAlt: "Weardiop Image",
       },
       {
         name: "Pagerie",
         category: "Shopify / Shopify Plus",
-        href: "/portfolio",
-        image: "/assets/trade-theme-customization/portfolio/pagerie-img.webp",
-        imageAlt: "Pagerie Storefront Mockup",
+        href: "https://www.pagerie.com/",
+        image:
+          "/assets/pet-industry/portfolio/pagerie-dog-accessories.webp",
+        imageAlt: "Pagerie Image",
       },
       {
         name: "Bonbon Lingerie",
         category: "Shopify / Shopify Plus",
-        href: "/portfolio",
-        image: "/assets/trade-theme-customization/portfolio/bonbon-lingerie-img.webp",
-        imageAlt: "Bonbon Lingerie Storefront Mockup",
+        href: "https://bonbonlingerie.com/",
+        image: "/assets/our-work/projects/bonbon-lingerie.webp",
+        imageAlt: "Bonbon Lingerie Image",
       },
       {
         name: "Sims Direct",
         category: "Shopify / Shopify Plus",
-        href: "/portfolio",
-        image: "/assets/trade-theme-customization/portfolio/simdirect-img.webp",
-        imageAlt: "Sims Direct Storefront Mockup",
+        href: "https://simsdirect.com.au/",
+        image: "/assets/our-work/projects/sims-direct.webp",
+        imageAlt: "Sims Direct Image",
       },
       {
         name: "Atolea Jewelry",
         category: "Shopify / Shopify Plus",
-        href: "/portfolio",
-        image: "/assets/trade-theme-customization/portfolio/atolea-jewelry-img.webp",
-        imageAlt: "Atolea Jewelry Storefront Mockup",
+        href: "https://atoleajewelry.com/",
+        image: "/assets/our-work/projects/atolea-jewelry.webp",
+        imageAlt: "Atolea Jewelry Image",
       },
-    ],
+    ] as const,
   },
   faqs: [
     {
       question: "Can you customize the Shopify Horizon theme for my brand?",
-      answer: "Yes. We can customize Horizon around your logo, brand colors, typography, imagery, products, navigation, page layouts and required functionality while keeping the theme as the development foundation.",
+      answer:
+        "Yes. We can customize Horizon around your logo, brand colors, typography, imagery, products, navigation, page layouts and required functionality while keeping the theme as the development foundation.",
     },
     {
       question: "Can you customize Horizon if I have already installed it?",
-      answer: "Yes. We can review your existing Horizon setup, identify what can be changed through theme settings and blocks, and then implement the additional customizations that require theme development.",
+      answer:
+        "Yes. We can review your existing Horizon setup, identify what can be changed through theme settings and blocks, and then implement the additional customizations that require theme development.",
     },
     {
-      question: "Can you create custom sections and theme blocks for Horizon?",
-      answer: "Yes. We build custom Liquid sections, nested theme blocks and configurable settings that give your team more control in the Shopify theme editor.",
+      question: "What can be customized in the Horizon theme?",
+      answer:
+        "We can customize the homepage, header, mega menu, product pages, collection pages, product cards, filters, cart experience, promotional sections, typography, color palettes, theme blocks, metafields, app integrations and responsive layouts.",
     },
     {
-      question: "Can you help migrate our existing store or theme content to Horizon?",
-      answer: "Yes. We can review your current storefront, plan what content, products and features need to carry over, configure Horizon and rebuild custom elements so your store launches smoothly.",
+      question: "Can you create mockups before customizing Horizon?",
+      answer:
+        "Yes. When design changes are required, we can prepare mockups using your actual products, content, imagery, brand colors and typography before the approved design is integrated into the theme.",
     },
     {
-      question: "Will Horizon theme customizations affect our site speed?",
-      answer: "We focus on clean, efficient theme code, sensible asset loading and best practices to help keep your storefront fast while delivering the visual design and functionality your store needs.",
+      question: "Does Horizon support theme blocks?",
+      answer:
+        "Yes. Horizon is part of Shopify’s latest theme architecture and supports theme blocks, including nested blocks, which provide more flexible storefront composition than older theme architectures.",
     },
     {
-      question: "Can you integrate our existing apps and custom functionality into Horizon?",
-      answer: "Yes. We review your app stack, configure app blocks, adjust layout styling so apps feel native to the theme, and replace apps with custom code where that makes sense for performance or design.",
+      question:
+        "Can you add custom functionality beyond Horizon's default settings?",
+      answer:
+        "Yes. If a requirement is not available through the theme editor, we can extend the theme using Liquid, CSS, JavaScript, metafields, app blocks, APIs or relevant Shopify apps depending on the requirement.",
     },
     {
-      question: "How long does a Horizon theme customization project usually take?",
-      answer: "Timing depends on scope. Minor branding and template adjustments can take a couple of weeks, while deeper redesigns, custom blocks, migration work and complex integrations take longer. We provide a clear estimate after reviewing requirements.",
+      question:
+        "Do you use AI-assisted development for Horizon customization?",
+      answer:
+        "Yes. Our developers can use AI-assisted development tools such as Claude and Cursor for code exploration, debugging, refactoring and repetitive development work. Architecture, code quality, maintainability and QA remain developer-controlled.",
     },
     {
-      question: "Do you offer ongoing support after our Horizon theme launches?",
-      answer: "Yes. We provide post-launch support, ongoing development hours, new feature releases, CRO updates and maintenance to keep your store performing well.",
+      question:
+        "Will the store remain responsive after Horizon customization?",
+      answer:
+        "Yes. We test important layouts and interactions across relevant desktop, tablet and mobile breakpoints so the customizations work with the responsive storefront experience.",
     },
     {
-      question: "Will our team still be able to edit pages and content in the theme editor?",
-      answer: "Yes. We build sections and blocks with clear schema settings so non-technical team members can update copy, images, promotions and product placements without touching code.",
+      question:
+        "Will customization affect future Horizon theme updates?",
+      answer:
+        "Customizations made through the theme editor are generally easier to carry forward. Custom code should be reviewed when updating theme versions, so we try to keep development maintainable and isolated where practical.",
     },
     {
-      question: "How do we get started with Horizon theme customization?",
-      answer: "Share your store URL, requirements and design references. We will review your goals, recommend the right customization approach, and provide a scope, timeline and quote for the project.",
+      question:
+        "Do you provide support after the Horizon theme is launched?",
+      answer:
+        "Yes. We can continue with bug fixes, theme updates, new sections, app integrations, CRO improvements and ongoing Shopify development after launch.",
     },
-  ],
+  ] as const,
 };

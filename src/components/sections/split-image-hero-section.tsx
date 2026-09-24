@@ -14,23 +14,33 @@ export type SplitImageHeroImage = {
 };
 
 export type SplitImageHeroContent = {
+  eyebrow?: string | readonly string[];
   title: string;
   description: string;
   secondaryDescription?: string;
   ctaLabel?: string;
   ctaHref?: string;
   ctaAriaLabel?: string;
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
+  secondaryCtaAriaLabel?: string;
+  secondaryCtaTarget?: string;
   image: SplitImageHeroImage;
 };
 
 export type SplitImageHeroTextProps = Pick<
   SplitImageHeroContent,
+  | "eyebrow"
   | "title"
   | "description"
   | "secondaryDescription"
   | "ctaLabel"
   | "ctaHref"
   | "ctaAriaLabel"
+  | "secondaryCtaLabel"
+  | "secondaryCtaHref"
+  | "secondaryCtaAriaLabel"
+  | "secondaryCtaTarget"
 > & {
   className?: string;
   titleClassName?: string;
@@ -40,12 +50,17 @@ export type SplitImageHeroTextProps = Pick<
 };
 
 export function SplitImageHeroText({
+  eyebrow,
   title,
   description,
   secondaryDescription,
   ctaLabel,
   ctaHref = siteConfig.quotePath,
   ctaAriaLabel,
+  secondaryCtaLabel,
+  secondaryCtaHref,
+  secondaryCtaAriaLabel,
+  secondaryCtaTarget,
   className,
   titleClassName,
   descriptionClassName,
@@ -54,6 +69,26 @@ export function SplitImageHeroText({
 }: SplitImageHeroTextProps) {
   return (
     <div className={className}>
+      {eyebrow && (
+        <div className="eyebrow relative mb-4 inline-flex items-center pl-10 text-[14px] font-semibold uppercase leading-[1.2] tracking-normal text-ink before:absolute before:left-0 before:top-[7px] before:h-[2px] before:w-[30px] before:bg-brand-red max-[1199px]:text-[12px] max-[767px]:pl-6 max-[767px]:text-[10px] max-[767px]:before:w-[15px]">
+          {Array.isArray(eyebrow) ? (
+            eyebrow.map((item, index) => (
+              <span
+                className={cn(
+                  "relative inline-flex items-center",
+                  index > 0 &&
+                    "ml-2.5 pl-2.5 after:absolute after:left-[-2px] after:h-[3px] after:w-[3px] after:rounded-full after:bg-[#535353]",
+                )}
+                key={item}
+              >
+                {item}
+              </span>
+            ))
+          ) : (
+            <span>{eyebrow}</span>
+          )}
+        </div>
+      )}
       <h1 className={titleClassName}>{formatBrText(title, breakClassName)}</h1>
       <p className={descriptionClassName}>
         {formatBrText(description, breakClassName)}
@@ -63,7 +98,27 @@ export function SplitImageHeroText({
           {formatBrText(secondaryDescription, breakClassName)}
         </p>
       )}
-      {ctaLabel && (
+      {secondaryCtaLabel && secondaryCtaHref ? (
+        <div className="btn-group flex flex-wrap items-center gap-2.5 pt-2.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:gap-2.5">
+          {ctaLabel && (
+            <ButtonLink
+              aria-label={ctaAriaLabel ?? ctaLabel}
+              href={ctaHref}
+              variant="primary"
+            >
+              {ctaLabel}
+            </ButtonLink>
+          )}
+          <ButtonLink
+            aria-label={secondaryCtaAriaLabel ?? secondaryCtaLabel}
+            href={secondaryCtaHref}
+            target={secondaryCtaTarget}
+            variant="outline"
+          >
+            {secondaryCtaLabel}
+          </ButtonLink>
+        </div>
+      ) : ctaLabel ? (
         <ButtonLink
           aria-label={ctaAriaLabel ?? ctaLabel}
           href={ctaHref}
@@ -71,7 +126,7 @@ export function SplitImageHeroText({
         >
           {ctaLabel}
         </ButtonLink>
-      )}
+      ) : null}
     </div>
   );
 }
@@ -149,6 +204,11 @@ export function SplitImageHeroSection({
               ctaLabel={content.ctaLabel}
               description={content.description}
               descriptionClassName={descriptionClassName}
+              eyebrow={content.eyebrow}
+              secondaryCtaAriaLabel={content.secondaryCtaAriaLabel}
+              secondaryCtaHref={content.secondaryCtaHref}
+              secondaryCtaLabel={content.secondaryCtaLabel}
+              secondaryCtaTarget={content.secondaryCtaTarget}
               secondaryDescription={content.secondaryDescription}
               secondaryDescriptionClassName={secondaryDescriptionClassName}
               title={content.title}

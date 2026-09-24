@@ -2168,8 +2168,8 @@ export const pageSeo = {
       "Shopify theme customization agency",
     ],
     openGraphType: "website",
-    publishedTime: "2025-07-07T12:25:01+00:00",
-    modifiedTime: "2026-09-21T00:00:00+05:30",
+    publishedTime: "2026-09-09T12:49:44+00:00",
+    modifiedTime: "2026-09-10T09:22:49+00:00",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,

@@ -9664,22 +9664,31 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Route-Specific Strategy: `/horizon-theme-customization`
 
-Audit date: 2026-09-21
+Audit date: 2026-09-24
 Auditor: Antigravity Migration Team
-Scope: Next.js migration of Horizon theme customization landing page
+Scope: Next.js remigration of Horizon theme customization landing page to exact live-parity
 Primary search intent: commercial investigation and transactional hiring intent for Shopify merchants seeking expert Horizon theme customization, bespoke Liquid sections, speed optimization, and responsive styling.
 
 Decision stage: platform customization, theme development, store launch, and agency hiring
 
 ### Page role
 
-Dedicated commercial theme service landing page providing specialized customization, responsive optimization, custom Liquid block development, and app integration for Shopify's Horizon theme. Features service hero with optimized asset, 6 comprehensive theme customization services, 4-step agile delivery process, 6 reasons to partner with Dynamic Dreamz, client work showcase, and 6 technical FAQs.
+Dedicated commercial theme service landing page providing specialized customization, responsive optimization, custom Liquid block development, and app integration for Shopify's Horizon theme. Features 8 exact sections matching live site:
+1. Service hero (`theme-customize-hero` with background `#f7f4e9`, double eyebrow, primary CTA to `/request-quote`, secondary CTA to Shopify Theme Store, and bottom-aligned hero graphic).
+2. Trusted by Leading Brands (12 brand logos: Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee Cosmetics, Royce Chocolate, Tego, Nekter, Rare Rabbit).
+3. Features of Horizon Theme (split container with `#fbefd7` beige left block and 8 feature pill boxes on right).
+4. Benefits of Horizon Theme Customization (`city-page-why-choose-dynamic bg-light` with 6 cards in a 3-column grid).
+5. Our Horizon Theme Customization Services (`what-we-provide-sec pb-0` with 6 `services-box` cards in a 2-column grid).
+6. Why Choose Dynamic Dreamz (`how-to-choose-spa-sec` with 4 numbered cards `01`-`04`).
+7. Snippets of Horizon Theme Customization Portfolio (`our-work-sec pt-0` with 6 `ourWorkRefresh` portfolio cards).
+8. Frequently Asked Questions (`faq-sec` with 2-column split layout, sticky left heading, and 10 technical FAQs; no bottom CTA banner, matching live site).
 
 ### Target prompts
 
 - How to customize Shopify Horizon theme?
 - Who are the best Shopify Horizon theme customization experts?
 - Can I add custom Liquid sections to Shopify Horizon theme?
+- Does Shopify Horizon theme support nested theme blocks?
 - How to optimize Shopify Horizon theme for mobile speed and conversions?
 - What are the costs and timeline for customizing a Shopify Horizon theme?
 
@@ -9687,18 +9696,19 @@ Dedicated commercial theme service landing page providing specialized customizat
 
 - 20+ years ecommerce experience and Shopify Platinum Partner credentials.
 - 5,000+ completed projects, 150+ in-house experts, 1,100+ happy clients.
-- 6 targeted service offerings: Custom Design & Layout Modifications, Responsive Mobile Optimization, Custom Liquid & Section Architecture, App & API Integrations, Conversion Rate Optimization (CRO), and Ongoing Support & Maintenance.
-- 6 comprehensive FAQs answering technical Liquid questions, timeline, update compatibility, and pricing.
-- Complete structured data graph: WebPage, Service, FAQPage (6 items), BreadcrumbList, Organization, and WebSite.
-- Clean zero-duplicate asset handling under `public/assets/horizon-theme-customization/hero/`.
+- 6 targeted service offerings: Horizon Setup & Configuration, Branding & Visual Customization, Custom Sections & Theme Blocks, PDP & Collection Customization, Apps, Metafields & Integrations, Performance, QA & Support.
+- 6 key theme benefits: Nested Theme Blocks, Product Discovery, Product Merchandising, Conversion Features, Flexible Cart Experience, Modern Brand Styling.
+- 10 comprehensive FAQs answering technical Liquid questions, theme blocks, AI-assisted development, timeline, update compatibility, and support.
+- Complete structured data graph: WebPage, Service, FAQPage (10 items), BreadcrumbList, Organization, and WebSite.
+- Clean zero-duplicate asset handling: 6 benefit SVGs, 6 service SVGs, and WebP hero graphic under canonical project paths.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route & migration URL | Route required migration | Implemented clean `/horizon-theme-customization` with App Router | Verified with route tests and build |
-| P0 | implemented | Structured data | Missing rich Service and FAQ schema | Emitted complete JSON-LD schema graph matching page facts | Verified in JSON-LD output |
-| P0 | implemented | Asset deduplication | Hero image ingested into buffer, verified SHA-256, optimized WebP | Stored at `public/assets/horizon-theme-customization/hero/horizon-theme-customization-service-img.webp` with 0 duplicate hash groups | Verified with audit script |
+| P0 | implemented | Route & migration URL | Route required exact live parity remigration | Remigrated clean `/horizon-theme-customization` with App Router | Verified with route tests and build |
+| P0 | implemented | Structured data | Missing rich Service and FAQ schema | Emitted complete JSON-LD schema graph matching 10 page FAQs and 6 service items | Verified in JSON-LD output |
+| P0 | implemented | Asset deduplication | Benefit and service SVGs ingested via scratch buffer | Stored under `public/assets/horizon-theme-customization/` with 0 duplicate hash groups | Verified with audit script |
 | P1 | deferred | Content expansion | Case studies specific to Horizon theme builds | Queued for future case study expansion once merchant outcomes are documented | Project owner approval |
 
 ### Suggested answer copy
@@ -9712,7 +9722,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Internal-link and conversion actions
 
-- Primary CTA links directly to `/contact-us`.
+- Primary CTA links directly to `/request-quote`.
+- Secondary CTA links to `https://themes.shopify.com/themes/horizon/presets/horizon`.
 - Included in sitemap and routes via canonical `/horizon-theme-customization`.
 
 ## Route-Specific Strategy: `/appmaker-shopify-mobile-app-development`
