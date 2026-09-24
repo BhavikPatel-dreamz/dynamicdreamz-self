@@ -9043,38 +9043,39 @@ Owner: SEO, content, and development
 
 ## WordPress Development in Bangalore (`/wordpress-development-in-bangalore`)
 
-Status: technical and schema implementation complete; visible copy preserved per live site
-Last reviewed: 2026-09-02
+Status: technical and schema implementation complete; remigrated to exact live site visual parity with 9 city sections
+Last reviewed: 2026-09-24
 Owner: SEO, content, and development
 
 ### Page Role and Buyer Intent
 
-- **Primary role**: Geo-targeted commercial landing page targeting startups, technology firms, enterprises, and digital businesses in Bangalore seeking certified WordPress website development, custom theme design, plugin development, migration, and ongoing maintenance.
+- **Primary role**: Geo-targeted commercial landing page targeting startups, technology firms, enterprises, and digital businesses in Bangalore / Bengaluru seeking certified WordPress website development, custom theme design, plugin development, migration, and ongoing maintenance.
 - **Audience**: Bangalore-based business owners, marketing managers, and technology partners looking for dedicated WordPress developers.
-- **Target queries**: "WordPress development in Bangalore", "WordPress development company in Bangalore", "WordPress agency Bangalore", "hire WordPress developers in Bangalore", "custom WordPress development Bangalore".
+- **Target queries**: "WordPress development in Bangalore", "WordPress development company in Bangalore", "WordPress agency Bangalore", "hire WordPress developers in Bangalore", "custom WordPress development Bangalore", "WordPress development company in Bengaluru".
 
 ### Visible Content and Evidence Available
 
-- H1: "#1 Company For WordPress Development in Bangalore" establishing regional WordPress leadership.
-- Hero social proof: Clutch (132 reviews, 5.0), Upwork (2000+ reviews, 5.0), and GoodFirms (72 reviews, 5.0) verified ratings.
-- Trusted brands slider: 10 brand proof logos (Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Supertails, Eleven Eleven, Bella Vita).
-- Value proposition box: "Why Choose Dynamic Dreamz as Your WordPress Development Company in Bangalore?".
-- 4-step delivery process: Discovery and Planning, Design and Development, Testing and Deployment, Ongoing Support.
-- 6 agency reason cards: Skilled WordPress Developers, Custom Solutions, Focus on User Experience, SEO-Friendly Websites, End-to-End Services, Proven Expertise.
-- 8 portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
-- Verified client video testimonials carousel: Shari Leidich (Max Sweets), Rebekah Wymer (Myla Jane), Thomas Linnrose (Art Copenhagen).
-- 7 interactive FAQs covering WordPress development offerings in Bangalore, agency selection, theme customization, timeline, security, maintenance, and onboarding.
-- Primary conversion CTA banner: "Want us to help you with your online store?" -> "/request-quote".
+- H1: "#1 Company For WordPress Development in Bangalore" with regional pills ("Wordpress Development", "Bangalore / Bengaluru").
+- Hero social proof: 4 partner rating badges (Shopify Platinum Partner, Clutch 4.9 rating, Trustpilot 4.9 rating, Upwork Top Rated Plus).
+- Hero interactive tablet mockup slider: 7 slides (greenfutureenergy, avm, HomepageRevised, liparidesign, ornago, syrene, thehuddlesportsgrill) with top WooCommerce Agency Partner badge and bottom WordPress logo.
+- Trusted brands slider: 10 brand proof logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Simsdirect, Kvaser, Nekter, Circuit City).
+- Value proposition and proof counters (4 stats): 20+ Years of Experience, 150+ Experts, 5,000+ projects delivered, 2500+ Verified 5 star Reviews (`CityPageCounterSection` with eyebrow "Wordpress Development Company in Bengaluru" and heading "Why Choose Dynamic Dreamz as Your WordPress Development Company in Bangalore?").
+- 4-step delivery process: Step 01 Discovery and Planning, Step 02 Design and Development, Step 03 Testing and Deployment, Step 04 Ongoing Support (`OurDevelopmentProcessSection` with eyebrow "How We Work" and heading "Our Development Process").
+- 6 agency reason cards: Skilled WordPress Developers, Custom Solutions, Focus on User Experience, SEO-Friendly Websites, End-to-End Services, Proven Expertise (`CityWhyChooseBoxesSection`, 3 columns, eyebrow "Why Dynamic Dreamz" and heading "Why Partner with Us for <br> WordPress Development in Bangalore?").
+- 8 portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids (`PortfolioShowcaseSection`, 4 columns, `ourWorkRefresh` variant with "View our work" CTA -> `/our-work`).
+- Verified client video testimonials carousel: Shari Leidich, Rebekah Wymer, Thommas Linnrose, Zoe wang, Clinton De Vere, Fernando Arias, Alec Torelli, William Petz, William ST Baker, Kerri Imrie, Brandon (`HappyClientSection`, variant "client-stories").
+- 7 interactive FAQs covering WordPress development offerings in Bangalore, agency selection, theme customization, timeline, security, maintenance, and onboarding (`SplitFaqSection`, heading "Frequently Asked Questions").
+- Primary conversion CTA banner: "Want us to help you with your online store?" and "Request a Quote" button linking to `/request-quote` (`CtaBannerSection`).
 
 ### Structured Gap Analysis
 
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/wordpress-development-in-bangalore` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | 9 sections required matching live visual design | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `TextBoxSection`, `ProcessWaveSection`, `ShopifyReasonsSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | Reused canonical assets across portfolio, client logos, review badges, and reason icons | Reused canonical assets from `public/assets/` with zero duplicates | Verified duplicate hash groups: 0 |
+| P0 | implemented | Route discovery | Route created in App Router | Verify `/wordpress-development-in-bangalore` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
+| P0 | implemented | Component reuse | Full visual parity with live 9 city sections | Implemented exact live sections using `CityPageHeroSection`, `IndustryBrandsSection`, `CityPageCounterSection`, `OurDevelopmentProcessSection`, `CityWhyChooseBoxesSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across desktop, tablet, and mobile |
+| P0 | implemented | Asset deduplication | 100% canonical assets available in codebase | Reused existing canonical assets across hero tablet slider, brand logos, badges, reason icons, and portfolio images; 0 new files ingested | Verified duplicate hash groups: 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, FAQPage, and VideoObject structured data | Generated JSON-LD via `createWordPressDevelopmentInBangalorePageSchema()` | Validated JSON-LD graph |
-| P1 | deferred | Visible copy enhancement | Redundant phrasing in Intro text box | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
+| P1 | deferred | Visible copy enhancement | Minor phrasing redundancy in Counter description and Process description ("As a top wordpress developers bangalore") | Kept exact live text per migration policy; suggestions logged to `docs/page-content-improvements.md` | Live UI preserved |
 
 
 ## WordPress Development in Mumbai (`/wordpress-development-in-mumbai`)

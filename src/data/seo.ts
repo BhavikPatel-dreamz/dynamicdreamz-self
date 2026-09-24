@@ -3347,26 +3347,28 @@ export const pageSeo = {
   },
   wordpressDevelopmentInBangalore: {
     path: "/wordpress-development-in-bangalore",
-    title: "No.1 WordPress Development in Bangalore | Dynamic Dreamz",
+    title:
+      "Wordpress Development Company in Bangalore | Dynamic Dreamz",
     description:
-      "Professional WordPress Development in Bangalore with 18+ Years of Experience. Get custom themes, SEO-ready builds, and ongoing support for your business.",
+      "Wordpress development company in Bangalore offering Custom Wordpress Development, WooCommerce Development, Plugin & Theme Development and ongoing support.",
     socialDescription:
-      "Expert WordPress development company in Bangalore: custom theme development, plugin integration, SEO optimization, and website maintenance.",
+      "Wordpress development services in Bangalore and Bengaluru for custom websites, themes, plugins and ongoing support.",
     keywords: [
       "WordPress development in Bangalore",
       "WordPress development company in Bangalore",
       "WordPress agency Bangalore",
       "hire WordPress developers in Bangalore",
       "custom WordPress development Bangalore",
+      "WordPress development company in Bengaluru",
     ],
     openGraphType: "website",
-    publishedTime: "2025-02-07T06:57:43+00:00",
-    modifiedTime: "2026-09-02T00:00:00+05:30",
+    publishedTime: "2025-02-04T12:20:55+00:00",
+    modifiedTime: "2026-09-04T10:15:56+00:00",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
       height: 630,
-      alt: "WordPress Development in Bangalore | Dynamic Dreamz",
+      alt: "Wordpress Development Company in Bangalore | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",
