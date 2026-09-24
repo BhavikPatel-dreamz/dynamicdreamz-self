@@ -11,6 +11,8 @@ type WhiteLabelProcessSectionProps = {
   steps?: readonly WhiteLabelProcessStep[];
   note?: string;
   className?: string;
+  titleClassName?: string;
+  containerClassName?: string;
 };
 
 export function WhiteLabelProcessSection({
@@ -20,34 +22,59 @@ export function WhiteLabelProcessSection({
   steps = whiteLabelShopifyProcess,
   note = whiteLabelShopifySectionCopy.processNote,
   className,
+  titleClassName,
+  containerClassName,
 }: WhiteLabelProcessSectionProps) {
   return (
-    <section className={cn("py-20 max-[992px]:py-[50px]", className)}>
-      <Container className="max-[575px]:px-4">
+    <section
+      className={cn(
+        "white_label_how_partnership_works_section py-20 max-[992px]:py-[50px]",
+        className,
+      )}
+    >
+      <Container className={cn("max-[575px]:px-4", containerClassName)}>
         {eyebrow || description ? (
-          <div className="section_title_with_eyebrow mb-[60px] max-[1199px]:mb-[50px] max-[992px]:mb-[30px] max-[767px]:mb-5">
-            <div className="title">
+          <div
+            className={cn(
+              "section_title_with_eyebrow mb-10 max-[991px]:mb-[30px] max-[767px]:mb-5",
+              description &&
+                "flex flex-wrap items-end justify-between max-[991px]:flex-col max-[991px]:items-start",
+            )}
+          >
+            <div
+              className={cn("title", description && "w-[44%] max-[991px]:w-full")}
+            >
               {eyebrow && (
-                <div className="eyebrow mb-2">
-                  <span className="inline-flex items-center gap-2 font-montserrat text-xs font-bold uppercase tracking-[1px] text-brand-red before:inline-block before:h-[2px] before:w-5 before:bg-brand-red before:content-['']">
+                <div className="eyebrow relative mb-4 inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:before:top-[6px] max-[767px]:mb-3 max-[767px]:pl-[23px] max-[767px]:before:top-[4px] max-[767px]:before:w-[15px]">
+                  <span className="font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-xs max-[767px]:text-[10px]">
                     {eyebrow}
                   </span>
                 </div>
               )}
-              <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
-                {formatBrText(title, "max-[767px]:hidden")}
+              <h2
+                className={cn(
+                  "m-0 font-montreal-medium text-[35px] font-normal leading-[49px] text-[#282828] max-[1199px]:[&_br]:hidden max-[991px]:mb-2.5 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]",
+                  titleClassName,
+                )}
+              >
+                {formatBrText(title, "max-[1199px]:hidden")}
               </h2>
             </div>
             {description && (
-              <div className="section_text mt-2.5">
-                <p className="font-sans text-base font-medium leading-[30.4px] text-muted">
+              <div className="section_text w-[48.3%] max-[1199px]:w-[50%] max-[991px]:w-full max-[991px]:mt-2.5">
+                <p className="m-0 font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">
                   {description}
                 </p>
               </div>
             )}
           </div>
         ) : (
-          <h2 className="mb-[60px] text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[50px] max-[992px]:mb-[30px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-5 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
+          <h2
+            className={cn(
+              "mb-[60px] text-center font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1199px]:mb-[50px] max-[992px]:mb-[30px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-5 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
+              titleClassName,
+            )}
+          >
             {title}
           </h2>
         )}
@@ -62,11 +89,11 @@ export function WhiteLabelProcessSection({
               key={step.title}
             >
               <div className="mb-[30px] max-[1199px]:mb-[25px]">
-                <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-brand-red font-sans text-[30px] leading-[39px] font-bold italic text-white outline outline-1 outline-dashed outline-offset-4 outline-brand-red max-[1199px]:size-[45px] max-[1199px]:text-[28px] max-[1199px]:leading-[38px]">
+                <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-brand-red font-sans text-[30px] leading-[39px] font-normal italic text-white outline outline-1 outline-dashed outline-offset-4 outline-brand-red max-[1199px]:size-[45px] max-[1199px]:text-[28px] max-[1199px]:leading-[38px]">
                   {index + 1}
                 </span>
               </div>
-              <h3 className="mb-6 font-sans text-base leading-[20.48px] font-bold text-ink max-[1199px]:mb-[22px] max-[767px]:mb-[15px]">
+              <h3 className="mb-6 font-montreal-medium text-base font-normal leading-[20.48px] text-ink max-[1199px]:mb-[22px] max-[767px]:mb-[15px]">
                 {step.title}
               </h3>
               <p className="text-sm leading-[190%] font-medium text-muted">{step.description}</p>

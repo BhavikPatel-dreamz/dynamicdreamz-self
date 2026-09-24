@@ -4162,7 +4162,7 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 ## Shopify Mobile App Development (`/shopify-mobile-app-development`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-09-22
+Last reviewed: 2026-09-24
 Owner: SEO, mobile app development specialists, leadership, and sales operations
 Primary audience: Shopify merchants, DTC brands, Shopify Plus brands, and enterprise ecommerce businesses seeking custom native or cross-platform (React Native) iOS and Android mobile app development directly connected to their Shopify backend.
 Decision stage: agency partner evaluation, technical capability assessment, custom mobile app vs generic builder comparison, quote request, discovery call booking
@@ -4228,8 +4228,8 @@ Deferred under the live-UI preservation gate. The current server-rendered hero, 
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-09-22): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-mobile-app-development`; source/build URL guard passes.
-- Checks completed (2026-09-22): live and local rendered page comparison across desktop (1440x900), tablet (768x1024), and mobile (390x844), View Page Source, Yoast article og:type alignment, 2-column SplitFaqSection visual parity alignment (sticky left header, circle-cross accordion icons, exact responsive font size and padding), RENÉE and KALKI case study slug and title verification, metadata limits (Title: 55 chars, Description: 150 chars), JSON-LD graph verification, responsive layouts, local assets audit (0 duplicates), lint, and production build.
+- URL-policy review (2026-09-24): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-mobile-app-development`; source/build URL guard passes.
+- Checks completed (2026-09-24): live and local rendered page comparison across desktop (1440x900), tablet (768x1024), and mobile (390x844), View Page Source, Yoast article og:type alignment, H1 font-family Neue Montreal Medium with exact 2-line wrap, badge dividers matching live 1440 and mobile cross, 2-column mobile portfolio cards with bottom-centered store icons and circular diagonal arrow badge, 2-column split headers for Case Studies and Process sections, compact case study cards with hidden description matching live three-column CSS, 2-column SplitFaqSection visual parity alignment (sticky left header, circle-cross accordion icons, exact responsive font size and padding), RENÉE and KALKI case study slug and title verification, metadata limits (Title: 55 chars, Description: 150 chars), JSON-LD graph verification, responsive layouts, local assets audit (0 duplicates), lint, and production build.
 
 ## Mobile Application Development (`/mobile-application-development`)
 

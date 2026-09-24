@@ -26,6 +26,7 @@ export type SplitFaqSectionProps = {
   triggerClassName?: string;
   itemClassName?: string;
   panelContentClassName?: string;
+  containerClassName?: string;
 };
 
 /**
@@ -56,6 +57,7 @@ export function SplitFaqSection({
   triggerClassName,
   itemClassName,
   panelContentClassName,
+  containerClassName,
 }: SplitFaqSectionProps) {
   const titleId = `${idPrefix}-title`;
 
@@ -66,7 +68,7 @@ export function SplitFaqSection({
       data-section="faq"
       id={sectionId ?? `${idPrefix}-section`}
     >
-      <Container>
+      <Container className={containerClassName}>
         <div className="flex justify-between gap-[105px] max-[1399px]:gap-8 max-[991px]:flex-col max-[991px]:gap-[30px]">
           <div className="w-[41%] max-[1199px]:w-[44%] max-[991px]:w-full">
             <header className="mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">

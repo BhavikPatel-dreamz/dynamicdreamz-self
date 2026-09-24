@@ -11,8 +11,9 @@ export function ShopifyMobileAppExperienceSection({
 }: ShopifyMobileAppExperienceSectionProps) {
   return (
     <section className="mobile-shopping-eperience-sec bg-[#FAFAF7] py-20 max-[991px]:py-[50px]">
-      <Container>
+      <Container className="min-[1400px]:max-w-[1408px] px-[15px]">
         <SplitSectionHeading
+          variant="services"
           eyebrow={content.eyebrow}
           heading={content.heading}
           description={content.description}

@@ -16,8 +16,9 @@ export function ShopifyMobileAppWorkSection({
       id="our_work"
       className="our-work-sec scroll-mt-20 bg-white pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]"
     >
-      <Container>
+      <Container className="min-[1400px]:max-w-[1408px] px-[15px]">
         <SplitSectionHeading
+          variant="services"
           eyebrow={content.eyebrow}
           heading={content.heading}
           description={content.description}
@@ -28,7 +29,7 @@ export function ShopifyMobileAppWorkSection({
           {content.items.map((project) => (
             <div
               key={project.name}
-              className="our_work_team apps w-[calc(25%_-_11.25px)] max-[1199px]:w-[calc(33.333%_-_10px)] max-[991px]:w-[calc(50%_-_10px)] max-[767px]:w-full"
+              className="our_work_team apps w-[calc(25%_-_11.25px)] max-[1199px]:w-[calc(33.333%_-_10px)] max-[991px]:w-[calc(50%_-_10px)] max-[575px]:w-[calc(50%_-_8px)]"
             >
               <PortfolioProjectCard
                 name={project.name}
@@ -38,6 +39,7 @@ export function ShopifyMobileAppWorkSection({
                 appLinks={project.appLinks}
                 variant="ourWorkRefresh"
                 showArrow={true}
+                showMobileArrow={true}
               />
             </div>
           ))}
