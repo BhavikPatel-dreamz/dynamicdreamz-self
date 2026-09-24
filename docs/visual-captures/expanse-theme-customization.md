@@ -23,7 +23,7 @@
   - Button group: flex row on desktop with `10px` gap (`Request a Quote` red primary button, `View Expanse on Shopify` outline button to `https://themes.shopify.com/themes/expanse/presets/expanse`), switches to column on mobile `<=767px`.
   - Right column: `width: 43.182%`, bottom-aligned `1224x948` image (`expanse-theme-customization-service-img.webp` with `mix-blend-mode: darken`).
 - `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/trusted_by_leading_brands_section.css`
-  - Title: `Trusted by <br>Leading Brands`.
+  - Title: `Trusted by Leading Brands`.
   - 12 brand logos: Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee Cosmetics, Royce Chocolate, Tego, Nekter, Rare Rabbit.
 - `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/theme_features.css`
   - Container with rounded-22px border (`rgba(40,40,40,0.11)`).

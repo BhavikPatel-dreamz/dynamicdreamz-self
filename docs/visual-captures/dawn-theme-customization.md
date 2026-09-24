@@ -17,7 +17,7 @@
 - `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/theme_customize_hero.css`
   - `.theme-customize-hero` (Background `#f7f4e9`; 51% left-col with eyebrow array `["Shopify Platinum Partner", "Theme Customization"]`, `h1` "Dawn Theme Customization Service", paragraph description, dual CTA buttons: primary "Request a Quote" `/request-quote` and secondary external outline "View Dawn on Shopify"; 43.182% right-col with bottom-aligned 1224x948 theme image with `mix-blend-mode: darken`).
 - `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/trusted_by_leading_brands_section.css`
-  - `.our-client-sec` (Background `#fbeed5`; Brands marquee with "Trusted by <br>Leading Brands" and 12 partner logos: Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce, Tego, Nekter, Rare Rabbit).
+  - `.our-client-sec` (Background `#fbeed5`; Brands marquee with "Trusted by Leading Brands" and 12 partner logos: Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce, Tego, Nekter, Rare Rabbit).
 - `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/theme_features.css`
   - `.theme-features` (Split 2-column rounded card: 37% left column `#fbefd7` with eyebrow "Features", H2 "Features of Dawn Theme", description; 63% right column with 8 theme feature titles: Minimal Design Aesthetic, Built for Speed, Flexible Content Sections, High-Resolution Media Support, Mobile-Optimized, SEO-Friendly, Color Swatches, Size Chart).
 - `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/city_page_why_choose_dynamic_dreamz.css`

@@ -19,7 +19,7 @@ export const expanseThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by <br>Leading Brands",
+    title: "Trusted by Leading Brands",
     items: industryBrandLogos,
   },
   features: {

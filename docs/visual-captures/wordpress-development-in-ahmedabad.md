@@ -24,7 +24,7 @@
 | Section # | Visual Role | Reused Component | Assets Reused / Ingested |
 |---|---|---|---|
 | 1 | Hero Banner | `CityPageHeroSection` with `CityHeroTabletSlider` | 7 tablet slides, WooCommerce Agency Partner & WordPress Logo badges, Shopify/Clutch/Trustpilot/Upwork awards badges |
-| 2 | Trusted Brands Slider | `IndustryBrandsSection` (`heading="Trusted by <br>Leading Brands"`) | 12 canonical brand SVGs (Supertails, Eleven Eleven, Bellavita, Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Nekter, Rare Rabbit) |
+| 2 | Trusted Brands Slider | `IndustryBrandsSection` (`heading="Trusted by Leading Brands"`) | 12 canonical brand SVGs (Supertails, Eleven Eleven, Bellavita, Bombay Shirt Company, POP, SriSri Tattva, Tropicfeel, Renee, Royce, Tego, Nekter, Rare Rabbit) |
 | 3 | City Page Counter | `CityPageCounterSection` | 4 counter items (20+ Years, 150+ Experts, 5,000+ projects delivered, 2500+ Verified 5-star Reviews) |
 | 4 | Development Process | `OurDevelopmentProcessSection` | 4 process cards (Discovery and Planning, Design and Development, Testing and Launch, Post Launch Support) |
 | 5 | Why Choose Us | `CityWhyChooseBoxesSection` (`columns={3}`, `bgClassName="bg-white"`) | 6 proof cards with canonical SVGs (`expert-developers.svg`, `custom-solutions.svg`, `intuitive-design.svg`, `seo-expertise.svg`, `comprehensive-services.svg`, `proven-track-record.svg`) |

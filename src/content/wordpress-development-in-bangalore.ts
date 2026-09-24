@@ -238,7 +238,7 @@ export const wordpressDevelopmentBangaloreContent = {
   },
 
   brands: {
-    title: "Trusted by <br>Leading Brands",
+    title: "Trusted by Leading Brands",
     items: bangaloreBrandLogos,
   },
 
