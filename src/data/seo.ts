@@ -867,21 +867,21 @@ export const pageSeo = {
   },
   magentoToShopifyMigration: {
     path: "/magento-to-shopify-migration",
-    title: "Magento 1 to Shopify Migration Services | Dynamic Dreamz",
+    title: "Magento to Shopify Migration Services | Dynamic Dreamz",
     description:
-      "Seamlessly migrate from Magento 1 to Shopify with Dynamic Dreamz. Our expert team ensures a smooth transition for enhanced eCommerce performance.",
+      "Migrate Magento to Shopify with Dynamic Dreamz. We handle products, customers, orders, design, custom functionality, integrations, SEO redirects, QA and launch.",
     keywords: [
       "Magento to Shopify migration",
       "Magento 1 to Shopify",
       "Shopify migration experts",
     ],
     openGraphType: "article",
-    modifiedTime: "2025-02-25T10:40:12+00:00",
+    modifiedTime: "2026-09-15T09:42:14+00:00",
     image: {
-      path: "/assets/og/dynamic-dreamz-company.png",
+      path: "/assets/magento-to-shopify-migration/magento-to-shopify-migration-og.png",
       width: 1200,
       height: 630,
-      alt: "Magento to Shopify Migration by Dynamic Dreamz",
+      alt: "Magento to Shopify Migration Services | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "monthly",

@@ -5903,9 +5903,9 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Magento to Shopify Migration (`/magento-to-shopify-migration`)
 
-Status: implemented and verified; live-visible content preserved
+Status: updated to exact live parity; verified against live DOM, CSS, assets, and responsive layout
 
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-24
 
 Owner: SEO, Shopify migration specialists, leadership, and sales operations
 
@@ -5915,7 +5915,14 @@ Decision stage: platform re-platforming, Magento to Shopify migration agency eva
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz end-to-end Magento to Shopify migration services. Highlights why migrate from Magento to Shopify (Magento 1 End of Life, lower maintenance costs, scalability, security), a 6-step zero-downtime migration process with exhaustive entity migration scope (Products, Product Categories, Manufacturers, Customers, Orders, Coupons), QA testing checklist (Functional and Business Rule Validation, Data validation, Performance Test, Go live Checklist), deployment procedures, 12 partner brand logos, 9 detailed migration FAQs, and quote request CTAs.
+Dedicated commercial landing page presenting Dynamic Dreamz end-to-end Magento to Shopify migration services. Fully updated to match the 7 live sections in order:
+1. Hero (`hero-new-section` with H1 "Magento to Shopify Migration Services", dual eyebrow tags, 4 rating/partner badges, "REQUEST A QUOTE" CTA, and service graphic).
+2. Brand partners (`our-client-sec` with 10 partner brand logos).
+3. Why Migrate (`theme-customization-services yellow` with 6 feature cards).
+4. Migration Process (`process-steps-section migration-process` with 6 sequential steps and nested sub-boxes for Products, Categories, Manufacturers, Customers, Orders, Coupons, and QA validation).
+5. Why Choose Dynamic Dreamz (`how-to-choose-spa-sec pt-0` with 8 numbered cards).
+6. Client Video Testimonials (`happy-client-sec` with 11 video testimonial cards).
+7. FAQs (`faq-sec` with 9 accordion items).
 
 ### Target prompts
 
@@ -5927,21 +5934,24 @@ Dedicated commercial landing page presenting Dynamic Dreamz end-to-end Magento t
 
 ### Current strengths and available evidence
 
-- Server-rendered H1 `Migration from Magento to Shopify` with split hero, service illustration, primary CTA "Request a Quote", and 3 verified review badges (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0).
-- 12 trusted brand partner logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Pop Club, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit).
-- Clear 2-paragraph answer statement box answering "Why Do You Need to migrate from Magento to Shopify?".
-- 6-step sequential migration process with gradient step badges, numbered counters, and nested lists for data entities (Products, Categories, Manufacturers, Customers, Orders, Coupons) and QA validation testing.
+- Server-rendered H1 `Magento to Shopify Migration Services` with dual eyebrow tags ("Established in 2006", "Shopify Platinum Partner"), primary CTA "REQUEST A QUOTE", 4 verified badges (Shopify Platinum Partner, Clutch 4.9 rating, Trustpilot 4.9 TrustScore, Upwork Top Rated Plus), and right illustration `migration-to-shopify-img.svg`.
+- 10 trusted brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, SimsDirect, Kvaser, Nekter, Circuit City).
+- Why Migrate section with 6 cards (Magento 1 Is No Longer Supported, Reduce Maintenance Costs, Better Store Performance, Easy to Manage, Scalable for Business Growth, Enhanced Security & Reliability).
+- 6-step sequential migration process matching live responsive CSS layout with sub-boxes for data entities (Products, Categories, Manufacturers, Customers, Orders, Coupons) and QA validation testing.
+- Why Choose Dynamic Dreamz 8-item numbered grid matching live framework.
+- 11 authentic client video testimonials with modal video dialog.
 - 9 comprehensive FAQ accordion items directly answering buyer concerns regarding Magento 1 End of Life, migration timeline, quote process, transferable data types, data accuracy, custom functionalities/design replication, SEO preservation, post-migration support, and pricing.
 - Structured data graph emitting Service, FAQPage (9 Question/Answer pairs), VideoObject (testimonial video schema), BreadcrumbList, Organization, and WebSite.
-- Zero duplicate assets across `public/assets/`, reusing canonical icons and storing unique SVGs under `public/assets/magento-to-shopify-migration/`.
+- Zero duplicate assets across `public/assets/`, reusing canonical icons and storing unique OG image under `public/assets/magento-to-shopify-migration/magento-to-shopify-migration-og.png` with 0 duplicate hash groups.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Parity alignment | Earlier local version lacked 2 full live sections (Why Choose framework, Client Video Testimonials) and used obsolete text box / split hero layouts | Rebuilt to exact live site parity across all 7 sections, matching live DOM, CSS, assets, and responsive layout | Verified with live DOM comparison, CSS inspection, and production build |
 | P0 | implemented | Route and discovery | The migration route required full App Router and metadata coverage | Ship the slashless route through shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
 | P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and BreadcrumbList schema | Emit Service with FAQPage (9 items), VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Asset deduplication | Reused canonical SVGs (review wordmarks, star ratings, bullets, and shared icons); stored unique SVGs under `public/assets/magento-to-shopify-migration/` with 0 duplicate hash groups | Save unique assets under `public/assets/magento-to-shopify-migration/` | Verified with SHA-256 audit |
+| P0 | implemented | Asset deduplication | Reused canonical SVGs (review wordmarks, star ratings, bullets, and shared icons); stored unique OG image under `public/assets/magento-to-shopify-migration/` with 0 duplicate hash groups | Save unique assets under `public/assets/magento-to-shopify-migration/` | Verified with SHA-256 audit |
 | P1 | deferred | Content expansion | Minor live copy typos (e.g., "June 2000" in paragraph 1, "Magneto" in step 1 description) | Record proposed fix in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
