@@ -49,11 +49,11 @@
 | 1 | Hero (`Horizon Theme Customization Service`) | `ThemeHeroSection` (`theme-customize-hero bg-[#f7f4e9]`) | Reused (extended) |
 | 2 | Trusted by Leading Brands (12 client logos) | `IndustryBrandsSection` | Reused |
 | 3 | Features of Horizon Theme (Beige split container + 8 items) | `ThemeFeaturesBannerSection` | Shared Section |
-| 4 | Benefits of Horizon Theme Customization (6 cards, 3 columns) | `CityWhyChooseBoxesSection` (`bg-light`, `columns={3}`) | Reused |
-| 5 | Our Horizon Theme Customization Services (6 cards, 2 columns) | `AgencyServicesSection` (`cardVariant="services-box"`) | Reused |
+| 4 | Benefits of Horizon Theme Customization (6 cards, 3 columns) | `CityWhyChooseBoxesSection` (`bg-[#fafaf7]`, `columns={3}`) | Reused |
+| 5 | Our Horizon Theme Customization Services (6 cards, 2 columns) | `AgencyServicesSection` (`cardVariant="services-box"`, `pb-0`) | Reused |
 | 6 | Why Choose Dynamic Dreamz (4 numbered cards `01`-`04`) | `EvaluationFrameworkSection` (`how-to-choose-spa-sec`) | Reused |
-| 7 | Snippets of Horizon Theme Customization Portfolio (6 projects) | `PortfolioShowcaseSection` (`cardVariant="ourWorkRefresh"`) | Reused |
-| 8 | Frequently Asked Questions (10 accordion items, 2-column split) | `SplitFaqSection` | Reused |
+| 7 | Snippets of Horizon Theme Customization Portfolio (6 projects) | `PortfolioShowcaseSection` (`columns={4}`, `cardVariant="ourWorkRefresh"`, `hideCta={true}`) | Reused |
+| 8 | Frequently Asked Questions (10 accordion items, 2-column split) | `SplitFaqSection` (`bg-[#fafaf7]`, 2-column sticky split layout) | Reused |
 
 *(Note: Live site has no CTA banner after FAQ; page transitions directly to footer.)*
 

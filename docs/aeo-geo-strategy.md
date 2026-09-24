@@ -6933,14 +6933,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Dawn Theme Customization (`/dawn-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-24
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, DTC brands, eCommerce startups, and businesses looking for expert Dawn Shopify theme customization, minimal design aesthetics, speed optimization, customizable content sections, mobile responsiveness, and higher conversion rates.
 Decision stage: partner selection, Dawn theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Dawn theme customization capabilities. Features 10 client brand trust logos, 6 key theme feature icon cards, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards, 8 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Dawn theme customization capabilities. Rebuilt to exact live-site parity following the 2026-09 live refresh. Features hero section with eyebrow array `["Shopify Platinum Partner", "Theme Customization"]`, H1 `Dawn Theme Customization Service`, direct answer paragraph, dual CTAs ("Request a Quote" and "View Dawn on Shopify"), 12 client brand trust logos, split 2-column theme features banner (8 OS 2.0 feature items), 9-card benefits grid (`#fafaf7`), 6-card services grid (`services-box`), 4-step strategic evaluation framework, 8-card portfolio showcase (4 columns) with bottom "View our work" CTA, and 8 accordion FAQs.
 
 ### Target prompts
 
@@ -6952,21 +6952,22 @@ Dedicated commercial landing page presenting Dynamic Dreamz Dawn theme customiza
 
 ### Core answer & key facts
 
-- Server-rendered H1 `Dawn Theme Customization Service` with direct answer paragraph.
+- Server-rendered H1 `Dawn Theme Customization Service` with direct answer paragraph and dual CTAs ("Request a Quote" linking to `/request-quote` and "View Dawn on Shopify" linking to Shopify theme store).
 - 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
-- 6 key Dawn theme features (Minimal Design Aesthetic, Built for Speed, Flexible Content Sections, High-Resolution Media Support, Mobile-Optimized, SEO-Friendly).
+- 12 client brand trust logos (Supertails, Eleven Eleven, Bella Vita Organic, Bombay Shirt Company, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit).
+- 8 key Dawn theme features in split 2-column banner (Minimal Design Aesthetic, Built for Speed, Flexible Content Sections, High-Resolution Media Support, Mobile-Optimized, SEO-Friendly, Color Swatches, Size Chart).
 - 9 core benefits of Dawn customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost).
 - 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
-- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier).
-- 8 detailed FAQs addressing customization scope, unique design capability, timelines, mobile responsiveness, post-launch support, third-party app integrations, SEO optimization, and pricing.
+- 4 reasons to choose Dynamic Dreamz via numbered evaluation framework (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
+- 8 Shopify portfolio projects in 4-column desktop grid (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz) with "View our work" CTA linking to `/our-work`.
+- 8 detailed FAQs with centered header addressing customization scope, unique design capability, timelines, mobile responsiveness, post-launch support, third-party app integrations, SEO optimization, and pricing.
 
 ### Structured gap analysis
 
 | Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route and discovery | Missing App Router implementation for Dawn theme customization | Ship slashless `/dawn-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Dawn hero graphic under `public/assets/dawn-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
+| P0 | implemented | Route and discovery | Missing App Router implementation for refreshed Dawn theme customization | Ship slashless `/dawn-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Refreshed live site updated hero graphics and portfolio items | Ingest hero graphic `dawn-theme-customization-service-img.webp` via scratch buffer; deduplicate portfolio images against canonical assets | Verified locally with 0 duplicate assets across public/assets |
 | P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 8 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
 
 ### Visible content and copy improvements
@@ -6983,12 +6984,12 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Measurement plan
 
 - SEO tracks queries for "Dawn theme customization", "Shopify Dawn developers", and "custom Dawn theme Shopify".
-- Analytics tracks form submissions on `/request-quote` originating from `/dawn-theme-customization`.
+- Analytics tracks form submissions on `/request-quote` and `/contact-us` originating from `/dawn-theme-customization`.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/dawn-theme-customization`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 52 chars, Description: 155 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-24): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/dawn-theme-customization`; source/build URL guard passes.
+- Checks completed (2026-09-24): live and local rendered page comparison, View Page Source, metadata limits (Title: 52 chars, Description: 155 chars), JSON-LD graph verification, responsive layouts, local assets audit (0 duplicate hash groups), component-content boundaries, lint, and production build.
 
 ## Studio Theme Customization (`/studio-theme-customization`)
 

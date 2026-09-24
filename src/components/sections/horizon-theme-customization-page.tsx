@@ -40,7 +40,7 @@ export function HorizonThemeCustomizationPage() {
         className="theme-customize-hero overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[991px]:pt-16"
         content={horizonThemeCustomizationContent.hero}
         descriptionClassName="mb-0 text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6"
-        imageClassName="h-auto w-full object-contain object-bottom"
+        imageClassName="h-auto w-full object-contain object-bottom mix-blend-darken"
         mediaClassName="image-block flex w-full items-end pt-[60px]"
         mediaColumnClassName="right-col flex w-[43.182%] items-end justify-end max-[1399px]:w-[48%] max-[1199px]:mx-auto max-[1199px]:w-1/2 max-[767px]:w-full"
         textColumnClassName="left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1399px]:w-1/2 max-[1199px]:w-full max-[1199px]:pb-8 max-[1199px]:text-center max-[991px]:py-10"
@@ -56,7 +56,7 @@ export function HorizonThemeCustomizationPage() {
         content={horizonThemeCustomizationContent.features}
       />
       <CityWhyChooseBoxesSection
-        bgClassName="bg-light"
+        bgClassName="bg-[#fafaf7]"
         className="city-page-why-choose-dynamic"
         columns={3}
         content={horizonThemeCustomizationContent.benefits}
@@ -78,16 +78,18 @@ export function HorizonThemeCustomizationPage() {
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
         className="our-work-sec pt-0 py-20 max-[992px]:py-[50px]"
-        columns={3}
+        columns={4}
         content={portfolioContent}
         eyebrow={horizonThemeCustomizationContent.portfolio.eyebrow}
         headerLayout="split"
         hideCta={true}
         sectionId="our_work"
+        showMobileArrow={true}
       />
       <SplitFaqSection
+        answerClassName="text-[#535353] text-base leading-7 font-medium max-[1199px]:text-sm max-[1199px]:leading-6"
         className="faq-sec"
-        headingClassName="font-sans font-bold"
+        heading={horizonThemeCustomizationContent.faqsHeading}
         idPrefix="horizon-faq"
         items={horizonThemeCustomizationContent.faqs}
       />

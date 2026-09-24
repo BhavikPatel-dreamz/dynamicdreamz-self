@@ -218,6 +218,7 @@ export const horizonThemeCustomizationContent = {
       },
     ] as const,
   },
+  faqsHeading: "Frequently Asked Questions",
   faqs: [
     {
       question: "Can you customize the Shopify Horizon theme for my brand?",

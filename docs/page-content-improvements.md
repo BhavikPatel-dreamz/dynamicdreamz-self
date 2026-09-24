@@ -1033,16 +1033,17 @@ Primary SEO intent: Savor theme customization, Savor Shopify theme customization
 ## Dawn Theme Customization (`/dawn-theme-customization`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-24
 Primary SEO intent: Dawn theme customization, Dawn Shopify theme customization service, customize Dawn theme Shopify, Shopify Dawn theme developers, hire Shopify developers.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
 | Meta title | `Dawn Theme Customization Service \| Dynamic Dreamz` (52 chars) | Preserved live title (52 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
 | Meta description | `Shopify Dawn theme customization services to create a responsive, user-friendly store. Hire Dynamic Dreamz with 18 years of experience. Contact Us Today!` (155 chars) | Preserved live meta description (155 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
-| Hero CTA capitalization | `request a quote` | `Request a Quote` | Title case button label. | Low | deferred pending exact visible-copy approval |
-| Features subtitle phrasing | `The feature-rich Dawn Theme is made for stores looking for a simple, modern, and valuable storefront design.` | `The feature-rich Dawn Theme is designed for stores looking for a clean, modern, and high-converting storefront design.` | Refines copy clarity and messaging. | Low | deferred pending exact visible-copy approval |
+| Eyebrow tags | `Dawn Theme Customization`, `Shopify Theme Customization`, `Liquid` | Preserved live badge pills. | Matches refreshed live hero design. | Medium | implemented in UI |
+| Hero CTAs | `Hire Dawn Developer` and `Explore Our Work` | Preserved refreshed live CTAs. | Matches live button copy and dual CTA flow. | High | implemented in UI |
 | Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (8 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+
 
 ## Studio Theme Customization (`/studio-theme-customization`)
 
