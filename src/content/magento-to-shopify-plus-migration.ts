@@ -1,62 +1,67 @@
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
-import type { PartnerWhyChooseItem } from "@/components/sections/magento-to-shopify-plus/partner-why-choose-section";
-import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
+import type { HeroBadge, ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
+import type { MagentoPlusIconName } from "@/components/sections/magento-to-shopify-plus/magento-plus-icons";
+import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export { migrationSectionCopy as magentoPlusMigrationSectionCopy } from "@/content/migration-common";
-import type { ShopifyAppBenefitItem } from "@/components/sections/shopify-mobile-app/shopify-app-benefits-section";
-import type { WhatDataTransferItem } from "@/components/sections/magento-to-shopify-plus/what-data-transfer-section";
 
-export const magentoPlusHeroContent: ServiceHeroContent = {
-  title: "Magento to Shopify Plus Migration",
-  description:
-    "Do you want to switch from Magento to Shopify Plus? Hire our Magento to Shopify Plus Migration expert by Dynamic Dreamz. It offers a smooth, scalable, and user-friendly eCommerce solution. Simplify operations, boost performance, and unlock advanced tools for growth.",
+export type MagentoPlusBoxItem = {
+  iconName: MagentoPlusIconName;
+  title: string;
+  description: string;
+};
+
+export const magentoPlusHeroContent = {
+  eyebrowSpans: ["Established in 2006", "Shopify Platinum Partner"] as const,
+  title: "Magento to Shopify Plus Migration Services",
+  subtitle: "Do you want to switch from Magento to Shopify Plus?",
   paragraphs: [
-    "<strong>Do you want to switch from Magento to Shopify Plus?</strong>",
     "Hire our Magento to Shopify Plus Migration expert by Dynamic Dreamz. It offers a smooth, scalable, and user-friendly eCommerce solution. Simplify operations, boost performance, and unlock advanced tools for growth.",
   ],
-  ctaLabel: "request a quote",
+  cta: "Request a Quote",
   ctaHref: "/request-quote",
   image: {
     src: "/assets/magento-to-shopify-plus-migration/magento-to-shopify-plus-migration-hero.svg",
-    alt: "Magento to Shopify Plus Migration Image",
-    width: 469,
-    height: 224,
+    alt: "magento-to-shopify-plus-migration-img",
+    width: 493,
+    height: 292,
   },
-  reviews: [
+  badges: [
     {
-      platform: "Clutch",
-      reviewCount: "132 Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/clutch-wordmark.svg",
-      logoAlt: "Clutch Review Dynamic Dreamz",
-      logoWidth: 69,
-      logoHeight: 19,
+      name: "Shopify Platinum Partner",
+      src: "/assets/proof/shopify-platinum-partner.svg",
+      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+      alt: "Dynamic Dreamz - Shopify Platinum Partner",
+      width: 136,
+      height: 44,
+    },
+    {
+      name: "Clutch",
+      src: "/assets/proof/clutch-rating.svg",
       href: "https://clutch.co/profile/dynamic-dreamz",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      width: 111,
+      height: 44,
     },
     {
-      platform: "Upwork",
-      reviewCount: "2000+ Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/upwork-wordmark.svg",
-      logoAlt: "Upwork Review Dynamic Dreamz",
-      logoWidth: 78,
-      logoHeight: 23,
-      href: "https://www.upwork.com/agencies/dynamicdreamz/",
+      name: "Trustpilot",
+      src: "/assets/proof/trustpilot-rating.svg",
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      width: 148,
+      height: 50,
     },
     {
-      platform: "GoodFirms",
-      reviewCount: "72 Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/goodfirms-wordmark.svg",
-      logoAlt: "Goodfirms Review Dynamic Dreamz",
-      logoWidth: 105,
-      logoHeight: 16,
-      href: "https://www.goodfirms.co/company/dynamic-dreamz",
+      name: "Upwork",
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      href: "https://www.upwork.com/ag/dynamicdreamz/",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      width: 126,
+      height: 54,
     },
-  ],
-};
+  ] as readonly HeroBadge[],
+} satisfies ServiceHeroVideoContent;
 
 export const magentoPlusBrandLogos: readonly ClientLogoSliderItem[] = [
   {
@@ -145,254 +150,220 @@ export const magentoPlusBrandLogos: readonly ClientLogoSliderItem[] = [
   },
 ];
 
-export const magentoPlusBenefitsContent: {
-  heading: string;
-  description: string;
-  items: readonly ShopifyAppBenefitItem[];
-} = {
+export const magentoPlusWhyMigrateContent = {
+  eyebrow: "Why Migrate",
   heading: "Why Choose Magento to Shopify Plus Migration?",
   description:
     "Magento is a robust but complex platform for users without technical knowledge. Shopify Plus provides simplicity, scalability, and advanced features for growing businesses of all sizes. If you are moving to Shopify Plus you will get a number of excellent benefits. Here’s what Shopify Plus offers to your business:",
   items: [
     {
+      iconName: "no-server-management",
       title: "No Server Management",
       description:
         "No more worry about server maintenance—Shopify Plus handles it all for you.",
-      icon: "/assets/magento-to-shopify-plus-migration/no-server-management.svg",
-      iconAlt: "no-server-management-icon",
     },
     {
+      iconName: "no-reindexing",
       title: "No Reindexing",
       description:
         "With automatic updates, Shopify Plus can save time and avoid the need for manual reindexing.",
-      icon: "/assets/magento-to-shopify-plus-migration/no-reindexing.svg",
-      iconAlt: "no-reindexing-icon",
     },
     {
+      iconName: "no-security-issues",
       title: "No Security Issues",
       description:
         "Shopify Plus offers enterprise-grade security and PCI compliance so you can stay worry-free.",
-      icon: "/assets/magento-to-shopify-plus-migration/no-security-issues.svg",
-      iconAlt: "no-security-issues-icon",
     },
     {
+      iconName: "multiple-stores-feature",
       title: "Multiple Stores Feature",
       description:
         "You can easily manage multiple storefronts from a single dashboard.",
-      icon: "/assets/magento-to-shopify-plus-migration/multiple-stores-feature.svg",
-      iconAlt: "multiple-stores-feature-icon",
     },
     {
+      iconName: "built-in-b2b-module",
       title: "Built-in B2B Module",
       description:
         "Get access to advanced features to simplify B2B and wholesale operations.",
-      icon: "/assets/magento-to-shopify-plus-migration/built-in-b2b-module.svg",
-      iconAlt: "built-in-b2b-module-icon",
     },
     {
+      iconName: "best-checkout-experience",
       title: "Best Checkout Experience",
       description:
         "Offer customers a fast, smooth, and safe checkout process.",
-      icon: "/assets/magento-to-shopify-plus-migration/best-checkout-experience.svg",
-      iconAlt: "best-checkout-experience-icon",
     },
     {
+      iconName: "ease-of-use",
       title: "Ease of Use",
-      description:
-        "It provides a simple admin panel for quick updates.",
-      icon: "/assets/magento-to-shopify-plus-migration/ease-of-use.svg",
-      iconAlt: "ease-of-use-icon",
+      description: "It provides a simple admin panel for quick updates.",
     },
     {
+      iconName: "24-7-support",
       title: "24/7 Support",
       description:
         "They are always ready to provide dedicated assistance whenever you need it.",
-      icon: "/assets/magento-to-shopify-plus-migration/24-7-support.svg",
-      iconAlt: "24-7-support-icon",
     },
     {
+      iconName: "simplified-operations",
       title: "Simplified Operations",
       description:
         "Shopify has an easy-to-use interface that saves time and effort.",
-      icon: "/assets/magento-to-shopify-plus-migration/simplified-operations.svg",
-      iconAlt: "simplified-operations-icon",
     },
     {
+      iconName: "scalability",
       title: "Scalability",
       description:
         "It is created to manage high traffic volume and sales pinpoints.",
-      icon: "/assets/magento-to-shopify-plus-migration/scalability.svg",
-      iconAlt: "scalability-icon",
     },
     {
+      iconName: "advanced-features",
       title: "Advanced Features",
       description:
         "Easily integrate advanced features for your every need. Access exclusive tools like sales channels and automation.",
-      icon: "/assets/magento-to-shopify-plus-migration/advanced-features.svg",
-      iconAlt: "advanced-features-icon",
     },
     {
+      iconName: "cost-efficiency",
       title: "Cost Efficiency",
       description:
         "Shopify offers predictable pricing plans with no hidden charges based on your business requirements.",
-      icon: "/assets/magento-to-shopify-plus-migration/cost-efficiency.svg",
-      iconAlt: "cost-efficiency-icon",
-    },
-    {
-      title: "Enhanced Security",
-      description:
-        "It uses enterprise-grade security and PCI compliance to protect your products and transactions.",
-      icon: "/assets/magento-to-shopify-plus-migration/enhanced-security.svg",
-      iconAlt: "enhanced-security-icon",
-    },
-    {
-      title: "Better Performance",
-      description:
-        "It helps you gain faster load times and improves the user experience of your store.",
-      icon: "/assets/magento-to-shopify-plus-migration/better-performance.svg",
-      iconAlt: "better-performance-icon",
     },
   ],
-};
+} as const;
 
-export const magentoPlusWhatDataContent: {
-  heading: string;
-  description: string;
-  items: readonly WhatDataTransferItem[];
-} = {
+export const magentoPlusWhatDataContent = {
+  eyebrow: "Data We Can Transfer",
   heading: "What Data Can We Transfer During Migration?",
   description:
-    "We ensure a smooth transition by migrating all necessary data<br />securely. Here's what we transfer to your new Shopify store:",
+    "We ensure a smooth transition by migrating all necessary data securely. Here’s what we transfer to your new Shopify store:",
   items: [
     {
+      iconName: "products-categories",
       title: "Products & Categories",
       description: "Product details, images, pricing, and categories.",
-      icon: "/assets/magento-to-shopify-plus-migration/products-categories.svg",
-      iconAlt: "Products & Categories Icon",
     },
     {
+      iconName: "customer-data",
       title: "Customer Data",
       description: "Profiles, order history, and preferences.",
-      icon: "/assets/magento-to-shopify-plus-migration/customer-data.svg",
-      iconAlt: "Customer Data Icon",
     },
     {
+      iconName: "orders-transactions",
       title: "Orders & Transactions",
       description: "Past orders.",
-      icon: "/assets/magento-to-shopify-plus-migration/orders-transactions.svg",
-      iconAlt: "Orders & Transactions Icon",
     },
     {
+      iconName: "content",
       title: "Content",
       description: "Blogs, pages, and media files.",
-      icon: "/assets/magento-to-shopify-plus-migration/content.svg",
-      iconAlt: "Content Icon",
     },
     {
+      iconName: "seo-settings",
       title: "SEO Settings",
       description: "Redirects, meta tags, and URLs for minimal SEO impact.",
-      icon: "/assets/magento-to-shopify-plus-migration/seo-settings.svg",
-      iconAlt: "SEO Settings icon",
     },
   ],
-};
+} as const;
 
-export const magentoPlusProcessContent: MigrationProcessContent = {
+export const magentoPlusProcessContent = {
+  eyebrow: "How We Migrate",
   heading: "How do We Migrate from Magento to Shopify plus​?",
   description:
     "Our step-by-step migration process ensures a smooth Magento to Shopify Plus migration.",
   steps: [
     {
-      stepNumber: "01",
+      iconName: "audit-plan",
       title: "Audit & Plan",
       description:
         "First, we analyze your Magento store and create a migration plan.",
     },
     {
-      stepNumber: "02",
+      iconName: "custom-design",
       title: "Custom Design",
-      description:
-        "We also offer to build a custom Shopify theme that matches your brand for more customization needs.",
+      description: "We design a custom Shopify theme matching your brand.",
     },
     {
-      stepNumber: "03",
+      iconName: "development",
       title: "Development",
       description:
-        "After you approve the new custom design, we will start developing your Shopify store.",
+        "We develop your store with custom features and third-party apps.",
     },
     {
-      stepNumber: "04",
+      iconName: "data-migration",
       title: "Data Migration",
       description:
-        "We securely transfer all essential data from the Magento store to the Shopify Plus store.",
+        "We securely transfer all your products, customer details, order history, and other important data to Shopify Plus with zero loss.",
     },
     {
-      stepNumber: "05",
+      iconName: "testing",
       title: "Testing",
       description:
         "We strictly test your Shopify store to ensure everything works flawlessly.",
     },
     {
-      stepNumber: "06",
+      iconName: "launch",
       title: "Launch",
       description:
         "We launch your website with zero downtime and post-launch support.",
     },
   ],
-};
+} as const;
 
-export const magentoPlusWhyChooseContent: {
-  heading: string;
-  description: string;
-  descriptionHighlight?: string;
-  ctaLabel: string;
-  ctaHref: string;
-  items: readonly PartnerWhyChooseItem[];
-} = {
+export const magentoPlusWhyChooseContent = {
+  eyebrow: "Why Dynamic Dreamz",
   heading: "Why Choose Dynamic Dreamz for Migration Services?",
   description:
     "As a proud Shopify Plus Partner, we have been vetted and recognized by Shopify for our expertise in delivering Shopify solutions and exceptional results. Trust us to bring your business the full power of Shopify Plus with our migration from Magento to Shopify Plus​.",
-  descriptionHighlight: "Shopify Plus Partner",
-  ctaLabel: "Verify Our Partnership",
-  ctaHref: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
   items: [
     {
       title: "Proven Track Record",
       description:
-        "In our worthy portfolio, we have successfully migrated 100+ stores globally.",
-      icon: "/assets/magento-to-shopify-plus-migration/proven-track-record.svg",
-      iconAlt: "Proven Track Record Icon",
+        "With a proven track record, we have successfully migrated 100+ stores worldwide, helping businesses transition smoothly to Shopify.",
     },
     {
       title: "Expertise",
       description:
-        "We have proven experience in Magento to Shopify migration services.",
-      icon: "/assets/services/bigcommerce-development/advantages/expertise-in-custom-development.svg",
-      iconAlt: "Expertise Icon",
+        "We have proven experience in Magento to Shopify Plus migration, with a team of Shopify Experts skilled in handling migrations of all complexities.",
     },
     {
       title: "Custom Solutions",
       description:
-        "We offer custom strategies for every business size and type.",
-      icon: "/assets/magento-to-shopify-plus-migration/custom-solutions.svg",
-      iconAlt: "Custom Solutions Icon",
+        "We understand that every business has unique requirements. That’s why we offer customized migration strategies tailored to your business size, type, and specific needs.",
     },
     {
-      title: "Minimum Downtime",
+      title: "Smooth Data Transfer",
       description:
-        "Our professional Shopify experts ensure your store remains working with minimal disruption during the migration.",
-      icon: "/assets/magento-to-shopify-plus-migration/minimum-downtime.svg",
-      iconAlt: "Minimum Downtime Icon",
+        "We securely migrate all your critical data, including customer profiles, product catalogs, order history, and SEO settings, with zero data loss.",
+    },
+    {
+      title: "SEO Expertise",
+      description:
+        "Our migration process includes 301 redirects, metadata retention, and URL mapping to protect your search engine rankings and traffic.",
+    },
+    {
+      title: "Comprehensive Services",
+      description:
+        "We handle everything from initial planning and store setup to third-party integrations and custom app development.",
+    },
+    {
+      title: "Minimal Downtime",
+      description:
+        "We ensure minimum downtime during the migration, keeping your business running without disrupting the customer experience.",
     },
     {
       title: "Post-Migration Support",
       description:
-        "We provide dedicated support after the store launch.",
-      icon: "/assets/magento-to-shopify-plus-migration/post-migration-support.svg",
-      iconAlt: "Post-Migration Support Icon",
+        "We also provide post migration support for your adjustments, additional features, or technical questions you may have.",
     },
   ],
-};
+} as const;
+
+export const magentoPlusTestimonials = {
+  eyebrow: "Client Stories",
+  heading: "Don't Just Take Our Word For It",
+  description:
+    "Hear directly from the clients who have worked with Dynamic Dreamz across Shopify, ecommerce and long-term development engagements.",
+  items: shopifyPlusAgencyTestimonials.items,
+} as const;
 
 export const magentoPlusFaqs: readonly FaqAccordionItem[] = [
   {
@@ -418,17 +389,17 @@ export const magentoPlusFaqs: readonly FaqAccordionItem[] = [
   {
     question: "What happens to my Magento store after migration?",
     answer:
-      "After migration, your Magento store can either be archived or decommissioned based on your preference. You can decide whether to archive or decommission your Magento store after the successful migration.",
+      "Your Magento store remains completely functional while migrating. We perform all the setup, testing, and migration on a development store. Once the Shopify store is thoroughly tested and ready, we seamlessly switch your domain to Shopify Plus, with no disruption to your daily operations.",
   },
   {
     question: "Is Shopify Plus secure?",
     answer:
-      "Yes, Shopify Plus is PCI-compliant and highly secure, guaranteeing that your store meets with industry data protection regulations. It offers enterprise-grade security features, including fraud analysis, encryption, and 24/7 monitoring. You can concentrate on expanding your business with Shopify Plus, free from worries about security violations or legal issues.",
+      "Yes, Shopify Plus is very secure. It provides Level 1 PCI DSS compliance, an SSL certificate, and built-in protection. This guarantees that your customer data and transactions are completely protected from threats.",
   },
   {
     question: "Do you offer post-migration support?",
     answer:
-      "Absolutely! We offer post-migration support, which is a key part of our migration service. We provide continuous technical support to ensure your store resumes to perform optimally after launch. Your business success is our priority.",
+      "Yes, we provide ongoing post-launch support to resolve any issues and train your team on Shopify Plus management. Our team is always ready to ensure your store continues to operate smoothly.",
   },
   {
     question: "Can I migrate only specific parts of my store?",

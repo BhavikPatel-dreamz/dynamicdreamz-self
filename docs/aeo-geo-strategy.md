@@ -5843,9 +5843,9 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Magento to Shopify Plus Migration (`/magento-to-shopify-plus-migration`)
 
-Status: implemented and verified; live-visible content preserved
+Status: implemented and verified; exact live-visible parity achieved
 
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-24
 
 Owner: SEO, Shopify Plus migration specialists, enterprise leadership, and sales operations
 
@@ -5855,7 +5855,7 @@ Decision stage: enterprise platform re-platforming, Magento to Shopify Plus part
 
 ### Page role
 
-Dedicated enterprise commercial landing page presenting Dynamic Dreamz end-to-end Magento to Shopify Plus migration services. Highlights why choose Magento to Shopify Plus migration (14 benefits including No Server Management, No Reindexing, No Security Issues, Multiple Stores Feature, Built-in B2B Module, Best Checkout Experience, Ease of Use, 24/7 Support, Simplified Operations, Scalability, Advanced Features, Cost Efficiency, Enhanced Security, Better Performance), 5 transferable data categories (Products & Categories, Customer Data, Orders & Transactions, Content, SEO Settings), a 6-step zero-downtime migration process (Audit & Plan, Custom Design, Development, Data Migration, Testing, Launch), official Shopify Plus Partner credentials with 5 reasons to choose Dynamic Dreamz (Proven Track Record, Expertise, Custom Solutions, Minimum Downtime, Post-Migration Support), 12 brand logos, 8 detailed migration FAQs, and quote request CTAs.
+Dedicated enterprise commercial landing page presenting Dynamic Dreamz end-to-end Magento to Shopify Plus migration services. Highlights why choose Magento to Shopify Plus migration (12 benefits: No Server Management, No Reindexing, No Security Issues, Multiple Stores Feature, Built-in B2B Module, Best Checkout Experience, Ease of Use, 24/7 Support, Simplified Operations, Scalability, Advanced Features, Cost Efficiency), 5 transferable data categories (Products & Categories, Customer Data, Orders & Transactions, Content, SEO Settings), a 6-step zero-downtime migration process (Audit & Plan, Custom Design, Development, Data Migration, Testing, Launch), official Shopify Plus Partner credentials with 8 reasons to choose Dynamic Dreamz (Proven Track Record, Expertise, Custom Solutions, Smooth Data Transfer, SEO Expertise, Comprehensive Services, Minimal Downtime, Post-Migration Support), 11 client video stories/testimonials (Shari Leidich, Rebekah Wymer, Thommas Linnrose, Zoe wang, Clinton De Vere, Fernando Arias, Alec Torelli, William Petz, William ST Baker, Kerri Imrie, Brandon), 12 brand logos, 8 detailed migration FAQs, and quote request CTAs.
 
 ### Target prompts
 
@@ -5867,23 +5867,25 @@ Dedicated enterprise commercial landing page presenting Dynamic Dreamz end-to-en
 
 ### Current strengths and available evidence
 
-- Server-rendered H1 `Magento to Shopify Plus Migration` with split hero, service illustration, primary CTA "Request a Quote", and 3 verified review badges (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0).
-- 12 trusted brand partner logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Pop Club, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit).
-- 14 comprehensive benefit cards highlighting serverless hosting, automatic reindexing, enterprise PCI compliance, multi-storefront architecture, native B2B module, checkout extensibility, scalability, and 24/7 support.
-- 5-column data transfer section with gradient background detailing Products & Categories, Customer Data, Orders & Transactions, Content, and SEO Settings.
-- 6-step sequential migration process covering Audit & Plan, Custom Design, Development, Data Migration, Testing, and Launch.
-- Dedicated partner section highlighting official Shopify Plus Partner status, external verification link, and 5 proof cards.
+- Server-rendered H1 `Magento to Shopify Plus Migration Services` with hero-new-section layout, service illustration, primary CTA "Request a Quote", and 4 partner/review profile badges (Shopify Platinum Partner, Clutch 4.9 rating, Trustpilot 4.9 TrustScore, Upwork Top Rated Plus).
+- 12 trusted brand partner logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit).
+- 12 comprehensive benefit cards in yellow theme-customization-services section highlighting serverless hosting, automatic reindexing, enterprise security, multi-storefront architecture, native B2B module, checkout experience, scalability, and 24/7 support.
+- 5-column data transfer section with `#eff4ef` background detailing Products & Categories, Customer Data, Orders & Transactions, Content, and SEO Settings.
+- 6-step sequential migration process in transparent theme-customization-services section covering Audit & Plan, Custom Design, Development, Data Migration, Testing, and Launch.
+- Dedicated partner section (`how-to-choose-spa-sec`) highlighting 8 reasons to choose Dynamic Dreamz with circular numbering badges (01-08).
+- 11 video testimonial cards in `happy-client-sec` with authentic client feedback across Shopify, ecommerce, and long-term engagements.
 - 8 comprehensive FAQ accordion items directly answering buyer concerns regarding migration cost, timeline (4-8 weeks), SEO protection, theme customization, post-migration store archiving, PCI compliance/security, ongoing support, and partial migration scopes.
-- Structured data graph emitting Service, FAQPage (8 Question/Answer pairs), VideoObject (testimonial video schema), BreadcrumbList, Organization, and WebSite.
-- Zero duplicate assets across `public/assets/`, reusing canonical icons and storing unique SVGs under `public/assets/magento-to-shopify-plus-migration/`.
+- Structured data graph emitting Service, FAQPage (8 Question/Answer pairs), VideoObject (testimonial video schema matching visible cards), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical icons and hero SVG under `public/assets/magento-to-shopify-plus-migration/`.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route and discovery | The migration route required full App Router and metadata coverage | Ship the slashless route through shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and BreadcrumbList schema | Emit Service with FAQPage (8 items), VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Asset deduplication | Reused canonical SVGs (brand logos, review wordmarks, star ratings); stored unique SVGs under `public/assets/magento-to-shopify-plus-migration/` with 0 duplicate hash groups | Save unique assets under `public/assets/magento-to-shopify-plus-migration/` | Verified with SHA-256 audit |
+| P0 | implemented | Route and discovery | The migration route required full App Router and metadata coverage matching live site | Ship the slashless route through shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Exact section parity | The page previously lacked the testimonials section and used mismatched component layouts | Rebuilt with exact 8 sections: ServiceHeroVideoSection, IndustryBrandsSection, ThemeCustomizationServicesSection (yellow), CityWhyChooseBoxesSection, ThemeCustomizationServicesSection (transparent), EvaluationFrameworkSection, HappyClientSection, SplitFaqSection | Verified against live DOM and CSS |
+| P0 | implemented | Structured data | Rich Service, FAQPage, VideoObject, and BreadcrumbList schema | Emit Service with FAQPage (8 items), VideoObjects (matching 11 visible video stories), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Asset deduplication | Reused canonical SVGs (brand logos, review wordmarks, star ratings); removed 25 obsolete gradient SVGs | Preserved canonical hero SVG under `public/assets/magento-to-shopify-plus-migration/` with 0 duplicate hash groups | Verified with SHA-256 audit |
 | P1 | deferred | Content expansion | Minor live copy spacing/punctuation (e.g. `Shopify plus​?` trailing unicode characters) | Record proposed fix in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -5892,7 +5894,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Entity, evidence, and authorship actions
 
-- Connect Dynamic Dreamz as an official Shopify Plus Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+- Connect Dynamic Dreamz as an official Shopify Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
 - Attribute client video testimonials directly to their authentic founders and brand names.
 
 ### Internal-link and conversion actions

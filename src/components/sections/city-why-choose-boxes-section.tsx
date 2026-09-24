@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
@@ -6,8 +7,9 @@ import { cn } from "@/lib/class-names";
 export type CityWhyChooseBoxItem = {
   title: string;
   description: string;
-  icon: string;
-  iconAlt: string;
+  icon?: string;
+  iconAlt?: string;
+  iconNode?: ReactNode;
 };
 
 export type CityWhyChooseBoxesContent = {
@@ -84,13 +86,17 @@ export function CityWhyChooseBoxesSection({
               >
                 <div className="why-choose-box-text">
                   <div className="mb-2.5 size-6">
-                    <Image
-                      src={item.icon}
-                      alt={item.iconAlt}
-                      width={24}
-                      height={24}
-                      className="size-6 object-contain"
-                    />
+                    {item.iconNode ? (
+                      item.iconNode
+                    ) : item.icon ? (
+                      <Image
+                        src={item.icon}
+                        alt={item.iconAlt ?? ""}
+                        width={24}
+                        height={24}
+                        className="size-6 object-contain"
+                      />
+                    ) : null}
                   </div>
                   <h3 className="mb-2 font-sans text-base font-bold leading-[24px] text-ink">
                     {item.title}

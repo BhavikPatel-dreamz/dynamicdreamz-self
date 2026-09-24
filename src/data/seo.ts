@@ -844,9 +844,9 @@ export const pageSeo = {
   },
   magentoToShopifyPlusMigration: {
     path: "/magento-to-shopify-plus-migration",
-    title: "Magento to Shopify Plus Migration | Dynamic Dreamz",
+    title: "Magento to Shopify Plus Migration Services | Dynamic Dreamz",
     description:
-      "Hire Magento to Shopify Plus Migration Expert. Expert Migration Services with 18+ Years of Experience. Hire DynamicDreamz today!",
+      "Move from Magento to Shopify Plus with Dynamic Dreamz. We migrate store data, design, custom features, integrations and SEO with QA and post-launch support.",
     keywords: [
       "Magento to Shopify Plus migration",
       "Magento to Shopify Plus",
