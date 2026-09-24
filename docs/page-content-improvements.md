@@ -1489,16 +1489,16 @@ Primary SEO intent: Square to Shopify migration, migrate Square to Shopify, Squa
 ## Shopify Plus Migration Agency (`/shopify-plus-migration-agency`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-20
-Primary SEO intent: Shopify Plus migration agency, Shopify Plus migration, migrate to Shopify Plus, Shopify migration experts, Shopify Plus partner agency.
+Last reviewed: 2026-09-24
+Primary SEO intent: Shopify Plus migration agency, Shopify Plus migration, migrate to Shopify Plus, Shopify migration experts, Shopify Plus migration services.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | `Shopify Plus Migration Agency \| Shopify Migration Experts` (59 chars) | Preserved live title (59 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
-| Meta description | `Hire Shopify Plus Migration Agency to Switch to Shopify Plus with expert help. Choose Dynamic Dreamz for smooth migration of your store.` (137 chars) | Preserved live description (137 chars). | Complies with repository 70-160 character limit. | High | implemented in metadata |
-| Hero heading zero-width space | `Shopify Plus Migration Agency​` | `Shopify Plus Migration Agency` | Removes invisible trailing zero-width space from heading. | Low | deferred pending exact visible-copy approval |
-| Secondary text box heading zero-width space | `Why Choose Dynamic Dreamz as a Shopify Plus Migration Agency​` | `Why Choose Dynamic Dreamz as a Shopify Plus Migration Agency` | Removes invisible trailing zero-width space from heading. | Low | deferred pending exact visible-copy approval |
-| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (4 process steps), `FAQPage` (5 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+| Meta title | `Shopify Plus Migration Agency \| Dynamic Dreamz` (48 chars) | Preserved live title (48 chars). | Complies with repository 15-60 character limit and matches latest live title. | High | implemented in metadata |
+| Meta description | `Migrate to Shopify Plus with a Shopify Platinum Partner. We handle data, design, apps, integrations, SEO redirects, QA, launch and ongoing support.` (147 chars) | Preserved live description (147 chars). | Complies with repository 70-160 character limit and matches latest live description. | High | implemented in metadata |
+| Hero eyebrow casing | `Established in 2006` / `Shopify Plus Migration Agency` | Keep live eyebrow text and formatting. | Preserves brand authority and search keyword alignment without altering rendered appearance. | Low | implemented in content |
+| Process steps casing | `Audit & discovery`, `Plan & architecture`, `Design & development`, etc. | Sentence case matching live site | Preserves live-site typography exactly. | Low | implemented in content |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 process steps), `FAQPage` (6 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
 
 
 ## Magento to Shopify Plus Migration (`/magento-to-shopify-plus-migration`)

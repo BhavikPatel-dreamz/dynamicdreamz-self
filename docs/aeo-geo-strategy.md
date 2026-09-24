@@ -5779,9 +5779,9 @@ GEO.
 
 ## Shopify Plus Migration Agency (`/shopify-plus-migration-agency`)
 
-Status: implemented and verified; live-visible content preserved
+Status: implemented and verified; refreshed live layout and content matched exactly
 
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-24
 
 Owner: SEO, Shopify Plus migration specialists, enterprise leadership, and sales operations
 
@@ -5791,36 +5791,40 @@ Decision stage: platform re-platforming, Shopify Plus migration agency vetting, 
 
 ### Page role
 
-Dedicated commercial authority page positioning Dynamic Dreamz as a leading Shopify Plus Migration Agency in India and globally. Highlights why choose a Shopify Plus migration agency (business data security, zero downtime, planned transition), 3 core migration services (Data Migration, Design Migration, Post-Migration Support), a 4-step migration process (Plan & Prepare, Set Up Your Shopify Plus Store, Migrate & Test, Launch & Support), 12 multi-platform migration cards (Shopify Theme, Magento to Plus, Magento, WooCommerce, BigCommerce, Salesforce, PrestaShop, Squarespace, Wix, Ecwid, Square, Etsy), agency proof section (15+ years experience, Shopify Plus Partner status), 12 brand logos, 5 comprehensive FAQs, and quote request entry points.
+Dedicated commercial authority page positioning Dynamic Dreamz as a leading Shopify Plus Migration Agency and Shopify Platinum Partner. Matches the refreshed 11-section live site layout: hero with dual eyebrows, H1 "Shopify Plus Migration Services", video, review badges, and primary/secondary CTAs; 12 brand partner logos; 6 platform-specific migration cards; 8-part migration scope ("What We Migrate"); SEO-safe migration visual table and tags; 6-step controlled migration process; "Why Choose Dynamic Dreamz" with 4 capability cards and 20+ years agency proof metrics; 3 engagement and pricing options; 11 authentic client video testimonials; 3 detailed migration case studies (First Aid Distributions, Daniel Walters Eyewear, Sleepycat); and 6 comprehensive FAQs.
 
 ### Target prompts
 
 - Best Shopify Plus migration agency or certified Shopify Plus migration partner?
 - How to migrate enterprise ecommerce store to Shopify Plus from Magento, WooCommerce, BigCommerce, or Salesforce?
-- What are the common challenges during Shopify Plus migration and how to prevent them?
-- What is the cost, process, and timeline for Shopify Plus migration?
-- Why should high-volume brands migrate to Shopify Plus?
+- What does a Shopify Plus migration include (data, custom functionality, integrations, SEO)?
+- How to ensure zero data loss and protect organic SEO during a Shopify Plus migration?
+- What are the engagement models and pricing for a Shopify Plus migration?
 
 ### Current strengths and available evidence
 
-- Server-rendered H1 `Shopify Plus Migration Agency​` with full-width hero, 3 verified review badges (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0).
+- Server-rendered H1 `Shopify Plus Migration Services` with 4 verified partner and review badges (Shopify Platinum Partner, Clutch 4.9 rating, Trustpilot 4.9 TrustScore, Upwork Top Rated Plus) and autoplay background video.
 - 12 trusted brand partner logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Pop Club, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit).
-- 2 structured explanation text boxes answering "Why Choose a Shopify Plus Migration Agency?" and "Why Choose Dynamic Dreamz as a Shopify Plus Migration Agency​".
-- 3 core migration service cards with custom icons for Data Migration, Design Migration, and Post-Migration Support.
-- 4-step sequential migration process covering Plan & Prepare, Set Up Store, Migrate & Test, and Launch & Support.
-- 12 cross-platform migration cards linking to platform-specific migration landing pages.
-- 5 comprehensive FAQ accordion items directly answering common migration challenges, Shopify Plus scalability benefits, pricing models, platform value proposition, and migration workflow.
-- Structured data graph emitting Service, FAQPage (5 Question/Answer pairs), VideoObject (testimonial video schema), BreadcrumbList, Organization, and WebSite.
-- Zero duplicate assets across `public/assets/`, reusing canonical icons and storing unique SVGs under `public/assets/shopify-plus-migration-agency/`.
+- 6 platform migration cards linking to platform migration routes (`/magento-to-shopify-plus-migration`, `/woocommerce-to-shopify-migration`, `/bigcommerce-to-shopify-migration`, `/salesforce-to-shopify-migration`, `/prestashop-to-shopify-migration`, `/contact-us`).
+- 8-point migration scope detailing catalogue, customer records, pages, design, apps, custom logic, ERP/PIM integrations, and SEO redirects.
+- SEO-safe migration section detailing 301 mapping, canonicals, metadata, and crawl validation.
+- 6-step sequential process covering audit, architecture, design, migration, QA, and launch support.
+- Agency credibility box highlighting 20+ years of experience, 150+ in-house experts, 5,000+ delivered projects, and 2,500+ verified 5-star reviews.
+- 3 clear engagement models: Project-Based (custom quote), Flexible Hourly ($25/hr), and Dedicated Developer/Team (from $2,000/mo).
+- 11 client stories with founder video testimonials and review quotes.
+- 3 featured migration case studies with technology, industry, and solution summaries.
+- 6 comprehensive FAQ accordion items directly answering migration scope, platforms supported, custom functionality, SEO safeguards, app data portability, and pricing.
+- Complete JSON-LD graph emitting Service, FAQPage (6 Question/Answer pairs), VideoObject (client testimonials), BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, with unique SVGs stored cleanly and verified via SHA-256 duplicate audit.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route and discovery | The migration route required full App Router and metadata coverage | Ship the slashless route through shared SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and BreadcrumbList schema | Emit Service with FAQPage (5 items), VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Asset deduplication | Reused canonical SVGs (brand logos, review wordmarks, platform illustrations); stored unique SVGs under `public/assets/shopify-plus-migration-agency/` with 0 duplicate hash groups | Save unique assets under `public/assets/shopify-plus-migration-agency/` | Verified with SHA-256 audit |
-| P1 | deferred | Content expansion | Minor live copy punctuation (e.g. trailing zero-width spaces on headings) | Record proposed fix in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+| P0 | implemented | Route and discovery | Refreshed live page required complete layout and content update | Migrated all 11 sections matching live site hierarchy, components, and content exactly | Verified with dev server, lint, and production build |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage (6 items), VideoObject, and BreadcrumbList schema | Emit complete JSON-LD graph matching refreshed live content | Verified in rendered output and build |
+| P0 | implemented | Asset deduplication | New platform migration icon `custom-to-shopify-migration.svg` ingested | Reused canonical assets across `proof/`, `clients/`, `case-studies/`, and `home/`; 0 duplicate hash groups | Verified with SHA-256 duplicate audit |
+| P1 | deferred | Content expansion | Minor live copy grammar or phrasing variations | Keep live-site copy exactly as rendered per live-UI preservation gate | Project owner approval |
 
 ### Suggested answer copy
 
@@ -5828,13 +5832,13 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Entity, evidence, and authorship actions
 
-- Connect Dynamic Dreamz as an official Shopify Plus Partner and Platinum Partner with 20+ years of eCommerce experience and 4500+ Shopify stores built.
+- Connect Dynamic Dreamz as an official Shopify Platinum Partner and Shopify Plus Partner with 20+ years of eCommerce experience, 150+ in-house specialists, and 5,000+ delivered projects.
 - Attribute client video testimonials directly to their authentic founders and brand names.
 
 ### Internal-link and conversion actions
 
-- Internal links to `/request-quote` and `/contact-us` for lead capture.
-- Contextual navigation to all 12 platform-specific Shopify migration landing pages.
+- Internal links to `/contact-us`, `/request-quote`, `/buy-shopify-development-hours`, and `/book-a-discovery-call` for lead capture.
+- Contextual navigation to platform-specific Shopify migration landing pages and case studies.
 
 
 ## Magento to Shopify Plus Migration (`/magento-to-shopify-plus-migration`)

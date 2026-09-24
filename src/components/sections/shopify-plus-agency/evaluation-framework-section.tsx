@@ -1,19 +1,39 @@
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyPlusAgencyHowToChoose } from "@/content/shopify-plus-agency";
+import { cn } from "@/lib/class-names";
 
-export type EvaluationFrameworkContent = typeof shopifyPlusAgencyHowToChoose;
+export type EvaluationFrameworkItem = {
+  title: string;
+  description: string;
+};
+
+export type EvaluationFrameworkContent = {
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  items: readonly EvaluationFrameworkItem[];
+};
+
+export type EvaluationFrameworkSectionProps = {
+  content?: EvaluationFrameworkContent;
+  className?: string;
+  id?: string;
+};
 
 export function EvaluationFrameworkSection({
-  content,
-}: {
-  content: EvaluationFrameworkContent;
-}) {
+  content = shopifyPlusAgencyHowToChoose,
+  className,
+  id = "evaluation-framework",
+}: EvaluationFrameworkSectionProps) {
   return (
     <section
-      className="how-to-choose-spa-sec bg-white py-20 max-[992px]:py-[50px]"
+      className={cn(
+        "how-to-choose-spa-sec bg-white py-20 max-[992px]:py-[50px]",
+        className,
+      )}
       data-section="evaluation-framework"
-      id="evaluation-framework"
+      id={id}
     >
       <Container>
         <SplitSectionHeading

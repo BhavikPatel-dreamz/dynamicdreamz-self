@@ -2,7 +2,7 @@ import { seoServicesFaqs, seoServicesWhatWeProvide } from "@/content/seo-service
 import { bigcommerceFaqs, bigcommerceProcessContent } from "@/content/bigcommerce-to-shopify-migration";
 import { ecwidFaqs, ecwidProcessContent } from "@/content/ecwid-to-shopify-migration";
 import { migratingThemeToOnlineStore20Content } from "@/content/migrating-a-theme-to-online-store-2-0";
-import { plusAgencyFaqs, plusAgencyProcessContent } from "@/content/shopify-plus-migration-agency";
+import { plusAgencyFaqsContent, plusAgencyProcessContent } from "@/content/shopify-plus-migration-agency";
 import {
   upgradeShopifyPlusExclusiveTools,
   upgradeShopifyPlusFaqs,
@@ -5479,11 +5479,11 @@ export function createShopifyPlusMigrationAgencyPageSchema() {
     breadcrumbName: "Shopify Plus Migration Agency",
     audienceType:
       "Enterprise merchants, high-growth ecommerce brands, and multi-store businesses migrating to Shopify Plus",
-    faqs: plusAgencyFaqs.map((item) => ({
+    faqs: plusAgencyFaqsContent.items.map((item) => ({
       question: item.question,
       answer: item.answer,
     })),
-    offers: plusAgencyProcessContent.steps.map((step) => ({
+    offers: plusAgencyProcessContent.items.map((step) => ({
       title: step.title,
       description: step.description,
     })),

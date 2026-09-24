@@ -793,16 +793,17 @@ export const pageSeo = {
   },
   shopifyPlusMigrationAgency: {
     path: "/shopify-plus-migration-agency",
-    title: "Shopify Plus Migration Agency | Shopify Migration Experts",
+    title: "Shopify Plus Migration Agency | Dynamic Dreamz",
     description:
-      "Hire Shopify Plus Migration Agency to Switch to Shopify Plus with expert help. Choose Dynamic Dreamz for smooth migration of your store.",
+      "Migrate to Shopify Plus with a Shopify Platinum Partner. We handle data, design, apps, integrations, SEO redirects, QA, launch and ongoing support.",
     keywords: [
       "Shopify Plus migration agency",
       "Shopify Plus migration",
       "Shopify migration experts",
+      "Shopify Plus migration services",
     ],
     openGraphType: "article",
-    modifiedTime: "2025-05-05T04:28:17+00:00",
+    modifiedTime: "2026-09-16T09:13:14+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
