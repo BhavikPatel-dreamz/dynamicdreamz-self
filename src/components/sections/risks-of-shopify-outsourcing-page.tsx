@@ -1,8 +1,8 @@
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { FaqSection } from "@/components/sections/faq-section";
 import { ImageCtaSection } from "@/components/sections/image-cta-section";
 import { RisksShopifyTopics } from "@/components/sections/risks-shopify-topics";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import {
   risksShopifyOutsourcingCtas,
   risksShopifyOutsourcingFaqs,
@@ -25,7 +25,7 @@ export function RisksOfShopifyOutsourcingPage() {
         bodyClassName="!mt-2 !mb-0 !text-base !font-normal !leading-[30.4px]"
       />
       <RisksShopifyTopics items={risksShopifyOutsourcingTopics} />
-      <FaqSection
+      <SplitFaqSection
         className="faq-sec pt-0 pb-20 max-[767px]:pb-[50px]"
         idPrefix="risks-shopify-faq"
         items={risksShopifyOutsourcingFaqs}

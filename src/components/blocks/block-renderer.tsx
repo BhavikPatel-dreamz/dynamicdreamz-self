@@ -1,6 +1,6 @@
 import React from "react";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { FaqSection } from "@/components/sections/faq-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { FeaturesGridSection } from "@/components/sections/features-grid-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
@@ -114,7 +114,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             }));
 
             return (
-              <FaqSection
+              <SplitFaqSection
                 description={block.description}
                 eyebrow={block.eyebrow}
                 heading={block.heading}

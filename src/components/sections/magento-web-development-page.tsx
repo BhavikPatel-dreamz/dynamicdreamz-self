@@ -1,7 +1,7 @@
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { FaqSection } from "@/components/sections/faq-section";
 import { MagentoWebHeroSection } from "@/components/sections/magento-web-hero-section";
 import { MagentoWebTabs } from "@/components/sections/magento-web-tabs";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import {
   magentoWebContent,
   magentoWebFaqs,
@@ -15,7 +15,7 @@ export function MagentoWebDevelopmentPage() {
     <>
       <MagentoWebHeroSection content={magentoWebHero} />
       <MagentoWebTabs content={magentoWebContent} navItems={magentoWebTabsNav} />
-      <FaqSection
+      <SplitFaqSection
         className="faq-sec pb-20 max-[992px]:pb-12.5"
         idPrefix="magento-web-faq"
         items={magentoWebFaqs}
