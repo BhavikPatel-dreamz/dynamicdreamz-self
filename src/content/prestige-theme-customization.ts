@@ -1,357 +1,249 @@
+import { industryBrandLogos } from "@/content/industries";
+
 export const prestigeThemeCustomizationContent = {
   hero: {
+    eyebrow: ["Shopify Platinum Partner", "Theme Customization"] as const,
     title: "Prestige Theme Customization Service",
     description:
       "The Prestige Shopify Theme is the best choice for luxury brands that display luxury products with clean, grand designs. Our Prestige theme customization services help you to match your brand’s identity and extraordinary requirements. We concentrate on improving the user experience, adding advanced features, and optimizing for all devices, confirming that your Shopify store stands out in the competitive eCommerce market.",
-    ctaText: "request a quote",
+    ctaText: "Request a Quote",
     ctaHref: "/request-quote",
+    secondaryCtaText: "View Prestige on Shopify",
+    secondaryCtaHref: "https://themes.shopify.com/themes/prestige/presets/prestige",
+    secondaryCtaTarget: "_blank",
     image: {
       src: "/assets/prestige-theme-customization/hero/prestige-theme-customization-service-img.webp",
       alt: "Prestige Theme Customization Service Image",
-      width: 570,
-      height: 458,
+      width: 1224,
+      height: 948,
     },
   },
   brands: {
-    title: "Trusted by Leading Brands",
-    items: [
-      {
-        name: "Supper Tails Logo",
-        src: "/assets/clients/supertails.svg",
-        href: "https://supertails.com/",
-        alt: "Supper Tails Logo",
-        width: 164,
-        height: 41,
-      },
-      {
-        name: "Eleven Eleven",
-        src: "/assets/clients/eleven-eleven.svg",
-        href: "https://11-11.in/",
-        alt: "Eleven Eleven",
-        width: 145,
-        height: 20,
-      },
-      {
-        name: "bellavita logo",
-        src: "/assets/clients/bella-vita.svg",
-        href: "https://bellavitaorganic.com/",
-        alt: "bellavita logo",
-        width: 166,
-        height: 24,
-      },
-      {
-        name: "Bombay Shirt Company",
-        src: "/assets/clients/bombay-shirt-company.svg",
-        href: "https://www.bombayshirts.com/",
-        alt: "Bombay Shirt Company",
-        width: 204,
-        height: 26,
-      },
-      {
-        name: "Popclub Co",
-        src: "/assets/clients/popclub.svg",
-        href: "https://popclub.co/",
-        alt: "Popclub Co",
-        width: 65,
-        height: 41,
-      },
-      {
-        name: "SriSri Tattva Logo",
-        src: "/assets/clients/sri-sri-tattva.svg",
-        href: "https://www.srisritattva.com/",
-        alt: "SriSri Tattva Logo",
-        width: 106,
-        height: 40,
-      },
-      {
-        name: "tropicfeel logo",
-        src: "/assets/clients/tropicfeel.svg",
-        href: "https://shop.tropicfeel.com/",
-        alt: "tropicfeel logo",
-        width: 150,
-        height: 32,
-      },
-      {
-        name: "Renee logo",
-        src: "/assets/clients/renee.svg",
-        href: "https://www.reneecosmetics.in/",
-        alt: "Renee logo",
-        width: 93,
-        height: 30,
-      },
-      {
-        name: "Royce chocolate logo",
-        src: "/assets/clients/royce-chocolate.svg",
-        href: "https://royceindia.com/",
-        alt: "Royce chocolate logo",
-        width: 132,
-        height: 38,
-      },
-      {
-        name: "tego logo",
-        src: "/assets/clients/tego.svg",
-        href: "https://tego.fit/",
-        alt: "tego logo",
-        width: 101,
-        height: 40,
-      },
-      {
-        name: "nekter-colored",
-        src: "/assets/clients/nelter.svg",
-        href: "https://www.nekterjuicebar.com/",
-        alt: "nekter-colored",
-        width: 66,
-        height: 64,
-      },
-      {
-        name: "Rare Rabbit Logo",
-        src: "/assets/clients/rare-rabbit.svg",
-        href: "https://thehouseofrare.com/",
-        alt: "Rare Rabbit Logo",
-        width: 122,
-        height: 84,
-      },
-    ],
+    title: "Trusted by <br>Leading Brands",
+    items: industryBrandLogos,
   },
   features: {
+    eyebrow: "Features",
     title: "Features of Prestige Theme",
-    subtitle:
-      "The Prestige Theme is known for its luxurious & smart structure and robust features, making it <br> ideal for premium brands. Our customization service emphasizes these features while <br> customizing them for your store's objectives. Here are some key features of the Prestige theme:",
+    description:
+      "The Prestige Theme is known for its luxurious & smart structure and robust features, making it ideal for premium brands. Our customization service emphasizes these features while customizing them for your store’s objectives.",
     items: [
-      {
-        title: "Slideshow with <br> High Impact Images",
-        icon: "/assets/be-yours-theme-customization/features/promotional-banner-options.svg",
-        iconAlt: "Slideshow with High-Impact Images Icon",
-      },
-      {
-        title: "Advanced Product Filtering",
-        icon: "/assets/be-yours-theme-customization/features/built-in-product-filtering.svg",
-        iconAlt: "Advanced Product Filtering Icon",
-      },
-      {
-        title: "Image Galleries",
-        icon: "/assets/atelier-theme-customization/features/high-resolution-image-support.svg",
-        iconAlt: "Image Galleries Icon",
-      },
-      {
-        title: "Home Page Video Integration",
-        icon: "/assets/pitch-theme-customization/features/slideshow-video-support.svg",
-        iconAlt: "Home Page Video Integration Icon",
-      },
-      {
-        title: "Built-in Marketing and <br> Promotion Tools",
-        icon: "/assets/stiletto-theme-customization/features/built-in-marketing-and-promotional-tools.svg",
-        iconAlt: "Built-in Marketing and Promotion Tools Icon",
-      },
-      {
-        title: "Sticky Navigation",
-        icon: "/assets/savor-theme-customization/features/flexible-navigation.svg",
-        iconAlt: "Sticky Navigation Icon",
-      },
-    ],
+      "Slideshow with High Impact Images",
+      "Advanced Product Filtering",
+      "Image Galleries",
+      "Home Page Video Integration",
+      "Built-in Marketing and Promotion Tools",
+      "Sticky Navigation",
+      "Color Swatches",
+      "Stock counter",
+    ] as const,
   },
   benefits: {
-    title: "Benefits of Prestige <br /> Theme Customization",
-    subtitle:
-      "Customizing the Prestige Theme guarantees that your Shopify store’s design<br /> and functionality fully match your brand and enhance customer<br />expectations. Here are the key benefits of customizing the Prestige theme:",
+    eyebrow: "Benefits",
+    heading: "Benefits of Prestige Theme Customization",
+    description:
+      "Customizing the Prestige Theme guarantees that your Shopify store’s design and functionality fully match your brand and enhance customer expectations. Here are the key benefits of customizing the Prestige theme:",
     items: [
       {
         title: "Fully Customizable Store",
         description:
           "Customize every theme element to reflect your brand's aesthetics and functionality requirements.",
-        icon: "/assets/shopify-theme-customization/benefits/fully-customizable-store.svg",
-        iconAlt: "cs_icon_img",
+        icon: "/assets/dawn-theme-customization/benefits/fully-customizable-store.svg",
+        iconAlt: "Fully Customizable Store",
       },
       {
         title: "Responsive Design",
         description:
           "We make sure that while customizing your theme, your Shopify store renders and functions correctly across all devices, from desktops to smartphones.",
-        icon: "/assets/shopify-theme-customization/benefits/responsive-design.svg",
-        iconAlt: "responsive_design_icon",
+        icon: "/assets/dawn-theme-customization/benefits/responsive-design.svg",
+        iconAlt: "Responsive Design",
       },
       {
         title: "Unique Brand Identity",
         description:
           "We personalized your theme, ensuring it resonates with your unique brand identity to enhance credibility.",
-        icon: "/assets/shopify-theme-customization/benefits/unique-brand-identity.svg",
-        iconAlt: "unique-brand-identity-icon",
+        icon: "/assets/dawn-theme-customization/benefits/unique-brand-identity.svg",
+        iconAlt: "Unique Brand Identity",
       },
       {
         title: "Improved User Experience",
         description:
           "We improve the navigation system, product search, and overall usability to boost consumer fulfillment.",
-        icon: "/assets/shopify-theme-customization/benefits/improved-user-experience.svg",
-        iconAlt: "User-Friendly Interface",
+        icon: "/assets/dawn-theme-customization/benefits/improved-user-experience.svg",
+        iconAlt: "Improved User Experience",
       },
       {
         title: "Multiple Third party Apps",
         description:
           "Our Shopify experts specialize in smoothly integrating Shopify apps for marketing, inventory management, and customer support.",
-        icon: "/assets/shopify-theme-customization/benefits/multiple-third-party-apps.svg",
-        iconAlt: "Multiple Sales Channels Icon",
+        icon: "/assets/expanse-theme-customization/benefits/multiple-third-party-apps.svg",
+        iconAlt: "Multiple Third party Apps",
       },
       {
         title: "Higher Conversion Rates",
         description:
           "A perfectly customized theme design can boost customer engagement to the next level and generate more sales.",
-        icon: "/assets/shopify-theme-customization/benefits/higher-conversion-rates.svg",
-        iconAlt: "cost-effective-scalability-img",
+        icon: "/assets/dawn-theme-customization/benefits/higher-conversion-rates.svg",
+        iconAlt: "Higher Conversion Rates",
       },
       {
         title: "Mobile Optimization",
         description:
           "As we know, the number of mobile users is increasing. In that case, the theme should be optimized for mobile users to increase reach and conversion.",
-        icon: "/assets/shopify-theme-customization/benefits/mobile-optimization.svg",
-        iconAlt: "Mobile Optimization Icon",
+        icon: "/assets/dawn-theme-customization/benefits/mobile-optimization.svg",
+        iconAlt: "Mobile Optimization",
       },
       {
         title: "Safe and Secure Payments",
         description:
           "We integrate secure payment gateways into your Shopify store to ensure secure and trustworthy transactions for your customers.",
-        icon: "/assets/shopify-theme-customization/benefits/safe-and-secure-payments.svg",
-        iconAlt: "Enhanced Security Icon",
+        icon: "/assets/dawn-theme-customization/benefits/safe-and-secure-payments.svg",
+        iconAlt: "Safe and Secure Payments",
       },
       {
         title: "Zero Maintenance Cost",
         description:
           "We can help you lower the maintenance cost after our theme customization service. It enables you to improve your ROI.",
-        icon: "/assets/shopify-theme-customization/benefits/zero-maintenance-cost.svg",
-        iconAlt: "Zero Maintenance Cost Image",
+        icon: "/assets/dawn-theme-customization/benefits/zero-maintenance-cost.svg",
+        iconAlt: "Zero Maintenance Cost",
       },
-    ],
+    ] as const,
   },
   services: {
-    title: "Our Prestige Theme Customization Services",
-    subtitle:
+    eyebrow: "Our Services",
+    heading: "Our Prestige Theme Customization Services",
+    description:
       "Dynamic Dreamz offers a wide range of Shopify theme customization services to <br> enhance your store's performance and design. Our services are:",
     items: [
       {
         title: "Theme Installation",
-        description: "We take care of the installation process for your Prestige theme.",
-        icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
-        iconAlt: "Maintenance and Support Icon",
+        description:
+          "We take care of the installation process for your Prestige theme.",
+        icon: "/assets/services/shopify-development-in-bangalore/why-choose/customizable-themes.svg",
+        iconAlt: "Theme Installation",
       },
       {
         title: "Custom Design and Branding",
         description:
           "Our Shopify experts can help you create a remarkable custom store design that echoes your brand’s identity.",
-        icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
-        iconAlt: "Plugin Development Icon",
+        icon: "/assets/dawn-theme-customization/services/custom-design-and-branding.svg",
+        iconAlt: "Custom Design and Branding",
       },
       {
         title: "Responsive Design",
         description:
           "We guarantee your store works smoothly on any device, from laptop to mobile.",
-        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
-        iconAlt: "custom themes icon",
+        icon: "/assets/dawn-theme-customization/benefits/responsive-design.svg",
+        iconAlt: "Responsive Design",
       },
       {
         title: "Advanced Features Integration",
         description:
           "We are professionals in developing custom advanced features such as promotional banners, product filters, and pop ups.",
-        icon: "/assets/shopify-theme-customization/services/advanced-features-integration.svg",
-        iconAlt: "Data Integrity Checks Icon",
+        icon: "/assets/dawn-theme-customization/services/advanced-features-integration.svg",
+        iconAlt: "Advanced Features Integration",
       },
       {
         title: "Performance Optimization",
         description:
           "Boost your store quickness with enhanced loading speeds for better sales growth and user experience.",
-        icon: "/assets/shopify-theme-customization/services/performance-optimization.svg",
-        iconAlt: "Compliance with Shopify’s Security Standards Icon",
+        icon: "/assets/dawn-theme-customization/services/performance-optimization.svg",
+        iconAlt: "Performance Optimization",
       },
       {
         title: "Ongoing Support and Maintenance",
         description:
           "We offer continuous support to keep your store updated and functioning smoothly.",
-        icon: "/assets/shopify-theme-customization/services/ongoing-support-and-maintenance.svg",
-        iconAlt: "Custom App Development Icon",
+        icon: "/assets/services/upgrade-to-shopify-plus/why-choose/ongoing-support-and-maintenance.svg",
+        iconAlt: "Ongoing Support and Maintenance",
       },
-    ],
+    ] as const,
   },
   whyChoose: {
-    title: "Why Choose Dynamic Dreamz",
-    subtitle:
-      "Here are some key factors why you need to consider Dynamic Dreamz for<br />your Prestige theme customization requirements:",
+    eyebrow: "Why Us",
+    heading: "Why Choose Dynamic Dreamz",
+    description:
+      "Here are some key factors why you need to consider Dynamic Dreamz for your Prestige theme customization requirements:",
     items: [
       {
+        number: "01",
         title: "Expert Team",
         description:
           "Our professional Shopify developers and designers know how to build a Shopify store that echoes your brand identity and enhances performance.",
-        icon: "/assets/shopify-theme-customization/why-choose/expert-team.svg",
-        iconAlt: "expert-team",
       },
       {
+        number: "02",
         title: "Proven Process",
         description:
           "We use a simple process to ensure that every customization is pixel perfect and according to your requirements.",
-        icon: "/assets/shopify-theme-customization/why-choose/proven-process.svg",
-        iconAlt: "Proven Process Icon",
       },
       {
+        number: "03",
         title: "Ongoing Support",
         description:
           "We offer support after your store is live if you need any help or new functionality.",
-        icon: "/assets/shopify-theme-customization/why-choose/ongoing-support.svg",
-        iconAlt: "customer_support_icon_img",
       },
       {
+        number: "04",
         title: "Client Focused Approach",
         description:
           "We research and nearly understand your objectives and give solutions that fulfill your business requirements.",
-        icon: "/assets/shopify-theme-customization/why-choose/client-focused-approach.svg",
-        iconAlt: "Client-Focused Approach Icon",
       },
-    ],
+    ] as const,
   },
   portfolio: {
-    title: "Snippets of Prestige Theme Customization Portfolio",
-    subtitle:
+    eyebrow: "Portfolio",
+    heading: "Snippets of Prestige Theme Customization Portfolio",
+    description:
       "Explore our portfolio showcasing successful Shopify customization projects, <br> highlighting how we customize, secure, and enhance stores for peak performance.",
+    ctaLabel: "View our work",
+    ctaHref: "/our-work",
     items: [
       {
         name: "Atolea Jewelry",
-        href: "https://atoleajewelry.com/",
-        image: "/assets/our-work/projects/atolea-jewelry-model.webp",
-        imageAlt: "Atolea Jewelry",
         category: "SHOPIFY",
+        href: "https://atoleajewelry.com/",
+        image: "/assets/our-work/projects/atolea-jewelry.webp",
+        imageAlt: "Atolea Jewelry Image",
       },
       {
         name: "Bombay Shirt Company",
-        href: "https://www.bombayshirts.com/",
-        image: "/assets/our-work/projects/bombay-shirt-company-model.webp",
-        imageAlt: "Bombay Shirt Company",
         category: "SHOPIFY",
+        href: "https://www.bombayshirts.com/",
+        image: "/assets/fashion/portfolio/bombay-shirt-company-fashion.webp",
+        imageAlt: "Bombay Shirt Company Image",
       },
       {
         name: "Sims Direct",
+        category: "SHOPIFY",
         href: "https://simsdirect.com.au/",
         image: "/assets/our-work/projects/sims-direct.webp",
-        imageAlt: "Sims Direct",
-        category: "SHOPIFY",
+        imageAlt: "Sims Direct Image",
       },
       {
         name: "Bonbon Lingerie",
+        category: "SHOPIFY",
         href: "https://bonbonlingerie.com/",
         image: "/assets/our-work/projects/bonbon-lingerie.webp",
-        imageAlt: "Bonbon Lingerie",
-        category: "SHOPIFY",
+        imageAlt: "Bonbon Lingerie Image",
       },
       {
         name: "Pagerie",
+        category: "SHOPIFY",
         href: "https://www.pagerie.com/",
         image: "/assets/pet-industry/portfolio/pagerie-dog-accessories.webp",
-        imageAlt: "Pagerie",
-        category: "SHOPIFY",
+        imageAlt: "Pagerie Image",
       },
       {
         name: "Weardiop",
+        category: "SHOPIFY",
         href: "https://weardiop.com/",
         image: "/assets/our-work/projects/weardiop.webp",
-        imageAlt: "Weardiop",
-        category: "SHOPIFY",
+        imageAlt: "Weardiop Image",
       },
-    ],
+    ] as const,
   },
+  faqsHeading: "Frequently Asked Questions",
   faqs: [
     {
       question: "Can I customize the Prestige theme even if I've already started using it?",
@@ -383,5 +275,5 @@ export const prestigeThemeCustomizationContent = {
       answer:
         "There is no fixed cost for the Prestige theme customization service because it depends on the complexity and the size of the customizations you want. We give adaptable pricing plans based on your specific requirements.",
     },
-  ],
+  ] as const,
 } as const;

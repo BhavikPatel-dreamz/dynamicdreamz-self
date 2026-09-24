@@ -2,8 +2,8 @@
 
 - **Route**: `/prestige-theme-customization`
 - **Live URL Reference**: `https://www.dynamicdreamz.com/prestige-theme-customization/`
-- **Capture Date**: 2026-08-21
-- **Status**: Main-page parity verified; shared global navigation taxonomy tracked separately
+- **Capture Date**: 2026-09-24
+- **Status**: Verified
 - **Viewports Inspected**:
   - Desktop: 1440x900
   - Tablet: 768x1024
@@ -13,27 +13,23 @@
 
 ## 1. Visual References & Page Structure
 
-### 2026-08-21 Capture Files
-
-- Live and local screenshots were refreshed at 1440x900, 768x1024, and 390x844 under `docs/visual-captures/source/prestige-theme-customization/`.
-- The rendered live page and View Page Source were downloaded to temporary comparison files; production code will not depend on them.
-- Comparison covers default, hover/focus, FAQ expanded, benefit drag behavior, logo-slider movement, responsive stacking, and the floating contact control.
-
 ### Live CSS Sources Inspected
-- `/wp-content/themes/dynamicdreamz/assets/css/services/main.css`
-  - `.theme-customization-service-sec` (hero layout, 50%/50% split, `.review-wrap { display: none; }`, image bottom-aligned)
-  - `.three_col_icon_sec` (3-column features grid, 55px icons, centered bold text, rounded-15px card border `#efefef`)
-  - `.shopify-customization-services-sec` (benefits grid with gradient background, white cards, hover gradient border)
-  - `.what-we-provide-sec` (2-column services grid, 10px rounded cards with hover gradient border)
-  - `.why_dynamic_dreamz_sec.two-column-icon-text-bg` (2-column horizontal icon-text list with borders `rgba(0,0,0,0.05)`)
-  - `.our-work-sec` (3-column portfolio project showcase cards with hover "View Project" arrow and category badge)
-  - `.faq-sec` (accordion items with active/expanded states)
-- `/wp-content/themes/dynamicdreamz/assets/css/services/media.css`
-  - Breakpoints: desktop (>=1200px), tablet (768px-1199px / <=991px), mobile (<=767px / <=575px).
-- `/wp-content/themes/dynamicdreamz/style.css`
-  - Global Montserrat body typography, heading weights, container widths, buttons, and base spacing.
-- `/wp-content/themes/dynamicdreamz/assets/css/owl.carousel.min.css`
-  - Logo-slider track/item behavior and transition primitives.
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/theme_customize_hero.css`
+  - `.theme-customize-hero` (background: `#f7f4e9`, padding-top: `91px`, overflow: hidden, dual CTAs: red primary button + transparent secondary button with border)
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/trusted_by_leading_brands_section.css`
+  - `.our-client-sec` (brand trust section with left column heading "Trusted by Leading Brands" and right marquee slider with 12 logos)
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/theme_features.css`
+  - `.theme-features` (split beige banner with left title/description block and right 8-item feature grid)
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/city_page_why_choose_dynamic_dreamz.css`
+  - `.city-page-why-choose-dynamic.bg-light` (3-column benefits grid with 24x24 outline SVG icons, 9 benefit items)
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/delivery_section.css`
+  - `.what-we-provide-sec.pb-0` (2-column services grid with 24x24 red SVG icons `#AD5151`, 6 service cards)
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/how_to_choose_the_right_shopify_plus_agency_sec.css`
+  - `.how-to-choose-spa-sec` (4-item numbered framework cards `01`–`04` with dark circular badge and white background)
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/projects_section.css`
+  - `.our-work-sec.pt-0` (Shopify portfolio project showcase, 4 columns desktop / 3 cols tablet / 2 cols mobile, 6 project cards with arrow up hover button, bottom "View our work" CTA linking to `/our-work`)
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/faqs_section.css`
+  - `.faq-sec` (6 accordion items with active/expanded states, bold question titles, smooth collapse)
 
 ---
 
@@ -41,14 +37,14 @@
 
 | Section # | Live Section Title / Purpose | Component / Implementation | Reused / Dedicated |
 |---|---|---|---|
-| 1 | Hero (`Prestige Theme Customization Service`) | `ThemeHeroSection` | Reusable / Generalized |
-| 2 | Trusted by Leading Brands | `IndustryBrandsSection` | Reused |
-| 3 | Features of Prestige Theme (6 cards) | `ThemeFeaturesSection` | Reusable / Generalized |
-| 4 | Benefits of Prestige Theme Customization (9 cards) | `ShopifyReasonsSection` + `HorizontalDragScroll` | Reused / Backward-compatible carousel variant |
-| 5 | Our Prestige Theme Customization Services (6 cards) | `ShopifyServicesSection` | Reused |
-| 6 | Why Choose Dynamic Dreamz (4 items) | `ThemeWhyChooseSection` | Reusable / Generalized |
-| 7 | Snippets of Prestige Theme Customization Portfolio (6 projects) | `PortfolioShowcaseSection` & `PortfolioProjectCard` | Reused |
-| 8 | Frequently Asked Questions (6 accordion items) | `FaqSection` & `FaqAccordion` | Reused |
+| 1 | Hero (`Prestige Theme Customization Service`) | `ThemeHeroSection` | Reused (`theme-customize-hero` layout) |
+| 2 | Trusted by Leading Brands (12 client logos) | `IndustryBrandsSection` | Reused (`industryBrandLogos`) |
+| 3 | Features of Prestige Theme (8 features) | `ThemeFeaturesBannerSection` | Reused (`theme-features` banner layout) |
+| 4 | Benefits of Prestige Theme Customization (9 cards) | `CityWhyChooseBoxesSection` | Reused (`city-page-why-choose-dynamic` 3-col layout) |
+| 5 | Our Prestige Theme Customization Services (6 cards) | `AgencyServicesSection` | Reused (`services-box` variant) |
+| 6 | Why Choose Dynamic Dreamz (4 numbered items) | `EvaluationFrameworkSection` | Reused (`how-to-choose-spa-sec` framework) |
+| 7 | Snippets of Prestige Theme Customization Portfolio (6 projects) | `PortfolioShowcaseSection` | Reused (`ourWorkRefresh` card variant, bottom CTA) |
+| 8 | Frequently Asked Questions (6 accordion items) | `SplitFaqSection` | Reused (`faq-sec` accordion) |
 
 ---
 
@@ -56,44 +52,43 @@
 
 - **Heading Font**: Montserrat (`font-sans font-bold text-ink`).
 - **Hero Title**: `text-[50px] leading-[66px]` on desktop, `text-[40px] leading-[50px]` on tablet, `text-[30px] leading-[40px]` on mobile.
+- **Hero Background**: `#f7f4e9` with overflow hidden.
+- **Hero Image**: Optimized 1224x948 WebP image (`prestige-theme-customization-service-img.webp`, 85KB).
+- **Hero CTAs**:
+  - Primary: `Request a Quote` linking to `/request-quote` (`btn btn-red`)
+  - Secondary: `View Prestige on Shopify` linking to `https://themes.shopify.com/themes/prestige/presets/prestige` (`target="_blank"`)
 - **Section Headings**: `text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink` (desktop), `text-[30px] leading-10` (tablet), `text-2xl leading-[33px]` (mobile).
-- **Body / Subtitles**: `text-base leading-[30.4px] font-normal text-muted` (hero), `text-base leading-[27px]` (cards).
-- **Hero Image**: Bottom-aligned 570x458 WebP image (`prestige-theme-customization-service-img.webp`).
-- **Brand Colors**: Light gradient `linear-gradient(97.18deg, #e8f9ef 28.5%, #e6fafd 91.82%)`, red primary CTA `#df4644` / `#cd3735`.
+- **Body / Subtitles**: `text-base leading-[28px] font-medium text-muted`.
 
 ---
 
 ## 4. Asset Deduplication & Integrity
 
-- 12 brand partner logos reused directly from `public/assets/clients/` (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit).
-- 9 benefit icons and 5 service icons reused from `public/assets/shopify-theme-customization/`.
-- Four portfolio screenshots reuse canonical project paths and two unique live creative variants were ingested after scratch-buffer hash and visual comparison:
-  - `/assets/our-work/projects/atolea-jewelry-model.webp`
-  - `/assets/our-work/projects/bombay-shirt-company-model.webp`
+- 12 brand partner logos reused directly from canonical `@/content/industries` (`industryBrandLogos`).
+- 9 benefit icons reused from canonical paths:
+  - `/assets/dawn-theme-customization/benefits/fully-customizable-store.svg`
+  - `/assets/dawn-theme-customization/benefits/responsive-design.svg`
+  - `/assets/dawn-theme-customization/benefits/unique-brand-identity.svg`
+  - `/assets/dawn-theme-customization/benefits/improved-user-experience.svg`
+  - `/assets/expanse-theme-customization/benefits/multiple-third-party-apps.svg`
+  - `/assets/dawn-theme-customization/benefits/higher-conversion-rates.svg`
+  - `/assets/dawn-theme-customization/benefits/mobile-optimization.svg`
+  - `/assets/dawn-theme-customization/benefits/safe-and-secure-payments.svg`
+  - `/assets/dawn-theme-customization/benefits/zero-maintenance-cost.svg`
+- 6 service icons reused from canonical paths:
+  - `/assets/services/shopify-development-in-bangalore/why-choose/customizable-themes.svg`
+  - `/assets/dawn-theme-customization/services/custom-design-and-branding.svg`
+  - `/assets/dawn-theme-customization/benefits/responsive-design.svg`
+  - `/assets/dawn-theme-customization/services/advanced-features-integration.svg`
+  - `/assets/dawn-theme-customization/services/performance-optimization.svg`
+  - `/assets/services/upgrade-to-shopify-plus/why-choose/ongoing-support-and-maintenance.svg`
+- All 6 Shopify portfolio projects reused from canonical paths:
+  - `/assets/our-work/projects/atolea-jewelry.webp`
+  - `/assets/fashion/portfolio/bombay-shirt-company-fashion.webp`
   - `/assets/our-work/projects/sims-direct.webp`
   - `/assets/our-work/projects/bonbon-lingerie.webp`
   - `/assets/pet-industry/portfolio/pagerie-dog-accessories.webp`
   - `/assets/our-work/projects/weardiop.webp`
-- Unique theme assets cleanly saved under `public/assets/prestige-theme-customization/` with clean kebab-case names:
-  - `hero/prestige-theme-customization-service-img.webp`
-  - `/assets/atelier-theme-customization/features/high-resolution-image-support.svg` (shared exact-match asset)
-  - `/assets/pitch-theme-customization/features/slideshow-video-support.svg` (shared exact-match asset)
-  - `/assets/stiletto-theme-customization/features/built-in-marketing-and-promotional-tools.svg` (shared exact-match asset)
-- The slideshow, advanced-filtering, and sticky-navigation visuals reuse byte-identical canonical SVGs already stored under the Be Yours and Savor theme asset folders.
-- The two ingested portfolio images introduce no duplicate hashes. Repository-wide duplicate hash groups: 0.
-
-## 5. Interaction & Responsive Verification
-
-- Benefits carousel: no autoplay, no arrows, no dots; pointer/touch drag enabled; 2 cards from 767px upward, 1 card below 767px, 16px desktop/tablet gap, 10px live mobile intent, and 25px edge reveal. The viewport spans the browser width while the initial track offset and matching scroll padding align the first card with the container content edge; after scrolling, earlier cards can remain visible at the browser edge.
-- Benefits heading: the authored `<br>` remains active at every breakpoint on this route, matching the live two-line heading instead of being hidden below desktop.
-- Brand slider: 4/3/2 visible logos across desktop/tablet/mobile, 2-second autoplay, 500ms transition, infinite looping, draggable/swipe interaction, and pause-on-focus accessibility behavior.
-- Feature grid: 3/2/1 columns across desktop/tablet/mobile.
-- Service cards: 2/1 columns; live 16px/27px paragraph typography retained on mobile for this route.
-- Why-choose grid: 2/1 columns; each card places its 66x70px icon beside the title/description above 767px, then stacks the icon, title, and description into separate rows at 767px and below. The live 16px/27.2px paragraph typography is retained on mobile for this route.
-- Portfolio: 3/2/1 columns with the live hover overlay, category badge, project label, and external-link behavior.
-- FAQ: first item expanded by default; hover/focus and expanded controls preserve the shared accessible accordion behavior.
-- Hero artwork: stretched to the live desktop width, half-width at tablet, full-width on mobile, with the measured 25px tablet/mobile offset below the CTA.
-
-## 6. Remaining Difference
-
-- The main Prestige page content, typography, section spacing, cards, sliders, portfolio media, FAQ, and responsive behavior now match the current live reference. The site-wide desktop navigation taxonomy is managed by the shared global header and still reflects the migration navigation model rather than the live site's newest menu grouping; changing it safely requires a site-wide header/menu parity task because it affects every route and mega-menu interaction.
+- Unique theme hero asset saved under `public/assets/prestige-theme-customization/hero/`:
+  - `hero/prestige-theme-customization-service-img.webp` (1224x948 WebP, 85KB)
+- Total duplicate hash groups across `public/assets/`: 0.

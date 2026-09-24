@@ -4395,7 +4395,7 @@ Dedicated post-application confirmation and thank-you screen for job applicants 
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-21
+Last reviewed: 2026-09-24
 
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 
@@ -4405,7 +4405,7 @@ Decision stage: partner selection, Prestige theme customization scope definition
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Prestige theme customization capabilities. Features 6 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 portfolio project cards, 6 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Prestige theme customization capabilities. Features 12 client brand trust logos, 8 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 portfolio project cards with `/our-work` CTA, 6 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -4418,14 +4418,14 @@ Dedicated commercial landing page presenting Dynamic Dreamz Prestige theme custo
 ### Current strengths and available evidence
 
 - Server-rendered H1 `Prestige Theme Customization Service` with direct answer paragraph.
-- 6 distinct theme features with vector icons (Slideshow with High Impact Images, Advanced Product Filtering, Image Galleries, Home Page Video Integration, Built-in Marketing & Promotion Tools, Sticky Navigation).
-- 9 core benefits of Prestige customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Apps, Higher Conversion Rates, Mobile Optimization, Safe & Secure Payments, Zero Maintenance Cost).
+- 8 distinct theme features (Slideshow with High Impact Images, Advanced Product Filtering, Image Galleries, Home Page Video Integration, Built-in Marketing and Promotion Tools, Sticky Navigation, Color Swatches, Stock counter).
+- 9 core benefits of Prestige customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third party Apps, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost).
 - 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
-- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
-- 6 real portfolio project cards (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop).
+- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
+- 6 real portfolio project cards (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop) with `/our-work` CTA.
 - 6 comprehensive FAQ accordion items directly answering merchant questions on timeline, cost, SEO, and support.
 - Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (6 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
-- Prestige-specific asset audit verified that the two live portfolio creative variants are unique and stored once; three byte-identical feature icons now reuse their existing canonical files. Repository-wide duplicate hash groups: 0.
+- Prestige-specific asset audit verified that hero graphic is cleanly optimized to WebP and all portfolio and icon assets reuse canonical files. Repository-wide duplicate hash groups: 0.
 
 ### Recommended improvements
 
@@ -4433,7 +4433,7 @@ Dedicated commercial landing page presenting Dynamic Dreamz Prestige theme custo
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Missing App Router implementation for Prestige theme customization | Ship slashless `/prestige-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
 | P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (6 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Prestige hero graphic and feature icons under `public/assets/prestige-theme-customization/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Prestige hero graphic under `public/assets/prestige-theme-customization/` | Verified locally with 0 duplicate assets |
 | P1 | deferred | Content expansion | Grammar improvements and enhanced copywriting for benefits and FAQs | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -4453,7 +4453,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service with 6 Offer items, 6 FAQ items, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-21T00:00:00+05:30`.
+- Set explicit freshness `modifiedTime` to `2026-09-24T00:00:00+05:30`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
@@ -4463,7 +4463,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/prestige-theme-customization`; source/build URL guard passes.
+- URL-policy review (2026-09-24): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/prestige-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 154 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Web Design (`/web-design`)
