@@ -767,7 +767,7 @@ Primary SEO intent: cross-platform app development services, custom cross-platfo
 ## Shopify Mobile App Development (`/shopify-mobile-app-development`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-09-07
+Last reviewed: 2026-09-24
 Primary SEO intent: Shopify mobile app development company, custom Shopify mobile app development for iOS and Android, DTC Shopify mobile apps, React Native Shopify mobile app, mobile shopping experience design.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |

@@ -12,11 +12,14 @@ export function ShopifyMobileAppDtcSection({
 }: ShopifyMobileAppDtcSectionProps) {
   return (
     <section className="shopify_mobile_app_development_for_dtc_brands bg-[#FAFAF7] py-20 max-[991px]:py-[50px]">
-      <Container>
+      <Container className="min-[1400px]:max-w-[1408px] px-[15px]">
         <SplitSectionHeading
+          variant="services"
           eyebrow={content.eyebrow}
           heading={content.heading}
           paragraphs={content.paragraphs}
+          titleColumnClassName="w-[42%] max-[1199px]:w-[48%] max-[992px]:w-full"
+          textColumnClassName="w-[48%] max-[992px]:w-full"
           className="mb-[50px] max-[767px]:mb-[30px]"
         />
 

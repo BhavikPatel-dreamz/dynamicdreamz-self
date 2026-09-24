@@ -101,13 +101,13 @@ function PlatformMark({ platformMark }: { platformMark: PortfolioPlatformMark })
 function AppStoreLinks({ appLinks }: { appLinks: readonly PortfolioAppLink[] }) {
   return (
     <span
-      className="absolute right-0 bottom-[30px] left-0 z-2 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-in-out group-hover/project:opacity-100 group-focus-within/project:opacity-100 max-[1199px]:opacity-100"
+      className="absolute right-0 bottom-[30px] left-0 z-2 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-in-out group-hover/project:opacity-100 group-focus-within/project:opacity-100 max-[1199px]:opacity-100 max-[575px]:bottom-[15px]"
       data-project-app-links
     >
       {appLinks.map((link, index) => (
         <a
           className={cn(
-            "inline-flex items-center px-[27px] text-base leading-[25.2px] font-bold text-white max-[1199px]:px-[15px] max-[1199px]:text-sm max-[1199px]:leading-[18px] max-[359px]:px-2.5",
+            "inline-flex items-center px-[27px] text-base leading-[25.2px] font-bold text-white max-[1199px]:px-[15px] max-[1199px]:text-sm max-[1199px]:leading-[18px] max-[575px]:text-[0px] max-[575px]:px-[11px] max-[359px]:px-2.5",
             index > 0 && "border-l-[1.5px] border-white",
           )}
           href={link.href}
@@ -116,7 +116,7 @@ function AppStoreLinks({ appLinks }: { appLinks: readonly PortfolioAppLink[] }) 
           target="_blank"
         >
           <Image
-            className="mr-2.5 h-[30px] w-[30px] max-[1199px]:h-7 max-[1199px]:w-7"
+            className="mr-2.5 h-[30px] w-[30px] max-[1199px]:h-7 max-[1199px]:w-7 max-[575px]:mr-0 max-[575px]:h-6 max-[575px]:w-6"
             src={link.icon}
             alt=""
             width={39}

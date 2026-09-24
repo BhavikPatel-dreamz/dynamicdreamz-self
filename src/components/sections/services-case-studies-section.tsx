@@ -23,6 +23,9 @@ export type ServicesCaseStudiesSectionProps = {
   items: readonly CaseStudyPreviewItem[];
   className?: string;
   id?: string;
+  hideCardDescription?: boolean;
+  headingClassName?: string;
+  containerClassName?: string;
 };
 
 export function ServicesCaseStudiesSection({
@@ -32,6 +35,9 @@ export function ServicesCaseStudiesSection({
   items,
   className,
   id,
+  hideCardDescription = false,
+  headingClassName,
+  containerClassName,
 }: ServicesCaseStudiesSectionProps) {
   return (
     <section
@@ -41,23 +47,36 @@ export function ServicesCaseStudiesSection({
       )}
       id={id}
     >
-      <Container>
-        <div className="section_title_with_eyebrow mb-[50px] max-[767px]:mb-[30px]">
-          <div className="title">
+      <Container className={containerClassName}>
+        <div
+          className={cn(
+            "section_title_with_eyebrow mb-10 max-[991px]:mb-[30px] max-[767px]:mb-5",
+            description &&
+              "flex flex-wrap items-end justify-between max-[991px]:flex-col max-[991px]:items-start",
+          )}
+        >
+          <div
+            className={cn("title", description && "w-[44%] max-[991px]:w-full")}
+          >
             {eyebrow && (
-              <div className="eyebrow mb-2">
-                <span className="inline-flex items-center gap-2 font-montserrat text-xs font-bold uppercase tracking-[1px] text-[#ad5151] before:inline-block before:h-[2px] before:w-5 before:bg-[#ad5151] before:content-['']">
+              <div className="eyebrow relative mb-4 inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:before:top-[6px] max-[767px]:mb-3 max-[767px]:pl-[23px] max-[767px]:before:top-[4px] max-[767px]:before:w-[15px]">
+                <span className="font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-xs max-[767px]:text-[10px]">
                   {eyebrow}
                 </span>
               </div>
             )}
-            <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-              {formatBrText(heading, "max-[767px]:hidden")}
+            <h2
+              className={cn(
+                "m-0 font-montreal-medium text-[35px] font-normal leading-[49px] text-[#282828] max-[1199px]:[&_br]:hidden max-[991px]:mb-2.5 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]",
+                headingClassName,
+              )}
+            >
+              {formatBrText(heading, "max-[1199px]:hidden")}
             </h2>
           </div>
           {description && (
-            <div className="section_text mt-2.5">
-              <p className="font-sans text-base font-medium leading-[30.4px] text-muted">
+            <div className="section_text w-[48.3%] max-[1199px]:w-[50%] max-[991px]:w-full max-[991px]:mt-2.5">
+              <p className="m-0 font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">
                 {description}
               </p>
             </div>
@@ -68,7 +87,7 @@ export function ServicesCaseStudiesSection({
           {items.map((item) => (
             <article
               key={item.href}
-              className="cs-listing-row flex w-[calc(33.333%-14px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[992px]:w-full"
+              className="cs-listing-row flex w-[calc(33.333%-14px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[1199px]:w-[calc(50%-10px)] max-[992px]:w-full"
             >
               <div className="flex h-full flex-col">
                 <Link
@@ -102,7 +121,7 @@ export function ServicesCaseStudiesSection({
                           {item.title}
                         </h3>
                       </Link>
-                      {item.description ? (
+                      {item.description && !hideCardDescription ? (
                         <p className="m-0 font-sans text-[13px] font-medium leading-[1.75] text-[#535353]">
                           {item.description}
                         </p>

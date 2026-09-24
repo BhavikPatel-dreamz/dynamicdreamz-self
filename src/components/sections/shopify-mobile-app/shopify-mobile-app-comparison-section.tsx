@@ -11,8 +11,9 @@ export function ShopifyMobileAppComparisonSection({
 }: ShopifyMobileAppComparisonSectionProps) {
   return (
     <section className="why_build_a_custom_shopify_mobile_app bg-[#F7F4E9] py-20 max-[991px]:py-[50px]">
-      <Container>
+      <Container className="min-[1400px]:max-w-[1408px] px-[15px]">
         <SplitSectionHeading
+          variant="services"
           eyebrow={content.eyebrow}
           heading={content.heading}
           description={content.description}
