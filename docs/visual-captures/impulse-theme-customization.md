@@ -2,44 +2,38 @@
 
 - **Route**: `/impulse-theme-customization`
 - **Live URL Reference**: `https://www.dynamicdreamz.com/impulse-theme-customization/`
-- **Capture Date**: 2026-08-19
-- **Last UI Review**: 2026-08-21 (live/local full-page comparison)
-- **Status**: Verified after parity corrections
+- **Capture Date**: 2026-09-24
+- **Status**: Production-ready remigration matching refreshed live theme layout
 - **Viewports Inspected**:
-  - Desktop: 1440x900
-  - Tablet: 768x1024
-  - Mobile: 390x844
+  - Desktop: 1440x900 / 1200px+
+  - Tablet: 768x1024 / 991px
+  - Mobile: 390x844 / 575px
 
 ---
 
 ## 1. Visual References & Page Structure
 
 ### Live CSS Sources Inspected
-- `/wp-content/themes/dynamicdreamz/assets/css/services/main.css`
-  - `.theme-customization-service-sec` (hero layout, 50%/50% split, `.review-wrap { display: none; }`, image bottom-aligned)
-  - `.three_col_icon_sec` (3-column features grid, 55px icons, centered bold text, rounded-15px card border `#efefef`)
-  - `.shopify-customization-services-sec` (benefits grid with gradient background, white cards, hover gradient border)
-  - `.what-we-provide-sec` (2-column services grid, 10px rounded cards with hover gradient border)
-  - `.why_dynamic_dreamz_sec.two-column-icon-text-bg` (2-column horizontal icon-text list with borders `rgba(0,0,0,0.05)`)
-  - `.our-work-sec` (3-column portfolio project showcase cards with hover "View Project" arrow and category badge)
-  - `.faq-sec` (accordion items with active/expanded states)
-- `/wp-content/themes/dynamicdreamz/assets/css/services/media.css`
-  - Breakpoints: desktop (>=1200px), tablet (768px-1199px / <=991px), mobile (<=767px / <=575px).
-- `/wp-content/themes/dynamicdreamz/assets/css/header.css`
-- `/wp-content/themes/dynamicdreamz/assets/css/footer.css`
-
-### Live JavaScript Sources Inspected
-- `/wp-content/themes/dynamicdreamz/assets/js/services.js`
-  - `.scs-slider`: Owl carousel, non-looping, no dots/arrows, 16px desktop gap, 25px stage padding, 2 desktop/tablet items and 1 mobile item.
-
-### Comparison Inputs
-- User-provided full-page live screenshot at 1850px source width.
-- User-provided full-page local screenshot at 1850px source width.
-- Live rendered HTML and page source inspected on 2026-08-21.
-- Live portfolio source currently renders an intentionally empty `.our-work-main` while preserving the split heading, description, and CTA.
-- Local desktop capture: `/tmp/impulse-local-desktop-final.png` at 1850px width after hydration.
-- Local mobile capture: `/tmp/impulse-local-mobile.png` at 390x844 after hydration.
-- User-provided live/local full-page comparison at the 991px media-query state reviewed on 2026-08-21.
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/theme_customize_hero.css`
+  - `.theme-customize-hero`: Background `#f7f4e9`, padding-top 91px, padding-bottom 0 (tablet: 64px, mobile: 40px).
+  - Left column: 51% width, flex column, red-dash eyebrow `Theme Customization` + `Shopify Platinum Partner` badge, H1 `font-size: 50px; line-height: 66px`, paragraph `font-size: 16px; line-height: 28px; color: #535353`, dual button group (Primary red CTA `Request a Quote` to `/request-quote` and secondary black pill button `View Impulse on Shopify` to external Shopify theme store).
+  - Right column: 43.182% width, bottom-aligned 1224x948 storefront preview image with dark blend mode.
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/trusted_by_leading_brands_section.css`
+  - `.our-client-sec`: Marquee logo slider with 12 enterprise brands (`industryBrandLogos`), grayscale-to-color hover transition.
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/theme_features.css`
+  - `.theme-features`: Rounded container (`22px` border-radius, `border: 1px solid rgba(40,40,40,0.11)`).
+  - Left column: `37%` width, beige background `#fbefd7`, H2 `Features of Impulse Theme`, paragraph copy.
+  - Right column: `63%` width, 2-column grid of 8 theme features (`Advanced Product Filtering`, `Promotional Banner Options`, `Customizable Sections`, `Collection Page Sidebar`, `Fast Loading Speed`, `Product Quick View`, `Age Verifier`, `Stock Counter`).
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/city_page_why_choose_dynamic_dreamz.css`
+  - `.city-page-why-choose-dynamic.bg-light`: Background `#fafaf7`, 3-column boxed grid of 9 benefits with 24x24 outline SVG icons, rounded borders, and hover elevations.
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/delivery_section.css`
+  - `.what-we-provide-sec.pb-0`: 2-column service cards with `cardVariant="services-box"`, 24x24 icon in top-left, title, description, and hover border highlight.
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/how_to_choose_the_right_shopify_plus_agency_sec.css`
+  - `.how-to-choose-spa-sec`: 4-column numbered framework cards (`01`–`04` step indicators) matching live copy: `Expert Team`, `Proven Process`, `Ongoing Support`, `Client Focused Approach`.
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/projects_section.css`
+  - `.our-work-sec.pt-0`: 4-column desktop layout (`width: calc(25% - 12px)`) featuring 6 live showcase projects (`AdHOC Atelier`, `Lace Laboratory`, `Purra Performance`, `Lash Affair`, `Iridescent Sea`, `Boutique Jacques`) with `ourWorkRefresh` cards and centered `View our work` CTA button linking to `/our-work`.
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/faqs_section.css`
+  - `.faq-sec`: Sticky 2-column split FAQ layout (`SplitFaqSection`) containing all 7 live questions and answers.
 
 ---
 
@@ -49,73 +43,32 @@
 |---|---|---|---|
 | 1 | Hero (`Impulse Theme Customization Service`) | `ThemeHeroSection` | Reused |
 | 2 | Trusted by Leading Brands | `IndustryBrandsSection` | Reused |
-| 3 | Features of Impulse Theme (6 cards) | `ThemeFeaturesSection` | Reused |
-| 4 | Benefits of Impulse Theme Customization (9 cards) | `ShopifyReasonsSection` | Reused |
-| 5 | Our Impulse Theme Customization Services (6 cards) | `ShopifyServicesSection` | Reused |
-| 6 | Why Choose Dynamic Dreamz (4 items) | `ThemeWhyChooseSection` | Reused |
-| 7 | Snippets of Shopify Theme Customization Portfolio (6 projects) | `PortfolioShowcaseSection` & `PortfolioProjectCard` | Reused |
-| 8 | Frequently Asked Questions (7 accordion items) | `FaqSection` & `FaqAccordion` | Reused |
+| 3 | Features of Impulse Theme (8 features) | `ThemeFeaturesBannerSection` | Reused |
+| 4 | Benefits of Impulse Theme Customization (9 boxed cards) | `CityWhyChooseBoxesSection` | Reused |
+| 5 | Our Shopify Theme Customization Services (6 service cards) | `AgencyServicesSection` (`services-box`) | Reused |
+| 6 | Why Choose Dynamic Dreamz (4-step framework) | `EvaluationFrameworkSection` | Reused |
+| 7 | Snippets of Shopify Theme Customization Portfolio (6 projects) | `PortfolioShowcaseSection` (`ourWorkRefresh`) | Reused |
+| 8 | Frequently Asked Questions (7 accordion items) | `SplitFaqSection` | Reused |
 
 ---
 
 ## 3. Typography & Styling Specifications
 
-- **Heading Font**: Montserrat (`font-sans font-bold text-ink`).
-- **Hero Title**: `text-[50px] leading-[66px]` on desktop, `text-[40px] leading-[50px]` on tablet, `text-[30px] leading-[40px]` on mobile.
-- **Section Headings**: `text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink` (desktop), `text-[30px] leading-10` (tablet), `text-2xl leading-[33px]` (mobile).
-- **Body / Subtitles**: `text-base leading-[30.4px] font-normal text-muted` (hero), `text-base leading-[27px]` (cards).
-- **Hero Image**: Bottom-aligned 570x449 WebP image (`impulse-theme-customization-service-img.webp`); the Impulse page opts out of the shared 570px CSS max-width so the image can fill its hero column while retaining its intrinsic aspect ratio.
-- **Brand Colors**: Light gradient `linear-gradient(97.18deg, #e8f9ef 28.5%, #e6fafd 91.82%)`, red primary CTA `#df4644` / `#cd3735`.
+- **Heading Font**: Montserrat / System Sans (`font-sans font-bold text-ink`).
+- **Hero Title**: `text-[50px] leading-[66px] font-bold text-ink tracking-[-0.7px]` (desktop), `text-[40px] leading-[50px]` (tablet), `text-[30px] leading-[40px]` (mobile).
+- **Hero Background**: `#f7f4e9` with mix-blend-darken storefront image.
+- **Section Headings**: `text-[35px] leading-[48px] font-bold tracking-[-0.7px] text-ink` (desktop), `text-[30px] leading-10` (tablet), `text-2xl leading-[33px]` (mobile).
+- **Body & Subtitles**: `text-base leading-[28px] font-medium text-[#535353]` (hero & split section text).
+- **Brand Colors**: Red primary CTA `#ad5151` / `#cd3735`, black secondary pill button `#282828`.
 
 ---
 
 ## 4. Asset Deduplication & Integrity
 
-- 10 brand partner logos reused directly from `public/assets/clients/`:
-  - `ranavat.svg`
-  - `prolash.svg`
-  - `tropicfeel.svg`
-  - `perfect-locks.svg`
-  - `bombay-shirt-company.svg`
-  - `kayfi.svg`
-  - `simsdirect.svg`
-  - `kvaser.svg`
-  - `nelter.svg`
-  - `circuit-city.svg`
-- 9 benefit icons and 5 service icons reused from `public/assets/shopify-theme-customization/`.
-- 1 service icon (`custom-design-branding.svg`) reused from `public/assets/services/wordpress/wordpress-plugin-development.svg`.
-- 4 why-choose icons reused from `public/assets/shopify-theme-customization/why-choose/`.
-- All 6 portfolio screenshots reused from canonical project paths:
-  - `/assets/hire-shopify-developers/portfolio/adhoc-atler.webp`
-  - `/assets/our-work/projects/lace-laboratory.webp`
-  - `/assets/our-work/projects/purra-performance.webp`
-  - `/assets/our-work/projects/lash-affair.webp`
-  - `/assets/our-work/projects/iridescent-sea.webp`
-  - `/assets/our-work/projects/boutique-jacques.webp`
-- Unique theme assets cleanly saved under `public/assets/impulse-theme-customization/` with clean kebab-case names:
-  - `hero/impulse-theme-customization-service-img.webp`
-  - `features/advanced-product-filtering.svg`
-  - `features/promotional-banner-options.svg`
-  - `features/customizable-sections.svg`
-  - `features/collection-page-sidebar.svg`
-  - `features/fast-loading-speed.svg`
-  - `features/product-quick-view.svg`
-- Total duplicate hash groups across `public/assets/`: 0.
-
----
-
-## 5. Page-Specific Hero Adjustment
-
-- Verified live state: the image is declared at 570x449 and uses `width: 100%` inside the right hero column.
-- Shared behavior: `ThemeHeroSection` retains its default 570px image constraint and intrinsic aspect ratio.
-- Approved route override: `/impulse-theme-customization` enables `imageStretchesOnDesktop`, producing `w-full max-w-none h-auto` only for its hero image.
-- Interaction and animation impact: none; this is a static sizing override.
-- Remaining differences identified before correction: two broken feature asset paths, incorrect client-logo dataset, grid benefits instead of the live two-item horizontal carousel, centered portfolio introduction instead of the live split layout, and six local portfolio cards absent from the current live render.
-- Corrected state: feature assets render locally, the client strip uses the current live dataset and compact geometry, benefits use the live non-looping horizontal track, and the portfolio matches the current empty live project container.
-- Portfolio description: its authored `<br>` is hidden at every breakpoint on this route, matching the live split-header CSS while preserving the source copy.
-- Responsive verification: desktop 1850px and mobile 390px captures completed; hero stacking, horizontal carousel clipping, navigation, section order, FAQ state, and footer were inspected.
-- 991px corrections: retain the live half-width hero image column until 767px, preserve the 25px live gap above that image, show the live tablet portfolio eyebrow, and keep footer accordions before contact details.
-- Benefits carousel cards use a route-scoped 340px minimum height and live-sized responsive bases (308px at the supplied tablet viewport), while other shared carousel consumers retain their existing dimensions.
-- At mobile widths, Why Choose items stack each live-sized 66x70px icon above its heading and retain the live 16px description typography; tablet and desktop retain their existing alignment.
-- Interaction verification: benefits track remains pointer/touch draggable; FAQ open/closed controls preserve their existing keyboard-accessible behavior; portfolio CTA remains available while the empty live project container is mirrored.
-- Final verification: URL policy, ESLint, production build, and SHA-256 duplicate audit passed on 2026-08-21.
+- **Hero Asset**:
+  - `public/assets/impulse-theme-customization/hero/impulse-theme-customization-service-img.webp` (WebP-optimized from live 1224x948 source, 112KB vs 1.07MB original PNG).
+- **Brand Logos**: Reused 12 canonical brand logos from `public/assets/clients/` via `industryBrandLogos`.
+- **Theme Benefits Icons**: Reused canonical 24x24 outline SVGs from `dawn-theme-customization/benefits/` and `expanse-theme-customization/benefits/`.
+- **Services Icons**: Reused canonical service icons from `services/` and `dawn-theme-customization/services/`.
+- **Portfolio Projects**: Reused canonical WebP project screenshots from `public/assets/our-work/projects/` and `public/assets/hire-shopify-developers/portfolio/`.
+- **Total Asset Duplicates**: Verified 0 duplicate hash groups across all public assets.

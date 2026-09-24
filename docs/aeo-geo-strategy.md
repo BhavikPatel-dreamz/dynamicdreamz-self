@@ -5189,21 +5189,15 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Impulse Theme Customization (`/impulse-theme-customization`)
 
-Visual parity review (2026-08-21): live-visible copy, heading order, CTA intent,
-FAQ content, and server-rendered answer content remain unchanged. The update was
-limited to current live layout behavior, navigation taxonomy, local asset
-correction, and the live client-logo dataset; no new AEO/GEO content gap was
-introduced.
-
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-19
+Status: technical and schema implementation complete; remigrated to exact live site visual parity with 8 sections matching refreshed live theme layout
+Last reviewed: 2026-09-24
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Direct-to-consumer eCommerce brands, high-volume Shopify merchants, and digital agencies seeking expert Impulse theme customization, visual brand enhancement, custom Liquid sections, advanced product filtering, and mobile speed optimization.
 Decision stage: partner selection, Impulse theme customization scope definition, custom feature evaluation, developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Impulse theme customization capabilities. Features 10 client brand trust logos, 6 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 portfolio project cards, 7 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Impulse theme customization capabilities. Features 12 client brand trust logos (`industryBrandLogos`), 8 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 portfolio project cards, 7 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -5216,13 +5210,14 @@ Dedicated commercial landing page presenting Dynamic Dreamz Impulse theme custom
 ### Current strengths and available evidence
 
 - Server-rendered H1 `Impulse Theme Customization Service` with direct answer paragraph.
-- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
-- 6 distinct theme features with vector icons (Advanced Product Filtering, Promotional Banner Options, Customizable Sections, Collection Page Sidebar, Fast Loading Speed, Product Quick View).
-- 9 core benefits of Impulse customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third party Apps, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost).
-- 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
-- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
-- 6 real portfolio project cards (AdHOC Atelier, Lace Laboratory, Purra Performance, Lash Affair, Iridescent Sea, Boutique Jacques).
-- 7 comprehensive FAQ accordion items directly answering merchant questions on benefits, third-party apps, SEO friendliness, turnaround time, store performance, post-launch support, and cost.
+- Dual Hero CTAs: Primary "Request a Quote" -> `/request-quote` and secondary external "View Impulse on Shopify" -> `https://themes.shopify.com/themes/impulse/presets/impulse`.
+- 12 verified brand partner logos via `industryBrandLogos` marquee slider.
+- 8 distinct theme features displayed in beige split banner `ThemeFeaturesBannerSection` (Advanced Product Filtering, Promotional Banner Options, Customizable Sections, Collection Page Sidebar, Fast Loading Speed, Product Quick View, Age Verifier, Stock Counter).
+- 9 core benefits of Impulse customization in 3-column boxed grid (`CityWhyChooseBoxesSection`): Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third party Apps, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost.
+- 6 core services in 2-column service cards with `cardVariant="services-box"` (`AgencyServicesSection`): Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance.
+- 4 agency proof points in numbered framework cards (`EvaluationFrameworkSection`): Expert Team, Proven Process, Ongoing Support, Client Focused Approach.
+- 6 real portfolio project cards in 4-column desktop layout (`PortfolioShowcaseSection`) with centered "View our work" CTA -> `/our-work`: AdHOC Atelier, Lace Laboratory, Purra Performance, Lash Affair, Iridescent Sea, Boutique Jacques.
+- 7 comprehensive FAQ accordion items (`SplitFaqSection`) directly answering merchant questions on benefits, third-party apps, SEO friendliness, turnaround time, store performance, post-launch support, and cost.
 - Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (7 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
 - Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
 
@@ -5231,8 +5226,9 @@ Dedicated commercial landing page presenting Dynamic Dreamz Impulse theme custom
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Missing App Router implementation for Impulse theme customization | Ship slashless `/impulse-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Component reuse & parity | Legacy page used outdated layout | Rebuilt with shared `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesBannerSection`, `CityWhyChooseBoxesSection`, `AgencyServicesSection`, `EvaluationFrameworkSection`, `PortfolioShowcaseSection`, `SplitFaqSection` | 100% visual parity across viewports |
 | P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (7 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Impulse hero graphic and feature icons under `public/assets/impulse-theme-customization/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Local assets & deduplication | Hero and portfolio images needed | WebP-optimized 1224x948 hero image; reused canonical brand, benefit, service, and portfolio assets; duplicate hash groups: 0 | Verified locally with 0 duplicate assets |
 | P1 | deferred | Content expansion | Grammar improvements and enhanced copywriting for benefits and FAQs | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -5252,7 +5248,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service with 6 Offer items, 7 FAQ items, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Set explicit freshness `modifiedTime` to `2026-09-24T00:00:00+05:30`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
@@ -5262,7 +5258,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/impulse-theme-customization`; source/build URL guard passes.
+- URL-policy review (2026-09-24): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/impulse-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 152 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Sense Theme Customization (`/sense-theme-customization`)
