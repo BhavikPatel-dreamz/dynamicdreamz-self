@@ -9274,31 +9274,37 @@ Owner: SEO, content, and development
 
 ## Expanse Theme Customization (`/expanse-theme-customization`)
 
+Status: technical and schema implementation complete; remigrated to exact live site visual parity with 8 sections matching refreshed live theme layout
+Last reviewed: 2026-09-24
+Owner: SEO, content, and development
+
 ### Page Intent and Query Scope
-- **Primary Search Intent**: Shopify store merchants with large catalogs seeking expert Expanse theme customization services by Archetype Themes.
-- **Audience**: High-SKU Shopify and Shopify Plus merchants, dropshippers, and retail brands.
-- **Target queries**: "Expanse theme customization", "Expanse theme customization service", "customize Expanse Shopify theme", "hire Expanse theme developers".
+- **Primary Search Intent**: High-volume ecommerce merchants with large product catalogs seeking expert Expanse theme customization services by Dynamic Dreamz.
+- **Audience**: High-SKU Shopify and Shopify Plus merchants, multi-brand retailers, and DTC brands needing multi-tiered navigation, advanced filtering, and conversion-focused architecture.
+- **Target queries**: "Expanse theme customization", "Expanse theme customization service", "customize Expanse Shopify theme", "hire Expanse theme developers", "Shopify Expanse theme development".
 
 ### Visible Content and Evidence Available
+- Eyebrows: "Theme Customization" with red-dash styling.
 - H1: "Expanse Theme Customization Service".
-- Primary CTA: "request a quote" -> "/request-quote".
-- Hero graphic: Expanse theme preview with Shopify bag badge.
-- Trusted brands slider: 10 enterprise ecommerce brands.
-- 6 Theme features: Product Filtering, Customizable Homepage Sections, Product Quick View, Wide Layout Design, Product Badges, Optimized for Large Inventories.
-- 9 Theme benefits: Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third party Apps, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost.
-- 6 Shopify customization services: Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance.
-- 4 Agency reasons: Expert Team, Proven Process, Ongoing Support, Client-Focused Approach.
-- 8 Shopify portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
-- 6 interactive FAQs answering questions on customization benefits, inventory handling, third-party apps, speed impact, ongoing support, and costs.
+- Primary Hero CTA: "Request A Quote" -> "/request-quote".
+- Secondary Hero CTA: External "View Expanse on Shopify" -> "https://themes.shopify.com/themes/expanse/presets/expanse".
+- Hero graphic: Clean 1224x948 Expanse theme storefront preview with Shopify bag badge.
+- Trusted brands slider: 12 canonical enterprise ecommerce brands (`industryBrandLogos`).
+- 8 Theme features: Split beige banner layout (`ThemeFeaturesBannerSection`) with 8 Expanse features (Product Filtering, Customizable Homepage Sections, Product Quick View, Wide Layout Design, Product Badges, Optimized for Large Inventories, Clean Code Architecture, High Conversion Rate Focus).
+- 9 Benefits: 3-column boxed grid (`CityWhyChooseBoxesSection`) with 24x24 outline icons (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third party Apps, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost).
+- 6 Services: 2-column service cards (`AgencyServicesSection`) with `cardVariant="services-box"` (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 Why Choose Dynamic Dreamz: 4-step framework (`EvaluationFrameworkSection`) matching live copy (`how-to-choose-spa-sec`): Expert Team, Proven Process, Ongoing Support, Client-Focused Approach.
+- 2 Portfolio showcase items: 4-column desktop portfolio showcase (`PortfolioShowcaseSection`) with `ourWorkRefresh` cards featuring live projects (The Whisky Stock, Podrum) and "View our work" CTA button -> `/our-work`.
+- 6 interactive FAQs: Sticky 2-column split FAQ layout (`SplitFaqSection`) answering key merchant questions on Expanse customization benefits, inventory handling, third-party apps, speed impact, ongoing support, and costs.
 
 ### Structured Gap Analysis
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
 | P0 | implemented | Route discovery | Route not yet created in App Router | Build `/expanse-theme-customization` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | Page requires standard theme customization layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesSection`, `ShopifyReasonsSection`, `AgencyServicesSection`, `ThemeWhyChooseSection`, `PortfolioShowcaseSection`, `FaqSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | Product filtering icon required | Ingested into `public/assets/expanse-theme-customization/features/`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
+| P0 | implemented | Component reuse & parity | Legacy page used outdated layout | Rebuilt with shared `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesBannerSection`, `CityWhyChooseBoxesSection`, `AgencyServicesSection`, `EvaluationFrameworkSection`, `PortfolioShowcaseSection`, `SplitFaqSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Hero and benefit icons needed | WebP-optimized 1224x948 hero image; ingested unique `multiple-third-party-apps.svg`; reused canonical brand and benefit icons; duplicate hash groups: 0 | Total asset duplicates remain 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createExpanseThemeCustomizationPageSchema()` | Validated JSON-LD graph |
-| P1 | deferred | Empty portfolio container | Live site rendered an empty portfolio grid on Expanse page | Populated standard Shopify showcase portfolio items | Complete UX |
+| P0 | implemented | Portfolio alignment | Live site displays 2 real projects with `/our-work` CTA | Implemented The Whisky Stock and Podrum with exact live tags, WebP images, and centered CTA button | 100% live parity |
 
 ## Shopify Development in New York (`/shopify-development-in-new-york`)
 
