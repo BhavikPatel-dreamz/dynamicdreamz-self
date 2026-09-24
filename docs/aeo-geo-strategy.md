@@ -6822,14 +6822,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Fabric Theme Customization (`/fabric-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-24
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, fashion and apparel brands, DTC retailers, small catalog stores, and eCommerce businesses seeking expert Fabric Shopify theme customization, product-forward design, visual storytelling, enhanced search, mega menu, mobile optimization, and conversion enhancement.
 Decision stage: partner selection, Fabric theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Fabric theme customization capabilities. Features 10 client brand trust logos, 3 feature highlight preview cards, 6 key theme feature icon cards, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards, 6 accordion FAQs, and demo store CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Fabric theme customization capabilities. Features 12 client brand trust logos, 8 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards with `/our-work` CTA, 6 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -6843,12 +6843,11 @@ Dedicated commercial landing page presenting Dynamic Dreamz Fabric theme customi
 
 - Server-rendered H1 `Fabric Theme Customization Service` with direct answer paragraph.
 - 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
-- 3 key theme highlight cards (Product-Forward Design, Versatile and Engaging Layouts, From the Horizon collection).
-- 6 key Fabric theme features (Quick Setup, Visual Storytelling, Enhanced Search, Mega Menu, Mobile Optimization, Customizable Contact Form).
+- 8 key Fabric theme features (Product-Forward Design, Versatile and Engaging Layouts, From the Horizon collection, Quick Setup, Visual Storytelling, Enhanced Search, Mobile Optimization, Customizable Contact Form).
 - 9 core benefits of Fabric customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
 - 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
 - 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
-- 6 Shopify portfolio projects (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop).
+- 6 Shopify portfolio projects (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop) with bottom "View our work" CTA linking to `/our-work`.
 - 6 detailed FAQs addressing theme reversion, no-code custom functions, small catalogs suitability, third-party app integration, mobile responsiveness, and ongoing support post-customization.
 
 ### Structured gap analysis
@@ -6856,7 +6855,7 @@ Dedicated commercial landing page presenting Dynamic Dreamz Fabric theme customi
 | Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
 |---|---|---|---|---|---|
 | P0 | implemented | Route and discovery | Missing App Router implementation for Fabric theme customization | Ship slashless `/fabric-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Fabric hero graphic, highlight previews, and feature icons under `public/assets/fabric-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Fabric hero graphic and unique feature icons under `public/assets/fabric-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
 | P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 6 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
 
 ### Visible content and copy improvements
@@ -6877,7 +6876,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/fabric-theme-customization`; source/build URL guard passes.
+- URL-policy review (2026-09-24): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/fabric-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 142 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Savor Theme Customization (`/savor-theme-customization`)
