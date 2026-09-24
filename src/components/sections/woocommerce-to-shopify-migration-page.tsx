@@ -1,25 +1,33 @@
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { MigrationProcessSection } from "@/components/sections/migration-process-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
+import { WooCommerceMigrationIcon } from "@/components/sections/woocommerce-to-shopify/woocommerce-migration-icons";
 import {
   woocommerceBrandLogos,
   woocommerceFaqs,
   woocommerceHeroContent,
-  woocommerceProcessContent,
-  woocommerceWhyMigrate,
   woocommerceMigrationSectionCopy,
+  woocommerceProcessContent,
+  woocommerceTestimonials,
+  woocommerceWhyMigrateContent,
 } from "@/content/woocommerce-to-shopify-migration";
 
 export function WooCommerceToShopifyMigrationPage() {
+  const whyMigrateBoxes = woocommerceWhyMigrateContent.items.map((item) => ({
+    icon: <WooCommerceMigrationIcon name={item.iconName} />,
+    title: item.title,
+    description: item.description,
+  }));
+
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec woocommerce-to-shopify relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
-        content={woocommerceHeroContent}
-        variant="split"
-      />
+      {/* 1. Hero Section */}
+      <ServiceHeroVideoSection content={woocommerceHeroContent} />
+
+      {/* 2. Brand Partners Section */}
       <IndustryBrandsSection
         content={{
           slug: "woocommerce-to-shopify-migration",
@@ -27,18 +35,39 @@ export function WooCommerceToShopifyMigrationPage() {
         heading={woocommerceMigrationSectionCopy.brandsHeading}
         items={woocommerceBrandLogos}
       />
-      <TextBoxSection
-        className="single-text-box-sec py-20 max-[992px]:py-[50px]"
-        heading={woocommerceWhyMigrate.heading}
-        text={woocommerceWhyMigrate.text}
+
+      {/* 3. Why Migrate from WooCommerce to Shopify? */}
+      <ThemeCustomizationServicesSection
+        content={{
+          eyebrow: woocommerceWhyMigrateContent.eyebrow,
+          heading: woocommerceWhyMigrateContent.heading,
+          description: woocommerceWhyMigrateContent.description,
+          boxes: whyMigrateBoxes,
+        }}
+        id="why-migrate"
+        variant="yellow"
       />
+
+      {/* 4. WooCommerce to Shopify Migration Process */}
       <MigrationProcessSection
         content={woocommerceProcessContent}
         id="migration-process"
+        variant="cards"
       />
+
+      {/* 5. Don't Just Take Our Word For It */}
+      <HappyClientSection
+        description={woocommerceTestimonials.description}
+        eyebrow={woocommerceTestimonials.eyebrow}
+        heading={woocommerceTestimonials.heading}
+        items={woocommerceTestimonials.items}
+      />
+
+      {/* 6. Frequently Asked Questions */}
       <SplitFaqSection
         idPrefix="woocommerce-migration-faq"
         items={woocommerceFaqs}
+        sectionId="faqs"
       />
     </div>
   );

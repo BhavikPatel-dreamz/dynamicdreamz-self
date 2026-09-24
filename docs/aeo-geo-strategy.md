@@ -5973,7 +5973,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-24
 
 Owner: SEO, Shopify migration specialists, leadership, and sales operations
 
@@ -5983,7 +5983,7 @@ Decision stage: platform re-platforming, WooCommerce to Shopify migration partne
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz end-to-end WooCommerce to Shopify migration services. Highlights why migrate from WooCommerce to Shopify (scalability, enhanced security, user friendly interface, robust app store), a 6-step zero-downtime migration process with exhaustive entity migration scope (Products, Product Categories, Customers, Orders, Coupons) and comprehensive site testing checklist (Functional Validation, Data Validation, Performance Tests, Go Live Checklist), 12 partner brand logos, 13 detailed migration FAQs, and quote request CTAs.
+Dedicated commercial landing page presenting Dynamic Dreamz end-to-end WooCommerce to Shopify migration services. Highlights why migrate from WooCommerce to Shopify (6 feature cards: simplified store management, better scalability, enhanced security & reliability, higher performance & conversion, powerful app & integration ecosystem, easier maintenance & updates), a 6-step zero-downtime migration process with exhaustive entity migration scope (Products, Product Categories, Customers, Orders, Coupons) and comprehensive site testing checklist (Functional Validation, Data Validation, Performance Tests, Go Live Checklist), 12 partner brand logos, client story video reviews, 13 detailed migration FAQs, and quote request CTAs.
 
 ### Target prompts
 
@@ -5995,11 +5995,12 @@ Dedicated commercial landing page presenting Dynamic Dreamz end-to-end WooCommer
 
 ### Current strengths and available evidence
 
-- Server-rendered H1 `Migration from Woocommerce to Shopify` with split hero, service illustration, primary CTA "Request a Quote", and 3 verified review badges (Clutch 132 reviews 5.0, Upwork 2000+ reviews 5.0, GoodFirms 72 reviews 5.0).
+- Server-rendered H1 `WooCommerce to Shopify Migration Services` with dual eyebrow ("Established in 2006", "Shopify Platinum Partner"), split hero, service illustration, primary CTA "REQUEST A QUOTE", and 4 verified rating badges (Shopify Platinum Partner, Clutch 4.9 rating, Trustpilot 4.9 TrustScore, Upwork Top Rated Plus).
 - 12 trusted brand partner logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Pop Club, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit).
-- Clear answer statement box answering "Why Migrate from WooCommerce to Shopify?".
-- 6-step sequential migration process with gradient step badges, numbered counters, and nested lists for data entities (Products, Categories, Customers, Orders, Coupons) and testing validation.
-- 13 comprehensive FAQ accordion items directly answering buyer concerns regarding timeline, quote process, payment/shipping methods, transferable data types, customer data safety, data accuracy, custom functionalities/design replication, custom plugins/extensions, digital products, SEO preservation, post-migration support, and pricing.
+- 6 Why Migrate feature cards with distinct SVG iconography detailing store management, scalability, security, performance, apps, and maintenance.
+- 6-step sequential migration process (`variant="cards"`) with sub-boxes for entity migration (Products, Categories, Customers, Orders, Coupons) and QA validation checklist.
+- Client Stories video testimonial carousel featuring 11 verified merchant video reviews with modal player.
+- 13 comprehensive FAQ accordion items in sticky two-column split layout directly answering buyer concerns regarding timeline, quote process, payment/shipping methods, transferable data types, customer data safety, data accuracy, custom functionalities/design replication, custom plugins/extensions, digital products, SEO preservation, post-migration support, and pricing.
 - Structured data graph emitting Service, FAQPage (13 Question/Answer pairs), VideoObject (testimonial video schema), BreadcrumbList, Organization, and WebSite.
 - Zero duplicate assets across `public/assets/`, reusing canonical icons and storing unique SVGs under `public/assets/woocommerce-to-shopify-migration/`.
 

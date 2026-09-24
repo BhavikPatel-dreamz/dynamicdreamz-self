@@ -1,15 +1,25 @@
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
-import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
+import type { ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
+import type { WooCommerceMigrationIconName } from "@/components/sections/woocommerce-to-shopify/woocommerce-migration-icons";
+import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export { migrationSectionCopy as woocommerceMigrationSectionCopy } from "@/content/migration-common";
 
-export const woocommerceHeroContent: ServiceHeroContent = {
-  title: "Migration from Woocommerce to Shopify",
-  description:
+export type WooCommerceBoxItem = {
+  iconName: WooCommerceMigrationIconName;
+  title: string;
+  description: string;
+};
+
+export const woocommerceHeroContent: ServiceHeroVideoContent = {
+  eyebrowSpans: ["Established in 2006", "Shopify Platinum Partner"],
+  title: "WooCommerce to Shopify Migration Services",
+  paragraphs: [
     "Do you need a migration expert for migrating your WooCommerce store to Shopify? Experience the advantages of Shopify’s robust platform to enhance your business growth with Dynamic Dreamz migration services.",
-  ctaLabel: "Request a Quote",
+  ],
+  cta: "REQUEST A QUOTE",
   ctaHref: "/request-quote",
   image: {
     src: "/assets/woocommerce-to-shopify-migration/woocommerce-shopify-migration-hero.svg",
@@ -17,36 +27,38 @@ export const woocommerceHeroContent: ServiceHeroContent = {
     width: 469,
     height: 224,
   },
-  reviews: [
+  badges: [
     {
-      platform: "Clutch",
-      reviewCount: "132 Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/clutch-wordmark.svg",
-      logoAlt: "Clutch Review Dynamic Dreamz",
-      logoWidth: 69,
-      logoHeight: 19,
+      name: "Shopify Platinum Partner",
+      src: "/assets/proof/shopify-platinum-partner.svg",
+      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+      alt: "Dynamic Dreamz - Shopify Platinum Partner",
+      width: 136,
+      height: 44,
+    },
+    {
+      name: "Clutch",
+      src: "/assets/proof/clutch-rating.svg",
       href: "https://clutch.co/profile/dynamic-dreamz",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      width: 111,
+      height: 44,
     },
     {
-      platform: "Upwork",
-      reviewCount: "2000+ Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/upwork-wordmark.svg",
-      logoAlt: "Upwork Review Dynamic Dreamz",
-      logoWidth: 78,
-      logoHeight: 23,
-      href: "https://www.upwork.com/agencies/dynamicdreamz/",
+      name: "Trustpilot",
+      src: "/assets/proof/trustpilot-rating.svg",
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      width: 148,
+      height: 50,
     },
     {
-      platform: "GoodFirms",
-      reviewCount: "72 Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/goodfirms-wordmark.svg",
-      logoAlt: "Goodfirms Review Dynamic Dreamz",
-      logoWidth: 105,
-      logoHeight: 16,
-      href: "https://www.goodfirms.co/company/dynamic-dreamz",
+      name: "Upwork",
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      href: "https://www.upwork.com/ag/dynamicdreamz/",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      width: 148,
+      height: 40,
     },
   ],
 };
@@ -124,7 +136,7 @@ export const woocommerceBrandLogos: readonly ClientLogoSliderItem[] = [
   },
   {
     href: "https://www.nekterjuicebar.com/",
-    src: "/assets/clients/nelter.svg",
+    src: "/assets/clients/nekter-colored.svg",
     alt: "nekter-colored",
     width: 66,
     height: 64,
@@ -138,12 +150,58 @@ export const woocommerceBrandLogos: readonly ClientLogoSliderItem[] = [
   },
 ];
 
-export const woocommerceWhyMigrate = {
+export const woocommerceWhyMigrateContent = {
+  eyebrow: "Why Upgrade",
   heading: "Why Migrate from WooCommerce to Shopify?",
-  text: "Upgrading your eCommerce store from WooCommerce to Shopify brings numerous advantages. Shopify offers better scalability, enhanced security, a user friendly interface, and a vast range of apps to boost your store’s functionality. Your customers’ shopping experience will be more effective, safe, and scalable if you migrate to Shopify.",
+  description:
+    "Upgrading your eCommerce store from WooCommerce to Shopify brings numerous advantages. Shopify offers better scalability, enhanced security, a user friendly interface, and a vast range of apps to boost your store’s functionality. Your customers’ shopping experience will be more effective, safe, and scalable if you migrate to Shopify.",
+  items: [
+    {
+      iconName: "simplified-store-management",
+      title: "Simplified Store Management",
+      description:
+        "Shopify provides an intuitive, all-in-one platform that makes managing products, orders, customers, and day-to-day store operations easier and more efficient.",
+    },
+    {
+      iconName: "better-scalability",
+      title: "Better Scalability",
+      description:
+        "Shopify’s robust infrastructure makes it easier to scale your store as your business grows, without worrying about server management, hosting, or technical limitations.",
+    },
+    {
+      iconName: "enhanced-security",
+      title: "Enhanced Security & Reliability",
+      description:
+        "With Shopify handling hosting, security, updates, and infrastructure, you get a secure and reliable ecommerce platform with less technical maintenance.",
+    },
+    {
+      iconName: "higher-performance",
+      title: "Higher Performance & Conversion",
+      description:
+        "Shopify delivers fast, responsive storefronts with a streamlined shopping experience, helping improve customer engagement, reduce friction, and drive more conversions.",
+    },
+    {
+      iconName: "powerful-app-ecosystem",
+      title: "Powerful App & Integration Ecosystem",
+      description:
+        "Shopify offers a vast ecosystem of apps and integrations, making it easy to extend your store’s functionality and connect with marketing, payment, shipping, CRM, and other business tools.",
+    },
+    {
+      iconName: "easier-maintenance",
+      title: "Easier Maintenance & Updates",
+      description:
+        "Unlike WooCommerce, Shopify handles core updates, hosting, security, and infrastructure, reducing technical maintenance and allowing you to focus more on growing your business.",
+    },
+  ] as readonly WooCommerceBoxItem[],
+} as const;
+
+export const woocommerceWhyMigrate = {
+  heading: woocommerceWhyMigrateContent.heading,
+  text: woocommerceWhyMigrateContent.description,
 } as const;
 
 export const woocommerceProcessContent: MigrationProcessContent = {
+  eyebrow: "Migration Process",
   heading: "WooCommerce to Shopify Migration Process",
   steps: [
     {
@@ -169,28 +227,57 @@ export const woocommerceProcessContent: MigrationProcessContent = {
       title: "Migrate Your Data",
       description:
         "We ensure that all crucial data is accurately transferred from WooCommerce to Shopify. It includes:",
-      categories: [
+      subBoxes: [
         {
           title: "Products",
-          items: ["Name, SKU, Full Description, Status, Manufacturer"],
+          items: [
+            "Name",
+            "Description",
+            "Images",
+            "SKU",
+            "Price",
+            "Product Tags",
+            "Manufacturer",
+            "Variants",
+            "Meta Title",
+            "Meta Description",
+          ],
         },
         {
           title: "Product Categories",
-          items: ["Names, Descriptions, Images"],
+          items: [
+            "Name",
+            "Description",
+            "Images",
+            "Status",
+            "Meta Title",
+            "Meta Description",
+          ],
         },
         {
           title: "Customers",
-          items: ["Names, Email Addresses, Shipping and Billing Addresses"],
+          items: [
+            "First Name",
+            "Last Name",
+            "Email",
+            "Newsletter",
+            "Billing Address",
+            "Shipping Address",
+          ],
         },
         {
           title: "Orders",
           items: [
-            "Order Details, Customer Information, Shipping Information",
+            "Order Date",
+            "Customer Name",
+            "Email",
+            "Billing Address",
+            "Shipping Address",
           ],
         },
         {
           title: "Coupons",
-          items: ["Coupon Code, Coupon Date"],
+          items: ["Coupon Code", "Coupon Date"],
         },
       ],
     },
@@ -198,23 +285,24 @@ export const woocommerceProcessContent: MigrationProcessContent = {
       stepNumber: "05",
       title: "Test the Site",
       description:
-        "We ensure a complete data migration, allowing you to verify everything on the new platform so you can know what data can be migrated from WooCommerce to Shopify. Our QA team extensively tests the new Shopify website to ensure everything functions properly. It includes:",
-      categories: [
+        "We ensure a complete data migration, allowing you to verify everything on the new platform so you can know what data can be migrated from WooCommerce to Shopify.",
+      subBoxes: [
         {
           title: "Functional Validation",
-          items: ["Checking all business rules and functionalities"],
+          description: "Checking all business rules and functionalities",
         },
         {
           title: "Data Validation",
-          items: ["Ensuring all data is accurately transferred"],
+          description: "Ensuring all data is accurately transferred",
         },
         {
           title: "Performance Tests",
-          items: ["Conducting speed tests for optimal load times"],
+          description: "Conducting speed tests for optimal load times",
         },
         {
           title: "Go Live Checklist",
-          items: ["Preparing a comprehensive checklist to ensure a smooth transition"],
+          description:
+            "Preparing a comprehensive checklist to ensure a smooth transition",
         },
       ],
     },
@@ -225,6 +313,14 @@ export const woocommerceProcessContent: MigrationProcessContent = {
         "We change your live domain to the Shopify platform to complete the migration process. Minimal downtime is expected to ensure the slightest disturbance, usually during non business hours.",
     },
   ],
+};
+
+export const woocommerceTestimonials = {
+  eyebrow: "Client Stories",
+  heading: "Don't Just Take Our Word For It",
+  description:
+    "Hear directly from the clients who have worked with Dynamic Dreamz across Shopify, ecommerce and long-term development engagements.",
+  items: shopifyPlusAgencyTestimonials.items,
 };
 
 export const woocommerceFaqs: readonly FaqAccordionItem[] = [

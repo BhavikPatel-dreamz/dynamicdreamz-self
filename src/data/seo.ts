@@ -913,9 +913,9 @@ export const pageSeo = {
   },
   woocommerceToShopifyMigration: {
     path: "/woocommerce-to-shopify-migration",
-    title: "Seamless WooCommerce to Shopify Migration | Dynamic Dreamz",
+    title: "WooCommerce to Shopify Migration Services | Dynamic Dreamz",
     description:
-      "Migrate your WooCommerce store to Shopify effortlessly with Dynamic Dreamz. Experience enhanced scalability, security, and user friendliness.",
+      "Migrate WooCommerce to Shopify with Dynamic Dreamz. We move store data and content, rebuild functionality, protect SEO, test thoroughly and support launch.",
     keywords: [
       "WooCommerce to Shopify migration",
       "WooCommerce to Shopify",
