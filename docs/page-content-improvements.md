@@ -1684,15 +1684,16 @@ Primary SEO intent: Shopify development in Delhi, Shopify development company in
 ## Migrate Theme to Shopify Online Store 2.0 (`/migrating-a-theme-to-online-store-2-0`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-21
+Last reviewed: 2026-09-24
 Primary SEO intent: migrating a theme to online store 2.0, Shopify 2.0 migration service, Shopify theme migration, upgrade to Shopify 2.0, Shopify Online Store 2.0.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | Live title is 54 characters (`Complete Shopify 2.0 Migration Service \| Dynamic Dreamz`) | Preserved live title (54 chars). | Fits strictly within the 15-60 character limit while preserving the live keyword intent and ranking equity. | High | implemented in metadata |
-| Meta description | Live description is 157 characters (`Upgrade your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Our experts ensure a seamless transition for improved functionality and user experience.`) | Preserved live description (157 chars). | Complies with repository 70-160 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta title | Live title is 57 characters (`Migrate Theme to Shopify Online Store 2.0 \| Dynamic Dreamz`) | Preserved live title (57 chars). | Fits strictly within the 15-60 character limit while preserving the live keyword intent and ranking equity. | High | implemented in metadata |
+| Meta description | Live description is 163 characters; adjusted to 154 characters (`Migrate your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Retain custom functionality, update integrations, complete QA and launch with support.`) | Preserved intent and phrasing within 154 chars. | Complies with repository 70-160 character limit and preserves live SEO equity. | High | implemented in metadata |
 | Hero copy | `Shopify has come up with an improvised Online Store 2.0...` | `Shopify’s Online Store 2.0 architecture offers advanced merchant tooling, streamlined theme maintenance, and effortless scalability...` | Replaces "improvised" with "advanced" for clearer technical communication. | Low | deferred pending exact visible-copy approval |
-| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (7 migration phases), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 migration phases), `FAQPage` (5 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+
 
 
 ## Buy Shopify Development Hours (`/buy-shopify-development-hours`)

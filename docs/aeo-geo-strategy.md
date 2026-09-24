@@ -8642,8 +8642,8 @@ Last reviewed: 2026-09-22
 
 ## Migrate Theme to Shopify Online Store 2.0 (`/migrating-a-theme-to-online-store-2-0`)
 
-Status: implemented; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented; exact live visual parity and content preserved
+Last reviewed: 2026-09-24
 
 ### Search and engine intent
 
@@ -8656,28 +8656,32 @@ Last reviewed: 2026-08-21
 - "Shopify theme migration to 2.0 services"
 - "Benefits of upgrading Shopify store to 2.0"
 - "Convert Shopify Liquid template to JSON template"
+- "Why choose Dynamic Dreamz for Shopify 2.0 theme migration"
 
 ### Current strengths and available evidence
 
-- Live H1 targets "Migrate your Theme to Shopify’s New Online Store 2.0" clearly.
-- Comprehensive introduction outlining the importance of staying current with Shopify 2.0.
+- Live H1 targets "Shopify Online Store 2.0 Theme Migration" with dual eyebrow badges (`Established in 2006`, `Shopify Platinum Partner`) and 4 independent review badges (Shopify Platinum Partner, Clutch 4.9 rating, Trustpilot 4.9 TrustScore, Upwork Top Rated Plus).
+- Brand validation slider showcasing 12 trusted client brand logos (Supertails, Eleven Eleven, Bellavita, Bombay Shirt Company, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit).
 - 4 key feature upgrade benefits: Lightning Fast Performance, Greater Flexibility, Advanced Developer Tools, Better SEO and Marketing.
-- 7 structured migration phases: Initial Assessment, Data Migration, Theme Migration & Customization, App Integration, SEO and Redirects, Testing & QA, Launch and Post-Launch Support.
+- 6 structured migration service phases: Data Migration, Theme Migration and Customization, App Integration, SEO and Redirects, Testing and Quality Assurance, Launch and Post Launch Support.
 - 3 migration service value propositions: Expertise and Experience, Comprehensive Service, Custom Solutions.
-- Strategic conclusion with direct CTA to `/request-quote`.
-- Zero duplicate assets, clean Server Component rendering.
+- 8 evaluation framework cards under "Why Choose Dynamic Dreamz for Migration Services?": Proven Track Record, Expertise, Custom Solutions, Smooth Data Transfer, SEO Expertise, Comprehensive Services, Minimal Downtime, Post-Migration Support.
+- 11 video testimonial cards carousel with verified client proof.
+- 5 comprehensive FAQs addressing theme compatibility, custom functionality retention, app integrations, QA testing, and ongoing post-launch support.
+- Zero duplicate assets, clean Server Component rendering with interactive controls.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service, OfferCatalog (7 service phases), BreadcrumbList, Organization, and WebSite schemas.
+- Emit Service, OfferCatalog (6 service phases), FAQPage (5 FAQs), VideoObject (client testimonials), BreadcrumbList, Organization, and WebSite schemas.
 - Ensure canonical URL is slashless `/migrating-a-theme-to-online-store-2-0`.
-- Freshness timestamp: `2026-08-21T00:00:00+05:30`.
+- Freshness timestamp: `2026-09-15T09:39:52+00:00`.
 
 ### Verification and remaining gaps
 
-- URL policy review: passed.
-- Lint and production build: passed.
-- Asset SHA-256 duplicate audit: 0 duplicates.
+- URL policy review: passed (`npm run check:urls`).
+- Component content boundary: passed (`npm run check:component-content`).
+- Asset SHA-256 duplicate audit: 0 duplicates (`npm run check:asset-duplicates`).
+- Lint and production build: passed (`npm run lint`, `npm run build`).
 
 
 

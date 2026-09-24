@@ -30,7 +30,13 @@ export type ServiceHeroVideoContent = {
     label: string;
     href: string;
   };
-  video: string;
+  video?: string;
+  image?: {
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
+  };
   badges: readonly HeroBadge[];
 };
 
@@ -187,20 +193,35 @@ export function ServiceHeroVideoSection({
             </div>
           </div>
 
-          <div className="right-col flex w-[43.182%] max-[1399px]:w-[40%] max-[991px]:hidden">
-            <div className="video-wrapper relative w-full min-h-[386px] overflow-hidden rounded-[20px]">
-              <video
-                autoPlay
-                className="w-full rounded-[20px] object-cover"
-                loop
-                muted
-                playsInline
-                preload="metadata"
-              >
-                <source src={content.video} type="video/mp4" />
-              </video>
+          {content.video ? (
+            <div className="right-col flex w-[43.182%] max-[1399px]:w-[40%] max-[991px]:hidden">
+              <div className="video-wrapper relative w-full min-h-[386px] overflow-hidden rounded-[20px]">
+                <video
+                  autoPlay
+                  className="w-full rounded-[20px] object-cover"
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={content.video} type="video/mp4" />
+                </video>
+              </div>
             </div>
-          </div>
+          ) : content.image ? (
+            <div className="right-col flex w-[43.182%] max-[1399px]:w-[48%] max-[1199px]:w-[50%] max-[1199px]:mx-auto max-[1199px]:mb-10 max-[767px]:hidden">
+              <div className="hero-img w-full">
+                <Image
+                  src={content.image.src}
+                  alt={content.image.alt}
+                  width={content.image.width ?? 493}
+                  height={content.image.height ?? 292}
+                  className="w-full h-auto block mix-blend-darken"
+                  priority
+                />
+              </div>
+            </div>
+          ) : null}
         </div>
       </Container>
     </section>

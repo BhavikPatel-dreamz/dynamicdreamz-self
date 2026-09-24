@@ -373,6 +373,7 @@ const ecwidToShopifyMigrationBreadcrumbId = `${ecwidToShopifyMigrationPageUrl}#b
 const migratingThemeToOnlineStore20PageUrl = absoluteUrl(pageSeo.migratingThemeToOnlineStore20.path);
 const migratingThemeToOnlineStore20PageId = `${migratingThemeToOnlineStore20PageUrl}#webpage`;
 const migratingThemeToOnlineStore20ServiceId = `${migratingThemeToOnlineStore20PageUrl}#service`;
+const migratingThemeToOnlineStore20FaqId = `${migratingThemeToOnlineStore20PageUrl}#faq`;
 const migratingThemeToOnlineStore20BreadcrumbId = `${migratingThemeToOnlineStore20PageUrl}#breadcrumb`;
 const shopifyPlusMigrationAgencyPageUrl = absoluteUrl(pageSeo.shopifyPlusMigrationAgency.path);
 const shopifyPlusMigrationAgencyPageId = `${shopifyPlusMigrationAgencyPageUrl}#webpage`;
@@ -5441,27 +5442,30 @@ export function createEcwidToShopifyMigrationPageSchema() {
 }
 
 export function createMigratingThemeToOnlineStore20PageSchema() {
-  return createIndustryPageSchema({
-    seo: pageSeo.migratingThemeToOnlineStore20,
+  return createServicePageSchema({
+    page: pageSeo.migratingThemeToOnlineStore20,
     pageUrl: migratingThemeToOnlineStore20PageUrl,
     pageId: migratingThemeToOnlineStore20PageId,
-    breadcrumbId: migratingThemeToOnlineStore20BreadcrumbId,
-    breadcrumbName: "Migrate Theme to Online Store 2.0",
     serviceId: migratingThemeToOnlineStore20ServiceId,
-    serviceName: "Complete Shopify 2.0 Migration Service",
+    faqId: migratingThemeToOnlineStore20FaqId,
+    breadcrumbId: migratingThemeToOnlineStore20BreadcrumbId,
+    serviceName: "Shopify Online Store 2.0 Theme Migration",
     serviceType:
       "Shopify theme migration to Online Store 2.0, Liquid to JSON template conversion, app integration, SEO preservation, and store optimization",
+    breadcrumbName: "Migrate Theme to Online Store 2.0",
     audienceType:
       "Shopify merchants, ecommerce businesses, and store owners upgrading to Shopify Online Store 2.0",
-    offerCatalog: {
-      title: "Our Shopify Migration Service",
-      items: migratingThemeToOnlineStore20Content.migrationService.sections.map(
-        (section) => ({
-          title: section.title,
-          description: section.description,
-        }),
-      ),
-    },
+    faqs: migratingThemeToOnlineStore20Content.faqs.items.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: migratingThemeToOnlineStore20Content.migrationService.items.map(
+      (item) => ({
+        title: item.title,
+        description: item.description,
+      }),
+    ),
+    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 

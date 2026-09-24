@@ -982,11 +982,11 @@ export const pageSeo = {
   },
   migratingThemeToOnlineStore20: {
     path: "/migrating-a-theme-to-online-store-2-0",
-    title: "Complete Shopify 2.0 Migration Service | Dynamic Dreamz",
+    title: "Migrate Theme to Shopify Online Store 2.0 | Dynamic Dreamz",
     description:
-      "Upgrade your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Our experts ensure a seamless transition for improved functionality and user experience.",
+      "Migrate your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Retain custom functionality, update integrations, complete QA and launch with support.",
     socialDescription:
-      "Upgrade your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Seamless transition, faster performance, sections everywhere, and improved functionality.",
+      "Migrate your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Retain custom functionality, update integrations, complete QA and launch with support.",
     keywords: [
       "migrating a theme to online store 2.0",
       "Shopify 2.0 migration service",
@@ -995,13 +995,13 @@ export const pageSeo = {
       "Shopify Online Store 2.0",
     ],
     openGraphType: "article",
-    publishedTime: "2024-07-29T10:48:47+00:00",
-    modifiedTime: "2026-08-21T00:00:00+05:30",
+    publishedTime: "2024-06-26T06:25:45+00:00",
+    modifiedTime: "2026-09-15T09:39:52+00:00",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
       height: 630,
-      alt: "Migrate your Theme to Shopify Online Store 2.0 | Dynamic Dreamz",
+      alt: "Migrate Theme to Shopify Online Store 2.0 | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",
