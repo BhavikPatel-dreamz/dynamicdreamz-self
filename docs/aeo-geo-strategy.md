@@ -5263,15 +5263,15 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Sense Theme Customization (`/sense-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-19
+Status: technical and schema implementation complete; remigrated to exact live site visual parity with 7 sections matching refreshed live theme layout
+Last reviewed: 2026-09-24
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Modern direct-to-consumer eCommerce brands, Shopify merchants, and digital agencies seeking expert Sense theme customization, clean modern store design, speed optimization, and third-party app integration.
 Decision stage: partner selection, Sense theme customization scope definition, custom feature evaluation, developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Sense theme customization capabilities. Features 10 client brand trust logos, 6 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 5 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Sense theme customization capabilities. Features 12 client brand trust logos (`industryBrandLogos`), 8 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 5 accordion FAQs, and quote request CTA buttons. Seamlessly transitions from Why Choose directly into FAQs matching the live site (no portfolio section on live).
 
 ### Target prompts
 
@@ -5284,22 +5284,24 @@ Dedicated commercial landing page presenting Dynamic Dreamz Sense theme customiz
 ### Current strengths and available evidence
 
 - Server-rendered H1 `Sense Theme Customization Service` with direct answer paragraph.
-- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
-- 6 distinct theme features with vector icons (Clean and Modern Design, Optimized for Speed, Built in Product Filtering, Customizable Header and Footer, Multiple Layout Options, Mobile Optimized).
-- 9 core benefits of Sense customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third party Apps, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost).
-- 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
-- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
-- 5 comprehensive FAQ accordion items directly answering merchant questions on scope, custom design, timeline, post-customization support, and third-party app integration.
+- Dual Hero CTAs: Primary "Request a Quote" -> `/request-quote` and secondary external "View Sense on Shopify" -> `https://themes.shopify.com/themes/sense/presets/sense`.
+- 12 verified brand partner logos via `industryBrandLogos` marquee slider.
+- 8 distinct theme features displayed in beige split banner `ThemeFeaturesBannerSection` (Clean and Modern Design, Optimized for Speed, Built in Product Filtering, Customizable Header and Footer, Multiple Layout Options, Mobile Optimized, Size Chart, Slideshow).
+- 9 core benefits of Sense customization in 3-column boxed grid (`CityWhyChooseBoxesSection`): Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third party Apps, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost.
+- 6 core services in 2-column service cards with `cardVariant="services-box"` (`AgencyServicesSection`): Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance.
+- 4 agency proof points in numbered framework cards (`EvaluationFrameworkSection`): Expert Team, Proven Process, Ongoing Support, Client Focused Approach.
+- 5 comprehensive FAQ accordion items (`SplitFaqSection`) directly answering merchant questions on scope, custom design, timeline, post-customization support, and third-party app integration.
 - Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (5 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
-- Zero duplicate assets across `public/assets/`, with canonical brand partner logos, service icons, and shared feature SVGs reused.
+- Zero duplicate assets across `public/assets/`, with canonical brand partner logos, service icons, and benefit SVGs reused.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Missing App Router implementation for Sense theme customization | Ship slashless `/sense-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Component reuse & parity | Legacy page used outdated layout | Rebuilt with shared `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesBannerSection`, `CityWhyChooseBoxesSection`, `AgencyServicesSection`, `EvaluationFrameworkSection`, `SplitFaqSection` | 100% visual parity across viewports |
 | P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (5 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Sense hero graphic and feature icons under `public/assets/sense-theme-customization/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Local assets & deduplication | Hero image optimization needed | WebP-optimized 1224x948 hero image; reused canonical brand, benefit, and service assets; duplicate hash groups: 0 | Verified locally with 0 duplicate assets |
 | P1 | deferred | Content expansion | Grammar improvements and enhanced copywriting for benefits and FAQs | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -5318,7 +5320,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service with 6 Offer items, 5 FAQ items, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Set explicit freshness `modifiedTime` to `2026-09-24T00:00:00+05:30`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
@@ -5328,7 +5330,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/sense-theme-customization`; source/build URL guard passes.
+- URL-policy review (2026-09-24): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/sense-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 52 chars, Description: 150 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Terms of Service (`/terms-of-service`)

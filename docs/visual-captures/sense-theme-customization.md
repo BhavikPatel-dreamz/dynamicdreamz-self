@@ -1,152 +1,73 @@
-# Visual Capture Note: Sense Theme Customization (`/sense-theme-customization`)
+# Visual Parity Capture: Sense Theme Customization
 
-## Capture Context
-- **Live URL**: `https://www.dynamicdreamz.com/sense-theme-customization/`
-- **Local URL**: `http://localhost:3000/sense-theme-customization`
-- **Migration Target**: 1:1 visual, copy, semantic, and structural parity with the live page in Next.js 16 App Router using clean Tailwind CSS and server components.
-- **Date**: 2026-08-19
-- **Last UI Review**: 2026-08-24
-- **Route-specific correction**: Keep the hero right column at 50% through the `max-width: 991px` tablet state; it returns to full width at `max-width: 767px`.
-- **Trusted-brands desktop recheck**: The owner-supplied live/local captures
-  were reviewed at approximately 1850px. The live section uses the shared
-  compact treatment: `#fbeed5`, 104px total height, 17px vertical padding, and
-  20px/26.4px heading typography on a single line. Its visible rail begins
-  Popclub, SriSri Tattva, Tropicfeel, and Renee. The previous local treatment
-  was 164px tall with a 25px/33px two-line title and route-specific logos.
-- **Responsive behavior**: The compact shared treatment becomes 150px tall at
-  `max-width: 991px` and 135px tall at `max-width: 767px`. The logo rail keeps
-  drag/swipe and 2-second autoplay behavior; hover does not pause this industry
-  variant, while reduced-motion disables autoplay.
-- **Local verification capture**: `scratch/sense-local-1850.png` (1850x1000,
-  headless Chrome) confirms the 104px desktop band, single-line 20px/26.4px
-  title, shared logo rail, and section-to-features spacing. The exact logos in
-  view depend on the rail's autoplay position.
-- **Benefits carousel desktop recheck**: The owner-supplied live capture shows
-  a browser-wide horizontal viewport with its first 627px card initially
-  aligned to the desktop container edge, a 16px gap, and an approximately
-  305px card height. After advancing, the preceding card remains partially
-  visible at the left browser edge while the active card snaps to the original
-  container alignment. The responsive container offset therefore belongs on
-  the inner track and is mirrored by viewport scroll padding; the viewport
-  itself must remain full width. Hover/focus shows the green-to-cyan border and
-  bottom accent already provided by the shared proof card.
-- **Why Choose mobile recheck**: Direct 423px live/local captures were made on
-  2026-08-24 (`scratch/sense-live-why-mobile.png` and
-  `scratch/sense-local-why-mobile.png`). The live section stacks each icon above
-  its copy at `max-width: 767px`, uses 20px vertical and zero horizontal item
-  padding inside the container, and keeps full-width dividers. Mobile card
-  headings retain the base 18px/30.6px typography and 5px bottom margin;
-  descriptions remain 16px/27.2px. The live markup uses `div.text`, so the
-  legacy mobile rule targeting `span.text h3` does not apply. The prior local
-  row layout and 30px/20px item padding did not match the rendered live page.
-- **Services grid recheck**: The rendered live section and current
-  `services/main.css` / `services/media.css` define three columns at 1200px and
-  wider, two columns from 992px through 1199px, and one column at 991px and
-  below. Cards use 16px column gaps, 24px row gaps, 32px icons, transparent
-  backgrounds, 2px borders, and 20px padding on wide desktop; below
-  1200px card padding becomes 30px vertically and 20px horizontally. Titles
-  and descriptions remain 16px/27px across breakpoints. Hover and focus-within
-  replace the neutral border with the live green-to-cyan gradient while the
-  card interior remains visually white; hover also translates the card upward
-  by 10px over 300ms. The gradient is a persistent pseudo-element layer whose
-  opacity transitions over the same 300ms ease-in-out timing; it is not swapped
-  as a background image because gradients do not interpolate smoothly. The
-  card itself follows the live `.services-box` contract of `transition: all
-  .3s ease-in-out` with `transform: translateY(-10px)` on hover.
+- **Route**: `/sense-theme-customization`
+- **Live URL Reference**: `https://www.dynamicdreamz.com/sense-theme-customization/`
+- **Capture Date**: 2026-09-24
+- **Status**: Production-ready remigration matching refreshed live theme layout (7 sections)
+- **Viewports Inspected**:
+  - Desktop: 1440x900 / 1200px+
+  - Tablet: 768x1024 / 991px
+  - Mobile: 390x844 / 575px
 
 ---
 
-## Live Page Structure & Visual Hierarchy
+## 1. Visual References & Page Structure
 
-1. **Hero Section (`.inner-hero-sec.theme-customization-service-sec`)**:
-   - Split hero layout with H1 heading: `Sense Theme Customization Service`
-   - Descriptive paragraph about Sense theme clean modern design and customization benefits
-   - Primary CTA: `request a quote` linking to `/request-quote`
-   - Right column: High-resolution Sense Theme device preview graphic (`/assets/sense-theme-customization/hero/sense-theme-customization-service-img.webp`) with rotating review badges (Clutch 132 Reviews 5.0, Upwork 2000+ Reviews 5.0, Goodfirms 72 Reviews 5.0)
+### Live CSS Sources Inspected
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/theme_customize_hero.css`
+  - `.theme-customize-hero`: Background `#f7f4e9`, padding-top 91px, padding-bottom 0 (tablet: 64px, mobile: 40px).
+  - Left column: 51% width, red-dash eyebrow `Theme Customization` + `Shopify Platinum Partner` badge, H1 `font-size: 50px; line-height: 66px; font-weight: 700`, description paragraph `font-size: 16px; line-height: 28px; color: #535353`, dual button group (Primary red button `Request a Quote` linking to `/request-quote` and secondary black pill button `View Sense on Shopify` linking to `https://themes.shopify.com/themes/sense/presets/sense` with `target="_blank"`).
+  - Right column: 43.182% width, bottom-aligned 1224x948 storefront preview image with dark blend mode.
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/trusted_by_leading_brands_section.css`
+  - `.our-client-sec`: Marquee logo slider with 12 enterprise brands (`industryBrandLogos`), grayscale-to-color hover transition.
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/theme_features.css`
+  - `.theme-features`: Rounded container (`22px` border-radius, `border: 1px solid rgba(40,40,40,0.11)`).
+  - Left column: `37%` width, beige background `#fbefd7`, H2 `Features of Sense Theme`, paragraph copy.
+  - Right column: `63%` width, 2-column grid of 8 theme features (`Clean and Modern Design`, `Optimized for Speed`, `Built in Product Filtering`, `Customizable Header and Footer`, `Multiple Layout Options`, `Mobile Optimized`, `Size Chart`, `Slideshow`).
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/city_page_why_choose_dynamic_dreamz.css`
+  - `.city-page-why-choose-dynamic.bg-light`: Background `#fafaf7`, 3-column boxed grid of 9 benefits with 24x24 outline SVG icons, rounded borders, and hover elevations.
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/delivery_section.css`
+  - `.what-we-provide-sec.pb-0`: 2-column service cards with `cardVariant="services-box"`, 24x24 icon in top-left, title, description, and hover border highlight.
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/how_to_choose_the_right_shopify_plus_agency_sec.css`
+  - `.how-to-choose-spa-sec`: 4-column numbered framework cards (`01`–`04` step indicators) matching live copy: `Expert Team`, `Proven Process`, `Ongoing Support`, `Client Focused Approach`.
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/faqs_section.css`
+  - `.faq-sec`: Sticky 2-column split FAQ layout (`SplitFaqSection`) containing all 5 live questions and answers.
 
-2. **Client Brands Section (`.our-client-sec`)**:
-   - Heading: `Trusted by Leading Brands` (single line on desktop)
-   - Shared brand rail beginning with *Popclub, SriSri Tattva, Tropicfeel, and Renee*
-   - Compact horizontal marquee layout matching the live 104px desktop strip
-
-3. **Theme Features Section (`.three_col_icon_sec`)**:
-   - Heading: `Features Of Sense Theme`
-   - Subtitle: `The Sense theme is built to enhance your brand's online reputation <br> flexibly and efficiently. List of key features:`
-   - 6 Feature cards in a 3-column responsive grid:
-     1. Clean and Modern Design (`/assets/sense-theme-customization/features/clean-minimalistic-design.svg`)
-     2. Optimized for Speed (`/assets/sense-theme-customization/features/optimized-for-speed.svg`)
-     3. Built in Product Filtering (`/assets/impulse-theme-customization/features/advanced-product-filtering.svg`)
-     4. Customizable Header and Footer (`/assets/sense-theme-customization/features/customizable-header-and-footer.svg`)
-     5. Multiple Layout Options (`/assets/sense-theme-customization/features/multiple-layout-options.svg`)
-     6. Mobile Optimized (`/assets/sense-theme-customization/features/mobile-optimized.svg`)
-
-4. **Benefits Section (`.shopify-customization-services-sec`)**:
-   - Heading: `Benefits of Sense <br> Theme Customization`
-   - Subtitle: `To fulfill your business objectives, we can change your store design and <br />functionality with Sense theme customization services.`
-   - 9 Benefit cards matching `ShopifyReasonsSection`:
-     1. Fully Customizable Store
-     2. Responsive Design
-     3. Unique Brand Identity
-     4. Improved User Experience
-     5. Multiple Third party Apps
-     6. Higher Conversion Rates
-     7. Mobile Optimization
-     8. Safe and Secure Payments
-     9. Zero Maintenance Cost
-
-5. **Services Section (`.what-we-provide-sec`)**:
-   - Heading: `Our Sense Theme Customization Services`
-   - Subtitle: `At Dynamic Dreamz, we offer complete customization services for the Sense Theme.`
-   - 6 Service cards in a 3-column grid matching `ShopifyServicesSection`:
-     1. Theme Installation
-     2. Custom Design and Branding
-     3. Responsive Design
-     4. Advanced Features Integration
-     5. Performance Optimization
-     6. Ongoing Support and Maintenance
-
-6. **Why Choose Section (`.why_dynamic_dreamz_sec`)**:
-   - Heading: `Why Choose Dynamic Dreamz`
-   - Subtitle: `We are the go-to experts for Shopify theme customization. Here's why we are best<br />for your theme customization:`
-   - 4 Proof cards in a 2-column grid matching `ThemeWhyChooseSection`:
-     1. Expert Team
-     2. Proven Process
-     3. Ongoing Support
-     4. Client Focused Approach
-
-7. **FAQ Section (`.faq-sec`)**:
-   - Heading: `Frequently Asked Questions`
-   - 5 Accordion items matching `FaqSection`
+> [!NOTE]
+> The live Sense Theme Customization page does not include a portfolio showcase section (`our-work-sec`). The layout seamlessly flows from Why Choose Dynamic Dreamz directly into the FAQs, matching the live page exactly with 7 total sections.
 
 ---
 
-## Asset Provenance & Deduplication Table
+## 2. Page Section Order & Component Mapping
 
-| Asset Role | Live Filename | Local Canonical Path | Status |
+| Section # | Live Section Title / Purpose | Component / Implementation | Reused / Dedicated |
 |---|---|---|---|
-| Hero Graphic | `sense-theme-image-img.webp` | `/assets/sense-theme-customization/hero/sense-theme-customization-service-img.webp` | Ingested (Unique) |
-| Feature 1 Icon | `clean-minimalistic-design-icon.svg` | `/assets/sense-theme-customization/features/clean-minimalistic-design.svg` | Ingested (Unique) |
-| Feature 2 Icon | `optimized-speed-icon.svg` | `/assets/sense-theme-customization/features/optimized-for-speed.svg` | Ingested (Unique) |
-| Feature 3 Icon | `built-in-product-filtering.svg` | `/assets/impulse-theme-customization/features/advanced-product-filtering.svg` | Reused (Canonical SHA-256 Match) |
-| Feature 4 Icon | `customizable-header-and-footer-icon.svg` | `/assets/sense-theme-customization/features/customizable-header-and-footer.svg` | Ingested (Unique) |
-| Feature 5 Icon | `multiple-layout-otions-icon.svg` | `/assets/sense-theme-customization/features/multiple-layout-options.svg` | Ingested (Unique) |
-| Feature 6 Icon | `mobile-optimized-icon.svg` | `/assets/sense-theme-customization/features/mobile-optimized.svg` | Ingested (Unique) |
-| 10 Client Logos | `ranavat.svg`, `prolash_black.svg`, etc. | `/assets/clients/*` | Reused Existing |
-| 9 Benefit Icons | `cs_icon_img.svg`, `responsive_design_icon.svg`, etc. | `/assets/shopify-theme-customization/benefits/*` | Reused Existing |
-| 6 Service Icons | `app-maintenance-icon.svg`, `plugin-icon.svg`, etc. | `/assets/shopify-theme-customization/services/*` | Reused Existing |
-| 4 Why-Choose Icons | `expert-team-bg.svg`, `proven-process-icon.svg`, etc. | `/assets/shopify-theme-customization/why-choose/*` | Reused Existing |
+| 1 | Hero (`Sense Theme Customization Service`) | `ThemeHeroSection` | Reused |
+| 2 | Trusted by Leading Brands | `IndustryBrandsSection` | Reused |
+| 3 | Features of Sense Theme (8 features) | `ThemeFeaturesBannerSection` | Reused |
+| 4 | Benefits of Sense Theme Customization (9 boxed cards) | `CityWhyChooseBoxesSection` | Reused |
+| 5 | Our Shopify Theme Customization Services (6 service cards) | `AgencyServicesSection` (`services-box`) | Reused |
+| 6 | Why Choose Dynamic Dreamz (4-step framework) | `EvaluationFrameworkSection` | Reused |
+| 7 | Frequently Asked Questions (5 accordion items) | `SplitFaqSection` | Reused |
 
 ---
 
-## Responsive Breakpoints & Typography
-- **Desktop (>= 1200px)**: Container max width 1170px / 1280px, font Montserrat, primary text `#111111`, body font size 16px with line height 1.9 (30.4px).
-- **Tablet (992px - 1199px)**: 2-column feature/service grids, adjusted spacing.
-- **Mobile (< 992px)**: Single column layouts, reduced padding (py-[50px]), full-width hero with centered review rating cards.
+## 3. Typography & Styling Specifications
+
+- **Heading Font**: Montserrat / System Sans (`font-sans font-bold text-ink`).
+- **Hero Title**: `text-[50px] leading-[66px] font-bold text-ink tracking-[-0.7px]` (desktop), `text-[40px] leading-[50px]` (tablet), `text-[30px] leading-[40px]` (mobile).
+- **Hero Background**: `#f7f4e9` with mix-blend-darken storefront image.
+- **Section Headings**: `text-[35px] leading-[48px] font-bold tracking-[-0.7px] text-ink` (desktop), `text-[30px] leading-10` (tablet), `text-2xl leading-[33px]` (mobile).
+- **Body & Subtitles**: `text-base leading-[28px] font-medium text-[#535353]`.
+- **Brand Colors**: Red primary CTA `#ad5151` / `#cd3735`, black secondary pill button `#282828`.
 
 ---
 
-## SEO & Schema Specifications
-- **Title**: `Sense Theme Customization Service | Dynamic Dreamz` (52 chars <= 60 chars)
-- **Description**: `Looking for a Sense Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.` (150 chars <= 160 chars)
-- **Canonical**: `https://www.dynamicdreamz.com/sense-theme-customization` (Slashless)
-- **Structured Data**: `Service`, `OfferCatalog` (6 offers), `FAQPage` (5 Question/Answer pairs), `BreadcrumbList`, `Organization`, `WebSite`.
+## 4. Asset Deduplication & Integrity
+
+- **Hero Asset**:
+  - `public/assets/sense-theme-customization/hero/sense-theme-customization-service-img.webp` (WebP-optimized from live 1224x948 source, 69KB vs 788KB original PNG).
+- **Brand Logos**: Reused 12 canonical brand logos from `public/assets/clients/` via `industryBrandLogos`.
+- **Theme Benefits Icons**: Reused canonical 24x24 outline SVGs from `dawn-theme-customization/benefits/` and `expanse-theme-customization/benefits/`.
+- **Services Icons**: Reused canonical service icons from `services/` and `dawn-theme-customization/services/`.
+- **Total Asset Duplicates**: Verified 0 duplicate hash groups across all public assets.
