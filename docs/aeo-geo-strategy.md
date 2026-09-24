@@ -6761,14 +6761,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Be Yours Theme Customization (`/be-yours-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-24
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, DTC brands, ecommerce store owners, and businesses seeking expert Be Yours Shopify theme customization, minimalistic design, product filtering, promotional banners, mega menus, quick view, speed optimization, and mobile responsive layout.
 Decision stage: partner selection, Be Yours theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Be Yours theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards, 9 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Be Yours theme customization capabilities. Features 12 client brand trust logos, 8 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 8 Shopify portfolio project cards with `/our-work` CTA, 9 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -6782,11 +6782,11 @@ Dedicated commercial landing page presenting Dynamic Dreamz Be Yours theme custo
 
 - Server-rendered H1 `Be yours Theme Customization Service` with direct answer paragraph.
 - 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
-- 7 key Be Yours theme features (Clean & Minimalistic Design, Multiple Layout Options, Advanced Product Filtering, Promotional Banners, Mega Menu Support, Quick View & Add to Cart, Social Media Integration).
+- 8 key Be Yours theme features (Clean & Minimalistic Design, Multiple Layout Options, Advanced Product Filtering, Promotional Banners, Mega Menu Support, Quick View & Add to Cart, Social Media Integration, Responsive Design).
 - 9 core benefits of Be Yours customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third party Apps, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost).
 - 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
 - 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
-- 6 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier).
+- 8 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz) with bottom "View our work" CTA linking to `/our-work`.
 - 9 detailed FAQs addressing customization reasons, theme switching/migration, duration, post-customization updates, update frequency, third-party app integration, pricing, staging preview, and adding future features.
 
 ### Structured gap analysis
@@ -6815,7 +6815,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/be-yours-theme-customization`; source/build URL guard passes.
+- URL-policy review (2026-09-24): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/be-yours-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 112 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Fabric Theme Customization (`/fabric-theme-customization`)
