@@ -24,7 +24,7 @@ export const requestQuoteContent = {
     {
       href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
       ariaLabel: "Shopify Platinum Partners Dynamic Dreamz",
-      image: "/assets/awards/shopify-platinum-partner.svg",
+      image: "/assets/proof/shopify-platinum-partner.svg",
       alt: "Shopify Platinum Partners Badge Dynamic Dreamz",
       width: 145,
       height: 43,
@@ -32,7 +32,7 @@ export const requestQuoteContent = {
     {
       href: "https://clutch.co/profile/dynamic-dreamz",
       ariaLabel: "Clutch Review for Dynamic Dreamz",
-      image: "/assets/awards/clutch-rating.svg",
+      image: "/assets/proof/clutch-rating.svg",
       alt: "Clutch Dynamic Dreamz",
       width: 150,
       height: 32,
@@ -40,7 +40,7 @@ export const requestQuoteContent = {
     {
       href: "https://www.upwork.com/ag/dynamicdreamz/",
       ariaLabel: "Upwork Top Rated",
-      image: "/assets/awards/upwork-top-rated-plus.svg",
+      image: "/assets/proof/upwork-top-rated-plus.svg",
       alt: "Upwork Dynamic Dreamz",
       width: 153,
       height: 35,

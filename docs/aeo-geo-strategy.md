@@ -4468,15 +4468,15 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Web Design (`/web-design`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-19
+Status: implemented and verified; exact live-site parity updated
+Last reviewed: 2026-09-28
 Owner: SEO, UI/UX design specialists, leadership, and sales operations
 Primary audience: Businesses, eCommerce merchants, startups, and enterprises seeking creative, modern UI/UX design, website design, mobile app design, wireframing, and design strategy services.
-Decision stage: agency partner evaluation, design capability assessment, portfolio review, quote request
+Decision stage: agency partner evaluation, design capability assessment, portfolio review, engagement model selection, quote request
 
 ### Page role
 
-Dedicated commercial service landing page targeting queries for "Web Design Company", "UI/UX Design Services", and custom website design. Highlights 10 client brand trust logos, 8 structured service offerings (Consulting, Prototyping, Web Design, Mobile App Design, Wireframing, UI Design, Strategy, Animation), 6 real-world UI/UX portfolio projects, 11 client video testimonials with modal playback, 11 buyer FAQs, and quote request banners.
+Dedicated commercial service landing page targeting queries for "Web Design Company", "UI/UX Design Services", and custom website design. Highlights dual-eyebrow hero with 4 rating/partner badges and interactive tablet frame slider with store previews and floating Figma/XD logos, 10 client brand trust logos in continuous marquee, 8 structured service offerings (Consulting, Prototyping, Web Design, Mobile App Design, Wireframing, UI Design, Strategy, Animation), 3-card engagement pricing model (Project-Based, Flexible Hourly Support, Dedicated Designer / Team), 8 real-world UI/UX portfolio projects in 4-column layout, 11 client video testimonials with modal playback, 9 buyer FAQs, and quote request banners.
 
 ### Target prompts
 
@@ -4485,16 +4485,18 @@ Dedicated commercial service landing page targeting queries for "Web Design Comp
 - How much does custom website design and UI/UX design cost?
 - What is the difference between UI and UX design?
 - Can Dynamic Dreamz design websites and mobile apps for eCommerce stores?
+- What are the engagement models for hiring web designers from Dynamic Dreamz?
 
 ### Current strengths and available evidence
 
-- Server-rendered split hero with H1 `UI/UX Design Services` and rotating review badge.
+- Server-rendered split hero (`.hero-new-section`) with dual eyebrows (`ESTABLISHED IN 2006`, `WEB DESIGN AGENCY`), H1 `UI/UX Design Services`, 4 authority badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), and right-column tablet slider with 4 showcase slides (`greenfutureenergy`, `bellavita`, `thehuddlesportsgrill`, `kalki`) plus floating Figma and Adobe XD badges.
 - 10 verified brand partner logos with infinite marquee scrolling.
-- 8 structured service offerings with custom SVG icons and hover gradient effects.
-- 6 featured real-world UI/UX portfolio projects with live store links.
+- 8 structured service offerings in 2-column cards layout with 24x24 single-stroke `#AD5151` SVG icons and exact live copy.
+- 3 engagement pricing options with badges, pricing details, scope summaries, and quote CTAs.
+- 8 featured real-world UI/UX portfolio projects (Brilliant Pet, Joburg Meats, Go Float, Lana’s Holistic Centre, Rocksolid Fitness, Bright Cuties, Parts Prime, Daniel Walters) in 4-column grid.
 - 11 client video testimonials with modal playback.
-- 11 comprehensive buyer FAQs covering UI vs UX differences, business value, design process, custom services, required designer skills, industry specializations, client involvement, user-centric research, timelines, dedicated designer hiring, and ongoing support.
-- Complete structured data graph emitting Service, OfferCatalog (8 service offers), FAQPage (11 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
+- 9 buyer FAQs covering UI vs UX differences, service catalog, design process, redesigns, client involvement, ecommerce capabilities, timelines, deliverables, and ongoing support.
+- Complete structured data graph emitting Service, OfferCatalog (8 service offers), FAQPage (9 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
 - Zero duplicate assets across `public/assets/`, hosting unique local SVGs with canonical paths and deduplicating shared project media.
 
 ### Recommended improvements
@@ -4502,12 +4504,13 @@ Dedicated commercial service landing page targeting queries for "Web Design Comp
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (8 offers), FAQPage (11 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
-| P0 | implemented | Local assets | Service icons, portfolio marks, and brand logos must be locally hosted | Ingest 8 service SVGs, 1 portfolio badge, and 5 unique project images under `public/assets/`, reuse canonical assets across the codebase | Verified locally with 0 runtime external dependencies and 0 duplicates |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (8 offers), FAQPage (9 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-09-28 |
+| P0 | implemented | Live parity remigration | Live page was updated with new tablet hero, 3-card pricing engagement section, 8 portfolio items, and 9 refreshed FAQs | Remigrated page to match live layout, hero tablet slider, pricing table, 4-column portfolio showcase, and updated FAQs verbatim | Live rendered inspection and build verification complete 2026-09-28 |
+| P0 | implemented | Local assets | Service icons, portfolio marks, and brand logos must be locally hosted | Deduplicate hero slides, badges, and portfolio images from existing canonical paths; ingest optimized WebP badges and clean SVG icons | Verified locally with 0 runtime external dependencies and 0 duplicates |
 
 ### Suggested answer copy
 
-Deferred under the live-UI preservation gate. The current server-rendered hero and service descriptions establish Dynamic Dreamz web design and UI/UX capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+Deferred under the live-UI preservation gate. The current server-rendered hero, service descriptions, and pricing cards establish Dynamic Dreamz web design and UI/UX capabilities.
 
 ### Entity, evidence, and authorship actions
 
@@ -4520,8 +4523,8 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service with 8 Offer items, 11 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2025-09-23T05:29:33+00:00`.
+- Emit Service with 8 Offer items, 9 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-09-21T10:20:11+00:00`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
@@ -4531,7 +4534,7 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/web-design`; source/build URL guard passes.
+- URL-policy review (2026-09-28): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/web-design`; source/build URL guard passes.
 
 ## Webflow Development (`/webflow-development`)
 

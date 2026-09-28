@@ -25,6 +25,7 @@ export type AgencyServiceItem = {
 };
 
 export type AgencyServicesContent = {
+  eyebrow?: string;
   heading: string;
   description: string;
   items: readonly AgencyServiceItem[];
@@ -75,6 +76,7 @@ export function AgencyServicesSection({
   const isCompact = variant === "compact";
   const isServicesBox = cardVariant === "services-box";
   const isWebflow = cardVariant === "webflow";
+  const resolvedEyebrow = eyebrow ?? content.eyebrow;
 
   return (
     <section className={className} data-section="services" id={id}>
@@ -83,7 +85,7 @@ export function AgencyServicesSection({
           <SplitSectionHeading
             className="mb-[50px] gap-10 max-[992px]:gap-2.5"
             description={showDescription ? content.description : undefined}
-            eyebrow={eyebrow}
+            eyebrow={resolvedEyebrow}
             heading={content.heading}
             textColumnClassName={headerTextColumnClassName}
             titleColumnClassName={headerTitleColumnClassName}

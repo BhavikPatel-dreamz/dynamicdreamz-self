@@ -1,21 +1,96 @@
+import type { CityPageHeroContent } from "@/components/sections/city-page-hero-section";
 import type { AgencyServicesContent } from "@/components/sections/agency-services-section";
+import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import type { PortfolioShowcaseItem } from "@/components/sections/portfolio-showcase-section";
-import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
 import type { HappyClientTestimonialItem } from "@/components/sections/shopify-plus-agency/happy-client-section";
+import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
-export const webDesignHero: ServiceHeroContent = {
+export const webDesignHero: CityPageHeroContent = {
+  eyebrows: ["ESTABLISHED IN 2006", "WEB DESIGN AGENCY"],
   title: "UI/UX Design Services",
   description:
-    "We provide top tier UI/UX services, including website design, mobile app design, wireframing, UI/UX strategy development, and consulting services. We create intuitive, visually appealing interfaces and enhance user experiences through iterative prototyping, wireframing, and detailed user journey mapping. Optimize your website with our expert UI/UX design services for seamless user engagement.",
-  ctaLabel: "Request a Quote",
-  ctaHref: "/request-quote",
+    "Dynamic Dreamz provides UI/UX and web design services for websites, ecommerce experiences and mobile apps. Our designers work across user journeys, wireframes, prototypes and polished interfaces to create clear, usable digital experiences aligned with your brand and business goals.",
+  primaryCta: {
+    label: "Request a Quote",
+    href: "/request-quote",
+  },
+  badges: [
+    {
+      src: "/assets/proof/shopify-platinum-partner.svg",
+      alt: "Dynamic Dreamz - Shopify Platinum Partner",
+      width: 136,
+      height: 44,
+      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+    },
+    {
+      src: "/assets/proof/clutch-rating.svg",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      width: 111,
+      height: 44,
+      href: "https://clutch.co/profile/dynamic-dreamz",
+    },
+    {
+      src: "/assets/proof/trustpilot-rating.svg",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      width: 148,
+      height: 50,
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+    },
+    {
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      width: 126,
+      height: 54,
+      href: "https://www.upwork.com/ag/dynamicdreamz/",
+    },
+  ],
+  tabletSlider: {
+    bgShapeSrc: "/assets/services/shopify-development-in-bangalore/hero/slide-bg-shape.svg",
+    slides: [
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-green-future-energy.webp",
+        alt: "greenfutureenergy",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/shopify-development-in-bangalore/hero/slide-bellavita.webp",
+        alt: "bellavita",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-the-huddle-sports-grill.webp",
+        alt: "thehuddlesportsgrill",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/shopify-development-in-bangalore/hero/slide-kalki.webp",
+        alt: "kalki",
+        width: 1600,
+        height: 2380,
+      },
+    ],
+    topBadge: {
+      src: "/assets/services/web-design/hero/figma-logo.webp",
+      alt: "figma_rectangle_logo",
+      width: 173,
+      height: 106,
+    },
+    bottomBadge: {
+      src: "/assets/services/web-design/hero/xd-logo.webp",
+      alt: "XD_quare_logo",
+      width: 130,
+      height: 126,
+    },
+  },
 };
 
-export const webDesignBrands = [
+export const webDesignBrands: readonly ClientLogoSliderItem[] = [
   {
-    name: "Ranavat",
     src: "/assets/clients/ranavat.svg",
     alt: "Ranavat Logo",
     width: 174,
@@ -23,7 +98,6 @@ export const webDesignBrands = [
     href: "https://www.ranavat.com/",
   },
   {
-    name: "Prolash",
     src: "/assets/clients/prolash.svg",
     alt: "prolash_black",
     width: 204,
@@ -31,7 +105,6 @@ export const webDesignBrands = [
     href: "https://prolash.com/",
   },
   {
-    name: "Tropicfeel",
     src: "/assets/clients/tropicfeel.svg",
     alt: "Tropicfeel Logo",
     width: 150,
@@ -39,7 +112,6 @@ export const webDesignBrands = [
     href: "https://shop.tropicfeel.com/",
   },
   {
-    name: "Perfect Locks",
     src: "/assets/clients/perfect-locks.svg",
     alt: "perfect_locks_color_logo",
     width: 175,
@@ -47,7 +119,6 @@ export const webDesignBrands = [
     href: "https://www.perfectlocks.com/",
   },
   {
-    name: "Bombay Shirt Company",
     src: "/assets/clients/bombay-shirt-company.svg",
     alt: "Bombay Shirt Company Logo",
     width: 204,
@@ -55,7 +126,6 @@ export const webDesignBrands = [
     href: "https://www.bombayshirts.com/",
   },
   {
-    name: "Kayfi",
     src: "/assets/clients/kayfi.svg",
     alt: "kayfi-colored",
     width: 90,
@@ -63,7 +133,6 @@ export const webDesignBrands = [
     href: "https://kayfi.com/",
   },
   {
-    name: "SimsDirect",
     src: "/assets/clients/simsdirect.svg",
     alt: "simdirect_logo_color",
     width: 143,
@@ -71,7 +140,6 @@ export const webDesignBrands = [
     href: "https://simsdirect.com.au/",
   },
   {
-    name: "Kvaser",
     src: "/assets/clients/kvaser.svg",
     alt: "Kvaser Logo",
     width: 135,
@@ -79,108 +147,141 @@ export const webDesignBrands = [
     href: "https://www.kvaser.com/",
   },
   {
-    name: "Nekter",
-    src: "/assets/clients/nelter.svg",
+    src: "/assets/clients/nekter-colored.svg",
     alt: "nekter-colored",
     width: 66,
     height: 64,
     href: "https://www.nekterjuicebar.com/",
   },
   {
-    name: "Circuit City",
     src: "/assets/clients/circuit-city.svg",
     alt: "Circuit City Logo",
     width: 64,
     height: 64,
     href: "https://circuitcity.com/",
   },
-] as const;
+];
 
 export const webDesignServices: AgencyServicesContent = {
+  eyebrow: "Our Services",
   heading: "What We Provide",
   description:
     "Our UI/UX service enhances satisfaction and engagement among users. It reduces the bounce rate and seamless navigation across websites, all tailored to meet the needs and preferences of your target audience.",
   items: [
     {
       icon: "/assets/services/web-design/consulting-icon.svg",
-      iconAlt: "Consulting Icon",
+      iconAlt: "Consulting Services Icon",
       title: "Consulting Services",
       description:
-        "Pick your path to triumph in UI UX design. We offer professional direction to evaluate your requirements and user paths and build a victorious design strategy.",
+        "Review your business goals, users, existing experience and project requirements to define a practical UI/UX direction before design work begins.",
     },
     {
       icon: "/assets/services/web-design/prototyping-icon.svg",
       iconAlt: "Prototyping Icon",
       title: "Prototyping",
       description:
-        "Make your idea live with the help of our experts. We develop reciprocal prototypes that let you test and filter your UI/UX design before development initiates.",
+        "Create interactive prototypes to validate key screens, navigation and user flows before development starts.",
     },
     {
       icon: "/assets/services/web-design/web-design-icon.svg",
       iconAlt: "Web Design Icon",
       title: "Web Design",
       description:
-        "Make a stunning online presence with our excellent web design services. We design gorgeous & user friendly websites that attract more users, propel conversions, and enhance your brand.",
+        "Design responsive websites and ecommerce experiences with clear hierarchy, brand consistency and user-friendly interactions.",
     },
     {
-      icon: "/assets/services/android-app-development/existing-app-icon.svg",
-      iconAlt: "Mobile App Icon",
+      icon: "/assets/services/web-design/mobile-app-icon.svg",
+      iconAlt: "Mobile App Design Icon",
       title: "Mobile App Design",
       description:
-        "Give the power to your users' hands. We are experts in building reflexive and fascinating mobile app ventures that smoothly integrate with your brand.",
+        "Design mobile app experiences for iOS, Android and cross-platform products with clear navigation and platform-appropriate interaction patterns.",
     },
     {
       icon: "/assets/services/web-design/wireframing-icon.svg",
       iconAlt: "Wireframing Icon",
       title: "Wireframing",
       description:
-        "Create the groundwork for a successful brand. We build low fidelity wireframes to evaluate your app or website structure, user experience, and fundamental features.",
+        "Create low-fidelity wireframes to define page structure, content hierarchy, user flows and key functionality before visual design.",
     },
     {
       icon: "/assets/services/web-design/ui-design-icon.svg",
-      iconAlt: "UI Design Icon",
+      iconAlt: "UI Design Services Icon",
       title: "UI Design Services",
       description:
-        "Our specialists make it attractive and usable. We produce intuitive, aesthetically tempting user interfaces that precisely capture your brand's essence.",
+        "Create polished interface designs using typography, colour, spacing, components and visual systems that reflect the brand while keeping usability in focus.",
     },
     {
       icon: "/assets/services/web-design/strategy-icon.svg",
-      iconAlt: "Strategy Icon",
+      iconAlt: "UI/UX Strategy Development Icon",
       title: "UI/UX Strategy development",
       description:
-        "It involves defining the overall vision and goals for the user experience and aligning them with business objectives. We conduct thorough research, define user personas, and map user journeys. Through iterative prototyping and usability testing, we ensure optimal interface design and navigation, aiming for seamless and engaging interactions across websites.",
+        "Define the user-experience direction, information architecture and major user journeys based on business goals, project requirements and available user insights.",
     },
     {
       icon: "/assets/services/web-design/animation-icon.svg",
-      iconAlt: "Animation Icon",
+      iconAlt: "User Interface Animation Icon",
       title: "User Interface Animation",
       description:
-        "It involves adding motion graphics and animations to enhance the user experience and make the product feel more engaging. We integrate animations strategically to guide user interactions, improve usability, and create engaging visual feedback. Through meticulous design and implementation, we ensure animations complement UI elements, elevating overall user satisfaction and interaction quality.",
+        "Use purposeful motion and interaction design to provide feedback, guide attention and improve the feel of key interface interactions without adding unnecessary complexity.",
     },
   ],
-  cta: {
-    label: "Let me give you a hand to help you",
-    href: "/request-quote",
-    ariaLabel: "Dynamic Dreamz - Let me give you a hand to help you",
-  },
+};
+
+export const webDesignPricing: PricingEngagementContent = {
+  eyebrow: "Flexible Web Design Engagements",
+  heading: "Choose the Right Web Design Engagement.",
+  description:
+    "Start with one Web Design project, use flexible hourly support, or add a dedicated designer / team around your ongoing project.",
+  items: [
+    {
+      label: "Project-Based",
+      badge: "Have One Project?",
+      price: "Custom Quote",
+      description:
+        "For complete UI/UX design projects, website and app interfaces, user research, wireframing, prototyping, design systems and user-focused digital experiences.",
+      ctaLabel: "Send Brief — Get a Quote in 24 Hours",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Flexible Hourly Support",
+      badge: "Need Extra Design Capacity?",
+      price: "$20/hour",
+      description:
+        "For ongoing UI/UX support, design enhancements, interface improvements, usability refinements, design system updates and evolving digital product requirements.",
+      ctaLabel: "Buy Web Design Hours",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Dedicated Designer / Team",
+      badge: "Need Ongoing Capacity?",
+      price: "From $2,000/month",
+      description:
+        "For brands with an evolving design roadmap, multiple digital products or a need for dedicated UI/UX designers or a wider design team.",
+      ctaLabel: "Discuss a Dedicated Team",
+      ctaHref: "/request-quote",
+    },
+  ],
 };
 
 export const webDesignPortfolio = {
-  heading: "Glimpses of Our UI UX Design Outcomes",
+  eyebrow: "Portfolio",
+  heading: "Glimpses of Our UI/UX Design Outcomes",
   description:
-    "Our expert UI/UX service has enhanced user satisfaction, improved usability, and higher retention rates for our clients. Through intuitive design, seamless navigation, and optimized interactions, our happy clients have achieved better conversion rates, positive brand perception, and overall success in their digital endeavors.",
+    "Explore selected UI/UX and web design work across websites, ecommerce and digital products, including projects where our team supported wireframes, interface design, user-flow improvements and design refinement.",
   category: "Ui/UX Design",
   platformMark: {
     src: "/assets/services/web-design/ui-ux-badge.svg",
     width: 44,
     height: 44,
   },
+  ctaLabel: "View our work",
+  ctaHref: "/portfolio",
   items: [
     {
       name: "Brilliant Pet",
       href: "https://brilliantpetcare.com/",
       image: "/assets/services/web-design/portfolio/brilliant-pet.webp",
-      imageAlt: "Brilliant Pet UI/UX Design Project",
+      imageAlt: "Brilliant Pet Image",
       category: "Ui/UX Design",
       platformMark: {
         src: "/assets/services/web-design/ui-ux-badge.svg",
@@ -192,7 +293,7 @@ export const webDesignPortfolio = {
       name: "Joburg Meats",
       href: "https://joburgmeats.com/",
       image: "/assets/food-beverages/portfolio/joburg-meats.webp",
-      imageAlt: "Joburg Meats UI/UX Design Project",
+      imageAlt: "Joburg Meats Image",
       category: "Ui/UX Design",
       platformMark: {
         src: "/assets/services/web-design/ui-ux-badge.svg",
@@ -204,7 +305,7 @@ export const webDesignPortfolio = {
       name: "Go Float",
       href: "https://www.gofloat.io/en/",
       image: "/assets/services/web-design/portfolio/go-float.webp",
-      imageAlt: "Go Float UI/UX Design Project",
+      imageAlt: "Go Float Image",
       category: "Ui/UX Design",
       platformMark: {
         src: "/assets/services/web-design/ui-ux-badge.svg",
@@ -216,7 +317,7 @@ export const webDesignPortfolio = {
       name: "Lana’s Holistic Centre",
       href: "https://lhc-ipswich.com/",
       image: "/assets/services/web-design/portfolio/lanas-holistic-centre.webp",
-      imageAlt: "Lana’s Holistic Centre UI/UX Design Project",
+      imageAlt: "Lana’s Holistic Centre Image",
       category: "Ui/UX Design",
       platformMark: {
         src: "/assets/services/web-design/ui-ux-badge.svg",
@@ -228,7 +329,7 @@ export const webDesignPortfolio = {
       name: "Rocksolid Fitness",
       href: "https://rocksolidfitness.ca/",
       image: "/assets/services/web-design/portfolio/rocksolid-fitness.webp",
-      imageAlt: "Rocksolid Fitness UI/UX Design Project",
+      imageAlt: "Rocksolid Fitness Image",
       category: "Ui/UX Design",
       platformMark: {
         src: "/assets/services/web-design/ui-ux-badge.svg",
@@ -240,7 +341,31 @@ export const webDesignPortfolio = {
       name: "Bright Cuties",
       href: "https://brightcuties.com/",
       image: "/assets/services/web-design/portfolio/bright-cuties.webp",
-      imageAlt: "Bright Cuties UI/UX Design Project",
+      imageAlt: "Bright Cuties Image",
+      category: "Ui/UX Design",
+      platformMark: {
+        src: "/assets/services/web-design/ui-ux-badge.svg",
+        width: 44,
+        height: 44,
+      },
+    },
+    {
+      name: "Parts Prime",
+      href: "https://partsprime.ca/",
+      image: "/assets/our-work/projects/parts-prime.webp",
+      imageAlt: "Parts Prime Image",
+      category: "Ui/UX Design",
+      platformMark: {
+        src: "/assets/services/web-design/ui-ux-badge.svg",
+        width: 44,
+        height: 44,
+      },
+    },
+    {
+      name: "Daniel Walters",
+      href: "https://www.danielwalters.com/",
+      image: "/assets/our-work/projects/daniel-walters-eyewear.webp",
+      imageAlt: "Daniel Walters Image",
       category: "Ui/UX Design",
       platformMark: {
         src: "/assets/services/web-design/ui-ux-badge.svg",
@@ -265,106 +390,47 @@ export const webDesignTestimonials: {
 export const webDesignFaqs: readonly FaqAccordionItem[] = [
   {
     question: "What's the difference between UI and UX design?",
-    listPosition: "before",
-    listItems: [
-      {
-        label: "UI stands for User Interface.",
-        text: "It concentrates on the graphical elements of your app or website, like color scheme, layout, button placement, and typography.",
-      },
-      {
-        label: "UX stands for User Experience.",
-        text: "It contains the whole user journey, evaluating how visitors interact with your product and how it makes them feel.",
-      },
-    ],
     answer:
-      "We blend UI and UX design principles to develop a smooth and flattering user experience.",
+      "UI, or user interface design, focuses on the visual and interactive elements of a website or app, such as layout, typography, colour, components and states. UX, or user experience design, focuses on how users move through the product, complete tasks and understand the information. Strong digital products usually require both.",
   },
   {
-    question: "What can your UI/UX design service do for my business?",
+    question: "What UI/UX design services does Dynamic Dreamz provide?",
     answer:
-      "Our expert UI/UX design service can help you expand and evolve by achieving goals such as growing brand awareness, boosting conversions, sweetening user experience, improving customer satisfaction, and ultimately driving business growth.",
+      "We provide UI/UX consulting, wireframing, interactive prototyping, web design, ecommerce design, mobile app design, interface design, UX strategy and interface animation.",
   },
   {
-    question: "What does your UI/UX design process typically involve?",
+    question: "What does your UI/UX design process involve?",
     answer:
-      "Our UI UX design approach is cooperative and iterative. We generally follow these steps:",
-    listItems: [
-      {
-        label: "Meeting:",
-        text: "We sit with you to understand your business goals, target audience, and brand identity.",
-      },
-      {
-        label: "Research:",
-        text: "We conduct research to comprehend user requirements and pain points.",
-      },
-      {
-        label: "Information Architecture:",
-        text: "We develop a blueprint to manage and handle your content and guarantee that user flow is transparent and reflexive.",
-      },
-      {
-        label: "Wireframing:",
-        text: "To specify the essential functionalities and structure of the website or app, we create low fidelity wireframes.",
-      },
-      {
-        label: "Prototyping:",
-        text: "We create interactive prototypes to experiment and distill your website design with users.",
-      },
-      {
-        label: "UI Design:",
-        text: "We design the graphical components of your app or website that concentrate on usability and aesthetics.",
-      },
-      {
-        label: "Usability Testing:",
-        text: "We perform usability testing to pinpoint usability issues and guarantee the final design is user friendly.",
-      },
-    ],
+      "We begin by understanding the business goals, users, content and functional requirements. Depending on the project, the process can include research, information architecture, wireframes, prototypes, visual UI design, feedback rounds and preparation of final design files for development.",
   },
   {
-    question: "Can you customize your UI/UX design services to fit my business needs?",
+    question: "Can you redesign an existing website or app?",
     answer:
-      "Absolutely! We provide multiple UI/UX design services that can match your exact necessities and budget, whether you need a new design of the website or just customization of the website or app.",
-  },
-  {
-    question: "What are the skills a designer must have?",
-    answer:
-      "A professional UI/UX designer requires a blend of technical skills, soft skills, and design knowledge. Check the list below:",
-    listItems: [
-      { text: "User Research and Empathy" },
-      { text: "Information Architecture and User Flow" },
-      { text: "Wireframing and Prototyping" },
-      { text: "Visual Design" },
-      { text: "Communication and Collaboration" },
-      { text: "Problem solving and Critical Thinking" },
-    ],
-  },
-  {
-    question: "What industries do you specialize in?",
-    answer:
-      "We specialize in a variety of industries, such as eCommerce, healthcare, education, and more. Our diverse experience allows us to tailor our designs to meet the specific needs of different sectors.",
+      "Yes. We can review an existing digital experience and redesign selected pages, flows or the complete interface while preserving useful brand elements and existing business requirements.",
   },
   {
     question: "How do you involve clients in the design process?",
     answer:
-      "We prioritize collaboration and involve clients at every stage of the design process. It includes regular meetings, feedback sessions, and design reviews to ensure the final product aligns with your vision and objectives.",
+      "We work collaboratively through requirements discussions, design reviews and structured feedback rounds. We typically share design progress in Figma so stakeholders can review screens, comment and approve the direction before development.",
   },
   {
-    question: "How do you ensure your designs are user centric?",
+    question: "Do you design for ecommerce as well as business websites?",
     answer:
-      "At Dynamic Dreamz, we conduct extensive user research, including surveys, interviews, and usability testing, to gather insights into user behavior and preferences. Our design decisions are based on user data and feedback from clients to ensure the final product aligns with user needs.",
+      "Yes. Our UI/UX team works on ecommerce stores, business and service websites, landing pages, mobile apps and other digital interfaces. For ecommerce, we can also coordinate closely with our Shopify, WooCommerce and development teams.",
   },
   {
-    question: "What is the typical timeline for a UI/UX project?",
+    question: "How long does a UI/UX design project take?",
     answer:
-      "The timeline varies depending on the project’s scope and complexity. Generally, a standard UI/UX project can take anywhere from 6 to 12 weeks. We provide detailed timelines and regular updates throughout the project to keep clients informed.",
+      "Timing depends on the number of screens, complexity, content readiness and feedback cycles. A focused landing page or small design task can be completed faster, while a multi-page website, ecommerce redesign or mobile app may require several weeks. We confirm the schedule after reviewing the scope.",
   },
   {
-    question: "What is the cost of hiring a dedicated UI/UX designer from Dynamic Dreamz?",
+    question: "What do I receive at the end of the design project?",
     answer:
-      "The cost of hiring a dedicated UI/UX designer from Dynamic Dreamz can depend on your project requirements and the experience and expertise of a designer.",
+      "Depending on the agreed scope, deliverables can include wireframes, high-fidelity Figma designs, responsive screen variations, interactive prototypes, reusable components and developer-ready design files.",
   },
   {
-    question: "Do you offer ongoing support after the project is completed?",
+    question: "Do you provide ongoing UI/UX support?",
     answer:
-      "Yes, we offer ongoing support and maintenance services to ensure your product continues to meet user needs and performs optimally. It includes updates, enhancements, and troubleshooting as needed.",
+      "Yes. We can support ongoing design improvements, new pages or screens, ecommerce campaigns, feature design and design-system updates based on the engagement model.",
   },
 ];

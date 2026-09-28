@@ -65,14 +65,14 @@ export const wordpressDevelopmentNoidaContent = {
     },
     badges: [
       {
-        src: "/assets/awards/shopify-platinum-partner.svg",
+        src: "/assets/proof/shopify-platinum-partner.svg",
         alt: "Dynamic Dreamz - Shopify Platinum Partner",
         width: 136,
         height: 44,
         href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
       },
       {
-        src: "/assets/awards/clutch-rating.svg",
+        src: "/assets/proof/clutch-rating.svg",
         alt: "Dynamic Dreamz on Clutch — 4.9 rating",
         width: 111,
         height: 44,
@@ -86,7 +86,7 @@ export const wordpressDevelopmentNoidaContent = {
         href: "https://www.trustpilot.com/review/dynamicdreamz.com",
       },
       {
-        src: "/assets/awards/upwork-top-rated-plus.svg",
+        src: "/assets/proof/upwork-top-rated-plus.svg",
         alt: "Dynamic Dreamz — Upwork Top Rated Plus",
         width: 126,
         height: 54,

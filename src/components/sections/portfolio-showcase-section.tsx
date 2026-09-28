@@ -48,6 +48,8 @@ export type PortfolioShowcaseSectionProps = {
   sectionId?: string;
   showMobileArrow?: boolean;
   mobileColumns?: 1 | 2;
+  titleColumnClassName?: string;
+  textColumnClassName?: string;
 };
 
 export function PortfolioShowcaseSection({
@@ -70,6 +72,8 @@ export function PortfolioShowcaseSection({
   sectionId = "portfolio-showcase",
   showMobileArrow = false,
   mobileColumns = 1,
+  titleColumnClassName,
+  textColumnClassName,
 }: PortfolioShowcaseSectionProps) {
   const isLiveGrid = variant === "liveGrid";
   const resolvedColumns = columns ?? (isLiveGrid ? 4 : 3);
@@ -109,6 +113,8 @@ export function PortfolioShowcaseSection({
             eyebrow={resolvedEyebrow}
             eyebrowClassName={eyebrowClassName}
             heading={content.heading}
+            textColumnClassName={textColumnClassName}
+            titleColumnClassName={titleColumnClassName}
             variant="portfolio"
           />
         ) : (

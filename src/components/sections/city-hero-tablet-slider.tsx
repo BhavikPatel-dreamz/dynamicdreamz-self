@@ -38,7 +38,6 @@ export function CityHeroTabletSlider({ slider }: CityHeroTabletSliderProps) {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
-  const [isPaused, setIsPaused] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -63,7 +62,7 @@ export function CityHeroTabletSlider({ slider }: CityHeroTabletSliderProps) {
     }
 
     const interval = setInterval(() => {
-      if (isVisible && !isPaused) {
+      if (isVisible) {
         setIsTransitioning(true);
         setActiveIndex((prev) => {
           const next = prev + 1;
@@ -85,14 +84,12 @@ export function CityHeroTabletSlider({ slider }: CityHeroTabletSliderProps) {
       if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
       observer.disconnect();
     };
-  }, [slides.length, isPaused]);
+  }, [slides.length]);
 
   return (
     <div
       ref={containerRef}
       className="tablet-slider-wrap relative mb-[-40px] flex w-full items-center justify-center px-10 pt-[60px] pb-0 max-[1199px]:mb-[-70px] max-[1199px]:pt-[30px]"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       aria-label="Interactive showcase preview"
     >
       <div className="tablet-frame relative h-[593px] w-[420px] shrink-0 rounded-[22px] bg-[#171326] p-4 shadow-[0_30px_60px_rgba(0,0,0,0.18)] max-[1199px]:h-[500px] max-[1199px]:w-[345px]">
@@ -113,12 +110,15 @@ export function CityHeroTabletSlider({ slider }: CityHeroTabletSliderProps) {
                 ? "transition-transform duration-[600ms] ease-[cubic-bezier(0.65,0.05,0.36,1)]"
                 : ""
             }`}
-            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            style={{
+              width: `${extendedSlides.length * 100}%`,
+              transform: `translateX(-${(activeIndex * 100) / extendedSlides.length}%)`,
+            }}
           >
             {extendedSlides.map((slide, idx) => (
               <div
                 key={`${slide.src}-${idx}`}
-                className="tablet-slide-item h-full w-full shrink-0"
+                className="tablet-slide-item h-full flex-1 shrink-0"
               >
                 <Image
                   src={slide.src}

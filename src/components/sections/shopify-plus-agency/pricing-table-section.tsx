@@ -23,9 +23,13 @@ export type PricingEngagementContent = {
 export function PricingTableSection({
   content = shopifyPlusAgencyPricing,
   className,
+  titleColumnClassName,
+  textColumnClassName,
 }: {
   content?: PricingEngagementContent;
   className?: string;
+  titleColumnClassName?: string;
+  textColumnClassName?: string;
 }) {
   return (
     <section
@@ -39,6 +43,8 @@ export function PricingTableSection({
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
+          textColumnClassName={textColumnClassName}
+          titleColumnClassName={titleColumnClassName}
           variant="left"
         />
 

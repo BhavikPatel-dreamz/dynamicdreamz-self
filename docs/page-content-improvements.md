@@ -829,16 +829,19 @@ Primary SEO intent: post-application confirmation screen, HR contact information
 
 ## Web Design (`/web-design`)
 
-Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-19
-Primary SEO intent: web design company, UI/UX design services, custom web design, website design company, UI UX agency India.
+Status: visible recommendations deferred; exact live UI and metadata updated
+Last reviewed: 2026-09-28
+Primary SEO intent: web design company, UI/UX design services, custom web design, website design company, UI UX agency.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | `Web Design Company – Contact Us for Web Design Services - Shopify Plus Agency & Shopify Platinum Partner \| Dynamic Dreamz` (134 chars) | `Web Design Company & UI/UX Design Services \| Dynamic Dreamz` (59 chars) | Shortened title to fit strict 15-60 char budget and eliminate SERP truncation while maintaining core commercial keywords. | High | implemented in metadata |
-| Meta description | `Dynamic Dreamz Is the Best Web Design Company in India Who Are Familiar With Creative and Modern Web Design Concepts.` (118 chars) | Preserved live meta description (118 chars). | Fits 70-160 character budget and captures value proposition. | High | implemented in metadata |
-| VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
-| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (8 service items) and `FAQPage` (11 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+| Meta title | `UI/UX & Web Design Services \| DynamicDreamz` (44 chars) | Preserved live title (44 chars). | Fits strict 15-60 char budget and eliminates SERP truncation while maintaining core commercial keywords. | High | implemented in metadata |
+| Meta description | `UI/UX and web design services forwebsites, ecommerce and mobile apps,including wireframes, prototypes,interface design, UX strategy and designhandoff.` (152 chars) | Preserved live meta description (152 chars). | Fits 70-160 character budget and captures full service scope. | High | implemented in metadata |
+| OpenGraph Image | Legacy 1.1MB PNG OG image | Optimized to 43KB WebP (`/assets/og/web-design-services.webp`). | Reduces page weight and improves Core Web Vitals while preserving crisp fidelity. | High | implemented |
+| Hero Section | Older rotating review badge layout | Updated to live split hero with dual eyebrows, 4 partner badges, and tablet frame slider (4 slides + floating Figma/XD logos). | Matches current live site layout and interactive tablet presentation. | High | implemented |
+| Engagement Pricing | Missing from previous migration | Added 3-card pricing table (`#our_white_label_pricing`) for Project-Based, Flexible Hourly Support, and Dedicated Designer / Team. | Matches current live site section order and buyer options. | High | implemented |
+| Portfolio Showcase | 6-card project grid | Updated to 8-card project grid (`#our_work`) in 4-column layout including Parts Prime and Daniel Walters. | Matches current live site portfolio coverage. | High | implemented |
+| FAQ Section | Older 11-question list | Updated to exact 9 questions and answers with circle-cross expand icons. | Matches current live site FAQ content verbatim. | High | implemented |
 
 ## Terms of Service (`/terms-of-service`)
 
