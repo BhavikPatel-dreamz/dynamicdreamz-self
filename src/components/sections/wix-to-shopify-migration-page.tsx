@@ -1,28 +1,33 @@
 import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { MigrationPlatformIcon } from "@/components/sections/migration-platform-icons";
 import { MigrationProcessSection } from "@/components/sections/migration-process-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import { ThemeWhyChooseSection } from "@/components/sections/theme-customization/theme-why-choose-section";
-import { TwoColCenterImageSection } from "@/components/sections/two-col-center-image-section";
-import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
 import {
   wixBrandLogos,
-  wixConsiderationsContent,
-  wixHeroContent,
-  wixProcessContent,
-  wixWhatAfterContent,
-  wixWhyChooseContent,
   wixFaqs,
+  wixHeroContent,
   wixMigrationSectionCopy,
+  wixProcessContent,
   wixTestimonials,
+  wixWhyMigrateContent,
 } from "@/content/wix-to-shopify-migration";
 
 export function WixToShopifyMigrationPage() {
+  const whyMigrateBoxes = wixWhyMigrateContent.boxes.map((box) => ({
+    icon: <MigrationPlatformIcon name={box.iconName} />,
+    title: box.title,
+    description: box.description,
+  }));
+
   return (
-    <>
-      <ServiceHeroSection content={wixHeroContent} />
+    <div className="font-sans leading-[30.4px]">
+      {/* 1. Hero Section */}
+      <ServiceHeroVideoSection content={wixHeroContent} />
+
+      {/* 2. Brand Partners Section */}
       <IndustryBrandsSection
         content={{
           slug: "wix-to-shopify-migration",
@@ -30,36 +35,40 @@ export function WixToShopifyMigrationPage() {
         heading={wixMigrationSectionCopy.brandsHeading}
         items={wixBrandLogos}
       />
-      <TextBoxSection
-        className="single-text-box-sec py-20 max-[992px]:py-15"
-        heading={wixMigrationSectionCopy.whyMigrateHeading}
-        text={wixMigrationSectionCopy.whyMigrateText}
+
+      {/* 3. Why Migrate from Wix to Shopify? */}
+      <ThemeCustomizationServicesSection
+        content={{
+          eyebrow: wixWhyMigrateContent.eyebrow,
+          heading: wixWhyMigrateContent.heading,
+          description: wixWhyMigrateContent.description,
+          boxes: whyMigrateBoxes,
+        }}
+        id="why-migrate"
+        variant="yellow"
       />
-      <TwoColCenterImageSection content={wixConsiderationsContent} />
-      <MigrationProcessSection content={wixProcessContent} />
-      <ThemeWhyChooseSection
-        className="why_dynamic_dreamz_sec dev pt-0 pb-20 two-column-icon-text-bg two-column-top-icon-text"
-        content={wixWhatAfterContent}
-        variant="top-icon"
+
+      {/* 4. Wix to Shopify Migration Process */}
+      <MigrationProcessSection
+        content={wixProcessContent}
+        id="migration-process"
+        variant="cards"
       />
-      <ShopifyReasonsSection
-        carouselFullBleed
-        content={wixWhyChooseContent}
-        id="benefits-of-moving"
-        layout="carousel"
-      />
+
+      {/* 5. Testimonials */}
       <HappyClientSection
-        controlsLabels={wixTestimonials.controlsLabels}
-        description={wixMigrationSectionCopy.testimonialsDescription}
+        description={wixTestimonials.description}
         eyebrow={wixTestimonials.eyebrow}
-        heading={wixMigrationSectionCopy.testimonialsHeading}
+        heading={wixTestimonials.heading}
         items={wixTestimonials.items}
-        variant="client-stories"
       />
+
+      {/* 6. Frequently Asked Questions */}
       <SplitFaqSection
         idPrefix="wix-migration-faq"
         items={wixFaqs}
+        sectionId="faqs"
       />
-    </>
+    </div>
   );
 }

@@ -1,33 +1,40 @@
-import { AgencyServicesSection } from "@/components/sections/agency-services-section";
-import { DifferenceCardSection } from "@/components/sections/difference-card-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { MigrationPlatformIcon } from "@/components/sections/migration-platform-icons";
 import { MigrationProcessSection } from "@/components/sections/migration-process-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
-import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
 import {
-  bigcommerceDataSecuredContent,
-  bigcommerceDifferenceContent,
   bigcommerceBrandLogos,
+  bigcommerceDataSecuredContent,
   bigcommerceFaqs,
   bigcommerceHeroContent,
   bigcommerceMigrationSectionCopy,
   bigcommerceProcessContent,
-  bigcommerceWhyChooseContent,
-  bigcommerceWhyMigrate,
+  bigcommerceTestimonials,
+  bigcommerceWhyMigrateContent,
 } from "@/content/bigcommerce-to-shopify-migration";
-import { wixTestimonials } from "@/content/wix-to-shopify-migration";
 
 export function BigCommerceToShopifyMigrationPage() {
+  const whyMigrateBoxes = bigcommerceWhyMigrateContent.boxes.map((box) => ({
+    icon: <MigrationPlatformIcon name={box.iconName} />,
+    title: box.title,
+    description: box.description,
+  }));
+
+  const dataSecuredBoxes = bigcommerceDataSecuredContent.boxes.map((box) => ({
+    icon: <MigrationPlatformIcon name={box.iconName} />,
+    title: box.title,
+    description: box.description,
+  }));
+
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec woocommerce-to-shopify relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
-        content={bigcommerceHeroContent}
-        variant="split"
-      />
+      {/* 1. Hero Section */}
+      <ServiceHeroVideoSection content={bigcommerceHeroContent} />
+
+      {/* 2. Brand Partners Section */}
       <IndustryBrandsSection
         content={{
           slug: "bigcommerce-to-shopify-migration",
@@ -35,45 +42,51 @@ export function BigCommerceToShopifyMigrationPage() {
         heading={bigcommerceMigrationSectionCopy.brandsHeading}
         items={bigcommerceBrandLogos}
       />
-      <TextBoxSection
-        className="single-text-box-sec py-20 max-[992px]:py-[50px]"
-        heading={bigcommerceWhyMigrate.heading}
-        text={bigcommerceWhyMigrate.text}
+
+      {/* 3. Why Migrate from BigCommerce to Shopify? */}
+      <ThemeCustomizationServicesSection
+        content={{
+          eyebrow: bigcommerceWhyMigrateContent.eyebrow,
+          heading: bigcommerceWhyMigrateContent.heading,
+          description: bigcommerceWhyMigrateContent.description,
+          boxes: whyMigrateBoxes,
+        }}
+        id="why-migrate"
+        variant="yellow"
       />
-      <DifferenceCardSection
-        content={bigcommerceDifferenceContent}
-        id="difference"
+
+      {/* 4. How Our Data Is Secured During Migration? */}
+      <ThemeCustomizationServicesSection
+        content={{
+          eyebrow: bigcommerceDataSecuredContent.eyebrow,
+          heading: bigcommerceDataSecuredContent.heading,
+          description: bigcommerceDataSecuredContent.description,
+          boxes: dataSecuredBoxes,
+        }}
+        id="data-security"
+        variant="green"
       />
+
+      {/* 5. BigCommerce to Shopify Migration Process */}
       <MigrationProcessSection
         content={bigcommerceProcessContent}
         id="migration-process"
+        variant="cards"
       />
-      <ShopifyReasonsSection
-        carouselFullBleed
-        className="shopify-customization-services-sec mb-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[992px]:mb-[50px] max-[992px]:py-[50px]"
-        content={bigcommerceWhyChooseContent}
-        id="why-choose-dynamicdreamz"
-        layout="carousel"
-      />
-      <AgencyServicesSection
-        className="what-we-provide-sec pt-0 pb-20 max-[992px]:pb-[50px]"
-        columns={3}
-        content={bigcommerceDataSecuredContent}
-        headerLayout="split"
-        id="services"
-        variant="compact"
-      />
+
+      {/* 6. Testimonials */}
       <HappyClientSection
-        controlsLabels={wixTestimonials.controlsLabels}
-        description={bigcommerceMigrationSectionCopy.testimonialsDescription}
-        eyebrow={wixTestimonials.eyebrow}
-        heading={bigcommerceMigrationSectionCopy.testimonialsHeading}
-        items={wixTestimonials.items}
-        variant="client-stories"
+        description={bigcommerceTestimonials.description}
+        eyebrow={bigcommerceTestimonials.eyebrow}
+        heading={bigcommerceTestimonials.heading}
+        items={bigcommerceTestimonials.items}
       />
+
+      {/* 7. Frequently Asked Questions */}
       <SplitFaqSection
         idPrefix="bigcommerce-migration-faq"
         items={bigcommerceFaqs}
+        sectionId="faqs"
       />
     </div>
   );

@@ -1,31 +1,33 @@
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { MigrationPlatformIcon } from "@/components/sections/migration-platform-icons";
 import { MigrationProcessSection } from "@/components/sections/migration-process-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
-import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
-import { TwoColCenterImageSection } from "@/components/sections/two-col-center-image-section";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
 import {
   ecwidBenefitsContent,
   ecwidBrandLogos,
-  ecwidConsiderationsContent,
   ecwidFaqs,
   ecwidHeroContent,
+  ecwidMigrationSectionCopy,
   ecwidProcessContent,
   ecwidTestimonials,
-  ecwidWhyMigrate,
-  ecwidMigrationSectionCopy,
 } from "@/content/ecwid-to-shopify-migration";
 
 export function EcwidToShopifyMigrationPage() {
+  const benefitsBoxes = ecwidBenefitsContent.boxes.map((box) => ({
+    icon: <MigrationPlatformIcon name={box.iconName} />,
+    title: box.title,
+    description: box.description,
+  }));
+
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec woocommerce-to-shopify relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
-        content={ecwidHeroContent}
-        variant="split"
-      />
+      {/* 1. Hero Section */}
+      <ServiceHeroVideoSection content={ecwidHeroContent} />
+
+      {/* 2. Brand Partners Section */}
       <IndustryBrandsSection
         content={{
           slug: "ecwid-to-shopify-migration",
@@ -33,36 +35,39 @@ export function EcwidToShopifyMigrationPage() {
         heading={ecwidMigrationSectionCopy.brandsHeading}
         items={ecwidBrandLogos}
       />
-      <TextBoxSection
-        className="single-text-box-sec py-20 max-[992px]:py-[50px]"
-        heading={ecwidWhyMigrate.heading}
-        text={ecwidWhyMigrate.text}
+
+      {/* 3. Benefits of Moving from Ecwid to Shopify */}
+      <ThemeCustomizationServicesSection
+        content={{
+          eyebrow: ecwidBenefitsContent.eyebrow,
+          heading: ecwidBenefitsContent.heading,
+          description: ecwidBenefitsContent.description,
+          boxes: benefitsBoxes,
+        }}
+        id="benefits"
+        variant="yellow"
       />
-      <ShopifyReasonsSection
-        carouselFullBleed
-        content={ecwidBenefitsContent}
-        id="benefits-of-moving"
-        layout="carousel"
-      />
-      <TwoColCenterImageSection
-        content={ecwidConsiderationsContent}
-        id="things-to-consider"
-      />
+
+      {/* 4. Ecwid to Shopify Migration Process */}
       <MigrationProcessSection
         content={ecwidProcessContent}
         id="migration-process"
+        variant="cards"
       />
+
+      {/* 5. Testimonials */}
       <HappyClientSection
-        controlsLabels={ecwidTestimonials.controlsLabels}
-        description={ecwidMigrationSectionCopy.testimonialsDescription}
+        description={ecwidTestimonials.description}
         eyebrow={ecwidTestimonials.eyebrow}
-        heading={ecwidMigrationSectionCopy.testimonialsHeading}
+        heading={ecwidTestimonials.heading}
         items={ecwidTestimonials.items}
-        variant="client-stories"
       />
+
+      {/* 6. Frequently Asked Questions */}
       <SplitFaqSection
         idPrefix="ecwid-migration-faq"
         items={ecwidFaqs}
+        sectionId="faqs"
       />
     </div>
   );

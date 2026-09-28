@@ -36,6 +36,7 @@ export type ServiceHeroVideoContent = {
     alt: string;
     width?: number;
     height?: number;
+    className?: string;
   };
   badges: readonly HeroBadge[];
 };
@@ -44,6 +45,7 @@ export type ServiceHeroVideoSectionProps = {
   content: ServiceHeroVideoContent;
   className?: string;
   wrapperClassName?: string;
+  imageClassName?: string;
   titleAccentTag?: "i" | "span";
   titleAccentClassName?: string;
 };
@@ -52,6 +54,7 @@ export function ServiceHeroVideoSection({
   content,
   className,
   wrapperClassName,
+  imageClassName,
   titleAccentTag = "i",
   titleAccentClassName,
 }: ServiceHeroVideoSectionProps) {
@@ -216,7 +219,7 @@ export function ServiceHeroVideoSection({
                   alt={content.image.alt}
                   width={content.image.width ?? 493}
                   height={content.image.height ?? 292}
-                  className="w-full h-auto block mix-blend-darken"
+                  className={cn("w-full h-auto block", content.image.className, imageClassName)}
                   priority
                 />
               </div>

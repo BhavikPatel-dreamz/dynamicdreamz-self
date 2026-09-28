@@ -770,13 +770,17 @@ export const pageSeo = {
   },
   squareToShopifyMigration: {
     path: "/square-to-shopify-migration",
-    title: "Square to Shopify Migration | Take an Expert Guide",
+    title: "Square to Shopify Migration Services | Dynamic Dreamz",
     description:
-      "Looking for a Square to Shopify migration without downtime and data loss? Hire Shopify migration experts from Dynamic Dreamz for a smooth, successful migration.",
+      "Migrate Square to Shopify with Dynamic Dreamz. We transfer store data, rebuild required functionality, configure payments and apps, and protect SEO.",
+    socialDescription:
+      "Services: Migrate Square to Shopify with Dynamic Dreamz. We transfer store data, rebuild required functionality, configure payments and apps, protect SEO, and support the launch.",
     keywords: [
       "Square to Shopify migration",
       "Square to Shopify",
       "Shopify migration experts",
+      "Square store migration",
+      "migrate Square to Shopify",
     ],
     openGraphType: "article",
     modifiedTime: "2026-08-20T00:00:00+05:30",

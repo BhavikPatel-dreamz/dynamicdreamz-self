@@ -1,33 +1,40 @@
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { MigrationPlatformIcon } from "@/components/sections/migration-platform-icons";
 import { MigrationProcessSection } from "@/components/sections/migration-process-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
-import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
-import { ThemeWhyChooseSection } from "@/components/sections/theme-customization/theme-why-choose-section";
-import { TwoColCenterImageSection } from "@/components/sections/two-col-center-image-section";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
 import {
   salesforceBenefitsContent,
   salesforceBrandLogos,
-  salesforceConsiderationsContent,
   salesforceFaqs,
   salesforceHeroContent,
-  salesforceProcessContent,
-  salesforceWhyChooseContent,
-  salesforceWhyMigrate,
   salesforceMigrationSectionCopy,
+  salesforceProcessContent,
+  salesforceTestimonials,
+  salesforceWhyMigrateContent,
 } from "@/content/salesforce-to-shopify-migration";
-import { wixTestimonials } from "@/content/wix-to-shopify-migration";
-import { SplitFaqSection } from "./split-faq-section";
 
 export function SalesforceToShopifyMigrationPage() {
+  const whyMigrateBoxes = salesforceWhyMigrateContent.boxes.map((box) => ({
+    icon: <MigrationPlatformIcon name={box.iconName} />,
+    title: box.title,
+    description: box.description,
+  }));
+
+  const benefitsBoxes = salesforceBenefitsContent.boxes.map((box) => ({
+    icon: <MigrationPlatformIcon name={box.iconName} />,
+    title: box.title,
+    description: box.description,
+  }));
+
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec woocommerce-to-shopify relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
-        content={salesforceHeroContent}
-        variant="split"
-      />
+      {/* 1. Hero Section */}
+      <ServiceHeroVideoSection content={salesforceHeroContent} />
+
+      {/* 2. Brand Partners Section */}
       <IndustryBrandsSection
         content={{
           slug: "salesforce-to-shopify-migration",
@@ -35,41 +42,51 @@ export function SalesforceToShopifyMigrationPage() {
         heading={salesforceMigrationSectionCopy.brandsHeading}
         items={salesforceBrandLogos}
       />
-      <TextBoxSection
-        className="single-text-box-sec py-20 max-[992px]:py-[50px]"
-        heading={salesforceWhyMigrate.heading}
-        text={salesforceWhyMigrate.text}
+
+      {/* 3. Why Migrate from Salesforce to Shopify? */}
+      <ThemeCustomizationServicesSection
+        content={{
+          eyebrow: salesforceWhyMigrateContent.eyebrow,
+          heading: salesforceWhyMigrateContent.heading,
+          description: salesforceWhyMigrateContent.description,
+          boxes: whyMigrateBoxes,
+        }}
+        id="why-migrate"
+        variant="yellow"
       />
-      <ShopifyReasonsSection
-        carouselFullBleed
-        content={salesforceBenefitsContent}
-        id="benefits-of-moving"
-        layout="carousel"
+
+      {/* 4. Benefits of Moving from Salesforce to Shopify */}
+      <ThemeCustomizationServicesSection
+        content={{
+          eyebrow: salesforceBenefitsContent.eyebrow,
+          heading: salesforceBenefitsContent.heading,
+          description: salesforceBenefitsContent.description,
+          boxes: benefitsBoxes,
+        }}
+        id="benefits"
+        variant="transparent"
       />
-      <TwoColCenterImageSection
-        content={salesforceConsiderationsContent}
-        id="things-to-consider"
-      />
+
+      {/* 5. Salesforce to Shopify Migration Process */}
       <MigrationProcessSection
         content={salesforceProcessContent}
         id="migration-process"
+        variant="cards"
       />
-      <ThemeWhyChooseSection
-        backgroundVariant="gradient"
-        content={salesforceWhyChooseContent}
-        id="why-choose-dynamic-dreamz"
-      />
+
+      {/* 6. Testimonials */}
       <HappyClientSection
-        controlsLabels={wixTestimonials.controlsLabels}
-        description={salesforceMigrationSectionCopy.testimonialsDescription}
-        eyebrow={wixTestimonials.eyebrow}
-        heading={salesforceMigrationSectionCopy.testimonialsHeading}
-        items={wixTestimonials.items}
-        variant="client-stories"
+        description={salesforceTestimonials.description}
+        eyebrow={salesforceTestimonials.eyebrow}
+        heading={salesforceTestimonials.heading}
+        items={salesforceTestimonials.items}
       />
+
+      {/* 7. Frequently Asked Questions */}
       <SplitFaqSection
         idPrefix="salesforce-migration-faq"
         items={salesforceFaqs}
+        sectionId="faqs"
       />
     </div>
   );

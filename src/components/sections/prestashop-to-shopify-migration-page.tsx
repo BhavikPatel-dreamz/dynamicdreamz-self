@@ -1,79 +1,73 @@
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { MigrationPlatformIcon } from "@/components/sections/migration-platform-icons";
 import { MigrationProcessSection } from "@/components/sections/migration-process-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
-import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
-import { TwoColCenterImageSection } from "@/components/sections/two-col-center-image-section";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
 import {
   prestashopBenefitsContent,
   prestashopBrandLogos,
-  prestashopConsiderationsContent,
   prestashopFaqs,
   prestashopHeroContent,
-  prestashopProcessContent,
-  prestashopWhyChooseContent,
-  prestashopWhyMigrate,
   prestashopMigrationSectionCopy,
+  prestashopProcessContent,
+  prestashopTestimonials,
 } from "@/content/prestashop-to-shopify-migration";
-import { wixTestimonials } from "@/content/wix-to-shopify-migration";
 
 export function PrestashopToShopifyMigrationPage() {
+  const benefitsBoxes = prestashopBenefitsContent.boxes.map((box) => ({
+    icon: <MigrationPlatformIcon name={box.iconName} />,
+    title: box.title,
+    description: box.description,
+  }));
+
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec woocommerce-to-shopify relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
-        content={prestashopHeroContent}
-        variant="split"
-      />
+      {/* 1. Hero Section */}
+      <ServiceHeroVideoSection content={prestashopHeroContent} />
+
+      {/* 2. Brand Partners Section */}
       <IndustryBrandsSection
         content={{
           slug: "prestashop-to-shopify-migration",
         }}
-        density="compact"
         heading={prestashopMigrationSectionCopy.brandsHeading}
         items={prestashopBrandLogos}
       />
-      <TextBoxSection
-        className="single-text-box-sec py-20 max-[992px]:py-[50px]"
-        heading={prestashopWhyMigrate.heading}
-        text={prestashopWhyMigrate.text}
+
+      {/* 3. Benefits of Moving from PrestaShop to Shopify */}
+      <ThemeCustomizationServicesSection
+        content={{
+          eyebrow: prestashopBenefitsContent.eyebrow,
+          heading: prestashopBenefitsContent.heading,
+          description: prestashopBenefitsContent.description,
+          boxes: benefitsBoxes,
+        }}
+        id="benefits"
+        variant="transparent"
       />
-      <ShopifyReasonsSection
-        carouselFullBleed
-        className="shopify-customization-services-sec mb-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[992px]:mb-[50px] max-[992px]:py-[50px]"
-        content={prestashopBenefitsContent}
-        id="benefits-of-moving"
-        layout="carousel"
-      />
-      <TwoColCenterImageSection
-        content={prestashopConsiderationsContent}
-        id="things-to-consider"
-      />
+
+      {/* 4. PrestaShop to Shopify Migration Process */}
       <MigrationProcessSection
         content={prestashopProcessContent}
         id="migration-process"
-        titleAlign="center"
+        variant="cards"
       />
-      <ShopifyReasonsSection
-        carouselFullBleed
-        className="shopify-customization-services-sec mb-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[992px]:mb-[50px] max-[992px]:py-[50px]"
-        content={prestashopWhyChooseContent}
-        id="why-choose-dynamicdreamz"
-        layout="carousel"
-      />
+
+      {/* 5. Testimonials */}
       <HappyClientSection
-        controlsLabels={wixTestimonials.controlsLabels}
-        description={prestashopMigrationSectionCopy.testimonialsDescription}
-        eyebrow={wixTestimonials.eyebrow}
-        heading={prestashopMigrationSectionCopy.testimonialsHeading}
-        items={wixTestimonials.items}
-        variant="client-stories"
+        description={prestashopTestimonials.description}
+        eyebrow={prestashopTestimonials.eyebrow}
+        heading={prestashopTestimonials.heading}
+        items={prestashopTestimonials.items}
       />
+
+      {/* 6. Frequently Asked Questions */}
       <SplitFaqSection
         idPrefix="prestashop-migration-faq"
         items={prestashopFaqs}
+        sectionId="faqs"
       />
     </div>
   );

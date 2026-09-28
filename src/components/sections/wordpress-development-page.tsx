@@ -14,7 +14,6 @@ import {
   wordpressDevelopmentServices,
   wordpressDevelopmentTestimonials,
 } from "@/content/wordpress-development";
-import { wixTestimonials } from "@/content/wix-to-shopify-migration";
 
 export function WordPressDevelopmentPage() {
   return (
@@ -29,12 +28,8 @@ export function WordPressDevelopmentPage() {
       />
       <div id="shopify-testimonials">
         <HappyClientSection
-          controlsLabels={wixTestimonials.controlsLabels}
           description={wordpressDevelopmentTestimonials.description}
-          eyebrow={wixTestimonials.eyebrow}
           heading={wordpressDevelopmentTestimonials.heading}
-          items={wixTestimonials.items}
-          variant="client-stories"
         />
       </div>
       <SplitFaqSection

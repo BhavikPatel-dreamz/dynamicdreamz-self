@@ -9577,47 +9577,6 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createPhpDevelopmentPageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Visible copy enhancement | Minor phrasing variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
 
-## Shopify Theme Customization (`/shopify-theme-customization`)
-
-### Page Intent and Query Scope
-- **Primary Search Intent**: Businesses, DTC merchants, and digital agencies looking for professional Shopify theme customization services, Liquid theme developers, and custom UI/UX design.
-- **Audience**: Ecommerce managers, merchants using existing or premium Shopify themes, and brands requiring tailored storefront layouts, speed optimization, and custom Liquid development.
-- **Target queries**: "Shopify theme customization services", "Shopify theme customization company", "customize Shopify theme", "Shopify Liquid developers", "Shopify custom theme design", "Shopify theme development agency".
-
-### Visible Content and Evidence Available
-- Eyebrows: "Established in 2006", "Shopify Platinum Partner".
-- H1: "Shopify Theme Customization Services".
-- Primary CTAs: "Request a Quote" -> `/request-quote`, "Book a Discovery Call" -> `/book-a-discovery-call`.
-- Proof Badges: Shopify Platinum Partner, Clutch (4.9 rating), Trustpilot (4.9 TrustScore), Upwork (Top Rated Plus).
-- Hero Media: Looping agency highlight video (`why-dynamic-dreamz.mp4`).
-- Trusted brands marquee: 12 enterprise ecommerce brands (Rare Beauty, Clove, etc.).
-- 6 Shopify Customization Services: Theme Setup & Configuration, Custom Feature Development, Mobile Optimization & Responsiveness, Shopify 2.0 & Section Customization, App Integration & Customization, Checkout & Conversion Optimization.
-- 4 Team Developer Boxes: "You like the theme. We make it work for your brand." (Custom Theme Tweaks Without Breaking the Code, Shopify 2.0 & Section Architecture, App & Third-Party Integration, Speed, Responsiveness & Mobile First).
-- 6-Step Process (3-column layout): Discovery & Goal Alignment, Theme Analysis & Architecture, Custom Design & Wireframing, Development & Configuration, Quality Assurance & Testing, Deployment & Handover.
-- Comparison Section: "Theme Customization vs. Custom Shopify Theme Development" (Customizing an Existing Theme vs Building from Scratch).
-- 32 Shopify Themes Grid: Catalog of popular Shopify themes customized by Dynamic Dreamz (Horizon, Prestige, Impulse, Expanse, etc.) with direct links to dedicated theme landing routes.
-- 4 AI Cards: "Experienced Shopify theme developers, supported by modern AI tools." with callout box.
-- Why Choose Section: "Why choose us for Shopify theme customization?" (4 capability items) + "20+ Years of Ecommerce Delivery" (4 proof statistics).
-- 8 Portfolio Projects: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz.
-- 3 Engagement Models: Hourly, Dedicated, Fixed Scope.
-- Happy Clients: 11 client video stories and testimonials with modal playback.
-- 10 interactive FAQs covering scope, turnaround time, updating existing themes, downtime, and post-launch support.
-- Live Bottom Flow: Clean termination at FAQ section (exact live parity; no bottom CTA banner on live site).
-
-### Structured Gap Analysis
-| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
-|---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route existing in App Router; verified and synchronized with latest live site changes | Verified static prerender of `/shopify-theme-customization` | Verified static prerender |
-| P0 | implemented | Section completeness & order | Previous local implementation diverged from live site (missing team boxes, approach comparison, AI tools, pricing models; had obsolete sections) | Rebuilt all 13 sections in exact 1-to-1 live sequence | 100% section parity |
-| P0 | implemented | Process layout & styling | Live process section uses 3 columns with custom responsive borders | Extended `OurDevelopmentProcessSection` with `columns={3}` | Exact visual parity |
-| P0 | implemented | Asset deduplication | Horizon theme asset ingested via comparison buffer; all portfolio, brand, and partner assets mapped to canonicals | 0 duplicate hash groups across `public/assets/` | Total asset duplicates remain 0 |
-| P0 | implemented | Schema accuracy | Comprehensive Service, WebPage, BreadcrumbList, OfferCatalog, and FAQPage structured data | Generated JSON-LD via `createShopifyThemeCustomizationPageSchema()` | Validated JSON-LD graph |
-| P1 | deferred | Visible copy enhancement | Minor phrasing variations in live copy (e.g. testimonials description mentioning "maintenance services") | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
-
-
-
-
-
 ## Book a Discovery Call (`/book-a-discovery-call`)
 Status: implemented; visible live wording preserved
 Last reviewed: 2026-09-02

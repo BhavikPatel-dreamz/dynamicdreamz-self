@@ -1,55 +1,73 @@
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { MigrationPlatformIcon } from "@/components/sections/migration-platform-icons";
 import { MigrationProcessSection } from "@/components/sections/migration-process-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
-import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
 import {
   squareBrandLogos,
   squareFaqs,
   squareHeroContent,
-  squareProcessContent,
-  squareWhyMigrate,
   squareMigrationSectionCopy,
+  squareProcessContent,
   squareTestimonials,
+  squareWhyMigrateContent,
 } from "@/content/square-to-shopify-migration";
 
 export function SquareToShopifyMigrationPage() {
+  const whyMigrateBoxes = squareWhyMigrateContent.boxes.map((box) => ({
+    icon: <MigrationPlatformIcon name={box.iconName} />,
+    title: box.title,
+    description: box.description,
+  }));
+
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec woocommerce-to-shopify relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
-        content={squareHeroContent}
-        variant="split"
-      />
+      {/* 1. Hero Section */}
+      <ServiceHeroVideoSection content={squareHeroContent} />
+
+      {/* 2. Brand Partners Section */}
       <IndustryBrandsSection
         content={{
           slug: "square-to-shopify-migration",
         }}
-        density="compact"
         heading={squareMigrationSectionCopy.brandsHeading}
         items={squareBrandLogos}
       />
-      <TextBoxSection
-        className="single-text-box-sec py-20 max-[992px]:py-[50px]"
-        heading={squareWhyMigrate.heading}
-        text={squareWhyMigrate.text}
+
+      {/* 3. Why do Square to Shopify Migration? */}
+      <ThemeCustomizationServicesSection
+        content={{
+          eyebrow: squareWhyMigrateContent.eyebrow,
+          heading: squareWhyMigrateContent.heading,
+          description: squareWhyMigrateContent.description,
+          boxes: whyMigrateBoxes,
+        }}
+        id="why-migrate"
+        variant="yellow"
       />
+
+      {/* 4. Square to Shopify Migration Process */}
       <MigrationProcessSection
         content={squareProcessContent}
         id="migration-process"
+        variant="cards"
       />
+
+      {/* 5. Testimonials */}
       <HappyClientSection
-        controlsLabels={squareTestimonials.controlsLabels}
-        description={squareMigrationSectionCopy.testimonialsDescription}
+        description={squareTestimonials.description}
         eyebrow={squareTestimonials.eyebrow}
-        heading={squareMigrationSectionCopy.testimonialsHeading}
+        heading={squareTestimonials.heading}
         items={squareTestimonials.items}
-        variant="client-stories"
       />
+
+      {/* 6. Frequently Asked Questions */}
       <SplitFaqSection
         idPrefix="square-migration-faq"
         items={squareFaqs}
+        sectionId="faqs"
       />
     </div>
   );

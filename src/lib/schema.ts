@@ -85,7 +85,7 @@ import {
 import {
   prestashopBenefitsContent,
   prestashopFaqs,
-  prestashopWhyChooseContent,
+  prestashopProcessContent,
 } from "@/content/prestashop-to-shopify-migration";
 import {
   squareFaqs,
@@ -2575,11 +2575,11 @@ export function createPrestashopToShopifyMigrationPageSchema() {
         .join(" "),
     })),
     offers: [
-      ...prestashopBenefitsContent.items.map((item) => ({
+      ...prestashopBenefitsContent.boxes.map((item) => ({
         title: item.title,
         description: item.description,
       })),
-      ...prestashopWhyChooseContent.items.map((item) => ({
+      ...prestashopProcessContent.steps.map((item) => ({
         title: item.title,
         description: item.description,
       })),

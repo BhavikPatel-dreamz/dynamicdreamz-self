@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
@@ -31,10 +32,67 @@ export function StaticFaqAccordion({
         const isOpen = index === 0;
         const triggerId = `${idPrefix}-trigger-${index}`;
         const panelId = `${idPrefix}-panel-${index}`;
+        const isListBefore = item.listPosition === "before";
 
-        const mainAnswerContent = item.answer ? (
-          <p className={cn("text-base leading-6 font-medium text-muted last:mb-0 max-[1199px]:text-sm", answerClassName)}>
-            {formatBrText(item.answer)}
+        const listContent = item.listItems?.length ? (
+          <ul
+            className={cn(
+              "space-y-2.5",
+              isListBefore ? "mb-4" : "mb-1",
+            )}
+          >
+            {item.listItems.map((listItem) => (
+              <li
+                className="relative pl-[30px] text-base leading-7 font-medium text-[#535353] max-[1199px]:pl-[26px] max-[1199px]:text-sm max-[1199px]:leading-6"
+                key={`${listItem.label ?? "item"}-${listItem.text}`}
+              >
+                <Image
+                  aria-hidden="true"
+                  alt=""
+                  className="absolute top-[4px] left-0 size-[18px] max-[1199px]:top-[3px] max-[1199px]:size-[16px]"
+                  height={18}
+                  src="/assets/icons/gradient-check.svg"
+                  width={18}
+                />
+                {listItem.label ? (
+                  <strong className="font-semibold text-ink">{listItem.label} </strong>
+                ) : null}
+                {listItem.text}
+              </li>
+            ))}
+          </ul>
+        ) : null;
+
+        const mainAnswerContent = item.answer || item.answerParts ? (
+          <p
+            className={cn(
+              "text-base leading-7 font-medium text-[#535353] last:mb-0 max-[1199px]:text-sm max-[1199px]:leading-6",
+              item.listItems?.length && !isListBefore ? "mb-3" : "mb-0",
+              answerClassName,
+            )}
+          >
+            {item.answerParts
+              ? item.answerParts.map((part, partIndex) =>
+                  part.strong ? (
+                    <strong className="font-bold" key={`${part.text}-${partIndex}`}>
+                      {part.text}
+                    </strong>
+                  ) : (
+                    part.text
+                  ),
+                )
+              : formatBrText(item.answer)}
+          </p>
+        ) : null;
+
+        const secondaryAnswerContent = item.secondaryAnswer ? (
+          <p
+            className={cn(
+              "mt-4 text-base leading-7 font-medium text-[#535353] last:mb-0 max-[1199px]:text-sm max-[1199px]:leading-6",
+              answerClassName,
+            )}
+          >
+            {formatBrText(item.secondaryAnswer)}
           </p>
         ) : null;
 
@@ -92,7 +150,19 @@ export function StaticFaqAccordion({
             >
               <div className="overflow-hidden">
                 <div className={cn("px-8 pb-6 max-[1199px]:px-5 max-[1199px]:pb-5", panelContentClassName)}>
-                  {mainAnswerContent}
+                  {isListBefore ? (
+                    <>
+                      {listContent}
+                      {mainAnswerContent}
+                      {secondaryAnswerContent}
+                    </>
+                  ) : (
+                    <>
+                      {mainAnswerContent}
+                      {listContent}
+                      {secondaryAnswerContent}
+                    </>
+                  )}
                 </div>
               </div>
             </div>

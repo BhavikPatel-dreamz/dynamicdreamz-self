@@ -126,19 +126,19 @@ export function FaqAccordion({
           >
             {item.listItems.map((listItem) => (
               <li
-                className="relative pl-[34px] text-base leading-8 font-medium tracking-[0.32px] text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-[26px]"
+                className="relative pl-[30px] text-base leading-7 font-medium text-[#535353] max-[1199px]:pl-[26px] max-[1199px]:text-sm max-[1199px]:leading-6"
                 key={`${listItem.label ?? "item"}-${listItem.text}`}
               >
                 <Image
                   aria-hidden="true"
                   alt=""
-                  className="absolute top-[5px] left-0 size-[22px] max-[1199px]:top-[2px] max-[1199px]:size-[18px]"
-                  height={22}
+                  className="absolute top-[4px] left-0 size-[18px] max-[1199px]:top-[3px] max-[1199px]:size-[16px]"
+                  height={18}
                   src="/assets/icons/gradient-check.svg"
-                  width={22}
+                  width={18}
                 />
                 {listItem.label ? (
-                  <strong className="font-bold text-[#535353]">{listItem.label} </strong>
+                  <strong className="font-semibold text-ink">{listItem.label} </strong>
                 ) : null}
                 {listItem.text}
               </li>
@@ -149,7 +149,7 @@ export function FaqAccordion({
         const mainAnswerContent = item.answer || item.answerParts ? (
           <p
             className={cn(
-              "text-base leading-6 font-medium text-muted last:mb-0 max-[1199px]:text-sm",
+              "text-base leading-7 font-medium text-[#535353] last:mb-0 max-[1199px]:text-sm max-[1199px]:leading-6",
               item.listItems?.length && !isListBefore ? "mb-3" : "mb-0",
               answerClassName,
             )}
@@ -171,7 +171,7 @@ export function FaqAccordion({
         const secondaryAnswerContent = item.secondaryAnswer ? (
           <p
             className={cn(
-              "mt-4 text-base leading-[30.4px] font-normal text-muted last:mb-0 max-[1199px]:text-sm max-[1199px]:leading-[26px]",
+              "mt-4 text-base leading-7 font-medium text-[#535353] last:mb-0 max-[1199px]:text-sm max-[1199px]:leading-6",
               answerClassName,
             )}
           >
