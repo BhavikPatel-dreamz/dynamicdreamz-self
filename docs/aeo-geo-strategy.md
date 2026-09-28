@@ -6882,14 +6882,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Savor Theme Customization (`/savor-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, food and beverage brands, restaurants, bakeries, gourmet retailers, and eCommerce businesses seeking expert Savor Shopify theme customization, appetizing visual displays, sensory storytelling, flexible navigation, media-rich product pages, and conversion enhancement.
 Decision stage: partner selection, Savor theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Savor theme customization capabilities. Features 10 client brand trust logos, 3 feature highlight preview cards, 8 key theme feature icon cards, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards, 6 accordion FAQs, and demo store CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Savor theme customization capabilities. Features dual-CTA hero with 1224x948 banner graphic, 10 client brand trust logos, split theme-features banner with 8 feature items, 9 store benefits in a 3-column grid, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards with "View our work" CTA, and 6 accordion FAQs.
 
 ### Target prompts
 
@@ -6901,22 +6901,21 @@ Dedicated commercial landing page presenting Dynamic Dreamz Savor theme customiz
 
 ### Core answer & key facts
 
-- Server-rendered H1 `Savor Theme Customization Service` with direct answer paragraph.
+- Server-rendered H1 `Savor Theme Customization Service` with direct answer paragraph and dual CTAs ("Request a Quote" and "View Savor on Shopify").
 - 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
-- 3 key theme highlight cards (Bright, appetizing displays, Appeal to the senses, From the Horizon collection).
-- 8 key Savor theme features (Quick Setup, Customizable Sections, Media-Rich Product Pages, Flexible Navigation, Optimized for Food Brands, Mobile-Ready Design, Storytelling Templates, Advanced Search Features).
+- 8 key Savor theme features in split beige banner (Bright, appetizing displays, Appeal to the senses, From the Horizon collection, Customizable Sections, Media-Rich Product Pages, Flexible Navigation, Optimized for Food Brands, Mobile-Ready Design).
 - 9 core benefits of Savor customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
 - 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
 - 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
-- 6 Shopify portfolio projects (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop).
+- 6 Shopify portfolio projects (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop) with "View our work" button linking to `/our-work`.
 - 6 detailed FAQs addressing homepage layout changes, restaurant suitability, mobile responsiveness, third-party app integration, customization timeline, and ongoing support post-customization.
 
 ### Structured gap analysis
 
 | Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route and discovery | Missing App Router implementation for Savor theme customization | Ship slashless `/savor-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Savor hero graphic, highlight previews, and feature icons under `public/assets/savor-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
+| P0 | implemented | Route and discovery | Live site updated to modern theme customization layout | Remigrate `/savor-theme-customization` route with updated layout, SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Live site hero image updated to 1224x948 banner | Convert live hero image to WebP under `public/assets/savor-theme-customization/hero/` and reuse canonical icons and portfolio assets | Verified locally with 0 duplicate assets |
 | P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 6 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
 
 ### Visible content and copy improvements
@@ -6937,8 +6936,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/savor-theme-customization`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 154 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-28): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/savor-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 152 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Dawn Theme Customization (`/dawn-theme-customization`)
 
