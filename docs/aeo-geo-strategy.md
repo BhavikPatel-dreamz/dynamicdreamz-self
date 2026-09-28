@@ -7002,8 +7002,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Studio Theme Customization (`/studio-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, artists, creators, boutique brands, and innovative eCommerce stores seeking expert Studio Shopify theme customization, gallery section styling, product discovery tools, interactive elements, and conversion enhancement.
 Decision stage: partner selection, Studio theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
@@ -7427,8 +7427,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Publisher Theme Customization (`/publisher-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, editorial publishers, apparel labels, accessories retailers, digital creators, content-rich ecommerce stores, and modern businesses looking for expert Publisher Shopify theme customization, content-focused layouts, multi-language support, quick view features, and conversion rate optimization.
 Decision stage: partner selection, Publisher theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
@@ -7487,8 +7487,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Trade Theme Customization (`/trade-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, B2B wholesalers, high-volume retail stores, industrial suppliers, multi-product catalogs, and modern ecommerce businesses looking for expert Trade Shopify theme customization, versatile layout options, dynamic product filtering, customizable sections, quick view feature, and conversion rate optimization.
 Decision stage: partner selection, Trade theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
@@ -7547,8 +7547,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Spotlight Theme Customization (`/spotlight-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, minimalist retail brands, direct-to-consumer creators, boutique apparel stores, curated product collections, and modern ecommerce businesses looking for expert Spotlight Shopify theme customization, minimalist design, high-quality imagery support, quick buy options, and conversion rate optimization.
 Decision stage: partner selection, Spotlight theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
@@ -7727,8 +7727,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Origin Theme Customization (`/origin-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, artisanal makers, single-product storytellers, boutique lifestyle brands, direct-to-consumer creators, and modern ecommerce businesses looking for expert Origin Shopify theme customization, minimalist design, speed optimization, multi-column navigation menus, and conversion rate optimization.
 Decision stage: partner selection, Origin theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request

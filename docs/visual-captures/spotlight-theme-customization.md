@@ -2,7 +2,7 @@
 
 - **Route**: `/spotlight-theme-customization`
 - **Live URL Reference**: `https://www.dynamicdreamz.com/spotlight-theme-customization/`
-- **Capture Date**: 2026-08-21
+- **Capture Date**: 2026-09-28
 - **Status**: Verified
 - **Viewports Inspected**:
   - Desktop: 1440x900
@@ -14,16 +14,22 @@
 ## 1. Visual References & Page Structure
 
 ### Live CSS Sources Inspected
-- `/wp-content/themes/dynamicdreamz/assets/css/services/main.css`
-  - `.theme-customization-service-sec` (hero layout, 50%/50% split, `.review-wrap { display: none; }`, bottom-aligned hero graphic, internal CTA "request a quote" linking to `/request-quote`)
-  - `.three_col_icon_sec` (features section with 7 icon cards with descriptions and rounded-15px borders `#efefef`)
-  - `.shopify-customization-services-sec` (benefits grid with gradient background, white cards, hover gradient border, 7 cards)
-  - `.what-we-provide-sec` (2-column services grid, 10px rounded cards with hover gradient border)
-  - `.why_dynamic_dreamz_sec.two-column-icon-text-bg` (2-column horizontal icon-text list with borders `rgba(0,0,0,0.05)`)
-  - `.our-work-sec` (Shopify portfolio project showcase with 6 project cards: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier)
-  - `.faq-sec` (accordion items with active/expanded states, 5 FAQs)
-- `/wp-content/themes/dynamicdreamz/assets/css/services/media.css`
-  - Breakpoints: desktop (>=1200px), tablet (768px-1199px / <=991px), mobile (<=767px / <=575px).
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/theme_customize_hero.css`
+  - `.theme-customize-hero` (background: `#f7f4e9`, padding-top: `91px`, overflow: hidden, dual CTAs: red primary button "Request a Quote" + outline secondary button "View Spotlight on Shopify")
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/trusted_by_leading_brands_section.css`
+  - `.our-client-sec` (brand trust section with left column heading "Trusted by <br>Leading Brands" and right partner logos)
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/theme_features.css`
+  - `.theme-features` (split beige `#fbefd7` banner with left title/description block and right 8-item feature grid)
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/city_page_why_choose_dynamic_dreamz.css`
+  - `.city-page-why-choose-dynamic.bg-light` (3-column benefits grid with 24x24 outline SVG icons, 7 benefit items)
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/delivery_section.css`
+  - `.what-we-provide-sec.pb-0` (2-column services grid with 24x24 red SVG icons `#AD5151`, 6 service cards)
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/how_to_choose_the_right_shopify_plus_agency_sec.css`
+  - `.how-to-choose-spa-sec` (4-item numbered framework cards `01`–`04` with circular badge and white background)
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/projects_section.css` and `services/main.css`
+  - `.our-work-sec.pt-0` (Shopify portfolio project showcase, 4 columns desktop / 3 cols tablet / 2 cols mobile / 1 col small mobile, 8 project cards with arrow up hover button, bottom "View our work" CTA linking to `/our-work`)
+- `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/faqs_section.css`
+  - `.faq-sec` (5 accordion items with active/expanded states, bold question titles, smooth collapse)
 
 ---
 
@@ -31,58 +37,43 @@
 
 | Section # | Live Section Title / Purpose | Component / Implementation | Reused / Dedicated |
 |---|---|---|---|
-| 1 | Hero (`Spotlight Theme Customization Service`) | `ThemeHeroSection` | Reused |
-| 2 | Trusted by Leading Brands (10 client logos) | `IndustryBrandsSection` | Reused |
-| 3 | Features Of Spotlight Theme (7 icon cards with descriptions) | `ThemeFeaturesSection` | Reused |
-| 4 | Benefits of Spotlight Theme Customization (7 cards) | `ShopifyReasonsSection` | Reused |
-| 5 | Our Shopify Theme Customization Services (6 cards) | `ShopifyServicesSection` | Reused |
-| 6 | Why Choose Dynamic Dreamz (4 items) | `ThemeWhyChooseSection` | Reused |
-| 7 | Snippets of Shopify Theme Customization Portfolio (6 projects) | `PortfolioShowcaseSection` & `PortfolioProjectCard` | Reused |
-| 8 | Frequently Asked Questions (5 accordion items) | `FaqSection` & `FaqAccordion` | Reused |
+| 1 | Hero (`Spotlight Theme Customization Service`) | `ThemeHeroSection` | Reused (`theme-customize-hero` layout) |
+| 2 | Trusted by Leading Brands (12 client logos) | `IndustryBrandsSection` | Reused (`brands.items`) |
+| 3 | Features of Spotlight Theme (8 features) | `ThemeFeaturesBannerSection` | Reused (`theme-features` banner layout) |
+| 4 | Benefits of Spotlight Theme Customization (7 cards) | `CityWhyChooseBoxesSection` | Reused (`city-page-why-choose-dynamic` 3-col layout) |
+| 5 | Our Shopify Theme Customization Services (6 cards) | `AgencyServicesSection` | Reused (`services-box` variant) |
+| 6 | Why Choose Dynamic Dreamz (4 numbered items) | `EvaluationFrameworkSection` | Reused (`how-to-choose-spa-sec` framework) |
+| 7 | Snippets of Shopify Theme Customization Portfolio (8 projects) | `PortfolioShowcaseSection` | Reused (`ourWorkRefresh` card variant, 4 cols, bottom CTA) |
+| 8 | Frequently Asked Questions (5 accordion items) | `SplitFaqSection` | Reused (`faq-sec` accordion) |
 
 ---
 
 ## 3. Typography & Styling Specifications
 
-- **Heading Font**: Montserrat (`font-sans font-bold text-ink`).
-- **Hero Title**: `text-[50px] leading-[66px]` on desktop, `text-[40px] leading-[50px]` on tablet, `text-[30px] leading-[40px]` on mobile.
+- **Heading Font**: Neue Montreal Medium for Hero title (`font-montreal-medium font-medium leading-[60px] tracking-normal`), Montserrat for body/section headings (`font-sans font-bold text-ink`).
+- **Hero Title**: `text-[50px] leading-[60px]` on desktop, `text-[40px] leading-[50px]` on tablet, `text-[30px] leading-[40px]` on mobile.
+- **Hero Background**: `#f7f4e9` with overflow hidden.
+- **Hero Image**: Optimized 1224x948 WebP image (`spotlight-theme-customization-services-img.webp`) matching exact live Figma mockup asset.
+- **Hero CTAs**:
+  - Primary: `Request a Quote` linking to `/request-quote` (`btn btn-red`)
+  - Secondary: `View Spotlight on Shopify` linking to `https://themes.shopify.com/themes/spotlight/presets/spotlight` (`target="_blank"`)
 - **Section Headings**: `text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink` (desktop), `text-[30px] leading-10` (tablet), `text-2xl leading-[33px]` (mobile).
-- **Body / Subtitles**: `text-base leading-[30.4px] font-normal text-muted` (hero), `text-base leading-[27px]` (cards).
-- **Hero Image**: Bottom-aligned 601x462 WebP image (`spotlight-theme-customization-services-img.webp`).
-- **Brand Colors**: Light gradient `linear-gradient(97.18deg, #e8f9ef 28.5%, #e6fafd 91.82%)`, red primary CTA `#df4644` / `#cd3735`.
+- **Brand Bar**: `#fbeed5` background with compact desktop padding.
+- **Features Banner**: Split `#fbefd7` container with `rounded-[22px]`, left column description and right 2-column feature badge grid.
+- **Benefits Cards**: White background cards with `border-[rgba(40,40,40,0.11)]`, `rounded-[18px]`, 24x24 red stroke outline SVGs (`#AD5151`).
+- **Services Cards**: Light cream cards with `border-[rgba(40,40,40,0.08)]`, `rounded-[10px]`, 24x24 red stroke outline SVGs (`#AD5151`).
+- **Why Choose Framework**: White container, numbered circular tags `01`–`04` with `bg-[#fbefd7]` and `text-[#ad5151]`.
+- **Portfolio Grid**: 4-column project cards with category pill `SHOPIFY`, external website links, and diagonal arrow hover circle (8 projects: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz).
+- **FAQ Accordion**: Bordered accordion items with expand/collapse toggle icons.
+- **FAQ Accordion**: Bordered accordion items with expand/collapse toggle icons.
 
 ---
 
-## 4. Asset Deduplication & Integrity
+## 4. Verification Checkpoints
 
-- 10 brand partner logos reused directly from `public/assets/clients/`:
-  - `ranavat.svg`
-  - `prolash.svg`
-  - `tropicfeel.svg`
-  - `perfect-locks.svg`
-  - `bombay-shirt-company.svg`
-  - `kayfi.svg`
-  - `simsdirect.svg`
-  - `kvaser.svg`
-  - `nelter.svg`
-  - `circuit-city.svg`
-- Feature icons reused directly from canonical paths:
-  - `/assets/sense-theme-customization/features/clean-minimalistic-design.svg`
-  - `/assets/atelier-theme-customization/features/high-resolution-image-support.svg`
-  - `/assets/generatepress-theme-customization/features/customizable-layouts.svg`
-  - `/assets/sense-theme-customization/features/mobile-optimized.svg`
-  - `/assets/fabric-theme-customization/features/quick-setup.svg`
-  - `/assets/astra-theme-customization/features/seo-optimized.svg`
-  - `/assets/bloghash-theme-customization/features/minimal-and-clean-design.svg`
-- 7 benefit icons and 6 service icons reused from `public/assets/shopify-theme-customization/`.
-- 4 why-choose icons reused from `public/assets/shopify-theme-customization/why-choose/`.
-- 6 Shopify portfolio project screenshots reused from canonical paths:
-  - `/assets/healthcare/portfolio/nufyx-protein-products.webp`
-  - `/assets/food-beverages/portfolio/nekter-juice-bar.webp`
-  - `/assets/pet-industry/portfolio/pagerie-dog-accessories.webp`
-  - `/assets/beauty-cosmetics/portfolio/luxxi-nails.webp`
-  - `/assets/our-work/projects/eco-soul.webp`
-  - `/assets/hire-shopify-developers/portfolio/adhoc-atler.webp`
-- Unique theme hero asset saved under `public/assets/spotlight-theme-customization/hero/`:
-  - `hero/spotlight-theme-customization-services-img.webp` (601x462 WebP, 19KB)
-- Total duplicate hash groups across `public/assets/`: 0.
+- [x] Zero hardcoded page copy in component code (`npm run check:component-content` passes).
+- [x] All routes follow no-trailing-slash URL policy (`npm run check:urls` passes).
+- [x] Canonical hero images ingested via `scratch/` buffer and optimized to WebP.
+- [x] Zero duplicate asset hash groups across entire public/assets tree.
+- [x] Fully typed schema generated with `createServicePageSchema` including FAQPage and Service entities.
+- [x] Mobile responsiveness verified across breakpoints (desktop, tablet, mobile).
