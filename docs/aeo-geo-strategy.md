@@ -7907,15 +7907,15 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Pipeline Theme Customization (`/pipeline-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, visual brand storytellers, lifestyle and outdoor gear retailers, fashion houses, art and photography stores, multi-level catalog ecommerce businesses, and high-end merchants looking for expert Pipeline Shopify theme customization, parallax scrolling, video banners, multi-level navigation, integrated blogging, and conversion rate optimization.
 Decision stage: partner selection, Pipeline theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Pipeline theme customization capabilities. Features 10 client brand trust logos, 8 key theme feature icon cards with descriptions, 7 store benefits, 5 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier), 5 accordion FAQs, and request a quote CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Pipeline theme customization capabilities. Features 10 client brand trust logos, 8 theme features banner, 7 store benefits, 5 customization services, 4 reasons to choose Dynamic Dreamz, 8 Shopify portfolio project cards, 5 accordion FAQs, dual hero CTAs, and request a quote / view on Shopify buttons.
 
 ### Target prompts
 
@@ -7929,11 +7929,11 @@ Dedicated commercial landing page presenting Dynamic Dreamz Pipeline theme custo
 
 - Server-rendered H1 `Pipeline Theme Customization Service` with direct answer paragraph.
 - 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
-- 8 key Pipeline theme features (Parallax Scrolling, Multi-Level Navigation, Customizable Homepage Sections, Large Visual Banners, SEO & Speed Optimized, Mobile-Friendly Design, Integrated Blogging Section, Social Media Integration).
-- 7 core benefits of Pipeline customization (Fully Customizable Store, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimum Maintenance Cost).
-- 5 dedicated services (Theme Installation, Custom Design and Branding, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
-- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier).
+- 8 key Pipeline theme features banner.
+- 7 core benefits of Pipeline customization.
+- 5 dedicated services.
+- 4 reasons to choose Dynamic Dreamz framework.
+- 8 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz).
 - 5 detailed FAQs addressing customization cost, custom animations, video banner support, speed optimization, and multi-language capabilities.
 
 ### Structured gap analysis
@@ -7962,20 +7962,20 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-21): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/pipeline-theme-customization`; source/build URL guard passes.
+- URL-policy review (2026-09-28): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/pipeline-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 144 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Vision Theme Customization (`/vision-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, stylish fashion retailers, beauty and cosmetics brands, modern tech gadget stores, lifestyle ecommerce businesses, and visual catalog brands looking for expert Vision Shopify theme customization, high-impact visual design, mega menus, product image zoom & hover effects, built-in SEO tools, and conversion rate optimization.
 Decision stage: partner selection, Vision theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Vision theme customization capabilities. Features 10 client brand trust logos, 8 key theme feature icon cards with descriptions, 7 store benefits, 5 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier), 5 accordion FAQs, and request a quote CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Vision theme customization capabilities. Features 10 client brand trust logos, 8 theme features banner, 7 store benefits, 5 customization services, 4 reasons to choose Dynamic Dreamz, 8 Shopify portfolio project cards, 5 accordion FAQs, dual hero CTAs, and request a quote / view on Shopify buttons.
 
 ### Target prompts
 
@@ -7989,12 +7989,41 @@ Dedicated commercial landing page presenting Dynamic Dreamz Vision theme customi
 
 - Server-rendered H1 `Vision Theme Customization Service` with direct answer paragraph.
 - 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
-- 8 key Vision theme features (High-Impact Visual Design, Flexible Homepage Sections, Mega Menu Support, Product Image Zoom & Hover Effects, Speed Optimized, Mobile-Friendly Layout, Integrated Social Media Links, Built-in SEO Tools).
-- 7 core benefits of Vision customization (Fully Customizable Store, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimal Maintenance Cost).
-- 5 dedicated services (Theme Installation, Custom Design and Branding, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
-- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier).
+- 8 key Vision theme features banner.
+- 7 core benefits of Vision customization.
+- 5 dedicated services.
+- 4 reasons to choose Dynamic Dreamz framework.
+- 8 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz).
 - 5 detailed FAQs addressing customization cost, custom product filters, promotional banners, multi-currency support, and SEO ranking protection.
+
+### Structured gap analysis
+
+| Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
+|---|---|---|---|---|---|
+| P0 | implemented | Route and discovery | Missing App Router implementation for Vision theme customization | Ship slashless `/vision-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Vision hero graphic under `public/assets/vision-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
+| P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 5 service offers), and FAQPage (with 5 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
+
+### Visible content and copy improvements
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Vision theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Technical requirements
+
+- App Router Server Component architecture (`src/app/vision-theme-customization/page.tsx`).
+- Canonical URL: `https://www.dynamicdreamz.com/vision-theme-customization`.
+- Maintain slashless `/vision-theme-customization` navigation across marketing pages and service menus.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Vision theme customization", "Shopify Vision developers", and "custom Vision theme Shopify".
+- Analytics tracks form submissions on `/request-quote` originating from `/vision-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-09-28): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/vision-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 142 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## SEO Services (`/seo-services`)
 
@@ -8121,15 +8150,15 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Craft Theme Customization (`/craft-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, artisanal makers, handcrafted goods brands, boutique lifestyle retailers, minimalist aesthetic businesses, and storytelling-first ecommerce brands looking for expert Craft Shopify theme customization, minimalist design, large image display, rich brand storytelling, custom typography & colors, and conversion rate optimization.
 Decision stage: partner selection, Craft theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Craft theme customization capabilities. Features 10 client brand trust logos, 8 key theme feature icon cards with descriptions, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier), 5 accordion FAQs, and request a quote CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Craft theme customization capabilities. Features 10 client brand trust logos, 8 theme features banner, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 8 Shopify portfolio project cards, 5 accordion FAQs, dual hero CTAs, and request a quote / view on Shopify buttons.
 
 ### Target prompts
 
@@ -8143,11 +8172,11 @@ Dedicated commercial landing page presenting Dynamic Dreamz Craft theme customiz
 
 - Server-rendered H1 `Craft Theme Customization Service` with direct answer paragraph.
 - 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
-- 8 key Craft theme features (Minimalist & Clean Design, Flexible Sections, Large Image Display, Smooth Navigation, Storytelling Features, SEO-Friendly Structure, Mobile-Optimized, Customizable Typography & Colors).
-- 8 core benefits of Craft customization (Fully Customizable Store, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost).
-- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
-- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier).
+- 8 key Craft theme features banner.
+- 8 core benefits of Craft customization.
+- 6 dedicated services.
+- 4 reasons to choose Dynamic Dreamz framework.
+- 8 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz).
 - 5 detailed FAQs addressing customization cost, brand color matching, product video support, customer testimonial sections, and suitability for artisan/handmade goods.
 
 ### Structured gap analysis
@@ -8176,20 +8205,20 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-21): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/craft-theme-customization`; source/build URL guard passes.
+- URL-policy review (2026-09-28): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/craft-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 52 chars, Description: 134 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Broadcast Theme Customization (`/broadcast-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, fashion apparel brands, beauty and cosmetics labels, lifestyle stores, multi-category retailers, and high-impact visual stores looking for expert Broadcast Shopify theme customization, built-in lookbooks, video support, advanced product filtering, quick view, and conversion rate optimization.
 Decision stage: partner selection, Broadcast theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Broadcast theme customization capabilities. Features 10 client brand trust logos, 8 key theme feature icon cards with descriptions, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier), 5 accordion FAQs, and request a quote CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Broadcast theme customization capabilities. Features 10 client brand trust logos, 8 theme features banner, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 8 Shopify portfolio project cards, 5 accordion FAQs, dual hero CTAs, and request a quote / view on Shopify buttons.
 
 ### Target prompts
 
@@ -8203,11 +8232,11 @@ Dedicated commercial landing page presenting Dynamic Dreamz Broadcast theme cust
 
 - Server-rendered H1 `Broadcast Theme Customization Service` with direct answer paragraph.
 - 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
-- 8 key Broadcast theme features (Built-in Lookbook & Storytelling Sections, High-Quality Video Support, Optimized for Mobile & Desktop, Advanced Product Filtering, Customizable Homepage Layouts, SEO-Optimized Structure, One-Click Add to Cart & Quick View, Integrated Social Proof & Reviews).
-- 9 core benefits of Broadcast customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Zero Maintenance Cost).
-- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
-- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier).
+- 8 key Broadcast theme features banner.
+- 9 core benefits of Broadcast customization.
+- 6 dedicated services.
+- 4 reasons to choose Dynamic Dreamz framework.
+- 8 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz).
 - 5 detailed FAQs addressing video banner integration, product page customization, suitability for fashion/beauty, Instagram feed integration, and loading speed optimization.
 
 ### Structured gap analysis
@@ -8236,20 +8265,20 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-21): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/broadcast-theme-customization`; source/build URL guard passes.
+- URL-policy review (2026-09-28): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/broadcast-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 56 chars, Description: 138 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Warehouse Theme Customization (`/warehouse-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, large inventory stores, high-volume ecommerce retailers, multi-category department stores, electronics and industrial parts distributors, and wholesale B2B merchants looking for expert Warehouse Shopify theme customization, large catalog support, advanced search & filtering, product badges, cart enhancements, and conversion rate optimization.
 Decision stage: partner selection, Warehouse theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Warehouse theme customization capabilities. Features 10 client brand trust logos, 8 key theme feature icon cards with descriptions, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier), 5 accordion FAQs, and request a quote CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Warehouse theme customization capabilities. Features 10 client brand trust logos, 8 theme features banner, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 8 Shopify portfolio project cards, 5 accordion FAQs, dual hero CTAs, and request a quote / view on Shopify buttons.
 
 ### Target prompts
 
@@ -8263,11 +8292,11 @@ Dedicated commercial landing page presenting Dynamic Dreamz Warehouse theme cust
 
 - Server-rendered H1 `Warehouse Theme Customization Service` with direct answer paragraph.
 - 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
-- 8 key Warehouse theme features (Large Catalog Support, Advanced Search & Filtering, High-Performance Design, Mobile-Friendly Layout, Customizable Homepage Sections, Built-in Product Badges, SEO-Friendly Structure, Cart and Checkout Enhancements).
-- 8 core benefits of Warehouse customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Safe and Secure Payments, Zero Maintenance Cost).
-- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
-- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier).
+- 8 key Warehouse theme features banner.
+- 8 core benefits of Warehouse customization.
+- 6 dedicated services.
+- 4 reasons to choose Dynamic Dreamz framework.
+- 8 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz).
 - 5 detailed FAQs addressing product page customization, custom product filters, mobile responsiveness, third-party app integration, and post-launch support.
 
 ### Structured gap analysis
@@ -8275,7 +8304,7 @@ Dedicated commercial landing page presenting Dynamic Dreamz Warehouse theme cust
 | Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
 |---|---|---|---|---|---|
 | P0 | implemented | Route and discovery | Missing App Router implementation for Warehouse theme customization | Ship slashless `/warehouse-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Warehouse hero graphic and feature icons under `public/assets/warehouse-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Warehouse hero graphic under `public/assets/warehouse-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
 | P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 5 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
 
 ### Visible content and copy improvements
@@ -8296,7 +8325,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-21): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/warehouse-theme-customization`; source/build URL guard passes.
+- URL-policy review (2026-09-28): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/warehouse-theme-customization`; source/build URL guard passes.
 - Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 56 chars, Description: 151 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Startup Theme Customization (`/startup-theme-customization`)
