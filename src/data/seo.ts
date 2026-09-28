@@ -1960,13 +1960,13 @@ export const pageSeo = {
       "Shopify Dwell developers",
       "Shopify theme customization agency",
     ],
-    openGraphType: "website",
+    openGraphType: "article",
     publishedTime: "2025-06-18T05:07:49+00:00",
-    modifiedTime: "2026-08-20T00:00:00+05:30",
+    modifiedTime: "2026-09-10T09:32:15+00:00",
     image: {
-      path: "/assets/og/homepage.png",
-      width: 1200,
-      height: 630,
+      path: "/assets/dwell-theme-customization/hero/dwell-theme-customization-service-img.webp",
+      width: 1224,
+      height: 948,
       alt: "Dwell Theme Customization Service | Dynamic Dreamz",
     },
     sitemap: {

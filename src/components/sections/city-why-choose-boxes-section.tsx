@@ -26,6 +26,7 @@ export type CityWhyChooseBoxesSectionProps = {
   columns?: 3 | 5;
   bgClassName?: string;
   eyebrowVariant?: "pill" | "dash";
+  cardClassName?: string;
 };
 
 export function CityWhyChooseBoxesSection({
@@ -35,6 +36,7 @@ export function CityWhyChooseBoxesSection({
   columns = 5,
   bgClassName = "bg-[#eff4ef]",
   eyebrowVariant = "dash",
+  cardClassName,
 }: CityWhyChooseBoxesSectionProps) {
   return (
     <section
@@ -82,7 +84,10 @@ export function CityWhyChooseBoxesSection({
             {content.items.map((item) => (
               <div
                 key={item.title}
-                className="why-choose-box flex flex-col justify-start rounded-[18px] border border-[rgba(40,40,40,0.06)] bg-white p-5 transition-transform duration-300 hover:-translate-y-1"
+                className={cn(
+                  "why-choose-box flex flex-col justify-start rounded-[18px] border border-[rgba(40,40,40,0.11)] bg-white p-5 transition-transform duration-300 hover:-translate-y-1",
+                  cardClassName,
+                )}
               >
                 <div className="why-choose-box-text">
                   <div className="mb-2.5 size-6">

@@ -147,11 +147,11 @@ export function AgencyServicesSection({
               ) : isServicesBox ? (
                 <div
                   className={cn(
-                    "services-text relative flex h-full items-start rounded-[10px] border border-[rgba(40,40,40,0.08)] p-5 transition-all duration-300 ease-in-out hover:border-transparent hover:shadow-md",
+                    "services-text relative flex h-full items-start rounded-[10px] border border-[rgba(40,40,40,0.08)] p-5 transition-all duration-300 ease-in-out hover:border-transparent hover:shadow-md max-[767px]:flex-col",
                     cardBgClassName ?? "bg-[#fafaf7]",
                   )}
                 >
-                  <div className="icon flex size-6 shrink-0 items-center justify-center pt-0.5 [&>svg]:size-6 [&>svg]:h-auto">
+                  <div className="icon flex size-6 shrink-0 items-center justify-center pt-0.5 max-[767px]:mb-3.5 [&>svg]:size-6 [&>svg]:h-auto">
                     {service.iconSvg ? (
                       service.iconSvg
                     ) : service.icon ? (
@@ -164,7 +164,7 @@ export function AgencyServicesSection({
                       />
                     ) : null}
                   </div>
-                  <div className="text-block w-[calc(100%-24px)] pl-4">
+                  <div className="text-block w-[calc(100%-24px)] pl-4 max-[767px]:w-full max-[767px]:pl-0">
                     <h3 className="m-0 font-sans text-[18px] font-bold leading-[27px] tracking-[0.32px] text-ink">
                       {service.title}
                     </h3>

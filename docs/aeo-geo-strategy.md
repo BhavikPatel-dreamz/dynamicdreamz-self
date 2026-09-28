@@ -7063,14 +7063,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Dwell Theme Customization (`/dwell-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, home & decor retailers, lifestyle brands, baby and kids brands, fashion labels, and modern eCommerce businesses looking for expert Dwell Shopify theme customization, warm minimal design, intuitive product discovery, slide-out cart setup, and conversion optimization.
 Decision stage: partner selection, Dwell theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Dwell theme customization capabilities. Features 10 client brand trust logos, 3 visual preview highlight cards, 9 key theme feature icon cards, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards, 6 accordion FAQs, and demo store CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Dwell theme customization capabilities. Features modern hero with dual CTAs and 1224x948 mockup graphic, 10 client brand trust logos, split theme features banner with 8 capability highlights, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards with arrow hover button, 6 accordion FAQs, and demo store CTA buttons.
 
 ### Target prompts
 
@@ -7084,9 +7084,8 @@ Dedicated commercial landing page presenting Dynamic Dreamz Dwell theme customiz
 
 - Server-rendered H1 `Dwell Theme Customization Service` with direct answer paragraph.
 - 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
-- 3 visual highlight preview cards (The warmth that welcomes, Intuitive product discovery, From the Horizon collection).
-- 9 key Dwell theme features (Quick Setup, Mobile-First Design, Customizable Content Sections, Media-Rich Layouts, Mega Menu Support, Slide-Out Cart, Cross-Selling Options, Sticky Header, Advanced Product Filtering).
-- 9 core benefits of Dwell customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimal Maintenance Cost).
+- Split theme features banner with 8 capability badges (The warmth that welcomes, Intuitive product discovery, From the Horizon collection, Customizable Content Sections, Media-Rich Layouts, Mega Menu Support, Slide-Out Cart, Cross-Selling Options).
+- 8 core benefits of Dwell customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimal Maintenance Cost).
 - 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
 - 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
 - 6 Shopify portfolio projects (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop).
@@ -7097,7 +7096,7 @@ Dedicated commercial landing page presenting Dynamic Dreamz Dwell theme customiz
 | Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
 |---|---|---|---|---|---|
 | P0 | implemented | Route and discovery | Missing App Router implementation for Dwell theme customization | Ship slashless `/dwell-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Dwell hero graphic, highlight previews, and feature icons under `public/assets/dwell-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Dwell hero graphic (1224x948 WebP) under `public/assets/dwell-theme-customization/hero/` and reuse canonical icons | Verified locally with 0 duplicate assets |
 | P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 6 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
 
 ### Visible content and copy improvements
@@ -7118,8 +7117,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/dwell-theme-customization`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 159 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-28): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/dwell-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 51 chars, Description: 154 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Tinker Theme Customization (`/tinker-theme-customization`)
 
