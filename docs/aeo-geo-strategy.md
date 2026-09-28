@@ -9491,31 +9491,63 @@ Owner: SEO, content, and development
 
 ## Vessel Theme Customization (`/vessel-theme-customization`)
 
-### Page Intent and Query Scope
-- **Primary Search Intent**: Shopify store owners, lifestyle and apparel brands, and ecommerce merchants using or considering the Vessel Shopify theme seeking expert customization, visual storytelling layouts, nested block configurations, and performance optimization.
-- **Audience**: Ecommerce merchants, creative DTC brands, and digital agencies requiring custom Liquid engineering and bespoke design on Shopify's Vessel theme.
-- **Target queries**: "Vessel theme customization", "Vessel Shopify theme customization service", "customize Vessel theme", "Shopify Vessel theme developer", "Vessel theme expert".
+Status: implemented and verified; live-visible content preserved
+Last reviewed: 2026-09-28
+Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
+Primary audience: Shopify merchants, lifestyle and apparel brands, and ecommerce businesses seeking expert Vessel Shopify theme customization, visual storytelling layouts, nested block configurations, mobile responsiveness, and conversion enhancement.
+Decision stage: partner selection, Vessel theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
 
-### Visible Content and Evidence Available
-- H1: "Vessel Theme Customization Service".
-- Primary CTA: "View Demo Store" -> official Shopify themes preview.
-- Hero graphic: Custom Vessel theme preview with review badges (Clutch 132 reviews / 5.0, Upwork 2000+ reviews / 5.0, GoodFirms 72 reviews / 5.0).
-- Trusted brands slider: 10 enterprise ecommerce brands.
-- Features of Vessel Theme: 3 visual highlight cards (Let your products speak, Inviting shopping journey, From the Horizon collection) + 8 feature icon boxes (Quick Setup, Visual Storytelling, Nested Theme Blocks, Slide-out Cart, Product Filtering and Sorting, High-Resolution Images, Mega Menu, Cross-Selling).
-- 9 Customization Benefits: Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost.
-- 6 Theme Customization Services: Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance.
-- 4 Why Choose Dynamic Dreamz pillars: Expert Team, Proven Process, Ongoing Support, Client Focused Approach.
-- 6 Shopify Portfolio showcase items: Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier.
-- 6 interactive FAQs covering design customization, mobile responsiveness, third-party app integration, delivery timelines, ongoing maintenance, and performance guarantees.
+### Page role
 
-### Structured Gap Analysis
-| Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
+Dedicated commercial landing page presenting Dynamic Dreamz Vessel theme customization capabilities. Features dual-CTA hero with 1224x948 banner graphic, 10 client brand trust logos, split theme-features banner with 8 feature items, 9 store benefits in a 3-column grid, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards with "View our work" CTA, and 6 accordion FAQs.
+
+### Target prompts
+
+- Best agency for Vessel Shopify theme customization services?
+- How to customize Vessel theme for Shopify stores?
+- Dynamic Dreamz Vessel theme customization reviews and portfolio?
+- Can Dynamic Dreamz add story-driven sections and mega menus to Vessel?
+- Vessel theme speed optimization and third-party app integration agency?
+
+### Core answer & key facts
+
+- Server-rendered H1 `Vessel Theme Customization Service` with direct answer paragraph and dual CTAs ("Request a Quote" and "View Vessel on Shopify").
+- 18+ years agency experience (founded 2006) with 150+ Shopify/WordPress experts and 5000+ completed projects.
+- 8 key Vessel theme features in split beige banner (Let your products speak, Inviting shopping journey, From the Horizon collection, Visual Storytelling, Nested Theme Blocks, Mega Menu, Customizable Contact Form, Promo Banners).
+- 9 core benefits of Vessel customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
+- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client Focused Approach).
+- 6 Shopify portfolio projects (Atolea Jewelry, Bombay Shirt Company, Sims Direct, Bonbon Lingerie, Pagerie, Weardiop) with "View our work" button linking to `/our-work`.
+- 6 detailed FAQs addressing design customization, mobile responsiveness, third-party app integration, customization timeline, ongoing support post-customization, and store performance.
+
+### Structured gap analysis
+
+| Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/vessel-theme-customization` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | Page requires theme customization landing layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesSection`, `ShopifyReasonsSection`, `AgencyServicesSection`, `ThemeWhyChooseSection`, `PortfolioShowcaseSection`, `SplitFaqSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | Hero image downloaded to buffer, converted to WebP; highlight cards mapped to canonicals; icons mapped | 0 duplicate hash groups across `public/assets/` | Total asset duplicates remain 0 |
-| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createVesselThemeCustomizationPageSchema()` | Validated JSON-LD graph |
-| P1 | deferred | Visible copy enhancement | Minor phrasing variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+| P0 | implemented | Route and discovery | Live site updated to modern theme customization layout | Remigrate `/vessel-theme-customization` route with updated layout, SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Live site hero image updated to 1224x948 banner | Convert live hero image to WebP under `public/assets/vessel-theme-customization/hero/` and reuse canonical icons and portfolio assets | Verified locally with 0 duplicate assets |
+| P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 6 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
+
+### Visible content and copy improvements
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Vessel theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+
+### Technical requirements
+
+- App Router Server Component architecture (`src/app/vessel-theme-customization/page.tsx`).
+- Canonical URL: `https://www.dynamicdreamz.com/vessel-theme-customization`.
+- Maintain slashless `/vessel-theme-customization` navigation across marketing pages and service menus.
+- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+
+### Measurement plan
+
+- SEO tracks queries for "Vessel theme customization", "Shopify Vessel developers", and "custom Vessel theme Shopify".
+- Analytics tracks form submissions on `/request-quote` originating from `/vessel-theme-customization`.
+
+### Verification and remaining gaps
+
+- URL-policy review (2026-09-28): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/vessel-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 159 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## PHP Development (`/php-development`)
 

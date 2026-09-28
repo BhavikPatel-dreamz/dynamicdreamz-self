@@ -3686,7 +3686,7 @@ export const pageSeo = {
     path: "/vessel-theme-customization",
     title: "Vessel Theme Customization Service | Dynamic Dreamz",
     description:
-      "Get Vessel Theme Customization Service to Enhance your Shopify store. Improve user experience, boost conversions with Dynamic Dreamz.",
+      "Get Vessel Theme Customization Service to Enhance your Shopify store. Improve user experience and boost sales with expert solutions. Contact Dynamic Dreamz.",
     socialDescription:
       "Expert Vessel theme customization for Shopify stores. Transform your ecommerce storefront with bespoke design, speed optimization, and higher conversions.",
     keywords: [
@@ -3698,11 +3698,11 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2025-06-16T03:29:55+00:00",
-    modifiedTime: "2026-08-05T13:35:08+00:00",
+    modifiedTime: "2026-09-10T09:30:10+00:00",
     image: {
-      path: "/assets/vessel-theme-customization/hero/vessel-theme-customization-service-img.webp",
-      width: 617,
-      height: 474,
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
       alt: "Vessel Theme Customization Service | Dynamic Dreamz",
     },
     sitemap: {
