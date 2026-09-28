@@ -1,11 +1,11 @@
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import { CityWhyChooseBoxesSection } from "@/components/sections/city-why-choose-boxes-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ThemeFeaturesSection } from "@/components/sections/theme-customization/theme-features-section";
+import { EvaluationFrameworkSection } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
+import { ThemeFeaturesBannerSection } from "@/components/sections/theme-customization/theme-features-banner-section";
 import { ThemeHeroSection } from "@/components/sections/theme-customization/theme-hero-section";
-import { ThemeWhyChooseSection } from "@/components/sections/theme-customization/theme-why-choose-section";
 import { refreshThemeCustomizationContent } from "@/content/refresh-theme-customization";
 
 export function RefreshThemeCustomizationPage() {
@@ -14,41 +14,87 @@ export function RefreshThemeCustomizationPage() {
     slug: "refresh-theme-customization",
   };
 
-  const benefitsContent = {
-    heading: refreshThemeCustomizationContent.benefits.title,
-    description: refreshThemeCustomizationContent.benefits.subtitle,
-    items: refreshThemeCustomizationContent.benefits.items,
-  };
-
   const servicesContent = {
-    heading: refreshThemeCustomizationContent.services.title,
-    description: refreshThemeCustomizationContent.services.subtitle,
+    heading: refreshThemeCustomizationContent.services.heading,
+    description: refreshThemeCustomizationContent.services.description,
     items: refreshThemeCustomizationContent.services.items,
   };
 
+  const whyChooseContent = {
+    eyebrow: refreshThemeCustomizationContent.whyChoose.eyebrow,
+    heading: refreshThemeCustomizationContent.whyChoose.heading,
+    description: refreshThemeCustomizationContent.whyChoose.description,
+    items: refreshThemeCustomizationContent.whyChoose.items,
+  };
+
   const portfolioContent = {
-    heading: refreshThemeCustomizationContent.portfolio.title,
-    description: refreshThemeCustomizationContent.portfolio.subtitle,
+    eyebrow: refreshThemeCustomizationContent.portfolio.eyebrow,
+    heading: refreshThemeCustomizationContent.portfolio.heading,
+    description: refreshThemeCustomizationContent.portfolio.description,
     items: refreshThemeCustomizationContent.portfolio.items,
+    ctaLabel: refreshThemeCustomizationContent.portfolio.ctaLabel,
+    ctaHref: refreshThemeCustomizationContent.portfolio.ctaHref,
   };
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ThemeHeroSection content={refreshThemeCustomizationContent.hero} />
+      <ThemeHeroSection
+        className="theme-customize-hero overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[991px]:pt-16"
+        content={refreshThemeCustomizationContent.hero}
+        descriptionClassName="mb-0 text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6"
+        imageClassName="hero-img h-auto w-full object-contain object-bottom mix-blend-darken"
+        mediaClassName="image-block flex w-full items-end pt-[60px]"
+        mediaColumnClassName="right-col flex w-[43.182%] items-end justify-end max-[1399px]:w-[48%] max-[1199px]:mx-auto max-[1199px]:w-1/2 max-[991px]:w-full max-[991px]:justify-center"
+        textClassName="hero-content"
+        textColumnClassName="left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1399px]:w-1/2 max-[1199px]:w-full max-[1199px]:pb-8 max-[1199px]:text-center max-[991px]:py-10"
+        titleClassName="mb-2.5 inline-block font-montreal-medium text-[50px] font-medium leading-[60px] tracking-normal text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
+        wrapperClassName="wrapper flex flex-wrap items-center justify-between max-[1199px]:flex-col"
+      />
       <IndustryBrandsSection
         content={brandsContent}
+        density="compact"
         heading={refreshThemeCustomizationContent.brands.title}
         items={refreshThemeCustomizationContent.brands.items}
       />
-      <ThemeFeaturesSection content={refreshThemeCustomizationContent.features} />
-      <ShopifyReasonsSection content={benefitsContent} />
-      <AgencyServicesSection content={servicesContent} />
-      <ThemeWhyChooseSection content={refreshThemeCustomizationContent.whyChoose} />
+      <ThemeFeaturesBannerSection
+        content={refreshThemeCustomizationContent.features}
+      />
+      <CityWhyChooseBoxesSection
+        bgClassName="bg-[#fafaf7]"
+        className="city-page-why-choose-dynamic"
+        columns={3}
+        content={refreshThemeCustomizationContent.benefits}
+        eyebrowVariant="dash"
+      />
+      <AgencyServicesSection
+        cardVariant="services-box"
+        className="what-we-provide-sec pt-20 pb-0 max-[992px]:pt-[50px] max-[992px]:pb-0"
+        columns={2}
+        content={servicesContent}
+        eyebrow={refreshThemeCustomizationContent.services.eyebrow}
+        id="services"
+      />
+      <EvaluationFrameworkSection
+        className="how-to-choose-spa-sec bg-white py-20 max-[992px]:py-[50px]"
+        content={whyChooseContent}
+        id="why-choose"
+      />
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
+        cardVariant="ourWorkRefresh"
+        className="our-work-sec pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-[50px]"
+        columns={4}
         content={portfolioContent}
+        eyebrow={refreshThemeCustomizationContent.portfolio.eyebrow}
+        headerLayout="split"
+        hideCta={false}
+        itemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
+        sectionId="our_work"
+        showMobileArrow={true}
       />
       <SplitFaqSection
+        answerClassName="text-[#535353] text-base leading-7 font-medium max-[1199px]:text-sm max-[1199px]:leading-6"
+        className="faq-sec"
+        heading={refreshThemeCustomizationContent.faqsHeading}
         idPrefix="refresh-faq"
         items={refreshThemeCustomizationContent.faqs}
       />

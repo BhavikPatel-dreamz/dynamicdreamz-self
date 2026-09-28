@@ -3,7 +3,8 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 
 export type ThemeFeaturesBannerContent = {
   eyebrow?: string;
-  title: string;
+  title?: string;
+  heading?: string;
   description?: string;
   items: readonly string[];
 };
@@ -30,7 +31,7 @@ export function ThemeFeaturesBannerSection({
               </div>
             )}
             <h2 className="mb-0 text-[32px] font-bold leading-tight text-ink max-[1399px]:text-[28px] max-[991px]:text-2xl">
-              {content.title}
+              {content.title || content.heading}
             </h2>
             {content.description && (
               <div className="section-description mt-2.5">

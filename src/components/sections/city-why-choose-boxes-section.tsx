@@ -15,7 +15,7 @@ export type CityWhyChooseBoxItem = {
 export type CityWhyChooseBoxesContent = {
   eyebrow?: string;
   heading: string;
-  description: string;
+  description?: string;
   items: readonly CityWhyChooseBoxItem[];
 };
 
@@ -65,11 +65,13 @@ export function CityWhyChooseBoxesSection({
               {content.heading}
             </h2>
           </div>
-          <div className="section_text max-w-[560px]">
-            <p className="text-base font-medium leading-[27px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
-              {content.description}
-            </p>
-          </div>
+          {content.description ? (
+            <div className="section_text max-w-[560px]">
+              <p className="text-base font-medium leading-[27px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
+                {content.description}
+              </p>
+            </div>
+          ) : null}
         </div>
 
         <div className="why-choose-box-main">
