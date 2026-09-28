@@ -7122,8 +7122,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Tinker Theme Customization (`/tinker-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, creative brands, playful lifestyle labels, multi-product catalogs, and modern eCommerce businesses looking for expert Tinker Shopify theme customization, efficient discovery features, rich product presentation, slide-out cart setup, and conversion optimization.
 Decision stage: partner selection, Tinker theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
@@ -7183,8 +7183,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Pitch Theme Customization (`/pitch-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, trendy brands, high-end lifestyle labels, visual storytelling brands, and modern eCommerce businesses looking for expert Pitch Shopify theme customization, bold visual layouts, rich product storytelling, slideshow/video support, and conversion optimization.
 Decision stage: partner selection, Pitch theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
@@ -7244,8 +7244,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Atelier Theme Customization (`/atelier-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, luxury fashion brands, boutique retailers, high-end lifestyle labels, home goods stores, and modern eCommerce businesses looking for expert Atelier Shopify theme customization, elegant negative-space layouts, editorial design, high-resolution image galleries, and conversion optimization.
 Decision stage: partner selection, Atelier theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
@@ -7305,8 +7305,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Heritage Theme Customization (`/heritage-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, traditional and heritage retail brands, artisanal products, luxury health/beauty labels, toy/game brands, and modern eCommerce businesses looking for expert Heritage Shopify theme customization, editorial storytelling, tactile rich product showcases, RTL support, and multi-level navigation.
 Decision stage: partner selection, Heritage theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
@@ -7366,8 +7366,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Ritual Theme Customization (`/ritual-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-28
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, wellness brands, skincare stores, beauty labels, lifestyle shops, and modern eCommerce businesses looking for expert Ritual Shopify theme customization, visually rich storytelling, product video integration, visual mega menus, optimized checkout, and app integration.
 Decision stage: partner selection, Ritual theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request

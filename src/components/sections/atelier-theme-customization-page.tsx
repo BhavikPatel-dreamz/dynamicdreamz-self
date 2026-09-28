@@ -1,11 +1,11 @@
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import { CityWhyChooseBoxesSection } from "@/components/sections/city-why-choose-boxes-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ThemeFeaturesSection } from "@/components/sections/theme-customization/theme-features-section";
+import { EvaluationFrameworkSection } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
+import { ThemeFeaturesBannerSection } from "@/components/sections/theme-customization/theme-features-banner-section";
 import { ThemeHeroSection } from "@/components/sections/theme-customization/theme-hero-section";
-import { ThemeWhyChooseSection } from "@/components/sections/theme-customization/theme-why-choose-section";
 import { atelierThemeCustomizationContent } from "@/content/atelier-theme-customization";
 
 export function AtelierThemeCustomizationPage() {
@@ -14,41 +14,86 @@ export function AtelierThemeCustomizationPage() {
     slug: "atelier-theme-customization",
   };
 
-  const benefitsContent = {
-    heading: atelierThemeCustomizationContent.benefits.title,
-    description: atelierThemeCustomizationContent.benefits.subtitle,
-    items: atelierThemeCustomizationContent.benefits.items,
-  };
-
   const servicesContent = {
-    heading: atelierThemeCustomizationContent.services.title,
-    description: atelierThemeCustomizationContent.services.subtitle,
+    heading: atelierThemeCustomizationContent.services.heading,
+    description: atelierThemeCustomizationContent.services.description,
     items: atelierThemeCustomizationContent.services.items,
   };
 
+  const whyChooseContent = {
+    eyebrow: atelierThemeCustomizationContent.whyChoose.eyebrow,
+    heading: atelierThemeCustomizationContent.whyChoose.heading,
+    description: atelierThemeCustomizationContent.whyChoose.description,
+    items: atelierThemeCustomizationContent.whyChoose.items,
+  };
+
   const portfolioContent = {
-    heading: atelierThemeCustomizationContent.portfolio.title,
-    description: atelierThemeCustomizationContent.portfolio.subtitle,
+    eyebrow: atelierThemeCustomizationContent.portfolio.eyebrow,
+    heading: atelierThemeCustomizationContent.portfolio.heading,
+    description: atelierThemeCustomizationContent.portfolio.description,
     items: atelierThemeCustomizationContent.portfolio.items,
+    ctaLabel: atelierThemeCustomizationContent.portfolio.ctaLabel,
+    ctaHref: atelierThemeCustomizationContent.portfolio.ctaHref,
   };
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ThemeHeroSection content={atelierThemeCustomizationContent.hero} />
+      <ThemeHeroSection
+        className="theme-customize-hero overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[991px]:pt-16"
+        content={atelierThemeCustomizationContent.hero}
+        descriptionClassName="mb-0 text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6"
+        imageClassName="hero-img h-auto w-full object-contain object-bottom mix-blend-darken"
+        mediaClassName="image-block flex w-full items-end pt-[60px]"
+        mediaColumnClassName="right-col flex w-[43.182%] items-end justify-end max-[1399px]:w-[48%] max-[1199px]:mx-auto max-[1199px]:w-1/2 max-[767px]:hidden"
+        textClassName="hero-content"
+        textColumnClassName="left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1399px]:w-1/2 max-[1199px]:w-full max-[1199px]:pb-8 max-[1199px]:text-center max-[991px]:py-10"
+        titleClassName="mb-2.5 inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-0.7px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
+        wrapperClassName="wrapper flex flex-wrap items-center justify-between max-[1199px]:flex-col"
+      />
       <IndustryBrandsSection
         content={brandsContent}
+        density="compact"
         heading={atelierThemeCustomizationContent.brands.title}
         items={atelierThemeCustomizationContent.brands.items}
       />
-      <ThemeFeaturesSection content={atelierThemeCustomizationContent.features} />
-      <ShopifyReasonsSection content={benefitsContent} />
-      <AgencyServicesSection content={servicesContent} />
-      <ThemeWhyChooseSection content={atelierThemeCustomizationContent.whyChoose} />
+      <ThemeFeaturesBannerSection
+        content={atelierThemeCustomizationContent.features}
+      />
+      <CityWhyChooseBoxesSection
+        bgClassName="bg-[#fafaf7]"
+        className="city-page-why-choose-dynamic"
+        columns={3}
+        content={atelierThemeCustomizationContent.benefits}
+        eyebrowVariant="dash"
+      />
+      <AgencyServicesSection
+        cardVariant="services-box"
+        className="what-we-provide-sec pt-20 pb-0 max-[992px]:pt-[50px] max-[992px]:pb-0"
+        columns={2}
+        content={servicesContent}
+        eyebrow={atelierThemeCustomizationContent.services.eyebrow}
+        id="services"
+      />
+      <EvaluationFrameworkSection
+        className="how-to-choose-spa-sec bg-white py-20 max-[992px]:py-[50px]"
+        content={whyChooseContent}
+        id="why-choose"
+      />
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
+        cardVariant="ourWorkRefresh"
+        className="our-work-sec pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-[50px]"
+        columns={3}
         content={portfolioContent}
+        eyebrow={atelierThemeCustomizationContent.portfolio.eyebrow}
+        headerLayout="split"
+        hideCta={false}
+        sectionId="our_work"
+        showMobileArrow={true}
       />
       <SplitFaqSection
+        answerClassName="text-[#535353] text-base leading-7 font-medium max-[1199px]:text-sm max-[1199px]:leading-6"
+        className="faq-sec"
+        heading={atelierThemeCustomizationContent.faqsHeading}
         idPrefix="atelier-faq"
         items={atelierThemeCustomizationContent.faqs}
       />
