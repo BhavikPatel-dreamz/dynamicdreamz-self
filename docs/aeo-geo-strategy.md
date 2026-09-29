@@ -3720,46 +3720,47 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Magento Development (`/magento-development`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-29
 Owner: SEO, Magento/Adobe Commerce development specialists, leadership, and sales operations
-Primary audience: Enterprise merchants, B2B companies, DTC brands, and digital agencies seeking custom Magento 2 store creation, platform migration, speed optimization, custom theme design, module development, and ongoing maintenance.
+Primary audience: Enterprise merchants, B2B companies, DTC brands, and digital agencies seeking custom Magento Open Source & Adobe Commerce store development, migration, speed optimization, custom theme design, module development, and ongoing maintenance.
 Decision stage: agency partner evaluation, technical capability assessment, Magento developer hiring, quote request
 
 ### Page role
 
-Dedicated commercial service landing page targeting queries for "Magento Development Services", "Magento Development Company", and custom Magento / Adobe Commerce store solutions. Highlights 12 client brand trust logos, 6 core Magento service capabilities (Custom Store Solutions, Easy Migration, Speed Optimization, Custom Themes Development, Custom Modules, Ongoing Support), 6 featured portfolio projects (Maxi Cosi, Caves Santa Cruz, City Circuit, Sambazon, Chers, United Cheer Apparel), 11 client video reviews, 7 buyer FAQs, and quote request banners.
+Dedicated commercial service landing page targeting queries for "Magento Development Services", "Magento Development Company", and custom Magento / Adobe Commerce store solutions. Features the modern flexible section layout: hero (`.hero-new-section.hide-logo`) with review badges and tablet mockups, 12 client brand trust logos, 6 core Magento service capabilities with custom red line SVGs (`#AD5151`), 4 capabilities in a structured grid ("Magento Open Source & Adobe Commerce Capabilities"), 3 transparent pricing cards ("Choose the Right Magento Engagement"), 4 featured portfolio projects ("See Our Magento Work in Action"), 11 client video reviews, 9 buyer FAQs, and quote request CTA banner.
 
 ### Target prompts
 
 - Who is the top Magento development company in India?
-- How to migrate an ecommerce store to Magento 2 without downtime or SEO loss?
-- Can Dynamic Dreamz develop custom Magento 2 modules and speed optimizations?
-- What are the costs and timeline for custom Magento store development?
+- How to migrate an ecommerce store to Magento Open Source or Adobe Commerce without downtime or SEO loss?
+- Can Dynamic Dreamz develop custom Magento modules, API integrations, and speed optimizations?
+- What are the costs and engagement models for Magento store development?
 - Does Dynamic Dreamz provide post-launch Magento support and maintenance?
 
 ### Current strengths and available evidence
 
-- Server-rendered split hero with H1 `Your Go-To Partner for Magento Development` and review animated badge.
+- Server-rendered split hero with H1 `Magento Development Services`, eyebrow `Magento Development Agency`, Clutch 4.9, Trustpilot 4.9, and Upwork Top Rated Plus badges, plus interactive tablet mockup slider.
 - 12 verified brand partner logos with infinite marquee scrolling.
-- 6 structured Magento service offerings with custom SVG icons.
-- 6 featured real-world Magento client portfolio projects with external links.
+- 6 structured Magento service offerings with exact live `#AD5151` line SVGs (`Custom Store Solutions`, `Easy Migration`, `Speed Optimization`, `Custom Themes Development`, `Custom Modules`, `Ongoing Support`).
+- 4 Magento Open Source & Adobe Commerce Capabilities cards (`API & Third-Party Integrations`, `Multi-Store & International Setup`, `Version Upgrades & Compatibility`, `Complex Commerce Workflows`).
+- 3 transparent pricing tiers (`Project-Based / Custom Quote`, `Flexible Hourly Support / $20/hour`, `Dedicated Developer / Team / From $2,000/month`).
+- 4 featured real-world Magento client portfolio projects in 4 columns (`Maxi Cosi`, `Caves Santa Cruz`, `City Circuit`, `United Cheer Apparel`) with `View our work` CTA.
 - 11 client video testimonials with modal playback.
-- 7 comprehensive buyer FAQs covering Magento development scope, migration, custom themes, performance, support, and costs.
-- Complete structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (7 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
-- Zero duplicate assets across `public/assets/`, reusing canonical assets and hosting unique service SVGs locally.
+- 9 comprehensive buyer FAQs matching live questions and answers.
+- Complete structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (9 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical assets and hosting unique hero WebP assets and service SVGs locally.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (7 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
-| P0 | implemented | Local assets | Service icons, portfolio screens, and brand logos must be locally hosted | Save 4 unique service SVGs and 9 client logos under `public/assets/`, reuse canonical portfolio images | Verified locally with 0 runtime external dependencies and 0 duplicates |
-| P1 | deferred | Content expansion | Minor typo in live service description ("Dynamic Dremaz") | Record proposed fix in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+| P0 | implemented | Route and discovery | Live site updated to flexible 9-section layout | Restructure route into modern 9-section layout matching live | Verified in rendered output and production build 2026-09-29 |
+| P0 | implemented | Structured data | Rich Service, FAQPage (9 items), VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (9 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-09-29 |
+| P0 | implemented | Local assets | Live hero uses tablet frame, badges, and project slides | Ingest unique assets to `public/assets/services/magento-development/hero/`, convert to WebP, reuse canonical slides | Verified locally with 0 runtime external dependencies and 0 duplicates |
 
 ### Suggested answer copy
 
-Deferred under the live-UI preservation gate. The current server-rendered hero and service descriptions establish Dynamic Dreamz Magento development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+Deferred under the live-UI preservation gate. The current server-rendered hero, capabilities, and service descriptions establish Dynamic Dreamz Magento development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
 
 ### Entity, evidence, and authorship actions
 
@@ -3769,12 +3770,12 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 ### Internal-link and conversion actions
 
 - Maintain slashless `/magento-development` navigation across marketing pages and service menus.
-- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+- Direct conversion actions route to `/request-quote`, `/book-a-discovery-call`, and `/our-work`.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service with 6 Offer items, 7 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Emit Service with 6 Offer items, 9 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-09-29T06:08:09+00:00`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
@@ -3784,8 +3785,8 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/magento-development`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 58 chars, Description: 129 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-29): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/magento-development`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 58 chars, Description: 160 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Magento Web Development (`/magento-web-development`)
 

@@ -4362,7 +4362,7 @@ export function createMagentoDevelopmentPageSchema() {
     breadcrumbId: magentoDevelopmentBreadcrumbId,
     serviceName: "Magento Development Services",
     serviceType:
-      "Custom Magento store development, theme development, module development, migration, speed optimization, and ongoing support",
+      "Custom Magento store development, theme development, module development, migration, performance, integrations, and ongoing support for Magento Open Source and Adobe Commerce",
     breadcrumbName: "Magento Development",
     audienceType:
       "Enterprise merchants, B2B companies, DTC brands, and digital agencies seeking custom Magento development services",

@@ -2610,7 +2610,7 @@ export const pageSeo = {
     path: "/magento-development",
     title: "Magento Development Services | Magento Development Company",
     description:
-      "Trusted Magento Development company for scalable solutions. Get expert services for custom Magento development. Contact us today!",
+      "Custom Magento development for stores, themes, modules, migrations, performance, integrations and ongoing support across Magento Open Source and Adobe Commerce.",
     keywords: [
       "Magento development services",
       "Magento development company",
@@ -2623,7 +2623,7 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2024-05-02T09:33:00+00:00",
-    modifiedTime: "2026-08-19T00:00:00+05:30",
+    modifiedTime: "2026-09-29T06:08:09+00:00",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,

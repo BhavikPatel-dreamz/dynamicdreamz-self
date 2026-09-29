@@ -1,58 +1,57 @@
 # Magento Development Page
 
-Live URL: `https://www.dynamicdreamz.com/magento-development/`
-Local route: `/magento-development`
-Date checked: 2026-08-19
-Browser/source: Google Chrome headless inspection, rendered live page + View Page Source, live page-specific CSS (`assets/css/services/main.css`, `assets/css/services/media.css`, `assets/css/default-media.css`, `style.css`), live JS (`assets/js/custom.js`, `assets/js/services.js`), and local component/asset audit.
+Live URL: `https://www.dynamicdreamz.com/magento-development/`  
+Local route: `/magento-development`  
+Date checked: 2026-09-29  
+Browser/source: Google Chrome headless DOM dump + View Page Source, live page styling (`style.css`), live layout sections (`hero-new-section hide-logo`, `our-client-sec`, `what-we-provide-sec`, `how-to-choose-spa-sec`, `white_label_wp_develop_plan_section`, `our-work-sec`, `happy-client-sec`, `faq-sec`, `request-banner`), and local component/asset audit.
 
 ## Viewports
 
 | Viewport | Status |
 | --- | --- |
-| 1440x900 (Desktop) | Verified layout structure, heading hierarchy, 2-column hero with 420px animated review wheel, 12-logo brand slider, 6 service cards ("What We Provide"), 6 portfolio showcase cards ("See Our Magento Work in Action"), 11 video testimonials slider ("Hear from Our Clients"), 7 FAQ accordions, and bottom CTA banner. |
-| 768x1024 (Tablet) | Verified responsive stacking, 420px review wheel centered below hero text, stacked brand section, 2-column service cards, 2-column portfolio cards, 2-item testimonial carousel, touch-friendly FAQ accordions, and centered CTA banner. |
-| 390x844 (Mobile) | Verified single-column hero with 275px scaled review wheel, single-column brand section with horizontal slider, single-column service cards, single-column portfolio cards, 1-item testimonial carousel, full-width CTA buttons, and stacked banner. |
+| 1440x900 (Desktop) | Verified layout structure: hero with "Magento Development Agency" eyebrow, H1 "Magento Development Services", 3 review badges (Clutch, Trustpilot, Upwork; Shopify badge hidden via `.hide-logo`), tablet mockup slider with floating Magento logos, continuous 12-brand marquee, 6 service cards with red line SVGs (`#AD5151`), 4-item capabilities grid ("Magento Open Source & Adobe Commerce Capabilities"), 3-card pricing engagement section ("Choose the Right Magento Engagement"), 4-column portfolio grid ("See Our Magento Work in Action"), 11 video testimonials slider ("Hear from Our Clients"), 9 split FAQ accordions, and bottom CTA banner. |
+| 768x1024 (Tablet) | Verified responsive stacking: tablet mockup centered below hero text, 2-column service cards, 2-column capabilities items, 2-column pricing cards, 2-column portfolio cards, 2-item testimonial carousel, touch-friendly split FAQs, and full-width CTA buttons. |
+| 390x844 (Mobile) | Verified single-column hero, continuous brand carousel, single-column service cards, single-column capabilities items, single-column pricing cards, single-column portfolio cards, 1-item testimonial carousel, and touch-friendly accordion FAQs. |
 
 ## Sources Inspected
 
 | Source | What was checked |
 | --- | --- |
-| Rendered live page and View Page Source | Title, description, canonical, publish/modified dates, Open Graph, Yoast JSON-LD, H1, hero copy, review animation markup (3 inline wordmark SVGs + star SVGs + review pills), 12 client brand logos, 6 service cards ("What We Provide"), 6 portfolio cards ("See Our Magento Work in Action"), 11 video testimonials ("Hear from Our Clients"), 7 FAQ items, and request CTA banner. |
-| Live `assets/css/services/main.css` | `.inner-hero-sec` (pt 190px, pb 55px, #fff, overflow hidden), `.inner-wrapper` flex (left 55.7% / right 41%), `.inner-hero-content h1` (base h1 50px/66px/700/-1px Montserrat), `.review_animation` 420px circle opacity .8 absolute top/left/right 0, `.our-client-sec` (#faf4ee, py 40px), `.what-we-provide-sec` heading-text (title 41% / text 55%), `.services-box` 2-col cards (50% width, 8px padding, hover translateY(-10px), `.services-text` gradient border on hover), `.our-work-sec` (`.our-work-main` 3-col, 15px column gap, 60px row gap, `.ourwork_team_image` pb 115%, overlay gradient rgba(0,0,0,.4), View Project slides to bottom 30px on hover, `.project-cate` platform mark top-right fade/translate, `.ourwork_team_content` h6 eyebrow rgba(0,0,0,.7) 19.6px tracking 1.12px uppercase + h4 18px/700), `.happy-client-sec` (`.happy-client-col` 15px radius 1px #d9d9d9, `.card-item` min-height 324px, `.client-img` 100% cover + rgba(0,0,0,.3) overlay, `.client-name` white pill radius 30px 16px/600, `.play-video` 76px centered with pulse-border keyframe, `.qoute-icon` top-right 46x40, `.client-review-text` 16px/400 28.64px padding 33px 36px 39px), `.faq-sec` (`.accrodion-item` 10px radius 1.3px #efefef border, `.accrodion-title` 24px 70px 24px 32px padding, plus/minus 32px icon, `.accrodion-content` 16px/500/32px #535353, first item open), `.request-banner` (linear-gradient(97.18deg, #15c064 28.5%, #00d1ff 91.82%), py 35px, h3 30px/700/-0.6px, btn-white). |
-| Live `assets/css/services/media.css` | ≤1199px: h1 40/50, p 16/30.4, left-col 100% centered, right-col 50% margin 50px auto 0, review_animation 420px; ≤991px: right-col 100%, services-box 100%, portfolio 2-col; ≤767px: h1 30/40, review_animation 275px circle, text 14px, ratings 15px, portfolio 1-col; ≤359px: h1 34/44. |
-| Live `assets/js/custom.js` | Review animation: `showNextReview()` on load, then every 5000ms; active circle gets `zoom-in show active` at +100ms, wrapper `show` at +300ms, 5 star paths `show` staggered 200ms each, ratings `show` at 1300ms, pill `show` at 1600ms; reset removes all classes first; pill `translateY(150px)→0` over 1s cubic-bezier(.95,-.42,.15,1.26). |
-| Live `assets/js/services.js` | `.owl-carousel.happy-client-slider`: items 1 (<767) / 2 (≥767, ≥1200), margin 25 (10 mobile), stagePadding 50 (25 mobile). |
-| Assets | Canonical brand logos in `public/assets/clients/`, 4 unique service SVGs in `public/assets/services/magento-development/` + 2 reused SVGs, 6 existing canonical portfolio project screenshots in `public/assets/our-work/projects/`, and 11 testimonial photos. |
+| Rendered live page & View Page Source | Title (`Magento Development Services \| Magento Development Company`), meta description, canonical, article:modified_time (`2026-09-29T06:08:09+00:00`), Yoast JSON-LD, H1 (`Magento Development Services`), 3 review badges, tablet slider mockup with 4 slides & 2 badges, 12 client brand logos, 6 service cards ("What We Provide"), 4 capabilities ("Magento Open Source & Adobe Commerce Capabilities"), 3 pricing plans ("Choose the Right Magento Engagement"), 4 portfolio cards ("See Our Magento Work in Action"), 11 video testimonials, 9 FAQ items, and request CTA banner. |
+| Live CSS (`style.css`) | `.hero-new-section.hide-logo` (hides first global brand item, flex layout, tablet frame with `.tablet-badge-top` and `.tablet-badge-bottom`), `.our-client-sec` (#faf4ee with continuous marquee), `.what-we-provide-sec` (split heading, `#fafaf7` rounded cards with border `rgba(40,40,40,0.08)`, 24x24 line SVGs with `#AD5151` stroke, no trailing CTA), `.how-to-choose-spa-sec` (pt-0, 4-col capabilities grid with top/left/right borders), `.white_label_wp_develop_plan_section.shopify-plus-engagement` (bg `#edf2ee`, 3 pricing cards with badges, prices, and arrow CTA links), `.our-work-sec` (4-column responsive grid with dark hover overlay, platform mark, View Project arrow icon, and "View our work" CTA button to `/our-work`), `.happy-client-sec` (video testimonial carousel), `.faq-sec` (split FAQ layout with sticky left text and right accordion items), `.request-banner` (gradient background with CTA button). |
+| Assets | Canonical brand logos in `public/assets/clients/`, 6 exact red line SVGs in `src/components/sections/magento/magento-service-icons.tsx`, canonical portfolio project screenshots in `public/assets/our-work/projects/`, tablet slider assets in `public/assets/services/magento-development/hero/`, and 11 testimonial photos. |
 
 ## Section Inventory
 
 | Section | Live behavior/style | Local implementation notes |
 | --- | --- | --- |
-| Hero | `.inner-hero-sec`: left h1 `Your Go-To Partner for <br> Magento Development` (50/66 → 40/50 → 30/40 → 34/44), paragraph, `Request a Quote` red pill to `/request-quote`; right: 3 rotating 420px circles (Clutch #F8DDD7, Upwork #E3F1D5, GoodFirms #D8E5FF) with ratings & review counts; 275px circle ≤767px. | Reused `ServiceHeroSection` + client `ReviewAnimation` component with full timing parity; links to internal `/request-quote`. |
-| Brands | `.our-client-sec` #faf4ee with heading `Trusted by Leading Brands` + 12 brand logos (Supertails, Eleven Eleven, Bella Vita, Bombay Shirts, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit). | Reused `IndustryBrandsSection` with typed `magentoDevelopmentBrands`. |
-| Services ("What We Provide") | `.what-we-provide-sec` heading-text + 6 `.services-box` cards (Custom Store Solutions, Easy Migration, Speed Optimization, Custom Themes Development, Custom Modules, Ongoing Support) + centered `Let me give you a hand to help you` red pill to `/request-quote`. | Reused `AgencyServicesSection` with typed `magentoDevelopmentServices`. |
-| Portfolio ("See Our Magento Work in Action") | `.our-work-sec` 3-col grid of `.our_work_team` cards (Maxi Cosi, Caves Santa Cruz, City Circuit, Sambazon, Chers, United Cheer Apparel) with `Magento` eyebrow, dark hover overlay, and `View Project` link + `View our work` CTA button to `/our-work`. | Reused `PortfolioShowcaseSection` with typed `magentoDevelopmentPortfolio`. |
-| Testimonials ("Hear from Our Clients") | `.happy-client-sec` header `Hear from Our Clients` + carousel of 11 video testimonial cards (Alec Torelli, William Petz, William ST Baker, Kerri Imrie, Brandon, Shari Leidich, Rebekah Wymer, Thommas Linnrose, Zoe wang, Clinton De Vere, Fernando Arias). | Reused `HappyClientSection` with `shopifyPlusAgencyTestimonials.items`. |
-| FAQs | `.faq-sec` white bg: h2 `Frequently Asked Questions` + 7 accordion items (first open), plus/minus icon, 16px/500 answers. | Reused `FaqSection` with `magentoDevelopmentFaqs`. |
-| CTA Banner | `.request-banner` gradient background, h3 `Want us to help you with your online store?`, and `request a quote` white pill to `/request-quote`. | Reused `CtaBannerSection`. |
+| Hero | `.hero-new-section.hide-logo`: left eyebrow `Magento Development Agency`, H1 `Magento Development Services`, description, `REQUEST A QUOTE` button to `/request-quote`, 3 review badges (Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus); right tablet frame with 4 slides, top badge (`magento-rectangle-logo.webp`), bottom badge (`magento-square-logo.webp`), and background decorative shape. | Reused `CityPageHeroSection` with `className="hide-logo"` and typed `magentoDevelopmentHero`. |
+| Brands | `.our-client-sec` #faf4ee with heading `Trusted by <br>Leading Brands` + 12 brand logos (Tego, Nekter, Rare Rabbit, Supertails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate). | Reused `IndustryBrandsSection` with typed `magentoDevelopmentBrands`. |
+| Services ("What We Provide") | `.what-we-provide-sec` split heading + 6 `.services-box` cards (Custom Store Solutions, Easy Migration, Speed Optimization, Custom Themes Development, Custom Modules, Ongoing Support) with `#AD5151` red stroke SVGs in `#fafaf7` rounded cards; no trailing CTA. | Reused `AgencyServicesSection` with `cardVariant="services-box"`, `columns={2}`, `hideCta={true}`, and `MagentoServiceIcon`. |
+| Capabilities | `.how-to-choose-spa-sec.pt-0`: H2 `Magento Open Source & Adobe Commerce Capabilities` + description + 4 items (API & Third-Party Integrations, Multi-Store & International Setup, Version Upgrades & Compatibility, Complex Commerce Workflows). | Reused `EvaluationFrameworkSection` with `className="how-to-choose-spa-sec pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-[50px]"` and typed `magentoDevelopmentCapabilities`. |
+| Pricing / Engagements | `.white_label_wp_develop_plan_section.shopify-plus-engagement.mb-0`: eyebrow `Flexible Magento Engagements`, H2 `Choose the Right Magento Engagement` + 3 cards (Project-Based / Custom Quote, Flexible Hourly Support / $20/hour, Dedicated Developer / Team / From $2,000/month). | Reused `PricingTableSection` with typed `magentoDevelopmentEngagements`. |
+| Portfolio ("See Our Magento Work in Action") | `.our-work-sec`: eyebrow `Portfolio`, H2 `See Our Magento Work in Action`, 4 projects (Maxi Cosi, Caves Santa Cruz, City Circuit, United Cheer Apparel) in 4 columns with `Magento` eyebrow, hover effects, and `View our work` button to `/our-work`. | Reused `PortfolioShowcaseSection` with `cardVariant="ourWorkRefresh"`, `columns={4}`, `variant="liveGrid"`, and `sectionId="our_work"`. |
+| Testimonials ("Hear from Our Clients") | `.happy-client-sec`: H2 `Hear from Our Clients` + carousel of 11 video testimonial cards. | Reused `HappyClientSection` with `shopifyPlusAgencyTestimonials.items`. |
+| FAQs | `.faq-sec`: split FAQ layout with H2 `Frequently Asked Questions` + 9 accordion items matching live. | Reused `SplitFaqSection` with `magentoDevelopmentFaqs`. |
+| CTA Banner | `.request-banner`: gradient background, H3 `Want us to help you with your online store?`, and `request a quote` pill to `/request-quote`. | Reused `CtaBannerSection`. |
 
 ## Motion And Interaction
 
 | State | Live behavior | Local behavior | Result |
 | --- | --- | --- | --- |
-| Initial | First review circle activates on load with timed animations | Replicated with effect timers in `ReviewAnimation` | verified |
-| Rotating | Circles swap every 5000ms; paused under `prefers-reduced-motion` | Replicated | verified |
-| Brands marquee | Infinite smooth horizontal scroll across viewports | `ClientLogoSlider` | verified |
-| Service cards hover | translateY(-10px) over .3s, gradient border | CSS transition + gradient border pseudo | verified |
-| Portfolio hover | 40% black overlay, View Project rises to 30px, platform mark fades in | Matches `PortfolioProjectCard` | verified |
-| Testimonials carousel | Drag/swipe carousel with responsive slide count (1 on mobile, 2 on desktop) | react-slick configured to match live owl-carousel | verified |
-| Accordion | First item open; plus/minus swap | `FaqAccordion` | verified |
+| Hero tablet slider | Slick slider transitioning through 4 project mockups with auto-scroll and floating badges | Replicated in `CityHeroTabletSlider` | verified |
+| Brands marquee | Infinite smooth horizontal scroll across viewports | Replicated in `ClientLogoSlider` | verified |
+| Service cards hover | Border shadow and background transition | Clean Tailwind transitions | verified |
+| Capabilities cards | Subtle border grid layout with numbered indicator | Replicated in `EvaluationFrameworkSection` | verified |
+| Pricing cards hover | translateY and arrow slide on link hover | Replicated in `PricingTableSection` | verified |
+| Portfolio hover | Dark hover overlay, View Project rises, link navigates to live URL | Replicated in `PortfolioProjectCard` | verified |
+| Testimonials carousel | Drag/swipe video carousel with responsive slide count | Replicated in `HappyClientSection` | verified |
+| Accordion | Plus/minus icon toggle, first item open by default | Replicated in `SplitFaqSection` | verified |
 
 ## Pre-Implementation Differences and Decisions
 
 | Difference | Decision | Status |
 | --- | --- | --- |
 | Live canonical/og:url have trailing slash | Slashless `/magento-development` per project URL policy | implemented |
-| Live title length | `Magento Development Services \| Magento Development Company` (58 chars - within 60-char budget) | implemented |
-| Live description length | Preserved live description (129 chars - within 70-160 char budget) | implemented |
-| Brand & Service assets deduplication | Reused canonical files across `public/assets/` without creating duplicate copies | implemented |
+| Live meta description length | 160 characters (trimmed spaces to meet 70-160 char length budget without altering meaning, matching og:description) | implemented |
+| Brand & Service assets deduplication | Ingested unique assets to `public/assets/services/magento-development/hero/`, converted to WebP; verified zero duplicate hash groups | implemented |

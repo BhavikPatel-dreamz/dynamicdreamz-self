@@ -1,202 +1,325 @@
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { EvaluationFrameworkItem } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
+import type { PricingEngagementItem } from "@/components/sections/shopify-plus-agency/pricing-table-section";
+import type { MagentoServiceIconName } from "@/components/sections/magento/magento-service-icons";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const magentoDevelopmentHero = {
-  title: "Your Go-To Partner for <br> Magento Development",
+  eyebrows: ["Magento Development Agency"],
+  title: "Magento Development Services",
   description:
-    "Dynamic Dreamz is a top-notch Magento development company in India. We specialize in building tailored, scalable, and fast Magento stores for businesses of all sizes.",
-  ctaLabel: "Request a Quote",
+    "Dynamic Dreamz provides Magento development services for businesses and digital agencies that need flexible, scalable ecommerce solutions. Our team supports custom Magento stores, themes, modules, migrations, performance improvements and ongoing technical work across Magento Open Source and Adobe Commerce.",
+  ctaLabel: "REQUEST A QUOTE",
   ctaHref: "/request-quote",
+  badges: [
+    {
+      src: "/assets/proof/clutch-rating.svg",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      width: 111,
+      height: 44,
+      href: "https://clutch.co/profile/dynamic-dreamz",
+    },
+    {
+      src: "/assets/proof/trustpilot-rating.svg",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      width: 148,
+      height: 50,
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+    },
+    {
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      width: 126,
+      height: 54,
+      href: "https://www.upwork.com/agencies/dynamicdreamz/",
+    },
+  ],
+  tabletSlider: {
+    bgShapeSrc:
+      "/assets/services/shopify-development-in-bangalore/hero/slide-bg-shape.svg",
+    topBadge: {
+      src: "/assets/services/magento-development/hero/magento-rectangle-logo.webp",
+      alt: "Magento",
+      width: 346,
+      height: 212,
+    },
+    bottomBadge: {
+      src: "/assets/services/magento-development/hero/magento-square-logo.webp",
+      alt: "Magento Logo",
+      width: 260,
+      height: 252,
+    },
+    slides: [
+      {
+        src: "/assets/services/magento-development/hero/slide-united-cheer-apparel.webp",
+        alt: "United Cheer Apparel Magento Store",
+        width: 800,
+        height: 1190,
+      },
+      {
+        src: "/assets/services/magento-development/hero/slide-city-circuit.webp",
+        alt: "Circuit City Magento Store",
+        width: 800,
+        height: 1190,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-green-future-energy.webp",
+        alt: "Green Future Energy Storefront",
+        width: 800,
+        height: 1190,
+      },
+      {
+        src: "/assets/services/magento-development/hero/slide-maxi-cosi.webp",
+        alt: "Maxi Cosi Magento Store",
+        width: 800,
+        height: 1190,
+      },
+    ],
+  },
 } as const;
 
-export const magentoDevelopmentBrands: readonly ClientLogoSliderItem[] = [
-  {
-    src: "/assets/clients/supertails.svg",
-    href: "https://supertails.com/",
-    alt: "Supper Tails Logo",
-    width: 164,
-    height: 41,
-  },
-  {
-    src: "/assets/clients/eleven-eleven.svg",
-    href: "https://11-11.in/",
-    alt: "Eleven Eleven",
-    width: 145,
-    height: 20,
-  },
-  {
-    src: "/assets/clients/bella-vita.svg",
-    href: "https://bellavitaorganic.com/",
-    alt: "bellavita logo",
-    width: 166,
-    height: 24,
-  },
-  {
-    src: "/assets/clients/bombay-shirt-company.svg",
-    href: "https://www.bombayshirts.com/",
-    alt: "Bombay Shirt Company",
-    width: 204,
-    height: 26,
-  },
-  {
-    src: "/assets/clients/popclub.svg",
-    href: "https://popclub.co/",
-    alt: "Popclub",
-    width: 65,
-    height: 41,
-  },
-  {
-    src: "/assets/clients/sri-sri-tattva.svg",
-    href: "https://www.srisritattva.com/",
-    alt: "SriSri Tattva Logo",
-    width: 106,
-    height: 40,
-  },
-  {
-    src: "/assets/clients/tropicfeel.svg",
-    href: "https://shop.tropicfeel.com/",
-    alt: "tropicfeel logo",
-    width: 150,
-    height: 32,
-  },
-  {
-    src: "/assets/clients/renee.svg",
-    href: "https://www.reneecosmetics.in/",
-    alt: "Renee logo",
-    width: 93,
-    height: 30,
-  },
-  {
-    src: "/assets/clients/royce-chocolate.svg",
-    href: "https://royceindia.com/",
-    alt: "Royce chocolate logo",
-    width: 132,
-    height: 38,
-  },
-  {
-    src: "/assets/clients/tego.svg",
-    href: "https://tego.fit/",
-    alt: "tego logo",
-    width: 101,
-    height: 40,
-  },
-  {
-    src: "/assets/clients/nelter.svg",
-    href: "https://www.nekterjuicebar.com/",
-    alt: "nekter-colored",
-    width: 66,
-    height: 64,
-  },
-  {
-    src: "/assets/clients/rare-rabbit.svg",
-    href: "https://thehouseofrare.com/",
-    alt: "Rare Rabbit Logo",
-    width: 122,
-    height: 84,
-  },
-];
+export const magentoDevelopmentBrands = {
+  title: "Trusted by <br>Leading Brands",
+  items: [
+    {
+      src: "/assets/clients/tego.svg",
+      href: "https://tego.fit/",
+      alt: "tego logo",
+      width: 101,
+      height: 40,
+    },
+    {
+      src: "/assets/clients/nelter.svg",
+      href: "https://www.nekterjuicebar.com/",
+      alt: "nekter-colored",
+      width: 66,
+      height: 64,
+    },
+    {
+      src: "/assets/clients/rare-rabbit.svg",
+      href: "https://thehouseofrare.com/",
+      alt: "Rare Rabbit Logo",
+      width: 122,
+      height: 84,
+    },
+    {
+      src: "/assets/clients/supertails.svg",
+      href: "https://supertails.com/",
+      alt: "Supper Tails Logo",
+      width: 164,
+      height: 41,
+    },
+    {
+      src: "/assets/clients/eleven-eleven.svg",
+      href: "https://11-11.in/",
+      alt: "Eleven Eleven",
+      width: 145,
+      height: 20,
+    },
+    {
+      src: "/assets/clients/bella-vita.svg",
+      href: "https://bellavitaorganic.com/",
+      alt: "bellavita logo",
+      width: 166,
+      height: 24,
+    },
+    {
+      src: "/assets/clients/bombay-shirt-company.svg",
+      href: "https://www.bombayshirts.com/",
+      alt: "Bombay Shirt Company",
+      width: 204,
+      height: 26,
+    },
+    {
+      src: "/assets/clients/popclub.svg",
+      href: "https://popclub.co/",
+      alt: "Popclub",
+      width: 65,
+      height: 41,
+    },
+    {
+      src: "/assets/clients/sri-sri-tattva.svg",
+      href: "https://www.srisritattva.com/",
+      alt: "SriSri Tattva Logo",
+      width: 106,
+      height: 40,
+    },
+    {
+      src: "/assets/clients/tropicfeel.svg",
+      href: "https://shop.tropicfeel.com/",
+      alt: "tropicfeel logo",
+      width: 150,
+      height: 32,
+    },
+    {
+      src: "/assets/clients/renee.svg",
+      href: "https://www.reneecosmetics.in/",
+      alt: "Renee logo",
+      width: 93,
+      height: 30,
+    },
+    {
+      src: "/assets/clients/royce-chocolate.svg",
+      href: "https://royceindia.com/",
+      alt: "Royce chocolate logo",
+      width: 132,
+      height: 38,
+    },
+  ] satisfies readonly ClientLogoSliderItem[],
+} as const;
+
+export type MagentoServiceCardItem = {
+  iconKey: MagentoServiceIconName;
+  title: string;
+  description: string;
+};
 
 export const magentoDevelopmentServices = {
   heading: "What We Provide",
   description:
-    "Explore our range of Magento development services. From custom store creation to ongoing support, we’ve got you covered.",
+    "Our Magento development services cover custom store development, migration, performance, themes, modules and ongoing support for both new and existing ecommerce stores.",
   items: [
     {
-      icon: "/assets/services/magento-development/custom-store-icon.svg",
-      iconAlt: "Cart Icon",
+      iconKey: "custom-store-solutions",
       title: "Custom Store Solutions",
       description:
-        "Dynamic Dremaz helps you create Magento stores that are just right for your business. We provide solutions tailored to your needs, from establishing your online store to including unique features.",
+        "Build or improve a Magento store around your catalog, customer journey, operational requirements and approved design, including custom functionality where required.",
     },
     {
-      icon: "/assets/hire-shopify-developers/icons/shopify-migration.svg",
-      iconAlt: "Migration Icon",
+      iconKey: "easy-migration",
       title: "Easy Migration",
       description:
-        "Want to transfer your store from another platform to Magento? We make the transition easy and worry free, ensuring all your data and products move smoothly.",
+        "Plan and execute migrations to Magento with structured handling of products, customers, content, URLs and other store data based on the source platform and project scope.",
     },
     {
-      icon: "/assets/services/magento-development/speed-optimization-icon.svg",
-      iconAlt: "speed optimisation icon",
+      iconKey: "speed-optimization",
       title: "Speed Optimization",
       description:
-        "We focus on making your Magento store faster. Faster load times improve user experience and increase your chances of turning visitors into customers.",
+        "Review themes, modules, images, caching, scripts and front-end implementation to identify performance issues and improve loading speed where practical.",
     },
     {
-      icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
-      iconAlt: "custom themes icon",
+      iconKey: "custom-themes-development",
       title: "Custom Themes Development",
       description:
-        "Stand out with a custom designed Magento theme. We create themes that match your brand and make your store look stunning.",
+        "Develop or customize Magento themes to match your brand, approved design and storefront requirements across desktop, tablet and mobile.",
     },
     {
-      icon: "/assets/services/magento-development/module-icon.svg",
-      iconAlt: "Module Development Icon",
+      iconKey: "custom-modules",
       title: "Custom Modules",
       description:
-        "Need extra functionalities? We develop custom Magento modules to enhance your store’s performance and user experience.",
+        "Extend Magento with custom modules and functionality based on your business workflow, including third-party integrations where suitable APIs are available.",
     },
     {
-      icon: "/assets/services/magento-development/ongoing-support-icon.svg",
-      iconAlt: "Ongoing Support Icon",
+      iconKey: "ongoing-support",
       title: "Ongoing Support",
       description:
-        "Our work and support don’t stop at the store launch. We offer continuous maintenance and support to keep your Magento store running smoothly and address any issues.",
+        "Support your Magento store after launch with troubleshooting, updates, compatibility checks, performance work, new features and continuous development as required.",
     },
-  ],
-  cta: {
-    label: "Let me give you a hand to help you",
-    href: "/request-quote",
-    ariaLabel: "Dynamic Dreamz - Let me give you a hand to help you",
-  },
+  ] satisfies readonly MagentoServiceCardItem[],
+} as const;
+
+export const magentoDevelopmentCapabilities = {
+  heading: "Magento Open Source & Adobe Commerce Capabilities",
+  description:
+    "For stores with more complex catalogs, operations or integrations, our Magento team can support additional development around APIs, multi-store setups, platform upgrades and custom commerce workflows based on the project requirements.",
+  items: [
+    {
+      title: "API & Third-Party Integrations",
+      description:
+        "Connect Magento with payment, shipping, CRM, ERP, marketing or other business systems where suitable APIs and documentation are available.",
+    },
+    {
+      title: "Multi-Store & International Setup",
+      description:
+        "Support Magento websites, stores and store views for different brands, regions, languages or currencies when the business requires a multi-store structure.",
+    },
+    {
+      title: "Version Upgrades & Compatibility",
+      description:
+        "Plan Magento upgrades and review themes, extensions and custom code for compatibility before deployment.",
+    },
+    {
+      title: "Complex Commerce Workflows",
+      description:
+        "Support custom catalog, customer, checkout or operational workflows based on the Magento edition, existing setup and agreed project scope.",
+    },
+  ] satisfies readonly EvaluationFrameworkItem[],
+} as const;
+
+export const magentoDevelopmentEngagements = {
+  eyebrow: "Flexible Magento Engagements",
+  heading: "Choose the Right Magento Engagement",
+  description:
+    "Start with one Magento project, use flexible hourly support, or add a dedicated developer / team around your ongoing ecommerce roadmap.",
+  items: [
+    {
+      label: "Project-Based",
+      badge: "Have One Project?",
+      price: "Custom Quote",
+      description:
+        "For complete Magento builds, migrations, redesigns, B2B requirements, custom development, integrations, and technically complex ecommerce projects.",
+      ctaLabel: "Send Brief — Get a Quote in 24 Hours",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Flexible Hourly Support",
+      badge: "Need Extra Magento Capacity?",
+      price: "$20/hour",
+      description:
+        "For ongoing maintenance, enhancements, troubleshooting, performance improvements and changing Magento development requirements.",
+      ctaLabel: "Buy Magento Development Hours",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Dedicated Developer / Team",
+      badge: "Need Ongoing Capacity?",
+      price: "From $2,000/month",
+      description:
+        "For brands with a steady Magento roadmap, multiple storefronts, or a need for a dedicated developer or wider delivery team.",
+      ctaLabel: "Discuss a Dedicated Team",
+      ctaHref: "/book-a-discovery-call",
+    },
+  ] satisfies readonly PricingEngagementItem[],
 } as const;
 
 export const magentoDevelopmentPortfolio = {
+  eyebrow: "Portfolio",
   heading: "See Our Magento Work in Action",
   description:
-    "We’re proud of what we do. Check out some of our successful Magento projects to see <br> how we’ve helped businesses like yours.",
-  category: "Magento",
-  platformMark: {
-    src: "/assets/platforms/magento-white.svg",
-    width: 89,
-    height: 26,
+    "Explore selected Magento projects delivered by our team across ecommerce development, theme work, custom functionality and ongoing improvements.",
+  cta: {
+    label: "View our work",
+    href: "/our-work",
+    ariaLabel: "View our work",
   },
   items: [
     {
       name: "Maxi Cosi",
+      category: "Magento",
       image: "/assets/our-work/projects/maxi-cosi.webp",
-      imageAlt: "Maxi Cosi",
+      imageAlt: "Maxi Cosi Image",
       href: "https://www.maxi-cosi.com.au/",
     },
     {
       name: "Caves Santa Cruz",
+      category: "Magento",
       image: "/assets/our-work/projects/caves-santa-cruz.webp",
-      imageAlt: "Caves Santa Cruz",
+      imageAlt: "Caves Santa Cruz Image",
       href: "https://www.cavessantacruz.com.br/",
     },
     {
       name: "City Circuit",
+      category: "Magento",
       image: "/assets/our-work/projects/city-circuit.webp",
-      imageAlt: "City Circuit",
+      imageAlt: "City Circuit Image",
       href: "https://circuitcity.com/",
     },
     {
-      name: "Sambazon",
-      image: "/assets/our-work/projects/sambazon.webp",
-      imageAlt: "Sambazon",
-      href: "https://www.sambazon.com/",
-    },
-    {
-      name: "Chers",
-      image: "/assets/our-work/projects/chers.webp",
-      imageAlt: "Chers",
-      href: "https://chers.com/",
-    },
-    {
       name: "United Cheer Apparel",
+      category: "Magento",
       image: "/assets/our-work/projects/united-cheer-apparel.webp",
-      imageAlt: "United Cheer Apparel",
+      imageAlt: "United Cheer Apparel Image",
       href: "https://unitedcheerapparel.com/",
     },
   ],
@@ -211,39 +334,49 @@ export const magentoDevelopmentTestimonials = {
 
 export const magentoDevelopmentFaqs: readonly FaqAccordionItem[] = [
   {
-    question: "What does Magento development involve?",
+    question: "What Magento development services does Dynamic Dreamz provide?",
     answer:
-      "Magento development is about creating and managing online stores using the Magento platform. It includes everything from design and customization to optimization.",
+      "We provide custom Magento store development, theme development and customization, custom modules, migrations, performance improvements, integrations and ongoing support for Magento Open Source and Adobe Commerce projects.",
   },
   {
-    question: "Why should I pick Dynamic Dreamz for my Magento store requirements?",
+    question: "Do you work with both Magento Open Source and Adobe Commerce?",
     answer:
-      "We offer expert Magento development services with customized solutions to fit your business perfectly. We focus on delivering a store that performs well and meets your goals.",
+      "Yes. The right approach depends on the edition, existing architecture, business requirements and available features. We review the current setup before confirming scope, compatibility and implementation.",
   },
   {
-    question: "Can you help me move my store to Magento?",
+    question: "Can you migrate my existing store to Magento?",
     answer:
-      "Yes, of course! We handle all aspects of migrating your existing store to Magento, ensuring a smooth transition without data loss.",
+      "Yes. We can plan migrations from another ecommerce platform to Magento. The migration scope can include products, customers, content, images, URLs and other store data depending on the source platform and available data.",
   },
   {
-    question: "What are custom themes, and why are they important?",
+    question: "Can you work on an existing Magento store?",
     answer:
-      "Custom themes are unique designs for your Magento store that help it stand out and align with your brand. They improve the look and feel of your online store.",
+      "Yes. We can take over an existing Magento store for theme changes, modules, bug fixes, performance improvements, integrations, upgrades and ongoing development after reviewing the existing codebase and extensions.",
   },
   {
-    question: "Will my Magento store perform well?",
+    question: "Can you integrate Magento with ERP, CRM, payment or shipping systems?",
     answer:
-      "Yes, we focus on optimizing your store for speed and efficiency, providing a good user experience.",
+      "Yes, where the third-party system provides suitable APIs or integration methods. We review the workflow, API documentation, data requirements and error-handling needs before confirming the integration scope.",
   },
   {
-    question: "Do you offer support after my store is live?",
+    question: "Can you help improve Magento store performance?",
     answer:
-      "Absolutely! We provide ongoing support and maintenance to ensure your store stays updated and runs smoothly.",
+      "Yes. We can review themes, modules, images, caching, scripts and other implementation factors that may affect loading performance. Final results depend on the hosting environment, extensions, catalog size and overall store architecture.",
   },
   {
-    question: "How much will Magento development cost?",
+    question: "How long does Magento development take?",
     answer:
-      "The cost varies based on your project requirements. We offer competitive rates and will give you a detailed quote once we discuss your needs.",
+      "Timing depends on the scope. Theme changes or focused development tasks may take a few days or weeks, while a complete custom Magento build, migration or complex integration can require several weeks or more. We confirm the timeline after reviewing the requirements.",
+  },
+  {
+    question: "How much does Magento development cost?",
+    answer:
+      "Cost depends on the store, design, modules, integrations, migration requirements and technical complexity. We provide a project estimate or support model after reviewing the requirements.",
+  },
+  {
+    question: "Do you provide ongoing Magento maintenance and support?",
+    answer:
+      "Yes. We can provide ongoing support for troubleshooting, updates, compatibility checks, performance work, new features, integrations and continuous Magento development based on the agreed engagement model.",
   },
 ];
 
