@@ -228,10 +228,6 @@ export const siteMapLinks: readonly SiteMapLinkItem[] = [
     "href": "/magento-to-shopify-plus-migration"
   },
   {
-    "label": "Magento Web Development",
-    "href": "/magento-web-development"
-  },
-  {
     "label": "Migrating a theme to Online Store 2.0",
     "href": "/migrating-a-theme-to-online-store-2-0"
   },

@@ -145,6 +145,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/magento-web-development",
+        destination: "/magento-development",
+        permanent: true,
+      },
+      {
         source: "/upgrade-to-shopify-plus-2",
         destination: "/upgrade-to-shopify-plus",
         permanent: true,
