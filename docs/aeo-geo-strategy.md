@@ -3864,7 +3864,7 @@ Commercial service landing page demonstrating Dynamic Dreamz's 18+ years of Word
 ## BigCommerce Development (`/bigcommerce-development`)
 
 Status: implemented; live-visible content preserved
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-29
 Owner: SEO, content, development, leadership, sales, and ecommerce delivery operations
 Primary audience: eCommerce merchants, DTC retailers, B2B brands, and digital agencies seeking BigCommerce store development.
 Decision stage: commercial evaluation and partner selection
@@ -3879,18 +3879,19 @@ Commercial BigCommerce service page covering theme customization, app configurat
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | BigCommerce route required local App Router metadata and discovery | Emit slashless canonical, sitemap, robots, metadata, and redirects through shared helpers | URL policy and production build passed |
 | P0 | implemented | Structured data | Service, FAQ, and video context needed route-scoped schema | Emit Service with 5 offers, FAQPage with 6 items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered schema verification |
+| P1 | deferred | Copy cleanup | Section 7 copy references WordPress instead of BigCommerce | Update visible copy after explicit client/owner approval | Logged in `page-content-improvements.md` |
 | P1 | deferred | Evidence | Portfolio cards do not expose approved scope or outcomes | Add case-study evidence only after client attribution and outcome approval | Client-success approval |
 
 ### Structured-data, crawler, and freshness actions
 
 - Keep `/bigcommerce-development` slashless and indexable.
-- Use the explicit 2026-08-19 migration review date for `dateModified`.
+- Use the explicit 2026-09-18 live site modified time (`2026-09-18T12:51:33+00:00`) for `dateModified`.
 - Keep visible review values and client claims aligned with approved sources.
 
 ### Verification and remaining gaps
 
-- URL-policy, metadata, schema, responsive rendering, local assets, lint, and production build checks passed on 2026-08-19.
-- Remaining: approved case-study evidence and deeper internal links.
+- URL-policy, metadata, schema, responsive rendering, local assets, duplicate check, lint, and production build checks passed on 2026-09-29.
+- Parity verified against live site layout: hero with tablet mockup slider, 12 client brands, intro text, 5 services without CTA, yellow platform benefits, transparent 4-step development process, green agency advantages, 4 portfolio cards in 4-column layout with CTA to `/our-work`, 11 video testimonials, 6 FAQs, and omitted bottom banner.
 
 ## Site Map (`/site-map`)
 

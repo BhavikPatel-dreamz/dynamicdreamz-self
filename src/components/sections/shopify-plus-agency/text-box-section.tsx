@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { formatBrText } from "@/lib/text-formatting";
+import { cn } from "@/lib/class-names";
 
 export type TextBoxSectionProps = {
   heading: string;
@@ -8,6 +9,7 @@ export type TextBoxSectionProps = {
   subheading?: string;
   listItems?: readonly string[];
   className?: string;
+  variant?: "green" | "cream";
 };
 
 export function TextBoxSection({
@@ -16,21 +18,38 @@ export function TextBoxSection({
   paragraphs,
   subheading,
   listItems,
-  className = "single-text-box-sec pb-0",
+  className,
+  variant = "green",
 }: TextBoxSectionProps) {
   const contentParagraphs = paragraphs ?? (text ? [text] : []);
+  const isGreen = variant === "green";
 
   return (
-    <section className={className} data-section="single-text-box">
+    <section
+      className={cn(
+        "single-text-box-sec pb-0 pt-20 max-[991px]:pt-[50px]",
+        className,
+      )}
+      data-section="single-text-box"
+    >
       <Container>
-        <div className="text-box-wrap rounded-[20px] bg-[#fbf7ed] px-[55px] py-[70px] max-[1199px]:p-[30px_20px]">
-          <div className="text mx-[15px] max-[1199px]:mx-0">
-            <h2 className="mb-3 text-center font-montreal-medium text-[35px] leading-[48.475px] font-medium tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl">
+        <div
+          className={cn(
+            "text-box-wrap text-center",
+            isGreen
+              ? "rounded-[30px] border-[1.5px] border-[rgba(23,30,22,0.1)] bg-[#eff4ef] p-10 max-[767px]:p-5"
+              : "rounded-[20px] bg-[#fbf7ed] px-[55px] py-[70px] max-[1199px]:p-[30px_20px]",
+          )}
+        >
+          <div className="title mb-3">
+            <h2 className="text-center font-montreal-medium text-[30px] font-normal leading-[42px] tracking-normal text-ink min-[1200px]:text-[35px] min-[1200px]:leading-[49px] max-[767px]:text-2xl max-[767px]:leading-8">
               {formatBrText(heading, "max-[1199px]:hidden")}
             </h2>
+          </div>
+          <div className={cn("text", isGreen ? "m-0" : "mx-[15px] max-[1199px]:mx-0")}>
             {contentParagraphs.map((paragraph, index) => (
               <p
-                className="single-text-box-desc mb-6 text-center text-sm leading-[24px] font-normal text-[#535353] last:mb-0 max-[992px]:text-sm max-[992px]:leading-[27px]"
+                className="single-text-box-desc mb-[15px] text-center font-montserrat text-sm font-normal leading-6 text-[#535353] last:mb-0 max-[992px]:text-sm max-[992px]:leading-[27px]"
                 key={index}
               >
                 {paragraph}

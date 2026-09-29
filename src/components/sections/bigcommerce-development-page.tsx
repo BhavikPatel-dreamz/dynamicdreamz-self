@@ -1,19 +1,16 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
-import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import {
-  ShopifyAdvantagesSection,
-  ShopifyReasonsSection,
-} from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
+import { BigCommerceIcon } from "@/components/sections/bigcommerce/bigcommerce-icons";
+import { CityPageHeroSection } from "@/components/sections/city-page-hero-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ProcessWaveSection } from "@/components/sections/process-wave-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
 import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
 import {
   bigCommerceDevelopmentBrands,
-  bigCommerceDevelopmentCtaBanner,
+  bigCommerceDevelopmentBrandsHeading,
   bigCommerceDevelopmentFaqs,
   bigCommerceDevelopmentHero,
   bigCommerceDevelopmentIntro,
@@ -26,36 +23,75 @@ import {
 } from "@/content/bigcommerce-development";
 
 export function BigCommerceDevelopmentPage() {
+  const servicesContent = {
+    ...bigCommerceDevelopmentServices,
+    items: bigCommerceDevelopmentServices.items.map((item) => ({
+      ...item,
+      iconSvg: <BigCommerceIcon name={item.iconKey} />,
+    })),
+  };
+
+  const whyChoosePlatformContent = {
+    ...bigCommerceWhyChoosePlatform,
+    boxes: bigCommerceWhyChoosePlatform.boxes.map((box) => ({
+      ...box,
+      icon: <BigCommerceIcon name={box.iconKey} />,
+    })),
+  };
+
+  const whyChooseAgencyContent = {
+    ...bigCommerceWhyChooseAgency,
+    boxes: bigCommerceWhyChooseAgency.boxes.map((box) => ({
+      ...box,
+      icon: <BigCommerceIcon name={box.iconKey} />,
+    })),
+  };
+
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection content={bigCommerceDevelopmentHero} />
+      <CityPageHeroSection
+        className="hide-logo"
+        content={bigCommerceDevelopmentHero}
+      />
       <IndustryBrandsSection
         content={{
           slug: "bigcommerce-development",
         }}
+        heading={bigCommerceDevelopmentBrandsHeading}
         items={bigCommerceDevelopmentBrands}
       />
       <TextBoxSection
-        className="single-text-box-sec pb-0"
+        className="single-text-box-sec pb-0 pt-20"
         heading={bigCommerceDevelopmentIntro.heading}
         paragraphs={bigCommerceDevelopmentIntro.paragraphs}
       />
-      <AgencyServicesSection content={bigCommerceDevelopmentServices} />
-      <ShopifyReasonsSection
-        className="shopify-customization-services-sec mt-20 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[767px]:py-[60px]"
-        content={bigCommerceWhyChoosePlatform}
-        id="why-choose-bigcommerce"
+      <AgencyServicesSection
+        cardVariant="services-box"
+        content={servicesContent}
+        eyebrow={bigCommerceDevelopmentServices.eyebrow}
+        hideCta
+        id="services"
       />
-      <ProcessWaveSection content={bigCommerceDevelopmentProcess} />
-      <ShopifyAdvantagesSection
-        align="left"
-        className="three-column-icon-with-text-sec why_dynamic_dreamz_sec py-20 max-[767px]:py-[60px]"
-        content={bigCommerceWhyChooseAgency}
+      <ThemeCustomizationServicesSection
+        content={whyChoosePlatformContent}
+        id="why-choose-bigcommerce"
+        variant="yellow"
+      />
+      <OurDevelopmentProcessSection
+        className="our-development-process bg-transparent"
+        content={bigCommerceDevelopmentProcess}
+      />
+      <ThemeCustomizationServicesSection
+        content={whyChooseAgencyContent}
         id="why-choose-dynamicdreamz"
+        variant="green"
       />
       <PortfolioShowcaseSection
-        className="our-work-sec pb-20 max-[992px]:pb-[60px]"
+        cardVariant="ourWorkRefresh"
+        columns={4}
         content={bigCommerceDevelopmentPortfolio}
+        eyebrow={bigCommerceDevelopmentPortfolio.eyebrow}
+        sectionId="our_work"
       />
       <HappyClientSection
         description={bigCommerceDevelopmentTestimonials.description}
@@ -65,11 +101,6 @@ export function BigCommerceDevelopmentPage() {
       <SplitFaqSection
         idPrefix="bigcommerce-faq"
         items={bigCommerceDevelopmentFaqs}
-      />
-      <CtaBannerSection
-        ctaHref={bigCommerceDevelopmentCtaBanner.ctaHref}
-        ctaLabel={bigCommerceDevelopmentCtaBanner.ctaLabel}
-        heading={bigCommerceDevelopmentCtaBanner.heading}
       />
     </div>
   );

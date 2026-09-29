@@ -20,6 +20,8 @@ export type CityPageHeroContent = {
   title: string;
   description: string;
   secondaryDescription?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
   primaryCta?: {
     label: string;
     href: string;
@@ -44,6 +46,14 @@ export function CityPageHeroSection({
   paddingClassName = "pt-[91px] pb-0 max-[991px]:pt-16 max-[991px]:pb-0",
 }: CityPageHeroSectionProps) {
   const hasTabletSlider = Boolean(content.tabletSlider);
+  const primaryCta =
+    content.primaryCta ??
+    (content.ctaLabel && content.ctaHref
+      ? { label: content.ctaLabel, href: content.ctaHref }
+      : undefined);
+  const isHideLogo = Boolean(
+    className?.includes("hide-logo") || (content.badges && content.badges.length === 3),
+  );
 
   return (
     <section
@@ -98,15 +108,15 @@ export function CityPageHeroSection({
                   {content.secondaryDescription}
                 </p>
               )}
-              {(content.primaryCta || content.secondaryCta) && (
+              {(primaryCta || content.secondaryCta) && (
                 <div className="btn-group mt-6 flex items-center gap-3.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:gap-2.5">
-                  {content.primaryCta && (
+                  {primaryCta && (
                     <ButtonLink
                       variant="primary"
-                      href={content.primaryCta.href}
+                      href={primaryCta.href}
                       className="max-[767px]:w-full"
                     >
-                      {content.primaryCta.label}
+                      {primaryCta.label}
                     </ButtonLink>
                   )}
                   {content.secondaryCta && (
@@ -124,12 +134,22 @@ export function CityPageHeroSection({
 
             {content.badges && content.badges.length > 0 && (
               <div
-                className="global_brands_grid_wrap relative mt-[30px] -mx-[15px] flex items-center max-[1199px]:justify-center max-[767px]:-mx-[15px] max-[767px]:w-[calc(100%+30px)] max-[767px]:flex-wrap max-[767px]:overflow-hidden max-[767px]:before:absolute max-[767px]:before:top-0 max-[767px]:before:left-1/2 max-[767px]:before:block max-[767px]:before:h-full max-[767px]:before:w-px max-[767px]:before:-translate-x-1/2 max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] max-[767px]:after:absolute max-[767px]:after:top-1/2 max-[767px]:after:left-5 max-[767px]:after:block max-[767px]:after:h-px max-[767px]:after:w-[calc(100%-40px)] max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']"
+                className={cn(
+                  "global_brands_grid_wrap relative mt-[30px] -mx-[15px] flex items-center max-[1199px]:justify-center max-[767px]:-mx-[15px] max-[767px]:w-[calc(100%+30px)] max-[767px]:flex-wrap max-[767px]:overflow-hidden",
+                  isHideLogo
+                    ? "max-[767px]:before:hidden max-[767px]:after:hidden"
+                    : "max-[767px]:before:absolute max-[767px]:before:top-0 max-[767px]:before:left-1/2 max-[767px]:before:block max-[767px]:before:h-full max-[767px]:before:w-px max-[767px]:before:-translate-x-1/2 max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] max-[767px]:after:absolute max-[767px]:after:top-1/2 max-[767px]:after:left-5 max-[767px]:after:block max-[767px]:after:h-px max-[767px]:after:w-[calc(100%-40px)] max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']",
+                )}
                 aria-label="Partnerships and independent review profiles"
               >
                 {content.badges.map((badge, idx) => (
                   <div
-                    className="global_brands_item relative border-r border-[#d9d9d9] px-[15px] first:pl-[15px] last:border-r-0 max-[767px]:w-1/2 max-[767px]:border-0 max-[767px]:p-3.5 max-[767px]:text-center"
+                    className={cn(
+                      "global_brands_item relative border-r border-[#d9d9d9] px-[15px] first:pl-[15px] last:border-r-0",
+                      isHideLogo
+                        ? "max-[767px]:w-1/3 max-[767px]:border-r max-[767px]:border-[#d9d9d9] max-[767px]:last:border-r-0 max-[767px]:p-2.5 max-[767px]:text-center"
+                        : "max-[767px]:w-1/2 max-[767px]:border-0 max-[767px]:p-3.5 max-[767px]:text-center",
+                    )}
                     key={`${badge.href}-${idx}`}
                   >
                     <a

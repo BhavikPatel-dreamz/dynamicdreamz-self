@@ -700,13 +700,14 @@ Primary SEO intent: WordPress theme customization services, custom WordPress the
 ## BigCommerce Development (`/bigcommerce-development`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-29
 Primary SEO intent: BigCommerce development services, BigCommerce theme customization, private app development, Figma conversion, and maintenance.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
 | Meta title | `BigCommerce Development Company India | Dynamic Dreamz` | Preserved route metadata within the SEO title budget. | Maintains core commercial intent without truncation. | High | implemented in metadata |
 | Service and FAQ schema | Legacy page lacked complete route-scoped schema. | Emitted `Service` with `OfferCatalog` (5 offers), `FAQPage` (6 questions/answers), and 11 `VideoObject` nodes. | Improves machine-readable service and proof context without changing visible UI. | High | implemented in schema |
+| Why Choose Dynamic Dreamz (Section 7) | Mentions "WordPress website" and "WordPress developers" in section description, box 1 ("...our WordPress developers have the skills..."), and box 6 ("...to keep your WordPress website safe..."). | Replace "WordPress" with "BigCommerce" across Section 7 description, box 1, and box 6. | Eliminates platform copy mix-up on BigCommerce service page while preserving live UI until explicitly approved. | Medium | deferred pending exact visible-copy approval |
 | Portfolio evidence | External project links lack approved scope and outcomes. | Add internal case-study evidence when attribution and outcomes are approved. | Supports citation-worthy proof. | Medium | deferred pending client-success approval |
 
 ## Site Map (`/site-map`)
