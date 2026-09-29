@@ -523,9 +523,9 @@ export const pageSeo = {
   },
   wordpressDevelopmentCompany: {
     path: "/wordpress-development-company",
-    title: "Hire WordPress Development Company India | Dynamic Dreamz",
+    title: "WordPress Development Company in India | Dynamic Dreamz",
     description:
-      "Hire Dynamic Dreamz, a WordPress development company in India, for custom websites, themes, plugins, WooCommerce, migration, optimization and support.",
+      "Work with an India-based WordPress development company for custom websites, themes, plugins, WooCommerce, integrations, performance, and ongoing support.",
     keywords: [
       "WordPress development company India",
       "WordPress website development company",
@@ -551,7 +551,7 @@ export const pageSeo = {
     path: "/hire-wordpress-developers",
     title: "Hire WordPress Developers | Dynamic Dreamz",
     description:
-      "Hire dedicated WordPress developers and teams for custom websites, WooCommerce, themes, plugins, support and end-to-end delivery from Dynamic Dreamz.",
+      "Hire WordPress developers for custom themes, plugins, WooCommerce, performance, integrations, ongoing support. Flexible hourly, project or dedicated engagement.",
     keywords: [
       "hire WordPress developers",
       "dedicated WordPress developers",

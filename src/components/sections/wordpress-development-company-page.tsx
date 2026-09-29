@@ -1,71 +1,117 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
-import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { CityPageHeroSection } from "@/components/sections/city-page-hero-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ProcessWaveSection } from "@/components/sections/process-wave-section";
-import { ServiceBenefitsTimelineSection } from "@/components/sections/service-benefits-timeline-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
+import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
+import { WordPressCustomizationIcon } from "@/components/sections/wordpress/wordpress-customization-icons";
 import {
-  wordpressDevelopmentCompanyBenefits,
   wordpressDevelopmentCompanyBrands,
-  wordpressDevelopmentCompanyCta,
   wordpressDevelopmentCompanyFaqs,
   wordpressDevelopmentCompanyHero,
   wordpressDevelopmentCompanyPortfolio,
+  wordpressDevelopmentCompanyPricing,
   wordpressDevelopmentCompanyProcess,
-  wordpressDevelopmentCompanyReasons,
   wordpressDevelopmentCompanyServices,
   wordpressDevelopmentCompanyTestimonials,
+  wordpressDevelopmentCompanyWhyChoose,
+  wordpressDevelopmentCompanyWhyWordPress,
 } from "@/content/wordpress-development-company";
 
 export function WordPressDevelopmentCompanyPage() {
+  const whyChooseContent = {
+    eyebrow: wordpressDevelopmentCompanyWhyChoose.eyebrow,
+    heading: wordpressDevelopmentCompanyWhyChoose.heading,
+    description: wordpressDevelopmentCompanyWhyChoose.description,
+    boxes: wordpressDevelopmentCompanyWhyChoose.boxes.map((box) => ({
+      title: box.title,
+      description: box.description,
+      icon: <WordPressCustomizationIcon name={box.iconKey} />,
+    })),
+  };
+
+  const whyWordPressContent = {
+    eyebrow: wordpressDevelopmentCompanyWhyWordPress.eyebrow,
+    heading: wordpressDevelopmentCompanyWhyWordPress.heading,
+    description: wordpressDevelopmentCompanyWhyWordPress.description,
+    boxes: wordpressDevelopmentCompanyWhyWordPress.boxes.map((box) => ({
+      title: box.title,
+      description: box.description,
+      icon: <WordPressCustomizationIcon name={box.iconKey} />,
+    })),
+  };
+
+  const servicesContent = {
+    ...wordpressDevelopmentCompanyServices,
+    items: wordpressDevelopmentCompanyServices.items.map((item) => ({
+      ...item,
+      iconSvg: item.iconKey ? (
+        <WordPressCustomizationIcon name={item.iconKey} />
+      ) : undefined,
+    })),
+  };
+
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        content={wordpressDevelopmentCompanyHero}
-        imageClassName="!max-w-[446px]"
-        leftColClassName="left-col w-[55.7%] max-[1199px]:w-full max-[1199px]:text-center"
-        reviewClassName="!mt-4 max-[992px]:!mt-4"
-        rightColClassName="right-col w-[41%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[992px]:w-full"
-      />
+      <CityPageHeroSection content={wordpressDevelopmentCompanyHero} />
       <IndustryBrandsSection
         content={wordpressDevelopmentCompanyBrands.content}
-        density="compact"
         items={wordpressDevelopmentCompanyBrands.items}
       />
       <AgencyServicesSection
-        content={wordpressDevelopmentCompanyServices}
+        cardVariant="services-box"
+        className="what-we-provide-sec only-text pb-0 pt-20 max-[992px]:pt-[50px] max-[992px]:pb-0"
+        content={servicesContent}
+        headerLayout="split"
+        headerTextColumnClassName="w-[48.3%] max-[992px]:w-full"
+        headerTitleColumnClassName="w-[44%] max-[992px]:w-full"
         hideCta
-        id="wordpress-development-services"
+        id="services"
+        preserveBreaks
       />
-      <ShopifyReasonsSection
-        carouselFullBleed
-        content={wordpressDevelopmentCompanyReasons}
-        id="why-choose-dynamic-dreamz"
-        layout="carousel"
+      <ThemeCustomizationServicesSection
+        content={whyChooseContent}
+        variant="yellow"
       />
-      <ServiceBenefitsTimelineSection
-        content={wordpressDevelopmentCompanyBenefits}
-        id="why-choose-wordpress"
+      <ThemeCustomizationServicesSection
+        content={whyWordPressContent}
+        variant="green"
       />
-      <ProcessWaveSection content={wordpressDevelopmentCompanyProcess} />
-      <PortfolioShowcaseSection content={wordpressDevelopmentCompanyPortfolio} />
+      <OurDevelopmentProcessSection
+        className="our-development-process bg-transparent"
+        content={wordpressDevelopmentCompanyProcess}
+      />
+      <PricingTableSection
+        className="white_label_wp_develop_plan_section shopify-plus-engagement mb-0 bg-[#edf2ee] py-20 max-[992px]:py-[50px]"
+        content={wordpressDevelopmentCompanyPricing}
+        textColumnClassName="w-[48.3%] max-[992px]:w-full"
+        titleColumnClassName="w-[44%] max-[992px]:w-full"
+      />
+      <PortfolioShowcaseSection
+        cardVariant="ourWorkRefresh"
+        className="our-work-sec py-20 max-[992px]:py-[60px]"
+        columns={4}
+        content={wordpressDevelopmentCompanyPortfolio}
+        eyebrow={wordpressDevelopmentCompanyPortfolio.eyebrow}
+        headerLayout="split"
+        sectionId="our_work"
+        textColumnClassName="w-[48.3%] max-[992px]:w-full"
+        titleColumnClassName="w-[44%] max-[992px]:w-full"
+        variant="liveGrid"
+      />
       <HappyClientSection
         description={wordpressDevelopmentCompanyTestimonials.description}
+        eyebrow={wordpressDevelopmentCompanyTestimonials.eyebrow}
         heading={wordpressDevelopmentCompanyTestimonials.heading}
         items={wordpressDevelopmentCompanyTestimonials.items}
       />
       <SplitFaqSection
+        className="faq-sec"
         idPrefix="wordpress-development-company-faq"
         items={wordpressDevelopmentCompanyFaqs}
-      />
-      <CtaBannerSection
-        ctaHref={wordpressDevelopmentCompanyCta.ctaHref}
-        ctaLabel={wordpressDevelopmentCompanyCta.ctaLabel}
-        heading={wordpressDevelopmentCompanyCta.heading}
       />
     </div>
   );

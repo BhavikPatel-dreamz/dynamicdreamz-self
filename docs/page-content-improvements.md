@@ -414,17 +414,15 @@ agency-partner, recruitment, and office-location needs.
 ## Hire WordPress Developers (`/hire-wordpress-developers`)
 
 Status: visible recommendations deferred; live UI preserved
-Last reviewed: 2026-08-18
+Last reviewed: 2026-09-29
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Hero introduction | Uses the live wording `A typical WordPress development consists of project manager, designer, developer, quality assuror.` | `A typical WordPress project may require a project manager, designer, developer, and quality-assurance specialist. Dynamic Dreamz can coordinate those resources under one roof.` | Corrects grammar and makes the team model answer-ready without changing the hiring intent. | High | deferred pending exact visible-copy approval |
-| Process heading description | `Let Dynamic Dreamz assist you to achive your goals!` | `Let Dynamic Dreamz assist you in achieving your goals.` | Corrects the visible spelling and grammar error. | Low | deferred pending exact visible-copy approval |
-| Portfolio introduction | Ends with `We have served across various verticals` without a closing period or named scope. | `Explore WordPress projects delivered across varied industries and business needs.` | Improves extraction and gives the portfolio section a direct answer. | Medium | deferred pending exact visible-copy approval |
-| Advantage cost claim | `Save up to 60% on your development cost` | `Review a cost-conscious delivery model based on your approved scope.` | Avoids an unsupported savings guarantee until a governed comparison exists. | High | deferred pending sales evidence and exact visible-copy approval |
-| Proof counters | `50+`, `5000+`, `20+`, and `1000+` counters do not expose definitions or provenance. | Add definitions and source dates in approved supporting content without changing the visible counter design. | Improves trust and citation readiness. | High | blocked pending leadership and client-success approval |
-| Inquiry CTA | Live `inquire now` points to `/career/`. | Preserve the label and send the CTA to `/request-quote`. | Fixes a conversion-path error without changing visible copy. | High | implemented as nonvisual link-integrity correction |
-| FAQ pricing answer | Lists dedicated-team, fixed-price, and hourly models without approved rate ranges. | Add approved rate bands, assumptions, and inclusions after sales review. | Helps buyers compare models without inventing pricing. | High | deferred pending sales approval |
+| Meta description | Live description is 161 chars with run-on spacing: `...plugins,WooCommerce, performance, integrations and ongoing support.Flexible hourly...` | `Hire WordPress developers for custom themes, plugins, WooCommerce, performance, integrations, ongoing support. Flexible hourly, project or dedicated engagement.` | Corrects punctuation and fits within the 160-character SEO length budget without changing meaning. | High | implemented in metadata |
+| Hero secondary CTA | `See Pricing` points to `#our_white_label_pricing` | `See Pricing` points to `#our_white_label_pricing` | Preserves live smooth-scroll jump to pricing cards. | Medium | implemented |
+| Pricing card title | `Choose the Right Wordpress Development Engagement.` | `Choose the Right WordPress Development Engagement.` | Corrects platform casing ("Wordpress" -> "WordPress"). | Low | deferred pending exact visible-copy approval |
+| FAQ question | `Can I hire one WordPress developer or a complete WordPress team?` | `Can I hire an individual WordPress developer or a complete team?` | Tightens phrasing while preserving exact user intent. | Low | deferred pending exact visible-copy approval |
+| Project spelling | `Quite Events` | `Quiet Events` | Corrects typographical error in the client name while preserving portfolio links. | Low | deferred pending exact visible-copy approval |
 
 ## Hire Shopify Developers (`/hire-shopify-developers`)
 

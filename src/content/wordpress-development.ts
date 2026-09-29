@@ -1,13 +1,110 @@
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 
 export const wordpressDevelopmentHero = {
+  eyebrows: ["Established in 2006", "Wordpress Development Agency"],
   title: "WordPress Web Development Services",
   description:
     "Transform your online presence with our expert WordPress development services. We craft custom sites and refine themes to match your unique requirements perfectly. Our focus is on creating a website that showcases your brand identity and fulfills your objectives. Let’s bring your digital dreams to life together.",
   secondaryDescription:
     "Our white label WordPress services offer custom development and design, enabling you to deliver top tier websites under your brand.",
-  ctaLabel: "Request a Quote",
-  ctaHref: "/request-quote",
+  primaryCta: {
+    label: "REQUEST A QUOTE",
+    href: "/request-quote",
+  },
+  secondaryCta: {
+    label: "See Our Work",
+    href: "#our_work",
+  },
+  badges: [
+    {
+      src: "/assets/proof/shopify-platinum-partner.svg",
+      alt: "Dynamic Dreamz - Shopify Platinum Partner",
+      width: 136,
+      height: 44,
+      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+    },
+    {
+      src: "/assets/proof/clutch-rating.svg",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      width: 111,
+      height: 44,
+      href: "https://clutch.co/profile/dynamic-dreamz",
+    },
+    {
+      src: "/assets/proof/trustpilot-rating.svg",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      width: 148,
+      height: 50,
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+    },
+    {
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      width: 126,
+      height: 54,
+      href: "https://www.upwork.com/agencies/dynamicdreamz/",
+    },
+  ],
+  tabletSlider: {
+    bgShapeSrc:
+      "/assets/services/shopify-development-in-bangalore/hero/slide-bg-shape.svg",
+    topBadge: {
+      src: "/assets/services/wordpress-development-in-ahmedabad/hero/woocommerce-agency-partner.png",
+      alt: "WooCommerce Agency Partner",
+      width: 173,
+      height: 106,
+    },
+    bottomBadge: {
+      src: "/assets/services/wordpress-development-in-ahmedabad/hero/wordpress-logo.png",
+      alt: "WordPress Logo",
+      width: 130,
+      height: 126,
+    },
+    slides: [
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-green-future-energy.webp",
+        alt: "greenfutureenergy",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-avm.webp",
+        alt: "avm",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-homepage-revised.webp",
+        alt: "HomepageRevised",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-lipari-design.webp",
+        alt: "liparidesign",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-ornago.webp",
+        alt: "ornago",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-syrene.webp",
+        alt: "syrene",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-the-huddle-sports-grill.webp",
+        alt: "thehuddlesportsgrill",
+        width: 1600,
+        height: 2380,
+      },
+    ],
+  },
 } as const;
 
 export const wordpressDevelopmentBrands = {
@@ -21,17 +118,20 @@ export type WordPressServiceItem = {
   title: string;
   icon: string;
   iconAlt: string;
+  iconKey?: string;
   description: string;
   href?: string;
 };
 
 export const wordpressDevelopmentServices = {
+  eyebrow: "Our Services",
   heading: "What We Provide",
   description: "Expertly crafting customized WordPress solutions to ensure digital success.",
   items: [
     {
       icon: "/assets/services/wordpress/wordpress-theme-customization.svg",
       iconAlt: "WordPress Icon",
+      iconKey: "wordpress-theme-customization",
       title: "WordPress Theme Customization Service",
       description:
         "Our expert WordPress developers can customize popular WordPress themes such as Gutenberg, Elementer, Divi Builder, Flatsome UX Builder, etc., to cater to your diverse business requirements. Boost your online presence with our custom WordPress website service. We create unique sites tailored to your brand. Our team ensures your website is easy to use and looks great. Let us help you shine online with our simple, effective solutions.",
@@ -39,6 +139,7 @@ export const wordpressDevelopmentServices = {
     {
       icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
       iconAlt: "theme customization icon",
+      iconKey: "wordpress-custom-theme-development",
       title: "WordPress Custom Theme Development Service",
       description:
         "Can’t you find any of the WordPress themes appealing? We are here to help you with our WordPress custom theme development service. We will craft a completely novel theme that will distinguish your website from competitors and meet your specific needs. We also create user engaging subscription based Learning Management Systems (LMS) using WordPress.",
@@ -46,13 +147,15 @@ export const wordpressDevelopmentServices = {
     {
       icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
       iconAlt: "Plugin Development Icon",
+      iconKey: "wordpress-plugin-development",
       title: "WordPress Plugin Development Service",
       description:
-        "Boost your WordPress website with personalized plugins designed to suit your requirements. Our skilled team creates plugins to enrich functionality and ensure smooth integration. Elevate your site's efficiency and user interaction with our specialized plugin development solutions.",
+        "Boost your WordPress website with personalized plugins designed to suit your requirements. Our skilled team creates plugins to enrich functionality and ensure smooth integration. Elevate your site’s efficiency and user interaction with our specialized plugin development solutions.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-multi-language-website.svg",
       iconAlt: "Multi-Language Icon",
+      iconKey: "wordpress-multi-language-website-development",
       title: "WordPress Multi Language Website Development Service",
       description:
         "Expand your reach with our WordPress multi language website development service. We create sites in English, Spanish, French, German, and many other languages using the WPML plugin for seamless language integration. Enhance the presence of your business by catering to the global audience with a fully translated, user friendly website.",
@@ -60,6 +163,7 @@ export const wordpressDevelopmentServices = {
     {
       icon: "/assets/services/wordpress/woocommerce-development.svg",
       iconAlt: "WooCommerce Icon",
+      iconKey: "woocommerce-development",
       title: "WooCommerce Development Service",
       href: "/woocommerce-development",
       description:
@@ -68,44 +172,44 @@ export const wordpressDevelopmentServices = {
     {
       icon: "/assets/services/wordpress/wordpress-white-label-development.svg",
       iconAlt: "White Label icon",
+      iconKey: "wordpress-white-label-development",
       title: "WordPress White Label Development Service",
       href: "/white-label-wordpress-development-services",
       description:
-        "Our white label WordPress development service enables agencies to offer expert solutions under their brand. From custom themes to plugin development, we deliver seamless, rebranded solutions tailored to your clients' needs. Expand your service offerings without the overhead, and let us be your silent partner in digital success.",
+        "Our white label WordPress development service enables agencies to offer expert solutions under their brand. From custom themes to plugin development, we deliver seamless, rebranded solutions tailored to your clients’ needs. Expand your service offerings without the overhead, and let us be your silent partner in digital success.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-cms-development.svg",
       iconAlt: "WordPress CMS Icon",
+      iconKey: "wordpress-cms-development",
       title: "WordPress CMS Development Service",
       description:
-        "Experience seamless content management with our Headless WordPress service. Manage your site with WordPress's powerful admin interface while delivering a dynamic, high performance front end using Next.js. Benefit from a decoupled architecture that enhances speed, flexibility, and scalability. Perfect for developers and content creators seeking modern web development with robust, user friendly content management systems.",
+        "Experience seamless content management with our Headless WordPress service. Manage your site with WordPress’s powerful admin interface while delivering a dynamic, high performance front end using Next.js. Benefit from a decoupled architecture that enhances speed, flexibility, and scalability. Perfect for developers and content creators seeking modern web development with robust, user friendly content management systems.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-optimization-speed-up.svg",
       iconAlt: "Speed Up Icon",
+      iconKey: "wordpress-optimization-and-speed-up",
       title: "WordPress Optimization and Speed up Service",
       description:
-        "Boost your WordPress site's rankings and user experience with our WordPress optimization services. We optimize loading times, streamline code, and improve SEO rankings. From image optimization to caching solutions, we ensure your site operates at peak efficiency, driving increased traffic and conversions. We fine tune every aspect for maximum performance. Let us optimize your site for better visibility and success!",
+        "Boost your WordPress site’s rankings and user experience with our WordPress optimization services. We optimize loading times, streamline code, and improve SEO rankings. From image optimization to caching solutions, we ensure your site operates at peak efficiency, driving increased traffic and conversions. We fine tune every aspect for maximum performance. Let us optimize your site for better visibility and success!",
     },
     {
       icon: "/assets/services/wordpress/wordpress-maintenance.svg",
       iconAlt: "maintenance icon",
+      iconKey: "wordpress-maintenance",
       title: "WordPress Maintenance Service",
       description:
         "Keep your WordPress site running around the clock with our maintenance services. We handle core updates, backups, theme updates, security checks, and more, so you can focus on your business. Let us take care of the technical stuff for you!",
     },
   ],
-  cta: {
-    label: "Let me give you a hand to help you",
-    href: "/request-quote",
-    ariaLabel: "Dynamic Dreamz - Let me give you a hand to help you",
-  },
 } as const;
 
 export const wordpressDevelopmentPortfolio = {
+  eyebrow: "Portfolio",
   heading: "A sneak peek into our WordPress Development Expertise",
   description:
-    "500+ WordPress websites meticulously crafted and counting. Our expertise accelerates growth and redefines shopping experiences for clients.",
+    "500+ WordPress websites meticulously crafted and counting. Our expertise accelerates <br> growth and redefines shopping experiences for clients.",
   category: "WORDPRESS",
   ctaLabel: "VIEW OUR WORK",
   ctaHref: "/our-work",
@@ -118,46 +222,59 @@ export const wordpressDevelopmentPortfolio = {
     {
       name: "Quite Events",
       image: "/assets/our-work/projects/quite-events.webp",
-      imageAlt: "Quite Events",
+      imageAlt: "Quite Events Image",
       href: "https://www.quietevents.com/",
     },
     {
       name: "Les Etoiles",
       image: "/assets/our-work/projects/les-etoiles.webp",
-      imageAlt: "Les Etoiles",
+      imageAlt: "Les Etoiles Image",
       href: "https://louer-lesetoiles.ca/",
     },
     {
       name: "Valents",
       image: "/assets/our-work/projects/valents.webp",
-      imageAlt: "Valents",
+      imageAlt: "Valents Image",
       href: "https://wearvalents.com/",
     },
     {
       name: "Get Sunsights",
       image: "/assets/our-work/projects/get-sunsights.webp",
-      imageAlt: "Get Sunsights",
+      imageAlt: "Get Sunsights Image",
       href: "https://www.getsunsights.com/",
     },
     {
       name: "Lipari Design",
       image: "/assets/our-work/projects/lipari-design.webp",
-      imageAlt: "Lipari Design",
+      imageAlt: "Lipari Design Image",
       href: "https://liparidesign.ca/",
     },
     {
       name: "Nexventur",
       image: "/assets/our-work/projects/nexventur.webp",
-      imageAlt: "Nexventur",
+      imageAlt: "Nexventur Image",
       href: "https://www.nexventur.com/",
+    },
+    {
+      name: "Awaken Media",
+      image: "/assets/our-work/projects/awaken-media.webp",
+      imageAlt: "Awaken Media Image",
+      href: "https://www.awaken.media/",
+    },
+    {
+      name: "Budget Maids",
+      image: "/assets/our-work/projects/budget-maids.webp",
+      imageAlt: "Budget Maids Image",
+      href: "https://www.budget-maids.com/",
     },
   ],
 } as const;
 
 export const wordpressDevelopmentTestimonials = {
+  eyebrow: "Client Stories",
   heading: "Don't Just Take Our Word For It",
   description:
-    "We have faith in our work, but what truly matters is the outcomes we serve our clients.<br> Happy clients make happy stories. Check out how our services empower them to evolve.",
+    "We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories. Check out how our services empower them to evolve.",
 } as const;
 
 export const wordpressDevelopmentFaqs: readonly FaqAccordionItem[] = [

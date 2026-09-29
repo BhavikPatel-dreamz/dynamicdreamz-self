@@ -19,6 +19,7 @@ export type CityPageHeroContent = {
   eyebrows?: readonly string[];
   title: string;
   description: string;
+  secondaryDescription?: string;
   primaryCta?: {
     label: string;
     href: string;
@@ -92,6 +93,11 @@ export function CityPageHeroSection({
               <p className="mt-3 font-montserrat text-base font-medium leading-7 text-[#535353] max-[992px]:text-[14px] max-[992px]:leading-[24px]">
                 {content.description}
               </p>
+              {content.secondaryDescription && (
+                <p className="mt-3 font-montserrat text-base font-medium leading-7 text-[#535353] max-[992px]:text-[14px] max-[992px]:leading-[24px]">
+                  {content.secondaryDescription}
+                </p>
+              )}
               {(content.primaryCta || content.secondaryCta) && (
                 <div className="btn-group mt-6 flex items-center gap-3.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:gap-2.5">
                   {content.primaryCta && (

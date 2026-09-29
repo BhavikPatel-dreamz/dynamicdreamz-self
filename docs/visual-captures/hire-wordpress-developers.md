@@ -1,97 +1,83 @@
-# Hire WordPress Developers
+# Hire WordPress Developers Visual Capture
 
 - Live URL: https://www.dynamicdreamz.com/hire-wordpress-developers/
 - Local route: `/hire-wordpress-developers`
-- Date checked: 2026-08-18
-- Counter layout rechecked: 2026-08-19 against the supplied live CSS and the existing live desktop/tablet/mobile captures.
-- Counter label wrapping rechecked: desktop/tablet use the live-authored line breaks; the breaks are hidden at 767px and below so each mobile label flows on one line when space permits.
-- Full page parity audit: 2026-08-19. Recompared the saved 1440x900, 768x1024, and 390x844 live/local full-page captures against `hiring-main.css` and `hiring-media.css`.
-- Advantage-divider comparison: 2026-08-19. Owner side-by-side capture exposed conflicting desktop `nth-*` and tablet border overrides; divider placement is now defined per cell for each 3/2/1-column layout.
-- Portfolio platform-mark motion rechecked: 2026-08-19. The shared card now uses explicit `transform: translateY(10px)` to `transform: translateY(0)` states with the live 500ms ease-in-out transition, avoiding Tailwind's separate `translate` longhand.
-- Browser: Chromium 151 (Playwright)
-- Viewports captured: 1440x900, 768x1024, 390x844 (full-page screenshots)
-- Live screenshots: `docs/visual-captures/source/hire-wordpress-developers/live-desktop-1440x900.png`, `live-tablet-768x1024.png`, `live-mobile-390x844.png`
-- Local screenshots: `docs/visual-captures/source/hire-wordpress-developers/local-desktop-1440x900.png`, `local-tablet-768x1024.png`, `local-mobile-390x844.png`
-- Local capture wait: 2500ms before each full-page screenshot so the staged review animation and eager portfolio media were visible
-- Owner reference: attached full-page live capture representing the layout at and below the 991px navigation breakpoint; checked section order, counter spacing, review circle, brand strip, two-column grids, carousel overflow, FAQ, and responsive footer.
+- Date checked: 2026-09-29
+- Modernization audit: Verified against `scratch/live-hire-wordpress-developers.html` and live inspection. The live site updated from the legacy 2024 hiring layout to the modern Agency/City layout with tablet showcase hero, counter strip, dual yellow/green feature sections, 4-step process, 3-card pricing table, 8-item live work showcase, 11-slide client review carousel, and 8-item FAQ accordion.
+- Viewports verified: 1440x900 (desktop), 768x1024 (tablet), 390x844 (mobile)
+- Local screenshots captured: `scratch/local_hire_wp_1440.png`, `scratch/local_hire_wp_768.png`, `scratch/local_hire_wp_390.png`
 
-## Sources inspected
+## Section Breakdown & Visual Parity
 
-- View source metadata, JSON-LD, headings, CTA links, image alts, FAQ markup, and footer navigation.
-- `assets/css/hiring/main.css`: `.inner-hero-sec`, `.total-deliver-wrap`, `.hiring-process-sec`, `.what-make-dynamic-dreamz-sec`, `.why_dynamic_dreamz_sec`, `.our-work-sec`, `.happy-client-sec`, `.faq-sec`, gradients, card borders, hover states, and pulse animation.
-- `assets/css/hiring/media.css`: 1199px, 991px, 767px, 389px, and 359px responsive rules.
-- Rechecked `.total-deliver-wrap .deliver-col`: 49px left padding/margin and a 1.3px left divider on desktop; 30px spacing at 1199px; full-width stacked rows with 20px bottom padding/margin, no side border, and a 1.3px bottom divider except on the last row at 767px.
-- Full-page audit findings: restore the live two-column desktop proof-card grid and 33px/32px card padding; restore the 55px process-list offset, 28px icon gap, 12px title gap, and 70px mobile icons; remove the advantage grid's outer border while retaining its live internal dividers; use the live 50px tablet portfolio-list offset. The owner-protected `review-wrap mx-auto mt-[55px] w-[532px] max-w-full max-[992px]:mt-[30px] max-[767px]:w-[275px]` remains unchanged.
-- `assets/js/hiring.js`: review animation, carousel/accordion initialization, and video popup behavior.
-- Shared live CSS for header/footer and the rendered live page at desktop, tablet, and mobile widths.
+1. **Hero (`hero-new-section hide-logo`)**:
+   - Layout: Split 2-column layout on desktop (`w-[51%]` text column and `w-[43.182%]` tablet slider showcase); stacked on tablet/mobile.
+   - Background: Cream `#f7f4e9`.
+   - Eyebrows: "Established in 2006" • "Wordpress Development Agency" with red bar accent.
+   - H1: "Hire WordPress Developers" (50px/60px font-heading on desktop, 30px/40px on mobile).
+   - Description: Preserves live paragraph with 2 CTAs: primary "hire WordPress developers" (`/request-quote`) and outline "See Pricing" (`#our_white_label_pricing`).
+   - Badges: 4 partner/review badges (Shopify Platinum Partner, Clutch 4.9 rating, Trustpilot 4.9 TrustScore, Upwork Top Rated Plus).
+   - Tablet Slider: 7 animated showcase slides with floating top badge ("WooCommerce Agency Partner") and bottom badge ("WordPress Logo").
 
-## Visual contract
+2. **Counter Strip (`white_label_counter_section`)**:
+   - 4 stats: `50+ Agencies` (Supported Worldwide), `20+ Years` (Web & Ecommerce Experience), `150+ Experts` (Commerce & Technology), `5000+` (Projects Delivered).
+   - Borders: Internal vertical borders on desktop/tablet, horizontal divider at tablet/mobile.
 
-- Hero: white background, approximately 215px top offset on desktop, centered 50px/66px Montserrat heading, centered paragraph, red pill CTA, five counters with vertical separators, and animated review circle below. Tablet reduces the top offset and type; mobile stacks counters with horizontal separators.
-- Brand strip: 164px cream band on desktop, compact stacked layout below 991px, with “Trusted by Leading Brands” and the existing local client logos.
-- Hiring process: four equal desktop columns with 94px white icon tiles, green-to-cyan gradient outlines and dotted connectors; two columns at tablet, one column at mobile.
-- Proof grids: six bordered tiles in three columns desktop, two columns tablet, one column mobile. Advantage section uses a six-item border grid and red inquiry CTA.
-- Portfolio: six 370x422-ish portrait cards, three columns desktop, two tablet, one mobile; hover dark overlay, “View Project”, WordPress mark, and local project links.
-- Testimonials: heading and paragraph followed by a horizontally draggable two-up desktop carousel, one-up mobile cards, video play buttons, client name pill, quote, and quote icon.
-- FAQ: first item open by default, bordered 10px rows with plus/minus controls, ten questions, stacked on all narrow widths.
+3. **Why Hire Dynamic Dreamz (`theme-customization-services yellow`)**:
+   - Eyebrow: "Why Hire Dynamic Dreamz", H2: "Why Hire WordPress Developers from Dynamic Dreamz?".
+   - Background: `#fafaf7` (yellow variant).
+   - 6 boxes in 3-col grid (desktop), 2-col (tablet), 1-col (mobile) with red `#AD5151` vector SVG icons:
+     1. Proven Track Record
+     2. Skilled WordPress Experts
+     3. Dedicated Development Team
+     4. End-to-End Support
+     5. Industry-Wide Experience
+     6. No Hidden Commitments
 
-## Interaction and motion
+4. **Benefits of Hiring Dedicated Developers (`theme-customization-services green`)**:
+   - Eyebrow: "Advantage", H2: "Benefits of Hiring Dedicated WordPress Developers".
+   - Background: `#eff4ef` (green variant).
+   - 6 boxes with red `#AD5151` vector SVG icons and bold titles (no description paragraph, matching live DOM):
+     1. Easy and fair hiring process with no hidden cost
+     2. Flexible engagement models to manage development costs
+     3. Our developer can work as per local time zone
+     4. Your strategic data is secure and confidential.
+     5. Focus on your business, we'll handle all HR needs
+     6. Ongoing post-launch WordPress support
 
-- Review circle rotates through Clutch, Upwork, and GoodFirms with the live site's staged scale/opacity, stars, rating, and review-pill reveals at approximately 5s per item. The live implementation does not bypass these transitions for `prefers-reduced-motion`, so the migrated component follows that behavior for exact parity.
-- At the 991px breakpoint the five hero counters remain in one row with 18px separators and 30px vertical spacing; process connectors are removed, while process, reasons, advantages, and portfolio content use two-column layouts. The brand heading becomes a single line for this route.
-- Portfolio overlay fades in and the project link rises from the bottom on hover/focus.
-- Testimonials are draggable/swipeable; video links open a modal iframe.
-- FAQ defaults to the first panel open and toggles one panel at a time.
+5. **Hiring Process (`our-development-process bg-transparent`)**:
+   - Eyebrow: "Hiring Process", H2: "How to Hire WordPress Developers from Dynamic Dreamz".
+   - Description: "Let Dynamic Dreamz help you find the right WordPress developer for your project."
+   - 4 steps in 4-column connected grid (Step 01 Share Requirements, Step 02 Expert Talent Selection, Step 03 Matching Business Talent, Step 04 Project Kickstart Phase).
 
-## Remaining differences to verify
+6. **Pricing / Engagements (`white_label_wp_develop_plan_section shopify-plus-engagement mb-0#our_white_label_pricing`)**:
+   - Eyebrow: "Flexible WordPress Engagements", H2: "Choose the Right Wordpress Development Engagement.".
+   - Description: "Choose project-based development, flexible WordPress support starting from $20/hour, or a dedicated developer/team for ongoing requirements."
+   - Background: `#edf2ee`.
+   - 3 pricing cards:
+     1. Project-Based: "Have One Project?", "Custom Quote", CTA "Send Brief — Get a Quote in 24 Hours".
+     2. Flexible Hourly Support: "Need Extra Wordpress Capacity?", "$20/hour", CTA "Buy Wordpress Development Hours".
+     3. Dedicated Developer / Team: "Need Ongoing Capacity?", "From $2,000/month", CTA "Discuss a Dedicated Team".
 
-- Local header/footer use the migrated shared shell and local assets rather than the legacy WordPress DOM.
-- Local review animation reuses the existing migrated implementation and local review assets.
-- The owner-provided 21.63-second MP4 was sampled across the circle zoom,
-  wrapper entrance, individual star reveals, rating fade, review-pill rise, and
-  platform switch. It confirmed that `.review_animation_ratings` remains
-  visible while only `.review_ratings` is initially transparent; this allows
-  the five star paths to appear one at a time before “5.0 RATINGS” fades in.
-  The recording also confirms that the animation follows the 55px bottom
-  padding of `.total-deliver-wrap` directly, without an additional top margin.
-  The animation states use explicit `transform: scale(...)` and
-  `transform: translateY(...)` values. Tailwind's individual `scale` and
-  `translate` properties cannot be paired with the legacy site's
-  `transition: transform ...` declarations.
-- The review platform/background differs between individual screenshots because the shared Clutch, Upwork, and GoodFirms animation rotates every five seconds.
-- Local portfolio images are intentionally eager on this route so full-page captures and fast scrolling do not reproduce the legacy page's tablet/mobile lazy-image gaps.
-- Local desktop testimonials align with the content edge and show two complete cards; mobile retains the centered single-card treatment with the next slide visible at the edge.
+7. **Work Showcase (`our-work-sec#our_work`)**:
+   - Eyebrow: "Portfolio", H2: "WordPress Projects Built by Dynamic Dreamz".
+   - Description: "Explore selected WordPress projects delivered by Dynamic Dreamz across business websites, ecommerce, events and custom development requirements."
+   - 8 projects in 4-column grid (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids).
+   - `hideCta` matches live (no redundant bottom CTA).
 
-## Local verification
+8. **Client Testimonials (`happy-client-sec`)**:
+   - Eyebrow: "Client Stories", H2: "What Clients Say About Dynamic Dreamz".
+   - Description: "At Dynamic Dreamz, we pride ourselves on delivering top notch WordPress development services that exceed our clients' expectations."
+   - 11 client review items with video preview, rating stars, and author badges.
 
-- Fresh production-build viewport captures on 2026-08-19 at 1440x900, 768x1024, and 390x844 verified the hero heading measure, paragraph wrapping, CTA geometry, counter type scale, desktop/tablet vertical separators, mobile stacked dividers, review-circle sizing, and absence of horizontal overflow. The protected review wrapper classes were not changed.
-- Desktop, tablet, and mobile screenshots show all six portfolio images with stable aspect ratios and no content overlap.
-- The first FAQ item is open by default, the remaining nine items are collapsed, and the pricing-model list remains inside its accordion panel.
-- Headings, counters, CTA labels, process steps, proof grids, portfolio names, testimonial copy, and FAQ wording preserve the live-visible content.
-- No horizontal overflow or clipped text is visible at 1440px, 768px, or 390px.
-- Remaining visual differences are limited to the migrated shared header/footer/contact widget and the intentional removal of legacy lazy-loading gaps.
+9. **FAQ Section (`faq-sec`)**:
+   - H2: "Frequently Asked Questions".
+   - 8 live FAQs in accordion format with live question/answer text.
 
-## Review Animation Owner Comparison (2026-08-19)
+## Verification Checklist
 
-- Owner reference: attached side-by-side crop, live on the left and local on the
-  right, showing the mobile Clutch review state.
-- Confirmed matching geometry: centered 275px circle, review label, five-star
-  row, rating text, and red review pill treatment.
-- Identified mismatch: the post-merge canonical review SVG has a compact 69px
-  intrinsic width, so `width: auto` rendered the local Clutch wordmark at about
-  half the live size even though the review data retains the inspected live
-  205x57 dimensions. The same intrinsic-size risk applies to the Upwork and
-  GoodFirms states.
-- Correction: enforce each platform's documented wordmark width from review
-  data and retain the live 130px mobile maximum. This restores the live logo
-  scale and recenters the complete content stack without changing the circle,
-  animation timing, review values, or surrounding hero layout.
-- Remaining check: recapture all three rotating platform states after merge
-  completion to confirm their platform-specific aspect ratios.
-- Follow-up GoodFirms comparison measured the remaining mobile spacing delta:
-  the local label-to-wordmark gap was about 7px too small and the
-  wordmark-to-rating gap about 21px too small. The rating-to-pill gap already
-  matched. Increasing only those two internal margins recenters the complete
-  stack within the 275px circle. The hiring-page mobile review wrapper also
-  receives a 9px top-offset correction to match the circle's live vertical
-  position in the supplied crop.
+- [x] Responsive layout verified at 1440px, 768px, and 390px.
+- [x] Zero trailing slashes on all internal links and canonical URL.
+- [x] Content boundary strictly maintained (`npm run check:component-content` passes).
+- [x] Zero duplicate assets (`npm run check:asset-duplicates` passes).
+- [x] SEO length budget adhered to (description exactly 160 chars).
+- [x] Full production build passes with 0 errors (`npm run build`).

@@ -2408,20 +2408,13 @@ export function createHireWordPressDevelopersPageSchema() {
     serviceId: hireWordPressDevelopersServiceId,
     faqId: hireWordPressDevelopersFaqId,
     breadcrumbId: hireWordPressDevelopersBreadcrumbId,
-    serviceName: "Dedicated WordPress Development Services",
+    serviceName: "Hire WordPress Developers",
     serviceType: "Dedicated WordPress developer and WordPress team hiring",
     breadcrumbName: "Hire WordPress Developers",
     audienceType:
       "Businesses and agencies seeking dedicated WordPress developers or WordPress development teams",
-    faqs: hireWordPressFaqs.map((item) => ({
-      question: item.question,
-      answer: [
-        item.answer,
-        ...(item.listItems?.map(
-          (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
-        ) ?? []),
-      ].join(" "),
-    })),
+    faqs: hireWordPressFaqs,
+    videos: shopifyPlusTestimonialVideoSchema(hireWordPressDevelopersPageUrl),
   });
 }
 

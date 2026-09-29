@@ -2385,8 +2385,8 @@ approved evidence. Exact visible proposals are tracked in
   task; broader answer-first copy recommendations remain separately governed.
 ## WordPress Web Development Services (`/wordpress-development`)
 
-Status: implemented; visible recommendations deferred
-Last reviewed: 2026-08-24
+Status: implemented and verified; visible recommendations deferred
+Last reviewed: 2026-09-29
 Primary audience: businesses, ecommerce brands, and digital agencies seeking
 custom WordPress website development, theme customization, plugin development,
 and WooCommerce solutions.
@@ -2399,8 +2399,8 @@ services. It establishes Dynamic Dreamz's custom development capabilities across
 9 specialized service offerings (theme customization, custom theme development,
 plugin development, multi-language websites, WooCommerce, white-label WordPress,
 headless WordPress CMS with Next.js, performance optimization, and ongoing
-maintenance), backed by brand proof, portfolio work, video testimonials, and
-FAQs.
+maintenance), backed by brand proof, 8-project portfolio work, 11 video testimonials, and
+10-question FAQs.
 
 ### Target prompts
 
@@ -2413,11 +2413,12 @@ FAQs.
 
 ### Current strengths and available evidence
 
-- Server-rendered H1, introduction, 9 service capability cards, 6 portfolio
-  showcase cards, 11 video testimonials, 10-question FAQ, and bottom CTA banner.
-- Canonical asset reuse for brand logos, platform marks, video thumbnails, and
-  portfolio media (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari
-  Design, Nexventur).
+- Server-rendered modernized hero with 7-slide tablet showcase and WooCommerce Partner / WordPress Logo floating badges.
+- Split-header services section with 9 capability cards.
+- 8 live portfolio showcase items in a 4-column responsive grid (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids).
+- 11 video testimonials with rating stars, author pills, and modal playback.
+- 10 live FAQs matching exact live accordion order and copy.
+- Canonical asset reuse across all public assets with zero duplicate groups.
 - Production structured data graph emitting WebPage, Service, BreadcrumbList,
   FAQPage, and VideoObject nodes.
 
@@ -2454,7 +2455,7 @@ integration benefits.
 ## WordPress Development Company in India (`/wordpress-development-company`)
 
 Status: implemented and verified; visible recommendations deferred
-Last reviewed: 2026-08-24
+Last reviewed: 2026-09-29
 Owner: SEO, content, development, leadership, sales, and client success
 Primary audience: Indian and global businesses comparing custom WordPress
 development companies, plus agencies seeking WordPress and white-label delivery.
@@ -2631,8 +2632,8 @@ Preserve the live visible copy during migration. Future approved answer copy sho
 
 ## Hire WordPress Developers (`/hire-wordpress-developers`)
 
-Status: implemented; visible recommendations deferred
-Last reviewed: 2026-08-18
+Status: implemented and verified; visible recommendations deferred
+Last reviewed: 2026-09-29
 Primary audience: businesses and digital agencies looking for dedicated
 WordPress developers, a complete WordPress team, or end-to-end WordPress
 delivery.
@@ -2642,8 +2643,9 @@ Decision stage: vendor selection and project inquiry.
 
 This page targets the dedicated WordPress developer and WordPress team hiring
 intent. It complements the white-label WordPress page by speaking to direct
-project owners and by preserving the live page's hiring process, team proof,
-portfolio, testimonials, and FAQ sequence.
+project owners and by preserving the live page's tablet-showcase hero, 4-stat counter
+strip, reasons to hire, developer advantages, 4-step hiring process, 3-card pricing
+plans, 8-item portfolio, 11 video testimonials, and 8-question FAQ sequence.
 
 ### Target prompts
 
@@ -2655,12 +2657,16 @@ portfolio, testimonials, and FAQ sequence.
 
 ### Current strengths and available evidence
 
-- Server-rendered H1, introduction, hiring process, reasons, advantages,
-  portfolio, testimonials, and ten-question FAQ.
-- Local WordPress portfolio media for Quite Events, Les Etoiles, Valents, Get
-  Sunsights, Lipari Design, and Nexventur.
-- Existing local review animation, client logos, video testimonials, and shared
-  organization facts.
+- Server-rendered modernized hero with 7-slide tablet showcase, WooCommerce Partner and WordPress Logo floating badges, and 4 partner/review profile badges.
+- 4-item counter strip: 50+ Agencies Supported Worldwide, 20+ Years Web & Ecommerce Experience, 150+ Experts Commerce & Technology, 5000+ Projects Delivered.
+- 6 "Why Hire WordPress Developers from Dynamic Dreamz?" feature cards with red vector SVG icons.
+- 6 "Benefits of Hiring Dedicated WordPress Developers" advantage cards with red vector SVG icons.
+- 4-step hiring process: Share Requirements, Expert Talent Selection, Matching Business Talent, Project Kickstart Phase.
+- 3 pricing engagement options: Project-Based (Custom Quote), Flexible Hourly Support ($20/hour), Dedicated Developer / Team (From $2,000/month).
+- 8 live portfolio showcase items in a 4-column responsive grid (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids).
+- 11 video testimonials with rating stars, author pills, and modal playback.
+- 8 live FAQs matching exact live accordion order and copy.
+- Full structured data graph emitting WebPage, Service, BreadcrumbList, FAQPage, and VideoObject nodes.
 
 ### Recommended improvements
 

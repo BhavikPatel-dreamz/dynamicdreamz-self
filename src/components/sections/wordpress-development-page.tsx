@@ -1,12 +1,11 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import { CityPageHeroSection } from "@/components/sections/city-page-hero-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { WordPressCustomizationIcon } from "@/components/sections/wordpress/wordpress-customization-icons";
 import {
-  wordpressDevelopmentBrands,
   wordpressDevelopmentCta,
   wordpressDevelopmentFaqs,
   wordpressDevelopmentHero,
@@ -16,30 +15,55 @@ import {
 } from "@/content/wordpress-development";
 
 export function WordPressDevelopmentPage() {
+  const servicesContent = {
+    ...wordpressDevelopmentServices,
+    items: wordpressDevelopmentServices.items.map((item) => ({
+      ...item,
+      iconSvg: item.iconKey ? (
+        <WordPressCustomizationIcon name={item.iconKey} />
+      ) : undefined,
+    })),
+  };
+
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection content={wordpressDevelopmentHero} />
-      <IndustryBrandsSection content={wordpressDevelopmentBrands} />
-      <AgencyServicesSection content={wordpressDevelopmentServices} />
-      <PortfolioShowcaseSection
-        content={wordpressDevelopmentPortfolio}
-        ctaLabel={wordpressDevelopmentPortfolio.ctaLabel}
-        ctaHref={wordpressDevelopmentPortfolio.ctaHref}
+      <CityPageHeroSection content={wordpressDevelopmentHero} />
+      <AgencyServicesSection
+        cardVariant="services-box"
+        className="what-we-provide-sec pb-0 pt-20 max-[992px]:pt-[50px] max-[992px]:pb-0"
+        content={servicesContent}
+        headerLayout="split"
+        headerTextColumnClassName="w-[48.3%] max-[992px]:w-full"
+        headerTitleColumnClassName="w-[44%] max-[992px]:w-full"
+        hideCta
+        id="services"
       />
-      <div id="shopify-testimonials">
-        <HappyClientSection
-          description={wordpressDevelopmentTestimonials.description}
-          heading={wordpressDevelopmentTestimonials.heading}
-        />
-      </div>
+      <PortfolioShowcaseSection
+        cardVariant="ourWorkRefresh"
+        className="our-work-sec py-20 max-[992px]:py-[60px]"
+        columns={4}
+        content={wordpressDevelopmentPortfolio}
+        eyebrow={wordpressDevelopmentPortfolio.eyebrow}
+        headerLayout="split"
+        sectionId="our_work"
+        textColumnClassName="w-[48.3%] max-[992px]:w-full"
+        titleColumnClassName="w-[44%] max-[992px]:w-full"
+        variant="liveGrid"
+      />
+      <HappyClientSection
+        description={wordpressDevelopmentTestimonials.description}
+        eyebrow={wordpressDevelopmentTestimonials.eyebrow}
+        heading={wordpressDevelopmentTestimonials.heading}
+      />
       <SplitFaqSection
-        items={wordpressDevelopmentFaqs}
+        className="faq-sec"
         idPrefix="wordpress-development-faq"
+        items={wordpressDevelopmentFaqs}
       />
       <CtaBannerSection
-        heading={wordpressDevelopmentCta.heading}
-        ctaLabel={wordpressDevelopmentCta.ctaLabel}
         ctaHref={wordpressDevelopmentCta.ctaHref}
+        ctaLabel={wordpressDevelopmentCta.ctaLabel}
+        heading={wordpressDevelopmentCta.heading}
       />
     </div>
   );

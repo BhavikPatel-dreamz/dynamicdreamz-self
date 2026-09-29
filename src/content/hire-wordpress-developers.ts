@@ -1,241 +1,372 @@
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-
-const iconPath = (name: string) => `/assets/hire-wordpress-developers/icons/${name}.svg`;
+import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const hireWordPressHero = {
+  eyebrows: ["Established in 2006", "Wordpress Development Agency"],
   title: "Hire WordPress Developers",
   description:
-    "A typical WordPress development consists of project manager, designer, developer, quality assuror. Generally, it is a tedious task to hire them from different sources and align them for one project. Dynamic Dreamz simply eliminates your worries by providing all resources under one roof.",
-  ctaLabel: "hire WordPress developers",
-  stats: [
-    { value: "50+", label: "Agile enabled WordPress Developers", labelLines: ["Agile enabled", "WordPress Developers"] },
-    { value: "5000+", label: "Completed Projects", labelLines: ["Completed", "Projects"] },
-    { value: "20+", label: "Years of Experience", labelLines: ["Years of", "Experience"] },
-    { value: "1000+", label: "Happy & Satisfied Clients", labelLines: ["Happy & Satisfied", "Clients"] },
-    { value: "1000+", label: "WordPress Developments", labelLines: ["WordPress", "Developments"] },
+    "Hire experienced WordPress developers from Dynamic Dreamz for custom WordPress development, WooCommerce, theme and plugin customization, API integrations, performance optimization and ongoing support. Work with a dedicated developer or a complete WordPress team including design, development, QA and project coordination, based on your project requirements.",
+  primaryCta: {
+    label: "hire WordPress developers",
+    href: "/request-quote",
+  },
+  secondaryCta: {
+    label: "See Pricing",
+    href: "#our_white_label_pricing",
+  },
+  badges: [
+    {
+      src: "/assets/proof/shopify-platinum-partner.svg",
+      alt: "Dynamic Dreamz - Shopify Platinum Partner",
+      width: 136,
+      height: 44,
+      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+    },
+    {
+      src: "/assets/proof/clutch-rating.svg",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      width: 111,
+      height: 44,
+      href: "https://clutch.co/profile/dynamic-dreamz",
+    },
+    {
+      src: "/assets/proof/trustpilot-rating.svg",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      width: 148,
+      height: 50,
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+    },
+    {
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      width: 126,
+      height: 54,
+      href: "https://www.upwork.com/ag/dynamicdreamz/",
+    },
+  ],
+  tabletSlider: {
+    bgShapeSrc:
+      "/assets/services/shopify-development-in-bangalore/hero/slide-bg-shape.svg",
+    topBadge: {
+      src: "/assets/services/wordpress-development-in-ahmedabad/hero/woocommerce-agency-partner.png",
+      alt: "WooCommerce Agency Partner",
+      width: 173,
+      height: 106,
+    },
+    bottomBadge: {
+      src: "/assets/services/wordpress-development-in-ahmedabad/hero/wordpress-logo.png",
+      alt: "WordPress Logo",
+      width: 130,
+      height: 126,
+    },
+    slides: [
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-green-future-energy.webp",
+        alt: "greenfutureenergy",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-avm.webp",
+        alt: "avm",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-homepage-revised.webp",
+        alt: "HomepageRevised",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-lipari-design.webp",
+        alt: "liparidesign",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-ornago.webp",
+        alt: "ornago",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-syrene.webp",
+        alt: "syrene",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-the-huddle-sports-grill.webp",
+        alt: "thehuddlesportsgrill",
+        width: 1600,
+        height: 2380,
+      },
+    ],
+  },
+} as const;
+
+export const hireWordPressCounters = [
+  { value: "50+ Agencies", label: "Supported Worldwide" },
+  { value: "20+ Years", label: "Web & Ecommerce Experience" },
+  { value: "150+ Experts", label: "Commerce & Technology" },
+  { value: "5000+", label: "Projects Delivered" },
+] as const;
+
+export const hireWordPressWhyChoose = {
+  eyebrow: "Why Hire Dynamic Dreamz",
+  heading: "Why Hire WordPress Developers from Dynamic Dreamz?",
+  boxes: [
+    {
+      title: "Proven Track Record",
+      description:
+        "We don’t just talk. Dynamic Dreamz has a proven track record of WordPress Development. Check our WordPress portfolio.",
+      iconKey: "proven-track-record",
+    },
+    {
+      title: "Skilled WordPress Experts",
+      description:
+        "We provide an all-in-one WordPress development team with development, design, QA and project coordination support when required.",
+      iconKey: "skilled-wordpress-experts",
+    },
+    {
+      title: "Dedicated Development Team",
+      description:
+        "We assign dedicated developers for WordPress websites, WooCommerce, custom themes, plugins, integrations and ongoing development.",
+      iconKey: "dedicated-development-team",
+    },
+    {
+      title: "End-to-End Support",
+      description:
+        "Our team can support your WordPress project from development and QA through launch and ongoing maintenance.",
+      iconKey: "end-to-end-support",
+    },
+    {
+      title: "Industry-Wide Experience",
+      description:
+        "Our WordPress team has experience across industries including fashion, beauty, retail, healthcare, professional services and ecommerce.",
+      iconKey: "industry-wide-experience",
+    },
+    {
+      title: "No Hidden Commitments",
+      description:
+        "We commit only to requirements we can realistically deliver and scope clearly before development starts.",
+      iconKey: "no-hidden-commitments",
+    },
+  ],
+} as const;
+
+export const hireWordPressBenefits = {
+  eyebrow: "Advantage",
+  heading: "Benefits of Hiring Dedicated WordPress Developers",
+  boxes: [
+    {
+      title: "Easy and fair hiring process with no hidden cost",
+      iconKey: "easy-and-fair-hiring-process-with-no-hidden-cost",
+    },
+    {
+      title: "Flexible engagement models to manage development costs",
+      iconKey: "flexible-engagement-models-to-manage-development-costs",
+    },
+    {
+      title: "Our developer can work as per local time zone",
+      iconKey: "our-developer-can-work-as-per-local-time-zone",
+    },
+    {
+      title: "Your strategic data is secure and confidential.",
+      iconKey: "your-strategic-data-is-secure-and-confidential",
+    },
+    {
+      title: "Focus on your business, we'll handle all HR needs",
+      iconKey: "focus-on-your-business-we-ll-handle-all-hr-needs",
+    },
+    {
+      title: "Ongoing post-launch WordPress support",
+      iconKey: "ongoing-post-launch-wordpress-support",
+    },
   ],
 } as const;
 
 export const hireWordPressProcess = {
-  heading: "Easy Hiring Process to Get Started",
-  description: "Let Dynamic Dreamz assist you to achive your goals!",
-  items: [
+  eyebrow: "Hiring Process",
+  heading: "How to Hire WordPress Developers from Dynamic Dreamz",
+  description:
+    "Let Dynamic Dreamz help you find the right WordPress developer for your project.",
+  steps: [
     {
+      step: "Step 01",
       title: "Share Requirements",
       description: "Share Your specific Requirements with us.",
-      icon: iconPath("share-requirements"),
-      iconAlt: "Share requirements",
     },
     {
+      step: "Step 02",
       title: "Expert Talent Selection",
       description: "We pick the most suitable talents for you.",
-      icon: iconPath("expert-talent-selection"),
-      iconAlt: "Expert talent selection",
     },
     {
+      step: "Step 03",
       title: "Matching Business Talent",
-      description: "Select the right talent that fit for your business",
-      icon: iconPath("matching-business-talent"),
-      iconAlt: "Matching business talent",
+      description:
+        "Review and select the developer or team that best fits your requirements.",
     },
     {
+      step: "Step 04",
       title: "Project Kickstart Phase",
-      description: "Get going with your project Development.",
-      icon: iconPath("project-kickstart"),
-      iconAlt: "Project kickstart phase",
+      description:
+        "Start development with the agreed scope, workflow and communication process.",
     },
   ],
 } as const;
 
-export const hireWordPressReasons = {
-  heading: "What makes an excellent choice to hire a dedicated WordPress team?",
+export const hireWordPressPricing = {
+  eyebrow: "Flexible WordPress Engagements",
+  heading: "Choose the Right Wordpress Development Engagement.",
+  description:
+    "Choose project-based development, flexible WordPress support starting from $20/hour, or a dedicated developer/team for ongoing requirements.",
   items: [
     {
+      label: "Project-Based",
+      badge: "Have One Project?",
+      price: "Custom Quote",
       description:
-        "We don’t just talk. Dynamic Dreamz has a proven track record of WordPress Development. Check our WordPress portfolio.",
-      icon: iconPath("proven-wordpress-track-record"),
-      iconAlt: "Proven WordPress development track record",
+        "For complete WordPress website builds, custom theme development, website redesigns, plugin development, third-party integrations, WooCommerce solutions and technically complex WordPress projects.",
+      ctaLabel: "Send Brief — Get a Quote in 24 Hours",
+      ctaHref: "/request-quote",
     },
     {
-      description: "We are an all under one roof WordPress development agency.",
-      icon: iconPath("wordpress-agency"),
-      iconAlt: "WordPress development agency",
-    },
-    {
-      description: "We assign dedicated developers for your WordPress store development.",
-      icon: iconPath("dedicated-wordpress-developers"),
-      iconAlt: "Dedicated WordPress developers",
-    },
-    {
-      description: "We are an end to end turnkey solution provider.",
-      icon: iconPath("end-to-end-solution"),
-      iconAlt: "End-to-end WordPress solution",
-    },
-    {
+      label: "Flexible Hourly Support",
+      badge: "Need Extra Wordpress Capacity?",
+      price: "$20/hour",
       description:
-        "We have extensive domain knowledge of industry verticals like Fashion, Cosmetics, Retail, Healthcare, jewelry.",
-      icon: iconPath("industry-domain-experience"),
-      iconAlt: "Industry domain experience",
+        "For ongoing WordPress maintenance, enhancements, troubleshooting, performance improvements, security updates and evolving website development requirements.",
+      ctaLabel: "Buy Wordpress Development Hours",
+      ctaHref: "/request-quote",
     },
     {
+      label: "Dedicated Developer / Team",
+      badge: "Need Ongoing Capacity?",
+      price: "From $2,000/month",
       description:
-        "We commit to only those objectives which we can fulfill. We don’t make false promise.",
-      icon: iconPath("delivery-commitment"),
-      iconAlt: "Delivery commitment",
-    },
-  ],
-} as const;
-
-export const hireWordPressAdvantages = {
-  heading: "The Dynamic Dreamz Advantage",
-  ctaLabel: "inquire now",
-  ctaHref: "/request-quote",
-  items: [
-    {
-      title: "Easy and fair hiring process with no hidden cost",
-      icon: "/assets/hire-shopify-developers/icons/fair-hiring.svg",
-      iconAlt: "Fair hiring process",
-    },
-    {
-      title: "Save up to 60% on your development cost",
-      icon: "/assets/hire-shopify-developers/icons/development-savings.svg",
-      iconAlt: "Development cost savings",
-    },
-    {
-      title: "Our developer can work as per local time zone",
-      icon: "/assets/hire-shopify-developers/icons/timezone.svg",
-      iconAlt: "Local time zone alignment",
-    },
-    {
-      title: "Your strategic data is secure and confidential.",
-      icon: iconPath("data-security"),
-      iconAlt: "Data security and confidentiality",
-    },
-    {
-      title: "Focus on your business, we'll handle all HR needs",
-      icon: "/assets/hire-shopify-developers/icons/managed-hr.svg",
-      iconAlt: "Managed HR needs",
-    },
-    {
-      title: "Unmatched post production support",
-      icon: "/assets/hire-shopify-developers/icons/post-production-support.svg",
-      iconAlt: "Post production support",
+        "For brands with an evolving WordPress roadmap, multiple websites or a need for a dedicated developer or wider development team.",
+      ctaLabel: "Discuss a Dedicated Team",
+      ctaHref: "/book-a-discovery-call",
     },
   ],
 } as const;
 
 export const hireWordPressPortfolio = {
-  heading: "Glimpses of Our WordPress Development",
+  eyebrow: "Portfolio",
+  heading: "WordPress Projects Built by Dynamic Dreamz",
   description:
-    "We’ve had the experience of working on some of the challenging projects in our 20 years of professional journey. We have served across various verticals",
+    "Explore selected WordPress projects delivered by Dynamic Dreamz across business websites, ecommerce, events and custom development requirements.",
+  category: "WORDPRESS",
   items: [
     {
       name: "Quite Events",
-      href: "https://www.quietevents.com/",
+      category: "WORDPRESS",
       image: "/assets/our-work/projects/quite-events.webp",
-      imageAlt: "Quite Events WordPress project preview",
+      imageAlt: "Quite Events Image",
+      href: "https://www.quietevents.com/",
     },
     {
       name: "Les Etoiles",
-      href: "https://louer-lesetoiles.ca/",
+      category: "WORDPRESS",
       image: "/assets/our-work/projects/les-etoiles.webp",
-      imageAlt: "Les Etoiles WordPress project preview",
+      imageAlt: "Les Etoiles Image",
+      href: "https://louer-lesetoiles.ca/",
     },
     {
       name: "Valents",
-      href: "https://wearvalents.com/",
+      category: "WORDPRESS",
       image: "/assets/our-work/projects/valents.webp",
-      imageAlt: "Valents WordPress project preview",
+      imageAlt: "Valents Image",
+      href: "https://wearvalents.com/",
     },
     {
       name: "Get Sunsights",
-      href: "https://www.getsunsights.com/",
+      category: "WORDPRESS",
       image: "/assets/our-work/projects/get-sunsights.webp",
-      imageAlt: "Get Sunsights WordPress project preview",
+      imageAlt: "Get Sunsights Image",
+      href: "https://www.getsunsights.com/",
     },
     {
       name: "Lipari Design",
-      href: "https://liparidesign.ca/",
+      category: "WORDPRESS",
       image: "/assets/our-work/projects/lipari-design.webp",
-      imageAlt: "Lipari Design WordPress project preview",
+      imageAlt: "Lipari Design Image",
+      href: "https://liparidesign.ca/",
     },
     {
       name: "Nexventur",
-      href: "https://www.nexventur.com/",
+      category: "WORDPRESS",
       image: "/assets/our-work/projects/nexventur.webp",
-      imageAlt: "Nexventur WordPress project preview",
+      imageAlt: "Nexventur Image",
+      href: "https://www.nexventur.com/",
+    },
+    {
+      name: "Awaken Media",
+      category: "WORDPRESS",
+      image: "/assets/our-work/projects/awaken-media.webp",
+      imageAlt: "Awaken Media Image",
+      href: "https://www.awaken.media/",
+    },
+    {
+      name: "Budget Maids",
+      category: "WORDPRESS",
+      image: "/assets/our-work/projects/budget-maids.webp",
+      imageAlt: "Budget Maids Image",
+      href: "https://www.budget-maids.com/",
     },
   ],
 } as const;
 
 export const hireWordPressTestimonials = {
-  heading: "Why Clients Love Us",
+  eyebrow: "Client Stories",
+  heading: "What Clients Say About Dynamic Dreamz",
   description:
-    "At Dynamic Dreamz, we pride ourselves on delivering top notch WordPress<br> development services that exceed our clients' expectations.",
+    "At Dynamic Dreamz, we pride ourselves on delivering top notch WordPress development services that exceed our clients' expectations.",
+  items: shopifyPlusAgencyTestimonials.items,
 } as const;
 
 export const hireWordPressFaqs: readonly FaqAccordionItem[] = [
   {
-    question: "What services do you offer for WordPress development?",
+    question: "Can I hire one WordPress developer or a complete WordPress team?",
     answer:
-      "It depends on the size and scope of your project. Dynamic Dreamz can offer you all resources at one place that includes a designer, a developer and a quality assurer. If you want to hire either a designer or developer only, we can provide you with a competent resource.",
+      "Yes. You can hire an individual WordPress developer for development-focused requirements, or a complete team with design, development, QA and project coordination when the project needs broader support.",
   },
   {
     question: "How long does it take to develop a WordPress website?",
     answer:
-      "The timeline for developing a WordPress website depends on the project's scope and complexity. A simple website may take a few weeks, while a more complex project can take several months. We work closely with our clients to establish realistic timelines and ensure timely delivery.",
+      "The timeline depends on the project scope and complexity. A focused website or upgrade may take a few weeks, while larger custom WordPress or WooCommerce projects can take longer. We confirm the delivery plan after reviewing the requirements.",
   },
   {
     question: "Can you customize my existing WordPress website?",
     answer:
-      "Yes, our developers can customize your existing WordPress website to meet your specific needs. Whether it's adding new features, redesigning the layout, or improving performance, we can help you achieve your goals.",
+      "Yes. Our developers can customize existing WordPress websites, including themes, layouts, plugins, WooCommerce functionality, integrations, performance and responsive issues.",
   },
   {
-    question: "What are your pricing models for hiring the WordPress team?",
-    answer: "We offer three affordable and convenient models:",
-    listItems: [
-      {
-        label: "Dedicated team model:",
-        text: "In this model, you can hire a dedicated team of a WordPress designer, a developer, and a QA. The team will work as per your needs and members will one to one report you.",
-      },
-      {
-        label: "Fixed price model:",
-        text: "If you have a small project or an upgrade, you can select this model where price is fixed with predefined budget and scope of the project. You can pay as per the milestone completed.",
-      },
-      {
-        label: "Hourly model:",
-        text: "Here you can hire the team which work on hourly basis and you have to pay on the work completed. The billing cycle will be weekly or monthly.",
-      },
-    ],
+    question: "What engagement models are available for hiring WordPress developers?",
+    answer:
+      "You can work with us on a fixed-scope project, hourly development support or an ongoing dedicated developer/team model, depending on the workload and project requirements.",
   },
   {
     question: "Do you offer ongoing support and maintenance?",
     answer:
-      "Absolutely. We provide ongoing support and maintenance services to ensure your website remains up to date, secure, and running smoothly. Our support packages can be tailored to your needs, offering peace of mind for your business.",
+      "Yes. We provide ongoing WordPress support for updates, bug fixes, performance improvements, new features, plugin and theme changes, integrations and continuous development.",
   },
   {
-    question: "How do I get started with hiring a WordPress developer?",
+    question: "How much experience do your WordPress developers have?",
     answer:
-      "Getting started is easy. Simply contact us via our contact form, email, or phone to discuss your project. We’ll set up a consultation to understand your needs and provide a customized proposal.",
+      "Our WordPress developers work across custom themes, page builders, plugins, WooCommerce, integrations, performance and ongoing support. We match the developer profile to the technical requirements of the project.",
   },
   {
-    question: "What is the average no. of years of experience of your WordPress developer?",
+    question: "Which communication and project management tools can your developers use?",
     answer:
-      "On an average, our WordPress developers have 4+ years of experience with strong domain knowledge and excellent communication skills.",
-  },
-  {
-    question: "What are the tools through which your developers communicate with?",
-    answer:
-      "Our WordPress developers are well acquainted with Skype, Slack, Microsoft Teams for communication with the clients.",
-  },
-  {
-    question: "What project management tools (PMS) can your WordPress developers use?",
-    answer:
-      "Our WordPress developers can efficiently use Trello, Jira, Monday.com, Smartsheet, Basecamp, and other PMS tools.",
+      "Our developers can collaborate through tools such as Slack, Microsoft Teams, Google Meet and Zoom, and work with project management platforms including Asana, Trello, Jira and Monday.com.",
   },
   {
     question: "How much does it cost to hire a WordPress developer?",
     answer:
-      "The cost of hiring a WordPress developer varies depending on the complexity of your project, the developer’s experience, and the specific services you require. We offer competitive pricing and can provide a detailed quote after discussing your project needs.",
+      "WordPress development support starts from $20 per hour. Fixed-scope projects and dedicated developer/team engagements are quoted based on the required scope, capacity and experience level.",
   },
 ];

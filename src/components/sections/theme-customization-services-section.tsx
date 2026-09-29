@@ -9,13 +9,13 @@ export type ThemeCustomizationBox = {
   icon?: ReactNode;
   title: string;
   badge?: string;
-  description: string;
+  description?: string;
 };
 
 export type ThemeCustomizationServicesContent = {
   eyebrow?: string;
   heading: string;
-  description: string;
+  description?: string;
   boxes: readonly ThemeCustomizationBox[];
   bottomNote?: string;
 };
@@ -72,9 +72,11 @@ export function ThemeCustomizationServicesSection({
                   </span>
                 ) : null}
               </h3>
-              <p className="font-sans text-sm font-medium leading-[24px] text-[#535353]">
-                {box.description}
-              </p>
+              {box.description ? (
+                <p className="font-sans text-sm font-medium leading-[24px] text-[#535353]">
+                  {box.description}
+                </p>
+              ) : null}
             </div>
           ))}
         </div>

@@ -1,325 +1,535 @@
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-import { bigCommerceDevelopmentBrands } from "@/content/bigcommerce-development";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
-import { wordpressDevelopmentPortfolio } from "@/content/wordpress-development";
-
-const serviceAssets = "/assets/services/wordpress-development-company";
-const bigCommerceAssets = "/assets/services/bigcommerce-development";
 
 export const wordpressDevelopmentCompanyHero = {
+  eyebrows: ["Established in 2006", "Wordpress Development Agency"],
   title: "WordPress Development Company in India",
   description:
-    "Transform your online presence with the best WordPress development company in India. We craft custom sites and refine themes to match your unique requirements perfectly. We focus on creating a website that showcases your brand identity and fulfills your objectives.",
+    "Dynamic Dreamz is an India-based WordPress development company established in 2006. We build and improve custom WordPress websites, themes, plugins, WooCommerce stores, multilingual websites and integrations for businesses and digital agencies in India and worldwide.",
   secondaryDescription:
-    "Our white-label WordPress services offer custom development and design, enabling you to deliver top-tier websites under your brand. Hire WordPress developers & designers from the best WordPress website development company in India.",
-  ctaLabel: "get in touch",
-  ctaHref: "/request-quote",
-  image: {
-    src: `${serviceAssets}/hero/wordpress-development-company.svg`,
-    alt: "WordPress website development and customization illustration",
-    width: 469,
-    height: 224,
+    "Need WordPress delivery behind your agency brand? Our white label WordPress team can support design implementation, development, QA and ongoing technical work while your agency keeps the client relationship.",
+  primaryCta: {
+    label: "Get in Touch",
+    href: "/request-quote",
   },
-  reviews: [
+  badges: [
     {
-      platform: "Clutch",
-      reviewCount: "132 Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/clutch-wordmark.svg",
-      logoAlt: "Clutch Review Dynamic Dreamz",
-      logoWidth: 57,
-      logoHeight: 19,
+      src: "/assets/proof/shopify-platinum-partner.svg",
+      alt: "Dynamic Dreamz - Shopify Platinum Partner",
+      width: 136,
+      height: 44,
+      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+    },
+    {
+      src: "/assets/proof/clutch-rating.svg",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      width: 111,
+      height: 44,
       href: "https://clutch.co/profile/dynamic-dreamz",
     },
     {
-      platform: "Upwork",
-      reviewCount: "2000+ Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/upwork-wordmark.svg",
-      logoAlt: "Upwork Review Dynamic Dreamz",
-      logoWidth: 64,
-      logoHeight: 19,
-      href: "https://www.upwork.com/agencies/dynamicdreamz/",
+      src: "/assets/proof/trustpilot-rating.svg",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      width: 148,
+      height: 50,
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
     },
     {
-      platform: "GoodFirms",
-      reviewCount: "72 Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/goodfirms-wordmark.svg",
-      logoAlt: "Goodfirms Review Dynamic Dreamz",
-      logoWidth: 86,
-      logoHeight: 19,
-      href: "https://www.goodfirms.co/company/dynamic-dreamz",
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      width: 126,
+      height: 54,
+      href: "https://www.upwork.com/agencies/dynamicdreamz/",
     },
   ],
+  tabletSlider: {
+    bgShapeSrc:
+      "/assets/services/shopify-development-in-bangalore/hero/slide-bg-shape.svg",
+    topBadge: {
+      src: "/assets/services/wordpress-development-in-ahmedabad/hero/woocommerce-agency-partner.png",
+      alt: "WooCommerce Agency Partner",
+      width: 173,
+      height: 106,
+    },
+    bottomBadge: {
+      src: "/assets/services/wordpress-development-in-ahmedabad/hero/wordpress-logo.png",
+      alt: "WordPress Logo",
+      width: 130,
+      height: 126,
+    },
+    slides: [
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-green-future-energy.webp",
+        alt: "greenfutureenergy",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-avm.webp",
+        alt: "avm",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-homepage-revised.webp",
+        alt: "HomepageRevised",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-lipari-design.webp",
+        alt: "liparidesign",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-ornago.webp",
+        alt: "ornago",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-syrene.webp",
+        alt: "syrene",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-the-huddle-sports-grill.webp",
+        alt: "thehuddlesportsgrill",
+        width: 1600,
+        height: 2380,
+      },
+    ],
+  },
 } as const;
 
 export const wordpressDevelopmentCompanyBrands = {
   content: {
     slug: "wordpress-development-company",
+    heading: "Trusted by<br>Leading Brands",
     brands: { ariaLabel: "Trusted by Leading Brands" },
   },
-  items: bigCommerceDevelopmentBrands,
+  items: [
+    {
+      name: "Supertails",
+      href: "https://supertails.com/",
+      src: "/assets/clients/supertails.svg",
+      alt: "Supper Tails Logo",
+      width: 164,
+      height: 41,
+    },
+    {
+      name: "11-11",
+      href: "https://11-11.in/",
+      src: "/assets/clients/eleven-eleven.svg",
+      alt: "Eleven Eleven",
+      width: 145,
+      height: 20,
+    },
+    {
+      name: "Bella Vita",
+      href: "https://bellavitaorganic.com/",
+      src: "/assets/clients/bellavita.svg",
+      alt: "bellavita logo",
+      width: 166,
+      height: 24,
+    },
+    {
+      name: "Bombay Shirt Company",
+      href: "https://www.bombayshirts.com/",
+      src: "/assets/clients/bombay-shirt-company.svg",
+      alt: "Bombay Shirt Company",
+      width: 204,
+      height: 26,
+    },
+    {
+      name: "Popclub",
+      href: "https://popclub.co/",
+      src: "/assets/clients/popclub.svg",
+      alt: "Popclub",
+      width: 65,
+      height: 41,
+    },
+    {
+      name: "Sri Sri Tattva",
+      href: "https://www.srisritattva.com/",
+      src: "/assets/clients/sri-sri-tattva.svg",
+      alt: "SriSri Tattva Logo",
+      width: 106,
+      height: 40,
+    },
+    {
+      name: "Tropicfeel",
+      href: "https://shop.tropicfeel.com/",
+      src: "/assets/clients/tropicfeel.svg",
+      alt: "tropicfeel logo",
+      width: 150,
+      height: 32,
+    },
+    {
+      name: "Renee",
+      href: "https://www.reneecosmetics.in/",
+      src: "/assets/clients/renee.svg",
+      alt: "Renee logo",
+      width: 93,
+      height: 30,
+    },
+    {
+      name: "Royce Chocolate",
+      href: "https://royceindia.com/",
+      src: "/assets/clients/royce-chocolate.svg",
+      alt: "Royce chocolate logo",
+      width: 132,
+      height: 38,
+    },
+    {
+      name: "Tego",
+      href: "https://tego.fit/",
+      src: "/assets/clients/tego.svg",
+      alt: "tego logo",
+      width: 101,
+      height: 40,
+    },
+    {
+      name: "Nekter",
+      href: "https://www.nekterjuicebar.com/",
+      src: "/assets/clients/nekter-colored.svg",
+      alt: "nekter-colored",
+      width: 66,
+      height: 64,
+    },
+    {
+      name: "Rare Rabbit",
+      href: "https://thehouseofrare.com/",
+      src: "/assets/clients/rare-rabbit.svg",
+      alt: "Rare Rabbit Logo",
+      width: 122,
+      height: 84,
+    },
+  ],
 } as const;
 
 export const wordpressDevelopmentCompanyServices = {
+  eyebrow: "Our Services",
   heading: "Start Your Business with <br> WordPress Development Services",
   description:
-    "Take advantage of the WordPress development services from Dynamic Dreamz, <br> a WordPress Website development company in India. We are expertly <br> crafting customized WordPress solutions to ensure your digital success.",
+    "Take advantage of the WordPress development services from Dynamic Dreamz, a WordPress Website development company in India. We are expertly crafting customized WordPress solutions to ensure your digital success.",
   items: [
     {
       icon: "/assets/services/wordpress/wordpress-theme-customization.svg",
       iconAlt: "WordPress Icon",
+      iconKey: "wordpress-theme-customization",
       title: "WordPress Theme Customization Service",
       description:
-        "Our expert WordPress developers can customize popular WordPress themes such as Gutenberg, Elementer, Divi Builder, Flatsome UX Builder, etc, to cater to your diverse business requirements. Boost your online presence with our custom WordPress website service. We create unique sites tailored to your brand. Our team ensures your website is easy to use and looks great. Let us help you shine online with our simple, effective solutions.",
+        "Customize Gutenberg, Elementor, Divi Builder, Flatsome UX Builder and other WordPress themes or page builders to match your approved design, content and functionality requirements.",
     },
     {
       icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
       iconAlt: "theme customization icon",
+      iconKey: "wordpress-custom-theme-development",
       title: "WordPress Custom Theme Development Service",
       description:
-        "Can’t you find any of the WordPress themes appealing? We are here to help you with our WordPress custom theme development service. We will craft an entirely original theme. That will distinguish your website from competitors and meet your needs. We also create user-engaging subscription-based Learning Management Systems (LMS) using WordPress.",
+        "When an off-the-shelf theme is not the right fit, we can build a custom WordPress theme around your brand, approved design and content structure. We can also develop WordPress-based learning or membership experiences where required.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
       iconAlt: "Plugin Development Icon",
+      iconKey: "wordpress-plugin-development",
       title: "WordPress Plugin Development Service",
       description:
-        "Boost your WordPress website with personalized plugins designed to suit your requirements. Our skilled team creates plugins to enrich functionality and ensure smooth integration. Elevate your site's efficiency and user interaction with our specialized plugin development solutions.",
+        "Extend WordPress with custom plugins and functionality built around your workflow, including third-party APIs, payment services, CRM systems and other business integrations.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-multi-language-website.svg",
       iconAlt: "Multi-Language Icon",
+      iconKey: "wordpress-multi-language-website-development",
       title: "WordPress Multi-Language Website Development Service",
       description:
-        "Expand your reach with our WordPress multi-language website development service. We create sites in English, Spanish, French, German, and many other languages using the WPML plugin for seamless language integration. Enhance the presence of your business by catering to the global audience with a fully translated, user-friendly website.",
+        "Build multilingual WordPress websites using WPML or another suitable translation workflow, with language-specific content, navigation and templates for international audiences.",
     },
     {
       icon: "/assets/services/wordpress/woocommerce-development.svg",
       iconAlt: "WooCommerce Icon",
+      iconKey: "woocommerce-development",
       title: "WooCommerce Development Service",
       description:
-        "We customize reliable Ecommerce solutions for your business needs with our WooCommerce development service. From seamless integration to custom plugin development, we optimize your online store for scalability and performance. With user-friendly interfaces and secure payment gateways, we ensure a seamless shopping experience, driving sales and customer satisfaction.",
+        "Build or improve WooCommerce stores with product and checkout customization, payment and shipping integrations, custom functionality and ongoing ecommerce support.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-white-label-development.svg",
       iconAlt: "White Label icon",
+      iconKey: "wordpress-white-label-development",
       title: "WordPress White-Label Development Service",
       description:
-        "Our white-label WordPress development service enables agencies to offer expert solutions under their brand. From custom themes to plugin development, we deliver seamless, rebranded solutions tailored to your clients’ needs. Expand your service offerings without the overhead, and let us be your silent partner in digital success.",
+        "Digital and creative agencies can use our WordPress team behind their own brand for development, design implementation, QA and ongoing technical support.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-cms-development.svg",
       iconAlt: "WordPress CMS Icon",
+      iconKey: "wordpress-cms-development",
       title: "WordPress CMS Development Service",
       description:
-        "Experience seamless content management with our Headless WordPress service. Manage your site with WordPress’s powerful admin interface while delivering a dynamic, high-performance front end using Next.js. Benefit from a decoupled architecture that enhances speed, flexibility, and scalability. Perfect for developers and content creators seeking modern web development with robust, user-friendly content management systems.",
+        "Use WordPress as a flexible CMS for traditional websites or as a content layer behind a modern front end such as Next.js when a headless architecture fits the project.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-optimization-speed-up.svg",
       iconAlt: "Speed Up Icon",
-      title: "WordPress Optimization and Speed Up Service",
+      iconKey: "wordpress-optimization-and-speed-up",
+      title: "WordPress Optimization and Speed-Up Service",
       description:
-        "Boost your WordPress site’s rankings and user experience with our WordPress optimization services. We optimize loading times, streamline code, and improve SEO rankings. From image optimization to caching solutions, we ensure your site operates at peak efficiency, driving increased traffic and conversions. We fine-tune every aspect for maximum performance. Let us optimize your site for better visibility and success!",
+        "Improve loading performance by reviewing themes, plugins, images, scripts, caching and front-end implementation while keeping usability and website stability in mind.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-maintenance.svg",
       iconAlt: "maintenance icon",
+      iconKey: "wordpress-maintenance",
       title: "WordPress Maintenance Service",
       description:
-        "Keep your WordPress site running around the clock with our maintenance services. We handle core updates, backups, theme updates, security checks, and more so you can focus on your business. Let us take care of the technical stuff for you!",
+        "Support an existing WordPress website with updates, backups, troubleshooting, theme and plugin changes, testing, security checks and ongoing development.",
     },
   ],
-  cta: {
-    label: "Let me give you a hand to help you",
-    href: "/request-quote",
-    ariaLabel: "Dynamic Dreamz - Let me give you a hand to help you",
-  },
 } as const;
 
-export const wordpressDevelopmentCompanyReasons = {
-  heading:
-    "Why Choose Dynamic Dreamz as a <br> WordPress Development Company in India",
+export const wordpressDevelopmentCompanyWhyChoose = {
+  eyebrow: "Why Dynamic Dreamz",
+  heading: "Why Choose Dynamic Dreamz as Your WordPress Development Company in India",
   description:
-    "At Dynamic Dreamz, we are proud of ourselves for providing top-notch WordPress<br> solutions tailored to fulfill your unique business requirements. With years of<br> experience, skills, and dedication to excellence, we ensure your WordPress website<br> is visually attractive, positively functional, secure, and optimized for performance.",
-  hideCta: true,
-  items: [
+    "Established in 2006, Dynamic Dreamz combines WordPress development, UI/UX, QA and project coordination within one team. We support businesses and agencies with custom development, reliable communication and ongoing technical support.",
+  boxes: [
     {
-      icon: `${bigCommerceAssets}/advantages/expertise-in-custom-development.svg`,
-      iconAlt: "Expertise in Custom Development",
+      iconKey: "expertise-in-custom-development",
       title: "Expertise in Custom Development",
       description:
-        "We specialize in developing custom WordPress websites that suit your business goals. Whether it's a custom plugin, custom theme, or complex integration, our WordPress developers have the skills to make your dream come true.",
+        "Custom WordPress themes, plugins, WooCommerce, integrations and functionality built around project requirements.",
     },
     {
-      icon: `${bigCommerceAssets}/advantages/focus-on-security.svg`,
-      iconAlt: "Focus on Security",
+      iconKey: "focus-on-security",
       title: "Focus on Security",
       description:
-        "Your website's security is our top priority at Dynamic Dreamz. We use robust security standards to safeguard your WordPress website from vulnerabilities and threats, securing your data and website both remain secure.",
+        "Follow practical WordPress security best practices across access, plugins, themes, updates and custom code while recognizing that hosting and third-party systems also affect security.",
     },
     {
-      icon: `${bigCommerceAssets}/advantages/commitment-to-quality.svg`,
-      iconAlt: "Commitment to Quality",
+      iconKey: "commitment-to-quality",
       title: "Commitment to Quality",
       description:
-        "We promise that all of our work has a high standard. Our experts follow the best practices in coding & design and build WordPress solutions that look attractive, reliable, and efficient.",
+        "Use structured development and QA practices across relevant devices and browsers before launch.",
     },
     {
-      icon: `${bigCommerceAssets}/advantages/timely-delivery.svg`,
-      iconAlt: "Timely Delivery",
+      iconKey: "timely-delivery",
       title: "Timely Delivery",
       description:
-        "Our developers are skilled enough to finish the project within the deadlines. Our project management process is built to complete your project on time without sacrificing quality and functionality.",
+        "Plan work around an agreed scope, milestones and dependencies and keep clients updated when requirements or timelines change.",
     },
     {
-      icon: `${bigCommerceAssets}/advantages/transparent-communication.svg`,
-      iconAlt: "Transparent Communication",
+      iconKey: "transparent-communication",
       title: "Transparent Communication",
       description:
-        "For any project to be successful, communication must be clear and constant. We ensure that your expectations are satisfied and your feedback is considered by keeping you updated at every stage of the development process.",
+        "Use clear project updates, feedback cycles and collaboration tools so requirements and progress stay visible.",
     },
     {
-      icon: `${serviceAssets}/advantages/ongoing-support-maintenance.svg`,
-      iconAlt: "Ongoing Support and Maintenance",
+      iconKey: "ongoing-support-and-maintenance",
       title: "Ongoing Support and Maintenance",
       description:
-        "Our responsibility with your website doesn't end with the launch of the website. We offer support and maintenance services to keep your WordPress website safe, up-to-date, and performing at its peak.",
+        "Continue supporting the website after launch with updates, fixes, performance work, features and integrations as required.",
     },
   ],
 } as const;
 
-export const wordpressDevelopmentCompanyBenefits = {
-  heading: "Why Choose WordPress for Web Development",
+export const wordpressDevelopmentCompanyWhyWordPress = {
+  eyebrow: "Why WordPress",
+  heading: "Why Businesses Choose WordPress",
   description:
-    "WordPress is holding its name in the leading platform for web development because of its <br> robust features like flexibility, scalability, and ease of use. WordPress offers tools and <br> facilities for everyone, from small businesses to large enterprises. Let’s Choose Dynamic Dreamz <br> as a WordPress development company in India.",
-  items: [
+    "WordPress is holding its name in the leading platform for web development because of its robust features like flexibility, scalability, and ease of use. WordPress offers tools and facilities for everyone, from small businesses to large enterprises. Let’s Choose Dynamic Dreamz <br> as a WordPress development company in India.",
+  boxes: [
     {
-      icon: `${serviceAssets}/benefits/user-friendly-interface.svg`,
-      iconAlt: "User-Friendly Interface Icon",
+      iconKey: "user-friendly-interface",
       title: "User Friendly Interface",
       description:
-        "WordPress has a simple interface that makes it easy to use for everyone to manage and update their website without any need for technical expertise. You can add new pages, posts, and media rapidly with its dashboard.",
+        "WordPress gives content teams a familiar admin interface for managing pages, posts, media and other website content without editing code for routine updates.",
     },
     {
-      icon: `${serviceAssets}/benefits/highly-customizable.svg`,
-      iconAlt: "Highly Customizable Icon",
+      iconKey: "highly-customizable",
       title: "Highly Customizable",
       description:
-        "WordPress provides an infinite amount of customization options with its thousands of themes and plugins. Whether you need a simple blog or a complex E-commerce website, you can customize your website to reflect your brand and operational requirements.",
+        "Themes, blocks, plugins and custom development make WordPress flexible for business websites, content platforms, membership experiences and ecommerce.",
     },
     {
-      icon: `${serviceAssets}/benefits/seo-friendly.svg`,
-      iconAlt: "SEO-Friendly Icon",
+      iconKey: "seo-friendly",
       title: "SEO Friendly",
       description:
-        "WordPress is SEO-friendly, with features such as clean code, adjustable URLs, and simple integration with SEO plugins. It guarantees that your website is optimized for search engines, increasing visibility and rating.",
+        "WordPress supports clean page structure, editable metadata, redirects and SEO plugins, while final search performance still depends on content, technical implementation and ongoing SEO work.",
     },
     {
-      icon: `${serviceAssets}/benefits/mobile-responsive.svg`,
-      iconAlt: "Mobile Responsive Icon",
+      iconKey: "mobile-responsive",
       title: "Mobile Responsive",
       description:
-        "It is necessary to have a mobile responsive WordPress website in today's mobile-first world. Most themes are responsive, adapting fluidly to various screen sizes for the best user experience.",
+        "Modern WordPress websites can be built responsively so layouts and content adapt across desktop, tablet and mobile devices.",
     },
     {
-      icon: `${serviceAssets}/benefits/cost-effective.svg`,
-      iconAlt: "Cost-Effective Icon",
-      title: "Cost Effective",
+      iconKey: "flexible-cost-structure",
+      title: "Flexible Cost Structure",
       description:
-        "WordPress is a cost effective web development platform. Its open-source nature enables you to design and manage a quality website without incurring the excessive costs associated with custom development from the start.",
+        "WordPress is open source and supports different implementation approaches, from established themes to fully custom development, depending on budget and requirements.",
     },
     {
-      icon: `${serviceAssets}/benefits/regular-updates-and-security.svg`,
-      iconAlt: "Regular Updates and Security Icon",
-      title: "Regular Updates and Security",
+      iconKey: "updates-and-security",
+      title: "Updates and Security",
       description:
-        "WordPress updates itself frequently to improve security and functionality. With a vast community of developers constantly improving the platform, your website is protected against vulnerabilities.",
+        "WordPress, themes and plugins receive regular updates. Ongoing maintenance, access control, backups and responsible plugin management remain important for website security.",
     },
     {
-      icon: `${serviceAssets}/benefits/easy-integration.svg`,
-      iconAlt: "Easy Integration Icon",
+      iconKey: "easy-integration",
       title: "Easy Integration",
       description:
-        "WordPress integrates with third party tools and services, like payment gateways, email marketing tools, and social media. It ensures your website can grow with your business needs.",
+        "WordPress can connect with payment systems, CRMs, marketing tools, analytics platforms, APIs and other third-party services.",
     },
     {
-      icon: `${serviceAssets}/benefits/content-management-made-simple.svg`,
-      iconAlt: "Content Management Made Simple Icon",
-      title: "Content Management Made Simple",
+      iconKey: "content-management",
+      title: "Content Management",
       description:
-        "WordPress streamlines content management with its reflexive editor. You can effortlessly create, edit, and organize your content, making it a perfect choice for businesses that continually update their websites.",
+        "WordPress works well for businesses that need teams to create, edit and organize website content regularly.",
     },
   ],
 } as const;
 
 export const wordpressDevelopmentCompanyProcess = {
-  heading: "Our WordPress Website <br> Development Process",
+  eyebrow: "Our Process",
+  heading: "Our WordPress Website Development Process",
   description:
-    "As the best WordPress development company in India, we develop <br> WordPress websites that hold customers' attention, win their hearts, and <br> build an enduring relationship.",
+    "As the best WordPress development company in India, we develop WordPress websites that hold customers' attention, win their hearts, and build an enduring relationship.",
   steps: [
     {
-      number: "01",
-      icon: `${bigCommerceAssets}/process/initial-consultation.svg`,
-      iconAlt: "Analyze Icon",
+      step: "Step 01",
       title: "Analyze",
       description:
-        "It starts with analyzing the client's business and the expected outcome. We create a set of processes that show what the finished WordPress website will do.",
+        "Review the business goals, target users, content, functionality, integrations and expected outcomes before confirming scope.",
     },
     {
-      number: "02",
-      icon: `${bigCommerceAssets}/process/planning-and-strategy.svg`,
-      iconAlt: "Design Icon",
+      step: "Step 02",
       title: "Design",
       description:
-        "We believe good design generates good business. As a WordPress solution provider, we keep things simple and use space.",
+        "Create or refine the user experience and visual direction based on the approved requirements and brand.",
     },
     {
-      number: "03",
-      icon: `${bigCommerceAssets}/process/development-and-implementation.svg`,
-      iconAlt: "Build Icon",
+      step: "Step 03",
       title: "Build",
       description:
-        "Based on the design, we craft the WordPress website using the best tools and plugins suited to your requirements.",
+        "Develop the approved WordPress experience using suitable themes, blocks, plugins and custom code based on the project.",
     },
     {
-      number: "04",
-      icon: `${bigCommerceAssets}/process/testing-launch-support.svg`,
-      iconAlt: "Test Icon",
+      step: "Step 04",
       title: "Test",
       description:
-        "Before going Live, we conduct rigorous testing of the final WordPress website to make it fully secured and bug free.",
+        "Complete QA across relevant devices and browsers, review functionality and integrations, and prepare the website for launch.",
+    },
+  ],
+} as const;
+
+export const wordpressDevelopmentCompanyPricing = {
+  eyebrow: "Flexible WordPress Engagements",
+  heading: "Choose the Right Wordpress Development Engagement.",
+  description:
+    "Choose project-based development, flexible WordPress support starting from $20/hour, or a dedicated developer/team for ongoing requirements.",
+  items: [
+    {
+      label: "Project-Based",
+      badge: "Have One Project?",
+      price: "Custom Quote",
+      description:
+        "For complete WordPress website builds, custom theme development, website redesigns, plugin development, third-party integrations, WooCommerce solutions and technically complex WordPress projects.",
+      ctaLabel: "Send Brief — Get a Quote in 24 Hours",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Flexible Hourly Support",
+      badge: "Need Extra Wordpress Capacity?",
+      price: "$20/hour",
+      description:
+        "For ongoing WordPress maintenance, enhancements, troubleshooting, performance improvements, security updates and evolving website development requirements.",
+      ctaLabel: "Buy Wordpress Development Hours",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Dedicated Developer / Team",
+      badge: "Need Ongoing Capacity?",
+      price: "From $2,000/month",
+      description:
+        "For brands with an evolving WordPress roadmap, multiple websites or a need for a dedicated developer or wider development team.",
+      ctaLabel: "Discuss a Dedicated Team",
+      ctaHref: "/book-a-discovery-call",
     },
   ],
 } as const;
 
 export const wordpressDevelopmentCompanyPortfolio = {
-  ...wordpressDevelopmentPortfolio,
-  eyebrow: "PORTFOLIO",
+  eyebrow: "Portfolio",
   heading: "Our Successful WordPress Projects",
   description:
     "500+ WordPress websites meticulously crafted and counting. Our expertise <br> accelerates growth and redefines shopping experiences for clients, <br> making us the best WordPress development company in India.",
+  category: "WORDPRESS",
   ctaLabel: "View our work",
+  ctaHref: "/our-work",
+  platformMark: {
+    src: "/assets/platforms/wordpress-woocommerce-white.svg",
+    width: 89,
+    height: 26,
+  },
   items: [
-    ...wordpressDevelopmentPortfolio.items,
+    {
+      name: "Quite Events",
+      image: "/assets/our-work/projects/quite-events.webp",
+      imageAlt: "Quite Events Image",
+      href: "https://www.quietevents.com/",
+    },
+    {
+      name: "Les Etoiles",
+      image: "/assets/our-work/projects/les-etoiles.webp",
+      imageAlt: "Les Etoiles Image",
+      href: "https://louer-lesetoiles.ca/",
+    },
+    {
+      name: "Valents",
+      image: "/assets/our-work/projects/valents.webp",
+      imageAlt: "Valents Image",
+      href: "https://wearvalents.com/",
+    },
+    {
+      name: "Get Sunsights",
+      image: "/assets/our-work/projects/get-sunsights.webp",
+      imageAlt: "Get Sunsights Image",
+      href: "https://www.getsunsights.com/",
+    },
+    {
+      name: "Lipari Design",
+      image: "/assets/our-work/projects/lipari-design.webp",
+      imageAlt: "Lipari Design Image",
+      href: "https://liparidesign.ca/",
+    },
+    {
+      name: "Nexventur",
+      image: "/assets/our-work/projects/nexventur.webp",
+      imageAlt: "Nexventur Image",
+      href: "https://www.nexventur.com/",
+    },
     {
       name: "Awaken Media",
       image: "/assets/our-work/projects/awaken-media.webp",
-      imageAlt: "Awaken Media project preview",
+      imageAlt: "Awaken Media Image",
       href: "https://www.awaken.media/",
     },
     {
       name: "Budget Maids",
       image: "/assets/our-work/projects/budget-maids.webp",
-      imageAlt: "Budget Maids project preview",
+      imageAlt: "Budget Maids Image",
       href: "https://www.budget-maids.com/",
     },
   ],
 } as const;
 
 export const wordpressDevelopmentCompanyTestimonials = {
-  heading: "Our Customer's Testimonials",
+  eyebrow: "Client Stories",
+  heading: "Our Customers' Testimonials",
   description:
     "We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories: Check out how our services empower them to evolve.",
   items: shopifyPlusAgencyTestimonials.items,
@@ -327,49 +537,43 @@ export const wordpressDevelopmentCompanyTestimonials = {
 
 export const wordpressDevelopmentCompanyFaqs: readonly FaqAccordionItem[] = [
   {
-    question: "Which Indian WordPress development company is the best?",
+    question: "Why choose Dynamic Dreamz as a WordPress development company in India?",
     answer:
-      "As the top WordPress development company in India, Dynamic Dreamz is renowned for providing custom, high-quality WordPress solutions. We realize your vision with custom websites that make an impression on the online world, all while keeping an eye on security, innovation, and client satisfaction.",
+      "Dynamic Dreamz has provided web and WordPress development services since 2006. Our India-based team supports custom WordPress websites, themes, plugins, WooCommerce, integrations, performance improvements and ongoing development for businesses and agencies in India and worldwide.",
   },
   {
-    question: "How much does a WordPress web development cost in India?",
+    question: "How much does WordPress development cost in India?",
     answer:
       "The complexity and features of the website determine how much WordPress web development in India costs. Dynamic Dreamz provides competitive pricing that is customized to meet your custom requirements. Get in touch with us for a quote.",
   },
   {
-    question: "How much time does it take to create a website using WordPress?",
+    question: "How long does it take to build a WordPress website?",
     answer:
-      "The project’s scope and requirements determine how long it will take to build a WordPress website. More complicated websites might take longer to develop than the typical four to six-week timeframe.",
+      "A standard WordPress website commonly takes around 4 to 6 weeks after the design, scope and content requirements are clear. WooCommerce, multilingual, plugin-heavy or integration-heavy projects may require additional time.",
   },
   {
     question: "Do you offer custom WordPress theme development?",
     answer:
-      "Of course, creating custom WordPress themes is our expertise. In order to make sure your website stands out from the competition, our team can create a fully responsive theme that matches your specific requirements and reflects your brand.",
+      "Yes. We build custom WordPress themes around approved designs and brand requirements when an existing theme is not the right fit. We can also customize established themes and page builders when that is the more practical approach.",
   },
   {
-    question: "Can you help with website migration to WordPress?",
+    question: "Can you migrate an existing website to WordPress?",
     answer:
-      "Yes, for sure! We provide smooth website migration services to WordPress, guaranteeing the safe transfer of your content, data, and search engine rankings. Our professionals manage the migration process effectively, reducing downtime and ensuring a seamless changeover.",
+      "Yes. We can migrate content and rebuild an existing website on WordPress. The migration plan depends on the current platform, content volume, URLs, forms, integrations and SEO requirements. Redirects and pre-launch QA should be included where required.",
   },
   {
-    question: "Can I alter my website once it has been launched?",
+    question: "Can you add WooCommerce or new functionality later?",
     answer:
-      "Yes, WordPress makes it simple to make updates and modifications to your website even after it has launched. We give you the guidance and assistance you need to manage your content, or you can choose our continuous maintenance services for seamless updates.",
+      "Yes. We can add WooCommerce, custom plugins, integrations, membership features, multilingual functionality and other improvements to an existing WordPress website.",
   },
   {
-    question: "What kind of support do you provide after the website is launched?",
+    question: "Do you work with clients outside India?",
     answer:
-      "We provide complete post-launch support at Dynamic Dreamz, which contains routine updates, security audits, performance enhancements, and troubleshooting. Our team is always here to help you with any troubles or improvements your website might need.",
+      "Yes. Dynamic Dreamz is based in India and works with businesses and digital agencies internationally. We collaborate remotely using common communication and project-management tools and can schedule calls across client time zones.",
   },
   {
-    question: "How can I begin using your services for WordPress development?",
+    question: "What support do you provide after launch?",
     answer:
-      "It’s easy to get started using our WordPress development services. To discuss your project, visit our website, Dynamic Dreamz, the best WordPress development company. You can call at given number or use the contact form on our website.",
+      "We provide ongoing WordPress support for updates, bug fixes, backups, theme and plugin changes, performance improvements, integrations and new functionality based on the support arrangement.",
   },
 ];
-
-export const wordpressDevelopmentCompanyCta = {
-  heading: "Want us to help you with your online store?",
-  ctaLabel: "request a quote",
-  ctaHref: "/request-quote",
-} as const;

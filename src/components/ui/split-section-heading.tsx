@@ -16,6 +16,7 @@ export type SplitSectionHeadingProps = {
   textColumnClassName?: string;
   dark?: boolean;
   variant?: "centered" | "default" | "portfolio" | "services" | "left";
+  preserveBreaks?: boolean;
 };
 
 function removeBreakTags(text: string) {
@@ -36,6 +37,7 @@ export function SplitSectionHeading({
   textColumnClassName,
   dark = false,
   variant = "default",
+  preserveBreaks = false,
 }: SplitSectionHeadingProps) {
   const body = paragraphs ?? (description ? [description] : []);
   const services = variant === "services";
@@ -113,7 +115,10 @@ export function SplitSectionHeading({
           )}
           id={headingId}
         >
-          {formatBrText(removeBreakTags(heading))}
+          {formatBrText(
+            preserveBreaks ? heading : removeBreakTags(heading),
+            "max-[767px]:hidden",
+          )}
         </h2>
       </div>
       {body.length > 0 ? (
@@ -129,15 +134,18 @@ export function SplitSectionHeading({
             <p
               className={cn(
                 services || leftAligned
-                  ? "font-sans xl:text-base text-sm font-medium leading-6"
+                  ? "font-sans xl:text-base text-sm font-medium leading-7 max-[767px]:leading-6"
                   : portfolio
                     ? "font-sans text-[16px] font-medium leading-7 max-[992px]:mt-3.75 max-[992px]:text-sm max-[992px]:leading-[24px] max-[767px]:text-sm max-[767px]:leading-6"
-                  : "xl:text-base text-sm font-medium leading-6 not-last:mb-2.5",
+                    : "xl:text-base text-sm font-medium leading-6 not-last:mb-2.5",
                 dark ? "text-white/80" : "text-muted",
               )}
               key={paragraph}
             >
-              {formatBrText(removeBreakTags(paragraph))}
+              {formatBrText(
+                preserveBreaks ? paragraph : removeBreakTags(paragraph),
+                "max-[767px]:hidden",
+              )}
             </p>
           ))}
         </div>
