@@ -1,147 +1,220 @@
-import type { AgencyServicesContent } from "@/components/sections/agency-services-section";
-import type { ProofSectionContent } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
-import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
-import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { CityPageCounterContent } from "@/components/sections/city-page-counter-section";
+import type { CityPageHeroContent } from "@/components/sections/city-page-hero-section";
+import type { ShopifyStageServicesContent } from "@/components/sections/shopify-stage-services-section";
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { bigCommerceDevelopmentBrands } from "@/content/bigcommerce-development";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 const assets = "/assets/services/webflow-development";
 
-export const webflowDevelopmentHero: ServiceHeroContent = {
-  title: "Webflow Development Services That Turn Design Into Scalable Websites",
+export const webflowDevelopmentHero: CityPageHeroContent = {
+  eyebrows: ["ESTABLISHED IN 2006", "Webflow Development Agency"],
+  title: "Webflow Development Company for Scalable Websites",
   description:
-    "Dynamic Dreamz is a Webflow development company helping brands build fast, flexible, and conversion-focused websites. From custom Webflow website development to complex CMS builds, our Webflow developers turn ideas into pixel-perfect, performance-ready experiences, and that too without locking you into rigid templates.",
-  secondaryDescription: "We design, develop, and scale Webflow sites that grow with your business.",
-  ctaLabel: "Get a Free Quote",
-  ctaHref: "/request-quote",
+    "Dynamic Dreamz is a Webflow development company helping brands build fast, flexible and conversion-focused websites. From custom Webflow development and Figma-to-Webflow builds to CMS, migrations, integrations and ongoing support, our team creates responsive Webflow sites that are easy to manage and ready to scale.",
+  secondaryDescription:
+    "We design, develop, and scale Webflow sites that grow with your business.",
+  primaryCta: {
+    label: "Request a Quote",
+    href: "/request-quote",
+  },
   secondaryCta: {
-    label: "See Our Work",
-    href: "/our-work",
-    ariaLabel: "Dynamic Dreamz - See Our Work",
+    label: "View Our Work",
+    href: "#our_work",
   },
-  imageContainerClassName:
-    "mx-auto size-[328px] items-center rounded-full bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] max-[767px]:size-[250px]",
-  image: {
-    src: `${assets}/hero/webflow-img.svg`,
-    alt: "Webflow development services illustration",
-    width: 213,
-    height: 219,
-  },
-  reviews: [
+  badges: [
     {
-      platform: "Clutch",
-      reviewCount: "132 Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/clutch-wordmark.svg",
-      logoAlt: "Clutch Review Dynamic Dreamz",
-      logoWidth: 57,
-      logoHeight: 19,
+      src: "/assets/proof/clutch-rating.svg",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      width: 111,
+      height: 44,
       href: "https://clutch.co/profile/dynamic-dreamz",
     },
     {
-      platform: "Upwork",
-      reviewCount: "2000+ Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/upwork-wordmark.svg",
-      logoAlt: "Upwork Review Dynamic Dreamz",
-      logoWidth: 64,
-      logoHeight: 19,
-      href: "https://www.upwork.com/agencies/dynamicdreamz/",
+      src: "/assets/proof/trustpilot-rating.svg",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      width: 148,
+      height: 50,
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
     },
     {
-      platform: "GoodFirms",
-      reviewCount: "72 Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/goodfirms-wordmark.svg",
-      logoAlt: "GoodFirms Review Dynamic Dreamz",
-      logoWidth: 86,
-      logoHeight: 19,
-      href: "https://www.goodfirms.co/company/dynamic-dreamz",
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      width: 126,
+      height: 54,
+      href: "https://www.upwork.com/agencies/dynamicdreamz/",
     },
   ],
+  tabletSlider: {
+    bgShapeSrc:
+      "/assets/services/shopify-development-in-bangalore/hero/slide-bg-shape.svg",
+    slides: [
+      {
+        src: `${assets}/hero/the-gate.webp`,
+        alt: "The Gate",
+        width: 800,
+        height: 1190,
+      },
+      {
+        src: `${assets}/hero/supportninja.webp`,
+        alt: "Supportninja",
+        width: 800,
+        height: 1190,
+      },
+      {
+        src: `${assets}/hero/noble.webp`,
+        alt: "Noble",
+        width: 800,
+        height: 1190,
+      },
+      {
+        src: `${assets}/hero/maui-sheep-milk.webp`,
+        alt: "Maui Sheep Milk",
+        width: 800,
+        height: 1190,
+      },
+      {
+        src: `${assets}/hero/kensite.webp`,
+        alt: "Kensite",
+        width: 800,
+        height: 1190,
+      },
+      {
+        src: `${assets}/hero/hader-institute.webp`,
+        alt: "Hader Institute",
+        width: 800,
+        height: 1190,
+      },
+    ],
+    topBadge: {
+      src: `${assets}/hero/webflow-icon.png`,
+      alt: "webflow-icon",
+      width: 130,
+      height: 126,
+    },
+    bottomBadge: {
+      src: `${assets}/hero/webflow-logo.png`,
+      alt: "webflow_logo",
+      width: 173,
+      height: 106,
+    },
+  },
 };
 
-export const webflowDevelopmentBrands: readonly ClientLogoSliderItem[] = bigCommerceDevelopmentBrands;
+export const webflowDevelopmentBrands: readonly ClientLogoSliderItem[] =
+  bigCommerceDevelopmentBrands;
 
-export const webflowDevelopmentServices: AgencyServicesContent = {
+export const webflowDevelopmentServices: ShopifyStageServicesContent = {
+  eyebrow: "Our Services",
   heading: "Our Webflow Development Services",
   description:
     "At Dynamic Dreamz, we offer the best Webflow development services designed for growing brands, startups, and enterprises that need more than just a good-looking website. Our webflow development experts focus on performance, scalability, and ease of management — so your site works as hard as your business does.",
   items: [
     {
-      icon: `${assets}/services/webflow-services.svg`,
-      iconAlt: "Custom Webflow website development icon",
+      tag: "CUSTOM DEVELOPMENT",
       title: "Custom Webflow Website Development",
       description:
         "We build fully custom Webflow websites tailored to your brand, goals, and users. No bloated templates — just clean structure, responsive layouts, and scalable components.",
+      cta: {
+        label: "DISCUSS A CUSTOM BUILD",
+        href: "/request-quote",
+      },
     },
     {
-      icon: `${assets}/services/figma-webflow.svg`,
-      iconAlt: "Figma to Webflow development icon",
+      tag: "FIGMA TO WEBFLOW",
       title: "Figma to Webflow Development",
       description:
         "Already have designs? Our Webflow developers convert Figma files into pixel-perfect, production-ready Webflow sites with smooth interactions and optimized performance.",
+      cta: {
+        label: "BOOK A CONSULTATION",
+        href: "/book-a-discovery-call",
+      },
     },
     {
-      icon: `${assets}/services/webflow-cms.svg`,
-      iconAlt: "Webflow CMS development icon",
+      tag: "WEBFLOW CMS",
       title: "Webflow CMS Development",
       description:
         "From blogs to complex content systems, we create flexible Webflow CMS setups that are easy to manage, update, and scale as your content grows.",
+      cta: {
+        label: "EXPLORE CMS DEVELOPMENT",
+        href: "/request-quote",
+      },
     },
     {
-      icon: `${assets}/services/webflow-migration.svg`,
-      iconAlt: "Webflow migration and rebuilds icon",
+      tag: "MIGRATION & REBUILD",
       title: "Webflow Migration & Rebuilds",
       description:
         "We migrate websites from WordPress or other platforms to Webflow without losing content, SEO, or performance.",
+      cta: {
+        label: "EXPLORE MIGRATION & REBUILDS",
+        href: "/request-quote",
+      },
     },
     {
-      icon: `${assets}/services/webflow-integrations.svg`,
-      iconAlt: "Webflow integrations and automations icon",
+      tag: "INTEGRATIONS & AUTOMATIONS",
       title: "Webflow Integrations & Automations",
       description:
         "We integrate Webflow with CRMs, marketing tools, analytics, and third-party services to streamline workflows and improve conversions.",
+      cta: {
+        label: "EXPLORE INTEGRATIONS",
+        href: "/request-quote",
+      },
     },
     {
-      icon: `${assets}/services/webflow-support.svg`,
-      iconAlt: "Webflow support and maintenance icon",
+      tag: "ONGOING SUPPORT",
       title: "Ongoing Webflow Support & Maintenance",
       description:
         "Need a reliable Webflow partner? We provide continuous support, updates, optimizations, and improvements post-launch.",
+      cta: {
+        label: "GET SUPPORT",
+        href: "/request-quote",
+      },
+    },
+    {
+      tag: "SEO & PERFORMANCE",
+      title: "Webflow SEO & Performance Optimization",
+      description:
+        "Optimize your Webflow website for better search visibility, faster load times, and a smoother user experience. We improve technical SEO, site structure, Core Web Vitals, and on-page performance.",
+      cta: {
+        label: "OPTIMIZE YOUR WEBFLOW SITE",
+        href: "/request-quote",
+      },
     },
   ],
-  cta: {
-    label: "Let me help you",
-    href: "/request-quote",
-    ariaLabel: "Dynamic Dreamz - Let me help you",
-  },
 };
 
-export const webflowDevelopmentGrowth: ProofSectionContent = {
+export type WebflowGrowthBox = {
+  iconKey: "performance" | "conversion" | "future-ready";
+  title: string;
+  description: string;
+};
+
+export type WebflowGrowthContent = {
+  heading: string;
+  description: string;
+  boxes: readonly WebflowGrowthBox[];
+};
+
+export const webflowDevelopmentGrowth: WebflowGrowthContent = {
   heading: "Webflow Websites Built for Growth",
   description:
     "We don’t just build Webflow websites that look good; we build systems that perform. Every Webflow project at Dynamic Dreamz is designed with speed, conversions, and scalability in mind, so your website actively supports business growth instead of just existing online.",
-  hideCta: true,
-  items: [
+  boxes: [
     {
-      icon: `${assets}/growth/performance-icon.svg`,
-      iconAlt: "Performance-First Development icon",
+      iconKey: "performance",
       title: "Performance-First Development",
       description:
         "Our Webflow development approach prioritizes clean structure, optimized assets, and fast load times. The result? Better Core Web Vitals, improved SEO performance, and smoother user experiences across devices.",
     },
     {
-      icon: `${assets}/growth/conversion-focused-icon.svg`,
-      iconAlt: "Conversion-Focused Design icon",
+      iconKey: "conversion",
       title: "Conversion-Focused Design",
       description:
         "Our Webflow development approach prioritizes clean structure, optimized assets, and fast load times. The result? Better Core Web Vitals, improved SEO performance, and smoother user experiences across devices.",
     },
     {
-      icon: `${assets}/growth/future-ready-icon.svg`,
-      iconAlt: "Future-Ready and Scalable icon",
+      iconKey: "future-ready",
       title: "Future-Ready & Scalable",
       description:
         "We build Webflow sites that are easy to manage, expand, and evolve. Whether it’s adding new pages, scaling content with CMS, or integrating tools, your website stays flexible as your business grows.",
@@ -154,64 +227,93 @@ export const webflowDevelopmentPortfolio = {
   heading: "Recent Projects",
   ctaLabel: "View our work",
   ctaHref: "/our-work",
-  items: [],
+  items: [
+    {
+      name: "My Rezults",
+      href: "https://www.myrezults.com/",
+      image: `${assets}/projects/my-rezults.webp`,
+      imageAlt: "My Rezults Image",
+    },
+    {
+      name: "Bulletproof",
+      href: "https://www.bulletprooflogistics.com/",
+      image: `${assets}/projects/bulletproof.webp`,
+      imageAlt: "Bulletproof Image",
+    },
+    {
+      name: "Sprint Innovations",
+      href: "https://www.sprint-in.com/",
+      image: `${assets}/projects/sprint-innovations.webp`,
+      imageAlt: "Sprint Innovations Image",
+    },
+    {
+      name: "Hader Institute",
+      href: "https://www.haderinstitute.edu.au/",
+      image: `${assets}/projects/hader-institute.webp`,
+      imageAlt: "Hader Institute Image",
+    },
+    {
+      name: "Support Ninja",
+      href: "https://www.supportninja.com",
+      image: `${assets}/projects/support-ninja.webp`,
+      imageAlt: "Support Ninja Image",
+    },
+    {
+      name: "Maui Milk",
+      href: "https://www.mauimilk.co.nz",
+      image: `${assets}/projects/maui-sheep-milk.webp`,
+      imageAlt: "Maui Milk Image",
+    },
+    {
+      name: "Kensite",
+      href: "https://www.kensite.co.uk/",
+      image: `${assets}/projects/kensite.webp`,
+      imageAlt: "Kensite Image",
+    },
+    {
+      name: "Noble Content",
+      href: "https://www.noblecontent.com/",
+      image: `${assets}/projects/noble.webp`,
+      imageAlt: "Noble Content Image",
+    },
+  ],
 } as const;
 
-export const webflowDevelopmentTestimonials = {
-  eyebrow: "Client Stories",
-  heading: "Our Valued Clients",
-  description:
-    "Real feedback from real clients. See how our Webflow development work helps businesses launch faster, scale smarter, and achieve measurable results.",
-  items: shopifyPlusAgencyTestimonials.items,
-} as const;
-
-export type WebflowMilestone = {
-  icon: string;
-  iconAlt: string;
-  title: string;
-  description: string;
-  value: number | string;
-  suffix: string;
-  countLabel: string;
-};
-
-export const webflowDevelopmentMilestones = {
+export const webflowDevelopmentMilestones: CityPageCounterContent = {
+  eyebrow: "Why Dynamic Dreamz",
   heading: "Milestones of Excellence",
   description:
     "Our Webflow development journey is defined by results, not promises. From global clients to high-impact projects, these milestones reflect the trust brands place in Dynamic Dreamz and the outcomes we consistently deliver.",
   items: [
     {
-      icon: `${assets}/milestones/clients-worldwide.svg`,
-      iconAlt: "Clients Worldwide icon",
-      title: "Clients Worldwide",
-      description:
-        "We work with clients across industries and geographies, delivering Webflow websites that support growth at every stage",
-      value: 1100,
-      suffix: "+",
-      countLabel: "Clients Worldwide",
+      value: "20+ Years",
+      label: "Years of Experience",
     },
     {
-      icon: `${assets}/milestones/projects-completed.svg`,
-      iconAlt: "Projects Completed icon",
-      title: "Projects Completed",
-      description:
-        "Our team has successfully delivered a wide range of Webflow development projects — from landing pages to complex CMS-driven websites.",
-      value: 4500,
-      suffix: "+",
-      countLabel: "Projects Completed",
+      value: "150+",
+      label: "Experts",
     },
     {
-      icon: `${assets}/milestones/revenue-impact.svg`,
-      iconAlt: "Revenue Impact icon",
-      title: "Revenue Impact",
-      description:
-        "The Webflow websites we build help businesses convert better, scale faster, and generate measurable revenue impact.",
-      value: "1B",
-      suffix: "+",
-      countLabel: "Revenue Influenced",
+      value: "5,000+",
+      label: "Projects Delivered",
+    },
+    {
+      value: "2500+",
+      label: "Verified 5 Star Reviews",
     },
   ],
+};
+
+export const webflowDevelopmentTestimonials = {
+  eyebrow: "Client Stories",
+  heading: "Our Valued Clients",
+  description:
+    "Real feedback from real clients. See how our Webflow development work helps\nbusinesses launch faster, scale smarter, and achieve measurable results.",
+  items: shopifyPlusAgencyTestimonials.items,
 } as const;
+
+export const webflowDevelopmentFaqHeading = "Frequently Asked Questions";
+export const webflowDevelopmentFaqDescription = "Questions about Webflow development.";
 
 export const webflowDevelopmentFaqs: readonly FaqAccordionItem[] = [
   {
@@ -255,9 +357,3 @@ export const webflowDevelopmentFaqs: readonly FaqAccordionItem[] = [
       "You do. Although you hire webflow developer for development, once the project is completed and handed over, full ownership of the Webflow website and assets belongs to you.",
   },
 ];
-
-export const webflowDevelopmentCta = {
-  heading: "Want us to help you with your online store?",
-  ctaLabel: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
-} as const;

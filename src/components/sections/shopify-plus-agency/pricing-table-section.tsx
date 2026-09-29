@@ -9,6 +9,7 @@ export type PricingEngagementItem = {
   badge: string;
   price: string;
   description: string;
+  bullets?: readonly string[];
   ctaLabel: string;
   ctaHref: string;
 };
@@ -66,6 +67,18 @@ export function PricingTableSection({
               <p className="m-0 mb-6 font-sans text-sm font-medium leading-6 text-[#535353]">
                 {item.description}
               </p>
+              {item.bullets && item.bullets.length > 0 && (
+                <ul className="m-0 mb-6 list-none p-0">
+                  {item.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="border-b border-[rgba(40,40,40,0.1)] py-2.5 font-sans text-sm font-medium leading-normal text-[#535353]"
+                    >
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              )}
               <Link
                 className="btn-link-arrow absolute bottom-6 left-8 inline-flex items-center font-montserrat text-sm font-bold uppercase text-[#ad5151] transition-colors hover:text-[#282828] max-[1199px]:left-6"
                 href={item.ctaHref}

@@ -79,6 +79,7 @@ export const brandTrustAriaLabels: Readonly<Record<string, string>> = {
   "vision-theme-customization": "Brands that trust Dynamic Dreamz for Vision theme customization",
   "warehouse-theme-customization": "Brands that trust Dynamic Dreamz for Warehouse theme customization",
   "web-design": "Trusted Brands",
+  "webflow-development": "Trusted Brands",
   "wix-to-shopify-migration": "Brands that trust Dynamic Dreamz for Wix to Shopify migration",
   "woocommerce-to-shopify-migration": "Brands that trust Dynamic Dreamz for WooCommerce to Shopify migration",
   "woodstock-theme-customization": "Brands that trust Dynamic Dreamz for Woodstock theme customization",

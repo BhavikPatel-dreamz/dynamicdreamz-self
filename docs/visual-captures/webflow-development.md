@@ -2,56 +2,104 @@
 
 - **Route**: `/webflow-development`
 - **Live URL reference**: `https://www.dynamicdreamz.com/webflow-development/`
-- **Capture date**: 2026-09-02
+- **Capture date**: 2026-09-29
 - **Status**: Verified
 - **Browser**: Google Chrome headless
 - **Viewports**: 1440x900, 768x1024, 390x844
 
 ## References
 
-- Live source and View Page Source: `/tmp/webflow-live.html`
-- Live CSS: `/tmp/services-main.css`, `/tmp/services-media.css`
-- Live screenshots:
-  - `/tmp/webflow-live-1440.png`
-  - `/tmp/webflow-live-768.png`
-  - `/tmp/webflow-live-390.png`
-- Local screenshots after implementation:
-  - `/tmp/webflow-local-1440-final.png`
-  - `/tmp/webflow-local-768-final.png`
-  - `/tmp/webflow-local-390-final.png`
+- Live source and View Page Source: `scratch/live-webflow.html`
+- Live CSS:
+  - `hero_new_section.css`
+  - `trusted_by_leading_brands_section.css`
+  - `shopify_development_services.css`
+  - `shopify_theme_customization_services.css`
+  - `projects_section.css`
+  - `city_page_counter.css`
+  - `client_review_section.css`
+  - `faqs_section.css`
 
-## Structure And Responsive Behavior
+## Section Architecture & Order
 
-- Split white hero with Webflow illustration, quote and portfolio CTAs, and Clutch, Upwork, and GoodFirms review cards.
-- Pale yellow trusted-brand marquee.
-- Centered six-card Webflow services grid using pale yellow cards with 15px corners.
-- Pale green/blue growth band with three white cards and gradient hover borders.
-- Empty `Recent Projects` grid retained from the live page, including the `View our work` CTA.
-- Client Stories testimonial carousel with video dialog behavior from the shared section.
-- Light gray milestone section with three gradient-bordered cards and a desktop offset middle card.
-- Eight-item underlined FAQ accordion with the first item open initially.
-- Final quote CTA banner.
-- Services and milestone cards change from three columns to two at tablet and one on mobile.
-- Hero CTAs stay inline through tablet widths and stack below 575px; the illustration scales from 328px to 250px below 768px.
+1. **Hero (`hero-new-section hide-logo`)**:
+   - Background `#f7f4e9` (cream).
+   - Eyebrows: `ESTABLISHED IN 2006` and `Webflow Development Agency`.
+   - Title (H1): `Webflow Development Company for Scalable Websites`.
+   - Two paragraphs matching live text.
+   - Primary CTA: `Request a Quote` -> `/request-quote`.
+   - Secondary CTA: `View Our Work` -> `#our_work`.
+   - Review badges: Clutch (4.9 rating), Trustpilot (4.9 TrustScore), Upwork (Top Rated Plus). The Shopify Platinum badge is omitted/hidden via `hide-logo` matching live site CSS.
+   - Right column: Tablet frame with 6 auto-advancing Webflow project slides (The Gate, Supportninja, Noble, Maui Sheep Milk, Kensite, Hader Institute), decorative background shape, and floating Webflow badges (`webflow-icon.png` at top, `webflow_logo.png` at bottom).
 
-## Motion And Interaction
+2. **Brands Marquee (`our-client-sec`)**:
+   - Background `#FBEED5`.
+   - Heading: `Trusted by Leading Brands`.
+   - 12 trusted brand partner logos with infinite smooth slider animation.
 
-- Client logos and testimonials use the shared horizontal slider behavior.
-- Testimonial cards retain the shared video dialog interaction.
-- FAQ uses the shared open/close transition and keyboard-accessible buttons.
-- Milestone values are server-rendered static values for crawlability. The live page animates these counters on intersection; preserving the values without client hydration is an intentional implementation difference.
-- Nonessential motion remains subject to the shared reduced-motion behavior.
+3. **Services (`shopify-development-services pt-80`)**:
+   - Eyebrow: `Our Services`.
+   - Heading: `Our Webflow Development Services`.
+   - Description matching live text.
+   - Asymmetrical 3-column CSS grid with 7 service cards:
+     1. Custom Webflow Website Development (row span 2, `#f7f4ea` background)
+     2. Figma to Webflow Development
+     3. Webflow CMS Development
+     4. Webflow Migration & Rebuilds (col span 2, `#eff4ef` background)
+     5. Webflow Integrations & Automations
+     6. Ongoing Webflow Support & Maintenance
+     7. Webflow SEO & Performance Optimization
 
-## Comparison Result
+4. **Growth Cards (`theme-customization-services transparent`)**:
+   - Heading: `Webflow Websites Built for Growth`.
+   - Description matching live text.
+   - 3 white cards with local SVG icons (#AD5151 theme red):
+     - Performance-First Development
+     - Conversion-Focused Design
+     - Future-Ready & Scalable
 
-- Desktop: hero heading, circular gradient image frame, review cards, CTAs, and brand band align closely with the live reference. The local hero text block sits approximately 8px lower than the live text because the shared flex hero vertically centers its content; the image/review group is within approximately 10px horizontally.
-- Tablet: hero copy, centered CTA row, 328px image frame, and stacked review cards match the live layout. The local illustration begins approximately 6px higher than the live reference.
-- Mobile: 250px circular image frame, stacked CTAs, and hero copy match the live layout within normal font rasterization and contact-widget overlay differences.
-- The brand marquee can show a different logo at the capture instant because autoplay position is time-dependent; the logo set and section geometry match.
-- Local assets are project-owned canonical files. No runtime requests to the live site are used.
+5. **Recent Projects (`our-work-sec pt-0 pb-0#our_work`)**:
+   - Eyebrow: `Portfolio`.
+   - Heading: `Recent Projects`.
+   - 4-column live grid with 8 real Webflow projects:
+     1. My Rezults
+     2. Bulletproof
+     3. Sprint Innovations
+     4. Hader Institute
+     5. Support Ninja
+     6. Maui Milk
+     7. Kensite
+     8. Noble Content
+   - Rounded cards with hover zoom, arrow icon buttons, and category badges omitted matching live site design.
+   - CTA: `View our work` -> `/our-work`.
+
+6. **Milestones Counter (`city-page-counter`)**:
+   - Eyebrow: `Why Dynamic Dreamz`.
+   - Heading: `Milestones of Excellence`.
+   - Description matching live text.
+   - 4 counter boxes:
+     - 20+ Years / Years of Experience
+     - 150+ / Experts
+     - 5,000+ / Projects Delivered
+     - 2500+ / Verified 5 Star Reviews
+
+7. **Client Stories (`happy-client-sec`)**:
+   - Eyebrow: `Client Stories`.
+   - Heading: `Our Valued Clients`.
+   - Description matching live text.
+   - 11 video testimonial cards with client logos, headshots, and video modal launcher.
+
+8. **FAQ (`faq-sec`)**:
+   - Heading: `Frequently Asked Questions`.
+   - Description: `Questions about Webflow development.`.
+   - 8 accordions matching live site Q&A content word-for-word.
+
+9. **Bottom CTA Banner**:
+   - None (matches live site; the live page ends after the FAQ section).
 
 ## Asset And Source Audit
 
-- Hero and service/growth/milestone assets are stored under `public/assets/services/webflow-development/` after scratch-buffer comparison.
-- Shared review logos, testimonial data, navigation, FAQ, and CTA primitives were reused.
-- `npm run check:asset-duplicates` reports zero duplicate hash groups.
+- Hero slides, floating badges, project cards, and growth SVGs stored under `public/assets/services/webflow-development/`.
+- OG image stored at `public/assets/og/webflow-development.png` (1200x630).
+- All assets verified via SHA-256 duplicate audit: 0 duplicate hash groups across the repository.
+- Content boundary verified: no visible copy hardcoded in `src/components/**`.

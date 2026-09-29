@@ -3,10 +3,49 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { PhoneAppSlider } from "@/components/sections/shopify-mobile-app/phone-app-slider";
 import { cn } from "@/lib/class-names";
-import type { shopifyMobileAppHero } from "@/content/shopify-mobile-app-development";
 
-type ShopifyMobileAppHeroSectionProps = {
-  content: typeof shopifyMobileAppHero;
+export type MobileAppHeroBadge = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  href: string;
+};
+
+export type MobileAppHeroSlide = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
+export type MobileAppHeroContent = {
+  eyebrows?: readonly string[];
+  title: string;
+  titleAccent?: string;
+  description: string;
+  primaryCta: {
+    label: string;
+    href: string;
+    ariaLabel?: string;
+  };
+  secondaryCta: {
+    label: string;
+    href: string;
+    ariaLabel?: string;
+  };
+  badges?: readonly MobileAppHeroBadge[];
+  slides: readonly MobileAppHeroSlide[];
+  frameImage: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+};
+
+export type ShopifyMobileAppHeroSectionProps = {
+  content: MobileAppHeroContent;
 };
 
 export function ShopifyMobileAppHeroSection({

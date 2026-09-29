@@ -150,7 +150,7 @@ export function PortfolioShowcaseSection({
         <div className={`mt-[42px] grid gap-x-[15px] gap-y-[60px] max-[992px]:mt-[50px] max-[992px]:gap-y-[30px] ${gridColsClass} ${itemsClassName ?? ""}`}>
           {content.items.map((item) => (
             <PortfolioProjectCard
-              category={item.category ?? content.category ?? "SHOPIFY"}
+              category={item.category ?? content.category}
               categoryClassName={categoryClassName}
               eagerImage
               href={item.href}

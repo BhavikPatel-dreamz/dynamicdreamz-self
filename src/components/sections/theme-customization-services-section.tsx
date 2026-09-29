@@ -64,7 +64,7 @@ export function ThemeCustomizationServicesSection({
               <div className="icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&>svg]:size-6 [&>svg]:h-auto">
                 {box.icon ?? box.number}
               </div>
-              <h3 className="mb-2 font-montserrat text-[20px] font-bold leading-[28px] text-ink max-[1199px]:text-[18px]">
+              <h3 className="mb-2 font-montreal-medium text-[20px] font-medium leading-[28.8px] text-ink max-[1199px]:text-[18px]">
                 {box.title}
                 {box.badge ? (
                   <span className="mt-2.5 mb-[5px] block w-fit rounded-[30px] bg-[rgba(173,81,81,0.05)] px-[12.5px] py-[5.5px] font-montserrat text-xs font-bold uppercase leading-none text-[#ad5151] max-[767px]:text-[11px] max-[767px]:px-[13.5px] max-[767px]:py-[6.5px]">

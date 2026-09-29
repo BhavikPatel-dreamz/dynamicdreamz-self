@@ -2715,9 +2715,9 @@ export const pageSeo = {
   },
   mobileApplicationDevelopment: {
     path: "/mobile-application-development",
-    title: "Mobile Application Development Services | Dynamic Dreamz",
+    title: "Mobile App Development Company | Dynamic Dreamz",
     description:
-      "Get the best mobile application development services with Dynamic Dreamz—features, integrations and apps customised to your business goals, ready in weeks.",
+      "Custom mobile app development for iOS, Android and cross-platform apps, including utility apps, business apps,ecommerce, APIs and ongoing support.",
     keywords: [
       "mobile application development",
       "mobile application development services",
@@ -2726,14 +2726,14 @@ export const pageSeo = {
       "Shopify add-on application",
       "Dynamic Dreamz",
     ],
-    openGraphType: "website",
+    openGraphType: "article",
     publishedTime: "2025-12-30T10:21:41+00:00",
-    modifiedTime: "2026-08-21T00:00:00+05:30",
+    modifiedTime: "2026-09-29T00:00:00+05:30",
     image: {
-      path: "/assets/og/homepage.png",
+      path: "/assets/og/mobile-application-development.png",
       width: 1200,
       height: 630,
-      alt: "Mobile Application Development Services | Dynamic Dreamz",
+      alt: "Mobile App Development Company | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",
@@ -2994,7 +2994,7 @@ export const pageSeo = {
     path: "/webflow-development",
     title: "Webflow Development Company | Dynamic Dreamz",
     description:
-      "Custom Webflow websites, scalable solutions, and dedicated Webflow developers from Dynamic Dreamz for fast, flexible, conversion-focused experiences.",
+      "Webflow development company for custom websites, Figma to Webflow, CMS, migrations, integrations and ongoing support. Build a fast, scalable Webflow site.",
     keywords: [
       "Webflow development company",
       "Webflow development services",
@@ -3006,12 +3006,12 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2026-01-28T07:12:21+00:00",
-    modifiedTime: "2026-08-05T13:22:37+00:00",
+    modifiedTime: "2026-09-17T07:23:53+00:00",
     image: {
-      path: "/assets/services/webflow-development/hero/webflow-img.svg",
-      width: 213,
-      height: 219,
-      alt: "Webflow development services illustration",
+      path: "/assets/og/webflow-development.png",
+      width: 1200,
+      height: 630,
+      alt: "Webflow Development Company | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",

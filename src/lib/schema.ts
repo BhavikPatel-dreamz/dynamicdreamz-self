@@ -4446,8 +4446,9 @@ export function createMobileApplicationDevelopmentPageSchema() {
     })),
     offers: mobileApplicationDevelopmentOffers.map((item) => ({
       title: item.title,
-      description: item.description,
+      description: item.description ?? "",
     })),
+    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 

@@ -1,52 +1,108 @@
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { MobileAppHeroContent } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-hero-section";
+import type { AiEmpoweredDeliveryContent } from "@/components/sections/ai-empowered-delivery-section";
+import type { ThemeCustomizationBox } from "@/components/sections/theme-customization-services-section";
+import type { NumberedGridItem } from "@/components/sections/shopify-migration/shopify-migration-numbered-grid-section";
+import type { MobileAppWorkContent } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-work-section";
+import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
+import { shopifyMobileAppExploreWork } from "@/content/shopify-mobile-app-development";
 
-export const mobileApplicationDevelopmentHero = {
-  title: {
-    prefix: "Upgrade Your Store With Best",
-    highlight: "Custom Mobile Application",
-    suffix: "Development Services",
+// 1. Hero
+export const mobileAppHero: MobileAppHeroContent = {
+  eyebrows: ["Established in 2006"],
+  title: "Custom Mobile App Development",
+  titleAccent: "Services",
+  description:
+    "Dynamic Dreamz designs and develops custom mobile applications for businesses, startups and digital products. We build utility apps, internal business tools, booking and service apps, marketplaces, customer-facing products and ecommerce apps for iOS and Android—with UI/UX, backend APIs, integrations, QA, store release and ongoing development handled by one team.",
+  primaryCta: {
+    label: "Discuss Your App",
+    href: "/request-quote",
+    ariaLabel: "Discuss Your App",
   },
-  description: {
-    text: "A full-scale mobile application that frees you from the stress of",
-    strong: "monthly subscription charges",
+  secondaryCta: {
+    label: "See Mobile App Work",
+    href: "#our_work",
+    ariaLabel: "See Mobile App Work",
   },
-  features: [
-    "No extra paperwork required",
-    "No more exhausting approval loops",
+  badges: [
+    {
+      src: "/assets/proof/shopify-platinum-partner.svg",
+      alt: "Dynamic Dreamz - Shopify Platinum Partner",
+      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+      width: 136,
+      height: 44,
+    },
+    {
+      src: "/assets/proof/clutch-rating.svg",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      href: "https://clutch.co/profile/dynamic-dreamz",
+      width: 111,
+      height: 44,
+    },
+    {
+      src: "/assets/proof/trustpilot-rating.svg",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+      width: 148,
+      height: 50,
+    },
+    {
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      href: "https://www.upwork.com/ag/dynamicdreamz/",
+      width: 126,
+      height: 54,
+    },
   ],
-  form: {
-    buttonLabel: "GET QUOTATION",
-    inputAriaLabel: "Your website URL",
-    placeholder: "www.yourwebsite.com",
+  slides: [
+    {
+      src: "/assets/services/shopify-mobile-app-development/hero/slide-bellavita.webp",
+      alt: "Bellavita",
+      width: 224,
+      height: 487,
+    },
+    {
+      src: "/assets/services/shopify-mobile-app-development/hero/slide-house-of-good-vibes.webp",
+      alt: "House of good",
+      width: 150,
+      height: 325,
+    },
+    {
+      src: "/assets/services/shopify-mobile-app-development/hero/slide-kalki.webp",
+      alt: "Kalki",
+      width: 147,
+      height: 325,
+    },
+  ],
+  frameImage: {
+    src: "/assets/services/shopify-mobile-app-development/hero/phone-frame.png",
+    alt: "Mobile app frame",
+    width: 282,
+    height: 574,
   },
-  image: {
-    src: "/assets/services/mobile-application-development/hero/mobile-application-development-hero.webp",
-    alt: "Dynamic Dreamz Mobile Application Image",
-    width: 641,
-    height: 625,
-  },
-} as const;
+};
 
-export const mobileApplicationDevelopmentBrands: readonly ClientLogoSliderItem[] = [
+// 2. Client Brands
+export const mobileAppBrands: readonly ClientLogoSliderItem[] = [
   {
     src: "/assets/clients/supertails.svg",
     href: "https://supertails.com/",
-    alt: "Supper Tails",
+    alt: "Supper Tails Logo",
     width: 164,
     height: 41,
   },
   {
     src: "/assets/clients/eleven-eleven.svg",
     href: "https://11-11.in/",
-    alt: "11.11",
+    alt: "Eleven Eleven",
     width: 145,
     height: 22,
   },
   {
     src: "/assets/clients/bella-vita.svg",
     href: "https://bellavitaorganic.com/",
-    alt: "Bellavita",
+    alt: "bellavita logo",
     width: 166,
     height: 24,
   },
@@ -67,42 +123,42 @@ export const mobileApplicationDevelopmentBrands: readonly ClientLogoSliderItem[]
   {
     src: "/assets/clients/sri-sri-tattva.svg",
     href: "https://www.srisritattva.com/",
-    alt: "Sri Sri Tattva",
+    alt: "SriSri Tattva Logo",
     width: 106,
     height: 40,
   },
   {
     src: "/assets/clients/tropicfeel.svg",
     href: "https://shop.tropicfeel.com/",
-    alt: "Tropicfeel",
+    alt: "tropicfeel logo",
     width: 150,
     height: 32,
   },
   {
     src: "/assets/clients/renee.svg",
     href: "https://www.reneecosmetics.in/",
-    alt: "Renee",
+    alt: "Renee logo",
     width: 93,
     height: 30,
   },
   {
     src: "/assets/clients/royce-chocolate.svg",
     href: "https://royceindia.com/",
-    alt: "Royce Chocolate",
+    alt: "Royce chocolate logo",
     width: 132,
     height: 38,
   },
   {
     src: "/assets/clients/tego.svg",
     href: "https://tego.fit/",
-    alt: "Tego",
+    alt: "tego logo",
     width: 101,
     height: 40,
   },
   {
     src: "/assets/clients/nelter.svg",
     href: "https://www.nekterjuicebar.com/",
-    alt: "Nekter",
+    alt: "nekter-colored",
     width: 109,
     height: 41,
   },
@@ -115,239 +171,418 @@ export const mobileApplicationDevelopmentBrands: readonly ClientLogoSliderItem[]
   },
 ];
 
-export const mobileApplicationNeed = {
-  heading: "Why Do You Need an Application Along with Your Website?",
-  intro:
-    "A website is great for visibility, but a mobile application gives your customers a faster, smoother, and more personalised experience. Furthermore, a top mobile application development company also helps you avoid the growing cost of third-party apps that charge monthly fees and offer limited flexibility. Moreover.",
-  items: [
-    "Third-party apps can be expensive and charge monthly subscription fees",
-    "Most paid apps don't allow full customisation, so we build what you need",
-    "A mobile app gives your customers quicker access and better navigation",
-    "You own the app fully, no ongoing charges or limitations",
-    "Add advanced features without depending on multiple external apps",
-  ],
-  image: {
-    src: "/assets/services/mobile-application-development/content/why-mobile-app.webp",
-    alt: "Dynamic Dreamz Why Choose Image",
-    width: 541,
-    height: 647,
-  },
-} as const;
+export const mobileAppBrandsCopy = {
+  heading: "Trusted by\nLeading Brands",
+  ariaLabel: "Brands that trust Dynamic Dreamz for mobile application development",
+};
 
-export const mobileApplicationBenefits = {
-  heading: "Benefits of Having an Add-on Application",
-  intro:
-    "A custom Shopify app with the best mobile application development services lets your store do more than Shopify's common features allow. It helps you create smoother processes, better user experiences, and enhanced functionality without relying on multiple third-party apps.",
-  items: [
-    "You can be completely free from predefined templates or functionalities.",
-    "Your wishlist here can be synced in web & app & you don't need to buy another subscription app.",
-    "You can easily integrate & convert 3rd third-party app into a mobile application.",
-    "Your fully-customised App can be ready in just a period of 4 weeks only.",
-    "You get to pay only one time, and no need to pay the monthly mobile application development cost.",
-    "You get a dedicated team for support, so stress no more ever.",
-    "Seamless customisation with Google, Facebook, Instagram, and more.",
-    "You can add a new page in the App, and that too with a completely different design.",
-  ],
-  image: {
-    src: "/assets/services/mobile-application-development/content/mobile-app-benefits.webp",
-    alt: "Dynamic Dreamz Benefits Image",
-    width: 1125,
-    height: 2000,
-  },
-} as const;
-
-export const mobileApplicationLeverage = {
-  heading: "How Can Businesses Leverage Their Add-on Mobile Applications?",
-  intro:
-    "Many Shopify stores use paid apps to add features such as subscriptions, rewards, bundles, and more. But these apps often come with monthly fees and extra transaction charges. And for that reason, using a custom add-on application can help you bring those features into your own system, without paying a monthly fee.",
-  items: [
-    "Move from paid subscription apps to your own custom solution",
-    "Save on monthly fees and extra transaction charges",
-    "Keep the features you actually need inside your own app",
-    "Improve performance by reducing dependency on heavy third-party apps",
-  ],
-  outro:
-    "If you're unsure whether your existing paid apps can be replaced, we at Dynamic Dreamz Surat can review your setup and guide you.",
-  image: {
-    src: "/assets/services/mobile-application-development/content/shopify-appmaker.webp",
-    alt: "Dynamic Dreamz Businesses Leverage Image",
-    width: 479,
-    height: 627,
-  },
-} as const;
-
-export const mobileApplicationTransition = {
-  heading: "From Website To Mobile App- The Transition Is Simple.",
-  steps: [
-    {
-      number: "01",
-      title: "Share Your Shopify Store",
-      description:
-        "At dynamicdreamz, we sync your existing store setup & design theme and content, where we don't require any additional information or data entry.",
-      icon: "/assets/services/mobile-application-development/timeline/share-store.svg",
-      iconAlt: "Share Shopify store icon",
-      iconWidth: 30,
-      iconHeight: 27,
-    },
-    {
-      number: "02",
-      title: "Customise Your App Experience",
-      description:
-        "Here, you can choose your preferred layout, features, and design touches, from banners to colour schemes, to match your brand perfectly.",
-      icon: "/assets/services/mobile-application-development/timeline/customize-app.svg",
-      iconAlt: "Customise mobile app icon",
-      iconWidth: 27,
-      iconHeight: 27,
-    },
-    {
-      number: "03",
-      title: "We Build & Test",
-      description:
-        "Our team crafts your fully functional mobile app and runs a complete quality check to ensure flawless performance across devices",
-      icon: "/assets/services/mobile-application-development/timeline/build-test.svg",
-      iconAlt: "Mobile app build and test icon",
-      iconWidth: 25,
-      iconHeight: 27,
-    },
-    {
-      number: "04",
-      title: "Launch In 3–4 Weeks",
-      description:
-        "Once approved, your app goes live on the Google Play Store and the Apple App Store, ready for customers to download and shop.",
-      icon: "/assets/services/mobile-application-development/timeline/launch-app.svg",
-      iconAlt: "Mobile app launch icon",
-      iconWidth: 26,
-      iconHeight: 26,
-    },
-  ],
-  image: {
-    src: "/assets/services/mobile-application-development/timeline/mobile-app-process.webp",
-    alt: "Dynamic Dreamz Timeline Image",
-    width: 392,
-    height: 684,
-  },
-} as const;
-
-export const mobileApplicationProof = {
-  heading: "Backed by Experience. Driven by Results.",
+// 3. More Than Ecommerce Apps (AiEmpoweredDeliverySection 1)
+export const mobileAppWorkflowDelivery: AiEmpoweredDeliveryContent = {
+  eyebrow: "More Than Ecommerce Apps",
+  heading: "Build the App Around the Workflow—Not Around a Fixed Template.",
   description:
-    "With years of experience & a strong track record in Shopify development, we've helped thousands of brands build reliable, scalable applications.",
-  stats: [
-    { value: 18, suffix: "+", label: "Years of Experience" },
-    { value: 150, suffix: "+", label: "Experts" },
-    { value: 5000, suffix: "+", label: "Projects Completed" },
-    { value: 1100, suffix: "+", label: "Happy Clients" },
+    "Your mobile product may start with a new idea, an existing business process or a need to reach customers directly on their phones. We build custom applications designed around your workflow, business logic and data requirements.",
+  cta: {
+    label: "Discuss Your App Requirement",
+    href: "/request-quote",
+  },
+  tools: [
+    {
+      name: "Utility & Business Apps",
+      description:
+        "Custom workflows for teams, customers, field operations, dashboards and internal processes.",
+    },
+    {
+      name: "Consumer Apps",
+      description:
+        "Customer-facing products for services, content, memberships, communities and digital experiences.",
+    },
+    {
+      name: "Existing App Development",
+      description:
+        "Modernize UI, add features, improve performance or extend an existing mobile application.",
+    },
+    {
+      name: "Website / Shopify to App",
+      description:
+        "Create a mobile-specific iOS and Android experience connected to your existing website or Shopify store.",
+    },
   ],
-} as const;
+};
 
-export const mobileApplicationQuestions = {
-  heading: "Still Have Questions?",
-  prompt: "Reach out on…",
-  phone: {
-    label: "Phone:",
-    display: "+91 93276 42007",
-    href: "tel:+919327642007",
-  },
-  email: {
-    label: "Email:",
-    display: "info@dynamicdreamz.com",
-    href: "mailto:info@dynamicdreamz.com",
-  },
-  form: {
-    buttonLabel: "GET QUOTATION",
-    inputAriaLabel: "Your website URL",
-    placeholder: "www.yourwebsite.com",
-  },
-  note: "Ready in weeks",
-} as const;
+// 4. What Kind of Mobile Apps Can We Build? (ThemeCustomizationServicesSection yellow)
+export const mobileAppWhatWeBuildCopy = {
+  eyebrow: "What We Build",
+  heading: "What Kind of Mobile Apps Can We Build?",
+  description:
+    "We work across customer experiences, operational tools and connected commerce. The architecture is selected around the product rather than forcing every project into the same framework.",
+};
 
-export const mobileApplicationDevelopmentFaqs: readonly FaqAccordionItem[] = [
+export const mobileAppWhatWeBuildBoxes: readonly Omit<ThemeCustomizationBox, "icon">[] = [
   {
-    question: "What exactly is a Shopify add-on application?",
-    answer:
-      "A Shopify add-on application is a custom-built feature or module that adds extra functionality to your store. It helps you go beyond Shopify's default options without relying on multiple paid apps.",
+    title: "Utility & Business Apps",
+    description:
+      "Internal tools, operational workflows, customer portals, tracking, task management and business processes.",
   },
   {
-    question: "Can I replace my paid third-party apps with a custom solution?",
-    answer:
-      "Yes. Many paid apps can be replaced with a custom add-on or mobile application. This helps you save monthly subscription fees and extra transaction charges.",
+    title: "Consumer Mobile Apps",
+    description:
+      "Mobile products for services, on-demand experiences, accounts, content, digital membership and customer retention.",
   },
   {
-    question: "How long does it take to build a Shopify mobile app?",
-    answer:
-      "When you work with team Dynamic Dreamz, the only Shopify Platinum Partner in India, your mobile app will usually be ready in 3-4 weeks, including development, testing, and store submissions.",
+    title: "Booking & Service Apps",
+    description:
+      "Appointments, service scheduling, location-aware experiences, notifications and real-time interaction.",
   },
   {
-    question: "Will I need to provide additional content for the mobile app?",
-    answer:
-      "No, our team will use your existing Shopify store setup, products, images, content, collections, and design elements. Everything syncs automatically.",
+    title: "Marketplace & Platform Apps",
+    description:
+      "Multi-sided workflows connecting users, providers, products, requests, payments and admin visibility.",
   },
   {
-    question: "What platforms will my mobile app be available on?",
-    answer:
-      "Your app will be published on both the Google Play Store and the Apple App Store, so customers on Android and iOS can download it.",
+    title: "Ecommerce Mobile Apps",
+    description:
+      "Dedicated iOS and Android shopping apps built for speed, personalized accounts, push marketing and repeat orders.",
   },
   {
-    question: "Can I customise how my app looks and functions?",
-    answer:
-      "Yes. You can choose layouts, colours, banners, modules, and features based on your brand and requirements. Every app is tailored.",
-  },
-  {
-    question: "How much does mobile application development cost?",
-    answer:
-      "Cost basically would depend on the features you require. Since our apps are built once and owned by you, there will be no recurring subscription fees. We can share an estimate after reviewing your requirements.",
+    title: "Shopify Store to Mobile App",
+    description:
+      "Native or cross-platform mobile apps connected with an existing Shopify store, catalog, cart and customer accounts.",
   },
 ];
 
-export const mobileApplicationDevelopmentSchemaFaqs =
-  mobileApplicationDevelopmentFaqs.filter(
-    (item) => item.question !== "How long does it take to build a Shopify mobile app?",
-  );
+// 5. End-to-End Services for the Mobile Product Lifecycle (ThemeCustomizationServicesSection green)
+export const mobileAppLifecycleServicesCopy = {
+  eyebrow: "Mobile App Development Services",
+  heading: "End-to-End Services for the Mobile Product Lifecycle.",
+  description:
+    "From product definition through development, integrations, QA and ongoing updates, our team can support the complete mobile product lifecycle or join at the stage where you need additional capability.",
+};
 
-export const mobileApplicationDevelopmentOffers = [
+export const mobileAppLifecycleServicesBoxes: readonly Omit<ThemeCustomizationBox, "icon">[] = [
   {
-    title: "Custom Shopify mobile application",
+    title: "Product Discovery, Wireframes & UI/UX",
     description:
-      "A fully customised application designed around an existing Shopify store and its business requirements.",
+      "User flows, wireframes, interaction design and mobile UI created for clarity, speed and touch interaction.",
   },
   {
-    title: "Third-party app replacement",
+    title: "iOS App Development",
     description:
-      "Custom functionality that can reduce reliance on eligible paid third-party Shopify applications.",
+      "Native applications for iPhone and iPad using Swift and SwiftUI, built around Apple platform standards.",
   },
   {
-    title: "Shopify store synchronisation",
+    title: "Android App Development",
     description:
-      "Synchronisation of an existing store setup, design theme, content, products and collections with the mobile application.",
+      "Native Android applications using Kotlin and modern Android architecture across phones and tablets.",
   },
   {
-    title: "Mobile application customisation",
+    title: "Cross-Platform App Development",
     description:
-      "Layouts, features, banners, colours and design details tailored to the store's brand.",
+      "Shared codebases using React Native or Flutter when cross-platform delivery fits the product and roadmap.",
   },
   {
-    title: "Mobile application build and testing",
+    title: "Backend, APIs & Integrations",
     description:
-      "Development and quality checks across supported mobile devices before approval.",
+      "Custom APIs, third-party integrations, authentication, push notifications, payment gateways and database architecture.",
   },
   {
-    title: "Google Play and Apple App Store launch",
+    title: "QA, App Store / Play Store Launch & Support",
     description:
-      "Launch support for approved applications on Google Play and the Apple App Store.",
+      "Device testing, performance verification, App Store / Google Play release handling and post-launch iteration.",
   },
-] as const;
+];
 
-export const mobileApplicationClosingMessage = {
-  heading: "Let’s Build Shopify Stores Under Your Brand!",
-  firstLine: {
-    prefix: "Are you looking for a ",
-    strong: "trusted white label WordPress partner?",
-    suffix: " Together, let’s improve your agency!",
+// 6. Architecture & Technology (AiEmpoweredDeliverySection 2)
+export const mobileAppTechStack: AiEmpoweredDeliveryContent = {
+  eyebrow: "Architecture & Technology",
+  heading: "Native or Cross-Platform? We Choose Around the Product.",
+  description:
+    "Some applications benefit from fully native development; others gain speed and maintainability from a shared cross-platform foundation. We assess device capabilities, performance, integrations, roadmap and budget before selecting the architecture.",
+  tools: [
+    {
+      name: "iOS",
+      description: "Swift · SwiftUI",
+    },
+    {
+      name: "Android",
+      description: "Kotlin · Jetpack Compose",
+    },
+    {
+      name: "React Native",
+      description: "Shared iOS + Android foundation",
+    },
+    {
+      name: "Flutter",
+      description: "Multi-platform application framework",
+    },
+  ],
+};
+
+// 7. Our App Development Process (ShopifyMigrationNumberedGridSection)
+export const mobileAppProcessCopy = {
+  eyebrow: "Our App Development Process",
+  heading: "From Product Definition to Release and Ongoing Iteration.",
+  description:
+    "A clear delivery process keeps product, design, engineering and QA aligned as the application moves toward production.",
+};
+
+export const mobileAppProcessSteps: readonly NumberedGridItem[] = [
+  {
+    number: "01",
+    title: "Discover",
+    description:
+      "Users, goals, workflows, integrations and requirements.",
   },
-  secondLine: {
-    linkLabel: "Contact us today",
-    linkHref: "/contact-us",
-    suffix:
-      "and start delivering world-class WordPress solutions under your brand.",
+  {
+    number: "02",
+    title: "Architect",
+    description:
+      "Platform strategy, data, APIs and technical approach.",
   },
-} as const;
+  {
+    number: "03",
+    title: "Design",
+    description:
+      "Flows, wireframes, UI system and prototypes.",
+  },
+  {
+    number: "04",
+    title: "Develop",
+    description:
+      "Mobile frontend, backend services and business logic.",
+  },
+  {
+    number: "05",
+    title: "QA & Release",
+    description:
+      "Device testing, integrations and store readiness.",
+  },
+  {
+    number: "06",
+    title: "Improve",
+    description:
+      "Maintenance, OS updates and roadmap work.",
+  },
+];
+
+// 8. Portfolio (ShopifyMobileAppWorkSection)
+export const mobileAppPortfolio: MobileAppWorkContent = {
+  eyebrow: "Portfolio",
+  heading: "Applications Delivered Across iOS, Android and Mobile Commerce.",
+  description:
+    "Selected mobile applications delivered by our team across consumer, service and ecommerce experiences. Explore our portfolio for more project examples and platform details.",
+  items: shopifyMobileAppExploreWork.items,
+  ctaLabel: "View our work",
+  ctaHref: "/our-work",
+  ctaAriaLabel: "Dynamic Dreamz - View our work",
+};
+
+// 9. Engagement & Pricing (PricingTableSection)
+export const mobileAppPricing: PricingEngagementContent = {
+  eyebrow: "Engagement & Pricing",
+  heading: "Choose the Delivery Model Around Your App Roadmap.",
+  description:
+    "New applications are normally scoped after discovery. Dedicated capacity and post-launch support are available when the product needs continuous development.",
+  items: [
+    {
+      label: "Project-Based",
+      badge: "Custom App Development",
+      price: "Custom Quote",
+      description:
+        "For a defined mobile product with agreed design, application features, APIs, QA and release scope.",
+      bullets: [
+        "Discovery & architecture",
+        "UI/UX + development",
+        "Backend & integrations",
+        "QA & release support",
+      ],
+      ctaLabel: "Request a Quote",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Dedicated Developer / Team",
+      badge: "Ongoing Product Capacity",
+      price: "From $2,000/month",
+      description:
+        "For businesses that need steady mobile or full-stack development capacity and team continuity.",
+      bullets: [
+        "Dedicated development capacity",
+        "Long-term roadmap delivery",
+        "Team continuity",
+        "Full-stack support when needed",
+      ],
+      ctaLabel: "Discuss Dedicated Capacity",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Post-Launch",
+      badge: "Maintenance & Enhancements",
+      price: "$20/hour",
+      description:
+        "For releases, OS updates, fixes, integrations, analytics and feature improvements after launch.",
+      bullets: [
+        "App updates",
+        "New features",
+        "Bug fixes & performance",
+        "Release support",
+      ],
+      ctaLabel: "Discuss Support",
+      ctaHref: "/request-quote",
+    },
+  ],
+};
+
+// 10. Why Dynamic Dreamz (WhyChooseShopifyMigrationSection)
+export const mobileAppWhyChooseCopy = {
+  eyebrow: "Why Dynamic Dreamz",
+  heading: "Mobile Development Backed by a Broader Technology Team.",
+  description:
+    "Mobile apps rarely live in isolation. Our in-house teams can support UI/UX, backend APIs, ecommerce, full-stack development, QA and ongoing maintenance around the application.",
+  items: [
+    {
+      description:
+        "Designers and developers work together from flows and prototypes through implementation.",
+    },
+    {
+      description:
+        "APIs, authentication, databases, business systems and admin tools can stay with the same delivery team.",
+    },
+    {
+      description:
+        "Important application journeys are tested across relevant devices, integrations and release conditions.",
+    },
+    {
+      description:
+        "Continue with OS changes, releases, new features, integrations and product evolution after launch.",
+    },
+  ],
+  partnerHeading: "20+ Years of Ecommerce Delivery",
+  partnerDescription:
+    "Dynamic Dreamz combines long-term web and ecommerce experience with a broader 150+ expert in-house team and more than 5,000 delivered projects.",
+  partnerLogo: "/assets/proof/shopify-platinum-partner.svg",
+  partnerLogoAlt: "Dynamic Dreamz - Shopify Platinum Partner",
+  partnerLink: {
+    label: "About Dynamic Dreamz",
+    href: "/about-us",
+  },
+  stats: [
+    { value: "20+", label: "Years of Experience" },
+    { value: "150+", label: "Experts" },
+    { value: "5k+", label: "projects delivered" },
+    { value: "2.5k+", label: "Verified 5 star Reviews" },
+  ],
+};
+
+// 11. Client Stories (HappyClientSection)
+export const mobileAppTestimonialsCopy = {
+  eyebrow: "Client Stories",
+  heading: "Don't Just Take Our Word For It",
+  description:
+    "Hear directly from the clients who have worked with Dynamic Dreamz across Shopify, ecommerce and long-term development engagements.",
+};
+
+// 12. FAQ Section
+export const mobileAppFaqCopy = {
+  eyebrow: "Mobile App Development Services FAQ",
+  heading: "Frequently Asked Questions",
+  description:
+    "Direct answers about technology, custom utility apps, ecommerce, integrations, release and ongoing development.",
+};
+
+export const mobileApplicationDevelopmentFaqs: readonly FaqAccordionItem[] = [
+  {
+    question: "What types of mobile apps does Dynamic Dreamz develop?",
+    answer:
+      "We develop custom consumer apps, business and utility apps, internal tools, booking and service applications, marketplaces, ecommerce apps and Shopify-connected iOS and Android applications. The scope can include UI/UX, backend APIs, integrations, QA, store release and ongoing development.",
+  },
+  {
+    question: "Do you only build ecommerce and Shopify mobile apps?",
+    answer:
+      "No. Ecommerce and Shopify mobile apps are one part of our mobile capability. We also build custom utility apps, operational tools, content and membership experiences, service applications, marketplaces and other business-specific mobile software.",
+  },
+  {
+    question: "Can you build apps for both iOS and Android?",
+    answer:
+      "Yes. We can deliver iOS and Android applications using native development or a shared React Native or Flutter foundation where cross-platform development is appropriate.",
+  },
+  {
+    question:
+      "How do you decide between native and cross-platform development?",
+    answer:
+      "We consider the required device features, performance expectations, interface complexity, integrations, long-term roadmap, release strategy and budget. Native development can be useful for deeper platform-specific requirements, while React Native or Flutter can reduce duplicated work across iOS and Android.",
+  },
+  {
+    question:
+      "Can you turn an existing website or Shopify store into a mobile app? +",
+    answer:
+      "Yes. We can use the existing website or Shopify store as the business and content foundation while designing a mobile-specific experience. For Shopify, products, customer accounts, cart, checkout and supported third-party systems can be connected according to the selected architecture.",
+  },
+  {
+    question:
+      "Can you build the backend and APIs as well as the mobile app? +",
+    answer:
+      "Yes. Our mobile and full-stack teams can build or integrate backend services, APIs, authentication, databases, admin tools and third-party systems required by the application.",
+  },
+  {
+    question: "Do you help with Apple App Store and Google Play release?",
+    answer:
+      "Yes. We can prepare the mobile application for release, support testing and store-submission requirements, and help with subsequent application updates.",
+  },
+  {
+    question: "Do you provide ongoing mobile app support?",
+    answer:
+      "Yes. Ongoing support can cover bug fixes, OS compatibility updates, new features, integrations, analytics changes, performance improvements and future app releases.",
+  },
+];
+
+// Clean questions for schema (without trailing +)
+export const mobileApplicationDevelopmentSchemaFaqs: readonly FaqAccordionItem[] = [
+  {
+    question: "What types of mobile apps does Dynamic Dreamz develop?",
+    answer:
+      "We develop custom consumer apps, business and utility apps, internal tools, booking and service applications, marketplaces, ecommerce apps and Shopify-connected iOS and Android applications. The scope can include UI/UX, backend APIs, integrations, QA, store release and ongoing development.",
+  },
+  {
+    question: "Do you only build ecommerce and Shopify mobile apps?",
+    answer:
+      "No. Ecommerce and Shopify mobile apps are one part of our mobile capability. We also build custom utility apps, operational tools, content and membership experiences, service applications, marketplaces and other business-specific mobile software.",
+  },
+  {
+    question: "Can you build apps for both iOS and Android?",
+    answer:
+      "Yes. We can deliver iOS and Android applications using native development or a shared React Native or Flutter foundation where cross-platform development is appropriate.",
+  },
+  {
+    question:
+      "How do you decide between native and cross-platform development?",
+    answer:
+      "We consider the required device features, performance expectations, interface complexity, integrations, long-term roadmap, release strategy and budget. Native development can be useful for deeper platform-specific requirements, while React Native or Flutter can reduce duplicated work across iOS and Android.",
+  },
+  {
+    question:
+      "Can you turn an existing website or Shopify store into a mobile app?",
+    answer:
+      "Yes. We can use the existing website or Shopify store as the business and content foundation while designing a mobile-specific experience. For Shopify, products, customer accounts, cart, checkout and supported third-party systems can be connected according to the selected architecture.",
+  },
+  {
+    question:
+      "Can you build the backend and APIs as well as the mobile app?",
+    answer:
+      "Yes. Our mobile and full-stack teams can build or integrate backend services, APIs, authentication, databases, admin tools and third-party systems required by the application.",
+  },
+  {
+    question: "Do you help with Apple App Store and Google Play release?",
+    answer:
+      "Yes. We can prepare the mobile application for release, support testing and store-submission requirements, and help with subsequent application updates.",
+  },
+  {
+    question: "Do you provide ongoing mobile app support?",
+    answer:
+      "Yes. Ongoing support can cover bug fixes, OS compatibility updates, new features, integrations, analytics changes, performance improvements and future app releases.",
+  },
+];
+
+// Aliases for backward compatibility if any imports exist
+export const mobileApplicationDevelopmentHero = mobileAppHero;
+export const mobileApplicationDevelopmentBrands = mobileAppBrands;
+export const mobileApplicationDevelopmentOffers = mobileAppLifecycleServicesBoxes;

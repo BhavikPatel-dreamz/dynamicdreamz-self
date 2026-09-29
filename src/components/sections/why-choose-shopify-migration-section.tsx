@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
@@ -5,8 +6,9 @@ import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
 
 export type WhyChooseMigrationItem = {
-  icon: "certified" | "verticals" | "team" | "design" | "expertise" | "qa" | "support" | string;
-  title: string;
+  icon?: "certified" | "verticals" | "team" | "design" | "expertise" | "qa" | "support" | string;
+  iconSvg?: ReactNode;
+  title?: string;
   description: string;
 };
 
@@ -331,15 +333,17 @@ export function WhyChooseShopifyMigrationSection({
             {content.items.map((item) => (
               <div
                 className="item-box mb-3 flex h-full rounded-[20px] border border-[rgba(40,40,40,0.1)] bg-white p-5 last:mb-0 max-[767px]:rounded-[12px] max-[767px]:p-[20px_15px]"
-                key={item.title}
+                key={item.title ?? item.description}
               >
                 <div className="icon mr-5 flex size-10 shrink-0 items-center justify-center rounded-[10px] bg-[#EFF4EF] p-2.5 text-sm font-semibold leading-normal max-[767px]:mr-2.5">
-                  <MigrationFeatureIcon icon={item.icon} />
+                  {item.iconSvg ?? (item.icon ? <MigrationFeatureIcon icon={item.icon} /> : null)}
                 </div>
                 <div className="text">
-                  <h3 className="mb-[5px] font-montreal-medium text-lg font-medium leading-normal text-ink">
-                    {item.title}
-                  </h3>
+                  {item.title ? (
+                    <h3 className="mb-[5px] font-montreal-medium text-lg font-medium leading-normal text-ink">
+                      {item.title}
+                    </h3>
+                  ) : null}
                   <p className="whitespace-pre-line font-sans text-sm font-medium leading-6 text-[#535353]">
                     {item.description}
                   </p>

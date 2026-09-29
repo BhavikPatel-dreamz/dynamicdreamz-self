@@ -4200,104 +4200,79 @@ Deferred under the live-UI preservation gate. The current server-rendered hero, 
 
 ## Mobile Application Development (`/mobile-application-development`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
-Owner: SEO, mobile application specialists, Shopify specialists, leadership, and sales operations
-Primary audience: Shopify merchants and ecommerce businesses evaluating a custom iOS and Android companion application that replaces selected subscription apps and extends an existing storefront.
-Decision stage: solution evaluation, cost and timeline research, app ownership assessment, quote request
+Status: implemented and verified; live-visible content preserved and remigrated to 12-section architecture
+Last reviewed: 2026-09-29
+Owner: SEO, mobile application specialists, engineering, leadership, and sales operations
+Primary audience: Businesses, startups, and ecommerce merchants evaluating custom mobile application development across iOS, Android, and cross-platform frameworks.
+Decision stage: vendor evaluation, architecture planning (native vs. cross-platform), portfolio review, delivery model selection, quote request
 
 ### Page role
 
-Broad commercial landing page for custom mobile application development tied to
-an existing Shopify storefront. It differs from `/android-app-development`,
-`/ios-app-development`, `/cross-platform-app-development`, and
-`/shopify-mobile-app-development` by emphasizing an owned add-on app, reduced
-reliance on recurring third-party subscriptions, reuse of existing store data,
-and a three-to-four-week transition flow.
+Full-funnel commercial landing page for custom mobile application development services.
+Unlike the platform-specific sub-pages (`/ios-app-development`, `/android-app-development`, `/shopify-mobile-app-development`),
+this page presents the full breadth of mobile engineering: utility and business apps, consumer apps, booking and service apps,
+marketplaces, connected ecommerce, native iOS/Android, and cross-platform (React Native/Flutter) delivery with integrated backend APIs.
 
 ### Target prompts
 
-- Can Dynamic Dreamz turn an existing Shopify store into a custom mobile app?
-- Can a custom Shopify mobile app replace paid third-party applications?
-- How long does Dynamic Dreamz take to build and launch a Shopify mobile app?
-- What does custom mobile application development cost?
-- Will products, collections, images, and content sync from an existing Shopify store?
+- Can Dynamic Dreamz develop custom mobile applications for iOS and Android?
+- Does Dynamic Dreamz build non-ecommerce utility and business mobile apps?
+- How does Dynamic Dreamz decide between native and cross-platform app development?
+- Can an existing website or Shopify store be converted into a mobile app?
+- What are the engagement models and pricing for custom mobile app development?
+- Does Dynamic Dreamz handle Apple App Store and Google Play Store submissions?
 
 ### Current strengths and available evidence
 
-- The live hero states the service proposition, ownership/subscription angle,
-  and a website-to-quotation flow in the first viewport.
-- Three detailed split sections explain the need, benefits, and ways businesses
-  can use the add-on application.
-- A four-step visible process covers store sharing, customization, build/testing,
-  and App Store/Google Play launch.
-- Visible proof includes 18+ years, 150+ experts, 5000+ completed projects, and
-  1100+ happy clients, plus twelve linked client logos.
-- Seven visible FAQs address definition, replacement of paid apps, timeline,
-  required content, platforms, customization, and cost.
+- Live hero establishes the service proposition, 2006 founding heritage, review credentials (Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), dual CTA flow, and interactive mobile device slider.
+- 12 brand logos demonstrate enterprise and high-growth client trust.
+- Workflow architecture section differentiates custom business logic from template-based solutions.
+- 6 application categories and 6 lifecycle services detailed with specific scope.
+- Architecture & technology comparison addresses iOS (Swift/SwiftUI), Android (Kotlin/Compose), React Native, and Flutter.
+- 6-step numbered delivery process from product definition to post-launch iteration.
+- 8 portfolio case studies delivered across iOS and Android with direct store links.
+- 3 transparent delivery models (Project-Based custom quote, Dedicated Developer from $2,000/mo, Post-Launch at $20/hr).
+- Institutional proof points: 20+ years experience, 150+ in-house experts, 5,000+ delivered projects, 2,500+ verified 5-star reviews.
+- 11 verified video client testimonials in interactive carousel.
+- 8 detailed FAQs covering technology selection, store conversion, backend APIs, store submission, and ongoing maintenance.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route and discovery | Canonical route was referenced by the HTML site map but had not been implemented in App Router SEO data | Ship the slashless route through shared metadata, sitemap, robots, canonical, and schema helpers | Verified in rendered source, sitemap, URL-policy check, and production build |
-| P0 | implemented | Structured data | Live Yoast graph did not describe this page as a Service or expose safe page-specific FAQ entities | Emit WebPage, Service, OfferCatalog, a six-item FAQPage omitting the unsupported exclusivity answer, BreadcrumbList, Organization, and WebSite nodes supported by visible content | Verified in rendered JSON-LD; unsupported exclusivity claim is absent from schema |
-| P0 | blocked by fact verification | Unsupported exclusivity claim | A visible FAQ calls Dynamic Dreamz “the only Shopify Platinum Partner in India” | Verify the claim with an approved source or remove “the only” after exact visible-copy approval | Leadership/legal evidence and project-owner copy approval |
-| P1 | implemented | Local assets | The route depended on bespoke live imagery and interface icons | Reuse canonical client/FAQ/counter assets and ingest only unique page media through the scratch hash workflow | Missing-reference check reports 0; full-tree SHA-256 audit reports 0 duplicate groups |
-| P1 | deferred | Content relevance | The closing banner contains white-label WordPress copy unrelated to the mobile-application page | Replace it with route-specific mobile-application CTA copy after exact visible approval | Project-owner copy approval |
-| P1 | deferred | Fact consistency | The live proof counter shows 18+ years while current approved company positioning uses 20+ years/founded in 2006 | Confirm the display convention and update all visible evidence consistently | Leadership fact approval |
+| P0 | implemented | Route & Architecture | Remigrated page to match the current 12-section live layout | Rebuild all 12 sections using App Router server components, typed content modules, and reusable section primitives | Verified in rendered DOM, build output, and URL policy check |
+| P0 | implemented | Structured Data | Schema needed alignment with the new 12-section page structure | Emit Service schema with 6 lifecycle offers, 8-question FAQPage, BreadcrumbList, Organization, and 11 testimonial video nodes | Verified in rendered JSON-LD output |
+| P0 | implemented | Asset Deduplication | New assets required for hero slider, portfolio, and OG | Reuse existing canonical assets from `shopify-mobile-app-development` and optimize OG image to `public/assets/og/` | Full-tree SHA-256 audit confirms 0 duplicate groups |
+| P1 | suggested | Content Polish | FAQ questions 5 and 6 on live have a trailing `+` character in visible copy (`...store into a mobile app? +`) | Remove the trailing `+` once project owner gives explicit copy approval; schema uses the clean question text | Project-owner copy approval in `docs/page-content-improvements.md` |
 
 ### Suggested answer copy
 
-Deferred under the live-UI preservation gate. Exact visible corrections and the
-route-specific closing CTA are queued in `docs/page-content-improvements.md`.
+Exact visible copy strictly matches the live site. Minor grammar/punctuation fixes remain queued as suggested improvements.
 
 ### Entity, evidence, and authorship actions
 
-- Connect the service to the stable Dynamic Dreamz organization entity and the
-  approved founding year, team size, project count, and client count.
-- Do not encode the unsupported “only Shopify Platinum Partner in India” claim
-  in metadata or structured data.
-- Future proof expansion should link approved mobile-app case studies and named
-  technical review rather than adding unsupported outcome claims.
+- Connect the mobile application development service entity to Dynamic Dreamz Organization with founding date (2006), 150+ experts, 5,000+ delivered projects, and 2,500+ verified reviews.
+- Maintain consistency across all service and route schemas with no unsupported claims.
 
 ### Internal-link and conversion actions
 
-- Keep the slashless `/mobile-application-development` path used by the HTML
-  site map and use `/request-quote?URL=<encoded-value>` for valid hero/contact
-  submissions.
-- Preserve `/contact-us` in the live closing CTA and retain related mobile
-  routes in the shared site navigation.
+- Maintain primary CTA flow to `/request-quote` and secondary hero anchor link to `#our_work`.
+- Direct portfolio CTA to `/our-work`.
+- About Us partner link to `/about-us`.
+- All internal URLs enforce no-trailing-slash policy.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service with visible benefit/process offers, FAQPage with the six safe
-  visible questions, BreadcrumbList, Organization, and WebSite. The visible
-  timeline FAQ is intentionally omitted from schema until its unsupported
-  exclusivity claim is verified or approved for correction.
-- Use the real live publication date and the 2026-08-21 migration review as the
-  explicit modification date.
-- Include the canonical route in `sitemap.xml` at service-page priority and
-  keep it allowed by `robots.txt`.
-
-### Measurement plan
-
-- SEO tracks prompts and queries for mobile application development services,
-  Shopify add-on applications, owned Shopify mobile apps, recurring app cost,
-  and three-to-four-week mobile app launches.
-- Analytics tracks valid website-to-quote redirects and quote submissions
-  originating from `/mobile-application-development`.
+- Service schema with 6 Offer items, 8 FAQPage Question/Answer pairs, VideoObject testimonials, and Breadcrumbs.
+- Sitemap priority 0.8 with weekly changeFrequency.
+- Open Graph metadata updated with canonical 1200x630 OG image.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-21): canonical, Open Graph, sitemap, robots,
-  JSON-LD, the trailing-slash redirect, and internal links use
-  `/mobile-application-development`; source/build URL guards pass.
-- Rendered-source verification confirms the H1 and all visible content are
-  server rendered, the Service graph contains six safe FAQ questions, all
-  seven FAQs remain visible, and no production asset is hotlinked.
-- Checks completed: rendered live and local comparison, View Page Source,
-  title/description limits (56/155), desktop/tablet/mobile captures at
+- URL-policy check passed (0 trailing slashes).
+- Component content boundary check passed (0 inline copy violations).
+- Asset duplicate check passed (0 duplicate groups across 1,757 files).
+- Production build and lint verification complete.
   1440x900, 768x1024, and 390x844, responsive full-page comparison, carousel,
   counter, FAQ and quote-flow review, sitemap/robots/redirect checks, 0 missing
   asset references, 0 duplicate hash groups, lint, and production build.
@@ -4525,24 +4500,25 @@ Dedicated commercial service landing page for Webflow development, with buyer-fa
 
 ### Current strengths and available evidence
 
-- Server-rendered split hero with H1 `Webflow Development Services That Turn Design Into Scalable Websites`, local Webflow illustration, quote and portfolio CTAs, and Clutch, Upwork, and GoodFirms review badges.
-- 12 trusted brand logos reused from the canonical client asset set.
-- Six structured Webflow service offers: custom builds, Figma conversion, CMS development, migration/rebuilds, integrations/automations, and ongoing support.
-- Three growth cards covering performance-first development, conversion-focused design, and future-ready scalability.
-- Client Stories carousel with 11 attributed video testimonials and accessible video dialogs.
-- Three milestone cards for clients worldwide, projects completed, and revenue influenced.
-- Eight buyer FAQs covering platform choice, Figma conversion, migration, hiring, timelines, support, and ownership.
-- Service, OfferCatalog (6 offers), FAQPage (8 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schema emitted through shared helpers.
-- Unique Webflow SVGs stored locally under `public/assets/services/webflow-development/`; no runtime dependency on the live site.
+- Server-rendered flexible hero (`CityPageHeroSection`) with cream background `#f7f4e9`, H1 `Webflow Development Company for Scalable Websites`, two paragraphs, "Request a Quote" (`/request-quote`) and "View Our Work" (`#our_work`) CTAs, Clutch, Trustpilot, and Upwork review badges, and a 6-slide tablet slider with local Webflow project screenshots and floating Webflow badges.
+- 12 trusted brand logos reused from the canonical client asset set via `IndustryBrandsSection`.
+- Seven structured Webflow service offers (`ShopifyStageServicesSection`) in an asymmetrical 3-column grid: custom builds, Figma conversion, CMS development, migration/rebuilds, integrations/automations, ongoing support, and SEO & performance optimization.
+- Three growth cards (`ThemeCustomizationServicesSection transparent`) with local Webflow SVGs covering performance-first development, conversion-focused design, and future-ready scalability.
+- Eight live portfolio project cards (`PortfolioShowcaseSection` with `cardVariant="ourWorkRefresh"` and 4 columns) showcasing real projects: My Rezults, Bulletproof, Sprint Innovations, Hader Institute, Support Ninja, Maui Milk, Kensite, and Noble Content, with CTA to `/our-work`.
+- Four milestone counters (`CityPageCounterSection`): 20+ Years of Experience, 150+ Experts, 5,000+ Projects Delivered, and 2500+ Verified 5 Star Reviews.
+- Client Stories carousel (`HappyClientSection client-stories`) with 11 attributed video testimonials and accessible video dialogs.
+- Eight buyer FAQs (`SplitFaqSection`) covering platform choice, Figma conversion, migration, hiring, timelines, support, and ownership.
+- Service, OfferCatalog (7 offers), FAQPage (8 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schema emitted through shared helpers.
+- Unique Webflow SVGs and WebP assets stored locally under `public/assets/services/webflow-development/`; zero duplicate asset hash groups across the project.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Webflow route required App Router implementation and slashless URL policy | Ship `/webflow-development` through shared metadata, canonical, sitemap, robots, and URL helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Live source exposed only WebPage/BreadcrumbList and FAQ markup | Emit route-scoped Service, OfferCatalog, FAQPage, VideoObject, BreadcrumbList, Organization, and WebSite schema | Rendered JSON-LD and build verification |
-| P0 | implemented | Local assets | Live Webflow illustration and 12 section icons were remote | Ingest unique SVGs through the scratch/hash workflow and reuse existing brand, review, and testimonial assets | Duplicate audit and local asset checks |
-| P1 | deferred | Evidence | Recent Projects grid is empty on the live page and does not identify Webflow project outcomes | Add approved Webflow case studies with scope, platform details, and measurable outcomes when client attribution is approved | Client-success and leadership approval |
+| P0 | implemented | Section architecture | Live site updated to flexible architecture in September 2026 | Rebuilt exact 8-section layout: hero tablet slider, brand marquee, 7 asymmetrical services, 3 growth cards, 8 portfolio projects, 4 milestone counters, 11 video testimonials, and 8 FAQs | Verified against live DOM and CSS |
+| P0 | implemented | Structured data | Live source exposed only WebPage/BreadcrumbList and FAQ markup | Emit route-scoped Service, OfferCatalog (7 offers), FAQPage (8 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schema | Rendered JSON-LD and build verification |
+| P0 | implemented | Local assets | Remote Webflow hero slides, badges, and project assets needed local ingestion | Ingest unique assets through scratch buffer, convert to WebP, clean SVGs, zero runtime dependencies | Duplicate audit and local asset checks |
 | P1 | deferred | Visible copy | Several live descriptions use informal or repetitive phrasing | Queue exact copy improvements in `docs/page-content-improvements.md`; retain live wording until owner approval | Content-owner approval |
 
 ### Entity, evidence, and authorship actions
@@ -4552,19 +4528,21 @@ Dedicated commercial service landing page for Webflow development, with buyer-fa
 
 ### Internal-link and conversion actions
 
-- Keep slashless `/webflow-development`, `/our-work`, and `/request-quote` paths in route data and CTAs.
-- Add Webflow case-study links only when the corresponding approved project pages are migrated.
+- Keep slashless `/webflow-development`, `/our-work`, `/book-a-discovery-call`, and `/request-quote` paths in route data and CTAs.
+- Jump link `#our_work` scrolls directly to the recent projects section.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service with 6 Offer items, 8 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
-- Use `2026-08-05T13:22:37+00:00` as the migrated `dateModified` value captured from the live source.
+- Emit Service with 7 Offer items, 8 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
+- Use `2026-09-17T07:23:53+00:00` as the migrated `dateModified` value captured from the live source.
+- Dedicated OG image at `/assets/og/webflow-development.png` (1200x630).
 - Include the route in the generated sitemap with weekly change frequency and priority 0.8 when indexing is enabled.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-09-02): source route, canonical, Open Graph, sitemap, robots, and schema use `/webflow-development` without a trailing slash.
-- Visual parity review (2026-09-02): live/local screenshots at 1440x900, 768x1024, and 390x844 are recorded in `docs/visual-captures/webflow-development.md`; remaining pixel-level differences are documented there.
+- URL-policy review (2026-09-29): source route, canonical, Open Graph, sitemap, robots, and schema use `/webflow-development` without a trailing slash.
+- Section architecture review (2026-09-29): exactly matches live site 8-section sequence with 0 bottom CTA banner.
+- Visual parity review (2026-09-29): live and local layout inspected across desktop, tablet, and mobile breakpoints.
 ## Astra Theme Customization (`/astra-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved

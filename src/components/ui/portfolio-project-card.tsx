@@ -17,7 +17,7 @@ export type PortfolioAppLink = {
 
 export type PortfolioProjectCardProps = {
   name: string;
-  category: string;
+  category?: string;
   href?: string | null;
   image: string;
   imageAlt: string;
@@ -174,10 +174,17 @@ export function PortfolioProjectCard({
             </div>
             <div className="mt-2.5 flex items-start justify-between gap-3">
               <div>
-                <p className="text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px]">
-                  {category}
-                </p>
-                <h3 className="mt-2.5 font-sans text-lg leading-5 font-bold text-ink capitalize max-[1199px]:mt-[3px] max-[1199px]:text-sm max-[1199px]:font-semibold">
+                {category ? (
+                  <p className="text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px]">
+                    {category}
+                  </p>
+                ) : null}
+                <h3
+                  className={cn(
+                    category ? "mt-2.5 max-[1199px]:mt-[3px]" : "mt-0",
+                    "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1199px]:text-sm max-[1199px]:font-semibold",
+                  )}
+                >
                   {name}
                 </h3>
               </div>
@@ -217,10 +224,17 @@ export function PortfolioProjectCard({
             </div>
             <div className="mt-2.5 flex items-start justify-between gap-3">
               <div>
-                <p className="text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px]">
-                  {category}
-                </p>
-                <h3 className="mt-2.5 font-sans text-lg leading-5 font-bold text-ink capitalize max-[1199px]:mt-[3px] max-[1199px]:text-sm max-[1199px]:font-semibold">
+                {category ? (
+                  <p className="text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px]">
+                    {category}
+                  </p>
+                ) : null}
+                <h3
+                  className={cn(
+                    category ? "mt-2.5 max-[1199px]:mt-[3px]" : "mt-0",
+                    "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1199px]:text-sm max-[1199px]:font-semibold",
+                  )}
+                >
                   {name}
                 </h3>
               </div>
@@ -280,14 +294,16 @@ export function PortfolioProjectCard({
           {isAppProject ? <AppStoreLinks appLinks={appLinks} /> : null}
         </div>
       )}
-      <p
-        className={cn(
-          "mt-5.5 mb-2.25 text-sm leading-[19.6px] font-bold tracking-[1px] text-black/70 uppercase",
-          categoryClassName,
-        )}
-      >
-        {category}
-      </p>
+      {category ? (
+        <p
+          className={cn(
+            "mt-5.5 mb-2.25 text-sm leading-[19.6px] font-bold tracking-[1px] text-black/70 uppercase",
+            categoryClassName,
+          )}
+        >
+          {category}
+        </p>
+      ) : null}
       <h3 className="font-sans text-lg leading-5 font-bold text-ink capitalize">
         {href ? (
           <a

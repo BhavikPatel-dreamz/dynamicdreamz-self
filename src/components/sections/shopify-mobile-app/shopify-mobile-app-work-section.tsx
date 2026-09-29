@@ -2,19 +2,47 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { PortfolioProjectCard } from "@/components/ui/portfolio-project-card";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
-import type { shopifyMobileAppWork } from "@/content/shopify-mobile-app-development";
+import { cn } from "@/lib/class-names";
 
-type ShopifyMobileAppWorkSectionProps = {
-  content: typeof shopifyMobileAppWork;
+import type { PortfolioAppLink } from "@/components/ui/portfolio-project-card";
+
+export type MobileAppWorkItem = {
+  id?: string;
+  name: string;
+  category?: string;
+  image: string;
+  imageAlt: string;
+  appLinks?: readonly PortfolioAppLink[];
+};
+
+export type MobileAppWorkContent = {
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  items: readonly MobileAppWorkItem[];
+  ctaHref: string;
+  ctaLabel: string;
+  ctaAriaLabel?: string;
+};
+
+export type ShopifyMobileAppWorkSectionProps = {
+  content: MobileAppWorkContent;
+  className?: string;
+  id?: string;
 };
 
 export function ShopifyMobileAppWorkSection({
   content,
+  className,
+  id = "our_work",
 }: ShopifyMobileAppWorkSectionProps) {
   return (
     <section
-      id="our_work"
-      className="our-work-sec scroll-mt-20 bg-white pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]"
+      id={id}
+      className={cn(
+        "our-work-sec scroll-mt-20 bg-white pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]",
+        className,
+      )}
     >
       <Container className="min-[1400px]:max-w-[1408px] px-[15px]">
         <SplitSectionHeading
