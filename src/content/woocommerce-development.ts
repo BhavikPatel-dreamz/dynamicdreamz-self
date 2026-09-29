@@ -2,11 +2,183 @@ import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const woocommerceDevelopmentHero = {
-  title: "Your Trusted Partner <br> for WooCommerce Development",
+  eyebrows: ["Established in 2006", "WooCommerce Agency"],
+  title: "Your Trusted Partner for WooCommerce Development",
   description:
     "Dynamic Dreamz is India’s top most WooCommerce development company. No matter if you’re a web design company looking for a perfect partner or a WooCommerce store owner who wants to enhance their brand identity, our skilled WooCommerce developers and designers are always ready to help you.",
-  ctaLabel: "Request a Quote",
-  ctaHref: "/request-quote",
+  primaryCta: {
+    label: "REQUEST A QUOTE",
+    href: "/request-quote",
+  },
+  badges: [
+    {
+      src: "/assets/proof/clutch-rating.svg",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      width: 111,
+      height: 44,
+      href: "https://clutch.co/profile/dynamic-dreamz",
+    },
+    {
+      src: "/assets/proof/trustpilot-rating.svg",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      width: 148,
+      height: 50,
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+    },
+    {
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      width: 126,
+      height: 54,
+      href: "https://www.upwork.com/agencies/dynamicdreamz/",
+    },
+  ],
+  tabletSlider: {
+    bgShapeSrc:
+      "/assets/services/shopify-development-in-bangalore/hero/slide-bg-shape.svg",
+    topBadge: {
+      src: "/assets/services/wordpress-development-in-ahmedabad/hero/woocommerce-agency-partner.png",
+      alt: "WooCommerce Agency Partner",
+      width: 173,
+      height: 106,
+    },
+    bottomBadge: {
+      src: "/assets/services/wordpress-development-in-ahmedabad/hero/wordpress-logo.png",
+      alt: "WordPress Logo",
+      width: 130,
+      height: 126,
+    },
+    slides: [
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-green-future-energy.webp",
+        alt: "greenfutureenergy",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-avm.webp",
+        alt: "avm",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-homepage-revised.webp",
+        alt: "HomepageRevised",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-lipari-design.webp",
+        alt: "liparidesign",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-ornago.webp",
+        alt: "ornago",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-syrene.webp",
+        alt: "syrene",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-the-huddle-sports-grill.webp",
+        alt: "thehuddlesportsgrill",
+        width: 1600,
+        height: 2380,
+      },
+    ],
+  },
+} as const;
+
+export const woocommerceDevelopmentBrands = {
+  title: "Trusted by Leading Brands",
+  items: [
+    {
+      name: "Ranavat Logo",
+      src: "/assets/clients/ranavat.svg",
+      href: "https://www.ranavat.com/",
+      alt: "Ranavat Logo",
+      width: 174,
+      height: 19,
+    },
+    {
+      name: "prolash_black",
+      src: "/assets/clients/prolash.svg",
+      href: "https://prolash.com/",
+      alt: "prolash_black",
+      width: 204,
+      height: 22,
+    },
+    {
+      name: "Tropicfeel Logo",
+      src: "/assets/clients/tropicfeel.svg",
+      href: "https://shop.tropicfeel.com/",
+      alt: "Tropicfeel Logo",
+      width: 150,
+      height: 32,
+    },
+    {
+      name: "perfect_locks_color_logo",
+      src: "/assets/clients/perfect-locks.svg",
+      href: "https://www.perfectlocks.com/",
+      alt: "perfect_locks_color_logo",
+      width: 175,
+      height: 32,
+    },
+    {
+      name: "Bombay Shirt Company Logo",
+      src: "/assets/clients/bombay-shirt-company.svg",
+      href: "https://www.bombayshirts.com/",
+      alt: "Bombay Shirt Company Logo",
+      width: 204,
+      height: 26,
+    },
+    {
+      name: "kayfi-colored",
+      src: "/assets/clients/kayfi.svg",
+      href: "https://kayfi.com/",
+      alt: "kayfi-colored",
+      width: 90,
+      height: 49,
+    },
+    {
+      name: "simdirect_logo_color",
+      src: "/assets/clients/simsdirect.svg",
+      href: "https://simsdirect.com.au/",
+      alt: "simdirect_logo_color",
+      width: 143,
+      height: 49,
+    },
+    {
+      name: "Kvaser Logo",
+      src: "/assets/clients/kvaser.svg",
+      href: "https://www.kvaser.com/",
+      alt: "Kvaser Logo",
+      width: 135,
+      height: 25,
+    },
+    {
+      name: "nekter-colored",
+      src: "/assets/clients/nelter.svg",
+      href: "https://www.nekterjuicebar.com/",
+      alt: "nekter-colored",
+      width: 66,
+      height: 64,
+    },
+    {
+      name: "Circuit City Logo",
+      src: "/assets/clients/circuit-city.svg",
+      href: "https://circuitcity.com/",
+      alt: "Circuit City Logo",
+      width: 64,
+      height: 64,
+    },
+  ],
 } as const;
 
 export const woocommerceDevelopmentServices = {
@@ -15,122 +187,103 @@ export const woocommerceDevelopmentServices = {
     "Check out our WooCommerce services that convert your store into a lead machine and boost your revenue. Hire us now!",
   items: [
     {
-      icon: "/assets/services/woocommerce-development/store-design-development.svg",
-      iconAlt: "Cart Icon",
+      iconKey: "store-design-development",
       title: "Store Design and Development",
       description:
         "We’ll help you build your WooCommerce store from scratch and integrate it with your website and branding for a cohesive experience. Our WooCommerce developers and designers are the best for your store development and to fulfill your end goals.",
     },
     {
-      icon: "/assets/services/shopify-development-agency/figma-conversion-icon.svg",
-      iconAlt: "figma conversion icon",
+      iconKey: "figma-to-woocommerce-conversion",
       title: "Figma to WooCommerce Conversion",
       description:
         "Have a Figma design ready for your WooCommerce store but can’t find designers and developers to convert your design into a functional store? Hire us now to help you.",
     },
     {
-      icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
-      iconAlt: "custom themes icon",
+      iconKey: "theme-development-customization",
       title: "Theme Development & Customization",
       description:
         "Need to redesign your store theme or want customization in the existing theme? Our professional designers can make it easy for you and create a visually stunning and user friendly storefront that reflects your brand identity.",
     },
     {
-      icon: "/assets/services/woocommerce-development/api-development.svg",
-      iconAlt: "API Integration Icon",
+      iconKey: "api-development",
       title: "API Development",
       description:
         "Unlock the power of trending headless architecture for your store. We’ll develop custom APIs to connect your WooCommerce store with your preferred Headless CMS or media devices for ultimate flexibility.",
     },
     {
-      icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
-      iconAlt: "Plugin Development Icon",
+      iconKey: "plugin-development",
       title: "Plugin Development",
       description:
         "Want to take your store functionality beyond the ordinary store? Because it’s not just about selling but catering an experience. Our developers can develop custom WooCommerce plugins or integrate third party solutions seamlessly.",
     },
     {
-      icon: "/assets/services/woocommerce-development/payment-shipping-integration.svg",
-      iconAlt: "Payment Integration Icon",
+      iconKey: "payment-shipping-integration",
       title: "Payment and Shipping Method Integration",
       description:
         "Simplify your checkout process with the help of our WooCommerce developers. We’ll integrate popular payment gateways and multiple shipping options for a smooth customer experience.",
     },
     {
-      icon: "/assets/hire-shopify-developers/icons/shopify-migration.svg",
-      iconAlt: "Migration Icon",
+      iconKey: "product-migration",
       title: "Product Migration",
       description:
         "Are you moving from your current eCommerce platform to WooCommerce and need migration experts? We’ll handle your product migration effortlessly, ensuring a smooth transition between Shopify and WooCommerce.",
     },
     {
-      icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
-      iconAlt: "Maintenance and Support Icon",
+      iconKey: "support-maintenance",
       title: "WooCommerce Support & Maintenance",
       description:
         "With our trustworthy maintenance and support services, you can maintain your store operating efficiently. Our developers can address any issues and ensure your store stays optimized.",
     },
     {
-      icon: "/assets/services/woocommerce-development/facebook-store-sync.svg",
-      iconAlt: "Facebook Icon",
+      iconKey: "facebook-store-sync",
       title: "Facebook Store Support and Sync",
       description:
         "Expand your reach using social media integration. We’ll set up and synchronize your Facebook store with your WooCommerce store for effortless sales growth.",
     },
   ],
-  cta: {
-    label: "Let me give you a hand to help you",
-    href: "/request-quote",
-    ariaLabel: "Dynamic Dreamz - Let me give you a hand to help you",
-  },
 } as const;
 
 export const woocommerceDevelopmentPortfolio = {
   heading: "Glimpses of Our Woocommerce Development Services",
   description:
     "Dynamic Dreamz isn't just about talk; we're about results. Explore a carefully curated <br> selection of our successful WooCommerce projects.",
+  eyebrow: "Woocommerce",
   category: "Woocommerce",
   platformMark: {
     src: "/assets/our-work/platforms/woocommerce-img.svg",
     width: 89,
     height: 26,
   },
+  ctaLabel: "View our work",
+  ctaHref: "/our-work",
   items: [
     {
       name: "Temple Day Spa",
+      category: "Woocommerce",
       image: "/assets/woocommerce-development/portfolio/temple-day-spa.webp",
-      imageAlt: "Temple Day Spa",
+      imageAlt: "Temple Day Spa Image",
       href: "https://templedayspa.com.au/",
     },
     {
       name: "Ziniosa",
+      category: "Woocommerce",
       image: "/assets/woocommerce-development/portfolio/ziniosa.webp",
-      imageAlt: "Ziniosa",
+      imageAlt: "Ziniosa Image",
       href: "https://www.ziniosa.com/",
     },
     {
       name: "Square Foot Homes",
+      category: "Woocommerce",
       image: "/assets/woocommerce-development/portfolio/square-foot-homes.webp",
-      imageAlt: "Square Foot Homes",
+      imageAlt: "Square Foot Homes Image",
       href: "https://www.squarefoothomes.com/",
     },
     {
       name: "The Pole Room",
+      category: "Woocommerce",
       image: "/assets/woocommerce-development/portfolio/the-pole-room.webp",
-      imageAlt: "The Pole Room",
+      imageAlt: "The Pole Room Image",
       href: "https://www.thepoleroom.com.au/",
-    },
-    {
-      name: "Vessey",
-      image: "/assets/woocommerce-development/portfolio/vessey.webp",
-      imageAlt: "Vessey",
-      href: "https://www.veesey.co.nz/",
-    },
-    {
-      name: "Catalyst",
-      image: "/assets/woocommerce-development/portfolio/catalyst.webp",
-      imageAlt: "Catalyst",
-      href: "https://www.catalysttg.com/",
     },
   ],
 } as const;

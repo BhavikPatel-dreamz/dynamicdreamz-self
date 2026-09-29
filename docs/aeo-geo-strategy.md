@@ -3581,14 +3581,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## WooCommerce Development (`/woocommerce-development`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-29
 Owner: SEO, WordPress/WooCommerce development specialists, leadership, and sales operations
 Primary audience: Store owners, merchants, digital agencies, and businesses seeking custom WooCommerce store design, theme development, plugin creation, API development, Headless architecture, payment/shipping integration, and ongoing WooCommerce support.
 Decision stage: agency partner evaluation, technical capability assessment, WooCommerce developer hiring, quote request
 
 ### Page role
 
-Dedicated commercial service landing page targeting queries for "WooCommerce Development Company", "WooCommerce development services", and custom WooCommerce ecommerce solutions. Highlights 9 core WooCommerce capabilities (Store Design & Development, Figma to WooCommerce Conversion, Theme Development & Customization, API Development, Plugin Development, Payment/Shipping Integration, Product Migration, WooCommerce Support & Maintenance, Facebook Store Sync), 6 featured portfolio projects (Temple Day Spa, Ziniosa, Square Foot Homes, The Pole Room, Vessey, Catalyst), 11 client video reviews, 10 buyer FAQs, and quote CTAs.
+Dedicated commercial service landing page targeting queries for "WooCommerce Development Company", "WooCommerce development services", and custom WooCommerce ecommerce solutions. Features the updated live hero layout with interactive tablet showcase slider and floating partner badges, brand trust logo slider with 10 brands, 9 core WooCommerce capabilities (Store Design & Development, Figma to WooCommerce Conversion, Theme Development & Customization, API Development, Plugin Development, Payment/Shipping Integration, Product Migration, WooCommerce Support & Maintenance, Facebook Store Sync), 4 live portfolio projects (Temple Day Spa, Ziniosa, Square Foot Homes, The Pole Room), 11 client video reviews, 10 buyer FAQs, and quote CTAs.
 
 ### Target prompts
 
@@ -3601,10 +3601,12 @@ Dedicated commercial service landing page targeting queries for "WooCommerce Dev
 ### Current strengths and available evidence
 
 - Server-rendered H1 `Your Trusted Partner for WooCommerce Development` with clear value proposition for store owners and digital agency partners.
-- 9 distinct, structured WooCommerce service offerings with custom SVG icons.
-- 6 featured portfolio projects showcasing real WooCommerce stores (Temple Day Spa, Ziniosa, Square Foot Homes, The Pole Room, Vessey, Catalyst) with external links.
+- Interactive tablet showcase previewing 7 real client projects with WooCommerce Agency Partner and WordPress Logo floating badges.
+- Brand credibility marquee showcasing 10 leading brands (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter, Circuit City).
+- 9 distinct, structured WooCommerce service offerings with custom red line SVG icons.
+- 4 featured portfolio projects showcasing real WooCommerce stores (Temple Day Spa, Ziniosa, Square Foot Homes, The Pole Room) with external links.
 - 11 verified video testimonials with modal video playback.
-- 3 independent review credentials (Clutch 132 reviews, Upwork 2000+ reviews, GoodFirms 72 reviews).
+- 3 independent review credentials (Clutch 4.9 rating, Trustpilot 4.9 TrustScore, Upwork Top Rated Plus).
 - 10 comprehensive buyer FAQs addressing WooCommerce fundamentals, Figma conversion, custom themes, headless CMS, product migration, Facebook store sync, and hiring costs.
 - Complete structured data graph emitting Service, OfferCatalog (9 service items), FAQPage (10 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
 ## Shopify CRO Agency (`/shopify-cro-agency`)

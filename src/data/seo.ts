@@ -2580,7 +2580,7 @@ export const pageSeo = {
   },
   woocommerceDevelopment: {
     path: "/woocommerce-development",
-    title: "Woocommerce Development Company India | Dynamic Dreamz",
+    title: "Woocommerce Development Company | Dynamic Dreamz",
     description:
       "Grow your online store with professional WooCommerce development services from Dynamic Dreamz, integrations, and seamless shopping experiences.",
     keywords: [
@@ -2594,12 +2594,12 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2024-05-02T09:33:00+00:00",
-    modifiedTime: "2026-08-19T00:00:00+05:30",
+    modifiedTime: "2026-09-21T13:15:56+00:00",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
       height: 630,
-      alt: "Woocommerce Development Company India | Dynamic Dreamz",
+      alt: "Woocommerce Development Company | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",

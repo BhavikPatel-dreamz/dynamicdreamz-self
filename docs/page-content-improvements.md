@@ -635,12 +635,12 @@ Primary SEO intent: Shopify migration services, migrate to Shopify, Magento to S
 ## WooCommerce Development (`/woocommerce-development`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-29
 Primary SEO intent: WooCommerce development company, WooCommerce development services, custom WooCommerce theme development, WooCommerce plugin development, WooCommerce migration, WooCommerce maintenance and support.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | `Woocommerce Development Company India \| Dynamic Dreamz` (55 chars) | Preserved live meta title (55 chars). | Fits 15-60 char budget and captures primary keyword intent. | High | implemented in metadata |
+| Meta title | `Woocommerce Development Company \| Dynamic Dreamz` (48 chars) | Preserved live meta title (48 chars). | Fits 15-60 char budget and matches current live title. | High | implemented in metadata |
 | Meta description | `Grow your online store with professional WooCommerce development services from Dynamic Dreamz, integrations, and seamless shopping experiences.` (145 chars) | Preserved live meta description (145 chars). | Fits 70-160 char budget while capturing core value proposition. | High | implemented in metadata |
 | FAQ Q3 empty bullet | Empty bullet point `<li></li>` in live FAQ answer HTML | Omitted empty bullet point in structured list rendering. | Cleans up empty DOM node without altering visible content. | Low | implemented cleanly in content |
 | VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |

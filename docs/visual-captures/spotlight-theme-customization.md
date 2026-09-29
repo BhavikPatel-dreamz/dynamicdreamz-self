@@ -17,7 +17,7 @@
 - `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/theme_customize_hero.css`
   - `.theme-customize-hero` (background: `#f7f4e9`, padding-top: `91px`, overflow: hidden, dual CTAs: red primary button "Request a Quote" + outline secondary button "View Spotlight on Shopify")
 - `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/trusted_by_leading_brands_section.css`
-  - `.our-client-sec` (brand trust section with left column heading "Trusted by <br>Leading Brands" and right partner logos)
+  - `.our-client-sec` (brand trust section with left column heading "Trusted by Leading Brands" and right partner logos)
 - `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/theme_features.css`
   - `.theme-features` (split beige `#fbefd7` banner with left title/description block and right 8-item feature grid)
 - `/wp-content/themes/dynamicdreamz/assets/css/flexible-css/city_page_why_choose_dynamic_dreamz.css`
