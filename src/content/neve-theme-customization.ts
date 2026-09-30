@@ -1,10 +1,36 @@
+import type {
+  NeveBenefitIconName,
+  NeveFeatureIconName,
+  NeveServiceIconName,
+} from "@/components/sections/neve-theme-customization/neve-icons";
+
+export type NeveFeatureItem = {
+  iconName: NeveFeatureIconName;
+  title: string;
+  description: string;
+};
+
+export type NeveServiceItem = {
+  iconName: NeveServiceIconName;
+  title: string;
+  description: string;
+};
+
+export type NeveBenefitItem = {
+  iconName: NeveBenefitIconName;
+  title: string;
+  description: string;
+};
+
 export const neveThemeCustomizationContent = {
   hero: {
+    eyebrow: ["Wordpress Agency", "Theme Customization"] as const,
     title: "Neve Theme Customization Service",
     description:
-      "Are you looking for a theme customization services provider that can fully customize a Neve theme that can match your brand's identity? Our Neve theme customization service ensures you get a visually attractive, high-performance, and fully responsive WordPress website customized for your business requirements. With our WordPress expert developers, you get a lightweight, fast, and SEO-friendly WordPress theme that sweetens user experience and drives conversions.",
-    ctaText: "request a quote",
+      "Are you looking for a theme customization services provider that can fully customize a Neve theme that can match your brand’s identity? Our Neve theme customization service ensures you get a visually attractive, high-performance, and fully responsive WordPress website customized for your business requirements. With our WordPress expert developers, you get a lightweight, fast, and SEO-friendly WordPress theme that sweetens user experience and drives conversions.",
+    ctaText: "Request a Quote",
     ctaHref: "/request-quote",
+    ctaAriaLabel: "Request a Quote",
     image: {
       src: "/assets/neve-theme-customization/hero/neve-theme-customization-service-img.webp",
       alt: "Neve Theme Customization Service Image",
@@ -13,7 +39,9 @@ export const neveThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by Leading Brands",
+    title: "Trusted by \nLeading Brands",
+    heading: "Trusted by \nLeading Brands",
+    slug: "neve-theme-customization",
     items: [
       {
         name: "Ranavat Logo",
@@ -98,188 +126,161 @@ export const neveThemeCustomizationContent = {
     ],
   },
   features: {
-    title: "Features of Neve Theme",
-    subtitle:
-      "The Neve theme is known for its speed, flexibility, and trendy design. Here you can check out some of Neve theme's main features:",
+    eyebrow: "Features",
+    heading: "Features of Neve Theme",
+    description:
+      "The Neve theme is known for its speed, flexibility, and trendy design. Here you can check out some of Neve theme’s main features:",
     items: [
       {
+        iconName: "lightning",
         title: "Lightweight & Fast",
         description: "Built for speed, ensuring fast loading times.",
-        icon: "/assets/astra-theme-customization/features/lightning-fast-performance.svg",
-        iconAlt: "Lightweight & Fast Icon",
       },
       {
+        iconName: "mobileOptimized",
         title: "Mobile-Optimized",
         description: "The theme is fully responsive and consistent with all devices.",
-        icon: "/assets/generatepress-theme-customization/features/mobile-responsive-design.svg",
-        iconAlt: "Mobile Optimized Icon",
       },
       {
+        iconName: "customizableHeaderFooter",
         title: "Customizable Header & Footer",
         description: "Easily modify the theme header and footer design without coding.",
-        icon: "/assets/kadence-theme-customization/features/drag-and-drop-header-footer-builder.svg",
-        iconAlt: "Customizable Header & Footer Icon",
       },
       {
+        iconName: "woocommerce",
         title: "WooCommerce Ready",
         description: "Prebuilt and smooth integration with eCommerce stores.",
-        icon: "/assets/astra-theme-customization/features/woocommerce-ready.svg",
-        iconAlt: "WooCommerce Ready Icon",
       },
       {
+        iconName: "pageBuilder",
         title: "Page Builder Compatibility",
         description: "Theme works smoothly with famous page builders such as Elementor, Beaver Builder, and more.",
-        icon: "/assets/neve-theme-customization/features/page-builder-compatibility.svg",
-        iconAlt: "Page Builder Compatibility Icon",
       },
       {
+        iconName: "seo",
         title: "SEO-Friendly",
         description: "This theme is already built with clean code and proper structure to enhance search rankings.",
-        icon: "/assets/astra-theme-customization/features/seo-optimized.svg",
-        iconAlt: "SEO Friendly Icon",
       },
-      {
-        title: "AMP Compatibility",
-        description: "Stay ensures smooth browsing on mobile devices with AMP compatibility.",
-        icon: "/assets/neve-theme-customization/features/amp-compatibility.svg",
-        iconAlt: "AMP Compatibility Icon",
-      },
-    ],
-  },
-  benefits: {
-    title: "Benefits of Neve Theme Customization",
-    subtitle:
-      "Improving the Neve theme with custom changes offers you multiple advantages, such as:",
-    items: [
-      {
-        title: "Fully Customizable Store",
-        description: "With Neve theme customization, you can change layouts, colors, and fonts to match your brand.",
-        icon: "/assets/shopify-theme-customization/benefits/fully-customizable-store.svg",
-        iconAlt: "cs_icon_img",
-      },
-      {
-        title: "Responsive Design",
-        description: "You will get a fully responsive website that looks great on desktops, tablets, and mobiles.",
-        icon: "/assets/shopify-theme-customization/benefits/responsive-design.svg",
-        iconAlt: "responsive_design_icon",
-      },
-      {
-        title: "Unique Brand Identity",
-        description: "With the help of theme customization you can get a unique online presence with custom designs.",
-        icon: "/assets/shopify-theme-customization/benefits/unique-brand-identity.svg",
-        iconAlt: "unique-brand-identity-icon",
-      },
-      {
-        title: "Improved User Experience",
-        description: "You can improve user experience with an enhanced navigation menu and custom theme elements.",
-        icon: "/assets/shopify-theme-customization/benefits/improved-user-experience.svg",
-        iconAlt: "User-Friendly Interface",
-      },
-      {
-        title: "Multiple Third-Party Plugins",
-        description: "Easily extend functionality with WordPress plugin and third-party plugin integrations.",
-        icon: "/assets/shopify-theme-customization/benefits/multiple-third-party-apps.svg",
-        iconAlt: "Multiple Sales Channels Icon",
-      },
-      {
-        title: "Higher Conversion Rates",
-        description: "A well-optimized website leads to better user engagement and boosts sales.",
-        icon: "/assets/shopify-theme-customization/benefits/higher-conversion-rates.svg",
-        iconAlt: "cost-effective-scalability-img",
-      },
-      {
-        title: "Safe and Secure Payments",
-        description: "We implement secure payment methods for checkout and transactions for stores.",
-        icon: "/assets/shopify-theme-customization/benefits/mobile-optimization.svg",
-        iconAlt: "Mobile Optimization Icon",
-      },
-      {
-        title: "Minimal Maintenance Cost",
-        description:
-          "After our customization and optimization, your website works efficiently and needs minimum maintenance.",
-        icon: "/assets/shopify-theme-customization/benefits/zero-maintenance-cost.svg",
-        iconAlt: "Zero Maintenance Cost Image",
-      },
-    ],
+    ] as const satisfies readonly NeveFeatureItem[],
   },
   services: {
-    title: "Our WordPress Theme Customization Services",
-    subtitle:
+    eyebrow: "Our Services",
+    heading: "Our WordPress Theme Customization Services",
+    description:
       "We offer a full range of WordPress theme customization services for your Neve theme; it contains:",
     items: [
       {
+        iconName: "installation",
         title: "Theme Installation",
         description: "We properly setup and configure the Neve theme into your WordPress theme.",
-        icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
-        iconAlt: "Maintenance and Support Icon",
       },
       {
+        iconName: "design",
         title: "Custom Design and Branding",
         description: "We can help you get your unique designs, color schemes, and fonts tailored to your brand.",
-        icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
-        iconAlt: "Plugin Development Icon",
       },
       {
+        iconName: "responsive",
         title: "Responsive Design",
         description: "While customizing your theme, we ensure smooth performance across all screen sizes.",
-        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
-        iconAlt: "custom themes icon",
       },
       {
+        iconName: "features",
         title: "Advanced Features Integration",
         description: "We can add custom functionalities and plugins based on your unique requirements.",
-        icon: "/assets/shopify-theme-customization/services/advanced-features-integration.svg",
-        iconAlt: "Data Integrity Checks Icon",
       },
       {
+        iconName: "performance",
         title: "Performance Optimization",
         description: "Our WordPress experts can improve your website speed and SEO rankings by performance optimization.",
-        icon: "/assets/shopify-theme-customization/services/performance-optimization.svg",
-        iconAlt: "Compliance with Shopify’s Security Standards Icon",
       },
       {
+        iconName: "support",
         title: "Ongoing Support and Maintenance",
         description: "We offer ongoing support and maintenance after the project to ensure your website works smoothly.",
-        icon: "/assets/shopify-theme-customization/services/ongoing-support-and-maintenance.svg",
-        iconAlt: "Custom App Development Icon",
       },
-    ],
+    ] as const satisfies readonly NeveServiceItem[],
+  },
+  benefits: {
+    eyebrow: "Benefits",
+    heading: "Benefits of Neve Theme Customization",
+    description:
+      "Improving the Neve theme with custom changes offers you multiple advantages, such as:",
+    items: [
+      {
+        iconName: "store",
+        title: "Fully Customizable Store",
+        description: "With Neve theme customization, you can change layouts, colors, and fonts to match your brand.",
+      },
+      {
+        iconName: "responsive",
+        title: "Responsive Design",
+        description: "You will get a fully responsive website that looks great on desktops, tablets, and mobiles.",
+      },
+      {
+        iconName: "brand",
+        title: "Unique Brand Identity",
+        description: "With the help of theme customization you can get a unique online presence with custom designs.",
+      },
+      {
+        iconName: "ux",
+        title: "Improved User Experience",
+        description: "You can improve user experience with an enhanced navigation menu and custom theme elements.",
+      },
+      {
+        iconName: "plugins",
+        title: "Multiple Third-Party Plugins",
+        description: "Easily extend functionality with WordPress plugin and third-party plugin integrations.",
+      },
+      {
+        iconName: "conversions",
+        title: "Higher Conversion Rates",
+        description: "A well-optimized website leads to better user engagement and boosts sales.",
+      },
+      {
+        iconName: "payments",
+        title: "Safe and Secure Payments",
+        description: "We implement secure payment methods for checkout and transactions for stores.",
+      },
+      {
+        iconName: "maintenance",
+        title: "Minimal Maintenance Cost",
+        description:
+          "After our customization and optimization, your website works efficiently and needs minimum maintenance.",
+      },
+    ] as const satisfies readonly NeveBenefitItem[],
   },
   whyChoose: {
-    title: "Why Choose Dynamic Dreamz",
-    subtitle:
-      "Our WordPress expert team specializes in <strong>customizing themes to get high-quality, sales-optimized</strong> WordPress websites. <strong>Dynamic Dreamz has 100+ WordPress experts</strong> to get started with your WordPress theme customization project. Here's why clients trust us:",
+    eyebrow: "Why Dynamic Dreamz",
+    heading: "Why Choose Dynamic Dreamz",
+    description:
+      "Our WordPress expert team specializes in <strong>customizing themes to get high-quality, sales-optimized</strong> WordPress websites. <strong>Dynamic Dreamz has 100+ WordPress experts</strong> to get started with your WordPress theme customization project. Here’s why clients trust us:",
     items: [
       {
         title: "Expert Team",
         description: "We have experienced WordPress developers skilled in WordPress themes and website customization.",
-        icon: "/assets/shopify-theme-customization/why-choose/expert-team.svg",
-        iconAlt: "expert-team",
       },
       {
         title: "Proven Process",
         description: "We utilize a structured workflow that ensures high-quality results.",
-        icon: "/assets/shopify-theme-customization/why-choose/proven-process.svg",
-        iconAlt: "Proven Process Icon",
       },
       {
         title: "Ongoing Support",
         description: "We offer post-development support to keep your website running smoothly without any errors.",
-        icon: "/assets/shopify-theme-customization/why-choose/ongoing-support.svg",
-        iconAlt: "customer_support_icon_img",
       },
       {
         title: "Client-Focused Approach",
-        description: "We always prioritize our clients' needs to provide personalized solutions.",
-        icon: "/assets/shopify-theme-customization/why-choose/client-focused-approach.svg",
-        iconAlt: "Client-Focused Approach Icon",
+        description: "We always prioritize our clients’ needs to provide personalized solutions.",
       },
-    ],
+    ] as const,
   },
   portfolio: {
-    title: "Snippets of WordPress Theme Customization Portfolio",
-    subtitle:
+    eyebrow: "Portfolio",
+    heading: "Snippets of WordPress Theme Customization Portfolio",
+    description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
+    ctaLabel: "View our work",
+    ctaHref: "/our-work",
     items: [
       {
         name: "Quite Events",
@@ -323,13 +324,33 @@ export const neveThemeCustomizationContent = {
         image: "/assets/our-work/projects/nexventur.webp",
         imageAlt: "Nexventur",
       },
-    ],
+      {
+        name: "Awaken Media",
+        category: "WORDPRESS",
+        href: "https://www.awaken.media/",
+        image: "/assets/our-work/projects/awaken-media.webp",
+        imageAlt: "Awaken Media",
+      },
+      {
+        name: "Budget Maids",
+        category: "WORDPRESS",
+        href: "https://www.budget-maids.com/",
+        image: "/assets/our-work/projects/budget-maids.webp",
+        imageAlt: "Budget Maids",
+      },
+    ] as const,
+  },
+  testimonials: {
+    eyebrow: "Client Stories",
+    heading: "Don't Just Take Our Word For It",
+    description:
+      "Hear directly from the clients who have worked with Dynamic Dreamz across Shopify, ecommerce and long-term development engagements.",
   },
   faqs: [
     {
       question: "What is the cost of Neve theme customization?",
       answer:
-        "The cost of the Neve theme customization depends on <strong>what type of changes you want, the complexity of the changes, and the expertise of the WordPress expert</strong> who will work on your project. If you want a proper cost estimation, you can <strong>contact us</strong> with your detailed requirements.",
+        "The cost of the Neve theme customization depends on what type of changes you want, the complexity of the changes, and the expertise of the WordPress expert who will work on your project. If you want a proper cost estimation, you can contact us with your detailed requirements.",
     },
     {
       question: "What can be customized in the Neve theme?",
@@ -339,12 +360,12 @@ export const neveThemeCustomizationContent = {
     {
       question: "Is the Neve theme good for an eCommerce store?",
       answer:
-        "Yes! Neve is <strong>WooCommerce-compatible</strong>, making it a wonderful choice for online stores. We customize it as per your need and optimize it for faster loading and better conversions.",
+        "Yes! Neve is WooCommerce-compatible, making it a wonderful choice for online stores. We customize it as per your need and optimize it for faster loading and better conversions.",
     },
     {
       question: "How long does Neve theme customization take?",
       answer:
-        "There is no fixed time limit for the theme customization work. The time frame depends on the complexity of the changes you want; <strong>small changes take a few days, and bigger and complex changes take a few weeks.</strong>",
+        "There is no fixed time limit for the theme customization work. The time frame depends on the complexity of the changes you want; small changes take a few days, and bigger and complex changes take a few weeks.",
     },
     {
       question: "Will my website be SEO-friendly after customization?",
@@ -356,5 +377,5 @@ export const neveThemeCustomizationContent = {
       answer:
         "Yes, we offer ongoing support and maintenance to ensure your website remains updated and serviceable.",
     },
-  ],
+  ] as const,
 } as const;

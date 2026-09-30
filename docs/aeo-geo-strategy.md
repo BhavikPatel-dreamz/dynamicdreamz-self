@@ -4895,14 +4895,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Neve Theme Customization (`/neve-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Neve theme customization, responsive WooCommerce store design, header/footer builder customization, AMP optimization, speed optimization, and page builder integration.
 Decision stage: partner selection, Neve theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Neve theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 6 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Neve theme customization capabilities. Features 10 client brand trust logos, 6 key theme features, 6 customization services, 8 store benefits, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards, HappyClient video testimonials section, 6 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -4916,11 +4916,13 @@ Dedicated commercial landing page presenting Dynamic Dreamz Neve theme customiza
 
 - Server-rendered H1 `Neve Theme Customization Service` with direct answer paragraph.
 - 18+ years agency experience (founded 2006) with 150+ WordPress/Shopify experts and 5000+ completed projects.
-- 7 key Neve theme features (Lightweight & Fast, Mobile-Optimized, Customizable Header & Footer, WooCommerce Ready, Page Builder Compatibility, SEO-Friendly, AMP Compatibility).
-- 8 core benefits of Neve customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimal Maintenance Cost).
-- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
-- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nékter Juice Bar, Circuit City).
+- 6 key Neve theme features (Lightweight & Fast, Mobile-Optimized, Customizable Header & Footer, WooCommerce Ready, Page Builder Compatibility, SEO-Friendly).
+- 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance) rendered via `AgencyServicesSection` in 2-column layout.
+- 8 core benefits of Neve customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimal Maintenance Cost) rendered via `ThemeCustomizationServicesSection` (green variant).
+- 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach) rendered via `EvaluationFrameworkSection`.
+- 8 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids) with `ourWorkRefresh` variant and "View our work" CTA button to `/our-work`.
+- Client Testimonials section rendered via `HappyClientSection`.
 - 6 detailed FAQs addressing cost, customization scope, WooCommerce compatibility, project timeline, SEO best practices, and post-launch support.
 
 ### Structured gap analysis
@@ -4928,7 +4930,7 @@ Dedicated commercial landing page presenting Dynamic Dreamz Neve theme customiza
 | Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
 |---|---|---|---|---|---|
 | P0 | implemented | Route and discovery | Missing App Router implementation for Neve theme customization | Ship slashless `/neve-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Neve hero graphic and unique feature/benefit icons under `public/assets/neve-theme-customization/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Neve hero graphic and clean vector icons under `public/assets/neve-theme-customization/` | Verified locally with 0 duplicate assets |
 | P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 6 service offers), and FAQPage (with 6 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
 
 ### Visible content and copy improvements
@@ -4949,20 +4951,20 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/neve-theme-customization`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 51 chars, Description: 138 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-30): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/neve-theme-customization`; source/build URL guard passes.
+- Checks completed (2026-09-30): live and local rendered page comparison, View Page Source, metadata limits (Title: 51 chars, Description: 138 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Blocksy Theme Customization (`/blocksy-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Blocksy theme customization, responsive WooCommerce store design, Gutenberg & page builder integration, header/footer builder customization, global color palette management, speed optimization, and third-party plugin integration.
 Decision stage: partner selection, Blocksy theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Blocksy theme customization capabilities. Features 10 client brand trust logos, 8 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 7 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Blocksy theme customization capabilities. Features 10 client brand trust logos, 8 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards, client testimonial video stories carousel, 7 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -4980,7 +4982,8 @@ Dedicated commercial landing page presenting Dynamic Dreamz Blocksy theme custom
 - 9 core benefits of Blocksy customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
 - 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
 - 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- 8 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids) with centered "View our work" CTA button linking to `/our-work`.
+- Client stories video testimonial carousel with verified customer ratings.
 - 7 detailed FAQs addressing cost, customization scope, uniqueness, mobile responsiveness, project timeline, post-launch support, and third-party plugins.
 
 ### Structured gap analysis
@@ -5009,8 +5012,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/blocksy-theme-customization`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 141 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-30): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/blocksy-theme-customization`; source/build URL guard passes.
+- Checks completed (2026-09-30): live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 141 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Extendable Theme Customization (`/extendable-theme-customization`)
 

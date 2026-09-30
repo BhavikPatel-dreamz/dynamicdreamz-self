@@ -1358,7 +1358,7 @@ Primary SEO intent: OceanWP theme customization, OceanWP WordPress theme customi
 ## Neve Theme Customization (`/neve-theme-customization`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Primary SEO intent: Neve theme customization, Neve WordPress theme customization service, customize Neve theme WordPress WooCommerce, fast lightweight WordPress theme development, hire Neve WordPress developers.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
@@ -1372,7 +1372,7 @@ Primary SEO intent: Neve theme customization, Neve WordPress theme customization
 ## Blocksy Theme Customization (`/blocksy-theme-customization`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Primary SEO intent: Blocksy theme customization, Blocksy WordPress theme customization service, customize Blocksy theme WordPress WooCommerce, fast lightweight WordPress theme development, hire Blocksy WordPress developers.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |

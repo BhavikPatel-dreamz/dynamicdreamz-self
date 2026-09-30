@@ -2,7 +2,7 @@
 
 - **Route**: `/blocksy-theme-customization`
 - **Live URL Reference**: `https://www.dynamicdreamz.com/blocksy-theme-customization/`
-- **Capture Date**: 2026-08-20
+- **Capture Date**: 2026-09-30
 - **Status**: Verified
 - **Viewports Inspected**:
   - Desktop: 1440x900
@@ -14,31 +14,39 @@
 ## 1. Visual References & Page Structure
 
 ### Live CSS Sources Inspected
-- `/wp-content/themes/dynamicdreamz/assets/css/services/main.css`
-  - `.theme-customization-service-sec` (hero layout, 50%/50% split, `.review-wrap { display: none; }`, image bottom-aligned)
-  - `.three_col_icon_sec` (3-column features flexbox wrapper with centered items on last row, 55px icons, centered bold text, description paragraph, rounded-15px card border `#efefef`)
-  - `.shopify-customization-services-sec` (benefits grid with gradient background, white cards, hover gradient border, centered cards)
-  - `.what-we-provide-sec` (2-column services grid, 10px rounded cards with hover gradient border)
-  - `.why_dynamic_dreamz_sec.two-column-icon-text-bg` (2-column horizontal icon-text list with borders `rgba(0,0,0,0.05)`)
-  - `.our-work-sec` (3-column portfolio project showcase cards with hover "View Project" arrow and category badge)
-  - `.faq-sec` (accordion items with active/expanded states)
-- `/wp-content/themes/dynamicdreamz/assets/css/services/media.css`
-  - Breakpoints: desktop (>=1200px), tablet (768px-1199px / <=991px), mobile (<=767px / <=575px).
+- `/wp-content/themes/dynamicdreamz/assets/css/theme_customize_hero.css`
+  - `.theme-customize-hero` (hero layout, background `#f7f4e9`, double eyebrow badges `["Wordpress Agency", "Theme Customization"]`, 50%/50% split, bottom-aligned 601x474 WebP image without `mix-blend-darken`)
+- `/wp-content/themes/dynamicdreamz/assets/css/trusted_by_leading_brands_section.css`
+  - `.our-client-sec` (split layout: left heading `Trusted by \nLeading Brands`, right infinite logo track with 10 global brand logos)
+- `/wp-content/themes/dynamicdreamz/assets/css/shopify_theme_customization_services.css`
+  - `.theme-customization-services.yellow` (8 Features cards with `#AD5151` icons, `#FCF6EC` badge styling, rounded card borders)
+  - `.theme-customization-services.green` (9 Benefits cards with `#AD5151` icons, `#E9F9F0` badge styling, rounded card borders)
+- `/wp-content/themes/dynamicdreamz/assets/css/delivery_section.css`
+  - `.what-we-provide-sec.only-text` (2-column services box layout with `#AD5151` inline SVGs, title, and descriptive text)
+- `/wp-content/themes/dynamicdreamz/assets/css/how_to_choose_the_right_shopify_plus_agency_sec.css`
+  - `.how-to-choose-spa-sec` (4 numbered framework items `01` - `04` with title and description)
+- `/wp-content/themes/dynamicdreamz/assets/css/projects_section.css`
+  - `.our-work-sec.pt-0` (4-column grid of 8 WordPress project cards, rounded corners, category badge `WORDPRESS`, title, diagonal arrow link, and centered `View our work` CTA button linking to `/our-work`)
+- `/wp-content/themes/dynamicdreamz/assets/css/client_review_section.css`
+  - `.happy-client-sec` (video testimonial carousel with client stories and reviewer ratings)
+- `/wp-content/themes/dynamicdreamz/assets/css/faqs_section.css`
+  - `.faq-sec` (7 accordion items with expand/collapse interactive behavior)
 
 ---
 
-## 2. Page Section Order & Component Mapping
+## 2. Page Section Order & Component Mapping (9 Sections)
 
 | Section # | Live Section Title / Purpose | Component / Implementation | Reused / Dedicated |
 |---|---|---|---|
-| 1 | Hero (`Blocksy Theme Customization Service`) | `ThemeHeroSection` | Reused |
-| 2 | Trusted by Leading Brands | `IndustryBrandsSection` | Reused |
-| 3 | Features Of Blocksy Theme (8 cards) | `ThemeFeaturesSection` | Reused |
-| 4 | Benefits of Blocksy Theme Customization (9 cards) | `ShopifyReasonsSection` | Reused |
-| 5 | Our WordPress Theme Customization Services (6 cards) | `ShopifyServicesSection` | Reused |
-| 6 | Why Choose Dynamic Dreamz (4 items) | `ThemeWhyChooseSection` | Reused |
-| 7 | Snippets of WordPress Theme Customization Portfolio (6 projects) | `PortfolioShowcaseSection` & `PortfolioProjectCard` | Reused |
-| 8 | Frequently Asked Questions (7 accordion items) | `FaqSection` & `FaqAccordion` | Reused |
+| 1 | Hero (`theme-customize-hero`) | `ThemeHeroSection` (bg `#f7f4e9`, double eyebrow badges, 601x474 WebP, no blend mode) | Reused |
+| 2 | Trusted by Leading Brands (`our-client-sec`) | `IndustryBrandsSection` (10 global brand logos) | Reused |
+| 3 | Features of Blocksy Theme (`theme-customization-services yellow`) | `ThemeCustomizationServicesSection` (`variant="yellow"`, 8 feature items) | Reused |
+| 4 | Our WordPress Theme Customization Services (`what-we-provide-sec only-text`) | `AgencyServicesSection` (`cardVariant="services-box"`, 2 columns, 6 services) | Reused |
+| 5 | Benefits of Blocksy Theme Customization (`theme-customization-services green`) | `ThemeCustomizationServicesSection` (`variant="green"`, 9 benefit items) | Reused |
+| 6 | Why Choose Dynamic Dreamz (`how-to-choose-spa-sec`) | `EvaluationFrameworkSection` (4 numbered framework items `01`–`04`) | Reused |
+| 7 | Snippets of WordPress Theme Customization Portfolio (`our-work-sec pt-0`) | `PortfolioShowcaseSection` (`cardVariant="ourWorkRefresh"`, 4 columns, 8 projects, "View our work" CTA) | Reused |
+| 8 | Client Stories (`happy-client-sec`) | `HappyClientSection` (client video testimonial carousel) | Reused |
+| 9 | Frequently Asked Questions (`faq-sec`) | `SplitFaqSection` (`idPrefix="blocksy-faq"`, 7 accordion items) | Reused |
 
 ---
 
@@ -48,8 +56,8 @@
 - **Hero Title**: `text-[50px] leading-[66px]` on desktop, `text-[40px] leading-[50px]` on tablet, `text-[30px] leading-[40px]` on mobile.
 - **Section Headings**: `text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink` (desktop), `text-[30px] leading-10` (tablet), `text-2xl leading-[33px]` (mobile).
 - **Body / Subtitles**: `text-base leading-[30.4px] font-normal text-muted` (hero), `text-base leading-[27px]` (cards).
-- **Hero Image**: Bottom-aligned 601x474 WebP image (`blocksy-theme-customization-service-img.webp`).
-- **Brand Colors**: Light gradient `linear-gradient(97.18deg, #e8f9ef 28.5%, #e6fafd 91.82%)`, red primary CTA `#df4644` / `#cd3735`.
+- **Hero Image**: Bottom-aligned 601x474 WebP image (`blocksy-theme-customization-service-img.webp`) with clean alpha transparency, no `mix-blend-darken`.
+- **Brand Colors**: `#f7f4e9` hero background, `#AD5151` icon stroke/fill, red primary CTA `#df4644` / `#cd3735`.
 
 ---
 
@@ -66,26 +74,14 @@
   - `kvaser.svg`
   - `nelter.svg`
   - `circuit-city.svg`
-- 7 feature icons reused directly from existing canonical feature paths:
-  - `lightning-fast-performance.svg` (from `astra-theme-customization/features/`)
-  - `highly-customizable.svg` (from `astra-theme-customization/features/`)
-  - `page-builder-compatibility.svg` (from `neve-theme-customization/features/`)
-  - `woocommerce-ready.svg` (from `astra-theme-customization/features/`)
-  - `drag-and-drop-header-footer-builder.svg` (from `kadence-theme-customization/features/`)
-  - `seo-optimized.svg` (from `astra-theme-customization/features/`)
-  - `mobile-responsive-design.svg` (from `generatepress-theme-customization/features/`)
-- 8 benefit icons and 5 service icons reused from `public/assets/shopify-theme-customization/`.
-- 1 benefit icon reused from `public/assets/neve-theme-customization/benefits/minimal-maintenance-cost.svg`.
-- 1 service icon (`custom-design-branding.svg`) reused from `public/assets/services/wordpress/wordpress-plugin-development.svg`.
-- 4 why-choose icons reused from `public/assets/shopify-theme-customization/why-choose/`.
-- All 6 portfolio screenshots reused from canonical project paths:
-  - `/assets/our-work/projects/quite-events.webp`
-  - `/assets/our-work/projects/les-etoiles.webp`
-  - `/assets/our-work/projects/valents.webp`
-  - `/assets/our-work/projects/get-sunsights.webp`
-  - `/assets/our-work/projects/lipari-design.webp`
-  - `/assets/our-work/projects/nexventur.webp`
-- Unique theme assets cleanly saved under `public/assets/blocksy-theme-customization/` with clean kebab-case names:
-  - `hero/blocksy-theme-customization-service-img.webp`
-  - `features/global-color-palette.svg`
+- 8 portfolio project images reused from canonical `public/assets/our-work/projects/`:
+  - `quite-events.webp`
+  - `les-etoiles.webp`
+  - `valents.webp`
+  - `get-sunsights.webp`
+  - `lipari-design.webp`
+  - `nexventur.webp`
+  - `awaken-media.webp`
+  - `budget-maids.webp`
+- Reused modular inline SVG components in `src/components/sections/blocksy-theme-customization/blocksy-icons.tsx`.
 - Total duplicate hash groups across `public/assets/`: 0.
