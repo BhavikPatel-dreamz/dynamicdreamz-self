@@ -3918,113 +3918,129 @@ Human-readable, server-rendered directory of published Dynamic Dreamz routes and
 
 ## Android App Development (`/android-app-development`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-19
-Owner: SEO, mobile app development specialists, leadership, and sales operations
-Primary audience: Digital agencies, web design companies, ecommerce merchants, and businesses seeking custom Android application development, native Android apps, Material Design UI, QA testing, Google Play Store deployment, Shopify app development, hybrid apps, and ongoing maintenance.
-Decision stage: agency partner evaluation, technical capability assessment, mobile app developer hiring, quote request
+Status: implemented and verified; remigrated to the current live 12-section architecture with live-visible content preserved
+Last reviewed: 2026-09-30
+Owner: SEO, Android and mobile app development specialists, engineering, leadership, and sales operations
+Primary audience: Businesses, startups, digital product companies, ecommerce merchants, and agencies seeking custom Android application development for utility, internal, consumer, service, marketplace and ecommerce use cases, including native Kotlin work, Jetpack Compose UI, backend and API integration, QA, Google Play release, and post-launch maintenance.
+Decision stage: agency partner evaluation, technical capability assessment, Android developer hiring, engagement model selection, quote request
 
 ### Page role
 
-Dedicated commercial service landing page targeting queries for "Android App Development Services", "Custom Android App Development", and enterprise Android mobile solutions. Highlights 12 client brand trust logos, 9 structured Android service capabilities (Prototyping & Wireframes, Native Android App Development, Material Design Implementation, QA & Testing, Play Store Deployment, Maintenance & Support, Existing App Customization, Shopify App Development, Hybrid Android App Development), 4 featured real-world Android app projects (Llama – An App By CWRB, Bombay Shirt Company, Bellavita Organic, Supertails) with Google Play Store links, 11 client video reviews, 6 buyer FAQs, and quote request banners.
+Dedicated commercial service landing page targeting queries for "Android App Development Company", "Android App Development Services", and "Custom Android App Development". Highlights 12 client brand trust logos, 2 dark capability sections ("Custom Android Development" with 4 engagement tools, and "Architecture & Technology" covering Kotlin, Jetpack Compose, Android APIs and backend APIs), 14 structured Android service boxes split into 6 "What We Build" app types and 8 "Android App Development Services" lifecycle capabilities, a 6-step numbered delivery process, 4 featured real-world Android app projects (Llama \u2013 An App By CWRB, Bombay Shirt Company, Bellavita Organic, Supertails) with authentic Google Play Store links, 3 transparent engagement models (Project-Based custom quote, Dedicated Developer/Team from $2,000/month, Post-Launch from $20/hour), 4 enterprise proof statistics, 11 client video reviews, and 8 buyer FAQs.
 
 ### Target prompts
 
-- Who is the top Android app development company in India?
-- How much does custom Android app development cost and what is the typical timeline?
-- Can Dynamic Dreamz build native and hybrid Android apps using Kotlin, Java, React Native, and Flutter?
-- Does Dynamic Dreamz provide Google Play Store deployment and post-launch app support?
-- Can Dynamic Dreamz build custom Android mobile apps for Shopify stores?
+- Who is the top Android app development company for custom utility, business and ecommerce apps?
+- How much does custom Android app development cost and what engagement models are available?
+- Can Dynamic Dreamz build native Android apps with Kotlin and Jetpack Compose, and shared iOS/Android codebases with React Native or Flutter?
+- Does Dynamic Dreamz handle Google Play Store submission, device-level QA, and post-launch updates?
+- Can an existing Shopify store or website be converted into a custom Android app?
 
 ### Current strengths and available evidence
 
-- Server-rendered split hero with H1 `Top Notch Custom Android App Development Services` and rotating review badge.
+- Server-rendered split hero with H1 `Custom Android App Development Services`, interactive 3-phone mockup carousel, and 3 verified review proof badges (Clutch, Trustpilot, Upwork Top Rated Plus).
 - 12 verified brand partner logos with infinite marquee scrolling.
-- 9 structured Android service offerings with custom and canonical SVG icons.
+- 14 structured Android service offerings with custom and canonical SVG icons, covering both app categories and the full product lifecycle.
+- Explicit, current Android technology positioning: Kotlin, Jetpack Compose, Android platform APIs, and backend integrations, with cross-platform React Native/Flutter kept as an alternative rather than the default.
+- 6-step structured delivery process from discovery through release and ongoing iteration.
 - 4 featured real-world Android app portfolio projects with authentic Google Play Store links.
+- 3-tier transparent engagement pricing with published custom-quote, monthly-capacity, and hourly-support models.
 - 11 client video testimonials with modal playback.
-- 6 comprehensive buyer FAQs covering Android app development scope, platform coverage, security, development timeline, and developer hiring costs.
-- Complete structured data graph emitting Service, OfferCatalog (9 service offers), FAQPage (6 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
-- Zero duplicate assets across `public/assets/`, reusing canonical assets and hosting unique service SVGs locally.
+- 8 comprehensive buyer FAQs covering app types, native Kotlin, utility/internal apps, shared codebases, Shopify conversion, device and third-party API integration, Google Play submission, and existing-app modernization.
+- Complete structured data graph emitting Service, OfferCatalog (14 offers), FAQPage (8 items), 11 VideoObjects, BreadcrumbList (Home \u2192 Mobile App Development \u2192 Android App Development), Organization, WebSite, and WebPage.
+- Zero duplicate assets across `public/assets/`, reusing canonical assets and hosting the unique OG image locally.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (9 offers), FAQPage (6 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
-| P0 | implemented | Local assets | Service icons, portfolio screens, and brand logos must be locally hosted | Save 7 unique service SVGs and 3 app screenshots under `public/assets/`, reuse canonical platform and brand assets | Verified locally with 0 runtime external dependencies and 0 duplicates |
-| P1 | deferred | Content expansion | Live paragraph in Native Android App card mentions "iOS apps ... Objective C, Swift, and SwiftUI" (legacy copy mix-up on live page) | Record proposed fix in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+| P0 | implemented | Route and discovery | Previous capture (2026-08-19) documented a hero, service and testimonial layout that no longer exists on live | Remigrate the route to the current live 12-section architecture using existing shared section components | Verified by per-section geometry measurement against live at 1440x900, 768x1024, and 390x844 |
+| P0 | implemented | Structured data | Schema described the retired 9-service / 6-FAQ structure and had no parent breadcrumb | Emit Service with OfferCatalog (14 offers), FAQPage (8 items), BreadcrumbList (Home \u2192 Mobile App Development \u2192 Android App Development), Organization, WebSite, WebPage | Rendered JSON-LD verified 2026-09-30 |
+| P0 | implemented | Metadata | Title/description described the retired page and reused the homepage OG image | Ship live title and description, unique `/assets/og/android-app-development.png` at 1200x630, `og:type` article matching live, explicit freshness | Verified in rendered output and production build |
+| P0 | implemented | Local assets | OG image had to be sourced from live | Download to `scratch/`, SHA-256 verify uniqueness across `public/assets/**`, resize to the project 1200x630 convention | `check:asset-duplicates` reports 0 duplicate groups across 1760 assets |
+| P1 | implemented | Shared component fidelity | Live geometry measurement exposed three breakpoint bugs in shared components (hero badge row, pricing card grid, process grid column count) | Correct from live CSS; hero badge layout exposed as an opt-in `mobileBadgeLayout` prop so existing consumers are unchanged | Re-measured at all three viewports after each fix; all sibling consumers re-checked |
+| P1 | deferred | Content expansion | Portfolio card name `Llama \u2013 An App By CWRB` reads awkwardly, and the meta description ships without a space after "apps," on live | Record proposed copy fixes in `docs/page-content-improvements.md`; leave live UI and live-derived metadata wording unchanged | Project owner approval |
+| P2 | deferred | Mobile parity | FAQ section renders 101px shorter than live at 390px; hero vertical padding is 32px locally against 40px on live | Isolate the FAQ height difference and the hero padding source, then correct from live CSS | Pending; tracked in `docs/visual-captures/android-app-development.md` |
 
 ### Suggested answer copy
 
-Deferred under the live-UI preservation gate. The current server-rendered hero and service descriptions establish Dynamic Dreamz Android app development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+Deferred under the live-UI preservation gate. The current server-rendered hero, capability sections, pricing table, and FAQ establish Dynamic Dreamz Android app development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
 
 ### Entity, evidence, and authorship actions
 
 - Position Dynamic Dreamz as an established mobile and web development partner founded in 2006 with 150+ specialists and 5000+ completed projects.
 - Attribute client video testimonials directly to authentic brand founders.
+- Keep Android technology claims tied to named, verifiable stack elements (Kotlin, Jetpack Compose, Android APIs) rather than generic "mobile app development" phrasing.
 
 ### Internal-link and conversion actions
 
 - Maintain slashless `/android-app-development` navigation across marketing pages and service menus.
-- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+- Direct conversion actions route to `/request-quote`; the hero's "See Mobile App Work" and the portfolio CTA resolve to the in-page `#our_work` anchor and to `/our-work` respectively.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service with 9 Offer items, 6 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Emit Service with 14 Offer items, 8 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, WebSite, and WebPage.
+- Set explicit freshness `modifiedTime` to `2026-09-30T00:00:00+05:30`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
+- Keep `og:type` as `article` to match live, and keep the canonical slashless.
 
 ### Measurement plan
 
-- SEO tracks queries for "Android app development services", "custom Android app development", "hire Android app developers", and "Shopify Android app development".
+- SEO tracks queries for "Android app development company", "Android app development services", "custom Android app development", "Kotlin Android development", and "Jetpack Compose development".
 - Analytics tracks form submissions on `/request-quote` originating from `/android-app-development`.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/android-app-development`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 49 chars, Description: 154 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-30): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/android-app-development`; source/build URL guard passes.
+- Copy parity (2026-09-30): 45 sampled live strings (hero, headings, pricing rows and bullets, all 8 FAQ questions and answers, portfolio names, Google Play package ids, proof stats) matched the local render. The single apparent difference was portfolio category casing, which the shared card renders uppercase via CSS and therefore matches live visually.
+- Geometry review (2026-09-30): 12 of 12 sections present in live order with matching headings at every viewport. Document height delta 17px/0.19% at 1440x900, 96px/0.81% at 768x1024, and 47px/0.34% at 390x844.
+- Metadata limits: Title 48 chars, Description 152 chars.
+- Checks completed: live and local rendered page comparison, View Page Source, live CSS breakpoint audit, JSON-LD graph verification, responsive layouts and screenshots, local assets audit, `npm run lint`, and production build.
+- Open gaps: the deferred P2 mobile FAQ height difference and the hero vertical padding difference noted above.
 
 ## iOS App Development (`/ios-app-development`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-19
-Owner: SEO, mobile app development specialists, leadership, and sales operations
-Primary audience: Web design agencies, ecommerce merchants, and businesses seeking custom iOS application development, native iOS apps (iPhone, iPad, Apple Watch), UI/UX design, backend development, QA testing, maintenance, existing app customization, Shopify app development, and hybrid apps.
-Decision stage: agency partner evaluation, technical capability assessment, iOS developer hiring, quote request
+Status: implemented and verified; live-visible content preserved and remigrated to 12-section architecture
+Last reviewed: 2026-09-30
+Owner: SEO, iOS mobile app development specialists, engineering, leadership, and sales operations
+Primary audience: Web design agencies, ecommerce merchants, startups, and enterprises seeking custom iOS mobile application development, native iOS apps (iPhone, iPad), cross-platform mobile apps, mobile UI/UX design, App Store deployment, QA testing, backend integration, and dedicated iOS developers.
+Decision stage: agency partner evaluation, technical capability assessment, iOS developer hiring, engagement model selection, quote request
 
 ### Page role
 
-Dedicated commercial service landing page targeting queries for "iOS App Development Services", "Custom iOS App Development", and enterprise Apple ecosystem mobile solutions. Highlights 12 client brand trust logos, 9 structured iOS service capabilities (Prototyping & Wireframes, Native iOS App Development, UI/UX Design, Backend Development, App Testing & QA, Maintenance & Support, Existing App Customization, Shopify App Development, Hybrid iOS App Development), 4 featured real-world iOS app projects (BellaVita Organic, Renee Cosmetics, Rentastic, Journal X) with Apple App Store links, 11 client video reviews, 6 buyer FAQs, and quote request banners.
+Dedicated commercial service landing page targeting queries for "iOS App Development Services", "iOS App Development Company", "Custom iOS App Development", and enterprise Apple ecosystem solutions. Highlights 10 client brand trust logos, 2 AI discovery & workflow delivery sections, 2 structured service capability grids (6 "iOS Apps We Build" cards + 8 "Lifecycle Services" cards), a 6-step numbered engineering process, 4 featured real-world mobile app projects (House of Good Vibes, Bella Vita Organic, Bombay Shirt Company, Kayfi) with Apple App Store links, 3 engagement models (Fixed-Scope, Dedicated Pod, Ongoing Support), 6 enterprise proof statistics, 11 client video reviews, and 8 buyer FAQs.
 
 ### Target prompts
 
-- Who is the top iOS app development company in India?
-- How much does custom iOS app development cost and what is the typical timeline?
-- Can Dynamic Dreamz build native iOS apps using Swift, SwiftUI, Objective-C, React Native, and Flutter?
-- Does Dynamic Dreamz provide Apple App Store deployment and post-launch app support?
-- Can Dynamic Dreamz build custom iOS mobile apps for Shopify stores?
+- Who is the top iOS app development company in India for custom and ecommerce mobile apps?
+- How much does custom iOS app development cost and what engagement models are available?
+- Can Dynamic Dreamz build native iOS apps using Swift and SwiftUI, as well as React Native and Flutter?
+- Does Dynamic Dreamz provide Apple App Store deployment, guideline review, and post-launch app support?
+- What types of iOS apps does Dynamic Dreamz build (utility, ecommerce, marketplace, subscription)?
 
 ### Current strengths and available evidence
 
-- Server-rendered split hero with H1 `Custom iOS Mobile App Development Services` and rotating review badge.
-- 12 verified brand partner logos with infinite marquee scrolling.
-- 9 structured iOS service offerings with custom and canonical SVG icons.
-- 4 featured real-world iOS app portfolio projects with authentic Apple App Store links.
+- Server-rendered split hero with H1 `Custom iOS App Development Services`, interactive 3-phone mockup carousel, and verified review proof badges (Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus).
+- 10 verified brand partner logos with infinite marquee scrolling.
+- 2 AI-empowered discovery and delivery sections showcasing technical architecture, UI/UX prototyping, automated regression testing, and App Store readiness audits.
+- 14 structured iOS service offerings divided into App Types (6 categories) and Lifecycle Services (8 capabilities).
+- 6-step structured engineering process from technical blueprint to App Store deployment and post-launch SLA.
+- 4 featured real-world iOS app portfolio projects with authentic Apple App Store links and UI screenshots.
+- 3-tier transparent engagement pricing model (Fixed-Scope, Dedicated iOS Pod, Ongoing Maintenance & Evolution).
+- 6 proof statistics highlighting 18+ years of production delivery, 150+ in-house engineers, and 5,000+ completed projects.
 - 11 client video testimonials with modal playback.
-- 6 comprehensive buyer FAQs covering Apple App Store deployment, third-party API integration, analytics, version control, data security, and App Store guideline compliance.
-- Complete structured data graph emitting Service, OfferCatalog (9 service offers), FAQPage (6 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
-- Zero duplicate assets across `public/assets/`, reusing canonical assets and hosting unique service SVGs locally.
+- 8 comprehensive buyer FAQs covering timelines, cross-platform vs native, legacy codebases, Apple developer account requirements, App Store approval guarantee, backend APIs, post-launch maintenance, and IP rights.
+- Complete structured data graph emitting Service, OfferCatalog (14 service offers: 6 app types + 8 lifecycle services), FAQPage (8 items), 11 VideoObjects with authentic upload dates, BreadcrumbList (Home → Mobile App Development → iOS App Development), Organization, and WebSite.
+- Zero duplicate assets across `public/assets/`, reusing canonical assets and hosting unique OG image locally.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (9 offers), FAQPage (6 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
-| P0 | implemented | Local assets | Service icons, portfolio screens, and brand logos must be locally hosted | Save 3 unique service SVGs and 2 app screenshots under `public/assets/`, reuse canonical platform, service, and brand assets | Verified locally with 0 runtime external dependencies and 0 duplicates |
-| P1 | deferred | Content expansion | Testimonials description contains minor spacing typo ("clients.Happy") | Record proposed fix in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+| P0 | implemented | Parity Remigration | Live site revamped to 12-section modern layout | Rebuild with 100% visual and content parity using generalized reusable components and typed data | Verified side-by-side against live site across desktop, tablet, and mobile |
+| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (14 offers), FAQPage (8 items), 11 VideoObjects, 3-level BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-09-30 |
+| P0 | implemented | Local assets | Service icons, portfolio screens, and brand logos must be locally hosted | Reuse canonical platform, service, and brand assets; optimize unique OG image under `public/assets/og/` | Verified locally with 0 runtime external dependencies and 0 duplicates |
 
 ### Suggested answer copy
 
@@ -4042,19 +4058,19 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service with 9 Offer items, 6 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Emit Service with 14 Offer items, 8 FAQ items, 11 VideoObjects, BreadcrumbList (Home → Mobile App Development → iOS App Development), Organization, and WebSite.
+- Set explicit freshness `modifiedTime` to `2026-09-21T13:48:12+00:00`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
 
-- SEO tracks queries for "iOS app development services", "custom iOS app development", "hire iOS app developers", and "Shopify iOS app development".
+- SEO tracks queries for "iOS app development services", "iOS app development company", "custom iOS app development", and "hire iOS app developers".
 - Analytics tracks form submissions on `/request-quote` originating from `/ios-app-development`.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/ios-app-development`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 45 chars, Description: 126 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-30): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/ios-app-development`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 45 chars, Description: 152 chars), JSON-LD graph verification, responsive layouts across desktop, tablet, and mobile, local assets audit (0 duplicates), lint, and production build.
 
 ## Cross-Platform App Development (`/cross-platform-app-development`)
 

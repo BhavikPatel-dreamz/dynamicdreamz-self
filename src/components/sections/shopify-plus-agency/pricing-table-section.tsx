@@ -40,7 +40,7 @@ export function PricingTableSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-10 gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
+          className="mb-10 gap-10 max-[992px]:mb-[30px] max-[992px]:gap-[30px] max-[767px]:mb-5 max-[767px]:gap-[15px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
@@ -49,19 +49,19 @@ export function PricingTableSection({
           variant="left"
         />
 
-        <div className="pricing_cards grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1">
+        <div className="pricing_cards grid grid-cols-3 gap-5 max-[1199px]:mb-[35px] max-[1199px]:gap-[15px] max-[991px]:mb-[30px] max-[991px]:grid-cols-1 max-[991px]:gap-[10px] max-[767px]:mb-5 max-[767px]:gap-5">
           {content.items.map((item) => (
             <article
-              className="pricing_card group relative flex h-full flex-col rounded-[20px] bg-white px-6 pt-8 pb-[60px] max-[1199px]:px-5 max-[1199px]:pt-6"
+              className="pricing_card group relative flex h-full flex-col rounded-[20px] bg-white px-6 pt-8 pb-[60px] max-[1199px]:px-5 max-[1199px]:pt-[25px] max-[991px]:px-[15px] max-[991px]:pt-5"
               key={item.label}
             >
               <div className="pricing_card_label mb-2.5 font-montreal-medium text-[18px] font-normal leading-6 text-ink">
                 {item.label}
               </div>
-              <span className="pricing_badge mb-[30px] inline-block w-fit rounded-[30px] bg-[rgba(173,81,81,0.05)] px-[12.5px] py-[5.5px] font-montserrat text-xs leading-[12px] font-bold uppercase text-[#ad5151]">
+              <span className="pricing_badge mb-[30px] inline-block w-fit rounded-[30px] bg-[rgba(173,81,81,0.05)] px-[12.5px] py-[5.5px] font-montserrat text-xs leading-[12px] font-bold uppercase text-[#ad5151] max-[767px]:mb-[15px]">
                 {item.badge}
               </span>
-              <div className="pricing_price mb-6 border-b border-[rgba(40,40,40,0.1)] pb-6 font-montreal-medium text-[22px] leading-[29.04px] text-ink">
+              <div className="pricing_price mb-6 border-b border-[rgba(40,40,40,0.1)] pb-6 font-montreal-medium text-[22px] leading-[29.04px] text-ink max-[991px]:mb-[15px] max-[991px]:pb-[15px] max-[991px]:text-[18px] max-[991px]:leading-[26px]">
                 {item.price}
               </div>
               <p className="m-0 mb-[15px] font-sans text-sm font-normal leading-6 text-[#535353]">

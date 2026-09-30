@@ -61,7 +61,8 @@ export function ShopifyMigrationNumberedGridSection({
           </div>
         )}
 
-        <div className="wrapper grid grid-cols-3 gap-4 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
+        {/* Live keeps three equal columns down to 767px, then stacks. */}
+        <div className="wrapper grid grid-cols-3 gap-4 max-[767px]:grid-cols-1">
           {items.map((item) => (
             <div className="col" key={item.number}>
               <div className="item h-full rounded-[20px] border border-[rgba(40,40,40,0.1)] bg-white p-[25px] max-[1199px]:rounded-[16px] max-[1199px]:p-5">

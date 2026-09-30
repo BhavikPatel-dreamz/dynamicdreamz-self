@@ -160,12 +160,12 @@ import {
   wordPressThemeCustomizationFaqs,
 } from "@/content/wordpress-theme-customization";
 import {
-  androidAppDevelopmentFaqs,
-  androidAppDevelopmentServices,
+  androidAppDevelopmentSchemaFaqs,
+  androidAppDevelopmentSchemaOffers,
 } from "@/content/android-app-development";
 import {
-  iosAppDevelopmentFaqs,
-  iosAppDevelopmentServices,
+  iosAppDevelopmentSchemaFaqs,
+  iosAppDevelopmentSchemaOffers,
 } from "@/content/ios-app-development";
 import {
   crossPlatformAppDevelopmentSchemaFaqs,
@@ -4425,18 +4425,19 @@ export function createAndroidAppDevelopmentPageSchema() {
     breadcrumbId: androidAppDevelopmentBreadcrumbId,
     serviceName: "Android App Development Services",
     serviceType:
-      "Custom Android app development, native app development, Material Design implementation, QA testing, Google Play Store deployment, Shopify app development, hybrid app development, maintenance, and support",
+      "Custom Android App Development, Native Android App Development, Kotlin App Development, Jetpack Compose App Development, Android UI/UX Design, Backend and API Integration, App Testing and Quality Assurance, Google Play Deployment and Support, Existing App Customization, Shopify Android App Development, and Cross-Platform Mobile App Development",
     breadcrumbName: "Android App Development",
+    parentBreadcrumb: {
+      name: "Mobile App Development",
+      item: absoluteUrl(pageSeo.mobileApplicationDevelopment.path),
+    },
     audienceType:
-      "Digital agencies, web design companies, ecommerce merchants, and businesses looking to build high-performance custom Android applications",
-    faqs: androidAppDevelopmentFaqs.map((item) => ({
+      "Businesses, startups, digital product companies, ecommerce merchants, and agencies looking to build custom Android applications for utility, internal, consumer, service, marketplace and ecommerce use cases",
+    faqs: androidAppDevelopmentSchemaFaqs.map((item) => ({
       question: item.question,
       answer: item.answer,
     })),
-    offers: androidAppDevelopmentServices.items.map((item) => ({
-      title: item.title,
-      description: item.description,
-    })),
+    offers: androidAppDevelopmentSchemaOffers,
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
@@ -4477,18 +4478,19 @@ export function createIosAppDevelopmentPageSchema() {
     breadcrumbId: iosAppDevelopmentBreadcrumbId,
     serviceName: "iOS App Development Services",
     serviceType:
-      "Custom iOS mobile app development, native iOS app development, UI/UX design, backend development, QA testing, maintenance, existing app customization, Shopify app development, and hybrid iOS app development",
-    breadcrumbName: "iOS App Development",
+      "iOS App Development, Swift App Development, SwiftUI App Development, iPhone App Development, iPad App Development, Mobile UI/UX Design, and Backend API Development",
+    breadcrumbName: "iOS App Development Services",
+    parentBreadcrumb: {
+      name: "Mobile App Development",
+      item: absoluteUrl(pageSeo.mobileApplicationDevelopment.path),
+    },
     audienceType:
       "Web design agencies, ecommerce merchants, and businesses looking to build high-performance custom iOS applications",
-    faqs: iosAppDevelopmentFaqs.map((item) => ({
+    faqs: iosAppDevelopmentSchemaFaqs.map((item) => ({
       question: item.question,
       answer: item.answer,
     })),
-    offers: iosAppDevelopmentServices.items.map((item) => ({
-      title: item.title,
-      description: item.description,
-    })),
+    offers: iosAppDevelopmentSchemaOffers,
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }

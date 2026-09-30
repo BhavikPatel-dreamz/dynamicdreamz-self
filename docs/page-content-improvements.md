@@ -724,30 +724,31 @@ Primary SEO intent: Dynamic Dreamz site map, page discovery, and complete servic
 ## Android App Development (`/android-app-development`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-19
-Primary SEO intent: Android app development services, custom Android app development, native Android app development, hire Android app developers, Android app development company, hybrid Android app development.
+Last reviewed: 2026-09-30
+Primary SEO intent: Android app development company, Android app development services, custom Android app development, native Android app development, Kotlin Android development, Jetpack Compose development, hire Android app developers, Shopify Android app development.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | `Expert Android App Development Service \| Expert App Development Service \| Custom App Development \| Mobile App Development India` (128 chars) | `Android App Development Services \| Dynamic Dreamz` (49 chars) | Shortened title to fit strict 15-60 char budget and eliminate SERP truncation while maintaining core keyword targeting. | High | implemented in metadata |
-| Meta description | `Our expert team of mobile app developers delivers custom mobile solution for your business requirement. We create high performance and engaging mobile app.` (154 chars) | Preserved live meta description (154 chars). | Fits 70-160 character budget and captures value proposition. | High | implemented in metadata |
-| Service card copy (Native Android) | `Our developers specialize in creating native iOS apps that perform smoothly on iPhone, iPad, and Apple Watch. Our expert developers leverage programming languages like Objective C, Swift, and SwiftUI...` (legacy copy mix-up on live page) | `Our developers specialize in creating native Android apps that perform smoothly across all Android devices. Our expert developers leverage programming languages like Kotlin and Java and follow industry best practices...` | Corrects copy mix-up referencing iOS/Swift on an Android service card. | Medium | deferred pending exact visible-copy approval |
+| Meta title | `Android App Development Company \| Dynamic Dreamz` (48 chars) | No change \u2014 matches live | Live title is within the 15-60 char budget and names the company for brand and non-brand SERP display. | High | implemented in metadata |
+| Meta description | `Custom Android app development with Kotlin and JetpackCompose for utility, business, consumer and ecommerce apps,APIs, Google Play launch and support.` (live, with two broken word joins, 152 chars) | `Custom Android app development with Kotlin and Jetpack Compose for utility, business, consumer and ecommerce apps, APIs, Google Play launch and support.` (152 chars) | Live description has missing spaces in `JetpackCompose` and `apps,APIs`. Local metadata fixes the spacing and stays at 152 chars, inside the 70-160 char budget. Metadata-only; no visible page copy changed. | High | implemented in metadata |
+| Portfolio card title (Llama) | `Llama \u2013 An App By CWRB` | `Llama \u2014 An App by CWRB` | Uses an em dash consistently with the project's other titles and lowercases the preposition `by` in a title. | Low | suggested; deferred pending exact visible-copy approval |
+| Service card copy (Native Android) | Legacy iOS/Swift copy mix-up on live was resolved when live redesigned the page; the current native Android box now reads `Build Android applications with Kotlin and Jetpack Compose when native Android is the right architecture.` | No change | The previous defect no longer exists on live, so there is nothing left to correct. | Low | resolved \u2014 no action needed |
+| Native Android service box icon | Live reuses the Apple device glyph for the `Native Android App Development` box | A distinct Android device glyph | Improves visual and semantic consistency; the current icon reads as iOS inside an Android-only service box. | Low | suggested; deferred pending exact visible-copy approval |
 | VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
-| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (9 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (14 service items: 6 app types + 8 lifecycle services), `FAQPage` (8 questions/answers), and a 3-level `BreadcrumbList` (Home \u2192 Mobile App Development \u2192 Android App Development). | Enhances AEO/GEO indexing, FAQ rich snippets, and parent/child service hierarchy. | High | implemented in schema |
 
 ## iOS App Development (`/ios-app-development`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-30
 Primary SEO intent: iOS app development services, custom iOS app development, native iOS app development, hire iOS app developers, iOS app development company, hybrid iOS app development.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | `Expert iOS App Development Service \| Expert App Development Service \| Custom iOS App Development \| Mobile App Development India` (124 chars) | `iOS App Development Services \| Dynamic Dreamz` (45 chars) | Shortened title to fit strict 15-60 char budget and eliminate SERP truncation while maintaining core keyword targeting. | High | implemented in metadata |
-| Meta description | `Get a user-engaging iOS app for your online business. Our expert iOS app developers provide custom solution as per your needs.` (126 chars) | Preserved live meta description (126 chars). | Fits 70-160 character budget and captures value proposition. | High | implemented in metadata |
-| Testimonial section description | `We have faith in our work, but what truly matters is the outcomes we serve our clients.Happy clients make happy stories. Check out how our services empower them to evolve.` (missing space after period) | `We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve.` | Adds missing space after sentence period. | Low | deferred pending exact visible-copy approval |
+| Meta title | `iOS App Development Company \| Dynamic Dreamz` (45 chars) | No change — matches live | Live title is within 15-60 char budget and names the company for brand and non-brand SERP display. | High | implemented in metadata |
+| Meta description | `Custom iOS app development services for iPhone and iPad. We build scalable native iOS and cross-platform apps, from MVP to enterprise mobile solutions.` (152 chars) | Preserved live meta description (152 chars). | Fits 70-160 character budget and captures value proposition accurately. | High | implemented in metadata |
 | VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
-| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (9 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (14 service items: 6 app types + 8 lifecycle services), `FAQPage` (8 questions/answers), and a 3-level `BreadcrumbList` (Home → Mobile App Development → iOS App Development). | Enhances AEO/GEO indexing, FAQ rich snippets, and parent/child service hierarchy. | High | implemented in schema |
 
 ## Cross-Platform App Development (`/cross-platform-app-development`)
 

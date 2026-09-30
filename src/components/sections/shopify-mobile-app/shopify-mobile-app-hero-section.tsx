@@ -35,6 +35,16 @@ export type MobileAppHeroContent = {
     ariaLabel?: string;
   };
   badges?: readonly MobileAppHeroBadge[];
+  /**
+   * Mobile (<768px) layout for the badge row.
+   *
+   * - `divided` (default): two-column grid with a cross divider drawn between
+   *   the two rows. Preserves the original behavior for existing consumers.
+   * - `row`: every badge shares one row at equal width, with vertical rules
+   *   between items and no cross divider. Use when the number of visible
+   *   badges divides evenly across the row.
+   */
+  mobileBadgeLayout?: "divided" | "row";
   slides: readonly MobileAppHeroSlide[];
   frameImage: {
     src: string;
@@ -51,6 +61,9 @@ export type ShopifyMobileAppHeroSectionProps = {
 export function ShopifyMobileAppHeroSection({
   content,
 }: ShopifyMobileAppHeroSectionProps) {
+  const mobileBadgeLayout = content.mobileBadgeLayout ?? "divided";
+  const badgeRowLayout = mobileBadgeLayout === "row";
+
   return (
     <section className="hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[991px]:pt-16">
       <Container className="max-w-[1408px] px-[15px]">
@@ -104,12 +117,21 @@ export function ShopifyMobileAppHeroSection({
 
               {content.badges && content.badges.length > 0 && (
                 <div
-                  className="global_brands_grid_wrap relative mt-[30px] flex items-center -mx-[15px] max-[1199px]:justify-center max-[767px]:-mx-[15px] max-[767px]:w-[calc(100%+30px)] max-[767px]:flex-wrap max-[767px]:overflow-hidden max-[767px]:before:absolute max-[767px]:before:top-0 max-[767px]:before:left-1/2 max-[767px]:before:block max-[767px]:before:h-full max-[767px]:before:w-px max-[767px]:before:-translate-x-1/2 max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] max-[767px]:after:absolute max-[767px]:after:top-1/2 max-[767px]:after:left-5 max-[767px]:after:block max-[767px]:after:h-px max-[767px]:after:w-[calc(100%-40px)] max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']"
+                  className={cn(
+                    "global_brands_grid_wrap relative mt-[30px] flex items-center -mx-[15px] max-[1199px]:justify-center max-[767px]:-mx-[15px] max-[767px]:w-[calc(100%+30px)] max-[767px]:flex-wrap max-[767px]:overflow-hidden",
+                    !badgeRowLayout &&
+                      "max-[767px]:before:absolute max-[767px]:before:top-0 max-[767px]:before:left-1/2 max-[767px]:before:block max-[767px]:before:h-full max-[767px]:before:w-px max-[767px]:before:-translate-x-1/2 max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] max-[767px]:after:absolute max-[767px]:after:top-1/2 max-[767px]:after:left-5 max-[767px]:after:block max-[767px]:after:h-px max-[767px]:after:w-[calc(100%-40px)] max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']",
+                  )}
                   aria-label="Shopify partnership credentials and client rating badges"
                 >
                   {content.badges.map((badge, idx) => (
                     <div
-                      className="global_brands_item relative px-[15px] border-r border-[#d9d9d9] last:border-r-0 max-[767px]:w-1/2 max-[767px]:border-0 max-[767px]:p-[15px] max-[767px]:text-center"
+                      className={cn(
+                        "global_brands_item relative px-[15px] border-r border-[#d9d9d9] last:border-r-0",
+                        badgeRowLayout
+                          ? "max-[767px]:w-1/3 max-[767px]:p-[15px] max-[767px]:text-center"
+                          : "max-[767px]:w-1/2 max-[767px]:border-0 max-[767px]:p-[15px] max-[767px]:text-center",
+                      )}
                       key={`${badge.href}-${idx}`}
                     >
                       <a
