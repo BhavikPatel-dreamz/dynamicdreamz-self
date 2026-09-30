@@ -4822,14 +4822,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## OceanWP Theme Customization (`/oceanwp-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert OceanWP theme customization, responsive WooCommerce store design, custom styling, speed optimization, and third-party plugin integration.
 Decision stage: partner selection, OceanWP theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz OceanWP theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 7 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 5 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz OceanWP theme customization capabilities. Features 12 client brand trust logos, 7 key theme features, 6 customization services, 7 store benefits, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards, HappyClient video testimonials section, 5 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -4842,12 +4842,13 @@ Dedicated commercial landing page presenting Dynamic Dreamz OceanWP theme custom
 ### Current strengths and available evidence
 
 - Server-rendered H1 `OceanWP Theme Customization Service` with direct answer paragraph.
-- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
+- 12 verified brand partner logos (Supper Tails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter Juice Bar, Rare Rabbit).
 - 7 distinct theme features with vector icons and descriptions (Fast & Lightweight, Fully Responsive, SEO-Optimized, WooCommerce Ready, Highly Customizable, Multiple Demo Sites, Third-Party Plugin Support).
-- 7 core benefits of OceanWP customization (Fully Customizable Website, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Safe and Secure Payments, Zero Maintenance Cost).
-- 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
-- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur) with WordPress/WooCommerce platform mark.
+- 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance) rendered via `AgencyServicesSection` in 2-column layout.
+- 7 core benefits of OceanWP customization (Fully Customizable Website, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Safe and Secure Payments, Zero Maintenance Cost) rendered via `ThemeCustomizationServicesSection` (green variant).
+- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach) rendered via `EvaluationFrameworkSection`.
+- 8 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids) with `ourWorkRefresh` variant and "View our work" CTA button to `/our-work`.
+- Client Testimonials section rendered via `HappyClientSection`.
 - 5 comprehensive FAQ accordion items directly answering merchant questions on WooCommerce compatibility, non-coding customization, speed optimization, third-party plugins, and ongoing post-customization support.
 - Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (5 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
 - Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
@@ -4858,7 +4859,7 @@ Dedicated commercial landing page presenting Dynamic Dreamz OceanWP theme custom
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Missing App Router implementation for OceanWP theme customization | Ship slashless `/oceanwp-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
 | P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (5 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique OceanWP hero graphic and unique feature icons under `public/assets/oceanwp-theme-customization/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique OceanWP hero graphic and clean vector icons under `public/assets/oceanwp-theme-customization/` | Verified locally with 0 duplicate assets |
 | P1 | deferred | Content expansion | Minor phrasing and vocabulary improvements for hero & feature description text | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -4868,7 +4869,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Entity, evidence, and authorship actions
 
 - Connect Dynamic Dreamz as a WordPress & WooCommerce development specialist founded in 2006 with 18+ years of experience, 5000+ completed projects, and 150+ in-house experts.
-- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids).
 
 ### Internal-link and conversion actions
 
@@ -4878,7 +4879,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service with 6 Offer items, 5 FAQ items, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-20T00:00:00+05:30`.
+- Set explicit freshness `modifiedTime` to `2026-09-28T13:34:53+00:00`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
@@ -4888,8 +4889,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/oceanwp-theme-customization`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 141 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-30): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/oceanwp-theme-customization`; source/build URL guard passes.
+- Checks completed (2026-09-30): live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 141 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Neve Theme Customization (`/neve-theme-customization`)
 

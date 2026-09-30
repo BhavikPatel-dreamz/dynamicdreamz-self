@@ -1,10 +1,37 @@
+import { industryBrandLogos } from "@/content/industries";
+import type {
+  OceanwpBenefitIconName,
+  OceanwpFeatureIconName,
+  OceanwpServiceIconName,
+} from "@/components/sections/oceanwp-theme-customization/oceanwp-icons";
+
+export type OceanwpFeatureItem = {
+  iconName: OceanwpFeatureIconName;
+  title: string;
+  description: string;
+};
+
+export type OceanwpServiceItem = {
+  iconName: OceanwpServiceIconName;
+  title: string;
+  description: string;
+};
+
+export type OceanwpBenefitItem = {
+  iconName: OceanwpBenefitIconName;
+  title: string;
+  description: string;
+};
+
 export const oceanwpThemeCustomizationContent = {
   hero: {
+    eyebrow: ["Wordpress Agency", "Theme Customization"] as const,
     title: "OceanWP Theme Customization Service",
     description:
       "Do you want to create a high-performing website with the OceanWP theme? Our OceanWP Theme Customization Service ensures that your website is tailored to your brand, fully responsive, and optimized for speed and SEO ranking. Whether you need design changes, feature improvements, or performance optimizations, we help you unlock the full potential of OceanWP, providing a unique and engaging WordPress website that sweetens user experience and increases conversions.",
     ctaText: "request a quote",
     ctaHref: "/request-quote",
+    ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/oceanwp-theme-customization/hero/oceanwp-theme-customization-service-img.webp",
       alt: "OceanWP Theme Customization Service Image",
@@ -13,269 +40,169 @@ export const oceanwpThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by Leading Brands",
-    items: [
-      {
-        name: "Ranavat Logo",
-        src: "/assets/clients/ranavat.svg",
-        href: "https://www.ranavat.com/",
-        alt: "Ranavat Logo",
-        width: 174,
-        height: 19,
-      },
-      {
-        name: "prolash_black",
-        src: "/assets/clients/prolash.svg",
-        href: "https://prolash.com/",
-        alt: "prolash_black",
-        width: 204,
-        height: 22,
-      },
-      {
-        name: "Tropicfeel Logo",
-        src: "/assets/clients/tropicfeel.svg",
-        href: "https://shop.tropicfeel.com/",
-        alt: "Tropicfeel Logo",
-        width: 150,
-        height: 32,
-      },
-      {
-        name: "perfect_locks_color_logo",
-        src: "/assets/clients/perfect-locks.svg",
-        href: "https://www.perfectlocks.com/",
-        alt: "perfect_locks_color_logo",
-        width: 175,
-        height: 32,
-      },
-      {
-        name: "Bombay Shirt Company Logo",
-        src: "/assets/clients/bombay-shirt-company.svg",
-        href: "https://www.bombayshirts.com/",
-        alt: "Bombay Shirt Company Logo",
-        width: 204,
-        height: 26,
-      },
-      {
-        name: "kayfi-colored",
-        src: "/assets/clients/kayfi.svg",
-        href: "https://kayfi.com/",
-        alt: "kayfi-colored",
-        width: 90,
-        height: 49,
-      },
-      {
-        name: "simdirect_logo_color",
-        src: "/assets/clients/simsdirect.svg",
-        href: "https://simsdirect.com.au/",
-        alt: "simdirect_logo_color",
-        width: 143,
-        height: 49,
-      },
-      {
-        name: "Kvaser Logo",
-        src: "/assets/clients/kvaser.svg",
-        href: "https://www.kvaser.com/",
-        alt: "Kvaser Logo",
-        width: 135,
-        height: 25,
-      },
-      {
-        name: "nekter-colored",
-        src: "/assets/clients/nelter.svg",
-        href: "https://www.nekterjuicebar.com/",
-        alt: "nekter-colored",
-        width: 66,
-        height: 64,
-      },
-      {
-        name: "Circuit City Logo",
-        src: "/assets/clients/circuit-city.svg",
-        href: "https://circuitcity.com/",
-        alt: "Circuit City Logo",
-        width: 64,
-        height: 64,
-      },
-    ],
+    title: "Trusted by \nLeading Brands",
+    heading: "Trusted by \nLeading Brands",
+    slug: "oceanwp-theme-customization",
+    items: industryBrandLogos,
   },
   features: {
-    title: "Features Of OceanWP Theme",
-    subtitle:
+    eyebrow: "Features",
+    heading: "Features of OceanWP Theme",
+    description:
       "OceanWP is a powerful and lightweight WordPress theme designed for flexibility and performance. This theme comes with lots of good features. Here are a few main features:",
     items: [
       {
+        iconName: "fastLightweight",
         title: "Fast & Lightweight",
         description: "This theme is optimized for speed and smooth performance.",
-        icon: "/assets/astra-theme-customization/features/lightning-fast-performance.svg",
-        iconAlt: "Fast & Lightweight Icon",
       },
       {
+        iconName: "fullyResponsive",
         title: "Fully Responsive",
         description: "With good responsiveness, you can ensure a smooth experience on all devices.",
-        icon: "/assets/astra-theme-customization/features/fully-responsive.svg",
-        iconAlt: "Fully Responsive Icon",
       },
       {
+        iconName: "seoOptimized",
         title: "SEO-Optimized",
         description: "Developers build it with clean, structured code for better search rankings.",
-        icon: "/assets/astra-theme-customization/features/seo-optimized.svg",
-        iconAlt: "SEO Optimized Icon",
       },
       {
+        iconName: "wooCommerceReady",
         title: "WooCommerce Ready",
         description: "Perfect for eCommerce websites with built-in shop features.",
-        icon: "/assets/astra-theme-customization/features/woocommerce-ready.svg",
-        iconAlt: "WooCommerce Ready Icon",
       },
       {
+        iconName: "highlyCustomizable",
         title: "Highly Customizable",
         description: "A straightforward customizer allows you to modify layouts, colors, typography, and more.",
-        icon: "/assets/astra-theme-customization/features/highly-customizable.svg",
-        iconAlt: "Mega Menu Support Icon",
       },
       {
+        iconName: "multipleDemoSites",
         title: "Multiple Demo Sites",
         description: "You can choose from various pre-built options for quick theme setup.",
-        icon: "/assets/oceanwp-theme-customization/features/multiple-demo-sites.svg",
-        iconAlt: "Multiple Demo Sites Icon",
       },
       {
+        iconName: "thirdPartyPlugins",
         title: "Third-Party Plugin Support",
         description: "This theme is compatible with top WordPress plugins; you can also use other third-party plugins.",
-        icon: "/assets/oceanwp-theme-customization/features/third-party-plugin-support.svg",
-        iconAlt: "Third-Party Plugin Support Icon",
       },
-    ],
-  },
-  benefits: {
-    title: "Benefits of OceanWP Theme Customization",
-    subtitle:
-      "Customizing the OceanWP theme improves your website's performance, branding, and user engagement. Here are a few more benefits of OceanWP Theme Customization service:",
-    items: [
-      {
-        title: "Fully Customizable Website",
-        description: "You can modify every element of your WordPress website to match your brand.",
-        icon: "/assets/shopify-theme-customization/benefits/fully-customizable-store.svg",
-        iconAlt: "cs_icon_img",
-      },
-      {
-        title: "Unique Brand Identity",
-        description: "Stand out with our custom design customization service that can help you grow your business.",
-        icon: "/assets/shopify-theme-customization/benefits/responsive-design.svg",
-        iconAlt: "responsive_design_icon",
-      },
-      {
-        title: "Improved User Experience",
-        description:
-          "We help you customize your theme to enhance usability with smooth navigation and fast loading times.",
-        icon: "/assets/shopify-theme-customization/benefits/unique-brand-identity.svg",
-        iconAlt: "unique-brand-identity-icon",
-      },
-      {
-        title: "Multiple Third-party Plugins",
-        description: "You can easily integrate essential multiple WordPress plugins into your website.",
-        icon: "/assets/shopify-theme-customization/benefits/improved-user-experience.svg",
-        iconAlt: "User-Friendly Interface",
-      },
-      {
-        title: "Higher Conversion Rates",
-        description: "We can optimize your website to generate more leads and boost sales.",
-        icon: "/assets/shopify-theme-customization/benefits/multiple-third-party-apps.svg",
-        iconAlt: "Multiple Sales Channels Icon",
-      },
-      {
-        title: "Safe and Secure Payments",
-        description: "Our developers help you set up secure payment gateways for smooth transactions.",
-        icon: "/assets/shopify-theme-customization/benefits/higher-conversion-rates.svg",
-        iconAlt: "cost-effective-scalability-img",
-      },
-      {
-        title: "Zero Maintenance Cost",
-        description: "A well-optimized website reduces repeated ongoing maintenance efforts.",
-        icon: "/assets/shopify-theme-customization/benefits/mobile-optimization.svg",
-        iconAlt: "Mobile Optimization Icon",
-      },
-    ],
+    ] as const satisfies readonly OceanwpFeatureItem[],
   },
   services: {
-    title: "Our WordPress Theme Customization Services",
-    subtitle:
+    eyebrow: "Our Services",
+    heading: "Our WordPress Theme Customization Services",
+    description:
       "We offer professional OceanWP theme customization services to create a website that fits your business needs.",
     items: [
       {
+        iconName: "installation",
         title: "Theme Installation",
         description: "We help you set up and configure the OceanWP theme for your WordPress website.",
-        icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
-        iconAlt: "Maintenance and Support Icon",
       },
       {
+        iconName: "design",
         title: "Custom Design and Branding",
         description: "Our theme customization can help you get a unique design that matches your brand's identity.",
-        icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
-        iconAlt: "Plugin Development Icon",
       },
       {
+        iconName: "responsive",
         title: "Responsive Design",
         description: "Our expert designers ensure your website adapts smoothly to any screen size.",
-        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
-        iconAlt: "custom themes icon",
       },
       {
+        iconName: "features",
         title: "Advanced Features Integration",
         description:
           "We have WordPress experts who can help you add custom features, animations, and interactive elements.",
-        icon: "/assets/shopify-theme-customization/services/advanced-features-integration.svg",
-        iconAlt: "Data Integrity Checks Icon",
       },
       {
+        iconName: "performance",
         title: "Performance Optimization",
         description:
           "After our theme customization services, you can get boosted speed, SEO, and overall website performance.",
-        icon: "/assets/shopify-theme-customization/services/performance-optimization.svg",
-        iconAlt: "Compliance with Shopify’s Security Standards Icon",
       },
       {
+        iconName: "support",
         title: "Ongoing Support and Maintenance",
         description: "We can offer ongoing support to keep your website updated, secure, and running smoothly.",
-        icon: "/assets/shopify-theme-customization/services/ongoing-support-and-maintenance.svg",
-        iconAlt: "Custom App Development Icon",
       },
-    ],
+    ] as const satisfies readonly OceanwpServiceItem[],
+  },
+  benefits: {
+    eyebrow: "Benefits",
+    heading: "Benefits of OceanWP Theme Customization",
+    description:
+      "Customizing the OceanWP theme improves your website’s performance, branding, and user engagement. Here are a few more benefits of OceanWP Theme Customization service:",
+    items: [
+      {
+        iconName: "store",
+        title: "Fully Customizable Website",
+        description: "You can modify every element of your WordPress website to match your brand.",
+      },
+      {
+        iconName: "brand",
+        title: "Unique Brand Identity",
+        description: "Stand out with our custom design customization service that can help you grow your business.",
+      },
+      {
+        iconName: "ux",
+        title: "Improved User Experience",
+        description:
+          "We help you customize your theme to enhance usability with smooth navigation and fast loading times.",
+      },
+      {
+        iconName: "plugins",
+        title: "Multiple Third-party Plugins",
+        description: "You can easily integrate essential multiple WordPress plugins into your website.",
+      },
+      {
+        iconName: "conversions",
+        title: "Higher Conversion Rates",
+        description: "We can optimize your website to generate more leads and boost sales.",
+      },
+      {
+        iconName: "payments",
+        title: "Safe and Secure Payments",
+        description: "Our developers help you set up secure payment gateways for smooth transactions.",
+      },
+      {
+        iconName: "maintenance",
+        title: "Zero Maintenance Cost",
+        description: "A well-optimized website reduces repeated ongoing maintenance efforts.",
+      },
+    ] as const satisfies readonly OceanwpBenefitItem[],
   },
   whyChoose: {
-    title: "Why Choose Dynamic Dreamz",
-    subtitle:
+    eyebrow: "Why Dynamic Dreamz",
+    heading: "Why Choose Dynamic Dreamz",
+    description:
       "When you choose Dynamic Dreamz, you get expert theme customization services with guaranteed results.",
     items: [
       {
         title: "Expert Team",
         description: "We have skilled WordPress developers with in-depth knowledge of OceanWP theme customization.",
-        icon: "/assets/shopify-theme-customization/why-choose/expert-team.svg",
-        iconAlt: "expert-team",
       },
       {
         title: "Proven Process",
         description: "We use a streamlined approach for smooth execution and timely project delivery.",
-        icon: "/assets/shopify-theme-customization/why-choose/proven-process.svg",
-        iconAlt: "Proven Process Icon",
       },
       {
         title: "Ongoing Support",
         description: "We provide continuous assistance after customization to ensure your website works perfectly.",
-        icon: "/assets/shopify-theme-customization/why-choose/ongoing-support.svg",
-        iconAlt: "customer_support_icon_img",
       },
       {
         title: "Client-Focused Approach",
         description: "We customize every element to match your business goals.",
-        icon: "/assets/shopify-theme-customization/why-choose/client-focused-approach.svg",
-        iconAlt: "Client-Focused Approach Icon",
       },
-    ],
+    ] as const,
   },
   portfolio: {
-    title: "Snippets of WordPress Theme Customization Portfolio",
-    subtitle:
+    eyebrow: "Portfolio",
+    heading: "Snippets of WordPress Theme Customization Portfolio",
+    description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
+    ctaLabel: "View our work",
+    ctaHref: "/our-work",
     items: [
       {
         name: "Quite Events",
@@ -319,7 +246,27 @@ export const oceanwpThemeCustomizationContent = {
         image: "/assets/our-work/projects/nexventur.webp",
         imageAlt: "Nexventur",
       },
-    ],
+      {
+        name: "Awaken Media",
+        category: "WORDPRESS",
+        href: "https://www.awaken.media/",
+        image: "/assets/our-work/projects/awaken-media.webp",
+        imageAlt: "Awaken Media",
+      },
+      {
+        name: "Budget Maids",
+        category: "WORDPRESS",
+        href: "https://www.budget-maids.com/",
+        image: "/assets/our-work/projects/budget-maids.webp",
+        imageAlt: "Budget Maids",
+      },
+    ] as const,
+  },
+  testimonials: {
+    eyebrow: "Client Stories",
+    heading: "Don't Just Take Our Word For It",
+    description:
+      "Hear directly from the clients who have worked with Dynamic Dreamz across Shopify, ecommerce and long-term development engagements.",
   },
   faqs: [
     {
@@ -347,5 +294,5 @@ export const oceanwpThemeCustomizationContent = {
       answer:
         "We offer ongoing maintenance and support to keep your website running smoothly. We can start work on a fixed-price contract or hourly rate contract.",
     },
-  ],
+  ] as const,
 } as const;

@@ -1652,9 +1652,9 @@ export const pageSeo = {
       "WordPress OceanWP developers",
       "WordPress theme customization agency",
     ],
-    openGraphType: "website",
+    openGraphType: "article",
     publishedTime: "2025-03-31T07:40:27+00:00",
-    modifiedTime: "2026-08-20T00:00:00+05:30",
+    modifiedTime: "2026-09-28T13:34:53+00:00",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
