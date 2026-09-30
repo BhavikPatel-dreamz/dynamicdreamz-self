@@ -1394,7 +1394,7 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2025-03-31T05:52:19+00:00",
-    modifiedTime: "2026-08-20T00:00:00+05:30",
+    modifiedTime: "2026-09-28T13:06:07+00:00",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
@@ -2330,7 +2330,7 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2025-07-10T03:32:54+00:00",
-    modifiedTime: "2026-08-21T00:00:00+05:30",
+    modifiedTime: "2026-09-10T09:42:42+00:00",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,

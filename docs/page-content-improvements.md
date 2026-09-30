@@ -866,7 +866,7 @@ Primary SEO intent: Prestige theme customization, Prestige Shopify theme customi
 ## Astra Theme Customization (`/astra-theme-customization`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Primary SEO intent: Astra theme customization, Astra WordPress theme customization service, customize Astra theme WordPress WooCommerce, fast lightweight WordPress theme development, hire Astra WordPress developers.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
@@ -1229,14 +1229,14 @@ Primary SEO intent: Stiletto theme customization, Stiletto Shopify theme customi
 
 ## Colorblock Theme Customization (`/colorblock-theme-customization`)
 
-Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-21
+Status: visible recommendations deferred; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-30
 Primary SEO intent: Colorblock theme customization, Colorblock Shopify theme customization service, customize Colorblock theme Shopify, Shopify Colorblock theme developers, hire Shopify developers.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | `Colorblock Theme Customization Services \| Dynamic Dreamz` (57 chars) | Preserved live title (57 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
-| Meta description | `Get Colorblock Shopify theme Customization for a bold, high-converting store. Choose Dynamic Dreamz today!` (107 chars) | Preserved live meta description (107 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Meta title | `Colorblock Theme Customization Services \| Dynamic Dreamz` (59 chars) | Preserved live title (59 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
+| Meta description | `Get Colorblock Shopify theme Customization for a bold, high-converting store. Choose Dynamic Dreamz today!` (106 chars) | Preserved live meta description (106 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
 | Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (5 service items) and `FAQPage` (7 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
 
 ## Pipeline Theme Customization (`/pipeline-theme-customization`)

@@ -1,70 +1,124 @@
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import {
+  AstraBenefitIcon,
+  AstraFeatureIcon,
+  AstraServiceIcon,
+} from "@/components/sections/astra-theme-customization/astra-icons";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ThemeFeaturesSection } from "@/components/sections/theme-customization/theme-features-section";
+import { EvaluationFrameworkSection } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
 import { ThemeHeroSection } from "@/components/sections/theme-customization/theme-hero-section";
-import { ThemeWhyChooseSection } from "@/components/sections/theme-customization/theme-why-choose-section";
 import { astraThemeCustomizationContent } from "@/content/astra-theme-customization";
 
 export function AstraThemeCustomizationPage() {
   const brandsContent = {
-    heading: astraThemeCustomizationContent.brands.title,
-    slug: "astra-theme-customization",
+    heading: astraThemeCustomizationContent.brands.heading,
+    slug: astraThemeCustomizationContent.brands.slug,
   };
 
-  const benefitsContent = {
-    heading: astraThemeCustomizationContent.benefits.title,
-    description: astraThemeCustomizationContent.benefits.subtitle,
-    items: astraThemeCustomizationContent.benefits.items,
+  const featuresContent = {
+    eyebrow: astraThemeCustomizationContent.features.eyebrow,
+    heading: astraThemeCustomizationContent.features.heading,
+    description: astraThemeCustomizationContent.features.description,
+    boxes: astraThemeCustomizationContent.features.items.map((item) => ({
+      icon: <AstraFeatureIcon name={item.iconName} />,
+      title: item.title,
+      description: item.description,
+    })),
   };
 
   const servicesContent = {
-    heading: astraThemeCustomizationContent.services.title,
-    description: astraThemeCustomizationContent.services.subtitle,
-    items: astraThemeCustomizationContent.services.items,
+    eyebrow: astraThemeCustomizationContent.services.eyebrow,
+    heading: astraThemeCustomizationContent.services.heading,
+    description: astraThemeCustomizationContent.services.description,
+    items: astraThemeCustomizationContent.services.items.map((item) => ({
+      iconSvg: <AstraServiceIcon name={item.iconName} />,
+      title: item.title,
+      description: item.description,
+    })),
   };
 
-  const portfolioContent = {
-    heading: astraThemeCustomizationContent.portfolio.title,
-    description: astraThemeCustomizationContent.portfolio.subtitle,
-    platformMark: {
-      src: "/assets/platforms/wordpress-woocommerce-white.svg",
-      width: 90,
-      height: 26,
-    },
-    items: astraThemeCustomizationContent.portfolio.items,
+  const benefitsContent = {
+    eyebrow: astraThemeCustomizationContent.benefits.eyebrow,
+    heading: astraThemeCustomizationContent.benefits.heading,
+    description: astraThemeCustomizationContent.benefits.description,
+    boxes: astraThemeCustomizationContent.benefits.items.map((item) => ({
+      icon: <AstraBenefitIcon name={item.iconName} />,
+      title: item.title,
+      description: item.description,
+    })),
   };
 
   return (
     <div className="font-sans leading-[30.4px]">
+      {/* 1. Hero */}
       <ThemeHeroSection
+        className="theme-customize-hero overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[991px]:pt-16"
         content={astraThemeCustomizationContent.hero}
-        descriptionClassName="mt-3 mb-4 text-sm font-normal leading-[24px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]"
-        imageStretchesOnDesktop
-        titleClassName="inline-block font-montreal-medium text-[50px] font-medium leading-[60px] tracking-[0] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]"
+        descriptionClassName="mb-0 text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6"
+        imageClassName="h-auto w-full object-contain object-bottom mix-blend-darken"
+        mediaClassName="image-block flex w-full items-end pt-[60px]"
+        mediaColumnClassName="right-col flex w-[43.182%] items-end justify-end max-[1399px]:w-[48%] max-[1199px]:mx-auto max-[1199px]:w-1/2 max-[767px]:w-full"
+        textColumnClassName="left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1399px]:w-1/2 max-[1199px]:w-full max-[1199px]:pb-8 max-[1199px]:text-center max-[991px]:py-10"
+        titleClassName="mb-2.5 inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-0.7px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
+        wrapperClassName="wrapper flex flex-wrap items-center justify-between max-[1199px]:flex-col"
       />
+
+      {/* 2. Client Brands */}
       <IndustryBrandsSection
         content={brandsContent}
-        heading={astraThemeCustomizationContent.brands.title}
+        heading={astraThemeCustomizationContent.brands.heading}
         items={astraThemeCustomizationContent.brands.items}
       />
-      <ThemeFeaturesSection content={astraThemeCustomizationContent.features} />
-      <ShopifyReasonsSection
-        carouselFullBleed
-        className="shopify-customization-services-sec mb-0 bg-linear-[97.18deg] from-[#e8f9ef] from-[28.5%] to-[#e6fafd] to-[91.82%] py-20 max-[992px]:py-[60px]"
-        content={benefitsContent}
-        id="benefits-of-moving"
-        layout="carousel"
+
+      {/* 3. Features of Astra Theme */}
+      <ThemeCustomizationServicesSection
+        content={featuresContent}
+        variant="yellow"
       />
+
+      {/* 4. Our Astra Theme Customization Services */}
       <AgencyServicesSection
+        cardVariant="services-box"
+        className="what-we-provide-sec only-text py-20 max-[992px]:py-[50px]"
+        columns={2}
         content={servicesContent}
-        headerTitleColumnClassName="w-[44%]"
-        headerTextColumnClassName="w-[48%]"
+        headerTextColumnClassName="w-[48.3%] max-[992px]:w-full"
+        headerTitleColumnClassName="w-[44%] max-[992px]:w-full"
+        id="services"
       />
-      <ThemeWhyChooseSection content={astraThemeCustomizationContent.whyChoose} />
-      <PortfolioShowcaseSection content={portfolioContent} />
+
+      {/* 5. Benefits of Astra Theme Customization */}
+      <ThemeCustomizationServicesSection
+        content={benefitsContent}
+        variant="green"
+      />
+
+      {/* 6. Why Choose Dynamic Dreamz */}
+      <EvaluationFrameworkSection
+        content={astraThemeCustomizationContent.whyChoose}
+      />
+
+      {/* 7. WordPress Theme Customization Portfolio */}
+      <PortfolioShowcaseSection
+        cardVariant="ourWorkRefresh"
+        className="our-work-sec pt-0 pb-20 max-[992px]:pb-[50px]"
+        columns={4}
+        content={astraThemeCustomizationContent.portfolio}
+        sectionId="our_work"
+      />
+
+      {/* 8. Client Testimonials */}
+      <HappyClientSection
+        description={astraThemeCustomizationContent.testimonials.description}
+        eyebrow={astraThemeCustomizationContent.testimonials.eyebrow}
+        heading={astraThemeCustomizationContent.testimonials.heading}
+      />
+
+      {/* 9. Frequently Asked Questions */}
       <SplitFaqSection
         idPrefix="astra-theme-faq"
         items={astraThemeCustomizationContent.faqs}

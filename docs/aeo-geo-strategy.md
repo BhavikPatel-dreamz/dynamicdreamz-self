@@ -4561,14 +4561,14 @@ Dedicated commercial service landing page for Webflow development, with buyer-fa
 ## Astra Theme Customization (`/astra-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-24
+Last reviewed: 2026-09-30
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Astra theme customization, performance optimization, responsive layouts, WooCommerce integration, and ongoing support.
 Decision stage: partner selection, Astra theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Astra theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 5 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Astra theme customization capabilities. Features 12 client brand trust logos, 6 key theme features, 6 customization services, 9 store benefits, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards, Client Stories video testimonials, 5 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -4580,16 +4580,17 @@ Dedicated commercial landing page presenting Dynamic Dreamz Astra theme customiz
 
 ### Current strengths and available evidence
 
-- Server-rendered H1 `Astra Theme Customization Service` with direct answer paragraph.
-- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
-- 7 distinct theme features with vector icons and descriptions (Lightning Fast Performance, SEO-Optimized, Fully Responsive, Highly Customizable, WooCommerce Ready, No jQuery Dependency, Pre-Built Templates).
-- 9 core benefits of Astra customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
-- 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
-- 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur) with WordPress/WooCommerce platform mark.
+- Server-rendered H1 `Astra Theme Customization Service` with direct answer paragraph and `#f7f4e9` hero background with dual eyebrow badges.
+- 12 verified brand partner logos (Supper Tails, Eleven Eleven, Bella Vita, Bombay Shirt Company, Popclub, SriSri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nékter Juice Bar, Rare Rabbit).
+- 6 distinct theme features with vector icons and descriptions (Lightning Fast Performance, SEO-Optimized, Fully Responsive, Highly Customizable, WooCommerce Ready, Pre-Built Templates).
+- 6 core services with `#fafaf7` boxes (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 9 core benefits of Astra customization with green `#eff4ef` background (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
+- 4 agency proof points with numbered `01`-`04` framework cards (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
+- 8 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids) with direct live links.
+- Client Stories video testimonials section (`HappyClientSection`) establishing real client social proof.
 - 5 comprehensive FAQ accordion items directly answering merchant questions on WooCommerce suitability, non-coding customization, speed optimization, third-party plugins, and post-customization support.
 - Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (5 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
-- Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
+- Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons cleanly managed.
 
 ### Recommended improvements
 
@@ -4597,7 +4598,7 @@ Dedicated commercial landing page presenting Dynamic Dreamz Astra theme customiz
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Missing App Router implementation for Astra theme customization | Ship slashless `/astra-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
 | P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (5 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Astra hero graphic and feature icons under `public/assets/astra-theme-customization/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Astra hero graphic under `public/assets/astra-theme-customization/hero/` and use clean SVG components for icons | Verified locally with 0 duplicate assets |
 | P1 | deferred | Content expansion | Minor phrasing and vocabulary improvements for benefits and why choose sections | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -4607,7 +4608,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Entity, evidence, and authorship actions
 
 - Connect Dynamic Dreamz as a WordPress & WooCommerce development specialist founded in 2006 with 18+ years of experience, 5000+ completed projects, and 150+ in-house experts.
-- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids).
 
 ### Internal-link and conversion actions
 
@@ -4617,7 +4618,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service with 6 Offer items, 5 FAQ items, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-20T00:00:00+05:30`.
+- Set explicit freshness `modifiedTime` to `2026-09-28T13:06:07+00:00`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
@@ -7810,15 +7811,15 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Colorblock Theme Customization (`/colorblock-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: implemented and verified; remigrated to exact live-site 8-section layout
+Last reviewed: 2026-09-30
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 Primary audience: Shopify merchants, bold fashion apparel brands, colorful beauty and cosmetics labels, lifestyle stores, multi-category ecommerce businesses, and high-impact visual stores looking for expert Colorblock Shopify theme customization, vibrant layouts, high-resolution imagery, promotional pop-ups, and conversion rate optimization.
 Decision stage: partner selection, Colorblock theme customization scope definition, custom feature evaluation, Shopify developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Colorblock theme customization capabilities. Features 10 client brand trust logos, 8 key theme feature icon cards with descriptions, 7 store benefits, 5 customization services, 4 reasons to choose Dynamic Dreamz, 6 Shopify portfolio project cards (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier), 7 accordion FAQs, and request a quote CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Colorblock theme customization capabilities. Features 12 client brand trust logos, 8 key theme feature items in a 2-column banner, 7 store benefits in a 3-column card grid, 5 customization services in a 2-column card grid, 4 evaluation framework reasons to choose Dynamic Dreamz, 8 Shopify portfolio project cards (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz) with "View our work" CTA, 7 accordion FAQs, and hero dual CTAs ("Request a Quote" and "View Colorblock on Shopify").
 
 ### Target prompts
 
@@ -7836,20 +7837,20 @@ Dedicated commercial landing page presenting Dynamic Dreamz Colorblock theme cus
 - 7 core benefits of Colorblock customization (Fully Customizable Store, Unique Brand Identity, Improved User Experience, Multiple Third-Party Plugins, Higher Conversion Rates, Safe and Secure Payments, Zero Maintenance Cost).
 - 5 dedicated services (Theme Installation, Custom Design and Branding, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
 - 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier).
+- 8 Shopify portfolio projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz).
 - 7 detailed FAQs addressing customization cost, color changes, custom animations/effects, speed optimization, social media feeds, non-technical admin management, and subscription model integrations.
 
 ### Structured gap analysis
 
 | Priority | Status | Gap area | Current issue | Implementation plan | Verification result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route and discovery | Missing App Router implementation for Colorblock theme customization | Ship slashless `/colorblock-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Colorblock hero graphic under `public/assets/colorblock-theme-customization/` and reuse canonical icons | Verified locally with 0 duplicate assets |
+| P0 | implemented | Route and discovery | Remigrate page to exact live site flexible design system | Rebuild layout using ThemeHeroSection, IndustryBrandsSection, ThemeFeaturesBannerSection, CityWhyChooseBoxesSection, AgencyServicesSection, EvaluationFrameworkSection, PortfolioShowcaseSection, and SplitFaqSection | Verified in rendered output, sitemap, and production build |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique 1224x948 Colorblock hero graphic under `public/assets/colorblock-theme-customization/hero/` as optimized WebP and reuse canonical icons and project screenshots | Verified locally with 0 duplicate assets |
 | P0 | implemented | Schema graph | Need valid JSON-LD graph matching visible content | Emit WebPage, BreadcrumbList, Service (with 5 service offers), and FAQPage (with 7 FAQs) linking to Organization `#organization` and WebSite `#website` | Verified in schema validator and DOM inspection |
 
 ### Visible content and copy improvements
 
-Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz Colorblock theme customization expertise. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately matches the live site wording and structure. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
 
 ### Technical requirements
 
@@ -7865,8 +7866,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-21): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/colorblock-theme-customization`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 57 chars, Description: 107 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-30): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/colorblock-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 59 chars, Description: 106 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Pipeline Theme Customization (`/pipeline-theme-customization`)
 

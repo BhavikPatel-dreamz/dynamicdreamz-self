@@ -151,7 +151,7 @@ export function AgencyServicesSection({
                       )}
                     >
                       <div className="top-block flex max-[767px]:flex-wrap">
-                        <div className="icon size-6 shrink-0 max-[767px]:mb-[15px] [&>svg]:size-6 [&>svg]:h-auto [&>svg]:w-full [&>svg]:object-contain [&>img]:size-6 [&>img]:object-contain">
+                        <div className="icon flex size-6 shrink-0 items-center justify-center max-[767px]:mb-[15px] [&>img]:size-full [&>img]:max-h-6 [&>img]:max-w-6 [&>img]:object-contain [&>svg]:size-full [&>svg]:max-h-6 [&>svg]:max-w-6 [&>svg]:object-contain">
                           {service.iconSvg ? (
                             service.iconSvg
                           ) : service.icon ? (
@@ -165,15 +165,20 @@ export function AgencyServicesSection({
                           ) : null}
                         </div>
                         <div className="text-block w-[calc(100%-24px)] pl-4 max-[767px]:w-full max-[767px]:pl-0">
-                          <h3 className="m-0 mb-2.5 font-sans text-[18px] font-bold leading-[27px] tracking-[0.32px] text-ink">
+                          <h3 className="m-0 mb-2.5 font-montreal-medium text-[20px] font-normal leading-[28.8px] tracking-[0.32px] text-ink">
                             {service.title}
                           </h3>
-                          <p className="mt-2.5 mb-0 font-sans text-[14px] font-medium leading-6 tracking-[0.32px] text-[#535353]">
+                          <p className="mt-2.5 mb-0 font-sans text-[14px] font-normal leading-6 tracking-[0.32px] text-[#535353]">
                             {service.description}
                           </p>
                         </div>
                       </div>
-                      <div className="bottom-block mt-[15px] pl-10 max-[767px]:pl-0">
+                      <div
+                        className={cn(
+                          "bottom-block pl-10 max-[767px]:pl-0",
+                          serviceHref ? "mt-[15px]" : "m-0",
+                        )}
+                      >
                         {serviceHref ? (
                           <Link
                             className="text-arrow-link group/link inline-flex items-center text-[14px] font-bold uppercase leading-none tracking-normal text-[#ad5151] transition-colors duration-300 hover:text-ink"
