@@ -6,7 +6,8 @@ export type AstraFeatureIconName =
   | "responsive"
   | "customizable"
   | "woocommerce"
-  | "templates";
+  | "templates"
+  | "performance";
 
 export function AstraFeatureIcon({ name }: { name: AstraFeatureIconName }): ReactNode {
   if (name === "lightning") {
@@ -53,6 +54,15 @@ export function AstraFeatureIcon({ name }: { name: AstraFeatureIconName }): Reac
 <path d="M4.5625 5H20.9975C21.1463 4.9997 21.2933 5.03261 21.4278 5.09633C21.5622 5.16005 21.6808 5.25298 21.7748 5.36834C21.8688 5.4837 21.9358 5.61858 21.9711 5.76315C22.0063 5.90772 22.0089 6.05833 21.9785 6.204L20.9525 12.43C20.8532 12.8815 20.6006 13.2846 20.2376 13.5708C19.8746 13.8571 19.4237 14.0087 18.9615 14H6.2495" stroke="#AD5151" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 <path d="M18 22C19.1046 22 20 21.1046 20 20C20 18.8954 19.1046 18 18 18C16.8954 18 16 18.8954 16 20C16 21.1046 16.8954 22 18 22Z" stroke="#AD5151" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 <path d="M8 22C9.10457 22 10 21.1046 10 20C10 18.8954 9.10457 18 8 18C6.89543 18 6 18.8954 6 20C6 21.1046 6.89543 22 8 22Z" stroke="#AD5151" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
+    );
+  }
+
+  if (name === "performance") {
+    return (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 13C20 18 16.5 20.5 12.34 21.95C12.1222 22.0238 11.8855 22.0202 11.67 21.94C7.5 20.5 4 18 4 13V5.99996C4 5.73474 4.10536 5.48039 4.29289 5.29285C4.48043 5.10532 4.73478 4.99996 5 4.99996C7 4.99996 9.5 3.79996 11.24 2.27996C11.4519 2.09896 11.7214 1.99951 12 1.99951C12.2786 1.99951 12.5481 2.09896 12.76 2.27996C14.51 3.80996 17 4.99996 19 4.99996C19.2652 4.99996 19.5196 5.10532 19.7071 5.29285C19.8946 5.48039 20 5.73474 20 5.99996V13Z" stroke="#AD5151" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M9 12L11 14L15 10" stroke="#AD5151" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
     );
   }

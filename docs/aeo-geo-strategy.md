@@ -4746,14 +4746,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## GeneratePress Theme Customization (`/generatepress-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert GeneratePress theme customization, modular layout configuration, WooCommerce integration, speed optimization, and custom hook/filter development.
 Decision stage: partner selection, GeneratePress theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz GeneratePress theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 5 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz GeneratePress theme customization capabilities. Features 12 client brand trust logos, 7 key theme features, 6 customization services, 8 store benefits, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards with a `/our-work` CTA, a client video testimonial section, 5 accordion FAQs, and a quote request CTA.
 
 ### Target prompts
 
@@ -4766,15 +4766,16 @@ Dedicated commercial landing page presenting Dynamic Dreamz GeneratePress theme 
 ### Current strengths and available evidence
 
 - Server-rendered H1 `GeneratePress Theme Customization Service` with direct answer paragraph.
-- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
-- 7 distinct theme features with vector icons and descriptions (Lightning-Fast Performance, SEO-Friendly Structure, Mobile Responsive Design, Modular Design, Customizable Layouts, WooCommerce Compatible, Secure & Stable).
-- 8 core benefits of GeneratePress customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimal Maintenance Cost).
+- 12 verified brand partner logos from the shared `industryBrandLogos` set (Supertails, 11:11, Bella Vita, Bombay Shirt Company, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nékter Juice Bar, Rare Rabbit).
+- 7 distinct theme features with inline vector icons and descriptions (Lightning-Fast Performance, SEO-Friendly Structure, Mobile Responsive Design, Modular Design, Customizable Layouts, WooCommerce Compatible, Secure & Stable).
 - 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 8 core benefits of GeneratePress customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimal Maintenance Cost).
 - 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur) with WordPress/WooCommerce platform mark.
+- 8 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids) each linking to the live client site.
+- Client video testimonial section establishing named, attributable social proof.
 - 5 comprehensive FAQ accordion items directly answering merchant questions on WooCommerce compatibility, non-coding customization, speed optimization, third-party plugins, and ongoing post-customization support.
 - Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (5 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
-- Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
+- Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and section icons reused.
 
 ### Recommended improvements
 
@@ -4782,7 +4783,10 @@ Dedicated commercial landing page presenting Dynamic Dreamz GeneratePress theme 
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Missing App Router implementation for GeneratePress theme customization | Ship slashless `/generatepress-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
 | P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (5 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique GeneratePress hero graphic and unique feature icons under `public/assets/generatepress-theme-customization/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Reuse the canonical hero WebP, shared `industryBrandLogos`, the shared Astra icon set, and canonical project screens | Verified locally with 0 duplicate assets |
+| P0 | implemented | Section parity | Route still ran the pre-redesign 8-section layout against a live page that had been rebuilt to the 9-section template | Remigrate to the live section order (hero, brands, features, services, benefits, why choose, portfolio, testimonials, FAQ) and restore the removed 11-item client testimonial section | Verified in rendered output and production build |
+| P1 | implemented | Metadata parity | `og:type` was `website` while live emits `article`; freshness was stale | Align `og:type` to `article` and set `modifiedTime` to the live `article:modified_time` `2026-09-28T13:20:17+00:00` | Verified in rendered metadata |
+| P2 | deferred | Social metadata | `og:image` reuses the shared `/assets/og/homepage.png` rather than a route-unique 1200x630 asset | Mint a GeneratePress-specific OG image and reference it for this route | Project owner approval; note the whole `*-theme-customization` cluster shares the homepage OG image today |
 | P1 | deferred | Content expansion | Minor phrasing and vocabulary improvements for features & why choose text | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -4792,17 +4796,17 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Entity, evidence, and authorship actions
 
 - Connect Dynamic Dreamz as a WordPress & WooCommerce development specialist founded in 2006 with 18+ years of experience, 5000+ completed projects, and 150+ in-house experts.
-- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids).
 
 ### Internal-link and conversion actions
 
 - Maintain slashless `/generatepress-theme-customization` navigation across marketing pages and service menus.
-- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+- Direct conversion actions route to `/request-quote`; the portfolio CTA routes to `/our-work`; service cards anchor to `#services` and the portfolio anchors at `#our_work`.
 
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service with 6 Offer items, 5 FAQ items, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-20T00:00:00+05:30`.
+- Set explicit freshness `modifiedTime` to `2026-09-28T13:20:17+00:00` (live `article:modified_time`).
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
@@ -4812,7 +4816,9 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/generatepress-theme-customization`; source/build URL guard passes.
+- URL-policy review (2026-09-30): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/generatepress-theme-customization`; source/build URL guard passes.
+- Checks completed (2026-09-30): live View Page Source re-capture and section inventory, live stylesheet inspection, 21/21 section icon path-identity match against the shared icon set, hero asset dimension verification (601x474), metadata parity review, JSON-LD graph verification, local asset audit (0 duplicate groups), lint, and production build.
+- Remaining gap: live/local screenshot comparison was not produced because no desktop browser was connected to the migration session. Re-run the visual verification pass with a connected browser before claiming screenshot-verified parity. See `docs/visual-captures/generatepress-theme-customization.md`.
 ## OceanWP Theme Customization (`/oceanwp-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
