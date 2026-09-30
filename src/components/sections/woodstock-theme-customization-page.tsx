@@ -42,7 +42,7 @@ export function WoodstockThemeCustomizationPage() {
         className="theme-customize-hero overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[991px]:pt-16"
         content={woodstockThemeCustomizationContent.hero}
         descriptionClassName="mb-0 text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6"
-        imageClassName="hero-img h-auto w-full object-contain object-bottom mix-blend-darken"
+        imageClassName="hero-img h-auto w-full object-contain object-bottom"
         mediaClassName="image-block flex w-full items-end pt-[60px]"
         mediaColumnClassName="right-col flex w-[43.182%] items-end justify-end max-[1399px]:w-[48%] max-[1199px]:mx-auto max-[1199px]:w-1/2 max-[991px]:w-full max-[991px]:justify-center"
         textClassName="hero-content"

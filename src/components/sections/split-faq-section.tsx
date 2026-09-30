@@ -146,21 +146,21 @@ export function SplitFaqSection({
                       iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
                       iconVariant={iconVariant}
                       idPrefix={idPrefix}
-                      itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!p-0", itemClassName)}
+                      itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
                       items={items}
                       panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
                       questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
-                      triggerClassName={cn("!px-0 !py-6 !pr-12 max-[767px]:!py-5", triggerClassName)}
+                      triggerClassName={cn("!px-0 !py-6 !pr-[50px] max-[767px]:!py-5 max-[767px]:!pr-[42px]", triggerClassName)}
                     />
                   }
                   iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
                   iconVariant={iconVariant}
                   idPrefix={idPrefix}
-                  itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!p-0", itemClassName)}
+                  itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
                   items={items}
                   panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
                   questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
-                  triggerClassName={cn("!px-0 !py-6 !pr-12 max-[767px]:!py-5", triggerClassName)}
+                  triggerClassName={cn("!px-0 !py-6 !pr-[50px] max-[767px]:!py-5 max-[767px]:!pr-[42px]", triggerClassName)}
                   rootMargin={lazyRootMargin}
                 />
               ) : (
@@ -170,11 +170,11 @@ export function SplitFaqSection({
                   iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
                   iconVariant={iconVariant}
                   idPrefix={idPrefix}
-                  itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!p-0", itemClassName)}
+                  itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
                   items={items}
                   panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
                   questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
-                  triggerClassName={cn("!px-0 !py-6 !pr-12 max-[767px]:!py-5", triggerClassName)}
+                  triggerClassName={cn("!px-0 !py-6 !pr-[50px] max-[767px]:!py-5 max-[767px]:!pr-[42px]", triggerClassName)}
                 />
               )}
             </div>

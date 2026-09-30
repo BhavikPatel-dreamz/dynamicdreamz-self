@@ -176,7 +176,7 @@ export function WhiteLabelHeroSection({
                 className={cn(
                   "h-full w-full object-contain",
                   isWebsiteDesign && "h-auto w-full",
-                  isCertifiedDevelopers && "h-auto w-full mix-blend-darken",
+                  isCertifiedDevelopers && "h-auto w-full",
                 )}
                 src={hero.illustration}
                 alt={hero.illustrationAlt}
