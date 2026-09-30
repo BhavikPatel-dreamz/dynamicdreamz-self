@@ -5,6 +5,16 @@ Local route: http://localhost:3000/
 Date checked: 2026-08-13
 Browser: Chromium DevTools responsive mode plus Microsoft Edge headless computed-geometry audit
 
+## 2026-09-30 Live Footer Parity & Asset Audit
+
+- Re-inspected live `footer.css`, `live-footer.html`, and computed styles from https://www.dynamicdreamz.com/.
+- Verified all 5 desktop column widths (172px, 238px, 235px, 259px, 220px), wrapping rules, proof badges, mobile accordion (18px py, 12px plus/minus icon, 200ms transition), and legal row.
+- Updated Shopify Solutions column to live entry `Hire Shopify Developers` linking to `/hire-shopify-developers` (matching live site footer exactly).
+- Corrected `Full-Stack Development` to `Full Stack Development` (no hyphen).
+- Replaced synthetic social SVGs with exact live SVG silhouettes for LinkedIn and Instagram with `fill="currentColor"`.
+- Fixed `object-conatin` typo to `object-contain` on award images.
+- Verified 0 duplicate assets, no-trailing-slash URL policy, and content boundary compliance.
+
 ## 2026-08-31 Live Footer Content And Link Review
 
 - Re-inspected the rendered homepage and its HTML footer at

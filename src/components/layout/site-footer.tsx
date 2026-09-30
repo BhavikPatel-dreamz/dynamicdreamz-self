@@ -24,19 +24,22 @@ function PhoneIcon() {
 
 function LinkedinIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 20 20" width="20" height="20">
-      <rect width="20" height="20" rx="4" fill="currentColor" />
-      <path d="M5 8h2.2v7H5V8Zm1.1-3.3a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6ZM8.5 8h2.1v1c.4-.7 1.2-1.2 2.3-1.2 2.2 0 2.6 1.4 2.6 3.3V15h-2.2v-3.5c0-1.2-.3-2-1.2-2-1 0-1.4.8-1.4 2V15H8.5V8Z" fill="#f7f4e9" />
+    <svg aria-hidden="true" viewBox="0 0 20 20" width="20" height="20" fill="none">
+      <path
+        d="M15.053 0H4.447C3.268 0 2.136.469 1.303 1.303.469 2.136 0 3.268 0 4.447v10.606C0 16.232.469 17.364 1.303 18.198c.834.834 1.965 1.302 3.144 1.302h10.606c1.179 0 2.31-.468 3.144-1.302.834-.834 1.303-1.966 1.303-3.145V4.447c0-1.179-.469-2.311-1.303-3.144A4.417 4.417 0 0 0 15.053 0ZM6.593 15.742a.45.45 0 0 1-.4.423H4.413a.434.434 0 0 1-.4-.412V8.35c0-.107.03-.2.07-.29.04-.05.07-.1.11-.138.04-.038.08-.069.13-.09a.44.44 0 0 1 .19-.031h1.78c.053 0 .106.011.156.032.049.02.094.051.131.089.037.039.066.084.086.134.02.05.029.103.027.155v7.392ZM5.27 6.382c-.193-.001-.383-.04-.56-.116a1.44 1.44 0 0 1-.785-.8c-.072-.179-.109-.37-.107-.563a1.48 1.48 0 0 1 .438-1.038c.137-.135.3-.242.478-.314.179-.073.37-.109.563-.108.383.012.745.174 1.01.45.265.276.412.645.409 1.028a1.47 1.47 0 0 1-.424.952c-.27.272-.635.428-1.018.427Zm10.817 9.348a.42.42 0 0 1-.378.388h-1.879a.426.426 0 0 1-.378-.389V12.305c0-.511.156-2.223-1.356-2.223-1.179 0-1.412 1.2-1.457 1.734v3.991a.42.42 0 0 1-.378.388H8.438a.438.438 0 0 1-.389-.39V8.314c.003-.101.045-.198.118-.268a.444.444 0 0 1 .272-.11h1.822c.101 0 .199.04.272.11.072.07.115.167.118.268v.645c.266-.39.633-.699 1.062-.895.429-.196.903-.271 1.372-.217 3.035 0 3.024 2.835 3.024 4.447l-.022 3.436Z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
 
 function InstagramIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 18 18" width="18" height="18">
-      <rect width="18" height="18" rx="5" fill="currentColor" />
-      <circle cx="9" cy="9" r="3.2" fill="none" stroke="#f7f4e9" strokeWidth="1.8" />
-      <circle cx="13.4" cy="4.6" r="1" fill="#f7f4e9" />
+    <svg aria-hidden="true" viewBox="0 0 18 18" width="18" height="18" fill="none">
+      <path
+        d="M13 0c1.326 0 2.598.527 3.536 1.464C17.473 2.402 18 3.674 18 5v8c0 1.326-.527 2.598-1.464 3.536C15.598 17.473 14.326 18 13 18H5c-1.326 0-2.598-.527-3.536-1.464C.527 15.598 0 14.326 0 13V5C0 3.674.527 2.402 1.464 1.464 2.402.527 3.674 0 5 0h8ZM9 5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm4.5-3.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
@@ -294,7 +297,7 @@ export function SiteFooter({
       <Container className="grid grid-cols-6 gap-3 pt-[50px] max-[992px]:grid-cols-2 max-[992px]:gap-5 max-[992px]:pt-[35px] max-[767px]:gap-4 max-[767px]:pt-[30px]" aria-label="Partner and review profiles">
         {footerAwards.map((award) => (
           <a className="flex h-[81px] items-center justify-center rounded-[20px] bg-white px-[18px] py-4 max-[992px]:rounded-[10px] max-[767px]:h-[60px] max-[767px]:border max-[767px]:border-[#efefef]/20 max-[767px]:px-[13px] max-[767px]:py-[5px]" href={award.href} target="_blank" rel="nofollow noopener noreferrer" key={award.src} aria-label={award.alt}>
-            <Image src={award.src} alt={award.alt} width={award.width} height={award.height} className="max-[767px]:h-10 object-conatin"/>
+            <Image src={award.src} alt={award.alt} width={award.width} height={award.height} className="max-[767px]:h-10 object-contain"/>
           </a>
         ))}
       </Container>

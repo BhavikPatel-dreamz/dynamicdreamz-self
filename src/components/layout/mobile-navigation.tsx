@@ -263,7 +263,7 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
               <Link className={topLevelLinkClass} href={siteConfig.contactPath} onClick={closeMenu}>{siteChromeCopy.contactUs}</Link>
             </li>
             <li className="py-6">
-              <a className="block text-xl leading-[normal] font-semibold text-[#d92128] underline" href={`mailto:${email}`} onClick={closeMenu}>{email}</a>
+              <a className="block text-sm leading-[normal] font-semibold text-[#d92128] underline" href={`mailto:${email}`} onClick={closeMenu}>{email}</a>
             </li>
           </ul>
         </nav>

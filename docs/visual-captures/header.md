@@ -2,6 +2,14 @@
 
 Reviewed: 2026-08-24
 
+## 2026-09-30 Live Header Parity & Content Audit
+
+- Re-inspected live `header.css`, `live-header.html`, and computed styles from https://www.dynamicdreamz.com/.
+- Confirmed live menu text is `AI Services` (Unicode 0x41 0x49, Capital A and Capital I) with `NEW` badge (`.ai-new`); corrected previous typo/OCR discrepancy.
+- Corrected `Full-Stack Development` to `Full Stack Development` (no hyphen) matching live text.
+- Verified mobile drawer contact email typography matches `.main-navigation>ul>li.contact-mail a` (14px font-size, 600 weight, underline).
+- Verified desktop mega-menu widths (Shopify 1054px, Agency 390px, Tech 760px, Industries 652px, Work 666px, About 645px/540px) and interaction states.
+
 ## Scope
 
 The current production header on `https://www.dynamicdreamz.com/` is the visual and content reference for the shared Next.js header. The migration keeps local, slashless routes and the existing accessibility improvements while matching the live navigation labels, menu hierarchy, dimensions, breakpoints, and interactions.
