@@ -2145,6 +2145,145 @@ or unsupported client counts. Exact visible proposals are tracked in
   internal case studies/service links, and unbuilt CTA destinations require
   approval or later route coverage.
 
+## Sports & Outdoors (`/sports-outdoors`)
+
+Status: implemented; live-visible content preserved; visual verification blocked
+Last reviewed: 2026-09-30
+Owner: SEO, content, development, and client success
+Primary audience: Sports, fitness, outdoor, cycling, running, and active-lifestyle DTC brands, ecommerce directors, and digital agencies
+Decision stage: Solution awareness through agency evaluation
+
+### Page role
+
+Dedicated industry solution landing page for sports, fitness, and outdoor brands
+seeking specialized Shopify and Shopify Plus development. It is the sports
+counterpart to `/health-nutrition` and renders the same
+`template-services-template` as a 10-section industry page, addressing
+spec-driven product research, fit and sizing returns, seasonal and event-driven
+demand, kit/bundle configuration, dealer-versus-direct channel overlap, and
+delivery complexity for bulky equipment.
+
+### Target prompts
+
+- Which Shopify agency builds ecommerce stores for sports and outdoor brands?
+- Who can build a product configurator or kit builder for a sports equipment brand?
+- Can Dynamic Dreamz develop fit finders, size guides, and product comparison tools on Shopify?
+- Which Shopify agency handles seasonal launches, pre-orders, and waitlists for sports brands?
+- Can Dynamic Dreamz integrate Shopify with dealer, inventory, or ERP systems?
+- Which sports, fitness, and outdoor brands has Dynamic Dreamz built Shopify stores for?
+
+### Current strengths and available evidence
+
+- 10-section architecture in live order: video hero with dual CTA, 12-brand logo
+  marquee, 6 numbered Industry Challenges cards, 6 numbered Solutions We Build
+  cards, dark Custom Development feature list, 18-logo two-row technology
+  marquee, 8-project portfolio grid, 4-capability Why Dynamic Dreamz section with
+  a 4-box stats strip, an 11-item client-stories carousel, and a 6-item FAQ
+  accordion. Unlike `/health-nutrition`, this page has **no** featured
+  case-studies block; none was invented.
+- The FAQ block is unusually well aligned to real buying questions for this
+  category (configurators, fit/compatibility, seasonal launches, bulky-item
+  shipping, dealer/ERP integration), which makes it a strong answer-engine target.
+- Proof points: 20+ years of delivery, 150+ experts, 5k+ projects delivered,
+  2.5k+ verified 5-star reviews, Shopify Platinum Partner, plus 4 hero proof
+  badges (Platinum Partner, Clutch 4.9, Trustpilot, Upwork Top Rated Plus).
+- Eight named, externally linked portfolio projects with platform attribution
+  spanning Shopify/Shopify Plus (6), BigCommerce (1), and WordPress (1).
+- Structured data: `Organization`, `WebSite`, `WebPage`, `Service` with a 6-item
+  `hasOfferCatalog` whose offer names match the six visible "Solutions We Build"
+  card titles, `BreadcrumbList` (`Home → Sports & Outdoors`), and `FAQPage` with
+  all 6 visible questions. `audienceType` is `Sports, fitness and outdoor brands`.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route and discovery | Live serves the page at `/industries/sports-outdoors/`, a nested path with a trailing slash | Ship the canonical route at slashless `/sports-outdoors` per the repo URL policy, and ensure it is discoverable from navigation and the sitemap | Rendered/build verification |
+| P0 | implemented | Schema accuracy | A generic industry page would emit mismatched schema | Emit a page-specific `Service` with `hasOfferCatalog` (6 offers) and `FAQPage` (6 questions) matching the visible cards and FAQs | Schema validator / build audit |
+| P0 | implemented | Metadata | Live title and description had to be reconciled with the repo's slashless and SERP-length policies | Kept the live 59-character title and 157-character description, and registered a route-specific OG image at 1200x630 | Rendered/build audit |
+| P1 | implemented | Asset reuse | The live page's 8 portfolio images and 18 technology badges could have been re-ingested as new files | Hashed all 8 against the existing `public/assets/**` tree; all 8 proved to be byte-identical re-encodes of assets already owned, so canonical local paths were reused and nothing was duplicated | `npm run check:asset-duplicates` |
+| P1 | implemented | Feature icon parity | The 3 non-first why-choose icons had no existing local equivalent | Added 3 new `MigrationFeatureIcon` branches (`shopify-bag`, `custom-build`, `long-term-support`) with live-exact path data; the change is additive and widens only the `icon` union type | Path-data diff against live SVGs |
+| P1 | blocked | Visual verification | Live/local screenshot comparison at 1440x900, 768x1024, and 390x844 could not be captured | Re-run the full visual-parity capture (screenshots, computed styles, animation timings, and interaction states) once browser tooling is available | Desktop browser session |
+| P1 | deferred | Copy correctness | The Custom Development `h2` reads `Custom Health Commerce where Standard Apps Stop` — a leftover from the health template that contradicts the page's actual sports/outdoors subject matter | Replace with a sports-specific heading. This is the single highest-value visible fix on the page because the heading actively misdescribes the section, but it is a live-visible copy change | Content owner approval; queued in `docs/page-content-improvements.md` |
+| P2 | deferred | Content signals | The page carries no authorship, reviewer, or `Reviewed by` signal, and no case-study attribution for the 8 named projects | Add a reviewer or author entity only once real, approved people and case studies exist. Do not invent them | Governance approval plus real case-study routes |
+| P2 | deferred | Internal linking | The page links outward to 8 client sites but not to internal service, migration, or case-study routes | Add internal links to Shopify development, Shopify Plus, and sports/outdoors case studies as those destinations are confirmed | Destination route coverage |
+| P2 | deferred | Image alt text | Portfolio alt text uses the live generic `<Brand> Image` form, which does not meet the repo's alt-text quality bar | Replace with subject-specific descriptions for all 8 project images, matching the pattern already used on `/pet-industry` | Requires visual confirmation of each asset before the text is written |
+| P3 | deferred | Proof consistency | The stats strip mixes casing (`Years of Experience`, `Experts`, `projects delivered`, `Verified 5 star Reviews`) and `5k+` is a rounded restatement of the 5,000+ company fact | Standardize label casing and hyphenate `5-star`. Note the change must keep the approved 5,000+ and 2,500+ figures intact | Content owner approval |
+
+### Entity, evidence, and authorship actions
+
+- Model the page as an ecommerce development `Service` for sports, fitness, and
+  outdoor brands provided by Dynamic Dreamz (`Organization`), with
+  `audienceType` `Sports, fitness and outdoor brands`.
+- Keep the 12 visible marquee brands and the 8 named portfolio projects aligned
+  with the canonical local assets and the live external destinations. Do not add
+  outcome claims, metrics, or case-study attribution that the visible copy does
+  not already support.
+- Emitted `FAQPage` matches the 6 visible user-facing questions and answers 1:1.
+- The client-stories carousel reuses the existing
+  `shopifyPlusAgencyPageTestimonials` set, which already matches this live
+  carousel exactly. No new testimonial claims were introduced.
+- Do not invent authors, reviewers, credentials, or ratings.
+
+### Internal-link and conversion actions
+
+- Primary hero CTA `Discuss Your Project` routes to `/request-quote`.
+- Secondary hero CTA `See Relevant Work` resolves to the rendered
+  `id="our_work"` portfolio section, matching the live anchor target.
+- Preserve the 8 external project links as secure `target="_blank"` links with
+  the live `rel="nofollow"` intent.
+- The `Why Dynamic Dreamz` partner block links to `/about-us`; confirm the
+  destination is live before launch.
+- Add internal service/migration/case-study links only as those routes are built.
+
+### Structured-data, crawler, and freshness actions
+
+- Emits `Organization`, `WebSite`, `WebPage`, `Service` (6 `hasOfferCatalog`
+  items), `BreadcrumbList`, and `FAQPage` (6 items).
+- Preserves the real live `datePublished` (`2026-09-24T06:51:56+00:00`) and
+  `dateModified` (`2026-09-24T11:03:42+00:00`) rather than inventing a migration
+  date.
+- Canonical URL set to `https://www.dynamicdreamz.com/sports-outdoors`; the live
+  nested `/industries/sports-outdoors/` form was deliberately not copied.
+- Registered in `src/data/seo.ts` with sitemap priority 0.8. The sitemap derives
+  from `pageSeoEntries`, so no separate `sitemap.ts` edit was needed.
+- `src/data/navigation.ts` already linked `/sports-outdoors`, so no navigation
+  change was required.
+
+### Measurement plan
+
+- Track impressions/clicks for sports ecommerce development, outdoor brand
+  Shopify agency, sports equipment ecommerce, Shopify Plus sports, product
+  configurator development, and fit finder development.
+- Sample the target prompts monthly across relevant search and answer engines;
+  record page citations, claim accuracy, and competing sources.
+- Track `Discuss Your Project` and `See Relevant Work` clicks once analytics
+  governance is configured.
+
+### Verification and remaining gaps
+
+- Checks completed: live and local server-rendered HTML, View Page Source, the
+  cleaned live body capture, Yoast JSON-LD, heading/section-order/alt-text/anchor
+  diffing, path-data comparison for all 4 why-choose SVGs, asset hashing and
+  duplicate audit, URL-policy guard, lint, and production build.
+- Result: HTTP 200, one `h1`, nine `h2` matching live in text and order, all 10
+  sections in live order, all 8 portfolio `href` + `alt` values matching live,
+  11 testimonials matching live, 6 FAQs matching live, and zero `<img>` elements
+  missing an `alt` attribute.
+- Implemented items: slashless server-rendered route, shared typed industry
+  sections and content module, local canonical assets with no duplicates, route
+  metadata and discovery records, accurate alt attributes, additive
+  feature-icon extension, and page-relevant
+  `WebPage`/`BreadcrumbList`/`Service`/`FAQPage` schema.
+- **Blocked**: live/local screenshot comparison and animation/interaction checks
+  at 1440x900, 768x1024, and 390x844. Browser tooling was disconnected for this
+  task and no headless browser is installed. Visual parity is therefore **not
+  claimed**; see `docs/visual-captures/sports-outdoors.md`.
+- Deferred: the "Custom Health Commerce" heading correction, subject-specific
+  portfolio alt text, proof-label consistency, authorship signals, and internal
+  service/case-study links all require content-owner approval or visual
+  confirmation before implementation.
+
 ## Contact Us (`/contact-us`)
 
 Status: implemented; deployment webhook configuration pending

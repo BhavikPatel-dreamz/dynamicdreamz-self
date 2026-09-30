@@ -27,6 +27,10 @@ import {
   healthNutritionFaqs,
   healthNutritionSolutions,
 } from "@/content/health-nutrition";
+import {
+  sportsOutdoorsFaqs,
+  sportsOutdoorsSolutions,
+} from "@/content/sports-outdoors";
 import { hireWordPressFaqs } from "@/content/hire-wordpress-developers";
 import { hireShopifyFaqs, hireShopifyServices } from "@/content/hire-shopify-developers";
 import {
@@ -288,6 +292,11 @@ const healthNutritionPageId = `${healthNutritionPageUrl}#webpage`;
 const healthNutritionBreadcrumbId = `${healthNutritionPageUrl}#breadcrumb`;
 const healthNutritionServiceId = `${healthNutritionPageUrl}#service`;
 const healthNutritionFaqId = `${healthNutritionPageUrl}#faq`;
+const sportsOutdoorsPageUrl = absoluteUrl(pageSeo.sportsOutdoors.path);
+const sportsOutdoorsPageId = `${sportsOutdoorsPageUrl}#webpage`;
+const sportsOutdoorsBreadcrumbId = `${sportsOutdoorsPageUrl}#breadcrumb`;
+const sportsOutdoorsServiceId = `${sportsOutdoorsPageUrl}#service`;
+const sportsOutdoorsFaqId = `${sportsOutdoorsPageUrl}#faq`;
 const petIndustryPageUrl = absoluteUrl(pageSeo.petIndustry.path);
 const petIndustryPageId = `${petIndustryPageUrl}#webpage`;
 const petIndustryBreadcrumbId = `${petIndustryPageUrl}#breadcrumb`;
@@ -2224,6 +2233,27 @@ export function createHealthNutritionPageSchema() {
     audienceType: "Health, nutrition, supplement, wellness, healthcare product and dental brands",
     faqs: healthNutritionFaqs,
     offers: healthNutritionSolutions.boxes.map((item) => ({
+      title: item.title,
+      description: item.description ?? "",
+    })),
+  });
+}
+
+export function createSportsOutdoorsPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.sportsOutdoors,
+    pageUrl: sportsOutdoorsPageUrl,
+    pageId: sportsOutdoorsPageId,
+    serviceId: sportsOutdoorsServiceId,
+    faqId: sportsOutdoorsFaqId,
+    breadcrumbId: sportsOutdoorsBreadcrumbId,
+    serviceName: "Ecommerce Solutions for Sports, Fitness & Outdoor Brands",
+    serviceType:
+      "Sports and Outdoor Ecommerce Development, Activity-Based Product Discovery, Fit Size & Technical Product UX, Bundles Kits & Configurable Products, Launches Waitlists & Mobile, Shopify & Global Ecommerce, ERP Inventory & Custom Integrations",
+    breadcrumbName: "Sports & Outdoors",
+    audienceType: "Sports, fitness and outdoor brands",
+    faqs: sportsOutdoorsFaqs,
+    offers: sportsOutdoorsSolutions.boxes.map((item) => ({
       title: item.title,
       description: item.description ?? "",
     })),

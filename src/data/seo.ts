@@ -383,6 +383,34 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  sportsOutdoors: {
+    path: "/sports-outdoors",
+    title: "Shopify Agency for Sports & Outdoor Brands | Dynamic Dreamz",
+    description:
+      "Shopify and e-commerce development for sports, fitness and outdoor brands. Product discovery, fit tools, configurators, mobile apps, and custom integrations.",
+    socialDescription:
+      "Shopify and e-commerce development for sports, fitness and outdoor brands. Product discovery, fit tools, configurators, mobile apps, and custom integrations.",
+    keywords: [
+      "sports ecommerce development",
+      "outdoor brands shopify agency",
+      "sports fitness ecommerce website",
+      "shopify plus sports and outdoors",
+      "sports equipment ecommerce development",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-09-24T06:51:56+00:00",
+    modifiedTime: "2026-09-24T11:03:42+00:00",
+    image: {
+      path: "/assets/og/sports-outdoors.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Agency for Sports & Outdoor Brands | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   fashion: {
     path: "/fashion",
     title: "Web Design Agency for Fashion Industry - Dynamic Dreamz",
