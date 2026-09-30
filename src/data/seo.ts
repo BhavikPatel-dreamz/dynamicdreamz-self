@@ -1722,7 +1722,7 @@ export const pageSeo = {
     path: "/extendable-theme-customization",
     title: "Extendable Theme Customization Service | Dynamic Dreamz",
     description:
-      "Get professional Extendable Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
+      "Looking to customize your Extendable theme? Dynamic Dreamz offers expert Extendable theme customization services to build a fast, responsive WordPress website.",
     keywords: [
       "Extendable theme customization",
       "Extendable WordPress theme",
@@ -1730,9 +1730,9 @@ export const pageSeo = {
       "WordPress Extendable developers",
       "WordPress theme customization agency",
     ],
-    openGraphType: "website",
+    openGraphType: "article",
     publishedTime: "2025-05-05T09:39:17+00:00",
-    modifiedTime: "2026-08-20T00:00:00+05:30",
+    modifiedTime: "2026-09-29T12:46:11+00:00",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
@@ -1756,9 +1756,9 @@ export const pageSeo = {
       "WordPress Kubio developers",
       "WordPress theme customization agency",
     ],
-    openGraphType: "website",
+    openGraphType: "article",
     publishedTime: "2025-05-13T05:27:49+00:00",
-    modifiedTime: "2026-08-20T00:00:00+05:30",
+    modifiedTime: "2026-09-29T11:53:18+00:00",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,

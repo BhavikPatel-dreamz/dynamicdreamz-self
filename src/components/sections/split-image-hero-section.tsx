@@ -148,7 +148,7 @@ export function SplitImageHeroMedia({
     <div className={className}>
       <Image
         alt={image.alt}
-        className={imageClassName}
+        className={cn("block", imageClassName)}
         height={image.height}
         priority={priority}
         src={image.src}

@@ -1385,20 +1385,20 @@ Primary SEO intent: Blocksy theme customization, Blocksy WordPress theme customi
 ## Extendable Theme Customization (`/extendable-theme-customization`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Primary SEO intent: Extendable theme customization, Extendable WordPress theme customization service, customize Extendable theme WordPress WooCommerce, lightweight flexible WordPress theme development, hire Extendable WordPress developers.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
 | Meta title | `Extendable Theme Customization Service \| Dynamic Dreamz` (53 chars) | Preserved live title (53 chars). | Fits strict 15-60 char budget and captures primary target intent. | High | implemented in metadata |
-| Meta description | `Get professional Extendable Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!` (140 chars) | Preserved live meta description (140 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
-| Why choose grammar | `We always give priority to our customer’s business requirements.` | `We always prioritize our customers' business requirements.` | Streamlines sentence structure and corrects plural possessive apostrophe. | Low | deferred pending exact visible-copy approval |
+| Meta description | `Looking to customize your Extendable theme? Dynamic Dreamz offers expert Extendable theme customization services to build a fast, responsive WordPress website.` (154 chars) | Preserved live meta description (154 chars). | Fits 70-160 character budget and preserves search snippet copy. | High | implemented in metadata |
+| Why choose grammar | `We always give priority to our customer's business requirements.` | `We always prioritize our customers' business requirements.` | Streamlines sentence structure and corrects plural possessive apostrophe. | Low | deferred pending exact visible-copy approval |
 | Service & FAQ structured data | Legacy site had incomplete schema graph. | Emitted `Service` with `OfferCatalog` (6 service items) and `FAQPage` (6 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
 
 ## Kubio Theme Customization (`/kubio-theme-customization`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Primary SEO intent: Kubio theme customization, Kubio WordPress theme customization service, customize Kubio theme WordPress WooCommerce, block-based WordPress theme development, hire Kubio WordPress developers.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |

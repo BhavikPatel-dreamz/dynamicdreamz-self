@@ -1,10 +1,36 @@
+import type {
+  ExtendableBenefitIconName,
+  ExtendableFeatureIconName,
+  ExtendableServiceIconName,
+} from "@/components/sections/extendable-theme-customization/extendable-icons";
+
+export type ExtendableFeatureItem = {
+  iconName: ExtendableFeatureIconName;
+  title: string;
+  description: string;
+};
+
+export type ExtendableServiceItem = {
+  iconName: ExtendableServiceIconName;
+  title: string;
+  description: string;
+};
+
+export type ExtendableBenefitItem = {
+  iconName: ExtendableBenefitIconName;
+  title: string;
+  description: string;
+};
+
 export const extendableThemeCustomizationContent = {
   hero: {
+    eyebrow: ["Wordpress Agency", "Theme Customization"] as const,
     title: "Extendable Theme Customization Service",
     description:
       "The Extendable theme is a highly flexible and trendy WordPress theme, perfect for business websites, blogging websites, and eCommerce stores. With its light design and advanced customization options, you can build a unique WordPress website that aligns with your brand identity. Our Extendable theme customization services help you customize the theme to meet your specific business requirements, ensuring a professional and smooth user experience.",
-    ctaText: "request a quote",
+    ctaText: "Request a Quote",
     ctaHref: "/request-quote",
+    ctaAriaLabel: "Request a Quote",
     image: {
       src: "/assets/extendable-theme-customization/hero/extendable-theme-customization-service-img.webp",
       alt: "extendable-theme",
@@ -13,7 +39,9 @@ export const extendableThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by Leading Brands",
+    title: "Trusted by \nLeading Brands",
+    heading: "Trusted by \nLeading Brands",
+    slug: "extendable-theme-customization",
     items: [
       {
         name: "Ranavat Logo",
@@ -98,217 +126,194 @@ export const extendableThemeCustomizationContent = {
     ],
   },
   features: {
-    title: "Features Of Extendable Theme",
-    subtitle:
+    eyebrow: "Features",
+    heading: "Features of Extendable Theme",
+    description:
       "The Extendable theme offers a range of features to help you build a fully customized website.",
     items: [
       {
+        iconName: "lightning",
         title: "Lightweight and Fast",
         description:
           "This optimized theme is speedy and lightweight, delivering performance and ensuring a smooth user experience.",
-        icon: "/assets/astra-theme-customization/features/lightning-fast-performance.svg",
-        iconAlt: "Lightning Fast Performance Icon",
       },
       {
+        iconName: "dragAndDrop",
         title: "Drag-and-Drop Builder",
         description:
           "This theme comes with a drag-and-drop builder to easily customize layouts without coding knowledge.",
-        icon: "/assets/neve-theme-customization/features/page-builder-compatibility.svg",
-        iconAlt: "Drag-and-Drop Builder Icon",
       },
       {
+        iconName: "woocommerce",
         title: "WooCommerce Integration",
         description:
           "Smoothly set up an online store with pre-built and complete eCommerce support.",
-        icon: "/assets/astra-theme-customization/features/woocommerce-ready.svg",
-        iconAlt: "WooCommerce Integration Icon",
       },
       {
+        iconName: "responsive",
         title: "Responsive Design",
         description:
           "The Extendable theme ensures your website runs flawlessly across all devices.",
-        icon: "/assets/generatepress-theme-customization/features/mobile-responsive-design.svg",
-        iconAlt: "Responsive Design icon",
       },
       {
+        iconName: "seo",
         title: "SEO-Optimized",
         description:
           "Built with SEO-friendly coding and theme structure for better search rankings.",
-        icon: "/assets/astra-theme-customization/features/seo-optimized.svg",
-        iconAlt: "SEO Optimized Icon",
       },
       {
+        iconName: "headerFooterStyles",
         title: "Multiple Header & Footer Styles",
         description:
           "You can choose from various layout options for header & footer styles to match your branding.",
-        icon: "/assets/kadence-theme-customization/features/drag-and-drop-header-footer-builder.svg",
-        iconAlt: "Header & Footer Builder Icon",
       },
       {
+        iconName: "colorTypography",
         title: "Customizable Color & Typography",
         description:
           "Easily modify fonts and colors to suit your brand with an in-built customizer.",
-        icon: "/assets/astra-theme-customization/features/highly-customizable.svg",
-        iconAlt: "Highly Customizable Icon",
       },
-    ],
-  },
-  benefits: {
-    title: "Benefits of Extendable <br> Theme Customization",
-    subtitle:
-      "Personalizing your Extendable theme ensures your website stands out and functions optimally.",
-    items: [
-      {
-        title: "Fully Customizable Store",
-        description:
-          "You can fully customize your store to reflect your brand and attract customers.",
-        icon: "/assets/shopify-theme-customization/benefits/fully-customizable-store.svg",
-        iconAlt: "cs_icon_img",
-      },
-      {
-        title: "Responsive Design",
-        description:
-          "We make this theme fully responsive so that the website will adapt perfectly to desktops, tablets, and mobile devices.",
-        icon: "/assets/shopify-theme-customization/benefits/responsive-design.svg",
-        iconAlt: "responsive_design_icon",
-      },
-      {
-        title: "Unique Brand Identity",
-        description:
-          "You can have a unique brand identity that stands out with a website that represents your business vision.",
-        icon: "/assets/shopify-theme-customization/benefits/unique-brand-identity.svg",
-        iconAlt: "unique-brand-identity-icon",
-      },
-      {
-        title: "Improved User Experience",
-        description:
-          "We enhance the navigation menu, good readability, and amazing design for better user engagement.",
-        icon: "/assets/shopify-theme-customization/benefits/improved-user-experience.svg",
-        iconAlt: "User-Friendly Interface",
-      },
-      {
-        title: "Multiple Third-party Plugins",
-        description:
-          "We integrate powerful plugins and advanced features to expand your website's functionality.",
-        icon: "/assets/shopify-theme-customization/benefits/multiple-third-party-apps.svg",
-        iconAlt: "Multiple Sales Channels Icon",
-      },
-      {
-        title: "Higher Conversion Rates",
-        description:
-          "You get a well-optimized website that encourages visitors to take action.",
-        icon: "/assets/shopify-theme-customization/benefits/higher-conversion-rates.svg",
-        iconAlt: "cost-effective-scalability-img",
-      },
-      {
-        title: "Mobile Optimization",
-        description:
-          "We optimize your website to look great and run smoothly on all mobile devices.",
-        icon: "/assets/shopify-theme-customization/benefits/mobile-optimization.svg",
-        iconAlt: "Mobile Optimization Icon",
-      },
-      {
-        title: "Safe and Secure Payments",
-        description:
-          "We add secure payment gateways that provide a smooth checkout experience.",
-        icon: "/assets/shopify-theme-customization/benefits/enhanced-security.svg",
-        iconAlt: "Enhanced Security Icon",
-      },
-      {
-        title: "Minimal Maintenance Cost",
-        description: "After the optimizations, you can get lower maintenance costs.",
-        icon: "/assets/shopify-theme-customization/benefits/zero-maintenance-cost.svg",
-        iconAlt: "Zero Maintenance Cost Image",
-      },
-    ],
+    ] as const satisfies readonly ExtendableFeatureItem[],
   },
   services: {
-    title: "Our Extendable Theme <br> Customization Services",
-    subtitle:
+    eyebrow: "Our Services",
+    heading: "Our Extendable Theme \nCustomization Services",
+    description:
       "We offer complete customization services to ensure your Extendable theme meets your exact requirements. <br>Here is a list of our Extendable theme customization services:",
     items: [
       {
+        iconName: "installation",
         title: "Theme Installation",
         description:
           "We install and set up the Extendable theme on your WordPress website.",
-        icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
-        iconAlt: "Maintenance and Support Icon",
       },
       {
+        iconName: "design",
         title: "Custom Design and Branding",
         description:
           "You can change colors, fonts, and layouts to match your brand identity.",
-        icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
-        iconAlt: "Plugin Development Icon",
       },
       {
+        iconName: "responsive",
         title: "Responsive Design",
         description:
           "We can optimize the website for smooth performance across all devices.",
-        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
-        iconAlt: "custom themes icon",
       },
       {
+        iconName: "features",
         title: "Advanced Features Integration",
         description:
           "Our WordPress expert can help you add custom elements like sliders, forms, and animations.",
-        icon: "/assets/shopify-theme-customization/services/advanced-features-integration.svg",
-        iconAlt: "Data Integrity Checks Icon",
       },
       {
+        iconName: "performance",
         title: "Performance Optimization",
         description:
           "Our services improve your website speed and SEO rankings for better visibility.",
-        icon: "/assets/shopify-theme-customization/services/performance-optimization.svg",
-        iconAlt: "Compliance with Shopify’s Security Standards Icon",
       },
       {
+        iconName: "support",
         title: "Ongoing Support and Maintenance",
         description: "We offer ongoing updates and troubleshooting assistance.",
-        icon: "/assets/shopify-theme-customization/services/ongoing-support-and-maintenance.svg",
-        iconAlt: "Custom App Development Icon",
       },
-    ],
+    ] as const satisfies readonly ExtendableServiceItem[],
+  },
+  benefits: {
+    eyebrow: "Benefits",
+    heading: "Benefits of Extendable \nTheme Customization",
+    description:
+      "Personalizing your Extendable theme ensures your website stands out and functions optimally.",
+    items: [
+      {
+        iconName: "store",
+        title: "Fully Customizable Store",
+        description:
+          "You can fully customize your store to reflect your brand and attract customers.",
+      },
+      {
+        iconName: "responsive",
+        title: "Responsive Design",
+        description:
+          "We make this theme fully responsive so that the website will adapt perfectly to desktops, tablets, and mobile devices.",
+      },
+      {
+        iconName: "brand",
+        title: "Unique Brand Identity",
+        description:
+          "You can have a unique brand identity that stands out with a website that represents your business vision.",
+      },
+      {
+        iconName: "ux",
+        title: "Improved User Experience",
+        description:
+          "We enhance the navigation menu, good readability, and amazing design for better user engagement.",
+      },
+      {
+        iconName: "plugins",
+        title: "Multiple Third-party Plugins",
+        description:
+          "We integrate powerful plugins and advanced features to expand your website's functionality.",
+      },
+      {
+        iconName: "conversions",
+        title: "Higher Conversion Rates",
+        description:
+          "You get a well-optimized website that encourages visitors to take action.",
+      },
+      {
+        iconName: "mobile",
+        title: "Mobile Optimization",
+        description:
+          "We optimize your website to look great and run smoothly on all mobile devices.",
+      },
+      {
+        iconName: "payments",
+        title: "Safe and Secure Payments",
+        description:
+          "We add secure payment gateways that provide a smooth checkout experience.",
+      },
+      {
+        iconName: "maintenance",
+        title: "Minimal Maintenance Cost",
+        description: "After the optimizations, you can get lower maintenance costs.",
+      },
+    ] as const satisfies readonly ExtendableBenefitItem[],
   },
   whyChoose: {
-    title: "Why Choose Dynamic Dreamz",
-    subtitle:
+    eyebrow: "Why Dynamic Dreamz",
+    heading: "Why Choose Dynamic Dreamz",
+    description:
       "At Dynamic Dreamz, we specialize in WordPress theme customization and web development,<br />ensuring your website is both visually appealing and functional.",
     items: [
       {
         title: "Expert Team",
         description:
           "We have experienced developers who customize solutions to fit your business needs.",
-        icon: "/assets/shopify-theme-customization/why-choose/expert-team.svg",
-        iconAlt: "expert-team",
       },
       {
         title: "Proven Process",
         description:
           "We follow industry best practices to deliver high-quality customization work.",
-        icon: "/assets/shopify-theme-customization/why-choose/proven-process.svg",
-        iconAlt: "Proven Process Icon",
       },
       {
         title: "Ongoing Support",
         description:
           "We provide post-launch support and maintenance for a hassle-free experience.",
-        icon: "/assets/shopify-theme-customization/why-choose/ongoing-support.svg",
-        iconAlt: "customer_support_icon_img",
       },
       {
         title: "Client-Focused Approach",
         description:
           "We always give priority to our customer's business requirements.",
-        icon: "/assets/shopify-theme-customization/why-choose/client-focused-approach.svg",
-        iconAlt: "Client-Focused Approach Icon",
       },
-    ],
+    ] as const,
   },
   portfolio: {
-    title: "Snippets of WordPress Theme Customization Portfolio",
-    subtitle:
+    eyebrow: "Portfolio",
+    heading: "Snippets of WordPress Theme Customization Portfolio",
+    description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
+    ctaLabel: "View our work",
+    ctaHref: "/our-work",
     items: [
       {
         name: "Quite Events",
@@ -352,7 +357,27 @@ export const extendableThemeCustomizationContent = {
         image: "/assets/our-work/projects/nexventur.webp",
         imageAlt: "Nexventur",
       },
-    ],
+      {
+        name: "Awaken Media",
+        category: "WORDPRESS",
+        href: "https://www.awaken.media/",
+        image: "/assets/our-work/projects/awaken-media.webp",
+        imageAlt: "Awaken Media",
+      },
+      {
+        name: "Budget Maids",
+        category: "WORDPRESS",
+        href: "https://www.budget-maids.com/",
+        image: "/assets/our-work/projects/budget-maids.webp",
+        imageAlt: "Budget Maids",
+      },
+    ] as const,
+  },
+  testimonials: {
+    eyebrow: "Client Stories",
+    heading: "Don't Just Take Our Word For It",
+    description:
+      "Hear directly from the clients who have worked with Dynamic Dreamz across Shopify, ecommerce and long-term development engagements.",
   },
   faqs: [
     {
@@ -385,5 +410,5 @@ export const extendableThemeCustomizationContent = {
       answer:
         "Yes, we provide ongoing support, updates, and troubleshooting to keep your website running smoothly.",
     },
-  ],
+  ] as const,
 } as const;

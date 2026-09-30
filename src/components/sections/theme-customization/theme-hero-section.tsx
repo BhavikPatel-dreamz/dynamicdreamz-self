@@ -43,9 +43,9 @@ export type ThemeHeroSectionProps = {
 export function ThemeHeroSection({
   alignItemsEnd = true,
   content,
-  className = "inner-hero-sec theme-customization-service-sec relative overflow-hidden bg-white pt-[190px] pb-0 max-[992px]:pt-[100px]",
+  className = "theme-customize-hero overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[991px]:pt-16",
   containerClassName,
-  descriptionClassName = "mt-6 mb-6 text-lg font-medium leading-[34.2px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
+  descriptionClassName = "mb-0 text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6",
   imageClassName,
   imageStretchesOnDesktop = false,
   mediaClassName,
@@ -53,9 +53,9 @@ export function ThemeHeroSection({
   secondaryDescriptionClassName = "mt-4 mb-6 text-lg font-medium leading-[34.2px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
   tabletImageHalfWidth = false,
   tabletImageTopSpacing = false,
-  textClassName = "inner-hero-content",
-  textColumnClassName,
-  titleClassName = "inline-block font-montreal-medium text-[50px] font-medium leading-[66px] tracking-[0] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]",
+  textClassName = "hero-content",
+  textColumnClassName = "left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1399px]:w-1/2 max-[1199px]:w-full max-[1199px]:pb-8 max-[1199px]:text-center max-[991px]:py-10",
+  titleClassName = "mb-2.5 inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-0.7px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]",
   wrapperClassName,
 }: ThemeHeroSectionProps) {
   return (
@@ -81,31 +81,31 @@ export function ThemeHeroSection({
       descriptionClassName={descriptionClassName}
       imageClassName={
         imageClassName ??
-        cn("w-full", imageStretchesOnDesktop ? "max-w-none" : "max-w-[570px]")
+        cn(
+          "block h-auto w-full object-contain object-bottom",
+          imageStretchesOnDesktop ? "max-w-none" : "max-w-[570px]",
+        )
       }
       mediaClassName={
-        mediaClassName ?? "service-img flex w-full items-end justify-center"
+        mediaClassName ?? "image-block flex w-full items-end pt-[60px]"
       }
       mediaColumnClassName={
         mediaColumnClassName ??
         cn(
-          "right-col flex w-1/2 items-end justify-end max-[992px]:mx-auto max-[767px]:justify-center",
+          "right-col flex w-[43.182%] self-end items-end justify-end max-[1399px]:w-[48%] max-[1199px]:mx-auto max-[1199px]:w-1/2 max-[767px]:w-full",
           tabletImageHalfWidth ? "max-[767px]:w-full" : "max-[767px]:w-full",
           tabletImageTopSpacing && "max-[992px]:mt-[25px]",
         )
       }
       secondaryDescriptionClassName={secondaryDescriptionClassName}
       textClassName={textClassName}
-      textColumnClassName={
-        textColumnClassName ??
-        "left-col w-1/2 pb-14 max-[992px]:w-full max-[992px]:text-center"
-      }
+      textColumnClassName={textColumnClassName}
       titleClassName={titleClassName}
       wrapperClassName={
         wrapperClassName ??
         cn(
-          "inner-wrapper flex flex-wrap justify-between",
-          alignItemsEnd ? "items-start" : "items-end",
+          "wrapper flex flex-wrap justify-between max-[1199px]:flex-col",
+          alignItemsEnd ? "items-end max-[1199px]:items-center" : "items-start",
         )
       }
     />

@@ -1,10 +1,36 @@
+import type {
+  KubioBenefitIconName,
+  KubioFeatureIconName,
+  KubioServiceIconName,
+} from "@/components/sections/kubio-theme-customization/kubio-icons";
+
+export type KubioFeatureItem = {
+  iconName: KubioFeatureIconName;
+  title: string;
+  description: string;
+};
+
+export type KubioServiceItem = {
+  iconName: KubioServiceIconName;
+  title: string;
+  description: string;
+};
+
+export type KubioBenefitItem = {
+  iconName: KubioBenefitIconName;
+  title: string;
+  description: string;
+};
+
 export const kubioThemeCustomizationContent = {
   hero: {
+    eyebrow: ["Wordpress Agency", "Theme Customization"] as const,
     title: "Kubio Theme Customization Service",
     description:
       "The Kubio theme is a powerful, block-based WordPress theme designed for trendy websites. It offers in-depth theme customization options, a user-friendly drag-and-drop page builder, and smooth compatibility with various WordPress plugins. Whether you're running a business, blog, or eCommerce store, our Kubio Theme Customization Services help you personalize your WordPress website to match your brand and business goals.",
-    ctaText: "request a quote",
+    ctaText: "Request a Quote",
     ctaHref: "/request-quote",
+    ctaAriaLabel: "Request a Quote",
     image: {
       src: "/assets/kubio-theme-customization/hero/kubio-theme-customization-service-img.webp",
       alt: "kubio-theme",
@@ -13,7 +39,9 @@ export const kubioThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by Leading Brands",
+    title: "Trusted by \nLeading Brands",
+    heading: "Trusted by \nLeading Brands",
+    slug: "kubio-theme-customization",
     items: [
       {
         name: "Ranavat Logo",
@@ -98,201 +126,178 @@ export const kubioThemeCustomizationContent = {
     ],
   },
   features: {
-    title: "Features Of Kubio Theme",
-    subtitle:
+    eyebrow: "Features",
+    heading: "Features of Kubio Theme",
+    description:
       "The Kubio theme provides a flexible design and advanced theme customization features, making it easy to build a professional website.",
     items: [
       {
+        iconName: "dragAndDrop",
         title: "Drag-and-Drop Builder",
         description:
           "Use a simple drag-and-drop page builder to customize pages effortlessly without coding.",
-        icon: "/assets/neve-theme-customization/features/page-builder-compatibility.svg",
-        iconAlt: "Drag-and-Drop Builder Icon",
       },
       {
+        iconName: "responsive",
         title: "Fully Responsive",
         description:
           "With this fully responsive theme, your website will look great on all devices.",
-        icon: "/assets/generatepress-theme-customization/features/mobile-responsive-design.svg",
-        iconAlt: "Fully Responsive icon",
       },
       {
+        iconName: "woocommerce",
         title: "WooCommerce Ready",
         description:
           "In-built WooCommerce integration to easily create an online store with full eCommerce support.",
-        icon: "/assets/astra-theme-customization/features/woocommerce-ready.svg",
-        iconAlt: "WooCommerce Ready Icon",
       },
       {
+        iconName: "seo",
         title: "SEO-Optimized",
         description:
           "This theme is made with best practices to help your website rank higher.",
-        icon: "/assets/astra-theme-customization/features/seo-optimized.svg",
-        iconAlt: "SEO Optimized Icon",
       },
       {
+        iconName: "templates",
         title: "Pre-Built Templates",
         description: "Use ready-made layouts to speed up the design process.",
-        icon: "/assets/kadence-theme-customization/features/drag-and-drop-header-footer-builder.svg",
-        iconAlt: "Pre-Built Templates Icon",
       },
       {
+        iconName: "fontsAndColors",
         title: "Custom Fonts & Colors",
         description: "Customize typography and color schemes to match your brand.",
-        icon: "/assets/astra-theme-customization/features/highly-customizable.svg",
-        iconAlt: "Highly Customizable Icon",
       },
       {
+        iconName: "lightning",
         title: "Lightweight & Fast",
         description:
           "The Kubio theme is optimized for high performance and quick loading times.",
-        icon: "/assets/astra-theme-customization/features/lightning-fast-performance.svg",
-        iconAlt: "Lightning Fast Performance Icon",
       },
-    ],
-  },
-  benefits: {
-    title: "Benefits of Kubio <br> Theme Customization",
-    subtitle:
-      "Customizing your Kubio theme ensures a unique and professional website tailored to your needs.",
-    items: [
-      {
-        title: "Fully Customizable Store",
-        description: "Design an online shop that aligns with your brand identity.",
-        icon: "/assets/shopify-theme-customization/benefits/fully-customizable-store.svg",
-        iconAlt: "cs_icon_img",
-      },
-      {
-        title: "Responsive Design",
-        description:
-          "Your website will adapt seamlessly to desktops, tablets, and smartphones.",
-        icon: "/assets/shopify-theme-customization/benefits/responsive-design.svg",
-        iconAlt: "responsive_design_icon",
-      },
-      {
-        title: "Unique Brand Identity",
-        description: "Create a one-of-a-kind website that stands out.",
-        icon: "/assets/shopify-theme-customization/benefits/unique-brand-identity.svg",
-        iconAlt: "unique-brand-identity-icon",
-      },
-      {
-        title: "Improved User Experience",
-        description: "Enhance navigation and readability for better engagement.",
-        icon: "/assets/shopify-theme-customization/benefits/improved-user-experience.svg",
-        iconAlt: "User-Friendly Interface",
-      },
-      {
-        title: "Multiple Third-party Plugins",
-        description: "Add advanced features for better functionality.",
-        icon: "/assets/shopify-theme-customization/benefits/multiple-third-party-apps.svg",
-        iconAlt: "Multiple Sales Channels Icon",
-      },
-      {
-        title: "Higher Conversion Rates",
-        description: "A well-optimized design increases leads and sales.",
-        icon: "/assets/shopify-theme-customization/benefits/higher-conversion-rates.svg",
-        iconAlt: "cost-effective-scalability-img",
-      },
-      {
-        title: "Mobile Optimization",
-        description:
-          "Ensure fast loading speeds and smooth performance on mobile devices.",
-        icon: "/assets/shopify-theme-customization/benefits/mobile-optimization.svg",
-        iconAlt: "Mobile Optimization Icon",
-      },
-      {
-        title: "Safe and Secure Payments",
-        description: "Protect customer transactions with secure gateways.",
-        icon: "/assets/shopify-theme-customization/benefits/enhanced-security.svg",
-        iconAlt: "Enhanced Security Icon",
-      },
-      {
-        title: "Minimal Maintenance Cost",
-        description:
-          "Efficient coding and optimization reduce future maintenance expenses.",
-        icon: "/assets/shopify-theme-customization/benefits/zero-maintenance-cost.svg",
-        iconAlt: "Zero Maintenance Cost Image",
-      },
-    ],
+    ] as const satisfies readonly KubioFeatureItem[],
   },
   services: {
-    title: "Our WordPress Theme <br> Customization Services",
-    subtitle:
+    eyebrow: "Our Services",
+    heading: "Our WordPress Theme \nCustomization Services",
+    description:
       "We provide expert Kubio theme customization to ensure your website looks great and functions perfectly.",
     items: [
       {
+        iconName: "installation",
         title: "Theme Installation",
         description: "We install and set up the Kubio theme for a seamless start.",
-        icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
-        iconAlt: "Maintenance and Support Icon",
       },
       {
+        iconName: "design",
         title: "Custom Design and Branding",
         description: "Tailor colors, fonts, and layouts to reflect your brand identity.",
-        icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
-        iconAlt: "Plugin Development Icon",
       },
       {
+        iconName: "responsive",
         title: "Responsive Design",
         description: "Make your site mobile-friendly and optimized for all screen sizes.",
-        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
-        iconAlt: "custom themes icon",
       },
       {
+        iconName: "features",
         title: "Advanced Features Integration",
         description: "Add sliders, forms, animations, and custom elements.",
-        icon: "/assets/shopify-theme-customization/services/advanced-features-integration.svg",
-        iconAlt: "Data Integrity Checks Icon",
       },
       {
+        iconName: "performance",
         title: "Performance Optimization",
         description: "Improve website speed and enhance SEO rankings.",
-        icon: "/assets/shopify-theme-customization/services/performance-optimization.svg",
-        iconAlt: "Compliance with Shopify’s Security Standards Icon",
       },
       {
+        iconName: "support",
         title: "Ongoing Support and Maintenance",
         description: "We provide long-term updates and technical support.",
-        icon: "/assets/shopify-theme-customization/services/ongoing-support-and-maintenance.svg",
-        iconAlt: "Custom App Development Icon",
       },
-    ],
+    ] as const satisfies readonly KubioServiceItem[],
+  },
+  benefits: {
+    eyebrow: "Benefits",
+    heading: "Benefits of Kubio \nTheme Customization",
+    description:
+      "Customizing your Kubio theme ensures a unique and professional website tailored to your needs.",
+    items: [
+      {
+        iconName: "store",
+        title: "Fully Customizable Store",
+        description: "Design an online shop that aligns with your brand identity.",
+      },
+      {
+        iconName: "responsive",
+        title: "Responsive Design",
+        description:
+          "Your website will adapt seamlessly to desktops, tablets, and smartphones.",
+      },
+      {
+        iconName: "brand",
+        title: "Unique Brand Identity",
+        description: "Create a one-of-a-kind website that stands out.",
+      },
+      {
+        iconName: "ux",
+        title: "Improved User Experience",
+        description: "Enhance navigation and readability for better engagement.",
+      },
+      {
+        iconName: "plugins",
+        title: "Multiple Third-party Plugins",
+        description: "Add advanced features for better functionality.",
+      },
+      {
+        iconName: "conversions",
+        title: "Higher Conversion Rates",
+        description: "A well-optimized design increases leads and sales.",
+      },
+      {
+        iconName: "mobile",
+        title: "Mobile Optimization",
+        description:
+          "Ensure fast loading speeds and smooth performance on mobile devices.",
+      },
+      {
+        iconName: "payments",
+        title: "Safe and Secure Payments",
+        description: "Protect customer transactions with secure gateways.",
+      },
+      {
+        iconName: "maintenance",
+        title: "Minimal Maintenance Cost",
+        description:
+          "Efficient coding and optimization reduce future maintenance expenses.",
+      },
+    ] as const satisfies readonly KubioBenefitItem[],
   },
   whyChoose: {
-    title: "Why Choose Dynamic Dreamz",
-    subtitle:
+    eyebrow: "Why Dynamic Dreamz",
+    heading: "Why Choose Dynamic Dreamz",
+    description:
       "At Dynamic Dreamz, we specialize in WordPress customization,<br />ensuring your website is professional, fast, and user-friendly.",
     items: [
       {
         title: "Expert Team",
         description: "Skilled developers with extensive WordPress experience.",
-        icon: "/assets/shopify-theme-customization/why-choose/expert-team.svg",
-        iconAlt: "expert-team",
       },
       {
         title: "Proven Process",
         description: "We follow industry best practices for seamless customization.",
-        icon: "/assets/shopify-theme-customization/why-choose/proven-process.svg",
-        iconAlt: "Proven Process Icon",
       },
       {
         title: "Ongoing Support",
         description: "Dedicated assistance for troubleshooting and updates.",
-        icon: "/assets/shopify-theme-customization/why-choose/ongoing-support.svg",
-        iconAlt: "customer_support_icon_img",
       },
       {
         title: "Client-Focused Approach",
         description: "We prioritize your business goals and requirements.",
-        icon: "/assets/shopify-theme-customization/why-choose/client-focused-approach.svg",
-        iconAlt: "Client-Focused Approach Icon",
       },
-    ],
+    ] as const,
   },
   portfolio: {
-    title: "Snippets of WordPress Theme Customization Portfolio",
-    subtitle:
+    eyebrow: "Portfolio",
+    heading: "Snippets of WordPress Theme Customization Portfolio",
+    description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
+    ctaLabel: "View our work",
+    ctaHref: "/our-work",
     items: [
       {
         name: "Quite Events",
@@ -336,7 +341,27 @@ export const kubioThemeCustomizationContent = {
         image: "/assets/our-work/projects/nexventur.webp",
         imageAlt: "Nexventur",
       },
-    ],
+      {
+        name: "Awaken Media",
+        category: "WORDPRESS",
+        href: "https://www.awaken.media/",
+        image: "/assets/our-work/projects/awaken-media.webp",
+        imageAlt: "Awaken Media",
+      },
+      {
+        name: "Budget Maids",
+        category: "WORDPRESS",
+        href: "https://www.budget-maids.com/",
+        image: "/assets/our-work/projects/budget-maids.webp",
+        imageAlt: "Budget Maids",
+      },
+    ] as const,
+  },
+  testimonials: {
+    eyebrow: "Client Stories",
+    heading: "Don't Just Take Our Word For It",
+    description:
+      "Hear directly from the clients who have worked with Dynamic Dreamz across Shopify, ecommerce and long-term development engagements.",
   },
   faqs: [
     {
@@ -357,12 +382,12 @@ export const kubioThemeCustomizationContent = {
     {
       question: "Can I update the theme after customization?",
       answer:
-        "Yes, we implement changes following WordPress best practices so that future updates won’t affect your site.",
+        "Yes, we implement changes following WordPress best practices so that future updates won't affect your site.",
     },
     {
       question: "Do you provide post-launch support?",
       answer:
         "Yes, we offer ongoing support and maintenance to keep your site running smoothly.",
     },
-  ],
+  ] as const,
 } as const;

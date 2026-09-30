@@ -5018,14 +5018,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Extendable Theme Customization (`/extendable-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Extendable theme customization, responsive WooCommerce store design, drag-and-drop builder integration, multiple header/footer styles, color & typography customization, speed optimization, and third-party plugin integration.
 Decision stage: partner selection, Extendable theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Extendable theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 6 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Extendable theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards, client testimonial video stories carousel, 6 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -5043,7 +5043,8 @@ Dedicated commercial landing page presenting Dynamic Dreamz Extendable theme cus
 - 9 core benefits of Extendable customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
 - 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
 - 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- 8 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids) with centered "View our work" CTA button linking to `/our-work`.
+- Client stories video testimonial carousel with verified customer ratings.
 - 6 detailed FAQs addressing cost, customization timeline, third-party plugins, mobile responsiveness, theme updates after customization, and ongoing maintenance.
 
 ### Structured gap analysis
@@ -5072,20 +5073,20 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/extendable-theme-customization`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 140 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-30): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/extendable-theme-customization`; source/build URL guard passes.
+- Checks completed (2026-09-30): live and local rendered page comparison, View Page Source, metadata limits (Title: 53 chars, Description: 154 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Kubio Theme Customization (`/kubio-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Kubio theme customization, responsive WooCommerce store design, block-based drag-and-drop page builder integration, pre-built template customization, custom typography & color palettes, speed optimization, and third-party plugin integration.
 Decision stage: partner selection, Kubio theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Kubio theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 5 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Kubio theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards, client testimonial video stories carousel, 5 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -5103,7 +5104,8 @@ Dedicated commercial landing page presenting Dynamic Dreamz Kubio theme customiz
 - 9 core benefits of Kubio customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
 - 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
 - 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- 8 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids) with centered "View our work" CTA button linking to `/our-work`.
+- Client stories video testimonial carousel with verified customer ratings.
 - 5 detailed FAQs addressing customization timeline, third-party plugins, mobile responsiveness, theme updates after customization, and post-launch support.
 
 ### Structured gap analysis
@@ -5132,8 +5134,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/kubio-theme-customization`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 49 chars, Description: 136 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-09-30): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/kubio-theme-customization`; source/build URL guard passes.
+- Checks completed (2026-09-30): live and local rendered page comparison, View Page Source, metadata limits (Title: 49 chars, Description: 136 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
 
 ## Impulse Theme Customization (`/impulse-theme-customization`)
 
