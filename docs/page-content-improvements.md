@@ -752,16 +752,17 @@ Primary SEO intent: iOS app development services, custom iOS app development, na
 ## Cross-Platform App Development (`/cross-platform-app-development`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-19
-Primary SEO intent: cross-platform app development services, custom cross-platform app development, React Native app development, Flutter app development, hire cross-platform developers, cross-platform app development company.
+Last reviewed: 2026-09-29
+Primary SEO intent: cross-platform app development services, custom cross-platform app development, React Native app development, Flutter app development, cross-platform app development company, cross-platform vs native app development.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | `Cross-Platform App Development Service India \| Build for iOS & Android` (70 chars) | `Cross-Platform App Development Services \| Dynamic Dreamz` (56 chars) | Shortened title to fit strict 15-60 char budget and eliminate SERP truncation while maintaining core keyword targeting. | High | implemented in metadata |
-| Meta description | `We build robust, high-performance apps that work seamlessly across iOS, Android, and other platforms. Partner with us to deliver a consistent user experience and expand your audience.` (185 chars) | `We build robust, high-performance apps that work seamlessly across iOS and Android. Partner with us to deliver consistent cross-platform user experiences.` (153 chars) | Fits 70-160 character budget while preserving all key value points. | High | implemented in metadata |
-| Portfolio card title (Bombay Shirt) | `Bombay Shirt Comapny` (typo on live page) | `Bombay Shirt Company` | Fixes typo in client brand name. | Low | deferred pending exact visible-copy approval |
+| Meta title | `Cross-Platform App Development Company \| Dynamic Dreamz` (55 chars) | No change — matches live | Live title is already within the 15-60 char build budget and names the company for brand + non-brand SERP display. | High | implemented in metadata |
+| Meta description | `Cross-platform app development with React Native and Flutterfor custom business, utility, consumer and ecommerce appsacross iOS and Android.` (live, with two broken word joins and 156 chars) | `Cross-platform app development with React Native and Flutter for custom business, utility, consumer and ecommerce apps across iOS and Android.` (142 chars) | Live description has missing spaces in `Flutterfor` and `appsacross`. Local metadata fixes the spacing and lands at 142 chars, inside the 70-160 char budget. Metadata-only; no visible page copy changed. | High | implemented in metadata |
+| Portfolio card title (Bombay Shirt) | `Bombay Shirt Comapny` (typo on live page) | `Bombay Shirt Company` | Fixes a visible typo in a client brand name. Schema `imageAlt` currently mirrors the typo. | Low | suggested — awaiting exact visible-copy approval |
+| FAQ question 4 | `Can a cross-platform app use native iOS or Android features? +` (stray trailing `+` on live page) | `Can a cross-platform app use native iOS or Android features?` | Trailing `+` is a leftover toggle character. `crossPlatformAppDevelopmentSchemaFaqs` already strips it, so the rendered accordion and the structured data currently disagree. | Low | suggested — awaiting exact visible-copy approval |
 | VideoObject structured data | Legacy site had no schema for 11 client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video rich results in Google without altering visible layout. | High | implemented in schema |
-| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with `OfferCatalog` (8 service items) and `FAQPage` (8 questions/answers). | Enhances AEO/GEO indexing and FAQ rich snippets. | High | implemented in schema |
+| Service & FAQ structured data | Legacy site lacked comprehensive Service and FAQPage schema. | Emitted `Service` with 12 offer items (6 app categories + 6 lifecycle services), `FAQPage` (8 questions/answers), and a 3-level `BreadcrumbList` (Home → Mobile App Development → Cross-Platform App Development). | Enhances AEO/GEO indexing, FAQ rich snippets, and parent/child service hierarchy. | High | implemented in schema |
 
 ## Shopify Mobile App Development (`/shopify-mobile-app-development`)
 

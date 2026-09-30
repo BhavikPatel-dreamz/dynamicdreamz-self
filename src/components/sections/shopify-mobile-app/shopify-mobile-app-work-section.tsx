@@ -12,7 +12,14 @@ export type MobileAppWorkItem = {
   category?: string;
   image: string;
   imageAlt: string;
+  href?: string | null;
   appLinks?: readonly PortfolioAppLink[];
+};
+
+export type MobileAppWorkSecondaryCta = {
+  href: string;
+  label: string;
+  ariaLabel?: string;
 };
 
 export type MobileAppWorkContent = {
@@ -23,6 +30,7 @@ export type MobileAppWorkContent = {
   ctaHref: string;
   ctaLabel: string;
   ctaAriaLabel?: string;
+  secondaryCta?: MobileAppWorkSecondaryCta;
 };
 
 export type ShopifyMobileAppWorkSectionProps = {
@@ -44,24 +52,25 @@ export function ShopifyMobileAppWorkSection({
         className,
       )}
     >
-      <Container className="min-[1400px]:max-w-[1408px] px-[15px]">
+      <Container>
         <SplitSectionHeading
           variant="services"
           eyebrow={content.eyebrow}
           heading={content.heading}
           description={content.description}
-          className="mb-[50px] max-[767px]:mb-[30px]"
+          className="mb-10 max-[767px]:mb-[30px]"
         />
 
         <div className="our-work-main flex flex-wrap justify-start gap-x-[15px] gap-y-[42px] max-[991px]:gap-y-[30px]">
           {content.items.map((project) => (
             <div
               key={project.name}
-              className="our_work_team apps w-[calc(25%_-_11.25px)] max-[1199px]:w-[calc(33.333%_-_10px)] max-[991px]:w-[calc(50%_-_10px)] max-[575px]:w-[calc(50%_-_8px)]"
+              className="our_work_team apps w-[calc(25%_-_12px)] max-[1199px]:w-[calc(33.333%_-_10px)] max-[991px]:w-[calc(50%_-_10px)] max-[575px]:w-[calc(50%_-_8px)]"
             >
               <PortfolioProjectCard
                 name={project.name}
                 category={project.category}
+                href={project.href}
                 image={project.image}
                 imageAlt={project.imageAlt}
                 appLinks={project.appLinks}
@@ -73,7 +82,7 @@ export function ShopifyMobileAppWorkSection({
           ))}
         </div>
 
-        <div className="btns_group mt-[50px] flex justify-center">
+        <div className="btns_group mt-[50px] flex flex-wrap items-center justify-center gap-[15px] max-[575px]:flex-col max-[575px]:items-stretch max-[575px]:gap-0 [&>*]:max-[575px]:w-full">
           <ButtonLink
             href={content.ctaHref}
             variant="primary"
@@ -81,6 +90,15 @@ export function ShopifyMobileAppWorkSection({
           >
             {content.ctaLabel}
           </ButtonLink>
+          {content.secondaryCta ? (
+            <ButtonLink
+              href={content.secondaryCta.href}
+              variant="outline"
+              aria-label={content.secondaryCta.ariaLabel}
+            >
+              {content.secondaryCta.label}
+            </ButtonLink>
+          ) : null}
         </div>
       </Container>
     </section>

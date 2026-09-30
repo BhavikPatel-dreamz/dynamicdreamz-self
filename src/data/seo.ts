@@ -2798,9 +2798,9 @@ export const pageSeo = {
   },
   crossPlatformAppDevelopment: {
     path: "/cross-platform-app-development",
-    title: "Cross-Platform App Development Services | Dynamic Dreamz",
+    title: "Cross-Platform App Development Company | Dynamic Dreamz",
     description:
-      "We build robust, high-performance apps that work seamlessly across iOS and Android. Partner with us to deliver consistent cross-platform user experiences.",
+      "Cross-platform app development with React Native and Flutter for custom business, utility, consumer and ecommerce apps across iOS and Android.",
     keywords: [
       "cross platform app development",
       "cross platform app development services",
@@ -2809,14 +2809,14 @@ export const pageSeo = {
       "Flutter app development",
       "Dynamic Dreamz",
     ],
-    openGraphType: "website",
-    publishedTime: "2024-07-01T00:00:00+00:00",
-    modifiedTime: "2026-08-19T00:00:00+05:30",
+    openGraphType: "article",
+    publishedTime: "2024-05-02T09:34:05+00:00",
+    modifiedTime: "2026-09-29T00:00:00+05:30",
     image: {
-      path: "/assets/og/homepage.png",
+      path: "/assets/og/cross-platform-app-development.png",
       width: 1200,
       height: 630,
-      alt: "Cross-Platform App Development Services | Dynamic Dreamz",
+      alt: "Cross-Platform App Development Company | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",

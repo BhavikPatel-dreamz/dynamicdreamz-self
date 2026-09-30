@@ -109,6 +109,7 @@ export function MobileApplicationDevelopmentPage() {
         }}
         heading={mobileAppBrandsCopy.heading}
         items={mobileAppBrands}
+        density="flexible"
       />
 
       {/* 3. More Than Ecommerce Apps (Workflow Architecture) */}

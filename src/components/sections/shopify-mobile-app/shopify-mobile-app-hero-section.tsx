@@ -52,7 +52,7 @@ export function ShopifyMobileAppHeroSection({
   content,
 }: ShopifyMobileAppHeroSectionProps) {
   return (
-    <section className="hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] pb-[55px] max-[991px]:pt-16 max-[991px]:pb-10">
+    <section className="hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[991px]:pt-16">
       <Container className="max-w-[1408px] px-[15px]">
         <div className="wrapper flex items-center justify-between max-[1199px]:flex-col">
           <div className="left-col z-1 w-[53%] min-[1400px]:w-[51%] py-[60px] max-[1199px]:w-full max-[1199px]:py-10 max-[1199px]:text-center max-[767px]:py-8">

@@ -25,6 +25,12 @@ type ClientLogoSliderProps = {
   items: readonly ClientLogoSliderItem[];
   variant: "industry" | "industryCompact" | "resources";
   compact?: boolean;
+  /**
+   * Rail height preset used by live flexible-css pages, which keep a 70px
+   * logo rail (60px ≤767px) instead of the 84px services-page rail.
+   * Defaults to the height implied by `variant`/`compact`.
+   */
+  railHeight?: "flexible";
   slides?: ClientLogoSliderSlides;
   autoplayStartDelayMs?: number;
 };
@@ -34,10 +40,14 @@ export function ClientLogoSlider({
   items,
   variant,
   compact = false,
+  railHeight,
   slides,
   autoplayStartDelayMs = 0,
 }: ClientLogoSliderProps) {
   const isCompactSlider = variant === "industryCompact" || compact;
+  // Live `.our-client-sec .wrapper` is 70px (60px ≤767px) on flexible-css pages.
+  const usesFlexibleRail = railHeight === "flexible" && variant !== "resources";
+  const hasCompactRail = isCompactSlider || usesFlexibleRail;
   const [reducedMotion, setReducedMotion] = useState(false);
   const [autoplayReady, setAutoplayReady] = useState(autoplayStartDelayMs === 0);
   const [slidesToShow, setSlidesToShow] = useState(
@@ -116,9 +126,14 @@ export function ClientLogoSlider({
       <Slider
         {...settings}
         className={cn(
-          "h-(--client-logo-slider-height) [--client-logo-slider-height:84px] [&_.slick-list]:h-(--client-logo-slider-height) [&_.slick-list]:cursor-grab [&_.slick-list]:overflow-hidden [&_.slick-list:active]:cursor-grabbing [&_.slick-slide]:h-(--client-logo-slider-height) [&_.slick-slide>div]:h-(--client-logo-slider-height) [&_.slick-track]:h-(--client-logo-slider-height) motion-reduce:[&_.slick-track]:!duration-[1ms]",
-          isCompactSlider && "[--client-logo-slider-height:70px] max-[767px]:[--client-logo-slider-height:60px]",
-          variant === "industry" && "max-[767px]:[--client-logo-slider-height:60px]",
+          "h-(--client-logo-slider-height) [&_.slick-list]:h-(--client-logo-slider-height) [&_.slick-list]:cursor-grab [&_.slick-list]:overflow-hidden [&_.slick-list:active]:cursor-grabbing [&_.slick-slide]:h-(--client-logo-slider-height) [&_.slick-slide>div]:h-(--client-logo-slider-height) [&_.slick-track]:h-(--client-logo-slider-height) motion-reduce:[&_.slick-track]:!duration-[1ms]",
+          // Live rail heights: 84px on services pages, 70px on flexible-css pages
+          // (60px ≤767px). `cn` is a plain join, so the preset is exclusive.
+          hasCompactRail
+            ? "[--client-logo-slider-height:70px] max-[767px]:[--client-logo-slider-height:60px]"
+            : variant === "industry"
+              ? "[--client-logo-slider-height:84px] max-[767px]:[--client-logo-slider-height:60px]"
+              : "[--client-logo-slider-height:84px]",
         )}
         key={`${variant}-${slidesToShow}-${reducedMotion ? "reduced" : "motion"}-${autoplayReady ? "ready" : "waiting"}-${compact ? "compact" : "standard"}`}
       >
@@ -130,7 +145,7 @@ export function ClientLogoSlider({
                 variant === "resources"
                   ? "px-7 max-[768px]:px-[22px] [&_img]:max-h-[58px]"
                   : "px-5 max-[768px]:px-2.5 [&_img]:max-h-[70px]",
-                isCompactSlider && variant !== "resources" && "[&_img]:max-h-(--client-logo-slider-height)",
+                hasCompactRail && variant !== "resources" && "[&_img]:max-h-(--client-logo-slider-height)",
               )}
             >
               {logo.href ? (

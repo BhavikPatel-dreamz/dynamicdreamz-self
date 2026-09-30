@@ -4058,73 +4058,88 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 ## Cross-Platform App Development (`/cross-platform-app-development`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-19
-Owner: SEO, mobile app development specialists, leadership, and sales operations
-Primary audience: Web design agencies, ecommerce merchants, and businesses seeking custom cross-platform mobile application development across iOS and Android using Flutter and React Native.
-Decision stage: agency partner evaluation, technical capability assessment, cross-platform developer hiring, quote request
+Status: implemented and verified; live-visible content preserved and remigrated to 12-section architecture
+Last reviewed: 2026-09-29
+Owner: SEO, cross-platform mobile app specialists, engineering, leadership, and sales operations
+Primary audience: Web design agencies, ecommerce merchants, and businesses seeking custom cross-platform mobile application development across iOS and Android using React Native and Flutter.
+Decision stage: agency partner evaluation, technical capability assessment, framework selection, engagement model selection, quote request
 
 ### Page role
 
-Dedicated commercial service landing page targeting queries for "Cross Platform App Development Services", "Custom Cross Platform App Development", and multi-platform mobile solutions. Highlights 12 client brand trust logos, 8 structured service capabilities (Flutter App Development, React Native App Development, Prototyping & Wireframes, Backend Development, App Testing & QA, Maintenance & Support, Existing App Customization, Shopify App Development), 4 featured real-world cross-platform app projects (Bombay Shirt Company, Llama – An App by CWRB, Renee Cosmetics, Supertails) with React Native and Flutter platform badges and store links, 11 client video reviews, 8 buyer FAQs, and quote request banners.
+Dedicated commercial service landing page for cross-platform (React Native and Flutter) mobile app development. It is the framework-specific sibling of `/mobile-application-development` and targets queries for "Cross Platform App Development Services", "Custom Cross Platform App Development", "React Native development", and "Flutter development". The page presents the full 12-section live architecture: hero, brand trust strip, workflow architecture, app categories, lifecycle services, architecture and technology, delivery process, portfolio, engagement and pricing, institutional proof, client stories, and FAQ.
 
 ### Target prompts
 
 - Who is the top cross-platform app development company in India?
-- How much does custom cross-platform app development cost using Flutter or React Native?
+- How much does custom cross-platform app development cost using React Native or Flutter?
 - Can Dynamic Dreamz build mobile apps for both iOS and Android from a single codebase?
 - What are the differences and benefits of cross-platform app development vs native development?
 - Can Dynamic Dreamz build custom cross-platform mobile apps for Shopify stores?
+- Does Dynamic Dreamz maintain and update cross-platform apps after launch?
 
 ### Current strengths and available evidence
 
-- Server-rendered split hero with H1 `Custom Cross Platform App Development Services` and rotating review badge.
-- 12 verified brand partner logos with infinite marquee scrolling.
-- 8 structured service offerings with custom and canonical SVG icons.
-- 4 featured real-world app portfolio projects with React Native and Flutter badges and verified store links.
-- 11 client video testimonials with modal playback.
-- 8 comprehensive buyer FAQs covering cross-platform definition, business benefits, frameworks used, native vs cross-platform comparison, third-party APIs, performance optimization, data security, and ongoing maintenance.
-- Complete structured data graph emitting Service, OfferCatalog (8 service offers), FAQPage (8 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
-- Zero duplicate assets across `public/assets/`, reusing canonical assets and hosting unique service/platform SVGs locally.
+- Server-rendered hero with H1 `Custom Cross-Platform App Development Services`, 2006 founding heritage, Shopify Platinum Partner and review credentials, and dual CTA flow to `/request-quote` and `#our_work`.
+- 12 verified brand partner logos in an autoplaying trust rail.
+- Workflow architecture section (`Build the App Around the Workflow—Not Around a Fixed Template.`) differentiating custom business logic from template products.
+- 6 app categories (Utility and Business, Consumer, Booking and Service, Marketplace and Platform, Ecommerce, Shopify Store to Mobile App) and 6 lifecycle services (Product Discovery and UI/UX, React Native, Flutter, Backend and APIs, Native Modules and SDK Integration, QA and Store Updates) with custom inline SVG icons.
+- Architecture and technology section naming React Native and Flutter alongside a native-versus-cross-platform framing decision.
+- 6-step numbered delivery process from product definition to release and ongoing iteration.
+- Portfolio case studies with React Native and Flutter platform badges, hover overlays, and direct store links.
+- 3 transparent delivery models (Project-Based custom quote, Dedicated Developer or Team, Post-Launch) with bullet-level scope.
+- Institutional proof points: 20+ years experience, 150+ in-house experts, 5,000+ delivered projects, 2,500+ verified 5-star reviews.
+- 11 verified video client testimonials in an interactive carousel.
+- 8 detailed buyer FAQs covering cross-platform definition, native-versus-cross-platform selection, React Native and Flutter, third-party APIs, security, performance, and ongoing maintenance.
+- Complete structured data graph emitting Organization, WebSite, WebPage, Service, BreadcrumbList, FAQPage, and 11 VideoObject testimonial nodes.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (8 offers), FAQPage (8 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
-| P0 | implemented | Local assets | Service icons, platform marks, and brand logos must be locally hosted | Save 2 unique service SVGs and 2 platform SVGs under `public/assets/`, reuse canonical assets across the codebase | Verified locally with 0 runtime external dependencies and 0 duplicates |
-| P1 | deferred | Content expansion | Live heading in portfolio contains typo ("Comapny" for Bombay Shirt Company) | Record proposed fix in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
+| P0 | implemented | Route & Architecture | Page still used a pre-redesign 7-section layout with 8 generic service cards and a bottom CTA banner | Rebuilt all 12 sections to the current live architecture using App Router server components, typed content modules, and reusable section primitives | Verified against live DOM, computed styles, and 12-section height comparison at 1440x900 |
+| P0 | implemented | Structured Data | Schema did not reflect the new service catalog or parent hierarchy | Emit `Service` with 12 offers, `FAQPage` with 8 questions, 3-level `BreadcrumbList` (Home → Mobile App Development → Cross-Platform App Development), and 11 testimonial `VideoObject` nodes | Verified in rendered JSON-LD output |
+| P0 | implemented | Metadata | Title and description did not target cross-platform framework intent | Title `Cross-Platform App Development Company | Dynamic Dreamz` (55 chars); description rewritten to 142 chars naming React Native, Flutter, and iOS/Android scope | Verified in rendered head; both within build length guards |
+| P0 | implemented | Asset Deduplication | New icons and OG asset required for the expanded design | Reuse the canonical `mobile-app-icons` set after SHA-256 and SVG-path comparison; add only 4 genuinely new glyphs; generate a route-specific OG image | Full-tree audit: 1,758 assets, 0 exact/visual/pixel duplicate groups |
+| P0 | implemented | Visual Parity | Shared heading, pricing, portfolio, and brand-rail primitives drifted from live flexible-css pages | Correct `.eyebrow` inline-flex baseline behavior, section-heading 14px/24px strut, 70px brand rail, pricing card metrics, and portfolio grid width | Sections matching live height exactly went from 2 to 4 of 12; total section-height drift reduced from −21px to +21px on an 8,864px document |
+| P1 | suggested | Content Polish | Live portfolio card title contains a typo (`Bombay Shirt Comapny`) | Correct to `Bombay Shirt Company` once the project owner approves that exact visible change | Queued in `docs/page-content-improvements.md`; live UI left unchanged |
+| P1 | suggested | Content Polish | Live FAQ question 4 renders with a stray trailing `+` (`Can a cross-platform app use native iOS or Android features? +`) | Strip the trailing `+` after explicit copy approval; schema already emits the clean question text via `crossPlatformAppDevelopmentSchemaFaqs` | Queued in `docs/page-content-improvements.md` |
 
 ### Suggested answer copy
 
-Deferred under the live-UI preservation gate. The current server-rendered hero and service descriptions establish Dynamic Dreamz cross-platform app development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
+Exact visible copy strictly matches the live site, including the deliberately preserved framework-selection framing, delivery-model pricing language, and proof counters. Visible copy corrections (the `Bombay Shirt Comapny` typo and the trailing `+` on FAQ question 4) remain queued as suggested improvements and were not applied during migration.
 
 ### Entity, evidence, and authorship actions
 
-- Position Dynamic Dreamz as an established mobile and web development partner founded in 2006 with 150+ specialists and 5000+ completed projects.
+- Position Dynamic Dreamz as an established cross-platform and native mobile development partner founded in 2006 with 150+ specialists and 5,000+ completed projects.
 - Attribute client video testimonials directly to authentic brand founders.
+- Keep `Service` entity naming and `serviceType` consistent with the visible React Native and Flutter capability statements; no unsupported framework or performance claims.
 
 ### Internal-link and conversion actions
 
 - Maintain slashless `/cross-platform-app-development` navigation across marketing pages and service menus.
-- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
+- Primary conversion actions route to `/request-quote`; secondary hero anchor routes to `#our_work`; portfolio CTA routes to `/our-work`; about link routes to `/about-us`.
+- Preserve the parent relationship to `/mobile-application-development` in the breadcrumb graph so framework and platform-intent pages reinforce each other.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service with 8 Offer items, 8 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Emit `Service` with 12 Offer items (6 app categories + 6 lifecycle services), `FAQPage` with 8 Question/Answer pairs, 11 `VideoObject` testimonials, `BreadcrumbList`, `Organization`, and `WebSite`.
+- Set explicit freshness `datePublished` to `2024-05-02T09:34:05+00:00` and `dateModified` to `2026-09-29T00:00:00+05:30`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
 
-- SEO tracks queries for "cross-platform app development services", "custom cross-platform app development", "Flutter app development", "React Native app development", and "Shopify mobile app development".
-- Analytics tracks form submissions on `/request-quote` originating from `/cross-platform-app-development`.
+- SEO tracks queries for "cross-platform app development services", "custom cross-platform app development", "React Native app development", "Flutter app development", and "cross-platform vs native app development".
+- Analytics tracks form submissions on `/request-quote` originating from `/cross-platform-app-development`, segmented by hero CTA and section CTA.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/cross-platform-app-development`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 56 chars, Description: 153 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy check passed (0 trailing slashes); canonical, Open Graph, and JSON-LD URLs all serialize slashless.
+- Component content boundary check passed (0 inline copy violations across 522 source files).
+- Asset duplicate check passed (0 duplicate groups across 1,758 assets).
+- Metadata verified in rendered output: Title 55 chars, Description 142 chars, both inside the build guards.
+- Responsive layouts compared against live at 1440x900, 768x1024, and 390x844 with pixel-diff analysis; residual difference is font rasterization, not layout shift.
+- Remaining visual residuals (documented, non-blocking): shared h2 line-height utility is `48.475px` vs live computed `49px` (~1px per two-line heading, used in 64 places repo-wide), and live's inline-block portfolio image baseline gap is intentionally not reproduced.
+- AOS `fade-up` scroll reveal on live headings is not implemented locally, to avoid unnecessary client JavaScript; default rendering is identical.
 
 ## Shopify Mobile App Development (`/shopify-mobile-app-development`)
 

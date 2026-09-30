@@ -61,7 +61,7 @@ export function AiEmpoweredDeliverySection({
                 ) : null}
                 <h2
                   className={cn(
-                    "mb-4 font-montreal-medium text-[35px] font-medium leading-[1.2] tracking-normal max-[992px]:text-[30px] max-[767px]:text-2xl",
+                    "mb-3 font-montreal-medium text-[35px] font-normal leading-[1.2] tracking-normal max-[992px]:text-[30px] max-[767px]:text-2xl",
                     isDark ? "text-white" : "text-ink",
                   )}
                 >
@@ -69,14 +69,16 @@ export function AiEmpoweredDeliverySection({
                 </h2>
                 <p
                   className={cn(
-                    "font-sans text-base font-medium leading-7 max-[1199px]:text-sm max-[1199px]:leading-6",
+                    "font-sans text-sm font-normal leading-6",
+                    // Live only keeps the 15px gap when a CTA button follows.
+                    content.cta && "mb-[15px]",
                     isDark ? "text-white" : "text-[#535353]",
                   )}
                 >
                   {content.description}
                 </p>
                 {content.cta ? (
-                  <div className="btn-wrap mt-8">
+                  <div className="btn-wrap">
                     <ButtonLink href={content.cta.href} variant="primary">
                       {content.cta.label}
                     </ButtonLink>
@@ -99,7 +101,7 @@ export function AiEmpoweredDeliverySection({
                   >
                     <span
                       className={cn(
-                        "mb-[5px] block font-montserrat text-xs font-semibold uppercase",
+                        "mb-[5px] block font-montserrat text-sm font-semibold uppercase leading-6",
                         isDark ? "text-white" : "text-brand-red",
                       )}
                     >
@@ -107,7 +109,7 @@ export function AiEmpoweredDeliverySection({
                     </span>
                     <p
                       className={cn(
-                        "font-sans text-sm font-medium leading-normal",
+                        "font-sans text-sm font-normal leading-6",
                         isDark ? "text-white/[0.58]" : "text-[#535353]",
                       )}
                     >

@@ -38,20 +38,22 @@ export function ShopifyMigrationNumberedGridSection({
     >
       <Container>
         {(eyebrow || heading || description) && (
-          <div className="section_title_with_eyebrow mb-[50px] flex items-end justify-between gap-6 max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:items-start">
-            <div className="title max-w-[620px]">
+          <div className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-[30px]">
+            <div className="title w-[44%] text-[14px] leading-6 max-[991px]:w-full">
               {eyebrow && (
-                <Eyebrow className="mb-2.5 text-[#ad5151]" lineThickness="thin">
+                // Live `.eyebrow` is `display: inline-flex`, preserving the
+                // inline baseline gap; live margin-bottom is 16px.
+                <Eyebrow as="span" className="mb-4 text-[#ad5151]" lineThickness="thin">
                   {eyebrow}
                 </Eyebrow>
               )}
-              <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
+              <h2 className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[991px]:mb-2.5 max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
                 {formatBrText(heading, "max-[767px]:hidden")}
               </h2>
             </div>
             {description && (
-              <div className="section_text max-w-[540px]">
-                <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[991px]:text-sm max-[991px]:leading-6">
+              <div className="section_text w-[48.3%] max-[1199px]:w-1/2 max-[991px]:w-full">
+                <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">
                   {description}
                 </p>
               </div>
@@ -73,10 +75,10 @@ export function ShopifyMigrationNumberedGridSection({
                 >
                   {item.number}
                 </span>
-                <h3 className="mb-2.5 font-montreal-medium text-[22px] font-medium leading-[132%] text-[#282828] max-[1399px]:text-lg max-[1399px]:leading-[26px] max-[991px]:text-base max-[991px]:leading-6">
+                <h3 className="mb-2.5 font-montreal-medium text-[22px] font-normal leading-[132%] text-[#282828] max-[1399px]:text-lg max-[1399px]:leading-[26px] max-[991px]:text-base max-[991px]:leading-6">
                   {item.title}
                 </h3>
-                <p className="font-sans text-sm font-medium leading-6 text-[#535353] md:text-base md:leading-7">
+                <p className="font-sans text-sm font-normal leading-6 text-[#535353]">
                   {item.description}
                 </p>
               </div>

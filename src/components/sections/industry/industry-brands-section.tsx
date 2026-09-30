@@ -19,7 +19,13 @@ type IndustryBrandsSectionProps = {
   heading?: string;
   items?: readonly ClientLogoSliderItem[];
   mobileSpacing?: "standard" | "spacious";
-  density?: "standard" | "compact";
+  /**
+   * Logo rail density.
+   * - `standard`: 84px rail, 31% heading column (legacy services pages).
+   * - `compact`: 70px rail, one-third heading column.
+   * - `flexible`: 70px rail, 30% heading column (live flexible-css pages).
+   */
+  density?: "standard" | "compact" | "flexible";
   className?: string;
   showHeading?: boolean;
   sliderSlides?: ClientLogoSliderSlides;
@@ -39,6 +45,8 @@ export function IndustryBrandsSection({
 }: IndustryBrandsSectionProps) {
   const hasSpaciousMobileLayout = mobileSpacing === "spacious";
   const isCompact = density === "compact";
+  // Live flexible-css pages use a 70px rail with a 30% heading column.
+  const isFlexible = density === "flexible";
   const ariaLabel =
     content.brands?.ariaLabel ??
     content.ariaLabel ??
@@ -59,13 +67,18 @@ export function IndustryBrandsSection({
         {showHeading ? (
           <div
             className={cn(
-              "left-col w-[31%] pl-[calc((100%-1140px)/2)] max-[1199px]:w-[30%] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991.98px]:w-full max-[991.98px]:p-0 max-[991.98px]:text-center",
-              !isCompact && "min-[1400px]:pl-[calc((100%-1334px)/2)]",
+              "left-col pl-[calc((100%-1140px)/2)] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991.98px]:w-full max-[991.98px]:p-0 max-[991.98px]:text-center",
+              // `cn` is a plain join, so width/padding presets stay mutually exclusive.
               isCompact
-                ? "w-1/3 pl-[calc((100%-1140px)/2)] min-[1400px]:pl-[calc((100%-1320px)/2)] max-[991.98px]:mb-5 max-[767px]:mb-[15px]"
-                : hasSpaciousMobileLayout
-                  ? "max-[991.98px]:mb-10"
-                  : "max-[991.98px]:mb-5",
+                ? "w-1/3 min-[1400px]:pl-[calc((100%-1320px)/2)] max-[991.98px]:mb-5 max-[767px]:mb-[15px]"
+                : isFlexible
+                  ? "w-[30%] max-[1199px]:w-[30%] min-[1400px]:pl-[calc((100%-1320px)/2)] max-[991.98px]:mb-5 max-[767px]:mb-[15px]"
+                  : cn(
+                      "w-[31%] max-[1199px]:w-[30%] min-[1400px]:pl-[calc((100%-1334px)/2)]",
+                      hasSpaciousMobileLayout
+                        ? "max-[991.98px]:mb-10"
+                        : "max-[991.98px]:mb-5",
+                    ),
             )}
           >
             <h2
@@ -87,9 +100,12 @@ export function IndustryBrandsSection({
             "right-col max-[991.98px]:w-full",
             isCompact
               ? "w-2/3 max-[1199px]:w-[70%]"
-              : showHeading
-                ? "w-[69%] max-[1199px]:w-[70%]"
-                : "w-full",
+              : isFlexible
+                ? // Live `.right-col` is 69% (70% ≤1199px), matching the 30% heading column.
+                  "w-[69%] max-[1199px]:w-[70%]"
+                : showHeading
+                  ? "w-[69%] max-[1199px]:w-[70%]"
+                  : "w-full",
           )}
         >
           <ClientLogoSlider
@@ -97,6 +113,7 @@ export function IndustryBrandsSection({
             compact={isCompact}
             items={items}
             autoplayStartDelayMs={sliderAutoplayStartDelayMs}
+            railHeight={isFlexible ? "flexible" : undefined}
             slides={sliderSlides}
             variant={isCompact ? "industryCompact" : "industry"}
           />

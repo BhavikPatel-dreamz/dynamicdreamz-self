@@ -91,15 +91,28 @@ export function SplitSectionHeading({
       <div
         className={cn(
           titleColumnClassName ??
-            (services ? "w-[48%]" : portfolio ? "w-[50%]" : "w-[46%]"),
-          "max-[992px]:w-full",
+            // Live `.section_title_with_eyebrow .title` is 44% wide until 991px.
+            (services || leftAligned
+              ? "w-[44%]"
+              : portfolio
+                ? "w-[50%]"
+                : "w-[46%]"),
+          // Live `.title` is a 14px/24px block. Its line box is the strut the
+          // inline-flex `.eyebrow` aligns to, which produces the live 4px gap
+          // between the title box and the eyebrow.
+          "text-[14px] leading-6",
+          "max-[991px]:w-full",
           titleClassName,
         )}
       >
         {eyebrow ? (
           <Eyebrow
             align={portfolio ? "responsive-center" : "start"}
-            className={cn("mb-5", eyebrowClassName)}
+            // Live `.eyebrow` is `display: inline-flex`, which keeps the inline
+            // baseline gap that the live heading block measures (title 4185px →
+            // eyebrow 4189px at 1440px). Live margin-bottom is 16px.
+            as="span"
+            className={cn("mb-4", eyebrowClassName)}
             lineThickness="thin"
             lineWidth="fixed"
           >
@@ -125,8 +138,11 @@ export function SplitSectionHeading({
         <div
           className={cn(
             textColumnClassName ??
-              (services || portfolio ? "w-[48%]" : "w-[50%]"),
-            "max-[992px]:w-full",
+              // Live `.section_title_with_eyebrow .section_text` is 48.3% (50% ≤1199px).
+              (services || portfolio || leftAligned
+                ? "w-[48.3%] max-[1199px]:w-1/2"
+                : "w-[50%]"),
+            "max-[991px]:w-full",
             textClassName,
           )}
         >

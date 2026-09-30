@@ -48,7 +48,7 @@ export function ThemeCustomizationServicesSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[50px] gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
+          className="mb-10 gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
@@ -64,7 +64,7 @@ export function ThemeCustomizationServicesSection({
               <div className="icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&>svg]:size-6 [&>svg]:h-auto">
                 {box.icon ?? box.number}
               </div>
-              <h3 className="mb-2 font-montreal-medium text-[20px] font-medium leading-[28.8px] text-ink max-[1199px]:text-[18px]">
+              <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[1199px]:text-[18px]">
                 {box.title}
                 {box.badge ? (
                   <span className="mt-2.5 mb-[5px] block w-fit rounded-[30px] bg-[rgba(173,81,81,0.05)] px-[12.5px] py-[5.5px] font-montserrat text-xs font-bold uppercase leading-none text-[#ad5151] max-[767px]:text-[11px] max-[767px]:px-[13.5px] max-[767px]:py-[6.5px]">
@@ -73,7 +73,7 @@ export function ThemeCustomizationServicesSection({
                 ) : null}
               </h3>
               {box.description ? (
-                <p className="font-sans text-sm font-medium leading-[24px] text-[#535353]">
+                <p className="font-sans text-sm font-normal leading-[24px] text-[#535353]">
                   {box.description}
                 </p>
               ) : null}
@@ -81,11 +81,10 @@ export function ThemeCustomizationServicesSection({
           ))}
         </div>
 
-        {content.bottomNote ? (
-          <div className="bottom-text mt-5 font-sans text-sm font-medium text-[#535353]">
-            <p>{content.bottomNote}</p>
-          </div>
-        ) : null}
+        {/* Live template always renders `.bottom-text` (margin-top: 20px), even when empty. */}
+        <div className="bottom-text mt-5 font-sans text-sm font-medium text-[#535353]">
+          {content.bottomNote ? <p>{content.bottomNote}</p> : null}
+        </div>
       </Container>
     </section>
   );

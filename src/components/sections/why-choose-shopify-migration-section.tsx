@@ -319,7 +319,7 @@ export function WhyChooseShopifyMigrationSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[50px] gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
+          className="mb-10 gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
           dark
           description={content.description}
           eyebrow={content.eyebrow}
@@ -374,7 +374,7 @@ export function WhyChooseShopifyMigrationSection({
                 <h3 className="mb-2.5 font-montserrat text-[30px] font-bold leading-[35px] text-ink max-[1199px]:text-[24px] max-[1199px]:leading-[28px] max-[767px]:text-[20px] max-[767px]:leading-[24px]">
                   {content.partnerHeading}
                 </h3>
-                <p className="mx-auto max-w-[500px] font-sans text-sm font-medium leading-6 text-[#535353]">
+                <p className="font-sans text-sm font-medium leading-6 text-[#535353]">
                   {content.partnerDescription}
                 </p>
                 <div className="boxes-wrapper mt-9 grid grid-cols-4 gap-2 max-[1199px]:grid-cols-2 max-[991px]:mt-[30px]">

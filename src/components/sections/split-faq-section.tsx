@@ -54,7 +54,7 @@ export function SplitFaqSection({
   animateOnReveal = false,
   lazyAccordion = false,
   lazyRootMargin,
-  answerClassName = "!text-base !font-medium !leading-7 !text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-6",
+  answerClassName = "!text-sm !font-medium !leading-6 !text-[#535353]",
   questionClassName,
   triggerClassName,
   itemClassName,
@@ -146,7 +146,7 @@ export function SplitFaqSection({
                       iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
                       iconVariant={iconVariant}
                       idPrefix={idPrefix}
-                      itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
+                      itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!p-0", itemClassName)}
                       items={items}
                       panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
                       questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
@@ -156,7 +156,7 @@ export function SplitFaqSection({
                   iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
                   iconVariant={iconVariant}
                   idPrefix={idPrefix}
-                  itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
+                  itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!p-0", itemClassName)}
                   items={items}
                   panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
                   questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
@@ -170,7 +170,7 @@ export function SplitFaqSection({
                   iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
                   iconVariant={iconVariant}
                   idPrefix={idPrefix}
-                  itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
+                  itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!p-0", itemClassName)}
                   items={items}
                   panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
                   questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}

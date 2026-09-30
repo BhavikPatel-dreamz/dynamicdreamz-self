@@ -1,15 +1,81 @@
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
+import type { MobileAppHeroContent } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-hero-section";
+import type { AiEmpoweredDeliveryContent } from "@/components/sections/ai-empowered-delivery-section";
+import type { ThemeCustomizationBox } from "@/components/sections/theme-customization-services-section";
+import type { NumberedGridItem } from "@/components/sections/shopify-migration/shopify-migration-numbered-grid-section";
+import type { MobileAppWorkContent } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-work-section";
+import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 
-export const crossPlatformAppDevelopmentHero = {
-  title: "Custom Cross Platform App Development Services",
+// 1. Hero
+export const crossPlatformAppDevelopmentHero: MobileAppHeroContent = {
+  eyebrows: ["Established in 2006"],
+  title: "Custom Cross-Platform App Development",
+  titleAccent: "Services",
   description:
-    "Are you trying to find a trustworthy cross platform app development company? Dynamic Dreamz is your go-to partner for creating versatile mobile applications that work seamlessly across multiple platforms. Whether you’re a web design agency or an individual with a groundbreaking app idea, our expert developers are here to turn your vision into reality.",
-  ctaLabel: "Request a Quote",
-  ctaHref: "/request-quote",
-} as const;
+    "Dynamic Dreamz builds custom cross-platform applications for iOS and Android using React Native and Flutter when a shared application foundation is the right fit. We develop business utilities, consumer products, service apps, marketplaces and ecommerce experiences, adding platform-specific code or native modules where deeper iOS or Android functionality is required.",
+  primaryCta: {
+    label: "Discuss Your App",
+    href: "/request-quote",
+    ariaLabel: "Discuss Your App",
+  },
+  secondaryCta: {
+    label: "See Mobile App Work",
+    href: "#our_work",
+    ariaLabel: "See Mobile App Work",
+  },
+  badges: [
+    {
+      src: "/assets/proof/clutch-rating.svg",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      href: "https://clutch.co/profile/dynamic-dreamz",
+      width: 111,
+      height: 44,
+    },
+    {
+      src: "/assets/proof/trustpilot-rating.svg",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+      width: 148,
+      height: 50,
+    },
+    {
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      href: "https://www.upwork.com/ag/dynamicdreamz/",
+      width: 126,
+      height: 54,
+    },
+  ],
+  slides: [
+    {
+      src: "/assets/services/shopify-mobile-app-development/hero/slide-bellavita.webp",
+      alt: "Bellavita",
+      width: 224,
+      height: 487,
+    },
+    {
+      src: "/assets/services/shopify-mobile-app-development/hero/slide-house-of-good-vibes.webp",
+      alt: "House of good",
+      width: 150,
+      height: 325,
+    },
+    {
+      src: "/assets/services/shopify-mobile-app-development/hero/slide-kalki.webp",
+      alt: "Kalki",
+      width: 147,
+      height: 325,
+    },
+  ],
+  frameImage: {
+    src: "/assets/services/shopify-mobile-app-development/hero/phone-frame.png",
+    alt: "Mobile app frame",
+    width: 282,
+    height: 574,
+  },
+};
 
+// 2. Client Brands
 export const crossPlatformAppDevelopmentBrands: readonly ClientLogoSliderItem[] = [
   {
     src: "/assets/clients/supertails.svg",
@@ -23,7 +89,7 @@ export const crossPlatformAppDevelopmentBrands: readonly ClientLogoSliderItem[] 
     href: "https://11-11.in/",
     alt: "Eleven Eleven",
     width: 145,
-    height: 20,
+    height: 22,
   },
   {
     src: "/assets/clients/bella-vita.svg",
@@ -42,7 +108,7 @@ export const crossPlatformAppDevelopmentBrands: readonly ClientLogoSliderItem[] 
   {
     src: "/assets/clients/popclub.svg",
     href: "https://popclub.co/",
-    alt: "Popclub",
+    alt: "Pop Club Logo",
     width: 65,
     height: 41,
   },
@@ -85,8 +151,8 @@ export const crossPlatformAppDevelopmentBrands: readonly ClientLogoSliderItem[] 
     src: "/assets/clients/nelter.svg",
     href: "https://www.nekterjuicebar.com/",
     alt: "nekter-colored",
-    width: 66,
-    height: 64,
+    width: 109,
+    height: 41,
   },
   {
     src: "/assets/clients/rare-rabbit.svg",
@@ -97,183 +163,423 @@ export const crossPlatformAppDevelopmentBrands: readonly ClientLogoSliderItem[] 
   },
 ];
 
-export const crossPlatformAppDevelopmentServices = {
-  heading: "What We Provide",
-  description:
-    "Here is the list of cross platform app development services designed to bring your ideas to life. Partner with us and kick start your app development journey today!",
-  items: [
-    {
-      icon: "/assets/services/cross-platform-app-development/flutter-app-icon.svg",
-      iconAlt: "flutter app icon",
-      title: "Flutter App Development",
-      description:
-        "With Flutter, we build beautiful and responsive apps that run flawlessly across different platforms. Our Flutter developers use the Google SDK to create visually appealing, fast apps that build user loyalty and enhance your brand.",
-    },
-    {
-      icon: "/assets/services/cross-platform-app-development/react-native-icon.svg",
-      iconAlt: "React native icon",
-      title: "React Native App Development",
-      description:
-        "Our developers create efficient cross platform apps that deliver native like performance on iOS and Android devices. Benefit from cost effective development without compromising on quality or user experience.",
-    },
-    {
-      icon: "/assets/services/android-app-development/app-mockup-icon.svg",
-      iconAlt: "app mokcup icon",
-      title: "Prototyping, Wireframes & Mockups",
-      description:
-        "We offer complete Prototyping, Wireframes, and Mockup services to bring your app vision to life. Our expert team creates detailed graphical blueprints that outline the app’s structure and functionality.",
-    },
-    {
-      icon: "/assets/services/ios-app-development/backend-icon.svg",
-      iconAlt: "Backend Development Icon",
-      title: "Backend Development",
-      description:
-        "We build robust and secure backend systems to support your app’s functionality. Our team ensures smooth integration and reliable server side architecture for a flawless app experience.",
-    },
-    {
-      icon: "/assets/services/android-app-development/app-testing-icon.svg",
-      iconAlt: "App Testing and Quality Assurance Icon",
-      title: "App Testing and Quality Assurance",
-      description:
-        "Getting your app to work perfectly is our top priority. Before your app launches, our committed quality assurance team tests it thoroughly to find and fix bugs and ensure a seamless user experience on all platforms.",
-    },
-    {
-      icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
-      iconAlt: "Maintenance and Support Icon",
-      title: "App Maintenance and Support",
-      description:
-        "We provide dependable support services and proactive maintenance to keep your app functioning. We care for everything to keep your app updated and user friendly, including troubleshooting.",
-    },
-    {
-      icon: "/assets/services/android-app-development/existing-app-icon.svg",
-      iconAlt: "Mobile App Icon",
-      title: "Existing App Customization",
-      description:
-        "Do you have an existing app that needs an upgrade or new features? Dynamic Dreamz can help you to customize and enhance cross platform apps to meet your evolving business needs.",
-    },
-    {
-      icon: "/assets/hire-shopify-developers/icons/shopify-store-setup.svg",
-      iconAlt: "Shopify App Icon",
-      title: "Shopify App Development",
-      description:
-        "Expand your Shopify store’s reach with a custom cross platform app. Our developers create smooth and user friendly mobile apps that integrate all the functionalities of your Shopify store. It helps you engage more customers and increase sales.",
-    },
-  ],
-  cta: {
-    label: "Let me give you a hand to help you",
-    href: "/request-quote",
-    ariaLabel: "Dynamic Dreamz - Let me give you a hand to help you",
-  },
-} as const;
+export const crossPlatformAppDevelopmentBrandsCopy = {
+  heading: "Trusted by\nLeading Brands",
+  ariaLabel:
+    "Brands that trust Dynamic Dreamz for cross-platform app development",
+};
 
-export const crossPlatformAppDevelopmentPortfolio = {
-  heading: "Glimpses of Our Cross Platform App Development",
-  description:
-    "View a carefully chosen collection of Cross platform apps developed for our clients. See how our products have aided companies in reaching their objectives and successfully connecting with their target market.",
-  items: [
-    {
-      name: "Bombay Shirt Company",
-      category: "React Native",
-      image: "/assets/our-work/projects/bombay-shirt-company-app.webp",
-      imageAlt: "Bombay Shirt Comapny",
-      href: "https://play.google.com/store/apps/details?id=com.coffye.ndufju",
-      platformMark: {
-        src: "/assets/our-work/platforms/react-logo.svg",
-        width: 39,
-        height: 39,
-      },
+// 3. One Product · Two Mobile Platforms (AiEmpoweredDeliverySection)
+export const crossPlatformAppDevelopmentWorkflowDelivery: AiEmpoweredDeliveryContent =
+  {
+    eyebrow: "One Product · Two Mobile Platforms",
+    heading:
+      "Share the Foundation Without Forcing Both Platforms to Behave Identically.",
+    description:
+      "Cross-platform development can reduce duplicated work across iOS and Android, but strong implementation still respects each platform. We reuse common application logic where it makes sense and introduce platform-specific components, permissions or native modules when the product requires them.",
+    cta: {
+      label: "Discuss Your App Requirement",
+      href: "/request-quote",
     },
-    {
-      name: "Llama – An App by CWRB",
-      category: "Flutter",
-      image: "/assets/our-work/projects/llama-an-app-by-cwrb.webp",
-      imageAlt: "Llama – An App by CWRB",
-      href: "https://play.google.com/store/apps/details?id=com.cwrb.app&hl=en&gl=US",
-      platformMark: {
-        src: "/assets/our-work/platforms/flutter-icon.svg",
-        width: 39,
-        height: 39,
+    tools: [
+      {
+        name: "React Native Apps",
+        description:
+          "Build native-rendered iOS and Android experiences with a shared React-based application foundation.",
       },
-    },
-    {
-      name: "Renee Cosmetics",
-      category: "React Native",
-      image: "/assets/our-work/projects/renee-cosmetics-app.webp",
-      imageAlt: "Renee Cosmetics",
-      href: "https://apps.apple.com/in/app/renee-cosmetics/id6449245534",
-      platformMark: {
-        src: "/assets/our-work/platforms/react-logo.svg",
-        width: 39,
-        height: 39,
+      {
+        name: "Flutter Apps",
+        description:
+          "Create responsive multi-platform interfaces with Flutter when its architecture fits the product.",
       },
-    },
-    {
-      name: "Supertails",
-      category: "React Native",
-      image: "/assets/our-work/projects/supertails-app.webp",
-      imageAlt: "Supertails",
-      href: "https://play.google.com/store/apps/details?id=com.coffye.dqiabm",
-      platformMark: {
-        src: "/assets/our-work/platforms/react-logo.svg",
-        width: 39,
-        height: 39,
+      {
+        name: "Native Integrations",
+        description:
+          "Add platform-specific modules for device APIs, SDKs or functionality that cannot remain fully shared.",
       },
-    },
-  ],
-} as const;
+      {
+        name: "Existing App Modernization",
+        description:
+          "Extend, refactor or modernize an existing mobile product toward a maintainable cross-platform architecture.",
+      },
+    ],
+  };
 
-export const crossPlatformAppDevelopmentTestimonials = {
-  heading: "Don't Just Take Our Word For It",
+// 4. What We Build (ThemeCustomizationServicesSection yellow)
+export const crossPlatformAppDevelopmentWhatWeBuildCopy = {
+  eyebrow: "What We Build",
+  heading: "Cross-Platform Does Not Mean Ecommerce-Only.",
   description:
-    "Our client's satisfaction is the real test of our success. Discover how our specialized app development services have enabled companies to grow in the digital economy.",
-  items: shopifyPlusAgencyTestimonials.items,
-} as const;
+    "React Native and Flutter can support a broad range of products, from business utilities and mobile services to customer apps and connected commerce.",
+};
 
-export const crossPlatformAppDevelopmentFaqs: readonly FaqAccordionItem[] = [
+export const crossPlatformAppDevelopmentWhatWeBuildBoxes: readonly Omit<
+  ThemeCustomizationBox,
+  "icon"
+>[] = [
   {
-    question: "What is cross platform app development?",
-    answer:
-      "Cross platform mobile development is a method of developing software applications that are compatible with multiple mobile operating systems (OSes) or platforms. These apps are platform independent, meaning they can be used regardless of the OS used in the mobile device.",
+    title: "Business & Utility Apps",
+    description:
+      "Operational tools, staff apps, calculators, dashboards, service workflows and task-driven products.",
   },
   {
-    question: "How do cross platform apps benefit my business?",
-    answer:
-      "Cross platform apps allow you to reach a wider audience by functioning on iOS and Android devices, reducing development costs and time while maintaining high quality performance.",
+    title: "Consumer Products",
+    description:
+      "Lifestyle, content, wellness, community, membership and customer-facing applications.",
   },
   {
-    question: "What frameworks do you use for cross platform app development?",
-    answer:
-      "We primarily use React Native and Flutter, as these frameworks provide robust performance and native like user experiences across multiple platforms.",
+    title: "Booking & On-Demand Apps",
+    description:
+      "Appointments, service requests, location-aware flows, notifications and account experiences.",
   },
   {
-    question: "Why choose cross platform app development over native development?",
-    answer:
-      "Cross platform App development offers cost efficiency and faster time to market compared to native development. It allows you to reach a broader audience with consistent app performance.",
+    title: "Marketplace Apps",
+    description:
+      "Multi-user products for customers, vendors, providers or other participant groups.",
   },
   {
-    question: "Can you integrate third party APIs into cross platform apps?",
-    answer:
-      "Yes, we have expertise in integrating various third party APIs to enhance app functionality and provide smooth user experiences across platforms.",
+    title: "Ecommerce Apps",
+    description:
+      "Mobile shopping experiences with catalog, customer, cart, checkout and retention integrations.",
   },
   {
-    question: "How do you ensure app performance across different devices and platforms?",
-    answer:
-      "We leverage frameworks like React Native and Flutter that optimize for performance. Additionally, strict testing and optimization during development ensure consistent app performance.",
-  },
-  {
-    question: "What security measures do you implement to protect user data in cross platform apps?",
-    answer:
-      "We prioritize data security and implement robust encryption protocols and secure authentication methods to safeguard user data across all platforms.",
-  },
-  {
-    question: "How do you manage cross platform app maintenance and updates?",
-    answer:
-      "We manage app updates efficiently through version control systems and provide ongoing maintenance to keep your app updated, secure, and compatible with new OS releases.",
+    title: "Shopify Mobile Apps",
+    description:
+      "React Native or Flutter applications connected to Shopify when custom commerce journeys are required.",
   },
 ];
 
-export const crossPlatformAppDevelopmentCtaBanner = {
-  heading: "Want us to help you with your online store?",
-  ctaLabel: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
-} as const;
+// 5. End-to-End Services for the Mobile Product Lifecycle (ThemeCustomizationServicesSection green)
+export const crossPlatformAppDevelopmentLifecycleServicesCopy = {
+  eyebrow: "Cross-Platform App Development Services",
+  heading: "End-to-End Services for the Mobile Product Lifecycle.",
+  description:
+    "From product definition through development, integrations, QA and ongoing updates, our team can support the complete mobile product lifecycle or join at the stage where you need additional capability.",
+};
+
+export const crossPlatformAppDevelopmentLifecycleServicesBoxes: readonly Omit<
+  ThemeCustomizationBox,
+  "icon"
+>[] = [
+  {
+    title: "React Native App Development",
+    description:
+      "Build iOS and Android applications with a shared React Native foundation and platform-specific code where needed.",
+  },
+  {
+    title: "Flutter App Development",
+    description:
+      "Develop cross-platform applications using Flutter for responsive, maintainable multi-platform UI.",
+  },
+  {
+    title: "Prototyping, Wireframes & UI/UX",
+    description:
+      "Define journeys, interfaces and interactive prototypes before full application development.",
+  },
+  {
+    title: "Backend & API Development",
+    description:
+      "Build or connect authentication, data services, payments, notifications, analytics and business-system integrations.",
+  },
+  {
+    title: "Native Module & SDK Integration",
+    description:
+      "Connect platform-specific SDKs and device capabilities such as maps, camera, location, biometrics or notifications.",
+  },
+  {
+    title: "QA, Maintenance & App Updates",
+    description:
+      "Test across iOS and Android devices, support releases and continue with upgrades, fixes and roadmap development.",
+  },
+];
+
+// 6. Architecture & Technology (AiEmpoweredDeliverySection)
+export const crossPlatformAppDevelopmentTechStack: AiEmpoweredDeliveryContent = {
+  eyebrow: "Architecture & Technology",
+  heading: "React Native or Flutter? The Framework Follows the Requirement.",
+  description:
+    "React Native supports platform-specific code where needed, while Flutter provides a multi-platform application framework from a single codebase. We select the approach after reviewing product experience, existing codebase, native SDK needs and long-term ownership.",
+  tools: [
+    {
+      name: "React Native",
+      description: "React-based mobile application framework",
+    },
+    {
+      name: "Flutter",
+      description: "Multi-platform application framework",
+    },
+    {
+      name: "Native Modules",
+      description: "iOS / Android-specific features",
+    },
+    {
+      name: "Backend APIs",
+      description: "Data, authentication & integrations",
+    },
+  ],
+};
+
+// 7. Our App Development Process (ShopifyMigrationNumberedGridSection)
+export const crossPlatformAppDevelopmentProcessCopy = {
+  eyebrow: "Our App Development Process",
+  heading: "From Product Definition to Release and Ongoing Iteration.",
+  description:
+    "A clear delivery process keeps product, design, engineering and QA aligned as the application moves toward production.",
+};
+
+export const crossPlatformAppDevelopmentProcessSteps: readonly NumberedGridItem[] = [
+  {
+    number: "01",
+    title: "Discover",
+    description: "Users, goals, workflows, integrations and requirements.",
+  },
+  {
+    number: "02",
+    title: "Architect",
+    description: "Platform strategy, data, APIs and technical approach.",
+  },
+  {
+    number: "03",
+    title: "Design",
+    description: "Flows, wireframes, UI system and prototypes.",
+  },
+  {
+    number: "04",
+    title: "Develop",
+    description: "Mobile frontend, backend services and business logic.",
+  },
+  {
+    number: "05",
+    title: "QA & Release",
+    description: "Device testing, integrations and store readiness.",
+  },
+  {
+    number: "06",
+    title: "Improve",
+    description: "Maintenance, OS updates and roadmap work.",
+  },
+];
+
+// 8. Portfolio (ShopifyMobileAppWorkSection)
+export const crossPlatformAppDevelopmentPortfolio: MobileAppWorkContent = {
+  eyebrow: "Portfolio",
+  heading:
+    "Applications Delivered Across iOS, Android and Mobile Commerce.",
+  description:
+    "Selected mobile applications delivered by our team across consumer, service and ecommerce experiences. Explore our portfolio for more project examples and platform details.",
+  items: [
+    {
+      id: "bombay-shirt-company",
+      name: "Bombay Shirt Comapny",
+      image: "/assets/our-work/projects/bombay-shirt-company-app.webp",
+      imageAlt: "Bombay Shirt Comapny Image",
+      href: "https://play.google.com/store/apps/details?id=com.coffye.ndufju",
+    },
+    {
+      id: "llama-an-app-by-cwrb",
+      name: "Llama – An App by CWRB",
+      image: "/assets/our-work/projects/llama-an-app-by-cwrb.webp",
+      imageAlt: "Llama – An App by CWRB Image",
+      href: "https://play.google.com/store/apps/details?id=com.cwrb.app&hl=en&gl=US",
+    },
+    {
+      id: "renee-cosmetics",
+      name: "Renee Cosmetics",
+      image: "/assets/our-work/projects/renee-cosmetics-app.webp",
+      imageAlt: "Renee Cosmetics Image",
+      href: "https://apps.apple.com/in/app/renee-cosmetics/id6449245534",
+    },
+    {
+      id: "supertails",
+      name: "Supertails",
+      image: "/assets/our-work/projects/supertails-app.webp",
+      imageAlt: "Supertails Image",
+      href: "https://play.google.com/store/apps/details?id=com.coffye.dqiabm",
+    },
+  ],
+  ctaLabel: "View our work",
+  ctaHref: "/our-work",
+  ctaAriaLabel: "Dynamic Dreamz - View our work",
+  secondaryCta: {
+    label: "View Pricing",
+    href: "#our_white_label_pricing",
+    ariaLabel: "Dynamic Dreamz - View Pricing",
+  },
+};
+
+// 9. Engagement & Pricing (PricingTableSection)
+export const crossPlatformAppDevelopmentPricing: PricingEngagementContent = {
+  eyebrow: "Engagement & Pricing",
+  heading: "Choose the Delivery Model Around Your App Roadmap.",
+  description:
+    "New applications are normally scoped after discovery. Dedicated capacity and post-launch support are available when the product needs continuous development.",
+  items: [
+    {
+      label: "Project-Based",
+      badge: "Custom App Development",
+      price: "Custom Quote",
+      description:
+        "For a defined mobile product with agreed design, application features, APIs, QA and release scope.",
+      bullets: [
+        "Discovery & architecture",
+        "UI/UX + development",
+        "Backend & integrations",
+        "QA & release support",
+      ],
+      ctaLabel: "Request a Quote",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Dedicated Developer / Team",
+      badge: "Ongoing Product Capacity",
+      price: "From $2,000/month",
+      description:
+        "For businesses that need steady mobile or full-stack development capacity and team continuity.",
+      bullets: [
+        "Dedicated development capacity",
+        "Long-term roadmap delivery",
+        "Team continuity",
+        "Full-stack support when needed",
+      ],
+      ctaLabel: "Discuss Dedicated Capacity",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Post-Launch",
+      badge: "Maintenance & Enhancements",
+      price: "$20/hour",
+      description:
+        "For releases, OS updates, fixes, integrations, analytics and feature improvements after launch.",
+      bullets: [
+        "App updates",
+        "New features",
+        "Bug fixes & performance",
+        "Release support",
+      ],
+      ctaLabel: "Discuss Support",
+      ctaHref: "/request-quote",
+    },
+  ],
+};
+
+// 10. Why Dynamic Dreamz (WhyChooseShopifyMigrationSection)
+export const crossPlatformAppDevelopmentWhyChooseCopy = {
+  eyebrow: "Why Dynamic Dreamz",
+  heading: "Mobile Development Backed by a Broader Technology Team.",
+  description:
+    "Mobile apps rarely live in isolation. Our in-house teams can support UI/UX, backend APIs, ecommerce, full-stack development, QA and ongoing maintenance around the application.",
+  items: [
+    {
+      description:
+        "Designers and developers work together from flows and prototypes through implementation.",
+    },
+    {
+      description:
+        "APIs, authentication, databases, business systems and admin tools can stay with the same delivery team.",
+    },
+    {
+      description:
+        "Important application journeys are tested across relevant devices, integrations and release conditions.",
+    },
+    {
+      description:
+        "Continue with OS changes, releases, new features, integrations and product evolution after launch.",
+    },
+  ],
+  partnerHeading: "20+ Years of Ecommerce Delivery",
+  partnerDescription:
+    "Dynamic Dreamz combines long-term web and ecommerce experience with a broader 150+ expert in-house team and more than 5,000 delivered projects.",
+  partnerLogo: "/assets/proof/shopify-platinum-partner.svg",
+  partnerLogoAlt: "Dynamic Dreamz - Shopify Platinum Partner",
+  partnerLink: {
+    label: "About Dynamic Dreamz",
+    href: "/about-us",
+  },
+  stats: [
+    { value: "20+", label: "Years of Experience" },
+    { value: "150+", label: "Experts" },
+    { value: "5k+", label: "projects delivered" },
+    { value: "2.5k+", label: "Verified 5 star Reviews" },
+  ],
+};
+
+// 11. Client Stories (HappyClientSection)
+export const crossPlatformAppDevelopmentTestimonialsCopy = {
+  eyebrow: "Client Stories",
+  heading: "Don't Just Take Our Word For It",
+  description:
+    "Our client's satisfaction is the real test of our success. Discover how our specialized app development services have enabled companies to grow in the digital economy.",
+};
+
+// 12. FAQ Section
+export const crossPlatformAppDevelopmentFaqCopy = {
+  eyebrow: "Cross-Platform App Development Services FAQ",
+  heading: "Frequently Asked Questions",
+  description:
+    "Direct answers about technology, custom utility apps, ecommerce, integrations, release and ongoing development.",
+};
+
+export const crossPlatformAppDevelopmentFaqs: readonly FaqAccordionItem[] = [
+  {
+    question: "What is cross-platform app development?",
+    answer:
+      "Cross-platform app development creates applications for more than one mobile operating system from a largely shared codebase. Dynamic Dreamz works with React Native and Flutter for iOS and Android, adding platform-specific code where required.",
+  },
+  {
+    question:
+      "When should I choose cross-platform instead of separate native apps?",
+    answer:
+      "Cross-platform development can be a strong fit when iOS and Android share most product flows and you want to reduce duplicated development and maintenance. Separate native development can be preferable when the product relies heavily on platform-specific experiences, advanced device capabilities or independent native roadmaps.",
+  },
+  {
+    question: "Do you develop both React Native and Flutter apps?",
+    answer:
+      "Yes. Our cross-platform services include React Native and Flutter. We choose the framework according to application requirements, existing codebase, native integration needs and the long-term product roadmap.",
+  },
+  {
+    question: "Can a cross-platform app use native iOS or Android features?",
+    answer:
+      "Yes. React Native and Flutter can integrate with platform-specific code and native APIs. We can add native components or modules when device or SDK requirements cannot remain fully shared.",
+  },
+  {
+    question:
+      "Can you build custom utility or business apps with React Native or Flutter?",
+    answer:
+      "Yes. Cross-platform development is suitable for many business utilities, internal tools, service apps, booking flows, consumer products and marketplaces—not only ecommerce applications.",
+  },
+  {
+    question:
+      "Can you build a Shopify mobile app using React Native or Flutter?",
+    answer:
+      "Yes. Where appropriate, we can build a custom mobile app connected to Shopify products, customer journeys, cart, checkout and supported third-party systems. Shopify mobile commerce is one cross-platform use case, not the only one.",
+  },
+  {
+    question: "Can you take over or upgrade an existing cross-platform app?",
+    answer:
+      "Yes. We can review an existing React Native or Flutter application, assess its architecture and dependencies, then scope upgrades, refactoring, feature additions or platform-version updates.",
+  },
+  {
+    question: "Do you provide app-store launch and ongoing maintenance?",
+    answer:
+      "Yes. We support iOS and Android testing, release preparation, store submissions, updates, bug fixes and ongoing feature development.",
+  },
+];
+
+// Clean questions for schema (without the trailing toggle "+")
+export const crossPlatformAppDevelopmentSchemaFaqs: readonly FaqAccordionItem[] =
+  crossPlatformAppDevelopmentFaqs.map((item) => ({
+    question: item.question.replace(/\s*\+\s*$/, ""),
+    answer: item.answer,
+  }));
+
+// Schema offer catalog (lifecycle service capabilities)
+export const crossPlatformAppDevelopmentSchemaOffers = [
+  ...crossPlatformAppDevelopmentWhatWeBuildBoxes.map((box) => ({
+    title: box.title,
+    description: box.description ?? "",
+  })),
+  ...crossPlatformAppDevelopmentLifecycleServicesBoxes.map((box) => ({
+    title: box.title,
+    description: box.description ?? "",
+  })),
+];

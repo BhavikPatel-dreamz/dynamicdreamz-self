@@ -168,8 +168,8 @@ import {
   iosAppDevelopmentServices,
 } from "@/content/ios-app-development";
 import {
-  crossPlatformAppDevelopmentFaqs,
-  crossPlatformAppDevelopmentServices,
+  crossPlatformAppDevelopmentSchemaFaqs,
+  crossPlatformAppDevelopmentSchemaOffers,
 } from "@/content/cross-platform-app-development";
 import { shopifyDevelopmentChennaiContent } from "@/content/shopify-development-company-in-chennai";
 import { shopifyMaintenanceServicesContent } from "@/content/shopify-maintenance-services";
@@ -2023,6 +2023,10 @@ type ServicePageSchemaInput = {
   serviceName: string;
   serviceType: string;
   breadcrumbName: string;
+  parentBreadcrumb?: {
+    name: string;
+    item: string;
+  };
   audienceType: string;
   faqs: readonly { question: string; answer: string }[];
   offers?: readonly {
@@ -2045,6 +2049,7 @@ function createServicePageSchema({
   serviceName,
   serviceType,
   breadcrumbName,
+  parentBreadcrumb,
   audienceType,
   faqs,
   offers,
@@ -2134,9 +2139,19 @@ function createServicePageSchema({
         "@id": breadcrumbId,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
+          ...(parentBreadcrumb
+            ? [
+                {
+                  "@type": "ListItem" as const,
+                  position: 2,
+                  name: parentBreadcrumb.name,
+                  item: parentBreadcrumb.item,
+                },
+              ]
+            : []),
           {
             "@type": "ListItem",
-            position: 2,
+            position: parentBreadcrumb ? 3 : 2,
             name: breadcrumbName,
             item: pageUrl,
           },
@@ -4488,18 +4503,19 @@ export function createCrossPlatformAppDevelopmentPageSchema() {
     breadcrumbId: crossPlatformAppDevelopmentBreadcrumbId,
     serviceName: "Cross-Platform App Development Services",
     serviceType:
-      "Custom cross-platform app development, React Native app development, Flutter app development, prototyping & wireframes, backend development, QA testing, maintenance, existing app customization, and Shopify cross-platform app development",
-    breadcrumbName: "Cross-Platform App Development",
+      "Cross-Platform App Development, React Native App Development, Flutter App Development, Mobile UI/UX Design, Backend API Development, and Mobile App Maintenance",
+    breadcrumbName: "Cross-Platform App Development Services",
+    parentBreadcrumb: {
+      name: "Mobile App Development",
+      item: absoluteUrl(pageSeo.mobileApplicationDevelopment.path),
+    },
     audienceType:
       "Web design agencies, ecommerce merchants, and businesses looking to build high-performance cross-platform applications for iOS and Android",
-    faqs: crossPlatformAppDevelopmentFaqs.map((item) => ({
+    faqs: crossPlatformAppDevelopmentSchemaFaqs.map((item) => ({
       question: item.question,
       answer: item.answer,
     })),
-    offers: crossPlatformAppDevelopmentServices.items.map((item) => ({
-      title: item.title,
-      description: item.description,
-    })),
+    offers: crossPlatformAppDevelopmentSchemaOffers,
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
