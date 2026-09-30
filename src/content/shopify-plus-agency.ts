@@ -437,7 +437,7 @@ export const shopifyPlusAgencyIndustries = {
       title: "Health & Nutrition",
       eyebrow: "Shopify Plus Industry",
       description: "Shopify Plus experiences for supplement and wellness brands with trust-led UX, subscriptions, education and repeat-purchase journeys.",
-      href: "/healthcare",
+      href: "/health-nutrition",
     },
     {
       image: "/assets/shopify-plus-agency/industries/fashion-apparel.webp",

@@ -23,7 +23,10 @@ import {
   foodBeverageShopifyPlusFaqs,
   foodBeverageServices,
 } from "@/content/food-beverage-shopify-plus-agency";
-import { healthcareIndustryPage } from "@/content/healthcare";
+import {
+  healthNutritionFaqs,
+  healthNutritionSolutions,
+} from "@/content/health-nutrition";
 import { hireWordPressFaqs } from "@/content/hire-wordpress-developers";
 import { hireShopifyFaqs, hireShopifyServices } from "@/content/hire-shopify-developers";
 import {
@@ -280,10 +283,11 @@ const foodBeverageShopifyPlusAgencyPageId = `${foodBeverageShopifyPlusAgencyPage
 const foodBeverageShopifyPlusAgencyBreadcrumbId = `${foodBeverageShopifyPlusAgencyPageUrl}#breadcrumb`;
 const foodBeverageShopifyPlusAgencyServiceId = `${foodBeverageShopifyPlusAgencyPageUrl}#service`;
 const foodBeverageShopifyPlusAgencyFaqId = `${foodBeverageShopifyPlusAgencyPageUrl}#faq`;
-const healthcarePageUrl = absoluteUrl(pageSeo.healthcare.path);
-const healthcarePageId = `${healthcarePageUrl}#webpage`;
-const healthcareBreadcrumbId = `${healthcarePageUrl}#breadcrumb`;
-const healthcareServiceId = `${healthcarePageUrl}#service`;
+const healthNutritionPageUrl = absoluteUrl(pageSeo.healthNutrition.path);
+const healthNutritionPageId = `${healthNutritionPageUrl}#webpage`;
+const healthNutritionBreadcrumbId = `${healthNutritionPageUrl}#breadcrumb`;
+const healthNutritionServiceId = `${healthNutritionPageUrl}#service`;
+const healthNutritionFaqId = `${healthNutritionPageUrl}#faq`;
 const petIndustryPageUrl = absoluteUrl(pageSeo.petIndustry.path);
 const petIndustryPageId = `${petIndustryPageUrl}#webpage`;
 const petIndustryBreadcrumbId = `${petIndustryPageUrl}#breadcrumb`;
@@ -2206,19 +2210,23 @@ export function createFashionPageSchema() {
   });
 }
 
-export function createHealthcarePageSchema() {
-  return createIndustryPageSchema({
-    seo: pageSeo.healthcare,
-    pageUrl: healthcarePageUrl,
-    pageId: healthcarePageId,
-    breadcrumbId: healthcareBreadcrumbId,
+export function createHealthNutritionPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.healthNutrition,
+    pageUrl: healthNutritionPageUrl,
+    pageId: healthNutritionPageId,
+    serviceId: healthNutritionServiceId,
+    faqId: healthNutritionFaqId,
+    breadcrumbId: healthNutritionBreadcrumbId,
+    serviceName: "Ecommerce Solutions for Health, Nutrition & Supplement Brands",
+    serviceType: "Shopify Plus Development, Subscriptions, Discovery & Custom Development for Health & Nutrition Brands",
     breadcrumbName: "Health & Nutrition",
-    serviceId: healthcareServiceId,
-    serviceName: "Health & Nutrition Ecommerce and Website Development",
-    serviceType: "Health, nutrition, wellness and dental web development",
-    audienceType:
-      "Health, nutrition, supplement, wellness, healthcare product and dental organizations",
-    offerCatalog: healthcareIndustryPage.deliverables,
+    audienceType: "Health, nutrition, supplement, wellness, healthcare product and dental brands",
+    faqs: healthNutritionFaqs,
+    offers: healthNutritionSolutions.boxes.map((item) => ({
+      title: item.title,
+      description: item.description ?? "",
+    })),
   });
 }
 

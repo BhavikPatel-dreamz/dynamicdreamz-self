@@ -98,7 +98,7 @@
   - `Performance Optimization`: `/assets/dawn-theme-customization/services/performance-optimization.svg`
   - `Ongoing Support and Maintenance`: `/assets/services/upgrade-to-shopify-plus/why-choose/ongoing-support-and-maintenance.svg` (canonical reuse)
 - **All 8 Shopify Portfolio Screenshots** reused from canonical project paths:
-  - `/assets/healthcare/portfolio/nufyx-protein-products.webp`
+  - `/assets/health-nutrition/portfolio/nufyx-protein-products.webp`
   - `/assets/food-beverages/portfolio/nekter-juice-bar.webp`
   - `/assets/pet-industry/portfolio/pagerie-dog-accessories.webp`
   - `/assets/beauty-cosmetics/portfolio/luxxi-nails.webp`

@@ -409,7 +409,7 @@ export const shopifyDevelopmentLosAngelesContent = {
       {
         name: "Nufyx",
         href: "https://nufyx.com/",
-        image: "/assets/healthcare/portfolio/nufyx-protein-products.webp",
+        image: "/assets/health-nutrition/portfolio/nufyx-protein-products.webp",
         imageAlt: "Nufyx Image",
         category: "Shopify / Shopify Plus",
       },

@@ -211,7 +211,7 @@ export const primaryNavigation: PrimaryNavigationGroup[] = [
     slug: "industries",
     columns: 2,
     items: [
-      { label: "Health & Nutrition", href: "/healthcare", description: "Health, supplements and nutrition.", icon: headerIcon("health-and-nutrition") },
+      { label: "Health & Nutrition", href: "/health-nutrition", description: "Health, supplements and nutrition.", icon: headerIcon("health-and-nutrition") },
       { label: "Sports & Outdoors", href: "/contact-us", description: "Sports, fitness and outdoor brands.", icon: headerIcon("sports-and-outdoors") },
       { label: "Fashion & Apparel", href: "/fashion", description: "Fashion, apparel and lifestyle brands.", icon: headerIcon("fashion-and-apparel") },
       { label: "Home & Living", href: "/contact-us", description: "Furniture, decor and lifestyle brands.", icon: headerIcon("home-and-living") },

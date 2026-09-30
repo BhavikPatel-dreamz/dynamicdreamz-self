@@ -61,9 +61,17 @@ export function ThemeCustomizationServicesSection({
               className="box rounded-[20px] border border-[rgba(40,40,40,0.11)] bg-white p-[25px] max-[991px]:p-5"
               key={box.number ?? box.title}
             >
-              <div className="icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&>svg]:size-6 [&>svg]:h-auto">
-                {box.icon ?? box.number}
-              </div>
+              {box.icon ? (
+                <div className="icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&>svg]:size-6 [&>svg]:h-auto">
+                  {box.icon}
+                </div>
+              ) : box.number ? (
+                <div className="number mb-[15px]">
+                  <span className="flex size-[34px] items-center justify-center rounded-full bg-[#fbefd7] font-montserrat text-[10px] font-bold text-brand-red">
+                    {box.number}
+                  </span>
+                </div>
+              ) : null}
               <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[1199px]:text-[18px]">
                 {box.title}
                 {box.badge ? (

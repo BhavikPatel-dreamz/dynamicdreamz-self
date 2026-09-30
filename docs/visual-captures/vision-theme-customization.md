@@ -78,7 +78,7 @@
 - 7 benefit outline SVGs reused from canonical `public/assets/dawn-theme-customization/benefits/`.
 - 5 service outline SVGs reused from canonical `public/assets/` directories.
 - All 8 Shopify portfolio projects reused from canonical paths:
-  - `/assets/healthcare/portfolio/nufyx-protein-products.webp`
+  - `/assets/health-nutrition/portfolio/nufyx-protein-products.webp`
   - `/assets/food-beverages/portfolio/nekter-juice-bar.webp`
   - `/assets/pet-industry/portfolio/pagerie-dog-accessories.webp`
   - `/assets/beauty-cosmetics/portfolio/luxxi-nails.webp`

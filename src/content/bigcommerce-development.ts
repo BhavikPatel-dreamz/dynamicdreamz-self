@@ -77,7 +77,7 @@ export const bigCommerceDevelopmentHero = {
   },
 } as const;
 
-export const bigCommerceDevelopmentBrandsHeading = "Trusted by <br>Leading Brands";
+export const bigCommerceDevelopmentBrandsHeading = "Trusted by Leading Brands";
 
 export const bigCommerceDevelopmentBrands: readonly ClientLogoSliderItem[] = [
   {

@@ -80,7 +80,7 @@ export const magentoDevelopmentHero = {
 } as const;
 
 export const magentoDevelopmentBrands = {
-  title: "Trusted by <br>Leading Brands",
+  title: "Trusted by Leading Brands",
   items: [
     {
       src: "/assets/clients/tego.svg",

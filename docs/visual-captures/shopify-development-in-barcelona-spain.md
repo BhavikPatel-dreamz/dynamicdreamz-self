@@ -114,7 +114,7 @@ The live page features 11 sections matching the modern city landing page archite
      4. `Matcha Republic` (`/assets/our-work/projects/matcha-republic.webp`)
      5. `Sims Direct` (`/assets/our-work/projects/sims-direct.webp`)
      6. `Holy Plantz` (`/assets/our-work/projects/holy-plantz.webp`)
-     7. `Nufyx` (`/assets/healthcare/portfolio/nufyx-protein-products.webp`)
+     7. `Nufyx` (`/assets/health-nutrition/portfolio/nufyx-protein-products.webp`)
      8. `Luxxi Nails` (`/assets/beauty-cosmetics/portfolio/luxxi-nails.webp`)
    - Centered CTA Button: `VIEW OUR WORK` -> `/our-work`.
 

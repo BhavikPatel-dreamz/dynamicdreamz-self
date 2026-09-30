@@ -208,7 +208,7 @@ export const shopifyDevelopmentAgencyPortfolio = {
     {
       name: "Nufyx",
       category: "SHOPIFY",
-      image: "/assets/healthcare/portfolio/nufyx-protein-products.webp",
+      image: "/assets/health-nutrition/portfolio/nufyx-protein-products.webp",
       imageAlt: "Nufyx Image",
       href: "https://nufyx.com/",
     },

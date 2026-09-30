@@ -187,7 +187,7 @@ export const siteMapLinks: readonly SiteMapLinkItem[] = [
       },
       {
         "label": "Health & Nutrition",
-        "href": "/healthcare"
+        "href": "/health-nutrition"
       },
       {
         "label": "Pet Industry",

@@ -136,7 +136,7 @@ export const upgradeShopifyPlusPortfolio = {
       name: "Naakbar",
       category: "Shopify / Shopify Plus",
       href: "https://www.naak.com/",
-      image: "/assets/healthcare/portfolio/naakbar-energy-products.webp",
+      image: "/assets/health-nutrition/portfolio/naakbar-energy-products.webp",
       imageAlt: "Naakbar Image",
     },
     {

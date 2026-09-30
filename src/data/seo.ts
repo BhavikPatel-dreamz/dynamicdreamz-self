@@ -355,28 +355,28 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
-  healthcare: {
-    path: "/healthcare",
-    title: "Health & Nutrition Ecommerce Development | Dynamic Dreamz",
+  healthNutrition: {
+    path: "/health-nutrition",
+    title: "Shopify Agency for Health & Nutrition | Dynamic Dreamz",
     description:
-      "Dynamic Dreamz builds ecommerce experiences for health, nutrition and dental brands, with tailored stores, payments, responsive layouts and integrations.",
+      "Shopify Platinum Partner for health, nutrition and supplement brands. Subscriptions, product discovery, mobile apps, integrations, and custom development.",
     socialDescription:
-      "Ecommerce and website development for health, nutrition, wellness and dental organizations, including online ordering, responsive layouts and integrations.",
+      "Shopify Platinum Partner for health, nutrition and supplement brands. Subscriptions, product discovery, mobile apps, integrations, and custom development.",
     keywords: [
-      "health ecommerce development",
-      "nutrition ecommerce agency",
-      "Shopify supplement store development",
-      "healthcare website development",
-      "dental website development",
+      "health and nutrition ecommerce",
+      "supplement shopify agency",
+      "health nutrition shopify plus",
+      "supplement website development",
+      "nutrition subscription ecommerce",
     ],
     openGraphType: "article",
     publishedTime: "2024-05-06T09:44:35+00:00",
-    modifiedTime: "2026-08-13T00:00:00+05:30",
+    modifiedTime: "2026-09-24T10:54:03+00:00",
     image: {
-      path: "/assets/healthcare/health-nutrition-storefront-collage.webp",
-      width: 840,
-      height: 434,
-      alt: "Health and nutrition ecommerce storefronts built for consumer brands",
+      path: "/assets/og/health-nutrition.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Agency for Health & Nutrition | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "monthly",

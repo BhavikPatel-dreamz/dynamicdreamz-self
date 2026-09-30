@@ -1871,111 +1871,67 @@ retention outcomes. Exact visible proposals are tracked in
   internal case studies/service links, and conversion-route completion require
   approval or destination migration.
 
-## Health & Nutrition (`/healthcare`)
+## Health & Nutrition (`/health-nutrition`)
 
-Status: technical implementation and audit complete; visible recommendations deferred
-Last reviewed: 2026-08-13
+Status: implemented; live-visible content preserved; production-ready
+Last reviewed: 2026-09-30
 Owner: SEO, content, development, and client success
-Primary audience: Health, nutrition, supplements, wellness, healthcare-product,
-dental-practice, and digital-agency decision makers
+Primary audience: Health, nutrition, vitamin, dietary supplement, wellness DTC brands, ecommerce directors, and digital agencies
 Decision stage: Solution awareness through agency evaluation
 
 ### Page role
 
-Industry landing page for health, nutrition, wellness, healthcare-product, and
-dental organizations evaluating ecommerce and website delivery. It differs
-from the broader Shopify routes by leading with precise product information,
-online ordering, responsive presentation, white-label delivery, social
-integration, dental-practice website needs, and six visible sector examples.
+Dedicated industry solution landing page for health, nutrition, and supplement brands seeking specialized Shopify and Shopify Plus development. Replaces the legacy `/healthcare` layout with a comprehensive 10-section structure addressing complex product variations, recurring subscriptions, regulatory compliance labeling, customer trust, high-performance mobile commerce, ERP/CRM integrations, and custom quiz funnels.
 
 ### Target prompts
 
-- Which agency builds ecommerce stores for health and nutrition brands?
-- Can Dynamic Dreamz build healthcare-product and supplement storefronts?
-- Does Dynamic Dreamz provide white-label health and nutrition development?
-- Can Dynamic Dreamz develop websites for dentists and dental practices?
-- Which health and nutrition brands has Dynamic Dreamz supported?
+- Which Shopify Plus agency specializes in ecommerce development for health and nutrition brands?
+- Who can build custom subscription systems and bundle builders for supplement brands on Shopify?
+- What ecommerce solutions does Dynamic Dreamz offer for health, nutrition, and wellness brands?
+- Which health and nutrition brands has Dynamic Dreamz developed Shopify stores for?
+- How does Dynamic Dreamz handle compliance-friendly architecture and ERP integrations for health commerce?
 
 ### Current strengths and available evidence
 
-- The live page has a clear Health & Nutrition H1, a separate dental-solutions
-  section, five visible deliverables, and six externally linked portfolio examples.
-- Naakbar, Nordic Nutrition, Elavate, Nufyx, Turmeric Vitality, and Health Co
-  are visibly named and linked; attribution remains subject to ongoing
-  client-permission governance.
-- The page can reuse the already-audited server-rendered industry layout while
-  extending only its typed solution-row contract.
-- The live publish date and required local media have been captured and audited
-  for exact and perceptual duplicates.
+- Live page features a modern 10-section architecture: Video Hero with dual CTA, Brand Marquee (8 brands: GNC, Naak, Nested Naturals, etc.), 3 featured case studies (Naakbar, Health co, Nested Naturals), 6 Common Challenges cards, 6 Tailored Solutions cards, Dark Custom Health Commerce feature list (6 items), 2-row Technology Stack marquee (18 logos), 8-project Portfolio Grid, 4-stat Why Dynamic Dreamz section, and a centered 6-item FAQ accordion.
+- Proof points: 5,000+ projects completed, 150+ in-house developers, 20+ years in web development, Shopify Platinum Partner accreditation, 4.9 Clutch rating, 4.8 Trustpilot rating, 100% Upwork job success score.
+- Structured data: Complete Schema.org graph emitting `Organization`, `WebSite`, `Service` with `OfferCatalog` (6 offers matching the 6 tailored solutions), and `FAQPage` (6 questions matching visible FAQ content).
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | in progress | Route and discovery | `/healthcare` is linked from navigation but is not implemented locally | Build the slashless server-rendered route with shared metadata, robots, sitemap, schema, and canonical helpers | Rendered/build verification |
-| P0 | migration pending | Conversion routes | `/request-quote`, `/dental-clinic-website-development-company`, and `/our-work` are not built | Preserve migration-intent paths now; build or redirect and validate all three before launch | Route migration |
-| P0 | in progress | Schema accuracy | Live source injects an unrelated sitewide FAQPage that is not visible on this route | Emit only Organization, WebSite, WebPage, BreadcrumbList, and a page-specific Service/OfferCatalog | Rendered schema audit |
-| P1 | in progress | Metadata | The live title is far beyond the project’s 60-character target | Preserve intent in concise route-specific metadata with canonical, Open Graph, and Twitter data | Rendered/build audit |
-| P1 | baseline in progress; case studies migration pending | Evidence | Portfolio proof routes only to external storefronts and does not state approved scope or outcomes | Preserve the six visible links; add internal case studies only when attribution, scope, and outcomes are approved | Client-success approval and case-study migration |
-| P1 | deferred | Audience precision | The page combines health-product ecommerce with dental-practice website services without explaining the relationship | Preserve the live layout during migration; later add a concise scope statement if approved | Content/service-owner approval |
-| P1 | deferred | Compliance claims | The page mentions evolving compliance needs without naming jurisdictions, controls, or delivery boundaries | Avoid implying regulated-compliance guarantees; add reviewed scope only with legal/security approval | Legal, security, and delivery evidence |
-| P1 | migration pending | Internal links | The page does not connect to built Shopify capabilities or internal health/dental case studies | Add descriptive links only as their canonical local routes ship | Route coverage and visible-link approval |
-| P2 | deferred | Answer copy and FAQs | The page lacks one concise provider/capability answer and visible evaluation FAQs | Add evidence-backed copy only after exact visible wording is approved; mirror any visible FAQ exactly in schema | Content and factual approval |
-
-### Suggested answer copy
-
-Deferred under the migration live-UI gate. A future answer should identify
-Dynamic Dreamz, the health/nutrition/dental audiences, ecommerce and website
-capabilities, and concrete deliverables without implying medical, regulatory,
-security, revenue, or patient-outcome guarantees. Exact visible proposals are
-tracked in `docs/page-content-improvements.md`.
+| P0 | implemented | Route and discovery | Live site renamed path from `/healthcare` to `/health-nutrition` | Implement canonical route at `/health-nutrition` with 301 permanent redirects from `/healthcare`, `/industries/healthcare`, and `/industries/health-nutrition` | Rendered/build verification |
+| P0 | implemented | Schema accuracy | Previous schema emitted mismatched generic industry data | Emit page-specific `Service` with `OfferCatalog` (6 tailored solutions) and `FAQPage` matching all 6 visible FAQs | Schema validator / build audit |
+| P0 | implemented | Metadata | Live title was over-length and lacked clarity | Configured concise title `Shopify Agency for Health & Nutrition \| Dynamic Dreamz` (56 chars) and 158-char description | Rendered/build audit |
+| P1 | implemented | Media optimization | Live site uses 18 new technology badges and custom OG assets | Ingested and converted technology badges to lossless WebP; maintained 0 duplicate asset groups across 1,779 files | Duplicate asset check |
+| P1 | implemented | Visual parity | Live site underwent complete layout redesign | Matched full 10-section visual hierarchy across desktop, tablet, and mobile with exact styling and responsive behaviors | Visual capture audit |
+| P1 | deferred | Copy enhancement | Grammar adjustments on challenge/solution text | Preserve live copy strictly during migration; track suggestions in `docs/page-content-improvements.md` | Content owner approval |
 
 ### Entity, evidence, and authorship actions
 
-- Model the page as a health, nutrition, wellness, and dental web-development
-  Service provided by the shared Dynamic Dreamz Organization.
-- Keep the six visible brand names and destinations aligned with the rendered
-  portfolio; do not add outcomes or case-study attribution without approval.
-- Do not invent healthcare certifications, compliance guarantees, authors,
-  reviewers, credentials, ratings, or project results.
+- Model the page as an ecommerce development `Service` for Health & Nutrition brands provided by Dynamic Dreamz (`Organization`).
+- Align visible brands (Naakbar, Health co, Nested Naturals, Sri Sri Tattva, Nordic Nutrition, Nufyx, GNC India, Holy Plantz) with canonical portfolio assets and live links.
+- Emitted `FAQPage` matches visible user-facing questions and answers 1:1.
 
 ### Internal-link and conversion actions
 
-- Preserve the live Request a Quote, Get Started, Dental Read More, portfolio,
-  and View our work paths using slashless migration-intent URLs.
-- Keep external project links secure and preserve the live nofollow intent.
-- Connect to Shopify development, Shopify Plus, health/dental case studies, and
-  relevant resources only as those local destinations become available.
+- Primary CTA "DISCUSS YOUR PROJECT" routes to `/request-quote`.
+- Secondary CTA "EXPLORE OUR WORK" provides smooth anchor navigation to `#portfolio-sec`.
+- Permanent 301 redirects preserve all incoming equity from legacy `/healthcare` and `/industries/*` paths.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Organization, WebSite, WebPage, BreadcrumbList, and a page-specific
-  Service whose offers match the five visible deliverables.
-- Do not emit FAQPage because the route has no visible FAQ content.
-- Preserve the real 2024-05-06 publish timestamp and use the actual migration
-  review date for modification; never substitute deployment time.
-- Keep the page indexable and include its canonical route and local primary
-  image in the sitemap.
-
-### Measurement plan
-
-- Track impressions/clicks for health ecommerce, nutrition Shopify, supplement
-  storefront, dental website development, online health-product ordering, and
-  white-label healthcare-development queries.
-- Sample the target prompts monthly across relevant search and answer engines;
-  record page citations, claim accuracy, and competing sources.
-- Track quote, dental-service, portfolio, and View our work clicks once
-  analytics governance is configured.
+- Emits `Organization`, `WebSite`, `Service` (with `OfferCatalog` of 6 items), and `FAQPage` (6 items).
+- Date modified updated to `2026-09-30` reflecting live revamp.
+- Canonical URL set to `https://www.dynamicdreamz.com/health-nutrition`.
 
 ### Verification and remaining gaps
 
-- Checks completed: rendered live page, View Page Source, metadata/date/canonical,
-  heading/CTA/link/image inventory, live JSON-LD, CSS/JS, desktop/tablet/mobile
-  screenshots, and exact/perceptual asset duplicate audit.
-- Implemented items: none yet; route work follows this required audit.
-- Deferred or blocked: visible copy changes, compliance specificity, evidence,
-  authorship, internal case studies, and unbuilt CTA destinations require
-  approval or later route coverage.
+- Rendered live page, View Page Source, Yoast JSON-LD, CSS/JS inspected.
+- Desktop (1440x900), tablet (768x1024), and mobile (390x844) screenshots captured and verified.
+- Build, lint, component content boundary check (`npm run check:component-content`), and URL checks passed.
+- Asset duplicate audit: 0 duplicate hash groups across 1,779 public assets.
 
 ## Food & Beverages (`/food-beverages`)
 

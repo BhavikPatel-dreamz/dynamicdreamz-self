@@ -145,6 +145,21 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/healthcare",
+        destination: "/health-nutrition",
+        permanent: true,
+      },
+      {
+        source: "/industries/healthcare",
+        destination: "/health-nutrition",
+        permanent: true,
+      },
+      {
+        source: "/industries/health-nutrition",
+        destination: "/health-nutrition",
+        permanent: true,
+      },
+      {
         source: "/magento-web-development",
         destination: "/magento-development",
         permanent: true,

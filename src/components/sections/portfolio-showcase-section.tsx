@@ -10,7 +10,7 @@ import { formatBrText } from "@/lib/text-formatting";
 
 export type PortfolioShowcaseItem = {
   name: string;
-  href: string;
+  href?: string | null;
   image: string;
   imageAlt: string;
   category?: string;

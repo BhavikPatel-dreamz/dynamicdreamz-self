@@ -273,7 +273,7 @@ export const impactThemeCustomizationContent = {
             "name": "Nufyx",
             "category": "SHOPIFY",
             "href": "https://nufyx.com/",
-            "image": "/assets/healthcare/portfolio/nufyx-protein-products.webp",
+            "image": "/assets/health-nutrition/portfolio/nufyx-protein-products.webp",
             "imageAlt": "Nufyx Image"
       },
       {

@@ -315,27 +315,20 @@ fashion-industry web design.
 | Portfolio image alt text | Live labels incorrectly identify SomewhereCo as Sambazon and Donj Jewellery as The Huddle Sports Grill. | Use brand- and subject-specific descriptions for all six project images. | Prevents unrelated alt text and accurately describes the visible media. | High | implemented as approved nonvisual accessibility correction |
 | CTA destinations | `/request-quote` and `/our-work` are not built. | Preserve their migration-intent paths and validate or redirect both before launch. | Maintains live CTA flow during migration. | High | migration pending |
 
-## Health & Nutrition (`/healthcare`)
+## Health & Nutrition (`/health-nutrition`)
 
-Status: visible recommendations deferred; live UI will be preserved during migration
-Last reviewed: 2026-08-13
-Primary SEO intent: health and nutrition ecommerce development, supplement
-stores, healthcare-product websites, dental-practice websites, online ordering,
-responsive layouts, and white-label delivery.
+Status: visible recommendations deferred; live UI preserved 1:1 during migration
+Last reviewed: 2026-09-30
+Primary SEO intent: Shopify agency for health and nutrition, supplement ecommerce development, recurring subscriptions, compliance labeling, custom quiz funnels, ERP integrations, DTC health storefronts.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | Health & Nutrition Industry Web Development \| E-Commerce for Health Industry \| E-Commerce for Nutrition Industry \| Web Development India \| Dynamic Dreamz | Health & Nutrition Ecommerce Development \| Dynamic Dreamz | Preserves the provider and primary commercial intent within the 60-character title budget. | High | planned for metadata |
-| Hero description | “The Health & Nutrition industry can thrust growth across the value chain through our technology supported web solutions.” | “Support your health and nutrition business with ecommerce and website solutions designed for clear product information, online ordering, and responsive customer experiences.” | Removes an unsupported growth implication and explains the offer directly. | High | deferred pending exact visible-copy approval |
-| Health solutions paragraph | “We emphasize on displaying the healthcare products and service description and the target customers.” | Explain accurate product/service presentation, intended audiences, ecommerce delivery, and customer experience in direct language. | Corrects unclear grammar without adding a performance claim. | Medium | deferred pending exact visible-copy approval |
-| Dental heading and paragraphs | Uses “dental business,” “brand-new,” “best,” and “allowing remarkable growth,” while combining dentist and agency audiences in long sentences. | Separate dentist and white-label-agency needs, describe the approved delivery scope, and remove the unsupported comparative and growth claim. | Improves clarity and claim safety. | High | deferred pending service-owner and exact-copy approval |
-| Deliverables introduction | Mentions healthcare outcomes, optimized cost, and evolving compliance without evidence or delivery boundaries. | Describe information architecture, ordering, responsive delivery, white-label capacity, and integrations; mention regulated requirements only with approved jurisdiction-specific scope. | Avoids implying medical outcomes, cost optimization, or compliance guarantees. | High | deferred pending legal/security/delivery approval |
-| Tailored Website Development card | Says product and medicinal information is made easily accessible. | Describe structured product and usage information while requiring client-supplied, reviewed content and applicable disclaimers. | Clarifies responsibility for regulated product information. | High | deferred pending delivery/legal approval |
-| Portfolio introduction | “We've provided Services to several clients to help them in their Food sector businesses.” | “Explore health, nutrition, supplement, and wellness storefronts supported by Dynamic Dreamz.” | Fixes the Food-sector mismatch and improves page-topic alignment. | High | deferred pending exact visible-copy approval |
-| Health Co category | Visible category says Shopify while the overlay displays Magento. | Use the verified platform consistently after the project record is confirmed. | Prevents conflicting portfolio evidence. | High | blocked pending client/project confirmation |
-| Solution image alt | Live source incorrectly says “IT Solutions for Food & Beverages Industry Image.” | “Protein powder being added to a health and nutrition drink.” | Corrects the subject mismatch and describes the visible image. | High | planned accessibility correction |
-| Portfolio image alts | Most live alts repeat brand names and “Image.” | Use brand- and subject-specific descriptions for all six project cards. | Makes each content image meaningful without changing visible UI. | Medium | planned accessibility correction |
-| CTA destinations | `/request-quote`, `/dental-clinic-website-development-company`, and `/our-work` are not yet built. | Preserve their slashless migration-intent paths and validate or redirect all three before launch. | Maintains live CTA flow under the active-migration route exception. | High | migration pending |
+| Route | Legacy `/healthcare` URL changed to `/health-nutrition` on live site | Maintain `/health-nutrition` canonical route with permanent 301 redirects from legacy paths | Preserves URL equity and matches live structure. | High | implemented |
+| Meta title | “Shopify Agency for Health & Nutrition \| Dynamic Dreamz” | Keep “Shopify Agency for Health & Nutrition \| Dynamic Dreamz” | Concise 56-character title within SEO budget. | High | implemented in metadata |
+| Meta description | “Shopify Platinum Partner for health, nutrition and supplement brands. Subscriptions, product discovery, mobile apps, integrations, and custom development.” | Keep live description (158 chars) | Accurate and within SERP truncation limits. | High | implemented in metadata |
+| Challenges copy | Minor phrasing quirks in challenge card descriptions (e.g., “Regulatory Compliance & Labeling”) | Preserve live copy strictly during migration; propose light grammatical edits if requested | Enforces migration copy integrity. | Low | deferred pending exact visible-copy approval |
+| Image alt text | Technology and brand logo badges need clear entity identification | Provide explicit, brand-specific alt attributes for all 18 tech logos and 8 portfolio cards | Improves accessibility without changing visible UI. | High | implemented |
+| CTA destinations | Dual hero CTAs: “DISCUSS YOUR PROJECT” and “EXPLORE OUR WORK” | Route to `/request-quote` and `#portfolio-sec` smooth anchor | Ensures clean user journey and matches live behavior. | High | implemented |
 
 ## Food & Beverages (`/food-beverages`)
 

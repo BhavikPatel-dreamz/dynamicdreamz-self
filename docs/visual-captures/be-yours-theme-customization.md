@@ -70,5 +70,5 @@
 - **Brand Logos**: Reused 12 canonical brand logos from `public/assets/clients/` via `industryBrandLogos`.
 - **Theme Benefits Icons**: Reused canonical 24x24 outline SVGs from `dawn-theme-customization/benefits/` and `expanse-theme-customization/benefits/`.
 - **Services Icons**: Reused canonical service icons from `services/` and `dawn-theme-customization/services/`.
-- **Portfolio Projects**: Reused canonical WebP project screenshots from `public/assets/our-work/projects/`, `public/assets/healthcare/portfolio/`, `public/assets/pet-industry/portfolio/`, `public/assets/beauty-cosmetics/portfolio/`, `public/assets/food-beverages/portfolio/`, and `public/assets/fashion/portfolio/`.
+- **Portfolio Projects**: Reused canonical WebP project screenshots from `public/assets/our-work/projects/`, `public/assets/health-nutrition/portfolio/`, `public/assets/pet-industry/portfolio/`, `public/assets/beauty-cosmetics/portfolio/`, `public/assets/food-beverages/portfolio/`, and `public/assets/fashion/portfolio/`.
 - **Total Asset Duplicates**: Verified 0 duplicate hash groups across all public assets.

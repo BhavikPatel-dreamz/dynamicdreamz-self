@@ -141,7 +141,7 @@ export const ourWorkProjects = [
     "name": "Naakbar",
     "category": "shopify plus",
     "href": "https://www.naak.com/",
-    "image": "/assets/healthcare/portfolio/naakbar-energy-products.webp",
+    "image": "/assets/health-nutrition/portfolio/naakbar-energy-products.webp",
     "imageAlt": "Naakbar project preview",
     "platformMark": {
       "src": "/assets/platforms/shopify-plus-white.svg",
@@ -470,7 +470,7 @@ export const ourWorkProjects = [
     "name": "Elavate",
     "category": "shopify",
     "href": "https://elavate.com/",
-    "image": "/assets/healthcare/portfolio/elavate-collagen-supplement.webp",
+    "image": "/assets/health-nutrition/portfolio/elavate-collagen-supplement.webp",
     "imageAlt": "Elavate project preview",
     "platformMark": {
       "src": "/assets/platforms/shopify-white.svg",
@@ -1184,7 +1184,7 @@ export const ourWorkProjects = [
     "name": "Nufyx",
     "category": "shopify",
     "href": "https://nufyx.com/",
-    "image": "/assets/healthcare/portfolio/nufyx-protein-products.webp",
+    "image": "/assets/health-nutrition/portfolio/nufyx-protein-products.webp",
     "imageAlt": "Nufyx project preview",
     "platformMark": {
       "src": "/assets/platforms/shopify-white.svg",
@@ -1611,7 +1611,7 @@ export const ourWorkProjects = [
     "name": "Nordic Nutrition",
     "category": "shopify",
     "href": "https://nordicnutrition.ae/",
-    "image": "/assets/healthcare/portfolio/nordic-nutrition-supplements.webp",
+    "image": "/assets/health-nutrition/portfolio/nordic-nutrition-supplements.webp",
     "imageAlt": "Nordic Nutrition project preview",
     "platformMark": {
       "src": "/assets/platforms/shopify-white.svg",
@@ -1625,7 +1625,7 @@ export const ourWorkProjects = [
     "name": "Turmeric Vitality",
     "category": "shopify",
     "href": "https://turmericvitality.co.uk/",
-    "image": "/assets/healthcare/portfolio/turmeric-vitality-supplement.webp",
+    "image": "/assets/health-nutrition/portfolio/turmeric-vitality-supplement.webp",
     "imageAlt": "Turmeric Vitality project preview",
     "platformMark": {
       "src": "/assets/platforms/shopify-white.svg",
@@ -1697,7 +1697,7 @@ export const ourWorkProjects = [
     "name": "Health co",
     "category": "shopify",
     "href": "https://www.healthco.com.au/",
-    "image": "/assets/healthcare/portfolio/health-co-protein-powder.webp",
+    "image": "/assets/health-nutrition/portfolio/health-co-protein-powder.webp",
     "imageAlt": "Health co project preview",
     "platformMark": {
       "src": "/assets/platforms/shopify-white.svg",
