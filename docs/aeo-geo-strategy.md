@@ -4648,14 +4648,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Kadence Theme Customization (`/kadence-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-26
+Last reviewed: 2026-09-30
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Kadence theme customization, drag-and-drop header/footer layout building, WooCommerce integration, speed optimization, and custom hooks/filters development.
 Decision stage: partner selection, Kadence theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Kadence theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 5 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Kadence theme customization capabilities. Features 12 client brand trust logos, 6 key theme features, 6 customization services, 9 store benefits, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards, client video stories, 5 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -4668,12 +4668,13 @@ Dedicated commercial landing page presenting Dynamic Dreamz Kadence theme custom
 ### Current strengths and available evidence
 
 - Server-rendered H1 `Kadence Theme Customization Service` with direct answer paragraph.
-- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
-- 7 distinct theme features with vector icons and descriptions (Ultra-Lightweight & Fast, SEO-Optimized, Fully Responsive, Drag-and-Drop Header & Footer Builder, WooCommerce Integration, Pre-Designed Starter Templates, Custom Hooks & Filters).
-- 9 core benefits of Kadence customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
+- 12 verified brand partner logos via `industryBrandLogos` (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City, etc.).
+- 6 distinct theme features with vector icons and descriptions (Ultra-Lightweight & Fast, SEO-Optimized, Fully Responsive, Drag-and-Drop Header & Footer Builder, WooCommerce Integration, Pre-Designed Starter Templates).
 - 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 9 core benefits of Kadence customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
 - 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur) with WordPress/WooCommerce platform mark.
+- 8 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids) with live client website external links.
+- Client stories video testimonial section (`HappyClientSection`).
 - 5 comprehensive FAQ accordion items directly answering merchant questions on non-coding customization, WooCommerce compatibility, speed optimization, third-party plugins, and ongoing post-customization support.
 - Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (5 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
 - Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
@@ -4684,7 +4685,7 @@ Dedicated commercial landing page presenting Dynamic Dreamz Kadence theme custom
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Missing App Router implementation for Kadence theme customization | Ship slashless `/kadence-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
 | P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (5 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Kadence hero graphic and unique feature icons under `public/assets/kadence-theme-customization/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Reused canonical Kadence hero graphic, clean inline SVGs, and canonical portfolio assets | Verified locally with 0 duplicate assets |
 | P1 | deferred | Content expansion | Minor phrasing and vocabulary improvements for benefits subtitle | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -4694,7 +4695,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Entity, evidence, and authorship actions
 
 - Connect Dynamic Dreamz as a WordPress & WooCommerce development specialist founded in 2006 with 18+ years of experience, 5000+ completed projects, and 150+ in-house experts.
-- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids).
 
 ### Internal-link and conversion actions
 
@@ -4704,7 +4705,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service with 6 Offer items, 5 FAQ items, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-20T00:00:00+05:30`.
+- Set explicit freshness `modifiedTime` to `2026-09-28T13:08:06+00:00`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
@@ -4714,18 +4715,18 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/kadence-theme-customization`; source/build URL guard passes.
+- URL-policy review (2026-09-30): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/kadence-theme-customization`; source/build URL guard passes.
 ## Hello Elementor Theme Customization (`/hello-elementor-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Hello Elementor theme customization, Elementor page builder styling, custom widget design, WooCommerce integration, speed optimization, and clean minimalistic development.
 Decision stage: partner selection, Hello Elementor theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Hello Elementor theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 9 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 5 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Hello Elementor theme customization capabilities. Features 12 client brand trust logos, 6 key theme features, 6 customization services, 9 store benefits, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards, client video stories, 5 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -4738,12 +4739,13 @@ Dedicated commercial landing page presenting Dynamic Dreamz Hello Elementor them
 ### Current strengths and available evidence
 
 - Server-rendered H1 `Hello Elementor Theme Customization Service` with direct answer paragraph.
-- 10 verified brand partner logos (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City).
-- 7 distinct theme features with vector icons and descriptions (Lightning Fast, SEO-Friendly, Fully Responsive, Lightweight Structure, Easy Customization, WooCommerce Compatible, No Bloatware).
-- 9 core benefits of Hello Elementor customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
+- 12 verified brand partner logos via `industryBrandLogos` (Ranavat, Prolash, Tropicfeel, Perfect Locks, Bombay Shirt Company, Kayfi, Sims Direct, Kvaser, Nekter Juice Bar, Circuit City, etc.).
+- 6 distinct theme features with vector icons and descriptions (Lightning Fast, SEO-Friendly, Fully Responsive, Lightweight Structure, Easy Customization, WooCommerce Compatible).
 - 6 core services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
+- 9 core benefits of Hello Elementor customization (Fully Customizable Store, Responsive Design, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
 - 4 agency proof points (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur) with WordPress/WooCommerce platform mark.
+- 8 real WordPress portfolio project cards (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids) with live client website external links.
+- Client stories video testimonial section (`HappyClientSection`).
 - 5 comprehensive FAQ accordion items directly answering merchant questions on non-coding customization, WooCommerce compatibility, speed optimization, third-party plugins, and ongoing post-customization support.
 - Structured data graph emitting Service, OfferCatalog (6 service offers), FAQPage (5 Question/Answer pairs), BreadcrumbList, Organization, and WebSite.
 - Zero duplicate assets across `public/assets/`, with canonical portfolio screens, brand partner logos, and service icons reused.
@@ -4754,7 +4756,7 @@ Dedicated commercial landing page presenting Dynamic Dreamz Hello Elementor them
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Missing App Router implementation for Hello Elementor theme customization | Ship slashless `/hello-elementor-theme-customization` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
 | P0 | implemented | Structured data | Missing rich Service, FAQPage, and OfferCatalog schema | Emit Service with OfferCatalog (6 offers), FAQPage (5 items), BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Local assets | Live site assets required local project-owned copies | Save unique Hello Elementor hero graphic and unique feature icons under `public/assets/hello-elementor-theme-customization/` | Verified locally with 0 duplicate assets |
+| P0 | implemented | Local assets | Live site assets required local project-owned copies | Reused canonical Hello Elementor hero graphic, clean inline SVGs, and canonical portfolio assets | Verified locally with 0 duplicate assets |
 | P1 | deferred | Content expansion | Minor phrasing and vocabulary improvements for services & FAQ text | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -4764,7 +4766,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Entity, evidence, and authorship actions
 
 - Connect Dynamic Dreamz as a WordPress & WooCommerce development specialist founded in 2006 with 18+ years of experience, 5000+ completed projects, and 150+ in-house experts.
-- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- Attribute portfolio projects directly to their live brand sites (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids).
 
 ### Internal-link and conversion actions
 
@@ -4774,7 +4776,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service with 6 Offer items, 5 FAQ items, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-20T00:00:00+05:30`.
+- Set explicit freshness `modifiedTime` to `2026-09-28T13:09:08+00:00`.
 - Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
 
 ### Measurement plan
@@ -4784,7 +4786,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/hello-elementor-theme-customization`; source/build URL guard passes.
+- URL-policy review (2026-09-30): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/hello-elementor-theme-customization`; source/build URL guard passes.
 ## GeneratePress Theme Customization (`/generatepress-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved

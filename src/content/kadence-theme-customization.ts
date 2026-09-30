@@ -1,10 +1,37 @@
+import { industryBrandLogos } from "@/content/industries";
+import type {
+  KadenceBenefitIconName,
+  KadenceFeatureIconName,
+  KadenceServiceIconName,
+} from "@/components/sections/kadence-theme-customization/kadence-icons";
+
+export type KadenceFeatureItem = {
+  iconName: KadenceFeatureIconName;
+  title: string;
+  description: string;
+};
+
+export type KadenceServiceItem = {
+  iconName: KadenceServiceIconName;
+  title: string;
+  description: string;
+};
+
+export type KadenceBenefitItem = {
+  iconName: KadenceBenefitIconName;
+  title: string;
+  description: string;
+};
+
 export const kadenceThemeCustomizationContent = {
   hero: {
+    eyebrow: ["Wordpress Agency", "Theme Customization"] as const,
     title: "Kadence Theme Customization Service",
     description:
       "Want to customize your Kadence theme for a unique and high-performing WordPress website? Our Kadence Theme Customization Service helps you create a professional, fast, and user-friendly WordPress website that fulfills your brand's requirements. From layout changes to advanced feature integrations, we guarantee a fully optimized, SEO-friendly WordPress website that enhances your online presence.",
     ctaText: "request a quote",
     ctaHref: "/request-quote",
+    ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/kadence-theme-customization/hero/kadence-theme-customization-service-img.webp",
       alt: "Kadence Theme Customization Service Image",
@@ -13,297 +40,194 @@ export const kadenceThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by Leading Brands",
-    items: [
-      {
-        name: "Ranavat Logo",
-        src: "/assets/clients/ranavat.svg",
-        href: "https://www.ranavat.com/",
-        alt: "Ranavat Logo",
-        width: 174,
-        height: 19,
-      },
-      {
-        name: "prolash_black",
-        src: "/assets/clients/prolash.svg",
-        href: "https://prolash.com/",
-        alt: "prolash_black",
-        width: 204,
-        height: 22,
-      },
-      {
-        name: "Tropicfeel Logo",
-        src: "/assets/clients/tropicfeel.svg",
-        href: "https://shop.tropicfeel.com/",
-        alt: "Tropicfeel Logo",
-        width: 150,
-        height: 32,
-      },
-      {
-        name: "perfect_locks_color_logo",
-        src: "/assets/clients/perfect-locks.svg",
-        href: "https://www.perfectlocks.com/",
-        alt: "perfect_locks_color_logo",
-        width: 175,
-        height: 32,
-      },
-      {
-        name: "Bombay Shirt Company Logo",
-        src: "/assets/clients/bombay-shirt-company.svg",
-        href: "https://www.bombayshirts.com/",
-        alt: "Bombay Shirt Company Logo",
-        width: 204,
-        height: 26,
-      },
-      {
-        name: "kayfi-colored",
-        src: "/assets/clients/kayfi.svg",
-        href: "https://kayfi.com/",
-        alt: "kayfi-colored",
-        width: 90,
-        height: 49,
-      },
-      {
-        name: "simdirect_logo_color",
-        src: "/assets/clients/simsdirect.svg",
-        href: "https://simsdirect.com.au/",
-        alt: "simdirect_logo_color",
-        width: 143,
-        height: 49,
-      },
-      {
-        name: "Kvaser Logo",
-        src: "/assets/clients/kvaser.svg",
-        href: "https://www.kvaser.com/",
-        alt: "Kvaser Logo",
-        width: 135,
-        height: 25,
-      },
-      {
-        name: "nekter-colored",
-        src: "/assets/clients/nelter.svg",
-        href: "https://www.nekterjuicebar.com/",
-        alt: "nekter-colored",
-        width: 66,
-        height: 64,
-      },
-      {
-        name: "Circuit City Logo",
-        src: "/assets/clients/circuit-city.svg",
-        href: "https://circuitcity.com/",
-        alt: "Circuit City Logo",
-        width: 64,
-        height: 64,
-      },
-    ],
+    title: "Trusted by \nLeading Brands",
+    heading: "Trusted by \nLeading Brands",
+    slug: "kadence-theme-customization",
+    items: industryBrandLogos,
   },
   features: {
-    title: "Features Of Kadence Theme",
-    subtitle:
+    eyebrow: "Features",
+    heading: "Features of Kadence Theme",
+    description:
       "Kadence is a highly adaptable and lightweight WordPress theme designed for speed, customization, and compatibility with famous WordPress page builders.",
     items: [
       {
+        iconName: "lightning",
         title: "Ultra-Lightweight & Fast",
         description: "Optimized for speed with minimal load times.",
-        icon: "/assets/astra-theme-customization/features/lightning-fast-performance.svg",
-        iconAlt: "Ultra Lightweight & Fast Icon",
       },
       {
+        iconName: "seo",
         title: "SEO-Optimized",
         description: "It is built with clean code for better search engine rankings.",
-        icon: "/assets/astra-theme-customization/features/seo-optimized.svg",
-        iconAlt: "SEO Optimized Icon",
       },
       {
+        iconName: "responsive",
         title: "Fully Responsive",
-        description: "You can relax and sit back. It ensures a smooth user experience on all devices.",
-        icon: "/assets/astra-theme-customization/features/fully-responsive.svg",
-        iconAlt: "Fully Responsive Icon",
+        description:
+          "You can relax and sit back. It ensures a smooth user experience on all devices.",
       },
       {
+        iconName: "builder",
         title: "Drag-and-Drop Header & Footer Builder",
-        description: "You can easily customize layouts without coding using a drag-and-drop builder.",
-        icon: "/assets/kadence-theme-customization/features/drag-and-drop-header-footer-builder.svg",
-        iconAlt: "Drag Drop Header & Footer Builder Icon",
+        description:
+          "You can easily customize layouts without coding using a drag-and-drop builder.",
       },
       {
+        iconName: "woocommerce",
         title: "WooCommerce Integration",
-        description: "The Kadence theme is ideal for eCommerce stores with smooth functionality.",
-        icon: "/assets/astra-theme-customization/features/woocommerce-ready.svg",
-        iconAlt: "WooCommerce Integration Icon",
+        description:
+          "The Kadence theme is ideal for eCommerce stores with smooth functionality.",
       },
       {
+        iconName: "templates",
         title: "Pre-Designed Starter Templates",
-        description: "It provides a few ready-made starter templates for quick and easy setup.",
-        icon: "/assets/astra-theme-customization/features/pre-built-templates.svg",
-        iconAlt: "Pre Designed Starter Templates Icon",
-      },
-      {
-        title: "Custom Hooks & Filters",
-        description: "With the custom hooks and filters, developers can extend and modify the theme.",
-        icon: "/assets/kadence-theme-customization/features/custom-hooks-and-filters.svg",
-        iconAlt: "Custom Hooks & Filters Icon",
-      },
-    ],
-  },
-  benefits: {
-    title: "Benefits of Kadence Theme Customization",
-    subtitle:
-      "Customizing the Kadence theme allows you to build a visually appealing, high-performing, and feature-rich website. Here are a few benefits you must have to know:",
-    items: [
-      {
-        title: "Fully Customizable Store",
         description:
-          "Get a fully modified design, layout, and features to match your brand identity quickly.",
-        icon: "/assets/shopify-theme-customization/benefits/fully-customizable-store.svg",
-        iconAlt: "cs_icon_img",
+          "It provides a few ready-made starter templates for quick and easy setup.",
       },
-      {
-        title: "Responsive Design",
-        description:
-          "Its responsiveness ensures optimal viewing and interaction across all devices.",
-        icon: "/assets/shopify-theme-customization/benefits/responsive-design.svg",
-        iconAlt: "responsive_design_icon",
-      },
-      {
-        title: "Unique Brand Identity",
-        description:
-          "You can stand out with a customized design that reflects your business.",
-        icon: "/assets/shopify-theme-customization/benefits/unique-brand-identity.svg",
-        iconAlt: "unique-brand-identity-icon",
-      },
-      {
-        title: "Improved User Experience",
-        description:
-          "Enhance navigation, readability, and functionality to provide a better user experience to your website users.",
-        icon: "/assets/shopify-theme-customization/benefits/improved-user-experience.svg",
-        iconAlt: "User-Friendly Interface",
-      },
-      {
-        title: "Multiple Third-party Plugins",
-        description:
-          "You can smoothly integrate essential plugins for enhanced capabilities.",
-        icon: "/assets/shopify-theme-customization/benefits/multiple-third-party-apps.svg",
-        iconAlt: "Multiple Sales Channels Icon",
-      },
-      {
-        title: "Higher Conversion Rates",
-        description:
-          "Optimize your website for better engagement and lead generation with our customization.",
-        icon: "/assets/shopify-theme-customization/benefits/higher-conversion-rates.svg",
-        iconAlt: "cost-effective-scalability-img",
-      },
-      {
-        title: "Mobile Optimization",
-        description:
-          "Our customization service can ensure a flawless and fast-loading mobile experience.",
-        icon: "/assets/shopify-theme-customization/benefits/mobile-optimization.svg",
-        iconAlt: "Mobile Optimization Icon",
-      },
-      {
-        title: "Safe and Secure Payments",
-        description:
-          "Implement secure payment gateways to offer a safe payment environment for users.",
-        icon: "/assets/shopify-theme-customization/benefits/safe-and-secure-payments.svg",
-        iconAlt: "Enhanced Security Icon",
-      },
-      {
-        title: "Minimal Maintenance Cost",
-        description:
-          "A well-optimized WordPress theme reduces the need for regular maintenance.",
-        icon: "/assets/shopify-theme-customization/benefits/zero-maintenance-cost.svg",
-        iconAlt: "Zero Maintenance Cost Image",
-      },
-    ],
+    ] as const satisfies readonly KadenceFeatureItem[],
   },
   services: {
-    title: "Our Kadence Theme Customization Services",
-    subtitle:
+    eyebrow: "Our Services",
+    heading: "Our Kadence Theme Customization Services",
+    description:
       "We offer the best Kadence theme customization services to help you build a fully optimized and feature-rich WordPress website. Check out our WordPress theme customization services:",
     items: [
       {
+        iconName: "installation",
         title: "Theme Installation",
         description:
           "We install and configure the Kadence theme to ensure smooth website performance.",
-        icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
-        iconAlt: "Maintenance and Support Icon",
       },
       {
+        iconName: "design",
         title: "Custom Design and Branding",
         description:
           "Create a unique and professional website design to represent your brand.",
-        icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
-        iconAlt: "Plugin Development Icon",
       },
       {
+        iconName: "responsive",
         title: "Responsive Design",
         description:
           "Our theme customization will ensure a smooth user experience across all screen sizes.",
-        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
-        iconAlt: "custom themes icon",
       },
       {
+        iconName: "features",
         title: "Advanced Features Integration",
         description:
           "We can add custom functionalities like animations, custom post types, and interactive elements.",
-        icon: "/assets/shopify-theme-customization/services/advanced-features-integration.svg",
-        iconAlt: "Data Integrity Checks Icon",
       },
       {
+        iconName: "performance",
         title: "Performance Optimization",
         description:
           "Improve website speed and responsiveness using our theme customization services for enhanced user experience.",
-        icon: "/assets/shopify-theme-customization/services/performance-optimization.svg",
-        iconAlt: "Compliance with Shopify’s Security Standards Icon",
       },
       {
+        iconName: "support",
         title: "Ongoing Support and Maintenance",
         description:
           "We offer continued support to maintain your WordPress website secure and up-to-date.",
-        icon: "/assets/shopify-theme-customization/services/ongoing-support-and-maintenance.svg",
-        iconAlt: "Custom App Development Icon",
       },
-    ],
+    ] as const satisfies readonly KadenceServiceItem[],
+  },
+  benefits: {
+    eyebrow: "Benefits",
+    heading: "Benefits of Kadence Theme Customization",
+    description:
+      "Customizing the Kadence theme allows you to build a visually appealing, high-performing, and feature-rich website. Here are a few benefits you must have to know:",
+    items: [
+      {
+        iconName: "store",
+        title: "Fully Customizable Store",
+        description:
+          "Get a fully modified design, layout, and features to match your brand identity quickly.",
+      },
+      {
+        iconName: "responsive",
+        title: "Responsive Design",
+        description:
+          "Its responsiveness ensures optimal viewing and interaction across all devices.",
+      },
+      {
+        iconName: "brand",
+        title: "Unique Brand Identity",
+        description:
+          "You can stand out with a customized design that reflects your business.",
+      },
+      {
+        iconName: "ux",
+        title: "Improved User Experience",
+        description:
+          "Enhance navigation, readability, and functionality to provide a better user experience to your website users.",
+      },
+      {
+        iconName: "plugins",
+        title: "Multiple Third-party Plugins",
+        description:
+          "You can smoothly integrate essential plugins for enhanced capabilities.",
+      },
+      {
+        iconName: "conversions",
+        title: "Higher Conversion Rates",
+        description:
+          "Optimize your website for better engagement and lead generation with our customization.",
+      },
+      {
+        iconName: "mobile",
+        title: "Mobile Optimization",
+        description:
+          "Our customization service can ensure a flawless and fast-loading mobile experience.",
+      },
+      {
+        iconName: "payments",
+        title: "Safe and Secure Payments",
+        description:
+          "Implement secure payment gateways to offer a safe payment environment for users.",
+      },
+      {
+        iconName: "maintenance",
+        title: "Minimal Maintenance Cost",
+        description:
+          "A well-optimized WordPress theme reduces the need for regular maintenance.",
+      },
+    ] as const satisfies readonly KadenceBenefitItem[],
   },
   whyChoose: {
-    title: "Why Choose Dynamic Dreamz",
-    subtitle:
+    eyebrow: "Why Dynamic Dreamz",
+    heading: "Why Choose Dynamic Dreamz",
+    description:
       "Choosing Dynamic Dreamz for Kadence theme customization ensures high-quality results and dedicated support.",
     items: [
       {
         title: "Expert Team",
         description:
           "We have skilled developers with experience in Kadence theme customization and custom WordPress development.",
-        icon: "/assets/shopify-theme-customization/why-choose/expert-team.svg",
-        iconAlt: "expert-team",
       },
       {
         title: "Proven Process",
         description:
           "We follow a systematic approach to delivering customized WordPress website solutions.",
-        icon: "/assets/shopify-theme-customization/why-choose/proven-process.svg",
-        iconAlt: "Proven Process Icon",
       },
       {
         title: "Ongoing Support",
         description:
           "You can get long-term maintenance and technical assistance for your WordPress website updates.",
-        icon: "/assets/shopify-theme-customization/why-choose/ongoing-support.svg",
-        iconAlt: "customer_support_icon_img",
       },
       {
         title: "Client-Focused Approach",
         description:
           "Our priority is our clients' needs. We offer custom solutions designed to align with your business goals.",
-        icon: "/assets/shopify-theme-customization/why-choose/client-focused-approach.svg",
-        iconAlt: "Client-Focused Approach Icon",
       },
-    ],
+    ] as const,
   },
   portfolio: {
-    title: "Snippets of WordPress Theme Customization Portfolio",
-    subtitle:
+    eyebrow: "Portfolio",
+    heading: "Snippets of WordPress Theme Customization Portfolio",
+    description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
+    ctaLabel: "View our work",
+    ctaHref: "/our-work",
     items: [
       {
         name: "Quite Events",
@@ -347,7 +271,27 @@ export const kadenceThemeCustomizationContent = {
         image: "/assets/our-work/projects/nexventur.webp",
         imageAlt: "Nexventur",
       },
-    ],
+      {
+        name: "Awaken Media",
+        category: "WORDPRESS",
+        href: "https://www.awaken.media/",
+        image: "/assets/our-work/projects/awaken-media.webp",
+        imageAlt: "Awaken Media",
+      },
+      {
+        name: "Budget Maids",
+        category: "WORDPRESS",
+        href: "https://www.budget-maids.com/",
+        image: "/assets/our-work/projects/budget-maids.webp",
+        imageAlt: "Budget Maids",
+      },
+    ] as const,
+  },
+  testimonials: {
+    eyebrow: "Client Stories",
+    heading: "Don't Just Take Our Word For It",
+    description:
+      "Hear directly from the clients who have worked with Dynamic Dreamz across Shopify, ecommerce and long-term development engagements.",
   },
   faqs: [
     {
@@ -375,5 +319,5 @@ export const kadenceThemeCustomizationContent = {
       answer:
         "We provide continuous support and maintenance to keep your website functioning. After a few revisions, we can start a new hourly or fixed-price contract.",
     },
-  ],
+  ] as const,
 } as const;

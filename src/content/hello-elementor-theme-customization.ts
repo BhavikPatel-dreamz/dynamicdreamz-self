@@ -1,10 +1,37 @@
+import { industryBrandLogos } from "@/content/industries";
+import type {
+  HelloElementorBenefitIconName,
+  HelloElementorFeatureIconName,
+  HelloElementorServiceIconName,
+} from "@/components/sections/hello-elementor-theme-customization/hello-elementor-icons";
+
+export type HelloElementorFeatureItem = {
+  iconName: HelloElementorFeatureIconName;
+  title: string;
+  description: string;
+};
+
+export type HelloElementorServiceItem = {
+  iconName: HelloElementorServiceIconName;
+  title: string;
+  description: string;
+};
+
+export type HelloElementorBenefitItem = {
+  iconName: HelloElementorBenefitIconName;
+  title: string;
+  description: string;
+};
+
 export const helloElementorThemeCustomizationContent = {
   hero: {
+    eyebrow: ["Wordpress Agency", "Theme Customization"] as const,
     title: "Hello Elementor Theme Customization Service",
     description:
       "Are you looking to customize your Hello Elementor theme for a unique and engaging website? Our professional Hello Elementor Theme Customization Service helps you customize your WordPress theme to match your brand identity while ensuring a smooth user experience. Whether you need design modifications, performance enhancements, or advanced integrations, we deliver a fully optimized website that stands out.",
     ctaText: "request a quote",
     ctaHref: "/request-quote",
+    ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/hello-elementor-theme-customization/hero/hello-elementor-theme-customization-service-img.webp",
       alt: "Hello Elementor Theme Customization Service Image",
@@ -13,279 +40,195 @@ export const helloElementorThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by Leading Brands",
-    items: [
-      {
-        name: "Ranavat Logo",
-        src: "/assets/clients/ranavat.svg",
-        href: "https://www.ranavat.com/",
-        alt: "Ranavat Logo",
-        width: 174,
-        height: 19,
-      },
-      {
-        name: "prolash_black",
-        src: "/assets/clients/prolash.svg",
-        href: "https://prolash.com/",
-        alt: "prolash_black",
-        width: 204,
-        height: 22,
-      },
-      {
-        name: "Tropicfeel Logo",
-        src: "/assets/clients/tropicfeel.svg",
-        href: "https://shop.tropicfeel.com/",
-        alt: "Tropicfeel Logo",
-        width: 150,
-        height: 32,
-      },
-      {
-        name: "perfect_locks_color_logo",
-        src: "/assets/clients/perfect-locks.svg",
-        href: "https://www.perfectlocks.com/",
-        alt: "perfect_locks_color_logo",
-        width: 175,
-        height: 32,
-      },
-      {
-        name: "Bombay Shirt Company Logo",
-        src: "/assets/clients/bombay-shirt-company.svg",
-        href: "https://www.bombayshirts.com/",
-        alt: "Bombay Shirt Company Logo",
-        width: 204,
-        height: 26,
-      },
-      {
-        name: "kayfi-colored",
-        src: "/assets/clients/kayfi.svg",
-        href: "https://kayfi.com/",
-        alt: "kayfi-colored",
-        width: 90,
-        height: 49,
-      },
-      {
-        name: "simdirect_logo_color",
-        src: "/assets/clients/simsdirect.svg",
-        href: "https://simsdirect.com.au/",
-        alt: "simdirect_logo_color",
-        width: 143,
-        height: 49,
-      },
-      {
-        name: "Kvaser Logo",
-        src: "/assets/clients/kvaser.svg",
-        href: "https://www.kvaser.com/",
-        alt: "Kvaser Logo",
-        width: 135,
-        height: 25,
-      },
-      {
-        name: "nekter-colored",
-        src: "/assets/clients/nelter.svg",
-        href: "https://www.nekterjuicebar.com/",
-        alt: "nekter-colored",
-        width: 66,
-        height: 64,
-      },
-      {
-        name: "Circuit City Logo",
-        src: "/assets/clients/circuit-city.svg",
-        href: "https://circuitcity.com/",
-        alt: "Circuit City Logo",
-        width: 64,
-        height: 64,
-      },
-    ],
+    title: "Trusted by \nLeading Brands",
+    heading: "Trusted by \nLeading Brands",
+    slug: "hello-elementor-theme-customization",
+    items: industryBrandLogos,
   },
   features: {
-    title: "Features Of Hello Elementor Theme",
-    subtitle:
+    eyebrow: "Features",
+    heading: "Features of Hello Elementor Theme",
+    description:
       "The Hello Elementor theme is a lightweight, fast-loading WordPress theme designed to work smoothly with the Elementor page builder. Its minimalistic design allows for extensive customization and faster loading times, making it perfect for businesses.",
     items: [
       {
+        iconName: "lightning",
         title: "Lightning Fast",
-        description: "The theme is built for speed, ensuring fast page loading times and improved performance.",
-        icon: "/assets/astra-theme-customization/features/lightning-fast-performance.svg",
-        iconAlt: "Lightning Fast Design Icon",
+        description:
+          "The theme is built for speed, ensuring fast page loading times and improved performance.",
       },
       {
+        iconName: "seo",
         title: "SEO-Friendly",
         description: "Optimized for search engines to boost website rankings.",
-        icon: "/assets/astra-theme-customization/features/seo-optimized.svg",
-        iconAlt: "SEO Friendly Options Icon",
       },
       {
+        iconName: "responsive",
         title: "Fully Responsive",
-        description: "Works perfectly on all devices, including mobile, tablets, and desktops.",
-        icon: "/assets/astra-theme-customization/features/fully-responsive.svg",
-        iconAlt: "Fully Responsive Icon",
-      },
-      {
-        title: "Lightweight Structure",
-        description: "A clean and minimalistic codebase that ensures better performance.",
-        icon: "/assets/hello-elementor-theme-customization/features/lightweight-structure.svg",
-        iconAlt: "Lightweight Structure Icon",
-      },
-      {
-        title: "Easy Customization",
-        description: "Fully compatible with Elementor, allowing for drag-and-drop customization.",
-        icon: "/assets/be-yours-theme-customization/features/built-in-product-filtering.svg",
-        iconAlt: "Easy Customization Icon",
-      },
-      {
-        title: "WooCommerce Compatible",
-        description: "Perfect for creating online WooCommerce stores with smooth eCommerce integration.",
-        icon: "/assets/astra-theme-customization/features/woocommerce-ready.svg",
-        iconAlt: "WooCommerce Compatible Icon",
-      },
-      {
-        title: "No Bloatware",
-        description: "Free from unnecessary features, ensuring an efficient website experience.",
-        icon: "/assets/hello-elementor-theme-customization/features/no-bloatware.svg",
-        iconAlt: "No Bloatware Icon",
-      },
-    ],
-  },
-  benefits: {
-    title: "Benefits of Hello Elementor <br> Theme Customization",
-    subtitle:
-      "Customizing the Hello Elementor theme offers a range of advantages. Here, you can know some significant benefits:",
-    items: [
-      {
-        title: "Fully Customizable Store",
-        description: "Modify every aspect of your store to match your brand's look and feel.",
-        icon: "/assets/shopify-theme-customization/benefits/fully-customizable-store.svg",
-        iconAlt: "cs_icon_img",
-      },
-      {
-        title: "Responsive Design",
-        description: "Ensures your website adapts perfectly to all screen sizes and devices.",
-        icon: "/assets/shopify-theme-customization/benefits/responsive-design.svg",
-        iconAlt: "responsive_design_icon",
-      },
-      {
-        title: "Unique Brand Identity",
-        description: "Stand out from competitors with a visually distinctive website.",
-        icon: "/assets/shopify-theme-customization/benefits/unique-brand-identity.svg",
-        iconAlt: "unique-brand-identity-icon",
-      },
-      {
-        title: "Improved User Experience",
         description:
-          "Enhance visitor navigation and usability, increasing engagement and conversions.",
-        icon: "/assets/shopify-theme-customization/benefits/improved-user-experience.svg",
-        iconAlt: "User-Friendly Interface",
+          "Works perfectly on all devices, including mobile, tablets, and desktops.",
       },
       {
-        title: "Multiple Third-party Plugins",
-        description: "Seamlessly integrate essential plugins to expand functionality.",
-        icon: "/assets/shopify-theme-customization/benefits/multiple-third-party-apps.svg",
-        iconAlt: "Multiple Sales Channels Icon",
+        iconName: "templates",
+        title: "Lightweight Structure",
+        description:
+          "A clean and minimalistic codebase that ensures better performance.",
       },
       {
-        title: "Higher Conversion Rates",
-        description: "Optimize your site for better lead generation and increased sales.",
-        icon: "/assets/shopify-theme-customization/benefits/higher-conversion-rates.svg",
-        iconAlt: "cost-effective-scalability-img",
+        iconName: "builder",
+        title: "Easy Customization",
+        description:
+          "Fully compatible with Elementor, allowing for drag-and-drop customization.",
       },
       {
-        title: "Mobile Optimization",
-        description: "Ensure a flawless mobile experience with a responsive and fast-loading design.",
-        icon: "/assets/shopify-theme-customization/benefits/mobile-optimization.svg",
-        iconAlt: "Mobile Optimization Icon",
+        iconName: "woocommerce",
+        title: "WooCommerce Compatible",
+        description:
+          "Perfect for creating online WooCommerce stores with smooth eCommerce integration.",
       },
-      {
-        title: "Safe and Secure Payments",
-        description: "Integrate secure payment gateways to protect user transactions.",
-        icon: "/assets/shopify-theme-customization/benefits/safe-and-secure-payments.svg",
-        iconAlt: "Enhanced Security Icon",
-      },
-      {
-        title: "Minimal Maintenance Cost",
-        description: "A well-optimized WordPress website reduces the need for frequent maintenance.",
-        icon: "/assets/shopify-theme-customization/benefits/zero-maintenance-cost.svg",
-        iconAlt: "Zero Maintenance Cost Image",
-      },
-    ],
+    ] as const satisfies readonly HelloElementorFeatureItem[],
   },
   services: {
-    title: "Our Hello Elementor Theme <br> Customization Services",
-    subtitle:
+    eyebrow: "Our Services",
+    heading: "Our Hello Elementor Theme Customization Services",
+    description:
       "Our expert WordPress developers offer a full range of Hello Elementor theme customization services to improve your WordPress website's design and functionality.",
     items: [
       {
+        iconName: "installation",
         title: "Theme Installation",
-        description: "We set up and installed the Hello Elementor theme, ensuring proper configuration.",
-        icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
-        iconAlt: "Maintenance and Support Icon",
+        description:
+          "We set up and installed the Hello Elementor theme, ensuring proper configuration.",
       },
       {
+        iconName: "design",
         title: "Custom Design and Branding",
-        description: "Our team builds a design that aligns with your brand's identity for a professional look.",
-        icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
-        iconAlt: "Plugin Development Icon",
+        description:
+          "Our team builds a design that aligns with your brand's identity for a professional look.",
       },
       {
+        iconName: "responsive",
         title: "Responsive Design",
-        description: "We optimize your website to look perfect on all devices and screen sizes.",
-        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
-        iconAlt: "custom themes icon",
+        description:
+          "We optimize your website to look perfect on all devices and screen sizes.",
       },
       {
+        iconName: "features",
         title: "Advanced Features Integration",
-        description: "Add custom features, animations, and functionalities to enhance user experience.",
-        icon: "/assets/shopify-theme-customization/services/advanced-features-integration.svg",
-        iconAlt: "Data Integrity Checks Icon",
+        description:
+          "Add custom features, animations, and functionalities to enhance user experience.",
       },
       {
+        iconName: "performance",
         title: "Performance Optimization",
-        description: "We optimize loading speed and performance for a smooth browsing experience.",
-        icon: "/assets/shopify-theme-customization/services/performance-optimization.svg",
-        iconAlt: "Compliance with Shopify’s Security Standards Icon",
+        description:
+          "We optimize loading speed and performance for a smooth browsing experience.",
       },
       {
+        iconName: "support",
         title: "Ongoing Support and Maintenance",
-        description: "Get continued support with updates, security, and troubleshooting.",
-        icon: "/assets/shopify-theme-customization/services/ongoing-support-and-maintenance.svg",
-        iconAlt: "Custom App Development Icon",
+        description:
+          "Get continued support with updates, security, and troubleshooting.",
       },
-    ],
+    ] as const satisfies readonly HelloElementorServiceItem[],
+  },
+  benefits: {
+    eyebrow: "Benefits",
+    heading: "Benefits of Hello Elementor Theme Customization",
+    description:
+      "Customizing the Hello Elementor theme offers a range of advantages. Here, you can know some significant benefits:",
+    items: [
+      {
+        iconName: "store",
+        title: "Fully Customizable Store",
+        description:
+          "Modify every aspect of your store to match your brand's look and feel.",
+      },
+      {
+        iconName: "responsive",
+        title: "Responsive Design",
+        description:
+          "Ensures your website adapts perfectly to all screen sizes and devices.",
+      },
+      {
+        iconName: "brand",
+        title: "Unique Brand Identity",
+        description:
+          "Stand out from competitors with a visually distinctive website.",
+      },
+      {
+        iconName: "ux",
+        title: "Improved User Experience",
+        description:
+          "Enhance visitor navigation and usability, increasing engagement and conversions.",
+      },
+      {
+        iconName: "plugins",
+        title: "Multiple Third-party Plugins",
+        description:
+          "Seamlessly integrate essential plugins to expand functionality.",
+      },
+      {
+        iconName: "conversions",
+        title: "Higher Conversion Rates",
+        description:
+          "Optimize your site for better lead generation and increased sales.",
+      },
+      {
+        iconName: "mobile",
+        title: "Mobile Optimization",
+        description:
+          "Ensure a flawless mobile experience with a responsive and fast-loading design.",
+      },
+      {
+        iconName: "payments",
+        title: "Safe and Secure Payments",
+        description:
+          "Integrate secure payment gateways to protect user transactions.",
+      },
+      {
+        iconName: "maintenance",
+        title: "Minimal Maintenance Cost",
+        description:
+          "A well-optimized WordPress website reduces the need for frequent maintenance.",
+      },
+    ] as const satisfies readonly HelloElementorBenefitItem[],
   },
   whyChoose: {
-    title: "Why Choose Dynamic Dreamz",
-    subtitle:
+    eyebrow: "Why Dynamic Dreamz",
+    heading: "Why Choose Dynamic Dreamz",
+    description:
       "Choosing the right customization partner is essential for your business. Dynamic Dreamz is the best choice for Hello Elementor theme customization.",
     items: [
       {
         title: "Expert Team",
-        description: "Our skilled WordPress developers have vast experience in WordPress and Elementor customization.",
-        icon: "/assets/shopify-theme-customization/why-choose/expert-team.svg",
-        iconAlt: "expert-team",
+        description:
+          "Our skilled WordPress developers have vast experience in WordPress and Elementor customization.",
       },
       {
         title: "Proven Process",
-        description: "We follow a strategic approach to deliver high-quality and efficient results.",
-        icon: "/assets/shopify-theme-customization/why-choose/proven-process.svg",
-        iconAlt: "Proven Process Icon",
+        description:
+          "We follow a strategic approach to deliver high-quality and efficient results.",
       },
       {
         title: "Ongoing Support",
-        description: "We provide long-term maintenance and support for any post-launch updates.",
-        icon: "/assets/shopify-theme-customization/why-choose/ongoing-support.svg",
-        iconAlt: "customer_support_icon_img",
+        description:
+          "We provide long-term maintenance and support for any post-launch updates.",
       },
       {
         title: "Client-Focused Approach",
-        description: "We prioritize your business requirements and create customized solutions for your brand.",
-        icon: "/assets/shopify-theme-customization/why-choose/client-focused-approach.svg",
-        iconAlt: "Client-Focused Approach Icon",
+        description:
+          "We prioritize your business requirements and create customized solutions for your brand.",
       },
-    ],
+    ] as const,
   },
   portfolio: {
-    title: "Snippets of WordPress Theme Customization Portfolio",
-    subtitle:
+    eyebrow: "Portfolio",
+    heading: "Snippets of WordPress Theme Customization Portfolio",
+    description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
+    ctaLabel: "View our work",
+    ctaHref: "/our-work",
     items: [
       {
         name: "Quite Events",
@@ -329,7 +272,27 @@ export const helloElementorThemeCustomizationContent = {
         image: "/assets/our-work/projects/nexventur.webp",
         imageAlt: "Nexventur",
       },
-    ],
+      {
+        name: "Awaken Media",
+        category: "WORDPRESS",
+        href: "https://www.awaken.media/",
+        image: "/assets/our-work/projects/awaken-media.webp",
+        imageAlt: "Awaken Media",
+      },
+      {
+        name: "Budget Maids",
+        category: "WORDPRESS",
+        href: "https://www.budget-maids.com/",
+        image: "/assets/our-work/projects/budget-maids.webp",
+        imageAlt: "Budget Maids",
+      },
+    ] as const,
+  },
+  testimonials: {
+    eyebrow: "Client Stories",
+    heading: "Don't Just Take Our Word For It",
+    description:
+      "Hear directly from the clients who have worked with Dynamic Dreamz across Shopify, ecommerce and long-term development engagements.",
   },
   faqs: [
     {
@@ -357,5 +320,5 @@ export const helloElementorThemeCustomizationContent = {
       answer:
         "Yes, we offer ongoing support and maintenance services to keep your website updated and running smoothly. After a few revisions, we work on a fixed-price or hourly-based rate contract.",
     },
-  ],
+  ] as const,
 } as const;
