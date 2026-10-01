@@ -1,60 +1,121 @@
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import {
+  NewsbloggerBenefitIcon,
+  NewsbloggerFeatureIcon,
+  NewsbloggerServiceIcon,
+} from "@/components/sections/newsblogger-theme-customization/newsblogger-icons";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ThemeFeaturesSection } from "@/components/sections/theme-customization/theme-features-section";
+import { EvaluationFrameworkSection } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
 import { ThemeHeroSection } from "@/components/sections/theme-customization/theme-hero-section";
-import { ThemeWhyChooseSection } from "@/components/sections/theme-customization/theme-why-choose-section";
 import { newsbloggerThemeCustomizationContent } from "@/content/newsblogger-theme-customization";
 
 export function NewsbloggerThemeCustomizationPage() {
   const brandsContent = {
-    heading: newsbloggerThemeCustomizationContent.brands.title,
-    slug: "newsblogger-theme-customization",
+    heading: newsbloggerThemeCustomizationContent.brands.heading,
+    slug: newsbloggerThemeCustomizationContent.brands.slug,
   };
 
-  const benefitsContent = {
-    heading: newsbloggerThemeCustomizationContent.benefits.title,
-    description: newsbloggerThemeCustomizationContent.benefits.subtitle,
-    items: newsbloggerThemeCustomizationContent.benefits.items,
+  const featuresContent = {
+    eyebrow: newsbloggerThemeCustomizationContent.features.eyebrow,
+    heading: newsbloggerThemeCustomizationContent.features.heading,
+    description: newsbloggerThemeCustomizationContent.features.description,
+    boxes: newsbloggerThemeCustomizationContent.features.items.map((item) => ({
+      icon: <NewsbloggerFeatureIcon name={item.iconName} />,
+      title: item.title,
+      description: item.description,
+    })),
   };
 
   const servicesContent = {
-    heading: newsbloggerThemeCustomizationContent.services.title,
-    description: newsbloggerThemeCustomizationContent.services.subtitle,
-    items: newsbloggerThemeCustomizationContent.services.items,
+    eyebrow: newsbloggerThemeCustomizationContent.services.eyebrow,
+    heading: newsbloggerThemeCustomizationContent.services.heading,
+    description: newsbloggerThemeCustomizationContent.services.description,
+    items: newsbloggerThemeCustomizationContent.services.items.map((item) => ({
+      iconSvg: <NewsbloggerServiceIcon name={item.iconName} />,
+      title: item.title,
+      description: item.description,
+    })),
   };
 
-  const portfolioContent = {
-    heading: newsbloggerThemeCustomizationContent.portfolio.title,
-    description: newsbloggerThemeCustomizationContent.portfolio.subtitle,
-    platformMark: {
-      src: "/assets/platforms/wordpress-woocommerce-white.svg",
-      width: 90,
-      height: 26,
-    },
-    items: newsbloggerThemeCustomizationContent.portfolio.items,
+  const benefitsContent = {
+    eyebrow: newsbloggerThemeCustomizationContent.benefits.eyebrow,
+    heading: newsbloggerThemeCustomizationContent.benefits.heading,
+    description: newsbloggerThemeCustomizationContent.benefits.description,
+    boxes: newsbloggerThemeCustomizationContent.benefits.items.map((item) => ({
+      icon: <NewsbloggerBenefitIcon name={item.iconName} />,
+      title: item.title,
+      description: item.description,
+    })),
   };
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ThemeHeroSection content={newsbloggerThemeCustomizationContent.hero} />
+      {/* 1. Hero */}
+      <ThemeHeroSection
+        className="theme-customize-hero overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[991px]:pt-16"
+        content={newsbloggerThemeCustomizationContent.hero}
+        descriptionClassName="mb-0 text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6"
+        imageClassName="block h-auto w-full object-contain object-bottom"
+        mediaClassName="image-block flex w-full items-end pt-[60px]"
+        mediaColumnClassName="right-col flex w-[43.182%] self-end items-end justify-end max-[1399px]:w-[48%] max-[1199px]:mx-auto max-[1199px]:w-1/2 max-[767px]:w-full"
+        textColumnClassName="left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1399px]:w-1/2 max-[1199px]:w-full max-[1199px]:pb-8 max-[1199px]:text-center max-[991px]:py-10"
+        titleClassName="mb-2.5 inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-0.7px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
+        wrapperClassName="wrapper flex flex-wrap items-end justify-between max-[1199px]:flex-col max-[1199px]:items-center"
+      />
+
+      {/* 2. Client Brands */}
       <IndustryBrandsSection
         content={brandsContent}
-        heading={newsbloggerThemeCustomizationContent.brands.title}
+        density="flexible"
+        heading={newsbloggerThemeCustomizationContent.brands.heading}
         items={newsbloggerThemeCustomizationContent.brands.items}
       />
-      <ThemeFeaturesSection content={newsbloggerThemeCustomizationContent.features} />
-      <ShopifyReasonsSection content={benefitsContent} />
-      <AgencyServicesSection content={servicesContent} />
-      <ThemeWhyChooseSection content={newsbloggerThemeCustomizationContent.whyChoose} />
-      <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
-        content={portfolioContent}
+
+      {/* 3. Features of NewsBlogger Theme */}
+      <ThemeCustomizationServicesSection
+        content={featuresContent}
+        variant="yellow"
       />
+
+      {/* 4. Our WordPress Theme Customization Services */}
+      <AgencyServicesSection
+        cardVariant="services-box"
+        className="what-we-provide-sec only-text py-20 max-[992px]:py-[50px]"
+        columns={2}
+        content={servicesContent}
+        headerTextColumnClassName="w-[48.3%] max-[992px]:w-full"
+        headerTitleColumnClassName="w-[44%] max-[992px]:w-full"
+        id="services"
+        preserveBreaks
+      />
+
+      {/* 5. Benefits of NewsBlogger Theme Customization */}
+      <ThemeCustomizationServicesSection
+        content={benefitsContent}
+        variant="green"
+      />
+
+      {/* 6. Why Choose Dynamic Dreamz */}
+      <EvaluationFrameworkSection
+        content={newsbloggerThemeCustomizationContent.whyChoose}
+      />
+
+      {/* 7. WordPress Theme Customization Portfolio */}
+      <PortfolioShowcaseSection
+        cardVariant="ourWorkRefresh"
+        className="our-work-sec pt-0 pb-20 max-[992px]:pb-[50px]"
+        columns={4}
+        content={newsbloggerThemeCustomizationContent.portfolio}
+        sectionId="our_work"
+      />
+
+      {/* 8. Frequently Asked Questions */}
       <SplitFaqSection
-        idPrefix="newsblogger-faq"
+        className="faq-sec"
+        idPrefix="newsblogger-theme-faq"
         items={newsbloggerThemeCustomizationContent.faqs}
       />
     </div>

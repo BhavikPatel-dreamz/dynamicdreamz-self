@@ -6817,14 +6817,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## NewsBlogger Theme Customization (`/newsblogger-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-10-01
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, news publishers, bloggers, online magazines, content creators, and digital agencies seeking expert NewsBlogger theme customization, clean modern design, multiple gallery layouts, custom sidebars/widgets, featured posts sections, speed optimization, and responsive design.
 Decision stage: partner selection, NewsBlogger theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz NewsBlogger theme customization capabilities. Features 10 client brand trust logos, 8 key theme features, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 8 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz NewsBlogger theme customization capabilities. Features 12 client brand trust logos, 8 key theme features, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards, 8 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -6842,7 +6842,7 @@ Dedicated commercial landing page presenting Dynamic Dreamz NewsBlogger theme cu
 - 8 core benefits of NewsBlogger customization (Fully Customizable Store, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
 - 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
 - 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- 8 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids).
 - 8 detailed FAQs addressing post layout modifications, speed maintenance, social media integration, featured articles/breaking news ticker, future theme update safety with child themes, newsletter signup forms, ongoing support, and homepage redesign.
 
 ### Structured gap analysis
@@ -9461,31 +9461,36 @@ Owner: SEO, content, and development
 
 ## Inspiro Theme Customization (`/inspiro-theme-customization`)
 
+Status: technical and schema implementation complete; remigrated to exact live site visual parity with 9 sections matching refreshed live WordPress theme layout
+Last reviewed: 2026-10-01
+Owner: SEO, content, and development
+
 ### Page Intent and Query Scope
-- **Primary Search Intent**: Users looking for professional WordPress theme customization services specifically for the Inspiro theme by WPZOOM, known for video backgrounds and photography portfolios.
-- **Audience**: Photographers, videographers, creative agencies, and ecommerce merchants using WordPress/WooCommerce.
-- **Target queries**: "Inspiro theme customization", "Inspiro theme customization service", "customize Inspiro WordPress theme", "hire Inspiro theme developers".
+- **Primary Search Intent**: Photographers, videographers, visual artists, and creative professionals seeking expert Inspiro WordPress theme customization services by Dynamic Dreamz.
+- **Audience**: Creative professionals, videography studios, photography portfolios, visual agencies, and WooCommerce merchants requiring full-screen video backgrounds, customized gallery layouts, Elementor & Gutenberg integration, and speed optimization.
+- **Target queries**: "Inspiro theme customization", "Inspiro theme customization service", "customize Inspiro WordPress theme", "hire Inspiro theme developers", "WordPress Inspiro theme development".
 
 ### Visible Content and Evidence Available
+- Eyebrows: "Wordpress Agency", "Theme Customization".
 - H1: "Inspiro Theme Customization Service".
-- Primary CTA: "request a quote" -> "/request-quote".
-- Hero graphic: Inspiro theme preview with WordPress badge.
-- Trusted brands slider: 10 enterprise ecommerce and retail brands.
-- 8 Theme features: Full-Screen Video Backgrounds, Lightweight & Fast Performance, Multiple Gallery Layouts, Gutenberg & Elementor Compatibility, WooCommerce Ready, Mobile & SEO Friendly, Custom Widgets & Sidebars, One-Click Demo Import.
-- 7 Theme benefits: Fully Customizable Store, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimal Maintenance Cost.
-- 6 WordPress customization services: Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance.
-- 4 Agency reasons: Expert Team, Proven Process, Ongoing Support, Client-Focused Approach.
-- 8 WordPress portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
-- 5 interactive FAQs answering questions on pricing, eCommerce/WooCommerce usage, customization scope, SEO, and turnaround time.
+- Primary Hero CTA: "request a quote" -> "/request-quote".
+- Hero graphic: Clean 1202x948 Inspiro theme storefront preview with flush bottom alignment.
+- Trusted brands slider: 12 canonical client brand logos (`IndustryBrandsSection` with `indian_brand` roster): Supper Tails, Eleven Eleven, Bellavita, Bombay Shirt Company, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce Chocolate, Tego, Nekter, Rare Rabbit.
+- 8 Theme features: Yellow section (`ThemeCustomizationServicesSection` - yellow) with 8 cards: Full-Screen Video Backgrounds, Lightweight & Fast Performance, Multiple Gallery Layouts, Gutenberg & Elementor Compatibility, WooCommerce Ready, Mobile & SEO Friendly, Custom Widgets & Sidebars, One-Click Demo Import.
+- 6 WordPress customization services: 2-column text cards (`AgencyServicesSection` with `cardVariant="services-box"`, preserved linebreaks): Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance.
+- 7 Theme benefits: Green section (`ThemeCustomizationServicesSection` - green) with 7 cards: Fully Customizable Store, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Safe and Secure Payments, Minimal Maintenance Cost.
+- 4 Why Choose Dynamic Dreamz: 4-step framework (`EvaluationFrameworkSection` matching live `how-to-choose-spa-sec`): Expert Team, Proven Process, Ongoing Support, Client-Focused Approach.
+- 8 WordPress portfolio showcase items: 4-column desktop portfolio showcase (`PortfolioShowcaseSection` with `cardVariant="ourWorkRefresh"`) featuring live projects: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids, and "View our work" CTA button -> `/our-work`.
+- 11 Video client testimonials: Dedicated client stories carousel (`HappyClientSection`) featuring direct video reviews and testimonials from long-term agency clients.
+- 5 interactive FAQs: Sticky 2-column split FAQ layout (`SplitFaqSection`) answering key merchant questions on customization costs, WooCommerce store compatibility, customization scope, SEO optimization, and turnaround times.
 
 ### Structured Gap Analysis
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
 | P0 | implemented | Route discovery | Route not yet created in App Router | Build `/inspiro-theme-customization` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | Page requires standard theme customization layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesSection`, `ShopifyReasonsSection`, `AgencyServicesSection`, `ThemeWhyChooseSection`, `PortfolioShowcaseSection`, `FaqSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | Unique SVGs for video background and demo import | Ingested into `public/assets/inspiro-theme-customization/features/`; verified duplicate hash groups: 0 | Total asset duplicates remain 0 |
+| P0 | implemented | Component reuse | Page requires exact live theme customization 9-section layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeCustomizationServicesSection` (yellow & green variants), `AgencyServicesSection`, `EvaluationFrameworkSection`, `PortfolioShowcaseSection`, `HappyClientSection`, and `SplitFaqSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Unique SVGs for features, services, and benefits | Implemented as type-safe inline React SVG components in `inspiro-icons.tsx`; 0 duplicates in `public/assets/` | Duplicate audit verified 0 duplicates |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createInspiroThemeCustomizationPageSchema()` | Validated JSON-LD graph |
-| P1 | deferred | Accidental duplicate section | Live site rendered "Features Of Inspiro Theme" section twice consecutively | Render single clean section; logged to `docs/page-content-improvements.md` | Cleaner DOM and accessibility |
 
 ## Expanse Theme Customization (`/expanse-theme-customization`)
 
@@ -9676,21 +9681,22 @@ Owner: SEO, content, and development
 
 ### Visible Content and Evidence Available
 - H1: "YITH Wonder Theme Customization Service".
-- Primary CTA: "request a quote" -> "/request-quote".
-- Hero graphic: Custom YITH Wonder theme preview with review badges (Clutch 132 reviews / 5.0, Upwork 2000+ reviews / 5.0, GoodFirms 72 reviews / 5.0).
-- Trusted brands slider: 10 enterprise ecommerce brands.
+- Primary CTA: "Request a quote" -> "/request-quote".
+- Hero graphic: Custom YITH Wonder theme preview with review badges.
+- Trusted brands slider: 12 client brands (`indian_brand` set).
 - 8 Theme Features: WooCommerce Compatibility, Drag-and-Drop Customization, Fully Responsive, SEO-Optimized, Fast Loading Speed, Multiple Pre-Built Templates, Cross-Browser Compatibility, Custom Widgets & Elements.
 - 8 Customization Benefits: Fully Customizable Store, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost.
 - 6 Theme Customization Services: Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance.
 - 4 Why Choose Dynamic Dreamz pillars: Expert Team, Proven Process, Ongoing Support, Client-Focused Approach.
 - 8 WordPress Portfolio showcase items: Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids.
+- Client Stories Section: "Don't Just Take Our Word For It" with video review slider.
 - 6 interactive FAQs covering customization cost, timelines, WooCommerce integration, SEO preservation, custom features, and ongoing maintenance.
 
 ### Structured Gap Analysis
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
 | P0 | implemented | Route discovery | Route not yet created in App Router | Build `/yith-wonder-theme-customization` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | Page requires theme customization landing layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeFeaturesSection`, `ShopifyReasonsSection`, `AgencyServicesSection`, `ThemeWhyChooseSection`, `PortfolioShowcaseSection`, `SplitFaqSection` | 100% visual parity across viewports |
+| P0 | implemented | Component reuse | Page requires theme customization landing layout | Reused `ThemeHeroSection`, `IndustryBrandsSection`, `ThemeCustomizationServicesSection`, `AgencyServicesSection`, `EvaluationFrameworkSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection` | 100% visual parity across viewports |
 | P0 | implemented | Asset deduplication | Hero image downloaded to buffer, optimized to WebP; icons mapped to existing canonical paths | 0 duplicate hash groups across `public/assets/` | Total asset duplicates remain 0 |
 | P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createYithWonderThemeCustomizationPageSchema()` | Validated JSON-LD graph |
 | P1 | deferred | Visible copy enhancement | Minor phrasing variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |

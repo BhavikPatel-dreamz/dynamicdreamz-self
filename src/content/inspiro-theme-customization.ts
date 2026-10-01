@@ -1,10 +1,49 @@
+import type {
+  InspiroBenefitIconName,
+  InspiroFeatureIconName,
+  InspiroServiceIconName,
+} from "@/components/sections/inspiro-theme-customization/inspiro-icons";
+
+export type InspiroFeatureItem = {
+  iconName: InspiroFeatureIconName;
+  title: string;
+  description: string;
+};
+
+export type InspiroServiceItem = {
+  iconName: InspiroServiceIconName;
+  title: string;
+  description: string;
+};
+
+export type InspiroBenefitItem = {
+  iconName: InspiroBenefitIconName;
+  title: string;
+  description: string;
+};
+
+export type InspiroPortfolioItem = {
+  name: string;
+  category: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+};
+
+export type InspiroFaqItem = {
+  question: string;
+  answer: string;
+};
+
 export const inspiroThemeCustomizationContent = {
   hero: {
+    eyebrow: ["Wordpress Agency", "Theme Customization"] as const,
     title: "Inspiro Theme Customization Service",
     description:
-      "The Inspiro theme is a professional, lightweight, stylish WordPress theme created for photographers, videographers, and creative professionals. Its full-screen video backgrounds, gallery options, and stunning designs help users showcase their work effectively. Our <b>Inspiro Theme Customization Services</b> ensure that your WordPress website stands out with a unique design, smooth performance, and optimized user experience tailored to your business or personal brand.",
+      "The Inspiro theme is a professional, lightweight, stylish WordPress theme created for photographers, videographers, and creative professionals. Its full-screen video backgrounds, gallery options, and stunning designs help users showcase their work effectively. Our Inspiro Theme Customization Services ensure that your WordPress website stands out with a unique design, smooth performance, and optimized user experience tailored to your business or personal brand.",
     ctaText: "request a quote",
     ctaHref: "/request-quote",
+    ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/inspiro-theme-customization/hero/inspiro-theme-customization-service-img.webp",
       alt: "Inspiro Theme Customization Service Image",
@@ -13,291 +52,290 @@ export const inspiroThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by Leading Brands",
+    title: "Trusted by \nLeading Brands",
+    heading: "Trusted by \nLeading Brands",
+    slug: "inspiro-theme-customization",
     items: [
       {
-        name: "Ranavat Logo",
-        src: "/assets/clients/ranavat.svg",
-        href: "https://www.ranavat.com/",
-        alt: "Ranavat Logo",
-        width: 174,
-        height: 19,
+        name: "Supper Tails Logo",
+        src: "/assets/clients/supertails.svg",
+        href: "https://supertails.com/",
+        alt: "Supper Tails Logo",
+        width: 164,
+        height: 41,
       },
       {
-        name: "prolash_black",
-        src: "/assets/clients/prolash.svg",
-        href: "https://prolash.com/",
-        alt: "prolash_black",
-        width: 204,
-        height: 22,
+        name: "Eleven Eleven",
+        src: "/assets/clients/eleven-eleven.svg",
+        href: "https://11-11.in/",
+        alt: "Eleven Eleven",
+        width: 145,
+        height: 20,
       },
       {
-        name: "Tropicfeel Logo",
-        src: "/assets/clients/tropicfeel.svg",
-        href: "https://shop.tropicfeel.com/",
-        alt: "Tropicfeel Logo",
-        width: 150,
-        height: 32,
+        name: "bellavita logo",
+        src: "/assets/clients/bella-vita.svg",
+        href: "https://bellavitaorganic.com/",
+        alt: "bellavita logo",
+        width: 166,
+        height: 24,
       },
       {
-        name: "perfect_locks_color_logo",
-        src: "/assets/clients/perfect-locks.svg",
-        href: "https://www.perfectlocks.com/",
-        alt: "perfect_locks_color_logo",
-        width: 175,
-        height: 32,
-      },
-      {
-        name: "Bombay Shirt Company Logo",
+        name: "Bombay Shirt Company",
         src: "/assets/clients/bombay-shirt-company.svg",
         href: "https://www.bombayshirts.com/",
-        alt: "Bombay Shirt Company Logo",
+        alt: "Bombay Shirt Company",
         width: 204,
         height: 26,
       },
       {
-        name: "kayfi-colored",
-        src: "/assets/clients/kayfi.svg",
-        href: "https://kayfi.com/",
-        alt: "kayfi-colored",
-        width: 90,
-        height: 49,
+        name: "popclub-co",
+        src: "/assets/clients/popclub.svg",
+        href: "https://popclub.co/",
+        alt: "popclub-co",
+        width: 65,
+        height: 41,
       },
       {
-        name: "simdirect_logo_color",
-        src: "/assets/clients/simsdirect.svg",
-        href: "https://simsdirect.com.au/",
-        alt: "simdirect_logo_color",
-        width: 143,
-        height: 49,
+        name: "SriSri Tattva Logo",
+        src: "/assets/clients/sri-sri-tattva.svg",
+        href: "https://www.srisritattva.com/",
+        alt: "SriSri Tattva Logo",
+        width: 106,
+        height: 40,
       },
       {
-        name: "Kvaser Logo",
-        src: "/assets/clients/kvaser.svg",
-        href: "https://www.kvaser.com/",
-        alt: "Kvaser Logo",
-        width: 135,
-        height: 25,
+        name: "tropicfeel logo",
+        src: "/assets/clients/tropicfeel.svg",
+        href: "https://shop.tropicfeel.com/",
+        alt: "tropicfeel logo",
+        width: 150,
+        height: 32,
+      },
+      {
+        name: "Renee logo",
+        src: "/assets/clients/renee.svg",
+        href: "https://www.reneecosmetics.in/",
+        alt: "Renee logo",
+        width: 93,
+        height: 30,
+      },
+      {
+        name: "Royce chocolate logo",
+        src: "/assets/clients/royce-chocolate.svg",
+        href: "https://royceindia.com/",
+        alt: "Royce chocolate logo",
+        width: 132,
+        height: 38,
+      },
+      {
+        name: "tego logo",
+        src: "/assets/clients/tego.svg",
+        href: "https://tego.fit/",
+        alt: "tego logo",
+        width: 101,
+        height: 40,
       },
       {
         name: "nekter-colored",
-        src: "/assets/clients/nelter.svg",
+        src: "/assets/clients/nekter-colored.svg",
         href: "https://www.nekterjuicebar.com/",
         alt: "nekter-colored",
         width: 66,
         height: 64,
       },
       {
-        name: "Circuit City Logo",
-        src: "/assets/clients/circuit-city.svg",
-        href: "https://circuitcity.com/",
-        alt: "Circuit City Logo",
-        width: 64,
-        height: 64,
+        name: "Rare Rabbit Logo",
+        src: "/assets/clients/rare-rabbit.svg",
+        href: "https://thehouseofrare.com/",
+        alt: "Rare Rabbit Logo",
+        width: 122,
+        height: 84,
       },
-    ],
+    ] as const,
   },
   features: {
-    title: "Features Of Inspiro Theme",
-    subtitle:
+    eyebrow: "Features",
+    heading: "Features of Inspiro Theme",
+    description:
       "The Inspiro theme offers a range of features to enhance your website's functionality and visual appeal. Here are a few:",
     items: [
       {
+        iconName: "full-screen-video-backgrounds",
         title: "Full-Screen Video Backgrounds",
         description: "Show high-quality video backgrounds to impress visitors.",
-        icon: "/assets/inspiro-theme-customization/features/full-screen-video-backgrounds.svg",
-        iconAlt: "Elementor Integration Icon",
       },
       {
+        iconName: "lightweight-and-fast-performance",
         title: "Lightweight & Fast Performance",
         description:
           "With a good theme structure and optimized code, ensure quick loading speed for a smooth experience.",
-        icon: "/assets/astra-theme-customization/features/lightning-fast-performance.svg",
-        iconAlt: "Elementor Integration Icon",
       },
       {
+        iconName: "multiple-gallery-layouts",
         title: "Multiple Gallery Layouts",
         description: "Showcase your graphical work with various gallery and portfolio styles.",
-        icon: "/assets/newsblogger-theme-customization/features/multiple-gallery-layouts.svg",
-        iconAlt: "Elementor Integration Icon",
       },
       {
+        iconName: "gutenberg-and-elementor-compatibility",
         title: "Gutenberg & Elementor Compatibility",
         description:
           "Easily customize pages with drag-and-drop builders. This theme is compatible with all popular page builders.",
-        icon: "/assets/bloghash-theme-customization/features/gutenberg-compatible.svg",
-        iconAlt: "Elementor Integration Icon",
       },
       {
+        iconName: "woocommerce-ready",
         title: "WooCommerce Ready",
         description: "It provides ready-made online stores and eCommerce functionality.",
-        icon: "/assets/astra-theme-customization/features/woocommerce-ready.svg",
-        iconAlt: "Elementor Integration Icon",
       },
       {
+        iconName: "mobile-and-seo-friendly",
         title: "Mobile & SEO Friendly",
         description:
           "With its responsive theme structure optimized for search engine ranking and mobile responsiveness.",
-        icon: "/assets/astra-theme-customization/features/fully-responsive.svg",
-        iconAlt: "Elementor Integration Icon",
       },
       {
+        iconName: "custom-widgets-and-sidebars",
         title: "Custom Widgets & Sidebars",
         description: "Enhance your website's design and functionality with pre-built custom elements.",
-        icon: "/assets/kadence-theme-customization/features/custom-hooks-and-filters.svg",
-        iconAlt: "Elementor Integration Icon",
       },
       {
+        iconName: "one-click-demo-import",
         title: "One-Click Demo Import",
         description: "Quickly set up a website with ready-made templates.",
-        icon: "/assets/inspiro-theme-customization/features/one-click-demo-import.svg",
-        iconAlt: "Elementor Integration Icon",
       },
-    ],
-  },
-  benefits: {
-    title: "Benefits of Inspiro  Theme Customization",
-    subtitle:
-      "Customizing the Inspiro theme allows you to enhance your website's design, performance, and user experience. Explore here:",
-    items: [
-      {
-        title: "Fully Customizable Store",
-        description:
-          "You can customize your WordPress website to match your brand identity and business requirements.",
-        icon: "/assets/shopify-theme-customization/benefits/fully-customizable-store.svg",
-        iconAlt: "cs_icon_img",
-      },
-      {
-        title: "Unique Brand Identity",
-        description:
-          "The Inspiro theme customization provides you with a personalized design that reflects your brand.",
-        icon: "/assets/shopify-theme-customization/benefits/unique-brand-identity.svg",
-        iconAlt: "unique-brand-identity-icon",
-      },
-      {
-        title: "Improved User Experience",
-        description:
-          "Optimize navigation, readability, design, and website engagement to improve user experience.",
-        icon: "/assets/shopify-theme-customization/benefits/improved-user-experience.svg",
-        iconAlt: "User-Friendly Interface",
-      },
-      {
-        title: "Multiple Third-party Plugins",
-        description:
-          "Utilize third-party plugins to add necessary tools and functionalities smoothly.",
-        icon: "/assets/shopify-theme-customization/benefits/multiple-third-party-apps.svg",
-        iconAlt: "Multiple Sales Channels Icon",
-      },
-      {
-        title: "Higher Conversion Rates",
-        description:
-          "Enhance call-to-action elements for better sales and engagement.",
-        icon: "/assets/shopify-theme-customization/benefits/higher-conversion-rates.svg",
-        iconAlt: "cost-effective-scalability-img",
-      },
-      {
-        title: "Safe and Secure Payments",
-        description:
-          "We ensure secure transaction processing for WooCommerce.",
-        icon: "/assets/shopify-theme-customization/benefits/safe-and-secure-payments.svg",
-        iconAlt: "Safe and Secure Payments",
-      },
-      {
-        title: "Minimal Maintenance Cost",
-        description:
-          "We optimize theme settings for long-term stability with low maintenance.",
-        icon: "/assets/shopify-theme-customization/benefits/zero-maintenance-cost.svg",
-        iconAlt: "Zero Maintenance Cost Image",
-      },
-    ],
+    ] as const,
   },
   services: {
-    title: "Our WordPress Theme  Customization Services",
-    subtitle:
+    heading: "Our WordPress Theme \nCustomization Services",
+    description:
       "We provide top-notch Inspiro theme customization services to help you build a visually appealing and high-performing website.",
     items: [
       {
+        iconName: "theme-installation",
         title: "Theme Installation",
         description: "We help you install and set up the Inspiro theme on your website.",
-        icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
-        iconAlt: "Theme Installation Icon",
       },
       {
+        iconName: "custom-design-and-branding",
         title: "Custom Design and Branding",
         description: "We can modify colors, typography, and layout to fit your brand identity.",
-        icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
-        iconAlt: "Custom Design and Branding Icon",
       },
       {
+        iconName: "responsive-design",
         title: "Responsive Design",
         description:
           "During theme customization, we ensure a flawless user experience across different screen sizes.",
-        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
-        iconAlt: "Responsive Design Icon",
       },
       {
+        iconName: "advanced-features-integration",
         title: "Advanced Features Integration",
         description:
           "Our WordPress experts can add custom galleries, sliders, and eCommerce functionalities based on your requirements.",
-        icon: "/assets/shopify-theme-customization/services/advanced-features-integration.svg",
-        iconAlt: "Advanced Features Integration Icon",
       },
       {
+        iconName: "performance-optimization",
         title: "Performance Optimization",
         description:
           "Our services enhance your website’s speed, security, and SEO for better website rankings.",
-        icon: "/assets/shopify-theme-customization/services/performance-optimization.svg",
-        iconAlt: "Performance Optimization Icon",
       },
       {
+        iconName: "ongoing-support-and-maintenance",
         title: "Ongoing Support and Maintenance",
         description:
           "We offer regular updates and technical assistance for your website to run smoothly.",
-        icon: "/assets/shopify-theme-customization/services/ongoing-support-and-maintenance.svg",
-        iconAlt: "Ongoing Support and Maintenance Icon",
       },
-    ],
+    ] as const,
+  },
+  benefits: {
+    eyebrow: "Benefits",
+    heading: "Benefits of Inspiro Theme Customization",
+    description:
+      "Customizing the Inspiro theme allows you to enhance your website’s design, performance, and user experience. Explore here:",
+    items: [
+      {
+        iconName: "fully-customizable-store",
+        title: "Fully Customizable Store",
+        description:
+          "You can customize your WordPress website to match your brand identity and business requirements.",
+      },
+      {
+        iconName: "unique-brand-identity",
+        title: "Unique Brand Identity",
+        description:
+          "The Inspiro theme customization provides you with a personalized design that reflects your brand.",
+      },
+      {
+        iconName: "improved-user-experience",
+        title: "Improved User Experience",
+        description:
+          "Optimize navigation, readability, design, and website engagement to improve user experience.",
+      },
+      {
+        iconName: "multiple-third-party-plugins",
+        title: "Multiple Third-party Plugins",
+        description:
+          "Utilize third-party plugins to add necessary tools and functionalities smoothly.",
+      },
+      {
+        iconName: "higher-conversion-rates",
+        title: "Higher Conversion Rates",
+        description:
+          "Enhance call-to-action elements for better sales and engagement.",
+      },
+      {
+        iconName: "safe-and-secure-payments",
+        title: "Safe and Secure Payments",
+        description:
+          "We ensure secure transaction processing for WooCommerce.",
+      },
+      {
+        iconName: "minimal-maintenance-cost",
+        title: "Minimal Maintenance Cost",
+        description:
+          "We optimize theme settings for long-term stability with low maintenance.",
+      },
+    ] as const,
   },
   whyChoose: {
-    title: "Why Choose Dynamic Dreamz",
-    subtitle:
+    eyebrow: "Why Dynamic Dreamz",
+    heading: "Why Choose Dynamic Dreamz",
+    description:
       "At Dynamic Dreamz, we specialize in crafting unique, high-performance WordPress websites tailored to your needs.",
     items: [
       {
+        number: "01",
         title: "Expert Team",
         description:
           "We have experienced developers with in-depth knowledge of WordPress theme customization.",
-        icon: "/assets/shopify-theme-customization/why-choose/expert-team.svg",
-        iconAlt: "expert-team",
       },
       {
+        number: "02",
         title: "Proven Process",
         description:
           "We follow a streamlined approach for quality assurance and timely delivery of your project.",
-        icon: "/assets/shopify-theme-customization/why-choose/proven-process.svg",
-        iconAlt: "Proven Process Icon",
       },
       {
+        number: "03",
         title: "Ongoing Support",
         description:
           "Continuous assistance to guarantee your website stays updated and secure.",
-        icon: "/assets/shopify-theme-customization/why-choose/ongoing-support.svg",
-        iconAlt: "customer_support_icon_img",
       },
       {
+        number: "04",
         title: "Client-Focused Approach",
         description:
           "We offer personalized solutions that align with your business goals.",
-        icon: "/assets/shopify-theme-customization/why-choose/client-focused-approach.svg",
-        iconAlt: "Client-Focused Approach Icon",
       },
-    ],
+    ] as const,
   },
   portfolio: {
-    eyebrow: "PORTFOLIO",
-    title: "Snippets of WordPress Theme Customization Portfolio",
-    subtitle:
+    eyebrow: "Portfolio",
+    heading: "Snippets of WordPress Theme Customization Portfolio",
+    description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
+    viewAllText: "View our work",
+    viewAllHref: "/our-work",
+    viewAllAriaLabel: "Dynamic Dreamz - View our work",
     items: [
       {
         name: "Quite Events",
@@ -355,9 +393,14 @@ export const inspiroThemeCustomizationContent = {
         image: "/assets/our-work/projects/budget-maids.webp",
         imageAlt: "Budget Maids Image",
       },
-    ],
+    ] as const,
   },
-  faqHeading: "Frequently Asked Questions",
+  testimonials: {
+    eyebrow: "Client Stories",
+    heading: "Don't Just Take Our Word For It",
+    description:
+      "Hear directly from the clients who have worked with Dynamic Dreamz across Shopify, ecommerce and long-term development engagements.",
+  },
   faqs: [
     {
       question: "What is the cost of your Inspiro theme customization?",
@@ -384,5 +427,5 @@ export const inspiroThemeCustomizationContent = {
       answer:
         "The time depends on the level of customization needed. Simple customization tasks need just a few days, but complex and advanced tasks need a few weeks.",
     },
-  ],
-};
+  ] as const,
+} as const;
