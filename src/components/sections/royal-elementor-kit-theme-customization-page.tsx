@@ -1,58 +1,124 @@
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
-import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import {
+  RoyalElementorKitBenefitIcon,
+  RoyalElementorKitFeatureIcon,
+  RoyalElementorKitServiceIcon,
+} from "@/components/sections/royal-elementor-kit-theme-customization/royal-elementor-kit-icons";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ThemeFeaturesSection } from "@/components/sections/theme-customization/theme-features-section";
+import { EvaluationFrameworkSection } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
 import { ThemeHeroSection } from "@/components/sections/theme-customization/theme-hero-section";
-import { ThemeWhyChooseSection } from "@/components/sections/theme-customization/theme-why-choose-section";
 import { royalElementorKitThemeCustomizationContent } from "@/content/royal-elementor-kit-theme-customization";
 
 export function RoyalElementorKitThemeCustomizationPage() {
   const brandsContent = {
-    heading: royalElementorKitThemeCustomizationContent.brands.title,
-    slug: "royal-elementor-kit-theme-customization",
+    heading: royalElementorKitThemeCustomizationContent.brands.heading,
+    slug: royalElementorKitThemeCustomizationContent.brands.slug,
   };
 
-  const benefitsContent = {
-    heading: royalElementorKitThemeCustomizationContent.benefits.title,
-    description: royalElementorKitThemeCustomizationContent.benefits.subtitle,
-    items: royalElementorKitThemeCustomizationContent.benefits.items,
+  const featuresContent = {
+    eyebrow: royalElementorKitThemeCustomizationContent.features.eyebrow,
+    heading: royalElementorKitThemeCustomizationContent.features.heading,
+    description: royalElementorKitThemeCustomizationContent.features.description,
+    boxes: royalElementorKitThemeCustomizationContent.features.items.map((item) => ({
+      icon: <RoyalElementorKitFeatureIcon name={item.iconName} />,
+      title: item.title,
+      description: item.description,
+    })),
   };
 
   const servicesContent = {
-    heading: royalElementorKitThemeCustomizationContent.services.title,
-    description: royalElementorKitThemeCustomizationContent.services.subtitle,
-    items: royalElementorKitThemeCustomizationContent.services.items,
+    eyebrow: royalElementorKitThemeCustomizationContent.services.eyebrow,
+    heading: royalElementorKitThemeCustomizationContent.services.heading,
+    description: royalElementorKitThemeCustomizationContent.services.description,
+    items: royalElementorKitThemeCustomizationContent.services.items.map((item) => ({
+      iconSvg: <RoyalElementorKitServiceIcon name={item.iconName} />,
+      title: item.title,
+      description: item.description,
+    })),
   };
 
-  const portfolioContent = {
-    heading: royalElementorKitThemeCustomizationContent.portfolio.title,
-    description: royalElementorKitThemeCustomizationContent.portfolio.subtitle,
-    platformMark: {
-      src: "/assets/platforms/wordpress-woocommerce-white.svg",
-      width: 90,
-      height: 26,
-    },
-    items: royalElementorKitThemeCustomizationContent.portfolio.items,
+  const benefitsContent = {
+    eyebrow: royalElementorKitThemeCustomizationContent.benefits.eyebrow,
+    heading: royalElementorKitThemeCustomizationContent.benefits.heading,
+    description: royalElementorKitThemeCustomizationContent.benefits.description,
+    boxes: royalElementorKitThemeCustomizationContent.benefits.items.map((item) => ({
+      icon: <RoyalElementorKitBenefitIcon name={item.iconName} />,
+      title: item.title,
+      description: item.description,
+    })),
   };
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ThemeHeroSection content={royalElementorKitThemeCustomizationContent.hero} />
+      {/* 1. Hero */}
+      <ThemeHeroSection
+        className="theme-customize-hero overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[991px]:pt-16"
+        content={royalElementorKitThemeCustomizationContent.hero}
+        descriptionClassName="mb-0 text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6"
+        imageClassName="block h-auto w-full object-contain object-bottom"
+        mediaClassName="image-block flex w-full items-end pt-[60px]"
+        mediaColumnClassName="right-col flex w-[43.182%] self-end items-end justify-end max-[1399px]:w-[48%] max-[1199px]:mx-auto max-[1199px]:w-1/2 max-[767px]:w-full"
+        textColumnClassName="left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1399px]:w-1/2 max-[1199px]:w-full max-[1199px]:pb-8 max-[1199px]:text-center max-[991px]:py-10"
+        titleClassName="mb-2.5 inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-0.7px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
+        wrapperClassName="wrapper flex flex-wrap items-end justify-between max-[1199px]:flex-col max-[1199px]:items-center"
+      />
+
+      {/* 2. Client Brands */}
       <IndustryBrandsSection
         content={brandsContent}
-        heading={royalElementorKitThemeCustomizationContent.brands.title}
+        heading={royalElementorKitThemeCustomizationContent.brands.heading}
         items={royalElementorKitThemeCustomizationContent.brands.items}
       />
-      <ThemeFeaturesSection content={royalElementorKitThemeCustomizationContent.features} />
-      <ShopifyReasonsSection content={benefitsContent} />
-      <AgencyServicesSection content={servicesContent} />
-      <ThemeWhyChooseSection content={royalElementorKitThemeCustomizationContent.whyChoose} />
-      <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
-        content={portfolioContent}
+
+      {/* 3. Features of Royal Elementor Kit Theme */}
+      <ThemeCustomizationServicesSection
+        content={featuresContent}
+        variant="yellow"
       />
+
+      {/* 4. Our Royal Elementor Kit Theme Customization Services */}
+      <AgencyServicesSection
+        cardVariant="services-box"
+        className="what-we-provide-sec only-text py-20 max-[992px]:py-[50px]"
+        columns={2}
+        content={servicesContent}
+        headerTextColumnClassName="w-[48.3%] max-[992px]:w-full"
+        headerTitleColumnClassName="w-[44%] max-[992px]:w-full"
+        id="services"
+      />
+
+      {/* 5. Benefits of Royal Elementor Kit Theme Customization */}
+      <ThemeCustomizationServicesSection
+        content={benefitsContent}
+        variant="green"
+      />
+
+      {/* 6. Why Choose Dynamic Dreamz */}
+      <EvaluationFrameworkSection
+        content={royalElementorKitThemeCustomizationContent.whyChoose}
+      />
+
+      {/* 7. WordPress Theme Customization Portfolio */}
+      <PortfolioShowcaseSection
+        cardVariant="ourWorkRefresh"
+        className="our-work-sec pt-0 pb-20 max-[992px]:pb-[50px]"
+        columns={4}
+        content={royalElementorKitThemeCustomizationContent.portfolio}
+        sectionId="our_work"
+      />
+
+      {/* 8. Client Testimonials */}
+      <HappyClientSection
+        description={royalElementorKitThemeCustomizationContent.testimonials.description}
+        eyebrow={royalElementorKitThemeCustomizationContent.testimonials.eyebrow}
+        heading={royalElementorKitThemeCustomizationContent.testimonials.heading}
+      />
+
+      {/* 9. Frequently Asked Questions */}
       <SplitFaqSection
         idPrefix="royal-elementor-kit-faq"
         items={royalElementorKitThemeCustomizationContent.faqs}

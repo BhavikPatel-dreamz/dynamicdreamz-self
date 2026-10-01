@@ -926,7 +926,7 @@ Primary SEO intent: Hello Elementor theme customization, Hello Elementor WordPre
 ## Royal Elementor Kit Theme Customization (`/royal-elementor-kit-theme-customization`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Primary SEO intent: Royal Elementor Kit theme customization, Royal Elementor Kit WordPress theme customization service, customize Royal Elementor Kit theme WordPress WooCommerce, fast lightweight WordPress theme development, hire Elementor WordPress developers.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
@@ -940,7 +940,7 @@ Primary SEO intent: Royal Elementor Kit theme customization, Royal Elementor Kit
 ## PopularFX Theme Customization (`/popularfx-theme-customization`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Primary SEO intent: PopularFX theme customization, PopularFX WordPress theme customization service, customize PopularFX theme WordPress WooCommerce, fast lightweight WordPress theme development, hire PopularFX WordPress developers.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |

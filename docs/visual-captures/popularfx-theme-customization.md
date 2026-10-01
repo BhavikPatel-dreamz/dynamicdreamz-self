@@ -2,7 +2,7 @@
 
 - **Route**: `/popularfx-theme-customization`
 - **Live URL Reference**: `https://www.dynamicdreamz.com/popularfx-theme-customization/`
-- **Capture Date**: 2026-08-20
+- **Capture Date**: 2026-09-30
 - **Status**: Verified
 - **Viewports Inspected**:
   - Desktop: 1440x900
@@ -14,31 +14,36 @@
 ## 1. Visual References & Page Structure
 
 ### Live CSS Sources Inspected
-- `/wp-content/themes/dynamicdreamz/assets/css/services/main.css`
-  - `.theme-customization-service-sec` (hero layout, 50%/50% split, `.review-wrap { display: none; }`, bottom-aligned hero graphic)
-  - `.three_col_icon_sec` (features grid with 8 theme cards, 55px icons, centered bold text, description paragraph, rounded-15px card border `#efefef`)
-  - `.shopify-customization-services-sec` (benefits grid with gradient background, white cards, hover gradient border)
-  - `.what-we-provide-sec` (2-column services grid, 10px rounded cards with hover gradient border)
-  - `.why_dynamic_dreamz_sec.two-column-icon-text-bg` (2-column horizontal icon-text list with borders `rgba(0,0,0,0.05)`)
-  - `.our-work-sec` (3-column portfolio project showcase cards with hover "View Project" arrow and category badge)
-  - `.faq-sec` (accordion items with active/expanded states)
-- `/wp-content/themes/dynamicdreamz/assets/css/services/media.css`
-  - Breakpoints: desktop (>=1200px), tablet (768px-1199px / <=991px), mobile (<=767px / <=575px).
+- `/wp-content/themes/dynamicdreamz/assets/css/theme_customize_hero.css`
+  - `.theme-customize-hero` (hero layout, background `#f7f4e9`, double eyebrow badges `["Wordpress Agency", "Theme Customization"]`, 50%/50% split, bottom-aligned 1202x948 WebP image sitting flush with zero gap against the brand section below)
+- `/wp-content/themes/dynamicdreamz/assets/css/trusted_by_leading_brands_section.css`
+  - `.our-client-sec` (split layout: left heading `Trusted by \nLeading Brands`, right infinite logo track with 10 global brand logos)
+- `/wp-content/themes/dynamicdreamz/assets/css/shopify_theme_customization_services.css`
+  - `.theme-customization-services.yellow` (7 Features cards with `#AD5151` icons, `#FCF6EC` badge styling, rounded card borders)
+  - `.theme-customization-services.green` (7 Benefits cards with `#AD5151` icons, `#E9F9F0` badge styling, rounded card borders)
+- `/wp-content/themes/dynamicdreamz/assets/css/delivery_section.css`
+  - `.what-we-provide-sec.only-text` (2-column services box layout with `#AD5151` inline SVGs, title, and descriptive text)
+- `/wp-content/themes/dynamicdreamz/assets/css/how_to_choose_the_right_shopify_plus_agency_sec.css`
+  - `.how-to-choose-spa-sec` (4 numbered framework items `01` - `04` with title and description)
+- `/wp-content/themes/dynamicdreamz/assets/css/projects_section.css`
+  - `.our-work-sec.pt-0` (4-column grid of 8 WordPress project cards, rounded corners, category badge `WORDPRESS`, title, diagonal arrow link, and centered `View our work` CTA button linking to `/our-work`)
+- `/wp-content/themes/dynamicdreamz/assets/css/faqs_section.css`
+  - `.faq-sec` (6 accordion items with expand/collapse interactive behavior)
 
 ---
 
-## 2. Page Section Order & Component Mapping
+## 2. Page Section Order & Component Mapping (8 Sections - Live omits client testimonial section)
 
 | Section # | Live Section Title / Purpose | Component / Implementation | Reused / Dedicated |
 |---|---|---|---|
-| 1 | Hero (`PopularFX Theme Customization Service`) | `ThemeHeroSection` | Reused |
-| 2 | Trusted by Leading Brands (10 client logos) | `IndustryBrandsSection` | Reused |
-| 3 | Features Of PopularFX Theme (8 cards) | `ThemeFeaturesSection` | Reused |
-| 4 | Benefits of PopularFX Theme Customization (8 cards) | `ShopifyReasonsSection` | Reused |
-| 5 | Our WordPress Theme Customization Services (6 cards) | `ShopifyServicesSection` | Reused |
-| 6 | Why Choose Dynamic Dreamz (4 items) | `ThemeWhyChooseSection` | Reused |
-| 7 | Snippets of WordPress Theme Customization Portfolio (6 projects) | `PortfolioShowcaseSection` & `PortfolioProjectCard` | Reused |
-| 8 | Frequently Asked Questions (6 accordion items) | `FaqSection` & `FaqAccordion` | Reused |
+| 1 | Hero (`theme-customize-hero`) | `ThemeHeroSection` (bg `#f7f4e9`, double eyebrow badges, 1202x948 WebP, flush bottom zero-gap alignment) | Reused |
+| 2 | Trusted by Leading Brands (`our-client-sec`) | `IndustryBrandsSection` (10 global brand logos) | Reused |
+| 3 | Features of PopularFX Theme (`theme-customization-services yellow`) | `ThemeCustomizationServicesSection` (`variant="yellow"`, 8 feature items) | Reused |
+| 4 | Our WordPress Theme Customization Services (`what-we-provide-sec only-text`) | `AgencyServicesSection` (`cardVariant="services-box"`, 2 columns, 6 services) | Reused |
+| 5 | Benefits of PopularFX Theme Customization (`theme-customization-services green`) | `ThemeCustomizationServicesSection` (`variant="green"`, 8 benefit items) | Reused |
+| 6 | Why Choose Dynamic Dreamz (`how-to-choose-spa-sec`) | `EvaluationFrameworkSection` (4 numbered framework items `01`–`04`) | Reused |
+| 7 | Snippets of WordPress Theme Customization Portfolio (`our-work-sec pt-0`) | `PortfolioShowcaseSection` (`cardVariant="ourWorkRefresh"`, 4 columns, 8 projects, "View our work" CTA) | Reused |
+| 8 | Frequently Asked Questions (`faq-sec`) | `SplitFaqSection` (`idPrefix="popularfx-faq"`, 6 accordion items) | Reused |
 
 ---
 
@@ -48,8 +53,8 @@
 - **Hero Title**: `text-[50px] leading-[66px]` on desktop, `text-[40px] leading-[50px]` on tablet, `text-[30px] leading-[40px]` on mobile.
 - **Section Headings**: `text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink` (desktop), `text-[30px] leading-10` (tablet), `text-2xl leading-[33px]` (mobile).
 - **Body / Subtitles**: `text-base leading-[30.4px] font-normal text-muted` (hero), `text-base leading-[27px]` (cards).
-- **Hero Image**: Bottom-aligned 1202x948 WebP image (`popularfx-theme-customization-service-img.webp`).
-- **Brand Colors**: Light gradient `linear-gradient(97.18deg, #e8f9ef 28.5%, #e6fafd 91.82%)`, red primary CTA `#df4644` / `#cd3735`.
+- **Hero Image**: Bottom-aligned 1202x948 WebP image (`popularfx-theme-customization-service-img.webp`) sitting flush with zero gap against `#FBEED5` brand section.
+- **Brand Colors**: `#f7f4e9` hero background, `#AD5151` icon stroke/fill, red primary CTA `#df4644` / `#cd3735`.
 
 ---
 
@@ -66,24 +71,14 @@
   - `kvaser.svg`
   - `nelter.svg`
   - `circuit-city.svg`
-- Feature icons reused directly from canonical paths:
-  - `/assets/kadence-theme-customization/features/drag-and-drop-header-footer-builder.svg`
-  - `/assets/astra-theme-customization/features/pre-built-templates.svg`
-  - `/assets/astra-theme-customization/features/lightning-fast-performance.svg`
-  - `/assets/astra-theme-customization/features/fully-responsive.svg`
-  - `/assets/astra-theme-customization/features/seo-optimized.svg`
-  - `/assets/astra-theme-customization/features/woocommerce-ready.svg`
-  - `/assets/kadence-theme-customization/features/custom-hooks-and-filters.svg`
-  - `/assets/generatepress-theme-customization/features/secure-and-stable.svg`
-- 8 benefit icons and 6 service icons reused from `public/assets/shopify-theme-customization/`.
-- 4 why-choose icons reused from `public/assets/shopify-theme-customization/why-choose/`.
-- All 6 portfolio screenshots reused from canonical project paths:
-  - `/assets/our-work/projects/quite-events.webp`
-  - `/assets/our-work/projects/les-etoiles.webp`
-  - `/assets/our-work/projects/valents.webp`
-  - `/assets/our-work/projects/get-sunsights.webp`
-  - `/assets/our-work/projects/lipari-design.webp`
-  - `/assets/our-work/projects/nexventur.webp`
-- Unique theme hero asset cleanly optimized to WebP and saved under `public/assets/popularfx-theme-customization/hero/`:
-  - `hero/popularfx-theme-customization-service-img.webp` (1202x948, 83KB WebP)
+- 8 portfolio project images reused from canonical `public/assets/our-work/projects/`:
+  - `quite-events.webp`
+  - `les-etoiles.webp`
+  - `valents.webp`
+  - `get-sunsights.webp`
+  - `lipari-design.webp`
+  - `nexventur.webp`
+  - `awaken-media.webp`
+  - `budget-maids.webp`
+- Reused modular inline SVG components in `src/components/sections/popularfx-theme-customization/popularfx-icons.tsx`.
 - Total duplicate hash groups across `public/assets/`: 0.

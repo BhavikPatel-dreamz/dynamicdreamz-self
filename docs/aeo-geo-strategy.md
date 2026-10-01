@@ -6491,14 +6491,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Royal Elementor Kit Theme Customization (`/royal-elementor-kit-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert Royal Elementor Kit theme customization, Elementor page builder styling, pre-designed template integration, WooCommerce integration, speed optimization, and responsive design.
 Decision stage: partner selection, Royal Elementor Kit theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Royal Elementor Kit theme customization capabilities. Features 10 client brand trust logos, 8 key theme features, 7 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 6 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Royal Elementor Kit theme customization capabilities. Features 10 client brand trust logos, 8 key theme features, 7 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards, client story testimonials, 6 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -6551,14 +6551,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## PopularFX Theme Customization (`/popularfx-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-09-30
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, WooCommerce merchants, businesses, and digital agencies seeking expert PopularFX theme customization, drag-and-drop page builder styling, pre-built templates, WooCommerce integration, speed optimization, and responsive design.
 Decision stage: partner selection, PopularFX theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz PopularFX theme customization capabilities. Features 10 client brand trust logos, 8 key theme features, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 6 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz PopularFX theme customization capabilities. Features 10 client brand trust logos, 8 key theme features, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards, 6 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 

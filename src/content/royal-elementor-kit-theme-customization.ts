@@ -1,360 +1,305 @@
+import { industryBrandLogos } from "@/content/industries";
+import type {
+  RoyalElementorKitBenefitIconName,
+  RoyalElementorKitFeatureIconName,
+  RoyalElementorKitServiceIconName,
+} from "@/components/sections/royal-elementor-kit-theme-customization/royal-elementor-kit-icons";
+
+export type RoyalElementorKitFeatureItem = {
+  iconName: RoyalElementorKitFeatureIconName;
+  title: string;
+  description: string;
+};
+
+export type RoyalElementorKitServiceItem = {
+  iconName: RoyalElementorKitServiceIconName;
+  title: string;
+  description: string;
+};
+
+export type RoyalElementorKitBenefitItem = {
+  iconName: RoyalElementorKitBenefitIconName;
+  title: string;
+  description: string;
+};
+
+export type RoyalElementorKitPortfolioItem = {
+  name: string;
+  category: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+};
+
+export type RoyalElementorKitFaqItem = {
+  question: string;
+  answer: string;
+};
+
 export const royalElementorKitThemeCustomizationContent = {
-  hero: {
-    title: "Royal Elementor Kit Theme Customization Service",
-    description:
-      "The Royal Elementor Kit theme is a feature-rich, Elementor-compatible WordPress theme made for businesses, agencies, and creatives. It provides attractive pre-built design templates, advanced customization options, and smooth WooCommerce integration. Our <strong>Royal Elementor Kit Theme Customization Services</strong> help you customize your website to meet your brand’s unique style, ensuring a professional and engaging user experience.",
-    ctaText: "request a quote",
-    ctaHref: "/request-quote",
-    image: {
-      src: "/assets/royal-elementor-kit-theme-customization/hero/royal-elementor-theme-customization-service-img.webp",
-      alt: "Royal Elementor Kit Theme Customization Service Image",
-      width: 1202,
-      height: 948,
-    },
+  "hero": {
+    "eyebrow": ["Wordpress Agency", "Theme Customization"] as const,
+    "title": "Royal Elementor Kit Theme Customization Service",
+    "description": "The Royal Elementor Kit theme is a feature-rich, Elementor-compatible WordPress theme made for businesses, agencies, and creatives. It provides attractive pre-built design templates, advanced customization options, and smooth WooCommerce integration. Our Royal Elementor Kit Theme Customization Services help you customize your website to meet your brand’s unique style, ensuring a professional and engaging user experience.",
+    "ctaText": "Request a Quote",
+    "ctaHref": "/request-quote",
+    "ctaAriaLabel": "Request a Quote",
+    "image": {
+      "src": "/assets/royal-elementor-kit-theme-customization/hero/royal-elementor-theme-customization-service-img.webp",
+      "alt": "royal-elementor-theme",
+      "width": 1202,
+      "height": 948
+    }
   },
-  brands: {
-    title: "Trusted by Leading Brands",
-    items: [
-      {
-        name: "Ranavat Logo",
-        src: "/assets/clients/ranavat.svg",
-        href: "https://www.ranavat.com/",
-        alt: "Ranavat Logo",
-        width: 174,
-        height: 19,
-      },
-      {
-        name: "prolash_black",
-        src: "/assets/clients/prolash.svg",
-        href: "https://prolash.com/",
-        alt: "prolash_black",
-        width: 204,
-        height: 22,
-      },
-      {
-        name: "Tropicfeel Logo",
-        src: "/assets/clients/tropicfeel.svg",
-        href: "https://shop.tropicfeel.com/",
-        alt: "Tropicfeel Logo",
-        width: 150,
-        height: 32,
-      },
-      {
-        name: "perfect_locks_color_logo",
-        src: "/assets/clients/perfect-locks.svg",
-        href: "https://www.perfectlocks.com/",
-        alt: "perfect_locks_color_logo",
-        width: 175,
-        height: 32,
-      },
-      {
-        name: "Bombay Shirt Company Logo",
-        src: "/assets/clients/bombay-shirt-company.svg",
-        href: "https://www.bombayshirts.com/",
-        alt: "Bombay Shirt Company Logo",
-        width: 204,
-        height: 26,
-      },
-      {
-        name: "kayfi-colored",
-        src: "/assets/clients/kayfi.svg",
-        href: "https://kayfi.com/",
-        alt: "kayfi-colored",
-        width: 90,
-        height: 49,
-      },
-      {
-        name: "simdirect_logo_color",
-        src: "/assets/clients/simsdirect.svg",
-        href: "https://simsdirect.com.au/",
-        alt: "simdirect_logo_color",
-        width: 143,
-        height: 49,
-      },
-      {
-        name: "Kvaser Logo",
-        src: "/assets/clients/kvaser.svg",
-        href: "https://www.kvaser.com/",
-        alt: "Kvaser Logo",
-        width: 135,
-        height: 25,
-      },
-      {
-        name: "nekter-colored",
-        src: "/assets/clients/nelter.svg",
-        href: "https://www.nekterjuicebar.com/",
-        alt: "nekter-colored",
-        width: 66,
-        height: 64,
-      },
-      {
-        name: "Circuit City Logo",
-        src: "/assets/clients/circuit-city.svg",
-        href: "https://circuitcity.com/",
-        alt: "Circuit City Logo",
-        width: 64,
-        height: 64,
-      },
-    ],
+  "brands": {
+    "title": "Trusted by \nLeading Brands",
+    "heading": "Trusted by \nLeading Brands",
+    "slug": "royal-elementor-kit-theme-customization",
+    "items": industryBrandLogos
   },
-  features: {
-    title: "Features Of Royal Elementor Kit Theme",
-    subtitle:
-      "The Royal Elementor Kit theme offers powerful features to create a highly customizable and <br> visually attractive WordPress website.",
-    items: [
+  "features": {
+    "eyebrow": "Features",
+    "heading": "Features of Royal Elementor Kit Theme",
+    "description": "The Royal Elementor Kit theme offers powerful features to create a highly customizable and visually attractive WordPress website.",
+    "items": [
       {
-        title: "Elementor Integration",
-        description: "Use Elementor's drag-and-drop page builder for easy design customization.",
-        icon: "/assets/neve-theme-customization/features/page-builder-compatibility.svg",
-        iconAlt: "Elementor Integration Icon",
+        "iconName": "elementor-integration",
+        "title": "Elementor Integration",
+        "description": "Use Elementor's drag-and-drop page builder for easy design customization."
       },
       {
-        title: "Pre-Designed Templates",
-        description: "This theme offers ready-made layouts to launch your website quickly.",
-        icon: "/assets/kadence-theme-customization/features/drag-and-drop-header-footer-builder.svg",
-        iconAlt: "Pre-Built Templates Icon",
+        "iconName": "pre-designed-templates",
+        "title": "Pre-Designed Templates",
+        "description": "This theme offers ready-made layouts to launch your website quickly."
       },
       {
-        title: "Fully Responsive",
-        description: "With its responsive design ensures smooth display across all devices.",
-        icon: "/assets/generatepress-theme-customization/features/mobile-responsive-design.svg",
-        iconAlt: "Fully Responsive icon",
+        "iconName": "fully-responsive",
+        "title": "Fully Responsive",
+        "description": "With its responsive design ensures smooth display across all devices."
       },
       {
-        title: "WooCommerce Ready",
-        description:
-          "The best feature of the theme is the built-in WooCommerce facility so that you can create an online store effortlessly.",
-        icon: "/assets/astra-theme-customization/features/woocommerce-ready.svg",
-        iconAlt: "WooCommerce Ready Icon",
+        "iconName": "woocommerce-ready",
+        "title": "WooCommerce Ready",
+        "description": "The best feature of the theme is the built-in WooCommerce facility so that you can create an online store effortlessly."
       },
       {
-        title: "SEO-Optimized",
-        description: "Royal Elementor Kit is built with best practices for higher search rankings.",
-        icon: "/assets/astra-theme-customization/features/seo-optimized.svg",
-        iconAlt: "SEO Optimized Icon",
+        "iconName": "seo-optimized",
+        "title": "SEO-Optimized",
+        "description": "Royal Elementor Kit is built with best practices for higher search rankings."
       },
       {
-        title: "Fast Performance",
-        description: "Lightweight and optimized for speed just because of the straightforward structure.",
-        icon: "/assets/astra-theme-customization/features/lightning-fast-performance.svg",
-        iconAlt: "Lightning Fast Performance Icon",
+        "iconName": "fast-performance",
+        "title": "Fast Performance",
+        "description": "Lightweight and optimized for speed just because of the straightforward structure."
       },
       {
-        title: "Advanced Customization",
-        description: "With the help of advanced customization, you can modify layouts, colors, fonts, and more.",
-        icon: "/assets/astra-theme-customization/features/highly-customizable.svg",
-        iconAlt: "Advanced Customization Icon",
+        "iconName": "advanced-customization",
+        "title": "Advanced Customization",
+        "description": "With the help of advanced customization, you can modify layouts, colors, fonts, and more."
       },
       {
-        title: "Cross-Browser Compatibility",
-        description: "Works smoothly across all major browsers with cross-browser compatibility.",
-        icon: "/assets/neve-theme-customization/features/page-builder-compatibility.svg",
-        iconAlt: "Cross-Browser Compatibility Icon",
-      },
-    ],
+        "iconName": "cross-browser-compatibility",
+        "title": "Cross-Browser Compatibility",
+        "description": "Works smoothly across all major browsers with cross-browser compatibility."
+      }
+    ]
   },
-  benefits: {
-    title: "Benefits of Royal Elementor Kit <br> Theme Customization",
-    subtitle:
-      "Customizing the Royal Elementor Kit theme can offer you many amazing benefits. You can create a unique and high-performing WordPress website that fulfills your business goals. Checkout the list of benefits of our Royal Elementor Kit theme customization services:",
-    items: [
+  "services": {
+    "eyebrow": "Services",
+    "heading": "Our Royal Elementor Kit Theme \n Customization Services",
+    "description": "",
+    "items": [
       {
-        title: "Fully Customizable Store",
-        description: "You can customize your eCommerce store as per your business needs that aligns with your brand identity.",
-        icon: "/assets/shopify-theme-customization/benefits/fully-customizable-store.svg",
-        iconAlt: "cs_icon_img",
+        "iconName": "theme-installation",
+        "title": "Theme Installation",
+        "description": "We install and set up the Royal Elementor Kit theme for you."
       },
       {
-        title: "Unique Brand Identity",
-        description: "You can create your unique brand identity by customizing fonts, colors, and layouts.",
-        icon: "/assets/shopify-theme-customization/benefits/unique-brand-identity.svg",
-        iconAlt: "unique-brand-identity-icon",
+        "iconName": "custom-design-and-branding",
+        "title": "Custom Design and Branding",
+        "description": "Customize the look and feel of your website to match your brand."
       },
       {
-        title: "Improved User Experience",
-        description: "By enhancing the navigation and layout structure of the website, you can improve use experience.",
-        icon: "/assets/shopify-theme-customization/benefits/improved-user-experience.svg",
-        iconAlt: "User-Friendly Interface",
+        "iconName": "responsive-design",
+        "title": "Responsive Design",
+        "description": "We ensure that during customization your website adapts perfectly to all screen sizes."
       },
       {
-        title: "Multiple Third-party Plugins",
-        description: "We can help you add additional functionalities like forms, analytics, and chatbots with the various third-party plugins.",
-        icon: "/assets/shopify-theme-customization/benefits/multiple-third-party-apps.svg",
-        iconAlt: "Multiple Sales Channels Icon",
+        "iconName": "advanced-features-integration",
+        "title": "Advanced Features Integration",
+        "description": "We can add advanced features such as animations, sliders, pop-ups, and more, as per your requirements."
       },
       {
-        title: "Higher Conversion Rates",
-        description: "With optimized design and content, we can boost sales and lead generation of your website.",
-        icon: "/assets/shopify-theme-customization/benefits/higher-conversion-rates.svg",
-        iconAlt: "cost-effective-scalability-img",
+        "iconName": "performance-optimization",
+        "title": "Performance Optimization",
+        "description": "We can help you improve your website speed and SEO rankings."
       },
       {
-        title: "Safe and Secure Payments",
-        description: "We only integrate safe payment gateways to secure transactions of customers.",
-        icon: "/assets/shopify-theme-customization/benefits/mobile-optimization.svg",
-        iconAlt: "Enhanced Security Icon",
-      },
-      {
-        title: "Minimal Maintenance Cost",
-        description: "With our theme customization, you can get a well-optimized website that reduces future maintenance costs.",
-        icon: "/assets/shopify-theme-customization/benefits/safe-and-secure-payments.svg",
-        iconAlt: "Zero Maintenance Cost Image",
-      },
-    ],
+        "iconName": "ongoing-support-and-maintenance",
+        "title": "Ongoing Support and Maintenance",
+        "description": "We provide ongoing support and maintenance to keep your website updated and running smoothly."
+      }
+    ]
   },
-  services: {
-    title: "Our Royal Elementor Kit Theme <br> Customization Services",
-    subtitle:
-      "We deliver professional Royal Elementor Kit theme customization services to help you build a high-performing and visually attractive WordPress website.",
-    items: [
+  "benefits": {
+    "eyebrow": "Benefits",
+    "heading": "Benefits of Royal Elementor Kit Theme Customization",
+    "description": "Customizing the Royal Elementor Kit theme can offer you many amazing benefits. You can create a unique and high-performing WordPress website that fulfills your business goals. Checkout the list of benefits of our Royal Elementor Kit theme customization services:",
+    "items": [
       {
-        title: "Theme Installation",
-        description: "We install and set up the Royal Elementor Kit theme for you.",
-        icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
-        iconAlt: "Maintenance and Support Icon",
+        "iconName": "fully-customizable-store",
+        "title": "Fully Customizable Store",
+        "description": "You can customize your eCommerce store as per your business needs that aligns with your brand identity."
       },
       {
-        title: "Custom Design and Branding",
-        description: "Customize the look and feel of your website to match your brand.",
-        icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
-        iconAlt: "Plugin Development Icon",
+        "iconName": "unique-brand-identity",
+        "title": "Unique Brand Identity",
+        "description": "You can create your unique brand identity by customizing fonts, colors, and layouts."
       },
       {
-        title: "Responsive Design",
-        description: "We ensure that during customization your website adapts perfectly to all screen sizes.",
-        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
-        iconAlt: "custom themes icon",
+        "iconName": "improved-user-experience",
+        "title": "Improved User Experience",
+        "description": "By enhancing the navigation and layout structure of the website, you can improve use experience."
       },
       {
-        title: "Advanced Features Integration",
-        description: "We can add advanced features such as animations, sliders, pop-ups, and more, as per your requirements.",
-        icon: "/assets/shopify-theme-customization/services/advanced-features-integration.svg",
-        iconAlt: "Data Integrity Checks Icon",
+        "iconName": "multiple-third-party-plugins",
+        "title": "Multiple Third-party Plugins",
+        "description": "We can help you add additional functionalities like forms, analytics, and chatbots with the various third-party plugins."
       },
       {
-        title: "Performance Optimization",
-        description: "We can help you improve your website speed and SEO rankings.",
-        icon: "/assets/shopify-theme-customization/services/performance-optimization.svg",
-        iconAlt: "Compliance with Shopify’s Security Standards Icon",
+        "iconName": "higher-conversion-rates",
+        "title": "Higher Conversion Rates",
+        "description": "With optimized design and content, we can boost sales and lead generation of your website."
       },
       {
-        title: "Ongoing Support and Maintenance",
-        description: "We provide ongoing support and maintenance to keep your website updated and running smoothly.",
-        icon: "/assets/shopify-theme-customization/services/ongoing-support-and-maintenance.svg",
-        iconAlt: "Custom App Development Icon",
+        "iconName": "safe-and-secure-payments",
+        "title": "Safe and Secure Payments",
+        "description": "We only integrate safe payment gateways to secure transactions of customers."
       },
-    ],
+      {
+        "iconName": "minimal-maintenance-cost",
+        "title": "Minimal Maintenance Cost",
+        "description": "With our theme customization, you can get a well-optimized website that reduces future maintenance costs."
+      }
+    ]
   },
-  whyChoose: {
-    title: "Why Choose Dynamic Dreamz",
-    subtitle:
-      "At Dynamic Dreamz, we specialize in custom WordPress development, ensuring a professional and user-friendly website for your business.",
-    items: [
+  "whyChoose": {
+    "eyebrow": "Why Dynamic Dreamz",
+    "heading": "Why Choose Dynamic Dreamz",
+    "description": "At Dynamic Dreamz, we specialize in custom WordPress development, ensuring a professional and user-friendly website for your business.",
+    "items": [
       {
-        title: "Expert Team",
-        description: "Dynamic Dreamz has skilled WordPress developers with years of experience in WordPress theme customization.",
-        icon: "/assets/shopify-theme-customization/why-choose/expert-team.svg",
-        iconAlt: "expert-team",
+        "title": "Expert Team",
+        "description": "Dynamic Dreamz has skilled WordPress developers with years of experience in WordPress theme customization."
       },
       {
-        title: "Proven Process",
-        description: "We follow a structrued approach for project development to ensure high-quality results.",
-        icon: "/assets/shopify-theme-customization/why-choose/proven-process.svg",
-        iconAlt: "Proven Process Icon",
+        "title": "Proven Process",
+        "description": "We follow a structrued approach for project development to ensure high-quality results."
       },
       {
-        title: "Ongoing Support",
-        description: "We offer dedicated assistance for troubleshooting and updates.",
-        icon: "/assets/shopify-theme-customization/why-choose/ongoing-support.svg",
-        iconAlt: "customer_support_icon_img",
+        "title": "Ongoing Support",
+        "description": "We offer dedicated assistance for troubleshooting and updates."
       },
       {
-        title: "Client-Focused Approach",
-        description: "We prioritize your needs and business objectives.",
-        icon: "/assets/shopify-theme-customization/why-choose/client-focused-approach.svg",
-        iconAlt: "Client-Focused Approach Icon",
-      },
-    ],
+        "title": "Client-Focused Approach",
+        "description": "We prioritize your needs and business objectives."
+      }
+    ]
   },
-  portfolio: {
-    title: "Snippets of WordPress Theme Customization Portfolio",
-    subtitle:
-      "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
-    items: [
+  "portfolio": {
+    "eyebrow": "Portfolio",
+    "heading": "Snippets of WordPress Theme Customization Portfolio",
+    "description": "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
+    "ctaLabel": "View our work",
+    "ctaHref": "/our-work",
+    "items": [
       {
-        name: "Quite Events",
-        category: "WORDPRESS",
-        href: "https://www.quietevents.com/",
-        image: "/assets/our-work/projects/quite-events.webp",
-        imageAlt: "Quite Events",
+        "name": "Quite Events",
+        "category": "WORDPRESS",
+        "href": "https://www.quietevents.com/",
+        "image": "/assets/our-work/projects/quite-events.webp",
+        "imageAlt": "Quite Events WordPress Theme Customization"
       },
       {
-        name: "Les Etoiles",
-        category: "WORDPRESS",
-        href: "https://louer-lesetoiles.ca/",
-        image: "/assets/our-work/projects/les-etoiles.webp",
-        imageAlt: "Les Etoiles",
+        "name": "Les Etoiles",
+        "category": "WORDPRESS",
+        "href": "https://louer-lesetoiles.ca/",
+        "image": "/assets/our-work/projects/les-etoiles.webp",
+        "imageAlt": "Les Etoiles WordPress Theme Customization"
       },
       {
-        name: "Valents",
-        category: "WORDPRESS",
-        href: "https://wearvalents.com/",
-        image: "/assets/our-work/projects/valents.webp",
-        imageAlt: "Valents",
+        "name": "Valents",
+        "category": "WORDPRESS",
+        "href": "https://wearvalents.com/",
+        "image": "/assets/our-work/projects/valents.webp",
+        "imageAlt": "Valents WordPress Theme Customization"
       },
       {
-        name: "Get Sunsights",
-        category: "WORDPRESS",
-        href: "https://www.getsunsights.com/",
-        image: "/assets/our-work/projects/get-sunsights.webp",
-        imageAlt: "Get Sunsights",
+        "name": "Get Sunsights",
+        "category": "WORDPRESS",
+        "href": "https://www.getsunsights.com/",
+        "image": "/assets/our-work/projects/get-sunsights.webp",
+        "imageAlt": "Get Sunsights WordPress Theme Customization"
       },
       {
-        name: "Lipari Design",
-        category: "WORDPRESS",
-        href: "https://liparidesign.ca/",
-        image: "/assets/our-work/projects/lipari-design.webp",
-        imageAlt: "Lipari Design",
+        "name": "Lipari Design",
+        "category": "WORDPRESS",
+        "href": "https://liparidesign.ca/",
+        "image": "/assets/our-work/projects/lipari-design.webp",
+        "imageAlt": "Lipari Design WordPress Theme Customization"
       },
       {
-        name: "Nexventur",
-        category: "WORDPRESS",
-        href: "https://www.nexventur.com/",
-        image: "/assets/our-work/projects/nexventur.webp",
-        imageAlt: "Nexventur",
+        "name": "Nexventur",
+        "category": "WORDPRESS",
+        "href": "https://www.nexventur.com/",
+        "image": "/assets/our-work/projects/nexventur.webp",
+        "imageAlt": "Nexventur WordPress Theme Customization"
       },
-    ],
+      {
+        "name": "Awaken Media",
+        "category": "WORDPRESS",
+        "href": "https://www.awaken.media/",
+        "image": "/assets/our-work/projects/awaken-media.webp",
+        "imageAlt": "Awaken Media WordPress Theme Customization"
+      },
+      {
+        "name": "Budget Maids",
+        "category": "WORDPRESS",
+        "href": "https://www.budget-maids.com/",
+        "image": "/assets/our-work/projects/budget-maids.webp",
+        "imageAlt": "Budget Maids WordPress Theme Customization"
+      }
+    ]
   },
-  faqs: [
+  "testimonials": {
+    "eyebrow": "Client Stories",
+    "heading": "Don't Just Take Our Word For It",
+    "description": "Hear directly from the clients who have worked with Dynamic Dreamz across Shopify, ecommerce and long-term development engagements."
+  },
+  "faqs": [
     {
-      question: "What is the cost of the Royal Elementor Kit theme customization service?",
-      answer:
-        "The costs of the Royal Elementor Kit theme customization service are not fixed; it depends on the complexity and level of customization and expertise of the WordPress developer who works on your project.",
+      "question": "What is the cost of the Royal Elementor Kit theme customization service?",
+      "answer": "The costs of the Royal Elementor Kit theme customization service are not fixed; it depends on the complexity and level of customization and expertise of the WordPress developer who works on your project."
     },
     {
-      question: "How long does it take to customize the Royal Elementor Kit theme?",
-      answer:
-        "The timeline varies depending on the complexity of your customization requirements. Simple changes take a few days, while more customizations may take longer.",
+      "question": "How long does it take to customize the Royal Elementor Kit theme?",
+      "answer": "The timeline varies depending on the complexity of your customization requirements. Simple changes take a few days, while more customizations may take longer."
     },
     {
-      question: "Can I use Elementor Pro with the Royal Elementor Kit theme?",
-      answer:
-        "Yes, the theme is fully compatible with both the free and Pro versions of Elementor.",
+      "question": "Can I use Elementor Pro with the Royal Elementor Kit theme?",
+      "answer": "Yes, the theme is fully compatible with both the free and Pro versions of Elementor."
     },
     {
-      question: "Will my customized website be mobile-friendly?",
-      answer:
-        "Absolutely! During theme customization, we ensure that your website is fully responsive and provides a smooth user experience across all devices.",
+      "question": "Will my customized website be mobile-friendly?",
+      "answer": "Absolutely! During theme customization, we ensure that your website is fully responsive and provides a smooth user experience across all devices."
     },
     {
-      question: "Can I update the theme after customization?",
-      answer:
-        "Yes, we ensure that our theme customizations follow WordPress best practices so future updates won’t break your website.",
+      "question": "Can I update the theme after customization?",
+      "answer": "Yes, we ensure that our theme customizations follow WordPress best practices so future updates won’t break your website."
     },
     {
-      question: "Do you provide post-launch support?",
-      answer:
-        "Yes, we offer ongoing support and maintenance services to keep your website running smoothly. After a few revisions, we can start a new fixed price or hourly contract.",
-    },
-  ],
+      "question": "Do you provide post-launch support?",
+      "answer": "Yes, we offer ongoing support and maintenance services to keep your website running smoothly. After a few revisions, we can start a new fixed price or hourly contract."
+    }
+  ]
 } as const;
