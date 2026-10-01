@@ -167,8 +167,6 @@ export const healthNutritionCaseStudies = {
         "GNC India: Conversion-Focused Shopify Redesign with Goal-Based Navigation & Trust Signals",
       technology: "Shopify / Shopify Plus",
       industry: "Health & Nutrition",
-      description:
-        "See how Dynamic Dreamz redesigned GNC India on Shopify with goal-based navigation, trust signals and a conversion-focused shopping experience.",
     },
     {
       title:
@@ -179,8 +177,6 @@ export const healthNutritionCaseStudies = {
         "Rooted Human: Custom Shopify Dawn Theme Store for Women’s Wellness Supplements",
       technology: "Shopify / Shopify Plus",
       industry: "Health & Nutrition",
-      description:
-        "See how Dynamic Dreamz created a custom Shopify storefront for Rooted Human's women's wellness and supplement product range.",
     },
     {
       title:
@@ -191,8 +187,6 @@ export const healthNutritionCaseStudies = {
         "Essential Whitening: Custom Shopify 2.0 Store with B2B Pricing Tiers for Dental Professionals",
       technology: "Shopify Custom Apps & Integrations",
       industry: "Health & Nutrition",
-      description:
-        "See how Dynamic Dreamz developed Essential Whitening's Shopify 2.0 store with B2B pricing tiers for dental professionals and DTC customers.",
     },
   ] as const satisfies readonly CaseStudyPreviewItem[],
 };

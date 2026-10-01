@@ -90,8 +90,6 @@ export const homeLivingCaseStudies: {
         "Custom Neon: Interactive Shopify Neon Sign Designer with Live Pricing",
       technology: "Shopify Custom Apps & Integrations",
       industry: "Home & Living",
-      description:
-        "See how Dynamic Dreamz built an interactive Shopify neon sign configurator for Custom Neon with product customization and live pricing.",
       tags: ["Frontend Development", "Shopify Store Development"],
       ctaLabel: "View Case study",
     },
@@ -104,8 +102,6 @@ export const homeLivingCaseStudies: {
         "RefaceKit: Custom Shopify Kitchen Cabinet Refacing Configurator with Dynamic Pricing Logic",
       technology: "Shopify Custom Apps & Integrations",
       industry: "Home & Living",
-      description:
-        "See how Dynamic Dreamz built a Shopify kitchen cabinet configurator for RefaceKit with complex product options and dynamic pricing logic.",
       tags: ["Dynamic Pricing Logic", "Product Configurator"],
       ctaLabel: "View Case study",
     },
@@ -118,8 +114,6 @@ export const homeLivingCaseStudies: {
         "Furnified: Shopify Plus B2B Commerce System with Custom ERP Middleware Integration",
       technology: "Shopify Custom Apps & Integrations",
       industry: "Home & Living",
-      description:
-        "See how Dynamic Dreamz developed a Shopify Plus B2B solution for Furnified with custom ERP middleware and connected commerce workflows.",
       tags: ["B2B Ecommerce", "Furniture"],
       ctaLabel: "View Case study",
     },

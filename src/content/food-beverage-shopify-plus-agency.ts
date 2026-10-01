@@ -136,7 +136,6 @@ export const foodBeverageCaseStudies = {
       imageAlt: "Nekter Juice Bar: Shopify Redesign with Streamlined Ordering & Multi-Location Store Pickup",
       technology: "Shopify / Shopify Plus",
       industry: "Food & Beverages",
-      description: "",
       tags: ["Multi-Location Store Pickup", "Streamlined Ordering"],
       ctaLabel: "View Case study",
     },

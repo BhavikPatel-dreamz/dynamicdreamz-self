@@ -39,7 +39,6 @@ export function FoodBeveragesPage() {
         description={foodBeveragesCaseStudies.description}
         eyebrow={foodBeveragesCaseStudies.eyebrow}
         heading={foodBeveragesCaseStudies.heading}
-        hideCardDescription={false}
         items={foodBeveragesCaseStudies.items}
       />
       <ThemeCustomizationServicesSection

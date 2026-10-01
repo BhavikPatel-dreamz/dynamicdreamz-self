@@ -554,8 +554,6 @@ export const shopifyMigrationCaseStudies = {
       imageAlt: "first-aid-distributions-img",
       technology: "Shopify Migration",
       industry: "Health & Nutrition",
-      description:
-        "See how Dynamic Dreamz migrated First Aid Distributions from Adobe Commerce to Shopify while preserving key ecommerce data and functionality.",
     },
     {
       title:
@@ -566,8 +564,6 @@ export const shopifyMigrationCaseStudies = {
         "daniel-walters-eyewear-big-commerce-to-shopify-migration-dawn-theme-redesign-img",
       technology: "Shopify Migration",
       industry: "Jewellery & Accessories",
-      description:
-        "Discover how Dynamic Dreamz helped Daniel Walters Eyewear migrate from BigCommerce to Shopify with a tailored Dawn theme.",
     },
     {
       title:
@@ -578,8 +574,6 @@ export const shopifyMigrationCaseStudies = {
         "sleepycat-woocommerce-to-shopify-plus-migration-with-custom-bundle-builder-SKU-splitting-img",
       technology: "Shopify Migration",
       industry: "Home & Living",
-      description:
-        "Explore how Dynamic Dreamz migrated Sleepycat to Shopify Plus while implementing custom merchandising and automation features.",
     },
   ] satisfies readonly CaseStudyPreviewItem[],
 };

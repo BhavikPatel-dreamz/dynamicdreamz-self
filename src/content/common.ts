@@ -10,7 +10,7 @@ export const sharedUiCopy = {
   portfolioEyebrow: "PORTFOLIO",
   step: "Step",
   stepUpper: "STEP",
-  viewCaseStudy: "View case study",
+  viewCaseStudy: "View Case study",
   viewOurWork: "View our work",
   viewOurWorkUpper: "VIEW OUR WORK",
   viewProject: "View Project",
