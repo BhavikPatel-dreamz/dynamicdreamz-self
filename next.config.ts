@@ -160,6 +160,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/industries/home-living",
+        destination: "/home-living",
+        permanent: true,
+      },
+      {
         source: "/magento-web-development",
         destination: "/magento-development",
         permanent: true,

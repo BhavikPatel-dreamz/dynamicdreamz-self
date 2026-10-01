@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import { FaqCircleCrossIcon, type FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
 
@@ -122,19 +122,13 @@ export function StaticFaqAccordion({
                 {formatBrText(item.question)}
               </h3>
               {iconVariant === "circle-cross" ? (
-                <span
-                  aria-hidden="true"
+                <FaqCircleCrossIcon
                   className={cn(
-                    "absolute top-1/2 right-0 flex size-8 -translate-y-1/2 items-center justify-center rounded-full border-2 border-ink max-[575px]:translate-y-0",
-                    isOpen && "bg-ink/10",
+                    "absolute top-1/2 right-0 size-[30px] -translate-y-1/2 max-[767px]:size-[26px]",
                     iconClassName,
                   )}
-                >
-                  <span className={cn("relative block size-3", isOpen && "rotate-45")}>
-                    <span className="absolute top-1/2 left-0 h-0.5 w-full -translate-y-1/2 rounded-full bg-current" />
-                    <span className="absolute top-0 left-1/2 h-full w-0.5 -translate-x-1/2 rounded-full bg-current" />
-                  </span>
-                </span>
+                  isOpen={isOpen}
+                />
               ) : null}
             </button>
 

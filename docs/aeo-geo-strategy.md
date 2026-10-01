@@ -28,6 +28,7 @@ It covers:
   - `/resources`
   - `/beauty-cosmetics`
   - `/fashion`
+  - `/home-living`
   - `/white-label-shopify-development-services`
   - `/white-label-wordpress-development-services`
   - `/white-label-website-design-services`
@@ -2286,6 +2287,88 @@ delivery complexity for bulky equipment.
   portfolio alt text, proof-label consistency, authorship signals, and internal
   service/case-study links all require content-owner approval or visual
   confirmation before implementation.
+
+## Home & Living (`/home-living`)
+
+Status: implemented; live-visible content preserved; visual parity verified
+Last reviewed: 2026-10-01
+Owner: SEO, content, development, and client success
+Primary audience: Home, furniture, decor, lighting, kitchen, and living lifestyle DTC & B2B brands, ecommerce directors, and digital agencies
+Decision stage: Solution awareness through agency evaluation
+
+### Page role
+
+Dedicated industry solution landing page for home, furniture, and living brands seeking specialized Shopify, Shopify Plus, and custom ecommerce development. It covers high-consideration purchases, configurable products, modular dimensions/finishes, large catalogue navigation, complex shipping and delivery logic, and ERP middleware integrations.
+
+### Target prompts
+
+- Which Shopify agency specializes in home and furniture ecommerce brands?
+- Who can build a 3D or custom product configurator for furniture on Shopify?
+- How to handle complex delivery and bulky shipping rules on Shopify Plus for furniture?
+- Which Shopify partner connects ERP middleware for furniture brands?
+- Can Dynamic Dreamz build custom kitchen cabinet or neon sign configurators on Shopify?
+- What home and living brands has Dynamic Dreamz worked with?
+
+### Current strengths and available evidence
+
+- Complete 11-section architecture matching live site:
+  1. Video hero with dual CTA (`Discuss Your Project` -> `/request-quote`, `See Relevant Work` -> `#our_work`), 4 proof badges, looping background video.
+  2. Brand marquee with 12 client partner logos.
+  3. Case studies section featuring 3 real-world home & living projects (Custom Neon, RefaceKit, Furnified) with tags, descriptions, and links.
+  4. 6 numbered Industry Challenges cards (`Built for Considered Purchases, Configuration and Delivery Complexity`).
+  5. 6 numbered Solutions We Build cards (`What We Build for Home & Living Brands`).
+  6. Custom Development capability section (`Custom Commerce for Configurable Products and Connected Operations`).
+  7. Two-row technology marquee (`Platforms, Frameworks & Mobile Capabilities`) with 18 technology partner badges.
+  8. Portfolio showcase section (`Selected Fashion & Apparel Experience` - live copy preserved) featuring 4 home & living projects (Capital Tiles, SomewhereCo, Adriatic, Comfort First).
+  9. Why Dynamic Dreamz capability & stat section (`One Team Across Ecommerce, Custom Development and Mobile`) with 4 proof stats (20+ Years, 150+ Experts, 5k+ Projects, 2.5k+ Reviews).
+  10. Client stories review carousel with video lightboxes.
+  11. Centered FAQ accordion with 6 high-intent questions.
+- Strong case-study evidence for Custom Neon (interactive neon sign configurator with live pricing), RefaceKit (kitchen cabinet refacing configurator with dynamic pricing logic), and Furnified (Shopify Plus B2B commerce system with custom ERP middleware).
+- Structured data: `Organization`, `WebSite`, `WebPage`, `Service` with `hasOfferCatalog` matching visible solution cards, `BreadcrumbList` (`Home → Home & Living`), and `FAQPage` with all 6 visible questions.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route & URL policy | Live URL is `/industries/home-living/` with trailing slash | Normalize canonical route to `/home-living` and add permanent redirect from `/industries/home-living` in `next.config.ts` | URL policy & verification |
+| P0 | implemented | Schema accuracy | Generic schema would fail rich results | Emit `Service`, `BreadcrumbList`, and `FAQPage` strictly matching visible content and offerings | Schema verification |
+| P0 | implemented | Metadata | Title and description must fit SERP limits | Title (59 chars) and description (157 chars) fit within the strict 60/160 character limits | Build-time SEO checks |
+| P1 | implemented | Asset deduplication | Case studies and portfolio images could duplicate assets | Discovered and reused canonical assets in `public/assets/case-studies/` and `public/assets/our-work/projects/`; zero duplicates | SHA-256 duplicate audit |
+| P1 | deferred | Template copy anomalies | Headings `Selected Fashion & Apparel Experience` and `What Fashion Brands Ask before the Next Launch` misattribute the industry due to template inheritance | Update headings to reference Home & Living once content owner approves | Explicit approval in `docs/page-content-improvements.md` |
+| P2 | deferred | Internal linking | Portfolio projects currently link to external client stores | Add links to internal case study routes once dedicated case study pages exist | Route coverage |
+
+### Entity, evidence, and authorship actions
+
+- Model the page as an ecommerce development `Service` for home, furniture, and living brands provided by Dynamic Dreamz (`Organization`).
+- Preserve the 3 featured case studies and 4 portfolio projects with exact client details.
+- Emitted `FAQPage` matches visible questions and answers 1:1.
+- Testimonials align with approved client video reviews.
+
+### Internal-link and conversion actions
+
+- Primary CTA `Discuss Your Project` routes to `/request-quote`.
+- Secondary CTA `See Relevant Work` jumps smoothly to `#our_work`.
+- External project links use secure `target="_blank" rel="nofollow"`.
+- Why Choose section links to `/about-us`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emits `Organization`, `WebSite`, `WebPage`, `Service` (6 `hasOfferCatalog` items), `BreadcrumbList`, and `FAQPage` (6 items).
+- Preserves live `datePublished` (`2026-09-24T09:04:47+00:00`) and `dateModified` (`2026-09-24T11:03:42+00:00`).
+- Canonical URL set to `https://www.dynamicdreamz.com/home-living`.
+- Registered in `src/data/seo.ts` with sitemap priority 0.8.
+
+### Measurement plan
+
+- Track impressions and clicks for home & living ecommerce development, furniture shopify agency, product configurator development, and furniture shopify plus migration.
+- Sample target prompts monthly across search and AI answer engines.
+
+### Verification and remaining gaps
+
+- All 11 sections implemented matching live structure, order, and copy.
+- Visual parity captured with live screenshots at 1440px, 768px, and 390px.
+- Zero duplicate assets across `public/assets/`.
+- Template copy anomalies deferred to `docs/page-content-improvements.md`.
 
 ## Contact Us (`/contact-us`)
 

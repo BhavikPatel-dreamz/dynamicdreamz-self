@@ -176,7 +176,6 @@ export function MobileApplicationDevelopmentPage() {
         iconVariant="circle-cross"
         idPrefix="mobile-application-development-faq"
         items={mobileApplicationDevelopmentFaqs}
-        layout="split"
         sectionId="mobile-application-development-faq-section"
       />
     </div>

@@ -374,6 +374,24 @@ dealer/inventory/ERP integrations.
 | Hero CTAs | "Discuss Your Project" to `/request-quote`, "See Relevant Work" to `#our_work` | Keep as-is | Both match live, and both destinations are built routes; `#our_work` resolves to the rendered portfolio section. | High | implemented |
 | Feature icons | 3 of the 4 why-choose icons were missing a local equivalent | Keep as-is | Three `MigrationFeatureIcon` branches were added with live-exact path data as an additive, backward-compatible extension to the shared component. No visible difference remains, and all 4 rendered icons were verified path-identical to live. Note: this work exposed an unrelated pre-existing icon defect on `/health-nutrition`, recorded in that section above. | High | implemented |
 
+## Home & Living (`/home-living`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-10-01
+Primary SEO intent: home and living ecommerce development, furniture Shopify agency, product configurators, large catalogues, delivery and bulky shipping logic, ERP integrations, and Shopify Plus stores for home decor brands.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Route | Live serves the page at `/industries/home-living/` | Keep canonical route at slashless `/home-living` | Matches repo URL policy; permanent redirect handles legacy `/industries/home-living`. | High | implemented |
+| Meta title | "Shopify Agency for Home & Furniture Brands \| Dynamic Dreamz" | Keep as-is (59 characters) | Exact live title fits within the 60-character budget and targets core buyer intent. | High | implemented in metadata |
+| Meta description | "E-commerce and Shopify development for home, furniture and decor brands. Configurators, large catalogs, delivery logic, integrations and custom development." | Keep as-is (157 characters) | Exact live description fits within the 160-character limit and covers key capability areas. | High | implemented in metadata |
+| Portfolio section heading | "Selected Fashion & Apparel Experience" | "Selected Home & Living Experience" | **Live page template copy anomaly.** The live Home & Living page displays "Selected Fashion & Apparel Experience" as the portfolio heading even though the cards feature furniture/tile brands (Capital Tiles, SomewhereCo, Adriatic, Comfort First). Preserved on live UI per migration rules. | High | suggested — not implemented; requires exact visible-copy approval |
+| FAQ section heading | "What Fashion Brands Ask before the Next Launch" | "What Home & Living Brands Ask before the Next Launch" | **Live page template copy anomaly.** The live FAQ section announces questions for "Fashion Brands" despite the 6 questions specifically addressing furniture shipping, configurators, samples, and ERP. Preserved on live UI per migration rules. | High | suggested — not implemented; requires exact visible-copy approval |
+| Portfolio image alt text | Live generic form: "Capital Tiles Image", "SomewhereCo Image", "Adriatic Image", "Comfort First Image" | Subject-specific descriptions such as "Capital Tiles Shopify home storefront project preview" | The live "<Brand> Image" form is generic and can be improved with descriptive alt text once approved. | Medium | deferred |
+| Stat labels | "20+ Years of Experience", "150+ Experts", "5k+ projects delivered", "2.5k+ Verified 5 star Reviews" | Standardize to title case and hyphenate "5-star", e.g. "5k+ Projects Delivered" and "2.5k+ Verified 5-Star Reviews" | Minor casing inconsistency across the stats strip. Approved figures remain preserved. | Low | suggested — not implemented; requires exact visible-copy approval |
+| Hero CTAs | "Discuss Your Project" to `/request-quote`, "See Relevant Work" to `#our_work` | Keep as-is | Both match live and resolve to valid local targets. | High | implemented |
+| Case studies | 3 featured case studies: Custom Neon, RefaceKit, Furnified | Keep as-is | Directly supports E-E-A-T and proof for configurators and B2B systems. | High | implemented |
+
 ## Our Work (`/our-work`)
 
 Status: visible recommendations deferred; live UI preserved during migration

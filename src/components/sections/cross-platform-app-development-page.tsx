@@ -179,7 +179,6 @@ export function CrossPlatformAppDevelopmentPage() {
         iconVariant="circle-cross"
         idPrefix="cross-platform-app-development-faq"
         items={crossPlatformAppDevelopmentFaqs}
-        layout="split"
         sectionId="cross-platform-app-development-faq-section"
       />
     </div>

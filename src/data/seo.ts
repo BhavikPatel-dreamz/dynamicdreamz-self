@@ -411,6 +411,34 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  homeLiving: {
+    path: "/home-living",
+    title: "Shopify Agency for Home & Furniture Brands | Dynamic Dreamz",
+    description:
+      "E-commerce and Shopify development for home, furniture and decor brands. Configurators, large catalogs, delivery logic, integrations and custom development.",
+    socialDescription:
+      "E-commerce and Shopify development for home, furniture and decor brands. Configurators, large catalogs, delivery logic, integrations and custom development.",
+    keywords: [
+      "home living ecommerce development",
+      "furniture shopify agency",
+      "home decor ecommerce website",
+      "shopify plus furniture",
+      "furniture product configurator development",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-09-24T09:04:47+00:00",
+    modifiedTime: "2026-09-24T11:03:42+00:00",
+    image: {
+      path: "/assets/og/home-living.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Agency for Home & Furniture Brands | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   fashion: {
     path: "/fashion",
     title: "Web Design Agency for Fashion Industry - Dynamic Dreamz",

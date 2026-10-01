@@ -27,7 +27,6 @@ export type SplitFaqSectionProps = {
   itemClassName?: string;
   panelContentClassName?: string;
   containerClassName?: string;
-  layout?: "split" | "centered";
   iconVariant?: "default" | "circle-cross";
 };
 
@@ -60,7 +59,6 @@ export function SplitFaqSection({
   itemClassName,
   panelContentClassName,
   containerClassName,
-  layout = "split",
   iconVariant = "circle-cross",
 }: SplitFaqSectionProps) {
   const titleId = `${idPrefix}-title`;
@@ -73,11 +71,11 @@ export function SplitFaqSection({
       id={sectionId ?? `${idPrefix}-section`}
     >
       <Container className={containerClassName}>
-        {layout === "centered" ? (
-          <div className="wrapper">
-            <div className="header-text mx-auto mb-16 max-w-[700px] text-center max-[992px]:mb-8">
+        <div className="flex justify-between gap-[105px] max-[1399px]:gap-8 max-[991px]:flex-col max-[991px]:gap-[30px]">
+          <div className="w-[41%] max-[1199px]:w-[44%] max-[991px]:w-full">
+            <header className="mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
               {eyebrow ? (
-                <Eyebrow as="span" className={cn("mb-4 justify-center", eyebrowClassName)}>
+                <Eyebrow as="span" className={cn("mb-4", eyebrowClassName)}>
                   {eyebrow}
                 </Eyebrow>
               ) : null}
@@ -91,95 +89,56 @@ export function SplitFaqSection({
                 {formatBrText(heading, headingBrClassName ?? "max-[1199px]:hidden")}
               </h2>
               {description ? (
-                <p className="mx-auto max-w-[500px] text-base leading-[28px] font-medium text-[#535353] max-[767px]:text-sm max-[767px]:leading-[24px]">
+                <p className="max-w-[500px] text-base leading-[28px] font-medium text-[#535353] max-[767px]:text-sm max-[767px]:leading-[24px]">
                   {formatBrText(description, "max-[1199px]:hidden")}
                 </p>
               ) : null}
-            </div>
-            <div className="accordion-main">
+            </header>
+          </div>
+          <div className="w-[57%] max-w-[654px] grow max-[1199px]:w-[53%] max-[1199px]:max-w-none max-[991px]:w-full">
+            {lazyAccordion ? (
+              <LazyFaqAccordion
+                animateOnReveal={animateOnReveal}
+                answerClassName={answerClassName}
+                fallback={
+                  <StaticFaqAccordion
+                    answerClassName={answerClassName}
+                    iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
+                    iconVariant={iconVariant}
+                    idPrefix={idPrefix}
+                    itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
+                    items={items}
+                    panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
+                    questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
+                    triggerClassName={cn("!px-0 !py-6 !pr-[37px] max-[767px]:!py-5 max-[767px]:!pr-[42px]", triggerClassName)}
+                  />
+                }
+                iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
+                iconVariant={iconVariant}
+                idPrefix={idPrefix}
+                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
+                items={items}
+                panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
+                questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
+                triggerClassName={cn("!px-0 !py-6 !pr-[37px] max-[767px]:!py-5 max-[767px]:!pr-[42px]", triggerClassName)}
+                rootMargin={lazyRootMargin}
+              />
+            ) : (
               <FaqAccordion
                 animateOnReveal={animateOnReveal}
                 answerClassName={answerClassName}
+                iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
                 iconVariant={iconVariant}
                 idPrefix={idPrefix}
-                itemClassName={itemClassName}
+                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
                 items={items}
-                panelContentClassName={panelContentClassName}
-                questionClassName={questionClassName}
-                triggerClassName={triggerClassName}
+                panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
+                questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
+                triggerClassName={cn("!px-0 !py-6 !pr-[37px] max-[767px]:!py-5 max-[767px]:!pr-[42px]", triggerClassName)}
               />
-            </div>
+            )}
           </div>
-        ) : (
-          <div className="flex justify-between gap-[105px] max-[1399px]:gap-8 max-[991px]:flex-col max-[991px]:gap-[30px]">
-            <div className="w-[41%] max-[1199px]:w-[44%] max-[991px]:w-full">
-              <header className="mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
-                {eyebrow ? (
-                  <Eyebrow as="span" className={cn("mb-4", eyebrowClassName)}>
-                    {eyebrow}
-                  </Eyebrow>
-                ) : null}
-                <h2
-                  className={cn(
-                    "mb-[10px] font-display text-[35px] leading-[1.4] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]",
-                    headingClassName,
-                  )}
-                  id={titleId}
-                >
-                  {formatBrText(heading, headingBrClassName ?? "max-[1199px]:hidden")}
-                </h2>
-                {description ? (
-                  <p className="max-w-[500px] text-base leading-[28px] font-medium text-[#535353] max-[767px]:text-sm max-[767px]:leading-[24px]">
-                    {formatBrText(description, "max-[1199px]:hidden")}
-                  </p>
-                ) : null}
-              </header>
-            </div>
-            <div className="w-[57%] max-w-[654px] grow max-[1199px]:w-[53%] max-[1199px]:max-w-none max-[991px]:w-full">
-              {lazyAccordion ? (
-                <LazyFaqAccordion
-                  animateOnReveal={animateOnReveal}
-                  answerClassName={answerClassName}
-                  fallback={
-                    <StaticFaqAccordion
-                      answerClassName={answerClassName}
-                      iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
-                      iconVariant={iconVariant}
-                      idPrefix={idPrefix}
-                      itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
-                      items={items}
-                      panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
-                      questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
-                      triggerClassName={cn("!px-0 !py-6 !pr-[50px] max-[767px]:!py-5 max-[767px]:!pr-[42px]", triggerClassName)}
-                    />
-                  }
-                  iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
-                  iconVariant={iconVariant}
-                  idPrefix={idPrefix}
-                  itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
-                  items={items}
-                  panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
-                  questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
-                  triggerClassName={cn("!px-0 !py-6 !pr-[50px] max-[767px]:!py-5 max-[767px]:!pr-[42px]", triggerClassName)}
-                  rootMargin={lazyRootMargin}
-                />
-              ) : (
-                <FaqAccordion
-                  animateOnReveal={animateOnReveal}
-                  answerClassName={answerClassName}
-                  iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
-                  iconVariant={iconVariant}
-                  idPrefix={idPrefix}
-                  itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
-                  items={items}
-                  panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
-                  questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
-                  triggerClassName={cn("!px-0 !py-6 !pr-[50px] max-[767px]:!py-5 max-[767px]:!pr-[42px]", triggerClassName)}
-                />
-              )}
-            </div>
-          </div>
-        )}
+        </div>
       </Container>
     </section>
   );

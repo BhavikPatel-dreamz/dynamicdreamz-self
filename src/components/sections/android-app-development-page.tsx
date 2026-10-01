@@ -179,7 +179,6 @@ export function AndroidAppDevelopmentPage() {
         iconVariant="circle-cross"
         idPrefix="android-app-development-faq"
         items={androidAppDevelopmentFaqs}
-        layout="split"
         sectionId="android-app-development-faq-section"
       />
     </div>

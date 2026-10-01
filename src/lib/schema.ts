@@ -31,6 +31,10 @@ import {
   sportsOutdoorsFaqs,
   sportsOutdoorsSolutions,
 } from "@/content/sports-outdoors";
+import {
+  homeLivingFaqs,
+  homeLivingSolutions,
+} from "@/content/home-living";
 import { hireWordPressFaqs } from "@/content/hire-wordpress-developers";
 import { hireShopifyFaqs, hireShopifyServices } from "@/content/hire-shopify-developers";
 import {
@@ -297,6 +301,11 @@ const sportsOutdoorsPageId = `${sportsOutdoorsPageUrl}#webpage`;
 const sportsOutdoorsBreadcrumbId = `${sportsOutdoorsPageUrl}#breadcrumb`;
 const sportsOutdoorsServiceId = `${sportsOutdoorsPageUrl}#service`;
 const sportsOutdoorsFaqId = `${sportsOutdoorsPageUrl}#faq`;
+const homeLivingPageUrl = absoluteUrl(pageSeo.homeLiving.path);
+const homeLivingPageId = `${homeLivingPageUrl}#webpage`;
+const homeLivingBreadcrumbId = `${homeLivingPageUrl}#breadcrumb`;
+const homeLivingServiceId = `${homeLivingPageUrl}#service`;
+const homeLivingFaqId = `${homeLivingPageUrl}#faq`;
 const petIndustryPageUrl = absoluteUrl(pageSeo.petIndustry.path);
 const petIndustryPageId = `${petIndustryPageUrl}#webpage`;
 const petIndustryBreadcrumbId = `${petIndustryPageUrl}#breadcrumb`;
@@ -2254,6 +2263,27 @@ export function createSportsOutdoorsPageSchema() {
     audienceType: "Sports, fitness and outdoor brands",
     faqs: sportsOutdoorsFaqs,
     offers: sportsOutdoorsSolutions.boxes.map((item) => ({
+      title: item.title,
+      description: item.description ?? "",
+    })),
+  });
+}
+
+export function createHomeLivingPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.homeLiving,
+    pageUrl: homeLivingPageUrl,
+    pageId: homeLivingPageId,
+    serviceId: homeLivingServiceId,
+    faqId: homeLivingFaqId,
+    breadcrumbId: homeLivingBreadcrumbId,
+    serviceName: "Ecommerce Solutions for Home, Furniture & Decor Brands",
+    serviceType:
+      "Home and Living Ecommerce Development, Product Configurators, Large Catalogue Merchandising, Delivery Logic and Lead-Time Communication, Shopify and Shopify Plus Development, B2B and Wholesale Commerce, ERP Inventory and Custom Integrations",
+    breadcrumbName: "Home & Living",
+    audienceType: "Furniture, decor and lifestyle brands",
+    faqs: homeLivingFaqs,
+    offers: homeLivingSolutions.boxes.map((item) => ({
       title: item.title,
       description: item.description ?? "",
     })),

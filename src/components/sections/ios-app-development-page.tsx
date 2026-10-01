@@ -177,7 +177,6 @@ export function IosAppDevelopmentPage() {
         iconVariant="circle-cross"
         idPrefix="ios-app-development-faq"
         items={iosAppDevelopmentFaqs}
-        layout="split"
         sectionId="ios-app-development-faq-section"
       />
     </div>

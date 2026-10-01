@@ -190,6 +190,10 @@ export const siteMapLinks: readonly SiteMapLinkItem[] = [
         "href": "/health-nutrition"
       },
       {
+        "label": "Home & Living",
+        "href": "/home-living"
+      },
+      {
         "label": "Pet Industry",
         "href": "/pet-industry"
       }
