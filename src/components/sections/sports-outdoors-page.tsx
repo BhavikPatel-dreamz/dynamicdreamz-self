@@ -57,7 +57,7 @@ export function SportsOutdoorsPage() {
       />
       <WhyChooseShopifyMigrationSection content={sportsOutdoorsWhyChoose} />
       <HappyClientSection
-        className="pt-80 max-[992px]:pt-12.5"
+        className="pt-20 max-[992px]:pt-12.5"
         description={sportsOutdoorsTestimonials.description}
         eyebrow={sportsOutdoorsTestimonials.eyebrow}
         heading={sportsOutdoorsTestimonials.heading}
