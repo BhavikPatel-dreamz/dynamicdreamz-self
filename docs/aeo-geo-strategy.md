@@ -2208,6 +2208,7 @@ delivery complexity for bulky equipment.
 | P2 | deferred | Content signals | The page carries no authorship, reviewer, or `Reviewed by` signal, and no case-study attribution for the 8 named projects | Add a reviewer or author entity only once real, approved people and case studies exist. Do not invent them | Governance approval plus real case-study routes |
 | P2 | deferred | Internal linking | The page links outward to 8 client sites but not to internal service, migration, or case-study routes | Add internal links to Shopify development, Shopify Plus, and sports/outdoors case studies as those destinations are confirmed | Destination route coverage |
 | P2 | deferred | Image alt text | Portfolio alt text uses the live generic `<Brand> Image` form, which does not meet the repo's alt-text quality bar | Replace with subject-specific descriptions for all 8 project images, matching the pattern already used on `/pet-industry` | Requires visual confirmation of each asset before the text is written |
+| P2 | deferred | Heading hierarchy | Two shared sections emit different heading levels than live: the why-choose partner heading is an `h3` locally where live uses `h2 class="h3"`, its stat values are `span`/`p` locally where live uses `h3`, and portfolio card titles are `h3` locally where live uses `span class="h4"`. The result is a 9-`h2` local outline against 10 on live | Align the shared `WhyChooseShopifyMigrationSection` and `PortfolioShowcaseSection` heading elements with live, or confirm the current outline is a deliberate accessibility improvement. Affects several already-migrated routes, so it needs its own scoped change | Shared-component review, not a single-route fix |
 | P3 | deferred | Proof consistency | The stats strip mixes casing (`Years of Experience`, `Experts`, `projects delivered`, `Verified 5 star Reviews`) and `5k+` is a rounded restatement of the 5,000+ company fact | Standardize label casing and hyphenate `5-star`. Note the change must keep the approved 5,000+ and 2,500+ figures intact | Content owner approval |
 
 ### Entity, evidence, and authorship actions
@@ -2266,7 +2267,9 @@ delivery complexity for bulky equipment.
   cleaned live body capture, Yoast JSON-LD, heading/section-order/alt-text/anchor
   diffing, path-data comparison for all 4 why-choose SVGs, asset hashing and
   duplicate audit, URL-policy guard, lint, and production build.
-- Result: HTTP 200, one `h1`, nine `h2` matching live in text and order, all 10
+- Result: HTTP 200, one `h1`, all 10 live `h2` texts present in the same order
+  (rendered locally across `h2`/`h3` — the why-choose partner heading is an `h3`
+  locally where live uses `h2`, a pre-existing shared-component detail), all 10
   sections in live order, all 8 portfolio `href` + `alt` values matching live,
   11 testimonials matching live, 6 FAQs matching live, and zero `<img>` elements
   missing an `alt` attribute.
