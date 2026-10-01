@@ -1,10 +1,50 @@
+import { industryBrandLogos } from "@/content/industries";
+import type {
+  BloghashBenefitIconName,
+  BloghashFeatureIconName,
+  BloghashServiceIconName,
+} from "@/components/sections/bloghash-theme-customization/bloghash-icons";
+
+export type BloghashFeatureItem = {
+  iconName: BloghashFeatureIconName;
+  title: string;
+  description: string;
+};
+
+export type BloghashServiceItem = {
+  iconName: BloghashServiceIconName;
+  title: string;
+  description: string;
+};
+
+export type BloghashBenefitItem = {
+  iconName: BloghashBenefitIconName;
+  title: string;
+  description: string;
+};
+
+export type BloghashPortfolioItem = {
+  name: string;
+  category: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+};
+
+export type BloghashFaqItem = {
+  question: string;
+  answer: string;
+};
+
 export const bloghashThemeCustomizationContent = {
   hero: {
+    eyebrow: ["Wordpress Agency", "Theme Customization"] as const,
     title: "BlogHash Theme Customization Service",
     description:
-      "The BlogHash theme is a modern and minimal WordPress theme specially created for bloggers, writers, and content creators. With its clean design and customizable layout, it allows users to showcase their content engagingly. Our <strong>BlogHash Theme Customization Services</strong> ensure that your blog is fully optimized for performance, matches your brand identity, and provides an excellent user experience.",
-    ctaText: "request a quote",
+      "The BlogHash theme is a modern and minimal WordPress theme specially created for bloggers, writers, and content creators. With its clean design and customizable layout, it allows users to showcase their content engagingly. Our BlogHash Theme Customization Services ensure that your blog is fully optimized for performance, matches your brand identity, and provides an excellent user experience.",
+    ctaText: "Request a Quote",
     ctaHref: "/request-quote",
+    ctaAriaLabel: "Request a Quote",
     image: {
       src: "/assets/bloghash-theme-customization/hero/bloghash-theme-customization-service-img.webp",
       alt: "BlogHash Theme Customization Service Image",
@@ -13,311 +53,248 @@ export const bloghashThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by Leading Brands",
-    items: [
-      {
-        name: "Ranavat Logo",
-        src: "/assets/clients/ranavat.svg",
-        href: "https://www.ranavat.com/",
-        alt: "Ranavat Logo",
-        width: 174,
-        height: 19,
-      },
-      {
-        name: "prolash_black",
-        src: "/assets/clients/prolash.svg",
-        href: "https://prolash.com/",
-        alt: "prolash_black",
-        width: 204,
-        height: 22,
-      },
-      {
-        name: "Tropicfeel Logo",
-        src: "/assets/clients/tropicfeel.svg",
-        href: "https://shop.tropicfeel.com/",
-        alt: "Tropicfeel Logo",
-        width: 150,
-        height: 32,
-      },
-      {
-        name: "perfect_locks_color_logo",
-        src: "/assets/clients/perfect-locks.svg",
-        href: "https://www.perfectlocks.com/",
-        alt: "perfect_locks_color_logo",
-        width: 175,
-        height: 32,
-      },
-      {
-        name: "Bombay Shirt Company Logo",
-        src: "/assets/clients/bombay-shirt-company.svg",
-        href: "https://www.bombayshirts.com/",
-        alt: "Bombay Shirt Company Logo",
-        width: 204,
-        height: 26,
-      },
-      {
-        name: "kayfi-colored",
-        src: "/assets/clients/kayfi.svg",
-        href: "https://kayfi.com/",
-        alt: "kayfi-colored",
-        width: 90,
-        height: 49,
-      },
-      {
-        name: "simdirect_logo_color",
-        src: "/assets/clients/simsdirect.svg",
-        href: "https://simsdirect.com.au/",
-        alt: "simdirect_logo_color",
-        width: 143,
-        height: 49,
-      },
-      {
-        name: "Kvaser Logo",
-        src: "/assets/clients/kvaser.svg",
-        href: "https://www.kvaser.com/",
-        alt: "Kvaser Logo",
-        width: 135,
-        height: 25,
-      },
-      {
-        name: "nekter-colored",
-        src: "/assets/clients/nelter.svg",
-        href: "https://www.nekterjuicebar.com/",
-        alt: "nekter-colored",
-        width: 66,
-        height: 64,
-      },
-      {
-        name: "Circuit City Logo",
-        src: "/assets/clients/circuit-city.svg",
-        href: "https://circuitcity.com/",
-        alt: "Circuit City Logo",
-        width: 64,
-        height: 64,
-      },
-    ],
+    title: "Trusted by \nLeading Brands",
+    heading: "Trusted by \nLeading Brands",
+    slug: "bloghash-theme-customization",
+    items: industryBrandLogos,
   },
   features: {
-    title: "Features Of BlogHash Theme",
-    subtitle:
+    eyebrow: "Features",
+    heading: "Features of BlogHash Theme",
+    description:
       "The BlogHash theme is packed with features that help you build a stunning and professional blog.",
     items: [
       {
+        iconName: "minimal-and-clean-design",
         title: "Minimal and Clean Design",
-        description: "This theme offers you a distraction-free reading experience to your readers.",
-        icon: "/assets/bloghash-theme-customization/features/minimal-and-clean-design.svg",
-        iconAlt: "Minimal and Clean Design Icon",
+        description:
+          "This theme offers you a distraction-free reading experience to your readers.",
       },
       {
+        iconName: "fully-customizable-layouts",
         title: "Fully Customizable Layouts",
-        description: "A drag-and-drop customizer allows you to modify colors, fonts, and layouts easily.",
-        icon: "/assets/kadence-theme-customization/features/drag-and-drop-header-footer-builder.svg",
-        iconAlt: "Fully Customizable Layouts Icon",
+        description:
+          "A drag-and-drop customizer allows you to modify colors, fonts, and layouts easily.",
       },
       {
+        iconName: "seo-friendly-structure",
         title: "SEO-Friendly Structure",
-        description: "An SEO-friendly structure can help improve your website's visibility on search engines.",
-        icon: "/assets/astra-theme-customization/features/seo-optimized.svg",
-        iconAlt: "SEO-Friendly Structure Icon",
+        description:
+          "An SEO-friendly structure can help improve your website's visibility on search engines.",
       },
       {
+        iconName: "responsive-and-mobile-friendly",
         title: "Responsive and Mobile-Friendly",
-        description: "This theme ensures a smooth front look across all devices.",
-        icon: "/assets/astra-theme-customization/features/fully-responsive.svg",
-        iconAlt: "Responsive and Mobile-Friendly Icon",
+        description:
+          "This theme ensures a smooth front look across all devices.",
       },
       {
+        iconName: "fast-loading-speed",
         title: "Fast Loading Speed",
         description:
           "A good theme structure and straightforward coding are optimized for better performance and user engagement.",
-        icon: "/assets/astra-theme-customization/features/lightning-fast-performance.svg",
-        iconAlt: "Fast Loading Speed Icon",
       },
       {
+        iconName: "multiple-post-formats",
         title: "Multiple Post Formats",
-        description: "This theme can support multiple post formats text, images, videos, and more.",
-        icon: "/assets/bloghash-theme-customization/features/multiple-post-formats.svg",
-        iconAlt: "Multiple Post Formats Icon",
+        description:
+          "This theme can support multiple post formats text, images, videos, and more.",
       },
       {
+        iconName: "social-media-integration",
         title: "Social Media Integration",
-        description: "You can easily integrate and allow users to share your content.",
-        icon: "/assets/bloghash-theme-customization/features/social-media-interaction.svg",
-        iconAlt: "Social Media Integration Icon",
+        description:
+          "You can easily integrate and allow users to share your content.",
       },
       {
+        iconName: "gutenberg-compatible",
         title: "Gutenberg Compatible",
-        description: "It can work smoothly with the latest WordPress Gutenberg block editor.",
-        icon: "/assets/bloghash-theme-customization/features/gutenberg-compatible.svg",
-        iconAlt: "Gutenberg Compatible Icon",
+        description:
+          "It can work smoothly with the latest WordPress Gutenberg block editor.",
       },
-    ],
-  },
-  benefits: {
-    title: "Benefits of BlogHash <br> Theme Customization",
-    subtitle:
-      "Customizing the BlogHash theme enhances your website’s appeal, functionality, and performance.",
-    items: [
-      {
-        title: "Fully Customizable Store",
-        description: "You can personalize every aspect of your website to match your brand.",
-        icon: "/assets/shopify-theme-customization/benefits/fully-customizable-store.svg",
-        iconAlt: "cs_icon_img",
-      },
-      {
-        title: "Unique Brand Identity",
-        description: "Our theme customization can help you create a custom design tailored to your niche.",
-        icon: "/assets/shopify-theme-customization/benefits/unique-brand-identity.svg",
-        iconAlt: "unique-brand-identity-icon",
-      },
-      {
-        title: "Improved User Experience",
-        description: "You can improve your website by working on areas of improvement such as website navigation, design, and readability.",
-        icon: "/assets/shopify-theme-customization/benefits/improved-user-experience.svg",
-        iconAlt: "User-Friendly Interface",
-      },
-      {
-        title: "Multiple Third-party Plugins",
-        description: "Using third-party plugins enhances your blog's functionality and look.",
-        icon: "/assets/shopify-theme-customization/benefits/multiple-third-party-apps.svg",
-        iconAlt: "Multiple Sales Channels Icon",
-      },
-      {
-        title: "Mobile Optimization",
-        description: "With customization, you can ensure fast loading speeds and smooth browsing on mobile devices.",
-        icon: "/assets/shopify-theme-customization/benefits/mobile-optimization.svg",
-        iconAlt: "Mobile Optimization Icon",
-      },
-      {
-        title: "Minimal Maintenance Cost",
-        description: "After our theme customization, you can reduce the demand for frequent updates with optimized settings.",
-        icon: "/assets/shopify-theme-customization/benefits/zero-maintenance-cost.svg",
-        iconAlt: "Zero Maintenance Cost Image",
-      },
-    ],
+    ] as const,
   },
   services: {
-    title: "Our WordPress Theme <br> Customization Services",
-    subtitle:
+    eyebrow: "Our Services",
+    heading: "Our WordPress Theme \nCustomization Services",
+    description:
       "We offer expert BlogHash theme customization services to help you create a professional and engaging blog.",
     items: [
       {
+        iconName: "theme-installation",
         title: "Theme Installation",
-        description: "We install and configure the BlogHash theme for optimal performance.",
-        icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
-        iconAlt: "Maintenance and Support Icon",
+        description:
+          "We install and configure the BlogHash theme for optimal performance.",
       },
       {
+        iconName: "custom-design-and-branding",
         title: "Custom Design and Branding",
-        description: "We change colors, fonts, and layouts to match your style to create your custom design and branding.",
-        icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
-        iconAlt: "Plugin Development Icon",
+        description:
+          "We change colors, fonts, and layouts to match your style to create your custom design and branding.",
       },
       {
+        iconName: "responsive-design",
         title: "Responsive Design",
-        description: "We ensure a smooth user experience across all devices during our theme customization.",
-        icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
-        iconAlt: "custom themes icon",
+        description:
+          "We ensure a smooth user experience across all devices during our theme customization.",
       },
       {
+        iconName: "advanced-features-integration",
         title: "Advanced Features Integration",
-        description: "As per your custom requirements, we can add sliders, social media feeds, and other functionalities.",
-        icon: "/assets/shopify-theme-customization/services/advanced-features-integration.svg",
-        iconAlt: "Data Integrity Checks Icon",
+        description:
+          "As per your custom requirements, we can add sliders, social media feeds, and other functionalities.",
       },
       {
+        iconName: "performance-optimization",
         title: "Performance Optimization",
-        description: "We improve your website speed and enhance its SEO ranking.",
-        icon: "/assets/shopify-theme-customization/services/performance-optimization.svg",
-        iconAlt: "Compliance with Shopify’s Security Standards Icon",
+        description:
+          "We improve your website speed and enhance its SEO ranking.",
       },
       {
+        iconName: "ongoing-support-and-maintenance",
         title: "Ongoing Support and Maintenance",
-        description: "We offer regular updates and technical assistance to keep your website working.",
-        icon: "/assets/shopify-theme-customization/services/ongoing-support-and-maintenance.svg",
-        iconAlt: "Custom App Development Icon",
+        description:
+          "We offer regular updates and technical assistance to keep your website working.",
       },
-    ],
+    ] as const,
+  },
+  benefits: {
+    eyebrow: "Benefits",
+    heading: "Benefits of BlogHash Theme Customization",
+    description:
+      "Customizing the BlogHash theme enhances your website’s appeal, functionality, and performance.",
+    items: [
+      {
+        iconName: "fully-customizable-store",
+        title: "Fully Customizable Store",
+        description:
+          "You can personalize every aspect of your website to match your brand.",
+      },
+      {
+        iconName: "unique-brand-identity",
+        title: "Unique Brand Identity",
+        description:
+          "Our theme customization can help you create a custom design tailored to your niche.",
+      },
+      {
+        iconName: "improved-user-experience",
+        title: "Improved User Experience",
+        description:
+          "You can improve your website by working on areas of improvement such as website navigation, design, and readability.",
+      },
+      {
+        iconName: "multiple-third-party-plugins",
+        title: "Multiple Third-party Plugins",
+        description:
+          "Using third-party plugins enhances your blog's functionality and look.",
+      },
+      {
+        iconName: "mobile-optimization",
+        title: "Mobile Optimization",
+        description:
+          "With customization, you can ensure fast loading speeds and smooth browsing on mobile devices.",
+      },
+      {
+        iconName: "minimal-maintenance-cost",
+        title: "Minimal Maintenance Cost",
+        description:
+          "After our theme customization, you can reduce the demand for frequent updates with optimized settings.",
+      },
+    ] as const,
   },
   whyChoose: {
-    title: "Why Choose Dynamic Dreamz",
-    subtitle:
+    eyebrow: "Why Dynamic Dreamz",
+    heading: "Why Choose Dynamic Dreamz",
+    description:
       "At Dynamic Dreamz, we specialize in WordPress theme customization, ensuring a high-quality, performance-driven website.",
     items: [
       {
         title: "Expert Team",
-        description: "Dynamic Dreamz has 100+ skilled WordPress developers with years of experience.",
-        icon: "/assets/shopify-theme-customization/why-choose/expert-team.svg",
-        iconAlt: "expert-team",
+        description:
+          "Dynamic Dreamz has 100+ skilled WordPress developers with years of experience.",
       },
       {
         title: "Proven Process",
-        description: "We follow a structured approach to ensure quality and timely delivery.",
-        icon: "/assets/shopify-theme-customization/why-choose/proven-process.svg",
-        iconAlt: "Proven Process Icon",
+        description:
+          "We follow a structured approach to ensure quality and timely delivery.",
       },
       {
         title: "Ongoing Support",
-        description: "We provide continuous updates and maintenance to keep your website running smoothly.",
-        icon: "/assets/shopify-theme-customization/why-choose/ongoing-support.svg",
-        iconAlt: "customer_support_icon_img",
+        description:
+          "We provide continuous updates and maintenance to keep your website running smoothly.",
       },
       {
         title: "Client-Focused Approach",
-        description: "We always keep your needs our priority to provide you with personalized support.",
-        icon: "/assets/shopify-theme-customization/why-choose/client-focused-approach.svg",
-        iconAlt: "Client-Focused Approach Icon",
+        description:
+          "We always keep your needs our priority to provide you with personalized support.",
       },
-    ],
+    ] as const,
   },
   portfolio: {
-    title: "Snippets of WordPress Theme Customization Portfolio",
-    subtitle:
+    eyebrow: "Portfolio",
+    heading: "Snippets of WordPress Theme Customization Portfolio",
+    description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
+    ctaLabel: "View our work",
+    ctaHref: "/our-work",
     items: [
       {
         name: "Quite Events",
         category: "WORDPRESS",
         href: "https://www.quietevents.com/",
         image: "/assets/our-work/projects/quite-events.webp",
-        imageAlt: "Quite Events",
+        imageAlt: "Quite Events WordPress Theme Customization",
       },
       {
         name: "Les Etoiles",
         category: "WORDPRESS",
         href: "https://louer-lesetoiles.ca/",
         image: "/assets/our-work/projects/les-etoiles.webp",
-        imageAlt: "Les Etoiles",
+        imageAlt: "Les Etoiles WordPress Theme Customization",
       },
       {
         name: "Valents",
         category: "WORDPRESS",
         href: "https://wearvalents.com/",
         image: "/assets/our-work/projects/valents.webp",
-        imageAlt: "Valents",
+        imageAlt: "Valents WordPress Theme Customization",
       },
       {
         name: "Get Sunsights",
         category: "WORDPRESS",
         href: "https://www.getsunsights.com/",
         image: "/assets/our-work/projects/get-sunsights.webp",
-        imageAlt: "Get Sunsights",
+        imageAlt: "Get Sunsights WordPress Theme Customization",
       },
       {
         name: "Lipari Design",
         category: "WORDPRESS",
         href: "https://liparidesign.ca/",
         image: "/assets/our-work/projects/lipari-design.webp",
-        imageAlt: "Lipari Design",
+        imageAlt: "Lipari Design WordPress Theme Customization",
       },
       {
         name: "Nexventur",
         category: "WORDPRESS",
         href: "https://www.nexventur.com/",
         image: "/assets/our-work/projects/nexventur.webp",
-        imageAlt: "Nexventur",
+        imageAlt: "Nexventur WordPress Theme Customization",
       },
-    ],
+      {
+        name: "Awaken Media",
+        category: "WORDPRESS",
+        href: "https://www.awaken.media/",
+        image: "/assets/our-work/projects/awaken-media.webp",
+        imageAlt: "Awaken Media WordPress Theme Customization",
+      },
+      {
+        name: "Budget Maids",
+        category: "WORDPRESS",
+        href: "https://www.budget-maids.com/",
+        image: "/assets/our-work/projects/budget-maids.webp",
+        imageAlt: "Budget Maids WordPress Theme Customization",
+      },
+    ] as const,
   },
   faqs: [
     {
@@ -350,5 +327,5 @@ export const bloghashThemeCustomizationContent = {
       answer:
         "Absolutely! Our customization ensures that your blog is fully responsive on all devices. We check all pages in every screen size and ensure they are properly working.",
     },
-  ],
+  ] as const,
 } as const;

@@ -6614,14 +6614,14 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## BlogHash Theme Customization (`/bloghash-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-10-01
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, bloggers, content creators, publishers, businesses, and digital agencies seeking expert BlogHash theme customization, minimal & clean design, custom layouts, Gutenberg editor compatibility, speed optimization, and responsive design.
 Decision stage: partner selection, BlogHash theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz BlogHash theme customization capabilities. Features 10 client brand trust logos, 8 key theme features, 6 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 6 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz BlogHash theme customization capabilities. Features 10 client brand trust logos, 8 key theme features, 6 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards, 6 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -6639,7 +6639,7 @@ Dedicated commercial landing page presenting Dynamic Dreamz BlogHash theme custo
 - 6 core benefits of BlogHash customization (Fully Customizable Store, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Mobile Optimization, Minimal Maintenance Cost).
 - 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
 - 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- 8 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids).
 - 6 detailed FAQs addressing cost, no-code customization, SEO friendliness, customization duration, social media integration, and mobile responsiveness.
 
 ### Structured gap analysis
@@ -6668,20 +6668,20 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/bloghash-theme-customization`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 157 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-10-01): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/bloghash-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 157 chars), JSON-LD graph verification, zero-gap flush hero bottom alignment, responsive layouts, local assets audit, lint, and production build.
 
 ## Go Theme Customization (`/go-theme-customization`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-20
+Last reviewed: 2026-10-01
 Owner: SEO, WordPress development, UI/UX design, leadership, and sales operations
 Primary audience: WordPress site owners, bloggers, business websites, WooCommerce merchants, and digital agencies seeking expert Go theme customization, block editor optimization, custom typography, color options, WooCommerce integration, speed optimization, and responsive design.
 Decision stage: partner selection, Go theme customization scope definition, custom feature evaluation, WordPress developer hiring, and quote request
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Go theme customization capabilities. Features 10 client brand trust logos, 8 key theme features, 8 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 6 WordPress portfolio project cards, 8 accordion FAQs, and quote request CTA buttons.
+Dedicated commercial landing page presenting Dynamic Dreamz Go theme customization capabilities. Features 10 client brand trust logos, 7 key theme features, 7 store benefits, 6 customization services, 4 reasons to choose Dynamic Dreamz, 8 WordPress portfolio project cards, 8 accordion FAQs, and quote request CTA buttons.
 
 ### Target prompts
 
@@ -6695,11 +6695,11 @@ Dedicated commercial landing page presenting Dynamic Dreamz Go theme customizati
 
 - Server-rendered H1 `Go Theme Customization Service` with direct answer paragraph.
 - 18+ years agency experience (founded 2006) with 150+ WordPress/Shopify experts and 5000+ completed projects.
-- 8 key Go theme features (Block Editor Support, Minimal and Clean Design, Custom Header and Footer, Typography Control, Color and Style Options, Fast Loading Time, WooCommerce Compatible, Responsive Layout).
-- 8 core benefits of Go customization (Fully Customizable Store, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments, Minimal Maintenance Cost).
+- 7 key Go theme features (Block Editor Support, Minimal and Clean Design, Custom Header and Footer, Typography Control, Color and Style Options, Fast Loading Time, WooCommerce Compatible).
+- 7 core benefits of Go customization (Fully Customizable Store, Unique Brand Identity, Improved User Experience, Multiple Third-party Plugins, Higher Conversion Rates, Mobile Optimization, Safe and Secure Payments).
 - 6 dedicated services (Theme Installation, Custom Design and Branding, Responsive Design, Advanced Features Integration, Performance Optimization, Ongoing Support and Maintenance).
 - 4 reasons to choose Dynamic Dreamz (Expert Team, Proven Process, Ongoing Support, Client-Focused Approach).
-- 6 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur).
+- 8 WordPress portfolio projects (Quite Events, Les Etoiles, Valents, Get Sunsights, Lipari Design, Nexventur, Awaken Media, Budget Maids).
 - 8 detailed FAQs addressing cost, online shop customization, speed preservation, custom homepage layouts, suitability for blogs/portfolios, header/footer redesign, popups/banners, and child theme update safety.
 
 ### Structured gap analysis
@@ -6728,8 +6728,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-20): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/go-theme-customization`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 49 chars, Description: 135 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
+- URL-policy review (2026-10-01): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/go-theme-customization`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 49 chars, Description: 135 chars), JSON-LD graph verification, zero-gap flush hero bottom alignment, responsive layouts, local assets audit, lint, and production build.
 
 ## NewsBlogger Theme Customization (`/newsblogger-theme-customization`)
 

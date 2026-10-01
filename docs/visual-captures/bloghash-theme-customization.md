@@ -2,8 +2,8 @@
 
 - **Route**: `/bloghash-theme-customization`
 - **Live URL Reference**: `https://www.dynamicdreamz.com/bloghash-theme-customization/`
-- **Capture Date**: 2026-08-20
-- **Status**: Verified
+- **Capture Date**: 2026-10-01
+- **Status**: Verified (Exact Live Site Visual Parity Remigrated)
 - **Viewports Inspected**:
   - Desktop: 1440x900
   - Tablet: 768x1024
@@ -15,15 +15,13 @@
 
 ### Live CSS Sources Inspected
 - `/wp-content/themes/dynamicdreamz/assets/css/services/main.css`
-  - `.theme-customization-service-sec` (hero layout, 50%/50% split, `.review-wrap { display: none; }`, bottom-aligned hero graphic)
-  - `.three_col_icon_sec` (features grid with 8 theme cards, 55px icons, centered bold text, description paragraph, rounded-15px card border `#efefef`)
-  - `.shopify-customization-services-sec` (benefits grid with gradient background, white cards, hover gradient border)
-  - `.what-we-provide-sec` (2-column services grid, 10px rounded cards with hover gradient border)
-  - `.why_dynamic_dreamz_sec.two-column-icon-text-bg` (2-column horizontal icon-text list with borders `rgba(0,0,0,0.05)`)
-  - `.our-work-sec` (3-column portfolio project showcase cards with hover "View Project" arrow and category badge)
-  - `.faq-sec` (accordion items with active/expanded states)
-- `/wp-content/themes/dynamicdreamz/assets/css/services/media.css`
-  - Breakpoints: desktop (>=1200px), tablet (768px-1199px / <=991px), mobile (<=767px / <=575px).
+  - `.theme-customize-hero`: Hero section layout (`bg-[#f7f4e9]`, zero bottom padding, hero graphic sits flush on the bottom edge against the `#FBEED5` brand section below).
+  - `.our-client-sec.indian_brand`: 10 Indian brand client logos (Supertails, Eleven Eleven, Bella Vita Organic, Bombay Shirt Company, Popclub, Sri Sri Tattva, Tropicfeel, Renee Cosmetics, Royce Chocolate, Tego).
+  - `.theme-customization-services.yellow`: 3-column feature cards with yellow/neutral background (`#fafaf7`), rounded-20px white cards, `#AD5151` SVGs. Used for Section 3 (Features, 8 boxes) and Section 5 (Benefits, 6 boxes).
+  - `.what-we-provide-sec.only-text`: 2-column service cards with `#AD5151` SVGs.
+  - `.how-to-choose-spa-sec`: 4-column numbered framework cards (`01`–`04`) with circular badge and borders `rgba(40,40,40,0.11)`.
+  - `.our-work-sec.pt-0`: 4-column portfolio showcase grid with 8 WordPress project cards and "View our work" CTA button.
+  - `.faq-sec`: Centered accordion FAQ layout with 6 expandable questions and answers.
 
 ---
 
@@ -31,60 +29,34 @@
 
 | Section # | Live Section Title / Purpose | Component / Implementation | Reused / Dedicated |
 |---|---|---|---|
-| 1 | Hero (`BlogHash Theme Customization Service`) | `ThemeHeroSection` | Reused |
-| 2 | Trusted by Leading Brands (10 client logos) | `IndustryBrandsSection` | Reused |
-| 3 | Features Of BlogHash Theme (8 cards) | `ThemeFeaturesSection` | Reused |
-| 4 | Benefits of BlogHash Theme Customization (6 cards) | `ShopifyReasonsSection` | Reused |
-| 5 | Our WordPress Theme Customization Services (6 cards) | `ShopifyServicesSection` | Reused |
-| 6 | Why Choose Dynamic Dreamz (4 items) | `ThemeWhyChooseSection` | Reused |
-| 7 | Snippets of WordPress Theme Customization Portfolio (6 projects) | `PortfolioShowcaseSection` & `PortfolioProjectCard` | Reused |
-| 8 | Frequently Asked Questions (6 accordion items) | `FaqSection` & `FaqAccordion` | Reused |
+| 1 | Hero (`BlogHash Theme Customization Service`) | `ThemeHeroSection` (flush bottom alignment) | Reused |
+| 2 | Trusted by Leading Brands (10 client logos) | `IndustryBrandsSection` (`indian_brand`) | Reused |
+| 3 | Features of BlogHash Theme (8 boxes) | `ThemeCustomizationServicesSection` (`variant="yellow"`) | Reused |
+| 4 | Our WordPress Theme Customization Services (6 boxes) | `AgencyServicesSection` (`what-we-provide-sec only-text`) | Reused |
+| 5 | Benefits of BlogHash Theme Customization (6 boxes) | `ThemeCustomizationServicesSection` (`variant="yellow"`) | Reused |
+| 6 | Why Choose Dynamic Dreamz (4 items) | `EvaluationFrameworkSection` (`how-to-choose-spa-sec`) | Reused |
+| 7 | Snippets of WordPress Theme Customization Portfolio (8 projects) | `PortfolioShowcaseSection` (`ourWorkRefresh`) | Reused |
+| 8 | Frequently Asked Questions (6 accordion items) | `SplitFaqSection` (`idPrefix="bloghash-faq"`) | Reused |
+
+*(Note: Live site has no client stories / happy client section on this route; exactly 8 sections total).*
 
 ---
 
 ## 3. Typography & Styling Specifications
 
-- **Heading Font**: Montserrat (`font-sans font-bold text-ink`).
+- **Heading Font**: Montserrat / PP Neue Montreal (`font-sans font-bold text-ink`).
 - **Hero Title**: `text-[50px] leading-[66px]` on desktop, `text-[40px] leading-[50px]` on tablet, `text-[30px] leading-[40px]` on mobile.
 - **Section Headings**: `text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink` (desktop), `text-[30px] leading-10` (tablet), `text-2xl leading-[33px]` (mobile).
 - **Body / Subtitles**: `text-base leading-[30.4px] font-normal text-muted` (hero), `text-base leading-[27px]` (cards).
-- **Hero Image**: Bottom-aligned 1202x948 WebP image (`bloghash-theme-customization-service-img.webp`).
-- **Brand Colors**: Light gradient `linear-gradient(97.18deg, #e8f9ef 28.5%, #e6fafd 91.82%)`, red primary CTA `#df4644` / `#cd3735`.
+- **Hero Image Zero Gap**: Sits completely flush on the bottom edge (`pb-0`, `items-end`, `self-end`) meeting the `#FBEED5` brand section below with zero pixel gap across all viewports.
+- **Primary CTA**: `#df4644` / `#cd3735` button link.
 
 ---
 
 ## 4. Asset Deduplication & Integrity
 
-- 10 brand partner logos reused directly from `public/assets/clients/`:
-  - `ranavat.svg`
-  - `prolash.svg`
-  - `tropicfeel.svg`
-  - `perfect-locks.svg`
-  - `bombay-shirt-company.svg`
-  - `kayfi.svg`
-  - `simsdirect.svg`
-  - `kvaser.svg`
-  - `nelter.svg`
-  - `circuit-city.svg`
-- Feature icons reused directly from canonical paths:
-  - `/assets/kadence-theme-customization/features/drag-and-drop-header-footer-builder.svg`
-  - `/assets/astra-theme-customization/features/seo-optimized.svg`
-  - `/assets/astra-theme-customization/features/fully-responsive.svg`
-  - `/assets/astra-theme-customization/features/lightning-fast-performance.svg`
-- Unique feature icons saved under `public/assets/bloghash-theme-customization/features/`:
-  - `minimal-and-clean-design.svg`
-  - `multiple-post-formats.svg`
-  - `social-media-interaction.svg`
-  - `gutenberg-compatible.svg`
-- 6 benefit icons and 6 service icons reused from `public/assets/shopify-theme-customization/`.
-- 4 why-choose icons reused from `public/assets/shopify-theme-customization/why-choose/`.
-- All 6 portfolio screenshots reused from canonical project paths:
-  - `/assets/our-work/projects/quite-events.webp`
-  - `/assets/our-work/projects/les-etoiles.webp`
-  - `/assets/our-work/projects/valents.webp`
-  - `/assets/our-work/projects/get-sunsights.webp`
-  - `/assets/our-work/projects/lipari-design.webp`
-  - `/assets/our-work/projects/nexventur.webp`
-- Unique theme hero asset cleanly optimized to WebP and saved under `public/assets/bloghash-theme-customization/hero/`:
-  - `hero/bloghash-theme-customization-service-img.webp` (1202x948, 104KB WebP)
+- Hero image: `public/assets/bloghash-theme-customization/hero/bloghash-theme-customization-service-img.webp` (1202x948 WebP).
+- 10 Indian brand logos reused directly from `public/assets/clients/` via `industryBrandLogos`.
+- Clean React SVG icons in `src/components/sections/bloghash-theme-customization/bloghash-icons.tsx`.
+- 8 portfolio project cards reused from `public/assets/our-work/projects/`.
 - Total duplicate hash groups across `public/assets/`: 0.

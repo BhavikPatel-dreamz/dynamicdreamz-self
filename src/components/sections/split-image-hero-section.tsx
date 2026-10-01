@@ -119,13 +119,15 @@ export function SplitImageHeroText({
           </ButtonLink>
         </div>
       ) : ctaLabel ? (
-        <ButtonLink
-          aria-label={ctaAriaLabel ?? ctaLabel}
-          href={ctaHref}
-          variant="primary"
-        >
-          {ctaLabel}
-        </ButtonLink>
+        <div className="btn-group flex items-center pt-2.5 max-[1199px]:justify-center max-[767px]:flex-col">
+          <ButtonLink
+            aria-label={ctaAriaLabel ?? ctaLabel}
+            href={ctaHref}
+            variant="primary"
+          >
+            {ctaLabel}
+          </ButtonLink>
+        </div>
       ) : null}
     </div>
   );
