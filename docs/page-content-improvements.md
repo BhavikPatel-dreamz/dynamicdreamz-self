@@ -392,6 +392,23 @@ Primary SEO intent: home and living ecommerce development, furniture Shopify age
 | Hero CTAs | "Discuss Your Project" to `/request-quote`, "See Relevant Work" to `#our_work` | Keep as-is | Both match live and resolve to valid local targets. | High | implemented |
 | Case studies | 3 featured case studies: Custom Neon, RefaceKit, Furnified | Keep as-is | Directly supports E-E-A-T and proof for configurators and B2B systems. | High | implemented |
 
+## Jewellery & Accessories (`/jewellery-accessories`)
+
+Status: visible recommendations deferred; live UI preserved during migration
+Last reviewed: 2026-10-01
+Primary SEO intent: jewellery and accessories ecommerce development, Shopify agency for jewellery, ring builders and configurators, live diamond and gemstone inventory feeds, luxury visual storytelling, and headless Medusa/Next.js platforms.
+
+| Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
+| --- | --- | --- | --- | --- | --- |
+| Route | Live serves the page at `/industries/jewellery-accessories/` | Keep canonical route at slashless `/jewellery-accessories` | Matches repo URL policy; permanent redirect handles legacy `/industries/jewellery-accessories`. | High | implemented |
+| Meta title | "Shopify Agency for Jewellery Brands \| Dynamic Dreamz" | Keep as-is (54 characters) | Exact live title fits within the 60-character budget and targets core buyer intent. | High | implemented in metadata |
+| Meta description | "Shopify and custom e-commerce development for jewellery and accessories brands. Ring builders, live inventory, personalization, search and headless solutions." | Keep as-is (154 characters) | Exact live description fits within the 160-character limit and covers key capability areas. | High | implemented in metadata |
+| Portfolio image alt text | Live generic form: "Atolea Jewelry Image", "Pagerie Image", "Donj Jewellery Image", "Twojeys Image", "Daniel Walters Eyewear Image", "Projectlobster Image", "Raen Image", "Santosh Jewellers Image" | Subject-specific descriptions such as "Atolea Jewelry Shopify luxury store preview" | The live "<Brand> Image" form is generic and can be improved with descriptive alt text once approved. | Medium | deferred |
+| Stat labels | "20+ Years of Experience", "150+ Experts", "5k+ projects delivered", "2.5k+ Verified 5 star Reviews" | Standardize to title case and hyphenate "5-star", e.g. "5k+ Projects Delivered" and "2.5k+ Verified 5-Star Reviews" | Minor casing inconsistency across the stats strip. Approved figures remain preserved. | Low | suggested — not implemented; requires exact visible-copy approval |
+| Hero CTAs | "Discuss Your Project" to `/request-quote`, "See Relevant Work" to `#our_work` | Keep as-is | Both match live and resolve to valid local targets. | High | implemented |
+| Case studies | 3 featured case studies: Daniel Walters Eyewear, Santosh Jewellers, DONJ Jewellery | Keep as-is | Directly supports E-E-A-T and proof for configurators, luxury brand storytelling, and headless architecture. | High | implemented |
+| Santosh Jewellers link | Live link in portfolio card has trailing space `%20` ("https://www.santoshjewellers.in/%20") | Normalize to "https://www.santoshjewellers.in/" | Fixes unnecessary URL encoded trailing space. | Low | implemented |
+
 ## Our Work (`/our-work`)
 
 Status: visible recommendations deferred; live UI preserved during migration

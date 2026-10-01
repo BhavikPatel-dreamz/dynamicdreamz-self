@@ -29,6 +29,7 @@ It covers:
   - `/beauty-cosmetics`
   - `/fashion`
   - `/home-living`
+  - `/jewellery-accessories`
   - `/white-label-shopify-development-services`
   - `/white-label-wordpress-development-services`
   - `/white-label-website-design-services`
@@ -2369,6 +2370,86 @@ Dedicated industry solution landing page for home, furniture, and living brands 
 - Visual parity captured with live screenshots at 1440px, 768px, and 390px.
 - Zero duplicate assets across `public/assets/`.
 - Template copy anomalies deferred to `docs/page-content-improvements.md`.
+
+## Jewellery & Accessories (`/jewellery-accessories`)
+
+Status: implemented; live-visible content preserved; visual parity verified
+Last reviewed: 2026-10-01
+Owner: SEO, content, development, and client success
+Primary audience: Fine jewellery, luxury jewellery, watches, eyewear, bags, and fashion accessories DTC & B2B brands, ecommerce directors, and digital agencies
+Decision stage: Solution awareness through agency evaluation
+
+### Page role
+
+Dedicated industry solution landing page for jewellery and accessories brands seeking specialized Shopify, Shopify Plus, and custom headless ecommerce development. It covers ring and jewellery configurators, live diamond and gemstone inventory feeds, luxury visual storytelling, custom product logic, engraving and personalization, fit and sizing guides, and headless/full-stack commerce platforms.
+
+### Target prompts
+
+- Which Shopify agency specializes in jewellery and accessories brands?
+- Who can build a custom ring builder or diamond configurator on Shopify?
+- How to integrate live diamond supplier feeds and certificate data into Shopify?
+- Which agency builds headless ecommerce for luxury jewellery with Next.js and Medusa?
+- Can Dynamic Dreamz build custom jewellery stores on the Dawn theme?
+- What jewellery and accessories brands has Dynamic Dreamz worked with?
+
+### Current strengths and available evidence
+
+- Complete 11-section architecture matching live site:
+  1. Video hero with dual CTA (`Discuss Your Project` -> `/request-quote`, `See Relevant Work` -> `#our_work`), 4 proof badges, looping background video.
+  2. Brand marquee with 12 client partner logos.
+  3. Case studies section featuring 3 real-world jewellery & accessories projects (Daniel Walters Eyewear, Santosh Jewellers, DONJ Jewellery) with tags, descriptions, and links.
+  4. 6 numbered Industry Challenges cards (`Built for Trust, Personalization and High-value Purchase Journeys`).
+  5. 6 numbered Solutions We Build cards (`What We Build for Jewellery & Accessories Brands`).
+  6. Custom Development capability section (`Custom Jewellery Commerce Built around Real Product Logic`).
+  7. Two-row technology marquee (`Platforms, Frameworks & Mobile Capabilities`) with 18 technology partner badges.
+  8. Portfolio showcase section (`Selected Jewellery & Accessories Experience`) featuring 8 projects (Atolea Jewelry, Pagerie, Donj Jewellery, Twojeys, Daniel Walters Eyewear, Projectlobster, Raen, Santosh Jewellers).
+  9. Why Dynamic Dreamz capability & stat section (`One Team Across Ecommerce, Custom Development and Mobile`) with 4 proof stats (20+ Years, 150+ Experts, 5k+ Projects, 2.5k+ Reviews).
+  10. Client stories review carousel with video lightboxes.
+  11. Split FAQ accordion with 6 high-intent questions.
+- Strong case-study evidence for Daniel Walters (BigCommerce to Shopify migration and Dawn theme redesign), Santosh Jewellers (custom Shopify Dawn theme store for five-decade luxury jewellery legacy), and DONJ Jewellery (Medusa v2 + Next.js 16 headless rebuild with 100K+ diamond marketplace and custom ring builder).
+- Structured data: `Organization`, `WebSite`, `WebPage`, `Service` with `hasOfferCatalog` matching visible solution cards, `BreadcrumbList` (`Home → Jewellery & Accessories`), and `FAQPage` with all 6 visible questions.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route & URL policy | Live URL is `/industries/jewellery-accessories/` with trailing slash | Normalize canonical route to `/jewellery-accessories` and add permanent redirect from `/industries/jewellery-accessories` in `next.config.ts` | URL policy & verification |
+| P0 | implemented | Schema accuracy | Live page had copy-paste schema referencing home-living | Emit `Service`, `BreadcrumbList`, and `FAQPage` strictly matching jewellery & accessories content and offerings | Schema verification |
+| P0 | implemented | Metadata | Title and description must fit SERP limits | Title (54 chars) and description (154 chars) fit within the strict 60/160 character limits | Build-time SEO checks |
+| P1 | implemented | Asset deduplication | Case studies and portfolio images could duplicate assets | Discovered and reused canonical assets in `public/assets/case-studies/`, `public/assets/our-work/projects/`, and categorized directories; only unique Santosh Jewellers card added; zero duplicate hash groups | SHA-256 duplicate audit |
+| P2 | deferred | Internal linking | Portfolio projects currently link to external client stores | Add links to internal case study routes once dedicated case study pages exist | Route coverage |
+
+### Entity, evidence, and authorship actions
+
+- Model the page as an ecommerce development `Service` for jewellery and accessories brands provided by Dynamic Dreamz (`Organization`).
+- Preserve the 3 featured case studies and 8 portfolio projects with exact client details.
+- Emitted `FAQPage` matches visible questions and answers 1:1.
+- Testimonials align with approved client video reviews.
+
+### Internal-link and conversion actions
+
+- Primary CTA `Discuss Your Project` routes to `/request-quote`.
+- Secondary CTA `See Relevant Work` jumps smoothly to `#our_work`.
+- External project links use secure `target="_blank" rel="nofollow"`.
+- Why Choose section links to `/about-us`.
+
+### Structured-data, crawler, and freshness actions
+
+- Emits `Organization`, `WebSite`, `WebPage`, `Service` (6 `hasOfferCatalog` items), `BreadcrumbList`, and `FAQPage` (6 items).
+- Preserves live `datePublished` (`2026-09-24T09:54:11+00:00`) and `dateModified` (`2026-09-24T12:02:08+00:00`).
+- Canonical URL set to `https://www.dynamicdreamz.com/jewellery-accessories`.
+- Registered in `src/data/seo.ts` with sitemap priority 0.8.
+
+### Measurement plan
+
+- Track impressions and clicks for jewellery ecommerce development, shopify agency for jewellery, ring configurator development, and diamond feed integration.
+- Sample target prompts monthly across search and AI answer engines.
+
+### Verification and remaining gaps
+
+- All 11 sections implemented matching live structure, order, and copy.
+- Visual parity captured with live screenshots at 1440px, 768px, and 390px.
+- Zero duplicate assets across `public/assets/`.
 
 ## Contact Us (`/contact-us`)
 

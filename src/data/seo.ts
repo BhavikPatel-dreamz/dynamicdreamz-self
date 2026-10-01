@@ -439,6 +439,35 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  jewelleryAccessories: {
+    path: "/jewellery-accessories",
+    title: "Shopify Agency for Jewellery Brands | Dynamic Dreamz",
+    description:
+      "Shopify and custom e-commerce development for jewellery and accessories brands. Ring builders, live inventory, personalization, search and headless solutions.",
+    socialDescription:
+      "Shopify and custom e-commerce development for jewellery and accessories brands. Ring builders, live inventory, personalization, search and headless solutions.",
+    keywords: [
+      "jewellery ecommerce development",
+      "shopify agency for jewellery",
+      "ring configurator development",
+      "custom jewellery store shopify",
+      "diamond feed integration",
+      "luxury jewellery ecommerce",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-09-24T09:54:11+00:00",
+    modifiedTime: "2026-09-24T12:02:08+00:00",
+    image: {
+      path: "/assets/og/jewellery-accessories.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Agency for Jewellery Brands | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  },
   fashion: {
     path: "/fashion",
     title: "Web Design Agency for Fashion Industry - Dynamic Dreamz",

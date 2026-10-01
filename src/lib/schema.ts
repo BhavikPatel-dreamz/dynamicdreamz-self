@@ -35,6 +35,10 @@ import {
   homeLivingFaqs,
   homeLivingSolutions,
 } from "@/content/home-living";
+import {
+  jewelleryAccessoriesFaqs,
+  jewelleryAccessoriesSolutions,
+} from "@/content/jewellery-accessories";
 import { hireWordPressFaqs } from "@/content/hire-wordpress-developers";
 import { hireShopifyFaqs, hireShopifyServices } from "@/content/hire-shopify-developers";
 import {
@@ -306,6 +310,11 @@ const homeLivingPageId = `${homeLivingPageUrl}#webpage`;
 const homeLivingBreadcrumbId = `${homeLivingPageUrl}#breadcrumb`;
 const homeLivingServiceId = `${homeLivingPageUrl}#service`;
 const homeLivingFaqId = `${homeLivingPageUrl}#faq`;
+const jewelleryAccessoriesPageUrl = absoluteUrl(pageSeo.jewelleryAccessories.path);
+const jewelleryAccessoriesPageId = `${jewelleryAccessoriesPageUrl}#webpage`;
+const jewelleryAccessoriesBreadcrumbId = `${jewelleryAccessoriesPageUrl}#breadcrumb`;
+const jewelleryAccessoriesServiceId = `${jewelleryAccessoriesPageUrl}#service`;
+const jewelleryAccessoriesFaqId = `${jewelleryAccessoriesPageUrl}#faq`;
 const petIndustryPageUrl = absoluteUrl(pageSeo.petIndustry.path);
 const petIndustryPageId = `${petIndustryPageUrl}#webpage`;
 const petIndustryBreadcrumbId = `${petIndustryPageUrl}#breadcrumb`;
@@ -2284,6 +2293,27 @@ export function createHomeLivingPageSchema() {
     audienceType: "Furniture, decor and lifestyle brands",
     faqs: homeLivingFaqs,
     offers: homeLivingSolutions.boxes.map((item) => ({
+      title: item.title,
+      description: item.description ?? "",
+    })),
+  });
+}
+
+export function createJewelleryAccessoriesPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.jewelleryAccessories,
+    pageUrl: jewelleryAccessoriesPageUrl,
+    pageId: jewelleryAccessoriesPageId,
+    serviceId: jewelleryAccessoriesServiceId,
+    faqId: jewelleryAccessoriesFaqId,
+    breadcrumbId: jewelleryAccessoriesBreadcrumbId,
+    serviceName: "Ecommerce & Custom Technology for Jewellery & Accessories Brands",
+    serviceType:
+      "Jewellery and Accessories Ecommerce Development, Ring Configurators, Live Diamond Feeds, Luxury Storefronts, Shopify and Shopify Plus Development, Headless Commerce, Custom Full-Stack Platforms",
+    breadcrumbName: "Jewellery & Accessories",
+    audienceType: "Jewellery, accessories, watch and eyewear brands",
+    faqs: jewelleryAccessoriesFaqs,
+    offers: jewelleryAccessoriesSolutions.boxes.map((item) => ({
       title: item.title,
       description: item.description ?? "",
     })),

@@ -194,6 +194,10 @@ export const siteMapLinks: readonly SiteMapLinkItem[] = [
         "href": "/home-living"
       },
       {
+        "label": "Jewellery & Accessories",
+        "href": "/jewellery-accessories"
+      },
+      {
         "label": "Pet Industry",
         "href": "/pet-industry"
       }

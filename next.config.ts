@@ -165,6 +165,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/industries/jewellery-accessories",
+        destination: "/jewellery-accessories",
+        permanent: true,
+      },
+      {
         source: "/magento-web-development",
         destination: "/magento-development",
         permanent: true,
