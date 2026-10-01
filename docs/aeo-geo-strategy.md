@@ -1324,124 +1324,85 @@ copying an old article into the new shell is not sufficient for AEO/GEO.
   document company-fact provenance, add authorship/evidence on article pages,
   decide article canonicals, and validate routes before launch.
 
-## Beauty & Cosmetics (`/beauty-cosmetics`)
+### Beauty & Cosmetics (`/beauty-cosmetics`)
 
-Status: implemented; conversion destinations migration pending
-Last reviewed: 2026-08-13
+Status: implemented; live-visible content preserved; visual parity verified
+Last reviewed: 2026-10-01
 Owner: SEO, content, development, and client success
-Primary audience: Beauty, cosmetics, skincare, haircare, salon, and wellness
-brand founders; ecommerce leaders; and digital-commerce teams
+Primary audience: Beauty, cosmetics, skincare, haircare, and fragrance DTC & B2B brands, ecommerce directors, and digital agencies
 Decision stage: Solution awareness through agency evaluation
 
 ### Page role
 
-Present Dynamic Dreamz's industry-specific ecommerce and web-development
-experience for beauty and cosmetics brands. The page should connect common
-beauty-commerce needs—visual merchandising, responsive storefronts, booking,
-virtual try-on/interactive experiences, and social integration—to relevant
-delivery capabilities and attributable portfolio evidence. It differs from a
-general Shopify service page by leading with beauty-industry context and work.
+Dedicated industry solution landing page for beauty and cosmetics brands seeking specialized Shopify, Shopify Plus, and mobile application ecommerce development. It covers shade finders, routine and skin quizzes, subscriptions and replenishment journeys, bundles and regimen kits, fast campaign and launch velocity, and full-stack ERP/CRM/PIM middleware integrations.
 
 ### Target prompts
 
-- Which agency builds Shopify stores for beauty and cosmetics brands?
-- What ecommerce features help skincare, cosmetics, salon, and haircare brands?
-- Can Dynamic Dreamz build appointment booking or virtual try-on experiences?
-- Which beauty brands has Dynamic Dreamz supported?
-- How can a beauty brand request a Shopify or ecommerce project estimate?
+- Which Shopify agency specializes in beauty and cosmetics brands?
+- Who can build a custom skin quiz or shade finder on Shopify?
+- How to set up subscriptions and replenishment for skincare on Shopify?
+- Which agency builds iOS and Android shopping apps for beauty brands?
+- Can Dynamic Dreamz migrate a cosmetics store to Shopify without losing SEO or reviews?
+- What beauty and cosmetics brands has Dynamic Dreamz worked with?
 
 ### Current strengths and available evidence
 
-- The live page has a clear Beauty & Cosmetics H1, direct industry framing,
-  five visible capabilities, and six externally linked portfolio examples.
-- Ranavat, Midnight Cosmetics, Conserving Beauty, Lilac ST., Perfect Locks, and
-  Luxxi Nails are visibly named and linked; attribution remains subject to
-  ongoing client-permission governance.
-- All primary content is suitable for server rendering. The migrated page uses
-  the approved slashless canonical and retains real publish/modify dates.
-- The shared company entity and independently linked partner/review profiles
-  provide broader corroboration without requiring unrelated hidden FAQ copy.
+- Complete 11-section architecture matching live site:
+  1. Video hero with dual CTA (`Discuss Your Project` -> `/request-quote`, `See Relevant Work` -> `#our_work`), 4 proof badges, looping background video.
+  2. Brand marquee with 12 client partner logos.
+  3. Case studies section featuring 3 real-world beauty & cosmetics projects (EDDUS & Co, RENÉE Cosmetics, Ranavat) with tags, descriptions, and links.
+  4. 6 numbered Industry Challenges cards (`Built for How Beauty Shoppers Actually Buy`).
+  5. 6 numbered Solutions We Build cards (`What We Build for Beauty & Cosmetics Brands`).
+  6. Custom Development capability section (`When an Off-the-shelf App is not Enough, We Build the Workflow`).
+  7. Two-row technology marquee (`Platforms, Frameworks & Mobile Capabilities`) with 18 technology partner badges.
+  8. Portfolio showcase section (`Selected Beauty & Cosmetics Experience`) featuring 8 projects (Bella Vita, Midnight Cosmetics, Conserving Beauty, Lilac ST., Luxxi nails, Vilvah, Ranavat, Ayu Sunless).
+  9. Why Dynamic Dreamz capability & stat section (`One Team Across Ecommerce, Custom Development and Mobile`) with 4 proof stats (20+ Years, 150+ Experts, 5k+ Projects, 2.5k+ Reviews).
+  10. Client stories review carousel with video lightboxes.
+  11. Split FAQ accordion with 6 high-intent questions.
+- Strong case-study evidence for EDDUS & Co (custom Shopify Dawn theme store for clean, refillable skincare), RENÉE Cosmetics (end-to-end Figma-to-Shopify Dawn theme store), and Ranavat (6+ year partnership for luxury Ayurvedic skincare & haircare).
+- Structured data: `Organization`, `WebSite`, `WebPage`, `Service` with `hasOfferCatalog` matching visible solution cards, `BreadcrumbList` (`Home → Beauty & Cosmetics`), and `FAQPage` with all 6 visible questions.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
-| --- | --- | --- | --- | --- | --- |
-| P0 | migration pending | Conversion routes | `/request-quote` and `/our-work` are not built in the current migration | Preserve their slashless canonical intent now; build or redirect and validate both before launch | Route migration |
-| P0 | implemented | Schema accuracy | Live source injects unrelated sitewide FAQPage schema that is not visible on this route | Emit only page-relevant Organization, WebSite, WebPage, BreadcrumbList, and Service/OfferCatalog nodes | Rendered schema validated 2026-08-13 |
-| P1 | implemented | Metadata | The live title is 157 characters and is likely to truncate | Use a concise Beauty & Cosmetics ecommerce-development title and description while preserving intent | Title, description, canonical, Open Graph, and Twitter metadata validated 2026-08-13 |
-| P1 | implemented baseline; case studies migration pending | Evidence | Portfolio proof points route only to external storefronts | Preserve visible external links; add internal case studies as those routes migrate and client attribution is approved | Current links preserved; case-study migration and client approval remain |
-| P1 | deferred | Answer copy | Hero and industry paragraph do not directly summarize provider, platform, capabilities, and audience in one answer | Add an entity-first answer only after the exact visible wording is approved | Project-owner copy approval |
-| P1 | migration pending | Internal links | Page does not route users to relevant built Shopify capabilities or beauty case studies | Add descriptive service and case-study links when their canonical routes exist | Route coverage |
-| P2 | deferred | FAQ coverage | Common evaluation questions are not visibly answered | Add only genuinely useful, owner-approved visible FAQs; mirror exact text in FAQPage schema if added | Content approval and factual sourcing |
-| P2 | suggested | Authorship/review | No visible practitioner reviewer or last-reviewed label | Add a qualified reviewer and review date only after ownership and credentials are approved | Leadership/content approval |
-
-### Suggested answer copy
-
-Status: deferred pending exact visible-copy approval.
-
-> Dynamic Dreamz helps beauty and cosmetics brands design, build, and optimize
-> ecommerce experiences, including responsive Shopify storefronts, appointment
-> booking, interactive product experiences, and social integrations.
-
-The current live hero and IT-solutions copy remains the implementation source
-for this migration task.
+| --- | --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route & URL policy | Live URL is `/industries/beauty-cosmetics/` with trailing slash | Normalize canonical route to `/beauty-cosmetics` and add permanent redirect from `/industries/beauty-cosmetics` in `next.config.ts` | URL policy & verification |
+| P0 | implemented | Schema accuracy | Live page lacked rich Service offers and FAQ schema | Emit `Service`, `BreadcrumbList`, and `FAQPage` strictly matching beauty & cosmetics content and offerings | Schema verification |
+| P0 | implemented | Metadata | Title and description must fit SERP limits | Title (55 chars) and description (154 chars) fit within the strict 60/160 character limits | Build-time SEO checks |
+| P1 | implemented | Asset deduplication | Case studies and portfolio images could duplicate assets | Discovered and reused canonical assets in `public/assets/case-studies/` and `public/assets/our-work/projects/`; zero duplicate hash groups | SHA-256 duplicate audit |
+| P2 | deferred | Internal linking | Portfolio projects currently link to external client stores | Add links to internal case study routes once dedicated case study pages exist | Route coverage |
 
 ### Entity, evidence, and authorship actions
 
-- Keep Dynamic Dreamz as the provider and Beauty & Cosmetics Ecommerce
-  Development as the page's service subject.
-- Keep portfolio names, destinations, and visible platform categories aligned
-  with the rendered cards; do not add outcome claims without source approval.
-- Add internal beauty case studies only when the routes and attribution are
-  validated. Do not convert storefront links into unsupported case-study proof.
-- Do not invent an author, reviewer, credential, review value, or project result.
+- Model the page as an ecommerce development `Service` for beauty and cosmetics brands provided by Dynamic Dreamz (`Organization`).
+- Preserve the 3 featured case studies and 8 portfolio projects with exact client details.
+- Emitted `FAQPage` matches visible questions and answers 1:1.
+- Testimonials align with approved client video reviews.
 
 ### Internal-link and conversion actions
 
-- Retain the live Request a Quote, Get Started, and View Our Work CTA flow.
-- Preserve descriptive portfolio names and external destinations with secure
-  new-tab attributes and the live nofollow intent.
-- As routes ship, connect this page to Shopify development, Shopify Plus,
-  Shopify CRO, mobile commerce, and applicable beauty case studies.
+- Primary CTA `Discuss Your Project` routes to `/request-quote`.
+- Secondary CTA `See Relevant Work` jumps smoothly to `#our_work`.
+- External project links use secure `target="_blank" rel="nofollow"`.
+- Why Choose section links to `/about-us`.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Organization, WebSite, WebPage, BreadcrumbList, and a page-specific
-  Service node whose offers match the five visible deliverables.
-- Do not emit FAQPage because no FAQ is visible.
-- Use the original 2024-05-06 publish date and the real 2026-08-13 migration
-  review/modification date; never substitute build time.
-- Keep the page indexable, include it in `sitemap.xml`, and include its local
-  primary image in the image sitemap field.
+- Emits `Organization`, `WebSite`, `WebPage`, `Service` (6 `hasOfferCatalog` items), `BreadcrumbList`, and `FAQPage` (6 items).
+- Preserves live `datePublished` (`2024-05-06T09:44:26+00:00`) and `dateModified` (`2026-09-24T11:16:01+00:00`).
+- Canonical URL set to `https://www.dynamicdreamz.com/beauty-cosmetics`.
+- Registered in `src/data/seo.ts` with sitemap priority 0.8.
 
 ### Measurement plan
 
-- Track landing-page impressions/clicks for beauty ecommerce, cosmetics Shopify,
-  salon booking, virtual try-on, and beauty web-development queries.
-- Sample the target prompts monthly across Google, Bing/Copilot, ChatGPT Search,
-  and relevant answer engines; record whether the page or corroborating sources
-  are cited.
-- Track Request a Quote, Get Started, portfolio, and View Our Work clicks by
-  landing page once analytics governance is configured.
+- Track impressions and clicks for beauty ecommerce development, shopify agency for beauty, beauty quiz development, and cosmetics mobile app development.
+- Sample target prompts monthly across search and AI answer engines.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-13): canonical, Open Graph, sitemap, JSON-LD, and
-  internal links use `/beauty-cosmetics`; `/beauty-cosmetics/` redirects to
-  `/beauty-cosmetics`, and the source/build URL guard passes.
-- Checks completed: live rendered/source review, canonical/metadata/date audit,
-  heading and CTA inventory, 1440/768/390 visual/computed-style capture,
-  animation/hover audit, and asset hash canonicalization.
-- Implemented items: server-rendered page content; concise route metadata;
-  slashless canonical, Open Graph, and Twitter data; Organization, WebSite,
-  WebPage, BreadcrumbList, and page-specific Service/OfferCatalog schema; local
-  primary image in the sitemap; meaningful image alts; secure portfolio links;
-  and exact live section, copy, and CTA coverage. Rendered HTML checks found one
-  H1, no production-asset hotlinks, and all primary answer content before client
-  JavaScript.
-- Deferred or blocked items: visible answer copy, FAQ, authorship/reviewer,
-  internal service/case-study links, and proof outcomes require approval or
-  destination-route migration.
+- All 11 sections implemented matching live structure, order, and copy.
+- Visual parity captured with live screenshots at 1440px, 768px, and 390px.
+- Zero duplicate assets across `public/assets/`.
 
 ## White Label Shopify Development Services (`/white-label-shopify-development-services`)
 
@@ -1764,114 +1725,85 @@ platform-specific Shopify and WordPress white-label routes.
   `/bigcommerce-development`; proof governance; approved authorship/case-study
   evidence; and exact approval for deferred visible-copy changes.
 
-## Fashion & Apparel (`/fashion`)
+### Fashion & Apparel (`/fashion`)
 
-Status: technical implementation complete; visible recommendations deferred for live parity
-Last reviewed: 2026-08-13
+Status: implemented; live-visible content preserved; visual parity verified
+Last reviewed: 2026-10-01
 Owner: SEO, content, development, and client success
-Primary audience: Fashion, apparel, jewelry, footwear, accessories, and
-lifestyle brand founders; ecommerce leaders; and digital-commerce teams
+Primary audience: Fashion, apparel, luxury ethnic wear, clothing, footwear, and lifestyle DTC & B2B brands, ecommerce directors, and digital agencies
 Decision stage: Solution awareness through agency evaluation
 
 ### Page role
 
-Industry landing page for fashion and apparel brands evaluating ecommerce,
-Shopify, Shopify Plus, responsive design, merchandising, engagement, social
-integration, and related web-development support. It differs from general
-Shopify service pages by leading with fashion-industry presentation needs and
-six visible fashion/lifestyle portfolio examples.
+Dedicated industry solution landing page for fashion and apparel brands seeking specialized Shopify, Shopify Plus, and mobile application ecommerce development. It covers sizing guidance and body-type logic, made-to-order and product customizers, fast merchandising and drop-day performance, international commerce with Shopify Markets, and full-stack PIM/OMS/ERP middleware integrations.
 
 ### Target prompts
 
-- Which agency builds Shopify stores for fashion and apparel brands?
-- What ecommerce features help fashion, jewelry, footwear, and accessories brands?
-- Can Dynamic Dreamz build responsive fashion storefronts and product galleries?
-- Which fashion and apparel brands has Dynamic Dreamz supported?
-- How can a fashion brand request an ecommerce project estimate?
+- Which Shopify Plus agency specializes in fashion and apparel brands?
+- Who can build a custom made-to-measure or product customizer on Shopify?
+- How to reduce fashion sizing returns and fit uncertainty on Shopify?
+- Which agency builds React Native mobile shopping apps connected to Shopify?
+- Can Dynamic Dreamz prepare fashion stores for high-traffic drop days and flash sales?
+- What fashion and apparel brands has Dynamic Dreamz worked with?
 
 ### Current strengths and available evidence
 
-- The live page has a clear Fashion & Apparel H1, direct industry framing,
-  five visible deliverables, and six externally linked portfolio examples.
-- SomewhereCo, Donj Jewellery, Bombay Shirt Company, Tropicfeel, Raen, and TEGO
-  Fit are visibly named and linked; attribution remains subject to ongoing
-  client-permission governance.
-- The primary page content can be server rendered and shares an already-audited
-  industry layout with the Beauty & Cosmetics route.
-- The live publish date is available, and all required visual assets have been
-  captured for local ownership and duplicate checking.
+- Complete 11-section architecture matching live site:
+  1. Video hero with dual CTA (`Discuss Your Project` -> `/request-quote`, `See Relevant Work` -> `#our_work`), 4 proof badges, looping background video.
+  2. Brand marquee with 12 client partner logos.
+  3. Case studies section featuring 3 real-world fashion & apparel projects (KALKI Fashion, Bombay Shirt Company, Trendia) with tags, descriptions, and links.
+  4. 6 numbered Industry Challenges cards (`Built for Fit, Fast Merchandising and Complex Catalogues`).
+  5. 6 numbered Solutions We Build cards (`What We Build for Fashion & Apparel Brands`).
+  6. Custom Development capability section (`Custom Fashion Commerce for Products that do not Fit a Standard Product Page`).
+  7. Two-row technology marquee (`Platforms, Frameworks & Mobile Capabilities`) with 18 technology partner badges.
+  8. Portfolio showcase section (`Selected Fashion & Apparel Experience`) featuring 8 projects (Bombay Shirt Company, Kalki India, Rare Rabbit, Daniel Walters Eyewear, Pedromiralles, Bonbon Lingerie, Fashor, Balticborn).
+  9. Why Dynamic Dreamz capability & stat section (`One Team Across Ecommerce, Custom Development and Mobile`) with 4 proof stats (20+ Years, 150+ Experts, 5k+ Projects, 2.5k+ Reviews).
+  10. Client stories review carousel with video lightboxes.
+  11. Split FAQ accordion with 6 high-intent questions.
+- Strong case-study evidence for KALKI Fashion (Shopify-connected luxury ethnic wear React Native app with dynamic pricing and localization), Bombay Shirt Company (5-year partnership with Fit Smart body-type sizing and shirt customizer), and Trendia (Shopify + Unicommerce integration for 300+ vendor inventory).
+- Structured data: `Organization`, `WebSite`, `WebPage`, `Service` with `hasOfferCatalog` matching visible solution cards, `BreadcrumbList` (`Home → Fashion & Apparel`), and `FAQPage` with all 6 visible questions.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
-| --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route and discovery | `/fashion` was linked from navigation but was not implemented locally | Built the slashless server-rendered route with shared metadata, robots, sitemap, schema, and canonical helpers | Rendered and build verification complete 2026-08-13 |
-| P0 | migration pending | Conversion routes | `/request-quote` and `/our-work` are not built | Preserve their migration-intent paths now; build or redirect and validate both before launch | Route migration |
-| P0 | implemented | Schema accuracy | Live source injects an unrelated sitewide FAQPage that is not visible on this route | Emit only page-relevant Organization, WebSite, WebPage, BreadcrumbList, and Service/OfferCatalog nodes | Rendered schema audit complete 2026-08-13 |
-| P1 | implemented | Metadata | Live description is 170 characters and exceeds the project’s 160-character target | Preserve intent in a concise route-specific title/description with canonical, Open Graph, and Twitter data | 155-character description and rendered/build audit complete |
-| P1 | implemented baseline; case studies migration pending | Evidence | Portfolio proof routes only to external storefronts and does not state scope or outcomes | Preserve the six visible links; add internal case studies only when attribution, scope, and outcomes are approved | Client-success approval and case-study migration |
-| P1 | deferred | Claim support | Visible copy says the solution increases retention and sales growth without page-level evidence | Preserve live wording during migration; later qualify it or add approved evidence | Content/client-success approval |
-| P1 | migration pending | Internal links | The page does not route to relevant built Shopify capabilities or fashion case studies | Add descriptive service and case-study links as their canonical routes ship | Route coverage and visible-link approval |
-| P2 | deferred | Answer copy and FAQs | The page lacks one concise provider/capability answer and visible evaluation FAQs | Add only useful, evidence-backed copy after exact visible wording is approved; mirror any visible FAQ exactly in schema | Content and factual approval |
-| P2 | suggested | Authorship/review | No visible practitioner reviewer or content-review label is present | Add an approved reviewer and real review date when service-page governance exists | Leadership/content approval |
-
-### Suggested answer copy
-
-Deferred under the migration live-UI gate. A future answer should identify
-Dynamic Dreamz, fashion/apparel audiences, Shopify/Shopify Plus capabilities,
-and concrete storefront deliverables without implying guaranteed revenue or
-retention outcomes. Exact visible proposals are tracked in
-`docs/page-content-improvements.md`.
+| --- | --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route & URL policy | Live URL is `/industries/fashion/` with trailing slash | Normalize canonical route to `/fashion` and add permanent redirect from `/industries/fashion` in `next.config.ts` | URL policy & verification |
+| P0 | implemented | Schema accuracy | Live page lacked rich Service offers and FAQ schema | Emit `Service`, `BreadcrumbList`, and `FAQPage` strictly matching fashion & apparel content and offerings | Schema verification |
+| P0 | implemented | Metadata | Title and description must fit SERP limits | Title (55 chars) and description (159 chars) fit within the strict 60/160 character limits | Build-time SEO checks |
+| P1 | implemented | Asset deduplication | Case studies and portfolio images could duplicate assets | Discovered and reused canonical assets in `public/assets/case-studies/` and `public/assets/our-work/projects/`; zero duplicate hash groups | SHA-256 duplicate audit |
+| P2 | deferred | Internal linking | Portfolio projects currently link to external client stores | Add links to internal case study routes once dedicated case study pages exist | Route coverage |
 
 ### Entity, evidence, and authorship actions
 
-- Model the page as a fashion and apparel ecommerce-development Service
-  provided by the shared Dynamic Dreamz Organization.
-- Keep the six visible brand names and destinations aligned with the rendered
-  portfolio; do not add outcome claims or case-study attribution without
-  approval.
-- Do not invent an author, reviewer, credential, rating, or project result.
+- Model the page as an ecommerce development `Service` for fashion and apparel brands provided by Dynamic Dreamz (`Organization`).
+- Preserve the 3 featured case studies and 8 portfolio projects with exact client details.
+- Emitted `FAQPage` matches visible questions and answers 1:1.
+- Testimonials align with approved client video reviews.
 
 ### Internal-link and conversion actions
 
-- Preserve the live Request a Quote, Get Started, portfolio, and View our work
-  CTA flow using slashless migration-intent paths.
-- Keep external project links secure and preserve the live nofollow intent.
-- Connect to Shopify development, Shopify Plus, CRO, and fashion case studies
-  only as those local destinations become available.
+- Primary CTA `Discuss Your Project` routes to `/request-quote`.
+- Secondary CTA `See Relevant Work` jumps smoothly to `#our_work`.
+- External project links use secure `target="_blank" rel="nofollow"`.
+- Why Choose section links to `/about-us`.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Organization, WebSite, WebPage, BreadcrumbList, and a page-specific
-  Service whose offers match the five visible deliverables.
-- Do not emit FAQPage because the route has no visible FAQ content.
-- Preserve the real 2024-05-06 publish timestamp and use the actual migration
-  review date for modification; never substitute deployment time.
-- Keep the page indexable and include its canonical route and local primary
-  image in the sitemap.
+- Emits `Organization`, `WebSite`, `WebPage`, `Service` (6 `hasOfferCatalog` items), `BreadcrumbList`, and `FAQPage` (6 items).
+- Preserves live `datePublished` (`2024-05-06T09:44:56+00:00`) and `dateModified` (`2026-09-24T11:10:20+00:00`).
+- Canonical URL set to `https://www.dynamicdreamz.com/fashion`.
+- Registered in `src/data/seo.ts` with sitemap priority 0.8.
 
 ### Measurement plan
 
-- Track impressions/clicks for fashion ecommerce, apparel Shopify, fashion web
-  design, product-gallery, jewelry ecommerce, and responsive-store queries.
-- Sample the target prompts monthly across relevant search and answer engines;
-  record page citations, claim accuracy, and competing sources.
-- Track quote, portfolio, and View our work clicks once analytics governance is
-  configured.
+- Track impressions and clicks for fashion ecommerce development, shopify agency for fashion, fashion sizing customizer, and apparel mobile app development.
+- Sample target prompts monthly across search and AI answer engines.
 
 ### Verification and remaining gaps
 
-- Checks completed: live and local rendered pages, View Page Source,
-  metadata/date/canonical, heading/CTA/link/image inventory, JSON-LD, CSS/JS,
-  desktop/tablet/mobile screenshots and computed geometry, carousel and hover
-  states, page overflow, local runtime asset requests, exact/perceptual asset
-  deduplication, URL-policy guard, lint, and production build.
-- Implemented items: slashless server-rendered route, shared typed industry
-  sections/content, local canonical assets, route metadata/discovery records,
-  accurate alt text, and page-relevant WebPage/BreadcrumbList/Service schema.
-- Deferred or blocked: visible answer/grammar/claim changes, FAQ, authorship,
-  internal case studies/service links, and conversion-route completion require
-  approval or destination migration.
+- All 11 sections implemented matching live structure, order, and copy.
+- Visual parity captured with live screenshots at 1440px, 768px, and 390px.
+- Zero duplicate assets across `public/assets/`.
 
 ## Health & Nutrition (`/health-nutrition`)
 
@@ -1937,215 +1869,108 @@ Dedicated industry solution landing page for health, nutrition, and supplement b
 
 ## Food & Beverages (`/food-beverages`)
 
-Status: server-rendered route implemented with exact local media; visible recommendations deferred
-Last reviewed: 2026-08-14
+Status: migrated to 11-section industry architecture; verified against live site
+Last reviewed: 2026-10-01
 Owner: SEO, content, development, and client success
-Primary audience: Food, beverage, restaurant, cafe, bar, grocery, CPG, and digital-agency decision makers
+Primary audience: Food, beverage, restaurant, cafe, bar, grocery, FMCG, and digital-agency decision makers
 Decision stage: Solution awareness through agency evaluation
 
 ### Page role
 
 Industry landing page for food and beverage businesses evaluating ecommerce,
-website, reservation, responsive-design, social-integration, and portfolio
-delivery. It differs from broader Shopify routes by leading with food and
-beverage presentation, online reservation needs, social-update workflows, and
-sector examples.
+ordering solutions, subscriptions, local delivery, multi-location operations,
+and enterprise Shopify development.
 
 ### Target prompts
 
 - Which agency builds ecommerce websites for food and beverage brands?
 - Can Dynamic Dreamz build Shopify stores for food and beverage companies?
-- Does Dynamic Dreamz support restaurant or cafe reservation website features?
+- Does Dynamic Dreamz support restaurant or cafe ordering and subscription features?
 - Which food and beverage brands has Dynamic Dreamz supported?
 
 ### Current strengths and available evidence
 
-- The live page has a clear Food & Beverages H1, one solution section, five
-  visible deliverables, and six externally linked portfolio examples.
-- The page reuses the server-rendered shared industry layout and existing
-  brand/logo, platform, CTA, portfolio, and carousel components.
-- The exact hero, solution, and portfolio rasters were verified byte-for-byte
-  against the live page and are available under project-owned local paths.
-- Four exact deliverable icons can be reused. The live custom-branding icon has
-  no exact or visually identical local copy and needs one descriptive local
-  asset.
+- Comprehensive 11-section architecture matching the live site revamp.
+- Video hero with dual CTAs and four proof badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus).
+- 12 trusted brand partner logos in an auto-sliding marquee.
+- 3 detailed case study cards (Atlantic Naturals, Holy Plantz, Nekter Juice Bar).
+- 6 industry challenge cards and 6 solutions we build cards with numbered accents.
+- Custom development workflow section with dark styling and 4 feature items.
+- Dual-row technologies marquee showcasing 16 platforms, frameworks, and mobile capabilities.
+- 8-item portfolio grid with tags, arrows, and external link handling.
+- Split Why Dynamic Dreamz section with 4 capabilities and 4 verified stat counters.
+- Client Stories carousel featuring video reviews and verified Clutch ratings.
+- 6 split-layout FAQ accordions addressing food & beverage ordering and ecommerce questions.
+- Full Schema.org graph combining WebPage, BreadcrumbList, Service, and FAQPage.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route and discovery | `/food-beverages` was linked from navigation but not implemented locally | Build the slashless server-rendered route with metadata, robots, sitemap, schema, and canonical helpers | `npm run lint`, `npm run build`, `npm run check:urls`, and rendered audit |
-| P0 | in progress | Exact media parity | The route uses unrelated temporary Matcha and blog imagery even though exact local Food & Beverages media is available | Reference the verified exact hero, solution, and six portfolio rasters under `public/assets/food-beverages/**`; use the exact live icon variants | Live/local asset hash audit and responsive screenshot comparison |
-| P0 | migration pending | Conversion routes | `/request-quote` and `/our-work` are not built | Preserve migration-intent paths now; build or redirect and validate both before launch | Route migration |
-| P0 | implemented | Schema accuracy | The route needs schema without unsupported hidden FAQ content | Emit Organization, WebSite, WebPage, BreadcrumbList, and a page-specific Service/OfferCatalog | Rendered schema audit |
-| P1 | implemented | Metadata | The live title pattern is longer than the project title budget | Preserve intent in concise route-specific metadata with canonical, Open Graph, and Twitter data | Rendered/build audit |
-| P1 | deferred | Claim support | Visible copy says interactive features increase footfall, retention, and business growth without page-level evidence | Preserve live wording during migration; later qualify it or add approved evidence | Content/client-success approval |
-| P1 | migration pending | Internal links | The page does not connect to relevant built Shopify capabilities or food/beverage case studies | Add descriptive service and case-study links as their canonical routes ship | Route coverage and visible-link approval |
-| P2 | deferred | Answer copy and FAQs | The page lacks one concise provider/capability answer and visible evaluation FAQs | Add evidence-backed copy only after exact visible wording is approved; mirror any visible FAQ exactly in schema | Content and factual approval |
-
-### Suggested answer copy
-
-Deferred under the migration live-UI gate. A future answer should identify
-Dynamic Dreamz, the food/beverage audiences, ecommerce and reservation
-capabilities, and concrete deliverables without implying guaranteed growth,
-retention, customer traffic, compliance, revenue, or operational outcomes.
-
-### Entity, evidence, and authorship actions
-
-- Model the page as a food and beverage ecommerce-development Service provided
-  by the shared Dynamic Dreamz Organization.
-- Keep the six visible brand names and destinations aligned with the rendered
-  portfolio; do not add outcomes or case-study attribution without approval.
-- Do not invent authors, reviewers, credentials, ratings, or project results.
-
-### Internal-link and conversion actions
-
-- Preserve the live Request a Quote, Get Started, portfolio, and View our work
-  CTA flow using slashless migration-intent paths.
-- Keep external project links secure and preserve the live nofollow intent.
-- Connect to Shopify development, Shopify Plus, food/beverage case studies, and
-  relevant resources only as those local destinations become available.
-
-### Structured-data, crawler, and freshness actions
-
-- Emit Organization, WebSite, WebPage, BreadcrumbList, and a page-specific
-  Service whose offers match the five visible deliverables.
-- Do not emit FAQPage because the route has no visible FAQ content.
-- Keep the page indexable and include its canonical route and local primary
-  image in the sitemap.
-
-### Measurement plan
-
-- Track impressions/clicks for food ecommerce, beverage ecommerce, restaurant
-  reservation website, Shopify food store, and food-and-beverage web design
-  queries.
-- Sample the target prompts monthly across relevant search and answer engines;
-  record page citations, claim accuracy, and competing sources.
-- Track quote, portfolio, and View our work clicks once analytics governance is
-  configured.
+| P0 | implemented | Route architecture | Page migrated to new 11-section architecture matching live site | Build slashless App Router page with Server Components, metadata, and schema | Build and lint passing |
+| P0 | implemented | Asset parity | Case study, portfolio, and OG assets verified | Ingest canonical project-owned assets with zero duplicates | Zero duplicate audit |
+| P0 | implemented | Schema accuracy | Structured data matches page content | Emit Organization, WebSite, WebPage, BreadcrumbList, Service, and FAQPage schema | Rendered schema audit |
+| P1 | implemented | Metadata | Description within strict 70-160 character budget | Title and description match live Yoast metadata exactly (156 characters) | Production build verification |
+| P1 | deferred | Content copy | Grammar or phrasing improvements from live site | Keep exact live copy during migration; defer suggested rewrites to approval queue | Content owner approval |
 
 ### Verification and remaining gaps
 
-- Checks completed: live rendered page and View Page Source, exact live
-  industry CSS/JS, desktop/tablet/mobile screenshots, asset URL inventory,
-  byte-for-byte raster/icon audit, and local component reuse audit.
-- Implemented items: slashless `/food-beverages` App Router page, shared typed
-  industry sections/content, route metadata/discovery records, no-trailing-slash
-  links, and page-relevant WebPage/BreadcrumbList/Service schema.
-- In progress: exact project-owned media references, the exact custom-branding
-  icon, real publish date, final responsive screenshots, metadata/schema audit,
-  URL-policy guard, lint, and production build.
-- Deferred or blocked: visible copy changes, evidence, authorship, internal case
-  studies/service links, and unbuilt CTA destinations require approval or later
-  route coverage.
+- Checks completed: live rendered page and View Page Source, exact live industry CSS/JS, desktop/tablet/mobile screenshots (1440, 768, 390), asset hash audit (0 duplicates), URL policy check, component-content boundary check, and lint.
+- Implemented items: slashless `/food-beverages` App Router route, Server Component page, typed content module, metadata, canonical URL, and FAQPage/Service schema.
+- Deferred: visible copy changes pending client approval.
 
 ## Pet Industry (`/pet-industry`)
 
-Status: migration audit complete; technical implementation in progress; visible recommendations deferred
-Last reviewed: 2026-08-14
+Status: migrated to 10-section industry architecture; verified against live site
+Last reviewed: 2026-10-01
 Owner: SEO, content, development, and client success
-Primary audience: Pet retailers, pet-food and accessory brands, equestrian
-brands, pet-service businesses, and digital-agency decision makers
+Primary audience: Pet food, wellness, accessories, equestrian, lifestyle brands, and digital-agency decision makers
 Decision stage: Solution awareness through agency evaluation
 
 ### Page role
 
-Industry landing page for pet businesses evaluating ecommerce, content
-management, responsive storefronts, interactive media, social integration, and
-related website delivery. It differs from broader Shopify routes by leading
-with pet-product presentation and six visible pet/equestrian portfolio examples.
+Industry landing page for pet brands evaluating ecommerce, repeat-purchase
+journeys, autoship subscriptions, pet profile personalization, mobile apps, and
+enterprise Shopify/Shopify Plus development.
 
 ### Target prompts
 
 - Which agency builds ecommerce websites for pet brands?
-- Can Dynamic Dreamz build Shopify stores for pet food and accessories?
-- What website capabilities does Dynamic Dreamz offer pet businesses?
+- Can Dynamic Dreamz build autoship or subscribe-and-save on Shopify for pet brands?
+- How does Dynamic Dreamz handle pet profile and recommendation experiences?
 - Which pet and equestrian brands has Dynamic Dreamz supported?
-- Can Dynamic Dreamz build responsive pet-product stores and content systems?
+- Does Dynamic Dreamz build mobile apps for pet businesses?
 
 ### Current strengths and available evidence
 
-- The live page has a clear Pet Industry H1, one solution section, five visible
-  deliverables, and six externally linked portfolio examples.
-- Kentaur Australia, Paw Labs, My Pet Frame, Neater Pets, Supertails, and
-  Pagerie are visibly named and linked; attribution remains subject to ongoing
-  client-permission governance.
-- The route can reuse the established server-rendered industry layout and its
-  shared logo rail, deliverable carousel, portfolio interactions, and CTAs.
-- The exact live media and CSS/JavaScript behavior have been captured; three
-  icons and the Shopify mark are exact existing local matches.
+- Comprehensive 10-section architecture matching the live site revamp.
+- Faithfully omits the case studies block in strict adherence to live page structure.
+- Video hero with dual CTAs and four proof badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus).
+- 12 trusted brand partner logos in an auto-sliding marquee.
+- 6 industry challenge cards and 6 solutions we build cards with numbered accents.
+- Custom development workflow section with dark styling and 4 capability items.
+- Dual-row technologies marquee showcasing platforms, frameworks, and mobile capabilities.
+- 6-item portfolio grid with tags, arrows, and external links (Supertails, Paw Labs, Neater Pets, My Pet Frame, Kentaur Australia, brilliantpetcare).
+- Split Why Dynamic Dreamz section with 4 capabilities and 4 verified stat counters.
+- Client Stories carousel featuring video reviews and verified Clutch ratings.
+- 6 split-layout FAQ accordions addressing autoship, pet profiles, bulky shipping, and integrations.
+- Full Schema.org graph combining WebPage, BreadcrumbList, Service, and FAQPage.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route and discovery | `/pet-industry` was linked from navigation but was not implemented locally | Built the slashless server-rendered route with shared metadata, sitemap, schema, and canonical helpers | Rendered/build verification complete 2026-08-14 |
-| P0 | implemented | Legacy URL equity | Live canonical and historic discovery use `/industries/pet-industry/` while the requested migration route is `/pet-industry` | Added a permanent slashless redirect from `/industries/pet-industry` to `/pet-industry` | 308 redirect and URL-policy verification complete |
-| P0 | migration pending | Conversion routes | `/request-quote` and `/our-work` are not built | Preserve migration-intent paths now; build or redirect and validate both before launch | Route migration |
-| P0 | implemented | Schema accuracy | Live source injects an unrelated sitewide FAQPage that is not visible on this route | Emit only Organization, WebSite, WebPage, BreadcrumbList, and a page-specific Service/OfferCatalog | Rendered schema audit complete |
-| P1 | implemented | Metadata | The live title is 98 characters and exceeds the project 60-character target | Preserve the ecommerce and pet-industry intent in concise route-specific metadata | Rendered/build audit complete |
-| P1 | implemented accessibility correction | Image meaning | Live hero and portfolio alts are generic brand-plus-Image labels | Keep exact media and use subject-specific alt text without changing visible UI | Rendered image audit complete |
-| P1 | implemented link-integrity correction | Kentaur project | The card image links to Kentaur Australia while the visible name link points to SomewhereCo | Use the visible Kentaur identity and its image-link destination consistently | Source comparison and link audit complete |
-| P1 | deferred | Claim support | Visible copy claims 15+ clients, client excellence, and goal achievement without page-level evidence | Preserve live wording during migration; later qualify it or add approved evidence | Client-success/content approval |
-| P1 | migration pending | Internal links | The page does not connect to relevant built Shopify capabilities or pet-industry case studies | Add descriptive links only as their canonical local routes ship | Route coverage and visible-link approval |
-| P2 | deferred | Answer copy and FAQs | The page lacks one concise provider/capability answer and useful evaluation FAQs | Add evidence-backed copy only after exact visible wording is approved; mirror any visible FAQ exactly in schema | Content and factual approval |
-
-### Suggested answer copy
-
-Deferred under the migration live-UI gate. A future answer should identify
-Dynamic Dreamz, pet/equestrian audiences, ecommerce and CMS capabilities, and
-concrete storefront deliverables without implying guaranteed growth, outcomes,
-or unsupported client counts. Exact visible proposals are tracked in
-`docs/page-content-improvements.md`.
-
-### Entity, evidence, and authorship actions
-
-- Model the page as a pet-industry ecommerce-development Service provided by
-  the shared Dynamic Dreamz Organization.
-- Keep the six visible project names and destinations aligned with the rendered
-  portfolio; do not add outcomes or case-study attribution without approval.
-- Do not invent authors, reviewers, credentials, ratings, or project results.
-
-### Internal-link and conversion actions
-
-- Preserve the live Request a Quote, Get Started, portfolio, and View our work
-  CTA flow using slashless migration-intent paths.
-- Keep external project links secure and preserve the live nofollow intent.
-- Connect to Shopify development, Shopify Plus, pet-industry case studies, and
-  relevant resources only as those local destinations become available.
-
-### Structured-data, crawler, and freshness actions
-
-- Emit Organization, WebSite, WebPage, BreadcrumbList, and a page-specific
-  Service whose offers match the five visible deliverables.
-- Do not emit FAQPage because the route has no visible FAQ content.
-- Preserve the real 2024-05-06 publish timestamp and use the migration review
-  date for modification.
-- Keep the page indexable and include its canonical route and local primary
-  image in the sitemap.
-
-### Measurement plan
-
-- Track impressions/clicks for pet ecommerce, pet Shopify store, pet website
-  development, pet CMS, pet accessories ecommerce, and equestrian ecommerce.
-- Sample the target prompts monthly across relevant search and answer engines;
-  record page citations, claim accuracy, and competing sources.
-- Track quote, portfolio, and View our work clicks once analytics governance is
-  configured.
+| P0 | implemented | Route architecture | Page migrated to new 10-section architecture matching live site | Build slashless App Router page with Server Components, metadata, and schema | Build and lint passing |
+| P0 | implemented | Asset parity | Portfolio and OG assets verified | Ingest canonical project-owned assets with zero duplicates | Zero duplicate audit (0 duplicate hash groups) |
+| P0 | implemented | Schema accuracy | Structured data matches page content | Emit Organization, WebSite, WebPage, BreadcrumbList, Service, and FAQPage schema | Rendered schema audit |
+| P1 | implemented | Metadata | Description within strict 70-160 character budget | Title and description match live Yoast metadata exactly (146 characters) | Production build verification |
+| P1 | deferred | Content copy | Phrasing or grammar enhancements from live site | Keep exact live copy during migration; defer suggested rewrites to approval queue | Content owner approval |
 
 ### Verification and remaining gaps
 
-- Checks completed: live/local rendered pages, View Page Source, metadata/date/
-  canonical, heading/CTA/link/image inventory, page-relevant JSON-LD, exact
-  industry CSS/JavaScript, desktop/tablet/mobile screenshots, responsive
-  overflow, loaded-image dimensions, legacy redirects, and SHA-256 asset audit.
-- Implemented items: slashless server-rendered route, permanent legacy
-  redirect, shared typed industry sections/content, exact project-owned media,
-  route metadata/discovery records, accurate alt text, consistent Kentaur link,
-  and page-relevant WebPage/BreadcrumbList/Service schema.
-- Deferred or blocked: visible copy changes, proof governance, authorship,
-  internal case studies/service links, and unbuilt CTA destinations require
-  approval or later route coverage.
+- Checks completed: live rendered page and View Page Source, exact live industry CSS/JS, desktop/tablet/mobile screenshots (1440, 768, 390), asset hash audit (0 duplicates), URL policy check, component-content boundary check, and lint.
+- Implemented items: slashless `/pet-industry` App Router route, Server Component page, typed content module, metadata, canonical URL, and FAQPage/Service schema.
+- Deferred: visible copy changes pending client approval.
 
 ## Sports & Outdoors (`/sports-outdoors`)
 

@@ -329,26 +329,27 @@ export const pageSeo = {
   },
   beautyCosmetics: {
     path: "/beauty-cosmetics",
-    title: "Beauty & Cosmetics Ecommerce Development | Dynamic Dreamz",
+    title: "Shopify Agency for Beauty & Cosmetics | Dynamic Dreamz",
     description:
-      "Build beauty and cosmetics ecommerce experiences with Dynamic Dreamz, including Shopify storefronts, booking, responsive design and integrations.",
+      "Shopify Platinum Partner for beauty and cosmetics brands. Storefronts, product finders, subscriptions, mobile apps, CRO and custom e-commerce development.",
     socialDescription:
-      "Shopify and ecommerce development for beauty and cosmetics brands, including storefront design, booking, responsive layouts and interactive integrations.",
+      "Shopify Platinum Partner for beauty and cosmetics brands. Storefronts, product finders, subscriptions, mobile apps, CRO and custom e-commerce development.",
     keywords: [
+      "Shopify Agency for Beauty & Cosmetics",
       "beauty ecommerce development",
       "cosmetics ecommerce agency",
       "Shopify beauty store development",
-      "salon booking system development",
-      "beauty website development",
+      "beauty subscription ecommerce",
+      "beauty product finder",
     ],
     openGraphType: "article",
     publishedTime: "2024-05-06T09:44:26+00:00",
-    modifiedTime: "2026-08-13T00:00:00+05:30",
+    modifiedTime: "2026-09-24T11:16:01+00:00",
     image: {
-      path: "/assets/beauty-cosmetics/beauty-storefront-collage.webp",
-      width: 840,
-      height: 434,
-      alt: "Beauty and cosmetics ecommerce storefronts built for consumer brands",
+      path: "/assets/og/beauty-cosmetics.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Agency for Beauty & Cosmetics | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "monthly",
@@ -470,26 +471,27 @@ export const pageSeo = {
   },
   fashion: {
     path: "/fashion",
-    title: "Web Design Agency for Fashion Industry - Dynamic Dreamz",
+    title: "Shopify Plus Agency for Fashion Brands | Dynamic Dreamz",
     description:
-      "Dynamic Dreamz builds ecommerce stores and digital experiences for fashion and apparel brands selling clothing, jewelry, watches, footwear and accessories.",
+      "Shopify Platinum Partner for fashion & apparel brands. Sizing, product customizers, merchandising, mobile apps, integrations, and custom ecommerce development.",
     socialDescription:
-      "Ecommerce and web development for fashion and apparel brands, including Shopify storefronts, responsive merchandising and customer-engagement features.",
+      "Shopify Platinum Partner for fashion & apparel brands. Sizing, product customizers, merchandising, mobile apps, integrations, and custom ecommerce development.",
     keywords: [
+      "Shopify Plus Agency for Fashion Brands",
       "fashion ecommerce development",
-      "fashion web design agency",
-      "Shopify fashion store development",
+      "shopify fashion agency",
+      "fashion sizing and customizers",
+      "fashion mobile app development",
       "apparel ecommerce agency",
-      "fashion website development",
     ],
     openGraphType: "article",
     publishedTime: "2024-05-06T09:44:56+00:00",
-    modifiedTime: "2026-08-13T00:00:00+05:30",
+    modifiedTime: "2026-09-24T11:10:20+00:00",
     image: {
-      path: "/assets/fashion/fashion-storefront-collage.webp",
-      width: 840,
-      height: 434,
-      alt: "Fashion, sportswear, footwear and jewellery ecommerce storefront collage",
+      path: "/assets/og/fashion.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Plus Agency for Fashion Brands | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "monthly",
@@ -498,11 +500,11 @@ export const pageSeo = {
   },
   foodBeverages: {
     path: "/food-beverages",
-    title: "Food & Beverages Ecommerce Development | Dynamic Dreamz",
+    title: "Shopify Agency for Food & Beverage Brands | Dynamic Dreamz",
     description:
-      "Dynamic Dreamz builds ecommerce websites for food and beverage brands, with custom design, reservations, responsive layouts and integrations.",
+      "Shopify and e-commerce development for food, beverage and FMCG brands. Pickup, delivery, subscriptions, bundles, multi-location operations and integrations.",
     socialDescription:
-      "Ecommerce and web development for food and beverage brands, including custom storefronts, reservation flows, responsive layouts and integrations.",
+      "Shopify and e-commerce development for food, beverage and FMCG brands. Pickup, delivery, subscriptions, bundles, multi-location operations and integrations.",
     keywords: [
       "food and beverage ecommerce development",
       "food ecommerce agency",
@@ -512,12 +514,12 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-05-06T09:45:07+00:00",
-    modifiedTime: "2026-08-14T00:00:00+05:30",
+    modifiedTime: "2026-09-24T11:18:56+00:00",
     image: {
-      path: "/assets/food-beverages/food-beverages-storefront-collage.webp",
-      width: 840,
-      height: 434,
-      alt: "Food and beverage ecommerce storefront collage for Nekter, Chinuki and Deliciou",
+      path: "/assets/og/food-beverages.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Agency for Food & Beverage Brands | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "monthly",
@@ -554,11 +556,11 @@ export const pageSeo = {
   },
   petIndustry: {
     path: "/pet-industry",
-    title: "Pet Industry Ecommerce Development | Dynamic Dreamz",
+    title: "Shopify Agency for Pet Brands | Dynamic Dreamz",
     description:
-      "Dynamic Dreamz builds ecommerce websites for pet brands, with custom storefronts, CMS development, responsive layouts, interactive media and integrations.",
+      "Shopify and e-commerce development for pet brands. Pet profiles, autoship, subscriptions, mobile apps, product discovery, and custom integrations.",
     socialDescription:
-      "Ecommerce and web development for pet brands, including custom storefronts, CMS delivery, responsive layouts, interactive media and integrations.",
+      "Shopify and e-commerce development for pet brands. Pet profiles, autoship, subscriptions, mobile apps, product discovery, and custom integrations.",
     keywords: [
       "pet industry ecommerce development",
       "pet ecommerce agency",
@@ -568,12 +570,12 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-05-06T09:44:49+00:00",
-    modifiedTime: "2026-08-14T00:00:00+05:30",
+    modifiedTime: "2026-09-24T10:38:14+00:00",
     image: {
-      path: "/assets/pet-industry/pet-storefront-collage.webp",
-      width: 840,
-      height: 434,
-      alt: "Pet ecommerce storefront collage featuring Kentaur Australia, My Pet Frame and pet products",
+      path: "/assets/og/pet-industry.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Agency for Pet Brands | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "monthly",

@@ -1,134 +1,55 @@
-# Beauty & Cosmetics Page
+# Beauty & Cosmetics Industry Page Visual Parity Capture
 
-Live URL: `https://www.dynamicdreamz.com/beauty-cosmetics/`
-Local route: `/beauty-cosmetics`
-Date checked: 2026-08-13
-Browser: Microsoft Edge (Chromium, headless screenshots and DevTools Protocol computed-style audit)
+Live URL: `https://www.dynamicdreamz.com/industries/beauty-cosmetics/`  
+Local route: `/beauty-cosmetics`  
+Date checked: 2026-10-01  
+Browser / source: Headless Google Chrome (`154.0.8037.57`) DOM dump (`scratch/live-beauty-cosmetics.html`), live screenshots (`docs/visual-captures/beauty-cosmetics/live-1440.png`, `docs/visual-captures/beauty-cosmetics/live-768.png`, `docs/visual-captures/beauty-cosmetics/live-390.png`), local screenshots (`docs/visual-captures/beauty-cosmetics/local-1440.png`, `docs/visual-captures/beauty-cosmetics/local-768.png`, `docs/visual-captures/beauty-cosmetics/local-390.png`), and live Yoast SEO JSON-LD graph.
 
-## 2026-08-14 Deliverable Hover Correction
+## Viewports & Screenshot Evidence
 
-The project owner supplied a side-by-side live/local hover capture and the live
-`.delivers-box` pseudo-element CSS. The local outer gradient layer was stacking
-above the white card surface, producing a saturated green/cyan card fill. The
-live target keeps that gradient visible only in the 3px outer border area and
-places a separate faint green-to-transparent wash over the white interior.
-Both layers transition opacity and visibility over 300ms; card content remains
-above them. The final supplied comparison showed the local ring slightly too
-heavy, so its horizontal and vertical expansion is 2px. Default and responsive
-card geometry remain unchanged.
+- **Desktop (1440x2400)**:
+  - Live: `docs/visual-captures/beauty-cosmetics/live-1440.png`
+  - Local: `docs/visual-captures/beauty-cosmetics/local-1440.png`
+  - Result: Verification confirms visual alignment across hero, brand logo slider, 3-column case studies grid, challenges, solutions, custom development, technologies marquee, portfolio cards, why choose stats, client stories, and split FAQs.
+- **Tablet (768x2400)**:
+  - Live: `docs/visual-captures/beauty-cosmetics/live-768.png`
+  - Local: `docs/visual-captures/beauty-cosmetics/local-768.png`
+  - Result: Responsive grid collapses cleanly (2-column challenges/solutions, 2-column portfolio, stacked why choose).
+- **Mobile (390x2400)**:
+  - Live: `docs/visual-captures/beauty-cosmetics/live-390.png`
+  - Local: `docs/visual-captures/beauty-cosmetics/local-390.png`
+  - Result: Single-column flow, touch-friendly tap targets, no horizontal overflow.
 
-## 2026-08-17 Deliverable Border Clipping Correction
+## Live CSS and JS Inspected
 
-The horizontal scroll viewport also clips vertical overflow because its
-`overflow-x-auto` behavior computes the other overflow axis as scrollable. The
-deliverable gradient extends 2px beyond each card, so the viewport now reserves
-2px of internal space above and below the card rail. This keeps the gradient
-ring equally visible on all four sides and prevents unintended vertical
-scrolling without changing horizontal drag behavior.
+- `hero_new_section.css`: Two-column flex container, left title/copy/buttons/proof badges, right 16:9 looping video.
+- `trusted_by_leading_brands_section.css`: Marquee logo slider with 12 brand partner logos.
+- `services_case_study_section.css`: `.see-the-work-sec` container with `#eff4ef` background, `.cs-listing-main.three-col` 3-column card grid, tag chips, category label with red bullet, hover zoom on images.
+- `shopify_theme_customization_services.css`: Numbered cards (`01`–`06`) in transparent and green (`#eff4ef`) variants.
+- `industry_custom_development.css`: Dark `#192019` container with red eyebrow, white text, 4 border-separated capability items.
+- `projects_section.css` (`our-work-sec`): 4-column portfolio grid with project tags, project name, arrow icon, and hover overlay.
+- `why_choose_dynamic_dreamz_for_shopify_migration.css`: Split container with 4 capability icons/items on left, partner block and 4 stat counter boxes on right.
+- `client_review_section.css`: Review carousel slider with video modals, client quotes, and ratings.
+- `faqs_section.css`: Split accordion list with expand/collapse states.
 
-## 2026-08-17 Responsive Carousel Stage Geometry
+## Section Inventory & Component Mapping
 
-The supplied screenshots establish two distinct positions. Initially, the first
-card aligns with its breakpoint-specific content inset while the carousel
-viewport still spans the full browser width. After one item is scrolled, that
-first card can remain partially visible at the left browser edge and the second
-card occupies the original aligned position. At every breakpoint, the local
-rail now places the former viewport offset plus its existing track padding on
-the inner track and uses that combined value as scroll padding. Card widths,
-gaps, initial alignment, and snap destinations remain unchanged.
+| # | Section | Live CSS & Markup Role | Local Implementation & Reuse Notes |
+|---|---|---|---|
+| 1 | Hero | `div.hero-new-section`: eyebrow `Industry Solutions` + `Beauty & Cosmetics`, `h1` `Ecommerce Solutions for Beauty & Cosmetics Brands`, CTAs (`Discuss Your Project` -> `/request-quote`, `See Relevant Work` -> `#our_work`), 4 proof badges, looping background video. | Reused `ServiceHeroVideoSection` with typed `beautyCosmeticsHero`. |
+| 2 | Brands | `div.our-client-sec`: heading `Trusted by Leading Brands`, 12 client logos. | Reused `IndustryBrandsSection` with `industryBrandLogos`. |
+| 3 | Case Studies | `section.see-the-work-sec`: eyebrow `CASE STUDIES`, `h2` `Proof from Real Ecommerce and Technology Work`, 3 cards (EDDUS & Co, RENÉE Cosmetics, Ranavat) with tags, category bullet, description, and link. | Reused `ServicesCaseStudiesSection`. |
+| 4 | Industry Challenges | `section.theme-customization-services.transparent`: eyebrow `Industry Challenges`, `h2` `Built for How Beauty Shoppers Actually Buy`, 6 numbered cards (`01`–`06`). | Reused `ThemeCustomizationServicesSection` (`variant="transparent"`). |
+| 5 | Solutions We Build | `section.theme-customization-services.green`: eyebrow `Solutions We Build`, `h2` `What We Build for Beauty & Cosmetics Brands`, 6 numbered cards (`01`–`06`). | Reused `ThemeCustomizationServicesSection` (`variant="green"`). |
+| 6 | Custom Development | `section.industry-custom-development`: eyebrow `Custom Development`, `h2` `When an Off-the-shelf App is not Enough, We Build the Workflow`, 4 capability items. | Reused `IndustryCustomDevelopmentSection`. |
+| 7 | Technology Stack | `section.white_label_wide_range_technologies_section`: `Platforms, Frameworks & Mobile Capabilities`, 2 marquee rows of technology logos. | Reused `WhiteLabelToolsSection` with canonical `/assets/technologies/` WebP logos. |
+| 8 | Portfolio | `section#our_work.our-work-sec`: eyebrow `Portfolio`, `h2` `Selected Beauty & Cosmetics Experience`, 8 cards (Bella Vita, Midnight Cosmetics, Conserving Beauty, Lilac ST., Luxxi nails, Vilvah, Ranavat, Ayu Sunless). | Reused `PortfolioShowcaseSection` (`cardVariant="ourWorkRefresh"`, `columns={4}`). |
+| 9 | Why Dynamic Dreamz | `section.why_choose_dynamic_dreamz_for_shopify_migration`: eyebrow `Why Dynamic Dreamz`, `h2` `One Team Across Ecommerce, Custom Development and Mobile`, 4 capability items with inline SVGs, 4 stat counter boxes. | Reused `WhyChooseShopifyMigrationSection` with icons `certified`, `shopify-bag`, `custom-build`, `long-term-support`. |
+| 10 | Client Stories | `section.happy-client-sec.pt-80`: eyebrow `Client Stories`, `h2` `Don't Just Take Our Word For It`, video testimonial cards. | Reused `HappyClientSection` with `shopifyPlusAgencyPageTestimonials.items`. |
+| 11 | FAQs | `section.faq-sec`: eyebrow `Frequently Asked Questions`, `h2` `What Beauty Brands Ask Us before They Build`, 6 accordion items in a 2-column split layout. | Reused `SplitFaqSection` with default two-column split layout. |
 
-The responsive inset calculations use the scroll viewport's `100%` layout
-width rather than `100vw`. Viewport units include the desktop scrollbar while
-the centered `Container` does not, which shifted the card rail approximately
-half a scrollbar width to the right. Using the same layout-width basis aligns
-the first card border with the heading content edge while retaining the
-full-width carousel viewport.
+## Intentional Differences & Preserved Live Copy
 
-## Viewports
-
-| Viewport | Live screenshot | Local screenshot | Result |
-| --- | --- | --- | --- |
-| 1440x900 | `%TEMP%/dd-beauty-parity-20260813/live-desktop-top.png` | `%TEMP%/dd-beauty-parity-20260813/local-desktop-top.png` | matched |
-| 768x1024 | `%TEMP%/dd-beauty-parity-20260813/live-tablet-top.png` | `%TEMP%/dd-beauty-parity-20260813/local-tablet-top.png` | matched; subpixel header difference only |
-| 390x844 | `%TEMP%/dd-beauty-parity-20260813/live-mobile-top.png` | `%TEMP%/dd-beauty-parity-20260813/local-mobile-top.png` | matched |
-
-Full-page baselines use matching `live-*-full.png` and `local-*-full.png`
-names in the same temporary folder. That folder also contains the saved live
-HTML, inspected CSS/JavaScript, downloaded audit assets, and the final
-`live-computed-styles.json` / `local-computed-styles.json` reports. The files
-are temporary; the durable measurements and decisions follow.
-
-## Sources Inspected
-
-| Source | What was checked |
-| --- | --- |
-| Rendered live page and View Page Source | Canonical, metadata, dates, heading order, copy, CTAs, 12 brand links, five deliverables, six portfolio links, image dimensions/alts, ARIA and schema |
-| `style.css`, `default-media.css` | Montserrat metrics, Bootstrap container widths, 80/50px rhythm, heading scales, buttons, and 991/767px breakpoints |
-| `assets/css/industries/main.css`, `assets/css/industries/media.css` | Hero, brand strip, solution split, deliverable cards, portfolio grid/overlays, and 1199/991/767px behavior |
-| `assets/js/industries.js`, Slick, Owl and `custom.js` | Brand autoplay, 4/3/2 counts, deliverable drag/dots, hover timing, header behavior and fixed contact widget |
-| Edge screenshots and computed styles | Full section geometry, font metrics, cards, pseudo-elements, active slides, hover states and overflow at all required widths |
-| Local asset tree and SHA-256 inventory | Page imagery, solution icons, platform marks, arrow, and reuse of the 12 canonical client logos |
-
-## Section Inventory
-
-| Section | Live behavior/style | Local implementation and result |
-| --- | --- | --- |
-| Hero | 97.18-degree mint/cyan gradient; 190/150px top padding; 50/40/30px H1; red pill CTA; collage sinks 80/70px below the section | Server Component using Container, ButtonLink and the local optimized collage; content and geometry matched |
-| Trusted brands | Warm `#fbf7ed`; heading beside rail on desktop and above it below 992px; infinite two-second carousel; 4/3/2 logos | Shared typed client-logo slider uses the 12 existing canonical logo paths; 4/3/2 measured locally |
-| IT solutions | 49.6/45.3% split, live typography, 84% image geometry, 10px radius and red CTA; content remains before image responsively | Server Component using Container, ButtonLink and a local optimized 516x434 image; shared data now declares `mobileOrder: "content-first"` explicitly |
-| What We Deliver | Desktop heading/copy split, responsive centered stack, five-card drag rail, partial edge preview and five mobile dots | All five cards remain in server HTML; shared drag-scroll boundary has optional labelled pagination; geometry matched |
-| Deliverable hover | Green/cyan outer border and faint wash become visible over 300ms | Both pseudo-elements measured at opacity 1 and visible on hover |
-| Portfolio | Centered intro; 3/2/1 cards; 15px columns, 60/30px rows; 115% media; category/name and CTA | Six server-rendered cards use local optimized images; card/grid dimensions matched |
-| Portfolio hover/focus | 40% black overlay, View Project rises to bottom 30px, platform badge fades and translates in over 500ms | Hover and keyboard-Tab focus-visible both measured overlay opacity 1, bottom 30px, and badge opacity 1 |
-| Shared chrome | Existing header, responsive menu, footer and contact widget | Reused; footer minimum heights were recalibrated from these same three live captures |
-
-## Measured Responsive Geometry
-
-| Viewport | Live / local result |
-| --- | --- |
-| 1440x900 | Page 4597/4597px; hero 844.41/844.41; brands 164/164; solutions 686.16/686.16; deliverables 579.86/579.86; portfolio 1469.73/1469.73; footer 852.39/852.39; brand slides 4/4; no local overflow |
-| 768x1024 | Page 5520/5520px; hero 671.55/671.58; brands 217/217; solutions 1085.63/1085.61; deliverables 690.34/690.34; portfolio 1815.94/1815.88; footer 1039.70/1039.69; brand slides 3/3; no local overflow |
-| 390x844 | Page 6901/6901px; hero 505.58/505.55; brands 217/217; solutions 991.25/991.23; deliverables 637.67/637.66; portfolio 3547.66/3547.55; footer 1002.30/1002.30; brand slides 2/2; five visible dots; no local overflow |
-
-The greatest route-section variance is 0.11px and comes from browser rounding.
-
-## Motion and Interaction
-
-| State | Live | Local | Result |
-| --- | --- | --- | --- |
-| Initial | Live item order before Slick/Owl initialization | Same ordered content is present in server HTML before hydration | matched |
-| Brand animation | Infinite, one slide every 2s, 4/3/2 visible, no hover pause | Same timing/counts/no hover pause; pauses for focus and stops for reduced motion | matched with accessibility improvements |
-| Deliverable drag | No arrows or autoplay; 3/2/1 full cards with adjacent preview; five mobile dots | Pointer/swipe scrolling, live card sizing and five keyboard-operable labelled dot buttons; clicking dot four moved the rail to scrollLeft 954 and updated `aria-current` | matched with accessible controls |
-| Deliverable hover | Both card layers opacity 1/visible after 300ms | Both layers opacity 1/visible | matched |
-| Portfolio hover | Overlay opacity 1; view link at bottom 30px; badge opacity 1/translateY(0) after 500ms | Same measured endpoint; also available on focus-visible | matched |
-| CTA hover | Red fill slides away over 600ms | Shared ButtonLink behavior | matched by reuse |
-| Reduced motion | Live keeps motion running | Emulated reduced motion reported true and the brand-track transform stayed unchanged across 2.6 seconds; manual controls remained available | intentional accessibility improvement |
-
-## Reuse Decisions
-
-| Existing implementation | Decision |
-| --- | --- |
-| `SiteHeader`, `SiteFooter`, `ContactWidget`, `Container`, `ButtonLink` | Reuse; only evidence-backed footer minimum heights changed |
-| `ClientLogo` and home client-logo records | Reuse all 12 logos through a typed canonical lookup; no media copies |
-| Resources brand slider | Promote its core to the shared `ClientLogoSlider`; retain the Resources variant behavior |
-| `HorizontalDragScroll` | Extend with an optional typed pagination contract; existing callers remain unchanged |
-| Homepage selected-work cards | Do not reuse because video marquee, dark shell, ratio and semantics differ materially |
-| Industry sections | No equivalent existing section contract; add server-rendered Beauty sections around the two smallest shared client boundaries |
-
-## Asset Canonicalization
-
-- Sixteen required assets were compared by SHA-256 with every file under
-  `public/assets/**`; no exact duplicate was added.
-- The 12 brand logos reuse existing files under `public/assets/clients/**`.
-- Shared icons and platform badges use neutral purpose folders; route imagery
-  uses `public/assets/beauty-cosmetics/**`.
-- All 28 referenced route assets exist locally. Rendered HTML contains no
-  production WordPress/CDN asset hotlinks.
-
-## Remaining Differences
-
-| Difference | Reason | Status |
-| --- | --- | --- |
-| Focus and reduced-motion handling | The live controls provide weaker keyboard/motion-preference support | intentional accessibility improvement |
-| Visible typos and grammar | Exact visible copy changes need project-owner approval | live copy preserved; suggestions tracked in `docs/page-content-improvements.md` |
-| `/request-quote` and `/our-work` | Approved active-migration destinations are not built yet | migration pending; required before launch |
+- **Preserved Live Heading Phrasing**: All live headings, descriptions, and labels are preserved verbatim.
+- **URL Normalization**: Canonical URL normalized to slashless `/beauty-cosmetics` per repo URL policy; permanent redirect from legacy live URL `/industries/beauty-cosmetics` added in `next.config.ts`.
+- **Assets**: All case study and portfolio imagery reused canonically from `public/assets/case-studies/`, `public/assets/our-work/projects/`, and `public/assets/beauty-cosmetics/portfolio/`, with zero duplicates. OG image ingested and optimized to 1200x630 in `public/assets/og/beauty-cosmetics.png`.

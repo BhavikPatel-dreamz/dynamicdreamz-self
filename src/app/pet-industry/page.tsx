@@ -1,5 +1,4 @@
-import { IndustryPage } from "@/components/sections/industry/industry-page";
-import { petIndustryPage } from "@/content/pet-industry";
+import { PetIndustryPage } from "@/components/sections/pet-industry-page";
 import { pageMetadata } from "@/data/seo";
 import { createPetIndustryPageSchema, serializeJsonLd } from "@/lib/schema";
 
@@ -14,7 +13,8 @@ export default function PetIndustryRoute() {
           __html: serializeJsonLd(createPetIndustryPageSchema()),
         }}
       />
-      <IndustryPage content={petIndustryPage} />
+      <PetIndustryPage />
     </main>
   );
 }
+

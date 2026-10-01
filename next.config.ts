@@ -160,6 +160,21 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/industries/fashion",
+        destination: "/fashion",
+        permanent: true,
+      },
+      {
+        source: "/industries/beauty-cosmetics",
+        destination: "/beauty-cosmetics",
+        permanent: true,
+      },
+      {
+        source: "/industries/food-beverages",
+        destination: "/food-beverages",
+        permanent: true,
+      },
+      {
         source: "/industries/home-living",
         destination: "/home-living",
         permanent: true,
@@ -167,6 +182,11 @@ const nextConfig: NextConfig = {
       {
         source: "/industries/jewellery-accessories",
         destination: "/jewellery-accessories",
+        permanent: true,
+      },
+      {
+        source: "/industries/pet-industry",
+        destination: "/pet-industry",
         permanent: true,
       },
       {

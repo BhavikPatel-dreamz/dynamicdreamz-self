@@ -1,5 +1,4 @@
-import { IndustryPage } from "@/components/sections/industry/industry-page";
-import { foodBeveragesIndustryPage } from "@/content/food-beverages";
+import { FoodBeveragesPage } from "@/components/sections/food-beverages-page";
 import { pageMetadata } from "@/data/seo";
 import { createFoodBeveragesPageSchema, serializeJsonLd } from "@/lib/schema";
 
@@ -14,7 +13,8 @@ export default function FoodBeveragesRoute() {
           __html: serializeJsonLd(createFoodBeveragesPageSchema()),
         }}
       />
-      <IndustryPage content={foodBeveragesIndustryPage} />
+      <FoodBeveragesPage />
     </main>
   );
 }
+

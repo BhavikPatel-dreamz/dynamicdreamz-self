@@ -15,10 +15,16 @@ import { salesforceFaqs, salesforceProcessContent } from "@/content/salesforce-t
 import { etsyFaqs, etsyProcessContent } from "@/content/etsy-to-shopify-migration";
 import { wixFaqs, wixProcessContent } from "@/content/wix-to-shopify-migration";
 import { founders } from "@/content/about";
-import { beautyIndustryPage } from "@/content/beauty-cosmetics";
+import {
+  beautyCosmeticsFaqs,
+  beautyCosmeticsSolutions,
+} from "@/content/beauty-cosmetics";
 import { contactPageContent } from "@/content/contact";
-import { fashionIndustryPage } from "@/content/fashion";
-import { foodBeveragesIndustryPage } from "@/content/food-beverages";
+import { fashionFaqs, fashionSolutions } from "@/content/fashion";
+import {
+  foodBeveragesFaqs,
+  foodBeveragesSolutions,
+} from "@/content/food-beverages";
 import {
   foodBeverageShopifyPlusFaqs,
   foodBeverageServices,
@@ -49,7 +55,10 @@ import {
   shopifyHoursFaqs,
   shopifyHoursPackages,
 } from "@/content/buy-shopify-development-hours";
-import { petIndustryPage } from "@/content/pet-industry";
+import {
+  petIndustryFaqs,
+  petIndustrySolutions,
+} from "@/content/pet-industry";
 import { homeFaqs, organizationAnswerSummary, testimonials } from "@/content/home";
 import { ourWorkCaseStudies, ourWorkProjects } from "@/content/our-work";
 import {
@@ -282,14 +291,17 @@ const beautyPageUrl = absoluteUrl(pageSeo.beautyCosmetics.path);
 const beautyPageId = `${beautyPageUrl}#webpage`;
 const beautyBreadcrumbId = `${beautyPageUrl}#breadcrumb`;
 const beautyServiceId = `${beautyPageUrl}#service`;
+const beautyFaqId = `${beautyPageUrl}#faq`;
 const fashionPageUrl = absoluteUrl(pageSeo.fashion.path);
 const fashionPageId = `${fashionPageUrl}#webpage`;
 const fashionBreadcrumbId = `${fashionPageUrl}#breadcrumb`;
 const fashionServiceId = `${fashionPageUrl}#service`;
+const fashionFaqId = `${fashionPageUrl}#faq`;
 const foodBeveragesPageUrl = absoluteUrl(pageSeo.foodBeverages.path);
 const foodBeveragesPageId = `${foodBeveragesPageUrl}#webpage`;
 const foodBeveragesBreadcrumbId = `${foodBeveragesPageUrl}#breadcrumb`;
 const foodBeveragesServiceId = `${foodBeveragesPageUrl}#service`;
+const foodBeveragesFaqId = `${foodBeveragesPageUrl}#faq`;
 const foodBeverageShopifyPlusAgencyPageUrl = absoluteUrl(pageSeo.foodBeverageShopifyPlusAgency.path);
 const foodBeverageShopifyPlusAgencyPageId = `${foodBeverageShopifyPlusAgencyPageUrl}#webpage`;
 const foodBeverageShopifyPlusAgencyBreadcrumbId = `${foodBeverageShopifyPlusAgencyPageUrl}#breadcrumb`;
@@ -319,6 +331,7 @@ const petIndustryPageUrl = absoluteUrl(pageSeo.petIndustry.path);
 const petIndustryPageId = `${petIndustryPageUrl}#webpage`;
 const petIndustryBreadcrumbId = `${petIndustryPageUrl}#breadcrumb`;
 const petIndustryServiceId = `${petIndustryPageUrl}#service`;
+const petIndustryFaqId = `${petIndustryPageUrl}#faq`;
 const wordpressDevelopmentPageUrl = absoluteUrl(pageSeo.wordpressDevelopment.path);
 const wordpressDevelopmentPageId = `${wordpressDevelopmentPageUrl}#webpage`;
 const wordpressDevelopmentServiceId = `${wordpressDevelopmentPageUrl}#service`;
@@ -1959,7 +1972,7 @@ type IndustryPageSchemaConfig = {
   };
 };
 
-function createIndustryPageSchema(config: IndustryPageSchemaConfig) {
+export function createIndustryPageSchema(config: IndustryPageSchemaConfig) {
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -2206,34 +2219,44 @@ function createServicePageSchema({
 }
 
 export function createBeautyCosmeticsPageSchema() {
-  return createIndustryPageSchema({
-    seo: pageSeo.beautyCosmetics,
+  return createServicePageSchema({
+    page: pageSeo.beautyCosmetics,
     pageUrl: beautyPageUrl,
     pageId: beautyPageId,
-    breadcrumbId: beautyBreadcrumbId,
-    breadcrumbName: "Beauty & Cosmetics",
     serviceId: beautyServiceId,
-    serviceName: "Beauty & Cosmetics Ecommerce Development",
-    serviceType: "Beauty and cosmetics ecommerce development",
-    audienceType:
-      "Beauty, cosmetics, skincare, haircare, salon and wellness brands",
-    offerCatalog: beautyIndustryPage.deliverables,
+    faqId: beautyFaqId,
+    breadcrumbId: beautyBreadcrumbId,
+    serviceName: "Ecommerce Solutions for Beauty & Cosmetics Brands",
+    serviceType:
+      "Beauty and Cosmetics Ecommerce Development, Skin and Shade Quizzes, Subscriptions and Replenishment, Bundles and Regimen Kits, Shopify and Shopify Plus Development, Mobile App Development, ERP, CRM and Custom Full-Stack Integrations",
+    breadcrumbName: "Beauty & Cosmetics",
+    audienceType: "Beauty, cosmetics, skincare, haircare and fragrance brands",
+    faqs: beautyCosmeticsFaqs,
+    offers: beautyCosmeticsSolutions.boxes.map((item) => ({
+      title: item.title,
+      description: item.description ?? "",
+    })),
   });
 }
 
 export function createFashionPageSchema() {
-  return createIndustryPageSchema({
-    seo: pageSeo.fashion,
+  return createServicePageSchema({
+    page: pageSeo.fashion,
     pageUrl: fashionPageUrl,
     pageId: fashionPageId,
-    breadcrumbId: fashionBreadcrumbId,
-    breadcrumbName: "Fashion & Apparel",
     serviceId: fashionServiceId,
-    serviceName: "Fashion & Apparel Ecommerce Development",
-    serviceType: "Fashion and apparel ecommerce development",
-    audienceType:
-      "Fashion, apparel, jewelry, footwear, accessories and lifestyle brands",
-    offerCatalog: fashionIndustryPage.deliverables,
+    faqId: fashionFaqId,
+    breadcrumbId: fashionBreadcrumbId,
+    serviceName: "Ecommerce Solutions for Fashion & Apparel Brands",
+    serviceType:
+      "Fashion and Apparel Ecommerce Development, Sizing Guidance and Fit Logic, Product Customizers, Merchandising and Lookbooks, Shopify and Shopify Plus Development, Mobile App Development, PIM, OMS and ERP Integrations",
+    breadcrumbName: "Fashion & Apparel",
+    audienceType: "Fashion, apparel, clothing, footwear and lifestyle brands",
+    faqs: fashionFaqs,
+    offers: fashionSolutions.boxes.map((item) => ({
+      title: item.title,
+      description: item.description ?? "",
+    })),
   });
 }
 
@@ -2321,18 +2344,23 @@ export function createJewelleryAccessoriesPageSchema() {
 }
 
 export function createFoodBeveragesPageSchema() {
-  return createIndustryPageSchema({
-    seo: pageSeo.foodBeverages,
+  return createServicePageSchema({
+    page: pageSeo.foodBeverages,
     pageUrl: foodBeveragesPageUrl,
     pageId: foodBeveragesPageId,
-    breadcrumbId: foodBeveragesBreadcrumbId,
-    breadcrumbName: "Food & Beverages",
     serviceId: foodBeveragesServiceId,
-    serviceName: "Food & Beverages Ecommerce Development",
-    serviceType: "Food and beverage ecommerce and website development",
-    audienceType:
-      "Food, beverage, restaurant, cafe, bar, grocery and consumer packaged goods brands",
-    offerCatalog: foodBeveragesIndustryPage.deliverables,
+    faqId: foodBeveragesFaqId,
+    breadcrumbId: foodBeveragesBreadcrumbId,
+    serviceName: "Ecommerce Solutions for Food & Beverage Brands",
+    serviceType:
+      "Food and Beverage Ecommerce Development, Subscriptions and Recurring Delivery, Local Delivery and Store Pickup, Menu and Bundle Builders, Shopify and Shopify Plus Development, ERP, POS and Kitchen Operations Integrations",
+    breadcrumbName: "Food & Beverages",
+    audienceType: "Food, beverage, restaurant, FMCG and consumer packaged goods brands",
+    faqs: foodBeveragesFaqs,
+    offers: foodBeveragesSolutions.boxes.map((item) => ({
+      title: item.title,
+      description: item.description ?? "",
+    })),
   });
 }
 
@@ -2357,18 +2385,23 @@ export function createFoodBeverageShopifyPlusAgencyPageSchema() {
 }
 
 export function createPetIndustryPageSchema() {
-  return createIndustryPageSchema({
-    seo: pageSeo.petIndustry,
+  return createServicePageSchema({
+    page: pageSeo.petIndustry,
     pageUrl: petIndustryPageUrl,
     pageId: petIndustryPageId,
-    breadcrumbId: petIndustryBreadcrumbId,
-    breadcrumbName: "Pet Industry",
     serviceId: petIndustryServiceId,
-    serviceName: "Pet Industry Ecommerce Development",
-    serviceType: "Pet industry ecommerce and website development",
-    audienceType:
-      "Pet retailers, pet food and accessory brands, equestrian brands and pet-service businesses",
-    offerCatalog: petIndustryPage.deliverables,
+    faqId: petIndustryFaqId,
+    breadcrumbId: petIndustryBreadcrumbId,
+    serviceName: "Ecommerce Solutions for Pet Brands",
+    serviceType:
+      "Pet Industry Ecommerce Development, Pet Profiles and Personalized Discovery, Subscriptions and Autoship Replenishment, Loyalty and Mobile Apps, Shopify and Shopify Plus Development, Custom Platforms and Integrations",
+    breadcrumbName: "Pet Industry",
+    audienceType: "Pet food, wellness, accessories, equestrian and lifestyle brands",
+    faqs: petIndustryFaqs,
+    offers: petIndustrySolutions.boxes.map((item) => ({
+      title: item.title,
+      description: item.description ?? "",
+    })),
   });
 }
 
