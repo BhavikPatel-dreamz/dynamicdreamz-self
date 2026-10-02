@@ -1,7 +1,12 @@
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-import type { HeroBadge } from "@/components/sections/service-hero-video-section";
+import type { HeroBadge, ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
 import type { PortfolioShowcaseItem } from "@/components/sections/portfolio-showcase-section";
 import type { ProcessStepItem } from "@/components/sections/our-development-process-section";
+import type { WhyChooseMigrationContent } from "@/components/sections/why-choose-shopify-migration-section";
+import type { ShopifyStageServicesContent } from "@/components/sections/shopify-stage-services-section";
+import type { AiEmpoweredDeliveryContent } from "@/components/sections/ai-empowered-delivery-section";
+import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
+import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 
 const icon = (name: string) => `/assets/hire-shopify-developers/icons/${name}.svg`;
 
@@ -63,22 +68,114 @@ export const hireShopifyHero = {
   ],
   cta: "Hire Shopify Developers",
   ctaHref: "/request-quote",
+  secondaryCta: {
+    label: "View Pricing",
+    href: "#our_white_label_pricing",
+  },
   video: "/assets/home/why-dynamic-dreamz.mp4",
   badges: hireShopifyHeroBadges,
-  // Retain stats for backward compatibility with legacy consumers
-  stats: [
-    { value: "50+", label: "Agile enabled Shopify Developers" },
-    { value: "5000+", label: "Completed Projects" },
-    { value: "20+", label: "Years of Experience" },
-    { value: "1000+", label: "Happy & Satisfied Clients" },
-    { value: "1000+", label: "Shopify Developments" },
-  ],
-} as const;
+} as const satisfies ServiceHeroVideoContent;
+
+export const hireShopifyStats = [
+  { value: "50+", label: "Agile enabled Shopify Developers" },
+  { value: "5000+", label: "Completed Projects" },
+  { value: "20+", label: "Years of Experience" },
+  { value: "1000+", label: "Happy & Satisfied Clients" },
+  { value: "1000+", label: "Shopify Developments" },
+] as const;
+
+export const hireShopifyBrandLogos: readonly ClientLogoSliderItem[] = [
+  {
+    src: "/assets/clients/supertails.svg",
+    href: "https://supertails.com/",
+    alt: "Supper Tails Logo",
+    width: 151,
+    height: 34,
+  },
+  {
+    src: "/assets/clients/eleven-eleven.svg",
+    href: "https://11-11.in/",
+    alt: "Eleven Eleven",
+    width: 57,
+    height: 64,
+  },
+  {
+    src: "/assets/clients/bellavita.svg",
+    href: "https://bellavitaorganic.com/",
+    alt: "bellavita logo",
+    width: 112,
+    height: 42,
+  },
+  {
+    src: "/assets/clients/bombay-shirt-company.svg",
+    href: "https://www.bombayshirts.com/",
+    alt: "Bombay Shirt Company",
+    width: 204,
+    height: 26,
+  },
+  {
+    src: "/assets/clients/popclub_co.svg",
+    href: "https://popclub.co/",
+    alt: "Popclub",
+    width: 170,
+    height: 28,
+  },
+  {
+    src: "/assets/clients/sri-sri-tattva.svg",
+    href: "https://www.srisritattva.com/",
+    alt: "SriSri Tattva Logo",
+    width: 168,
+    height: 42,
+  },
+  {
+    src: "/assets/clients/tropicfeel.svg",
+    href: "https://shop.tropicfeel.com/",
+    alt: "tropicfeel logo",
+    width: 150,
+    height: 32,
+  },
+  {
+    src: "/assets/clients/renee.svg",
+    href: "https://www.reneecosmetics.in/",
+    alt: "Renee logo",
+    width: 93,
+    height: 30,
+  },
+  {
+    src: "/assets/clients/royce-chocolate.svg",
+    href: "https://royceindia.com/",
+    alt: "Royce chocolate logo",
+    width: 132,
+    height: 38,
+  },
+  {
+    src: "/assets/clients/tego.svg",
+    href: "https://tego.fit/",
+    alt: "tego logo",
+    width: 101,
+    height: 40,
+  },
+  {
+    src: "/assets/clients/nekter-colored.svg",
+    href: "https://www.nekterjuicebar.com/",
+    alt: "nekter-colored",
+    width: 66,
+    height: 64,
+  },
+  {
+    src: "/assets/clients/rare-rabbit.svg",
+    href: "https://thehouseofrare.com/",
+    alt: "Rare Rabbit Logo",
+    width: 122,
+    height: 84,
+  },
+] as const;
 
 export const hireShopifyBrands = {
   slug: "hire-shopify-developers",
   heading: "Trusted by Leading Brands",
   ariaLabel: "Brands that trust Dynamic Dreamz for Shopify development",
+  items: hireShopifyBrandLogos,
 } as const;
 
 export const hireShopifyProcessSteps: readonly ProcessStepItem[] = [
@@ -337,11 +434,170 @@ export const hireShopifyPortfolio: readonly PortfolioShowcaseItem[] = [
   },
 ] as const;
 
+export const hireShopifyWhyHireExperts = {
+  eyebrow: "Why Dynamic Dreamz",
+  heading: "Why Hire Shopify Experts from Dynamic Dreamz?",
+  description:
+    "Get Shopify-certified expertise backed by an experienced in-house team and a verifiable Shopify Platinum Partner relationship.",
+  items: [
+    {
+      icon: "certified",
+      title: "Certified Shopify Expertise",
+      description:
+        "Shopify certifications across development, Liquid storefronts and B2B are combined with hands-on ecommerce delivery experience.",
+    },
+    {
+      icon: "verticals",
+      title: "Experience Across Multiple Verticals",
+      description:
+        "Fashion, beauty, health & nutrition, jewellery, food & beverage, home & living, sports and other product-led categories.",
+    },
+    {
+      icon: "team",
+      title: "150+ In-House Experts",
+      description:
+        "Shopify developers can be supported by UI/UX, QA, integrations, mobile and full-stack specialists when the project needs broader expertise.",
+    },
+  ],
+  partnerLogo: "/assets/proof/shopify-platinum-partner.svg",
+  partnerLogoAlt: "Dynamic Dreamz - Shopify Platinum Partner",
+  logoHref: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+  partnerHeading: "20+ Years of Ecommerce Delivery",
+  partnerDescription:
+    "Dynamic Dreamz combines long-term web and ecommerce experience with a broader 150+ expert in-house team and more than 5,000 delivered projects.",
+  stats: [
+    { value: "20+", label: "Years of Experience" },
+    { value: "150+", label: "Experts" },
+    { value: "5k+", label: "projects delivered" },
+    { value: "2.5k+", label: "Verified 5 star Reviews" },
+  ],
+  partnerLink: {
+    label: "About Dynamic Dreamz",
+    href: "/about-us",
+  },
+} satisfies WhyChooseMigrationContent;
+
+export const hireShopifyCapabilities = {
+  eyebrow: "Complete Shopify Capability",
+  heading: "Complete Shopify Expertise Under One Roof",
+  description:
+    "From front-end storefront work to custom apps, integrations and migrations, our Shopify experts can bring in the right technical depth as your requirement grows.",
+  items: [
+    {
+      tag: "Front-End Development",
+      title: "Shopify storefronts, themes and customer experience",
+      description:
+        "Liquid, custom themes, sections, templates, metafields, product pages, collections, navigation, responsive implementation and Figma-to-Shopify development.",
+      pills: ["Liquid", "Figma", "PDP", "PLP", "OS 2.0", "Responsive QA"],
+    },
+    {
+      tag: "Back-End & APIs",
+      title: "Shopify Integrations",
+      description:
+        "Admin API, Storefront API, third-party services, ERP, CRM, 3PL and operational integrations.",
+    },
+    {
+      tag: "Custom Apps",
+      title: "Shopify App Development",
+      description:
+        "Custom functionality and private/public app requirements when an off-the-shelf app is not the right fit.",
+    },
+    {
+      tag: "Replatforming & Growth",
+      title: "Migration, CRO, Shopify Plus & B2B",
+      description:
+        "Platform migrations, SEO-aware launch planning, CRO implementation, performance improvements and higher-complexity Shopify Plus or B2B requirements.",
+      pills: ["Migration", "CRO", "Performance", "Shopify Plus", "B2B"],
+    },
+    {
+      tag: "Support",
+      title: "Ongoing Development",
+      description:
+        "Fixes, enhancements, releases, app changes and long-term Shopify development capacity after launch.",
+    },
+    {
+      tag: "Mobile App",
+      title: "Shopify Plus Mobile App Development",
+      description:
+        "Build high-performance iOS and Android shopping apps integrated with Shopify Plus, including real-time products, customer accounts, checkout, push notifications and loyalty features.",
+      cta: {
+        label: "Explore Shopify Mobile Apps",
+        href: "/shopify-mobile-app-development",
+      },
+    },
+  ],
+} satisfies ShopifyStageServicesContent;
+
+export const hireShopifyAiTools = {
+  eyebrow: "AI-Empowered Shopify Delivery",
+  heading: "Shopify experts empowered by modern AI development tools.",
+  description:
+    "Our developers use AI-assisted tools such as Claude and Cursor where they can improve code exploration, debugging, documentation, refactoring and repetitive development work. AI helps accelerate the workflow — but architecture, business logic, security, code quality and production releases remain under the control of experienced developers and our QA process.",
+  tools: [
+    {
+      name: "Claude",
+      description: "Code analysis & development assistance",
+    },
+    {
+      name: "Cursor",
+      description: "AI-assisted coding & codebase exploration",
+    },
+    {
+      name: "Human Review",
+      description: "Architecture, security & maintainability",
+    },
+    {
+      name: "QA",
+      description: "Device, browser & ecommerce-flow validation",
+    },
+  ],
+  callout:
+    "Modern tools help our developers move faster. Human Shopify expertise remains responsible for the final solution.",
+} satisfies AiEmpoweredDeliveryContent;
+
+export const hireShopifyPricing = {
+  eyebrow: "Flexible Shopify Engagements",
+  heading: "Choose the Right Shopify Expert Engagement",
+  description:
+    "Use the same flexible engagement model available across our Shopify services — from one defined project to ongoing development capacity.",
+  items: [
+    {
+      label: "Project-Based",
+      badge: "Have One Shopify Project?",
+      price: "Custom Quote",
+      description:
+        "For Shopify builds, redesigns, migrations, custom functionality, integrations and other clearly defined requirements.",
+      ctaLabel: "Send Brief — Get a Quote",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Flexible Hourly Support",
+      badge: "Need Extra Shopify Capacity?",
+      price: "From $25/hour",
+      description:
+        "For maintenance, enhancements, troubleshooting, CRO implementation and changing Shopify development priorities.",
+      ctaLabel: "Buy Shopify Development Hours",
+      ctaHref: "/buy-shopify-development-hours",
+    },
+    {
+      label: "Dedicated Developer / Team",
+      badge: "Need Ongoing Capacity?",
+      price: "From $2,000/month",
+      description:
+        "For brands or agencies with a steady Shopify roadmap, recurring releases or a need for consistent development continuity.",
+      ctaLabel: "Discuss Dedicated Capacity",
+      ctaHref: "/book-a-discovery-call",
+    },
+  ],
+} satisfies PricingEngagementContent;
+
 export const hireShopifyWork = {
   eyebrow: "Portfolio",
   heading: "Work of our Shopify Developers that show our Expertise",
   description:
     "We are sure you would like to hear to what our clients says about our Shopify development.",
+  ctaLabel: "View our work",
+  ctaHref: "/our-work",
   items: hireShopifyPortfolio,
 } as const;
 
@@ -435,9 +691,13 @@ export const hireShopifyContent = {
   brands: hireShopifyBrands,
   whyChoose: hireShopifyWhyChoose,
   process: hireShopifyProcess,
+  whyHireExperts: hireShopifyWhyHireExperts,
+  capabilities: hireShopifyCapabilities,
   advantages: hireShopifyAdvantagesContent,
+  aiTools: hireShopifyAiTools,
   services: hireShopifyServices,
   work: hireShopifyWork,
+  pricing: hireShopifyPricing,
   testimonials: hireShopifyTestimonials,
   faqs: {
     heading: "Frequently Asked Questions",

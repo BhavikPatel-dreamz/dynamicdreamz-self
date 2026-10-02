@@ -2,8 +2,11 @@ import { ServiceHeroVideoSection } from "@/components/sections/service-hero-vide
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
 import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
-import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import { WhyChooseShopifyMigrationSection } from "@/components/sections/why-choose-shopify-migration-section";
+import { ShopifyStageServicesSection } from "@/components/sections/shopify-stage-services-section";
+import { AiEmpoweredDeliverySection } from "@/components/sections/ai-empowered-delivery-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
+import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import {
@@ -35,22 +38,13 @@ export function HireShopifyDevelopersPage() {
     })),
   };
 
-  const servicesContent = {
-    heading: hireShopifyContent.services.heading,
-    description: hireShopifyContent.services.description,
-    items: hireShopifyContent.services.items.map((item) => ({
-      title: item.title,
-      description: item.description,
-      iconSvg: <HireShopifyIcon name={item.iconKey as HireShopifyIconName} />,
-    })),
-  };
-
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroVideoSection content={hireShopifyContent.hero} />
       <IndustryBrandsSection
         content={hireShopifyContent.brands}
         heading={hireShopifyContent.brands.heading}
+        items={hireShopifyContent.brands.items}
       />
       <ThemeCustomizationServicesSection
         content={whyChooseContent}
@@ -60,19 +54,18 @@ export function HireShopifyDevelopersPage() {
         className="our-development-process bg-transparent"
         content={hireShopifyContent.process}
       />
+      <WhyChooseShopifyMigrationSection
+        content={hireShopifyContent.whyHireExperts}
+      />
+      <ShopifyStageServicesSection
+        content={hireShopifyContent.capabilities}
+        lastColFull
+      />
       <ThemeCustomizationServicesSection
         content={advantagesContent}
         variant="green"
       />
-      <AgencyServicesSection
-        cardVariant="services-box"
-        className="what-we-provide-sec py-20 max-[992px]:py-[50px]"
-        columns={2}
-        content={servicesContent}
-        hideCta
-        id="services"
-        variant="compact"
-      />
+      <AiEmpoweredDeliverySection content={hireShopifyContent.aiTools} />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
         className="our-work-sec pt-0 pb-20 max-[992px]:pb-[60px]"
@@ -80,6 +73,7 @@ export function HireShopifyDevelopersPage() {
         content={hireShopifyContent.work}
         sectionId="our_work"
       />
+      <PricingTableSection content={hireShopifyContent.pricing} />
       <div id="shopify-testimonials">
         <HappyClientSection
           description={hireShopifyContent.testimonials.description}

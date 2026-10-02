@@ -2658,14 +2658,14 @@ summary, claim qualification, or grammar correction remains approval-dependent.
 
 ## Hire Shopify Developers (`/hire-shopify-developers`)
 
-Status: implemented and verified; full 1:1 live parity with refreshed 9-section architecture
-Last reviewed: 2026-09-23
+Status: implemented and verified; full 1:1 live parity with complete 12-section architecture
+Last reviewed: 2026-10-02
 Primary audience: ecommerce founders, direct-to-consumer brands, and digital agencies looking to hire dedicated Shopify developers or complete Shopify engineering teams.
 Decision stage: vendor selection, staffing model evaluation, technical scoping, and quote request.
 
 ### Page role
 
-This page targets the commercial intent for hiring dedicated Shopify developers. It communicates Dynamic Dreamz's 20+ years of experience, 4500+ Shopify stores built, and Shopify Platinum Partner standing while presenting a structured 4-step hiring process, comprehensive Shopify services, advantages, featured Shopify portfolio work, video testimonials, and FAQs.
+This page targets the commercial intent for hiring dedicated Shopify developers. It communicates Dynamic Dreamz's 20+ years of experience, 5000+ projects delivered, and Shopify Platinum Partner standing while presenting a structured 4-step hiring process, comprehensive Shopify expertise (storefronts, APIs, apps, migration/B2B, support, mobile app), advantages, AI-empowered delivery, 8 featured Shopify portfolio projects, 3 engagement/pricing models, video testimonials, and FAQs.
 
 ### Target prompts
 
@@ -2677,14 +2677,17 @@ This page targets the commercial intent for hiring dedicated Shopify developers.
 
 ### Current strengths and available evidence
 
-- Server-rendered H1 hero with dual eyebrow ("Established in 2006" & "Shopify Platinum Partner"), single CTA button (`Hire Shopify Developers` -> `/request-quote`), 4 partner badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), and right-side video preview (`why-dynamic-dreamz.mp4`).
-- Trusted by Leading Brands strip with 12 client logos on `#FBEED5`.
-- Why Choose Dynamic Dreamz for Shopify Development section on `#fafaf7` with 3 feature cards and red vector SVG icons.
+- Server-rendered H1 hero with dual eyebrow ("Established in 2006" & "Shopify Platinum Partner"), dual CTAs (`Hire Shopify Developers` -> `/request-quote` and `View Pricing` -> `#our_white_label_pricing`), 4 partner badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), and right-side video preview (`why-dynamic-dreamz.mp4`).
+- Trusted by Leading Brands strip with 12 canonical brand logos on `#FBEED5`.
+- Why Choose Dynamic Dreamz for Shopify Development section on `#fafaf7` with 3 feature boxes and red vector SVG icons.
 - Hassle free Hiring Process section with 4 numbered steps on transparent background.
+- Why Hire Shopify Experts dark section on `#151515` with 3 capability items and Shopify Platinum Partner card (4 stats: 20+ Years, 150+ Experts, 5k+ Projects, 2.5k+ Reviews).
+- Complete Shopify Expertise Under One Roof grid with 6 capability cards, technology tags/pills, and full-width mobile app development card.
 - Advantages section on pista background `#eff4ef` with 6 card boxes and red vector SVG icons.
-- End to End Development Services grid with 4 cards and red vector SVG icons on `#fafaf7`.
-- Portfolio work section with 8 featured Shopify projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz) and "View our work" CTA.
-- Customer Testimonials section with 11 video testimonial cards carousel and YouTube popup triggers.
+- AI-Empowered Shopify Delivery section with modern AI tools breakdown (Claude, Cursor, Human Review, QA) and human expertise assurance callout.
+- Portfolio work section with 8 featured Shopify projects (Nufyx, Nekter Juice Bar, Pagerie, Luxxi Nails, Eco Soul, AdHOC Atelier, Bombay Shirt Company, Holy Plantz) and "View our work" CTA button -> `/our-work`.
+- Flexible Shopify Engagements / Choose the Right Shopify Expert Engagement pricing table with 3 transparent engagement models (Project-Based Custom Quote -> `/request-quote`, Flexible Hourly Support From $25/hour -> `/buy-shopify-development-hours`, Dedicated Developer / Team From $2,000/month -> `/book-a-discovery-call`).
+- Customer Testimonials section with video testimonial cards carousel and YouTube popup triggers.
 - Frequently Asked Questions section with 5 comprehensive accordion items in split layout.
 - Bottom CTA banner omitted to match the live site layout exactly.
 - Emits WebPage, Service, OfferCatalog, FAQPage, BreadcrumbList, and Organization JSON-LD schemas.
@@ -2693,9 +2696,9 @@ This page targets the commercial intent for hiring dedicated Shopify developers.
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route parity | Live site refreshed section architecture | Rebuilt 9-section architecture matching live site 1:1 | Inspected live DOM & CSS |
+| P0 | implemented | Route parity | Live site 12-section architecture | Rebuilt full 12-section architecture matching live site 1:1 | Inspected live DOM & CSS |
+| P0 | implemented | Pricing transparency | Engagement models and price points displayed | Displayed Project-Based, Hourly ($25/hr), and Dedicated ($2,000/mo) cards | Matches live site engagement section |
 | P0 | implemented | Structured data | Missing rich Service, FAQPage, and BreadcrumbList schema | Emit complete Service with FAQPage and OfferCatalog schemas | Verified JSON-LD in production build |
-| P1 | deferred | Rate transparency | Hourly and dedicated rate bands are not publicly listed | Provide governed developer pricing ranges once sales approves | Sales and leadership approval |
 
 ### Suggested answer copy
 
@@ -2708,9 +2711,10 @@ Preserve the live visible copy during migration. Future approved answer copy sho
 
 ### Internal-link and conversion actions
 
-- Route primary hiring CTAs to `/request-quote`.
+- Route primary hiring CTAs to `/request-quote` and pricing CTA to `#our_white_label_pricing`.
 - Route portfolio continuation to `/our-work`.
-- Connect to related Shopify service pages (`/shopify-plus-agency`, `/shopify-theme-customization`, `/shopify-migration`).
+- Route engagement model CTAs to `/request-quote`, `/buy-shopify-development-hours`, and `/book-a-discovery-call`.
+- Connect to related Shopify service pages (`/shopify-plus-agency`, `/shopify-theme-customization`, `/shopify-migration`, `/shopify-mobile-app-development`).
 
 ### Structured-data, crawler, and freshness actions
 

@@ -4,6 +4,7 @@ import { useId, useState } from "react";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { shopifyHoursSectionCopy, type ShopifyHoursPackage } from "@/content/buy-shopify-development-hours";
+import Link from "next/link";
 
 type PricingPackageSelectorProps = {
   packages: readonly ShopifyHoursPackage[];
@@ -102,13 +103,12 @@ export function PricingPackageSelector({
         {shopifyHoursSectionCopy.pricing.purchasePrefix}${selectedPackage.cost}
       </ButtonLink>
       <div className="flex text-center">
-        <ButtonLink
-          className="flex w-full max-w-none !min-h-0 rounded-none border-0 !px-0 !pt-5 !pb-0 !text-sm !leading-[normal] text-ink underline decoration-[1.5px] underline-offset-2 before:hidden hover:text-brand-red [&>span[aria-hidden]]:hidden"
+        <Link
+          className="block w-full pt-5 text-center font-montserrat text-sm leading-[normal] font-bold text-ink uppercase underline decoration-[1.5px] underline-offset-[2px] transition-colors duration-500 hover:text-brand-red"
           href={quoteHref}
-          variant="outline"
         >
           {quoteLabel}
-        </ButtonLink>
+        </Link>
       </div>
     </div>
   );
