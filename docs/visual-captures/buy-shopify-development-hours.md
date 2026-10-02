@@ -2,9 +2,9 @@
 
 Route: `/buy-shopify-development-hours`
 Live reference: `https://www.dynamicdreamz.com/buy-shopify-development-hours/`
-Capture date: 2026-08-21
-Browser: headless Google Chrome
-Status: live and local responsive correction pass complete; production verification rerun
+Capture date: 2026-10-01 (full page) and 2026-10-01 (hero parity pass, see "Hero parity pass")
+Browser: Microsoft Edge (headless) / Google Chrome
+Status: live-site remigration pass and full visual parity styling complete; section order, split headers, brand logos, comparison tables, tasks pills, timeline, and pricing slider match live site exactly
 
 ## Screenshots
 
@@ -15,68 +15,186 @@ Status: live and local responsive correction pass complete; production verificat
 - Local tablet, 768 × 1024: `docs/visual-captures/buy-shopify-development-hours/local-tablet-768.png`
 - Local mobile, 390 × 844: `docs/visual-captures/buy-shopify-development-hours/local-mobile-390.png`
 - Tall live/local working captures were compared section by section during implementation; temporary review files are removed after verification.
+- All six hero-viewport captures above were re-taken on 2026-10-01 after the hero parity fixes described below. The Next.js dev-tools indicator (`nextjs-portal`) is removed from local captures before the screenshot is taken because it is a dev-only fixed overlay that does not exist in production or on the live site.
+
+## Hero parity pass (2026-10-01)
+
+The hero (`.inner-hero-sec.hire-shopify-dev-flexi-hours`) and the pricing package
+selector card inside it were re-verified against the live page at 1440, 768 and
+390 px widths. Verification combined code/CSS comparison of the live sources
+with exact `getBoundingClientRect()` / `getComputedStyle()` probes of both pages
+and a numeric per-pixel comparison of matching screenshots.
+
+### Live sources inspected
+
+- `style.css?ver=7.1.2` — `.eyebrow` cascade (`:141-145`, `:155`, `:399-400`,
+  `:449-452`) and `ul li { line-height: normal }`.
+- `common.css` — `:6` mobile `.eyebrow` overrides (`top:4px; width:15px`,
+  `.section_title_with_eyebrow .eyebrow { padding-left: 23px }`).
+- `assets/css/shopify-bulk/main.css` — hero, list, card and slider rules.
+- `assets/css/shopify-bulk/media.css` — 1199 / 991 / 767 breakpoints.
+- Theme JS — the pricing slider handler (thumb geometry, `data-val` swap).
+- View Page Source of the live page — hero markup (`.title > .eyebrow` with two
+  `<span>` items, `<h1>…<span>Flexible Hours</span></h1>`, `.hire-shopify-dev-list h5`).
+
+### Measurements after the pass
+
+Both pages report identical geometry at all three widths (values in px):
+
+| Element | 1440 | 768 | 390 |
+| --- | --- | --- | --- |
+| Hero section height | 790.6 | 1387.2 | 1328.2 |
+| Hero row y / height | 150 / 560.6 | 100 / 1247.2 | 100 / 1188.2 |
+| Left column x / y | 60 / 195.1 | 44 / 100 | 16 / 100 |
+| Eyebrow y / height | 199.1 / 16.8 | 106 / 14.4 | 108 / 12 |
+| H1 y / height | 229.1 / 120 | 134 / 100 | 134 / 80 |
+| Intro paragraph y | 361.1 | 246 | 226 |
+| Highlights list y | 460.1 | 345 | 381 |
+| Right (pricing) column x / y | 733.2 / 150 | 44 / 550.4 | 16 / 646.4 |
+| Next section top | 871 | 1447 | 1388 |
+
+Screenshot pixel comparison (live vs local, same viewport):
+
+| Width | Differing pixels (>24 channel-sum) | Mean abs diff | Mean horizontal centroid shift |
+| --- | --- | --- | --- |
+| 1440 | 26 467 (2.04 %) | 2.67 | 0.09 px |
+| 768 | 24 380 (3.53 %) | 4.26 | 0.02 px |
+| 390 | 46 013 (13.11 %) | 12.77 | 0.08 px |
+
+A live-vs-live control capture of the same page is byte-identical (0 differing
+pixels), so the residual difference above is real rendering difference rather
+than capture noise. Per-region ink bounding boxes and column/row ink profiles
+were compared for the header, the H1, the paragraph, the highlights list and the
+pricing card at every width: all bounding boxes are identical and all profiles
+match to within antialiasing. The residual is glyph rasterization only — the
+local build ships Montserrat as a variable font (`montserrat`, weight axis
+400–800) while the live site serves static Montserrat per-weight files, so stem
+and curve edges antialias slightly differently on the cream `#F7F4E9` hero
+background. No element is offset, resized, recoloured or re-ordered.
+
+### Defects found and fixed during the pass
+
+1. **Eyebrow line box.** Live renders `.section_title_with_eyebrow .title` as a
+   14 px / 24 px block and `.eyebrow` inline inside it, with the accent line as
+   an absolutely positioned `::before` (`left:0; top:7px`, 30 × 2 px) plus
+   `padding-left:40px`. The local eyebrow used the shared `Eyebrow` primitive
+   in its default flex-line mode, so the accent line became a flex item and
+   pushed the eyebrow text 3.4 px (1440), 2.8 px (768) and 2.0 px (390) below
+   the live baseline. Fixed by adding a backward-compatible
+   `linePosition?: "flow" | "overlay"` prop to `src/components/ui/eyebrow.tsx`
+   (default `"flow"` — every other page is unchanged) and using
+   `linePosition="overlay"` in the hero.
+2. **Pricing card stat widths.** Live cascade is ≥1200 `31.8%`, ≤1199 `48.5%`
+   with `:last-child { width:100% !important }`, and ≤991
+   `calc(50% - 5px) !important` which wins over the `:last-child` rule. The
+   local card had an extra `max-[767px]:w-full` that the live cascade does not
+   produce. Fixed to mirror the live cascade exactly.
+3. **Struck-through prices.** The two `<del>` elements were inline, producing a
+   30.4 px inline line box on top of the 38 px live block box
+   (`div.sub-old`). Added `block` so the package price rows keep the live box
+   height on stacked mobile.
+4. **Slider labels.** `margin-top: 15px` was replaced with
+   `padding-top: 15px` so the labels sit at the live position.
+5. **Slider measurement.** The thumb is now re-measured on
+   `document.fonts.ready`, matching the live handler which recomputes on resize;
+   without it the local thumb was 1 px off at 390 because it measured against
+   fallback-font metrics.
+
+### Deliberate differences
+
+- **Reveal animation.** Live applies `data-aos="fade-up"` to
+  `.hire-shopify-dev-flexi-hours-row`. The local hero renders immediately with
+  no entrance animation, because the project has no AOS primitive and adding
+  one would add client JavaScript and risk scroll-linked flashes for a
+  decorative effect. Content and geometry are identical either way.
+- **Heading level.** Live uses `<h5>` for "Key Highlights"; local uses `<h2>`
+  for heading-order correctness. Rendered size, weight, colour and position are
+  identical.
+- **H1 accent colour.** The live `<span>Flexible Hours</span>` carries no colour
+  class and renders `#282828`, identical to the surrounding `h1`. (An earlier
+  version of this note claimed brand red; that was incorrect.) Local matches the
+  live computed colour.
+- **Container width step.** Live has a `min-[1300px]:max-w-[1280px]` step. The
+  shared `Container` component was intentionally left unchanged so 1300–1399 px
+  viewports keep one shared container behaviour across the site instead of
+  diverging only on this route.
+- **`ButtonLink` breakpoint.** The shared button component switches at
+  `max-[992px]`; live switches at 991 px. A one-pixel-wide divergence at a
+  single breakpoint, left unchanged to avoid a global visual change.
 
 ## Sources inspected
 
-- Rendered live page and full-page scroll at desktop, tablet, and mobile sizes.
-- View Page Source saved temporarily as `scratch/buy-shopify-development-hours/live/page.html`.
-- Theme stylesheet `style.css?ver=7.1`.
-- Theme responsive stylesheet `assets/css/default-media.css?ver=1787303692`.
-- Page stylesheets `assets/css/shopify-bulk/main.css?ver=1787303692` and `assets/css/shopify-bulk/media.css?ver=1787303692`.
-- Shared interaction scripts `assets/js/migration.js?ver=1787303692` and `assets/js/custom.js?ver=1787230067`.
-- Inline pricing data and range-slider script.
-- Yoast metadata and graph plus the separate visible FAQ JSON-LD block.
+- Rendered live page and full-page scroll at desktop, tablet, and mobile sizes (inspected 2026-10-01).
+- View Page Source fetched directly from `https://www.dynamicdreamz.com/buy-shopify-development-hours/`.
+- Theme stylesheet `style.css?ver=7.1.2`.
+- Page stylesheets `assets/css/shopify-bulk/main.css?ver=1790848630` and `assets/css/shopify-bulk/media.css?ver=1790848630`.
+- Flexible component stylesheets `assets/css/flexible-css/shopify_theme_customization_services.css?ver=1790070491`, `assets/css/flexible-css/shopify_team_boxes.css?ver=1788863985`, `assets/css/flexible-css/partnering_with_ambitious_brands.css?ver=1788526891`, and `assets/css/flexible-css/faqs_section.css?ver=1788412226`.
+- Yoast SEO metadata, Yoast graph, and separate visible FAQ JSON-LD graph.
 
 ## Live section order and visual system
 
-1. Shared header above a cream split hero with page copy and a bordered pricing selector card.
-2. Centered `Designed for Flexibility, Speed, and Control` heading above a five-item divider grid.
-3. Dark green-black audience section with a left heading and four green-dot buyer profiles.
-4. Off-white engagement comparison section with a left heading and a two-column bordered comparison card.
-5. White centered task-usage section with eleven rounded pill items.
-6. Off-white five-step engagement timeline with outlined number circles, dashed connectors, red dots, and short step copy.
-7. White `Brands That Trust Us` section with a 5 × 4 logo grid on desktop/tablet and three continuous marquee rows on mobile.
-8. Pale-blue FAQ section with ten white accordion cards; the first answer is open by default.
-9. Off-white split closing CTA followed by the shared footer.
-
-Observed colors: ink `#282828`, muted text `#535353`, brand red `#AD5151`, cream `#F7F4E9`, off-white `#FAFAF7`, dark section `#171E16`, pale-blue FAQ `#E6ECF0`, green audience dots `#36F4A4`, and comparison tint `rgba(173,81,81,.10)`. Desktop H1 is 50px/66px Montserrat with -1px tracking; section headings are 35px/48.475px; body copy is commonly 16px/30.4px or 18px/34.2px. The shared content container reaches 1360px at 1400px and above.
+1. Shared header above a cream split hero (`inner-hero-sec hire-shopify-dev-flexi-hours`):
+   - Eyebrows: "Established in 2006" & "Shopify Platinum Partner"
+   - H1: "Hire Shopify Developer with Flexible Hours" (the "Flexible Hours" `<span>` carries no colour class on live and renders `#282828`, the same colour as the rest of the H1)
+   - Intro paragraph
+   - "Key Highlights" list with custom red check icons
+   - Bordered pricing package selector card with 4 discrete positions (10, 25, 50, 100 HRS), default 50 HRS selected, immediate rate/cost updates, active thumb label bubble ("50 HRS"), new-tab Razorpay purchase links, and "Request a Custom Quote" link.
+2. `theme-customization-services pt-0 transparent`:
+   - Eyebrow: "Why Bulk Hours"
+   - H2: "Designed for Flexibility, Speed, and Control"
+   - Description: "Get reliable Shopify development support without long-term commitments..."
+   - 5 numbered boxes (01 to 05) with peach number badge and red font, rebuilt via canonical `ThemeCustomizationServicesSection`.
+3. `shopify-dev-team pt-80 pb-80`:
+   - Eyebrow: "Flexible Shopify Hours"
+   - H2: "Who Should Buy Bulk Shopify Hours?"
+   - Description: "Bulk Shopify hours are ideal for businesses that need reliable development support..."
+   - 4 dark team boxes (Growing Brands, Shopify Plus Stores, Founders & E‑com Teams, Agencies), rebuilt via canonical `ShopifyTeamBoxesSection`.
+4. `bulk-shopify-fulltime-resources`:
+   - Eyebrow: "Engagement Options"
+   - H2: "Bulk Shopify Hours vs Full-Time Resource"
+   - Description: "Choosing the Right Engagement Mode."
+   - Ribbon banner: "We offer both — you choose what fits your business."
+   - 2-column comparison card: "Bulk Shopify Hours" (light yellow background, 4 bullets, "Bulk hours are ideal for flexibility.", button) vs "Full-Time Shopify Resource" (3 bullets, "Full-time resources are better for constant, ongoing development.", button).
+5. `can-you-use-shopify-hours`:
+   - Eyebrow: "Flexible Use Cases"
+   - H2: "What Can You Use Shopify Hours For?"
+   - Description: "Your bulk hours can be used for a wide range of Shopify design and development tasks, including:"
+   - 11 rounded task pills with check icons.
+6. `engagement-section`:
+   - Eyebrow: "Engagement Process"
+   - H2: "How the Engagement Works"
+   - Description: "A simple, transparent process that lets you purchase Shopify development hours..."
+   - 5-step numbered horizontal timeline with dashed connector line and red dots, rebuilt via `NumberedProcessTimelineSection`.
+7. `trusted_leading_brands`:
+   - H2: "Partnering with Ambitious Brands"
+   - Description: "Selected brands our teams have supported across Shopify, Shopify Plus and digital commerce."
+   - 20 client logos in 5 × 4 grid (desktop/tablet) and 3 animated continuous rows (mobile), rebuilt via `BrandPartnersSection`.
+8. `faq-sec`:
+   - H2: "Frequently Asked Questions"
+   - 10 FAQs matching the live page, rendered via `SplitFaqSection` conforming to the project-wide FAQ standard.
+9. Shared footer (NO closing CTA banner on live page).
 
 ## Pricing control and purchase states
 
-- Packages are 10 hours at $40/hour ($400, formerly $500), 25 hours at $35/hour ($875, formerly $1000), 50 hours at $30/hour ($1500, formerly $1750), and 100 hours at $25/hour ($2500, formerly $3000).
-- The 50-hour package is selected by default. The range has four discrete positions and updates hours, rate, previous rate, cost, previous cost, button label, red fill, and thumb bubble immediately on `input`.
-- Each package purchase action opens its exact `rzp.io` Razorpay payment link in a new tab. All four links resolved to their corresponding Razorpay Pages destination with HTTP 200 during final verification. `Request a Custom Quote` uses `/request-quote`.
-- The local native range preserves all four package states and keyboard operation, has an explicit accessible name and selected-package value text, and ships a valid default 50-hour purchase href before hydration.
+- Packages:
+  - 10 hours at $40/hour ($400, formerly $500) -> `https://rzp.io/rzp/dynamicdreamz-10hourspackage`
+  - 25 hours at $35/hour ($875, formerly $1000) -> `https://rzp.io/rzp/dynamicdreamz-25hourspackage`
+  - 50 hours at $30/hour ($1500, formerly $1750) -> `https://rzp.io/rzp/dynamicdreamz-50hourspackage`
+  - 100 hours at $25/hour ($2500, formerly $3000) -> `https://rzp.io/rzp/dynamicdreamz-100hourspackage`
+- The 50-hour package is selected by default.
+- Range updates hours, rate, previous rate, cost, previous cost, button label ("BUY SHOPIFY HOURS - $1500"), and thumb bubble ("50 HRS") immediately.
 
-## Responsive behavior and breakpoints
+## Component reuse & consolidation
 
-- `1399px`: audience-card widths tighten.
-- `1199px`: pricing stats become two columns with Cost full width; comparison heading stacks above its card; primary section padding reduces to 60px.
-- `991px`: the hero stacks copy over the pricing card; pricing card loses its left gutter; audience and comparison headings center; the brand grid becomes four columns.
-- `767px`: headings reduce to 30px H1 and 24px H2; commitment and audience items become one column; comparison cards stack; task pills become full width; the process becomes a vertical timeline; the desktop logo grid is replaced by three animated rows.
-- `599px`, `475px`, and `374px`: process circles and comparison ribbon reduce further for narrow screens.
-- No horizontal overflow was observed on either live or local pages at 1440px, 768px, or 390px.
-
-## Interaction and motion
-
-- Shared buttons use the 600ms sliding-fill hover treatment.
-- The underlined custom-quote link changes to brand red over 500ms.
-- FAQ items use delegated click handling and jQuery slide motion (default 400ms). Opening one closes the prior item; selecting the open item closes all answers.
-- Mobile client-logo rows animate linearly for 25 seconds per cycle. The top and bottom rows move left while the middle row moves right.
-- The local browser audit confirmed 1ms reduced-motion animation/transition fallbacks, zero-or-one-open FAQ behavior, native slider keyboard control, and visible global keyboard focus handling.
+- Reused `ThemeCustomizationServicesSection` with `variant="transparent"` and `className="pt-0"` for Section 2, eliminating previous custom border grid.
+- Reused `ShopifyTeamBoxesSection` for Section 3, eliminating previous custom green-dot audience section.
+- Reused `NumberedProcessTimelineSection` extended with backward-compatible optional `description` prop for Section 6.
+- Reused `BrandPartnersSection` with canonical 20 logos for Section 7.
+- Reused `SplitFaqSection` for Section 8.
+- Removed extraneous `WhiteLabelFinalCtaSection` (which does not exist on live).
 
 ## Asset map
 
-- All twenty brand logos were reused from their canonical `public/assets/clients/` paths in the live order, with meaningful brand-specific alt text on the accessible desktop/tablet grid and intentionally decorative duplicates in the mobile marquees.
-- The live plus and minus icons are byte-identical to `/assets/life-dynamicdreamz/faq/plus.svg` and `/assets/life-dynamicdreamz/faq/minus.svg`.
-- The three unique page icons were compared in the scratch buffer, cleaned, and ingested under `public/assets/buy-shopify-development-hours/icons/`. A page-specific 1200 × 630 local WebP social image was generated from the verified local hero.
-
-## Final comparison and intentional differences
-
-- A second visual audit was completed after the initial migration review. It corrected the hero highlight rhythm, 16px visible pricing thumb, pricing-card flow, tablet hero sizing, audience card spacing/stacking, comparison ribbon and below-table buttons, task intro typography and checks, process line breaks, tablet FAQ padding, brand-row positioning, and closing CTA responsive type and spacing.
-- The corrected hero is the same height as live at 1440px and 390px. At 768px, the hero and its 60px following gap also match live. The task section matches live height at all three audited widths; the mobile comparison and process sections also match live height exactly.
-- Final full-page geometry is 6489px local vs 6456px live at 1440px, 8102px vs 8111px at 768px, and 9503px vs 9488px at 390px. The mobile page body through the closing CTA differs by 14px; the remaining full-page variance is predominantly the repository's shared footer. No page section is omitted.
-- The repository's shared header/footer remain in use, so shared-shell navigation labels and mobile-footer behavior follow the migrated site system instead of introducing a route-only legacy shell.
-- The 75-character live title was shortened to `Buy Shopify Development Hours | Dynamic Dreamz` in metadata only to meet the repository's enforced 60-character budget; visible copy is unchanged.
-- The live source's unrelated sitewide Yoast FAQ graph was intentionally omitted. Local JSON-LD contains only the ten visible FAQs and the four visible USD package offers.
-- Generic live logo alt text was replaced nonvisually with brand-specific alternatives. External purchase links add `noopener noreferrer`, and all shipped visual assets are local; these production/accessibility corrections do not change the visible result.
+- Brand logos: 20 canonical client logos from `public/assets/clients/`.
+- Icons: `public/assets/buy-shopify-development-hours/icons/` (`comparison-check.svg`, `key-highlights.svg`, `task-check.svg`).
+- Social image: `public/assets/buy-shopify-development-hours/shopify-development-hours-packages.webp`.

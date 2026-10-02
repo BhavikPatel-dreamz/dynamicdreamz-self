@@ -40,18 +40,18 @@ export function BrandPartnersSection({
       <Container>
         <div
           className={cn(
-            "flex items-end justify-between",
+            "flex items-end justify-between max-[992px]:flex-col max-[992px]:items-start",
             isShopifyHours
-              ? "mb-10 justify-center text-center max-[767px]:mb-[53px]"
-              : "mb-[50px] min-[768px]:max-[992px]:mb-[30px] min-[768px]:max-[992px]:flex-col min-[768px]:max-[992px]:items-start max-[767px]:mb-[55px] max-[767px]:flex-col max-[767px]:text-center",
+              ? "mb-10 max-[767px]:mb-[30px]"
+              : "mb-[50px] min-[768px]:max-[992px]:mb-[30px] max-[767px]:mb-[55px] max-[767px]:text-center",
           )}
         >
-          <div className="title lg:w-[45%] w-full">
+          <div className="title lg:w-[44%] w-full">
             <SectionHeading
               unstyled={isShopifyHours}
               className={cn(
                 isShopifyHours
-                  ? "font-sans text-[35px] leading-[1.4] font-bold tracking-[-0.8px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
+                  ? "font-sans text-[35px] leading-[1.4] font-bold tracking-[-0.8px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
                   : "min-[768px]:max-[992px]:mb-2.5 min-[768px]:max-[992px]:w-full max-[767px]:mb-2.5",
               )}
             >
@@ -59,8 +59,8 @@ export function BrandPartnersSection({
             </SectionHeading>
           </div>
           <SectionDescription
-            className="lg:w-[48%] w-full"
-            textClassName="text-left max-[767px]:text-center max-[767px]:text-sm"
+            className="lg:w-[48.3%] w-full"
+            textClassName="text-left max-[767px]:text-sm"
           >
             {description}
           </SectionDescription>
@@ -77,7 +77,7 @@ export function BrandPartnersSection({
             <div
               className={cn(
                 "flex items-center justify-center mx-[15px] min-[768px]:max-[992px]:mx-[15px] max-[992px]:px-[15px]",
-                isShopifyHours ? "min-h-[113px] max-[992px]:min-h-[95px] [&_img]:grayscale" : "min-h-[50px]",
+                isShopifyHours ? "min-h-[113px] max-[992px]:min-h-[95px]" : "min-h-[50px]",
               )}
               key={logo.src}
             >
@@ -92,7 +92,7 @@ export function BrandPartnersSection({
             {[0, 1, 2].map((set) => (
               <div className={cn("flex shrink-0 items-center", index === 1 ? styles.moveRight : styles.moveLeft)} key={set}>
                 {row.map((logo) => (
-                  <span className={cn("mx-[30px] flex w-[120px] min-w-[120px] shrink-0 items-center justify-center [&_img]:h-auto [&_img]:w-auto", isShopifyHours && "[&_img]:grayscale")} key={`${set}-${logo.src}`}>
+                  <span className="mx-[30px] flex w-[120px] min-w-[120px] shrink-0 items-center justify-center [&_img]:h-auto [&_img]:w-auto" key={`${set}-${logo.src}`}>
                     <ClientLogo logo={logo} decorative />
                   </span>
                 ))}

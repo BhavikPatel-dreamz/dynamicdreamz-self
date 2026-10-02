@@ -1,6 +1,7 @@
+import type { ShopifyTeamBoxesContent } from "@/components/sections/shopify-team-boxes-section";
+import type { ThemeCustomizationServicesContent } from "@/components/sections/theme-customization-services-section";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { getClientLogo, type ImageItem } from "@/content/home";
-import type { WhiteLabelFinalCta } from "@/types/white-label-service";
 
 export type ShopifyHoursPackage = {
   hours: number;
@@ -12,7 +13,9 @@ export type ShopifyHoursPackage = {
 };
 
 export const shopifyHoursSectionCopy = {
-  brandsHeading: "Brands That Trust Us",
+  brandsHeading: "Partnering with Ambitious Brands",
+  brandsDescription:
+    "Selected brands our teams have supported across Shopify, Shopify Plus and digital commerce.",
   pricing: {
     hours: "Hours",
     bulkHours: "Bulk hours",
@@ -22,7 +25,7 @@ export const shopifyHoursSectionCopy = {
     perHour: "/hour",
     packageLabel: "Select a Shopify development hours package",
     hoursSuffix: "HRS",
-    purchasePrefix: "Buy Shopify Hours - $",
+    purchasePrefix: "BUY SHOPIFY HOURS - $",
   },
 } as const;
 
@@ -62,6 +65,7 @@ export const shopifyHoursPackages = [
 ] as const satisfies readonly ShopifyHoursPackage[];
 
 export const shopifyHoursHero = {
+  eyebrows: ["Established in 2006", "Shopify Platinum Partner"] as const,
   title: "Hire Shopify Developer with Flexible Hours",
   emphasizedTitle: "Flexible Hours",
   description:
@@ -78,43 +82,54 @@ export const shopifyHoursHero = {
     accent: "$25/hour",
     suffix: "with bulk package",
   },
-  quoteLabel: "Request a custom quote",
+  quoteLabel: "Request a Custom Quote",
   quoteHref: "/request-quote",
 } as const;
 
-export const shopifyHoursCommitments = {
+export const shopifyHoursCommitments: ThemeCustomizationServicesContent = {
+  eyebrow: "Why Bulk Hours",
   heading: "Designed for Flexibility, Speed, and Control",
-  items: [
+  description:
+    "Get reliable Shopify development support without long-term commitments. Use your hours when needed, work with an experienced team, and maintain clear control over priorities, usage, and delivery.",
+  boxes: [
     {
+      number: "01",
       title: "Flexibility Without Commitment",
       description:
         "Use hours only when needed. No long-term retainers or fixed monthly obligations.",
     },
     {
+      number: "02",
       title: "Expert Shopify Team",
       description:
         "Access an experienced Shopify and Shopify Plus team instead of a single developer.",
     },
     {
+      number: "03",
       title: "Priority Execution",
       description:
         "Bulk hour tasks are handled with higher priority compared to ad-hoc requests.",
     },
     {
+      number: "04",
       title: "Multi-Store Usage",
       description:
         "Use hours across multiple Shopify stores owned by the same brand or company.",
     },
     {
+      number: "05",
       title: "Complete Transparency",
       description:
         "Tasks is tracked, documented, and reported with clear visibility of hours remaining.",
     },
   ],
-} as const;
+};
 
-export const shopifyHoursAudiences = {
-  heading: ["Who Should", "Buy Bulk", "Shopify Hours?"],
+export const shopifyHoursAudiences: ShopifyTeamBoxesContent = {
+  eyebrow: "Flexible Shopify Hours",
+  heading: "Who Should Buy Bulk Shopify Hours?",
+  description:
+    "Bulk Shopify hours are ideal for businesses that need reliable development support without the cost of a full-time developer. Use dedicated hours for ongoing improvements, new features, campaigns, and store maintenance.",
   items: [
     {
       title: "Growing Brands",
@@ -137,11 +152,12 @@ export const shopifyHoursAudiences = {
         "Agencies looking for dependable white-label Shopify design and development support.",
     },
   ],
-} as const;
+};
 
 export const shopifyHoursComparison = {
+  eyebrow: "Engagement Options",
   heading: "Bulk Shopify Hours vs Full-Time Resource",
-  eyebrow: "Choosing the Right Engagement Mode",
+  description: "Choosing the Right Engagement Mode.",
   ribbon: "We offer both — you choose what fits your business.",
   items: [
     {
@@ -171,6 +187,7 @@ export const shopifyHoursComparison = {
 } as const;
 
 export const shopifyHoursTasks = {
+  eyebrow: "Flexible Use Cases",
   heading: "What Can You Use Shopify Hours For?",
   description:
     "Your bulk hours can be used for a wide range of Shopify design and development tasks, including:",
@@ -190,8 +207,10 @@ export const shopifyHoursTasks = {
 } as const;
 
 export const shopifyHoursProcess = {
+  eyebrow: "Engagement Process",
   heading: "How the Engagement Works",
-  eyebrow: "Simple, Transparent Process",
+  description:
+    "A simple, transparent process that lets you purchase Shopify development hours, share tasks, and track progress without long-term commitments.",
   items: [
     {
       text: "Select hours using the pricing slider",
@@ -222,39 +241,54 @@ const logo = (src: string, alt?: string): ImageItem => ({
 });
 
 export const shopifyHoursClientLogos = [
-  logo("ranavat"),
-  logo("kvaser"),
-  logo("prolash"),
-  logo("tropicfeel"),
-  logo("perfect-locks"),
-  logo("bella-vita"),
-  logo("bombay-shirt-company"),
-  logo("nelter", "Nékter Juice Bar logo"),
-  logo("royce-chocolate"),
-  logo("tego"),
-  logo("popclub"),
-  logo("sleepy-cat"),
-  logo("sim-direct"),
-  logo("supertails"),
-  logo("renee"),
-  logo("sri-sri-tattva"),
-  logo("eleven-eleven"),
-  logo("kalki"),
-  logo("jacadi-paris"),
-  logo("rare-rabbit"),
+  logo("royce-chocolate", "Royce Chocolate logo"),
+  logo("jacadi-paris", "Jacadi Paris logo"),
+  logo("rare-rabbit", "Rare Rabbit logo"),
+  logo("bella-vita", "Bella Vita logo"),
+  logo("sri-sri-tattva", "Sri Sri Tattva logo"),
+  logo("renee", "Renee logo"),
+  logo("nelter", "Nelter logo"),
+  logo("tropicfeel", "Tropicfeel logo"),
+  logo("ranavat", "Ranavat logo"),
+  logo("perfect-locks", "Perfect Locks logo"),
+  logo("bombay-shirt-company", "Bombay Shirt Company logo"),
+  logo("kalki", "KALKI logo"),
+  logo("kvaser", "Kvaser logo"),
+  logo("tego", "Tego logo"),
+  logo("sleepy-cat", "Sleepy Cat logo"),
+  logo("supertails", "Super Tails logo"),
+  logo("sim-direct", "SIM Direct logo"),
+  logo("eleven-eleven", "Eleven Eleven logo"),
+  logo("popclub", "PopClub logo"),
+  logo("prolash", "Prolash logo"),
 ] as const;
 
 export const shopifyHoursMobileLogoRows = [
-  shopifyHoursClientLogos.slice(0, 6),
-  shopifyHoursClientLogos.slice(6, 13),
   [
+    shopifyHoursClientLogos[8],
+    shopifyHoursClientLogos[12],
+    shopifyHoursClientLogos[19],
+    shopifyHoursClientLogos[7],
+    shopifyHoursClientLogos[9],
+    shopifyHoursClientLogos[3],
+  ],
+  [
+    shopifyHoursClientLogos[0],
+    shopifyHoursClientLogos[1],
+    shopifyHoursClientLogos[2],
+    shopifyHoursClientLogos[4],
+    shopifyHoursClientLogos[5],
+    shopifyHoursClientLogos[6],
+    shopifyHoursClientLogos[10],
+  ],
+  [
+    shopifyHoursClientLogos[11],
     shopifyHoursClientLogos[13],
+    shopifyHoursClientLogos[14],
     shopifyHoursClientLogos[15],
     shopifyHoursClientLogos[16],
     shopifyHoursClientLogos[17],
     shopifyHoursClientLogos[18],
-    shopifyHoursClientLogos[19],
-    shopifyHoursClientLogos[14],
   ],
 ] as const;
 
@@ -308,10 +342,3 @@ export const shopifyHoursFaqs = [
       "Yes. You can move from an hours-based model to a dedicated Shopify developer or team at any time.",
   },
 ] as const satisfies readonly FaqAccordionItem[];
-
-export const shopifyHoursFinalCta = {
-  title: "Need Flexible Shopify Design & Development Support?",
-  description:
-    "Choose bulk hours for flexibility or talk to us about a dedicated Shopify resource.",
-  label: "Request a Custom Quote",
-} as const satisfies WhiteLabelFinalCta;

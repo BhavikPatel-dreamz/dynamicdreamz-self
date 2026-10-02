@@ -8811,7 +8811,7 @@ Last reviewed: 2026-09-24
 ## Buy Shopify Development Hours (`/buy-shopify-development-hours`)
 
 Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-08-21
+Last reviewed: 2026-10-01
 Owner: SEO, Shopify development, delivery operations, finance, leadership, and sales operations
 Primary audience: Shopify and Shopify Plus merchants, growing brands, ecommerce teams, founders, and digital agencies that need flexible prepaid development capacity without a fixed monthly commitment.
 Decision stage: engagement-model comparison, package selection, pricing review, provider validation, purchase, and custom-quote request
@@ -8867,7 +8867,9 @@ Commercial pricing and conversion page for prepaid Shopify design and developmen
 - Local comparison completed at 1440px, 768px, and 390px. Full-page height differs from the live reference by 0.1% on desktop, 1.1% on tablet, and 0.5% on mobile, with no omitted section or horizontal overflow.
 - The browser audit confirmed one H1, the four exact pricing states, native range-keyboard operation, ten DOM/schema-matching FAQs, zero-or-one-open FAQ behavior, no unavailable local image asset, no live-site runtime dependency, and 1ms reduced-motion fallbacks.
 - Production SEO emits the 46-character title, 150-character description, slashless canonical and Open Graph URL, Twitter large-image card, local 1200 × 630 social image, and Organization/WebSite/WebPage/Service/Breadcrumb/FAQ graph. Service offers expose only visible package names, prices, USD currency, and exact purchase URLs.
-- `npm run check:urls`, `npm run lint`, and `npm run build` pass; Next.js prerenders the route as static content. The final repository-wide SHA-256 audit reports zero duplicate public-asset hash groups.
+- 2026-10-01 remigration audit verified full live DOM parity: restored dual hero eyebrows ("Established in 2006", "Shopify Platinum Partner"), eliminated custom duplicate card grids in favor of canonical `ThemeCustomizationServicesSection` and `ShopifyTeamBoxesSection`, reused `NumberedProcessTimelineSection` and `BrandPartnersSection`, and removed extraneous closing CTA banner so page terminates cleanly at `SplitFaqSection` into footer.
+- 2026-10-01 hero parity pass re-verified the hero and pricing card against the live page at 1440/768/390 using exact DOM geometry probes and per-pixel screenshot comparison. Section height (790.6 / 1387.2 / 1328.2 px), eyebrow, H1, intro, highlights-list and pricing-card positions now match live exactly at all three widths, and mean horizontal centroid shift across ink rows is ≤0.09 px. Fixed during the pass: hero eyebrow line-box baseline (new backward-compatible `linePosition` prop on the shared `Eyebrow`), pricing-card stat-box width cascade, struck-through price box height, slider label spacing, and slider re-measurement on webfont load. Residual screenshot difference is glyph rasterization only (local variable Montserrat vs live static per-weight Montserrat), confirmed against a byte-identical live-vs-live control capture. No visible wording, headings, counters, or CTA labels changed; the live "Flexible Hours" `<span>` is `#282828`, not brand red. Details recorded in `docs/visual-captures/buy-shopify-development-hours.md`.
+- `npm run check:urls`, `npm run check:component-content`, `npm run lint`, and `npm run build` pass; Next.js prerenders the route as static content. The final repository-wide SHA-256 audit reports zero duplicate public-asset hash groups.
 - Remaining governance gap: commercial rates and policy promises still require a named finance/delivery owner and scheduled freshness review. No unapproved visible wording was changed.
 
 ## Risks of Shopify Outsourcing (`/risks-of-shopify-outsourcing`)
