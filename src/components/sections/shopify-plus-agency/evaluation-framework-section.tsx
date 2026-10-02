@@ -50,7 +50,7 @@ export function EvaluationFrameworkSection({
           {content.items.map((item, index) => (
             <div
               className="spa-col w-1/4 max-[991px]:w-1/2 max-[767px]:w-full"
-              key={item.title}
+              key={item.title ?? String(index)}
             >
               <article className="spa-item flex h-full flex-col border-r border-b border-[#2828281c] p-6 max-[1399px]:p-5">
                 <div className="spa-title">
@@ -60,9 +60,11 @@ export function EvaluationFrameworkSection({
                   >
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="m-0 mb-2.5 font-montserrat text-base font-bold leading-6 text-ink">
-                    {item.title}
-                  </h3>
+                  {item.title ? (
+                    <h3 className="m-0 mb-2.5 font-montserrat text-base font-bold leading-6 text-ink">
+                      {item.title}
+                    </h3>
+                  ) : null}
                 </div>
                 <div className="spa-text">
                   <p className="m-0 font-sans text-sm font-medium leading-[22px] text-[#535353]">

@@ -8677,8 +8677,8 @@ Last reviewed: 2026-10-02
 
 ## Dental Clinic Website Development Company (`/dental-clinic-website-development-company`)
 
-Status: implemented; live-visible content preserved
-Last reviewed: 2026-08-21
+Status: remigrated production-ready; live-visible content and section order preserved exactly matching live site
+Last reviewed: 2026-10-02
 
 ### Search and engine intent
 
@@ -8694,25 +8694,28 @@ Last reviewed: 2026-08-21
 
 ### Current strengths and available evidence
 
-- Live H1 targets "Dental Clinic Website Development Company" clearly.
-- 3 key benefit cards emphasizing custom design, simple patient management/booking features, and fast/secure performance.
-- 6 comprehensive service offering cards covering website development, customization, WooCommerce stores, speed optimization, custom features, and ongoing maintenance.
-- 4-step wave process (Discovery, Design & Development, Testing & Launch, Post Launch Support).
-- 6 verified WordPress portfolio case studies and 11 client video testimonial reviews.
-- 8 direct FAQ items with comprehensive answers and JSON-LD schema markup.
+- Live H1 targets "Dental Clinic Website Development Company" in 2-column hero with 4 proof badges (Shopify Platinum Partner, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus) and looping video.
+- 10 verified live client brand partners slider matching live site exactly.
+- 4 benefit cards (`how-to-choose-spa-sec`) outlining why choose Dynamic Dreamz for dental websites with numbered circle badges.
+- 5 comprehensive service offering cards (`theme-customization-services green`) with numbered circle badges covering website development, customization, optimization, custom features, and ongoing maintenance on pista background (`#eff4ef`).
+- 4-step structured development process (`our-development-process`) with Step 01 to Step 04 boxed step cards in bordered grid on `#fafaf7`.
+- 8 verified live WordPress portfolio projects (`Quite Events`, `Les Etoiles`, `Valents`, `Get Sunsights`, `Lipari Design`, `Nexventur`, `Awaken Media`, `Budget Maids`) + `/our-work` CTA.
+- 11 client video testimonial reviews with modal player.
+- 8 direct FAQ items with comprehensive answers in centered single-column layout matching live `.faq-sec` and JSON-LD schema markup.
 - Zero duplicate assets, clean Server Component rendering.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service, OfferCatalog (6 service offers), FAQPage (8 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schemas.
+- Emit Service, OfferCatalog (5 service offers), FAQPage (8 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schemas.
 - Ensure canonical URL is slashless `/dental-clinic-website-development-company`.
-- Freshness timestamp: `2026-08-21T00:00:00+05:30`.
+- Freshness timestamp: `2026-09-26T14:22:13+00:00`.
 
 ### Verification and remaining gaps
 
-- URL policy review: passed.
-- Lint and production build: passed.
-- Asset SHA-256 duplicate audit: 0 duplicates.
+- URL policy review: passed (`npm run check:urls`).
+- Component content boundary: passed (`npm run check:component-content`).
+- Lint and production build: passed (`npm run lint`, `npm run build`).
+- Asset SHA-256 duplicate audit: 0 duplicates (`npm run check:asset-duplicates`).
 
 ## Shopify Development in Delhi (`/shopify-development-in-delhi`)
 
