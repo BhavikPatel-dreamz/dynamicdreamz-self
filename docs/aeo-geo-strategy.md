@@ -3718,7 +3718,7 @@ Dedicated commercial service landing page targeting queries for "WooCommerce Dev
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-19
+Last reviewed: 2026-10-02
 
 Owner: SEO, Shopify CRO specialists, UX designers, leadership, and sales operations
 
@@ -3728,7 +3728,7 @@ Decision stage: CRO partner selection, store audit evaluation, A/B testing strat
 
 ### Page role
 
-Dedicated commercial landing page presenting Dynamic Dreamz Shopify CRO and conversion optimization capabilities. Covers 8 common conversion barriers, revenue impact comparison model, 5 core CRO services (Audit, Funnel Analysis, User Behavior, A/B Testing, Ongoing Optimization), CRO assessment scope, 5-step CRO process, agency credentials, 2 flexible engagement models, 6 CRO FAQs, and dual CTA action blocks.
+Dedicated commercial landing page presenting Dynamic Dreamz Shopify CRO and conversion optimization capabilities. Covers 10 distinct sections: Hero with dual eyebrow, H1 with accent at start, proof badges, and MP4 video; 12 canonical brand logos; 8 conversion barrier diagnosis cards; revenue impact comparison model with curved arrow connector; 5 core CRO services; 5-point assessment pills; 5-step process flow with curved dashed connector; Why Dynamic Dreamz credential card with 5,000+ stat; 2 flexible engagement models; and 6 split-layout FAQ accordion items.
 
 ### Target prompts
 
@@ -3740,56 +3740,27 @@ Dedicated commercial landing page presenting Dynamic Dreamz Shopify CRO and conv
 
 ### Current strengths and available evidence
 
-- Server-rendered split hero layout with distinct italic accent and dual action buttons.
-- 8 conversion barrier diagnosis cards identifying real-world store issues.
-- Interactive-style revenue comparison visual demonstrating +$25,000/month potential revenue lift.
+- Server-rendered hero layout with distinct italic accent, dual action buttons, 4 trusted proof badges (Shopify Platinum Partner, Clutch 130+, Trustpilot 4.9, Upwork Top Rated Plus), and local `/assets/home/why-dynamic-dreamz.mp4` video.
+- 12 trusted brand logos (Supertails, Bella Vita, Bombay Shirt Company, DailyObjects, etc.).
+- 8 conversion barrier diagnosis cards identifying real-world store issues with custom-tinted icon containers.
+- Revenue impact comparison visual demonstrating +$25,000/month (+$300,000/year) potential revenue lift with connecting SVG arrow.
 - 5 comprehensive CRO services covering full lifecycle from audit to experimentation.
-- Transparent 5-point evaluation checklist for merchant CRO assessment.
-- Clear 5-step process flow with connecting visual progression.
+- Transparent 5-point evaluation checklist for merchant CRO assessment spanning a clean single row on desktop.
+- Clear 5-step process flow with curved dashed connector on desktop/tablet and vertical timeline on mobile.
+- Dedicated agency differentiator card highlighting "Strategy + Implementation Together" and 5,000+ Shopify projects delivered.
+- 2 flexible engagement models (Shopify CRO Audit and Shopify CRO Growth Partner) with custom checkmark bullets.
+- Split-layout FAQ accordion with 6 high-intent CRO questions using accessible collapsible headers and circle plus/cross icons.
 - Structured data graph emitting Service, OfferCatalog (5 CRO service offers), FAQPage (6 Question/Answer pairs), VideoObject (11 client video reviews), BreadcrumbList, Organization, and WebSite.
-- 0 duplicate assets across `public/assets/`, with 24 dedicated CRO icons and optimized WebP illustrations.
+- 0 duplicate assets across `public/assets/`, zero runtime external dependencies.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
 | P0 | implemented | Route and discovery | Canonical migrated route needed full App Router and metadata setup | Ship slashless route via shared SEO data, robots, sitemap, metadata, and canonical helpers | Verified in rendered output and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (9 offers), FAQPage (10 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Rendered JSON-LD and build verification complete 2026-08-19 |
-| P0 | implemented | Local assets | Service icons, portfolio screens, and testimonials must be locally hosted | Save 9 service icons and 6 portfolio images under `public/assets/` | Verified locally with 0 runtime external dependencies |
-| P1 | deferred | Content expansion | Minor grammatical enhancements in FAQ items | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
-
-### Suggested answer copy
-
-Deferred under the live-UI preservation gate. The current server-rendered hero and service descriptions establish Dynamic Dreamz WooCommerce development capabilities. Future visible copy enhancements are queued in `docs/page-content-improvements.md`.
-
-### Entity, evidence, and authorship actions
-
-- Connect Dynamic Dreamz as an established ecommerce & WordPress/WooCommerce development company founded in 2006 with 150+ specialists and 5000+ projects completed.
-- Attribute client video testimonials directly to authentic brand founders.
-
-### Internal-link and conversion actions
-
-- Maintain slashless `/woocommerce-development` navigation across marketing pages and service menus.
-- Direct conversion actions route to `/request-quote` and portfolio link routes to `/our-work`.
-
-### Structured-data, crawler, and freshness actions
-
-- Emit Service with 9 Offer items, 10 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
-- Include route in `sitemap.xml` with priority 0.8 and weekly change frequency.
-
-### Measurement plan
-
-- SEO tracks queries for "WooCommerce development company", "WooCommerce development services", "WooCommerce custom plugin development", etc.
-- Analytics tracks form submissions on `/request-quote` originating from `/woocommerce-development`.
-
-### Verification and remaining gaps
-
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/woocommerce-development`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 55 chars, Description: 145 chars), JSON-LD graph verification, responsive layouts, local assets audit, lint, and production build.
-| P0 | implemented | Route and discovery | Missing App Router implementation for shopify-cro-agency | Ship slashless `/shopify-cro-agency` route with SEO data, sitemap, robots, metadata, and canonical helpers | Verified in rendered output, sitemap, and production build |
-| P0 | implemented | Structured data | Missing rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (5 offers), FAQPage (6 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
-| P0 | implemented | Local assets | 24 CRO icons and illustrations required local project-owned copies | Save 24 CRO assets under `public/assets/shopify-cro-agency/` with optimized WebP banner | Verified locally with 0 duplicate assets |
+| P0 | implemented | Visual Parity & Structure | Page layout previously drifted from 10 live sections and had extra bottom CTA | Remigrate to exact 10 live sections, match split FAQ, assessment pill row, and curved connectors | Verified with 1:1 slice comparisons across desktop, tablet, and mobile |
+| P0 | implemented | Structured data | Rich Service, FAQPage, VideoObject, and OfferCatalog schema | Emit Service with OfferCatalog (5 offers), FAQPage (6 items), 11 VideoObjects, BreadcrumbList, Organization, and WebSite | Verified in rendered JSON-LD and build |
+| P0 | implemented | Local assets | Dedicated SVG icons and assets required clean canonical paths | Ingested unique SVGs through 2-step scratch comparison buffer with 0 duplicates | Verified locally with 0 duplicate assets |
 | P1 | deferred | Content expansion | Minor copy polish in barrier cards and FAQs | Record proposed improvements in `docs/page-content-improvements.md` as suggested/deferred; leave live UI unchanged | Project owner approval |
 
 ### Suggested answer copy
@@ -3798,7 +3769,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Entity, evidence, and authorship actions
 
-- Position Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of eCommerce experience and 2,000+ Shopify projects delivered.
+- Position Dynamic Dreamz as a Shopify Platinum Partner with 20+ years of ecommerce experience and 5,000+ Shopify projects delivered.
 - Highlight "Strategy + Implementation Together" as a key agency differentiator over strategy-only consultants.
 
 ### Internal-link and conversion actions
@@ -3809,7 +3780,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ### Structured-data, crawler, and freshness actions
 
 - Emit Service with 5 Offer items, 6 FAQ items, 11 VideoObjects, BreadcrumbList, Organization, and WebSite.
-- Set explicit freshness `modifiedTime` to `2026-08-19T00:00:00+05:30`.
+- Set explicit freshness `modifiedTime` to `2026-10-02T00:00:00+05:30`.
 - Include route in `sitemap.xml` with priority 0.9 and monthly change frequency.
 
 ### Measurement plan
@@ -3819,8 +3790,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-19): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-cro-agency`; source/build URL guard passes.
-- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 54 chars, Description: 154 chars), JSON-LD graph verification, local assets audit, responsive layouts, lint, and production build.
+- URL-policy review (2026-10-02): canonical, Open Graph, sitemap, robots, JSON-LD, and internal links use `/shopify-cro-agency`; source/build URL guard passes.
+- Checks completed: live and local rendered page comparison, View Page Source, metadata limits (Title: 56 chars, Description: 153 chars), JSON-LD graph verification, local assets audit (0 duplicates), responsive layouts (desktop 1440px, tablet 768px, mobile 390px), lint, and production build.
 
 ## Magento Development (`/magento-development`)
 

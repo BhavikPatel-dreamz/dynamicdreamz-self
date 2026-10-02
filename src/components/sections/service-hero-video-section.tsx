@@ -48,6 +48,7 @@ export type ServiceHeroVideoSectionProps = {
   imageClassName?: string;
   titleAccentTag?: "i" | "span";
   titleAccentClassName?: string;
+  titleAccentPosition?: "start" | "end";
 };
 
 export function ServiceHeroVideoSection({
@@ -57,6 +58,7 @@ export function ServiceHeroVideoSection({
   imageClassName,
   titleAccentTag = "i",
   titleAccentClassName,
+  titleAccentPosition = "end",
 }: ServiceHeroVideoSectionProps) {
   const isShopifyMigration = wrapperClassName?.includes("hero-shopify-migration");
 
@@ -102,10 +104,35 @@ export function ServiceHeroVideoSection({
               ) : null}
 
               <h1 className="mb-2.5 font-montreal-medium text-[50px] font-medium leading-[60px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
+                {content.titleAccent && titleAccentPosition === "start" ? (
+                  <>
+                    {titleAccentTag === "span" ? (
+                      <span
+                        className={cn(
+                          "font-normal not-italic text-[#ad5151]",
+                          titleAccentClassName,
+                        )}
+                      >
+                        {content.titleAccent}
+                      </span>
+                    ) : (
+                      <i
+                        className={cn(
+                          "font-normal not-italic text-[#ad5151]",
+                          titleAccentClassName,
+                        )}
+                      >
+                        {content.titleAccent}
+                      </i>
+                    )}
+                    {" "}
+                  </>
+                ) : null}
                 {content.titleAccent
-                  ? content.title.replace(content.titleAccent, "").trim() + " "
+                  ? content.title.replace(content.titleAccent, "").trim() +
+                    (titleAccentPosition !== "start" ? " " : "")
                   : content.title}
-                {content.titleAccent ? (
+                {content.titleAccent && titleAccentPosition !== "start" ? (
                   titleAccentTag === "span" ? (
                     <span
                       className={cn(
@@ -118,7 +145,7 @@ export function ServiceHeroVideoSection({
                   ) : (
                     <i
                       className={cn(
-                        "font-editorial-italic font-normal italic text-[#ad5151]",
+                        "font-normal not-italic text-[#ad5151]",
                         titleAccentClassName,
                       )}
                     >

@@ -11,13 +11,13 @@ export type ShopifyCroEngagementSectionProps = {
 
 export function ShopifyCroEngagementSection({
   content = shopifyCroEngagements,
-  className = "shopify-cro-engagement-section bg-[#FAFAF7] py-16 max-[767px]:py-10",
+  className = "shopify-cro-engagement-section bg-[#FAFAF7] py-10 max-[767px]:py-8",
 }: ShopifyCroEngagementSectionProps) {
   return (
     <section className={className}>
       <Container>
         <div className="section-title mx-auto mb-[35px] text-center">
-          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
+          <h2 className="font-display text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
             {content.heading}
           </h2>
         </div>
@@ -28,9 +28,9 @@ export function ShopifyCroEngagementSection({
               key={item.title}
               className="shopify-cro-engagement-card mb-4 w-[calc(50%-8px)] max-[767px]:w-full"
             >
-              <div className="shopify-cro-engagement-box flex h-full flex-col justify-between rounded-[30px] border border-black/10 bg-white p-[35px_30px] shadow-none max-[767px]:p-6">
+              <div className="shopify-cro-engagement-box flex h-full flex-col justify-between rounded-[30px] border border-black/10 bg-white p-[25px] shadow-none">
                 <div>
-                  <div className="content-box relative mb-[26px] pb-[26px] before:absolute before:bottom-0 before:left-0 before:h-[1.5px] before:w-full before:bg-gradient-to-r before:from-transparent before:via-[#AD5151] before:to-transparent">
+                  <div className="content-box relative mb-[26px] pb-[26px] before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:bg-gradient-to-r before:from-transparent before:via-[#AD5151] before:to-transparent">
                     <span className="icon mb-6 inline-block size-10">
                       <Image
                         src={item.icon}
@@ -40,7 +40,7 @@ export function ShopifyCroEngagementSection({
                         className="size-full object-contain"
                       />
                     </span>
-                    <h3 className="mb-2.5 font-sans text-[24px] font-bold leading-[30px] text-ink max-[767px]:text-xl">
+                    <h3 className="mb-2.5 font-sans text-2xl font-bold leading-[30px] text-ink max-[767px]:text-xl">
                       {item.title}
                     </h3>
                     <p className="m-0 font-sans text-base font-medium leading-[190%] text-muted">
@@ -53,16 +53,8 @@ export function ShopifyCroEngagementSection({
                       {item.features.map((feature) => (
                         <li
                           key={feature}
-                          className="mb-3 flex items-center border-b-[1.5px] border-black/10 pb-3 font-sans text-base font-medium leading-[190%] text-muted last:mb-0 last:border-b-0 last:pb-0 max-[767px]:text-sm"
+                          className="mb-3 border-b-[1.5px] border-black/10 bg-[url('/assets/shopify-cro-agency/engagement/checkbox-list.svg')] bg-[length:16px] bg-[left_top_0] bg-no-repeat pb-[13px] pl-[33px] font-sans text-base font-medium leading-[190%] text-muted last:mb-0 last:border-b-0 last:pb-0 max-[767px]:text-sm"
                         >
-                          <svg
-                            className="mr-3 size-4 flex-shrink-0 text-brand-red"
-                            viewBox="0 0 16 16"
-                            fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M12.736 3.97a.75.75 0 0 1 1.048 1.06l-7 7a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.97 2.97 6.482-6.47z" />
-                          </svg>
                           {feature}
                         </li>
                       ))}
@@ -73,7 +65,7 @@ export function ShopifyCroEngagementSection({
                 <ButtonLink
                   href={item.cta.href}
                   variant="primary"
-                  className="mt-9 w-full text-sm max-[992px]:py-3"
+                  className="mt-9 w-full text-center text-sm uppercase max-[991px]:py-3"
                 >
                   {item.cta.label}
                 </ButtonLink>

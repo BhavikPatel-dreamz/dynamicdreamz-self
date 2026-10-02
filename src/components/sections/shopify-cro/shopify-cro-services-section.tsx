@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyCroServices } from "@/content/shopify-cro-agency";
 
 export type ShopifyCroServicesSectionProps = {
@@ -10,19 +11,17 @@ export type ShopifyCroServicesSectionProps = {
 
 export function ShopifyCroServicesSection({
   content = shopifyCroServices,
-  className = "shopify-cro-services bg-white py-20 max-[992px]:py-12",
+  className = "shopify-cro-services bg-white py-20 max-[991px]:py-12",
 }: ShopifyCroServicesSectionProps) {
   return (
     <section className={className}>
       <Container>
-        <div className="section-title mx-auto mb-[50px] max-w-[800px] text-center max-[767px]:mb-8">
-          <h2 className="mb-3 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-            {content.heading}
-          </h2>
-          <p className="m-0 font-sans text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm">
-            {content.description}
-          </p>
-        </div>
+        <SplitSectionHeading
+          className="mb-10 max-[991px]:mb-[30px]"
+          description={content.description}
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+        />
 
         <div className="shopify-cro-services-grid flex flex-wrap justify-center">
           {content.items.map((item, idx) => {
@@ -32,7 +31,7 @@ export function ShopifyCroServicesSection({
             return (
               <div
                 key={item.title}
-                className={`shopify-cro-services-item w-1/3 p-[42px_37px] text-center max-[992px]:w-full max-[992px]:border-l-0 max-[992px]:border-b max-[992px]:border-black/10 max-[992px]:p-[25px] max-[992px]:last:border-b-0 ${
+                className={`shopify-cro-services-item w-1/3 p-[42px_37px] text-center max-[991px]:w-full max-[991px]:border-l-0 max-[991px]:border-b max-[991px]:border-black/10 max-[991px]:p-[25px] max-[991px]:last:border-b-0 ${
                   !isFirstInRow
                     ? "min-[992px]:border-l min-[992px]:border-black/10"
                     : ""

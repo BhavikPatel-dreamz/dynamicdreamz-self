@@ -1,28 +1,37 @@
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import {
+  migrationBrandLogos,
+  migrationHeroBadges,
+} from "@/content/migration-common";
 
 export const shopifyCroHero = {
-  accent: "Shopify CRO:",
-  title: "Increase Revenue Without Increasing Traffic",
+  eyebrowSpans: ["Established in 2006", "Shopify Platinum Partner"],
+  titleAccent: "Shopify CRO:",
+  title: " Increase Revenue Without Increasing Traffic",
+  subtitle: "Turn more of your existing Shopify traffic into customers.",
   paragraphs: [
-    "Most Shopify brands focus on acquiring more traffic.",
-    "The reality is that many stores are already losing potential revenue because visitors abandon the buying journey before completing a purchase.",
-    "At Dynamic Dreamz, we help Shopify brands identify and remove conversion barriers through data-driven Conversion Rate Optimization (CRO), funnel analysis, user behavior insights, A/B testing, and Shopify implementation.",
-    "Instead of spending more on advertising, let’s maximize the value of the traffic you already have.",
+    "As a Shopify Platinum Partner, Dynamic Dreamz combines CRO strategy, funnel and user behavior analysis, A/B testing, UX optimization, and Shopify implementation to identify conversion barriers and improve revenue.",
   ],
-  primaryCta: {
-    label: "Get a CRO Assessment",
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfOpCSEpli0RqjqrJWRLlNB9AYHH4d8lLAWTRVo1bcCkIyzDg/viewform?pli=1",
-    external: true,
-  },
+  cta: "Get a CRO Assessment",
+  ctaHref:
+    "https://docs.google.com/forms/d/e/1FAIpQLSfOpCSEpli0RqjqrJWRLlNB9AYHH4d8lLAWTRVo1bcCkIyzDg/viewform?pli=1",
   secondaryCta: {
     label: "Request a Quote",
     href: "/request-quote",
   },
-  image: "/assets/shopify-cro-agency/hero/shopify-cro-banner.webp",
-  imageAlt: "Shopify CRO Services Banner",
+  video: "/assets/home/why-dynamic-dreamz.mp4",
+  badges: migrationHeroBadges,
+} as const;
+
+export const shopifyCroBrands = {
+  slug: "shopify-cro-agency",
+  heading: "Trusted by <br>Leading Brands",
+  ariaLabel: "Trusted by Leading Brands",
+  items: migrationBrandLogos,
 } as const;
 
 export const shopifyCroBarriers = {
+  eyebrow: "Conversion Barriers",
   heading: "Common Conversion Barriers We Help Identify & Optimize",
   description:
     "Increasing traffic is only one part of growth. If visitors are leaving before purchasing, you're losing revenue every day. Our Shopify CRO services help identify where customers are dropping off and implement improvements that increase conversions, revenue, and overall customer experience.",
@@ -71,10 +80,11 @@ export const shopifyCroBarriers = {
 } as const;
 
 export const shopifyCroRevenueImpact = {
-  heading: "The Revenue Impact of Shopify CRO",
-  description: "Small conversion improvements lead to significant revenue growth.",
+  eyebrow: "Revenue Growth",
+  heading: "Revenue Impact",
+  description: "Small Improvements Can Create Significant Revenue Growth.",
   before: {
-    badge: "Before Optimization",
+    badge: "Current State",
     metrics: [
       {
         label: "Visitors",
@@ -83,7 +93,7 @@ export const shopifyCroRevenueImpact = {
       },
       {
         label: "Conversion",
-        value: "1.0%",
+        value: "1%",
         icon: "/assets/shopify-cro-agency/impact/conversion.svg",
       },
       {
@@ -125,6 +135,7 @@ export const shopifyCroRevenueImpact = {
 } as const;
 
 export const shopifyCroServices = {
+  eyebrow: "CRO Services",
   heading: "Our Shopify CRO Services",
   description:
     "End-to-end CRO services built for Shopify stores from initial audit to ongoing growth.",
@@ -185,6 +196,7 @@ export const shopifyCroAssessment = {
 } as const;
 
 export const shopifyCroProcess = {
+  eyebrow: "CRO Services",
   heading: "Our Shopify CRO Process",
   description:
     "Our proven CRO process combines data, user insights, and continuous experimentation <br> to optimize every customer interaction and maximize Shopify conversions.",
@@ -204,25 +216,26 @@ export const shopifyCroProcess = {
     {
       number: "03",
       title: "Prioritize",
-      description: "Identify conversion opportunities and create a prioritized optimization roadmap.",
+      description: "Identify the highest-impact opportunities based on effort vs impact.",
       icon: "/assets/process/step-03.svg",
     },
     {
       number: "04",
-      title: "Test & Implement",
-      description: "Design, test, and implement data-driven improvements to your Shopify store.",
+      title: "Implement",
+      description: "Execute approved improvements and optimization opportunities.",
       icon: "/assets/process/step-04.svg",
     },
     {
       number: "05",
-      title: "Scale & Optimize",
-      description: "Continuously monitor results, optimize conversion performance, and maximize revenue.",
+      title: "Measure & Optimize",
+      description: "Track performance and continuously improve conversion rates.",
       icon: "/assets/process/step-05.svg",
     },
   ],
 } as const;
 
 export const shopifyCroWhyDynamicDreamz = {
+  eyebrow: "Our Difference",
   heading: "Why Dynamic Dreamz",
   paragraphs: [
     "Most CRO agencies provide recommendations and leave implementation to someone else.",
@@ -232,7 +245,7 @@ export const shopifyCroWhyDynamicDreamz = {
   points: [
     "Shopify Platinum Partner",
     "20+ Years Experience",
-    "2,000+ Shopify Projects Delivered",
+    "5,000+ Shopify Projects Delivered",
     "Team of 150+ Professionals",
     "Dedicated Shopify Experts",
     "Strategy + Implementation Together",
@@ -313,20 +326,6 @@ export const shopifyCroFaqs: readonly FaqAccordionItem[] = [
   {
     question: "Why choose Dynamic Dreamz for Shopify CRO?",
     answer:
-      "Dynamic Dreamz is a <strong>Shopify Premier Partner</strong> with 20+ years of ecommerce experience and 2,000+ Shopify projects delivered. We combine CRO strategy, Shopify development, UX optimization, and implementation under one roof to help brands maximize revenue from their existing traffic.",
+      "Dynamic Dreamz is a Shopify Platinum Partner with 20+ years of ecommerce experience and 5,000+ Shopify projects delivered. We combine CRO strategy, Shopify development, UX optimization, and implementation under one roof to help brands maximize revenue from their existing traffic.",
   },
 ];
-
-export const shopifyCroBottomCta = {
-  heading: "Turn Existing Traffic into More Revenue",
-  description: "Get more from your existing traffic before investing more in paid ads.",
-  primaryCta: {
-    label: "Get a CRO Assessment",
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSfOpCSEpli0RqjqrJWRLlNB9AYHH4d8lLAWTRVo1bcCkIyzDg/viewform?pli=1",
-    external: true,
-  },
-  secondaryCta: {
-    label: "Request a Quote",
-    href: "/request-quote",
-  },
-} as const;

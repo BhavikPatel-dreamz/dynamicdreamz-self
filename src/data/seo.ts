@@ -1196,7 +1196,7 @@ export const pageSeo = {
   },
   shopifyCro: {
     path: "/shopify-cro-agency",
-    title: "Shopify CRO Agency | Increase Revenue | Dynamic Dreamz",
+    title: "Shopify CRO: Increase Revenue Without Increasing Traffic",
     description:
       "Improve your Shopify conversion rate with CRO audits, funnel analysis, A/B testing, user behavior insights, and ongoing optimization from Dynamic Dreamz.",
     socialDescription:
@@ -1212,7 +1212,7 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-07-24T07:16:56+00:00",
-    modifiedTime: "2026-08-19T00:00:00+05:30",
+    modifiedTime: "2026-10-02T00:00:00+05:30",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,

@@ -701,15 +701,16 @@ Primary SEO intent: WooCommerce development company, WooCommerce development ser
 ## Shopify CRO Agency (`/shopify-cro-agency`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-19
+Last reviewed: 2026-10-02
 Primary SEO intent: Shopify CRO agency, Shopify conversion rate optimization, Shopify CRO audit, Shopify funnel analysis, Shopify A/B testing, ecommerce conversion rate optimization.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | `Shopify CRO Agency \| Increase Revenue Without Increasing Traffic` (63 chars) | `Shopify CRO Agency \| Increase Revenue \| Dynamic Dreamz` (54 chars) | Fits SEO 60-character budget and avoids truncation in SERPs. | High | implemented in metadata |
-| Meta description | `Improve your Shopify conversion rate with CRO audits, funnel analysis, A/B testing, user behavior insights, and ongoing optimization services from Dynamic Dreamz.` (166 chars) | `Improve your Shopify conversion rate with CRO audits, funnel analysis, A/B testing, user behavior insights, and ongoing optimization from Dynamic Dreamz.` (154 chars) | Fits 70-160 character budget while preserving all core service keywords. | High | implemented in metadata |
-| VideoObject structured data | Legacy site had no schema for client video testimonials. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video search rich results without modifying visible layout. | High | implemented in schema |
-| Service & FAQ structured data | Legacy site had minimal schema for CRO services. | Emitted `Service` with `OfferCatalog` (5 service offers) and `FAQPage` (6 questions/answers). | Enables rich answer engine visibility and FAQ SERP enhancements. | High | implemented in schema |
+| Meta title | `Shopify CRO: Increase Revenue Without Increasing Traffic` (56 chars) | Preserved live title (56 chars). | Fits 15-60 character budget and matches live H1 / primary keyword. | High | implemented in metadata |
+| Meta description | `Improve your Shopify conversion rate with CRO audits, funnel analysis, A/B testing, user behavior insights, and ongoing optimization from Dynamic Dreamz.` (153 chars) | Preserved live description optimized to 153 chars. | Fits 70-160 character budget while preserving all core service keywords. | High | implemented in metadata |
+| 10-Section Structure | Aligned to exact 10 live sections (removed bottom CTA, restored curved connectors and 5-tag single row). | Exact live order matching live site. | Guarantees 1:1 visual parity across desktop, tablet, and mobile. | High | implemented in layout |
+| VideoObject structured data | Client video reviews in hero and site graph. | Emitted 11 `VideoObject` nodes with authentic publish dates, YouTube URLs, and thumbnail assets. | Enables video search rich results without modifying visible layout. | High | implemented in schema |
+| Service & FAQ structured data | CRO services and FAQs. | Emitted `Service` with `OfferCatalog` (5 service offers) and `FAQPage` (6 questions/answers). | Enables rich answer engine visibility and FAQ SERP enhancements. | High | implemented in schema |
 
 ## Magento Development (`/magento-development`)
 

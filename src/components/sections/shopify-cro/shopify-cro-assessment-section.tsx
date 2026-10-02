@@ -9,16 +9,16 @@ export type ShopifyCroAssessmentSectionProps = {
 
 export function ShopifyCroAssessmentSection({
   content = shopifyCroAssessment,
-  className = "shopify-cro-assessment rounded-t-[50px] bg-[#E6ECF0] py-[50px] max-[767px]:rounded-t-[30px] max-[767px]:py-8",
+  className = "shopify-cro-assessment rounded-t-[50px] bg-[#E6ECF0] py-[50px] max-[767px]:rounded-t-[30px] max-[767px]:py-10",
 }: ShopifyCroAssessmentSectionProps) {
   return (
     <section className={className}>
       <Container>
-        <div className="content-box mx-auto max-w-[850px] text-center">
-          <h2 className="mb-2.5 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
+        <div className="content-box text-center">
+          <h2 className="mb-2.5 font-display text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
             {content.heading}
           </h2>
-          <p className="mb-6 font-sans text-base font-medium leading-[30.4px] text-muted">
+          <p className="mb-6 font-sans text-base font-medium leading-7 text-muted">
             {content.description}
           </p>
 
@@ -26,19 +26,8 @@ export function ShopifyCroAssessmentSection({
             {content.points.map((point) => (
               <li
                 key={point}
-                className="m-1.5 inline-flex items-center rounded-[30px] border border-black/20 bg-white px-5 py-2.5 font-sans text-base font-semibold leading-[128%] text-ink shadow-none max-[767px]:text-sm"
+                className="m-1.5 rounded-[30px] border border-black/20 bg-white bg-[url('/assets/shopify-cro-agency/assessment/list-arrow.svg')] bg-[left_20px_center] bg-no-repeat px-5 py-[11px] pl-[45px] font-sans text-base font-medium text-ink shadow-none max-[767px]:text-sm"
               >
-                <svg
-                  className="mr-2.5 size-4 text-brand-red flex-shrink-0"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                  />
-                </svg>
                 {point}
               </li>
             ))}
@@ -48,7 +37,7 @@ export function ShopifyCroAssessmentSection({
             <ButtonLink
               href={content.cta.href}
               variant="primary"
-              className="px-8 text-sm max-[992px]:py-3"
+              className="px-8 text-sm uppercase max-[991px]:py-3"
             >
               {content.cta.label}
             </ButtonLink>
