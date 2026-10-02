@@ -475,8 +475,6 @@ export const plusAgencyCaseStudies = {
         "Adobe Commerce to Shopify Migration: Zero Data-Loss Replatform for First Aid Distributions",
       technology: "Shopify Migration",
       industry: "Health & Nutrition",
-      description:
-        "See how Dynamic Dreamz migrated First Aid Distributions from Adobe Commerce to Shopify while preserving key ecommerce data and functionality.",
       tags: ["Data Migration", "Third-Party API Integration"],
     },
     {
@@ -488,8 +486,6 @@ export const plusAgencyCaseStudies = {
         "Daniel Walters Eyewear: BigCommerce to Shopify Migration & Custom Dawn Theme Redesign",
       technology: "Shopify Migration",
       industry: "Jewellery & Accessories",
-      description:
-        "See how Dynamic Dreamz migrated Daniel Walters Eyewear from BigCommerce to Shopify and rebuilt the storefront on Dawn.",
       tags: ["Eyewear", "Jewellery & Accessories"],
     },
     {
@@ -501,8 +497,6 @@ export const plusAgencyCaseStudies = {
         "Sleepycat: WooCommerce to Shopify Plus Migration with Custom Bundle Builder, SKU-Splitting & WhatsApp Automation",
       technology: "Shopify Migration",
       industry: "Home & Living",
-      description:
-        "See how Dynamic Dreamz migrated SleepyCat from WooCommerce to Shopify Plus with custom bundles, SKU splitting and WhatsApp workflows.",
       tags: ["Mattress & Sleep", "WooCommerce to Shopify"],
     },
   ] satisfies readonly CaseStudyPreviewItem[],

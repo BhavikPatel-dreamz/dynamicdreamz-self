@@ -37,7 +37,7 @@ export function TextArrowLink({
       <span>{children}</span>
       <svg
         aria-hidden="true"
-        className="ml-2.5 h-3 w-3 shrink-0"
+        className="ml-2.5 h-auto w-[10px] shrink-0"
         fill="none"
         viewBox="0 0 12 12"
       >

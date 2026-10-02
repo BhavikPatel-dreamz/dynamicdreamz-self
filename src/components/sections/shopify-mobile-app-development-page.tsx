@@ -50,7 +50,6 @@ export function ShopifyMobileAppDevelopmentPage() {
         heading={shopifyMobileAppCaseStudies.heading}
         description={shopifyMobileAppCaseStudies.description}
         items={shopifyMobileAppCaseStudies.items}
-        hideCardDescription={true}
       />
 
       {/* 8. Process */}

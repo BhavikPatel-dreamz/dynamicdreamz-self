@@ -456,8 +456,6 @@ export const shopifyMobileAppCaseStudies = {
         "RENÉE Cosmetics: Shopify-Integrated Beauty & Cosmetics Shopping App",
       technology: "Shopify Mobile App Development",
       industry: "Beauty & Cosmetics",
-      description:
-        "See how Dynamic Dreamz developed a Shopify-connected mobile shopping app for RENÉE Cosmetics across iOS and Android.",
       tags: ["React Native Development", "Shopify App Development"],
       ctaLabel: "View Case study",
     },
@@ -470,8 +468,6 @@ export const shopifyMobileAppCaseStudies = {
         "KALKI Fashion: Shopify-Integrated Luxury Ethnic Wear Shopping App",
       technology: "Shopify Mobile App Development",
       industry: "Fashion & Apparel",
-      description:
-        "See how Dynamic Dreamz built a Shopify-connected mobile app for KALKI Fashion with React Native, dynamic pricing, cart sync and localization.",
       tags: ["Mobile Application Development", "React Native Development"],
       ctaLabel: "View Case study",
     },
@@ -484,8 +480,6 @@ export const shopifyMobileAppCaseStudies = {
         "House of Good Vibes: React Native Shopify App with Drag-and-Drop CMS Page Builder & Daily Meditation Scheduler",
       technology: "Shopify Mobile App Development",
       industry: "Lifestyle",
-      description:
-        "See how Dynamic Dreamz built a Shopify-connected React Native app with CMS page building, meditation scheduling and customer engagement features.",
       tags: ["Mobile Application Development", "React Native Development"],
       ctaLabel: "View Case study",
     },

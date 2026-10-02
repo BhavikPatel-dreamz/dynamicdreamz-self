@@ -39,7 +39,6 @@ export function BeautyCosmeticsPage() {
         description={beautyCosmeticsCaseStudies.description}
         eyebrow={beautyCosmeticsCaseStudies.eyebrow}
         heading={beautyCosmeticsCaseStudies.heading}
-        hideCardDescription={false}
         items={beautyCosmeticsCaseStudies.items}
       />
       <ThemeCustomizationServicesSection

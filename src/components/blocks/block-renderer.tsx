@@ -210,7 +210,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 imageAlt: getStrapiMediaAlt(media, caseStudy.title),
                 technology: caseStudy.technology || "",
                 industry: caseStudy.industry || "",
-                description: caseStudy.excerpt || "",
                 tags: caseStudy.tags || [],
               };
             });

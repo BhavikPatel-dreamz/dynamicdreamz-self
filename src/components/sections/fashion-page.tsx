@@ -39,7 +39,6 @@ export function FashionPage() {
         description={fashionCaseStudies.description}
         eyebrow={fashionCaseStudies.eyebrow}
         heading={fashionCaseStudies.heading}
-        hideCardDescription={false}
         items={fashionCaseStudies.items}
       />
       <ThemeCustomizationServicesSection

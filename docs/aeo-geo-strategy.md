@@ -1332,6 +1332,8 @@ Owner: SEO, content, development, and client success
 Primary audience: Beauty, cosmetics, skincare, haircare, and fragrance DTC & B2B brands, ecommerce directors, and digital agencies
 Decision stage: Solution awareness through agency evaluation
 
+AEO/GEO review 2026-10-01: case-studies card re-audit for `/beauty-cosmetics`. In-card description removed to match live `display: none`; card geometry, chips, and CTA now match live computed styles. No new gap found — invisible DOM removed, visible copy, metadata, canonicals, headings, and structured data unchanged. Known visual-only gap: no AOS `fade-up` reveal.
+
 ### Page role
 
 Dedicated industry solution landing page for beauty and cosmetics brands seeking specialized Shopify, Shopify Plus, and mobile application ecommerce development. It covers shade finders, routine and skin quizzes, subscriptions and replenishment journeys, bundles and regimen kits, fast campaign and launch velocity, and full-stack ERP/CRM/PIM middleware integrations.
@@ -1733,6 +1735,8 @@ Owner: SEO, content, development, and client success
 Primary audience: Fashion, apparel, luxury ethnic wear, clothing, footwear, and lifestyle DTC & B2B brands, ecommerce directors, and digital agencies
 Decision stage: Solution awareness through agency evaluation
 
+AEO/GEO review 2026-10-01: case-studies card re-audit for `/fashion`. In-card description removed to match live `display: none`; card geometry, chips, and CTA now match live computed styles. No new gap found — invisible DOM removed, visible copy, metadata, canonicals, headings, and structured data unchanged. Known visual-only gap: no AOS `fade-up` reveal.
+
 ### Page role
 
 Dedicated industry solution landing page for fashion and apparel brands seeking specialized Shopify, Shopify Plus, and mobile application ecommerce development. It covers sizing guidance and body-type logic, made-to-order and product customizers, fast merchandising and drop-day performance, international commerce with Shopify Markets, and full-stack PIM/OMS/ERP middleware integrations.
@@ -1813,6 +1817,8 @@ Owner: SEO, content, development, and client success
 Primary audience: Health, nutrition, vitamin, dietary supplement, wellness DTC brands, ecommerce directors, and digital agencies
 Decision stage: Solution awareness through agency evaluation
 
+AEO/GEO review 2026-10-01: case-studies card re-audit for `/health-nutrition`. In-card description removed to match live `display: none`; card geometry, chips, and CTA now match live computed styles. No new gap found — invisible DOM removed, visible copy, metadata, canonicals, headings, and structured data unchanged. Known visual-only gap: no AOS `fade-up` reveal.
+
 ### Page role
 
 Dedicated industry solution landing page for health, nutrition, and supplement brands seeking specialized Shopify and Shopify Plus development. Replaces the legacy `/healthcare` layout with a comprehensive 10-section structure addressing complex product variations, recurring subscriptions, regulatory compliance labeling, customer trust, high-performance mobile commerce, ERP/CRM integrations, and custom quiz funnels.
@@ -1874,6 +1880,8 @@ Last reviewed: 2026-10-01
 Owner: SEO, content, development, and client success
 Primary audience: Food, beverage, restaurant, cafe, bar, grocery, FMCG, and digital-agency decision makers
 Decision stage: Solution awareness through agency evaluation
+
+AEO/GEO review 2026-10-01: case-studies card re-audit for `/food-beverages`. In-card description removed to match live `display: none`; card geometry, chips, and CTA now match live computed styles. No new gap found — invisible DOM removed, visible copy, metadata, canonicals, headings, and structured data unchanged. Known visual-only gap: no AOS `fade-up` reveal.
 
 ### Page role
 
@@ -2122,6 +2130,8 @@ Owner: SEO, content, development, and client success
 Primary audience: Home, furniture, decor, lighting, kitchen, and living lifestyle DTC & B2B brands, ecommerce directors, and digital agencies
 Decision stage: Solution awareness through agency evaluation
 
+AEO/GEO review 2026-10-01: case-studies card re-audit for `/home-living`. In-card description removed to match live `display: none`; card geometry, chips, and CTA now match live computed styles. No new gap found — invisible DOM removed, visible copy, metadata, canonicals, headings, and structured data unchanged. Known visual-only gap: no AOS `fade-up` reveal.
+
 ### Page role
 
 Dedicated industry solution landing page for home, furniture, and living brands seeking specialized Shopify, Shopify Plus, and custom ecommerce development. It covers high-consideration purchases, configurable products, modular dimensions/finishes, large catalogue navigation, complex shipping and delivery logic, and ERP middleware integrations.
@@ -2243,6 +2253,7 @@ Dedicated industry solution landing page for jewellery and accessories brands se
 | P0 | implemented | Metadata | Title and description must fit SERP limits | Title (54 chars) and description (154 chars) fit within the strict 60/160 character limits | Build-time SEO checks |
 | P1 | implemented | Asset deduplication | Case studies and portfolio images could duplicate assets | Discovered and reused canonical assets in `public/assets/case-studies/`, `public/assets/our-work/projects/`, and categorized directories; only unique Santosh Jewellers card added; zero duplicate hash groups | SHA-256 duplicate audit |
 | P2 | deferred | Internal linking | Portfolio projects currently link to external client stores | Add links to internal case study routes once dedicated case study pages exist | Route coverage |
+| P1 | implemented | Case-study card content | Shared `ServicesCaseStudiesSection` cards carried an extra in-card description paragraph that live hides via `.cs-listing-main.three-col .cs-title p { display: none }`, so the text shipped in the DOM on every consuming route without being visible | Removed the in-card description node entirely (type field, 28 content items across 10 modules, `hideCardDescription` prop, and the `block-renderer.tsx` `excerpt` mapping) to match live and drop dead DOM | Live CSS + computed-style diff at 1440/768/390 |
 
 ### Entity, evidence, and authorship actions
 
@@ -2275,6 +2286,7 @@ Dedicated industry solution landing page for jewellery and accessories brands se
 - All 11 sections implemented matching live structure, order, and copy.
 - Visual parity captured with live screenshots at 1440px, 768px, and 390px.
 - Zero duplicate assets across `public/assets/`.
+- AEO/GEO re-review 2026-10-01 after the shared case-studies card fix. Card geometry, chip metrics, and CTA now match live computed styles exactly (card 428/553/392px at 1440/768/390, chip 29px, CTA arrow 10px). No new AEO/GEO gap: the change removes invisible DOM rather than visible copy, and `Service.hasOfferCatalog` still matches the visible solution cards. Remaining known gap is the absent AOS `fade-up` reveal (no AOS runtime in this project), which is visual-only and does not affect crawlability or schema.
 
 ## Contact Us (`/contact-us`)
 
@@ -3590,6 +3602,8 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 Status: implemented and verified; live-visible content preserved
 
+AEO/GEO review 2026-10-01: case-studies card re-audit for `/shopify-migration`. In-card description removed to match live `display: none`; card geometry, chips, and CTA now match live computed styles. No new gap found — invisible DOM removed, visible copy, metadata, canonicals, headings, and structured data unchanged. Known visual-only gap: no AOS `fade-up` reveal.
+
 Last reviewed: 2026-09-23
 
 Owner: SEO, Shopify migration specialists, leadership, and sales operations
@@ -4251,6 +4265,8 @@ Last reviewed: 2026-09-24
 Owner: SEO, mobile app development specialists, leadership, and sales operations
 Primary audience: Shopify merchants, DTC brands, Shopify Plus brands, and enterprise ecommerce businesses seeking custom native or cross-platform (React Native) iOS and Android mobile app development directly connected to their Shopify backend.
 Decision stage: agency partner evaluation, technical capability assessment, custom mobile app vs generic builder comparison, quote request, discovery call booking
+
+AEO/GEO review 2026-10-01: case-studies card re-audit for `/shopify-mobile-app-development`. In-card description removed to match live `display: none`; card geometry, chips, and CTA now match live computed styles. No new gap found — invisible DOM removed, visible copy, metadata, canonicals, headings, and structured data unchanged. Known visual-only gap: no AOS `fade-up` reveal.
 
 ### Page role
 
@@ -5859,6 +5875,8 @@ GEO.
 ## Shopify Plus Migration Agency (`/shopify-plus-migration-agency`)
 
 Status: implemented and verified; refreshed live layout and content matched exactly
+
+AEO/GEO review 2026-10-01: case-studies card re-audit for `/shopify-plus-migration-agency`. In-card description removed to match live `display: none`; card geometry, chips, and CTA now match live computed styles. No new gap found — invisible DOM removed, visible copy, metadata, canonicals, headings, and structured data unchanged. Known visual-only gap: no AOS `fade-up` reveal.
 
 Last reviewed: 2026-09-24
 
@@ -8961,6 +8979,8 @@ Owner: SEO, content, design, and engineering
 Status: technical and schema implementation complete; visible copy preserved per live site
 Last reviewed: 2026-09-01
 Owner: SEO, content, and development
+
+AEO/GEO review 2026-10-01: case-studies card re-audit for `/food-beverage-shopify-plus-agency`. In-card description removed to match live `display: none`; card geometry, chips, and CTA now match live computed styles. No new gap found — invisible DOM removed, visible copy, metadata, canonicals, headings, and structured data unchanged. Known visual-only gap: no AOS `fade-up` reveal.
 
 ### Page Role and Buyer Intent
 

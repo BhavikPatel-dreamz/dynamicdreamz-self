@@ -39,7 +39,6 @@ export function HomeLivingPage() {
         description={homeLivingCaseStudies.description}
         eyebrow={homeLivingCaseStudies.eyebrow}
         heading={homeLivingCaseStudies.heading}
-        hideCardDescription={true}
         items={homeLivingCaseStudies.items}
       />
       <ThemeCustomizationServicesSection

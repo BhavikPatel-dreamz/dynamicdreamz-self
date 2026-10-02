@@ -39,7 +39,6 @@ export function JewelleryAccessoriesPage() {
         description={jewelleryAccessoriesCaseStudies.description}
         eyebrow={jewelleryAccessoriesCaseStudies.eyebrow}
         heading={jewelleryAccessoriesCaseStudies.heading}
-        hideCardDescription={false}
         items={jewelleryAccessoriesCaseStudies.items}
       />
       <ThemeCustomizationServicesSection
