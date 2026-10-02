@@ -1,10 +1,10 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
-import { CtaBannerSection } from "@/components/sections/cta-banner-section";
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
+import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { shopifyMaintenanceServicesContent } from "@/content/shopify-maintenance-services";
 
 export function ShopifyMaintenanceServicesPage() {
@@ -13,54 +13,47 @@ export function ShopifyMaintenanceServicesPage() {
     slug: "shopify-maintenance-services",
   };
 
-  const servicesContent = {
-    heading: shopifyMaintenanceServicesContent.services.heading,
-    description: shopifyMaintenanceServicesContent.services.description,
-    items: shopifyMaintenanceServicesContent.services.items,
-    cta: shopifyMaintenanceServicesContent.services.cta,
-  };
-
-  const portfolioContent = {
-    heading: shopifyMaintenanceServicesContent.portfolio.heading,
-    description: shopifyMaintenanceServicesContent.portfolio.description,
-    items: shopifyMaintenanceServicesContent.portfolio.items,
-  };
-
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        className="inner-hero-sec single-full-img relative overflow-hidden bg-white pt-[190px] pb-[55px] max-[992px]:pt-[100px]"
+      <ServiceHeroVideoSection
         content={shopifyMaintenanceServicesContent.hero}
       />
       <IndustryBrandsSection
         content={brandsContent}
+        density="flexible"
         heading={shopifyMaintenanceServicesContent.brands.title}
         items={shopifyMaintenanceServicesContent.brands.items}
       />
       <AgencyServicesSection
-        className="what-we-provide-sec pt-20 pb-0 max-[992px]:pt-[50px]"
-        content={servicesContent}
-        id="what-we-provide"
+        cardVariant="services-box"
+        className="what-we-provide-sec pb-0 pt-20 max-[992px]:pt-[50px]"
+        content={shopifyMaintenanceServicesContent.services}
+        id="services"
       />
       <PortfolioShowcaseSection
+        cardVariant="ourWorkRefresh"
         className="our-work-sec py-20 max-[992px]:py-[50px]"
-        content={portfolioContent}
-        ctaLabel={shopifyMaintenanceServicesContent.sectionCopy.portfolioCta}
+        columns={4}
+        content={shopifyMaintenanceServicesContent.portfolio}
+        eyebrow={shopifyMaintenanceServicesContent.portfolio.eyebrow}
+        headerLayout="split"
+        sectionId="our_work"
+      />
+      <PricingTableSection
+        content={shopifyMaintenanceServicesContent.pricing}
       />
       <HappyClientSection
         description={shopifyMaintenanceServicesContent.testimonials.description}
+        eyebrow={shopifyMaintenanceServicesContent.testimonials.eyebrow}
         heading={shopifyMaintenanceServicesContent.testimonials.heading}
         items={shopifyMaintenanceServicesContent.testimonials.items}
       />
       <SplitFaqSection
         heading={shopifyMaintenanceServicesContent.sectionCopy.faqHeading}
-        idPrefix="shopify-maintenance-faq"
+        idPrefix="shopify-maintenance-services-faqs"
         items={shopifyMaintenanceServicesContent.faqs}
-      />
-      <CtaBannerSection
-        ctaHref={shopifyMaintenanceServicesContent.ctaBanner.ctaHref}
-        ctaLabel={shopifyMaintenanceServicesContent.ctaBanner.ctaLabel}
-        heading={shopifyMaintenanceServicesContent.ctaBanner.heading}
+        layout="split"
+        sectionId="faq"
       />
     </div>
   );

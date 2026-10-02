@@ -1699,16 +1699,15 @@ Primary SEO intent: Shopify Certified Developers, Certified Shopify Experts, Sho
 ## Shopify Maintenance Services (`/shopify-maintenance-services`)
 
 Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-21
-Primary SEO intent: Shopify maintenance services, Shopify store maintenance, Shopify support agency, Shopify bug fixes, Shopify speed optimization, Shopify ongoing support.
+Last reviewed: 2026-10-02
+Primary SEO intent: Shopify maintenance services, Shopify store maintenance, Shopify support agency, Shopify bug fixes, Shopify speed optimization, Shopify ongoing support, Shopify Plus maintenance.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Meta title | `Top Shopify Maintenance Services \| Dynamic Dreamz` (49 chars) | Preserved live title (49 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
-| Meta description | Live description is 174 characters (`Ensure your Shopify store runs smoothly with expert Shopify maintenance Service from Dynamic Dreamz. We offer updates, performance optimization, bug fixes, & custom development.`) | `Ensure your Shopify store runs smoothly with expert Shopify maintenance from Dynamic Dreamz. We offer updates, performance optimization, and custom development.` (159 chars) | Fits strictly within the 70-160 character limit while preserving the live meaning and primary keywords. | High | implemented in metadata |
-| Service description grammar | `We offer complete Shopify maintenance that takes care of every facet of store maintenance.` | `We offer comprehensive Shopify maintenance that takes care of every facet of your online store.` | Avoids repetitive use of "maintenance" in the same sentence. | Low | deferred pending exact visible-copy approval |
-| FAQ password answer | `To inform customers that the store is under maintenance, you can activate the "Password Protection" feature, though there is no direct way.` | `To let customers know your store is undergoing maintenance, you can enable Shopify's Password Protection feature and add a customized maintenance message.` | Clarifies standard Shopify procedure in clearer, professional language. | Low | deferred pending exact visible-copy approval |
-| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 services), `FAQPage` (12 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
+| Meta title | `Shopify Maintenance Services & Support \| Dynamic Dreamz` (56 chars) | Preserved live title (56 chars). | Complies with repository 15-60 character limit and preserves live SEO equity. | High | implemented in metadata |
+| Meta description | Live description is 166 characters (`Shopify maintenance services for bug fixes, theme and app updates, performance optimization, custom development and technical support. Flexible support for growing stores.`) | `Shopify maintenance services for bug fixes, theme and app updates, performance, custom development and technical support. Flexible support for growing stores.` (152 chars) | Fits strictly within the 70-160 character limit while preserving the live meaning and primary keywords. | High | implemented in metadata |
+| Section structure | 7 authentic sections | 7 authentic sections (`hero-new-section` with video, `our-client-sec` with 10 brands, `#services` with 6 cards and red checkmarks, `#our_work` with 8 projects and dual CTAs, `#our_white_label_pricing` with 3 tiers, `happy-client-sec` with 11 reviews, and `faq-sec` with 8 FAQs in 2-column layout; extraneous CTA banner removed). | Matches live site 1:1. | High | implemented in layout |
+| Structured data | Legacy page had partial Yoast schema | Emitted full `Service`, `OfferCatalog` (6 services), `FAQPage` (8 FAQs), `VideoObject` (client testimonials), `BreadcrumbList`, `Organization`, and `WebSite` JSON-LD graph. | Maximizes rich snippets and AEO/GEO answer extraction without altering visible UI. | High | implemented in schema |
 
 ## Dental Clinic Website Development Company (`/dental-clinic-website-development-company`)
 

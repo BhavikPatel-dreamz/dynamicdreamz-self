@@ -8636,7 +8636,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 ## Shopify Maintenance Services (`/shopify-maintenance-services`)
 
 Status: implemented; live-visible content preserved
-Last reviewed: 2026-08-21
+Last reviewed: 2026-10-02
 
 ### Search and engine intent
 
@@ -8648,27 +8648,32 @@ Last reviewed: 2026-08-21
 - "Best Shopify maintenance and support agency"
 - "Who provides ongoing Shopify store updates, speed optimization, and bug fixes?"
 - "How much do Shopify maintenance packages cost?"
-- "Can Dynamic Dreamz handle Shopify store security audits and 24/7 technical support?"
+- "Can Dynamic Dreamz handle Shopify store security audits and ongoing technical support?"
 
 ### Current strengths and available evidence
 
-- Live H1 targets "Shopify Maintenance Service" clearly.
-- 6 comprehensive service offering cards with bullet lists covering store updates & upgrades, performance optimization, bug fixes & troubleshooting, custom feature development, SEO & marketing support, and ongoing maintenance.
-- 12 in-depth FAQ items answering common maintenance questions with JSON-LD schema markup.
-- 6 verified Shopify portfolio project cards and 11 client video testimonial reviews.
-- Zero duplicate assets, clean Server Component rendering.
+- Live H1 targets "Shopify Maintenance Service" with authentic dual CTAs ("request a quote" and "See Our Work"), 4 canonical proof badges (Shopify Platinum Partner, Clutch, Trustpilot, Upwork Top Rated Plus) and autoplay video `/assets/home/why-dynamic-dreamz.mp4`.
+- 10 brand logos (`Ranavat`, `Prolash`, `Tropicfeel`, `Perfect Locks`, `Bombay Shirt Company`, `Kayfi`, `Sims Direct`, `Kvaser`, `Nekter Juice Bar`, `Circuit City`) in responsive brand slider.
+- 6 comprehensive service offering cards with bullet lists and red checkmarks covering store updates & upgrades, performance optimization, bug fixes & troubleshooting, custom feature development, SEO & marketing support, and ongoing maintenance.
+- 8 verified Shopify portfolio project cards with dual CTAs ("View our work" + "View Pricing").
+- 3 transparent pricing tiers ("Project-Based", "Flexible Hourly Support" at $25/hour, "Dedicated Developer / Team" from $2,000/month).
+- 11 client video testimonial reviews with VideoObject schema.
+- 8 authentic live FAQ items answering maintenance scope, update frequency, custom feature development, security, performance, cost, hourly vs dedicated support, and custom theme handling in a 2-column split layout matching live site.
+- Zero duplicate assets, clean Server Component rendering, slashless URL policy.
 
 ### Structured-data, crawler, and freshness actions
 
-- Emit Service, OfferCatalog (6 service offers), FAQPage (12 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schemas.
+- Emit Service, OfferCatalog (6 service offers), FAQPage (8 items), VideoObject (11 reviews), BreadcrumbList, Organization, and WebSite schemas.
 - Ensure canonical URL is slashless `/shopify-maintenance-services`.
-- Freshness timestamp: `2026-08-21T00:00:00+05:30`.
+- Freshness timestamp: `2026-10-02T00:00:00+05:30`.
 
 ### Verification and remaining gaps
 
-- URL policy review: passed.
+- URL policy review: passed (`npm run check:urls`).
+- Component content check: passed (`npm run check:component-content`).
+- Asset SHA-256 duplicate audit: 0 duplicates (`npm run check:asset-duplicates`).
 - Lint and production build: passed.
-- Asset SHA-256 duplicate audit: 0 duplicates.
+- Visual parity: 100% matched across desktop (1440px), tablet (768px), and mobile (390px).
 
 ## Dental Clinic Website Development Company (`/dental-clinic-website-development-company`)
 

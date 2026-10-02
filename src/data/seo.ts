@@ -3194,11 +3194,11 @@ export const pageSeo = {
   },
   shopifyMaintenanceServices: {
     path: "/shopify-maintenance-services",
-    title: "Top Shopify Maintenance Services | Dynamic Dreamz",
+    title: "Shopify Maintenance Services & Support | Dynamic Dreamz",
     description:
-      "Ensure your Shopify store runs smoothly with expert Shopify maintenance from Dynamic Dreamz. We offer updates, performance optimization, and custom development.",
+      "Shopify maintenance services for bug fixes, theme and app updates, performance, custom development and technical support. Flexible support for growing stores.",
     socialDescription:
-      "Expert Shopify maintenance services by Dynamic Dreamz: 24/7 technical support, speed optimization, bug fixes, theme updates, and dedicated ongoing maintenance.",
+      "Shopify maintenance services for bug fixes, theme and app updates, performance, custom development and technical support. Flexible support for growing stores.",
     keywords: [
       "Shopify maintenance services",
       "Shopify store maintenance",
@@ -3209,12 +3209,12 @@ export const pageSeo = {
     ],
     openGraphType: "website",
     publishedTime: "2024-12-05T10:53:00+00:00",
-    modifiedTime: "2026-08-21T00:00:00+05:30",
+    modifiedTime: "2026-10-02T00:00:00+05:30",
     image: {
       path: "/assets/og/homepage.png",
       width: 1200,
       height: 630,
-      alt: "Top Shopify Maintenance Services | Dynamic Dreamz",
+      alt: "Shopify Maintenance Services & Support | Dynamic Dreamz",
     },
     sitemap: {
       changeFrequency: "weekly",

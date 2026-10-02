@@ -171,6 +171,22 @@ export function AgencyServicesSection({
                           <p className="mt-2.5 mb-0 font-sans text-[14px] font-normal leading-6 tracking-[0.32px] text-[#535353]">
                             {service.description}
                           </p>
+                          {service.bullets && service.bullets.length > 0 && (
+                            <ul className="mt-[15px] border-t border-[#d9d9d9] pt-1.5 list-none p-0 font-sans text-[14px] font-normal leading-6 text-[#535353]">
+                              {service.bullets.map((bullet, idx) => (
+                                <li className="flex items-center gap-2.5 py-[9px] leading-normal text-[#535353]" key={idx}>
+                                  <Image
+                                    alt=""
+                                    className="size-[17px] shrink-0 object-contain"
+                                    height={17}
+                                    src="/assets/icons/red-check.svg"
+                                    width={17}
+                                  />
+                                  <span>{bullet}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </div>
                       </div>
                       <div
