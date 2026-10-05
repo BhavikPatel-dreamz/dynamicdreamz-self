@@ -77,6 +77,15 @@ export function SplitFaqSection({
           <div className="wrapper">
             <div className="header-text mb-10 text-center max-[767px]:mb-6">
               <div className="faq-text">
+                {eyebrow ? (
+                  <Eyebrow
+                    align="center"
+                    as="span"
+                    className={cn("mb-4", eyebrowClassName)}
+                  >
+                    {eyebrow}
+                  </Eyebrow>
+                ) : null}
                 <h2
                   className={cn(
                     "font-display text-[40px] font-normal leading-[1.2] tracking-normal text-ink max-[1199px]:text-[34px] max-[767px]:text-2xl",

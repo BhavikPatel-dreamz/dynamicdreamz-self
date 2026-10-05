@@ -366,7 +366,7 @@ export const dentalClinicWebsiteDevelopmentCompanyContent = {
   },
   hero: heroContent,
   brands: {
-    title: "Trusted by <br>Leading Brands",
+    title: "Trusted by Leading Brands",
     slug: "dental-clinic-website-development",
     items: brandsItems,
   },

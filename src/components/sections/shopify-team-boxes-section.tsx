@@ -41,17 +41,20 @@ export function ShopifyTeamBoxesSection({
       <Container>
         <div className="wrapper flex flex-wrap items-center justify-between gap-y-8">
           <div className="section_title_with_eyebrow w-[45%] max-[1199px]:w-full">
-            {content.eyebrow ? (
-              <Eyebrow
-                className="mb-4 font-montserrat text-[13px] font-bold uppercase tracking-[0.8px] text-white max-[767px]:text-[11px]"
-                tone="inverse"
-              >
-                {content.eyebrow}
-              </Eyebrow>
-            ) : null}
-            <h2 className="font-sans text-[44px] font-bold leading-[56px] text-white max-[1199px]:text-[38px] max-[1199px]:leading-[48px] max-[767px]:text-[28px] max-[767px]:leading-[38px]">
-              {content.heading}
-            </h2>
+            <div className="title">
+              {content.eyebrow ? (
+                <Eyebrow
+                  as="span"
+                  className="mb-4"
+                  tone="inverse"
+                >
+                  {content.eyebrow}
+                </Eyebrow>
+              ) : null}
+              <h2 className="font-sans text-[44px] font-bold leading-[56px] text-white max-[1199px]:text-[38px] max-[1199px]:leading-[48px] max-[767px]:text-[28px] max-[767px]:leading-[38px]">
+                {content.heading}
+              </h2>
+            </div>
             <div className="section_text mt-5 space-y-4 max-[1199px]:mt-4">
               {Array.isArray(content.description) ? (
                 content.description.map((paragraph, idx) => (

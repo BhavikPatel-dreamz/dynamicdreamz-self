@@ -9931,3 +9931,57 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 - Hero CTA links directly to external Appmaker affiliate signup (`https://dashboard.appmaker.xyz/signup?ref=dynamicdreamz`).
 - Bottom banner CTA links directly to `/contact-us` (via `/request-quote` redirect).
 - Included in sitemap and route metadata via canonical `/appmaker-shopify-mobile-app-development`.
+
+## /ai-services
+
+Last reviewed: 2026-10-05
+Page URL: `https://www.dynamicdreamz.com/ai-services`
+Legacy URL: `https://www.dynamicdreamz.com/ai-services/`
+
+### Page role
+
+Core AI development services and business automation landing page showcasing Dynamic Dreamz's capability to build practical AI tools for customer support, knowledge search (RAG), workflow automation, content generation pipelines, ecommerce product discovery, and system integrations for websites, mobile apps, and enterprise systems.
+
+### Target prompts
+
+- What AI development services does Dynamic Dreamz offer?
+- Can Dynamic Dreamz build AI assistants and copilots using custom business data?
+- How does Dynamic Dreamz implement RAG and enterprise knowledge search?
+- Can Dynamic Dreamz add AI features to Shopify stores and ecommerce platforms?
+- What safeguards, evaluation, and cost controls does Dynamic Dreamz implement for AI?
+- What tech stack and models does Dynamic Dreamz use for AI engineering?
+
+### Current strengths and available evidence
+
+- Comprehensive 11-section page layout covering what we can build, detailed service taxonomy with typical use cases, ecommerce-specific AI capabilities, an 8-step phased implementation framework, reliability and evaluation criteria, agency credentials, technical capability tags, client video testimonials, and 10 in-depth FAQs.
+- 4 verified partner badges: Shopify Platinum Partner, Clutch 4.9 rating (130+ reviews), Trustpilot 4.9 TrustScore, Upwork Top Rated Plus.
+- 12 verified brand partner logos in marquee slider: Supertails, 11-11, Bella Vita, Bombay Shirt Company, Popclub, Sri Sri Tattva, Tropicfeel, Renee, Royce, Tego, Nekter, Rare Rabbit.
+- 11 client video reviews with testimonials from eCommerce founders and leaders (Max Sweets, Myla Jane, Art Copenhagen, Conscious Poker, etc.).
+- 10 comprehensive FAQs covering RAG, agents vs chatbots, proprietary data search, integrations, Shopify AI, hallucinations and safety, cost control, timelines, and model selection.
+- Complete structured data graph: WebPage (with `primaryImageOfPage`), Service, FAQPage (10 questions and answers matching visible text), BreadcrumbList, Organization, and WebSite.
+- Fully server-rendered with zero runtime dependencies on dynamicdreamz.com; hero illustration optimized from 553KB PNG to 43KB WebP with zero duplicate assets.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route & migration URL | Route required migration | Implemented clean `/ai-services` with App Router | Verified with route tests and build |
+| P0 | implemented | Structured data | Missing rich Service and FAQ schema | Emitted complete JSON-LD schema graph matching page facts (Service, 10 FAQs) | Verified in JSON-LD output |
+| P0 | implemented | Asset deduplication | Hero illustration was 553KB PNG | Converted to 43KB WebP (`/assets/services/ai-services/ai-development-services-hero.webp`) and saved optimized OG image (`/assets/og/ai-services.png`) with 0 duplicates | Verified with SHA-256 audit |
+| P1 | deferred | Content expansion | Specific AI case studies with verified ROI metrics | Queued in `docs/page-content-improvements.md` as suggested; live UI preserved | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz authority in practical AI development, RAG systems, and business automation.
+
+### Entity, evidence, and authorship actions
+
+- Connects Dynamic Dreamz engineering team with established credentials (20+ years, 150+ experts, Shopify Platinum Partner).
+- Cites real client reviews and verified brand clients across ecommerce and digital products.
+
+### Internal-link and conversion actions
+
+- Primary CTA in hero links to `/book-a-discovery-call` ("Discuss Your AI Use Case").
+- Secondary hero anchor link jumps to `#our_ai_services` ("Explore AI Services").
+- Links to `/request-quote` and `/contact-us` through global header and footer navigation.
+- Included in sitemap and route metadata via canonical `/ai-services`.

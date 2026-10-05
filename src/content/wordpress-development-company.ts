@@ -107,7 +107,7 @@ export const wordpressDevelopmentCompanyHero = {
 export const wordpressDevelopmentCompanyBrands = {
   content: {
     slug: "wordpress-development-company",
-    heading: "Trusted by<br>Leading Brands",
+    heading: "Trusted by Leading Brands",
     brands: { ariaLabel: "Trusted by Leading Brands" },
   },
   items: [

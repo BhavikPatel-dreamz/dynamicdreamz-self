@@ -234,6 +234,10 @@ import {
   webflowDevelopmentFaqs,
   webflowDevelopmentServices,
 } from "@/content/webflow-development";
+import {
+  aiServicesDetailedGrid,
+  aiServicesFaqs,
+} from "@/content/ai-services";
 import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -5865,3 +5869,36 @@ export function createWixToShopifyMigrationPageSchema() {
     videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
+
+const aiServicesPageUrl = absoluteUrl(pageSeo.aiServices.path);
+const aiServicesPageId = `${aiServicesPageUrl}#webpage`;
+const aiServicesServiceId = `${aiServicesPageUrl}#service`;
+const aiServicesFaqId = `${aiServicesPageUrl}#faq`;
+const aiServicesBreadcrumbId = `${aiServicesPageUrl}#breadcrumb`;
+
+export function createAiServicesPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.aiServices,
+    pageUrl: aiServicesPageUrl,
+    pageId: aiServicesPageId,
+    serviceId: aiServicesServiceId,
+    faqId: aiServicesFaqId,
+    breadcrumbId: aiServicesBreadcrumbId,
+    serviceName: "AI Development Services & Business Automation",
+    serviceType:
+      "AI development, workflow automation, knowledge search, and system integrations",
+    breadcrumbName: "AI Services",
+    audienceType:
+      "Businesses, ecommerce brands, and digital agencies building or integrating AI solutions",
+    faqs: aiServicesFaqs.items.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: aiServicesDetailedGrid.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+

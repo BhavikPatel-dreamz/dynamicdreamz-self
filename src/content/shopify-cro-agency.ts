@@ -25,7 +25,7 @@ export const shopifyCroHero = {
 
 export const shopifyCroBrands = {
   slug: "shopify-cro-agency",
-  heading: "Trusted by <br>Leading Brands",
+  heading: "Trusted by Leading Brands",
   ariaLabel: "Trusted by Leading Brands",
   items: migrationBrandLogos,
 } as const;

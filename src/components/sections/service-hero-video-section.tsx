@@ -49,6 +49,7 @@ export type ServiceHeroVideoSectionProps = {
   titleAccentTag?: "i" | "span";
   titleAccentClassName?: string;
   titleAccentPosition?: "start" | "end";
+  rightColClassName?: string;
 };
 
 export function ServiceHeroVideoSection({
@@ -59,6 +60,7 @@ export function ServiceHeroVideoSection({
   titleAccentTag = "i",
   titleAccentClassName,
   titleAccentPosition = "end",
+  rightColClassName,
 }: ServiceHeroVideoSectionProps) {
   const isShopifyMigration = wrapperClassName?.includes("hero-shopify-migration");
 
@@ -239,7 +241,12 @@ export function ServiceHeroVideoSection({
               </div>
             </div>
           ) : content.image ? (
-            <div className="right-col flex w-[43.182%] max-[1399px]:w-[48%] max-[1199px]:w-[50%] max-[1199px]:mx-auto max-[1199px]:mb-10 max-[767px]:hidden">
+            <div
+              className={cn(
+                "right-col flex w-[43.182%] max-[1399px]:w-[48%] max-[1199px]:w-[50%] max-[1199px]:mx-auto max-[1199px]:mb-10 max-[767px]:hidden",
+                rightColClassName,
+              )}
+            >
               <div className="hero-img w-full">
                 <Image
                   src={content.image.src}

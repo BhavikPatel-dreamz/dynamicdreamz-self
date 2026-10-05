@@ -796,6 +796,36 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  aiServices: {
+    path: "/ai-services",
+    title: "AI Development Services & Business Automation",
+    description:
+      "AI development services for business assistants, knowledge search, workflow automation, chatbots, content tools and AI integrations for websites and apps.",
+    socialDescription:
+      "Dynamic Dreamz builds practical AI solutions for customer support, knowledge search, automation, content workflows, ecommerce and existing digital products.",
+    keywords: [
+      "AI Development Services",
+      "Business Automation",
+      "RAG Knowledge Search",
+      "AI Assistants",
+      "AI Agents",
+      "Shopify AI",
+      "AI Integration",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-09-01T00:00:00+00:00",
+    modifiedTime: "2026-10-05T00:00:00+05:30",
+    image: {
+      path: "/assets/og/ai-services.png",
+      width: 1734,
+      height: 907,
+      alt: "AI Development Services & Business Automation | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+  },
   shopifyMigration: {
     path: "/shopify-migration",
     title: "Seamless Shopify Migration Services | Dynamic Dreamz",

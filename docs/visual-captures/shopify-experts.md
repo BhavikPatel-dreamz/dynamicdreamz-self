@@ -33,7 +33,7 @@ rendered live page + View Page Source, live page-specific CSS
 | Section | Live behavior/style | Local implementation notes |
 | --- | --- | --- |
 | 1. Hero | `.hero-new-section`: H1, eyebrow spans, lead paragraph, 2 CTA buttons, 4 partner badges, right video | `ServiceHeroVideoSection` |
-| 2. Client Logos | `.our-client-sec dev` bg #FBEED5: `Trusted by<br>Leading Brands` H2 left (31%), 10-brand logo slider right (69%) | `IndustryBrandsSection` using `ClientLogoSlider` with exact 10 brand items |
+| 2. Client Logos | `.our-client-sec dev` bg #FBEED5: `Trusted by Leading Brands` H2 left (31%), 10-brand logo slider right (69%) | `IndustryBrandsSection` using `ClientLogoSlider` with exact 10 brand items |
 | 3. Hiring Process | `.our-development-process last-col-100`: H2, subtitle, 4 `.item` step boxes with border styling | `OurDevelopmentProcessSection` |
 | 4. Why Choose DD | `.why_choose_dynamic_dreamz_for_shopify_migration` bg #171e16: Split heading, 3 white feature boxes left with SVG icons, right white card with Platinum Partner badge (linking to directory), `20+ Years of Ecommerce Delivery` heading, 4 stats, `About Dynamic Dreamz` link to `/about-us` | `WhyChooseShopifyMigrationSection` |
 | 5. Services | `.shopify-development-services.pt-80.last-col-100`: Split heading, eyebrow `Complete Shopify Capability`, 6 service cards (first row-span-2, fourth col-span-2, last col-span-2 with mobile app CTA link) | `ShopifyStageServicesSection` with `lastColFull` |

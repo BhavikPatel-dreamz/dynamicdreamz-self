@@ -98,7 +98,7 @@ export const wordPressThemeCustomizationContent = {
   },
 
   brands: {
-    heading: "Trusted by <br>Leading Brands",
+    heading: "Trusted by Leading Brands",
     slug: "wordpress-theme-customization",
     items: [
       {
