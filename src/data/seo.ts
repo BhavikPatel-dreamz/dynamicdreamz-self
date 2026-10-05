@@ -1367,7 +1367,7 @@ export const pageSeo = {
     path: "/white-label-website-design-services",
     title: "White Label Website Design Services | Dynamic Dreamz",
     description:
-      "Scale your agency with white label website design services. Get professional, custom websites delivered under your brand by a trusted web design partner.",
+      "White-label website design services for digital and creative agencies. Deliver custom websites, ecommerce development, and ongoing support under your brand.",
     keywords: [
       "white label website design services",
       "white label web design agency",
@@ -1377,7 +1377,7 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-12-09T09:29:53+00:00",
-    modifiedTime: "2026-06-03T09:07:47+00:00",
+    modifiedTime: "2026-09-22T13:43:34+00:00",
     image: {
       path: "/assets/white-label-website-design/hero/white-label-website-design-services.png",
       width: 1150,

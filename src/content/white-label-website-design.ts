@@ -1,164 +1,426 @@
-import { testimonials, type Testimonial } from "@/content/home";
+import type { CityPageHeroContent } from "@/components/sections/city-page-hero-section";
+import type { OurDevelopmentProcessContent } from "@/components/sections/our-development-process-section";
+import type { ShopifyStageServicesContent } from "@/components/sections/shopify-stage-services-section";
+import type { ShopifyTeamBoxesContent } from "@/components/sections/shopify-team-boxes-section";
+import type { CounterItem } from "@/components/sections/white-label-shopify/white-label-counter-section";
 import type {
-  WhiteLabelCapability,
   WhiteLabelCard,
   WhiteLabelFaq,
-  WhiteLabelHero,
   WhiteLabelService,
-  WhiteLabelStat,
 } from "@/types/white-label-service";
 
-export const whiteLabelWebsiteDesignSectionCopy = {
-  whyChooseTitle: "Why Choose White Label Website Design?",
-  whyChooseDescription:
+export const whiteLabelWebsiteDesignHero: CityPageHeroContent = {
+  title: "White Label Website Design",
+  subtitle:
+    "Looking to expand your agency's service offerings without building a larger in-house team?",
+  description:
+    "Our white label website design services help digital, creative and marketing agencies deliver custom websites under their own brand.",
+  secondaryDescription:
+    "Our designers and developers work behind the scenes on website design, ecommerce, development and ongoing project support while your agency keeps the client relationship.",
+  primaryCta: {
+    label: "request a Quote",
+    href: "/request-quote",
+  },
+  badges: [
+    {
+      src: "/assets/proof/shopify-platinum-partner.svg",
+      alt: "Dynamic Dreamz - Shopify Platinum Partner",
+      width: 136,
+      height: 44,
+      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
+    },
+    {
+      src: "/assets/proof/clutch-rating.svg",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      width: 111,
+      height: 44,
+      href: "https://clutch.co/profile/dynamic-dreamz",
+    },
+    {
+      src: "/assets/proof/trustpilot-rating.svg",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      width: 148,
+      height: 50,
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+    },
+    {
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      width: 126,
+      height: 54,
+      href: "https://www.upwork.com/agencies/dynamicdreamz/",
+    },
+  ],
+  tabletSlider: {
+    bgShapeSrc:
+      "/assets/services/shopify-development-in-bangalore/hero/slide-bg-shape.svg",
+    topBadge: {
+      src: "/assets/white-label-website-design/hero/css-badge.png",
+      alt: "CSS",
+      width: 346,
+      height: 212,
+    },
+    bottomBadge: {
+      src: "/assets/white-label-website-design/hero/html-badge.png",
+      alt: "HTML",
+      width: 260,
+      height: 252,
+    },
+    slides: [
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-green-future-energy.webp",
+        alt: "greenfutureenergy",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/shopify-development-in-bangalore/hero/slide-bellavita.webp",
+        alt: "bellavita",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-the-huddle-sports-grill.webp",
+        alt: "thehuddlesportsgrill",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/shopify-development-in-bangalore/hero/slide-kalki.webp",
+        alt: "kalki",
+        width: 1600,
+        height: 2380,
+      },
+    ],
+  },
+};
+
+export const whiteLabelWebsiteDesignCounters: readonly CounterItem[] = [
+  { value: "50+ Agencies", label: "Supported Worldwide" },
+  { value: "20+ Years", label: "Web & Ecommerce Experience" },
+  { value: "150+ Experts", label: "Commerce & Technology" },
+  { value: "5000+", label: "Projects Delivered" },
+];
+
+export const whiteLabelWebsiteDesignWhyCopy = {
+  title: "Why Choose White Label Website Design?",
+  description:
     "White label website design entrusts agencies with expanding their services, delivering high quality websites, and saving costs while maintaining their brand identity. It’s the perfect solution for scaling your business without adding complexity.",
-  aiEnginesTitle: "Websites Built for Today's Visitors and Tomorrow's AI Engines",
-  aiEnginesDescription:
-    "Great design is only half the job. We help your clients' websites perform better through AI-powered tools, smarter automation, and the technical foundations that AI search engines need to discover and recommend them.",
-  aiDiscoveryTitle: "Designed to be found by AI, not just Google",
-  aiDiscoveryDescription:
-    "Search is shifting. ChatGPT, Gemini, and Perplexity are now recommending businesses directly to users. We make sure the websites we build are readable, citable, and trusted by these AI engines from day one.",
-  aiDiscoveryCta: "Learn how we do it",
-  aiDiscoveryCtaHref: "/request-quote",
-  aiDiscoveryClosing:
-    "Add AI-enhanced design to your agency's offering We handle the build and the tech. You keep the client relationship.",
-  aiDiscoveryClosingCta: "Talk to an expert",
-  aiDiscoveryClosingCtaHref: "/book-a-discovery-call",
-  processTitle: "Our White Label Web Development Process",
-  processDescription:
-    "We use a structured process to ensure that every white label website development project is delivered on time and fulfills your client's expectations.",
-  featuresTitle: "Features of White Label Web Design Services",
-  featuresDescription:
-    "Our White label web design services offer several features that make it an attractive option for agencies looking to expand their offerings.",
-  partnerTitle: "Choosing the Right White Label Web Design Partner",
-  partnerDescription:
-    "Choosing the right white label website design partner is crucial for your company's success and growth. When you find a white label website design partner, consider a strong portfolio, proven track record, and effective communication. The perfect partner can offer quality work and help you grow and maintain long term client relationships.",
-  industriesTitle: "Industries We have Served",
-  industriesDescription:
-    "We offer white label web design services across various industries, guaranteeing we satisfy each client's unique requirements.",
-  testimonialsTitle: "Case Studies & Success Stories",
-  testimonialsDescription:
-    "Many companies have used our white label website design services to help their clients get high quality website designs. We take pride in our portfolio, which consists of successful website design projects that show that we can fulfill deadlines and satisfy clients' requirements. Check our case studies to learn how we have helped agencies grow their business by delivering excellent web design services with our white label services.",
-  servicesTitle: "Our White Label Web Design Services",
-  servicesDescription:
-    "We provide a wide selection of white label website design services customized based on your client's requirements.",
-  benefitsTitle: "Benefits of White Label Website Design Services",
-  benefitsDescription:
-    "White label web design services provide many advantages for agencies aiming to grow. It allows businesses to grow without worrying about managing every technical aspect.",
-  advantagesTitle: "Advantages of White Label",
-  advantagesTitleSecondLine: "Web Design for Agenciess",
-  advantagesDescription:
-    "Working with a white label partner allows agencies to offer a full suite of web design services without the hassle of handling development in house.",
 } as const;
 
-export const whiteLabelWebsiteDesignHero = {
-  title: "White Label Website Design",
-  titleLines: ["White Label", "Website Design"],
-  lead: "Looking to expand your service offerings without the hassle of building an in-house team?",
-  leadStrong: false,
-  paragraphs: [
-    "Our white label website design services provide the perfect solution. We create custom, high quality websites tailored to your client’s needs, all branded under your name. Whether you’re an agency looking to scale or a business aiming to diversify, our team handles the design and development while you take all the credit.",
-  ],
-  cta: "request a Quote",
-  illustration:
-    "/assets/white-label-website-design/hero/white-label-website-design-services.png",
-  illustrationAlt: "White Label Website Design Services",
-} as const satisfies WhiteLabelHero;
-
-export const whiteLabelWebsiteDesignStats: readonly WhiteLabelStat[] = [
-  { value: "20+", label: "Years of experience", icon: "/assets/proof/years-of-experience.svg" },
-  { value: "150+", label: "Skilled Developers", icon: "/assets/proof/skilled-developers.svg" },
-  { value: "2500+", label: "Client Reviews", icon: "/assets/proof/client-reviews.svg" },
-  { value: "1000+", label: "WP Sites Delivered", icon: "/assets/proof/sites-delivered.svg" },
-];
-
 export const whiteLabelWebsiteDesignReasons: readonly WhiteLabelCard[] = [
-  { title: "Expand Service Offerings", description: "White label web design allows you to provide a more comprehensive choice of services and attract more customers without creating an in-house team." },
-  { title: "Focus on Core Competencies", description: "Allow professionals to manage website design while your company concentrates on customer relations, sales, and marketing." },
-  { title: "Cost Effective Solution", description: "When web design is outsourced instead of being developed or designed internally, overhead costs are decreased." },
-  { title: "Faster Project Turnaround", description: "Working with professional white label web developers allows you to complete projects faster, which increases productivity and client satisfaction." },
-  { title: "Brand Control", description: "All work is delivered under your name, maintaining customer trust and enhancing your reputation in the marketplace." },
+  {
+    title: "Expand Service Offerings",
+    description:
+      "White label web design allows you to provide a more comprehensive choice of services and attract more customers without creating an in-house team.",
+  },
+  {
+    title: "Focus on Core Competencies",
+    description:
+      "Allow professionals to manage website design while your company concentrates on customer relations, sales, and marketing.",
+  },
+  {
+    title: "Cost Effective Solution",
+    description:
+      "When web design is outsourced instead of being developed or designed internally, overhead costs are decreased.",
+  },
+  {
+    title: "Faster Project Turnaround",
+    description:
+      "Working with professional white label web developers allows you to complete projects faster, which increases productivity and client satisfaction.",
+  },
+  {
+    title: "Brand Control",
+    description:
+      "All work is delivered under your name, maintaining customer trust and enhancing your reputation in the marketplace.",
+  },
 ];
 
-const benefitAsset = (filename: string) => `/assets/white-label-website-design/benefits/${filename}.svg`;
-export const whiteLabelWebsiteDesignBenefits: readonly WhiteLabelCapability[] = [
-  { title: "Scalability", description: "Increase your client list without worrying about hiring more people or gaining more experience to grow your company fast.", icon: benefitAsset("scalability") },
-  { title: "Access to Expertise", description: "Work with experienced designers and developers to provide high quality services and ensure that professional and modern websites are delivered to your client.", icon: benefitAsset("access-to-expertise") },
-  { title: "Increase Revenue Streams", description: "Add website design services to your list of services to attract more customers and boost your overall income.", icon: benefitAsset("increase-revenue-streams") },
-  { title: "Reduced Risk", description: "With a white label partner, you can lower the risk of project delays or poor quality work, ensuring your clients are happy with the project work.", icon: benefitAsset("reduced-risk") },
-  { title: "Flexible Pricing", description: "By negotiating with the white label partner, you can manage your pricing structure and margins and offer your clients competitive pricing.", icon: benefitAsset("flexible-pricing") },
-];
+export const whiteLabelWebsiteDesignBenefitsContent = {
+  eyebrow: "Key Benefits",
+  heading: "Benefits of White Label Website Design Services ",
+  description:
+    "White label web design services provide many advantages for agencies aiming to grow. It allows businesses to grow without worrying about managing every technical aspect.",
+  boxes: [
+    {
+      iconName: "scalability",
+      title: "Scalability",
+      description:
+        "Increase your client list without worrying about hiring more people or gaining more experience to grow your company fast.",
+    },
+    {
+      iconName: "access-to-expertise",
+      title: "Access to Expertise",
+      description:
+        "Work with experienced designers and developers to provide high quality services and ensure that professional and modern websites are delivered to your client.",
+    },
+    {
+      iconName: "increase-revenue-streams",
+      title: "Increase Revenue Streams",
+      description:
+        "Add website design services to your list of services to attract more customers and boost your overall income.",
+    },
+    {
+      iconName: "reduced-risk",
+      title: "Reduced Risk",
+      description:
+        "With a white label partner, you can lower the risk of project delays or poor quality work, ensuring your clients are happy with the project work.",
+    },
+    {
+      iconName: "flexible-pricing",
+      title: "Flexible Pricing",
+      description:
+        "By negotiating with the white label partner, you can manage your pricing structure and margins and offer your clients competitive pricing.",
+    },
+  ],
+} as const;
 
-const aiAsset = (filename: string) => `/assets/white-label-website-design/ai/${filename}.svg`;
-export const whiteLabelWebsiteDesignAiCapabilities: readonly WhiteLabelCapability[] = [
-  { title: "AI-assisted content", description: "Generate high-quality product descriptions, landing page copy, and SEO content fast and at scale.", icon: aiAsset("ai-assisted-content"), tools: ["OpenAI", "Shopify Magic"] },
-  { title: "Smarter customer support", description: "Embed AI chat and support tools that reduce ticket volume and keep visitors engaged on-site.", icon: aiAsset("smarter-customer-support"), tools: ["Tidio", "Tidio"] },
-  { title: "Workflow automation", description: "Connect your clients' websites to their business tools, removing manual work across marketing, CRM, and fulfilment.", icon: aiAsset("workflow-automation"), tools: ["Zapier", "Make"] },
-  { title: "Email & retention", description: "Behaviour-based email flows that convert first-time visitors into repeat buyers automatically.", icon: aiAsset("email-retention"), tools: ["Klaviyo"] },
-  { title: "Conversion optimisation", description: "AI-informed UX improvements from page layout to CTAs that move visitors toward action.", icon: aiAsset("conversion-optimisation"), tools: ["Shopify Sidekick"] },
-];
+export const whiteLabelWebsiteDesignAiEnginesContent: ShopifyStageServicesContent = {
+  eyebrow: "Built for AI",
+  heading: "Websites Built for Search, AI Discovery and Modern User Experiences",
+  description:
+    "Great design is only half the job. We help your clients' websites perform better through AI-powered tools, smarter automation, and the technical foundations that AI search engines need to discover and recommend them.",
+  items: [
+    {
+      title: "AI-assisted content",
+      description:
+        "Generate high-quality product descriptions, landing page copy, and SEO content fast and at scale.",
+      pills: ["OpenAI", "Shopify Magic"],
+    },
+    {
+      title: "Smarter customer support",
+      description:
+        "Embed AI chat and support tools that reduce ticket volume and keep visitors engaged on-site.",
+      pills: ["Tidio", "Tidio"],
+    },
+    {
+      title: "Workflow automation",
+      description:
+        "Connect your clients' websites to their business tools, removing manual work across marketing, CRM, and fulfilment.",
+      pills: ["Zapier", "Make"],
+    },
+    {
+      title: "Email & retention",
+      description:
+        "Behaviour-based email flows that convert first-time visitors into repeat buyers automatically.",
+      pills: ["Klaviyo"],
+    },
+    {
+      title: "Conversion optimisation",
+      description:
+        "AI-informed UX improvements from page layout to CTAs that move visitors toward action.",
+      pills: ["Shopify Sidekick"],
+    },
+  ],
+};
 
-export const whiteLabelWebsiteDesignAiDiscovery: readonly WhiteLabelCard[] = [
-  { title: "Schema & structured data", description: "FAQPage, Organization, and Product schema so AI engines can read and cite your clients' sites." },
-  { title: "Internal linking & content structure", description: "Pages are structured so both users and AI crawlers understand context, hierarchy, and relevance." },
-  { title: "Trust signals", description: "Reviews, credentials, and social proof woven into the design are the signals AI uses to recommend businesses." },
-  { title: "Agentic commerce readiness", description: "For e-commerce clients, we prepare stores for AI agents that discover products and complete purchases autonomously." },
-];
+export const whiteLabelWebsiteDesignAiDiscoveryContent: ShopifyTeamBoxesContent = {
+  eyebrow: "AI Search Visibility",
+  heading: "Designed to Be Found by AI, Not Just Google",
+  description: [
+    "Search is shifting. ChatGPT, Gemini, and Perplexity are now recommending businesses directly to users. We structure websites so search engines and AI-powered discovery tools can more clearly understand the business, services and supporting content.",
+    "Add AI-enhanced design to your agency's offering We handle the build and the tech. You keep the client relationship.",
+  ],
+  cta: {
+    label: "Learn how we do it",
+    href: "/request-quote",
+  },
+  secondaryCta: {
+    label: "Talk to an expert",
+    href: "/book-a-discovery-call",
+  },
+  items: [
+    {
+      title: "Schema & Structured Data",
+      description:
+        "FAQPage, Organization, and Product schema so AI engines can read and cite your clients' sites.",
+    },
+    {
+      title: "Content & Internal Linking",
+      description:
+        "Build clear page hierarchy, descriptive headings and contextual internal links that help users and search systems understand the site.",
+    },
+    {
+      title: "Trust & Entity Signals",
+      description:
+        "Keep business information, reviews, credentials, authorship and supporting proof clear and consistent.",
+    },
+    {
+      title: "AI & Automation Integrations",
+      description:
+        "Where required, integrate AI-assisted content tools, customer support, workflow automation and marketing platforms.",
+    },
+  ],
+};
 
-export type WhiteLabelWebsiteDesignProcessStep = WhiteLabelCard & { icon: string };
-const processAsset = (filename: string) => `/assets/process/${filename}.svg`;
-export const whiteLabelWebsiteDesignProcess: readonly WhiteLabelWebsiteDesignProcessStep[] = [
-  { title: "Analyze", description: "We start by analyzing your client's requirements and collecting all relevant data to ensure we understand the project's requirements.", icon: processAsset("step-01") },
-  { title: "Design", description: "Our design team creates a layout and wireframe based on the project requirements, focusing on user experience and visual attraction.", icon: processAsset("step-02") },
-  { title: "Build", description: "After design approval, our development team starts creating the website using the latest technologies, ensuring the website is fast, secure, and responsive.", icon: processAsset("step-03") },
-  { title: "Test", description: "Before delivery, we thoroughly test the site to ensure it works perfectly across all devices and browsers.", icon: processAsset("step-04") },
-];
+export const whiteLabelWebsiteDesignProcessContent: OurDevelopmentProcessContent = {
+  eyebrow: "Our Process",
+  heading: "Our White Label Web Development Process",
+  description:
+    "We use a structured process to ensure that every white label website development project is delivered on time and fulfills your client's expectations.",
+  steps: [
+    {
+      step: "Step 01",
+      title: "Analyze",
+      description:
+        "We start by analyzing your client's requirements and collecting all relevant data to ensure we understand the project's requirements.",
+    },
+    {
+      step: "Step 02",
+      title: "Design",
+      description:
+        "Our design team creates wireframes and visual concepts based on the approved requirements, with a focus on usability, brand consistency and visual appeal.",
+    },
+    {
+      step: "Step 03",
+      title: "Build",
+      description:
+        "After design approval, our development team starts creating the website using the latest technologies, ensuring the website is fast, secure, and responsive.",
+    },
+    {
+      step: "Step 04",
+      title: "Test",
+      description:
+        "Before delivery, we thoroughly test the site to ensure it works perfectly across all devices and browsers.",
+    },
+  ],
+};
 
-export const whiteLabelWebsiteDesignFeatures: readonly WhiteLabelCard[] = [
-  { title: "Customization", description: "We create website design to fit your client's brand, ensuring each site is unique and personalized." },
-  { title: "Responsive Design", description: "We build websites that look great on all devices, from desktops to smartphones, ensuring a seamless user experience." },
-  { title: "SEO Friendly", description: "Our designs follow best practices for SEO, ensuring the sites are optimized for search engines and helping clients rank higher." },
-  { title: "Fast Loading Times", description: "We prioritize performance, ensuring that websites load quickly, improving user satisfaction and search engine rankings." },
-  { title: "Secure Development", description: "We implement robust security measures to protect websites from hackers and other cyber threats." },
-];
+export const whiteLabelWebsiteDesignAdvantagesContent = {
+  eyebrow: "The Agency Advantage",
+  heading: "Advantages of White Label Web Design for Agenciess",
+  description:
+    "Working with a white label partner allows agencies to offer a full suite of web design services without the hassle of handling development in house.",
+  boxes: [
+    {
+      title: "No Need for an In-House Team",
+      description:
+        "You can offer web design services without hiring or managing an internal development team.",
+    },
+    {
+      title: "Fast Loading Times",
+      description:
+        "We focus on efficient front-end implementation, optimized assets and performance best practices to improve loading speed and user experience.",
+    },
+    {
+      title: "Improved Client Satisfaction",
+      description:
+        "Your clients will appreciate the high quality, professional websites that meet their needs and exceed expectations.",
+    },
+    {
+      title: "Increased Profit Margins",
+      description:
+        "Outsourcing work at a lower cost can improve profit margins while maintaining competitive pricing for clients.",
+    },
+    {
+      title: "Less Stress on Internal Resources",
+      description:
+        "With the web design taken care of, your team can focus on their strengths and grow your agency.",
+    },
+  ],
+} as const;
 
-export const whiteLabelWebsiteDesignAdvantages: readonly WhiteLabelCapability[] = [
-  { title: "No Need for an In-House Team", description: "You can offer web design services without hiring or managing an internal development team.", icon: benefitAsset("advantage-check") },
-  { title: "Faster Time to Market", description: "Projects are completed quickly, allowing you to take on more clients and deliver results faster.", icon: benefitAsset("advantage-check") },
-  { title: "Improved Client Satisfaction", description: "Your clients will appreciate the high quality, professional websites that meet their needs and exceed expectations.", icon: benefitAsset("advantage-check") },
-  { title: "Increased Profit Margins", description: "Outsourcing work at a lower cost can improve profit margins while maintaining competitive pricing for clients.", icon: benefitAsset("advantage-check") },
-  { title: "Less Stress on Internal Resources", description: "With the web design taken care of, your team can focus on their strengths and grow your agency.", icon: benefitAsset("advantage-check") },
-];
+const serviceAsset = (filename: string) =>
+  `/assets/white-label-website-design/services/${filename}.svg`;
 
-const serviceAsset = (filename: string) => `/assets/white-label-website-design/services/${filename}.svg`;
+export const whiteLabelWebsiteDesignServicesContent = {
+  eyebrow: "White Label Services",
+  title: "Our White Label Web Design Services",
+  description:
+    "We provide a wide selection of white label website design services customized based on your client's requirements",
+} as const;
+
 export const whiteLabelWebsiteDesignServices: readonly WhiteLabelService[] = [
-  { title: "Custom Website Design", description: "We create custom website designs that match your client’s brand identity and help them stay ahead of competitors.", icon: serviceAsset("custom-website-design") },
-  { title: "eCommerce Website Design", description: "Our designers and developers are experts in designing user friendly, conversion focused eCommerce websites that help your client boost their sales.", icon: serviceAsset("ecommerce-website-design") },
-  { title: "Responsive Website Design", description: "While designing, we ensure that websites are fully responsive and run properly on all devices, offering a smooth experience to visitors.", icon: serviceAsset("responsive-website-design") },
-  { title: "SEO Optimized Websites", description: "We do not provide core SEO services, but we make sure we do some basic SEO. It optimizes the website for search engines and loads faster, helping clients attract more traffic and grow their business.", icon: serviceAsset("seo-optimized-websites") },
-  { title: "Theme Customization", description: "We help your client customize their newly purchased theme or modify their existing one. We can customize the website design to your client’s requirements.", icon: serviceAsset("theme-customization") },
-  { title: "BigCommerce Website Development", description: "We design and develop scalable BigCommerce websites tailored to your client’s business needs. From custom storefronts to seamless integrations, our BigCommerce solutions are built for performance & long-term growth.", icon: serviceAsset("bigcommerce-website-development"), href: "/bigcommerce-development", linkLabel: "Read More" },
+  {
+    title: "Custom Website Design",
+    description:
+      "We create custom website designs that match your client’s brand identity and help them stay ahead of competitors.",
+    icon: serviceAsset("custom-website-design"),
+  },
+  {
+    title: "eCommerce Website Design",
+    description:
+      "Our designers and developers are experts in designing user friendly, conversion focused eCommerce websites that help your client boost their sales.",
+    icon: serviceAsset("ecommerce-website-design"),
+  },
+  {
+    title: "Responsive Website Design",
+    description:
+      "While designing, we ensure that websites are fully responsive and run properly on all devices, offering a smooth experience to visitors.",
+    icon: serviceAsset("responsive-website-design"),
+  },
+  {
+    title: "SEO-Ready Website Development",
+    description:
+      "While we do not provide full SEO campaigns as part of standard web development, we build websites with technical SEO fundamentals including heading structure, metadata support, responsive implementation, performance and crawl-friendly architecture.",
+    icon: serviceAsset("seo-optimized-websites"),
+  },
+  {
+    title: "Theme Customization",
+    description:
+      "We help your client customize their newly purchased theme or modify their existing one. We can customize the website design to your client’s requirements.",
+    icon: serviceAsset("theme-customization"),
+  },
+  {
+    title: "BigCommerce Website Development",
+    description:
+      "We design and develop scalable BigCommerce websites tailored to your client’s business needs. From custom storefronts to seamless integrations, our BigCommerce solutions are built for performance & long-term growth.",
+    icon: serviceAsset("bigcommerce-website-development"),
+    href: "/bigcommerce-development",
+    linkLabel: "Read More",
+  },
 ];
 
-export type WhiteLabelWebsiteDesignIndustry = WhiteLabelCard & { icon: string };
-const industryAsset = (filename: string) => `/assets/white-label-website-design/industries/${filename}.svg`;
-export const whiteLabelWebsiteDesignIndustries: readonly WhiteLabelWebsiteDesignIndustry[] = [
-  { title: "Beauty & Cosmetics", description: "We are experts in designing stunning websites for beauty and cosmetics brands, helping them highlight their hero products and attract new customers.", icon: industryAsset("beauty-cosmetics-pet") },
-  { title: "Fashion & Apparel", description: "Our creative website designs for fashion and apparel brands concentrate on visual appeal and straightforward navigation, encouraging visitors to explore and buy.", icon: industryAsset("fashion-apparel") },
-  { title: "Food & Beverages", description: "Our experienced website designers create attractive website designs for food and beverage businesses, improving their online presence and boosting sales.", icon: industryAsset("food-beverages") },
-  { title: "Health & Nutrition", description: "We create websites that support health and wellness companies, highlighting straightforward, educational content and responsive designs.", icon: industryAsset("health-nutrition") },
-  { title: "Pet Industry", description: "We create active and welcoming website designs for pet related businesses, helping them showcase their products and services.", icon: industryAsset("beauty-cosmetics-pet") },
-];
-
-export const whiteLabelWebsiteDesignTestimonials: readonly Testimonial[] = [...testimonials.slice(6), ...testimonials.slice(0, 6)];
+export const whiteLabelWebsiteDesignFaqCopy = {
+  heading: "Frequently Asked Questions",
+  description:
+    "Get clear answers to common questions about our white label web design process, collaboration, timelines, and services.",
+} as const;
 
 export const whiteLabelWebsiteDesignFaqs: readonly WhiteLabelFaq[] = [
-  { question: "Will you work directly with our clients or contact them at any point?", answer: "Never. We work exclusively with your agency team. Your clients never know we exist; all files, deliverables, and communication go through you. We sign NDAs as standard, and our team is briefed to maintain full confidentiality throughout every project." },
-  { question: "How long does a typical white label website design project take?", answer: "Timelines depend on the project scope. A landing page or single-page design typically takes 5–7 business days. A multi-page custom website ranges from 2 to 4 weeks. An e-commerce website with custom product pages and integrations generally runs 4–6 weeks. We align timelines during the briefing stage so your agency can communicate accurate delivery dates to clients." },
-  { question: "What do you need from us to start a project?", answer: "We typically need a project brief covering your client’s goals, brand guidelines (logo, colours, fonts), reference websites they like, and any content or assets they’ve prepared. If content isn’t ready, we can work with placeholder copy and flag gaps during the review stage. The more context you share upfront, the fewer revision rounds are needed." },
-  { question: "How many revision rounds are included, and how is feedback managed?", answer: "Every project includes a structured review process, design approval at the wireframe stage, staging review before development is finalised, and a pre-launch QA pass. Revision requests are tracked in a shared document so nothing slips through the cracks. If the scope changes significantly during a project, we discuss it transparently before any additional work begins." },
-  { question: "What platforms and technologies do you design and build on?", answer: "We work across Shopify, Shopify Plus, WordPress, WooCommerce, BigCommerce, and Figma-to-code builds. For custom projects, we work with HTML/CSS/JS and popular front-end frameworks. If your client is on a specific platform, let us know during the briefing stage, and we’ll confirm our fit before the project starts." },
-  { question: "Can you add AI tools and automation to the websites you design?", answer: "Yes. Beyond design and development, we can integrate AI-powered tools, including live chat and support automation (Tidio, Gorgias), email marketing and retention flows (Klaviyo), workflow automation across connected business tools (Zapier, Make), and AI-assisted content generation (OpenAI, Shopify Magic). All of this is delivered white label, your agency takes credit, we handle the build." },
-  { question: "What is GEO and why does it matter for my clients' websites?", answer: "GEO stands for Generative Engine Optimisation, the practice of making websites readable and recommendable by AI-powered search engines like ChatGPT, Gemini, and Perplexity. Unlike traditional SEO, which targets Google’s crawler, GEO focuses on structured data, content clarity, trust signals, and FAQ coverage so AI engines can confidently cite a business in their answers. As more users search through AI assistants rather than Google, GEO is becoming as important as SEO for online visibility." },
-  { question: "Are the websites you build ready for agentic commerce and AI shopping agents?", answer: "For e-commerce clients, yes. We prepare Shopify and WooCommerce stores to be compatible with AI shopping agents’ autonomous tools that can discover products, build carts, and complete purchases on behalf of users. This involves a clean product data structure, schema markup, and API readiness aligned with Shopify’s Universal Commerce Protocol. Most e-commerce websites today are not set up for this. We help your clients get ahead of it before it becomes standard." },
+  {
+    question: "Will you work directly with our clients or contact them at any point?",
+    answer:
+      "Never. We work exclusively with your agency team. Your clients never know we exist; all files, deliverables, and communication go through you. We sign NDAs as standard, and our team is briefed to maintain full confidentiality throughout every project.",
+  },
+  {
+    question: "How long does a typical white label website design project take?",
+    answer:
+      "Timelines depend on the project scope. A landing page or single-page design typically takes 5–7 business days. A multi-page custom website ranges from 2 to 4 weeks. An e-commerce website with custom product pages and integrations generally runs 4–6 weeks. We align timelines during the briefing stage so your agency can communicate accurate delivery dates to clients.",
+  },
+  {
+    question: "What do you need from us to start a project?",
+    answer:
+      "We typically need a project brief covering your client's goals, brand guidelines (logo, colours, fonts), reference websites they like, and any content or assets they've prepared. If content isn't ready, we can work with placeholder copy and flag gaps during the review stage. The more context you share upfront, the fewer revision rounds are needed.",
+  },
+  {
+    question: "How many revision rounds are included, and how is feedback managed?",
+    answer:
+      "Every project includes a structured review process, design approval at the wireframe stage, staging review before development is finalised, and a pre-launch QA pass. Revision requests are tracked in a shared document so nothing slips through the cracks. If the scope changes significantly during a project, we discuss it transparently before any additional work begins.",
+  },
+  {
+    question: "What platforms and technologies do you design and build on?",
+    answer:
+      "We work across Shopify, Shopify Plus, WordPress, WooCommerce, BigCommerce, and Figma-to-code builds. For custom projects, we work with HTML/CSS/JS and popular front-end frameworks. If your client is on a specific platform, let us know during the briefing stage, and we'll confirm our fit before the project starts.",
+  },
+  {
+    question: "Can your team work inside our agency's existing workflow?",
+    answer:
+      "Yes. We can work with your existing project-management and communication process, including tools such as Slack, Asana, Trello, Jira or Monday.com. Our team can operate entirely behind the scenes under your agency's brand and NDA requirements.",
+  },
+  {
+    question: "Do you build websites with SEO and AI discovery in mind?",
+    answer:
+      "Yes. We follow technical SEO fundamentals and use clear content structure, internal linking and relevant structured data so search engines and AI-powered discovery tools can better understand the website and business.",
+  },
+  {
+    question: "Can you add structured data to the websites you build?",
+    answer:
+      "Yes. Where appropriate, we can implement structured data such as Organization, Service, Product, FAQ and other relevant schema types based on the website and its content.",
+  },
+  {
+    question: "Can you integrate AI or automation tools into client websites?",
+    answer:
+      "Yes. Where required, we can integrate suitable AI-assisted tools, customer-support systems, workflow automation and marketing platforms. The exact implementation depends on the platform, API access and project requirements.",
+  },
 ];

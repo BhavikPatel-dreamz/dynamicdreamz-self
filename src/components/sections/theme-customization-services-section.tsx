@@ -7,6 +7,7 @@ import { cn } from "@/lib/class-names";
 export type ThemeCustomizationBox = {
   number?: string;
   icon?: ReactNode;
+  iconWrapperClassName?: string;
   title: string;
   badge?: string;
   description?: string;
@@ -62,7 +63,13 @@ export function ThemeCustomizationServicesSection({
               key={box.number ?? box.title}
             >
               {box.icon ? (
-                <div className="icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&>svg]:size-6 [&>svg]:h-auto">
+                <div
+                  className={cn(
+                    "icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&>svg]:h-auto",
+                    variant === "transparent" ? "[&>svg]:size-10" : "[&>svg]:size-6",
+                    box.iconWrapperClassName,
+                  )}
+                >
                   {box.icon}
                 </div>
               ) : box.number ? (

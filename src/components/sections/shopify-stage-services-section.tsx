@@ -5,7 +5,7 @@ import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
 
 export type StageServiceItem = {
-  tag: string;
+  tag?: string;
   title: string;
   description: string;
   pills?: readonly string[];
@@ -67,7 +67,7 @@ export function ShopifyStageServicesSection({
                   "item relative overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] p-[27px] transition-all max-[1399px]:p-5 max-[767px]:rounded-[16px]",
                   isFirst
                     ? "row-span-2 min-h-[440px] bg-[#f7f4ea] flex flex-col justify-between max-[1199px]:row-span-1 max-[1199px]:min-h-0 max-[767px]:min-h-0"
-                    : isFourth
+                    : isFourth && content.items.length !== 5
                       ? "col-span-2 bg-[#eff4ef] max-[1199px]:col-span-1 flex flex-col justify-between"
                       : isSeventh
                         ? "bg-white max-[1199px]:row-span-2 max-[1199px]:bg-[#eef4ef] flex flex-col justify-between"
@@ -80,9 +80,11 @@ export function ShopifyStageServicesSection({
                 key={item.title}
               >
                 <div className="top">
-                  <span className="mb-[15px] block font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151]">
-                    {item.tag}
-                  </span>
+                  {item.tag ? (
+                    <span className="mb-[15px] block font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151]">
+                      {item.tag}
+                    </span>
+                  ) : null}
                   <h3 className="mb-2.5 font-montserrat text-[20px] font-bold leading-[28px] text-ink max-[1199px]:text-[18px] max-[1199px]:leading-[24px]">
                     {item.title}
                   </h3>

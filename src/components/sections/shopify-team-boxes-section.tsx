@@ -16,6 +16,10 @@ export type ShopifyTeamBoxesContent = {
     label: string;
     href: string;
   };
+  secondaryCta?: {
+    label: string;
+    href: string;
+  };
   items: readonly TeamBoxItem[];
 };
 
@@ -71,11 +75,18 @@ export function ShopifyTeamBoxesSection({
                 </p>
               )}
             </div>
-            {content.cta ? (
-              <div className="bottom-block mt-[30px] flex">
-                <ButtonLink href={content.cta.href} variant="primary">
-                  {content.cta.label}
-                </ButtonLink>
+            {content.cta || content.secondaryCta ? (
+              <div className="bottom-block btns_group mt-[30px] flex flex-wrap gap-3">
+                {content.cta ? (
+                  <ButtonLink href={content.cta.href} variant="primary">
+                    {content.cta.label}
+                  </ButtonLink>
+                ) : null}
+                {content.secondaryCta ? (
+                  <ButtonLink href={content.secondaryCta.href} variant="primary">
+                    {content.secondaryCta.label}
+                  </ButtonLink>
+                ) : null}
               </div>
             ) : null}
           </div>

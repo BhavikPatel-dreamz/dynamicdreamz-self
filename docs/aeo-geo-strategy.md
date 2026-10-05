@@ -1653,7 +1653,7 @@ Exact visible proposals are tracked in `docs/page-content-improvements.md`.
 
 Status: implemented; live-visible content preserved
 
-Last reviewed: 2026-09-07
+Last reviewed: 2026-10-05 (Remigrated 11 sequential sections to 1:1 live parity, exact 9 FAQs, exact Yoast metadata)
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 

@@ -1,13 +1,31 @@
 # White Label Website Design Services Visual Capture
 
-Status: tablet parity corrections implemented and verified
+Status: remigrated to 1:1 live parity; 11 sequential sections verified
 Live URL: `https://www.dynamicdreamz.com/white-label-website-design-services/`  
 Local route: `/white-label-website-design-services`
 
-Checked: 2026-08-17
-Browser: Google Chrome headless (desktop, tablet, and mobile emulation)
+Checked: 2026-10-05
+Audited: HTML DOM, CSS keyframes, SVG markup, assets, responsive breakpoints, schema
 
-## 2026-08-17 Desktop Full-page Correction
+## 2026-10-05 1:1 Live Parity Remigration Audit
+
+The page was remigrated to match the live site exactly, removing spurious/mock sections and restoring the exact 11 live sections in order:
+1. **Hero (`.hero-new-section`)**: Rebuilt using `CityPageHeroSection` with tablet slider containing 4 live screenshots, 2 badges (`css.png`, `html.png`), 4 partner rating badges (Shopify Platinum, Clutch 4.9, Trustpilot 4.9, Upwork Top Rated Plus), and exact live hero copy.
+2. **Stats Counter (`.white_label_counter_section`)**: 4 exact stat metrics: 50+ Agencies, 20+ Years, 150+ Experts, 5000+ Projects Delivered.
+3. **Why Choose Accordion (`.white_label_wp_development_service_accordion_section.website-design`)**: Two-column layout with left heading/description and right 5-item interactive accordion (`DesignReasonsAccordion`).
+4. **Key Benefits (`.theme-customization-services.green`)**: Green background (`#eff4ef`), left heading, 5 benefit cards with exact 24x24 red SVG icons (Scalability, Access to Expertise, Increase Revenue Streams, Reduced Risk, Flexible Pricing).
+5. **Websites Built for Search & AI (`.shopify-development-services.pt-80#shopify-services`)**: 5-card grid with AI engine tags (`OpenAI`, `Shopify Magic`, `Tidio`, `Tidio`, `Zapier`, `Make`, `Klaviyo`, `Shopify Sidekick`).
+6. **AI Search Visibility (`.shopify-dev-team.pt-80.pb-80`)**: Dark section (`#192019`), split layout with 4 structured data & AI integration cards and dual CTAs (`/request-quote` and `/book-a-discovery-call`).
+7. **Our Development Process (`.our-development-process`)**: 4 numbered steps (Step 01 Analyze, Step 02 Design, Step 03 Build, Step 04 Test) with light background (`#fafaf7`).
+8. **The Agency Advantage (`.theme-customization-services.transparent`)**: Transparent background, 5 advantage cards with exact 40x40 checkmark SVG icon, preserving live typo `"Agenciess"`.
+9. **White Label Services (`.white_label_wp_development_service_accordion_section`)**: Dark background (`#171e16`), split title with eyebrow, 6 service accordion items with exact canonical SVG icons, `showCta={false}` matching live site.
+10. **Happy Clients (`.happy-client-sec.pt-80`)**: Full client testimonial carousel matching live site.
+11. **Split FAQs (`.faq-sec.bg-sky-blue`)**: Split two-column layout on `#fafaf7`, left sticky header, 9 exact live FAQs with circular plus/minus toggles.
+
+### Zero Duplicate Assets Verification
+- Hero badges stored at `public/assets/white-label-website-design/hero/`.
+- 6 service icons stored at `public/assets/white-label-website-design/services/`.
+- All duplicate assets eliminated; `npm run check:asset-duplicates` verified 0 duplicates across 1794 assets.
 
 Fresh 1440px full-page captures (`/tmp/wl-design-local-1440-current.png`
 and `/tmp/wl-design-live-1440-current.png`) confirmed that the local hero's
