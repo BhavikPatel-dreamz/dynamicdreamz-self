@@ -957,10 +957,9 @@ to the live H1 and introduction on 2026-08-13.
 
 ## Career (`/career`)
 
-Status: schema improvements retained; visible listing presentation restored to
-live on 2026-08-13
+Status: remigrated to exact live parity on 2026-10-05; 3-section live structure, active openings, and JobPosting schema synchronized
 
-Last reviewed: 2026-08-13
+Last reviewed: 2026-10-05
 
 Owner: HR, SEO, content, and development
 
@@ -971,48 +970,21 @@ and Ahmedabad.
 
 ### Current strengths
 
-- Current roles, experience ranges, job type, dates, positions, and job PDFs are
-  structured in typed content.
-- The live location tabs and complete five-role presentation are preserved in
-  the UI.
-- JobPosting schema uses the seven role/location combinations supported by the
-  local job PDFs.
-- Office addresses, hiring organization, date posted, and application URLs are
-  represented.
-- Workplace benefits and real team imagery add useful candidate context.
+- Rebuilt to match the live site's strictly 3-section layout: Hero (`.hero-new-section.hide-logo`), Current Openings (`.current-openings-sec`), and Workplace Benefits (`.theme-customization-services.yellow`).
+- Current live roles match the live DOM: Jr. CRE (Surat), SEO/AEO/GEO Specialist (Surat, Ahmedabad), Conversion Rate Optimization (Surat, Ahmedabad). Obsolete positions removed.
+- JobPosting schema emits structured data for all active city/job combinations with office addresses, hiring organization reference, date posted, and application URLs.
+- Filter toggle switches seamlessly between Surat and Ahmedabad openings.
+- Workplace benefits rendered using the shared `ThemeCustomizationServicesSection` component with custom red benefit SVGs.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Implemented improvement or dependency |
 | --- | --- | --- | --- | --- |
-| P0 | implemented | Application route | Apply CTAs and JobPosting URLs targeted planned `/career-apply-now` | Route migrated production-ready with role/location pre-selection and active application flow |
-| P0 | partially implemented; approval required | Location accuracy | The live UI represents every role in both cities, while local PDFs support seven combinations | PDF-supported locations remain in JobPosting schema, while the visible tabs were restored to live. HR must confirm whether the UI or PDFs are authoritative before launch |
-| P0 | partially implemented | Job details | Full descriptions exist in PDFs | Role summaries remain in typed data and JobPosting descriptions, but visible card summaries were removed for live parity; full HTML detail remains future work |
-| P0 | blocked | Job freshness | Listings lack a visible review date and approved expiry dates | The proposed visible review date was removed for live parity; establish an HR-owned review and expiry process |
-| P1 | deferred | H1 and intent | H1 does not lead with employer/location intent | The entity-first H1 and introduction were reverted to live on 2026-08-13 |
-| P1 | deferred | Benefits grammar | “Ample of Employee Engagement Activities” is incorrect | Corrected wording was reverted to live on 2026-08-13 |
-| P1 | partially implemented | Job schema description | Visible cards do not include role summaries | JobPosting nodes retain PDF-derived summaries, experience, location, and on-site context; visible adoption is deferred |
-| P1 | deferred | Candidate FAQs | Policies live only on Life | The descriptive cross-link was removed for live parity on 2026-08-13 |
-| P1 | partially implemented; approval required | Office context | Candidates need accurate location/work-model context | Schema contains both office addresses and PDF-supported posting locations, while visible tabs preserve the live presentation pending HR confirmation |
-| P2 | migration pending | JobPage structure | All jobs share one index page | Preserve current index/application model until approved job-detail routes and full HTML descriptions are migrated |
-
-### Suggested hero copy
-
-Status: deferred. The proposed copy was implemented on 2026-08-12 and reverted
-to the live hero and opportunities wording on 2026-08-13.
-
-**H1:**
-
-> Careers at Dynamic Dreamz
-
-**Introduction:**
-
-> Explore ecommerce, technology, design, marketing, and growth opportunities
-> with Dynamic Dreamz in Surat and Ahmedabad. Join a multidisciplinary team
-> working with global brands and digital agencies.
-
-The existing aspirational sentence can remain as supporting copy after this
-direct answer.
+| P0 | implemented | Architecture | Retired gallery and 4-column benefits sections existed in legacy code | Removed non-existent sections, aligning with live 3-section layout |
+| P0 | implemented | Openings accuracy | Legacy expired positions lingered in content | Updated to match the 3 live openings (5 total city slots) |
+| P0 | implemented | Application route | Apply CTAs connect with prefilled parameters | Query parameters `PositionAppliedFor` and `Location` link to `/career-apply-now` |
+| P1 | deferred | Hero intent | Generic marketing hero phrasing | Preserved live heading and copy per migration rules |
+| P1 | implemented | Structured data | Valid JobPosting schemas for all 5 city openings | Emits accurate `JobPosting` graph with exact postal addresses |
 
 ### Questions this page should answer
 
@@ -1020,38 +992,14 @@ direct answer.
 - Is each role based in Surat, Ahmedabad, or both?
 - What experience is required?
 - Is the role full-time, office-based, hybrid, or remote?
-- What does the interview and application process involve?
 - What benefits and growth opportunities are available?
-- When does the role close?
-
-### Structured-data actions
-
-- Completed: emit one JobPosting for each of the seven PDF-supported
-  job/location combinations.
-- Partially completed: structured summaries, experience, posted date, location,
-  and on-site context come from typed data and local PDFs. The live UI does not
-  expose all of these fields and location alignment awaits HR approval.
-- Migration pending: complete the retained application destinations before
-  launch.
-- Blocked: add `validThrough` only when real expiry dates are approved; remove
-  postings promptly when roles close.
-- Factual blocker: resolve the CRO `1–3 years` card versus `2–4 years` PDF
-  conflict, then update the card, PDF, and schema together.
 
 ### Verification and remaining gaps
 
-- URL-policy review (2026-08-13): canonical, Open Graph, sitemap, JSON-LD, and
-  internal links use `/career`; `/career/` redirects to `/career`, and the
-  source/build URL guard passes.
-- Rendered output contains seven JobPosting nodes rather than ten assumed
-  combinations, and each identifier includes the supported city.
-- Responsive captures confirm the live hero, opportunities copy, five-role tabs,
-  cards, benefits wording, and link presentation are restored without clipping
-  or horizontal overflow.
-- Remaining: confirm whether PDFs or the live tabs are authoritative for job
-  locations, then align UI and JobPosting output; application/job-detail
-  migration, expiry governance, full HTML qualifications, hiring-process detail,
-  and CRO experience confirmation also remain open.
+- URL-policy review (2026-10-05): canonical, Open Graph, sitemap, JSON-LD, and internal links use `/career`; URL policy checks pass.
+- Schema emits 5 JobPosting nodes matching the exact live roles in Surat and Ahmedabad.
+- Responsive captures confirm the live hero, opportunities copy, active job cards, benefits cards, and link presentation render without layout shift or horizontal overflow.
+
 
 ## Career Application (`/career-apply-now`)
 

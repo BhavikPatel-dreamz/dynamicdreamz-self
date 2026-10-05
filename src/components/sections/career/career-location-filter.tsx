@@ -11,8 +11,8 @@ type CareerJobListSlot = {
 };
 
 type CareerLocationFilterProps = {
-  locations: CareerLocation[];
-  jobLists: CareerJobListSlot[];
+  locations: readonly CareerLocation[];
+  jobLists: readonly CareerJobListSlot[];
 };
 
 function ChevronIcon({ open }: { open: boolean }) {
@@ -20,9 +20,9 @@ function ChevronIcon({ open }: { open: boolean }) {
     <svg
       aria-hidden="true"
       className={`absolute top-1/2 right-4 h-1.5 w-2.5 -translate-y-1/2 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+      height="6"
       viewBox="0 0 10 6"
       width="10"
-      height="6"
     >
       <path d="m1 1 4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.4" />
     </svg>
@@ -89,19 +89,18 @@ export function CareerLocationFilter({
   }
 
   return (
-    <>
-      <div className="pt-[50px] pb-7 text-right max-[767px]:pt-[30px] max-[767px]:pb-[43px]">
+    <div className="current-openings-wrap mt-10 max-[767px]:mt-6">
+      <div className="filter-location relative z-1 pb-7 text-right max-[767px]:pt-[30px] max-[767px]:pb-[43px]">
         <div
-          className="relative inline-block min-w-[149px] text-left max-[767px]:w-full"
+          className="dropdown_menu relative inline-block min-w-[149px] text-left max-[767px]:w-full"
           ref={rootRef}
         >
           <button
-            className="relative block h-[45px] w-full cursor-pointer rounded-[5px] border border-[#efefef] bg-[rgba(254,254,254,0.93)] py-3 pr-8 pl-4 text-left text-base leading-[normal] font-semibold text-[#090909] capitalize"
-            data-location-toggle
-            type="button"
+            aria-controls="career-location-menu"
             aria-expanded={isOpen}
             aria-haspopup="menu"
-            aria-controls="career-location-menu"
+            className="relative block h-[45px] w-full cursor-pointer rounded-[5px] border border-[#efefef] bg-[rgba(254,254,254,0.93)] py-3 pr-8 pl-4 text-left font-montserrat text-sm font-medium leading-[normal] text-[#090909] capitalize"
+            data-location-toggle
             onClick={() => (isOpen ? setIsOpen(false) : openMenu())}
             onKeyDown={(event) => {
               if (!isOpen && (event.key === "ArrowDown" || event.key === "ArrowUp")) {
@@ -109,8 +108,9 @@ export function CareerLocationFilter({
                 openMenu();
               }
             }}
+            type="button"
           >
-            {selectedLocation.label}
+            <span>{selectedLocation.label}</span>
             <ChevronIcon open={isOpen} />
           </button>
 
@@ -123,26 +123,26 @@ export function CareerLocationFilter({
           >
             <div className="overflow-hidden">
               <ul
-                className="rounded-[5px] border border-[#efefef] bg-white py-3 shadow-[2px_6px_19px_rgb(0_0_0/8%)]"
+                aria-label="Choose job location"
+                className="dropdown_menu_item rounded-[5px] border border-[#efefef] bg-white py-3 shadow-[2px_6px_19px_0_rgba(0,0,0,0.08)]"
                 id="career-location-menu"
                 role="menu"
-                aria-label="Choose job location"
               >
                 {locations.map((location, index) => (
                   <li key={location.slug} role="none">
                     <button
-                      className="block w-full cursor-pointer border-0 bg-white px-2.5 py-2.5 text-left text-base leading-[normal] font-medium text-[#090909] capitalize transition-colors duration-300 hover:bg-[#f4f4f4] focus-visible:bg-[#f4f4f4]"
-                      ref={(element) => {
-                        optionRefs.current[index] = element;
-                      }}
-                      type="button"
-                      role="menuitemradio"
                       aria-checked={location.slug === selectedSlug}
+                      className="block w-full cursor-pointer border-0 bg-white px-3 py-2 text-left font-montserrat text-base font-medium leading-[normal] text-[#090909] capitalize transition-colors duration-300 hover:bg-[#f4f4f4] focus-visible:bg-[#f4f4f4]"
                       onClick={() => {
                         setSelectedSlug(location.slug);
                         setIsOpen(false);
                       }}
                       onKeyDown={(event) => handleOptionKeyDown(event, index)}
+                      ref={(element) => {
+                        optionRefs.current[index] = element;
+                      }}
+                      role="menuitemradio"
+                      type="button"
                     >
                       {location.label}
                     </button>
@@ -155,13 +155,13 @@ export function CareerLocationFilter({
       </div>
 
       <div
-        className="mb-[37px]"
-        role="region"
-        aria-live="polite"
         aria-label={`${selectedList.location.label} current opportunities`}
+        aria-live="polite"
+        className="job-listing-main mb-[37px]"
+        role="region"
       >
         {selectedList.content}
       </div>
-    </>
+    </div>
   );
 }

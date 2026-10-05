@@ -120,9 +120,9 @@ export const pageSeo = {
   },
   career: {
     path: "/career",
-    title: "Careers at Dynamic Dreamz | Surat & Ahmedabad Jobs",
+    title: "Join Our Team for Exciting Opportunities | Dynamic Dreamz",
     description:
-      "Explore career opportunities at Dynamic Dreamz across digital marketing, ecommerce and technology. View current openings in Surat and Ahmedabad.",
+      "Explore best career opportunities at Dynamic Dreamz! Join a our team offering roles in web development, design, and more. Apply now!",
     keywords: [
       "Dynamic Dreamz careers",
       "IT jobs in Surat",
@@ -132,7 +132,7 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-05-02T09:10:53+00:00",
-    modifiedTime: "2026-08-13T00:00:00+05:30",
+    modifiedTime: "2026-10-01T09:30:38+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,

@@ -1,0 +1,46 @@
+.scrollingTrack {
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollingImg {
+  display: flex;
+  flex-direction: column;
+  animation: careerScroll 40s linear infinite;
+}
+
+@keyframes careerScroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@media (max-width: 991px) {
+  .scrollingTrack {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .scrollingImg {
+    flex-direction: row;
+    animation: careerScrollH 25s linear infinite;
+  }
+
+  @keyframes careerScrollH {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollingImg {
+    animation: none;
+  }
+}
