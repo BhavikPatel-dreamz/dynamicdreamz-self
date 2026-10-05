@@ -1226,11 +1226,11 @@ export const pageSeo = {
   },
   requestQuote: {
     path: "/request-quote",
-    title: "Request Quote Today! | Dynamic Dreamz",
+    title: "Request a Project Quote | Dynamic Dreamz",
     description:
       "Looking for custom web solutions? Request a quote from Dynamic Dreamz! offer custom websites development. Contact us now! or Call Now!",
     socialDescription:
-      "Looking for custom web solutions? Request a quote from Dynamic Dreamz! offer custom websites development. Contact us now! or Call Now!",
+      "Request a project quote from Dynamic Dreamz for Shopify, ecommerce, web, mobile, AI and custom development. Share your requirements and our team will get back to you.",
     keywords: [
       "request quote",
       "hire Shopify developer",
@@ -1241,12 +1241,12 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-06-21T09:23:48+00:00",
-    modifiedTime: "2024-09-06T10:07:53+00:00",
+    modifiedTime: "2026-09-30T09:40:19+00:00",
     image: {
-      path: "/assets/og/dynamic-dreamz-company.png",
+      path: "/assets/og/request-quote.png",
       width: 1200,
       height: 630,
-      alt: "Request a Quote - Dynamic Dreamz, a Web Design Company",
+      alt: "Get a Project Quote - Dynamic Dreamz, Shopify Platinum Partner",
     },
     sitemap: {
       changeFrequency: "monthly",

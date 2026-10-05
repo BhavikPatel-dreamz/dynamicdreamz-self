@@ -2,8 +2,8 @@ import { companyFacts } from "@/data/company";
 
 export const requestQuoteContent = {
   hero: {
-    title: "Get a quote",
-    description: "Please fill in the form and our representative will get back to you.",
+    title: "Get a Project Quote",
+    description: "Please share your project details and our team will get back to you.",
   },
   counters: [
     {
@@ -24,7 +24,7 @@ export const requestQuoteContent = {
     {
       href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
       ariaLabel: "Shopify Platinum Partners Dynamic Dreamz",
-      image: "/assets/proof/shopify-platinum-partner.svg",
+      image: "/assets/awards/shopify-platinum-partner.svg",
       alt: "Shopify Platinum Partners Badge Dynamic Dreamz",
       width: 145,
       height: 43,
@@ -32,7 +32,7 @@ export const requestQuoteContent = {
     {
       href: "https://clutch.co/profile/dynamic-dreamz",
       ariaLabel: "Clutch Review for Dynamic Dreamz",
-      image: "/assets/proof/clutch-rating.svg",
+      image: "/assets/awards/clutch-rating.svg",
       alt: "Clutch Dynamic Dreamz",
       width: 150,
       height: 32,
@@ -40,7 +40,7 @@ export const requestQuoteContent = {
     {
       href: "https://www.upwork.com/ag/dynamicdreamz/",
       ariaLabel: "Upwork Top Rated",
-      image: "/assets/proof/upwork-top-rated-plus.svg",
+      image: "/assets/awards/upwork-top-rated-plus.svg",
       alt: "Upwork Dynamic Dreamz",
       width: 153,
       height: 35,
@@ -57,7 +57,7 @@ export const requestQuoteContent = {
   testimonials: [
     {
       name: "Alec Torelli",
-      avatar: "/assets/testimonials/alec-torelli-striped-shirt.webp",
+      avatar: "/assets/testimonials/alec-torelli.webp",
       quote:
         "I have used Gaurav at Dynamic Dreamz for all of my Web design and Web Development. He has great communication skills, very reliable, very consistent.",
     },
@@ -99,7 +99,7 @@ export const requestQuoteContent = {
     },
   ],
   form: {
-    title: "Let’s schedule a call or chat :)",
+    title: "Tell us about your project :)",
     budgetOptions: [
       "$1K - $2.5K",
       "$2.5K - $5K",

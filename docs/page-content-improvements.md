@@ -509,13 +509,20 @@ Primary SEO intent: Shopify Plus agency, enterprise Shopify development services
 
 ## Request a Quote (`/request-quote`)
 
-Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-18
+Status: visible recommendations deferred; live UI preserved and updated to latest live parity
+Last reviewed: 2026-10-05
 Primary SEO intent: request a quote, hire Shopify developers, web development estimate, custom ecommerce consultation, project scope estimation, and discovery call booking.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Subtitle | `Please fill in the form and our representative will get back to you.` | `Please fill in the form and our team will get back to you within 24 business hours.` | Clarifies expected response turnaround time without altering core workflow. | Medium | deferred pending sales/operations policy approval |
+| Page H1 | `Get a Project Quote` | `Get a Project Quote` | Synchronized with live site update (previously `Get a quote`). | High | implemented |
+| Subtitle | `Please share your project details and our team will get back to you.` | `Please share your project details and our team will get back to you within 24 business hours.` | Clarifies expected response turnaround time without altering core workflow. | Medium | deferred pending sales/operations policy approval |
+| Form H2 | `Tell us about your project :)` | `Tell us about your project :)` | Synchronized with live site update (previously `Let’s schedule a call or chat :)`). | High | implemented |
+| Project textarea label | `Brief about your project` | `Brief about your project` | Synchronized with live site update (previously `Brief about the project`). | Medium | implemented |
+| Project textarea placeholder | `Tell us what you want to build, redesign, migrate or improve.` | `Tell us what you want to build, redesign, migrate or improve.` | Synchronized with live site update (previously `Share your questions or comments here`). | Medium | implemented |
+| Phone field flag | Phone input with Indian flag `+91` selector and `81234 56789` placeholder matching live `intl-tel-input` | Retain live visual flag selector and placeholder | Visual parity with live intl-tel-input appearance. | High | implemented |
+| Testimonial avatar | Alec Torelli avatar corrected to circular headshot | Retain headshot photo | Visual parity with live testimonial avatar appearance. | High | implemented |
+| Badge assets | 4 review badges aligned to live canonical SVGs | Canonical `/assets/awards/` SVGs | Visual parity with live badge designs. | High | implemented |
 | Testimonial name / agency name | Rebekah Wymer quote says `I’ve worked with Dynamic Dreams on several web development projects` | `I’ve worked with Dynamic Dreamz on several web development projects` | Corrects slight brand name misspelling (`Dreams` -> `Dreamz`) in client quote text. | Low | deferred pending exact visible-copy approval |
 | Testimonial punctuation | Brandon quote ends with trailing comma: `with unmatched responsiveness, professionalism,` | `with unmatched responsiveness and professionalism.` | Fixes unfinished trailing comma in quote text. | Low | deferred pending exact visible-copy approval |
 | Review badge alt text | Live Clutch badge uses `clith Revire for the Dynamic dreamz` in source | `Clutch Dynamic Dreamz` | Improves accessibility name quality and fixes typos without altering visible UI. | High | implemented as a nonvisual accessibility correction |

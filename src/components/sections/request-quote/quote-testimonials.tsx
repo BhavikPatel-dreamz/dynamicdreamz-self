@@ -54,9 +54,11 @@ export function QuoteTestimonials() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
     adaptiveHeight: false,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
@@ -79,18 +81,9 @@ export function QuoteTestimonials() {
                         width={48}
                         height={48}
                       />
-                      <span className="font-montserrat text-lg leading-[23px] font-bold text-[#090909] max-[767px]:text-base">
+                      <span className="font-montserrat text-lg leading-[23px] font-semibold text-[#090909] max-[767px]:text-base">
                         {testimonial.name}
                       </span>
-                    </div>
-                    <div className="qoute-icon w-12 shrink-0 max-[767px]:w-[34px]">
-                      <Image
-                        className="h-auto w-full"
-                        src="/assets/request-quote/icons/quote-icon.svg"
-                        alt=""
-                        width={48}
-                        height={48}
-                      />
                     </div>
                   </div>
                   <div className="testimonial-info">
@@ -101,7 +94,7 @@ export function QuoteTestimonials() {
                       width={118}
                       height={20}
                     />
-                    <p className="m-0 text-base leading-7 font-medium text-[#535353] max-[767px]:text-sm max-[767px]:leading-7">
+                    <p className="m-0 text-sm leading-6 font-normal text-[#535353]">
                       {testimonial.quote}
                     </p>
                   </div>

@@ -7,11 +7,11 @@ export function QuoteLeftColumn() {
   const { badges, counters, hero } = requestQuoteContent;
 
   return (
-    <div className="left-col relative w-full py-[150px] pr-[46px] pb-[140px] max-[1199px]:pr-[30px] max-[992px]:pt-[50px] max-[992px]:pr-0 max-[992px]:pb-[50px]">
+    <div className="left-col relative w-full py-[150px] pr-[46px] pb-[140px] max-[1199px]:pr-[30px] max-[992px]:pt-[50px] max-[992px]:pr-0 max-[992px]:pb-[100px]">
       <h1 className="font-montserrat text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:text-[29px] max-[359px]:text-2xl">
         {hero.title}
       </h1>
-      <p className="mt-2 text-lg leading-[34.2px] font-medium text-[#535353] min-[768px]:mt-5 min-[992px]:mt-6 max-[1199px]:text-base max-[1199px]:leading-[30.4px] max-[767px]:text-sm max-[767px]:leading-7">
+      <p className="mt-2 text-base leading-7 font-medium text-[#535353] min-[768px]:mt-5 min-[992px]:mt-6 max-[1199px]:leading-[30.4px] max-[992px]:text-sm max-[992px]:leading-6">
         {hero.description}
       </p>
 
@@ -25,13 +25,13 @@ export function QuoteLeftColumn() {
                 : "deliver-counter ml-[52px] border-l border-[rgba(0,0,0,0.08)] pl-[52px] max-[1299px]:ml-10 max-[1299px]:pl-10 max-[1199px]:ml-[25px] max-[1199px]:pl-[25px] max-[767px]:ml-[15px] max-[767px]:pl-[15px]"
             }
           >
-            <div className="text-counter mb-1 text-left text-lg leading-[20.7px] font-semibold text-[rgba(9,9,9,0.63)] uppercase max-[1199px]:text-base max-[767px]:mb-0 max-[767px]:text-sm max-[359px]:text-xs">
+            <div className="text-counter mb-1 text-left text-sm leading-[20.7px] font-semibold text-[rgba(9,9,9,0.63)] uppercase max-[575px]:text-xs">
               {counter.label}
             </div>
             <div className="counter-text flex items-center text-left text-[35px] leading-[43.925px] font-bold text-black max-[1199px]:text-[30px] max-[767px]:text-[26px] max-[359px]:text-2xl">
               <div>{counter.count}</div>
               {"unit" in counter && counter.unit ? (
-                <span className="ml-2 text-base font-bold">{counter.unit}</span>
+                <span className="ml-2 text-base font-semibold">{counter.unit}</span>
               ) : null}
             </div>
           </div>

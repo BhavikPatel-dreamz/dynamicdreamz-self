@@ -2938,9 +2938,9 @@ capabilities. Future visible copy improvements are tracked in
 
 ## Request a Quote (`/request-quote`)
 
-Status: implemented and verified; 1:1 live parity confirmed on 2026-09-22
+Status: implemented and verified; 1:1 live parity confirmed on 2026-10-05
 
-Last reviewed: 2026-09-22
+Last reviewed: 2026-10-05
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -2974,22 +2974,24 @@ Primary commercial inbound conversion and project estimation route. Connects pot
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Counter parity | Previous counters displayed Happy Clients instead of Experience; live site displays Experience 20+ Years, 5000+ Projects, 150+ Experts | Remigrated on 2026-09-22 with live 3-stat counter block | Live deliver-wrapper inspection |
-| P0 | implemented | Form fields | Phone placeholder and budget option styling verified against live WP form | Empty phone placeholder matching live `<input type="tel">` and live budget selector options | Live form inspection |
-| P1 | implemented | Structured data | Live page emits a sitewide graph with trailing-slash URLs | Emit route-scoped ContactPage, Organization, WebSite, and BreadcrumbList with slashless URLs matching visible content | Visible page content and local route policy |
-| P1 | deferred | Copy clarity | Form heading uses conversational tone `Let’s schedule a call or chat :)` | Retain live heading per migration rules; propose formal alternative only with explicit stakeholder approval | Exact visible-copy approval |
+| P0 | implemented | Counter parity | Previous counters displayed Happy Clients instead of Experience; live site displays Experience 20+ Years, 5000+ Projects, 150+ Experts | Remigrated on 2026-09-22 with live 3-stat counter block and updated label typography | Live deliver-wrapper inspection |
+| P0 | implemented | Form fields & typography | Live page updated H1 ("Get a Project Quote"), Subtitle ("Please share your project details and our team will get back to you."), Form H2 ("Tell us about your project :)"), Textarea label ("Brief about your project"), and Textarea placeholder ("Tell us what you want to build, redesign, migrate or improve.") | Synchronized copy, updated input borders to #dfdfdf, FieldLabel to 16px/600 with red asterisk, and added Indian flag with `+91` code and `81234 56789` placeholder | Live page inspection 2026-10-05 |
+| P0 | implemented | Header padding | Live page header padding is 30px 0 (desktop), 26.5px 0 (mobile) | Fixed header padding from 34.5px to 30px to match live page | Live CSS inspection 2026-10-01 |
+| P0 | implemented | Badge and avatar assets | Badges and testimonial avatar had slight visual variations | Aligned badges to canonical live `/assets/awards/` SVGs and Alec Torelli avatar to circular headshot | Live page inspection 2026-10-05 |
+| P0 | implemented | Testimonial slider behavior | Slider lacked autoplay and speed parameters matching live script | Set autoplay true (2s interval), speed 1000ms, and hid unused quote icon | Live request-quote.js inspection 2026-10-05 |
+| P1 | implemented | Structured data & OG | Live page uses dedicated OG image and updated title "Request a Project Quote \| Dynamic Dreamz" | Emitted route-scoped ContactPage, Organization, WebSite, and BreadcrumbList with dedicated 1200x630 OG image | Live page inspection and local route policy |
 
 ### Structured-data, crawler, and freshness actions
 
 - Keep `/request-quote` in sitemap output and use slashless canonical/Open Graph URLs.
-- Ensure ContactPage structured data accurately represents the inbound consultation and quote workflow.
+- Ensure ContactPage structured data accurately represents the inbound consultation and quote workflow with updated dateModified `2026-09-30T09:40:19+00:00`.
 - Keep testimonial avatars and proof badges project-owned and locally served.
 
 ### Verification and remaining gaps
 
 - Checked: live source, screenshots, metadata, JSON-LD, header-two layout, deliver-wrapper counters, review badges, testimonial slider, form fields, and responsive behavior.
-- Implemented: route content, local media reuse, route-scoped metadata/schema, 20+ Years experience counter, and live form field matching.
-- Verified: `check:urls`, `check:component-content`, `check:asset-duplicates`, `npm run lint`, and `npm run build` pass.
+- Implemented: route content, canonical local media reuse, route-scoped metadata/schema, 20+ Years experience counter, live form field matching, flag/country code phone treatment, and live slider behavior.
+- Verified: `check:urls`, `check:component-content`, `npm run lint`, and `npm run build` pass.
 
 ## Case Studies (`/case-studies`)
 
