@@ -238,6 +238,10 @@ import {
   aiServicesDetailedGrid,
   aiServicesFaqs,
 } from "@/content/ai-services";
+import {
+  fullStackDevelopmentFaqContent,
+  fullStackDevelopmentWhatWeBuildContent,
+} from "@/content/full-stack-development";
 import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
@@ -5897,6 +5901,37 @@ export function createAiServicesPageSchema() {
     offers: aiServicesDetailedGrid.items.map((item) => ({
       title: item.title,
       description: item.description,
+    })),
+    videos: shopifyPlusTestimonialVideoSchema(),
+  });
+}
+
+const fullStackDevelopmentPageUrl = absoluteUrl(pageSeo.fullStackDevelopment.path);
+const fullStackDevelopmentPageId = `${fullStackDevelopmentPageUrl}#webpage`;
+const fullStackDevelopmentServiceId = `${fullStackDevelopmentPageUrl}#service`;
+const fullStackDevelopmentFaqId = `${fullStackDevelopmentPageUrl}#faq`;
+const fullStackDevelopmentBreadcrumbId = `${fullStackDevelopmentPageUrl}#breadcrumb`;
+
+export function createFullStackDevelopmentPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.fullStackDevelopment,
+    pageUrl: fullStackDevelopmentPageUrl,
+    pageId: fullStackDevelopmentPageId,
+    serviceId: fullStackDevelopmentServiceId,
+    faqId: fullStackDevelopmentFaqId,
+    breadcrumbId: fullStackDevelopmentBreadcrumbId,
+    serviceName: "Full Stack Development for Custom Web Apps, Ecommerce & Digital Products",
+    serviceType:
+      "Full stack development, custom web applications, Shopify custom apps, headless ecommerce, CMS platforms, and API integrations",
+    breadcrumbName: "Full Stack Development Services",
+    audienceType: "Businesses, ecommerce brands and digital agencies",
+    faqs: fullStackDevelopmentFaqContent.items.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: fullStackDevelopmentWhatWeBuildContent.boxes.map((box) => ({
+      title: box.title,
+      description: box.description ?? "",
     })),
     videos: shopifyPlusTestimonialVideoSchema(),
   });

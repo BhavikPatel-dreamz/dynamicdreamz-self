@@ -27,6 +27,7 @@ export type ShopifyStageServicesSectionProps = {
   className?: string;
   id?: string;
   lastColFull?: boolean;
+  sixCards?: boolean;
 };
 
 export function ShopifyStageServicesSection({
@@ -34,12 +35,16 @@ export function ShopifyStageServicesSection({
   className,
   id = "shopify-services",
   lastColFull = false,
+  sixCards,
 }: ShopifyStageServicesSectionProps) {
+  const isSixCards = sixCards ?? content.items.length === 6;
+
   return (
     <section
       className={cn(
         "shopify-development-services bg-[#fafaf7] py-20 max-[992px]:py-[50px]",
         lastColFull && "last-col-100",
+        isSixCards && "six-cards",
         className,
       )}
       id={id}
@@ -57,6 +62,7 @@ export function ShopifyStageServicesSection({
           {content.items.map((item, index) => {
             const isFirst = index === 0;
             const isFourth = index === 3;
+            const isFifth = index === 4;
             const isSeventh = index === 6;
             const isEighth = index === 7;
             const isLast = index === content.items.length - 1;
@@ -69,13 +75,15 @@ export function ShopifyStageServicesSection({
                     ? "row-span-2 min-h-[440px] bg-[#f7f4ea] flex flex-col justify-between max-[1199px]:row-span-1 max-[1199px]:min-h-0 max-[767px]:min-h-0"
                     : isFourth && content.items.length !== 5
                       ? "col-span-2 bg-[#eff4ef] max-[1199px]:col-span-1 flex flex-col justify-between"
-                      : isSeventh
-                        ? "bg-white max-[1199px]:row-span-2 max-[1199px]:bg-[#eef4ef] flex flex-col justify-between"
-                        : isEighth
-                          ? "col-span-2 bg-[rgba(239,244,239,1)] max-[1199px]:col-span-1 max-[1199px]:bg-transparent flex flex-col justify-between"
-                          : lastColFull && isLast
-                            ? "col-span-2 max-[1199px]:col-span-1 bg-white flex flex-col justify-between"
-                            : "bg-white flex flex-col justify-between",
+                      : isFifth && isSixCards
+                        ? "col-span-2 bg-white max-[1199px]:col-span-1 flex flex-col justify-between"
+                        : isSeventh
+                          ? "bg-white max-[1199px]:row-span-2 max-[1199px]:bg-[#eef4ef] flex flex-col justify-between"
+                          : isEighth
+                            ? "col-span-2 bg-[rgba(239,244,239,1)] max-[1199px]:col-span-1 max-[1199px]:bg-transparent flex flex-col justify-between"
+                            : lastColFull && isLast
+                              ? "col-span-2 max-[1199px]:col-span-1 bg-white flex flex-col justify-between"
+                              : "bg-white flex flex-col justify-between",
                 )}
                 key={item.title}
               >

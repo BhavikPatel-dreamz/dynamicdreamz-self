@@ -213,7 +213,7 @@ export function ServiceHeroVideoSection({
                     >
                       <Image
                         alt={badge.alt}
-                        className="h-auto max-w-[100px] object-contain max-[767px]:max-h-[44px]"
+                        className="h-auto w-auto max-w-[100px] object-contain max-[767px]:max-h-[44px]"
                         height={badge.height}
                         src={badge.icon || badge.src || ""}
                         width={badge.width}

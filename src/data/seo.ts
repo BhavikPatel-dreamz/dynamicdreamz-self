@@ -826,6 +826,36 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  fullStackDevelopment: {
+    path: "/full-stack-development",
+    title: "Full Stack Development Services | Dynamic Dreamz",
+    description:
+      "Full stack development services for custom web apps, Shopify custom apps, headless ecommerce, APIs, CMS platforms, integrations and cloud deployment.",
+    socialDescription:
+      "Custom web applications, Shopify custom apps, headless ecommerce, APIs and cloud-ready full stack development from Dynamic Dreamz.",
+    keywords: [
+      "Full Stack Development Services",
+      "Custom Web Applications",
+      "Shopify Custom Apps",
+      "Headless Ecommerce",
+      "Next.js Development",
+      "Node.js Development",
+      "API Integrations",
+    ],
+    openGraphType: "article",
+    publishedTime: "2026-09-22T07:46:34+00:00",
+    modifiedTime: "2026-09-28T11:22:11+00:00",
+    image: {
+      path: "/assets/og/full-stack-development.png",
+      width: 1200,
+      height: 630,
+      alt: "Full Stack Development Services | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+  },
   shopifyMigration: {
     path: "/shopify-migration",
     title: "Seamless Shopify Migration Services | Dynamic Dreamz",

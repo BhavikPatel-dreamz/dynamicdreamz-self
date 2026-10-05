@@ -56,3 +56,4 @@ Browser / source: Headless Google Chrome (`154.0.8037.57`), DOM dump (`scratch/l
 - **Preserved Live Heading & Copy Phrasing**: All live headings, descriptions, labels, and typical use cases are preserved verbatim from the live page source.
 - **URL Normalization**: Canonical URL normalized to slashless `/ai-services` per repo URL policy; permanent redirect from legacy live URL `/ai-services/` handled automatically via `next.config.ts`.
 - **Assets**: Hero illustration optimized from 553KB PNG to 43KB WebP (`/assets/services/ai-services/ai-development-services-hero.webp`) with zero duplicate SHA-256 hashes. OG image saved at `/assets/og/ai-services.png`.
+- **Hero Proof Badges**: Updated hero badges to use canonical `/assets/proof/` SVG assets matching live dimensions (Shopify Platinum Partner 136x44, Clutch 111x44, Trustpilot 148x50, Upwork 126x54) with `w-auto` to preserve native SVG aspect ratio and avoid image distortion.

@@ -29,7 +29,7 @@ export const aiServicesHero = {
   badges: [
     {
       name: "Shopify Platinum Partner",
-      src: "/assets/awards/shopify-platinum-partner.svg",
+      src: "/assets/proof/shopify-platinum-partner.svg",
       href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
       alt: "Dynamic Dreamz - Shopify Platinum Partner",
       width: 136,
@@ -37,7 +37,7 @@ export const aiServicesHero = {
     },
     {
       name: "Clutch",
-      src: "/assets/awards/clutch-rating.svg",
+      src: "/assets/proof/clutch-rating.svg",
       href: "https://clutch.co/profile/dynamic-dreamz",
       alt: "Dynamic Dreamz on Clutch — 4.9 rating",
       width: 111,
@@ -45,19 +45,19 @@ export const aiServicesHero = {
     },
     {
       name: "Trustpilot",
-      src: "/assets/reviews/trustpilot-4-9-trustscore.svg",
+      src: "/assets/proof/trustpilot-rating.svg",
       href: "https://www.trustpilot.com/review/dynamicdreamz.com",
       alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
-      width: 135,
-      height: 44,
+      width: 148,
+      height: 50,
     },
     {
       name: "Upwork",
-      src: "/assets/awards/upwork-top-rated-plus.svg",
+      src: "/assets/proof/upwork-top-rated-plus.svg",
       href: "https://www.upwork.com/ag/dynamicdreamz/",
       alt: "Dynamic Dreamz — Upwork Top Rated Plus",
-      width: 107,
-      height: 44,
+      width: 126,
+      height: 54,
     },
   ] as const,
   image: {

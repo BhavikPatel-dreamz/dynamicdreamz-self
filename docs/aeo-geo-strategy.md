@@ -9985,3 +9985,46 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 - Secondary hero anchor link jumps to `#our_ai_services` ("Explore AI Services").
 - Links to `/request-quote` and `/contact-us` through global header and footer navigation.
 - Included in sitemap and route metadata via canonical `/ai-services`.
+
+## Full Stack Development Services (`/full-stack-development`)
+
+### Intent and audience
+
+- **Primary search intent**: Decision-makers, technical leads, ecommerce brands, and digital agencies seeking full stack development services for custom web applications, headless commerce, Shopify custom apps, APIs, and cloud deployments.
+- **Target queries**: "full stack development services", "custom web application development", "Shopify custom app developers", "headless ecommerce development", "Next.js full stack developers", "Node.js and React full stack agency".
+- **Audience**: Businesses needing end-to-end engineering across UI/UX, frontend, backend, database, and cloud infrastructure without managing separate disparate development teams.
+
+### Authority and evidence baseline
+
+- 20+ years of digital development foundation with 150+ in-house experts.
+- Demonstrated capabilities across modern stacks: React, Next.js, Angular, Node.js, NestJS, TypeScript, Python, Shopify Hydrogen, Strapi, Medusa.js, AWS, and Vercel.
+- Proven real-world case studies: S&F Product Group (SaaS inventory platform), Beauty Software (cloud salon/spa management), and BluBox Medical (custom ERP platform).
+- 10 comprehensive FAQs covering services, end-to-end ownership, Shopify custom apps, headless ecommerce, headless CMS, tech stack, codebase takeover, deployment, and cost.
+- Complete structured data graph: WebPage, Service, FAQPage (10 questions and answers matching visible text), BreadcrumbList, Organization, and WebSite.
+- Fully server-rendered with zero runtime dependencies on dynamicdreamz.com.
+
+### Recommended improvements
+
+| Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
+| --- | --- | --- | --- | --- | --- |
+| P0 | implemented | Route & migration URL | Route required migration | Implemented clean `/full-stack-development` with App Router | Verified with route tests and build |
+| P0 | implemented | Structured data | Missing rich Service and FAQ schema | Emitted complete JSON-LD schema graph matching page facts (Service, 10 FAQs) | Verified in JSON-LD output |
+| P0 | implemented | Asset deduplication | Interactive tablet mockup assets | Optimized slides and badges into project-owned WebP assets with zero duplicate hashes | Verified with SHA-256 audit |
+| P1 | deferred | Content expansion | Video case study deep dives | Queued in `docs/page-content-improvements.md` as suggested; live UI preserved | Project owner approval |
+
+### Suggested answer copy
+
+Deferred under the live-UI preservation gate. The current server-rendered layout accurately establishes Dynamic Dreamz authority in full stack custom application, API, and headless commerce engineering.
+
+### Entity, evidence, and authorship actions
+
+- Connects Dynamic Dreamz engineering team with established credentials (20+ years, 150+ experts, cross-functional delivery).
+- Cites verified case studies (S&F Product Group, Beauty Software, BluBox Medical).
+- Real client testimonial reviews.
+
+### Internal-link and conversion actions
+
+- Primary CTA in hero links to `/request-quote` ("Discuss Your Project").
+- Secondary hero anchor link jumps to `#our_services` ("Explore Services").
+- Case study cards link to `/case-studies/sandf-product-group`, `/case-studies/beauty-software`, `/case-studies/blubox`.
+- Included in sitemap and route metadata via canonical `/full-stack-development`.
