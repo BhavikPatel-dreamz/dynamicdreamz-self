@@ -1,8 +1,8 @@
+import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import type {
   WhiteLabelCard,
   WhiteLabelFaq,
   WhiteLabelFinalCta,
-  WhiteLabelHero,
   WhiteLabelPlan,
   WhiteLabelProcessStep,
   WhiteLabelService,
@@ -11,56 +11,136 @@ import type {
 } from "@/types/white-label-service";
 
 export const whiteLabelWordPressSectionCopy = {
-  reasonsTitle: "Why Dynamic Dreamz for White-Label?",
+  reasonsTitle:
+    "Why Agencies Choose Dynamic Dreamz <br>for White Label WordPress Development",
   servicesTitle: "White Label WordPress Development Services",
-  pricingTitle: "Flexible White Label WordPress Development Plans",
+  servicesCta: "Let me give you a hand to help you",
+  pricingTitle: "Choose the Right Wordpress Development Engagement.",
   pricingDescription:
-    "We offer scalable pricing models with no retainer required. Whether you need minor changes, a full-scale project, or a dedicated developer, we offer WordPress solutions customized to your agency's workflow.",
-  toolsTitle: "We Work with a Wide Range of WordPress Technologies",
+    "Choose project-based development, flexible WordPress support starting from $20/hour, or a dedicated developer/team for ongoing requirements.",
+  toolsTitle: "WordPress Technologies We Work With",
+  toolsDescription: "At Dynamic Dreamz, we are skilled in:",
   processTitle: "How Our White Label Partnership Works",
   processNote:
     "We value confidentiality and respect our partnership agreements, guaranteeing all work stays under your brand name.",
+  faqHeading: "Frequently Asked Questions",
 } as const;
 
 export const whiteLabelWordPressHero = {
-  title: "White label WordPress Development Services",
-  accent: "for Agencies",
-  lead: "Expand Your Agency's Capabilities with Expert WordPress Developers",
-  paragraphs: [
-    "At Dynamic Dreamz, we offer white label WordPress development services, helping agencies scale effortlessly by providing high-quality WordPress websites under their brand.",
-    [
-      { text: "Our goal is to " },
-      { text: "empower your agency with smooth WordPress solutions", strong: true },
-      { text: " so that you can " },
-      { text: "focus on growing your business.", strong: true },
-    ],
+  title: "White Label WordPress Development Services",
+  titleHighlight: "for Agencies",
+  subtitle: "Expand Your Agency's Capabilities with Expert WordPress Developers",
+  description:
+    "Dynamic Dreamz provides white label WordPress development for digital and web agencies that need reliable development capacity behind their brand. Our team handles custom WordPress websites, WooCommerce, themes, plugins, Figma-to-WordPress, performance optimization and ongoing support while working within your agency's process and confidentiality requirements.",
+  primaryCta: {
+    label: "get in touch",
+    href: "/request-quote",
+  },
+  secondaryCta: {
+    label: "See Pricing",
+    href: "#our_white_label_pricing",
+  },
+  badges: [
+    {
+      src: "/assets/proof/clutch-rating.svg",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      width: 111,
+      height: 44,
+      href: "https://clutch.co/profile/dynamic-dreamz",
+    },
+    {
+      src: "/assets/proof/trustpilot-rating.svg",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      width: 148,
+      height: 50,
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+    },
+    {
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      width: 126,
+      height: 54,
+      href: "https://www.upwork.com/agencies/dynamicdreamz/",
+    },
   ],
-  cta: "get in touch",
-  illustration:
-    "/assets/white-label-wordpress/hero/white-label-wordpress-development-agencies.svg",
-  illustrationAlt: "White label WordPress development services for agencies",
-} as const satisfies WhiteLabelHero;
+  tabletSlider: {
+    bgShapeSrc:
+      "/assets/services/shopify-development-in-bangalore/hero/slide-bg-shape.svg",
+    topBadge: {
+      src: "/assets/services/wordpress-development-in-ahmedabad/hero/woocommerce-agency-partner.png",
+      alt: "WooCommerce Agency Partner",
+      width: 173,
+      height: 106,
+    },
+    bottomBadge: {
+      src: "/assets/services/wordpress-development-in-ahmedabad/hero/wordpress-logo.png",
+      alt: "WordPress Logo",
+      width: 130,
+      height: 126,
+    },
+    slides: [
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-green-future-energy.webp",
+        alt: "greenfutureenergy",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-avm.webp",
+        alt: "avm",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-homepage-revised.webp",
+        alt: "HomepageRevised",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-lipari-design.webp",
+        alt: "liparidesign",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-ornago.webp",
+        alt: "ornago",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-syrene.webp",
+        alt: "syrene",
+        width: 1600,
+        height: 2380,
+      },
+      {
+        src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-the-huddle-sports-grill.webp",
+        alt: "thehuddlesportsgrill",
+        width: 1600,
+        height: 2380,
+      },
+    ],
+  },
+} as const;
 
 export const whiteLabelWordPressStats: readonly WhiteLabelStat[] = [
   {
-    value: "20+",
-    label: "Years of experience",
-    icon: "/assets/proof/years-of-experience.svg",
+    value: "50+ Agencies",
+    label: "Supported Worldwide",
   },
   {
-    value: "150+",
-    label: "Skilled Developers",
-    icon: "/assets/proof/skilled-developers.svg",
+    value: "20+ Years",
+    label: "Web & Ecommerce Experience",
   },
   {
-    value: "2500+",
-    label: "Client Reviews",
-    icon: "/assets/proof/client-reviews.svg",
+    value: "150+ Experts",
+    label: "Commerce & Technology",
   },
   {
-    value: "1000+",
-    label: "Sites Delivered",
-    icon: "/assets/proof/sites-delivered.svg",
+    value: "5000+",
+    label: "Projects Delivered",
   },
 ];
 
@@ -137,21 +217,60 @@ export const whiteLabelWordPressServices: readonly WhiteLabelService[] = [
 
 export const whiteLabelWordPressPlans: readonly WhiteLabelPlan[] = [
   {
-    name: "Hourly Development",
-    price: "$20/hr",
-    bestFor: "Small tasks, bug fixes, and quick updates.",
-  },
-  {
-    name: "Dedicated Developer",
-    price: "$2,000/month",
-    bestFor: "Full-time WordPress developer for your agency.",
-  },
-  {
-    name: "Fixed-Price Projects",
+    name: "Project-Based",
     price: "Custom Quote",
-    bestFor: "Well-defined projects with clear deliverables.",
+    bestFor:
+      "For complete WordPress website builds, custom theme development, website redesigns, plugin development, third-party integrations, WooCommerce solutions and technically complex WordPress projects.",
+  },
+  {
+    name: "Flexible Hourly Support",
+    price: "$20/hour",
+    bestFor:
+      "For ongoing WordPress maintenance, enhancements, troubleshooting, performance improvements, security updates and evolving website development requirements.",
+  },
+  {
+    name: "Dedicated Developer / Team",
+    price: "From $2,000/month",
+    bestFor:
+      "For brands with an evolving WordPress roadmap, multiple websites or a need for a dedicated developer or wider development team.",
   },
 ];
+
+export const whiteLabelWordPressPricing: PricingEngagementContent = {
+  eyebrow: "Flexible WordPress Engagements",
+  heading: "Choose the Right Wordpress Development Engagement.",
+  description:
+    "Choose project-based development, flexible WordPress support starting from $20/hour, or a dedicated developer/team for ongoing requirements.",
+  items: [
+    {
+      label: "Project-Based",
+      badge: "Have One Project?",
+      price: "Custom Quote",
+      description:
+        "For complete WordPress website builds, custom theme development, website redesigns, plugin development, third-party integrations, WooCommerce solutions and technically complex WordPress projects.",
+      ctaLabel: "Send Brief — Get a Quote in 24 Hours",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Flexible Hourly Support",
+      badge: "Need Extra Wordpress Capacity?",
+      price: "$20/hour",
+      description:
+        "For ongoing WordPress maintenance, enhancements, troubleshooting, performance improvements, security updates and evolving website development requirements.",
+      ctaLabel: "Buy Wordpress Development Hours",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Dedicated Developer / Team",
+      badge: "Need Ongoing Capacity?",
+      price: "From $2,000/month",
+      description:
+        "For brands with an evolving WordPress roadmap, multiple websites or a need for a dedicated developer or wider development team.",
+      ctaLabel: "Discuss a Dedicated Team",
+      ctaHref: "/book-a-discovery-call",
+    },
+  ],
+};
 
 const tool = (name: string, filename: string): WhiteLabelTool => ({
   name,
@@ -185,7 +304,6 @@ export const whiteLabelWordPressToolRows: readonly (readonly WhiteLabelTool[])[]
     tool("Cloudways", "cloudways"),
     tool("SiteGround", "siteground"),
     tool("Bluehost", "bluehost"),
-    tool("Amazon Web Services", "aws"),
   ],
 ] as const;
 
@@ -247,15 +365,17 @@ export const whiteLabelWordPressFaqs: readonly WhiteLabelFaq[] = [
     ],
   },
   {
-    question: "Can you work with our preferred themes, plugins, and hosting providers?",
+    question:
+      "Can you work with our preferred themes, plugins, and hosting providers?",
     answer:
-      "Yes! We specialize in various WordPress technologies and adapt to your requirements. Our expert WordPress developers are skilled and have expertise in all themes, plugins, and hosting providers.",
+      "Yes. Our developers work with major WordPress themes, plugins, page builders and hosting environments, and can adapt to your agency's preferred technology stack.",
     answerParts: [
-      { text: "Yes! We specialize in " },
-      { text: "various WordPress technologies", strong: true },
+      { text: "Yes. Our developers work with " },
       {
-        text: " and adapt to your requirements. Our expert WordPress developers are skilled and have expertise in all themes, plugins, and hosting providers.",
+        text: "major WordPress themes, plugins, page builders and hosting environments",
+        strong: true,
       },
+      { text: ", and can adapt to your agency's preferred technology stack." },
     ],
   },
   {
@@ -305,6 +425,24 @@ export const whiteLabelWordPressFaqs: readonly WhiteLabelFaq[] = [
       {
         text: " when needed to accommodate clients in different time zones.",
       },
+    ],
+  },
+  {
+    question:
+      "Can your WordPress developers work as an extension of our agency team?",
+    answer:
+      "Yes. Our developers can work within your existing workflow, project-management tools and communication process. Depending on your preferred model, we can work entirely behind the scenes or communicate with your clients under your agency's brand.",
+    answerParts: [
+      { text: "Yes. Our developers can work within your " },
+      {
+        text: "existing workflow, project-management tools and communication process",
+        strong: true,
+      },
+      { text: ". Depending on your preferred model, we can " },
+      { text: "work entirely behind the scenes", strong: true },
+      { text: " or " },
+      { text: "communicate with your clients under your agency's brand", strong: true },
+      { text: "." },
     ],
   },
 ];

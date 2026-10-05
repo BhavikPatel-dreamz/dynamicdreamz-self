@@ -37,7 +37,7 @@ export type WhiteLabelHero = {
 export type WhiteLabelStat = {
   value: string;
   label: string;
-  icon: string;
+  icon?: string;
 };
 
 export type WhiteLabelCard = {

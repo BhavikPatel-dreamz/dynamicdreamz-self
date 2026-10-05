@@ -18,6 +18,8 @@ export type CityPageHeroBadge = {
 export type CityPageHeroContent = {
   eyebrows?: readonly string[];
   title: string;
+  titleHighlight?: string;
+  subtitle?: string;
   description: string;
   secondaryDescription?: string;
   ctaLabel?: string;
@@ -99,7 +101,15 @@ export function CityPageHeroSection({
               )}
               <h1 className="mb-2.5 font-heading text-[50px] font-normal leading-[60px] tracking-normal text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
                 {content.title}
+                {content.titleHighlight ? (
+                  <> <i className="not-italic text-brand-red">{content.titleHighlight}</i></>
+                ) : null}
               </h1>
+              {content.subtitle && (
+                <span className="h4 mb-2.5 block font-montserrat text-base font-semibold leading-7 text-[#535353] max-[991px]:text-sm max-[991px]:leading-6 max-[767px]:text-base max-[767px]:leading-[27px]">
+                  {content.subtitle}
+                </span>
+              )}
               <p className="mt-3 font-montserrat text-base font-medium leading-7 text-[#535353] max-[992px]:text-[14px] max-[992px]:leading-[24px]">
                 {content.description}
               </p>

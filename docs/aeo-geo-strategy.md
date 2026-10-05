@@ -1530,7 +1530,7 @@ replacement copy is tracked in `docs/page-content-improvements.md`.
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-13
+Last reviewed: 2026-10-05
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -1559,18 +1559,15 @@ website-design, general WordPress, and hire-developer routes.
 
 ### Current strengths and available evidence
 
-- The live H1, hero lead, and introduction identify agencies and the
-  behind-the-scenes WordPress delivery model.
-- Seven visible buyer FAQs cover confidentiality, ongoing capacity, NDA use,
-  preferred tools and hosting, industries, client communication, project tools,
-  office locations, and operating hours.
-- Visible prices and engagement models give buyers commercially useful context.
-- Six service rows and 24 technology marks cover WordPress, WooCommerce,
-  custom themes/plugins, Figma conversion, performance, page builders, hosting,
-  and adjacent delivery tooling.
-- Independent Clutch, Trustpilot, and Upwork profile links appear in the hero.
-- The page can be fully server-rendered apart from the two small accordion
-  controls.
+- Modernized hero matching live layout (`CityPageHeroSection`) with 7 tablet slides,
+  2 platform badges, 4 independent trust badges, subtitle, and dual CTAs.
+- Minimal proof counters matching live CSS (`50+ Agencies`, `20+ Years`, `150+ Experts`,
+  `5000+ Projects Delivered`).
+- Eight visible buyer FAQs rendered via centered `SplitFaqSection` matching live `.faq-sec.bg-sky-blue`.
+- Three commercial pricing engagement cards rendered via shared `PricingTableSection`.
+- Six service accordion rows and 23 technology tool marks in opposing marquees.
+- Zero duplicate assets across all 1,791 public files.
+- Strict content boundary enforced with 100% visible copy externalized in `src/content/**`.
 
 ### Recommended improvements
 

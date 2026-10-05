@@ -7,15 +7,49 @@ import {
   whiteLabelShopifySectionCopy,
 } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
+import { formatBrText } from "@/lib/text-formatting";
 import type { WhiteLabelCard, WhiteLabelStat } from "@/types/white-label-service";
 
 type WhiteLabelStatsSectionProps = {
   stats?: readonly WhiteLabelStat[];
+  variant?: "default" | "minimal";
 };
 
 export function WhiteLabelStatsSection({
   stats = whiteLabelShopifyStats,
+  variant = "default",
 }: WhiteLabelStatsSectionProps) {
+  if (variant === "minimal") {
+    return (
+      <section className="white_label_counter_section relative border-y border-black/10 py-0">
+        <Container className="max-[1199px]:max-w-full max-[1199px]:px-0">
+          <div className="stats_section">
+            <div className="stats_container flex flex-wrap items-center justify-between">
+              {stats.map((stat, index) => (
+                <div
+                  className={cn(
+                    "stats_item flex w-1/4 items-center justify-center border-r border-black/10 py-[17px] last:border-r-0 max-[991px]:w-1/2 max-[991px]:border-b max-[991px]:border-black/10 max-[991px]:even:border-r-0 max-[767px]:min-h-[94px] max-[767px]:p-4",
+                    index >= 2 && "max-[991px]:border-b-0",
+                  )}
+                  key={stat.label}
+                >
+                  <div className="stats_box mx-auto w-fit text-center max-[991px]:text-left">
+                    <div className="stats_number font-montserrat text-2xl font-bold leading-none text-[#282828] max-[767px]:text-base">
+                      {stat.value}
+                    </div>
+                    <p className="counter_title mt-2 font-montserrat text-[13px] font-medium leading-none text-[#535353] max-[767px]:max-w-[135px] max-[767px]:leading-[18px]">
+                      {stat.label}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+    );
+  }
+
   return (
     <section className="py-20 max-[992px]:py-[50px]">
       <Container className="max-[575px]:px-4">
@@ -29,16 +63,18 @@ export function WhiteLabelStatsSection({
               key={stat.label}
             >
               <div className="mx-auto w-fit max-[992px]:relative max-[992px]:w-full max-[992px]:max-w-[205px] max-[992px]:pl-[45px]">
-                <div className="mb-3 max-[992px]:absolute max-[992px]:top-[5px] max-[992px]:left-0 max-[992px]:mb-0">
-                  <Image
-                    className="size-[42px] object-contain max-[1199px]:size-[38px] max-[992px]:size-[34px] max-[767px]:size-[30px]"
-                    src={stat.icon}
-                    alt=""
-                    width={42}
-                    height={42}
-                    aria-hidden="true"
-                  />
-                </div>
+                {stat.icon && (
+                  <div className="mb-3 max-[992px]:absolute max-[992px]:top-[5px] max-[992px]:left-0 max-[992px]:mb-0">
+                    <Image
+                      className="size-[42px] object-contain max-[1199px]:size-[38px] max-[992px]:size-[34px] max-[767px]:size-[30px]"
+                      src={stat.icon}
+                      alt=""
+                      width={42}
+                      height={42}
+                      aria-hidden="true"
+                    />
+                  </div>
+                )}
                 <div
                   className="flex items-center font-sans text-[40px] leading-[50.2px] font-bold tracking-[1.2px] text-black max-[1199px]:text-[36px] max-[1199px]:leading-[46px] max-[992px]:text-[32px] max-[992px]:leading-[42px]"
                   aria-label={stat.value}
@@ -105,7 +141,7 @@ export function WhiteLabelWhySection({
           </div>
         ) : null}
         <h2 className="mb-5 text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[60px] max-[992px]:mb-10 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
-          {title}
+          {formatBrText(title, "max-[1199px]:hidden")}
         </h2>
         <div className="grid grid-cols-3 max-[767px]:grid-cols-1 max-[767px]:gap-5">
           {reasons.map((reason, index) => {
