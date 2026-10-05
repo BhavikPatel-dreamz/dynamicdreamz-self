@@ -28,13 +28,16 @@ export type SplitFaqSectionProps = {
   panelContentClassName?: string;
   containerClassName?: string;
   iconVariant?: "default" | "circle-cross";
-  layout?: "split" | "centered";
 };
 
 /**
- * FAQ section supporting two layouts:
- * - "split" (default): Two-column layout with left heading column beside borderless accordion.
- * - "centered": Centered heading above a full-width boxed card accordion matching live .faq-sec.
+ * Two-column FAQ layout: a left-aligned heading/description column beside a
+ * borderless, underlined accordion with circle-cross expand icons. This is the
+ * shared, content-decoupled version of the design first used by the home FAQ so
+ * other pages can reuse the exact styling by passing their own items/copy.
+ *
+ * `heading` falls back to the shared "Frequently Asked Questions" default, and
+ * omitting `description` renders the heading column with no supporting sentence.
  */
 export function SplitFaqSection({
   items,
@@ -50,110 +53,15 @@ export function SplitFaqSection({
   animateOnReveal = false,
   lazyAccordion = false,
   lazyRootMargin,
-  answerClassName,
+  answerClassName = "!text-sm !font-medium !leading-6 !text-[#535353]",
   questionClassName,
   triggerClassName,
   itemClassName,
   panelContentClassName,
   containerClassName,
-  iconVariant,
-  layout = "split",
+  iconVariant = "circle-cross",
 }: SplitFaqSectionProps) {
   const titleId = `${idPrefix}-title`;
-
-  if (layout === "centered") {
-    const resolvedIconVariant = iconVariant ?? "default";
-    return (
-      <section
-        aria-labelledby={titleId}
-        className={cn(
-          "faq-sec bg-[#fafaf7] py-[60px] max-[991px]:py-10",
-          className,
-        )}
-        data-section="faq"
-        id={sectionId ?? `${idPrefix}-section`}
-      >
-        <Container className={containerClassName}>
-          <div className="wrapper">
-            <div className="header-text mb-10 text-center max-[767px]:mb-6">
-              <div className="faq-text">
-                {eyebrow ? (
-                  <Eyebrow
-                    align="center"
-                    as="span"
-                    className={cn("mb-4", eyebrowClassName)}
-                  >
-                    {eyebrow}
-                  </Eyebrow>
-                ) : null}
-                <h2
-                  className={cn(
-                    "font-display text-[40px] font-normal leading-[1.2] tracking-normal text-ink max-[1199px]:text-[34px] max-[767px]:text-2xl",
-                    headingClassName,
-                  )}
-                  id={titleId}
-                >
-                  {formatBrText(
-                    heading,
-                    headingBrClassName ?? "max-[1199px]:hidden",
-                  )}
-                </h2>
-              </div>
-              {description ? (
-                <p className="mx-auto mt-3 max-w-[600px] text-base font-medium leading-[28px] text-[#535353] max-[767px]:text-sm">
-                  {formatBrText(description)}
-                </p>
-              ) : null}
-            </div>
-            <div className="accordion-main mx-auto max-w-[950px]">
-              {lazyAccordion ? (
-                <LazyFaqAccordion
-                  animateOnReveal={animateOnReveal}
-                  answerClassName={answerClassName}
-                  fallback={
-                    <StaticFaqAccordion
-                      answerClassName={answerClassName}
-                      iconVariant={resolvedIconVariant}
-                      idPrefix={idPrefix}
-                      itemClassName={itemClassName}
-                      items={items}
-                      panelContentClassName={panelContentClassName}
-                      questionClassName={questionClassName}
-                      triggerClassName={triggerClassName}
-                    />
-                  }
-                  iconVariant={resolvedIconVariant}
-                  idPrefix={idPrefix}
-                  itemClassName={itemClassName}
-                  items={items}
-                  panelContentClassName={panelContentClassName}
-                  questionClassName={questionClassName}
-                  triggerClassName={triggerClassName}
-                  rootMargin={lazyRootMargin}
-                />
-              ) : (
-                <FaqAccordion
-                  animateOnReveal={animateOnReveal}
-                  answerClassName={answerClassName}
-                  iconVariant={resolvedIconVariant}
-                  idPrefix={idPrefix}
-                  itemClassName={itemClassName}
-                  items={items}
-                  panelContentClassName={panelContentClassName}
-                  questionClassName={questionClassName}
-                  triggerClassName={triggerClassName}
-                />
-              )}
-            </div>
-          </div>
-        </Container>
-      </section>
-    );
-  }
-
-  const resolvedIconVariant = iconVariant ?? "circle-cross";
-  const resolvedAnswerClassName =
-    answerClassName ?? "!text-sm !font-medium !leading-6 !text-[#535353]";
 
   return (
     <section
@@ -191,12 +99,12 @@ export function SplitFaqSection({
             {lazyAccordion ? (
               <LazyFaqAccordion
                 animateOnReveal={animateOnReveal}
-                answerClassName={resolvedAnswerClassName}
+                answerClassName={answerClassName}
                 fallback={
                   <StaticFaqAccordion
-                    answerClassName={resolvedAnswerClassName}
+                    answerClassName={answerClassName}
                     iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
-                    iconVariant={resolvedIconVariant}
+                    iconVariant={iconVariant}
                     idPrefix={idPrefix}
                     itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
                     items={items}
@@ -206,7 +114,7 @@ export function SplitFaqSection({
                   />
                 }
                 iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
-                iconVariant={resolvedIconVariant}
+                iconVariant={iconVariant}
                 idPrefix={idPrefix}
                 itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
                 items={items}
@@ -218,9 +126,9 @@ export function SplitFaqSection({
             ) : (
               <FaqAccordion
                 animateOnReveal={animateOnReveal}
-                answerClassName={resolvedAnswerClassName}
+                answerClassName={answerClassName}
                 iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
-                iconVariant={resolvedIconVariant}
+                iconVariant={iconVariant}
                 idPrefix={idPrefix}
                 itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
                 items={items}

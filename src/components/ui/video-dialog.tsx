@@ -11,9 +11,9 @@ type VideoDialogProps = {
   title: string;
   poster: string;
   posterAlt: string;
-  overlay: string;
-  overlayWidth: number;
-  overlayHeight: number;
+  overlay?: string;
+  overlayWidth?: number;
+  overlayHeight?: number;
   overlayCaption?: string;
   className?: string;
   overlayClassName?: string;
@@ -70,12 +70,14 @@ export function VideoDialog({
         <div className="image absolute top-0 left-0 h-full w-full before:absolute before:top-0 before:left-0 before:z-[1] before:block before:h-full before:w-full before:rounded-[15px] before:bg-black/10 before:content-['']">
           <Image className="object-cover w-full h-full rounded-[15px]" src={poster} alt={posterAlt} fill sizes={sizes} />
         </div>
-        <div className={cn("image-text min-h-13.5 flex flex-col items-center justify-center text-center z-10 lg:px-[30px] lg:pt-[30px] lg:pb-[50px] sm:p-7.5 px-5 py-3", overlayClassName)} aria-hidden="true">
-          <Image className="aspect-[auto_940/38] w-auto h-auto" src={overlay} alt="" width={overlayWidth} height={overlayHeight} />
-          {overlayCaption ? (
-            <p className="mt-2.5 text-base text-white max-[991px]:hidden">{overlayCaption}</p>
-          ) : null}
-        </div>
+        {overlay ? (
+          <div className={cn("image-text min-h-13.5 flex flex-col items-center justify-center text-center z-10 lg:px-[30px] lg:pt-[30px] lg:pb-[50px] sm:p-7.5 px-5 py-3", overlayClassName)} aria-hidden="true">
+            <Image className="aspect-[auto_940/38] w-auto h-auto" src={overlay} alt="" width={overlayWidth ?? 940} height={overlayHeight ?? 38} />
+            {overlayCaption ? (
+              <p className="mt-2.5 text-base text-white max-[991px]:hidden">{overlayCaption}</p>
+            ) : null}
+          </div>
+        ) : null}
         <div className={cn(styles.pulse, "absolute top-1/2 left-1/2 z-10 size-19 -translate-x-1/2 -translate-y-1/2", playClassName)} aria-hidden="true">
           <Image className="h-full w-full" src="/assets/about/play-video.svg" alt="" width={76} height={76} />
         </div>

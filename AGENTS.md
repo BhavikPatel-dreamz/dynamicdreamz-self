@@ -88,6 +88,23 @@ Core proof points from the live site:
 - Copy/match the live page styling during migration, including desktop and
   mobile variants. Do not preserve old CSS technical debt blindly; translate the
   visual result into maintainable local styles.
+- Do not migrate content hidden by styling (eliminate WordPress hidden DOM debt):
+  The live site runs on WordPress/Elementor, where global widget templates and
+  plugins frequently output DOM nodes that are permanently suppressed by CSS
+  (e.g. `display: none;`, `.hide-logo`, inline `style="display:none"`, hidden
+  plugin heading tags, or hidden card excerpts). In Next.js:
+  1. Never migrate or store permanently hidden elements in `src/content/**` or
+     `src/data/**`.
+  2. Never write component logic or classes to render and then hide unused
+     content (e.g. do not pass an unneeded proof badge only to hide it with
+     `idx === 0 && "hidden"`, or pass dummy overlay props with `hidden`).
+  3. Keep content models strictly lean: data arrays must contain only items
+     that actually render and remain visible to the user.
+  4. Distinguish responsive layout adaptations (e.g. hiding desktop-only SVG
+     artwork on mobile screens or toggling mobile navigation menus) from
+     permanently hidden elements (content hidden across all screen sizes due to
+     legacy WordPress template bloat). Only intentional responsive/interactive
+     adaptations are valid; permanently hidden content must be omitted entirely.
 - Use clean Tailwind CSS for styling. Do not add custom page, section,
   component, animation, or one-off layout styles to `src/app/globals.css`.
   Keep `globals.css` minimal for Tailwind setup and unavoidable app-wide base

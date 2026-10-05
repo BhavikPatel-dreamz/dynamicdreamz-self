@@ -40,10 +40,6 @@ export function HappyClientCard({
       <div className={cn("card-item relative", clientStories ? "min-h-[285px] shrink-0" : "min-h-[324px] max-[1199px]:min-h-[240px]")}>
         <VideoDialog
           className={cn("!rounded-none", clientStories ? "min-h-[285px]" : "min-h-[324px] max-[1199px]:min-h-[240px]")}
-          overlay="/assets/request-quote/icons/quote-icon.svg"
-          overlayClassName="hidden"
-          overlayHeight={40}
-          overlayWidth={46}
           poster={testimonial.image}
           posterAlt={testimonial.imageAlt}
           sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1199px) calc((100vw - 115px)/2), 527px"

@@ -170,7 +170,6 @@ export function WordPressThemeCustomizationPage() {
         heading={wordPressThemeCustomizationContent.faqHeading}
         idPrefix="wordpress-theme-customization-faq"
         items={wordPressThemeCustomizationFaqs}
-        layout="split"
       />
     </div>
   );

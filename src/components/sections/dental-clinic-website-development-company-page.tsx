@@ -56,7 +56,6 @@ export function DentalClinicWebsiteDevelopmentCompanyPage() {
         heading={dentalClinicWebsiteDevelopmentCompanyContent.sectionCopy.faqHeading}
         idPrefix="dental-clinic-faq"
         items={dentalClinicWebsiteDevelopmentCompanyContent.faqs}
-        layout="split"
       />
     </div>
   );

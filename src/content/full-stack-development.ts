@@ -25,13 +25,6 @@ export const fullStackDevelopmentHeroContent: CityPageHeroContent = {
   },
   badges: [
     {
-      src: "/assets/proof/shopify-platinum-partner.svg",
-      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
-      alt: "Dynamic Dreamz - Shopify Platinum Partner",
-      width: 136,
-      height: 44,
-    },
-    {
       src: "/assets/proof/clutch-rating.svg",
       href: "https://clutch.co/profile/dynamic-dreamz",
       alt: "Dynamic Dreamz on Clutch — 4.9 rating",

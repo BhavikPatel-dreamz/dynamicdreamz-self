@@ -42,7 +42,12 @@ The agent should then read:
 4. If migrating a legacy page, inspect the old URL as both a rendered page and
    View Page Source for content structure, headings, CTAs, metadata intent,
    images, links, schema, accessibility details, style details, and redirect
-   needs.
+   needs. Audit for WordPress hidden DOM debt: compare rendered visible elements
+   against the raw HTML. If elements are permanently suppressed by CSS (e.g.
+   `display: none;`, `.hide-logo`, inline `style="display:none"`, hidden plugin
+   heading tags, or hidden excerpts), DO NOT migrate them into `src/content/**` or
+   `src/data/**`, and do not write Next.js CSS workarounds to render and then
+   hide them.
 5. For visual work, create or update a capture note in
    `docs/visual-captures/` before touching UI code. Record live screenshots,
    local screenshots, CSS/JS sources inspected, computed styles, interaction
@@ -175,6 +180,29 @@ layout:
    broaden an exception merely to make the current code pass.
 5. Run `npm run lint` and `npm run build`. Both commands include the boundary
    check so regressions fail locally and in CI/build verification.
+
+## Handling Live-Site Hidden Content (No WordPress Hidden DOM Migration)
+
+The live site runs on WordPress and Elementor. In legacy CMS setups, global widget templates and plugins frequently output DOM elements that are permanently suppressed by CSS stylesheets (e.g. `.hide-logo { display: none; }`, inline `style="display:none"`, hidden plugin heading tags like `ez-toc`, or hidden card excerpts).
+
+Next.js has no reason to inherit WordPress DOM debt:
+
+1. **Content Model Cleanliness**:
+   - Content files in `src/content/**` and `src/data/**` must contain ONLY data that is actually rendered and visible to the end user.
+   - Never import or store dummy or permanently hidden elements in content arrays. If a live page template output a 5th item or a proof badge that has `.hide-logo` / `display:none` applied across all viewports, DO NOT include that item in the Next.js content object.
+
+2. **No CSS Workarounds for Unused Content**:
+   - Never write component-level conditional workarounds to suppress unwanted content (e.g. `idx === 0 && "hidden"`, `className={isHideLogo ? "hidden" : ""}`).
+   - If an item should not be shown, remove it from the data array in `src/content/**`. The component template should cleanly map over visible data without artificial hiding hacks.
+
+3. **Clean Component Architecture for Optional Elements**:
+   - Never pass dummy props with hidden classes (e.g. `overlayClassName="hidden"`) to satisfy a component.
+   - If an element inside a component (like a video dialog overlay or a badge) is not always required, make the prop or JSX slot cleanly optional (e.g. `overlayClassName?: string`, render overlay only if provided or needed).
+   - If a layout option or prop is permanently discarded across all usages (e.g. `layout="centered"` in `SplitFaqSection`), completely remove the prop and dead branches rather than leaving dead code.
+
+4. **Responsive Adaptations vs. Permanently Hidden Content**:
+   - **Legitimate Responsive Adaptations**: Hiding a complex desktop-only graphic on mobile viewports (`hidden md:block`) or toggling a mobile hamburger navigation menu open/closed are valid responsive/interactive adaptations.
+   - **WordPress Hidden DOM Debt**: Elements suppressed across all screen sizes and user states due to CMS template bloat or plugin hacks. These must be completely omitted from the Next.js codebase.
 
 ## Component Reuse & Generalization Workflow
 
@@ -397,7 +425,10 @@ When migrating a page from the old site:
    migration using meaningful local filenames, then use only the local copy in
    final code.
 7. Copy required source content into typed local files under `src/content/**` or
-   `src/data/**`; do not read from the live site at runtime.
+   `src/data/**`; do not read from the live site at runtime. Audit for WordPress
+   hidden DOM debt: verify that items captured are visibly rendered, not
+   suppressed by CSS (`display: none;`, `.hide-logo`, inline styles). Omit
+   permanently hidden items completely.
 8. Rebuild the page to match the live page first. Implement production-quality,
    accessibility, performance, SEO, AEO, and GEO improvements only when they do
    not change the default visible result. Queue visible improvements for
@@ -419,6 +450,9 @@ For exact migration work, capture these from the live page before building:
 - Header, mega menu, footer, breadcrumbs, and active navigation behavior.
 - Every visible section in order, including eyebrow text, headings, paragraphs,
   cards, counters, buttons, forms, tabs, sliders, accordions, and FAQs.
+- Audit for permanently hidden elements: check if any elements present in
+  View Page Source are suppressed via CSS (`display: none;`, `.hide-logo`,
+  hidden plugin tags like `ez-toc`). Omit these from content captures entirely.
 - Style details for each major pattern: colors, fonts, font sizes, weights, line
   heights, spacing, max widths, grid/column behavior, backgrounds, borders,
   radii, shadows, button states, card states, hover/focus states, animations,

@@ -52,7 +52,6 @@ export function ShopifyMaintenanceServicesPage() {
         heading={shopifyMaintenanceServicesContent.sectionCopy.faqHeading}
         idPrefix="shopify-maintenance-services-faqs"
         items={shopifyMaintenanceServicesContent.faqs}
-        layout="split"
         sectionId="faq"
       />
     </div>

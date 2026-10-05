@@ -156,7 +156,6 @@ export function CityPageHeroSection({
                   <div
                     className={cn(
                       "global_brands_item relative border-r border-[#d9d9d9] px-[15px] first:pl-[15px] last:border-r-0",
-                      isHideLogo && idx === 0 && "hidden",
                       isHideLogo
                         ? "max-[767px]:w-1/3 max-[767px]:border-r max-[767px]:border-[#d9d9d9] max-[767px]:last:border-r-0 max-[767px]:p-2.5 max-[767px]:text-center"
                         : "max-[767px]:w-1/2 max-[767px]:border-0 max-[767px]:p-3.5 max-[767px]:text-center",

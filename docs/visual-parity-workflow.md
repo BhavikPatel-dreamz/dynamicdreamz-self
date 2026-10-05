@@ -69,6 +69,11 @@ Before implementing visual work:
    marquees, sticky behavior, and reveal-on-scroll behavior.
 7. Capture responsive differences: breakpoints, column changes, hidden/shown
    content, menu behavior, image crops, spacing changes, and typography changes.
+8. Audit for WordPress hidden DOM debt: inspect elements suppressed with
+   `display: none;`, `.hide-logo`, or inline styles across all viewports.
+   Distinguish intentional responsive hiding (e.g. `hidden md:block`) from
+   permanently suppressed CMS bloat. Never migrate permanently hidden elements
+   into local content models or component templates.
 
 If a network command is required to fetch page source, CSS, JS, or assets for
 migration-time inspection, request approval instead of guessing.
@@ -153,6 +158,10 @@ Record these values before rebuilding:
   categories (by visual appearance, brand identity, SVG vector paths, and content
   hashes) before adding media. Reuse canonical paths; add new assets cleanly to
   the relevant category folder with a lowercase kebab-case filename.
+- Eliminate WordPress hidden DOM debt: Do not migrate elements permanently
+  suppressed via CSS (`display: none;`, `.hide-logo`, hidden plugin headings).
+  Exclude them from local content models entirely. Do not port legacy WordPress
+  hidden DOM nodes into Next.js and hide them with Tailwind `hidden`.
 
 ## Verification Loop
 
