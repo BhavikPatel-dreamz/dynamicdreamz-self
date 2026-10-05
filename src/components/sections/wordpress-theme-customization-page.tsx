@@ -1,16 +1,17 @@
-import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { CityPageHeroSection } from "@/components/sections/city-page-hero-section";
+import { EvaluationFrameworkSection } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
-import {
-  ShopifyAdvantagesSection,
-  ShopifyReasonsSection,
-} from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
-import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { ShopifyThemeProcessSection } from "@/components/sections/shopify-theme-customization/shopify-theme-process-section";
-import { ShopifyThemeTechSection } from "@/components/sections/shopify-theme-customization/shopify-theme-tech-section";
+import { ShopifyTeamBoxesSection } from "@/components/sections/shopify-team-boxes-section";
 import { ShopifyThemesGridSection } from "@/components/sections/shopify-theme-customization/shopify-themes-grid-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
+import {
+  WordPressThemeCustomizationBenefitIcon,
+  WordPressThemeCustomizationServiceIcon,
+} from "@/components/sections/wordpress-theme-customization/wordpress-theme-customization-icons";
 import {
   wordPressThemeCustomizationContent,
   wordPressThemeCustomizationFaqs,
@@ -18,138 +19,158 @@ import {
 
 export function WordPressThemeCustomizationPage() {
   const brandsContent = {
-    heading: wordPressThemeCustomizationContent.brands.title,
-    slug: "wordpress-theme-customization",
+    heading: wordPressThemeCustomizationContent.brands.heading,
+    slug: wordPressThemeCustomizationContent.brands.slug,
   };
 
   const servicesContent = {
-    heading: wordPressThemeCustomizationContent.services.title,
-    description: wordPressThemeCustomizationContent.services.subtitle,
-    items: wordPressThemeCustomizationContent.services.items.map((item) => ({
-      title: item.title,
-      description: item.description,
-      icon: item.icon,
-      iconAlt: item.title,
+    eyebrow: wordPressThemeCustomizationContent.services.eyebrow,
+    heading: wordPressThemeCustomizationContent.services.heading,
+    description: wordPressThemeCustomizationContent.services.description,
+    boxes: wordPressThemeCustomizationContent.services.items.map((box) => ({
+      icon: <WordPressThemeCustomizationServiceIcon name={box.iconName} />,
+      title: box.title,
+      description: box.description,
     })),
   };
 
   const whyNeedContent = {
-    heading: wordPressThemeCustomizationContent.whyNeed.title,
-    description: wordPressThemeCustomizationContent.whyNeed.subtitle,
-    items: wordPressThemeCustomizationContent.whyNeed.items.map((item) => ({
-      title: item.title,
-      description: item.description,
-      icon: item.icon,
-      iconAlt: item.title,
-    })),
-    hideCta: true,
+    eyebrow: wordPressThemeCustomizationContent.whyNeed.eyebrow,
+    heading: wordPressThemeCustomizationContent.whyNeed.heading,
+    description: wordPressThemeCustomizationContent.whyNeed.description,
+    items: wordPressThemeCustomizationContent.whyNeed.items,
   };
 
   const benefitsContent = {
-    heading: wordPressThemeCustomizationContent.benefits.title,
-    description: wordPressThemeCustomizationContent.benefits.subtitle ?? "",
-    items: wordPressThemeCustomizationContent.benefits.items.map((item) => ({
-      title: item.title,
-      description: item.description,
-      icon: item.icon,
-      iconAlt: item.title,
+    eyebrow: wordPressThemeCustomizationContent.benefits.eyebrow,
+    heading: wordPressThemeCustomizationContent.benefits.heading,
+    description: wordPressThemeCustomizationContent.benefits.description,
+    boxes: wordPressThemeCustomizationContent.benefits.items.map((box) => ({
+      icon: <WordPressThemeCustomizationBenefitIcon name={box.iconName} />,
+      title: box.title,
+      description: box.description,
     })),
   };
 
   const processContent = {
-    title: wordPressThemeCustomizationContent.process.title,
-    subtitle: wordPressThemeCustomizationContent.process.subtitle,
-    centerIllustration: "/assets/shopify-theme-customization/process/process-illustration.svg",
+    eyebrow: wordPressThemeCustomizationContent.process.eyebrow,
+    heading: wordPressThemeCustomizationContent.process.heading,
+    description: wordPressThemeCustomizationContent.process.description,
     steps: wordPressThemeCustomizationContent.process.steps,
   };
 
-  const techContent = {
-    title: wordPressThemeCustomizationContent.tech.title,
-    subtitle: wordPressThemeCustomizationContent.tech.subtitle,
-    items: wordPressThemeCustomizationContent.tech.items,
-  };
-
   const themesContent = {
+    eyebrow: wordPressThemeCustomizationContent.themes.eyebrow,
     title: wordPressThemeCustomizationContent.themes.title,
     subtitle: wordPressThemeCustomizationContent.themes.subtitle,
     items: wordPressThemeCustomizationContent.themes.items,
   };
 
   const whyChooseContent = {
-    heading: wordPressThemeCustomizationContent.whyChoose.title,
-    description: wordPressThemeCustomizationContent.whyChoose.subtitle,
-    items: wordPressThemeCustomizationContent.whyChoose.items.map((item) => ({
-      title: item.title,
-      description: item.description,
-      icon: item.icon,
-      iconAlt: item.title,
-    })),
-    hideCta: true,
+    eyebrow: wordPressThemeCustomizationContent.whyChoose.eyebrow,
+    heading: wordPressThemeCustomizationContent.whyChoose.heading,
+    description: wordPressThemeCustomizationContent.whyChoose.description,
+    items: wordPressThemeCustomizationContent.whyChoose.items,
   };
 
   const portfolioContent = {
-    heading: wordPressThemeCustomizationContent.portfolio.title,
-    description: wordPressThemeCustomizationContent.portfolio.subtitle,
-    platformMark: {
-      src: "/assets/platforms/wordpress-woocommerce-white.svg",
-      width: 90,
-      height: 26,
-    },
+    eyebrow: wordPressThemeCustomizationContent.portfolio.eyebrow,
+    heading: wordPressThemeCustomizationContent.portfolio.heading,
+    description: wordPressThemeCustomizationContent.portfolio.description,
+    category: wordPressThemeCustomizationContent.portfolio.category,
+    ctaLabel: wordPressThemeCustomizationContent.portfolio.ctaLabel,
+    ctaHref: wordPressThemeCustomizationContent.portfolio.ctaHref,
     items: wordPressThemeCustomizationContent.portfolio.items.map((item) => ({
-      name: item.title,
-      href: item.href,
+      name: item.name,
+      title: item.title,
       image: item.image,
-      imageAlt: item.title,
+      imageAlt: item.imageAlt,
+      href: item.href,
       category: item.category,
     })),
   };
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection
-        bodyClassName="max-w-[920px] mx-auto text-base font-normal leading-[30.4px] text-muted my-6"
-        className="inner-hero-sec full-width-sec hide-review shopify-theme-customization-sec relative overflow-hidden bg-white pt-[190px] pb-20 max-[992px]:pt-[100px] max-[992px]:pb-10"
-        content={{
-          title: wordPressThemeCustomizationContent.hero.title,
-          description: wordPressThemeCustomizationContent.hero.description,
-        }}
-        leftColClassName="left-col w-full text-center"
-        rightColClassName="hidden"
+      {/* 1. Hero with tablet slider & trust badges */}
+      <CityPageHeroSection
+        className="hide-logo"
+        content={wordPressThemeCustomizationContent.hero}
+        paddingClassName="pt-[91px] pb-0 max-[991px]:pt-16 max-[991px]:pb-0"
       />
+
+      {/* 2. Trusted by Leading Brands slider */}
       <IndustryBrandsSection
         content={brandsContent}
-        heading={wordPressThemeCustomizationContent.brands.title}
+        heading={wordPressThemeCustomizationContent.brands.heading}
         items={wordPressThemeCustomizationContent.brands.items}
       />
-      <AgencyServicesSection content={servicesContent} />
-      <ShopifyAdvantagesSection
-        columns={2}
+
+      {/* 3. Our WordPress Theme Customization Services (Yellow) */}
+      <ThemeCustomizationServicesSection
+        content={servicesContent}
+        id="services"
+        variant="yellow"
+      />
+
+      {/* 4. Why do you need to customize WordPress Theme? (Dark Dev Team) */}
+      <ShopifyTeamBoxesSection
         content={whyNeedContent}
         id="why-need-customization"
       />
-      <ShopifyReasonsSection content={benefitsContent} />
-      <ShopifyThemeProcessSection content={processContent} />
-      <ShopifyThemeTechSection content={techContent} />
-      <ShopifyThemesGridSection content={themesContent} />
-      <ShopifyAdvantagesSection
-        className="why_dynamic_dreamz_sec dev why_dynamic_dreamz_sec dev pb-80 bg-gradient-light two-column-icon-text-bg py-20 max-[767px]:py-[60px] bg-[linear-gradient(180deg,#FAF8F5_0%,#FFFFFF_100%)]"
-        columns={2}
+
+      {/* 5. Benefits of the WordPress Theme Customization Service (Transparent) */}
+      <ThemeCustomizationServicesSection
+        content={benefitsContent}
+        id="benefits"
+        variant="transparent"
+      />
+
+      {/* 6. Process of WordPress Theme Customization Services */}
+      <OurDevelopmentProcessSection
+        columns={3}
+        content={processContent}
+        id="our-process"
+      />
+
+      {/* 7. WordPress Themes We Customize */}
+      <ShopifyThemesGridSection
+        className="mt-80 max-[992px]:mt-10"
+        content={themesContent}
+        id="themes"
+        variant="pista"
+      />
+
+      {/* 8. Why Choose Dynamic Dreamz */}
+      <EvaluationFrameworkSection
         content={whyChooseContent}
-        id="why-choose-dynamic-dreamz"
+        id="why-choose"
       />
+
+      {/* 9. Snippets of WordPress Theme Customization Portfolio */}
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
+        cardVariant="ourWorkRefresh"
+        className="our-work-sec pt-0 pb-20 max-[992px]:pb-[50px]"
+        columns={4}
         content={portfolioContent}
+        sectionId="our_work"
+        variant="liveGrid"
       />
+
+      {/* 10. Don't Just Take Our Word For It */}
       <HappyClientSection
         description={wordPressThemeCustomizationContent.testimonials.description}
+        eyebrow={wordPressThemeCustomizationContent.testimonials.eyebrow}
         heading={wordPressThemeCustomizationContent.testimonials.heading}
         items={wordPressThemeCustomizationContent.testimonials.items}
       />
+
+      {/* 11. FAQs on WordPress Theme Customization Services */}
       <SplitFaqSection
         heading={wordPressThemeCustomizationContent.faqHeading}
         idPrefix="wordpress-theme-customization-faq"
         items={wordPressThemeCustomizationFaqs}
+        layout="split"
       />
     </div>
   );

@@ -2,7 +2,7 @@
 
 - **Route**: `/wordpress-theme-customization-services`
 - **Live Reference**: `https://www.dynamicdreamz.com/wordpress-theme-customization-services/`
-- **Capture Date**: 2026-08-21
+- **Remigration / Audit Date**: 2026-10-05
 
 ---
 
@@ -10,31 +10,41 @@
 
 | Section # | Visual Role | Reused / Generalized Component | Assets Reused |
 |---|---|---|---|
-| 1 | Hero Banner | `ServiceHeroSection` (Centered/Full-width single text box) | Clean typography, centered layout |
-| 2 | Brand Partners Slider | `IndustryBrandsSection` | 12 client brand SVGs from `public/assets/clients/` |
-| 3 | What We Provide (6 Cards) | `ShopifyServicesSection` | Canonical service icons |
-| 4 | Why Customize (2-col Cards) | `ShopifyAdvantagesSection` (`columns={2}`) | Canonical advantage icons |
-| 5 | Benefits (10-Card Carousel/Grid) | `ShopifyReasonsSection` | Canonical benefit icons |
-| 6 | Process (Serpentine 6 Steps) | `ShopifyThemeProcessSection` | `process-illustration.svg` + 6 step icons |
-| 7 | Technology & Frameworks (11 items) | `ShopifyThemeTechSection` | WebP tech logos + SVGs |
-| 8 | Themes We Customize (17 themes) | `ShopifyThemesGridSection` | 17 WebP theme screenshots + internal theme routes |
-| 9 | Why Choose Dynamic Dreamz (2-col) | `ShopifyAdvantagesSection` (`columns={2}`) | Canonical why-choose icons |
-| 10 | Portfolio Snippets (6 cards) | `PortfolioShowcaseSection` | 6 WebP case study images + `/our-work` CTA |
-| 11 | Client Video Reviews Carousel | `HappyClientSection` | WebP testimonial thumbnails + videos |
-| 12 | FAQs Accordion (6 Q&As) | `FaqSection` | FAQ accordion with schema |
+| 1 | Hero Banner | `CityPageHeroSection` (`hideLogo={true}`, tablet slider + 4 trust badges) | 3 tablet slide mockups, 4 trust badge SVGs |
+| 2 | Brand Partners Slider | `IndustryBrandsSection` | 10 client brand SVGs from `public/assets/clients/` |
+| 3 | What We Provide (6 Cards) | `ThemeCustomizationServicesSection` (`variant="yellow"`) | 6 canonical service SVG icons |
+| 4 | Why Customize (2x2 Dark Grid) | `ShopifyTeamBoxesSection` (Dark container with 4 numbered cards) | Clean typography & dark border styling |
+| 5 | Benefits of Customization (10 Cards) | `ThemeCustomizationServicesSection` (`variant="transparent"`) | 10 canonical benefit SVG icons |
+| 6 | Development Process (6 Steps) | `OurDevelopmentProcessSection` (`columns={3}`) | 6 numbered step cards with step indicators |
+| 7 | Themes We Customize (17 Themes) | `ShopifyThemesGridSection` (`variant="pista"`) | 17 WebP theme screenshots from `public/assets/wordpress-theme-customization/themes/` |
+| 8 | Why Choose Dynamic Dreamz (4 Columns) | `EvaluationFrameworkSection` | 4 numbered framework columns |
+| 9 | Portfolio Showcase (8 Projects) | `PortfolioShowcaseSection` (`variant="liveGrid"`, `cardVariant="ourWorkRefresh"`, `columns={4}`) | 8 project cards from `public/assets/our-work/projects/` |
+| 10 | Client Video Reviews Carousel | `HappyClientSection` | Video testimonial thumbnails + video modals |
+| 11 | Centered FAQs Accordion (6 Items) | `SplitFaqSection` (`layout="centered"`) | Centered accordion layout with schema |
 
 ---
 
 ## 2. Asset Deduplication Audit
 
 - **Buffer Method**: 2-step ephemeral `scratch/` comparison buffer.
-- **Deduplication Result**: All brand logos, service icons, process icons, why-choose icons, testimonial assets, and theme cards reused from canonical paths in `public/assets/**`.
-- **SHA-256 Duplicate Groups**: 0.
+- **Deduplication Result**: All brand logos, service icons, process icons, why-choose icons, testimonial assets, portfolio mockups, and theme cards reused from canonical paths in `public/assets/**`.
+- **Total Files Audited**: 1791 public assets.
+- **SHA-256 Duplicate Groups**: 0 byte duplicates, 0 SVG duplicates, 0 raster duplicates.
 
 ---
 
 ## 3. Responsive & Interactive Behavior
 
-- **Desktop (>=1200px)**: Centered hero banner, 6-card services grid, 2-column why-customize, 3-column benefits, serpentine 6-step process with center illustration, 4-column tech framework blocks, 3-column themes grid with hover zoom & gradient border, 3-column portfolio cards, testimonials carousel with video modals.
-- **Tablet (768px-1199px)**: Responsive 2-column card layouts, centered headlines.
-- **Mobile (<=767px)**: Stacked single-column layouts, touch-friendly accordion FAQs, vertical step list with step badges.
+- **Desktop (>=1200px)**:
+  - Hero: 2-column layout with left copy/badges and right tablet slider mockup.
+  - Services: 3-column grid with yellow hover cards (`#FFF8F0` background / `#FEE3C8` border).
+  - Why Customize: 2x2 grid in dark themed container (`#111111`).
+  - Benefits: 3-column / 4-column responsive grid with transparent cards and hover elevation.
+  - Process: 3-column grid showing 6 sequential development steps.
+  - Themes: 4-column pista green cards (`#003323` text / pista background) with live theme tags.
+  - Why Choose: 4-column numbered framework cards.
+  - Portfolio: 4-column grid of 8 live projects with hover overlay and preview modal.
+  - Testimonials: Multi-item client video carousel with play controls.
+  - FAQ: Centered container single-column accordion with expand/collapse animations.
+- **Tablet (768px-1199px)**: Responsive 2-column card layouts, centered headlines where appropriate.
+- **Mobile (<=767px)**: Stacked single-column layouts, touch-friendly accordion FAQs, responsive tablet slider sizing.
