@@ -49,7 +49,7 @@ export function CommerceSolutionsSection() {
                 return (
                   <article
                     className={cn(
-                      "relative rounded-[15px] border border-[#6e7590]/10 p-5 shadow-[2px_2px_4px_rgb(83_83_83/5%)]",
+                      "relative rounded-[15px] border border-[#6e7590]/10 p-5 shadow-[2px_2px_4px_rgb(83_83_83/5%)] max-[767px]:p-[15px]",
                       isOpen ? "bg-[#eff4ef]" : "bg-white",
                     )}
                     key={item.title}
@@ -65,7 +65,7 @@ export function CommerceSolutionsSection() {
                       >
                         <span className="block">
                           <span className="block">{item.title}</span>
-                          <span className="mt-2.5 block font-sans text-sm leading-none font-medium text-muted max-[767px]:leading-[1.4]">
+                          <span className="mt-2.5 block font-display text-sm leading-none font-medium text-ink max-[767px]:mt-[5px] max-[767px]:text-[13px] max-[767px]:leading-normal">
                             {item.summary}
                           </span>
                         </span>
@@ -75,10 +75,10 @@ export function CommerceSolutionsSection() {
                         <span className="sr-only">{isOpen ? homeSectionCopy.commerceAccordion.close : homeSectionCopy.commerceAccordion.open} {item.title}</span>
                       </button>
                     </h3>
-                    <div id={panelId} role="region" aria-labelledby={triggerId} aria-hidden={!isOpen} inert={!isOpen} className={cn("grid grid-rows-[0fr] transition-[grid-template-rows,margin-top] duration-300", isOpen && "mt-4 grid-rows-[1fr]")}>
+                    <div id={panelId} role="region" aria-labelledby={triggerId} aria-hidden={!isOpen} inert={!isOpen} className={cn("grid grid-rows-[0fr] transition-[grid-template-rows,margin-top] duration-300", isOpen && "mt-4 max-[767px]:mt-2.5 grid-rows-[1fr]")}>
                       <div className="overflow-hidden">
-                        <div className="border-t border-[#6e7590]/10 pt-4">
-                          <p className="mb-2.5 text-sm leading-[1.8] font-medium text-muted">{item.body}</p>
+                        <div className="border-t border-[#6e7590]/10 pt-4 max-[767px]:pt-2.5">
+                          <p className="mb-[15px] text-sm leading-6 font-normal text-muted">{item.body}</p>
                           <Link className="inline-flex items-center gap-2 text-sm leading-none font-bold text-brand-red uppercase transition-colors hover:text-ink focus-visible:text-ink" href={item.href}>
                             {item.cta}
                             <ArrowIcon />

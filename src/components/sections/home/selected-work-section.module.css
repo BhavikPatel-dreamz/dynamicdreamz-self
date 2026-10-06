@@ -8,7 +8,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px), (prefers-reduced-motion: reduce) {
   .projectMotion {
     animation: none;
   }

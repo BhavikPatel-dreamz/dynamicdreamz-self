@@ -757,7 +757,7 @@ navigation while removing WordPress runtime dependencies.
 Status: technical and live-section refresh implemented; visible AEO copy remains
 deferred and live wording is preserved
 
-Last reviewed: 2026-09-03
+Last reviewed: 2026-10-06
 
 Owner: SEO, content, development, leadership, and client success
 

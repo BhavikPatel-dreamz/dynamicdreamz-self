@@ -169,6 +169,7 @@ export const showcaseImages: ImageItem[] = [
 
 export type Project = {
   name: string;
+  technology: string;
   href: string;
   media: { type: "image"; src: string; alt: string } | { type: "video"; src: string };
 };
@@ -176,16 +177,19 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "Holy Plantz",
+    technology: "Figma-to-Shopify · CRO Optimization",
     href: "https://holyplantz.com/",
     media: { type: "image", src: "/assets/our-work/projects/holy-plantz.webp", alt: "Holy Plantz Shopify storefront" },
   },
   {
     name: "Sleepy Cat",
+    technology: "Shopify Migration · Custom Integrations",
     href: "https://sleepycat.in/",
     media: { type: "video", src: "/assets/portfolio/sleepy-cat.mp4" },
   },
   {
     name: "Matcha Republic",
+    technology: "UI/UX Design · Shopify Development",
     href: "https://www.matcharepublic.com/",
     media: {
       type: "image",
@@ -195,11 +199,13 @@ export const projects: Project[] = [
   },
   {
     name: "Tropicfeel",
+    technology: "Shopify Development · Ongoing Optimization",
     href: "https://shop.tropicfeel.com/",
     media: { type: "video", src: "/assets/portfolio/tropicfeel.mp4" },
   },
   {
     name: "Gotta Pee",
+    technology: "Custom Shopify Build · Conversion-Focused UX",
     href: "https://gottapee.xyz/",
     media: { type: "image", src: "/assets/portfolio/gotta-pee.webp", alt: "Gotta Pee Shopify storefront" },
   },

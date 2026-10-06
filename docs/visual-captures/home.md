@@ -1,5 +1,68 @@
 # Homepage AEO/GEO Update
 
+## 2026-10-06 Homepage Selected Shopify Plus & Enterprise Ecommerce Work Layout Parity
+
+- Owner-supplied screenshot: https://prnt.sc/OmRDjnhIvc6B highlighting the card slider area where the local layout displayed cards as "so big box".
+- Live sources inspected: `https://www.dynamicdreamz.com/` rendered DOM and computed styles from `scratch/live-home.css` (`.our_portfolio_wrap`, `.portfolio_items_scroll`, `.portfolio_item_box`, `.img_wrap`, `.portfolio_title`).
+- Live vs. Prior Local Comparison at 1843px Desktop Viewport:
+  - Live card width: `777px` (42.5vw with 15% peek on right for 3rd slide)
+  - Prior local card width: `921.5px` (50vw taking exactly half screen, no 3rd slide peek)
+  - Live card height: `544.4px` (image `437px` via `padding-bottom: 56.25%`, title `107.34px`)
+  - Prior local card height: `733.6px` (image `626.6px` via `padding-bottom: 68%`, title `107px`)
+  - Live section height: `918.4px`
+  - Prior local section height: `1096.2px` (plus artificial `min-h-[932.83px]`)
+- Root cause:
+  1. Motion container width was hardcoded to `500%` across all desktop viewports, which divided by 2 lists and 5 cards per list made each card 50% viewport width instead of 42.5% viewport width. On the live site at `>= 1600px`, `.our_portfolio_wrap .slick-list` has `padding-right: 15%`, resulting in each slide taking `(100% - 15%) / 2 = 42.5%` viewport width and revealing a 15% peek of the subsequent slide on the right.
+  2. The image wrapper used `pb-[68%]` for desktop (`>= 993px`), whereas the live site specifies `padding-bottom: 56.25%` (16:9) at `>= 1600px` and `padding-bottom: 56.25%` at `992px - 1199px`.
+  3. Responsive title font size and arrow clearance were scoped to `max-[992px]` instead of the live site's `max-[1380px]` breakpoint (`font-size: 24px; padding: 20px; right: 20px`).
+  4. The section had artificial `min-height` constraints (`min-h-[932.83px]`, `min-h-[774.81px]`, `min-h-[649.77px]`) that stretched the section.
+- Correction applied:
+  1. Updated motion container width to `min-[1600px]:w-[calc(425%+5px)] w-[calc(500%+5px)] max-[767px]:w-max`, matching 42.5vw slide width on large desktop and 50vw on medium desktop, while preserving `w-max` on mobile.
+  2. Aligned image aspect ratio classes to match live responsive rules: `pb-[70%] min-[992px]:pb-[56.25%] min-[1200px]:pb-[68%] min-[1600px]:pb-[56.25%]`.
+  3. Scoped card title styling to `max-[1380px]:p-5 max-[1380px]:text-2xl` and arrow to `max-[1380px]:right-5`, and subtitle to `max-[1199px]:text-[11px]`.
+  4. Removed artificial section min-heights, leaving natural padding `pt-[60px] pb-[52px]` (desktop) and `py-[30px]` (mobile).
+  5. Added `(prefers-reduced-motion: reduce)` in `selected-work-section.module.css`.
+- Responsive Verification:
+  - 1843px (Desktop >= 1600px): Local card width `777.39px` (Live `777px`), card height `544.6px` (Live `544.4px`), section height `911.6px` (Live `918.4px`).
+  - 1440px (Desktop): Local card width `713px` (Live `713px`), card height `592.17px` (Live `592.17px`), section height `959.17px` (Live `966.17px`).
+  - 1199px: Local card width `592.5px` (Live `592px`), card height `433.4px` (Live `427.98px`), section height `849.4px`.
+  - 991px (Tablet): Local card width `488.5px` (Live `488px`), card height `436.9px` (Live `436.58px`), section height `848.9px`.
+  - 768px (Tablet): Local section height `770.88px` (Live `769.88px` — 1px difference).
+  - 390px (Mobile): Local section height `722.58px` (Live `719.97px` — 2.6px difference), card width `435px` with 50px peek.
+- Captured screenshots:
+  - Local fixed desktop: `scratch/local-fixed-1843.png`
+  - Live desktop: `scratch/live-selected-work.png`
+  - Local tablet: `scratch/local-768.png`
+  - Live tablet: `scratch/live-768.png`
+  - Local mobile: `scratch/local-390.png`
+  - Live mobile: `scratch/live-390.png`
+
+- Owner-supplied screenshot: https://prnt.sc/q6oXa8RRu0Fp highlighting the accordion card subtitle/summary and expanded accordion body paragraph.
+- Live sources inspected: `https://www.dynamicdreamz.com/` rendered DOM and computed styles from stylesheet (`.our_expertise_shopify.ct-solutions-sec`).
+- Live computed styles:
+  - Accordion Card Subtitle (`.accrodion-title span`):
+    - Font Family: `neue_montrealmedium, sans-serif` (`font-display`)
+    - Color: `#282828` (`text-ink`)
+    - Font Size: `14px` (`text-sm`), mobile: `13px` (`max-[767px]:text-[13px]`)
+    - Font Weight: `500` (`font-medium`)
+    - Line Height: `100%` (`leading-none`), mobile: `normal` (`max-[767px]:leading-normal`)
+    - Margin Top: `10px` (`mt-2.5`), mobile: `5px` (`max-[767px]:mt-[5px]`)
+  - Accordion Body Paragraph (`.accrodion-content p`):
+    - Font Family: `Montserrat, sans-serif` (`font-sans`)
+    - Color: `#535353` (`text-muted`)
+    - Font Size: `14px` (`text-sm`)
+    - Font Weight: `400` (`font-normal`)
+    - Line Height: `24px` (`leading-6`)
+    - Margin Bottom: `15px` (`mb-[15px]`)
+  - Card padding & spacing:
+    - Card padding: `20px` (`p-5`), mobile: `15px` (`max-[767px]:p-[15px]`)
+    - Content top margin & padding: `16px` (`pt-4`), mobile: `10px` (`max-[767px]:pt-2.5`)
+- Root cause: Local component used `font-sans text-sm leading-none font-medium text-muted` for subtitle (wrong font family and color #535353 instead of #282828) and `text-sm leading-[1.8] font-medium text-muted` for body (weight 500 instead of 400, leading 25.2px instead of 24px).
+- Correction applied:
+  - Updated subtitle to `font-display text-sm leading-none font-medium text-ink max-[767px]:mt-[5px] max-[767px]:text-[13px] max-[767px]:leading-normal`.
+  - Updated body paragraph to `text-sm leading-6 font-normal text-muted mb-[15px]`.
+  - Added responsive mobile padding `max-[767px]:p-[15px]` and `max-[767px]:pt-2.5` to match live responsive CSS.
+
 ## 2026-08-26 Homepage FAQ Question Typography
 
 - Owner-supplied split screenshot shows the local FAQ question smaller than the
