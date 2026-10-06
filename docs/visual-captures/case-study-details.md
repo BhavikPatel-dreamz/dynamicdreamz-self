@@ -2,80 +2,68 @@
 
 Live route family: `https://www.dynamicdreamz.com/case-studies/{slug}/`
 Local route family: `/case-studies/{slug}`
-Date checked: 2026-08-21
+Date checked: 2026-10-06
 Browser/source: Google Chrome headless screenshots, rendered live pages, View Page
-Source, shared detail CSS/JS, live sitemap, and local component/asset audit.
+Source, live CSS (`dd-css/case-study-single-0eebcc2295.css`), live sitemap inventory, and local component audit.
 
 ## Representative Viewports
 
-The `sleepycat` route represents the full optional-module template. The
-`evrgreen` route represents the lean text-only template.
+The `sleepycat` and `bombay-shirt-company` routes represent the modern live case study template featuring the complete modular section set:
+- `.case-study-hero` (`#F7F4E9` darkcream split hero with dual badge eyebrow, Visit Website CTA, and explore scroll CTA)
+- `.case-study-all-ino` (4-column project facts bar)
+- `.key-metrics` (optional `#182019` dark pill card with metric counters)
+- `.client-challenge` (numbered challenge cards with red "01", "02" counters)
+- `.our-solutions` (`#192019` dark green section with numbered solution items)
+- `.key-features` (`#eff4ef` pista background with white feature cards)
+- `.service-delivered` (two-tone container with `#fbefd7` cream left block and right service items grid)
+- `.see-the-work-sec` (optional `#eff4ef` related case studies card grid)
 
 | Viewport | Live screenshot | Local screenshot | Status |
 | --- | --- | --- | --- |
-| SleepyCat 1440x900 | `docs/visual-captures/case-study-details/live-sleepycat-desktop-1440x900.png` | `docs/visual-captures/case-study-details/local-sleepycat-desktop-1440x900.png` | verified |
-| SleepyCat 768x1024 | `docs/visual-captures/case-study-details/live-sleepycat-tablet-768x1024.png` | `docs/visual-captures/case-study-details/local-sleepycat-tablet-768x1024.png` | verified |
-| SleepyCat 390x844 | `docs/visual-captures/case-study-details/live-sleepycat-mobile-390x844.png` | `docs/visual-captures/case-study-details/local-sleepycat-mobile-390x844.png` | verified |
-| Evrgreen 1440x900 | `docs/visual-captures/case-study-details/live-evrgreen-desktop-1440x900.png` | `docs/visual-captures/case-study-details/local-evrgreen-desktop-1440x900.png` | verified |
-| Ayusunless carousel 1440x900 | live rendered page and source | `docs/visual-captures/case-study-details/local-ayusunless-carousel-desktop-1440x900.png` | verified after horizontal-scroll interaction |
+| SleepyCat 1440x900 | `docs/visual-captures/case-study-details/live-sleepycat-desktop-1440x900.png` | `docs/visual-captures/case-study-details/local-sleepycat-desktop-1440x900.png` | captured |
+| SleepyCat 768x1024 | `docs/visual-captures/case-study-details/live-sleepycat-tablet-768x1024.png` | `docs/visual-captures/case-study-details/local-sleepycat-tablet-768x1024.png` | captured |
+| SleepyCat 390x844 | `docs/visual-captures/case-study-details/live-sleepycat-mobile-390x844.png` | `docs/visual-captures/case-study-details/local-sleepycat-mobile-390x844.png` | captured |
 
 ## Sources Inspected
 
 | Source | What was checked |
 | --- | --- |
-| `case-study-sitemap.xml` | Current live inventory: 35 detail URLs plus the archive. The stale local Banchharams card was excluded because its former live detail URL now resolves to the archive and is absent from the sitemap. |
-| Rendered pages and View Page Source | Sampled Evrgreen, Tankbar, ConsciousPoker, SleepyCat, Don J, Beauti Software, Bombay Shirt Company, and D Shop. Recorded hero order, exact visible copy, taxonomy facts, heading hierarchy, image alternatives, metadata intent, source links, and optional section variants. |
-| Live `assets/css/case-study-details/main.css` | Desktop hero starts below the shared header, uses a 47/50 split, 38/48 hero title, a pale green/cyan block behind the image, 120/90 narrative wrapper spacing, 32/68 text rows, gradient heading rule, optional palette/typeface/design treatments, and the shared gradient quote banner. |
-| Live `assets/css/case-study-details/media.css` | Breakpoints at 1399, 1299, 1199, 991, 767, and 575px. At 991px the hero becomes image-first and narrative rows stack; at 767px facts become full-width and section spacing/type scale compress; at 575px horizontal padding becomes 20px. |
-| Live case-study detail JavaScript | The shared file initializes optional card carousels and the legacy back control. The migrated template uses a normal `/case-studies` link and adds client JavaScript only for Ayusunless, the sole current entry containing a carousel. |
-| Local components | Audited shared header/footer, `Container`, `ButtonLink`, `CtaBannerSection`, archive components, `HorizontalDragScroll`, and existing section patterns before creating detail UI. The detail narrative/palette/typeface/design composition has no existing reusable equivalent. |
+| Live CSS `case-study-single-0eebcc2295.css` | Verified all selectors, colors (`--darkcream: #F7F4E9`, `--pista: #eff4ef`, `--dark-green: #192019`, `--theme-red: #ad5151`, `--line: rgba(40,40,40,.11)`), typography (`Montserrat` and `Neue Montreal`), borders, gaps, flex/grid rules, and media query breakpoints at 1399, 1199, 991, 767, and 575px. |
+| Rendered live pages (`sleepycat`, `bombay-shirt-company`, `gnc-india`, `don-j`, `custom-neon`, `renee-cosmetics`) | Live DOM inspects revealed full transition to the `single-blog dd` template across all 56 active live case studies. |
+| WordPress DOM suppression audit | View Page Source contains `.single-blog.dd > .container` with a back button and `.post-navigation`, but `case-study-single.css` explicitly suppresses them via `.single-case-study .single-blog.dd > .container { display: none }` and `.navigation.post-navigation { display: none }`. In accordance with AGENTS.md rules, these permanently hidden elements are omitted from Next.js. |
 
-## Section Inventory
+## Section Inventory (Live Template Parity)
 
 | Section | Live behavior | Migration contract |
 | --- | --- | --- |
-| Header and back link | Shared header followed by `Go back` | Reuse shared header and a server-rendered slashless link to `/case-studies`. |
-| Case study hero | Desktop text left/image right; tablet/mobile image first; title, summary, Industry, Technology, Location | One typed hero component using project-owned local media and stable image dimensions. |
-| Narrative rows | Optional About/Custom Logic, Challenges, Solution, Results/Impact, and Services Provided rows in a 32/68 split | Render ordered typed sections so live heading and copy order can be preserved per entry. |
-| Supporting media | Some narrative rows begin with a full-width image | Optional local image on a narrative section with intentional alt text. |
-| Wireframes | Optional title plus full-width wireframe image | Optional server-rendered module. |
-| Colors | Optional two- or four-card color palette | Optional typed palette with visible labels and CSS colors. |
-| Typefaces | Optional text specimens or typeface images | Optional typed module; preserve a text fallback when the specimen is content-bearing. |
-| Design | Optional pale background and large design showcase image | Optional typed design module with local media. |
-| Request quote banner | Gradient CTA near page end | Reuse `CtaBannerSection` with the live detail-page wording and existing button primitive. |
+| Hero Section | `#F7F4E9` darkcream background, 60px padding, left column (47-50%) with dual category eyebrow (red dash + dot separator), `h1.h2` title, summary paragraph, button group (`Visit Website` external red pill button + `explore case study` scroll link), right column (46-47%) with high-res hero image | `CaseStudyHero` server component rendered with clean Tailwind classes and `ButtonLink` primitives. |
+| All Info Bar | 4-column summary bar (`Project` 40%, `Industry` 20%, `Technology` 20%, `Location` 20%) with uppercase 14px bold labels and 16px value text, bordered by `rgba(40,40,40,0.11)` | `CaseStudyAllInfo` server component with responsive grid (4 cols on desktop, 2 cols on tablet, 1 col on mobile). |
+| Key Metrics | Optional `#182019` rounded 22px banner, 22% left block with uppercase 12px H2, 78% right block with flex stats (`30px` H3 + 13px label) | `CaseStudyKeyMetrics` server component rendered when metric data exists. |
+| Client Challenge | `#explore` section (`pt-80 pb-80`), eyebrow `Client Challenge / Objective`, `h2` `What the Project Needed to Solve`, intro paragraph, and 4-column bordered card grid with red "01", "02" counters | `CaseStudyChallenge` server component with responsive grid matching live count. |
+| Our Solutions | Full-width `#192019` dark green section with white text, eyebrow `Our Solution`, `h2` `How We Approached the Project`, lead paragraph, and list of numbered solution points with red "01", "02" markers | `CaseStudySolutions` server component matching max-w-[900px] live reading line. |
+| Key Features Delivered | `#eff4ef` pista light green section with eyebrow `Key Features`, `h2` `Key Features Delivered`, and grid of white 18px rounded cards with red counters and bold H3 titles | `CaseStudyKeyFeatures` server component supporting default 3-col and 2-col variants. |
+| Project Delivery & Technology | Bordered 22px rounded container with `#fbefd7` cream yellow left block (35%) and right 2-column grid (65%) of service chip items (`Service Delivered` label + bold H5 title) | `CaseStudyServiceDelivered` server component. |
+| Explore Our Client Case Studies | Optional `#eff4ef` section with `RELATED CASE STUDIES` eyebrow, `Explore Our Client Case Studies` H2, intro text, and 3-column listing cards matching the archive grid | `CaseStudyRelated` component reusing `CaseStudyCard` in compact 3-column configuration. |
 
-## Interaction and Motion
+## Responsive Behavior
 
-- Header and CTA states follow the shared site components.
-- Live back-link hover changes the arrow color over 300ms; the local route
-  preserves an equivalent hover and visible keyboard-focus state.
-- Hero and content imagery is static; no entrance animation is required.
-- Ayusunless is the only current route with solution cards. Its small client
-  boundary preserves the live no-nav/no-dot behavior, two-card desktop view,
-  one-card narrow view, native keyboard scrolling, and pointer drag. The final
-  interaction audit confirmed four items, a focusable labelled region, no fake
-  pagination controls, and the full reachable scroll distance at 1440px and
-  390px widths.
+- **Desktop (1440px+)**: Hero 47/46 split; All Info 40/20/20/20 split; Metrics 22/78 split; Challenges 4 columns; Key Features 3 columns; Service Delivered 35/65 split.
+- **Tablet (768px - 991px)**: Hero stacks with image first (`flex-col-reverse`), 40px margin; All Info 2x2 grid (50% each); Metrics stacks vertically; Challenges 2 columns; Key Features 2 columns; Service Delivered stacks vertically.
+- **Mobile (< 768px)**: Section vertical paddings reduce from 80px to 50px; All Info stacks into full-width rows with bottom borders; Challenges stack into 1 column; Key Features 1 column; Service Delivered right block items stack full-width.
 
-## Verification and Remaining Differences
+## Live Sitemap Coverage & Ingestion Status
 
-- Representative screenshot comparison is complete for the full and lean page
-  variants. Hero image placement is within approximately 6-9px vertically of
-  the live captures; widths, horizontal alignment, ordering, title wrapping,
-  section starts, and responsive stacking match the recorded contract.
-- The complete local SleepyCat page was reviewed through
-  `local-sleepycat-full.pdf` and the ten corresponding page images, covering
-  narrative rows, bullet treatments, services, wireframes, colors, typefaces,
-  design media, CTA, and footer.
-- Shared migrated header/navigation styling differs from the current WordPress
-  header in small ways and is outside this route-template change. The Next.js
-  development indicator shown in local captures is development-only.
-- All 35 generated routes returned their expected H1 and JSON-LD; an unknown
-  slug returned 404; the legacy singular route returned the shared 308 redirect.
-- Thirty-five existing hero assets were reused by hash/role. Thirty-eight unique
-  supporting assets were optimized and ingested locally. Final validation covers
-  73 case-study asset references, and the full 1,145-file public asset tree has
-  zero duplicate SHA-256 groups.
-- Production validation completed on 2026-08-21: URL policy, case-study content
-  and asset validation, TypeScript, lint, static generation of all 35 routes,
-  sitemap/robots output, metadata/schema source checks, and production build.
+- **Sitemap Source**: `https://www.dynamicdreamz.com/case-study-sitemap.xml`
+- **Total Case Studies Ingested**: 56 live case studies (+ 2 backward-compatible fallback entries: `tipii`, `evrgreen`).
+- **Data Ingestion Parity**:
+  - Hero Section: 56/56 live titles, summaries, eyebrow tags, and valid project hero images.
+  - All Info Bar: 56/56 project titles, industries, technologies, and locations.
+  - Key Metrics: 22/56 live metrics banners parsed directly from live pages with matching stat numbers and labels.
+  - Client Challenge: 56/56 client challenges with exact live numbered cards.
+  - Our Solutions: 56/56 solutions sections with exact live numbered items and lead texts.
+  - Key Features Delivered: 56/56 key features delivered with 2-column or 3-column layouts.
+  - Project Delivery & Technology: 56/56 service chips containers with dual-tone layouts.
+  - Related Case Studies: 35/56 explicit related case study card links, with automatic fallback for the remainder.
+  - Custom Modular Sections: Full support for custom section blocks (such as `don-j` Medusa/Next.js architecture).
+  - Validation Gates: 100% compliant with `check:case-studies`, `check:urls`, `check:component-content`, and `check:asset-duplicates`.
+

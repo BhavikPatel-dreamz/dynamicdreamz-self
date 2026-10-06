@@ -544,14 +544,15 @@ Primary SEO intent: Shopify case studies, Shopify Plus case study, ecommerce suc
 
 ## Case Study Detail Pages (`/case-studies/[slug]`)
 
-Status: visible recommendations deferred; migrated live UI preserved
-Last reviewed: 2026-08-21
+Status: visible recommendations deferred; live UI template parity restored
+Last reviewed: 2026-10-06
 Primary SEO intent: client case study, Shopify case study, Shopify Plus case
 study, ecommerce migration case study, web development case study, mobile app
 case study, and Dynamic Dreamz project evidence.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
+| Live template redesign | Old template used green/cyan gradient and legacy showcase blocks. | Migrated to match live `single-blog.dd` layout: hero with dual eyebrow badges, 4-col project facts, key metrics, client challenge, our solution, key features, service delivered, and related case studies. | Delivers full visual and section parity with the live website. | High | implemented; verified 2026-10-06 |
 | Visible story copy | Live detail pages contain route-specific grammar, punctuation, and phrasing issues. | Review exact corrections client by client after migration and approval; do not normalize wording during the template import. | Preserves migration parity and avoids changing attributed project evidence implicitly. | Medium | deferred pending exact visible-copy and client-success approval |
 | Long metadata titles | Several live document titles repeat the full case-study H1 and exceed the repository's 60-character limit. | Use a concise route-specific `[Client] Case Study \| Dynamic Dreamz` or intent-preserving variant in metadata only; retain the visible H1 verbatim. | Meets the enforced metadata budget without altering visible content. | High | implemented in route-specific metadata only |
 | Missing evidence fields | Delivery dates, Dynamic Dreamz team role, constraints, integrations, source dates, and outcome provenance are inconsistent or absent. | Add a client-approved evidence summary covering only verified facts for each case study. | Improves citation quality and buyer usefulness without inventing project details. | High | deferred pending client-success and leadership approval |

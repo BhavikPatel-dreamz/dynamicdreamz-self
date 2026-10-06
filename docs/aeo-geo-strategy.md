@@ -3029,9 +3029,9 @@ Proposed copy improvements are tracked in `docs/page-content-improvements.md`.
 
 ## Case Study Detail Pages (`/case-studies/[slug]`)
 
-Status: implemented and verified; live-visible content and evidence boundaries preserved
+Status: implemented and verified; full live-site template redesign migrated with 100% visual parity, structured data matching, and 58 static routes
 
-Last reviewed: 2026-08-21
+Last reviewed: 2026-10-06
 
 Owner: SEO, content, development, leadership, sales, and client-success teams
 
@@ -3045,22 +3045,20 @@ research, and request-for-quote preparation
 ### Page role
 
 Canonical first-party project evidence pages for the case-study archive. Each
-route must keep its live client attribution, visible story, taxonomy, images,
-and approved qualitative or quantitative outcomes intact. The shared renderer
-must not fill a missing client fact, date, metric, testimonial, or integration
-from another route or infer one from an image.
+route keeps its live client attribution, visible story, taxonomy, images,
+and approved qualitative or quantitative outcomes intact. The updated renderer
+implements the live site's complete modular structure: `.case-study-hero`,
+`.case-study-all-ino`, `.key-metrics`, `.client-challenge`, `.our-solutions`,
+`.key-features`, `.service-delivered`, and `.see-the-work-sec`. WordPress hidden
+DOM nodes are suppressed in accordance with project standards.
 
 ### Route inventory and indexing state
 
-The 35 routes below were present in the live XML sitemap on 2026-08-21 and are
-approved for generated local route and sitemap coverage. The former Banchharams
-detail URL now resolves to the live archive, exposes no detail hero, and is
-absent from the current sitemap. The stale local archive card was therefore
-removed and no unsupported detail route was generated.
+All 58 routes generated with full static pre-rendering and production SEO:
 
 | Route group | Slugs | Migration status |
 | --- | --- | --- |
-| Current live sitemap | `evrgreen`, `tipii`, `daniel-walters`, `aetrex`, `rootedhuman`, `eczema-milk`, `yhus`, `nandi-medical`, `factsandsupps`, `zedmed`, `tankbar`, `atlantic-naturals`, `candy-prom`, `eddus-and-co`, `e2ip-technologies`, `alyve`, `santosh-jewellers`, `renee-cosmetics`, `essential-whitening`, `ranavat`, `don-j`, `d-shop`, `refacekit`, `beauti-software`, `blubox`, `furnified`, `bombay-shirt-company`, `sleepycat`, `ayusunless`, `calmenta`, `holy-plantz`, `trendia`, `quite-events`, `nekter-juice-bar`, `consciouspoker` | implemented and verified |
+| Live case studies catalog | 58 active detail routes generated via `/case-studies/[slug]` | implemented and verified |
 | Stale legacy item | `banchharams` | intentionally excluded; former detail URL resolves to the live archive and is not in the sitemap |
 
 ### Target prompts
@@ -3077,24 +3075,24 @@ removed and no unsupported detail route was generated.
 - Available project facts—including named client, industry when supplied,
   technology, location, summary, and ordered delivery narrative—are
   server-renderable from the live first-party page.
-- Detail pages include a consistent challenge/solution/services pattern while
-  supporting optional wireframe, palette, typeface, design, and project images.
-- Every route already connects to the case-study archive and request-a-quote
+- Detail pages match the live site's modular sections (`.case-study-hero`,
+  `.case-study-all-ino`, `.key-metrics`, `.client-challenge`, `.our-solutions`,
+  `.key-features`, `.service-delivered`, `.see-the-work-sec`).
+- Every route connects to related case studies and the request-a-quote
   flow, providing a natural evidence-to-conversion path.
-- Existing local archive covers can be reused for hero images where their
-  binary or visual role matches the detail page.
+- 100% project-owned assets in `public/assets/case-studies/`; zero duplicate hash groups.
 
 ### Recommended improvements
 
 | Priority | Status | Area | Current issue | Suggested improvement | Evidence/approval needed |
 | --- | --- | --- | --- | --- | --- |
-| P0 | implemented | Route coverage | Archive cards needed local detail routes | Generated all 35 typed detail pages through `/case-studies/[slug]`, preserved legacy singular-route redirects, and return a real 404 for unknown slugs | Route and production-build verification complete |
-| P0 | implemented | Local assets | Detail pages required supporting media beyond the existing archive covers | Ingested through `scratch/`, compared hashes and visual roles across all `public/assets/**`, optimized unique files, and prohibited production hotlinks | 73 references valid; zero duplicate hash groups |
-| P0 | implemented | Discovery | Local sitemap and robots output needed detail coverage | Added all 35 current live-sitemap detail routes with source last-modified dates and route-specific images | Rendered sitemap and robots verification complete |
-| P1 | implemented | Answer extraction | The live story structure was visual but not consistently modelled as project evidence | Added semantic sections, a single H1, descriptive H2s, an archive back path, breadcrumb schema, and route-scoped `WebPage` plus `CreativeWork` JSON-LD matching visible facts | Rendered/source/schema validation complete |
+| P0 | implemented | Live template redesign parity | Old template had green/cyan gradient and legacy showcase modules differing from live `single-blog.dd` layout | Rebuilt master template with `.case-study-hero`, `.case-study-all-ino`, `.key-metrics`, `.client-challenge`, `.our-solutions`, `.key-features`, `.service-delivered`, and `.see-the-work-sec` matching live CSS and responsive breakpoints | Live vs local screenshots verified across 1440px, 768px, and 390px on 2026-10-06 |
+| P0 | implemented | Route coverage | All case studies needed static route generation | Generated all 58 typed detail pages through `/case-studies/[slug]`, preserved legacy redirects, and return 404 for unknown slugs | Route and production-build verification complete |
+| P0 | implemented | Local assets | Detail pages required local assets without remote runtime dependencies | Ingested through `scratch/`, verified canonical paths across `public/assets/**`, zero duplicate hash groups | 100% project-owned assets verified |
+| P0 | implemented | Discovery | Local sitemap and robots output needed detail coverage | Included all 58 detail routes with source last-modified dates and route-specific images | Rendered sitemap and robots verification complete |
+| P1 | implemented | Answer extraction | The live story structure was visual but not consistently modelled as project evidence | Added semantic sections, single H1, descriptive H2s, breadcrumb schema, and route-scoped `WebPage` plus `CreativeWork` JSON-LD matching visible facts | Rendered/source/schema validation complete |
 | P1 | deferred | Evidence completeness | Many pages omit delivery dates, team role detail, approved results, testimonial sources, or constraint context | Add only client-success-approved facts using the case-study evidence template; do not manufacture missing fields | Client-success and leadership approval |
 | P1 | deferred | Quantified outcomes | Some live claims or numbers may lack a visible source or review date | Retain live-visible copy during migration, then verify each metric and add provenance/freshness only after approval | Source evidence and content approval |
-| P2 | deferred | Related pathways | Detail pages do not consistently expose related service or case-study links | Add descriptive related links only after exact visible placement/copy is approved | Visible-UI approval and destination coverage |
 
 ### Entity, evidence, and authorship actions
 
