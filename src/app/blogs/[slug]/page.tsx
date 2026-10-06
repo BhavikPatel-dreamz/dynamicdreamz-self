@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { BlogDetailPage } from "@/components/sections/blog-details/blog-detail-page";
-import { blogPostIndex, getBlogPostBySlug } from "@/content/blog-post-details";
+import { blogPostIndex, getBlogPostBySlug, getRelatedBlogPosts } from "@/content/blog-post-details";
 import { createPageMetadata, type PageSeoConfig } from "@/data/seo";
 import { createBlogPostDetailPageSchema, serializeJsonLd } from "@/lib/schema";
 
@@ -60,6 +60,8 @@ export default async function BlogRoute({ params }: BlogRouteProps) {
   const post = await getBlogPostBySlug(slug);
   if (!post) notFound();
 
+  const relatedPosts = getRelatedBlogPosts(post);
+
   return (
     <main id="main-content" data-page="blog-detail">
       <script
@@ -68,7 +70,7 @@ export default async function BlogRoute({ params }: BlogRouteProps) {
           __html: serializeJsonLd(createBlogPostDetailPageSchema(post)),
         }}
       />
-      <BlogDetailPage post={post} />
+      <BlogDetailPage post={post} relatedPosts={relatedPosts} />
     </main>
   );
 }

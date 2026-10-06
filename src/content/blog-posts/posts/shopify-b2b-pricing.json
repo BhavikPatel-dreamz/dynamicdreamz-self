@@ -1,0 +1,95 @@
+{
+  "slug": "shopify-b2b-pricing",
+  "title": "Shopify B2B Pricing: How to Set Customer-Specific Prices and Catalogs",
+  "date": "2026-09-25",
+  "displayDate": "September 25, 2026",
+  "modified": "2026-09-25T13:30:27+00:00",
+  "category": "Faqs",
+  "categoryValue": "faqs",
+  "categoryHref": "/blogs?category=faqs",
+  "featuredImage": null,
+  "excerpt": "Most people think that Shopify B2B pricing is one setting, but it\u2019s not; it\u2019s a structure. Different buyers require different rates, different minimums, and sometimes fully negotiated terms. Hence, it\u2019s quite important to get the structure right, and pricing runs itself. Get it w",
+  "author": {
+    "name": "Rizwan Shaikh",
+    "role": "Content Team Lead",
+    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that\u2019s not just readable but also useful, relevant, and built to drive real business outcomes.",
+    "image": "/assets/blog/authors/rizwanshaikh.webp",
+    "linkedin": "https://in.linkedin.com/company/dynamic-dreamz-websolutions"
+  },
+  "contentBeforeToc": "<p>Most people think that Shopify B2B pricing is one setting, but it\u2019s not; it\u2019s a structure. Different buyers require different rates, different minimums, and sometimes fully negotiated terms. Hence, it\u2019s quite important to get the structure right, and pricing runs itself. Get it wrong, and you\u2019re manually overriding prices every time an order comes in. Here\u2019s how to actually set it up.</p>",
+  "contentAfterToc": "<h3 id=\"The_Core_Pricing_Approaches\">The Core Pricing Approaches</h3><ul>\n<li><b>Fixed price lists. </b>An exact price per product or variant, assigned to a specific catalog. This is the simplest approach and works well when you have clearly defined buyer tiers with stable pricing.</li>\n<li><b>Percentage or dollar discounts. </b>A flat markdown off your standard retail price, applied to a customer group or catalog. Easier to maintain as your product line grows, since you\u2019re not re-entering fixed prices for every new SKU.</li>\n<li><b>Tiered or quantity-break pricing. </b>Price decreases as order quantity increases, common for genuinely bulk-driven wholesale relationships where volume is the main lever.</li>\n</ul><p><b>Negotiated, account-specific pricing. </b>Custom rates for individual high-value accounts, often used alongside one of the above as an exception layer rather than the default structure.</p><p><b>Most stores end up using a combination: </b>a base tiered structure for most wholesale buyers, with negotiated exceptions for a handful of key accounts.</p><h3 id=\"How_Catalogs_Structure_Your_Pricing\">How Catalogs Structure Your Pricing</h3><p>Catalogs are what connect pricing to specific buyers. Assign a catalog to a company or location, then set pricing inside it; this is how the same product can show three different prices to three different buyer types without any manual intervention at checkout.</p><p><b>A practical approach: </b>start with one catalog and a simple structure, then split into more catalogs as distinct buyer segments emerge, rather than over-engineering the structure before you have real order data. If you want, you can get help from an experienced <a href=\"/shopify-development-agency\">Shopify development agency</a>.</p><h3 id=\"When_Native_Functionality_Is_Enough\">When Native Functionality Is Enough</h3><p>Shopify\u2019s built-in B2B pricing tools, catalogs, fixed prices, quantity rules, and percentage discounts cover most standard wholesale pricing needs well. If your Shopify customer-specific pricing logic fits into \u201cdifferent price for different buyer group\u201d or \u201cdiscount increases with quantity,\u201d native functionality will likely handle it without extra development.</p><h3 id=\"When_Custom_Development_Is_Justified\">When Custom Development Is Justified</h3><p>Native tools start to strain in specific situations:</p><ul>\n<li><b>Highly dynamic pricing</b> that changes based on factors Shopify doesn\u2019t natively track, like real-time cost inputs or contract-specific formulas</li>\n<li><b>Complex approval workflows,</b> where a negotiated price needs sign-off before it takes effect</li>\n<li><b>Pricing tied to external systems, </b>like an ERP that owns the actual price logic and needs to push updates into Shopify automatically</li>\n<li><b>Very high volumes of distinct price points </b>across many accounts, where managing everything through the standard catalog interface becomes operationally heavy</li>\n</ul><p>If you\u2019re finding yourself needing a spreadsheet or a developer to manually patch pricing exceptions every week, that\u2019s usually the signal that custom logic, not more manual catalogs, is the right fix.</p><h3 id=\"A_Practical_Build_Order\">A Practical Build Order</h3><ol>\n<li>Start with one simple catalog and a single pricing structure</li>\n<li>Add tiered or quantity-based pricing once you understand real order patterns</li>\n<li>Layer in negotiated exceptions for specific high-value accounts</li>\n<li>Only move to custom development once you hit a genuine native limitation, not before</li>\n</ol><h3 id=\"Common_Pricing_Mistakes\">Common Pricing Mistakes</h3><ul>\n<li>Showing retail prices anywhere near wholesale catalog pages; this creates confusion and undermines trust in your Shopify wholesale pricing structure</li>\n<li>Building overly complex catalog structures before you have enough real buyers to justify them</li>\n<li>Manually overriding prices repeatedly instead of recognizing the pattern as a sign your structure needs to change</li>\n</ul><h3 id=\"The_Bottom_Line\">The Bottom Line</h3><p>Good B2B pricing isn\u2019t about offering every possible pricing model. It\u2019s about matching the simplest structure that fits how your actual buyers operate, and knowing exactly when that structure has outgrown what native Shopify can do.</p><p>Setting up more than just pricing? Our guide on <a href=\"/blogs/shopify-wholesale-store\">Shopify wholesale store</a> setup covers the full picture, from company accounts to bulk ordering, that pricing fits into.</p>",
+  "toc": [
+    {
+      "label": "The Core Pricing Approaches",
+      "href": "#The_Core_Pricing_Approaches",
+      "level": 2
+    },
+    {
+      "label": "How Catalogs Structure Your Pricing",
+      "href": "#How_Catalogs_Structure_Your_Pricing",
+      "level": 2
+    },
+    {
+      "label": "When Native Functionality Is Enough",
+      "href": "#When_Native_Functionality_Is_Enough",
+      "level": 2
+    },
+    {
+      "label": "When Custom Development Is Justified",
+      "href": "#When_Custom_Development_Is_Justified",
+      "level": 2
+    },
+    {
+      "label": "A Practical Build Order",
+      "href": "#A_Practical_Build_Order",
+      "level": 2
+    },
+    {
+      "label": "Common Pricing Mistakes",
+      "href": "#Common_Pricing_Mistakes",
+      "level": 2
+    },
+    {
+      "label": "The Bottom Line",
+      "href": "#The_Bottom_Line",
+      "level": 2
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is Dynamic Dreamz a Shopify Platinum Partner?",
+      "answer": "Yes. Dynamic Dreamz is a Shopify Platinum Partner. The company was established in 2006 and has 20+ years of experience, 150+ experts and 5,000+ projects delivered across ecommerce, mobile and full-stack development."
+    },
+    {
+      "question": "What Shopify services does Dynamic Dreamz provide?",
+      "answer": "Dynamic Dreamz provides Shopify and Shopify Plus development, store redesign, migration, B2B and wholesale solutions, CRO, performance optimization, custom apps, integrations, Shopify-connected mobile apps, maintenance and dedicated development support."
+    },
+    {
+      "question": "Do you work with Shopify Plus and B2B businesses?",
+      "answer": "Yes. We support established merchants with custom Shopify Plus storefronts, B2B and wholesale requirements, complex catalogs, role-based pricing and multi-market architectures."
+    },
+    {
+      "question": "Can you build a mobile app for an existing Shopify store?",
+      "answer": "Yes. We build Shopify-connected iOS and Android apps that synchronize products, customers and orders in real time using the Storefront and Admin APIs."
+    },
+    {
+      "question": "Can you migrate WooCommerce, Magento, BigCommerce or a custom platform to Shopify?",
+      "answer": "Yes. Migration services can cover products, customers, orders, content, design redevelopment, application replacements, integrations, redirects and launch verification."
+    },
+    {
+      "question": "Do you provide white-label Shopify development for agencies?",
+      "answer": "Yes. Digital agencies can use Dynamic Dreamz as a confidential delivery partner for Shopify, Shopify Plus and custom full-stack builds under NDA."
+    },
+    {
+      "question": "What other technology services does Dynamic Dreamz provide?",
+      "answer": "Shopify is our primary focus. We also provide WordPress and WooCommerce development, full-stack web development and mobile applications across iOS and Android."
+    }
+  ],
+  "previous": null,
+  "next": null,
+  "seo": {
+    "title": "Shopify B2B Pricing: Customer-Specific Prices & Catalogs",
+    "description": "Learn how to structure Shopify B2B pricing with catalogs, tiered discounts, and negotiated rates, and when native tools aren't enough"
+  },
+  "wordCount": 628
+}

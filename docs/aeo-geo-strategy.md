@@ -37,7 +37,7 @@ It covers:
   - `/request-quote`
   - `/book-a-discovery-call`
   - `/blogs`
-  - `/blogs/[slug]` (104 generated article routes)
+  - `/blogs/[slug]` (116 generated article routes)
 
 This is the strategy and implementation record. Visible changes proposed and
 temporarily implemented on 2026-08-12 were rejected and reverted to live-site

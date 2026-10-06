@@ -1,0 +1,100 @@
+{
+  "slug": "shopify-checkout-customization",
+  "title": "Shopify Checkout Customization: What Can You Change?",
+  "date": "2026-09-30",
+  "displayDate": "September 30, 2026",
+  "modified": "2026-10-01T05:24:34+00:00",
+  "category": "Faqs",
+  "categoryValue": "faqs",
+  "categoryHref": "/blogs?category=faqs",
+  "featuredImage": null,
+  "excerpt": "Checkout.liquid is not new, and not as famous as it once was. Henceforth, Shopify has replaced custom checkout code with Checkout Extensibility, a structured, supported framework built around specific tools rather than open template editing.",
+  "author": {
+    "name": "Rizwan Shaikh",
+    "role": "Content Team Lead",
+    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that\u2019s not just readable but also useful, relevant, and built to drive real business outcomes.",
+    "image": "/assets/blog/authors/rizwanshaikh.webp",
+    "linkedin": "https://in.linkedin.com/company/dynamic-dreamz-websolutions"
+  },
+  "contentBeforeToc": "<p>Checkout.liquid is not new, and not as famous as it once was. Henceforth, Shopify has replaced custom checkout code with Checkout Extensibility, a structured, supported framework built around specific tools rather than open template editing.</p><p>If your last checkout project predates this shift, the rules have genuinely changed. Here\u2019s what you can actually customize now through Shopify checkout customization, and where the real limits sit.</p>",
+  "contentAfterToc": "<h3 id=\"The_Four_Building_Blocks\">The Four Building Blocks</h3><p>Checkout Extensibility isn\u2019t one feature; it\u2019s four separate tools, each owning a different slice of the checkout experience:</p><ul>\n<li><b>Checkout UI Extensions: </b>Structured components that render in specific checkout slots, banners, custom fields, content blocks, upsell offers.</li>\n<li><b>Shopify Functions: </b>Backend logic for discounts, shipping rules, and payment customization, replacing the older Shopify Scripts.</li>\n<li><b>Checkout Branding API: </b>Styling control, colors, fonts, logo, layout, without touching functional logic.</li>\n<li><b>Web Pixels: </b>Event tracking for conversions, replacing the old \u201cAdditional Scripts\u201d approach to analytics.</li>\n</ul><h3 id=\"What_You_Can_Customize_on_Standard_Plans\">What You Can Customize on Standard Plans</h3><p>Standard and Advanced plans give you real, if more limited, control: checkout branding (logo, colors, fonts) and basic form field toggles through the built-in checkout editor. This covers visual consistency and simple field adjustments without needing custom development.</p><h4 id=\"What_Requires_Shopify_Plus\">What Requires Shopify Plus</h4><p>Deeper customization, custom content blocks, upsell offers, and Functions-driven logic like custom discount or shipping rules are where Plus pulls ahead significantly. This is one of the clearest remaining reasons brands upgrade specifically for checkout control.</p><h3 id=\"What_You_Cant_Do_Regardless_of_Plan\">What You Can\u2019t Do, Regardless of Plan</h3><p>Some things are simply off the table. Your theme doesn\u2019t control checkout at all; it\u2019s a separate, Shopify-hosted surface. Once a shopper clicks \u201cCheckout,\u201d Shopify takes over rendering entirely, which is also why switching themes never breaks your checkout.</p><p>Custom code no longer lives directly in a checkout template; it runs in sandboxed extensions instead. That\u2019s a deliberate trade-off: more limited than the old open-editing model, but far more stable and secure.</p><h3 id=\"Deadlines_That_Actually_Matter_Right_Now\">Deadlines That Actually Matter Right Now</h3><ul>\n<li><b>June 30, 2026: </b>Shopify Scripts (used for discount, shipping, and payment logic) stop working entirely. Anything still running on Scripts needs to migrate to Shopify Functions.</li>\n<li><b>August 26, 2026: </b>Non-Plus stores must upgrade their Thank You and Order Status pages. Additional Scripts and script tags on these pages stop working, and any tracking built that way needs to move to Web Pixels.</li>\n</ul><p>If you\u2019re still relying on old Additional Scripts for tracking or checkout logic, the safest move is to start the migration now; developer availability narrows fast as deadlines approach, and the actual work doesn\u2019t get easier by waiting.</p><h3 id=\"When_Custom_Development_Is_Actually_Required\">When Custom Development Is Actually Required</h3><p>Most checkout needs \u2014 branding, basic fields, standard upsells \u2014 are now covered by Extensibility\u2019s supported tools directly, or by apps built on top of them. Custom development becomes genuinely necessary when your business needs Functions-based logic specific to your operation: complex discount stacking, non-standard shipping calculations, or checkout behavior tied to unique business rules no off-the-shelf app already handles.</p><h3 id=\"A_Common_Misconception\">A Common Misconception</h3><p>\u201cExtensibility means I can\u2019t customize checkout\u201d isn\u2019t accurate. You can customize a great deal; it just happens through structured APIs now instead of open template editing. Most modern checkout apps are themselves built on these same Extensibility tools; installing one is often faster than building custom, unless your logic is genuinely unique.</p><h3 id=\"The_Bottom_Line\">The Bottom Line</h3><p>Checkout customization on Shopify today is more structured, and more secure, than it used to be. Know which of the four building blocks your need actually falls into, and you\u2019ll know quickly whether it\u2019s covered by native tools, an existing app, or genuinely requires custom development.</p><p><b>Curious what your current checkout can and can\u2019t do under the new rules?</b></p><p>Our breakdown of <a href=\"/blogs/shopify-plus-benefits\">Shopify Plus benefits</a> covers where checkout control fits into the bigger Plus upgrade picture.</p>",
+  "toc": [
+    {
+      "label": "The Four Building Blocks",
+      "href": "#The_Four_Building_Blocks",
+      "level": 2
+    },
+    {
+      "label": "What You Can Customize on Standard Plans",
+      "href": "#What_You_Can_Customize_on_Standard_Plans",
+      "level": 2
+    },
+    {
+      "label": "What Requires Shopify Plus",
+      "href": "#What_Requires_Shopify_Plus",
+      "level": 2
+    },
+    {
+      "label": "What You Can\u2019t Do, Regardless of Plan",
+      "href": "#What_You_Cant_Do_Regardless_of_Plan",
+      "level": 2
+    },
+    {
+      "label": "Deadlines That Actually Matter Right Now",
+      "href": "#Deadlines_That_Actually_Matter_Right_Now",
+      "level": 2
+    },
+    {
+      "label": "When Custom Development Is Actually Required",
+      "href": "#When_Custom_Development_Is_Actually_Required",
+      "level": 2
+    },
+    {
+      "label": "A Common Misconception",
+      "href": "#A_Common_Misconception",
+      "level": 2
+    },
+    {
+      "label": "The Bottom Line",
+      "href": "#The_Bottom_Line",
+      "level": 2
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is Dynamic Dreamz a Shopify Platinum Partner?",
+      "answer": "Yes. Dynamic Dreamz is a Shopify Platinum Partner. The company was established in 2006 and has 20+ years of experience, 150+ experts and 5,000+ projects delivered across ecommerce, mobile and full-stack development."
+    },
+    {
+      "question": "What Shopify services does Dynamic Dreamz provide?",
+      "answer": "Dynamic Dreamz provides Shopify and Shopify Plus development, store redesign, migration, B2B and wholesale solutions, CRO, performance optimization, custom apps, integrations, Shopify-connected mobile apps, maintenance and dedicated development support."
+    },
+    {
+      "question": "Do you work with Shopify Plus and B2B businesses?",
+      "answer": "Yes. We support established merchants with custom Shopify Plus storefronts, B2B and wholesale requirements, complex catalogs, role-based pricing and multi-market architectures."
+    },
+    {
+      "question": "Can you build a mobile app for an existing Shopify store?",
+      "answer": "Yes. We build Shopify-connected iOS and Android apps that synchronize products, customers and orders in real time using the Storefront and Admin APIs."
+    },
+    {
+      "question": "Can you migrate WooCommerce, Magento, BigCommerce or a custom platform to Shopify?",
+      "answer": "Yes. Migration services can cover products, customers, orders, content, design redevelopment, application replacements, integrations, redirects and launch verification."
+    },
+    {
+      "question": "Do you provide white-label Shopify development for agencies?",
+      "answer": "Yes. Digital agencies can use Dynamic Dreamz as a confidential delivery partner for Shopify, Shopify Plus and custom full-stack builds under NDA."
+    },
+    {
+      "question": "What other technology services does Dynamic Dreamz provide?",
+      "answer": "Shopify is our primary focus. We also provide WordPress and WooCommerce development, full-stack web development and mobile applications across iOS and Android."
+    }
+  ],
+  "previous": null,
+  "next": null,
+  "seo": {
+    "title": "Shopify Checkout Customization: What You Can Change",
+    "description": "See exactly what Shopify checkout customization allows in 2026: UI Extensions, Functions, branding, and the key deadlines you can't miss."
+  },
+  "wordCount": 600
+}
