@@ -16,11 +16,16 @@
     "lint": "npm run check:urls && npm run check:component-content && npm run check:case-studies && npm run check:blog-posts && npm run check:asset-duplicates && eslint"
   },
   "dependencies": {
+    "@payloadcms/db-sqlite": "^3.90.2",
+    "@payloadcms/next": "^3.90.2",
+    "@payloadcms/richtext-lexical": "^3.90.2",
     "@types/react-slick": "^0.23.13",
     "next": "16.3.0",
+    "payload": "^3.90.2",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "react-slick": "^0.31.0",
+    "sharp": "^0.35.5",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

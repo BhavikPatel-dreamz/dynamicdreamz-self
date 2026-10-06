@@ -1,5 +1,6 @@
 import path from "node:path";
 import type { NextConfig } from "next";
+import { withPayload } from "@payloadcms/next/withPayload";
 
 const modernBrowserPolyfills = path.join(process.cwd(), "src/lib/modern-browser-polyfills.js");
 
@@ -288,4 +289,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withPayload(nextConfig);
