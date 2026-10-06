@@ -3859,7 +3859,7 @@ export const pageSeo = {
     publishedTime: "2024-07-22T05:03:27+00:00",
     modifiedTime: "2026-02-16T09:22:22+00:00",
     image: {
-      path: "/assets/og/homepage.png",
+      path: "/assets/og/php-development.png",
       width: 1200,
       height: 630,
       alt: "PHP Web Development Company in India | Dynamic Dreamz",

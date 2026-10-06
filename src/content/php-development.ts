@@ -1,95 +1,94 @@
+import { migrationBrandLogos } from "@/content/migration-common";
+
 export const phpDevelopmentContent = {
   hero: {
+    eyebrowSpans: ["Established in 2006", "PHP Development Company"] as const,
     title: "PHP Development Company in India",
-    description:
+    paragraphs: [
       "Dynamic Dreamz is a top PHP Development Company in India. We are specializing in PHP and MySQL. We create custom web solutions to help your business grow. Whether you are a web design company or an individual, our experienced PHP/MySQL developers can help you with your project.",
-    ctaLabel: "request a quote",
+    ] as const,
+    cta: "request a quote",
     ctaHref: "/request-quote",
+    video: "/assets/home/why-dynamic-dreamz.mp4",
+    badges: [
+      {
+        name: "Clutch",
+        src: "/assets/proof/clutch-rating.svg",
+        href: "https://clutch.co/profile/dynamic-dreamz",
+        alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+        width: 111,
+        height: 44,
+      },
+      {
+        name: "Trustpilot",
+        src: "/assets/proof/trustpilot-rating.svg",
+        href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+        alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+        width: 148,
+        height: 50,
+      },
+      {
+        name: "Upwork",
+        src: "/assets/proof/upwork-top-rated-plus.svg",
+        href: "https://www.upwork.com/ag/dynamicdreamz/",
+        alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+        width: 148,
+        height: 40,
+      },
+    ],
   },
   brands: {
     title: "Trusted by Leading Brands",
+    slug: "php-development",
+    items: migrationBrandLogos,
+  },
+  whyChoose: {
+    eyebrow: "Why Dynamic Dreamz",
+    heading: "Why Choose Dynamic Dreamz as a PHP Development Company",
+    description:
+      "Dynamic Dreamz is a trustworthy PHP development company in India with a proven portfolio of scalable and reliable PHP development solutions. Our skilled development team is an expert in building custom PHP applications that precisely match your company's requirements. Our dedication to quality, timely delivery, and creative solutions guarantee that your PHP project will be managed with professionalism and technical expertise.",
     items: [
       {
-        name: "Ranavat Logo",
-        src: "/assets/clients/ranavat.svg",
-        href: "https://www.ranavat.com/",
-        alt: "Ranavat Logo",
-        width: 174,
-        height: 19,
+        title: "Proven Track Record",
+        description:
+          "With a proven track record, we have successfully delivered 100+ web projects for businesses worldwide, helping them build scalable and reliable PHP-powered solutions.",
       },
       {
-        name: "prolash_black",
-        src: "/assets/clients/prolash.svg",
-        href: "https://prolash.com/",
-        alt: "prolash_black",
-        width: 204,
-        height: 22,
+        title: "PHP Development Expertise",
+        description:
+          "We have proven expertise in PHP development, with a team of skilled PHP developers experienced in building custom applications, complex functionality, and scalable web solutions.",
       },
       {
-        name: "Tropicfeel Logo",
-        src: "/assets/clients/tropicfeel.svg",
-        href: "https://shop.tropicfeel.com/",
-        alt: "Tropicfeel Logo",
-        width: 150,
-        height: 32,
+        title: "Custom Solutions",
+        description:
+          "We understand that every business has unique requirements. That's why we develop custom PHP solutions tailored to your business goals, workflows, technology stack, and specific needs.",
       },
       {
-        name: "perfect_locks_color_logo",
-        src: "/assets/clients/perfect-locks.svg",
-        href: "https://www.perfectlocks.com/",
-        alt: "perfect_locks_color_logo",
-        width: 175,
-        height: 32,
+        title: "Scalable & Secure Development",
+        description:
+          "We build PHP applications with security, performance, and scalability in mind, ensuring your solution can handle growing traffic, data, users, and evolving business requirements.",
       },
       {
-        name: "Bombay Shirt Company Logo",
-        src: "/assets/clients/bombay-shirt-company.svg",
-        href: "https://www.bombayshirts.com/",
-        alt: "Bombay Shirt Company Logo",
-        width: 204,
-        height: 26,
+        title: "Modern PHP Technologies",
+        description:
+          "Our developers work with modern PHP frameworks and technologies, including Laravel, Symfony, CodeIgniter, WordPress, WooCommerce, and custom PHP, to deliver solutions suited to your project.",
       },
       {
-        name: "kayfi-colored",
-        src: "/assets/clients/kayfi.svg",
-        href: "https://kayfi.com/",
-        alt: "kayfi-colored",
-        width: 90,
-        height: 49,
+        title: "Comprehensive Services",
+        description:
+          "From initial planning and development to testing, deployment, integrations, and ongoing support, we provide end-to-end PHP development services, taking care of every stage of your project.",
       },
       {
-        name: "simdirect_logo_color",
-        src: "/assets/clients/simsdirect.svg",
-        href: "https://simsdirect.com.au/",
-        alt: "simdirect_logo_color",
-        width: 143,
-        height: 49,
+        title: "High-Performance Development",
+        description:
+          "We follow optimized development practices to create fast, efficient, and reliable PHP applications, helping improve performance, user experience, and overall website efficiency.",
       },
       {
-        name: "Kvaser Logo",
-        src: "/assets/clients/kvaser.svg",
-        href: "https://www.kvaser.com/",
-        alt: "Kvaser Logo",
-        width: 135,
-        height: 25,
+        title: "Post-Development Support",
+        description:
+          "We also provide post-development support for maintenance, updates, performance improvements, additional features, integrations, and technical assistance as your business evolves.",
       },
-      {
-        name: "nekter-colored",
-        src: "/assets/clients/nelter.svg",
-        href: "https://www.nekterjuicebar.com/",
-        alt: "nekter-colored",
-        width: 66,
-        height: 64,
-      },
-      {
-        name: "Circuit City Logo",
-        src: "/assets/clients/circuit-city.svg",
-        href: "https://circuitcity.com/",
-        alt: "Circuit City Logo",
-        width: 64,
-        height: 64,
-      },
-    ],
+    ] as const,
   },
   services: {
     title: "Our PHP Web Development Services",
@@ -100,7 +99,7 @@ export const phpDevelopmentContent = {
         title: "Custom Laravel Development",
         description:
           "We build custom web applications using Laravel, a popular PHP framework. Our developers build scalable, high performing, and secure web solutions that are customized to meet your requirements.",
-        icon: "/assets/php-development/services/laravel-development.svg",
+        icon: "/assets/php-development/services/custom-laravel-development.svg",
         iconAlt: "Custom Laravel Development Icon",
       },
       {
@@ -114,14 +113,14 @@ export const phpDevelopmentContent = {
         title: "Laravel Maintenance & Support",
         description:
           "We offer ongoing maintenance and support for your Laravel applications. Our team ensures your web app remains updated, secure, and operates smoothly without any issues.",
-        icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
-        iconAlt: "Maintenance and Support Icon",
+        icon: "/assets/php-development/services/laravel-maintenance-support.svg",
+        iconAlt: "Laravel Maintenance and Support Icon",
       },
       {
         title: "Custom Craft CMS Development",
         description:
           "Our expert team creates custom websites using Craft CMS, a flexible content management system. We build user friendly and feature rich websites to meet your specific requirements.",
-        icon: "/assets/services/wordpress/wordpress-cms-development.svg",
+        icon: "/assets/php-development/services/custom-craft-cms-development.svg",
         iconAlt: "Custom Craft CMS Development Icon",
       },
       {
@@ -142,14 +141,14 @@ export const phpDevelopmentContent = {
         title: "Custom Prestashop Development",
         description:
           "We create custom eCommerce solutions using Prestashop, a popular online store platform. Our developers build attractive and functional online stores to boost your sales.",
-        icon: "/assets/php-development/services/prestashop-development.svg",
+        icon: "/assets/php-development/services/custom-prestashop-development.svg",
         iconAlt: "Custom Prestashop Development Icon",
       },
       {
         title: "Module Development",
         description:
           "Our team designs custom modules for Prestashop, adding new features and enhancing your store's functionality. These modules help in providing a better shopping experience for your customers.",
-        icon: "/assets/services/magento-development/module-icon.svg",
+        icon: "/assets/php-development/services/module-development.svg",
         iconAlt: "Module Development Icon",
       },
       {
@@ -163,53 +162,54 @@ export const phpDevelopmentContent = {
         title: "API Integration",
         description:
           "We allow your web applications to interact with other programs and services by integrating a variety of APIs into them. It improves functionality and helps streamline processes.",
-        icon: "/assets/services/woocommerce-development/api-development.svg",
+        icon: "/assets/php-development/services/api-integration.svg",
         iconAlt: "API Integration Icon",
       },
       {
         title: "Custom App Development",
         description:
           "We create custom web apps based on your business requirements. Our team makes sure the apps are effective, safe, and user friendly.",
-        icon: "/assets/shopify-theme-customization/services/ongoing-support-and-maintenance.svg",
+        icon: "/assets/php-development/services/custom-app-development.svg",
         iconAlt: "Custom App Development Icon",
       },
       {
         title: "Ongoing Support",
         description:
           "We offer continuous support for all our web services. Our team is always ready to help you with any issues or updates you might need.",
-        icon: "/assets/services/magento-development/ongoing-support-icon.svg",
+        icon: "/assets/php-development/services/ongoing-support.svg",
         iconAlt: "Ongoing Support Icon",
       },
-    ],
-  },
-  whyDynamicDreamz: {
-    heading: "Why Choose Dynamic Dreamz as a PHP Development Company",
-    text: "Dynamic Dreamz is a trustworthy PHP development company in India with a proven portfolio of scalable and reliable PHP development solutions. Our skilled development team is an expert in building custom PHP applications that precisely match your company's requirements. Our dedication to quality, timely delivery, and creative solutions guarantee that your PHP project will be managed with professionalism and technical expertise.",
+    ] as const,
   },
   process: {
+    eyebrow: "Our Process",
     heading: "Our PHP Development Process",
     steps: [
       {
+        step: "Step 01",
         title: "Discovery and Planning",
         description:
           "We investigate your business requirements, define goals, and design a roadmap based on your needs.",
       },
       {
+        step: "Step 02",
         title: "Design and Development",
         description:
           "Our team designs user-friendly interfaces and develops robust PHP applications using the latest technologies and best practices.",
       },
       {
+        step: "Step 03",
         title: "Testing and Deployment",
         description:
           "Strict testing provides bug-free performance and smooth deployment for a hassle-free php application launch.",
       },
       {
+        step: "Step 04",
         title: "Ongoing Support",
         description:
           "Post-launch, we provide ongoing support, regular updates, and maintenance to keep your PHP application running smoothly.",
       },
-    ],
+    ] as const,
   },
   portfolio: {
     eyebrow: "Portfolio",
@@ -261,7 +261,7 @@ export const phpDevelopmentContent = {
         image: "/assets/php-development/portfolio/go-sport-me.webp",
         imageAlt: "Go Sport Me Image",
       },
-    ],
+    ] as const,
   },
   testimonials: {
     eyebrow: "Client Stories",
@@ -306,10 +306,5 @@ export const phpDevelopmentContent = {
       answer:
         "The cost depends on the project's requirements and complexity. We offer competitive pricing and will provide a detailed quote after discussing your needs.",
     },
-  ],
-  ctaBanner: {
-    heading: "Want us to help you with your online store?",
-    ctaLabel: "request a quote",
-    ctaHref: "/request-quote",
-  },
+  ] as const,
 };

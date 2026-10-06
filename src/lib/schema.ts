@@ -3680,10 +3680,9 @@ export function createPhpDevelopmentPageSchema() {
     breadcrumbId: phpDevelopmentBreadcrumbId,
     serviceName: "PHP Web Development Services",
     serviceType:
-      "Custom PHP web development, Laravel framework engineering, Craft CMS development, Prestashop solutions, custom API integration, and ongoing PHP maintenance",
-    breadcrumbName: "PHP Development Company in India",
-    audienceType:
-      "Businesses, startups, digital agencies, and CTOs seeking enterprise-grade PHP/MySQL web development and white-label delivery",
+      "PHP and MySQL Development, Custom Laravel Development, Laravel API Development, Laravel Maintenance and Support, Custom Craft CMS Development, Craft CMS Maintenance, Plugin Development, Custom PrestaShop Development, Module Development, PrestaShop Maintenance and Support, API Integration, Custom App Development",
+    breadcrumbName: "PHP Development",
+    audienceType: "Businesses, web design companies and individuals",
     faqs: phpDevelopmentContent.faqs.map((item) => ({
       question: item.question,
       answer: item.answer,

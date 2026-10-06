@@ -1,18 +1,17 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
-import { CtaBannerSection } from "@/components/sections/cta-banner-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { ShopifyAppProcessSection } from "@/components/sections/shopify-mobile-app/shopify-app-process-section";
-import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
+import { EvaluationFrameworkSection } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { phpDevelopmentContent } from "@/content/php-development";
 
 export function PhpDevelopmentPage() {
   const brandsContent = {
     heading: phpDevelopmentContent.brands.title,
-    slug: "php-development",
+    slug: phpDevelopmentContent.brands.slug,
   };
 
   const servicesContent = {
@@ -33,50 +32,55 @@ export function PhpDevelopmentPage() {
 
   return (
     <div className="font-sans leading-[30.4px]">
-      <ServiceHeroSection content={phpDevelopmentContent.hero} />
+      <ServiceHeroVideoSection content={phpDevelopmentContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}
         heading={phpDevelopmentContent.brands.title}
         items={phpDevelopmentContent.brands.items}
       />
+      <EvaluationFrameworkSection
+        className="how-to-choose-spa-sec bg-white py-20 max-[992px]:py-[50px]"
+        content={phpDevelopmentContent.whyChoose}
+      />
       <AgencyServicesSection
         cardBgClassName="bg-white"
         cardVariant="services-box"
-        className="what-we-provide-sec py-20 max-[992px]:py-[50px]"
+        className="what-we-provide-sec pt-0 pb-20 max-[992px]:pb-[50px]"
         columns={2}
         content={servicesContent}
         headerLayout="split"
         hideCta={true}
         id="services"
       />
-      <TextBoxSection
-        className="single-text-box-sec pb-0"
-        heading={phpDevelopmentContent.whyDynamicDreamz.heading}
-        text={phpDevelopmentContent.whyDynamicDreamz.text}
-      />
-      <ShopifyAppProcessSection content={phpDevelopmentContent.process} />
+      <OurDevelopmentProcessSection content={phpDevelopmentContent.process} />
       <PortfolioShowcaseSection
+        cardVariant="ourWorkRefresh"
         className="our-work-sec py-20 max-[992px]:py-[50px]"
+        columns={4}
         content={portfolioContent}
         ctaHref={phpDevelopmentContent.portfolio.ctaHref}
         ctaLabel={phpDevelopmentContent.portfolio.ctaLabel}
         eyebrow={phpDevelopmentContent.portfolio.eyebrow}
         headerLayout="split"
+        mobileColumns={2}
+        sectionId="our_work"
+        showMobileArrow={true}
+        textColumnClassName="w-[48.3%] max-[992px]:w-full"
+        titleColumnClassName="w-[44%] max-[992px]:w-full"
+        variant="liveGrid"
       />
       <HappyClientSection
+        className="pt-0"
         description={phpDevelopmentContent.testimonials.description}
         eyebrow={phpDevelopmentContent.testimonials.eyebrow}
         heading={phpDevelopmentContent.testimonials.heading}
       />
       <SplitFaqSection
+        className="faq-sec bg-[#fafaf7] py-[60px] max-[991px]:py-10"
         heading={phpDevelopmentContent.faqHeading}
         idPrefix="php-faq"
         items={phpDevelopmentContent.faqs}
-      />
-      <CtaBannerSection
-        ctaHref={phpDevelopmentContent.ctaBanner.ctaHref}
-        ctaLabel={phpDevelopmentContent.ctaBanner.ctaLabel}
-        heading={phpDevelopmentContent.ctaBanner.heading}
+        sectionId="php-faq-section"
       />
     </div>
   );

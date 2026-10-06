@@ -9634,32 +9634,39 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## PHP Development (`/php-development`)
 
+Status: implemented; live UI and section order verified
+Last reviewed: 2026-10-06
+Owner: Development, SEO, content, and agency-partnerships teams
+Primary audience: Businesses, startups, digital agencies, and CTOs seeking PHP/MySQL development, Laravel framework engineering, Craft CMS, PrestaShop, and custom web applications
+Decision stage: Provider evaluation and technical scoping
+
 ### Page Intent and Query Scope
 - **Primary Search Intent**: Businesses, digital agencies, and startups seeking custom PHP, Laravel, Craft CMS, Prestashop, and MySQL web development services from an experienced agency in India.
 - **Audience**: CTOs, product managers, agencies seeking white-label PHP delivery, and businesses requiring scalable custom web applications and API integrations.
 - **Target queries**: "PHP development company in India", "PHP web development company", "hire PHP developers India", "custom Laravel development", "PHP MySQL development services", "Craft CMS development".
 
 ### Visible Content and Evidence Available
+- Eyebrow: "Established in 2006 / PHP Development Company".
 - H1: "PHP Development Company in India".
-- Primary CTA: "request a quote" -> `/request-quote`.
-- Hero right side: Animated review badges for Clutch (132 reviews / 5.0), Upwork (2000+ reviews / 5.0), and GoodFirms (72 reviews / 5.0).
-- Trusted brands slider: 10 enterprise ecommerce brands.
-- 12 PHP Web Development Services: Custom Laravel Development, Laravel API Development, Laravel Maintenance & Support, Custom Craft CMS Development, Craft CMS Maintenance, Plugin Development, Custom Prestashop Development, Module Development, Prestashop Maintenance & Support, API Integration, Custom App Development, Ongoing Support.
-- Why Choose Dynamic Dreamz text box: Scalable, secure, and reliable custom PHP solutions.
-- 4 Process Steps: Discovery and Planning, Design and Development, Testing and Deployment, Ongoing Support.
-- 6 PHP Portfolio projects: Kask, No Lawyer, Sims Direct, Glass Fit, Intapol, Go Sport Me.
-- Happy Clients: Video testimonials and reviews from established clients.
-- 7 interactive FAQs covering PHP/MySQL technology stack, custom web apps, Laravel framework, project timelines, security, and cost estimation.
-- CTA Banner: "Want us to help you with your online store?" pointing to `/request-quote`.
+- Hero CTA: "request a quote" -> `/request-quote`.
+- Hero proof badges: Shopify Platinum Partner, Clutch (4.9 rating), Trustpilot (4.9 TrustScore), Upwork Top Rated Plus.
+- Hero media: Right-column autoplay video `why-dynamic-dreamz.mp4`.
+- Trusted brands slider: 12 enterprise ecommerce partner brands.
+- Why Choose Dynamic Dreamz (`EvaluationFrameworkSection`): Eyebrow "Why Dynamic Dreamz", H2 "Why Choose Dynamic Dreamz as a PHP Development Company", introductory paragraph, and 8 numbered evaluation framework items (Proven Track Record, PHP Development Expertise, Custom Solutions, Scalable & Secure Development, Modern PHP Technologies, Comprehensive Services, High-Performance Development, Post-Development Support).
+- 12 PHP Web Development Services (`AgencyServicesSection`): Custom Laravel Development, Laravel API Development, Laravel Maintenance & Support, Custom Craft CMS Development, Craft CMS Maintenance, Plugin Development, Custom Prestashop Development, Module Development, Prestashop Maintenance & Support, API Integration, Custom App Development, Ongoing Support with dedicated line-art SVGs.
+- 4 Process Steps (`OurDevelopmentProcessSection`): Eyebrow "Our Process", H2 "Our PHP Development Process", and 4 step boxes (Step 01: Discovery and Planning, Step 02: Design and Development, Step 03: Testing and Deployment, Step 04: Ongoing Support).
+- 6 PHP Portfolio projects (`PortfolioShowcaseSection`): Kask, No Lawyer, Sims Direct, Glass Fit, Intapol, Go Sport Me with external project links and "View our work" CTA pointing to `/our-work`.
+- Client Stories (`HappyClientSection`): Video testimonials and reviews from established clients.
+- 7 interactive FAQs (`SplitFaqSection`): Questions and answers covering PHP/MySQL technology stack, custom web apps, Laravel framework, project timelines, security, and cost estimation.
 
 ### Structured Gap Analysis
 | Priority | Status | Gap Area | Current Issue | Implementation Plan | Verification Result |
 |---|---|---|---|---|---|
-| P0 | implemented | Route discovery | Route not yet created in App Router | Build `/php-development` route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender |
-| P0 | implemented | Component reuse | Page requires mixed service landing layout | Reused `ServiceHeroSection`, `IndustryBrandsSection`, `AgencyServicesSection`, `TextBoxSection`, `ShopifyAppProcessSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection`, `CtaBannerSection` | 100% visual parity across viewports |
-| P0 | implemented | Asset deduplication | Ingested unique portfolio and service SVGs via buffer comparison; reused existing canonicals | 0 duplicate hash groups across `public/assets/` | Total asset duplicates remain 0 |
-| P0 | implemented | Schema accuracy | Need comprehensive Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated JSON-LD via `createPhpDevelopmentPageSchema()` | Validated JSON-LD graph |
-| P1 | deferred | Visible copy enhancement | Minor phrasing variations in live copy | Preserved exact live text per migration rules; logged to `docs/page-content-improvements.md` | Live UI preserved |
+| P0 | implemented | Route discovery | Ensure `/php-development` route is production-ready | Built App Router route with metadata, Open Graph, Twitter cards, and sitemap registration | Verified static prerender and sitemap |
+| P0 | implemented | Live section parity | Section order & components needed update to match refreshed live site | Reused `ServiceHeroVideoSection`, `IndustryBrandsSection`, `EvaluationFrameworkSection`, `AgencyServicesSection`, `OurDevelopmentProcessSection`, `PortfolioShowcaseSection`, `HappyClientSection`, `SplitFaqSection` | 100% visual parity across viewports |
+| P0 | implemented | Asset deduplication | Custom service SVGs and dedicated OG image needed clean ingestion | Optimized 12 unique service SVGs and OG image via buffer workflow; 0 duplicates across repo | Zero duplicate hash groups verified |
+| P0 | implemented | Schema accuracy | Synchronize Service, WebPage, BreadcrumbList, and FAQPage structured data | Generated schema via `createPhpDevelopmentPageSchema()` matching visible page | Validated JSON-LD graph |
+| P1 | deferred | Visible copy enhancement | Minor phrasing variations in live copy | Preserved exact live text per migration rules; recorded in `docs/page-content-improvements.md` | Live UI preserved |
 
 ## Book a Discovery Call (`/book-a-discovery-call`)
 Status: implemented; visible live wording preserved
