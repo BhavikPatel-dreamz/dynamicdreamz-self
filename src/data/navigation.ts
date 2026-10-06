@@ -39,9 +39,9 @@ export type PrimaryNavigationGroup = {
   };
 };
 
-const headerIcon = (name: string, height = 20): NavigationIcon => ({
+const headerIcon = (name: string, height = 20, width = 20): NavigationIcon => ({
   src: `/assets/navigation/header/${name}.svg`,
-  width: 20,
+  width,
   height,
 });
 
@@ -55,7 +55,7 @@ export const primaryNavigation: PrimaryNavigationGroup[] = [
         label: "Shopify Plus Development",
         href: "/shopify-plus-agency",
         description: "Enterprise storefronts and global commerce.",
-        icon: headerIcon("shopify-plus-development", 24),
+        icon: headerIcon("shopify-plus-development", 24, 20),
       },
       {
         label: "Shopify Development",
@@ -147,7 +147,7 @@ export const primaryNavigation: PrimaryNavigationGroup[] = [
         label: "AI Services",
         href: "/ai-services",
         description: "AI powered automation and digital solutions.",
-        icon: headerIcon("al-services"),
+        icon: headerIcon("ai-services"),
         badge: "NEW",
       },
       {
@@ -178,13 +178,13 @@ export const primaryNavigation: PrimaryNavigationGroup[] = [
         label: "Android App Development",
         href: "/android-app-development",
         description: "Custom Android applications for businesses.",
-        icon: headerIcon("android-app-development"),
+        icon: headerIcon("android-app-development", 22, 20),
       },
       {
         label: "WooCommerce Development",
         href: "/woocommerce-development",
         description: "WooCommerce development and support.",
-        icon: headerIcon("woocommerce-development"),
+        icon: headerIcon("woocommerce-development", 21, 25),
       },
       {
         label: "WordPress Development",
@@ -202,7 +202,7 @@ export const primaryNavigation: PrimaryNavigationGroup[] = [
         label: "Magento Development",
         href: "/magento-development",
         description: "Magento ecommerce development and support.",
-        icon: headerIcon("magento-development"),
+        icon: headerIcon("magento-development", 24, 21),
       },
     ],
   },

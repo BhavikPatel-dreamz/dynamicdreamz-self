@@ -426,3 +426,13 @@ supply approved poster frames.
 | Organization OfferCatalog includes planned service destinations | The project owner requested restoration of route-related changes during active migration | retained for migration intent; revalidate before launch |
 | Selected project cards still link to external storefronts | Internal evidence pages and approved outcomes are not available | deferred; link to internal case studies when built |
 | Home displays `4500+` Shopify stores while Resources live story copy says `1000+` | Definitions, provenance, values, and approval date require leadership sign-off | blocked; live UI retained and ambiguous aggregate rating remains excluded |
+
+## 2026-10-06 Homepage Hero Section & Header Audit
+
+- Checked and synchronized all Header primary navigation menu links, labels, descriptions, and icons against the live site.
+- Corrected icon filename and reference for AI Services: renamed `al-services.svg` to canonical `ai-services.svg`.
+- Updated navigation icon dimensions in `src/data/navigation.ts` to match live SVG viewports: `shopify-plus-development` (20x24), `android-app-development` (20x22), `woocommerce-development` (25x21), and `magento-development` (21x24).
+- Added missing legacy redirect for `/industries/sports-outdoors` to `/sports-outdoors` in `next.config.ts`.
+- Verified Hero Section content paragraph (`homeAnswerSummary`): updated color from `text-muted/80` (80% opacity) to solid `text-muted` (`#535353`), retaining `font-medium` (font-weight 500) and Montserrat typography matching `.home_shopify_banner .inner_banner_content p` and user screenshot https://prnt.sc/IPcysSWXuXW3.
+- Updated `loading="eager"` and `decoding="async"` attributes on the 4 proof logo images in the hero section (`HomeHeroSection`) and on the header logo (`SiteHeader`), matching the live site.
+- Verification: `npm run check:urls`, `npm run check:component-content`, SHA-256 duplicate audit (0 duplicates), `npm run lint` (0 errors), and `npm run build` (success).

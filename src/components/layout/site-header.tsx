@@ -66,6 +66,8 @@ export function SiteHeader({
               width={257}
               height={39}
               sizes="(max-width: 380px) 150px, (max-width: 768px) 170px, 225px"
+              loading="eager"
+              decoding="async"
               preload
             />
           </Link>

@@ -160,6 +160,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/industries/sports-outdoors",
+        destination: "/sports-outdoors",
+        permanent: true,
+      },
+      {
         source: "/industries/fashion",
         destination: "/fashion",
         permanent: true,
