@@ -5,6 +5,14 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
+import { Users } from "./src/collections/Users";
+import { Media } from "./src/collections/Media";
+import { Categories } from "./src/collections/Categories";
+import { Authors } from "./src/collections/Authors";
+import { Testimonials } from "./src/collections/Testimonials";
+import { Articles } from "./src/collections/Articles";
+import { CaseStudies } from "./src/collections/CaseStudies";
+
 import { Navigation } from "./src/globals/Navigation";
 import { SiteSettings } from "./src/globals/SiteSettings";
 
@@ -19,21 +27,13 @@ export default buildConfig({
     },
   },
   collections: [
-    {
-      slug: "users",
-      auth: true,
-      fields: [],
-    },
-    {
-      slug: "media",
-      upload: true,
-      fields: [
-        {
-          name: "alt",
-          type: "text",
-        },
-      ],
-    },
+    Users,
+    Media,
+    Categories,
+    Authors,
+    Testimonials,
+    Articles,
+    CaseStudies,
   ],
   globals: [
     Navigation,

@@ -119,6 +119,65 @@ export function adaptPayloadFooterBottomLinks(
   }));
 }
 
+export async function getPayloadArticles(limit = 100) {
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "articles",
+      limit,
+      sort: "-date",
+    });
+    return res.docs;
+  } catch (err) {
+    console.warn("Payload getPayloadArticles warning:", err);
+    return [];
+  }
+}
+
+export async function getPayloadArticleBySlug(slug: string) {
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "articles",
+      where: { slug: { equals: slug } },
+      limit: 1,
+    });
+    return res.docs[0] || null;
+  } catch (err) {
+    console.warn(`Payload getPayloadArticleBySlug(${slug}) warning:`, err);
+    return null;
+  }
+}
+
+export async function getPayloadCaseStudies(limit = 100) {
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "case-studies",
+      limit,
+    });
+    return res.docs;
+  } catch (err) {
+    console.warn("Payload getPayloadCaseStudies warning:", err);
+    return [];
+  }
+}
+
+export async function getPayloadCaseStudyBySlug(slug: string) {
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "case-studies",
+      where: { slug: { equals: slug } },
+      limit: 1,
+    });
+    return res.docs[0] || null;
+  } catch (err) {
+    console.warn(`Payload getPayloadCaseStudyBySlug(${slug}) warning:`, err);
+    return null;
+  }
+}
+
 export async function getPayloadPageBySlug(
   slug: string,
   options?: { preview?: boolean },
