@@ -10,7 +10,7 @@ export function ContactWidget({ whatsappNumber }: { whatsappNumber?: string | nu
   return (
     <div className="whatsapp-widget fixed right-5 bottom-20 z-110 max-[767px]:right-2.5 max-[767px]:bottom-9.5 [body:has(main[data-page=home])_&]:bottom-3.75 [body:has(main[data-page=home])_&]:max-[767px]:bottom-3.75 [&_a]:[transition:all_.3s_ease]">
       <a
-        className="whatsapp-widget flex min-[991px]:w-60 items-center rounded-[100px] bg-brand-green px-2.5 py-1.75 text-white shadow-[0_10px_30px_rgb(0_0_0/15%)] transition-all duration-300 ease-[ease] [transition:all_.3s_ease] hover:-translate-y-0.75 hover:shadow-[0_15px_40px_rgb(0_0_0/20%)]"
+        className="whatsapp-widget flex min-[991px]:w-60 items-center rounded-[100px] bg-brand-green px-2.5 py-1.75 text-white shadow-[0_10px_30px_rgb(0_0_0/15%)] [transition:all_.3s_ease] hover:-translate-y-0.75 hover:shadow-[0_15px_40px_rgb(0_0_0/20%)]"
         href={href}
         target="_blank"
         rel="nofollow noopener noreferrer"

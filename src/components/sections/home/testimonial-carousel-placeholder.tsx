@@ -59,8 +59,8 @@ export function TestimonialCarouselPlaceholder({
         </div>
       </div>
       <div className="brand_testimonial_nav order-1 mb-[19px] flex justify-end gap-3.5 max-[992px]:order-2 max-[992px]:mt-6 max-[992px]:mb-0 max-[992px]:justify-center" aria-hidden="true">
-        <span className="slider_arrow flex h-14 w-14 items-center justify-center rounded-[10px] border-0 bg-white opacity-60 pointer-events-none max-[767px]:h-[42px] max-[767px]:w-[42px]" />
-        <span className="slider_arrow flex h-14 w-14 items-center justify-center rounded-[10px] border-0 bg-white opacity-60 pointer-events-none max-[767px]:h-[42px] max-[767px]:w-[42px]" />
+        <span className="slider_arrow flex h-14 w-14 items-center justify-center rounded-[10px] border-0 bg-white opacity-60 max-[767px]:h-[42px] max-[767px]:w-[42px]" />
+        <span className="slider_arrow flex h-14 w-14 items-center justify-center rounded-[10px] border-0 bg-white opacity-60 max-[767px]:h-[42px] max-[767px]:w-[42px]" />
       </div>
     </div>
   );
