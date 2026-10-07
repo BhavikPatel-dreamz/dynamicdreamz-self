@@ -9,7 +9,10 @@ export function AboutTimelineSection() {
   return (
     <section data-about="timeline" aria-labelledby="about-timeline-title" className="overflow-hidden bg-[#fbf7ed] pt-[100px] pb-[60px] max-[992px]:py-[50px]">
       <Container>
-        <div className="-mx-[15px] mb-[60px] flex items-center max-[992px]:mx-0 max-[992px]:mb-0 max-[992px]:block max-[992px]:text-center">
+        <div
+          data-aos="fade-up"
+          className="-mx-[15px] mb-[60px] flex items-center max-[992px]:mx-0 max-[992px]:mb-0 max-[992px]:block max-[992px]:text-center"
+        >
           <div className="w-1/2 px-[15px] max-[992px]:mb-[10px] max-[992px]:w-full max-[992px]:p-0">
             <h2 id="about-timeline-title" className="text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
               {aboutSectionCopy.timelineTitle}
@@ -23,7 +26,7 @@ export function AboutTimelineSection() {
         </div>
       </Container>
 
-      <div className="mx-auto w-full max-w-full">
+      <div data-aos="fade-up" className="mx-auto w-full max-w-full">
         <HorizontalDragScroll
           className="h-[535px] w-full cursor-grab touch-pan-y overflow-x-auto overscroll-x-contain select-none active:cursor-grabbing min-[1200px]:w-[calc(100%+max(0px,50vw-590px))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           ariaLabel="Dynamic Dreamz company milestones. Scroll horizontally to explore the timeline."

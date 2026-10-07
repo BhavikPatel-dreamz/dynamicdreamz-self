@@ -23,12 +23,12 @@ export function PillListSection({
   return (
     <section className={className} id={id}>
       <Container>
-        <div className="heading-text only-text mb-[50px] text-center max-[992px]:mb-[30px]">
+        <div data-aos="fade-up" className="heading-text only-text mb-[50px] text-center max-[992px]:mb-[30px]">
           <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(content.heading)}
           </h2>
         </div>
-        <div className="seo_service_list text-center">
+        <div data-aos="fade-up" className="seo_service_list text-center">
           <ul className="m-0 flex list-none flex-wrap items-center justify-center p-0">
             {content.items.map((item, idx) => (
               <li

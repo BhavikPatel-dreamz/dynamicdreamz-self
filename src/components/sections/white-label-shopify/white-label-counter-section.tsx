@@ -16,7 +16,10 @@ export function WhiteLabelCounterSection({
   return (
     <section className="white_label_counter_section relative border-y border-[rgba(0,0,0,0.10)] bg-white py-0">
       <Container className="min-[1400px]:max-w-[1408px] px-[15px] max-[1199px]:max-w-full max-[1199px]:px-0">
-        <div className="stats_container flex flex-wrap items-center justify-between max-[991px]:relative max-[991px]:after:absolute max-[991px]:after:top-1/2 max-[991px]:after:left-0 max-[991px]:after:h-[1px] max-[991px]:after:w-full max-[991px]:after:-translate-y-1/2 max-[991px]:after:bg-[rgba(40,40,40,0.10)] max-[991px]:after:content-['']">
+        <div
+          data-aos="fade-up"
+          className="stats_container flex flex-wrap items-center justify-between max-[991px]:relative max-[991px]:after:absolute max-[991px]:after:top-1/2 max-[991px]:after:left-0 max-[991px]:after:h-[1px] max-[991px]:after:w-full max-[991px]:after:-translate-y-1/2 max-[991px]:after:bg-[rgba(40,40,40,0.10)] max-[991px]:after:content-['']"
+        >
           {counters.map((item, index) => (
             <div
               className={`stats_item w-1/4 py-[17px] text-center max-[1199px]:px-5 max-[991px]:w-1/2 max-[767px]:min-h-[94px] max-[767px]:p-4 ${

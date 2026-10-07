@@ -54,7 +54,7 @@ export function CityWhyChooseBoxesSection({
       )}
     >
       <Container>
-        <div className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col max-[991px]:gap-4">
+        <div className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col max-[991px]:gap-4" data-aos="fade-up">
           <div className="title max-w-[620px]">
             {content.eyebrow && (
               <div className="eyebrow mb-4">
@@ -118,6 +118,7 @@ export function CityWhyChooseBoxesSection({
             {content.items.map((item) => (
               <div
                 key={item.title}
+                data-aos="fade-up"
                 className={cn(
                   "why-choose-box flex flex-col justify-start rounded-[18px] p-5 transition-transform duration-300 hover:-translate-y-1",
                   isDark

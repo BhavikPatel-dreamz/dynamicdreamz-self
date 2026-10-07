@@ -66,6 +66,7 @@ export function ShopifyReasonsSection({
 }) {
   const cards = content.items.map((item) => (
     <article
+      data-aos="fade-up"
       className={`group relative h-full ${cardMinHeightClassName} rounded-[15px] bg-white p-0.5 transition-[background] duration-300 hover:bg-[linear-gradient(to_right,#15c064,#00d1ff)] focus-within:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:absolute after:right-0 after:bottom-0 after:left-0 after:z-20 after:h-3 after:rounded-b-[15px] after:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:opacity-0 after:transition-opacity after:duration-300 after:content-[''] hover:after:opacity-100 focus-within:after:opacity-100`}
       key={item.title}
     >
@@ -116,7 +117,7 @@ export function ShopifyReasonsSection({
   return (
     <section className={className} id={id}>
       <Container>
-        <div className="mb-[50px] text-center max-[767px]:mb-[35px]">
+        <div data-aos="fade-up" className="mb-[50px] text-center max-[767px]:mb-[35px]">
           <SectionHeading>
             {formatBrText(
               content.heading,
@@ -133,7 +134,7 @@ export function ShopifyReasonsSection({
 
         {layout === "carousel" && !carouselFullBleed ? carousel : null}
         {layout === "grid" ? (
-          <div className="flex flex-wrap -mx-2 justify-center">
+          <div data-aos="fade-up" className="flex flex-wrap -mx-2 justify-center">
             {cards.map((card, index) => (
               <div
                 className="w-1/3 px-2 mb-4 max-[992px]:w-1/2 max-[767px]:w-full"
@@ -169,7 +170,7 @@ export function ShopifyAdvantagesSection({
   return (
     <section className={className} id={id}>
       <Container>
-        <div className="mx-auto max-w-[850px] text-center">
+        <div data-aos="fade-up" className="mx-auto max-w-[850px] text-center">
           <h2 className={headingClassName}>
             {formatBrText(content.heading, "max-[1199px]:hidden")}
           </h2>
@@ -179,6 +180,7 @@ export function ShopifyAdvantagesSection({
         </div>
 
         <div
+          data-aos="fade-up"
           className={`mt-[60px] grid max-[767px]:grid-cols-1 ${
             isTwoCol
               ? "grid-cols-2 max-[992px]:grid-cols-2"
@@ -187,6 +189,7 @@ export function ShopifyAdvantagesSection({
         >
           {content.items.map((item, index) => (
             <article
+              data-aos="fade-up"
               className={`flex min-h-[250px] flex-col ${
                 isLeftAlign ? "items-start text-left" : "items-center text-center"
               } border-[#efefef] px-8 py-[35px] max-[1199px]:px-5 max-[767px]:min-h-0 max-[767px]:py-5 ${
@@ -228,7 +231,7 @@ export function ShopifyAdvantagesSection({
         </div>
 
         {!content.hideCta && (
-          <div className="mt-[46px] text-center">
+          <div data-aos="fade-up" className="mt-[46px] text-center">
             <ButtonLink href={content.ctaHref ?? siteConfig.quotePath} variant="primary">
               {content.ctaLabel ?? "inquire now"}
             </ButtonLink>

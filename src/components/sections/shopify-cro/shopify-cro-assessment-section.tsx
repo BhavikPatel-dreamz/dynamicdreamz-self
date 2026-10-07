@@ -14,7 +14,7 @@ export function ShopifyCroAssessmentSection({
   return (
     <section className={className}>
       <Container>
-        <div className="content-box text-center">
+        <div data-aos="fade-up" className="content-box text-center">
           <h2 className="mb-2.5 font-display text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
             {content.heading}
           </h2>

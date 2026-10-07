@@ -43,12 +43,13 @@ export function ShopifyHorizontalProcessSection({
           variant="left"
         />
 
-        <div className="wrapper flex flex-wrap max-[1199px]:row-gap-[30px] max-[767px]:flex-col">
+        <div data-aos="fade-up" className="wrapper flex flex-wrap max-[1199px]:row-gap-[30px] max-[767px]:flex-col">
           {content.steps.map((step, index) => {
             const stepNum = step.number ?? String(index + 1).padStart(2, "0");
 
             return (
               <div
+                data-aos="fade-up"
                 className="item relative w-[20%] max-[1199px]:w-1/3 max-[767px]:flex max-[767px]:w-full max-[767px]:items-start max-[767px]:pb-6"
                 key={step.title}
               >

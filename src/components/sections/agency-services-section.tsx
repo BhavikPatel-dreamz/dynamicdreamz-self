@@ -98,7 +98,10 @@ export function AgencyServicesSection({
             variant="services"
           />
         ) : headerLayout === "centered" ? (
-          <div className="heading-text mx-auto max-w-[780px] text-center">
+          <div
+            data-aos="fade-up"
+            className="heading-text mx-auto max-w-[780px] text-center"
+          >
             <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
               {formatBrText(removeBreakTags(content.heading))}
             </h2>
@@ -109,7 +112,10 @@ export function AgencyServicesSection({
             )}
           </div>
         ) : (
-          <div className="mb-5 flex items-center justify-between max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:items-start max-[992px]:text-left">
+          <div
+            data-aos="fade-up"
+            className="mb-5 flex items-center justify-between max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:items-start max-[992px]:text-left"
+          >
             <div className="w-[calc(41%-30px)] px-[15px] max-[992px]:w-full max-[992px]:p-0">
               <h2 className="m-0 font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:mb-2.5">
                 {formatBrText(removeBreakTags(content.heading))}
@@ -142,6 +148,7 @@ export function AgencyServicesSection({
                 return (
                   <div
                     className="services-box w-full max-[991px]:[&:not(:last-child)]:mb-4"
+                    data-aos="fade-up"
                     key={service.title}
                   >
                     <div
@@ -224,7 +231,7 @@ export function AgencyServicesSection({
               })}
             </div>
             {!hideCta && content.cta && (
-              <div className="mt-8 text-center">
+              <div className="mt-8 text-center" data-aos="fade-up">
                 <ButtonLink
                   aria-label={content.cta.ariaLabel}
                   href={content.cta.href}
@@ -372,6 +379,7 @@ export function AgencyServicesSection({
                         : "group pb-6 transition-transform duration-300 ease-in-out hover:-translate-y-2.5",
                       colClass,
                     )}
+                    data-aos="fade-up"
                     key={service.title}
                   >
                     {serviceHref ? (
@@ -386,7 +394,7 @@ export function AgencyServicesSection({
               })}
             </div>
             {!hideCta && content.cta && (
-              <div className="text-center">
+              <div className="text-center" data-aos="fade-up">
                 <ButtonLink
                   aria-label={content.cta.ariaLabel}
                   href={content.cta.href}

@@ -46,7 +46,7 @@ export function EvaluationFrameworkSection({
           variant="left"
         />
 
-        <div className="spa-wrapper flex flex-wrap border-t border-l border-[#2828281c]">
+        <div className="spa-wrapper flex flex-wrap border-t border-l border-[#2828281c]" data-aos="fade-up">
           {content.items.map((item, index) => (
             <div
               className="spa-col w-1/4 max-[991px]:w-1/2 max-[767px]:w-full"

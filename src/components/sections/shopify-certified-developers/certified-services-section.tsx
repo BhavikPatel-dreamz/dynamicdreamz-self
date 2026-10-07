@@ -27,6 +27,7 @@ export function CertifiedServicesSection({
         <div className="grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[575px]:grid-cols-1">
           {content.items.map((item, index) => (
             <article
+              data-aos="fade-up"
               className={cn(
                 "h-full rounded-[20px] p-[40px_30px] max-[992px]:p-[30px_20px] max-[575px]:rounded-[10px]",
                 index % 2 === 0 ? "bg-[#f7f4e9]" : "bg-[#fafaf7]",

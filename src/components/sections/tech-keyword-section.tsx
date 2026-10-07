@@ -30,7 +30,7 @@ export function TechKeywordSection({
       id={id}
     >
       <Container>
-        <div className="wrapper grid grid-cols-[0.8fr_1.2fr] items-center gap-[55px] rounded-[24px] border border-[rgba(40,40,40,0.11)] bg-white p-[34px_38px] max-[1199px]:grid-cols-[0.8fr_1fr] max-[1199px]:gap-2.5 max-[1199px]:p-[30px_20px] max-[767px]:grid-cols-1 max-[767px]:gap-0">
+        <div data-aos="fade-up" className="wrapper grid grid-cols-[0.8fr_1.2fr] items-center gap-[55px] rounded-[24px] border border-[rgba(40,40,40,0.11)] bg-white p-[34px_38px] max-[1199px]:grid-cols-[0.8fr_1fr] max-[1199px]:gap-2.5 max-[1199px]:p-[30px_20px] max-[767px]:grid-cols-1 max-[767px]:gap-0">
           <div className="section_title_with_eyebrow mb-0">
             <div className="title w-full">
               {content.eyebrow ? (

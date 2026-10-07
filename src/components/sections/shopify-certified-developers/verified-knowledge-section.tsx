@@ -28,6 +28,7 @@ export function VerifiedKnowledgeSection({
         <div className="grid grid-cols-3 divide-x divide-[#333]/10 max-[992px]:grid-cols-1 max-[992px]:divide-x-0 max-[992px]:divide-y">
           {content.items.map((item) => (
             <article
+              data-aos="fade-up"
               className="px-[50px] text-center max-[1199px]:px-[15px] max-[992px]:px-0 max-[992px]:py-5 max-[992px]:first:pt-0 max-[992px]:last:pb-0"
               key={item.title}
             >

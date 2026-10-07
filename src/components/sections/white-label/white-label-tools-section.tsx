@@ -72,7 +72,10 @@ export function WhiteLabelToolsSection({
         className,
       )}
     >
-      <div className="wide_range_technologies_top_part mb-10 px-4 text-center max-[1199px]:mb-[35px] max-[992px]:mb-[30px] max-[767px]:mb-5">
+      <div
+        data-aos="fade-up"
+        className="wide_range_technologies_top_part mb-10 px-4 text-center max-[1199px]:mb-[35px] max-[992px]:mb-[30px] max-[767px]:mb-5"
+      >
         {eyebrow ? (
           <div className="title mb-2.5 text-[13px] font-bold uppercase tracking-[1.5px] text-[#e33d37]">
             <span>{eyebrow}</span>
@@ -90,7 +93,7 @@ export function WhiteLabelToolsSection({
         </div>
       </div>
       <div aria-label={ariaLabel} className="wide_range_technologies_bottom_part">
-        <div className="our_partners_logo_wrap">
+        <div data-aos="fade-up" className="our_partners_logo_wrap">
           <ToolRow className="logos_partner_top" direction="forward" row={rows[0]} />
           <ToolRow className="logos_partner_bottom" direction="reverse" row={rows[1]} />
         </div>

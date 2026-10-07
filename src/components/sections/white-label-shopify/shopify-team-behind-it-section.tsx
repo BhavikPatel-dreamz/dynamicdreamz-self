@@ -47,7 +47,10 @@ export function ShopifyTeamBehindItSection({
       )}
     >
       <Container>
-        <div className="section_title mb-12 max-[991px]:mb-8">
+        <div
+          data-aos="fade-up"
+          className="section_title mb-12 max-[991px]:mb-8"
+        >
           {content.eyebrow ? (
             <Eyebrow className="mb-3 text-[#ad5151]">{content.eyebrow}</Eyebrow>
           ) : null}
@@ -68,7 +71,10 @@ export function ShopifyTeamBehindItSection({
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-5 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
+        <div
+          data-aos="fade-up"
+          className="grid grid-cols-3 gap-5 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1"
+        >
           {content.cards.map((card) => (
             <div
               className="flex h-full flex-col justify-between rounded-[20px] border border-[rgba(40,40,40,0.10)] bg-white p-[30px] max-[1199px]:p-5"
@@ -87,7 +93,10 @@ export function ShopifyTeamBehindItSection({
         </div>
 
         {!hideCtas && content.ctas ? (
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4 max-[767px]:flex-col">
+          <div
+            data-aos="fade-up"
+            className="mt-10 flex flex-wrap items-center justify-center gap-4 max-[767px]:flex-col"
+          >
             <ButtonLink href={content.ctas.primary.href} variant="primary">
               {content.ctas.primary.label}
             </ButtonLink>

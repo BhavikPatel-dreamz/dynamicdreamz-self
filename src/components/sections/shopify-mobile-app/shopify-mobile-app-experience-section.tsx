@@ -20,10 +20,11 @@ export function ShopifyMobileAppExperienceSection({
           className="mb-[50px] max-[767px]:mb-[30px]"
         />
 
-        <div className="wrapper flex flex-wrap -mx-[10px] -mb-5">
+        <div data-aos="fade-up" className="wrapper flex flex-wrap -mx-[10px] -mb-5">
           {content.moments.map((item) => (
             <div
               key={item.step}
+              data-aos="fade-up"
               className="eperience-col w-1/4 px-[10px] mb-5 max-[1199px]:w-1/2 max-[767px]:w-full"
             >
               <div className="eperience-box flex h-full flex-col justify-start rounded-[20px] border border-[rgba(40,40,40,0.10)] bg-white p-[35px_25px] max-[1399px]:p-[30px_20px]">

@@ -25,7 +25,7 @@ export function ShopifyPlusProofSection({
           titleColumnClassName="w-[44%] max-[992px]:w-full"
           variant="left"
         />
-        <div className="wrapper flex flex-wrap justify-between">
+        <div data-aos="fade-up" className="wrapper flex flex-wrap justify-between">
           <div className="left-col w-1/2 max-[767px]:w-full">
             <div className="text-block h-full border-y border-[#2828281c] py-[30px] pr-[30px] max-[1399px]:py-5 max-[1399px]:pr-[30px] max-[1199px]:pr-5 max-[767px]:border-0 max-[767px]:p-0">
               <p className="m-0 font-sans text-base font-medium leading-[28px] text-muted max-[767px]:text-sm max-[767px]:leading-6">

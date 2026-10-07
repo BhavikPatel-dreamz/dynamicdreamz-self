@@ -65,6 +65,7 @@ export function ShopifyMobileAppWorkSection({
           {content.items.map((project) => (
             <div
               key={project.name}
+              data-aos="fade-up"
               className="our_work_team apps w-[calc(25%_-_12px)] max-[1199px]:w-[calc(33.333%_-_10px)] max-[991px]:w-[calc(50%_-_10px)] max-[575px]:w-[calc(50%_-_8px)]"
             >
               <PortfolioProjectCard
@@ -82,7 +83,7 @@ export function ShopifyMobileAppWorkSection({
           ))}
         </div>
 
-        <div className="btns_group mt-[50px] flex flex-wrap items-center justify-center gap-[15px] max-[575px]:flex-col max-[575px]:items-stretch max-[575px]:gap-0 [&>*]:max-[575px]:w-full">
+        <div data-aos="fade-up" className="btns_group mt-[50px] flex flex-wrap items-center justify-center gap-[15px] max-[575px]:flex-col max-[575px]:items-stretch max-[575px]:gap-0 [&>*]:max-[575px]:w-full">
           <ButtonLink
             href={content.ctaHref}
             variant="primary"

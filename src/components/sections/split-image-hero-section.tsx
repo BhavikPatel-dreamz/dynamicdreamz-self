@@ -197,7 +197,7 @@ export function SplitImageHeroSection({
     <section className={className}>
       <Container className={containerClassName}>
         <div className={wrapperClassName}>
-          <div className={textColumnClassName}>
+          <div className={textColumnClassName} data-aos="fade-up">
             <SplitImageHeroText
               breakClassName={breakClassName}
               className={textClassName}
@@ -217,7 +217,7 @@ export function SplitImageHeroSection({
               titleClassName={titleClassName}
             />
           </div>
-          <div className={mediaColumnClassName}>
+          <div className={mediaColumnClassName} data-aos="fade-up">
             <SplitImageHeroMedia
               className={mediaClassName}
               image={content.image}

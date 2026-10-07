@@ -6,7 +6,10 @@ export function AboutStorySection() {
   return (
     <section data-about="story" aria-labelledby="about-story-title" className="we-are-dyanamic-dreamz-sec py-20 max-[992px]:py-[50px]">
       <Container>
-        <div className="-mx-[15px] flex items-center justify-between max-[992px]:flex-col max-[992px]:text-center">
+        <div
+          data-aos="fade-up"
+          className="-mx-[15px] flex items-center justify-between max-[992px]:flex-col max-[992px]:text-center"
+        >
           <div className="w-[calc(35%-15px)] px-[15px] max-[1199px]:w-[calc(40%-15px)] max-[992px]:w-full max-[575px]:max-w-[290px]">
             <h2 id="about-story-title" className="text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:mb-[15px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
               {aboutStory.title}
@@ -17,7 +20,10 @@ export function AboutStorySection() {
           </div>
         </div>
 
-        <div className="hero-vide-wrap mt-[50px] h-[492px] max-[992px]:h-[350px] max-[767px]:mt-[30px] max-[767px]:h-[200px]">
+        <div
+          data-aos="fade-up"
+          className="hero-vide-wrap mt-[50px] h-[492px] max-[992px]:h-[350px] max-[767px]:mt-[30px] max-[767px]:h-[200px]"
+        >
           <VideoDialog
             overlay="/assets/about/we-are-dynamic-dreamz.svg"
             overlayHeight={38}

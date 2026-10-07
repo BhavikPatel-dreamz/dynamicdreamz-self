@@ -10,7 +10,10 @@ export function TestimonialsSection() {
     <section className="bg-cream py-[60px] max-[767px]:py-[50px]">
       <Container>
 
-        <div className="section_title_with_eyebrow  mb-10 flex flex-wrap items-end justify-between gap-8 max-[1199px]:mb-5 max-[992px]:gap-0">
+        <div
+          data-aos="fade-up"
+          className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between gap-8 max-[1199px]:mb-5 max-[992px]:gap-0"
+        >
           <div className="title w-[42%] max-[1199px]:w-full max-[1199px]:mb-2.5">
             <SectionHeading id="shopify-plus-agency-title" className="m-0">
               {homeSectionCopy.testimonialsTitle}
@@ -20,13 +23,9 @@ export function TestimonialsSection() {
             {homeSectionCopy.testimonialsDescription}
           </SectionDescription>
         </div>
-        {/* <div className="mb-[42px] max-w-[650px] max-[767px]:max-w-none">
-          <SectionHeading className="mb-6 max-[767px]:mb-4">{homeSectionCopy.testimonialsTitle}</SectionHeading>
-          <p className="text-base leading-[1.9] font-semibold max-[767px]:text-sm">
-            {homeSectionCopy.testimonialsDescription}
-          </p>
-        </div> */}
-        <LazyTestimonialCarousel fallback={<TestimonialCarouselPlaceholder />} />
+        <div data-aos="fade-up" className="brand_testimonial_slider_wrap">
+          <LazyTestimonialCarousel fallback={<TestimonialCarouselPlaceholder />} />
+        </div>
       </Container>
     </section>
   );

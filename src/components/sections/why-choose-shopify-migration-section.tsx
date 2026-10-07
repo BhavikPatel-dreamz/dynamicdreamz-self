@@ -438,7 +438,10 @@ export function WhyChooseShopifyMigrationSection({
         />
 
         <div className="wrapper -mx-2.5 flex flex-wrap max-[991px]:mx-0">
-          <div className="left-col flex w-1/2 flex-col px-2.5 max-[991px]:w-full max-[991px]:px-0">
+          <div
+            data-aos="fade-up"
+            className="left-col flex w-1/2 flex-col px-2.5 max-[991px]:w-full max-[991px]:px-0"
+          >
             {content.items.map((item) => (
               <div
                 className="item-box mb-3 flex h-full rounded-[20px] border border-[rgba(40,40,40,0.1)] bg-white p-5 last:mb-0 max-[767px]:rounded-[12px] max-[767px]:p-[20px_15px]"
@@ -461,7 +464,10 @@ export function WhyChooseShopifyMigrationSection({
             ))}
           </div>
 
-          <div className="right-col flex w-1/2 flex-col px-2.5 max-[991px]:mt-5 max-[991px]:w-full max-[991px]:px-0">
+          <div
+            data-aos="fade-up"
+            className="right-col flex w-1/2 flex-col px-2.5 max-[991px]:mt-5 max-[991px]:w-full max-[991px]:px-0"
+          >
             <div className="text-block flex h-full flex-col justify-between rounded-[20px] bg-white p-[50px_30px_30px_30px] max-[991px]:p-[30px_20px_20px_20px] max-[767px]:rounded-[12px]">
               <div className="content-box text-center">
                 <div className="logo-wrapp mb-5 flex justify-center">

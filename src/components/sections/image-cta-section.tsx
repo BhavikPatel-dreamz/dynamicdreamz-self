@@ -23,6 +23,7 @@ export function ImageCtaSection({
     <section className={cn("pb-20", className)}>
       <Container>
         <div
+          data-aos="fade-up"
           className="rounded-[14px] bg-cover bg-center bg-no-repeat px-5 py-[31px] text-center"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         >

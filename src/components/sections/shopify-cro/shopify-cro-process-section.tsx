@@ -24,7 +24,10 @@ export function ShopifyCroProcessSection({
           preserveBreaks
         />
 
-        <div className="wrapper -mx-5 -mb-[30px] flex flex-wrap max-[1199px]:-mx-2.5 max-[767px]:m-0 max-[767px]:ml-[5px] max-[767px]:flex-col max-[767px]:border-l-2 max-[767px]:border-[#AD5151] max-[767px]:pl-5">
+        <div
+          data-aos="fade-up"
+          className="wrapper -mx-5 -mb-[30px] flex flex-wrap max-[1199px]:-mx-2.5 max-[767px]:m-0 max-[767px]:ml-[5px] max-[767px]:flex-col max-[767px]:border-l-2 max-[767px]:border-[#AD5151] max-[767px]:pl-5"
+        >
           {content.steps.map((step, idx) => {
             const isLast = idx === content.steps.length - 1;
 

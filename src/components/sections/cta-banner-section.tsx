@@ -35,7 +35,10 @@ export function CtaBannerSection({
       aria-labelledby="cta-banner-title"
     >
       <Container className={containerClassName}>
-        <div className="flex flex-wrap items-center justify-center gap-8 text-center max-[1199px]:gap-5">
+        <div
+          data-aos="fade-up"
+          className="flex flex-wrap items-center justify-center gap-8 text-center max-[1199px]:gap-5"
+        >
           <div className="text-center">
             <h2
               id="cta-banner-title"

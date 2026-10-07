@@ -13,14 +13,14 @@ export function DesignReasonsAccordion({ items }: DesignReasonsAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="space-y-3">
+    <div data-aos="fade-up" className="space-y-3">
       {items.map((item, index) => {
         const isOpen = openIndex === index;
         const triggerId = `white-label-design-reason-trigger-${index}`;
         const panelId = `white-label-design-reason-panel-${index}`;
 
         return (
-          <article className="rounded-[15px] border border-ink/10 bg-white px-6 py-[19px] max-[767px]:rounded-[10px] max-[767px]:px-[15px] max-[767px]:py-[18px]" key={item.title}>
+          <article data-aos="fade-up" className="rounded-[15px] border border-ink/10 bg-white px-6 py-[19px] max-[767px]:rounded-[10px] max-[767px]:px-[15px] max-[767px]:py-[18px]" key={item.title}>
             <button
               className="flex w-full cursor-pointer items-center border-0 bg-transparent text-left"
               id={triggerId}

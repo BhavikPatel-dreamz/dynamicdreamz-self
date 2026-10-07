@@ -33,8 +33,9 @@ export function TwoColImageWithTextSection({
       id={id}
     >
       <Container>
-        <div className="wrapper flex flex-wrap items-center justify-between">
+        <div data-aos="fade-up" className="wrapper flex flex-wrap items-center justify-between">
           <div
+            data-aos="fade-up"
             className={cn(
               "left-col w-[41.229%] max-[1199px]:w-[43%] max-[992px]:w-full",
               imagePosition === "right" && "order-2 max-[992px]:order-1",
@@ -51,6 +52,7 @@ export function TwoColImageWithTextSection({
             </div>
           </div>
           <div
+            data-aos="fade-up"
             className={cn(
               "right-col w-[53.685%] max-[1199px]:w-[53%] max-[992px]:w-full",
               imagePosition === "right" && "order-1 max-[992px]:order-2",

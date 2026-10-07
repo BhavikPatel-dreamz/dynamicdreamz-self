@@ -23,7 +23,7 @@ export function ShopifyAppProcessSection({
   return (
     <section className={className} data-section="how-it-works" id="how-it-works">
       <Container>
-        <div className="heading-text mb-[90px] text-center max-[992px]:mb-[50px]">
+        <div data-aos="fade-up" className="heading-text mb-[90px] text-center max-[992px]:mb-[50px]">
           <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {content.heading.includes("<br/>") || content.heading.includes("<br>")
               ? content.heading
@@ -39,9 +39,13 @@ export function ShopifyAppProcessSection({
           </h2>
         </div>
 
-        <div className="wrapper relative flex flex-wrap pl-[10px] max-[992px]:flex-col max-[992px]:p-0 after:absolute after:inset-x-0 after:top-0 after:h-[287px] after:-z-1 after:bg-[url('/assets/services/shopify-mobile-app-development/process/curv_shape_bg.svg')] after:bg-contain after:bg-center after:bg-no-repeat max-[992px]:after:h-[calc(100%+20px)] max-[992px]:after:bg-[url('/assets/services/shopify-mobile-app-development/process/mbl_curv_shape_bg.svg')] max-[992px]:after:bg-[length:100%_100%]">
+        <div
+          data-aos="fade-up"
+          className="wrapper relative flex flex-wrap pl-[10px] max-[992px]:flex-col max-[992px]:p-0 after:absolute after:inset-x-0 after:top-0 after:h-[287px] after:-z-1 after:bg-[url('/assets/services/shopify-mobile-app-development/process/curv_shape_bg.svg')] after:bg-contain after:bg-center after:bg-no-repeat max-[992px]:after:h-[calc(100%+20px)] max-[992px]:after:bg-[url('/assets/services/shopify-mobile-app-development/process/mbl_curv_shape_bg.svg')] max-[992px]:after:bg-[length:100%_100%]"
+        >
           {content.steps.map((step) => (
             <div
+              data-aos="fade-up"
               className="col-block w-1/4 max-[992px]:w-full"
               key={step.title}
             >
