@@ -48,7 +48,7 @@ export const CaseStudies: CollectionConfig = {
     { name: "industry", type: "text" },
     { name: "technology", type: "text", defaultValue: "Shopify Plus" },
     { name: "websiteUrl", type: "text" },
-    { name: "thumbnail", type: "upload", relationTo: "media", required: true },
+    { name: "thumbnail", type: "upload", relationTo: "media" },
     { name: "heroImage", type: "upload", relationTo: "media" },
     {
       name: "gallery",

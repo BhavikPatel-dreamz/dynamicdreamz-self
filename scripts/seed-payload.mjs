@@ -12,28 +12,6 @@ async function runSeed() {
   console.log("Starting Payload CMS seeding...");
   const payload = await getPayload({ config });
 
-  // 0. Ensure default media asset exists for required upload relations
-  let defaultMediaId = null;
-  try {
-    const existingMedia = await payload.find({ collection: "media", limit: 1 });
-    if (existingMedia.docs.length > 0) {
-      defaultMediaId = existingMedia.docs[0].id;
-    } else {
-      const candidatePath = path.resolve(
-        process.cwd(),
-        "public/assets/trade-theme-customization/hero/trade-theme-customization-service-img.webp",
-      );
-      const createdMedia = await payload.create({
-        collection: "media",
-        data: { alt: "Dynamic Dreamz Default Media" },
-        filePath: candidatePath,
-      });
-      defaultMediaId = createdMedia.id;
-      console.log(`  ✓ Created default Media placeholder: ID ${defaultMediaId}`);
-    }
-  } catch (err) {
-    console.warn("  ⚠ Notice when preparing default media:", err.message);
-  }
 
   // 1. Seed Site Settings
   console.log("Seeding Site Settings...");
@@ -127,7 +105,6 @@ async function runSeed() {
           slug: postDetail.slug,
           date: postDetail.date || new Date().toISOString(),
           displayDate: postDetail.displayDate,
-          coverImage: defaultMediaId,
           excerpt: postDetail.excerpt || postDetail.title || "",
           content: {
             root: {
@@ -194,7 +171,6 @@ async function runSeed() {
           industry: cs.industry || "",
           technology: cs.technology || "Shopify Plus",
           websiteUrl: cs.websiteUrl || "",
-          thumbnail: defaultMediaId,
           overview: cs.overview || cs.summary || "",
           challenge: challengeText,
           solution: solutionText,

@@ -44,7 +44,7 @@ export const Articles: CollectionConfig = {
     { name: "slug", type: "text", required: true, unique: true },
     { name: "date", type: "date", required: true },
     { name: "displayDate", type: "text" },
-    { name: "coverImage", type: "upload", relationTo: "media", required: true },
+    { name: "coverImage", type: "upload", relationTo: "media" },
     { name: "excerpt", type: "textarea", required: true },
     { name: "content", type: "richText", required: true },
     {

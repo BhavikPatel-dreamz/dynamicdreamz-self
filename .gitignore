@@ -49,3 +49,4 @@ temp_interactive_push.bat
 
 # payload
 public/uploads/*
+!public/uploads/.gitkeep
