@@ -12,6 +12,7 @@ import { Authors } from "./src/collections/Authors";
 import { Testimonials } from "./src/collections/Testimonials";
 import { Articles } from "./src/collections/Articles";
 import { CaseStudies } from "./src/collections/CaseStudies";
+import { Pages } from "./src/collections/Pages";
 
 import { Navigation } from "./src/globals/Navigation";
 import { SiteSettings } from "./src/globals/SiteSettings";
@@ -34,6 +35,7 @@ export default buildConfig({
     Testimonials,
     Articles,
     CaseStudies,
+    Pages,
   ],
   globals: [
     Navigation,

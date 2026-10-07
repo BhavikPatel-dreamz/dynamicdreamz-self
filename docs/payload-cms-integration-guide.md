@@ -698,7 +698,197 @@ export const CtaBannerBlock: Block = {
 };
 ```
 
-#### 9. Modular Pages Collection (`src/collections/Pages.ts`)
+#### 9. Brand Partners & Logo Slider Block (`src/blocks/BrandPartnersBlock.ts`)
+```ts
+import type { Block } from "payload";
+
+export const BrandPartnersBlock: Block = {
+  slug: "brand-partners",
+  labels: { singular: "Brand Partners / Logo Slider", plural: "Brand Partners / Logo Sliders" },
+  fields: [
+    { name: "heading", type: "text" },
+    { name: "description", type: "textarea" },
+    {
+      name: "logos",
+      type: "array",
+      label: "Partner & Client Logos",
+      fields: [
+        { name: "name", type: "text", required: true },
+        { name: "logo", type: "upload", relationTo: "media", required: true },
+        { name: "url", type: "text" },
+      ],
+    },
+    {
+      name: "variant",
+      type: "select",
+      defaultValue: "grid",
+      options: [
+        { label: "Grid", value: "grid" },
+        { label: "Slider / Marquee", value: "slider" },
+      ],
+    },
+  ],
+};
+```
+
+#### 10. Pricing & Hiring Models Block (`src/blocks/PricingModelsBlock.ts`)
+```ts
+import type { Block } from "payload";
+
+export const PricingModelsBlock: Block = {
+  slug: "pricing-models",
+  labels: { singular: "Pricing & Hiring Models", plural: "Pricing & Hiring Models" },
+  fields: [
+    { name: "eyebrow", type: "text" },
+    { name: "heading", type: "text", required: true },
+    { name: "description", type: "textarea" },
+    {
+      name: "models",
+      type: "array",
+      label: "Engagement / Pricing Tiers",
+      fields: [
+        { name: "label", type: "text", required: true },
+        { name: "badge", type: "text" },
+        { name: "price", type: "text", required: true },
+        { name: "description", type: "textarea" },
+        {
+          name: "bullets",
+          type: "array",
+          fields: [{ name: "text", type: "text", required: true }],
+        },
+        { name: "ctaLabel", type: "text", required: true },
+        { name: "ctaHref", type: "text", required: true },
+      ],
+    },
+  ],
+};
+```
+
+#### 11. Technologies & Integrations Grid Block (`src/blocks/TechnologiesGridBlock.ts`)
+```ts
+import type { Block } from "payload";
+
+export const TechnologiesGridBlock: Block = {
+  slug: "technologies-grid",
+  labels: { singular: "Technologies & Integrations Grid", plural: "Technologies & Integrations Grids" },
+  fields: [
+    { name: "eyebrow", type: "text" },
+    { name: "heading", type: "text", required: true },
+    { name: "description", type: "textarea" },
+    {
+      name: "categories",
+      type: "array",
+      label: "Technology Categories",
+      fields: [
+        { name: "category", type: "text", required: true },
+        {
+          name: "technologies",
+          type: "array",
+          fields: [
+            { name: "name", type: "text", required: true },
+            { name: "icon", type: "upload", relationTo: "media" },
+          ],
+        },
+      ],
+    },
+  ],
+};
+```
+
+#### 12. Two-Column Image with Text Block (`src/blocks/TwoColImageWithTextBlock.ts`)
+```ts
+import type { Block } from "payload";
+
+export const TwoColImageWithTextBlock: Block = {
+  slug: "image-with-text",
+  labels: { singular: "Image with Text (Split Content)", plural: "Image with Text Sections" },
+  fields: [
+    { name: "heading", type: "text", required: true },
+    { name: "description", type: "textarea", required: true },
+    { name: "image", type: "upload", relationTo: "media", required: true },
+    {
+      name: "imagePosition",
+      type: "select",
+      defaultValue: "left",
+      options: [
+        { label: "Image on Left", value: "left" },
+        { label: "Image on Right", value: "right" },
+      ],
+    },
+    {
+      name: "bullets",
+      type: "array",
+      label: "Feature Checklist",
+      fields: [{ name: "text", type: "text", required: true }],
+    },
+    { name: "ctaLabel", type: "text" },
+    { name: "ctaHref", type: "text" },
+  ],
+};
+```
+
+#### 13. Industries Served Grid Block (`src/blocks/IndustriesGridBlock.ts`)
+```ts
+import type { Block } from "payload";
+
+export const IndustriesGridBlock: Block = {
+  slug: "industries-grid",
+  labels: { singular: "Industries Served Grid", plural: "Industries Served Grids" },
+  fields: [
+    { name: "eyebrow", type: "text" },
+    { name: "heading", type: "text", required: true },
+    { name: "description", type: "textarea" },
+    {
+      name: "industries",
+      type: "array",
+      label: "Industry Cards",
+      fields: [
+        { name: "title", type: "text", required: true },
+        { name: "eyebrow", type: "text" },
+        { name: "description", type: "textarea" },
+        { name: "image", type: "upload", relationTo: "media", required: true },
+        { name: "href", type: "text" },
+      ],
+    },
+    {
+      name: "variant",
+      type: "select",
+      defaultValue: "grid",
+      options: [
+        { label: "Grid", value: "grid" },
+        { label: "Carousel / Drag Scroll", value: "carousel" },
+      ],
+    },
+  ],
+};
+```
+
+#### 14. Rich Text Content / Legal Block (`src/blocks/RichTextBlock.ts`)
+```ts
+import type { Block } from "payload";
+
+export const RichTextBlock: Block = {
+  slug: "rich-text-content",
+  labels: { singular: "Rich Text Content / Legal", plural: "Rich Text Content Sections" },
+  fields: [
+    { name: "heading", type: "text" },
+    { name: "eyebrow", type: "text" },
+    { name: "content", type: "richText", required: true },
+    {
+      name: "containerWidth",
+      type: "select",
+      defaultValue: "standard",
+      options: [
+        { label: "Narrow (Editorial / Legal)", value: "narrow" },
+        { label: "Standard", value: "standard" },
+        { label: "Full Width", value: "full" },
+      ],
+    },
+  ],
+};
+```
+
+#### 15. Modular Pages Collection (`src/collections/Pages.ts`)
 ```ts
 import type { CollectionConfig } from "payload";
 import { HeroBlock } from "@/blocks/HeroBlock";
@@ -709,6 +899,12 @@ import { FaqAccordionBlock } from "@/blocks/FaqAccordionBlock";
 import { HappyClientsBlock } from "@/blocks/HappyClientsBlock";
 import { CaseStudiesBlock } from "@/blocks/CaseStudiesBlock";
 import { CtaBannerBlock } from "@/blocks/CtaBannerBlock";
+import { BrandPartnersBlock } from "@/blocks/BrandPartnersBlock";
+import { PricingModelsBlock } from "@/blocks/PricingModelsBlock";
+import { TechnologiesGridBlock } from "@/blocks/TechnologiesGridBlock";
+import { TwoColImageWithTextBlock } from "@/blocks/TwoColImageWithTextBlock";
+import { IndustriesGridBlock } from "@/blocks/IndustriesGridBlock";
+import { RichTextBlock } from "@/blocks/RichTextBlock";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
@@ -735,6 +931,12 @@ export const Pages: CollectionConfig = {
         HappyClientsBlock,
         CaseStudiesBlock,
         CtaBannerBlock,
+        BrandPartnersBlock,
+        PricingModelsBlock,
+        TechnologiesGridBlock,
+        TwoColImageWithTextBlock,
+        IndustriesGridBlock,
+        RichTextBlock,
       ],
     },
     {
@@ -924,12 +1126,13 @@ export async function getPayloadPageBySlug(slug: string) {
 
 ### Phase 6: Automated Seeding Script (`scripts/seed-payload.mjs`)
 
-This script populates all 103 local blog articles, navigation, and company settings into the PostgreSQL database:
+This script populates company settings, navigation, all 103 local blog articles, and all 58 case studies into the PostgreSQL database:
 
 ```js
 import { getPayload } from "payload";
 import config from "../dist/payload.config.js"; // or direct payload.config.ts via tsx
 import blogIndex from "../src/content/blog-posts/index.json" assert { type: "json" };
+import { caseStudyDetails } from "../src/content/case-study-details.ts";
 import { footerNavigation, primaryNavigation } from "../src/data/navigation.ts";
 import { siteConfig } from "../src/data/site.ts";
 import fs from "node:fs/promises";
@@ -1023,9 +1226,41 @@ async function runSeed() {
           },
         },
       });
-      console.log(`  ✓ Seeded: ${postDetail.slug}`);
+      console.log(`  ✓ Seeded Article: ${postDetail.slug}`);
     } catch (err) {
-      console.warn(`  ✗ Failed to seed ${postSummary.slug}:`, err.message);
+      console.warn(`  ✗ Failed to seed article ${postSummary.slug}:`, err.message);
+    }
+  }
+
+  // 4. Seed Case Studies (all 58 case studies)
+  console.log(`Seeding ${caseStudyDetails.length} Case Studies...`);
+  for (const cs of caseStudyDetails) {
+    try {
+      await payload.create({
+        collection: "case-studies",
+        data: {
+          title: cs.title,
+          slug: cs.slug,
+          clientName: cs.clientName,
+          industry: cs.industry || "",
+          technology: cs.technology || "Shopify Plus",
+          websiteUrl: cs.websiteUrl || "",
+          overview: cs.overview || "",
+          challenge: cs.challenge || "",
+          solution: cs.solution || "",
+          metrics: cs.results?.metrics?.map((m) => ({
+            value: m.value,
+            label: m.label,
+          })) || [],
+          seo: {
+            metaTitle: cs.seo?.title || cs.title,
+            metaDescription: cs.seo?.description || cs.overview || "",
+          },
+        },
+      });
+      console.log(`  ✓ Seeded Case Study: ${cs.slug}`);
+    } catch (err) {
+      console.warn(`  ✗ Failed to seed case study ${cs.slug}:`, err.message);
     }
   }
 
@@ -1038,42 +1273,165 @@ runSeed();
 
 ---
 
-## 5. Non-Technical Operations Manual for the WordPress Team
+### Phase 7: Dynamic Frontend Route Wiring (Seamless Hybrid / Fallback Strategy)
 
-### 1. Logging In
-- Admin URL: `http://localhost:3000/admin` (or `https://www.dynamicdreamz.com/admin`)
-- Enter email and password.
+To achieve 100% CMS content management without losing static site performance:
 
-### 2. Editing Menus (Header & Footer)
-1. Go to **Globals** $\rightarrow$ **Header & Footer Menus**.
-2. Click on any section (e.g., *Shopify*, *Services*, *Hire Developers*).
-3. Add, edit, or reorder links.
-4. Click **Save** $\rightarrow$ Changes reflect across the website immediately.
+#### 1. Blog Archive & Details Route Wiring
+- **`/blogs` (`src/app/(frontend)/blogs/page.tsx`)**:
+  - Fetch articles from Payload via `getPayloadArticles()`.
+  - If Payload returns articles, use them; if empty/offline, seamlessly fall back to local `filterBlogArchiveArticles()`.
+- **`/blogs/[slug]` (`src/app/(frontend)/blogs/[slug]/page.tsx`)**:
+  - Change `export const dynamicParams = true;` (enabling new CMS articles to render on-demand).
+  - Check `getPayloadArticleBySlug(slug)` first; fall back to `getBlogPostBySlug(slug)`.
 
-### 3. Creating a New Landing Page with the Page Builder
-1. Go to **Pages** $\rightarrow$ **Create New**.
-2. Enter **Title** (e.g. `Shopify Plus Agency in London`) and **Slug** (`shopify-plus-agency-in-london`).
-3. Under **Page Layout Sections**, click **Add Section**:
-   - Choose **Hero** $\rightarrow$ Enter heading, subtitle, button text, and upload hero image.
-   - Choose **Proof Counters** $\rightarrow$ Add statistics (`5000+ Projects`, `150+ Experts`).
-   - Choose **Features Grid** $\rightarrow$ Add card titles, descriptions, and icons.
-   - Choose **FAQ Accordion** $\rightarrow$ Add frequently asked questions.
-   - Choose **CTA Banner** $\rightarrow$ Configure call-to-action button.
-4. Reorder sections with drag-and-drop.
-5. In **SEO Settings**, enter Meta Title and Meta Description.
-6. Click **Publish** $\rightarrow$ The page is live immediately.
+#### 2. Case Studies Archive & Details Route Wiring
+- **`/case-studies` (`src/app/(frontend)/case-studies/page.tsx`)**:
+  - Fetch case studies from Payload via `getPayloadCaseStudies()` with fallback to local `caseStudyDetails`.
+- **`/case-studies/[slug]` (`src/app/(frontend)/case-studies/[slug]/page.tsx`)**:
+  - Change `export const dynamicParams = true;`.
+  - Check `getPayloadCaseStudyBySlug(slug)` first; fall back to local `getCaseStudyBySlug(slug)`.
 
-### 4. Writing & Publishing Blog Articles
-1. Go to **Articles** $\rightarrow$ **Create New**.
-2. Enter **Title**, pick **Date**, and select **Category**.
-3. Upload the **Cover Image** (Payload auto-converts to WebP and responsive sizes).
-4. Write content in the rich-text editor (supports headings, bold, bullet points, blockquotes, and code snippets).
-5. Add FAQ items at the bottom of the article.
-6. Click **Publish**.
+#### 3. Modular Pages Catch-All Route
+- **`[...slug]` (`src/app/(frontend)/[...slug]/page.tsx`)**:
+  - Resolves any custom landing page created in Payload CMS.
+  - Automatically loads SEO metadata, Draft mode preview banner, and maps all 14 visual blocks via `BlockRenderer`.
 
 ---
 
-## 6. Verification Checklist & Definition of Done
+### Phase 8: Real-Time Live Preview & Next.js Draft Mode Integration
+
+Allows editors in Payload Admin (`/admin`) to preview draft changes side-by-side in real-time before publishing:
+
+#### 1. Draft Mode Activation Route (`src/app/(frontend)/api/draft/route.ts`)
+```ts
+import { draftMode } from "next/headers";
+import { redirect } from "next/navigation";
+import { type NextRequest } from "next/server";
+
+export async function GET(req: NextRequest) {
+  const { searchParams } = new URL(req.url);
+  const secret = searchParams.get("secret");
+  const slug = searchParams.get("slug");
+  const path = searchParams.get("path");
+
+  if (secret !== process.env.PAYLOAD_PREVIEW_SECRET && secret !== process.env.PAYLOAD_SECRET) {
+    return new Response("Invalid preview token", { status: 401 });
+  }
+
+  const draft = await draftMode();
+  draft.enable();
+
+  const redirectUrl = path || (slug ? `/${slug}` : "/");
+  redirect(redirectUrl);
+}
+```
+
+#### 2. Exit Draft Mode Route (`src/app/(frontend)/api/exit-preview/route.ts`)
+Disables Next.js draft mode and redirects the user back to the public page. (Already configured in the codebase).
+
+#### 3. Collection Live Preview Configuration
+Attach `admin.livePreview` to `Pages`, `Articles`, and `CaseStudies` in their collection configs:
+```ts
+admin: {
+  livePreview: {
+    url: ({ data }) => {
+      const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000";
+      return `${baseUrl}/api/draft?secret=${process.env.PAYLOAD_SECRET}&slug=${data.slug}`;
+    },
+  },
+}
+```
+
+---
+
+### Phase 9: Automated On-Demand Cache Revalidation
+
+Ensures that whenever an editor updates a page, post, case study, or navigation in Payload Admin, Next.js instantly purges the ISR cache:
+
+#### 1. Revalidation API Route (`src/app/(frontend)/api/revalidate/route.ts`)
+```ts
+import { revalidatePath, revalidateTag } from "next/cache";
+import { type NextRequest, NextResponse } from "next/server";
+
+export async function POST(req: NextRequest) {
+  const secret = req.headers.get("x-revalidate-secret") || req.nextUrl.searchParams.get("secret");
+  if (secret !== process.env.PAYLOAD_SECRET) {
+    return NextResponse.json({ message: "Invalid token" }, { status: 401 });
+  }
+
+  const { path, tag } = await req.json().catch(() => ({}));
+  if (path) revalidatePath(path);
+  if (tag) revalidateTag(tag);
+
+  return NextResponse.json({ revalidated: true, now: Date.now() });
+}
+```
+
+#### 2. Collection `afterChange` and `afterDelete` Hooks
+In `Pages`, `Articles`, `CaseStudies`, `Navigation`, and `SiteSettings`:
+```ts
+hooks: {
+  afterChange: [
+    ({ doc, previousDoc, req }) => {
+      // Trigger Next.js revalidation for the modified route
+      if (doc?.slug) {
+        revalidatePath(`/${doc.slug}`);
+      }
+    },
+  ],
+}
+```
+
+---
+
+### Phase 10: Non-Technical Operations Runbook for the WordPress Team
+
+#### 1. Logging In
+- Admin URL: `http://localhost:3000/admin` (or `https://www.dynamicdreamz.com/admin`)
+- Enter your editor or admin email and password.
+
+#### 2. Managing Menus (Header Dropdowns & Footer Columns)
+1. Go to **Globals** $\rightarrow$ **Header & Footer Menus**.
+2. Click on **Header Navigation Items** to add a top-level menu or dropdown item.
+3. Edit link labels, URLs, descriptions, or promo badges.
+4. Click **Save** $\rightarrow$ Reflects across the entire website instantly.
+
+#### 3. Updating Company Info (Phone, WhatsApp, Addresses)
+1. Go to **Globals** $\rightarrow$ **Company Information**.
+2. Update phone numbers, WhatsApp digits, contact emails, Skype ID, or address.
+3. Click **Save** $\rightarrow$ The header, footer, contact widget, and metadata update across all 322+ pages.
+
+#### 4. Assembling Any Landing Page with the 14 Drag-and-Drop Blocks
+1. Go to **Pages** $\rightarrow$ **Create New**.
+2. Enter **Title** (e.g. `Shopify Plus Agency in London`) and **Slug** (`shopify-plus-agency-in-london`).
+3. Under **Page Layout Sections**, click **Add Section** to choose from:
+   - **Hero Section**: Heading, description, CTA, split/centered layout, hero image.
+   - **Proof Counters**: Numeric stats (*5000+ Projects*, *150+ Experts*).
+   - **Features Grid**: 3- or 4-column card grid with custom icons and links.
+   - **Brand Partners**: Client logo marquee / partner slider.
+   - **Technologies Grid**: Categorized tech stack & platform integrations.
+   - **Pricing Models**: Engagement and developer hiring packages.
+   - **Image with Text**: 2-column editorial section with feature checklist.
+   - **Process Timeline**: Numbered step-by-step roadmap (01, 02, 03...).
+   - **FAQ Accordion**: Expandable Q&A accordion questions.
+   - **Industries Served**: Vertical industry cards (Fashion, Food, Beauty, etc.).
+   - **Happy Clients**: Testimonial carousels and video review dialogs.
+   - **Case Studies Grid**: Filtered case study preview cards.
+   - **CTA Banner**: Full-width conversion banner with button.
+   - **Rich Text Content**: Formatted editorial copy or legal terms.
+4. Reorder sections with drag-and-drop.
+5. In **SEO Settings**, set Meta Title, Description, and Social Share Image.
+6. Click **Publish** $\rightarrow$ Live immediately!
+
+#### 5. Publishing Articles & Case Studies
+- Go to **Articles** or **Case Studies** $\rightarrow$ **Create New**.
+- Use Lexical Rich Text editor, upload media, add metrics or FAQs, and set SEO fields.
+- Click **Publish**.
+
+---
+
+## Verification Checklist & Definition of Done
 
 Every implementation phase must pass all of the following checks before being marked complete:
 
@@ -1095,3 +1453,4 @@ npm run build
 ```
 
 When all 5 commands exit with code 0, the Payload CMS integration is **100% production-ready**.
+

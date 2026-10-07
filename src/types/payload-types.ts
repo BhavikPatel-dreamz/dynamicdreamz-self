@@ -74,6 +74,7 @@ export interface Config {
     testimonials: Testimonial;
     articles: Article;
     'case-studies': CaseStudy;
+    pages: Page;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -88,6 +89,7 @@ export interface Config {
     testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
     articles: ArticlesSelect<false> | ArticlesSelect<true>;
     'case-studies': CaseStudiesSelect<false> | CaseStudiesSelect<true>;
+    pages: PagesSelect<false> | PagesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -333,6 +335,257 @@ export interface CaseStudy {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages".
+ */
+export interface Page {
+  id: number;
+  title: string;
+  slug: string;
+  sections?:
+    | (
+        | {
+            title: string;
+            subheading?: string | null;
+            description?: string | null;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            eyebrows?:
+              | {
+                  text?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            image?: (number | null) | Media;
+            showReviews?: boolean | null;
+            variant?: ('split' | 'centered') | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero';
+          }
+        | {
+            heading: string;
+            description?: string | null;
+            counters?:
+              | {
+                  value: number;
+                  suffix?: string | null;
+                  label: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'proof-counters';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            features?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  linkText?: string | null;
+                  linkUrl?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'features-grid';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            steps?:
+              | {
+                  stepNumber?: string | null;
+                  title: string;
+                  description?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'process-timeline';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            faqs?:
+              | {
+                  question: string;
+                  answer: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'faq-accordion';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            testimonials?: (number | Testimonial)[] | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'happy-clients';
+          }
+        | {
+            eyebrow?: string | null;
+            heading?: string | null;
+            description?: string | null;
+            caseStudies?: (number | CaseStudy)[] | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'case-studies-block';
+          }
+        | {
+            heading: string;
+            description?: string | null;
+            btnText: string;
+            btnUrl: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cta-banner';
+          }
+        | {
+            heading?: string | null;
+            description?: string | null;
+            logos?:
+              | {
+                  name: string;
+                  logo: number | Media;
+                  url?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            variant?: ('grid' | 'slider') | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'brand-partners';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            models?:
+              | {
+                  label: string;
+                  badge?: string | null;
+                  price: string;
+                  description?: string | null;
+                  bullets?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  ctaLabel: string;
+                  ctaHref: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'pricing-models';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            categories?:
+              | {
+                  category: string;
+                  technologies?:
+                    | {
+                        name: string;
+                        icon?: (number | null) | Media;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'technologies-grid';
+          }
+        | {
+            heading: string;
+            description: string;
+            image: number | Media;
+            imagePosition?: ('left' | 'right') | null;
+            bullets?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'image-with-text';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            industries?:
+              | {
+                  title: string;
+                  eyebrow?: string | null;
+                  description?: string | null;
+                  image: number | Media;
+                  href?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            variant?: ('grid' | 'carousel') | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'industries-grid';
+          }
+        | {
+            heading?: string | null;
+            eyebrow?: string | null;
+            content: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
+            containerWidth?: ('narrow' | 'standard' | 'full') | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'rich-text-content';
+          }
+      )[]
+    | null;
+  seo?: {
+    metaTitle?: string | null;
+    metaDescription?: string | null;
+    canonicalUrl?: string | null;
+    metaImage?: (number | null) | Media;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -382,6 +635,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'case-studies';
         value: number | CaseStudy;
+      } | null)
+    | ({
+        relationTo: 'pages';
+        value: number | Page;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -607,6 +864,258 @@ export interface CaseStudiesSelect<T extends boolean = true> {
     | {
         metaTitle?: T;
         metaDescription?: T;
+        metaImage?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages_select".
+ */
+export interface PagesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  sections?:
+    | T
+    | {
+        hero?:
+          | T
+          | {
+              title?: T;
+              subheading?: T;
+              description?: T;
+              ctaLabel?: T;
+              ctaHref?: T;
+              eyebrows?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              image?: T;
+              showReviews?: T;
+              variant?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'proof-counters'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              counters?:
+                | T
+                | {
+                    value?: T;
+                    suffix?: T;
+                    label?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'features-grid'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              features?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    linkText?: T;
+                    linkUrl?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'process-timeline'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              steps?:
+                | T
+                | {
+                    stepNumber?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'faq-accordion'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              faqs?:
+                | T
+                | {
+                    question?: T;
+                    answer?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'happy-clients'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              testimonials?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'case-studies-block'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              caseStudies?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'cta-banner'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              btnText?: T;
+              btnUrl?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'brand-partners'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              logos?:
+                | T
+                | {
+                    name?: T;
+                    logo?: T;
+                    url?: T;
+                    id?: T;
+                  };
+              variant?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'pricing-models'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              models?:
+                | T
+                | {
+                    label?: T;
+                    badge?: T;
+                    price?: T;
+                    description?: T;
+                    bullets?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    ctaLabel?: T;
+                    ctaHref?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'technologies-grid'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              categories?:
+                | T
+                | {
+                    category?: T;
+                    technologies?:
+                      | T
+                      | {
+                          name?: T;
+                          icon?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'image-with-text'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              image?: T;
+              imagePosition?: T;
+              bullets?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              ctaLabel?: T;
+              ctaHref?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'industries-grid'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              industries?:
+                | T
+                | {
+                    title?: T;
+                    eyebrow?: T;
+                    description?: T;
+                    image?: T;
+                    href?: T;
+                    id?: T;
+                  };
+              variant?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'rich-text-content'?:
+          | T
+          | {
+              heading?: T;
+              eyebrow?: T;
+              content?: T;
+              containerWidth?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        canonicalUrl?: T;
         metaImage?: T;
       };
   updatedAt?: T;

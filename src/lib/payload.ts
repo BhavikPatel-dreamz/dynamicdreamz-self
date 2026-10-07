@@ -184,19 +184,13 @@ export async function getPayloadPageBySlug(
 ) {
   try {
     const payload = await getPayload({ config });
-    const collections = payload.collections as Record<string, unknown>;
-    if ("pages" in collections) {
-      const result = await (payload as unknown as {
-        find: (args: Record<string, unknown>) => Promise<{ docs: unknown[] }>;
-      }).find({
-        collection: "pages",
-        where: { slug: { equals: slug } },
-        draft: options?.preview,
-        limit: 1,
-      });
-      return (result.docs[0] as Record<string, unknown>) || null;
-    }
-    return null;
+    const res = await payload.find({
+      collection: "pages",
+      where: { slug: { equals: slug } },
+      draft: options?.preview,
+      limit: 1,
+    });
+    return res.docs[0] || null;
   } catch (err) {
     console.warn(`Payload getPayloadPageBySlug(${slug}) warning:`, err);
     return null;

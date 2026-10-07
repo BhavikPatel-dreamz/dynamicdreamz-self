@@ -13,6 +13,13 @@ import {
   ServicesCaseStudiesSection,
   type CaseStudyPreviewItem,
 } from "@/components/sections/services-case-studies-section";
+import { BrandPartnersSection } from "@/components/sections/home/brand-partners-section";
+import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
+import { TechnologiesWorkWithSection } from "@/components/sections/technologies-work-with-section";
+import { TwoColImageWithTextSection } from "@/components/sections/two-col-image-with-text-section";
+import { IndustriesServedSection } from "@/components/sections/shopify-plus-agency/industries-served-section";
+import { Container } from "@/components/ui/container";
+import { RichText } from "@/components/ui/rich-text";
 import { sharedUiCopy } from "@/content/common";
 
 export type CmsMedia =
@@ -158,6 +165,115 @@ export interface BlockCaseStudies {
   }[];
 }
 
+export interface BlockBrandPartners {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading?: string;
+  description?: string;
+  variant?: "grid" | "slider";
+  logos?: readonly {
+    id?: string | number;
+    name: string;
+    logo?: CmsMedia | null;
+    url?: string;
+  }[];
+}
+
+export interface BlockPricingModels {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  models?: readonly {
+    id?: string | number;
+    label: string;
+    badge?: string;
+    price: string;
+    description?: string;
+    bullets?: readonly { text: string }[];
+    ctaLabel: string;
+    ctaHref: string;
+  }[];
+}
+
+export interface BlockTechnologiesGrid {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  categories?: readonly {
+    id?: string | number;
+    category: string;
+    technologies?: readonly {
+      id?: string | number;
+      name: string;
+      icon?: CmsMedia | null;
+    }[];
+  }[];
+}
+
+export interface BlockTwoColImageWithText {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description: string;
+  image?: CmsMedia | null;
+  imagePosition?: "left" | "right";
+  bullets?: readonly { text: string }[];
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+export interface BlockIndustriesGrid {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  variant?: "grid" | "carousel";
+  industries?: readonly {
+    id?: string | number;
+    title: string;
+    eyebrow?: string;
+    description?: string;
+    image?: CmsMedia | null;
+    href?: string;
+  }[];
+}
+
+export interface BlockRichTextContent {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading?: string;
+  eyebrow?: string;
+  containerWidth?: "narrow" | "standard" | "full";
+  content?: unknown;
+}
+
+function serializeLexicalToHtml(node: unknown): string {
+  if (!node || typeof node !== "object") return "";
+  const obj = node as { root?: unknown; children?: unknown[]; text?: string; type?: string };
+  if (obj.root) return serializeLexicalToHtml(obj.root);
+  if (obj.text) return obj.text;
+  if (Array.isArray(obj.children)) {
+    const inner = obj.children.map(serializeLexicalToHtml).join("");
+    if (obj.type === "paragraph") return `<p>${inner}</p>`;
+    if (obj.type === "heading") return `<h3>${inner}</h3>`;
+    if (obj.type === "list") return `<ul>${inner}</ul>`;
+    if (obj.type === "listitem") return `<li>${inner}</li>`;
+    return inner;
+  }
+  return "";
+}
+
 export type CmsSectionBlock =
   | BlockHero
   | BlockProofCounters
@@ -167,6 +283,12 @@ export type CmsSectionBlock =
   | BlockProcessTimeline
   | BlockHappyClients
   | BlockCaseStudies
+  | BlockBrandPartners
+  | BlockPricingModels
+  | BlockTechnologiesGrid
+  | BlockTwoColImageWithText
+  | BlockIndustriesGrid
+  | BlockRichTextContent
   | { [key: string]: unknown; __component?: string; blockType?: string; id?: string | number };
 
 export interface BlockRendererProps {
@@ -375,6 +497,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             );
           }
 
+          case "case-studies-block":
           case "case-studies": {
             const csBlock = block as BlockCaseStudies;
             const caseStudiesList = csBlock.caseStudies ?? [];
@@ -399,6 +522,156 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 items={items}
                 key={blockKey}
               />
+            );
+          }
+
+          case "brand-partners": {
+            const bpBlock = block as BlockBrandPartners;
+            const logos = (bpBlock.logos ?? []).map((item) => ({
+              src: resolveMediaUrl(item.logo) || "/assets/brand/default-logo.svg",
+              alt: resolveMediaAlt(item.logo, item.name),
+              width: typeof item.logo === "object" && item.logo?.width ? item.logo.width : 160,
+              height: typeof item.logo === "object" && item.logo?.height ? item.logo.height : 60,
+            }));
+
+            return (
+              <BrandPartnersSection
+                description={bpBlock.description}
+                heading={bpBlock.heading}
+                items={logos.length > 0 ? logos : undefined}
+                key={blockKey}
+              />
+            );
+          }
+
+          case "pricing-models": {
+            const pmBlock = block as BlockPricingModels;
+            const items = (pmBlock.models ?? []).map((m) => ({
+              label: m.label,
+              badge: m.badge || "",
+              price: m.price,
+              description: m.description || "",
+              bullets: m.bullets?.map((b) => b.text),
+              ctaLabel: m.ctaLabel,
+              ctaHref: m.ctaHref,
+            }));
+
+            return (
+              <PricingTableSection
+                content={{
+                  eyebrow: pmBlock.eyebrow,
+                  heading: pmBlock.heading,
+                  description: pmBlock.description,
+                  items,
+                }}
+                key={blockKey}
+              />
+            );
+          }
+
+          case "technologies-grid": {
+            const techBlock = block as BlockTechnologiesGrid;
+            const categories = (techBlock.categories ?? []).map((cat) => ({
+              category: cat.category,
+              technologies: (cat.technologies ?? []).map((t) => t.name),
+            }));
+
+            return (
+              <TechnologiesWorkWithSection
+                content={{
+                  eyebrow: techBlock.eyebrow,
+                  heading: techBlock.heading,
+                  description: techBlock.description,
+                  categories,
+                }}
+                key={blockKey}
+              />
+            );
+          }
+
+          case "image-with-text": {
+            const iwtBlock = block as BlockTwoColImageWithText;
+            const imageUrl = resolveMediaUrl(iwtBlock.image);
+
+            return (
+              <TwoColImageWithTextSection
+                description={iwtBlock.description}
+                heading={iwtBlock.heading}
+                image={{
+                  src: imageUrl || "/assets/services/default-service.webp",
+                  alt: resolveMediaAlt(iwtBlock.image, iwtBlock.heading),
+                  width:
+                    typeof iwtBlock.image === "object" && iwtBlock.image?.width
+                      ? iwtBlock.image.width
+                      : 500,
+                  height:
+                    typeof iwtBlock.image === "object" && iwtBlock.image?.height
+                      ? iwtBlock.image.height
+                      : 400,
+                }}
+                imagePosition={iwtBlock.imagePosition || "left"}
+                key={blockKey}
+              />
+            );
+          }
+
+          case "industries-grid": {
+            const indBlock = block as BlockIndustriesGrid;
+            const items = (indBlock.industries ?? []).map((ind) => ({
+              title: ind.title,
+              eyebrow: ind.eyebrow,
+              description: ind.description || "",
+              image: resolveMediaUrl(ind.image) || "/assets/industries/fashion.webp",
+              imageAlt: resolveMediaAlt(ind.image, ind.title),
+              href: ind.href,
+            }));
+
+            return (
+              <IndustriesServedSection
+                content={{
+                  eyebrow: indBlock.eyebrow,
+                  heading: indBlock.heading,
+                  description: indBlock.description,
+                  items,
+                }}
+                key={blockKey}
+                variant={indBlock.variant || "grid"}
+              />
+            );
+          }
+
+          case "rich-text-content": {
+            const rtBlock = block as BlockRichTextContent;
+            const html =
+              typeof rtBlock.content === "string"
+                ? rtBlock.content
+                : serializeLexicalToHtml(rtBlock.content);
+
+            const containerClass =
+              rtBlock.containerWidth === "narrow"
+                ? "max-w-[800px] mx-auto"
+                : rtBlock.containerWidth === "full"
+                  ? "w-full"
+                  : "max-w-[1200px] mx-auto";
+
+            return (
+              <section className="bg-white py-16 max-[767px]:py-10" key={blockKey}>
+                <Container>
+                  <div className={containerClass}>
+                    {rtBlock.eyebrow ? (
+                      <span className="text-brand-red mb-2 block font-montserrat text-xs font-bold uppercase tracking-wider">
+                        {rtBlock.eyebrow}
+                      </span>
+                    ) : null}
+                    {rtBlock.heading ? (
+                      <h2 className="text-ink mb-6 font-sans text-3xl font-bold max-[767px]:text-2xl">
+                        {rtBlock.heading}
+                      </h2>
+                    ) : null}
+                    <RichText html={html} />
+                  </div>
+                </Container>
+              </section>
             );
           }
 
