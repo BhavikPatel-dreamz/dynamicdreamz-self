@@ -141,6 +141,8 @@ export function QuoteForm({
               id="quote-phone"
               name="phone"
               placeholder={phonePlaceholder ?? undefined}
+              searchPlaceholder={quoteFormCopy.phoneSearchPlaceholder}
+              selectAriaLabel={quoteFormCopy.phoneCountrySelectAriaLabel}
               maxLength={400}
             />
           </div>

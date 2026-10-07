@@ -2,110 +2,102 @@
 
 Live URL: https://www.dynamicdreamz.com/contact-us/
 Local route: `/contact-us`
-Date checked: 2026-08-17
+Date checked: 2026-10-07
 Browser: Chromium 140 headless
 
 ## Captures
 
 - Live desktop: `docs/visual-captures/contact-us-live-desktop.png` at 1440px.
+- Live tablet: `docs/visual-captures/contact-us-live-tablet.png` at 768px.
 - Live mobile: `docs/visual-captures/contact-us-live-mobile.png` at 390px.
-- Local desktop: `docs/visual-captures/contact-us-local-desktop.png` at
-  1440px, with viewport crop in
-  `docs/visual-captures/contact-us-local-desktop-viewport.png`.
+- Local desktop: `docs/visual-captures/contact-us-local-desktop.png` at 1440px.
+- Local tablet: `docs/visual-captures/contact-us-local-tablet.png` at 768px.
 - Local mobile: `docs/visual-captures/contact-us-local-mobile.png` at 390px.
-- Live page source: `docs/visual-captures/source/contact-us-live-page.html`.
 
 ## Sources Inspected
 
-- Rendered live page and View Page Source.
-- `docs/visual-captures/source/contact-main.css`.
-- `docs/visual-captures/source/contact-media.css`.
-- `docs/visual-captures/source/dynamicdreamz-style.css`.
-- `docs/visual-captures/source/dynamicdreamz-default-media.css`.
+- Rendered live page and View Page Source (live site modified 2026-10-05).
+- `scratch/contact-us-live.css`.
+- `scratch/extracted-rules-utf8.css`.
+- Computed styles from Chrome DevTools for hero, jump pills, inquiry card, office cards, and contact details grid.
 - Shared live header/footer CSS for surrounding page geometry.
 
-## Live Structure
+## Live Structure (October 2026 Redesign)
 
-1. Fixed shared header.
-2. Centered `Connect with us` hero with two supporting lines.
-3. Three-column contact panel for sales, jobs, and social profiles.
-4. `Our Offices` two-card grid for Surat and Ahmedabad.
-5. Gradient-border `Reach Out to Us` inquiry form.
+1. Shared fixed site header.
+2. `inner-hero-sec contact-sec` with cream/peach background (`#fbeed5`), eyebrow `Contact Dynamic Dreamz`, H1 `Let’s connect.`, paragraph `Have a project in mind, a question about our work, or need help scaling your store? Drop us a line or visit one of our offices below.`, and 3 anchor jump links (`#message`, `#offices`, `#contact-details`).
+3. `#message` Reach out form card: nested within the `#fbeed5` background with negative margin / seamless continuity. White card with 30px radius, 1px border `rgba(40,40,40,0.11)`, `0 28px 70px rgba(0,0,0,0.06)` shadow, eyebrow `Send us a message`, H2 `What can we help you with?`, subtext, 2-column input grid (First name, Last name, Email address, Phone number with +91 country prefix indicator, Project overview, Budget dropdown), bottom row with left-aligned note (`Your message will be directed to the appropriate team.`) and right-aligned `submit inquiry` pill button.
+4. `#offices` Our offices section: mint/sage gray background (`#eff4ef`), eyebrow `Send us a message`, H2 `Our offices`, subtext, 2 white cards for Surat and Ahmedabad with city title, address, telephone link with red phone icon, and `GET DIRECTIONS` link with red diagonal arrow icon. Note: live DOM commented out office photos (`<!-- div class="office-img" ... -->`), so only the text and contact info card render per WordPress hidden DOM rules.
+5. `#contact-details` Contact Details section: pure white background (`#ffffff`), eyebrow `Other ways to reach us`, H2 `Contact Details`, 4-column compact grid with hover tint `#f7f4e9` for:
+   - Sales: email, phone
+   - Careers: email, phone, `View Open Positions` link to `/career`
+   - Book a Discovery Call: description, `Schedule a Call` link to `/book-a-discovery-call`
+   - Follow Us: description, circular LinkedIn & Instagram icons
 6. Shared footer and floating WhatsApp contact widget.
 
 ## Measured Visual Contract
 
-- Desktop content width follows the shared 1180px container.
-- Hero: 230px top padding and 50px bottom padding; H1 is 50px/66px.
-- Tablet/mobile hero: 140px top padding; H1 becomes 40px/50px below
-  992px and 30px/40px below 768px.
-- Contact panel: 1px `#d9d9d9` border, 20px radius, equal thirds at
-  desktop, two columns at tablet, and one column below 768px.
-- Office section: two equal columns with 30px gutter; cards use a 10px
-  radius, 1.5px `#e4e4e4` border, 248px media height, and 32px body padding.
-- Office media drops to 150px at tablet; cards stack below 768px.
-- Inquiry shell: 30px radius, 2px green/cyan gradient border, white inner
-  panel with 90px top/side padding and 49px bottom padding.
-- Inquiry fields: two columns at desktop, one below 768px; 1.5px
-  `#dfdfdf` border, 5px radius, 12px 16px padding; textarea is 136px tall.
-- Page sections use 80px vertical spacing at desktop and 50px below 992px.
+- Container widths:
+  - Hero container: max-w-[1220px] px-5 sm:px-8.
+  - Form container: max-w-[1020px] px-5 sm:px-8.
+  - Offices container: max-w-[1220px] px-5 sm:px-8.
+  - Contact Details container: max-w-[1240px] px-5 sm:px-8.
+- Background colors:
+  - Hero & Form: `#fbeed5` (cream/peach).
+  - Offices: `#eff4ef` (sage/mint gray).
+  - Contact Details: `#ffffff` (pure white).
+- Typography & Headings:
+  - Hero eyebrow: uppercase, tracking `[0.18em]`, text `[11px]`, font medium, text `#282828`.
+  - Hero H1: `text-3xl sm:text-4xl md:text-5xl lg:text-[52px]` with `font-medium tracking-tight text-[#282828] leading-[1.08]`.
+  - Section H2s: `text-2xl sm:text-3xl md:text-[38px]` with `font-medium text-[#282828] leading-[1.12]`.
+- Jump navigation pills:
+  - 1px border `rgba(40,40,40,0.2)`, 100px pill radius, text `[13px]`, font medium, text `#282828`.
+  - Hover state: background `#282828`, text `#ffffff`, transition 300ms.
+- Inquiry form card:
+  - Background `#ffffff`, border 1px `rgba(40,40,40,0.11)`, radius 30px, shadow `0 28px 70px rgba(0,0,0,0.06)`.
+  - Padding: 40px mobile, 52px sm, 70px md, 84px lg.
+  - Input fields: 1.5px `#dfdfdf` border, 5px radius, 12px 18px padding, focus ring 2px `#ad5151`, placeholder `#282828`.
+  - Phone input: Interactive country picker with flag, dial code, down arrow chevron, search filter box, and full list of 244 countries matching live intl-tel-input coverage.
+  - Submit button: pill radius (9999px), background `#ad5151`, text `#ffffff`, uppercase tracking `[0.08em]`, text `[13px]`, font medium.
+- Office cards:
+  - Background `#ffffff`, border 1px `rgba(40,40,40,0.11)`, radius 20px, shadow `0 14px 40px rgba(0,0,0,0.04)`.
+  - Padding: 36px desktop, 28px mobile.
+  - Directions CTA: uppercase tracking `[0.14em]`, text `[11px]`, font bold, text `#ad5151`, hover text `#282828`, with diagonal arrow icon.
+- Contact Details cards:
+  - Background `#ffffff`, border 1px `rgba(40,40,40,0.11)`, radius 18px, padding 32px (mobile 24px).
+  - Hover state: background `#f7f4e9`, transition 300ms.
+  - Social icons: 36x36 circular buttons, border 1px `rgba(40,40,40,0.15)`, hover background `#282828`, hover text `#ffffff`.
 
 ## Interaction States
 
+- Jump anchor buttons smoothly scroll to `#message`, `#offices`, and `#contact-details`.
+- Phone country dropdown opens on click, supports instant search filtering by country name/code, keyboard navigation, Escape to close, and outside-click dismiss.
 - Contact links change to brand red over 300ms.
-- Office images scale to 1.1 over 600ms on hover.
-- Directions arrow shifts from 6px to 8px left margin over 300ms.
-- Submit fill slides out to the right over 600ms on hover.
-- Required-field validation focuses `#contact-name`; the local keyboard focus
-  ring is 3px and remains clearly visible.
-- Office-image hover reaches `scale: 1.1`; reduced-motion mode shortens its
-  transition duration to `0.001s`.
-- With no delivery webhook configured, a valid submission returns the local
-  fallback status and restores the submit button instead of throwing a server
-  error.
+- Directions arrow animates subtly on hover.
+- Form validation focuses the first invalid field with a clear focus ring.
+- Inquiry form supports asynchronous submission with pending/success/error status messages.
+- With no delivery webhook configured, a valid submission returns the local fallback status cleanly without unhandled server errors.
 
-## Asset Decisions
+## Asset & Icon Decisions
 
-- The exact two office photographs are stored under
-  `public/assets/contact/offices/**`; the full asset tree was hash-checked before
-  adding them and contained no identical copies.
-- Exact live contact and directions icons are stored under
-  `public/assets/contact/icons/**`; the full asset tree contained no identical
-  copies.
-- Reuse the existing project-owned brand, footer award, social profile, and
-  shared layout assets.
-
-## Reuse Decisions
-
-| Existing implementation | Decision |
-| --- | --- |
-| `SiteHeader`, `SiteFooter`, `ContactWidget`, `Container` | Reuse unchanged |
-| Existing footer social SVG implementations | Keep footer unchanged; use the live contact-page icons for exact panel parity |
-| Existing metadata and schema helpers | Extend with a typed contact-page entry and ContactPage graph |
-| Existing page sections | No current section matches the contact panel, office grid, or inquiry form contract; add one server-rendered contact page section and one narrow client form boundary |
+- Canonical diagonal arrow icon rendered via inline SVG matching `public/assets/icons/diagonal-arrow-white.svg` vector path (`M0.331035 10.2567C...`).
+- Phone icon matches canonical phone SVG path.
+- Social icons (LinkedIn, Instagram) use canonical paths with accessible names.
+- Zero duplicate assets across `public/assets/`.
 
 ## Verification
 
-- The 1440px live/local viewport comparison preserves section order, container
-  width, typography, borders, imagery, form geometry, and CTA styling. The local
-  sections sit approximately 8px higher after the hero copy; this is the only
-  material contact-page spacing difference in the compared viewport.
-- At 390px, the document and viewport widths are both 390px. Office cards are
-  350px wide and start 20px from the left edge.
-- The canonical is `https://www.dynamicdreamz.com/contact-us`, the page has one
-  `Connect with us` H1, and the rendered JSON-LD includes `ContactPage`.
-- LinkedIn, Instagram, office-image, and form labels were checked for accurate
-  accessible names and alt text.
+- The 1440px desktop side-by-side screenshot comparison confirms 1:1 visual parity across all 4 sections (hero, form card, office cards, contact details grid).
+- The 768px tablet comparison confirms exact responsive grid wrapping and spacing.
+- The 390px mobile comparison confirms exact mobile card stacking, full-width submit button, and zero horizontal overflow.
+- The canonical URL is `https://www.dynamicdreamz.com/contact-us`.
+- JSON-LD structured data outputs valid `ContactPage` schema referencing both offices and contact channels.
+- `npm run check:urls` passed (0 trailing slashes).
+- `npm run check:component-content` passed (525 source files compliant; zero hardcoded copy in components).
+- `npm run check:asset-duplicates` passed (0 duplicates).
 
 ## Remaining Differences
 
-- The live mobile page clips content and its header CTA horizontally. The local
-  route intentionally keeps the same composition without horizontal overflow,
-  so the complete CTA, text, cards, and form remain usable at 390px.
-- The shared migrated header, footer, and floating contact widget are reused as
-  implemented elsewhere in the application; footer taxonomy differences from
-  the legacy shell are outside this route's component scope.
-- Cloudflare Turnstile and Contact Form 7 were not copied from WordPress. The
-  local form uses a honeypot and server-side validation, with delivery configured
-  through `CONTACT_FORM_WEBHOOK_URL` and optional
-  `CONTACT_FORM_WEBHOOK_TOKEN`.
+- The shared migrated header, footer, and floating contact widget are reused as implemented in the site layout shell.
+- Cloudflare Turnstile and Contact Form 7 were not copied from WordPress. The local form uses a honeypot, typed client/server validation, and configurable webhook dispatch via `CONTACT_FORM_WEBHOOK_URL`.
+- Office photos commented out in live Elementor markup are omitted in local code to eliminate WordPress hidden DOM debt.

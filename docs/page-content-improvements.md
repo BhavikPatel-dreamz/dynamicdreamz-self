@@ -450,18 +450,18 @@ interactive product presentation.
 
 ## Contact Us (`/contact-us`)
 
-Status: visible recommendations deferred; live UI preserved during migration
-Last reviewed: 2026-08-17
+Status: live UI and copy matched exactly; nonvisual accessibility and schema implemented
+Last reviewed: 2026-10-07
 Primary SEO intent: contact Dynamic Dreamz for ecommerce, Shopify, web, mobile,
 agency-partner, recruitment, and office-location needs.
 
 | Area | Current UI Copy | Suggested UI Copy | Reason | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| Hero introduction | `What’s on your mind? We’re here to help! Tell us what you are looking for and we will get back to you with right solutions!` | Explain that prospects can contact Dynamic Dreamz about Shopify, ecommerce, web, mobile, or white-label requirements, without promising an unverified response time. | Makes the page purpose directly extractable and corrects the missing article in `with right solutions`. | Medium | deferred pending exact visible-copy approval |
-| Form introduction | `Please provide the information below, so we can better understand your needs and determine how we can assist you. Our sales team will be in touch with you shortly.` | Retain the request for project context, but replace `shortly` with an approved response-time expectation or remove it. | Avoids an undefined service-level implication. | High | deferred pending sales/operations policy approval |
-| Ahmedabad office image alt | Live source uses `Dynamic Dreamz Surat Office`. | `Dynamic Dreamz Ahmedabad office and surrounding city view`. | Corrects the office mismatch while keeping the visual UI unchanged. | High | implemented as a nonvisual accessibility correction |
-| Social icon alt text | LinkedIn and Instagram images both use `Facebook Icon`. | Use `Dynamic Dreamz on LinkedIn` and `Dynamic Dreamz on Instagram` as accessible names. | Correctly identifies each external profile without changing visible copy. | High | implemented as a nonvisual accessibility correction |
-| Office/contact policy | Visible office addresses, recruitment email addresses, and phone numbers have no review date or policy owner on the page. | Confirm and govern these details through sales, operations, and HR before launch; update visible content only if the approved facts differ. | Prevents stale contact details from becoming a conversion and trust failure. | High | blocked pending owner confirmation |
+| Hero introduction | `Have a project in mind, a question about our work, or need help scaling your store? Drop us a line or visit one of our offices below.` | Keep live copy unchanged. Live site updated on 2026-10-05 to clear, direct copy. | Accurately describes engagement and visitor intent. | Medium | live copy preserved |
+| Form introduction | `We’d love to hear from you. Fill in the details below and we’ll get back to you with next steps.` | Keep live copy unchanged. Note at bottom states: `Your message will be directed to the appropriate team.` | Replaced legacy vague promise with clear next steps statement. | High | live copy preserved |
+| Office images | Live Elementor markup comments out office photo tags (`<!-- div class="office-img" ... -->`). | Omit unused image tags from DOM. | Eliminates legacy WordPress hidden DOM bloat per migration policy. | Medium | implemented |
+| Social icon accessible names | Circular LinkedIn and Instagram icons in `#contact-details`. | `Dynamic Dreamz on LinkedIn` and `Dynamic Dreamz on Instagram`. | Provides clear screen-reader accessible names without altering visual presentation. | High | implemented as nonvisual accessibility |
+| Office/contact policy | Visible office addresses, recruitment email addresses, and phone numbers have no review date on the page. | Confirm and govern these details through sales, operations, and HR before launch; update visible content only if the approved facts differ. | Prevents stale contact details from becoming a conversion and trust failure. | High | blocked pending owner confirmation |
 
 ## Hire WordPress Developers (`/hire-wordpress-developers`)
 
