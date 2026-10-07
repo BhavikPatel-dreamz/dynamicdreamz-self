@@ -944,10 +944,15 @@ async function runSeed() {
   await payload.updateGlobal({
     slug: "site-settings",
     data: {
-      phone: siteConfig.phone,
-      whatsappNumber: siteConfig.whatsapp,
+      phone: siteConfig.phoneDisplay,
+      whatsappNumber: "919825195930",
       email: siteConfig.email,
-      address: `${siteConfig.address.street}, ${siteConfig.address.city}, ${siteConfig.address.country}`,
+      skype: "live:dynamicdreamz",
+      address: "Surat, Gujarat, India",
+      socialLinks: [
+        { platform: "linkedin", url: siteConfig.social.linkedin },
+        { platform: "instagram", url: siteConfig.social.instagram },
+      ],
     },
   });
 
@@ -958,20 +963,24 @@ async function runSeed() {
     data: {
       headerNav: primaryNavigation.map((group) => ({
         title: group.label,
-        href: group.href,
-        subItems: group.links?.map((link) => ({
-          label: link.label,
-          href: link.href,
-          description: link.description,
+        subItems: group.items?.map((item) => ({
+          label: item.label,
+          href: item.href,
+          description: item.description,
+          badge: item.badge,
         })),
       })),
       footerColumns: footerNavigation.map((col) => ({
-        title: col.title,
+        title: col.label,
         links: col.links.map((link) => ({
           label: link.label,
           href: link.href,
         })),
       })),
+      footerBottomLinks: [
+        { label: "Terms of Service", href: "/terms-of-service" },
+        { label: "Privacy Policy", href: "/privacy-policy" },
+      ],
     },
   });
 

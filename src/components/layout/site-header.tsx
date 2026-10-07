@@ -8,51 +8,38 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { siteChromeCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
-
 import { primaryNavigation, type PrimaryNavigationGroup } from "@/data/navigation";
-import { adaptStrapiNavToPrimary, getStrapiMediaAlt, getStrapiMediaUrl } from "@/lib/strapi";
-import type { StrapiGlobal, StrapiMedia, StrapiNavGroupElement } from "@/types/strapi";
 
 export interface SiteHeaderProps {
-  globalData?: StrapiGlobal | null;
-  navigation?: PrimaryNavigationGroup[] | StrapiNavGroupElement[];
-  logo?: StrapiMedia | string | null;
+  navigation?: PrimaryNavigationGroup[];
+  logo?: string | null;
+  logoAlt?: string;
   ctaLabel?: string | null;
   ctaHref?: string | null;
+  contactEmail?: string;
 }
 
 export function SiteHeader({
-  globalData,
   navigation,
   logo,
+  logoAlt,
   ctaLabel,
   ctaHref,
+  contactEmail,
 }: SiteHeaderProps = {}) {
-  const effectiveLogo =
-    (typeof logo === "string" ? logo : getStrapiMediaUrl(logo)) ||
-    getStrapiMediaUrl(globalData?.logo) ||
-    siteConfig.logo;
-
-  const effectiveLogoAlt =
-    (logo && typeof logo !== "string" ? getStrapiMediaAlt(logo) : "") ||
-    getStrapiMediaAlt(globalData?.logo) ||
-    "Dynamic Dreamz - Shopify Platinum Partner";
-
-  const effectiveCtaLabel = ctaLabel || globalData?.headerCtaLabel || siteChromeCopy.headerCta;
-  const effectiveCtaHref = ctaHref || globalData?.headerCtaHref || siteConfig.quotePath;
-
-  const effectiveNav: PrimaryNavigationGroup[] = navigation
-    ? adaptStrapiNavToPrimary(navigation as StrapiNavGroupElement[])
-    : globalData?.headerNav
-      ? adaptStrapiNavToPrimary(globalData.headerNav)
-      : primaryNavigation;
+  const effectiveLogo = logo || siteConfig.logo;
+  const effectiveLogoAlt = logoAlt || "Dynamic Dreamz - Shopify Platinum Partner";
+  const effectiveCtaLabel = ctaLabel || siteChromeCopy.headerCta;
+  const effectiveCtaHref = ctaHref || siteConfig.quotePath;
+  const effectiveNav: PrimaryNavigationGroup[] =
+    navigation && navigation.length > 0 ? navigation : primaryNavigation;
 
   return (
     <header className="site-header fixed top-0 left-0 z-[111] w-full bg-white/60 backdrop-blur-[25px] transition-all duration-500 ease-in-out [body:has(main[data-page=career-apply-now])_&]:hidden [body:has(main[data-page=request-quote])_&]:hidden [body:has(main[data-page=shopify-development-in-barcelona-spain])_&]:hidden [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [&.header-down]:-translate-y-full [&.header-down]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] [&.header-up]:translate-y-0 [&.header-up]:bg-white/60 [&.header-up]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] max-[1200px]:py-[15px] max-[768px]:[&:not(.header-up)]:bg-transparent">
       <HeaderScrollBehavior />
       <Container className="relative flex items-center justify-between gap-0 max-[1200px]:min-h-[34px]">
         <div className="flex items-center">
-          <MobileNavigation navigation={effectiveNav} contactEmail={globalData?.contactEmail} />
+          <MobileNavigation navigation={effectiveNav} contactEmail={contactEmail} />
 
           <Link
             className="inline-flex shrink-0 -translate-y-[2.5px] max-[1200px]:mr-auto max-[1200px]:translate-y-0"

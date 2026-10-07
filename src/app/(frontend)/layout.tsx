@@ -6,7 +6,13 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { siteChromeCopy } from "@/content/common";
 import { rootMetadata } from "@/data/seo";
-import { getGlobalSettings } from "@/lib/strapi";
+import {
+  adaptPayloadFooterBottomLinks,
+  adaptPayloadFooterColumns,
+  adaptPayloadNavToPrimary,
+  getPayloadNavigation,
+  getPayloadSiteSettings,
+} from "@/lib/payload";
 
 import "./globals.css";
 
@@ -31,7 +37,14 @@ const montserrat = localFont({
 export const metadata: Metadata = rootMetadata;
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const globalData = await getGlobalSettings();
+  const [navData, settingsData] = await Promise.all([
+    getPayloadNavigation(),
+    getPayloadSiteSettings(),
+  ]);
+
+  const navigation = adaptPayloadNavToPrimary(navData?.headerNav);
+  const footerColumns = adaptPayloadFooterColumns(navData?.footerColumns);
+  const footerBottomLinks = adaptPayloadFooterBottomLinks(navData?.footerBottomLinks);
 
   return (
     <html
@@ -45,10 +58,19 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         >
           {siteChromeCopy.skipToContent}
         </a>
-        <SiteHeader globalData={globalData} />
+        <SiteHeader
+          contactEmail={settingsData?.email}
+          navigation={navigation}
+        />
         {children}
-        <SiteFooter globalData={globalData} />
-        <ContactWidget whatsappNumber={globalData?.whatsappNumber} />
+        <SiteFooter
+          contactEmail={settingsData?.email}
+          contactPhone={settingsData?.phone}
+          footerBottomLinks={footerBottomLinks}
+          footerColumns={footerColumns}
+          socialLinks={settingsData?.socialLinks}
+        />
+        <ContactWidget whatsappNumber={settingsData?.whatsappNumber} />
       </body>
     </html>
   );

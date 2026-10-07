@@ -5,6 +5,9 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
+import { Navigation } from "./src/globals/Navigation";
+import { SiteSettings } from "./src/globals/SiteSettings";
+
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
@@ -31,6 +34,10 @@ export default buildConfig({
         },
       ],
     },
+  ],
+  globals: [
+    Navigation,
+    SiteSettings,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

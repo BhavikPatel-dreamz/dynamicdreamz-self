@@ -45,21 +45,24 @@ function InstagramIcon() {
 }
 
 import { cn } from "@/lib/class-names";
-import { adaptStrapiFooterColumns } from "@/lib/strapi";
 import type { NavigationGroup } from "@/data/navigation";
-import type {
-  StrapiFooterColumnElement,
-  StrapiGlobal,
-  StrapiNavLinkElement,
-  StrapiSocialLinkElement,
-} from "@/types/strapi";
+
+export interface FooterLinkItem {
+  label: string;
+  href: string;
+}
+
+export interface SocialLinkItem {
+  platform: string;
+  url: string;
+}
 
 function SocialLinks({
   className = "",
   socialLinks,
 }: {
   className?: string;
-  socialLinks?: StrapiSocialLinkElement[] | null;
+  socialLinks?: SocialLinkItem[] | null;
 }) {
   if (socialLinks && socialLinks.length > 0) {
     return (
@@ -102,7 +105,7 @@ function ContactDetails({
   email?: string;
   phoneDisplay?: string;
   phoneHref?: string;
-  socialLinks?: StrapiSocialLinkElement[] | null;
+  socialLinks?: SocialLinkItem[] | null;
 }) {
   const displayEmail = email || siteConfig.email;
   const displayPhone = phoneDisplay || siteConfig.phoneDisplay;
@@ -162,7 +165,7 @@ function MoreServices({
   email?: string;
   phoneDisplay?: string;
   phoneHref?: string;
-  socialLinks?: StrapiSocialLinkElement[] | null;
+  socialLinks?: SocialLinkItem[] | null;
 }) {
   return (
     <div className="flex flex-col gap-[15px]">
@@ -178,28 +181,15 @@ function MoreServices({
 }
 
 export interface SiteFooterProps {
-  globalData?: StrapiGlobal | null;
-  footerData?: {
-    columns?: StrapiFooterColumnElement[];
-    bottomLinks?: StrapiNavLinkElement[];
-  } | null;
-  company?: {
-    email?: string;
-    phone?: string;
-    address?: string;
-  } | null;
-  footerColumns?: StrapiFooterColumnElement[] | null;
-  footerBottomLinks?: StrapiNavLinkElement[] | null;
-  socialLinks?: StrapiSocialLinkElement[] | null;
+  footerColumns?: NavigationGroup[] | null;
+  footerBottomLinks?: FooterLinkItem[] | null;
+  socialLinks?: SocialLinkItem[] | null;
   contactEmail?: string | null;
   contactPhone?: string | null;
   copyrightText?: string | null;
 }
 
 export function SiteFooter({
-  globalData,
-  footerData,
-  company,
   footerColumns,
   footerBottomLinks,
   socialLinks,
@@ -207,24 +197,18 @@ export function SiteFooter({
   contactPhone,
   copyrightText,
 }: SiteFooterProps = {}) {
-  const effectiveEmail =
-    contactEmail || company?.email || globalData?.contactEmail || siteConfig.email;
-  const effectivePhone =
-    contactPhone || company?.phone || globalData?.contactPhone || siteConfig.phoneDisplay;
+  const effectiveEmail = contactEmail || siteConfig.email;
+  const effectivePhone = contactPhone || siteConfig.phoneDisplay;
   const effectivePhoneHref = effectivePhone
     ? `tel:${effectivePhone.replace(/[^0-9+]/g, "")}`
     : siteConfig.phoneHref;
 
-  const rawColumns =
-    footerColumns || footerData?.columns || globalData?.footerColumns;
-  const effectiveNavigation: NavigationGroup[] = rawColumns && rawColumns.length > 0
-    ? adaptStrapiFooterColumns(rawColumns)
-    : footerNavigation;
+  const effectiveNavigation: NavigationGroup[] =
+    footerColumns && footerColumns.length > 0 ? footerColumns : footerNavigation;
 
-  const effectiveSocial = socialLinks || globalData?.socialLinks;
-  const effectiveBottomLinks =
-    footerBottomLinks || footerData?.bottomLinks || globalData?.footerBottomLinks;
-  const effectiveCopyright = copyrightText || globalData?.copyrightText;
+  const effectiveSocial = socialLinks;
+  const effectiveBottomLinks = footerBottomLinks;
+  const effectiveCopyright = copyrightText;
 
   return (
     <footer className="bg-cream text-ink max-[767px]:pb-[70px]">
