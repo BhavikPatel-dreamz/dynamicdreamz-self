@@ -87,15 +87,3 @@
   }
 }
 
-.whatsapp-widget a {
-  transition: all .3s ease;
-}
-
-.brand_testimonial_nav .slider_arrow:hover svg path {
-  fill: #fff;
-}
-
-.user_content_btm .video_icon .video_btn:hover {
-  border-color: #ad5151;
-}
-
