@@ -90,7 +90,10 @@ export function CareerLocationFilter({
 
   return (
     <div className="current-openings-wrap mt-10 max-[767px]:mt-6">
-      <div className="filter-location relative z-1 pb-7 text-right max-[767px]:pt-[30px] max-[767px]:pb-[43px]">
+      <div
+        data-aos="fade-up"
+        className="filter-location relative z-1 pb-7 text-right max-[767px]:pt-[30px] max-[767px]:pb-[43px]"
+      >
         <div
           className="dropdown_menu relative inline-block min-w-[149px] text-left max-[767px]:w-full"
           ref={rootRef}
@@ -155,6 +158,7 @@ export function CareerLocationFilter({
       </div>
 
       <div
+        data-aos="fade-up"
         aria-label={`${selectedList.location.label} current opportunities`}
         aria-live="polite"
         className="job-listing-main mb-[37px]"

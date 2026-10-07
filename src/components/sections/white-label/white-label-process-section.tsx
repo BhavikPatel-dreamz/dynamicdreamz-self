@@ -35,6 +35,7 @@ export function WhiteLabelProcessSection({
       <Container className={cn("max-[575px]:px-4", containerClassName)}>
         {eyebrow || description ? (
           <div
+            data-aos="fade-up"
             className={cn(
               "section_title_with_eyebrow mb-10 max-[991px]:mb-[30px] max-[767px]:mb-5",
               description &&
@@ -70,6 +71,7 @@ export function WhiteLabelProcessSection({
           </div>
         ) : (
           <h2
+            data-aos="fade-up"
             className={cn(
               "mb-[60px] text-center font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1199px]:mb-[50px] max-[992px]:mb-[30px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-5 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
               titleClassName,
@@ -78,9 +80,10 @@ export function WhiteLabelProcessSection({
             {title}
           </h2>
         )}
-        <div className="flex max-[992px]:flex-wrap">
+        <div data-aos="fade-up" className="flex max-[992px]:flex-wrap">
           {steps.map((step, index) => (
             <article
+              data-aos="fade-up"
               className={cn(
                 "step_card relative flex-1 bg-[#fafaf7] p-[60px_22px_40px] text-center odd:bg-cream max-[1199px]:p-[50px_20px_30px] max-[992px]:w-full max-[992px]:flex-none max-[992px]:p-[40px_20px_30px] max-[767px]:p-[30px_15px_20px]",
                 index < steps.length - 1 &&
@@ -101,7 +104,7 @@ export function WhiteLabelProcessSection({
           ))}
         </div>
         {note ? (
-          <div className="mt-8 rounded-[50px] border border-brand-red bg-brand-red/3 p-2.5 text-center max-[1199px]:mt-[25px] max-[992px]:mt-5 max-[767px]:rounded-[10px]">
+          <div data-aos="fade-up" className="mt-8 rounded-[50px] border border-brand-red bg-brand-red/3 p-2.5 text-center max-[1199px]:mt-[25px] max-[992px]:mt-5 max-[767px]:rounded-[10px]">
             <p className="text-base leading-4 font-semibold text-muted max-[1199px]:text-[15px] max-[1199px]:leading-[22px] max-[767px]:text-sm max-[767px]:leading-5">
               {note}
             </p>

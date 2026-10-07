@@ -23,7 +23,10 @@ export function ThemeFeaturesBannerSection({
   return (
     <section className={className} id={id}>
       <Container>
-        <div className="wrapper flex flex-wrap overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] max-[1199px]:rounded-[16px]">
+        <div
+          data-aos="fade-up"
+          className="wrapper flex flex-wrap overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] max-[1199px]:rounded-[16px]"
+        >
           <div className="left-block w-[37%] border-r border-[rgba(40,40,40,0.11)] bg-[#fbefd7] p-[30px] max-[1199px]:p-5 max-[991px]:w-full max-[991px]:border-r-0 max-[991px]:border-b max-[991px]:p-[25px_20px]">
             {content.eyebrow && (
               <div className="eyebrow mb-2.5">

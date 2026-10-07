@@ -13,7 +13,10 @@ export function DeliveryModelComparisonSection({
   return (
     <section className="choose_the_right_delivery_model_section bg-white py-20 max-[991px]:py-12">
       <Container>
-        <div className="section_title mb-12 max-[991px]:mb-8">
+        <div
+          data-aos="fade-up"
+          className="section_title mb-12 max-[991px]:mb-8"
+        >
           {content.eyebrow ? (
             <Eyebrow className="mb-3 text-[#ad5151]">{content.eyebrow}</Eyebrow>
           ) : null}
@@ -30,7 +33,10 @@ export function DeliveryModelComparisonSection({
         </div>
 
         <div className="compare-wrap -mx-4 overflow-x-auto px-4 scrollbar-thin">
-          <div className="compare-table-main overflow-hidden rounded-[24px] border border-[rgba(0,0,0,0.10)]">
+          <div
+            data-aos="fade-up"
+            className="compare-table-main overflow-hidden rounded-[24px] border border-[rgba(0,0,0,0.10)]"
+          >
             <table className="compare-table w-full min-w-[860px] border-collapse bg-white">
               <thead>
                 <tr>

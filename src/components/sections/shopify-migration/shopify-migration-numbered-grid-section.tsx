@@ -38,7 +38,7 @@ export function ShopifyMigrationNumberedGridSection({
     >
       <Container>
         {(eyebrow || heading || description) && (
-          <div className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-[30px]">
+          <div data-aos="fade-up" className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-[30px]">
             <div className="title w-[44%] text-[14px] leading-6 max-[991px]:w-full">
               {eyebrow && (
                 // Live `.eyebrow` is `display: inline-flex`, preserving the
@@ -62,9 +62,9 @@ export function ShopifyMigrationNumberedGridSection({
         )}
 
         {/* Live keeps three equal columns down to 767px, then stacks. */}
-        <div className="wrapper grid grid-cols-3 gap-4 max-[767px]:grid-cols-1">
+        <div data-aos="fade-up" className="wrapper grid grid-cols-3 gap-4 max-[767px]:grid-cols-1">
           {items.map((item) => (
-            <div className="col" key={item.number}>
+            <div data-aos="fade-up" className="col" key={item.number}>
               <div className="item h-full rounded-[20px] border border-[rgba(40,40,40,0.1)] bg-white p-[25px] max-[1199px]:rounded-[16px] max-[1199px]:p-5">
                 <span
                   className={cn(

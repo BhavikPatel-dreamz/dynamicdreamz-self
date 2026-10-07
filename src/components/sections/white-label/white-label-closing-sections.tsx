@@ -22,7 +22,7 @@ export function WhiteLabelFaqSection({
   return (
     <section className="bg-[#e6ecf0] py-20 max-[992px]:py-[50px]">
       <Container className="max-[575px]:px-4">
-        <h2 className="mb-10 text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[30px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
+        <h2 data-aos="fade-up" className="mb-10 text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[30px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
           {whiteLabelShopifySectionCopy.faqTitle}
         </h2>
         <FaqAccordion
@@ -59,7 +59,7 @@ export function WhiteLabelFinalCtaSection({
       )}
     >
       <Container className="max-[575px]:px-4">
-        <div className="flex items-center justify-between max-[992px]:flex-wrap max-[992px]:gap-5">
+        <div data-aos="fade-up" className="flex items-center justify-between max-[992px]:flex-wrap max-[992px]:gap-5">
           <div
             className={cn(
               "flex-1 pr-[46px] max-[1199px]:pr-[30px] max-[992px]:w-full max-[992px]:flex-none max-[992px]:pr-0",

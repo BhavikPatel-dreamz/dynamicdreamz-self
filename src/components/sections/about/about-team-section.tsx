@@ -7,7 +7,11 @@ function TeamGrid({ people }: { people: AboutPerson[] }) {
   return (
     <div className="-mx-2 flex flex-wrap max-[767px]:mx-0">
       {people.map((person) => (
-        <article className="mb-[30px] w-1/4 px-2 text-center max-[992px]:w-1/3 max-[767px]:w-full max-[767px]:px-0" key={person.name}>
+        <article
+          data-aos="fade-up"
+          className="mb-[30px] w-1/4 px-2 text-center max-[992px]:w-1/3 max-[767px]:w-full max-[767px]:px-0"
+          key={person.name}
+        >
           <div className="relative mb-[-5px] pb-[125%] max-[767px]:mb-0">
             <Image className="rounded-[20px] object-cover" src={person.image} alt={person.alt} fill sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 991px) 31vw, 273px" />
           </div>

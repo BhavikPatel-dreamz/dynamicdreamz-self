@@ -65,7 +65,7 @@ export function ContactPage() {
         aria-labelledby="contact-page-title"
       >
         <Container>
-          <div className="mx-auto max-w-[810px]">
+          <div data-aos="fade-up" className="mx-auto max-w-[810px]">
             <Eyebrow align="center" className="mb-4">
               {hero.eyebrow}
             </Eyebrow>
@@ -100,7 +100,10 @@ export function ContactPage() {
         aria-labelledby="inquiry-title"
       >
         <Container>
-          <div className="mx-auto max-w-[920px] overflow-hidden rounded-[30px] border border-[rgba(40,40,40,0.11)] bg-white shadow-[0_28px_70px_rgba(72,52,35,0.08)]">
+          <div
+            data-aos="fade-up"
+            className="mx-auto max-w-[920px] overflow-hidden rounded-[30px] border border-[rgba(40,40,40,0.11)] bg-white shadow-[0_28px_70px_rgba(72,52,35,0.08)]"
+          >
             <div className="border-b border-[rgba(40,40,40,0.11)] p-10 text-center max-[1199px]:p-[30px] max-[767px]:px-5 max-[767px]:py-[30px]">
               <Eyebrow align="center" className="mb-2">
                 {formSection.eyebrow}
@@ -129,7 +132,10 @@ export function ContactPage() {
         aria-labelledby="offices-title"
       >
         <Container>
-          <div className="mb-10 flex flex-wrap items-end justify-between max-[991px]:text-center">
+          <div
+            data-aos="fade-up"
+            className="mb-10 flex flex-wrap items-end justify-between max-[991px]:text-center"
+          >
             <div className="w-full md:w-[48%]">
               <Eyebrow align="responsive-center" className="mb-2">
                 {officesSection.eyebrow}
@@ -151,6 +157,7 @@ export function ContactPage() {
             {officesSection.offices.map((office) => (
               <article
                 key={office.city}
+                data-aos="fade-up"
                 className="rounded-[20px] border-[1.5px] border-[#e4e4e4] bg-white p-8 max-[1199px]:p-5 max-[991px]:rounded-[12px]"
               >
                 <h3 className="font-sans text-2xl leading-normal font-bold text-ink max-[991px]:text-lg">
@@ -196,7 +203,7 @@ export function ContactPage() {
         aria-labelledby="contact-details-title"
       >
         <Container>
-          <div className="mb-10 text-center">
+          <div data-aos="fade-up" className="mb-10 text-center">
             <Eyebrow align="center" className="mb-2">
               {contactDetailsSection.eyebrow}
             </Eyebrow>
@@ -208,7 +215,10 @@ export function ContactPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-[1.35fr_1.05fr_1fr_0.75fr] border-y border-[rgba(40,40,40,0.11)] max-[1199px]:grid-cols-2 max-[767px]:grid-cols-1">
+          <div
+            data-aos="fade-up"
+            className="grid grid-cols-[1.35fr_1.05fr_1fr_0.75fr] border-y border-[rgba(40,40,40,0.11)] max-[1199px]:grid-cols-2 max-[767px]:grid-cols-1"
+          >
             {/* Item 1: Sales */}
             <div className="flex min-h-[138px] flex-col justify-start border-r border-[rgba(40,40,40,0.11)] p-[22px_20px] transition-colors duration-300 hover:bg-[#f7f4e9] max-[1199px]:border-b max-[767px]:min-h-0 max-[767px]:border-r-0 max-[767px]:px-0 max-[767px]:py-5 max-[767px]:hover:bg-transparent">
               <span className="mb-2.5 font-sans text-[10px] leading-[1.4] font-bold uppercase tracking-[0.8px] text-brand-red">

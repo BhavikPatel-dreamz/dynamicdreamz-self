@@ -32,7 +32,7 @@ export function ShopifyHoursComparisonSection() {
             </p>
           </header>
 
-          <div className="bulk-shopify-fulltime-resources-box w-[800px] max-[1199px]:w-full">
+          <div data-aos="fade-up" className="bulk-shopify-fulltime-resources-box w-[800px] max-[1199px]:w-full">
             <p className="offer-both-fits-text relative z-1 mx-auto w-full max-w-[566px] rounded-t-[25px] bg-[#1a1e1a] px-10 py-[3px] text-center text-base leading-[30.4px] font-semibold text-white italic before:absolute before:bottom-[-1px] before:left-0 before:-z-1 before:h-full before:w-5 before:-skew-x-[27deg] before:rounded-tl-full before:bg-[#1a1e1a] after:absolute after:right-0 after:bottom-[-1px] after:-z-1 after:h-full after:w-5 after:skew-x-[26deg] after:rounded-tr-full after:bg-[#1a1e1a] max-[767px]:max-w-[457px] max-[767px]:text-sm max-[599px]:max-w-[390px] max-[599px]:text-[11px] max-[599px]:leading-[17.7px] max-[475px]:max-w-[280px] max-[374px]:max-w-[240px] max-[374px]:text-[9px]">
               {shopifyHoursComparison.ribbon}
             </p>
@@ -109,7 +109,7 @@ export function ShopifyHoursTasksSection() {
           headingId="shopify-hours-tasks-title"
           variant="left"
         />
-        <div className="can-you-use-shopify-hours-list">
+        <div data-aos="fade-up" className="can-you-use-shopify-hours-list">
           <ul className="flex flex-wrap justify-start gap-x-[11px] gap-y-6">
             {shopifyHoursTasks.items.map((item) => (
               <li

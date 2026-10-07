@@ -31,7 +31,10 @@ export function CommerceSolutionsSection() {
   return (
     <section className="py-[60px] max-[992px]:py-[50px] max-[767px]:py-10" aria-labelledby="commerce-solutions-title">
       <Container>
-        <div className="mb-[54px] flex items-center justify-between gap-10 max-[992px]:mb-8 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-0">
+        <div
+          data-aos="fade-up"
+          className="mb-[54px] flex items-center justify-between gap-10 max-[992px]:mb-8 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-0"
+        >
           <SectionHeading id="commerce-solutions-title" className="w-[40%] max-[992px]:w-full">{homeSectionCopy.commerceSolutionsTitle}</SectionHeading>
           <p className="w-[47%] text-base leading-[1.9] font-medium text-muted max-[992px]:mt-2.5 max-[992px]:w-full max-[767px]:text-sm">
             {homeSectionCopy.commerceSolutionsDescription}
@@ -39,7 +42,7 @@ export function CommerceSolutionsSection() {
         </div>
         <div className="grid grid-cols-2 items-start gap-3 max-[992px]:grid-cols-1" data-commerce-accordion>
           {[commerceSolutions.slice(0, 4), commerceSolutions.slice(4)].map((column, columnIndex) => (
-            <div className="grid gap-3" key={columnIndex}>
+            <div data-aos="fade-up" className="grid gap-3" key={columnIndex}>
               {column.map((item, itemIndex) => {
                 const index = columnIndex * 4 + itemIndex;
                 const isOpen = activeIndex === index;

@@ -27,7 +27,7 @@ export function StaticFaqAccordion({
   iconVariant = "default",
 }: StaticFaqAccordionProps) {
   return (
-    <div data-faq-list>
+    <div data-aos="fade-up" data-faq-list>
       {items.map((item, index) => {
         const isOpen = index === 0;
         const triggerId = `${idPrefix}-trigger-${index}`;
@@ -98,6 +98,7 @@ export function StaticFaqAccordion({
 
         return (
           <article
+            data-aos="fade-up"
             className={cn(
               "mb-5 rounded-[10px] border-[1.3px] border-[#efefef] bg-white last:mb-0",
               itemClassName,

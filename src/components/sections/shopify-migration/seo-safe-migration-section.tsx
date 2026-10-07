@@ -38,7 +38,10 @@ export function SeoSafeMigrationSection({
       id={id}
     >
       <Container>
-        <div className="seo-safe-main mx-auto rounded-[30px] bg-[#EFF4EF] p-10 max-[991px]:rounded-[20px] max-[991px]:p-[30px] max-[767px]:p-5">
+        <div
+          data-aos="fade-up"
+          className="seo-safe-main mx-auto rounded-[30px] bg-[#EFF4EF] p-10 max-[991px]:rounded-[20px] max-[991px]:p-[30px] max-[767px]:p-5"
+        >
           <div className="wrapper flex flex-wrap items-center justify-between max-[991px]:block">
             <div className="left-col w-[49%] max-[1199px]:w-[41%] max-[991px]:w-full">
               <div className="text-block">

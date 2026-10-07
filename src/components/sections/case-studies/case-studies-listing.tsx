@@ -136,7 +136,10 @@ function FilterMenu({ id, label, value, options, open, onToggle, onSelect }: { i
 
 function CaseStudyCard({ item }: { item: CaseStudyItem }) {
   return (
-    <article className="cs-listing-row mb-5 flex w-[calc(50%-10px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[992px]:mb-5 max-[992px]:w-full">
+    <article
+      data-aos="fade-up"
+      className="cs-listing-row mb-5 flex w-[calc(50%-10px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[992px]:mb-5 max-[992px]:w-full"
+    >
       <div className="cs-wrapper flex h-full flex-col">
         <div className="cs-col-left w-full">
           <Link

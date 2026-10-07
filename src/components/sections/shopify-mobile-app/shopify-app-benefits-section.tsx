@@ -38,12 +38,14 @@ export function ShopifyAppBenefitsSection({
         />
         <div className="benefit_box_main">
           <div
+            data-aos="fade-up"
             className={`wrapper mx-[-7.5px] -mb-3.75 flex flex-wrap ${
               isJustifyLeft ? "justify-start max-[992px]:justify-center" : "justify-center"
             }`}
           >
             {content.items.map((item, idx) => (
               <div
+                data-aos="fade-up"
                 className={`benefit_box mb-3.75 px-[7.5px] max-[767px]:w-full ${
                   isFourColumn ? "w-1/4 max-[1199px]:w-1/2" : "w-1/3 max-[992px]:w-1/2"
                 }`}

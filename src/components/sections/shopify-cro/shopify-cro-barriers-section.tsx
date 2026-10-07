@@ -28,6 +28,7 @@ export function ShopifyCroBarriersSection({
             <div
               key={item.title}
               className="conversion-cro-col mb-6 w-1/4 px-3 max-[1199px]:w-1/3 max-[991px]:w-1/2 max-[575px]:w-full"
+              data-aos="fade-up"
             >
               <div className="cro-card flex h-full flex-col items-center justify-center rounded-[15px] border border-black/10 bg-white p-[22px] text-center">
                 <div className="icon mb-[15px] flex h-[62.5px] w-[56px] items-center justify-center rounded-[10px_10px_10px_24px] bg-[rgba(173,81,81,0.11)]">

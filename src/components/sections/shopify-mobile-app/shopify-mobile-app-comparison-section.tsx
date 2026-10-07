@@ -20,7 +20,7 @@ export function ShopifyMobileAppComparisonSection({
           className="mb-[50px] max-[767px]:mb-[30px]"
         />
 
-        <div className="table-main overflow-hidden rounded-[20px] border border-[rgba(0,0,0,0.10)] bg-white">
+        <div data-aos="fade-up" className="table-main overflow-hidden rounded-[20px] border border-[rgba(0,0,0,0.10)] bg-white">
           <div className="table-wrap overflow-x-auto">
             <table className="m-0 w-full min-w-[820px] border-collapse text-left">
               <thead>

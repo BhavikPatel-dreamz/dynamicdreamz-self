@@ -46,6 +46,7 @@ export function AiEmpoweredDeliverySection({
     >
       <Container>
         <div
+          data-aos="fade-up"
           className={cn(
             "seo-safe-main rounded-[30px] p-10 max-[991px]:rounded-[20px] max-[991px]:p-[30px] max-[767px]:p-5",
             isDark ? "bg-[#192019]" : "bg-[#EFF4EF]",

@@ -23,7 +23,10 @@ export function WhiteLabelServiceAccordion({
   const columns = [services.slice(0, 3), services.slice(3)];
 
   return (
-    <div className={cn("mb-[43px] flex gap-[60px] max-[1199px]:mb-[30px] max-[1199px]:gap-[50px] max-[992px]:mb-[25px] max-[992px]:flex-col max-[992px]:gap-0 max-[767px]:mb-5", flushEnd && "mb-0 max-[1199px]:mb-0 max-[992px]:mb-0 max-[767px]:mb-0")}>
+    <div
+      data-aos="fade-up"
+      className={cn("mb-[43px] flex gap-[60px] max-[1199px]:mb-[30px] max-[1199px]:gap-[50px] max-[992px]:mb-[25px] max-[992px]:flex-col max-[992px]:gap-0 max-[767px]:mb-5", flushEnd && "mb-0 max-[1199px]:mb-0 max-[992px]:mb-0 max-[767px]:mb-0")}
+    >
       {columns.map((column, columnIndex) => (
         <div className="flex flex-1 flex-col" key={`service-column-${columnIndex}`}>
           {column.map((service, itemIndex) => {

@@ -41,7 +41,7 @@ export function IndustriesServedSection({
           variant="left"
         />
         {variant === "grid" ? (
-          <div className="grid grid-cols-4 gap-[18px] max-[1199px]:grid-cols-3 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
+          <div data-aos="fade-up" className="grid grid-cols-4 gap-[18px] max-[1199px]:grid-cols-3 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
             {content.items.map((item) => {
               const card = (
                 <div className="h-full overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.06)] bg-[#fafaf7]">
@@ -83,6 +83,7 @@ export function IndustriesServedSection({
           </div>
         ) : (
         <HorizontalDragScroll
+          data-aos="fade-up"
           ariaLabel="Industries served by Dynamic Dreamz"
           className="relative left-1/2 w-screen -translate-x-1/2 snap-x snap-mandatory [scroll-padding-inline-start:16px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[576px]:[scroll-padding-inline-start:calc((100vw-500px)/2)] min-[768px]:[scroll-padding-inline-start:calc((100vw-680px)/2)] min-[992px]:[scroll-padding-inline-start:calc((100vw-920px)/2)] min-[1200px]:[scroll-padding-inline-start:calc((100vw-1140px)/2)] min-[1400px]:[scroll-padding-inline-start:calc((100vw-1320px)/2)]"
           trackClassName="flex w-max items-stretch gap-5 px-4 py-[10px] min-[576px]:px-[calc((100vw-500px)/2)] min-[768px]:px-[calc((100vw-680px)/2)] min-[992px]:px-[calc((100vw-920px)/2)] min-[1200px]:px-[calc((100vw-1140px)/2)] min-[1400px]:px-[calc((100vw-1320px)/2)]"
@@ -117,7 +118,7 @@ export function IndustriesServedSection({
         </HorizontalDragScroll>
         )}
         {content.bottomDescription && (
-          <div className="bottom-text mt-[50px] text-center max-[767px]:mt-[30px]">
+          <div data-aos="fade-up" className="bottom-text mt-[50px] text-center max-[767px]:mt-[30px]">
             <p className="mx-auto max-w-[800px] text-base font-normal leading-[30.4px] text-muted max-[992px]:text-sm max-[992px]:leading-6">
               {content.bottomDescription}
             </p>

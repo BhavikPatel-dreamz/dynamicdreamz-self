@@ -52,6 +52,7 @@ export function CaseStudyCardsSection({
         <div className="cs-listing-main three-col grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[992px]:gap-4 max-[767px]:grid-cols-1">
           {content.items.map((item) => (
             <article
+              data-aos="fade-up"
               className="group/case cs-listing-row flex flex-col justify-between overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-all duration-300 hover:shadow-[0_10px_50px_rgba(94,94,94,0.08)]"
               key={item.name}
             >

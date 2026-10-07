@@ -48,6 +48,7 @@ export function CertifiedAgencySupportSection({
         <div className="grid grid-cols-2 gap-3 max-[389px]:grid-cols-1">
           {content.items.map((item) => (
             <article
+              data-aos="fade-up"
               className="h-full rounded-[20px] bg-white/5 p-[32px_32px_32px_52px] max-[992px]:p-[30px_20px] max-[389px]:rounded-2xl"
               key={item.title}
             >

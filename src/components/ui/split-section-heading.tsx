@@ -17,6 +17,7 @@ export type SplitSectionHeadingProps = {
   dark?: boolean;
   variant?: "centered" | "default" | "portfolio" | "services" | "left";
   preserveBreaks?: boolean;
+  aosAnimation?: string;
 };
 
 function removeBreakTags(text: string) {
@@ -38,6 +39,7 @@ export function SplitSectionHeading({
   dark = false,
   variant = "default",
   preserveBreaks = false,
+  aosAnimation = "fade-up",
 }: SplitSectionHeadingProps) {
   const body = paragraphs ?? (description ? [description] : []);
   const services = variant === "services";
@@ -46,7 +48,10 @@ export function SplitSectionHeading({
 
   if (variant === "centered") {
     return (
-      <header className={cn("mx-auto max-w-[900px] text-center", className)}>
+      <header
+        className={cn("mx-auto max-w-[900px] text-center", className)}
+        data-aos={aosAnimation || undefined}
+      >
         <h2
           className={cn(
             "font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]",
@@ -87,6 +92,7 @@ export function SplitSectionHeading({
           : "max-[992px]:text-center",
         className,
       )}
+      data-aos={aosAnimation || undefined}
     >
       <div
         className={cn(

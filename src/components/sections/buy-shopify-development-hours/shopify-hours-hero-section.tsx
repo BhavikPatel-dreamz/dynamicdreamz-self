@@ -20,7 +20,7 @@ export function ShopifyHoursHeroSection() {
       className="inner-hero-sec hire-shopify-dev-flexi-hours relative mb-20 overflow-hidden rounded-b-[50px] bg-cream pt-[150px] pb-20 max-[1199px]:mb-[60px] max-[991px]:pt-[100px] max-[991px]:pb-10"
     >
       <Container>
-        <div className="hire-shopify-dev-flexi-hours-row flex flex-wrap items-center">
+        <div data-aos="fade-up" className="hire-shopify-dev-flexi-hours-row flex flex-wrap items-center">
           <div className="hire-shopify-dev-left w-[51%] max-[991px]:w-full">
             <div className="section_title_with_eyebrow mb-[10px]">
               {/* The live eyebrow sits inline inside the 24px `.title` line box,
@@ -69,7 +69,7 @@ export function ShopifyHoursHeroSection() {
               </ul>
             </div>
           </div>
-          <div className="hire-shopify-dev-right w-[49%] pl-[50px] max-[991px]:w-full max-[991px]:pt-[50px] max-[991px]:pl-0">
+          <div data-aos="fade-up" className="hire-shopify-dev-right w-[49%] pl-[50px] max-[991px]:w-full max-[991px]:pt-[50px] max-[991px]:pl-0">
             <PricingPackageSelector
               heading={shopifyHoursHero.pricingHeading}
               packages={shopifyHoursPackages}

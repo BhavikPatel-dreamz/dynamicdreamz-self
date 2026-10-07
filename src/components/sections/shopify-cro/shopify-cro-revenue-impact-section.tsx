@@ -25,7 +25,10 @@ export function ShopifyCroRevenueImpactSection({
           textColumnClassName="text-right max-[991px]:text-left"
         />
 
-        <div className="revenue-impact-wrapper relative -mx-[30px] -mb-[30px] flex flex-wrap max-[1199px]:-mx-2.5 max-[1199px]:-mb-5 max-[767px]:mx-0 max-[767px]:mb-0">
+        <div
+          data-aos="fade-up"
+          className="revenue-impact-wrapper relative -mx-[30px] -mb-[30px] flex flex-wrap max-[1199px]:-mx-2.5 max-[1199px]:-mb-5 max-[767px]:mx-0 max-[767px]:mb-0"
+        >
           {/* Arrow connecting before & after on desktop/tablet */}
           <div className="pointer-events-none absolute left-[48%] top-1/2 z-20 h-[51px] w-[121px] -translate-x-1/2 -translate-y-1/2 max-[991px]:left-[49%] max-[991px]:h-[31px] max-[991px]:w-[91px] max-[767px]:hidden">
             <Image
@@ -169,7 +172,7 @@ export function ShopifyCroRevenueImpactSection({
           </div>
         </div>
 
-        <div className="revenue-impact-footer mt-11 text-center max-[767px]:mt-8">
+        <div data-aos="fade-up" className="revenue-impact-footer mt-11 text-center max-[767px]:mt-8">
           <p className="m-0 font-sans text-xl font-semibold leading-none text-white max-[767px]:text-base">
             {content.footer.text}{" "}
             <strong className="font-semibold text-[#35F3A3]">

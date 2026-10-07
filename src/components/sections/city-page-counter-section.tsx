@@ -34,7 +34,10 @@ export function CityPageCounterSection({
       )}
     >
       <Container>
-        <div className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col max-[991px]:gap-4">
+        <div
+          data-aos="fade-up"
+          className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col max-[991px]:gap-4"
+        >
           <div className="title max-w-[620px]">
             {content.eyebrow && (
               <div className="eyebrow mb-3">
@@ -58,7 +61,7 @@ export function CityPageCounterSection({
           </div>
         </div>
 
-        <div className="wrapper flex flex-wrap">
+        <div data-aos="fade-up" className="wrapper flex flex-wrap">
           {content.items.map((item, idx) => (
             <div
               key={item.label}

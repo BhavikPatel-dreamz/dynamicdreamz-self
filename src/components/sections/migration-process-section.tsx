@@ -140,7 +140,10 @@ export function MigrationProcessSection({
         id={id}
       >
         <Container>
-          <div className="section_title_with_eyebrow mb-10 max-[767px]:mb-[30px]">
+          <div
+            data-aos="fade-up"
+            className="section_title_with_eyebrow mb-10 max-[767px]:mb-[30px]"
+          >
             <div className="title">
               {content.eyebrow ? (
                 <div className="eyebrow relative mb-4 inline-flex items-center pl-10 font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[767px]:pl-[23px] max-[767px]:text-xs max-[767px]:leading-[1.2] max-[767px]:before:top-[6px] max-[767px]:before:w-[15px]">
@@ -160,7 +163,10 @@ export function MigrationProcessSection({
             ) : null}
           </div>
 
-          <div className="steps-wrapper flex flex-wrap gap-4 max-[767px]:block">
+          <div
+            data-aos="fade-up"
+            className="steps-wrapper flex flex-wrap gap-4 max-[767px]:block"
+          >
             {content.steps.map((step, idx) => {
               const isStep1or2 = idx < 2;
               const isStep3 = idx === 2;
@@ -265,6 +271,7 @@ export function MigrationProcessSection({
     <section className={resolvedClassName} id={id}>
       <Container>
         <div
+          data-aos="fade-up"
           className={`title ${
             isCentered ? "text-center mx-auto max-w-[850px]" : ""
           } max-[767px]:mb-6`}
@@ -279,7 +286,7 @@ export function MigrationProcessSection({
           )}
         </div>
 
-        <div className="migration-process-inner">
+        <div data-aos="fade-up" className="migration-process-inner">
           {content.steps.map((step, index) => (
             <StepItem
               isFirst={index === 0}

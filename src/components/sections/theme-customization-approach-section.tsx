@@ -45,7 +45,7 @@ export function ThemeCustomizationApproachSection({
           variant="left"
         />
 
-        <div className="wrapper grid grid-cols-2 gap-4 max-[1199px]:block max-[1199px]:space-y-4">
+        <div className="wrapper grid grid-cols-2 gap-4 max-[1199px]:block max-[1199px]:space-y-4" data-aos="fade-up">
           {content.approaches.map((item) => (
             <div
               className={cn(
@@ -54,6 +54,7 @@ export function ThemeCustomizationApproachSection({
                   ? "left-block bg-[#eff4ef]"
                   : "right-block bg-white",
               )}
+              data-aos="fade-up"
               key={item.title}
             >
               <div className="top-title">

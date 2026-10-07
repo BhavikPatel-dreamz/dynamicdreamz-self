@@ -44,7 +44,7 @@ export function ShopifyTeamBoxesSection({
     >
       <Container>
         <div className="wrapper flex flex-wrap items-center justify-between gap-y-8">
-          <div className="section_title_with_eyebrow w-[45%] max-[1199px]:w-full">
+          <div data-aos="fade-up" className="section_title_with_eyebrow w-[45%] max-[1199px]:w-full">
             <div className="title">
               {content.eyebrow ? (
                 <Eyebrow
@@ -92,9 +92,10 @@ export function ShopifyTeamBoxesSection({
           </div>
 
           <div className="right-block w-[50%] max-[1199px]:w-full">
-            <div className="boxes-wrapper grid grid-cols-2 gap-3 max-[767px]:flex max-[767px]:flex-col">
+            <div data-aos="fade-up" className="boxes-wrapper grid grid-cols-2 gap-3 max-[767px]:flex max-[767px]:flex-col">
               {content.items.map((item) => (
                 <div
+                  data-aos="fade-up"
                   className="item rounded-[18px] border border-white/12 bg-white/[0.045] p-[22px] transition-all duration-200 max-[767px]:rounded-[16px] max-[767px]:p-5 hover:border-white/20 hover:bg-white/[0.07]"
                   key={item.title}
                 >

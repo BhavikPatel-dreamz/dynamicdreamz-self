@@ -33,7 +33,7 @@ export function HappyClientSection({
   return (
     <section className={cn("happy-client-sec overflow-hidden py-20 max-[992px]:py-[50px]", className)} data-section="testimonials" id="client-testimonials">
       <Container>
-        <div className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-3">
+        <div className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-3" data-aos="fade-up">
           <div className="title w-[44%] max-[991px]:w-full">
             {eyebrow ? <Eyebrow className={cn("mb-4", eyebrowClassName)}>{eyebrow}</Eyebrow> : null}
             <h2 className="font-montreal-medium text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
@@ -46,11 +46,13 @@ export function HappyClientSection({
             </p>
           </div>
         </div>
-        <HappyClientCarousel
-          ariaLabel={carouselAriaLabel}
-          controls={{ nextLabel: controlsLabels.next, previousLabel: controlsLabels.previous }}
-          items={items}
-        />
+        <div data-aos="fade-up">
+          <HappyClientCarousel
+            ariaLabel={carouselAriaLabel}
+            controls={{ nextLabel: controlsLabels.next, previousLabel: controlsLabels.previous }}
+            items={items}
+          />
+        </div>
       </Container>
     </section>
   );

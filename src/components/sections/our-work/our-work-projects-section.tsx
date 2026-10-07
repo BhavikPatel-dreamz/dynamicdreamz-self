@@ -25,7 +25,7 @@ export function OurWorkProjectsSection() {
       aria-labelledby="our-work-projects-title"
     >
       <Container className="max-[575px]:px-4">
-        <div className="mb-10 flex items-end justify-between gap-12 max-[992px]:items-start max-[767px]:mb-[30px] max-[767px]:flex-col max-[767px]:gap-4">
+        <div data-aos="fade-up" className="mb-10 flex items-end justify-between gap-12 max-[992px]:items-start max-[767px]:mb-[30px] max-[767px]:flex-col max-[767px]:gap-4">
           <div className="shrink-0">
             <Eyebrow className="mb-5" lineThickness="thin" lineWidth="fixed">
               {ourWorkPage.portfolio.eyebrow}
@@ -43,6 +43,7 @@ export function OurWorkProjectsSection() {
         <div className="mt-[50px] flex flex-wrap gap-x-[15px] gap-y-[60px] max-[992px]:mt-[40px] max-[992px]:gap-y-[30px]">
           {ourWorkProjects.map((project) => (
             <div
+              data-aos="fade-up"
               className="w-[calc(25%_-_11.25px)] max-[1199px]:w-[calc(33.333%_-_10px)] max-[992px]:w-[calc(50%_-_7.5px)] max-[767px]:w-full"
               data-work-project
               data-work-platform={project.platform}
