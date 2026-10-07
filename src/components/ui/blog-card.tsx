@@ -118,7 +118,7 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
   return (
     <article className={cn("group/insight min-w-0 max-[992px]:mb-6 max-[992px]:block max-[992px]:border-b max-[992px]:border-[#efefef] max-[992px]:pb-6", isLast && "max-[992px]:mb-0 max-[992px]:border-b-0 max-[992px]:pb-0")}>
       <div className="contents max-[992px]:flex max-[992px]:items-stretch max-[992px]:justify-between max-[992px]:gap-5">
-        <Link className="mb-3 block overflow-hidden rounded-[20px] max-[992px]:relative max-[992px]:m-0 max-[992px]:w-2/5 max-[992px]:flex-[1_1_40%] max-[992px]:rounded-[10px]" href={item.href}>
+        <Link className="mb-5 block overflow-hidden rounded-[20px] max-[992px]:relative max-[992px]:m-0 max-[992px]:w-2/5 max-[992px]:flex-[1_1_40%] max-[992px]:rounded-[10px]" href={item.href}>
           <Image className="h-auto w-full object-cover [aspect-ratio:1504/1137] max-[992px]:absolute max-[992px]:inset-0 max-[992px]:h-full max-[992px]:[aspect-ratio:auto]" src={item.image ?? "/assets/og/homepage.png"} alt={item.title} width={item.width ?? 1504} height={item.height ?? 1137} sizes="(max-width: 991px) 40vw, 33vw" />
         </Link>
         <div className="max-[992px]:w-[calc(100%-110px)] max-[992px]:flex-[1_1_calc(100%-110px)]">
