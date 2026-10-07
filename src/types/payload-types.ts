@@ -259,7 +259,7 @@ export interface Article {
   slug: string;
   date: string;
   displayDate?: string | null;
-  coverImage: number | Media;
+  coverImage?: (number | null) | Media;
   excerpt: string;
   content: {
     root: {
@@ -306,7 +306,7 @@ export interface CaseStudy {
   industry?: string | null;
   technology?: string | null;
   websiteUrl?: string | null;
-  thumbnail: number | Media;
+  thumbnail?: (number | null) | Media;
   heroImage?: (number | null) | Media;
   gallery?:
     | {
