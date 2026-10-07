@@ -17,7 +17,7 @@ function DirectionArrow({ direction }: { direction: "previous" | "next" }) {
       fill="none"
     >
       <path
-        className="transition-colors duration-500 ease-in-out"
+        className="transition-colors duration-500 ease-in-out group-hover/arrow:fill-white"
         d="M1.25 7.95508C0.559644 7.95508 6.03528e-08 8.51472 0 9.20508C-6.03528e-08 9.89543 0.559644 10.4551 1.25 10.4551L1.25 9.20508L1.25 7.95508ZM19.1339 10.089C19.622 9.60081 19.622 8.80935 19.1339 8.3212L11.1789 0.366244C10.6908 -0.121911 9.89932 -0.121911 9.41117 0.366244C8.92301 0.854399 8.92301 1.64586 9.41117 2.13401L16.4822 9.20508L9.41116 16.2761C8.92301 16.7643 8.92301 17.5558 9.41116 18.0439C9.89932 18.5321 10.6908 18.5321 11.1789 18.0439L19.1339 10.089ZM1.25 9.20508L1.25 10.4551L18.25 10.4551L18.25 9.20508L18.25 7.95508L1.25 7.95508L1.25 9.20508Z"
         fill="#282828"
       />
@@ -58,7 +58,7 @@ function TestimonialSlide({
         </div>
         <h3 className="mb-5 max-w-[540px] pr-[78px] text-[26px] leading-[1.4] font-medium min-[768px]:max-[992px]:pr-0 min-[768px]:max-[992px]:text-[22px] max-[767px]:mb-4 max-[767px]:pr-0 max-[767px]:text-lg max-[767px]:leading-[normal] font-montreal-medium">{testimonial.title}</h3>
         <p className="mb-[26px] max-w-[90%] text-sm leading-6 font-normal text-muted max-[767px]:mb-5 max-[767px]:max-w-full max-[767px]:text-sm">{testimonial.quote}</p>
-        <div className="user_content_btm flex items-center border-t border-ink/15 pt-[26px] max-[767px]:pt-4">
+        <div className="user_content_btm flex items-center border-t border-ink/15 pt-[26px] max-[767px]:pt-4 [&_.video_icon_.video_btn:hover]:border-[#ad5151]">
           <div className="user_thumb_wrap flex flex-1 items-center">
             <Image className="mr-3.5 h-[60px] w-[60px] shrink-0 rounded-full object-cover max-[767px]:h-12 max-[767px]:w-12" src={testimonial.avatar} alt={`${testimonial.name}, ${testimonial.company}`} width={60} height={60} />
             <div className="user_content_wrap flex min-w-0 flex-col">
@@ -118,11 +118,11 @@ export function TestimonialCarousel({ items = testimonials }: TestimonialCarouse
             ))}
           </div>
         </div>
-        <div className="brand_testimonial_nav order-1 mb-[19px] flex justify-end gap-3.5 max-[992px]:order-2 max-[992px]:mt-6 max-[992px]:mb-0 max-[992px]:justify-center" aria-label="Testimonial navigation">
-          <button className="slider_arrow flex h-14 w-14 cursor-pointer items-center justify-center rounded-[10px] border-0 bg-white p-0 transition-all duration-500 ease-in-out hover:not-disabled:bg-brand-red hover:not-disabled:text-white disabled:cursor-default disabled:opacity-60 max-[767px]:h-[42px] max-[767px]:w-[42px] max-[767px]:rounded-md max-[767px]:[&_svg]:h-[15px] max-[767px]:[&_svg]:w-[15px] hover:not-disabled:[&_svg_path]:fill-[#fff]" type="button" aria-label="Previous testimonial" disabled={activeIndex === 0} onClick={() => moveTo(activeIndex - 1)}>
+        <div className="brand_testimonial_nav order-1 mb-[19px] flex justify-end gap-3.5 max-[992px]:order-2 max-[992px]:mt-6 max-[992px]:mb-0 max-[992px]:justify-center [&_.slider_arrow:hover_svg_path]:fill-white" aria-label="Testimonial navigation">
+          <button className="slider_arrow group/arrow flex h-14 w-14 cursor-pointer items-center justify-center rounded-[10px] border-0 bg-white p-0 transition-all duration-500 ease-in-out hover:not-disabled:bg-brand-red hover:not-disabled:text-white disabled:cursor-default disabled:opacity-60 disabled:pointer-events-none max-[767px]:h-[42px] max-[767px]:w-[42px] max-[767px]:rounded-md max-[767px]:[&_svg]:h-[15px] max-[767px]:[&_svg]:w-[15px] hover:not-disabled:[&_svg_path]:fill-white hover:[&_svg_path]:fill-white" type="button" aria-label="Previous testimonial" disabled={activeIndex === 0} onClick={() => moveTo(activeIndex - 1)}>
             <DirectionArrow direction="previous" />
           </button>
-          <button className="slider_arrow flex h-14 w-14 cursor-pointer items-center justify-center rounded-[10px] border-0 bg-white p-0 transition-all duration-500 ease-in-out hover:not-disabled:bg-brand-red hover:not-disabled:text-white disabled:cursor-default disabled:opacity-60 max-[767px]:h-[42px] max-[767px]:w-[42px] max-[767px]:rounded-md max-[767px]:[&_svg]:h-[15px] max-[767px]:[&_svg]:w-[15px] hover:not-disabled:[&_svg_path]:fill-[#fff]" type="button" aria-label="Next testimonial" disabled={activeIndex === items.length - 1} onClick={() => moveTo(activeIndex + 1)}>
+          <button className="slider_arrow group/arrow flex h-14 w-14 cursor-pointer items-center justify-center rounded-[10px] border-0 bg-white p-0 transition-all duration-500 ease-in-out hover:not-disabled:bg-brand-red hover:not-disabled:text-white disabled:cursor-default disabled:opacity-60 disabled:pointer-events-none max-[767px]:h-[42px] max-[767px]:w-[42px] max-[767px]:rounded-md max-[767px]:[&_svg]:h-[15px] max-[767px]:[&_svg]:w-[15px] hover:not-disabled:[&_svg_path]:fill-white hover:[&_svg_path]:fill-white" type="button" aria-label="Next testimonial" disabled={activeIndex === items.length - 1} onClick={() => moveTo(activeIndex + 1)}>
             <DirectionArrow direction="next" />
           </button>
         </div>
