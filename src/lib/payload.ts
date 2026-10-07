@@ -144,12 +144,16 @@ export async function getPayloadArticles(limit = 100) {
   }
 }
 
-export async function getPayloadArticleBySlug(slug: string) {
+export async function getPayloadArticleBySlug(
+  slug: string,
+  options?: { preview?: boolean },
+) {
   try {
     const payload = await getPayload({ config });
     const res = await payload.find({
       collection: "articles",
       where: { slug: { equals: slug } },
+      draft: options?.preview,
       limit: 1,
     });
     return res.docs[0] || null;
@@ -173,12 +177,16 @@ export async function getPayloadCaseStudies(limit = 100) {
   }
 }
 
-export async function getPayloadCaseStudyBySlug(slug: string) {
+export async function getPayloadCaseStudyBySlug(
+  slug: string,
+  options?: { preview?: boolean },
+) {
   try {
     const payload = await getPayload({ config });
     const res = await payload.find({
       collection: "case-studies",
       where: { slug: { equals: slug } },
+      draft: options?.preview,
       limit: 1,
     });
     return res.docs[0] || null;

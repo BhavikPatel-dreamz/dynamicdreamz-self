@@ -70,3 +70,8 @@ export const draftPreviewCopy = {
   exit: "Exit",
   separator: "•",
 } as const;
+
+export const revalidateApiCopy = {
+  invalidToken: "Invalid token",
+} as const;
+

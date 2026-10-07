@@ -1,10 +1,19 @@
 import type { GlobalConfig } from "payload";
+import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const Navigation: GlobalConfig = {
   slug: "navigation",
   label: "Header & Footer Menus",
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [
+      () => {
+        safeRevalidatePath("/", "layout");
+        safeRevalidatePath("/");
+      },
+    ],
   },
   fields: [
     {

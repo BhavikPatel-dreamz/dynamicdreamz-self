@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { draftMode } from "next/headers";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { BlogDetailPage } from "@/components/sections/blog-details/blog-detail-page";
 import { blogPostIndex, getBlogPostBySlug, getRelatedBlogPosts } from "@/content/blog-post-details";
+import { draftPreviewCopy } from "@/content/common";
 import { createPageMetadata, type PageSeoConfig } from "@/data/seo";
 import {
   adaptPayloadArticleToBlogPostDetail,
@@ -22,7 +25,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: BlogRouteProps): Promise<Metadata> {
   const { slug } = await params;
-  const rawPayloadPost = await getPayloadArticleBySlug(slug);
+  const draft = await draftMode();
+  const rawPayloadPost = await getPayloadArticleBySlug(slug, { preview: draft.isEnabled });
   const fallbackPost = await getBlogPostBySlug(slug);
 
   const post = rawPayloadPost
@@ -67,7 +71,8 @@ export async function generateMetadata({ params }: BlogRouteProps): Promise<Meta
 
 export default async function BlogRoute({ params }: BlogRouteProps) {
   const { slug } = await params;
-  const rawPayloadPost = await getPayloadArticleBySlug(slug);
+  const draft = await draftMode();
+  const rawPayloadPost = await getPayloadArticleBySlug(slug, { preview: draft.isEnabled });
   const fallbackPost = await getBlogPostBySlug(slug);
 
   const post = rawPayloadPost
@@ -86,6 +91,22 @@ export default async function BlogRoute({ params }: BlogRouteProps) {
           __html: serializeJsonLd(createBlogPostDetailPageSchema(post)),
         }}
       />
+      {draft.isEnabled ? (
+        <aside
+          aria-label="Draft mode indicator"
+          className="fixed right-4 bottom-4 z-50 flex items-center gap-2 rounded-lg bg-amber-500 px-4 py-2 text-xs font-bold text-white shadow-xl"
+        >
+          <span>{draftPreviewCopy.badge}</span>
+          <span aria-hidden="true">{draftPreviewCopy.separator}</span>
+          <Link
+            className="underline transition-opacity hover:opacity-80 focus-visible:opacity-80"
+            href="/api/exit-preview"
+            prefetch={false}
+          >
+            {draftPreviewCopy.exit}
+          </Link>
+        </aside>
+      ) : null}
       <BlogDetailPage post={post} relatedPosts={relatedPosts} />
     </main>
   );

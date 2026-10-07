@@ -13,15 +13,49 @@ import { TechnologiesGridBlock } from "@/blocks/TechnologiesGridBlock";
 import { TwoColImageWithTextBlock } from "@/blocks/TwoColImageWithTextBlock";
 import { IndustriesGridBlock } from "@/blocks/IndustriesGridBlock";
 import { RichTextBlock } from "@/blocks/RichTextBlock";
+import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
   admin: {
     useAsTitle: "title",
     defaultColumns: ["title", "slug", "updatedAt"],
+    livePreview: {
+      url: ({ data }) => {
+        const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000";
+        return `${baseUrl}/api/draft?secret=${process.env.PAYLOAD_SECRET || ""}&slug=${data.slug || ""}`;
+      },
+    },
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [
+      ({ doc, previousDoc }) => {
+        if (doc?.slug) {
+          const routePath =
+            doc.slug === "home" || doc.slug === "index" ? "/" : `/${doc.slug}`;
+          safeRevalidatePath(routePath);
+        }
+        if (previousDoc?.slug && previousDoc.slug !== doc?.slug) {
+          const prevRoutePath =
+            previousDoc.slug === "home" || previousDoc.slug === "index"
+              ? "/"
+              : `/${previousDoc.slug}`;
+          safeRevalidatePath(prevRoutePath);
+        }
+      },
+    ],
+    afterDelete: [
+      ({ doc }) => {
+        if (doc?.slug) {
+          const routePath =
+            doc.slug === "home" || doc.slug === "index" ? "/" : `/${doc.slug}`;
+          safeRevalidatePath(routePath);
+        }
+      },
+    ],
   },
   fields: [
     { name: "title", type: "text", required: true },

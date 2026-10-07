@@ -1,10 +1,19 @@
 import type { GlobalConfig } from "payload";
+import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const SiteSettings: GlobalConfig = {
   slug: "site-settings",
   label: "Company Information",
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [
+      () => {
+        safeRevalidatePath("/", "layout");
+        safeRevalidatePath("/");
+      },
+    ],
   },
   fields: [
     {
