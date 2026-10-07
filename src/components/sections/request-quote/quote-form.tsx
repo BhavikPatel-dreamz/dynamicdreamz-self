@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useRef } from "react";
 
-import { type QuoteFormState, submitQuoteForm } from "@/app/request-quote/actions";
+import { type QuoteFormState, submitQuoteForm } from "@/app/(frontend)/request-quote/actions";
 import { quoteFormCopy } from "@/content/forms";
 import { requestQuoteContent } from "@/content/request-quote";
 import { PhoneInput } from "@/components/sections/request-quote/phone-input";

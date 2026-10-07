@@ -5,7 +5,7 @@ import { useActionState, useEffect, useRef } from "react";
 import {
   type ContactFormState,
   submitContactForm,
-} from "@/app/contact-us/actions";
+} from "@/app/(frontend)/contact-us/actions";
 import { contactFormCopy } from "@/content/forms";
 
 const attributionFields = [

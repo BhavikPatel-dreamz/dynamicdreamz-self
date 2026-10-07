@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useRef } from "react";
 
-import { submitCareerApplication, type CareerApplyFormState } from "@/app/career-apply-now/actions";
+import { submitCareerApplication, type CareerApplyFormState } from "@/app/(frontend)/career-apply-now/actions";
 import { ButtonLink } from "@/components/ui/button-link";
 import { careerApplyNowContent } from "@/content/career-apply-now";
 import { careerApplyFormCopy } from "@/content/forms";

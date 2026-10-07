@@ -2,7 +2,6 @@ import type { SVGProps } from "react";
 
 export function CareerBenefitIcon({
   name,
-  className,
   ...props
 }: {
   name: string;
