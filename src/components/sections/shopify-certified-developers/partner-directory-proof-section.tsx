@@ -33,7 +33,10 @@ export function PartnerDirectoryProofSection({
       aria-labelledby="shopify-partner-directory-title"
     >
       <Container>
-        <div className="rounded-[30px] bg-[#fafaf7] p-[50px] max-[1199px]:p-[50px_40px] max-[992px]:p-[40px_30px] max-[575px]:rounded-[20px] max-[575px]:p-[30px_20px]">
+        <div
+          data-aos="fade-up"
+          className="rounded-[30px] bg-[#fafaf7] p-[50px] max-[1199px]:p-[50px_40px] max-[992px]:p-[40px_30px] max-[575px]:rounded-[20px] max-[575px]:p-[30px_20px]"
+        >
           <header className="mx-auto max-w-[875px] text-center">
             <h2
               className="mb-[15px] font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:text-[33px] max-[992px]:text-[32px] max-[992px]:leading-10 max-[575px]:text-2xl max-[575px]:leading-[33.24px]"

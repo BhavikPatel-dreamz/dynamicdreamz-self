@@ -45,7 +45,7 @@ export function ThemeWhyChooseSection({
   return (
     <section className={sectionClassName} id={id}>
       <Container>
-        <div className="heading-text mx-auto max-w-[920px] text-center">
+        <div className="heading-text mx-auto max-w-[920px] text-center" data-aos="fade-up">
           <SectionHeading>
             {formatBrText(content.title, "max-[1199px]:hidden")}
           </SectionHeading>
@@ -61,6 +61,7 @@ export function ThemeWhyChooseSection({
           className={`why_dynamic_dreamz_main mt-[60px] max-[992px]:mt-5 ${
             variant === "top-icon" ? "mx-auto max-w-[920px]" : ""
           }`}
+          data-aos="fade-up"
         >
           <ul className="why_dynamic_dreamz-grid grid grid-cols-2 max-[992px]:grid-cols-1 list-none p-0 m-0">
             {content.items.map((item, index) => {
@@ -70,7 +71,7 @@ export function ThemeWhyChooseSection({
 
               return (
                 <li
-                  className={`flex p-[51px] max-[1199px]:p-8 max-[992px]:py-7.5 max-[992px]:px-5 border-black/5 ${
+                  className={`why-choose-box flex p-[51px] max-[1199px]:p-8 max-[992px]:py-7.5 max-[992px]:px-5 border-black/5 ${
                     variant === "top-icon"
                       ? "flex-col items-start"
                       : variant === "top-icon-mobile"
@@ -81,6 +82,7 @@ export function ThemeWhyChooseSection({
                   } ${!isLastRow ? "border-b" : "max-[992px]:border-b"} ${
                     isLastItem ? "max-[992px]:border-b-0" : ""
                   }`}
+                  data-aos="fade-up"
                   key={item.title}
                 >
                   <span

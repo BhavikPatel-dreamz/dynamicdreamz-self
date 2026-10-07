@@ -44,9 +44,10 @@ export function RecentArchitecturePatternsSection({
           variant="left"
         />
 
-        <div className="wrapper -mx-[7.5px] -mb-[15px] flex flex-wrap">
+        <div data-aos="fade-up" className="wrapper -mx-[7.5px] -mb-[15px] flex flex-wrap">
           {content.items.map((item) => (
             <div
+              data-aos="fade-up"
               className="recent_architecture_col mb-[15px] w-1/4 px-[7.5px] max-[1199px]:w-1/2 max-[767px]:w-full"
               key={item.title}
             >

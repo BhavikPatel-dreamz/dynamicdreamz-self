@@ -51,7 +51,7 @@ export function CredentialTabs({
   }
 
   return (
-    <div className="overflow-hidden rounded-[29px] border border-ink/10">
+    <div data-aos="fade-up" className="overflow-hidden rounded-[29px] border border-ink/10">
       <div
         aria-label="Shopify credential requirements"
         className="grid grid-cols-4 max-[575px]:grid-cols-1"

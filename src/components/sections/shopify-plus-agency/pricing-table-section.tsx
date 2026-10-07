@@ -52,6 +52,7 @@ export function PricingTableSection({
         <div className="pricing_cards grid grid-cols-3 gap-5 max-[1199px]:mb-[35px] max-[1199px]:gap-[15px] max-[991px]:mb-[30px] max-[991px]:grid-cols-1 max-[991px]:gap-[10px] max-[767px]:mb-5 max-[767px]:gap-5">
           {content.items.map((item) => (
             <article
+              data-aos="fade-up"
               className="pricing_card group relative flex h-full flex-col rounded-[20px] bg-white px-6 pt-8 pb-[60px] max-[1199px]:px-5 max-[1199px]:pt-[25px] max-[991px]:px-[15px] max-[991px]:pt-5"
               key={item.label}
             >
@@ -97,7 +98,7 @@ export function PricingTableSection({
         </div>
 
         {/* Live template always renders `.pricing_cta_wrapper` (margin-top: 30px). */}
-        <div className="pricing_cta_wrapper mt-[30px] text-center" />
+        <div data-aos="fade-up" className="pricing_cta_wrapper mt-[30px] text-center" />
       </Container>
     </section>
   );

@@ -42,7 +42,7 @@ export function WhiteLabelWebsiteDesignPage() {
       <section className="white_label_wp_development_service_accordion_section website-design bg-[#fafaf7] py-[60px] max-[767px]:py-10">
         <Container className="max-[575px]:px-4">
           <div className="flex items-center justify-between gap-[60px] max-[992px]:flex-col max-[992px]:items-stretch max-[992px]:gap-5">
-            <div className="w-[47%] max-[992px]:w-full">
+            <div data-aos="fade-up" className="w-[47%] max-[992px]:w-full">
               <h2 className="mb-[15px] font-sans text-[35px] leading-[1.38] font-bold tracking-[-.7px] text-ink max-[992px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35]">
                 {whiteLabelWebsiteDesignWhyCopy.title}
               </h2>

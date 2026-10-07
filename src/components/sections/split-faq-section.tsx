@@ -72,7 +72,7 @@ export function SplitFaqSection({
     >
       <Container className={containerClassName}>
         <div className="flex justify-between gap-[105px] max-[1399px]:gap-8 max-[991px]:flex-col max-[991px]:gap-[30px]">
-          <div className="w-[41%] max-[1199px]:w-[44%] max-[991px]:w-full">
+          <div className="w-[41%] max-[1199px]:w-[44%] max-[991px]:w-full" data-aos="fade-up">
             <header className="mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
               {eyebrow ? (
                 <Eyebrow as="span" className={cn("mb-4", eyebrowClassName)}>
@@ -95,7 +95,7 @@ export function SplitFaqSection({
               ) : null}
             </header>
           </div>
-          <div className="w-[57%] max-w-[654px] grow max-[1199px]:w-[53%] max-[1199px]:max-w-none max-[991px]:w-full">
+          <div className="w-[57%] max-w-[654px] grow max-[1199px]:w-[53%] max-[1199px]:max-w-none max-[991px]:w-full" data-aos="fade-up">
             {lazyAccordion ? (
               <LazyFaqAccordion
                 animateOnReveal={animateOnReveal}

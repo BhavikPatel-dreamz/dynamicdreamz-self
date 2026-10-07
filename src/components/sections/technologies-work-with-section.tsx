@@ -42,9 +42,10 @@ export function TechnologiesWorkWithSection({
           variant="left"
         />
 
-        <div className="technologies-wrapper -mx-[7.5px] -mb-[15px] flex flex-wrap">
+        <div data-aos="fade-up" className="technologies-wrapper -mx-[7.5px] -mb-[15px] flex flex-wrap">
           {content.categories.map((col) => (
             <div
+              data-aos="fade-up"
               className="technologies-col mb-[15px] w-1/4 px-[7.5px] max-[1199px]:w-1/2 max-[767px]:w-full"
               key={col.category}
             >

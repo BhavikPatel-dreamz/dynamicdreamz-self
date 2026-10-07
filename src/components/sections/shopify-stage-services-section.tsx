@@ -69,6 +69,7 @@ export function ShopifyStageServicesSection({
 
             return (
               <article
+                data-aos="fade-up"
                 className={cn(
                   "item relative overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] p-[27px] transition-all max-[1399px]:p-5 max-[767px]:rounded-[16px]",
                   isFirst

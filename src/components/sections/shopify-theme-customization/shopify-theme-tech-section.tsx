@@ -53,7 +53,7 @@ export function ShopifyThemeTechSection({
       id="technologies"
     >
       <Container>
-        <div className="mx-auto max-w-[850px] text-center">
+        <div className="mx-auto max-w-[850px] text-center" data-aos="fade-up">
           <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(content.title, "max-[1199px]:hidden")}
           </h2>
@@ -69,6 +69,7 @@ export function ShopifyThemeTechSection({
             "builder-wrapper mx-auto mt-[50px] flex flex-wrap justify-center max-[767px]:mt-[35px]",
             isFiveCol ? "max-w-[1140px] -mx-2" : "max-w-[900px]",
           )}
+          data-aos="fade-up"
         >
           {content.items.map((tech) => {
             const title = tech.title ?? tech.name ?? "";
@@ -83,6 +84,7 @@ export function ShopifyThemeTechSection({
                     ? "w-1/5 px-2 max-[1199px]:w-1/4 max-[767px]:w-1/2"
                     : "w-1/3 px-2.5 max-[767px]:w-1/2",
                 )}
+                data-aos="fade-up"
                 key={title}
               >
                 <div className="builder-block transition-transform duration-300 hover:-translate-y-1">
@@ -130,7 +132,7 @@ export function ShopifyThemeTechSection({
         </div>
 
         {content.bottomDescription && (
-          <div className="bottom-text mt-10 text-center">
+          <div className="bottom-text mt-10 text-center" data-aos="fade-up">
             <p className="mx-auto max-w-[850px] font-sans text-base font-semibold italic leading-[26px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
               {formatBrText(content.bottomDescription)}
             </p>

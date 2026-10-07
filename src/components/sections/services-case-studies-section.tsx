@@ -48,6 +48,7 @@ export function ServicesCaseStudiesSection({
     >
       <Container className={containerClassName}>
         <div
+          data-aos="fade-up"
           className={cn(
             "section_title_with_eyebrow mb-10 max-[991px]:mb-[30px]",
             description &&
@@ -86,6 +87,7 @@ export function ServicesCaseStudiesSection({
           {items.map((item) => (
             <article
               key={item.href}
+              data-aos="fade-up"
               className="cs-listing-row relative mb-5 flex min-h-full w-[calc(33.33%-10px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-[0.23s_ease] max-[1199px]:w-[calc(50%-10px)] max-[991px]:w-full"
             >
               <Link

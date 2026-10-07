@@ -47,7 +47,7 @@ export function ShopifyMigrationServicesSection({
     >
       <Container>
         {(eyebrow || heading || description) && (
-          <div className="section_title_with_eyebrow mb-[50px] flex items-end justify-between gap-6 max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:items-start">
+          <div data-aos="fade-up" className="section_title_with_eyebrow mb-[50px] flex items-end justify-between gap-6 max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:items-start">
             <div className="title max-w-[620px]">
               {eyebrow && (
                 <Eyebrow className="mb-2.5 text-[#ad5151]" lineThickness="thin">
@@ -70,9 +70,10 @@ export function ShopifyMigrationServicesSection({
           </div>
         )}
 
-        <div className="migration-wrapper -mx-2 flex flex-wrap justify-center max-[767px]:mx-0">
+        <div data-aos="fade-up" className="migration-wrapper -mx-2 flex flex-wrap justify-center max-[767px]:mx-0">
           {items.map((item) => (
             <div
+              data-aos="fade-up"
               className="migration-col mb-5 w-1/3 px-2 max-[991px]:w-1/2 max-[991px]:mb-4 max-[767px]:w-full max-[767px]:px-0"
               key={item.title}
             >
@@ -116,7 +117,7 @@ export function ShopifyMigrationServicesSection({
         </div>
 
         {banner && (
-          <div className="wrapper mt-[50px] flex items-center justify-between rounded-[30px] border-[1.5px] border-[rgba(23,30,22,0.1)] bg-[#EFF4EF] p-[40px_32px_32px_32px] max-[1199px]:flex-wrap max-[991px]:mt-8 max-[991px]:rounded-[20px] max-[991px]:p-[30px] max-[767px]:p-5">
+          <div data-aos="fade-up" className="wrapper mt-[50px] flex items-center justify-between rounded-[30px] border-[1.5px] border-[rgba(23,30,22,0.1)] bg-[#EFF4EF] p-[40px_32px_32px_32px] max-[1199px]:flex-wrap max-[991px]:mt-8 max-[991px]:rounded-[20px] max-[991px]:p-[30px] max-[767px]:p-5">
             <div className="wlp-banner-content max-w-[868px] max-[1440px]:max-w-[720px] max-[1199px]:mb-5 max-[1199px]:max-w-full">
               <span className="badge mb-3 inline-block rounded-[30px] border border-[rgba(23,30,22,0.1)] bg-white px-3 py-1 font-montserrat text-xs font-bold uppercase text-[#282828]">
                 {banner.badge}

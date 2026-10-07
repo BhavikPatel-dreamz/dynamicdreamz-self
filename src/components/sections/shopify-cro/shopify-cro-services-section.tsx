@@ -31,6 +31,7 @@ export function ShopifyCroServicesSection({
             return (
               <div
                 key={item.title}
+                data-aos="fade-up"
                 className={`shopify-cro-services-item w-1/3 p-[42px_37px] text-center max-[991px]:w-full max-[991px]:border-l-0 max-[991px]:border-b max-[991px]:border-black/10 max-[991px]:p-[25px] max-[991px]:last:border-b-0 ${
                   !isFirstInRow
                     ? "min-[992px]:border-l min-[992px]:border-black/10"

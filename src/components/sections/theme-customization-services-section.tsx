@@ -60,6 +60,7 @@ export function ThemeCustomizationServicesSection({
           {content.boxes.map((box) => (
             <div
               className="box rounded-[20px] border border-[rgba(40,40,40,0.11)] bg-white p-[25px] max-[991px]:p-5"
+              data-aos="fade-up"
               key={box.number ?? box.title}
             >
               {box.icon ? (
@@ -97,7 +98,7 @@ export function ThemeCustomizationServicesSection({
         </div>
 
         {/* Live template always renders `.bottom-text` (margin-top: 20px), even when empty. */}
-        <div className="bottom-text mt-5 font-sans text-sm font-medium text-[#535353]">
+        <div className="bottom-text mt-5 font-sans text-sm font-medium text-[#535353]" data-aos="fade-up">
           {content.bottomNote ? <p>{content.bottomNote}</p> : null}
         </div>
       </Container>

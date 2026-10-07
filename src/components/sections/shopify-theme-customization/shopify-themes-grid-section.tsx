@@ -57,7 +57,7 @@ export function ShopifyThemesGridSection({
             variant="left"
           />
 
-          <div className="wrapper grid grid-cols-3 gap-[22px] max-[1199px]:grid-cols-2 max-[767px]:block max-[767px]:space-y-4">
+          <div className="wrapper grid grid-cols-3 gap-[22px] max-[1199px]:grid-cols-2 max-[767px]:block max-[767px]:space-y-4" data-aos="fade-up">
             {content.items.map((theme) => {
               const title = theme.title ?? theme.name ?? "";
               const alt = theme.alt ?? `${title} Image`;
@@ -67,6 +67,7 @@ export function ShopifyThemesGridSection({
               return (
                 <Link
                   className="shopify-theme-card group block rounded-[24px] border border-[rgba(40,40,40,0.11)] bg-white p-4 transition-all duration-300 hover:-translate-y-[5px] hover:shadow-[0_22px_50px_rgba(40,40,40,0.10)]"
+                  data-aos="fade-up"
                   href={href}
                   key={title}
                 >
@@ -114,7 +115,7 @@ export function ShopifyThemesGridSection({
       id={sectionId}
     >
       <Container>
-        <div className="mx-auto max-w-[820px] text-center">
+        <div className="mx-auto max-w-[820px] text-center" data-aos="fade-up">
           <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {content.title}
           </h2>
@@ -132,6 +133,7 @@ export function ShopifyThemesGridSection({
             return (
               <Link
                 className="group relative block rounded-[15px] border border-[#efefef] bg-white p-[20px_20px_34px_20px] transition-all duration-300 hover:shadow-[0px_10px_50px_0px_rgba(94,94,94,0.08)] before:absolute before:-inset-[2px] before:-z-10 before:rounded-[15px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
+                data-aos="fade-up"
                 href={href}
                 key={title}
               >

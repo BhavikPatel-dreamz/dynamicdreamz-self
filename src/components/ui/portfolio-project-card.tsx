@@ -148,7 +148,7 @@ export function PortfolioProjectCard({
 
   if (variant === "ourWorkRefresh") {
     return (
-      <article>
+      <article data-aos="fade-up">
         {href ? (
           <a
             className="group/project block focus-visible:outline-offset-4"
@@ -263,7 +263,7 @@ export function PortfolioProjectCard({
   }
 
   return (
-    <article>
+    <article data-aos="fade-up">
       {href ? (
         <a
           className={cn(

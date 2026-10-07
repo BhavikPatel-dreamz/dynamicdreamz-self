@@ -46,7 +46,7 @@ export function NumberedProcessTimelineSection({
             variant="left"
           />
         ) : (
-          <header className="mb-[60px] text-center max-[767px]:mb-[30px]">
+          <header data-aos="fade-up" className="mb-[60px] text-center max-[767px]:mb-[30px]">
             {eyebrow ? (
               <Eyebrow align="center" className="mb-2">
                 {eyebrow}
@@ -66,12 +66,13 @@ export function NumberedProcessTimelineSection({
           </header>
         )}
 
-        <ol className="relative grid grid-cols-5 before:absolute before:top-[129px] before:right-[4%] before:left-[4%] before:border-t-[1.5px] before:border-dashed before:border-brand-red max-[767px]:grid-cols-1 max-[767px]:border-l-[1.5px] max-[767px]:border-brand-red max-[767px]:pl-2.5 max-[767px]:[border-image:repeating-linear-gradient(to_bottom,#ad5151_0,#ad5151_6px,transparent_6px,transparent_12px)_1] max-[767px]:before:hidden">
+        <ol data-aos="fade-up" className="relative grid grid-cols-5 before:absolute before:top-[129px] before:right-[4%] before:left-[4%] before:border-t-[1.5px] before:border-dashed before:border-brand-red max-[767px]:grid-cols-1 max-[767px]:border-l-[1.5px] max-[767px]:border-brand-red max-[767px]:pl-2.5 max-[767px]:[border-image:repeating-linear-gradient(to_bottom,#ad5151_0,#ad5151_6px,transparent_6px,transparent_12px)_1] max-[767px]:before:hidden">
           {items.map((item, index) => {
             const label = typeof item === "string" ? item : item.text;
 
             return (
               <li
+                data-aos="fade-up"
                 className="relative z-1 flex flex-col items-center px-3 text-center max-[767px]:items-start max-[767px]:py-3 max-[767px]:pr-0 max-[767px]:pl-3 max-[767px]:text-left"
                 key={label}
               >

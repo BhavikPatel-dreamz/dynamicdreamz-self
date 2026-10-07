@@ -23,10 +23,11 @@ export function ShopifyMobileAppDtcSection({
           className="mb-[50px] max-[767px]:mb-[30px]"
         />
 
-        <div className="wrapper flex flex-wrap -mx-[10px] -mb-5 justify-center">
+        <div data-aos="fade-up" className="wrapper flex flex-wrap -mx-[10px] -mb-5 justify-center">
           {content.cards.map((card, idx) => (
             <div
               key={idx}
+              data-aos="fade-up"
               className="mobile-app-col w-1/3 px-[10px] mb-5 max-[991px]:w-1/2 max-[767px]:w-full"
             >
               <div className="mobile-app-box flex h-full flex-col justify-between rounded-[20px] border border-[rgba(40,40,40,0.10)] bg-[#EFF4EF] p-[35px_25px_80px_25px] max-[1199px]:p-[30px_20px_50px_20px]">

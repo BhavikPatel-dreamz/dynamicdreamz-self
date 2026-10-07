@@ -28,7 +28,7 @@ export function CredentialEvidenceSection({
         />
         <div className="grid grid-cols-4 gap-x-10 max-[1199px]:gap-x-5 max-[992px]:grid-cols-2 max-[992px]:gap-y-[30px] max-[575px]:grid-cols-1">
           {content.items.map((item) => (
-            <article className="flex h-full flex-col text-center" key={item.title}>
+            <article data-aos="fade-up" className="flex h-full flex-col text-center" key={item.title}>
               <a
                 aria-label={`View the ${item.title} credential on Credly`}
                 className="mx-auto mb-[27px] flex h-[230px] w-[246px] max-w-full items-start justify-center bg-[url('/assets/shopify-certified-developers/credential-wings.svg')] bg-top bg-contain bg-no-repeat focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red"

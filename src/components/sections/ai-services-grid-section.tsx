@@ -48,9 +48,10 @@ export function AiServicesGridSection({
           variant="left"
         />
 
-        <div className="ai-service-grid -mx-[10px] -mb-5 flex flex-wrap">
+        <div data-aos="fade-up" className="ai-service-grid -mx-[10px] -mb-5 flex flex-wrap">
           {content.items.map((item) => (
             <div
+              data-aos="fade-up"
               className="ai-service-col mb-5 w-1/2 px-[10px] max-[767px]:w-full"
               key={item.title}
             >

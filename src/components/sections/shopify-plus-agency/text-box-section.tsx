@@ -34,6 +34,7 @@ export function TextBoxSection({
     >
       <Container>
         <div
+          data-aos="fade-up"
           className={cn(
             "text-box-wrap text-center",
             isGreen

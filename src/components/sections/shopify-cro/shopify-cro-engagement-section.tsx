@@ -16,7 +16,7 @@ export function ShopifyCroEngagementSection({
   return (
     <section className={className}>
       <Container>
-        <div className="section-title mx-auto mb-[35px] text-center">
+        <div data-aos="fade-up" className="section-title mx-auto mb-[35px] text-center">
           <h2 className="font-display text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
             {content.heading}
           </h2>
@@ -26,6 +26,7 @@ export function ShopifyCroEngagementSection({
           {content.items.map((item) => (
             <div
               key={item.title}
+              data-aos="fade-up"
               className="shopify-cro-engagement-card mb-4 w-[calc(50%-8px)] max-[767px]:w-full"
             >
               <div className="shopify-cro-engagement-box flex h-full flex-col justify-between rounded-[30px] border border-black/10 bg-white p-[25px] shadow-none">

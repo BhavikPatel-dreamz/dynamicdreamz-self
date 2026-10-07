@@ -47,6 +47,7 @@ export function FeaturesGridSection({
     <section className={className} data-section="features" id={id}>
       <Container>
         <div
+          data-aos="fade-up"
           className={cn(
             "title mb-12 max-[767px]:mb-6",
             titleAlign === "center" ? "mx-auto max-w-[850px] text-center" : "text-left",
@@ -67,9 +68,9 @@ export function FeaturesGridSection({
           ) : null}
         </div>
 
-        <div className="-mx-3 flex flex-wrap justify-center">
+        <div data-aos="fade-up" className="-mx-3 flex flex-wrap justify-center">
           {features.map((item, idx) => (
-            <div className={cn("mb-6 px-3", colClass)} key={`${item.title}-${idx}`}>
+            <div data-aos="fade-up" className={cn("mb-6 px-3", colClass)} key={`${item.title}-${idx}`}>
               <article className="group relative z-0 flex h-full flex-col justify-between rounded-[10px] border border-[#efefef] bg-white p-[30px_26px] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
                 <div>
                   {item.icon ? (

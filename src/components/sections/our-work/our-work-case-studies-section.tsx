@@ -12,7 +12,10 @@ export function OurWorkCaseStudiesSection() {
       aria-labelledby="our-work-case-studies-title"
     >
       <Container className="max-[575px]:px-4">
-        <div className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[992px]:mb-[30px] max-[767px]:flex-col max-[767px]:items-start max-[767px]:gap-4">
+        <div
+          data-aos="fade-up"
+          className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[992px]:mb-[30px] max-[767px]:flex-col max-[767px]:items-start max-[767px]:gap-4"
+        >
           <div className="title w-[44%] max-[1399px]:w-[35%] max-[1199px]:w-[36%] max-[992px]:w-full">
             <Eyebrow className="mb-3.75 max-[767px]:mb-5" tone="muted">
               {ourWorkPage.caseStudies.eyebrow}
@@ -34,6 +37,7 @@ export function OurWorkCaseStudiesSection() {
         <div className="cs-listing-main three-col flex flex-wrap justify-between gap-y-5">
           {ourWorkCaseStudies.map((item) => (
             <article
+              data-aos="fade-up"
               className="cs-listing-row flex w-[calc(33.333%_-_14px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[992px]:w-[calc(50%_-_10px)] max-[767px]:w-full"
               key={item.slug}
             >

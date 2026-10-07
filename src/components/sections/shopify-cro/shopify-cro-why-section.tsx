@@ -14,10 +14,13 @@ export function ShopifyCroWhySection({
   return (
     <section className={className}>
       <Container>
-        <div className="cro-dynamic-dreamz-wrap overflow-hidden rounded-[30px] bg-[#F7F4E9]">
+        <div
+          data-aos="fade-up"
+          className="cro-dynamic-dreamz-wrap overflow-hidden rounded-[30px] bg-[#F7F4E9]"
+        >
           <div className="column-row flex flex-wrap items-end justify-between p-[43px_57px_0] max-[1199px]:p-[30px_30px_0] max-[991px]:p-[30px_20px_0]">
             <div className="column-left w-[51%] max-[991px]:w-full">
-              <div className="content-box pb-[50px] max-[991px]:pb-2.5">
+              <div data-aos="fade-up" className="content-box pb-[50px] max-[991px]:pb-2.5">
                 <div className="section_title_with_eyebrow mb-[15px]">
                   <div className="title">
                     <Eyebrow className="mb-4 text-[#535353]">

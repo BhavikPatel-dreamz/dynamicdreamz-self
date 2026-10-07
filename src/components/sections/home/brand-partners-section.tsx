@@ -39,6 +39,7 @@ export function BrandPartnersSection({
     >
       <Container>
         <div
+          data-aos="fade-up"
           className={cn(
             "flex items-end justify-between max-[992px]:flex-col max-[992px]:items-start",
             isShopifyHours
@@ -66,6 +67,7 @@ export function BrandPartnersSection({
           </SectionDescription>
         </div>
         <div
+          data-aos="fade-up"
           className={cn(
             "grid grid-cols-5 -mx-3.75 max-[767px]:hidden",
             isShopifyHours
@@ -86,7 +88,7 @@ export function BrandPartnersSection({
           ))}
         </div>
       </Container>
-      <div className="hidden flex-col max-[767px]:flex" aria-hidden="true">
+      <div data-aos="fade-up" className="hidden flex-col max-[767px]:flex" aria-hidden="true">
         {mobileRows.map((row, index) => (
           <div className={cn("flex w-max items-center", index > 0 && "mt-2.5", index === 0 && "mb-5", index === 2 && "ml-[-25%]")} key={index}>
             {[0, 1, 2].map((set) => (

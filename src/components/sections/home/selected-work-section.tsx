@@ -82,19 +82,26 @@ function ProjectList({ decorative = false }: { decorative?: boolean }) {
 export function SelectedWorkSection() {
   return (
     <section className="overflow-hidden bg-dark-green pt-[60px] pb-[52px] text-white max-[767px]:py-[30px]">
-      <Container className="flex items-end justify-between max-[992px]:flex-col max-[992px]:items-start">
+      <Container
+        data-aos="fade-up"
+        className="flex items-end justify-between max-[992px]:flex-col max-[992px]:items-start"
+      >
         <SectionHeading tone="inverse" className="mr-5 max-w-[600px] min-[768px]:max-[992px]:m-0 min-[768px]:max-[992px]:max-w-full max-[767px]:m-0 max-[767px]:mb-4 max-[767px]:max-w-full">{homeSectionCopy.selectedWorkTitle}</SectionHeading>
         <p className="max-w-[580px] text-base leading-7 font-medium text-white min-[768px]:max-[992px]:mt-2.5 min-[768px]:max-[992px]:max-w-full max-[767px]:max-w-full max-[767px]:text-sm max-[767px]:leading-[180%]">
           {homeSectionCopy.selectedWorkDescription}
         </p>
       </Container>
-      <div className="w-full overflow-hidden py-[57px] pb-[51px] max-[767px]:overflow-x-auto max-[767px]:px-0 max-[767px]:pt-[34px] max-[767px]:pb-[30px] max-[767px]:[container-type:inline-size] max-[767px]:[scrollbar-width:none] max-[767px]:snap-x max-[767px]:snap-mandatory max-[767px]:[&::-webkit-scrollbar]:hidden" aria-label="Selected ecommerce work">
+      <div
+        data-aos="fade-up"
+        className="w-full overflow-hidden py-[57px] pb-[51px] max-[767px]:overflow-x-auto max-[767px]:px-0 max-[767px]:pt-[34px] max-[767px]:pb-[30px] max-[767px]:[container-type:inline-size] max-[767px]:[scrollbar-width:none] max-[767px]:snap-x max-[767px]:snap-mandatory max-[767px]:[&::-webkit-scrollbar]:hidden"
+        aria-label="Selected ecommerce work"
+      >
         <div className={cn("flex w-[calc(500%+5px)] min-[1600px]:w-[calc(425%+5px)] max-[767px]:w-max", styles.projectMotion)}>
           <ProjectList />
           <ProjectList decorative />
         </div>
       </div>
-      <div className="flex justify-center">
+      <div data-aos="fade-up" className="flex justify-center">
         <ButtonLink className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:min-h-[42px] max-[992px]:py-3 max-[992px]:text-sm" variant="light" href={homeSectionCopy.ctaViewWorkHref}>{homeSectionCopy.ctaViewWork}</ButtonLink>
       </div>
     </section>

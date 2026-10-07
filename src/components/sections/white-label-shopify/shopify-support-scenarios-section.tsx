@@ -26,7 +26,10 @@ export function ShopifySupportScenariosSection({
   return (
     <section className="scenario-tab-sec overflow-hidden bg-white py-20 max-[991px]:py-12">
       <Container>
-        <div className="section_title mb-12 max-[991px]:mb-8">
+        <div
+          data-aos="fade-up"
+          className="section_title mb-12 max-[991px]:mb-8"
+        >
           {content.eyebrow ? (
             <Eyebrow className="mb-3 text-[#ad5151]">{content.eyebrow}</Eyebrow>
           ) : null}
@@ -43,7 +46,10 @@ export function ShopifySupportScenariosSection({
         </div>
 
         {/* Desktop & Tablet Split View (>= 768px) */}
-        <div className="scenario-shell hidden md:flex md:flex-wrap md:justify-between">
+        <div
+          data-aos="fade-up"
+          className="scenario-shell hidden md:flex md:flex-wrap md:justify-between"
+        >
           <div
             aria-label={content.heading}
             className="scenario-tabs w-[37%] max-[1399px]:w-[35%]"
@@ -126,7 +132,10 @@ export function ShopifySupportScenariosSection({
         </div>
 
         {/* Mobile Horizontal Scroll Carousel (< 768px) */}
-        <div className="scenario-mobile flex md:hidden overflow-x-auto gap-4 pb-4 -mx-4 px-4 snap-x snap-mandatory scrollbar-none">
+        <div
+          data-aos="fade-up"
+          className="scenario-mobile flex md:hidden overflow-x-auto gap-4 pb-4 -mx-4 px-4 snap-x snap-mandatory scrollbar-none"
+        >
           {content.items.map((panel) => (
             <div
               className="scenario-panel-card min-w-[85vw] flex-shrink-0 snap-center rounded-[20px] bg-[#EFF4EF] p-6 flex flex-col justify-between"

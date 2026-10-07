@@ -13,7 +13,10 @@ export function HowAgenciesUseSection({
   return (
     <section className="how_agencies_use_dynamic_dreamz_section bg-[#faf9f5] py-20 max-[991px]:py-12">
       <Container>
-        <div className="section_title mb-12 max-[991px]:mb-8">
+        <div
+          data-aos="fade-up"
+          className="section_title mb-12 max-[991px]:mb-8"
+        >
           {content.eyebrow ? (
             <Eyebrow className="mb-3 text-[#ad5151]">{content.eyebrow}</Eyebrow>
           ) : null}
@@ -29,7 +32,10 @@ export function HowAgenciesUseSection({
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-5 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
+        <div
+          data-aos="fade-up"
+          className="grid grid-cols-3 gap-5 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1"
+        >
           {content.cards.map((card) => (
             <div
               className="flex h-full flex-col justify-between rounded-[20px] border border-[rgba(23,30,22,0.10)] bg-white p-[30px_20px] max-[1199px]:p-5"

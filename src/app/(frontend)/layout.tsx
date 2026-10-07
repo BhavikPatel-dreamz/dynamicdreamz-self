@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
+import { AosInit } from "@/components/layout/aos-init";
 import { ContactWidget } from "@/components/layout/contact-widget";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -15,6 +16,7 @@ import {
 } from "@/lib/payload";
 
 import "./globals.css";
+import "./aos.css";
 
 const neueMontrealMedium = localFont({
   src: "./fonts/neue--montreal-medium-webfont.woff2",
@@ -71,6 +73,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           socialLinks={settingsData?.socialLinks}
         />
         <ContactWidget whatsappNumber={settingsData?.whatsappNumber} />
+        <AosInit />
       </body>
     </html>
   );
