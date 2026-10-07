@@ -4,13 +4,17 @@ import { notFound } from "next/navigation";
 import { BlogDetailPage } from "@/components/sections/blog-details/blog-detail-page";
 import { blogPostIndex, getBlogPostBySlug, getRelatedBlogPosts } from "@/content/blog-post-details";
 import { createPageMetadata, type PageSeoConfig } from "@/data/seo";
+import {
+  adaptPayloadArticleToBlogPostDetail,
+  getPayloadArticleBySlug,
+} from "@/lib/payload";
 import { createBlogPostDetailPageSchema, serializeJsonLd } from "@/lib/schema";
 
 type BlogRouteProps = {
   params: Promise<{ slug: string }>;
 };
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return blogPostIndex.map((post) => ({ slug: post.slug }));
@@ -18,7 +22,13 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: BlogRouteProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getBlogPostBySlug(slug);
+  const rawPayloadPost = await getPayloadArticleBySlug(slug);
+  const fallbackPost = await getBlogPostBySlug(slug);
+
+  const post = rawPayloadPost
+    ? adaptPayloadArticleToBlogPostDetail(rawPayloadPost, fallbackPost)
+    : fallbackPost;
+
   if (!post) return {};
 
   const page: PageSeoConfig = {
@@ -57,7 +67,13 @@ export async function generateMetadata({ params }: BlogRouteProps): Promise<Meta
 
 export default async function BlogRoute({ params }: BlogRouteProps) {
   const { slug } = await params;
-  const post = await getBlogPostBySlug(slug);
+  const rawPayloadPost = await getPayloadArticleBySlug(slug);
+  const fallbackPost = await getBlogPostBySlug(slug);
+
+  const post = rawPayloadPost
+    ? adaptPayloadArticleToBlogPostDetail(rawPayloadPost, fallbackPost)
+    : fallbackPost;
+
   if (!post) notFound();
 
   const relatedPosts = getRelatedBlogPosts(post);
