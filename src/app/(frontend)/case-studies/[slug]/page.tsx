@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { draftMode } from "next/headers";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { CaseStudyDetailPage } from "@/components/sections/case-study-details/case-study-detail-page";
 import { caseStudyDetails, getCaseStudyBySlug } from "@/content/case-study-details";
+import { draftPreviewCopy } from "@/content/common";
 import { createPageMetadata, type PageSeoConfig } from "@/data/seo";
 import {
   adaptPayloadCaseStudyToDetail,
@@ -22,7 +25,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: CaseStudyRouteProps): Promise<Metadata> {
   const { slug } = await params;
-  const rawPayloadCaseStudy = await getPayloadCaseStudyBySlug(slug);
+  const draft = await draftMode();
+  const rawPayloadCaseStudy = await getPayloadCaseStudyBySlug(slug, { preview: draft.isEnabled });
   const fallbackCaseStudy = getCaseStudyBySlug(slug);
 
   const caseStudy = rawPayloadCaseStudy
@@ -60,7 +64,8 @@ export async function generateMetadata({ params }: CaseStudyRouteProps): Promise
 
 export default async function CaseStudyRoute({ params }: CaseStudyRouteProps) {
   const { slug } = await params;
-  const rawPayloadCaseStudy = await getPayloadCaseStudyBySlug(slug);
+  const draft = await draftMode();
+  const rawPayloadCaseStudy = await getPayloadCaseStudyBySlug(slug, { preview: draft.isEnabled });
   const fallbackCaseStudy = getCaseStudyBySlug(slug);
 
   const caseStudy = rawPayloadCaseStudy
@@ -77,6 +82,22 @@ export default async function CaseStudyRoute({ params }: CaseStudyRouteProps) {
           __html: serializeJsonLd(createCaseStudyDetailPageSchema(caseStudy)),
         }}
       />
+      {draft.isEnabled ? (
+        <aside
+          aria-label="Draft mode indicator"
+          className="fixed right-4 bottom-4 z-50 flex items-center gap-2 rounded-lg bg-amber-500 px-4 py-2 text-xs font-bold text-white shadow-xl"
+        >
+          <span>{draftPreviewCopy.badge}</span>
+          <span aria-hidden="true">{draftPreviewCopy.separator}</span>
+          <Link
+            className="underline transition-opacity hover:opacity-80 focus-visible:opacity-80"
+            href="/api/exit-preview"
+            prefetch={false}
+          >
+            {draftPreviewCopy.exit}
+          </Link>
+        </aside>
+      ) : null}
       <CaseStudyDetailPage caseStudy={caseStudy} />
     </main>
   );

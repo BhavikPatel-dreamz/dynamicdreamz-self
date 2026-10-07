@@ -1,13 +1,43 @@
 import type { CollectionConfig } from "payload";
+import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const Articles: CollectionConfig = {
   slug: "articles",
   admin: {
     useAsTitle: "title",
     defaultColumns: ["title", "slug", "categories", "date"],
+    livePreview: {
+      url: ({ data }) => {
+        const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000";
+        return `${baseUrl}/api/draft?secret=${process.env.PAYLOAD_SECRET || ""}&path=/blogs/${data.slug || ""}&slug=${data.slug || ""}`;
+      },
+    },
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [
+      ({ doc, previousDoc }) => {
+        if (doc?.slug) {
+          safeRevalidatePath(`/blogs/${doc.slug}`);
+        }
+        if (previousDoc?.slug && previousDoc.slug !== doc?.slug) {
+          safeRevalidatePath(`/blogs/${previousDoc.slug}`);
+        }
+        safeRevalidatePath("/blogs");
+        safeRevalidatePath("/");
+      },
+    ],
+    afterDelete: [
+      ({ doc }) => {
+        if (doc?.slug) {
+          safeRevalidatePath(`/blogs/${doc.slug}`);
+        }
+        safeRevalidatePath("/blogs");
+        safeRevalidatePath("/");
+      },
+    ],
   },
   fields: [
     { name: "title", type: "text", required: true },

@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const Authors: CollectionConfig = {
   slug: "authors",
@@ -7,6 +8,18 @@ export const Authors: CollectionConfig = {
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [
+      () => {
+        safeRevalidatePath("/blogs");
+      },
+    ],
+    afterDelete: [
+      () => {
+        safeRevalidatePath("/blogs");
+      },
+    ],
   },
   fields: [
     { name: "name", type: "text", required: true },

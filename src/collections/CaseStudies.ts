@@ -1,13 +1,45 @@
 import type { CollectionConfig } from "payload";
+import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const CaseStudies: CollectionConfig = {
   slug: "case-studies",
   admin: {
     useAsTitle: "title",
     defaultColumns: ["title", "slug", "clientName", "industry"],
+    livePreview: {
+      url: ({ data }) => {
+        const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000";
+        return `${baseUrl}/api/draft?secret=${process.env.PAYLOAD_SECRET || ""}&path=/case-studies/${data.slug || ""}&slug=${data.slug || ""}`;
+      },
+    },
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [
+      ({ doc, previousDoc }) => {
+        if (doc?.slug) {
+          safeRevalidatePath(`/case-studies/${doc.slug}`);
+        }
+        if (previousDoc?.slug && previousDoc.slug !== doc?.slug) {
+          safeRevalidatePath(`/case-studies/${previousDoc.slug}`);
+        }
+        safeRevalidatePath("/case-studies");
+        safeRevalidatePath("/our-work");
+        safeRevalidatePath("/");
+      },
+    ],
+    afterDelete: [
+      ({ doc }) => {
+        if (doc?.slug) {
+          safeRevalidatePath(`/case-studies/${doc.slug}`);
+        }
+        safeRevalidatePath("/case-studies");
+        safeRevalidatePath("/our-work");
+        safeRevalidatePath("/");
+      },
+    ],
   },
   fields: [
     { name: "title", type: "text", required: true },

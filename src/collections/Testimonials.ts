@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const Testimonials: CollectionConfig = {
   slug: "testimonials",
@@ -7,6 +8,22 @@ export const Testimonials: CollectionConfig = {
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [
+      () => {
+        safeRevalidatePath("/", "layout");
+        safeRevalidatePath("/");
+        safeRevalidatePath("/case-studies");
+      },
+    ],
+    afterDelete: [
+      () => {
+        safeRevalidatePath("/", "layout");
+        safeRevalidatePath("/");
+        safeRevalidatePath("/case-studies");
+      },
+    ],
   },
   fields: [
     { name: "clientName", type: "text", required: true },
