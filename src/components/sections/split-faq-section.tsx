@@ -53,7 +53,7 @@ export function SplitFaqSection({
   animateOnReveal = false,
   lazyAccordion = false,
   lazyRootMargin,
-  answerClassName = "!text-sm !font-medium !leading-6 !text-[#535353]",
+  answerClassName = "!text-sm !font-normal !leading-6 !text-[#535353]",
   questionClassName,
   triggerClassName,
   itemClassName,
@@ -66,7 +66,7 @@ export function SplitFaqSection({
   return (
     <section
       aria-labelledby={titleId}
-      className={cn("bg-[#fafaf7] py-[60px] max-[991px]:py-10", className)}
+      className={cn("bg-[#fafaf7] py-[60px] max-[767px]:pt-10 max-[767px]:pb-5", className)}
       data-section="faq"
       id={sectionId ?? `${idPrefix}-section`}
     >
@@ -81,7 +81,7 @@ export function SplitFaqSection({
               ) : null}
               <h2
                 className={cn(
-                  "mb-[10px] font-display text-[35px] leading-[1.4] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]",
+                  "mb-3 font-display text-[35px] leading-[1.4] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]",
                   headingClassName,
                 )}
                 id={titleId}
@@ -103,38 +103,38 @@ export function SplitFaqSection({
                 fallback={
                   <StaticFaqAccordion
                     answerClassName={answerClassName}
-                    iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
+                    iconClassName="right-0 size-[30px] max-[991px]:top-1/2 max-[991px]:right-0 max-[991px]:size-[26px] max-[991px]:-translate-y-1/2"
                     iconVariant={iconVariant}
                     idPrefix={idPrefix}
-                    itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
+                    itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 max-[767px]:!py-5 last:!border-b-0", itemClassName)}
                     items={items}
-                    panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
-                    questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
-                    triggerClassName={cn("!px-0 !py-6 !pr-[37px] max-[767px]:!py-5 max-[767px]:!pr-[42px]", triggerClassName)}
+                    panelContentClassName={cn("!px-0 !pt-5 !pb-0", panelContentClassName)}
+                    questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.2] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
+                    triggerClassName={cn("!pl-0 !pr-[49px] !py-0", triggerClassName)}
                   />
                 }
-                iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
+                iconClassName="right-0 size-[30px] max-[991px]:top-1/2 max-[991px]:right-0 max-[991px]:size-[26px] max-[991px]:-translate-y-1/2"
                 iconVariant={iconVariant}
                 idPrefix={idPrefix}
-                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
+                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 max-[767px]:!py-5 last:!border-b-0", itemClassName)}
                 items={items}
-                panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
-                questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
-                triggerClassName={cn("!px-0 !py-6 !pr-[37px] max-[767px]:!py-5 max-[767px]:!pr-[42px]", triggerClassName)}
+                panelContentClassName={cn("!px-0 !pt-5 !pb-0", panelContentClassName)}
+                questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.2] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
+                triggerClassName={cn("!pl-0 !pr-[49px] !py-0", triggerClassName)}
                 rootMargin={lazyRootMargin}
               />
             ) : (
               <FaqAccordion
                 animateOnReveal={animateOnReveal}
                 answerClassName={answerClassName}
-                iconClassName="right-0 size-[30px] max-[767px]:top-1/2 max-[767px]:right-0 max-[767px]:size-[26px] max-[767px]:-translate-y-1/2"
+                iconClassName="right-0 size-[30px] max-[991px]:top-1/2 max-[991px]:right-0 max-[991px]:size-[26px] max-[991px]:-translate-y-1/2"
                 iconVariant={iconVariant}
                 idPrefix={idPrefix}
-                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent last:!border-b-0 first:[&>button]:!pt-0", itemClassName)}
+                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 max-[767px]:!py-5 last:!border-b-0", itemClassName)}
                 items={items}
-                panelContentClassName={cn("!px-0 !pt-5 !pb-6 max-[767px]:!pb-5", panelContentClassName)}
-                questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.4] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[767px]:!text-base max-[767px]:!leading-6", questionClassName)}
-                triggerClassName={cn("!px-0 !py-6 !pr-[37px] max-[767px]:!py-5 max-[767px]:!pr-[42px]", triggerClassName)}
+                panelContentClassName={cn("!px-0 !pt-5 !pb-0", panelContentClassName)}
+                questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.2] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
+                triggerClassName={cn("!pl-0 !pr-[49px] !py-0", triggerClassName)}
               />
             )}
           </div>

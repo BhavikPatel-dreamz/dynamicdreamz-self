@@ -499,3 +499,87 @@ supply approved poster frames.
 - Verified Hero Section content paragraph (`homeAnswerSummary`): updated color from `text-muted/80` (80% opacity) to solid `text-muted` (`#535353`), retaining `font-medium` (font-weight 500) and Montserrat typography matching `.home_shopify_banner .inner_banner_content p` and user screenshot https://prnt.sc/IPcysSWXuXW3.
 - Updated `loading="eager"` and `decoding="async"` attributes on the 4 proof logo images in the hero section (`HomeHeroSection`) and on the header logo (`SiteHeader`), matching the live site.
 - Verification: `npm run check:urls`, `npm run check:component-content`, SHA-256 duplicate audit (0 duplicates), `npm run lint` (0 errors), and `npm run build` (success).
+
+## 2026-10-07 Homepage Our Latest Blogs Hover Effect Parity
+
+- Owner-supplied screenshot: https://prnt.sc/QVH2ag4i9fz6 highlighting the first blog title in "Our Latest Blogs" on the homepage (`Shopify CRO Checklist: 10 Urgent CRO Steps You Should Know Right Now`) turning red on hover with no underline.
+- Live sources inspected: `https://www.dynamicdreamz.com/` rendered DOM and computed styles from `https://www.dynamicdreamz.com/wp-content/uploads/dd-css/home-d6b9e2805d.css` (`.latest_blogs`, `.blog-wrapper .blog-col .blog-title a:hover h3`, `.blog-wrapper .blog-col .blog-title h3`, `.blog-cate-wrap a:hover span`, `.blog-img`).
+- Live computed styles and behavior:
+  - Default blog title:
+    - Color: `rgb(40, 40, 40)` (`#282828` / `--theme-black` / `text-ink`)
+    - Font Family: `neue_montrealmedium, sans-serif` (`font-display`)
+    - Font Size: `20px` (`text-xl`), mobile `<=767px`: `16px` (`text-base`)
+    - Line Height: `30px` (`leading-[30px]`), mobile `<=767px`: `normal`
+    - Font Weight: `400` / `500`
+    - Text Decoration: `none`
+    - Transition: `all 0.3s ease-in-out`
+  - Hovered blog title:
+    - Selector: `.blog-wrapper .blog-col .blog-title a:hover h3`
+    - Color: `rgb(173, 81, 81)` (`#ad5151` / `var(--theme-red)` / `text-brand-red`)
+    - Text Decoration: `none` (no underline)
+    - Transition: `all 0.3s ease-in-out`
+  - Blog card image on hover:
+    - `transform: none` (the live site does not scale or zoom the image on hover)
+  - Blog category badge on hover:
+    - Color: `var(--txt-red)` (`#ad5151` / `text-brand-red`)
+- Root cause:
+  - `src/components/ui/blog-card.tsx` in `variant="home"` had `<Link className="hover:underline hover:underline-offset-2 focus-visible:underline focus-visible:underline-offset-2" href={item.href}>{item.title}</Link>`.
+  - It was missing the color transition to `brand-red` (`#ad5151`), had an unwanted `hover:underline`, and had an unwanted `group-hover/insight:scale-[1.03]` on the image that did not exist on the live site.
+- Correction applied:
+  - Updated title link to `transition-colors duration-300 ease-in-out hover:text-brand-red hover:no-underline focus-visible:text-brand-red`.
+  - Removed `group-hover/insight:scale-[1.03]` from the card image in `variant="home"` so image remains stable without unwanted zooming, matching the live site.
+- Verification:
+  - Tested via Chrome DevTools Protocol on live site `https://www.dynamicdreamz.com/` and local `http://localhost:3000/`.
+  - Verified hover color changes from `rgb(40, 40, 40)` to `rgb(173, 81, 81)` with `0.3s ease-in-out` and `text-decoration: none`.
+  - Checked desktop (1440px), tablet (768px), and mobile (390px).
+
+## 2026-10-07 Homepage FAQ Section Spacing and Font Weight Parity
+
+- Owner-supplied screenshot: https://prnt.sc/w-ef6nB5fSMJ highlighting the space between the expanded question title ("Do you provide white-label development for agencies?") and the answer text, requesting exact match to original live design spacing and font weight.
+- Live sources inspected: `https://www.dynamicdreamz.com/` rendered DOM and computed styles from `https://www.dynamicdreamz.com/wp-content/uploads/dd-css/home-d6b9e2805d.css` (`.our_expertise_shopify.faq-section`, `.accrodion-item`, `.accrodion-title`, `.accrodion-content`, `.accrodion-content p`).
+- Live computed styles:
+  - FAQ item padding:
+    - Desktop / Tablet (> 767px): `padding: 24px 0` (`py-6`)
+    - Mobile (<= 767px): `padding: 20px 0` (`py-5`)
+    - Border bottom: `1px solid rgba(40,40,40,.1)` (`border-b border-ink/10`), last child `border-bottom: 0`.
+  - Question trigger:
+    - Vertical padding: `0px` (`py-0`)
+    - Right padding: `49px` (`pr-[49px]`) for icon clearance
+    - Font family: `neue_montrealmedium, sans-serif`
+    - Font weight: `500`
+    - Font size: `20px` (desktop), `18px` (tablet <= 1199px), `16px` (mobile <= 640px)
+    - Line height: `24px` / `120%` (desktop), `26px` (tablet), `24px` (mobile)
+    - Color: `#282828` (`rgb(40, 40, 40)`)
+  - Expand icon:
+    - Dimensions: `30px x 30px` (desktop), `26px x 26px` (tablet/mobile <= 991px)
+    - Position: `right: 0`, `top: 50%`, `transform: translateY(-50%)`
+  - Gap between Question and Answer when expanded:
+    - Live computed: EXACTLY `20px` (`margin-top: 20px` on `.accrodion-content`, with `0px` bottom padding on question title and `0px` margin on paragraph)
+    - Prior local computed: `44px` (24px button bottom padding + 20px panel top padding = 44px on desktop, 40px on mobile)
+  - Answer body paragraph:
+    - Font family: `Montserrat, sans-serif`
+    - Font weight: `400` (`font-normal`) — prior local had `!font-medium` (500)
+    - Font size: `14px` (`text-sm`)
+    - Line height: `24px` (`leading-6`)
+    - Color: `rgb(83, 83, 83)` (`#535353`)
+    - Bottom spacing: bounded by item's `padding-bottom: 24px` (desktop) / `20px` (mobile)
+  - Section padding:
+    - Desktop / Tablet: `60px 0`
+    - Mobile (<= 767px): `40px 0 20px`
+- Root cause:
+  - `SplitFaqSection` had `triggerClassName` with `!py-6 max-[767px]:!py-5`, while `panelContentClassName` had `!pt-5 !pb-6`. When expanded, the button bottom padding (24px) combined with the panel top padding (20px) created an artificial 44px gap instead of the live site's 20px gap.
+  - `SplitFaqSection` defaulted `answerClassName` to `!font-medium` (500) instead of the live site's `!font-normal` (400).
+- Correction applied in `src/components/sections/split-faq-section.tsx`:
+  - Updated `answerClassName` default to `!text-sm !font-normal !leading-6 !text-[#535353]`.
+  - Moved item vertical padding to `itemClassName`: `!py-6 max-[767px]:!py-5`.
+  - Set `triggerClassName` to `!pl-0 !pr-[49px] !py-0`, eliminating the button vertical padding so the icon and question title remain centered without extra bottom gap.
+  - Set `panelContentClassName` to `!px-0 !pt-5 !pb-0`, ensuring the gap between question and answer is exactly 20px (`pt-5`) and bottom clearance is controlled by the item padding.
+  - Aligned icon breakpoint sizing to `max-[991px]:size-[26px]` matching live CSS.
+  - Aligned question title leading to `!leading-[1.2]` on desktop and responsive breakpoints `max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6`.
+  - Aligned section padding to `py-[60px] max-[767px]:pt-10 max-[767px]:pb-5`.
+- Verification:
+  - Tested across Desktop (1440px), Tablet (768px), and Mobile (390px) via CDP on live vs local.
+  - Gap between Question and Answer: Live `20px` = Local `20px` across all viewports.
+  - Font weight: Live `400` = Local `400` across all viewports.
+  - Item padding: Live `24px 24px` (desktop/tablet) / `20px 20px` (mobile) = Local `24px 24px` / `20px 20px`.
+  - Verified `npm run check:urls`, `npm run check:component-content`, SHA-256 duplicate audit (0 duplicates), `npm run lint` (0 errors), and `npm run build` (success).
