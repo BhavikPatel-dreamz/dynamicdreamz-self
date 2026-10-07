@@ -1387,9 +1387,13 @@ hooks: {
 
 ### Phase 10: Non-Technical Operations Runbook for the WordPress Team
 
+> For the comprehensive, full-length non-technical operations manual, see:
+> **[`docs/wordpress-team-operations-runbook.md`](wordpress-team-operations-runbook.md)**.
+
 #### 1. Logging In
 - Admin URL: `http://localhost:3000/admin` (or `https://www.dynamicdreamz.com/admin`)
 - Enter your editor or admin email and password.
+- User management CLI helper: `npm run user:create <email> <password>`.
 
 #### 2. Managing Menus (Header Dropdowns & Footer Columns)
 1. Go to **Globals** $\rightarrow$ **Header & Footer Menus**.
