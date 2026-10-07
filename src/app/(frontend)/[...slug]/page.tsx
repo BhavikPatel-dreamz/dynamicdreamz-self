@@ -6,8 +6,11 @@ import { notFound } from "next/navigation";
 import { BlockRenderer, type CmsSectionBlock } from "@/components/blocks/block-renderer";
 import { draftPreviewCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
-import { absoluteUrl } from "@/lib/seo";
 import { getPayloadPageBySlug } from "@/lib/payload";
+import { createModularPageSchema, serializeJsonLd } from "@/lib/schema";
+import { absoluteUrl } from "@/lib/seo";
+
+export const dynamicParams = true;
 
 interface DynamicPageRouteProps {
   params: Promise<{ slug?: string[] }>;
@@ -42,7 +45,11 @@ export async function generateMetadata({
   const description =
     page.seo?.metaDescription ||
     `${page.title || "Page"} - Professional web and ecommerce solutions by Dynamic Dreamz.`;
-  const canonicalPath = page.seo?.canonicalUrl || (pageSlug === "home" ? "/" : `/${pageSlug}`);
+  const canonicalPath = page.seo?.canonicalUrl
+    ? page.seo.canonicalUrl.replace(/\/+$/, "") || "/"
+    : pageSlug === "home"
+      ? "/"
+      : `/${pageSlug.replace(/^\/+|\/+$/g, "")}`;
   const canonical = absoluteUrl(canonicalPath);
   const metaImageUrl =
     typeof page.seo?.metaImage === "string"
@@ -93,9 +100,30 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
   }
 
   const page = rawPage as unknown as PageData;
+  const title = page.seo?.metaTitle || `${page.title || "Page"} | Dynamic Dreamz`;
+  const description =
+    page.seo?.metaDescription ||
+    `${page.title || "Page"} - Professional web and ecommerce solutions by Dynamic Dreamz.`;
+  const canonicalPath = page.seo?.canonicalUrl
+    ? page.seo.canonicalUrl.replace(/\/+$/, "") || "/"
+    : pageSlug === "home"
+      ? "/"
+      : `/${pageSlug.replace(/^\/+|\/+$/g, "")}`;
 
   return (
     <main id="main-content" data-page={pageSlug}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(
+            createModularPageSchema({
+              title,
+              description,
+              path: canonicalPath,
+            }),
+          ),
+        }}
+      />
       {draft.isEnabled ? (
         <aside
           aria-label="Draft mode indicator"

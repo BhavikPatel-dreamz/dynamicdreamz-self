@@ -21,6 +21,7 @@ import { IndustriesServedSection } from "@/components/sections/shopify-plus-agen
 import { Container } from "@/components/ui/container";
 import { RichText } from "@/components/ui/rich-text";
 import { sharedUiCopy } from "@/content/common";
+import { serializeLexicalToHtml } from "@/lib/payload";
 
 export type CmsMedia =
   | {
@@ -256,22 +257,6 @@ export interface BlockRichTextContent {
   eyebrow?: string;
   containerWidth?: "narrow" | "standard" | "full";
   content?: unknown;
-}
-
-function serializeLexicalToHtml(node: unknown): string {
-  if (!node || typeof node !== "object") return "";
-  const obj = node as { root?: unknown; children?: unknown[]; text?: string; type?: string };
-  if (obj.root) return serializeLexicalToHtml(obj.root);
-  if (obj.text) return obj.text;
-  if (Array.isArray(obj.children)) {
-    const inner = obj.children.map(serializeLexicalToHtml).join("");
-    if (obj.type === "paragraph") return `<p>${inner}</p>`;
-    if (obj.type === "heading") return `<h3>${inner}</h3>`;
-    if (obj.type === "list") return `<ul>${inner}</ul>`;
-    if (obj.type === "listitem") return `<li>${inner}</li>`;
-    return inner;
-  }
-  return "";
 }
 
 export type CmsSectionBlock =

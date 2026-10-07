@@ -4,13 +4,17 @@ import { notFound } from "next/navigation";
 import { CaseStudyDetailPage } from "@/components/sections/case-study-details/case-study-detail-page";
 import { caseStudyDetails, getCaseStudyBySlug } from "@/content/case-study-details";
 import { createPageMetadata, type PageSeoConfig } from "@/data/seo";
+import {
+  adaptPayloadCaseStudyToDetail,
+  getPayloadCaseStudyBySlug,
+} from "@/lib/payload";
 import { createCaseStudyDetailPageSchema, serializeJsonLd } from "@/lib/schema";
 
 type CaseStudyRouteProps = {
   params: Promise<{ slug: string }>;
 };
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return caseStudyDetails.map((caseStudy) => ({ slug: caseStudy.slug }));
@@ -18,7 +22,13 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: CaseStudyRouteProps): Promise<Metadata> {
   const { slug } = await params;
-  const caseStudy = getCaseStudyBySlug(slug);
+  const rawPayloadCaseStudy = await getPayloadCaseStudyBySlug(slug);
+  const fallbackCaseStudy = getCaseStudyBySlug(slug);
+
+  const caseStudy = rawPayloadCaseStudy
+    ? adaptPayloadCaseStudyToDetail(rawPayloadCaseStudy, fallbackCaseStudy)
+    : fallbackCaseStudy;
+
   if (!caseStudy) return {};
 
   const page: PageSeoConfig = {
@@ -50,7 +60,13 @@ export async function generateMetadata({ params }: CaseStudyRouteProps): Promise
 
 export default async function CaseStudyRoute({ params }: CaseStudyRouteProps) {
   const { slug } = await params;
-  const caseStudy = getCaseStudyBySlug(slug);
+  const rawPayloadCaseStudy = await getPayloadCaseStudyBySlug(slug);
+  const fallbackCaseStudy = getCaseStudyBySlug(slug);
+
+  const caseStudy = rawPayloadCaseStudy
+    ? adaptPayloadCaseStudyToDetail(rawPayloadCaseStudy, fallbackCaseStudy)
+    : fallbackCaseStudy;
+
   if (!caseStudy) notFound();
 
   return (

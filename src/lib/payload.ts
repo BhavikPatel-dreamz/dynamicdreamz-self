@@ -7,7 +7,17 @@ import {
   type NavigationGroup,
 } from "@/data/navigation";
 import type { FooterLinkItem } from "@/components/layout/site-footer";
-import type { Navigation } from "@/types/payload-types";
+import type {
+  Article,
+  CaseStudy,
+  Navigation,
+} from "@/types/payload-types";
+import type {
+  BlogArchiveArticle,
+  BlogArchiveCategoryValue,
+} from "@/content/blogs";
+import type { BlogPostDetail } from "@/types/blog-post";
+import type { CaseStudyDetail, CaseStudyItem } from "@/types/case-study";
 
 export async function getPayloadNavigation() {
   try {
@@ -184,9 +194,15 @@ export async function getPayloadPageBySlug(
 ) {
   try {
     const payload = await getPayload({ config });
+    const normalizedSlug = slug.replace(/^\/+|\/+$/g, "") || "home";
     const res = await payload.find({
       collection: "pages",
-      where: { slug: { equals: slug } },
+      where: {
+        or: [
+          { slug: { equals: normalizedSlug } },
+          { slug: { equals: `/${normalizedSlug}` } },
+        ],
+      },
       draft: options?.preview,
       limit: 1,
     });
@@ -195,4 +211,342 @@ export async function getPayloadPageBySlug(
     console.warn(`Payload getPayloadPageBySlug(${slug}) warning:`, err);
     return null;
   }
+}
+
+export function serializeLexicalToHtml(node: unknown): string {
+  if (!node || typeof node !== "object") return "";
+  const obj = node as {
+    root?: unknown;
+    children?: unknown[];
+    text?: string;
+    type?: string;
+    tag?: string;
+  };
+  if (obj.root) return serializeLexicalToHtml(obj.root);
+  if (typeof obj.text === "string") return obj.text;
+  if (Array.isArray(obj.children)) {
+    const inner = obj.children.map(serializeLexicalToHtml).join("");
+    if (obj.type === "paragraph") return `<p>${inner}</p>`;
+    if (obj.type === "heading") {
+      const tag = obj.tag || "h3";
+      return `<${tag}>${inner}</${tag}>`;
+    }
+    if (obj.type === "list") return `<ul>${inner}</ul>`;
+    if (obj.type === "listitem") return `<li>${inner}</li>`;
+    return inner;
+  }
+  return "";
+}
+
+export function adaptPayloadArticleToArchive(
+  article: Article,
+): BlogArchiveArticle {
+  const cover =
+    typeof article.coverImage === "object" && article.coverImage !== null
+      ? article.coverImage
+      : null;
+
+  let categoryLabel: BlogArchiveArticle["category"] = "Shopify";
+  let categoryHref = "/blogs?category=shopify";
+
+  if (article.categories && article.categories.length > 0) {
+    const firstCat = article.categories[0];
+    if (typeof firstCat === "object" && firstCat !== null) {
+      const name = firstCat.name.toLowerCase();
+      if (name.includes("wordpress")) {
+        categoryLabel = "WordPress";
+        categoryHref = "/blogs?category=wordpress";
+      } else if (name.includes("ecommerce")) {
+        categoryLabel = "eCommerce";
+        categoryHref = "/blogs?category=ecommerce";
+      } else if (name.includes("big") || name.includes("commerce")) {
+        categoryLabel = "Big-Commerce";
+        categoryHref = "/blogs?category=big-commerce";
+      } else if (name.includes("faq")) {
+        categoryLabel = "Faqs";
+        categoryHref = "/blogs?category=faqs";
+      } else {
+        categoryLabel = "Shopify";
+        categoryHref = "/blogs?category=shopify";
+      }
+    }
+  }
+
+  const displayDate =
+    article.displayDate ||
+    (article.date
+      ? new Date(article.date).toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        })
+      : "");
+
+  return {
+    title: article.title,
+    href: `/blogs/${article.slug}`,
+    image: cover?.url || null,
+    width: cover?.width || null,
+    height: cover?.height || null,
+    date: article.date,
+    displayDate,
+    category: categoryLabel,
+    categoryHref,
+    excerpt: article.excerpt || "",
+  };
+}
+
+export function filterPayloadArchiveArticles(
+  articles: readonly BlogArchiveArticle[],
+  query = "",
+  category?: BlogArchiveCategoryValue,
+): BlogArchiveArticle[] {
+  const normalizedQuery = query.trim().toLocaleLowerCase("en-US");
+
+  return articles.filter((article) => {
+    const matchesCategory = category
+      ? article.category.toLocaleLowerCase("en-US") === category
+      : article.category !== "Faqs";
+    const matchesQuery = normalizedQuery
+      ? article.title.toLocaleLowerCase("en-US").includes(normalizedQuery)
+      : true;
+
+    return matchesCategory && matchesQuery;
+  });
+}
+
+export function adaptPayloadArticleToBlogPostDetail(
+  article: Article,
+  fallbackDetail?: BlogPostDetail,
+): BlogPostDetail {
+  const cover =
+    typeof article.coverImage === "object" && article.coverImage !== null
+      ? article.coverImage
+      : null;
+
+  let htmlContent = "";
+  if (article.content) {
+    if (typeof article.content === "string") {
+      htmlContent = article.content;
+    } else {
+      htmlContent = serializeLexicalToHtml(article.content);
+    }
+  }
+
+  let categoryName = fallbackDetail?.category || "Shopify";
+  let categoryValue = fallbackDetail?.categoryValue || "shopify";
+  let categoryHref = fallbackDetail?.categoryHref || "/blogs?category=shopify";
+
+  if (article.categories && article.categories.length > 0) {
+    const firstCat = article.categories[0];
+    if (typeof firstCat === "object" && firstCat !== null) {
+      categoryName = firstCat.name;
+      categoryValue = firstCat.slug;
+      categoryHref = `/blogs?category=${firstCat.slug}`;
+    }
+  }
+
+  const displayDate =
+    article.displayDate || fallbackDetail?.displayDate || article.date;
+  const modified =
+    article.updatedAt || fallbackDetail?.modified || article.date;
+
+  const author =
+    (typeof article.author === "object" && article.author !== null
+      ? {
+          name: article.author.name,
+          role: article.author.role || "Author",
+          bio: article.author.bio || "",
+          image:
+            (typeof article.author.avatar === "object" &&
+              article.author.avatar?.url) ||
+            "/assets/team/vatsal-panchal.webp",
+          linkedin: article.author.linkedin || undefined,
+        }
+      : null) ||
+    fallbackDetail?.author ||
+    null;
+
+  const featuredImage = cover?.url
+    ? {
+        src: cover.url,
+        width: cover.width || 1200,
+        height: cover.height || 630,
+        alt: cover.alt || article.title,
+      }
+    : fallbackDetail?.featuredImage || null;
+
+  const faqs =
+    article.faqs && article.faqs.length > 0
+      ? article.faqs.map((f) => ({ question: f.question, answer: f.answer }))
+      : fallbackDetail?.faqs || [];
+
+  const rawText = htmlContent.replace(/<[^>]+>/g, " ");
+  const wordCount = rawText.trim()
+    ? rawText.trim().split(/\s+/).length
+    : fallbackDetail?.wordCount || 500;
+
+  return {
+    slug: article.slug,
+    title: article.title,
+    date: article.date,
+    displayDate,
+    modified,
+    category: categoryName,
+    categoryValue,
+    categoryHref,
+    featuredImage,
+    excerpt: article.excerpt || fallbackDetail?.excerpt || "",
+    author,
+    contentBeforeToc: htmlContent || fallbackDetail?.contentBeforeToc || "",
+    contentAfterToc: fallbackDetail?.contentAfterToc || "",
+    toc: fallbackDetail?.toc || [],
+    faqs,
+    previous: fallbackDetail?.previous || null,
+    next: fallbackDetail?.next || null,
+    seo: {
+      title:
+        article.seo?.metaTitle ||
+        fallbackDetail?.seo.title ||
+        article.title,
+      description:
+        article.seo?.metaDescription ||
+        fallbackDetail?.seo.description ||
+        article.excerpt ||
+        "",
+    },
+    wordCount,
+  };
+}
+
+export function adaptPayloadCaseStudiesToItems(
+  caseStudies: CaseStudy[],
+): CaseStudyItem[] {
+  return caseStudies.map((cs) => {
+    const thumb =
+      typeof cs.thumbnail === "object" && cs.thumbnail !== null
+        ? cs.thumbnail
+        : null;
+    const hero =
+      typeof cs.heroImage === "object" && cs.heroImage !== null
+        ? cs.heroImage
+        : null;
+    const imageMedia = thumb || hero;
+
+    return {
+      slug: cs.slug,
+      title: cs.title,
+      technology: cs.technology || "Shopify Plus",
+      industry: cs.industry || "",
+      excerpt: cs.overview || cs.challenge || "",
+      image: imageMedia?.url || "/assets/case-studies/default.webp",
+      alt: imageMedia?.alt || cs.title,
+      href: `/case-studies/${cs.slug}`,
+      tags: [cs.technology, cs.industry].filter(Boolean) as string[],
+    };
+  });
+}
+
+export function adaptPayloadCaseStudyToDetail(
+  cs: CaseStudy,
+  fallbackDetail?: CaseStudyDetail,
+): CaseStudyDetail {
+  const thumb =
+    typeof cs.thumbnail === "object" && cs.thumbnail !== null
+      ? cs.thumbnail
+      : null;
+  const hero =
+    typeof cs.heroImage === "object" && cs.heroImage !== null
+      ? cs.heroImage
+      : null;
+  const imageMedia = hero || thumb;
+
+  const heroImage = imageMedia?.url
+    ? {
+        src: imageMedia.url,
+        width: imageMedia.width || 1200,
+        height: imageMedia.height || 800,
+        alt: imageMedia.alt || cs.title,
+      }
+    : fallbackDetail?.hero.image || {
+        src: "/assets/case-studies/default.webp",
+        width: 1200,
+        height: 800,
+        alt: cs.title,
+      };
+
+  const keyMetrics =
+    cs.metrics && cs.metrics.length > 0
+      ? {
+          heading: fallbackDetail?.keyMetrics?.heading || "Key Results & Metrics",
+          items: cs.metrics.map((m) => ({ stat: m.value, label: m.label })),
+        }
+      : fallbackDetail?.keyMetrics;
+
+  const challenge = cs.challenge
+    ? {
+        eyebrow: fallbackDetail?.challenge?.eyebrow,
+        heading: fallbackDetail?.challenge?.heading || "The Challenge",
+        description: cs.challenge,
+        items: fallbackDetail?.challenge?.items || [],
+      }
+    : fallbackDetail?.challenge;
+
+  const solutions = cs.solution
+    ? {
+        eyebrow: fallbackDetail?.solutions?.eyebrow,
+        heading: fallbackDetail?.solutions?.heading || "Our Solution",
+        lead: cs.solution,
+        items: fallbackDetail?.solutions?.items || [],
+      }
+    : fallbackDetail?.solutions;
+
+  return {
+    slug: cs.slug,
+    clientName: cs.clientName || fallbackDetail?.clientName || cs.title,
+    title: cs.title,
+    summary: cs.overview || fallbackDetail?.summary || "",
+    projectTitle: fallbackDetail?.projectTitle || cs.title,
+    industry: cs.industry || fallbackDetail?.industry || "",
+    technology: cs.technology || fallbackDetail?.technology || "Shopify Plus",
+    location: fallbackDetail?.location || "Surat, Gujarat, India",
+    websiteUrl: cs.websiteUrl || fallbackDetail?.websiteUrl || undefined,
+    heroEyebrows:
+      fallbackDetail?.heroEyebrows ||
+      ([cs.technology, cs.industry].filter(Boolean) as string[]),
+    archive: {
+      title: cs.title,
+      technology:
+        cs.technology || fallbackDetail?.archive.technology || "Shopify Plus",
+      industry: cs.industry || fallbackDetail?.archive.industry || "",
+      excerpt: cs.overview || fallbackDetail?.archive.excerpt || "",
+    },
+    hero: {
+      image: heroImage,
+    },
+    sections: fallbackDetail?.sections || [],
+    wireframes: fallbackDetail?.wireframes || null,
+    colors: fallbackDetail?.colors || [],
+    typefaces: fallbackDetail?.typefaces || [],
+    design: fallbackDetail?.design || null,
+    keyMetrics,
+    challenge,
+    solutions,
+    keyFeatures: fallbackDetail?.keyFeatures,
+    projectDelivery: fallbackDetail?.projectDelivery,
+    relatedCaseStudies: fallbackDetail?.relatedCaseStudies,
+    customSections: fallbackDetail?.customSections,
+    seo: {
+      title: cs.seo?.metaTitle || fallbackDetail?.seo.title || cs.title,
+      description:
+        cs.seo?.metaDescription ||
+        fallbackDetail?.seo.description ||
+        cs.overview ||
+        "",
+      lastModified:
+        cs.updatedAt ||
+        fallbackDetail?.seo.lastModified ||
+        new Date().toISOString(),
+    },
+  };
 }

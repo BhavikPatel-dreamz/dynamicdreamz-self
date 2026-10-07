@@ -246,7 +246,7 @@ import { companyFacts } from "@/data/company";
 import { pageSeo, type PageSeoConfig } from "@/data/seo";
 import { siteConfig } from "@/data/site";
 import { absoluteUrl } from "@/lib/seo";
-import type { CaseStudyDetail } from "@/types/case-study";
+import type { CaseStudyDetail, CaseStudyItem } from "@/types/case-study";
 import type { BlogPostDetail } from "@/types/blog-post";
 
 const organizationId = `${siteConfig.url}#organization`;
@@ -2813,8 +2813,10 @@ export function createShopifyCroPageSchema() {
   });
 }
 
-export function createCaseStudiesPageSchema() {
-  const caseStudyItems = caseStudiesContent.items.map((item, index) => ({
+export function createCaseStudiesPageSchema(
+  items: readonly CaseStudyItem[] = caseStudiesContent.items,
+) {
+  const caseStudyItems = items.map((item, index) => ({
     "@type": "ListItem",
     position: index + 1,
     item: {
@@ -5934,5 +5936,43 @@ export function createFullStackDevelopmentPageSchema() {
     })),
     videos: shopifyPlusTestimonialVideoSchema(),
   });
+}
+
+export function createModularPageSchema({
+  title,
+  description,
+  path,
+}: {
+  title: string;
+  description: string;
+  path: string;
+}) {
+  const pageUrl = absoluteUrl(path);
+  const pageId = `${pageUrl}#webpage`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema(),
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: homeUrl,
+        name: siteConfig.name,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": pageId,
+        url: pageUrl,
+        name: title,
+        description,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+    ],
+  };
 }
 

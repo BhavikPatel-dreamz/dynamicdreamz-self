@@ -5,6 +5,11 @@ import {
   normalizeBlogArchiveCategory,
 } from "@/content/blogs";
 import { pageMetadata } from "@/data/seo";
+import {
+  adaptPayloadArticleToArchive,
+  filterPayloadArchiveArticles,
+  getPayloadArticles,
+} from "@/lib/payload";
 import { createBlogsPageSchema, serializeJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata.blogs;
@@ -26,7 +31,17 @@ export default async function BlogsRoute({ searchParams }: BlogsRouteProps) {
   const query = firstValue(params.s).trim();
   const requestedCategory = firstValue(params.category).toLowerCase();
   const activeCategory = normalizeBlogArchiveCategory(requestedCategory);
-  const filteredArticles = filterBlogArchiveArticles(query, activeCategory);
+
+  const payloadArticles = await getPayloadArticles();
+  const filteredArticles =
+    payloadArticles && payloadArticles.length > 0
+      ? filterPayloadArchiveArticles(
+          payloadArticles.map(adaptPayloadArticleToArchive),
+          query,
+          activeCategory,
+        )
+      : filterBlogArchiveArticles(query, activeCategory);
+
   const totalPages = Math.max(1, Math.ceil(filteredArticles.length / BLOGS_PAGE_SIZE));
   const requestedPage = Number(firstValue(params.page));
   const currentPage = Number.isInteger(requestedPage) && requestedPage >= 1
