@@ -3,8 +3,7 @@
 > **Audit Date**: September 21, 2026  
 > **Live Site Reference**: https://www.dynamicdreamz.com/ (Inspected live via XML sitemaps, robots.txt, HTML/CSS sources, and computed layouts)  
 > **Migrated Next.js Workspace**: `/home/ubuntu/Vatsal/DD/dynamicdreamz-self`  
-> **Target Strapi CMS Workspace**: `/home/ubuntu/Vatsal/DD/cms`  
-> **Purpose**: This document provides an exhaustive, page-by-page and section-by-section breakdown of all actionable discrepancies, newly added live pages, missing routes, recent design updates, and content divergence between the current live site and the migrated Next.js codebase. Use this as the definitive blueprint for migrating all new live changes into the Next.js and Strapi project.
+> **Purpose**: This document provides an exhaustive, page-by-page and section-by-section breakdown of all actionable discrepancies, newly added live pages, missing routes, recent design updates, and content divergence between the current live site and the migrated Next.js codebase. Use this as the definitive blueprint for migrating all new live changes into the Next.js project.
 
 ---
 
@@ -16,7 +15,7 @@ A comprehensive live crawl of `https://www.dynamicdreamz.com/` on September 21, 
 
 | Audit Category | Live Production Site | Migrated Next.js Site | Discrepancy Status | Migration Action |
 |---|---|---|---|---|
-| **Total Blog Articles** | **104 articles** (`post-sitemap.xml`) | **84 articles** | **20 blog posts missing** (published Aug 11 – Sept 21, 2026). | **MIGRATE**: Scrape & import 20 missing articles into Next.js & Strapi. |
+| **Total Blog Articles** | **104 articles** (`post-sitemap.xml`) | **84 articles** | **20 blog posts missing** (published Aug 11 – Sept 21, 2026). | **MIGRATE**: Scrape & import 20 missing articles into Next.js. |
 | **Theme Customization Pages** | 33 pages (includes `/horizon-theme-customization`) | 32 pages | **1 theme page missing** (`/horizon-theme-customization`). | **MIGRATE**: Create `/horizon-theme-customization`. |
 | **Mobile App Sub-Pages** | Includes `/appmaker-shopify-mobile-app-development` | Not present | **1 landing page missing**. | **MIGRATE**: Create partnership landing page. |
 | **Shopify Plus Conversion** | Includes `/thank-you-for-shopify-plus-enquiry` | Not present | **1 confirmation page missing**. | **MIGRATE**: Create high-intent confirmation page. |
@@ -81,7 +80,6 @@ The live site contains **104 articles** in `https://www.dynamicdreamz.com/post-s
 2. Save structured JSON files into `src/content/blog-posts/posts/<slug>.json`.
 3. Update `src/content/blog-posts/index.json` with the 20 new entries.
 4. Run `npm run check:blog-posts` to ensure 104 valid JSONs exist.
-5. Re-run `npm run migrate:blogs` to sync all 20 into the Strapi CMS database (`api::article.article`).
 
 ---
 
@@ -136,7 +134,6 @@ Execute remaining migration tasks in this exact sequence:
 - [x] Write scraping script `scripts/scrape-live-blogs.mjs` for the 20 posts listed in Section 3.
 - [x] Save JSON files to `src/content/blog-posts/posts/<slug>.json` and update `src/content/blog-posts/index.json`.
 - [x] Run `npm run check:blog-posts` (must validate all 104 articles).
-- [x] Run `npm run migrate:blogs` to push all 104 posts to Strapi CMS.
 
 ### Phase B: Create 3 Missing Standalone Routes
 - [x] Create `/horizon-theme-customization` page and content.

@@ -2,33 +2,180 @@ import React from "react";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { FeaturesGridSection } from "@/components/sections/features-grid-section";
-import { HappyClientSection } from "@/components/sections/happy-client-section";
+import {
+  HappyClientSection,
+  type HappyClientTestimonialItem,
+} from "@/components/sections/happy-client-section";
 import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
 import { ProofCounterSection } from "@/components/sections/proof-counter-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
-import { ServicesCaseStudiesSection } from "@/components/sections/services-case-studies-section";
-import { sharedUiCopy } from "@/content/common";
 import {
-  adaptStrapiTestimonial,
-  getStrapiMediaAlt,
-  getStrapiMediaUrl,
-} from "@/lib/strapi";
-import type {
-  StrapiCaseStudy,
-  StrapiCounterElement,
-  StrapiFaqItemElement,
-  StrapiFeatureItemElement,
-  StrapiSectionBlock,
-  StrapiTimelineStepElement,
-} from "@/types/strapi";
+  ServicesCaseStudiesSection,
+  type CaseStudyPreviewItem,
+} from "@/components/sections/services-case-studies-section";
+import { sharedUiCopy } from "@/content/common";
+
+export type CmsMedia =
+  | {
+      url?: string | null;
+      alt?: string | null;
+      width?: number | null;
+      height?: number | null;
+    }
+  | string;
+
+function resolveMediaUrl(media?: CmsMedia | null): string {
+  if (!media) return "";
+  if (typeof media === "string") return media;
+  return media.url || "";
+}
+
+function resolveMediaAlt(media?: CmsMedia | null, fallback = ""): string {
+  if (!media || typeof media === "string") return fallback;
+  return media.alt?.trim() || fallback;
+}
+
+export interface BlockHero {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title: string;
+  description?: string;
+  subheading?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  eyebrows?: readonly string[];
+  image?: CmsMedia | null;
+  showReviews?: boolean;
+  variant?: "split" | "centered";
+}
+
+export interface BlockProofCounters {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description?: string;
+  counters?: readonly {
+    id?: string | number;
+    label: string;
+    value?: number;
+    display?: string;
+    suffix?: string;
+  }[];
+}
+
+export interface BlockFaqAccordion {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  faqs?: readonly {
+    id?: string | number;
+    question: string;
+    answer: string;
+  }[];
+}
+
+export interface BlockCtaBanner {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description?: string;
+  btnText?: string;
+  btnUrl?: string;
+}
+
+export interface BlockFeaturesGrid {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  features?: readonly {
+    id?: string | number;
+    title: string;
+    description: string;
+    icon?: CmsMedia | null;
+    linkText?: string;
+    linkUrl?: string;
+  }[];
+}
+
+export interface BlockProcessTimeline {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  steps?: readonly {
+    id?: string | number;
+    stepNumber?: string;
+    title: string;
+    description?: string;
+  }[];
+}
+
+export interface BlockHappyClients {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  testimonials?: readonly {
+    id?: string | number;
+    authorName: string;
+    company?: string;
+    quote: string;
+    videoId?: string;
+    avatar?: CmsMedia | null;
+    logo?: CmsMedia | null;
+    logoAlt?: string;
+  }[];
+}
+
+export interface BlockCaseStudies {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  caseStudies?: readonly {
+    id?: string | number;
+    title: string;
+    slug: string;
+    thumbnail?: CmsMedia | null;
+    heroImage?: CmsMedia | null;
+    technology?: string;
+    industry?: string;
+    tags?: readonly string[];
+  }[];
+}
+
+export type CmsSectionBlock =
+  | BlockHero
+  | BlockProofCounters
+  | BlockFaqAccordion
+  | BlockCtaBanner
+  | BlockFeaturesGrid
+  | BlockProcessTimeline
+  | BlockHappyClients
+  | BlockCaseStudies
+  | { [key: string]: unknown; __component?: string; blockType?: string; id?: string | number };
 
 export interface BlockRendererProps {
-  sections?: readonly StrapiSectionBlock[] | null;
+  sections?: readonly CmsSectionBlock[] | null;
 }
 
 /**
- * Universal Block Renderer for Strapi Headless CMS.
- * Dynamically resolves and renders Strapi Dynamic Zone section blocks
+ * Universal Block Renderer for Headless CMS.
+ * Dynamically resolves and renders modular CMS section blocks
  * to their corresponding production React components.
  */
 export function BlockRenderer({ sections }: BlockRendererProps) {
@@ -39,41 +186,54 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
   return (
     <>
       {sections.map((block, index) => {
-        const blockKey = `${block.__component}-${block.id || index}`;
+        const rawType =
+          (block as { blockType?: string }).blockType ||
+          (block as { __component?: string }).__component ||
+          "";
+        const normalizedType = rawType.replace(/^sections\./, "");
+        const blockKey = `${rawType || "block"}-${block.id || index}`;
 
-        switch (block.__component) {
-          case "sections.hero": {
-            const imageUrl = getStrapiMediaUrl(block.image);
+        switch (normalizedType) {
+          case "hero": {
+            const heroBlock = block as BlockHero;
+            const imageUrl = resolveMediaUrl(heroBlock.image);
             const heroImage = imageUrl
               ? {
                   src: imageUrl,
-                  alt: getStrapiMediaAlt(block.image, block.title),
-                  width: block.image?.width || 684,
-                  height: block.image?.height || 550,
+                  alt: resolveMediaAlt(heroBlock.image, heroBlock.title),
+                  width:
+                    typeof heroBlock.image === "object" && heroBlock.image?.width
+                      ? heroBlock.image.width
+                      : 684,
+                  height:
+                    typeof heroBlock.image === "object" && heroBlock.image?.height
+                      ? heroBlock.image.height
+                      : 550,
                 }
               : undefined;
 
             return (
               <ServiceHeroSection
                 content={{
-                  title: block.title,
-                  description: block.description || "",
-                  subheading: block.subheading,
-                  ctaLabel: block.ctaLabel,
-                  ctaHref: block.ctaHref,
-                  eyebrows: block.eyebrows,
+                  title: heroBlock.title,
+                  description: heroBlock.description || "",
+                  subheading: heroBlock.subheading,
+                  ctaLabel: heroBlock.ctaLabel,
+                  ctaHref: heroBlock.ctaHref,
+                  eyebrows: heroBlock.eyebrows,
                   image: heroImage,
                 }}
                 key={blockKey}
-                showReviews={block.showReviews !== false}
-                variant={block.variant || "split"}
+                showReviews={heroBlock.showReviews !== false}
+                variant={heroBlock.variant || "split"}
               />
             );
           }
 
-          case "sections.proof-counters": {
-            const countersList: StrapiCounterElement[] = block.counters ?? [];
-            const stats = countersList.map((counter: StrapiCounterElement) => {
+          case "proof-counters": {
+            const counterBlock = block as BlockProofCounters;
+            const countersList = counterBlock.counters ?? [];
+            const stats = countersList.map((counter) => {
               const parsedValue =
                 typeof counter.value === "number"
                   ? counter.value
@@ -96,8 +256,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <ProofCounterSection
                 content={{
-                  heading: block.heading,
-                  description: block.description || "",
+                  heading: counterBlock.heading,
+                  description: counterBlock.description || "",
                   stats,
                 }}
                 key={blockKey}
@@ -105,9 +265,10 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             );
           }
 
-          case "sections.faq-accordion": {
-            const faqsList: StrapiFaqItemElement[] = block.faqs ?? [];
-            const items = faqsList.map((faq: StrapiFaqItemElement, faqIdx: number) => ({
+          case "faq-accordion": {
+            const faqBlock = block as BlockFaqAccordion;
+            const faqsList = faqBlock.faqs ?? [];
+            const items = faqsList.map((faq, faqIdx) => ({
               id: faq.id ? `faq-${block.id}-${faq.id}` : `faq-${block.id}-${faqIdx}`,
               question: faq.question,
               answer: faq.answer,
@@ -115,9 +276,9 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
             return (
               <SplitFaqSection
-                description={block.description}
-                eyebrow={block.eyebrow}
-                heading={block.heading}
+                description={faqBlock.description}
+                eyebrow={faqBlock.eyebrow}
+                heading={faqBlock.heading}
                 idPrefix={`faq-${block.id || index}`}
                 items={items}
                 key={blockKey}
@@ -125,43 +286,46 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             );
           }
 
-          case "sections.cta-banner": {
+          case "cta-banner": {
+            const ctaBlock = block as BlockCtaBanner;
             return (
               <CtaBannerSection
-                ctaHref={block.btnUrl}
-                ctaLabel={block.btnText}
-                description={block.description}
-                heading={block.heading}
+                ctaHref={ctaBlock.btnUrl}
+                ctaLabel={ctaBlock.btnText}
+                description={ctaBlock.description}
+                heading={ctaBlock.heading}
                 key={blockKey}
               />
             );
           }
 
-          case "sections.features-grid": {
-            const featuresList: StrapiFeatureItemElement[] = block.features ?? [];
-            const features = featuresList.map((feature: StrapiFeatureItemElement) => ({
+          case "features-grid": {
+            const featureBlock = block as BlockFeaturesGrid;
+            const featuresList = featureBlock.features ?? [];
+            const features = featuresList.map((feature) => ({
               title: feature.title,
               description: feature.description,
-              icon: getStrapiMediaUrl(feature.icon) || undefined,
-              iconAlt: getStrapiMediaAlt(feature.icon, feature.title),
+              icon: resolveMediaUrl(feature.icon) || undefined,
+              iconAlt: resolveMediaAlt(feature.icon, feature.title),
               linkText: feature.linkText,
               linkUrl: feature.linkUrl,
             }));
 
             return (
               <FeaturesGridSection
-                description={block.description}
-                eyebrow={block.eyebrow}
+                description={featureBlock.description}
+                eyebrow={featureBlock.eyebrow}
                 features={features}
-                heading={block.heading}
+                heading={featureBlock.heading}
                 key={blockKey}
               />
             );
           }
 
-          case "sections.process-timeline": {
-            const stepsList: StrapiTimelineStepElement[] = block.steps ?? [];
-            const steps = stepsList.map((step: StrapiTimelineStepElement, stepIdx: number) => ({
+          case "process-timeline": {
+            const processBlock = block as BlockProcessTimeline;
+            const stepsList = processBlock.steps ?? [];
+            const steps = stepsList.map((step, stepIdx) => ({
               step: step.stepNumber || String(stepIdx + 1).padStart(2, "0"),
               title: step.title,
               description: step.description || "",
@@ -170,8 +334,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <OurDevelopmentProcessSection
                 content={{
-                  heading: block.heading,
-                  eyebrow: block.eyebrow,
+                  heading: processBlock.heading,
+                  eyebrow: processBlock.eyebrow,
                   description: "",
                   steps,
                 }}
@@ -180,34 +344,47 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             );
           }
 
-          case "sections.happy-clients": {
-            const items =
-              block.testimonials && block.testimonials.length > 0
-                ? block.testimonials.map(adaptStrapiTestimonial)
+          case "happy-clients": {
+            const clientBlock = block as BlockHappyClients;
+            const items: HappyClientTestimonialItem[] | undefined =
+              clientBlock.testimonials && clientBlock.testimonials.length > 0
+                ? clientBlock.testimonials.map((testimonial) => ({
+                    name: testimonial.authorName,
+                    company: testimonial.company || "",
+                    quote: testimonial.quote,
+                    videoId: testimonial.videoId || "",
+                    image:
+                      resolveMediaUrl(testimonial.avatar) ||
+                      "/assets/testimonials/placeholder.webp",
+                    imageAlt: testimonial.authorName,
+                    logo: resolveMediaUrl(testimonial.logo) || undefined,
+                    logoAlt:
+                      testimonial.logoAlt ||
+                      (testimonial.company ? `${testimonial.company} logo` : undefined),
+                  }))
                 : undefined;
 
             return (
               <HappyClientSection
-                description={block.description}
-                eyebrow={block.eyebrow}
-                heading={block.heading}
+                description={clientBlock.description}
+                eyebrow={clientBlock.eyebrow}
+                heading={clientBlock.heading}
                 items={items}
                 key={blockKey}
               />
             );
           }
 
-          case "sections.case-studies": {
-            const caseStudiesList: StrapiCaseStudy[] = block.caseStudies ?? [];
-            const items = caseStudiesList.map((caseStudy: StrapiCaseStudy) => {
+          case "case-studies": {
+            const csBlock = block as BlockCaseStudies;
+            const caseStudiesList = csBlock.caseStudies ?? [];
+            const items: CaseStudyPreviewItem[] = caseStudiesList.map((caseStudy) => {
               const media = caseStudy.thumbnail || caseStudy.heroImage;
               return {
                 title: caseStudy.title,
                 href: `/case-studies/${caseStudy.slug}`,
-                image:
-                  getStrapiMediaUrl(media) ||
-                  "/assets/case-studies/placeholder.webp",
-                imageAlt: getStrapiMediaAlt(media, caseStudy.title),
+                image: resolveMediaUrl(media) || "/assets/case-studies/placeholder.webp",
+                imageAlt: resolveMediaAlt(media, caseStudy.title),
                 technology: caseStudy.technology || "",
                 industry: caseStudy.industry || "",
                 tags: caseStudy.tags || [],
@@ -216,9 +393,9 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
             return (
               <ServicesCaseStudiesSection
-                description={block.description}
-                eyebrow={block.eyebrow}
-                heading={block.heading || sharedUiCopy.portfolioEyebrow}
+                description={csBlock.description}
+                eyebrow={csBlock.eyebrow}
+                heading={csBlock.heading || sharedUiCopy.portfolioEyebrow}
                 items={items}
                 key={blockKey}
               />
@@ -227,10 +404,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
           default: {
             if (process.env.NODE_ENV !== "production") {
-              const unrecognized = block as { __component?: string };
-              console.warn(
-                `Unrecognized Strapi dynamic zone component: ${unrecognized.__component}`,
-              );
+              console.warn(`Unrecognized dynamic block type: ${rawType}`);
             }
             return null;
           }

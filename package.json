@@ -2,6 +2,7 @@
   "name": "dynamicdreamz-next",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "check:asset-duplicates": "node scripts/check-asset-duplicates.mjs",
@@ -12,15 +13,19 @@
     "security:scan": "bash .githooks/pre-commit --ci",
     "build": "bash -c 'if [ \"${VERCEL:-}\" = \"1\" ] || [ \"${GITHUB_ACTIONS:-}\" = \"true\" ]; then bash .githooks/pre-commit --ci; fi' && npm run check:urls && npm run check:component-content && npm run check:case-studies && npm run check:blog-posts && npm run check:asset-duplicates && next build --webpack",
     "start": "next start",
-    "migrate:blogs": "node scripts/migrate-blogs-to-strapi.mjs",
     "lint": "npm run check:urls && npm run check:component-content && npm run check:case-studies && npm run check:blog-posts && npm run check:asset-duplicates && eslint"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.90.2",
+    "@payloadcms/next": "^3.90.2",
+    "@payloadcms/richtext-lexical": "^3.90.2",
     "@types/react-slick": "^0.23.13",
-    "next": "16.3.0",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
+    "next": "^16.4.0",
+    "payload": "^3.90.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "react-slick": "^0.31.0",
+    "sharp": "^0.35.5",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
@@ -30,7 +35,7 @@
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
-    "eslint-config-next": "16.3.0",
+    "eslint-config-next": "^16.4.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

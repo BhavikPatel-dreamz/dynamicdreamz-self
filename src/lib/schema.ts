@@ -1597,7 +1597,7 @@ export function createBlogsPageSchema(
 }
 
 export function createContactPageSchema() {
-  const { jobs, sales } = contactPageContent.contacts;
+  const { hr, sales } = contactPageContent.contactDetailsSection;
 
   return {
     "@context": "https://schema.org",
@@ -1615,8 +1615,8 @@ export function createContactPageSchema() {
           {
             "@type": "ContactPoint",
             contactType: "human resources",
-            telephone: jobs.phone,
-            email: jobs.email,
+            telephone: hr.phone,
+            email: hr.email,
             availableLanguage: "English",
           },
         ],

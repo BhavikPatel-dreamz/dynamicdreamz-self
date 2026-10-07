@@ -3,14 +3,26 @@ import { draftMode } from "next/headers";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { BlockRenderer } from "@/components/blocks/block-renderer";
+import { BlockRenderer, type CmsSectionBlock } from "@/components/blocks/block-renderer";
 import { draftPreviewCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
 import { absoluteUrl } from "@/lib/seo";
-import { getPageBySlug, getStrapiMediaUrl } from "@/lib/strapi";
+import { getPayloadPageBySlug } from "@/lib/payload";
 
 interface DynamicPageRouteProps {
   params: Promise<{ slug?: string[] }>;
+}
+
+interface PageData {
+  title?: string;
+  sections?: readonly CmsSectionBlock[];
+  seo?: {
+    metaTitle?: string;
+    metaDescription?: string;
+    canonicalUrl?: string;
+    metaImage?: string | { url?: string };
+    preventIndexing?: boolean;
+  };
 }
 
 export async function generateMetadata({
@@ -19,19 +31,23 @@ export async function generateMetadata({
   const { slug } = await params;
   const pageSlug = slug && slug.length > 0 ? slug.join("/") : "home";
   const draft = await draftMode();
-  const page = await getPageBySlug(pageSlug, { preview: draft.isEnabled });
+  const rawPage = await getPayloadPageBySlug(pageSlug, { preview: draft.isEnabled });
 
-  if (!page) {
+  if (!rawPage) {
     return {};
   }
 
-  const title = page.seo?.metaTitle || `${page.title} | Dynamic Dreamz`;
+  const page = rawPage as unknown as PageData;
+  const title = page.seo?.metaTitle || `${page.title || "Page"} | Dynamic Dreamz`;
   const description =
     page.seo?.metaDescription ||
-    `${page.title} - Professional web and ecommerce solutions by Dynamic Dreamz.`;
+    `${page.title || "Page"} - Professional web and ecommerce solutions by Dynamic Dreamz.`;
   const canonicalPath = page.seo?.canonicalUrl || (pageSlug === "home" ? "/" : `/${pageSlug}`);
   const canonical = absoluteUrl(canonicalPath);
-  const metaImage = page.seo?.metaImage ? getStrapiMediaUrl(page.seo.metaImage) : undefined;
+  const metaImageUrl =
+    typeof page.seo?.metaImage === "string"
+      ? page.seo.metaImage
+      : page.seo?.metaImage?.url;
 
   return {
     title,
@@ -48,10 +64,10 @@ export async function generateMetadata({
       url: canonical,
       siteName: siteConfig.name,
       type: "website",
-      images: metaImage
+      images: metaImageUrl
         ? [
             {
-              url: metaImage,
+              url: metaImageUrl,
               alt: title,
             },
           ]
@@ -61,7 +77,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: metaImage ? [metaImage] : undefined,
+      images: metaImageUrl ? [metaImageUrl] : undefined,
     },
   };
 }
@@ -70,11 +86,13 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
   const { slug } = await params;
   const pageSlug = slug && slug.length > 0 ? slug.join("/") : "home";
   const draft = await draftMode();
-  const page = await getPageBySlug(pageSlug, { preview: draft.isEnabled });
+  const rawPage = await getPayloadPageBySlug(pageSlug, { preview: draft.isEnabled });
 
-  if (!page) {
+  if (!rawPage) {
     notFound();
   }
+
+  const page = rawPage as unknown as PageData;
 
   return (
     <main id="main-content" data-page={pageSlug}>

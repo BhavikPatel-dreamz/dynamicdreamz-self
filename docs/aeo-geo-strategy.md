@@ -2236,7 +2236,7 @@ Dedicated industry solution landing page for jewellery and accessories brands se
 ## Contact Us (`/contact-us`)
 
 Status: implemented; deployment webhook configuration pending
-Last reviewed: 2026-08-17
+Last reviewed: 2026-10-07
 Owner: Sales and operations
 Primary audience: prospective ecommerce clients, agency partners, job seekers,
 and visitors looking for office or company contact details
@@ -2245,21 +2245,25 @@ Decision stage: conversion and direct contact
 ### Page role
 
 Provide the canonical contact destination for Dynamic Dreamz, preserve the live
-sales and recruitment contact paths, identify both offices, and give qualified
-visitors a direct inquiry form without depending on the legacy WordPress site.
+sales, recruitment, and discovery call contact paths, identify both offices, and give
+qualified visitors a direct inquiry form without depending on the legacy WordPress site.
 
 ### Target prompts
 
 - How can I contact Dynamic Dreamz about an ecommerce or Shopify project?
 - Where are the Dynamic Dreamz offices in Surat and Ahmedabad?
 - What email address or phone number should I use for sales or job openings?
+- How do I schedule a discovery call with Dynamic Dreamz?
 
 ### Current strengths and available evidence
 
-- The live page exposes distinct sales and recruitment phone/email contacts.
-- Both office addresses, map destinations, office photographs, and direct
-  contact details are visible.
-- The page contains a short inquiry form and the shared company footer links.
+- Complete October 2026 live redesign remigration implemented across 4 structured sections:
+  1. Hero section (`#fbeed5`) with anchor jump navigation pills (`#message`, `#offices`, `#contact-details`).
+  2. `#message` inquiry form card with 2-column fields, +91 country selector indicator, project overview, budget selector, and disclaimer note.
+  3. `#offices` section (`#eff4ef`) with Surat and Ahmedabad location cards, direct phone links, and external Google Maps direction links.
+  4. `#contact-details` section (`#ffffff`) with 4 distinct channels: Sales, Careers (linking to `/career`), Book a Discovery Call (linking to `/book-a-discovery-call`), and Follow Us (LinkedIn, Instagram).
+- Structured data exposes a comprehensive `ContactPage` graph connecting Organization, both office postal addresses, telephone numbers, and inquiry actions.
+- Omission of commented-out office photos from live Elementor DOM satisfies the WordPress hidden DOM debt policy.
 
 ### Recommended improvements
 
@@ -2268,21 +2272,21 @@ visitors a direct inquiry form without depending on the legacy WordPress site.
 | P0 | implemented | Route and conversion | The local `/contact-us` route was missing | Migrate the full live page, include it in metadata/sitemap/robots data, and provide a server-validated inquiry flow | Route, discovery data, validation, honeypot, UTM capture, and failure state verified; production delivery still requires webhook configuration |
 | P0 | implemented; deployment pending | Runtime dependency | The live form posts to WordPress Contact Form 7 | Use a local Server Action and configurable server-side webhook; never call the legacy WordPress form at runtime | `CONTACT_FORM_WEBHOOK_URL` and optional `CONTACT_FORM_WEBHOOK_TOKEN` must be provisioned by deployment |
 | P1 | implemented | Structured data | No local ContactPage graph existed | Add ContactPage, Organization, WebSite, and BreadcrumbList nodes using only visible/approved details | Rendered ContactPage graph and slashless canonical verified locally |
-| P1 | implemented | Accessibility | Live social image alt text says `Facebook Icon` for LinkedIn and Instagram; Ahmedabad office alt says Surat | Use accurate local alt text and accessible labels without changing the rendered presentation | Accurate labels/alts, required-field focus, and visible focus ring verified locally |
+| P1 | implemented | Accessibility | Live social image alt text previously lacked distinct accessible names | Use accurate local alt text and accessible labels without changing the rendered presentation | Accurate labels/alts, required-field focus, and visible focus ring verified locally |
 | P1 | deferred | Answer clarity | The hero and form introduction do not summarize service scope or response expectations in a directly extractable answer | Add a concise approved contact summary and verified response-time statement in future | Sales/content approval and response-time policy |
-| P2 | migration pending | Internal links | The page has no contextual service or work links | Add relevant service/work links only as those canonical routes ship | Destination routes and visible-copy approval |
+| P2 | migration pending | Internal links | Discovery call and career routes are linked | Ensure `/career` and `/book-a-discovery-call` routes are verified or redirected before launch | Destination routes and visible-copy approval |
 
 ### Entity, evidence, and authorship actions
 
-- Keep sales, recruitment, office, and social contact points consistent with the
+- Keep sales, recruitment, discovery call, office, and social contact points consistent with the
   shared site configuration and approved office facts.
-- Do not add service claims, response-time guarantees, or office hours without
+- Do not add unsupported service claims, response-time guarantees, or office hours without
   owner confirmation.
 
 ### Internal-link and conversion actions
 
 - Preserve the header quote CTA, footer navigation, telephone, email, maps,
-  LinkedIn, Instagram, and inquiry form destinations.
+  LinkedIn, Instagram, careers, discovery call, and inquiry form destinations.
 - Treat planned but unbuilt footer/service routes under the active migration
   exception; they remain launch dependencies.
 
@@ -2290,8 +2294,7 @@ visitors a direct inquiry form without depending on the legacy WordPress site.
 
 - Emit slashless canonical, Open Graph, sitemap, robots, breadcrumb, and JSON-LD
   URLs through the shared helpers.
-- Use the 2026-08-17 migration review date as `dateModified`; preserve the live
-  publication date where available.
+- Use `2026-10-05T12:40:46+00:00` as `dateModified` matching the live site modified timestamp.
 
 ### Measurement plan
 

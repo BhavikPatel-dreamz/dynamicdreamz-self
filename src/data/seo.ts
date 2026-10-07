@@ -251,24 +251,24 @@ export const pageSeo = {
   },
   contact: {
     path: "/contact-us",
-    title: "Contact Dynamic Dreamz | Expert Web Solutions Provider",
+    title: "Contact Dynamic Dreamz | Business & Project Inquiries",
     description:
-      "Connect with us for custom web solutions. Our experts deliver top-notch designs and development. Contact us now!",
+      "Contact Dynamic Dreamz for business, project and agency partnership inquiries. Find our Surat and Ahmedabad office details or book a discovery call.",
     keywords: [
-      "contact Dynamic Dreamz",
-      "web development company contact",
+      "Contact Dynamic Dreamz",
+      "Dynamic Dreamz Surat office",
+      "Dynamic Dreamz Ahmedabad office",
       "Shopify agency contact",
-      "Dynamic Dreamz Surat",
-      "Dynamic Dreamz Ahmedabad",
+      "ecommerce development inquiries",
     ],
     openGraphType: "article",
     publishedTime: "2024-05-01T09:32:45+00:00",
-    modifiedTime: "2026-08-17T00:00:00+05:30",
+    modifiedTime: "2026-10-05T12:40:46+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
       height: 630,
-      alt: "Contact Dynamic Dreamz for ecommerce, web and mobile development",
+      alt: "Contact Dynamic Dreamz | Business & Project Inquiries",
     },
     sitemap: {
       changeFrequency: "monthly",

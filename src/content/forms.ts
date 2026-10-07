@@ -16,11 +16,15 @@ export const contactFormCopy = {
   placeholders: {
     name: "Enter Your Name",
     email: "Enter Your Email Here",
-    phone: "81234 56789",
+    phone: "",
     company: "Enter Your Company name",
     project: "Share your questions or comments here",
   },
   phoneCountryCode: "+91",
+  phoneAriaLabel: "India country code +91",
+  phoneCountrySelectAriaLabel: "Select country code",
+  phoneSearchPlaceholder: "Search country or dial code...",
+  note: "Your message will be directed to the appropriate team.",
   submit: "submit inquiry",
   sending: "sending inquiry",
   status: {
@@ -51,6 +55,8 @@ export const quoteFormCopy = {
   },
   phoneCountryCode: "+91",
   phoneAriaLabel: "India country code +91",
+  phoneCountrySelectAriaLabel: "Select country code",
+  phoneSearchPlaceholder: "Search country or dial code...",
   submit: "submit inquiry",
   sending: "sending inquiry",
   status: {
