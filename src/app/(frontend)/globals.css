@@ -13,12 +13,10 @@
   --color-blue-line: #bfd0de;
   --font-montserrat: var(--font-montserrat-local), Arial, sans-serif;
   --font-sans: var(--font-montserrat-local), Arial, sans-serif;
-  --font-heading: var(--font-neue-montreal-local), var(--font-neue-montreal-medium-local), Arial, sans-serif;
-  --font-display: var(--font-neue-montreal-local), var(--font-neue-montreal-medium-local), Arial, sans-serif;
-  --font-montreal: var(--font-neue-montreal-local), sans-serif;
-  --font-montreal-medium: var(--font-neue-montreal-local), var(--font-neue-montreal-medium-local), sans-serif;
-  --font-montreal-semibold: var(--font-neue-montreal-local), var(--font-neue-montreal-medium-local), sans-serif;
-  --montreal-medium: var(--font-neue-montreal-local), var(--font-neue-montreal-medium-local), sans-serif;
+  --font-display: var(--font-neue-montreal-medium-local), Arial, sans-serif;
+  --font-montreal-medium: var(--font-neue-montreal-medium-local), sans-serif;
+  --font-montreal-semibold: var(--font-neue-montreal-medium-local), sans-serif;
+  --montreal-medium: var(--font-neue-montreal-medium-local), sans-serif;
 }
 
 @layer base {
