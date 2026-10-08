@@ -129,7 +129,7 @@ export function adaptPayloadFooterBottomLinks(
   }));
 }
 
-export async function getPayloadArticles(limit = 100) {
+export async function getPayloadArticles(limit = 200) {
   try {
     const payload = await getPayload({ config });
     const res = await payload.find({
