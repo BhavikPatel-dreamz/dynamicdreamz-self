@@ -421,7 +421,7 @@ export function WhyChooseShopifyMigrationSection({
   return (
     <section
       className={cn(
-        "why_choose_dynamic_dreamz_for_shopify_migration bg-[#171e16] py-20 max-[991px]:py-[50px]",
+        "why_choose_dynamic_dreamz_for_shopify_migration bg-[#192019] py-20 max-[991px]:py-[50px]",
         className,
       )}
       id={id}

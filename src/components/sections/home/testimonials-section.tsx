@@ -7,7 +7,7 @@ import { homeSectionCopy } from "@/content/home";
 
 export function TestimonialsSection() {
   return (
-    <section className="bg-cream py-[60px] max-[767px]:py-[50px]">
+    <section className="bg-cream py-[60px] max-[767px]:py-[50px]" aria-labelledby="testimonials-title">
       <Container>
 
         <div
@@ -15,7 +15,7 @@ export function TestimonialsSection() {
           className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between gap-8 max-[1199px]:mb-5 max-[992px]:gap-0"
         >
           <div className="title w-[42%] max-[1199px]:w-full max-[1199px]:mb-2.5">
-            <SectionHeading id="shopify-plus-agency-title" className="m-0">
+            <SectionHeading id="testimonials-title" className="m-0">
               {homeSectionCopy.testimonialsTitle}
             </SectionHeading>
           </div>

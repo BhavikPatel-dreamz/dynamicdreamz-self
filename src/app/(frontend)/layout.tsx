@@ -18,6 +18,34 @@ import {
 import "./globals.css";
 import "./aos.css";
 
+const neueMontreal = localFont({
+  src: [
+    {
+      path: "./fonts/neue--montreal-light-webfont.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/neue--montreal-regular-webfont.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/neue--montreal-medium-webfont.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/neue--montreal-bold-webfont.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-neue-montreal-local",
+  display: "swap",
+  preload: true,
+});
+
 const neueMontrealMedium = localFont({
   src: "./fonts/neue--montreal-medium-webfont.woff2",
   weight: "500",
@@ -51,7 +79,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html
       lang="en"
-      className={`${neueMontrealMedium.variable} ${montserrat.variable}`}
+      className={`${neueMontreal.variable} ${neueMontrealMedium.variable} ${montserrat.variable}`}
     >
       <body>
         <a

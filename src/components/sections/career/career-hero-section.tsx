@@ -18,7 +18,7 @@ export function CareerHeroSection() {
                 </div>
               ) : null}
 
-              <h1 className="mb-2.5 font-heading text-[50px] font-normal leading-[60px] tracking-normal text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
+              <h1 className="mb-2.5 font-montreal-medium text-[50px] font-medium leading-[60px] tracking-normal text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
                 {careerHero.title}
               </h1>
 
@@ -28,14 +28,13 @@ export function CareerHeroSection() {
             </div>
 
             <div
-              className="global_brands_grid_wrap relative mt-[30px] -mx-[15px] flex items-center max-[1199px]:justify-center max-[767px]:-mx-[15px] max-[767px]:w-[calc(100%+30px)] max-[767px]:flex-wrap max-[767px]:overflow-hidden"
+              className="global_brands_grid_wrap relative -mx-[15px] mt-[30px] flex items-center max-[1199px]:justify-center max-[767px]:-mx-[15px] max-[767px]:w-[calc(100%+30px)] max-[767px]:flex-wrap max-[767px]:overflow-hidden"
               aria-label="Partnerships and independent review profiles"
             >
               {careerHero.badges.map((badge, idx) => (
                 <div
                   className={cn(
                     "global_brands_item relative border-r border-[#d9d9d9] px-[15px] last:border-r-0",
-                    idx === 0 && "hidden", // hide-logo hides first badge
                     "max-[767px]:w-1/3 max-[767px]:border-r max-[767px]:border-[#d9d9d9] max-[767px]:last:border-r-0 max-[767px]:p-2.5 max-[767px]:text-center",
                   )}
                   key={`${badge.href}-${idx}`}

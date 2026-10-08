@@ -99,7 +99,7 @@ export function CityPageHeroSection({
                   ))}
                 </div>
               )}
-              <h1 className="mb-2.5 font-heading text-[50px] font-normal leading-[60px] tracking-normal text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
+              <h1 className="mb-2.5 font-montreal-medium text-[50px] font-medium leading-[60px] tracking-normal text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
                 {content.title}
                 {content.titleHighlight ? (
                   <> <i className="not-italic text-brand-red">{content.titleHighlight}</i></>

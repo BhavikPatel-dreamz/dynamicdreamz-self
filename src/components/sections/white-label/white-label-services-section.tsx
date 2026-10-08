@@ -27,7 +27,7 @@ export function WhiteLabelServicesSection({
   showCta = true,
 }: WhiteLabelServicesSectionProps) {
   return (
-    <section className="bg-[#171e16] py-20 max-[992px]:py-[50px]">
+    <section className="bg-[#192019] py-20 max-[992px]:py-[50px]">
       <Container className="max-[575px]:px-4">
         {eyebrow ? (
           <div data-aos="fade-up" className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col max-[991px]:gap-4">

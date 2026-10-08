@@ -32,7 +32,7 @@ export function CertifiedAgencySupportSection({
 }: CertifiedAgencySupportSectionProps) {
   return (
     <section
-      className="bg-[#171e16] py-[60px] max-[992px]:py-10"
+      className="bg-[#192019] py-[60px] max-[992px]:py-10"
       aria-labelledby="certified-agency-support-title"
     >
       <Container>
