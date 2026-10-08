@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef } from "react";
 import { cn } from "@/lib/class-names";
 
 const sectionHeadingTypographyClassName =
-  "font-display text-[35px] leading-[1.4] font-medium tracking-normal max-[1199px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]";
+  "font-display text-[35px] leading-[48.475px] font-medium tracking-normal max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]";
 
 export const sectionHeadingClassName = `${sectionHeadingTypographyClassName} text-ink`;
 

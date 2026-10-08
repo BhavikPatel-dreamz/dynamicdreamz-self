@@ -140,7 +140,7 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
   }
 
   return (
-    <div className="hidden w-[30px] shrink-0 max-[1200px]:block lg:mr-0 sm:mr-3">
+    <div className="hidden w-[30px] shrink-0 max-[1199px]:block mr-3 max-[767px]:mr-0">
       <button
         className="flex h-[30px] w-[30px] cursor-pointer items-center justify-start border-0 bg-transparent p-0 shrink-0"
         ref={toggleRef}

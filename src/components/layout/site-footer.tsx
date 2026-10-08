@@ -112,7 +112,7 @@ function ContactDetails({
   const hrefPhone = phoneHref || siteConfig.phoneHref;
 
   return (
-    <div className="border-t border-ink/10 pt-[15px] max-[992px]:border-0 max-[992px]:pt-0">
+    <div className="border-t border-ink/10 pt-[15px] max-[991px]:border-0 max-[991px]:pt-0">
       <address className="flex flex-col gap-[15px] not-italic">
         <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={`mailto:${displayEmail}`}>
           <span className="mr-2.5 flex w-[18px] shrink-0 items-center justify-center text-[#111111]"><MailIcon /></span>
@@ -242,7 +242,7 @@ export function SiteFooter({
         />
       </Container>
 
-      <Container className="hidden pt-10 max-[992px]:block">
+      <Container className="hidden pt-10 max-[991px]:block">
         <div>
           {effectiveNavigation.map((group) => (
             <details className="group/footer border-b border-ink/10" key={group.label}>
@@ -278,20 +278,20 @@ export function SiteFooter({
         </div>
       </Container>
 
-      <Container className="grid grid-cols-6 gap-3 pt-[50px] max-[992px]:grid-cols-2 max-[992px]:gap-5 max-[992px]:pt-[35px] max-[767px]:gap-4 max-[767px]:pt-[30px]" aria-label="Partner and review profiles">
+      <Container className="grid grid-cols-6 gap-3 pt-[50px] max-[991px]:grid-cols-2 max-[991px]:gap-5 max-[991px]:pt-[35px] max-[767px]:gap-4 max-[767px]:pt-[30px]" aria-label="Partner and review profiles">
         {footerAwards.map((award) => (
-          <a className="flex h-[81px] items-center justify-center rounded-[20px] bg-white px-[18px] py-4 max-[992px]:rounded-[10px] max-[767px]:h-[60px] max-[767px]:border max-[767px]:border-[#efefef]/20 max-[767px]:px-[13px] max-[767px]:py-[5px]" href={award.href} target="_blank" rel="nofollow noopener noreferrer" key={award.src} aria-label={award.alt}>
+          <a className="flex h-[81px] items-center justify-center rounded-[20px] bg-white px-[18px] py-4 max-[991px]:rounded-[10px] max-[767px]:h-[60px] max-[767px]:border max-[767px]:border-[#efefef]/20 max-[767px]:px-[13px] max-[767px]:py-[5px]" href={award.href} target="_blank" rel="nofollow noopener noreferrer" key={award.src} aria-label={award.alt}>
             <Image src={award.src} alt={award.alt} width={award.width} height={award.height} className="max-[767px]:h-10 object-contain"/>
           </a>
         ))}
       </Container>
 
-      <Container className="hidden max-[992px]:block">
+      <Container className="hidden max-[991px]:block">
         <SocialLinks className="mt-[30px] justify-center" socialLinks={effectiveSocial} />
       </Container>
 
       <Container>
-        <div className="flex items-center justify-between pt-[30px] pb-[15px] max-[992px]:pt-[30px] max-[992px]:pb-5 max-[767px]:mt-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:gap-[15px] max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-[15px] max-[767px]:pb-[15px] max-[767px]:text-center">
+        <div className="flex items-center justify-between pt-[30px] pb-[15px] max-[991px]:pt-[30px] max-[991px]:pb-5 max-[767px]:mt-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:gap-[15px] max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-[15px] max-[767px]:pb-[15px] max-[767px]:text-center">
           {effectiveCopyright ? (
             <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">{effectiveCopyright}</p>
           ) : (

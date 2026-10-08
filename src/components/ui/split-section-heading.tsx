@@ -54,7 +54,7 @@ export function SplitSectionHeading({
       >
         <h2
           className={cn(
-            "font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]",
+            "font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
             dark ? "text-white" : "text-ink",
             titleClassName,
           )}
@@ -84,12 +84,12 @@ export function SplitSectionHeading({
   return (
     <header
       className={cn(
-        "flex items-end justify-between max-[992px]:flex-col",
+        "flex items-end justify-between max-[991px]:flex-col",
         services || leftAligned
-          ? "max-[992px]:items-start max-[992px]:text-left"
+          ? "max-[991px]:items-start max-[991px]:text-left"
           : portfolio
-            ? "items-end max-[992px]:items-end max-[992px]:text-center"
-          : "max-[992px]:text-center",
+            ? "items-end max-[991px]:items-end max-[991px]:text-center"
+          : "max-[991px]:text-center",
         className,
       )}
       data-aos={aosAnimation || undefined}
@@ -128,8 +128,8 @@ export function SplitSectionHeading({
         <h2
           className={cn(
             services || portfolio || leftAligned
-              ? "font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]"
-              : "font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] max-[992px]:mb-[15px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]",
+              ? "font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]"
+              : "font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] max-[991px]:mb-[15px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]",
             dark ? "text-white" : "text-ink",
           )}
           id={headingId}
@@ -158,7 +158,7 @@ export function SplitSectionHeading({
                 services || leftAligned
                   ? "font-sans xl:text-base text-sm font-medium leading-7 max-[767px]:leading-6"
                   : portfolio
-                    ? "font-sans text-[16px] font-medium leading-7 max-[992px]:mt-3.75 max-[992px]:text-sm max-[992px]:leading-[24px] max-[767px]:text-sm max-[767px]:leading-6"
+                    ? "font-sans text-[16px] font-medium leading-7 max-[991px]:mt-3.75 max-[991px]:text-sm max-[991px]:leading-[24px] max-[767px]:text-sm max-[767px]:leading-6"
                     : "xl:text-base text-sm font-medium leading-6 not-last:mb-2.5",
                 dark ? "text-white/80" : "text-muted",
               )}

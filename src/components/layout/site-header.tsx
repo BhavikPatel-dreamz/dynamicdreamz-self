@@ -35,14 +35,14 @@ export function SiteHeader({
     navigation && navigation.length > 0 ? navigation : primaryNavigation;
 
   return (
-    <header className="site-header fixed top-0 left-0 z-[111] w-full bg-white/60 backdrop-blur-[25px] transition-all duration-500 ease-in-out [body:has(main[data-page=career-apply-now])_&]:hidden [body:has(main[data-page=request-quote])_&]:hidden [body:has(main[data-page=shopify-development-in-barcelona-spain])_&]:hidden [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [&.header-down]:-translate-y-full [&.header-down]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] [&.header-up]:translate-y-0 [&.header-up]:bg-white/60 [&.header-up]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] max-[1200px]:py-[15px] max-[768px]:[&:not(.header-up)]:bg-transparent">
+    <header className="site-header fixed top-0 left-0 z-[111] w-full bg-white/60 backdrop-blur-[25px] transition-all duration-500 ease-in-out [body:has(main[data-page=career-apply-now])_&]:hidden [body:has(main[data-page=request-quote])_&]:hidden [body:has(main[data-page=shopify-development-in-barcelona-spain])_&]:hidden [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [&.header-down]:-translate-y-full [&.header-down]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] [&.header-up]:translate-y-0 [&.header-up]:bg-white/60 [&.header-up]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] max-[1199px]:py-[15px] max-[768px]:[&:not(.header-up)]:bg-transparent">
       <HeaderScrollBehavior />
-      <Container className="relative flex items-center justify-between gap-0 max-[1200px]:min-h-[34px]">
+      <Container className="relative flex items-center justify-between gap-0 max-[1199px]:min-h-[34px]">
         <div className="flex items-center">
           <MobileNavigation navigation={effectiveNav} contactEmail={contactEmail} />
 
           <Link
-            className="inline-flex shrink-0 -translate-y-[2.5px] max-[1200px]:mr-auto max-[1200px]:translate-y-0"
+            className="inline-flex shrink-0 -translate-y-[2.5px] max-[1199px]:mr-auto max-[1199px]:translate-y-0"
             href="/"
             aria-label="Dynamic Dreamz home"
           >
@@ -62,13 +62,15 @@ export function SiteHeader({
           <DesktopNavigation navigation={effectiveNav} />
         </div>
 
-        <ButtonLink
-          className="---site-header-btn py-3.75 max-[1399px]:px-5 max-[1399px]:py-3.25 max-[1399px]:text-[14px] max-[992px]:px-5! max-[992px]:py-3.25! max-[379px]:text-[10px] max-[379px]:px-2.5 max-[379px]:py-2"
-          variant="primary"
-          href={effectiveCtaHref}
-        >
-          {effectiveCtaLabel}
-        </ButtonLink>
+        <div className="header-btn shrink-0">
+          <ButtonLink
+            className="py-3.75 max-[1399px]:px-5 max-[1399px]:py-3.25 max-[1399px]:text-[14px] max-[991px]:px-[14px]! max-[991px]:py-[9px]! max-[991px]:text-[13px]! max-[379px]:px-[10px]! max-[379px]:py-[8px]! max-[379px]:text-[10px]!"
+            variant="primary"
+            href={effectiveCtaHref}
+          >
+            {effectiveCtaLabel}
+          </ButtonLink>
+        </div>
       </Container>
     </header>
   );
