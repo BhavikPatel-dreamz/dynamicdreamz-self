@@ -3,20 +3,21 @@ import type { ReactNode } from "react";
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
+import { formatBrText } from "@/lib/text-formatting";
 
 export type ThemeCustomizationBox = {
   number?: string;
   icon?: ReactNode;
   iconWrapperClassName?: string;
-  title: string;
+  title: string | readonly string[];
   badge?: string;
-  description?: string;
+  description?: string | readonly string[];
 };
 
 export type ThemeCustomizationServicesContent = {
   eyebrow?: string;
-  heading: string;
-  description?: string;
+  heading: string | readonly string[];
+  description?: string | readonly string[];
   boxes: readonly ThemeCustomizationBox[];
   bottomNote?: string;
 };
@@ -61,7 +62,7 @@ export function ThemeCustomizationServicesSection({
             <div
               className="box rounded-[20px] border border-[rgba(40,40,40,0.11)] bg-white p-[25px] max-[991px]:p-5"
               data-aos="fade-up"
-              key={box.number ?? box.title}
+              key={box.number ?? (typeof box.title === "string" ? box.title : box.title.join(" "))}
             >
               {box.icon ? (
                 <div
@@ -81,7 +82,7 @@ export function ThemeCustomizationServicesSection({
                 </div>
               ) : null}
               <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[1199px]:text-[18px]">
-                {box.title}
+                {formatBrText(box.title)}
                 {box.badge ? (
                   <span className="mt-2.5 mb-[5px] block w-fit rounded-[30px] bg-[rgba(173,81,81,0.05)] px-[12.5px] py-[5.5px] font-montserrat text-xs font-bold uppercase leading-none text-[#ad5151] max-[767px]:text-[11px] max-[767px]:px-[13.5px] max-[767px]:py-[6.5px]">
                     {box.badge}
@@ -90,7 +91,7 @@ export function ThemeCustomizationServicesSection({
               </h3>
               {box.description ? (
                 <p className="font-sans text-sm font-normal leading-[24px] text-[#535353]">
-                  {box.description}
+                  {formatBrText(box.description)}
                 </p>
               ) : null}
             </div>

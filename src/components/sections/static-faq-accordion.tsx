@@ -104,7 +104,7 @@ export function StaticFaqAccordion({
               itemClassName,
             )}
             data-faq-item
-            key={item.question}
+            key={typeof item.question === "string" ? item.question : item.question.join(" ")}
           >
             <button
               className={cn(

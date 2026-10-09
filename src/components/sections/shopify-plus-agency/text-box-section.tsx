@@ -3,9 +3,9 @@ import { formatBrText } from "@/lib/text-formatting";
 import { cn } from "@/lib/class-names";
 
 export type TextBoxSectionProps = {
-  heading: string;
-  text?: string;
-  paragraphs?: readonly string[];
+  heading: string | readonly string[];
+  text?: string | readonly string[];
+  paragraphs?: readonly (string | readonly string[])[];
   subheading?: string;
   listItems?: readonly string[];
   className?: string;
@@ -53,7 +53,7 @@ export function TextBoxSection({
                 className="single-text-box-desc mb-[15px] text-center font-montserrat text-sm font-normal leading-6 text-[#535353] last:mb-0 max-[992px]:text-sm max-[992px]:leading-[27px]"
                 key={index}
               >
-                {paragraph}
+                {formatBrText(paragraph)}
               </p>
             ))}
             {subheading ? (

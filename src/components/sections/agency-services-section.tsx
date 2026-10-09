@@ -9,7 +9,10 @@ import { cn } from "@/lib/class-names";
 
 import { formatBrText } from "@/lib/text-formatting";
 
-function removeBreakTags(text: string) {
+function removeBreakTags(text: string | readonly string[]) {
+  if (typeof text !== "string") {
+    return text.join(" ");
+  }
   return text.replace(/<br\s*\/?>/gi, " ");
 }
 
@@ -17,8 +20,8 @@ export type AgencyServiceItem = {
   icon?: string;
   iconAlt?: string;
   iconSvg?: React.ReactNode;
-  title: string;
-  description: string;
+  title: string | readonly string[];
+  description: string | readonly string[];
   bullets?: readonly string[];
   href?: string;
   link?: string;
@@ -26,8 +29,8 @@ export type AgencyServiceItem = {
 
 export type AgencyServicesContent = {
   eyebrow?: string;
-  heading: string;
-  description: string;
+  heading: string | readonly string[];
+  description: string | readonly string[];
   items: readonly AgencyServiceItem[];
   cta?: {
     label: string;
@@ -149,7 +152,7 @@ export function AgencyServicesSection({
                   <div
                     className="services-box w-full max-[991px]:[&:not(:last-child)]:mb-4"
                     data-aos="fade-up"
-                    key={service.title}
+                    key={typeof service.title === "string" ? service.title : service.title.join(" ")}
                   >
                     <div
                       className={cn(
@@ -173,10 +176,10 @@ export function AgencyServicesSection({
                         </div>
                         <div className="text-block w-[calc(100%-24px)] pl-4 max-[767px]:w-full max-[767px]:pl-0">
                           <h3 className="m-0 mb-2.5 font-montreal-medium text-[20px] font-normal leading-[28.8px] tracking-[0.32px] text-ink">
-                            {service.title}
+                            {formatBrText(service.title)}
                           </h3>
                           <p className="mt-2.5 mb-0 font-sans text-[14px] font-normal leading-6 tracking-[0.32px] text-[#535353]">
-                            {service.description}
+                            {formatBrText(service.description)}
                           </p>
                           {service.bullets && service.bullets.length > 0 && (
                             <ul className="mt-[15px] border-t border-[#d9d9d9] pt-1.5 list-none p-0 font-sans text-[14px] font-normal leading-6 text-[#535353]">
@@ -380,7 +383,7 @@ export function AgencyServicesSection({
                       colClass,
                     )}
                     data-aos="fade-up"
-                    key={service.title}
+                    key={typeof service.title === "string" ? service.title : service.title.join(" ")}
                   >
                     {serviceHref ? (
                       <Link href={serviceHref} className="block h-full">

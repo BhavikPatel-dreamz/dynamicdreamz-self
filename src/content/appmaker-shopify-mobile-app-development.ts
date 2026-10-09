@@ -233,7 +233,7 @@ export const appmakerProcessSteps: readonly ShopifyAppProcessStep[] = [
 ] as const;
 
 export const appmakerProcess = {
-  heading: "How Does the Shopify <br> App Maker Work?",
+  heading: ["How Does the Shopify", "App Maker Work?"],
   steps: appmakerProcessSteps,
 } as const;
 

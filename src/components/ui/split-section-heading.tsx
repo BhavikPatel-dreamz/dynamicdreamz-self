@@ -3,8 +3,8 @@ import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
 
 export type SplitSectionHeadingProps = {
-  heading: string;
-  description?: string;
+  heading: string | readonly string[];
+  description?: string | readonly string[];
   paragraphs?: readonly string[];
   headingId?: string;
   eyebrow?: string;
@@ -20,7 +20,8 @@ export type SplitSectionHeadingProps = {
   aosAnimation?: string;
 };
 
-function removeBreakTags(text: string) {
+function removeBreakTags(text: string | readonly string[]) {
+  if (typeof text !== "string") return text.join(" ");
   return text.replace(/<br\s*\/?>/gi, " ");
 }
 
@@ -41,7 +42,7 @@ export function SplitSectionHeading({
   preserveBreaks = false,
   aosAnimation = "fade-up",
 }: SplitSectionHeadingProps) {
-  const body = paragraphs ?? (description ? [description] : []);
+  const body = paragraphs ?? (description ? (Array.isArray(description) ? description : [description]) : []);
   const services = variant === "services";
   const portfolio = variant === "portfolio";
   const leftAligned = variant === "left";

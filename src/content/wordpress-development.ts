@@ -209,7 +209,10 @@ export const wordpressDevelopmentPortfolio = {
   eyebrow: "Portfolio",
   heading: "A sneak peek into our WordPress Development Expertise",
   description:
-    "500+ WordPress websites meticulously crafted and counting. Our expertise accelerates <br> growth and redefines shopping experiences for clients.",
+    [
+      "500+ WordPress websites meticulously crafted and counting. Our expertise accelerates",
+      "growth and redefines shopping experiences for clients.",
+    ],
   category: "WORDPRESS",
   ctaLabel: "VIEW OUR WORK",
   ctaHref: "/our-work",
@@ -274,7 +277,10 @@ export const wordpressDevelopmentTestimonials = {
   eyebrow: "Client Stories",
   heading: "Don't Just Take Our Word For It",
   description:
-    "We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories. Check out how our services empower them to evolve.",
+    [
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
+      "Happy clients make happy stories. Check out how our services empower them to evolve.",
+    ],
 } as const;
 
 export const wordpressDevelopmentFaqs: readonly FaqAccordionItem[] = [

@@ -12,7 +12,10 @@ import type {
 
 export const whiteLabelWordPressSectionCopy = {
   reasonsTitle:
-    "Why Agencies Choose Dynamic Dreamz <br>for White Label WordPress Development",
+    [
+    "Why Agencies Choose Dynamic Dreamz",
+    "for White Label WordPress Development",
+  ],
   servicesTitle: "White Label WordPress Development Services",
   servicesCta: "Let me give you a hand to help you",
   pricingTitle: "Choose the Right Wordpress Development Engagement.",

@@ -169,11 +169,9 @@ Core proof points from the live site:
      groups must remain 0.
 - For styling and animation work, follow `docs/visual-parity-workflow.md`.
   Inspect live CSS/JS, computed styles, keyframes, transitions, interaction
-  states, and screenshots before implementing. Static HTML alone is not enough.
-- For visual work, create or update a capture note in `docs/visual-captures/`
-  before editing UI code. The note must list live screenshots, local
-  screenshots, CSS/JS sources inspected, responsive breakpoints, interaction
-  states, animation timings, and remaining differences.
+  states, and responsive layout before implementing. Static HTML alone is not
+  enough. Keep temporary comparison artifacts and inspection dumps in
+  `scratch/` (do not commit screenshots or heavy dumps to the repository).
 - For each migrated page, inspect both the rendered live page and View Page
   Source. Preserve page structure, metadata intent, headings, links, CTA labels,
   image alt text, ARIA labels, schema data, and other small SEO/accessibility
@@ -225,8 +223,8 @@ Core proof points from the live site:
 - Preserve legacy URL equity with redirects for migrated or renamed pages.
 - Verify with `npm run lint` and `npm run build` before calling work complete.
   For visual work, also run the dev server and inspect responsive desktop and
-  mobile states. Do not claim live-site visual parity unless live/local
-  screenshot comparison and animation/interaction checks are documented.
+  mobile states. Do not claim live-site visual parity unless responsive
+  behavior, layout alignment, and animation/interaction checks are verified locally.
 
 ## Production Structure Preference
 

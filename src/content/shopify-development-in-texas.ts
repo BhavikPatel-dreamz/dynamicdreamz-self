@@ -427,7 +427,11 @@ export const shopifyDevelopmentTexasContent = {
       question:
         "What makes Dynamic Dreamz the best Shopify development company in Texas?",
       answer:
-        "Dynamic Dreamz is a certified Shopify Platinum Partner that comes with 18+ years of experience, 150+ developers and designers & 5,000+ projects delivered worldwide.<br><br>Moreover, under one single roof, here you can get;",
+        [
+        "Dynamic Dreamz is a certified Shopify Platinum Partner that comes with 18+ years of experience, 150+ developers and designers & 5,000+ projects delivered worldwide.",
+        "",
+        "Moreover, under one single roof, here you can get;",
+      ],
       listItems: [
         { text: "Custom Shopify development," },
         { text: "Shopify Plus builds," },

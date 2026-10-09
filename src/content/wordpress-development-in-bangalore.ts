@@ -317,7 +317,11 @@ export const wordpressDevelopmentBangaloreContent = {
     eyebrow: "Portfolio",
     heading: "Our Successful WordPress Projects",
     description:
-      "500+ WordPress websites meticulously crafted and counting. Our expertise <br> accelerates growth and redefines shopping experiences for clients, <br> making us the best WordPress development company in India.",
+      [
+      "500+ WordPress websites meticulously crafted and counting. Our expertise",
+      "accelerates growth and redefines shopping experiences for clients,",
+      "making us the best WordPress development company in India.",
+    ],
     items: [
       {
         name: "Quite Events",
@@ -435,16 +439,26 @@ export const wordpressDevelopmentBangaloreContent = {
   // Backward-compatibility aliases
   intro: {
     heading:
-      "Why Choose Dynamic Dreamz as Your <br> WordPress Development Company in Bangalore?",
+      [
+    "Why Choose Dynamic Dreamz as Your",
+    "WordPress Development Company in Bangalore?",
+  ],
     paragraphs: [
       "Dynamic Dreamz is committed to serving the diverse business needs of WordPress development companies in Bangalore. Serving the various industry requirements of Bangalore-based businesses is a priority for Dynamic Dreamz. Our WordPress development agency in Bangalore focus on building high-performance websites that are visually appealing, easy to navigate, and optimized for speed. We specialize in WordPress development, creating websites that are visually stunning, user-friendly, and optimized for fast performance. We help businesses gain a competitive advantage online by combining creativity with technical expertise.",
       "Our dedication to quality, innovative solutions, and customer satisfaction has earned us a strong reputation as a preferred WordPress development partner in Bangalore. We are committed to delivering quality, creative solutions and ensuring customer satisfaction.",
     ],
   },
   reasons: {
-    heading: "Why Partner with Us for <br> WordPress Development in Bangalore?",
+    heading: [
+      "Why Partner with Us for",
+      "WordPress Development in Bangalore?",
+    ],
     description:
-      "Dynamic Dreamz provides end-to-end WordPress development services in Bangalore to support <br> your business’s success in the competitive landscape. We create custom-made websites <br> and provide ongoing support, offering solutions that enhance your online presence.",
+      [
+      "Dynamic Dreamz provides end-to-end WordPress development services in Bangalore to support",
+      "your business’s success in the competitive landscape. We create custom-made websites",
+      "and provide ongoing support, offering solutions that enhance your online presence.",
+    ],
     items: whyChooseItems,
   },
 } as const;

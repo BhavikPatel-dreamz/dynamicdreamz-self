@@ -727,7 +727,10 @@ export const shopifyPlusAgencyPageTestimonials = {
     if (item.name === "Fernando Arias") {
       return {
         ...item,
-        quote: item.quote.replace("them. And if", "them.<br />And if"),
+        quote: [
+          "Dynamic Dreamz is amazing because they're able to work on Shopify and WordPress platforms, which are essential to my businesses, and being able to scale them.",
+          "And if you are looking for an amazing website developer on Shopify or WordPress, I recommend Dynamic Dreamz.",
+        ],
       };
     }
     return item;

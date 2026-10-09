@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
+import { formatBrText } from "@/lib/text-formatting";
 
 export type ShopifyAppBenefitItem = {
   icon: string;
@@ -66,10 +67,9 @@ export function ShopifyAppBenefitsSection({
                       {item.title}
                     </h3>
                   )}
-                  <p
-                    className="font-sans text-[16px] font-medium leading-[27.2px] tracking-[0.32px] text-muted"
-                    dangerouslySetInnerHTML={{ __html: item.description }}
-                  />
+                  <p className="font-sans text-[16px] font-medium leading-[27.2px] tracking-[0.32px] text-muted">
+                    {formatBrText(item.description)}
+                  </p>
                 </div>
               </div>
             ))}

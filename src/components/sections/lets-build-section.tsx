@@ -3,8 +3,8 @@ import { Container } from "@/components/ui/container";
 import { formatBrText } from "@/lib/text-formatting";
 
 export type LetsBuildContent = {
-  heading: string;
-  description: string;
+  heading: string | readonly string[];
+  description: string | readonly string[];
   ctaLabel: string;
   ctaHref: string;
 };

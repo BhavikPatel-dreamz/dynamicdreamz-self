@@ -15,9 +15,9 @@ export type SplitImageHeroImage = {
 
 export type SplitImageHeroContent = {
   eyebrow?: string | readonly string[];
-  title: string;
-  description: string;
-  secondaryDescription?: string;
+  title: string | readonly string[];
+  description: string | readonly string[];
+  secondaryDescription?: string | readonly string[];
   ctaLabel?: string;
   ctaHref?: string;
   ctaAriaLabel?: string;

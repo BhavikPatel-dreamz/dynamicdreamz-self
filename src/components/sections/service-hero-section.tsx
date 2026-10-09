@@ -20,10 +20,10 @@ export type ServiceHeroCoBranding = {
 };
 
 export type ServiceHeroContent = {
-  title: string;
-  description?: string;
-  subheading?: string;
-  secondaryDescription?: string;
+  title: string | readonly string[];
+  description?: string | readonly string[];
+  subheading?: string | readonly string[];
+  secondaryDescription?: string | readonly string[];
   paragraphs?: readonly string[];
   ctaLabel?: string;
   ctaHref?: string;
@@ -142,8 +142,9 @@ export function ServiceHeroSection({
                         bodyClassName,
                       )}
                       key={idx}
-                      dangerouslySetInnerHTML={{ __html: paragraph }}
-                    />
+                    >
+                      {formatBrText(paragraph)}
+                    </p>
                   ))
                 ) : content.description ? (
                   <>
@@ -161,8 +162,9 @@ export function ServiceHeroSection({
                           "mt-4 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted",
                           bodyClassName,
                         )}
-                        dangerouslySetInnerHTML={{ __html: content.secondaryDescription }}
-                      />
+                      >
+                        {formatBrText(content.secondaryDescription)}
+                      </p>
                     )}
                   </>
                 ) : null}
@@ -265,8 +267,9 @@ export function ServiceHeroSection({
                       bodyClassName,
                     )}
                     key={idx}
-                    dangerouslySetInnerHTML={{ __html: paragraph }}
-                  />
+                    >
+                      {formatBrText(paragraph)}
+                    </p>
                 ))
               ) : content.description ? (
                 <>

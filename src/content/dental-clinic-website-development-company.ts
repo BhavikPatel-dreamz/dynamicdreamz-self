@@ -285,7 +285,11 @@ const portfolioContent = {
   eyebrow: "Portfolio",
   heading: "Our Development Expertise for Dental Clinic Website's",
   description:
-    "Explore our portfolio of WordPress solutions created especially for the dental industry. <br> Our work shows creative designs, smooth processes, and personalized features that take  <br> dental practices to new heights online, from attractive websites to optimized WooCommerce stores.",
+    [
+    "Explore our portfolio of WordPress solutions created especially for the dental industry.",
+    "Our work shows creative designs, smooth processes, and personalized features that take",
+    "dental practices to new heights online, from attractive websites to optimized WooCommerce stores.",
+  ],
   ctaLabel: "View our work",
   ctaHref: "/our-work",
   category: "WORDPRESS",
@@ -296,7 +300,10 @@ const testimonialsContent = {
   eyebrow: "Client Stories",
   heading: "Don't Just Take Our Word For It",
   description:
-    "We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories. Check out how our services empower them to evolve.",
+    [
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
+      "Happy clients make happy stories. Check out how our services empower them to evolve.",
+    ],
   items: shopifyPlusAgencyTestimonials.items,
 };
 
@@ -309,7 +316,11 @@ const faqsList: readonly FaqAccordionItem[] = [
   {
     question: "What is the Cost of Developing a Dental Website?",
     answer:
-      "The cost of creating a dental website depends on your specific needs and requirements. Every dental practice is unique. Your desired features, design, and functionality will influence the final development price.<br><br>To provide an accurate estimate, we need details like:",
+      [
+      "The cost of creating a dental website depends on your specific needs and requirements. Every dental practice is unique. Your desired features, design, and functionality will influence the final development price.",
+      "",
+      "To provide an accurate estimate, we need details like:",
+    ],
     listItems: [
       {
         text: "The number of pages you need (e.g., Home, Services, Blog, Contact).",

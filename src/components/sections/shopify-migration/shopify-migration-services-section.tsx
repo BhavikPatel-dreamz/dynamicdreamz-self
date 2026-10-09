@@ -21,8 +21,8 @@ export type MigrationServicesBanner = {
 export type ShopifyMigrationServicesSectionProps = {
   id?: string;
   eyebrow?: string;
-  heading?: string;
-  description?: React.ReactNode | string;
+  heading?: string | readonly string[];
+  description?: React.ReactNode | string | readonly string[];
   items: readonly MigrationServiceCard[];
   banner?: MigrationServicesBanner;
   className?: string;

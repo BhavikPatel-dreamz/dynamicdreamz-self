@@ -19,16 +19,16 @@ export type MigrationProcessSubBox = {
 
 export type MigrationProcessStepItem = {
   stepNumber: string;
-  title: string;
-  description: string;
+  title: string | readonly string[];
+  description: string | readonly string[];
   categories?: readonly MigrationProcessCategory[];
   subBoxes?: readonly MigrationProcessSubBox[];
 };
 
 export type MigrationProcessContent = {
   eyebrow?: string;
-  heading: string;
-  description?: string;
+  heading: string | readonly string[];
+  description?: string | readonly string[];
   steps: readonly MigrationProcessStepItem[];
 };
 

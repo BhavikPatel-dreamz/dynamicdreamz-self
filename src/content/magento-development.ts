@@ -328,7 +328,10 @@ export const magentoDevelopmentPortfolio = {
 export const magentoDevelopmentTestimonials = {
   heading: "Hear from Our Clients",
   description:
-    "Don’t just take our word for it. Discover how our Magento development services have <br> made a difference for our clients and their businesses.",
+    [
+    "Don’t just take our word for it. Discover how our Magento development services have",
+    "made a difference for our clients and their businesses.",
+  ],
   items: shopifyPlusAgencyTestimonials.items,
 } as const;
 

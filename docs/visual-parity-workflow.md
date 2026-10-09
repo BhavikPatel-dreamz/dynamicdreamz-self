@@ -9,29 +9,22 @@ maintainable Next.js components and Tailwind utilities.
 
 ## Non-Negotiable Gate
 
-For any visual migration or visual fix, create or update a capture note before
-editing UI code:
+For any visual migration or visual fix, thoroughly inspect live computed styles,
+layout widths, and motion behavior before editing UI code. Store temporary
+inspection artifacts in `scratch/` (do not commit screenshots or heavy DOM dumps
+into the repository).
 
-```text
-docs/visual-captures/<route-or-component>.md
-```
+Inspect and verify:
 
-Skip this only for copy-only, metadata-only, or link-only work that does not
-change layout, style, assets, animation, or responsive behavior.
-
-The capture note must prove what was inspected, not just say "matched live":
-
-- Live URL, local route, date checked, browser, and viewport sizes.
-- Live screenshots captured at desktop, tablet, and mobile.
-- Local screenshots captured at the same viewport sizes after implementation.
+- Live URL, local route, and viewport sizes (desktop: 1440px, tablet: 768px, mobile: 390px).
 - CSS/JS files or DevTools panels inspected for selectors, computed styles,
   keyframes, transitions, and scroll/interaction scripts.
-- Responsive differences observed between desktop, tablet, and mobile.
-- Interaction and animation states checked.
+- Responsive layout behavior across desktop, tablet, and mobile breakpoints.
+- Interaction and animation states (hover, focus, active/open, scrolled, AOS).
 - Any intentional differences from the live site and why they are acceptable.
 
-Do not claim visual parity in a final response unless this evidence exists or
-the final response clearly says visual parity was not verified.
+Do not claim visual parity in a final response unless responsive layout and
+interaction behavior have been verified locally against the live site.
 
 ## AEO/GEO Live-UI Preservation Gate
 

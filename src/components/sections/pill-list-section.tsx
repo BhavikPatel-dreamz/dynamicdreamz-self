@@ -4,9 +4,9 @@ import { Container } from "@/components/ui/container";
 import { formatBrText } from "@/lib/text-formatting";
 
 export type PillListContent = {
-  heading: string;
+  heading: string | readonly string[];
   items: readonly string[];
-  description: string;
+  description: string | readonly string[];
 };
 
 export type PillListSectionProps = {

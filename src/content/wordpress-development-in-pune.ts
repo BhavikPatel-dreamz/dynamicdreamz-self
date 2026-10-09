@@ -317,7 +317,11 @@ export const wordpressDevelopmentPuneContent = {
     eyebrow: "Portfolio",
     heading: "Our Successful WordPress Projects",
     description:
-      "500+ WordPress websites meticulously crafted and counting. Our expertise <br> accelerates growth and redefines shopping experiences for clients, <br> making us the best WordPress development company in India.",
+      [
+      "500+ WordPress websites meticulously crafted and counting. Our expertise",
+      "accelerates growth and redefines shopping experiences for clients,",
+      "making us the best WordPress development company in India.",
+    ],
     items: [
       {
         name: "Quite Events",
@@ -382,7 +386,10 @@ export const wordpressDevelopmentPuneContent = {
     eyebrow: "Client Stories",
     heading: "Our Customers' Testimonials",
     description:
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories. Check out how our services empower them to evolve.",
+      [
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
+      "Happy clients make happy stories. Check out how our services empower them to evolve.",
+    ],
     items: shopifyPlusAgencyTestimonials.items,
   },
 
@@ -434,7 +441,10 @@ export const wordpressDevelopmentPuneContent = {
   // Backward-compatibility aliases
   intro: {
     heading:
-      "Why Choose Dynamic Dreamz as Your <br> WordPress Development Company in Pune?",
+      [
+    "Why Choose Dynamic Dreamz as Your",
+    "WordPress Development Company in Pune?",
+  ],
     paragraphs: [
       "Dynamic Dreamz is committed to supporting Pune's expanding business environment, as a WordPress Development Agency in Pune. We understand the region's unique market dynamics and cater to businesses across industries with tailored WordPress development solutions. We recognize the unique market dynamics of the area and provide customized WordPress development solutions for companies in different sectors. Our focus is on creating websites that are not only visually compelling but also optimized for performance and user experience. We aim to design visually impressive WordPress websites while ensuring they perform well and provide an excellent user experience.",
       "We have positioned ourselves as a dedicated WordPress development partner in Pune by merging our technical skills with a focus on client requirements.",

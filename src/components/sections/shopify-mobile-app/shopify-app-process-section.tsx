@@ -1,16 +1,17 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
+import { formatBrText } from "@/lib/text-formatting";
 
 export type ShopifyAppProcessStep = {
   icon?: string;
   iconAlt?: string;
-  title: string;
-  description: string;
+  title: string | readonly string[];
+  description: string | readonly string[];
 };
 
 export type ShopifyAppProcessSectionProps = {
   content: {
-    heading: string;
+    heading: string | readonly string[];
     steps: readonly ShopifyAppProcessStep[];
   };
   className?: string;
@@ -25,17 +26,7 @@ export function ShopifyAppProcessSection({
       <Container>
         <div data-aos="fade-up" className="heading-text mb-[90px] text-center max-[992px]:mb-[50px]">
           <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
-            {content.heading.includes("<br/>") || content.heading.includes("<br>")
-              ? content.heading
-                  .replace("<br/>", "<br>")
-                  .split("<br>")
-                  .map((line, index, lines) => (
-                    <span key={line}>
-                      {line}
-                      {index < lines.length - 1 ? <br /> : null}
-                    </span>
-                  ))
-              : content.heading}
+            {formatBrText(content.heading)}
           </h2>
         </div>
 
@@ -47,7 +38,7 @@ export function ShopifyAppProcessSection({
             <div
               data-aos="fade-up"
               className="col-block w-1/4 max-[992px]:w-full"
-              key={step.title}
+              key={typeof step.title === "string" ? step.title : step.title.join(" ")}
             >
               <div className="app-text px-[25px] py-[60px] max-[992px]:px-0 max-[992px]:py-[30px]">
                 {step.icon && step.iconAlt ? (
@@ -61,10 +52,10 @@ export function ShopifyAppProcessSection({
                   </div>
                 ) : null}
                 <h3 className="mb-[5px] font-sans text-[16px] font-bold leading-[26.72px] tracking-[0.32px] text-ink">
-                  {step.title}
+                  {formatBrText(step.title)}
                 </h3>
                 <p className="font-sans text-[16px] font-medium leading-[27.2px] tracking-[0.32px] text-[#535353]">
-                  {step.description}
+                  {formatBrText(step.description)}
                 </p>
               </div>
             </div>

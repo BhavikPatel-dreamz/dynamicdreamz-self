@@ -7,8 +7,8 @@ import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
 
 export type FeatureGridItem = {
-  title: string;
-  description: string;
+  title: string | readonly string[];
+  description: string | readonly string[];
   icon?: string;
   iconAlt?: string;
   linkText?: string;
@@ -16,9 +16,9 @@ export type FeatureGridItem = {
 };
 
 export type FeaturesGridSectionProps = {
-  heading: string;
+  heading: string | readonly string[];
   eyebrow?: string;
-  description?: string;
+  description?: string | readonly string[];
   features: readonly FeatureGridItem[];
   columns?: 2 | 3 | 4;
   className?: string;
@@ -76,7 +76,7 @@ export function FeaturesGridSection({
                   {item.icon ? (
                     <div className="icon relative z-10 mb-4 h-[50px] w-[50px]">
                       <Image
-                        alt={item.iconAlt || item.title}
+                        alt={item.iconAlt || (typeof item.title === "string" ? item.title : item.title.join(" "))}
                         className="size-full object-contain"
                         height={50}
                         src={item.icon}

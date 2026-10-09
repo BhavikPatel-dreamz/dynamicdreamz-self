@@ -28,7 +28,7 @@ export const whiteLabelShopifySectionCopy = {
   toolsDescription:
     "Our teams work across the Shopify ecosystem — from storefront development and Shopify APIs to payments, subscriptions, retention, support, automation and enterprise integrations.",
   faqEyebrow: "Agency Due Diligence",
-  faqTitle: "White Label Shopify <br/> Development FAQ",
+  faqTitle: ["White Label Shopify", "Development FAQ"],
   faqDescription:
     "Clear answers to the questions agencies commonly ask before choosing a white label Shopify development agency or Shopify technology partner.",
   testimonialsEyebrow: "Client Stories",

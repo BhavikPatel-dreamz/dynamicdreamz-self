@@ -8,8 +8,8 @@ export type { NumberedGridItem };
 
 export type ShopifyMigrationNumberedGridSectionProps = {
   eyebrow?: string;
-  heading: string;
-  description?: string;
+  heading: string | readonly string[];
+  description?: string | readonly string[];
   items: readonly NumberedGridItem[];
   variant?: "white" | "pista";
   className?: string;
@@ -54,7 +54,7 @@ export function ShopifyMigrationNumberedGridSection({
             {description && (
               <div className="section_text w-[48.3%] max-[1199px]:w-1/2 max-[991px]:w-full">
                 <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">
-                  {description}
+                  {formatBrText(description)}
                 </p>
               </div>
             )}

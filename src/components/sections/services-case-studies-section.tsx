@@ -19,8 +19,8 @@ export type CaseStudyPreviewItem = {
 
 export type ServicesCaseStudiesSectionProps = {
   eyebrow?: string;
-  heading: string;
-  description?: string;
+  heading: string | readonly string[];
+  description?: string | readonly string[];
   items: readonly CaseStudyPreviewItem[];
   className?: string;
   id?: string;
@@ -77,7 +77,7 @@ export function ServicesCaseStudiesSection({
           {description && (
             <div className="section_text w-[48.3%] max-[1199px]:w-[50%] max-[991px]:w-full max-[991px]:mt-2.5">
               <p className="m-0 font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">
-                {description}
+                {formatBrText(description)}
               </p>
             </div>
           )}

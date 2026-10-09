@@ -11,8 +11,8 @@ export type UrlMappingItem = {
 
 export type SeoSafeMigrationContent = {
   eyebrow?: string;
-  heading: string;
-  description: string;
+  heading: string | readonly string[];
+  description: string | readonly string[];
   tags: readonly string[];
   urlMappings: readonly UrlMappingItem[];
   checks: readonly string[];
@@ -54,7 +54,7 @@ export function SeoSafeMigrationSection({
                   {formatBrText(content.heading, "max-[767px]:hidden")}
                 </h2>
                 <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">
-                  {content.description}
+                  {formatBrText(content.description)}
                 </p>
                 <div className="meta-wrapp mt-5 flex flex-wrap gap-[7px]">
                   {content.tags.map((tag) => (

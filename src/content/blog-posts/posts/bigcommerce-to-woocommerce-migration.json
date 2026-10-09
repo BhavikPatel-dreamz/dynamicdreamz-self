@@ -289,7 +289,10 @@
               "text": "30%",
               "bold": true
             },
-            "</p>\n<p>Reduction in operational costs"
+            {
+              "type": "br"
+            },
+            "Reduction in operational costs"
           ],
           [
             {
@@ -297,7 +300,10 @@
               "text": "0",
               "bold": true
             },
-            "</p>\n<p>Data loss during migration"
+            {
+              "type": "br"
+            },
+            "Data loss during migration"
           ],
           [
             {
@@ -305,7 +311,10 @@
               "text": "100%",
               "bold": true
             },
-            "</p>\n<p>SEO rankings retained"
+            {
+              "type": "br"
+            },
+            "SEO rankings retained"
           ]
         ]
       ]

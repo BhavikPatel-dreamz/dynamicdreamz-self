@@ -113,7 +113,10 @@ export const prestigeThemeCustomizationContent = {
     eyebrow: "Our Services",
     heading: "Our Prestige Theme Customization Services",
     description:
-      "Dynamic Dreamz offers a wide range of Shopify theme customization services to <br> enhance your store's performance and design. Our services are:",
+      [
+      "Dynamic Dreamz offers a wide range of Shopify theme customization services to",
+      "enhance your store's performance and design. Our services are:",
+    ],
     items: [
       {
         title: "Theme Installation",
@@ -195,7 +198,10 @@ export const prestigeThemeCustomizationContent = {
     eyebrow: "Portfolio",
     heading: "Snippets of Prestige Theme Customization Portfolio",
     description:
-      "Explore our portfolio showcasing successful Shopify customization projects, <br> highlighting how we customize, secure, and enhance stores for peak performance.",
+      [
+      "Explore our portfolio showcasing successful Shopify customization projects,",
+      "highlighting how we customize, secure, and enhance stores for peak performance.",
+    ],
     ctaLabel: "View our work",
     ctaHref: "/our-work",
     items: [

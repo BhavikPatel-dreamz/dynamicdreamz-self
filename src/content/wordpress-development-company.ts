@@ -212,7 +212,10 @@ export const wordpressDevelopmentCompanyBrands = {
 
 export const wordpressDevelopmentCompanyServices = {
   eyebrow: "Our Services",
-  heading: "Start Your Business with <br> WordPress Development Services",
+  heading: [
+    "Start Your Business with",
+    "WordPress Development Services",
+  ],
   description:
     "Take advantage of the WordPress development services from Dynamic Dreamz, a WordPress Website development company in India. We are expertly crafting customized WordPress solutions to ensure your digital success.",
   items: [
@@ -340,7 +343,10 @@ export const wordpressDevelopmentCompanyWhyWordPress = {
   eyebrow: "Why WordPress",
   heading: "Why Businesses Choose WordPress",
   description:
-    "WordPress is holding its name in the leading platform for web development because of its robust features like flexibility, scalability, and ease of use. WordPress offers tools and facilities for everyone, from small businesses to large enterprises. Let’s Choose Dynamic Dreamz <br> as a WordPress development company in India.",
+    [
+    "WordPress is holding its name in the leading platform for web development because of its robust features like flexibility, scalability, and ease of use. WordPress offers tools and facilities for everyone, from small businesses to large enterprises. Let’s Choose Dynamic Dreamz",
+    "as a WordPress development company in India.",
+  ],
   boxes: [
     {
       iconKey: "user-friendly-interface",
@@ -466,7 +472,11 @@ export const wordpressDevelopmentCompanyPortfolio = {
   eyebrow: "Portfolio",
   heading: "Our Successful WordPress Projects",
   description:
-    "500+ WordPress websites meticulously crafted and counting. Our expertise <br> accelerates growth and redefines shopping experiences for clients, <br> making us the best WordPress development company in India.",
+    [
+      "500+ WordPress websites meticulously crafted and counting. Our expertise",
+      "accelerates growth and redefines shopping experiences for clients,",
+      "making us the best WordPress development company in India.",
+    ],
   category: "WORDPRESS",
   ctaLabel: "View our work",
   ctaHref: "/our-work",
@@ -531,7 +541,10 @@ export const wordpressDevelopmentCompanyTestimonials = {
   eyebrow: "Client Stories",
   heading: "Our Customers' Testimonials",
   description:
-    "We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories: Check out how our services empower them to evolve.",
+    [
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
+      "Happy clients make happy stories: Check out how our services empower them to evolve.",
+    ],
   items: shopifyPlusAgencyTestimonials.items,
 } as const;
 

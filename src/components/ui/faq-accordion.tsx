@@ -13,10 +13,10 @@ export type FaqAccordionListItem = {
 };
 
 export type FaqAccordionItem = {
-  question: string;
-  answer: string;
+  question: string | readonly string[];
+  answer: string | readonly string[];
   answerParts?: readonly RichTextPart[];
-  secondaryAnswer?: string;
+  secondaryAnswer?: string | readonly string[];
   listItems?: readonly FaqAccordionListItem[];
   listPosition?: "before" | "after";
 };
@@ -264,7 +264,7 @@ export function FaqAccordion({
             }
             data-faq-item
             data-faq-reveal-index={animateOnReveal ? index : undefined}
-            key={item.question}
+            key={typeof item.question === "string" ? item.question : item.question.join(" ")}
             style={
               animateOnReveal
                 ? {

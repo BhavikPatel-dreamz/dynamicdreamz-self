@@ -524,7 +524,10 @@ export const androidAppDevelopmentTestimonialsCopy = {
   eyebrow: "Client Stories",
   heading: "Don't Just Take Our Word For It",
   description:
-    "We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories. Check out how our services empower them to evolve.",
+    [
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
+      "Happy clients make happy stories. Check out how our services empower them to evolve.",
+    ],
 };
 
 // 12. FAQ Section
@@ -583,7 +586,7 @@ export const androidAppDevelopmentFaqs: readonly FaqAccordionItem[] = [
 // Clean questions for schema (without the trailing toggle "+")
 export const androidAppDevelopmentSchemaFaqs: readonly FaqAccordionItem[] =
   androidAppDevelopmentFaqs.map((item) => ({
-    question: item.question.replace(/\s*\+\s*$/, ""),
+    question: (typeof item.question === "string" ? item.question : item.question.join(" ")).replace(/\s*\+\s*$/, ""),
     answer: item.answer,
   }));
 

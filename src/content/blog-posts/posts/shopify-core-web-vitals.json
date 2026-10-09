@@ -448,7 +448,12 @@
     {
       "type": "paragraph",
       "children": [
-        "Add a preload link tag in your theme’s <head> section for the hero image. This tells the browser to start downloading the image immediately before it parses the rest of the page, which directly reduces LCP time. This is the single most impactful LCP fix for most Shopify stores."
+        "Add a preload link tag in your theme’s ",
+        {
+          "type": "code",
+          "code": "<head>"
+        },
+        " section for the hero image. This tells the browser to start downloading the image immediately before it parses the rest of the page, which directly reduces LCP time. This is the single most impactful LCP fix for most Shopify stores."
       ]
     },
     {
@@ -472,7 +477,12 @@
     {
       "type": "paragraph",
       "children": [
-        "Critical CSS is the minimum styling needed to render your above-the-fold content. By inlining it directly in the <head>, you eliminate an additional network request that would otherwise delay rendering. Non-critical CSS loads after."
+        "Critical CSS is the minimum styling needed to render your above-the-fold content. By inlining it directly in the ",
+        {
+          "type": "code",
+          "code": "<head>"
+        },
+        ", you eliminate an additional network request that would otherwise delay rendering. Non-critical CSS loads after."
       ]
     },
     {
@@ -702,7 +712,12 @@
     {
       "type": "paragraph",
       "children": [
-        "This is the most important CLS fix for Shopify stores. When the browser knows an image’s dimensions before it loads, it reserves the exact space needed, preventing a layout shift when the image finally renders. Add explicit width and height attributes to every <img> tag in your theme, including product images, collection banners, and blog featured images."
+        "This is the most important CLS fix for Shopify stores. When the browser knows an image’s dimensions before it loads, it reserves the exact space needed, preventing a layout shift when the image finally renders. Add explicit width and height attributes to every ",
+        {
+          "type": "code",
+          "code": "<img>"
+        },
+        " tag in your theme, including product images, collection banners, and blog featured images."
       ]
     },
     {

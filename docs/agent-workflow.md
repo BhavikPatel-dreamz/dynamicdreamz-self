@@ -48,10 +48,9 @@ The agent should then read:
    heading tags, or hidden excerpts), DO NOT migrate them into `src/content/**` or
    `src/data/**`, and do not write Next.js CSS workarounds to render and then
    hide them.
-5. For visual work, create or update a capture note in
-   `docs/visual-captures/` before touching UI code. Record live screenshots,
-   local screenshots, CSS/JS sources inspected, computed styles, interaction
-   states, animation timings, responsive behavior, and remaining differences.
+5. For visual work, inspect live computed styles, breakpoints, interaction
+   states, and animation timings before touching UI code. Store temporary
+   inspection artifacts in `scratch/` (do not commit heavy dumps to git).
 6. Decide the production structure before touching code.
 7. Before implementation, add or update the route's initial section in
    `docs/aeo-geo-strategy.md` with its page role, target prompts, evidence,
@@ -354,7 +353,6 @@ Document boundaries:
   content approval or implementation. When a copy change originates in the
   AEO/GEO audit, keep the strategy item and cross-reference it instead of moving
   the finding out of the strategy.
-- `docs/visual-captures/**` owns live/local visual and interaction evidence.
 - `docs/seo-launch-checklist.md` owns the general SEO production gate.
 
 ## Local Single-Page SEO Audit Mode
@@ -559,10 +557,9 @@ Check for:
 - Images load with correct aspect ratio
 - Page source/head includes expected SEO metadata
 - Sitemap and robots output are valid when touched
-- Hover, focus, active/open, scrolled, and animated states match the live-site
-  capture or are documented as intentional differences
-- The relevant `docs/visual-captures/` note lists live CSS/JS sources inspected
-  and final responsive comparison results
+- Hover, focus, active/open, scrolled, and animated states match the live site
+  or are documented as intentional differences
+- Responsive layout behavior across desktop, tablet, and mobile breakpoints is verified locally
 
 ## Done Criteria
 

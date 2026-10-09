@@ -6,8 +6,8 @@ import type { WhiteLabelProcessStep } from "@/types/white-label-service";
 
 type WhiteLabelProcessSectionProps = {
   eyebrow?: string;
-  title?: string;
-  description?: string;
+  title?: string | readonly string[];
+  description?: string | readonly string[];
   steps?: readonly WhiteLabelProcessStep[];
   note?: string;
   className?: string;
@@ -77,7 +77,7 @@ export function WhiteLabelProcessSection({
               titleClassName,
             )}
           >
-            {title}
+            {formatBrText(title)}
           </h2>
         )}
         <div data-aos="fade-up" className="flex max-[992px]:flex-wrap">

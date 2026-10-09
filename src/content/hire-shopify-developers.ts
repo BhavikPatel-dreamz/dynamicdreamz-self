@@ -13,7 +13,10 @@ const icon = (name: string) => `/assets/hire-shopify-developers/icons/${name}.sv
 export const hireShopifySectionCopy = {
   industriesHeading: "Industries that we have Served",
   industriesDescription:
-    "Dynamic Dreamz has massive experience across multiple industries,<br> helping businesses like yours succeed online. Our expertise spans sectors such as:",
+    [
+    "Dynamic Dreamz has massive experience across multiple industries,",
+    "helping businesses like yours succeed online. Our expertise spans sectors such as:",
+  ],
   portfolioHeading: "Work of our Shopify Developers that show our Expertise",
   portfolioDescription:
     "We are sure you would like to hear to what our clients says about our Shopify development.",

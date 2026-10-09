@@ -4,6 +4,7 @@ import styles from "@/components/sections/about/about-timeline-section.module.cs
 import { Container } from "@/components/ui/container";
 import { HorizontalDragScroll } from "@/components/ui/horizontal-drag-scroll";
 import { aboutSectionCopy, milestones } from "@/content/about";
+import { formatBrText } from "@/lib/text-formatting";
 
 export function AboutTimelineSection() {
   return (
@@ -62,10 +63,9 @@ export function AboutTimelineSection() {
                     <div className="bg-[linear-gradient(97deg,#15c064_37.46%,#00d1ff_120.9%)] bg-clip-text text-[70px] leading-[86px] font-bold text-transparent max-[767px]:text-[50px]">
                       {milestone.year}
                     </div>
-                    <p
-                      className="line-clamp-5 h-[139px] text-base leading-7 font-normal text-muted max-[1199px]:text-[14px] max-[1199px]:leading-6 [&_strong]:font-bold [&_strong]:text-ink"
-                      dangerouslySetInnerHTML={{ __html: milestone.description }}
-                    />
+                    <p className="line-clamp-5 h-[139px] text-base leading-7 font-normal text-muted max-[1199px]:text-[14px] max-[1199px]:leading-6 [&_strong]:font-bold [&_strong]:text-ink">
+                      {formatBrText(milestone.description)}
+                    </p>
                   </div>
                 </div>
                 )}

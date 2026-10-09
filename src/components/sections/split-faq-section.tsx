@@ -10,10 +10,10 @@ import { formatBrText } from "@/lib/text-formatting";
 export type SplitFaqSectionProps = {
   items: readonly FaqAccordionItem[];
   idPrefix: string;
-  heading?: string;
+  heading?: string | readonly string[];
   headingClassName?: string;
   headingBrClassName?: string;
-  description?: string;
+  description?: string | readonly string[];
   eyebrow?: string;
   eyebrowClassName?: string;
   className?: string;

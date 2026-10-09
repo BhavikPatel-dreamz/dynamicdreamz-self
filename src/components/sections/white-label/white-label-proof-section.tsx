@@ -98,7 +98,7 @@ export function WhiteLabelStatsSection({
 
 type WhiteLabelWhySectionProps = {
   eyebrow?: string;
-  title?: string;
+  title?: string | readonly string[];
   reasons?: readonly (WhiteLabelCard | null)[];
   className?: string;
 };

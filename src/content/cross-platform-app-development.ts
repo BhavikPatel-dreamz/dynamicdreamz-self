@@ -568,7 +568,7 @@ export const crossPlatformAppDevelopmentFaqs: readonly FaqAccordionItem[] = [
 // Clean questions for schema (without the trailing toggle "+")
 export const crossPlatformAppDevelopmentSchemaFaqs: readonly FaqAccordionItem[] =
   crossPlatformAppDevelopmentFaqs.map((item) => ({
-    question: item.question.replace(/\s*\+\s*$/, ""),
+    question: (typeof item.question === "string" ? item.question : item.question.join(" ")).replace(/\s*\+\s*$/, ""),
     answer: item.answer,
   }));
 

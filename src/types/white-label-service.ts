@@ -70,13 +70,13 @@ export type WhiteLabelTool = {
 export type WhiteLabelProcessStep = WhiteLabelCard;
 
 export type WhiteLabelFaq = {
-  question: string;
-  answer: string;
+  question: string | readonly string[];
+  answer: string | readonly string[];
   answerParts?: readonly RichTextPart[];
 };
 
 export type WhiteLabelFinalCta = {
-  title: string;
-  description: string;
+  title: string | readonly string[];
+  description: string | readonly string[];
   label: string;
 };

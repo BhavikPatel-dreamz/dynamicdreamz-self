@@ -64,7 +64,10 @@
               "text": "12,000+",
               "bold": true
             },
-            "</p>\n<p>Free themes on WordPress.org"
+            {
+              "type": "br"
+            },
+            "Free themes on WordPress.org"
           ],
           [
             {
@@ -72,7 +75,10 @@
               "text": "43.5%",
               "bold": true
             },
-            "</p>\n<p>Of all websites run on WordPress"
+            {
+              "type": "br"
+            },
+            "Of all websites run on WordPress"
           ],
           [
             {
@@ -80,7 +86,10 @@
               "text": "10%",
               "bold": true
             },
-            "</p>\n<p>Of free themes are genuinely worth your time"
+            {
+              "type": "br"
+            },
+            "Of free themes are genuinely worth your time"
           ]
         ]
       ]

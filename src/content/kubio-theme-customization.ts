@@ -271,7 +271,10 @@ export const kubioThemeCustomizationContent = {
     eyebrow: "Why Dynamic Dreamz",
     heading: "Why Choose Dynamic Dreamz",
     description:
-      "At Dynamic Dreamz, we specialize in WordPress customization,<br />ensuring your website is professional, fast, and user-friendly.",
+      [
+      "At Dynamic Dreamz, we specialize in WordPress customization,",
+      "ensuring your website is professional, fast, and user-friendly.",
+    ],
     items: [
       {
         title: "Expert Team",

@@ -13,18 +13,21 @@ function parseInlineFormatting(
   if (
     !text.includes("<strong") &&
     !text.includes("<b") &&
-    !text.includes("<a")
+    !text.includes("<a") &&
+    !text.includes("<em") &&
+    !text.includes("<i")
   ) {
     return text;
   }
 
-  const tagRegex = /(<\/?(?:strong|b)\b[^>]*>|<a\b[^>]*>|<\/a>)/gi;
+  const tagRegex = /(<\/?(?:strong|b|em|i)\b[^>]*>|<a\b[^>]*>|<\/a>)/gi;
   const rawParts = text.split(tagRegex);
 
   const elements: ReactNode[] = [];
   let inLink: { href: string; target?: string; rel?: string; className?: string } | null = null;
   let linkChildren: ReactNode[] = [];
   let isBold = false;
+  let isItalic = false;
 
   for (let i = 0; i < rawParts.length; i++) {
     const part = rawParts[i];
@@ -101,14 +104,37 @@ function parseInlineFormatting(
       continue;
     }
 
+    if (lower === "<em>" || lower === "<i>") {
+      isItalic = true;
+      continue;
+    }
+
+    if (lower === "</em>" || lower === "</i>") {
+      isItalic = false;
+      continue;
+    }
+
     // Text node
-    const textNode = isBold ? (
-      <strong className="font-semibold text-ink" key={`bold-${i}`}>
-        {part}
-      </strong>
-    ) : (
-      <Fragment key={`txt-${i}`}>{part}</Fragment>
-    );
+    let textNode: ReactNode = <Fragment key={`txt-${i}`}>{part}</Fragment>;
+    if (isBold && isItalic) {
+      textNode = (
+        <strong className="font-semibold text-ink italic" key={`bold-italic-${i}`}>
+          {part}
+        </strong>
+      );
+    } else if (isBold) {
+      textNode = (
+        <strong className="font-semibold text-ink" key={`bold-${i}`}>
+          {part}
+        </strong>
+      );
+    } else if (isItalic) {
+      textNode = (
+        <em className="italic" key={`italic-${i}`}>
+          {part}
+        </em>
+      );
+    }
 
     if (inLink) {
       linkChildren.push(textNode);
@@ -141,21 +167,22 @@ function parseInlineFormatting(
  * Also supports inline `<strong>`, `<b>`, and `<a>` tags with live styling.
  */
 export function formatBrText(
-  text: string,
+  text: string | readonly string[] | undefined | null,
   brClassName?: string,
   linkClassName?: string,
 ): ReactNode {
   if (!text) return "";
-  if (
-    !text.includes("<br") &&
-    !text.includes("<strong") &&
-    !text.includes("<b") &&
-    !text.includes("<a")
-  ) {
-    return text;
-  }
+  const parts: readonly string[] =
+    typeof text === "string" ? text.split(/<br\s*\/?>/i) : text;
 
-  const parts = text.split(/<br\s*\/?>/i);
+  if (
+    parts.length === 1 &&
+    !parts[0].includes("<strong") &&
+    !parts[0].includes("<b") &&
+    !parts[0].includes("<a")
+  ) {
+    return parts[0];
+  }
 
   return (
     <>

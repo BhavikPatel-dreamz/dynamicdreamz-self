@@ -8,6 +8,7 @@ import {
 } from "@/content/white-label-shopify-development";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
+import { formatBrText } from "@/lib/text-formatting";
 import type { WhiteLabelFaq, WhiteLabelFinalCta } from "@/types/white-label-service";
 
 type WhiteLabelFaqSectionProps = {
@@ -23,7 +24,7 @@ export function WhiteLabelFaqSection({
     <section className="bg-[#e6ecf0] py-20 max-[992px]:py-[50px]">
       <Container className="max-[575px]:px-4">
         <h2 data-aos="fade-up" className="mb-10 text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[30px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
-          {whiteLabelShopifySectionCopy.faqTitle}
+          {formatBrText(whiteLabelShopifySectionCopy.faqTitle)}
         </h2>
         <FaqAccordion
           answerClassName="!font-medium tracking-[0.32px] min-[1200px]:leading-8"
@@ -74,7 +75,7 @@ export function WhiteLabelFinalCtaSection({
                 isShopifyHours && "text-[28px] leading-[39px] max-[1199px]:text-[26px] max-[992px]:text-[28px] max-[992px]:leading-[39px] max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
               )}
             >
-              {cta.title}
+              {formatBrText(cta.title)}
             </h2>
             <p
               className={cn(
@@ -82,7 +83,7 @@ export function WhiteLabelFinalCtaSection({
                 isShopifyHours && "max-[992px]:!text-base max-[992px]:!leading-[30.4px]",
               )}
             >
-              {cta.description}
+              {formatBrText(cta.description)}
             </p>
           </div>
           <div

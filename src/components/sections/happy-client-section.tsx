@@ -6,11 +6,13 @@ import { sharedUiCopy } from "@/content/common";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 import { cn } from "@/lib/class-names";
 
+import { formatBrText } from "@/lib/text-formatting";
+
 export type { HappyClientTestimonialItem };
 
 export type HappyClientSectionProps = {
-  heading?: string;
-  description?: string;
+  heading?: string | readonly string[];
+  description?: string | readonly string[];
   eyebrow?: string;
   eyebrowClassName?: string;
   items?: readonly HappyClientTestimonialItem[];
@@ -37,12 +39,12 @@ export function HappyClientSection({
           <div className="title w-[44%] max-[991px]:w-full">
             {eyebrow ? <Eyebrow className={cn("mb-4", eyebrowClassName)}>{eyebrow}</Eyebrow> : null}
             <h2 className="font-montreal-medium text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
-              {heading}
+              {formatBrText(heading)}
             </h2>
           </div>
           <div className="section_text w-[48.3%] max-[991px]:w-full">
             <p className="happy-client-desc text-base font-medium leading-7 text-[#535353] max-[992px]:text-sm max-[992px]:leading-6">
-              {description.replaceAll("<br>", " ")}
+              {formatBrText(description)}
             </p>
           </div>
         </div>

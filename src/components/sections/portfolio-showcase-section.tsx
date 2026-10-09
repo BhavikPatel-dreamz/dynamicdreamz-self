@@ -19,8 +19,8 @@ export type PortfolioShowcaseItem = {
 
 export type PortfolioShowcaseSectionProps = {
   content: {
-    heading: string;
-    description?: string;
+    heading: string | readonly string[];
+    description?: string | readonly string[];
     eyebrow?: string;
     items: readonly PortfolioShowcaseItem[];
     category?: string;

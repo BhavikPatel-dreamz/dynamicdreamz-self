@@ -16,7 +16,7 @@ type IndustryBrandsSectionProps = {
     };
     ariaLabel?: string;
   };
-  heading?: string;
+  heading?: string | readonly string[];
   items?: readonly ClientLogoSliderItem[];
   mobileSpacing?: "standard" | "spacious";
   /**

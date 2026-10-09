@@ -342,7 +342,7 @@ export type ComparisonRow = {
 
 export const shopifyMobileAppComparison = {
   eyebrow: "App Builder vs Custom Development",
-  heading: "Why Build a Custom Shopify <br>Mobile App?",
+  heading: ["Why Build a Custom Shopify", "Mobile App?"],
   description:
     "An app builder can work well for a quick launch with standard features. A custom Shopify mobile app is better when you need more ownership, flexibility, integrations and control over the customer experience.",
   tableHeaders: [
@@ -443,7 +443,7 @@ export const shopifyMobileAppExperience = {
 
 export const shopifyMobileAppCaseStudies = {
   eyebrow: "CASE STUDIES",
-  heading: "Our Shopify Mobile App <br> Case Studies",
+  heading: ["Our Shopify Mobile App", "Case Studies"],
   description:
     "See Selected Shopify Mobile app work by Dynamic Dreamz. Add the real app screenshots, features, integrations and store links before launch.",
   items: [
@@ -488,7 +488,7 @@ export const shopifyMobileAppCaseStudies = {
 
 export const shopifyMobileAppProcessSectionCopy = {
   eyebrow: "Our Process",
-  title: "Our Shopify Mobile App <br> Development Process",
+  title: ["Our Shopify Mobile App", "Development Process"],
   description:
     "We support the full journey from requirements and design to Shopify integration, launch and ongoing development.",
   steps: [
@@ -519,7 +519,7 @@ export const shopifyMobileAppProcess = shopifyMobileAppProcessSectionCopy;
 
 export const shopifyMobileAppFaqCopy = {
   eyebrow: "Frequently Asked Questions",
-  heading: "Shopify Mobile App <br> Development FAQs",
+  heading: ["Shopify Mobile App", "Development FAQs"],
 } as const;
 
 export const shopifyMobileAppDevelopmentFaqs: readonly FaqAccordionItem[] = [

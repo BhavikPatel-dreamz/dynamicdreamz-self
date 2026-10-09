@@ -3,11 +3,12 @@ import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { cn } from "@/lib/class-names";
+import { formatBrText } from "@/lib/text-formatting";
 
 export type CityWhyChooseBoxItem = {
   subtitle?: string;
-  title: string;
-  description: string;
+  title: string | readonly string[];
+  description: string | readonly string[];
   icon?: string;
   iconAlt?: string;
   iconNode?: ReactNode;
@@ -15,8 +16,8 @@ export type CityWhyChooseBoxItem = {
 
 export type CityWhyChooseBoxesContent = {
   eyebrow?: string;
-  heading: string;
-  description?: string;
+  heading: string | readonly string[];
+  description?: string | readonly string[];
   items: readonly CityWhyChooseBoxItem[];
 };
 
@@ -82,7 +83,7 @@ export function CityWhyChooseBoxesSection({
                 isDark ? "text-white" : "text-ink",
               )}
             >
-              {content.heading}
+              {formatBrText(content.heading)}
             </h2>
           </div>
           {content.description ? (
@@ -93,7 +94,7 @@ export function CityWhyChooseBoxesSection({
                   isDark ? "text-white/80" : "text-[#535353]",
                 )}
               >
-                {content.description}
+                {formatBrText(content.description)}
               </p>
             </div>
           ) : null}
@@ -117,7 +118,7 @@ export function CityWhyChooseBoxesSection({
           >
             {content.items.map((item) => (
               <div
-                key={item.title}
+                key={typeof item.title === "string" ? item.title : item.title.join(" ")}
                 data-aos="fade-up"
                 className={cn(
                   "why-choose-box flex flex-col justify-start rounded-[18px] p-5 transition-transform duration-300 hover:-translate-y-1",
@@ -154,7 +155,7 @@ export function CityWhyChooseBoxesSection({
                       isDark ? "text-white" : "text-ink",
                     )}
                   >
-                    {item.title}
+                    {formatBrText(item.title)}
                   </h3>
                   <p
                     className={cn(
@@ -162,7 +163,7 @@ export function CityWhyChooseBoxesSection({
                       isDark ? "text-white/80" : "text-[#535353]",
                     )}
                   >
-                    {item.description}
+                    {formatBrText(item.description)}
                   </p>
                 </div>
               </div>

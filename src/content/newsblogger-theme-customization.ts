@@ -206,7 +206,7 @@ export const newsbloggerThemeCustomizationContent = {
   },
   services: {
     eyebrow: "Services",
-    heading: "Our WordPress Theme <br> Customization Services",
+    heading: ["Our WordPress Theme", "Customization Services"],
     description:
       "We provide tailored NewsBlogger theme customization services to suit your unique blogging or news publishing goals. Our services:",
     items: [
@@ -249,7 +249,7 @@ export const newsbloggerThemeCustomizationContent = {
   },
   benefits: {
     eyebrow: "Benefits",
-    heading: "Benefits of NewsBlogger <br> Theme Customization",
+    heading: ["Benefits of NewsBlogger", "Theme Customization"],
     description:
       "Customizing the NewsBlogger theme brings so many benefits; it makes your blog or news website more engaging and efficient.",
     items: [

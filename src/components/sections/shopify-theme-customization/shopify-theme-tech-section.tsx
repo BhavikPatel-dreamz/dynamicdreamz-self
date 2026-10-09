@@ -33,9 +33,9 @@ export type ThemeCustomizationTechItem = {
 
 export type ShopifyThemeTechSectionProps = {
   content: {
-    title: string;
-    subtitle?: string;
-    bottomDescription?: string;
+    title: string | readonly string[];
+    subtitle?: string | readonly string[];
+    bottomDescription?: string | readonly string[];
     items: readonly ThemeCustomizationTechItem[];
   };
   columns?: 3 | 5;

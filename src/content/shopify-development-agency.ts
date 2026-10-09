@@ -385,7 +385,10 @@ export const shopifyDevelopmentAgencyFaqs: readonly FaqAccordionItem[] = [
   {
     question: "Why hire a Shopify development agency instead of one developer?",
     answer:
-      "A larger Shopify project often needs development, design interpretation, QA, project coordination and integration knowledge.<br />Dynamic Dreamz brings the right mix of specialists around the project instead of expecting one developer to cover every discipline.",
+      [
+      "A larger Shopify project often needs development, design interpretation, QA, project coordination and integration knowledge.",
+      "Dynamic Dreamz brings the right mix of specialists around the project instead of expecting one developer to cover every discipline.",
+    ],
   },
   {
     question: "Can Dynamic Dreamz build a Shopify store from Figma or customize an existing theme?",
@@ -400,7 +403,11 @@ export const shopifyDevelopmentAgencyFaqs: readonly FaqAccordionItem[] = [
   {
     question: "How much does Shopify development cost with Dynamic Dreamz?",
     answer:
-      "Cost depends on scope and engagement model. We offer project-based<br />custom quotes, flexible Shopify development support from <strong>$25/hour</strong>, and dedicated Shopify developer or team<br />options from <strong>$2,000/month</strong>.",
+      [
+      "Cost depends on scope and engagement model. We offer project-based",
+      "custom quotes, flexible Shopify development support from <strong>$25/hour</strong>, and dedicated Shopify developer or team",
+      "options from <strong>$2,000/month</strong>.",
+    ],
   },
   {
     question: "How long does a Shopify development project take?",
@@ -410,7 +417,10 @@ export const shopifyDevelopmentAgencyFaqs: readonly FaqAccordionItem[] = [
   {
     question: "Does Dynamic Dreamz provide ongoing Shopify maintenance and  support?",
     answer:
-      "Yes. We support live Shopify stores with fixes, theme updates, new<br />features, app changes, CRO implementation, performance improvements, integrations and ongoing development capacity.",
+      [
+      "Yes. We support live Shopify stores with fixes, theme updates, new",
+      "features, app changes, CRO implementation, performance improvements, integrations and ongoing development capacity.",
+    ],
   },
   {
     question: "Does Dynamic Dreamz provide Shopify Plus development?",

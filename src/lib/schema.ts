@@ -2080,16 +2080,25 @@ type ServicePageSchemaInput = {
     item: string;
   };
   audienceType: string;
-  faqs: readonly { question: string; answer: string }[];
+  faqs: readonly {
+    question: string | readonly string[];
+    answer: string | readonly string[];
+  }[];
   offers?: readonly {
-    title: string;
-    description: string;
+    title: string | readonly string[];
+    description: string | readonly string[];
     price?: number | string;
     priceCurrency?: string;
     url?: string;
   }[];
   videos?: ReturnType<typeof videoObjectSchema>[];
 };
+
+function cleanFaqSchemaText(text: string | readonly string[] | undefined | null): string {
+  if (!text) return "";
+  const raw = typeof text === "string" ? text : text.filter(Boolean).join(" ");
+  return raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+}
 
 function createServicePageSchema({
   page,
@@ -2178,8 +2187,8 @@ function createServicePageSchema({
                 ...(offer.url ? { url: offer.url } : {}),
                 itemOffered: {
                   "@type": "Service",
-                  name: offer.title,
-                  description: offer.description,
+                  name: cleanFaqSchemaText(offer.title),
+                  description: cleanFaqSchemaText(offer.description),
                 },
               })),
             },
@@ -2214,10 +2223,10 @@ function createServicePageSchema({
         "@id": faqId,
         mainEntity: faqs.map((item) => ({
           "@type": "Question",
-          name: item.question,
+          name: cleanFaqSchemaText(item.question),
           acceptedAnswer: {
             "@type": "Answer",
-            text: item.answer.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim(),
+            text: cleanFaqSchemaText(item.answer),
           },
         })),
       },
@@ -2582,7 +2591,7 @@ export function createHireShopifyDevelopersPageSchema() {
     faqs: hireShopifyFaqs.map((item) => ({
       question: item.question,
       answer: [
-        item.answer,
+        cleanFaqSchemaText(item.answer),
         ...(item.listItems?.map(
           (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
         ) ?? []),
@@ -2707,7 +2716,7 @@ export function createPrestashopToShopifyMigrationPageSchema() {
     faqs: prestashopFaqs.map((item) => ({
       question: item.question,
       answer: [
-        item.answer,
+        cleanFaqSchemaText(item.answer),
         ...(item.listItems?.map(
           (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
         ) ?? []),
@@ -2746,7 +2755,7 @@ export function createSquareToShopifyMigrationPageSchema() {
     faqs: squareFaqs.map((item) => ({
       question: item.question,
       answer: [
-        item.answer,
+        cleanFaqSchemaText(item.answer),
         ...(item.listItems?.map(
           (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
         ) ?? []),
@@ -2778,7 +2787,7 @@ export function createSeoServicesPageSchema() {
       "Businesses, eCommerce stores, service providers, and brands looking to increase organic search rankings and reduce paid ad spend",
     faqs: seoServicesFaqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, ""),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: seoServicesWhatWeProvide.items.map((service) => ({
       title: service.title,
@@ -4466,7 +4475,7 @@ export function createRisksOfShopifyOutsourcingPageSchema() {
           name: item.question,
           acceptedAnswer: {
             "@type": "Answer",
-            text: item.answer.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim(),
+            text: cleanFaqSchemaText(item.answer),
           },
         })),
       },
@@ -4490,7 +4499,7 @@ export function createWooCommerceDevelopmentPageSchema() {
     faqs: woocommerceDevelopmentFaqs.map((item) => ({
       question: item.question,
       answer: [
-        item.answer,
+        cleanFaqSchemaText(item.answer),
         ...(item.listItems?.map(
           (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
         ) ?? []),
@@ -4518,7 +4527,7 @@ export function createMagentoDevelopmentPageSchema() {
     faqs: magentoDevelopmentFaqs.map((item) => ({
       question: item.question,
       answer: [
-        item.answer,
+        cleanFaqSchemaText(item.answer),
         ...(item.listItems?.map(
           (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
         ) ?? []),
@@ -4710,7 +4719,7 @@ export function createAppmakerShopifyMobileAppDevelopmentPageSchema() {
     faqs: appmakerShopifyMobileAppDevelopmentContent.faqs.map((item) => ({
       question: item.question,
       answer: [
-        item.answer,
+        cleanFaqSchemaText(item.answer),
         ...("listItems" in item && item.listItems
           ? item.listItems.map((li) => li.text)
           : []),
@@ -4741,7 +4750,7 @@ export function createBigCommerceDevelopmentPageSchema() {
       "eCommerce merchants, online retailers, and digital agencies seeking expert BigCommerce store development",
     faqs: bigCommerceDevelopmentFaqs.map((item) => ({
       question: item.question,
-      answer: item.answer,
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: bigCommerceDevelopmentServices.items.map((item) => ({
       title: item.title,
@@ -4771,11 +4780,11 @@ export function createWebDesignPageSchema() {
         ...(item.listPosition === "before" && item.listItems
           ? item.listItems.map((li) => `${li.label ? `${li.label} ` : ""}${li.text}`)
           : []),
-        item.answer,
+        cleanFaqSchemaText(item.answer),
         ...(item.listPosition !== "before" && item.listItems
           ? item.listItems.map((li) => `${li.label ? `${li.label} ` : ""}${li.text}`)
           : []),
-        item.secondaryAnswer,
+        cleanFaqSchemaText(item.secondaryAnswer),
       ]
         .filter(Boolean)
         .join(" "),
@@ -5015,7 +5024,7 @@ export function createShopifyDevelopmentBarcelonaPageSchema() {
       "Enterprises, startups, D2C brands, and retail businesses in Barcelona and Spain seeking custom Shopify development services",
     faqs: shopifyDevelopmentBarcelonaContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: [
       ...shopifyDevelopmentBarcelonaContent.services.items.map((item) => ({
@@ -5047,7 +5056,7 @@ export function createShopifyDevelopmentCompanyInChennaiPageSchema() {
       "Businesses, eCommerce retailers, direct-to-consumer brands, and enterprises in Chennai, Tamil Nadu, and across India seeking professional Shopify development",
     faqs: shopifyDevelopmentChennaiContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: [
       ...shopifyDevelopmentChennaiContent.services.items.map((item) => ({
@@ -5105,7 +5114,7 @@ export function createDentalClinicWebsiteDevelopmentCompanyPageSchema() {
       "Dentists, dental clinics, dental health practices, orthodontists, and dental agencies seeking custom dental website development solutions",
     faqs: dentalClinicWebsiteDevelopmentCompanyContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: dentalClinicWebsiteDevelopmentCompanyContent.services.items.map((item) => ({
       title: item.title,
@@ -5131,7 +5140,7 @@ export function createShopifyDevelopmentInDelhiPageSchema() {
       "eCommerce businesses, retail brands, D2C startups, and enterprise merchants in Delhi NCR seeking certified Shopify development services",
     faqs: shopifyDevelopmentDelhiContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: shopifyDevelopmentDelhiContent.services.items.map((item) => ({
       title: item.title,
@@ -5157,7 +5166,7 @@ export function createShopifyDevelopmentInHyderabadPageSchema() {
       "eCommerce businesses, retail brands, D2C startups, and enterprise merchants in Hyderabad seeking certified Shopify development services",
     faqs: shopifyDevelopmentHyderabadContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: shopifyDevelopmentHyderabadContent.services.items.map((item) => ({
       title: item.title,
@@ -5183,7 +5192,7 @@ export function createWordPressDevelopmentInDelhiPageSchema() {
       "Businesses, startups, enterprises, and digital agencies in Delhi seeking custom WordPress development services",
     faqs: wordpressDevelopmentDelhiContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: wordpressDevelopmentDelhiContent.reasons.items.map((item) => ({
       title: item.title,
@@ -5209,7 +5218,7 @@ export function createWordPressDevelopmentInNoidaPageSchema() {
       "Businesses, startups, enterprises, and digital agencies in Noida seeking custom WordPress development services",
     faqs: wordpressDevelopmentNoidaContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: wordpressDevelopmentNoidaContent.reasons.items.map((item) => ({
       title: item.title,
@@ -5235,7 +5244,7 @@ export function createWordPressDevelopmentInPunePageSchema() {
       "Businesses, startups, enterprises, and digital agencies in Pune seeking custom WordPress development services",
     faqs: wordpressDevelopmentPuneContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: wordpressDevelopmentPuneContent.reasons.items.map((item) => ({
       title: item.title,
@@ -5261,7 +5270,7 @@ export function createWordPressDevelopmentInAhmedabadPageSchema() {
       "Businesses, startups, enterprises, and digital agencies in Ahmedabad seeking custom WordPress development services",
     faqs: wordpressDevelopmentAhmedabadContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: wordpressDevelopmentAhmedabadContent.reasons.items.map((item) => ({
       title: item.title,
@@ -5287,7 +5296,7 @@ export function createWordPressDevelopmentInBangalorePageSchema() {
       "Businesses, startups, enterprises, and digital agencies in Bangalore seeking custom WordPress development services",
     faqs: wordpressDevelopmentBangaloreContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: wordpressDevelopmentBangaloreContent.reasons.items.map((item) => ({
       title: item.title,
@@ -5313,7 +5322,7 @@ export function createWordPressDevelopmentInMumbaiPageSchema() {
       "Businesses, startups, enterprises, and digital agencies in Mumbai seeking custom WordPress development services",
     faqs: wordpressDevelopmentMumbaiContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: wordpressDevelopmentMumbaiContent.reasons.items.map((item) => ({
       title: item.title,
@@ -5339,7 +5348,7 @@ export function createShopifyDevelopmentInPunePageSchema() {
       "Businesses, startups, enterprises, and digital agencies in Pune seeking custom Shopify development services",
     faqs: shopifyDevelopmentPuneContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: shopifyDevelopmentPuneContent.services.items.map((item) => ({
       title: item.title,
@@ -5365,7 +5374,7 @@ export function createShopifyDevelopmentInBangalorePageSchema() {
       "Enterprises, startups, D2C brands, and retail businesses in Bangalore seeking custom Shopify development services",
     faqs: shopifyDevelopmentBangaloreContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: [
       ...shopifyDevelopmentBangaloreContent.services.items.map((item) => ({
@@ -5397,7 +5406,7 @@ export function createShopifyDevelopmentInTexasPageSchema() {
       "Enterprises, startups, D2C brands, and retail businesses in Texas seeking custom Shopify development services",
     faqs: shopifyDevelopmentTexasContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: [
       ...shopifyDevelopmentTexasContent.services.items.map((item) => ({
@@ -5429,7 +5438,7 @@ export function createShopifyDevelopmentInNewYorkPageSchema() {
       "Enterprises, startups, D2C brands, and retail businesses in New York seeking custom Shopify development services",
     faqs: shopifyDevelopmentNewYorkContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: shopifyDevelopmentNewYorkContent.services.items.map((item) => ({
       title: item.title,
@@ -5455,7 +5464,7 @@ export function createShopifyDevelopmentInLosAngelesPageSchema() {
       "Enterprises, startups, D2C brands, and retail businesses in Los Angeles seeking custom Shopify development services",
     faqs: shopifyDevelopmentLosAngelesContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: [
       ...shopifyDevelopmentLosAngelesContent.services.items.map((item) => ({
@@ -5487,7 +5496,7 @@ export function createShopifyDevelopmentInMiamiPageSchema() {
       "Enterprises, startups, D2C brands, luxury retailers, and cross-border ecommerce businesses in Miami seeking custom Shopify development services",
     faqs: shopifyDevelopmentMiamiContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: [
       ...shopifyDevelopmentMiamiContent.services.items.map((item) => ({
@@ -5550,7 +5559,7 @@ export function createEcwidToShopifyMigrationPageSchema() {
     faqs: ecwidFaqs.map((item) => ({
       question: item.question,
       answer: [
-        item.answer,
+        cleanFaqSchemaText(item.answer),
         ...(item.listItems?.map(
           (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
         ) ?? []),
@@ -5740,7 +5749,7 @@ export function createWooCommerceToShopifyMigrationPageSchema() {
     faqs: woocommerceFaqs.map((item) => ({
       question: item.question,
       answer: [
-        item.answer,
+        cleanFaqSchemaText(item.answer),
         ...(item.listItems?.map(
           (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
         ) ?? []),
@@ -5772,7 +5781,7 @@ export function createSquarespaceToShopifyMigrationPageSchema() {
       "Squarespace merchants, ecommerce brands, and growing businesses migrating to Shopify or Shopify Plus",
     faqs: squarespaceFaqs.map((item) => ({
       question: item.question,
-      answer: item.answer,
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: squarespaceProcessContent.steps.map((step) => ({
       title: step.title,
@@ -5799,7 +5808,7 @@ export function createSalesforceToShopifyMigrationPageSchema() {
     faqs: salesforceFaqs.map((item) => ({
       question: item.question,
       answer: [
-        item.answer,
+        cleanFaqSchemaText(item.answer),
         ...(item.listItems?.map(
           (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
         ) ?? []),
@@ -5832,7 +5841,7 @@ export function createEtsyToShopifyMigrationPageSchema() {
     faqs: etsyFaqs.map((item) => ({
       question: item.question,
       answer: [
-        item.answer,
+        cleanFaqSchemaText(item.answer),
         ...(item.listItems?.map(
           (listItem) => `${listItem.label ? `${listItem.label} ` : ""}${listItem.text}`,
         ) ?? []),

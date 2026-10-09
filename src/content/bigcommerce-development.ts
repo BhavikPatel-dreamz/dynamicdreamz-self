@@ -167,7 +167,10 @@ export const bigCommerceDevelopmentBrands: readonly ClientLogoSliderItem[] = [
 ];
 
 export const bigCommerceDevelopmentIntro = {
-  heading: "Start Your eCommerce Business with <br> BigCommerce Development Company",
+  heading: [
+    "Start Your eCommerce Business with",
+    "BigCommerce Development Company",
+  ],
   paragraphs: [
     "Launching your eCommerce business with a reliable BigCommerce development company like Dynamic Dreamz can set you on the path to success. We help you to own user friendly, engaging, and fully functional online stores with BigCommerce solutions based on your business requirements.",
     "Our expert team handles everything to ensure your store performs and sells better. With the help of Dynamic Dreamz, you can have time to focus on expanding your business. At the same time, we manage technical factors, offering you a hassle free experience and continuous support to maintain your BigCommerce store running smoothly.",
@@ -346,7 +349,11 @@ export const bigCommerceDevelopmentPortfolio = {
   eyebrow: "Portfolio",
   heading: "Insights into Our BigCommerce Development",
   description:
-    "Delving into our BigCommerce Development, we unveil a tapestry of expertise <br> and innovation. Our meticulous approach crafts customer centric eCommerce <br> solutions, integrating design and functionality.",
+    [
+    "Delving into our BigCommerce Development, we unveil a tapestry of expertise",
+    "and innovation. Our meticulous approach crafts customer centric eCommerce",
+    "solutions, integrating design and functionality.",
+  ],
   category: "BIGCOMMERCE",
   platformMark: {
     src: "/assets/our-work/platforms/big-commerce-icon.svg",
@@ -387,7 +394,10 @@ export const bigCommerceDevelopmentTestimonials = {
   eyebrow: "Client Stories",
   heading: "Don't Just Take Our Word For It",
   description:
-    "We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories: Check out how our services empower them to evolve.",
+    [
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
+      "Happy clients make happy stories: Check out how our services empower them to evolve.",
+    ],
   items: shopifyPlusAgencyTestimonials.items,
 } as const;
 

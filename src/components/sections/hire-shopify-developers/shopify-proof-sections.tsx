@@ -16,15 +16,15 @@ import { formatBrText } from "@/lib/text-formatting";
 const headingClassName = "font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]";
 
 export type ProofSectionItem = {
-  title: string;
-  description: string;
+  title: string | readonly string[];
+  description: string | readonly string[];
   icon: string;
   iconAlt: string;
 };
 
 export type ProofSectionContent = {
-  heading: string;
-  description: string;
+  heading: string | readonly string[];
+  description: string | readonly string[];
   items: readonly ProofSectionItem[];
   ctaLabel?: string;
   ctaHref?: string;
@@ -68,7 +68,7 @@ export function ShopifyReasonsSection({
     <article
       data-aos="fade-up"
       className={`group relative h-full ${cardMinHeightClassName} rounded-[15px] bg-white p-0.5 transition-[background] duration-300 hover:bg-[linear-gradient(to_right,#15c064,#00d1ff)] focus-within:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:absolute after:right-0 after:bottom-0 after:left-0 after:z-20 after:h-3 after:rounded-b-[15px] after:bg-[linear-gradient(to_right,#15c064,#00d1ff)] after:opacity-0 after:transition-opacity after:duration-300 after:content-[''] hover:after:opacity-100 focus-within:after:opacity-100`}
-      key={item.title}
+      key={typeof item.title === "string" ? item.title : item.title.join(" ")}
     >
       <div className="relative z-10 h-full rounded-[13px] bg-white pl-[30px] pr-[20px] pt-[30px] pb-[80px]">
         <Image
@@ -90,7 +90,7 @@ export function ShopifyReasonsSection({
 
   const carousel = (
     <HorizontalDragScroll
-      ariaLabel={`${content.heading.replaceAll("<br>", "")} benefits`}
+      ariaLabel={`${(typeof content.heading === "string" ? content.heading : content.heading.join(" ")).replaceAll("<br>", "")} benefits`}
       className={
         carouselFullBleed
           ? "snap-x snap-mandatory overflow-x-auto [--carousel-offset:16px] [scroll-padding-inline-start:var(--carousel-offset)] [scrollbar-width:none] min-[576px]:[--carousel-offset:calc((100vw-540px)/2+16px)] min-[768px]:[--carousel-offset:calc((100vw-720px)/2+20px)] min-[992px]:[--carousel-offset:calc((100vw-960px)/2+20px)] min-[1200px]:[--carousel-offset:calc((100vw-1180px)/2+20px)] min-[1400px]:[--carousel-offset:calc((100vw-1360px)/2+20px)] [&::-webkit-scrollbar]:hidden"
@@ -106,7 +106,7 @@ export function ShopifyReasonsSection({
               : "basis-[calc(100%-50px)] min-[767px]:basis-[calc((100%-66px)/2)]")
           }`}
           data-carousel-item
-          key={content.items[index].title}
+          key={typeof content.items[index].title === "string" ? content.items[index].title : content.items[index].title.join(" ")}
         >
           {card}
         </div>
@@ -138,7 +138,7 @@ export function ShopifyReasonsSection({
             {cards.map((card, index) => (
               <div
                 className="w-1/3 px-2 mb-4 max-[992px]:w-1/2 max-[767px]:w-full"
-                key={content.items[index].title}
+                key={typeof content.items[index].title === "string" ? content.items[index].title : content.items[index].title.join(" ")}
               >
                 {card}
               </div>
@@ -207,7 +207,7 @@ export function ShopifyAdvantagesSection({
                   ? "max-[767px]:border-r-0 max-[767px]:border-b"
                   : "max-[767px]:border-r-0"
               }`}
-              key={item.title}
+              key={typeof item.title === "string" ? item.title : item.title.join(" ")}
             >
               <Image
                 className={`size-[58px] object-contain ${isLeftAlign ? "mb-2.5" : ""}`}

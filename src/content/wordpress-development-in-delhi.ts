@@ -233,7 +233,10 @@ export const wordpressDevelopmentDelhiContent = {
 
   // Backward-compatible alias for existing consumers / schema
   reasons: {
-    heading: "Why Choose Us for Your <br> WordPress Development Needs?",
+    heading: [
+    "Why Choose Us for Your",
+    "WordPress Development Needs?",
+  ],
     description:
       "Dynamic Dreamz is a trusted partner for WordPress development in Delhi, offering a wide range of WordPress services tailored to different business requirements.",
     items: whyChooseItems,
@@ -243,7 +246,11 @@ export const wordpressDevelopmentDelhiContent = {
     eyebrow: "Portfolio",
     heading: "Our Successful WordPress Projects",
     description:
-      "500+ WordPress websites meticulously crafted and counting. Our expertise <br> accelerates growth and redefines shopping experiences for clients, <br> making us the best WordPress development company in India.",
+      [
+      "500+ WordPress websites meticulously crafted and counting. Our expertise",
+      "accelerates growth and redefines shopping experiences for clients,",
+      "making us the best WordPress development company in India.",
+    ],
     items: [
       {
         name: "Quite Events",
@@ -308,7 +315,10 @@ export const wordpressDevelopmentDelhiContent = {
     eyebrow: "Client Stories",
     heading: "Our Customers' Testimonials",
     description:
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients. <br> Happy clients make happy stories. Check out how our services empower them to evolve.",
+      [
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
+      "Happy clients make happy stories. Check out how our services empower them to evolve.",
+    ],
     items: shopifyPlusAgencyTestimonials.items,
   },
 

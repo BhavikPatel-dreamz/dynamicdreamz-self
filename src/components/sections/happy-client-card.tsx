@@ -7,7 +7,7 @@ import { formatBrText } from "@/lib/text-formatting";
 export type HappyClientTestimonialItem = {
   name: string;
   company: string;
-  quote: string;
+  quote: string | readonly string[];
   videoId: string;
   image: string;
   imageAlt: string;

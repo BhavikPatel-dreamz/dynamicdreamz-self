@@ -23,7 +23,7 @@ export type ServiceHeroVideoContent = {
   titleAccent?: string;
   subtitle?: string;
   lead?: string;
-  paragraphs: readonly string[];
+  paragraphs: readonly (string | readonly string[])[];
   cta: string;
   ctaHref: string;
   secondaryCta?: {

@@ -5,16 +5,16 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { formatBrText } from "@/lib/text-formatting";
 
 export type ThemeWhyChooseItem = {
-  title: string;
-  description: string;
+  title: string | readonly string[];
+  description: string | readonly string[];
   icon: string;
   iconAlt: string;
 };
 
 export type ThemeWhyChooseSectionProps = {
   content: {
-    title: string;
-    subtitle: string;
+    title: string | readonly string[];
+    subtitle: string | readonly string[];
     items: readonly ThemeWhyChooseItem[];
   };
   backgroundVariant?: "gradient" | "white";
@@ -83,7 +83,7 @@ export function ThemeWhyChooseSection({
                     isLastItem ? "max-[992px]:border-b-0" : ""
                   }`}
                   data-aos="fade-up"
-                  key={item.title}
+                  key={typeof item.title === "string" ? item.title : item.title.join(" ")}
                 >
                   <span
                     className={`icon flex flex-shrink-0 items-center justify-start ${

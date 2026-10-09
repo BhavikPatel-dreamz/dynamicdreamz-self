@@ -346,7 +346,7 @@
               "text": "Enter Product Details:",
               "bold": true
             },
-            " Fill in essential information like the product title, description, and price. Ensure your title is clear & your description is informative yet concise.\n<ol>\n<li>",
+            " Fill in essential information like the product title, description, and price. Ensure your title is clear & your description is informative yet concise. ",
             {
               "type": "text",
               "text": "Product Description Tips:",
