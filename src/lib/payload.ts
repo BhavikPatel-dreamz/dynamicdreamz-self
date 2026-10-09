@@ -18,6 +18,7 @@ import type {
 } from "@/content/blogs";
 import type { BlogPostDetail } from "@/types/blog-post";
 import type { CaseStudyDetail, CaseStudyItem } from "@/types/case-study";
+import caseStudiesItemsJson from "@/content/case-studies-items.json";
 
 export async function getPayloadNavigation() {
   try {
@@ -368,7 +369,8 @@ export function adaptPayloadPostToBlogPostDetail(
           image:
             (typeof post.author.avatar === "object" &&
               post.author.avatar?.url) ||
-            "/assets/team/vatsal-panchal.webp",
+            fallbackDetail?.author?.image ||
+            "/assets/blog/authors/rizwanshaikh.webp",
           linkedin: post.author.linkedin || undefined,
         }
       : null) ||
@@ -440,15 +442,16 @@ export function adaptPayloadCaseStudiesToItems(
         ? cs.heroImage
         : null;
     const imageMedia = thumb || hero;
+    const fallbackItem = caseStudiesItemsJson.find((item) => item.slug === cs.slug);
 
     return {
       slug: cs.slug,
       title: cs.title,
-      technology: cs.technology || "Shopify Plus",
-      industry: cs.industry || "",
-      excerpt: cs.overview || cs.challenge || "",
-      image: imageMedia?.url || "/assets/case-studies/default.webp",
-      alt: imageMedia?.alt || cs.title,
+      technology: cs.technology || fallbackItem?.technology || "Shopify Plus",
+      industry: cs.industry || fallbackItem?.industry || "",
+      excerpt: cs.overview || cs.challenge || fallbackItem?.excerpt || "",
+      image: imageMedia?.url || fallbackItem?.image || "/assets/case-studies/gnc-india.webp",
+      alt: imageMedia?.alt || fallbackItem?.alt || cs.title,
       href: `/case-studies/${cs.slug}`,
       tags: [cs.technology, cs.industry].filter(Boolean) as string[],
     };
@@ -468,6 +471,7 @@ export function adaptPayloadCaseStudyToDetail(
       ? cs.heroImage
       : null;
   const imageMedia = hero || thumb;
+  const fallbackItem = caseStudiesItemsJson.find((item) => item.slug === cs.slug);
 
   const heroImage = imageMedia?.url
     ? {
@@ -477,10 +481,10 @@ export function adaptPayloadCaseStudyToDetail(
         alt: imageMedia.alt || cs.title,
       }
     : fallbackDetail?.hero.image || {
-        src: "/assets/case-studies/default.webp",
+        src: fallbackItem?.image || "/assets/case-studies/gnc-india.webp",
         width: 1200,
         height: 800,
-        alt: cs.title,
+        alt: fallbackItem?.alt || cs.title,
       };
 
   const keyMetrics =
