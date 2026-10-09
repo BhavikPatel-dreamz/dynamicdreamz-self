@@ -17,7 +17,7 @@ export const seoServicesHeroContent: ServiceHeroContent = {
   description:
     "Our SEO services help businesses grow organically by enhancing visibility across search engines like Google. We offer strategic SEO optimization, which involves link building, technical improvements, content upgrades, and keyword research. We focus on increasing search rankings, attracting high-quality traffic, and driving long-term growth. Whether you are a service provider, local business, or eCommerce brand, our expert SEO services are designed to deliver measurable results.",
   secondaryDescription:
-    "<em><strong>SEO can be a game-changing move if you do it in the right way. It can help you save a significant amount of money that you spend on ads.</strong></em>",
+    "***SEO can be a game-changing move if you do it in the right way. It can help you save a significant amount of money that you spend on ads.***",
   maxWidthClassName: "max-w-[880px]",
   reviews: [
     {
@@ -63,14 +63,14 @@ export const seoServicesWhyChoose: PillListContent = {
     "You have a new website and want to grow your business fast.",
   ],
   description:
-    "At our SEO agency, we employ proven SEO strategies to enhance your SEO ranking, boost traffic, and reduce ad spend—<strong>sometimes by as much as 70%</strong>. You know what it means: <strong>more leads, more sales, and more profit</strong>, without the continuous need to boost posts or run expensive campaigns. Our SEO experts know how to utilize all the latest SEO techniques.",
+    "At our SEO agency, we employ proven SEO strategies to enhance your SEO ranking, boost traffic, and reduce ad spend—**sometimes by as much as 70%**. You know what it means: **more leads, more sales, and more profit**, without the continuous need to boost posts or run expensive campaigns. Our SEO experts know how to utilize all the latest SEO techniques.",
 };
 
 export const seoServicesWhatWeProvide: AgencyServicesContent = {
   heading: "Our SEO Services",
   description:
     [
-    "<b>We don't just offer SEO—we live it. </b> Our SEO company helps you build an SEO strategy that works perfectly for",
+    "**We don't just offer SEO—we live it.** Our SEO company helps you build an SEO strategy that works perfectly for",
     "your online business goals. Regardless of the type of business you operate — whether a small local shop or a large",
     "eCommerce brand —we deliver customized SEO services that provide long-lasting results.",
   ],
@@ -178,8 +178,8 @@ export const seoServicesOutcomesContent: ProofSectionContent = {
   heading: "SEO Services Designed to Deliver Outcomes",
   description:
     [
-    "Our SEO optimization <strong>process is designed for real growth</strong>. Each step is conducted by an",
-    "<strong>SEO expert or specialist</strong> who understands how to optimize your website for search engines.",
+    "Our SEO optimization **process is designed for real growth**. Each step is conducted by an",
+    "**SEO expert or specialist** who understands how to optimize your website for search engines.",
   ],
   items: [
     {
@@ -482,37 +482,37 @@ export const seoServicesFaqs: readonly FaqAccordionItem[] = [
   {
     question: "How long does SEO take to show results?",
     answer:
-      "Most businesses start to see effects within <strong>3 to 6 months</strong>. It depends on competition, keywords, and your current website status.",
+      "Most businesses start to see effects within **3 to 6 months**. It depends on competition, keywords, and your current website status.",
   },
   {
     question: "Is SEO better than paid ads?",
     answer:
-      "<strong>SEO creates long-term value</strong>. Unlike ads, you don’t have to keep paying dollars to stay visible once you rank well.",
+      "**SEO creates long-term value**. Unlike ads, you don’t have to keep paying dollars to stay visible once you rank well.",
   },
   {
     question: "What is an SEO audit?",
     answer:
-      "An SEO audit examines your website for issues such as <strong>slow loading speed, broken links, missing tags</strong>, and other factors that affect your ranking.",
+      "An SEO audit examines your website for issues such as **slow loading speed, broken links, missing tags**, and other factors that affect your ranking.",
   },
   {
     question: "How do I choose the best SEO company?",
     answer:
-      "Look for an SEO agency with <strong>experience, providing transparent reporting, clear communication, and proven results</strong>.",
+      "Look for an SEO agency with **experience, providing transparent reporting, clear communication, and proven results**.",
   },
   {
     question: "Do you guarantee first-page ranking?",
     answer:
-      "<strong>Any trustworthy SEO agency does not guarantee rankings</strong>. However, we follow best practices that maximize your chances of ranking higher in the SERP (Search Engine Results Page).",
+      "**Any trustworthy SEO agency does not guarantee rankings**. However, we follow best practices that maximize your chances of ranking higher in the SERP (Search Engine Results Page).",
   },
   {
     question: "What's the cost of SEO services?",
     answer:
-      "It depends on your business size and goals. We offer custom packages that fit every budget. To obtain an <strong>accurate estimate of the cost</strong>, please contact us with your detailed requirements.",
+      "It depends on your business size and goals. We offer custom packages that fit every budget. To obtain an **accurate estimate of the cost**, please contact us with your detailed requirements.",
   },
   {
     question: "Will I get reports?",
     answer:
-      "Yes. Our monthly SEO reports are <strong>clear and easy to understand</strong>, even for those without technical expertise.",
+      "Yes. Our monthly SEO reports are **clear and easy to understand**, even for those without technical expertise.",
   },
 ];
 

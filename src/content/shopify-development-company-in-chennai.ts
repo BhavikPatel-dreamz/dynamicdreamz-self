@@ -527,7 +527,7 @@ export const shopifyDevelopmentChennaiContent = {
     {
       question: "How much does hiring a Shopify development company cost?",
       answer:
-        'The cost of <a href="/how-to-hire-shopify-development-agency">hiring a Shopify development</a> company depends on the complexity of your project, the requirements and features you want, and the expertise of development teams. If you want to know the exact amount, you can consult with a Shopify development company.',
+        "The cost of [hiring a Shopify development](/how-to-hire-shopify-development-agency) company depends on the complexity of your project, the requirements and features you want, and the expertise of development teams. If you want to know the exact amount, you can consult with a Shopify development company.",
     },
     {
       question: "How much time does it take to create a Shopify store?",

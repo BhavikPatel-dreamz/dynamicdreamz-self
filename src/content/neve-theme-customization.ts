@@ -254,7 +254,7 @@ export const neveThemeCustomizationContent = {
     eyebrow: "Why Dynamic Dreamz",
     heading: "Why Choose Dynamic Dreamz",
     description:
-      "Our WordPress expert team specializes in <strong>customizing themes to get high-quality, sales-optimized</strong> WordPress websites. <strong>Dynamic Dreamz has 100+ WordPress experts</strong> to get started with your WordPress theme customization project. Here’s why clients trust us:",
+      "Our WordPress expert team specializes in **customizing themes to get high-quality, sales-optimized** WordPress websites. **Dynamic Dreamz has 100+ WordPress experts** to get started with your WordPress theme customization project. Here’s why clients trust us:",
     items: [
       {
         title: "Expert Team",

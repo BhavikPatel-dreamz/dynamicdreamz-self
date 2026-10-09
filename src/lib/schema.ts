@@ -2097,7 +2097,12 @@ type ServicePageSchemaInput = {
 function cleanFaqSchemaText(text: string | readonly string[] | undefined | null): string {
   if (!text) return "";
   const raw = typeof text === "string" ? text : text.filter(Boolean).join(" ");
-  return raw.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  return raw
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*_]{1,3}([^*_]+)[*_]{1,3}/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function createServicePageSchema({
@@ -5528,7 +5533,7 @@ export function createShopifyDevelopmentInMumbaiPageSchema() {
       "Enterprises, startups, D2C brands, and retail businesses in Mumbai seeking custom Shopify development services",
     faqs: shopifyDevelopmentMumbaiContent.faqs.map((item) => ({
       question: item.question,
-      answer: item.answer.replace(/<[^>]+>/g, " "),
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: shopifyDevelopmentMumbaiContent.services.items.map((item) => ({
       title: item.title,

@@ -177,7 +177,7 @@ export const blocksyThemeCustomizationContent = {
     eyebrow: "Our Services",
     heading: "Our WordPress Theme Customization Services",
     description:
-      "At <b>Dynamic Dreamz</b>, we offer you professional WordPress theme customization services to improve your Blocksy-powered website:",
+      "At **Dynamic Dreamz**, we offer you professional WordPress theme customization services to improve your Blocksy-powered website:",
     items: [
       {
         iconName: "installation",
@@ -268,7 +268,7 @@ export const blocksyThemeCustomizationContent = {
     eyebrow: "Why Dynamic Dreamz",
     heading: "Why Choose Dynamic Dreamz",
     description:
-      "When you work with<strong> Dynamic Dreamz</strong> to customize your Blocksy theme, you can be sure of receiving top-notch services supported by industry knowledge:",
+      "When you work with **Dynamic Dreamz** to customize your Blocksy theme, you can be sure of receiving top-notch services supported by industry knowledge:",
     items: [
       {
         title: "Expert Team",
@@ -364,17 +364,17 @@ export const blocksyThemeCustomizationContent = {
     {
       question: "How much do you charge for my Blocksy theme customization project?",
       answer:
-        "Basically, there is not a fixed amount you can estimate for any theme customization service. The cost fully depends on the scope of your customization, its complexity, and the expertise and experience of the WordPress developer and designer working on it. <strong>Contact us</strong> with your project requirements to get your detailed quote.",
+        "Basically, there is not a fixed amount you can estimate for any theme customization service. The cost fully depends on the scope of your customization, its complexity, and the expertise and experience of the WordPress developer and designer working on it. **Contact us** with your project requirements to get your detailed quote.",
     },
     {
       question: "What is included in Blocksy theme customization services?",
       answer:
-        "Our customization services contain <strong>branding, theme installation, layout adjustments, integration of advanced features, and performance optimization</strong> to ensure a unique and functional website.",
+        "Our customization services contain **branding, theme installation, layout adjustments, integration of advanced features, and performance optimization** to ensure a unique and functional website.",
     },
     {
       question: "Can you make my Blocksy theme completely unique?",
       answer:
-        "Yes! We change <strong>colors, typography, layouts, and other design elements</strong> to match your brand identity and business requirements, making your website stand out in the competitive market.",
+        "Yes! We change **colors, typography, layouts, and other design elements** to match your brand identity and business requirements, making your website stand out in the competitive market.",
     },
     {
       question: "Will my customized Blocksy theme be mobile-friendly?",
@@ -389,7 +389,7 @@ export const blocksyThemeCustomizationContent = {
     {
       question: "Do you provide ongoing support after customization?",
       answer:
-        "Yes, we offer ongoing maintenance and support services to keep your WordPress website updated, secure, and operating smoothly. After a few revisions, we can <strong>start a new contract at an hourly rate or fixed price rate.</strong>",
+        "Yes, we offer ongoing maintenance and support services to keep your WordPress website updated, secure, and operating smoothly. After a few revisions, we can **start a new contract at an hourly rate or fixed price rate.**",
     },
     {
       question: "Can I integrate third-party plugins with my customized Blocksy theme?",

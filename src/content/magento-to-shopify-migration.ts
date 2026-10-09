@@ -141,7 +141,7 @@ export const magentoWhyMigrateContent = {
   eyebrow: "Why migrate",
   heading: "Why Do You Need to migrate from Magento to Shopify?",
   description:
-    "Magento 1 reached its End of Life in June 2020, meaning it no longer receives official support, new features, or security updates. To keep your eCommerce store secure and future-ready, you have two options: <strong>upgrade from Magento 1 to Magento 2</strong> or <strong>migrate to another platform such as Shopify</strong>.",
+    "Magento 1 reached its End of Life in June 2020, meaning it no longer receives official support, new features, or security updates. To keep your eCommerce store secure and future-ready, you have two options: **upgrade from Magento 1 to Magento 2** or **migrate to another platform such as Shopify**.",
   items: [
     {
       iconName: "clock-unsupported",

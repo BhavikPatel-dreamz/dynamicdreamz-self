@@ -3,7 +3,7 @@ export const vesselThemeCustomizationContent = {
     eyebrow: ["Shopify Platinum Partner", "Theme Customization"] as const,
     title: "Vessel Theme Customization Service",
     description:
-      "Get Vessel Theme Customization Service by Dynamic Dreamz. It provides a smart, modern layout that is perfect for attractively displaying products. At <strong>Dynamic Dreamz</strong>, we are experts in customizing the Vessel theme to align with your unique brand identity. Our team of experts makes sure your Shopify store offers an outstanding user experience in addition to a beautiful appearance, increasing engagement and conversions.",
+      "Get Vessel Theme Customization Service by Dynamic Dreamz. It provides a smart, modern layout that is perfect for attractively displaying products. At **Dynamic Dreamz**, we are experts in customizing the Vessel theme to align with your unique brand identity. Our team of experts makes sure your Shopify store offers an outstanding user experience in addition to a beautiful appearance, increasing engagement and conversions.",
     ctaText: "Request a Quote",
     ctaHref: "/request-quote",
     ctaAriaLabel: "Request a Quote",

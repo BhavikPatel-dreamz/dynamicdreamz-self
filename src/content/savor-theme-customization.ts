@@ -3,7 +3,7 @@ export const savorThemeCustomizationContent = {
     eyebrow: ["Shopify Platinum Partner", "Theme Customization"] as const,
     title: "Savor Theme Customization Service",
     description:
-      "The Savor theme is specially created for food and beverage brands that want to make a beautiful and engaging online store. Take Savor Theme Customization Service at <strong>Dynamic Dreamz</strong>, that helps you open the full power of the Savor theme through expert theme customization services. Whether you’re launching a new Shopify store or recharging an existing one, we’ll make your website look attractive and work smoothly on all devices.",
+      "The Savor theme is specially created for food and beverage brands that want to make a beautiful and engaging online store. Take Savor Theme Customization Service at **Dynamic Dreamz**, that helps you open the full power of the Savor theme through expert theme customization services. Whether you’re launching a new Shopify store or recharging an existing one, we’ll make your website look attractive and work smoothly on all devices.",
     ctaText: "Request a Quote",
     ctaHref: "/request-quote",
     ctaAriaLabel: "Request a Quote",

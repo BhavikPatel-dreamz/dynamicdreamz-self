@@ -4,7 +4,7 @@ export const heritageThemeCustomizationContent = {
     eyebrows: ["Shopify Platinum Partner", "Theme Customization"] as const,
     title: "Heritage Theme Customization Service",
     description:
-      "Want a clean, traditional store design that represents your brand story beautifully? You can build a quick, useful, and mobile-friendly Shopify store that catches the essence of your business with our <b>Heritage theme customization service.</b> Whether you're launching or scaling, we'll customize the Heritage theme to suit your product type and audience perfectly—without compromising performance or usability.",
+      "Want a clean, traditional store design that represents your brand story beautifully? You can build a quick, useful, and mobile-friendly Shopify store that catches the essence of your business with our **Heritage theme customization service.** Whether you're launching or scaling, we'll customize the Heritage theme to suit your product type and audience perfectly—without compromising performance or usability.",
     ctaText: "Request a Quote",
     ctaHref: "/request-quote",
     ctaAriaLabel: "Request a Quote",

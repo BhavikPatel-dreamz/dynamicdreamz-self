@@ -354,7 +354,7 @@ export const wordpressDevelopmentAhmedabadContent = {
       question:
         "What steps should I take to begin using your WordPress development services?",
       answer:
-        'Get in touch with us via our website and complete the contact form located on our <a href="/contact-us">Contact Us</a> page. We will support you at every step of the project, from the first talk to the final delivery of your WordPress project.',
+        "Get in touch with us via our website and complete the contact form located on our [Contact Us](/contact-us) page. We will support you at every step of the project, from the first talk to the final delivery of your WordPress project.",
     },
   ],
 

@@ -5,7 +5,7 @@ export const fabricThemeCustomizationContent = {
     eyebrow: ["Shopify Platinum Partner", "Theme Customization"] as const,
     title: "Fabric Theme Customization Service",
     description:
-      "The Fabric Shopify theme offers a clean and modern design, ideal for showcasing your products in style. Whether you’re in fashion, accessories, or any other business, our <strong>Fabric Theme Customization Service</strong> customizes this theme to match your brand’s unique identity. We improve user experience, ensure mobile responsiveness, and integrate features that drive conversions, helping your online store stand out.",
+      "The Fabric Shopify theme offers a clean and modern design, ideal for showcasing your products in style. Whether you’re in fashion, accessories, or any other business, our **Fabric Theme Customization Service** customizes this theme to match your brand’s unique identity. We improve user experience, ensure mobile responsiveness, and integrate features that drive conversions, helping your online store stand out.",
     ctaText: "Request a Quote",
     ctaHref: "/request-quote",
     secondaryCtaText: "View Fabric on Shopify",

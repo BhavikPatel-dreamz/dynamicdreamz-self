@@ -375,7 +375,7 @@ export const shopifyDevelopmentAgencyFaqs: readonly FaqAccordionItem[] = [
   {
     question: "Is Dynamic Dreamz a Shopify development agency?",
     answer:
-      "Yes. Dynamic Dreamz is a <strong>Shopify Platinum Partner and Shopify development agency</strong> established in 2006. We help brands and digital agencies build, redesign, migrate, integrate and continuously improve Shopify stores.",
+      "Yes. Dynamic Dreamz is a **Shopify Platinum Partner and Shopify development agency** established in 2006. We help brands and digital agencies build, redesign, migrate, integrate and continuously improve Shopify stores.",
   },
   {
     question: "What Shopify development services does Dynamic Dreamz provide?",
@@ -405,8 +405,8 @@ export const shopifyDevelopmentAgencyFaqs: readonly FaqAccordionItem[] = [
     answer:
       [
       "Cost depends on scope and engagement model. We offer project-based",
-      "custom quotes, flexible Shopify development support from <strong>$25/hour</strong>, and dedicated Shopify developer or team",
-      "options from <strong>$2,000/month</strong>.",
+      "custom quotes, flexible Shopify development support from **$25/hour**, and dedicated Shopify developer or team",
+      "options from **$2,000/month**.",
     ],
   },
   {
@@ -425,7 +425,7 @@ export const shopifyDevelopmentAgencyFaqs: readonly FaqAccordionItem[] = [
   {
     question: "Does Dynamic Dreamz provide Shopify Plus development?",
     answer:
-      "Yes. High-growth, B2B and enterprise requirements are supported through our dedicated <a href=\"/shopify-plus-agency\">Shopify Plus Agency</a> capability, including B2B, migrations, integrations, checkout extensibility and ongoing technical support.",
+      "Yes. High-growth, B2B and enterprise requirements are supported through our dedicated [Shopify Plus Agency](/shopify-plus-agency) capability, including B2B, migrations, integrations, checkout extensibility and ongoing technical support.",
   },
   {
     question: "Where is Dynamic Dreamz based, and do you work with global Shopify  clients?",

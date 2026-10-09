@@ -104,7 +104,7 @@ export const milestones = [
   {
     year: "2024",
     description:
-      "Dynamic Dreamz proudly reached a major company milestone with a 150+ strong expert team driving innovation and client success. In the same year, Dynamic Dreamz also became a <strong>Shopify Plus Partner</strong>.",
+      "Dynamic Dreamz proudly reached a major company milestone with a 150+ strong expert team driving innovation and client success. In the same year, Dynamic Dreamz also became a **Shopify Plus Partner**.",
     image: "/assets/about/timeline/expert-team-2024.svg",
     alt: "Dynamic Dreamz team growing to more than 150 experts in 2024",
     width: 421,
@@ -113,7 +113,7 @@ export const milestones = [
   {
     year: "2025",
     description:
-      "Dynamic Dreamz advanced to <strong>Shopify Premier Partner</strong> status, marking another step in the company’s ecommerce journey while continuing to grow its wider web, mobile and technology capabilities.",
+      "Dynamic Dreamz advanced to **Shopify Premier Partner** status, marking another step in the company’s ecommerce journey while continuing to grow its wider web, mobile and technology capabilities.",
     image: "/assets/about/timeline/shopify-partner-2025.svg",
     alt: "Dynamic Dreamz becoming a Shopify Premier Partner in 2025",
     width: 421,
@@ -122,7 +122,7 @@ export const milestones = [
   {
     year: "2026",
     description:
-      "Dynamic Dreamz became a <strong>Shopify Platinum Partner</strong>, while expanding its capabilities across ecommerce, WordPress and WooCommerce, mobile apps, full-stack development, AI solutions and white-label agency partnerships.",
+      "Dynamic Dreamz became a **Shopify Platinum Partner**, while expanding its capabilities across ecommerce, WordPress and WooCommerce, mobile apps, full-stack development, AI solutions and white-label agency partnerships.",
     image: "/assets/about/timeline/shopify-partner-2025.svg",
     alt: "Dynamic Dreamz becoming a Shopify Platinum Partner in 2026",
     width: 421,

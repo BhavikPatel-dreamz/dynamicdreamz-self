@@ -2,7 +2,12 @@ import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
 
 /**
- * Formats inline tags like `<strong>`, `<b>`, and `<a href="...">` within a text segment.
+ * Parses inline Markdown syntax:
+ * - Links: `[label](url)`
+ * - Bold-italic: `***text***`
+ * - Bold: `**text**`
+ * - Italic: `*text*`
+ *
  * Defaults links to theme red styling matching live accordion content:
  * font-semibold text-[#ad5151] underline hover:no-underline
  */
@@ -10,161 +15,111 @@ function parseInlineFormatting(
   text: string,
   defaultLinkClassName = "font-semibold text-[#ad5151] underline hover:no-underline",
 ): ReactNode {
-  if (
-    !text.includes("<strong") &&
-    !text.includes("<b") &&
-    !text.includes("<a") &&
-    !text.includes("<em") &&
-    !text.includes("<i")
-  ) {
+  if (!text.includes("**") && !text.includes("*") && !text.includes("[")) {
     return text;
   }
 
-  const tagRegex = /(<\/?(?:strong|b|em|i)\b[^>]*>|<a\b[^>]*>|<\/a>)/gi;
-  const rawParts = text.split(tagRegex);
+  const tokenRegex =
+    /(\[[^\]]+\]\([^)]+\)|\*\*\*[^*]+\*\*\*|\*\*[^*]+\*\*|\*[^*]+\*)/g;
+  const rawParts = text.split(tokenRegex);
 
   const elements: ReactNode[] = [];
-  let inLink: { href: string; target?: string; rel?: string; className?: string } | null = null;
-  let linkChildren: ReactNode[] = [];
-  let isBold = false;
-  let isItalic = false;
 
   for (let i = 0; i < rawParts.length; i++) {
     const part = rawParts[i];
     if (!part) continue;
 
-    const lower = part.toLowerCase();
-    if (lower.startsWith("<a")) {
-      const hrefMatch = part.match(/href=["']([^"']*)["']/i);
-      const href = hrefMatch ? hrefMatch[1] : "";
-      const targetMatch = part.match(/target=["']([^"']*)["']/i);
-      const target = targetMatch ? targetMatch[1] : undefined;
-      const relMatch = part.match(/rel=["']([^"']*)["']/i);
-      const rel = relMatch ? relMatch[1] : undefined;
-      const classMatch = part.match(/class(?:Name)?=["']([^"']*)["']/i);
-      const customClass = classMatch ? classMatch[1] : undefined;
-      inLink = { href, target, rel, className: customClass };
-      linkChildren = [];
-      continue;
-    }
+    // Check markdown link: [label](href)
+    const mdLinkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (mdLinkMatch) {
+      const label = mdLinkMatch[1];
+      const rawHref = mdLinkMatch[2].trim();
+      const href =
+        rawHref.startsWith("/") && rawHref.length > 1
+          ? rawHref.replace(/\/+$/, "")
+          : rawHref;
+      const isExternal =
+        href.startsWith("http://") ||
+        href.startsWith("https://") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:");
+      const isAnchor = href.startsWith("#");
+      const key = `md-link-${i}`;
 
-    if (lower === "</a>") {
-      if (inLink) {
-        const key = `link-${i}`;
-        const href =
-          inLink.href.startsWith("/") && inLink.href.length > 1
-            ? inLink.href.replace(/\/+$/, "")
-            : inLink.href;
-        const linkClass = inLink.className ?? defaultLinkClassName;
-        const isExternal =
-          inLink.href.startsWith("http://") ||
-          inLink.href.startsWith("https://") ||
-          inLink.href.startsWith("mailto:") ||
-          inLink.href.startsWith("tel:");
-        const isAnchor = href.startsWith("#");
-
-        if (isExternal) {
-          elements.push(
-            <a
-              className={linkClass}
-              href={href}
-              key={key}
-              rel={inLink.rel ?? "noopener noreferrer"}
-              target={inLink.target ?? "_blank"}
-            >
-              {linkChildren}
-            </a>,
-          );
-        } else if (isAnchor) {
-          elements.push(
-            <a className={linkClass} href={href} key={key}>
-              {linkChildren}
-            </a>,
-          );
-        } else {
-          elements.push(
-            <Link className={linkClass} href={href} key={key}>
-              {linkChildren}
-            </Link>,
-          );
-        }
-        inLink = null;
-        linkChildren = [];
+      if (isExternal) {
+        elements.push(
+          <a
+            className={defaultLinkClassName}
+            href={href}
+            key={key}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {label}
+          </a>,
+        );
+      } else if (isAnchor) {
+        elements.push(
+          <a className={defaultLinkClassName} href={href} key={key}>
+            {label}
+          </a>,
+        );
+      } else {
+        elements.push(
+          <Link className={defaultLinkClassName} href={href} key={key}>
+            {label}
+          </Link>,
+        );
       }
       continue;
     }
 
-    if (lower === "<strong>" || lower === "<b>") {
-      isBold = true;
-      continue;
-    }
-
-    if (lower === "</strong>" || lower === "</b>") {
-      isBold = false;
-      continue;
-    }
-
-    if (lower === "<em>" || lower === "<i>") {
-      isItalic = true;
-      continue;
-    }
-
-    if (lower === "</em>" || lower === "</i>") {
-      isItalic = false;
-      continue;
-    }
-
-    // Text node
-    let textNode: ReactNode = <Fragment key={`txt-${i}`}>{part}</Fragment>;
-    if (isBold && isItalic) {
-      textNode = (
-        <strong className="font-semibold text-ink italic" key={`bold-italic-${i}`}>
-          {part}
-        </strong>
+    // Check markdown bold-italic: ***text***
+    const mdBoldItalicMatch = part.match(/^\*\*\*([^*]+)\*\*\*$/);
+    if (mdBoldItalicMatch) {
+      elements.push(
+        <strong className="font-semibold text-ink italic" key={`md-bi-${i}`}>
+          {mdBoldItalicMatch[1]}
+        </strong>,
       );
-    } else if (isBold) {
-      textNode = (
-        <strong className="font-semibold text-ink" key={`bold-${i}`}>
-          {part}
-        </strong>
-      );
-    } else if (isItalic) {
-      textNode = (
-        <em className="italic" key={`italic-${i}`}>
-          {part}
-        </em>
-      );
+      continue;
     }
 
-    if (inLink) {
-      linkChildren.push(textNode);
-    } else {
-      elements.push(textNode);
+    // Check markdown bold: **text**
+    const mdBoldMatch = part.match(/^\*\*([^*]+)\*\*$/);
+    if (mdBoldMatch) {
+      elements.push(
+        <strong className="font-semibold text-ink" key={`md-b-${i}`}>
+          {mdBoldMatch[1]}
+        </strong>,
+      );
+      continue;
     }
-  }
 
-  // Flush unclosed link if malformed HTML was passed
-  if (inLink && linkChildren.length > 0) {
-    const href =
-      inLink.href.startsWith("/") && inLink.href.length > 1
-        ? inLink.href.replace(/\/+$/, "")
-        : inLink.href;
-    const linkClass = inLink.className ?? defaultLinkClassName;
-    elements.push(
-      <Link className={linkClass} href={href} key="unclosed-link">
-        {linkChildren}
-      </Link>,
-    );
+    // Check markdown italic: *text*
+    const mdItalicMatch = part.match(/^\*([^*]+)\*$/);
+    if (mdItalicMatch) {
+      elements.push(
+        <em className="italic" key={`md-i-${i}`}>
+          {mdItalicMatch[1]}
+        </em>,
+      );
+      continue;
+    }
+
+    // Plain text node
+    elements.push(<Fragment key={`txt-${i}`}>{part}</Fragment>);
   }
 
   return <>{elements}</>;
 }
 
 /**
- * Formats a string containing `<br>`, `<br/>`, or `<br />` HTML tags into React JSX.
- * When `brClassName` is provided, applies that class to the `<br />` element
+ * Formats a string or string array into React JSX.
+ * When `text` is a string array (`string[]`), renders line breaks between elements.
+ * When `brClassName` is provided, applies that class to the line break element
  * (e.g. "max-[1199px]:hidden" or "max-[992px]:hidden").
- * Also supports inline `<strong>`, `<b>`, and `<a>` tags with live styling.
+ * Also supports inline Markdown formatting (`**bold**`, `***bold-italic***`, `*italic*`, `[label](url)`).
  */
 export function formatBrText(
   text: string | readonly string[] | undefined | null,
@@ -173,13 +128,13 @@ export function formatBrText(
 ): ReactNode {
   if (!text) return "";
   const parts: readonly string[] =
-    typeof text === "string" ? text.split(/<br\s*\/?>/i) : text;
+    typeof text === "string" ? [text] : text;
 
   if (
     parts.length === 1 &&
-    !parts[0].includes("<strong") &&
-    !parts[0].includes("<b") &&
-    !parts[0].includes("<a")
+    !parts[0].includes("**") &&
+    !parts[0].includes("*") &&
+    !parts[0].includes("[")
   ) {
     return parts[0];
   }
@@ -197,3 +152,5 @@ export function formatBrText(
     </>
   );
 }
+
+export const formatText = formatBrText;
