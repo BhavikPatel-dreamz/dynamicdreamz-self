@@ -10,10 +10,13 @@ the local component/asset audit.
 ## Representative Routes And Viewports
 
 The route family contains one shared detail template with content-driven
-variations across all 116 blog posts. These routes cover the current rendering contract:
+variations across all 119 blog posts. These routes cover the current rendering contract:
 
 | Variant | Route | Reason selected |
 | --- | --- | --- |
+| Latest AI SEO article | `shopify-chatgpt-seo` | Live October 2026 post, product page AI optimization, FAQ, author card |
+| AI Overviews article | `optimize-shopify-store-for-ai-overviews` | Live October 2026 post, Merchant Center & AI Overviews, FAQ |
+| AI Search SEO article | `shopify-ai-seo` | Live October 2026 post, generative engine optimization, structured data |
 | Current article | `shopify-development-tools` | Live September 2026 post, tools stack, code snippets, author card, and related blogs |
 | Standard article | `free-vs-paid-shopify-themes` | Current metadata, table, FAQ, author card, and post navigation |
 | Image-heavy article | `product-bundling-in-shopify` | Multiple inline images, nested headings, lists, FAQ, and two-way post navigation |
@@ -31,7 +34,7 @@ Local captures are stored in `docs/visual-captures/blog-detail-pages/local/`.
 
 ## Sources Inspected
 
-- Live XML inventory: `https://www.dynamicdreamz.com/post-sitemap.xml` (116 total post URLs audited and synced)
+- Live XML inventory: `https://www.dynamicdreamz.com/post-sitemap.xml` (119 total post URLs audited and synced)
 - Live rendered pages and View Page Source for representative routes
 - Live theme CSS: `https://www.dynamicdreamz.com/wp-content/uploads/dd-css/post-single-8331073dd8.css`
 - Live DOM structure of `.single-blog.dd` and `.entry-header`
