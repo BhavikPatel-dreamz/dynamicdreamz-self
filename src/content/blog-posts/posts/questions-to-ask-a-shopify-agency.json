@@ -8,16 +8,308 @@
   "categoryValue": "faqs",
   "categoryHref": "/blogs?category=faqs",
   "featuredImage": null,
-  "excerpt": "Picking the wrong Shopify agency can cost you so much, not just in terms of money, but also in time, where you\u2019ll miss launches, and you will be stuck with a store that doesn't scale when you need it to....",
+  "excerpt": "Picking the wrong Shopify agency can cost you so much, not just in terms of money, but also in time, where you’ll miss launches, and you will be stuck with a store that doesn't scale when you need it to....",
   "author": {
     "name": "Rizwan Shaikh",
     "role": "Content Team Lead",
-    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that\u2019s not just readable but also useful, relevant, and built to drive real business outcomes.",
+    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that’s not just readable but also useful, relevant, and built to drive real business outcomes.",
     "image": "/assets/blog/authors/rizwanshaikh.webp",
     "linkedin": "https://in.linkedin.com/company/dynamic-dreamz-websolutions"
   },
-  "contentBeforeToc": "<p>Picking the wrong Shopify agency can cost you so much, not just in terms of money, but also in time, where you\u2019ll miss launches, and you will be stuck with a store that doesn\u2019t scale when you need it to. But the good news is that you don\u2019t need to be technical to vet an agency well. You just need to ask the right questions.</p>\n<p>So, have a look at these 15 questions [which are grouped by category] you should ask before you sign anything.</p>",
-  "contentAfterToc": "<h3 id=\"Certifications_and_Partner_Status\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#Certifications_and_Partner_Status\"></span>Certifications and Partner Status<span class=\"ez-toc-section-end\"></span></h3>\n<ol>\n<li>What\u2019s your Shopify Partner tier?</li>\n<li>Do your developers hold Shopify Verified Skills badges?</li>\n<li>Are you a Shopify Plus Partner, if that\u2019s relevant to us?</li>\n</ol>\n<p>Shopify ranks partners from Registered up to Platinum, based on experience and verified skills. Higher tiers generally signal deeper, proven expertise.</p>\n<p>These come from proctored assessments through Shopify Academy and confirm real, tested knowledge, not just self-reported experience.</p>\n<p>If you\u2019re on or considering Shopify Plus, this matters. Not every agency that does standard Shopify work is equipped for Plus-level complexity.</p>\n<h3 id=\"Technical_Capability\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#Technical_Capability\"></span>Technical Capability<span class=\"ez-toc-section-end\"></span></h3>\n<ol>\n<li>What\u2019s your experience with Liquid and Shopify\u2019s theme architecture?</li>\n<li>Can you build custom Shopify apps, or only customize existing ones?</li>\n<li>How do you approach performance and Core Web Vitals?</li>\n</ol>\n<p>Ask for specifics, not just \u201cwe know Shopify.\u201d Look for depth in Online Store 2.0, sections, and metafields.</p>\n<p>This tells you whether they can solve problems unique to your business or only what\u2019s already in the App Store.</p>\n<p>A good agency should have a clear process for keeping your store fast, not just a vague \u201cwe optimize images.\u201d</p>\n<h3 id=\"Integrations\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#Integrations\"></span>Integrations<span class=\"ez-toc-section-end\"></span></h3>\n<ol>\n<li>What systems have you integrated with before?</li>\n<li>How do you handle API rate limits and data sync issues?</li>\n</ol>\n<p>ERP, CRM, PIM, accounting, or marketplace integrations all require different expertise. Ask for real examples relevant to your stack.</p>\n<p>This question separates agencies with real integration experience from those who\u2019ve only done surface-level work.</p>\n<h3 id=\"QA_and_Process\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#QA_and_Process\"></span>QA and Process<span class=\"ez-toc-section-end\"></span></h3>\n<ol>\n<li>What does your QA process look like before launch?</li>\n<li>How do you handle testing after updates or new features go live?</li>\n<li>What\u2019s your project management process?</li>\n</ol>\n<p>A clear answer, cross-browser testing, staging environments, checklists, is a good sign. A vague one isn\u2019t.</p>\n<p>Stores change constantly. Ask how they catch issues before customers do.</p>\n<p>You want visibility into timelines, milestones, and who\u2019s responsible for what.</p>\n<h3 id=\"Support\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#Support\"></span>Support<span class=\"ez-toc-section-end\"></span></h3>\n<ol>\n<li>What happens after launch?</li>\n<li>How do you handle urgent issues, like a broken checkout during a sale?</li>\n</ol>\n<p>Some agencies disappear once the store goes live. Ask about ongoing support, response times, and what\u2019s included versus what\u2019s billed separately.</p>\n<p>This reveals a lot about how they\u2019ll treat you when something actually goes wrong.</p>\n<h3 id=\"Previous_Work\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#Previous_Work\"></span>Previous Work<span class=\"ez-toc-section-end\"></span></h3>\n<ol>\n<li>Can you share case studies or references from stores similar to ours?</li>\n<li>What measurable results have you delivered for past clients?</li>\n</ol>\n<p>Similar size, industry, or complexity matters more than a long client list.</p>\n<p>Look for real numbers, like conversion lift, speed improvements, or successful migrations, not just \u201cwe did great work.\u201d</p>\n<h3 id=\"Putting_It_Together\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#Putting_It_Together\"></span>Putting It Together<span class=\"ez-toc-section-end\"></span></h3>\n<p>You don\u2019t need every answer to be perfect. But patterns matter. If an agency is vague on QA, dodges questions about past results, or can\u2019t explain their integration experience clearly, treat that as a signal.</p>\n<p>The right Shopify agency should be able to answer all 15 of these clearly and specifically, not with generic marketing language.</p>\n<p><b>Not sure how to evaluate the answers you get?</b></p>\n<p>A quick conversation with a <a href=\"/shopify-development-agency\" rel=\"dofollow\">Shopify development agency</a> that\u2019s been through this from both sides can help you separate the strong answers from the rehearsed ones.</p>",
+  "contentBeforeToc": [
+    {
+      "type": "paragraph",
+      "children": [
+        "Picking the wrong Shopify agency can cost you so much, not just in terms of money, but also in time, where you’ll miss launches, and you will be stuck with a store that doesn’t scale when you need it to. But the good news is that you don’t need to be technical to vet an agency well. You just need to ask the right questions."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "So, have a look at these 15 questions [which are grouped by category] you should ask before you sign anything."
+      ]
+    }
+  ],
+  "contentAfterToc": [
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Certifications_and_Partner_Status",
+      "text": "Certifications and Partner Status"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        {
+          "content": [
+            "What’s your Shopify Partner tier?"
+          ]
+        },
+        {
+          "content": [
+            "Do your developers hold Shopify Verified Skills badges?"
+          ]
+        },
+        {
+          "content": [
+            "Are you a Shopify Plus Partner, if that’s relevant to us?"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Shopify ranks partners from Registered up to Platinum, based on experience and verified skills. Higher tiers generally signal deeper, proven expertise."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "These come from proctored assessments through Shopify Academy and confirm real, tested knowledge, not just self-reported experience."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "If you’re on or considering Shopify Plus, this matters. Not every agency that does standard Shopify work is equipped for Plus-level complexity."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Technical_Capability",
+      "text": "Technical Capability"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        {
+          "content": [
+            "What’s your experience with Liquid and Shopify’s theme architecture?"
+          ]
+        },
+        {
+          "content": [
+            "Can you build custom Shopify apps, or only customize existing ones?"
+          ]
+        },
+        {
+          "content": [
+            "How do you approach performance and Core Web Vitals?"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Ask for specifics, not just “we know Shopify.” Look for depth in Online Store 2.0, sections, and metafields."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "This tells you whether they can solve problems unique to your business or only what’s already in the App Store."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "A good agency should have a clear process for keeping your store fast, not just a vague “we optimize images.”"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Integrations",
+      "text": "Integrations"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        {
+          "content": [
+            "What systems have you integrated with before?"
+          ]
+        },
+        {
+          "content": [
+            "How do you handle API rate limits and data sync issues?"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "ERP, CRM, PIM, accounting, or marketplace integrations all require different expertise. Ask for real examples relevant to your stack."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "This question separates agencies with real integration experience from those who’ve only done surface-level work."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "QA_and_Process",
+      "text": "QA and Process"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        {
+          "content": [
+            "What does your QA process look like before launch?"
+          ]
+        },
+        {
+          "content": [
+            "How do you handle testing after updates or new features go live?"
+          ]
+        },
+        {
+          "content": [
+            "What’s your project management process?"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "A clear answer, cross-browser testing, staging environments, checklists, is a good sign. A vague one isn’t."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Stores change constantly. Ask how they catch issues before customers do."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "You want visibility into timelines, milestones, and who’s responsible for what."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Support",
+      "text": "Support"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        {
+          "content": [
+            "What happens after launch?"
+          ]
+        },
+        {
+          "content": [
+            "How do you handle urgent issues, like a broken checkout during a sale?"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Some agencies disappear once the store goes live. Ask about ongoing support, response times, and what’s included versus what’s billed separately."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "This reveals a lot about how they’ll treat you when something actually goes wrong."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Previous_Work",
+      "text": "Previous Work"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        {
+          "content": [
+            "Can you share case studies or references from stores similar to ours?"
+          ]
+        },
+        {
+          "content": [
+            "What measurable results have you delivered for past clients?"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Similar size, industry, or complexity matters more than a long client list."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Look for real numbers, like conversion lift, speed improvements, or successful migrations, not just “we did great work.”"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Putting_It_Together",
+      "text": "Putting It Together"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "You don’t need every answer to be perfect. But patterns matter. If an agency is vague on QA, dodges questions about past results, or can’t explain their integration experience clearly, treat that as a signal."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "The right Shopify agency should be able to answer all 15 of these clearly and specifically, not with generic marketing language."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Not sure how to evaluate the answers you get?",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "A quick conversation with a ",
+        {
+          "type": "link",
+          "href": "/shopify-development-agency",
+          "text": "Shopify development agency",
+          "rel": "dofollow"
+        },
+        " that’s been through this from both sides can help you separate the strong answers from the rehearsed ones."
+      ]
+    }
+  ],
   "toc": [
     {
       "label": "Certifications and Partner Status",

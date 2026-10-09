@@ -34,6 +34,65 @@ export type BlogPostSeo = {
   description: string;
 };
 
+export type BlogInlineNode =
+  | string
+  | {
+      type: "text";
+      text: string;
+      bold?: boolean;
+      italic?: boolean;
+    }
+  | {
+      type: "link";
+      href: string;
+      text: string;
+      bold?: boolean;
+      italic?: boolean;
+      target?: string;
+      rel?: string;
+    }
+  | {
+      type: "break";
+    };
+
+export type BlogListItem = {
+  content: (string | BlogInlineNode)[];
+  children?: BlogListItem[];
+};
+
+export type BlogContentBlock =
+  | {
+      type: "heading";
+      level: 2 | 3 | 4 | 5;
+      id?: string;
+      text: string;
+    }
+  | {
+      type: "paragraph";
+      children: (string | BlogInlineNode)[];
+    }
+  | {
+      type: "list";
+      ordered?: boolean;
+      items: BlogListItem[];
+    }
+  | {
+      type: "image";
+      src: string;
+      alt: string;
+      width: number;
+      height: number;
+      caption?: string;
+    }
+  | {
+      type: "table";
+      headers?: (string | BlogInlineNode)[];
+      rows: (string | BlogInlineNode)[][][];
+    }
+  | {
+      type: "hr";
+    };
+
 export type BlogPostDetail = {
   slug: string;
   title: string;
@@ -46,8 +105,8 @@ export type BlogPostDetail = {
   featuredImage: BlogImage | null;
   excerpt: string;
   author: BlogAuthor | null;
-  contentBeforeToc: string;
-  contentAfterToc: string;
+  contentBeforeToc: BlogContentBlock[];
+  contentAfterToc: BlogContentBlock[];
   toc: BlogTocItem[];
   faqs: BlogFaq[];
   previous: BlogPostNavigationItem | null;

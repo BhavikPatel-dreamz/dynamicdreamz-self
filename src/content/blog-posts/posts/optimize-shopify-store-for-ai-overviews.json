@@ -16,8 +16,154 @@
     "image": "/assets/blog/authors/rizwanshaikh.webp",
     "linkedin": "https://in.linkedin.com/company/dynamic-dreamz-websolutions"
   },
-  "contentBeforeToc": "<p>People on the web are talking about things such as Shopify AI search and e-commerce AI SEO, just because they want to optimize their Shopify store for AI overviews.</p>\n<p>Because, you know, these days, even your #1 organic ranking can’t automatically place you into Google&#8217;s AI Overviews. And, as per research from Authoritas, only 16.7% overlap between AI Overview citations and traditional organic rankings in ecommerce.</p>\n<p>So, what has changed, and why is optimizing your Shopify store for Google AI Overviews highly crucial? We’re gonna find that out today, because Google’s AI has started making its own citation decisions for a much wider pool of sources. And here’s what actually influences whether it picks your store…</p>",
-  "contentAfterToc": "<h3 id=\"What_Makes_AI_Overviews_Different_from_Regular_Rankings\">What Makes AI Overviews Different from Regular Rankings</h3>\n<p>AI Overviews focus on context and answer relevance, not keyword positioning. You can&#8217;t buy this placement the way you can with ads, and ranking #1 traditionally is no guarantee. You earn it through content quality, structured data, and genuine topical depth, closer to how a knowledgeable person would explain something than how a page is optimized to rank.</p>\n<h3 id=\"Sync_Your_Catalog_to_Google_Merchant_Center\">Sync Your Catalog to Google Merchant Center</h3>\n<p>This is foundational and often skipped. Connect your Shopify catalog through the Google &amp; YouTube sales channel so your product data flows into Merchant Center properly. Stores with complete schema markup and Merchant Center integration are meaningfully more likely to appear in AI-powered product recommendations than stores relying on page content alone.</p>\n<h3 id=\"Rewrite_Product_Titles_for_Clarity_Not_Keywords\">Rewrite Product Titles for Clarity, Not Keywords</h3>\n<p>Traditional SEO rewarded keyword-packed titles: &#8220;Women&#8217;s Winter Parka Waterproof Insulated Coat Black Hooded Warm Jacket.&#8221; AI Overviews work differently; clarity about what the product actually is matters more than keyword density.</p>\n<p>A title like &#8220;Patagonia Down Parka, Waterproof, 600-Fill, Hooded&#8221; gives the AI exactly what it needs: brand, product type, and the features that actually differentiate it.</p>\n<h3 id=\"Write_Descriptions_That_Answer_Not_Just_List\">Write Descriptions That Answer, Not Just List</h3>\n<p>Instead of specs alone, describe when, where, and how someone would actually use the product. &#8220;Waterproof hiking boots that won&#8217;t slip on wet rocks&#8221; tells the AI more than &#8220;premium leather boots, size 9&#8221; ever could. This matters most for long-tail, question-based searches, where AI systems are looking for natural explanations, not optimized copy.</p>\n<h3 id=\"Add_FAQ_Schema_to_Product_Pages\">Add FAQ Schema to Product Pages</h3>\n<p>FAQ schema structures question-and-answer pairs directly into your product pages, making it far easier for AI systems to surface your products when shoppers ask specific questions. This is one of the highest-leverage, lowest-effort additions you can make.</p>\n<h3 id=\"Fix_Core_Web_Vitals\">Fix Core Web Vitals</h3>\n<p>This is a confirmed Google ranking factor tied directly to user experience, and it still matters in an AI-driven results environment. A slow, unstable page is working against you at every stage of this process, not just traditional ranking.</p>\n<h3 id=\"Build_Real_Topical_Authority\">Build Real Topical Authority</h3>\n<p>AI Overviews reward genuine expertise and helpfulness over surface-level content. This isn&#8217;t a shortcut discipline; there&#8217;s no plugin that fakes real depth. Supporting content that actually explains your product category well — buying guides, comparison content, honest FAQs — builds the kind of authority AI systems are designed to recognize and cite.</p>\n<h3 id=\"Dont_Try_to_Fix_Everything_at_Once\">Don't Try to Fix Everything at Once</h3>\n<p>Start with your top-selling products: complete Merchant Center sync, clear titles, answer-style descriptions, and FAQ schema. Expand from there once you see which changes actually move the needle for your specific catalog.</p>\n<h3 id=\"The_Bottom_Line\">The Bottom Line</h3>\n<p>Getting cited in an AI Overview is effectively occupying the top position on the page, but it&#8217;s earned differently than a traditional ranking. Precision, clarity, and genuine product depth matter more here than classic SEO tactics ever did.</p>\n<p>For the fuller structured-data and entity framework behind all of this, see our guide to Shopify AI SEO. And if you&#8217;d rather have this implemented properly than DIY it across your catalog, our <a href=\"/shopify-development-agency\">Shopify expert team</a> handles exactly this kind of AI-visibility work.</p>",
+  "contentBeforeToc": [
+    {
+      "type": "paragraph",
+      "children": [
+        "People on the web are talking about things such as Shopify AI search and e-commerce AI SEO, just because they want to optimize their Shopify store for AI overviews."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Because, you know, these days, even your #1 organic ranking can’t automatically place you into Google’s AI Overviews. And, as per research from Authoritas, only 16.7% overlap between AI Overview citations and traditional organic rankings in ecommerce."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "So, what has changed, and why is optimizing your Shopify store for Google AI Overviews highly crucial? We’re gonna find that out today, because Google’s AI has started making its own citation decisions for a much wider pool of sources. And here’s what actually influences whether it picks your store…"
+      ]
+    }
+  ],
+  "contentAfterToc": [
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "What_Makes_AI_Overviews_Different_from_Regular_Rankings",
+      "text": "What Makes AI Overviews Different from Regular Rankings"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "AI Overviews focus on context and answer relevance, not keyword positioning. You can’t buy this placement the way you can with ads, and ranking #1 traditionally is no guarantee. You earn it through content quality, structured data, and genuine topical depth, closer to how a knowledgeable person would explain something than how a page is optimized to rank."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Sync_Your_Catalog_to_Google_Merchant_Center",
+      "text": "Sync Your Catalog to Google Merchant Center"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "This is foundational and often skipped. Connect your Shopify catalog through the Google & YouTube sales channel so your product data flows into Merchant Center properly. Stores with complete schema markup and Merchant Center integration are meaningfully more likely to appear in AI-powered product recommendations than stores relying on page content alone."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Rewrite_Product_Titles_for_Clarity_Not_Keywords",
+      "text": "Rewrite Product Titles for Clarity, Not Keywords"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Traditional SEO rewarded keyword-packed titles: “Women’s Winter Parka Waterproof Insulated Coat Black Hooded Warm Jacket.” AI Overviews work differently; clarity about what the product actually is matters more than keyword density."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "A title like “Patagonia Down Parka, Waterproof, 600-Fill, Hooded” gives the AI exactly what it needs: brand, product type, and the features that actually differentiate it."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Write_Descriptions_That_Answer_Not_Just_List",
+      "text": "Write Descriptions That Answer, Not Just List"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Instead of specs alone, describe when, where, and how someone would actually use the product. “Waterproof hiking boots that won’t slip on wet rocks” tells the AI more than “premium leather boots, size 9” ever could. This matters most for long-tail, question-based searches, where AI systems are looking for natural explanations, not optimized copy."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Add_FAQ_Schema_to_Product_Pages",
+      "text": "Add FAQ Schema to Product Pages"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "FAQ schema structures question-and-answer pairs directly into your product pages, making it far easier for AI systems to surface your products when shoppers ask specific questions. This is one of the highest-leverage, lowest-effort additions you can make."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Fix_Core_Web_Vitals",
+      "text": "Fix Core Web Vitals"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "This is a confirmed Google ranking factor tied directly to user experience, and it still matters in an AI-driven results environment. A slow, unstable page is working against you at every stage of this process, not just traditional ranking."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Build_Real_Topical_Authority",
+      "text": "Build Real Topical Authority"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "AI Overviews reward genuine expertise and helpfulness over surface-level content. This isn’t a shortcut discipline; there’s no plugin that fakes real depth. Supporting content that actually explains your product category well — buying guides, comparison content, honest FAQs — builds the kind of authority AI systems are designed to recognize and cite."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Dont_Try_to_Fix_Everything_at_Once",
+      "text": "Don't Try to Fix Everything at Once"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Start with your top-selling products: complete Merchant Center sync, clear titles, answer-style descriptions, and FAQ schema. Expand from there once you see which changes actually move the needle for your specific catalog."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "The_Bottom_Line",
+      "text": "The Bottom Line"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Getting cited in an AI Overview is effectively occupying the top position on the page, but it’s earned differently than a traditional ranking. Precision, clarity, and genuine product depth matter more here than classic SEO tactics ever did."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "For the fuller structured-data and entity framework behind all of this, see our guide to Shopify AI SEO. And if you’d rather have this implemented properly than DIY it across your catalog, our ",
+        {
+          "type": "link",
+          "href": "/shopify-development-agency",
+          "text": "Shopify expert team"
+        },
+        " handles exactly this kind of AI-visibility work."
+      ]
+    }
+  ],
   "toc": [
     {
       "label": "What Makes AI Overviews Different from Regular Rankings",

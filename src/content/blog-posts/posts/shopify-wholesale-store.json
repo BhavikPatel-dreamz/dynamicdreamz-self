@@ -8,16 +8,195 @@
   "categoryValue": "faqs",
   "categoryHref": "/blogs?category=faqs",
   "featuredImage": null,
-  "excerpt": "A wholesale store isn\u2019t just your retail site with different prices. Buyers expect fast bulk ordering, clear account access, and pricing built around their specific relationship with you, not a generic storefront. Here\u2019s how to actually build that experience.",
+  "excerpt": "A wholesale store isn’t just your retail site with different prices. Buyers expect fast bulk ordering, clear account access, and pricing built around their specific relationship with you, not a generic storefront. Here’s how to actually build that experience.",
   "author": {
     "name": "Rizwan Shaikh",
     "role": "Content Team Lead",
-    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that\u2019s not just readable but also useful, relevant, and built to drive real business outcomes.",
+    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that’s not just readable but also useful, relevant, and built to drive real business outcomes.",
     "image": "/assets/blog/authors/rizwanshaikh.webp",
     "linkedin": "https://in.linkedin.com/company/dynamic-dreamz-websolutions"
   },
-  "contentBeforeToc": "<p>A wholesale store isn\u2019t just your retail site with different prices. Buyers expect fast bulk ordering, clear account access, and pricing built around their specific relationship with you, not a generic storefront. Here\u2019s how to actually build that experience.</p>",
-  "contentAfterToc": "<h3 id=\"Start_With_One_Catalog\">Start With One Catalog</h3><p>Resist the urge to launch with your full product line and every pricing tier at once. Start with a single, simple wholesale catalog, then expand once real buyers are ordering and you understand how they actually behave. This also makes it far easier to catch pricing or access errors before they affect a large group of customers.</p><h3 id=\"Set_Up_Company_Accounts\">Set Up Company Accounts</h3><p>Create company profiles for each wholesale buyer, then assign a main contact who has ordering permission for that account. For businesses with multiple buyers or locations, you can add additional contacts and set specific permissions for each. This is the foundation everything else builds on; pricing, catalogs, and payment terms all attach to the company, not to an individual customer record.</p><h3 id=\"Control_Access\">Control Access</h3><p>Most wholesale stores gate pricing behind a registration or approval process: a signup form, manual approval, or automatic tagging once someone\u2019s approved. Buyers log in through a dedicated wholesale portal, and only then see wholesale pricing and place bulk orders, while retail customers continue seeing standard pricing.</p><p>Avoid showing retail prices anywhere on B2B catalog pages; it creates confusion and undermines the pricing structure you\u2019ve built.</p><h3 id=\"Configure_Customer-Specific_Pricing\">Configure Customer-Specific Pricing</h3><p>Assign catalogs to specific companies or locations, then set pricing within each one: fixed prices per product or variant, tiered volume discounts, or negotiated rates for specific accounts. A good starting structure is cost-plus pricing, a fixed markup over your production cost, which you can refine into segment-specific tiers as you learn more about your buyer mix.</p><h3 id=\"Design_for_Bulk_Ordering\">Design for Bulk Ordering</h3><p>This is where a lot of wholesale stores fall short in their Shopify B2B development. Buyers need to move fast:</p><ul>\n<li><b>Quick-order forms</b> where they can enter SKUs and quantities directly, without clicking into individual product pages</li>\n<li><b>Quantity inputs on collection pages</b>, so buyers can fill a cart in one view rather than one product at a time</li>\n<li><b>Reorder functionality</b>, letting returning buyers repeat a previous order in a single action</li>\n<li><b>Minimum order quantities and quantity rules</b>, tested thoroughly before launch to confirm they trigger correctly at checkout</li>\n</ul><h3 id=\"Build_the_Account_Dashboard\">Build the Account Dashboard</h3><p>Wholesale buyers should see order history, outstanding invoices, account credit, and saved addresses in one place. This isn\u2019t a nice-to-have; self-serve access to this information is a major reason wholesale buyers prefer ordering online over calling a sales rep.</p><h3 id=\"Dont_Forget_Mobile\">Don\u2019t Forget Mobile</h3><p>Wholesale buyers increasingly place orders from a phone or tablet, in a warehouse, on a sales floor, or between meetings. A quick-order form that only works well on desktop will cost you orders.</p><h3 id=\"Test_Before_You_Launch\">Test Before You Launch</h3><p>Before going live, confirm three things specifically: retail pricing is fully hidden or clearly separated from wholesale pricing, quantity rules trigger correctly on a real test order, and any configured payment terms display properly at checkout. This single testing pass catches the vast majority of configuration issues before buyers ever encounter them.</p><h3 id=\"The_Bottom_Line\">The Bottom Line</h3><p>A wholesale store succeeds or fails on operational details buyers actually feel: how fast they can reorder, how clearly pricing is shown, and how little friction stands between deciding to buy and completing the order. Get the account structure and bulk-ordering experience right, and the rest of the store follows naturally.</p><p>Not sure whether your Shopify wholesale development needs fit a standard plan or require Plus? Our comparison of <a href=\"/blogs/shopify-plus-b2b\">Shopify B2B vs Shopify Plus B2B</a> breaks down exactly where the two diverge \u2014 worth checking before you start building.</p>",
+  "contentBeforeToc": [
+    {
+      "type": "paragraph",
+      "children": [
+        "A wholesale store isn’t just your retail site with different prices. Buyers expect fast bulk ordering, clear account access, and pricing built around their specific relationship with you, not a generic storefront. Here’s how to actually build that experience."
+      ]
+    }
+  ],
+  "contentAfterToc": [
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Start_With_One_Catalog",
+      "text": "Start With One Catalog"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Resist the urge to launch with your full product line and every pricing tier at once. Start with a single, simple wholesale catalog, then expand once real buyers are ordering and you understand how they actually behave. This also makes it far easier to catch pricing or access errors before they affect a large group of customers."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Set_Up_Company_Accounts",
+      "text": "Set Up Company Accounts"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Create company profiles for each wholesale buyer, then assign a main contact who has ordering permission for that account. For businesses with multiple buyers or locations, you can add additional contacts and set specific permissions for each. This is the foundation everything else builds on; pricing, catalogs, and payment terms all attach to the company, not to an individual customer record."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Control_Access",
+      "text": "Control Access"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Most wholesale stores gate pricing behind a registration or approval process: a signup form, manual approval, or automatic tagging once someone’s approved. Buyers log in through a dedicated wholesale portal, and only then see wholesale pricing and place bulk orders, while retail customers continue seeing standard pricing."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Avoid showing retail prices anywhere on B2B catalog pages; it creates confusion and undermines the pricing structure you’ve built."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Configure_Customer-Specific_Pricing",
+      "text": "Configure Customer-Specific Pricing"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Assign catalogs to specific companies or locations, then set pricing within each one: fixed prices per product or variant, tiered volume discounts, or negotiated rates for specific accounts. A good starting structure is cost-plus pricing, a fixed markup over your production cost, which you can refine into segment-specific tiers as you learn more about your buyer mix."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Design_for_Bulk_Ordering",
+      "text": "Design for Bulk Ordering"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "This is where a lot of wholesale stores fall short in their Shopify B2B development. Buyers need to move fast:"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Quick-order forms",
+              "bold": true
+            },
+            " where they can enter SKUs and quantities directly, without clicking into individual product pages"
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Quantity inputs on collection pages",
+              "bold": true
+            },
+            ", so buyers can fill a cart in one view rather than one product at a time"
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Reorder functionality",
+              "bold": true
+            },
+            ", letting returning buyers repeat a previous order in a single action"
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Minimum order quantities and quantity rules",
+              "bold": true
+            },
+            ", tested thoroughly before launch to confirm they trigger correctly at checkout"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Build_the_Account_Dashboard",
+      "text": "Build the Account Dashboard"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Wholesale buyers should see order history, outstanding invoices, account credit, and saved addresses in one place. This isn’t a nice-to-have; self-serve access to this information is a major reason wholesale buyers prefer ordering online over calling a sales rep."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Dont_Forget_Mobile",
+      "text": "Don’t Forget Mobile"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Wholesale buyers increasingly place orders from a phone or tablet, in a warehouse, on a sales floor, or between meetings. A quick-order form that only works well on desktop will cost you orders."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Test_Before_You_Launch",
+      "text": "Test Before You Launch"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Before going live, confirm three things specifically: retail pricing is fully hidden or clearly separated from wholesale pricing, quantity rules trigger correctly on a real test order, and any configured payment terms display properly at checkout. This single testing pass catches the vast majority of configuration issues before buyers ever encounter them."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "The_Bottom_Line",
+      "text": "The Bottom Line"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "A wholesale store succeeds or fails on operational details buyers actually feel: how fast they can reorder, how clearly pricing is shown, and how little friction stands between deciding to buy and completing the order. Get the account structure and bulk-ordering experience right, and the rest of the store follows naturally."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Not sure whether your Shopify wholesale development needs fit a standard plan or require Plus? Our comparison of ",
+        {
+          "type": "link",
+          "href": "/blogs/shopify-plus-b2b",
+          "text": "Shopify B2B vs Shopify Plus B2B"
+        },
+        " breaks down exactly where the two diverge — worth checking before you start building."
+      ]
+    }
+  ],
   "toc": [
     {
       "label": "Start With One Catalog",
@@ -50,7 +229,7 @@
       "level": 2
     },
     {
-      "label": "Don\u2019t Forget Mobile",
+      "label": "Don’t Forget Mobile",
       "href": "#Dont_Forget_Mobile",
       "level": 2
     },

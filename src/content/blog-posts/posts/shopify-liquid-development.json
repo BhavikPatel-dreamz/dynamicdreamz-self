@@ -12,12 +12,127 @@
   "author": {
     "name": "Rizwan Shaikh",
     "role": "Content Team Lead",
-    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that\u2019s not just readable but also useful, relevant, and built to drive real business outcomes.",
+    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that’s not just readable but also useful, relevant, and built to drive real business outcomes.",
     "image": "/assets/blog/authors/rizwanshaikh.webp",
     "linkedin": "https://in.linkedin.com/company/dynamic-dreamz-websolutions"
   },
-  "contentBeforeToc": "<p>Liquid is what makes a Shopify store more than a static template. It\u2019s the templating language that connects your store\u2019s data, products, prices, inventory, and customer info to what actually displays on the page. Understanding what Liquid can do helps you know what\u2019s realistic to ask for, and why some requests take longer than others.</p>",
-  "contentAfterToc": "<h3 id=\"What_Liquid_Actually_Is\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#What_Liquid_Actually_Is\"></span>What Liquid Actually Is<span class=\"ez-toc-section-end\"></span></h3>\n<p>In simple terms, Liquid is a bridge between your store\u2019s back-end data and the front-end experience customers see. It pulls in dynamic content, like a product\u2019s price or a customer\u2019s name, and displays it correctly, without needing a full custom rebuild every time something changes. If you\u2019ve ever wondered how a product page automatically shows the right image, price, and availability for whatever item someone\u2019s viewing, that\u2019s Liquid at work.</p>\n<h3 id=\"Templates\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#Templates\"></span>Templates<span class=\"ez-toc-section-end\"></span></h3>\n<p>Every page type on your store \u2014 product pages, collections, cart, blog posts \u2014 is built from a Liquid template. Developers can modify these templates to change what information displays, how it\u2019s organized, and how it behaves. This is the foundational layer: get the template right, and everything built on top of it works properly.</p>\n<h3 id=\"Sections\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#Sections\"></span>Sections<span class=\"ez-toc-section-end\"></span></h3>\n<p>Since Shopify\u2019s Online Store 2.0 update, sections aren\u2019t limited to the homepage anymore. Developers can build sections for product pages, collections, and blog templates too, and merchants can rearrange them without touching code. This is why a well-built theme lets you drag and drop content blocks yourself, while a poorly built one locks you into a fixed layout. Good section architecture is often the difference between a store that\u2019s easy to update and one that needs a developer for every small change.</p>\n<h3 id=\"Product_Experiences\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#Product_Experiences\"></span>Product Experiences<span class=\"ez-toc-section-end\"></span></h3>\n<p>Liquid enables a lot of what makes product pages actually useful: pulling in technical specs or size guides from metaobjects, displaying real-time inventory and pricing, and building custom features like bundle builders or product configurators directly into the theme. This matters because features built natively into Liquid tend to load faster and cost less to maintain than the same functionality bolted on through third-party apps.</p>\n<h3 id=\"Dynamic_Storefront_Functionality\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#Dynamic_Storefront_Functionality\"></span>Dynamic Storefront Functionality<span class=\"ez-toc-section-end\"></span></h3>\n<p>Beyond individual pages, Liquid powers store-wide dynamic behavior: personalized content based on customer data, conditional logic (showing different content depending on cart contents or customer status), and custom shipping or promotional messaging. This is where a lot of \u201csmart\u201d store behavior actually lives: logic that responds to who\u2019s shopping and what they\u2019re doing, not just static content.</p>\n<h3 id=\"Why_This_Matters_for_App_Costs\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#Why_This_Matters_for_App_Costs\"></span>Why This Matters for App Costs<span class=\"ez-toc-section-end\"></span></h3>\n<p>Every feature built into your theme through Liquid is one less app subscription and one less external script slowing your store down. Replacing a handful of mid-tier apps with native Liquid sections can meaningfully cut both monthly costs and page weight, apps that layer scripts onto every page add up fast, both in dollars and in load time.</p>\n<h3 id=\"What_This_Means_for_You\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#What_This_Means_for_You\"></span>What This Means for You<span class=\"ez-toc-section-end\"></span></h3>\n<p>You don\u2019t need to understand Liquid syntax to make good decisions about your store. But knowing what it can do helps you ask better questions: is this feature something Liquid can handle natively, or does it genuinely need an app? Is a slow page a Liquid problem, or an app problem? A developer who knows Liquid well can usually build functionality directly into your theme \u2014 cleaner, faster, and cheaper long-term than stacking apps on top of a generic setup.</p>\n<p><b>Curious what\u2019s actually possible for your store?</b></p>\n<p>Our <a href=\"/shopify-development-agency\" rel=\"dofollow\">Shopify development</a> team can look at what you\u2019re trying to build and tell you honestly whether it\u2019s a native Liquid solution or something that needs a different approach.</p>",
+  "contentBeforeToc": [
+    {
+      "type": "paragraph",
+      "children": [
+        "Liquid is what makes a Shopify store more than a static template. It’s the templating language that connects your store’s data, products, prices, inventory, and customer info to what actually displays on the page. Understanding what Liquid can do helps you know what’s realistic to ask for, and why some requests take longer than others."
+      ]
+    }
+  ],
+  "contentAfterToc": [
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "What_Liquid_Actually_Is",
+      "text": "What Liquid Actually Is"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "In simple terms, Liquid is a bridge between your store’s back-end data and the front-end experience customers see. It pulls in dynamic content, like a product’s price or a customer’s name, and displays it correctly, without needing a full custom rebuild every time something changes. If you’ve ever wondered how a product page automatically shows the right image, price, and availability for whatever item someone’s viewing, that’s Liquid at work."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Templates",
+      "text": "Templates"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Every page type on your store — product pages, collections, cart, blog posts — is built from a Liquid template. Developers can modify these templates to change what information displays, how it’s organized, and how it behaves. This is the foundational layer: get the template right, and everything built on top of it works properly."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Sections",
+      "text": "Sections"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Since Shopify’s Online Store 2.0 update, sections aren’t limited to the homepage anymore. Developers can build sections for product pages, collections, and blog templates too, and merchants can rearrange them without touching code. This is why a well-built theme lets you drag and drop content blocks yourself, while a poorly built one locks you into a fixed layout. Good section architecture is often the difference between a store that’s easy to update and one that needs a developer for every small change."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Product_Experiences",
+      "text": "Product Experiences"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Liquid enables a lot of what makes product pages actually useful: pulling in technical specs or size guides from metaobjects, displaying real-time inventory and pricing, and building custom features like bundle builders or product configurators directly into the theme. This matters because features built natively into Liquid tend to load faster and cost less to maintain than the same functionality bolted on through third-party apps."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Dynamic_Storefront_Functionality",
+      "text": "Dynamic Storefront Functionality"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Beyond individual pages, Liquid powers store-wide dynamic behavior: personalized content based on customer data, conditional logic (showing different content depending on cart contents or customer status), and custom shipping or promotional messaging. This is where a lot of “smart” store behavior actually lives: logic that responds to who’s shopping and what they’re doing, not just static content."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Why_This_Matters_for_App_Costs",
+      "text": "Why This Matters for App Costs"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Every feature built into your theme through Liquid is one less app subscription and one less external script slowing your store down. Replacing a handful of mid-tier apps with native Liquid sections can meaningfully cut both monthly costs and page weight, apps that layer scripts onto every page add up fast, both in dollars and in load time."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "What_This_Means_for_You",
+      "text": "What This Means for You"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "You don’t need to understand Liquid syntax to make good decisions about your store. But knowing what it can do helps you ask better questions: is this feature something Liquid can handle natively, or does it genuinely need an app? Is a slow page a Liquid problem, or an app problem? A developer who knows Liquid well can usually build functionality directly into your theme — cleaner, faster, and cheaper long-term than stacking apps on top of a generic setup."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Curious what’s actually possible for your store?",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Our ",
+        {
+          "type": "link",
+          "href": "/shopify-development-agency",
+          "text": "Shopify development",
+          "rel": "dofollow"
+        },
+        " team can look at what you’re trying to build and tell you honestly whether it’s a native Liquid solution or something that needs a different approach."
+      ]
+    }
+  ],
   "toc": [
     {
       "label": "What Liquid Actually Is",

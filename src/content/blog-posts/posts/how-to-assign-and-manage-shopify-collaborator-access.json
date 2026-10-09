@@ -21,8 +21,84 @@
     "image": "/assets/blog/authors/tejal-parekh-img.webp",
     "linkedin": "https://in.linkedin.com/in/tejal-parekh-814310206"
   },
-  "contentBeforeToc": "",
-  "contentAfterToc": "<h2 id=\"Collaborator_access_code\">Collaborator access code</h2>\n<p>You can assign a collaborator code in the Security section of your Users page in your Shopify admin.</p>\n<p>After the Partner, freelancer, or agency submits their collaborator request, you can accept or reject the request in the Collaborators section of your Shopify admin, where you can also find a list of your accepted collaborators.</p>\n<h2 id=\"Steps\">Steps:</h2>\n<h3 id=\"1_From_your_Shopify_admin_go_to_Settings_%3E_Users\">1. From your Shopify admin, go to Settings &gt; Users.</h3>\n<p><img src=\"/assets/blog/inline/step-one.webp\" alt=\"How to Assign and Manage Shopify Collaborator Access\" width=\"1490\" height=\"751\" loading=\"lazy\"></p>\n<h3 id=\"2_Click_Security\">2. Click Security.</h3>\n<p><img src=\"/assets/blog/inline/step-two.webp\" alt=\"How to Assign and Manage Shopify Collaborator Access\" width=\"1495\" height=\"748\" loading=\"lazy\"></p>\n<h3 id=\"3_Click_the_4-digit_code_to_copy_it_to_your_clipboard\">3. Click the 4-digit code to copy it to your clipboard.</h3>\n<p><img src=\"/assets/blog/inline/step-three.webp\" alt=\"How to Assign and Manage Shopify Collaborator Access\" width=\"1492\" height=\"751\" loading=\"lazy\"></p>\n<h3 id=\"4_Provide_the_4-digit_code_to_your_collaborator\">4. Provide the 4-digit code to your collaborator.</h3>\n<p>&nbsp;</p>",
+  "contentBeforeToc": [],
+  "contentAfterToc": [
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "Collaborator_access_code",
+      "text": "Collaborator access code"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "You can assign a collaborator code in the Security section of your Users page in your Shopify admin."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "After the Partner, freelancer, or agency submits their collaborator request, you can accept or reject the request in the Collaborators section of your Shopify admin, where you can also find a list of your accepted collaborators."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "Steps",
+      "text": "Steps:"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "1_From_your_Shopify_admin_go_to_Settings_%3E_Users",
+      "text": "1. From your Shopify admin, go to Settings > Users."
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/step-one.webp",
+      "alt": "How to Assign and Manage Shopify Collaborator Access",
+      "width": 1490,
+      "height": 751
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "2_Click_Security",
+      "text": "2. Click Security."
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/step-two.webp",
+      "alt": "How to Assign and Manage Shopify Collaborator Access",
+      "width": 1495,
+      "height": 748
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "3_Click_the_4-digit_code_to_copy_it_to_your_clipboard",
+      "text": "3. Click the 4-digit code to copy it to your clipboard."
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/step-three.webp",
+      "alt": "How to Assign and Manage Shopify Collaborator Access",
+      "width": 1492,
+      "height": 751
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "4_Provide_the_4-digit_code_to_your_collaborator",
+      "text": "4. Provide the 4-digit code to your collaborator."
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        " "
+      ]
+    }
+  ],
   "toc": [
     {
       "label": "Collaborator access code",

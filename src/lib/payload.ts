@@ -19,6 +19,7 @@ import type {
 import type { BlogPostDetail } from "@/types/blog-post";
 import type { CaseStudyDetail, CaseStudyItem } from "@/types/case-study";
 import caseStudiesItemsJson from "@/content/case-studies-items.json";
+import { parseHtmlToBlocks } from "@/lib/blog-blocks";
 
 export async function getPayloadNavigation() {
   try {
@@ -408,8 +409,10 @@ export function adaptPayloadPostToBlogPostDetail(
     featuredImage,
     excerpt: post.excerpt || fallbackDetail?.excerpt || "",
     author,
-    contentBeforeToc: htmlContent || fallbackDetail?.contentBeforeToc || "",
-    contentAfterToc: fallbackDetail?.contentAfterToc || "",
+    contentBeforeToc: htmlContent
+      ? parseHtmlToBlocks(htmlContent)
+      : fallbackDetail?.contentBeforeToc || [],
+    contentAfterToc: fallbackDetail?.contentAfterToc || [],
     toc: fallbackDetail?.toc || [],
     faqs,
     previous: fallbackDetail?.previous || null,
@@ -536,11 +539,7 @@ export function adaptPayloadCaseStudyToDetail(
     hero: {
       image: heroImage,
     },
-    sections: fallbackDetail?.sections || [],
-    wireframes: fallbackDetail?.wireframes || null,
-    colors: fallbackDetail?.colors || [],
-    typefaces: fallbackDetail?.typefaces || [],
-    design: fallbackDetail?.design || null,
+
     keyMetrics,
     challenge,
     solutions,

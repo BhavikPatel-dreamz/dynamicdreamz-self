@@ -21,8 +21,113 @@
     "image": "/assets/blog/authors/tejal-parekh-img.webp",
     "linkedin": "https://in.linkedin.com/in/tejal-parekh-814310206"
   },
-  "contentBeforeToc": "<p>We all have seen the culinary and cooking process and photos on different websites. on these websites, the narration of the cooking process while the entire process is shown and ingredients are listed on the screen.</p>",
-  "contentAfterToc": "<h2 id=\"The_Issue\">The Issue:</h2>\n<p>There are quite a few websites and online culinary communities on which the users across the world post a variety of recipes and cuisine. One of our clients ran such a website developed in WordPress. Generally, on that site the users post a writeup of the cooking process and photos of a recipe. The users can be from any corner of the world. Many times, there are users who are not comfortable in writing the prerequisites, cooking process and ingredients of the recipe. This would make such users unable to post their scrumptious recipes. It makes no sense to post recipes without its cooking process and ingredients. Only Photos will not serve the purpose.</p>\n<p>To overcome this issue, The client approached us to come up with a solution so that their users can get the information about ingredients and the cooking process.</p>\n<h2 id=\"Search_for_the_solution\">Search for the solution:</h2>\n<p>Our <b>expert WordPress developers </b>discussed the issue with our client and obtained the detailed requirements. <b><i>Here the core issue was the inability of the users to write the cooking process in a concise form.</i></b> Our <a href=\"/wordpress-development\"><b>WordPress web development</b></a> team had a brainstorming meeting and several solutions were suggested. WordPress is a robust and flexible eCommerce platform that allows developers to develop tailored features based on client\u2019s requirements.</p>\n<h2 id=\"The_Solution\">The Solution:</h2>\n<p>Finally our team came up with a solution. We developed a customized feature (tool) in WordPress. If any user who is not good at writing, she/ he has to upload photos of the cooking process and ingredients in proper sequence in a given form. Then our WP tool will scan those photos. After scanning the tool will display the writeup and the list of ingredients on screen. Users can go through the content and if she/ he wants to edit the content she/he can else post it as it is if found perfect.</p>\n<p>Our <a href=\"/hire-wordpress-developers\"><b>expert WordPress developers</b></a> developed a tailored feature using WordPress unmatched functionalities. Our agile quality assurers did a rigorous testing of the tool with no. of photos/ images and a thorough quality check, the tool was implemented on the website.</p>\n<h2 id=\"Outcome\">Outcome:</h2>\n<p>The client found the solution satisfactory. Many users started using this feature and found it easy to use and it was applauded by the users.</p>\n<p>Located in India, Dynamic Dreamz is a prominent ecommerce development agency using the WordPress platform with 18+ years of rich experience in WordPress development. Apart from that we provide the <a href=\"/white-label-wordpress-development-services\">White Label WordPress Development</a> services.</p>",
+  "contentBeforeToc": [
+    {
+      "type": "paragraph",
+      "children": [
+        "We all have seen the culinary and cooking process and photos on different websites. on these websites, the narration of the cooking process while the entire process is shown and ingredients are listed on the screen."
+      ]
+    }
+  ],
+  "contentAfterToc": [
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "The_Issue",
+      "text": "The Issue:"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "There are quite a few websites and online culinary communities on which the users across the world post a variety of recipes and cuisine. One of our clients ran such a website developed in WordPress. Generally, on that site the users post a writeup of the cooking process and photos of a recipe. The users can be from any corner of the world. Many times, there are users who are not comfortable in writing the prerequisites, cooking process and ingredients of the recipe. This would make such users unable to post their scrumptious recipes. It makes no sense to post recipes without its cooking process and ingredients. Only Photos will not serve the purpose."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "To overcome this issue, The client approached us to come up with a solution so that their users can get the information about ingredients and the cooking process."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "Search_for_the_solution",
+      "text": "Search for the solution:"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Our ",
+        {
+          "type": "text",
+          "text": "expert WordPress developers ",
+          "bold": true
+        },
+        "discussed the issue with our client and obtained the detailed requirements. ",
+        {
+          "type": "text",
+          "text": "Here the core issue was the inability of the users to write the cooking process in a concise form.",
+          "bold": true,
+          "italic": true
+        },
+        " Our ",
+        {
+          "type": "link",
+          "href": "/wordpress-development",
+          "text": "WordPress web development"
+        },
+        " team had a brainstorming meeting and several solutions were suggested. WordPress is a robust and flexible eCommerce platform that allows developers to develop tailored features based on client’s requirements."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "The_Solution",
+      "text": "The Solution:"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Finally our team came up with a solution. We developed a customized feature (tool) in WordPress. If any user who is not good at writing, she/ he has to upload photos of the cooking process and ingredients in proper sequence in a given form. Then our WP tool will scan those photos. After scanning the tool will display the writeup and the list of ingredients on screen. Users can go through the content and if she/ he wants to edit the content she/he can else post it as it is if found perfect."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Our ",
+        {
+          "type": "link",
+          "href": "/hire-wordpress-developers",
+          "text": "expert WordPress developers"
+        },
+        " developed a tailored feature using WordPress unmatched functionalities. Our agile quality assurers did a rigorous testing of the tool with no. of photos/ images and a thorough quality check, the tool was implemented on the website."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "Outcome",
+      "text": "Outcome:"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "The client found the solution satisfactory. Many users started using this feature and found it easy to use and it was applauded by the users."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Located in India, Dynamic Dreamz is a prominent ecommerce development agency using the WordPress platform with 18+ years of rich experience in WordPress development. Apart from that we provide the ",
+        {
+          "type": "link",
+          "href": "/white-label-wordpress-development-services",
+          "text": "White Label WordPress Development"
+        },
+        " services."
+      ]
+    }
+  ],
   "toc": [
     {
       "label": "The Issue:",

@@ -52,22 +52,55 @@ for (const slug of slugs) {
     const authorAsset = { src: post.author.image, width: 150, height: 150, alt: post.author.name };
     assertAsset(authorAsset, `${slug} author image`);
   }
-  if (!post.contentBeforeToc && !post.contentAfterToc) fail(`${slug} has no article content.`);
-  const content = `${post.contentBeforeToc}\n${post.contentAfterToc}`;
-  if (/(?:href|src)="[^"]*dynamicdreamz\.com|ez-toc-container|href="javascript:/i.test(content)) fail(`${slug} contains an unsafe or runtime live-site reference.`);
-  for (const match of content.matchAll(/\bhref="([^"]+)"/gi)) {
-    const href = match[1];
-    if (!/^\/blogs\/[a-z0-9-]+(?:[?#].*)?$/i.test(href)) continue;
-    const linkedSlug = href.slice("/blogs/".length).split(/[?#]/, 1)[0];
-    if (!slugs.has(linkedSlug)) fail(`${slug} links to an unknown blog post: ${href}`);
+  if (!Array.isArray(post.contentBeforeToc) || !Array.isArray(post.contentAfterToc)) {
+    fail(`${slug} must have array content blocks for contentBeforeToc and contentAfterToc.`);
   }
-  for (const match of content.matchAll(/<img\b(?:[^>"']|"[^"]*"|'[^']*')*>/gi)) {
-    const tag = match[0];
-    const src = tag.match(/\bsrc="([^"]+)"/i)?.[1] ?? "";
-    const alt = tag.match(/\balt="([^"]*)"/i)?.[1] ?? "";
-    assertAsset({ src, width: Number(tag.match(/\bwidth="(\d+)"/i)?.[1]), height: Number(tag.match(/\bheight="(\d+)"/i)?.[1]), alt }, `${slug} inline image`);
+  const allBlocks = [...post.contentBeforeToc, ...post.contentAfterToc];
+  if (allBlocks.length === 0) fail(`${slug} has no article content blocks.`);
+
+  const ids = new Set();
+  function checkInlineNodes(nodes) {
+    if (!Array.isArray(nodes)) return;
+    for (const node of nodes) {
+      if (typeof node === "string") {
+        if (/ez-toc-container/i.test(node)) fail(`${slug} contains an unsafe or runtime live-site reference: ${node}`);
+      } else if (typeof node === "object" && node !== null) {
+        if (node.type === "link") {
+          const href = node.href;
+          if (/dynamicdreamz\.com|^javascript:/i.test(href)) fail(`${slug} contains an unsafe link: ${href}`);
+          if (/^\/blogs\/[a-z0-9-]+(?:[?#].*)?$/i.test(href)) {
+            const linkedSlug = href.slice("/blogs/".length).split(/[?#]/, 1)[0];
+            if (!slugs.has(linkedSlug)) fail(`${slug} links to an unknown blog post: ${href}`);
+          }
+        }
+      }
+    }
   }
-  const ids = new Set([...content.matchAll(/<(?:h2|h3|h4|h5|h6)\b[^>]*\bid="([^"]+)"/gi)].map((match) => match[1]));
+
+  for (const block of allBlocks) {
+    if (block.type === "heading") {
+      if (block.id) ids.add(block.id);
+    } else if (block.type === "paragraph") {
+      checkInlineNodes(block.children);
+    } else if (block.type === "list") {
+      for (const item of block.items) {
+        checkInlineNodes(item.content);
+        if (item.children) {
+          for (const child of item.children) checkInlineNodes(child.content);
+        }
+      }
+    } else if (block.type === "image") {
+      assertAsset({ src: block.src, width: block.width, height: block.height, alt: block.alt }, `${slug} inline image`);
+    } else if (block.type === "table") {
+      if (block.headers) checkInlineNodes(block.headers);
+      if (block.rows) {
+        for (const row of block.rows) {
+          for (const cell of row) checkInlineNodes(cell);
+        }
+      }
+    }
+  }
+
   for (const item of post.toc) {
     if (!item.label || !/^#[^\s]+$/.test(item.href)) fail(`${slug} has an invalid TOC item.`);
     if (!ids.has(item.href.slice(1))) fail(`${slug} TOC target is missing: ${item.href}`);

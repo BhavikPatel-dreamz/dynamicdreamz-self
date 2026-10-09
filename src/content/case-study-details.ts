@@ -36,23 +36,7 @@ function validateCaseStudyDetails(entries: CaseStudyDetail[]) {
       throw new Error(`Invalid case-study slug: ${entry.slug}`);
     }
     validateImage(entry, "hero", entry.hero.image);
-    entry.sections.forEach((section, sectionIndex) => {
-      validateImage(entry, `section ${sectionIndex + 1}`, section.image);
-      section.cards.forEach((card, cardIndex) => {
-        validateImage(entry, `section ${sectionIndex + 1} card ${cardIndex + 1}`, card.image);
-      });
-    });
-    validateImage(entry, "wireframes", entry.wireframes?.image ?? null);
-    entry.typefaces.forEach((typeface, index) => validateImage(entry, `typeface ${index + 1}`, typeface.image));
-    validateImage(entry, "design", entry.design?.image ?? null);
-    if (entry.design?.backgroundImage && !localAssetPattern.test(entry.design.backgroundImage)) {
-      throw new Error(`Case study ${entry.slug} must use a project-owned design background image.`);
-    }
-    entry.colors.forEach((color, index) => {
-      if (!/^#[0-9a-f]{6}$/i.test(color.value)) {
-        throw new Error(`Case study ${entry.slug} has an invalid color value at position ${index + 1}.`);
-      }
-    });
+
     if (entry.seo.title.length < SEO_LIMITS.titleMin || entry.seo.title.length > SEO_LIMITS.titleMax) {
       throw new Error(`Case study ${entry.slug} has an invalid SEO title length.`);
     }

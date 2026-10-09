@@ -8,37 +8,16 @@ const entries = JSON.parse(await readFile(contentPath, "utf8"));
 const errors = [];
 const slugs = new Set();
 const assetPaths = new Set();
-const unsafeHtmlPattern = /<script|javascript:|\son[a-z]+\s*=|\sstyle\s*=/i;
 const localAssetPattern = /^\/assets\/[a-zA-Z0-9._/-]+$/;
 const approvedEmptyIndustries = new Set(["blubox"]);
-const allowedHtmlTags = new Set([
-  "a", "b", "br", "em", "h3", "h4", "h5", "h6", "i", "li", "ol", "p",
-  "strong", "table", "tbody", "td", "tfoot", "th", "thead", "tr", "ul",
-]);
-const allowedHtmlAttributes = {
-  a: new Set(["href", "rel", "target"]),
-  td: new Set(["colspan", "rowspan"]),
-  th: new Set(["colspan", "rowspan"]),
-};
 
 function checkText(value, label, slug) {
-  if (typeof value !== "string" || !value.trim()) errors.push(`${slug}: missing ${label}`);
-}
-
-function checkHtml(value, label, slug) {
-  if (typeof value !== "string") {
-    errors.push(`${slug}: invalid ${label}`);
+  if (typeof value !== "string" || !value.trim()) {
+    errors.push(`${slug}: missing ${label}`);
     return;
   }
-  if (unsafeHtmlPattern.test(value)) errors.push(`${slug}: unsafe markup in ${label}`);
-  if (/dynamicdreamz\.com|\/wp-content\//i.test(value)) errors.push(`${slug}: live-site dependency in ${label}`);
-  for (const match of value.matchAll(/<\/?([a-z0-9]+)\b([^>]*)>/gi)) {
-    const tag = match[1].toLowerCase();
-    if (!allowedHtmlTags.has(tag)) errors.push(`${slug}: unsupported <${tag}> tag in ${label}`);
-    for (const attribute of match[2].matchAll(/\s([a-z][a-z0-9:-]*)\s*=/gi)) {
-      const name = attribute[1].toLowerCase();
-      if (!allowedHtmlAttributes[tag]?.has(name)) errors.push(`${slug}: unsupported ${name} attribute in ${label}`);
-    }
+  if (/<[a-z][\s\S]*>/i.test(value)) {
+    errors.push(`${slug}: unexpected HTML in ${label}`);
   }
 }
 
@@ -79,56 +58,66 @@ if (!Array.isArray(entries) || entries.length === 0) {
     }
     checkImage(entry.hero?.image, "hero", slug);
 
-    if (!Array.isArray(entry.sections) || entry.sections.length === 0) {
-      errors.push(`${slug}: at least one narrative section is required`);
-    } else {
-      entry.sections.forEach((section, sectionIndex) => {
-        const label = `section ${sectionIndex + 1}`;
-        checkText(section.heading, `${label} heading`, slug);
-        checkHtml(section.html, `${label} HTML`, slug);
-        checkImage(section.image, label, slug, true);
-        if (!Array.isArray(section.cards)) {
-          errors.push(`${slug}: invalid ${label} cards`);
-          return;
-        }
-        section.cards.forEach((card, cardIndex) => {
-          const cardLabel = `${label} card ${cardIndex + 1}`;
-          checkText(card.heading, `${cardLabel} heading`, slug);
-          checkHtml(card.html, `${cardLabel} HTML`, slug);
-          checkImage(card.image, cardLabel, slug, true);
+    if (entry.challenge) {
+      checkText(entry.challenge.heading, "challenge heading", slug);
+      if (!Array.isArray(entry.challenge.items)) errors.push(`${slug}: invalid challenge items`);
+      else {
+        entry.challenge.items.forEach((item, index) => {
+          const hasContent = (typeof item.title === "string" && item.title.trim()) || (typeof item.description === "string" && item.description.trim());
+          if (!hasContent) errors.push(`${slug}: challenge item ${index + 1} must have title or description`);
+          if (item.title) checkText(item.title, `challenge item ${index + 1} title`, slug);
+          if (item.description) checkText(item.description, `challenge item ${index + 1} description`, slug);
         });
-      });
+      }
     }
 
-    if (entry.wireframes) {
-      checkText(entry.wireframes.heading, "wireframes heading", slug);
-      checkHtml(entry.wireframes.html, "wireframes HTML", slug);
-      checkImage(entry.wireframes.image, "wireframes", slug, true);
+    if (entry.solutions) {
+      checkText(entry.solutions.heading, "solutions heading", slug);
+      if (!Array.isArray(entry.solutions.items)) errors.push(`${slug}: invalid solutions items`);
+      else {
+        entry.solutions.items.forEach((item, index) => {
+          checkText(item.text, `solutions item ${index + 1} text`, slug);
+        });
+      }
     }
-    if (!Array.isArray(entry.colors)) errors.push(`${slug}: invalid colors`);
-    else {
-      entry.colors.forEach((color, index) => {
-        checkText(color.label, `color ${index + 1} label`, slug);
-        if (!/^#[0-9a-f]{6}$/i.test(color.value ?? "")) errors.push(`${slug}: invalid color ${index + 1} value`);
-      });
+
+    if (entry.keyFeatures) {
+      checkText(entry.keyFeatures.heading, "keyFeatures heading", slug);
+      if (!Array.isArray(entry.keyFeatures.items)) errors.push(`${slug}: invalid keyFeatures items`);
+      else {
+        entry.keyFeatures.items.forEach((item, index) => {
+          checkText(item.title, `keyFeatures item ${index + 1} title`, slug);
+        });
+      }
     }
-    if (!Array.isArray(entry.typefaces)) errors.push(`${slug}: invalid typefaces`);
-    else {
-      entry.typefaces.forEach((typeface, index) => {
-        checkImage(typeface.image, `typeface ${index + 1}`, slug, true);
-        checkHtml(typeface.html, `typeface ${index + 1} HTML`, slug);
-      });
+
+    if (entry.projectDelivery) {
+      checkText(entry.projectDelivery.heading, "projectDelivery heading", slug);
+      if (!Array.isArray(entry.projectDelivery.items)) errors.push(`${slug}: invalid projectDelivery items`);
+      else {
+        entry.projectDelivery.items.forEach((item, index) => {
+          checkText(item.name, `projectDelivery item ${index + 1} name`, slug);
+        });
+      }
     }
-    if (entry.design) {
-      checkText(entry.design.heading, "design heading", slug);
-      checkHtml(entry.design.html, "design HTML", slug);
-      checkImage(entry.design.image, "design", slug, true);
-      if (entry.design.backgroundImage) {
-        if (!localAssetPattern.test(entry.design.backgroundImage)) {
-          errors.push(`${slug}: design background must use /assets/`);
-        } else {
-          assetPaths.add(entry.design.backgroundImage);
-        }
+
+    if (entry.keyMetrics) {
+      checkText(entry.keyMetrics.heading, "keyMetrics heading", slug);
+      if (!Array.isArray(entry.keyMetrics.items)) errors.push(`${slug}: invalid keyMetrics items`);
+      else {
+        entry.keyMetrics.items.forEach((item, index) => {
+          checkText(item.stat, `keyMetrics item ${index + 1} stat`, slug);
+          checkText(item.label, `keyMetrics item ${index + 1} label`, slug);
+        });
+      }
+    }
+
+    if (entry.customSections) {
+      if (!Array.isArray(entry.customSections)) errors.push(`${slug}: invalid customSections`);
+      else {
+        entry.customSections.forEach((section, index) => {
+          checkText(section.heading, `customSection ${index + 1} heading`, slug);
+        });
       }
     }
 

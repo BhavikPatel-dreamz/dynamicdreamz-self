@@ -13,7 +13,7 @@
     "height": 705,
     "alt": "Authenticate-and-add-a-DMARC-record-to-continue-sending-emails-from-your-domain-3"
   },
-  "excerpt": "#Breaking: Google & Yahoo announce a brand new email authentication requirement for bulk email As a Shopify store owner, recently you must have received such an email from Shopify with subject line stating \u2018Authenticate and add a DMARC record to continue sending emails from your domain\u2019. If yes and you are not quite sure how [...]",
+  "excerpt": "#Breaking: Google & Yahoo announce a brand new email authentication requirement for bulk email As a Shopify store owner, recently you must have received such an email from Shopify with subject line stating ‘Authenticate and add a DMARC record to continue sending emails from your domain’. If yes and you are not quite sure how [...]",
   "author": {
     "name": "Tejal Parekh",
     "role": "Sr. SEO Expert",
@@ -21,8 +21,227 @@
     "image": "/assets/blog/authors/tejal-parekh-img.webp",
     "linkedin": "https://in.linkedin.com/in/tejal-parekh-814310206"
   },
-  "contentBeforeToc": "",
-  "contentAfterToc": "<p><strong>#Breaking: Google &amp; Yahoo announce a brand new email authentication requirement for bulk email</strong></p>\n<p>As a Shopify store owner, recently you must have received such an email from Shopify with subject line stating <strong>\u2018</strong><strong>Authenticate and add a DMARC record to continue sending emails from your domain\u2019</strong>.</p>\n<p>If yes and you are not quite sure how to fix this then let me explain to you what does it mean and how to fix it.</p>\n<p><strong>What does the above email mean to you?</strong></p>\n<p>Recently Google and yahoo announced that starting in the first quarter of 2024, domain owners who send bulk email for the promotion of their businesses to Google/ Yahoo email addresses would be required to authenticate their emails. This, in turn, would ensure that receivers can easily unsubscribe from receiving emails that do not interest them and maintain a less spammy inbox.</p>\n<p>As per the announcement, merchants need to take action before February 1 2024 and have to authenticate their domain email if you like to continue to send email from your branded email address.</p>\n<p><strong>What actions you need to take?</strong></p>\n<p>To meet the new sender requirements, Shopify Merchants will have to:</p>\n<ol>\r\n<li>Keep a complaint rate of\u00a0<strong>&lt; 0.3% and ideally below 0.1%</strong>\u00a0to prevent mail from getting filtered into customers\u2019 spam folders. Complaint rates are calculated as the number of emails customers are marking as spam/ the number of emails that are getting inboxed. Check your Gmail complaint rate by setting up\u00a0<a href=\"https://support.google.com/mail/answer/9981691\" target=\"_blank\" rel=\"noopener noreferrer\">Google Postmaster Tools\u00a0</a></li>\n<li><a href=\"https://help.shopify.com/en/manual/intro-to-shopify/initial-setup/setup-your-email#connect-to-spf-and-dkim-records\" target=\"_blank\" rel=\"noopener noreferrer\">Authenticate</a>\u00a0Shopify to send emails for your domain.\u00a0<a href=\"http://shopify.com/admin/settings/notifications\" target=\"_blank\" rel=\"noopener noreferrer\">Check if you\u2019ve authenticated\u00a0</a></li>\n<li>Have a DMARC policy for your domain, with a minimum p=none policy setting.</li>\r\n</ol>\n<ul>\r\n<li><a href=\"https://dmarcian.com/dmarc-inspector/\" target=\"_blank\" rel=\"noopener noreferrer\">Check if you have a valid DMARC record</a></li>\n<li><a href=\"https://support.google.com/a/answer/2466563?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to create a DMARC record</a></li>\r\n</ul>\n<p>Here are the screenshots of DMARC record checker of domain of one of our Shopify merchants:</p>\n<figure><img src=\"/assets/blog/inline/dmarc-record.webp\" alt=\"DMARC record checker\" width=\"1498\" height=\"651\" loading=\"lazy\"></figure>\n<figure><img src=\"/assets/blog/inline/dmarc-record-image.webp\" alt=\"DMARC-record-Image\" width=\"1418\" height=\"394\" loading=\"lazy\"></figure>\n<figure><img src=\"/assets/blog/inline/dmarc-record-tag.webp\" alt=\"DMARC-record-Tag\" width=\"1277\" height=\"804\" loading=\"lazy\"></figure>\n<p><strong>What if you fail to authenticate before February 1 2024?</strong>If you take no action by the above date, <a href=\"https://www.shopify.com/in\" target=\"_blank\" rel=\"noopener noreferrer\">Shopify</a> will rewrite your sender email to store@shopifyemail.com to meet the minimum requirements outlined by Google and Yahoo, so that you may continue sending emails to your customers without interruption.\u00a0<strong>In short, you will no longer be able to use your branded email to send messages to your customers.</strong></p>\n<p><em>Not sure how to proceed? Relax and <a href=\"/request-quote\">contact our Shopify expert team</a> help you resolve your query and get through this!</em></p>",
+  "contentBeforeToc": [],
+  "contentAfterToc": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "#Breaking: Google & Yahoo announce a brand new email authentication requirement for bulk email",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "As a Shopify store owner, recently you must have received such an email from Shopify with subject line stating ",
+        {
+          "type": "text",
+          "text": "‘",
+          "bold": true
+        },
+        {
+          "type": "text",
+          "text": "Authenticate and add a DMARC record to continue sending emails from your domain’",
+          "bold": true
+        },
+        "."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "If yes and you are not quite sure how to fix this then let me explain to you what does it mean and how to fix it."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "What does the above email mean to you?",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Recently Google and yahoo announced that starting in the first quarter of 2024, domain owners who send bulk email for the promotion of their businesses to Google/ Yahoo email addresses would be required to authenticate their emails. This, in turn, would ensure that receivers can easily unsubscribe from receiving emails that do not interest them and maintain a less spammy inbox."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "As per the announcement, merchants need to take action before February 1 2024 and have to authenticate their domain email if you like to continue to send email from your branded email address."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "What actions you need to take?",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "To meet the new sender requirements, Shopify Merchants will have to:"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        {
+          "content": [
+            "Keep a complaint rate of ",
+            {
+              "type": "text",
+              "text": "< 0.3% and ideally below 0.1%",
+              "bold": true
+            },
+            " to prevent mail from getting filtered into customers’ spam folders. Complaint rates are calculated as the number of emails customers are marking as spam/ the number of emails that are getting inboxed. Check your Gmail complaint rate by setting up ",
+            {
+              "type": "link",
+              "href": "https://support.google.com/mail/answer/9981691",
+              "text": "Google Postmaster Tools ",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            }
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "link",
+              "href": "https://help.shopify.com/en/manual/intro-to-shopify/initial-setup/setup-your-email#connect-to-spf-and-dkim-records",
+              "text": "Authenticate",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            },
+            " Shopify to send emails for your domain. ",
+            {
+              "type": "link",
+              "href": "http://shopify.com/admin/settings/notifications",
+              "text": "Check if you’ve authenticated ",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            }
+          ]
+        },
+        {
+          "content": [
+            "Have a DMARC policy for your domain, with a minimum p=none policy setting."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "content": [
+            {
+              "type": "link",
+              "href": "https://dmarcian.com/dmarc-inspector/",
+              "text": "Check if you have a valid DMARC record",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            }
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "link",
+              "href": "https://support.google.com/a/answer/2466563?hl=en",
+              "text": "Learn how to create a DMARC record",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Here are the screenshots of DMARC record checker of domain of one of our Shopify merchants:"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/dmarc-record.webp",
+      "alt": "DMARC record checker",
+      "width": 1498,
+      "height": 651
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/dmarc-record-image.webp",
+      "alt": "DMARC-record-Image",
+      "width": 1418,
+      "height": 394
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/dmarc-record-tag.webp",
+      "alt": "DMARC-record-Tag",
+      "width": 1277,
+      "height": 804
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "What if you fail to authenticate before February 1 2024?",
+          "bold": true
+        },
+        "If you take no action by the above date, ",
+        {
+          "type": "link",
+          "href": "https://www.shopify.com/in",
+          "text": "Shopify",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        " will rewrite your sender email to store@shopifyemail.com to meet the minimum requirements outlined by Google and Yahoo, so that you may continue sending emails to your customers without interruption. ",
+        {
+          "type": "text",
+          "text": "In short, you will no longer be able to use your branded email to send messages to your customers.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Not sure how to proceed? Relax and ",
+          "italic": true
+        },
+        {
+          "type": "link",
+          "href": "/request-quote",
+          "text": "contact our Shopify expert team",
+          "italic": true
+        },
+        {
+          "type": "text",
+          "text": " help you resolve your query and get through this!",
+          "italic": true
+        }
+      ]
+    }
+  ],
   "toc": [],
   "faqs": [],
   "previous": {

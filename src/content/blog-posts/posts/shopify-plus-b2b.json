@@ -8,16 +8,187 @@
   "categoryValue": "faqs",
   "categoryHref": "/blogs?category=faqs",
   "featuredImage": null,
-  "excerpt": "Every store owner is assuming that after April 2026, they just have to get their hands on Shopify Plus for B2B, but it\u2019s not true, because core B2B features now work on every paid Shopify plan.",
+  "excerpt": "Every store owner is assuming that after April 2026, they just have to get their hands on Shopify Plus for B2B, but it’s not true, because core B2B features now work on every paid Shopify plan.",
   "author": {
     "name": "Rizwan Shaikh",
     "role": "Content Team Lead",
-    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that\u2019s not just readable but also useful, relevant, and built to drive real business outcomes.",
+    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that’s not just readable but also useful, relevant, and built to drive real business outcomes.",
     "image": "/assets/blog/authors/rizwanshaikh.webp",
     "linkedin": "https://in.linkedin.com/company/dynamic-dreamz-websolutions"
   },
-  "contentBeforeToc": "<p>Every store owner is assuming that after April 2026, they just have to get their hands on Shopify Plus for B2B, but it\u2019s not true, because core B2B features now work on every paid Shopify plan.</p><p>And though the debate of Shopify B2B vs Shopify Plus B2B is seemingly never-ending from different perspectives, Plus still leads in specific, meaningful ways. Henceforth, for growing wholesale brands, it\u2019s more than important to know which one to choose, depending on their business. So, let\u2019s shed some light on the comparison of Shopify B2B and Shopify Plus B2B, but first let\u2019s understand\u2026</p>",
-  "contentAfterToc": "<h3 id=\"What_Changed_in_April_2026\">What Changed in April 2026</h3><p>Shopify rolled out foundational B2B capabilities, company accounts, custom pricing, and net payment terms, to Basic, Grow, and Advanced plans. Before this update, B2B access itself was the dividing line. Now, the decision comes down to a specific list of capabilities rather than access to B2B at all.</p><h3 id=\"Company_Accounts\">Company Accounts</h3><p>Both standard plans and Plus support company accounts: multiple buyers per business, location management, and account approval workflows. This is now table stakes across the board, not a Plus-exclusive feature.</p><h3 id=\"Catalogs\">Catalogs</h3><p>This is one of the clearest remaining differences. Standard Shopify plans cap you at 3 pricing catalogs across all markets. Shopify Plus removes that limit entirely, offering unlimited catalogs, along with a separate, purpose-built B2B storefront that standard plans don\u2019t include.</p><h3 id=\"Pricing\">Pricing</h3><p>Both tiers support customer-specific pricing, volume discounts, and tiered pricing structures. Where Plus pulls ahead is in complexity: managing pricing across many different buyer segments, locations, or catalogs at scale is where the unlimited catalog capacity actually matters.</p><h3 id=\"Payment_Terms\">Payment Terms</h3><p>Net payment terms are now available on every paid plan, another feature that used to be Plus-exclusive. Plus still holds an edge with vaulted card storage and deposit or partial payment options, useful for large orders or ongoing account relationships where you don\u2019t want to collect full payment upfront.</p><h3 id=\"Quantity_Rules\">Quantity Rules</h3><p>Minimum order quantities, quantity increments, and volume-based pricing rules are available across plans. This is functional parity; standard plans can handle typical wholesale ordering logic without needing Plus.</p><h3 id=\"Wholesale_Workflows\">Wholesale Workflows</h3><p>Both tiers support self-serve purchasing, quick reordering, and PO number capture at checkout. Plus adds deeper workflow automation through Shopify Flow, useful for automating account setup, invoicing, and approval chains at higher volume.</p><h3 id=\"So_Which_Do_You_Need\">So Which Do You Need?</h3><ul>\n<li><b>Standard plan is enough if: </b>you need fewer than 3 pricing catalogs, don\u2019t require a separate B2B storefront, and your payment needs don\u2019t involve deposits or vaulted card storage.</li>\n<li><b>Plus is worth it if: </b>you\u2019re managing more than 3 distinct pricing catalogs, need a dedicated B2B storefront experience separate from your DTC site, or require deposit and partial payment workflows for large wholesale orders.</li>\n</ul><p>High-volume Shopify wholesale operations with complex account structures, multiple buyer tiers, or heavy automation needs will generally still find Plus worth the investment.</p><h3 id=\"Getting_the_Architecture_Right\">Getting the Architecture Right</h3><p>Restructuring catalogs, company accounts, or payment workflows after launch is considerably more disruptive than planning for them upfront. Before choosing a plan, map your actual catalog count, buyer segments, and payment requirements, not just your current order volume.</p><h3 id=\"The_Bottom_Line\">The Bottom Line</h3><p>The old rule, \u201cB2B means Plus\u201d, no longer holds. For many growing wholesale brands, a standard plan now covers the fundamentals well. The decision comes down to catalog complexity and payment flexibility, not B2B access itself.</p><p>Not sure which tier your wholesale operation actually needs? Our <a href=\"/shopify-development-agency\">Shopify B2B</a> &amp; Wholesale team can map your catalog and account requirements against both options before you commit to either.</p>",
+  "contentBeforeToc": [
+    {
+      "type": "paragraph",
+      "children": [
+        "Every store owner is assuming that after April 2026, they just have to get their hands on Shopify Plus for B2B, but it’s not true, because core B2B features now work on every paid Shopify plan."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "And though the debate of Shopify B2B vs Shopify Plus B2B is seemingly never-ending from different perspectives, Plus still leads in specific, meaningful ways. Henceforth, for growing wholesale brands, it’s more than important to know which one to choose, depending on their business. So, let’s shed some light on the comparison of Shopify B2B and Shopify Plus B2B, but first let’s understand…"
+      ]
+    }
+  ],
+  "contentAfterToc": [
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "What_Changed_in_April_2026",
+      "text": "What Changed in April 2026"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Shopify rolled out foundational B2B capabilities, company accounts, custom pricing, and net payment terms, to Basic, Grow, and Advanced plans. Before this update, B2B access itself was the dividing line. Now, the decision comes down to a specific list of capabilities rather than access to B2B at all."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Company_Accounts",
+      "text": "Company Accounts"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Both standard plans and Plus support company accounts: multiple buyers per business, location management, and account approval workflows. This is now table stakes across the board, not a Plus-exclusive feature."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Catalogs",
+      "text": "Catalogs"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "This is one of the clearest remaining differences. Standard Shopify plans cap you at 3 pricing catalogs across all markets. Shopify Plus removes that limit entirely, offering unlimited catalogs, along with a separate, purpose-built B2B storefront that standard plans don’t include."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Pricing",
+      "text": "Pricing"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Both tiers support customer-specific pricing, volume discounts, and tiered pricing structures. Where Plus pulls ahead is in complexity: managing pricing across many different buyer segments, locations, or catalogs at scale is where the unlimited catalog capacity actually matters."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Payment_Terms",
+      "text": "Payment Terms"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Net payment terms are now available on every paid plan, another feature that used to be Plus-exclusive. Plus still holds an edge with vaulted card storage and deposit or partial payment options, useful for large orders or ongoing account relationships where you don’t want to collect full payment upfront."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Quantity_Rules",
+      "text": "Quantity Rules"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Minimum order quantities, quantity increments, and volume-based pricing rules are available across plans. This is functional parity; standard plans can handle typical wholesale ordering logic without needing Plus."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Wholesale_Workflows",
+      "text": "Wholesale Workflows"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Both tiers support self-serve purchasing, quick reordering, and PO number capture at checkout. Plus adds deeper workflow automation through Shopify Flow, useful for automating account setup, invoicing, and approval chains at higher volume."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "So_Which_Do_You_Need",
+      "text": "So Which Do You Need?"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Standard plan is enough if: ",
+              "bold": true
+            },
+            "you need fewer than 3 pricing catalogs, don’t require a separate B2B storefront, and your payment needs don’t involve deposits or vaulted card storage."
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Plus is worth it if: ",
+              "bold": true
+            },
+            "you’re managing more than 3 distinct pricing catalogs, need a dedicated B2B storefront experience separate from your DTC site, or require deposit and partial payment workflows for large wholesale orders."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "High-volume Shopify wholesale operations with complex account structures, multiple buyer tiers, or heavy automation needs will generally still find Plus worth the investment."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Getting_the_Architecture_Right",
+      "text": "Getting the Architecture Right"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Restructuring catalogs, company accounts, or payment workflows after launch is considerably more disruptive than planning for them upfront. Before choosing a plan, map your actual catalog count, buyer segments, and payment requirements, not just your current order volume."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "The_Bottom_Line",
+      "text": "The Bottom Line"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "The old rule, “B2B means Plus”, no longer holds. For many growing wholesale brands, a standard plan now covers the fundamentals well. The decision comes down to catalog complexity and payment flexibility, not B2B access itself."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Not sure which tier your wholesale operation actually needs? Our ",
+        {
+          "type": "link",
+          "href": "/shopify-development-agency",
+          "text": "Shopify B2B"
+        },
+        " & Wholesale team can map your catalog and account requirements against both options before you commit to either."
+      ]
+    }
+  ],
   "toc": [
     {
       "label": "What Changed in April 2026",

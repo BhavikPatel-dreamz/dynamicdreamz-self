@@ -5,38 +5,6 @@ export type CaseStudyImage = {
   alt: string;
 };
 
-export type CaseStudyCard = {
-  heading: string;
-  html: string;
-  image: CaseStudyImage | null;
-};
-
-export type CaseStudyNarrativeSection = {
-  heading: string;
-  html: string;
-  image: CaseStudyImage | null;
-  cards: CaseStudyCard[];
-};
-
-export type CaseStudyShowcase = {
-  heading: string;
-  html: string;
-  image: CaseStudyImage | null;
-};
-
-export type CaseStudyDesignShowcase = CaseStudyShowcase & {
-  backgroundImage?: string;
-};
-
-export type CaseStudyColor = {
-  label: string;
-  value: string;
-};
-
-export type CaseStudyTypeface = {
-  image: CaseStudyImage | null;
-  html: string;
-};
 
 export type CaseStudyArchiveContent = {
   title: string;
@@ -104,9 +72,20 @@ export type CaseStudyProjectDelivery = {
   items: CaseStudyProjectDeliveryItem[];
 };
 
+export type CaseStudyCustomSectionItem = {
+  title?: string;
+  description?: string;
+  number?: string;
+  note?: string;
+};
+
 export type CaseStudyCustomSection = {
-  className: string;
-  html: string;
+  eyebrow?: string;
+  heading: string;
+  lead?: string;
+  description?: string;
+  items?: CaseStudyCustomSectionItem[];
+  takeaways?: string[];
 };
 
 export type CaseStudyDetail = {
@@ -124,11 +103,7 @@ export type CaseStudyDetail = {
   hero: {
     image: CaseStudyImage;
   };
-  sections: CaseStudyNarrativeSection[];
-  wireframes: CaseStudyShowcase | null;
-  colors: CaseStudyColor[];
-  typefaces: CaseStudyTypeface[];
-  design: CaseStudyDesignShowcase | null;
+
   keyMetrics?: CaseStudyKeyMetrics;
   challenge?: CaseStudyChallenge;
   solutions?: CaseStudySolutions;

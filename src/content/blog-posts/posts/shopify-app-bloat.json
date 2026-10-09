@@ -16,8 +16,172 @@
     "image": "/assets/blog/authors/rizwanshaikh.webp",
     "linkedin": "https://in.linkedin.com/company/dynamic-dreamz-websolutions"
   },
-  "contentBeforeToc": "<p>Every app in the Shopify App Store is there to solve a real problem. And when we install them together, in large numbers, they tend to create a bloating issue. The condition is called Shopify App bloat, and it isn’t about hitting some magic number; it’s about what happens when your store is running dozens of scripts, each competing for the same resources, with no one tracking the cumulative cost.</p><p>Here’s how that actually shows up, and how to decide what stays.</p>",
-  "contentAfterToc": "<h3 id=\"Page_Speed\">Page Speed</h3><p>Every installed app adds its own JavaScript, and that code loads on your storefront whether a visitor uses the feature or not. Chat widgets, review carousels, loyalty popups, upsell tools — each one adds weight to every single page load. Individually, none of them feel like much. Stacked together across 15 or 20 apps, they become a real, measurable drag on load time.</p><h3 id=\"Stability\">Stability</h3><p>More apps mean more surface area for conflicts, unlike Shopify Speed. Two apps modifying the same part of your theme, or competing for the same DOM element, can create bugs that are genuinely difficult to trace, especially when neither app is technically “broken” on its own. The more moving pieces your store depends on, the more fragile the whole system becomes to any single update.</p><h3 id=\"UX\">UX</h3><p>App bloat doesn’t just slow pages down; it actively clutters the experience. Multiple popups competing for attention, inconsistent design language between native theme elements and app-injected ones, and a storefront that feels stitched together rather than intentional. Customers notice this even when they can’t articulate exactly what feels off.</p><h3 id=\"Maintenance\">Maintenance</h3><p>Every app is something your team has to track: version updates, compatibility with theme changes, billing, and what happens when a developer stops maintaining it. A large, unmanaged app stack becomes its own ongoing project, remembering what each app does, why it was installed, and whether it’s still needed — something most stores never actually get around to doing.</p><h3 id=\"A_Framework_for_Deciding_What_to_Remove\">A Framework for Deciding What to Remove</h3><p>Go through every installed app and ask three questions:</p><ol>\n<li><b>Does this directly and measurably contribute to revenue or a core operational need? </b>If the honest answer is “probably not” or “we’re not sure,” that’s a signal, not a maybe.</li>\n<li><b>Is this functionality something the theme, or a consolidated tool, could handle natively?</b> Several single-purpose apps often overlap in what they do. One well-chosen tool can replace three narrow ones.</li>\n<li><b>When was this last actually used or checked? </b>An app installed for a campaign that ended months ago is dead weight that’s still loading on every page.</li>\n</ol><p>Apps that fail more than one of these questions are strong removal candidates. Apps that clearly pass all three — apps directly tied to checkout, core functionality, or measurable revenue — stay.</p><h3 id=\"What_Happens_When_You_Just_Uninstall\">What Happens When You Just Uninstall</h3><p>Uninstalling isn’t always a clean removal. Some apps leave behind “leftover” code in your theme files, script tags, and custom liquid that keep loading even though the app itself is gone. After any app removal, it’s worth checking your theme code for orphaned references; this is a common, quietly persistent cause of slow stores that “shouldn’t” be slow anymore.</p><h3 id=\"A_Better_Default\">A Better Default</h3><p>Before installing a new app, ask whether the problem could be solved with a small custom addition instead — a snippet of custom CSS or Liquid rather than a new dependency. It won’t always be the right call, but treating “another app” as the default answer to every need is exactly how bloat accumulates in the first place.</p><h3 id=\"The_Bottom_Line\">The Bottom Line</h3><p>There’s no universal cap on how many apps a store can run. The real question is whether each one is earning its place, in performance cost, stability risk, and ongoing upkeep, against what it actually delivers. Audit regularly, not just when something breaks.</p><p>Not sure whether it’s about Shopify app optimization or to start trimming, or wanting a professional audit of what’s actually slowing your store down? Our <a href=\"/shopify-maintenance-services\">Shopify maintenance services</a> cover exactly this: identifying what’s helping, what’s hurting, and cleaning up what’s left behind.</p>",
+  "contentBeforeToc": [
+    {
+      "type": "paragraph",
+      "children": [
+        "Every app in the Shopify App Store is there to solve a real problem. And when we install them together, in large numbers, they tend to create a bloating issue. The condition is called Shopify App bloat, and it isn’t about hitting some magic number; it’s about what happens when your store is running dozens of scripts, each competing for the same resources, with no one tracking the cumulative cost."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Here’s how that actually shows up, and how to decide what stays."
+      ]
+    }
+  ],
+  "contentAfterToc": [
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Page_Speed",
+      "text": "Page Speed"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Every installed app adds its own JavaScript, and that code loads on your storefront whether a visitor uses the feature or not. Chat widgets, review carousels, loyalty popups, upsell tools — each one adds weight to every single page load. Individually, none of them feel like much. Stacked together across 15 or 20 apps, they become a real, measurable drag on load time."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Stability",
+      "text": "Stability"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "More apps mean more surface area for conflicts, unlike Shopify Speed. Two apps modifying the same part of your theme, or competing for the same DOM element, can create bugs that are genuinely difficult to trace, especially when neither app is technically “broken” on its own. The more moving pieces your store depends on, the more fragile the whole system becomes to any single update."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "UX",
+      "text": "UX"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "App bloat doesn’t just slow pages down; it actively clutters the experience. Multiple popups competing for attention, inconsistent design language between native theme elements and app-injected ones, and a storefront that feels stitched together rather than intentional. Customers notice this even when they can’t articulate exactly what feels off."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Maintenance",
+      "text": "Maintenance"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Every app is something your team has to track: version updates, compatibility with theme changes, billing, and what happens when a developer stops maintaining it. A large, unmanaged app stack becomes its own ongoing project, remembering what each app does, why it was installed, and whether it’s still needed — something most stores never actually get around to doing."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "A_Framework_for_Deciding_What_to_Remove",
+      "text": "A Framework for Deciding What to Remove"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Go through every installed app and ask three questions:"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Does this directly and measurably contribute to revenue or a core operational need? ",
+              "bold": true
+            },
+            "If the honest answer is “probably not” or “we’re not sure,” that’s a signal, not a maybe."
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Is this functionality something the theme, or a consolidated tool, could handle natively?",
+              "bold": true
+            },
+            " Several single-purpose apps often overlap in what they do. One well-chosen tool can replace three narrow ones."
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "When was this last actually used or checked? ",
+              "bold": true
+            },
+            "An app installed for a campaign that ended months ago is dead weight that’s still loading on every page."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Apps that fail more than one of these questions are strong removal candidates. Apps that clearly pass all three — apps directly tied to checkout, core functionality, or measurable revenue — stay."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "What_Happens_When_You_Just_Uninstall",
+      "text": "What Happens When You Just Uninstall"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Uninstalling isn’t always a clean removal. Some apps leave behind “leftover” code in your theme files, script tags, and custom liquid that keep loading even though the app itself is gone. After any app removal, it’s worth checking your theme code for orphaned references; this is a common, quietly persistent cause of slow stores that “shouldn’t” be slow anymore."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "A_Better_Default",
+      "text": "A Better Default"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Before installing a new app, ask whether the problem could be solved with a small custom addition instead — a snippet of custom CSS or Liquid rather than a new dependency. It won’t always be the right call, but treating “another app” as the default answer to every need is exactly how bloat accumulates in the first place."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "The_Bottom_Line",
+      "text": "The Bottom Line"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "There’s no universal cap on how many apps a store can run. The real question is whether each one is earning its place, in performance cost, stability risk, and ongoing upkeep, against what it actually delivers. Audit regularly, not just when something breaks."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Not sure whether it’s about Shopify app optimization or to start trimming, or wanting a professional audit of what’s actually slowing your store down? Our ",
+        {
+          "type": "link",
+          "href": "/shopify-maintenance-services",
+          "text": "Shopify maintenance services"
+        },
+        " cover exactly this: identifying what’s helping, what’s hurting, and cleaning up what’s left behind."
+      ]
+    }
+  ],
   "toc": [
     {
       "label": "Page Speed",

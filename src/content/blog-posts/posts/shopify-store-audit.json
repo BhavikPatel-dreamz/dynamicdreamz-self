@@ -12,12 +12,168 @@
   "author": {
     "name": "Rizwan Shaikh",
     "role": "Content Team Lead",
-    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that\u2019s not just readable but also useful, relevant, and built to drive real business outcomes.",
+    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that’s not just readable but also useful, relevant, and built to drive real business outcomes.",
     "image": "/assets/blog/authors/rizwanshaikh.webp",
     "linkedin": "https://in.linkedin.com/company/dynamic-dreamz-websolutions"
   },
-  "contentBeforeToc": "<p>Before you start spending money on a redesign, you should spend an hour doing a Shopify store audit, so you can find out what\u2019s actually broken. Because even a new theme can make a page look cleaner while leaving the real problem untouched: a broken tracking event, an unclear offer, or a checkout issue no one caught.</p>\n<p>But how to audit your Shopify store? Because it seems quite tough, right? Don\u2019t worry, these are the six areas that you should look for in the audit.</p>",
-  "contentAfterToc": "<h3 id=\"1_UX\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#1_UX\"></span>1. UX<span class=\"ez-toc-section-end\"></span></h3>\n<p>Test the real customer path, not just the homepage. Walk through navigation, search, product pages, cart, and checkout on both desktop and mobile. Since most Shopify traffic is mobile, a site that feels fast on desktop but laggy on phones is losing the majority of its audience. Note anywhere a visitor would hesitate, get confused, or hit a dead end.</p>\n<h3 id=\"2_Technical_SEO\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#2_Technical_SEO\"></span>2. Technical SEO<span class=\"ez-toc-section-end\"></span></h3>\n<p>Run a full crawl to catch indexing issues, broken canonicals, and missing schema. Check whether search crawlers can actually access and render your key pages; this matters even more now, since AI search traffic is expected to grow significantly through 2026 alongside traditional search. Review structured data on products, and confirm metadata is unique and accurate across your catalog.</p>\n<h3 id=\"3_Performance\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#3_Performance\"></span>3. Performance<span class=\"ez-toc-section-end\"></span></h3>\n<p>Check Core Web Vitals directly: LCP, INP, and CLS. Then look deeper. Removed apps often leave \u201czombie code\u201d behind in your theme files \u2014 scripts that still try to load even though the app is gone. This quietly drags down speed. Also check for app overlap: three different apps for upsells, pop-ups, and rewards usually means unnecessary bloat that could be consolidated.</p>\n<h3 id=\"4_Conversion\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#4_Conversion\"></span>4. Conversion<span class=\"ez-toc-section-end\"></span></h3>\n<p>Before anything else, verify your tracking is actually accurate. A missing event or mismatched conversion data can send you chasing a design fix when the real issue is a broken checkout event or unclear offer. Once tracking is confirmed, walk the full funnel: session to product view, to add-to-cart, to checkout, to purchase. Look for where the drop-off is steepest; that\u2019s where to focus first.</p>\n<h3 id=\"5_Theme\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#5_Theme\"></span>5. Theme<span class=\"ez-toc-section-end\"></span></h3>\n<p>Check whether you\u2019re on Shopify\u2019s OS 2.0 architecture. Older themes limit what you can do with sections, metafields, and app blocks. If your team keeps hitting \u201cthe theme doesn\u2019t support that\u201d whenever you ask for a change, that\u2019s a clear signal the theme itself is the constraint, not just its styling.</p>\n<h3 id=\"6_Integrations\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#6_Integrations\"></span>6. Integrations<span class=\"ez-toc-section-end\"></span></h3>\n<p>Review every connected app and system.</p>\n<ul>\n<li>Are integrations still functioning as expected?</li>\n<li>Are any redundant, conflicting, or slowing down page load?</li>\n</ul>\n<p>A cluttered integration stack is a common hidden cause of both performance issues and confusing UX.</p>\n<h3 id=\"Putting_It_Together\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#Putting_It_Together\"></span>Putting It Together<span class=\"ez-toc-section-end\"></span></h3>\n<p>Score each area honestly, not just pass or fail, but by impact. A weak product page matters more than a slightly outdated footer. Prioritize fixes by what actually affects revenue, not what\u2019s easiest to change first.</p>\n<h3 id=\"What_the_Audit_Tells_You\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#What_the_Audit_Tells_You\"></span>What the Audit Tells You<span class=\"ez-toc-section-end\"></span></h3>\n<p>Once you know what\u2019s actually broken, you\u2019ll also know what kind of fix it needs. A styling problem points toward a redesign. A theme that can\u2019t support your functionality points toward a rebuild. Structural or backend limitations point to something bigger entirely. If you haven\u2019t worked through that decision yet, our guide on Shopify store redesign versus rebuild versus replatforming walks through exactly how to make that call once your audit is done.</p>\n<h3 id=\"The_Bottom_Line\"><span class=\"ez-toc-section\" ez-toc-data-id=\"#The_Bottom_Line\"></span>The Bottom Line<span class=\"ez-toc-section-end\"></span></h3>\n<p>An audit isn\u2019t about finding reasons to spend more. It\u2019s about making sure whatever you do spend actually solves the right problem. Skip it, and you risk redesigning a store whose real issue was never the design at all.</p>\n<p>Once your audit is done and you know what needs fixing, our <a href=\"/shopify-development-agency\" rel=\"dofollow\">Shopify development services</a> cover everything from redesigns to full custom builds, so you can move straight from diagnosis to the right fix.</p>",
+  "contentBeforeToc": [
+    {
+      "type": "paragraph",
+      "children": [
+        "Before you start spending money on a redesign, you should spend an hour doing a Shopify store audit, so you can find out what’s actually broken. Because even a new theme can make a page look cleaner while leaving the real problem untouched: a broken tracking event, an unclear offer, or a checkout issue no one caught."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "But how to audit your Shopify store? Because it seems quite tough, right? Don’t worry, these are the six areas that you should look for in the audit."
+      ]
+    }
+  ],
+  "contentAfterToc": [
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "1_UX",
+      "text": "1. UX"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Test the real customer path, not just the homepage. Walk through navigation, search, product pages, cart, and checkout on both desktop and mobile. Since most Shopify traffic is mobile, a site that feels fast on desktop but laggy on phones is losing the majority of its audience. Note anywhere a visitor would hesitate, get confused, or hit a dead end."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "2_Technical_SEO",
+      "text": "2. Technical SEO"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Run a full crawl to catch indexing issues, broken canonicals, and missing schema. Check whether search crawlers can actually access and render your key pages; this matters even more now, since AI search traffic is expected to grow significantly through 2026 alongside traditional search. Review structured data on products, and confirm metadata is unique and accurate across your catalog."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "3_Performance",
+      "text": "3. Performance"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Check Core Web Vitals directly: LCP, INP, and CLS. Then look deeper. Removed apps often leave “zombie code” behind in your theme files — scripts that still try to load even though the app is gone. This quietly drags down speed. Also check for app overlap: three different apps for upsells, pop-ups, and rewards usually means unnecessary bloat that could be consolidated."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "4_Conversion",
+      "text": "4. Conversion"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Before anything else, verify your tracking is actually accurate. A missing event or mismatched conversion data can send you chasing a design fix when the real issue is a broken checkout event or unclear offer. Once tracking is confirmed, walk the full funnel: session to product view, to add-to-cart, to checkout, to purchase. Look for where the drop-off is steepest; that’s where to focus first."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "5_Theme",
+      "text": "5. Theme"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Check whether you’re on Shopify’s OS 2.0 architecture. Older themes limit what you can do with sections, metafields, and app blocks. If your team keeps hitting “the theme doesn’t support that” whenever you ask for a change, that’s a clear signal the theme itself is the constraint, not just its styling."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "6_Integrations",
+      "text": "6. Integrations"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Review every connected app and system."
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "content": [
+            "Are integrations still functioning as expected?"
+          ]
+        },
+        {
+          "content": [
+            "Are any redundant, conflicting, or slowing down page load?"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "A cluttered integration stack is a common hidden cause of both performance issues and confusing UX."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Putting_It_Together",
+      "text": "Putting It Together"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Score each area honestly, not just pass or fail, but by impact. A weak product page matters more than a slightly outdated footer. Prioritize fixes by what actually affects revenue, not what’s easiest to change first."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "What_the_Audit_Tells_You",
+      "text": "What the Audit Tells You"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Once you know what’s actually broken, you’ll also know what kind of fix it needs. A styling problem points toward a redesign. A theme that can’t support your functionality points toward a rebuild. Structural or backend limitations point to something bigger entirely. If you haven’t worked through that decision yet, our guide on Shopify store redesign versus rebuild versus replatforming walks through exactly how to make that call once your audit is done."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "The_Bottom_Line",
+      "text": "The Bottom Line"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "An audit isn’t about finding reasons to spend more. It’s about making sure whatever you do spend actually solves the right problem. Skip it, and you risk redesigning a store whose real issue was never the design at all."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Once your audit is done and you know what needs fixing, our ",
+        {
+          "type": "link",
+          "href": "/shopify-development-agency",
+          "text": "Shopify development services",
+          "rel": "dofollow"
+        },
+        " cover everything from redesigns to full custom builds, so you can move straight from diagnosis to the right fix."
+      ]
+    }
+  ],
   "toc": [
     {
       "label": "1. UX",

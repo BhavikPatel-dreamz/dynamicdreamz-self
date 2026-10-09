@@ -12,12 +12,220 @@
   "author": {
     "name": "Rizwan Shaikh",
     "role": "Content Team Lead",
-    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that\u2019s not just readable but also useful, relevant, and built to drive real business outcomes.",
+    "bio": "I lead the content team at Dynamic Dreamz, shaping clear, purposeful narratives across blogs, landing pages, and brand communication. With a strong grasp of SEO, storytelling, and buyer intent, I focus on creating content that’s not just readable but also useful, relevant, and built to drive real business outcomes.",
     "image": "/assets/blog/authors/rizwanshaikh.webp",
     "linkedin": "https://in.linkedin.com/company/dynamic-dreamz-websolutions"
   },
-  "contentBeforeToc": "<p>Checkout.liquid is not new, and not as famous as it once was. Henceforth, Shopify has replaced custom checkout code with Checkout Extensibility, a structured, supported framework built around specific tools rather than open template editing.</p><p>If your last checkout project predates this shift, the rules have genuinely changed. Here\u2019s what you can actually customize now through Shopify checkout customization, and where the real limits sit.</p>",
-  "contentAfterToc": "<h3 id=\"The_Four_Building_Blocks\">The Four Building Blocks</h3><p>Checkout Extensibility isn\u2019t one feature; it\u2019s four separate tools, each owning a different slice of the checkout experience:</p><ul>\n<li><b>Checkout UI Extensions: </b>Structured components that render in specific checkout slots, banners, custom fields, content blocks, upsell offers.</li>\n<li><b>Shopify Functions: </b>Backend logic for discounts, shipping rules, and payment customization, replacing the older Shopify Scripts.</li>\n<li><b>Checkout Branding API: </b>Styling control, colors, fonts, logo, layout, without touching functional logic.</li>\n<li><b>Web Pixels: </b>Event tracking for conversions, replacing the old \u201cAdditional Scripts\u201d approach to analytics.</li>\n</ul><h3 id=\"What_You_Can_Customize_on_Standard_Plans\">What You Can Customize on Standard Plans</h3><p>Standard and Advanced plans give you real, if more limited, control: checkout branding (logo, colors, fonts) and basic form field toggles through the built-in checkout editor. This covers visual consistency and simple field adjustments without needing custom development.</p><h4 id=\"What_Requires_Shopify_Plus\">What Requires Shopify Plus</h4><p>Deeper customization, custom content blocks, upsell offers, and Functions-driven logic like custom discount or shipping rules are where Plus pulls ahead significantly. This is one of the clearest remaining reasons brands upgrade specifically for checkout control.</p><h3 id=\"What_You_Cant_Do_Regardless_of_Plan\">What You Can\u2019t Do, Regardless of Plan</h3><p>Some things are simply off the table. Your theme doesn\u2019t control checkout at all; it\u2019s a separate, Shopify-hosted surface. Once a shopper clicks \u201cCheckout,\u201d Shopify takes over rendering entirely, which is also why switching themes never breaks your checkout.</p><p>Custom code no longer lives directly in a checkout template; it runs in sandboxed extensions instead. That\u2019s a deliberate trade-off: more limited than the old open-editing model, but far more stable and secure.</p><h3 id=\"Deadlines_That_Actually_Matter_Right_Now\">Deadlines That Actually Matter Right Now</h3><ul>\n<li><b>June 30, 2026: </b>Shopify Scripts (used for discount, shipping, and payment logic) stop working entirely. Anything still running on Scripts needs to migrate to Shopify Functions.</li>\n<li><b>August 26, 2026: </b>Non-Plus stores must upgrade their Thank You and Order Status pages. Additional Scripts and script tags on these pages stop working, and any tracking built that way needs to move to Web Pixels.</li>\n</ul><p>If you\u2019re still relying on old Additional Scripts for tracking or checkout logic, the safest move is to start the migration now; developer availability narrows fast as deadlines approach, and the actual work doesn\u2019t get easier by waiting.</p><h3 id=\"When_Custom_Development_Is_Actually_Required\">When Custom Development Is Actually Required</h3><p>Most checkout needs \u2014 branding, basic fields, standard upsells \u2014 are now covered by Extensibility\u2019s supported tools directly, or by apps built on top of them. Custom development becomes genuinely necessary when your business needs Functions-based logic specific to your operation: complex discount stacking, non-standard shipping calculations, or checkout behavior tied to unique business rules no off-the-shelf app already handles.</p><h3 id=\"A_Common_Misconception\">A Common Misconception</h3><p>\u201cExtensibility means I can\u2019t customize checkout\u201d isn\u2019t accurate. You can customize a great deal; it just happens through structured APIs now instead of open template editing. Most modern checkout apps are themselves built on these same Extensibility tools; installing one is often faster than building custom, unless your logic is genuinely unique.</p><h3 id=\"The_Bottom_Line\">The Bottom Line</h3><p>Checkout customization on Shopify today is more structured, and more secure, than it used to be. Know which of the four building blocks your need actually falls into, and you\u2019ll know quickly whether it\u2019s covered by native tools, an existing app, or genuinely requires custom development.</p><p><b>Curious what your current checkout can and can\u2019t do under the new rules?</b></p><p>Our breakdown of <a href=\"/blogs/shopify-plus-benefits\">Shopify Plus benefits</a> covers where checkout control fits into the bigger Plus upgrade picture.</p>",
+  "contentBeforeToc": [
+    {
+      "type": "paragraph",
+      "children": [
+        "Checkout.liquid is not new, and not as famous as it once was. Henceforth, Shopify has replaced custom checkout code with Checkout Extensibility, a structured, supported framework built around specific tools rather than open template editing."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "If your last checkout project predates this shift, the rules have genuinely changed. Here’s what you can actually customize now through Shopify checkout customization, and where the real limits sit."
+      ]
+    }
+  ],
+  "contentAfterToc": [
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "The_Four_Building_Blocks",
+      "text": "The Four Building Blocks"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Checkout Extensibility isn’t one feature; it’s four separate tools, each owning a different slice of the checkout experience:"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Checkout UI Extensions: ",
+              "bold": true
+            },
+            "Structured components that render in specific checkout slots, banners, custom fields, content blocks, upsell offers."
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Shopify Functions: ",
+              "bold": true
+            },
+            "Backend logic for discounts, shipping rules, and payment customization, replacing the older Shopify Scripts."
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Checkout Branding API: ",
+              "bold": true
+            },
+            "Styling control, colors, fonts, logo, layout, without touching functional logic."
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Web Pixels: ",
+              "bold": true
+            },
+            "Event tracking for conversions, replacing the old “Additional Scripts” approach to analytics."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "What_You_Can_Customize_on_Standard_Plans",
+      "text": "What You Can Customize on Standard Plans"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Standard and Advanced plans give you real, if more limited, control: checkout branding (logo, colors, fonts) and basic form field toggles through the built-in checkout editor. This covers visual consistency and simple field adjustments without needing custom development."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "id": "What_Requires_Shopify_Plus",
+      "text": "What Requires Shopify Plus"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Deeper customization, custom content blocks, upsell offers, and Functions-driven logic like custom discount or shipping rules are where Plus pulls ahead significantly. This is one of the clearest remaining reasons brands upgrade specifically for checkout control."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "What_You_Cant_Do_Regardless_of_Plan",
+      "text": "What You Can’t Do, Regardless of Plan"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Some things are simply off the table. Your theme doesn’t control checkout at all; it’s a separate, Shopify-hosted surface. Once a shopper clicks “Checkout,” Shopify takes over rendering entirely, which is also why switching themes never breaks your checkout."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Custom code no longer lives directly in a checkout template; it runs in sandboxed extensions instead. That’s a deliberate trade-off: more limited than the old open-editing model, but far more stable and secure."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Deadlines_That_Actually_Matter_Right_Now",
+      "text": "Deadlines That Actually Matter Right Now"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "June 30, 2026: ",
+              "bold": true
+            },
+            "Shopify Scripts (used for discount, shipping, and payment logic) stop working entirely. Anything still running on Scripts needs to migrate to Shopify Functions."
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "August 26, 2026: ",
+              "bold": true
+            },
+            "Non-Plus stores must upgrade their Thank You and Order Status pages. Additional Scripts and script tags on these pages stop working, and any tracking built that way needs to move to Web Pixels."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "If you’re still relying on old Additional Scripts for tracking or checkout logic, the safest move is to start the migration now; developer availability narrows fast as deadlines approach, and the actual work doesn’t get easier by waiting."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "When_Custom_Development_Is_Actually_Required",
+      "text": "When Custom Development Is Actually Required"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Most checkout needs — branding, basic fields, standard upsells — are now covered by Extensibility’s supported tools directly, or by apps built on top of them. Custom development becomes genuinely necessary when your business needs Functions-based logic specific to your operation: complex discount stacking, non-standard shipping calculations, or checkout behavior tied to unique business rules no off-the-shelf app already handles."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "A_Common_Misconception",
+      "text": "A Common Misconception"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "“Extensibility means I can’t customize checkout” isn’t accurate. You can customize a great deal; it just happens through structured APIs now instead of open template editing. Most modern checkout apps are themselves built on these same Extensibility tools; installing one is often faster than building custom, unless your logic is genuinely unique."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "The_Bottom_Line",
+      "text": "The Bottom Line"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Checkout customization on Shopify today is more structured, and more secure, than it used to be. Know which of the four building blocks your need actually falls into, and you’ll know quickly whether it’s covered by native tools, an existing app, or genuinely requires custom development."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Curious what your current checkout can and can’t do under the new rules?",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Our breakdown of ",
+        {
+          "type": "link",
+          "href": "/blogs/shopify-plus-benefits",
+          "text": "Shopify Plus benefits"
+        },
+        " covers where checkout control fits into the bigger Plus upgrade picture."
+      ]
+    }
+  ],
   "toc": [
     {
       "label": "The Four Building Blocks",
@@ -35,7 +243,7 @@
       "level": 2
     },
     {
-      "label": "What You Can\u2019t Do, Regardless of Plan",
+      "label": "What You Can’t Do, Regardless of Plan",
       "href": "#What_You_Cant_Do_Regardless_of_Plan",
       "level": 2
     },

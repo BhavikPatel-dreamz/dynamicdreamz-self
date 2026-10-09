@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { BlogContentRenderer } from "@/components/sections/blog-details/blog-content-renderer";
 import { BlogRelatedSection } from "@/components/sections/blog-details/blog-related-section";
 import { BlogTableOfContents } from "@/components/sections/blog-details/blog-table-of-contents";
 import type { BlogCardItem } from "@/components/ui/blog-card";
 import { Container } from "@/components/ui/container";
-import { RichText } from "@/components/ui/rich-text";
 import { blogDetailUiCopy, getRelatedBlogPosts } from "@/content/blog-post-details";
 import { siteConfig } from "@/data/site";
 import { absoluteUrl } from "@/lib/seo";
@@ -273,7 +273,7 @@ export function BlogDetailPage({ post, relatedPosts }: BlogDetailPageProps) {
               />
             </div>
           ) : null}
-          <RichText html={post.contentBeforeToc} variant="blog" />
+          <BlogContentRenderer blocks={post.contentBeforeToc} />
           {post.toc.length ? (
             <BlogTableOfContents
               items={post.toc}
@@ -281,7 +281,7 @@ export function BlogDetailPage({ post, relatedPosts }: BlogDetailPageProps) {
               toggleLabel={blogDetailUiCopy.tableOfContentsToggle}
             />
           ) : null}
-          <RichText html={post.contentAfterToc} variant="blog" />
+          <BlogContentRenderer blocks={post.contentAfterToc} />
         </div>
 
         <footer className="entry-footer mt-4">
