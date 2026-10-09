@@ -72,7 +72,7 @@ export interface Config {
     categories: Category;
     authors: Author;
     testimonials: Testimonial;
-    articles: Article;
+    posts: Post;
     'case-studies': CaseStudy;
     pages: Page;
     'payload-kv': PayloadKv;
@@ -87,7 +87,7 @@ export interface Config {
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     authors: AuthorsSelect<false> | AuthorsSelect<true>;
     testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
-    articles: ArticlesSelect<false> | ArticlesSelect<true>;
+    posts: PostsSelect<false> | PostsSelect<true>;
     'case-studies': CaseStudiesSelect<false> | CaseStudiesSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -251,9 +251,9 @@ export interface Testimonial {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "articles".
+ * via the `definition` "posts".
  */
-export interface Article {
+export interface Post {
   id: number;
   title: string;
   slug: string;
@@ -629,8 +629,8 @@ export interface PayloadLockedDocument {
         value: number | Testimonial;
       } | null)
     | ({
-        relationTo: 'articles';
-        value: number | Article;
+        relationTo: 'posts';
+        value: number | Post;
       } | null)
     | ({
         relationTo: 'case-studies';
@@ -799,9 +799,9 @@ export interface TestimonialsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "articles_select".
+ * via the `definition` "posts_select".
  */
-export interface ArticlesSelect<T extends boolean = true> {
+export interface PostsSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
   date?: T;

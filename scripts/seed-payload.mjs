@@ -152,14 +152,14 @@ async function runSeed() {
     }
   }
 
-  // 5. Seed Blog Articles (all 116 local posts)
+  // 5. Seed Blog Posts (all 116 local posts)
   const blogIndexPath = path.join(process.cwd(), "src/content/blog-posts/index.json");
   const blogIndexRaw = await fs.readFile(blogIndexPath, "utf-8");
   const blogIndex = JSON.parse(blogIndexRaw);
 
-  console.log(`\n5. Seeding ${blogIndex.length} Blog Articles (with Categories & Authors)...`);
-  let articlesCreated = 0;
-  let articlesUpdated = 0;
+  console.log(`\n5. Seeding ${blogIndex.length} Blog Posts (with Categories & Authors)...`);
+  let postsCreated = 0;
+  let postsUpdated = 0;
 
   for (const postSummary of blogIndex) {
     const postFilePath = path.join(
@@ -195,7 +195,7 @@ async function runSeed() {
         authorMap.get(authorKey) || authorMap.get("dynamic dreamz team");
 
       const existing = await payload.find({
-        collection: "articles",
+        collection: "posts",
         where: { slug: { equals: postSummary.slug } },
         limit: 1,
       });
@@ -203,7 +203,7 @@ async function runSeed() {
       if (existing.docs.length > 0) {
         const existingDoc = existing.docs[0];
         await payload.update({
-          collection: "articles",
+          collection: "posts",
           id: existingDoc.id,
           data: {
             author: targetAuthorId || existingDoc.author,
@@ -218,9 +218,9 @@ async function runSeed() {
             },
           },
         });
-        articlesUpdated++;
+        postsUpdated++;
       } else {
-        const articleText =
+        const postText =
           postDetail.content ||
           postDetail.contentBeforeToc ||
           postDetail.excerpt ||
@@ -228,7 +228,7 @@ async function runSeed() {
           "";
 
         await payload.create({
-          collection: "articles",
+          collection: "posts",
           data: {
             title: postDetail.title,
             slug: postDetail.slug,
@@ -243,7 +243,7 @@ async function runSeed() {
                 children: [
                   {
                     type: "paragraph",
-                    children: [{ text: articleText }],
+                    children: [{ text: postText }],
                   },
                 ],
               },
@@ -256,13 +256,13 @@ async function runSeed() {
             },
           },
         });
-        articlesCreated++;
+        postsCreated++;
       }
     } catch (err) {
-      console.warn(`  ✗ Failed to process article ${postSummary.slug}:`, err.message);
+      console.warn(`  ✗ Failed to process post ${postSummary.slug}:`, err.message);
     }
   }
-  console.log(`  ✓ Articles: ${articlesCreated} created, ${articlesUpdated} updated`);
+  console.log(`  ✓ Posts: ${postsCreated} created, ${postsUpdated} updated`);
 
   // 6. Seed Case Studies (all 58 case studies)
   console.log(`\n6. Seeding ${caseStudyDetails.length} Case Studies...`);
@@ -389,7 +389,7 @@ async function runSeed() {
   console.log("     PAYLOAD CMS SEEDING COMPLETE         ");
   console.log("==========================================");
   console.log(`• Authors Configured:    ${authorsData.length}`);
-  console.log(`• Blog Articles:         ${blogIndex.length} (Created: ${articlesCreated}, Updated: ${articlesUpdated})`);
+  console.log(`• Blog Posts:            ${blogIndex.length} (Created: ${postsCreated}, Updated: ${postsUpdated})`);
   console.log(`• Case Studies:          ${caseStudyDetails.length} (Created: ${caseStudiesCreated}, Updated: ${caseStudiesUpdated})`);
   console.log(`• Testimonials:          ${testimonials.length} (Created: ${testimonialsCreated}, Updated: ${testimonialsUpdated})`);
   console.log("==========================================\n");

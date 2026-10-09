@@ -6,7 +6,7 @@ No code edits, developer intervention, or Git commits are required for WordPress
 - Edit the Header dropdowns, Footer navigation columns, and bottom legal links.
 - Update company phone numbers, WhatsApp, emails, and global office addresses.
 - Build and edit any Landing, Service, or Industry page using a **Drag-and-Drop Modular Page Builder**.
-- Add, update, and publish Blog Articles and Case Studies.
+- Add, update, and publish Blog Posts and Case Studies.
 - Upload, replace, and organize images in the Media Library with automated WebP conversion and SEO alt attributes.
 - Update SEO metadata (Meta Titles, Descriptions, Canonical URLs, and OG Images) on any page.
 
@@ -78,7 +78,7 @@ For team members transitioning from WordPress, this table maps legacy WordPress 
 | **Appearance $\rightarrow$ Menus** | **Globals $\rightarrow$ Navigation** | Visually add, rename, and reorder header dropdowns, footer columns, and bottom links. |
 | **Theme Customizer / Options** | **Globals $\rightarrow$ Site Settings** | Update phone numbers, WhatsApp, contact email, office addresses, and social links. |
 | **Elementor / Gutenberg** | **Collections $\rightarrow$ Pages (Blocks)** | Click **"Add Section"** to insert visual blocks (`Hero`, `FAQs`, `Stat Counters`, `Feature Grid`, `CTA Banner`). Reorder by dragging. |
-| **Posts & Categories** | **Collections $\rightarrow$ Articles & Categories** | Write posts using the Lexical Rich Text editor, attach categories, author, FAQs, and custom excerpts. |
+| **Posts & Categories** | **Collections $\rightarrow$ Posts & Categories** | Write posts using the Lexical Rich Text editor, attach categories, author, FAQs, and custom excerpts. |
 | **Custom Post Types (Portfolio)** | **Collections $\rightarrow$ Case Studies** | Manage client names, metrics, problem/solution copy, image galleries, and client review quotes. |
 | **Reviews / Testimonials** | **Collections $\rightarrow$ Testimonials** | Add client reviews, star ratings, roles, and company logos. |
 | **Media Library** | **Collections $\rightarrow$ Media** | Drag-and-drop file uploads with automatic image resizing, focal points, and mandatory alt text. |
@@ -106,7 +106,7 @@ For team members transitioning from WordPress, this table maps legacy WordPress 
 │   ├── collections/                      # Content Collections
 │   │   ├── Users.ts                      # Admin & Editor user accounts
 │   │   ├── Media.ts                      # Uploaded images, icons, and banners
-│   │   ├── Articles.ts                   # Blog posts
+│   │   ├── Posts.ts                      # Blog posts
 │   │   ├── Categories.ts                 # Blog categories
 │   │   ├── Authors.ts                    # Blog authors
 │   │   ├── CaseStudies.ts                # Portfolio case studies
@@ -397,12 +397,12 @@ export const Testimonials: CollectionConfig = {
 };
 ```
 
-#### 5. Blog Articles Collection (`src/collections/Articles.ts`)
+#### 5. Blog Posts Collection (`src/collections/Posts.ts`)
 ```ts
 import type { CollectionConfig } from "payload";
 
-export const Articles: CollectionConfig = {
-  slug: "articles",
+export const Posts: CollectionConfig = {
+  slug: "posts",
   admin: {
     useAsTitle: "title",
     defaultColumns: ["title", "slug", "categories", "date"],
@@ -432,7 +432,7 @@ export const Articles: CollectionConfig = {
     {
       name: "faqs",
       type: "array",
-      label: "Article FAQs",
+      label: "Post FAQs",
       fields: [
         { name: "question", type: "text", required: true },
         { name: "answer", type: "textarea", required: true },
@@ -972,7 +972,7 @@ import { Media } from "./src/collections/Media";
 import { Categories } from "./src/collections/Categories";
 import { Authors } from "./src/collections/Authors";
 import { Testimonials } from "./src/collections/Testimonials";
-import { Articles } from "./src/collections/Articles";
+import { Posts } from "./src/collections/Posts";
 import { CaseStudies } from "./src/collections/CaseStudies";
 import { Pages } from "./src/collections/Pages";
 
@@ -995,7 +995,7 @@ export default buildConfig({
     Categories,
     Authors,
     Testimonials,
-    Articles,
+    Posts,
     CaseStudies,
     Pages,
   ],
@@ -1047,32 +1047,32 @@ export async function getPayloadSiteSettings() {
   }
 }
 
-export async function getPayloadArticles(limit = 100) {
+export async function getPayloadPosts(limit = 100) {
   try {
     const payload = await getPayload({ config });
     const res = await payload.find({
-      collection: "articles",
+      collection: "posts",
       limit,
       sort: "-date",
     });
     return res.docs;
   } catch (err) {
-    console.warn("Payload getPayloadArticles warning:", err);
+    console.warn("Payload getPayloadPosts warning:", err);
     return [];
   }
 }
 
-export async function getPayloadArticleBySlug(slug: string) {
+export async function getPayloadPostBySlug(slug: string) {
   try {
     const payload = await getPayload({ config });
     const res = await payload.find({
-      collection: "articles",
+      collection: "posts",
       where: { slug: { equals: slug } },
       limit: 1,
     });
     return res.docs[0] || null;
   } catch (err) {
-    console.warn(`Payload getPayloadArticleBySlug(${slug}) warning:`, err);
+    console.warn(`Payload getPayloadPostBySlug(${slug}) warning:`, err);
     return null;
   }
 }
@@ -1126,7 +1126,7 @@ export async function getPayloadPageBySlug(slug: string) {
 
 ### Phase 6: Automated Seeding Script (`scripts/seed-payload.mjs`)
 
-This script populates company settings, navigation, all 103 local blog articles, and all 58 case studies into the PostgreSQL database:
+This script populates company settings, navigation, all 103 local blog posts, and all 58 case studies into the PostgreSQL database:
 
 ```js
 import { getPayload } from "payload";
@@ -1187,8 +1187,8 @@ async function runSeed() {
     },
   });
 
-  // 3. Seed Blog Articles (all 103 posts)
-  console.log(`Seeding ${blogIndex.length} Blog Articles...`);
+  // 3. Seed Blog Posts (all 103 posts)
+  console.log(`Seeding ${blogIndex.length} Blog Posts...`);
   for (const postSummary of blogIndex) {
     const postFilePath = path.join(
       process.cwd(),
@@ -1201,7 +1201,7 @@ async function runSeed() {
       const postDetail = JSON.parse(fileData);
 
       await payload.create({
-        collection: "articles",
+        collection: "posts",
         data: {
           title: postDetail.title,
           slug: postDetail.slug,
@@ -1226,9 +1226,9 @@ async function runSeed() {
           },
         },
       });
-      console.log(`  ✓ Seeded Article: ${postDetail.slug}`);
+      console.log(`  ✓ Seeded Post: ${postDetail.slug}`);
     } catch (err) {
-      console.warn(`  ✗ Failed to seed article ${postSummary.slug}:`, err.message);
+      console.warn(`  ✗ Failed to seed post ${postSummary.slug}:`, err.message);
     }
   }
 
@@ -1279,11 +1279,11 @@ To achieve 100% CMS content management without losing static site performance:
 
 #### 1. Blog Archive & Details Route Wiring
 - **`/blogs` (`src/app/(frontend)/blogs/page.tsx`)**:
-  - Fetch articles from Payload via `getPayloadArticles()`.
-  - If Payload returns articles, use them; if empty/offline, seamlessly fall back to local `filterBlogArchiveArticles()`.
+  - Fetch posts from Payload via `getPayloadPosts()`.
+  - If Payload returns posts, use them; if empty/offline, seamlessly fall back to local `filterBlogArchiveArticles()`.
 - **`/blogs/[slug]` (`src/app/(frontend)/blogs/[slug]/page.tsx`)**:
-  - Change `export const dynamicParams = true;` (enabling new CMS articles to render on-demand).
-  - Check `getPayloadArticleBySlug(slug)` first; fall back to `getBlogPostBySlug(slug)`.
+  - Change `export const dynamicParams = true;` (enabling new CMS posts to render on-demand).
+  - Check `getPayloadPostBySlug(slug)` first; fall back to `getBlogPostBySlug(slug)`.
 
 #### 2. Case Studies Archive & Details Route Wiring
 - **`/case-studies` (`src/app/(frontend)/case-studies/page.tsx`)**:
@@ -1331,12 +1331,12 @@ export async function GET(req: NextRequest) {
 Disables Next.js draft mode and redirects the user back to the public page. (Already configured in the codebase).
 
 #### 3. Collection Live Preview Configuration
-Attach `admin.livePreview` to `Pages`, `Articles`, and `CaseStudies` in their collection configs:
+Attach `admin.livePreview` to `Pages`, `Posts`, and `CaseStudies` in their collection configs:
 ```ts
 admin: {
   livePreview: {
     url: ({ data }) => {
-      const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000";
+      const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
       return `${baseUrl}/api/draft?secret=${process.env.PAYLOAD_SECRET}&slug=${data.slug}`;
     },
   },
@@ -1369,7 +1369,7 @@ export async function POST(req: NextRequest) {
 ```
 
 #### 2. Collection `afterChange` and `afterDelete` Hooks
-In `Pages`, `Articles`, `CaseStudies`, `Navigation`, and `SiteSettings`:
+In `Pages`, `Posts`, `CaseStudies`, `Navigation`, and `SiteSettings`:
 ```ts
 hooks: {
   afterChange: [
@@ -1428,8 +1428,8 @@ hooks: {
 5. In **SEO Settings**, set Meta Title, Description, and Social Share Image.
 6. Click **Publish** $\rightarrow$ Live immediately!
 
-#### 5. Publishing Articles & Case Studies
-- Go to **Articles** or **Case Studies** $\rightarrow$ **Create New**.
+#### 5. Publishing Posts & Case Studies
+- Go to **Posts** or **Case Studies** $\rightarrow$ **Create New**.
 - Use Lexical Rich Text editor, upload media, add metrics or FAQs, and set SEO fields.
 - Click **Publish**.
 

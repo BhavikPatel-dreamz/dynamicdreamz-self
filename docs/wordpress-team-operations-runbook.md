@@ -15,7 +15,7 @@ With this setup, **100% of website content, pages, media, global navigation, and
 4. [Updating Global Company Information & Contact Details](#4-updating-global-company-information--contact-details)
 5. [The Drag-and-Drop Modular Page Builder](#5-the-drag-and-drop-modular-page-builder)
 6. [Field Guide to the 14 Visual Content Blocks](#6-field-guide-to-the-14-visual-content-blocks)
-7. [Publishing Blog Articles](#7-publishing-blog-articles)
+7. [Publishing Blog Posts](#7-publishing-blog-posts)
 8. [Managing Case Studies & Portfolio](#8-managing-case-studies--portfolio)
 9. [Managing Client Testimonials & Reviews](#9-managing-client-testimonials--reviews)
 10. [Media Library & Asset Upload Guidelines](#10-media-library--asset-upload-guidelines)
@@ -33,7 +33,7 @@ With this setup, **100% of website content, pages, media, global navigation, and
 | **Appearance $\rightarrow$ Menus** | **Globals $\rightarrow$ Header & Footer Menus** | Visually edit header links, dropdown columns, footer links, and legal links. |
 | **Theme Customizer / Options** | **Globals $\rightarrow$ Company Information** | Update phone numbers, WhatsApp, emails, office address, and social profiles. |
 | **Elementor / Gutenberg Builder** | **Collections $\rightarrow$ Pages (Blocks)** | Click **"Add Section"** to insert visual blocks (`Hero`, `FAQs`, `Counters`, `CTA`, etc.). Drag and drop to reorder. |
-| **Posts & Categories** | **Collections $\rightarrow$ Articles & Categories** | Write posts with the Lexical Rich Text editor, select categories, assign author, and add FAQs. |
+| **Posts & Categories** | **Collections $\rightarrow$ Posts & Categories** | Write posts with the Lexical Rich Text editor, select categories, assign author, and add FAQs. |
 | **Portfolio / Projects (CPT)** | **Collections $\rightarrow$ Case Studies** | Manage client name, metrics, challenges, solutions, image galleries, and review quotes. |
 | **Client Testimonials** | **Collections $\rightarrow$ Testimonials** | Add quotes, star ratings, reviewer roles, company logos, and video review links. |
 | **Media Library** | **Collections $\rightarrow$ Media** | Drag-and-drop file uploads with automatic WebP conversion and SEO alt attributes. |
@@ -202,13 +202,13 @@ Every block maps directly to our high-performance Next.js component system:
 
 ---
 
-## 7. Publishing Blog Articles
+## 7. Publishing Blog Posts
 
-To write and publish an article in the Blog section:
+To write and publish a post in the Blog section:
 
-1. Go to **Collections** $\rightarrow$ **Articles**.
+1. Go to **Collections** $\rightarrow$ **Posts**.
 2. Click **Create New**.
-3. **Article Title**: Main headline.
+3. **Post Title**: Main headline.
 4. **Slug**: URL slug under `/blogs/<slug>` (e.g., `shopify-cro-checklist`).
 5. **Publish Date (`date`)**: Publication timestamp for chronological ordering.
 6. **Display Date**: Formatted string shown to readers (e.g., `October 15, 2026`).
@@ -218,8 +218,8 @@ To write and publish an article in the Blog section:
    - Use **Heading 2** and **Heading 3** for proper hierarchical structure.
    - Insert bulleted lists, numbered lists, blockquotes, and internal links.
 10. **Categories**: Multi-select one or more categories (e.g., `Shopify Plus`, `CRO`, `Migrations`).
-11. **Author**: Select the article author.
-12. **Article FAQs**: Add article-specific Q&A items. These are automatically converted into Google FAQ Page structured data.
+11. **Author**: Select the post author.
+12. **Post FAQs**: Add post-specific Q&A items. These are automatically converted into Google FAQ Page structured data.
 13. **SEO Settings**: Set Meta Title and Meta Description.
 14. Click **Publish**.
 
@@ -279,7 +279,7 @@ Our Next.js frontend uses Next.js Image optimization and WebP delivery. Follow t
 
 ## 11. SEO & Social Sharing Metadata
 
-Every Page, Article, and Case Study includes an **SEO Settings** group:
+Every Page, Post, and Case Study includes an **SEO Settings** group:
 
 1. **Meta Title**:
    - Optimal length: 50–60 characters.
@@ -299,7 +299,7 @@ Every Page, Article, and Case Study includes an **SEO Settings** group:
 
 Payload 3.0 provides real-time side-by-side Live Preview:
 
-1. While editing any Page, Article, or Case Study, look at the top action bar.
+1. While editing any Page, Post, or Case Study, look at the top action bar.
 2. Click **Live Preview**.
 3. The right-hand pane opens an interactive preview of your draft.
 4. Any text, block reordering, or image change in the left panel updates the live preview immediately without needing to hit Save or Publish.
@@ -311,7 +311,7 @@ Payload 3.0 provides real-time side-by-side Live Preview:
 
 Next.js uses Incremental Static Regeneration (ISR) for blistering page speed:
 
-- **Automatic Purging**: When you click **Save** or **Publish** on any page, article, case study, or navigation menu, Payload triggers an automatic background hook (`afterChange` / `afterDelete`) that instantly purges the Next.js cache.
+- **Automatic Purging**: When you click **Save** or **Publish** on any page, post, case study, or navigation menu, Payload triggers an automatic background hook (`afterChange` / `afterDelete`) that instantly purges the Next.js cache.
 - **Manual Cache Purge**: If you ever need to manually purge a specific URL:
   ```bash
   curl -X POST "https://www.dynamicdreamz.com/api/revalidate?secret=YOUR_PAYLOAD_SECRET" \

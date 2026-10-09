@@ -8,7 +8,7 @@ import {
 } from "@/data/navigation";
 import type { FooterLinkItem } from "@/components/layout/site-footer";
 import type {
-  Article,
+  Post,
   CaseStudy,
   Navigation,
 } from "@/types/payload-types";
@@ -129,36 +129,36 @@ export function adaptPayloadFooterBottomLinks(
   }));
 }
 
-export async function getPayloadArticles(limit = 200) {
+export async function getPayloadPosts(limit = 200) {
   try {
     const payload = await getPayload({ config });
     const res = await payload.find({
-      collection: "articles",
+      collection: "posts",
       limit,
       sort: "-date",
     });
     return res.docs;
   } catch (err) {
-    console.warn("Payload getPayloadArticles warning:", err);
+    console.warn("Payload getPayloadPosts warning:", err);
     return [];
   }
 }
 
-export async function getPayloadArticleBySlug(
+export async function getPayloadPostBySlug(
   slug: string,
   options?: { preview?: boolean },
 ) {
   try {
     const payload = await getPayload({ config });
     const res = await payload.find({
-      collection: "articles",
+      collection: "posts",
       where: { slug: { equals: slug } },
       draft: options?.preview,
       limit: 1,
     });
     return res.docs[0] || null;
   } catch (err) {
-    console.warn(`Payload getPayloadArticleBySlug(${slug}) warning:`, err);
+    console.warn(`Payload getPayloadPostBySlug(${slug}) warning:`, err);
     return null;
   }
 }
@@ -246,19 +246,19 @@ export function serializeLexicalToHtml(node: unknown): string {
   return "";
 }
 
-export function adaptPayloadArticleToArchive(
-  article: Article,
+export function adaptPayloadPostToArchive(
+  post: Post,
 ): BlogArchiveArticle {
   const cover =
-    typeof article.coverImage === "object" && article.coverImage !== null
-      ? article.coverImage
+    typeof post.coverImage === "object" && post.coverImage !== null
+      ? post.coverImage
       : null;
 
   let categoryLabel: BlogArchiveArticle["category"] = "Shopify";
   let categoryHref = "/blogs?category=shopify";
 
-  if (article.categories && article.categories.length > 0) {
-    const firstCat = article.categories[0];
+  if (post.categories && post.categories.length > 0) {
+    const firstCat = post.categories[0];
     if (typeof firstCat === "object" && firstCat !== null) {
       const name = firstCat.name.toLowerCase();
       if (name.includes("wordpress")) {
@@ -281,9 +281,9 @@ export function adaptPayloadArticleToArchive(
   }
 
   const displayDate =
-    article.displayDate ||
-    (article.date
-      ? new Date(article.date).toLocaleDateString("en-US", {
+    post.displayDate ||
+    (post.date
+      ? new Date(post.date).toLocaleDateString("en-US", {
           month: "short",
           day: "numeric",
           year: "numeric",
@@ -291,53 +291,53 @@ export function adaptPayloadArticleToArchive(
       : "");
 
   return {
-    title: article.title,
-    href: `/blogs/${article.slug}`,
+    title: post.title,
+    href: `/blogs/${post.slug}`,
     image: cover?.url || null,
     width: cover?.width || null,
     height: cover?.height || null,
-    date: article.date,
+    date: post.date,
     displayDate,
     category: categoryLabel,
     categoryHref,
-    excerpt: article.excerpt || "",
+    excerpt: post.excerpt || "",
   };
 }
 
-export function filterPayloadArchiveArticles(
-  articles: readonly BlogArchiveArticle[],
+export function filterPayloadArchivePosts(
+  posts: readonly BlogArchiveArticle[],
   query = "",
   category?: BlogArchiveCategoryValue,
 ): BlogArchiveArticle[] {
   const normalizedQuery = query.trim().toLocaleLowerCase("en-US");
 
-  return articles.filter((article) => {
+  return posts.filter((post) => {
     const matchesCategory = category
-      ? article.category.toLocaleLowerCase("en-US") === category
-      : article.category !== "Faqs";
+      ? post.category.toLocaleLowerCase("en-US") === category
+      : post.category !== "Faqs";
     const matchesQuery = normalizedQuery
-      ? article.title.toLocaleLowerCase("en-US").includes(normalizedQuery)
+      ? post.title.toLocaleLowerCase("en-US").includes(normalizedQuery)
       : true;
 
     return matchesCategory && matchesQuery;
   });
 }
 
-export function adaptPayloadArticleToBlogPostDetail(
-  article: Article,
+export function adaptPayloadPostToBlogPostDetail(
+  post: Post,
   fallbackDetail?: BlogPostDetail,
 ): BlogPostDetail {
   const cover =
-    typeof article.coverImage === "object" && article.coverImage !== null
-      ? article.coverImage
+    typeof post.coverImage === "object" && post.coverImage !== null
+      ? post.coverImage
       : null;
 
   let htmlContent = "";
-  if (article.content) {
-    if (typeof article.content === "string") {
-      htmlContent = article.content;
+  if (post.content) {
+    if (typeof post.content === "string") {
+      htmlContent = post.content;
     } else {
-      htmlContent = serializeLexicalToHtml(article.content);
+      htmlContent = serializeLexicalToHtml(post.content);
     }
   }
 
@@ -345,8 +345,8 @@ export function adaptPayloadArticleToBlogPostDetail(
   let categoryValue = fallbackDetail?.categoryValue || "shopify";
   let categoryHref = fallbackDetail?.categoryHref || "/blogs?category=shopify";
 
-  if (article.categories && article.categories.length > 0) {
-    const firstCat = article.categories[0];
+  if (post.categories && post.categories.length > 0) {
+    const firstCat = post.categories[0];
     if (typeof firstCat === "object" && firstCat !== null) {
       categoryName = firstCat.name;
       categoryValue = firstCat.slug;
@@ -355,21 +355,21 @@ export function adaptPayloadArticleToBlogPostDetail(
   }
 
   const displayDate =
-    article.displayDate || fallbackDetail?.displayDate || article.date;
+    post.displayDate || fallbackDetail?.displayDate || post.date;
   const modified =
-    article.updatedAt || fallbackDetail?.modified || article.date;
+    post.updatedAt || fallbackDetail?.modified || post.date;
 
   const author =
-    (typeof article.author === "object" && article.author !== null
+    (typeof post.author === "object" && post.author !== null
       ? {
-          name: article.author.name,
-          role: article.author.role || "Author",
-          bio: article.author.bio || "",
+          name: post.author.name,
+          role: post.author.role || "Author",
+          bio: post.author.bio || "",
           image:
-            (typeof article.author.avatar === "object" &&
-              article.author.avatar?.url) ||
+            (typeof post.author.avatar === "object" &&
+              post.author.avatar?.url) ||
             "/assets/team/vatsal-panchal.webp",
-          linkedin: article.author.linkedin || undefined,
+          linkedin: post.author.linkedin || undefined,
         }
       : null) ||
     fallbackDetail?.author ||
@@ -380,13 +380,13 @@ export function adaptPayloadArticleToBlogPostDetail(
         src: cover.url,
         width: cover.width || 1200,
         height: cover.height || 630,
-        alt: cover.alt || article.title,
+        alt: cover.alt || post.title,
       }
     : fallbackDetail?.featuredImage || null;
 
   const faqs =
-    article.faqs && article.faqs.length > 0
-      ? article.faqs.map((f) => ({ question: f.question, answer: f.answer }))
+    post.faqs && post.faqs.length > 0
+      ? post.faqs.map((f) => ({ question: f.question, answer: f.answer }))
       : fallbackDetail?.faqs || [];
 
   const rawText = htmlContent.replace(/<[^>]+>/g, " ");
@@ -395,16 +395,16 @@ export function adaptPayloadArticleToBlogPostDetail(
     : fallbackDetail?.wordCount || 500;
 
   return {
-    slug: article.slug,
-    title: article.title,
-    date: article.date,
+    slug: post.slug,
+    title: post.title,
+    date: post.date,
     displayDate,
     modified,
     category: categoryName,
     categoryValue,
     categoryHref,
     featuredImage,
-    excerpt: article.excerpt || fallbackDetail?.excerpt || "",
+    excerpt: post.excerpt || fallbackDetail?.excerpt || "",
     author,
     contentBeforeToc: htmlContent || fallbackDetail?.contentBeforeToc || "",
     contentAfterToc: fallbackDetail?.contentAfterToc || "",
@@ -414,13 +414,13 @@ export function adaptPayloadArticleToBlogPostDetail(
     next: fallbackDetail?.next || null,
     seo: {
       title:
-        article.seo?.metaTitle ||
+        post.seo?.metaTitle ||
         fallbackDetail?.seo.title ||
-        article.title,
+        post.title,
       description:
-        article.seo?.metaDescription ||
+        post.seo?.metaDescription ||
         fallbackDetail?.seo.description ||
-        article.excerpt ||
+        post.excerpt ||
         "",
     },
     wordCount,

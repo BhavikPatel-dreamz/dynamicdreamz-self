@@ -8,8 +8,8 @@ import { blogPostIndex, getBlogPostBySlug, getRelatedBlogPosts } from "@/content
 import { draftPreviewCopy } from "@/content/common";
 import { createPageMetadata, type PageSeoConfig } from "@/data/seo";
 import {
-  adaptPayloadArticleToBlogPostDetail,
-  getPayloadArticleBySlug,
+  adaptPayloadPostToBlogPostDetail,
+  getPayloadPostBySlug,
 } from "@/lib/payload";
 import { createBlogPostDetailPageSchema, serializeJsonLd } from "@/lib/schema";
 
@@ -26,11 +26,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: BlogRouteProps): Promise<Metadata> {
   const { slug } = await params;
   const draft = await draftMode();
-  const rawPayloadPost = await getPayloadArticleBySlug(slug, { preview: draft.isEnabled });
+  const rawPayloadPost = await getPayloadPostBySlug(slug, { preview: draft.isEnabled });
   const fallbackPost = await getBlogPostBySlug(slug);
 
   const post = rawPayloadPost
-    ? adaptPayloadArticleToBlogPostDetail(rawPayloadPost, fallbackPost)
+    ? adaptPayloadPostToBlogPostDetail(rawPayloadPost, fallbackPost)
     : fallbackPost;
 
   if (!post) return {};
@@ -72,11 +72,11 @@ export async function generateMetadata({ params }: BlogRouteProps): Promise<Meta
 export default async function BlogRoute({ params }: BlogRouteProps) {
   const { slug } = await params;
   const draft = await draftMode();
-  const rawPayloadPost = await getPayloadArticleBySlug(slug, { preview: draft.isEnabled });
+  const rawPayloadPost = await getPayloadPostBySlug(slug, { preview: draft.isEnabled });
   const fallbackPost = await getBlogPostBySlug(slug);
 
   const post = rawPayloadPost
-    ? adaptPayloadArticleToBlogPostDetail(rawPayloadPost, fallbackPost)
+    ? adaptPayloadPostToBlogPostDetail(rawPayloadPost, fallbackPost)
     : fallbackPost;
 
   if (!post) notFound();
