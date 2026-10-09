@@ -462,7 +462,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     videoId: testimonial.videoId || "",
                     image:
                       resolveMediaUrl(testimonial.avatar) ||
-                      "/assets/testimonials/placeholder.webp",
+                      "/assets/testimonials/brandon.webp",
                     imageAlt: testimonial.authorName,
                     logo: resolveMediaUrl(testimonial.logo) || undefined,
                     logoAlt:
@@ -491,7 +491,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               return {
                 title: caseStudy.title,
                 href: `/case-studies/${caseStudy.slug}`,
-                image: resolveMediaUrl(media) || "/assets/case-studies/placeholder.webp",
+                image: resolveMediaUrl(media) || "/assets/case-studies/gnc-india.webp",
                 imageAlt: resolveMediaAlt(media, caseStudy.title),
                 technology: caseStudy.technology || "",
                 industry: caseStudy.industry || "",
@@ -513,7 +513,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
           case "brand-partners": {
             const bpBlock = block as BlockBrandPartners;
             const logos = (bpBlock.logos ?? []).map((item) => ({
-              src: resolveMediaUrl(item.logo) || "/assets/brand/default-logo.svg",
+              src: resolveMediaUrl(item.logo) || "/assets/brand/dynamic-dreamz-logo.svg",
               alt: resolveMediaAlt(item.logo, item.name),
               width: typeof item.logo === "object" && item.logo?.width ? item.logo.width : 160,
               height: typeof item.logo === "object" && item.logo?.height ? item.logo.height : 60,
@@ -583,7 +583,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 description={iwtBlock.description}
                 heading={iwtBlock.heading}
                 image={{
-                  src: imageUrl || "/assets/services/default-service.webp",
+                  src: imageUrl || "/assets/og/homepage.png",
                   alt: resolveMediaAlt(iwtBlock.image, iwtBlock.heading),
                   width:
                     typeof iwtBlock.image === "object" && iwtBlock.image?.width
@@ -606,7 +606,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               title: ind.title,
               eyebrow: ind.eyebrow,
               description: ind.description || "",
-              image: resolveMediaUrl(ind.image) || "/assets/industries/fashion.webp",
+              image: resolveMediaUrl(ind.image) || "/assets/shopify-plus-agency/industries/fashion-apparel.webp",
               imageAlt: resolveMediaAlt(ind.image, ind.title),
               href: ind.href,
             }));
