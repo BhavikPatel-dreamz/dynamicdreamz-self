@@ -1,14 +1,14 @@
 import type { CollectionConfig } from "payload";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
-export const Articles: CollectionConfig = {
-  slug: "articles",
+export const Posts: CollectionConfig = {
+  slug: "posts",
   admin: {
     useAsTitle: "title",
     defaultColumns: ["title", "slug", "categories", "date"],
     livePreview: {
       url: ({ data }) => {
-        const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000";
+        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
         return `${baseUrl}/api/draft?secret=${process.env.PAYLOAD_SECRET || ""}&path=/blogs/${data.slug || ""}&slug=${data.slug || ""}`;
       },
     },
@@ -61,7 +61,7 @@ export const Articles: CollectionConfig = {
     {
       name: "faqs",
       type: "array",
-      label: "Article FAQs",
+      label: "Post FAQs",
       fields: [
         { name: "question", type: "text", required: true },
         { name: "answer", type: "textarea", required: true },
@@ -80,3 +80,4 @@ export const Articles: CollectionConfig = {
     },
   ],
 };
+

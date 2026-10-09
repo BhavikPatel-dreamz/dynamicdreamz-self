@@ -10,7 +10,7 @@ import { Media } from "./src/collections/Media";
 import { Categories } from "./src/collections/Categories";
 import { Authors } from "./src/collections/Authors";
 import { Testimonials } from "./src/collections/Testimonials";
-import { Articles } from "./src/collections/Articles";
+import { Posts } from "./src/collections/Posts";
 import { CaseStudies } from "./src/collections/CaseStudies";
 import { Pages } from "./src/collections/Pages";
 
@@ -33,7 +33,7 @@ export default buildConfig({
     Categories,
     Authors,
     Testimonials,
-    Articles,
+    Posts,
     CaseStudies,
     Pages,
   ],

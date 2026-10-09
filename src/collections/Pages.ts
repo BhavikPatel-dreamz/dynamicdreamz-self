@@ -22,7 +22,7 @@ export const Pages: CollectionConfig = {
     defaultColumns: ["title", "slug", "updatedAt"],
     livePreview: {
       url: ({ data }) => {
-        const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000";
+        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
         return `${baseUrl}/api/draft?secret=${process.env.PAYLOAD_SECRET || ""}&slug=${data.slug || ""}`;
       },
     },

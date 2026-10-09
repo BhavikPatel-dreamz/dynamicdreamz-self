@@ -6,9 +6,9 @@ import {
 } from "@/content/blogs";
 import { pageMetadata } from "@/data/seo";
 import {
-  adaptPayloadArticleToArchive,
-  filterPayloadArchiveArticles,
-  getPayloadArticles,
+  adaptPayloadPostToArchive,
+  filterPayloadArchivePosts,
+  getPayloadPosts,
 } from "@/lib/payload";
 import { createBlogsPageSchema, serializeJsonLd } from "@/lib/schema";
 
@@ -32,11 +32,11 @@ export default async function BlogsRoute({ searchParams }: BlogsRouteProps) {
   const requestedCategory = firstValue(params.category).toLowerCase();
   const activeCategory = normalizeBlogArchiveCategory(requestedCategory);
 
-  const payloadArticles = await getPayloadArticles();
+  const payloadPosts = await getPayloadPosts();
   const filteredArticles =
-    payloadArticles && payloadArticles.length > 0
-      ? filterPayloadArchiveArticles(
-          payloadArticles.map(adaptPayloadArticleToArchive),
+    payloadPosts && payloadPosts.length > 0
+      ? filterPayloadArchivePosts(
+          payloadPosts.map(adaptPayloadPostToArchive),
           query,
           activeCategory,
         )
