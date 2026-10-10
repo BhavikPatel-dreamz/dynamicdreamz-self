@@ -43,6 +43,16 @@ function resolveMediaAlt(media?: CmsMedia | null, fallback = ""): string {
   return media.alt?.trim() || fallback;
 }
 
+function extractYoutubeId(val?: string): string {
+  if (!val) return "";
+  const trimmed = val.trim();
+  if (!trimmed.includes("/") && !trimmed.includes(".")) return trimmed;
+  const match = trimmed.match(
+    /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/,
+  );
+  return match ? match[1] : trimmed;
+}
+
 export interface BlockHero {
   __component?: string;
   blockType?: string;
@@ -52,7 +62,7 @@ export interface BlockHero {
   subheading?: string;
   ctaLabel?: string;
   ctaHref?: string;
-  eyebrows?: readonly string[];
+  eyebrows?: readonly (string | { text?: string; id?: string | number })[];
   image?: CmsMedia | null;
   showReviews?: boolean;
   variant?: "split" | "centered";
@@ -135,16 +145,26 @@ export interface BlockHappyClients {
   eyebrow?: string;
   heading?: string;
   description?: string;
-  testimonials?: readonly {
-    id?: string | number;
-    authorName: string;
-    company?: string;
-    quote: string;
-    videoId?: string;
-    avatar?: CmsMedia | null;
-    logo?: CmsMedia | null;
-    logoAlt?: string;
-  }[];
+  testimonials?: readonly (
+    | string
+    | number
+    | {
+        id?: string | number;
+        authorName?: string;
+        clientName?: string;
+        name?: string;
+        company?: string;
+        quote?: string | readonly string[];
+        content?: string | readonly string[];
+        videoId?: string;
+        videoUrl?: string;
+        avatar?: CmsMedia | null;
+        image?: CmsMedia | null;
+        logo?: CmsMedia | null;
+        companyLogo?: CmsMedia | null;
+        logoAlt?: string;
+      }
+  )[];
 }
 
 export interface BlockCaseStudies {
@@ -154,16 +174,20 @@ export interface BlockCaseStudies {
   eyebrow?: string;
   heading?: string;
   description?: string;
-  caseStudies?: readonly {
-    id?: string | number;
-    title: string;
-    slug: string;
-    thumbnail?: CmsMedia | null;
-    heroImage?: CmsMedia | null;
-    technology?: string;
-    industry?: string;
-    tags?: readonly string[];
-  }[];
+  caseStudies?: readonly (
+    | string
+    | number
+    | {
+        id?: string | number;
+        title?: string;
+        slug?: string;
+        thumbnail?: CmsMedia | null;
+        heroImage?: CmsMedia | null;
+        technology?: string;
+        industry?: string;
+        tags?: readonly string[];
+      }
+  )[];
 }
 
 export interface BlockBrandPartners {
@@ -175,7 +199,7 @@ export interface BlockBrandPartners {
   variant?: "grid" | "slider";
   logos?: readonly {
     id?: string | number;
-    name: string;
+    name?: string;
     logo?: CmsMedia | null;
     url?: string;
   }[];
@@ -194,7 +218,7 @@ export interface BlockPricingModels {
     badge?: string;
     price: string;
     description?: string;
-    bullets?: readonly { text: string }[];
+    bullets?: readonly (string | { text?: string })[];
     ctaLabel: string;
     ctaHref: string;
   }[];
@@ -210,11 +234,14 @@ export interface BlockTechnologiesGrid {
   categories?: readonly {
     id?: string | number;
     category: string;
-    technologies?: readonly {
-      id?: string | number;
-      name: string;
-      icon?: CmsMedia | null;
-    }[];
+    technologies?: readonly (
+      | string
+      | {
+          id?: string | number;
+          name?: string;
+          icon?: CmsMedia | null;
+        }
+    )[];
   }[];
 }
 
@@ -226,7 +253,7 @@ export interface BlockTwoColImageWithText {
   description: string;
   image?: CmsMedia | null;
   imagePosition?: "left" | "right";
-  bullets?: readonly { text: string }[];
+  bullets?: readonly (string | { text?: string })[];
   ctaLabel?: string;
   ctaHref?: string;
 }
@@ -319,6 +346,12 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 }
               : undefined;
 
+            const eyebrows = heroBlock.eyebrows
+              ? heroBlock.eyebrows
+                  .map((item) => (typeof item === "string" ? item : item?.text || ""))
+                  .filter(Boolean)
+              : undefined;
+
             return (
               <ServiceHeroSection
                 content={{
@@ -327,7 +360,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   subheading: heroBlock.subheading,
                   ctaLabel: heroBlock.ctaLabel,
                   ctaHref: heroBlock.ctaHref,
-                  eyebrows: heroBlock.eyebrows,
+                  eyebrows: eyebrows && eyebrows.length > 0 ? eyebrows : undefined,
                   image: heroImage,
                 }}
                 key={blockKey}
@@ -453,30 +486,55 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
           case "happy-clients": {
             const clientBlock = block as BlockHappyClients;
-            const items: HappyClientTestimonialItem[] | undefined =
-              clientBlock.testimonials && clientBlock.testimonials.length > 0
-                ? clientBlock.testimonials.map((testimonial) => ({
-                    name: testimonial.authorName,
-                    company: testimonial.company || "",
-                    quote: testimonial.quote,
-                    videoId: testimonial.videoId || "",
-                    image:
-                      resolveMediaUrl(testimonial.avatar) ||
-                      "/assets/testimonials/brandon.webp",
-                    imageAlt: testimonial.authorName,
-                    logo: resolveMediaUrl(testimonial.logo) || undefined,
-                    logoAlt:
-                      testimonial.logoAlt ||
-                      (testimonial.company ? `${testimonial.company} logo` : undefined),
-                  }))
-                : undefined;
+            const rawTestimonials = clientBlock.testimonials ?? [];
+            const mappedItems: HappyClientTestimonialItem[] = [];
+
+            for (const testimonial of rawTestimonials) {
+              if (!testimonial || typeof testimonial !== "object") continue;
+              const t = testimonial as {
+                authorName?: string;
+                clientName?: string;
+                name?: string;
+                company?: string;
+                quote?: string | readonly string[];
+                content?: string | readonly string[];
+                videoId?: string;
+                videoUrl?: string;
+                avatar?: CmsMedia | null;
+                image?: CmsMedia | null;
+                logo?: CmsMedia | null;
+                companyLogo?: CmsMedia | null;
+                logoAlt?: string;
+              };
+
+              const name = t.authorName || t.clientName || t.name || "";
+              const quote = t.quote || t.content || "";
+              const videoId = extractYoutubeId(t.videoId || t.videoUrl || "");
+              const avatarMedia = t.avatar || t.image;
+              const logoMedia = t.logo || t.companyLogo;
+
+              mappedItems.push({
+                name,
+                company: t.company || "",
+                quote,
+                videoId,
+                image:
+                  resolveMediaUrl(avatarMedia) ||
+                  "/assets/testimonials/brandon.webp",
+                imageAlt: resolveMediaAlt(avatarMedia, name || "Client testimonial"),
+                logo: resolveMediaUrl(logoMedia) || undefined,
+                logoAlt:
+                  t.logoAlt ||
+                  (t.company ? `${t.company} logo` : undefined),
+              });
+            }
 
             return (
               <HappyClientSection
                 description={clientBlock.description}
                 eyebrow={clientBlock.eyebrow}
                 heading={clientBlock.heading}
-                items={items}
+                items={mappedItems.length > 0 ? mappedItems : undefined}
                 key={blockKey}
               />
             );
@@ -485,26 +543,39 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
           case "case-studies-block":
           case "case-studies": {
             const csBlock = block as BlockCaseStudies;
-            const caseStudiesList = csBlock.caseStudies ?? [];
-            const items: CaseStudyPreviewItem[] = caseStudiesList.map((caseStudy) => {
-              const media = caseStudy.thumbnail || caseStudy.heroImage;
-              return {
-                title: caseStudy.title,
-                href: `/case-studies/${caseStudy.slug}`,
-                image: resolveMediaUrl(media) || "/assets/case-studies/gnc-india.webp",
-                imageAlt: resolveMediaAlt(media, caseStudy.title),
-                technology: caseStudy.technology || "",
-                industry: caseStudy.industry || "",
-                tags: caseStudy.tags || [],
+            const rawCaseStudies = csBlock.caseStudies ?? [];
+            const mappedCaseStudies: CaseStudyPreviewItem[] = [];
+
+            for (const caseStudy of rawCaseStudies) {
+              if (!caseStudy || typeof caseStudy !== "object") continue;
+              const cs = caseStudy as {
+                title?: string;
+                slug?: string;
+                thumbnail?: CmsMedia | null;
+                heroImage?: CmsMedia | null;
+                technology?: string;
+                industry?: string;
+                tags?: readonly string[];
               };
-            });
+              if (!cs.slug && !cs.title) continue;
+              const media = cs.thumbnail || cs.heroImage;
+              mappedCaseStudies.push({
+                title: cs.title || "",
+                href: `/case-studies/${cs.slug || ""}`,
+                image: resolveMediaUrl(media) || "/assets/case-studies/gnc-india.webp",
+                imageAlt: resolveMediaAlt(media, cs.title || ""),
+                technology: cs.technology || "",
+                industry: cs.industry || "",
+                tags: cs.tags || [],
+              });
+            }
 
             return (
               <ServicesCaseStudiesSection
                 description={csBlock.description}
                 eyebrow={csBlock.eyebrow}
                 heading={csBlock.heading || sharedUiCopy.portfolioEyebrow}
-                items={items}
+                items={mappedCaseStudies}
                 key={blockKey}
               />
             );
@@ -512,18 +583,25 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
           case "brand-partners": {
             const bpBlock = block as BlockBrandPartners;
-            const logos = (bpBlock.logos ?? []).map((item) => ({
-              src: resolveMediaUrl(item.logo) || "/assets/brand/dynamic-dreamz-logo.svg",
-              alt: resolveMediaAlt(item.logo, item.name),
-              width: typeof item.logo === "object" && item.logo?.width ? item.logo.width : 160,
-              height: typeof item.logo === "object" && item.logo?.height ? item.logo.height : 60,
-            }));
+            const rawLogos = bpBlock.logos ?? [];
+            const mappedLogos: { src: string; alt: string; width: number; height: number }[] = [];
+
+            for (const item of rawLogos) {
+              if (!item || typeof item !== "object") continue;
+              const name = item.name || "Brand Partner";
+              mappedLogos.push({
+                src: resolveMediaUrl(item.logo) || "/assets/brand/dynamic-dreamz-logo.svg",
+                alt: resolveMediaAlt(item.logo, name),
+                width: typeof item.logo === "object" && item.logo?.width ? item.logo.width : 160,
+                height: typeof item.logo === "object" && item.logo?.height ? item.logo.height : 60,
+              });
+            }
 
             return (
               <BrandPartnersSection
                 description={bpBlock.description}
                 heading={bpBlock.heading}
-                items={logos.length > 0 ? logos : undefined}
+                items={mappedLogos.length > 0 ? mappedLogos : undefined}
                 key={blockKey}
               />
             );
@@ -536,7 +614,9 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               badge: m.badge || "",
               price: m.price,
               description: m.description || "",
-              bullets: m.bullets?.map((b) => b.text),
+              bullets: m.bullets
+                ?.map((b) => (typeof b === "string" ? b : b?.text || ""))
+                .filter(Boolean),
               ctaLabel: m.ctaLabel,
               ctaHref: m.ctaHref,
             }));
@@ -558,7 +638,9 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             const techBlock = block as BlockTechnologiesGrid;
             const categories = (techBlock.categories ?? []).map((cat) => ({
               category: cat.category,
-              technologies: (cat.technologies ?? []).map((t) => t.name),
+              technologies: (cat.technologies ?? [])
+                .map((t) => (typeof t === "string" ? t : t?.name || ""))
+                .filter(Boolean),
             }));
 
             return (
@@ -577,9 +659,20 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
           case "image-with-text": {
             const iwtBlock = block as BlockTwoColImageWithText;
             const imageUrl = resolveMediaUrl(iwtBlock.image);
+            const bullets = iwtBlock.bullets
+              ? iwtBlock.bullets
+                  .map((b) => (typeof b === "string" ? b : b?.text || ""))
+                  .filter(Boolean)
+              : undefined;
 
             return (
               <TwoColImageWithTextSection
+                bullets={bullets && bullets.length > 0 ? bullets : undefined}
+                cta={
+                  iwtBlock.ctaLabel && iwtBlock.ctaHref
+                    ? { label: iwtBlock.ctaLabel, href: iwtBlock.ctaHref }
+                    : undefined
+                }
                 description={iwtBlock.description}
                 heading={iwtBlock.heading}
                 image={{

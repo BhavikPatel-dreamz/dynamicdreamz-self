@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/class-names";
 
@@ -12,6 +13,11 @@ export type TwoColImageWithTextSectionProps = {
     height: number;
   };
   imagePosition?: "left" | "right";
+  bullets?: readonly string[];
+  cta?: {
+    label: string;
+    href: string;
+  };
   className?: string;
   id?: string;
 };
@@ -21,6 +27,8 @@ export function TwoColImageWithTextSection({
   description,
   image,
   imagePosition = "left",
+  bullets,
+  cta,
   className,
   id,
 }: TwoColImageWithTextSectionProps) {
@@ -75,6 +83,34 @@ export function TwoColImageWithTextSection({
                 <p className="font-sans text-base font-medium leading-[27px] text-[#535353] m-0">
                   {description}
                 </p>
+              )}
+              {bullets && bullets.length > 0 && (
+                <ul className="mt-5 space-y-3">
+                  {bullets.map((bullet, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-base text-[#535353]">
+                      <svg
+                        aria-hidden="true"
+                        className="mt-1 size-4 shrink-0 text-brand-red"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {cta && cta.label && cta.href && (
+                <div className="mt-8">
+                  <ButtonLink href={cta.href} variant="primary">
+                    {cta.label}
+                  </ButtonLink>
+                </div>
               )}
             </div>
           </div>

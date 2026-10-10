@@ -10,12 +10,14 @@ export const TechnologiesGridBlock: Block = {
     {
       name: "categories",
       type: "array",
+      dbName: "tech_cats",
       label: "Technology Categories",
       fields: [
         { name: "category", type: "text", required: true },
         {
           name: "technologies",
           type: "array",
+          dbName: "tech_items",
           fields: [
             { name: "name", type: "text", required: true },
             { name: "icon", type: "upload", relationTo: "media" },
