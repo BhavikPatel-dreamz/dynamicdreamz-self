@@ -10,26 +10,18 @@ import { cn } from "@/lib/class-names";
 
 function ShowcaseSet({
   decorative = false,
-  liveCaseStudiesLayout = false,
 }: {
   decorative?: boolean;
-  liveCaseStudiesLayout?: boolean;
 }) {
   return (
     <div
       className={cn(
-        "scrolling_img shrink-0",
-        liveCaseStudiesLayout &&
-        "relative z-2 mt-6 max-[991.98px]:mt-0 max-[991.98px]:flex max-[991.98px]:flex-row",
+        "scrolling_img shrink-0 relative z-2 mt-6 max-[991.98px]:mt-0 max-[991.98px]:flex max-[991.98px]:flex-row",
         styles.showcaseSet,
       )}
     >
       <div
-        className={cn(
-          "grid shrink-0 grid-cols-2 gap-y-6 gap-x-4.25 pb-6 max-[991.98px]:flex max-[991.98px]:gap-y-4 max-[991.98px]:pb-0 max-[991.98px]:pr-4",
-          liveCaseStudiesLayout &&
-          "gap-x-[17px] pb-0 max-[991.98px]:gap-x-4 max-[991.98px]:pr-6",
-        )}
+        className="grid shrink-0 grid-cols-2 gap-y-6 pb-0 gap-x-[17px] max-[991.98px]:flex max-[991.98px]:gap-y-4 max-[991.98px]:gap-x-4 max-[991.98px]:pr-6"
         aria-hidden={decorative || undefined}
       >
         <div className="scrolling_img two_col_img col-span-2 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_rgb(0_0_0/6%)] max-[991.98px]:h-[227px] max-[991.98px]:w-[342px] max-[991.98px]:shrink-0 max-[991.98px]:rounded-[10px]">
@@ -101,11 +93,7 @@ type OurWorkHeroSectionProps = {
 
 export function OurWorkHeroSection({
   content,
-  fullBleedShowcaseAtTablet = false,
-  layout = "default",
-  typography = "default",
 }: OurWorkHeroSectionProps = {}) {
-  const liveCaseStudiesLayout = layout === "caseStudiesLive";
   const heroContent = content ?? {
     eyebrow: ourWorkPage.hero.eyebrow,
     title: ourWorkPage.hero.title,
@@ -115,51 +103,15 @@ export function OurWorkHeroSection({
   };
 
   return (
-    <section
-      className={cn(
-        "hero-new-section overflow-hidden bg-cream pt-[91px]",
-        typography === "liveMontserrat"
-          ? "max-[992px]:pt-16"
-          : "max-[767px]:pt-[74px]",
-      )}
-    >
-      <Container
-        className={cn(
-          "container relative max-[991.98px]:max-w-none max-[991.98px]:px-0",
-          !liveCaseStudiesLayout && "min-h-[568px] max-[991.98px]:min-h-0",
-        )}
-      >
-        <div
-          className={cn(
-            "wrapper flex max-[991.98px]:flex-col",
-            liveCaseStudiesLayout
-              ? "flex-wrap justify-between"
-              : "min-h-[568px] max-[991.98px]:min-h-0",
-          )}
-        >
-          <div
-            className={cn(
-              "left-col z-1 flex flex-col justify-center",
-              liveCaseStudiesLayout
-                ? "w-[44.697%] py-[60px] max-[1399px]:w-1/2 max-[1199px]:w-[57%] max-[991.98px]:w-full max-[991.98px]:px-[calc((100%-680px)/2)] max-[991.98px]:pt-[30px] max-[991.98px]:pb-10 max-[767.98px]:px-[calc((100%-500px)/2)] max-[575px]:px-5"
-                : "w-[58%] max-w-[710px] py-16 pr-10 max-[1199px]:w-[57%] max-[991.98px]:w-full max-[991.98px]:max-w-none max-[991.98px]:px-10 max-[767px]:px-5",
-              typography === "liveMontserrat"
-                ? "max-[991.98px]:items-center max-[991.98px]:text-center"
-                : "max-[767px]:items-center max-[767px]:text-center",
-            )}
-          >
+    <section className="hero-new-section overflow-hidden bg-cream pt-[91px] max-[992px]:pt-16">
+      <Container className="container relative max-[991.98px]:max-w-none max-[991.98px]:px-0">
+        <div className="wrapper flex flex-wrap justify-between max-[991.98px]:flex-col">
+          <div className="left-col z-1 flex flex-col justify-center w-[44.697%] py-[60px] max-[1399px]:w-1/2 max-[1199px]:w-[57%] max-[991.98px]:w-full max-[991.98px]:px-[calc((100%-680px)/2)] max-[991.98px]:pt-[30px] max-[991.98px]:pb-10 max-[767.98px]:px-[calc((100%-500px)/2)] max-[575px]:px-5 max-[991.98px]:items-center max-[991.98px]:text-center">
             <div className="hero-content">
               <Eyebrow align="responsive-center" className="mb-3.75 max-[767px]:mb-5" tone="muted">
                 {heroContent.eyebrow}
               </Eyebrow>
-              <h1
-                className={cn(
-                  "max-w-[700px] text-ink max-[991.98px]:max-w-[680px]",
-                  typography === "liveMontserrat"
-                    ? "font-montserrat text-[50px] leading-[66px] font-bold tracking-[-1px] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[768px]:text-[30px] max-[767px]:leading-[40px]"
-                    : "font-montserrat text-[50px] leading-[66px] font-bold tracking-[-1px] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[768px]:text-[30px] max-[767px]:leading-[40px]",
-                )}
-              >
+              <h1 className="max-w-[700px] text-ink max-[991.98px]:max-w-[680px] font-montserrat text-[50px] leading-[66px] font-bold tracking-[-1px] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[768px]:text-[30px] max-[767px]:leading-[40px]">
                 {heroContent.title}
               </h1>
               <p className="mt-2.5 max-w-[690px] text-base leading-[190%] font-medium text-muted max-[767px]:mt-4 max-[992px]:text-[14px] max-[992px]:leading-[25.2px]">
@@ -180,18 +132,12 @@ export function OurWorkHeroSection({
             </div>
 
             <div
-              className={cn(
-                "partnerships-review-profiles global_brands_grid_wrap relative mt-[30px] flex items-center max-[767.98px]:-mx-[15px] max-[767.98px]:w-[calc(100%+30px)] max-[767.98px]:flex-wrap max-[767.98px]:overflow-hidden before:hidden max-[767.98px]:before:absolute max-[767.98px]:before:top-0 max-[767.98px]:before:left-1/2 max-[767.98px]:before:block max-[767.98px]:before:h-full max-[767.98px]:before:w-px max-[767.98px]:before:-translate-x-1/2 max-[767.98px]:before:bg-[#d9d9d9] max-[767.98px]:before:content-[''] after:hidden max-[767.98px]:after:absolute max-[767.98px]:after:top-1/2 max-[767.98px]:after:left-5 max-[767.98px]:after:block max-[767.98px]:after:h-px max-[767.98px]:after:w-[calc(100%-40px)] max-[767.98px]:after:bg-[#d9d9d9] max-[767.98px]:after:content-['']",
-                liveCaseStudiesLayout && "min-[992px]:-mx-[15px]",
-              )}
+              className="partnerships-review-profiles global_brands_grid_wrap relative mt-[30px] flex items-center min-[992px]:-mx-[15px] max-[767.98px]:-mx-[15px] max-[767.98px]:w-[calc(100%+30px)] max-[767.98px]:flex-wrap max-[767.98px]:overflow-hidden before:hidden max-[767.98px]:before:absolute max-[767.98px]:before:top-0 max-[767.98px]:before:left-1/2 max-[767.98px]:before:block max-[767.98px]:before:h-full max-[767.98px]:before:w-px max-[767.98px]:before:-translate-x-1/2 max-[767.98px]:before:bg-[#d9d9d9] max-[767.98px]:before:content-[''] after:hidden max-[767.98px]:after:absolute max-[767.98px]:after:top-1/2 max-[767.98px]:after:left-5 max-[767.98px]:after:block max-[767.98px]:after:h-px max-[767.98px]:after:w-[calc(100%-40px)] max-[767.98px]:after:bg-[#d9d9d9] max-[767.98px]:after:content-['']"
               aria-label="Partnerships and independent review profiles"
             >
               {proofLogos.map((logo) => (
                 <div
-                  className={cn(
-                    "global_brands_item relative border-r border-[#d9d9d9] px-[15px] last:border-r-0 max-[767.98px]:w-1/2 max-[767.98px]:border-0 max-[767.98px]:p-[15px] max-[767.98px]:text-center",
-                    !liveCaseStudiesLayout && "first:pl-0",
-                  )}
+                  className="global_brands_item relative border-r border-[#d9d9d9] px-[15px] last:border-r-0 max-[767.98px]:w-1/2 max-[767.98px]:border-0 max-[767.98px]:p-[15px] max-[767.98px]:text-center"
                   key={logo.src}
                 >
                   <a
@@ -214,26 +160,15 @@ export function OurWorkHeroSection({
           </div>
 
           <div
-            className={cn(
-              liveCaseStudiesLayout
-                ? "right-col relative flex w-[43.182%] shrink-0 overflow-hidden max-[1399px]:w-1/2 max-[1199px]:w-[43%] max-[991.98px]:h-[227px] max-[991.98px]:w-full max-[767px]:hidden"
-                : "right-col absolute top-0 right-0 h-full w-[42%] overflow-hidden max-[1199px]:w-[43%] max-[991.98px]:relative max-[991.98px]:h-[277px] max-[991.98px]:w-full max-[767px]:hidden",
-              fullBleedShowcaseAtTablet &&
-              "max-[991.98px]:right-auto max-[991.98px]:left-1/2 max-[991.98px]:h-[227px]! max-[991.98px]:min-h-[227px] max-[991.98px]:w-screen max-[991.98px]:max-w-[100vw] max-[991.98px]:-translate-x-1/2",
-            )}
+            className="right-col relative flex w-[43.182%] shrink-0 overflow-hidden max-[1399px]:w-1/2 max-[1199px]:w-[43%] max-[991.98px]:h-[227px] max-[991.98px]:w-full max-[767px]:hidden max-[991.98px]:right-auto max-[991.98px]:left-1/2 max-[991.98px]:h-[227px]! max-[991.98px]:min-h-[227px] max-[991.98px]:w-screen max-[991.98px]:max-w-[100vw] max-[991.98px]:-translate-x-1/2"
           >
             <div className="scrolling_img_wrap relative w-full shrink-0 overflow-hidden">
               <div
-                className={cn(
-                  "scrolling_anim_img absolute top-0 max-[991.98px]:relative max-[991.98px]:left-0 max-[991.98px]:w-max",
-                  liveCaseStudiesLayout
-                    ? "left-0 h-full w-full px-[68px] max-[1199px]:px-5 max-[991.98px]:h-auto max-[991.98px]:px-0"
-                    : "right-0 w-[calc(100%-18px)]",
-                )}
+                className="scrolling_anim_img absolute top-0 max-[991.98px]:relative max-[991.98px]:left-0 max-[991.98px]:w-max left-0 h-full w-full px-[68px] max-[1199px]:px-5 max-[991.98px]:h-auto max-[991.98px]:px-0"
               >
                 <div className="scrolling_track max-[991.98px]:flex max-[991.98px]:flex-row max-[991.98px]:flex-nowrap">
-                  <ShowcaseSet liveCaseStudiesLayout={liveCaseStudiesLayout} />
-                  <ShowcaseSet decorative liveCaseStudiesLayout={liveCaseStudiesLayout} />
+                  <ShowcaseSet />
+                  <ShowcaseSet decorative />
                 </div>
               </div>
             </div>

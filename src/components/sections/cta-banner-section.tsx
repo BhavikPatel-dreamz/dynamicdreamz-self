@@ -5,7 +5,7 @@ import { siteConfig } from "@/data/site";
 
 import { cn } from "@/lib/class-names";
 
-export const defaultCtaBannerCopy = {
+const defaultCtaBannerCopy = {
   heading: sharedUiCopy.ctaBanner.heading,
   ctaLabel: sharedUiCopy.ctaBanner.label,
 } as const;

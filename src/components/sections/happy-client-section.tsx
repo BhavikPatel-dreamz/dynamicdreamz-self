@@ -17,8 +17,8 @@ export type HappyClientSectionProps = {
   eyebrowClassName?: string;
   items?: readonly HappyClientTestimonialItem[];
   className?: string;
-  variant?: "client-stories";
   controlsLabels?: { ariaLabel: string; previous: string; next: string };
+  variant?: "client-stories";
 };
 
 export function HappyClientSection({

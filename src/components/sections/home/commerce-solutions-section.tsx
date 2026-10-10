@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { Container } from "@/components/ui/container";
+import { FaqCircleCrossIcon } from "@/components/ui/faq-accordion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { commerceSolutions, homeSectionCopy } from "@/content/home-client";
 import { cn } from "@/lib/class-names";
@@ -13,15 +14,6 @@ function ArrowIcon() {
     <svg className="h-3 w-3" viewBox="0 0 12 12" fill="none" aria-hidden="true">
       <path d="M1 11 11 1m0 0H2.5M11 1v8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
-  );
-}
-
-function AccordionIcon({ isOpen }: { isOpen: boolean }) {
-  return (
-    <span className={cn("relative block size-3 transition-transform duration-300", isOpen && "rotate-45")} aria-hidden="true">
-      <span className="absolute top-1/2 left-0 h-0.5 w-full -translate-y-1/2 rounded-full bg-current" />
-      <span className="absolute top-0 left-1/2 h-full w-0.5 -translate-x-1/2 rounded-full bg-current" />
-    </span>
   );
 }
 
@@ -72,9 +64,10 @@ export function CommerceSolutionsSection() {
                             {item.summary}
                           </span>
                         </span>
-                        <span className={cn("accordion-close-icon absolute top-1/2 right-0 flex size-[30px] -translate-y-1/2 shrink-0 items-center justify-center rounded-full border-2 border-ink transition-colors max-[992px]:size-[26px]", isOpen && "bg-ink/10")} aria-hidden="true">
-                          <AccordionIcon isOpen={isOpen} />
-                        </span>
+                        <FaqCircleCrossIcon
+                          className="accordion-close-icon absolute top-1/2 right-0 size-[30px] -translate-y-1/2 shrink-0 max-[992px]:size-[26px]"
+                          isOpen={isOpen}
+                        />
                         <span className="sr-only">{isOpen ? homeSectionCopy.commerceAccordion.close : homeSectionCopy.commerceAccordion.open} {item.title}</span>
                       </button>
                     </h3>

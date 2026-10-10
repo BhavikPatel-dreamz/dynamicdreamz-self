@@ -27,7 +27,6 @@ export function OurDevelopmentProcessSection({
   content,
   className,
   id,
-  eyebrowVariant = "dash",
   columns,
 }: OurDevelopmentProcessSectionProps) {
   const is3Col = columns === 3 || content.steps.length === 6;
@@ -47,13 +46,7 @@ export function OurDevelopmentProcessSection({
           <div className="title max-w-[620px]">
             {content.eyebrow && (
               <div className="eyebrow mb-3">
-                {eyebrowVariant === "pill" ? (
-                  <span className="inline-block rounded-[30px] border border-[rgba(40,40,40,0.12)] bg-white px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.5px] text-[#4d5577]">
-                    {content.eyebrow}
-                  </span>
-                ) : (
-                  <Eyebrow>{content.eyebrow}</Eyebrow>
-                )}
+                <Eyebrow>{content.eyebrow}</Eyebrow>
               </div>
             )}
             <h2 className="font-sans text-[35px] font-bold leading-[48px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">

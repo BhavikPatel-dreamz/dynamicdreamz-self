@@ -3,7 +3,7 @@ import { CityPageHeroSection } from "@/components/sections/city-page-hero-sectio
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";

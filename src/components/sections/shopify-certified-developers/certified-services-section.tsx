@@ -1,4 +1,4 @@
-import { SplitSectionHeading } from "@/components/sections/shopify-certified-developers/split-section-heading";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { Container } from "@/components/ui/container";
 import { certifiedDeveloperServices } from "@/content/shopify-certified-developers";
 import { cn } from "@/lib/class-names";

@@ -5,7 +5,7 @@ import { ShopifyStageServicesSection } from "@/components/sections/shopify-stage
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { CaseStudyCardsSection } from "@/components/sections/shopify-plus-agency/case-study-cards-section";
 import { EvaluationFrameworkSection } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { IndustriesServedSection } from "@/components/sections/shopify-plus-agency/industries-served-section";
 import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import { ShopifyPlusProofSection } from "@/components/sections/shopify-plus-agency/shopify-plus-proof-section";

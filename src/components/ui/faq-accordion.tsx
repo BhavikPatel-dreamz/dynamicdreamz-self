@@ -114,7 +114,6 @@ export function FaqAccordion({
   triggerClassName,
   panelContentClassName,
   iconClassName,
-  iconVariant = "default",
   animateOnReveal = false,
   revealDelayStepMs = 150,
   revealDurationMs = 800,
@@ -298,31 +297,13 @@ export function FaqAccordion({
               >
                 {formatBrText(item.question)}
               </h3>
-              {iconVariant === "circle-cross" ? (
-                <FaqCircleCrossIcon
-                  className={cn(
-                    "absolute top-1/2 right-0 size-[30px] -translate-y-1/2 max-[767px]:size-[26px]",
-                    iconClassName,
-                  )}
-                  isOpen={isOpen}
-                />
-              ) : (
-                <Image
-                  aria-hidden="true"
-                  alt=""
-                  className={cn(
-                    "absolute top-1/2 right-8 size-8 -translate-y-1/2 max-[1199px]:right-5 max-[1199px]:size-[25px] max-[767px]:top-[26px] max-[767px]:size-[22px] max-[767px]:translate-y-0",
-                    iconClassName,
-                  )}
-                  src={
-                    isOpen
-                      ? "/assets/life-dynamicdreamz/faq/minus.svg"
-                      : "/assets/life-dynamicdreamz/faq/plus.svg"
-                  }
-                  width={32}
-                  height={32}
-                />
-              )}
+              <FaqCircleCrossIcon
+                className={cn(
+                  "absolute top-1/2 right-0 size-[30px] -translate-y-1/2 max-[767px]:size-[26px]",
+                  iconClassName,
+                )}
+                isOpen={isOpen}
+              />
             </button>
 
             <div

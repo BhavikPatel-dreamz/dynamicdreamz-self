@@ -143,5 +143,3 @@ export function SplitFaqSection({
     </section>
   );
 }
-
-export const FaqSection = SplitFaqSection;

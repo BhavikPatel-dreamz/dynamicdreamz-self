@@ -2,7 +2,7 @@ import type { CityPageHeroContent } from "@/components/sections/city-page-hero-s
 import type { AgencyServicesContent } from "@/components/sections/agency-services-section";
 import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import type { PortfolioShowcaseItem } from "@/components/sections/portfolio-showcase-section";
-import type { HappyClientTestimonialItem } from "@/components/sections/shopify-plus-agency/happy-client-section";
+import type { HappyClientTestimonialItem } from "@/components/sections/happy-client-section";
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";

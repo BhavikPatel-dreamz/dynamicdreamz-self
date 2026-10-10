@@ -138,5 +138,3 @@ export function ButtonLink({
   );
 }
 
-// Export Button alias for ergonomics
-export const Button = ButtonLink;

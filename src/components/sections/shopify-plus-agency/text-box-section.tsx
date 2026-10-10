@@ -19,10 +19,8 @@ export function TextBoxSection({
   subheading,
   listItems,
   className,
-  variant = "green",
 }: TextBoxSectionProps) {
   const contentParagraphs = paragraphs ?? (text ? [text] : []);
-  const isGreen = variant === "green";
 
   return (
     <section
@@ -35,19 +33,14 @@ export function TextBoxSection({
       <Container>
         <div
           data-aos="fade-up"
-          className={cn(
-            "text-box-wrap text-center",
-            isGreen
-              ? "rounded-[30px] border-[1.5px] border-[rgba(23,30,22,0.1)] bg-[#eff4ef] p-10 max-[767px]:p-5"
-              : "rounded-[20px] bg-[#fbf7ed] px-[55px] py-[70px] max-[1199px]:p-[30px_20px]",
-          )}
+          className="text-box-wrap text-center rounded-[30px] border-[1.5px] border-[rgba(23,30,22,0.1)] bg-[#eff4ef] p-10 max-[767px]:p-5"
         >
           <div className="title mb-3">
             <h2 className="text-center font-montreal-medium text-[30px] font-normal leading-[42px] tracking-normal text-ink min-[1200px]:text-[35px] min-[1200px]:leading-[49px] max-[767px]:text-2xl max-[767px]:leading-8">
               {formatBrText(heading, "max-[1199px]:hidden")}
             </h2>
           </div>
-          <div className={cn("text", isGreen ? "m-0" : "mx-[15px] max-[1199px]:mx-0")}>
+          <div className="text m-0">
             {contentParagraphs.map((paragraph, index) => (
               <p
                 className="single-text-box-desc mb-[15px] text-center font-montserrat text-sm font-normal leading-6 text-[#535353] last:mb-0 max-[992px]:text-sm max-[992px]:leading-[27px]"

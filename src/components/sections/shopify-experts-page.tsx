@@ -7,7 +7,7 @@ import { ThemeCustomizationServicesSection } from "@/components/sections/theme-c
 import { AiEmpoweredDeliverySection } from "@/components/sections/ai-empowered-delivery-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { shopifyExpertsContent } from "@/content/shopify-experts";
 

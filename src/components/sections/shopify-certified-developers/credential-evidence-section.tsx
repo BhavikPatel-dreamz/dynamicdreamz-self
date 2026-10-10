@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { SplitSectionHeading } from "@/components/sections/shopify-certified-developers/split-section-heading";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { Container } from "@/components/ui/container";
 import { shopifyCredentialEvidence } from "@/content/shopify-certified-developers";
 

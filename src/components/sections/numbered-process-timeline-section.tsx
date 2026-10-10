@@ -1,5 +1,4 @@
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
 
@@ -25,7 +24,6 @@ export function NumberedProcessTimelineSection({
   items,
   className,
   headingId = "numbered-process-timeline-title",
-  layout = "centered",
 }: NumberedProcessTimelineSectionProps) {
   return (
     <section
@@ -36,35 +34,14 @@ export function NumberedProcessTimelineSection({
       )}
     >
       <Container>
-        {layout === "split" ? (
-          <SplitSectionHeading
-            className="mb-[60px] max-[767px]:mb-[30px]"
-            description={description}
-            eyebrow={eyebrow}
-            heading={heading}
-            headingId={headingId}
-            variant="left"
-          />
-        ) : (
-          <header data-aos="fade-up" className="mb-[60px] text-center max-[767px]:mb-[30px]">
-            {eyebrow ? (
-              <Eyebrow align="center" className="mb-2">
-                {eyebrow}
-              </Eyebrow>
-            ) : null}
-            <h2
-              className="font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
-              id={headingId}
-            >
-              {heading}
-            </h2>
-            {description ? (
-              <p className="mx-auto mt-2.5 max-w-[750px] text-base leading-[30.4px] font-medium text-muted">
-                {description}
-              </p>
-            ) : null}
-          </header>
-        )}
+        <SplitSectionHeading
+          className="mb-[60px] max-[767px]:mb-[30px]"
+          description={description}
+          eyebrow={eyebrow}
+          heading={heading}
+          headingId={headingId}
+          variant="left"
+        />
 
         <ol data-aos="fade-up" className="relative grid grid-cols-5 before:absolute before:top-[129px] before:right-[4%] before:left-[4%] before:border-t-[1.5px] before:border-dashed before:border-brand-red max-[767px]:grid-cols-1 max-[767px]:border-l-[1.5px] max-[767px]:border-brand-red max-[767px]:pl-2.5 max-[767px]:[border-image:repeating-linear-gradient(to_bottom,#ad5151_0,#ad5151_6px,transparent_6px,transparent_12px)_1] max-[767px]:before:hidden">
           {items.map((item, index) => {

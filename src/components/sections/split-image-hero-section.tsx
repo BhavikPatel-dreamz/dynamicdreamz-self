@@ -28,7 +28,7 @@ export type SplitImageHeroContent = {
   image: SplitImageHeroImage;
 };
 
-export type SplitImageHeroTextProps = Pick<
+type SplitImageHeroTextProps = Pick<
   SplitImageHeroContent,
   | "eyebrow"
   | "title"
@@ -49,7 +49,7 @@ export type SplitImageHeroTextProps = Pick<
   breakClassName?: string;
 };
 
-export function SplitImageHeroText({
+function SplitImageHeroText({
   eyebrow,
   title,
   description,
@@ -133,14 +133,14 @@ export function SplitImageHeroText({
   );
 }
 
-export type SplitImageHeroMediaProps = {
+type SplitImageHeroMediaProps = {
   image: SplitImageHeroImage;
   className?: string;
   imageClassName?: string;
   priority?: boolean;
 };
 
-export function SplitImageHeroMedia({
+function SplitImageHeroMedia({
   image,
   className,
   imageClassName,

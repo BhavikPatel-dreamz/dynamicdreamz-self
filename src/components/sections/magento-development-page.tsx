@@ -5,7 +5,7 @@ import { IndustryBrandsSection } from "@/components/sections/industry/industry-b
 import { MagentoServiceIcon } from "@/components/sections/magento/magento-service-icons";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { EvaluationFrameworkSection } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import {

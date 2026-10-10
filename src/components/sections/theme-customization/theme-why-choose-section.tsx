@@ -30,9 +30,6 @@ export function ThemeWhyChooseSection({
   backgroundVariant = "gradient",
   className,
   id = "why-choose-dynamic-dreamz",
-  preserveDesktopTypography = false,
-  preserveLiveIconSize = false,
-  variant = "left-icon",
 }: ThemeWhyChooseSectionProps) {
   const backgroundVariantClassName = {
     gradient:
@@ -58,9 +55,7 @@ export function ThemeWhyChooseSection({
         </div>
 
         <div
-          className={`why_dynamic_dreamz_main mt-[60px] max-[992px]:mt-5 ${
-            variant === "top-icon" ? "mx-auto max-w-[920px]" : ""
-          }`}
+          className="why_dynamic_dreamz_main mt-[60px] max-[992px]:mt-5"
           data-aos="fade-up"
         >
           <ul className="why_dynamic_dreamz-grid grid grid-cols-2 max-[992px]:grid-cols-1 list-none p-0 m-0">
@@ -71,13 +66,7 @@ export function ThemeWhyChooseSection({
 
               return (
                 <li
-                  className={`why-choose-box flex p-[51px] max-[1199px]:p-8 max-[992px]:py-7.5 max-[992px]:px-5 border-black/5 ${
-                    variant === "top-icon"
-                      ? "flex-col items-start"
-                      : variant === "top-icon-mobile"
-                        ? "items-start max-[767px]:flex-col max-[767px]:!px-0 max-[767px]:!py-5"
-                        : "items-start"
-                  } ${
+                  className={`why-choose-box flex items-start p-[51px] max-[1199px]:p-8 max-[992px]:py-7.5 max-[992px]:px-5 border-black/5 ${
                     isEvenCol ? "border-r max-[992px]:border-r-0" : ""
                   } ${!isLastRow ? "border-b" : "max-[992px]:border-b"} ${
                     isLastItem ? "max-[992px]:border-b-0" : ""
@@ -85,27 +74,11 @@ export function ThemeWhyChooseSection({
                   data-aos="fade-up"
                   key={typeof item.title === "string" ? item.title : item.title.join(" ")}
                 >
-                  <span
-                    className={`icon flex flex-shrink-0 items-center justify-start ${
-                      preserveLiveIconSize
-                        ? "w-[50px]"
-                        : ""
-                    } ${
-                      variant === "top-icon"
-                        ? "mb-2.5 max-[767px]:mb-3.5"
-                        : variant === "top-icon-mobile"
-                          ? "mr-5 max-[767px]:mr-0 max-[767px]:mb-0"
-                          : "mr-5 max-[767px]:mr-3.5"
-                    }`}
-                  >
+                  <span className="icon mr-5 flex flex-shrink-0 items-center justify-start max-[767px]:mr-3.5">
                     <Image
                       alt={item.iconAlt}
-                      className={
-                        preserveLiveIconSize
-                          ? "object-contain"
-                          : "object-contain"
-                      }
-                      height={preserveLiveIconSize ? 50 : 50}
+                      className="object-contain"
+                      height={50}
                       src={item.icon}
                       width={50}
                     />
@@ -114,7 +87,7 @@ export function ThemeWhyChooseSection({
                     <h3 className="mb-[5px] font-montreal-medium text-[18px] font-medium leading-[30.6px] tracking-[0.36px] text-[#020202]">
                       {formatBrText(item.title, "max-[767px]:hidden")}
                     </h3>
-                    <p className={`text-base font-medium leading-[27.2px] tracking-[0.32px] text-[#535353] ${preserveDesktopTypography ? "" : "max-[767px]:text-sm max-[767px]:leading-6"}`}>
+                    <p className="text-base font-medium leading-[27.2px] tracking-[0.32px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
                       {formatBrText(item.description, "max-[767px]:hidden")}
                     </p>
                   </div>

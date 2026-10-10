@@ -2,7 +2,7 @@ import { AgencyServicesSection } from "@/components/sections/agency-services-sec
 import { CityPageHeroSection } from "@/components/sections/city-page-hero-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { WooCommerceServiceIcon } from "@/components/sections/woocommerce/woocommerce-service-icons";
 import {

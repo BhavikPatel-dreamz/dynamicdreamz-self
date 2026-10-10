@@ -24,7 +24,6 @@ export function StaticFaqAccordion({
   triggerClassName,
   panelContentClassName,
   iconClassName,
-  iconVariant = "default",
 }: StaticFaqAccordionProps) {
   return (
     <div data-aos="fade-up" data-faq-list>
@@ -122,15 +121,13 @@ export function StaticFaqAccordion({
               <h3 className={cn("m-0 font-montreal-medium text-[20px] leading-[120%] tracking-0 font-medium text-ink max-[1199px]:text-[18px]", questionClassName)}>
                 {formatBrText(item.question)}
               </h3>
-              {iconVariant === "circle-cross" ? (
-                <FaqCircleCrossIcon
-                  className={cn(
-                    "absolute top-1/2 right-0 size-[30px] -translate-y-1/2 max-[767px]:size-[26px]",
-                    iconClassName,
-                  )}
-                  isOpen={isOpen}
-                />
-              ) : null}
+              <FaqCircleCrossIcon
+                className={cn(
+                  "absolute top-1/2 right-0 size-[30px] -translate-y-1/2 max-[767px]:size-[26px]",
+                  iconClassName,
+                )}
+                isOpen={isOpen}
+              />
             </button>
 
             <div

@@ -3,7 +3,7 @@ import { IndustryBrandsSection } from "@/components/sections/industry/industry-b
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import {
   webDesignBrands,

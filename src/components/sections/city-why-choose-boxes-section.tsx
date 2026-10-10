@@ -38,7 +38,6 @@ export function CityWhyChooseBoxesSection({
   id,
   columns = 5,
   bgClassName,
-  eyebrowVariant = "dash",
   cardClassName,
   theme = "light",
 }: CityWhyChooseBoxesSectionProps) {
@@ -59,22 +58,9 @@ export function CityWhyChooseBoxesSection({
           <div className="title max-w-[620px]">
             {content.eyebrow && (
               <div className="eyebrow mb-4">
-                {eyebrowVariant === "dash" ? (
-                  <Eyebrow as="span" tone={isDark ? "inverse" : "ink"}>
-                    {content.eyebrow}
-                  </Eyebrow>
-                ) : (
-                  <span
-                    className={cn(
-                      "inline-block rounded-[30px] border px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.5px]",
-                      isDark
-                        ? "border-white/20 bg-white/10 text-white"
-                        : "border-[rgba(40,40,40,0.12)] bg-white text-[#4d5577]",
-                    )}
-                  >
-                    {content.eyebrow}
-                  </span>
-                )}
+                <Eyebrow as="span" tone={isDark ? "inverse" : "ink"}>
+                  {content.eyebrow}
+                </Eyebrow>
               </div>
             )}
             <h2

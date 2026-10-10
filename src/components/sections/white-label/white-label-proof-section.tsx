@@ -1,9 +1,6 @@
-import Image from "next/image";
-
 import { Container } from "@/components/ui/container";
 import {
   whiteLabelShopifyReasons,
-  whiteLabelShopifyStats,
   whiteLabelShopifySectionCopy,
 } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
@@ -16,81 +13,33 @@ type WhiteLabelStatsSectionProps = {
 };
 
 export function WhiteLabelStatsSection({
-  stats = whiteLabelShopifyStats,
-  variant = "default",
+  stats = [],
 }: WhiteLabelStatsSectionProps) {
-  if (variant === "minimal") {
-    return (
-      <section className="white_label_counter_section relative border-y border-black/10 py-0">
-        <Container className="max-[1199px]:max-w-full max-[1199px]:px-0">
-          <div className="stats_section">
-            <div className="stats_container flex flex-wrap items-center justify-between">
-              {stats.map((stat, index) => (
-                <div
-                  className={cn(
-                    "stats_item flex w-1/4 items-center justify-center border-r border-black/10 py-[17px] last:border-r-0 max-[991px]:w-1/2 max-[991px]:border-b max-[991px]:border-black/10 max-[991px]:even:border-r-0 max-[767px]:min-h-[94px] max-[767px]:p-4",
-                    index >= 2 && "max-[991px]:border-b-0",
-                  )}
-                  key={stat.label}
-                >
-                  <div className="stats_box mx-auto w-fit text-center max-[991px]:text-left">
-                    <div className="stats_number font-montserrat text-2xl font-bold leading-none text-[#282828] max-[767px]:text-base">
-                      {stat.value}
-                    </div>
-                    <p className="counter_title mt-2 font-montserrat text-[13px] font-medium leading-none text-[#535353] max-[767px]:max-w-[135px] max-[767px]:leading-[18px]">
-                      {stat.label}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-    );
-  }
-
   return (
-    <section className="py-20 max-[992px]:py-[50px]">
-      <Container className="max-[575px]:px-4">
-        <ul
-          data-aos="fade-up"
-          className="flex items-center justify-between max-[992px]:flex-wrap max-[992px]:gap-y-[30px] max-[767px]:gap-y-5"
-        >
-          {stats.map((stat, index) => (
-            <li
-              className={cn(
-                "w-1/4 border-r border-ink/10 last:border-r-0 max-[992px]:w-1/2 max-[767px]:w-full max-[767px]:border-r-0 max-[767px]:border-b max-[767px]:pb-5 max-[767px]:last:border-b-0 max-[767px]:last:pb-0",
-                index === 1 && "max-[992px]:border-r-0",
-              )}
-              key={stat.label}
-            >
-              <div className="mx-auto w-fit max-[992px]:relative max-[992px]:w-full max-[992px]:max-w-[205px] max-[992px]:pl-[45px]">
-                {stat.icon && (
-                  <div className="mb-3 max-[992px]:absolute max-[992px]:top-[5px] max-[992px]:left-0 max-[992px]:mb-0">
-                    <Image
-                      className="size-[42px] object-contain max-[1199px]:size-[38px] max-[992px]:size-[34px] max-[767px]:size-[30px]"
-                      src={stat.icon}
-                      alt=""
-                      width={42}
-                      height={42}
-                      aria-hidden="true"
-                    />
-                  </div>
+    <section className="white_label_counter_section relative border-y border-black/10 py-0">
+      <Container className="max-[1199px]:max-w-full max-[1199px]:px-0">
+        <div className="stats_section">
+          <div className="stats_container flex flex-wrap items-center justify-between">
+            {stats.map((stat, index) => (
+              <div
+                className={cn(
+                  "stats_item flex w-1/4 items-center justify-center border-r border-black/10 py-[17px] last:border-r-0 max-[991px]:w-1/2 max-[991px]:border-b max-[991px]:border-black/10 max-[991px]:even:border-r-0 max-[767px]:min-h-[94px] max-[767px]:p-4",
+                  index >= 2 && "max-[991px]:border-b-0",
                 )}
-                <div
-                  className="flex items-center font-sans text-[40px] leading-[50.2px] font-bold tracking-[1.2px] text-black max-[1199px]:text-[36px] max-[1199px]:leading-[46px] max-[992px]:text-[32px] max-[992px]:leading-[42px]"
-                  aria-label={stat.value}
-                >
-                  {stat.value}
+                key={stat.label}
+              >
+                <div className="stats_box mx-auto w-fit text-center max-[991px]:text-left">
+                  <div className="stats_number font-montserrat text-2xl font-bold leading-none text-[#282828] max-[767px]:text-base">
+                    {stat.value}
+                  </div>
+                  <p className="counter_title mt-2 font-montserrat text-[13px] font-medium leading-none text-[#535353] max-[767px]:max-w-[135px] max-[767px]:leading-[18px]">
+                    {stat.label}
+                  </p>
                 </div>
-                <p className="font-sans text-base leading-[1.24] font-medium text-black">
-                  {stat.label}
-                </p>
               </div>
-            </li>
-          ))}
-        </ul>
+            ))}
+          </div>
+        </div>
       </Container>
     </section>
   );

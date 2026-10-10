@@ -3,7 +3,7 @@ import { IndustryBrandsSection } from "@/components/sections/industry/industry-b
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
 import { ShopifyHorizontalProcessSection } from "@/components/sections/shopify-horizontal-process-section";
-import { HappyClientSection } from "@/components/sections/shopify-plus-agency/happy-client-section";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import { ShopifyStageServicesSection } from "@/components/sections/shopify-stage-services-section";
 import { ShopifyTeamBoxesSection } from "@/components/sections/shopify-team-boxes-section";
