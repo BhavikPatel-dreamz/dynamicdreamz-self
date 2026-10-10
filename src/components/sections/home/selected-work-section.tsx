@@ -79,16 +79,28 @@ function ProjectList({ decorative = false }: { decorative?: boolean }) {
   );
 }
 
-export function SelectedWorkSection() {
+export type SelectedWorkSectionProps = {
+  title?: string;
+  description?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+};
+
+export function SelectedWorkSection({
+  title = homeSectionCopy.selectedWorkTitle,
+  description = homeSectionCopy.selectedWorkDescription,
+  ctaLabel = homeSectionCopy.ctaViewWork,
+  ctaHref = homeSectionCopy.ctaViewWorkHref,
+}: SelectedWorkSectionProps = {}) {
   return (
     <section className="overflow-hidden bg-dark-green pt-[60px] pb-[52px] text-white max-[767px]:py-[30px]">
       <Container
         data-aos="fade-up"
         className="flex items-end justify-between max-[992px]:flex-col max-[992px]:items-start"
       >
-        <SectionHeading tone="inverse" className="mr-5 max-w-[600px] min-[768px]:max-[992px]:m-0 min-[768px]:max-[992px]:max-w-full max-[767px]:m-0 max-[767px]:mb-4 max-[767px]:max-w-full">{homeSectionCopy.selectedWorkTitle}</SectionHeading>
+        <SectionHeading tone="inverse" className="mr-5 max-w-[600px] min-[768px]:max-[992px]:m-0 min-[768px]:max-[992px]:max-w-full max-[767px]:m-0 max-[767px]:mb-4 max-[767px]:max-w-full">{title}</SectionHeading>
         <p className="max-w-[580px] text-base leading-7 font-medium text-white min-[768px]:max-[992px]:mt-2.5 min-[768px]:max-[992px]:max-w-full max-[767px]:max-w-full max-[767px]:text-sm max-[767px]:leading-[180%]">
-          {homeSectionCopy.selectedWorkDescription}
+          {description}
         </p>
       </Container>
       <div
@@ -102,7 +114,7 @@ export function SelectedWorkSection() {
         </div>
       </div>
       <div data-aos="fade-up" className="flex justify-center">
-        <ButtonLink className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:min-h-[42px] max-[992px]:py-3 max-[992px]:text-sm" variant="light" href={homeSectionCopy.ctaViewWorkHref}>{homeSectionCopy.ctaViewWork}</ButtonLink>
+        <ButtonLink className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:min-h-[42px] max-[992px]:py-3 max-[992px]:text-sm" variant="light" href={ctaHref}>{ctaLabel}</ButtonLink>
       </div>
     </section>
   );

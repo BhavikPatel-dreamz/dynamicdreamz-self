@@ -5,7 +5,16 @@ import { SectionDescription } from "@/components/ui/section-description";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { homeSectionCopy } from "@/content/home";
 
-export function TestimonialsSection() {
+export type TestimonialsSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+};
+
+export function TestimonialsSection({
+  title = homeSectionCopy.testimonialsTitle,
+  description = homeSectionCopy.testimonialsDescription,
+}: TestimonialsSectionProps = {}) {
   return (
     <section className="bg-cream py-[60px] max-[767px]:py-[50px]" aria-labelledby="testimonials-title">
       <Container>
@@ -16,11 +25,11 @@ export function TestimonialsSection() {
         >
           <div className="title w-[42%] max-[1199px]:w-full max-[1199px]:mb-2.5">
             <SectionHeading id="testimonials-title" className="m-0">
-              {homeSectionCopy.testimonialsTitle}
+              {title}
             </SectionHeading>
           </div>
           <SectionDescription className="w-[48%] max-[1199px]:w-full">
-            {homeSectionCopy.testimonialsDescription}
+            {description}
           </SectionDescription>
         </div>
         <div data-aos="fade-up" className="brand_testimonial_slider_wrap">

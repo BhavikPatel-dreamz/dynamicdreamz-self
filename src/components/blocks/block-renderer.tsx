@@ -14,6 +14,14 @@ import {
   type CaseStudyPreviewItem,
 } from "@/components/sections/services-case-studies-section";
 import { BrandPartnersSection } from "@/components/sections/home/brand-partners-section";
+import { HomeHeroSection } from "@/components/sections/home/home-hero-section";
+import { ShopifyPlusAgencySection } from "@/components/sections/home/shopify-plus-agency-section";
+import { WhiteLabelPartnerSection } from "@/components/sections/home/white-label-partner-section";
+import { CommerceSolutionsSection } from "@/components/sections/home/commerce-solutions-section";
+import { SelectedWorkSection } from "@/components/sections/home/selected-work-section";
+import { TestimonialsSection } from "@/components/sections/home/testimonials-section";
+import { IntegrationsSection } from "@/components/sections/home/integrations-section";
+import { InsightsSection } from "@/components/sections/home/insights-section";
 import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import { TechnologiesWorkWithSection } from "@/components/sections/technologies-work-with-section";
 import { TwoColImageWithTextSection } from "@/components/sections/two-col-image-with-text-section";
@@ -65,7 +73,7 @@ export interface BlockHero {
   eyebrows?: readonly (string | { text?: string; id?: string | number })[];
   image?: CmsMedia | null;
   showReviews?: boolean;
-  variant?: "split" | "centered";
+  variant?: "split" | "centered" | "home";
 }
 
 export interface BlockProofCounters {
@@ -286,6 +294,85 @@ export interface BlockRichTextContent {
   content?: unknown;
 }
 
+export interface BlockShopifyPlusAgency {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+  intro?: string;
+  paragraphs?: readonly { text: string }[];
+  counters?: readonly {
+    value: string;
+    label: string;
+    note?: string;
+    tone?: "green" | "stone" | "peach" | "lime";
+  }[];
+  videoSrc?: string;
+}
+
+export interface BlockWhiteLabelPartner {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  bullets?: readonly { text: string }[];
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+export interface BlockCommerceSolutions {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  description?: string;
+  solutions?: readonly {
+    title: string;
+    summary: string;
+    body: string;
+    href?: string;
+    cta?: string;
+  }[];
+}
+
+export interface BlockSelectedWork {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  description?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+export interface BlockTestimonialsCarousel {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+}
+
+export interface BlockIntegrationsPartners {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+}
+
+export interface BlockLatestInsights {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
 export type CmsSectionBlock =
   | BlockHero
   | BlockProofCounters
@@ -301,6 +388,13 @@ export type CmsSectionBlock =
   | BlockTwoColImageWithText
   | BlockIndustriesGrid
   | BlockRichTextContent
+  | BlockShopifyPlusAgency
+  | BlockWhiteLabelPartner
+  | BlockCommerceSolutions
+  | BlockSelectedWork
+  | BlockTestimonialsCarousel
+  | BlockIntegrationsPartners
+  | BlockLatestInsights
   | { [key: string]: unknown; __component?: string; blockType?: string; id?: string | number };
 
 export interface BlockRendererProps {
@@ -330,6 +424,10 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
         switch (normalizedType) {
           case "hero": {
             const heroBlock = block as BlockHero;
+            if (heroBlock.variant === "home") {
+              return <HomeHeroSection key={blockKey} />;
+            }
+
             const imageUrl = resolveMediaUrl(heroBlock.image);
             const heroImage = imageUrl
               ? {
@@ -750,6 +848,112 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   </div>
                 </Container>
               </section>
+            );
+          }
+
+          case "shopify-plus-agency-overview": {
+            const spaBlock = block as BlockShopifyPlusAgency;
+            return (
+              <ShopifyPlusAgencySection
+                content={{
+                  eyebrow: spaBlock.eyebrow,
+                  title: spaBlock.title,
+                  intro: spaBlock.intro,
+                  paragraphs: spaBlock.paragraphs?.map((p) => p.text).filter(Boolean),
+                  counters: spaBlock.counters?.map((c) => ({
+                    value: c.value,
+                    label: c.label,
+                    note: c.note,
+                    tone: c.tone,
+                  })),
+                  videoSrc: spaBlock.videoSrc,
+                }}
+                key={blockKey}
+              />
+            );
+          }
+
+          case "white-label-partner-banner": {
+            const wlpBlock = block as BlockWhiteLabelPartner;
+            return (
+              <WhiteLabelPartnerSection
+                content={{
+                  eyebrow: wlpBlock.eyebrow,
+                  title: wlpBlock.title,
+                  description: wlpBlock.description,
+                  bullets: wlpBlock.bullets?.map((b) => b.text).filter(Boolean),
+                  ctaLabel: wlpBlock.ctaLabel,
+                  ctaHref: wlpBlock.ctaHref,
+                }}
+                key={blockKey}
+              />
+            );
+          }
+
+          case "commerce-solutions": {
+            const csBlock = block as BlockCommerceSolutions;
+            const solutions = csBlock.solutions?.map((s) => ({
+              title: s.title,
+              summary: s.summary,
+              body: s.body,
+              href: s.href || "#",
+              cta: s.cta || "LEARN MORE",
+            }));
+
+            return (
+              <CommerceSolutionsSection
+                description={csBlock.description}
+                key={blockKey}
+                solutions={solutions && solutions.length > 0 ? solutions : undefined}
+                title={csBlock.title}
+              />
+            );
+          }
+
+          case "selected-work-marquee": {
+            const swBlock = block as BlockSelectedWork;
+            return (
+              <SelectedWorkSection
+                ctaHref={swBlock.ctaHref}
+                ctaLabel={swBlock.ctaLabel}
+                description={swBlock.description}
+                key={blockKey}
+                title={swBlock.title}
+              />
+            );
+          }
+
+          case "testimonials-carousel": {
+            const tcBlock = block as BlockTestimonialsCarousel;
+            return (
+              <TestimonialsSection
+                description={tcBlock.description}
+                eyebrow={tcBlock.eyebrow}
+                key={blockKey}
+                title={tcBlock.title}
+              />
+            );
+          }
+
+          case "integrations-partners": {
+            const ipBlock = block as BlockIntegrationsPartners;
+            return (
+              <IntegrationsSection
+                key={blockKey}
+                title={ipBlock.title}
+              />
+            );
+          }
+
+          case "latest-insights": {
+            const liBlock = block as BlockLatestInsights;
+            return (
+              <InsightsSection
+                ctaHref={liBlock.ctaHref}
+                ctaLabel={liBlock.ctaLabel}
+                key={blockKey}
+                title={liBlock.title}
+              />
             );
           }
 

@@ -12,7 +12,40 @@ const counterToneClasses = {
   lime: "bg-[#f0f6e5]",
 } as const;
 
-export function ShopifyPlusAgencySection() {
+export type ShopifyPlusAgencyCounter = {
+  value: string;
+  label: string;
+  note?: string;
+  tone?: "green" | "stone" | "peach" | "lime";
+};
+
+export type ShopifyPlusAgencyContent = {
+  eyebrow?: string;
+  title?: string;
+  intro?: string;
+  paragraphs?: readonly string[];
+  counters?: readonly ShopifyPlusAgencyCounter[];
+  videoSrc?: string;
+};
+
+export type ShopifyPlusAgencySectionProps = {
+  content?: ShopifyPlusAgencyContent;
+};
+
+export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionProps = {}) {
+  const eyebrow = content?.eyebrow ?? shopifyPlusAgencyContent.eyebrow;
+  const title = content?.title ?? shopifyPlusAgencyContent.title;
+  const intro = content?.intro ?? shopifyPlusAgencyContent.intro;
+  const paragraphs =
+    content?.paragraphs && content.paragraphs.length > 0
+      ? content.paragraphs
+      : shopifyPlusAgencyContent.paragraphs;
+  const counters =
+    content?.counters && content.counters.length > 0
+      ? content.counters
+      : shopifyPlusAgencyContent.counters;
+  const videoSrc = content?.videoSrc || shopifyPlusAgencyContent.videoSrc;
+
   return (
     <section className="bg-[#fbeed5] py-[43px] max-[992px]:py-[30px]" aria-labelledby="shopify-plus-agency-title">
       <Container>
@@ -22,40 +55,43 @@ export function ShopifyPlusAgencySection() {
         >
           <div className="title w-[42%] max-[1199px]:w-full max-[1199px]:mb-2.5">
             <Eyebrow as="span" className="mb-4">
-              {shopifyPlusAgencyContent.eyebrow}
+              {eyebrow}
             </Eyebrow>
             <SectionHeading id="shopify-plus-agency-title" className="m-0">
-              {shopifyPlusAgencyContent.title}
+              {title}
             </SectionHeading>
           </div>
           <SectionDescription className="w-[48%] max-[1199px]:w-full">
-            {shopifyPlusAgencyContent.intro}
+            {intro}
           </SectionDescription>
         </div>
 
         <div className="flex flex-wrap justify-between gap-8 rounded-[30px] bg-[#fafaf7] p-8 max-[1199px]:rounded-[20px] max-[1199px]:p-6 max-[992px]:gap-0">
           <div data-aos="fade-up" className="w-[46.816%] max-[992px]:w-full">
             <div className="mb-5 max-w-[575px]">
-              {shopifyPlusAgencyContent.paragraphs.map((paragraph, index) => (
+              {paragraphs.map((paragraph, index) => (
                 <p className={index === 0 ? "mb-3.75 text-sm leading-6 font-normal text-muted" : "text-sm leading-[1.8] font-normal text-muted"} key={paragraph}>
                   {paragraph}
                 </p>
               ))}
             </div>
-            <div className="mx-[-4px] mb-[-8px] flex flex-wrap    ">
-              {shopifyPlusAgencyContent.counters.map((counter) => (
-                <div className="mb-2 w-1/2 px-1 max-[767px]:w-full" key={counter.value}>
-                  <div className={`flex h-full min-h-[136px] flex-col justify-between rounded-[20px] p-[18px] max-[767px]:rounded-xl ${counterToneClasses[counter.tone]}`}>
-                    <div>
-                      <span className="font-montreal-medium block text-[35px] leading-[1.4] font-semibold text-ink max-[767px]:text-[24px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px]">
-                        {counter.value}
-                      </span>
-                      <span className="mt-[5px] block text-xs leading-none font-semibold text-[#4d5577] uppercase">{counter.label}</span>
+            <div className="mx-[-4px] mb-[-8px] flex flex-wrap">
+              {counters.map((counter) => {
+                const tone = counter.tone && counter.tone in counterToneClasses ? counter.tone : "green";
+                return (
+                  <div className="mb-2 w-1/2 px-1 max-[767px]:w-full" key={counter.value}>
+                    <div className={`flex h-full min-h-[136px] flex-col justify-between rounded-[20px] p-[18px] max-[767px]:rounded-xl ${counterToneClasses[tone]}`}>
+                      <div>
+                        <span className="font-montreal-medium block text-[35px] leading-[1.4] font-semibold text-ink max-[767px]:text-[24px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px]">
+                          {counter.value}
+                        </span>
+                        <span className="mt-[5px] block text-xs leading-none font-semibold text-[#4d5577] uppercase">{counter.label}</span>
+                      </div>
+                      {counter.note ? <p className="text-xs leading-none font-medium text-muted">{counter.note}</p> : null}
                     </div>
-                    <p className="text-xs leading-none font-medium text-muted">{counter.note}</p>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
           <div
@@ -69,7 +105,7 @@ export function ShopifyPlusAgencySection() {
               posterClassName="object-cover"
               posterSizes="(max-width: 991px) 100vw, 50vw"
               preload="metadata"
-              src={shopifyPlusAgencyContent.videoSrc}
+              src={videoSrc}
             />
           </div>
         </div>

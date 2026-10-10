@@ -17,8 +17,30 @@ function ArrowIcon() {
   );
 }
 
-export function CommerceSolutionsSection() {
+export type CommerceSolutionItem = {
+  title: string;
+  summary: string;
+  body: string;
+  href: string;
+  cta: string;
+};
+
+export type CommerceSolutionsSectionProps = {
+  title?: string;
+  description?: string;
+  solutions?: readonly CommerceSolutionItem[];
+};
+
+export function CommerceSolutionsSection({
+  title = homeSectionCopy.commerceSolutionsTitle,
+  description = homeSectionCopy.commerceSolutionsDescription,
+  solutions = commerceSolutions,
+}: CommerceSolutionsSectionProps = {}) {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const items = solutions && solutions.length > 0 ? solutions : commerceSolutions;
+  const half = Math.ceil(items.length / 2);
+  const columns = [items.slice(0, half), items.slice(half)];
 
   return (
     <section className="py-[60px] max-[992px]:py-[50px] max-[767px]:py-10" aria-labelledby="commerce-solutions-title">
@@ -27,16 +49,16 @@ export function CommerceSolutionsSection() {
           data-aos="fade-up"
           className="mb-[54px] flex items-center justify-between gap-10 max-[992px]:mb-8 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-0"
         >
-          <SectionHeading id="commerce-solutions-title" className="w-[40%] max-[992px]:w-full">{homeSectionCopy.commerceSolutionsTitle}</SectionHeading>
+          <SectionHeading id="commerce-solutions-title" className="w-[40%] max-[992px]:w-full">{title}</SectionHeading>
           <p className="w-[47%] text-base leading-[1.9] font-medium text-muted max-[992px]:mt-2.5 max-[992px]:w-full max-[767px]:text-sm">
-            {homeSectionCopy.commerceSolutionsDescription}
+            {description}
           </p>
         </div>
         <div className="grid grid-cols-2 items-start gap-3 max-[992px]:grid-cols-1" data-commerce-accordion>
-          {[commerceSolutions.slice(0, 4), commerceSolutions.slice(4)].map((column, columnIndex) => (
+          {columns.map((column, columnIndex) => (
             <div data-aos="fade-up" className="grid gap-3" key={columnIndex}>
               {column.map((item, itemIndex) => {
-                const index = columnIndex * 4 + itemIndex;
+                const index = columnIndex * half + itemIndex;
                 const isOpen = activeIndex === index;
                 const panelId = `commerce-solution-panel-${index}`;
                 const triggerId = `commerce-solution-trigger-${index}`;

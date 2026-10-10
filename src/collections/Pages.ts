@@ -13,6 +13,13 @@ import { TechnologiesGridBlock } from "@/blocks/TechnologiesGridBlock";
 import { TwoColImageWithTextBlock } from "@/blocks/TwoColImageWithTextBlock";
 import { IndustriesGridBlock } from "@/blocks/IndustriesGridBlock";
 import { RichTextBlock } from "@/blocks/RichTextBlock";
+import { ShopifyPlusAgencyBlock } from "@/blocks/ShopifyPlusAgencyBlock";
+import { WhiteLabelPartnerBlock } from "@/blocks/WhiteLabelPartnerBlock";
+import { CommerceSolutionsBlock } from "@/blocks/CommerceSolutionsBlock";
+import { SelectedWorkBlock } from "@/blocks/SelectedWorkBlock";
+import { TestimonialsCarouselBlock } from "@/blocks/TestimonialsCarouselBlock";
+import { IntegrationsPartnersBlock } from "@/blocks/IntegrationsPartnersBlock";
+import { LatestInsightsBlock } from "@/blocks/LatestInsightsBlock";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const Pages: CollectionConfig = {
@@ -79,6 +86,13 @@ export const Pages: CollectionConfig = {
         TwoColImageWithTextBlock,
         IndustriesGridBlock,
         RichTextBlock,
+        ShopifyPlusAgencyBlock,
+        WhiteLabelPartnerBlock,
+        CommerceSolutionsBlock,
+        SelectedWorkBlock,
+        TestimonialsCarouselBlock,
+        IntegrationsPartnersBlock,
+        LatestInsightsBlock,
       ],
     },
     {

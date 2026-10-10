@@ -12,7 +12,7 @@ export const BrandPartnersBlock: Block = {
       label: "Partner & Client Logos",
       fields: [
         { name: "name", type: "text", required: true },
-        { name: "logo", type: "upload", relationTo: "media", required: true },
+        { name: "logo", type: "upload", relationTo: "media" },
         { name: "url", type: "text" },
       ],
     },

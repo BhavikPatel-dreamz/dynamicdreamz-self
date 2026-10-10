@@ -357,7 +357,7 @@ export interface Page {
               | null;
             image?: (number | null) | Media;
             showReviews?: boolean | null;
-            variant?: ('split' | 'centered') | null;
+            variant?: ('split' | 'centered' | 'home') | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'hero';
@@ -458,7 +458,7 @@ export interface Page {
             logos?:
               | {
                   name: string;
-                  logo: number | Media;
+                  logo?: (number | null) | Media;
                   url?: string | null;
                   id?: string | null;
                 }[]
@@ -572,6 +572,94 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'rich-text-content';
+          }
+        | {
+            eyebrow?: string | null;
+            title?: string | null;
+            intro?: string | null;
+            paragraphs?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            counters?:
+              | {
+                  value: string;
+                  label: string;
+                  note?: string | null;
+                  tone?: ('green' | 'stone' | 'peach' | 'lime') | null;
+                  id?: string | null;
+                }[]
+              | null;
+            videoSrc?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-plus-agency-overview';
+          }
+        | {
+            eyebrow?: string | null;
+            title?: string | null;
+            description?: string | null;
+            bullets?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'white-label-partner-banner';
+          }
+        | {
+            title?: string | null;
+            description?: string | null;
+            solutions?:
+              | {
+                  title: string;
+                  summary: string;
+                  body: string;
+                  href?: string | null;
+                  cta?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'commerce-solutions';
+          }
+        | {
+            title?: string | null;
+            description?: string | null;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'selected-work-marquee';
+          }
+        | {
+            eyebrow?: string | null;
+            title?: string | null;
+            description?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'testimonials-carousel';
+          }
+        | {
+            title?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'integrations-partners';
+          }
+        | {
+            title?: string | null;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'latest-insights';
           }
       )[]
     | null;
@@ -1106,6 +1194,101 @@ export interface PagesSelect<T extends boolean = true> {
               eyebrow?: T;
               content?: T;
               containerWidth?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-plus-agency-overview'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              intro?: T;
+              paragraphs?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              counters?:
+                | T
+                | {
+                    value?: T;
+                    label?: T;
+                    note?: T;
+                    tone?: T;
+                    id?: T;
+                  };
+              videoSrc?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'white-label-partner-banner'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              bullets?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              ctaLabel?: T;
+              ctaHref?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'commerce-solutions'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              solutions?:
+                | T
+                | {
+                    title?: T;
+                    summary?: T;
+                    body?: T;
+                    href?: T;
+                    cta?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'selected-work-marquee'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              ctaLabel?: T;
+              ctaHref?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'testimonials-carousel'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'integrations-partners'?:
+          | T
+          | {
+              title?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'latest-insights'?:
+          | T
+          | {
+              title?: T;
+              ctaLabel?: T;
+              ctaHref?: T;
               id?: T;
               blockName?: T;
             };

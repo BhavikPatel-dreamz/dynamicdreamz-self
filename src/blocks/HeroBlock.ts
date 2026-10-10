@@ -19,6 +19,7 @@ export const HeroBlock: Block = {
       options: [
         { label: "Split (Text + Image)", value: "split" },
         { label: "Centered", value: "centered" },
+        { label: "Home Hero", value: "home" },
       ],
     },
   ],
