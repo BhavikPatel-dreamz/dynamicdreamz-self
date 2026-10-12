@@ -1,6 +1,6 @@
 # Dynamic Dreamz 100% Full-Site Payload CMS Integration & Operations Guide
 
-This guide details the complete architecture, data models, frontend integration, automated seeding, and non-technical operational manual for managing **100% of website content, pages, media, and navigation** via **[Payload CMS 3.0](https://payloadcms.com/)** embedded natively in Next.js.
+This guide details the complete architecture, data models, frontend integration, and non-technical operational manual for managing **100% of website content, pages, media, and navigation** via **[Payload CMS 3.0](https://payloadcms.com/)** embedded natively in Next.js.
 
 No code edits, developer intervention, or Git commits are required for WordPress/content team members to:
 - Edit the Header dropdowns, Footer navigation columns, and bottom legal links.
@@ -17,8 +17,8 @@ No code edits, developer intervention, or Git commits are required for WordPress
 Use this prompt to have any AI agent execute any phase of the Payload CMS implementation:
 
 ```text
-Read AGENTS.md, docs/agent-workflow.md, and docs/payload-cms-integration-guide.md.
-Implement <Phase Name or Task> production-ready, following the exact schemas, block models, and verification steps in docs/payload-cms-integration-guide.md.
+Read AGENTS.md, docs/agent-workflow.md, docs/payload-cms-integration-guide.md, and docs/cms-content-seeding-plan.md.
+Implement <Phase Name or Task> production-ready, following the 100% modular block architecture (zero direct HTML) in docs/cms-content-seeding-plan.md and docs/payload-cms-integration-guide.md.
 Verify with `npm run check:urls`, `npm run check:component-content`, `npx tsc --noEmit`, `npm run lint`, and `npm run build`.
 ```
 
@@ -398,8 +398,18 @@ export const Testimonials: CollectionConfig = {
 ```
 
 #### 5. Blog Posts Collection (`src/collections/Posts.ts`)
+> **Modular Block Architecture (Zero Direct HTML)**: Blog content is never stored as raw HTML strings or monolithic richText blobs. It is assembled via discrete editorial blocks (`blog-heading`, `blog-paragraph`, `blog-list`, `blog-image`, `blog-table`, `blog-quote`, `blog-callout`, `blog-divider`), mapping 1:1 to `BlogContentBlock` and rendered via `BlogContentRenderer`. Images use canonical static paths (`/assets/...`) without binary upload bloat.
+
 ```ts
 import type { CollectionConfig } from "payload";
+import { BlogHeadingBlock } from "@/blocks/blog/BlogHeadingBlock";
+import { BlogParagraphBlock } from "@/blocks/blog/BlogParagraphBlock";
+import { BlogListBlock } from "@/blocks/blog/BlogListBlock";
+import { BlogImageBlock } from "@/blocks/blog/BlogImageBlock";
+import { BlogTableBlock } from "@/blocks/blog/BlogTableBlock";
+import { BlogQuoteBlock } from "@/blocks/blog/BlogQuoteBlock";
+import { BlogCalloutBlock } from "@/blocks/blog/BlogCalloutBlock";
+import { BlogDividerBlock } from "@/blocks/blog/BlogDividerBlock";
 
 export const Posts: CollectionConfig = {
   slug: "posts",
@@ -415,9 +425,32 @@ export const Posts: CollectionConfig = {
     { name: "slug", type: "text", required: true, unique: true },
     { name: "date", type: "date", required: true },
     { name: "displayDate", type: "text" },
-    { name: "coverImage", type: "upload", relationTo: "media", required: true },
+    {
+      name: "featuredImage",
+      type: "group",
+      fields: [
+        { name: "src", type: "text", required: true },
+        { name: "alt", type: "text", required: true },
+        { name: "width", type: "number", defaultValue: 750 },
+        { name: "height", type: "number", defaultValue: 400 },
+      ],
+    },
     { name: "excerpt", type: "textarea", required: true },
-    { name: "content", type: "richText", required: true },
+    {
+      name: "content",
+      type: "blocks",
+      label: "Article Content Blocks",
+      blocks: [
+        BlogHeadingBlock,
+        BlogParagraphBlock,
+        BlogListBlock,
+        BlogImageBlock,
+        BlogTableBlock,
+        BlogQuoteBlock,
+        BlogCalloutBlock,
+        BlogDividerBlock,
+      ],
+    },
     {
       name: "categories",
       type: "relationship",
@@ -428,6 +461,16 @@ export const Posts: CollectionConfig = {
       name: "author",
       type: "relationship",
       relationTo: "authors",
+    },
+    {
+      name: "toc",
+      type: "array",
+      label: "Table of Contents",
+      fields: [
+        { name: "label", type: "text", required: true },
+        { name: "href", type: "text", required: true },
+        { name: "level", type: "number", defaultValue: 2 },
+      ],
     },
     {
       name: "faqs",
@@ -446,7 +489,7 @@ export const Posts: CollectionConfig = {
         { name: "metaTitle", type: "text" },
         { name: "metaDescription", type: "textarea" },
         { name: "canonicalUrl", type: "text" },
-        { name: "metaImage", type: "upload", relationTo: "media" },
+        { name: "metaImage", type: "text" },
       ],
     },
   ],
@@ -454,6 +497,8 @@ export const Posts: CollectionConfig = {
 ```
 
 #### 6. Case Studies Collection (`src/collections/CaseStudies.ts`)
+> **Modular Section Architecture (Zero Direct HTML)**: Case studies are structured as discrete sections (`hero`, `overview`, `keyMetrics`, `challenge`, `solutions`, `keyFeatures`, `projectDelivery`, `customSections`), matching `CaseStudyDetail` and rendered via `CaseStudyDetailPage`.
+
 ```ts
 import type { CollectionConfig } from "payload";
 
@@ -470,32 +515,116 @@ export const CaseStudies: CollectionConfig = {
     { name: "title", type: "text", required: true },
     { name: "slug", type: "text", required: true, unique: true },
     { name: "clientName", type: "text", required: true },
+    { name: "projectTitle", type: "text" },
     { name: "industry", type: "text" },
     { name: "technology", type: "text", defaultValue: "Shopify Plus" },
+    { name: "location", type: "text" },
     { name: "websiteUrl", type: "text" },
-    { name: "thumbnail", type: "upload", relationTo: "media", required: true },
-    { name: "heroImage", type: "upload", relationTo: "media" },
+    { name: "summary", type: "textarea" },
     {
-      name: "gallery",
-      type: "array",
-      fields: [{ name: "image", type: "upload", relationTo: "media" }],
-    },
-    { name: "overview", type: "textarea" },
-    { name: "challenge", type: "textarea" },
-    { name: "solution", type: "textarea" },
-    {
-      name: "metrics",
-      type: "array",
-      label: "Key Results & Metrics",
+      name: "heroImage",
+      type: "group",
       fields: [
-        { name: "value", type: "text", required: true },
-        { name: "label", type: "text", required: true },
+        { name: "src", type: "text", required: true },
+        { name: "alt", type: "text", required: true },
+        { name: "width", type: "number", defaultValue: 1200 },
+        { name: "height", type: "number", defaultValue: 800 },
       ],
     },
     {
-      name: "testimonial",
+      name: "heroEyebrows",
+      type: "array",
+      fields: [{ name: "text", type: "text", required: true }],
+    },
+    {
+      name: "keyMetrics",
+      type: "group",
+      fields: [
+        { name: "heading", type: "text", defaultValue: "Key Results & Impact" },
+        {
+          name: "items",
+          type: "array",
+          fields: [
+            { name: "stat", type: "text", required: true },
+            { name: "label", type: "text", required: true },
+          ],
+        },
+      ],
+    },
+    {
+      name: "challenge",
+      type: "group",
+      fields: [
+        { name: "eyebrow", type: "text" },
+        { name: "heading", type: "text", required: true },
+        { name: "description", type: "textarea" },
+        {
+          name: "items",
+          type: "array",
+          fields: [
+            { name: "number", type: "text", required: true },
+            { name: "title", type: "text", required: true },
+            { name: "description", type: "textarea", required: true },
+          ],
+        },
+      ],
+    },
+    {
+      name: "solutions",
+      type: "group",
+      fields: [
+        { name: "eyebrow", type: "text" },
+        { name: "heading", type: "text", required: true },
+        { name: "lead", type: "textarea" },
+        {
+          name: "items",
+          type: "array",
+          fields: [
+            { name: "number", type: "text", required: true },
+            { name: "text", type: "textarea", required: true },
+          ],
+        },
+      ],
+    },
+    {
+      name: "keyFeatures",
+      type: "group",
+      fields: [
+        { name: "eyebrow", type: "text" },
+        { name: "heading", type: "text", required: true },
+        { name: "isTwoColumn", type: "checkbox", defaultValue: false },
+        {
+          name: "items",
+          type: "array",
+          fields: [
+            { name: "number", type: "text", required: true },
+            { name: "title", type: "text", required: true },
+            { name: "description", type: "textarea" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "projectDelivery",
+      type: "group",
+      fields: [
+        { name: "eyebrow", type: "text" },
+        { name: "heading", type: "text", required: true },
+        {
+          name: "items",
+          type: "array",
+          fields: [
+            { name: "category", type: "text" },
+            { name: "name", type: "text", required: true },
+          ],
+        },
+      ],
+    },
+    {
+      name: "relatedCaseStudies",
       type: "relationship",
-      relationTo: "testimonials",
+      relationTo: "case-studies",
+      hasMany: true,
     },
     {
       name: "seo",
@@ -503,7 +632,8 @@ export const CaseStudies: CollectionConfig = {
       fields: [
         { name: "metaTitle", type: "text" },
         { name: "metaDescription", type: "textarea" },
-        { name: "metaImage", type: "upload", relationTo: "media" },
+        { name: "canonicalUrl", type: "text" },
+        { name: "metaImage", type: "text" },
       ],
     },
   ],
@@ -905,6 +1035,13 @@ import { TechnologiesGridBlock } from "@/blocks/TechnologiesGridBlock";
 import { TwoColImageWithTextBlock } from "@/blocks/TwoColImageWithTextBlock";
 import { IndustriesGridBlock } from "@/blocks/IndustriesGridBlock";
 import { RichTextBlock } from "@/blocks/RichTextBlock";
+import { ShopifyPlusAgencyBlock } from "@/blocks/ShopifyPlusAgencyBlock";
+import { WhiteLabelPartnerBlock } from "@/blocks/WhiteLabelPartnerBlock";
+import { CommerceSolutionsBlock } from "@/blocks/CommerceSolutionsBlock";
+import { SelectedWorkBlock } from "@/blocks/SelectedWorkBlock";
+import { TestimonialsCarouselBlock } from "@/blocks/TestimonialsCarouselBlock";
+import { IntegrationsPartnersBlock } from "@/blocks/IntegrationsPartnersBlock";
+import { LatestInsightsBlock } from "@/blocks/LatestInsightsBlock";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
@@ -937,6 +1074,13 @@ export const Pages: CollectionConfig = {
         TwoColImageWithTextBlock,
         IndustriesGridBlock,
         RichTextBlock,
+        ShopifyPlusAgencyBlock,
+        WhiteLabelPartnerBlock,
+        CommerceSolutionsBlock,
+        SelectedWorkBlock,
+        TestimonialsCarouselBlock,
+        IntegrationsPartnersBlock,
+        LatestInsightsBlock,
       ],
     },
     {
@@ -946,7 +1090,7 @@ export const Pages: CollectionConfig = {
         { name: "metaTitle", type: "text" },
         { name: "metaDescription", type: "textarea" },
         { name: "canonicalUrl", type: "text" },
-        { name: "metaImage", type: "upload", relationTo: "media" },
+        { name: "metaImage", type: "text" },
       ],
     },
   ],
@@ -1124,161 +1268,7 @@ export async function getPayloadPageBySlug(slug: string) {
 
 ---
 
-### Phase 6: Automated Seeding Architecture (One-Time Execution Policy)
-
-> [!IMPORTANT]
-> **One-Time Process Policy**: Seeding content into Payload CMS / PostgreSQL is strictly a one-time migration process. Once data is populated into the database, it is managed directly via the Payload Admin UI (`/admin`).
-> 
-> **Zero Seeding Scripts in Repository**: Because seeding is a one-time process, seeding scripts are not useful in the future and must **never** be committed or maintained in `scripts/`, nor registered as `seed:*` commands in `package.json`. If a one-time migration seeding operation is required, it must be executed ephemerally via a temporary script in `scratch/`, verified against the database, and deleted immediately.
-
-The reference code below documents the original one-time seeding architecture used to populate company settings, navigation, blog posts, and case studies into PostgreSQL:
-
-```js
-import { getPayload } from "payload";
-import config from "../dist/payload.config.js"; // or direct payload.config.ts via tsx
-import blogIndex from "../src/content/blog-posts/index.json" assert { type: "json" };
-import { caseStudyDetails } from "../src/content/case-study-details.ts";
-import { footerNavigation, primaryNavigation } from "../src/data/navigation.ts";
-import { siteConfig } from "../src/data/site.ts";
-import fs from "node:fs/promises";
-import path from "node:path";
-
-async function runSeed() {
-  console.log("Starting Payload CMS seeding...");
-  const payload = await getPayload({ config });
-
-  // 1. Seed Site Settings
-  console.log("Seeding Site Settings...");
-  await payload.updateGlobal({
-    slug: "site-settings",
-    data: {
-      phone: siteConfig.phoneDisplay,
-      whatsappNumber: "919825195930",
-      email: siteConfig.email,
-      skype: "live:dynamicdreamz",
-      address: "Surat, Gujarat, India",
-      socialLinks: [
-        { platform: "linkedin", url: siteConfig.social.linkedin },
-        { platform: "instagram", url: siteConfig.social.instagram },
-      ],
-    },
-  });
-
-  // 2. Seed Navigation
-  console.log("Seeding Navigation...");
-  await payload.updateGlobal({
-    slug: "navigation",
-    data: {
-      headerNav: primaryNavigation.map((group) => ({
-        title: group.label,
-        subItems: group.items?.map((item) => ({
-          label: item.label,
-          href: item.href,
-          description: item.description,
-          badge: item.badge,
-        })),
-      })),
-      footerColumns: footerNavigation.map((col) => ({
-        title: col.label,
-        links: col.links.map((link) => ({
-          label: link.label,
-          href: link.href,
-        })),
-      })),
-      footerBottomLinks: [
-        { label: "Terms of Service", href: "/terms-of-service" },
-        { label: "Privacy Policy", href: "/privacy-policy" },
-      ],
-    },
-  });
-
-  // 3. Seed Blog Posts (all 103 posts)
-  console.log(`Seeding ${blogIndex.length} Blog Posts...`);
-  for (const postSummary of blogIndex) {
-    const postFilePath = path.join(
-      process.cwd(),
-      "src/content/blog-posts/posts",
-      `${postSummary.slug}.json`,
-    );
-
-    try {
-      const fileData = await fs.readFile(postFilePath, "utf-8");
-      const postDetail = JSON.parse(fileData);
-
-      await payload.create({
-        collection: "posts",
-        data: {
-          title: postDetail.title,
-          slug: postDetail.slug,
-          date: postDetail.date,
-          displayDate: postDetail.displayDate,
-          excerpt: postDetail.excerpt || "",
-          content: {
-            root: {
-              type: "root",
-              children: [
-                {
-                  type: "paragraph",
-                  children: [{ text: postDetail.content || postDetail.excerpt || "" }],
-                },
-              ],
-            },
-          },
-          faqs: postDetail.faqs || [],
-          seo: {
-            metaTitle: postDetail.seo?.title || postDetail.title,
-            metaDescription: postDetail.seo?.description || postDetail.excerpt,
-          },
-        },
-      });
-      console.log(`  ✓ Seeded Post: ${postDetail.slug}`);
-    } catch (err) {
-      console.warn(`  ✗ Failed to seed post ${postSummary.slug}:`, err.message);
-    }
-  }
-
-  // 4. Seed Case Studies (all 58 case studies)
-  console.log(`Seeding ${caseStudyDetails.length} Case Studies...`);
-  for (const cs of caseStudyDetails) {
-    try {
-      await payload.create({
-        collection: "case-studies",
-        data: {
-          title: cs.title,
-          slug: cs.slug,
-          clientName: cs.clientName,
-          industry: cs.industry || "",
-          technology: cs.technology || "Shopify Plus",
-          websiteUrl: cs.websiteUrl || "",
-          overview: cs.overview || "",
-          challenge: cs.challenge || "",
-          solution: cs.solution || "",
-          metrics: cs.results?.metrics?.map((m) => ({
-            value: m.value,
-            label: m.label,
-          })) || [],
-          seo: {
-            metaTitle: cs.seo?.title || cs.title,
-            metaDescription: cs.seo?.description || cs.overview || "",
-          },
-        },
-      });
-      console.log(`  ✓ Seeded Case Study: ${cs.slug}`);
-    } catch (err) {
-      console.warn(`  ✗ Failed to seed case study ${cs.slug}:`, err.message);
-    }
-  }
-
-  console.log("Seeding complete!");
-  process.exit(0);
-}
-
-runSeed();
-```
-
----
-
-### Phase 7: Dynamic Frontend Route Wiring (Seamless Hybrid / Fallback Strategy)
+### Phase 6: Dynamic Frontend Route Wiring (Seamless Hybrid / Fallback Strategy)
 
 To achieve 100% CMS content management without losing static site performance:
 
@@ -1300,11 +1290,11 @@ To achieve 100% CMS content management without losing static site performance:
 #### 3. Modular Pages Catch-All Route
 - **`[...slug]` (`src/app/(frontend)/[...slug]/page.tsx`)**:
   - Resolves any custom landing page created in Payload CMS.
-  - Automatically loads SEO metadata, Draft mode preview banner, and maps all 14 visual blocks via `BlockRenderer`.
+  - Automatically loads SEO metadata, Draft mode preview banner, and maps all 21 modular blocks via `BlockRenderer`.
 
 ---
 
-### Phase 8: Real-Time Live Preview & Next.js Draft Mode Integration
+### Phase 7: Real-Time Live Preview & Next.js Draft Mode Integration
 
 Allows editors in Payload Admin (`/admin`) to preview draft changes side-by-side in real-time before publishing:
 
@@ -1350,7 +1340,7 @@ admin: {
 
 ---
 
-### Phase 9: Automated On-Demand Cache Revalidation
+### Phase 8: Automated On-Demand Cache Revalidation
 
 Ensures that whenever an editor updates a page, post, case study, or navigation in Payload Admin, Next.js instantly purges the ISR cache:
 
@@ -1390,7 +1380,7 @@ hooks: {
 
 ---
 
-### Phase 10: Non-Technical Operations Runbook for the WordPress Team
+### Phase 9: Non-Technical Operations Runbook for the WordPress Team
 
 > For the comprehensive, full-length non-technical operations manual, see:
 > **[`docs/wordpress-team-operations-runbook.md`](wordpress-team-operations-runbook.md)**.
@@ -1411,7 +1401,7 @@ hooks: {
 2. Update phone numbers, WhatsApp digits, contact emails, Skype ID, or address.
 3. Click **Save** $\rightarrow$ The header, footer, contact widget, and metadata update across all 322+ pages.
 
-#### 4. Assembling Any Landing Page with the 14 Drag-and-Drop Blocks
+#### 4. Assembling Any Landing Page with Modular Drag-and-Drop Blocks (21 Production Blocks)
 1. Go to **Pages** $\rightarrow$ **Create New**.
 2. Enter **Title** (e.g. `Shopify Plus Agency in London`) and **Slug** (`shopify-plus-agency-in-london`).
 3. Under **Page Layout Sections**, click **Add Section** to choose from:

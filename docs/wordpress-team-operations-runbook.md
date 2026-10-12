@@ -14,7 +14,7 @@ With this setup, **100% of website content, pages, media, global navigation, and
 3. [Managing Site-Wide Navigation (Menus)](#3-managing-site-wide-navigation-menus)
 4. [Updating Global Company Information & Contact Details](#4-updating-global-company-information--contact-details)
 5. [The Drag-and-Drop Modular Page Builder](#5-the-drag-and-drop-modular-page-builder)
-6. [Field Guide to the 14 Visual Content Blocks](#6-field-guide-to-the-14-visual-content-blocks)
+6. [Field Guide to Modular Content Blocks](#6-field-guide-to-modular-content-blocks)
 7. [Publishing Blog Posts](#7-publishing-blog-posts)
 8. [Managing Case Studies & Portfolio](#8-managing-case-studies--portfolio)
 9. [Managing Client Testimonials & Reviews](#9-managing-client-testimonials--reviews)
@@ -114,13 +114,13 @@ To create or edit any landing, service, or marketing page:
    - **Rule**: Always use lower-case letters and hyphens (e.g., `shopify-plus-agency-in-london`).
    - **Important**: Do not include leading or trailing slashes (enter `about-us`, never `/about-us/`).
    - For the Homepage, use slug `home` or `index`.
-5. Under **Page Layout Sections (Drag & Drop)**, click **Add Section** to choose from our 14 modular blocks.
+5. Under **Page Layout Sections (Drag & Drop)**, click **Add Section** to choose from our 21 modular blocks.
 6. Drag blocks up and down using the grip icon to change their order on the page.
 7. Configure the block settings and click **Publish**.
 
 ---
 
-## 6. Field Guide to the 14 Visual Content Blocks
+## 6. Field Guide to Modular Content Blocks
 
 Every block maps directly to our high-performance Next.js component system:
 
@@ -198,13 +198,34 @@ Every block maps directly to our high-performance Next.js component system:
 - Vertical industry cards with photography, eyebrow, and direct service landing page links.
 
 ### 14. Rich Text Content / Legal (`rich-text-content`)
-- Formatted long-form editorial copy using Lexical editor with selectable container width (`Narrow (Legal / Policy)`, `Standard`, or `Full Width`).
+- Formatted long-form editorial copy with selectable container width (`Narrow (Legal / Policy)`, `Standard`, or `Full Width`). Zero raw HTML tags.
+
+### 15. Shopify Plus Agency Overview (`shopify-plus-agency-overview`)
+- High-impact agency overview section with split typography, brand video embed, and 4 colored metric proof counters (Green, Stone, Peach, Lime).
+
+### 16. White-Label Partner Banner (`white-label-partner-banner`)
+- Dedicated agency partnership proposition with feature checklist cards and partner onboarding CTA.
+
+### 17. Commerce Solutions Grid (`commerce-solutions`)
+- Comprehensive capability cards showcasing Migration, Custom Liquid/Hydrogen, Integrations, and B2B Wholesale.
+
+### 18. Selected Work Marquee (`selected-work-marquee`)
+- Continuous horizontal marquee showcasing flagship store transformations.
+
+### 19. Testimonials Carousel (`testimonials-carousel`)
+- Interactive client quote and video case study slider.
+
+### 20. Integrations & Platform Partners (`integrations-partners`)
+- Visual ecosystem logo showcase covering Shopify apps, ERPs, CRMs, and payment gateways.
+
+### 21. Latest Insights (`latest-insights`)
+- Automated editorial card grid linking to recent thought leadership blog posts.
 
 ---
 
 ## 7. Publishing Blog Posts
 
-To write and publish a post in the Blog section:
+To write and publish an article in the Blog section:
 
 1. Go to **Collections** $\rightarrow$ **Posts**.
 2. Click **Create New**.
@@ -212,16 +233,23 @@ To write and publish a post in the Blog section:
 4. **Slug**: URL slug under `/blogs/<slug>` (e.g., `shopify-cro-checklist`).
 5. **Publish Date (`date`)**: Publication timestamp for chronological ordering.
 6. **Display Date**: Formatted string shown to readers (e.g., `October 15, 2026`).
-7. **Cover Image**: Upload a high-resolution 16:9 banner image. Provide accurate ALT text.
-8. **Excerpt**: 2-3 sentence summary displayed on the blog archive card and search snippet.
-9. **Content**: Use the Lexical editor to write the body copy:
-   - Use **Heading 2** and **Heading 3** for proper hierarchical structure.
-   - Insert bulleted lists, numbered lists, blockquotes, and internal links.
+7. **Featured Image**: Enter the canonical static path (e.g., `/assets/blogs/featured.webp`), descriptive ALT text, and image dimensions.
+8. **Excerpt**: Plain-text summary displayed on the blog archive card and search snippet (no HTML).
+9. **Article Content Blocks (`content`)**: Assemble the post using discrete editorial blocks (**zero raw HTML**):
+   - **Blog Heading (`blog-heading`)**: Select Level (`H2`, `H3`, `H4`, `H5`), enter Heading Text, and anchor ID.
+   - **Blog Paragraph (`blog-paragraph`)**: Enter plain paragraph text, with structured inline formatting nodes for links, bold, or italic text.
+   - **Blog List (`blog-list`)**: Ordered or checkmark bullet list items.
+   - **Blog Image (`blog-image`)**: Responsive illustration or diagram with mandatory ALT text and optional caption.
+   - **Blog Table (`blog-table`)**: Structured comparison table with header columns and cell rows.
+   - **Blog Quote (`blog-quote`)**: Pull-quote box with citation.
+   - **Blog Callout (`blog-callout`)**: Highlight box (`Info`, `Tip`, `Warning`).
+   - **Blog Divider (`blog-divider`)**: Section divider line.
 10. **Categories**: Multi-select one or more categories (e.g., `Shopify Plus`, `CRO`, `Migrations`).
-11. **Author**: Select the post author.
-12. **Post FAQs**: Add post-specific Q&A items. These are automatically converted into Google FAQ Page structured data.
-13. **SEO Settings**: Set Meta Title and Meta Description.
-14. Click **Publish**.
+11. **Author**: Select the post author from the Authors collection.
+12. **Table of Contents (`toc`)**: Add anchor items (`label`, `href`, `level`).
+13. **Post FAQs**: Add post-specific Q&A items. These automatically convert into Google FAQPage structured data.
+14. **SEO Settings**: Set Meta Title, Meta Description, and Canonical URL.
+15. Click **Publish**.
 
 ---
 
@@ -236,19 +264,21 @@ To showcase client projects and results:
    - **Slug**: URL under `/case-studies/<slug>` (e.g., `gnc-india`).
    - **Client Name**: Brand or company name.
    - **Industry**: Vertical (e.g., `Health & Nutrition`, `Fashion & Luxury`).
-   - **Technology**: Platform used (e.g., `Shopify Plus`, `Hydrogen Headless`).
+   - **Technology**: Platform used (e.g., `Shopify Plus`).
+   - **Location**: Client headquarters.
    - **Live Website URL**: Link to the active client store.
-4. Fill in the editorial narrative:
-   - **Project Overview**: Executive summary.
-   - **Challenge**: The technical or business obstacles the client faced.
-   - **Solution**: The engineering and design architecture Dynamic Dreamz implemented.
-5. Add **Key Results & Metrics**:
-   - Card 1: `+180%` $\rightarrow$ `Organic Conversion Rate`
-   - Card 2: `1.2s` $\rightarrow$ `Core Web Vitals LCP`
-   - Card 3: `3.5x` $\rightarrow$ `Black Friday GMV Growth`
-6. Attach **Thumbnail**, **Hero Image**, and **Gallery Images**.
-7. Link a **Client Testimonial** if a client quote is available.
-8. Click **Publish**.
+   - **Hero Image**: Structured path (`/assets/case-studies/...`), ALT text, and dimensions.
+4. Fill in the modular narrative sections (**zero raw HTML**):
+   - **Summary / Overview**: Plain-text executive summary.
+   - **Key Metrics (`keyMetrics`)**: Numeric stat cards (e.g., `+180%` $\rightarrow$ `Organic Conversion Rate`, `1.2s` $\rightarrow$ `Core Web Vitals LCP`).
+   - **The Challenge (`challenge`)**: Numbered card items detailing technical obstacles.
+   - **The Solution (`solutions`)**: Numbered card items detailing engineering solutions.
+   - **Key Features (`keyFeatures`)**: Grid of delivered features and customizations.
+   - **Project Delivery (`projectDelivery`)**: Categorized service badges.
+   - **Custom Sections (`customSections`)**: Optional tailored subsections for complex enterprise migrations.
+5. Link **Related Case Studies** and a **Client Testimonial** if available.
+6. Configure **SEO Settings** (Title, Description, Canonical URL).
+7. Click **Publish**.
 
 ---
 
