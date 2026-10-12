@@ -115,21 +115,54 @@ Core proof points from the live site:
   visual layout, UI pattern (e.g. hero banners, card grids, stat counters, logo
   sliders, review carousels, accordions, video modals, split CTA sections), DOM
   structure, and Tailwind styling classes.
-- Strict component reuse & slight extension: ALWAYS prioritize reusing existing
+- Strict component reuse & slight extension: Prioritize reusing existing
   components (`ButtonLink`, `Container`, `FaqSection`, `AiAutomationSection`,
   `AiDiscoverySection`, `CtaBannerSection`, `ServiceHeroSection`, etc.) over
   writing new code or raw inline markup (e.g. never write raw inline `<a>` tags
   with button styling when `ButtonLink` exists). If an existing component can
   support the requirement with a slight modification (e.g. adding an optional
-  typed prop, variant flag, slot, or optional style modifier), MODIFY the
-  existing component slightly to support the use case instead of writing extra,
-  duplicate, or one-off code.
+  typed prop, variant flag, slot, or optional style modifier), you may extend
+  the existing component safely.
   CRITICAL: Every modification/extension must be backward-compatible so that all
   existing pages and consumers remain unbroken.
-- Pragmatic component creation (only when no match exists): only if after a
-  thorough search no similar or adaptable component exists in the codebase,
-  build a new component. Do not write extra code or duplicate components when an
-  existing component can be adapted with a slight, clean extension.
+- 100% Visual parity trumps forced reuse (Unique blocks for unique sections):
+  100% visual, layout, and interaction parity with the live site is NON-NEGOTIABLE.
+  When migrating, seeding, or integrating pages into Payload CMS:
+  1. Reuse common blocks (`HeroBlock`, `FaqAccordionBlock`, `BrandPartnersBlock`,
+     `CtaBannerBlock`, etc.) ONLY when the live section's visual layout, card
+     geometry, and structure genuinely match 100%.
+  2. If a live-site section has a bespoke visual layout, unique cards, tabbed
+     interactions, specialized metric counters, or distinct structural hierarchy
+     (e.g. `EvaluationFrameworkSection`, `ShopifyStageServicesSection`,
+     `PortfolioShowcaseSection`, `CaseStudyCardsSection`, `WhiteLabelPartnerSection`),
+     you MUST create a dedicated unique Block in `src/blocks/` and a dedicated
+     section component mapped in `src/components/blocks/block-renderer.tsx`.
+  3. NEVER force-fit unique sections into generic common blocks (`features-grid`,
+     `proof-counters`, `process-timeline`, `two-col-image-with-text`, etc.) by
+     modifying common blocks with awkward conditional props, layout hacks, or
+     compromised styling that degrades visual parity.
+- Upload media feature everywhere with local asset fallback (Future-ready CDN strategy):
+  In all Payload collections (`pages`, `posts`, `case-studies`, `testimonials`,
+  `authors`), globals (`site-settings`, `navigation`), and modular blocks
+  (`src/blocks/**`):
+  1. Always define media, images, icons, and logos using Payload's native upload
+     feature: `{ name: "image" | "logo" | "icon" | "avatar", type: "upload", relationTo: "media" }`.
+     NEVER store direct plain-text image path strings (e.g. `{ name: "src", type: "text" }`)
+     as content fields in CMS schemas.
+  2. Rationale: In the future, when external object storage / CDN (AWS S3, Cloudflare
+     R2, Cloudinary) is connected via a Payload storage plugin, all media can be
+     migrated and served from CDN effortlessly through Payload's media collection
+     without altering page schemas, running database migrations, or performing
+     fragile string replacements.
+  3. Local asset fallback: In UI components and block renderers, always implement
+     dual resolution: resolve the uploaded media object (`media.url`, `media.alt`,
+     `media.width`, `media.height`), and if the media relation is null, unpopulated,
+     or a legacy string path, cleanly fall back to the canonical local static asset
+     path (`/assets/...`). During one-time migration seeding, scripts can seed or
+     reference media records while preserving local asset fallbacks so no route breaks.
+- Pragmatic component & block creation: when no component or block matches the
+  live site's visual and functional requirements 100%, build a new component and
+  dedicated block cleanly without hesitation.
 - Generalize all new components for future reuse: whenever creating a new
   component, design it to be modular, flexible, and generalized. Decouple the UI
   markup from page-specific hardcoded copy or data (pass content via typed props

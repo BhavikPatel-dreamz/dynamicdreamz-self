@@ -77,8 +77,8 @@ For team members transitioning from WordPress, this table maps legacy WordPress 
 | :--- | :--- | :--- |
 | **Appearance $\rightarrow$ Menus** | **Globals $\rightarrow$ Navigation** | Visually add, rename, and reorder header dropdowns, footer columns, and bottom links. |
 | **Theme Customizer / Options** | **Globals $\rightarrow$ Site Settings** | Update phone numbers, WhatsApp, contact email, office addresses, and social links. |
-| **Elementor / Gutenberg** | **Collections $\rightarrow$ Pages (Blocks)** | Click **"Add Section"** to insert visual blocks (`Hero`, `FAQs`, `Stat Counters`, `Feature Grid`, `CTA Banner`). Reorder by dragging. |
-| **Posts & Categories** | **Collections $\rightarrow$ Posts & Categories** | Write posts using the Lexical Rich Text editor, attach categories, author, FAQs, and custom excerpts. |
+| **Elementor / Gutenberg** | **Collections $\rightarrow$ Pages (Blocks)** | Click **"Add Section"** to insert 100% structured blocks (`Hero`, `FAQs`, `Stat Counters`, `Feature Grid`, `Legal Content`, `Site Map`, `CTA Banner`) using clean input fields. Zero Rich Text / WYSIWYG, zero HTML. |
+| **Posts & Categories** | **Collections $\rightarrow$ Posts & Categories** | Assemble articles using discrete editorial blocks (`blog-heading`, `blog-paragraph`, `blog-list`, `blog-image`, `blog-table`, `blog-quote`), attach categories, author, FAQs, and custom excerpts. Zero raw HTML. |
 | **Custom Post Types (Portfolio)** | **Collections $\rightarrow$ Case Studies** | Manage client names, metrics, problem/solution copy, image galleries, and client review quotes. |
 | **Reviews / Testimonials** | **Collections $\rightarrow$ Testimonials** | Add client reviews, star ratings, roles, and company logos. |
 | **Media Library** | **Collections $\rightarrow$ Media** | Drag-and-drop file uploads with automatic image resizing, focal points, and mandatory alt text. |
@@ -398,7 +398,7 @@ export const Testimonials: CollectionConfig = {
 ```
 
 #### 5. Blog Posts Collection (`src/collections/Posts.ts`)
-> **Modular Block Architecture (Zero Direct HTML)**: Blog content is never stored as raw HTML strings or monolithic richText blobs. It is assembled via discrete editorial blocks (`blog-heading`, `blog-paragraph`, `blog-list`, `blog-image`, `blog-table`, `blog-quote`, `blog-callout`, `blog-divider`), mapping 1:1 to `BlogContentBlock` and rendered via `BlogContentRenderer`. Images use canonical static paths (`/assets/...`) without binary upload bloat.
+> **Modular Block Architecture & Upload Media Strategy**: Blog content is never stored as raw HTML strings or monolithic richText blobs. It is assembled via discrete editorial blocks (`blog-heading`, `blog-paragraph`, `blog-list`, `blog-image`, `blog-table`, `blog-quote`, `blog-callout`, `blog-divider`), mapping 1:1 to `BlogContentBlock` and rendered via `BlogContentRenderer`. All images and media use Payload's native upload feature (`{ type: "upload", relationTo: "media" }`) with local asset fallback in frontend code, ensuring seamless migration to cloud CDN (S3, Cloudflare R2, Cloudinary) in the future without schema or database rewrites.
 
 ```ts
 import type { CollectionConfig } from "payload";
@@ -427,13 +427,9 @@ export const Posts: CollectionConfig = {
     { name: "displayDate", type: "text" },
     {
       name: "featuredImage",
-      type: "group",
-      fields: [
-        { name: "src", type: "text", required: true },
-        { name: "alt", type: "text", required: true },
-        { name: "width", type: "number", defaultValue: 750 },
-        { name: "height", type: "number", defaultValue: 400 },
-      ],
+      type: "upload",
+      relationTo: "media",
+      label: "Featured Image (with local asset fallback)",
     },
     { name: "excerpt", type: "textarea", required: true },
     {
@@ -645,6 +641,18 @@ export const CaseStudies: CollectionConfig = {
 ### Phase 3: Define Page Builder Blocks (`src/blocks/`)
 
 These schemas map directly to your existing production UI sections in [src/components/blocks/block-renderer.tsx](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/blocks/block-renderer.tsx).
+
+#### Core Architectural Principles
+1. **100% Visual Parity Trumps Forced Reuse (Unique Blocks for Unique Sections)**:
+   - Achieving 100% visual, layout, and responsive parity with the live site is NON-NEGOTIABLE.
+   - Reuse common blocks (`HeroBlock`, `FaqAccordionBlock`, `BrandPartnersBlock`, `CtaBannerBlock`, etc.) ONLY when the live section's layout, card geometry, and structure match 100%.
+   - If a section on the live site has a bespoke visual design, unique card geometry, tabbed interaction, or distinct structural hierarchy (e.g. `EvaluationFrameworkSection`, `ShopifyStageServicesSection`, `PortfolioShowcaseSection`, `CaseStudyCardsSection`, `WhiteLabelPartnerSection`), agents **MUST create a dedicated, unique block in `src/blocks/`** and map it 1:1 in `src/components/blocks/block-renderer.tsx`.
+   - Never force-fit bespoke sections into generic common blocks (`features-grid`, `proof-counters`) by modifying common blocks with awkward conditional props or layout compromises.
+2. **Upload Media Feature Everywhere with Local Asset Fallback (Future-Ready CDN Strategy)**:
+   - Across all blocks, always model image, icon, and logo fields using Payload's native upload feature: `{ name: "...", type: "upload", relationTo: "media" }`.
+   - Never define plain-text image path fields (e.g. `{ name: "src", type: "text" }`) in CMS schemas.
+   - When object storage / CDN (AWS S3, Cloudflare R2, Cloudinary) is connected in the future via a Payload cloud storage plugin, all media files will migrate to and be served from CDN automatically without database migrations or content string replacements.
+   - In UI components and block renderers, resolve media objects dynamically (`media.url`, `media.alt`, `media.width`, `media.height`), falling back to canonical local static paths (`/assets/...`) if media is not yet uploaded or unpopulated.
 
 #### 1. Hero Block (`src/blocks/HeroBlock.ts`)
 ```ts
@@ -993,32 +1001,110 @@ export const IndustriesGridBlock: Block = {
 };
 ```
 
-#### 14. Rich Text Content / Legal Block (`src/blocks/RichTextBlock.ts`)
+#### 14. Structured Legal Content Block (`src/blocks/LegalContentBlock.ts`)
 ```ts
 import type { Block } from "payload";
 
-export const RichTextBlock: Block = {
-  slug: "rich-text-content",
-  labels: { singular: "Rich Text Content / Legal", plural: "Rich Text Content Sections" },
+export const LegalContentBlock: Block = {
+  slug: "legal-content",
+  labels: { singular: "Legal Content Section", plural: "Legal Content Sections" },
   fields: [
-    { name: "heading", type: "text" },
     { name: "eyebrow", type: "text" },
-    { name: "content", type: "richText", required: true },
+    { name: "heading", type: "text", required: true },
     {
       name: "containerWidth",
       type: "select",
-      defaultValue: "standard",
+      defaultValue: "narrow",
       options: [
-        { label: "Narrow (Editorial / Legal)", value: "narrow" },
+        { label: "Narrow (Legal / Policy)", value: "narrow" },
         { label: "Standard", value: "standard" },
         { label: "Full Width", value: "full" },
+      ],
+    },
+    {
+      name: "sections",
+      type: "array",
+      label: "Policy Sections",
+      dbName: "lc_sects",
+      fields: [
+        { name: "title", type: "text", required: true },
+        {
+          name: "level",
+          type: "select",
+          defaultValue: "2",
+          options: [
+            { label: "H2 Subtitle", value: "2" },
+            { label: "H3 Subtitle", value: "3" },
+          ],
+        },
+        {
+          name: "paragraphs",
+          type: "array",
+          label: "Section Paragraphs",
+          dbName: "lc_paras",
+          fields: [{ name: "text", type: "textarea", required: true }],
+        },
+        {
+          name: "items",
+          type: "array",
+          label: "Bullet List Items (Optional)",
+          dbName: "lc_items",
+          fields: [
+            { name: "text", type: "text", required: true },
+            { name: "boldPrefix", type: "text" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "contactInfo",
+      type: "group",
+      label: "Legal Contact Details (Optional)",
+      fields: [
+        { name: "name", type: "text" },
+        { name: "email", type: "text" },
+        { name: "phone", type: "text" },
+        { name: "address", type: "text" },
       ],
     },
   ],
 };
 ```
 
-#### 15. Modular Pages Collection (`src/collections/Pages.ts`)
+#### 15. Site Map Directory Block (`src/blocks/SiteMapDirectoryBlock.ts`)
+```ts
+import type { Block } from "payload";
+
+export const SiteMapDirectoryBlock: Block = {
+  slug: "site-map-directory",
+  labels: { singular: "Site Map Directory", plural: "Site Map Directories" },
+  fields: [
+    { name: "heading", type: "text" },
+    { name: "description", type: "textarea" },
+    {
+      name: "groups",
+      type: "array",
+      label: "Navigation Groups",
+      dbName: "smd_grps",
+      fields: [
+        { name: "title", type: "text", required: true },
+        {
+          name: "links",
+          type: "array",
+          label: "Directory Links",
+          dbName: "smd_links",
+          fields: [
+            { name: "label", type: "text", required: true },
+            { name: "href", type: "text", required: true },
+          ],
+        },
+      ],
+    },
+  ],
+};
+```
+
+#### 16. Modular Pages Collection (`src/collections/Pages.ts`)
 ```ts
 import type { CollectionConfig } from "payload";
 import { HeroBlock } from "@/blocks/HeroBlock";
@@ -1034,7 +1120,8 @@ import { PricingModelsBlock } from "@/blocks/PricingModelsBlock";
 import { TechnologiesGridBlock } from "@/blocks/TechnologiesGridBlock";
 import { TwoColImageWithTextBlock } from "@/blocks/TwoColImageWithTextBlock";
 import { IndustriesGridBlock } from "@/blocks/IndustriesGridBlock";
-import { RichTextBlock } from "@/blocks/RichTextBlock";
+import { LegalContentBlock } from "@/blocks/LegalContentBlock";
+import { SiteMapDirectoryBlock } from "@/blocks/SiteMapDirectoryBlock";
 import { ShopifyPlusAgencyBlock } from "@/blocks/ShopifyPlusAgencyBlock";
 import { WhiteLabelPartnerBlock } from "@/blocks/WhiteLabelPartnerBlock";
 import { CommerceSolutionsBlock } from "@/blocks/CommerceSolutionsBlock";
@@ -1073,7 +1160,8 @@ export const Pages: CollectionConfig = {
         TechnologiesGridBlock,
         TwoColImageWithTextBlock,
         IndustriesGridBlock,
-        RichTextBlock,
+        LegalContentBlock,
+        SiteMapDirectoryBlock,
         ShopifyPlusAgencyBlock,
         WhiteLabelPartnerBlock,
         CommerceSolutionsBlock,
@@ -1418,14 +1506,15 @@ hooks: {
    - **Happy Clients**: Testimonial carousels and video review dialogs.
    - **Case Studies Grid**: Filtered case study preview cards.
    - **CTA Banner**: Full-width conversion banner with button.
-   - **Rich Text Content**: Formatted editorial copy or legal terms.
+   - **Legal Content**: Structured policy sections with subtitles, paragraph rows, and bullet item rows (100% scalar inputs, zero HTML).
+   - **Site Map Directory**: Grouped directory links for site architecture navigation (zero HTML).
 4. Reorder sections with drag-and-drop.
 5. In **SEO Settings**, set Meta Title, Description, and Social Share Image.
 6. Click **Publish** $\rightarrow$ Live immediately!
 
 #### 5. Publishing Posts & Case Studies
 - Go to **Posts** or **Case Studies** $\rightarrow$ **Create New**.
-- Use Lexical Rich Text editor, upload media, add metrics or FAQs, and set SEO fields.
+- Assemble content using discrete typed blocks (e.g., `blog-heading`, `blog-paragraph`, `blog-list`, etc.), attach categories, author, metrics, or FAQs, and set SEO fields (zero raw HTML).
 - Click **Publish**.
 
 ---

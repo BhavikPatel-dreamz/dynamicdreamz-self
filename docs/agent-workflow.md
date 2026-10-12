@@ -222,25 +222,37 @@ Follow this step-by-step workflow for every page or section build:
 - **Search by DOM structure & styling**: Inspect `src/components/ui/`, `src/components/sections/`, and `src/components/layout/` for matching Tailwind class combinations, grid setups, responsive breakpoints, and HTML elements.
 
 ### 2. Safe Component Adaptation & Backward-Compatible Extension
-- **Reuse Directly**: When an existing component matches the requirements, reuse it directly.
-- **Modify / Extend Safely**: If an existing component provides 80–90% of what is needed but requires a small visual variant, optional field, extra prop, or CSS customization:
+- **Reuse Directly**: When an existing component matches the requirements 100%, reuse it directly.
+- **Modify / Extend Safely**: If an existing component provides 80–90% of what is needed and shares the same core visual layout, you may extend it:
   - Add **optional, typed props** (e.g. `variant?: "default" | "compact"`, `hideReview?: boolean`, `columns?: 2 | 3`, `className?: string`, `iconAlt?: string`).
   - Use sensible default values that preserve the original behavior for all existing callers.
   - **ZERO BREAKAGE RULE**: You can modify existing components a little bit to reuse them, but you MUST NEVER break existing pages or usages. Verify all existing imports and props after extending a component.
 
-### 3. Pragmatic Component Creation (No Rigid Blocker)
-- If after a thorough and multi-faceted check, no existing component can reasonably accommodate the new requirement without confusing props or bloated conditional logic:
-  - **Create a new component freely**. There is no rigid rule preventing the creation of new components when the semantics, layout, or visual contract are genuinely distinct.
-  - Choose the right location: `src/components/ui/` for small reusable UI primitives, `src/components/sections/` for marketing page sections, or `src/components/layout/` for site-wide navigation/chrome.
+### 3. 100% Visual Parity Trumps Forced Reuse (Unique Blocks for Unique Sections)
+- Achieving 100% visual, layout, responsive, and interaction parity with the live site is NON-NEGOTIABLE.
+- **Do NOT force-fit bespoke sections into common components or common blocks**:
+  - If a section on the live site has a unique visual design, bespoke card structure, tabbed interaction, specialized counters, or unique layout hierarchy (e.g. `EvaluationFrameworkSection`, `ShopifyStageServicesSection`, `PortfolioShowcaseSection`, `CaseStudyCardsSection`), do NOT force it into `features-grid` or `process-timeline`.
+  - Creating awkward conditional props and layout branches on common blocks produces bloated "Frankenstein components", compromises visual parity, and creates high regression risk for other pages.
+- **Create Dedicated Components and Blocks**:
+  - Build a dedicated, clean React component in `src/components/sections/<route>/`.
+  - Create a dedicated Payload Block in `src/blocks/<BlockName>.ts`.
+  - Map it 1:1 in `src/components/blocks/block-renderer.tsx`.
 
-### 4. Generalize All New Components for Future Reuse
+### 4. Upload Media Everywhere with Local Asset Fallback (Future-Ready CDN Strategy)
+- In all Payload collections (`pages`, `posts`, `case-studies`, `testimonials`, `authors`), globals (`site-settings`, `navigation`), and modular blocks (`src/blocks/**`):
+  - Model all media, images, icons, and logos using Payload's native upload feature: `{ name: "image" | "logo" | "icon" | "avatar", type: "upload", relationTo: "media" }`.
+  - NEVER use plain text strings (e.g. `{ name: "src", type: "text" }`) in CMS schemas.
+  - **Why**: When object storage / CDN (AWS S3, Cloudflare R2, Cloudinary) is connected in the future via a Payload cloud storage plugin, all media files will migrate to and be served from CDN automatically without database migrations or content string replacements.
+  - **Frontend Fallback**: UI components and block renderers must resolve media objects dynamically (`media.url`, `media.alt`, `media.width`, `media.height`), falling back to canonical local static paths (`/assets/...`) if media is not yet uploaded or unpopulated.
+
+### 5. Generalize All New Components for Future Reuse
 - When building any new component:
   - **Decouple markup from content**: Never hardcode page-specific strings, titles, paragraphs, or links directly into the component. Accept structured content via typed TypeScript props, or import from `src/content/**` or `src/data/**`.
   - **Expose flexible, typed props**: Accept title, description, items array, optional CTAs, optional subheadings, and optional `className` overrides.
   - **Build modular sub-components**: Break complex sections into clean modular pieces (e.g. a grid container + a reusable item card component) so sub-pieces can also be reused independently.
   - **Ensure clean Server / Client boundaries**: Keep the main section server-rendered; encapsulate interactive widgets (sliders, tabs, modals, accordions) into small `"use client"` controls.
 
-### 5. Post-Implementation Consolidation
+### 6. Post-Implementation Consolidation
 - Before completing the task, verify whether any newly created components can be consolidated or promoted to shared locations.
 - Verify that no duplicate components were introduced across page folders.
 

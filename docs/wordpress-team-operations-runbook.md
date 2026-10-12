@@ -32,8 +32,8 @@ With this setup, **100% of website content, pages, media, global navigation, and
 | :--- | :--- | :--- |
 | **Appearance $\rightarrow$ Menus** | **Globals $\rightarrow$ Header & Footer Menus** | Visually edit header links, dropdown columns, footer links, and legal links. |
 | **Theme Customizer / Options** | **Globals $\rightarrow$ Company Information** | Update phone numbers, WhatsApp, emails, office address, and social profiles. |
-| **Elementor / Gutenberg Builder** | **Collections $\rightarrow$ Pages (Blocks)** | Click **"Add Section"** to insert visual blocks (`Hero`, `FAQs`, `Counters`, `CTA`, etc.). Drag and drop to reorder. |
-| **Posts & Categories** | **Collections $\rightarrow$ Posts & Categories** | Write posts with the Lexical Rich Text editor, select categories, assign author, and add FAQs. |
+| **Elementor / Gutenberg Builder** | **Collections $\rightarrow$ Pages (Blocks)** | Click **"Add Section"** to insert 100% structured blocks (`Hero`, `FAQs`, `Counters`, `Legal Content`, `Site Map`, `CTA`, etc.) with clean scalar input fields. Drag and drop to reorder. Zero Rich Text / WYSIWYG, zero HTML. |
+| **Posts & Categories** | **Collections $\rightarrow$ Posts & Categories** | Assemble posts with discrete editorial blocks (`blog-heading`, `blog-paragraph`, `blog-list`, `blog-image`, etc.), select categories, assign author, and add FAQs. Zero raw HTML. |
 | **Portfolio / Projects (CPT)** | **Collections $\rightarrow$ Case Studies** | Manage client name, metrics, challenges, solutions, image galleries, and review quotes. |
 | **Client Testimonials** | **Collections $\rightarrow$ Testimonials** | Add quotes, star ratings, reviewer roles, company logos, and video review links. |
 | **Media Library** | **Collections $\rightarrow$ Media** | Drag-and-drop file uploads with automatic WebP conversion and SEO alt attributes. |
@@ -197,28 +197,32 @@ Every block maps directly to our high-performance Next.js component system:
 ### 13. Industries Served Grid (`industries-grid`)
 - Vertical industry cards with photography, eyebrow, and direct service landing page links.
 
-### 14. Rich Text Content / Legal (`rich-text-content`)
-- Formatted long-form editorial copy with selectable container width (`Narrow (Legal / Policy)`, `Standard`, or `Full Width`). Zero raw HTML tags.
+### 14. Structured Legal Content / Policy (`legal-content`)
+- Structured long-form legal agreement and policy section with selectable container width (`Narrow (Legal / Policy)`, `Standard`, or `Full Width`).
+- Editors manage content through clean inputs: section subtitle, paragraph rows, optional bullet list items with bold prefixes, and optional contact details. **Zero Rich Text / WYSIWYG, zero raw HTML tags**.
 
-### 15. Shopify Plus Agency Overview (`shopify-plus-agency-overview`)
+### 15. Site Map Directory (`site-map-directory`)
+- Structured site directory section organizing site pages into categorized columns/groups with link labels and URLs. Zero raw HTML.
+
+### 16. Shopify Plus Agency Overview (`shopify-plus-agency-overview`)
 - High-impact agency overview section with split typography, brand video embed, and 4 colored metric proof counters (Green, Stone, Peach, Lime).
 
-### 16. White-Label Partner Banner (`white-label-partner-banner`)
+### 17. White-Label Partner Banner (`white-label-partner-banner`)
 - Dedicated agency partnership proposition with feature checklist cards and partner onboarding CTA.
 
-### 17. Commerce Solutions Grid (`commerce-solutions`)
+### 18. Commerce Solutions Grid (`commerce-solutions`)
 - Comprehensive capability cards showcasing Migration, Custom Liquid/Hydrogen, Integrations, and B2B Wholesale.
 
-### 18. Selected Work Marquee (`selected-work-marquee`)
+### 19. Selected Work Marquee (`selected-work-marquee`)
 - Continuous horizontal marquee showcasing flagship store transformations.
 
-### 19. Testimonials Carousel (`testimonials-carousel`)
+### 20. Testimonials Carousel (`testimonials-carousel`)
 - Interactive client quote and video case study slider.
 
-### 20. Integrations & Platform Partners (`integrations-partners`)
+### 21. Integrations & Platform Partners (`integrations-partners`)
 - Visual ecosystem logo showcase covering Shopify apps, ERPs, CRMs, and payment gateways.
 
-### 21. Latest Insights (`latest-insights`)
+### 22. Latest Insights (`latest-insights`)
 - Automated editorial card grid linking to recent thought leadership blog posts.
 
 ---
@@ -298,8 +302,11 @@ To showcase client projects and results:
 
 ## 10. Media Library & Asset Upload Guidelines
 
-Our Next.js frontend uses Next.js Image optimization and WebP delivery. Follow these hygiene rules:
+All image, icon, logo, and banner fields across Pages, Posts, Case Studies, and Blocks link directly to the **Media Library (`media` collection)** via drag-and-drop upload fields, with built-in fallback to local static assets.
 
+- **Native Uploads Everywhere**: Every image input connects directly to the Media collection. Editors simply click to select an existing image or upload a new one from their desktop.
+- **Future Cloud CDN Migration Ready**: All media uploaded through Payload is managed via canonical media records. When cloud CDN / object storage (AWS S3, Cloudflare R2, Cloudinary) is connected, all media assets automatically serve from the high-speed global CDN without altering any page, post, or block content records.
+- **Local Asset Fallback**: While transitioning, any block, page, or post without an uploaded media file gracefully falls back to canonical local project assets (`/assets/...`), preventing broken images or missing artwork.
 - **Format**: Upload high-resolution PNG, JPG, SVG, or WebP files.
 - **Alt Text is Mandatory**: Always fill in the **Alternative Text (Alt)** field with descriptive text describing what is pictured (e.g., `Ranavat luxury ayurvedic skincare Shopify Plus homepage design`).
 - **File Names**: Use clean kebab-case names before uploading (e.g., `gnc-india-mobile-mockup.webp`, not `IMG_9384_final_v2.png`).
