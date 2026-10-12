@@ -241,13 +241,24 @@ export interface Author {
 export interface Testimonial {
   id: number;
   clientName: string;
-  role?: string | null;
   company: string;
-  content: string;
+  quote: string;
+  title?: string | null;
+  role?: string | null;
+  videoId?: string | null;
+  videoUploadDate?: string | null;
+  avatar?: string | null;
+  portrait?: string | null;
+  companyLogo?: string | null;
+  companyLogoAlt?: string | null;
+  companyHref?: string | null;
+  tags?:
+    | {
+        tag?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   rating?: number | null;
-  avatar?: (number | null) | Media;
-  companyLogo?: (number | null) | Media;
-  videoUrl?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -261,25 +272,243 @@ export interface Post {
   slug: string;
   date: string;
   displayDate?: string | null;
-  coverImage?: (number | null) | Media;
-  excerpt: string;
-  content: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
+  featuredImage: {
+    src: string;
+    alt: string;
+    width?: number | null;
+    height?: number | null;
   };
-  categories?: (number | Category)[] | null;
+  excerpt: string;
   author?: (number | null) | Author;
+  categories?: (number | Category)[] | null;
+  contentBeforeToc?:
+    | (
+        | {
+            level: '2' | '3' | '4' | '5';
+            text: string;
+            anchorId?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-heading';
+          }
+        | {
+            text?: string | null;
+            inlineNodes?:
+              | {
+                  type: 'text' | 'link' | 'break' | 'code';
+                  text?: string | null;
+                  bold?: boolean | null;
+                  italic?: boolean | null;
+                  href?: string | null;
+                  target?: ('_self' | '_blank') | null;
+                  rel?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-paragraph';
+          }
+        | {
+            ordered?: boolean | null;
+            items?:
+              | {
+                  text?: string | null;
+                  boldPrefix?: string | null;
+                  linkText?: string | null;
+                  linkHref?: string | null;
+                  inlineNodes?:
+                    | {
+                        type: 'text' | 'link' | 'break' | 'code';
+                        text?: string | null;
+                        bold?: boolean | null;
+                        italic?: boolean | null;
+                        href?: string | null;
+                        target?: ('_self' | '_blank') | null;
+                        rel?: string | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-list';
+          }
+        | {
+            src: string;
+            alt: string;
+            width?: number | null;
+            height?: number | null;
+            caption?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-image';
+          }
+        | {
+            headers?:
+              | {
+                  headerText?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            rows?:
+              | {
+                  cells?:
+                    | {
+                        cellText?: string | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-table';
+          }
+        | {
+            quote: string;
+            citation?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-quote';
+          }
+        | {
+            type: 'info' | 'tip' | 'warning';
+            title?: string | null;
+            content: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-callout';
+          }
+        | {
+            style?: ('standard' | 'subtle') | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-divider';
+          }
+      )[]
+    | null;
+  toc?:
+    | {
+        label: string;
+        href: string;
+        level?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  content?:
+    | (
+        | {
+            level: '2' | '3' | '4' | '5';
+            text: string;
+            anchorId?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-heading';
+          }
+        | {
+            text?: string | null;
+            inlineNodes?:
+              | {
+                  type: 'text' | 'link' | 'break' | 'code';
+                  text?: string | null;
+                  bold?: boolean | null;
+                  italic?: boolean | null;
+                  href?: string | null;
+                  target?: ('_self' | '_blank') | null;
+                  rel?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-paragraph';
+          }
+        | {
+            ordered?: boolean | null;
+            items?:
+              | {
+                  text?: string | null;
+                  boldPrefix?: string | null;
+                  linkText?: string | null;
+                  linkHref?: string | null;
+                  inlineNodes?:
+                    | {
+                        type: 'text' | 'link' | 'break' | 'code';
+                        text?: string | null;
+                        bold?: boolean | null;
+                        italic?: boolean | null;
+                        href?: string | null;
+                        target?: ('_self' | '_blank') | null;
+                        rel?: string | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-list';
+          }
+        | {
+            src: string;
+            alt: string;
+            width?: number | null;
+            height?: number | null;
+            caption?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-image';
+          }
+        | {
+            headers?:
+              | {
+                  headerText?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            rows?:
+              | {
+                  cells?:
+                    | {
+                        cellText?: string | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-table';
+          }
+        | {
+            quote: string;
+            citation?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-quote';
+          }
+        | {
+            type: 'info' | 'tip' | 'warning';
+            title?: string | null;
+            content: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-callout';
+          }
+        | {
+            style?: ('standard' | 'subtle') | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blog-divider';
+          }
+      )[]
+    | null;
   faqs?:
     | {
         question: string;
@@ -291,7 +520,7 @@ export interface Post {
     metaTitle?: string | null;
     metaDescription?: string | null;
     canonicalUrl?: string | null;
-    metaImage?: (number | null) | Media;
+    metaImage?: string | null;
   };
   updatedAt: string;
   createdAt: string;
@@ -305,24 +534,122 @@ export interface CaseStudy {
   title: string;
   slug: string;
   clientName: string;
+  projectTitle?: string | null;
   industry?: string | null;
   technology?: string | null;
+  location?: string | null;
   websiteUrl?: string | null;
-  thumbnail?: (number | null) | Media;
-  heroImage?: (number | null) | Media;
-  gallery?:
+  summary?: string | null;
+  heroImage: {
+    src: string;
+    alt: string;
+    width?: number | null;
+    height?: number | null;
+  };
+  heroEyebrows?:
     | {
-        image?: (number | null) | Media;
+        text: string;
         id?: string | null;
       }[]
     | null;
-  overview?: string | null;
-  challenge?: string | null;
-  solution?: string | null;
-  metrics?:
+  archive?: {
+    title?: string | null;
+    technology?: string | null;
+    industry?: string | null;
+    excerpt?: string | null;
+    tags?:
+      | {
+          tag?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  keyMetrics?: {
+    heading?: string | null;
+    items?:
+      | {
+          stat: string;
+          label: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  challenge?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    description?: string | null;
+    items?:
+      | {
+          number?: string | null;
+          title?: string | null;
+          description?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  solutions?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    lead?: string | null;
+    items?:
+      | {
+          number?: string | null;
+          text?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  keyFeatures?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    isTwoColumn?: boolean | null;
+    items?:
+      | {
+          number?: string | null;
+          title?: string | null;
+          description?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  projectDelivery?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    items?:
+      | {
+          category?: string | null;
+          name?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  customSections?:
     | {
-        value: string;
-        label: string;
+        eyebrow?: string | null;
+        heading: string;
+        lead?: string | null;
+        description?: string | null;
+        items?:
+          | {
+              number?: string | null;
+              title?: string | null;
+              description?: string | null;
+              note?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        takeaways?:
+          | {
+              text?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  relatedCaseStudies?:
+    | {
+        slug?: string | null;
         id?: string | null;
       }[]
     | null;
@@ -330,7 +657,8 @@ export interface CaseStudy {
   seo?: {
     metaTitle?: string | null;
     metaDescription?: string | null;
-    metaImage?: (number | null) | Media;
+    canonicalUrl?: string | null;
+    metaImage?: string | null;
   };
   updatedAt: string;
   createdAt: string;
@@ -879,13 +1207,24 @@ export interface AuthorsSelect<T extends boolean = true> {
  */
 export interface TestimonialsSelect<T extends boolean = true> {
   clientName?: T;
-  role?: T;
   company?: T;
-  content?: T;
-  rating?: T;
+  quote?: T;
+  title?: T;
+  role?: T;
+  videoId?: T;
+  videoUploadDate?: T;
   avatar?: T;
+  portrait?: T;
   companyLogo?: T;
-  videoUrl?: T;
+  companyLogoAlt?: T;
+  companyHref?: T;
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  rating?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -898,11 +1237,261 @@ export interface PostsSelect<T extends boolean = true> {
   slug?: T;
   date?: T;
   displayDate?: T;
-  coverImage?: T;
+  featuredImage?:
+    | T
+    | {
+        src?: T;
+        alt?: T;
+        width?: T;
+        height?: T;
+      };
   excerpt?: T;
-  content?: T;
-  categories?: T;
   author?: T;
+  categories?: T;
+  contentBeforeToc?:
+    | T
+    | {
+        'blog-heading'?:
+          | T
+          | {
+              level?: T;
+              text?: T;
+              anchorId?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'blog-paragraph'?:
+          | T
+          | {
+              text?: T;
+              inlineNodes?:
+                | T
+                | {
+                    type?: T;
+                    text?: T;
+                    bold?: T;
+                    italic?: T;
+                    href?: T;
+                    target?: T;
+                    rel?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'blog-list'?:
+          | T
+          | {
+              ordered?: T;
+              items?:
+                | T
+                | {
+                    text?: T;
+                    boldPrefix?: T;
+                    linkText?: T;
+                    linkHref?: T;
+                    inlineNodes?:
+                      | T
+                      | {
+                          type?: T;
+                          text?: T;
+                          bold?: T;
+                          italic?: T;
+                          href?: T;
+                          target?: T;
+                          rel?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'blog-image'?:
+          | T
+          | {
+              src?: T;
+              alt?: T;
+              width?: T;
+              height?: T;
+              caption?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'blog-table'?:
+          | T
+          | {
+              headers?:
+                | T
+                | {
+                    headerText?: T;
+                    id?: T;
+                  };
+              rows?:
+                | T
+                | {
+                    cells?:
+                      | T
+                      | {
+                          cellText?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'blog-quote'?:
+          | T
+          | {
+              quote?: T;
+              citation?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'blog-callout'?:
+          | T
+          | {
+              type?: T;
+              title?: T;
+              content?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'blog-divider'?:
+          | T
+          | {
+              style?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  toc?:
+    | T
+    | {
+        label?: T;
+        href?: T;
+        level?: T;
+        id?: T;
+      };
+  content?:
+    | T
+    | {
+        'blog-heading'?:
+          | T
+          | {
+              level?: T;
+              text?: T;
+              anchorId?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'blog-paragraph'?:
+          | T
+          | {
+              text?: T;
+              inlineNodes?:
+                | T
+                | {
+                    type?: T;
+                    text?: T;
+                    bold?: T;
+                    italic?: T;
+                    href?: T;
+                    target?: T;
+                    rel?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'blog-list'?:
+          | T
+          | {
+              ordered?: T;
+              items?:
+                | T
+                | {
+                    text?: T;
+                    boldPrefix?: T;
+                    linkText?: T;
+                    linkHref?: T;
+                    inlineNodes?:
+                      | T
+                      | {
+                          type?: T;
+                          text?: T;
+                          bold?: T;
+                          italic?: T;
+                          href?: T;
+                          target?: T;
+                          rel?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'blog-image'?:
+          | T
+          | {
+              src?: T;
+              alt?: T;
+              width?: T;
+              height?: T;
+              caption?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'blog-table'?:
+          | T
+          | {
+              headers?:
+                | T
+                | {
+                    headerText?: T;
+                    id?: T;
+                  };
+              rows?:
+                | T
+                | {
+                    cells?:
+                      | T
+                      | {
+                          cellText?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'blog-quote'?:
+          | T
+          | {
+              quote?: T;
+              citation?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'blog-callout'?:
+          | T
+          | {
+              type?: T;
+              title?: T;
+              content?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'blog-divider'?:
+          | T
+          | {
+              style?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
   faqs?:
     | T
     | {
@@ -929,25 +1518,137 @@ export interface CaseStudiesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
   clientName?: T;
+  projectTitle?: T;
   industry?: T;
   technology?: T;
+  location?: T;
   websiteUrl?: T;
-  thumbnail?: T;
-  heroImage?: T;
-  gallery?:
+  summary?: T;
+  heroImage?:
     | T
     | {
-        image?: T;
+        src?: T;
+        alt?: T;
+        width?: T;
+        height?: T;
+      };
+  heroEyebrows?:
+    | T
+    | {
+        text?: T;
         id?: T;
       };
-  overview?: T;
-  challenge?: T;
-  solution?: T;
-  metrics?:
+  archive?:
     | T
     | {
-        value?: T;
-        label?: T;
+        title?: T;
+        technology?: T;
+        industry?: T;
+        excerpt?: T;
+        tags?:
+          | T
+          | {
+              tag?: T;
+              id?: T;
+            };
+      };
+  keyMetrics?:
+    | T
+    | {
+        heading?: T;
+        items?:
+          | T
+          | {
+              stat?: T;
+              label?: T;
+              id?: T;
+            };
+      };
+  challenge?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        description?: T;
+        items?:
+          | T
+          | {
+              number?: T;
+              title?: T;
+              description?: T;
+              id?: T;
+            };
+      };
+  solutions?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        lead?: T;
+        items?:
+          | T
+          | {
+              number?: T;
+              text?: T;
+              id?: T;
+            };
+      };
+  keyFeatures?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        isTwoColumn?: T;
+        items?:
+          | T
+          | {
+              number?: T;
+              title?: T;
+              description?: T;
+              id?: T;
+            };
+      };
+  projectDelivery?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        items?:
+          | T
+          | {
+              category?: T;
+              name?: T;
+              id?: T;
+            };
+      };
+  customSections?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        lead?: T;
+        description?: T;
+        items?:
+          | T
+          | {
+              number?: T;
+              title?: T;
+              description?: T;
+              note?: T;
+              id?: T;
+            };
+        takeaways?:
+          | T
+          | {
+              text?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  relatedCaseStudies?:
+    | T
+    | {
+        slug?: T;
         id?: T;
       };
   testimonial?: T;
@@ -956,6 +1657,7 @@ export interface CaseStudiesSelect<T extends boolean = true> {
     | {
         metaTitle?: T;
         metaDescription?: T;
+        canonicalUrl?: T;
         metaImage?: T;
       };
   updatedAt?: T;

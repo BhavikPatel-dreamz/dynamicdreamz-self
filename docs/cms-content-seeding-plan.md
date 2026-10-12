@@ -270,7 +270,7 @@ Step 5: Ephemeral Seeding & Verification
   - Structured editorial blocks from `src/content/blogs.ts` and `src/content/blog-post-details.ts`.
   - Content: `content` blocks array (`blog-heading`, `blog-paragraph`, `blog-list`, `blog-image`, `blog-table`, `blog-quote`, `blog-callout`, `blog-divider`).
   - Structured metadata: `title`, `slug`, `date`, `displayDate`, `featuredImage`, `excerpt`, `author` (relation), `categories` (relation), `toc` (array of label/href/level), `faqs` (array of question/answer), `seo`.
-  - Zero raw HTML.
+- **Status**: Persisted in Neon DB (11 testimonials, 58 case studies, 119 blog posts with zero raw HTML and 100% modular block schema), verified, 0 errors.
 
 ---
 

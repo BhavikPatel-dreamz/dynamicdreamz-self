@@ -16,10 +16,14 @@ import type {
   BlogArchiveArticle,
   BlogArchiveCategoryValue,
 } from "@/content/blogs";
-import type { BlogPostDetail } from "@/types/blog-post";
+import type {
+  BlogPostDetail,
+  BlogContentBlock,
+  BlogInlineNode,
+  BlogListItem,
+} from "@/types/blog-post";
 import type { CaseStudyDetail, CaseStudyItem } from "@/types/case-study";
 import caseStudiesItemsJson from "@/content/case-studies-items.json";
-import { parseHtmlToBlocks } from "@/lib/blog-blocks";
 
 export async function getPayloadNavigation() {
   try {
@@ -263,13 +267,140 @@ export function serializeLexicalToHtml(node: unknown): string {
   return "";
 }
 
+export function adaptPayloadBlocksToBlogBlocks(blocks: unknown[]): BlogContentBlock[] {
+  if (!Array.isArray(blocks) || blocks.length === 0) return [];
+  const results: BlogContentBlock[] = [];
+
+  for (const b of blocks) {
+    if (!b || typeof b !== "object") continue;
+    const block = b as Record<string, unknown>;
+    const blockType = String(block.blockType || block.type || "");
+
+    if (blockType === "blog-heading" || blockType === "heading") {
+      const levelNum = Number(block.level || 2);
+      const level = (levelNum >= 2 && levelNum <= 5 ? levelNum : 2) as 2 | 3 | 4 | 5;
+      const headingAnchorId = block.anchorId || block.id;
+      results.push({
+        type: "heading",
+        level,
+        text: String(block.text || ""),
+        id: headingAnchorId ? String(headingAnchorId) : undefined,
+      });
+    } else if (blockType === "blog-paragraph" || blockType === "paragraph") {
+      const inlineNodes = Array.isArray(block.inlineNodes) ? block.inlineNodes : null;
+      if (inlineNodes && inlineNodes.length > 0) {
+        results.push({
+          type: "paragraph",
+          children: inlineNodes.map((n) => {
+            const node = n as Record<string, unknown>;
+            if (node.type === "break") return { type: "break" as const };
+            if (node.type === "link") {
+              return {
+                type: "link" as const,
+                href: String(node.href || ""),
+                text: String(node.text || ""),
+                bold: Boolean(node.bold),
+                italic: Boolean(node.italic),
+                target: node.target === "_blank" ? "_blank" : undefined,
+                rel: node.rel ? String(node.rel) : undefined,
+              };
+            }
+            return {
+              type: "text" as const,
+              text: String(node.text || ""),
+              bold: Boolean(node.bold),
+              italic: Boolean(node.italic),
+            };
+          }),
+        });
+      } else if (Array.isArray(block.children)) {
+        results.push({
+          type: "paragraph",
+          children: block.children as (string | BlogInlineNode)[],
+        });
+      } else {
+        results.push({
+          type: "paragraph",
+          children: [String(block.text || "")],
+        });
+      }
+    } else if (blockType === "blog-list" || blockType === "list") {
+      const rawItems = Array.isArray(block.items) ? block.items : [];
+      results.push({
+        type: "list",
+        ordered: Boolean(block.ordered),
+        items: rawItems.map((item) => {
+          const it = item as Record<string, unknown>;
+          if (Array.isArray(it.content)) return it as unknown as BlogListItem;
+          const inlineNodes = Array.isArray(it.inlineNodes) ? it.inlineNodes : null;
+          if (inlineNodes && inlineNodes.length > 0) {
+            return {
+              content: inlineNodes.map((n) => {
+                const node = n as Record<string, unknown>;
+                if (node.type === "break") return { type: "break" as const };
+                if (node.type === "link") {
+                  return {
+                    type: "link" as const,
+                    href: String(node.href || ""),
+                    text: String(node.text || ""),
+                    bold: Boolean(node.bold),
+                    italic: Boolean(node.italic),
+                    target: node.target === "_blank" ? "_blank" : undefined,
+                  };
+                }
+                return {
+                  type: "text" as const,
+                  text: String(node.text || ""),
+                  bold: Boolean(node.bold),
+                  italic: Boolean(node.italic),
+                };
+              }),
+            };
+          }
+          return { content: [String(it.text || "")] };
+        }),
+      });
+    } else if (blockType === "blog-image" || blockType === "image") {
+      results.push({
+        type: "image",
+        src: String(block.src || ""),
+        alt: String(block.alt || ""),
+        width: Number(block.width || 750),
+        height: Number(block.height || 400),
+        caption: block.caption ? String(block.caption) : undefined,
+      });
+    } else if (blockType === "blog-table" || blockType === "table") {
+      const rawHeaders = Array.isArray(block.headers) ? block.headers : [];
+      const rawRows = Array.isArray(block.rows) ? block.rows : [];
+      results.push({
+        type: "table",
+        headers: rawHeaders.map((h) => {
+          if (typeof h === "string") return h;
+          const hObj = h as Record<string, unknown>;
+          return String(hObj.headerText || "");
+        }),
+        rows: rawRows.map((r) => {
+          const rowObj = r as Record<string, unknown>;
+          const cells = Array.isArray(rowObj.cells) ? rowObj.cells : (Array.isArray(r) ? r : []);
+          return cells.map((c) => {
+            if (typeof c === "string") return [c];
+            const cObj = c as Record<string, unknown>;
+            return [String(cObj.cellText || "")];
+          });
+        }),
+      });
+    } else if (blockType === "blog-divider" || blockType === "divider" || blockType === "hr") {
+      results.push({ type: "hr" });
+    }
+  }
+
+  return results;
+}
+
 export function adaptPayloadPostToArchive(
   post: Post,
 ): BlogArchiveArticle {
-  const cover =
-    typeof post.coverImage === "object" && post.coverImage !== null
-      ? post.coverImage
-      : null;
+  const featured = post.featuredImage;
 
   let categoryLabel: BlogArchiveArticle["category"] = "Shopify";
   let categoryHref = "/blogs?category=shopify";
@@ -310,9 +441,9 @@ export function adaptPayloadPostToArchive(
   return {
     title: post.title,
     href: `/blogs/${post.slug}`,
-    image: cover?.url || null,
-    width: cover?.width || null,
-    height: cover?.height || null,
+    image: featured?.src || null,
+    width: featured?.width || null,
+    height: featured?.height || null,
     date: post.date,
     displayDate,
     category: categoryLabel,
@@ -344,19 +475,7 @@ export function adaptPayloadPostToBlogPostDetail(
   post: Post,
   fallbackDetail?: BlogPostDetail,
 ): BlogPostDetail {
-  const cover =
-    typeof post.coverImage === "object" && post.coverImage !== null
-      ? post.coverImage
-      : null;
-
-  let htmlContent = "";
-  if (post.content) {
-    if (typeof post.content === "string") {
-      htmlContent = post.content;
-    } else {
-      htmlContent = serializeLexicalToHtml(post.content);
-    }
-  }
+  const featured = post.featuredImage;
 
   let categoryName = fallbackDetail?.category || "Shopify";
   let categoryValue = fallbackDetail?.categoryValue || "shopify";
@@ -383,8 +502,7 @@ export function adaptPayloadPostToBlogPostDetail(
           role: post.author.role || "Author",
           bio: post.author.bio || "",
           image:
-            (typeof post.author.avatar === "object" &&
-              post.author.avatar?.url) ||
+            post.author.avatarUrl ||
             fallbackDetail?.author?.image ||
             "/assets/blog/authors/rizwanshaikh.webp",
           linkedin: post.author.linkedin || undefined,
@@ -393,12 +511,12 @@ export function adaptPayloadPostToBlogPostDetail(
     fallbackDetail?.author ||
     null;
 
-  const featuredImage = cover?.url
+  const featuredImage = featured?.src
     ? {
-        src: cover.url,
-        width: cover.width || 1200,
-        height: cover.height || 630,
-        alt: cover.alt || post.title,
+        src: featured.src,
+        width: featured.width || 1200,
+        height: featured.height || 630,
+        alt: featured.alt || post.title,
       }
     : fallbackDetail?.featuredImage || null;
 
@@ -407,10 +525,35 @@ export function adaptPayloadPostToBlogPostDetail(
       ? post.faqs.map((f) => ({ question: f.question, answer: f.answer }))
       : fallbackDetail?.faqs || [];
 
-  const rawText = htmlContent.replace(/<[^>]+>/g, " ");
-  const wordCount = rawText.trim()
-    ? rawText.trim().split(/\s+/).length
-    : fallbackDetail?.wordCount || 500;
+  const dynamicBefore = adaptPayloadBlocksToBlogBlocks(post.contentBeforeToc as unknown[]);
+  const dynamicAfter = adaptPayloadBlocksToBlogBlocks(post.content as unknown[]);
+
+  const contentBeforeToc =
+    dynamicBefore.length > 0
+      ? dynamicBefore
+      : fallbackDetail?.contentBeforeToc || [];
+
+  const contentAfterToc =
+    dynamicAfter.length > 0
+      ? dynamicAfter
+      : fallbackDetail?.contentAfterToc || [];
+
+  const toc =
+    post.toc && post.toc.length > 0
+      ? post.toc.map((t) => ({ label: t.label, href: t.href, level: t.level || 2 }))
+      : fallbackDetail?.toc || [];
+
+  let words = 0;
+  for (const b of [...contentBeforeToc, ...contentAfterToc]) {
+    if (b.type === "paragraph") {
+      for (const c of b.children) {
+        if (typeof c === "string") words += c.split(/\s+/).length;
+        else if (c.type === "text") words += c.text.split(/\s+/).length;
+      }
+    } else if (b.type === "heading") {
+      words += b.text.split(/\s+/).length;
+    }
+  }
 
   return {
     slug: post.slug,
@@ -424,11 +567,9 @@ export function adaptPayloadPostToBlogPostDetail(
     featuredImage,
     excerpt: post.excerpt || fallbackDetail?.excerpt || "",
     author,
-    contentBeforeToc: htmlContent
-      ? parseHtmlToBlocks(htmlContent)
-      : fallbackDetail?.contentBeforeToc || [],
-    contentAfterToc: fallbackDetail?.contentAfterToc || [],
-    toc: fallbackDetail?.toc || [],
+    contentBeforeToc,
+    contentAfterToc,
+    toc,
     faqs,
     previous: fallbackDetail?.previous || null,
     next: fallbackDetail?.next || null,
@@ -443,7 +584,7 @@ export function adaptPayloadPostToBlogPostDetail(
         post.excerpt ||
         "",
     },
-    wordCount,
+    wordCount: words || fallbackDetail?.wordCount || 500,
   };
 }
 
@@ -451,27 +592,25 @@ export function adaptPayloadCaseStudiesToItems(
   caseStudies: CaseStudy[],
 ): CaseStudyItem[] {
   return caseStudies.map((cs) => {
-    const thumb =
-      typeof cs.thumbnail === "object" && cs.thumbnail !== null
-        ? cs.thumbnail
-        : null;
-    const hero =
-      typeof cs.heroImage === "object" && cs.heroImage !== null
-        ? cs.heroImage
-        : null;
-    const imageMedia = thumb || hero;
     const fallbackItem = caseStudiesItemsJson.find((item) => item.slug === cs.slug);
+    const heroSrc = cs.heroImage?.src || fallbackItem?.image || "/assets/case-studies/gnc-india.webp";
+    const heroAlt = cs.heroImage?.alt || fallbackItem?.alt || cs.title;
+    const rawTags = cs.archive?.tags?.map((t) => t.tag).filter(Boolean) as string[] || [];
+    const tags =
+      rawTags.length > 0
+        ? rawTags
+        : ([cs.technology, cs.industry].filter(Boolean) as string[]);
 
     return {
       slug: cs.slug,
-      title: cs.title,
-      technology: cs.technology || fallbackItem?.technology || "Shopify Plus",
-      industry: cs.industry || fallbackItem?.industry || "",
-      excerpt: cs.overview || cs.challenge || fallbackItem?.excerpt || "",
-      image: imageMedia?.url || fallbackItem?.image || "/assets/case-studies/gnc-india.webp",
-      alt: imageMedia?.alt || fallbackItem?.alt || cs.title,
+      title: cs.archive?.title || cs.title,
+      technology: cs.archive?.technology || cs.technology || fallbackItem?.technology || "Shopify Plus",
+      industry: cs.archive?.industry || cs.industry || fallbackItem?.industry || "",
+      excerpt: cs.archive?.excerpt || cs.summary || fallbackItem?.excerpt || "",
+      image: heroSrc,
+      alt: heroAlt,
       href: `/case-studies/${cs.slug}`,
-      tags: [cs.technology, cs.industry].filter(Boolean) as string[],
+      tags: tags.length > 0 ? tags : (fallbackItem?.tags || ["Shopify Plus"]),
     };
   });
 }
@@ -480,23 +619,14 @@ export function adaptPayloadCaseStudyToDetail(
   cs: CaseStudy,
   fallbackDetail?: CaseStudyDetail,
 ): CaseStudyDetail {
-  const thumb =
-    typeof cs.thumbnail === "object" && cs.thumbnail !== null
-      ? cs.thumbnail
-      : null;
-  const hero =
-    typeof cs.heroImage === "object" && cs.heroImage !== null
-      ? cs.heroImage
-      : null;
-  const imageMedia = hero || thumb;
   const fallbackItem = caseStudiesItemsJson.find((item) => item.slug === cs.slug);
 
-  const heroImage = imageMedia?.url
+  const heroImage = cs.heroImage?.src
     ? {
-        src: imageMedia.url,
-        width: imageMedia.width || 1200,
-        height: imageMedia.height || 800,
-        alt: imageMedia.alt || cs.title,
+        src: cs.heroImage.src,
+        width: cs.heroImage.width || 1200,
+        height: cs.heroImage.height || 800,
+        alt: cs.heroImage.alt || cs.title,
       }
     : fallbackDetail?.hero.image || {
         src: fallbackItem?.image || "/assets/case-studies/gnc-india.webp",
@@ -506,68 +636,139 @@ export function adaptPayloadCaseStudyToDetail(
       };
 
   const keyMetrics =
-    cs.metrics && cs.metrics.length > 0
+    cs.keyMetrics && cs.keyMetrics.items && cs.keyMetrics.items.length > 0
       ? {
-          heading: fallbackDetail?.keyMetrics?.heading || "Key Results & Metrics",
-          items: cs.metrics.map((m) => ({ stat: m.value, label: m.label })),
+          heading: cs.keyMetrics.heading || fallbackDetail?.keyMetrics?.heading || "Key Results & Impact",
+          items: cs.keyMetrics.items.map((m) => ({ stat: m.stat, label: m.label })),
         }
       : fallbackDetail?.keyMetrics;
 
   const challenge = cs.challenge
     ? {
-        eyebrow: fallbackDetail?.challenge?.eyebrow,
-        heading: fallbackDetail?.challenge?.heading || "The Challenge",
-        description: cs.challenge,
-        items: fallbackDetail?.challenge?.items || [],
+        eyebrow: cs.challenge.eyebrow || fallbackDetail?.challenge?.eyebrow,
+        heading: cs.challenge.heading || fallbackDetail?.challenge?.heading || "The Challenge",
+        description: cs.challenge.description || fallbackDetail?.challenge?.description || "",
+        items: cs.challenge.items && cs.challenge.items.length > 0
+          ? cs.challenge.items.map((it) => ({
+              number: it.number || "",
+              title: it.title || "",
+              description: it.description || "",
+            }))
+          : fallbackDetail?.challenge?.items || [],
       }
     : fallbackDetail?.challenge;
 
-  const solutions = cs.solution
+  const solutions = cs.solutions
     ? {
-        eyebrow: fallbackDetail?.solutions?.eyebrow,
-        heading: fallbackDetail?.solutions?.heading || "Our Solution",
-        lead: cs.solution,
-        items: fallbackDetail?.solutions?.items || [],
+        eyebrow: cs.solutions.eyebrow || fallbackDetail?.solutions?.eyebrow,
+        heading: cs.solutions.heading || fallbackDetail?.solutions?.heading || "Our Solution",
+        lead: cs.solutions.lead || fallbackDetail?.solutions?.lead || "",
+        items: cs.solutions.items && cs.solutions.items.length > 0
+          ? cs.solutions.items.map((it) => ({
+              number: it.number || "",
+              text: it.text || "",
+            }))
+          : fallbackDetail?.solutions?.items || [],
       }
     : fallbackDetail?.solutions;
+
+  const keyFeatures = cs.keyFeatures
+    ? {
+        eyebrow: cs.keyFeatures.eyebrow || fallbackDetail?.keyFeatures?.eyebrow,
+        heading: cs.keyFeatures.heading || fallbackDetail?.keyFeatures?.heading || "Key Features Delivered",
+        isTwoColumn: cs.keyFeatures.isTwoColumn || false,
+        items: cs.keyFeatures.items && cs.keyFeatures.items.length > 0
+          ? cs.keyFeatures.items.map((it) => ({
+              number: it.number || "",
+              title: it.title || "",
+              description: it.description || undefined,
+            }))
+          : fallbackDetail?.keyFeatures?.items || [],
+      }
+    : fallbackDetail?.keyFeatures;
+
+  const projectDelivery = cs.projectDelivery
+    ? {
+        eyebrow: cs.projectDelivery.eyebrow || fallbackDetail?.projectDelivery?.eyebrow,
+        heading: cs.projectDelivery.heading || fallbackDetail?.projectDelivery?.heading || "Project Delivery & Technology",
+        items: cs.projectDelivery.items && cs.projectDelivery.items.length > 0
+          ? cs.projectDelivery.items.map((it) => ({
+              category: it.category || undefined,
+              name: it.name || "",
+            }))
+          : fallbackDetail?.projectDelivery?.items || [],
+      }
+    : fallbackDetail?.projectDelivery;
+
+  const customSections =
+    cs.customSections && cs.customSections.length > 0
+      ? cs.customSections.map((s) => ({
+          eyebrow: s.eyebrow || undefined,
+          heading: s.heading,
+          lead: s.lead || undefined,
+          description: s.description || undefined,
+          items: s.items && s.items.length > 0
+            ? s.items.map((i) => ({
+                number: i.number || undefined,
+                title: i.title || undefined,
+                description: i.description || undefined,
+                note: i.note || undefined,
+              }))
+            : undefined,
+          takeaways: s.takeaways && s.takeaways.length > 0
+            ? s.takeaways.map((t) => t.text || "").filter(Boolean)
+            : undefined,
+        }))
+      : fallbackDetail?.customSections;
+
+  const relatedCaseStudies =
+    cs.relatedCaseStudies && cs.relatedCaseStudies.length > 0
+      ? cs.relatedCaseStudies.map((r) => r.slug).filter(Boolean) as string[]
+      : fallbackDetail?.relatedCaseStudies;
+
+  const heroEyebrows =
+    cs.heroEyebrows && cs.heroEyebrows.length > 0
+      ? cs.heroEyebrows.map((eb) => eb.text).filter(Boolean)
+      : fallbackDetail?.heroEyebrows ||
+        ([cs.technology, cs.industry].filter(Boolean) as string[]);
 
   return {
     slug: cs.slug,
     clientName: cs.clientName || fallbackDetail?.clientName || cs.title,
     title: cs.title,
-    summary: cs.overview || fallbackDetail?.summary || "",
-    projectTitle: fallbackDetail?.projectTitle || cs.title,
+    summary: cs.summary || fallbackDetail?.summary || "",
+    projectTitle: cs.projectTitle || fallbackDetail?.projectTitle || cs.title,
     industry: cs.industry || fallbackDetail?.industry || "",
     technology: cs.technology || fallbackDetail?.technology || "Shopify Plus",
-    location: fallbackDetail?.location || "Surat, Gujarat, India",
+    location: cs.location || fallbackDetail?.location || "Surat, Gujarat, India",
     websiteUrl: cs.websiteUrl || fallbackDetail?.websiteUrl || undefined,
-    heroEyebrows:
-      fallbackDetail?.heroEyebrows ||
-      ([cs.technology, cs.industry].filter(Boolean) as string[]),
+    heroEyebrows,
     archive: {
-      title: cs.title,
+      title: cs.archive?.title || cs.title,
       technology:
-        cs.technology || fallbackDetail?.archive.technology || "Shopify Plus",
-      industry: cs.industry || fallbackDetail?.archive.industry || "",
-      excerpt: cs.overview || fallbackDetail?.archive.excerpt || "",
+        cs.archive?.technology ||
+        cs.technology ||
+        fallbackDetail?.archive.technology ||
+        "Shopify Plus",
+      industry: cs.archive?.industry || cs.industry || fallbackDetail?.archive.industry || "",
+      excerpt: cs.archive?.excerpt || cs.summary || fallbackDetail?.archive.excerpt || "",
     },
     hero: {
       image: heroImage,
     },
-
     keyMetrics,
     challenge,
     solutions,
-    keyFeatures: fallbackDetail?.keyFeatures,
-    projectDelivery: fallbackDetail?.projectDelivery,
-    relatedCaseStudies: fallbackDetail?.relatedCaseStudies,
-    customSections: fallbackDetail?.customSections,
+    keyFeatures,
+    projectDelivery,
+    relatedCaseStudies,
+    customSections,
     seo: {
       title: cs.seo?.metaTitle || fallbackDetail?.seo.title || cs.title,
       description:
         cs.seo?.metaDescription ||
         fallbackDetail?.seo.description ||
-        cs.overview ||
+        cs.summary ||
         "",
       lastModified:
         cs.updatedAt ||
@@ -575,6 +776,20 @@ export function adaptPayloadCaseStudyToDetail(
         new Date().toISOString(),
     },
   };
+}
+
+export async function getPayloadTestimonials(limit = 100) {
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "testimonials",
+      limit,
+    });
+    return res.docs;
+  } catch (err) {
+    console.warn("Payload getPayloadTestimonials warning:", err);
+    return [];
+  }
 }
 
 export async function getPayloadCategories(limit = 100) {
