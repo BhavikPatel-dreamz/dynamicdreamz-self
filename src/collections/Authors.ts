@@ -23,7 +23,9 @@ export const Authors: CollectionConfig = {
   },
   fields: [
     { name: "name", type: "text", required: true },
+    { name: "slug", type: "text" },
     { name: "role", type: "text" },
+    { name: "avatarUrl", type: "text", label: "Static Avatar Path (/assets/...)" },
     { name: "avatar", type: "upload", relationTo: "media" },
     { name: "linkedin", type: "text" },
     { name: "bio", type: "textarea" },

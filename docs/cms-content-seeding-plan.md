@@ -10,6 +10,12 @@ Because object storage (e.g., AWS S3, Cloudflare R2, Cloudinary) has not yet bee
 - All image, video, and icon references must continue using their canonical static paths (`/assets/...`) stored as string properties or string-based media references.
 - Static assets remain safely served from the Next.js `public/assets/` directory with zero database binary bloat.
 
+### Seeding Policy: One-Time Process Only (Zero Temporary Scripts Rule)
+- **Seeding is strictly a one-time migration process**: Once pages, blocks, collections, or globals are populated in Payload CMS / Neon PostgreSQL, the data lives permanently in the database and is managed via Payload Admin (`/admin`).
+- **No temporary seeding scripts in `scripts/`**: Agents must **never** create or commit temporary seeding scripts (such as `scripts/seed-home.mjs`, `scripts/seed-phase-*.mjs`, `scripts/seed-<page>.mjs`) into `scripts/`.
+- **No seed commands in `package.json`**: Do not add `"seed:phase-*"`, `"seed:<page>"`, or other one-off seed commands to `package.json`.
+- **Ephemeral execution via `scratch/` buffer**: If an agent must execute a one-time script to populate initial page data into the CMS, the script must be placed strictly in `scratch/` (e.g. `scratch/seed-<slug>.mjs`), run once, verified against the database, and deleted immediately before completing the task. No seeding script is useful in the future once the database is seeded.
+
 ---
 
 ## 2. Approach 3 Architectural Principles
@@ -52,6 +58,7 @@ Step 5: Generate & Verify Payload
 1. **Never create redundant blocks**: Before defining a new block, inspect `src/blocks/` and `src/components/blocks/block-renderer.tsx`. If an existing block (`features-grid`, `hero`, `faq-accordion`, etc.) fulfills the requirement with optional fields, reuse it.
 2. **Respect Postgres Table Name Limits**: Drizzle/Postgres tables have a 63-character limit. Any array fields inside custom blocks must define concise `dbName` values (e.g. `spa_paras`, `cs_items`).
 3. **Preserve Exact URL Equity**: All internal links in CTA props must be absolute root-relative paths without trailing slashes (e.g., `/shopify-plus-agency`, `/contact-us`).
+4. **Never Add or Commit Seeding Scripts**: Do not create or commit temporary seeding scripts (such as `scripts/seed-*.mjs`, `scripts/seed-phase-*.mjs`) in `scripts/`, and never add seed commands to `package.json`. Seeding is a strictly one-time operation. If seeding data via script, execute it solely via disposable files in `scratch/` and delete them after verifying persistence in Neon DB.
 
 ---
 
@@ -237,3 +244,7 @@ After seeding any page or batch of pages, the executing agent must verify using 
    npm run build
    ```
    Must compile all routes cleanly with 100% static/dynamic parity.
+7. **Zero Seeding Scripts Check**:
+   - Verify that no `seed-*.mjs` or `seed-*.js` files exist in `scripts/` or git status.
+   - Verify that no `seed:*` commands exist in `package.json`.
+   - Verify that any temporary scratch files created in `scratch/` during one-time execution have been deleted.

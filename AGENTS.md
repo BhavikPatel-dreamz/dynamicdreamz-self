@@ -172,6 +172,17 @@ Core proof points from the live site:
   states, and responsive layout before implementing. Static HTML alone is not
   enough. Keep temporary comparison artifacts and inspection dumps in
   `scratch/` (do not commit screenshots or heavy dumps to the repository).
+- Zero temporary seeding scripts in repository: Content seeding into Payload CMS
+  is a strictly one-time migration process. Once data is seeded into Neon
+  PostgreSQL / Payload CMS, it is persisted and managed via Payload Admin. Do NOT
+  create, add, or commit temporary seeding scripts (such as `scripts/seed-*.mjs`,
+  `scripts/seed-phase-*.mjs`, `scripts/seed-<page>.mjs`) to `scripts/` or
+  register seed commands (e.g. `seed:*`, `seed:payload`, `seed:phase-*`) in
+  `package.json`. If a one-time seeding operation is performed during migration,
+  execute it ephemerally via a temporary scratch script in `scratch/` (outside
+  `public/assets/` and `scripts/`), verify database persistence, and discard
+  the scratch script immediately. Never commit seeding scripts to the repository
+  or register them in npm scripts.
 - For each migrated page, inspect both the rendered live page and View Page
   Source. Preserve page structure, metadata intent, headings, links, CTA labels,
   image alt text, ARIA labels, schema data, and other small SEO/accessibility

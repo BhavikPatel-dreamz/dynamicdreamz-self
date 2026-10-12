@@ -225,7 +225,9 @@ export interface Category {
 export interface Author {
   id: number;
   name: string;
+  slug?: string | null;
   role?: string | null;
+  avatarUrl?: string | null;
   avatar?: (number | null) | Media;
   linkedin?: string | null;
   bio?: string | null;
@@ -862,7 +864,9 @@ export interface CategoriesSelect<T extends boolean = true> {
  */
 export interface AuthorsSelect<T extends boolean = true> {
   name?: T;
+  slug?: T;
   role?: T;
+  avatarUrl?: T;
   avatar?: T;
   linkedin?: T;
   bio?: T;
@@ -1386,6 +1390,7 @@ export interface Navigation {
         id?: string | null;
       }[]
     | null;
+  copyright?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1402,11 +1407,27 @@ export interface SiteSetting {
   address?: string | null;
   socialLinks?:
     | {
-        platform: 'linkedin' | 'twitter' | 'facebook' | 'instagram' | 'clutch';
+        platform: 'linkedin' | 'twitter' | 'facebook' | 'instagram' | 'clutch' | 'shopify';
         url: string;
         id?: string | null;
       }[]
     | null;
+  suratOffice?: {
+    address?: string | null;
+    phone?: string | null;
+    phoneHref?: string | null;
+    directionsHref?: string | null;
+    latitude?: number | null;
+    longitude?: number | null;
+  };
+  ahmedabadOffice?: {
+    address?: string | null;
+    phone?: string | null;
+    phoneHref?: string | null;
+    directionsHref?: string | null;
+    latitude?: number | null;
+    longitude?: number | null;
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1451,6 +1472,7 @@ export interface NavigationSelect<T extends boolean = true> {
         href?: T;
         id?: T;
       };
+  copyright?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -1471,6 +1493,26 @@ export interface SiteSettingsSelect<T extends boolean = true> {
         platform?: T;
         url?: T;
         id?: T;
+      };
+  suratOffice?:
+    | T
+    | {
+        address?: T;
+        phone?: T;
+        phoneHref?: T;
+        directionsHref?: T;
+        latitude?: T;
+        longitude?: T;
+      };
+  ahmedabadOffice?:
+    | T
+    | {
+        address?: T;
+        phone?: T;
+        phoneHref?: T;
+        directionsHref?: T;
+        latitude?: T;
+        longitude?: T;
       };
   updatedAt?: T;
   createdAt?: T;

@@ -1124,9 +1124,14 @@ export async function getPayloadPageBySlug(slug: string) {
 
 ---
 
-### Phase 6: Automated Seeding Script (`scripts/seed-payload.mjs`)
+### Phase 6: Automated Seeding Architecture (One-Time Execution Policy)
 
-This script populates company settings, navigation, all 103 local blog posts, and all 58 case studies into the PostgreSQL database:
+> [!IMPORTANT]
+> **One-Time Process Policy**: Seeding content into Payload CMS / PostgreSQL is strictly a one-time migration process. Once data is populated into the database, it is managed directly via the Payload Admin UI (`/admin`).
+> 
+> **Zero Seeding Scripts in Repository**: Because seeding is a one-time process, seeding scripts are not useful in the future and must **never** be committed or maintained in `scripts/`, nor registered as `seed:*` commands in `package.json`. If a one-time migration seeding operation is required, it must be executed ephemerally via a temporary script in `scratch/`, verified against the database, and deleted immediately.
+
+The reference code below documents the original one-time seeding architecture used to populate company settings, navigation, blog posts, and case studies into PostgreSQL:
 
 ```js
 import { getPayload } from "payload";

@@ -61,28 +61,43 @@ export function adaptPayloadNavToPrimary(
             const localItem = localMatch?.items.find(
               (li) => li.href === item.href || li.label.toLowerCase() === item.label.toLowerCase(),
             );
+            const iconSrc = "iconSrc" in item && typeof item.iconSrc === "string" && item.iconSrc ? item.iconSrc : undefined;
+            const ctaLabel = "ctaLabel" in item && typeof item.ctaLabel === "string" && item.ctaLabel ? item.ctaLabel : undefined;
             return {
               label: item.label,
               href: item.href,
               description: item.description || localItem?.description || "",
               badge: item.badge || localItem?.badge,
-              ctaLabel: localItem?.ctaLabel,
-              icon: localItem?.icon || {
-                src: "/assets/navigation/header/shopify-development.svg",
-                width: 20,
-                height: 20,
-              },
+              ctaLabel: ctaLabel || localItem?.ctaLabel,
+              icon: iconSrc
+                ? { src: iconSrc, width: 20, height: 20 }
+                : localItem?.icon || {
+                    src: "/assets/navigation/header/shopify-development.svg",
+                    width: 20,
+                    height: 20,
+                  },
             };
           })
         : localMatch?.items || [];
 
+    const groupColumns = "columns" in group && typeof group.columns === "number" ? (group.columns as 1 | 2 | 3) : undefined;
+    const groupVariant = "variant" in group && typeof group.variant === "string" ? (group.variant as "default" | "work") : undefined;
+    const promoData = "promo" in group && group.promo && typeof group.promo === "object" && "title" in group.promo && group.promo.title
+      ? {
+          title: String(group.promo.title),
+          details: String("details" in group.promo ? group.promo.details || "" : ""),
+          ctaLabel: String("ctaLabel" in group.promo ? group.promo.ctaLabel || "" : ""),
+          ctaHref: String("ctaHref" in group.promo ? group.promo.ctaHref || "" : ""),
+        }
+      : localMatch?.promo;
+
     return {
       label: group.title,
       slug: localMatch?.slug || groupSlug,
-      columns: localMatch?.columns || 2,
-      variant: localMatch?.variant || "default",
+      columns: groupColumns || localMatch?.columns || 2,
+      variant: groupVariant || localMatch?.variant || "default",
       items,
-      promo: localMatch?.promo,
+      promo: promoData,
     };
   });
 }
@@ -561,3 +576,64 @@ export function adaptPayloadCaseStudyToDetail(
     },
   };
 }
+
+export async function getPayloadCategories(limit = 100) {
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "categories",
+      limit,
+      sort: "name",
+    });
+    return res.docs;
+  } catch (err) {
+    console.warn("Payload getPayloadCategories warning:", err);
+    return [];
+  }
+}
+
+export async function getPayloadCategoryBySlug(slug: string) {
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "categories",
+      where: { slug: { equals: slug } },
+      limit: 1,
+    });
+    return res.docs[0] || null;
+  } catch (err) {
+    console.warn(`Payload getPayloadCategoryBySlug(${slug}) warning:`, err);
+    return null;
+  }
+}
+
+export async function getPayloadAuthors(limit = 50) {
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "authors",
+      limit,
+      sort: "name",
+    });
+    return res.docs;
+  } catch (err) {
+    console.warn("Payload getPayloadAuthors warning:", err);
+    return [];
+  }
+}
+
+export async function getPayloadAuthorBySlug(slug: string) {
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "authors",
+      where: { slug: { equals: slug } },
+      limit: 1,
+    });
+    return res.docs[0] || null;
+  } catch (err) {
+    console.warn(`Payload getPayloadAuthorBySlug(${slug}) warning:`, err);
+    return null;
+  }
+}
+

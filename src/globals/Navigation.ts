@@ -72,5 +72,11 @@ export const Navigation: GlobalConfig = {
         { name: "href", type: "text", required: true },
       ],
     },
+    {
+      name: "copyright",
+      type: "text",
+      label: "Copyright Notice",
+      defaultValue: "© 2026 Dynamic Dreamz Solutions LLP. All rights reserved.",
+    },
   ],
 };

@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "seed:payload": "node --env-file-if-exists=.env --import tsx scripts/seed-payload.mjs",
     "user:create": "node --env-file-if-exists=.env --import tsx scripts/create-user.mjs",
     "check:asset-duplicates": "node scripts/check-asset-duplicates.mjs",
     "check:case-studies": "node scripts/check-case-studies.mjs",
