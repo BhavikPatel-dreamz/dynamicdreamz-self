@@ -11,6 +11,8 @@ import type {
   Post,
   CaseStudy,
   Navigation,
+  Media,
+  Testimonial,
 } from "@/types/payload-types";
 import type {
   BlogArchiveArticle,
@@ -242,6 +244,58 @@ export async function getPayloadPageBySlug(
   }
 }
 
+export type MediaOrId =
+  | number
+  | Media
+  | null
+  | undefined
+  | {
+      url?: string | null;
+      src?: string | null;
+      alt?: string | null;
+      width?: number | null;
+      height?: number | null;
+    }
+  | string;
+
+export function resolveMediaUrl(media?: MediaOrId, fallback = ""): string {
+  if (!media) return fallback;
+  if (typeof media === "string") return media;
+  if (typeof media === "object") {
+    if ("url" in media && typeof media.url === "string" && media.url) {
+      return media.url;
+    }
+    if ("src" in media && typeof media.src === "string" && media.src) {
+      return media.src;
+    }
+  }
+  return fallback;
+}
+
+export function resolveMediaAlt(media?: MediaOrId, fallback = ""): string {
+  if (!media || typeof media !== "object") return fallback;
+  if ("alt" in media && typeof media.alt === "string" && media.alt.trim()) {
+    return media.alt.trim();
+  }
+  return fallback;
+}
+
+export function resolveMediaWidth(media?: MediaOrId, fallback?: number): number | undefined {
+  if (!media || typeof media !== "object") return fallback;
+  if ("width" in media && typeof media.width === "number" && media.width > 0) {
+    return media.width;
+  }
+  return fallback;
+}
+
+export function resolveMediaHeight(media?: MediaOrId, fallback?: number): number | undefined {
+  if (!media || typeof media !== "object") return fallback;
+  if ("height" in media && typeof media.height === "number" && media.height > 0) {
+    return media.height;
+  }
+  return fallback;
+}
+
 export function serializeLexicalToHtml(node: unknown): string {
   if (!node || typeof node !== "object") return "";
   const obj = node as {
@@ -361,12 +415,17 @@ export function adaptPayloadBlocksToBlogBlocks(blocks: unknown[]): BlogContentBl
         }),
       });
     } else if (blockType === "blog-image" || blockType === "image") {
+      const imgMedia = (block.image ?? block.src) as MediaOrId;
+      const src = resolveMediaUrl(imgMedia, typeof block.src === "string" ? block.src : "");
+      const alt = resolveMediaAlt(imgMedia, typeof block.alt === "string" ? block.alt : "");
+      const width = resolveMediaWidth(imgMedia, Number(block.width || 750)) || 750;
+      const height = resolveMediaHeight(imgMedia, Number(block.height || 400)) || 400;
       results.push({
         type: "image",
-        src: String(block.src || ""),
-        alt: String(block.alt || ""),
-        width: Number(block.width || 750),
-        height: Number(block.height || 400),
+        src,
+        alt,
+        width,
+        height,
         caption: block.caption ? String(block.caption) : undefined,
       });
     } else if (blockType === "blog-table" || blockType === "table") {
@@ -441,9 +500,9 @@ export function adaptPayloadPostToArchive(
   return {
     title: post.title,
     href: `/blogs/${post.slug}`,
-    image: featured?.src || null,
-    width: featured?.width || null,
-    height: featured?.height || null,
+    image: resolveMediaUrl(featured) || null,
+    width: resolveMediaWidth(featured) || null,
+    height: resolveMediaHeight(featured) || null,
     date: post.date,
     displayDate,
     category: categoryLabel,
@@ -502,6 +561,7 @@ export function adaptPayloadPostToBlogPostDetail(
           role: post.author.role || "Author",
           bio: post.author.bio || "",
           image:
+            resolveMediaUrl(post.author.avatar) ||
             post.author.avatarUrl ||
             fallbackDetail?.author?.image ||
             "/assets/blog/authors/rizwanshaikh.webp",
@@ -511,12 +571,17 @@ export function adaptPayloadPostToBlogPostDetail(
     fallbackDetail?.author ||
     null;
 
-  const featuredImage = featured?.src
+  const featuredUrl = resolveMediaUrl(featured) || fallbackDetail?.featuredImage?.src;
+  const featuredAlt = resolveMediaAlt(featured, post.title) || fallbackDetail?.featuredImage?.alt || post.title;
+  const featuredWidth = resolveMediaWidth(featured, fallbackDetail?.featuredImage?.width || 1200) || 1200;
+  const featuredHeight = resolveMediaHeight(featured, fallbackDetail?.featuredImage?.height || 630) || 630;
+
+  const featuredImage = featuredUrl
     ? {
-        src: featured.src,
-        width: featured.width || 1200,
-        height: featured.height || 630,
-        alt: featured.alt || post.title,
+        src: featuredUrl,
+        width: featuredWidth,
+        height: featuredHeight,
+        alt: featuredAlt,
       }
     : fallbackDetail?.featuredImage || null;
 
@@ -593,8 +658,8 @@ export function adaptPayloadCaseStudiesToItems(
 ): CaseStudyItem[] {
   return caseStudies.map((cs) => {
     const fallbackItem = caseStudiesItemsJson.find((item) => item.slug === cs.slug);
-    const heroSrc = cs.heroImage?.src || fallbackItem?.image || "/assets/case-studies/gnc-india.webp";
-    const heroAlt = cs.heroImage?.alt || fallbackItem?.alt || cs.title;
+    const heroSrc = resolveMediaUrl(cs.heroImage) || fallbackItem?.image || "/assets/case-studies/gnc-india.webp";
+    const heroAlt = resolveMediaAlt(cs.heroImage, cs.title) || fallbackItem?.alt || cs.title;
     const rawTags = cs.archive?.tags?.map((t) => t.tag).filter(Boolean) as string[] || [];
     const tags =
       rawTags.length > 0
@@ -621,19 +686,17 @@ export function adaptPayloadCaseStudyToDetail(
 ): CaseStudyDetail {
   const fallbackItem = caseStudiesItemsJson.find((item) => item.slug === cs.slug);
 
-  const heroImage = cs.heroImage?.src
-    ? {
-        src: cs.heroImage.src,
-        width: cs.heroImage.width || 1200,
-        height: cs.heroImage.height || 800,
-        alt: cs.heroImage.alt || cs.title,
-      }
-    : fallbackDetail?.hero.image || {
-        src: fallbackItem?.image || "/assets/case-studies/gnc-india.webp",
-        width: 1200,
-        height: 800,
-        alt: fallbackItem?.alt || cs.title,
-      };
+  const heroSrc = resolveMediaUrl(cs.heroImage) || fallbackDetail?.hero.image.src || fallbackItem?.image || "/assets/case-studies/gnc-india.webp";
+  const heroAlt = resolveMediaAlt(cs.heroImage, cs.title) || fallbackDetail?.hero.image.alt || fallbackItem?.alt || cs.title;
+  const heroWidth = resolveMediaWidth(cs.heroImage, fallbackDetail?.hero.image.width || 1200) || 1200;
+  const heroHeight = resolveMediaHeight(cs.heroImage, fallbackDetail?.hero.image.height || 800) || 800;
+
+  const heroImage = {
+    src: heroSrc,
+    width: heroWidth,
+    height: heroHeight,
+    alt: heroAlt,
+  };
 
   const keyMetrics =
     cs.keyMetrics && cs.keyMetrics.items && cs.keyMetrics.items.length > 0
@@ -723,7 +786,14 @@ export function adaptPayloadCaseStudyToDetail(
 
   const relatedCaseStudies =
     cs.relatedCaseStudies && cs.relatedCaseStudies.length > 0
-      ? cs.relatedCaseStudies.map((r) => r.slug).filter(Boolean) as string[]
+      ? cs.relatedCaseStudies
+          .map((r) => {
+            if (typeof r === "object" && r !== null && "slug" in r && typeof r.slug === "string") {
+              return r.slug;
+            }
+            return "";
+          })
+          .filter(Boolean) as string[]
       : fallbackDetail?.relatedCaseStudies;
 
   const heroEyebrows =
@@ -790,6 +860,36 @@ export async function getPayloadTestimonials(limit = 100) {
     console.warn("Payload getPayloadTestimonials warning:", err);
     return [];
   }
+}
+
+export function adaptPayloadTestimonial(
+  t: Testimonial,
+): {
+  title: string;
+  quote: string;
+  name: string;
+  company: string;
+  companyHref?: string;
+  avatar: string;
+  portrait: string;
+  logo?: string;
+  logoAlt?: string;
+  videoId: string;
+  videoUploadDate: string;
+} {
+  return {
+    title: t.title || t.quote.slice(0, 50),
+    quote: t.quote,
+    name: t.clientName,
+    company: t.company,
+    companyHref: t.companyHref || undefined,
+    avatar: resolveMediaUrl(t.avatar) || "/assets/testimonials/shari-leidich.webp",
+    portrait: resolveMediaUrl(t.portrait) || resolveMediaUrl(t.avatar) || "/assets/testimonials/shari-leidich-full.webp",
+    logo: resolveMediaUrl(t.companyLogo) || undefined,
+    logoAlt: t.companyLogoAlt || `${t.company} logo`,
+    videoId: t.videoId || "",
+    videoUploadDate: t.videoUploadDate || "2024-05-15",
+  };
 }
 
 export async function getPayloadCategories(limit = 100) {

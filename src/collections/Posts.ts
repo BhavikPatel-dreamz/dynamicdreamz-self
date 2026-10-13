@@ -45,16 +45,7 @@ export const Posts: CollectionConfig = {
     { name: "slug", type: "text", required: true, unique: true },
     { name: "date", type: "date", required: true },
     { name: "displayDate", type: "text" },
-    {
-      name: "featuredImage",
-      type: "group",
-      fields: [
-        { name: "src", type: "text", required: true },
-        { name: "alt", type: "text", required: true },
-        { name: "width", type: "number", defaultValue: 1200 },
-        { name: "height", type: "number", defaultValue: 630 },
-      ],
-    },
+    { name: "featuredImage", type: "upload", relationTo: "media" },
     { name: "excerpt", type: "textarea", required: true },
     {
       name: "author",
@@ -108,7 +99,7 @@ export const Posts: CollectionConfig = {
         { name: "metaTitle", type: "text" },
         { name: "metaDescription", type: "textarea" },
         { name: "canonicalUrl", type: "text" },
-        { name: "metaImage", type: "text" },
+        { name: "metaImage", type: "upload", relationTo: "media" },
       ],
     },
   ],

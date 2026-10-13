@@ -247,9 +247,9 @@ export interface Testimonial {
   role?: string | null;
   videoId?: string | null;
   videoUploadDate?: string | null;
-  avatar?: string | null;
-  portrait?: string | null;
-  companyLogo?: string | null;
+  avatar?: (number | null) | Media;
+  portrait?: (number | null) | Media;
+  companyLogo?: (number | null) | Media;
   companyLogoAlt?: string | null;
   companyHref?: string | null;
   tags?:
@@ -272,12 +272,7 @@ export interface Post {
   slug: string;
   date: string;
   displayDate?: string | null;
-  featuredImage: {
-    src: string;
-    alt: string;
-    width?: number | null;
-    height?: number | null;
-  };
+  featuredImage?: (number | null) | Media;
   excerpt: string;
   author?: (number | null) | Author;
   categories?: (number | Category)[] | null;
@@ -337,10 +332,7 @@ export interface Post {
             blockType: 'blog-list';
           }
         | {
-            src: string;
-            alt: string;
-            width?: number | null;
-            height?: number | null;
+            image: number | Media;
             caption?: string | null;
             id?: string | null;
             blockName?: string | null;
@@ -455,10 +447,7 @@ export interface Post {
             blockType: 'blog-list';
           }
         | {
-            src: string;
-            alt: string;
-            width?: number | null;
-            height?: number | null;
+            image: number | Media;
             caption?: string | null;
             id?: string | null;
             blockName?: string | null;
@@ -520,7 +509,7 @@ export interface Post {
     metaTitle?: string | null;
     metaDescription?: string | null;
     canonicalUrl?: string | null;
-    metaImage?: string | null;
+    metaImage?: (number | null) | Media;
   };
   updatedAt: string;
   createdAt: string;
@@ -540,12 +529,7 @@ export interface CaseStudy {
   location?: string | null;
   websiteUrl?: string | null;
   summary?: string | null;
-  heroImage: {
-    src: string;
-    alt: string;
-    width?: number | null;
-    height?: number | null;
-  };
+  heroImage?: (number | null) | Media;
   heroEyebrows?:
     | {
         text: string;
@@ -647,18 +631,13 @@ export interface CaseStudy {
         id?: string | null;
       }[]
     | null;
-  relatedCaseStudies?:
-    | {
-        slug?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  relatedCaseStudies?: (number | CaseStudy)[] | null;
   testimonial?: (number | null) | Testimonial;
   seo?: {
     metaTitle?: string | null;
     metaDescription?: string | null;
     canonicalUrl?: string | null;
-    metaImage?: string | null;
+    metaImage?: (number | null) | Media;
   };
   updatedAt: string;
   createdAt: string;
@@ -1237,14 +1216,7 @@ export interface PostsSelect<T extends boolean = true> {
   slug?: T;
   date?: T;
   displayDate?: T;
-  featuredImage?:
-    | T
-    | {
-        src?: T;
-        alt?: T;
-        width?: T;
-        height?: T;
-      };
+  featuredImage?: T;
   excerpt?: T;
   author?: T;
   categories?: T;
@@ -1310,10 +1282,7 @@ export interface PostsSelect<T extends boolean = true> {
         'blog-image'?:
           | T
           | {
-              src?: T;
-              alt?: T;
-              width?: T;
-              height?: T;
+              image?: T;
               caption?: T;
               id?: T;
               blockName?: T;
@@ -1436,10 +1405,7 @@ export interface PostsSelect<T extends boolean = true> {
         'blog-image'?:
           | T
           | {
-              src?: T;
-              alt?: T;
-              width?: T;
-              height?: T;
+              image?: T;
               caption?: T;
               id?: T;
               blockName?: T;
@@ -1524,14 +1490,7 @@ export interface CaseStudiesSelect<T extends boolean = true> {
   location?: T;
   websiteUrl?: T;
   summary?: T;
-  heroImage?:
-    | T
-    | {
-        src?: T;
-        alt?: T;
-        width?: T;
-        height?: T;
-      };
+  heroImage?: T;
   heroEyebrows?:
     | T
     | {
@@ -1645,12 +1604,7 @@ export interface CaseStudiesSelect<T extends boolean = true> {
             };
         id?: T;
       };
-  relatedCaseStudies?:
-    | T
-    | {
-        slug?: T;
-        id?: T;
-      };
+  relatedCaseStudies?: T;
   testimonial?: T;
   seo?:
     | T

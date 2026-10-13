@@ -51,16 +51,7 @@ export const CaseStudies: CollectionConfig = {
     { name: "location", type: "text", defaultValue: "Surat, Gujarat, India" },
     { name: "websiteUrl", type: "text" },
     { name: "summary", type: "textarea" },
-    {
-      name: "heroImage",
-      type: "group",
-      fields: [
-        { name: "src", type: "text", required: true },
-        { name: "alt", type: "text", required: true },
-        { name: "width", type: "number", defaultValue: 1200 },
-        { name: "height", type: "number", defaultValue: 800 },
-      ],
-    },
+    { name: "heroImage", type: "upload", relationTo: "media" },
     {
       name: "heroEyebrows",
       type: "array",
@@ -202,9 +193,9 @@ export const CaseStudies: CollectionConfig = {
     },
     {
       name: "relatedCaseStudies",
-      type: "array",
-      dbName: "cs_rel_slugs",
-      fields: [{ name: "slug", type: "text" }],
+      type: "relationship",
+      relationTo: "case-studies",
+      hasMany: true,
     },
     {
       name: "testimonial",
@@ -218,7 +209,7 @@ export const CaseStudies: CollectionConfig = {
         { name: "metaTitle", type: "text" },
         { name: "metaDescription", type: "textarea" },
         { name: "canonicalUrl", type: "text" },
-        { name: "metaImage", type: "text" },
+        { name: "metaImage", type: "upload", relationTo: "media" },
       ],
     },
   ],

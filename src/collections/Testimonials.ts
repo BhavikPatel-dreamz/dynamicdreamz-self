@@ -34,9 +34,9 @@ export const Testimonials: CollectionConfig = {
     { name: "role", type: "text" },
     { name: "videoId", type: "text" },
     { name: "videoUploadDate", type: "text" },
-    { name: "avatar", type: "text" },
-    { name: "portrait", type: "text" },
-    { name: "companyLogo", type: "text" },
+    { name: "avatar", type: "upload", relationTo: "media" },
+    { name: "portrait", type: "upload", relationTo: "media" },
+    { name: "companyLogo", type: "upload", relationTo: "media" },
     { name: "companyLogoAlt", type: "text" },
     { name: "companyHref", type: "text" },
     {
