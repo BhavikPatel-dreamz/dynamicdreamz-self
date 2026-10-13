@@ -656,8 +656,14 @@ export interface Page {
             title: string;
             subheading?: string | null;
             description?: string | null;
+            establishedText?: string | null;
+            partnerBadgeText?: string | null;
             ctaLabel?: string | null;
             ctaHref?: string | null;
+            secondaryCta?: {
+              label?: string | null;
+              href?: string | null;
+            };
             eyebrows?:
               | {
                   text?: string | null;
@@ -666,6 +672,15 @@ export interface Page {
               | null;
             image?: (number | null) | Media;
             showReviews?: boolean | null;
+            proofBadges?:
+              | {
+                  name: string;
+                  href?: string | null;
+                  logo?: (number | null) | Media;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
             variant?: ('split' | 'centered' | 'home') | null;
             id?: string | null;
             blockName?: string | null;
@@ -860,6 +875,69 @@ export interface Page {
             blockType: 'industries-grid';
           }
         | {
+            eyebrow?: string | null;
+            heading: string;
+            intro?: string | null;
+            containerWidth?: ('narrow' | 'standard' | 'full') | null;
+            sections?:
+              | {
+                  title: string;
+                  level?: ('2' | '3') | null;
+                  paragraphs?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  items?:
+                    | {
+                        text: string;
+                        boldPrefix?: string | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  closingParagraphs?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            contactInfo?: {
+              name?: string | null;
+              email?: string | null;
+              phone?: string | null;
+              phoneHref?: string | null;
+              address?: string | null;
+              addressHref?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'legal-content';
+          }
+        | {
+            heading: string;
+            description?: string | null;
+            groups?:
+              | {
+                  title?: string | null;
+                  links?:
+                    | {
+                        label: string;
+                        href: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'sitemap-directory';
+          }
+        | {
             heading?: string | null;
             eyebrow?: string | null;
             content: {
@@ -969,6 +1047,336 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'latest-insights';
+          }
+        | {
+            title: string;
+            description: string;
+            deliveryTitle: string;
+            statistics?:
+              | {
+                  label: string;
+                  value: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about-hero';
+          }
+        | {
+            title: string;
+            description: string;
+            caption: string;
+            videoId: string;
+            videoTitle: string;
+            poster?: (number | null) | Media;
+            posterAlt?: string | null;
+            overlay?: (number | null) | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about-story';
+          }
+        | {
+            title: string;
+            description: string;
+            milestones?:
+              | {
+                  year?: string | null;
+                  description?: string | null;
+                  image?: (number | null) | Media;
+                  alt?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about-timeline';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            descriptions?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            founders?:
+              | {
+                  name: string;
+                  role: string;
+                  biography?: string | null;
+                  image?: (number | null) | Media;
+                  alt?: string | null;
+                  linkedIn?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about-founders';
+          }
+        | {
+            keyManagers?:
+              | {
+                  name: string;
+                  role: string;
+                  image?: (number | null) | Media;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            departmentLeaders?:
+              | {
+                  name: string;
+                  role: string;
+                  image?: (number | null) | Media;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about-team';
+          }
+        | {
+            title: string;
+            description: string;
+            values?:
+              | {
+                  title: string;
+                  description: string;
+                  iconName: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about-values';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description: string;
+            primaryCta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            secondaryCta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            showcaseImages?:
+              | {
+                  image?: (number | null) | Media;
+                  alt?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'our-work-hero';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'our-work-projects';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'our-work-case-studies';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description: string;
+            quickLinks?:
+              | {
+                  label: string;
+                  href: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contact-hero';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contact-form';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description: string;
+            directionsLabel?: string | null;
+            offices?:
+              | {
+                  city: string;
+                  address: string;
+                  phone: string;
+                  phoneHref: string;
+                  directionsHref: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contact-offices';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contact-details';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description: string;
+            host: {
+              name: string;
+              role: string;
+              image?: (number | null) | Media;
+              imageAlt?: string | null;
+            };
+            benefits?:
+              | {
+                  icon?: string | null;
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            calendar?: {
+              heading?: string | null;
+              details?: string | null;
+              src?: string | null;
+              iframeTitle?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'discovery-call';
+          }
+        | {
+            heroTitle?: string | null;
+            heroDescription?: string | null;
+            formTitle?: string | null;
+            counters?:
+              | {
+                  label: string;
+                  count: string;
+                  unit?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            badges?:
+              | {
+                  href?: string | null;
+                  ariaLabel?: string | null;
+                  logo?: (number | null) | Media;
+                  alt?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            testimonials?:
+              | {
+                  name: string;
+                  quote: string;
+                  avatar?: (number | null) | Media;
+                  id?: string | null;
+                }[]
+              | null;
+            budgetOptions?:
+              | {
+                  option: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'request-quote-hero';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description: string;
+            badges?:
+              | {
+                  href?: string | null;
+                  alt?: string | null;
+                  logo?: (number | null) | Media;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            scrollingImages?:
+              | {
+                  image?: (number | null) | Media;
+                  alt?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'career-hero';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'career-opportunities';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            perks?:
+              | {
+                  title: string;
+                  iconName: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'career-perks';
+          }
+        | {
+            heading: string;
+            phoneLabel?: string | null;
+            phoneNumber?: string | null;
+            phoneHref?: string | null;
+            emailLabel?: string | null;
+            emailAddress?: string | null;
+            emailHref?: string | null;
+            note?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'career-apply';
           }
       )[]
     | null;
@@ -1633,8 +2041,16 @@ export interface PagesSelect<T extends boolean = true> {
               title?: T;
               subheading?: T;
               description?: T;
+              establishedText?: T;
+              partnerBadgeText?: T;
               ctaLabel?: T;
               ctaHref?: T;
+              secondaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
               eyebrows?:
                 | T
                 | {
@@ -1643,6 +2059,15 @@ export interface PagesSelect<T extends boolean = true> {
                   };
               image?: T;
               showReviews?: T;
+              proofBadges?:
+                | T
+                | {
+                    name?: T;
+                    href?: T;
+                    logo?: T;
+                    alt?: T;
+                    id?: T;
+                  };
               variant?: T;
               id?: T;
               blockName?: T;
@@ -1847,6 +2272,73 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        'legal-content'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              intro?: T;
+              containerWidth?: T;
+              sections?:
+                | T
+                | {
+                    title?: T;
+                    level?: T;
+                    paragraphs?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    items?:
+                      | T
+                      | {
+                          text?: T;
+                          boldPrefix?: T;
+                          id?: T;
+                        };
+                    closingParagraphs?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              contactInfo?:
+                | T
+                | {
+                    name?: T;
+                    email?: T;
+                    phone?: T;
+                    phoneHref?: T;
+                    address?: T;
+                    addressHref?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'sitemap-directory'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              groups?:
+                | T
+                | {
+                    title?: T;
+                    links?:
+                      | T
+                      | {
+                          label?: T;
+                          href?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
         'rich-text-content'?:
           | T
           | {
@@ -1949,6 +2441,363 @@ export interface PagesSelect<T extends boolean = true> {
               title?: T;
               ctaLabel?: T;
               ctaHref?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'about-hero'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              deliveryTitle?: T;
+              statistics?:
+                | T
+                | {
+                    label?: T;
+                    value?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'about-story'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              caption?: T;
+              videoId?: T;
+              videoTitle?: T;
+              poster?: T;
+              posterAlt?: T;
+              overlay?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'about-timeline'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              milestones?:
+                | T
+                | {
+                    year?: T;
+                    description?: T;
+                    image?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'about-founders'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              descriptions?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              founders?:
+                | T
+                | {
+                    name?: T;
+                    role?: T;
+                    biography?: T;
+                    image?: T;
+                    alt?: T;
+                    linkedIn?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'about-team'?:
+          | T
+          | {
+              keyManagers?:
+                | T
+                | {
+                    name?: T;
+                    role?: T;
+                    image?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              departmentLeaders?:
+                | T
+                | {
+                    name?: T;
+                    role?: T;
+                    image?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'about-values'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              values?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    iconName?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'our-work-hero'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              primaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              secondaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              showcaseImages?:
+                | T
+                | {
+                    image?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'our-work-projects'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'our-work-case-studies'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'contact-hero'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              quickLinks?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'contact-form'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'contact-offices'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              directionsLabel?: T;
+              offices?:
+                | T
+                | {
+                    city?: T;
+                    address?: T;
+                    phone?: T;
+                    phoneHref?: T;
+                    directionsHref?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'contact-details'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'discovery-call'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              host?:
+                | T
+                | {
+                    name?: T;
+                    role?: T;
+                    image?: T;
+                    imageAlt?: T;
+                  };
+              benefits?:
+                | T
+                | {
+                    icon?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              calendar?:
+                | T
+                | {
+                    heading?: T;
+                    details?: T;
+                    src?: T;
+                    iframeTitle?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'request-quote-hero'?:
+          | T
+          | {
+              heroTitle?: T;
+              heroDescription?: T;
+              formTitle?: T;
+              counters?:
+                | T
+                | {
+                    label?: T;
+                    count?: T;
+                    unit?: T;
+                    id?: T;
+                  };
+              badges?:
+                | T
+                | {
+                    href?: T;
+                    ariaLabel?: T;
+                    logo?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              testimonials?:
+                | T
+                | {
+                    name?: T;
+                    quote?: T;
+                    avatar?: T;
+                    id?: T;
+                  };
+              budgetOptions?:
+                | T
+                | {
+                    option?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'career-hero'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              badges?:
+                | T
+                | {
+                    href?: T;
+                    alt?: T;
+                    logo?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              scrollingImages?:
+                | T
+                | {
+                    image?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'career-opportunities'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'career-perks'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              perks?:
+                | T
+                | {
+                    title?: T;
+                    iconName?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'career-apply'?:
+          | T
+          | {
+              heading?: T;
+              phoneLabel?: T;
+              phoneNumber?: T;
+              phoneHref?: T;
+              emailLabel?: T;
+              emailAddress?: T;
+              emailHref?: T;
+              note?: T;
               id?: T;
               blockName?: T;
             };

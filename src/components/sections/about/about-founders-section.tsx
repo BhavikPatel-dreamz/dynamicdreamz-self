@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { aboutSectionCopy, founders } from "@/content/about";
+import { aboutSectionCopy, founders, type AboutPerson } from "@/content/about";
 
 function LinkedInIcon() {
   return (
@@ -13,7 +13,22 @@ function LinkedInIcon() {
   );
 }
 
-export function AboutFoundersSection() {
+export type AboutFoundersSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  descriptions?: readonly string[];
+  founders?: readonly AboutPerson[];
+};
+
+export function AboutFoundersSection({
+  eyebrow = aboutSectionCopy.foundersEyebrow,
+  title = aboutSectionCopy.foundersTitle,
+  descriptions = aboutSectionCopy.foundersDescription,
+  founders: customFounders,
+}: AboutFoundersSectionProps = {}) {
+  const activeFounders =
+    customFounders && customFounders.length > 0 ? customFounders : founders;
+
   return (
     <section data-about="founders" aria-labelledby="about-founders-title" className="pt-20 max-[1199px]:pt-[60px]">
       <Container>
@@ -22,20 +37,24 @@ export function AboutFoundersSection() {
           className="mx-auto mb-10 max-w-[680px] text-center max-[1199px]:mb-[30px] max-[992px]:mb-5"
         >
           <Eyebrow align="center" className="mb-4" lineThickness="thin" lineWidth="fixed">
-            {aboutSectionCopy.foundersEyebrow}
+            {eyebrow}
           </Eyebrow>
           <h2 id="about-founders-title" className="mb-6 text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
-            {aboutSectionCopy.foundersTitle}
+            {title}
           </h2>
           <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
-            {aboutSectionCopy.foundersDescription[0]}
-            <br />
-            {aboutSectionCopy.foundersDescription[1]}
+            {descriptions?.[0]}
+            {descriptions?.[1] ? (
+              <>
+                <br />
+                {descriptions[1]}
+              </>
+            ) : null}
           </p>
         </header>
 
         <div className="-mx-2 flex flex-wrap max-[767px]:mx-0">
-          {founders.map((founder) => (
+          {activeFounders.map((founder) => (
             <article
               data-aos="fade-up"
               className="mb-[30px] w-1/3 px-2 text-center max-[767px]:w-full max-[767px]:px-0"

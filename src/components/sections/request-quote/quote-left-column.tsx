@@ -1,10 +1,39 @@
 import Image from "next/image";
 
-import { QuoteTestimonials } from "@/components/sections/request-quote/quote-testimonials";
+import { QuoteTestimonialItem, QuoteTestimonials } from "@/components/sections/request-quote/quote-testimonials";
 import { requestQuoteContent } from "@/content/request-quote";
 
-export function QuoteLeftColumn() {
-  const { badges, counters, hero } = requestQuoteContent;
+export type QuoteBadgeItem = {
+  href: string;
+  ariaLabel?: string;
+  image: string;
+  alt: string;
+  width?: number;
+  height?: number;
+};
+
+export type QuoteCounterItem = {
+  label: string;
+  count: string;
+  unit?: string;
+};
+
+export type QuoteLeftColumnProps = {
+  hero?: {
+    title: string;
+    description: string;
+  };
+  counters?: readonly QuoteCounterItem[];
+  badges?: readonly QuoteBadgeItem[];
+  testimonials?: readonly QuoteTestimonialItem[];
+};
+
+export function QuoteLeftColumn({
+  hero = requestQuoteContent.hero,
+  counters = requestQuoteContent.counters,
+  badges = requestQuoteContent.badges,
+  testimonials,
+}: QuoteLeftColumnProps = {}) {
 
   return (
     <div className="left-col relative w-full py-[150px] pr-[46px] pb-[140px] max-[1199px]:pr-[30px] max-[992px]:pt-[50px] max-[992px]:pr-0 max-[992px]:pb-[100px]">
@@ -65,7 +94,7 @@ export function QuoteLeftColumn() {
         ))}
       </div>
 
-      <QuoteTestimonials />
+      <QuoteTestimonials testimonials={testimonials} />
     </div>
   );
 }

@@ -8,7 +8,17 @@ import {
   currentOpportunities,
 } from "@/content/career";
 
-export function CareerOpportunitiesSection() {
+export type CareerOpportunitiesSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+};
+
+export function CareerOpportunitiesSection({
+  eyebrow = currentOpportunities.eyebrow,
+  title = currentOpportunities.title,
+  description = currentOpportunities.description,
+}: CareerOpportunitiesSectionProps = {}) {
   const jobLists = careerLocations.map((location) => ({
     location,
     content: (
@@ -35,9 +45,9 @@ export function CareerOpportunitiesSection() {
     >
       <Container>
         <SplitSectionHeading
-          description={currentOpportunities.description}
-          eyebrow={currentOpportunities.eyebrow}
-          heading={currentOpportunities.title}
+          description={description}
+          eyebrow={eyebrow}
+          heading={title}
           headingId="career-opportunities-title"
           variant="left"
         />

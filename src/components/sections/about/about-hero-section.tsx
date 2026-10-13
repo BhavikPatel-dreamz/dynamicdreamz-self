@@ -2,16 +2,28 @@ import { AboutCounterStats } from "@/components/sections/about/about-counter-sta
 import { Container } from "@/components/ui/container";
 import { aboutHero, aboutSectionCopy } from "@/content/about";
 
-export function AboutHeroSection() {
+export type AboutHeroSectionProps = {
+  title?: string;
+  description?: string;
+  deliveryTitle?: string;
+  statistics?: readonly { label: string; value: string }[];
+};
+
+export function AboutHeroSection({
+  title = aboutHero.title,
+  description = aboutHero.description,
+  deliveryTitle = aboutSectionCopy.deliveryTitle,
+  statistics = aboutHero.statistics,
+}: AboutHeroSectionProps = {}) {
   return (
     <>
       <section data-about="hero" className="bg-[#fbf7ed] pt-[248px] pb-[150px] max-[992px]:pt-40 max-[992px]:pb-[120px] max-[767px]:pt-[150px] max-[767px]:pb-[110px]">
         <Container>
           <div data-aos="fade-up" className="mx-auto max-w-[930px] text-center">
             <h1 className="mb-6 text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10">
-              {aboutHero.title}
+              {title}
             </h1>
-            <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">{aboutHero.description}</p>
+            <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">{description}</p>
           </div>
         </Container>
       </section>
@@ -25,10 +37,10 @@ export function AboutHeroSection() {
           >
             <div className="w-[45%] max-[992px]:w-full">
               <h2 id="about-delivery-title" className="text-[28px] leading-[40.42px] font-bold tracking-[-0.56px] text-white max-[1199px]:text-[25px] max-[992px]:mb-5 max-[992px]:text-center max-[767px]:text-2xl max-[767px]:leading-[34px]">
-                {aboutSectionCopy.deliveryTitle}
+                {deliveryTitle}
               </h2>
             </div>
-            <AboutCounterStats statistics={aboutHero.statistics} />
+            <AboutCounterStats statistics={statistics} />
           </div>
         </Container>
       </section>

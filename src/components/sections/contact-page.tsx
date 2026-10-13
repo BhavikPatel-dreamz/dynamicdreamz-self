@@ -54,166 +54,228 @@ function InstagramIcon() {
   );
 }
 
-export function ContactPage() {
-  const { contactDetailsSection, formSection, hero, officesSection } = contactPageContent;
+export type ContactHeroSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  quickLinks?: readonly { label: string; href: string }[];
+};
 
+export function ContactHeroSection({
+  eyebrow = contactPageContent.hero.eyebrow,
+  title = contactPageContent.hero.title,
+  description = contactPageContent.hero.description,
+  quickLinks = contactPageContent.hero.quickLinks,
+}: ContactHeroSectionProps = {}) {
   return (
-    <>
-      {/* 1. Hero Section */}
-      <section
-        className="overflow-hidden bg-[#fbeed5] pt-[160px] pb-10 text-center max-[1199px]:pt-[120px] max-[991px]:pt-[110px] max-[991px]:pb-8"
-        aria-labelledby="contact-page-title"
-      >
-        <Container>
-          <div data-aos="fade-up" className="mx-auto max-w-[810px]">
-            <Eyebrow align="center" className="mb-4">
-              {hero.eyebrow}
-            </Eyebrow>
-            <h1
-              id="contact-page-title"
-              className="font-sans text-[50px] leading-[60px] font-bold tracking-[-1px] text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
-            >
-              {hero.title}
-            </h1>
-            <p className="mx-auto mt-4 max-w-[810px] text-base leading-7 font-medium text-muted max-[767px]:text-sm max-[767px]:leading-6">
-              {hero.description}
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-xs font-semibold uppercase max-[767px]:flex-nowrap max-[767px]:justify-start max-[767px]:overflow-x-auto max-[767px]:whitespace-nowrap max-[767px]:pb-2">
-              {hero.quickLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="border-b border-[#252c15] pb-[3px] text-[#252c15] transition-colors duration-300 hover:border-brand-red hover:text-brand-red"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* 2. Message / Reach Out Section */}
-      <section
-        id="message"
-        className="bg-[#fbeed5] pb-20 max-[991px]:pb-[60px] max-[767px]:pb-10"
-        aria-labelledby="inquiry-title"
-      >
-        <Container>
-          <div
-            data-aos="fade-up"
-            className="mx-auto max-w-[920px] overflow-hidden rounded-[30px] border border-[rgba(40,40,40,0.11)] bg-white shadow-[0_28px_70px_rgba(72,52,35,0.08)]"
+    <section
+      className="overflow-hidden bg-[#fbeed5] pt-[160px] pb-10 text-center max-[1199px]:pt-[120px] max-[991px]:pt-[110px] max-[991px]:pb-8"
+      aria-labelledby="contact-page-title"
+    >
+      <Container>
+        <div data-aos="fade-up" className="mx-auto max-w-[810px]">
+          <Eyebrow align="center" className="mb-4">
+            {eyebrow}
+          </Eyebrow>
+          <h1
+            id="contact-page-title"
+            className="font-sans text-[50px] leading-[60px] font-bold tracking-[-1px] text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
           >
-            <div className="border-b border-[rgba(40,40,40,0.11)] p-10 text-center max-[1199px]:p-[30px] max-[767px]:px-5 max-[767px]:py-[30px]">
-              <Eyebrow align="center" className="mb-2">
-                {formSection.eyebrow}
-              </Eyebrow>
-              <h2
-                id="inquiry-title"
-                className="mt-2 mb-2 font-sans text-[32px] leading-[42px] font-bold text-ink max-[991px]:text-[26px] max-[991px]:leading-[34px] max-[767px]:text-[22px] max-[767px]:leading-[30px]"
+            {title}
+          </h1>
+          <p className="mx-auto mt-4 max-w-[810px] text-base leading-7 font-medium text-muted max-[767px]:text-sm max-[767px]:leading-6">
+            {description}
+          </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-xs font-semibold uppercase max-[767px]:flex-nowrap max-[767px]:justify-start max-[767px]:overflow-x-auto max-[767px]:whitespace-nowrap max-[767px]:pb-2">
+            {quickLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="border-b border-[#252c15] pb-[3px] text-[#252c15] transition-colors duration-300 hover:border-brand-red hover:text-brand-red"
               >
-                {formSection.title}
-              </h2>
-              <p className="text-base leading-7 font-medium text-muted max-[767px]:text-sm max-[767px]:leading-6">
-                {formSection.description}
-              </p>
-            </div>
-            <div className="p-10 max-[1199px]:p-[30px] max-[767px]:px-5 max-[767px]:py-[30px]">
-              <ContactForm />
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* 3. Our Offices Section */}
-      <section
-        id="offices"
-        className="bg-[#eff4ef] py-20 max-[991px]:py-[60px] max-[767px]:py-10"
-        aria-labelledby="offices-title"
-      >
-        <Container>
-          <div
-            data-aos="fade-up"
-            className="mb-10 flex flex-wrap items-end justify-between max-[991px]:text-center"
-          >
-            <div className="w-full md:w-[48%]">
-              <Eyebrow align="responsive-center" className="mb-2">
-                {officesSection.eyebrow}
-              </Eyebrow>
-              <h2
-                id="offices-title"
-                className="font-sans text-[35px] leading-[48px] font-bold text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-8"
-              >
-                {officesSection.title}
-              </h2>
-            </div>
-            <div className="w-full md:w-[48%] md:text-right max-[991px]:mt-3">
-              <p className="text-base leading-7 font-medium text-muted max-[767px]:text-sm max-[767px]:leading-6">
-                {officesSection.description}
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-[30px] max-[991px]:gap-5 max-[767px]:grid-cols-1">
-            {officesSection.offices.map((office) => (
-              <article
-                key={office.city}
-                data-aos="fade-up"
-                className="rounded-[20px] border-[1.5px] border-[#e4e4e4] bg-white p-8 max-[1199px]:p-5 max-[991px]:rounded-[12px]"
-              >
-                <h3 className="font-sans text-2xl leading-normal font-bold text-ink max-[991px]:text-lg">
-                  {office.city}
-                </h3>
-                <address className="my-5 text-base leading-[26px] font-medium not-italic text-muted max-[991px]:my-3.5 max-[991px]:text-sm max-[991px]:leading-6">
-                  {office.address}
-                </address>
-                <ul className="space-y-5 max-[991px]:space-y-3.5">
-                  <li>
-                    <a
-                      href={office.phoneHref}
-                      className="flex items-center text-base font-medium text-muted transition-colors duration-300 hover:text-ink max-[991px]:text-sm"
-                    >
-                      <span className="mr-2.5 shrink-0">
-                        <PhoneIcon />
-                      </span>
-                      {office.phone}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={office.directionsHref}
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                      className="group inline-flex items-center text-sm font-bold uppercase text-brand-red transition-colors duration-300 hover:text-ink"
-                    >
-                      {officesSection.directionsLabel}
-                      <DiagonalArrowIcon className="ml-2.5 size-3 text-brand-red transition-colors group-hover:text-ink" />
-                    </a>
-                  </li>
-                </ul>
-              </article>
+                {link.label}
+              </a>
             ))}
           </div>
-        </Container>
-      </section>
+        </div>
+      </Container>
+    </section>
+  );
+}
 
-      {/* 4. Contact Details Section */}
-      <section
-        id="contact-details"
-        className="bg-white py-20 max-[991px]:py-[60px] max-[767px]:py-10"
-        aria-labelledby="contact-details-title"
-      >
-        <Container>
-          <div data-aos="fade-up" className="mb-10 text-center">
+export type ContactFormSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+};
+
+export function ContactFormSection({
+  eyebrow = contactPageContent.formSection.eyebrow,
+  title = contactPageContent.formSection.title,
+  description = contactPageContent.formSection.description,
+}: ContactFormSectionProps = {}) {
+  return (
+    <section
+      id="message"
+      className="bg-[#fbeed5] pb-20 max-[991px]:pb-[60px] max-[767px]:pb-10"
+      aria-labelledby="inquiry-title"
+    >
+      <Container>
+        <div
+          data-aos="fade-up"
+          className="mx-auto max-w-[920px] overflow-hidden rounded-[30px] border border-[rgba(40,40,40,0.11)] bg-white shadow-[0_28px_70px_rgba(72,52,35,0.08)]"
+        >
+          <div className="border-b border-[rgba(40,40,40,0.11)] p-10 text-center max-[1199px]:p-[30px] max-[767px]:px-5 max-[767px]:py-[30px]">
             <Eyebrow align="center" className="mb-2">
-              {contactDetailsSection.eyebrow}
+              {eyebrow}
             </Eyebrow>
             <h2
-              id="contact-details-title"
-              className="font-sans text-[32px] leading-[42px] font-bold text-ink max-[991px]:text-[28px] max-[767px]:text-2xl"
+              id="inquiry-title"
+              className="mt-2 mb-2 font-sans text-[32px] leading-[42px] font-bold text-ink max-[991px]:text-[26px] max-[991px]:leading-[34px] max-[767px]:text-[22px] max-[767px]:leading-[30px]"
             >
-              {contactDetailsSection.title}
+              {title}
+            </h2>
+            <p className="text-base leading-7 font-medium text-muted max-[767px]:text-sm max-[767px]:leading-6">
+              {description}
+            </p>
+          </div>
+          <div className="p-10 max-[1199px]:p-[30px] max-[767px]:px-5 max-[767px]:py-[30px]">
+            <ContactForm />
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+export type ContactOfficesSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  directionsLabel?: string;
+  offices?: readonly {
+    city: string;
+    address: string;
+    phone: string;
+    phoneHref: string;
+    directionsHref: string;
+  }[];
+};
+
+export function ContactOfficesSection({
+  eyebrow = contactPageContent.officesSection.eyebrow,
+  title = contactPageContent.officesSection.title,
+  description = contactPageContent.officesSection.description,
+  directionsLabel = contactPageContent.officesSection.directionsLabel,
+  offices: customOffices,
+}: ContactOfficesSectionProps = {}) {
+  const activeOffices =
+    customOffices && customOffices.length > 0
+      ? customOffices
+      : contactPageContent.officesSection.offices;
+
+  return (
+    <section
+      id="offices"
+      className="bg-[#eff4ef] py-20 max-[991px]:py-[60px] max-[767px]:py-10"
+      aria-labelledby="offices-title"
+    >
+      <Container>
+        <div
+          data-aos="fade-up"
+          className="mb-10 flex flex-wrap items-end justify-between max-[991px]:text-center"
+        >
+          <div className="w-full md:w-[48%]">
+            <Eyebrow align="responsive-center" className="mb-2">
+              {eyebrow}
+            </Eyebrow>
+            <h2
+              id="offices-title"
+              className="font-sans text-[35px] leading-[48px] font-bold text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-8"
+            >
+              {title}
             </h2>
           </div>
+          <div className="w-full md:w-[48%] md:text-right max-[991px]:mt-3">
+            <p className="text-base leading-7 font-medium text-muted max-[767px]:text-sm max-[767px]:leading-6">
+              {description}
+            </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-[30px] max-[991px]:gap-5 max-[767px]:grid-cols-1">
+          {activeOffices.map((office) => (
+            <article
+              key={office.city}
+              data-aos="fade-up"
+              className="rounded-[20px] border-[1.5px] border-[#e4e4e4] bg-white p-8 max-[1199px]:p-5 max-[991px]:rounded-[12px]"
+            >
+              <h3 className="font-sans text-2xl leading-normal font-bold text-ink max-[991px]:text-lg">
+                {office.city}
+              </h3>
+              <address className="my-5 text-base leading-[26px] font-medium not-italic text-muted max-[991px]:my-3.5 max-[991px]:text-sm max-[991px]:leading-6">
+                {office.address}
+              </address>
+              <ul className="space-y-5 max-[991px]:space-y-3.5">
+                <li>
+                  <a
+                    href={office.phoneHref}
+                    className="flex items-center text-base font-medium text-muted transition-colors duration-300 hover:text-ink max-[991px]:text-sm"
+                  >
+                    <span className="mr-2.5 shrink-0">
+                      <PhoneIcon />
+                    </span>
+                    {office.phone}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={office.directionsHref}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    className="group inline-flex items-center text-sm font-bold uppercase text-brand-red transition-colors duration-300 hover:text-ink"
+                  >
+                    {directionsLabel}
+                    <DiagonalArrowIcon className="ml-2.5 size-3 text-brand-red transition-colors group-hover:text-ink" />
+                  </a>
+                </li>
+              </ul>
+            </article>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+export type ContactDetailsSectionProps = {
+  eyebrow?: string;
+  title?: string;
+};
+
+export function ContactDetailsSection({
+  eyebrow = contactPageContent.contactDetailsSection.eyebrow,
+  title = contactPageContent.contactDetailsSection.title,
+}: ContactDetailsSectionProps = {}) {
+  const { contactDetailsSection } = contactPageContent;
+
+  return (
+    <section
+      id="contact-details"
+      className="bg-white py-20 max-[991px]:py-[60px] max-[767px]:py-10"
+      aria-labelledby="contact-details-title"
+    >
+      <Container>
+        <div data-aos="fade-up" className="mb-10 text-center">
+          <Eyebrow align="center" className="mb-2">
+            {eyebrow}
+          </Eyebrow>
+          <h2
+            id="contact-details-title"
+            className="font-sans text-[32px] leading-[42px] font-bold text-ink max-[991px]:text-[28px] max-[767px]:text-2xl"
+          >
+            {title}
+          </h2>
+        </div>
 
           <div
             data-aos="fade-up"
@@ -311,6 +373,16 @@ export function ContactPage() {
           </div>
         </Container>
       </section>
+  );
+}
+
+export function ContactPage() {
+  return (
+    <>
+      <ContactHeroSection />
+      <ContactFormSection />
+      <ContactOfficesSection />
+      <ContactDetailsSection />
     </>
   );
 }

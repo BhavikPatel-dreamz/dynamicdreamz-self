@@ -47,6 +47,7 @@ export type QuoteFormProps = {
   phonePlaceholder?: string | null;
   submitLabel?: string;
   submitButtonClassName?: string;
+  budgetOptions?: readonly string[];
 };
 
 export function QuoteForm({
@@ -56,6 +57,7 @@ export function QuoteForm({
   phonePlaceholder = quoteFormCopy.placeholders.phone,
   submitLabel = quoteFormCopy.submit,
   submitButtonClassName,
+  budgetOptions = requestQuoteContent.form.budgetOptions,
 }: QuoteFormProps = {}) {
   const formRef = useRef<HTMLFormElement>(null);
   const [state, formAction, isPending] = useActionState(
@@ -182,7 +184,7 @@ export function QuoteForm({
               defaultValue=""
             >
               <option value="">{quoteFormCopy.placeholders.budget}</option>
-              {requestQuoteContent.form.budgetOptions.map((opt) => (
+              {budgetOptions.map((opt) => (
                 <option key={opt} value={opt}>
                   {opt}
                 </option>

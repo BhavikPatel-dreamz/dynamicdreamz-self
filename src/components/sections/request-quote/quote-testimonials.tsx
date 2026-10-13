@@ -50,7 +50,19 @@ function NextArrow({ onClick }: ArrowProps) {
   );
 }
 
-export function QuoteTestimonials() {
+export type QuoteTestimonialItem = {
+  name: string;
+  avatar: string;
+  quote: string;
+};
+
+export type QuoteTestimonialsProps = {
+  testimonials?: readonly QuoteTestimonialItem[];
+};
+
+export function QuoteTestimonials({
+  testimonials = requestQuoteContent.testimonials,
+}: QuoteTestimonialsProps = {}) {
   const settings = {
     dots: false,
     infinite: true,
@@ -67,7 +79,7 @@ export function QuoteTestimonials() {
   return (
     <div className="testimonial-slider relative -mx-[5px] pb-[52px] [&_.slick-slide]:h-auto [&_.slick-slide>div]:h-full [&_.slick-track]:flex [&_.slick-track]:items-stretch max-[575px]:[&_.slick-list]:w-[calc(100%_-_25px)] max-[575px]:[&_.slick-list]:!overflow-visible max-[575px]:[&_.slick-list]:[clip-path:inset(0_-100vw_0_5px)]">
       <Slider {...settings}>
-        {requestQuoteContent.testimonials.map((testimonial) => (
+        {testimonials.map((testimonial) => (
           <div key={testimonial.name} className="h-full px-[5px]">
             <div className="flex h-full rounded-[10px] bg-[linear-gradient(to_right,#15c064,#00d1ff)] p-[1px] max-[575px]:min-h-[285px]">
               <div className="flex min-h-0 flex-1 flex-col justify-between rounded-[10px] bg-white p-[32px_45px_32px_32px] max-[1199px]:p-5">

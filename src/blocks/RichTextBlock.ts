@@ -2,7 +2,7 @@ import type { Block } from "payload";
 
 export const RichTextBlock: Block = {
   slug: "rich-text-content",
-  labels: { singular: "Rich Text Content / Legal", plural: "Rich Text Content Sections" },
+  labels: { singular: "Rich Text Content / Legal (Legacy)", plural: "Rich Text Content Sections (Legacy)" },
   fields: [
     { name: "heading", type: "text" },
     { name: "eyebrow", type: "text" },

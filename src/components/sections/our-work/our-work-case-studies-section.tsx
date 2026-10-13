@@ -5,7 +5,17 @@ import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { ourWorkCaseStudies, ourWorkPage } from "@/content/our-work";
 
-export function OurWorkCaseStudiesSection() {
+export type OurWorkCaseStudiesSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+};
+
+export function OurWorkCaseStudiesSection({
+  eyebrow = ourWorkPage.caseStudies.eyebrow,
+  title = ourWorkPage.caseStudies.title,
+  description = ourWorkPage.caseStudies.description,
+}: OurWorkCaseStudiesSectionProps = {}) {
   return (
     <section
       className="see-the-work-sec bg-[#eff4ef] py-20 max-[992px]:py-10 max-[767px]:py-10"
@@ -18,18 +28,18 @@ export function OurWorkCaseStudiesSection() {
         >
           <div className="title w-[44%] max-[1399px]:w-[35%] max-[1199px]:w-[36%] max-[992px]:w-full">
             <Eyebrow className="mb-3.75 max-[767px]:mb-5" tone="muted">
-              {ourWorkPage.caseStudies.eyebrow}
+              {eyebrow}
             </Eyebrow>
             <h2
               className="m-0 font-montserrat text-[35px] font-bold leading-[1.38] text-[#090909] max-[1199px]:text-[28px] max-[992px]:mb-2.5 max-[767px]:text-2xl"
               id="our-work-case-studies-title"
             >
-              {ourWorkPage.caseStudies.title}
+              {title}
             </h2>
           </div>
           <div className="text w-[49%] max-[1399px]:w-[56%] max-[1199px]:w-[51%] max-[992px]:w-full">
             <p className="m-0 font-sans text-base font-medium leading-[30.4px] text-[#535353] max-[992px]:text-sm max-[992px]:leading-[26px]">
-              {ourWorkPage.caseStudies.description}
+              {description}
             </p>
           </div>
         </div>

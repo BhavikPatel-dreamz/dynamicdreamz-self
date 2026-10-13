@@ -44,6 +44,9 @@ export const aboutStory = {
   caption: "Inside Dynamic Dreamz — a look at our office, team and everyday work.",
   videoId: "0GEJ928rBnM",
   videoTitle: "Meet the team at Dynamic Dreamz",
+  poster: "/assets/about/hero-video-poster.webp",
+  posterAlt: "Dynamic Dreamz team collaborating in the Surat office",
+  overlay: "/assets/about/we-are-dynamic-dreamz.svg",
 } as const;
 
 export const milestones = [

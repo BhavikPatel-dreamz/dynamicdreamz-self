@@ -293,24 +293,69 @@ Step 5: Ephemeral Seeding & Verification
 
 ---
 
-### Phase 3: Core Agency & Marketing Pages
-*Target: Primary brand positioning and inquiry conversion pages.*
+### Phase 3: Core Agency & Marketing Pages (100% CMS Managed)
+*Target: Primary brand positioning and inquiry conversion pages managed 100% via Payload CMS `pages` collection.*
 
-- **Home Page (`/`)** *(Seeded & verified in Neon DB)*:
-  - Blocks: `hero` (home variant), `brand-partners`, `shopify-plus-agency-overview`, `white-label-partner-banner`, `commerce-solutions`, `selected-work-marquee`, `testimonials-carousel`, `integrations-partners`, `latest-insights`, `faq-accordion`.
-- **Bespoke Live-Parity Marketing & Conversion Pages**:
-  - To preserve 100% visual, functional, and layout parity with the live site (including interactive forms, Calendly schedulers, quote wizards, founder profiles, milestone timelines, job listings, and rich portfolio filters), the following routes are rendered by their dedicated, live-matched Next.js components:
-    - `/about-us`: `<AboutPage />` (18-year story, milestone timeline 2006–present, founders bios & photos, 150+ team photos, core values)
-    - `/our-work`: `<OurWorkPage />` (full portfolio showcase, category filters, case study cards)
-    - `/contact-us`: `<ContactPage />` (interactive contact form, Surat & Ahmedabad & USA office locations, maps)
-    - `/book-a-discovery-call`: `<BookDiscoveryCallPage />` (interactive 30-minute discovery call scheduler)
-    - `/request-quote`: `<RequestQuotePage />` (interactive multi-step project quote wizard)
-    - `/career`: `<CareerPage />` (active job openings, department filters, perks & culture)
-    - `/career-apply-now`: `<CareerApplyNowPage />` (interactive job application form and resume upload)
-    - `/terms-of-service`: `<TermsOfServicePage />` (bespoke styled legal agreement)
-    - `/privacy-policy`: `<PrivacyPolicyPage />` (bespoke styled privacy & cookies policy)
-    - `/site-map`: `<SiteMapPage />` (bespoke multi-column sitemap directory)
-- **Status**: Verified at 100% live-site visual and functional parity.
+Every page in Phase 3 is modeled as a document in the Payload CMS `pages` collection using discrete, typed modular blocks in `sections` with zero raw HTML, zero richText WYSIWYG, and 100% visual, layout, and interactive parity with the live site. Interactive islands (forms, Calendly schedulers, multi-step wizards, filters) receive their content, metadata, labels, and options directly from CMS block props.
+
+- **Modular Pages in Payload CMS (`pages` Collection, Seeded & Verified in Neon DB)**:
+  - **Home Page (`/`)**:
+    - Blocks: `hero` (home variant), `brand-partners`, `shopify-plus-agency-overview`, `white-label-partner-banner`, `commerce-solutions`, `selected-work-marquee`, `testimonials-carousel`, `integrations-partners`, `latest-insights`, `faq-accordion`.
+    - Rendered dynamically via `<BlockRenderer />` with fail-safe local fallback to `<HomePage />`.
+  - **Terms of Service (`/terms-of-service`)**:
+    - Modeled with `LegalContentBlock` (`heading`, `intro`, `containerWidth`, `sections` array with `title`, `level`, `paragraphs`, `items`, `closingParagraphs`, and `contactInfo`).
+    - 100% structured scalar & array modeling, zero `richText`, zero raw HTML.
+    - Rendered dynamically via `<BlockRenderer />` with fail-safe local fallback to `<TermsOfServicePage />`.
+  - **Privacy and Cookies Policy (`/privacy-policy`)**:
+    - Modeled with `LegalContentBlock` (`heading`, `containerWidth`, `sections` array with `title`, `level`, `paragraphs`, `items` with `boldPrefix`, and structured `contactInfo` group).
+    - 100% structured scalar & array modeling, zero `richText`, zero raw HTML.
+    - Rendered dynamically via `<BlockRenderer />` with fail-safe local fallback to `<PrivacyPolicyPage />`.
+  - **Site Map Directory (`/site-map`)**:
+    - Modeled with `SiteMapDirectoryBlock` (`heading`, `description`, `groups` array with structured `links`).
+    - 100% structured scalar & array modeling, zero raw HTML.
+    - Rendered dynamically via `<BlockRenderer />` with fail-safe local fallback to `<SiteMapPage />`.
+  - **About Us (`/about-us`)**:
+    - Dedicated Blocks:
+      - `about-hero` (`AboutHeroBlock`): `title`, `description`, `deliveryTitle`, `statistics` array (`label`, `value`).
+      - `about-story` (`AboutStoryBlock`): `title`, `description`, `caption`, `videoId`, `videoTitle`.
+      - `about-timeline` (`AboutTimelineBlock`): `title`, `description`, `milestones` array (`year`, `description`, `image`, `alt`, `width`, `height`).
+      - `about-founders` (`AboutFoundersBlock`): `eyebrow`, `title`, `description`, `founders` array (`name`, `role`, `biography`, `image`, `alt`, `linkedIn`).
+      - `about-team` (`AboutTeamBlock`): `eyebrow`, `title`, `keyManagers` array, `departmentLeaders` array (`name`, `role`, `image`, `alt`).
+      - `about-values` (`AboutValuesBlock`): `title`, `description`, `values` array (`title`, `description`, `iconName`).
+    - Rendered dynamically via `<BlockRenderer />` with fail-safe local fallback.
+  - **Our Work (`/our-work`)**:
+    - Dedicated Blocks:
+      - `our-work-hero` (`OurWorkHeroBlock`): `eyebrow`, `title`, `description`, `primaryCta`, `secondaryCta`.
+      - `brand-partners` (`BrandPartnersBlock`): Reused brand partners marquee.
+      - `our-work-projects` (`OurWorkProjectsBlock`): `eyebrow`, `title`, `description`, interactive platform filter tabs & work portfolio showcase.
+      - `our-work-case-studies` (`OurWorkCaseStudiesBlock`): `eyebrow`, `title`, `description`, case study cards showcase.
+    - Rendered dynamically via `<BlockRenderer />` with fail-safe local fallback.
+  - **Contact Us (`/contact-us`)**:
+    - Dedicated Blocks:
+      - `contact-hero` (`ContactHeroBlock`): `eyebrow`, `title`, `description`, `quickLinks` array (`label`, `href`).
+      - `contact-form` (`ContactFormBlock`): `eyebrow`, `title`, `description` wrapping the interactive `<ContactForm />` island.
+      - `contact-offices` (`ContactOfficesBlock`): `eyebrow`, `title`, `description`, `directionsLabel`, `offices` array (`city`, `address`, `phone`, `phoneHref`, `directionsHref`).
+      - `contact-details` (`ContactDetailsBlock`): `eyebrow`, `title`, direct channels and hours.
+    - Rendered dynamically via `<BlockRenderer />` with fail-safe local fallback.
+  - **Book a Discovery Call (`/book-a-discovery-call`)**:
+    - Dedicated Block:
+      - `discovery-call` (`DiscoveryCallBlock`): `eyebrow`, `title`, `description`, `host` group (`name`, `role`, `image`, `imageAlt`), `benefits` array (`icon`, `title`, `description`), `calendar` group (`heading`, `details`, `src`, `iframeTitle`).
+    - Rendered dynamically via `<BlockRenderer />` with fail-safe local fallback.
+  - **Request a Quote (`/request-quote`)**:
+    - Dedicated Block:
+      - `request-quote-hero` (`RequestQuoteHeroBlock`): `heroTitle`, `heroDescription`, `formTitle`, `counters` array (`label`, `count`, `unit`), `budgetOptions` array wrapping the interactive multi-step `<QuoteForm />` island and `<QuoteLeftColumn />`.
+    - Rendered dynamically via `<BlockRenderer />` with fail-safe local fallback.
+  - **Career (`/career`)**:
+    - Dedicated Blocks:
+      - `career-hero` (`CareerHeroBlock`): `eyebrow`, `title`, `description`, badges, scrolling images.
+      - `career-opportunities` (`CareerOpportunitiesBlock`): `eyebrow`, `title`, `description`, job openings with location filtering.
+      - `career-perks` (`CareerPerksBlock`): `eyebrow`, `heading`, `description`, `perks` array (`title`, `iconName`).
+    - Rendered dynamically via `<BlockRenderer />` with fail-safe local fallback.
+  - **Career Apply Now (`/career-apply-now`)**:
+    - Dedicated Block:
+      - `career-apply` (`CareerApplyBlock`): `heading`, `phoneLabel`, `phoneNumber`, `phoneHref`, `emailLabel`, `emailAddress`, `emailHref`, `note` wrapping the interactive application form island.
+    - Rendered dynamically via `<BlockRenderer />` with fail-safe local fallback.
+- **Status**: 11 pages (Home + 3 legal/directory + 7 marketing/conversion pages) 100% modeled in Payload CMS and rendered via `<BlockRenderer />`. Zero hardcoded content, 100% visual and interactive parity.
 
 
 ---

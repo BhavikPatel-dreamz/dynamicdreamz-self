@@ -17,7 +17,17 @@ const projectCounts = {
   bigCommerce: ourWorkProjects.filter((project) => project.platform === "bigCommerce").length,
 } satisfies Record<WorkPlatform, number>;
 
-export function OurWorkProjectsSection() {
+export type OurWorkProjectsSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+};
+
+export function OurWorkProjectsSection({
+  eyebrow = ourWorkPage.portfolio.eyebrow,
+  title = ourWorkPage.portfolio.title,
+  description = ourWorkPage.portfolio.description,
+}: OurWorkProjectsSectionProps = {}) {
   return (
     <section
       className="scroll-mt-20 pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]"
@@ -28,14 +38,14 @@ export function OurWorkProjectsSection() {
         <div data-aos="fade-up" className="mb-10 flex items-end justify-between gap-12 max-[992px]:items-start max-[767px]:mb-[30px] max-[767px]:flex-col max-[767px]:gap-4">
           <div className="shrink-0">
             <Eyebrow className="mb-5" lineThickness="thin" lineWidth="fixed">
-              {ourWorkPage.portfolio.eyebrow}
+              {eyebrow}
             </Eyebrow>
             <h2 className="text-[35px] leading-[1.38] font-medium text-ink max-[992px]:text-[30px] max-[767px]:text-2xl" id="our-work-projects-title">
-              {ourWorkPage.portfolio.title}
+              {title}
             </h2>
           </div>
           <p className="max-w-[690px] text-base leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[26px]">
-            {ourWorkPage.portfolio.description}
+            {description}
           </p>
         </div>
         <OurWorkFilterController filters={ourWorkPage.filters} counts={projectCounts} />

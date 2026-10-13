@@ -1,8 +1,24 @@
 import { careerApplyNowContent } from "@/content/career-apply-now";
 
-export function CareerApplyNowLeftColumn() {
-  const { contact, heading } = careerApplyNowContent;
+export type CareerApplyNowLeftColumnProps = {
+  heading?: string;
+  phoneLabel?: string;
+  phoneNumber?: string;
+  phoneHref?: string;
+  emailLabel?: string;
+  emailAddress?: string;
+  emailHref?: string;
+};
 
+export function CareerApplyNowLeftColumn({
+  heading = careerApplyNowContent.heading,
+  phoneLabel = careerApplyNowContent.contact.phone.label,
+  phoneNumber = careerApplyNowContent.contact.phone.number,
+  phoneHref = careerApplyNowContent.contact.phone.href,
+  emailLabel = careerApplyNowContent.contact.email.label,
+  emailAddress = careerApplyNowContent.contact.email.address,
+  emailHref = careerApplyNowContent.contact.email.href,
+}: CareerApplyNowLeftColumnProps = {}) {
   return (
     <div className="left-col w-[31%] max-[1199px]:w-[40%] max-[991px]:mb-[60px] max-[991px]:w-full max-[767px]:mb-10">
       <h1 className="mb-8 border-b border-[#efefef] pb-8 text-[35px] font-bold leading-[46px] tracking-[-0.7px] text-[#090909] max-[1299px]:text-[30px] max-[1299px]:leading-[40px] max-[991px]:mb-5 max-[991px]:pb-5 max-[991px]:text-center max-[767px]:text-[27px] max-[767px]:leading-[38px] max-[320px]:text-[23px] max-[320px]:leading-[33px]">
@@ -44,13 +60,13 @@ export function CareerApplyNowLeftColumn() {
             </span>
             <span className="w-[calc(100%-62px)] max-[991px]:w-[calc(100%-51px)]">
               <span className="mb-[15px] block text-base font-semibold uppercase leading-normal text-[#090909] max-[991px]:mb-2.5 max-[991px]:text-sm">
-                {contact.phone.label}
+                {phoneLabel}
               </span>
               <a
-                href={contact.phone.href}
+                href={phoneHref}
                 className="inline-block text-base font-medium leading-[23px] text-[#535353] transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red"
               >
-                {contact.phone.number}
+                {phoneNumber}
               </a>
             </span>
           </li>
@@ -97,13 +113,13 @@ export function CareerApplyNowLeftColumn() {
             </span>
             <span className="w-[calc(100%-62px)] max-[991px]:w-[calc(100%-51px)]">
               <span className="mb-[15px] block text-base font-semibold uppercase leading-normal text-[#090909] max-[991px]:mb-2.5 max-[991px]:text-sm">
-                {contact.email.label}
+                {emailLabel}
               </span>
               <a
-                href={contact.email.href}
+                href={emailHref}
                 className="inline-block text-base font-medium leading-[23px] text-[#535353] transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red"
               >
-                {contact.email.address}
+                {emailAddress}
               </a>
             </span>
           </li>

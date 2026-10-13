@@ -6,7 +6,29 @@ import { HorizontalDragScroll } from "@/components/ui/horizontal-drag-scroll";
 import { aboutSectionCopy, milestones } from "@/content/about";
 import { formatBrText } from "@/lib/text-formatting";
 
-export function AboutTimelineSection() {
+export type AboutTimelineSectionProps = {
+  title?: string;
+  description?: string;
+  milestones?: readonly {
+    year: string;
+    description: string;
+    image: string;
+    alt: string;
+    width: number;
+    height: number;
+  }[];
+};
+
+export function AboutTimelineSection({
+  title = aboutSectionCopy.timelineTitle,
+  description = aboutSectionCopy.timelineDescription,
+  milestones: customMilestones,
+}: AboutTimelineSectionProps = {}) {
+  const activeMilestones =
+    customMilestones && customMilestones.length > 0
+      ? customMilestones
+      : milestones;
+
   return (
     <section data-about="timeline" aria-labelledby="about-timeline-title" className="overflow-hidden bg-[#fbf7ed] pt-[100px] pb-[60px] max-[992px]:py-[50px]">
       <Container>
@@ -16,12 +38,12 @@ export function AboutTimelineSection() {
         >
           <div className="w-1/2 px-[15px] max-[992px]:mb-[10px] max-[992px]:w-full max-[992px]:p-0">
             <h2 id="about-timeline-title" className="text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
-              {aboutSectionCopy.timelineTitle}
+              {title}
             </h2>
           </div>
           <div className="w-1/2 px-[15px] max-[992px]:w-full max-[992px]:p-0">
             <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
-              {aboutSectionCopy.timelineDescription}
+              {description}
             </p>
           </div>
         </div>
@@ -33,12 +55,12 @@ export function AboutTimelineSection() {
           ariaLabel="Dynamic Dreamz company milestones. Scroll horizontally to explore the timeline."
         >
           <ol className="flex h-[535px] w-max snap-x snap-mandatory">
-          {milestones.map((milestone, index) => {
+          {activeMilestones.map((milestone, index) => {
             const imageFirst = index % 2 === 0;
             const isLast = !milestone.year;
 
             return (
-              <li className="relative h-[535px] w-[410px] shrink-0 snap-start px-[15px] text-center max-[575px]:w-[320px]" key={milestone.year || "future"}>
+              <li className="relative h-[535px] w-[410px] shrink-0 snap-start px-[15px] text-center max-[575px]:w-[320px]" key={milestone.year || `milestone-${index}`}>
                 {isLast ? (
                   <div className="flex h-full items-center justify-center">
                     <Image className="h-auto max-w-full" src={milestone.image} alt={milestone.alt} width={milestone.width} height={milestone.height} sizes="(max-width: 575px) 290px, 380px" draggable={false} />

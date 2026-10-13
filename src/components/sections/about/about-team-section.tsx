@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { departmentLeaders, keyManagers, type AboutPerson } from "@/content/about";
 
-function TeamGrid({ people }: { people: AboutPerson[] }) {
+function TeamGrid({ people }: { people: readonly AboutPerson[] }) {
   return (
     <div className="-mx-2 flex flex-wrap max-[767px]:mx-0">
       {people.map((person) => (
@@ -25,12 +25,29 @@ function TeamGrid({ people }: { people: AboutPerson[] }) {
   );
 }
 
-export function AboutTeamSection() {
+export type AboutTeamSectionProps = {
+  keyManagers?: readonly AboutPerson[];
+  departmentLeaders?: readonly AboutPerson[];
+};
+
+export function AboutTeamSection({
+  keyManagers: customKeyManagers,
+  departmentLeaders: customDepartmentLeaders,
+}: AboutTeamSectionProps = {}) {
+  const activeKeyManagers =
+    customKeyManagers && customKeyManagers.length > 0
+      ? customKeyManagers
+      : keyManagers;
+  const activeDepartmentLeaders =
+    customDepartmentLeaders && customDepartmentLeaders.length > 0
+      ? customDepartmentLeaders
+      : departmentLeaders;
+
   return (
     <section data-about="team" aria-label="Dynamic Dreamz management and department leaders">
       <Container>
-        <TeamGrid people={keyManagers} />
-        <TeamGrid people={departmentLeaders} />
+        <TeamGrid people={activeKeyManagers} />
+        <TeamGrid people={activeDepartmentLeaders} />
       </Container>
     </section>
   );

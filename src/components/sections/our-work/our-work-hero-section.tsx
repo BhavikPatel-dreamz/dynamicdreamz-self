@@ -8,9 +8,26 @@ import { proofLogos, showcaseImages } from "@/content/home";
 import { ourWorkPage } from "@/content/our-work";
 import { cn } from "@/lib/class-names";
 
+export type ShowcaseImageItem = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+};
+
+export type ProofLogoItem = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  href: string;
+};
+
 function ShowcaseSet({
+  images,
   decorative = false,
 }: {
+  images: ShowcaseImageItem[];
   decorative?: boolean;
 }) {
   return (
@@ -24,42 +41,44 @@ function ShowcaseSet({
         className="grid shrink-0 grid-cols-2 gap-y-6 pb-0 gap-x-[17px] max-[991.98px]:flex max-[991.98px]:gap-y-4 max-[991.98px]:gap-x-4 max-[991.98px]:pr-6"
         aria-hidden={decorative || undefined}
       >
-        <div className="scrolling_img two_col_img col-span-2 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_rgb(0_0_0/6%)] max-[991.98px]:h-[227px] max-[991.98px]:w-[342px] max-[991.98px]:shrink-0 max-[991.98px]:rounded-[10px]">
-          <div className="item_img h-full">
-            <Image
-              className="h-auto w-full max-[991.98px]:h-full max-[991.98px]:object-cover max-[991.98px]:object-top"
-              src={showcaseImages[0].src}
-              alt={decorative ? "" : showcaseImages[0].alt}
-              width={showcaseImages[0].width}
-              height={showcaseImages[0].height}
-              sizes="548px"
-              priority={!decorative}
-            />
+        {images[0] ? (
+          <div className="scrolling_img two_col_img col-span-2 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_rgb(0_0_0/6%)] max-[991.98px]:h-[227px] max-[991.98px]:w-[342px] max-[991.98px]:shrink-0 max-[991.98px]:rounded-[10px]">
+            <div className="item_img h-full">
+              <Image
+                className="h-auto w-full max-[991.98px]:h-full max-[991.98px]:object-cover max-[991.98px]:object-top"
+                src={images[0].src}
+                alt={decorative ? "" : images[0].alt}
+                width={images[0].width ?? 548}
+                height={images[0].height ?? 324}
+                sizes="548px"
+                priority={!decorative}
+              />
+            </div>
           </div>
-        </div>
-        {[showcaseImages[1], showcaseImages[2]].map((image) => (
+        ) : null}
+        {images.slice(1, 3).map((image) => (
           <div className="scrolling_img overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_rgb(0_0_0/6%)] max-[991.98px]:h-[227px] max-[991.98px]:w-[105px] max-[991.98px]:shrink-0 max-[991.98px]:rounded-[10px]" key={image.src}>
             <div className="item_img h-full">
               <Image
                 className="h-auto w-full max-[991.98px]:h-full max-[991.98px]:object-cover max-[991.98px]:object-top"
                 src={image.src}
                 alt={decorative ? "" : image.alt}
-                width={image.width}
-                height={image.height}
+                width={image.width ?? 266}
+                height={image.height ?? 324}
                 sizes="266px"
               />
             </div>
           </div>
         ))}
-        {showcaseImages.slice(3).map((image) => (
+        {images.slice(3).map((image) => (
           <div className="scrolling_img two_col_img col-span-2 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_rgb(0_0_0/6%)] max-[991.98px]:h-[227px] max-[991.98px]:w-[342px] max-[991.98px]:shrink-0 max-[991.98px]:rounded-[10px]" key={image.src}>
             <div className="item_img h-full">
               <Image
                 className="h-auto w-full max-[991.98px]:h-full max-[991.98px]:object-cover max-[991.98px]:object-top"
                 src={image.src}
                 alt={decorative ? "" : image.alt}
-                width={image.width}
-                height={image.height}
+                width={image.width ?? 548}
+                height={image.height ?? 324}
                 sizes="548px"
               />
             </div>
@@ -84,15 +103,19 @@ export type HeroSectionContent = {
   };
 };
 
-type OurWorkHeroSectionProps = {
+export type OurWorkHeroSectionProps = {
   content?: HeroSectionContent;
   fullBleedShowcaseAtTablet?: boolean;
   layout?: "default" | "caseStudiesLive";
   typography?: "default" | "liveMontserrat";
+  showcaseImages?: ShowcaseImageItem[];
+  proofLogos?: ProofLogoItem[];
 };
 
 export function OurWorkHeroSection({
   content,
+  showcaseImages: propShowcaseImages,
+  proofLogos: propProofLogos,
 }: OurWorkHeroSectionProps = {}) {
   const heroContent = content ?? {
     eyebrow: ourWorkPage.hero.eyebrow,
@@ -101,6 +124,9 @@ export function OurWorkHeroSection({
     primaryCta: ourWorkPage.hero.primaryCta,
     secondaryCta: ourWorkPage.hero.secondaryCta,
   };
+
+  const images = propShowcaseImages && propShowcaseImages.length > 0 ? propShowcaseImages : showcaseImages;
+  const logos = propProofLogos && propProofLogos.length > 0 ? propProofLogos : proofLogos;
 
   return (
     <section className="hero-new-section overflow-hidden bg-cream pt-[91px] max-[992px]:pt-16">
@@ -135,7 +161,7 @@ export function OurWorkHeroSection({
               className="partnerships-review-profiles global_brands_grid_wrap relative mt-[30px] flex items-center min-[992px]:-mx-[15px] max-[767.98px]:-mx-[15px] max-[767.98px]:w-[calc(100%+30px)] max-[767.98px]:flex-wrap max-[767.98px]:overflow-hidden before:hidden max-[767.98px]:before:absolute max-[767.98px]:before:top-0 max-[767.98px]:before:left-1/2 max-[767.98px]:before:block max-[767.98px]:before:h-full max-[767.98px]:before:w-px max-[767.98px]:before:-translate-x-1/2 max-[767.98px]:before:bg-[#d9d9d9] max-[767.98px]:before:content-[''] after:hidden max-[767.98px]:after:absolute max-[767.98px]:after:top-1/2 max-[767.98px]:after:left-5 max-[767.98px]:after:block max-[767.98px]:after:h-px max-[767.98px]:after:w-[calc(100%-40px)] max-[767.98px]:after:bg-[#d9d9d9] max-[767.98px]:after:content-['']"
               aria-label="Partnerships and independent review profiles"
             >
-              {proofLogos.map((logo) => (
+              {logos.map((logo) => (
                 <div
                   className="global_brands_item relative border-r border-[#d9d9d9] px-[15px] last:border-r-0 max-[767.98px]:w-1/2 max-[767.98px]:border-0 max-[767.98px]:p-[15px] max-[767.98px]:text-center"
                   key={logo.src}
@@ -150,8 +176,8 @@ export function OurWorkHeroSection({
                       className="h-auto w-auto max-w-[100px] max-[767.98px]:max-h-11 max-[767.98px]:object-contain"
                       src={logo.src}
                       alt={logo.alt}
-                      width={logo.width}
-                      height={logo.height}
+                      width={logo.width ?? 100}
+                      height={logo.height ?? 44}
                     />
                   </a>
                 </div>
@@ -167,8 +193,8 @@ export function OurWorkHeroSection({
                 className="scrolling_anim_img absolute top-0 max-[991.98px]:relative max-[991.98px]:left-0 max-[991.98px]:w-max left-0 h-full w-full px-[68px] max-[1199px]:px-5 max-[991.98px]:h-auto max-[991.98px]:px-0"
               >
                 <div className="scrolling_track max-[991.98px]:flex max-[991.98px]:flex-row max-[991.98px]:flex-nowrap">
-                  <ShowcaseSet />
-                  <ShowcaseSet decorative />
+                  <ShowcaseSet images={images} />
+                  <ShowcaseSet images={images} decorative />
                 </div>
               </div>
             </div>

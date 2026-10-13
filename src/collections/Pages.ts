@@ -12,6 +12,8 @@ import { PricingModelsBlock } from "@/blocks/PricingModelsBlock";
 import { TechnologiesGridBlock } from "@/blocks/TechnologiesGridBlock";
 import { TwoColImageWithTextBlock } from "@/blocks/TwoColImageWithTextBlock";
 import { IndustriesGridBlock } from "@/blocks/IndustriesGridBlock";
+import { LegalContentBlock } from "@/blocks/LegalContentBlock";
+import { SiteMapDirectoryBlock } from "@/blocks/SiteMapDirectoryBlock";
 import { RichTextBlock } from "@/blocks/RichTextBlock";
 import { ShopifyPlusAgencyBlock } from "@/blocks/ShopifyPlusAgencyBlock";
 import { WhiteLabelPartnerBlock } from "@/blocks/WhiteLabelPartnerBlock";
@@ -20,6 +22,25 @@ import { SelectedWorkBlock } from "@/blocks/SelectedWorkBlock";
 import { TestimonialsCarouselBlock } from "@/blocks/TestimonialsCarouselBlock";
 import { IntegrationsPartnersBlock } from "@/blocks/IntegrationsPartnersBlock";
 import { LatestInsightsBlock } from "@/blocks/LatestInsightsBlock";
+import { AboutHeroBlock } from "@/blocks/AboutHeroBlock";
+import { AboutStoryBlock } from "@/blocks/AboutStoryBlock";
+import { AboutTimelineBlock } from "@/blocks/AboutTimelineBlock";
+import { AboutFoundersBlock } from "@/blocks/AboutFoundersBlock";
+import { AboutTeamBlock } from "@/blocks/AboutTeamBlock";
+import { AboutValuesBlock } from "@/blocks/AboutValuesBlock";
+import { OurWorkHeroBlock } from "@/blocks/OurWorkHeroBlock";
+import { OurWorkProjectsBlock } from "@/blocks/OurWorkProjectsBlock";
+import { OurWorkCaseStudiesBlock } from "@/blocks/OurWorkCaseStudiesBlock";
+import { ContactHeroBlock } from "@/blocks/ContactHeroBlock";
+import { ContactFormBlock } from "@/blocks/ContactFormBlock";
+import { ContactOfficesBlock } from "@/blocks/ContactOfficesBlock";
+import { ContactDetailsBlock } from "@/blocks/ContactDetailsBlock";
+import { DiscoveryCallBlock } from "@/blocks/DiscoveryCallBlock";
+import { RequestQuoteHeroBlock } from "@/blocks/RequestQuoteHeroBlock";
+import { CareerHeroBlock } from "@/blocks/CareerHeroBlock";
+import { CareerOpportunitiesBlock } from "@/blocks/CareerOpportunitiesBlock";
+import { CareerPerksBlock } from "@/blocks/CareerPerksBlock";
+import { CareerApplyBlock } from "@/blocks/CareerApplyBlock";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const Pages: CollectionConfig = {
@@ -85,6 +106,8 @@ export const Pages: CollectionConfig = {
         TechnologiesGridBlock,
         TwoColImageWithTextBlock,
         IndustriesGridBlock,
+        LegalContentBlock,
+        SiteMapDirectoryBlock,
         RichTextBlock,
         ShopifyPlusAgencyBlock,
         WhiteLabelPartnerBlock,
@@ -93,6 +116,25 @@ export const Pages: CollectionConfig = {
         TestimonialsCarouselBlock,
         IntegrationsPartnersBlock,
         LatestInsightsBlock,
+        AboutHeroBlock,
+        AboutStoryBlock,
+        AboutTimelineBlock,
+        AboutFoundersBlock,
+        AboutTeamBlock,
+        AboutValuesBlock,
+        OurWorkHeroBlock,
+        OurWorkProjectsBlock,
+        OurWorkCaseStudiesBlock,
+        ContactHeroBlock,
+        ContactFormBlock,
+        ContactOfficesBlock,
+        ContactDetailsBlock,
+        DiscoveryCallBlock,
+        RequestQuoteHeroBlock,
+        CareerHeroBlock,
+        CareerOpportunitiesBlock,
+        CareerPerksBlock,
+        CareerApplyBlock,
       ],
     },
     {

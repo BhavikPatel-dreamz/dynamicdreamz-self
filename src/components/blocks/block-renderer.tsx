@@ -26,10 +26,31 @@ import { PricingTableSection } from "@/components/sections/shopify-plus-agency/p
 import { TechnologiesWorkWithSection } from "@/components/sections/technologies-work-with-section";
 import { TwoColImageWithTextSection } from "@/components/sections/two-col-image-with-text-section";
 import { IndustriesServedSection } from "@/components/sections/shopify-plus-agency/industries-served-section";
+import { SiteMapPage } from "@/components/sections/site-map-page";
+import { AboutHeroSection } from "@/components/sections/about/about-hero-section";
+import { AboutStorySection } from "@/components/sections/about/about-story-section";
+import { AboutTimelineSection } from "@/components/sections/about/about-timeline-section";
+import { AboutFoundersSection } from "@/components/sections/about/about-founders-section";
+import { AboutTeamSection } from "@/components/sections/about/about-team-section";
+import { AboutValuesSection } from "@/components/sections/about/about-values-section";
+import { OurWorkHeroSection } from "@/components/sections/our-work/our-work-hero-section";
+import { OurWorkProjectsSection } from "@/components/sections/our-work/our-work-projects-section";
+import { OurWorkCaseStudiesSection } from "@/components/sections/our-work/our-work-case-studies-section";
+import {
+  ContactHeroSection,
+  ContactFormSection,
+  ContactOfficesSection,
+  ContactDetailsSection,
+} from "@/components/sections/contact-page";
+import { BookDiscoveryCallPage } from "@/components/sections/book-a-discovery-call-page";
+import { RequestQuotePage } from "@/components/sections/request-quote-page";
+import { CareerHeroSection } from "@/components/sections/career/career-hero-section";
+import { CareerOpportunitiesSection } from "@/components/sections/career/career-opportunities-section";
+import { CareerBenefitIcon } from "@/components/sections/career/career-benefit-icons";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
+import { CareerApplyNowPage } from "@/components/sections/career-apply-now/career-apply-now-page";
 import { Container } from "@/components/ui/container";
-import { RichText } from "@/components/ui/rich-text";
 import { sharedUiCopy } from "@/content/common";
-import { serializeLexicalToHtml } from "@/lib/payload";
 
 export type CmsMedia =
   | {
@@ -70,6 +91,18 @@ export interface BlockHero {
   subheading?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  establishedText?: string;
+  partnerBadgeText?: string;
+  secondaryCta?: {
+    label?: string;
+    href?: string;
+  };
+  proofBadges?: readonly {
+    name?: string;
+    href?: string;
+    logo?: CmsMedia | null;
+    alt?: string;
+  }[];
   eyebrows?: readonly (string | { text?: string; id?: string | number })[];
   image?: CmsMedia | null;
   showReviews?: boolean;
@@ -284,14 +317,47 @@ export interface BlockIndustriesGrid {
   }[];
 }
 
-export interface BlockRichTextContent {
+export interface BlockLegalContent {
   __component?: string;
   blockType?: string;
   id?: string | number;
-  heading?: string;
   eyebrow?: string;
+  heading: string;
+  intro?: string;
   containerWidth?: "narrow" | "standard" | "full";
-  content?: unknown;
+  sections?: readonly {
+    id?: string | number;
+    title: string;
+    level?: "2" | "3";
+    paragraphs?: readonly { text: string }[];
+    items?: readonly { text: string; boldPrefix?: string }[];
+    closingParagraphs?: readonly { text: string }[];
+  }[];
+  contactInfo?: {
+    name?: string;
+    email?: string;
+    phone?: string;
+    phoneHref?: string;
+    address?: string;
+    addressHref?: string;
+  };
+}
+
+export interface BlockSiteMapDirectory {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description?: string;
+  groups?: readonly {
+    id?: string | number;
+    title?: string;
+    links?: readonly {
+      id?: string | number;
+      label: string;
+      href: string;
+    }[];
+  }[];
 }
 
 export interface BlockShopifyPlusAgency {
@@ -373,6 +439,281 @@ export interface BlockLatestInsights {
   ctaHref?: string;
 }
 
+export interface BlockAboutHero {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  description?: string;
+  deliveryTitle?: string;
+  statistics?: readonly { label: string; value: string }[];
+}
+
+export interface BlockAboutStory {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  description?: string;
+  caption?: string;
+  videoId?: string;
+  videoTitle?: string;
+  poster?: CmsMedia | null;
+  posterAlt?: string;
+  overlay?: CmsMedia | null;
+}
+
+export interface BlockAboutTimeline {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  description?: string;
+  milestones?: readonly {
+    year?: string;
+    description?: string;
+    image?: CmsMedia | null;
+    alt?: string;
+    width?: number;
+    height?: number;
+  }[];
+}
+
+export interface BlockAboutFounders {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+  descriptions?: readonly { text: string }[];
+  founders?: readonly {
+    name: string;
+    role: string;
+    biography?: string;
+    image?: CmsMedia | null;
+    alt?: string;
+    linkedIn?: string;
+  }[];
+}
+
+export interface BlockAboutTeam {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  keyManagers?: readonly {
+    name: string;
+    role: string;
+    image?: CmsMedia | null;
+    alt?: string;
+  }[];
+  departmentLeaders?: readonly {
+    name: string;
+    role: string;
+    image?: CmsMedia | null;
+    alt?: string;
+  }[];
+}
+
+export interface BlockAboutValues {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  description?: string;
+  values?: readonly {
+    title: string;
+    description: string;
+    iconName: string;
+  }[];
+}
+
+export interface BlockOurWorkHero {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  primaryCta?: { label?: string; href?: string };
+  secondaryCta?: { label?: string; href?: string };
+  showcaseImages?: readonly {
+    image?: CmsMedia | null;
+    alt?: string;
+    width?: number;
+    height?: number;
+  }[];
+}
+
+export interface BlockOurWorkProjects {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+}
+
+export interface BlockOurWorkCaseStudies {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+}
+
+export interface BlockContactHero {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  quickLinks?: readonly { label: string; href: string }[];
+}
+
+export interface BlockContactForm {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+}
+
+export interface BlockContactOffices {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  directionsLabel?: string;
+  offices?: readonly {
+    city: string;
+    address: string;
+    phone: string;
+    phoneHref: string;
+    directionsHref: string;
+  }[];
+}
+
+export interface BlockContactDetails {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+}
+
+export interface BlockDiscoveryCall {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  host?: {
+    name: string;
+    role: string;
+    image?: CmsMedia | null;
+    imageAlt?: string;
+  };
+  benefits?: readonly {
+    icon?: string;
+    title: string;
+    description: string;
+  }[];
+  calendar?: {
+    heading?: string;
+    details?: string;
+    src?: string;
+    iframeTitle?: string;
+  };
+}
+
+export interface BlockRequestQuoteHero {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heroTitle?: string;
+  heroDescription?: string;
+  formTitle?: string;
+  counters?: readonly { label: string; count: string; unit?: string }[];
+  badges?: readonly {
+    href?: string;
+    ariaLabel?: string;
+    logo?: CmsMedia | null;
+    alt?: string;
+    width?: number;
+    height?: number;
+  }[];
+  testimonials?: readonly {
+    name: string;
+    quote: string;
+    avatar?: CmsMedia | null;
+  }[];
+  budgetOptions?: readonly { option: string }[];
+}
+
+export interface BlockCareerHero {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  badges?: readonly {
+    href?: string;
+    alt?: string;
+    logo?: CmsMedia | null;
+    width?: number;
+    height?: number;
+  }[];
+  scrollingImages?: readonly {
+    image?: CmsMedia | null;
+    alt?: string;
+    width?: number;
+    height?: number;
+  }[];
+}
+
+export interface BlockCareerOpportunities {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+}
+
+export interface BlockCareerPerks {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  perks?: readonly {
+    title: string;
+    iconName: string;
+  }[];
+}
+
+export interface BlockCareerApply {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading?: string;
+  phoneLabel?: string;
+  phoneNumber?: string;
+  phoneHref?: string;
+  emailLabel?: string;
+  emailAddress?: string;
+  emailHref?: string;
+  note?: string;
+}
+
 export type CmsSectionBlock =
   | BlockHero
   | BlockProofCounters
@@ -387,7 +728,8 @@ export type CmsSectionBlock =
   | BlockTechnologiesGrid
   | BlockTwoColImageWithText
   | BlockIndustriesGrid
-  | BlockRichTextContent
+  | BlockLegalContent
+  | BlockSiteMapDirectory
   | BlockShopifyPlusAgency
   | BlockWhiteLabelPartner
   | BlockCommerceSolutions
@@ -395,6 +737,25 @@ export type CmsSectionBlock =
   | BlockTestimonialsCarousel
   | BlockIntegrationsPartners
   | BlockLatestInsights
+  | BlockAboutHero
+  | BlockAboutStory
+  | BlockAboutTimeline
+  | BlockAboutFounders
+  | BlockAboutTeam
+  | BlockAboutValues
+  | BlockOurWorkHero
+  | BlockOurWorkProjects
+  | BlockOurWorkCaseStudies
+  | BlockContactHero
+  | BlockContactForm
+  | BlockContactOffices
+  | BlockContactDetails
+  | BlockDiscoveryCall
+  | BlockRequestQuoteHero
+  | BlockCareerHero
+  | BlockCareerOpportunities
+  | BlockCareerPerks
+  | BlockCareerApply
   | { [key: string]: unknown; __component?: string; blockType?: string; id?: string | number };
 
 export interface BlockRendererProps {
@@ -425,7 +786,37 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
           case "hero": {
             const heroBlock = block as BlockHero;
             if (heroBlock.variant === "home") {
-              return <HomeHeroSection key={blockKey} />;
+              const proofLogos =
+                heroBlock.proofBadges && heroBlock.proofBadges.length > 0
+                  ? heroBlock.proofBadges.map((badge) => ({
+                      src: resolveMediaUrl(badge.logo),
+                      alt: badge.alt || badge.name || "",
+                      href: badge.href || "#",
+                      width:
+                        typeof badge.logo === "object" && badge.logo?.width
+                          ? badge.logo.width
+                          : 136,
+                      height:
+                        typeof badge.logo === "object" && badge.logo?.height
+                          ? badge.logo.height
+                          : 44,
+                    }))
+                  : undefined;
+
+              return (
+                <HomeHeroSection
+                  description={heroBlock.description}
+                  discoveryCta={heroBlock.ctaLabel}
+                  discoveryCtaHref={heroBlock.ctaHref}
+                  established={heroBlock.establishedText}
+                  key={blockKey}
+                  partnerBadge={heroBlock.partnerBadgeText}
+                  proofLogos={proofLogos}
+                  shopifyWorkCta={heroBlock.secondaryCta?.label}
+                  shopifyWorkCtaHref={heroBlock.secondaryCta?.href}
+                  title={heroBlock.title}
+                />
+              );
             }
 
             const imageUrl = resolveMediaUrl(heroBlock.image);
@@ -816,38 +1207,168 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             );
           }
 
-          case "rich-text-content": {
-            const rtBlock = block as BlockRichTextContent;
-            const html =
-              typeof rtBlock.content === "string"
-                ? rtBlock.content
-                : serializeLexicalToHtml(rtBlock.content);
-
+          case "legal-content": {
+            const legalBlock = block as BlockLegalContent;
+            const sectionsList = legalBlock.sections ?? [];
             const containerClass =
-              rtBlock.containerWidth === "narrow"
+              legalBlock.containerWidth === "narrow"
                 ? "max-w-[800px] mx-auto"
-                : rtBlock.containerWidth === "full"
+                : legalBlock.containerWidth === "full"
                   ? "w-full"
-                  : "max-w-[1200px] mx-auto";
+                  : undefined;
 
             return (
-              <section className="bg-white py-16 max-[767px]:py-10" key={blockKey}>
-                <Container>
-                  <div className={containerClass}>
-                    {rtBlock.eyebrow ? (
+              <React.Fragment key={blockKey}>
+                <section
+                  aria-labelledby={`legal-title-${block.id || index}`}
+                  className="overflow-hidden bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-40 pb-[85px] text-center max-[992px]:pt-[140px] max-[992px]:pb-[46px]"
+                >
+                  <Container className={containerClass}>
+                    {legalBlock.eyebrow ? (
                       <span className="text-brand-red mb-2 block font-montserrat text-xs font-bold uppercase tracking-wider">
-                        {rtBlock.eyebrow}
+                        {legalBlock.eyebrow}
                       </span>
                     ) : null}
-                    {rtBlock.heading ? (
-                      <h2 className="text-ink mb-6 font-sans text-3xl font-bold max-[767px]:text-2xl">
-                        {rtBlock.heading}
-                      </h2>
+                    <h1
+                      className="inline-block max-w-full font-sans text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
+                      id={`legal-title-${block.id || index}`}
+                    >
+                      {legalBlock.heading}
+                    </h1>
+                  </Container>
+                </section>
+
+                <section
+                  aria-label="Legal policy details"
+                  className="py-20 max-[992px]:py-[50px]"
+                >
+                  <Container className={containerClass}>
+                    {legalBlock.intro ? (
+                      <p className="mb-6 text-base leading-[30.4px] font-medium text-muted">
+                        {legalBlock.intro}
+                      </p>
                     ) : null}
-                    <RichText html={html} />
-                  </div>
-                </Container>
-              </section>
+
+                    {sectionsList.map((section, sIdx) => {
+                      const Heading = section.level === "3" ? "h3" : "h2";
+                      const headingClass =
+                        section.level === "3"
+                          ? "mb-2.5 font-sans text-lg leading-[28.8px] font-bold tracking-[-0.36px] text-ink max-[767px]:text-base max-[767px]:leading-[26px]"
+                          : "mb-6 font-sans text-2xl leading-[31.2px] font-bold tracking-[-0.48px] text-ink max-[767px]:text-xl max-[767px]:leading-[31.2px]";
+
+                      return (
+                        <div key={section.title || sIdx}>
+                          <Heading className={headingClass}>{section.title}</Heading>
+                          {section.paragraphs?.map((p, pIdx) => (
+                            <p
+                              className="mb-6 text-base leading-[30.4px] font-medium text-muted"
+                              key={pIdx}
+                            >
+                              {p.text}
+                            </p>
+                          ))}
+                          {section.items && section.items.length > 0 ? (
+                            <ul className="mb-6 ml-5 list-disc pl-0 text-base leading-[27px] font-medium tracking-[0.32px] text-muted">
+                              {section.items.map((item, itemIdx) => (
+                                <li
+                                  className={
+                                    itemIdx < section.items!.length - 1
+                                      ? "mb-[18px]"
+                                      : undefined
+                                  }
+                                  key={itemIdx}
+                                >
+                                  {item.boldPrefix ? (
+                                    <>
+                                      <strong>{item.boldPrefix}</strong>{" "}
+                                    </>
+                                  ) : null}
+                                  <span>{item.text}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          ) : null}
+                          {section.closingParagraphs?.map((cp, cpIdx) => (
+                            <p
+                              className="mb-6 text-base leading-[30.4px] font-medium text-muted"
+                              key={cpIdx}
+                            >
+                              {cp.text}
+                            </p>
+                          ))}
+                        </div>
+                      );
+                    })}
+
+                    {legalBlock.contactInfo?.email ? (
+                      <div className="mb-6 text-base leading-[30.4px] font-medium text-muted">
+                        {legalBlock.contactInfo.name ? (
+                          <h3 className="mb-2.5 font-sans text-lg leading-[28.8px] font-bold tracking-[-0.36px] text-ink max-[767px]:text-base max-[767px]:leading-[26px]">
+                            {legalBlock.contactInfo.name}
+                          </h3>
+                        ) : null}
+                        <address className="not-italic">
+                          {legalBlock.contactInfo.email ? (
+                            <p>
+                              <a
+                                className="text-[#d92128] underline transition-colors duration-300 hover:no-underline focus-visible:text-brand-red"
+                                href={`mailto:${legalBlock.contactInfo.email}`}
+                              >
+                                {legalBlock.contactInfo.email}
+                              </a>
+                            </p>
+                          ) : null}
+                          {legalBlock.contactInfo.phone ? (
+                            <p>
+                              <a
+                                className="text-[#d92128] underline transition-colors duration-300 hover:no-underline focus-visible:text-brand-red"
+                                href={
+                                  legalBlock.contactInfo.phoneHref ||
+                                  `tel:${legalBlock.contactInfo.phone}`
+                                }
+                              >
+                                {legalBlock.contactInfo.phone}
+                              </a>
+                            </p>
+                          ) : null}
+                          {legalBlock.contactInfo.address ? (
+                            <p>
+                              {legalBlock.contactInfo.addressHref ? (
+                                <a
+                                  className="text-[#d92128] underline transition-colors duration-300 hover:no-underline focus-visible:text-brand-red"
+                                  href={legalBlock.contactInfo.addressHref}
+                                  rel="noopener noreferrer"
+                                  target="_blank"
+                                >
+                                  {legalBlock.contactInfo.address}
+                                </a>
+                              ) : (
+                                legalBlock.contactInfo.address
+                              )}
+                            </p>
+                          ) : null}
+                        </address>
+                      </div>
+                    ) : null}
+                  </Container>
+                </section>
+              </React.Fragment>
+            );
+          }
+
+          case "sitemap-directory": {
+            const smapBlock = block as BlockSiteMapDirectory;
+            const customLinks = smapBlock.groups?.flatMap((g) =>
+              (g.links ?? []).map((l) => ({ label: l.label, href: l.href })),
+            );
+
+            return (
+              <SiteMapPage
+                key={blockKey}
+                links={
+                  customLinks && customLinks.length > 0 ? customLinks : undefined
+                }
+              />
             );
           }
 
@@ -953,6 +1474,431 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 ctaLabel={liBlock.ctaLabel}
                 key={blockKey}
                 title={liBlock.title}
+              />
+            );
+          }
+
+          case "about-hero": {
+            const ahBlock = block as BlockAboutHero;
+            return (
+              <AboutHeroSection
+                deliveryTitle={ahBlock.deliveryTitle}
+                description={ahBlock.description}
+                key={blockKey}
+                statistics={ahBlock.statistics}
+                title={ahBlock.title}
+              />
+            );
+          }
+
+          case "about-story": {
+            const asBlock = block as BlockAboutStory;
+            const posterUrl = resolveMediaUrl(asBlock.poster);
+            const overlayUrl = resolveMediaUrl(asBlock.overlay);
+            return (
+              <AboutStorySection
+                caption={asBlock.caption}
+                description={asBlock.description}
+                key={blockKey}
+                overlay={overlayUrl || undefined}
+                poster={posterUrl || undefined}
+                posterAlt={asBlock.posterAlt || undefined}
+                title={asBlock.title}
+                videoId={asBlock.videoId}
+                videoTitle={asBlock.videoTitle}
+              />
+            );
+          }
+
+          case "about-timeline": {
+            const atBlock = block as BlockAboutTimeline;
+            const customMilestones = atBlock.milestones?.map((m) => ({
+              year: m.year || "",
+              description: m.description || "",
+              image: resolveMediaUrl(m.image) || "/assets/about/timeline/established-2006.webp",
+              alt: m.alt || "",
+              width: m.width || 312,
+              height: m.height || 232,
+            }));
+
+            return (
+              <AboutTimelineSection
+                description={atBlock.description}
+                key={blockKey}
+                milestones={customMilestones}
+                title={atBlock.title}
+              />
+            );
+          }
+
+          case "about-founders": {
+            const afBlock = block as BlockAboutFounders;
+            const customFounders = afBlock.founders?.map((f) => ({
+              name: f.name,
+              role: f.role,
+              biography: f.biography,
+              image: resolveMediaUrl(f.image) || "/assets/about/team/virag-shah.jpg",
+              alt: f.alt || f.name,
+              linkedIn: f.linkedIn,
+            }));
+
+            return (
+              <AboutFoundersSection
+                descriptions={afBlock.descriptions?.map((d) => d.text).filter(Boolean)}
+                eyebrow={afBlock.eyebrow}
+                founders={customFounders}
+                key={blockKey}
+                title={afBlock.title}
+              />
+            );
+          }
+
+          case "about-team": {
+            const atmBlock = block as BlockAboutTeam;
+            const customKeyManagers = atmBlock.keyManagers?.map((m) => ({
+              name: m.name,
+              role: m.role,
+              image: resolveMediaUrl(m.image) || "/assets/about/team/tejal-parekh.jpg",
+              alt: m.alt || m.name,
+            }));
+            const customDeptLeaders = atmBlock.departmentLeaders?.map((l) => ({
+              name: l.name,
+              role: l.role,
+              image: resolveMediaUrl(l.image) || "/assets/about/team/mukesh-patel.jpg",
+              alt: l.alt || l.name,
+            }));
+
+            return (
+              <AboutTeamSection
+                departmentLeaders={customDeptLeaders}
+                key={blockKey}
+                keyManagers={customKeyManagers}
+              />
+            );
+          }
+
+          case "about-values": {
+            const avBlock = block as BlockAboutValues;
+            return (
+              <AboutValuesSection
+                description={avBlock.description}
+                key={blockKey}
+                title={avBlock.title}
+                values={avBlock.values}
+              />
+            );
+          }
+
+          case "our-work-hero": {
+            const owhBlock = block as BlockOurWorkHero;
+            const customShowcaseImages =
+              owhBlock.showcaseImages && owhBlock.showcaseImages.length > 0
+                ? owhBlock.showcaseImages.map((img) => ({
+                    src: resolveMediaUrl(img.image),
+                    alt: img.alt || "",
+                    width:
+                      typeof img.image === "object" && img.image?.width
+                        ? img.image.width
+                        : img.width,
+                    height:
+                      typeof img.image === "object" && img.image?.height
+                        ? img.image.height
+                        : img.height,
+                  }))
+                : undefined;
+
+            return (
+              <OurWorkHeroSection
+                content={{
+                  eyebrow: owhBlock.eyebrow || "",
+                  title: owhBlock.title || "",
+                  description: owhBlock.description || "",
+                  primaryCta: owhBlock.primaryCta
+                    ? {
+                        label: owhBlock.primaryCta.label || "",
+                        href: owhBlock.primaryCta.href || "",
+                      }
+                    : undefined,
+                  secondaryCta: owhBlock.secondaryCta
+                    ? {
+                        label: owhBlock.secondaryCta.label || "",
+                        href: owhBlock.secondaryCta.href || "",
+                      }
+                    : undefined,
+                }}
+                fullBleedShowcaseAtTablet
+                key={blockKey}
+                layout="caseStudiesLive"
+                showcaseImages={customShowcaseImages}
+                typography="liveMontserrat"
+              />
+            );
+          }
+
+          case "our-work-projects": {
+            const owpBlock = block as BlockOurWorkProjects;
+            return (
+              <OurWorkProjectsSection
+                description={owpBlock.description}
+                eyebrow={owpBlock.eyebrow}
+                key={blockKey}
+                title={owpBlock.title}
+              />
+            );
+          }
+
+          case "our-work-case-studies": {
+            const owcsBlock = block as BlockOurWorkCaseStudies;
+            return (
+              <OurWorkCaseStudiesSection
+                description={owcsBlock.description}
+                eyebrow={owcsBlock.eyebrow}
+                key={blockKey}
+                title={owcsBlock.title}
+              />
+            );
+          }
+
+          case "contact-hero": {
+            const chBlock = block as BlockContactHero;
+            return (
+              <ContactHeroSection
+                description={chBlock.description}
+                eyebrow={chBlock.eyebrow}
+                key={blockKey}
+                quickLinks={chBlock.quickLinks}
+                title={chBlock.title}
+              />
+            );
+          }
+
+          case "contact-form": {
+            const cfBlock = block as BlockContactForm;
+            return (
+              <ContactFormSection
+                description={cfBlock.description}
+                eyebrow={cfBlock.eyebrow}
+                key={blockKey}
+                title={cfBlock.title}
+              />
+            );
+          }
+
+          case "contact-offices": {
+            const coBlock = block as BlockContactOffices;
+            return (
+              <ContactOfficesSection
+                description={coBlock.description}
+                directionsLabel={coBlock.directionsLabel}
+                eyebrow={coBlock.eyebrow}
+                key={blockKey}
+                offices={coBlock.offices}
+                title={coBlock.title}
+              />
+            );
+          }
+
+          case "contact-details": {
+            const cdBlock = block as BlockContactDetails;
+            return (
+              <ContactDetailsSection
+                eyebrow={cdBlock.eyebrow}
+                key={blockKey}
+                title={cdBlock.title}
+              />
+            );
+          }
+
+          case "discovery-call": {
+            const dcBlock = block as BlockDiscoveryCall;
+            const hostImage = resolveMediaUrl(dcBlock.host?.image) || "/assets/discovery-call/discovery-call-host.webp";
+            const callContent = {
+              eyebrow: dcBlock.eyebrow || "",
+              title: dcBlock.title || "",
+              description: dcBlock.description || "",
+              host: {
+                name: dcBlock.host?.name || "",
+                role: dcBlock.host?.role || "",
+                image: hostImage,
+                imageAlt: dcBlock.host?.imageAlt || dcBlock.host?.name || "",
+              },
+              benefits: (dcBlock.benefits ?? []).map((b) => ({
+                icon: b.icon || "✓",
+                title: b.title,
+                description: b.description,
+              })),
+              calendar: {
+                heading: dcBlock.calendar?.heading || "",
+                details: dcBlock.calendar?.details || "",
+                src: dcBlock.calendar?.src || "",
+                iframeTitle: dcBlock.calendar?.iframeTitle || "",
+              },
+            };
+
+            return (
+              <BookDiscoveryCallPage
+                content={callContent}
+                key={blockKey}
+              />
+            );
+          }
+
+          case "request-quote-hero": {
+            const rqBlock = block as BlockRequestQuoteHero;
+            const customBadges =
+              rqBlock.badges && rqBlock.badges.length > 0
+                ? rqBlock.badges.map((b) => ({
+                    href: b.href || "#",
+                    ariaLabel: b.ariaLabel,
+                    image: resolveMediaUrl(b.logo),
+                    alt: b.alt || "",
+                    width:
+                      typeof b.logo === "object" && b.logo?.width
+                        ? b.logo.width
+                        : b.width,
+                    height:
+                      typeof b.logo === "object" && b.logo?.height
+                        ? b.logo.height
+                        : b.height,
+                  }))
+                : undefined;
+
+            const customTestimonials =
+              rqBlock.testimonials && rqBlock.testimonials.length > 0
+                ? rqBlock.testimonials.map((t) => ({
+                    name: t.name,
+                    quote: t.quote,
+                    avatar: resolveMediaUrl(t.avatar),
+                  }))
+                : undefined;
+
+            const hero =
+              rqBlock.heroTitle || rqBlock.heroDescription
+                ? {
+                    title: rqBlock.heroTitle || "",
+                    description: rqBlock.heroDescription || "",
+                  }
+                : undefined;
+
+            const counters =
+              rqBlock.counters && rqBlock.counters.length > 0
+                ? rqBlock.counters.map((c) => ({
+                    label: c.label,
+                    count: c.count,
+                    unit: c.unit,
+                  }))
+                : undefined;
+
+            const budgetOptions =
+              rqBlock.budgetOptions && rqBlock.budgetOptions.length > 0
+                ? rqBlock.budgetOptions.map((b) => b.option)
+                : undefined;
+
+            return (
+              <RequestQuotePage
+                badges={customBadges}
+                budgetOptions={budgetOptions}
+                counters={counters}
+                hero={hero}
+                key={blockKey}
+                testimonials={customTestimonials}
+              />
+            );
+          }
+
+          case "career-hero": {
+            const carhBlock = block as BlockCareerHero;
+            const customBadges =
+              carhBlock.badges && carhBlock.badges.length > 0
+                ? carhBlock.badges.map((b) => ({
+                    href: b.href || "#",
+                    alt: b.alt || "",
+                    src: resolveMediaUrl(b.logo),
+                    width:
+                      typeof b.logo === "object" && b.logo?.width
+                        ? b.logo.width
+                        : b.width,
+                    height:
+                      typeof b.logo === "object" && b.logo?.height
+                        ? b.logo.height
+                        : b.height,
+                  }))
+                : undefined;
+
+            const customScrollingImages =
+              carhBlock.scrollingImages && carhBlock.scrollingImages.length > 0
+                ? carhBlock.scrollingImages.map((img) => ({
+                    src: resolveMediaUrl(img.image),
+                    alt: img.alt || "",
+                    width:
+                      typeof img.image === "object" && img.image?.width
+                        ? img.image.width
+                        : img.width,
+                    height:
+                      typeof img.image === "object" && img.image?.height
+                        ? img.image.height
+                        : img.height,
+                  }))
+                : undefined;
+
+            return (
+              <CareerHeroSection
+                badges={customBadges}
+                description={carhBlock.description}
+                eyebrow={carhBlock.eyebrow}
+                key={blockKey}
+                scrollingImages={customScrollingImages}
+                title={carhBlock.title}
+              />
+            );
+          }
+
+          case "career-opportunities": {
+            const caroBlock = block as BlockCareerOpportunities;
+            return (
+              <CareerOpportunitiesSection
+                description={caroBlock.description}
+                eyebrow={caroBlock.eyebrow}
+                key={blockKey}
+                title={caroBlock.title}
+              />
+            );
+          }
+
+          case "career-perks": {
+            const carpBlock = block as BlockCareerPerks;
+            return (
+              <ThemeCustomizationServicesSection
+                className="transparent"
+                content={{
+                  eyebrow: carpBlock.eyebrow,
+                  heading: carpBlock.heading || "",
+                  description: carpBlock.description || "",
+                  boxes: (carpBlock.perks ?? []).map((box) => ({
+                    title: box.title,
+                    icon: <CareerBenefitIcon name={box.iconName} />,
+                  })),
+                }}
+                id="workplace-benefits"
+                key={blockKey}
+                variant="yellow"
+              />
+            );
+          }
+
+          case "career-apply": {
+            const caBlock = block as BlockCareerApply;
+            return (
+              <CareerApplyNowPage
+                emailAddress={caBlock.emailAddress}
+                emailHref={caBlock.emailHref}
+                emailLabel={caBlock.emailLabel}
+                heading={caBlock.heading}
+                key={blockKey}
+                note={caBlock.note}
+                phoneHref={caBlock.phoneHref}
+                phoneLabel={caBlock.phoneLabel}
+                phoneNumber={caBlock.phoneNumber}
               />
             );
           }
