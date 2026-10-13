@@ -4,8 +4,25 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { shopifyCroEngagements } from "@/content/shopify-cro-agency";
 
+export type ShopifyCroEngagementItem = {
+  title: string;
+  description: string;
+  icon: string;
+  alt: string;
+  features: readonly string[];
+  cta: {
+    label: string;
+    href: string;
+  };
+};
+
+export type ShopifyCroEngagementContent = {
+  heading: string | readonly string[];
+  items: readonly ShopifyCroEngagementItem[];
+};
+
 export type ShopifyCroEngagementSectionProps = {
-  content?: typeof shopifyCroEngagements;
+  content?: ShopifyCroEngagementContent;
   className?: string;
 };
 

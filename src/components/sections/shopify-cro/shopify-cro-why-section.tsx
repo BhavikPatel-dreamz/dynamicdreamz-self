@@ -2,8 +2,16 @@ import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { shopifyCroWhyDynamicDreamz } from "@/content/shopify-cro-agency";
 
+export type ShopifyCroWhyContent = {
+  eyebrow?: string;
+  heading: string | readonly string[];
+  paragraphs: readonly string[];
+  points: readonly string[];
+  tagline?: string;
+};
+
 export type ShopifyCroWhySectionProps = {
-  content?: typeof shopifyCroWhyDynamicDreamz;
+  content?: ShopifyCroWhyContent;
   className?: string;
 };
 

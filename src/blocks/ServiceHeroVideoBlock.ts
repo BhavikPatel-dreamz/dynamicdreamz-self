@@ -1,0 +1,61 @@
+import type { Block } from "payload";
+
+export const ServiceHeroVideoBlock: Block = {
+  slug: "service-hero-video",
+  labels: { singular: "Service Hero Video", plural: "Service Hero Videos" },
+  fields: [
+    { name: "title", type: "text", required: true },
+    { name: "titleAccent", type: "text" },
+    { name: "titleAccentTag", type: "select", options: ["i", "span"], defaultValue: "i" },
+    { name: "titleAccentClassName", type: "text" },
+    { name: "titleAccentPosition", type: "select", options: ["start", "end"], defaultValue: "end" },
+    { name: "subtitle", type: "text" },
+    { name: "description", type: "textarea" },
+    { name: "body", type: "textarea" },
+    { name: "eyebrow", type: "text" },
+    {
+      name: "eyebrowSpans",
+      type: "array",
+      dbName: "shv_eyebrows",
+      fields: [{ name: "text", type: "text" }],
+    },
+    {
+      name: "paragraphs",
+      type: "array",
+      dbName: "shv_paragraphs",
+      fields: [{ name: "text", type: "textarea" }],
+    },
+    { name: "cta", type: "text" },
+    { name: "ctaHref", type: "text" },
+    {
+      name: "secondaryCta",
+      type: "group",
+      fields: [
+        { name: "label", type: "text" },
+        { name: "href", type: "text" },
+      ],
+    },
+    { name: "video", type: "text" },
+    { name: "videoPoster", type: "upload", relationTo: "media" },
+    { name: "reviewCount", type: "text" },
+    { name: "rating", type: "text" },
+    { name: "platform", type: "text" },
+    { name: "showReviews", type: "checkbox", defaultValue: true },
+    {
+      name: "badges",
+      type: "array",
+      dbName: "shv_badges",
+      fields: [
+        { name: "name", type: "text", required: true },
+        { name: "logo", type: "upload", relationTo: "media" },
+        { name: "src", type: "text" },
+        { name: "href", type: "text" },
+        { name: "alt", type: "text" },
+        { name: "width", type: "number" },
+        { name: "height", type: "number" },
+      ],
+    },
+    { name: "variant", type: "select", options: ["default", "centered"], defaultValue: "default" },
+    { name: "wrapperClassName", type: "text" },
+  ],
+};

@@ -4,8 +4,35 @@ import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyCroRevenueImpact } from "@/content/shopify-cro-agency";
 
+export type ShopifyCroMetric = {
+  label: string;
+  value: string;
+  icon: string;
+  alt?: string;
+};
+
+export type ShopifyCroStateCard = {
+  badge: string;
+  metrics: readonly ShopifyCroMetric[];
+  totalLabel: string;
+  totalValue: string;
+};
+
+export type ShopifyCroRevenueImpactContent = {
+  eyebrow?: string;
+  heading: string | readonly string[];
+  description: string | readonly string[];
+  before: ShopifyCroStateCard;
+  after: ShopifyCroStateCard;
+  footer: {
+    text: string;
+    highlight: string;
+    suffix: string;
+  };
+};
+
 export type ShopifyCroRevenueImpactSectionProps = {
-  content?: typeof shopifyCroRevenueImpact;
+  content?: ShopifyCroRevenueImpactContent;
   className?: string;
 };
 

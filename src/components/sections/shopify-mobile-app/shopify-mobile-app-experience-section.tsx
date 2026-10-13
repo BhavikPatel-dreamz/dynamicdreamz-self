@@ -1,9 +1,21 @@
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
-import type { shopifyMobileAppExperience } from "@/content/shopify-mobile-app-development";
+
+export type ShopifyMobileAppMoment = {
+  step: string;
+  title: string;
+  description: string;
+};
+
+export type ShopifyMobileAppExperienceContent = {
+  eyebrow?: string;
+  heading: string | readonly string[];
+  description: string | readonly string[];
+  moments: readonly ShopifyMobileAppMoment[];
+};
 
 type ShopifyMobileAppExperienceSectionProps = {
-  content: typeof shopifyMobileAppExperience;
+  content: ShopifyMobileAppExperienceContent;
 };
 
 export function ShopifyMobileAppExperienceSection({

@@ -29,7 +29,7 @@ export type MobileAppHeroContent = {
     href: string;
     ariaLabel?: string;
   };
-  secondaryCta: {
+  secondaryCta?: {
     label: string;
     href: string;
     ariaLabel?: string;
@@ -46,7 +46,7 @@ export type MobileAppHeroContent = {
    */
   mobileBadgeLayout?: "divided" | "row";
   slides: readonly MobileAppHeroSlide[];
-  frameImage: {
+  frameImage?: {
     src: string;
     alt: string;
     width: number;
@@ -63,6 +63,12 @@ export function ShopifyMobileAppHeroSection({
 }: ShopifyMobileAppHeroSectionProps) {
   const mobileBadgeLayout = content.mobileBadgeLayout ?? "divided";
   const badgeRowLayout = mobileBadgeLayout === "row";
+  const frameImage = content.frameImage ?? {
+    src: "/assets/shopify-mobile-app/phone-frame.png",
+    alt: "Phone frame",
+    width: 280,
+    height: 574,
+  };
 
   return (
     <section className="hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[991px]:pt-16">
@@ -106,13 +112,15 @@ export function ShopifyMobileAppHeroSection({
                 >
                   {content.primaryCta.label}
                 </ButtonLink>
-                <ButtonLink
-                  href={content.secondaryCta.href}
-                  variant="outline"
-                  aria-label={content.secondaryCta.ariaLabel}
-                >
-                  {content.secondaryCta.label}
-                </ButtonLink>
+                {content.secondaryCta && (
+                  <ButtonLink
+                    href={content.secondaryCta.href}
+                    variant="outline"
+                    aria-label={content.secondaryCta.ariaLabel}
+                  >
+                    {content.secondaryCta.label}
+                  </ButtonLink>
+                )}
               </div>
 
               {content.badges && content.badges.length > 0 && (
@@ -158,7 +166,7 @@ export function ShopifyMobileAppHeroSection({
           <div className="right-col w-[48%] max-[1199px]:w-[50%] max-[1199px]:mx-auto max-[991px]:hidden">
             <PhoneAppSlider
               slides={content.slides}
-              frameImage={content.frameImage}
+              frameImage={frameImage}
             />
           </div>
         </div>

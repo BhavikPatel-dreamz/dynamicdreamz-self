@@ -20,8 +20,30 @@ function StarIcon() {
   );
 }
 
+export type PartnerDirectoryProofItem =
+  | {
+      kind: "image";
+      image: string;
+      imageAlt?: string;
+      imageWidth?: number;
+      imageHeight?: number;
+      label: string;
+    }
+  | {
+      kind: "rating" | "text";
+      value: string;
+      label: string;
+    };
+
+export type PartnerDirectoryProofContent = {
+  heading: string | readonly string[];
+  description: string | readonly string[];
+  href: string;
+  items: readonly PartnerDirectoryProofItem[];
+};
+
 type PartnerDirectoryProofSectionProps = {
-  content?: typeof shopifyPartnerDirectoryProof;
+  content?: PartnerDirectoryProofContent;
 };
 
 export function PartnerDirectoryProofSection({
@@ -61,11 +83,11 @@ export function PartnerDirectoryProofSection({
                     target="_blank"
                   >
                     <Image
-                      alt={item.imageAlt}
+                      alt={item.imageAlt ?? item.label}
                       className="mx-auto block h-11 w-[136px] object-contain"
-                      height={item.imageHeight}
+                      height={item.imageHeight ?? 44}
                       src={item.image}
-                      width={item.imageWidth}
+                      width={item.imageWidth ?? 136}
                     />
                   </a>
                 ) : (

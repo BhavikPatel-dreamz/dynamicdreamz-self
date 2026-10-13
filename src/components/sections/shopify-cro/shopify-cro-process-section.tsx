@@ -4,8 +4,22 @@ import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyCroProcess } from "@/content/shopify-cro-agency";
 
+export type ShopifyCroProcessStep = {
+  number: string;
+  title: string;
+  description: string;
+  icon: string;
+};
+
+export type ShopifyCroProcessContent = {
+  eyebrow?: string;
+  heading: string | readonly string[];
+  description: string | readonly string[];
+  steps: readonly ShopifyCroProcessStep[];
+};
+
 export type ShopifyCroProcessSectionProps = {
-  content?: typeof shopifyCroProcess;
+  content?: ShopifyCroProcessContent;
   className?: string;
 };
 

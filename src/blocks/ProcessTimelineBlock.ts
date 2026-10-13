@@ -6,11 +6,14 @@ export const ProcessTimelineBlock: Block = {
   fields: [
     { name: "eyebrow", type: "text" },
     { name: "heading", type: "text", required: true },
+    { name: "description", type: "textarea" },
+    { name: "columns", type: "number" },
     {
       name: "steps",
       type: "array",
       fields: [
         { name: "stepNumber", type: "text" },
+        { name: "step", type: "text" },
         { name: "title", type: "text", required: true },
         { name: "description", type: "textarea" },
       ],

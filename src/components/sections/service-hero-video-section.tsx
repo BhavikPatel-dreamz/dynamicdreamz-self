@@ -23,14 +23,17 @@ export type ServiceHeroVideoContent = {
   titleAccent?: string;
   subtitle?: string;
   lead?: string;
-  paragraphs: readonly (string | readonly string[])[];
-  cta: string;
-  ctaHref: string;
+  description?: string;
+  body?: string;
+  paragraphs?: readonly (string | readonly string[])[];
+  cta?: string;
+  ctaHref?: string;
   secondaryCta?: {
     label: string;
     href: string;
   };
   video?: string;
+  videoPoster?: string;
   image?: {
     src: string;
     alt: string;
@@ -38,7 +41,7 @@ export type ServiceHeroVideoContent = {
     height?: number;
     className?: string;
   };
-  badges: readonly HeroBadge[];
+  badges?: readonly HeroBadge[];
 };
 
 export type ServiceHeroVideoSectionProps = {
@@ -167,7 +170,7 @@ export function ServiceHeroVideoSection({
                 </p>
               ) : null}
 
-              {content.paragraphs.map((p, index) => (
+              {(content.paragraphs ?? []).map((p, index) => (
                 <p
                   className="mb-[15px] font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6 max-[767px]:text-sm max-[767px]:leading-[27px]"
                   key={index}
@@ -176,52 +179,56 @@ export function ServiceHeroVideoSection({
                 </p>
               ))}
 
-              <div className="btn-group flex items-center pt-2.5 max-[1199px]:justify-center max-[767px]:w-full max-[767px]:flex-col max-[767px]:items-center">
-                <ButtonLink
-                  className="min-h-[50px] px-5 py-[15px] max-[991px]:py-3 max-[991px]:px-5 font-montserrat text-base font-bold uppercase max-[767px]:w-full"
-                  href={content.ctaHref}
-                  variant="primary"
-                >
-                  {content.cta}
-                </ButtonLink>
-                {content.secondaryCta ? (
+              {content.cta && content.ctaHref ? (
+                <div className="btn-group flex items-center pt-2.5 max-[1199px]:justify-center max-[767px]:w-full max-[767px]:flex-col max-[767px]:items-center">
                   <ButtonLink
-                    className="ml-2.5 min-h-[50px] px-5 py-[15px] max-[991px]:py-3 max-[991px]:px-5 font-montserrat text-base font-bold uppercase max-[767px]:ml-0 max-[767px]:mt-2.5 max-[767px]:w-full"
-                    href={content.secondaryCta.href}
-                    variant="outline"
+                    className="min-h-[50px] px-5 py-[15px] max-[991px]:py-3 max-[991px]:px-5 font-montserrat text-base font-bold uppercase max-[767px]:w-full"
+                    href={content.ctaHref}
+                    variant="primary"
                   >
-                    {content.secondaryCta.label}
+                    {content.cta}
                   </ButtonLink>
-                ) : null}
-              </div>
-
-              <div className="global_brands_grid_wrap relative mt-[30px] -mx-[15px] flex flex-wrap items-center max-[1199px]:justify-center max-[767px]:overflow-hidden max-[767px]:before:absolute max-[767px]:before:left-1/2 max-[767px]:before:top-0 max-[767px]:before:h-full max-[767px]:before:w-[1px] max-[767px]:before:-translate-x-1/2 max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] max-[767px]:after:absolute max-[767px]:after:left-5 max-[767px]:after:top-1/2 max-[767px]:after:h-[1px] max-[767px]:after:w-[calc(100%-40px)] max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']">
-                {content.badges.map((badge, idx) => (
-                  <div
-                    className={cn(
-                      "global_brands_item px-[15px] max-[1199px]:px-3",
-                      "border-r border-[#d9d9d9] last:border-r-0 max-[767px]:border-r-0",
-                      "max-[767px]:w-1/2 max-[767px]:p-[15px] max-[767px]:text-center",
-                    )}
-                    key={badge.label || badge.name || idx}
-                  >
-                    <a
-                      className="flex items-center justify-center"
-                      href={badge.href}
-                      rel="nofollow noopener noreferrer"
-                      target="_blank"
+                  {content.secondaryCta ? (
+                    <ButtonLink
+                      className="ml-2.5 min-h-[50px] px-5 py-[15px] max-[991px]:py-3 max-[991px]:px-5 font-montserrat text-base font-bold uppercase max-[767px]:ml-0 max-[767px]:mt-2.5 max-[767px]:w-full"
+                      href={content.secondaryCta.href}
+                      variant="outline"
                     >
-                      <Image
-                        alt={badge.alt}
-                        className="h-auto w-auto max-w-[100px] object-contain max-[767px]:max-h-[44px]"
-                        height={badge.height}
-                        src={badge.icon || badge.src || ""}
-                        width={badge.width}
-                      />
-                    </a>
-                  </div>
-                ))}
-              </div>
+                      {content.secondaryCta.label}
+                    </ButtonLink>
+                  ) : null}
+                </div>
+              ) : null}
+
+              {content.badges && content.badges.length > 0 ? (
+                <div className="global_brands_grid_wrap relative mt-[30px] -mx-[15px] flex flex-wrap items-center max-[1199px]:justify-center max-[767px]:overflow-hidden max-[767px]:before:absolute max-[767px]:before:left-1/2 max-[767px]:before:top-0 max-[767px]:before:h-full max-[767px]:before:w-[1px] max-[767px]:before:-translate-x-1/2 max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] max-[767px]:after:absolute max-[767px]:after:left-5 max-[767px]:after:top-1/2 max-[767px]:after:h-[1px] max-[767px]:after:w-[calc(100%-40px)] max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']">
+                  {content.badges.map((badge, idx) => (
+                    <div
+                      className={cn(
+                        "global_brands_item px-[15px] max-[1199px]:px-3",
+                        "border-r border-[#d9d9d9] last:border-r-0 max-[767px]:border-r-0",
+                        "max-[767px]:w-1/2 max-[767px]:p-[15px] max-[767px]:text-center",
+                      )}
+                      key={badge.label || badge.name || idx}
+                    >
+                      <a
+                        className="flex items-center justify-center"
+                        href={badge.href}
+                        rel="nofollow noopener noreferrer"
+                        target="_blank"
+                      >
+                        <Image
+                          alt={badge.alt}
+                          className="h-auto w-auto max-w-[100px] object-contain max-[767px]:max-h-[44px]"
+                          height={badge.height}
+                          src={badge.icon || badge.src || ""}
+                          width={badge.width}
+                        />
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
             </div>
           </div>
 

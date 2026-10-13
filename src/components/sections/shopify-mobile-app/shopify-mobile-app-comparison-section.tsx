@@ -1,9 +1,23 @@
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
-import type { shopifyMobileAppComparison } from "@/content/shopify-mobile-app-development";
+
+export type ShopifyMobileAppComparisonRow = {
+  title: string;
+  subtitle: string;
+  appBuilder: string;
+  custom: string;
+};
+
+export type ShopifyMobileAppComparisonContent = {
+  eyebrow?: string;
+  heading: string | readonly string[];
+  description: string | readonly string[];
+  tableHeaders: readonly string[];
+  rows: readonly ShopifyMobileAppComparisonRow[];
+};
 
 type ShopifyMobileAppComparisonSectionProps = {
-  content: typeof shopifyMobileAppComparison;
+  content: ShopifyMobileAppComparisonContent;
 };
 
 export function ShopifyMobileAppComparisonSection({

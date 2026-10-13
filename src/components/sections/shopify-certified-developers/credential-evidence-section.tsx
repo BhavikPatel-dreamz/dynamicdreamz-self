@@ -4,8 +4,23 @@ import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { Container } from "@/components/ui/container";
 import { shopifyCredentialEvidence } from "@/content/shopify-certified-developers";
 
+export type CredentialEvidenceItem = {
+  title: string;
+  count: string;
+  image: string;
+  imageAlt?: string;
+  href: string;
+};
+
+export type CredentialEvidenceContent = {
+  heading: string | readonly string[];
+  description: string | readonly string[];
+  note?: string;
+  items: readonly CredentialEvidenceItem[];
+};
+
 type CredentialEvidenceSectionProps = {
-  content?: typeof shopifyCredentialEvidence;
+  content?: CredentialEvidenceContent;
 };
 
 export function CredentialEvidenceSection({
@@ -37,7 +52,7 @@ export function CredentialEvidenceSection({
                 target="_blank"
               >
                 <Image
-                  alt={item.imageAlt}
+                  alt={item.imageAlt ?? item.title}
                   className="h-[213px] w-[174px] translate-y-[18px] object-contain transition-transform duration-300 hover:translate-y-2.5 motion-reduce:transition-none max-[1199px]:h-auto max-[1199px]:w-[165px] max-[575px]:w-[150px]"
                   height={213}
                   src={item.image}

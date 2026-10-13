@@ -2,8 +2,19 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { shopifyCroAssessment } from "@/content/shopify-cro-agency";
 
+export type ShopifyCroAssessmentContent = {
+  heading: string | readonly string[];
+  description: string | readonly string[];
+  points: readonly string[];
+  cta: {
+    label: string;
+    href: string;
+    external?: boolean;
+  };
+};
+
 export type ShopifyCroAssessmentSectionProps = {
-  content?: typeof shopifyCroAssessment;
+  content?: ShopifyCroAssessmentContent;
   className?: string;
 };
 

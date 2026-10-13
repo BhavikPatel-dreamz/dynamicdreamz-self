@@ -1,8 +1,13 @@
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
-import { shopifyPlusAgencyWhyChoose } from "@/content/shopify-plus-agency";
 
-export type ShopifyPlusProofContent = typeof shopifyPlusAgencyWhyChoose;
+export type ShopifyPlusProofContent = {
+  eyebrow?: string;
+  heading: string | readonly string[];
+  intro?: string;
+  text?: string;
+  stats: readonly string[];
+};
 
 export function ShopifyPlusProofSection({
   content,

@@ -11,6 +11,7 @@ export type ShopifyAppProcessStep = {
 
 export type ShopifyAppProcessSectionProps = {
   content: {
+    eyebrow?: string;
     heading: string | readonly string[];
     steps: readonly ShopifyAppProcessStep[];
   };

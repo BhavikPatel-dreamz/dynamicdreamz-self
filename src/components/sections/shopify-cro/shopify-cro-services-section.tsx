@@ -4,8 +4,23 @@ import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyCroServices } from "@/content/shopify-cro-agency";
 
+export type ShopifyCroServiceItem = {
+  title: string;
+  description: string;
+  icon: string;
+  alt?: string;
+  deliverables?: readonly string[];
+};
+
+export type ShopifyCroServicesContent = {
+  eyebrow?: string;
+  heading: string | readonly string[];
+  description: string | readonly string[];
+  items: readonly ShopifyCroServiceItem[];
+};
+
 export type ShopifyCroServicesSectionProps = {
-  content?: typeof shopifyCroServices;
+  content?: ShopifyCroServicesContent;
   className?: string;
 };
 
@@ -45,7 +60,7 @@ export function ShopifyCroServicesSection({
                 <div className="icon mx-auto mb-[18px] size-[54px]">
                   <Image
                     src={item.icon}
-                    alt={item.alt}
+                    alt={item.alt ?? item.title}
                     width={54}
                     height={54}
                     className="size-full object-contain"

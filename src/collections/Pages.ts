@@ -41,6 +41,59 @@ import { CareerHeroBlock } from "@/blocks/CareerHeroBlock";
 import { CareerOpportunitiesBlock } from "@/blocks/CareerOpportunitiesBlock";
 import { CareerPerksBlock } from "@/blocks/CareerPerksBlock";
 import { CareerApplyBlock } from "@/blocks/CareerApplyBlock";
+import { ServiceHeroVideoBlock } from "@/blocks/ServiceHeroVideoBlock";
+import { IndustryBrandsBlock } from "@/blocks/IndustryBrandsBlock";
+import { ShopifyPlusProofBlock } from "@/blocks/ShopifyPlusProofBlock";
+import { PortfolioShowcaseBlock } from "@/blocks/PortfolioShowcaseBlock";
+import { ShopifyStageServicesBlock } from "@/blocks/ShopifyStageServicesBlock";
+import { CaseStudyCardsBlock } from "@/blocks/CaseStudyCardsBlock";
+import { EvaluationFrameworkBlock } from "@/blocks/EvaluationFrameworkBlock";
+import { ShopifyTeamBoxesBlock } from "@/blocks/ShopifyTeamBoxesBlock";
+import { ShopifyHorizontalProcessBlock } from "@/blocks/ShopifyHorizontalProcessBlock";
+import { VerifiedKnowledgeBlock } from "@/blocks/VerifiedKnowledgeBlock";
+import { CredentialEvidenceBlock } from "@/blocks/CredentialEvidenceBlock";
+import { CredentialTabsBlock } from "@/blocks/CredentialTabsBlock";
+import { CertifiedAgencySupportBlock } from "@/blocks/CertifiedAgencySupportBlock";
+import { CertifiedServicesBlock } from "@/blocks/CertifiedServicesBlock";
+import { PartnerDirectoryProofBlock } from "@/blocks/PartnerDirectoryProofBlock";
+import { WhiteLabelFinalCtaBlock } from "@/blocks/WhiteLabelFinalCtaBlock";
+import { ShopifyMigrationServicesBlock } from "@/blocks/ShopifyMigrationServicesBlock";
+import { ShopifyMigrationNumberedGridBlock } from "@/blocks/ShopifyMigrationNumberedGridBlock";
+import { SeoSafeMigrationBlock } from "@/blocks/SeoSafeMigrationBlock";
+import { WhyChooseShopifyMigrationBlock } from "@/blocks/WhyChooseShopifyMigrationBlock";
+import { ThemeCustomizationServicesBlock } from "@/blocks/ThemeCustomizationServicesBlock";
+import { ThemeCustomizationApproachBlock } from "@/blocks/ThemeCustomizationApproachBlock";
+import { ShopifyThemesGridBlock } from "@/blocks/ShopifyThemesGridBlock";
+import { AiEmpoweredDeliveryBlock } from "@/blocks/AiEmpoweredDeliveryBlock";
+import { ShopifyCroBarriersBlock } from "@/blocks/ShopifyCroBarriersBlock";
+import { ShopifyCroRevenueImpactBlock } from "@/blocks/ShopifyCroRevenueImpactBlock";
+import { ShopifyCroServicesBlock } from "@/blocks/ShopifyCroServicesBlock";
+import { ShopifyCroAssessmentBlock } from "@/blocks/ShopifyCroAssessmentBlock";
+import { ShopifyCroProcessBlock } from "@/blocks/ShopifyCroProcessBlock";
+import { ShopifyCroWhyBlock } from "@/blocks/ShopifyCroWhyBlock";
+import { ShopifyCroEngagementBlock } from "@/blocks/ShopifyCroEngagementBlock";
+import { ShopifyMobileAppHeroBlock } from "@/blocks/ShopifyMobileAppHeroBlock";
+import { WhiteLabelCounterBlock } from "@/blocks/WhiteLabelCounterBlock";
+import { ShopifyMobileAppDtcBlock } from "@/blocks/ShopifyMobileAppDtcBlock";
+import { ShopifyMobileAppWorkBlock } from "@/blocks/ShopifyMobileAppWorkBlock";
+import { ShopifyMobileAppComparisonBlock } from "@/blocks/ShopifyMobileAppComparisonBlock";
+import { ShopifyMobileAppExperienceBlock } from "@/blocks/ShopifyMobileAppExperienceBlock";
+import { WhiteLabelProcessBlock } from "@/blocks/WhiteLabelProcessBlock";
+import { AgencyServicesBlock } from "@/blocks/AgencyServicesBlock";
+import { CityPageCounterBlock } from "@/blocks/CityPageCounterBlock";
+import { ShopifyTeamBehindItBlock } from "@/blocks/ShopifyTeamBehindItBlock";
+import { CityWhyChooseBoxesBlock } from "@/blocks/CityWhyChooseBoxesBlock";
+import { ShopifyHoursHeroBlock } from "@/blocks/ShopifyHoursHeroBlock";
+import { ShopifyHoursComparisonBlock } from "@/blocks/ShopifyHoursComparisonBlock";
+import { ShopifyHoursTasksBlock } from "@/blocks/ShopifyHoursTasksBlock";
+import { NumberedProcessTimelineBlock } from "@/blocks/NumberedProcessTimelineBlock";
+import { ShopifyAppsHeroBlock } from "@/blocks/ShopifyAppsHeroBlock";
+import { ShopifyAppsGridBlock } from "@/blocks/ShopifyAppsGridBlock";
+import { ShopifyAppBenefitsBlock } from "@/blocks/ShopifyAppBenefitsBlock";
+import { ShopifyAppFeaturesBlock } from "@/blocks/ShopifyAppFeaturesBlock";
+import { ShopifyAppProcessBlock } from "@/blocks/ShopifyAppProcessBlock";
+import { RisksShopifyTopicsBlock } from "@/blocks/RisksShopifyTopicsBlock";
+import { ImageCtaBlock } from "@/blocks/ImageCtaBlock";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const Pages: CollectionConfig = {
@@ -135,6 +188,59 @@ export const Pages: CollectionConfig = {
         CareerOpportunitiesBlock,
         CareerPerksBlock,
         CareerApplyBlock,
+        ServiceHeroVideoBlock,
+        IndustryBrandsBlock,
+        ShopifyPlusProofBlock,
+        PortfolioShowcaseBlock,
+        ShopifyStageServicesBlock,
+        CaseStudyCardsBlock,
+        EvaluationFrameworkBlock,
+        ShopifyTeamBoxesBlock,
+        ShopifyHorizontalProcessBlock,
+        VerifiedKnowledgeBlock,
+        CredentialEvidenceBlock,
+        CredentialTabsBlock,
+        CertifiedAgencySupportBlock,
+        CertifiedServicesBlock,
+        PartnerDirectoryProofBlock,
+        WhiteLabelFinalCtaBlock,
+        ShopifyMigrationServicesBlock,
+        ShopifyMigrationNumberedGridBlock,
+        SeoSafeMigrationBlock,
+        WhyChooseShopifyMigrationBlock,
+        ThemeCustomizationServicesBlock,
+        ThemeCustomizationApproachBlock,
+        ShopifyThemesGridBlock,
+        AiEmpoweredDeliveryBlock,
+        ShopifyCroBarriersBlock,
+        ShopifyCroRevenueImpactBlock,
+        ShopifyCroServicesBlock,
+        ShopifyCroAssessmentBlock,
+        ShopifyCroProcessBlock,
+        ShopifyCroWhyBlock,
+        ShopifyCroEngagementBlock,
+        ShopifyMobileAppHeroBlock,
+        WhiteLabelCounterBlock,
+        ShopifyMobileAppDtcBlock,
+        ShopifyMobileAppWorkBlock,
+        ShopifyMobileAppComparisonBlock,
+        ShopifyMobileAppExperienceBlock,
+        WhiteLabelProcessBlock,
+        AgencyServicesBlock,
+        CityPageCounterBlock,
+        ShopifyTeamBehindItBlock,
+        CityWhyChooseBoxesBlock,
+        ShopifyHoursHeroBlock,
+        ShopifyHoursComparisonBlock,
+        ShopifyHoursTasksBlock,
+        NumberedProcessTimelineBlock,
+        ShopifyAppsHeroBlock,
+        ShopifyAppsGridBlock,
+        ShopifyAppBenefitsBlock,
+        ShopifyAppFeaturesBlock,
+        ShopifyAppProcessBlock,
+        RisksShopifyTopicsBlock,
+        ImageCtaBlock,
       ],
     },
     {

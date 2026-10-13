@@ -2,6 +2,13 @@ import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import type { PortfolioAppLink } from "@/components/ui/portfolio-project-card";
 import type { WhiteLabelProcessStep } from "@/types/white-label-service";
 
+export const mobileAppPlatformLabels = {
+  android: "Android App",
+  ios: "IOS App",
+  androidIcon: "/assets/our-work/platforms/android-icon.svg",
+  iosIcon: "/assets/our-work/platforms/app-store-ios.svg",
+} as const;
+
 export type HeroBadgeItem = {
   src: string;
   alt: string;

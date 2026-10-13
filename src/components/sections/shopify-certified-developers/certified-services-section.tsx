@@ -3,8 +3,20 @@ import { Container } from "@/components/ui/container";
 import { certifiedDeveloperServices } from "@/content/shopify-certified-developers";
 import { cn } from "@/lib/class-names";
 
+export type CertifiedServicesItem = {
+  eyebrow?: string;
+  title: string;
+  description: string;
+};
+
+export type CertifiedServicesContent = {
+  heading: string | readonly string[];
+  description: string | readonly string[];
+  items: readonly CertifiedServicesItem[];
+};
+
 type CertifiedServicesSectionProps = {
-  content?: typeof certifiedDeveloperServices;
+  content?: CertifiedServicesContent;
 };
 
 export function CertifiedServicesSection({

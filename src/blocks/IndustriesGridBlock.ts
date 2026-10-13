@@ -15,7 +15,7 @@ export const IndustriesGridBlock: Block = {
         { name: "title", type: "text", required: true },
         { name: "eyebrow", type: "text" },
         { name: "description", type: "textarea" },
-        { name: "image", type: "upload", relationTo: "media", required: true },
+        { name: "image", type: "upload", relationTo: "media" },
         { name: "href", type: "text" },
       ],
     },

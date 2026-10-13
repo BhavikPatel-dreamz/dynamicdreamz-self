@@ -4,8 +4,21 @@ import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyCroBarriers } from "@/content/shopify-cro-agency";
 
+export type ShopifyCroBarrierItem = {
+  title: string;
+  icon: string;
+  alt: string;
+};
+
+export type ShopifyCroBarriersContent = {
+  eyebrow?: string;
+  heading: string | readonly string[];
+  description: string | readonly string[];
+  items: readonly ShopifyCroBarrierItem[];
+};
+
 export type ShopifyCroBarriersSectionProps = {
-  content?: typeof shopifyCroBarriers;
+  content?: ShopifyCroBarriersContent;
   className?: string;
 };
 

@@ -23,8 +23,17 @@ function CheckIcon() {
   );
 }
 
+export type CertifiedAgencySupportContent = {
+  heading: string | readonly string[];
+  paragraphs?: readonly string[];
+  items: readonly {
+    title: string;
+    description: string;
+  }[];
+};
+
 type CertifiedAgencySupportSectionProps = {
-  content?: typeof certifiedAgencySupport;
+  content?: CertifiedAgencySupportContent;
 };
 
 export function CertifiedAgencySupportSection({

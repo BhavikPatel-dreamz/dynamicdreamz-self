@@ -1,15 +1,39 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
-import type { shopifyMobileAppDtcSection } from "@/content/shopify-mobile-app-development";
+import { shopifyMobileAppDtcBrands } from "@/content/shopify-mobile-app-development";
+
+export type ShopifyMobileAppDtcCard = {
+  tag?: string;
+  title: string;
+  description: string;
+  badges?: readonly {
+    href?: string;
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
+  }[];
+};
+
+export type ShopifyMobileAppDtcContent = {
+  eyebrow?: string;
+  heading: string | readonly string[];
+  paragraphs?: readonly (string | readonly string[])[];
+  cards: readonly ShopifyMobileAppDtcCard[];
+};
 
 type ShopifyMobileAppDtcSectionProps = {
-  content: typeof shopifyMobileAppDtcSection;
+  content?: ShopifyMobileAppDtcContent;
 };
 
 export function ShopifyMobileAppDtcSection({
-  content,
+  content = shopifyMobileAppDtcBrands,
 }: ShopifyMobileAppDtcSectionProps) {
+  const paragraphs = content.paragraphs
+    ? content.paragraphs.map((p) => (typeof p === "string" ? p : p.join(" ")))
+    : undefined;
+
   return (
     <section className="shopify_mobile_app_development_for_dtc_brands bg-[#FAFAF7] py-20 max-[991px]:py-[50px]">
       <Container className="min-[1400px]:max-w-[1408px] px-[15px]">
@@ -17,7 +41,7 @@ export function ShopifyMobileAppDtcSection({
           variant="services"
           eyebrow={content.eyebrow}
           heading={content.heading}
-          paragraphs={content.paragraphs}
+          paragraphs={paragraphs}
           titleColumnClassName="w-[42%] max-[1199px]:w-[48%] max-[992px]:w-full"
           textColumnClassName="w-[48%] max-[992px]:w-full"
           className="mb-[50px] max-[767px]:mb-[30px]"

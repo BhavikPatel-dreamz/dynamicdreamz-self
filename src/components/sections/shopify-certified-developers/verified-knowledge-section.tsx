@@ -4,8 +4,21 @@ import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { Container } from "@/components/ui/container";
 import { verifiedShopifyKnowledge } from "@/content/shopify-certified-developers";
 
+export type VerifiedKnowledgeItem = {
+  title: string;
+  description: string;
+  icon: string;
+  iconAlt?: string;
+};
+
+export type VerifiedKnowledgeContent = {
+  heading: string | readonly string[];
+  description: string | readonly string[];
+  items: readonly VerifiedKnowledgeItem[];
+};
+
 type VerifiedKnowledgeSectionProps = {
-  content?: typeof verifiedShopifyKnowledge;
+  content?: VerifiedKnowledgeContent;
 };
 
 export function VerifiedKnowledgeSection({
@@ -33,7 +46,7 @@ export function VerifiedKnowledgeSection({
               key={item.title}
             >
               <Image
-                alt={item.iconAlt}
+                alt={item.iconAlt ?? ""}
                 aria-hidden={!item.iconAlt || undefined}
                 className="mx-auto mb-5 size-[62px] object-contain"
                 height={62}

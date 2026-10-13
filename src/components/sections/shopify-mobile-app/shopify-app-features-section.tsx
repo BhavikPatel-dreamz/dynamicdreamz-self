@@ -10,6 +10,7 @@ export type ShopifyAppFeatureItem = {
 
 export type ShopifyAppFeaturesSectionProps = {
   content: {
+    eyebrow?: string;
     heading: string;
     centerImage: {
       src: string;

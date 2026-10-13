@@ -1,9 +1,18 @@
-import { CredentialTabs } from "@/components/sections/shopify-certified-developers/credential-tabs";
+import {
+  CredentialTabs,
+  type CredentialTabItem,
+} from "@/components/sections/shopify-certified-developers/credential-tabs";
 import { Container } from "@/components/ui/container";
 import { shopifyCredentialTabs } from "@/content/shopify-certified-developers";
 
+export type CredentialTabsContent = {
+  heading: string | readonly string[];
+  description: string | readonly string[];
+  items: readonly CredentialTabItem[];
+};
+
 type CredentialTabsSectionProps = {
-  content?: typeof shopifyCredentialTabs;
+  content?: CredentialTabsContent;
 };
 
 export function CredentialTabsSection({

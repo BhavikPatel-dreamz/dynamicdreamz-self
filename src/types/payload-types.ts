@@ -722,9 +722,12 @@ export interface Page {
         | {
             eyebrow?: string | null;
             heading: string;
+            description?: string | null;
+            columns?: number | null;
             steps?:
               | {
                   stepNumber?: string | null;
+                  step?: string | null;
                   title: string;
                   description?: string | null;
                   id?: string | null;
@@ -864,7 +867,7 @@ export interface Page {
                   title: string;
                   eyebrow?: string | null;
                   description?: string | null;
-                  image: number | Media;
+                  image?: (number | null) | Media;
                   href?: string | null;
                   id?: string | null;
                 }[]
@@ -1377,6 +1380,1130 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'career-apply';
+          }
+        | {
+            title: string;
+            titleAccent?: string | null;
+            titleAccentTag?: ('i' | 'span') | null;
+            titleAccentClassName?: string | null;
+            titleAccentPosition?: ('start' | 'end') | null;
+            subtitle?: string | null;
+            description?: string | null;
+            body?: string | null;
+            eyebrow?: string | null;
+            eyebrowSpans?:
+              | {
+                  text?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            paragraphs?:
+              | {
+                  text?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            cta?: string | null;
+            ctaHref?: string | null;
+            secondaryCta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            video?: string | null;
+            videoPoster?: (number | null) | Media;
+            reviewCount?: string | null;
+            rating?: string | null;
+            platform?: string | null;
+            showReviews?: boolean | null;
+            badges?:
+              | {
+                  name: string;
+                  logo?: (number | null) | Media;
+                  src?: string | null;
+                  href?: string | null;
+                  alt?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            variant?: ('default' | 'centered') | null;
+            wrapperClassName?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'service-hero-video';
+          }
+        | {
+            heading: string;
+            eyebrow?: string | null;
+            density?: ('standard' | 'compact' | 'flexible') | null;
+            items?:
+              | {
+                  name: string;
+                  logo?: (number | null) | Media;
+                  src?: string | null;
+                  alt?: string | null;
+                  url?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'industry-brands';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            intro?: string | null;
+            text?: string | null;
+            stats?:
+              | {
+                  stat: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-plus-proof';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            category?: string | null;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            hideCta?: boolean | null;
+            columns?: number | null;
+            variant?: ('default' | 'liveGrid') | null;
+            cardVariant?: ('default' | 'ourWorkRefresh') | null;
+            headerLayout?: ('centered' | 'split') | null;
+            sectionId?: string | null;
+            items?:
+              | {
+                  name: string;
+                  href?: string | null;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  imageAlt?: string | null;
+                  category?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'portfolio-showcase';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            lastColFull?: boolean | null;
+            sixCards?: boolean | null;
+            items?:
+              | {
+                  tag?: string | null;
+                  title: string;
+                  description: string;
+                  pills?:
+                    | {
+                        text?: string | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  cta?: {
+                    label?: string | null;
+                    href?: string | null;
+                  };
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-stage-services';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            ctaLabel?: string | null;
+            items?:
+              | {
+                  name: string;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  imageAlt?: string | null;
+                  href: string;
+                  platform?: string | null;
+                  industry?: string | null;
+                  ctaLabel?: string | null;
+                  description?: string | null;
+                  chips?:
+                    | {
+                        tag?: string | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'case-study-cards';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            sectionId?: string | null;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'evaluation-framework';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            cta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            secondaryCta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-team-boxes';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            steps?:
+              | {
+                  number?: string | null;
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-horizontal-process';
+          }
+        | {
+            heading: string;
+            description: string;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  iconAlt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'verified-knowledge';
+          }
+        | {
+            heading: string;
+            description: string;
+            note?: string | null;
+            items?:
+              | {
+                  title: string;
+                  count: string;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  imageAlt?: string | null;
+                  href?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'credential-evidence';
+          }
+        | {
+            heading: string;
+            description: string;
+            items?:
+              | {
+                  tabId: string;
+                  label: string;
+                  eyebrow?: string | null;
+                  title: string;
+                  description: string;
+                  details?:
+                    | {
+                        label: string;
+                        value: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'credential-tabs';
+          }
+        | {
+            heading: string;
+            paragraphs?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'certified-agency-support';
+          }
+        | {
+            heading: string;
+            description: string;
+            items?:
+              | {
+                  eyebrow: string;
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'certified-services';
+          }
+        | {
+            heading: string;
+            description: string;
+            href: string;
+            items?:
+              | {
+                  kind?: ('image' | 'rating' | 'text') | null;
+                  label: string;
+                  value?: string | null;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  imageAlt?: string | null;
+                  imageWidth?: number | null;
+                  imageHeight?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'partner-directory-proof';
+          }
+        | {
+            heading: string;
+            description?: string | null;
+            buttonText: string;
+            buttonUrl: string;
+            variant?: ('default' | 'certifiedDevelopers' | 'agency') | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'white-label-final-cta';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            idAttr?: string | null;
+            banner?: {
+              badge?: string | null;
+              title?: string | null;
+              description?: string | null;
+              ctaLabel?: string | null;
+              ctaHref?: string | null;
+            };
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  iconAlt?: string | null;
+                  href: string;
+                  ctaText?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-migration-services';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            idAttr?: string | null;
+            variant?: ('white' | 'pista') | null;
+            items?:
+              | {
+                  number?: string | null;
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-migration-numbered-grid';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            tags?:
+              | {
+                  tag: string;
+                  id?: string | null;
+                }[]
+              | null;
+            urlMappings?:
+              | {
+                  source: string;
+                  statusCode?: string | null;
+                  target: string;
+                  id?: string | null;
+                }[]
+              | null;
+            checks?:
+              | {
+                  check: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'seo-safe-migration';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            partnerHeading?: string | null;
+            partnerDescription?: string | null;
+            partnerLogo?: (number | null) | Media;
+            partnerLogoSrc?: string | null;
+            partnerLogoAlt?: string | null;
+            logoHref?: string | null;
+            partnerLink?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            stats?:
+              | {
+                  value: string;
+                  label: string;
+                  id?: string | null;
+                }[]
+              | null;
+            items?:
+              | {
+                  icon?: string | null;
+                  title?: string | null;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'why-choose-shopify-migration';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            bottomNote?: string | null;
+            variant?: ('green' | 'yellow' | 'transparent') | null;
+            boxes?:
+              | {
+                  number?: string | null;
+                  iconName?: string | null;
+                  title: string;
+                  badge?: string | null;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'theme-customization-services';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            approaches?:
+              | {
+                  badge: string;
+                  title: string;
+                  description: string;
+                  isHighlighted?: boolean | null;
+                  points?:
+                    | {
+                        point: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'theme-customization-approach';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            subtitle: string;
+            idAttr?: string | null;
+            variant?: ('white' | 'pista') | null;
+            items?:
+              | {
+                  name?: string | null;
+                  title?: string | null;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  alt?: string | null;
+                  href?: string | null;
+                  ctaText?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-themes-grid';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            callout?: string | null;
+            variant?: ('default' | 'dark-green') | null;
+            cta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            tools?:
+              | {
+                  name: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'ai-empowered-delivery';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            items?:
+              | {
+                  title: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-cro-barriers';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            beforeBadge?: string | null;
+            beforeMetrics?:
+              | {
+                  label: string;
+                  value: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            beforeTotalLabel?: string | null;
+            beforeTotalValue?: string | null;
+            afterBadge?: string | null;
+            afterMetrics?:
+              | {
+                  label: string;
+                  value: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            afterTotalLabel?: string | null;
+            afterTotalValue?: string | null;
+            footerText?: string | null;
+            footerHighlight?: string | null;
+            footerSuffix?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-cro-revenue-impact';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  deliverables?:
+                    | {
+                        item: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-cro-services';
+          }
+        | {
+            heading: string;
+            description: string;
+            points?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-cro-assessment';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            steps?:
+              | {
+                  number: string;
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-cro-process';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            paragraphs?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            points?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            tagline?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-cro-why';
+          }
+        | {
+            heading: string;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  alt?: string | null;
+                  features?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  ctaLabel?: string | null;
+                  ctaHref?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-cro-engagement';
+          }
+        | {
+            title: string;
+            subtitle: string;
+            eyebrowSpans?:
+              | {
+                  text?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            cta?: string | null;
+            ctaHref?: string | null;
+            badges?:
+              | {
+                  name: string;
+                  logo?: (number | null) | Media;
+                  src?: string | null;
+                  alt?: string | null;
+                  href?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            appScreenshots?:
+              | {
+                  name: string;
+                  image?: (number | null) | Media;
+                  src?: string | null;
+                  alt?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-mobile-app-hero';
+          }
+        | {
+            counters?:
+              | {
+                  count: string;
+                  unit?: string | null;
+                  label: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'white-label-counter';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            cards?:
+              | {
+                  tag?: string | null;
+                  title: string;
+                  description: string;
+                  badges?:
+                    | {
+                        name?: string | null;
+                        src?: string | null;
+                        logo?: (number | null) | Media;
+                        alt?: string | null;
+                        href?: string | null;
+                        width?: number | null;
+                        height?: number | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-mobile-app-dtc';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            items?:
+              | {
+                  name: string;
+                  category?: string | null;
+                  image?: (number | null) | Media;
+                  src?: string | null;
+                  alt?: string | null;
+                  href?: string | null;
+                  appStoreUrl?: string | null;
+                  playStoreUrl?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-mobile-app-work';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            col1Heading?: string | null;
+            col2Heading?: string | null;
+            rows?:
+              | {
+                  feature: string;
+                  appBuilder: string;
+                  customDev: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-mobile-app-comparison';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  image?: (number | null) | Media;
+                  src?: string | null;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-mobile-app-experience';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description: string;
+            note?: string | null;
+            steps?:
+              | {
+                  number?: string | null;
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'white-label-process';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            idAttr?: string | null;
+            cardVariant?: ('default' | 'services-box') | null;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  badge?: string | null;
+                  href?: string | null;
+                  iconName?: string | null;
+                  features?:
+                    | {
+                        feature: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'agency-services';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            counters?:
+              | {
+                  count: string;
+                  unit?: string | null;
+                  label: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'city-page-counter';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            hideCtas?: boolean | null;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  iconName?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-team-behind-it';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            columns?: number | null;
+            boxes?:
+              | {
+                  title: string;
+                  description: string;
+                  iconName?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'city-why-choose-boxes';
+          }
+        | {
+            title?: string | null;
+            description?: string | null;
+            primaryCtaText?: string | null;
+            primaryCtaHref?: string | null;
+            hourlyRate?: string | null;
+            hourlyRateNote?: string | null;
+            trustBadges?:
+              | {
+                  title: string;
+                  subtitle?: string | null;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-hours-hero';
+          }
+        | {
+            eyebrow?: string | null;
+            heading?: string | null;
+            description?: string | null;
+            comparisonItems?:
+              | {
+                  title: string;
+                  agencyWay: string;
+                  freelancerWay: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-hours-comparison';
+          }
+        | {
+            eyebrow?: string | null;
+            heading?: string | null;
+            description?: string | null;
+            taskCategories?:
+              | {
+                  category: string;
+                  tasks?:
+                    | {
+                        task: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-hours-tasks';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            headingId?: string | null;
+            layout?: ('split' | 'centered') | null;
+            items?:
+              | {
+                  number: string;
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'numbered-process-timeline';
+          }
+        | {
+            title: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-apps-hero';
+          }
+        | {
+            apps?:
+              | {
+                  title: string;
+                  href: string;
+                  additionalInfo: string;
+                  description: string;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-apps-grid';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  iconAlt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-app-benefits';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            centerImage?: (number | null) | Media;
+            centerImageSrc?: string | null;
+            centerImageAlt?: string | null;
+            leftFeatures?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  iconAlt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            rightFeatures?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  iconAlt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-app-features';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            steps?:
+              | {
+                  step?: string | null;
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  iconAlt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-app-process';
+          }
+        | {
+            topics?:
+              | {
+                  label?: string | null;
+                  heading?: string | null;
+                  number?: string | null;
+                  title: string;
+                  paragraphs?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'risks-shopify-topics';
+          }
+        | {
+            heading: string;
+            description: string;
+            ctaLabel: string;
+            ctaHref: string;
+            backgroundImage?: (number | null) | Media;
+            backgroundImageSrc?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'image-cta';
           }
       )[]
     | null;
@@ -2112,10 +3239,13 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               eyebrow?: T;
               heading?: T;
+              description?: T;
+              columns?: T;
               steps?:
                 | T
                 | {
                     stepNumber?: T;
+                    step?: T;
                     title?: T;
                     description?: T;
                     id?: T;
@@ -2798,6 +3928,1197 @@ export interface PagesSelect<T extends boolean = true> {
               emailAddress?: T;
               emailHref?: T;
               note?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'service-hero-video'?:
+          | T
+          | {
+              title?: T;
+              titleAccent?: T;
+              titleAccentTag?: T;
+              titleAccentClassName?: T;
+              titleAccentPosition?: T;
+              subtitle?: T;
+              description?: T;
+              body?: T;
+              eyebrow?: T;
+              eyebrowSpans?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              paragraphs?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              cta?: T;
+              ctaHref?: T;
+              secondaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              video?: T;
+              videoPoster?: T;
+              reviewCount?: T;
+              rating?: T;
+              platform?: T;
+              showReviews?: T;
+              badges?:
+                | T
+                | {
+                    name?: T;
+                    logo?: T;
+                    src?: T;
+                    href?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              variant?: T;
+              wrapperClassName?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'industry-brands'?:
+          | T
+          | {
+              heading?: T;
+              eyebrow?: T;
+              density?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    logo?: T;
+                    src?: T;
+                    alt?: T;
+                    url?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-plus-proof'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              intro?: T;
+              text?: T;
+              stats?:
+                | T
+                | {
+                    stat?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'portfolio-showcase'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              category?: T;
+              ctaLabel?: T;
+              ctaHref?: T;
+              hideCta?: T;
+              columns?: T;
+              variant?: T;
+              cardVariant?: T;
+              headerLayout?: T;
+              sectionId?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    href?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    imageAlt?: T;
+                    category?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-stage-services'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              lastColFull?: T;
+              sixCards?: T;
+              items?:
+                | T
+                | {
+                    tag?: T;
+                    title?: T;
+                    description?: T;
+                    pills?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    cta?:
+                      | T
+                      | {
+                          label?: T;
+                          href?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'case-study-cards'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              ctaLabel?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    imageAlt?: T;
+                    href?: T;
+                    platform?: T;
+                    industry?: T;
+                    ctaLabel?: T;
+                    description?: T;
+                    chips?:
+                      | T
+                      | {
+                          tag?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'evaluation-framework'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              sectionId?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-team-boxes'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              cta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              secondaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-horizontal-process'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              steps?:
+                | T
+                | {
+                    number?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'verified-knowledge'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'credential-evidence'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              note?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    count?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    imageAlt?: T;
+                    href?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'credential-tabs'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    tabId?: T;
+                    label?: T;
+                    eyebrow?: T;
+                    title?: T;
+                    description?: T;
+                    details?:
+                      | T
+                      | {
+                          label?: T;
+                          value?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'certified-agency-support'?:
+          | T
+          | {
+              heading?: T;
+              paragraphs?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'certified-services'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    eyebrow?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'partner-directory-proof'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              href?: T;
+              items?:
+                | T
+                | {
+                    kind?: T;
+                    label?: T;
+                    value?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    imageAlt?: T;
+                    imageWidth?: T;
+                    imageHeight?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'white-label-final-cta'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              buttonText?: T;
+              buttonUrl?: T;
+              variant?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-migration-services'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              idAttr?: T;
+              banner?:
+                | T
+                | {
+                    badge?: T;
+                    title?: T;
+                    description?: T;
+                    ctaLabel?: T;
+                    ctaHref?: T;
+                  };
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                    href?: T;
+                    ctaText?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-migration-numbered-grid'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              idAttr?: T;
+              variant?: T;
+              items?:
+                | T
+                | {
+                    number?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'seo-safe-migration'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              tags?:
+                | T
+                | {
+                    tag?: T;
+                    id?: T;
+                  };
+              urlMappings?:
+                | T
+                | {
+                    source?: T;
+                    statusCode?: T;
+                    target?: T;
+                    id?: T;
+                  };
+              checks?:
+                | T
+                | {
+                    check?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'why-choose-shopify-migration'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              partnerHeading?: T;
+              partnerDescription?: T;
+              partnerLogo?: T;
+              partnerLogoSrc?: T;
+              partnerLogoAlt?: T;
+              logoHref?: T;
+              partnerLink?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              stats?:
+                | T
+                | {
+                    value?: T;
+                    label?: T;
+                    id?: T;
+                  };
+              items?:
+                | T
+                | {
+                    icon?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'theme-customization-services'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              bottomNote?: T;
+              variant?: T;
+              boxes?:
+                | T
+                | {
+                    number?: T;
+                    iconName?: T;
+                    title?: T;
+                    badge?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'theme-customization-approach'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              approaches?:
+                | T
+                | {
+                    badge?: T;
+                    title?: T;
+                    description?: T;
+                    isHighlighted?: T;
+                    points?:
+                      | T
+                      | {
+                          point?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-themes-grid'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              subtitle?: T;
+              idAttr?: T;
+              variant?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    title?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    alt?: T;
+                    href?: T;
+                    ctaText?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'ai-empowered-delivery'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              callout?: T;
+              variant?: T;
+              cta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              tools?:
+                | T
+                | {
+                    name?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-cro-barriers'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-cro-revenue-impact'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              beforeBadge?: T;
+              beforeMetrics?:
+                | T
+                | {
+                    label?: T;
+                    value?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    id?: T;
+                  };
+              beforeTotalLabel?: T;
+              beforeTotalValue?: T;
+              afterBadge?: T;
+              afterMetrics?:
+                | T
+                | {
+                    label?: T;
+                    value?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    id?: T;
+                  };
+              afterTotalLabel?: T;
+              afterTotalValue?: T;
+              footerText?: T;
+              footerHighlight?: T;
+              footerSuffix?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-cro-services'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    deliverables?:
+                      | T
+                      | {
+                          item?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-cro-assessment'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              points?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              ctaLabel?: T;
+              ctaHref?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-cro-process'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              steps?:
+                | T
+                | {
+                    number?: T;
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-cro-why'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              paragraphs?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              points?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              tagline?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-cro-engagement'?:
+          | T
+          | {
+              heading?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    alt?: T;
+                    features?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    ctaLabel?: T;
+                    ctaHref?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-mobile-app-hero'?:
+          | T
+          | {
+              title?: T;
+              subtitle?: T;
+              eyebrowSpans?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              cta?: T;
+              ctaHref?: T;
+              badges?:
+                | T
+                | {
+                    name?: T;
+                    logo?: T;
+                    src?: T;
+                    alt?: T;
+                    href?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              appScreenshots?:
+                | T
+                | {
+                    name?: T;
+                    image?: T;
+                    src?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'white-label-counter'?:
+          | T
+          | {
+              counters?:
+                | T
+                | {
+                    count?: T;
+                    unit?: T;
+                    label?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-mobile-app-dtc'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              cards?:
+                | T
+                | {
+                    tag?: T;
+                    title?: T;
+                    description?: T;
+                    badges?:
+                      | T
+                      | {
+                          name?: T;
+                          src?: T;
+                          logo?: T;
+                          alt?: T;
+                          href?: T;
+                          width?: T;
+                          height?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-mobile-app-work'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              ctaLabel?: T;
+              ctaHref?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    category?: T;
+                    image?: T;
+                    src?: T;
+                    alt?: T;
+                    href?: T;
+                    appStoreUrl?: T;
+                    playStoreUrl?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-mobile-app-comparison'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              col1Heading?: T;
+              col2Heading?: T;
+              rows?:
+                | T
+                | {
+                    feature?: T;
+                    appBuilder?: T;
+                    customDev?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-mobile-app-experience'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    image?: T;
+                    src?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'white-label-process'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              note?: T;
+              steps?:
+                | T
+                | {
+                    number?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'agency-services'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              idAttr?: T;
+              cardVariant?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    badge?: T;
+                    href?: T;
+                    iconName?: T;
+                    features?:
+                      | T
+                      | {
+                          feature?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'city-page-counter'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              counters?:
+                | T
+                | {
+                    count?: T;
+                    unit?: T;
+                    label?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-team-behind-it'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              hideCtas?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    iconName?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'city-why-choose-boxes'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              columns?: T;
+              boxes?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    iconName?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-hours-hero'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              primaryCtaText?: T;
+              primaryCtaHref?: T;
+              hourlyRate?: T;
+              hourlyRateNote?: T;
+              trustBadges?:
+                | T
+                | {
+                    title?: T;
+                    subtitle?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-hours-comparison'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              comparisonItems?:
+                | T
+                | {
+                    title?: T;
+                    agencyWay?: T;
+                    freelancerWay?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-hours-tasks'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              taskCategories?:
+                | T
+                | {
+                    category?: T;
+                    tasks?:
+                      | T
+                      | {
+                          task?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'numbered-process-timeline'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              headingId?: T;
+              layout?: T;
+              items?:
+                | T
+                | {
+                    number?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-apps-hero'?:
+          | T
+          | {
+              title?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-apps-grid'?:
+          | T
+          | {
+              apps?:
+                | T
+                | {
+                    title?: T;
+                    href?: T;
+                    additionalInfo?: T;
+                    description?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-app-benefits'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-app-features'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              centerImage?: T;
+              centerImageSrc?: T;
+              centerImageAlt?: T;
+              leftFeatures?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                    id?: T;
+                  };
+              rightFeatures?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-app-process'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              steps?:
+                | T
+                | {
+                    step?: T;
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'risks-shopify-topics'?:
+          | T
+          | {
+              topics?:
+                | T
+                | {
+                    label?: T;
+                    heading?: T;
+                    number?: T;
+                    title?: T;
+                    paragraphs?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'image-cta'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              ctaLabel?: T;
+              ctaHref?: T;
+              backgroundImage?: T;
+              backgroundImageSrc?: T;
               id?: T;
               blockName?: T;
             };

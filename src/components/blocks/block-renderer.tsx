@@ -49,8 +49,66 @@ import { CareerOpportunitiesSection } from "@/components/sections/career/career-
 import { CareerBenefitIcon } from "@/components/sections/career/career-benefit-icons";
 import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
 import { CareerApplyNowPage } from "@/components/sections/career-apply-now/career-apply-now-page";
+import { ServiceHeroVideoSection } from "@/components/sections/service-hero-video-section";
+import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { ShopifyPlusProofSection } from "@/components/sections/shopify-plus-agency/shopify-plus-proof-section";
+import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
+import { ShopifyStageServicesSection } from "@/components/sections/shopify-stage-services-section";
+import { CaseStudyCardsSection } from "@/components/sections/shopify-plus-agency/case-study-cards-section";
+import { EvaluationFrameworkSection } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
+import { ShopifyTeamBoxesSection } from "@/components/sections/shopify-team-boxes-section";
+import { ShopifyHorizontalProcessSection } from "@/components/sections/shopify-horizontal-process-section";
+import { VerifiedKnowledgeSection } from "@/components/sections/shopify-certified-developers/verified-knowledge-section";
+import { CredentialEvidenceSection } from "@/components/sections/shopify-certified-developers/credential-evidence-section";
+import { CredentialTabsSection } from "@/components/sections/shopify-certified-developers/credential-tabs-section";
+import { CertifiedAgencySupportSection } from "@/components/sections/shopify-certified-developers/certified-agency-support-section";
+import { CertifiedServicesSection } from "@/components/sections/shopify-certified-developers/certified-services-section";
+import { PartnerDirectoryProofSection } from "@/components/sections/shopify-certified-developers/partner-directory-proof-section";
+import { WhiteLabelFinalCtaSection } from "@/components/sections/white-label/white-label-closing-sections";
+import { ShopifyMigrationServicesSection } from "@/components/sections/shopify-migration/shopify-migration-services-section";
+import { ShopifyMigrationNumberedGridSection } from "@/components/sections/shopify-migration/shopify-migration-numbered-grid-section";
+import { SeoSafeMigrationSection } from "@/components/sections/shopify-migration/seo-safe-migration-section";
+import { WhyChooseShopifyMigrationSection } from "@/components/sections/why-choose-shopify-migration-section";
+import { ThemeCustomizationApproachSection } from "@/components/sections/theme-customization-approach-section";
+import { ShopifyThemesGridSection } from "@/components/sections/shopify-theme-customization/shopify-themes-grid-section";
+import { AiEmpoweredDeliverySection } from "@/components/sections/ai-empowered-delivery-section";
+import { ShopifyCroBarriersSection } from "@/components/sections/shopify-cro/shopify-cro-barriers-section";
+import { ShopifyCroRevenueImpactSection } from "@/components/sections/shopify-cro/shopify-cro-revenue-impact-section";
+import { ShopifyCroServicesSection } from "@/components/sections/shopify-cro/shopify-cro-services-section";
+import { ShopifyCroAssessmentSection } from "@/components/sections/shopify-cro/shopify-cro-assessment-section";
+import { ShopifyCroProcessSection } from "@/components/sections/shopify-cro/shopify-cro-process-section";
+import { ShopifyCroWhySection } from "@/components/sections/shopify-cro/shopify-cro-why-section";
+import { ShopifyCroEngagementSection } from "@/components/sections/shopify-cro/shopify-cro-engagement-section";
+import { ShopifyMobileAppHeroSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-hero-section";
+import { WhiteLabelCounterSection } from "@/components/sections/white-label-shopify/white-label-counter-section";
+import { ShopifyMobileAppDtcSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-dtc-section";
+import { ShopifyMobileAppWorkSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-work-section";
+import { ShopifyMobileAppComparisonSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-comparison-section";
+import { ShopifyMobileAppExperienceSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-experience-section";
+import { WhiteLabelProcessSection } from "@/components/sections/white-label/white-label-process-section";
+import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import { CityPageCounterSection } from "@/components/sections/city-page-counter-section";
+import { ShopifyTeamBehindItSection } from "@/components/sections/white-label-shopify/shopify-team-behind-it-section";
+import { CityWhyChooseBoxesSection } from "@/components/sections/city-why-choose-boxes-section";
+import { ShopifyHoursHeroSection } from "@/components/sections/buy-shopify-development-hours/shopify-hours-hero-section";
+import {
+  ShopifyHoursComparisonSection,
+  ShopifyHoursTasksSection,
+} from "@/components/sections/buy-shopify-development-hours/shopify-hours-content-sections";
+import { NumberedProcessTimelineSection } from "@/components/sections/numbered-process-timeline-section";
+import { ShopifyAppBenefitsSection } from "@/components/sections/shopify-mobile-app/shopify-app-benefits-section";
+import { ShopifyAppFeaturesSection } from "@/components/sections/shopify-mobile-app/shopify-app-features-section";
+import { ShopifyAppProcessSection } from "@/components/sections/shopify-mobile-app/shopify-app-process-section";
+import { RisksShopifyTopics } from "@/components/sections/risks-shopify-topics";
+import { ImageCtaSection } from "@/components/sections/image-cta-section";
+import { ShopifyThemeServiceIcon } from "@/components/sections/shopify-theme-customization/service-icons";
+import { HireShopifyIcon, type HireShopifyIconName } from "@/components/sections/hire-shopify-developers/hire-shopify-icons";
+import { OnlineStore20Icon, type OnlineStore20IconName } from "@/components/sections/migrating-theme-to-online-store-2-0-icons";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { sharedUiCopy } from "@/content/common";
+import { shopifyPlusAgencyIndustries } from "@/content/shopify-plus-agency";
+import { mobileAppPlatformLabels } from "@/content/shopify-mobile-app-development";
 
 export type CmsMedia =
   | {
@@ -714,6 +772,915 @@ export interface BlockCareerApply {
   note?: string;
 }
 
+export interface BlockServiceHeroVideo {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title: string;
+  titleAccent?: string;
+  titleAccentTag?: "i" | "span";
+  titleAccentClassName?: string;
+  titleAccentPosition?: "start" | "end";
+  subtitle?: string;
+  description?: string;
+  body?: string;
+  eyebrow?: string;
+  eyebrowSpans?: readonly { text?: string }[];
+  paragraphs?: readonly { text?: string }[];
+  cta?: string;
+  ctaHref?: string;
+  secondaryCta?: { label?: string; href?: string };
+  video?: string;
+  videoPoster?: CmsMedia;
+  reviewCount?: string;
+  rating?: string;
+  platform?: string;
+  showReviews?: boolean;
+  badges?: readonly {
+    name: string;
+    logo?: CmsMedia;
+    src?: string;
+    href?: string;
+    alt?: string;
+    width?: number;
+    height?: number;
+  }[];
+  variant?: "default" | "centered";
+  wrapperClassName?: string;
+}
+
+export interface BlockIndustryBrands {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  eyebrow?: string;
+  density?: "standard" | "compact" | "flexible" | "default";
+  items?: readonly {
+    name: string;
+    logo?: CmsMedia;
+    src?: string;
+    alt?: string;
+    url?: string;
+    width?: number;
+    height?: number;
+  }[];
+}
+
+export interface BlockShopifyPlusProof {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  intro?: string;
+  text?: string;
+  stats?: readonly { stat: string }[];
+}
+
+export interface BlockPortfolioShowcase {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string | readonly string[];
+  description?: string | readonly string[];
+  category?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  hideCta?: boolean;
+  columns?: number;
+  variant?: "default" | "liveGrid";
+  cardVariant?: "default" | "ourWorkRefresh";
+  headerLayout?: "centered" | "split";
+  sectionId?: string;
+  items?: readonly {
+    name: string;
+    href?: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    imageAlt?: string;
+    category?: string;
+  }[];
+}
+
+export interface BlockShopifyStageServices {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  lastColFull?: boolean;
+  sixCards?: boolean;
+  items?: readonly {
+    tag?: string;
+    title: string;
+    description: string;
+    pills?: readonly { text?: string }[];
+    cta?: { label?: string; href?: string };
+  }[];
+}
+
+export interface BlockCaseStudyCards {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  ctaLabel?: string;
+  items?: readonly {
+    name: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    imageAlt?: string;
+    href: string;
+    platform?: string;
+    industry?: string;
+    ctaLabel?: string;
+    description?: string;
+    chips?: readonly { tag?: string }[];
+  }[];
+}
+
+export interface BlockEvaluationFramework {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string | readonly string[];
+  description?: string | readonly string[];
+  sectionId?: string;
+  items?: readonly {
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface BlockShopifyTeamBoxes {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  cta?: { label?: string; href?: string };
+  secondaryCta?: { label?: string; href?: string };
+  items?: readonly {
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface BlockShopifyHorizontalProcess {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  steps?: readonly {
+    number?: string;
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface BlockVerifiedKnowledge {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description: string;
+  items?: readonly {
+    title: string;
+    description: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    iconAlt?: string;
+  }[];
+}
+
+export interface BlockCredentialEvidence {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description: string;
+  note?: string;
+  items?: readonly {
+    title: string;
+    count: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    imageAlt?: string;
+    href?: string;
+  }[];
+}
+
+export interface BlockCredentialTabs {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description: string;
+  items?: readonly {
+    tabId: string;
+    label: string;
+    eyebrow?: string;
+    title: string;
+    description: string;
+    details?: readonly { label: string; value: string }[];
+  }[];
+}
+
+export interface BlockCertifiedAgencySupport {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  paragraphs?: readonly { text: string }[];
+  items?: readonly {
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface BlockCertifiedServices {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description: string;
+  items?: readonly {
+    eyebrow: string;
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface BlockPartnerDirectoryProof {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description: string;
+  href: string;
+  items?: readonly {
+    kind?: "image" | "rating" | "text";
+    label: string;
+    value?: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    imageAlt?: string;
+    imageWidth?: number;
+    imageHeight?: number;
+  }[];
+}
+
+export interface BlockWhiteLabelFinalCta {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  heading?: string;
+  description?: string;
+  label?: string;
+  buttonText?: string;
+  buttonUrl?: string;
+  variant?: "default" | "certifiedDevelopers" | "shopifyHours";
+}
+
+export interface BlockShopifyMigrationServices {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  idAttr?: string;
+  banner?: {
+    badge?: string;
+    title?: string;
+    description?: string;
+    ctaLabel?: string;
+    ctaHref?: string;
+  };
+  items?: readonly {
+    title: string;
+    description: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    iconAlt?: string;
+    href: string;
+    ctaText?: string;
+  }[];
+}
+
+export interface BlockShopifyMigrationNumberedGrid {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string | readonly string[];
+  description?: string | readonly string[];
+  idAttr?: string;
+  variant?: "white" | "pista";
+  items?: readonly {
+    number?: string;
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface BlockSeoSafeMigration {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string | readonly string[];
+  description: string | readonly string[];
+  tags?: readonly { tag: string }[];
+  urlMappings?: readonly {
+    source: string;
+    statusCode?: string;
+    target: string;
+  }[];
+  checks?: readonly { check: string }[];
+}
+
+export interface BlockWhyChooseShopifyMigration {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  partnerHeading?: string;
+  partnerDescription?: string;
+  partnerLogo?: CmsMedia;
+  partnerLogoSrc?: string;
+  partnerLogoAlt?: string;
+  logoHref?: string;
+  partnerLink?: { label?: string; href?: string };
+  stats?: readonly { value: string; label: string }[];
+  items?: readonly {
+    icon?: string;
+    title?: string;
+    description: string;
+  }[];
+}
+
+export interface BlockThemeCustomizationServices {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string | readonly string[];
+  description?: string | readonly string[];
+  bottomNote?: string;
+  variant?: "green" | "yellow" | "transparent";
+  boxes?: readonly {
+    number?: string;
+    iconName?: string;
+    title: string;
+    badge?: string;
+    description: string;
+  }[];
+}
+
+export interface BlockThemeCustomizationApproach {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  approaches?: readonly {
+    badge: string;
+    title: string;
+    description: string;
+    isHighlighted?: boolean;
+    points?: readonly { point: string }[];
+  }[];
+}
+
+export interface BlockShopifyThemesGrid {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title: string;
+  subtitle: string;
+  idAttr?: string;
+  variant?: "white" | "pista";
+  items?: readonly {
+    name?: string;
+    title?: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    alt?: string;
+    href?: string;
+    ctaText?: string;
+  }[];
+}
+
+export interface BlockAiEmpoweredDelivery {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  callout?: string;
+  variant?: "default" | "dark-green";
+  cta?: { label?: string; href?: string };
+  tools?: readonly {
+    name: string;
+    description: string;
+  }[];
+}
+
+export interface BlockShopifyCroBarriers {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  items?: readonly {
+    title: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    alt?: string;
+  }[];
+}
+
+export interface BlockShopifyCroRevenueImpact {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  beforeBadge?: string;
+  beforeMetrics?: readonly {
+    label: string;
+    value: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+  }[];
+  beforeTotalLabel?: string;
+  beforeTotalValue?: string;
+  afterBadge?: string;
+  afterMetrics?: readonly {
+    label: string;
+    value: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+  }[];
+  afterTotalLabel?: string;
+  afterTotalValue?: string;
+  footerText?: string;
+  footerHighlight?: string;
+  footerSuffix?: string;
+}
+
+export interface BlockShopifyCroServices {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  items?: readonly {
+    title: string;
+    description: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    alt?: string;
+    deliverables?: readonly { item: string }[];
+  }[];
+}
+
+export interface BlockShopifyCroAssessment {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description: string;
+  points?: readonly { text: string }[];
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+export interface BlockShopifyCroProcess {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  steps?: readonly {
+    number: string;
+    title: string;
+    description: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+  }[];
+}
+
+export interface BlockShopifyCroWhy {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  paragraphs?: readonly { text: string }[];
+  points?: readonly { text: string }[];
+  tagline?: string;
+}
+
+export interface BlockShopifyCroEngagement {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  items?: readonly {
+    title: string;
+    description: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    alt?: string;
+    features?: readonly { text: string }[];
+    ctaLabel?: string;
+    ctaHref?: string;
+  }[];
+}
+
+export interface BlockShopifyMobileAppHero {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title: string;
+  subtitle: string;
+  description?: string;
+  eyebrowSpans?: readonly { text?: string }[];
+  cta?: string;
+  ctaHref?: string;
+  badges?: readonly {
+    name: string;
+    logo?: CmsMedia;
+    src?: string;
+    alt?: string;
+    href?: string;
+    width?: number;
+    height?: number;
+  }[];
+  appScreenshots?: readonly {
+    name: string;
+    image?: CmsMedia;
+    src?: string;
+    alt?: string;
+    width?: number;
+    height?: number;
+  }[];
+}
+
+export interface BlockWhiteLabelCounter {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  counters?: readonly {
+    count: string;
+    unit?: string;
+    label: string;
+  }[];
+}
+
+export interface BlockShopifyMobileAppDtc {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  cards?: readonly {
+    tag?: string;
+    title: string;
+    description: string;
+    badges?: readonly {
+      name?: string;
+      src?: string;
+      logo?: CmsMedia;
+      alt?: string;
+      href?: string;
+      width?: number;
+      height?: number;
+    }[];
+  }[];
+}
+
+export interface BlockShopifyMobileAppWork {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  items?: readonly {
+    name: string;
+    category?: string;
+    image?: CmsMedia;
+    src?: string;
+    alt?: string;
+    href?: string;
+    appStoreUrl?: string;
+    playStoreUrl?: string;
+  }[];
+}
+
+export interface BlockShopifyMobileAppComparison {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  col1Heading?: string;
+  col2Heading?: string;
+  rows?: readonly {
+    feature: string;
+    appBuilder: string;
+    customDev: string;
+  }[];
+}
+
+export interface BlockShopifyMobileAppExperience {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  items?: readonly {
+    title: string;
+    description: string;
+    image?: CmsMedia;
+    src?: string;
+    alt?: string;
+  }[];
+}
+
+export interface BlockWhiteLabelProcess {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title: string;
+  description: string;
+  note?: string;
+  steps?: readonly {
+    number?: string;
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface BlockAgencyServices {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  idAttr?: string;
+  cardVariant?: "default" | "services-box";
+  items?: readonly {
+    title: string;
+    description: string;
+    badge?: string;
+    href?: string;
+    iconName?: string;
+    features?: readonly { feature: string }[];
+  }[];
+}
+
+export interface BlockCityPageCounter {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  counters?: readonly {
+    count: string;
+    unit?: string;
+    label: string;
+  }[];
+}
+
+export interface BlockShopifyTeamBehindIt {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  hideCtas?: boolean;
+  items?: readonly {
+    title: string;
+    description: string;
+    iconName?: string;
+  }[];
+}
+
+export interface BlockCityWhyChooseBoxes {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  columns?: number;
+  boxes?: readonly {
+    title: string;
+    description: string;
+    iconName?: string;
+  }[];
+}
+
+export interface BlockShopifyHoursHero {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  description?: string;
+  primaryCtaText?: string;
+  primaryCtaHref?: string;
+  hourlyRate?: string;
+  hourlyRateNote?: string;
+  trustBadges?: readonly {
+    title: string;
+    subtitle?: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+  }[];
+}
+
+export interface BlockShopifyHoursComparison {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  comparisonItems?: readonly {
+    title: string;
+    agencyWay: string;
+    freelancerWay: string;
+  }[];
+}
+
+export interface BlockShopifyHoursTasks {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  taskCategories?: readonly {
+    category: string;
+    tasks?: readonly { task: string }[];
+  }[];
+}
+
+export interface BlockNumberedProcessTimeline {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  headingId?: string;
+  layout?: "split" | "centered" | "stacked";
+  items?: readonly {
+    number?: string;
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface BlockShopifyAppsHero {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title: string;
+}
+
+export interface BlockShopifyAppsGrid {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  apps?: readonly {
+    title: string;
+    href: string;
+    additionalInfo: string;
+    description: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    alt?: string;
+  }[];
+}
+
+export interface BlockShopifyAppBenefits {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  items?: readonly {
+    title: string;
+    description: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    iconAlt?: string;
+  }[];
+}
+
+export interface BlockShopifyAppFeatures {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  centerImage?: CmsMedia;
+  centerImageSrc?: string;
+  centerImageAlt?: string;
+  leftFeatures?: readonly {
+    title: string;
+    description: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    iconAlt?: string;
+  }[];
+  rightFeatures?: readonly {
+    title: string;
+    description: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    iconAlt?: string;
+  }[];
+}
+
+export interface BlockShopifyAppProcess {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  steps?: readonly {
+    step?: string;
+    title: string;
+    description: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    iconAlt?: string;
+  }[];
+}
+
+export interface BlockRisksShopifyTopics {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  topics?: readonly {
+    id?: string;
+    number?: string;
+    label?: string;
+    heading?: string;
+    title: string;
+    paragraphs?: readonly { text: string }[];
+  }[];
+}
+
+export interface BlockImageCta {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description: string;
+  ctaLabel: string;
+  ctaHref: string;
+  backgroundImage?: CmsMedia;
+  backgroundImageSrc?: string;
+}
+
 export type CmsSectionBlock =
   | BlockHero
   | BlockProofCounters
@@ -756,10 +1723,85 @@ export type CmsSectionBlock =
   | BlockCareerOpportunities
   | BlockCareerPerks
   | BlockCareerApply
+  | BlockServiceHeroVideo
+  | BlockIndustryBrands
+  | BlockShopifyPlusProof
+  | BlockPortfolioShowcase
+  | BlockShopifyStageServices
+  | BlockCaseStudyCards
+  | BlockEvaluationFramework
+  | BlockShopifyTeamBoxes
+  | BlockShopifyHorizontalProcess
+  | BlockVerifiedKnowledge
+  | BlockCredentialEvidence
+  | BlockCredentialTabs
+  | BlockCertifiedAgencySupport
+  | BlockCertifiedServices
+  | BlockPartnerDirectoryProof
+  | BlockWhiteLabelFinalCta
+  | BlockShopifyMigrationServices
+  | BlockShopifyMigrationNumberedGrid
+  | BlockSeoSafeMigration
+  | BlockWhyChooseShopifyMigration
+  | BlockThemeCustomizationServices
+  | BlockThemeCustomizationApproach
+  | BlockShopifyThemesGrid
+  | BlockAiEmpoweredDelivery
+  | BlockShopifyCroBarriers
+  | BlockShopifyCroRevenueImpact
+  | BlockShopifyCroServices
+  | BlockShopifyCroAssessment
+  | BlockShopifyCroProcess
+  | BlockShopifyCroWhy
+  | BlockShopifyCroEngagement
+  | BlockShopifyMobileAppHero
+  | BlockWhiteLabelCounter
+  | BlockShopifyMobileAppDtc
+  | BlockShopifyMobileAppWork
+  | BlockShopifyMobileAppComparison
+  | BlockShopifyMobileAppExperience
+  | BlockWhiteLabelProcess
+  | BlockAgencyServices
+  | BlockCityPageCounter
+  | BlockShopifyTeamBehindIt
+  | BlockCityWhyChooseBoxes
+  | BlockShopifyHoursHero
+  | BlockShopifyHoursComparison
+  | BlockShopifyHoursTasks
+  | BlockNumberedProcessTimeline
+  | BlockShopifyAppsHero
+  | BlockShopifyAppsGrid
+  | BlockShopifyAppBenefits
+  | BlockShopifyAppFeatures
+  | BlockShopifyAppProcess
+  | BlockRisksShopifyTopics
+  | BlockImageCta
   | { [key: string]: unknown; __component?: string; blockType?: string; id?: string | number };
 
 export interface BlockRendererProps {
   sections?: readonly CmsSectionBlock[] | null;
+}
+
+function renderCustomBoxIcon(iconName?: string) {
+  if (!iconName) return null;
+  const os20Names = [
+    "architecture", "apps", "performance", "templates", "checkout",
+    "b2b", "metafields", "editor", "audit", "planning", "code",
+    "testing", "launch", "post-launch", "flexible", "speed",
+    "conversion", "scalability", "seo", "maintenance",
+  ];
+  if (os20Names.includes(iconName)) {
+    return <OnlineStore20Icon name={iconName as OnlineStore20IconName} />;
+  }
+  const hireNames = [
+    "shopify-plus", "custom-apps", "theme-customization", "store-migration",
+    "api-integration", "performance-cro", "dedicated", "flexible",
+    "transparent", "qa", "speed", "support",
+  ];
+  if (hireNames.includes(iconName)) {
+    return <HireShopifyIcon name={iconName as HireShopifyIconName} />;
+  }
+  return <ShopifyThemeServiceIcon name={iconName as "sections" | "performance" | "selection" | "branding" | "pdp" | "integrations"} />;
 }
 
 /**
@@ -1188,7 +2230,10 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               title: ind.title,
               eyebrow: ind.eyebrow,
               description: ind.description || "",
-              image: resolveMediaUrl(ind.image) || "/assets/shopify-plus-agency/industries/fashion-apparel.webp",
+              image:
+                resolveMediaUrl(ind.image) ||
+                shopifyPlusAgencyIndustries.items.find((x) => x.href === ind.href)?.image ||
+                "/assets/shopify-plus-agency/industries/fashion-apparel.webp",
               imageAlt: resolveMediaAlt(ind.image, ind.title),
               href: ind.href,
             }));
@@ -1899,6 +2944,1269 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 phoneHref={caBlock.phoneHref}
                 phoneLabel={caBlock.phoneLabel}
                 phoneNumber={caBlock.phoneNumber}
+              />
+            );
+          }
+
+          case "service-hero-video": {
+            const shvBlock = block as BlockServiceHeroVideo;
+            const paragraphs = shvBlock.paragraphs
+              ?.map((p) => p.text || "")
+              .filter(Boolean);
+
+            if (shvBlock.variant === "centered") {
+              return (
+                <ServiceHeroSection
+                  key={blockKey}
+                  className={
+                    shvBlock.wrapperClassName ||
+                    "inner-hero-sec relative overflow-hidden bg-white pt-[190px] pb-[130px] max-[1199px]:pt-[140px] max-[1199px]:pb-[60px] max-[767px]:pt-[120px]"
+                  }
+                  variant="centered"
+                  showReviews={shvBlock.showReviews ?? false}
+                  content={{
+                    title: shvBlock.title,
+                    description: shvBlock.description || "",
+                    paragraphs: paragraphs && paragraphs.length > 0 ? paragraphs : undefined,
+                    eyebrows: shvBlock.eyebrow ? [shvBlock.eyebrow] : undefined,
+                    ctaLabel: shvBlock.cta,
+                    ctaHref: shvBlock.ctaHref,
+                  }}
+                />
+              );
+            }
+
+            const badges = shvBlock.badges?.map((b) => ({
+              name: b.name,
+              src: resolveMediaUrl(b.logo) || b.src || "",
+              alt: b.alt || b.name,
+              href: b.href || "#",
+              width: b.width || 120,
+              height: b.height || 44,
+            }));
+
+            return (
+              <ServiceHeroVideoSection
+                key={blockKey}
+                titleAccentTag={shvBlock.titleAccentTag}
+                titleAccentClassName={shvBlock.titleAccentClassName}
+                titleAccentPosition={shvBlock.titleAccentPosition}
+                content={{
+                  title: shvBlock.title,
+                  titleAccent: shvBlock.titleAccent,
+                  subtitle: shvBlock.subtitle,
+                  description: shvBlock.description,
+                  paragraphs:
+                    paragraphs && paragraphs.length > 0 ? paragraphs : undefined,
+                  body: shvBlock.body,
+                  cta: shvBlock.cta,
+                  ctaHref: shvBlock.ctaHref,
+                  secondaryCta: shvBlock.secondaryCta?.label
+                    ? {
+                        label: shvBlock.secondaryCta.label,
+                        href: shvBlock.secondaryCta.href || "",
+                      }
+                    : undefined,
+                  video: shvBlock.video || "/assets/home/why-dynamic-dreamz.mp4",
+                  videoPoster: resolveMediaUrl(shvBlock.videoPoster),
+                  badges,
+                  eyebrowSpans: shvBlock.eyebrowSpans
+                    ?.map((e) => e.text || "")
+                    .filter(Boolean),
+                }}
+                wrapperClassName={shvBlock.wrapperClassName}
+              />
+            );
+          }
+
+          case "industry-brands": {
+            const ibBlock = block as BlockIndustryBrands;
+            const items = (ibBlock.items ?? []).map((item) => ({
+              name: item.name,
+              src: resolveMediaUrl(item.logo) || item.src || "",
+              alt: item.alt || item.name,
+              url: item.url,
+              width: item.width || 120,
+              height: item.height || 40,
+            }));
+
+            return (
+              <IndustryBrandsSection
+                key={blockKey}
+                content={{
+                  slug: "industry-brands",
+                }}
+                density={ibBlock.density === "compact" || ibBlock.density === "flexible" ? ibBlock.density : "standard"}
+                heading={ibBlock.heading}
+                items={items}
+              />
+            );
+          }
+
+          case "shopify-plus-proof": {
+            const sppBlock = block as BlockShopifyPlusProof;
+            return (
+              <ShopifyPlusProofSection
+                key={blockKey}
+                content={{
+                  eyebrow: sppBlock.eyebrow || "",
+                  heading: sppBlock.heading,
+                  intro: sppBlock.intro || "",
+                  text: sppBlock.text || "",
+                  stats: (sppBlock.stats ?? []).map((s) => s.stat),
+                }}
+              />
+            );
+          }
+
+          case "portfolio-showcase": {
+            const psBlock = block as BlockPortfolioShowcase;
+            const items = (psBlock.items ?? []).map((item) => ({
+              name: item.name,
+              href: item.href,
+              image: resolveMediaUrl(item.image) || item.imageSrc || "",
+              imageAlt: item.imageAlt || item.name,
+              category: item.category,
+            }));
+
+            return (
+              <PortfolioShowcaseSection
+                key={blockKey}
+                className={
+                  psBlock.variant === "liveGrid"
+                    ? "our-work-sec pt-20 pb-20 max-[992px]:pt-10 max-[767px]:pt-0"
+                    : "our-work-sec bg-white pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]"
+                }
+                columns={(psBlock.columns as 2 | 3 | 4) || 4}
+                content={{
+                  heading: psBlock.heading,
+                  description: psBlock.description,
+                  eyebrow: psBlock.eyebrow,
+                  category: psBlock.category,
+                  ctaLabel: psBlock.ctaLabel,
+                  ctaHref: psBlock.ctaHref,
+                  items,
+                }}
+                headerLayout={psBlock.headerLayout || "split"}
+                hideCta={psBlock.hideCta}
+                sectionId={psBlock.sectionId || "our_work"}
+                variant={psBlock.variant || "default"}
+                cardVariant={psBlock.cardVariant || "default"}
+              />
+            );
+          }
+
+          case "shopify-stage-services": {
+            const sssBlock = block as BlockShopifyStageServices;
+            const items = (sssBlock.items ?? []).map((item) => ({
+              tag: item.tag,
+              title: item.title,
+              description: item.description,
+              pills: item.pills?.map((p) => p.text || "").filter(Boolean),
+              cta: item.cta?.label
+                ? { label: item.cta.label, href: item.cta.href || "" }
+                : null,
+            }));
+
+            return (
+              <ShopifyStageServicesSection
+                key={blockKey}
+                content={{
+                  eyebrow: sssBlock.eyebrow,
+                  heading: sssBlock.heading,
+                  description: sssBlock.description,
+                  items,
+                }}
+                lastColFull={sssBlock.lastColFull}
+                sixCards={sssBlock.sixCards}
+              />
+            );
+          }
+
+          case "case-study-cards": {
+            const cscBlock = block as BlockCaseStudyCards;
+            const items = (cscBlock.items ?? []).map((item) => ({
+              name: item.name,
+              image: resolveMediaUrl(item.image) || item.imageSrc || "",
+              imageAlt: item.imageAlt || item.name,
+              href: item.href,
+              platform: item.platform,
+              industry: item.industry,
+              ctaLabel: item.ctaLabel,
+              description: item.description,
+              chips: item.chips?.map((c) => c.tag || "").filter(Boolean),
+            }));
+
+            return (
+              <CaseStudyCardsSection
+                key={blockKey}
+                content={{
+                  eyebrow: cscBlock.eyebrow,
+                  heading: cscBlock.heading,
+                  description: cscBlock.description,
+                  ctaLabel: cscBlock.ctaLabel,
+                  items,
+                }}
+              />
+            );
+          }
+
+          case "evaluation-framework": {
+            const efBlock = block as BlockEvaluationFramework;
+            const items = (efBlock.items ?? []).map((item) => ({
+              title: item.title,
+              description: item.description,
+            }));
+
+            return (
+              <EvaluationFrameworkSection
+                key={blockKey}
+                content={{
+                  eyebrow: efBlock.eyebrow,
+                  heading: efBlock.heading,
+                  description: efBlock.description,
+                  items,
+                }}
+                id={efBlock.sectionId || "evaluation-framework"}
+              />
+            );
+          }
+
+          case "shopify-team-boxes": {
+            const stbBlock = block as BlockShopifyTeamBoxes;
+            const items = (stbBlock.items ?? []).map((item) => ({
+              title: item.title,
+              description: item.description,
+            }));
+
+            return (
+              <ShopifyTeamBoxesSection
+                key={blockKey}
+                content={{
+                  eyebrow: stbBlock.eyebrow,
+                  heading: stbBlock.heading,
+                  description: stbBlock.description,
+                  cta: stbBlock.cta?.label
+                    ? { label: stbBlock.cta.label, href: stbBlock.cta.href || "" }
+                    : undefined,
+                  secondaryCta: stbBlock.secondaryCta?.label
+                    ? {
+                        label: stbBlock.secondaryCta.label,
+                        href: stbBlock.secondaryCta.href || "",
+                      }
+                    : undefined,
+                  items,
+                }}
+              />
+            );
+          }
+
+          case "shopify-horizontal-process": {
+            const shpBlock = block as BlockShopifyHorizontalProcess;
+            const steps = (shpBlock.steps ?? []).map((step, idx) => ({
+              number: step.number || String(idx + 1).padStart(2, "0"),
+              title: step.title,
+              description: step.description,
+            }));
+
+            return (
+              <ShopifyHorizontalProcessSection
+                key={blockKey}
+                content={{
+                  eyebrow: shpBlock.eyebrow,
+                  heading: shpBlock.heading,
+                  description: shpBlock.description,
+                  steps,
+                }}
+              />
+            );
+          }
+
+          case "verified-knowledge": {
+            const vkBlock = block as BlockVerifiedKnowledge;
+            const items = (vkBlock.items ?? []).map((item) => ({
+              title: item.title,
+              description: item.description,
+              icon: resolveMediaUrl(item.icon) || item.iconSrc || "",
+              iconAlt: item.iconAlt || item.title,
+            }));
+
+            return (
+              <VerifiedKnowledgeSection
+                key={blockKey}
+                content={{
+                  heading: vkBlock.heading,
+                  description: vkBlock.description,
+                  items,
+                }}
+              />
+            );
+          }
+
+          case "credential-evidence": {
+            const ceBlock = block as BlockCredentialEvidence;
+            const items = (ceBlock.items ?? []).map((item) => ({
+              title: item.title,
+              count: item.count,
+              image: resolveMediaUrl(item.image) || item.imageSrc || "",
+              imageAlt: item.imageAlt || item.title,
+              href: item.href || "",
+            }));
+
+            return (
+              <CredentialEvidenceSection
+                key={blockKey}
+                content={{
+                  heading: ceBlock.heading,
+                  description: ceBlock.description,
+                  note: ceBlock.note || "",
+                  items,
+                }}
+              />
+            );
+          }
+
+          case "credential-tabs": {
+            const ctBlock = block as BlockCredentialTabs;
+            const items = (ctBlock.items ?? []).map((item) => ({
+              id: item.tabId,
+              label: item.label,
+              eyebrow: item.eyebrow || "",
+              title: item.title,
+              description: item.description,
+              details: (item.details ?? []).map((d) => ({
+                label: d.label,
+                value: d.value,
+              })),
+            }));
+
+            return (
+              <CredentialTabsSection
+                key={blockKey}
+                content={{
+                  heading: ctBlock.heading,
+                  description: ctBlock.description,
+                  items,
+                }}
+              />
+            );
+          }
+
+          case "certified-agency-support": {
+            const casBlock = block as BlockCertifiedAgencySupport;
+            const paragraphs = (casBlock.paragraphs ?? []).map((p) => p.text);
+            const items = (casBlock.items ?? []).map((item) => ({
+              title: item.title,
+              description: item.description,
+            }));
+
+            return (
+              <CertifiedAgencySupportSection
+                key={blockKey}
+                content={{
+                  heading: casBlock.heading,
+                  paragraphs,
+                  items,
+                }}
+              />
+            );
+          }
+
+          case "certified-services": {
+            const csBlock = block as BlockCertifiedServices;
+            const items = (csBlock.items ?? []).map((item) => ({
+              eyebrow: item.eyebrow,
+              title: item.title,
+              description: item.description,
+            }));
+
+            return (
+              <CertifiedServicesSection
+                key={blockKey}
+                content={{
+                  heading: csBlock.heading,
+                  description: csBlock.description,
+                  items,
+                }}
+              />
+            );
+          }
+
+          case "partner-directory-proof": {
+            const pdpBlock = block as BlockPartnerDirectoryProof;
+            const items = (pdpBlock.items ?? []).map((item) => {
+              if (item.kind === "image") {
+                return {
+                  kind: "image" as const,
+                  label: item.label,
+                  image: resolveMediaUrl(item.image) || item.imageSrc || "",
+                  imageAlt: item.imageAlt || item.label,
+                  imageWidth: item.imageWidth || 136,
+                  imageHeight: item.imageHeight || 44,
+                };
+              }
+              return {
+                kind: (item.kind || "text") as "rating" | "text",
+                label: item.label,
+                value: item.value || "",
+              };
+            });
+
+            return (
+              <PartnerDirectoryProofSection
+                key={blockKey}
+                content={{
+                  heading: pdpBlock.heading,
+                  description: pdpBlock.description,
+                  href: pdpBlock.href,
+                  items,
+                }}
+              />
+            );
+          }
+
+          case "white-label-final-cta": {
+            const wlctaBlock = block as BlockWhiteLabelFinalCta;
+            const variant =
+              wlctaBlock.variant === "certifiedDevelopers" || wlctaBlock.variant === "shopifyHours"
+                ? wlctaBlock.variant
+                : "default";
+            return (
+              <WhiteLabelFinalCtaSection
+                key={blockKey}
+                cta={{
+                  title: wlctaBlock.title || wlctaBlock.heading || "",
+                  description: wlctaBlock.description || "",
+                  label: wlctaBlock.label || wlctaBlock.buttonText || "Get In Touch",
+                }}
+                variant={variant}
+              />
+            );
+          }
+
+          case "shopify-migration-services": {
+            const smsBlock = block as BlockShopifyMigrationServices;
+            const items = (smsBlock.items ?? []).map((item) => ({
+              title: item.title,
+              description: item.description,
+              image: resolveMediaUrl(item.icon) || item.iconSrc || "",
+              imageAlt: item.iconAlt || item.title,
+              href: item.href,
+              ctaLabel: item.ctaText,
+            }));
+
+            const banner = smsBlock.banner?.title
+              ? {
+                  badge: smsBlock.banner.badge || "",
+                  title: smsBlock.banner.title,
+                  description: smsBlock.banner.description || "",
+                  ctaLabel: smsBlock.banner.ctaLabel || "",
+                  ctaHref: smsBlock.banner.ctaHref || "",
+                }
+              : undefined;
+
+            return (
+              <ShopifyMigrationServicesSection
+                key={blockKey}
+                id={smsBlock.idAttr || "explore_migration_options"}
+                eyebrow={smsBlock.eyebrow}
+                heading={smsBlock.heading}
+                description={smsBlock.description}
+                banner={banner}
+                items={items}
+              />
+            );
+          }
+
+          case "shopify-migration-numbered-grid": {
+            const smngBlock = block as BlockShopifyMigrationNumberedGrid;
+            const items = (smngBlock.items ?? []).map((item, idx) => ({
+              number: item.number || String(idx + 1).padStart(2, "0"),
+              title: item.title,
+              description: item.description,
+            }));
+
+            return (
+              <ShopifyMigrationNumberedGridSection
+                key={blockKey}
+                id={smngBlock.idAttr}
+                eyebrow={smngBlock.eyebrow}
+                heading={smngBlock.heading}
+                description={smngBlock.description}
+                variant={smngBlock.variant || "pista"}
+                items={items}
+              />
+            );
+          }
+
+          case "seo-safe-migration": {
+            const ssmBlock = block as BlockSeoSafeMigration;
+            return (
+              <SeoSafeMigrationSection
+                key={blockKey}
+                content={{
+                  eyebrow: ssmBlock.eyebrow,
+                  heading: ssmBlock.heading,
+                  description: ssmBlock.description,
+                  tags: (ssmBlock.tags ?? []).map((t) => t.tag),
+                  urlMappings: (ssmBlock.urlMappings ?? []).map((m) => ({
+                    source: m.source,
+                    statusCode: m.statusCode,
+                    target: m.target,
+                  })),
+                  checks: (ssmBlock.checks ?? []).map((c) => c.check),
+                }}
+              />
+            );
+          }
+
+          case "why-choose-shopify-migration": {
+            const wcsmBlock = block as BlockWhyChooseShopifyMigration;
+            return (
+              <WhyChooseShopifyMigrationSection
+                key={blockKey}
+                content={{
+                  eyebrow: wcsmBlock.eyebrow,
+                  heading: wcsmBlock.heading,
+                  description: wcsmBlock.description,
+                  partnerHeading: wcsmBlock.partnerHeading || "",
+                  partnerDescription: wcsmBlock.partnerDescription || "",
+                  partnerLogo:
+                    resolveMediaUrl(wcsmBlock.partnerLogo) ||
+                    wcsmBlock.partnerLogoSrc ||
+                    "",
+                  partnerLogoAlt: wcsmBlock.partnerLogoAlt || "",
+                  logoHref: wcsmBlock.logoHref,
+                  partnerLink: {
+                    label: wcsmBlock.partnerLink?.label || "",
+                    href: wcsmBlock.partnerLink?.href || "",
+                  },
+                  stats: (wcsmBlock.stats ?? []).map((s) => ({
+                    value: s.value,
+                    label: s.label,
+                  })),
+                  items: (wcsmBlock.items ?? []).map((item) => ({
+                    icon: item.icon,
+                    title: item.title,
+                    description: item.description,
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "theme-customization-services": {
+            const tcsBlock = block as BlockThemeCustomizationServices;
+            const boxes = (tcsBlock.boxes ?? []).map((box) => ({
+              number: box.number,
+              title: box.title,
+              badge: box.badge,
+              description: box.description,
+              icon: renderCustomBoxIcon(box.iconName),
+            }));
+
+            return (
+              <ThemeCustomizationServicesSection
+                key={blockKey}
+                variant={tcsBlock.variant || "green"}
+                content={{
+                  eyebrow: tcsBlock.eyebrow,
+                  heading: tcsBlock.heading,
+                  description: tcsBlock.description,
+                  bottomNote: tcsBlock.bottomNote,
+                  boxes,
+                }}
+              />
+            );
+          }
+
+          case "theme-customization-approach": {
+            const tcaBlock = block as BlockThemeCustomizationApproach;
+            const approaches = (tcaBlock.approaches ?? []).map((item) => ({
+              badge: item.badge,
+              title: item.title,
+              description: item.description,
+              isHighlighted: item.isHighlighted,
+              points: (item.points ?? []).map((p) => p.point),
+            }));
+
+            return (
+              <ThemeCustomizationApproachSection
+                key={blockKey}
+                content={{
+                  eyebrow: tcaBlock.eyebrow,
+                  heading: tcaBlock.heading,
+                  description: tcaBlock.description,
+                  approaches,
+                }}
+              />
+            );
+          }
+
+          case "shopify-themes-grid": {
+            const stgBlock = block as BlockShopifyThemesGrid;
+            const items = (stgBlock.items ?? []).map((item) => ({
+              name: item.name,
+              title: item.title,
+              image: resolveMediaUrl(item.image) || item.imageSrc || "",
+              alt: item.alt,
+              href: item.href,
+              ctaText: item.ctaText,
+            }));
+
+            return (
+              <ShopifyThemesGridSection
+                key={blockKey}
+                id={stgBlock.idAttr || "customized-theme"}
+                variant={stgBlock.variant || "pista"}
+                content={{
+                  eyebrow: stgBlock.eyebrow,
+                  title: stgBlock.title,
+                  subtitle: stgBlock.subtitle,
+                  items,
+                }}
+              />
+            );
+          }
+
+          case "ai-empowered-delivery": {
+            const aiedBlock = block as BlockAiEmpoweredDelivery;
+            return (
+              <AiEmpoweredDeliverySection
+                key={blockKey}
+                variant={aiedBlock.variant || "default"}
+                content={{
+                  eyebrow: aiedBlock.eyebrow,
+                  heading: aiedBlock.heading,
+                  description: aiedBlock.description,
+                  callout: aiedBlock.callout,
+                  cta: aiedBlock.cta?.label
+                    ? { label: aiedBlock.cta.label, href: aiedBlock.cta.href || "" }
+                    : undefined,
+                  tools: (aiedBlock.tools ?? []).map((t) => ({
+                    name: t.name,
+                    description: t.description,
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "shopify-cro-barriers": {
+            const scbBlock = block as BlockShopifyCroBarriers;
+            return (
+              <ShopifyCroBarriersSection
+                key={blockKey}
+                content={{
+                  eyebrow: scbBlock.eyebrow,
+                  heading: scbBlock.heading,
+                  description: scbBlock.description,
+                  items: (scbBlock.items ?? []).map((i) => ({
+                    title: i.title,
+                    icon: resolveMediaUrl(i.icon) || i.iconSrc || "",
+                    alt: i.alt || i.title,
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "shopify-cro-revenue-impact": {
+            const scriBlock = block as BlockShopifyCroRevenueImpact;
+            return (
+              <ShopifyCroRevenueImpactSection
+                key={blockKey}
+                content={{
+                  eyebrow: scriBlock.eyebrow,
+                  heading: scriBlock.heading,
+                  description: scriBlock.description,
+                  before: {
+                    badge: scriBlock.beforeBadge || "Current State",
+                    metrics: (scriBlock.beforeMetrics ?? []).map((m) => ({
+                      label: m.label,
+                      value: m.value,
+                      icon: resolveMediaUrl(m.icon) || m.iconSrc || "",
+                    })),
+                    totalLabel: scriBlock.beforeTotalLabel || "Revenue",
+                    totalValue: scriBlock.beforeTotalValue || "$50,000",
+                  },
+                  after: {
+                    badge: scriBlock.afterBadge || "After Optimization",
+                    metrics: (scriBlock.afterMetrics ?? []).map((m) => ({
+                      label: m.label,
+                      value: m.value,
+                      icon: resolveMediaUrl(m.icon) || m.iconSrc || "",
+                    })),
+                    totalLabel: scriBlock.afterTotalLabel || "Revenue",
+                    totalValue: scriBlock.afterTotalValue || "$75,000",
+                  },
+                  footer: {
+                    text: scriBlock.footerText || "Additional Revenue Potential:",
+                    highlight: scriBlock.footerHighlight || "+$25,000",
+                    suffix: scriBlock.footerSuffix || "Per Month",
+                  },
+                }}
+              />
+            );
+          }
+
+          case "shopify-cro-services": {
+            const scsBlock = block as BlockShopifyCroServices;
+            return (
+              <ShopifyCroServicesSection
+                key={blockKey}
+                content={{
+                  eyebrow: scsBlock.eyebrow,
+                  heading: scsBlock.heading,
+                  description: scsBlock.description,
+                  items: (scsBlock.items ?? []).map((i) => ({
+                    title: i.title,
+                    description: i.description,
+                    icon: resolveMediaUrl(i.icon) || i.iconSrc || "",
+                    alt: i.alt || i.title,
+                    deliverables: (i.deliverables ?? []).map((d) => d.item),
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "shopify-cro-assessment": {
+            const scaBlock = block as BlockShopifyCroAssessment;
+            return (
+              <ShopifyCroAssessmentSection
+                key={blockKey}
+                content={{
+                  heading: scaBlock.heading,
+                  description: scaBlock.description,
+                  points: (scaBlock.points ?? []).map((p) => p.text),
+                  cta: {
+                    label: scaBlock.ctaLabel || "COMPLETE CRO ASSESSMENT",
+                    href: scaBlock.ctaHref || "#",
+                  },
+                }}
+              />
+            );
+          }
+
+          case "shopify-cro-process": {
+            const scpBlock = block as BlockShopifyCroProcess;
+            return (
+              <ShopifyCroProcessSection
+                key={blockKey}
+                content={{
+                  eyebrow: scpBlock.eyebrow,
+                  heading: scpBlock.heading,
+                  description: scpBlock.description,
+                  steps: (scpBlock.steps ?? []).map((s) => ({
+                    number: s.number,
+                    title: s.title,
+                    description: s.description,
+                    icon: resolveMediaUrl(s.icon) || s.iconSrc || "",
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "shopify-cro-why": {
+            const scwBlock = block as BlockShopifyCroWhy;
+            return (
+              <ShopifyCroWhySection
+                key={blockKey}
+                content={{
+                  eyebrow: scwBlock.eyebrow,
+                  heading: scwBlock.heading,
+                  paragraphs: (scwBlock.paragraphs ?? []).map((p) => p.text),
+                  points: (scwBlock.points ?? []).map((p) => p.text),
+                  tagline: scwBlock.tagline,
+                }}
+              />
+            );
+          }
+
+          case "shopify-cro-engagement": {
+            const sceBlock = block as BlockShopifyCroEngagement;
+            return (
+              <ShopifyCroEngagementSection
+                key={blockKey}
+                content={{
+                  heading: sceBlock.heading,
+                  items: (sceBlock.items ?? []).map((m) => ({
+                    title: m.title,
+                    description: m.description,
+                    icon: resolveMediaUrl(m.icon) || m.iconSrc || "",
+                    alt: m.alt || m.title,
+                    features: (m.features ?? []).map((f) => f.text),
+                    cta: {
+                      label: m.ctaLabel || "REQUEST AUDIT DETAILS",
+                      href: m.ctaHref || "/request-quote",
+                    },
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "shopify-mobile-app-hero": {
+            const smahBlock = block as BlockShopifyMobileAppHero;
+            return (
+              <ShopifyMobileAppHeroSection
+                key={blockKey}
+                content={{
+                  title: smahBlock.title,
+                  eyebrows: (smahBlock.eyebrowSpans ?? [])
+                    .map((e) => e.text || "")
+                    .filter(Boolean),
+                  description: smahBlock.subtitle || smahBlock.description || "",
+                  primaryCta: {
+                    label: smahBlock.cta || "Get in Touch",
+                    href: smahBlock.ctaHref || "/contact-us",
+                  },
+                  badges: (smahBlock.badges ?? []).map((b) => ({
+                    name: b.name,
+                    src: resolveMediaUrl(b.logo) || b.src || "",
+                    alt: b.alt || b.name,
+                    href: b.href || "#",
+                    width: b.width || 120,
+                    height: b.height || 40,
+                  })),
+                  slides: (smahBlock.appScreenshots ?? []).map((s) => ({
+                    src: resolveMediaUrl(s.image) || s.src || "",
+                    alt: s.alt || s.name,
+                    width: s.width || 300,
+                    height: s.height || 600,
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "white-label-counter": {
+            const wlcBlock = block as BlockWhiteLabelCounter;
+            return (
+              <WhiteLabelCounterSection
+                key={blockKey}
+                counters={(wlcBlock.counters ?? []).map((c) => ({
+                  value: `${c.count}${c.unit || ""}`,
+                  label: c.label,
+                }))}
+              />
+            );
+          }
+
+          case "shopify-mobile-app-dtc": {
+            const smadBlock = block as BlockShopifyMobileAppDtc;
+            return (
+              <ShopifyMobileAppDtcSection
+                key={blockKey}
+                content={{
+                  eyebrow: smadBlock.eyebrow,
+                  heading: smadBlock.heading,
+                  paragraphs: smadBlock.description ? [smadBlock.description] : undefined,
+                  cards: (smadBlock.cards ?? []).map((c) => ({
+                    tag: c.tag,
+                    title: c.title,
+                    description: c.description,
+                    badges: c.badges?.map((b) => ({
+                      src: resolveMediaUrl(b.logo) || b.src || "",
+                      alt: b.alt || b.name || "",
+                      href: b.href || "#",
+                      width: b.width || 111,
+                      height: b.height || 44,
+                    })),
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "shopify-mobile-app-work": {
+            const smawBlock = block as BlockShopifyMobileAppWork;
+            return (
+              <ShopifyMobileAppWorkSection
+                key={blockKey}
+                content={{
+                  eyebrow: smawBlock.eyebrow,
+                  heading: smawBlock.heading,
+                  description: smawBlock.description,
+                  ctaHref: smawBlock.ctaHref || "/our-work",
+                  ctaLabel: smawBlock.ctaLabel || "View All Mobile App Projects",
+                  items: (smawBlock.items ?? []).map((i) => ({
+                    name: i.name,
+                    category: i.category,
+                    image: resolveMediaUrl(i.image) || i.src || "",
+                    imageAlt: i.alt || i.name,
+                    href: i.href,
+                    appLinks: [
+                      ...(i.appStoreUrl ? [{ href: i.appStoreUrl, label: mobileAppPlatformLabels.ios, icon: mobileAppPlatformLabels.iosIcon }] : []),
+                      ...(i.playStoreUrl ? [{ href: i.playStoreUrl, label: mobileAppPlatformLabels.android, icon: mobileAppPlatformLabels.androidIcon }] : []),
+                    ],
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "shopify-mobile-app-comparison": {
+            const smacBlock = block as BlockShopifyMobileAppComparison;
+            return (
+              <ShopifyMobileAppComparisonSection
+                key={blockKey}
+                content={{
+                  eyebrow: smacBlock.eyebrow,
+                  heading: smacBlock.heading,
+                  description: smacBlock.description,
+                  tableHeaders: [
+                    "Features",
+                    smacBlock.col1Heading || "App Builder (Template)",
+                    smacBlock.col2Heading || "Custom Mobile App Development",
+                  ],
+                  rows: (smacBlock.rows ?? []).map((r) => ({
+                    title: r.feature,
+                    subtitle: "",
+                    appBuilder: r.appBuilder,
+                    custom: r.customDev,
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "shopify-mobile-app-experience": {
+            const smaeBlock = block as BlockShopifyMobileAppExperience;
+            return (
+              <ShopifyMobileAppExperienceSection
+                key={blockKey}
+                content={{
+                  eyebrow: smaeBlock.eyebrow,
+                  heading: smaeBlock.heading,
+                  description: smaeBlock.description,
+                  moments: (smaeBlock.items ?? []).map((i, idx) => ({
+                    step: String(idx + 1).padStart(2, "0"),
+                    title: i.title,
+                    description: i.description,
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "white-label-process": {
+            const wlpBlock = block as BlockWhiteLabelProcess;
+            return (
+              <WhiteLabelProcessSection
+                key={blockKey}
+                eyebrow={wlpBlock.eyebrow}
+                title={wlpBlock.title}
+                description={wlpBlock.description}
+                note={wlpBlock.note || ""}
+                steps={(wlpBlock.steps ?? []).map((s, idx) => ({
+                  number: s.number || String(idx + 1).padStart(2, "0"),
+                  title: s.title,
+                  description: s.description,
+                }))}
+              />
+            );
+          }
+
+          case "agency-services": {
+            const asBlock = block as BlockAgencyServices;
+            return (
+              <AgencyServicesSection
+                key={blockKey}
+                id={asBlock.idAttr || "services"}
+                cardVariant={asBlock.cardVariant || "services-box"}
+                content={{
+                  eyebrow: asBlock.eyebrow,
+                  heading: asBlock.heading,
+                  description: asBlock.description,
+                  items: (asBlock.items ?? []).map((i) => ({
+                    title: i.title,
+                    description: i.description,
+                    badge: i.badge,
+                    href: i.href,
+                    iconName: i.iconName,
+                    features: (i.features ?? []).map((f) => f.feature),
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "city-page-counter": {
+            const cpcBlock = block as BlockCityPageCounter;
+            return (
+              <CityPageCounterSection
+                key={blockKey}
+                eyebrowVariant="dash"
+                content={{
+                  eyebrow: cpcBlock.eyebrow,
+                  heading: cpcBlock.heading,
+                  description: cpcBlock.description,
+                  items: (cpcBlock.counters ?? []).map((c) => ({
+                    value: `${c.count}${c.unit || ""}`,
+                    label: c.label,
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "shopify-team-behind-it": {
+            const stbiBlock = block as BlockShopifyTeamBehindIt;
+            return (
+              <ShopifyTeamBehindItSection
+                key={blockKey}
+                hideCtas={stbiBlock.hideCtas ?? true}
+                content={{
+                  eyebrow: stbiBlock.eyebrow,
+                  heading: stbiBlock.heading,
+                  description: stbiBlock.description,
+                  cards: (stbiBlock.items ?? []).map((i) => ({
+                    title: i.title,
+                    description: i.description,
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "city-why-choose-boxes": {
+            const cwcbBlock = block as BlockCityWhyChooseBoxes;
+            return (
+              <CityWhyChooseBoxesSection
+                key={blockKey}
+                bgClassName="bg-white"
+                className="city-page-why-choose-dynamic"
+                columns={(cwcbBlock.columns as 3 | 4 | 5) || 3}
+                eyebrowVariant="dash"
+                content={{
+                  eyebrow: cwcbBlock.eyebrow,
+                  heading: cwcbBlock.heading,
+                  description: cwcbBlock.description,
+                  items: (cwcbBlock.boxes ?? []).map((b) => ({
+                    title: b.title,
+                    description: b.description,
+                    iconNode: b.iconName ? renderCustomBoxIcon(b.iconName) : undefined,
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "shopify-hours-hero": {
+            return <ShopifyHoursHeroSection key={blockKey} />;
+          }
+
+          case "shopify-hours-comparison": {
+            return <ShopifyHoursComparisonSection key={blockKey} />;
+          }
+
+          case "shopify-hours-tasks": {
+            return <ShopifyHoursTasksSection key={blockKey} />;
+          }
+
+          case "numbered-process-timeline": {
+            const nptBlock = block as BlockNumberedProcessTimeline;
+            return (
+              <NumberedProcessTimelineSection
+                key={blockKey}
+                eyebrow={nptBlock.eyebrow}
+                heading={nptBlock.heading}
+                description={nptBlock.description}
+                headingId={nptBlock.headingId || "shopify-hours-process-title"}
+                layout={nptBlock.layout === "centered" ? "centered" : "split"}
+                items={(nptBlock.items ?? []).map((i) => i.title)}
+              />
+            );
+          }
+
+          case "shopify-apps-hero": {
+            const sahBlock = block as BlockShopifyAppsHero;
+            return (
+              <div
+                key={blockKey}
+                className="inner-hero-sec relative overflow-hidden bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-[160px] pb-[85px] max-[992px]:pt-[140px] max-[992px]:pb-[46px]"
+              >
+                <Container>
+                  <div className="inner-hero-content mx-auto max-w-[770px] text-center">
+                    <h1 className="m-0 inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-[#282828] max-[992px]:text-[30px] max-[992px]:leading-[60px] max-[767px]:leading-[40px]">
+                      {sahBlock.title}
+                    </h1>
+                  </div>
+                </Container>
+              </div>
+            );
+          }
+
+          case "shopify-apps-grid": {
+            const sagBlock = block as BlockShopifyAppsGrid;
+            return (
+              <section
+                key={blockKey}
+                className="shopify-apps-list py-20 max-[992px]:py-[50px]"
+              >
+                <Container>
+                  <div className="wrapper -mx-[10px] flex flex-wrap list-none gap-y-[15px] max-[1199px]:gap-y-[30px] max-[767px]:mx-0">
+                    {(sagBlock.apps ?? []).map((app, appIdx) => (
+                      <div
+                        key={app.title || appIdx}
+                        className="w-1/4 px-[10px] max-[1199px]:w-1/2 max-[767px]:w-full max-[767px]:px-0"
+                      >
+                        <a
+                          href={app.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="list-block group flex items-start text-[#252c15] no-underline transition-all duration-300 hover:text-[#ad5151]"
+                        >
+                          <div className="icon-block h-[52px] w-[52px] shrink-0 overflow-hidden rounded-[8px] border border-black/10 flex">
+                            <Image
+                              src={
+                                resolveMediaUrl(app.image) ||
+                                app.imageSrc ||
+                                "/assets/icons/shopify.svg"
+                              }
+                              alt={app.alt || app.title}
+                              width={52}
+                              height={52}
+                              className="h-full w-full object-cover"
+                            />
+                          </div>
+                          <div className="text-block w-[calc(100%-52px)] pl-[10px]">
+                            <div className="title">
+                              <h3 className="mb-[7px] font-sans text-[14px] font-semibold leading-[1.2] text-[#282828] transition-colors duration-300 group-hover:text-[#ad5151]">
+                                {app.title}
+                              </h3>
+                            </div>
+                            <div className="aditional-info">
+                              <span className="mb-[5px] flex font-sans text-[12px] font-medium leading-[1.2] tracking-normal text-[#56524e]">
+                                {app.additionalInfo}
+                              </span>
+                            </div>
+                            <div className="description">
+                              <p className="m-0 font-sans text-[12px] font-normal leading-[1.2] tracking-normal text-[#56524e]">
+                                {app.description}
+                              </p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </Container>
+              </section>
+            );
+          }
+
+          case "shopify-app-benefits": {
+            const sabBlock = block as BlockShopifyAppBenefits;
+            return (
+              <ShopifyAppBenefitsSection
+                key={blockKey}
+                content={{
+                  heading: sabBlock.heading,
+                  description: sabBlock.description,
+                  items: (sabBlock.items ?? []).map((i) => ({
+                    title: i.title,
+                    description: i.description,
+                    icon: resolveMediaUrl(i.icon) || i.iconSrc || "/assets/icons/default-benefit.svg",
+                    iconAlt: i.iconAlt || i.title || "",
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "shopify-app-features": {
+            const safBlock = block as BlockShopifyAppFeatures;
+            return (
+              <ShopifyAppFeaturesSection
+                key={blockKey}
+                content={{
+                  eyebrow: safBlock.eyebrow,
+                  heading: safBlock.heading,
+                  centerImage: {
+                    src:
+                      resolveMediaUrl(safBlock.centerImage) ||
+                      safBlock.centerImageSrc ||
+                      "/assets/services/shopify-mobile-app-development/features/app-features-img.webp",
+                    alt: safBlock.centerImageAlt || safBlock.heading,
+                    width: 374,
+                    height: 518,
+                  },
+                  leftFeatures: (safBlock.leftFeatures ?? []).map((i) => ({
+                    title: i.title,
+                    description: i.description,
+                    icon:
+                      resolveMediaUrl(i.icon) ||
+                      i.iconSrc ||
+                      "/assets/services/shopify-mobile-app-development/features/app-theme-icon.svg",
+                    iconAlt: i.iconAlt || i.title,
+                  })),
+                  rightFeatures: (safBlock.rightFeatures ?? []).map((i) => ({
+                    title: i.title,
+                    description: i.description,
+                    icon:
+                      resolveMediaUrl(i.icon) ||
+                      i.iconSrc ||
+                      "/assets/services/shopify-mobile-app-development/features/searching-icon.svg",
+                    iconAlt: i.iconAlt || i.title,
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "shopify-app-process": {
+            const sapBlock = block as BlockShopifyAppProcess;
+            return (
+              <ShopifyAppProcessSection
+                key={blockKey}
+                content={{
+                  eyebrow: sapBlock.eyebrow,
+                  heading: sapBlock.heading,
+                  steps: (sapBlock.steps ?? []).map((s) => ({
+                    title: s.title,
+                    description: s.description,
+                    icon: resolveMediaUrl(s.icon) || s.iconSrc,
+                    iconAlt: s.iconAlt || s.title,
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "risks-shopify-topics": {
+            const rstBlock = block as BlockRisksShopifyTopics;
+            return (
+              <RisksShopifyTopics
+                key={blockKey}
+                items={(rstBlock.topics ?? []).map((t, idx) => ({
+                  id: t.id || `contenttab-${idx + 1}`,
+                  label: t.label || t.title || `Topic ${idx + 1}`,
+                  heading: t.heading || t.title || "",
+                  paragraphs: (t.paragraphs ?? []).map((p) => p.text),
+                }))}
+              />
+            );
+          }
+
+          case "image-cta": {
+            const icBlock = block as BlockImageCta;
+            return (
+              <ImageCtaSection
+                key={blockKey}
+                backgroundImage={
+                  resolveMediaUrl(icBlock.backgroundImage) ||
+                  icBlock.backgroundImageSrc ||
+                  "/assets/backgrounds/think-migration.png"
+                }
+                className="thinking-migration-box"
+                ctaHref={icBlock.ctaHref}
+                ctaLabel={icBlock.ctaLabel}
+                description={icBlock.description}
+                heading={icBlock.heading}
               />
             );
           }
