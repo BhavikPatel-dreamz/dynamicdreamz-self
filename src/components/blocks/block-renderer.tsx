@@ -27,6 +27,8 @@ import { TechnologiesWorkWithSection } from "@/components/sections/technologies-
 import { TwoColImageWithTextSection } from "@/components/sections/two-col-image-with-text-section";
 import { IndustriesServedSection } from "@/components/sections/shopify-plus-agency/industries-served-section";
 import { SiteMapPage } from "@/components/sections/site-map-page";
+import { TermsOfServicePage, type TermsOfServiceContentProps } from "@/components/sections/terms-of-service-page";
+import { PrivacyPolicyPage, type PrivacyPolicyContentProps } from "@/components/sections/privacy-policy-page";
 import { AboutHeroSection } from "@/components/sections/about/about-hero-section";
 import { AboutStorySection } from "@/components/sections/about/about-story-section";
 import { AboutTimelineSection } from "@/components/sections/about/about-timeline-section";
@@ -111,6 +113,10 @@ import { shopifyPlusAgencyIndustries } from "@/content/shopify-plus-agency";
 import { mobileAppPlatformLabels } from "@/content/shopify-mobile-app-development";
 import { appmakerHeroCoBranding } from "@/content/appmaker-shopify-mobile-app-development";
 import { risksShopifyOutsourcingTopics } from "@/content/risks-of-shopify-outsourcing";
+import { siteMapLinks, type SiteMapLinkItem } from "@/content/site-map";
+import { bookDiscoveryCallContent, type BookDiscoveryCallContent } from "@/content/book-a-discovery-call";
+import { workplaceBenefits } from "@/content/career";
+import { homeFaqs, homeSectionCopy } from "@/content/home";
 
 export type CmsMedia =
   | {
@@ -1965,20 +1971,31 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
           case "faq-accordion": {
             const faqBlock = block as BlockFaqAccordion;
             const faqsList = faqBlock.faqs ?? [];
-            const items = faqsList.map((faq, faqIdx) => ({
-              id: faq.id ? `faq-${block.id}-${faq.id}` : `faq-${block.id}-${faqIdx}`,
-              question: faq.question,
-              answer: faq.answer,
-            }));
+            const isHomeFaq =
+              block.id === "home-faq" ||
+              (!faqBlock.eyebrow && (!faqBlock.heading || faqBlock.heading === homeSectionCopy.homeFaqTitle));
+            const items =
+              faqsList.length > 0
+                ? faqsList.map((faq, faqIdx) => ({
+                    id: faq.id
+                      ? `faq-${block.id}-${faq.id}`
+                      : `${isHomeFaq ? "home-faq" : `faq-${block.id || index}`}-${faqIdx}`,
+                    question: faq.question,
+                    answer: faq.answer,
+                  }))
+                : isHomeFaq
+                  ? homeFaqs
+                  : [];
 
             return (
               <SplitFaqSection
-                description={faqBlock.description}
+                description={faqBlock.description || (isHomeFaq ? homeSectionCopy.homeFaqDescription : undefined)}
                 eyebrow={faqBlock.eyebrow}
-                heading={faqBlock.heading}
-                idPrefix={`faq-${block.id || index}`}
+                heading={faqBlock.heading || (isHomeFaq ? homeSectionCopy.homeFaqTitle : undefined)}
+                idPrefix={isHomeFaq ? "home-faq" : `faq-${block.id || index}`}
                 items={items}
                 key={blockKey}
+                lazyAccordion
               />
             );
           }
@@ -2155,6 +2172,19 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               });
             }
 
+            if (bpBlock.variant === "slider") {
+              return (
+                <IndustryBrandsSection
+                  content={{ slug: "our-work" }}
+                  density="compact"
+                  heading={bpBlock.heading}
+                  items={mappedLogos.length > 0 ? mappedLogos : undefined}
+                  key={blockKey}
+                  mobileSpacing="standard"
+                />
+              );
+            }
+
             return (
               <BrandPartnersSection
                 description={bpBlock.description}
@@ -2281,158 +2311,83 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
           case "legal-content": {
             const legalBlock = block as BlockLegalContent;
-            const sectionsList = legalBlock.sections ?? [];
-            const containerClass =
-              legalBlock.containerWidth === "narrow"
-                ? "max-w-[800px] mx-auto"
-                : legalBlock.containerWidth === "full"
-                  ? "w-full"
-                  : undefined;
+            const isPrivacy =
+              legalBlock.heading.toLowerCase().includes("privacy") ||
+              Boolean(legalBlock.contactInfo?.phone) ||
+              Boolean(legalBlock.contactInfo?.address);
+
+            if (isPrivacy) {
+              const privacyProps: PrivacyPolicyContentProps = {
+                heroTitle: legalBlock.heading,
+                sections: legalBlock.sections?.map((s) => ({
+                  title: s.title,
+                  level: s.level === "3" ? 3 : 2,
+                  paragraphs: s.paragraphs?.map((p) => p.text),
+                  items: s.items?.map((i) => {
+                    if (i.boldPrefix) {
+                      return [
+                        { text: i.boldPrefix, strong: true },
+                        { text: i.text.startsWith(" ") ? i.text : ` ${i.text}` },
+                      ];
+                    }
+                    return [{ text: i.text }];
+                  }),
+                })),
+                contact: legalBlock.contactInfo
+                  ? {
+                      name: legalBlock.contactInfo.name,
+                      email: legalBlock.contactInfo.email,
+                      phone: legalBlock.contactInfo.phone,
+                      phoneHref: legalBlock.contactInfo.phoneHref,
+                      address: legalBlock.contactInfo.address,
+                      addressHref: legalBlock.contactInfo.addressHref,
+                    }
+                  : undefined,
+              };
+
+              return (
+                <PrivacyPolicyPage
+                  content={privacyProps}
+                  key={blockKey}
+                />
+              );
+            }
+
+            const termsProps: TermsOfServiceContentProps = {
+              heroTitle: legalBlock.heading,
+              intro: legalBlock.intro,
+              sections: legalBlock.sections?.map((s) => ({
+                title: s.title,
+                paragraphs: s.paragraphs?.map((p) => p.text),
+                items: s.items?.map((i) => i.text),
+                closingParagraphs: s.closingParagraphs?.map((cp) => cp.text),
+              })),
+              contactEmail: legalBlock.contactInfo?.email,
+            };
 
             return (
-              <React.Fragment key={blockKey}>
-                <section
-                  aria-labelledby={`legal-title-${block.id || index}`}
-                  className="overflow-hidden bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-40 pb-[85px] text-center max-[992px]:pt-[140px] max-[992px]:pb-[46px]"
-                >
-                  <Container className={containerClass}>
-                    {legalBlock.eyebrow ? (
-                      <span className="text-brand-red mb-2 block font-montserrat text-xs font-bold uppercase tracking-wider">
-                        {legalBlock.eyebrow}
-                      </span>
-                    ) : null}
-                    <h1
-                      className="inline-block max-w-full font-sans text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
-                      id={`legal-title-${block.id || index}`}
-                    >
-                      {legalBlock.heading}
-                    </h1>
-                  </Container>
-                </section>
-
-                <section
-                  aria-label="Legal policy details"
-                  className="py-20 max-[992px]:py-[50px]"
-                >
-                  <Container className={containerClass}>
-                    {legalBlock.intro ? (
-                      <p className="mb-6 text-base leading-[30.4px] font-medium text-muted">
-                        {legalBlock.intro}
-                      </p>
-                    ) : null}
-
-                    {sectionsList.map((section, sIdx) => {
-                      const Heading = section.level === "3" ? "h3" : "h2";
-                      const headingClass =
-                        section.level === "3"
-                          ? "mb-2.5 font-sans text-lg leading-[28.8px] font-bold tracking-[-0.36px] text-ink max-[767px]:text-base max-[767px]:leading-[26px]"
-                          : "mb-6 font-sans text-2xl leading-[31.2px] font-bold tracking-[-0.48px] text-ink max-[767px]:text-xl max-[767px]:leading-[31.2px]";
-
-                      return (
-                        <div key={section.title || sIdx}>
-                          <Heading className={headingClass}>{section.title}</Heading>
-                          {section.paragraphs?.map((p, pIdx) => (
-                            <p
-                              className="mb-6 text-base leading-[30.4px] font-medium text-muted"
-                              key={pIdx}
-                            >
-                              {p.text}
-                            </p>
-                          ))}
-                          {section.items && section.items.length > 0 ? (
-                            <ul className="mb-6 ml-5 list-disc pl-0 text-base leading-[27px] font-medium tracking-[0.32px] text-muted">
-                              {section.items.map((item, itemIdx) => (
-                                <li
-                                  className={
-                                    itemIdx < section.items!.length - 1
-                                      ? "mb-[18px]"
-                                      : undefined
-                                  }
-                                  key={itemIdx}
-                                >
-                                  {item.boldPrefix ? (
-                                    <>
-                                      <strong>{item.boldPrefix}</strong>{" "}
-                                    </>
-                                  ) : null}
-                                  <span>{item.text}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          ) : null}
-                          {section.closingParagraphs?.map((cp, cpIdx) => (
-                            <p
-                              className="mb-6 text-base leading-[30.4px] font-medium text-muted"
-                              key={cpIdx}
-                            >
-                              {cp.text}
-                            </p>
-                          ))}
-                        </div>
-                      );
-                    })}
-
-                    {legalBlock.contactInfo?.email ? (
-                      <div className="mb-6 text-base leading-[30.4px] font-medium text-muted">
-                        {legalBlock.contactInfo.name ? (
-                          <h3 className="mb-2.5 font-sans text-lg leading-[28.8px] font-bold tracking-[-0.36px] text-ink max-[767px]:text-base max-[767px]:leading-[26px]">
-                            {legalBlock.contactInfo.name}
-                          </h3>
-                        ) : null}
-                        <address className="not-italic">
-                          {legalBlock.contactInfo.email ? (
-                            <p>
-                              <a
-                                className="text-[#d92128] underline transition-colors duration-300 hover:no-underline focus-visible:text-brand-red"
-                                href={`mailto:${legalBlock.contactInfo.email}`}
-                              >
-                                {legalBlock.contactInfo.email}
-                              </a>
-                            </p>
-                          ) : null}
-                          {legalBlock.contactInfo.phone ? (
-                            <p>
-                              <a
-                                className="text-[#d92128] underline transition-colors duration-300 hover:no-underline focus-visible:text-brand-red"
-                                href={
-                                  legalBlock.contactInfo.phoneHref ||
-                                  `tel:${legalBlock.contactInfo.phone}`
-                                }
-                              >
-                                {legalBlock.contactInfo.phone}
-                              </a>
-                            </p>
-                          ) : null}
-                          {legalBlock.contactInfo.address ? (
-                            <p>
-                              {legalBlock.contactInfo.addressHref ? (
-                                <a
-                                  className="text-[#d92128] underline transition-colors duration-300 hover:no-underline focus-visible:text-brand-red"
-                                  href={legalBlock.contactInfo.addressHref}
-                                  rel="noopener noreferrer"
-                                  target="_blank"
-                                >
-                                  {legalBlock.contactInfo.address}
-                                </a>
-                              ) : (
-                                legalBlock.contactInfo.address
-                              )}
-                            </p>
-                          ) : null}
-                        </address>
-                      </div>
-                    ) : null}
-                  </Container>
-                </section>
-              </React.Fragment>
+              <TermsOfServicePage
+                content={termsProps}
+                key={blockKey}
+              />
             );
           }
 
           case "sitemap-directory": {
             const smapBlock = block as BlockSiteMapDirectory;
-            const customLinks = smapBlock.groups?.flatMap((g) =>
-              (g.links ?? []).map((l) => ({ label: l.label, href: l.href })),
-            );
+            const localLinksByLabel = new Map(siteMapLinks.map((item) => [item.label, item]));
+            const customLinks: SiteMapLinkItem[] | undefined = smapBlock.groups
+              ? smapBlock.groups.flatMap((g) =>
+                  (g.links ?? []).map((l) => {
+                    const localMatch = localLinksByLabel.get(l.label);
+                    return {
+                      label: l.label,
+                      href: l.href,
+                      children: localMatch?.children,
+                    };
+                  }),
+                )
+              : undefined;
 
             return (
               <SiteMapPage
@@ -2783,27 +2738,30 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
           case "discovery-call": {
             const dcBlock = block as BlockDiscoveryCall;
-            const hostImage = resolveMediaUrl(dcBlock.host?.image) || "/assets/discovery-call/discovery-call-host.webp";
-            const callContent = {
-              eyebrow: dcBlock.eyebrow || "",
-              title: dcBlock.title || "",
-              description: dcBlock.description || "",
+            const hostImage = resolveMediaUrl(dcBlock.host?.image) || bookDiscoveryCallContent.host.image;
+            const callContent: BookDiscoveryCallContent = {
+              eyebrow: dcBlock.eyebrow || bookDiscoveryCallContent.eyebrow,
+              title: dcBlock.title || bookDiscoveryCallContent.title,
+              description: dcBlock.description || bookDiscoveryCallContent.description,
               host: {
-                name: dcBlock.host?.name || "",
-                role: dcBlock.host?.role || "",
+                name: dcBlock.host?.name || bookDiscoveryCallContent.host.name,
+                role: dcBlock.host?.role || bookDiscoveryCallContent.host.role,
                 image: hostImage,
-                imageAlt: dcBlock.host?.imageAlt || dcBlock.host?.name || "",
+                imageAlt: dcBlock.host?.imageAlt || dcBlock.host?.name || bookDiscoveryCallContent.host.imageAlt,
               },
-              benefits: (dcBlock.benefits ?? []).map((b) => ({
-                icon: b.icon || "✓",
-                title: b.title,
-                description: b.description,
-              })),
+              benefits:
+                dcBlock.benefits && dcBlock.benefits.length > 0
+                  ? dcBlock.benefits.map((b) => ({
+                      icon: b.icon || "✓",
+                      title: b.title,
+                      description: b.description,
+                    }))
+                  : bookDiscoveryCallContent.benefits,
               calendar: {
-                heading: dcBlock.calendar?.heading || "",
-                details: dcBlock.calendar?.details || "",
-                src: dcBlock.calendar?.src || "",
-                iframeTitle: dcBlock.calendar?.iframeTitle || "",
+                heading: dcBlock.calendar?.heading || bookDiscoveryCallContent.calendar.heading,
+                details: dcBlock.calendar?.details || bookDiscoveryCallContent.calendar.details,
+                src: dcBlock.calendar?.src || bookDiscoveryCallContent.calendar.src,
+                iframeTitle: dcBlock.calendar?.iframeTitle || bookDiscoveryCallContent.calendar.iframeTitle,
               },
             };
 
@@ -2939,17 +2897,24 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
           case "career-perks": {
             const carpBlock = block as BlockCareerPerks;
-            return (
-              <ThemeCustomizationServicesSection
-                className="transparent"
-                content={{
-                  eyebrow: carpBlock.eyebrow,
-                  heading: carpBlock.heading || "",
-                  description: carpBlock.description || "",
-                  boxes: (carpBlock.perks ?? []).map((box) => ({
+            const boxes =
+              carpBlock.perks && carpBlock.perks.length > 0
+                ? carpBlock.perks.map((box) => ({
                     title: box.title,
                     icon: <CareerBenefitIcon name={box.iconName} />,
-                  })),
+                  }))
+                : workplaceBenefits.boxes.map((box) => ({
+                    title: box.title,
+                    icon: <CareerBenefitIcon name={box.iconName} />,
+                  }));
+
+            return (
+              <ThemeCustomizationServicesSection
+                content={{
+                  eyebrow: carpBlock.eyebrow || workplaceBenefits.eyebrow,
+                  heading: carpBlock.heading || workplaceBenefits.heading,
+                  description: carpBlock.description || workplaceBenefits.description,
+                  boxes,
                 }}
                 id="workplace-benefits"
                 key={blockKey}

@@ -141,6 +141,18 @@ Core proof points from the live site:
      `proof-counters`, `process-timeline`, `two-col-image-with-text`, etc.) by
      modifying common blocks with awkward conditional props, layout hacks, or
      compromised styling that degrades visual parity.
+- CMS block presentation boundary: Payload CMS is the source of editable
+  structured content, SEO values, media relations, and the approved composition
+  and order of page blocks. React is the sole owner of every block's markup,
+  styling, responsive geometry, animation, and interaction behavior. Each
+  Payload `blockType` MUST map through `BlockRenderer` directly to the matching
+  established React section component; `BlockRenderer` is a thin typed dispatcher,
+  never an alternative page builder or source of generic wrappers, card designs,
+  spacing, CSS overrides, or substitute components. Editors may add, remove, and
+  reorder approved blocks. When the same block sequence and values are used, the
+  CMS-rendered page must be visually identical to its coded baseline. Keep local
+  content and assets only as resilient fallbacks when CMS data or media is absent
+  or invalid; do not bypass populated CMS content to obtain parity.
 - Upload media feature everywhere with local asset fallback (Dedicated Media Server Active):
   In all Payload collections (`pages`, `posts`, `case-studies`, `testimonials`,
   `authors`), globals (`site-settings`, `navigation`), and modular blocks

@@ -238,6 +238,27 @@ Follow this step-by-step workflow for every page or section build:
   - Create a dedicated Payload Block in `src/blocks/<BlockName>.ts`.
   - Map it 1:1 in `src/components/blocks/block-renderer.tsx`.
 
+### 3.1 CMS Block-to-Component Rendering Contract
+- **Payload owns data and composition; React owns presentation**: CMS documents
+  provide typed copy, links, lists, counters, SEO values, media relationships,
+  and the approved order of section blocks. The corresponding React component
+  remains the only owner of DOM structure, Tailwind/CSS, responsive geometry,
+  animation, and browser interaction.
+- **Keep `BlockRenderer` deliberately thin**: It may normalize a block and adapt
+  typed values, then dispatch that block type directly to the established section
+  component. It must not render a generic CMS layout, generic spacing/card
+  treatment, substitute component, or styling override around a block.
+- **Allow modular composition without visual drift**: Editors may add, remove,
+  and reorder the approved blocks in a page's `sections` field. A block's visual
+  result must be identical wherever it is used. When a CMS page has the same
+  ordered blocks and values as its coded baseline, the two rendered pages must
+  match at every supported viewport and interaction state.
+- **Use typed adapters and safe fallbacks**: Extend existing components only with
+  backward-compatible typed CMS props. Resolve populated CMS content and media
+  first; retain local content and canonical local assets only as resilience
+  fallbacks for absent, invalid, or unavailable CMS data. Never ignore a
+  populated CMS block merely to recover visual parity.
+
 ### 4. Upload Media Everywhere with Local Asset Fallback (Future-Ready CDN Strategy)
 - In all Payload collections (`pages`, `posts`, `case-studies`, `testimonials`, `authors`), globals (`site-settings`, `navigation`), and modular blocks (`src/blocks/**`):
   - Model all media, images, icons, and logos using Payload's native upload feature: `{ name: "image" | "logo" | "icon" | "avatar", type: "upload", relationTo: "media" }`.

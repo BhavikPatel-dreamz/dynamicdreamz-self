@@ -1,8 +1,22 @@
 import { Container } from "@/components/ui/container";
-import { termsOfServiceContent } from "@/content/terms-of-service";
+import { termsOfServiceContent, type TermsOfServiceSection } from "@/content/terms-of-service";
 
-export function TermsOfServicePage() {
-  const { contactEmail, heroTitle, intro, sections } = termsOfServiceContent;
+export interface TermsOfServiceContentProps {
+  heroTitle?: string;
+  intro?: string;
+  sections?: readonly TermsOfServiceSection[];
+  contactEmail?: string;
+}
+
+export type TermsOfServicePageProps = {
+  content?: TermsOfServiceContentProps;
+};
+
+export function TermsOfServicePage({ content }: TermsOfServicePageProps = {}) {
+  const heroTitle = content?.heroTitle || termsOfServiceContent.heroTitle;
+  const intro = content?.intro || termsOfServiceContent.intro;
+  const sections = content?.sections || termsOfServiceContent.sections;
+  const contactEmail = content?.contactEmail || termsOfServiceContent.contactEmail;
 
   return (
     <>
@@ -44,10 +58,10 @@ export function TermsOfServicePage() {
               ))}
               {section.items ? (
                 <ul className="mb-6 ml-5 list-disc pl-0 text-base leading-[27px] font-medium tracking-[0.32px] text-muted">
-                  {section.items.map((item, index) => (
+                  {section.items.map((item, index, arr) => (
                     <li
                       className={
-                        index < section.items.length - 1 ? "mb-[18px]" : undefined
+                        index < arr.length - 1 ? "mb-[18px]" : undefined
                       }
                       key={`${section.title}-${index}`}
                     >

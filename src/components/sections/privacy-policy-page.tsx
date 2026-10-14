@@ -7,8 +7,45 @@ function InlineContent({ parts }: { parts: readonly PrivacyPolicyInline[] }) {
   );
 }
 
-export function PrivacyPolicyPage() {
-  const { contact, contactLabels, heroTitle, sections } = privacyPolicyContent;
+export interface PrivacyPolicyContentProps {
+  heroTitle?: string;
+  contactLabels?: {
+    email: string;
+    phone: string;
+    address: string;
+  };
+  contact?: {
+    name?: string;
+    email?: string;
+    phone?: string;
+    phoneHref?: string;
+    address?: string;
+    addressHref?: string;
+  };
+  sections?: readonly {
+    title: string;
+    level?: 2 | 3;
+    paragraphs?: readonly string[];
+    items?: readonly (readonly PrivacyPolicyInline[])[];
+  }[];
+}
+
+export type PrivacyPolicyPageProps = {
+  content?: PrivacyPolicyContentProps;
+};
+
+export function PrivacyPolicyPage({ content }: PrivacyPolicyPageProps = {}) {
+  const heroTitle = content?.heroTitle || privacyPolicyContent.heroTitle;
+  const contactLabels = content?.contactLabels || privacyPolicyContent.contactLabels;
+  const contact = {
+    name: content?.contact?.name || privacyPolicyContent.contact.name,
+    email: content?.contact?.email || privacyPolicyContent.contact.email,
+    phone: content?.contact?.phone || privacyPolicyContent.contact.phone,
+    phoneHref: content?.contact?.phoneHref || privacyPolicyContent.contact.phoneHref,
+    address: content?.contact?.address || privacyPolicyContent.contact.address,
+    addressHref: content?.contact?.addressHref || privacyPolicyContent.contact.addressHref,
+  };
+  const sections = content?.sections || privacyPolicyContent.sections;
 
   return (
     <>
@@ -44,8 +81,8 @@ export function PrivacyPolicyPage() {
                 ))}
                 {section.items ? (
                   <ul className="mb-6 ml-5 list-disc pl-0 text-base leading-[27px] font-medium tracking-[0.32px] text-muted">
-                    {section.items.map((item, index) => (
-                      <li className={index < section.items.length - 1 ? "mb-[18px]" : undefined} key={`${section.title}-${index}`}>
+                    {section.items.map((item, index, arr) => (
+                      <li className={index < arr.length - 1 ? "mb-[18px]" : undefined} key={`${section.title}-${index}`}>
                         <InlineContent parts={item} />
                       </li>
                     ))}
