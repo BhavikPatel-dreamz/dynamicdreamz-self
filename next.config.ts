@@ -85,6 +85,12 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: oneYearInSeconds,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "media.dynamicdreamz.net",
+      },
+    ],
   },
   async headers() {
     const assetCacheHeaders = [

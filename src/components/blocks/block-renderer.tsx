@@ -109,6 +109,8 @@ import { Container } from "@/components/ui/container";
 import { sharedUiCopy } from "@/content/common";
 import { shopifyPlusAgencyIndustries } from "@/content/shopify-plus-agency";
 import { mobileAppPlatformLabels } from "@/content/shopify-mobile-app-development";
+import { appmakerHeroCoBranding } from "@/content/appmaker-shopify-mobile-app-development";
+import { risksShopifyOutsourcingTopics } from "@/content/risks-of-shopify-outsourcing";
 
 export type CmsMedia =
   | {
@@ -229,9 +231,12 @@ export interface BlockProcessTimeline {
   id?: string | number;
   eyebrow?: string;
   heading: string;
+  description?: string;
+  columns?: number;
   steps?: readonly {
     id?: string | number;
     stepNumber?: string;
+    step?: string;
     title: string;
     description?: string;
   }[];
@@ -1785,6 +1790,9 @@ export interface BlockRendererProps {
 function renderCustomBoxIcon(iconName?: string) {
   if (!iconName) return null;
   const os20Names = [
+    "lightning", "flexibility", "developer-tools", "seo-marketing",
+    "data-migration", "theme-customization", "app-integration", "seo-redirects",
+    "testing-qa", "launch-support", "expertise", "comprehensive", "custom-solutions",
     "architecture", "apps", "performance", "templates", "checkout",
     "b2b", "metafields", "editor", "audit", "planning", "code",
     "testing", "launch", "post-launch", "flexible", "speed",
@@ -1883,6 +1891,17 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   .filter(Boolean)
               : undefined;
 
+            const proofBadges = heroBlock.proofBadges
+              ?.filter((b) => Boolean(b.name))
+              .map((b) => ({
+                name: b.name || "",
+                src: resolveMediaUrl(b.logo) || "",
+                alt: b.alt || b.name || "",
+                href: b.href || "#",
+                width: 120,
+                height: 44,
+              }));
+
             return (
               <ServiceHeroSection
                 content={{
@@ -1891,8 +1910,15 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   subheading: heroBlock.subheading,
                   ctaLabel: heroBlock.ctaLabel,
                   ctaHref: heroBlock.ctaHref,
+                  secondaryCta: heroBlock.secondaryCta?.label
+                    ? {
+                        label: heroBlock.secondaryCta.label,
+                        href: heroBlock.secondaryCta.href || "",
+                      }
+                    : undefined,
                   eyebrows: eyebrows && eyebrows.length > 0 ? eyebrows : undefined,
                   image: heroImage,
+                  badges: proofBadges && proofBadges.length > 0 ? proofBadges : undefined,
                 }}
                 key={blockKey}
                 showReviews={heroBlock.showReviews !== false}
@@ -1997,17 +2023,18 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             const processBlock = block as BlockProcessTimeline;
             const stepsList = processBlock.steps ?? [];
             const steps = stepsList.map((step, stepIdx) => ({
-              step: step.stepNumber || String(stepIdx + 1).padStart(2, "0"),
+              step: step.step || step.stepNumber || String(stepIdx + 1).padStart(2, "0"),
               title: step.title,
               description: step.description || "",
             }));
 
             return (
               <OurDevelopmentProcessSection
+                columns={(processBlock.columns as 3 | 4) || undefined}
                 content={{
                   heading: processBlock.heading,
                   eyebrow: processBlock.eyebrow,
-                  description: "",
+                  description: processBlock.description || "",
                   steps,
                 }}
                 key={blockKey}
@@ -2041,7 +2068,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               const name = t.authorName || t.clientName || t.name || "";
               const quote = t.quote || t.content || "";
               const videoId = extractYoutubeId(t.videoId || t.videoUrl || "");
-              const avatarMedia = t.avatar || t.image;
+              const avatarMedia = t.avatar || (t as { portrait?: CmsMedia }).portrait || t.image;
               const logoMedia = t.logo || t.companyLogo;
 
               mappedItems.push({
@@ -2955,6 +2982,10 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               .filter(Boolean);
 
             if (shvBlock.variant === "centered") {
+              const isAppmaker =
+                shvBlock.wrapperClassName?.includes("appmaker") ||
+                shvBlock.wrapperClassName?.includes("full-width-sec") ||
+                shvBlock.title?.includes("App in Minutes");
               return (
                 <ServiceHeroSection
                   key={blockKey}
@@ -2971,6 +3002,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     eyebrows: shvBlock.eyebrow ? [shvBlock.eyebrow] : undefined,
                     ctaLabel: shvBlock.cta,
                     ctaHref: shvBlock.ctaHref,
+                    coBranding: isAppmaker ? appmakerHeroCoBranding : undefined,
                   }}
                 />
               );
@@ -2984,6 +3016,44 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               width: b.width || 120,
               height: b.height || 44,
             }));
+
+            if (shvBlock.wrapperClassName?.includes("shopify-plus-experts")) {
+              return (
+                <ServiceHeroSection
+                  key={blockKey}
+                  bodyClassName="!text-[16px] !leading-[28px] max-[1199px]:!leading-6 max-[767px]:!text-[16px] max-[767px]:!leading-6"
+                  className={
+                    shvBlock.wrapperClassName ||
+                    "inner-hero-sec shopify-plus-experts relative overflow-hidden bg-[#f7f4e9] pt-[140px] pb-[85px] max-[992px]:pt-[100px] max-[992px]:pb-[36px] max-[767px]:pt-[102px] max-[767px]:pb-[40px]"
+                  }
+                  content={{
+                    title: shvBlock.title,
+                    subheading: shvBlock.subtitle,
+                    description: shvBlock.description,
+                    ctaLabel: shvBlock.cta,
+                    ctaHref: shvBlock.ctaHref,
+                    secondaryCta: shvBlock.secondaryCta?.label
+                      ? {
+                          label: shvBlock.secondaryCta.label,
+                          href: shvBlock.secondaryCta.href || "",
+                        }
+                      : undefined,
+                    eyebrows: shvBlock.eyebrowSpans?.map((e) => e.text || "").filter(Boolean),
+                    videoSrc: shvBlock.video || "/assets/home/why-dynamic-dreamz.mp4",
+                    videoLogo: {
+                      src: "/assets/platforms/shopify-plus-white.svg",
+                      alt: "Shopify Plus",
+                      width: 143,
+                      height: 30,
+                    },
+                    badges,
+                  }}
+                  leftColClassName="left-col w-[51%] max-[1199px]:w-full max-[1199px]:text-center"
+                  rightColClassName="right-col w-[43.182%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[992px]:w-full"
+                  videoLogoClassName="left-[-90px]"
+                />
+              );
+            }
 
             return (
               <ServiceHeroVideoSection
@@ -3026,6 +3096,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               src: resolveMediaUrl(item.logo) || item.src || "",
               alt: item.alt || item.name,
               url: item.url,
+              href: item.url || (item as { href?: string }).href,
               width: item.width || 120,
               height: item.height || 40,
             }));
@@ -3083,6 +3154,14 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   description: psBlock.description,
                   eyebrow: psBlock.eyebrow,
                   category: psBlock.category,
+                  platformMark:
+                    psBlock.category === "SHOPIFY PLUS"
+                      ? {
+                          src: "/assets/platforms/shopify-plus-white.svg",
+                          width: 113,
+                          height: 27,
+                        }
+                      : undefined,
                   ctaLabel: psBlock.ctaLabel,
                   ctaHref: psBlock.ctaHref,
                   items,
@@ -3803,7 +3882,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 content={{
                   eyebrow: smadBlock.eyebrow,
                   heading: smadBlock.heading,
-                  paragraphs: smadBlock.description ? [smadBlock.description] : undefined,
+                  paragraphs: smadBlock.description ? smadBlock.description.split("\n\n") : undefined,
                   cards: (smadBlock.cards ?? []).map((c) => ({
                     tag: c.tag,
                     title: c.title,
@@ -3926,7 +4005,9 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     description: i.description,
                     badge: i.badge,
                     href: i.href,
+                    icon: i.iconName || undefined,
                     iconName: i.iconName,
+                    bullets: (i.features ?? []).map((f) => f.feature),
                     features: (i.features ?? []).map((f) => f.feature),
                   })),
                 }}
@@ -4179,15 +4260,28 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
           case "risks-shopify-topics": {
             const rstBlock = block as BlockRisksShopifyTopics;
+            const hasCustomTopics = (rstBlock.topics?.length ?? 0) > 0;
+            const items = hasCustomTopics
+              ? (rstBlock.topics ?? []).map((t, idx) => {
+                  const fallback = risksShopifyOutsourcingTopics[idx];
+                  return {
+                    id: t.id || fallback?.id || `contenttab-${idx + 1}`,
+                    label: t.label || t.title || fallback?.label || `Topic ${idx + 1}`,
+                    heading: t.heading || t.title || fallback?.heading || "",
+                    introParagraphs: fallback?.introParagraphs,
+                    paragraphs:
+                      t.paragraphs && t.paragraphs.length > 0
+                        ? t.paragraphs.map((p) => p.text)
+                        : (fallback?.paragraphs ?? []),
+                    bullets: fallback?.bullets,
+                    closingParagraphs: fallback?.closingParagraphs,
+                  };
+                })
+              : risksShopifyOutsourcingTopics;
             return (
               <RisksShopifyTopics
                 key={blockKey}
-                items={(rstBlock.topics ?? []).map((t, idx) => ({
-                  id: t.id || `contenttab-${idx + 1}`,
-                  label: t.label || t.title || `Topic ${idx + 1}`,
-                  heading: t.heading || t.title || "",
-                  paragraphs: (t.paragraphs ?? []).map((p) => p.text),
-                }))}
+                items={items}
               />
             );
           }

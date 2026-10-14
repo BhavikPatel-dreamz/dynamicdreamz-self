@@ -1,5 +1,8 @@
 import type { CollectionConfig } from "payload";
 
+const getMediaBaseURL = () =>
+  (process.env.MEDIA_SERVER_URL || "https://media.dynamicdreamz.net").replace(/\/+$/, "");
+
 export const Media: CollectionConfig = {
   slug: "media",
   access: {
@@ -27,7 +30,25 @@ export const Media: CollectionConfig = {
         position: "centre",
       },
     ],
-    adminThumbnail: "thumbnail",
+    adminThumbnail: ({ doc }) => {
+      const baseURL = getMediaBaseURL();
+      const thumb = (doc?.sizes as { thumbnail?: { filename?: string } } | undefined)?.thumbnail?.filename;
+      const file = thumb || (doc?.filename as string | undefined);
+      if (file) {
+        return `${baseURL}/files/uploads/${encodeURIComponent(file)}`;
+      }
+      return (doc?.url as string) || null;
+    },
+    handlers: [
+      async (_req, { params }) => {
+        const filename = params?.filename;
+        if (!filename) {
+          return new Response("Not found", { status: 404 });
+        }
+        const baseURL = getMediaBaseURL();
+        return Response.redirect(`${baseURL}/files/uploads/${encodeURIComponent(filename)}`, 307);
+      },
+    ],
     mimeTypes: ["image/*"],
   },
   fields: [

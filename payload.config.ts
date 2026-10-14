@@ -16,6 +16,7 @@ import { Pages } from "./src/collections/Pages";
 
 import { Navigation } from "./src/globals/Navigation";
 import { SiteSettings } from "./src/globals/SiteSettings";
+import { mediaServerStorage } from "./adapter/src/index";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -40,6 +41,19 @@ export default buildConfig({
   globals: [
     Navigation,
     SiteSettings,
+  ],
+  plugins: [
+    mediaServerStorage({
+      baseURL: process.env.MEDIA_SERVER_URL || "",
+      apiKey: process.env.MEDIA_SERVER_API_KEY || "",
+      collections: {
+        media: {
+          // Files are public on the media server, so Payload links directly to that domain.
+          disablePayloadAccessControl: true,
+          prefix: "uploads",
+        },
+      },
+    }),
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

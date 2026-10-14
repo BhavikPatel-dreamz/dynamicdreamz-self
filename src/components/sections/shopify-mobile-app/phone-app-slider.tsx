@@ -14,11 +14,12 @@ type PhoneAppSliderProps = {
   };
 };
 
-export function PhoneAppSlider({ slides, frameImage }: PhoneAppSliderProps) {
+export function PhoneAppSlider({ slides = [], frameImage }: PhoneAppSliderProps) {
   // Pad slides to at least 6 items so hidden zones exist seamlessly on both sides
   const minBuffer = 6;
-  const copies = Math.ceil(minBuffer / slides.length);
-  const bufferedSlides = Array.from({ length: copies }, () => slides).flat();
+  const slideCount = slides?.length || 0;
+  const copies = slideCount > 0 ? Math.ceil(minBuffer / slideCount) : 0;
+  const bufferedSlides = copies > 0 ? Array.from({ length: copies }, () => slides).flat() : [];
   const total = bufferedSlides.length;
   const half = Math.floor(total / 2);
 
@@ -27,6 +28,8 @@ export function PhoneAppSlider({ slides, frameImage }: PhoneAppSliderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (total === 0) return;
+
     // Check prefers-reduced-motion
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
@@ -58,6 +61,8 @@ export function PhoneAppSlider({ slides, frameImage }: PhoneAppSliderProps) {
       observer.disconnect();
     };
   }, [total, isPaused]);
+
+  if (total === 0) return null;
 
   return (
     <div
