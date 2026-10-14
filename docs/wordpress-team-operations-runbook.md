@@ -302,11 +302,15 @@ To showcase client projects and results:
 
 ## 10. Media Library & Asset Upload Guidelines
 
-All image, icon, logo, and banner fields across Pages, Posts, Case Studies, and Blocks link directly to the **Media Library (`media` collection)** via drag-and-drop upload fields, with built-in fallback to local static assets.
+All image, icon, logo, and banner fields across Pages, Posts, Case Studies, and Blocks link directly to the **Media Library (`media` collection)** via drag-and-drop upload fields, powered by Dynamic Dreamz's dedicated high-performance media server at `https://media.dynamicdreamz.net`.
 
-- **Native Uploads Everywhere**: Every image input connects directly to the Media collection. Editors simply click to select an existing image or upload a new one from their desktop.
-- **Future Cloud CDN Migration Ready**: All media uploaded through Payload is managed via canonical media records. When cloud CDN / object storage (AWS S3, Cloudflare R2, Cloudinary) is connected, all media assets automatically serve from the high-speed global CDN without altering any page, post, or block content records.
-- **Local Asset Fallback**: While transitioning, any block, page, or post without an uploaded media file gracefully falls back to canonical local project assets (`/assets/...`), preventing broken images or missing artwork.
+- **Dedicated Media Server Active**: Every image uploaded through the Payload Admin Panel is automatically transmitted to and stored on our remote media server at `https://media.dynamicdreamz.net`. Public file URLs are generated automatically as `https://media.dynamicdreamz.net/files/uploads/<filename>`.
+- **Understanding the `<No _object Key>` Column**:
+  - In the Media Library list table, you may see an `_objectKey` column displaying `<No _object Key>`.
+  - **This is completely normal and expected**: The cloud storage plugin includes an internal field called `_objectKey` for direct client-to-S3 presigned uploads. Because our dedicated media server stores files directly under `uploads/<filename>`, this internal key remains empty.
+  - **How to hide this column**: Click the **Columns** dropdown button in the top-right corner of the Media table, and uncheck `_objectKey`. You can also reorder columns or show/hide other fields (like Alt Text, Created At, File Size).
+- **Fast Thumbnail Previews**: The Media Library renders image thumbnails directly from the high-speed media server, ensuring instant visual recognition when browsing media.
+- **Local Asset Fallback**: Any block, page, or post that does not have an uploaded media file attached gracefully falls back to canonical local project assets (`/assets/...`), preventing broken images or missing artwork.
 - **Format**: Upload high-resolution PNG, JPG, SVG, or WebP files.
 - **Alt Text is Mandatory**: Always fill in the **Alternative Text (Alt)** field with descriptive text describing what is pictured (e.g., `Ranavat luxury ayurvedic skincare Shopify Plus homepage design`).
 - **File Names**: Use clean kebab-case names before uploading (e.g., `gnc-india-mobile-mockup.webp`, not `IMG_9384_final_v2.png`).
@@ -373,3 +377,9 @@ Next.js uses Incremental Static Regeneration (ISR) for blistering page speed:
 
 ### Q: How do I create a new user for an employee?
 **A**: From the Admin Panel, navigate to **Collections** $\rightarrow$ **Users** $\rightarrow$ **Create New**, enter their email and temporary password, and click **Save**. Alternatively, an engineer can run `npm run user:create <email> <password>`.
+
+### Q: Why does the 'Object Key' column say `<No _object Key>` in the Media Library?
+**A**: This is completely normal and expected. Payload's cloud storage plugin includes an internal `_objectKey` column intended for direct S3-style presigned uploads. Because our dedicated media server stores files directly under `uploads/<filename>`, this internal key remains empty. You can easily hide this column by clicking **Columns** in the top-right of the Media table and unchecking `_objectKey`.
+
+### Q: Where are my uploaded images hosted and served from?
+**A**: All images uploaded through Payload are stored on Dynamic Dreamz's dedicated high-performance media server at `https://media.dynamicdreamz.net`. Their public URLs start with `https://media.dynamicdreamz.net/files/uploads/...`, and Next.js optimizes them automatically with next-gen WebP/AVIF compression.

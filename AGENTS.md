@@ -141,7 +141,7 @@ Core proof points from the live site:
      `proof-counters`, `process-timeline`, `two-col-image-with-text`, etc.) by
      modifying common blocks with awkward conditional props, layout hacks, or
      compromised styling that degrades visual parity.
-- Upload media feature everywhere with local asset fallback (Future-ready CDN strategy):
+- Upload media feature everywhere with local asset fallback (Dedicated Media Server Active):
   In all Payload collections (`pages`, `posts`, `case-studies`, `testimonials`,
   `authors`), globals (`site-settings`, `navigation`), and modular blocks
   (`src/blocks/**`):
@@ -149,11 +149,12 @@ Core proof points from the live site:
      feature: `{ name: "image" | "logo" | "icon" | "avatar", type: "upload", relationTo: "media" }`.
      NEVER store direct plain-text image path strings (e.g. `{ name: "src", type: "text" }`)
      as content fields in CMS schemas.
-  2. Rationale: In the future, when external object storage / CDN (AWS S3, Cloudflare
-     R2, Cloudinary) is connected via a Payload storage plugin, all media can be
-     migrated and served from CDN effortlessly through Payload's media collection
-     without altering page schemas, running database migrations, or performing
-     fragile string replacements.
+  2. Dedicated media server (`https://media.dynamicdreamz.net`): All media uploaded
+     via Payload CMS is stored on and served from our dedicated high-performance media
+     server under `uploads/` via `@payloadcms/plugin-cloud-storage` and `adapter/src/index.ts`.
+     Public file URLs are generated as `https://media.dynamicdreamz.net/files/uploads/<filename>`.
+     The internal `_objectKey` column displays `<No _object Key>` by default (since file
+     paths use prefix + filename) and can be toggled off in the Payload Admin column view.
   3. Local asset fallback: In UI components and block renderers, always implement
      dual resolution: resolve the uploaded media object (`media.url`, `media.alt`,
      `media.width`, `media.height`), and if the media relation is null, unpopulated,
@@ -275,6 +276,7 @@ Core proof points from the live site:
 Use this structure unless the task clearly calls for a different local pattern:
 
 ```text
+adapter/                  Custom media storage adapter for media.dynamicdreamz.net
 src/app/                  App Router routes and route-level metadata
 src/components/layout/    Header, footer, navigation, shells
 src/components/sections/  Page sections used across marketing pages

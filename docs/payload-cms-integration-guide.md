@@ -90,6 +90,9 @@ For team members transitioning from WordPress, this table maps legacy WordPress 
 
 ```text
 /home/ubuntu/Vatsal/DD/dynamicdreamz-self/
+├── adapter/                              # Custom Media Server Storage Plugin
+│   ├── package.json                      # Adapter package definition
+│   └── src/index.ts                      # Cloud storage adapter for https://media.dynamicdreamz.net
 ├── payload.config.ts                     # Master Payload configuration
 ├── src/
 │   ├── app/
@@ -289,6 +292,9 @@ export const Navigation: GlobalConfig = {
 ```ts
 import type { CollectionConfig } from "payload";
 
+const getMediaBaseURL = () =>
+  (process.env.MEDIA_SERVER_URL || "https://media.dynamicdreamz.net").replace(/\/+$/, "");
+
 export const Media: CollectionConfig = {
   slug: "media",
   access: {
@@ -316,7 +322,25 @@ export const Media: CollectionConfig = {
         position: "centre",
       },
     ],
-    adminThumbnail: "thumbnail",
+    adminThumbnail: ({ doc }) => {
+      const baseURL = getMediaBaseURL();
+      const thumb = (doc?.sizes as { thumbnail?: { filename?: string } } | undefined)?.thumbnail?.filename;
+      const file = thumb || (doc?.filename as string | undefined);
+      if (file) {
+        return `${baseURL}/files/uploads/${encodeURIComponent(file)}`;
+      }
+      return (doc?.url as string) || null;
+    },
+    handlers: [
+      async (_req, { params }) => {
+        const filename = params?.filename;
+        if (!filename) {
+          return new Response("Not found", { status: 404 });
+        }
+        const baseURL = getMediaBaseURL();
+        return Response.redirect(`${baseURL}/files/uploads/${encodeURIComponent(filename)}`, 307);
+      },
+    ],
     mimeTypes: ["image/*"],
   },
   fields: [
@@ -1187,9 +1211,43 @@ export const Pages: CollectionConfig = {
 
 ---
 
+### Phase 3B: Custom Media Storage Adapter (`https://media.dynamicdreamz.net`)
+
+To deliver lightning-fast asset delivery, offload static image serving, and prevent bloating the Git repository and web server disk, Payload CMS connects to Dynamic Dreamz's dedicated high-performance media server via `@payloadcms/plugin-cloud-storage` and a custom adapter located in `adapter/src/index.ts`.
+
+#### 1. Architecture & URL Structure
+- **Media Server Base URL**: `https://media.dynamicdreamz.net` (configured via `MEDIA_SERVER_URL`).
+- **Authentication**: Secured with `MEDIA_SERVER_API_KEY` passed via the `x-api-key` header.
+- **Storage Prefix**: `uploads` (configured in collection options).
+- **Public File URL Format**: `https://media.dynamicdreamz.net/files/uploads/<filename>`.
+- **Upload API Endpoint**: `PUT https://media.dynamicdreamz.net/api/objects/uploads/<filename>`.
+- **Delete API Endpoint**: `DELETE https://media.dynamicdreamz.net/api/objects/uploads/<filename>`.
+
+#### 2. Key Technical Features of the Adapter (`adapter/src/index.ts`)
+1. **Resilient Build/CI Fallback**:
+   If `MEDIA_SERVER_URL` or `MEDIA_SERVER_API_KEY` are unset (such as in local scratch scripts or CI pipelines without external credentials), the adapter falls back gracefully to local storage instead of crashing the Next.js build or `getPayload()` initialization.
+2. **IPv4-First DNS Resolution**:
+   Node.js 18+ defaults to IPv6 first. On virtualized containers and cloud instances without full IPv6 egress routing, external HTTPS requests can hang or time out (`ENETUNREACH`). The adapter explicitly invokes `dns.setDefaultResultOrder('ipv4first')` to guarantee immediate zero-latency connections.
+3. **Dynamic Admin Thumbnails & Instant Redirect Handlers**:
+   In `src/collections/Media.ts`, `adminThumbnail` returns the absolute media server URL (`https://media.dynamicdreamz.net/files/uploads/...`), ensuring instant preview rendering in Payload Admin. In addition, an upload handler redirects any direct requests to `/api/media/file/:filename` to the remote media server via HTTP 307.
+4. **Next.js Image Optimization**:
+   `next.config.ts` registers `media.dynamicdreamz.net` under `images.remotePatterns`, allowing `next/image` to optimize, compress, and serve WebP/AVIF versions with full cache lifetimes.
+
+#### 3. Understanding the `<No _object Key>` Column in Admin
+When viewing the Media collection in Payload Admin, a column named `_objectKey` may display `<No _object Key>`.
+- **Why this happens**: `@payloadcms/plugin-cloud-storage` automatically adds the `_objectKey` field to schemas. This field is specifically intended for direct client-to-cloud presigned uploads (like direct S3 browser uploads). In this server adapter, file paths are resolved deterministically using collection `prefix` (`uploads`) and `filename`, so `_objectKey` is intentionally null.
+- **How to hide it**: Content editors can simply click the **Columns** toggle in the top-right of the Media table and uncheck `_objectKey` to keep the table clean.
+
+#### 4. Migration & Asset Offloading
+- All 1,388 assets previously stored in `public/uploads` were securely migrated to `https://media.dynamicdreamz.net` under the `uploads/` path.
+- All 471 media records in Neon PostgreSQL were updated with remote file and thumbnail URLs.
+- `public/uploads` remains clean and empty (tracked only with `.gitkeep`), reducing application deployment weight.
+
+---
+
 ### Phase 4: Master `payload.config.ts`
 
-Registers all collections and globals into Payload 3.0:
+Registers all collections, globals, and the custom media server storage plugin into Payload 3.0:
 
 ```ts
 import path from "node:path";
@@ -1210,6 +1268,7 @@ import { Pages } from "./src/collections/Pages";
 
 import { Navigation } from "./src/globals/Navigation";
 import { SiteSettings } from "./src/globals/SiteSettings";
+import { mediaServerStorage } from "./adapter/src/index";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -1234,6 +1293,19 @@ export default buildConfig({
   globals: [
     Navigation,
     SiteSettings,
+  ],
+  plugins: [
+    mediaServerStorage({
+      baseURL: process.env.MEDIA_SERVER_URL || "",
+      apiKey: process.env.MEDIA_SERVER_API_KEY || "",
+      collections: {
+        media: {
+          // Files are public on the media server, so Payload links directly to that domain.
+          disablePayloadAccessControl: true,
+          prefix: "uploads",
+        },
+      },
+    }),
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
@@ -1516,6 +1588,12 @@ hooks: {
 - Go to **Posts** or **Case Studies** $\rightarrow$ **Create New**.
 - Assemble content using discrete typed blocks (e.g., `blog-heading`, `blog-paragraph`, `blog-list`, etc.), attach categories, author, metrics, or FAQs, and set SEO fields (zero raw HTML).
 - Click **Publish**.
+
+#### 6. Managing Uploaded Media & Dedicated Media Server
+- **Dedicated Media Server**: All image uploads route directly to Dynamic Dreamz's high-speed media server at `https://media.dynamicdreamz.net`.
+- **Public URL Format**: `https://media.dynamicdreamz.net/files/uploads/<filename>`.
+- **Media List Column Settings**: The `_objectKey` column is an internal cloud-storage identifier that displays `<No _object Key>` by default. To hide it, click **Columns** in the top-right of the Media table and uncheck `_objectKey`.
+- **Automatic Fallback**: Pages and blocks without uploaded media gracefully fall back to local project assets (`/assets/...`), preventing broken images.
 
 ---
 

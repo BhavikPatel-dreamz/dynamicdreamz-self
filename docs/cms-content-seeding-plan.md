@@ -22,11 +22,11 @@ The objective of this plan is to transition 100% of website content management t
 - **Universal Native Media Upload Relationship**: Across all collections (`pages`, `posts`, `case-studies`, `testimonials`, `authors`), globals (`site-settings`, `navigation`), and all modular blocks (`src/blocks/**`), all image, icon, logo, avatar, and banner fields must be modeled using Payload's native upload feature:
   `{ name: "image" | "logo" | "icon" | "avatar", type: "upload", relationTo: "media" }`.
   Direct plain-text path strings (e.g., `{ name: "src", type: "text" }`) in CMS content schemas are strictly prohibited.
-- **Why (Future CDN Migration Readiness)**: When external object storage / CDN (AWS S3, Cloudflare R2, Cloudinary) is connected in the future via a Payload cloud storage plugin, all media files will migrate to and be served from CDN automatically via Payload's central `media` collection. Modeling media as native uploads today prevents costly database rewrites, schema breaking changes, and regex content string replacements later.
-- **Local Asset Fallback Strategy**: During migration and initial seeding before external CDN activation:
+- **Dedicated Media Server Active (`https://media.dynamicdreamz.net`)**: Media uploaded through Payload is hosted and served from Dynamic Dreamz's high-performance media server via `@payloadcms/plugin-cloud-storage` and `adapter/src/index.ts`. All file URLs start with `https://media.dynamicdreamz.net/files/uploads/...`.
+- **Local Asset Fallback Strategy**:
   - UI components and block renderers resolve media using dual-resolution helpers (`resolveMediaUrl()`, `resolveMediaAlt()`). If the `media` field is populated from Payload (as an uploaded media object with `url`, `alt`, etc.), render that URL.
   - If the media relation is null, unpopulated, or a fallback string, cleanly fall back to the canonical local static asset path in `/assets/...`.
-  - Seeding scripts can seed or reference media records while preserving local asset fallbacks, ensuring zero layout shift, zero broken images, and 100% future-readiness.
+  - Seeding scripts and CMS content reference media records while preserving local asset fallbacks, ensuring zero layout shift, zero broken images, and 100% production stability.
 
 ### Seeding Policy: One-Time Process Only (Zero Temporary Scripts Rule)
 - **Seeding is strictly a one-time migration process**: Once pages, blocks, collections, or globals are populated in Payload CMS / Neon PostgreSQL, the data lives permanently in the database and is managed via Payload Admin (`/admin`).
@@ -252,10 +252,11 @@ Step 5: Ephemeral Seeding & Verification
    - If a live section has a bespoke visual design, unique cards, tabs, or distinct structural hierarchy (e.g. `EvaluationFrameworkSection`, `ShopifyStageServicesSection`, `ShopifyPlusProofSection`, `PortfolioShowcaseSection`, `CaseStudyCardsSection`, etc.), agents **MUST create a dedicated, unique block in `src/blocks/`** and map it 1:1 in `src/components/blocks/block-renderer.tsx`.
    - Modifying common blocks (`features-grid`, `proof-counters`, `process-timeline`) to accommodate unique sections by adding bloated conditional props or CSS hacks is STRICTLY FORBIDDEN. It degrades live-site parity and produces bloated Frankenstein code.
    - Common blocks (`HeroBlock`, `FaqAccordionBlock`, `BrandPartnersBlock`, `CtaBannerBlock`, etc.) are reserved strictly for sections that share identical visual layouts across pages.
-3. **Upload Media Feature Everywhere with Local Asset Fallback (Future-Ready CDN Strategy)**:
+3. **Upload Media Feature Everywhere with Local Asset Fallback (Dedicated Media Server Active)**:
    - All media, image, logo, and icon fields in block schemas must be defined as `{ type: "upload", relationTo: "media" }`.
    - Never define plain-text image path fields (e.g. `{ name: "src", type: "text" }`) in CMS schemas.
-   - UI renderers must resolve media objects dynamically (`media.url`, `media.alt`) with fallback to local static asset paths (`/assets/...`). When external CDN is configured in the future, all assets can be served from CDN seamlessly without database or schema changes.
+   - All media is stored on and served from the dedicated media server `https://media.dynamicdreamz.net`.
+   - UI renderers must resolve media objects dynamically (`media.url`, `media.alt`) with fallback to local static asset paths (`/assets/...`). All assets serve from the remote media server seamlessly without database or schema changes.
 4. **Respect Postgres Table Name Limits**: Drizzle/Postgres tables have a 63-character limit. Any array fields inside custom blocks must define concise `dbName` values (e.g. `spa_paras`, `cs_items`, `post_blks`).
 5. **Preserve Exact URL Equity**: All internal links in CTA and inline link props must be absolute root-relative paths without trailing slashes (e.g., `/shopify-plus-agency`, `/contact-us`).
 6. **Never Add or Commit Seeding Scripts**: Do not create or commit temporary seeding scripts in `scripts/`, and never add seed commands to `package.json`. Seeding is strictly one-time execution via disposable files in `scratch/`.

@@ -539,6 +539,16 @@ place page/component styles there.
     media files were created.
 15. Never use `dynamicdreamz.com` asset URLs in final code.
 
+### 4. Custom Media Server & Cloud Storage Adapter
+16. **Payload CMS Uploads Route to Dedicated Media Server**:
+    All media uploaded via Payload CMS is transmitted to and hosted at `https://media.dynamicdreamz.net` under the `uploads/` prefix via `@payloadcms/plugin-cloud-storage` and `adapter/src/index.ts`.
+17. **Local Asset Fallback & Dual Resolution**:
+    In UI components and block renderers, always support dual resolution: if an uploaded media object exists (`media.url`), render its remote URL; if null, unpopulated, or a fallback string, cleanly fall back to the canonical local static asset in `/assets/...`.
+18. **Next.js Image Optimization**:
+    `media.dynamicdreamz.net` is registered in `next.config.ts` under `images.remotePatterns`, allowing Next.js `<Image />` to optimize, compress, and serve remote media seamlessly.
+19. **Internal `_objectKey` Column in Admin**:
+    The `_objectKey` column in Payload Admin is an internal cloud-storage field for direct client-to-S3 presigned uploads. Because this server-side adapter uses collection prefix (`uploads`) + filename, this field displays `<No _object Key>`. Content editors can hide it via the "Columns" toggle dropdown.
+
 ## Verification Checklist
 
 Run these before completing implementation work:
