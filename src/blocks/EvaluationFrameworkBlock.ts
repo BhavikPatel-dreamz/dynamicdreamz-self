@@ -8,6 +8,7 @@ export const EvaluationFrameworkBlock: Block = {
     { name: "heading", type: "text", required: true },
     { name: "description", type: "textarea" },
     { name: "sectionId", type: "text", defaultValue: "evaluation-framework" },
+    { name: "className", type: "text" },
     {
       name: "items",
       type: "array",
