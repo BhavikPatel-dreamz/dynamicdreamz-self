@@ -261,7 +261,7 @@ export function ServiceHeroSection({
   const splitSectionClass =
     className ??
     (isShopifyPlus
-      ? "inner-hero-sec shopify-plus-experts relative overflow-hidden bg-[#f7f4e9] pt-[140px] pb-[85px] max-[992px]:pt-[100px] max-[992px]:pb-[36px] max-[767px]:pt-[102px] max-[767px]:pb-[40px]"
+      ? "inner-hero-sec hero-new-section shopify-plus-experts relative overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[992px]:pt-16 max-[992px]:pb-0"
       : "inner-hero-sec relative overflow-hidden bg-white pt-[158px] pb-[55px] max-[992px]:pt-[100px]");
 
   const splitBodyClass =
@@ -277,11 +277,15 @@ export function ServiceHeroSection({
           <div className={leftColClassName ?? defaultLeftCol}>
             <div className="inner-hero-content">
               {content.eyebrows && content.eyebrows.length > 0 && (
-                <div className="eyebrow mb-[15px] flex flex-nowrap items-center gap-[15px] whitespace-nowrap text-[13px] font-bold uppercase tracking-[1px] text-[#555] before:mr-3 before:block before:h-0.5 before:w-[30px] before:shrink-0 before:bg-brand-red before:content-[''] max-[992px]:mb-[9px] max-[767px]:gap-2 max-[767px]:mb-[5px] max-[767px]:text-[11px] max-[767px]:tracking-[0.5px] max-[767px]:before:mr-2 max-[767px]:before:w-[15px]">
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
                   {content.eyebrows.map((item, idx) => (
                     <span
-                      className="after:ml-[15px] after:inline-block after:h-[12px] after:w-px after:bg-[#d9d9d9] after:content-[''] last:after:hidden max-[767px]:after:ml-2 max-[767px]:after:h-[10px]"
                       key={idx}
+                      className={cn(
+                        "relative inline-flex items-center font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-[12px] max-[767px]:text-[10px]",
+                        idx > 0 &&
+                          "ml-2.5 pl-2.5 after:absolute after:-left-[2px] after:top-1/2 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#535353] after:content-['']",
+                      )}
                     >
                       {item}
                     </span>
@@ -289,7 +293,7 @@ export function ServiceHeroSection({
                 </div>
               )}
               <h1 className={cn(
-                "inline-block max-w-[770px] font-montreal-medium text-[50px] font-medium leading-[66px] tracking-[0] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]",
+                "mb-2.5 inline-block max-w-[770px] font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]",
                 headingClassName,
               )}>
                 {formatBrText(content.title, "max-[1199px]:hidden")}

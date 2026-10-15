@@ -17,7 +17,7 @@ import {
 
 export function WebDesignPage() {
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <CityPageHeroSection content={webDesignHero} />
       <IndustryBrandsSection
         content={{

@@ -37,7 +37,7 @@ export function WarehouseThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={warehouseThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

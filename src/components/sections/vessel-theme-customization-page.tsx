@@ -37,7 +37,7 @@ export function VesselThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={vesselThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

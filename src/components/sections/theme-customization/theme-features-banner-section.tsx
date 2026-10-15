@@ -1,5 +1,4 @@
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
 
 export type ThemeFeaturesBannerContent = {
   eyebrow?: string;
@@ -29,11 +28,13 @@ export function ThemeFeaturesBannerSection({
         >
           <div className="left-block w-[37%] border-r border-[rgba(40,40,40,0.11)] bg-[#fbefd7] p-[30px] max-[1199px]:p-5 max-[991px]:w-full max-[991px]:border-r-0 max-[991px]:border-b max-[991px]:p-[25px_20px]">
             {content.eyebrow && (
-              <div className="eyebrow mb-2.5">
-                <Eyebrow>{content.eyebrow}</Eyebrow>
+              <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+                <span className="font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-[12px] max-[767px]:text-[10px]">
+                  {content.eyebrow}
+                </span>
               </div>
             )}
-            <h2 className="mb-0 text-[32px] font-bold leading-tight text-ink max-[1399px]:text-[28px] max-[991px]:text-2xl">
+            <h2 className="mb-0 text-[32px] font-normal leading-tight tracking-normal text-ink max-[1399px]:text-[28px] max-[991px]:text-2xl">
               {content.title || content.heading}
             </h2>
             {content.description && (
@@ -51,7 +52,7 @@ export function ThemeFeaturesBannerSection({
                   className="item w-1/2 border-b border-[rgba(40,40,40,0.11)] p-6 max-[991px]:p-5 max-[767px]:w-full max-[767px]:!border-t max-[767px]:!border-b-0 max-[767px]:!border-l-0 max-[767px]:p-[15px_20px] [&:nth-child(even)]:border-l [&:nth-child(even)]:border-[rgba(40,40,40,0.11)] [&:nth-last-of-type(1)]:border-b-0 [&:nth-last-of-type(2)]:border-b-0"
                   key={item}
                 >
-                  <h5 className="m-0 text-base font-bold text-ink">
+                  <h5 className="m-0 text-base font-normal tracking-normal text-ink">
                     {item}
                   </h5>
                 </div>

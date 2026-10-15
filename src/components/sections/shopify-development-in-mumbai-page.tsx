@@ -23,7 +23,7 @@ export function ShopifyDevelopmentInMumbaiPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <CityPageHeroSection content={shopifyDevelopmentMumbaiContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

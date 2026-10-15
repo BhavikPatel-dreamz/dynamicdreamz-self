@@ -91,7 +91,7 @@ export function WordPressThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       {/* 1. Hero with tablet slider & trust badges */}
       <CityPageHeroSection
         content={wordPressThemeCustomizationContent.hero}

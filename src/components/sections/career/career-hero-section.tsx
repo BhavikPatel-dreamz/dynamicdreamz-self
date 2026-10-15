@@ -42,12 +42,12 @@ export function CareerHeroSection({
           <div className="left-col z-1 flex w-[51%] flex-col justify-center py-[60px] max-[1199px]:w-1/2 max-[991px]:w-full max-[991px]:py-8 max-[991px]:text-center">
             <div className="hero-content">
               {eyebrow ? (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:justify-center max-[1199px]:text-[12px] max-[767px]:pl-6 max-[767px]:text-[10px] max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
-                  <span>{eyebrow}</span>
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:justify-center max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+                  <span className="font-montserrat text-[14px] font-semibold uppercase leading-[1.2] max-[1199px]:text-[12px] max-[767px]:text-[10px]">{eyebrow}</span>
                 </div>
               ) : null}
 
-              <h1 className="mb-2.5 font-montreal-medium text-[50px] font-medium leading-[60px] tracking-normal text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
+              <h1 className="mb-2.5 font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
                 {title}
               </h1>
 

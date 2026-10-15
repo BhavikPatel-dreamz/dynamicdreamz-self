@@ -37,7 +37,7 @@ export function StilettoThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={stilettoThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

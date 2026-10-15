@@ -26,7 +26,7 @@ export function ResourcesCategoryAccordion({ categories }: { categories: readonl
               aria-controls={panelId}
               onClick={() => setOpenIndex(open ? null : index)}
             >
-              <h5 className="text-[18px] leading-[1.4] font-semibold tracking-[0.32px]">{category.title}</h5>
+              <h5 className="text-[18px] leading-[1.4] font-normal tracking-normal text-ink">{category.title}</h5>
               <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-[#f7f5ef]" aria-hidden="true">
                 <Image className={cn("size-3 transition-transform duration-400", open && "rotate-180")} src="/assets/icons/accordion-arrow.svg" alt="" width={12} height={7} />
               </span>

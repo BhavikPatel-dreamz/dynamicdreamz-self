@@ -37,7 +37,7 @@ export function RitualThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={ritualThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

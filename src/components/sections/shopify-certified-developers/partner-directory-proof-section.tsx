@@ -91,7 +91,7 @@ export function PartnerDirectoryProofSection({
                     />
                   </a>
                 ) : (
-                  <h3 className="flex min-h-11 items-center justify-center text-[60px] leading-[49px] font-bold text-ink max-[1199px]:text-[50px] max-[1199px]:leading-11 max-[575px]:text-[40px] max-[575px]:leading-10">
+                  <h3 className="flex min-h-11 items-center justify-center text-[60px] leading-[49px] font-normal text-ink max-[1199px]:text-[50px] max-[1199px]:leading-11 max-[575px]:text-[40px] max-[575px]:leading-10">
                     {item.kind === "rating" ? <StarIcon /> : null}
                     {item.value}
                   </h3>

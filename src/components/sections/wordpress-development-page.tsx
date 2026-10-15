@@ -26,7 +26,7 @@ export function WordPressDevelopmentPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <CityPageHeroSection content={wordpressDevelopmentHero} />
       <AgencyServicesSection
         cardVariant="services-box"

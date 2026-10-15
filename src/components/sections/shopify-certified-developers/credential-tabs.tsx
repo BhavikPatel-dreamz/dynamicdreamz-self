@@ -108,7 +108,7 @@ export function CredentialTabs({
               <span className="mb-2.5 block text-xs leading-[18px] font-bold text-brand-red uppercase">
                 {item.eyebrow}
               </span>
-              <h3 className="mb-2.5 text-[28px] leading-[39.2px] font-bold tracking-[-0.56px] text-ink max-[575px]:text-[22px] max-[575px]:leading-[30px]">
+              <h3 className="mb-2.5 text-[28px] leading-[39.2px] font-normal tracking-normal text-ink max-[575px]:text-[22px] max-[575px]:leading-[30px]">
                 {item.title}
               </h3>
               <p className="text-sm leading-[26.6px] font-medium text-muted">
@@ -121,7 +121,7 @@ export function CredentialTabs({
                   className="rounded-[20px] border border-[#d0d0ce] bg-[#fafaf7] p-[35px_25px] shadow-[2px_2px_0_rgba(40,40,40,0.2)] max-[575px]:p-5"
                   key={detail.label}
                 >
-                  <h4 className="mb-2.5 text-sm leading-[18px] font-bold text-brand-red uppercase">
+                  <h4 className="mb-2.5 text-sm leading-[18px] font-normal text-brand-red uppercase">
                     {detail.label}
                   </h4>
                   <p className="text-sm leading-[26.6px] font-medium text-muted">

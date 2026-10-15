@@ -31,7 +31,7 @@ export function AboutStorySection({
           className="-mx-[15px] flex items-center justify-between max-[992px]:flex-col max-[992px]:text-center"
         >
           <div className="w-[calc(35%-15px)] px-[15px] max-[1199px]:w-[calc(40%-15px)] max-[992px]:w-full max-[575px]:max-w-[290px]">
-            <h2 id="about-story-title" className="text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:mb-[15px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
+            <h2 id="about-story-title" className="text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:mb-[15px] max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
               {title}
             </h2>
           </div>

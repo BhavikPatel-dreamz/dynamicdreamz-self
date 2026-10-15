@@ -16,7 +16,7 @@ function TeamGrid({ people }: { people: readonly AboutPerson[] }) {
             <Image className="rounded-[20px] object-cover" src={person.image} alt={person.alt} fill sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 991px) 31vw, 273px" />
           </div>
           <div className="mt-6 max-[1199px]:mt-5 max-[992px]:mt-[15px]">
-            <h3 className="mb-[5px] text-xl leading-[27px] font-bold max-[1199px]:text-[18px]">{person.name}</h3>
+            <h3 className="mb-[5px] text-xl leading-[27px] font-normal text-ink max-[1199px]:text-[18px]">{person.name}</h3>
             <p className="text-[15px] leading-[22px] font-medium text-muted italic max-[1199px]:mx-7 max-[992px]:mx-2.5 max-[767px]:mx-0">{person.role}</p>
           </div>
         </article>

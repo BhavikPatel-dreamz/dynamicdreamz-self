@@ -37,7 +37,7 @@ export function HeritageThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={heritageThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

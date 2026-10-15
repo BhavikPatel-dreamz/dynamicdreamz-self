@@ -22,7 +22,7 @@ import {
 
 export function SeoServicesPage() {
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ServiceHeroSection
         content={seoServicesHeroContent}
         variant="centered"

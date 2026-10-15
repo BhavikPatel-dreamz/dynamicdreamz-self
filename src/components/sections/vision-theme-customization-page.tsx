@@ -37,7 +37,7 @@ export function VisionThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={visionThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

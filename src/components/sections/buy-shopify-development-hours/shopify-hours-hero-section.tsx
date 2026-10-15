@@ -36,7 +36,7 @@ export function ShopifyHoursHeroSection() {
               </div>
             </div>
             <h1
-              className="font-display text-[50px] leading-[60px] font-medium text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
+              className="mb-3 font-display text-[50px] leading-[60px] font-normal text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
               id="shopify-hours-hero-title"
             >
               {titleStart}
@@ -46,9 +46,9 @@ export function ShopifyHoursHeroSection() {
               {shopifyHoursHero.description}
             </p>
             <div className="hire-shopify-dev-list w-full max-w-[460px] pt-2.5">
-              <h2 className="mb-5 font-display text-base leading-[22.36px] font-semibold text-brand-red">
+              <h5 className="mb-5 font-display text-base leading-[22.36px] font-normal text-brand-red">
                 {shopifyHoursHero.highlightsHeading}
-              </h2>
+              </h5>
               <ul>
                 {shopifyHoursHero.highlights.map((highlight) => (
                   <li

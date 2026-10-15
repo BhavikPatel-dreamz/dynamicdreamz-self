@@ -37,7 +37,7 @@ export function PipelineThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={pipelineThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

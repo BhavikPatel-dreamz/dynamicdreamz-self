@@ -60,7 +60,7 @@ export function CredentialEvidenceSection({
                 />
               </a>
               <div className="flex flex-1 flex-col justify-between">
-                <h3 className="mb-4 text-center text-[15px] leading-[22.5px] font-bold text-ink">
+                <h3 className="mb-4 text-center text-[15px] leading-[22.5px] font-normal text-ink">
                   {item.title}
                 </h3>
                 <span className="mx-auto inline-block w-fit rounded-[5px] bg-brand-red/10 px-2.5 py-[5px] text-center text-xs leading-[18px] font-bold text-brand-red">

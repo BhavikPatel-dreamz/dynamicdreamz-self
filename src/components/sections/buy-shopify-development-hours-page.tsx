@@ -20,7 +20,7 @@ import {
 
 export function BuyShopifyDevelopmentHoursPage() {
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ShopifyHoursHeroSection />
       <ThemeCustomizationServicesSection
         content={shopifyHoursCommitments}

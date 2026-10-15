@@ -37,7 +37,7 @@ export function ImpactThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={impactThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

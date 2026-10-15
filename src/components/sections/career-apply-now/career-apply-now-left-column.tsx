@@ -21,7 +21,7 @@ export function CareerApplyNowLeftColumn({
 }: CareerApplyNowLeftColumnProps = {}) {
   return (
     <div className="left-col w-[31%] max-[1199px]:w-[40%] max-[991px]:mb-[60px] max-[991px]:w-full max-[767px]:mb-10">
-      <h1 className="mb-8 border-b border-[#efefef] pb-8 text-[35px] font-bold leading-[46px] tracking-[-0.7px] text-[#090909] max-[1299px]:text-[30px] max-[1299px]:leading-[40px] max-[991px]:mb-5 max-[991px]:pb-5 max-[991px]:text-center max-[767px]:text-[27px] max-[767px]:leading-[38px] max-[320px]:text-[23px] max-[320px]:leading-[33px]">
+      <h1 className="mb-8 border-b border-[#efefef] pb-8 text-[35px] font-normal leading-[46px] tracking-normal text-[#090909] max-[1299px]:text-[30px] max-[1299px]:leading-[40px] max-[991px]:mb-5 max-[991px]:pb-5 max-[991px]:text-center max-[767px]:text-[27px] max-[767px]:leading-[38px] max-[320px]:text-[23px] max-[320px]:leading-[33px]">
         {heading}
       </h1>
       <div className="contact-us">

@@ -37,7 +37,7 @@ export function ImpulseThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={impulseThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

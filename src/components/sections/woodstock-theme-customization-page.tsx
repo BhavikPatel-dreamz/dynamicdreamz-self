@@ -37,7 +37,7 @@ export function WoodstockThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={woodstockThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

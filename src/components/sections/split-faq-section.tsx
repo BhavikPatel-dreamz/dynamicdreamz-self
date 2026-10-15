@@ -48,7 +48,7 @@ export function SplitFaqSection({
   animateOnReveal = false,
   lazyAccordion = false,
   lazyRootMargin,
-  answerClassName = "!text-base !font-medium !leading-7 !text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-6",
+  answerClassName,
   questionClassName,
   triggerClassName,
   itemClassName,

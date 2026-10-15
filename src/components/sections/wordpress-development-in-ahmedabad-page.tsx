@@ -23,7 +23,7 @@ export function WordPressDevelopmentInAhmedabadPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <CityPageHeroSection
         content={wordpressDevelopmentAhmedabadContent.hero}
       />

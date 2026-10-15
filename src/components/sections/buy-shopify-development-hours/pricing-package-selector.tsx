@@ -32,10 +32,10 @@ export function PricingPackageSelector({
 
   return (
     <div className="rounded-[25px] border-[1.5px] border-black/10 p-[39px_24px_24px] max-[767px]:p-[20px_15px]" data-pricing-selector>
-      <h2 className="border-b border-[#dedbd2] px-2.5 pb-[25px] text-center font-display text-xl leading-[28.8px] font-medium tracking-[-0.4px] max-[1199px]:text-lg max-[1199px]:leading-[26px]">
+      <h3 className="border-b border-[#dedbd2] px-2.5 pb-[25px] text-center font-display text-xl leading-[28.8px] font-normal tracking-[-0.4px] max-[1199px]:text-lg max-[1199px]:leading-[26px]">
         {heading.prefix} <span className="text-brand-red">{heading.accent}</span>{" "}
         {heading.suffix}
-      </h2>
+      </h3>
 
       <div
         aria-live="polite"

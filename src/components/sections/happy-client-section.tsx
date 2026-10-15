@@ -33,7 +33,7 @@ export function HappyClientSection({
   return (
     <section
       className={cn(
-        "happy-client-sec overflow-hidden pt-0 pb-20 max-[991px]:pb-[50px]",
+        "happy-client-sec overflow-hidden pt-20 pb-20 max-[991px]:py-[50px]",
         isWhite ? "bg-white" : undefined,
       )}
       data-section="testimonials"

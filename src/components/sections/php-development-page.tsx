@@ -31,7 +31,7 @@ export function PhpDevelopmentPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ServiceHeroVideoSection content={phpDevelopmentContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

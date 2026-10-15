@@ -216,7 +216,7 @@ export function FaqAccordion({
         const mainAnswerContent = item.answer || item.answerParts ? (
           <p
             className={cn(
-              "text-base leading-7 font-medium text-[#535353] last:mb-0 max-[1199px]:text-sm max-[1199px]:leading-6",
+              "text-sm leading-6 font-medium text-[#535353] last:mb-0",
               item.listItems?.length && !isListBefore ? "mb-3" : "mb-0",
               answerClassName,
             )}
@@ -238,7 +238,7 @@ export function FaqAccordion({
         const secondaryAnswerContent = item.secondaryAnswer ? (
           <p
             className={cn(
-              "mt-4 text-base leading-7 font-medium text-[#535353] last:mb-0 max-[1199px]:text-sm max-[1199px]:leading-6",
+              "mt-4 text-sm leading-6 font-medium text-[#535353] last:mb-0",
               answerClassName,
             )}
           >
@@ -291,7 +291,7 @@ export function FaqAccordion({
             >
               <h3
                 className={cn(
-                  "m-0 font-montreal-medium text-[20px] leading-[120%] tracking-0 font-medium text-ink max-[1199px]:text-[18px]",
+                  "m-0 font-montreal-medium text-[20px] leading-7 tracking-0 font-medium text-ink max-[1199px]:text-[18px]",
                   questionClassName,
                 )}
               >

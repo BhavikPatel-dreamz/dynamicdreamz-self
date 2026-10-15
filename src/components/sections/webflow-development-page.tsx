@@ -30,7 +30,7 @@ export function WebflowDevelopmentPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <CityPageHeroSection
         content={webflowDevelopmentHero}
       />

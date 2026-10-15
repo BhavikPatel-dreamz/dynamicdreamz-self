@@ -37,7 +37,7 @@ export function OriginThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={originThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

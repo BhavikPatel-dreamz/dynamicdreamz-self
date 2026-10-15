@@ -27,7 +27,7 @@ export function SenseThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={senseThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

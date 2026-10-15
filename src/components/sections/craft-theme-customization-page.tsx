@@ -37,7 +37,7 @@ export function CraftThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={craftThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

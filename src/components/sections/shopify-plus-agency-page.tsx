@@ -36,7 +36,7 @@ const brandSection = {
 
 export function ShopifyPlusAgencyPage() {
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ServiceHeroSection
         content={shopifyPlusAgencyHero}
       />

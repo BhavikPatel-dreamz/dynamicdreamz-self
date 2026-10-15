@@ -37,7 +37,7 @@ export function DwellThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={dwellThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

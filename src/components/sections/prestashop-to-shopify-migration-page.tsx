@@ -23,7 +23,7 @@ export function PrestashopToShopifyMigrationPage() {
   }));
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       {/* 1. Hero Section */}
       <ServiceHeroVideoSection content={prestashopHeroContent} />
 

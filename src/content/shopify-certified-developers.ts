@@ -447,8 +447,15 @@ export const shopifyCertifiedDevelopersFinalCta = {
   label: "discuss your shopify project",
 } as const satisfies WhiteLabelFinalCta;
 
+export const shopifyCertifiedDevelopersBrands = {
+  slug: "shopify-certified-developers",
+  heading: "Trusted by \nLeading Brands",
+  ariaLabel: "Trusted by Leading Brands",
+} as const;
+
 export const shopifyCertifiedDeveloperSchemaFaqs =
   shopifyCertifiedDevelopersFaqs.map((faq) => ({
     question: faq.question,
     answer: faq.answerParts.map((part) => part.text).join(""),
   }));
+

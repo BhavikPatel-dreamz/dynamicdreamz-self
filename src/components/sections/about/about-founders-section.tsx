@@ -39,7 +39,7 @@ export function AboutFoundersSection({
           <Eyebrow align="center" className="mb-4" lineThickness="thin" lineWidth="fixed">
             {eyebrow}
           </Eyebrow>
-          <h2 id="about-founders-title" className="mb-6 text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
+          <h2 id="about-founders-title" className="mb-6 text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
             {title}
           </h2>
           <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
@@ -64,7 +64,7 @@ export function AboutFoundersSection({
                 <Image className="rounded-[20px] object-cover" src={founder.image} alt={founder.alt} fill sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1199px) 31vw, 370px" />
               </div>
               <div className="pt-6 pr-[29px] pl-6 max-[1199px]:px-0 max-[1199px]:pt-5 max-[992px]:pt-[15px]">
-                <h3 className="mb-[5px] text-xl leading-[27px] font-bold max-[1199px]:text-[18px]">{founder.name}</h3>
+                <h3 className="mb-[5px] text-xl leading-[27px] font-normal text-ink max-[1199px]:text-[18px]">{founder.name}</h3>
                 <p className="mb-4 text-[15px] leading-[22px] font-medium text-muted italic">{founder.role}</p>
                 <p className="mb-4 text-base leading-6 font-medium text-muted max-[1199px]:text-[14px]">{founder.biography}</p>
                 <a

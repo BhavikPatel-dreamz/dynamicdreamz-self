@@ -37,7 +37,7 @@ export function ColorblockThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={colorblockThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

@@ -53,7 +53,10 @@ export function IndustryBrandsSection({
 
   return (
     <section
-      className="our-client-sec dev overflow-hidden bg-[#FBEED5] py-4.25"
+      className={cn(
+        "our-client-sec overflow-hidden bg-[#FBEED5]",
+        showHeading ? "dev py-4.25" : "py-10",
+      )}
       aria-label={showHeading ? undefined : ariaLabel}
       aria-labelledby={showHeading ? `${content.slug}-brands-title` : undefined}
       data-industry="brands"

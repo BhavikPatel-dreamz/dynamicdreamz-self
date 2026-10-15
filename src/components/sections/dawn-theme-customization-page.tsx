@@ -37,7 +37,7 @@ export function DawnThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={dawnThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

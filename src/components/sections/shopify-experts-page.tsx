@@ -13,7 +13,7 @@ import { shopifyExpertsContent } from "@/content/shopify-experts";
 
 export function ShopifyExpertsPage() {
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ServiceHeroVideoSection content={shopifyExpertsContent.hero} />
       <IndustryBrandsSection
         content={shopifyExpertsContent.brands}

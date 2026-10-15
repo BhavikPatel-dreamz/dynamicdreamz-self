@@ -37,7 +37,7 @@ export function ExpanseThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={expanseThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

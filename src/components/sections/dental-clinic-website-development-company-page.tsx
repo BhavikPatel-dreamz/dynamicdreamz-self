@@ -15,7 +15,7 @@ export function DentalClinicWebsiteDevelopmentCompanyPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ServiceHeroVideoSection
         content={dentalClinicWebsiteDevelopmentCompanyContent.hero}
       />

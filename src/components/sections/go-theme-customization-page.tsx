@@ -52,7 +52,7 @@ export function GoThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       {/* 1. Hero */}
       <ThemeHeroSection content={goThemeCustomizationContent.hero} />
 

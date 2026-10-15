@@ -64,7 +64,7 @@ export function WorkCultureSection() {
                   />
                 </div>
                 <div className="w-[calc(100%-115px)] max-[1199px]:w-[calc(100%-84px)] max-[767px]:w-full">
-                  <h3 className="mb-[5px] text-xl leading-[28.8px] font-bold text-ink max-[992px]:text-[18px] max-[992px]:leading-[26px]">
+                  <h3 className="mb-[5px] text-xl leading-[28.8px] font-normal text-ink max-[992px]:text-[18px] max-[992px]:leading-[26px]">
                     {value.title}
                   </h3>
                   <p className="text-base leading-[30.88px] font-normal text-muted">

@@ -37,7 +37,7 @@ export function StartupThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={startupThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

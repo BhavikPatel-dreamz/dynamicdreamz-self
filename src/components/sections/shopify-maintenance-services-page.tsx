@@ -14,7 +14,7 @@ export function ShopifyMaintenanceServicesPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ServiceHeroVideoSection
         content={shopifyMaintenanceServicesContent.hero}
       />

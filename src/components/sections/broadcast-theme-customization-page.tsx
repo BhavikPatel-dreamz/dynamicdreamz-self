@@ -37,7 +37,7 @@ export function BroadcastThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={broadcastThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

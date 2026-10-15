@@ -31,10 +31,10 @@ export function BrandPartnersSection({
   return (
     <section
       className={cn(
-        "overflow-hidden",
+        "trusted_leading_brands overflow-hidden",
         isShopifyHours
           ? "py-20 max-[992px]:py-[60px] max-[767px]:min-h-[365px] max-[767px]:pt-10 max-[767px]:pb-[50px]"
-          : "min-h-[640.78px] py-20 pb-[84px] min-[768px]:max-[992px]:min-h-[614.78px] min-[768px]:max-[992px]:py-[50px] max-[767px]:min-h-[443.69px] max-[767px]:pt-10 max-[767px]:pb-[50px]",
+          : "min-h-[640.78px] py-20 min-[768px]:max-[992px]:min-h-[614.78px] min-[768px]:max-[992px]:py-[50px] max-[767px]:min-h-[443.69px] max-[767px]:pt-10 max-[767px]:pb-[50px]",
       )}
     >
       <Container>
@@ -52,7 +52,7 @@ export function BrandPartnersSection({
               unstyled={isShopifyHours}
               className={cn(
                 isShopifyHours
-                  ? "font-sans text-[35px] leading-[1.4] font-bold tracking-[-0.8px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
+                  ? "font-sans text-[35px] leading-[1.4] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]"
                   : "min-[768px]:max-[992px]:mb-2.5 min-[768px]:max-[992px]:w-full max-[767px]:mb-2.5",
               )}
             >

@@ -39,7 +39,7 @@ export function ResourcesStorySection() {
           </div>
           <div className="right-col w-1/2 max-[992px]:min-h-[949.63px] max-[992px]:w-full max-[767px]:min-h-[809.03px]">
             <div className="mb-7">
-              <h2 id="resources-story-title" className="relative pl-5 text-[50px] leading-[66px] font-bold tracking-[-1px] before:absolute before:top-1/2 before:left-0 before:h-[45px] before:w-[5px] before:-translate-y-1/2 before:bg-[linear-gradient(111.61deg,#15c064_-0.6%,#00d1ff_92.42%)] max-[992px]:text-[36px] max-[992px]:leading-[55px] max-[767px]:text-[26px] max-[767px]:leading-[47.2px]">{resourcesStory.title}</h2>
+              <h2 id="resources-story-title" className="relative pl-5 text-[50px] leading-[60px] font-normal tracking-normal text-ink before:absolute before:top-1/2 before:left-0 before:h-[45px] before:w-[5px] before:-translate-y-1/2 before:bg-[linear-gradient(111.61deg,#15c064_-0.6%,#00d1ff_92.42%)] max-[992px]:text-[36px] max-[992px]:leading-[55px] max-[767px]:text-[26px] max-[767px]:leading-[47.2px]">{resourcesStory.title}</h2>
               <p className="text-[18px] leading-[1.4] font-bold text-ink">{resourcesStory.subtitle}</p>
             </div>
             <div className="h-[360px] max-[992px]:h-[400px] max-[575px]:h-[300px] max-[480px]:h-[242px]">

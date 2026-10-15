@@ -37,7 +37,7 @@ export function RefreshThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={refreshThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

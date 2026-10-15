@@ -76,12 +76,12 @@ export function CityPageHeroSection({
           >
             <div className="hero-content">
               {content.eyebrows && content.eyebrows.length > 0 && (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:text-[12px] max-[1199px]:justify-center max-[767px]:pl-6 max-[767px]:text-[10px] max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:justify-center max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
                   {content.eyebrows.map((item, idx) => (
                     <span
                       key={item}
                       className={cn(
-                        "relative inline-flex items-center",
+                        "relative inline-flex items-center font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-[12px] max-[767px]:text-[10px]",
                         idx > 0 &&
                           "ml-2.5 pl-2.5 after:absolute after:-left-[2px] after:top-1/2 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#535353] after:content-['']",
                       )}
@@ -91,7 +91,7 @@ export function CityPageHeroSection({
                   ))}
                 </div>
               )}
-              <h1 className="mb-2.5 font-montreal-medium text-[50px] font-medium leading-[60px] tracking-normal text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
+              <h1 className="mb-2.5 font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
                 {content.title}
                 {content.titleHighlight ? (
                   <> <i className="not-italic text-brand-red">{content.titleHighlight}</i></>

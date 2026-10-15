@@ -37,7 +37,7 @@ export function TradeThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={tradeThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

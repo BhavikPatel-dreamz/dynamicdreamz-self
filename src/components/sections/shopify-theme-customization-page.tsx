@@ -27,7 +27,7 @@ export function ShopifyThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       {/* 1. Hero */}
       <ServiceHeroVideoSection
         content={shopifyThemeCustomizationContent.hero}

@@ -21,7 +21,7 @@ import {
 
 export function UpgradeToShopifyPlusPage() {
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ServiceHeroVideoSection
         content={upgradeShopifyPlusHero}
         titleAccentTag="span"

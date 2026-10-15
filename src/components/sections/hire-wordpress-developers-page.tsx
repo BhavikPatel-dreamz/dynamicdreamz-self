@@ -40,7 +40,7 @@ export function HireWordPressDevelopersPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <CityPageHeroSection content={hireWordPressHero} />
       <WhiteLabelCounterSection counters={hireWordPressCounters} />
       <ThemeCustomizationServicesSection

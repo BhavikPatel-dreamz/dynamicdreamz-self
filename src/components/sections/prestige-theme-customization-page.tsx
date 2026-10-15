@@ -37,7 +37,7 @@ export function PrestigeThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={prestigeThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

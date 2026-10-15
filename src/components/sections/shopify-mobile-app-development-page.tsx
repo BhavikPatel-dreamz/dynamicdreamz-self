@@ -24,7 +24,7 @@ import {
 
 export function ShopifyMobileAppDevelopmentPage() {
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       {/* 1. Hero Section */}
       <ShopifyMobileAppHeroSection content={shopifyMobileAppHero} />
 

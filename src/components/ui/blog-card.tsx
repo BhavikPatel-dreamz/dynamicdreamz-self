@@ -107,7 +107,7 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
             <Link className="transition-colors hover:text-brand-red focus-visible:text-brand-red" href={categoryHref}>{category}</Link>
             <time className="shrink-0" dateTime={item.date}>{item.displayDate}</time>
           </div>
-          <h3 className="line-clamp-4 text-[18px] leading-[1.5] font-bold tracking-[-0.32px]">
+          <h3 className="line-clamp-4 text-[18px] leading-[1.5] font-normal tracking-normal text-ink">
             <Link className="hover:underline hover:underline-offset-2 focus-visible:underline focus-visible:underline-offset-2" href={item.href}>{item.title}</Link>
           </h3>
         </div>
@@ -137,7 +137,7 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
           </div>
           <div className="blog-title">
             <Link className="group/title block" href={item.href}>
-              <h3 className="font-display text-xl leading-[30px] font-medium transition-colors duration-300 ease-in-out group-hover/title:text-brand-red group-focus-visible/title:text-brand-red max-[767px]:text-base max-[767px]:leading-[normal]">
+              <h3 className="font-display text-xl leading-[30px] font-normal tracking-normal transition-colors duration-300 ease-in-out group-hover/title:text-brand-red group-focus-visible/title:text-brand-red max-[767px]:text-base max-[767px]:leading-[normal]">
                 {item.title}
               </h3>
             </Link>

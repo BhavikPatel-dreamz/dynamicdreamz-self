@@ -6,6 +6,7 @@ export function ResourcesBrandStrip() {
     <IndustryBrandsSection
       content={resourcesBrandsSection}
       items={resourcesClientLogos}
+      showHeading={false}
     />
   );
 }

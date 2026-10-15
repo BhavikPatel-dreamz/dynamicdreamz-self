@@ -23,7 +23,7 @@ export function WordPressDevelopmentInMumbaiPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <CityPageHeroSection
         content={wordpressDevelopmentMumbaiContent.hero}
       />

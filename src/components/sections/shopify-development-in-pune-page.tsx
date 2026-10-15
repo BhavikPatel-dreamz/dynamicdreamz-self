@@ -23,7 +23,7 @@ export function ShopifyDevelopmentInPunePage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <CityPageHeroSection content={shopifyDevelopmentPuneContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

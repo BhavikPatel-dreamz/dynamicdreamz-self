@@ -49,7 +49,7 @@ export function CertifiedServicesSection({
               <span className="mb-5 inline-block rounded-[5px] bg-brand-red/10 px-2.5 py-[5px] text-xs leading-[18px] font-bold text-brand-red">
                 {item.eyebrow}
               </span>
-              <h3 className="mb-[15px] text-lg leading-[27px] font-bold text-ink">
+              <h3 className="mb-[15px] text-lg leading-[27px] font-normal text-ink">
                 {item.title}
               </h3>
               <p className="text-base leading-[30.4px] font-medium text-muted">

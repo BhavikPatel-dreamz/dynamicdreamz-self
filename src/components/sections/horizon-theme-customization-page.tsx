@@ -35,7 +35,7 @@ export function HorizonThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={horizonThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

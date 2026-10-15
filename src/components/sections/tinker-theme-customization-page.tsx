@@ -37,7 +37,7 @@ export function TinkerThemeCustomizationPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <ThemeHeroSection content={tinkerThemeCustomizationContent.hero} />
       <IndustryBrandsSection
         content={brandsContent}

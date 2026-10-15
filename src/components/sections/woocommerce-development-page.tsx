@@ -26,7 +26,7 @@ export function WooCommerceDevelopmentPage() {
   };
 
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div>
       <CityPageHeroSection
         content={woocommerceDevelopmentHero}
       />
