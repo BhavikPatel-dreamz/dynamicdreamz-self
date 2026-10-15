@@ -38,7 +38,7 @@ export const shopifyPlusAgencyContent = {
     { value: "20+", label: "Years of Experience", note: "Established in 2006", tone: "green" },
     { value: "150+", label: "Experts", note: "AI empowered. Continuously trained", tone: "stone" },
     { value: "5,000+", label: "projects delivered", note: "Ecommerce, web and mobile", tone: "peach" },
-    { value: "2,500+", label: "Verified 5 star Reviews", note: "From Clutch, Trustpilot & Upwork", tone: "lime" },
+    { value: "2500+", label: "Verified 5 star Reviews", note: "From Clutch, Trustpilot & Upwork", tone: "lime" },
   ] satisfies readonly ShopifyPlusAgencyCounter[],
   videoSrc: "/assets/home/why-dynamic-dreamz.mp4",
 } as const;

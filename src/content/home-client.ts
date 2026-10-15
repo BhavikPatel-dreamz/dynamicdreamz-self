@@ -7,7 +7,7 @@ export type ImageItem = {
 
 export const homeSectionCopy = {
   established: "ESTABLISHED IN 2006",
-  partnerBadge: "Shopify Platinum Partner",
+  partnerBadge: "SHOPIFY PLATINUM PARTNER",
   heroTitle: "Shopify Plus & Enterprise Shopify Solutions",
   brandPartnersHeading: "Partnering with Ambitious Brands",
   brandPartnersDescription:
