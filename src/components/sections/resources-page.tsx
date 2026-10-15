@@ -8,7 +8,7 @@ import { ResourcesTrustSection } from "@/components/sections/resources/resources
 
 export function ResourcesPage() {
   return (
-    <div className="font-sans [&_h1]:font-sans [&_h2]:font-sans [&_h3]:font-sans">
+    <div>
       <ResourcesHeroSection />
       <ResourcesHubSection />
       <ResourcesBlogSection />

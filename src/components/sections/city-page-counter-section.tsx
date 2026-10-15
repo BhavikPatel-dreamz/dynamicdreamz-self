@@ -43,7 +43,7 @@ export function CityPageCounterSection({
                 <Eyebrow>{content.eyebrow}</Eyebrow>
               </div>
             )}
-            <h2 className="font-sans text-[35px] font-bold leading-[48px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
+            <h2 className="font-montreal-medium text-[35px] font-normal leading-[1.4] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
               {content.heading}
             </h2>
           </div>

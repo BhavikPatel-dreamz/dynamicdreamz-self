@@ -40,7 +40,7 @@ export function CaseStudyServiceDelivered({ projectDelivery }: CaseStudyServiceD
                   <span className="mb-3 block font-montserrat text-[12px] font-medium uppercase leading-none tracking-[0.5px] text-[#535353]">
                     {item.category || caseStudiesUiCopy.serviceDelivered}
                   </span>
-                  <h5 className="m-0 font-montserrat text-[16px] font-bold leading-[22px] text-[#282828] max-[767px]:text-[15px]">
+                  <h5 className="m-0 font-display text-[16px] font-medium leading-[22px] text-[#282828] max-[767px]:text-[15px]">
                     {item.name}
                   </h5>
                 </div>

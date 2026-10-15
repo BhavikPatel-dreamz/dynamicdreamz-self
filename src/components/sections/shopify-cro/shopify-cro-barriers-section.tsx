@@ -53,7 +53,7 @@ export function ShopifyCroBarriersSection({
                     className="size-[35px] object-contain"
                   />
                 </div>
-                <h3 className="h6 m-0 font-sans text-base font-normal leading-[22px] text-ink">
+                <h3 className="h6 m-0 font-display text-base font-normal leading-[22px] text-ink">
                   {item.title}
                 </h3>
               </div>

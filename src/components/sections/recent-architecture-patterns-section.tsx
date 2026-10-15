@@ -57,7 +57,7 @@ export function RecentArchitecturePatternsSection({
                     <span className="mb-[15px] block font-montserrat text-sm font-bold uppercase leading-5 text-[#AD5151]">
                       {item.label}
                     </span>
-                    <h3 className="font-montserrat text-[20px] font-bold leading-[130%] text-[#282828]">
+                    <h3 className="font-display text-[20px] font-medium leading-[130%] text-[#282828]">
                       {item.title}
                     </h3>
                   </div>

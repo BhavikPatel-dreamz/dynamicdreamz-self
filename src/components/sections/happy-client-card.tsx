@@ -50,9 +50,9 @@ export function HappyClientCard({
             />
           </span>
         ) : null}
-        <h3 className="pointer-events-none font-montserrat absolute bottom-[15px] left-[15px] z-20 m-0 inline-block rounded-[4px] border-l-[3px] border-brand-red bg-black/80 px-[14px] py-[10px] text-left text-[15px] font-semibold leading-[21px] text-white max-[1199px]:text-sm max-[1199px]:leading-[21px]">
+        <h3 className="pointer-events-none font-display absolute bottom-[15px] left-[15px] max-[1199px]:bottom-3 max-[1199px]:left-3 z-20 m-0 inline-block rounded-[5px] border-l-[3px] border-brand-red bg-black/80 px-[15px] py-[10px] max-[1199px]:px-[14px] max-[1199px]:py-[7px] text-left text-[15px] font-semibold leading-[21px] text-white max-[1199px]:text-sm max-[1199px]:leading-[21px]">
           {testimonial.name}
-          <span className="mt-1 block text-[15px] font-medium leading-5">
+          <span className="mt-[5px] block text-[12px] font-medium leading-normal">
             {testimonial.company}
           </span>
         </h3>

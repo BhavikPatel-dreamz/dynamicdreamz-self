@@ -77,12 +77,12 @@ export function WhiteLabelToolsSection({
         className="wide_range_technologies_top_part mb-10 px-4 text-center max-[1199px]:mb-[35px] max-[992px]:mb-[30px] max-[767px]:mb-5"
       >
         {eyebrow ? (
-          <div className="title mb-2.5 text-[13px] font-bold uppercase tracking-[1.5px] text-[#e33d37]">
+          <div className="title mb-5 text-[13px] font-bold uppercase tracking-[1.5px] text-[#e33d37]">
             <span>{eyebrow}</span>
           </div>
         ) : null}
         <div className="wide_range_technologies_heading">
-          <h2 className="mx-auto mb-6 max-w-[1000px] font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[22px] max-[992px]:mb-5 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-[15px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="mx-auto mb-6 max-w-[1000px] font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1199px]:mb-[22px] max-[991px]:mb-5 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:mb-[15px] max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
             {title}
           </h2>
         </div>

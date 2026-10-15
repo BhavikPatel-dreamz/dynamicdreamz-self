@@ -100,8 +100,8 @@ function ReviewCircle({
               : "[transform:translateY(30px)] opacity-0",
           )}
         >
-          <div className="review_animation_text mb-6 text-center text-base leading-normal font-bold text-black max-[767px]:mb-[17px] max-[767px]:text-sm">{sharedUiCopy.reviewedOn}</div>
-          <div className="review_animation_box_logo mb-5 max-[767px]:mb-[21px]">
+          <div className="review_animation_text mb-6 text-center text-base leading-normal font-bold text-black max-[767px]:mb-[10px] max-[767px]:text-sm">{sharedUiCopy.reviewedOn}</div>
+          <div className="review_animation_box_logo mb-5 max-[767px]:mb-0">
             <Image
               className="mx-auto h-auto w-auto max-[767px]:max-h-10 max-[767px]:max-w-[130px]"
               src={review.wordmark}

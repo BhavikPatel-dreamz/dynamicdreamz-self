@@ -50,11 +50,11 @@ export function Eyebrow<T extends ElementType = "p">({
         !unstyled && linePosition === "flow" && "before:mr-3 max-[767px]:before:mr-2.5",
         !unstyled &&
           linePosition === "overlay" &&
-          "relative pl-10 before:absolute before:left-0 before:top-[7px] max-[767px]:pl-[23px] max-[1199px]:before:top-[6px] max-[767px]:before:top-[4px]",
+          "relative pl-10 before:absolute before:left-0 before:top-[7px] max-[767px]:pl-6 max-[1199px]:before:top-[6px] max-[767px]:before:top-[4px]",
         !unstyled && lineThickness === "regular" && "before:h-0.5",
         !unstyled && lineThickness === "thin" && "before:h-[2px]",
         !unstyled && lineWidth === "fixed" && "before:w-[30px]",
-        !unstyled && lineWidth === "responsive" && "before:w-[30px] max-[767px]:before:w-[25px]",
+        !unstyled && lineWidth === "responsive" && "before:w-[30px] max-[767px]:before:w-[15px]",
         !unstyled && tone === "ink" && "text-ink",
         !unstyled && tone === "muted" && "text-muted",
         !unstyled && tone === "inverse" && "text-white",

@@ -62,7 +62,7 @@ export function EvaluationFrameworkSection({
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   {item.title ? (
-                    <h3 className="m-0 mb-2.5 font-montserrat text-base font-bold leading-6 text-ink">
+                    <h3 className="m-0 mb-2.5 font-display text-base font-medium leading-6 text-ink">
                       {formatBrText(item.title)}
                     </h3>
                   ) : null}

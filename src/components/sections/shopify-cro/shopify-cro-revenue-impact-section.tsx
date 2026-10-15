@@ -92,7 +92,7 @@ export function ShopifyCroRevenueImpactSection({
                         />
                       </span>
                       <div className="revenue-card-content">
-                        <h3 className="mb-[5px] font-sans text-[40px] font-normal leading-none tracking-[1.2px] text-white max-[991px]:text-[26px]">
+                        <h3 className="mb-[5px] font-display text-[40px] font-normal leading-none tracking-[1.2px] text-white max-[991px]:text-[26px]">
                           {item.value}
                         </h3>
                         <span className="font-sans text-base font-medium leading-[124%] text-white">
@@ -107,7 +107,7 @@ export function ShopifyCroRevenueImpactSection({
                   <span className="mb-1 block font-sans text-base font-medium leading-[124%] text-white">
                     {content.before.totalLabel}
                   </span>
-                  <h2 className="m-0 font-sans text-[40px] font-bold leading-none tracking-[1.2px] text-white max-[991px]:text-[26px]">
+                  <h2 className="m-0 font-display text-[40px] font-bold leading-none tracking-[1.2px] text-white max-[991px]:text-[26px]">
                     {content.before.totalValue}
                   </h2>
                 </div>
@@ -140,7 +140,7 @@ export function ShopifyCroRevenueImpactSection({
                         />
                       </span>
                       <div className="revenue-card-content">
-                        <h3 className="mb-[5px] font-sans text-[40px] font-normal leading-none tracking-[1.2px] text-white max-[991px]:text-[26px]">
+                        <h3 className="mb-[5px] font-display text-[40px] font-normal leading-none tracking-[1.2px] text-white max-[991px]:text-[26px]">
                           {item.value}
                         </h3>
                         <span className="font-sans text-base font-medium leading-[124%] text-white">
@@ -155,7 +155,7 @@ export function ShopifyCroRevenueImpactSection({
                   <span className="mb-1 block font-sans text-base font-medium leading-[124%] text-white">
                     {content.after.totalLabel}
                   </span>
-                  <h2 className="m-0 flex items-center justify-center gap-2.5 font-sans text-[40px] font-bold leading-none tracking-[1.2px] text-[#35F3A3] max-[991px]:text-[26px]">
+                  <h2 className="m-0 flex items-center justify-center gap-2.5 font-display text-[40px] font-bold leading-none tracking-[1.2px] text-[#35F3A3] max-[991px]:text-[26px]">
                     {content.after.totalValue}
                     <svg
                       width="45"

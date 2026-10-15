@@ -108,7 +108,7 @@ export function ServiceHeroVideoSection({
                 </div>
               ) : null}
 
-              <h1 className="mb-2.5 font-montreal-medium text-[50px] font-medium leading-[60px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
+              <h1 className="mb-2.5 font-montreal-medium text-[50px] font-normal leading-[60px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
                 {content.titleAccent && titleAccentPosition === "start" ? (
                   <>
                     {titleAccentTag === "span" ? (
@@ -233,7 +233,7 @@ export function ServiceHeroVideoSection({
           </div>
 
           {content.video ? (
-            <div className="right-col flex w-[43.182%] max-[1399px]:w-[40%] max-[991px]:hidden">
+            <div className="right-col flex w-[43.182%] max-[1399px]:w-[40%] max-[1199px]:w-[60%] max-[1199px]:mx-auto max-[1199px]:mb-10 max-[991px]:hidden">
               <div className="video-wrapper relative w-full min-h-[386px] overflow-hidden rounded-[20px]">
                 <video
                   autoPlay

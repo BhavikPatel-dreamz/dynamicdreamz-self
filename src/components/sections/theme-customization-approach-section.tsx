@@ -61,7 +61,7 @@ export function ThemeCustomizationApproachSection({
                 <span className="mb-2.5 block font-montserrat text-xs font-medium uppercase tracking-[0.5px] text-[#ad5151]">
                   {item.badge}
                 </span>
-                <h3 className="mb-2 font-sans text-[22px] font-bold leading-tight text-ink max-[767px]:text-lg">
+                <h3 className="mb-2 font-display text-[22px] font-medium leading-tight text-ink max-[767px]:text-lg">
                   {item.title}
                 </h3>
                 <p className="font-sans text-sm font-medium leading-[22px] text-[#535353]">

@@ -38,7 +38,7 @@ export function TechKeywordSection({
                   <Eyebrow as="span">{content.eyebrow}</Eyebrow>
                 </div>
               ) : null}
-              <h2 className="font-sans text-[35px] font-bold leading-[48px] tracking-[-0.7px] text-ink max-[1199px]:text-[28px] max-[1199px]:leading-[38px] max-[767px]:text-2xl max-[767px]:leading-[33px]">
+              <h2 className="font-display text-[35px] font-medium leading-[48px] tracking-[-0.7px] text-ink max-[1199px]:text-[28px] max-[1199px]:leading-[38px] max-[767px]:text-2xl max-[767px]:leading-[33px]">
                 {content.heading}
               </h2>
             </div>

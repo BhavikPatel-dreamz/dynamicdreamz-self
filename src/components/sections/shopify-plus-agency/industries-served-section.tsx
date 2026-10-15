@@ -60,7 +60,7 @@ export function IndustriesServedSection({
                         {item.eyebrow}
                       </span>
                     ) : null}
-                    <h3 className="mb-2.5 font-montserrat text-xl font-bold leading-6 text-ink max-[1399px]:text-[18px]">
+                    <h3 className="mb-2.5 font-display text-xl font-medium leading-6 text-ink max-[1399px]:text-[18px]">
                       {item.title}
                     </h3>
                     <p className="m-0 text-sm font-medium leading-6 text-[#535353]">
@@ -105,7 +105,7 @@ export function IndustriesServedSection({
                       sizes="(max-width: 991px) calc(100vw - 32px), 590px"
                     />
                   </div>
-                  <h3 className="mb-[10px] font-montserrat text-base font-bold leading-[26.72px] tracking-[0.32px] text-ink">
+                  <h3 className="mb-[10px] font-display text-base font-medium leading-[26.72px] tracking-[0.32px] text-ink">
                     {item.title}
                   </h3>
                   <p className="mb-6 text-base font-medium leading-[27.2px] tracking-[0.32px] text-[#535353]">

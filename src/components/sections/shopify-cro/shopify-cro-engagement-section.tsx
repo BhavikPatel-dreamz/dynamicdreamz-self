@@ -58,7 +58,7 @@ export function ShopifyCroEngagementSection({
                         className="size-full object-contain"
                       />
                     </span>
-                    <h3 className="mb-2.5 font-sans text-2xl font-bold leading-[30px] text-ink max-[767px]:text-xl">
+                    <h3 className="mb-2.5 font-display text-2xl font-medium leading-[30px] text-ink max-[767px]:text-xl">
                       {item.title}
                     </h3>
                     <p className="m-0 font-sans text-base font-medium leading-[190%] text-muted">

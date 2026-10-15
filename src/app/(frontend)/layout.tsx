@@ -26,13 +26,18 @@ const neueMontreal = localFont({
       style: "normal",
     },
     {
-      path: "./fonts/neue--montreal-regular-webfont.woff2",
+      path: "./fonts/neue--montreal-medium-webfont.woff2",
       weight: "400",
       style: "normal",
     },
     {
       path: "./fonts/neue--montreal-medium-webfont.woff2",
       weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/neue--montreal-bold-webfont.woff2",
+      weight: "600",
       style: "normal",
     },
     {
@@ -47,9 +52,28 @@ const neueMontreal = localFont({
 });
 
 const neueMontrealMedium = localFont({
-  src: "./fonts/neue--montreal-medium-webfont.woff2",
-  weight: "500",
-  style: "normal",
+  src: [
+    {
+      path: "./fonts/neue--montreal-medium-webfont.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/neue--montreal-medium-webfont.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/neue--montreal-bold-webfont.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/neue--montreal-bold-webfont.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-neue-montreal-medium-local",
   display: "swap",
   preload: true,

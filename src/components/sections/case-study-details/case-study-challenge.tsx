@@ -31,7 +31,7 @@ export function CaseStudyChallenge({ challenge }: CaseStudyChallengeProps) {
           </div>
           <h2
             id="challenge-heading"
-            className="mb-4 font-montserrat text-[35px] font-bold leading-[1.38] text-[#282828] max-[1199px]:text-[28px] max-[767px]:text-2xl"
+            className="mb-4 font-display text-[35px] font-medium leading-[1.38] text-[#282828] max-[1199px]:text-[28px] max-[767px]:text-2xl"
           >
             {heading}
           </h2>
@@ -54,7 +54,7 @@ export function CaseStudyChallenge({ challenge }: CaseStudyChallengeProps) {
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="mb-2.5 font-montserrat text-[18px] font-bold leading-[26px] text-[#282828]">
+                <h3 className="mb-2.5 font-display text-[18px] font-medium leading-[26px] text-[#282828]">
                   {item.title}
                 </h3>
                 {item.description && (

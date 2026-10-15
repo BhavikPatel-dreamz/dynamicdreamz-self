@@ -88,7 +88,7 @@ export function CaseStudyCardsSection({
                         )}
                       </div>
                     ) : null}
-                    <h3 className="mb-[15px] font-montserrat text-[20px] font-bold leading-[1.4] text-ink line-clamp-2">
+                    <h3 className="mb-[15px] font-display text-[20px] font-medium leading-[1.4] text-ink line-clamp-2">
                       {item.name}
                     </h3>
                     {item.chips?.length ? (

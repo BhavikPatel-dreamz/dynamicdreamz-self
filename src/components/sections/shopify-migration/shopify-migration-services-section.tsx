@@ -55,7 +55,7 @@ export function ShopifyMigrationServicesSection({
                 </Eyebrow>
               )}
               {heading && (
-                <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
+                <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
                   {formatBrText(heading, "max-[767px]:hidden")}
                 </h2>
               )}
@@ -91,7 +91,7 @@ export function ShopifyMigrationServicesSection({
                       width={380}
                     />
                   </div>
-                  <h3 className="mb-1.5 font-sans text-lg font-medium leading-7 text-ink">
+                  <h3 className="mb-1.5 font-display text-lg font-medium leading-7 text-ink">
                     {item.title}
                   </h3>
                   {item.description && (
@@ -122,7 +122,7 @@ export function ShopifyMigrationServicesSection({
               <span className="badge mb-3 inline-block rounded-[30px] border border-[rgba(23,30,22,0.1)] bg-white px-3 py-1 font-montserrat text-xs font-bold uppercase text-[#282828]">
                 {banner.badge}
               </span>
-              <h2 className="wlp-banner-title mb-2.5 font-montserrat text-[30px] font-bold leading-tight text-ink max-[767px]:text-2xl">
+              <h2 className="wlp-banner-title mb-2.5 font-display text-[30px] font-medium leading-tight text-ink max-[767px]:text-2xl">
                 {banner.title}
               </h2>
               <p className="wlp-banner-description font-sans text-base font-medium leading-7 text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">

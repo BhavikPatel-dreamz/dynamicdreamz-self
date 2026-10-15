@@ -55,7 +55,7 @@ export function CaseStudyRelated({
           </div>
           <h2
             id="related-case-studies-heading"
-            className="mb-4 font-montserrat text-[35px] font-bold leading-[1.38] text-[#282828] max-[1199px]:text-[28px] max-[767px]:text-2xl"
+            className="mb-4 font-display text-[35px] font-medium leading-[1.38] text-[#282828] max-[1199px]:text-[28px] max-[767px]:text-2xl"
           >
             {caseStudiesUiCopy.relatedHeading}
           </h2>
@@ -102,7 +102,7 @@ export function CaseStudyRelated({
                               {item.industry}
                             </span>
                           </div>
-                          <h3 className="mb-2.5 line-clamp-2 font-montserrat text-[20px] font-semibold leading-[1.4] tracking-[-.4px] text-[#090909] transition-colors group-hover/title:text-[#ad5151] max-[767px]:text-[18px]">
+                          <h3 className="mb-2.5 line-clamp-2 font-display text-[20px] font-medium leading-[1.4] tracking-[-.4px] text-[#090909] transition-colors group-hover/title:text-[#ad5151] max-[767px]:text-[18px]">
                             {item.title}
                           </h3>
                         </Link>

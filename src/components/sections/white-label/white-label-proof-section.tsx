@@ -93,7 +93,7 @@ export function WhiteLabelWhySection({
               <span>{eyebrow}</span>
             </div>
           ) : null}
-          <h2 className="mb-5 text-center font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:mb-[60px] max-[992px]:mb-10 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="mb-5 text-center font-display text-[35px] leading-[48.475px] font-medium tracking-[-0.7px] text-ink max-[1199px]:mb-[60px] max-[992px]:mb-10 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(title, "max-[1199px]:hidden")}
           </h2>
         </div>
@@ -128,7 +128,7 @@ export function WhiteLabelWhySection({
               >
                 {reason ? (
                   <>
-                    <h3 className="mb-3.5 font-sans text-lg leading-[1.28] font-bold text-brand-red max-[992px]:mb-2.5">
+                    <h3 className="mb-3.5 font-display text-lg leading-[1.28] font-medium text-brand-red max-[992px]:mb-2.5">
                       {reason.title}
                     </h3>
                     <p className="font-sans text-base leading-[30.4px] font-medium text-muted max-[1199px]:leading-[26px] max-[992px]:text-[15px] max-[992px]:leading-[22px]">

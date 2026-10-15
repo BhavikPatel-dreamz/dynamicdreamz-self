@@ -64,7 +64,7 @@ export function SiteHeader({
 
         <div className="header-btn shrink-0">
           <ButtonLink
-            className="py-3.75 max-[1399px]:px-5 max-[1399px]:py-3.25 max-[1399px]:text-[14px] max-[991px]:px-[14px]! max-[991px]:py-[9px]! max-[991px]:text-[13px]! max-[379px]:px-[10px]! max-[379px]:py-[8px]! max-[379px]:text-[10px]!"
+            className="py-3.75 max-[1399px]:px-5 max-[1399px]:py-3.25 max-[1399px]:text-[14px] max-[1199px]:px-[14px]! max-[1199px]:py-[9px]! max-[1199px]:text-[13px]! max-[379px]:px-[10px]! max-[379px]:py-[8px]! max-[379px]:text-[10px]!"
             variant="primary"
             href={effectiveCtaHref}
           >

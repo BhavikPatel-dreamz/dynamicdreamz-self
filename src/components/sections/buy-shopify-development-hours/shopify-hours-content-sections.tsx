@@ -22,7 +22,7 @@ export function ShopifyHoursComparisonSection() {
               {shopifyHoursComparison.eyebrow}
             </Eyebrow>
             <h2
-              className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
+              className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
               id="shopify-hours-comparison-title"
             >
               {shopifyHoursComparison.heading}
@@ -46,7 +46,7 @@ export function ShopifyHoursComparisonSection() {
                   }`}
                   key={item.title}
                 >
-                  <h3 className="mb-6 font-montserrat text-lg leading-[25.2px] font-bold text-ink">
+                  <h3 className="mb-6 font-display text-lg leading-[25.2px] font-medium text-ink">
                     {item.title}
                   </h3>
                   <ul className="pb-[35px] max-[992px]:pb-[25px]">

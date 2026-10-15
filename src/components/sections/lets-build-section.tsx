@@ -24,7 +24,7 @@ export function LetsBuildSection({
     <section className={className} id={id}>
       <Container>
         <div data-aos="fade-up" className="lets-build-text mx-auto max-w-[880px]">
-          <h2 className="mb-[15px] font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
+          <h2 className="mb-[15px] font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
             {formatBrText(content.heading)}
           </h2>
           <p className="mb-6 text-base font-normal leading-[30.4px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">

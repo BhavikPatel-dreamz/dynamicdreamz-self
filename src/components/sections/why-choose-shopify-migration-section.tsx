@@ -486,7 +486,7 @@ export function WhyChooseShopifyMigrationSection({
                     />
                   </a>
                 </div>
-                <h3 className="mb-2.5 font-montserrat text-[30px] font-bold leading-[35px] text-ink max-[1199px]:text-[24px] max-[1199px]:leading-[28px] max-[767px]:text-[20px] max-[767px]:leading-[24px]">
+                <h3 className="mb-2.5 font-display text-[30px] font-medium leading-[35px] text-ink max-[1199px]:text-[24px] max-[1199px]:leading-[28px] max-[767px]:text-[20px] max-[767px]:leading-[24px]">
                   {content.partnerHeading}
                 </h3>
                 <p className="font-sans text-sm font-medium leading-6 text-[#535353]">

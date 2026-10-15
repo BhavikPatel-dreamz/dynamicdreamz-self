@@ -46,7 +46,7 @@ export function ShopifyHoursHeroSection() {
               {shopifyHoursHero.description}
             </p>
             <div className="hire-shopify-dev-list w-full max-w-[460px] pt-2.5">
-              <h2 className="mb-5 font-montserrat text-base leading-[22.36px] font-semibold text-brand-red">
+              <h2 className="mb-5 font-display text-base leading-[22.36px] font-semibold text-brand-red">
                 {shopifyHoursHero.highlightsHeading}
               </h2>
               <ul>

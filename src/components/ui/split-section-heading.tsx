@@ -50,7 +50,7 @@ export function SplitSectionHeading({
   if (variant === "centered") {
     return (
       <header
-        className={cn("mx-auto max-w-[900px] text-center", className)}
+        className={cn("mx-auto max-w-[840px] text-center", className)}
         data-aos={aosAnimation || undefined}
       >
         <h2
@@ -99,11 +99,7 @@ export function SplitSectionHeading({
         className={cn(
           titleColumnClassName ??
             // Live `.section_title_with_eyebrow .title` is 44% wide until 991px.
-            (services || leftAligned
-              ? "w-[44%]"
-              : portfolio
-                ? "w-[50%]"
-                : "w-[46%]"),
+            (portfolio ? "w-[50%]" : "w-[44%]"),
           // Live `.title` is a 14px/24px block. Its line box is the strut the
           // inline-flex `.eyebrow` aligns to, which produces the live 4px gap
           // between the title box and the eyebrow.
@@ -128,9 +124,7 @@ export function SplitSectionHeading({
         ) : null}
         <h2
           className={cn(
-            services || portfolio || leftAligned
-              ? "font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]"
-              : "font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] max-[991px]:mb-[15px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]",
+            "font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal max-[991px]:mb-[10px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
             dark ? "text-white" : "text-ink",
           )}
           id={headingId}
@@ -146,9 +140,7 @@ export function SplitSectionHeading({
           className={cn(
             textColumnClassName ??
               // Live `.section_title_with_eyebrow .section_text` is 48.3% (50% ≤1199px).
-              (services || portfolio || leftAligned
-                ? "w-[48.3%] max-[1199px]:w-1/2"
-                : "w-[50%]"),
+              "w-[48.3%] max-[1199px]:w-1/2",
             "max-[991px]:w-full",
             textClassName,
           )}
@@ -160,7 +152,7 @@ export function SplitSectionHeading({
                   ? "font-sans xl:text-base text-sm font-medium leading-7 max-[767px]:leading-6"
                   : portfolio
                     ? "font-sans text-[16px] font-medium leading-7 max-[991px]:mt-3.75 max-[991px]:text-sm max-[991px]:leading-[24px] max-[767px]:text-sm max-[767px]:leading-6"
-                    : "xl:text-base text-sm font-medium leading-6 not-last:mb-2.5",
+                    : "font-sans text-base font-medium leading-7 max-[1199px]:text-sm max-[1199px]:leading-6 not-last:mb-2.5",
                 dark ? "text-white/80" : "text-muted",
               )}
               key={paragraph}

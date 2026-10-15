@@ -56,7 +56,7 @@ export function PricingTableSection({
               className="pricing_card group relative flex h-full flex-col rounded-[20px] bg-white px-6 pt-8 pb-[60px] max-[1199px]:px-5 max-[1199px]:pt-[25px] max-[991px]:px-[15px] max-[991px]:pt-5"
               key={item.label}
             >
-              <div className="pricing_card_label mb-2.5 font-montreal-medium text-[18px] font-normal leading-6 text-ink">
+              <div className="pricing_card_label mb-2.5 font-montreal-medium text-[18px] font-normal leading-6 text-ink max-[1199px]:text-[14px]">
                 {item.label}
               </div>
               <span className="pricing_badge mb-[30px] inline-block w-fit rounded-[30px] bg-[rgba(173,81,81,0.05)] px-[12.5px] py-[5.5px] font-montserrat text-xs leading-[12px] font-bold uppercase text-[#ad5151] max-[767px]:mb-[15px]">
@@ -81,7 +81,7 @@ export function PricingTableSection({
                 </ul>
               )}
               <Link
-                className="btn-link-arrow absolute bottom-6 left-6 inline-flex items-center font-montserrat text-sm leading-[14px] font-bold uppercase text-[#ad5151] transition-colors hover:text-[#282828] max-[1199px]:left-5"
+                className="btn-link-arrow absolute bottom-6 left-6 inline-flex items-center font-montserrat text-sm leading-[14px] font-bold uppercase text-[#ad5151] transition-colors hover:text-[#282828] max-[1199px]:left-5 max-[1199px]:text-[10px]"
                 href={item.ctaHref}
               >
                 <span>{item.ctaLabel}</span>

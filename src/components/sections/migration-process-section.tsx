@@ -88,7 +88,7 @@ function StepItem({
         <div className="migration-list border-t-[1.5px] border-[#efefef] pt-8 max-[767px]:pt-5">
           {step.categories.map((cat) => (
             <div key={cat.title}>
-              <h4 className="mb-2.5 font-sans text-[18px] font-bold leading-[27.72px] text-[#282828] max-[767px]:text-base">
+              <h4 className="mb-2.5 font-display text-[18px] font-medium leading-[27.72px] text-[#282828] max-[767px]:text-base">
                 {cat.title}
               </h4>
               <ul className="mb-8">
