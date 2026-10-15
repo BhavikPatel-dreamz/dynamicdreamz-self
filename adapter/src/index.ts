@@ -98,23 +98,35 @@ export function createMediaServerAdapter({
           useCompositePrefixes,
         }).storageFilePath
 
-      const init: RequestInit & { duplex?: 'half' } = {
-        method: 'PUT',
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          'Content-Type': file.mimeType || 'application/octet-stream',
-        },
-      }
+      let lastError: unknown = null
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        const init: RequestInit & { duplex?: 'half' } = {
+          method: 'PUT',
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            'Content-Type': file.mimeType || 'application/octet-stream',
+          },
+        }
 
-      if (file.tempFilePath) {
-        init.body = Readable.toWeb(createReadStream(file.tempFilePath)) as unknown as BodyInit
-        init.duplex = 'half'
-      } else {
-        init.body = new Uint8Array(file.buffer)
-      }
+        if (file.tempFilePath) {
+          init.body = Readable.toWeb(createReadStream(file.tempFilePath)) as unknown as BodyInit
+          init.duplex = 'half'
+        } else {
+          init.body = new Uint8Array(file.buffer)
+        }
 
-      const response = await fetch(objectUrl(baseURL, key), init)
-      if (!response.ok) await failure(response, 'upload')
+        try {
+          const response = await fetch(objectUrl(baseURL, key), init)
+          if (response.ok) return
+          await failure(response, 'upload')
+        } catch (err) {
+          lastError = err
+          if (attempt < 3) {
+            await new Promise((resolve) => setTimeout(resolve, attempt * 1000))
+          }
+        }
+      }
+      if (lastError) throw lastError
     },
 
     handleDelete: async ({ doc, filename, storageFilePath }) => {

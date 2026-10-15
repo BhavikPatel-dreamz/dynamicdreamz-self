@@ -2304,6 +2304,9 @@ export interface Page {
                   title: string;
                   description: string;
                   iconName?: string | null;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  iconAlt?: string | null;
                   id?: string | null;
                 }[]
               | null;
@@ -4914,6 +4917,9 @@ export interface PagesSelect<T extends boolean = true> {
                     title?: T;
                     description?: T;
                     iconName?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
                     id?: T;
                   };
               id?: T;

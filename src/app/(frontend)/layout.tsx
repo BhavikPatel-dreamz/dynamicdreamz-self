@@ -96,6 +96,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <SiteFooter
           contactEmail={settingsData?.email}
           contactPhone={settingsData?.phone}
+          copyrightText={navData?.copyright}
           footerBottomLinks={footerBottomLinks}
           footerColumns={footerColumns}
           socialLinks={settingsData?.socialLinks}

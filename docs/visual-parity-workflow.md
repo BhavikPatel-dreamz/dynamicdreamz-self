@@ -42,6 +42,35 @@ appearance. Put any recommended visible improvement in
 fix cannot be made without a visible difference, document it and request
 approval before editing UI code.
 
+## CMS Block Rendering Parity Gate
+
+For a page or section that is managed in Payload, the CMS must alter content and
+approved block composition without creating a second visual system. Payload owns
+typed data and block order; the existing React component owns the rendered
+markup, styles, responsive behavior, and interactions.
+
+Before declaring a CMS migration or block complete:
+
+1. Identify the coded baseline section component and its wrappers, styles,
+   client-side islands, animation states, and media constraints.
+2. Verify that the relevant `blockType` maps through `BlockRenderer` directly to
+   that component (or an equally exact dedicated component). The renderer may
+   adapt typed values, but may not add generic layout or visual treatment.
+3. Populate the CMS block with the equivalent baseline values and compare the
+   CMS-rendered and fallback-rendered routes at 1440px, 768px, and 390px.
+4. Check normal rendering and relevant interactive states, including forms,
+   carousels, accordions, filters, tabs, media crop/aspect ratio, and animated
+   or scrolled states.
+5. Test an approved add, removal, and reorder of the block. Each block must
+   retain its established component styling and behavior in its new position.
+6. Treat a missing field, changed variant, missing media dimensions, altered
+   wrapper, or generic fallback styling as a parity defect—not as an acceptable
+   consequence of CMS management.
+
+CMS media and content must be the primary source when populated. Local values
+may protect against unavailable or invalid CMS data, but may not be used to
+silently bypass a valid CMS block.
+
 ## Capture First
 
 Before implementing visual work:

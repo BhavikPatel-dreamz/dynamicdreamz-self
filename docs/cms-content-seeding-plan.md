@@ -18,6 +18,27 @@ The objective of this plan is to transition 100% of website content management t
 - **Zero Shoehorning into Common Blocks**: Agents must **NEVER** force-fit bespoke sections into generic common blocks (`features-grid`, `proof-counters`, `process-timeline`) by modifying common blocks with awkward conditional props, flags, or CSS compromises. Modifying common blocks to handle radically different layouts creates bloated "Frankenstein components", damages visual parity, and risks breaking other routes.
 - **Common Blocks strictly for genuinely shared layouts**: Common blocks (`HeroBlock`, `FaqAccordionBlock`, `BrandPartnersBlock`, `CtaBannerBlock`, etc.) are reserved exclusively for sections whose visual design, cards, and structure match 100% across routes.
 
+### CMS Content/Media Ownership and React Presentation Contract
+- **CMS is the primary content and media source**: When populated, Payload data
+  supplies every editable heading, paragraph, CTA, list, counter, SEO value, and
+  upload relationship. Local typed content and `/assets/...` files are resilience
+  fallbacks only when the CMS field or media relation is absent, invalid, or
+  unavailable; they must not silently replace valid CMS values.
+- **React is the sole presentation owner**: Existing React section components own
+  the DOM hierarchy, class names, Tailwind/CSS, responsive behavior, media crop,
+  animations, forms, carousels, tabs, filters, and other interactions. Payload
+  must never supply markup, CSS, or a competing visual template.
+- **Blocks are composable data, not alternate UI**: Editors may add, remove, and
+  reorder approved `sections` blocks just as on the home page. Every `blockType`
+  must map 1:1 through `BlockRenderer` to the established React component that
+  implements that exact visual section. `BlockRenderer` may perform typed data
+  adaptation only; it must not introduce generic wrappers, card layouts, spacing,
+  styling overrides, or substitute components.
+- **Baseline parity rule**: With the same ordered blocks and values as the coded
+  baseline, a CMS-rendered route must be visually and behaviorally identical at
+  every supported viewport. Missing fields, incorrect variants, missing media
+  dimensions, or altered wrappers are migration defects and must be repaired.
+
 ### Upload Media Feature Everywhere with Local Asset Fallback (Future-Ready CDN Architecture)
 - **Universal Native Media Upload Relationship**: Across all collections (`pages`, `posts`, `case-studies`, `testimonials`, `authors`), globals (`site-settings`, `navigation`), and all modular blocks (`src/blocks/**`), all image, icon, logo, avatar, and banner fields must be modeled using Payload's native upload feature:
   `{ name: "image" | "logo" | "icon" | "avatar", type: "upload", relationTo: "media" }`.
@@ -72,8 +93,8 @@ BlockRenderer (src/components/blocks/block-renderer.tsx)
 
 ### Key Characteristics of this Model
 1. **Zero Raw HTML**: Every headline, paragraph, bullet point, link, counter, and media item is a typed string, number, or array in the block schema.
-2. **Component Mapping**: Every block maps 1:1 to an established, production-tested React component through `BlockRenderer` (`src/components/blocks/block-renderer.tsx`) or a dedicated route renderer.
-3. **Fail-Safe Fallbacks**: Section components accept optional dynamic CMS props with strict fallbacks to local data modules (`src/content/**`). If a field is omitted or the database is unreachable, the page renders identically to the migrated baseline.
+2. **Component Mapping**: Every block maps 1:1 to an established, production-tested React component through `BlockRenderer` (`src/components/blocks/block-renderer.tsx`) or a dedicated route renderer. The renderer dispatches typed data only and never provides an alternate layout or styling system.
+3. **CMS-First Content With Fail-Safe Fallbacks**: Section components resolve populated CMS props and upload relations first, with strict local content/data and asset fallbacks only for absent, invalid, or unavailable CMS values. A valid CMS value must never be ignored to recover parity.
 4. **Strict Content Boundary**: No visible copy in components; all copy is supplied via CMS block props or fallback content files (`npm run check:component-content` must always pass).
 
 ---
@@ -229,7 +250,8 @@ Step 1: Inspect Target Route & Types
        │
 Step 2: Inspect Section / Content Renderer Components
   └── Check src/components/sections/** and block renderers (BlockRenderer, BlogContentRenderer)
-  └── Confirm exactly how each block type is unpacked and rendered into JSX
+  └── Confirm the block type dispatches directly to the exact existing React component
+  └── Confirm its wrappers, class names, responsive behavior, interaction islands, and media constraints remain component-owned
        │
 Step 3: Source Structured Content
   └── Read corresponding src/content/<name>.ts, src/content/<name>.json, or src/data/<name>.ts
@@ -243,6 +265,7 @@ Step 4: Resolve Payload Block Schema & Media Uploads
 Step 5: Ephemeral Seeding & Verification
   └── Create temporary script in scratch/ (outside scripts/), run once against Neon DB
   └── Verify database persistence and delete the scratch script immediately
+  └── Compare the CMS-rendered route against the coded baseline with equivalent block values at desktop, tablet, and mobile widths
 ```
 
 ### Discovery Rulebook for Agents
@@ -372,7 +395,7 @@ Every page in Phase 3 is modeled as a document in the Payload CMS `pages` collec
   5. `/shopify-plus-migration-agency` (10 sections)
   6. `/shopify-theme-customization` (13 sections)
   7. `/shopify-cro-agency` (10 sections)
-  8. `/shopify-mobile-app-development` (9 sections)
+  8. `/shopify-mobile-app-development` (10 sections)
   9. `/shopify-experts` (11 sections)
   10. `/hire-shopify-developers` (12 sections)
   11. `/shopify-maintenance-services` (7 sections)
@@ -390,7 +413,7 @@ Every page in Phase 3 is modeled as a document in the Payload CMS `pages` collec
   - Media architecture: All media fields defined via `{ type: "upload", relationTo: "media" }` with dual resolution and canonical local static asset fallbacks (`/assets/...`).
   - Fail-safe fallback: All 17 Next.js App Router page routes (`src/app/(frontend)/<slug>/page.tsx`) implement `draftMode()`, `getPayloadPageBySlug()`, dynamic `<BlockRenderer sections={pageSections} />`, and fallback to the original static component when CMS sections are empty.
   - Ephemeral seeding: Executed ephemerally outside repository tracking, verified persistence in Neon DB, and deleted immediately with zero committed seed scripts.
-- **Status**: Completed & Verified in Neon DB (28 total pages in `pages` collection: 11 Phase 3 + 17 Phase 4). 100% visual parity, zero broken links, all quality checks passing.
+- **Status**: Audited, Repaired & Verified in Neon DB (28 total pages in `pages` collection: 11 Phase 3 + 17 Phase 4). Database records audited against coded baselines; resolved 3 defective CMS records (`/shopify-certified-developers` [removed unwanted `brand-partners`, added `white-label-final-cta`], `/shopify-mobile-app-development` [removed unwanted `pricing-models`, added closing `cta-banner` for 10 total sections], and `/upgrade-to-shopify-plus` [reconstructed all 9 canonical blocks with upload media relations for proof badges, client logos, portfolio items, and why-choose SVGs]). Dispatched all bespoke blocks through dedicated React sections in `BlockRenderer` (including decomposed `ShopifyAppsHeroSection` and `ShopifyAppsGridSection`), eliminating raw inline JSX. 100% visual parity across viewports (1440px, 768px, 390px), zero broken links, all quality checks passing.
 
 ---
 
@@ -485,7 +508,17 @@ After seeding any page, collection, or batch, the executing agent must verify ag
    npm run build
    ```
    Must compile all routes cleanly with 100% static/dynamic parity.
-8. **Zero Seeding Scripts Check**:
+8. **CMS-to-React Visual Parity Check**:
+   - For the same seeded block sequence and values, compare the CMS-rendered
+     route against its coded fallback at desktop (1440px), tablet (768px), and
+     mobile (390px).
+   - Verify all CMS blocks dispatch to their exact React section components;
+     `BlockRenderer` must not add generic layout, visual styling, or substitute
+     components.
+   - Verify media dimensions/crop, animated and interactive states, and approved
+     block add/reorder behavior. Record and fix every difference before declaring
+     a phase complete.
+9. **Zero Seeding Scripts Check**:
    - Verify that no `seed-*.mjs` or `seed-*.js` files exist in `scripts/` or git status.
    - Verify that no `seed:*` commands exist in `package.json`.
    - Verify that any temporary scratch files created in `scratch/` during one-time execution have been deleted.
