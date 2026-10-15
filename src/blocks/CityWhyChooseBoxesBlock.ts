@@ -8,6 +8,8 @@ export const CityWhyChooseBoxesBlock: Block = {
     { name: "heading", type: "text", required: true },
     { name: "description", type: "textarea", required: true },
     { name: "columns", type: "number", defaultValue: 3 },
+    { name: "bgClassName", type: "text" },
+    { name: "id", type: "text" },
     {
       name: "boxes",
       type: "array",
@@ -17,7 +19,6 @@ export const CityWhyChooseBoxesBlock: Block = {
         { name: "description", type: "textarea", required: true },
         { name: "iconName", type: "text" },
         { name: "icon", type: "upload", relationTo: "media" },
-        { name: "iconSrc", type: "text" },
         { name: "iconAlt", type: "text" },
       ],
     },

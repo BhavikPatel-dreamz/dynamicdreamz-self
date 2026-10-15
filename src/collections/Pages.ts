@@ -94,6 +94,7 @@ import { ShopifyAppFeaturesBlock } from "@/blocks/ShopifyAppFeaturesBlock";
 import { ShopifyAppProcessBlock } from "@/blocks/ShopifyAppProcessBlock";
 import { RisksShopifyTopicsBlock } from "@/blocks/RisksShopifyTopicsBlock";
 import { ImageCtaBlock } from "@/blocks/ImageCtaBlock";
+import { MigrationProcessBlock } from "@/blocks/MigrationProcessBlock";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const Pages: CollectionConfig = {
@@ -241,6 +242,7 @@ export const Pages: CollectionConfig = {
         ShopifyAppProcessBlock,
         RisksShopifyTopicsBlock,
         ImageCtaBlock,
+        MigrationProcessBlock,
       ],
     },
     {

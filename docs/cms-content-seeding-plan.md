@@ -5,6 +5,7 @@
 The objective of this plan is to transition 100% of website content management to Payload CMS under **Approach 3 (High-Fidelity Modular Blocks)** across all routes and collections, **strictly eliminating direct/raw HTML in CMS content**, **enforcing 100% visual and layout parity with the live site via dedicated blocks for unique sections**, and **utilizing Payload's native upload media feature everywhere with local asset fallback for future-ready CDN migration**.
 
 ### Strict Zero Direct HTML & Zero Rich Text (WYSIWYG) Policy
+
 - **No direct HTML strings or textareas**: Content fields across all collections (`pages`, `posts`, `case-studies`, `testimonials`, etc.) must **never** store raw HTML markup (such as `<p>`, `<div class="...">`, `<span>`, `<strong>`, `<a>`, `<img src="...">`, `<ul>`, `<li>`, etc.).
 - **No Rich Text (`type: 'richText'`) or Lexical WYSIWYG in page blocks**: Rich Text fields are functionally equivalent to direct HTML (they model an HTML document tree, render as a browser-like WYSIWYG preview in CMS Admin, and require HTML serialization / `dangerouslySetInnerHTML` on the frontend). To maintain 100% clean headless architecture, **Rich Text fields are strictly prohibited across all page blocks**.
 - **100% Pure Structured Scalar & Array Modeling**: All page content—including long-form legal agreements (`terms-of-service`, `privacy-policy`), site map trees (`site-map`), and editorial sections—must be decomposed into discrete, typed scalar fields (`text`, `textarea` for unformatted plain text, `select`, `checkbox`, `number`) and structured arrays (`paragraphs: array of { text: string }`, `items: array of { text: string }`, `links: array of { label: string, href: string }`).
@@ -13,12 +14,14 @@ The objective of this plan is to transition 100% of website content management t
 - **Editor-Friendly & Type-Safe**: Content managers add, edit, reorder, and remove discrete blocks in Payload Admin with clean, labeled form inputs—never touching raw HTML markup or confusing WYSIWYG document windows.
 
 ### 100% Live-Site Visual Parity & Dedicated Unique Blocks Policy
+
 - **Visual Parity Trumps Forced Block Reuse**: Achieving 100% visual, layout, and responsive parity with the live site is NON-NEGOTIABLE.
 - **Unique Blocks for Unique Sections**: If a live-site section has a bespoke visual layout, unique cards, tabbed interactions, specialized counters, or distinct structural hierarchy (e.g., `EvaluationFrameworkSection`, `ShopifyStageServicesSection`, `PortfolioShowcaseSection`, `CaseStudyCardsSection`, `WhiteLabelPartnerSection`), agents **MUST create a dedicated, unique block in `src/blocks/`** and map it 1:1 in `src/components/blocks/block-renderer.tsx`.
 - **Zero Shoehorning into Common Blocks**: Agents must **NEVER** force-fit bespoke sections into generic common blocks (`features-grid`, `proof-counters`, `process-timeline`) by modifying common blocks with awkward conditional props, flags, or CSS compromises. Modifying common blocks to handle radically different layouts creates bloated "Frankenstein components", damages visual parity, and risks breaking other routes.
 - **Common Blocks strictly for genuinely shared layouts**: Common blocks (`HeroBlock`, `FaqAccordionBlock`, `BrandPartnersBlock`, `CtaBannerBlock`, etc.) are reserved exclusively for sections whose visual design, cards, and structure match 100% across routes.
 
 ### CMS Content/Media Ownership and React Presentation Contract
+
 - **CMS is the primary content and media source**: When populated, Payload data
   supplies every editable heading, paragraph, CTA, list, counter, SEO value, and
   upload relationship. Local typed content and `/assets/...` files are resilience
@@ -40,6 +43,7 @@ The objective of this plan is to transition 100% of website content management t
   dimensions, or altered wrappers are migration defects and must be repaired.
 
 ### Upload Media Feature Everywhere with Local Asset Fallback (Future-Ready CDN Architecture)
+
 - **Universal Native Media Upload Relationship**: Across all collections (`pages`, `posts`, `case-studies`, `testimonials`, `authors`), globals (`site-settings`, `navigation`), and all modular blocks (`src/blocks/**`), all image, icon, logo, avatar, and banner fields must be modeled using Payload's native upload feature:
   `{ name: "image" | "logo" | "icon" | "avatar", type: "upload", relationTo: "media" }`.
   Direct plain-text path strings (e.g., `{ name: "src", type: "text" }`) in CMS content schemas are strictly prohibited.
@@ -50,6 +54,7 @@ The objective of this plan is to transition 100% of website content management t
   - Seeding scripts and CMS content reference media records while preserving local asset fallbacks, ensuring zero layout shift, zero broken images, and 100% production stability.
 
 ### Seeding Policy: One-Time Process Only (Zero Temporary Scripts Rule)
+
 - **Seeding is strictly a one-time migration process**: Once pages, blocks, collections, or globals are populated in Payload CMS / Neon PostgreSQL, the data lives permanently in the database and is managed via Payload Admin (`/admin`).
 - **No temporary seeding scripts in `scripts/`**: Agents must **never** create or commit temporary seeding scripts (such as `scripts/seed-home.mjs`, `scripts/seed-phase-*.mjs`, `scripts/seed-<page>.mjs`) into `scripts/`.
 - **No seed commands in `package.json`**: Do not add `"seed:phase-*"`, `"seed:<page>"`, or other one-off seed commands to `package.json`.
@@ -92,6 +97,7 @@ BlockRenderer (src/components/blocks/block-renderer.tsx)
 ```
 
 ### Key Characteristics of this Model
+
 1. **Zero Raw HTML**: Every headline, paragraph, bullet point, link, counter, and media item is a typed string, number, or array in the block schema.
 2. **Component Mapping**: Every block maps 1:1 to an established, production-tested React component through `BlockRenderer` (`src/components/blocks/block-renderer.tsx`) or a dedicated route renderer. The renderer dispatches typed data only and never provides an alternate layout or styling system.
 3. **CMS-First Content With Fail-Safe Fallbacks**: Section components resolve populated CMS props and upload relations first, with strict local content/data and asset fallbacks only for absent, invalid, or unavailable CMS values. A valid CMS value must never be ignored to recover parity.
@@ -103,21 +109,23 @@ BlockRenderer (src/components/blocks/block-renderer.tsx)
 
 Every collection in Payload CMS must adopt this block-first architecture. The table below outlines the transformation:
 
-| Collection | Legacy / Anti-Pattern (FORBIDDEN) | Production Standard: 100% Block Structure (MANDATORY) |
-| :--- | :--- | :--- |
-| **`pages`** (Marketing & Legal Routes) | Raw HTML strings, `type: 'richText'` (Lexical WYSIWYG), or monolithic markup blobs | `sections` blocks array (`HeroBlock`, `BrandPartnersBlock`, `ProofCountersBlock`, `FeaturesGridBlock`, `ProcessTimelineBlock`, `LegalContentBlock`, `SiteMapDirectoryBlock`, etc.) rendered via `BlockRenderer` using 100% scalar inputs and typed arrays. |
-| **`posts`** (Blog Articles) | Direct HTML strings (`contentHtml`) or unparsed raw HTML dumped into `content: richText` | `content` blocks array (`blog-heading`, `blog-paragraph`, `blog-list`, `blog-image`, `blog-table`, `blog-quote`, `blog-callout`, `blog-divider`) matching `BlogContentBlock` and rendered via `BlogContentRenderer`. Structured fields for `toc`, `faqs`, `featuredImage`, `author`, `category`, and `seo`. |
-| **`case-studies`** (Case Studies) | Raw textareas / unformatted HTML for `challenge`, `solution`, `overview` | Structured section blocks / groups: `hero`, `overview`, `keyMetrics` (counters), `challenge` (numbered items), `solutions` (lead + items), `keyFeatures` (feature grid), `projectDelivery` (deliverable badges), `customSections` (modular subsections), `relatedCaseStudies`, and `seo`. Rendered via `CaseStudyDetailPage`. |
-| **`testimonials`** (Client Reviews) | Inline unstructured quotes in page copy or raw HTML embeds | Structured collection: `clientName`, `company`, `quote`, `videoId`, `avatar`, `companyLogo`, `tags`. Referenced via relationships in pages and case studies. |
+| Collection                             | Legacy / Anti-Pattern (FORBIDDEN)                                                        | Production Standard: 100% Block Structure (MANDATORY)                                                                                                                                                                                                                                                                         |
+| :------------------------------------- | :--------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`pages`** (Marketing & Legal Routes) | Raw HTML strings, `type: 'richText'` (Lexical WYSIWYG), or monolithic markup blobs       | `sections` blocks array (`HeroBlock`, `BrandPartnersBlock`, `ProofCountersBlock`, `FeaturesGridBlock`, `ProcessTimelineBlock`, `LegalContentBlock`, `SiteMapDirectoryBlock`, etc.) rendered via `BlockRenderer` using 100% scalar inputs and typed arrays.                                                                    |
+| **`posts`** (Blog Articles)            | Direct HTML strings (`contentHtml`) or unparsed raw HTML dumped into `content: richText` | `content` blocks array (`blog-heading`, `blog-paragraph`, `blog-list`, `blog-image`, `blog-table`, `blog-quote`, `blog-callout`, `blog-divider`) matching `BlogContentBlock` and rendered via `BlogContentRenderer`. Structured fields for `toc`, `faqs`, `featuredImage`, `author`, `category`, and `seo`.                   |
+| **`case-studies`** (Case Studies)      | Raw textareas / unformatted HTML for `challenge`, `solution`, `overview`                 | Structured section blocks / groups: `hero`, `overview`, `keyMetrics` (counters), `challenge` (numbered items), `solutions` (lead + items), `keyFeatures` (feature grid), `projectDelivery` (deliverable badges), `customSections` (modular subsections), `relatedCaseStudies`, and `seo`. Rendered via `CaseStudyDetailPage`. |
+| **`testimonials`** (Client Reviews)    | Inline unstructured quotes in page copy or raw HTML embeds                               | Structured collection: `clientName`, `company`, `quote`, `videoId`, `avatar`, `companyLogo`, `tags`. Referenced via relationships in pages and case studies.                                                                                                                                                                  |
 
 ---
 
 ## 4. Collection Schema Specifications
 
 ### 4.1. Blog Posts (`posts` Collection)
+
 Blog articles must be composed entirely of discrete editorial blocks, matching the existing `BlogContentBlock` interface in `src/types/blog-post.ts` and rendered via `BlogContentRenderer` in `src/components/sections/blog-details/blog-content-renderer.tsx`.
 
 #### Editorial Blocks Array (`content` field)
+
 The `content` field is a Payload `blocks` array containing the following blocks:
 
 1. **`blog-heading`**:
@@ -153,6 +161,7 @@ The `content` field is a Payload `blocks` array containing the following blocks:
    - `style`: `select` (`["standard", "subtle"]`)
 
 #### Structured Document Fields
+
 - `title`: `text` (required)
 - `slug`: `text` (required, unique)
 - `date`: `date` (required)
@@ -168,9 +177,11 @@ The `content` field is a Payload `blocks` array containing the following blocks:
 ---
 
 ### 4.2. Case Studies (`case-studies` Collection)
+
 Case studies must be modeled as structured section blocks matching the `CaseStudyDetail` interface in `src/types/case-study.ts` and rendered via `CaseStudyDetailPage` in `src/components/sections/case-study-details/case-study-detail-page.tsx`.
 
 #### Structured Section Fields
+
 1. **Metadata & Hero**:
    - `title`: `text` (required)
    - `slug`: `text` (required, unique)
@@ -219,6 +230,7 @@ Case studies must be modeled as structured section blocks matching the `CaseStud
 ---
 
 ### 4.3. Marketing & Service Pages (`pages` Collection)
+
 All marketing and service routes continue using the established `sections` blocks array in `src/collections/Pages.ts`:
 
 - `HeroBlock` (`title`, `subheading`, `description`, `ctaLabel`, `ctaHref`, `variant`, `eyebrows`, `image`)
@@ -269,6 +281,7 @@ Step 5: Ephemeral Seeding & Verification
 ```
 
 ### Discovery Rulebook for Agents
+
 1. **Never dump raw HTML**: Always decompose content into discrete block fields (`heading`, `paragraph`, `list`, `table`, etc.).
 2. **Unique Blocks for Unique Sections (100% Live Site Parity Rule)**:
    - Reuse existing blocks ONLY if the live section's visual layout, cards, and structure match 100%.
@@ -289,6 +302,7 @@ Step 5: Ephemeral Seeding & Verification
 ## 6. Phased Content Seeding Roadmap
 
 ### Phase 1: Global Site Settings & Taxonomies (COMPLETED & VERIFIED)
+
 - **Globals**:
   - `site-settings`: Phone, email, WhatsApp, address, office coordinates, social URLs (`src/data/site.ts`).
   - `navigation`: Header navigation mega menu groups, sub-items, badges, promo cards, footer columns, copyright (`src/data/navigation.ts`).
@@ -300,11 +314,13 @@ Step 5: Ephemeral Seeding & Verification
 ---
 
 ### Phase 2: Dedicated Content Collections (Case Studies, Blog Posts & Testimonials)
-*Target: Independent dynamic collections rendered via dedicated dynamic routes, with 100% block structure.*
+
+_Target: Independent dynamic collections rendered via dedicated dynamic routes, with 100% block structure._
 
 - **`testimonials` Collection**:
   - Client video quotes, transcripts, author titles, company names, video IDs (`src/content/home-client.ts`, `src/content/request-quote.ts`).
   - Fields: `clientName`, `company`, `quote`, `videoId`, `avatar`, `companyLogo`, `tags`.
+  - The collection remains the canonical source for testimonial archive and detail routes. A page may instead use the `happy-clients.items` typed card array when its coded baseline has a route-specific variant of the same client testimonial; the page block then owns that route-specific copy and media relation without changing the shared collection record.
 - **`case-studies` Collection (58 Case Studies)**:
   - Structured modular sections from `src/content/case-studies-items.json` and `src/content/case-study-details.ts`.
   - Sections: `hero` (image, client name, eyebrows), `archive` (card summary, tags), `overview` (metadata, website URL, summary), `keyMetrics` (counters), `challenge` (numbered items), `solutions` (numbered items), `keyFeatures` (features grid), `projectDelivery` (deliverables badges), `customSections`, `seo`.
@@ -318,7 +334,8 @@ Step 5: Ephemeral Seeding & Verification
 ---
 
 ### Phase 3: Core Agency & Marketing Pages (100% CMS Managed)
-*Target: Primary brand positioning and inquiry conversion pages managed 100% via Payload CMS `pages` collection.*
+
+_Target: Primary brand positioning and inquiry conversion pages managed 100% via Payload CMS `pages` collection._
 
 Every page in Phase 3 is modeled as a document in the Payload CMS `pages` collection using discrete, typed modular blocks in `sections` with zero raw HTML, zero richText WYSIWYG, and 100% visual, layout, and interactive parity with the live site. Interactive islands (forms, Calendly schedulers, multi-step wizards, filters) receive their content, metadata, labels, and options directly from CMS block props.
 
@@ -381,11 +398,11 @@ Every page in Phase 3 is modeled as a document in the Payload CMS `pages` collec
     - Rendered dynamically via `<BlockRenderer />` with fail-safe local fallback.
 - **Status**: 11 pages (Home + 3 legal/directory + 7 marketing/conversion pages) 100% modeled in Payload CMS and rendered via `<BlockRenderer />`. 100% of data, media assets (videos, posters, showcase galleries, review badges, and avatars) are managed via native `{ type: "upload", relationTo: "media" }` relations with dual resolution and local asset fallbacks. Zero hardcoded content, 100% visual and interactive parity. Verified across all quality gates.
 
-
 ---
 
 ### Phase 4: Flagship Shopify Solution Pages (17 Pages)
-*Target: Primary commercial revenue drivers and Shopify expertise pages.*
+
+_Target: Primary commercial revenue drivers and Shopify expertise pages._
 
 - **Pages (100% Modeled, Seeded & Persisted in Neon DB)**:
   1. `/shopify-plus-agency` (11 sections)
@@ -418,29 +435,61 @@ Every page in Phase 3 is modeled as a document in the Payload CMS `pages` collec
 ---
 
 ### Phase 5: Platform-to-Shopify Migration Sub-Pages (11 Pages)
-*Target: SEO-driven migration search queries.*
 
-- **Pages**:
-  `/magento-to-shopify-migration`, `/magento-to-shopify-plus-migration`, `/woocommerce-to-shopify-migration`, `/bigcommerce-to-shopify-migration`, `/salesforce-to-shopify-migration`, `/squarespace-to-shopify-migration`, `/wix-to-shopify-migration`, `/prestashop-to-shopify-migration`, `/ecwid-to-shopify-migration`, `/etsy-to-shopify-migration`, `/square-to-shopify-migration`.
-- **Block Composition**:
-  Inspect live pages: common blocks for shared elements (`faq-accordion`, `cta-banner`, `proof-counters`), plus dedicated blocks for legacy platform comparisons, zero-data-loss matrices, and migration roadmaps where the visual design differs from generic timelines. All media fields use `{ type: "upload", relationTo: "media" }` with local asset fallback.
+_Target: SEO-driven migration search queries._
+
+- **Pages (modeled, route-integrated, and awaiting one-time CMS seeding)**:
+  1. `/magento-to-shopify-migration` (7 sections)
+  2. `/magento-to-shopify-plus-migration` (8 sections)
+  3. `/woocommerce-to-shopify-migration` (6 sections)
+  4. `/bigcommerce-to-shopify-migration` (7 sections)
+  5. `/salesforce-to-shopify-migration` (7 sections)
+  6. `/squarespace-to-shopify-migration` (7 sections)
+  7. `/wix-to-shopify-migration` (6 sections)
+  8. `/prestashop-to-shopify-migration` (6 sections)
+  9. `/ecwid-to-shopify-migration` (6 sections)
+  10. `/etsy-to-shopify-migration` (7 sections)
+  11. `/square-to-shopify-migration` (6 sections)
+
+- **100% Live Site Architecture & Dedicated Blocks**:
+  - **`MigrationProcessBlock` (`src/blocks/MigrationProcessBlock.ts`)**: Created dedicated block to model multi-phase migration roadmaps (`variant: "cards"`) with concise Postgres table identifiers (`mp_steps`, `mp_subboxes`, `mp_sb_items`, `mp_cats`, `mp_cat_items`), eliminating generic timeline compromises.
+  - **Backward-Compatible Block Extensions**:
+    - `ServiceHeroVideoBlock`: Added an uploaded `image` relation plus its existing alt and dimension metadata so every migration hero preserves the exact static component's artwork and crop; it must not fall back to a generic video.
+    - `ThemeCustomizationServicesBlock`: Added optional `id` and `className` fields.
+    - `CityWhyChooseBoxesBlock`: Added optional `bgClassName` and `id` fields; custom icons are either an upload relation or a React-owned `iconName`, never a CMS image-path string.
+    - `EvaluationFrameworkBlock`: Added optional `className` field.
+    - `FaqAccordionBlock`: Added `idPrefix`, `sectionId`, `secondaryAnswer`, `listPosition`, and typed `listItems` so the static FAQ semantics and anchors are preserved.
+    - `IndustryBrandsBlock`: Added optional `slug` field. Brand logos and hero badges use only native media relations; legacy `src` fields were removed.
+  - **Component & Block Renderer Integration (`src/components/blocks/block-renderer.tsx`)**:
+    - Dispatches `migration-process` block directly to `<MigrationProcessSection />`.
+    - Enhanced `renderCustomBoxIcon()` to support SVG icon components across all 11 source platforms (`MigrationPlatformIcon`, `MagentoMigrationIcon`, `MagentoPlusIcon`, `WooCommerceMigrationIcon`).
+    - Dispatches extended props for `theme-customization-services`, `city-why-choose-boxes`, `evaluation-framework`, and `faq-accordion`.
+  - **App Router Integration with Fail-Safe Fallbacks**:
+    - All 11 routes (`src/app/(frontend)/<slug>/page.tsx`) updated to support `draftMode()`, `getPayloadPageBySlug()`, dynamic `<BlockRenderer sections={pageSections} />`, fail-safe local fallback component, draft preview indicator, and exact SEO schema.
+  - **One-Time Seeding (ephemeral, never `scripts/`)**:
+    - The repaired runner is temporary only: `scratch/phase5-seeding/seed-phase5-page.mjs`. It accepts exactly one of the eleven slugs above and rebuilds that page from the corresponding typed local migration content.
+    - It resolves hero artwork, proof badges, brand logos, and every route-specific Happy Clients card to existing Payload Media uploads. The card array preserves the exact client/company, quote, video ID, logo dimensions, and native upload relations from the coded baseline. The preflight verifies the media filename and Media alt text before it writes the page. This avoids mutating an existing Phase 2 testimonial when that route's coded card is a distinct content variant. A missing or mismatched prerequisite aborts before any write. It creates a missing record or fills an empty record only; it deliberately refuses to overwrite a populated page.
+    - Run it one page at a time with `node --env-file-if-exists=.env --import tsx scratch/phase5-seeding/seed-phase5-page.mjs <slug>`. Verify the saved Payload record and desktop/tablet/mobile visual parity after each run. Delete `scratch/phase5-seeding/` immediately after the final verified run; never move or commit it into `scripts/`.
+- **Status**: Seed runner repaired and load-validated; database seeding and browser parity verification are deliberately still pending. Payload types were regenerated and `npx tsc --noEmit`, `npm run check:component-content`, `npm run check:urls`, and `npm run lint` pass. Do not mark this phase complete until each seeded record has been visually compared to its coded fallback at 1440px, 768px, and 390px.
 
 ---
 
 ### Phase 6: Technology & White-Label Services Pages (14 Pages)
-*Target: Non-Shopify tech stacks and agency partnership offerings.*
+
+_Target: Non-Shopify tech stacks and agency partnership offerings._
 
 - **White-Label Partner Pages**:
   `/white-label-shopify-development-services`, `/white-label-wordpress-development-services`, `/white-label-website-design-services`.
-  *Key Blocks*: Inspect live routes. Dedicated blocks for white-label NDA guarantees, partner comms matrix, and specialized proof sections.
+  _Key Blocks_: Inspect live routes. Dedicated blocks for white-label NDA guarantees, partner comms matrix, and specialized proof sections.
 - **Engineering & Specialty Stacks**:
   `/wordpress-development-company`, `/wordpress-development`, `/woocommerce-development`, `/magento-development`, `/bigcommerce-development`, `/webflow-development`, `/full-stack-development`, `/php-development`, `/ai-services`, `/mobile-application-development`, `/ios-app-development`, `/android-app-development`, `/cross-platform-app-development`, `/seo-services`, `/hire-wordpress-developers`.
-  *Key Blocks*: Inspect live routes for bespoke capability grids, architecture diagrams, and hire-developer rate tables. All media fields use `{ type: "upload", relationTo: "media" }` with local fallback.
+  _Key Blocks_: Inspect live routes for bespoke capability grids, architecture diagrams, and hire-developer rate tables. All media fields use `{ type: "upload", relationTo: "media" }` with local fallback.
 
 ---
 
 ### Phase 7: Industry Vertical Pages (10 Pages)
-*Target: Niche ecommerce sector solutions.*
+
+_Target: Niche ecommerce sector solutions._
 
 - **Pages**:
   `/fashion`, `/beauty-cosmetics`, `/food-beverages`, `/food-beverage-shopify-plus-agency`, `/health-nutrition`, `/jewellery-accessories`, `/home-living`, `/sports-outdoors`, `/pet-industry`, `/dental-clinic-website-development-company`.
@@ -450,7 +499,8 @@ Every page in Phase 3 is modeled as a document in the Payload CMS `pages` collec
 ---
 
 ### Phase 8: Theme Customization Pages (50+ Pages)
-*Target: 50+ Shopify and WordPress theme customization landing pages.*
+
+_Target: 50+ Shopify and WordPress theme customization landing pages._
 
 - **Shopify Themes**:
   `/dawn-theme-customization`, `/impulse-theme-customization`, `/prestige-theme-customization`, `/warehouse-theme-customization`, `/expanse-theme-customization`, `/pipeline-theme-customization`, `/craft-theme-customization`, `/sense-theme-customization`, `/spotlight-theme-customization`, `/studio-theme-customization`, `/colorblock-theme-customization`, `/refresh-theme-customization`, `/origin-theme-customization`, `/broadcast-theme-customization`, `/be-yours-theme-customization`, `/stiletto-theme-customization`, `/vision-theme-customization`, `/vessel-theme-customization`, `/savor-theme-customization`, `/trade-theme-customization`, etc.
@@ -462,7 +512,8 @@ Every page in Phase 3 is modeled as a document in the Payload CMS `pages` collec
 ---
 
 ### Phase 9: Geo & Location Landing Pages (17 Pages)
-*Target: City and regional localized landing pages.*
+
+_Target: City and regional localized landing pages._
 
 - **India**:
   `/shopify-development-in-mumbai`, `/shopify-development-in-delhi`, `/shopify-development-in-bangalore`, `/shopify-development-in-hyderabad`, `/shopify-development-in-pune`, `/shopify-development-company-in-chennai`, `/wordpress-development-in-mumbai`, `/wordpress-development-in-delhi`, `/wordpress-development-in-bangalore`, `/wordpress-development-in-pune`, `/wordpress-development-in-noida`, `/wordpress-development-in-ahmedabad`.
