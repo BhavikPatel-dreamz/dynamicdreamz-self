@@ -45,35 +45,32 @@ export type AgencyServicesSectionProps = {
   variant?: "compact" | "classic";
   headerLayout?: "split" | "centered";
   showDescription?: boolean;
-  className?: string;
   id?: string;
   hideCta?: boolean;
   columns?: 2 | 3 | 4;
   cardVariant?: "default" | "services-box" | "webflow";
-  cardBgClassName?: string;
   eyebrow?: string;
-  headerTitleColumnClassName?: string;
-  headerTextColumnClassName?: string;
   preserveBreaks?: boolean;
 };
 
 export function AgencyServicesSection({
   content = defaultAgencyServicesContent,
   showDescription = true,
-  className = "what-we-provide-sec py-20 max-[992px]:py-[50px]",
   id = "shopify-services",
   hideCta = false,
   columns = 2,
-  cardBgClassName,
+  cardVariant = "default",
   eyebrow,
-  headerTitleColumnClassName,
-  headerTextColumnClassName,
   preserveBreaks = false,
 }: AgencyServicesSectionProps) {
   const resolvedEyebrow = eyebrow ?? content.eyebrow;
+  const sectionClass = cn(
+    "what-we-provide-sec py-20 max-[992px]:py-[50px]",
+    cardVariant === "services-box" && "pb-0 max-[992px]:pb-0",
+  );
 
   return (
-    <section className={className} data-section="services" id={id}>
+    <section className={sectionClass} data-section="services" id={id}>
       <Container>
         <SplitSectionHeading
           className="mb-0 gap-10 max-[992px]:gap-2.5"
@@ -81,8 +78,6 @@ export function AgencyServicesSection({
           eyebrow={resolvedEyebrow}
           heading={content.heading}
           preserveBreaks={preserveBreaks}
-          textColumnClassName={headerTextColumnClassName}
-          titleColumnClassName={headerTitleColumnClassName}
           variant="services"
         />
 
@@ -106,12 +101,7 @@ export function AgencyServicesSection({
                   data-aos="fade-up"
                   key={typeof service.title === "string" ? service.title : service.title.join(" ")}
                 >
-                  <div
-                    className={cn(
-                      "services-text relative flex h-full flex-col justify-between rounded-[10px] border border-[rgba(40,40,40,0.08)] bg-[#fafaf7] p-5",
-                      cardBgClassName,
-                    )}
-                  >
+                  <div className="services-text relative flex h-full flex-col justify-between rounded-[10px] border border-[rgba(40,40,40,0.08)] bg-[#fafaf7] p-5">
                     <div className="top-block flex max-[767px]:flex-wrap">
                       <div className="icon flex size-6 shrink-0 items-center justify-center max-[767px]:mb-[15px] [&>img]:size-full [&>img]:max-h-6 [&>img]:max-w-6 [&>img]:object-contain [&>svg]:size-full [&>svg]:max-h-6 [&>svg]:max-w-6 [&>svg]:object-contain">
                         {service.iconSvg ? (

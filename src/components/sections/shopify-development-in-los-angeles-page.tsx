@@ -39,9 +39,7 @@ export function ShopifyDevelopmentInLosAngelesPage() {
         eyebrowVariant="dash"
       />
       <AgencyServicesSection
-        cardBgClassName="bg-white"
         cardVariant="services-box"
-        className="what-we-provide-sec py-20 max-[992px]:py-[50px]"
         columns={2}
         content={shopifyDevelopmentLosAngelesContent.services}
         eyebrow={shopifyDevelopmentLosAngelesContent.services.eyebrow}
@@ -54,15 +52,13 @@ export function ShopifyDevelopmentInLosAngelesPage() {
         eyebrowVariant="dash"
       />
       <CityWhyChooseBoxesSection
-        bgClassName="bg-white"
-        className="city-page-why-choose-dynamic !pb-0"
         columns={3}
         content={shopifyDevelopmentLosAngelesContent.whyDynamicDreamz}
         eyebrowVariant="dash"
+        theme="white"
       />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
         columns={4}
         content={portfolioContent}
         ctaHref={shopifyDevelopmentLosAngelesContent.portfolio.ctaHref}
@@ -77,8 +73,6 @@ export function ShopifyDevelopmentInLosAngelesPage() {
         items={shopifyDevelopmentLosAngelesContent.testimonials.items}
       />
       <SplitFaqSection
-        answerClassName="!text-base !leading-[28px] font-medium text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-6"
-        className="faq-sec"
         heading={shopifyDevelopmentLosAngelesContent.sectionCopy.faqHeading}
         idPrefix="los-angeles-faq"
         items={shopifyDevelopmentLosAngelesContent.faqs}

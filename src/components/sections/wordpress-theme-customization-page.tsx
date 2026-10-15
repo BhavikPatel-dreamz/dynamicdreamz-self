@@ -94,9 +94,7 @@ export function WordPressThemeCustomizationPage() {
     <div className="font-sans leading-[30.4px]">
       {/* 1. Hero with tablet slider & trust badges */}
       <CityPageHeroSection
-        className="hide-logo"
         content={wordPressThemeCustomizationContent.hero}
-        paddingClassName="pt-[91px] pb-0 max-[991px]:pt-16 max-[991px]:pb-0"
       />
 
       {/* 2. Trusted by Leading Brands slider */}
@@ -135,7 +133,6 @@ export function WordPressThemeCustomizationPage() {
 
       {/* 7. WordPress Themes We Customize */}
       <ShopifyThemesGridSection
-        className="mt-80 max-[992px]:mt-10"
         content={themesContent}
         id="themes"
         variant="pista"
@@ -150,7 +147,6 @@ export function WordPressThemeCustomizationPage() {
       {/* 9. Snippets of WordPress Theme Customization Portfolio */}
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec pt-0 pb-20 max-[992px]:pb-[50px]"
         columns={4}
         content={portfolioContent}
         sectionId="our_work"

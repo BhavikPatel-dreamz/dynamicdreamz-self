@@ -27,21 +27,12 @@ export function WebDesignPage() {
       />
       <AgencyServicesSection
         cardVariant="services-box"
-        className="what-we-provide-sec py-20 max-[992px]:py-[50px]"
         content={webDesignServices}
-        headerTextColumnClassName="w-[48.3%] max-[992px]:w-full"
-        headerTitleColumnClassName="w-[44%] max-[992px]:w-full"
         id="services"
       />
-      <PricingTableSection
-        className="white_label_wp_develop_plan_section shopify-plus-engagement mb-0 bg-[#edf2ee] py-20 max-[992px]:py-[50px]"
-        content={webDesignPricing}
-        textColumnClassName="w-[48.3%] max-[992px]:w-full"
-        titleColumnClassName="w-[44%] max-[992px]:w-full"
-      />
+      <PricingTableSection content={webDesignPricing} />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[60px]"
         columns={4}
         content={webDesignPortfolio}
         sectionId="our_work"
@@ -55,7 +46,6 @@ export function WebDesignPage() {
         items={webDesignTestimonials.items}
       />
       <SplitFaqSection
-        className="faq-sec"
         idPrefix="web-design-faq"
         items={webDesignFaqs}
       />

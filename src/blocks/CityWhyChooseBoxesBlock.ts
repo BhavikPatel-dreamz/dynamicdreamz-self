@@ -8,9 +8,7 @@ export const CityWhyChooseBoxesBlock: Block = {
     { name: "heading", type: "text", required: true },
     { name: "description", type: "textarea", required: true },
     { name: "columns", type: "number", defaultValue: 3 },
-    { name: "className", type: "text" },
-    { name: "theme", type: "select", options: ["light", "dark"], defaultValue: "light" },
-    { name: "bgClassName", type: "text" },
+    { name: "theme", type: "select", options: ["light", "dark", "white", "warm"], defaultValue: "light" },
     { name: "sectionId", type: "text" },
     {
       name: "boxes",

@@ -95,8 +95,6 @@ export function MigratingThemeToOnlineStore20Page() {
 
       {/* 8. FAQs */}
       <SplitFaqSection
-        answerClassName="!text-sm !font-medium !leading-6 !text-[#535353]"
-        className="faq-sec"
         heading={migratingThemeToOnlineStore20Content.faqs.heading}
         idPrefix="theme-20-faq"
         items={migratingThemeToOnlineStore20Content.faqs.items}

@@ -57,7 +57,6 @@ export function PetIndustryPage() {
       />
       <WhyChooseShopifyMigrationSection content={petIndustryWhyChoose} />
       <HappyClientSection
-        className="pt-20 max-[992px]:pt-12.5"
         description={petIndustryTestimonials.description}
         eyebrow={petIndustryTestimonials.eyebrow}
         heading={petIndustryTestimonials.heading}

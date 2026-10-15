@@ -5,7 +5,6 @@ import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
-import { cn } from "@/lib/class-names";
 
 export type ThemeCustomizationThemeItem = {
   title?: string;
@@ -25,14 +24,12 @@ export type ShopifyThemesGridContent = {
 
 export type ShopifyThemesGridSectionProps = {
   content: ShopifyThemesGridContent;
-  className?: string;
   id?: string;
   variant?: "white" | "pista";
 };
 
 export function ShopifyThemesGridSection({
   content,
-  className,
   id,
   variant = "white",
 }: ShopifyThemesGridSectionProps) {
@@ -42,10 +39,7 @@ export function ShopifyThemesGridSection({
   if (isPista) {
     return (
       <section
-        className={cn(
-          "shopify-themes-customize-section bg-[#eff4ef] py-20 max-[992px]:py-[50px]",
-          className,
-        )}
+        className="shopify-themes-customize-section bg-[#eff4ef] py-20 max-[992px]:py-[50px]"
         id={sectionId}
       >
         <Container>
@@ -108,10 +102,7 @@ export function ShopifyThemesGridSection({
 
   return (
     <section
-      className={cn(
-        "shopify-themes-customize-section pt-0 pb-20 max-[767px]:pb-10",
-        className,
-      )}
+      className="shopify-themes-customize-section pt-0 pb-20 max-[767px]:pb-10"
       id={sectionId}
     >
       <Container>

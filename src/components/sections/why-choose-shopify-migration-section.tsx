@@ -47,7 +47,6 @@ export type WhyChooseMigrationContent = {
 
 export type WhyChooseShopifyMigrationSectionProps = {
   content: WhyChooseMigrationContent;
-  className?: string;
   id?: string;
 };
 
@@ -415,15 +414,11 @@ function MigrationFeatureIcon({ icon }: { icon: string }) {
 
 export function WhyChooseShopifyMigrationSection({
   content,
-  className,
   id,
 }: WhyChooseShopifyMigrationSectionProps) {
   return (
     <section
-      className={cn(
-        "why_choose_dynamic_dreamz_for_shopify_migration bg-[#192019] py-20 max-[991px]:py-[50px]",
-        className,
-      )}
+      className="why_choose_dynamic_dreamz_for_shopify_migration bg-[#192019] py-20 max-[991px]:py-[50px]"
       id={id}
     >
       <Container>

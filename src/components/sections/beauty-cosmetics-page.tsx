@@ -65,7 +65,6 @@ export function BeautyCosmeticsPage() {
       />
       <WhyChooseShopifyMigrationSection content={beautyCosmeticsWhyChoose} />
       <HappyClientSection
-        className="pt-20 max-[992px]:pt-12.5"
         description={beautyCosmeticsTestimonials.description}
         eyebrow={beautyCosmeticsTestimonials.eyebrow}
         heading={beautyCosmeticsTestimonials.heading}

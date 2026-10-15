@@ -1,7 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyPlusAgencyPricing } from "@/content/shopify-plus-agency";
-import { cn } from "@/lib/class-names";
 import Link from "next/link";
 
 export type PricingEngagementItem = {
@@ -23,29 +22,22 @@ export type PricingEngagementContent = {
 
 export function PricingTableSection({
   content = shopifyPlusAgencyPricing,
-  className,
-  titleColumnClassName,
-  textColumnClassName,
 }: {
   content?: PricingEngagementContent;
-  className?: string;
-  titleColumnClassName?: string;
-  textColumnClassName?: string;
 }) {
   return (
     <section
-      className={cn("white_label_wp_develop_plan_section shopify-plus-engagement mb-0 bg-[#edf2ee] py-20 max-[992px]:py-[50px]", className)}
+      className="white_label_wp_develop_plan_section shopify-plus-engagement mb-0 bg-[#edf2ee] py-20 max-[992px]:py-[50px]"
       data-section="pricing"
       id="our_white_label_pricing"
     >
       <Container>
         <SplitSectionHeading
-          className="mb-10 gap-10 max-[992px]:mb-[30px] max-[992px]:gap-[30px] max-[767px]:mb-5 max-[767px]:gap-[15px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
-          textColumnClassName={textColumnClassName}
-          titleColumnClassName={titleColumnClassName}
+          textColumnClassName="w-[48%] max-[992px]:w-full"
+          titleColumnClassName="w-[44%] max-[992px]:w-full"
           variant="left"
         />
 

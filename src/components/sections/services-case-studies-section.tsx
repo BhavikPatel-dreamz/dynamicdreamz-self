@@ -22,10 +22,7 @@ export type ServicesCaseStudiesSectionProps = {
   heading: string | readonly string[];
   description?: string | readonly string[];
   items: readonly CaseStudyPreviewItem[];
-  className?: string;
   id?: string;
-  headingClassName?: string;
-  containerClassName?: string;
 };
 
 export function ServicesCaseStudiesSection({
@@ -33,20 +30,21 @@ export function ServicesCaseStudiesSection({
   heading,
   description,
   items,
-  className,
   id,
-  headingClassName,
-  containerClassName,
 }: ServicesCaseStudiesSectionProps) {
+  const isMobileApp =
+    id === "shopify-mobile-app-case-studies" ||
+    (typeof heading === "string" && heading.toLowerCase().includes("mobile app"));
+  const containerClass = isMobileApp
+    ? "min-[1400px]:max-w-[1408px] px-[15px]"
+    : undefined;
+
   return (
     <section
-      className={cn(
-        "see-the-work-sec bg-[#eff4ef] py-20 max-[991px]:py-[50px] max-[575px]:py-10",
-        className,
-      )}
+      className="see-the-work-sec bg-[#eff4ef] py-20 max-[991px]:py-[50px] max-[575px]:py-10"
       id={id}
     >
-      <Container className={containerClassName}>
+      <Container className={containerClass}>
         <div
           data-aos="fade-up"
           className={cn(
@@ -65,12 +63,7 @@ export function ServicesCaseStudiesSection({
                 </span>
               </div>
             )}
-            <h2
-              className={cn(
-                "m-0 font-montreal-medium text-[35px] font-normal leading-[49px] text-[#282828] max-[1199px]:[&_br]:hidden max-[991px]:mb-2.5 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]",
-                headingClassName,
-              )}
-            >
+            <h2 className="m-0 font-montreal-medium text-[35px] font-normal leading-[49px] text-[#282828] max-[1199px]:[&_br]:hidden max-[991px]:mb-2.5 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
               {formatBrText(heading, "max-[1199px]:hidden")}
             </h2>
           </div>

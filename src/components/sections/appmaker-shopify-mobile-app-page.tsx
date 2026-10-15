@@ -20,7 +20,6 @@ export function AppmakerShopifyMobileAppPage() {
     <div className="font-sans leading-[30.4px]">
       {/* 1. Hero Section */}
       <ServiceHeroSection
-        className="inner-hero-sec full-width-sec relative overflow-hidden bg-white pt-[210px] pb-[55px] max-[992px]:pt-[100px]"
         content={hero}
         variant="centered"
       />
@@ -46,7 +45,6 @@ export function AppmakerShopifyMobileAppPage() {
         idPrefix="appmaker-faq"
         heading={faqCopy.heading}
         items={faqs}
-        answerClassName="!text-base !leading-[28px] max-[1199px]:!text-sm max-[1199px]:!leading-[24px] !font-medium !text-[#535353]"
       />
 
       {/* 7. Bottom CTA Banner */}

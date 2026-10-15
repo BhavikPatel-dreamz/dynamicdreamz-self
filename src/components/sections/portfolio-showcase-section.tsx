@@ -30,7 +30,6 @@ export type PortfolioShowcaseSectionProps = {
   ctaLabel?: string;
   ctaHref?: string;
   hideCta?: boolean;
-  className?: string;
   columns?: 2 | 3 | 4;
   cardVariant?: "default" | "ourWorkRefresh";
   imageAspectClassName?: string;
@@ -54,7 +53,6 @@ export function PortfolioShowcaseSection({
   ctaLabel,
   ctaHref,
   hideCta = false,
-  className = "our-work-sec pt-20 pb-20 max-[992px]:pt-10 max-[992px]:pb-[60px] max-[767px]:pt-0",
   columns = 4,
   cardVariant,
   imageAspectClassName,
@@ -67,6 +65,7 @@ export function PortfolioShowcaseSection({
   mobileColumns = 1,
   titleColumnClassName,
   textColumnClassName,
+  variant = "default",
 }: PortfolioShowcaseSectionProps) {
   const resolvedColumns = columns ?? 4;
   const resolvedEyebrow =
@@ -82,6 +81,14 @@ export function PortfolioShowcaseSection({
 
   const effectiveCardVariant = cardVariant ?? "ourWorkRefresh";
 
+  const isShopifyPlusCategory = content.category === "SHOPIFY PLUS";
+  const isLiveGrid = variant === "liveGrid";
+  const sectionClassName = isShopifyPlusCategory
+    ? "our-work-sec bg-white pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]"
+    : isLiveGrid
+      ? "our-work-sec pt-20 pb-20 max-[992px]:pt-10 max-[767px]:pt-0"
+      : "our-work-sec py-20 max-[992px]:py-[50px]";
+
   const gridColsClass =
     resolvedColumns === 4
       ? mobileColumns === 2
@@ -96,7 +103,7 @@ export function PortfolioShowcaseSection({
           : "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1";
 
   return (
-    <section className={className} data-section="portfolio" id={sectionId}>
+    <section className={sectionClassName} data-section="portfolio" id={sectionId}>
       <Container>
         <SplitSectionHeading
           description={content.description}

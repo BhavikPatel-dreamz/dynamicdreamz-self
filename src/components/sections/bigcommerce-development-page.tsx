@@ -50,7 +50,6 @@ export function BigCommerceDevelopmentPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <CityPageHeroSection
-        className="hide-logo"
         content={bigCommerceDevelopmentHero}
       />
       <IndustryBrandsSection
@@ -61,7 +60,6 @@ export function BigCommerceDevelopmentPage() {
         items={bigCommerceDevelopmentBrands}
       />
       <TextBoxSection
-        className="single-text-box-sec pb-0 pt-20"
         heading={bigCommerceDevelopmentIntro.heading}
         paragraphs={bigCommerceDevelopmentIntro.paragraphs}
       />
@@ -78,7 +76,6 @@ export function BigCommerceDevelopmentPage() {
         variant="yellow"
       />
       <OurDevelopmentProcessSection
-        className="our-development-process bg-transparent"
         content={bigCommerceDevelopmentProcess}
       />
       <ThemeCustomizationServicesSection

@@ -34,7 +34,6 @@ export type MigrationProcessContent = {
 
 export type MigrationProcessSectionProps = {
   content: MigrationProcessContent;
-  className?: string;
   id?: string;
   titleAlign?: "left" | "center";
   variant?: "default" | "cards";
@@ -119,16 +118,14 @@ function StepItem({
 
 export function MigrationProcessSection({
   content,
-  className,
   id = "migration-process",
   titleAlign,
   variant = "default",
 }: MigrationProcessSectionProps) {
-  const defaultClassName =
+  const resolvedClassName =
     variant === "cards"
       ? "py-[50px]"
       : "migration-process-step-sec mb-20 max-[992px]:mb-[50px]";
-  const resolvedClassName = className ?? defaultClassName;
 
   if (variant === "cards") {
     return (

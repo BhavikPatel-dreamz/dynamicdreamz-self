@@ -1,7 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyPlusAgencyHowToChoose } from "@/content/shopify-plus-agency";
-import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
 
 export type EvaluationFrameworkItem = {
@@ -18,21 +17,16 @@ export type EvaluationFrameworkContent = {
 
 export type EvaluationFrameworkSectionProps = {
   content?: EvaluationFrameworkContent;
-  className?: string;
   id?: string;
 };
 
 export function EvaluationFrameworkSection({
   content = shopifyPlusAgencyHowToChoose,
-  className,
   id = "evaluation-framework",
 }: EvaluationFrameworkSectionProps) {
   return (
     <section
-      className={cn(
-        "how-to-choose-spa-sec bg-white py-20 max-[992px]:py-[50px]",
-        className,
-      )}
+      className="how-to-choose-spa-sec bg-white py-20 max-[992px]:py-[50px]"
       data-section="evaluation-framework"
       id={id}
     >

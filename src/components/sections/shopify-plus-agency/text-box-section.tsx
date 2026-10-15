@@ -1,6 +1,5 @@
 import { Container } from "@/components/ui/container";
 import { formatBrText } from "@/lib/text-formatting";
-import { cn } from "@/lib/class-names";
 
 export type TextBoxSectionProps = {
   heading: string | readonly string[];
@@ -8,7 +7,6 @@ export type TextBoxSectionProps = {
   paragraphs?: readonly (string | readonly string[])[];
   subheading?: string;
   listItems?: readonly string[];
-  className?: string;
   variant?: "green" | "cream";
 };
 
@@ -18,16 +16,12 @@ export function TextBoxSection({
   paragraphs,
   subheading,
   listItems,
-  className,
 }: TextBoxSectionProps) {
   const contentParagraphs = paragraphs ?? (text ? [text] : []);
 
   return (
     <section
-      className={cn(
-        "single-text-box-sec pb-0 pt-20 max-[991px]:pt-[50px]",
-        className,
-      )}
+      className="single-text-box-sec pb-0 pt-20 max-[991px]:pt-[50px]"
       data-section="single-text-box"
     >
       <Container>

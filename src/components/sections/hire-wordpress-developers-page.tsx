@@ -52,18 +52,11 @@ export function HireWordPressDevelopersPage() {
         variant="green"
       />
       <OurDevelopmentProcessSection
-        className="our-development-process bg-transparent"
         content={hireWordPressProcess}
       />
-      <PricingTableSection
-        className="white_label_wp_develop_plan_section shopify-plus-engagement mb-0 bg-[#edf2ee] py-20 max-[992px]:py-[50px]"
-        content={hireWordPressPricing}
-        textColumnClassName="w-[48.3%] max-[992px]:w-full"
-        titleColumnClassName="w-[44%] max-[992px]:w-full"
-      />
+      <PricingTableSection content={hireWordPressPricing} />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[60px]"
         columns={4}
         content={hireWordPressPortfolio}
         eyebrow={hireWordPressPortfolio.eyebrow}
@@ -81,7 +74,6 @@ export function HireWordPressDevelopersPage() {
         items={hireWordPressTestimonials.items}
       />
       <SplitFaqSection
-        className="faq-sec"
         idPrefix="hire-wordpress-developers-faq"
         items={hireWordPressFaqs}
       />

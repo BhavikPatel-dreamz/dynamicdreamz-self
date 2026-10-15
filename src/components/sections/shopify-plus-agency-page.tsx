@@ -38,22 +38,15 @@ export function ShopifyPlusAgencyPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <ServiceHeroSection
-        bodyClassName="!text-[16px] !leading-[28px] max-[1199px]:!leading-6 max-[767px]:!text-[16px] max-[767px]:!leading-6"
-        className="inner-hero-sec shopify-plus-experts relative overflow-hidden bg-[#f7f4e9] pt-[140px] pb-[85px] max-[992px]:pt-[100px] max-[992px]:pb-[36px] max-[767px]:pt-[102px] max-[767px]:pb-[40px]"
         content={shopifyPlusAgencyHero}
-        leftColClassName="left-col w-[51%] max-[1199px]:w-full max-[1199px]:text-center"
-        rightColClassName="right-col w-[43.182%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[992px]:w-full"
-        videoLogoClassName="left-[-90px]"
       />
       <IndustryBrandsSection
-        className="max-[991px]:pb-[4px] max-[767px]:pb-4.25"
         content={brandSection}
         heading={shopifyPlusAgencyBrandTrustHeading}
         items={shopifyPlusAgencyBrandLogos}
       />
       <ShopifyPlusProofSection content={shopifyPlusAgencyWhyChoose} />
       <PortfolioShowcaseSection
-        className="our-work-sec bg-white pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]"
         content={{
           ...shopifyPlusAgencyPortfolio,
           platformMark: {
@@ -65,27 +58,22 @@ export function ShopifyPlusAgencyPage() {
         sectionId="our_work"
       />
       <ShopifyStageServicesSection
-        className="shopify-development-services bg-[#fafaf7] py-20 max-[992px]:py-[50px]"
         content={shopifyPlusAgencyServices}
         id="shopify-services"
       />
       <CaseStudyCardsSection content={shopifyPlusAgencyCaseStudies} />
       <IndustriesServedSection
-        className="industries_box_section bg-white py-20 max-[992px]:py-[50px]"
         content={shopifyPlusAgencyIndustries}
         variant="grid"
       />
       <PricingTableSection content={shopifyPlusAgencyPricing} />
-      <HappyClientSection
-        className="bg-white"
+      <HappyClientSection variant="client-stories"
         description={shopifyPlusAgencyPageTestimonials.description}
         heading={shopifyPlusAgencyPageTestimonials.heading}
         items={shopifyPlusAgencyPageTestimonials.items}
       />
       <EvaluationFrameworkSection content={shopifyPlusAgencyHowToChoose} />
       <SplitFaqSection
-        answerClassName="!text-base !leading-[28px] !font-medium text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-[24px]"
-        className="faq-sec"
         description={shopifyPlusAgencyFaqDescription}
         heading={shopifyPlusAgencyFaqHeading}
         idPrefix="shopify-plus-agency-faq"

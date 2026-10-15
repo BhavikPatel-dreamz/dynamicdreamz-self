@@ -26,22 +26,18 @@ export function ShopifyMaintenanceServicesPage() {
       />
       <AgencyServicesSection
         cardVariant="services-box"
-        className="what-we-provide-sec pb-0 pt-20 max-[992px]:pt-[50px]"
         content={shopifyMaintenanceServicesContent.services}
         id="services"
       />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
         columns={4}
         content={shopifyMaintenanceServicesContent.portfolio}
         eyebrow={shopifyMaintenanceServicesContent.portfolio.eyebrow}
         headerLayout="split"
         sectionId="our_work"
       />
-      <PricingTableSection
-        content={shopifyMaintenanceServicesContent.pricing}
-      />
+      <PricingTableSection content={shopifyMaintenanceServicesContent.pricing} />
       <HappyClientSection
         description={shopifyMaintenanceServicesContent.testimonials.description}
         eyebrow={shopifyMaintenanceServicesContent.testimonials.eyebrow}

@@ -149,7 +149,6 @@ export function CrossPlatformAppDevelopmentPage() {
 
       {/* 8. Portfolio */}
       <ShopifyMobileAppWorkSection
-        className="pt-0"
         content={crossPlatformAppDevelopmentPortfolio}
       />
 
@@ -161,7 +160,6 @@ export function CrossPlatformAppDevelopmentPage() {
 
       {/* 11. Client Stories Testimonials */}
       <HappyClientSection
-        className="pt-[80px] max-[992px]:pt-[50px]"
         description={
           crossPlatformAppDevelopmentTestimonialsCopy.description
         }
@@ -172,7 +170,6 @@ export function CrossPlatformAppDevelopmentPage() {
 
       {/* 12. FAQ Section */}
       <SplitFaqSection
-        className="faq-sec bg-[#fafaf7] py-[60px] max-[991px]:py-10"
         description={crossPlatformAppDevelopmentFaqCopy.description}
         eyebrow={crossPlatformAppDevelopmentFaqCopy.eyebrow}
         heading={crossPlatformAppDevelopmentFaqCopy.heading}

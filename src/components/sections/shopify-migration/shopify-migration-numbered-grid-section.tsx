@@ -12,7 +12,6 @@ export type ShopifyMigrationNumberedGridSectionProps = {
   description?: string | readonly string[];
   items: readonly NumberedGridItem[];
   variant?: "white" | "pista";
-  className?: string;
   id?: string;
 };
 
@@ -22,7 +21,6 @@ export function ShopifyMigrationNumberedGridSection({
   description,
   items,
   variant = "pista",
-  className,
   id,
 }: ShopifyMigrationNumberedGridSectionProps) {
   const isWhite = variant === "white";
@@ -32,7 +30,6 @@ export function ShopifyMigrationNumberedGridSection({
       className={cn(
         "our_shopify_team_behind_it_section py-20 max-[991px]:py-[50px]",
         isWhite ? "bg-white" : "bg-[#EFF4EF]",
-        className,
       )}
       id={id}
     >

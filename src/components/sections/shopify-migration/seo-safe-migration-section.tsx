@@ -20,20 +20,24 @@ export type SeoSafeMigrationContent = {
 
 export type SeoSafeMigrationSectionProps = {
   content: SeoSafeMigrationContent;
-  className?: string;
   id?: string;
 };
 
 export function SeoSafeMigrationSection({
   content,
-  className,
   id,
 }: SeoSafeMigrationSectionProps) {
+  const isPt0 = Boolean(
+    content.eyebrow?.toLowerCase().includes("risk-free") ||
+      (typeof content.heading === "string" &&
+        content.heading.toLowerCase().includes("risk-free")),
+  );
+
   return (
     <section
       className={cn(
-        "seo_safe_shopify_migration_section bg-white py-20 max-[991px]:py-[50px]",
-        className,
+        "seo_safe_shopify_migration_section bg-white",
+        isPt0 ? "pt-0 pb-0" : "py-20 max-[991px]:py-[50px]",
       )}
       id={id}
     >

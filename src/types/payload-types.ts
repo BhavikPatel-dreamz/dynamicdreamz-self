@@ -2368,9 +2368,7 @@ export interface Page {
             heading: string;
             description: string;
             columns?: number | null;
-            className?: string | null;
-            theme?: ('light' | 'dark') | null;
-            bgClassName?: string | null;
+            theme?: ('light' | 'dark' | 'white' | 'warm') | null;
             sectionId?: string | null;
             boxes?:
               | {
@@ -5529,9 +5527,7 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               columns?: T;
-              className?: T;
               theme?: T;
-              bgClassName?: T;
               sectionId?: T;
               boxes?:
                 | T

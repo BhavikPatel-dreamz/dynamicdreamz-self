@@ -34,7 +34,6 @@ export function MagentoDevelopmentPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <CityPageHeroSection
-        className="hide-logo"
         content={magentoDevelopmentHero}
       />
       <IndustryBrandsSection
@@ -44,29 +43,19 @@ export function MagentoDevelopmentPage() {
       />
       <AgencyServicesSection
         cardVariant="services-box"
-        className="what-we-provide-sec pb-0 pt-20 max-[992px]:pt-[50px] max-[992px]:pb-0"
         columns={2}
         content={servicesContent}
         headerLayout="split"
-        headerTextColumnClassName="w-[48.3%] max-[992px]:w-full"
-        headerTitleColumnClassName="w-[44%] max-[992px]:w-full"
         hideCta
         id="services"
       />
       <EvaluationFrameworkSection
-        className="how-to-choose-spa-sec pt-20 pb-20 max-[992px]:pt-0 max-[992px]:pb-[50px]"
         content={magentoDevelopmentCapabilities}
         id="capabilities"
       />
-      <PricingTableSection
-        className="white_label_wp_develop_plan_section shopify-plus-engagement mb-0 bg-[#edf2ee] py-20 max-[992px]:py-[50px]"
-        content={magentoDevelopmentEngagements}
-        textColumnClassName="w-[48.3%] max-[992px]:w-full"
-        titleColumnClassName="w-[44%] max-[992px]:w-full"
-      />
+      <PricingTableSection content={magentoDevelopmentEngagements} />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[60px]"
         columns={4}
         content={magentoDevelopmentPortfolio}
         eyebrow={magentoDevelopmentPortfolio.eyebrow}
@@ -82,7 +71,6 @@ export function MagentoDevelopmentPage() {
         items={magentoDevelopmentTestimonials.items}
       />
       <SplitFaqSection
-        className="faq-sec"
         idPrefix="magento-dev-faq"
         items={magentoDevelopmentFaqs}
       />

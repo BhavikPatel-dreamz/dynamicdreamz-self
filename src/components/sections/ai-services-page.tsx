@@ -42,7 +42,6 @@ export function AiServicesPage() {
       <ShopifyTeamBoxesSection content={aiServicesShopifyEcommerce} />
       <EvaluationFrameworkSection content={aiServicesHowWeWork} />
       <CityWhyChooseBoxesSection
-        className="reliable_ai_section"
         columns={4}
         content={aiServicesReliableAi}
         theme="dark"

@@ -32,7 +32,6 @@ export function WebflowDevelopmentPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <CityPageHeroSection
-        className="hide-logo"
         content={webflowDevelopmentHero}
       />
       <IndustryBrandsSection
@@ -52,7 +51,6 @@ export function WebflowDevelopmentPage() {
       />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec pt-0 pb-0"
         columns={4}
         content={webflowDevelopmentPortfolio}
         eyebrow={webflowDevelopmentPortfolio.eyebrow}

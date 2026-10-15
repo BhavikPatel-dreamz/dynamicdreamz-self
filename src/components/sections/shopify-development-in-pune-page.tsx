@@ -39,9 +39,7 @@ export function ShopifyDevelopmentInPunePage() {
         eyebrowVariant="dash"
       />
       <AgencyServicesSection
-        cardBgClassName="bg-white"
         cardVariant="services-box"
-        className="what-we-provide-sec py-20 max-[992px]:py-[50px]"
         columns={2}
         content={shopifyDevelopmentPuneContent.services}
         eyebrow={shopifyDevelopmentPuneContent.services.eyebrow}
@@ -54,15 +52,13 @@ export function ShopifyDevelopmentInPunePage() {
         eyebrowVariant="dash"
       />
       <CityWhyChooseBoxesSection
-        bgClassName="bg-white"
-        className="city-page-why-choose-dynamic !pb-0"
         columns={5}
         content={shopifyDevelopmentPuneContent.whyDynamicDreamz}
         eyebrowVariant="dash"
+        theme="white"
       />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
         columns={4}
         content={portfolioContent}
         ctaHref={shopifyDevelopmentPuneContent.portfolio.ctaHref}

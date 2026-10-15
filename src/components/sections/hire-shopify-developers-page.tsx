@@ -51,7 +51,6 @@ export function HireShopifyDevelopersPage() {
         variant="yellow"
       />
       <OurDevelopmentProcessSection
-        className="our-development-process bg-transparent"
         content={hireShopifyContent.process}
       />
       <WhyChooseShopifyMigrationSection
@@ -68,7 +67,6 @@ export function HireShopifyDevelopersPage() {
       <AiEmpoweredDeliverySection content={hireShopifyContent.aiTools} />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec pt-0 pb-20 max-[992px]:pb-[60px]"
         columns={4}
         content={hireShopifyContent.work}
         sectionId="our_work"

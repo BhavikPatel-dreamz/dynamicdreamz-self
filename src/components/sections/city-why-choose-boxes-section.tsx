@@ -23,34 +23,34 @@ export type CityWhyChooseBoxesContent = {
 
 export type CityWhyChooseBoxesSectionProps = {
   content: CityWhyChooseBoxesContent;
-  className?: string;
   id?: string;
   columns?: 3 | 4 | 5;
-  bgClassName?: string;
   eyebrowVariant?: "pill" | "dash";
-  cardClassName?: string;
-  theme?: "light" | "dark";
+  theme?: "light" | "dark" | "white" | "warm";
 };
+
+const BG_THEME_MAP = {
+  dark: "bg-[#192019]",
+  light: "bg-[#eff4ef]",
+  white: "bg-white",
+  warm: "bg-[#fafaf7]",
+} as const;
 
 export function CityWhyChooseBoxesSection({
   content,
-  className,
   id,
   columns = 5,
-  bgClassName,
-  cardClassName,
   theme = "light",
 }: CityWhyChooseBoxesSectionProps) {
   const isDark = theme === "dark";
-  const defaultBg = isDark ? "bg-[#192019]" : "bg-[#eff4ef]";
+  const defaultBg = BG_THEME_MAP[theme] ?? BG_THEME_MAP.light;
 
   return (
     <section
       id={id}
       className={cn(
         "city-page-why-choose-boxes py-20 max-[992px]:py-[50px]",
-        bgClassName ?? defaultBg,
-        className,
+        defaultBg,
       )}
     >
       <Container>
@@ -111,7 +111,6 @@ export function CityWhyChooseBoxesSection({
                   isDark
                     ? "border border-white/13 bg-white/[0.04]"
                     : "border border-[rgba(40,40,40,0.11)] bg-white",
-                  cardClassName,
                 )}
               >
                 <div className="why-choose-box-text">

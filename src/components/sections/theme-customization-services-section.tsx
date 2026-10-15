@@ -24,27 +24,24 @@ export type ThemeCustomizationServicesContent = {
 
 export type ThemeCustomizationServicesSectionProps = {
   content: ThemeCustomizationServicesContent;
-  className?: string;
   id?: string;
   variant?: "green" | "yellow" | "transparent";
 };
 
 export function ThemeCustomizationServicesSection({
   content,
-  className,
   id,
   variant = "green",
 }: ThemeCustomizationServicesSectionProps) {
   return (
     <section
       className={cn(
-        "theme-customization-services py-20 max-[992px]:py-[50px]",
+        "theme-customization-services max-[992px]:py-[50px]",
         variant === "green"
-          ? "green bg-[#eff4ef]"
+          ? "green bg-[#eff4ef] py-20"
           : variant === "yellow"
-            ? "yellow bg-[#fafaf7]"
-            : "transparent bg-transparent",
-        className,
+            ? "yellow bg-[#fafaf7] py-20"
+            : "transparent bg-transparent pt-0 pb-20",
       )}
       id={id}
     >

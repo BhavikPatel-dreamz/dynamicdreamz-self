@@ -11,17 +11,15 @@ export type PillListContent = {
 
 export type PillListSectionProps = {
   content: PillListContent;
-  className?: string;
   id?: string;
 };
 
 export function PillListSection({
   content,
-  className = "why_choose_seo_service bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[992px]:py-[50px]",
   id,
 }: PillListSectionProps) {
   return (
-    <section className={className} id={id}>
+    <section className="why_choose_seo_service bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[992px]:py-[50px]" id={id}>
       <Container>
         <div data-aos="fade-up" className="heading-text only-text mb-[50px] text-center max-[992px]:mb-[30px]">
           <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">

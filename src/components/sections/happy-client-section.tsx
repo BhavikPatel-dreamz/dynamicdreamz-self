@@ -14,9 +14,7 @@ export type HappyClientSectionProps = {
   heading?: string | readonly string[];
   description?: string | readonly string[];
   eyebrow?: string;
-  eyebrowClassName?: string;
   items?: readonly HappyClientTestimonialItem[];
-  className?: string;
   controlsLabels?: { ariaLabel: string; previous: string; next: string };
   variant?: "client-stories";
 };
@@ -25,19 +23,26 @@ export function HappyClientSection({
   heading = shopifyPlusAgencyTestimonials.heading,
   description = shopifyPlusAgencyTestimonials.description,
   eyebrow = sharedUiCopy.testimonials.eyebrow,
-  eyebrowClassName,
   items = shopifyPlusAgencyTestimonials.items,
-  className,
   controlsLabels = sharedUiCopy.testimonials,
+  variant,
 }: HappyClientSectionProps = {}) {
   const carouselAriaLabel = controlsLabels.ariaLabel;
+  const isWhite = variant === "client-stories";
 
   return (
-    <section className={cn("happy-client-sec overflow-hidden pt-0 pb-20 max-[991px]:pb-[50px]", className)} data-section="testimonials" id="client-testimonials">
+    <section
+      className={cn(
+        "happy-client-sec overflow-hidden pt-0 pb-20 max-[991px]:pb-[50px]",
+        isWhite ? "bg-white" : undefined,
+      )}
+      data-section="testimonials"
+      id="client-testimonials"
+    >
       <Container>
         <div className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:items-start max-[991px]:gap-3" data-aos="fade-up">
           <div className="title w-[44%] max-[991px]:w-full">
-            {eyebrow ? <Eyebrow className={cn("mb-4", eyebrowClassName)}>{eyebrow}</Eyebrow> : null}
+            {eyebrow ? <Eyebrow className="mb-4">{eyebrow}</Eyebrow> : null}
             <h2 className="font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
               {formatBrText(heading)}
             </h2>

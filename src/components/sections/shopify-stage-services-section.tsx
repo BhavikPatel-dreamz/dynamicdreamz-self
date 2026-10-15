@@ -24,7 +24,6 @@ export type ShopifyStageServicesContent = {
 
 export type ShopifyStageServicesSectionProps = {
   content: ShopifyStageServicesContent;
-  className?: string;
   id?: string;
   lastColFull?: boolean;
   sixCards?: boolean;
@@ -32,7 +31,6 @@ export type ShopifyStageServicesSectionProps = {
 
 export function ShopifyStageServicesSection({
   content,
-  className,
   id = "shopify-services",
   lastColFull = false,
   sixCards,
@@ -45,7 +43,6 @@ export function ShopifyStageServicesSection({
         "shopify-development-services bg-[#fafaf7] py-20 max-[992px]:py-[50px]",
         lastColFull && "last-col-100",
         isSixCards && "six-cards",
-        className,
       )}
       id={id}
     >

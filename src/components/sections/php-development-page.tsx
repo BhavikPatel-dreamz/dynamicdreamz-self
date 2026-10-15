@@ -39,13 +39,10 @@ export function PhpDevelopmentPage() {
         items={phpDevelopmentContent.brands.items}
       />
       <EvaluationFrameworkSection
-        className="how-to-choose-spa-sec bg-white py-20 max-[992px]:py-[50px]"
         content={phpDevelopmentContent.whyChoose}
       />
       <AgencyServicesSection
-        cardBgClassName="bg-white"
         cardVariant="services-box"
-        className="what-we-provide-sec pt-0 pb-20 max-[992px]:pb-[50px]"
         columns={2}
         content={servicesContent}
         headerLayout="split"
@@ -55,7 +52,6 @@ export function PhpDevelopmentPage() {
       <OurDevelopmentProcessSection content={phpDevelopmentContent.process} />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
         columns={4}
         content={portfolioContent}
         ctaHref={phpDevelopmentContent.portfolio.ctaHref}
@@ -70,13 +66,11 @@ export function PhpDevelopmentPage() {
         variant="liveGrid"
       />
       <HappyClientSection
-        className="pt-0"
         description={phpDevelopmentContent.testimonials.description}
         eyebrow={phpDevelopmentContent.testimonials.eyebrow}
         heading={phpDevelopmentContent.testimonials.heading}
       />
       <SplitFaqSection
-        className="faq-sec bg-[#fafaf7] py-[60px] max-[991px]:py-10"
         heading={phpDevelopmentContent.faqHeading}
         idPrefix="php-faq"
         items={phpDevelopmentContent.faqs}

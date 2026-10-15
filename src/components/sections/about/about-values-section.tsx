@@ -22,7 +22,6 @@ export function AboutValuesSection({
 
   return (
     <ThemeCustomizationServicesSection
-      className="transparent"
       variant="transparent"
       content={{
         heading: title,

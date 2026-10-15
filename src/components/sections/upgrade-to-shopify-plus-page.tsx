@@ -43,7 +43,6 @@ export function UpgradeToShopifyPlusPage() {
       />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
         columns={4}
         content={upgradeShopifyPlusPortfolio}
         headerLayout="split"
@@ -53,11 +52,10 @@ export function UpgradeToShopifyPlusPage() {
       />
       <OurDevelopmentProcessSection content={upgradeShopifyPlusProcess} />
       <CityWhyChooseBoxesSection
-        bgClassName="bg-white"
-        className="city-page-why-choose-dynamic"
         columns={3}
         content={upgradeShopifyPlusWhyChoose}
         eyebrowVariant="dash"
+        theme="white"
       />
       <SplitFaqSection
         idPrefix="upgrade-shopify-plus-faq"

@@ -104,7 +104,6 @@ export function WhiteLabelWebsiteDesignPage() {
 
       {/* 11. FAQs */}
       <SplitFaqSection
-        className="faq-sec bg-sky-blue"
         description={whiteLabelWebsiteDesignFaqCopy.description}
         heading={whiteLabelWebsiteDesignFaqCopy.heading}
         idPrefix="white-label-website-design-faq"

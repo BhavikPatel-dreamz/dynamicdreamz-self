@@ -38,14 +38,10 @@ export type CityPageHeroContent = {
 
 export type CityPageHeroSectionProps = {
   content: CityPageHeroContent;
-  className?: string;
-  paddingClassName?: string;
 };
 
 export function CityPageHeroSection({
   content,
-  className,
-  paddingClassName = "pt-[91px] pb-0 max-[991px]:pt-16 max-[991px]:pb-0",
 }: CityPageHeroSectionProps) {
   const hasTabletSlider = Boolean(content.tabletSlider);
   const primaryCta =
@@ -54,16 +50,12 @@ export function CityPageHeroSection({
       ? { label: content.ctaLabel, href: content.ctaHref }
       : undefined);
   const isHideLogo = Boolean(
-    className?.includes("hide-logo") || (content.badges && content.badges.length === 3),
+    content.badges && content.badges.length === 3,
   );
 
   return (
     <section
-      className={cn(
-        "hero-new-section relative overflow-hidden bg-[#f7f4e9]",
-        paddingClassName,
-        className,
-      )}
+      className="hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[991px]:pt-16 max-[991px]:pb-0"
     >
       <Container>
         <div

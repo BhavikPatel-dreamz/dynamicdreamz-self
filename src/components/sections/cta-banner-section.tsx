@@ -15,9 +15,6 @@ export type CtaBannerSectionProps = {
   description?: string;
   ctaLabel?: string;
   ctaHref?: string;
-  headingClassName?: string;
-  buttonClassName?: string;
-  containerClassName?: string;
 };
 
 export function CtaBannerSection({
@@ -25,16 +22,22 @@ export function CtaBannerSection({
   description,
   ctaLabel = defaultCtaBannerCopy.ctaLabel,
   ctaHref = siteConfig.quotePath,
-  headingClassName,
-  buttonClassName,
-  containerClassName,
 }: CtaBannerSectionProps = {}) {
+  const isMobileAppCta = Boolean(
+    ctaHref?.includes("mobile-app") ||
+      (typeof heading === "string" && heading.toLowerCase().includes("mobile app")),
+  );
+
   return (
     <section
       className="request-banner flex min-h-[119px] items-center bg-[linear-gradient(97.18deg,#15c064_28.5%,#00d1ff_91.82%)] py-[35px]"
       aria-labelledby="cta-banner-title"
     >
-      <Container className={containerClassName}>
+      <Container
+        className={
+          isMobileAppCta ? "min-[1400px]:max-w-[1408px] px-[15px]" : undefined
+        }
+      >
         <div
           data-aos="fade-up"
           className="flex flex-wrap items-center justify-center gap-8 text-center max-[1199px]:gap-5"
@@ -44,7 +47,7 @@ export function CtaBannerSection({
               id="cta-banner-title"
               className={cn(
                 "font-display text-[30px] font-normal leading-[43.2px] tracking-[-0.6px] text-white max-[1199px]:text-[26px] max-[1199px]:leading-9 max-[767px]:text-[20px] max-[767px]:leading-7",
-                headingClassName,
+                isMobileAppCta && "!font-montreal-medium !font-normal !tracking-normal",
               )}
             >
               {heading}
@@ -58,10 +61,7 @@ export function CtaBannerSection({
           <ButtonLink
             href={ctaHref}
             variant="light"
-            className={cn(
-              "min-h-[50px] px-6 py-[15px] font-montserrat text-base font-bold uppercase text-[#121212] rounded-[30px]",
-              buttonClassName,
-            )}
+            className="min-h-[50px] px-6 py-[15px] font-montserrat text-base font-bold uppercase text-[#121212] rounded-[30px]"
           >
             {ctaLabel}
           </ButtonLink>

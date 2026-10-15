@@ -26,7 +26,6 @@ type IndustryBrandsSectionProps = {
    * - `flexible`: 70px rail, 30% heading column (live flexible-css pages).
    */
   density?: "standard" | "compact" | "flexible";
-  className?: string;
   showHeading?: boolean;
   sliderSlides?: ClientLogoSliderSlides;
   sliderAutoplayStartDelayMs?: number;
@@ -38,7 +37,6 @@ export function IndustryBrandsSection({
   items = industryBrandLogos,
   mobileSpacing = "standard",
   density = "standard",
-  className,
   showHeading = true,
   sliderSlides,
   sliderAutoplayStartDelayMs,
@@ -55,10 +53,7 @@ export function IndustryBrandsSection({
 
   return (
     <section
-      className={cn(
-        "our-client-sec dev overflow-hidden bg-[#FBEED5] py-4.25",
-        className,
-      )}
+      className="our-client-sec dev overflow-hidden bg-[#FBEED5] py-4.25"
       aria-label={showHeading ? undefined : ariaLabel}
       aria-labelledby={showHeading ? `${content.slug}-brands-title` : undefined}
       data-industry="brands"

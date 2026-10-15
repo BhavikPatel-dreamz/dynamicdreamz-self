@@ -23,15 +23,18 @@ export type IndustriesServedContent = {
 
 export function IndustriesServedSection({
   content = shopifyPlusAgencyIndustries,
-  className = "industries-served-sec pt-0 pb-20 max-[992px]:pb-[50px]",
   variant = "carousel",
 }: {
   content?: IndustriesServedContent;
-  className?: string;
   variant?: "carousel" | "grid";
 }) {
+  const sectionClass =
+    variant === "grid"
+      ? "industries_box_section bg-white py-20 max-[992px]:py-[50px]"
+      : "industries-served-sec pt-0 pb-20 max-[992px]:pb-[50px]";
+
   return (
-    <section className={className} data-section="industries" id="industries-served">
+    <section className={sectionClass} data-section="industries" id="industries-served">
       <Container>
         <SplitSectionHeading
           className="mb-[50px] gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"

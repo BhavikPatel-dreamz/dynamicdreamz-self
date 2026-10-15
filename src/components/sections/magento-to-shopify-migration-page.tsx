@@ -59,7 +59,6 @@ export function MagentoToShopifyMigrationPage() {
 
       {/* 5. Why Choose Dynamic Dreamz for Migration Services? */}
       <EvaluationFrameworkSection
-        className="pt-0"
         content={magentoWhyChooseContent}
         id="why-choose-dynamic-dreamz"
       />

@@ -1634,9 +1634,7 @@ export interface BlockCityWhyChooseBoxes {
   heading: string;
   description: string;
   columns?: number;
-  className?: string;
-  theme?: "light" | "dark";
-  bgClassName?: string;
+  theme?: "light" | "dark" | "white" | "warm";
   boxes?: readonly {
     subtitle?: string;
     title: string;
@@ -2630,40 +2628,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               faqBlock.heading?.includes("Shopify Migration FAQs") ||
               faqBlock.heading?.includes("What businesses ask before mov");
 
-            const isThemeCustomizationFaq =
-              faqBlock.heading?.includes("Shopify Theme Customization FAQs") ||
-              faqBlock.description?.includes(
-                "questions about our Shopify theme customization",
-              );
-
-            const isRisksFaq =
-              faqBlock.heading?.includes("Risks of Outsourcing") ||
-              faqBlock.description?.includes(
-                "questions regarding risks of Shopify outsourcing",
-              );
-
-            const answerClassName =
-              (faqBlock as { answerClassName?: string }).answerClassName ||
-              (isShopifyPlusFaq
-                ? "!text-base !leading-[28px] !font-medium text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-[24px]"
-                : isMigrationFaq || isThemeCustomizationFaq
-                  ? "!text-base !font-medium !leading-7 !text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-6"
-                  : isMobileAppFaq
-                    ? "!text-base !leading-[28px] max-[1199px]:!text-sm max-[1199px]:!leading-[24px] !font-medium !text-[#535353]"
-                    : "!text-base !font-medium !leading-7 !text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-6");
-
-            const className =
-              (faqBlock as { className?: string }).className ||
-              (isRisksFaq
-                ? "faq-sec pt-0 pb-20 max-[767px]:pb-[50px]"
-                : "faq-sec");
-
-            const containerClassName =
-              (faqBlock as { containerClassName?: string })
-                .containerClassName ||
-              (isMobileAppFaq
-                ? "min-[1400px]:max-w-[1408px] px-[15px]"
-                : undefined);
 
             const idPrefix =
               faqBlock.idPrefix ||
@@ -2679,9 +2643,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
             return (
               <SplitFaqSection
-                answerClassName={answerClassName}
-                className={className}
-                containerClassName={containerClassName}
                 description={
                   faqBlock.description ||
                   (isHomeFaq ? homeSectionCopy.homeFaqDescription : undefined)
@@ -2690,9 +2651,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 heading={
                   faqBlock.heading ||
                   (isHomeFaq ? homeSectionCopy.homeFaqTitle : undefined)
-                }
-                headingBrClassName={
-                  isMobileAppFaq ? "max-[991px]:hidden" : undefined
                 }
                 idPrefix={idPrefix}
                 items={items}
@@ -2710,24 +2668,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
           case "cta-banner": {
             const ctaBlock = block as BlockCtaBanner;
-            const isMobileAppCta =
-              ctaBlock.heading?.includes("Ready to build high-converting") ||
-              ctaBlock.heading?.includes("Shopify mobile app") ||
-              ctaBlock.heading?.includes("Shopify Mobile App");
-
             return (
               <CtaBannerSection
-                buttonClassName={
-                  isMobileAppCta
-                    ? "!rounded-[30px] !px-6 !py-[15px] !text-base !font-bold !min-h-[50px] !text-[#121212]"
-                    : undefined
-                }
-                containerClassName={
-                  isMobileAppCta
-                    ? "min-[1400px]:max-w-[1408px] px-[15px]"
-                    : (ctaBlock as { containerClassName?: string })
-                        .containerClassName
-                }
                 ctaHref={
                   ctaBlock.btnUrl ||
                   (ctaBlock as { ctaHref?: string }).ctaHref ||
@@ -2740,11 +2682,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 }
                 description={ctaBlock.description}
                 heading={ctaBlock.heading}
-                headingClassName={
-                  isMobileAppCta
-                    ? "!font-montreal-medium !font-normal !tracking-normal"
-                    : undefined
-                }
                 key={blockKey}
               />
             );
@@ -2785,18 +2722,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               description: step.description || "",
             }));
 
-            const isHireProcess =
-              processBlock.heading?.includes("Hassle free Hiring Process") ||
-              processBlock.heading?.includes("Hassle-Free Hiring Process");
-
             return (
               <OurDevelopmentProcessSection
-                className={
-                  (processBlock as { className?: string }).className ||
-                  (isHireProcess
-                    ? "our-development-process bg-transparent"
-                    : undefined)
-                }
                 columns={
                   (processBlock.columns as 3 | 4) ||
                   (steps.length === 6 ? 3 : undefined)
@@ -2876,34 +2803,14 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               clientBlock.eyebrow?.includes("Customers' Testimonials") ||
               clientBlock.description?.includes("Check our client stories");
 
-            const isPt0 =
-              clientBlock.eyebrow?.includes("Client Stories") ||
-              (clientBlock.heading?.includes("Don't Just Take Our Word") &&
-                (clientBlock.description?.includes("migrating") ||
-                  clientBlock.description?.includes(
-                    "store owners and merchants",
-                  )));
-
-            const isPlusMigration =
-              clientBlock.description?.includes("businesses replatforming") ||
-              clientBlock.eyebrow?.includes("Enterprise Migrations");
-
-            const sectionClassName =
-              (clientBlock as { className?: string }).className ||
-              (isPlusMigration
-                ? "pt-80 max-[992px]:pt-12.5"
-                : isPt0
-                  ? "pt-0 max-[992px]:pt-0"
-                  : clientBlock.heading?.includes("5,000+ Ecommerce Brands") ||
-                      clientBlock.description?.includes(
-                        "client stories from merchants",
-                      )
-                    ? "bg-white"
-                    : undefined);
+            const isClientStories = Boolean(
+              clientBlock.heading?.includes("5,000+ Ecommerce Brands") ||
+              clientBlock.description?.includes("client stories from merchants")
+            );
 
             const sectionElement = (
               <HappyClientSection
-                className={sectionClassName}
+                variant={isClientStories ? "client-stories" : undefined}
                 description={clientBlock.description || undefined}
                 eyebrow={clientBlock.eyebrow}
                 heading={clientBlock.heading || undefined}
@@ -2955,21 +2862,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               });
             }
 
-            const isMobileAppCaseStudies =
-              csBlock.heading?.includes("Shopify Mobile App") ||
-              csBlock.description?.includes(
-                "scalable iOS and Android commerce applications",
-              );
-
             return (
               <ServicesCaseStudiesSection
-                containerClassName={
-                  (csBlock as { containerClassName?: string })
-                    .containerClassName ||
-                  (isMobileAppCaseStudies
-                    ? "min-[1400px]:max-w-[1408px] px-[15px]"
-                    : undefined)
-                }
                 description={csBlock.description}
                 eyebrow={csBlock.eyebrow}
                 heading={csBlock.heading || sharedUiCopy.portfolioEyebrow}
@@ -3057,19 +2951,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               ctaHref: m.ctaHref,
             }));
 
-            const isPlusMigrationPricing =
-              pmBlock.description?.includes("Plus replatforming") ||
-              pmBlock.eyebrow?.includes("Engagement & Pricing") ||
-              pmBlock.heading?.includes(
-                "engagement model around your Shopify Plus migration",
-              );
-
             return (
               <PricingTableSection
-                className={
-                  (pmBlock as { className?: string }).className ||
-                  (isPlusMigrationPricing ? "mb-0" : undefined)
-                }
                 content={{
                   eyebrow: pmBlock.eyebrow,
                   heading: pmBlock.heading,
@@ -3835,22 +3718,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               return (
                 <ServiceHeroSection
                   key={blockKey}
-                  className={
-                    shvBlock.wrapperClassName ||
-                    "inner-hero-sec relative overflow-hidden bg-white pt-[190px] pb-[130px] max-[1199px]:pt-[140px] max-[1199px]:pb-[60px] max-[767px]:pt-[120px]"
-                  }
                   variant="centered"
                   showReviews={shvBlock.showReviews ?? false}
-                  headingClassName={
-                    isRisks
-                      ? "!font-montreal-medium !font-medium !tracking-[0]"
-                      : undefined
-                  }
-                  bodyClassName={
-                    isRisks
-                      ? "!mt-2 !mb-0 !text-base !font-normal !leading-[30.4px]"
-                      : undefined
-                  }
                   content={{
                     title: shvBlock.title,
                     description: shvBlock.description || "",
@@ -3881,11 +3750,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               return (
                 <ServiceHeroSection
                   key={blockKey}
-                  bodyClassName="!text-[16px] !leading-[28px] max-[1199px]:!leading-6 max-[767px]:!text-[16px] max-[767px]:!leading-6"
-                  className={
-                    shvBlock.wrapperClassName ||
-                    "inner-hero-sec shopify-plus-experts relative overflow-hidden bg-[#f7f4e9] pt-[140px] pb-[85px] max-[992px]:pt-[100px] max-[992px]:pb-[36px] max-[767px]:pt-[102px] max-[767px]:pb-[40px]"
-                  }
                   content={{
                     title: shvBlock.title,
                     subheading: shvBlock.subtitle,
@@ -3977,19 +3841,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               height: item.height || 40,
             }));
 
-            const isShopifyPlusAgencyBrands =
-              ibBlock.heading?.includes("Shopify Plus") ||
-              ibBlock.heading?.includes("5,000+ Ecommerce Brands") ||
-              ibBlock.heading?.includes("1100+ Happy Clients");
-
             return (
               <IndustryBrandsSection
-                className={
-                  (ibBlock as { className?: string }).className ||
-                  (isShopifyPlusAgencyBrands
-                    ? "max-[991px]:pb-[4px] max-[767px]:pb-4.25"
-                    : undefined)
-                }
                 content={{
                   slug: ibBlock.slug || "industry-brands",
                 }}
@@ -4032,24 +3885,10 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               category: item.category,
             }));
 
-            const isPt0 =
-              psBlock.heading?.includes("Work of our Shopify Developers") ||
-              psBlock.heading?.includes("Explore Our Shopify Work");
-
             const isLiveGrid =
               psBlock.variant === "liveGrid" ||
               psBlock.heading?.includes("Portfolio of Shopify Migration") ||
               psBlock.heading?.includes("Selected Shopify Experience");
-
-            const customClassName =
-              (psBlock as { className?: string }).className ||
-              (isPt0
-                ? "our-work-sec pt-0 pb-20 max-[992px]:pb-[60px]"
-                : isLiveGrid
-                  ? "our-work-sec pt-20 pb-20 max-[992px]:pt-10 max-[767px]:pt-0"
-                  : psBlock.category === "SHOPIFY PLUS"
-                    ? "our-work-sec bg-white pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]"
-                    : "our-work-sec py-20 max-[992px]:py-[50px]");
 
             const cardVariant =
               psBlock.cardVariant ||
@@ -4062,7 +3901,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <PortfolioShowcaseSection
                 cardVariant={cardVariant}
-                className={customClassName}
                 columns={(psBlock.columns as 2 | 3 | 4) || 4}
                 content={{
                   heading: psBlock.heading,
@@ -4106,15 +3944,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 : null,
             }));
 
-            const isPlusStage =
-              sssBlock.heading?.includes(
-                "Shopify Plus Services for High-Growth",
-              ) ||
-              sssBlock.eyebrow?.includes("SHOPIFY PLUS SERVICES") ||
-              sssBlock.description?.includes(
-                "Tailored solutions for ambitious brands",
-              );
-
             const isLastColFull =
               sssBlock.lastColFull ??
               (sssBlock.heading?.includes(
@@ -4127,12 +3956,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <ShopifyStageServicesSection
                 key={blockKey}
-                className={
-                  (sssBlock as { className?: string }).className ||
-                  (isPlusStage
-                    ? "shopify-development-services bg-[#fafaf7] py-20 max-[992px]:py-[50px]"
-                    : undefined)
-                }
                 id="shopify-services"
                 content={{
                   eyebrow: sssBlock.eyebrow,
@@ -4183,7 +4006,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
             return (
               <EvaluationFrameworkSection
-                className={efBlock.className || undefined}
                 key={blockKey}
                 content={{
                   eyebrow: efBlock.eyebrow,
@@ -4458,7 +4280,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
             return (
               <ShopifyMigrationNumberedGridSection
-                className={(smngBlock as { className?: string }).className}
                 key={blockKey}
                 id={smngBlock.idAttr}
                 eyebrow={smngBlock.eyebrow}
@@ -4541,20 +4362,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 key={blockKey}
                 id={tcsBlock.sectionId || (tcsBlock.id ? String(tcsBlock.id) : undefined)}
                 variant={tcsBlock.variant || "green"}
-                className={
-                  tcsBlock.className ||
-                  (tcsBlock as { className?: string }).className ||
-                  (tcsBlock.variant === "transparent" &&
-                  (typeof tcsBlock.heading === "string"
-                    ? tcsBlock.heading.includes("Designed for Flexibility")
-                    : Array.isArray(tcsBlock.heading)
-                      ? tcsBlock.heading.some((h) =>
-                          h.includes("Designed for Flexibility"),
-                        )
-                      : false)
-                    ? "pt-0"
-                    : undefined)
-                }
                 content={{
                   eyebrow: tcsBlock.eyebrow,
                   heading: tcsBlock.heading,
@@ -4895,7 +4702,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             const smawBlock = block as BlockShopifyMobileAppWork;
             return (
               <ShopifyMobileAppWorkSection
-                className={smawBlock.className}
                 key={blockKey}
                 content={{
                   eyebrow: smawBlock.eyebrow,
@@ -4985,14 +4791,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <WhiteLabelProcessSection
                 key={blockKey}
-                containerClassName={
-                  (wlpBlock as { containerClassName?: string })
-                    .containerClassName ||
-                  (typeof wlpBlock.title === "string" &&
-                  wlpBlock.title.includes("Shopify Mobile App")
-                    ? "min-[1400px]:max-w-[1408px] px-[15px]"
-                    : undefined)
-                }
                 eyebrow={wlpBlock.eyebrow}
                 title={wlpBlock.title}
                 description={wlpBlock.description}
@@ -5010,10 +4808,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             const asBlock = block as BlockAgencyServices;
             return (
               <AgencyServicesSection
-                cardBgClassName={asBlock.cardBgClassName}
                 key={blockKey}
                 id={asBlock.idAttr || "services"}
-                className={asBlock.className}
                 cardVariant={asBlock.cardVariant || "services-box"}
                 columns={(asBlock.columns as 2 | 3 | 4) || 2}
                 hideCta={asBlock.hideCta}
@@ -5099,15 +4895,10 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <CityWhyChooseBoxesSection
                 key={blockKey}
-                bgClassName={cwcbBlock.bgClassName}
-                className={
-                  cwcbBlock.className ||
-                  (cwcbBlock.bgClassName ? undefined : "city-page-why-choose-dynamic")
-                }
                 columns={(cwcbBlock.columns as 3 | 4 | 5) || 3}
-                eyebrowVariant={cwcbBlock.bgClassName ? undefined : "dash"}
+                eyebrowVariant="dash"
                 id={cwcbBlock.sectionId || (cwcbBlock.id ? String(cwcbBlock.id) : undefined)}
-                theme={cwcbBlock.theme || "light"}
+                theme={(cwcbBlock.theme as "light" | "dark" | "white" | "warm") || "light"}
                 content={{
                   eyebrow: cwcbBlock.eyebrow,
                   heading: cwcbBlock.heading,
@@ -5299,7 +5090,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   icBlock.backgroundImageSrc ||
                   "/assets/backgrounds/think-migration.png"
                 }
-                className="thinking-migration-box"
                 ctaHref={icBlock.ctaHref}
                 ctaLabel={icBlock.ctaLabel}
                 description={icBlock.description}
@@ -5345,7 +5135,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <CityPageHeroSection
                 key={blockKey}
-                className={cphBlock.className}
                 content={{
                   eyebrows,
                   title: cphBlock.title,
@@ -5487,7 +5276,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <WhiteLabelWhySection
                 key={blockKey}
-                className={wlwBlock.className}
                 eyebrow={wlwBlock.eyebrow}
                 reasons={wlwBlock.reasons || []}
                 title={wlwBlock.title}
@@ -5565,7 +5353,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <TextBoxSection
                 key={blockKey}
-                className={tbBlock.className}
                 heading={tbBlock.heading}
                 listItems={listItems}
                 paragraphs={paragraphs}
@@ -5679,7 +5466,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <PillListSection
                 key={blockKey}
-                className={plBlock.className}
                 content={{
                   heading: plBlock.heading,
                   description: plBlock.description,
@@ -5707,9 +5493,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <ShopifyReasonsSection
                 key={blockKey}
-                cardMinHeightClassName={srBlock.cardMinHeightClassName}
                 carouselFullBleed={srBlock.carouselFullBleed ?? true}
-                className={srBlock.className}
                 content={{
                   heading: srBlock.heading,
                   description: srBlock.description,
@@ -5767,7 +5551,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               <ThemeWhyChooseSection
                 key={blockKey}
                 backgroundVariant={twcBlock.backgroundVariant || "gradient"}
-                className={twcBlock.className}
                 content={{
                   title: twcBlock.title,
                   subtitle: twcBlock.subtitle,
@@ -5782,7 +5565,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <LetsBuildSection
                 key={blockKey}
-                className={lbBlock.className}
                 content={{
                   heading: lbBlock.heading,
                   description: lbBlock.description,

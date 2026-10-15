@@ -39,7 +39,6 @@ export function DentalClinicWebsiteDevelopmentCompanyPage() {
       />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
         columns={4}
         content={dentalClinicWebsiteDevelopmentCompanyContent.portfolio}
         headerLayout="split"

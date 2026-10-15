@@ -81,16 +81,13 @@ export function ShopifyThemeCustomizationPage() {
 
       {/* 10. Portfolio Showcase */}
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
         columns={4}
         content={shopifyThemeCustomizationContent.portfolio}
         sectionId="our_work"
       />
 
       {/* 11. Pricing Engagement */}
-      <PricingTableSection
-        content={shopifyThemeCustomizationContent.pricing}
-      />
+      <PricingTableSection content={shopifyThemeCustomizationContent.pricing} />
 
       {/* 12. Client Stories / Testimonials */}
       <HappyClientSection
@@ -102,8 +99,6 @@ export function ShopifyThemeCustomizationPage() {
 
       {/* 13. Frequently Asked Questions */}
       <SplitFaqSection
-        answerClassName="!text-base !font-medium !leading-7 !text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-6"
-        className="faq-sec"
         heading={shopifyThemeCustomizationContent.faqs.heading}
         idPrefix="shopify-theme-customization-faq"
         items={shopifyThemeCustomizationContent.faqs.items}

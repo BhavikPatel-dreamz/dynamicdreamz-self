@@ -63,7 +63,6 @@ export function ShopifyPlusMigrationAgencyPage() {
 
       {/* 5. SEO-Safe Migration */}
       <SeoSafeMigrationSection
-        className="pt-0 pb-0"
         content={plusAgencySeoSafeContent}
       />
 
@@ -77,14 +76,10 @@ export function ShopifyPlusMigrationAgencyPage() {
       <WhyChooseShopifyMigrationSection content={plusAgencyWhyChooseContent} />
 
       {/* 8. Engagement & Pricing */}
-      <PricingTableSection
-        className="mb-0"
-        content={plusAgencyPricingContent}
-      />
+      <PricingTableSection content={plusAgencyPricingContent} />
 
       {/* 9. Client Stories / Testimonials */}
       <HappyClientSection
-        className="pt-80 max-[992px]:pt-12.5"
         description={plusAgencyTestimonials.description}
         eyebrow={plusAgencyTestimonials.eyebrow}
         heading={plusAgencyTestimonials.heading}
@@ -101,8 +96,6 @@ export function ShopifyPlusMigrationAgencyPage() {
 
       {/* 11. FAQs */}
       <SplitFaqSection
-        answerClassName="!text-base !font-medium !leading-7 !text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-6"
-        className="faq-sec"
         description={plusAgencyFaqsContent.description}
         eyebrow={plusAgencyFaqsContent.eyebrow}
         heading={plusAgencyFaqsContent.heading}

@@ -151,7 +151,6 @@ export function AndroidAppDevelopmentPage() {
 
       {/* 8. Portfolio */}
       <ShopifyMobileAppWorkSection
-        className="pt-0"
         content={androidAppDevelopmentPortfolio}
       />
 
@@ -163,7 +162,6 @@ export function AndroidAppDevelopmentPage() {
 
       {/* 11. Client Stories Testimonials */}
       <HappyClientSection
-        className="pt-[80px] max-[992px]:pt-[50px]"
         description={androidAppDevelopmentTestimonialsCopy.description}
         eyebrow={androidAppDevelopmentTestimonialsCopy.eyebrow}
         heading={androidAppDevelopmentTestimonialsCopy.heading}
@@ -172,7 +170,6 @@ export function AndroidAppDevelopmentPage() {
 
       {/* 12. FAQ Section */}
       <SplitFaqSection
-        className="faq-sec bg-[#fafaf7] py-[60px] max-[991px]:py-10"
         description={androidAppDevelopmentFaqCopy.description}
         eyebrow={androidAppDevelopmentFaqCopy.eyebrow}
         heading={androidAppDevelopmentFaqCopy.heading}

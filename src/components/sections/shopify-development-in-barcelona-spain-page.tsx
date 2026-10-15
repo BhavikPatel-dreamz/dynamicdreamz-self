@@ -39,9 +39,7 @@ export function ShopifyDevelopmentInBarcelonaSpainPage() {
         eyebrowVariant="dash"
       />
       <AgencyServicesSection
-        cardBgClassName="bg-white"
         cardVariant="services-box"
-        className="what-we-provide-sec py-20 max-[992px]:py-[50px]"
         columns={2}
         content={shopifyDevelopmentBarcelonaContent.services}
         eyebrow={shopifyDevelopmentBarcelonaContent.services.eyebrow}
@@ -54,15 +52,13 @@ export function ShopifyDevelopmentInBarcelonaSpainPage() {
         eyebrowVariant="dash"
       />
       <CityWhyChooseBoxesSection
-        bgClassName="bg-white"
-        className="city-page-why-choose-dynamic !pb-0"
         columns={3}
         content={shopifyDevelopmentBarcelonaContent.whyDynamicDreamz}
         eyebrowVariant="dash"
+        theme="white"
       />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
         columns={4}
         content={portfolioContent}
         ctaHref={shopifyDevelopmentBarcelonaContent.portfolio.ctaHref}
@@ -77,8 +73,6 @@ export function ShopifyDevelopmentInBarcelonaSpainPage() {
         items={shopifyDevelopmentBarcelonaContent.testimonials.items}
       />
       <SplitFaqSection
-        answerClassName="!text-sm !leading-6 font-medium text-[#535353]"
-        className="faq-sec"
         heading={shopifyDevelopmentBarcelonaContent.sectionCopy.faqHeading}
         idPrefix="barcelona-faq"
         items={shopifyDevelopmentBarcelonaContent.faqs}

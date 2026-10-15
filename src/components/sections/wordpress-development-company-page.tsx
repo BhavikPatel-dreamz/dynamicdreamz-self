@@ -63,11 +63,8 @@ export function WordPressDevelopmentCompanyPage() {
       />
       <AgencyServicesSection
         cardVariant="services-box"
-        className="what-we-provide-sec only-text pb-0 pt-20 max-[992px]:pt-[50px] max-[992px]:pb-0"
         content={servicesContent}
         headerLayout="split"
-        headerTextColumnClassName="w-[48.3%] max-[992px]:w-full"
-        headerTitleColumnClassName="w-[44%] max-[992px]:w-full"
         hideCta
         id="services"
         preserveBreaks
@@ -81,18 +78,11 @@ export function WordPressDevelopmentCompanyPage() {
         variant="green"
       />
       <OurDevelopmentProcessSection
-        className="our-development-process bg-transparent"
         content={wordpressDevelopmentCompanyProcess}
       />
-      <PricingTableSection
-        className="white_label_wp_develop_plan_section shopify-plus-engagement mb-0 bg-[#edf2ee] py-20 max-[992px]:py-[50px]"
-        content={wordpressDevelopmentCompanyPricing}
-        textColumnClassName="w-[48.3%] max-[992px]:w-full"
-        titleColumnClassName="w-[44%] max-[992px]:w-full"
-      />
+      <PricingTableSection content={wordpressDevelopmentCompanyPricing} />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[60px]"
         columns={4}
         content={wordpressDevelopmentCompanyPortfolio}
         eyebrow={wordpressDevelopmentCompanyPortfolio.eyebrow}
@@ -109,7 +99,6 @@ export function WordPressDevelopmentCompanyPage() {
         items={wordpressDevelopmentCompanyTestimonials.items}
       />
       <SplitFaqSection
-        className="faq-sec"
         idPrefix="wordpress-development-company-faq"
         items={wordpressDevelopmentCompanyFaqs}
       />

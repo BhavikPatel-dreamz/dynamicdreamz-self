@@ -15,8 +15,6 @@ export type SplitFaqSectionProps = {
   headingBrClassName?: string;
   description?: string | readonly string[];
   eyebrow?: string;
-  eyebrowClassName?: string;
-  className?: string;
   sectionId?: string;
   animateOnReveal?: boolean;
   lazyAccordion?: boolean;
@@ -26,7 +24,6 @@ export type SplitFaqSectionProps = {
   triggerClassName?: string;
   itemClassName?: string;
   panelContentClassName?: string;
-  containerClassName?: string;
   iconVariant?: "default" | "circle-cross";
 };
 
@@ -47,35 +44,51 @@ export function SplitFaqSection({
   headingBrClassName,
   description,
   eyebrow,
-  eyebrowClassName,
-  className,
   sectionId,
   animateOnReveal = false,
   lazyAccordion = false,
   lazyRootMargin,
-  answerClassName = "!text-sm !font-normal !leading-6 !text-[#535353]",
+  answerClassName = "!text-base !font-medium !leading-7 !text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-6",
   questionClassName,
   triggerClassName,
   itemClassName,
   panelContentClassName,
-  containerClassName,
   iconVariant = "circle-cross",
 }: SplitFaqSectionProps) {
   const titleId = `${idPrefix}-title`;
 
+  const isSkyBlue =
+    idPrefix.startsWith("white-label-website-design") ||
+    idPrefix.startsWith("white-label-wordpress");
+  const isWhite = idPrefix.startsWith("food-beverage");
+  const isPt0 = idPrefix.startsWith("risks-of-shopify-outsourcing");
+  const isMobileAppFaq = idPrefix.startsWith("shopify-mobile-app");
+
+  const bgClass = isSkyBlue
+    ? "bg-sky-blue"
+    : isWhite
+    ? "bg-white"
+    : "bg-[#fafaf7]";
+  const paddingClass = isPt0
+    ? "pt-0 pb-20 max-[767px]:pb-[50px]"
+    : "py-[60px] max-[991px]:py-10 max-[767px]:pb-5";
+  const containerClass = isMobileAppFaq
+    ? "min-[1400px]:max-w-[1408px] px-[15px]"
+    : undefined;
+
   return (
     <section
       aria-labelledby={titleId}
-      className={cn("bg-[#fafaf7] py-[60px] max-[991px]:py-10 max-[767px]:pb-5", className)}
+      className={cn("faq-sec", bgClass, paddingClass)}
       data-section="faq"
       id={sectionId ?? `${idPrefix}-section`}
     >
-      <Container className={containerClassName}>
+      <Container className={containerClass}>
         <div className="flex justify-between gap-[105px] max-[1399px]:gap-8 max-[991px]:flex-col max-[991px]:gap-[30px]">
           <div className="w-[41%] max-[1199px]:w-[44%] max-[991px]:w-full" data-aos="fade-up">
             <header className="mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
               {eyebrow ? (
-                <Eyebrow as="span" className={cn("mb-4", eyebrowClassName)}>
+                <Eyebrow as="span" className="mb-4">
                   {eyebrow}
                 </Eyebrow>
               ) : null}

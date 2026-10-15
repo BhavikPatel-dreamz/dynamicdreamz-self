@@ -149,7 +149,6 @@ export function IosAppDevelopmentPage() {
 
       {/* 8. Portfolio */}
       <ShopifyMobileAppWorkSection
-        className="pt-0"
         content={iosAppDevelopmentPortfolio}
       />
 
@@ -161,7 +160,6 @@ export function IosAppDevelopmentPage() {
 
       {/* 11. Client Stories Testimonials */}
       <HappyClientSection
-        className="pt-[80px] max-[992px]:pt-[50px]"
         description={iosAppDevelopmentTestimonialsCopy.description}
         eyebrow={iosAppDevelopmentTestimonialsCopy.eyebrow}
         heading={iosAppDevelopmentTestimonialsCopy.heading}
@@ -170,7 +168,6 @@ export function IosAppDevelopmentPage() {
 
       {/* 12. FAQ Section */}
       <SplitFaqSection
-        className="faq-sec bg-[#fafaf7] py-[60px] max-[991px]:py-10"
         description={iosAppDevelopmentFaqCopy.description}
         eyebrow={iosAppDevelopmentFaqCopy.eyebrow}
         heading={iosAppDevelopmentFaqCopy.heading}

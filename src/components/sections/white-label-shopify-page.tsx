@@ -37,7 +37,6 @@ export function WhiteLabelShopifyPage() {
 
       {/* 4. Portfolio Section */}
       <PortfolioShowcaseSection
-        className="our-work-sec pt-0 pb-20 max-[992px]:pb-12.5"
         columns={4}
         content={whiteLabelShopifyPortfolio}
         headerLayout="split"
@@ -62,7 +61,6 @@ export function WhiteLabelShopifyPage() {
 
       {/* 10. Partnership Onboarding Steps */}
       <WhiteLabelWhySection
-        className="bg-[#EFF4EF]"
         eyebrow={whiteLabelShopifySectionCopy.processEyebrow}
         reasons={whiteLabelShopifyPartnershipSteps}
         title={whiteLabelShopifySectionCopy.processTitle}
@@ -73,7 +71,6 @@ export function WhiteLabelShopifyPage() {
 
       {/* 12. FAQ Accordion */}
       <SplitFaqSection
-        answerClassName="!text-base !leading-[28px] max-[767px]:!text-sm max-[767px]:!leading-6 font-medium text-[#535353]"
         description={whiteLabelShopifySectionCopy.faqDescription}
         eyebrow={whiteLabelShopifySectionCopy.faqEyebrow}
         heading={whiteLabelShopifySectionCopy.faqTitle}

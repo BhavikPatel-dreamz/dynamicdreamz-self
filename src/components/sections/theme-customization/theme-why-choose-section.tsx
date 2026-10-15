@@ -18,7 +18,6 @@ export type ThemeWhyChooseSectionProps = {
     items: readonly ThemeWhyChooseItem[];
   };
   backgroundVariant?: "gradient" | "white";
-  className?: string;
   id?: string;
   preserveDesktopTypography?: boolean;
   preserveLiveIconSize?: boolean;
@@ -28,7 +27,6 @@ export type ThemeWhyChooseSectionProps = {
 export function ThemeWhyChooseSection({
   content,
   backgroundVariant = "gradient",
-  className,
   id = "why-choose-dynamic-dreamz",
 }: ThemeWhyChooseSectionProps) {
   const backgroundVariantClassName = {
@@ -36,8 +34,7 @@ export function ThemeWhyChooseSection({
       "why_dynamic_dreamz_sec dev two-column-icon-text-bg mb-12.5 py-12.5 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] lg:mb-20 lg:py-20",
     white: "why_dynamic_dreamz_sec dev two-column-icon-text-bg bg-white",
   } as const;
-  const sectionClassName =
-    className ?? backgroundVariantClassName[backgroundVariant];
+  const sectionClassName = backgroundVariantClassName[backgroundVariant];
 
   return (
     <section className={sectionClassName} id={id}>

@@ -138,7 +138,6 @@ export function MobileApplicationDevelopmentPage() {
 
       {/* 7. Our App Development Process */}
       <ShopifyMigrationNumberedGridSection
-        className="pt-0 bg-white"
         description={mobileAppProcessCopy.description}
         eyebrow={mobileAppProcessCopy.eyebrow}
         heading={mobileAppProcessCopy.heading}
@@ -148,7 +147,6 @@ export function MobileApplicationDevelopmentPage() {
 
       {/* 8. Portfolio */}
       <ShopifyMobileAppWorkSection
-        className="pt-0"
         content={mobileAppPortfolio}
       />
 
@@ -160,7 +158,6 @@ export function MobileApplicationDevelopmentPage() {
 
       {/* 11. Client Stories Testimonials */}
       <HappyClientSection
-        className="pt-[80px] max-[992px]:pt-[50px]"
         description={mobileAppTestimonialsCopy.description}
         eyebrow={mobileAppTestimonialsCopy.eyebrow}
         heading={mobileAppTestimonialsCopy.heading}
@@ -169,7 +166,6 @@ export function MobileApplicationDevelopmentPage() {
 
       {/* 12. FAQ Section */}
       <SplitFaqSection
-        className="faq-sec bg-[#fafaf7] py-[60px] max-[991px]:py-10"
         description={mobileAppFaqCopy.description}
         eyebrow={mobileAppFaqCopy.eyebrow}
         heading={mobileAppFaqCopy.heading}

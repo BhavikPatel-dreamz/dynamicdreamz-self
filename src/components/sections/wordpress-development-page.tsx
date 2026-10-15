@@ -30,17 +30,13 @@ export function WordPressDevelopmentPage() {
       <CityPageHeroSection content={wordpressDevelopmentHero} />
       <AgencyServicesSection
         cardVariant="services-box"
-        className="what-we-provide-sec pb-0 pt-20 max-[992px]:pt-[50px] max-[992px]:pb-0"
         content={servicesContent}
         headerLayout="split"
-        headerTextColumnClassName="w-[48.3%] max-[992px]:w-full"
-        headerTitleColumnClassName="w-[44%] max-[992px]:w-full"
         hideCta
         id="services"
       />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[60px]"
         columns={4}
         content={wordpressDevelopmentPortfolio}
         eyebrow={wordpressDevelopmentPortfolio.eyebrow}
@@ -56,7 +52,6 @@ export function WordPressDevelopmentPage() {
         heading={wordpressDevelopmentTestimonials.heading}
       />
       <SplitFaqSection
-        className="faq-sec"
         idPrefix="wordpress-development-faq"
         items={wordpressDevelopmentFaqs}
       />

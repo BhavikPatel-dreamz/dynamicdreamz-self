@@ -39,9 +39,7 @@ export function ShopifyDevelopmentInMumbaiPage() {
         eyebrowVariant="dash"
       />
       <AgencyServicesSection
-        cardBgClassName="bg-white"
         cardVariant="services-box"
-        className="what-we-provide-sec py-20 max-[992px]:py-[50px]"
         columns={2}
         content={shopifyDevelopmentMumbaiContent.services}
         eyebrow={shopifyDevelopmentMumbaiContent.services.eyebrow}
@@ -54,15 +52,13 @@ export function ShopifyDevelopmentInMumbaiPage() {
         eyebrowVariant="dash"
       />
       <CityWhyChooseBoxesSection
-        bgClassName="bg-white"
-        className="city-page-why-choose-dynamic !pb-0"
         columns={3}
         content={shopifyDevelopmentMumbaiContent.whyDynamicDreamz}
         eyebrowVariant="dash"
+        theme="white"
       />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
         columns={4}
         content={portfolioContent}
         ctaHref={shopifyDevelopmentMumbaiContent.portfolio.ctaHref}

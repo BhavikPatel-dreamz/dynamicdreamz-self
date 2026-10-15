@@ -60,14 +60,11 @@ export default function FoodBeverageShopifyPlusAgencyRoute() {
         headerLayout="split"
         columns={2}
         cardVariant="services-box"
-        cardBgClassName="bg-white"
         hideCta={true}
-        className="what-we-provide-sec bg-[linear-gradient(97deg,#E8F9EF_28.5%,#E6FAFD_91.82%)] py-20 pb-[30px] mb-20 max-[991px]:mb-[50px] max-[992px]:py-[50px]"
       />
       <MigrationProcessSection
         content={foodBeverageProcess}
         titleAlign="center"
-        className="migration-process-step-sec py-20 max-[992px]:py-[50px]"
       />
       <ServicesCaseStudiesSection
         eyebrow={foodBeverageCaseStudies.eyebrow}
@@ -78,7 +75,6 @@ export default function FoodBeverageShopifyPlusAgencyRoute() {
         items={foodBeverageFaqs.items}
         idPrefix="food-beverage-faq"
         heading={foodBeverageFaqs.heading}
-        className="faq-sec bg-white py-[60px] max-[767px]:py-10"
       />
     </main>
   );

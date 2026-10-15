@@ -65,7 +65,6 @@ export function FashionPage() {
       />
       <WhyChooseShopifyMigrationSection content={fashionWhyChoose} />
       <HappyClientSection
-        className="pt-20 max-[992px]:pt-12.5"
         description={fashionTestimonials.description}
         eyebrow={fashionTestimonials.eyebrow}
         heading={fashionTestimonials.heading}

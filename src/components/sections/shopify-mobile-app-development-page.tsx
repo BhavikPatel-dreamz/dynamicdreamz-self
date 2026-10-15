@@ -45,7 +45,6 @@ export function ShopifyMobileAppDevelopmentPage() {
 
       {/* 7. Case Studies */}
       <ServicesCaseStudiesSection
-        containerClassName="min-[1400px]:max-w-[1408px] px-[15px]"
         eyebrow={shopifyMobileAppCaseStudies.eyebrow}
         heading={shopifyMobileAppCaseStudies.heading}
         description={shopifyMobileAppCaseStudies.description}
@@ -54,7 +53,6 @@ export function ShopifyMobileAppDevelopmentPage() {
 
       {/* 8. Process */}
       <WhiteLabelProcessSection
-        containerClassName="min-[1400px]:max-w-[1408px] px-[15px]"
         eyebrow={shopifyMobileAppProcess.eyebrow}
         title={shopifyMobileAppProcess.title}
         description={shopifyMobileAppProcess.description}
@@ -64,25 +62,19 @@ export function ShopifyMobileAppDevelopmentPage() {
 
       {/* 9. FAQs */}
       <SplitFaqSection
-        containerClassName="min-[1400px]:max-w-[1408px] px-[15px]"
         idPrefix="shopify-mobile-app-faq"
         sectionId="shopify-mobile-app-faq-section"
-        className="faq-sec"
         eyebrow={shopifyMobileAppFaqCopy.eyebrow}
         heading={shopifyMobileAppFaqCopy.heading}
         headingBrClassName="max-[991px]:hidden"
         items={shopifyMobileAppDevelopmentFaqs}
-        answerClassName="!text-base !leading-[28px] max-[1199px]:!text-sm max-[1199px]:!leading-[24px] !font-medium !text-[#535353]"
       />
 
       {/* 10. CTA Banner */}
       <CtaBannerSection
-        containerClassName="min-[1400px]:max-w-[1408px] px-[15px]"
         ctaHref={shopifyMobileAppDevelopmentCtaBanner.ctaHref}
         ctaLabel={shopifyMobileAppDevelopmentCtaBanner.ctaLabel}
         heading={shopifyMobileAppDevelopmentCtaBanner.heading}
-        headingClassName="!font-montreal-medium !font-normal !tracking-normal"
-        buttonClassName="!rounded-[30px] !px-6 !py-[15px] !text-base !font-bold !min-h-[50px] !text-[#121212]"
       />
     </div>
   );

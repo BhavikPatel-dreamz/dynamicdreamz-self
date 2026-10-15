@@ -10,9 +10,6 @@ type WhiteLabelProcessSectionProps = {
   description?: string | readonly string[];
   steps?: readonly WhiteLabelProcessStep[];
   note?: string;
-  className?: string;
-  titleClassName?: string;
-  containerClassName?: string;
 };
 
 export function WhiteLabelProcessSection({
@@ -21,18 +18,17 @@ export function WhiteLabelProcessSection({
   description,
   steps = whiteLabelShopifyProcess,
   note = whiteLabelShopifySectionCopy.processNote,
-  className,
-  titleClassName,
-  containerClassName,
 }: WhiteLabelProcessSectionProps) {
+  const isMobileApp =
+    (typeof title === "string" && title.toLowerCase().includes("mobile app")) ||
+    (typeof eyebrow === "string" && eyebrow.toLowerCase().includes("mobile app"));
+  const containerClass = isMobileApp
+    ? "min-[1400px]:max-w-[1408px] px-[15px]"
+    : undefined;
+
   return (
-    <section
-      className={cn(
-        "white_label_how_partnership_works_section py-20 max-[992px]:py-[50px]",
-        className,
-      )}
-    >
-      <Container className={cn("max-[575px]:px-4", containerClassName)}>
+    <section className="white_label_how_partnership_works_section py-20 max-[992px]:py-[50px]">
+      <Container className={cn("max-[575px]:px-4", containerClass)}>
         {eyebrow || description ? (
           <div
             data-aos="fade-up"
@@ -52,12 +48,7 @@ export function WhiteLabelProcessSection({
                   </span>
                 </div>
               )}
-              <h2
-                className={cn(
-                  "m-0 font-montreal-medium text-[35px] font-normal leading-[49px] text-[#282828] max-[1199px]:[&_br]:hidden max-[991px]:mb-2.5 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]",
-                  titleClassName,
-                )}
-              >
+              <h2 className="m-0 font-montreal-medium text-[35px] font-normal leading-[49px] text-[#282828] max-[1199px]:[&_br]:hidden max-[991px]:mb-2.5 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
                 {formatBrText(title, "max-[1199px]:hidden")}
               </h2>
             </div>
@@ -72,10 +63,7 @@ export function WhiteLabelProcessSection({
         ) : (
           <h2
             data-aos="fade-up"
-            className={cn(
-              "mb-[60px] text-center font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1199px]:mb-[50px] max-[992px]:mb-[30px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-5 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
-              titleClassName,
-            )}
+            className="mb-[60px] text-center font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1199px]:mb-[50px] max-[992px]:mb-[30px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-5 max-[767px]:text-2xl max-[767px]:leading-[33.24px]"
           >
             {formatBrText(title)}
           </h2>

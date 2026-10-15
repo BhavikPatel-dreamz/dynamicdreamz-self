@@ -76,7 +76,7 @@ export type ServiceHeroSectionProps = {
 
 export function ServiceHeroSection({
   content = shopifyPlusAgencyHero,
-  className = "inner-hero-sec relative overflow-hidden bg-white pt-[158px] pb-[55px] max-[992px]:pt-[100px]",
+  className,
   variant = "split",
   showReviews = true,
   headingClassName,
@@ -89,11 +89,35 @@ export function ServiceHeroSection({
 }: ServiceHeroSectionProps) {
   const ctaHref = content.ctaHref ?? siteConfig.quotePath;
 
+  const isRisks = Boolean(
+    typeof content.title === "string" &&
+      content.title.toLowerCase().includes("risks"),
+  );
+  const isCoBranding = Boolean(content.coBranding);
+  const isShopifyPlus = Boolean(
+    content.videoLogo ||
+      (typeof content.title === "string" &&
+        content.title.toLowerCase().includes("shopify plus")),
+  );
+
   if (variant === "centered") {
     const maxWidth = content.maxWidthClassName ?? "max-w-[770px]";
+    const sectionClass =
+      className ??
+      (isRisks
+        ? "inner-hero-sec relative overflow-hidden bg-white pt-[190px] pb-[130px] max-[1199px]:pt-[140px] max-[1199px]:pb-[60px] max-[767px]:pt-[120px]"
+        : isCoBranding
+        ? "inner-hero-sec full-width-sec relative overflow-hidden bg-white pt-[210px] pb-[55px] max-[992px]:pt-[100px]"
+        : "inner-hero-sec full-width-sec shopify-theme-customization-sec relative overflow-hidden bg-white pt-[210px] pb-[55px] max-[992px]:pt-[100px]");
+    const headingClass =
+      headingClassName ??
+      (isRisks ? "!font-montreal-medium !font-medium !tracking-[0]" : undefined);
+    const bodyClass =
+      bodyClassName ??
+      (isRisks ? "!mt-2 !mb-0 !text-base !font-normal !leading-[30.4px]" : undefined);
 
     return (
-      <section className={className}>
+      <section className={sectionClass}>
         <Container>
           <div className="inner-wrapper flex flex-col">
             <div className="left-col w-full">
@@ -125,7 +149,7 @@ export function ServiceHeroSection({
                 )}
                 <h1 className={cn(
                   "inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[379px]:text-[28px] max-[379px]:leading-[38px]",
-                  headingClassName,
+                  headingClass,
                 )}>
                   {formatBrText(content.title, "max-[1199px]:hidden")}
                 </h1>
@@ -139,7 +163,7 @@ export function ServiceHeroSection({
                     <p
                       className={cn(
                         "mt-4 mb-4 font-sans text-base font-normal leading-[30.4px] text-muted first:mt-6 last:mb-6",
-                        bodyClassName,
+                        bodyClass,
                       )}
                       key={idx}
                     >
@@ -151,7 +175,7 @@ export function ServiceHeroSection({
                     <p
                       className={cn(
                         "mt-6 mb-6 font-sans text-base font-normal leading-[30.4px] text-muted max-[992px]:my-4",
-                        bodyClassName,
+                        bodyClass,
                       )}
                     >
                       {formatBrText(content.description)}
@@ -222,16 +246,32 @@ export function ServiceHeroSection({
     );
   }
 
-  const defaultLeftCol = content.image
+  const defaultLeftCol = isShopifyPlus
+    ? "left-col w-[51%] max-[1199px]:w-full max-[1199px]:text-center"
+    : content.image
     ? "left-col w-[58%] max-[1199px]:w-full max-[1199px]:text-center"
     : "left-col w-[55.7%] max-[1199px]:w-full max-[1199px]:text-center";
 
-  const defaultRightCol = content.image
+  const defaultRightCol = isShopifyPlus
+    ? "right-col w-[43.182%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[992px]:w-full"
+    : content.image
     ? "right-col w-[40%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[992px]:w-full"
     : "right-col w-[41%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[992px]:w-full";
 
+  const splitSectionClass =
+    className ??
+    (isShopifyPlus
+      ? "inner-hero-sec shopify-plus-experts relative overflow-hidden bg-[#f7f4e9] pt-[140px] pb-[85px] max-[992px]:pt-[100px] max-[992px]:pb-[36px] max-[767px]:pt-[102px] max-[767px]:pb-[40px]"
+      : "inner-hero-sec relative overflow-hidden bg-white pt-[158px] pb-[55px] max-[992px]:pt-[100px]");
+
+  const splitBodyClass =
+    bodyClassName ??
+    (isShopifyPlus
+      ? "!text-[16px] !leading-[28px] max-[1199px]:!leading-6 max-[767px]:!text-[16px] max-[767px]:!leading-6"
+      : undefined);
+
   return (
-    <section className={className}>
+    <section className={splitSectionClass}>
       <Container>
         <div className="inner-wrapper flex flex-wrap items-center justify-between">
           <div className={leftColClassName ?? defaultLeftCol}>
@@ -264,7 +304,7 @@ export function ServiceHeroSection({
                   <p
                     className={cn(
                       "mt-4 mb-4 text-sm font-normal leading-6 text-muted first:mt-6 last:mb-6 max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
-                      bodyClassName,
+                      splitBodyClass,
                     )}
                     key={idx}
                     >
@@ -276,7 +316,7 @@ export function ServiceHeroSection({
                   <p
                     className={cn(
                       "mt-3 mb-3.75 text-sm font-normal leading-6 text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
-                      bodyClassName,
+                      splitBodyClass,
                     )}
                   >
                     {formatBrText(content.description)}
@@ -285,7 +325,7 @@ export function ServiceHeroSection({
                     <p
                       className={cn(
                         "mt-3 mb-3.75 text-sm font-normal leading-[24px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
-                        bodyClassName,
+                        splitBodyClass,
                       )}
                     >
                       {formatBrText(content.secondaryDescription)}

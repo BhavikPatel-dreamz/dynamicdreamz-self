@@ -41,14 +41,12 @@ export function WordPressDevelopmentInPunePage() {
         eyebrowVariant="dash"
       />
       <CityWhyChooseBoxesSection
-        bgClassName="bg-white"
-        className="city-page-why-choose-dynamic !pb-0"
         columns={3}
         content={wordpressDevelopmentPuneContent.whyDynamicDreamz}
         eyebrowVariant="dash"
+        theme="white"
       />
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
         content={portfolioContent}
         columns={4}
         headerLayout="split"
@@ -58,7 +56,6 @@ export function WordPressDevelopmentInPunePage() {
         ctaLabel={wordpressDevelopmentPuneContent.sectionCopy.portfolioCta}
       />
       <HappyClientSection
-        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]"
         description={wordpressDevelopmentPuneContent.testimonials.description}
         heading={wordpressDevelopmentPuneContent.testimonials.heading}
         eyebrow={wordpressDevelopmentPuneContent.testimonials.eyebrow}
@@ -66,11 +63,9 @@ export function WordPressDevelopmentInPunePage() {
         items={wordpressDevelopmentPuneContent.testimonials.items}
       />
       <SplitFaqSection
-        className="faq-sec"
         heading={wordpressDevelopmentPuneContent.sectionCopy.faqHeading}
         idPrefix="pune-wp-faq"
         items={wordpressDevelopmentPuneContent.faqs}
-        answerClassName="!text-sm !leading-6 font-medium text-[#535353]"
       />
       <CtaBannerSection
         ctaHref={wordpressDevelopmentPuneContent.ctaBanner.ctaHref}

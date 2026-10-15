@@ -74,7 +74,6 @@ export function ShopifyMigrationPage() {
 
       {/* 8. Portfolio of Shopify Migration */}
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
         columns={4}
         content={shopifyMigrationPortfolio}
         sectionId="our_work"
@@ -83,7 +82,6 @@ export function ShopifyMigrationPage() {
 
       {/* 9. Client Stories / Testimonials */}
       <HappyClientSection
-        className="pt-0 max-[992px]:pt-0"
         description={shopifyMigrationTestimonials.description}
         eyebrow={shopifyMigrationTestimonials.eyebrow}
         heading={shopifyMigrationTestimonials.heading}
@@ -100,8 +98,6 @@ export function ShopifyMigrationPage() {
 
       {/* 11. FAQs */}
       <SplitFaqSection
-        answerClassName="!text-base !font-medium !leading-7 !text-[#535353] max-[1199px]:!text-sm max-[1199px]:!leading-6"
-        className="faq-sec"
         description={shopifyMigrationFaqsContent.description}
         eyebrow={shopifyMigrationFaqsContent.eyebrow}
         heading={shopifyMigrationFaqsContent.heading}

@@ -31,7 +31,6 @@ export function ShopifyExpertsPage() {
       />
       <AiEmpoweredDeliverySection content={shopifyExpertsContent.aiTools} />
       <PortfolioShowcaseSection
-        className="our-work-sec pt-0 pb-20 max-[992px]:pb-[60px]"
         content={shopifyExpertsContent.work}
         sectionId="our_work"
       />

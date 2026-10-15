@@ -27,7 +27,6 @@ export function FullStackDevelopmentPage() {
   return (
     <>
       <CityPageHeroSection
-        className="hide-logo"
         content={fullStackDevelopmentHeroContent}
       />
       <IndustryBrandsSection

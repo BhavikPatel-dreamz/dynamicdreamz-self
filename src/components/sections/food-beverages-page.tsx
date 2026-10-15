@@ -65,7 +65,6 @@ export function FoodBeveragesPage() {
       />
       <WhyChooseShopifyMigrationSection content={foodBeveragesWhyChoose} />
       <HappyClientSection
-        className="pt-20 max-[992px]:pt-12.5"
         description={foodBeveragesTestimonials.description}
         eyebrow={foodBeveragesTestimonials.eyebrow}
         heading={foodBeveragesTestimonials.heading}

@@ -65,7 +65,6 @@ export function JewelleryAccessoriesPage() {
       />
       <WhyChooseShopifyMigrationSection content={jewelleryAccessoriesWhyChoose} />
       <HappyClientSection
-        className="pt-20 max-[992px]:pt-12.5"
         description={jewelleryAccessoriesTestimonials.description}
         eyebrow={jewelleryAccessoriesTestimonials.eyebrow}
         heading={jewelleryAccessoriesTestimonials.heading}

@@ -41,14 +41,12 @@ export function WordPressDevelopmentInMumbaiPage() {
         eyebrowVariant="dash"
       />
       <CityWhyChooseBoxesSection
-        bgClassName="bg-white"
-        className="city-page-why-choose-dynamic !pb-0"
         columns={3}
         content={wordpressDevelopmentMumbaiContent.whyDynamicDreamz}
         eyebrowVariant="dash"
+        theme="white"
       />
       <PortfolioShowcaseSection
-        className="our-work-sec py-20 max-[992px]:py-[50px]"
         content={portfolioContent}
         columns={4}
         headerLayout="split"
@@ -57,7 +55,6 @@ export function WordPressDevelopmentInMumbaiPage() {
         hideCta={false}
       />
       <HappyClientSection
-        className="happy-client-sec pt-0 pb-20 overflow-hidden max-[992px]:pb-[50px]"
         description={wordpressDevelopmentMumbaiContent.testimonials.description}
         heading={wordpressDevelopmentMumbaiContent.testimonials.heading}
         eyebrow={wordpressDevelopmentMumbaiContent.testimonials.eyebrow}
@@ -65,11 +62,9 @@ export function WordPressDevelopmentInMumbaiPage() {
         items={wordpressDevelopmentMumbaiContent.testimonials.items}
       />
       <SplitFaqSection
-        className="faq-sec"
         heading={wordpressDevelopmentMumbaiContent.sectionCopy.faqHeading}
         idPrefix="mumbai-wp-faq"
         items={wordpressDevelopmentMumbaiContent.faqs}
-        answerClassName="!text-sm !leading-6 font-medium text-[#535353]"
       />
       <CtaBannerSection
         ctaHref={wordpressDevelopmentMumbaiContent.ctaBanner.ctaHref}

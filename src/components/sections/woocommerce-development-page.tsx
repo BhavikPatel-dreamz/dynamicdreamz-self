@@ -28,7 +28,6 @@ export function WooCommerceDevelopmentPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <CityPageHeroSection
-        className="hide-logo"
         content={woocommerceDevelopmentHero}
       />
       <IndustryBrandsSection
@@ -38,18 +37,14 @@ export function WooCommerceDevelopmentPage() {
       />
       <AgencyServicesSection
         cardVariant="services-box"
-        className="what-we-provide-sec pb-0 pt-20 max-[992px]:pt-[50px] max-[992px]:pb-0"
         columns={2}
         content={servicesContent}
         headerLayout="split"
-        headerTextColumnClassName="w-[48.3%] max-[992px]:w-full"
-        headerTitleColumnClassName="w-[44%] max-[992px]:w-full"
         hideCta
         id="services"
       />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="our-work-sec py-20 max-[992px]:py-[60px]"
         columns={4}
         content={woocommerceDevelopmentPortfolio}
         eyebrow={woocommerceDevelopmentPortfolio.eyebrow}
@@ -65,7 +60,6 @@ export function WooCommerceDevelopmentPage() {
         items={woocommerceDevelopmentTestimonials.items}
       />
       <SplitFaqSection
-        className="faq-sec"
         idPrefix="woocommerce-dev-faq"
         items={woocommerceDevelopmentFaqs}
       />

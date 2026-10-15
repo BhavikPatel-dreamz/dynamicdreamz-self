@@ -26,7 +26,6 @@ export function WhiteLabelWordPressPage() {
   return (
     <div className="font-sans leading-[30.4px]">
       <CityPageHeroSection
-        className="hide-logo"
         content={whiteLabelWordPressHero}
       />
       <WhiteLabelStatsSection
@@ -43,12 +42,7 @@ export function WhiteLabelWordPressPage() {
         services={whiteLabelWordPressServices}
         title={whiteLabelWordPressSectionCopy.servicesTitle}
       />
-      <PricingTableSection
-        className="white_label_wp_develop_plan_section shopify-plus-engagement mb-0 bg-[#edf2ee] py-20 max-[992px]:py-[50px]"
-        content={whiteLabelWordPressPricing}
-        textColumnClassName="w-[50.2%] max-[992px]:w-full"
-        titleColumnClassName="w-[43.5%] max-[992px]:w-full"
-      />
+      <PricingTableSection content={whiteLabelWordPressPricing} />
       <WhiteLabelToolsSection
         ariaLabel="WordPress technologies and tools"
         description={whiteLabelWordPressSectionCopy.toolsDescription}
@@ -61,7 +55,6 @@ export function WhiteLabelWordPressPage() {
         title={whiteLabelWordPressSectionCopy.processTitle}
       />
       <SplitFaqSection
-        className="bg-sky-blue"
         heading={whiteLabelWordPressSectionCopy.faqHeading}
         headingClassName="!font-display !text-[35px] !font-medium !leading-[48.475px] !tracking-[-0.7px] text-ink max-[992px]:!text-[30px] max-[992px]:!leading-10 max-[767px]:!text-2xl max-[767px]:!leading-[33.24px] max-[767px]:!tracking-[-0.48px]"
         idPrefix="white-label-wordpress-faq"

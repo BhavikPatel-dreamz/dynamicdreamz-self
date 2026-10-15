@@ -17,7 +17,6 @@ export type OurDevelopmentProcessContent = {
 
 export type OurDevelopmentProcessSectionProps = {
   content: OurDevelopmentProcessContent;
-  className?: string;
   id?: string;
   eyebrowVariant?: "pill" | "dash";
   columns?: 3 | 4;
@@ -25,17 +24,19 @@ export type OurDevelopmentProcessSectionProps = {
 
 export function OurDevelopmentProcessSection({
   content,
-  className,
   id,
   columns,
 }: OurDevelopmentProcessSectionProps) {
   const is3Col = columns === 3 || content.steps.length === 6;
+  const isHireProcess = content.heading?.toLowerCase().includes("hiring");
+  const bg = isHireProcess ? "bg-transparent" : "bg-[#fafaf7]";
+
   return (
     <section
       id={id}
       className={cn(
-        "our-development-process bg-[#fafaf7] py-20 max-[992px]:py-[50px]",
-        className,
+        "our-development-process py-20 max-[992px]:py-[50px]",
+        bg,
       )}
     >
       <Container>

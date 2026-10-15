@@ -1,6 +1,5 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
-import { cn } from "@/lib/class-names";
 
 export type ImageCtaSectionProps = {
   heading: string;
@@ -8,7 +7,6 @@ export type ImageCtaSectionProps = {
   ctaLabel: string;
   ctaHref: string;
   backgroundImage: string;
-  className?: string;
 };
 
 export function ImageCtaSection({
@@ -17,10 +15,9 @@ export function ImageCtaSection({
   ctaLabel,
   ctaHref,
   backgroundImage,
-  className,
 }: ImageCtaSectionProps) {
   return (
-    <section className={cn("pb-20", className)}>
+    <section className="thinking-migration-box pb-20">
       <Container>
         <div
           data-aos="fade-up"
