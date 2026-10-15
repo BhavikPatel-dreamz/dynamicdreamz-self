@@ -93,7 +93,7 @@ export function PrivacyPolicyPage({ content }: PrivacyPolicyPageProps = {}) {
           })}
 
           <div className="text-base leading-[30.4px] font-medium text-muted">
-            <h3 className="mb-2.5 font-sans text-lg leading-[28.8px] font-bold tracking-[-0.36px] text-ink max-[767px]:text-base max-[767px]:leading-[26px]">
+            <h3 className="mb-2.5 font-display text-lg leading-[28.8px] font-medium tracking-[-0.36px] text-ink max-[767px]:text-base max-[767px]:leading-[26px]">
               {contact.name}
             </h3>
             <address className="not-italic">

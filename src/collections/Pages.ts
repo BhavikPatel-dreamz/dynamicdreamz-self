@@ -114,6 +114,7 @@ import { ThemeWhyChooseBlock } from "@/blocks/ThemeWhyChooseBlock";
 import { LetsBuildBlock } from "@/blocks/LetsBuildBlock";
 import { TechnologiesWorkWithBlock } from "@/blocks/TechnologiesWorkWithBlock";
 import { ServicesCaseStudiesBlock } from "@/blocks/ServicesCaseStudiesBlock";
+import { MigrationProcessBlock } from "@/blocks/MigrationProcessBlock";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const Pages: CollectionConfig = {
@@ -281,6 +282,7 @@ export const Pages: CollectionConfig = {
         LetsBuildBlock,
         TechnologiesWorkWithBlock,
         ServicesCaseStudiesBlock,
+        MigrationProcessBlock,
       ],
     },
     {

@@ -50,7 +50,7 @@ export function ThemeHeroSection({
   secondaryDescriptionClassName = "mt-4 mb-6 text-lg font-medium leading-[34.2px] text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]",
   textClassName = "hero-content",
   textColumnClassName = "left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1399px]:w-1/2 max-[1199px]:w-full max-[1199px]:pb-8 max-[1199px]:text-center max-[991px]:py-10",
-  titleClassName = "mb-2.5 inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-0.7px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[359px]:text-[34px] max-[359px]:leading-[44px]",
+  titleClassName = "mb-2.5 inline-block font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]",
   wrapperClassName,
 }: ThemeHeroSectionProps) {
   return (

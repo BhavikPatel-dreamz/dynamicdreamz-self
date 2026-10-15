@@ -58,7 +58,7 @@ export function FeaturesGridSection({
               <Eyebrow>{eyebrow}</Eyebrow>
             </div>
           ) : null}
-          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(heading, "max-[1199px]:hidden")}
           </h2>
           {description ? (
@@ -84,7 +84,7 @@ export function FeaturesGridSection({
                       />
                     </div>
                   ) : null}
-                  <h3 className="relative z-10 mt-2 mb-2.5 font-sans text-[20px] font-bold leading-[28px] text-ink max-[767px]:text-lg">
+                  <h3 className="relative z-10 mt-2 mb-2.5 font-display text-[20px] font-medium leading-[28px] text-ink max-[767px]:text-lg">
                     {formatBrText(item.title, "max-[767px]:hidden")}
                   </h3>
                   <p className="relative z-10 font-sans text-base font-medium leading-[27.2px] tracking-[0.32px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">

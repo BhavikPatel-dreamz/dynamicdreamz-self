@@ -81,7 +81,7 @@ export function ShopifyCroProcessSection({
                       className="absolute top-1/2 -left-[26px] hidden size-2.5 -translate-y-1/2 rounded-full bg-[#AD5151] max-[767px]:block"
                     />
                   </div>
-                  <h3 className="mb-2.5 font-sans text-lg font-bold leading-[1.28] text-ink max-[767px]:text-base">
+                  <h3 className="mb-2.5 font-display text-lg font-medium leading-[1.28] text-ink max-[767px]:text-base">
                     {step.title}
                   </h3>
                   <p className="m-0 font-sans text-sm font-medium leading-[190%] text-muted">

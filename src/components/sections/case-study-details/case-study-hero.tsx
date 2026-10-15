@@ -38,7 +38,7 @@ export function CaseStudyHero({ caseStudy }: CaseStudyHeroProps) {
             )}
             <h1
               id="case-study-title"
-              className="mb-[22px] font-montserrat text-[38px] font-bold leading-[48px] tracking-[-0.76px] text-[#282828] max-[1199px]:text-[30px] max-[1199px]:leading-tight max-[767px]:mb-4 max-[767px]:text-[24px] max-[767px]:leading-[1.3]"
+              className="mb-[22px] font-display text-[38px] font-medium leading-[48px] tracking-[-0.76px] text-[#282828] max-[1199px]:text-[30px] max-[1199px]:leading-tight max-[767px]:mb-4 max-[767px]:text-[24px] max-[767px]:leading-[1.3]"
             >
               {caseStudy.title}
             </h1>

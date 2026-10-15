@@ -25,7 +25,7 @@ export function CaseStudyKeyMetrics({ keyMetrics }: CaseStudyKeyMetricsProps) {
                 key={`${item.stat}-${index}`}
                 className="flex-1 border-l border-[#424842] p-[25px] max-[992px]:flex-[1_1_calc(50%-10px)] max-[992px]:first:border-l-0 max-[767px]:w-full max-[767px]:flex-auto max-[767px]:border-l-0 max-[767px]:border-t max-[767px]:border-[#424842] max-[767px]:first:border-t-0 max-[767px]:p-4"
               >
-                <h3 className="mb-1.5 font-montserrat text-[24px] font-bold leading-[1.2] text-white max-[767px]:text-[20px]">
+                <h3 className="mb-1.5 font-display text-[24px] font-medium leading-[1.2] text-white max-[767px]:text-[20px]">
                   {item.stat}
                 </h3>
                 <span className="block font-sans text-[13px] leading-[1.2] text-[#c9c6c0]">

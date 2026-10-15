@@ -66,7 +66,7 @@ export function SplitFaqSection({
   return (
     <section
       aria-labelledby={titleId}
-      className={cn("bg-[#fafaf7] py-[60px] max-[767px]:pt-10 max-[767px]:pb-5", className)}
+      className={cn("bg-[#fafaf7] py-[60px] max-[991px]:py-10 max-[767px]:pb-5", className)}
       data-section="faq"
       id={sectionId ?? `${idPrefix}-section`}
     >
@@ -110,7 +110,7 @@ export function SplitFaqSection({
                     items={items}
                     panelContentClassName={cn("!px-0 !pt-5 !pb-0", panelContentClassName)}
                     questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.2] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
-                    triggerClassName={cn("!pl-0 !pr-[49px] !py-0", triggerClassName)}
+                    triggerClassName={cn("!pl-0 !pr-[37px] !py-0", triggerClassName)}
                   />
                 }
                 iconClassName="right-0 size-[30px] max-[991px]:top-1/2 max-[991px]:right-0 max-[991px]:size-[26px] max-[991px]:-translate-y-1/2"
@@ -120,7 +120,7 @@ export function SplitFaqSection({
                 items={items}
                 panelContentClassName={cn("!px-0 !pt-5 !pb-0", panelContentClassName)}
                 questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.2] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
-                triggerClassName={cn("!pl-0 !pr-[49px] !py-0", triggerClassName)}
+                triggerClassName={cn("!pl-0 !pr-[37px] !py-0", triggerClassName)}
                 rootMargin={lazyRootMargin}
               />
             ) : (
@@ -134,7 +134,7 @@ export function SplitFaqSection({
                 items={items}
                 panelContentClassName={cn("!px-0 !pt-5 !pb-0", panelContentClassName)}
                 questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[1.2] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
-                triggerClassName={cn("!pl-0 !pr-[49px] !py-0", triggerClassName)}
+                triggerClassName={cn("!pl-0 !pr-[37px] !py-0", triggerClassName)}
               />
             )}
           </div>

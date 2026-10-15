@@ -743,10 +743,21 @@ export interface Page {
             eyebrow?: string | null;
             heading: string;
             description?: string | null;
+            idPrefix?: string | null;
+            sectionId?: string | null;
             faqs?:
               | {
                   question: string;
                   answer: string;
+                  secondaryAnswer?: string | null;
+                  listPosition?: ('before' | 'after') | null;
+                  listItems?:
+                    | {
+                        label?: string | null;
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
                   id?: string | null;
                 }[]
               | null;
@@ -759,6 +770,22 @@ export interface Page {
             heading: string;
             description?: string | null;
             testimonials?: (number | Testimonial)[] | null;
+            /**
+             * Use for page-specific testimonial-card variants. The existing React card still owns all presentation.
+             */
+            items?:
+              | {
+                  name: string;
+                  company: string;
+                  quote: string;
+                  videoId: string;
+                  image: number | Media;
+                  logo?: (number | null) | Media;
+                  logoWidth?: number | null;
+                  logoHeight?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'happy-clients';
@@ -1413,6 +1440,11 @@ export interface Page {
             };
             video?: string | null;
             videoPoster?: (number | null) | Media;
+            image?: (number | null) | Media;
+            imageAlt?: string | null;
+            imageWidth?: number | null;
+            imageHeight?: number | null;
+            imageClassName?: string | null;
             reviewCount?: string | null;
             rating?: string | null;
             platform?: string | null;
@@ -1421,7 +1453,6 @@ export interface Page {
               | {
                   name: string;
                   logo?: (number | null) | Media;
-                  src?: string | null;
                   href?: string | null;
                   alt?: string | null;
                   width?: number | null;
@@ -1438,12 +1469,12 @@ export interface Page {
         | {
             heading: string;
             eyebrow?: string | null;
+            slug?: string | null;
             density?: ('standard' | 'compact' | 'flexible') | null;
             items?:
               | {
                   name: string;
                   logo?: (number | null) | Media;
-                  src?: string | null;
                   alt?: string | null;
                   url?: string | null;
                   width?: number | null;
@@ -1560,6 +1591,7 @@ export interface Page {
             heading: string;
             description?: string | null;
             sectionId?: string | null;
+            className?: string | null;
             items?:
               | {
                   title: string;
@@ -1848,6 +1880,8 @@ export interface Page {
             description?: string | null;
             bottomNote?: string | null;
             variant?: ('green' | 'yellow' | 'transparent') | null;
+            sectionId?: string | null;
+            className?: string | null;
             boxes?:
               | {
                   number?: string | null;
@@ -2299,13 +2333,14 @@ export interface Page {
             heading: string;
             description: string;
             columns?: number | null;
+            bgClassName?: string | null;
+            sectionId?: string | null;
             boxes?:
               | {
                   title: string;
                   description: string;
                   iconName?: string | null;
                   icon?: (number | null) | Media;
-                  iconSrc?: string | null;
                   iconAlt?: string | null;
                   id?: string | null;
                 }[]
@@ -2509,6 +2544,49 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'image-cta';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            variant?: ('default' | 'cards') | null;
+            sectionId?: string | null;
+            steps?:
+              | {
+                  stepNumber: string;
+                  title: string;
+                  description: string;
+                  subBoxes?:
+                    | {
+                        title?: string | null;
+                        description?: string | null;
+                        items?:
+                          | {
+                              text: string;
+                              id?: string | null;
+                            }[]
+                          | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  categories?:
+                    | {
+                        title: string;
+                        items?:
+                          | {
+                              text: string;
+                              id?: string | null;
+                            }[]
+                          | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'migration-process';
           }
       )[]
     | null;
@@ -3266,11 +3344,22 @@ export interface PagesSelect<T extends boolean = true> {
               eyebrow?: T;
               heading?: T;
               description?: T;
+              idPrefix?: T;
+              sectionId?: T;
               faqs?:
                 | T
                 | {
                     question?: T;
                     answer?: T;
+                    secondaryAnswer?: T;
+                    listPosition?: T;
+                    listItems?:
+                      | T
+                      | {
+                          label?: T;
+                          text?: T;
+                          id?: T;
+                        };
                     id?: T;
                   };
               id?: T;
@@ -3283,6 +3372,19 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               testimonials?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    company?: T;
+                    quote?: T;
+                    videoId?: T;
+                    image?: T;
+                    logo?: T;
+                    logoWidth?: T;
+                    logoHeight?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };
@@ -3972,6 +4074,11 @@ export interface PagesSelect<T extends boolean = true> {
                   };
               video?: T;
               videoPoster?: T;
+              image?: T;
+              imageAlt?: T;
+              imageWidth?: T;
+              imageHeight?: T;
+              imageClassName?: T;
               reviewCount?: T;
               rating?: T;
               platform?: T;
@@ -3981,7 +4088,6 @@ export interface PagesSelect<T extends boolean = true> {
                 | {
                     name?: T;
                     logo?: T;
-                    src?: T;
                     href?: T;
                     alt?: T;
                     width?: T;
@@ -3998,13 +4104,13 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               heading?: T;
               eyebrow?: T;
+              slug?: T;
               density?: T;
               items?:
                 | T
                 | {
                     name?: T;
                     logo?: T;
-                    src?: T;
                     alt?: T;
                     url?: T;
                     width?: T;
@@ -4127,6 +4233,7 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               sectionId?: T;
+              className?: T;
               items?:
                 | T
                 | {
@@ -4437,6 +4544,8 @@ export interface PagesSelect<T extends boolean = true> {
               description?: T;
               bottomNote?: T;
               variant?: T;
+              sectionId?: T;
+              className?: T;
               boxes?:
                 | T
                 | {
@@ -4911,6 +5020,8 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               columns?: T;
+              bgClassName?: T;
+              sectionId?: T;
               boxes?:
                 | T
                 | {
@@ -4918,7 +5029,6 @@ export interface PagesSelect<T extends boolean = true> {
                     description?: T;
                     iconName?: T;
                     icon?: T;
-                    iconSrc?: T;
                     iconAlt?: T;
                     id?: T;
                   };
@@ -5129,6 +5239,50 @@ export interface PagesSelect<T extends boolean = true> {
               ctaHref?: T;
               backgroundImage?: T;
               backgroundImageSrc?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'migration-process'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              variant?: T;
+              sectionId?: T;
+              steps?:
+                | T
+                | {
+                    stepNumber?: T;
+                    title?: T;
+                    description?: T;
+                    subBoxes?:
+                      | T
+                      | {
+                          title?: T;
+                          description?: T;
+                          items?:
+                            | T
+                            | {
+                                text?: T;
+                                id?: T;
+                              };
+                          id?: T;
+                        };
+                    categories?:
+                      | T
+                      | {
+                          title?: T;
+                          items?:
+                            | T
+                            | {
+                                text?: T;
+                                id?: T;
+                              };
+                          id?: T;
+                        };
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };

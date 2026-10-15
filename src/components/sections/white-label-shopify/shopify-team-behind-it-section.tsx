@@ -57,7 +57,7 @@ export function ShopifyTeamBehindItSection({
           <div className="flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col">
             <h2
               className={cn(
-                "w-full font-sans text-[35px] font-bold leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl",
+                "w-full font-display text-[35px] font-medium leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl",
                 content.description ? "max-w-[580px]" : "max-w-none",
               )}
             >
@@ -81,7 +81,7 @@ export function ShopifyTeamBehindItSection({
               key={card.title}
             >
               <div>
-                <h3 className="mb-2.5 font-sans text-[22px] font-medium leading-[1.32] text-[#282828] max-[1399px]:text-lg max-[991px]:text-base">
+                <h3 className="mb-2.5 font-display text-[22px] font-medium leading-[1.32] text-[#282828] max-[1399px]:text-lg max-[991px]:text-base">
                   {card.title}
                 </h3>
                 <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[991px]:text-sm max-[991px]:leading-6">

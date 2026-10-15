@@ -7,7 +7,7 @@ import { lifeFaqSection } from "@/content/life-dynamicdreamz";
 
 export function LifeDynamicDreamzPage() {
   return (
-    <div className="font-sans [&_h1]:font-sans [&_h2]:font-sans [&_h3]:font-sans">
+    <div>
       <LifeHeroSection />
       <WorkCultureSection />
       <LifeHiringSection />

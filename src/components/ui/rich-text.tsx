@@ -9,8 +9,8 @@ type RichTextProps = {
 const sharedClasses =
   "text-[16px] font-medium leading-[30.4px] text-[#535353] " +
   "[&_p:not(:last-child)]:mb-6 [&_a]:underline [&_a]:decoration-1 [&_a]:underline-offset-2 [&_a:hover]:text-brand-red " +
-  "[&_strong]:font-bold [&_strong]:text-[#3f3f3f] [&_h3]:mb-3 [&_h3]:text-[20px] [&_h3]:font-bold [&_h3]:text-[#282828] " +
-  "[&_h4]:mb-3 [&_h4]:text-[18px] [&_h4]:font-bold [&_h4]:text-[#282828] [&_table]:w-full [&_table]:border-collapse " +
+  "[&_strong]:font-bold [&_strong]:text-[#3f3f3f] [&_h3]:mb-3 [&_h3]:text-[20px] [&_h3]:font-medium [&_h3]:text-[#282828] " +
+  "[&_h4]:mb-3 [&_h4]:text-[18px] [&_h4]:font-medium [&_h4]:text-[#282828] [&_table]:w-full [&_table]:border-collapse " +
   "[&_th]:border [&_th]:border-[#dfdfdf] [&_th]:bg-[#f7f7f7] [&_th]:p-3 [&_th]:text-left [&_th]:font-bold " +
   "[&_td]:border [&_td]:border-[#dfdfdf] [&_td]:p-3 max-[767px]:text-[15px] max-[767px]:leading-[28px]";
 

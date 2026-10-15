@@ -81,7 +81,7 @@ export function ShopifyThemesGridSection({
                     />
                   </div>
                   <div className="text flex items-center justify-between">
-                    <h3 className="mb-0 font-sans text-[20px] font-bold text-ink">
+                    <h3 className="mb-0 font-display text-[20px] font-medium text-ink">
                       {title}
                     </h3>
                     <span className="learn_more flex items-center text-xs font-medium uppercase leading-none text-brand-red transition-colors group-hover:text-ink">
@@ -116,7 +116,7 @@ export function ShopifyThemesGridSection({
     >
       <Container>
         <div className="mx-auto max-w-[820px] text-center" data-aos="fade-up">
-          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {content.title}
           </h2>
           <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
@@ -147,7 +147,7 @@ export function ShopifyThemesGridSection({
                   />
                 </div>
                 <div className="text">
-                  <h3 className="mb-2.5 font-sans text-[18px] font-bold leading-[30.6px] tracking-[0.36px] text-ink">
+                  <h3 className="mb-2.5 font-display text-[18px] font-medium leading-[30.6px] tracking-[0.36px] text-ink">
                     {title}
                   </h3>
                   <span className="inline-flex items-center font-sans text-sm font-bold uppercase tracking-[0.5px] text-[#D92128] underline">

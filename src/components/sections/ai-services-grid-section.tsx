@@ -72,7 +72,7 @@ export function AiServicesGridSection({
                 {item.useCases ? (
                   <div className="tech mt-5 border-t border-[rgba(40,40,40,0.11)] pt-5 max-[767px]:mt-[15px] max-[767px]:pt-[15px]">
                     {item.useCasesHeading ? (
-                      <h4 className="mb-2 font-montserrat text-xs font-semibold uppercase leading-normal text-ink">
+                      <h4 className="mb-2 font-display text-xs font-semibold uppercase leading-normal text-ink">
                         {item.useCasesHeading}
                       </h4>
                     ) : null}

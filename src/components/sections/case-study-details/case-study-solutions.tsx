@@ -24,7 +24,7 @@ export function CaseStudySolutions({ solutions }: CaseStudySolutionsProps) {
             </div>
             <h2
               id="solutions-heading"
-              className="mb-4 font-montserrat text-[35px] font-bold leading-[1.38] text-white max-[1199px]:text-[28px] max-[767px]:text-2xl"
+              className="mb-4 font-display text-[35px] font-medium leading-[1.38] text-white max-[1199px]:text-[28px] max-[767px]:text-2xl"
             >
               {heading}
             </h2>

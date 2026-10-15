@@ -35,7 +35,7 @@ export function HowAgenciesUseSection({
             <Eyebrow className="mb-3 text-[#ad5151]">{content.eyebrow}</Eyebrow>
           ) : null}
           <div className="flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col">
-            <h2 className="w-full max-w-[580px] font-sans text-[35px] font-bold leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl">
+            <h2 className="w-full max-w-[580px] font-display text-[35px] font-medium leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl">
               {content.heading}
             </h2>
             {content.description ? (
@@ -59,7 +59,7 @@ export function HowAgenciesUseSection({
                 <span className="mb-5 block font-montserrat text-sm font-bold uppercase tracking-wider text-[#AD5151] max-[1399px]:text-xs">
                   {card.tag}
                 </span>
-                <h3 className="mb-2.5 font-sans text-[22px] font-medium leading-[1.35] text-[#282828] max-[1399px]:text-lg max-[991px]:text-base">
+                <h3 className="mb-2.5 font-display text-[22px] font-medium leading-[1.35] text-[#282828] max-[1399px]:text-lg max-[991px]:text-base">
                   {card.heading}
                 </h3>
                 <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[991px]:text-sm max-[991px]:leading-6">

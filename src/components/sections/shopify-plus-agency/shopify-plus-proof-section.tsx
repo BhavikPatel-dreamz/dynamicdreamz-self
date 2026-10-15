@@ -52,7 +52,7 @@ export function ShopifyPlusProofSection({
                     >
                       {String(index + 1).padStart(2, "0")}.
                     </span>
-                    <h3 className="m-0 font-montserrat text-base font-medium leading-6 text-ink max-[1399px]:text-sm max-[1399px]:leading-[22px] max-[767px]:max-w-[171px]">
+                    <h3 className="m-0 font-display text-base font-medium leading-6 text-ink max-[1399px]:text-sm max-[1399px]:leading-[22px] max-[767px]:max-w-[171px]">
                       {stat}
                     </h3>
                   </div>

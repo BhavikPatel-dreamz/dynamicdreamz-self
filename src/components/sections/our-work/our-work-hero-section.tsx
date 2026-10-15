@@ -137,7 +137,7 @@ export function OurWorkHeroSection({
               <Eyebrow align="responsive-center" className="mb-3.75 max-[767px]:mb-5" tone="muted">
                 {heroContent.eyebrow}
               </Eyebrow>
-              <h1 className="max-w-[700px] text-ink max-[991.98px]:max-w-[680px] font-montserrat text-[50px] leading-[66px] font-bold tracking-[-1px] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[768px]:text-[30px] max-[767px]:leading-[40px]">
+              <h1 className="max-w-[700px] text-ink max-[991.98px]:max-w-[680px] font-display text-[50px] leading-[66px] font-medium tracking-[-1px] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[768px]:text-[30px] max-[767px]:leading-[40px]">
                 {heroContent.title}
               </h1>
               <p className="mt-2.5 max-w-[690px] text-base leading-[190%] font-medium text-muted max-[767px]:mt-4 max-[992px]:text-[14px] max-[992px]:leading-[25.2px]">

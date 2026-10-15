@@ -43,7 +43,7 @@ export function CtaBannerSection({
             <h2
               id="cta-banner-title"
               className={cn(
-                "font-montserrat text-[30px] font-bold leading-[43.2px] tracking-[-0.6px] text-white max-[1199px]:text-[26px] max-[1199px]:leading-9 max-[767px]:text-[20px] max-[767px]:leading-7",
+                "font-display text-[30px] font-medium leading-[43.2px] tracking-[-0.6px] text-white max-[1199px]:text-[26px] max-[1199px]:leading-9 max-[767px]:text-[20px] max-[767px]:leading-7",
                 headingClassName,
               )}
             >

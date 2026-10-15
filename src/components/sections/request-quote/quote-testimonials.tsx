@@ -93,9 +93,9 @@ export function QuoteTestimonials({
                         width={48}
                         height={48}
                       />
-                      <span className="font-montserrat text-lg leading-[23px] font-semibold text-[#090909] max-[767px]:text-base">
+                      <h3 className="m-0 font-display text-lg leading-[23px] font-medium text-[#090909] max-[767px]:text-base">
                         {testimonial.name}
-                      </span>
+                      </h3>
                     </div>
                   </div>
                   <div className="testimonial-info">

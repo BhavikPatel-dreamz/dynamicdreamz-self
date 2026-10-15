@@ -37,9 +37,7 @@ export default async function AboutUsPage() {
         </aside>
       ) : null}
       {pageSections.length > 0 ? (
-        <div className="font-sans [&_h1]:font-sans [&_h2]:font-sans [&_h3]:font-sans">
-          <BlockRenderer sections={pageSections} />
-        </div>
+        <BlockRenderer sections={pageSections} />
       ) : (
         <AboutPage />
       )}

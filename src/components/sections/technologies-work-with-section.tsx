@@ -50,7 +50,7 @@ export function TechnologiesWorkWithSection({
               key={col.category}
             >
               <div className="technologies-item h-full rounded-[20px] border border-[rgba(40,40,40,0.10)] bg-white p-[30px_25px] max-[991px]:rounded-[16px] max-[991px]:p-5">
-                <h3 className="mb-[25px] font-sans text-[20px] font-medium leading-[132%] text-[#AD5151] max-[991px]:mb-[15px] max-[991px]:text-[18px]">
+                <h3 className="mb-[25px] font-display text-[20px] font-medium leading-[132%] text-[#AD5151] max-[991px]:mb-[15px] max-[991px]:text-[18px]">
                   {col.category}
                 </h3>
                 <div className="item-list flex flex-wrap gap-2.5">

@@ -32,7 +32,7 @@ export function ShopifyAppFeaturesSection({
     <section className={className} data-section="features" id="features">
       <Container>
         <div data-aos="fade-up" className="heading-text mb-[87px] text-center max-[767px]:mb-[25px]">
-          <h2 className="font-sans text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {content.heading}
           </h2>
         </div>
@@ -56,7 +56,7 @@ export function ShopifyAppFeaturesSection({
                       />
                     </span>
                     <div className="text w-[calc(100%-96px)]">
-                      <h3 className="mb-[10px] font-sans text-[16px] font-bold leading-[26.72px] tracking-[0.32px] text-ink">
+                      <h3 className="mb-[10px] font-display text-[16px] font-medium leading-[26.72px] tracking-[0.32px] text-ink">
                         {item.title}
                       </h3>
                       <p className="font-sans text-[16px] font-medium leading-[27.2px] tracking-[0.32px] text-[#535353]">
@@ -100,7 +100,7 @@ export function ShopifyAppFeaturesSection({
                       />
                     </span>
                     <div className="text w-[calc(100%-96px)]">
-                      <h3 className="mb-[10px] font-sans text-[16px] font-bold leading-[26.72px] tracking-[0.32px] text-ink">
+                      <h3 className="mb-[10px] font-display text-[16px] font-medium leading-[26.72px] tracking-[0.32px] text-ink">
                         {item.title}
                       </h3>
                       <p className="font-sans text-[16px] font-medium leading-[27.2px] tracking-[0.32px] text-[#535353]">

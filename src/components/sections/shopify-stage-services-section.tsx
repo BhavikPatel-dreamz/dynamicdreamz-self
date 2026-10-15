@@ -94,7 +94,7 @@ export function ShopifyStageServicesSection({
                       {item.tag}
                     </span>
                   ) : null}
-                  <h3 className="mb-2.5 font-montserrat text-[20px] font-bold leading-[28px] text-ink max-[1199px]:text-[18px] max-[1199px]:leading-[24px]">
+                  <h3 className="mb-2.5 font-display text-[20px] font-medium leading-[28px] text-ink max-[1199px]:text-[18px] max-[1199px]:leading-[24px]">
                     {item.title}
                   </h3>
                   <div className="description">

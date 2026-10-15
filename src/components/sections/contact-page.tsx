@@ -79,7 +79,7 @@ export function ContactHeroSection({
           </Eyebrow>
           <h1
             id="contact-page-title"
-            className="font-sans text-[50px] leading-[60px] font-bold tracking-[-1px] text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
+            className="font-display text-[50px] leading-[60px] font-medium tracking-[-1px] text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
           >
             {title}
           </h1>
@@ -131,7 +131,7 @@ export function ContactFormSection({
             </Eyebrow>
             <h2
               id="inquiry-title"
-              className="mt-2 mb-2 font-sans text-[32px] leading-[42px] font-bold text-ink max-[991px]:text-[26px] max-[991px]:leading-[34px] max-[767px]:text-[22px] max-[767px]:leading-[30px]"
+              className="mt-2 mb-2 font-display text-[32px] leading-[42px] font-medium text-ink max-[991px]:text-[26px] max-[991px]:leading-[34px] max-[767px]:text-[22px] max-[767px]:leading-[30px]"
             >
               {title}
             </h2>
@@ -191,7 +191,7 @@ export function ContactOfficesSection({
             </Eyebrow>
             <h2
               id="offices-title"
-              className="font-sans text-[35px] leading-[48px] font-bold text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-8"
+              className="font-display text-[35px] leading-[48px] font-medium text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-8"
             >
               {title}
             </h2>
@@ -209,7 +209,7 @@ export function ContactOfficesSection({
               data-aos="fade-up"
               className="rounded-[20px] border-[1.5px] border-[#e4e4e4] bg-white p-8 max-[1199px]:p-5 max-[991px]:rounded-[12px]"
             >
-              <h3 className="font-sans text-2xl leading-normal font-bold text-ink max-[991px]:text-lg">
+              <h3 className="font-display text-2xl leading-normal font-medium text-ink max-[991px]:text-lg">
                 {office.city}
               </h3>
               <address className="my-5 text-base leading-[26px] font-medium not-italic text-muted max-[991px]:my-3.5 max-[991px]:text-sm max-[991px]:leading-6">
@@ -271,7 +271,7 @@ export function ContactDetailsSection({
           </Eyebrow>
           <h2
             id="contact-details-title"
-            className="font-sans text-[32px] leading-[42px] font-bold text-ink max-[991px]:text-[28px] max-[767px]:text-2xl"
+            className="font-display text-[32px] leading-[42px] font-medium text-ink max-[991px]:text-[28px] max-[767px]:text-2xl"
           >
             {title}
           </h2>

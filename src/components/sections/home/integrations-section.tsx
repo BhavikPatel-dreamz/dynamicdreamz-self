@@ -33,7 +33,7 @@ export function IntegrationsSection({
         aria-label="Platforms and integrations"
       >
         {integrationLogoRows.map((row, index) => (
-          <div className="flex w-full items-center overflow-hidden" key={index}>
+          <div className="flex w-full min-h-[50px] max-[767px]:min-h-[30px] items-center overflow-hidden" key={index}>
             {[0, 1, 2].map((set) => (
               <div className={cn("flex shrink-0 items-center", index === 0 ? styles.moveLeft : styles.moveRight)} key={set} aria-hidden={set > 0 || undefined}>
                 {row.map((logo) => (

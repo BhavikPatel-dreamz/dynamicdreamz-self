@@ -25,7 +25,7 @@ export function CaseStudyCustomSections({ sections }: CaseStudyCustomSectionsPro
                   <span>{section.eyebrow}</span>
                 </div>
               ) : null}
-              <h2 className="mb-4 font-montserrat text-[35px] font-bold leading-[1.38] text-[#282828] max-[1199px]:text-[28px] max-[767px]:text-2xl">
+              <h2 className="mb-4 font-display text-[35px] font-medium leading-[1.38] text-[#282828] max-[1199px]:text-[28px] max-[767px]:text-2xl">
                 {section.heading}
               </h2>
               {section.lead ? (
@@ -51,7 +51,7 @@ export function CaseStudyCustomSections({ sections }: CaseStudyCustomSectionsPro
                         </span>
                       ) : null}
                       {item.title ? (
-                        <h3 className="mb-1 font-montserrat text-[16px] font-bold text-[#282828]">
+                        <h3 className="mb-1 font-display text-[16px] font-medium text-[#282828]">
                           {item.title}
                         </h3>
                       ) : null}

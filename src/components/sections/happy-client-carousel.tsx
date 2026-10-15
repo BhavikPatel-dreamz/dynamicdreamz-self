@@ -41,7 +41,7 @@ const baseSettings: Settings = {
 };
 
 const controlButtonClassName =
-  "flex size-[46px] cursor-pointer items-center justify-center rounded-full border border-[#efd1d1] bg-[#fae8e8] text-[#ad3434] transition-colors hover:bg-[#f4dada] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad3434] disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:bg-[#fae8e8]";
+  "flex size-[45px] max-[767px]:size-[40px] cursor-pointer items-center justify-center rounded-full border border-[rgb(173_81_81/10%)] bg-[rgb(173_81_81/15%)] text-[#ad5151] transition-colors hover:bg-[rgb(173_81_81/20%)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151] disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:bg-[rgb(173_81_81/15%)]";
 
 export function HappyClientCarousel({ items, ariaLabel, controls }: HappyClientCarouselProps) {
   const sliderRef = useRef<Slider>(null);

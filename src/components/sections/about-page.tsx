@@ -7,7 +7,7 @@ import { AboutValuesSection } from "@/components/sections/about/about-values-sec
 
 export function AboutPage() {
   return (
-    <div className="font-sans [&_h1]:font-sans [&_h2]:font-sans [&_h3]:font-sans">
+    <div>
       <AboutHeroSection />
       <AboutStorySection />
       <AboutTimelineSection />

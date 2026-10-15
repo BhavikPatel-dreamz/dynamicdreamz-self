@@ -10,6 +10,8 @@ export const CityWhyChooseBoxesBlock: Block = {
     { name: "columns", type: "number", defaultValue: 3 },
     { name: "className", type: "text" },
     { name: "theme", type: "select", options: ["light", "dark"], defaultValue: "light" },
+    { name: "bgClassName", type: "text" },
+    { name: "sectionId", type: "text" },
     {
       name: "boxes",
       type: "array",
@@ -20,7 +22,6 @@ export const CityWhyChooseBoxesBlock: Block = {
         { name: "description", type: "textarea", required: true },
         { name: "iconName", type: "text" },
         { name: "icon", type: "upload", relationTo: "media" },
-        { name: "iconSrc", type: "text" },
         { name: "iconAlt", type: "text" },
       ],
     },

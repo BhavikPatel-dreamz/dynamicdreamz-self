@@ -278,7 +278,7 @@ export function SiteFooter({
         </div>
       </Container>
 
-      <Container className="grid grid-cols-6 gap-3 pt-[50px] max-[991px]:grid-cols-2 max-[991px]:gap-5 max-[991px]:pt-[35px] max-[767px]:gap-4 max-[767px]:pt-[30px]" aria-label="Partner and review profiles">
+      <Container className="grid grid-cols-6 gap-3 pt-[50px] max-[991px]:grid-cols-3 max-[991px]:gap-5 max-[991px]:pt-[35px] max-[767px]:grid-cols-2 max-[767px]:gap-4 max-[767px]:pt-[30px]" aria-label="Partner and review profiles">
         {footerAwards.map((award) => (
           <a className="flex h-[81px] items-center justify-center rounded-[20px] bg-white px-[18px] py-4 max-[991px]:rounded-[10px] max-[767px]:h-[60px] max-[767px]:border max-[767px]:border-[#efefef]/20 max-[767px]:px-[13px] max-[767px]:py-[5px]" href={award.href} target="_blank" rel="nofollow noopener noreferrer" key={award.src} aria-label={award.alt}>
             <Image src={award.src} alt={award.alt} width={award.width} height={award.height} className="max-[767px]:h-10 object-contain"/>
@@ -305,7 +305,7 @@ export function SiteFooter({
                   key={`${link.label}-${link.href}`}
                   className={cn(
                     "inline-block text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]",
-                    idx < effectiveBottomLinks.length - 1 && "relative mr-2.5 pr-3.75 after:absolute after:-top-px after:right-0 after:content-['|']",
+                    idx < effectiveBottomLinks.length - 1 && "relative mr-[14px] pr-[10px] after:absolute after:-top-[1px] after:right-[-4px] after:content-['|']",
                   )}
                   href={link.href}
                   target="_blank"
@@ -317,7 +317,7 @@ export function SiteFooter({
             </div>
           ) : (
             <div className="flex max-[767px]:mt-0">
-              <Link className="relative mr-2.5 inline-block pr-3.75 text-sm leading-5 font-normal text-ink transition-colors duration-300 after:absolute after:-top-px after:right-0 after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.termsPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.terms}</Link>
+              <Link className="relative mr-[14px] inline-block pr-[10px] text-sm leading-5 font-normal text-ink transition-colors duration-300 after:absolute after:-top-[1px] after:right-[-4px] after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.termsPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.terms}</Link>
               <Link className="inline-block text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.privacyPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.privacy}</Link>
             </div>
           )}

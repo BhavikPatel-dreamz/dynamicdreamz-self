@@ -45,7 +45,7 @@ export function TermsOfServicePage({ content }: TermsOfServicePageProps = {}) {
 
           {sections.map((section) => (
             <div key={section.title}>
-              <h2 className="mb-6 font-sans text-2xl leading-[31.2px] font-bold tracking-[-0.48px] text-ink max-[767px]:text-xl max-[767px]:leading-[31.2px]">
+              <h2 className="mb-6 font-display text-2xl leading-[31.2px] font-medium tracking-[-0.48px] text-ink max-[767px]:text-xl max-[767px]:leading-[31.2px]">
                 {section.title}
               </h2>
               {section.paragraphs?.map((paragraph) => (

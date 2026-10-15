@@ -6,6 +6,7 @@ export const IndustryBrandsBlock: Block = {
   fields: [
     { name: "heading", type: "text", required: true },
     { name: "eyebrow", type: "text" },
+    { name: "slug", type: "text" },
     { name: "density", type: "select", options: ["standard", "compact", "flexible"], defaultValue: "standard" },
     {
       name: "items",
@@ -14,7 +15,6 @@ export const IndustryBrandsBlock: Block = {
       fields: [
         { name: "name", type: "text", required: true },
         { name: "logo", type: "upload", relationTo: "media" },
-        { name: "src", type: "text" },
         { name: "alt", type: "text" },
         { name: "url", type: "text" },
         { name: "width", type: "number" },

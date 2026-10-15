@@ -27,7 +27,7 @@ export function CaseStudyKeyFeatures({ keyFeatures }: CaseStudyKeyFeaturesProps)
           </div>
           <h2
             id="key-features-heading"
-            className="m-0 font-montserrat text-[35px] font-bold leading-[1.38] text-[#282828] max-[1199px]:text-[28px] max-[767px]:text-2xl"
+            className="m-0 font-display text-[35px] font-medium leading-[1.38] text-[#282828] max-[1199px]:text-[28px] max-[767px]:text-2xl"
           >
             {heading}
           </h2>
@@ -45,7 +45,7 @@ export function CaseStudyKeyFeatures({ keyFeatures }: CaseStudyKeyFeaturesProps)
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="m-0 font-montserrat text-[18px] font-bold leading-[26px] text-[#282828]">
+                <h3 className="m-0 font-display text-[18px] font-medium leading-[26px] text-[#282828]">
                   {item.title}
                 </h3>
                 {item.description && (

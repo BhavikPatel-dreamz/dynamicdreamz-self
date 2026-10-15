@@ -14,6 +14,8 @@ export const ThemeCustomizationServicesBlock: Block = {
       options: ["green", "yellow", "transparent"],
       defaultValue: "green",
     },
+    { name: "sectionId", type: "text" },
+    { name: "className", type: "text" },
     {
       name: "boxes",
       type: "array",

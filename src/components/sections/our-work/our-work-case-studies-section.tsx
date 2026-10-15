@@ -79,7 +79,7 @@ export function OurWorkCaseStudiesSection({
                             {item.category}
                           </span>
                         </div>
-                        <h3 className="mb-3.5 font-montserrat text-xl font-semibold leading-[1.4] tracking-[-.48px] text-[#090909] line-clamp-2 transition-colors group-hover/title:text-[#ad5151]">
+                        <h3 className="mb-3.5 font-display text-xl font-medium leading-[1.4] tracking-[-.48px] text-[#090909] line-clamp-2 transition-colors group-hover/title:text-[#ad5151]">
                           {item.title}
                         </h3>
                       </Link>
