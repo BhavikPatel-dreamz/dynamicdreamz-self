@@ -2606,8 +2606,8 @@ summary, claim qualification, or grammar correction remains approval-dependent.
 
 ## Hire Shopify Developers (`/hire-shopify-developers`)
 
-Status: implemented and verified; full 1:1 live parity with complete 12-section architecture
-Last reviewed: 2026-10-02
+Status: implemented and verified; full 1:1 live parity with complete 12-section architecture; CMS-rendered dynamic block parity verified in Neon DB
+Last reviewed: 2026-10-14
 Primary audience: ecommerce founders, direct-to-consumer brands, and digital agencies looking to hire dedicated Shopify developers or complete Shopify engineering teams.
 Decision stage: vendor selection, staffing model evaluation, technical scoping, and quote request.
 
@@ -2778,9 +2778,9 @@ are needed for a quote without promising an unverified delivery time or rate.
 
 ## Shopify Plus Agency (`/shopify-plus-agency`)
 
-Status: implemented and verified; live-visible content and section parity complete
+Status: implemented and verified; live-visible content and section parity complete; CMS-rendered dynamic block parity verified in Neon DB
 
-Last reviewed: 2026-09-22
+Last reviewed: 2026-10-14
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -3231,9 +3231,9 @@ jurisdiction, effective date, or controller claim is introduced.
 
 ## Shopify Experts (`/shopify-experts`)
 
-Status: implemented and verified; live-visible content preserved
+Status: implemented and verified; live-visible content preserved; CMS-rendered dynamic block parity verified in Neon DB
 
-Last reviewed: 2026-09-23
+Last reviewed: 2026-10-14
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -3324,9 +3324,9 @@ Future visible copy improvements are tracked in `docs/page-content-improvements.
 
 ## Shopify Apps (`/shopify-apps`)
 
-Status: implemented and verified; live-visible content preserved
+Status: implemented and verified; live-visible content preserved; CMS-rendered dynamic block parity verified in Neon DB
 
-Last reviewed: 2026-08-18
+Last reviewed: 2026-10-14
 
 Owner: SEO, product, development, leadership, and sales operations
 
@@ -3395,9 +3395,9 @@ Deferred under the live-UI preservation gate. The current server-rendered catalo
 
 ## Shopify Theme Customization (`/shopify-theme-customization`)
 
-Status: implemented and verified; live-visible content preserved
+Status: implemented and verified; live-visible content preserved; CMS-rendered dynamic block parity verified in Neon DB
 
-Last reviewed: 2026-09-23
+Last reviewed: 2026-10-14
 
 Owner: SEO, Shopify development, UI/UX design, leadership, and sales operations
 
@@ -3468,8 +3468,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Shopify Development Agency (`/shopify-development-agency`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-09-22
+Status: implemented and verified; live-visible content preserved; CMS-rendered dynamic block parity verified in Neon DB
+Last reviewed: 2026-10-14
 Owner: SEO, content, development, leadership, sales, and delivery operations
 Primary audience: DTC brands, B2B merchants, store owners, and digital agencies seeking comprehensive Shopify development services, custom storefronts, Figma implementation, theme customization, integrations, migration, CRO, performance, and ongoing technical support.
 Decision stage: commercial evaluation, capability verification, agency partner selection
@@ -3552,11 +3552,11 @@ Deferred under the live-UI preservation gate. The current server-rendered hero a
 
 ## Shopify Migration (`/shopify-migration`)
 
-Status: implemented and verified; live-visible content preserved
+Status: implemented and verified; live-visible content preserved; CMS-rendered dynamic block parity verified in Neon DB
 
-AEO/GEO review 2026-10-01: case-studies card re-audit for `/shopify-migration`. In-card description removed to match live `display: none`; card geometry, chips, and CTA now match live computed styles. No new gap found — invisible DOM removed, visible copy, metadata, canonicals, headings, and structured data unchanged. Known visual-only gap: no AOS `fade-up` reveal.
+AEO/GEO review 2026-10-14: Phase 4 CMS audit and verification completed. Case-studies, SEO-safe migration module, and all 10 blocks verified 1:1 against coded baseline and live layout.
 
-Last reviewed: 2026-09-23
+Last reviewed: 2026-10-14
 
 Owner: SEO, Shopify migration specialists, leadership, and sales operations
 
@@ -3664,9 +3664,9 @@ Dedicated commercial service landing page targeting queries for "WooCommerce Dev
 - Complete structured data graph emitting Service, OfferCatalog (9 service items), FAQPage (10 items), 11 VideoObjects with authentic upload dates, BreadcrumbList, Organization, and WebSite.
 ## Shopify CRO Agency (`/shopify-cro-agency`)
 
-Status: implemented and verified; live-visible content preserved
+Status: implemented and verified; live-visible content preserved; CMS-rendered dynamic block parity verified in Neon DB
 
-Last reviewed: 2026-10-02
+Last reviewed: 2026-10-14
 
 Owner: SEO, Shopify CRO specialists, UX designers, leadership, and sales operations
 
@@ -4196,13 +4196,13 @@ Exact visible copy strictly matches the live site, including the deliberately pr
 
 ## Shopify Mobile App Development (`/shopify-mobile-app-development`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-09-24
+Status: implemented and verified; live-visible content preserved; CMS-rendered dynamic block parity verified in Neon DB; repaired database record (removed unwanted pricing-models block and restored section 10 cta-banner for 10 total sections)
+Last reviewed: 2026-10-14
 Owner: SEO, mobile app development specialists, leadership, and sales operations
 Primary audience: Shopify merchants, DTC brands, Shopify Plus brands, and enterprise ecommerce businesses seeking custom native or cross-platform (React Native) iOS and Android mobile app development directly connected to their Shopify backend.
 Decision stage: agency partner evaluation, technical capability assessment, custom mobile app vs generic builder comparison, quote request, discovery call booking
 
-AEO/GEO review 2026-10-01: case-studies card re-audit for `/shopify-mobile-app-development`. In-card description removed to match live `display: none`; card geometry, chips, and CTA now match live computed styles. No new gap found — invisible DOM removed, visible copy, metadata, canonicals, headings, and structured data unchanged. Known visual-only gap: no AOS `fade-up` reveal.
+AEO/GEO review 2026-10-14: Phase 4 CMS audit and verification completed. All 10 sections match live site and coded baseline 1:1. Zero visible copy changes, zero layout shifts, all quality gates pass.
 
 ### Page role
 
@@ -5810,11 +5810,11 @@ GEO.
 
 ## Shopify Plus Migration Agency (`/shopify-plus-migration-agency`)
 
-Status: implemented and verified; refreshed live layout and content matched exactly
+Status: implemented and verified; refreshed live layout and content matched exactly; CMS-rendered dynamic block parity verified in Neon DB
 
-AEO/GEO review 2026-10-01: case-studies card re-audit for `/shopify-plus-migration-agency`. In-card description removed to match live `display: none`; card geometry, chips, and CTA now match live computed styles. No new gap found — invisible DOM removed, visible copy, metadata, canonicals, headings, and structured data unchanged. Known visual-only gap: no AOS `fade-up` reveal.
+AEO/GEO review 2026-10-14: Phase 4 CMS audit and verification completed. All 10 sections match live site and coded baseline 1:1.
 
-Last reviewed: 2026-09-24
+Last reviewed: 2026-10-14
 
 Owner: SEO, Shopify Plus migration specialists, enterprise leadership, and sales operations
 
@@ -8126,8 +8126,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Shopify Certified Developers (`/shopify-certified-developers`)
 
-Status: implemented and verified; live-visible content preserved; visual parity complete with live hero video, credentials, tabs, directory proof, split FAQs, and closing CTA
-Last reviewed: 2026-09-23
+Status: implemented and verified; live-visible content preserved; visual parity complete with live hero video, credentials, tabs, directory proof, split FAQs, and closing CTA; CMS-rendered dynamic block parity verified in Neon DB; repaired database record (removed unwanted brand-partners block and restored section 9 white-label-final-cta)
+Last reviewed: 2026-10-14
 Owner: SEO, Shopify development, UI/UX design, leadership, sales operations, and client success
 Primary audience: Shopify and Shopify Plus merchants, B2B and wholesale businesses, ecommerce leaders, and digital agencies evaluating credentialed Shopify development expertise.
 Decision stage: credential verification, capability matching, partner evaluation, technical scoping, and quote request
@@ -8596,8 +8596,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Shopify Maintenance Services (`/shopify-maintenance-services`)
 
-Status: implemented; live-visible content preserved
-Last reviewed: 2026-10-02
+Status: implemented; live-visible content preserved; CMS-rendered dynamic block parity verified in Neon DB
+Last reviewed: 2026-10-14
 
 ### Search and engine intent
 
@@ -8725,8 +8725,8 @@ Last reviewed: 2026-09-22
 
 ## Migrate Theme to Shopify Online Store 2.0 (`/migrating-a-theme-to-online-store-2-0`)
 
-Status: implemented; exact live visual parity and content preserved
-Last reviewed: 2026-09-24
+Status: implemented; exact live visual parity and content preserved; CMS-rendered dynamic block parity verified in Neon DB
+Last reviewed: 2026-10-14
 
 ### Search and engine intent
 
@@ -8772,8 +8772,8 @@ Last reviewed: 2026-09-24
 
 ## Buy Shopify Development Hours (`/buy-shopify-development-hours`)
 
-Status: implemented and verified; live-visible content preserved
-Last reviewed: 2026-10-01
+Status: implemented and verified; live-visible content preserved; CMS-rendered dynamic block parity verified in Neon DB
+Last reviewed: 2026-10-14
 Owner: SEO, Shopify development, delivery operations, finance, leadership, and sales operations
 Primary audience: Shopify and Shopify Plus merchants, growing brands, ecommerce teams, founders, and digital agencies that need flexible prepaid development capacity without a fixed monthly commitment.
 Decision stage: engagement-model comparison, package selection, pricing review, provider validation, purchase, and custom-quote request
@@ -8836,8 +8836,8 @@ Commercial pricing and conversion page for prepaid Shopify design and developmen
 
 ## Risks of Shopify Outsourcing (`/risks-of-shopify-outsourcing`)
 
-Status: implemented and verified; live-visible wording preserved
-Last reviewed: 2026-09-01
+Status: implemented and verified; live-visible wording preserved; CMS-rendered dynamic block parity verified in Neon DB
+Last reviewed: 2026-10-14
 Owner: SEO, content, Shopify delivery, security, and sales operations
 Primary audience: Shopify merchants, ecommerce teams, founders, and agencies evaluating outsourced Shopify store, app, or maintenance work.
 Decision stage: risk education, partner evaluation, due diligence, and quote request
@@ -9711,9 +9711,9 @@ Decision stage: conversion and project qualification
 
 ## Upgrade to Shopify Plus (`/upgrade-to-shopify-plus`)
 
-Status: implemented and verified; live-visible content preserved
+Status: implemented and verified; live-visible content preserved; CMS-rendered dynamic block parity verified in Neon DB; reconstructed 9 canonical blocks with upload media relations for proof badges, client logos, portfolio showcase, and why-choose icons
 
-Last reviewed: 2026-09-08
+Last reviewed: 2026-10-14
 
 Owner: SEO, Shopify Plus specialists, enterprise sales, and client-success teams
 
@@ -9834,7 +9834,8 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Route-Specific Strategy: `/appmaker-shopify-mobile-app-development`
 
-Audit date: 2026-09-22
+Audit date: 2026-10-14
+Status: implemented and verified; live-visible content preserved; CMS-rendered dynamic block parity verified in Neon DB
 Auditor: Antigravity Migration Team
 Scope: Next.js migration of Appmaker Shopify Mobile App Development landing page
 Primary search intent: commercial and transactional intent for Shopify and Shopify Plus merchants looking to build native mobile apps using Appmaker with expert agency implementation.
