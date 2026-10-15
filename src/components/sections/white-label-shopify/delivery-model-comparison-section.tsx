@@ -3,8 +3,30 @@ import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { whiteLabelShopifyDeliveryComparison } from "@/content/white-label-shopify-development";
 
+export type DeliveryModelComparisonContent = {
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  columns: readonly {
+    label: string;
+    isWinner?: boolean;
+    kicker?: string;
+    pill?: string;
+  }[];
+  rows: readonly {
+    feature: string;
+    inHouse: string;
+    freelancer: string;
+    partner: string;
+  }[];
+  ctas: {
+    primary: { label: string; href: string };
+    secondary: { label: string; href: string };
+  };
+};
+
 type DeliveryModelComparisonSectionProps = {
-  content?: typeof whiteLabelShopifyDeliveryComparison;
+  content?: DeliveryModelComparisonContent;
 };
 
 export function DeliveryModelComparisonSection({

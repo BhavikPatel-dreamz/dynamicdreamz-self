@@ -3,8 +3,22 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { TextArrowLink } from "@/components/ui/text-arrow-link";
 import { whiteLabelShopifyAgencyUseCases } from "@/content/white-label-shopify-development";
 
+export type HowAgenciesUseContent = {
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  cards: readonly {
+    tag: string;
+    heading: string;
+    description: string;
+    pill: string;
+    ctaLabel: string;
+    ctaHref: string;
+  }[];
+};
+
 type HowAgenciesUseSectionProps = {
-  content?: typeof whiteLabelShopifyAgencyUseCases;
+  content?: HowAgenciesUseContent;
 };
 
 export function HowAgenciesUseSection({

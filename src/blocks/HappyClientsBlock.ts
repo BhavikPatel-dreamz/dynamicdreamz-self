@@ -5,8 +5,9 @@ export const HappyClientsBlock: Block = {
   labels: { singular: "Happy Clients Reviews", plural: "Happy Clients Reviews" },
   fields: [
     { name: "eyebrow", type: "text" },
-    { name: "heading", type: "text", required: true },
+    { name: "heading", type: "text" },
     { name: "description", type: "textarea" },
+    { name: "className", type: "text" },
     {
       name: "testimonials",
       type: "relationship",

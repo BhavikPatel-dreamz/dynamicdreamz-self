@@ -9,6 +9,23 @@ export const ShopifyTeamBehindItBlock: Block = {
     { name: "description", type: "textarea" },
     { name: "hideCtas", type: "checkbox", defaultValue: true },
     {
+      name: "primaryCta",
+      type: "group",
+      fields: [
+        { name: "label", type: "text" },
+        { name: "href", type: "text" },
+      ],
+    },
+    {
+      name: "secondaryCta",
+      type: "group",
+      fields: [
+        { name: "label", type: "text" },
+        { name: "href", type: "text" },
+        { name: "variant", type: "select", options: ["outline", "arrowLink"] },
+      ],
+    },
+    {
       name: "items",
       type: "array",
       dbName: "stbi_items",

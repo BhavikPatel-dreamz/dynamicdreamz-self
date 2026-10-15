@@ -94,6 +94,26 @@ import { ShopifyAppFeaturesBlock } from "@/blocks/ShopifyAppFeaturesBlock";
 import { ShopifyAppProcessBlock } from "@/blocks/ShopifyAppProcessBlock";
 import { RisksShopifyTopicsBlock } from "@/blocks/RisksShopifyTopicsBlock";
 import { ImageCtaBlock } from "@/blocks/ImageCtaBlock";
+import { CityPageHeroBlock } from "@/blocks/CityPageHeroBlock";
+import { ShopifySupportScenariosBlock } from "@/blocks/ShopifySupportScenariosBlock";
+import { DeliveryModelComparisonBlock } from "@/blocks/DeliveryModelComparisonBlock";
+import { WhiteLabelToolsBlock } from "@/blocks/WhiteLabelToolsBlock";
+import { HowAgenciesUseBlock } from "@/blocks/HowAgenciesUseBlock";
+import { WhiteLabelWhyBlock } from "@/blocks/WhiteLabelWhyBlock";
+import { WhiteLabelServicesBlock } from "@/blocks/WhiteLabelServicesBlock";
+import { WhiteLabelStatsBlock } from "@/blocks/WhiteLabelStatsBlock";
+import { DesignReasonsAccordionBlock } from "@/blocks/DesignReasonsAccordionBlock";
+import { TextBoxBlock } from "@/blocks/TextBoxBlock";
+import { RecentArchitecturePatternsBlock } from "@/blocks/RecentArchitecturePatternsBlock";
+import { AiServicesGridBlock } from "@/blocks/AiServicesGridBlock";
+import { TechKeywordBlock } from "@/blocks/TechKeywordBlock";
+import { PillListBlock } from "@/blocks/PillListBlock";
+import { ShopifyReasonsBlock } from "@/blocks/ShopifyReasonsBlock";
+import { ShopifyThemeTechBlock } from "@/blocks/ShopifyThemeTechBlock";
+import { ThemeWhyChooseBlock } from "@/blocks/ThemeWhyChooseBlock";
+import { LetsBuildBlock } from "@/blocks/LetsBuildBlock";
+import { TechnologiesWorkWithBlock } from "@/blocks/TechnologiesWorkWithBlock";
+import { ServicesCaseStudiesBlock } from "@/blocks/ServicesCaseStudiesBlock";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const Pages: CollectionConfig = {
@@ -241,6 +261,26 @@ export const Pages: CollectionConfig = {
         ShopifyAppProcessBlock,
         RisksShopifyTopicsBlock,
         ImageCtaBlock,
+        CityPageHeroBlock,
+        ShopifySupportScenariosBlock,
+        DeliveryModelComparisonBlock,
+        WhiteLabelToolsBlock,
+        HowAgenciesUseBlock,
+        WhiteLabelWhyBlock,
+        WhiteLabelServicesBlock,
+        WhiteLabelStatsBlock,
+        DesignReasonsAccordionBlock,
+        TextBoxBlock,
+        RecentArchitecturePatternsBlock,
+        AiServicesGridBlock,
+        TechKeywordBlock,
+        PillListBlock,
+        ShopifyReasonsBlock,
+        ShopifyThemeTechBlock,
+        ThemeWhyChooseBlock,
+        LetsBuildBlock,
+        TechnologiesWorkWithBlock,
+        ServicesCaseStudiesBlock,
       ],
     },
     {

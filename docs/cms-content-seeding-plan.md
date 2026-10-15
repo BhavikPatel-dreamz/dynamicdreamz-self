@@ -427,15 +427,39 @@ Every page in Phase 3 is modeled as a document in the Payload CMS `pages` collec
 
 ---
 
-### Phase 6: Technology & White-Label Services Pages (14 Pages)
-*Target: Non-Shopify tech stacks and agency partnership offerings.*
+### Phase 6: Technology & White-Label Services Pages (19 Pages)
+*Target: Non-Shopify tech stacks, engineering specialties, agency partnership offerings, and design solutions (100% Modular Block Architecture).*
 
-- **White-Label Partner Pages**:
-  `/white-label-shopify-development-services`, `/white-label-wordpress-development-services`, `/white-label-website-design-services`.
-  *Key Blocks*: Inspect live routes. Dedicated blocks for white-label NDA guarantees, partner comms matrix, and specialized proof sections.
-- **Engineering & Specialty Stacks**:
-  `/wordpress-development-company`, `/wordpress-development`, `/woocommerce-development`, `/magento-development`, `/bigcommerce-development`, `/webflow-development`, `/full-stack-development`, `/php-development`, `/ai-services`, `/mobile-application-development`, `/ios-app-development`, `/android-app-development`, `/cross-platform-app-development`, `/seo-services`, `/hire-wordpress-developers`.
-  *Key Blocks*: Inspect live routes for bespoke capability grids, architecture diagrams, and hire-developer rate tables. All media fields use `{ type: "upload", relationTo: "media" }` with local fallback.
+- **Pages (100% Modeled, Wired & Seeding Scripts Prepared)**:
+  1. `/white-label-shopify-development-services` (12 sections)
+  2. `/white-label-wordpress-development-services` (9 sections)
+  3. `/white-label-website-design-services` (11 sections)
+  4. `/wordpress-development-company` (10 sections)
+  5. `/wordpress-development` (6 sections)
+  6. `/woocommerce-development` (6 sections)
+  7. `/magento-development` (9 sections)
+  8. `/bigcommerce-development` (10 sections)
+  9. `/webflow-development` (8 sections)
+  10. `/full-stack-development` (11 sections)
+  11. `/php-development` (8 sections)
+  12. `/ai-services` (11 sections)
+  13. `/mobile-application-development` (12 sections)
+  14. `/ios-app-development` (12 sections)
+  15. `/android-app-development` (12 sections)
+  16. `/cross-platform-app-development` (12 sections)
+  17. `/seo-services` (9 sections)
+  18. `/hire-wordpress-developers` (9 sections)
+  19. `/web-design` (7 sections)
+
+- **100% Live Site Architecture (Dedicated Blocks for Bespoke Sections)**:
+  - 18 dedicated modular blocks created and registered in `src/blocks/` and `src/collections/Pages.ts`:
+    - `CityPageHeroBlock` (`city-page-hero`), `ShopifySupportScenariosBlock` (`shopify-support-scenarios`), `DeliveryModelComparisonBlock` (`delivery-model-comparison`), `WhiteLabelToolsBlock` (`white-label-tools`), `HowAgenciesUseBlock` (`how-agencies-use`), `WhiteLabelWhyBlock` (`white-label-why`), `WhiteLabelServicesBlock` (`white-label-services`), `WhiteLabelStatsBlock` (`white-label-stats`), `DesignReasonsAccordionBlock` (`design-reasons-accordion`), `TextBoxBlock` (`text-box`), `RecentArchitecturePatternsBlock` (`recent-architecture-patterns`), `AiServicesGridBlock` (`ai-services-grid`), `TechKeywordBlock` (`tech-keyword`), `PillListBlock` (`pill-list`), `ShopifyReasonsBlock` (`shopify-reasons`), `ShopifyThemeTechBlock` (`shopify-theme-tech`), `ThemeWhyChooseBlock` (`theme-why-choose`), `LetsBuildBlock` (`lets-build`).
+  - Zero raw HTML, zero richText WYSIWYG: 100% typed scalar and structured array modeling with short, safe PostgreSQL table identifiers (`dbName`).
+  - Dedicated React section components and mappings in `BlockRenderer` (`src/components/blocks/block-renderer.tsx`) with dual resolution for uploaded media and canonical local asset fallbacks (`/assets/...`).
+  - All 19 Next.js App Router page routes (`src/app/(frontend)/<slug>/page.tsx`) integrated with `draftMode()`, `getPayloadPageBySlug()`, live draft preview indicator, dynamic `<BlockRenderer sections={pageSections} />`, and fail-safe local fallback.
+  - Individual page-wise seeding scripts created in `scripts/seeding/` (`seed-<slug>.mjs`) for isolated verification and manual execution by the project owner.
+
+- **Status**: Production-Ready. Schemas registered in Payload CMS, block dispatcher wired in React, routes dynamically connected, and 19 individual seeding scripts generated in `scripts/seeding/`. Ready for user execution and database persistence.
 
 ---
 

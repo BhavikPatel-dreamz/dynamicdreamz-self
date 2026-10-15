@@ -9,8 +9,28 @@ import {
   whiteLabelShopifyScenarios,
 } from "@/content/white-label-shopify-development";
 
+export type ShopifySupportScenario = {
+  id: string;
+  title: string;
+  subtitle?: string;
+  kicker?: string;
+  heading: string;
+  description: string;
+  features: readonly string[];
+  meta?: string;
+  primaryCta: { label: string; href: string };
+  secondaryCta: { label: string; href: string };
+};
+
+export type ShopifySupportScenariosContent = {
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  items: readonly ShopifySupportScenario[];
+};
+
 type ShopifySupportScenariosSectionProps = {
-  content?: typeof whiteLabelShopifyScenarios;
+  content?: ShopifySupportScenariosContent;
 };
 
 export function ShopifySupportScenariosSection({

@@ -7,6 +7,7 @@ export const FaqAccordionBlock: Block = {
     { name: "eyebrow", type: "text" },
     { name: "heading", type: "text", required: true },
     { name: "description", type: "textarea" },
+    { name: "idPrefix", type: "text" },
     {
       name: "faqs",
       type: "array",

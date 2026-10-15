@@ -12,13 +12,13 @@ export type CityPageHeroSlide = {
 
 export type CityPageHeroTabletSlider = {
   slides: readonly CityPageHeroSlide[];
-  topBadge: {
+  topBadge?: {
     src: string;
     alt: string;
     width: number;
     height: number;
   };
-  bottomBadge: {
+  bottomBadge?: {
     src: string;
     alt: string;
     width: number;
@@ -135,25 +135,29 @@ export function CityHeroTabletSlider({ slider }: CityHeroTabletSliderProps) {
       </div>
 
       {/* Floating Badges */}
-      <div className="tablet-badge tablet-badge-top absolute top-[100px] -right-[15px] z-[9999] max-w-[173px] max-[1199px]:top-[60px] max-[1199px]:max-w-[150px]">
-        <Image
-          src={topBadge.src}
-          alt={topBadge.alt}
-          width={topBadge.width}
-          height={topBadge.height}
-          className="block h-auto max-w-full"
-        />
-      </div>
+      {topBadge?.src ? (
+        <div className="tablet-badge tablet-badge-top absolute top-[100px] -right-[15px] z-[9999] max-w-[173px] max-[1199px]:top-[60px] max-[1199px]:max-w-[150px]">
+          <Image
+            src={topBadge.src}
+            alt={topBadge.alt}
+            width={topBadge.width}
+            height={topBadge.height}
+            className="block h-auto max-w-full"
+          />
+        </div>
+      ) : null}
 
-      <div className="tablet-badge tablet-badge-bottom absolute bottom-[80px] -left-[5px] z-[9999] max-w-[130px] max-[1199px]:bottom-[60px] max-[1199px]:-left-[15px] max-[1199px]:max-w-[110px]">
-        <Image
-          src={bottomBadge.src}
-          alt={bottomBadge.alt}
-          width={bottomBadge.width}
-          height={bottomBadge.height}
-          className="block h-auto max-w-full"
-        />
-      </div>
+      {bottomBadge?.src ? (
+        <div className="tablet-badge tablet-badge-bottom absolute bottom-[80px] -left-[5px] z-[9999] max-w-[130px] max-[1199px]:bottom-[60px] max-[1199px]:-left-[15px] max-[1199px]:max-w-[110px]">
+          <Image
+            src={bottomBadge.src}
+            alt={bottomBadge.alt}
+            width={bottomBadge.width}
+            height={bottomBadge.height}
+            className="block h-auto max-w-full"
+          />
+        </div>
+      ) : null}
     </div>
   );
 }

@@ -6,11 +6,13 @@ import type { WhiteLabelFinalCta } from "@/types/white-label-service";
 
 type WhiteLabelFinalCtaSectionProps = {
   cta: WhiteLabelFinalCta;
+  ctaHref?: string;
   variant?: "default" | "certifiedDevelopers" | "shopifyHours";
 };
 
 export function WhiteLabelFinalCtaSection({
   cta,
+  ctaHref = siteConfig.quotePath,
 }: WhiteLabelFinalCtaSectionProps) {
   return (
     <section className="bg-white py-[52px] max-[1199px]:py-[52px] max-[992px]:py-10">
@@ -27,7 +29,7 @@ export function WhiteLabelFinalCtaSection({
           <div className="shrink-0 max-[992px]:w-full max-[992px]:pb-[10.4px] max-[992px]:text-center">
             <ButtonLink
               className="max-[992px]:min-h-0 max-[992px]:py-3 max-[992px]:text-sm max-[992px]:leading-[18px]"
-              href={siteConfig.quotePath}
+              href={ctaHref}
               variant="primary"
             >
               {cta.label}

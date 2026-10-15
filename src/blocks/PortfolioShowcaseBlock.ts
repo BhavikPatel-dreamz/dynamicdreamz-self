@@ -10,6 +10,8 @@ export const PortfolioShowcaseBlock: Block = {
     { name: "category", type: "text" },
     { name: "ctaLabel", type: "text" },
     { name: "ctaHref", type: "text" },
+    { name: "secondaryCtaLabel", type: "text" },
+    { name: "secondaryCtaHref", type: "text" },
     { name: "hideCta", type: "checkbox", defaultValue: false },
     { name: "columns", type: "number", defaultValue: 4 },
     {

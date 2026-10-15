@@ -15,6 +15,14 @@ export const ShopifyMobileAppHeroBlock: Block = {
     { name: "cta", type: "text" },
     { name: "ctaHref", type: "text" },
     {
+      name: "secondaryCta",
+      type: "group",
+      fields: [
+        { name: "label", type: "text" },
+        { name: "href", type: "text" },
+      ],
+    },
+    {
       name: "badges",
       type: "array",
       dbName: "smah_badges",
@@ -34,6 +42,17 @@ export const ShopifyMobileAppHeroBlock: Block = {
       dbName: "smah_screenshots",
       fields: [
         { name: "name", type: "text", required: true },
+        { name: "image", type: "upload", relationTo: "media" },
+        { name: "src", type: "text" },
+        { name: "alt", type: "text" },
+        { name: "width", type: "number" },
+        { name: "height", type: "number" },
+      ],
+    },
+    {
+      name: "frameImage",
+      type: "group",
+      fields: [
         { name: "image", type: "upload", relationTo: "media" },
         { name: "src", type: "text" },
         { name: "alt", type: "text" },

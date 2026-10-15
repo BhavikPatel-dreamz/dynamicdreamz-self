@@ -7,6 +7,7 @@ export const PricingModelsBlock: Block = {
     { name: "eyebrow", type: "text" },
     { name: "heading", type: "text", required: true },
     { name: "description", type: "textarea" },
+    { name: "className", type: "text" },
     {
       name: "models",
       type: "array",
