@@ -85,7 +85,7 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
                         <span className="font-montreal-medium block text-[35px] leading-[1.4] font-semibold text-ink max-[767px]:text-[24px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px]">
                           {counter.value}
                         </span>
-                        <span className="mt-[5px] block text-xs leading-none font-semibold text-[#4d5577] uppercase">{counter.label}</span>
+                        <span className="mt-[5px] mb-[25px] max-[767px]:mb-5 block text-xs leading-none font-semibold text-[#4d5577] uppercase">{counter.label}</span>
                       </div>
                       {counter.note ? <p className="text-xs leading-none font-medium text-muted">{counter.note}</p> : null}
                     </div>
