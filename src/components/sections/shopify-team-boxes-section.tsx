@@ -55,7 +55,7 @@ export function ShopifyTeamBoxesSection({
                   {content.eyebrow}
                 </Eyebrow>
               ) : null}
-              <h2 className="font-display text-[44px] font-medium leading-[56px] text-white max-[1199px]:text-[38px] max-[1199px]:leading-[48px] max-[767px]:text-[28px] max-[767px]:leading-[38px]">
+              <h2 className="font-montreal-medium text-[35px] font-normal leading-[49px] text-white max-[1199px]:text-[30px] max-[1199px]:leading-[40px] max-[767px]:text-[24px] max-[767px]:leading-[33px]">
                 {content.heading}
               </h2>
             </div>
@@ -99,10 +99,10 @@ export function ShopifyTeamBoxesSection({
                   className="item rounded-[18px] border border-white/12 bg-white/[0.045] p-[22px] transition-all duration-200 max-[767px]:rounded-[16px] max-[767px]:p-5 hover:border-white/20 hover:bg-white/[0.07]"
                   key={item.title}
                 >
-                  <h3 className="font-display text-[18px] font-medium leading-[1.4] text-white">
+                  <h3 className="mb-3 font-montreal-medium text-[18px] font-normal leading-[25.2px] text-white">
                     {item.title}
                   </h3>
-                  <p className="mt-2 font-sans text-sm leading-relaxed text-white/[0.58]">
+                  <p className="font-sans text-sm font-normal leading-6 text-[rgba(255,255,255,0.58)]">
                     {item.description}
                   </p>
                 </div>

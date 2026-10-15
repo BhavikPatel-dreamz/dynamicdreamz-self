@@ -43,7 +43,7 @@ export function CtaBannerSection({
             <h2
               id="cta-banner-title"
               className={cn(
-                "font-display text-[30px] font-medium leading-[43.2px] tracking-[-0.6px] text-white max-[1199px]:text-[26px] max-[1199px]:leading-9 max-[767px]:text-[20px] max-[767px]:leading-7",
+                "font-display text-[30px] font-normal leading-[43.2px] tracking-[-0.6px] text-white max-[1199px]:text-[26px] max-[1199px]:leading-9 max-[767px]:text-[20px] max-[767px]:leading-7",
                 headingClassName,
               )}
             >
@@ -59,7 +59,7 @@ export function CtaBannerSection({
             href={ctaHref}
             variant="light"
             className={cn(
-              "min-h-[42px] px-6 py-3 font-montserrat text-[13px] font-bold uppercase text-[#121212]",
+              "min-h-[50px] px-6 py-[15px] font-montserrat text-base font-bold uppercase text-[#121212] rounded-[30px]",
               buttonClassName,
             )}
           >

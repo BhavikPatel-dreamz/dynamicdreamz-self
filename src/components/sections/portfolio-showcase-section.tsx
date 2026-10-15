@@ -54,7 +54,7 @@ export function PortfolioShowcaseSection({
   ctaLabel,
   ctaHref,
   hideCta = false,
-  className = "our-work-sec pb-20 max-[992px]:pb-[60px]",
+  className = "our-work-sec pt-20 pb-20 max-[992px]:pt-10 max-[992px]:pb-[60px] max-[767px]:pt-0",
   columns = 4,
   cardVariant,
   imageAspectClassName,

@@ -55,7 +55,7 @@ export function SplitSectionHeading({
       >
         <h2
           className={cn(
-            "font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
+            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
             dark ? "text-white" : "text-ink",
             titleClassName,
           )}
@@ -124,7 +124,7 @@ export function SplitSectionHeading({
         ) : null}
         <h2
           className={cn(
-            "font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal max-[991px]:mb-[10px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
+            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[991px]:mb-[10px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
             dark ? "text-white" : "text-ink",
           )}
           id={headingId}

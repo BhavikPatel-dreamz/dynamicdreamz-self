@@ -29,7 +29,7 @@ export function ShopifyHorizontalProcessSection({
   return (
     <section
       className={cn(
-        "shopify-development-process bg-white py-20 max-[992px]:py-[50px]",
+        "shopify-development-process py-20 max-[992px]:py-[50px]",
         className,
       )}
       id={id}
@@ -64,10 +64,10 @@ export function ShopifyHorizontalProcessSection({
                 </div>
 
                 <div className="text mt-[18px] pr-5 max-[1199px]:mt-[15px] max-[767px]:mt-2 max-[767px]:w-[calc(100%-44px)] max-[767px]:pr-0 max-[767px]:pl-4">
-                  <h3 className="mb-1.5 font-display text-lg font-medium text-ink max-[767px]:text-base">
+                  <h3 className="mb-[5px] font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[767px]:text-base">
                     {step.title}
                   </h3>
-                  <p className="font-sans text-sm font-medium leading-6 text-[#535353]">
+                  <p className="font-sans text-sm font-normal leading-6 text-[#535353]">
                     {step.description}
                   </p>
                 </div>

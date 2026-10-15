@@ -38,7 +38,7 @@ export function HappyClientSection({
         <div className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:items-start max-[991px]:gap-3" data-aos="fade-up">
           <div className="title w-[44%] max-[991px]:w-full">
             {eyebrow ? <Eyebrow className={cn("mb-4", eyebrowClassName)}>{eyebrow}</Eyebrow> : null}
-            <h2 className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
+            <h2 className="font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
               {formatBrText(heading)}
             </h2>
           </div>

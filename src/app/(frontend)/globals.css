@@ -29,10 +29,10 @@
     min-width: 320px;
     overflow-x: hidden;
     background: #fff;
-    color: var(--color-ink);
+    color: var(--color-muted);
     font-family: var(--font-sans);
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 14px;
+    line-height: 24px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }

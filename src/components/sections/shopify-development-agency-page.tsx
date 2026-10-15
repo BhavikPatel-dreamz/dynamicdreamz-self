@@ -25,7 +25,7 @@ import {
 
 export function ShopifyDevelopmentAgencyPage() {
   return (
-    <div className="font-sans leading-[30.4px]">
+    <div className="font-sans">
       <ServiceHeroVideoSection content={shopifyDevelopmentAgencyHero} />
       <IndustryBrandsSection
         content={shopifyDevelopmentAgencyBrandConfig}
@@ -34,7 +34,6 @@ export function ShopifyDevelopmentAgencyPage() {
       />
       <ShopifyStageServicesSection content={shopifyDevelopmentAgencyServices} />
       <PortfolioShowcaseSection
-        className="our-work-sec pt-20 pb-20 max-[992px]:pt-10 max-[767px]:pt-0"
         columns={4}
         content={shopifyDevelopmentAgencyPortfolio}
         headerLayout="split"
@@ -47,7 +46,6 @@ export function ShopifyDevelopmentAgencyPage() {
       <PricingTableSection content={shopifyDevelopmentAgencyPricing} />
       <ShopifyHorizontalProcessSection content={shopifyDevelopmentAgencyProcess} />
       <HappyClientSection
-        className="pt-0 max-[992px]:pt-0"
         description={shopifyDevelopmentAgencyTestimonials.description}
         eyebrow={shopifyDevelopmentAgencyTestimonials.eyebrow}
         heading={shopifyDevelopmentAgencyTestimonials.heading}
