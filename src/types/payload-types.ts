@@ -1880,7 +1880,7 @@ export interface Page {
             description?: string | null;
             bottomNote?: string | null;
             variant?: ('green' | 'yellow' | 'transparent') | null;
-            id?: string | null;
+            sectionId?: string | null;
             className?: string | null;
             boxes?:
               | {
@@ -1892,6 +1892,7 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
+            id?: string | null;
             blockName?: string | null;
             blockType: 'theme-customization-services';
           }
@@ -2333,7 +2334,7 @@ export interface Page {
             description: string;
             columns?: number | null;
             bgClassName?: string | null;
-            id?: string | null;
+            sectionId?: string | null;
             boxes?:
               | {
                   title: string;
@@ -2344,6 +2345,7 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
+            id?: string | null;
             blockName?: string | null;
             blockType: 'city-why-choose-boxes';
           }
@@ -2548,7 +2550,7 @@ export interface Page {
             heading: string;
             description?: string | null;
             variant?: ('default' | 'cards') | null;
-            id?: string | null;
+            sectionId?: string | null;
             steps?:
               | {
                   stepNumber: string;
@@ -2582,6 +2584,7 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
+            id?: string | null;
             blockName?: string | null;
             blockType: 'migration-process';
           }
@@ -4541,7 +4544,7 @@ export interface PagesSelect<T extends boolean = true> {
               description?: T;
               bottomNote?: T;
               variant?: T;
-              id?: T;
+              sectionId?: T;
               className?: T;
               boxes?:
                 | T
@@ -4553,6 +4556,7 @@ export interface PagesSelect<T extends boolean = true> {
                     description?: T;
                     id?: T;
                   };
+              id?: T;
               blockName?: T;
             };
         'theme-customization-approach'?:
@@ -5017,7 +5021,7 @@ export interface PagesSelect<T extends boolean = true> {
               description?: T;
               columns?: T;
               bgClassName?: T;
-              id?: T;
+              sectionId?: T;
               boxes?:
                 | T
                 | {
@@ -5028,6 +5032,7 @@ export interface PagesSelect<T extends boolean = true> {
                     iconAlt?: T;
                     id?: T;
                   };
+              id?: T;
               blockName?: T;
             };
         'shopify-hours-hero'?:
@@ -5244,7 +5249,7 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               variant?: T;
-              id?: T;
+              sectionId?: T;
               steps?:
                 | T
                 | {
@@ -5278,6 +5283,7 @@ export interface PagesSelect<T extends boolean = true> {
                         };
                     id?: T;
                   };
+              id?: T;
               blockName?: T;
             };
       };

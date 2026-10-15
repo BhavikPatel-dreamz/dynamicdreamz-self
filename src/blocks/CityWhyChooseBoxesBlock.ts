@@ -9,7 +9,7 @@ export const CityWhyChooseBoxesBlock: Block = {
     { name: "description", type: "textarea", required: true },
     { name: "columns", type: "number", defaultValue: 3 },
     { name: "bgClassName", type: "text" },
-    { name: "id", type: "text" },
+    { name: "sectionId", type: "text" },
     {
       name: "boxes",
       type: "array",

@@ -1203,6 +1203,7 @@ export interface BlockThemeCustomizationServices {
   __component?: string;
   blockType?: string;
   id?: string | number;
+  sectionId?: string;
   eyebrow?: string;
   heading: string | readonly string[];
   description?: string | readonly string[];
@@ -1570,6 +1571,7 @@ export interface BlockCityWhyChooseBoxes {
   __component?: string;
   blockType?: string;
   id?: string | number;
+  sectionId?: string;
   eyebrow?: string;
   heading: string;
   description: string;
@@ -1756,6 +1758,7 @@ export interface BlockMigrationProcess {
   __component?: string;
   blockType?: string;
   id?: string | number;
+  sectionId?: string;
   eyebrow?: string;
   heading: string;
   description?: string;
@@ -4150,7 +4153,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <ThemeCustomizationServicesSection
                 key={blockKey}
-                id={tcsBlock.id ? String(tcsBlock.id) : undefined}
+                id={tcsBlock.sectionId || (tcsBlock.id ? String(tcsBlock.id) : undefined)}
                 variant={tcsBlock.variant || "green"}
                 className={
                   tcsBlock.className ||
@@ -4675,7 +4678,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     : "city-page-why-choose-dynamic"
                 }
                 columns={(cwcbBlock.columns as 3 | 4 | 5) || 3}
-                id={cwcbBlock.id ? String(cwcbBlock.id) : undefined}
+                id={cwcbBlock.sectionId || (cwcbBlock.id ? String(cwcbBlock.id) : undefined)}
                 eyebrowVariant={cwcbBlock.bgClassName ? undefined : "dash"}
                 content={{
                   eyebrow: cwcbBlock.eyebrow,
@@ -4909,7 +4912,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   description: mpBlock.description || undefined,
                   steps,
                 }}
-                id={mpBlock.id ? String(mpBlock.id) : "migration-process"}
+                id={mpBlock.sectionId || (mpBlock.id ? String(mpBlock.id) : "migration-process")}
                 variant={mpBlock.variant || "cards"}
               />
             );

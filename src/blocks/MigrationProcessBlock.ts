@@ -13,7 +13,7 @@ export const MigrationProcessBlock: Block = {
       options: ["default", "cards"],
       defaultValue: "cards",
     },
-    { name: "id", type: "text", defaultValue: "migration-process" },
+    { name: "sectionId", type: "text", defaultValue: "migration-process" },
     {
       name: "steps",
       type: "array",
