@@ -7,7 +7,6 @@ export const HappyClientsBlock: Block = {
     { name: "eyebrow", type: "text" },
     { name: "heading", type: "text" },
     { name: "description", type: "textarea" },
-    { name: "className", type: "text" },
     {
       name: "testimonials",
       type: "relationship",

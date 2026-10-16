@@ -19,8 +19,6 @@ export const ShopifyReasonsBlock: Block = {
       defaultValue: "carousel",
     },
     { name: "carouselFullBleed", type: "checkbox", defaultValue: true },
-    { name: "cardMinHeightClassName", type: "text" },
-    { name: "className", type: "text" },
     {
       name: "items",
       type: "array",

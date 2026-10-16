@@ -9,7 +9,6 @@ export const WhiteLabelWhyBlock: Block = {
   fields: [
     { name: "eyebrow", type: "text" },
     { name: "title", type: "text", required: true },
-    { name: "className", type: "text" },
     {
       name: "reasons",
       type: "array",
