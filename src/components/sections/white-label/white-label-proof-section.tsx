@@ -1,0 +1,148 @@
+import { Container } from "@/components/ui/container";
+import {
+  whiteLabelShopifyReasons,
+  whiteLabelShopifySectionCopy,
+} from "@/content/white-label-shopify-development";
+import { cn } from "@/lib/class-names";
+import { formatBrText } from "@/lib/text-formatting";
+import type { WhiteLabelCard, WhiteLabelStat } from "@/types/white-label-service";
+
+type WhiteLabelStatsSectionProps = {
+  stats?: readonly WhiteLabelStat[];
+  variant?: "default" | "minimal";
+};
+
+export function WhiteLabelStatsSection({
+  stats = [],
+}: WhiteLabelStatsSectionProps) {
+  return (
+    <section className="white_label_counter_section relative border-y border-black/10 py-0">
+      <Container className="max-[1199px]:max-w-full max-[1199px]:px-0">
+        <div className="stats_section">
+          <div className="stats_container flex flex-wrap items-center justify-between">
+            {stats.map((stat, index) => (
+              <div
+                className={cn(
+                  "stats_item flex w-1/4 items-center justify-center border-r border-black/10 py-[17px] last:border-r-0 max-[991px]:w-1/2 max-[991px]:border-b max-[991px]:border-black/10 max-[991px]:even:border-r-0 max-[767px]:min-h-[94px] max-[767px]:p-4",
+                  index >= 2 && "max-[991px]:border-b-0",
+                )}
+                key={stat.label}
+              >
+                <div className="stats_box mx-auto w-fit text-center max-[991px]:text-left">
+                  <div className="stats_number font-montserrat text-2xl font-bold leading-none text-[#282828] max-[767px]:text-base">
+                    {stat.value}
+                  </div>
+                  <p className="counter_title mt-2 font-montserrat text-[13px] font-medium leading-none text-[#535353] max-[767px]:max-w-[135px] max-[767px]:leading-[18px]">
+                    {stat.label}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+type WhiteLabelWhySectionProps = {
+  eyebrow?: string;
+  title?: string | readonly string[];
+  reasons?: readonly (WhiteLabelCard | null)[];
+};
+
+const whyBottomBorderClasses = [
+  "before:bg-[linear-gradient(90deg,rgba(40,40,40,0)_0%,rgba(40,40,40,0.5)_50%,#333_100%)]",
+  "before:bg-[linear-gradient(90deg,#333_0%,#333_50%,#333_100%)]",
+  "before:bg-[linear-gradient(90deg,#333_0%,rgba(40,40,40,0.5)_50%,rgba(40,40,40,0)_100%)]",
+] as const;
+
+const whyRightBorderClasses: Record<number, string> = {
+  0: "after:bg-[linear-gradient(180deg,rgba(40,40,40,0)_0%,rgba(40,40,40,0.5)_50%,#333_100%)]",
+  1: "after:bg-[linear-gradient(180deg,rgba(40,40,40,0)_0%,rgba(40,40,40,0.5)_50%,#333_100%)]",
+  3: "after:bg-[linear-gradient(90deg,rgba(40,40,40,0)_0%,#333_51.2%,rgba(51,51,51,0)_102.4%)]",
+  4: "after:bg-[linear-gradient(90deg,rgba(40,40,40,0)_0%,#333_51.2%,rgba(51,51,51,0)_102.4%)]",
+  6: "after:bg-[linear-gradient(0deg,rgba(40,40,40,0)_0%,rgba(40,40,40,0.5)_50%,#333_100%)]",
+  7: "after:bg-[linear-gradient(0deg,rgba(40,40,40,0)_0%,rgba(40,40,40,0.5)_50%,#333_100%)]",
+};
+
+export function WhiteLabelWhySection({
+  eyebrow,
+  title = whiteLabelShopifySectionCopy.whyTitle,
+  reasons = whiteLabelShopifyReasons,
+}: WhiteLabelWhySectionProps) {
+  const lastVisibleIndex = reasons.reduce(
+    (lastIndex, reason, index) => (reason ? index : lastIndex),
+    -1,
+  );
+  const lastRowIndex = Math.ceil(reasons.length / 3) - 1;
+  const isPistaBg = Boolean(
+    eyebrow?.toLowerCase().includes("process") ||
+    eyebrow?.toLowerCase().includes("partnership")
+  );
+
+  return (
+    <section
+      className={cn(
+        isPistaBg ? "bg-[#EFF4EF]" : "bg-[#fafaf7]",
+        "pt-[70px] pb-[82px] max-[1199px]:py-20 max-[992px]:py-[50px]",
+      )}
+    >
+      <Container className="max-[575px]:px-4">
+        <div data-aos="fade-up" className="title-wrapper text-center">
+          {eyebrow ? (
+            <div className="mb-2.5 text-center text-[13px] font-bold uppercase tracking-[1.5px] text-[#e33d37]">
+              <span>{eyebrow}</span>
+            </div>
+          ) : null}
+          <h2 className="mb-5 text-center font-display text-[35px] leading-[48.475px] font-medium tracking-[-0.7px] text-ink max-[1199px]:mb-[60px] max-[992px]:mb-10 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
+            {formatBrText(title, "max-[1199px]:hidden")}
+          </h2>
+        </div>
+        <div data-aos="fade-up" className="grid grid-cols-3 max-[767px]:grid-cols-1 max-[767px]:gap-5">
+          {reasons.map((reason, index) => {
+            const isEmpty = reason === null;
+            const isLastVisible = index === lastVisibleIndex;
+            const column = index % 3;
+            const row = Math.floor(index / 3);
+
+            return (
+              <article
+                className={cn(
+                  "relative px-[25px] py-10 text-center max-[1199px]:px-5 max-[1199px]:py-[30px] max-[992px]:py-5",
+                  column !== 2 &&
+                    "after:absolute after:top-0 after:right-0 after:h-full after:w-px after:opacity-20",
+                  column !== 2 && whyRightBorderClasses[index],
+                  row < lastRowIndex &&
+                    "before:absolute before:right-0 before:bottom-0 before:left-0 before:h-px before:opacity-20",
+                  row < lastRowIndex && whyBottomBorderClasses[column],
+                  column === 0 && "pl-0 max-[1199px]:pl-0",
+                  column === 2 && "pr-0 max-[1199px]:pr-0",
+                  isEmpty && "max-[767px]:hidden",
+                  !isEmpty &&
+                    !isLastVisible &&
+                    "max-[767px]:px-0 max-[767px]:pt-0 max-[767px]:pb-5 max-[767px]:after:hidden max-[767px]:before:absolute max-[767px]:before:right-0 max-[767px]:before:bottom-0 max-[767px]:before:left-0 max-[767px]:before:h-px max-[767px]:before:bg-[linear-gradient(90deg,transparent,rgba(51,51,51,0.2),transparent)]",
+                  isLastVisible &&
+                    "max-[767px]:px-0 max-[767px]:pt-0 max-[767px]:pb-5 max-[767px]:after:hidden max-[767px]:before:hidden",
+                )}
+                aria-hidden={isEmpty || undefined}
+                key={reason?.title ?? `empty-${index}`}
+              >
+                {reason ? (
+                  <>
+                    <h3 className="mb-3.5 font-display text-lg leading-[1.28] font-medium text-brand-red max-[992px]:mb-2.5">
+                      {reason.title}
+                    </h3>
+                    <p className="font-sans text-base leading-[30.4px] font-medium text-muted max-[1199px]:leading-[26px] max-[992px]:text-[15px] max-[992px]:leading-[22px]">
+                      {reason.description}
+                    </p>
+                  </>
+                ) : null}
+              </article>
+            );
+          })}
+        </div>
+      </Container>
+    </section>
+  );
+}
