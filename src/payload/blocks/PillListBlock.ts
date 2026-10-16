@@ -15,6 +15,5 @@ export const PillListBlock: Block = {
       dbName: "pl_items",
       fields: [{ name: "text", type: "text", required: true }],
     },
-    { name: "className", type: "text" },
   ],
 };

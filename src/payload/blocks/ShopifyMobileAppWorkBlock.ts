@@ -9,7 +9,6 @@ export const ShopifyMobileAppWorkBlock: Block = {
     { name: "description", type: "textarea", required: true },
     { name: "ctaLabel", type: "text" },
     { name: "ctaHref", type: "text" },
-    { name: "className", type: "text" },
     {
       name: "items",
       type: "array",

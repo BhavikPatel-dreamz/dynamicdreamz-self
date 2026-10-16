@@ -769,7 +769,6 @@ export interface Page {
             eyebrow?: string | null;
             heading?: string | null;
             description?: string | null;
-            className?: string | null;
             testimonials?: (number | Testimonial)[] | null;
             /**
              * Use for page-specific testimonial-card variants. The existing React card still owns all presentation.
@@ -829,7 +828,6 @@ export interface Page {
             eyebrow?: string | null;
             heading: string;
             description?: string | null;
-            className?: string | null;
             models?:
               | {
                   label: string;
@@ -1418,7 +1416,6 @@ export interface Page {
             title: string;
             titleAccent?: string | null;
             titleAccentTag?: ('i' | 'span') | null;
-            titleAccentClassName?: string | null;
             titleAccentPosition?: ('start' | 'end') | null;
             subtitle?: string | null;
             description?: string | null;
@@ -1448,7 +1445,7 @@ export interface Page {
             imageAlt?: string | null;
             imageWidth?: number | null;
             imageHeight?: number | null;
-            imageClassName?: string | null;
+            imageBlend?: ('normal' | 'darken') | null;
             reviewCount?: string | null;
             rating?: string | null;
             platform?: string | null;
@@ -1464,8 +1461,7 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
-            variant?: ('default' | 'centered') | null;
-            wrapperClassName?: string | null;
+            variant?: ('default' | 'centered' | 'shopify-plus-experts' | 'migration') | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'service-hero-video';
@@ -1597,7 +1593,6 @@ export interface Page {
             heading: string;
             description?: string | null;
             sectionId?: string | null;
-            className?: string | null;
             items?:
               | {
                   title: string;
@@ -1806,7 +1801,6 @@ export interface Page {
             heading: string;
             description?: string | null;
             idAttr?: string | null;
-            className?: string | null;
             variant?: ('white' | 'pista') | null;
             items?:
               | {
@@ -1888,7 +1882,6 @@ export interface Page {
             bottomNote?: string | null;
             variant?: ('green' | 'yellow' | 'transparent') | null;
             sectionId?: string | null;
-            className?: string | null;
             boxes?:
               | {
                   number?: string | null;
@@ -2217,7 +2210,6 @@ export interface Page {
             description: string;
             ctaLabel?: string | null;
             ctaHref?: string | null;
-            className?: string | null;
             items?:
               | {
                   name: string;
@@ -2293,8 +2285,6 @@ export interface Page {
             heading: string;
             description: string;
             idAttr?: string | null;
-            className?: string | null;
-            cardBgClassName?: string | null;
             columns?: number | null;
             hideCta?: boolean | null;
             cardVariant?: ('default' | 'services-box') | null;
@@ -2628,7 +2618,6 @@ export interface Page {
                   }[]
                 | null;
             };
-            className?: string | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'city-page-hero';
@@ -2750,7 +2739,6 @@ export interface Page {
         | {
             eyebrow?: string | null;
             title: string;
-            className?: string | null;
             reasons?:
               | {
                   title: string;
@@ -2826,7 +2814,6 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
-            className?: string | null;
             variant?: ('green' | 'cream') | null;
             id?: string | null;
             blockName?: string | null;
@@ -2886,7 +2873,6 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
-            className?: string | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'pill-list';
@@ -2896,8 +2882,6 @@ export interface Page {
             description: string;
             layout?: ('grid' | 'carousel') | null;
             carouselFullBleed?: boolean | null;
-            cardMinHeightClassName?: string | null;
-            className?: string | null;
             items?:
               | {
                   title: string;
@@ -2937,7 +2921,6 @@ export interface Page {
             title: string;
             subtitle: string;
             backgroundVariant?: ('gradient' | 'white') | null;
-            className?: string | null;
             items?:
               | {
                   title: string;
@@ -2957,7 +2940,6 @@ export interface Page {
             description: string;
             ctaLabel: string;
             ctaHref: string;
-            className?: string | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'lets-build';
@@ -3835,7 +3817,6 @@ export interface PagesSelect<T extends boolean = true> {
               eyebrow?: T;
               heading?: T;
               description?: T;
-              className?: T;
               testimonials?: T;
               items?:
                 | T
@@ -3896,7 +3877,6 @@ export interface PagesSelect<T extends boolean = true> {
               eyebrow?: T;
               heading?: T;
               description?: T;
-              className?: T;
               models?:
                 | T
                 | {
@@ -4514,7 +4494,6 @@ export interface PagesSelect<T extends boolean = true> {
               title?: T;
               titleAccent?: T;
               titleAccentTag?: T;
-              titleAccentClassName?: T;
               titleAccentPosition?: T;
               subtitle?: T;
               description?: T;
@@ -4546,7 +4525,7 @@ export interface PagesSelect<T extends boolean = true> {
               imageAlt?: T;
               imageWidth?: T;
               imageHeight?: T;
-              imageClassName?: T;
+              imageBlend?: T;
               reviewCount?: T;
               rating?: T;
               platform?: T;
@@ -4563,7 +4542,6 @@ export interface PagesSelect<T extends boolean = true> {
                     id?: T;
                   };
               variant?: T;
-              wrapperClassName?: T;
               id?: T;
               blockName?: T;
             };
@@ -4703,7 +4681,6 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               sectionId?: T;
-              className?: T;
               items?:
                 | T
                 | {
@@ -4929,7 +4906,6 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               idAttr?: T;
-              className?: T;
               variant?: T;
               items?:
                 | T
@@ -5016,7 +4992,6 @@ export interface PagesSelect<T extends boolean = true> {
               bottomNote?: T;
               variant?: T;
               sectionId?: T;
-              className?: T;
               boxes?:
                 | T
                 | {
@@ -5365,7 +5340,6 @@ export interface PagesSelect<T extends boolean = true> {
               description?: T;
               ctaLabel?: T;
               ctaHref?: T;
-              className?: T;
               items?:
                 | T
                 | {
@@ -5445,8 +5419,6 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               idAttr?: T;
-              className?: T;
-              cardBgClassName?: T;
               columns?: T;
               hideCta?: T;
               cardVariant?: T;
@@ -5805,7 +5777,6 @@ export interface PagesSelect<T extends boolean = true> {
                           id?: T;
                         };
                   };
-              className?: T;
               id?: T;
               blockName?: T;
             };
@@ -5942,7 +5913,6 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               eyebrow?: T;
               title?: T;
-              className?: T;
               reasons?:
                 | T
                 | {
@@ -6022,7 +5992,6 @@ export interface PagesSelect<T extends boolean = true> {
                     text?: T;
                     id?: T;
                   };
-              className?: T;
               variant?: T;
               id?: T;
               blockName?: T;
@@ -6086,7 +6055,6 @@ export interface PagesSelect<T extends boolean = true> {
                     text?: T;
                     id?: T;
                   };
-              className?: T;
               id?: T;
               blockName?: T;
             };
@@ -6097,8 +6065,6 @@ export interface PagesSelect<T extends boolean = true> {
               description?: T;
               layout?: T;
               carouselFullBleed?: T;
-              cardMinHeightClassName?: T;
-              className?: T;
               items?:
                 | T
                 | {
@@ -6140,7 +6106,6 @@ export interface PagesSelect<T extends boolean = true> {
               title?: T;
               subtitle?: T;
               backgroundVariant?: T;
-              className?: T;
               items?:
                 | T
                 | {
@@ -6161,7 +6126,6 @@ export interface PagesSelect<T extends boolean = true> {
               description?: T;
               ctaLabel?: T;
               ctaHref?: T;
-              className?: T;
               id?: T;
               blockName?: T;
             };

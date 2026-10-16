@@ -66,6 +66,5 @@ export const CityPageHeroBlock: Block = {
         },
       ],
     },
-    { name: "className", type: "text" },
   ],
 };

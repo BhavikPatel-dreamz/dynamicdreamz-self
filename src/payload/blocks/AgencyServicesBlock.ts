@@ -8,8 +8,6 @@ export const AgencyServicesBlock: Block = {
     { name: "heading", type: "text", required: true },
     { name: "description", type: "textarea", required: true },
     { name: "idAttr", type: "text" },
-    { name: "className", type: "text" },
-    { name: "cardBgClassName", type: "text" },
     { name: "columns", type: "number", defaultValue: 2 },
     { name: "hideCta", type: "checkbox", defaultValue: false },
     {

@@ -8,7 +8,6 @@ export const ShopifyMigrationNumberedGridBlock: Block = {
     { name: "heading", type: "text", required: true },
     { name: "description", type: "textarea" },
     { name: "idAttr", type: "text" },
-    { name: "className", type: "text" },
     {
       name: "variant",
       type: "select",

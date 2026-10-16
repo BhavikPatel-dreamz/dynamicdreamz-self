@@ -18,7 +18,6 @@ export const ThemeWhyChooseBlock: Block = {
       ],
       defaultValue: "gradient",
     },
-    { name: "className", type: "text" },
     {
       name: "items",
       type: "array",

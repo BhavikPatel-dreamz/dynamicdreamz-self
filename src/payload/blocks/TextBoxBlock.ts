@@ -18,7 +18,6 @@ export const TextBoxBlock: Block = {
       dbName: "tb_items",
       fields: [{ name: "text", type: "text", required: true }],
     },
-    { name: "className", type: "text" },
     {
       name: "variant",
       type: "select",

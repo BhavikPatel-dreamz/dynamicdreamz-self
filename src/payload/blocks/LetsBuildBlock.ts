@@ -11,6 +11,5 @@ export const LetsBuildBlock: Block = {
     { name: "description", type: "textarea", required: true },
     { name: "ctaLabel", type: "text", required: true },
     { name: "ctaHref", type: "text", required: true },
-    { name: "className", type: "text" },
   ],
 };
