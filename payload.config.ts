@@ -5,17 +5,17 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
-import { Users } from "./src/collections/Users";
-import { Media } from "./src/collections/Media";
-import { Categories } from "./src/collections/Categories";
-import { Authors } from "./src/collections/Authors";
-import { Testimonials } from "./src/collections/Testimonials";
-import { Posts } from "./src/collections/Posts";
-import { CaseStudies } from "./src/collections/CaseStudies";
-import { Pages } from "./src/collections/Pages";
+import { Users } from "./src/payload/collections/Users";
+import { Media } from "./src/payload/collections/Media";
+import { Categories } from "./src/payload/collections/Categories";
+import { Authors } from "./src/payload/collections/Authors";
+import { Testimonials } from "./src/payload/collections/Testimonials";
+import { Posts } from "./src/payload/collections/Posts";
+import { CaseStudies } from "./src/payload/collections/CaseStudies";
+import { Pages } from "./src/payload/collections/Pages";
 
-import { Navigation } from "./src/globals/Navigation";
-import { SiteSettings } from "./src/globals/SiteSettings";
+import { Navigation } from "./src/payload/globals/Navigation";
+import { SiteSettings } from "./src/payload/globals/SiteSettings";
 import { mediaServerStorage } from "./adapter/src/index";
 
 const filename = fileURLToPath(import.meta.url);

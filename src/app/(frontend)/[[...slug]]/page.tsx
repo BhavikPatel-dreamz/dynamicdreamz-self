@@ -3,7 +3,7 @@ import { draftMode } from "next/headers";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { BlockRenderer, type CmsSectionBlock } from "@/components/blocks/block-renderer";
+import { RenderBlocks, type CmsSectionBlock } from "@/components/RenderBlocks";
 import { draftPreviewCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
 import { getPayloadPageBySlug } from "@/lib/payload";
@@ -162,7 +162,7 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
             </Link>
           </aside>
         ) : null}
-        <BlockRenderer sections={pageSections} />
+        <RenderBlocks sections={pageSections} />
       </main>
     );
   }

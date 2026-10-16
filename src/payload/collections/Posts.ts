@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
 import { safeRevalidatePath } from "@/lib/revalidate";
-import { blogContentBlocks } from "@/blocks/blog";
+import { blogContentBlocks } from "@/payload/blocks/blog";
 
 export const Posts: CollectionConfig = {
   slug: "posts",

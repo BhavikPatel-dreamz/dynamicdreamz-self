@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
-import { AosInit } from "@/components/layout/aos-init";
+import { AOSProvider } from "@/components/providers/AOSProvider";
 import { ContactWidget } from "@/components/layout/contact-widget";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -106,27 +106,28 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       className={`${neueMontreal.variable} ${neueMontrealMedium.variable} ${montserrat.variable}`}
     >
       <body>
-        <a
-          className="fixed top-3 left-3 z-[1000] -translate-y-[170%] rounded-[30px] bg-ink px-4 py-2.5 font-bold text-white transition-transform duration-160 focus:translate-y-0"
-          href="#main-content"
-        >
-          {siteChromeCopy.skipToContent}
-        </a>
-        <SiteHeader
-          contactEmail={settingsData?.email}
-          navigation={navigation}
-        />
-        {children}
-        <SiteFooter
-          contactEmail={settingsData?.email}
-          contactPhone={settingsData?.phone}
-          copyrightText={navData?.copyright}
-          footerBottomLinks={footerBottomLinks}
-          footerColumns={footerColumns}
-          socialLinks={settingsData?.socialLinks}
-        />
-        <ContactWidget whatsappNumber={settingsData?.whatsappNumber} />
-        <AosInit />
+        <AOSProvider>
+          <a
+            className="fixed top-3 left-3 z-[1000] -translate-y-[170%] rounded-[30px] bg-ink px-4 py-2.5 font-bold text-white transition-transform duration-160 focus:translate-y-0"
+            href="#main-content"
+          >
+            {siteChromeCopy.skipToContent}
+          </a>
+          <SiteHeader
+            contactEmail={settingsData?.email}
+            navigation={navigation}
+          />
+          {children}
+          <SiteFooter
+            contactEmail={settingsData?.email}
+            contactPhone={settingsData?.phone}
+            copyrightText={navData?.copyright}
+            footerBottomLinks={footerBottomLinks}
+            footerColumns={footerColumns}
+            socialLinks={settingsData?.socialLinks}
+          />
+          <ContactWidget whatsappNumber={settingsData?.whatsappNumber} />
+        </AOSProvider>
       </body>
     </html>
   );
