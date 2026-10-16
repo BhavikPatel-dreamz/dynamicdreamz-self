@@ -2,7 +2,7 @@ import type {
   YithWonderBenefitIconName,
   YithWonderFeatureIconName,
   YithWonderServiceIconName,
-} from "@/components/sections/yith-wonder-theme-customization/yith-wonder-icons";
+} from "@/lib/icons/yith-wonder-icons";
 
 export type YithWonderFeatureItem = {
   iconName: YithWonderFeatureIconName;

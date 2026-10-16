@@ -1,6 +1,6 @@
-import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
-import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-import type { BigCommerceIconName } from "@/components/sections/bigcommerce/bigcommerce-icons";
+import type { ClientLogoSliderItem } from "@/components/ui/CarouselSliderClient";
+import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
+import type { BigCommerceIconName } from "@/lib/icons/bigcommerce-icons";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const bigCommerceDevelopmentHero = {

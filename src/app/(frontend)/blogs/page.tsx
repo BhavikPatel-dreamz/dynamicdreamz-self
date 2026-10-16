@@ -1,4 +1,4 @@
-import { BlogsPage } from "@/components/sections/blogs-page";
+import { BlogsPage } from "@/components/blog/BlogHubFeed";
 import {
   BLOGS_PAGE_SIZE,
   filterBlogArchiveArticles,

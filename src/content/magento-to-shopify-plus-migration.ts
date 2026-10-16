@@ -1,7 +1,7 @@
-import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
-import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-import type { HeroBadge, ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
-import type { MagentoPlusIconName } from "@/components/sections/magento-to-shopify-plus/magento-plus-icons";
+import type { ClientLogoSliderItem } from "@/components/ui/CarouselSliderClient";
+import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
+import type { HeroBadge, ServiceHeroVideoContent } from "@/types/blocks";
+import type { MagentoPlusIconName } from "@/lib/icons/magento-plus-icons";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export { migrationSectionCopy as magentoPlusMigrationSectionCopy } from "@/content/migration-common";

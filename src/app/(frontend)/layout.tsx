@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 import { AOSProvider } from "@/components/providers/AOSProvider";
-import { ContactWidget } from "@/components/layout/contact-widget";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
+import { ContactWidget, SiteHeader } from "@/components/layout/Header";
+import { SiteFooter } from "@/components/layout/Footer";
 import { siteChromeCopy } from "@/content/common";
 import { rootMetadata } from "@/data/seo";
 import {

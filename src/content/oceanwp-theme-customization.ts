@@ -3,7 +3,7 @@ import type {
   OceanwpBenefitIconName,
   OceanwpFeatureIconName,
   OceanwpServiceIconName,
-} from "@/components/sections/oceanwp-theme-customization/oceanwp-icons";
+} from "@/lib/icons/oceanwp-icons";
 
 export type OceanwpFeatureItem = {
   iconName: OceanwpFeatureIconName;

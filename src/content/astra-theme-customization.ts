@@ -3,7 +3,7 @@ import type {
   AstraBenefitIconName,
   AstraFeatureIconName,
   AstraServiceIconName,
-} from "@/components/sections/astra-theme-customization/astra-icons";
+} from "@/lib/icons/astra-icons";
 
 export type AstraFeatureItem = {
   iconName: AstraFeatureIconName;

@@ -2399,7 +2399,7 @@ export function createFoodBeverageShopifyPlusAgencyPageSchema() {
     breadcrumbName: "Food & Beverage Shopify Plus Agency",
     audienceType: "Food and beverage brands, ecommerce merchants, and digital agencies",
     faqs: foodBeverageShopifyPlusFaqs,
-    offers: foodBeverageServices.items.map((item) => ({
+    offers: (foodBeverageServices.items ?? []).map((item) => ({
       title: item.title,
       description: item.description,
     })),
@@ -2794,7 +2794,7 @@ export function createSeoServicesPageSchema() {
       question: item.question,
       answer: cleanFaqSchemaText(item.answer),
     })),
-    offers: seoServicesWhatWeProvide.items.map((service) => ({
+    offers: (seoServicesWhatWeProvide.items ?? []).map((service) => ({
       title: service.title,
       description: service.description,
     })),
@@ -4794,7 +4794,7 @@ export function createWebDesignPageSchema() {
         .filter(Boolean)
         .join(" "),
     })),
-    offers: webDesignServices.items.map((item) => ({
+    offers: (webDesignServices.items ?? []).map((item) => ({
       title: item.title,
       description: item.description,
     })),

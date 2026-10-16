@@ -25,6 +25,9 @@ export const sharedUiCopy = {
     heading: "Want us to help you with your online store?",
     label: "Request a quote",
   },
+  viewSolutions: "View Solutions →",
+  sourceLabel: "Source:",
+  targetLabel: "Target",
   faq: {
     heading: "Frequently Asked Questions",
   },
@@ -33,6 +36,8 @@ export const sharedUiCopy = {
     ariaLabel: "Client video testimonials",
     previous: "Previous testimonial",
     next: "Next testimonial",
+    defaultTitle: "Words From Our Global Clients",
+    defaultDescription: "Read how we helped brands achieve operational excellence and scale revenues.",
   },
 } as const;
 

@@ -1,12 +1,12 @@
-import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-import type { HeroBadge, ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
-import type { PortfolioShowcaseItem } from "@/components/sections/portfolio-showcase-section";
-import type { ProcessStepItem } from "@/components/sections/our-development-process-section";
-import type { WhyChooseMigrationContent } from "@/components/sections/why-choose-shopify-migration-section";
-import type { ShopifyStageServicesContent } from "@/components/sections/shopify-stage-services-section";
-import type { AiEmpoweredDeliveryContent } from "@/components/sections/ai-empowered-delivery-section";
-import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
-import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
+import type { HeroBadge, ServiceHeroVideoContent } from "@/types/blocks";
+import type { PortfolioShowcaseItem } from "@/types/blocks";
+import type { ProcessStepItem } from "@/types/blocks";
+import type { WhyChooseMigrationContent } from "@/types/blocks";
+import type { ShopifyStageServicesContent } from "@/types/blocks";
+import type { AiEmpoweredDeliveryContent } from "@/types/blocks";
+import type { PricingEngagementContent } from "@/types/blocks";
+import type { ClientLogoSliderItem } from "@/components/ui/CarouselSliderClient";
 
 const icon = (name: string) => `/assets/hire-shopify-developers/icons/${name}.svg`;
 

@@ -1,12 +1,12 @@
-import type { CityPageHeroContent } from "@/components/sections/city-page-hero-section";
-import type { ThemeCustomizationServicesContent } from "@/components/sections/theme-customization-services-section";
-import type { ShopifyStageServicesContent } from "@/components/sections/shopify-stage-services-section";
-import type { TechnologiesWorkWithContent } from "@/components/sections/technologies-work-with-section";
-import type { RecentArchitecturePatternsContent } from "@/components/sections/recent-architecture-patterns-section";
-import type { CaseStudyPreviewItem } from "@/components/sections/services-case-studies-section";
-import type { EvaluationFrameworkContent } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
-import type { CityWhyChooseBoxesContent } from "@/components/sections/city-why-choose-boxes-section";
-import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { CityPageHeroContent } from "@/types/blocks";
+import type { ThemeCustomizationServicesContent } from "@/types/blocks";
+import type { ShopifyStageServicesContent } from "@/types/blocks";
+import type { TechnologiesWorkWithContent } from "@/types/blocks";
+import type { RecentArchitecturePatternsContent } from "@/types/blocks";
+import type { CaseStudyPreviewItem } from "@/types/blocks";
+import type { EvaluationFrameworkContent } from "@/types/blocks";
+import type { CityWhyChooseBoxesContent } from "@/types/blocks";
+import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
 
 export const fullStackDevelopmentHeroContent: CityPageHeroContent = {
   eyebrows: ["Full Stack Development Services"],

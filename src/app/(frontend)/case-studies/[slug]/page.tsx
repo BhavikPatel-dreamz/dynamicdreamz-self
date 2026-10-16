@@ -3,7 +3,7 @@ import { draftMode } from "next/headers";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { CaseStudyDetailPage } from "@/components/sections/case-study-details/case-study-detail-page";
+import { CaseStudyDetailPage } from "@/components/case-studies/CaseStudyDetailHero";
 import { caseStudyDetails, getCaseStudyBySlug } from "@/content/case-study-details";
 import { draftPreviewCopy } from "@/content/common";
 import { createPageMetadata, type PageSeoConfig } from "@/data/seo";

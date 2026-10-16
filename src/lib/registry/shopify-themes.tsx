@@ -1,4 +1,4 @@
-import { ShopifyThemeCustomizationTemplate } from "@/components/sections/shopify-theme-customization-template";
+import { ShopifyThemeCustomizationTemplate } from "./templates";
 import { pageMetadata } from "@/data/seo";
 import type { ServicePageEntry } from "@/lib/registry/types";
 

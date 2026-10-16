@@ -1,0 +1,197 @@
+import Image from "next/image";
+import Link from "next/link";
+
+import { Container } from "@/components/ui/container";
+import { blogDetailUiCopy } from "@/content/blog-post-details";
+import { cn } from "@/lib/class-names";
+
+export type BlogCardItem = {
+  title: string;
+  href: string;
+  image?: string | null;
+  date: string;
+  displayDate: string;
+  category?: string;
+  categoryHref?: string;
+  width?: number | null;
+  height?: number | null;
+  excerpt?: string;
+};
+
+type BlogCardProps = {
+  item: BlogCardItem;
+  variant: "home" | "resources" | "archive";
+  isLast?: boolean;
+};
+
+export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
+  const category = item.category ?? "Shopify";
+  const categoryHref = item.categoryHref ?? "/blogs?category=shopify";
+
+  if (variant === "archive") {
+    if (!item.image || item.category === "Faqs") {
+      return (
+        <article className="blog-col-274 h-full" data-blogs-card-faq>
+          <div className="rounded-[15px] border border-[rgba(110,117,143,0.1)] bg-white p-5 shadow-[2px_2px_4px_0px_rgba(83,83,83,0.05)] transition-all duration-300">
+            <Link className="group/faq-card block" href={item.href}>
+              <h3
+                className="font-display text-[20px] font-normal leading-[28.8px] text-[#282828] transition-colors duration-300 group-hover/faq-card:text-brand-red"
+                data-blogs-title
+              >
+                {item.title}
+              </h3>
+              {item.excerpt ? (
+                <p className="mt-2 text-sm leading-relaxed text-[#535353] line-clamp-3">
+                  {item.excerpt}
+                </p>
+              ) : null}
+            </Link>
+          </div>
+        </article>
+      );
+    }
+
+    return (
+      <article className="group/archive-card h-full pb-[25px]">
+        <div
+          className="mb-[15px] flex overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.12)]"
+          data-blogs-image
+        >
+          <Link className="relative block w-full pb-[65.226%]" href={item.href}>
+            <Image
+              className="object-cover object-top"
+              src={item.image}
+              alt={item.title}
+              fill
+              sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 991px) calc((100vw - 64px) / 2), (max-width: 1399px) calc((100vw - 72px) / 3), 430px"
+            />
+          </Link>
+        </div>
+        <div className="-mx-1 mb-[9px] flex flex-wrap items-center">
+          <Link className="inline-flex" href={categoryHref}>
+            <span
+              className="mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-medium text-muted uppercase transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:px-[7.5px] max-[767px]:py-[3.5px] max-[767px]:text-[10px] max-[767px]:leading-[1.48] max-[767px]:tracking-[0.2px]"
+              data-blogs-meta
+            >
+              {category}
+            </span>
+          </Link>
+          <time
+            className="mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-medium text-muted uppercase max-[767px]:px-[7.5px] max-[767px]:py-[3.5px] max-[767px]:text-[10px] max-[767px]:leading-[1.48] max-[767px]:tracking-[0.2px]"
+            dateTime={item.date}
+          >
+            {item.displayDate}
+          </time>
+        </div>
+        <h3 className="font-display text-lg leading-[30px] font-medium text-ink max-[1199px]:text-base max-[1199px]:leading-[25px]" data-blogs-title>
+          <Link className="group-hover/archive-card:underline hover:underline focus-visible:underline" href={item.href}>
+            {item.title}
+          </Link>
+        </h3>
+      </article>
+    );
+  }
+
+  if (variant === "resources") {
+    return (
+      <article className="blog-col group/resource-card h-[405.67px] w-[calc(100cqw-50px)] shrink-0 snap-start min-[768px]:h-[389.39px] min-[768px]:w-[calc((100cqw-25px)/2)] min-[1200px]:h-[405.3px] min-[1200px]:w-[calc((100cqw-50px)/3)]">
+        <div className="blog-inner flex h-full flex-col border border-ink/10 bg-white p-5">
+          <Link className="relative mb-7 block overflow-hidden pt-[55%]" href={item.href}>
+            <Image
+              className="object-cover transition-transform duration-300 group-hover/resource-card:scale-[1.03]"
+              src={item.image ?? "/assets/og/homepage.png"}
+              alt={item.title}
+              fill
+              sizes="(max-width: 767px) calc(100vw - 90px), (max-width: 1199px) calc((100vw - 113px) / 2), 324px"
+            />
+          </Link>
+          <div className="flex items-center justify-between gap-3 pb-6 text-[14px] leading-[1.9] font-medium text-muted uppercase">
+            <Link className="transition-colors hover:text-brand-red focus-visible:text-brand-red" href={categoryHref}>{category}</Link>
+            <time className="shrink-0" dateTime={item.date}>{item.displayDate}</time>
+          </div>
+          <h3 className="line-clamp-4 text-[18px] leading-[1.5] font-normal tracking-normal text-ink">
+            <Link className="hover:underline hover:underline-offset-2 focus-visible:underline focus-visible:underline-offset-2" href={item.href}>{item.title}</Link>
+          </h3>
+        </div>
+      </article>
+    );
+  }
+
+  return (
+    <article className={cn("group/insight min-w-0 max-[992px]:mb-6 max-[992px]:block max-[992px]:border-b max-[992px]:border-[#efefef] max-[992px]:pb-6", isLast && "max-[992px]:mb-0 max-[992px]:border-b-0 max-[992px]:pb-0")}>
+      <div className="contents max-[992px]:flex max-[992px]:items-stretch max-[992px]:justify-between max-[992px]:gap-5">
+        <Link className="mb-3 block overflow-hidden rounded-[20px] max-[992px]:relative max-[992px]:m-0 max-[992px]:w-2/5 max-[992px]:flex-[1_1_40%] max-[992px]:rounded-[10px]" href={item.href}>
+          <Image className="h-auto w-full object-cover [aspect-ratio:1504/1137] max-[992px]:absolute max-[992px]:inset-0 max-[992px]:h-full max-[992px]:[aspect-ratio:auto]" src={item.image ?? "/assets/og/homepage.png"} alt={item.title} width={item.width ?? 1504} height={item.height ?? 1137} sizes="(max-width: 991px) 40vw, 33vw" />
+        </Link>
+        <div className="max-[992px]:w-[calc(100%-110px)] max-[992px]:flex-[1_1_calc(100%-110px)]">
+          <div className="blog-cate-wrap -mx-1 mb-0 flex flex-wrap items-center max-[767px]:mb-[3px]">
+            <Link className="inline-flex" href={categoryHref}>
+              <span className="blog-cate mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-semibold text-muted transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:px-[7.5px] max-[767px]:pt-[4.5px] max-[767px]:pb-[2.75px] max-[767px]:text-[10px] max-[767px]:leading-none max-[767px]:tracking-[0.2px]">
+                {category}
+              </span>
+            </Link>
+            <time
+              className="blog-date mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-semibold text-muted max-[767px]:px-[7.5px] max-[767px]:pt-[4.5px] max-[767px]:pb-[2.75px] max-[767px]:text-[10px] max-[767px]:leading-none max-[767px]:tracking-[0.2px]"
+              dateTime={item.date}
+            >
+              {item.displayDate}
+            </time>
+          </div>
+          <div className="blog-title">
+            <Link className="group/title block" href={item.href}>
+              <h3 className="font-display text-xl leading-[30px] font-normal tracking-normal transition-colors duration-300 ease-in-out group-hover/title:text-brand-red group-focus-visible/title:text-brand-red max-[767px]:text-base max-[767px]:leading-[normal]">
+                {item.title}
+              </h3>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+type BlogRelatedSectionProps = {
+  posts: readonly BlogCardItem[];
+};
+
+export function BlogRelatedSection({ posts }: BlogRelatedSectionProps) {
+  if (!posts || posts.length === 0) return null;
+
+  return (
+    <section
+      className="related-blog-sec mt-20 bg-[#eff4ef] py-20 max-[991px]:mt-[50px] max-[991px]:py-[50px]"
+      aria-labelledby="related-blogs-title"
+    >
+      <Container>
+        <div className="mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-8">
+          <div className="w-[44%] max-[991px]:mb-4 max-[991px]:w-full">
+            <div className="mb-4 inline-flex items-center text-sm font-semibold uppercase leading-[1.2] text-[#282828] before:mr-3 before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red">
+              <span>{blogDetailUiCopy.relatedEyebrow}</span>
+            </div>
+            <h2
+              id="related-blogs-title"
+              className="m-0 font-montreal-medium text-[35px] leading-[1.4] text-[#282828] max-[767px]:text-[28px]"
+            >
+              {blogDetailUiCopy.relatedHeading}
+            </h2>
+          </div>
+          <div className="w-[48.3%] max-[991px]:w-full">
+            <p className="m-0 text-base font-medium leading-7 text-[#535353]">
+              {blogDetailUiCopy.relatedDescription}
+            </p>
+          </div>
+        </div>
+        <div className="-mx-3.5 flex flex-wrap gap-y-7">
+          {posts.map((post) => (
+            <div
+              key={post.href}
+              className="w-1/3 px-3.5 max-[991px]:w-1/2 max-[767px]:w-full"
+            >
+              <BlogCard item={post} variant="archive" />
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}

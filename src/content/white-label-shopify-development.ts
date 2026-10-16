@@ -8,8 +8,8 @@ import type {
   WhiteLabelStat,
   WhiteLabelTool,
 } from "@/types/white-label-service";
-import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
-import type { PortfolioShowcaseSectionProps } from "@/components/sections/portfolio-showcase-section";
+import type { PricingEngagementContent } from "@/types/blocks";
+import type { PortfolioShowcaseSectionProps } from "@/types/blocks";
 
 export const whiteLabelShopifySectionCopy = {
   toolsAriaLabel: "Shopify technologies and tools",

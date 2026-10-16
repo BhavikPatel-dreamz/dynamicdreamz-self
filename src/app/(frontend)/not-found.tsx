@@ -1,4 +1,4 @@
-import { ButtonLink } from "@/components/ui/button-link";
+import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/container";
 import { notFoundCopy } from "@/content/common";
 

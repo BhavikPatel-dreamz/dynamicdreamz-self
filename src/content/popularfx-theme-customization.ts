@@ -3,7 +3,7 @@ import type {
   PopularfxBenefitIconName,
   PopularfxFeatureIconName,
   PopularfxServiceIconName,
-} from "@/components/sections/popularfx-theme-customization/popularfx-icons";
+} from "@/lib/icons/popularfx-icons";
 
 export type PopularfxFeatureItem = {
   iconName: PopularfxFeatureIconName;

@@ -3,7 +3,7 @@ import { draftMode } from "next/headers";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { BlogDetailPage } from "@/components/sections/blog-details/blog-detail-page";
+import { BlogDetailPage } from "@/components/blog/BlogArticleHero";
 import { blogPostIndex, getBlogPostBySlug, getRelatedBlogPosts } from "@/content/blog-post-details";
 import { draftPreviewCopy } from "@/content/common";
 import { createPageMetadata, type PageSeoConfig } from "@/data/seo";
