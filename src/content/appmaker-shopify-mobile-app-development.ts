@@ -1,8 +1,8 @@
-import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-import type { ShopifyAppBenefitItem } from "@/components/sections/shopify-mobile-app/shopify-app-benefits-section";
-import type { ShopifyAppFeatureItem } from "@/components/sections/shopify-mobile-app/shopify-app-features-section";
-import type { ShopifyAppProcessStep } from "@/components/sections/shopify-mobile-app/shopify-app-process-section";
-import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
+import type { ShopifyAppBenefitItem } from "@/types/blocks";
+import type { ShopifyAppFeatureItem } from "@/types/blocks";
+import type { ShopifyAppProcessStep } from "@/types/blocks";
+import type { ClientLogoSliderItem } from "@/components/ui/CarouselSliderClient";
 
 export const appmakerHeroCoBranding = {
   leftLogo: {

@@ -1,0 +1,330 @@
+import Image from "next/image";
+import Link from "next/link";
+
+import { Container } from "@/components/ui/container";
+import { siteChromeCopy } from "@/content/common";
+import { footerAwards, footerNavigation } from "@/data/navigation";
+import { siteConfig } from "@/data/site";
+
+function MailIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 17 14" width="17" height="14">
+      <path d="M15 0H1.667C.75 0 0 .75 0 1.667v10c0 .916.75 1.666 1.667 1.666H15c.917 0 1.667-.75 1.667-1.666v-10C16.667.75 15.917 0 15 0Zm-.333 3.542L9.217 6.95a1.67 1.67 0 0 1-1.767 0L2 3.542a.7.7 0 0 1 .75-1.2l5.583 3.491 5.584-3.491a.7.7 0 0 1 .75 1.2Z" fill="currentColor" />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 14 19" width="14" height="19">
+      <path d="m2.18.555 1.506-.463a2.14 2.14 0 0 1 2.57 1.192l1.056 2.39a2.14 2.14 0 0 1-.493 2.486L5.21 7.685c-.216.208-.052 1.019.736 2.407.788 1.39 1.398 1.939 1.679 1.853l2.107-.655a2.14 2.14 0 0 1 2.361.807l1.502 2.117a2.14 2.14 0 0 1-.264 2.855l-1.16 1.118a2.91 2.91 0 0 1-2.861.683c-2.433-.757-4.686-3.005-6.79-6.712C.413 8.446-.384 5.315.171 2.757A2.91 2.91 0 0 1 2.18.555Z" fill="currentColor" />
+    </svg>
+  );
+}
+
+function LinkedinIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 20 20" width="20" height="20" fill="none">
+      <path
+        d="M15.053 0H4.447C3.268 0 2.136.469 1.303 1.303.469 2.136 0 3.268 0 4.447v10.606C0 16.232.469 17.364 1.303 18.198c.834.834 1.965 1.302 3.144 1.302h10.606c1.179 0 2.31-.468 3.144-1.302.834-.834 1.303-1.966 1.303-3.145V4.447c0-1.179-.469-2.311-1.303-3.144A4.417 4.417 0 0 0 15.053 0ZM6.593 15.742a.45.45 0 0 1-.4.423H4.413a.434.434 0 0 1-.4-.412V8.35c0-.107.03-.2.07-.29.04-.05.07-.1.11-.138.04-.038.08-.069.13-.09a.44.44 0 0 1 .19-.031h1.78c.053 0 .106.011.156.032.049.02.094.051.131.089.037.039.066.084.086.134.02.05.029.103.027.155v7.392ZM5.27 6.382c-.193-.001-.383-.04-.56-.116a1.44 1.44 0 0 1-.785-.8c-.072-.179-.109-.37-.107-.563a1.48 1.48 0 0 1 .438-1.038c.137-.135.3-.242.478-.314.179-.073.37-.109.563-.108.383.012.745.174 1.01.45.265.276.412.645.409 1.028a1.47 1.47 0 0 1-.424.952c-.27.272-.635.428-1.018.427Zm10.817 9.348a.42.42 0 0 1-.378.388h-1.879a.426.426 0 0 1-.378-.389V12.305c0-.511.156-2.223-1.356-2.223-1.179 0-1.412 1.2-1.457 1.734v3.991a.42.42 0 0 1-.378.388H8.438a.438.438 0 0 1-.389-.39V8.314c.003-.101.045-.198.118-.268a.444.444 0 0 1 .272-.11h1.822c.101 0 .199.04.272.11.072.07.115.167.118.268v.645c.266-.39.633-.699 1.062-.895.429-.196.903-.271 1.372-.217 3.035 0 3.024 2.835 3.024 4.447l-.022 3.436Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 18 18" width="18" height="18" fill="none">
+      <path
+        d="M13 0c1.326 0 2.598.527 3.536 1.464C17.473 2.402 18 3.674 18 5v8c0 1.326-.527 2.598-1.464 3.536C15.598 17.473 14.326 18 13 18H5c-1.326 0-2.598-.527-3.536-1.464C.527 15.598 0 14.326 0 13V5C0 3.674.527 2.402 1.464 1.464 2.402.527 3.674 0 5 0h8ZM9 5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm4.5-3.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+import { cn } from "@/lib/class-names";
+import type { NavigationGroup } from "@/data/navigation";
+
+export interface FooterLinkItem {
+  label: string;
+  href: string;
+}
+
+export interface SocialLinkItem {
+  platform: string;
+  url: string;
+}
+
+function SocialLinks({
+  className = "",
+  socialLinks,
+}: {
+  className?: string;
+  socialLinks?: SocialLinkItem[] | null;
+}) {
+  if (socialLinks && socialLinks.length > 0) {
+    return (
+      <div className={`flex items-center gap-2.5 ${className}`}>
+        {socialLinks.map((item) => {
+          const isInsta = item.platform.toLowerCase().includes("instagram");
+          return (
+            <a
+              key={`${item.platform}-${item.url}`}
+              className="flex transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red"
+              href={item.url}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              aria-label={`Dynamic Dreamz on ${item.platform}`}
+            >
+              {isInsta ? <InstagramIcon /> : <LinkedinIcon />}
+            </a>
+          );
+        })}
+      </div>
+    );
+  }
+
+  return (
+    <div className={`flex items-center gap-2.5 ${className}`}>
+      <a className="flex transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href={siteConfig.social.linkedin} target="_blank" rel="nofollow noopener noreferrer" aria-label="Dynamic Dreamz on LinkedIn"><LinkedinIcon /></a>
+      <a className="flex transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href={siteConfig.social.instagram} target="_blank" rel="nofollow noopener noreferrer" aria-label="Dynamic Dreamz on Instagram"><InstagramIcon /></a>
+    </div>
+  );
+}
+
+function ContactDetails({
+  showSocial = true,
+  email,
+  phoneDisplay,
+  phoneHref,
+  socialLinks,
+}: {
+  showSocial?: boolean;
+  email?: string;
+  phoneDisplay?: string;
+  phoneHref?: string;
+  socialLinks?: SocialLinkItem[] | null;
+}) {
+  const displayEmail = email || siteConfig.email;
+  const displayPhone = phoneDisplay || siteConfig.phoneDisplay;
+  const hrefPhone = phoneHref || siteConfig.phoneHref;
+
+  return (
+    <div className="border-t border-ink/10 pt-[15px] max-[991px]:border-0 max-[991px]:pt-0">
+      <address className="flex flex-col gap-[15px] not-italic">
+        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={`mailto:${displayEmail}`}>
+          <span className="mr-2.5 flex w-[18px] shrink-0 items-center justify-center text-[#111111]"><MailIcon /></span>
+          <span>{displayEmail}</span>
+        </a>
+        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={hrefPhone}>
+          <span className="mr-2.5 flex w-[18px] shrink-0 items-center justify-center text-[#111111]"><PhoneIcon /></span>
+          <span>{displayPhone}</span>
+        </a>
+      </address>
+      {showSocial ? <SocialLinks className="mt-5" socialLinks={socialLinks} /> : null}
+    </div>
+  );
+}
+
+function FooterMenu({ index, navigation }: { index: number; navigation: NavigationGroup[] }) {
+  const group = navigation[index];
+  if (!group) return null;
+  return (
+    <nav aria-label={`${group.label} links`}>
+      <h3 className="mb-2.5 font-montreal-medium text-lg leading-7.5 font-medium">{group.label}</h3>
+      <ul className="m-0 list-none p-0">
+        {group.links.map((link, linkIndex) => (
+          <li className={linkIndex > 0 ? "mt-2" : undefined} key={`${link.label}-${link.href}`}>
+            <Link className="text-sm leading-[166.182%] font-medium tracking-[-0.28px] text-ink/80 capitalize transition-colors duration-300 hover:text-ink focus-visible:text-ink" href={link.href}>{link.label}</Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+function PartnershipMenus({ navigation }: { navigation: NavigationGroup[] }) {
+  return (
+    <div className="flex flex-col gap-[30px]">
+      <FooterMenu index={3} navigation={navigation} />
+      <FooterMenu index={4} navigation={navigation} />
+    </div>
+  );
+}
+
+function MoreServices({
+  navigation,
+  email,
+  phoneDisplay,
+  phoneHref,
+  socialLinks,
+}: {
+  navigation: NavigationGroup[];
+  email?: string;
+  phoneDisplay?: string;
+  phoneHref?: string;
+  socialLinks?: SocialLinkItem[] | null;
+}) {
+  return (
+    <div className="flex flex-col gap-[15px]">
+      <FooterMenu index={5} navigation={navigation} />
+      <ContactDetails
+        email={email}
+        phoneDisplay={phoneDisplay}
+        phoneHref={phoneHref}
+        socialLinks={socialLinks}
+      />
+    </div>
+  );
+}
+
+export interface SiteFooterProps {
+  footerColumns?: NavigationGroup[] | null;
+  footerBottomLinks?: FooterLinkItem[] | null;
+  socialLinks?: SocialLinkItem[] | null;
+  contactEmail?: string | null;
+  contactPhone?: string | null;
+  copyrightText?: string | null;
+}
+
+export function SiteFooter({
+  footerColumns,
+  footerBottomLinks,
+  socialLinks,
+  contactEmail,
+  contactPhone,
+  copyrightText,
+}: SiteFooterProps = {}) {
+  const effectiveEmail = contactEmail || siteConfig.email;
+  const effectivePhone = contactPhone || siteConfig.phoneDisplay;
+  const effectivePhoneHref = effectivePhone
+    ? `tel:${effectivePhone.replace(/[^0-9+]/g, "")}`
+    : siteConfig.phoneHref;
+
+  const effectiveNavigation: NavigationGroup[] =
+    footerColumns && footerColumns.length > 0 ? footerColumns : footerNavigation;
+
+  const effectiveSocial = socialLinks;
+  const effectiveBottomLinks = footerBottomLinks;
+  const effectiveCopyright = copyrightText;
+
+  return (
+    <footer className="bg-cream text-ink max-[767px]:pb-[70px]">
+      <Container className="hidden pt-15 min-[1200px]:flex min-[1200px]:justify-between">
+        <div className="w-[172px]"><FooterMenu index={0} navigation={effectiveNavigation} /></div>
+        <div className="w-[200px] min-[1400px]:w-[238px]"><FooterMenu index={1} navigation={effectiveNavigation} /></div>
+        <div className="w-[200px] min-[1400px]:w-[235px]"><FooterMenu index={2} navigation={effectiveNavigation} /></div>
+        <div className="w-[259px]"><PartnershipMenus navigation={effectiveNavigation} /></div>
+        <div className="w-[220px]">
+          <MoreServices
+            navigation={effectiveNavigation}
+            email={effectiveEmail}
+            phoneDisplay={effectivePhone}
+            phoneHref={effectivePhoneHref}
+            socialLinks={effectiveSocial}
+          />
+        </div>
+      </Container>
+
+      <Container className="hidden grid-cols-3 gap-x-10 gap-y-[38px] pt-10 min-[992px]:max-[1199px]:grid">
+        <FooterMenu index={0} navigation={effectiveNavigation} />
+        <FooterMenu index={1} navigation={effectiveNavigation} />
+        <FooterMenu index={2} navigation={effectiveNavigation} />
+        <PartnershipMenus navigation={effectiveNavigation} />
+        <MoreServices
+          navigation={effectiveNavigation}
+          email={effectiveEmail}
+          phoneDisplay={effectivePhone}
+          phoneHref={effectivePhoneHref}
+          socialLinks={effectiveSocial}
+        />
+      </Container>
+
+      <Container className="hidden pt-10 max-[991px]:block">
+        <div>
+          {effectiveNavigation.map((group) => (
+            <details className="group/footer border-b border-ink/10" key={group.label}>
+              <summary className="flex cursor-pointer font-montreal-medium list-none items-center justify-between py-[18px] text-base leading-[1.66] font-medium [&::-webkit-details-marker]:hidden">
+                <span>{group.label}</span>
+                <span className="relative h-3 w-3 shrink-0" aria-hidden="true">
+                  <span className="absolute top-[5px] left-0 h-0.5 w-3 bg-black" />
+                  <span className="absolute top-0 left-[5px] h-3 w-0.5 bg-black transition-opacity duration-300 group-open/footer:opacity-0" />
+                </span>
+              </summary>
+              <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-200 ease-in-out group-open/footer:grid-rows-[1fr]">
+                <div className="min-h-0 overflow-hidden">
+                  <ul className="m-0 list-none p-0 pb-[18px]">
+                    {group.links.map((link) => (
+                      <li className="leading-[30.4px]" key={`${link.label}-${link.href}`}>
+                        <Link className="text-sm leading-5 font-normal text-[#252c15] capitalize transition-colors duration-300 hover:text-brand-red focus-visible:text-ink" href={link.href}>{link.label}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </details>
+          ))}
+        </div>
+        <div className="mt-5">
+          <ContactDetails
+            showSocial={false}
+            email={effectiveEmail}
+            phoneDisplay={effectivePhone}
+            phoneHref={effectivePhoneHref}
+            socialLinks={effectiveSocial}
+          />
+        </div>
+      </Container>
+
+      <Container className="grid grid-cols-6 gap-3 pt-[50px] max-[991px]:grid-cols-3 max-[991px]:gap-5 max-[991px]:pt-[35px] max-[767px]:grid-cols-2 max-[767px]:gap-4 max-[767px]:pt-[30px]" aria-label="Partner and review profiles">
+        {footerAwards.map((award) => (
+          <a className="flex h-[81px] items-center justify-center rounded-[20px] bg-white px-[18px] py-4 max-[991px]:rounded-[10px] max-[767px]:h-[60px] max-[767px]:border max-[767px]:border-[#efefef]/20 max-[767px]:px-[13px] max-[767px]:py-[5px]" href={award.href} target="_blank" rel="nofollow noopener noreferrer" key={award.src} aria-label={award.alt}>
+            <Image src={award.src} alt={award.alt} width={award.width} height={award.height} className="max-[767px]:h-10 object-contain"/>
+          </a>
+        ))}
+      </Container>
+
+      <Container className="hidden max-[991px]:block">
+        <SocialLinks className="mt-[30px] justify-center" socialLinks={effectiveSocial} />
+      </Container>
+
+      <Container>
+        <div className="flex items-center justify-between pt-[30px] pb-[15px] max-[991px]:pt-[30px] max-[991px]:pb-5 max-[767px]:mt-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:gap-[15px] max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-[15px] max-[767px]:pb-[15px] max-[767px]:text-center">
+          {effectiveCopyright ? (
+            <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">{effectiveCopyright}</p>
+          ) : (
+            <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">{siteChromeCopy.footer.copyrightPrefix} <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> {siteChromeCopy.footer.copyright}</p>
+          )}
+
+          {effectiveBottomLinks && effectiveBottomLinks.length > 0 ? (
+            <div className="flex max-[767px]:mt-0">
+              {effectiveBottomLinks.map((link, idx) => (
+                <Link
+                  key={`${link.label}-${link.href}`}
+                  className={cn(
+                    "inline-block text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]",
+                    idx < effectiveBottomLinks.length - 1 && "relative mr-[14px] pr-[10px] after:absolute after:-top-[1px] after:right-[-4px] after:content-['|']",
+                  )}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="flex max-[767px]:mt-0">
+              <Link className="relative mr-[14px] inline-block pr-[10px] text-sm leading-5 font-normal text-ink transition-colors duration-300 after:absolute after:-top-[1px] after:right-[-4px] after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.termsPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.terms}</Link>
+              <Link className="inline-block text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.privacyPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.privacy}</Link>
+            </div>
+          )}
+        </div>
+      </Container>
+    </footer>
+  );
+}
+
+export const Footer = SiteFooter;

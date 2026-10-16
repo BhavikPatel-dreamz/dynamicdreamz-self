@@ -1,5 +1,7 @@
-import { CaseStudiesPage } from "@/components/sections/case-studies-page";
-import { caseStudiesContent } from "@/content/case-studies";
+import { OurWorkHeroSection } from "@/components/blocks/ServiceHeroBlock";
+import { BrandPartnersBlock } from "@/components/blocks/ClientLogoMarqueeBlock";
+import { CaseStudiesListing } from "@/components/case-studies/CaseStudyHubFilterGrid";
+import { caseStudiesBrandLogos, caseStudiesContent } from "@/content/case-studies";
 import { pageMetadata } from "@/data/seo";
 import {
   adaptPayloadCaseStudiesToItems,
@@ -9,12 +11,19 @@ import { createCaseStudiesPageSchema, serializeJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata.caseStudies;
 
+const brandSection = {
+  slug: "case-studies",
+  brands: {},
+} as const;
+
 export default async function CaseStudiesRoute() {
   const payloadStudies = await getPayloadCaseStudies();
   const items =
     payloadStudies && payloadStudies.length > 0
       ? adaptPayloadCaseStudiesToItems(payloadStudies)
       : caseStudiesContent.items;
+
+  const content = { ...caseStudiesContent, items };
 
   return (
     <main id="main-content" data-page="case-studies">
@@ -24,7 +33,21 @@ export default async function CaseStudiesRoute() {
           __html: serializeJsonLd(createCaseStudiesPageSchema(items)),
         }}
       />
-      <CaseStudiesPage items={items} />
+      <div className="overflow-x-clip" data-page="case-studies">
+        <OurWorkHeroSection
+          content={caseStudiesContent.hero}
+          fullBleedShowcaseAtTablet
+          layout="caseStudiesLive"
+          typography="liveMontserrat"
+        />
+        <BrandPartnersBlock
+          content={brandSection}
+          density="compact"
+          items={caseStudiesBrandLogos}
+          mobileSpacing="standard"
+        />
+        <CaseStudiesListing content={content} />
+      </div>
     </main>
   );
 }

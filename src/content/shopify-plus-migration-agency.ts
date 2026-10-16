@@ -1,13 +1,13 @@
-import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
-import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-import type { EvaluationFrameworkContent } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
-import type { MigrationServiceCard } from "@/components/sections/shopify-migration/shopify-migration-services-section";
-import type { NumberedGridItem } from "@/components/sections/shopify-migration/shopify-migration-numbered-grid-section";
-import type { SeoSafeMigrationContent } from "@/components/sections/shopify-migration/seo-safe-migration-section";
-import type { ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
-import type { WhyChooseMigrationContent } from "@/components/sections/why-choose-shopify-migration-section";
-import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
-import type { CaseStudyPreviewItem } from "@/components/sections/services-case-studies-section";
+import type { ClientLogoSliderItem } from "@/components/ui/CarouselSliderClient";
+import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
+import type { EvaluationFrameworkContent } from "@/types/blocks";
+import type { MigrationServiceCard } from "@/types/blocks";
+import type { NumberedGridItem } from "@/types/blocks";
+import type { SeoSafeMigrationContent } from "@/types/blocks";
+import type { ServiceHeroVideoContent } from "@/types/blocks";
+import type { WhyChooseMigrationContent } from "@/types/blocks";
+import type { PricingEngagementContent } from "@/types/blocks";
+import type { CaseStudyPreviewItem } from "@/types/blocks";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const plusAgencyHeroContent: ServiceHeroVideoContent = {

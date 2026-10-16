@@ -1,8 +1,8 @@
-import type { CityPageCounterContent } from "@/components/sections/city-page-counter-section";
-import type { CityPageHeroContent } from "@/components/sections/city-page-hero-section";
-import type { ShopifyStageServicesContent } from "@/components/sections/shopify-stage-services-section";
-import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
-import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { CityPageCounterContent } from "@/types/blocks";
+import type { CityPageHeroContent } from "@/types/blocks";
+import type { ShopifyStageServicesContent } from "@/types/blocks";
+import type { ClientLogoSliderItem } from "@/components/ui/CarouselSliderClient";
+import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
 import { bigCommerceDevelopmentBrands } from "@/content/bigcommerce-development";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 

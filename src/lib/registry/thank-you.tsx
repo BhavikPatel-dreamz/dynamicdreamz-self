@@ -1,5 +1,5 @@
 import type { ServicePageEntry } from "./types";
-import { ThankYouPage } from "@/components/sections/thank-you-page";
+import { ThankYouPage } from "@/components/blocks/ThankYouConfirmationBlock";
 import { thankYouForApplyingContent } from "@/content/thank-you-for-applying";
 import { thankYouForEnquiryContent } from "@/content/thank-you-for-enquiry";
 import { pageMetadata } from "@/data/seo";

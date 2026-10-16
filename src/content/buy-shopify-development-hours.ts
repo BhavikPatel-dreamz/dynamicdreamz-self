@@ -1,6 +1,6 @@
-import type { ShopifyTeamBoxesContent } from "@/components/sections/shopify-team-boxes-section";
-import type { ThemeCustomizationServicesContent } from "@/components/sections/theme-customization-services-section";
-import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { ShopifyTeamBoxesContent } from "@/types/blocks";
+import type { ThemeCustomizationServicesContent } from "@/types/blocks";
+import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
 import { getClientLogo, type ImageItem } from "@/content/home";
 
 export type ShopifyHoursPackage = {

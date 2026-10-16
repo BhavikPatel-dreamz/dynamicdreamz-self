@@ -1,0 +1,213 @@
+"use client";
+
+import { useEffect, useId, useMemo, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/container";
+import { caseStudiesUiCopy } from "@/content/case-studies-ui";
+import type { CaseStudyItem } from "@/types/case-study";
+
+type CaseStudiesListingProps = {
+  content: {
+    filter: { technologies: readonly string[]; industries: readonly string[] };
+    items: readonly CaseStudyItem[];
+    sectionTitle: { eyebrow?: string; heading: string; description: string };
+  };
+};
+
+const BATCH_SIZE = 10;
+
+export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
+  const { filter, items, sectionTitle } = content;
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedTech, setSelectedTech] = useState("");
+  const [selectedIndustry, setSelectedIndustry] = useState("");
+  const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
+  const [openMenu, setOpenMenu] = useState<"technology" | "industry" | null>(null);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const filterRef = useRef<HTMLDivElement>(null);
+  const sentinelRef = useRef<HTMLDivElement>(null);
+  const techId = useId();
+  const industryId = useId();
+
+  useEffect(() => {
+    function handleOutside(event: MouseEvent) {
+      if (!filterRef.current?.contains(event.target as Node)) setOpenMenu(null);
+    }
+    document.addEventListener("mousedown", handleOutside);
+    return () => document.removeEventListener("mousedown", handleOutside);
+  }, []);
+
+  const filteredItems = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    const primaryIndustries = new Set([
+      "Beauty & Cosmetics",
+      "Fashion & Apparel",
+      "Food & Beverages",
+      "Health & Nutrition",
+      "Home & Living",
+      "Jewellery & Accessories",
+    ]);
+
+    return items.filter((item) => {
+      const searchable = [item.title, item.excerpt, item.technology, item.industry, ...item.tags].join(" ").toLowerCase();
+      const matchesTechnology = !selectedTech ||
+        (selectedTech === "Shopify / Shopify Plus"
+          ? ["shopify / shopify plus", "shopify"].includes(item.technology.toLowerCase()) || item.technology.toLowerCase().startsWith("shopify (")
+          : item.technology === selectedTech);
+      const matchesIndustry = !selectedIndustry ||
+        (selectedIndustry === "Other Industries"
+          ? !primaryIndustries.has(item.industry) || item.industry === "Other Industries"
+          : item.industry === selectedIndustry);
+      return (!query || searchable.includes(query)) && matchesTechnology && matchesIndustry;
+    });
+  }, [items, searchQuery, selectedTech, selectedIndustry]);
+
+  const visibleItems = filteredItems.slice(0, visibleCount);
+  const hasMore = visibleItems.length < filteredItems.length;
+  const hasFilters = Boolean(searchQuery || selectedTech || selectedIndustry);
+
+  useEffect(() => {
+    if (!hasMore || !sentinelRef.current) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting || loadingMore) return;
+      setLoadingMore(true);
+      window.setTimeout(() => {
+        setVisibleCount((count) => Math.min(count + BATCH_SIZE, filteredItems.length));
+        setLoadingMore(false);
+      }, 180);
+    }, { rootMargin: "320px" });
+    observer.observe(sentinelRef.current);
+    return () => observer.disconnect();
+  }, [filteredItems.length, hasMore, loadingMore]);
+
+  function clearFilters() {
+    setSearchQuery("");
+    setSelectedTech("");
+    setSelectedIndustry("");
+    setVisibleCount(BATCH_SIZE);
+    setOpenMenu(null);
+  }
+
+  return (
+    <section className="cs-listing-sec bg-[#eff4ef]" ref={filterRef}>
+      <div id="explore_case_studies" className="cs-main-wrapp bg-[#eff4ef] px-0 pt-[54px] pb-[120px] max-[1199px]:pt-[50px] max-[1199px]:pb-10 max-[992px]:pt-10 max-[992px]:pb-[30px]">
+        <Container>
+          <div className="cs-filter-main">
+            <div className="mx-auto max-w-[1170px]">
+              <div className="cs-filter grid grid-cols-[minmax(260px,1fr)_260px_260px] items-center gap-3 rounded-[20px] border-[1.5px] border-[rgba(18,18,18,0.1)] bg-white p-[13px] shadow-[0_8px_30px_rgba(40,40,40,0.04)] max-[992px]:grid-cols-2 max-[992px]:gap-[13px] max-[767px]:grid-cols-1">
+                <label className="cs-search relative w-full max-[992px]:col-span-2 max-[767px]:col-span-1">
+                  <span className="sr-only">{caseStudiesUiCopy.searchLabel}</span>
+                  <input value={searchQuery} onChange={(event) => { setSearchQuery(event.target.value); setVisibleCount(BATCH_SIZE); }} type="search" placeholder={caseStudiesUiCopy.searchPlaceholder} className="h-[50px] max-[767px]:h-[44px] w-full rounded-[10px] border border-[rgba(40,40,40,0.12)] bg-[rgba(255,255,255,0.05)] pl-11 pr-4 font-sans text-sm font-medium text-[#282828] outline-none placeholder:text-[#282828]/80 focus:border-[#ad5151]" />
+                  <svg aria-hidden="true" viewBox="0 0 20 20" className="pointer-events-none absolute top-1/2 left-[15px] size-5 -translate-y-1/2 text-[#ad5151]" fill="none"><path d="m17.5 17.5-3.62-3.62M15.83 9.17a6.67 6.67 0 1 1-13.33 0 6.67 6.67 0 0 1 13.33 0Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
+                </label>
+                <FilterMenu id={techId} label={caseStudiesUiCopy.allTechnologies} value={selectedTech} options={filter.technologies} open={openMenu === "technology"} onToggle={() => setOpenMenu(openMenu === "technology" ? null : "technology")} onSelect={(value) => { setSelectedTech(value); setVisibleCount(BATCH_SIZE); setOpenMenu(null); }} />
+                <FilterMenu id={industryId} label={caseStudiesUiCopy.allIndustries} value={selectedIndustry} options={filter.industries} open={openMenu === "industry"} onToggle={() => setOpenMenu(openMenu === "industry" ? null : "industry")} onSelect={(value) => { setSelectedIndustry(value); setVisibleCount(BATCH_SIZE); setOpenMenu(null); }} />
+              </div>
+              {hasFilters && <button type="button" onClick={clearFilters} className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[#ad5151] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151]"><svg aria-hidden="true" viewBox="0 0 32 32" className="size-5" fill="none"><path d="M5.33 10.67A12 12 0 1 1 4 16V4m0 0h8" stroke="currentColor" strokeWidth="2.67" strokeLinecap="round" strokeLinejoin="round" /></svg>{caseStudiesUiCopy.clearFilters}</button>}
+            </div>
+          </div>
+
+          <div className="cs-section-title mt-[54px] flex flex-wrap items-end justify-between border-t border-black/10 pt-[54px] max-[992px]:mt-5 mb-10 max-[992px]:mb-[30px] max-[992px]:pt-5">
+            <div className="title w-[44%] max-[1399px]:w-[35%] max-[1199px]:w-[36%] max-[992px]:w-full">
+              {sectionTitle.eyebrow ? (
+                <Eyebrow className="mb-3.75 max-[767px]:mb-5" tone="muted">
+                  {sectionTitle.eyebrow}
+                </Eyebrow>
+              ) : null}
+              <h2 className="m-0 font-display text-[35px] font-medium leading-[1.38] text-[#090909] max-[1199px]:text-[28px] max-[992px]:mb-2.5 max-[767px]:text-2xl">{sectionTitle.heading}</h2>
+            </div>
+            <div className="text w-[49%] max-[1399px]:w-[56%] max-[1199px]:w-[51%] max-[992px]:w-full"><p className="m-0 font-sans text-base font-medium leading-[30.4px] text-[#535353] max-[992px]:text-sm max-[992px]:leading-[26px]">{sectionTitle.description}</p></div>
+          </div>
+
+          {visibleItems.length === 0 ? <div className="rounded-[20px] bg-white p-12 text-center text-lg text-[#535353]">{caseStudiesUiCopy.empty}</div> : <div className="cs-listing-main -mb-5 flex flex-wrap justify-between max-[992px]:mb-0">{visibleItems.map((item) => <CaseStudyCard key={item.slug} item={item} />)}</div>}
+          <div ref={sentinelRef} className="flex min-h-10 items-center justify-center pt-8" aria-live="polite">{loadingMore && <span className="text-sm text-[#535353]">{caseStudiesUiCopy.loadingMore}</span>}{!hasMore && filteredItems.length > BATCH_SIZE && <span className="text-sm text-[#535353]">{caseStudiesUiCopy.end}</span>}</div>
+        </Container>
+      </div>
+    </section>
+  );
+}
+
+function FilterMenu({ id, label, value, options, open, onToggle, onSelect }: { id: string; label: string; value: string; options: readonly string[]; open: boolean; onToggle: () => void; onSelect: (value: string) => void }) {
+  return <div className="dropdown_menu relative min-w-[190px]"><button type="button" className="flex h-[50px] max-[767px]:h-[44px] w-full items-center justify-between rounded-[10px] border border-[rgba(40,40,40,0.12)] bg-[rgba(254,254,254,0.93)] px-4 py-3 text-left font-montserrat text-sm font-semibold text-[#282828] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151]" aria-haspopup="listbox" aria-expanded={open} aria-controls={id} onClick={onToggle}><span className="truncate">{value || label}</span><svg aria-hidden="true" viewBox="0 0 10 6" className={`size-2.5 transition-transform ${open ? "rotate-180" : ""}`} fill="none"><path d="m1 1 4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg></button>{open && <ul id={id} role="listbox" className="absolute top-[calc(100%+5px)] left-0 z-30 max-h-[272px] w-full overflow-y-auto rounded-[5px] border border-[#efefef] bg-white py-3 shadow-[2px_6px_19px_rgba(0,0,0,0.08)]">{["", ...options].map((option) => <li key={option || label} role="option" aria-selected={value === option} onClick={() => onSelect(option)} className={`cursor-pointer px-4 py-2.5 text-sm font-medium text-[#282828]/80 transition-colors hover:bg-[#f4f4f4] ${value === option ? "bg-[#f4f4f4] font-semibold" : ""}`}>{option || label}</li>)}</ul>}</div>;
+}
+
+function CaseStudyCard({ item }: { item: CaseStudyItem }) {
+  return (
+    <article
+      data-aos="fade-up"
+      className="cs-listing-row mb-5 flex w-[calc(50%-10px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[992px]:mb-5 max-[992px]:w-full"
+    >
+      <div className="cs-wrapper flex h-full flex-col">
+        <div className="cs-col-left w-full">
+          <Link
+            href={item.href}
+            className="cs_list_img relative block overflow-hidden pb-[50%] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#ad5151]"
+          >
+            <Image
+              src={item.image}
+              alt={item.alt}
+              fill
+              sizes="(max-width: 991px) 100vw, (max-width: 1300px) 50vw, 610px"
+              className="object-cover transition-transform duration-1000 hover:scale-105"
+            />
+          </Link>
+        </div>
+        <div className="cs-col-right flex flex-grow flex-col p-5 max-[767px]:p-[15px]">
+          <div className="cs-text flex h-full flex-col justify-between">
+            <div className="cs-title">
+              <Link
+                href={item.href}
+                className="group/title block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151]"
+              >
+                <div className="cs-cate-wrapp mb-2.5 flex flex-wrap items-center">
+                  <span className="relative mr-2.5 mb-1 pr-2.5 font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151] after:absolute after:top-1/2 after:right-0 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#ad5151] after:content-['']">
+                    {item.technology}
+                  </span>
+                  <span className="mb-1 font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151]">
+                    {item.industry}
+                  </span>
+                </div>
+                <h2 className="h3 mb-2.5 font-display text-[24px] font-medium leading-8 tracking-[-.48px] text-[#090909] transition-colors group-hover/title:text-[#ad5151] max-[767px]:text-[20px]">
+                  {item.title}
+                </h2>
+              </Link>
+              <p className="m-0 font-sans text-[13px] font-medium leading-[1.75] text-[#535353] max-[767px]:text-sm max-[767px]:leading-[26.6px]">
+                {item.excerpt}
+              </p>
+              {item.tags.length > 0 && (
+                <div className="cs-meta mt-4 flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="cs-chip inline-flex items-center rounded-full border border-[rgba(40,40,40,0.08)] bg-white/75 px-[11px] py-[7px] font-montserrat text-[10px] font-semibold uppercase leading-none text-[#565656]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className="cs-visit mt-5 border-t border-[rgba(40,40,40,0.08)] pt-5">
+              <Link
+                href={item.href}
+                className="group/visit inline-flex items-center gap-2 font-montserrat text-sm font-bold uppercase text-[#ad5151] transition-colors hover:text-[#282828] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ad5151]"
+              >
+                {caseStudiesUiCopy.viewCaseStudy}
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 12 12"
+                  className="size-3 fill-current transition-transform group-hover/visit:translate-x-1"
+                >
+                  <path d="M0.331035 10.2567C-0.0794748 10.6262 -0.112753 11.2585 0.256706 11.669C0.626165 12.0795 1.25845 12.1128 1.66896 11.7433L0.331035 10.2567ZM11.9986 2.05256C12.0276 1.50104 11.6041 1.03041 11.0526 1.00138L2.065 0.528352C1.51348 0.499324 1.04285 0.922889 1.01382 1.47441C0.984795 2.02593 1.40836 2.49656 1.95988 2.52559L9.94882 2.94606L9.52835 10.935C9.49933 11.4865 9.92289 11.9572 10.4744 11.9862C11.0259 12.0152 11.4966 11.5916 11.5256 11.0401L11.9986 2.05256ZM1.66896 11.7433L11.669 2.74329L10.331 1.25671L0.331035 10.2567L1.66896 11.7433Z" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}

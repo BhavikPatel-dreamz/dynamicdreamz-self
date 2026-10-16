@@ -1,4 +1,4 @@
-import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
 
 export const wordpressDevelopmentHero = {
   eyebrows: ["Established in 2006", "Wordpress Development Agency"],

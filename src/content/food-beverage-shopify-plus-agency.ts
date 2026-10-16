@@ -1,7 +1,7 @@
 import { industryBrandLogos } from "@/content/industries";
-import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
-import type { AgencyServicesContent } from "@/components/sections/agency-services-section";
+import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
+import type { MigrationProcessContent } from "@/types/blocks";
+import type { AgencyServicesContent } from "@/types/blocks";
 
 export const foodBeverageHero = {
   title: "Food & Beverage Shopify Plus Agency",

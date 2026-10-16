@@ -54,6 +54,9 @@ export type WhiteLabelService = WhiteLabelCard & {
   icon: string;
   href?: string;
   linkLabel?: string;
+  iconAlt?: string;
+  ctaHref?: string;
+  ctaLabel?: string;
 };
 
 export type WhiteLabelPlan = {

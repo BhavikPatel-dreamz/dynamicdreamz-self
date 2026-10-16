@@ -2,7 +2,7 @@ import type {
   KubioBenefitIconName,
   KubioFeatureIconName,
   KubioServiceIconName,
-} from "@/components/sections/kubio-theme-customization/kubio-icons";
+} from "@/lib/icons/kubio-icons";
 
 export type KubioFeatureItem = {
   iconName: KubioFeatureIconName;

@@ -1,0 +1,63 @@
+import { AgencyServicesSection } from "@/components/blocks/ServiceOfferingsGridBlock";
+import { SplitFaqSection } from "@/components/blocks/FaqSectionBlock";
+import { IndustryBrandsSection } from "@/components/blocks/ClientLogoMarqueeBlock";
+import { IndustryHeroSection } from "@/components/blocks/ServiceHeroBlock";
+import { MigrationProcessSection } from "@/components/blocks/ProcessWorkflowBlock";
+import { ServicesCaseStudiesSection } from "@/components/blocks/CaseStudySpotlightBlock";
+import { TwoColImageWithTextSection } from "@/components/blocks/WhyChooseUsBlock";
+import {
+  foodBeverageBrands,
+  foodBeverageCaseStudies,
+  foodBeverageHero,
+  foodBeverageProcess,
+  foodBeverageServices,
+  foodBeverageFaqs,
+  foodBeverageWhyChoose,
+} from "@/content/food-beverage-shopify-plus-agency";
+
+export function FoodBeverageShopifyPlusAgencyPage() {
+  return (
+    <>
+      <IndustryHeroSection
+        variant="white"
+        title={foodBeverageHero.title}
+        description={foodBeverageHero.description}
+        image={foodBeverageHero.image}
+        showEyebrow={false}
+        showCta={false}
+        slug="food-beverage-shopify-plus-agency"
+      />
+      <IndustryBrandsSection
+        content={foodBeverageBrands}
+        heading={foodBeverageBrands.heading}
+        items={foodBeverageBrands.items}
+      />
+      <TwoColImageWithTextSection
+        heading={foodBeverageWhyChoose.heading}
+        description={foodBeverageWhyChoose.description}
+        image={foodBeverageWhyChoose.image}
+      />
+      <AgencyServicesSection
+        content={foodBeverageServices}
+        headerLayout="split"
+        columns={2}
+        cardVariant="services-box"
+        hideCta={true}
+      />
+      <MigrationProcessSection
+        content={foodBeverageProcess}
+        titleAlign="center"
+      />
+      <ServicesCaseStudiesSection
+        eyebrow={foodBeverageCaseStudies.eyebrow}
+        heading={foodBeverageCaseStudies.heading}
+        items={foodBeverageCaseStudies.items}
+      />
+      <SplitFaqSection
+        items={foodBeverageFaqs.items}
+        idPrefix="food-beverage-faq"
+        heading={foodBeverageFaqs.heading}
+      />
+    </>
+  );
+}

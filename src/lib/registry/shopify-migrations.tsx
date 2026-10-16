@@ -1,8 +1,8 @@
 import type { ServicePageEntry } from "./types";
-import { MagentoMigrationIcon } from "@/components/sections/magento-to-shopify/magento-migration-icons";
-import { MigrationPlatformIcon } from "@/components/sections/migration-platform-icons";
-import { ShopifyMigrationLandingTemplate } from "@/components/sections/shopify-migration-landing-template";
-import { WooCommerceMigrationIcon } from "@/components/sections/woocommerce-to-shopify/woocommerce-migration-icons";
+import { MagentoMigrationIcon } from "@/lib/icons/magento-migration-icons";
+import { MigrationPlatformIcon } from "@/lib/icons/migration-platform-icons";
+import { ShopifyMigrationLandingTemplate } from "./templates";
+import { WooCommerceMigrationIcon } from "@/lib/icons/woocommerce-migration-icons";
 import { pageMetadata } from "@/data/seo";
 import {
   createBigCommerceToShopifyMigrationPageSchema,

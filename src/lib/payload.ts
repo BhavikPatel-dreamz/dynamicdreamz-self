@@ -6,7 +6,7 @@ import {
   type PrimaryNavigationGroup,
   type NavigationGroup,
 } from "@/data/navigation";
-import type { FooterLinkItem } from "@/components/layout/site-footer";
+import type { FooterLinkItem } from "@/components/layout/Footer";
 import type {
   Post,
   CaseStudy,

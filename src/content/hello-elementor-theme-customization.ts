@@ -3,7 +3,7 @@ import type {
   HelloElementorBenefitIconName,
   HelloElementorFeatureIconName,
   HelloElementorServiceIconName,
-} from "@/components/sections/hello-elementor-theme-customization/hello-elementor-icons";
+} from "@/lib/icons/hello-elementor-icons";
 
 export type HelloElementorFeatureItem = {
   iconName: HelloElementorFeatureIconName;
