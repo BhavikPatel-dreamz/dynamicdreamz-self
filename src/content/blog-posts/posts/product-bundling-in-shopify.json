@@ -1,0 +1,984 @@
+{
+  "slug": "product-bundling-in-shopify",
+  "title": "Product bundling in Shopify",
+  "date": "2024-06-20",
+  "displayDate": "June 20, 2024",
+  "modified": "2025-01-24T11:33:29+00:00",
+  "category": "Shopify",
+  "categoryValue": "shopify",
+  "categoryHref": "/blogs?category=shopify",
+  "featuredImage": {
+    "src": "/assets/blog/product-bundling-in-shopify.webp",
+    "width": 1800,
+    "height": 1201,
+    "alt": "Product bundling in Shopify"
+  },
+  "excerpt": "In any retail market, it’s not easy to decide customers’ purchasing patterns. Generally, it is found customers purchasing one product at a time to purchase no. of products. Even customers buy different combinations of products of their choice. Not only that when they buy more than one product, they insist on a considerable price discount [...]",
+  "author": {
+    "name": "Tejal Parekh",
+    "role": "Sr. SEO Expert",
+    "bio": "Tejal Parekh is a seasoned Senior SEO Expert with a proven track record of driving organic growth for businesses across diverse industries. With a deep understanding of search engine algorithms and a passion for digital marketing, Tejal brings a wealth of expertise to Dynamic Dreamz.",
+    "image": "/assets/blog/authors/tejal-parekh-img.webp",
+    "linkedin": "https://in.linkedin.com/in/tejal-parekh-814310206"
+  },
+  "contentBeforeToc": [
+    {
+      "type": "paragraph",
+      "children": [
+        "In any retail market, it’s not easy to decide customers’ purchasing patterns. Generally, it is found customers purchasing one product at a time to purchase no. of products. Even customers buy different combinations of products of their choice. Not only that when they buy more than one product, they insist on a considerable price discount also. In any brick and mortar store, customers are at liberty to buy any odd combination of products as the owner himself is available to make a deal. Subsequently store owners and customers can also negotiate price and discount."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "However, an online store lacks this facility as the online customers can’t interact with the store owner instantaneously for purchasing of products and bargaining of price. Hence to increase sales, it becomes crucial for online store owners to avail a variety of bundles of products with attractive discounts to induce their customers to purchase their products."
+      ]
+    }
+  ],
+  "contentAfterToc": [
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "What_is_Product_Bundling",
+      "text": "What is Product Bundling?"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "In eCommerce, product bundling is a strategy in online store that involves creating and selling a curated collection of similar products that can help the retailers to capture both casual browsers and eager to buy shoppers. It is an approach selling different products bundling in different combinations to increase sales and achieve revenue goals. Products are bundled together as an upsell or cross sell"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Upsells:",
+              "bold": true
+            },
+            " This strategy involves persuading customer to upgrade with marginal price difference. For instance, promoting a better, more expensive version of a perfume a customer is thinking about buying."
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Cross sells:",
+              "bold": true
+            },
+            " It involves promoting related products that are adjacent to other products in a similar group. For example, promoting shower gel with perfume. In the world of physical retail, this is similar to the concept of cross merchandising."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "For one its clients ",
+        {
+          "type": "link",
+          "href": "https://bellavitaluxury.co.in/",
+          "text": "Bellavita Organic",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        ", Shopify expert developers of Dynamic Dreamz setup this functionality as per the client’s requirement by creating a bundle of 1 perfume and 1 shower gel combo."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/fresh-combo-png.webp",
+      "alt": "Fresh Combo Image",
+      "width": 512,
+      "height": 234
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/combo-packed-png.webp",
+      "alt": "Combo Ppacked Image",
+      "width": 512,
+      "height": 466
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "With its sophisticated algorithms, Amazon suggests bundles of products that might appeal to customers based on their past purchases. For example, Amazon may suggest a product bundle if a customer bought a deodorant in the past that includes other brands of deodorants."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "Common_types_of_product_bundling",
+      "text": "Common types of product bundling"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Product bundling plays vital role in increasing sales and revenue especially during festive and holiday season. Targeting customers by understanding customers’ psyche and leveraging Shopify seamless bundling functionality can generate significant growth in business. In eCommerce, normally there three types of bundling are practiced:"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Pure_bundling",
+      "text": "Pure bundling"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "In pure bundling items sold exclusively in that bundle. For example, Luxxi Nails offers range of artificial nails. ",
+        {
+          "type": "link",
+          "href": "https://luxxinails.com/products/starlet",
+          "text": "It comes with set of related accessories which are bundled with the product.",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/luxxi-png.webp",
+      "alt": "Luxxi Image",
+      "width": 512,
+      "height": 492
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/included-png.webp",
+      "alt": "Included",
+      "width": 512,
+      "height": 296
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Mixed_bundling",
+      "text": "Mixed bundling"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "This type of bundling is carried out by combining products sold separately at a discounted price. A perfect example is ",
+        {
+          "type": "link",
+          "href": "https://www.reneecosmetics.in/",
+          "text": "RENEE Cosmetics",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        " lip kits who has implemented ",
+        {
+          "type": "link",
+          "href": "/blogs/types-of-shopify-experts-services",
+          "text": "Shopify expert services"
+        },
+        " of Dynamic Dreamz. These kits are made up of a lip liner crayon and lip gloss, each of which can be purchased separately, but are bundled together for convenience (and because they’re complementary products)."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/product-details-jpg.webp",
+      "alt": "Product Details",
+      "width": 1600,
+      "height": 828
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Price_bundling",
+      "text": "Price bundling"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Bundle pricing is offered at a discount or with an added value, while other times price bundles are curated."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/999-png.webp",
+      "alt": "Product Offer Image",
+      "width": 1397,
+      "height": 617
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "A retailer chooses a few specific items that must be bought together in order to obtain the discount, or the bundle is offered as a general discount for purchasing multiple items. Buy one get one (BOGO) discounts are an excellent example of a price bundle. By offering a bundle discount on the total price or by adding a perceived value (like a “free” item), the customer feels they got a good deal—even though they’ve likely spent more than they planned to."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "Examples_of_Product_bundling",
+      "text": "Examples of Product bundling"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Let’s look at some product bundling examples you can learn from and implement today. How you choose to put together a bundle will depend on your goals and individual products, but keep in mind that product bundling methods seem to be limited only by a retailer’s creativity."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Gift_bundles",
+      "text": "Gift bundles"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "One way to meet customer needs during holidays is to take a gift giving approach to product bundles, which makes it easy for shoppers to find and purchase a done for you gift. For ",
+        {
+          "type": "link",
+          "href": "https://bellavitaorganic.com/pages/build-a-box",
+          "text": "Bellavita Organics",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        " brand, our Shopify Plus experts used this very approach. The gift section on its website features multiple product bundles at many price ranges."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/unnamed.webp",
+      "alt": "Gift Sets",
+      "width": 1413,
+      "height": 832
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Membership_boxes",
+      "text": "Membership boxes"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Membership boxes are product bundles in their own right—and they’re not just for ecommerce retailers. Conscious Poker has begun their own subscription box services."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Related_Product_bundle",
+      "text": "Related Product bundle"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "This involves tying less popular product with the more popular products of the same category. For example, a pet goods retailer, creates a Harness Walk Kit that combines popular items with less popular items. The kit has a dog leash, harness, and a waste bag carrier. The bag carriers aren’t as popular amongst dog owners, as many tend to simply keep bags in their pocket. But by tying the bag carriers to the much more popular and complementary leash, Wild One can move more bag carriers overall."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "How_to_create_a_product_bundling_strategy",
+      "text": "How to create a product bundling strategy"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "The process of creating a product bundle can vary quite widely, depending on the bundle, but there are some important principles to follow."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Build_your_own_bundle",
+      "text": "Build your own bundle"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Some retailers have experimented with a mix and match bundling tactic, allowing shoppers to create their own collection of goods. This may seem counterintuitive to the idea of building product awareness, but you can still encourage product discovery by allowing customers to choose from a set group of products, limiting their choices to the items you want to promote."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Bellavita Organics offers ‘Buy any 6 for 999’ allowing shoppers to select any one perfume and any 5 skin/body care products of their choice."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Inventory_Clearance_bundling",
+      "text": "Inventory Clearance bundling"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Bundling slow moving inventory with popular products can help move stagnant items. When you bundle a more stagnant product with a popular one, you’re creating a new product offering, which helps freshen up your old or overstocked inventory."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "For example, a clothing retailer could bundle three slow moving items, like sandals and sunglasses, with a popular item like a dress, and offer the bundle at a lower price. This could encourage customers to save money and buy the bundle."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "How_to_create_a_product_bundling_strategy-2",
+      "text": "How to create a product bundling strategy"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "The process of creating a product bundle can vary quite widely, depending on the bundle, but there are some important principles to follow."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Decide_what_to_bundle",
+      "text": "Decide what to bundle"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "The products you choose to bundle will be determined by the bundle type you choose to accomplish your goal."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Lets_look_at_how_to_choose_bundled_products",
+      "text": "Let’s look at how to choose bundled products:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "The buy more save more bundle is typically applied to your entire online store or to select product lines that you carry.",
+              "bold": true
+            },
+            " This technique is particularly useful for driving sales of stagnant inventory. Most often, you will choose the items for this bundle based on what your slowest moving inventory category is."
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Quantity discount bundles are intended to sell multiples of the same product.",
+              "bold": true
+            },
+            " Here you choose which replenishable items you want to promote. You could choose the replenishable items based on bestsellers to increase AOV. You could also experiment with seeing if quantity discounts help move stagnant replenishable."
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "text",
+              "text": "Leverage data.",
+              "bold": true
+            },
+            " Because pre packaged kits are most effective for products that are complementary or meant to be used together, choose items that your data tells you are commonly bought together. For instance, if you have a history of customers purchasing socks with shoe purchases, that’s a solid indicator that you have an opportunity to sell a bundle."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Don’t overdo it with the bundling strategy. Pick one or two approaches and lean in to those to ensure you’re not overwhelming your customers."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Calculate bundle price",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Calculating your bundle’s pricing can be straightforward if you’re not offering any discounts."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "To calculate the bundle price, you first need to know your gross margin on each product in the bundle. To calculate gross margin dollars of a product, subtract the cost of goods sold (COGS) from the total selling price."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Gross Margin Dollars = Ticket Price – COGS",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Once you know your cost baseline, you can choose a discount that works for your brand (if you’re offering one). A few rules of thumb for discounting:"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "For brands with average margins 50% or higher, shave between 10% to 20% off of the subtotal."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "For businesses where average margins are 50% or less, a discount rate between 5% to 10% typically will suffice."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "It’s also worth testing your chosen discount over time to see what performs best."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Name_your_product_bundle",
+      "text": "Name your product bundle"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Naming your bundle impacts how you draw attention to your new offering."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "An excellent naming best practice is to call the bundle by the benefit it provides a customer. For instance, belif’s skin care bundles are all named for what they do."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "The skin care bundle for dry skin is called Our Belief for Dry Skin."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "Use_a_Shopify_app",
+      "text": "Use a Shopify app"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "There are many apps that work directly in your Shopify admin to create product bundles. Here are three, in no particular order, you can use to boost sales with bundle discounts:"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "content": [
+            {
+              "type": "link",
+              "href": "https://apps.shopify.com/bundler-product-bundles",
+              "text": "Bundle",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            }
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "link",
+              "href": "https://apps.shopify.com/fast-bundle-product-bundles",
+              "text": "Fast Bundle",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            }
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "link",
+              "href": "https://apps.shopify.com/zoorix",
+              "text": "Zoorix",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Our ",
+        {
+          "type": "link",
+          "href": "/shopify-experts",
+          "text": "Shopify expert"
+        },
+        " developers have extensive experience in creating customized bundling. Our proven bundling strategy leveraged with ",
+        {
+          "type": "text",
+          "text": "Bundler tool",
+          "bold": true
+        },
+        " has given outstanding results for our clients."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "How_to_sell_your_product_bundles",
+      "text": "How to sell your product bundles"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "1_Display_the_discount_information_prominently",
+      "text": "1. Display the discount information prominently"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "If your bundle is intended to offer a discount or value add, it’s important to display that information prominently on your product page and within your marketing efforts. Making the discount a key part of the bundle reminds shoppers they’re getting a good deal."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "As an example, ",
+        {
+          "type": "link",
+          "href": "https://alkalineworld.com.au/",
+          "text": "Alkaline World",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        " prominently displays its discount on nearly every page of its site and highlights the cost savings."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/unnamed-2-png.webp",
+      "alt": "Product Image",
+      "width": 706,
+      "height": 454
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "2_Use_your_bundles_for_gift_guides",
+      "text": "2. Use your bundles for gift guides"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Another classic method is to promote bundles around holidays as easy gift options. Many companies will create a gift guide landing page, which you can then promote via email, social media, and in-app. Here’s one example from Maple Syrup producer company promoting its bundles as corporate gifts:"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/unnamed-3-jpg.webp",
+      "alt": "Product Image",
+      "width": 750,
+      "height": 584
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Retail store owners can spotlight gift bundle displays by their registers with shoppable displays so customers can grab everything they need in one swoop."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "3_Offer_your_bundles_at_checkout",
+      "text": "3. Offer your bundles at checkout"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Offering a bundle at checkout can help a customer pull the trigger on multiple items. It’s also a smart move for ecommerce stores to increase profit margins and optimize their shopping cart experience. At a brick and mortar, that may look like the sales associate mentioning that if the customer adds one more item to their purchase, they get 15% off everything. Online, it can be presented as messaging during the checkout flow."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "Benefits_of_product_bundling",
+      "text": "Benefits of product bundling"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Product bundling is a win-win for both retailers and consumers. Let’s look at a few reasons it’s become such a popular tactic amongst retail and ecommerce businesses."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "id": "1_Boost_sales",
+      "text": "1. Boost sales"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "How does bundling items increase sales? Because it helps increase the perceived value of products in your customer’s eyes."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Harvard Business School’s Vineet Kumar revealed the power of product bundling in a case study of video game console retailer Nintendo. Still today, retailers increasing their sales and AOV from bundling include:"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Intimacy lubricant brand Coconu saw a 20% increase in AOV since implementing bundles."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "DTC dog food brand Maev’s bundles resulted in a 15% increase in AOV and 20% jump in unit per transaction."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Encouraging shoppers to purchase more items typically leads to a higher transaction amount, which is an efficient way to boost revenue. Bundling also reduces marketing and distribution costs, since customers discover products easier and order all of them at once."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "id": "2_Pricing_opacity",
+      "text": "2. Pricing opacity"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "While bundling can be used to provide discounts, it can also be used to build upsells into a package, thus blurring the focus around the price of individual items."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "For example: when you purchase a new smartphone, you also receive a charger in the box. The charger isn’t free, of course. Its cost is built into the phone’s final ticket price. Phone retailers know if customers had to purchase a charger separately, many wouldn’t. Most of us already have the correct charger at home."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "you find that customers are often put out at the thought of having to purchase yet another small item to complete their set or experience, consider bundling those items to remove that obstacle to purchase."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "id": "3_Increase_product_awareness",
+      "text": "3. Increase product awareness"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Product bundling also gives customers the chance to try a product they wouldn’t have typically purchased as a standalone item."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "For one example of this, we can look to Lilac St., a false lashes retailer. It sells a starter kit bundle that includes not only lashes but also lash glue and lash tweezers."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Most people don’t try lash tweezers because they’re not entirely necessary to the process of applying lashes. However, when sent within the product bundle, customers have the chance to see how much easier lash tweezers make the application process. They may even discover that they would purchase another pair individually in the future."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/unnamed-4-jpg.webp",
+      "alt": "Intro Starter Kit",
+      "width": 1379,
+      "height": 795
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "id": "4_Boost_customer_loyalty",
+      "text": "4. Boost customer loyalty"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "While it may be a surprise, offering product bundles can also help boost customer loyalty. The reason: bundles give buyers the chance to try multiple products at once, which means more opportunities for them to find items they love (and then buy over and over again)."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "Create_product_bundles_for_your_store_today",
+      "text": "Create product bundles for your store today"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Product bundles are a great way to increase the perceived value of your products and improve the customer experience in your store. Use them for gift giving occasions, dead stock, product awareness, and other creative ways to drive more in-store sales and improve your marketing strategy. ",
+        {
+          "type": "link",
+          "href": "/blogs/how-to-hire-shopify-development-agency",
+          "text": "Shopify developers"
+        },
+        " of Dynamic Dreamz have created and implemented customer centric and sales driven product bundling in Shopify stores. Our strategic product bundling have increased conversion ratio and revenue."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "Product_bundling_FAQ",
+      "text": "Product bundling FAQ"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "id": "1What_is_a_bundling_strategy",
+      "text": "1.What is a bundling strategy?"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "A bundling strategy is when a retailer packages complementary products as a group of items that can be purchased together. Retailers may offer a discounted price for bundle offers or add ons."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "id": "2_What_are_two_types_of_bundling",
+      "text": "2. What are two types of bundling?"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Two common types of bundling are pure bundles and mixed bundles."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "id": "3_What_are_some_examples_of_bundling",
+      "text": "3. What are some examples of bundling?"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Examples of product bundling include offering a package of two or more different products together, such as a printer and ink cartridges, at a lower price than if purchased individually. Another example is bundling services, like combining a web hosting plan and a domain name registration."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "id": "4_What_is_the_difference_between_a_product_bundle_and_a_package",
+      "text": "4.  What is the difference between a product bundle and a package?"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "A product bundle is a grouping of multiple individual products that are sold together at a lower price point, while a package usually refers to a single product that is sold with additional items."
+      ]
+    }
+  ],
+  "toc": [
+    {
+      "label": "What is Product Bundling?",
+      "href": "#What_is_Product_Bundling",
+      "level": 2
+    },
+    {
+      "label": "Common types of product bundling",
+      "href": "#Common_types_of_product_bundling",
+      "level": 2
+    },
+    {
+      "label": "Pure bundling",
+      "href": "#Pure_bundling",
+      "level": 3
+    },
+    {
+      "label": "Mixed bundling",
+      "href": "#Mixed_bundling",
+      "level": 3
+    },
+    {
+      "label": "Price bundling",
+      "href": "#Price_bundling",
+      "level": 3
+    },
+    {
+      "label": "Examples of Product bundling",
+      "href": "#Examples_of_Product_bundling",
+      "level": 2
+    },
+    {
+      "label": "Gift bundles",
+      "href": "#Gift_bundles",
+      "level": 3
+    },
+    {
+      "label": "Membership boxes",
+      "href": "#Membership_boxes",
+      "level": 3
+    },
+    {
+      "label": "Related Product bundle",
+      "href": "#Related_Product_bundle",
+      "level": 3
+    },
+    {
+      "label": "How to create a product bundling strategy",
+      "href": "#How_to_create_a_product_bundling_strategy",
+      "level": 2
+    },
+    {
+      "label": "Build your own bundle",
+      "href": "#Build_your_own_bundle",
+      "level": 3
+    },
+    {
+      "label": "Inventory Clearance bundling",
+      "href": "#Inventory_Clearance_bundling",
+      "level": 3
+    },
+    {
+      "label": "How to create a product bundling strategy",
+      "href": "#How_to_create_a_product_bundling_strategy-2",
+      "level": 2
+    },
+    {
+      "label": "Decide what to bundle",
+      "href": "#Decide_what_to_bundle",
+      "level": 3
+    },
+    {
+      "label": "Let’s look at how to choose bundled products:",
+      "href": "#Lets_look_at_how_to_choose_bundled_products",
+      "level": 3
+    },
+    {
+      "label": "Name your product bundle",
+      "href": "#Name_your_product_bundle",
+      "level": 3
+    },
+    {
+      "label": "Use a Shopify app",
+      "href": "#Use_a_Shopify_app",
+      "level": 3
+    },
+    {
+      "label": "How to sell your product bundles",
+      "href": "#How_to_sell_your_product_bundles",
+      "level": 2
+    },
+    {
+      "label": "1. Display the discount information prominently",
+      "href": "#1_Display_the_discount_information_prominently",
+      "level": 3
+    },
+    {
+      "label": "2. Use your bundles for gift guides",
+      "href": "#2_Use_your_bundles_for_gift_guides",
+      "level": 3
+    },
+    {
+      "label": "3. Offer your bundles at checkout",
+      "href": "#3_Offer_your_bundles_at_checkout",
+      "level": 3
+    },
+    {
+      "label": "Benefits of product bundling",
+      "href": "#Benefits_of_product_bundling",
+      "level": 2
+    },
+    {
+      "label": "1. Boost sales",
+      "href": "#1_Boost_sales",
+      "level": 4
+    },
+    {
+      "label": "2. Pricing opacity",
+      "href": "#2_Pricing_opacity",
+      "level": 4
+    },
+    {
+      "label": "3. Increase product awareness",
+      "href": "#3_Increase_product_awareness",
+      "level": 4
+    },
+    {
+      "label": "4. Boost customer loyalty",
+      "href": "#4_Boost_customer_loyalty",
+      "level": 4
+    },
+    {
+      "label": "Create product bundles for your store today",
+      "href": "#Create_product_bundles_for_your_store_today",
+      "level": 2
+    },
+    {
+      "label": "Product bundling FAQ",
+      "href": "#Product_bundling_FAQ",
+      "level": 2
+    },
+    {
+      "label": "1.What is a bundling strategy?",
+      "href": "#1What_is_a_bundling_strategy",
+      "level": 4
+    },
+    {
+      "label": "2. What are two types of bundling?",
+      "href": "#2_What_are_two_types_of_bundling",
+      "level": 4
+    },
+    {
+      "label": "3. What are some examples of bundling?",
+      "href": "#3_What_are_some_examples_of_bundling",
+      "level": 4
+    },
+    {
+      "label": "4. What is the difference between a product bundle and a package?",
+      "href": "#4_What_is_the_difference_between_a_product_bundle_and_a_package",
+      "level": 4
+    }
+  ],
+  "faqs": [],
+  "previous": {
+    "slug": "shopify-experts-vs-diy-when-to-seek-professional-help-for-your-e-commerce-site",
+    "title": "Shopify Experts vs. DIY: When to Seek Professional Help for Your eCommerce Site"
+  },
+  "next": {
+    "slug": "guide-to-hiring-shopify-expert",
+    "title": "Ultimate Guide To Hiring Shopify Expert"
+  },
+  "seo": {
+    "title": "Product Bundling in Shopify - The Ultimate Guide | Dynami...",
+    "description": "Explore our ultimate product bundling shopify guide. we have covered what is product building, its benefit, strategy and many more."
+  },
+  "wordCount": 2471
+}

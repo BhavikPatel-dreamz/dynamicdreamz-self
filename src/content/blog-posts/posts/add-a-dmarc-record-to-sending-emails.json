@@ -1,0 +1,260 @@
+{
+  "slug": "add-a-dmarc-record-to-sending-emails",
+  "title": "Authenticate and add a DMARC record to continue sending emails from your domain",
+  "date": "2024-06-20",
+  "displayDate": "June 20, 2024",
+  "modified": "2026-08-05T13:29:44+00:00",
+  "category": "Shopify",
+  "categoryValue": "shopify",
+  "categoryHref": "/blogs?category=shopify",
+  "featuredImage": {
+    "src": "/assets/blog/add-a-dmarc-record-to-sending-emails.webp",
+    "width": 876,
+    "height": 705,
+    "alt": "Authenticate-and-add-a-DMARC-record-to-continue-sending-emails-from-your-domain-3"
+  },
+  "excerpt": "#Breaking: Google & Yahoo announce a brand new email authentication requirement for bulk email As a Shopify store owner, recently you must have received such an email from Shopify with subject line stating ‘Authenticate and add a DMARC record to continue sending emails from your domain’. If yes and you are not quite sure how [...]",
+  "author": {
+    "name": "Tejal Parekh",
+    "role": "Sr. SEO Expert",
+    "bio": "Tejal Parekh is a seasoned Senior SEO Expert with a proven track record of driving organic growth for businesses across diverse industries. With a deep understanding of search engine algorithms and a passion for digital marketing, Tejal brings a wealth of expertise to Dynamic Dreamz.",
+    "image": "/assets/blog/authors/tejal-parekh-img.webp",
+    "linkedin": "https://in.linkedin.com/in/tejal-parekh-814310206"
+  },
+  "contentBeforeToc": [],
+  "contentAfterToc": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "#Breaking: Google & Yahoo announce a brand new email authentication requirement for bulk email",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "As a Shopify store owner, recently you must have received such an email from Shopify with subject line stating ",
+        {
+          "type": "text",
+          "text": "‘",
+          "bold": true
+        },
+        {
+          "type": "text",
+          "text": "Authenticate and add a DMARC record to continue sending emails from your domain’",
+          "bold": true
+        },
+        "."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "If yes and you are not quite sure how to fix this then let me explain to you what does it mean and how to fix it."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "What does the above email mean to you?",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Recently Google and yahoo announced that starting in the first quarter of 2024, domain owners who send bulk email for the promotion of their businesses to Google/ Yahoo email addresses would be required to authenticate their emails. This, in turn, would ensure that receivers can easily unsubscribe from receiving emails that do not interest them and maintain a less spammy inbox."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "As per the announcement, merchants need to take action before February 1 2024 and have to authenticate their domain email if you like to continue to send email from your branded email address."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "What actions you need to take?",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "To meet the new sender requirements, Shopify Merchants will have to:"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        {
+          "content": [
+            "Keep a complaint rate of ",
+            {
+              "type": "text",
+              "text": "< 0.3% and ideally below 0.1%",
+              "bold": true
+            },
+            " to prevent mail from getting filtered into customers’ spam folders. Complaint rates are calculated as the number of emails customers are marking as spam/ the number of emails that are getting inboxed. Check your Gmail complaint rate by setting up ",
+            {
+              "type": "link",
+              "href": "https://support.google.com/mail/answer/9981691",
+              "text": "Google Postmaster Tools ",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            }
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "link",
+              "href": "https://help.shopify.com/en/manual/intro-to-shopify/initial-setup/setup-your-email#connect-to-spf-and-dkim-records",
+              "text": "Authenticate",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            },
+            " Shopify to send emails for your domain. ",
+            {
+              "type": "link",
+              "href": "http://shopify.com/admin/settings/notifications",
+              "text": "Check if you’ve authenticated ",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            }
+          ]
+        },
+        {
+          "content": [
+            "Have a DMARC policy for your domain, with a minimum p=none policy setting."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "content": [
+            {
+              "type": "link",
+              "href": "https://dmarcian.com/dmarc-inspector/",
+              "text": "Check if you have a valid DMARC record",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            }
+          ]
+        },
+        {
+          "content": [
+            {
+              "type": "link",
+              "href": "https://support.google.com/a/answer/2466563?hl=en",
+              "text": "Learn how to create a DMARC record",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        "Here are the screenshots of DMARC record checker of domain of one of our Shopify merchants:"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/dmarc-record.webp",
+      "alt": "DMARC record checker",
+      "width": 1498,
+      "height": 651
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/dmarc-record-image.webp",
+      "alt": "DMARC-record-Image",
+      "width": 1418,
+      "height": 394
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/inline/dmarc-record-tag.webp",
+      "alt": "DMARC-record-Tag",
+      "width": 1277,
+      "height": 804
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "What if you fail to authenticate before February 1 2024?",
+          "bold": true
+        },
+        "If you take no action by the above date, ",
+        {
+          "type": "link",
+          "href": "https://www.shopify.com/in",
+          "text": "Shopify",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        " will rewrite your sender email to store@shopifyemail.com to meet the minimum requirements outlined by Google and Yahoo, so that you may continue sending emails to your customers without interruption. ",
+        {
+          "type": "text",
+          "text": "In short, you will no longer be able to use your branded email to send messages to your customers.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "text": "Not sure how to proceed? Relax and ",
+          "italic": true
+        },
+        {
+          "type": "link",
+          "href": "/request-quote",
+          "text": "contact our Shopify expert team",
+          "italic": true
+        },
+        {
+          "type": "text",
+          "text": " help you resolve your query and get through this!",
+          "italic": true
+        }
+      ]
+    }
+  ],
+  "toc": [],
+  "faqs": [],
+  "previous": {
+    "slug": "types-of-shopify-experts-services",
+    "title": "Types of Shopify Experts Services: A Business Perspective"
+  },
+  "next": {
+    "slug": "how-to-hire-shopify-development-agency",
+    "title": "Ultimate guide to hiring Shopify Development Agency"
+  },
+  "seo": {
+    "title": "Add A DMARC Record To Sending Emails From Your Domain",
+    "description": "Want to send emails from Domain? Kindly add the DMARC Record to continue sending emails from your Domain. Read Blog and Get into Deep Dive!"
+  },
+  "wordCount": 401
+}

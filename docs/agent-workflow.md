@@ -1,0 +1,632 @@
+# Dynamic Dreamz Agent Workflow
+
+Use this workflow whenever implementing, migrating, designing, refactoring, or
+reviewing work in this repo.
+
+## One-Prompt Kickoff
+
+Use this prompt at the start of a new agent session:
+
+```text
+Read AGENTS.md and run the Dynamic Dreamz migration workflow. Then complete this task production-ready: <task>.
+```
+
+The agent should then read:
+
+1. `AGENTS.md`
+2. `docs/project-context.md`
+3. `docs/agent-workflow.md`
+4. `docs/visual-parity-workflow.md`
+5. `docs/seo-launch-checklist.md`
+6. `docs/aeo-geo-strategy.md`
+7. `docs/page-content-improvements.md`
+8. Relevant local Next.js docs from `node_modules/next/dist/docs/`
+
+## Working Loop
+
+1. Understand the task and map it to a route, component, content area, SEO
+   requirement, or asset need.
+2. Inspect the current codebase before editing. Search existing components and
+   media assets thoroughly across `src/components/**` and `public/assets/**`
+   using visual structure, UI layout patterns, markup, and content/brand
+   checks—not only filenames.
+3. Strict Component Reuse & Slight Extension First: ALWAYS prioritize reusing
+   existing components (`ButtonLink`, `Container`, `FaqSection`, `AiAutomationSection`,
+   `AiDiscoverySection`, `CtaBannerSection`, `ServiceHeroSection`, etc.) over
+   writing new code or raw inline markup (e.g. never write raw inline `<a>` tags
+   with button styling when `ButtonLink` exists). If an existing component can
+   support the requirement with a slight modification (e.g. adding an optional
+   typed prop, variant, slot, or optional style modifier), MODIFY the existing
+   component slightly to support the use case instead of writing extra, duplicate,
+   or one-off code. Build new components only when no similar pattern exists.
+4. If migrating a legacy page, inspect the old URL as both a rendered page and
+   View Page Source for content structure, headings, CTAs, metadata intent,
+   images, links, schema, accessibility details, style details, and redirect
+   needs. Audit for WordPress hidden DOM debt: compare rendered visible elements
+   against the raw HTML. If elements are permanently suppressed by CSS (e.g.
+   `display: none;`, `.hide-logo`, inline `style="display:none"`, hidden plugin
+   heading tags, or hidden excerpts), DO NOT migrate them into `src/content/**` or
+   `src/data/**`, and do not write Next.js CSS workarounds to render and then
+   hide them.
+5. For visual work, inspect live computed styles, breakpoints, interaction
+   states, and animation timings before touching UI code. Store temporary
+   inspection artifacts in `scratch/` (do not commit heavy dumps to git).
+6. Decide the production structure before touching code.
+7. Before implementation, add or update the route's initial section in
+   `docs/aeo-geo-strategy.md` with its page role, target prompts, evidence,
+   known gaps, and planned recommendations.
+8. Apply the AEO/GEO live-UI preservation gate: implement accurate nonvisual
+   improvements, but keep live-visible copy, layout, labels, proof, and
+   interactions unchanged unless the project owner explicitly approved the
+   exact visible change in the current task. Queue unapproved visible proposals
+   in `docs/page-content-improvements.md`.
+9. Implement with reusable or generalized components, local typed data/content,
+   and project-owned, deduplicated assets. Keep visible page/business copy out
+   of `src/components/**` and `src/app/**`.
+10. Apply the project URL policy while adding or editing routes: every non-root
+    page path is slashless (`/about-us`, not `/about-us/`). Keep internal links,
+    canonical and Open Graph URLs, sitemap/robots output, JSON-LD, and redirects
+    consistent through the shared URL helpers.
+11. Add SEO metadata and structured data as part of the same change, not as a
+    later cleanup.
+12. After implementation, complete the AEO/GEO audit and update that page
+    section with evidence needs, technical gaps, final recommendations,
+    priority, status, verification, and remaining improvements. Keep unresolved
+    work in that file for future page tasks.
+13. For visual work, run the visual parity workflow and compare live vs local
+    desktop, tablet, mobile, hover, focus, active/open, scrolled, and animation
+    states.
+14. Check responsive behavior, accessibility, performance risk, and broken links.
+15. If SEO/content quality can improve through visible copy changes, update
+    `docs/page-content-improvements.md` with page-specific suggestions marked
+    `suggested` or `deferred`; do not implement them without explicit approval.
+16. Run `npm run check:urls`, `npm run check:component-content`, then the standard
+    lint/build verification commands.
+17. Summarize changes, verification, visual capture notes, AEO/GEO status, and
+    any missing assets or content approvals.
+
+## Before Editing Code
+
+Read the relevant Next.js documentation from the installed package. Common
+routes:
+
+- App Router pages/layouts:
+  `node_modules/next/dist/docs/01-app/01-getting-started/03-layouts-and-pages.md`
+- Project structure:
+  `node_modules/next/dist/docs/01-app/01-getting-started/02-project-structure.md`
+- Metadata:
+  `node_modules/next/dist/docs/01-app/01-getting-started/14-metadata-and-og-images.md`
+- Images:
+  `node_modules/next/dist/docs/01-app/01-getting-started/12-images.md`
+- Sitemap:
+  `node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/01-metadata/sitemap.md`
+- Robots:
+  `node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/01-metadata/robots.md`
+- Production checklist:
+  `node_modules/next/dist/docs/01-app/02-guides/production-checklist.md`
+
+If a Next.js API feels familiar from memory, still check the local docs. This
+project uses Next.js 16.3.0 and may differ from older App Router examples.
+
+## Implementation Standards
+
+- Use TypeScript and keep types close to shared content/data.
+- Search `src/components/**` and current imports/usages before adding a new
+  component. Reuse an existing compatible component or add a focused typed
+  variant before creating another implementation.
+- Design every new component to be generalized and reusable for future pages.
+  Accept structured content via typed props, separate content from presentation,
+  and avoid hardcoding page-specific copy inside the component markup.
+- Prefer Server Components by default. Pages, layout pieces, and meaningful
+  page sections should render on the server unless they genuinely need browser
+  interactivity.
+- Add Client Components only for the smallest interactive island that needs
+  state, browser APIs, event handlers, timers, observers, measurements,
+  animation controls, forms that need client interactivity, or UI widgets.
+- Do not mark an entire page or section with `"use client"` when only a menu,
+  accordion, carousel, tabs, video control, header behavior, or animation
+  controller needs it.
+- Keep route files thin. Put meaningful visual/business sections in
+  `src/components/sections/`, and keep those section components as Server
+  Components whenever possible.
+- Use small Client Components inside server-rendered sections for interactive
+  controls.
+
+- Put navigation, company stats, service lists, route metadata, and page content
+  in `src/data/` or `src/content/` when reused.
+- Keep static page SEO metadata in `src/data/seo.ts`. Page files should import
+  from this shared source instead of defining full metadata objects inline,
+  unless the route needs dynamic `generateMetadata`.
+- Keep all non-root internal route strings slashless. The enforced policy is
+  `trailingSlash: false`; `/about-us/` is invalid source data even though
+  Next.js redirects it. Use `/about-us` so navigation does not incur a redirect.
+- Keep `/` as the structural homepage route, but serialize its absolute
+  canonical, sitemap, and schema URL as the bare origin without a terminal
+  slash through `absoluteUrl`.
+- Style with clean Tailwind utilities and reusable components. Do not add custom
+  page, section, component, animation, or one-off layout CSS to
+  `src/app/globals.css`.
+- Create metadata helpers in `src/lib/metadata.ts` once multiple routes need the
+  same rules.
+- Create JSON-LD helpers in `src/lib/schema.ts` once structured data repeats.
+- Use semantic HTML: one clear `h1`, ordered headings, real links and buttons,
+  descriptive labels, and accessible form controls.
+- Use `next/link`, `next/image`, `next/font`, and `next/script` rather than raw
+  equivalents unless there is a specific reason.
+- Avoid adding dependencies for simple UI. If a dependency is justified, explain
+  the production benefit.
+
+## Content Boundary Workflow
+
+Use this check whenever creating or changing a component, route, form, or shared
+layout:
+
+1. Classify every string by ownership before adding it. Visible page/business
+   copy belongs in a typed `src/content/**` module; shared facts, navigation,
+   routes, and configuration belong in `src/data/**`.
+2. Pass content into generalized components through typed props, or import the
+   relevant content object into a page-specific consumer. Do not hardcode
+   headings, descriptions, labels, CTA copy, placeholders, status/error text,
+   content prefixes/suffixes, screen-reader product copy, or content-like
+   default prop values in `src/components/**` or `src/app/**`.
+3. Keep implementation-owned values inline only when they are not page/business
+   copy. Examples include technical ARIA relationships, DOM IDs, route segments,
+   protocol values, and intentional media/accessibility attributes such as
+   `alt`, `aria-label`, and `title`. If such an attribute communicates product
+   or page wording, source it from content/data as well.
+4. Run `npm run check:component-content` after the edit. Fix violations by moving
+   the value to the correct content/data owner; do not silence a valid finding or
+   broaden an exception merely to make the current code pass.
+5. Run `npm run lint` and `npm run build`. Both commands include the boundary
+   check so regressions fail locally and in CI/build verification.
+
+## Handling Live-Site Hidden Content (No WordPress Hidden DOM Migration)
+
+The live site runs on WordPress and Elementor. In legacy CMS setups, global widget templates and plugins frequently output DOM elements that are permanently suppressed by CSS stylesheets (e.g. `.hide-logo { display: none; }`, inline `style="display:none"`, hidden plugin heading tags like `ez-toc`, or hidden card excerpts).
+
+Next.js has no reason to inherit WordPress DOM debt:
+
+1. **Content Model Cleanliness**:
+   - Content files in `src/content/**` and `src/data/**` must contain ONLY data that is actually rendered and visible to the end user.
+   - Never import or store dummy or permanently hidden elements in content arrays. If a live page template output a 5th item or a proof badge that has `.hide-logo` / `display:none` applied across all viewports, DO NOT include that item in the Next.js content object.
+
+2. **No CSS Workarounds for Unused Content**:
+   - Never write component-level conditional workarounds to suppress unwanted content (e.g. `idx === 0 && "hidden"`, `className={isHideLogo ? "hidden" : ""}`).
+   - If an item should not be shown, remove it from the data array in `src/content/**`. The component template should cleanly map over visible data without artificial hiding hacks.
+
+3. **Clean Component Architecture for Optional Elements**:
+   - Never pass dummy props with hidden classes (e.g. `overlayClassName="hidden"`) to satisfy a component.
+   - If an element inside a component (like a video dialog overlay or a badge) is not always required, make the prop or JSX slot cleanly optional (e.g. `overlayClassName?: string`, render overlay only if provided or needed).
+   - If a layout option or prop is permanently discarded across all usages (e.g. `layout="centered"` in `SplitFaqSection`), completely remove the prop and dead branches rather than leaving dead code.
+
+4. **Responsive Adaptations vs. Permanently Hidden Content**:
+   - **Legitimate Responsive Adaptations**: Hiding a complex desktop-only graphic on mobile viewports (`hidden md:block`) or toggling a mobile hamburger navigation menu open/closed are valid responsive/interactive adaptations.
+   - **WordPress Hidden DOM Debt**: Elements suppressed across all screen sizes and user states due to CMS template bloat or plugin hacks. These must be completely omitted from the Next.js codebase.
+
+## Component Reuse & Generalization Workflow
+
+Follow this step-by-step workflow for every page or section build:
+
+### 1. Deep Pre-Creation Discovery (Beyond Names)
+- **Do not search only by filename or component name**: A component with a slightly different name (e.g. `industry-brands-section.tsx`, `client-logo-slider.tsx`, `shopify-proof-sections.tsx`, `expertise-accordion.tsx`, `hiring-hero-section.tsx`, `cta-banner-section.tsx`) may already implement the exact layout or pattern you need.
+- **Search by visual layout & pattern**:
+  - Hero banners (with badges, ratings, stats counters, CTA buttons)
+  - Card grids & feature lists (advantages, reasons, offerings, process steps)
+  - Stats & metric counters (numbers, labels, icons)
+  - Client logo sliders & partner marquees (`ClientLogoSlider`, `BrandPartnersSection`)
+  - Testimonial / review carousels & video dialogs (`HappyClientSection`, `VideoDialog`, `TestimonialsSection`)
+  - Accordion / FAQ sections (`FaqAccordion`, `FaqSection`, `ExpertiseAccordion`)
+  - Split CTA banners (`CtaBannerSection`)
+  - Horizontal drag / scroll containers (`HorizontalDragScroll`)
+  - Portfolio / case study cards (`PortfolioProjectCard`, `BlogCard`)
+- **Search by DOM structure & styling**: Inspect `src/components/ui/`, `src/components/sections/`, and `src/components/layout/` for matching Tailwind class combinations, grid setups, responsive breakpoints, and HTML elements.
+
+### 2. Safe Component Adaptation & Backward-Compatible Extension
+- **Reuse Directly**: When an existing component matches the requirements 100%, reuse it directly.
+- **Modify / Extend Safely**: If an existing component provides 80–90% of what is needed and shares the same core visual layout, you may extend it:
+  - Add **optional, typed props** (e.g. `variant?: "default" | "compact"`, `hideReview?: boolean`, `columns?: 2 | 3`, `className?: string`, `iconAlt?: string`).
+  - Use sensible default values that preserve the original behavior for all existing callers.
+  - **ZERO BREAKAGE RULE**: You can modify existing components a little bit to reuse them, but you MUST NEVER break existing pages or usages. Verify all existing imports and props after extending a component.
+
+### 3. 100% Visual Parity Trumps Forced Reuse (Unique Blocks for Unique Sections)
+- Achieving 100% visual, layout, responsive, and interaction parity with the live site is NON-NEGOTIABLE.
+- **Do NOT force-fit bespoke sections into common components or common blocks**:
+  - If a section on the live site has a unique visual design, bespoke card structure, tabbed interaction, specialized counters, or unique layout hierarchy (e.g. `EvaluationFrameworkSection`, `ShopifyStageServicesSection`, `PortfolioShowcaseSection`, `CaseStudyCardsSection`), do NOT force it into `features-grid` or `process-timeline`.
+  - Creating awkward conditional props and layout branches on common blocks produces bloated "Frankenstein components", compromises visual parity, and creates high regression risk for other pages.
+- **Create Dedicated Components and Blocks**:
+  - Build a dedicated, clean React component in `src/components/sections/<route>/`.
+  - Create a dedicated Payload Block in `src/blocks/<BlockName>.ts`.
+  - Map it 1:1 in `src/components/blocks/block-renderer.tsx`.
+
+### 3.1 CMS Block-to-Component Rendering Contract
+- **Payload owns data and composition; React owns presentation**: CMS documents
+  provide typed copy, links, lists, counters, SEO values, media relationships,
+  and the approved order of section blocks. The corresponding React component
+  remains the only owner of DOM structure, Tailwind/CSS, responsive geometry,
+  animation, and browser interaction.
+- **Keep `BlockRenderer` deliberately thin**: It may normalize a block and adapt
+  typed values, then dispatch that block type directly to the established section
+  component. It must not render a generic CMS layout, generic spacing/card
+  treatment, substitute component, or styling override around a block.
+- **Allow modular composition without visual drift**: Editors may add, remove,
+  and reorder the approved blocks in a page's `sections` field. A block's visual
+  result must be identical wherever it is used. When a CMS page has the same
+  ordered blocks and values as its coded baseline, the two rendered pages must
+  match at every supported viewport and interaction state.
+- **Use typed adapters and safe fallbacks**: Extend existing components only with
+  backward-compatible typed CMS props. Resolve populated CMS content and media
+  first; retain local content and canonical local assets only as resilience
+  fallbacks for absent, invalid, or unavailable CMS data. Never ignore a
+  populated CMS block merely to recover visual parity.
+
+### 4. Upload Media Everywhere with Local Asset Fallback (Future-Ready CDN Strategy)
+- In all Payload collections (`pages`, `posts`, `case-studies`, `testimonials`, `authors`), globals (`site-settings`, `navigation`), and modular blocks (`src/blocks/**`):
+  - Model all media, images, icons, and logos using Payload's native upload feature: `{ name: "image" | "logo" | "icon" | "avatar", type: "upload", relationTo: "media" }`.
+  - NEVER use plain text strings (e.g. `{ name: "src", type: "text" }`) in CMS schemas.
+  - **Why**: When object storage / CDN (AWS S3, Cloudflare R2, Cloudinary) is connected in the future via a Payload cloud storage plugin, all media files will migrate to and be served from CDN automatically without database migrations or content string replacements.
+  - **Frontend Fallback**: UI components and block renderers must resolve media objects dynamically (`media.url`, `media.alt`, `media.width`, `media.height`), falling back to canonical local static paths (`/assets/...`) if media is not yet uploaded or unpopulated.
+
+### 5. Generalize All New Components for Future Reuse
+- When building any new component:
+  - **Decouple markup from content**: Never hardcode page-specific strings, titles, paragraphs, or links directly into the component. Accept structured content via typed TypeScript props, or import from `src/content/**` or `src/data/**`.
+  - **Expose flexible, typed props**: Accept title, description, items array, optional CTAs, optional subheadings, and optional `className` overrides.
+  - **Build modular sub-components**: Break complex sections into clean modular pieces (e.g. a grid container + a reusable item card component) so sub-pieces can also be reused independently.
+  - **Ensure clean Server / Client boundaries**: Keep the main section server-rendered; encapsulate interactive widgets (sliders, tabs, modals, accordions) into small `"use client"` controls.
+
+### 6. Post-Implementation Consolidation
+- Before completing the task, verify whether any newly created components can be consolidated or promoted to shared locations.
+- Verify that no duplicate components were introduced across page folders.
+
+## Asset Discovery & 2-Step Ingestion Workflow (Zero Duplicates)
+
+Never download assets directly from the live site into `public/assets/`. Always follow this 2-step buffer workflow:
+
+1. **Step 1: Download to Ephemeral `scratch/` Buffer First**
+   - When inspecting or migrating a page from the live site, download candidate media files only into the temporary `scratch/` directory (e.g. `/scratch/`).
+   - Do NOT save directly into `public/assets/` before comparing.
+
+2. **Step 2: SHA-256 Hash & Visual Inspection Against Existing Assets**
+   - Run a SHA-256 content hash check and inspect SVG markup / visual roles against all existing assets in `public/assets/**` (across `brand/`, `clients/`, `team/`, `icons/`, `proof/`, `services/`, `process/`, etc.).
+   - Check if an identical or visually matching asset already exists in the project.
+
+3. **Step 3: Action Based on Comparison**:
+   - **Match Found**: Use the existing canonical local path (e.g. `/assets/process/step-01.svg` or `/assets/shopify-plus-agency/icons/shopify-plus-icon.svg`) in the content file. Delete the temporary file from `scratch/`. Never create a duplicate copy.
+   - **Truly Unique Asset**: Only when no matching asset exists anywhere in `public/assets/`, optimize the asset (convert uncompressed PNG to WebP, clean SVGs) and save it to the appropriate `public/assets/<category>/` directory with a clean kebab-case filename.
+
+4. **Step 4: Mandatory Zero-Duplicate Audit**:
+   - Run the SHA-256 duplicate audit script before completing the task. Total duplicate hash groups across `public/assets/` MUST remain 0.
+
+## SEO Workflow
+
+Every indexable page must include:
+
+- Unique `title`
+- Unique `description`
+- Canonical URL through `alternates.canonical`
+- Open Graph title, description, URL, image, site name, and type
+- Twitter card metadata
+- Semantic heading structure
+- Descriptive image alt text
+- Internal links to related services, case studies, and CTA pages
+- JSON-LD where useful:
+  - Organization and WebSite globally
+  - ProfessionalService or Service for service pages
+  - BreadcrumbList for nested pages
+  - Article or BlogPosting for blogs
+  - FAQPage when visible FAQs exist
+  - CollectionPage or ItemList for portfolio and case study indexes
+
+Do not ship generic metadata copied from another page. Keep titles concise and
+commercially useful. Keep descriptions human-readable and specific.
+
+All page URLs use one slashless policy. `/` remains the homepage, while every
+other route ends in its final segment. Build absolute public URLs with
+`absoluteUrl`; never hand-format canonical, Open Graph, sitemap, or schema URLs.
+The `check:urls` script rejects trailing-slash route literals and a config that
+does not explicitly set `trailingSlash: false`.
+
+## AEO And GEO Workflow
+
+`docs/aeo-geo-strategy.md` is the permanent source of truth for sitewide and
+page-specific AEO/GEO findings. Update it during every new indexable page build,
+material page rewrite, structured-data change, or AEO/GEO audit.
+
+### Live-UI Preservation Gate During Migration
+
+AEO/GEO work is nonvisual by default during the migration. A general request to
+implement, audit, or improve AEO/GEO or SEO does not authorize changes to the
+rendered live-site presentation or content.
+
+- Preserve visible headings, paragraphs, grammar, capitalization, labels, CTA
+  text, proof/review values, counters, cards, taxonomy, section order, styling,
+  animation, and default interaction states.
+- Implement accurate nonvisual improvements such as metadata, canonicals,
+  crawl/indexing controls, sitemap dates, server rendering, semantic HTML that
+  preserves appearance, accessibility metadata, and structured data that is
+  supported by the visible page and approved facts.
+- Do not use hidden content or schema to compensate for missing visible
+  evidence. Structured data must not contradict the live-visible page.
+- Record any better visible answer, heading, FAQ, CTA, proof text, or layout in
+  `docs/page-content-improvements.md` as `suggested` or `deferred`.
+- Implement a visible proposal only when the project owner explicitly approves
+  that exact change in the current task. Prior approval of technical/schema work
+  does not imply approval of visible content.
+- If a factual, policy, legal, accessibility, or trust issue cannot be fixed
+  without changing the UI, mark it `blocked` or `deferred`, explain the risk,
+  and request approval rather than silently changing the page.
+
+For each touched page:
+
+1. Read the sitewide principles, current blockers, fact-governance rules,
+   crawler guidance, structured-data guidance, and acceptance criteria in the
+   strategy.
+2. Inspect the live reference, local rendered page, View Page Source, metadata,
+   visible answers, evidence, entity facts, internal links, media, and schema.
+3. Add the route using the future-page template in the strategy if no section
+   exists; otherwise update the existing route section in place.
+4. Record the page role, audience, decision stage, target prompts, current
+   strengths, evidence available, missing evidence, and page-specific risks.
+5. Record each recommendation with `P0`, `P1`, or `P2` priority and one of
+   `suggested`, `approved`, `in progress`, `implemented`, `deferred`, or
+   `blocked`.
+6. Include answer-copy, internal-link, entity, authorship, freshness, crawler,
+   structured-data, and measurement actions when they apply. Do not add a
+   category merely to fill the template.
+7. Keep unresolved recommendations in `docs/aeo-geo-strategy.md` across future
+   tasks. Never remove an open recommendation just because the page shipped;
+   change its status and add a concise reason or verification note.
+8. If no additional improvement is found, update `Last reviewed` and record
+   `No new AEO/GEO gaps found` with the verification performed.
+
+Document boundaries:
+
+- `docs/aeo-geo-strategy.md` owns AEO/GEO strategy, page readiness, prompts,
+  evidence, entity, crawler, schema, citation, and measurement recommendations.
+- `docs/page-content-improvements.md` owns exact visible-copy changes queued for
+  content approval or implementation. When a copy change originates in the
+  AEO/GEO audit, keep the strategy item and cross-reference it instead of moving
+  the finding out of the strategy.
+- `docs/seo-launch-checklist.md` owns the general SEO production gate.
+
+## Local Single-Page SEO Audit Mode
+
+Use this mode when auditing one local page while the site is still mid-migration.
+The target is a 100/100 page-level SEO result after excluding planned routes that
+have not been built yet.
+
+- Broken internal links to planned but unbuilt pages may be ignored for the
+  score only during local development.
+- Ignored links must be reported separately as "migration pending" with the
+  target hrefs listed.
+- A link is only "migration pending" when it points to an intended Dynamic
+  Dreamz route from the navigation, sitemap plan, project context, or migration
+  backlog.
+- Broken links to already-built routes, mistyped routes, assets, forms,
+  anchors, scripts, metadata URLs, or external sites are real failures.
+- Launch audits must not ignore any broken internal links.
+
+Everything else is part of the 100% gate:
+
+- Visible page copy supports the target keyword and buyer intent: title, meta
+  description, `h1`, intro paragraph, section headings, proof copy, FAQs, CTA
+  text, image alt text, and internal-link anchor text.
+- Canonical, `og:url`, sitemap URLs, and internal links follow the same trailing
+  slash policy.
+- Organization, WebSite, WebPage, BreadcrumbList, Service, FAQPage, Article, and
+  VideoObject schema match visible page content.
+- Review and aggregate rating schema matches visible review/rating claims or is
+  scoped to the exact review source. Omit uncertain ratings instead of shipping
+  inconsistent schema.
+- `datePublished` and `dateModified` are accurate and not future-dated. Derive
+  `dateModified` from content/build data where possible instead of hardcoding
+  stale dates.
+- Twitter metadata includes `twitter:site` and `twitter:creator` only when the
+  approved company handle is known; do not invent handles.
+- Visible videos that are important page content include valid `VideoObject`
+  schema when title, description, thumbnail, upload date, and embed/content URL
+  are known.
+- Heavy source images are converted to optimized formats when quality allows.
+  Prefer WebP/AVIF for photos and screenshots, keep SVG for vector logos/icons,
+  and avoid large PNGs unless transparency or fidelity requires them.
+- Videos use posters and `preload="none"` or lazy loading unless they are
+  genuinely critical above-the-fold content. Avoid autoplaying heavy video on
+  mobile unless explicitly required by the live-page parity brief.
+- No production metadata, schema, image, video, script, CSS, canonical, or OG
+  field depends on the old live site domain.
+
+If a 100% result would require visible content changes, write the exact proposal
+to `docs/page-content-improvements.md` as `suggested` or `deferred`. Do not lower
+the audit score silently and do not implement the proposal without explicit
+project-owner approval; report the item as an approval-dependent migration gap.
+
+## Migration Workflow For Legacy Pages
+
+When migrating a page from the old site:
+
+1. Record the old URL and final new URL.
+2. Inspect the rendered live page at desktop and mobile sizes.
+3. Inspect View Page Source for the same URL before implementation.
+4. Capture title intent, `h1`, section order, visual hierarchy, CTAs, proof
+   points, FAQs, internal links, image alt text, ARIA labels, forms, schema,
+   canonical URL, OG/Twitter metadata, style rules, and responsive behavior.
+5. Capture the asset map: original URL, intended local path, alt text, visible
+   placement, dimensions if known, and whether the asset is decorative or
+   meaningful.
+6. Download or copy required live-site assets into `public/assets/**` during
+   migration using meaningful local filenames, then use only the local copy in
+   final code.
+7. Copy required source content into typed local files under `src/content/**` or
+   `src/data/**`; do not read from the live site at runtime. Audit for WordPress
+   hidden DOM debt: verify that items captured are visibly rendered, not
+   suppressed by CSS (`display: none;`, `.hide-logo`, inline styles). Omit
+   permanently hidden items completely.
+8. Rebuild the page to match the live page first. Implement production-quality,
+   accessibility, performance, SEO, AEO, and GEO improvements only when they do
+   not change the default visible result. Queue visible improvements for
+   explicit approval instead of including them automatically in the migration.
+9. Build the page using shared Server Components for major sections where
+   appropriate, with tiny Client Components only for necessary interactivity.
+10. Add page metadata, canonical URL, OG image, and structured data.
+11. Add redirect only if the final URL changes.
+12. Add the route to sitemap data.
+13. Verify no production code hotlinks the old site.
+
+## Live Site Capture Checklist
+
+For exact migration work, capture these from the live page before building:
+
+- URL, final route, page title, meta description, canonical, robots, OG, and
+  Twitter metadata.
+- JSON-LD and any visible content it represents.
+- Header, mega menu, footer, breadcrumbs, and active navigation behavior.
+- Every visible section in order, including eyebrow text, headings, paragraphs,
+  cards, counters, buttons, forms, tabs, sliders, accordions, and FAQs.
+- Audit for permanently hidden elements: check if any elements present in
+  View Page Source are suppressed via CSS (`display: none;`, `.hide-logo`,
+  hidden plugin tags like `ez-toc`). Omit these from content captures entirely.
+- Style details for each major pattern: colors, fonts, font sizes, weights, line
+  heights, spacing, max widths, grid/column behavior, backgrounds, borders,
+  radii, shadows, button states, card states, hover/focus states, animations,
+  sticky behavior, and responsive breakpoints.
+- Every internal and external link, including `target`, `rel`, labels, and CTA
+  wording.
+- Every image or media asset, including original URL, local destination, alt
+  text, title, caption, width, height, loading behavior, and priority/LCP role.
+- Final local filename for every copied asset. Use clean lowercase kebab-case
+  names that describe the asset; do not keep vague, random, hashed, or odd live
+  filenames unless the original name is already meaningful.
+- Every image's final alt decision: meaningful alt text for content images, or
+  intentional empty alt only when the image is truly decorative.
+- Accessibility details such as form labels, `aria-label`, `aria-expanded`,
+  landmark roles, skip links, focus states, and keyboard-relevant interactions.
+- Responsive differences between mobile, tablet, and desktop.
+
+For style and animation parity, also follow
+`docs/visual-parity-workflow.md`. Do not skip animation capture just because it
+is not obvious in View Page Source.
+
+Final code must be self-contained in this repo. Live-site URLs are allowed only
+in migration notes, comments that document provenance, or temporary local
+research; they must not remain in production image, script, stylesheet, API,
+metadata, or schema references.
+
+Style implementation should match the live visual result, but use local
+maintainable code. Prefer Tailwind utilities and shared components over copying
+large old-site CSS files directly. Keep `src/app/globals.css` minimal; do not
+place page/component styles there.
+
+## Asset Workflow
+
+### 1. Deep Asset Discovery (Beyond Names)
+1. **Search across the complete `public/assets/` tree** before downloading, copying,
+   or creating any image or media file.
+2. Check across all asset directories: `brand/`, `clients/`, `team/`, `icons/`,
+   `proof/`, `testimonials/`, `services/`, `backgrounds/`, `awards/`, `platforms/`,
+   `case-studies/`, etc.
+3. **Do not search only by filename**: An asset with a different filename might
+   be the exact logo, icon, badge, or portrait you need.
+   - Inspect SVG vector paths and shapes for identical icons or logos.
+   - Search by brand, partner, client, or platform name.
+   - Compare content hashes and visually inspect image files.
+
+### 2. Canonical Asset Reuse
+4. **Reuse the existing canonical local path** when the asset is visually
+   identical or matching. Never create duplicate copies or rename the same image
+   for another page.
+5. When an asset is shared across multiple pages (e.g. partner logos, team photos,
+   client badges, review stars), keep one canonical copy in a neutral shared folder
+   such as `public/assets/team/**` or `public/assets/clients/**`. Keep page-specific
+   alt text and captions in each page's content/data file.
+
+### 3. Clean Ingestion for Truly New Assets
+6. Only when no matching or equivalent local asset exists in `public/assets/`,
+   download or copy the asset into the appropriate project-owned folder during
+   migration.
+7. Rename the new local copy with a meaningful lowercase kebab-case filename if
+   the live filename is unclear, random, hashed, generic, or keyword-stuffed.
+8. Store assets in the correct categorized folder by purpose.
+9. Preserve the original asset's important attributes in local content/data:
+   alt text, caption/title, source page, and original placement.
+10. Use `next/image` for photos, logos, hero images, case study screenshots, and
+    testimonial portraits.
+11. Give every content image meaningful, page-specific alt text. Do not use
+    generic values like "image", "banner", "logo image", or repeated keyword
+    strings.
+12. Use empty alt text only for truly decorative images, and make that decision
+    intentional.
+13. Use stable dimensions, aspect ratios, and responsive sizes to prevent layout
+    shift.
+14. Before completion, scan project-owned media and ensure no redundant duplicate
+    media files were created.
+15. Never use `dynamicdreamz.com` asset URLs in final code.
+
+### 4. Custom Media Server & Cloud Storage Adapter
+16. **Payload CMS Uploads Route to Dedicated Media Server**:
+    All media uploaded via Payload CMS is transmitted to and hosted at `https://media.dynamicdreamz.net` under the `uploads/` prefix via `@payloadcms/plugin-cloud-storage` and `adapter/src/index.ts`.
+17. **Local Asset Fallback & Dual Resolution**:
+    In UI components and block renderers, always support dual resolution: if an uploaded media object exists (`media.url`), render its remote URL; if null, unpopulated, or a fallback string, cleanly fall back to the canonical local static asset in `/assets/...`.
+18. **Next.js Image Optimization**:
+    `media.dynamicdreamz.net` is registered in `next.config.ts` under `images.remotePatterns`, allowing Next.js `<Image />` to optimize, compress, and serve remote media seamlessly.
+19. **Internal `_objectKey` Column in Admin**:
+    The `_objectKey` column in Payload Admin is an internal cloud-storage field for direct client-to-S3 presigned uploads. Because this server-side adapter uses collection prefix (`uploads`) + filename, this field displays `<No _object Key>`. Content editors can hide it via the "Columns" toggle dropdown.
+
+## Verification Checklist
+
+Run these before completing implementation work:
+
+```bash
+npm run lint
+npm run build
+```
+
+For UI work, also run:
+
+```bash
+npm run dev
+```
+
+Then capture and compare live/local screenshots at least:
+
+- Mobile width around 390px
+- Tablet width around 768px
+- Desktop width around 1440px
+
+Check for:
+
+- No overlapping text or controls
+- No horizontal scroll
+- Header and footer navigation usable
+- CTA links go somewhere real
+- Images load with correct aspect ratio
+- Page source/head includes expected SEO metadata
+- Sitemap and robots output are valid when touched
+- Hover, focus, active/open, scrolled, and animated states match the live site
+  or are documented as intentional differences
+- Responsive layout behavior across desktop, tablet, and mobile breakpoints is verified locally
+
+## Done Criteria
+
+A task is complete only when:
+
+- The requested behavior/page exists.
+- It follows the project structure.
+- Existing suitable components were discovered (beyond name matching) and reused
+  or safely extended with backward-compatible optional props/variants without breaking existing pages.
+- Any newly built component is generalized, cleanly typed, and decoupled from hardcoded page copy for future reusability.
+- No visible page/business copy is hardcoded in `src/components/**` or
+  `src/app/**`, and `npm run check:component-content` passes.
+- Existing assets across `public/assets/**` were discovered (beyond name matching) and reused via canonical paths; no redundant duplicate image files exist.
+- It uses local assets/content, not old-site runtime URLs.
+- SEO was handled for touched routes.
+- AEO/GEO work preserves the live-visible UI and content unless the exact
+  difference has explicit project-owner approval recorded for the current task.
+- Unapproved visible SEO/AEO/GEO suggestions remain documented as `suggested`
+  or `deferred`, not implemented.
+- The touched route's section in `docs/aeo-geo-strategy.md` was added or updated,
+  and every unresolved AEO/GEO item remains recorded with priority and status.
+- Visual parity evidence was recorded for UI changes, including responsive and
+  animation checks, or the final response clearly explains why it could not be
+  verified.
+- Lint and build were run or a clear blocker is documented.
+- The final response lists changed files, verification, and open content/assets
+  only if any remain.

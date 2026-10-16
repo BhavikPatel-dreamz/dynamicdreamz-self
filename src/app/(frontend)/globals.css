@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #282828;
+  --color-muted: #535353;
+  --color-cream: #f7f4e9;
+  --color-pale-blue: #e6ecf0;
+  --color-brand-red: #ad5151;
+  --color-brand-red-dark: #944343;
+  --color-brand-green: #0b6b35;
+  --color-dark-green: #192019;
+  --color-soft-line: #dfdfdf;
+  --color-blue-line: #bfd0de;
+  --font-montserrat: var(--font-montserrat-local), Arial, sans-serif;
+  --font-sans: var(--font-montserrat-local), Arial, sans-serif;
+  --font-display: var(--font-neue-montreal-local), Arial, sans-serif;
+  --font-montreal-medium: var(--font-neue-montreal-local), sans-serif;
+  --font-montreal-semibold: var(--font-neue-montreal-local), sans-serif;
+  --montreal-medium: var(--font-neue-montreal-local), sans-serif;
+}
+
+@layer base {
+  html {
+    min-width: 320px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    min-width: 320px;
+    overflow-x: hidden;
+    background: #fff;
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 24px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  h1 {
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  h2 {
+    font-size: 35px;
+    line-height: 1.4;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 28.8px;
+  }
+
+  h4,
+  .h4 {
+    color: var(--color-ink);
+    font-size: 18px;
+    line-height: 25.92px;
+  }
+
+  h5 {
+    color: var(--color-ink);
+    font-size: 16px;
+    line-height: 22.36px;
+  }
+
+  h6 {
+    color: var(--color-ink);
+    font-size: 14px;
+    line-height: 19.6px;
+  }
+
+  summary {
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  :focus-visible {
+    outline: 3px solid #2f72d2;
+    outline-offset: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.enable-smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
+

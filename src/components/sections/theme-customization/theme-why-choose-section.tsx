@@ -1,0 +1,99 @@
+import Image from "next/image";
+import { Container } from "@/components/ui/container";
+import { SectionDescription } from "@/components/ui/section-description";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { formatBrText } from "@/lib/text-formatting";
+
+export type ThemeWhyChooseItem = {
+  title: string | readonly string[];
+  description: string | readonly string[];
+  icon: string;
+  iconAlt: string;
+};
+
+export type ThemeWhyChooseSectionProps = {
+  content: {
+    title: string | readonly string[];
+    subtitle: string | readonly string[];
+    items: readonly ThemeWhyChooseItem[];
+  };
+  backgroundVariant?: "gradient" | "white";
+  id?: string;
+  preserveDesktopTypography?: boolean;
+  preserveLiveIconSize?: boolean;
+  variant?: "left-icon" | "top-icon" | "top-icon-mobile";
+};
+
+export function ThemeWhyChooseSection({
+  content,
+  backgroundVariant = "gradient",
+  id = "why-choose-dynamic-dreamz",
+}: ThemeWhyChooseSectionProps) {
+  const backgroundVariantClassName = {
+    gradient:
+      "why_dynamic_dreamz_sec dev two-column-icon-text-bg mb-12.5 py-12.5 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] lg:mb-20 lg:py-20",
+    white: "why_dynamic_dreamz_sec dev two-column-icon-text-bg bg-white",
+  } as const;
+  const sectionClassName = backgroundVariantClassName[backgroundVariant];
+
+  return (
+    <section className={sectionClassName} id={id}>
+      <Container>
+        <div className="heading-text mx-auto max-w-[920px] text-center" data-aos="fade-up">
+          <SectionHeading>
+            {formatBrText(content.title, "max-[1199px]:hidden")}
+          </SectionHeading>
+          <SectionDescription
+            className="why_dynamic_dreamz_desc mt-2.5"
+            textClassName="text-sm font-normal leading-[24px]"
+          >
+            {formatBrText(content.subtitle, "max-[1199px]:hidden")}
+          </SectionDescription>
+        </div>
+
+        <div
+          className="why_dynamic_dreamz_main mt-[60px] max-[992px]:mt-5"
+          data-aos="fade-up"
+        >
+          <ul className="why_dynamic_dreamz-grid grid grid-cols-2 max-[992px]:grid-cols-1 list-none p-0 m-0">
+            {content.items.map((item, index) => {
+              const isEvenCol = index % 2 === 0;
+              const isLastRow = index >= content.items.length - 2;
+              const isLastItem = index === content.items.length - 1;
+
+              return (
+                <li
+                  className={`why-choose-box flex items-start p-[51px] max-[1199px]:p-8 max-[992px]:py-7.5 max-[992px]:px-5 border-black/5 ${
+                    isEvenCol ? "border-r max-[992px]:border-r-0" : ""
+                  } ${!isLastRow ? "border-b" : "max-[992px]:border-b"} ${
+                    isLastItem ? "max-[992px]:border-b-0" : ""
+                  }`}
+                  data-aos="fade-up"
+                  key={typeof item.title === "string" ? item.title : item.title.join(" ")}
+                >
+                  <span className="icon mr-5 flex flex-shrink-0 items-center justify-start max-[767px]:mr-3.5">
+                    <Image
+                      alt={item.iconAlt}
+                      className="object-contain"
+                      height={50}
+                      src={item.icon}
+                      width={50}
+                    />
+                  </span>
+                  <div className="text flex-1">
+                    <h3 className="mb-[5px] font-montreal-medium text-[18px] font-medium leading-[30.6px] tracking-[0.36px] text-[#020202]">
+                      {formatBrText(item.title, "max-[767px]:hidden")}
+                    </h3>
+                    <p className="text-base font-medium leading-[27.2px] tracking-[0.32px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
+                      {formatBrText(item.description, "max-[767px]:hidden")}
+                    </p>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </Container>
+    </section>
+  );
+}

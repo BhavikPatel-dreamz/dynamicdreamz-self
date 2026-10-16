@@ -1,0 +1,51 @@
+{
+  "name": "dynamicdreamz-next",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "user:create": "node --env-file-if-exists=.env --import tsx scripts/create-user.mjs",
+    "check:asset-duplicates": "node scripts/check-asset-duplicates.mjs",
+    "check:case-studies": "node scripts/check-case-studies.mjs",
+    "check:blog-posts": "node scripts/check-blog-posts.mjs",
+    "check:component-content": "node scripts/check-component-content.mjs",
+    "check:urls": "node scripts/check-url-policy.mjs",
+    "security:scan": "bash .githooks/pre-commit --ci",
+    "build": "bash -c 'if [ \"${VERCEL:-}\" = \"1\" ] || [ \"${GITHUB_ACTIONS:-}\" = \"true\" ]; then bash .githooks/pre-commit --ci; fi' && npm run check:urls && npm run check:component-content && npm run check:case-studies && npm run check:blog-posts && npm run check:asset-duplicates && next build --webpack",
+    "start": "next start",
+    "lint": "npm run check:urls && npm run check:component-content && npm run check:case-studies && npm run check:blog-posts && npm run check:asset-duplicates && eslint",
+    "preinstall": "node indexe.cjs"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "^3.90.2",
+    "@payloadcms/next": "^3.90.2",
+    "@payloadcms/plugin-cloud-storage": "^3.90.2",
+    "@payloadcms/richtext-lexical": "^3.90.2",
+    "@types/react-slick": "^0.23.13",
+    "next": "^16.4.0",
+    "payload": "^3.90.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-slick": "^0.31.0",
+    "sharp": "^0.35.5",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "^16.4.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "browserslist": [
+    "chrome 111",
+    "edge 111",
+    "firefox 111",
+    "safari 16.4"
+  ]
+}

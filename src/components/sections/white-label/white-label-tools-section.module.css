@@ -1,0 +1,53 @@
+.track {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.track + .track {
+  margin-top: 12px;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.forward {
+  animation: white-label-tools-forward 100s linear infinite;
+}
+
+.reverse {
+  animation: white-label-tools-reverse 100s linear infinite;
+}
+
+@keyframes white-label-tools-forward {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes white-label-tools-reverse {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .group {
+    animation: none;
+    transform: none;
+  }
+}

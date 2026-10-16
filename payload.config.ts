@@ -1,0 +1,70 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { postgresAdapter } from "@payloadcms/db-postgres";
+import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { buildConfig } from "payload";
+import sharp from "sharp";
+
+import { Users } from "./src/payload/collections/Users";
+import { Media } from "./src/payload/collections/Media";
+import { Categories } from "./src/payload/collections/Categories";
+import { Authors } from "./src/payload/collections/Authors";
+import { Testimonials } from "./src/payload/collections/Testimonials";
+import { Posts } from "./src/payload/collections/Posts";
+import { CaseStudies } from "./src/payload/collections/CaseStudies";
+import { Pages } from "./src/payload/collections/Pages";
+
+import { Navigation } from "./src/payload/globals/Navigation";
+import { SiteSettings } from "./src/payload/globals/SiteSettings";
+import { mediaServerStorage } from "./adapter/src/index";
+
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
+
+export default buildConfig({
+  admin: {
+    user: "users",
+    importMap: {
+      baseDir: path.resolve(dirname),
+    },
+  },
+  collections: [
+    Users,
+    Media,
+    Categories,
+    Authors,
+    Testimonials,
+    Posts,
+    CaseStudies,
+    Pages,
+  ],
+  globals: [
+    Navigation,
+    SiteSettings,
+  ],
+  plugins: [
+    mediaServerStorage({
+      baseURL: process.env.MEDIA_SERVER_URL || "",
+      apiKey: process.env.MEDIA_SERVER_API_KEY || "",
+      collections: {
+        media: {
+          // Files are public on the media server, so Payload links directly to that domain.
+          disablePayloadAccessControl: true,
+          prefix: "uploads",
+        },
+      },
+    }),
+  ],
+  editor: lexicalEditor(),
+  secret: process.env.PAYLOAD_SECRET || "",
+  typescript: {
+    outputFile: path.resolve(dirname, "src/types/payload-types.ts"),
+  },
+  db: postgresAdapter({
+    pool: {
+      connectionString: process.env.DATABASE_URI || "",
+    },
+    push: false,
+  }),
+  sharp,
+});

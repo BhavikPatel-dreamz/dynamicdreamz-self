@@ -1,0 +1,93 @@
+/* AOS (Animate On Scroll) styles matching live Dynamic Dreamz site exactly.
+   Live config: AOS.init({ duration: 800, easing: 'ease-in-out', once: true, offset: 80, delay: 0, mirror: false }) */
+
+[data-aos] {
+  pointer-events: auto;
+}
+
+/* Default duration & easing applied on initialize */
+html.aos-init [data-aos],
+[data-aos].aos-init {
+  transition-duration: 800ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Initial hidden state when AOS is initialized in browser */
+html.aos-init [data-aos^="fade"],
+[data-aos^="fade"].aos-init {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+/* Fully revealed state once scrolled into view */
+html.aos-init [data-aos^="fade"].aos-animate,
+[data-aos^="fade"].aos-animate {
+  opacity: 1;
+  transform: translateZ(0);
+}
+
+/* Fade animations matching live site key transforms */
+html.aos-init [data-aos="fade-up"],
+[data-aos="fade-up"].aos-init {
+  transform: translate3d(0, 100px, 0);
+}
+
+html.aos-init [data-aos="fade-down"],
+[data-aos="fade-down"].aos-init {
+  transform: translate3d(0, -100px, 0);
+}
+
+html.aos-init [data-aos="fade-right"],
+[data-aos="fade-right"].aos-init {
+  transform: translate3d(-100px, 0, 0);
+}
+
+html.aos-init [data-aos="fade-left"],
+[data-aos="fade-left"].aos-init {
+  transform: translate3d(100px, 0, 0);
+}
+
+/* Zoom animations */
+html.aos-init [data-aos^="zoom"],
+[data-aos^="zoom"].aos-init {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+html.aos-init [data-aos^="zoom"].aos-animate,
+[data-aos^="zoom"].aos-animate {
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+}
+
+html.aos-init [data-aos="zoom-in"],
+[data-aos="zoom-in"].aos-init {
+  transform: scale(0.6);
+}
+
+/* Optional duration modifiers if specified */
+[data-aos][data-aos-duration="400"] { transition-duration: 400ms; }
+[data-aos][data-aos-duration="600"] { transition-duration: 600ms; }
+[data-aos][data-aos-duration="800"] { transition-duration: 800ms; }
+[data-aos][data-aos-duration="1000"] { transition-duration: 1000ms; }
+[data-aos][data-aos-duration="1200"] { transition-duration: 1200ms; }
+
+/* Optional delay modifiers if specified */
+[data-aos][data-aos-delay="50"].aos-animate { transition-delay: 50ms; }
+[data-aos][data-aos-delay="100"].aos-animate { transition-delay: 100ms; }
+[data-aos][data-aos-delay="150"].aos-animate { transition-delay: 150ms; }
+[data-aos][data-aos-delay="200"].aos-animate { transition-delay: 200ms; }
+[data-aos][data-aos-delay="300"].aos-animate { transition-delay: 300ms; }
+[data-aos][data-aos-delay="400"].aos-animate { transition-delay: 400ms; }
+[data-aos][data-aos-delay="500"].aos-animate { transition-delay: 500ms; }
+
+/* Accessibility: respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html.aos-init [data-aos],
+  [data-aos].aos-init,
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
