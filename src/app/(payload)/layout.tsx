@@ -11,6 +11,8 @@ export default async function PayloadAdminLayout({
   const payload = await getPayload({ config: configPromise });
 
   const serverFunction: ServerFunctionClient = async ({ name, args }) => {
+    "use server";
+
     return handleServerFunctions({
       args,
       config: configPromise,
