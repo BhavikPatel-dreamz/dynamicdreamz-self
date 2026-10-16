@@ -5,7 +5,7 @@ import { useActionState, useEffect, useRef } from "react";
 import {
   type ContactFormState,
   submitContactForm,
-} from "@/app/(frontend)/contact-us/actions";
+} from "@/lib/actions/contact";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { contactFormCopy } from "@/content/forms";
 
