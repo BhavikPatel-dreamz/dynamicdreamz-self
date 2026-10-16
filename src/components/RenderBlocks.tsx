@@ -287,6 +287,7 @@ export interface BlockHappyClients {
   eyebrow?: string;
   heading?: string;
   description?: string;
+  className?: string;
   items?: readonly {
     id?: string | number;
     name: string;
@@ -365,6 +366,7 @@ export interface BlockPricingModels {
   eyebrow?: string;
   heading: string;
   description?: string;
+  className?: string;
   models?: readonly {
     id?: string | number;
     label: string;
@@ -852,7 +854,6 @@ export interface BlockServiceHeroVideo {
   imageAlt?: string;
   imageWidth?: number;
   imageHeight?: number;
-  imageBlend?: "normal" | "darken";
   imageClassName?: string;
   reviewCount?: string;
   rating?: string;
@@ -866,7 +867,7 @@ export interface BlockServiceHeroVideo {
     width?: number;
     height?: number;
   }[];
-  variant?: "default" | "centered" | "shopify-plus-experts" | "migration";
+  variant?: "default" | "centered";
   wrapperClassName?: string;
 }
 
@@ -975,6 +976,7 @@ export interface BlockEvaluationFramework {
   heading: string | readonly string[];
   description?: string | readonly string[];
   sectionId?: string;
+  className?: string;
   items?: readonly {
     title: string;
     description: string;
@@ -1204,6 +1206,7 @@ export interface BlockThemeCustomizationServices {
   heading: string | readonly string[];
   description?: string | readonly string[];
   bottomNote?: string;
+  className?: string;
   variant?: "green" | "yellow" | "transparent";
   boxes?: readonly {
     number?: string;
@@ -1463,6 +1466,7 @@ export interface BlockShopifyMobileAppWork {
   description: string;
   ctaLabel?: string;
   ctaHref?: string;
+  className?: string;
   items?: readonly {
     name: string;
     category?: string;
@@ -1530,6 +1534,8 @@ export interface BlockAgencyServices {
   heading: string;
   description: string;
   idAttr?: string;
+  className?: string;
+  cardBgClassName?: string;
   columns?: number;
   hideCta?: boolean;
   cardVariant?: "default" | "services-box";
@@ -1807,6 +1813,7 @@ interface BlockCityPageHero extends Phase6BlockBase {
       height?: number;
     }[];
   };
+  className?: string;
 }
 
 interface BlockShopifySupportScenarios extends Phase6BlockBase {
@@ -1876,6 +1883,7 @@ interface BlockHowAgenciesUse extends Phase6BlockBase {
 interface BlockWhiteLabelWhy extends Phase6BlockBase {
   eyebrow?: string;
   title: string;
+  className?: string;
   reasons?: readonly { title: string; description: string }[];
 }
 
@@ -1912,6 +1920,7 @@ interface BlockTextBox extends Phase6BlockBase {
   subheading?: string;
   paragraphs?: readonly Phase6TextItem[];
   listItems?: readonly Phase6TextItem[];
+  className?: string;
   variant?: "green" | "cream";
 }
 
@@ -1979,6 +1988,7 @@ interface BlockPillList extends Phase6BlockBase {
   heading: string;
   description: string;
   items?: readonly Phase6TextItem[];
+  className?: string;
 }
 
 interface BlockShopifyReasons extends Phase6BlockBase {
@@ -1986,6 +1996,8 @@ interface BlockShopifyReasons extends Phase6BlockBase {
   description: string;
   layout?: "grid" | "carousel";
   carouselFullBleed?: boolean;
+  cardMinHeightClassName?: string;
+  className?: string;
   items?: readonly {
     title: string;
     description: string;
@@ -2015,6 +2027,7 @@ interface BlockThemeWhyChoose extends Phase6BlockBase {
   title: string;
   subtitle: string;
   backgroundVariant?: "gradient" | "white";
+  className?: string;
   items?: readonly {
     title: string;
     description: string;
@@ -2029,6 +2042,7 @@ interface BlockLetsBuild extends Phase6BlockBase {
   description: string;
   ctaLabel: string;
   ctaHref: string;
+  className?: string;
 }
 
 export interface BlockMigrationProcess {
@@ -3694,11 +3708,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               height: b.height || 44,
             }));
 
-            const isShopifyPlusExperts =
-              shvBlock.variant === "shopify-plus-experts" ||
-              shvBlock.wrapperClassName?.includes("shopify-plus-experts");
-
-            if (isShopifyPlusExperts) {
+            if (shvBlock.wrapperClassName?.includes("shopify-plus-experts")) {
               return (
                 <ServiceHeroSection
                   key={blockKey}
@@ -3734,16 +3744,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               );
             }
 
-            const wrapperClass =
-              shvBlock.variant === "migration"
-                ? "hero-shopify-migration"
-                : shvBlock.wrapperClassName;
-
-            const imageClass =
-              shvBlock.imageBlend === "darken"
-                ? "mix-blend-darken"
-                : shvBlock.imageClassName;
-
             return (
               <ServiceHeroVideoSection
                 key={blockKey}
@@ -3778,7 +3778,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                           resolveMediaAlt(shvBlock.image, shvBlock.title),
                         width: shvBlock.imageWidth,
                         height: shvBlock.imageHeight,
-                        className: imageClass,
+                        className: shvBlock.imageClassName,
                       }
                     : undefined,
                   badges,
@@ -3786,7 +3786,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     ?.map((e) => e.text || "")
                     .filter(Boolean),
                 }}
-                wrapperClassName={wrapperClass}
+                wrapperClassName={shvBlock.wrapperClassName}
               />
             );
           }
