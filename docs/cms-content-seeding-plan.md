@@ -253,11 +253,11 @@ export async function seedLocalMedia(
 
 ---
 
-## 7. Phase 6: Pages Ingestion & Template Transformers (140 Pages)
+## 7. Phase 6: Pages Ingestion & Modular Block Architecture (140 Pages / 1,042 Sections)
 
-In `06-seed-pages.ts`, all 140 pages are ingested into the `pages` collection.
+In Phase 6, all **140 pages** from the Next.js registry are ingested into Payload CMS’s `pages` collection.
 Each page document requires:
-- `title`: Page Title
+- `title`: Page Title (derived from SEO title or page metadata)
 - `slug`: Normalized slashless slug (e.g. `home`, `about-us`, `shopify-plus-agency`, `industries/fashion-and-apparel`)
 - `sections`: Array of modular blocks mapped 1:1 to `src/payload/blocks/` and rendered via `RenderBlocks.tsx`
 - `seo`: Group matching `src/payload/collections/Pages.ts`:
@@ -271,98 +271,600 @@ Each page document requires:
   }
   ```
 
-### The 8 Canonical Template-to-Block Transformers
+---
 
-To translate the local TypeScript content files into Payload CMS `sections` arrays, the seeder uses 8 standardized transformer functions:
+### Phase 6 Sub-Phase Master Schedule & Inventory
 
-#### 1. Shopify City Landing Transformer (13 Pages)
-- **Routes**: `/shopify-development-in-mumbai`, `/delhi`, `/bangalore`, `/hyderabad`, `/pune`, `/chennai`, `/new-york`, `/los-angeles`, `/miami`, `/texas`, `/barcelona-spain`, etc.
-- **Local Source**: `src/content/shopify-development-in-*.ts`
-- **Output Blocks in `sections`**:
-  1. `city-page-hero`: `title`, `description`, `ctaText`, `ctaHref`, `rating`, `reviewCount`, `platform`, `videoSrc`
-  2. `brand-partners`: `title`, `items` (linked logos via `mediaMap`)
-  3. `city-page-counter`: `title`, `subtitle`, `statItems`
-  4. `city-why-choose-boxes`: `title`, `subtitle`, `boxes`
-  5. `pricing-models`: `title`, `subtitle`, `models`
-  6. `case-studies-block`: `heading`, `eyebrow`, `studies` (related case study IDs)
-  7. `testimonials-carousel`: `heading`, `eyebrow`, `testimonials` (related testimonial IDs)
-  8. `faq-accordion`: `heading`, `items` (`{ question, answer }`)
-  9. `cta-banner`: `heading`, `ctaLabel`, `ctaHref`
+To prevent database connection timeouts, memory pressure, and partial data loss, Phase 6 is divided into 11 strictly bounded sub-phases (6A through 6K). Every single page of the 140 pages is assigned to exactly one sub-phase:
 
-#### 2. WordPress City Landing Transformer (6 Pages)
-- **Routes**: `/wordpress-development-in-mumbai`, `/delhi`, `/bangalore`, `/pune`, `/noida`, `/ahmedabad`
-- **Local Source**: `src/content/wordpress-development-in-*.ts`
-- **Output Blocks in `sections`**:
-  `city-page-hero` → `brand-partners` → `city-page-counter` → `process-timeline` → `city-why-choose-boxes` → `agency-services` → `testimonials-carousel` → `faq-accordion` → `cta-banner`
+| Sub-Phase | Domain / Category | Page Count | Section Count | Status | Target Source Files |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| **6A** | Core Shopify & Ecommerce Services | 12 | 102 | **COMPLETED & VERIFIED** | `src/content/shopify-*.ts`, `ai-services.ts`, `full-stack-development.ts` |
+| **6B** | White-Label Agency Services | 3 | 33 | **READY FOR SEEDING** | `src/content/white-label-*.ts` |
+| **6C** | Platform Migration & Upgrade Services | 15 | 126 | Pending | `src/content/*migration*.ts`, `upgrade-to-shopify-plus.ts` |
+| **6D** | Dedicated Hiring & Developer Services | 2 | 21 | Pending | `src/content/hire-*.ts` |
+| **6E** | Mobile Application Development Services | 6 | 49 | Pending | `src/content/*mobile-app*.ts`, `src/content/*app-development.ts` |
+| **6F** | Industry-Specific Commerce Verticals | 10 | 74 | Pending | `src/content/industries.ts`, `src/content/fashion.ts`, etc. |
+| **6G** | Other CMS, Frameworks & Tech Services | 10 | 84 | Pending | `src/content/wordpress-*.ts`, `magento-*.ts`, `bigcommerce-*.ts`, etc. |
+| **6H** | Shopify Theme Customization Sub-Pages | 32 | 288 | Pending | `src/content/*-theme-customization.ts` (Shopify themes) |
+| **6I** | WordPress Theme Customization Sub-Pages | 17 | 136 | Pending | `src/content/*-theme-customization.ts` (WordPress themes) |
+| **6J** | City & Geo-Targeted Landing Pages | 17 | 153 | Pending | `src/content/*development-in-*.ts` (Shopify & WP cities) |
+| **6K** | Company, Legal, Portfolio & Thank-You | 16 | 76 | Pending | `src/content/home.ts`, `about.ts`, `contact.ts`, `career.ts`, etc. |
+| **TOTAL** | **Entire Website Inventory** | **140** | **1,042** | — | **All 140 Registered Routes** |
 
-#### 3. Shopify Theme Customization Transformer (23 Pages)
-- **Routes**: `/dawn-theme-customization`, `/impulse-theme-customization`, `/prestige-theme-customization`, `/warehouse-theme-customization`, `/expanse-theme-customization`, `/pipeline-theme-customization`, `/craft-theme-customization`, `/sense-theme-customization`, `/spotlight-theme-customization`, `/studio-theme-customization`, `/colorblock-theme-customization`, `/refresh-theme-customization`, `/origin-theme-customization`, `/broadcast-theme-customization`, `/be-yours-theme-customization`, `/stiletto-theme-customization`, `/vision-theme-customization`, `/vessel-theme-customization`, `/savor-theme-customization`, `/trade-theme-customization`, `/atelier-theme-customization`, `/dwell-theme-customization`, `/fabric-theme-customization`
-- **Local Source**: `src/content/*-theme-customization.ts`
-- **Output Blocks in `sections`**:
-  1. `hero` (variant: split): `title`, `subtitle`, `description`, `ctaText`, `ctaHref`, `badges`
-  2. `brand-partners`: `title`, `items`
-  3. `shopify-themes-grid`: `heading`, `eyebrow`, `themes`
-  4. `theme-customization-services`: `heading`, `eyebrow`, `services`
-  5. `theme-customization-approach`: `heading`, `eyebrow`, `steps`
-  6. `theme-why-choose`: `heading`, `eyebrow`, `reasons`
-  7. `portfolio-showcase`: `heading`, `eyebrow`, `projects`
-  8. `faq-accordion`: `heading`, `items`
-  9. `cta-banner`: `heading`, `ctaLabel`, `ctaHref`
+---
 
-#### 4. WordPress Theme Customization Transformer (20 Pages)
-- **Routes**: `/astra-theme-customization`, `/generatepress-theme-customization`, `/kadence-theme-customization`, `/oceanwp-theme-customization`, `/neve-theme-customization`, `/blocksy-theme-customization`, `/hello-elementor-theme-customization`, `/popularfx-theme-customization`, `/go-theme-customization`, `/kubio-theme-customization`, `/inspiro-theme-customization`, `/woodstock-theme-customization`, `/bloghash-theme-customization`, `/hello-biz-theme-customization`, `/newsblogger-theme-customization`, `/publisher-theme-customization`, `/royal-elementor-kit-theme-customization`, `/yith-wonder-theme-customization`, `/extendable-theme-customization`, `/tinker-theme-customization`
-- **Local Source**: `src/content/*-theme-customization.ts`
-- **Output Blocks in `sections`**:
-  `hero` → `brand-partners` → `theme-customization-services` → `theme-customization-approach` → `theme-why-choose` → `portfolio-showcase` → `faq-accordion` → `cta-banner`
+### 7.1 Sub-Phase 6A: Core Shopify & Ecommerce Services (12 Pages, 102 Sections) — COMPLETED & VERIFIED
 
-#### 5. Platform Migration Transformer (15 Pages)
-- **Routes**: `/magento-to-shopify-migration`, `/woocommerce-to-shopify-migration`, `/bigcommerce-to-shopify-migration`, `/squarespace-to-shopify-migration`, `/wix-to-shopify-migration`, `/prestashop-to-shopify-migration`, `/salesforce-to-shopify-migration`, `/square-to-shopify-migration`, `/etsy-to-shopify-migration`, `/ecwid-to-shopify-migration`, `/migrating-a-theme-to-online-store-2-0`, `/magento-to-shopify-plus-migration`, `/shopify-migration`, `/shopify-plus-migration-agency`, `/upgrade-to-shopify-plus`
-- **Local Source**: `src/content/*-to-shopify*-migration.ts`, `src/content/shopify-migration.ts`, etc.
-- **Output Blocks in `sections`**:
-  1. `service-hero-video` / `hero` (variant: migration)
-  2. `proof-counters`: `stats`
-  3. `shopify-migration-services`: `heading`, `eyebrow`, `cards`
-  4. `shopify-migration-numbered-grid`: `heading`, `eyebrow`, `numberedItems`
-  5. `seo-safe-migration`: `heading`, `checklist`
-  6. `why-choose-shopify-migration`: `heading`, `benefits`
-  7. `case-studies-block`: `heading`, `studies`
-  8. `faq-accordion`: `heading`, `items`
-  9. `cta-banner`: `heading`, `ctaLabel`, `ctaHref`
+All 12 core service pages were successfully seeded and verified against Neon PostgreSQL using Payload Local API:
 
-#### 6. Industry Vertical Transformer (10 Pages)
-- **Routes**: `/industries/fashion-and-apparel`, `/beauty-and-cosmetics`, `/food-and-beverages`, `/health-and-nutrition`, `/pet-industry`, `/sports-and-outdoors`, `/jewelry-and-accessories`, `/home-and-living`, `/food-beverage-shopify-plus-agency`, `/dental-clinic-website-development-company`
-- **Local Source**: `src/content/industries.ts`, `src/content/fashion.ts`, `src/content/beauty-cosmetics.ts`, etc.
-- **Output Blocks in `sections`**:
-  `hero` (variant: split) → `industry-brands` → `features-grid` → `case-studies-block` → `testimonials-carousel` → `faq-accordion` → `cta-banner`
+1. **`shopify-plus-agency`** (ID: 28, 11 sections):
+   - Blocks: `service-hero-video` → `industry-brands` → `shopify-plus-proof` → `portfolio-showcase` → `shopify-stage-services` → `case-study-cards` → `industries-grid` → `pricing-models` → `happy-clients` → `evaluation-framework` → `faq-accordion`
+2. **`shopify-cro-agency`** (ID: 47, 11 sections):
+   - Blocks: `service-hero-video` → `industry-brands` → `shopify-cro-barriers` → `shopify-cro-revenue-impact` → `shopify-cro-services` → `shopify-cro-assessment` → `shopify-cro-process` → `shopify-cro-why` → `shopify-cro-engagement` → `portfolio-showcase` → `faq-accordion`
+3. **`shopify-certified-developers`** (ID: 25, 10 sections):
+   - Blocks: `service-hero-video` → `industry-brands` → `verified-knowledge` → `credential-evidence` → `credential-tabs` → `certified-agency-support` → `certified-services` → `partner-directory-proof` → `faq-accordion` → `white-label-final-cta`
+4. **`shopify-experts`** (ID: 27, 11 sections):
+   - Blocks: `service-hero-video` → `industry-brands` → `process-timeline` → `why-choose-shopify-migration` → `shopify-stage-services` → `theme-customization-services` → `ai-empowered-delivery` → `portfolio-showcase` → `pricing-models` → `happy-clients` → `faq-accordion`
+5. **`buy-shopify-development-hours`** (ID: 26, 8 sections):
+   - Blocks: `shopify-hours-hero` → `industry-brands` → `proof-counters` → `shopify-hours-comparison` → `shopify-hours-tasks` → `numbered-process-timeline` → `happy-clients` → `faq-accordion`
+6. **`shopify-maintenance-services`** (ID: 122, 7 sections):
+   - Blocks: `service-hero-video` → `industry-brands` → `agency-services` → `portfolio-showcase` → `pricing-models` → `happy-clients` → `faq-accordion`
+7. **`shopify-development-agency`** (ID: 101, 10 sections):
+   - Blocks: `service-hero-video` → `industry-brands` → `shopify-stage-services` → `portfolio-showcase` → `shopify-team-boxes` → `pricing-models` → `shopify-horizontal-process` → `happy-clients` → `faq-accordion` → `cta-banner`
+8. **`shopify-apps`** (ID: 54, 3 sections):
+   - Blocks: `shopify-apps-hero` → `shopify-apps-grid` → `image-cta`
+9. **`risks-of-shopify-outsourcing`** (ID: 102, 5 sections):
+   - Blocks: `hero` → `risks-shopify-topics` → `faq-accordion` → `image-cta` → `cta-banner`
+10. **`shopify-theme-customization`** (ID: 55, 13 sections):
+    - Blocks: `service-hero-video` → `industry-brands` → `theme-customization-services` → `shopify-team-boxes` → `process-timeline` → `theme-customization-approach` → `shopify-themes-grid` → `ai-empowered-delivery` → `why-choose-shopify-migration` → `portfolio-showcase` → `pricing-models` → `happy-clients` → `faq-accordion`
+11. **`ai-services`** (ID: 29, 11 sections):
+    - Blocks: `service-hero-video` → `industry-brands` → `proof-counters` → `ai-services-grid` → `two-col-image-with-text` → `features-grid` → `recent-architecture-patterns` → `pricing-models` → `portfolio-showcase` → `happy-clients` → `faq-accordion`
+12. **`full-stack-development`** (ID: 30, 11 sections):
+    - Blocks: `service-hero-video` → `industry-brands` → `two-col-image-with-text` → `agency-services` → `tech-keyword` → `technologies-grid` → `two-col-image-with-text` → `pricing-models` → `portfolio-showcase` → `happy-clients` → `faq-accordion`
 
-#### 7. Mobile App Development Transformer (5 Pages)
-- **Routes**: `/shopify-mobile-app-development`, `/android-app-development`, `/ios-app-development`, `/cross-platform-app-development`, `/appmaker-shopify-mobile-app-development`
-- **Local Source**: `src/content/shopify-mobile-app-development.ts`, `src/content/mobile-application-development.ts`, etc.
-- **Output Blocks in `sections`**:
-  `shopify-mobile-app-hero` → `white-label-counter` → `shopify-mobile-app-dtc` → `shopify-mobile-app-work` → `shopify-mobile-app-comparison` → `shopify-mobile-app-experience` → `shopify-app-process` → `faq-accordion` → `cta-banner`
+---
 
-#### 8. Core Service, White-Label & Dev Hours Transformer (31 Pages)
-- **Routes**: `/shopify-plus-agency`, `/shopify-development-agency`, `/shopify-cro-agency`, `/shopify-experts`, `/shopify-apps`, `/hire-shopify-developers`, `/hire-wordpress-developers`, `/buy-shopify-development-hours`, `/shopify-certified-developers`, `/white-label-shopify-development`, `/white-label-wordpress-development`, `/white-label-website-design`, `/risks-of-shopify-outsourcing`, `/wordpress-development`, `/wordpress-development-company`, `/woocommerce-development`, `/magento-development`, `/bigcommerce-development`, `/webflow-development`, `/php-development`, `/full-stack-development`, `/web-design`, `/seo-services`, `/ai-services`, `/shopify-maintenance-services`, etc.
-- **Local Source**: `src/content/shopify-plus-agency.ts`, `src/content/shopify-development-agency.ts`, `src/content/shopify-cro-agency.ts`, etc.
-- **Output Blocks in `sections`**:
-  Mapped to each route's bespoke blocks (`ShopifyStageServicesBlock`, `EvaluationFrameworkBlock`, `ShopifyCroRevenueImpactBlock`, `WhiteLabelSolutionsBlock`, `CertifiedDeveloperTabsBlock`, `ShopifyHoursComparisonBlock`, etc.).
+### 7.2 Sub-Phase 6B: White-Label Agency Services (3 Pages, 33 Sections) — READY FOR SEEDING
 
-#### 9. Individual Company, Careers, Portfolio & Legal Pages (17 Pages)
-- **Routes**:
-  - `/` (or `home`): `hero` (home) → `brand-partners` → `proof-counters` → `features-grid` → `shopify-plus-agency` → `industries-grid` → `technologies-grid` → `testimonials-carousel` → `latest-insights` → `cta-banner`
-  - `/about-us`: `about-hero` → `proof-counters` → `about-story` → `about-timeline` → `about-founders` → `about-team` → `about-values` → `cta-banner`
-  - `/life-dynamicdreamz`: `hero` → `about-story` → `culture-bento-gallery` → `cta-banner`
-  - `/career`: `career-hero` → `career-opportunities` → `career-perks` → `culture-bento-gallery`
-  - `/career/apply-now`: `career-apply`
-  - `/our-work`: `our-work-hero` → `our-work-projects` → `our-work-case-studies` → `cta-banner`
-  - `/resources`: `hero` → `latest-insights` → `cta-banner`
-  - `/contact-us`: `contact-hero` → `contact-form` → `contact-offices` → `contact-details` → `faq-accordion`
-  - `/request-quote`: `request-quote-hero` → `brand-partners` → `testimonials-carousel`
-  - `/book-a-discovery-call`: `discovery-call` → `proof-counters` → `testimonials-carousel`
-  - `/privacy-policy`: `legal-content`
-  - `/terms-of-service`: `legal-content`
-  - `/site-map`: `site-map-directory`
-  - Thank-you pages: `/thank-you-for-shopify-plus-enquiry`, `/thank-you-for-applying`, `/thank-you-for-enquiry`
+#### 1. Page: `white-label-shopify-development-services` (12 Sections)
+- **Source File**: `src/content/white-label-shopify-development.ts`
+- **Page Component**: `src/lib/registry/pages/white-label-shopify-page.tsx`
+- **Metadata**: `pageMetadata.whiteLabelShopifyDevelopmentServices`
+- **Sections Sequence**:
+  1. `service-hero-video`: `whiteLabelShopifyHero` (`title`, `description`, `ctaText`, `ctaHref`, `badges`, `rating`, `reviewCount`, `platform`, `videoSrc`, `titleAccentTag: "i"`)
+  2. `white-label-counter`: `counters: whiteLabelShopifyCounters` (`items: [{ value, label, description }]`)
+  3. `shopify-support-scenarios`: `content: whiteLabelShopifyScenarios` (`heading`, `eyebrow`, `scenarios: [{ title, description, features }]`)
+  4. `portfolio-showcase`: `content: whiteLabelShopifyPortfolio` (`heading`, `eyebrow`, `description: toStr(whiteLabelShopifyPortfolio.description)`, `items`, `columns: 4`, `variant: "liveGrid"`)
+  5. `pricing-models`: `models: (whiteLabelShopifyPricing.models || whiteLabelShopifyPricing.items || []).map(...)`
+  6. `delivery-model-comparison`: `content: whiteLabelShopifyDeliveryComparison` (`heading`, `eyebrow`, `models: [{ name, badge, description, features }]`)
+  7. `shopify-team-behind-it`: `content: whiteLabelShopifyBrandProtection` (`heading`, `eyebrow`, `description: toStr(whiteLabelShopifyBrandProtection.description)`, `features: [...]`)
+  8. `white-label-tools`: `ariaLabel: "Shopify technologies and tools"`, rows of tools
+  9. `how-agencies-use`: `heading`, `eyebrow`, `useCases`
+  10. `white-label-why`: `eyebrow: whiteLabelShopifySectionCopy.processEyebrow`, `title: whiteLabelShopifySectionCopy.processTitle`, `reasons: whiteLabelShopifyPartnershipSteps`
+  11. `happy-clients`: `eyebrow: whiteLabelShopifySectionCopy.testimonialsEyebrow`, video testimonials
+  12. `faq-accordion`: `heading: whiteLabelShopifySectionCopy.faqTitle`, `description: whiteLabelShopifySectionCopy.faqDescription`, `items: whiteLabelShopifyFaqs`
+
+#### 2. Page: `white-label-wordpress-development-services` (9 Sections)
+- **Source File**: `src/content/white-label-wordpress-development.ts`
+- **Page Component**: `src/lib/registry/pages/white-label-wordpress-page.tsx`
+- **Metadata**: `pageMetadata.whiteLabelWordPressDevelopmentServices`
+- **Sections Sequence**:
+  1. `city-page-hero`: `content: whiteLabelWordPressHero`
+  2. `white-label-stats`: `stats: whiteLabelWordPressStats`, `variant: "minimal"`
+  3. `white-label-why`: `title: whiteLabelWordPressSectionCopy.reasonsTitle`, `reasons: whiteLabelWordPressReasons`
+  4. `white-label-services`: `title: whiteLabelWordPressSectionCopy.servicesTitle`, `ctaLabel: whiteLabelWordPressSectionCopy.servicesCta`, `services: whiteLabelWordPressServices`
+  5. `pricing-models`: `content: whiteLabelWordPressPricing` (`models: (whiteLabelWordPressPricing.models || whiteLabelWordPressPricing.items || []).map(...)`)
+  6. `white-label-tools`: `title: whiteLabelWordPressSectionCopy.toolsTitle`, `description: whiteLabelWordPressSectionCopy.toolsDescription`, `rows: whiteLabelWordPressToolRows`
+  7. `white-label-process`: `title: whiteLabelWordPressSectionCopy.processTitle`, `note: whiteLabelWordPressSectionCopy.processNote`, `steps: whiteLabelWordPressProcess`
+  8. `faq-accordion`: `heading: whiteLabelWordPressSectionCopy.faqHeading`, `items: whiteLabelWordPressFaqs`
+  9. `white-label-final-cta`: `cta: whiteLabelWordPressFinalCta`, `variant: "certifiedDevelopers"`
+
+#### 3. Page: `white-label-website-design-services` (11 Sections)
+- **Source File**: `src/content/white-label-website-design.ts`
+- **Page Component**: `src/lib/registry/pages/white-label-website-design-page.tsx`
+- **Metadata**: `pageMetadata.whiteLabelWebsiteDesignServices`
+- **Sections Sequence**:
+  1. `city-page-hero`: `content: whiteLabelWebsiteDesignHero`
+  2. `white-label-counter`: `counters: whiteLabelWebsiteDesignCounters`
+  3. `design-reasons-accordion` (or `theme-why-choose`): `title: whiteLabelWebsiteDesignWhyCopy.title`, `description: whiteLabelWebsiteDesignWhyCopy.description`, `items: whiteLabelWebsiteDesignReasons`
+  4. `theme-customization-services`: `eyebrow: whiteLabelWebsiteDesignBenefitsContent.eyebrow`, `heading: whiteLabelWebsiteDesignBenefitsContent.heading`, `description: whiteLabelWebsiteDesignBenefitsContent.description`, `boxes: whiteLabelWebsiteDesignBenefitsContent.boxes`, `variant: "green"`
+  5. `shopify-stage-services`: `content: whiteLabelWebsiteDesignAiEnginesContent`
+  6. `shopify-team-boxes`: `content: whiteLabelWebsiteDesignAiDiscoveryContent`
+  7. `process-timeline`: `content: whiteLabelWebsiteDesignProcessContent`
+  8. `theme-customization-services`: `eyebrow: whiteLabelWebsiteDesignAdvantagesContent.eyebrow`, `heading: whiteLabelWebsiteDesignAdvantagesContent.heading`, `description: whiteLabelWebsiteDesignAdvantagesContent.description`, `boxes: whiteLabelWebsiteDesignAdvantagesContent.boxes`, `variant: "transparent"`
+  9. `white-label-services`: `eyebrow: whiteLabelWebsiteDesignServicesContent.eyebrow`, `title: whiteLabelWebsiteDesignServicesContent.title`, `description: whiteLabelWebsiteDesignServicesContent.description`, `services: whiteLabelWebsiteDesignServices`
+  10. `happy-clients`: `eyebrow: "Client Stories"`, video testimonials
+  11. `faq-accordion`: `heading: whiteLabelWebsiteDesignFaqCopy.heading`, `description: whiteLabelWebsiteDesignFaqCopy.description`, `items: whiteLabelWebsiteDesignFaqs`
+
+---
+
+### 7.3 Sub-Phase 6C: Platform Migration & Upgrade Services (15 Pages, 126 Sections)
+
+#### Group 1: Bespoke Core Migration & Upgrade Pages (5 Pages)
+1. **`shopify-migration`** (10 sections):
+   - Source: `src/content/shopify-migration.ts`
+   - Component: `src/lib/registry/pages/shopify-migration-page.tsx`
+   - Blocks: `service-hero-video` → `industry-brands` → `shopify-migration-services` → `shopify-migration-numbered-grid` → `seo-safe-migration` → `why-choose-shopify-migration` → `portfolio-showcase` → `happy-clients` → `services-case-studies` → `faq-accordion`
+2. **`shopify-plus-migration-agency`** (11 sections):
+   - Source: `src/content/shopify-plus-migration-agency.ts`
+   - Component: `src/lib/registry/pages/shopify-plus-migration-agency-page.tsx`
+   - Blocks: `service-hero-video` → `industry-brands` → `shopify-migration-services` → `shopify-migration-numbered-grid` → `seo-safe-migration` → `evaluation-framework` → `why-choose-shopify-migration` → `pricing-models` → `happy-clients` → `services-case-studies` → `faq-accordion`
+3. **`magento-to-shopify-plus-migration`** (8 sections):
+   - Source: `src/content/magento-to-shopify-plus-migration.ts`
+   - Component: `src/lib/registry/pages/magento-to-shopify-plus-migration-page.tsx`
+   - Blocks: `service-hero-video` → `industry-brands` → `theme-customization-services` → `city-why-choose-boxes` → `evaluation-framework` → `happy-clients` → `faq-accordion` → `cta-banner`
+4. **`migrating-a-theme-to-online-store-2-0`** (7 sections):
+   - Source: `src/content/migrating-a-theme-to-online-store-2-0.ts`
+   - Component: `src/lib/registry/pages/migrating-theme-to-online-store-2-0-page.tsx`
+   - Blocks: `service-hero-video` → `industry-brands` → `theme-customization-services` → `evaluation-framework` → `happy-clients` → `faq-accordion` → `cta-banner`
+5. **`upgrade-to-shopify-plus`** (9 sections):
+   - Source: `src/content/upgrade-to-shopify-plus.ts`
+   - Component: `src/lib/registry/pages/upgrade-to-shopify-plus-page.tsx`
+   - Blocks: `service-hero-video` → `white-label-counter` → `brand-partners` → `city-page-counter` → `shopify-team-behind-it` → `portfolio-showcase` → `process-timeline` → `city-why-choose-boxes` → `faq-accordion`
+
+#### Group 2: Platform-to-Shopify Migration Landing Pages (10 Pages, 9 Sections Each)
+- **Template**: `ShopifyMigrationLandingTemplate` from `src/lib/registry/templates.tsx`
+- **Slugs & Sources**:
+  1. `bigcommerce-to-shopify-migration` (`src/content/bigcommerce-to-shopify-migration.ts`)
+  2. `ecwid-to-shopify-migration` (`src/content/ecwid-to-shopify-migration.ts`)
+  3. `etsy-to-shopify-migration` (`src/content/etsy-to-shopify-migration.ts`)
+  4. `magento-to-shopify-migration` (`src/content/magento-to-shopify-migration.ts`)
+  5. `prestashop-to-shopify-migration` (`src/content/prestashop-to-shopify-migration.ts`)
+  6. `salesforce-to-shopify-migration` (`src/content/salesforce-to-shopify-migration.ts`)
+  7. `square-to-shopify-migration` (`src/content/square-to-shopify-migration.ts`)
+  8. `squarespace-to-shopify-migration` (`src/content/squarespace-to-shopify-migration.ts`)
+  9. `wix-to-shopify-migration` (`src/content/wix-to-shopify-migration.ts`)
+  10. `woocommerce-to-shopify-migration` (`src/content/woocommerce-to-shopify-migration.ts`)
+- **Block Sequence per Page**:
+  1. `service-hero-video`: `hero: content.hero`
+  2. `brand-partners`: `heading: content.brands.heading`, `items: content.brands.items`
+  3. `theme-why-choose` (`variant: "themeWhyChoose"`, `theme: "green"`): `whyMigrate: { eyebrow, heading, description, boxes }`
+  4. `theme-why-choose` (`variant: "themeWhyChoose"`, `theme: "yellow"`, optional): `secondaryServices: { eyebrow, heading, description, boxes }`
+  5. `migration-process`: `content: content.process`
+  6. `evaluation-framework`: `content: content.whyChoose` (if present)
+  7. `happy-clients`: `items: content.testimonials.items` (if present)
+  8. `faq-accordion`: `heading: content.faq.heading`, `items: content.faq.items`
+
+---
+
+### 7.4 Sub-Phase 6D: Dedicated Hiring & Developer Services (2 Pages, 21 Sections)
+
+#### 1. Page: `hire-shopify-developers` (12 Sections)
+- **Source File**: `src/content/hire-shopify-developers.ts`
+- **Page Component**: `src/lib/registry/pages/hire-shopify-developers-page.tsx`
+- **Metadata**: `pageMetadata.hireShopifyDevelopers`
+- **Sections Sequence**:
+  1. `service-hero-video`: `content: hireShopifyContent.hero`
+  2. `industry-brands`: `content: hireShopifyContent.brands`, `items: hireShopifyContent.brands.items`
+  3. `theme-customization-services`: `content: hireShopifyContent.whyChoose`, `variant: "yellow"`
+  4. `process-timeline`: `content: hireShopifyContent.process`
+  5. `why-choose-shopify-migration`: `content: hireShopifyContent.whyHireExperts`
+  6. `shopify-stage-services`: `content: hireShopifyContent.capabilities`, `lastColFull: true`
+  7. `theme-customization-services`: `content: hireShopifyContent.advantages`, `variant: "green"`
+  8. `ai-empowered-delivery`: `content: hireShopifyContent.aiTools`
+  9. `portfolio-showcase`: `content: hireShopifyContent.work`, `columns: 4`, `variant: "liveGrid"`
+  10. `pricing-models`: `models: (hireShopifyContent.pricing.models || hireShopifyContent.pricing.items || []).map(...)`
+  11. `happy-clients`: `content: hireShopifyContent.testimonials`
+  12. `faq-accordion`: `heading: hireShopifyContent.faqs.heading`, `items: hireShopifyContent.faqs.items`
+
+#### 2. Page: `hire-wordpress-developers` (9 Sections)
+- **Source File**: `src/content/hire-wordpress-developers.ts`
+- **Page Component**: `src/lib/registry/pages/hire-wordpress-developers-page.tsx`
+- **Metadata**: `pageMetadata.hireWordPressDevelopers`
+- **Sections Sequence**:
+  1. `city-page-hero`: `content: hireWordPressHero`
+  2. `white-label-counter`: `counters: hireWordPressCounters`
+  3. `theme-customization-services`: `content: hireWordPressWhyChoose`, `variant: "yellow"`
+  4. `theme-customization-services`: `content: hireWordPressBenefits`, `variant: "green"`
+  5. `process-timeline`: `content: hireWordPressProcess`
+  6. `pricing-models`: `models: (hireWordPressPricing.models || hireWordPressPricing.items || []).map(...)`
+  7. `portfolio-showcase`: `content: hireWordPressPortfolio`, `columns: 4`, `variant: "liveGrid"`
+  8. `happy-clients`: `content: hireWordPressTestimonials`
+  9. `faq-accordion`: `heading: hireWordPressFaqs.heading`, `items: hireWordPressFaqs`
+
+---
+
+### 7.5 Sub-Phase 6E: Mobile Application Development Services (6 Pages, 49 Sections)
+
+#### Group 1: Core Mobile App Pages (2 Pages)
+1. **`shopify-mobile-app-development`** (10 sections):
+   - Source: `src/content/shopify-mobile-app-development.ts`
+   - Component: `src/lib/registry/pages/shopify-mobile-app-development-page.tsx`
+   - Blocks: `shopify-mobile-app-hero` → `white-label-counter` → `shopify-mobile-app-dtc` → `shopify-mobile-app-work` → `shopify-mobile-app-comparison` → `shopify-mobile-app-experience` → `services-case-studies` → `white-label-process` → `faq-accordion` → `cta-banner`
+2. **`appmaker-shopify-mobile-app-development`** (7 sections):
+   - Source: `src/content/appmaker-shopify-mobile-app-development.ts`
+   - Component: `src/lib/registry/pages/appmaker-shopify-mobile-app-page.tsx`
+   - Blocks: `hero` (variant: centered) → `industry-brands` → `shopify-app-benefits` → `shopify-app-features` → `shopify-app-process` → `faq-accordion` → `cta-banner`
+
+#### Group 2: Native & Cross-Platform App Landings (4 Pages, 8 Sections Each)
+- **Template**: `MobileAppLandingTemplate` from `src/lib/registry/templates.tsx`
+- **Slugs & Sources**:
+  1. `android-app-development` (`src/content/android-app-development.ts`)
+  2. `cross-platform-app-development` (`src/content/cross-platform-app-development.ts`)
+  3. `ios-app-development` (`src/content/ios-app-development.ts`)
+  4. `mobile-application-development` (`src/content/mobile-application-development.ts`)
+- **Block Sequence per Page**:
+  1. `shopify-mobile-app-hero`: `content: hero`
+  2. `brand-partners`: `heading: brands.heading`, `items: brands.items`
+  3. `ai-empowered-delivery`: `content: workflowDelivery`
+  4. `theme-why-choose` (`variant: "themeWhyChoose"`, `theme: "yellow"`): `content: whatWeBuild`
+  5. `theme-why-choose` (`variant: "themeWhyChoose"`, `theme: "green"`): `content: lifecycleServices`
+  6. `ai-empowered-delivery`: `content: techStack`
+  7. `shopify-migration-numbered-grid` (or `process-timeline`): `content: process`
+  8. `portfolio-showcase`: `content: portfolio`
+  9. `pricing-models`: `content: pricing`
+  10. `why-choose-shopify-migration`: `content: whyChoose`
+  11. `happy-clients`: `items: testimonials.items` (if present)
+  12. `faq-accordion`: `heading: faq.heading`, `items: faq.items`
+
+---
+
+### 7.6 Sub-Phase 6F: Industry-Specific Commerce Verticals (10 Pages, 74 Sections)
+
+#### Group 1: Bespoke Industry Core Services (2 Pages)
+1. **`food-beverage-shopify-plus-agency`** (9 sections):
+   - Source: `src/content/food-beverage-shopify-plus-agency.ts`
+   - Component: `src/lib/registry/pages/food-beverage-shopify-plus-agency-page.tsx`
+   - Blocks: `service-hero-video` → `industry-brands` → `two-col-image-with-text` → `features-grid` → `shopify-stage-services` → `portfolio-showcase` → `happy-clients` → `faq-accordion` → `cta-banner`
+2. **`dental-clinic-website-development-company`** (9 sections):
+   - Source: `src/content/dental-clinic-website-development-company.ts`
+   - Component: `src/lib/registry/pages/dental-clinic-website-development-company-page.tsx`
+   - Blocks: `service-hero-video` → `industry-brands` → `agency-services` → `features-grid` → `process-timeline` → `portfolio-showcase` → `happy-clients` → `faq-accordion` → `cta-banner`
+
+#### Group 2: Industry Commerce Verticals (8 Pages, 7 Sections Each)
+- **Template**: `IndustryLandingTemplate` from `src/lib/registry/templates.tsx`
+- **Slugs & Sources**:
+  1. `beauty-cosmetics` (`src/content/beauty-cosmetics.ts`)
+  2. `fashion` (`src/content/fashion.ts`)
+  3. `food-beverages` (`src/content/food-beverages.ts`)
+  4. `health-nutrition` (`src/content/health-nutrition.ts`)
+  5. `home-living` (`src/content/home-living.ts`)
+  6. `jewellery-accessories` (`src/content/jewellery-accessories.ts`)
+  7. `pet-industry` (`src/content/pet-industry.ts`)
+  8. `sports-outdoors` (`src/content/sports-outdoors.ts`)
+- **Block Sequence per Page**:
+  1. `service-hero-video`: `content: hero`
+  2. `brand-partners`: `heading: brands.heading`, `items: brands.items`
+  3. `services-case-studies` (optional): `items: caseStudies.items`
+  4. `theme-why-choose` (`variant: "themeWhyChoose"`, `theme: "yellow"`): `content: challenges`
+  5. `theme-why-choose` (`variant: "themeWhyChoose"`, `theme: "green"`): `content: solutions`
+  6. `migration-process`: `content: process`
+  7. `white-label-tools` (optional): `tools: tools.tools`
+  8. `two-col-image-with-text`: `content: customDev`
+  9. `portfolio-showcase`: `content: portfolio`
+  10. `why-choose-shopify-migration`: `content: whyChoose`
+  11. `happy-clients` (optional): `items: testimonials.items`
+  12. `faq-accordion`: `heading: faq.heading`, `items: faq.items`
+
+---
+
+### 7.7 Sub-Phase 6G: Other CMS, Frameworks & Tech Services (10 Pages, 84 Sections)
+
+#### Group 1: WordPress Core Services & Theme Hub (4 Pages)
+1. **`wordpress-development`** (7 sections):
+   - Source: `src/content/wordpress-development.ts`
+   - Component: `src/lib/registry/pages/wordpress-development-page.tsx`
+   - Blocks: `city-page-hero` → `agency-services` → `portfolio-showcase` → `happy-clients` → `faq-accordion` → `cta-banner`
+2. **`wordpress-development-company`** (10 sections):
+   - Source: `src/content/wordpress-development-company.ts`
+   - Component: `src/lib/registry/pages/wordpress-development-company-page.tsx`
+   - Blocks: `city-page-hero` → `industry-brands` → `agency-services` → `theme-customization-services` → `process-timeline` → `pricing-models` → `portfolio-showcase` → `happy-clients` → `faq-accordion` → `cta-banner`
+3. **`woocommerce-development`** (7 sections):
+   - Source: `src/content/woocommerce-development.ts`
+   - Component: `src/lib/registry/pages/woocommerce-development-page.tsx`
+   - Blocks: `city-page-hero` → `industry-brands` → `agency-services` → `portfolio-showcase` → `happy-clients` → `faq-accordion` → `cta-banner`
+4. **`wordpress-theme-customization-services`** (12 sections):
+   - Source: `src/content/wordpress-theme-customization.ts`
+   - Component: `src/lib/registry/pages/wordpress-theme-customization-page.tsx`
+   - Blocks: `city-page-hero` → `industry-brands` → `theme-customization-services` → `shopify-team-boxes` → `process-timeline` → `shopify-themes-grid` → `evaluation-framework` → `portfolio-showcase` → `happy-clients` → `faq-accordion`
+
+#### Group 2: Other Platforms, Frameworks & Special Tech (6 Pages)
+5. **`magento-development`** (10 sections):
+   - Source: `src/content/magento-development.ts`
+   - Blocks: `city-page-hero` → `industry-brands` → `agency-services` → `evaluation-framework` → `pricing-models` → `portfolio-showcase` → `happy-clients` → `faq-accordion` → `cta-banner`
+6. **`bigcommerce-development`** (9 sections):
+   - Source: `src/content/bigcommerce-development.ts`
+   - Blocks: `city-page-hero` → `industry-brands` → `agency-services` → `evaluation-framework` → `pricing-models` → `portfolio-showcase` → `happy-clients` → `faq-accordion` → `cta-banner`
+7. **`webflow-development`** (9 sections):
+   - Source: `src/content/webflow-development.ts`
+   - Blocks: `city-page-hero` → `industry-brands` → `shopify-stage-services` → `theme-customization-services` → `portfolio-showcase` → `city-page-counter` → `happy-clients` → `faq-accordion` → `cta-banner`
+8. **`php-development`** (8 sections):
+   - Source: `src/content/php-development.ts`
+   - Blocks: `service-hero-video` → `industry-brands` → `evaluation-framework` → `agency-services` → `process-timeline` → `portfolio-showcase` → `happy-clients` → `faq-accordion`
+9. **`web-design`** (7 sections):
+   - Source: `src/content/web-design.ts`
+   - Blocks: `city-page-hero` → `industry-brands` → `agency-services` → `pricing-models` → `portfolio-showcase` → `happy-clients` → `faq-accordion`
+10. **`seo-services`** (9 sections):
+    - Source: `src/content/seo-services.ts`
+    - Blocks: `hero` → `pill-list` → `agency-services` → `shopify-reasons` → `shopify-theme-tech` → `theme-why-choose` → `industries-grid` → `faq-accordion` → `lets-build`
+
+---
+
+### 7.8 Sub-Phase 6H: Shopify Theme Customization Sub-Pages (32 Pages, 288 Sections)
+
+- **Template**: `ShopifyThemeCustomizationTemplate` from `src/lib/registry/templates.tsx`
+- **Total Pages**: 32
+- **Standard Block Structure per Page (9 Blocks)**:
+  1. `hero` (`variant: "theme"`): `content: content.hero`
+  2. `brand-partners`: `heading: content.brands.title`, `items: content.brands.items`
+  3. `shopify-theme-tech`: `content: content.features`
+  4. `theme-why-choose` (`columns: 3`, `theme: "warm"`, `eyebrowVariant: "dash"`): `content: content.benefits`
+  5. `agency-services` (`cardVariant: "services-box"`, `columns: 2`): `content: content.services`
+  6. `evaluation-framework` (`variant: "evaluation"`): `content: content.whyChoose`
+  7. `portfolio-showcase` (if `content.portfolio` exists): `content: content.portfolio`, `columns: 4`
+  8. `faq-accordion`: `heading: content.faqsHeading`, `items: content.faqs`
+  9. `cta-banner`: `heading: sharedUiCopy.ctaBanner.heading`, `label: sharedUiCopy.ctaBanner.label`
+
+- **The 32 Slugs & Respective Source Content Files**:
+  1. `atelier-theme-customization` (`src/content/atelier-theme-customization.ts`)
+  2. `be-yours-theme-customization` (`src/content/be-yours-theme-customization.ts`)
+  3. `broadcast-theme-customization` (`src/content/broadcast-theme-customization.ts`)
+  4. `colorblock-theme-customization` (`src/content/colorblock-theme-customization.ts`)
+  5. `craft-theme-customization` (`src/content/craft-theme-customization.ts`)
+  6. `dawn-theme-customization` (`src/content/dawn-theme-customization.ts`)
+  7. `dwell-theme-customization` (`src/content/dwell-theme-customization.ts`)
+  8. `expanse-theme-customization` (`src/content/expanse-theme-customization.ts`)
+  9. `fabric-theme-customization` (`src/content/fabric-theme-customization.ts`)
+  10. `heritage-theme-customization` (`src/content/heritage-theme-customization.ts`)
+  11. `horizon-theme-customization` (`src/content/horizon-theme-customization.ts`)
+  12. `impact-theme-customization` (`src/content/impact-theme-customization.ts`)
+  13. `impulse-theme-customization` (`src/content/impulse-theme-customization.ts`)
+  14. `origin-theme-customization` (`src/content/origin-theme-customization.ts`)
+  15. `pipeline-theme-customization` (`src/content/pipeline-theme-customization.ts`)
+  16. `pitch-theme-customization` (`src/content/pitch-theme-customization.ts`)
+  17. `prestige-theme-customization` (`src/content/prestige-theme-customization.ts`)
+  18. `publisher-theme-customization` (`src/content/publisher-theme-customization.ts`)
+  19. `refresh-theme-customization` (`src/content/refresh-theme-customization.ts`)
+  20. `ritual-theme-customization` (`src/content/ritual-theme-customization.ts`)
+  21. `savor-theme-customization` (`src/content/savor-theme-customization.ts`)
+  22. `sense-theme-customization` (`src/content/sense-theme-customization.ts`)
+  23. `spotlight-theme-customization` (`src/content/spotlight-theme-customization.ts`)
+  24. `startup-theme-customization` (`src/content/startup-theme-customization.ts`)
+  25. `stiletto-theme-customization` (`src/content/stiletto-theme-customization.ts`)
+  26. `studio-theme-customization` (`src/content/studio-theme-customization.ts`)
+  27. `tinker-theme-customization` (`src/content/tinker-theme-customization.ts`)
+  28. `trade-theme-customization` (`src/content/trade-theme-customization.ts`)
+  29. `vessel-theme-customization` (`src/content/vessel-theme-customization.ts`)
+  30. `vision-theme-customization` (`src/content/vision-theme-customization.ts`)
+  31. `warehouse-theme-customization` (`src/content/warehouse-theme-customization.ts`)
+  32. `woodstock-theme-customization` (`src/content/woodstock-theme-customization.ts`)
+
+---
+
+### 7.9 Sub-Phase 6I: WordPress Theme Customization Sub-Pages (17 Pages, 136 Sections)
+
+- **Template**: `WordPressThemeCustomizationTemplate` from `src/lib/registry/templates.tsx`
+- **Total Pages**: 17
+- **Standard Block Structure per Page (8 Blocks)**:
+  1. `hero` (`variant: "theme"`): `content: content.hero`
+  2. `brand-partners`: `heading: content.brands.heading`, `items: content.brands.items`
+  3. `theme-why-choose` (`variant: "themeWhyChoose"`): `features: content.features`
+  4. `theme-why-choose` (`variant: "themeWhyChoose"`, `theme: benefitsVariant`): `benefits: content.benefits`
+  5. `theme-why-choose` (`variant: "themeWhyChoose"`, `theme: "yellow"`): `services: content.services`
+  6. `evaluation-framework` (`variant: "evaluation"`): `whyChoose: content.whyChoose`
+  7. `portfolio-showcase`: `portfolio: content.portfolio`, `columns: 4`
+  8. `faq-accordion`: `heading: content.faqsHeading || "Frequently Asked Questions"`, `items: content.faqs`
+
+- **The 17 Slugs & Respective Source Content Files**:
+  1. `astra-theme-customization` (`src/content/astra-theme-customization.ts`)
+  2. `blocksy-theme-customization` (`src/content/blocksy-theme-customization.ts`)
+  3. `bloghash-theme-customization` (`src/content/bloghash-theme-customization.ts`)
+  4. `extendable-theme-customization` (`src/content/extendable-theme-customization.ts`)
+  5. `generatepress-theme-customization` (`src/content/generatepress-theme-customization.ts`)
+  6. `go-theme-customization` (`src/content/go-theme-customization.ts`)
+  7. `hello-biz-theme-customization` (`src/content/hello-biz-theme-customization.ts`)
+  8. `hello-elementor-theme-customization` (`src/content/hello-elementor-theme-customization.ts`)
+  9. `inspiro-theme-customization` (`src/content/inspiro-theme-customization.ts`)
+  10. `kadence-theme-customization` (`src/content/kadence-theme-customization.ts`)
+  11. `kubio-theme-customization` (`src/content/kubio-theme-customization.ts`)
+  12. `neve-theme-customization` (`src/content/neve-theme-customization.ts`)
+  13. `newsblogger-theme-customization` (`src/content/newsblogger-theme-customization.ts`)
+  14. `oceanwp-theme-customization` (`src/content/oceanwp-theme-customization.ts`)
+  15. `popularfx-theme-customization` (`src/content/popularfx-theme-customization.ts`)
+  16. `royal-elementor-kit-theme-customization` (`src/content/royal-elementor-kit-theme-customization.ts`)
+  17. `yith-wonder-theme-customization` (`src/content/yith-wonder-theme-customization.ts`)
+
+---
+
+### 7.10 Sub-Phase 6J: City & Geo-Targeted Landing Pages (17 Pages, 153 Sections)
+
+#### Group 1: Shopify City Landing Pages (11 Pages, 9 Sections Each)
+- **Template**: `ShopifyCityLandingTemplate` from `src/lib/registry/templates.tsx`
+- **Slugs & Content Sources**:
+  1. `shopify-development-company-in-chennai` (`src/content/shopify-development-company-in-chennai.ts`)
+  2. `shopify-development-in-bangalore` (`src/content/shopify-development-in-bangalore.ts`)
+  3. `shopify-development-in-barcelona-spain` (`src/content/shopify-development-in-barcelona-spain.ts`)
+  4. `shopify-development-in-delhi` (`src/content/shopify-development-in-delhi.ts`)
+  5. `shopify-development-in-hyderabad` (`src/content/shopify-development-in-hyderabad.ts`)
+  6. `shopify-development-in-los-angeles` (`src/content/shopify-development-in-los-angeles.ts`)
+  7. `shopify-development-in-miami` (`src/content/shopify-development-in-miami.ts`)
+  8. `shopify-development-in-mumbai` (`src/content/shopify-development-in-mumbai.ts`)
+  9. `shopify-development-in-new-york` (`src/content/shopify-development-in-new-york.ts`)
+  10. `shopify-development-in-pune` (`src/content/shopify-development-in-pune.ts`)
+  11. `shopify-development-in-texas` (`src/content/shopify-development-in-texas.ts`)
+- **Block Sequence per Page**:
+  1. `city-page-hero`: `content: content.hero`
+  2. `brand-partners`: `heading: content.brands.title`, `items: content.brands.items`
+  3. `city-page-counter`: `content: content.counter`
+  4. `city-why-choose-boxes`: `boxes: (content.whyChoose.boxes || content.whyChoose.items || []).map(...)`
+  5. `agency-services`: `content: content.services` (if present)
+  6. `process-timeline`: `content: content.process` (if present)
+  7. `portfolio-showcase`: `content: content.portfolio`, `columns: 4`
+  8. `testimonials-carousel`: `items: content.testimonials.items`
+  9. `faq-accordion`: `heading: content.sectionCopy?.faqHeading`, `items: content.faqs`
+  10. `cta-banner`: `content: content.ctaBanner`
+
+#### Group 2: WordPress City Landing Pages (6 Pages, 9 Sections Each)
+- **Template**: `WordPressCityLandingTemplate` from `src/lib/registry/templates.tsx`
+- **Slugs & Content Sources**:
+  1. `wordpress-development-in-ahmedabad` (`src/content/wordpress-development-in-ahmedabad.ts`)
+  2. `wordpress-development-in-bangalore` (`src/content/wordpress-development-in-bangalore.ts`)
+  3. `wordpress-development-in-delhi` (`src/content/wordpress-development-in-delhi.ts`)
+  4. `wordpress-development-in-mumbai` (`src/content/wordpress-development-in-mumbai.ts`)
+  5. `wordpress-development-in-noida` (`src/content/wordpress-development-in-noida.ts`)
+  6. `wordpress-development-in-pune` (`src/content/wordpress-development-in-pune.ts`)
+- **Block Sequence per Page**:
+  1. `city-page-hero`: `content: content.hero`
+  2. `brand-partners`: `heading: content.brands.title || content.brands.heading`, `items: content.brands.items`
+  3. `city-page-counter`: `content: content.counter`
+  4. `process-timeline`: `content: content.process`
+  5. `theme-why-choose` (`columns: 3`, `theme: "white"`): `content: content.whyDynamicDreamz`
+  6. `portfolio-showcase`: `content: content.portfolio`, `columns: 4`
+  7. `testimonials-carousel`: `items: content.testimonials.items`
+  8. `faq-accordion`: `heading: content.sectionCopy?.faqHeading`, `items: content.faqs`
+  9. `cta-banner`: `content: content.ctaBanner`
+
+---
+
+### 7.11 Sub-Phase 6K: Company, Legal, Portfolio & Thank-You Pages (16 Pages, 76 Sections)
+
+#### Group 1: Core Company & Brand Pages (10 Pages)
+1. **`home`** (10 sections):
+   - Source: `src/content/home.ts`
+   - Component: `src/lib/registry/pages/home-page.tsx`
+   - Blocks: `hero` (home) → `brand-partners` → `shopify-plus-agency-overview` → `white-label-partner-banner` → `commerce-solutions` → `selected-work-marquee` → `testimonials-carousel` → `integrations-partners` → `latest-insights` → `home-faq`
+2. **`about-us`** (7 sections):
+   - Source: `src/content/about.ts`
+   - Component: `src/lib/registry/pages/about-page.tsx`
+   - Blocks: `about-hero` → `about-story` → `about-timeline` → `about-founders` → `about-team` → `about-values` → `cta-banner`
+3. **`contact-us`** (5 sections):
+   - Source: `src/content/contact.ts`
+   - Component: `src/lib/registry/pages/contact-page.tsx`
+   - Blocks: `contact-hero` → `contact-form` → `contact-offices` → `contact-details` → `faq-accordion`
+4. **`career`** (4 sections):
+   - Source: `src/content/career.ts`
+   - Component: `src/lib/registry/pages/career-page.tsx`
+   - Blocks: `career-hero` → `career-opportunities` → `career-perks` → `culture-bento-gallery`
+5. **`career-apply-now`** (1 section):
+   - Source: `src/content/career-apply-now.ts`
+   - Component: `src/lib/registry/pages/career-apply-now.tsx`
+   - Blocks: `career-apply`
+6. **`life-dynamicdreamz`** (5 sections):
+   - Source: `src/content/life-dynamicdreamz.ts`
+   - Component: `src/lib/registry/pages/life-dynamicdreamz-page.tsx`
+   - Blocks: `life-hero` → `work-culture` → `life-hiring` → `faq-accordion` → `life-gallery`
+7. **`our-work`** (4 sections):
+   - Source: `src/content/our-work.ts`
+   - Component: `src/lib/registry/pages/our-work-page.tsx`
+   - Blocks: `our-work-hero` → `industry-brands` → `our-work-projects` → `our-work-case-studies`
+8. **`request-quote`** (3 sections):
+   - Source: `src/content/request-quote.ts`
+   - Blocks: `request-quote-hero` → `brand-partners` → `testimonials-carousel`
+9. **`book-a-discovery-call`** (3 sections):
+   - Source: `src/content/book-a-discovery-call.ts`
+   - Blocks: `discovery-call` → `proof-counters` → `testimonials-carousel`
+10. **`resources`** (7 sections):
+    - Source: `src/content/resources.ts`
+    - Component: `src/lib/registry/pages/resources-page.tsx`
+    - Blocks: `resources-hero` → `resources-hub` → `resources-blog` → `resources-story` → `resources-brand-strip` → `resources-trust` → `cta-banner`
+
+#### Group 2: Legal & Directory Pages (3 Pages)
+11. **`site-map`** (1 section):
+    - Source: `src/content/site-map.ts`
+    - Blocks: `sitemap-directory`
+12. **`privacy-policy`** (1 section):
+    - Source: `src/content/privacy-policy.ts`
+    - Blocks: `legal-content` (`content: privacyPolicyContent`)
+13. **`terms-of-service`** (1 section):
+    - Source: `src/content/terms-of-service.ts`
+    - Blocks: `legal-content` (`content: termsOfServiceContent`)
+
+#### Group 3: Form Confirmation / Thank-You Pages (3 Pages)
+- **Template**: `src/lib/registry/thank-you.tsx`
+- **Block**: `thank-you-confirmation`
+14. **`thank-you-for-applying`** (`src/content/thank-you-for-applying.ts`)
+15. **`thank-you-for-enquiry`** (`src/content/thank-you-for-enquiry.ts`)
+16. **`thank-you-for-shopify-plus-enquiry`** (`src/content/thank-you-for-enquiry.ts`)
+
+---
+
+### 7.12 Universal Field Transformers, Schema Gotchas & Data Mapping Safeguards
+
+When writing scratch seeders for any sub-phase, agents must adhere to these 10 verified schema guardrails:
+
+1. **Pricing Models (`pricing-models` block)**:
+   - Content often provides `.items` (array of pricing tiers), but Payload schema expects `models: [...]`.
+   - **Guard**: `models: (pricing.models || pricing.items || []).map(...)`.
+2. **Why Choose Boxes (`city-why-choose-boxes` block)**:
+   - Content files declare `.items` (type `CityWhyChooseBoxItem[]`), while Payload expects `boxes: [...]`.
+   - **Guard**: `boxes: (content.boxes || content.items || []).map(...)`.
+3. **Array vs String Sanitization (`toStr` helper)**:
+   - Many content files declare descriptions as `readonly string[]` (e.g. `teamBehindIt.description`, `portfolio.description`, `whyMigrate.description`).
+   - Payload `type: "text"` or `type: "textarea"` throws validation errors if an array is supplied.
+   - **Guard**:
+     ```typescript
+     function toStr(val: any): string {
+       if (Array.isArray(val)) return val.join("\n\n");
+       return typeof val === "string" ? val : "";
+     }
+     ```
+4. **FAQ Rich Text vs Plain String**:
+   - In some content modules, `faq.answer` is empty and answers are stored in `faq.answerParts` (array of formatted segments).
+   - **Guard**: `answer: f.answer || (f.answerParts || []).map((p: any) => p.text).join("")`.
+5. **AI Delivery Tools (`ai-empowered-delivery` block)**:
+   - Payload schema strictly requires `name` (required) and `description` (required).
+   - Content often supplies `category` or `benefit`.
+   - **Guard**: `description: item.benefit || item.description || item.category || ""`.
+6. **Theme Customization Approach (`theme-customization-approach` block)**:
+   - Schema field name is `approaches: [...]` with `{ title, description, step }`. Do NOT map to `cards` or `steps`.
+7. **Themes Grid (`shopify-themes-grid` block)**:
+   - Schema expects `items: [...]` with `{ name, title, href, image, imageSrc, alt }`. Do NOT pass `themes: [...]`.
+8. **Brand Partners Logo Fallbacks**:
+   - Several pages declare only `{ slug, heading, ariaLabel }` without explicit brand item arrays.
+   - **Guard**: Fall back to canonical `industryBrandLogos` from `src/content/industries` to avoid empty brand strips.
+9. **Media ID Lookup vs Path Fallback**:
+   - For every image or logo, query `mediaMap[assetPath]` or `mediaMap[path.basename(assetPath)]`. If found, store the relational ID `{ image: mediaId }`. Also provide the fallback string `imageSrc: assetPath` so local dual resolution works smoothly.
+10. **Drizzle Table Collision Safeguards**:
+    - `ServicesCaseStudiesBlock` uses `dbName: "svcs_items"` and `dbName: "svcs_tags"`.
+    - `ShopifyCroServicesBlock` uses `dbName: "scros_items"` and `dbName: "scros_deliv"`.
+    - `ShopifyStageServicesBlock` uses `dbName: "sstg_items"` and `dbName: "sstg_pills"`.
+
+---
+
+### 7.13 Step-by-Step Sub-Phase Seeding Playbook for Autonomous Agents
+
+When an agent is assigned to execute any sub-phase (e.g. 6B, 6C, etc.), it must execute the following 5-step operational protocol:
+
+```text
+[Step 1: Check Database State]
+       │ Query Payload Local API for current count and target page slugs in this sub-phase
+       ▼
+[Step 2: Generate Ephemeral Scratch Seeder]
+       │ Write script to scratch/seed/seeders/06-seed-pages-6x.ts (Outside git tracking)
+       ▼
+[Step 3: Execute Scratch Seeder via tsx]
+       │ Run: node --env-file-if-exists=.env --import tsx scratch/seed/seeders/06-seed-pages-6x.ts
+       ▼
+[Step 4: Verify Database Persistence & Sections Count]
+       │ Query Payload Local API: verify doc.id, sections.length > 0, and non-empty blockTypes
+       ▼
+[Step 5: Discard Scratch Script & Run Quality Gates]
+       │ Discard ephemeral script; run npm run check:urls, check:component-content, npm run lint
+```
+
+#### Verification Query Template
+```typescript
+import { getPayload } from "payload";
+import configPromise from "../../payload.config";
+
+async function verifySubPhase(targetSlugs: string[]) {
+  const payload = await getPayload({ config: configPromise });
+  for (const slug of targetSlugs) {
+    const res = await payload.find({
+      collection: "pages",
+      where: { slug: { equals: slug } },
+      limit: 1,
+    });
+    if (res.docs.length === 0) {
+      console.error(`❌ Missing page: ${slug}`);
+    } else {
+      const page = res.docs[0];
+      console.log(`✅ Page [${slug}] (ID: ${page.id}) -> ${page.sections?.length || 0} sections`);
+    }
+  }
+}
+```
 
 ---
 

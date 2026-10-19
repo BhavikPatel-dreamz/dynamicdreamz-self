@@ -13,7 +13,7 @@ export const ServicesCaseStudiesBlock: Block = {
     {
       name: "items",
       type: "array",
-      dbName: "scs_items",
+      dbName: "svcs_items",
       fields: [
         { name: "title", type: "text", required: true },
         { name: "href", type: "text", required: true },
@@ -26,7 +26,7 @@ export const ServicesCaseStudiesBlock: Block = {
         {
           name: "tags",
           type: "array",
-          dbName: "scs_tags",
+          dbName: "svcs_tags",
           fields: [{ name: "text", type: "text", required: true }],
         },
       ],
