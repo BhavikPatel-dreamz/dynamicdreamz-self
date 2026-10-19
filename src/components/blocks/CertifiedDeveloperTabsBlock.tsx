@@ -77,7 +77,7 @@ export function CertifiedDeveloperTabsBlock({
           className="mx-auto mb-[54px] max-w-[560px] text-center max-[992px]:mb-[30px]"
         >
           <h2
-            className="mb-2.5 font-sans text-[35px] font-bold leading-[48px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]"
+            className="mb-2.5 font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]"
             id="shopify-credential-tabs-title"
           >
             {formatBrText(content.heading)}
@@ -150,7 +150,7 @@ export function CertifiedDeveloperTabsBlock({
                       {item.eyebrow}
                     </span>
                   )}
-                  <h3 className="mb-3 font-display text-2xl font-medium text-ink max-[767px]:text-xl">
+                  <h3 className="mb-3 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[767px]:text-lg">
                     {item.title}
                   </h3>
                   <p className="font-sans text-sm font-normal leading-relaxed text-[#535353]">

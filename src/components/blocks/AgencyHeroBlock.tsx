@@ -46,16 +46,16 @@ export function AgencyHeroBlock({
             <span className="text-sm font-semibold leading-[1.2]">{partnerBadge}</span>
           </div>
         </div>
-        <h1 className="mx-auto mb-5 max-w-[1100px] text-[56px] font-normal leading-[1.14] text-ink min-[768px]:max-[992px]:text-[38px] min-[768px]:max-[992px]:leading-12 max-[767px]:mb-4 max-[767px]:max-w-[358px] max-[767px]:text-[27px] max-[767px]:leading-[37px]">
+        <h1 className="mx-auto mb-5 max-w-[1100px] font-montreal-medium text-[56px] font-normal leading-[1.14] text-ink min-[768px]:max-[992px]:text-[38px] min-[768px]:max-[992px]:leading-12 max-[767px]:mb-4 max-[767px]:max-w-[358px] max-[767px]:text-[27px] max-[767px]:leading-[37px]">
           {title}
         </h1>
         <p className="mx-auto mb-[30px] max-w-[940px] text-base font-medium leading-7 text-muted max-[1199px]:leading-6 max-[767px]:mb-6 max-[767px]:max-w-[358px] max-[767px]:text-sm">
           {description}
         </p>
-        <div className="mx-auto flex max-w-[1100px] justify-center max-[767px]:flex-col max-[767px]:items-center max-[767px]:gap-3.5">
+        <div className="mx-auto flex max-w-[1100px] justify-center max-[767px]:flex-col max-[767px]:items-center max-[767px]:gap-0">
           {discoveryCta && discoveryCtaHref ? (
             <Button
-              className="px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:min-h-[42px] max-[992px]:px-6 max-[992px]:py-3 max-[992px]:text-sm max-[767px]:ml-0"
+              className="px-6 py-[15px] text-base leading-[normal] max-[992px]:min-h-[42px] max-[992px]:px-6 max-[992px]:py-3 max-[992px]:text-sm max-[767px]:ml-0"
               variant="primary"
               href={discoveryCtaHref}
             >
@@ -64,7 +64,7 @@ export function AgencyHeroBlock({
           ) : null}
           {shopifyWorkCta && shopifyWorkCtaHref ? (
             <Button
-              className="ml-5 px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:ml-3.5 max-[992px]:min-h-[42px] max-[992px]:px-6 max-[992px]:py-3 max-[992px]:text-sm max-[767px]:ml-0"
+              className="ml-[15px] px-6 py-[15px] text-base leading-[normal] max-[992px]:ml-3.5 max-[992px]:min-h-[42px] max-[992px]:px-6 max-[992px]:py-3 max-[992px]:text-sm max-[767px]:ml-0 max-[767px]:mt-[14px]"
               variant="outline"
               href={shopifyWorkCtaHref}
             >
@@ -73,21 +73,27 @@ export function AgencyHeroBlock({
           ) : null}
         </div>
         {logos && logos.length > 0 ? (
-          <div className="banner-logo mt-12 flex items-center justify-center gap-7 max-[767px]:mt-6 max-[767px]:flex-wrap max-[767px]:gap-4">
+          <div
+            className="relative flex justify-center pt-[60px] max-[1199px]:pb-[60px] max-[767px]:-mb-10 max-[767px]:flex-wrap max-[767px]:pb-10 before:hidden max-[767px]:before:absolute max-[767px]:before:top-[calc(50%-20px)] max-[767px]:before:left-0 max-[767px]:before:block max-[767px]:before:h-px max-[767px]:before:w-full max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] after:hidden max-[767px]:after:absolute max-[767px]:after:top-10 max-[767px]:after:left-[calc(50%-1px)] max-[767px]:after:block max-[767px]:after:h-[calc(100%-120px)] max-[767px]:after:w-px max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']"
+            aria-label="Partnerships and independent review profiles"
+          >
             {logos.map((logo) => (
               <a
-                key={logo.href}
+                className="relative flex w-max items-center justify-center border-r border-[#d9d9d9] lg:px-[35px] px-[20px] last:border-r-0 max-[767px]:mb-10 max-[767px]:w-1/2 max-[767px]:max-w-1/2 max-[767px]:border-r-0 max-[767px]:px-[15px]"
+                key={logo.src}
                 href={logo.href}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-70 transition-opacity hover:opacity-100"
+                rel="nofollow noopener noreferrer"
               >
                 <Image
+                  className="h-auto w-auto max-h-[54px] min-[768px]:max-[992px]:max-h-11 max-[767px]:max-h-11 max-[767px]:max-w-[126px]"
                   src={logo.src}
                   alt={logo.alt}
-                  width={logo.width || 120}
-                  height={logo.height || 40}
-                  className="h-auto max-h-[40px] w-auto object-contain"
+                  width={logo.width ?? 136}
+                  height={logo.height ?? 44}
+                  sizes="(max-width: 767px) 126px, 160px"
+                  loading="eager"
+                  decoding="async"
                 />
               </a>
             ))}

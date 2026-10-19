@@ -154,7 +154,7 @@ export function TrustStatsBarBlock({
             >
               {safeContent.heading && (
                 <h2
-                  className="mb-3 font-sans text-[32px] font-bold leading-[42px] tracking-[-0.7px] text-ink max-[1199px]:text-[27px] max-[1199px]:leading-[38px] max-[767px]:mx-auto max-[767px]:max-w-[290px] max-[575px]:text-[22px] max-[575px]:leading-8"
+                  className="mb-3 font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:mx-auto max-[767px]:max-w-[290px] max-[767px]:text-2xl max-[767px]:leading-[33.24px]"
                   id="proof-counter-title"
                 >
                   {safeContent.heading}

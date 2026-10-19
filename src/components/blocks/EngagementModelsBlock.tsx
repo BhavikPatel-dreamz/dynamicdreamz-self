@@ -87,18 +87,22 @@ export function EngagementModelsBlock({
           {items.map((item) => (
             <article
               key={item.label}
-              className="plan_card flex flex-col justify-between rounded-[20px] border border-[rgba(40,40,40,0.12)] bg-white p-8 max-[1199px]:p-6"
+              className="plan_card pricing_card relative flex flex-col justify-between rounded-[20px] border border-[rgba(40,40,40,0.10)] bg-white p-8 pb-[60px] max-[1199px]:p-6 max-[1199px]:pb-[56px]"
             >
               <div>
-                <div className="plan_badge mb-4 inline-block rounded-full bg-[#192019] px-3.5 py-1 font-montserrat text-xs font-bold uppercase text-white">
-                  {item.badge}
-                </div>
-                <h3 className="plan_label mb-2 font-display text-2xl font-medium text-ink max-[767px]:text-xl">
+                {item.badge ? (
+                  <div className="plan_badge pricing_badge mb-6 inline-block rounded-[30px] bg-[rgba(173,81,81,0.05)] px-[12.5px] py-[5.5px] font-montserrat text-xs font-bold uppercase text-brand-red">
+                    {item.badge}
+                  </div>
+                ) : null}
+                <h3 className="plan_label pricing_card_label mb-2.5 font-montreal-medium text-lg font-normal text-ink">
                   {item.label}
                 </h3>
-                <div className="plan_price mb-4 font-display text-3xl font-medium text-brand-red max-[767px]:text-2xl">
-                  {item.price}
-                </div>
+                {item.price ? (
+                  <div className="plan_price pricing_price mb-6 border-b border-[rgba(40,40,40,0.10)] pb-6 font-montreal-medium text-[22px] font-normal leading-[29px] text-ink">
+                    {item.price}
+                  </div>
+                ) : null}
                 <p className="plan_desc mb-6 font-sans text-sm font-medium leading-[24px] text-muted">
                   {item.description}
                 </p>
@@ -119,12 +123,12 @@ export function EngagementModelsBlock({
               {(item.ctaHref || item.cta?.href) ? (
                 <Link
                   href={item.ctaHref || item.cta?.href}
-                  className="plan_cta group inline-flex items-center justify-center rounded-full border border-brand-red bg-transparent px-6 py-3 font-montserrat text-sm font-bold uppercase text-brand-red transition-all duration-300 hover:bg-brand-red hover:text-white"
+                  className="btn-link-arrow group/arrow absolute bottom-6 inline-flex items-center font-montserrat text-sm font-bold uppercase tracking-normal text-brand-red transition-colors duration-300 hover:text-ink max-[767px]:text-xs"
                 >
                   <span>{item.ctaLabel || item.cta?.label || "Learn More"}</span>
                   <svg
                     aria-hidden="true"
-                    className="ml-2.5 size-[10px] shrink-0 fill-[#ad5151] transition-colors group-hover:fill-[#282828]"
+                    className="ml-2.5 h-auto w-2.5 shrink-0 fill-brand-red transition-colors duration-300 group-hover/arrow:fill-ink"
                     viewBox="0 0 12 12"
                   >
                     <path d="M0.331035 10.2567C-0.0794748 10.6262 -0.112753 11.2585 0.256706 11.669C0.626165 12.0795 1.25845 12.1128 1.66896 11.7433L0.331035 10.2567ZM11.9986 2.05256C12.0276 1.50104 11.6041 1.03041 11.0526 1.00138L2.065 0.528352C1.51348 0.499324 1.04285 0.922889 1.01382 1.47441C0.984795 2.02593 1.40836 2.49656 1.95988 2.52559L9.94882 2.94606L9.52835 10.935C9.49933 11.4865 9.92289 11.9572 10.4744 11.9862C11.0259 12.0152 11.4966 11.5916 11.5256 11.0401L11.9986 2.05256ZM1.66896 11.7433L11.669 2.74329L10.331 1.25671L0.331035 10.2567L1.66896 11.7433Z" />

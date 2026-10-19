@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import styles from "@/components/blocks/TechStackShowcaseBlock.module.css";
 import { Container } from "@/components/ui/container";
 import { homeSectionCopy, integrationLogoRows } from "@/content/home";
 import { cn } from "@/lib/class-names";
@@ -128,7 +129,7 @@ export function PartnerCertificationsBarBlock({
               <div
                 className={cn(
                   "flex shrink-0 items-center",
-                  index === 0 ? "animate-marquee-left" : "animate-marquee-right",
+                  index === 0 ? styles.moveLeft : styles.moveRight,
                 )}
                 key={set}
                 aria-hidden={set > 0 || undefined}

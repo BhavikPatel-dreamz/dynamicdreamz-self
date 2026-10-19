@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/container";
+import { Button, ButtonLink } from "@/components/ui/Button";
+import { Container, Eyebrow } from "@/components/ui/container";
+import { shopifyPlusAgencyContent } from "@/content/home";
 import { shopifyCroAssessment, shopifyCroWhyDynamicDreamz } from "@/content/shopify-cro-agency";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
@@ -72,19 +73,17 @@ export function WhyChooseUsBlock({
           >
             <div className="w-[44%] max-[992px]:w-full">
               {content.eyebrow && (
-                <div className="eyebrow mb-3">
-                  <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
-                    {content.eyebrow}
-                  </span>
-                </div>
+                <Eyebrow as="span" className="mb-4">
+                  {content.eyebrow}
+                </Eyebrow>
               )}
-              <h2 className="font-montreal-medium text-[35px] font-normal leading-[1.3] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
+              <h2 className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
                 {formatBrText(content.heading)}
               </h2>
             </div>
             {content.description && (
               <div className="w-[48%] max-[992px]:w-full">
-                <p className="font-sans text-base font-medium leading-[28px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
+                <p className="font-sans text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
                   {formatBrText(content.description)}
                 </p>
               </div>
@@ -115,7 +114,7 @@ export function WhyChooseUsBlock({
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     {item.title ? (
-                      <h3 className="m-0 mb-2.5 font-display text-base font-medium leading-6 text-ink">
+                      <h3 className="m-0 mb-2.5 font-montreal-medium text-base font-normal leading-6 text-ink">
                         {formatBrText(item.title)}
                       </h3>
                     ) : null}
@@ -176,13 +175,11 @@ export function WhyChooseUsBlock({
           >
             <div className="text-block">
               {eyebrow && (
-                <div className="eyebrow mb-3">
-                  <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
-                    {eyebrow}
-                  </span>
-                </div>
+                <Eyebrow as="span" className="mb-4">
+                  {eyebrow}
+                </Eyebrow>
               )}
-              <h2 className="mb-4 font-display text-[35px] font-medium leading-[48px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
+              <h2 className="mb-4 font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
                 {formatBrText(resolvedHeading)}
               </h2>
               {Array.isArray(resolvedDesc) ? (
@@ -222,9 +219,9 @@ export function WhyChooseUsBlock({
               )}
               {cta && (
                 <div className="mt-8">
-                  <Button href={cta.href} variant="primary">
+                  <ButtonLink href={cta.href} variant="primary">
                     {cta.label}
-                  </Button>
+                  </ButtonLink>
                 </div>
               )}
             </div>
@@ -263,12 +260,12 @@ export type ShopifyPlusAgencySectionProps = {
 };
 
 export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionProps = {}) {
-  const eyebrow = content?.eyebrow ?? "Shopify Plus Agency";
-  const title = content?.title ?? "Tailored Shopify Plus Solutions For Scaling Brands";
-  const intro = content?.intro ?? "";
-  const paragraphs = content?.paragraphs || [];
-  const counters = content?.counters || [];
-  const videoSrc = content?.videoSrc || "/assets/video/shopify-plus.mp4";
+  const eyebrow = content?.eyebrow ?? shopifyPlusAgencyContent.eyebrow;
+  const title = content?.title ?? shopifyPlusAgencyContent.title;
+  const intro = content?.intro ?? shopifyPlusAgencyContent.intro;
+  const paragraphs = content?.paragraphs && content.paragraphs.length > 0 ? content.paragraphs : shopifyPlusAgencyContent.paragraphs;
+  const counters = content?.counters && content.counters.length > 0 ? content.counters : shopifyPlusAgencyContent.counters;
+  const videoSrc = content?.videoSrc || shopifyPlusAgencyContent.videoSrc;
 
   return (
     <section className="bg-[#fbeed5] py-[43px] max-[992px]:py-[30px]" aria-labelledby="shopify-plus-agency-title">
@@ -278,15 +275,17 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
           className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between gap-8 max-[1199px]:mb-5 max-[992px]:gap-0"
         >
           <div className="title w-[42%] max-[1199px]:w-full max-[1199px]:mb-2.5">
-            <span className="mb-4 inline-block font-montserrat text-xs font-semibold uppercase tracking-wider text-[#686868]">
+            <Eyebrow as="span" className="mb-4">
               {eyebrow}
-            </span>
-            <h2 id="shopify-plus-agency-title" className="m-0 font-display text-[43px] font-medium leading-[1.2] text-[#282828] max-[1199px]:text-[35px] max-[992px]:text-[28px] max-[767px]:text-[24px]">
+            </Eyebrow>
+            <h2 id="shopify-plus-agency-title" className="m-0 font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
               {title}
             </h2>
           </div>
-          <div className="w-[48%] font-sans text-base leading-relaxed text-[#535353] max-[1199px]:w-full max-[767px]:text-sm">
-            {intro}
+          <div className="w-[48%] max-[1199px]:w-full">
+            <p className="font-sans text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
+              {intro}
+            </p>
           </div>
         </div>
 
@@ -294,7 +293,7 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
           <div data-aos="fade-up" className="w-[46.816%] max-[992px]:w-full">
             <div className="mb-5 max-w-[575px]">
               {paragraphs.map((paragraph, index) => (
-                <p className={index === 0 ? "mb-3.75 text-sm leading-6 font-normal text-[#535353]" : "text-sm leading-[1.8] font-normal text-[#535353]"} key={paragraph}>
+                <p className={index === 0 ? "mb-3.75 text-sm leading-6 font-normal text-muted" : "text-sm leading-[1.8] font-normal text-muted"} key={paragraph}>
                   {paragraph}
                 </p>
               ))}
@@ -306,12 +305,12 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
                   <div className="mb-2 w-1/2 px-1 max-[767px]:w-full" key={counter.value}>
                     <div className={`flex h-full min-h-[136px] flex-col justify-between rounded-[20px] p-[18px] max-[767px]:rounded-xl ${counterToneClasses[tone]}`}>
                       <div>
-                        <span className="block font-sans text-[35px] leading-[1.4] font-semibold text-[#282828] max-[767px]:text-[24px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px]">
+                        <h3 className="font-montreal-medium m-0 block text-[35px] leading-[1.4] font-normal text-ink max-[767px]:text-[24px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px]">
                           {counter.value}
-                        </span>
+                        </h3>
                         <span className="mt-[5px] mb-[25px] block font-montserrat text-xs leading-none font-semibold text-[#4d5577] uppercase max-[767px]:mb-5">{counter.label}</span>
                       </div>
-                      {counter.note ? <p className="text-xs leading-none font-medium text-[#535353]">{counter.note}</p> : null}
+                      {counter.note ? <p className="text-xs leading-none font-medium text-muted">{counter.note}</p> : null}
                     </div>
                   </div>
                 );

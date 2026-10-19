@@ -77,16 +77,15 @@ export function FaqSectionBlock({
           <div className="w-[41%] max-[1199px]:w-[44%] max-[991px]:w-full" data-aos="fade-up">
             <header className="mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
               {eyebrow ? (
-                <div className="mb-4 flex items-center gap-2">
-                  <span className="h-[2px] w-6 bg-brand-red" />
-                  <span className="text-xs font-bold tracking-widest text-brand-red uppercase">
+                <div className="eyebrow relative mb-4 inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:before:top-[6px] max-[767px]:pl-6 max-[767px]:before:top-[4px] max-[767px]:before:w-[15px]">
+                  <span className="font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-xs max-[767px]:text-[10px]">
                     {eyebrow}
                   </span>
                 </div>
               ) : null}
               <h2
                 className={cn(
-                  "mb-2.5 font-display text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]",
+                  "mb-2.5 font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]",
                   headingClassName,
                 )}
                 id={titleId}
@@ -94,7 +93,7 @@ export function FaqSectionBlock({
                 {formatBrText(heading, headingBrClassName ?? "max-[1199px]:hidden")}
               </h2>
               {description ? (
-                <p className="max-w-[500px] text-base leading-[28px] font-medium text-[#535353] max-[767px]:text-sm max-[767px]:leading-[24px]">
+                <p className="max-w-[518px] text-base leading-[28px] font-medium text-[#535353] max-[767px]:text-sm max-[767px]:leading-[24px]">
                   {formatBrText(description, "max-[1199px]:hidden")}
                 </p>
               ) : null}

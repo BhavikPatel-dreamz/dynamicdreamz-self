@@ -2865,8 +2865,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
             const isShopifyHours =
               (bpBlock.variant as string) === "shopifyHours" ||
-              bpBlock.heading?.includes("Partnering with Ambitious Brands") ||
-              bpBlock.heading?.includes("Ambitious Brands") ||
               bpBlock.description?.includes(
                 "support across design, development",
               );
