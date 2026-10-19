@@ -14,9 +14,9 @@
   --font-montserrat: var(--font-montserrat-local), Arial, sans-serif;
   --font-sans: var(--font-montserrat-local), Arial, sans-serif;
   --font-display: var(--font-neue-montreal-local), Arial, sans-serif;
-  --font-montreal-medium: var(--font-neue-montreal-local), sans-serif;
+  --font-montreal-medium: var(--font-neue-montreal-medium-local), var(--font-neue-montreal-local), sans-serif;
   --font-montreal-semibold: var(--font-neue-montreal-local), sans-serif;
-  --montreal-medium: var(--font-neue-montreal-local), sans-serif;
+  --montreal-medium: var(--font-neue-montreal-medium-local), var(--font-neue-montreal-local), sans-serif;
 }
 
 @layer base {
@@ -50,7 +50,8 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-display);
+    color: var(--color-ink);
+    font-family: var(--font-montreal-medium);
     font-weight: 400;
     letter-spacing: 0;
   }

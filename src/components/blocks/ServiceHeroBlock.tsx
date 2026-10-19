@@ -9,6 +9,7 @@ import {
   serviceHeroReviewLogos,
   type ServiceHeroReviewPlatform,
 } from "@/content/service-hero-reviews";
+import { aboutHero, aboutSectionCopy } from "@/content/about";
 import { resourcesHero } from "@/content/resources";
 import { shopifyPlusAgencyHero, shopifyPlusAgencyReviews } from "@/content/shopify-plus-agency";
 import { siteConfig } from "@/data/site";
@@ -398,6 +399,10 @@ export function ServiceHeroBlock({
   typography,
   primaryCta,
   secondaryCta,
+  titleAccentPosition = "end",
+  titleAccentClassName,
+  titleAccentTag,
+  breakClassName,
   ...rest
 }: ServiceHeroBlockProps) {
   const content = propContent ?? {
@@ -412,7 +417,33 @@ export function ServiceHeroBlock({
     ...(statistics !== undefined ? { statistics } : {}),
     ...rest,
   };
-  const ctaHref = content.ctaHref ?? siteConfig.quotePath;
+  const ctaLabelText = content.ctaLabel ?? content.cta ?? primaryCta?.label;
+  const ctaHref = content.ctaHref ?? content.ctaLink ?? primaryCta?.href ?? siteConfig.quotePath;
+  const secondaryCtaObj = content.secondaryCta ?? secondaryCta;
+  const videoSource = content.videoSrc ?? content.video;
+  const subtitleText = content.subtitle ?? content.subheading ?? content.lead;
+
+  const rawEyebrow = content.eyebrows ?? content.eyebrow ?? content.eyebrowSpans ?? eyebrow;
+  const normalizedEyebrows: readonly string[] = Array.isArray(rawEyebrow)
+    ? rawEyebrow
+    : typeof rawEyebrow === "string"
+    ? rawEyebrow.includes(" • ")
+      ? rawEyebrow.split(" • ")
+      : rawEyebrow.includes(" | ")
+      ? rawEyebrow.split(" | ")
+      : [rawEyebrow]
+    : [];
+
+  const rawBadges = content.badges ?? badges ?? [];
+  const normalizedBadges = Array.isArray(rawBadges)
+    ? rawBadges.map((b: any) => ({
+        src: b.src ?? b.icon ?? "",
+        alt: b.alt ?? b.label ?? b.name ?? "",
+        href: b.href ?? "#",
+        width: b.width ?? 136,
+        height: b.height ?? 44,
+      }))
+    : [];
 
   const isRisks = Boolean(
     typeof content.title === "string" && content.title.toLowerCase().includes("risks"),
@@ -445,6 +476,22 @@ export function ServiceHeroBlock({
           <div className="inner-wrapper flex flex-col">
             <div className="left-col w-full">
               <div className={`inner-hero-content mx-auto ${maxWidth} text-center`}>
+                {normalizedEyebrows.length > 0 && (
+                  <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+                    {normalizedEyebrows.map((item: any, idx: number) => (
+                      <span
+                        key={idx}
+                        className={cn(
+                          "relative inline-flex items-center font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-[12px] max-[767px]:text-[10px]",
+                          idx > 0 &&
+                            "ml-2.5 pl-2.5 after:absolute after:-left-[2px] after:top-1/2 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#535353] after:content-['']",
+                        )}
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                )}
                 {content.coBranding && (
                   <div className="mobile-app-wrapper mb-[35px] flex items-center justify-center max-[767px]:mb-[25px]">
                     <Image
@@ -472,15 +519,15 @@ export function ServiceHeroBlock({
                 )}
                 <h1
                   className={cn(
-                    "inline-block font-sans text-[50px] font-bold leading-[66px] tracking-[-1px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[379px]:text-[28px] max-[379px]:leading-[38px]",
+                    "inline-block font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[379px]:text-[28px] max-[379px]:leading-[38px]",
                     headingClass,
                   )}
                 >
                   {formatBrText(content.title, "max-[1199px]:hidden")}
                 </h1>
-                {content.subheading ? (
+                {subtitleText ? (
                   <p className="mt-2.5 mb-0 font-montserrat text-base font-semibold leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
-                    {content.subheading}
+                    {subtitleText}
                   </p>
                 ) : null}
                 {content.paragraphs ? (
@@ -517,39 +564,39 @@ export function ServiceHeroBlock({
                     )}
                   </>
                 ) : null}
-                {content.secondaryCta ? (
+                {secondaryCtaObj ? (
                   <div className="mt-2 flex flex-wrap items-center justify-center gap-[15px] max-[575px]:flex-col">
-                    {content.ctaLabel && (
+                    {ctaLabelText && (
                       <Button
                         className="max-[575px]:mx-1 max-[575px]:w-[calc(100%-8px)]"
-                        aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
+                        aria-label={`Dynamic Dreamz - ${ctaLabelText}`}
                         href={ctaHref}
                         variant="primary"
                       >
-                        {content.ctaLabel}
+                        {ctaLabelText}
                       </Button>
                     )}
                     <Button
                       className="max-[575px]:mx-1 max-[575px]:w-[calc(100%-8px)]"
                       aria-label={
-                        content.secondaryCta.ariaLabel ??
-                        `Dynamic Dreamz - ${content.secondaryCta.label}`
+                        secondaryCtaObj.ariaLabel ??
+                        `Dynamic Dreamz - ${secondaryCtaObj.label}`
                       }
-                      href={content.secondaryCta.href}
+                      href={secondaryCtaObj.href}
                       variant="outline"
                     >
-                      {content.secondaryCta.label}
+                      {secondaryCtaObj.label}
                     </Button>
                   </div>
-                ) : content.ctaLabel ? (
+                ) : ctaLabelText ? (
                   <div className="mt-2">
                     <Button
                       className="max-[575px]:mx-1 max-[575px]:w-[calc(100%-8px)]"
-                      aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
+                      aria-label={`Dynamic Dreamz - ${ctaLabelText}`}
                       href={ctaHref}
                       variant="primary"
                     >
-                      {content.ctaLabel}
+                      {ctaLabelText}
                     </Button>
                   </div>
                 ) : null}
@@ -604,9 +651,9 @@ export function ServiceHeroBlock({
         <div className="inner-wrapper flex flex-wrap items-center justify-between">
           <div className={leftColClassName ?? defaultLeftCol}>
             <div className="inner-hero-content">
-              {content.eyebrows && content.eyebrows.length > 0 && (
+              {normalizedEyebrows.length > 0 && (
                 <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
-                  {content.eyebrows.map((item: any, idx: number) => (
+                  {normalizedEyebrows.map((item: any, idx: number) => (
                     <span
                       key={idx}
                       className={cn(
@@ -626,11 +673,31 @@ export function ServiceHeroBlock({
                   headingClassName,
                 )}
               >
-                {formatBrText(content.title, "max-[1199px]:hidden")}
+                {content.titleAccent && titleAccentPosition === "start" ? (
+                  <>
+                    <span className={cn("font-normal not-italic text-[#ad5151]", titleAccentClassName)}>
+                      {content.titleAccent}
+                    </span>{" "}
+                  </>
+                ) : null}
+                {formatBrText(
+                  content.titleAccent && typeof content.title === "string"
+                    ? content.title.replace(content.titleAccent, "").trim()
+                    : content.title,
+                  "max-[1199px]:hidden",
+                )}
+                {content.titleAccent && titleAccentPosition !== "start" ? (
+                  <>
+                    {" "}
+                    <span className={cn("font-normal not-italic text-[#ad5151]", titleAccentClassName)}>
+                      {content.titleAccent}
+                    </span>
+                  </>
+                ) : null}
               </h1>
-              {content.subheading ? (
+              {subtitleText ? (
                 <p className="mt-2.5 mb-0 font-montserrat text-base font-semibold leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
-                  {content.subheading}
+                  {subtitleText}
                 </p>
               ) : null}
               {content.paragraphs ? (
@@ -667,47 +734,48 @@ export function ServiceHeroBlock({
                   )}
                 </>
               ) : null}
-              {content.secondaryCta ? (
+              {secondaryCtaObj ? (
                 <div className="services-hero-btn mt-2.5 flex flex-wrap items-center gap-5 max-[1199px]:justify-center max-[575px]:flex-col max-[575px]:items-center max-[575px]:gap-[13px]">
-                  {content.ctaLabel && (
+                  {ctaLabelText && (
                     <Button
                       className="max-[575px]:mx-1 max-[575px]:w-[calc(100%-8px)]"
-                      aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
+                      aria-label={`Dynamic Dreamz - ${ctaLabelText}`}
                       href={ctaHref}
                       variant="primary"
                     >
-                      {content.ctaLabel}
+                      {ctaLabelText}
                     </Button>
                   )}
                   <Button
                     className="max-[575px]:mx-1 max-[575px]:w-[calc(100%-8px)]"
                     aria-label={
-                      content.secondaryCta.ariaLabel ??
-                      `Dynamic Dreamz - ${content.secondaryCta.label}`
+                      secondaryCtaObj.ariaLabel ??
+                      `Dynamic Dreamz - ${secondaryCtaObj.label}`
                     }
-                    href={content.secondaryCta.href}
+                    href={secondaryCtaObj.href}
                     variant="outline"
                   >
-                    {content.secondaryCta.label}
+                    {secondaryCtaObj.label}
                   </Button>
                 </div>
-              ) : content.ctaLabel ? (
-                <Button
-                  className="services-hero-btn"
-                  aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
-                  href={ctaHref}
-                  variant="primary"
-                >
-                  {content.ctaLabel}
-                </Button>
+              ) : ctaLabelText ? (
+                <div className="services-hero-btn mt-2.5 max-[1199px]:text-center">
+                  <Button
+                    aria-label={`Dynamic Dreamz - ${ctaLabelText}`}
+                    href={ctaHref}
+                    variant="primary"
+                  >
+                    {ctaLabelText}
+                  </Button>
+                </div>
               ) : null}
 
-              {content.badges && content.badges.length > 0 && (
+              {normalizedBadges.length > 0 && (
                 <div
                   className="global_brands_grid_wrap relative mt-10 flex items-center max-[1199px]:justify-center max-[767px]:-mx-[15px] max-[767px]:w-[calc(100%+30px)] max-[767px]:flex-wrap max-[767px]:overflow-hidden max-[767px]:before:absolute max-[767px]:before:top-0 max-[767px]:before:left-1/2 max-[767px]:before:block max-[767px]:before:h-full max-[767px]:before:w-px max-[767px]:before:-translate-x-1/2 max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] max-[767px]:after:absolute max-[767px]:after:top-1/2 max-[767px]:after:left-5 max-[767px]:after:block max-[767px]:after:h-px max-[767px]:after:w-[calc(100%-40px)] max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']"
                   aria-label="Partnerships and independent review profiles"
                 >
-                  {content.badges.map((badge: any, idx: number) => (
+                  {normalizedBadges.map((badge: any, idx: number) => (
                     <div
                       className="global_brands_item relative border-r border-[#d9d9d9] px-4 first:pl-0 last:border-r-0 max-[767px]:w-1/2 max-[767px]:border-0 max-[767px]:p-3.5 max-[767px]:text-center"
                       key={`${badge.href}-${idx}`}
@@ -735,10 +803,10 @@ export function ServiceHeroBlock({
           <div
             className={cn(
               rightColClassName ?? defaultRightCol,
-              content.videoSrc && "max-[767px]:hidden",
+              videoSource && "max-[767px]:hidden",
             )}
           >
-            {content.videoSrc ? (
+            {videoSource ? (
               <div className="video-wrapper relative aspect-[1.5] max-[767px]:hidden">
                 <div className="absolute inset-0 overflow-hidden rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
                   <video
@@ -751,7 +819,7 @@ export function ServiceHeroBlock({
                     preload="metadata"
                     tabIndex={-1}
                   >
-                    <source src={content.videoSrc} type="video/mp4" />
+                    <source src={videoSource} type="video/mp4" />
                   </video>
                 </div>
                 {content.videoLogo ? (
@@ -885,9 +953,75 @@ export function ResourcesHeroSection({
   );
 }
 
+export type AboutHeroSectionProps = {
+  title?: string;
+  description?: string;
+  deliveryTitle?: string;
+  statistics?: readonly { label: string; value: string }[];
+};
+
+export function AboutHeroSection({
+  title = aboutHero.title,
+  description = aboutHero.description,
+  deliveryTitle = aboutSectionCopy.deliveryTitle,
+  statistics = aboutHero.statistics,
+}: AboutHeroSectionProps = {}) {
+  return (
+    <>
+      <section className="inner-hero-sec relative overflow-hidden bg-[#fafaf7] pt-[200px] pb-[130px] max-[1199px]:pt-[160px] max-[1199px]:pb-[120px] max-[767px]:pt-[150px] max-[767px]:pb-[110px]">
+        <Container>
+          <div data-aos="fade-up" className="inner-hero-content mx-auto max-w-[930px] text-center">
+            <h1 className="m-0 font-montreal-medium text-[55px] font-normal leading-[1.1] text-ink max-[1199px]:text-[45px] max-[1199px]:leading-[50px] max-[767px]:text-[32px] max-[767px]:leading-[40px]">
+              {title}
+            </h1>
+            <p className="mt-5 mb-0 font-sans text-base font-medium leading-[28px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-[24px]">
+              {description}
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="team-deliver-sec relative z-10 -mt-[78px] px-4 max-[1199px]:-mt-[64px]" id="team_deliver_sec">
+        <Container>
+          <div
+            data-aos="fade-up"
+            className="team-deliver-wrap flex flex-wrap items-center justify-between rounded-[26px] bg-black px-[75px] py-[38px] max-[1199px]:p-[30px] max-[991px]:flex-col max-[991px]:p-[25px_20px] max-[767px]:rounded-[20px]"
+          >
+            <div className="left-col w-[35%] max-[991px]:w-full max-[991px]:text-center">
+              <h2 className="m-0 font-montreal-medium text-[28px] font-normal leading-[40.42px] tracking-[-0.56px] text-white max-[1199px]:text-[25px] max-[991px]:mb-5 max-[767px]:text-[24px] max-[767px]:leading-[34px]">
+                {deliveryTitle}
+              </h2>
+            </div>
+            <div className="right-col w-[60%] max-[991px]:w-full">
+              <div className="deliver-wrapper flex items-center justify-end max-[991px]:justify-center">
+                {statistics.map((stat, idx) => (
+                  <div
+                    key={stat.label}
+                    className={cn(
+                      "deliver-counter",
+                      idx > 0 && "ml-[30px] border-l border-white/25 pl-[30px] max-[1199px]:ml-5 max-[1199px]:pl-5 max-[767px]:ml-2.5 max-[767px]:pl-2.5",
+                      "max-[991px]:text-center",
+                    )}
+                  >
+                    <div className="text-counter mb-3 font-montserrat text-base font-bold uppercase leading-[18.4px] text-white/60 max-[1199px]:text-sm max-[767px]:mb-0 max-[767px]:text-[9px] max-[767px]:leading-[14px]">
+                      {stat.label}
+                    </div>
+                    <div className="counter-text flex items-center font-montreal-medium text-[45px] font-semibold leading-[45px] tracking-[-0.56px] text-white max-[1199px]:text-[40px] max-[1199px]:leading-[35px] max-[767px]:justify-center max-[767px]:text-[20px] max-[767px]:leading-[30px]">
+                      <span>{stat.value}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
+  );
+}
+
 export {
   ServiceHeroBlock as ServiceHeroSection,
-  ServiceHeroBlock as AboutHeroSection,
   ServiceHeroBlock as OurWorkHeroSection,
   ServiceHeroBlock as CareerHeroSection,
   ServiceHeroBlock as ServiceHeroVideoSection,

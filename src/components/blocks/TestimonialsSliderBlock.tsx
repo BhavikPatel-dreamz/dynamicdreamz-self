@@ -6,8 +6,9 @@ import Slider, { type Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 
 import { VideoModalClient } from "@/components/ui/VideoModalClient";
-import { Container } from "@/components/ui/container";
+import { Container, Eyebrow } from "@/components/ui/container";
 import { sharedUiCopy } from "@/content/common";
+import { homeSectionCopy, testimonials as defaultBrandTestimonials, type Testimonial } from "@/content/home-client";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
@@ -33,6 +34,7 @@ export type TestimonialsSliderBlockProps = {
   controlsLabels?: { ariaLabel: string; previous: string; next: string };
   variant?: "client-stories";
   className?: string;
+  contentOnly?: boolean;
 };
 
 export type HappyClientSectionProps = TestimonialsSliderBlockProps;
@@ -119,6 +121,7 @@ export function TestimonialsSliderBlock({
   controlsLabels = sharedUiCopy.testimonials,
   variant,
   className,
+  contentOnly = false,
 }: TestimonialsSliderBlockProps) {
   const sliderRef = useRef<Slider>(null);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -151,6 +154,59 @@ export function TestimonialsSliderBlock({
 
   const isWhite = variant === "client-stories";
 
+  const sliderBody = (
+    <div data-aos="fade-up">
+      <div
+        aria-label={controlsLabels.ariaLabel}
+        className={cn(
+          "happy-client-slider min-[1400px]:-mx-[15px]",
+          "[&_.slick-track]:!flex [&_.slick-track]:!items-stretch [&_.slick-slide]:!h-auto [&_.slick-initialized_.slick-slide]:!flex [&_.slick-initialized_.slick-slide]:!flex-col [&_.slick-slide>div]:!h-full",
+        )}
+        role="region"
+      >
+        <Slider key={visibleSlides} ref={sliderRef} {...settings}>
+          {items.map((testimonial) => (
+            <div
+              className="flex h-full flex-col px-[15px] pb-5 items-stretch"
+              key={testimonial.name}
+            >
+              <TestimonialCard testimonial={testimonial} />
+            </div>
+          ))}
+        </Slider>
+      </div>
+
+      <div className="mt-8 flex items-center justify-end gap-3 max-[991px]:justify-center">
+        <button
+          aria-label={controlsLabels.previous}
+          className={controlButtonClassName}
+          disabled={isAtStart}
+          onClick={() => sliderRef.current?.slickPrev()}
+          type="button"
+        >
+          <svg className="size-4 rotate-180 fill-current" viewBox="0 0 16 16">
+            <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+          </svg>
+        </button>
+        <button
+          aria-label={controlsLabels.next}
+          className={controlButtonClassName}
+          disabled={isAtEnd}
+          onClick={() => sliderRef.current?.slickNext()}
+          type="button"
+        >
+          <svg className="size-4 fill-current" viewBox="0 0 16 16">
+            <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+
+  if (contentOnly) {
+    return sliderBody;
+  }
+
   return (
     <section
       className={cn(
@@ -168,11 +224,9 @@ export function TestimonialsSliderBlock({
         >
           <div className="title w-[44%] max-[991px]:w-full">
             {eyebrow ? (
-              <div className="eyebrow mb-4">
-                <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
-                  {eyebrow}
-                </span>
-              </div>
+              <Eyebrow as="span" className="mb-4">
+                {eyebrow}
+              </Eyebrow>
             ) : null}
             <h2 className="font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
               {formatBrText(heading)}
@@ -185,54 +239,170 @@ export function TestimonialsSliderBlock({
           </div>
         </div>
 
-        <div data-aos="fade-up">
-          <div
-            aria-label={controlsLabels.ariaLabel}
-            className={cn(
-              "happy-client-slider min-[1400px]:-mx-[15px]",
-              "[&_.slick-track]:!flex [&_.slick-track]:!items-stretch [&_.slick-slide]:!h-auto [&_.slick-initialized_.slick-slide]:!flex [&_.slick-initialized_.slick-slide]:!flex-col [&_.slick-slide>div]:!h-full",
-            )}
-            role="region"
-          >
-            <Slider key={visibleSlides} ref={sliderRef} {...settings}>
-              {items.map((testimonial) => (
-                <div
-                  className="flex h-full flex-col px-[15px] pb-5 items-stretch"
-                  key={testimonial.name}
-                >
-                  <TestimonialCard testimonial={testimonial} />
-                </div>
-              ))}
-            </Slider>
-          </div>
-
-          <div className="mt-8 flex items-center justify-end gap-3 max-[991px]:justify-center">
-            <button
-              aria-label={controlsLabels.previous}
-              className={controlButtonClassName}
-              disabled={isAtStart}
-              onClick={() => sliderRef.current?.slickPrev()}
-              type="button"
-            >
-              <svg className="size-4 rotate-180 fill-current" viewBox="0 0 16 16">
-                <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-              </svg>
-            </button>
-            <button
-              aria-label={controlsLabels.next}
-              className={controlButtonClassName}
-              disabled={isAtEnd}
-              onClick={() => sliderRef.current?.slickNext()}
-              type="button"
-            >
-              <svg className="size-4 fill-current" viewBox="0 0 16 16">
-                <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-              </svg>
-            </button>
-          </div>
-        </div>
+        {sliderBody}
       </Container>
     </section>
+  );
+}
+
+export function BrandTestimonialSlide({ item }: { item: Testimonial }) {
+  return (
+    <div className="testimonial_img_text_wrap flex h-full max-[991px]:flex-col-reverse">
+      <div className="col_content flex flex-1 flex-col justify-center rounded-[30px] border border-[#dfdfdf] bg-white/50 p-[45px_30px] max-[991px]:rounded-b-[20px] max-[991px]:rounded-t-none max-[767px]:p-4">
+        {item.logo ? (
+          <div className="logo_wrap mb-[26px] max-[767px]:mb-4">
+            <Image
+              src={item.logo}
+              alt={item.logoAlt ?? `${item.company} logo`}
+              width={120}
+              height={45}
+              className="h-10 max-h-10 w-auto object-contain max-[767px]:max-h-8"
+            />
+          </div>
+        ) : null}
+        <h3 className="mb-5 pr-[78px] font-montreal-medium text-[26px] font-normal leading-[1.4] tracking-normal text-ink max-[1199px]:text-[22px] max-[991px]:pr-0 max-[767px]:mb-4 max-[767px]:text-lg max-[767px]:leading-normal">
+          {item.title}
+        </h3>
+        <p className="mb-[26px] max-w-[90%] font-sans text-sm font-normal leading-6 text-muted max-[767px]:mb-4 max-[767px]:max-w-full">
+          {item.quote}
+        </p>
+        <div className="user_content_btm mt-auto flex items-center border-t border-[#dfdfdf] pt-[26px] max-[767px]:pt-4">
+          <div className="user_thumb_wrap flex flex-1 items-center">
+            <div className="thumb_wrap mr-3.5 size-[60px] shrink-0 overflow-hidden rounded-full max-[767px]:size-12">
+              <Image
+                src={item.avatar}
+                alt={item.name}
+                width={60}
+                height={60}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="user_content_wrap">
+              <div className="title font-montserrat text-xl font-semibold leading-[1.295] text-ink max-[767px]:text-base">
+                {item.name}
+              </div>
+              <div className="sub_title text-lg font-medium leading-[1.295] text-muted max-[767px]:text-sm">
+                {item.companyHref ? (
+                  <a
+                    href={item.companyHref}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    className="transition-colors hover:text-brand-red"
+                  >
+                    {item.company}
+                  </a>
+                ) : (
+                  item.company
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="col_img relative aspect-square w-1/2 shrink-0 overflow-hidden rounded-[30px] max-[991px]:w-full max-[991px]:max-h-[346px] max-[991px]:rounded-t-[20px] max-[991px]:rounded-b-none">
+        {item.videoId ? (
+          <VideoModalClient
+            className="!rounded-none h-full w-full"
+            poster={item.portrait}
+            posterAlt={`${item.name} testimonial portrait`}
+            title={`${item.name} testimonial video`}
+            videoId={item.videoId}
+          />
+        ) : (
+          <Image
+            src={item.portrait}
+            alt={`${item.name} testimonial`}
+            fill
+            className="object-cover"
+          />
+        )}
+      </div>
+    </div>
+  );
+}
+
+export function BrandTestimonialSlider({
+  items = defaultBrandTestimonials,
+}: {
+  items?: readonly Testimonial[];
+}) {
+  const sliderRef = useRef<Slider>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const isAtStart = activeSlide === 0;
+  const isAtEnd = activeSlide >= items.length - 1;
+
+  const brandSettings: Settings = {
+    dots: false,
+    arrows: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    afterChange: setActiveSlide,
+    adaptiveHeight: false,
+  };
+
+  return (
+    <div className="brand_testimonial_slider_wrap relative">
+      <div className="brand_testimonial_nav absolute -top-[75px] right-0 z-10 flex items-center gap-[14px] max-[991px]:relative max-[991px]:top-auto max-[991px]:right-auto max-[991px]:mt-6 max-[991px]:justify-center">
+        <button
+          aria-label={sharedUiCopy.testimonials.previous}
+          className="slider_arrow prev flex size-14 cursor-pointer items-center justify-center rounded-[10px] bg-white text-[#282828] transition-colors hover:bg-brand-red hover:text-white disabled:pointer-events-none disabled:opacity-60 max-[767px]:size-[42px] max-[767px]:rounded-[6px]"
+          disabled={isAtStart}
+          onClick={() => sliderRef.current?.slickPrev()}
+          type="button"
+        >
+          <svg
+            className="size-5 max-[767px]:size-[15px]"
+            fill="none"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+          >
+            <path
+              d="M12.5 15L7.5 10L12.5 5"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label={sharedUiCopy.testimonials.next}
+          className="slider_arrow next flex size-14 cursor-pointer items-center justify-center rounded-[10px] bg-white text-[#282828] transition-colors hover:bg-brand-red hover:text-white disabled:pointer-events-none disabled:opacity-60 max-[767px]:size-[42px] max-[767px]:rounded-[6px]"
+          disabled={isAtEnd}
+          onClick={() => sliderRef.current?.slickNext()}
+          type="button"
+        >
+          <svg
+            className="size-5 max-[767px]:size-[15px]"
+            fill="none"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+          >
+            <path
+              d="M7.5 15L12.5 10L7.5 5"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div className="brand_testimonial_inner overflow-hidden rounded-[30px] max-[1199px]:rounded-[20px]">
+        <Slider ref={sliderRef} {...brandSettings}>
+          {items.map((testimonial) => (
+            <div key={testimonial.name} className="outline-none">
+              <BrandTestimonialSlide item={testimonial} />
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
   );
 }
 
@@ -240,30 +410,40 @@ export type TestimonialsSectionProps = {
   eyebrow?: string;
   title?: string;
   description?: string;
+  items?: readonly Testimonial[];
 };
 
 export function TestimonialsSection({
-  title = sharedUiCopy.testimonials.defaultTitle,
-  description = sharedUiCopy.testimonials.defaultDescription,
+  title = homeSectionCopy.testimonialsTitle,
+  description = homeSectionCopy.testimonialsDescription,
+  eyebrow,
+  items,
 }: TestimonialsSectionProps = {}) {
   return (
-    <section className="bg-[#FAF9F5] py-[60px] max-[767px]:py-[50px]" aria-labelledby="testimonials-title">
+    <section className="brand_testimonial bg-[#f7f4e9] py-[60px] max-[767px]:py-[50px]" aria-labelledby="testimonials-title">
       <Container>
         <div
           data-aos="fade-up"
-          className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between gap-8 max-[1199px]:mb-5 max-[992px]:gap-0"
+          className="section_title_with_eyebrow mb-[100px] flex flex-wrap items-end justify-between gap-8 max-[1199px]:mb-10 max-[991px]:mb-[30px] max-[992px]:gap-0"
         >
           <div className="title w-[42%] max-[1199px]:w-full max-[1199px]:mb-2.5">
-            <h2 id="testimonials-title" className="m-0 font-display text-[43px] font-medium leading-[1.2] text-[#282828] max-[1199px]:text-[35px] max-[992px]:text-[28px] max-[767px]:text-[24px]">
+            {eyebrow ? (
+              <Eyebrow as="span" className="mb-4">
+                {eyebrow}
+              </Eyebrow>
+            ) : null}
+            <h2 id="testimonials-title" className="m-0 font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
               {title}
             </h2>
           </div>
-          <p className="w-[48%] font-sans text-base leading-relaxed text-[#535353] max-[1199px]:w-full">
-            {description}
-          </p>
+          <div className="w-[48%] max-[1199px]:w-full">
+            <p className="font-sans text-base leading-7 font-medium text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
+              {description}
+            </p>
+          </div>
         </div>
-        <div data-aos="fade-up" className="brand_testimonial_slider_wrap">
-          <TestimonialsSliderBlock />
+        <div data-aos="fade-up">
+          <BrandTestimonialSlider items={items} />
         </div>
       </Container>
     </section>

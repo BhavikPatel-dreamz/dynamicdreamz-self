@@ -377,7 +377,7 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
 
       <div
         className={cn(
-          "fixed top-0 left-0 z-12 h-screen w-full -translate-x-full overflow-hidden bg-white px-5 pt-[30px] pb-[100px] outline-none transition-transform duration-800 [height:100dvh]",
+          "fixed top-0 left-0 z-[999] h-screen w-full -translate-x-full overflow-hidden bg-white px-5 pt-[30px] pb-[100px] outline-none transition-transform duration-800 [height:100dvh]",
           isOpen && "pointer-events-auto translate-x-0",
         )}
         id="mobile-navigation-panel"

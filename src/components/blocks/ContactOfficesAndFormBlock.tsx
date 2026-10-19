@@ -2,6 +2,7 @@
 
 import { useActionState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/container";
 import { PhoneInputClient } from "@/components/ui/PhoneInputClient";
 import { contactPageContent } from "@/content/contact";
@@ -214,19 +215,14 @@ export function ContactForm() {
         <div className="text-xs font-normal text-muted max-[767px]:text-center">
           <p>{contactFormCopy.note}</p>
         </div>
-        <button
-          className="group/contact-submit relative inline-flex min-h-[49px] shrink-0 cursor-pointer overflow-hidden rounded-[30px] border-2 border-brand-red px-6 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-600 hover:border-[#4f4f4f] hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70 max-[767px]:w-full max-[767px]:justify-center"
+        <Button
           type="submit"
+          variant="primary"
           disabled={isPending}
+          className="min-h-[49px] max-[767px]:w-full"
         >
-          <span
-            className="absolute inset-0 bg-brand-red transition-transform duration-600 group-hover/contact-submit:translate-x-full"
-            aria-hidden="true"
-          />
-          <span className="relative">
-            {isPending ? contactFormCopy.sending : contactFormCopy.submit}
-          </span>
-        </button>
+          {isPending ? contactFormCopy.sending : contactFormCopy.submit}
+        </Button>
       </div>
     </form>
   );
@@ -262,7 +258,7 @@ export function ContactHeroSection({
           )}
           <h1
             id="contact-page-title"
-            className="font-display text-[50px] leading-[60px] font-medium tracking-[-1px] text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
+            className="font-montreal-medium text-[50px] leading-[60px] font-normal tracking-[-1px] text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
           >
             {title}
           </h1>
@@ -319,7 +315,7 @@ export function ContactFormSection({
             )}
             <h2
               id="inquiry-title"
-              className="mt-2 mb-2 font-display text-[32px] leading-[42px] font-medium text-ink max-[991px]:text-[26px] max-[991px]:leading-[34px] max-[767px]:text-[22px] max-[767px]:leading-[30px]"
+              className="mt-2 mb-2 font-montreal-medium text-[32px] leading-[42px] font-normal text-ink max-[991px]:text-[26px] max-[991px]:leading-[34px] max-[767px]:text-[22px] max-[767px]:leading-[30px]"
             >
               {title}
             </h2>
@@ -384,7 +380,7 @@ export function ContactOfficesSection({
             )}
             <h2
               id="offices-title"
-              className="font-display text-[35px] leading-[48px] font-medium text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-8"
+              className="font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-8"
             >
               {title}
             </h2>
@@ -402,7 +398,7 @@ export function ContactOfficesSection({
               data-aos="fade-up"
               className="rounded-[20px] border-[1.5px] border-[#e4e4e4] bg-white p-8 max-[1199px]:p-5 max-[991px]:rounded-[12px]"
             >
-              <h3 className="font-display text-2xl leading-normal font-medium text-ink max-[991px]:text-lg">
+              <h3 className="font-montreal-medium text-2xl leading-normal font-normal text-ink max-[991px]:text-lg">
                 {office.city}
               </h3>
               <address className="my-5 text-base leading-[26px] font-medium not-italic text-muted max-[991px]:my-3.5 max-[991px]:text-sm max-[991px]:leading-6">

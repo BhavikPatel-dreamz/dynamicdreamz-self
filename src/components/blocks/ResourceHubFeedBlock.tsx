@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/container";
 import { homeSectionCopy, insights } from "@/content/home";
 import { cn } from "@/lib/class-names";
@@ -38,7 +39,7 @@ export function ResourceHubFeedBlock({
     <section className={cn("overflow-hidden bg-white py-20 max-[991px]:py-[50px]", className)}>
       <Container>
         <div data-aos="fade-up" className="mx-auto mb-[47px] max-w-[700px] text-center max-[991px]:mb-[30px]">
-          <h2 className="text-[35px] leading-[1.38] font-medium text-ink max-[992px]:text-[30px] max-[767px]:text-2xl mb-6 max-[767px]:mb-4">
+          <h2 className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] mb-6 max-[767px]:mb-4">
             {title}
           </h2>
         </div>
@@ -86,7 +87,7 @@ export function ResourceHubFeedBlock({
                     </div>
                     <div className="blog-title">
                       <Link className="group/title block" href={item.href}>
-                        <h3 className="font-display text-xl leading-[30px] font-normal tracking-normal transition-colors duration-300 ease-in-out group-hover/title:text-brand-red group-focus-visible/title:text-brand-red max-[767px]:text-base max-[767px]:leading-[normal]">
+                        <h3 className="font-montreal-medium text-[20px] leading-[28px] font-normal tracking-normal transition-colors duration-300 ease-in-out group-hover/title:text-brand-red group-focus-visible/title:text-brand-red max-[767px]:text-base max-[767px]:leading-[normal]">
                           {item.title}
                         </h3>
                       </Link>
@@ -98,12 +99,13 @@ export function ResourceHubFeedBlock({
           })}
         </div>
         <div data-aos="fade-up" className="mt-[50px] flex justify-center max-[767px]:mt-10">
-          <Link
-            className="inline-flex min-h-[49px] items-center justify-center rounded-[30px] bg-black px-6 py-[15px] text-base leading-[normal] font-bold text-white transition-colors duration-300 hover:bg-brand-red max-[992px]:min-h-[42px] max-[992px]:py-3 max-[992px]:text-sm"
+          <ButtonLink
+            className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] max-[992px]:min-h-[42px] max-[992px]:py-3 max-[992px]:text-sm"
+            variant="outline"
             href={ctaHref}
           >
             {ctaLabel}
-          </Link>
+          </ButtonLink>
         </div>
       </Container>
     </section>

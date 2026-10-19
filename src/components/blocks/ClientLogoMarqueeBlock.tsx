@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
+import marqueeStyles from "./ClientLogoMarqueeBlock.module.css";
 import { Container } from "@/components/ui/container";
 import {
   ClientLogoSlider,
@@ -54,14 +55,16 @@ export function ClientLogoMarqueeBlock({
   variant,
   content,
   mobileSpacing = "standard",
-  density = "standard",
+  density,
   showHeading = true,
   sliderSlides,
   sliderAutoplayStartDelayMs,
 }: ClientLogoMarqueeBlockProps) {
-  // If variant is home or shopifyHours, render the homepage style
-  if (variant === "home" || variant === "shopifyHours" || (!content && !density && !variant)) {
-    const isShopifyHours = variant === "shopifyHours";
+  // If variant is home or shopifyHours, or when called as BrandPartnersSection without content
+  const isHome = variant === "home" || (!variant && !content);
+  const isShopifyHours = variant === "shopifyHours";
+
+  if (isHome || isShopifyHours) {
     const h = (typeof heading === "string" ? heading : undefined) ?? homeSectionCopy.brandPartnersHeading;
     const d = description ?? homeSectionCopy.brandPartnersDescription;
     const list = (items as readonly ImageItem[] | undefined) ?? clientLogos;
@@ -97,53 +100,83 @@ export function ClientLogoMarqueeBlock({
                 {h}
               </h2>
             </div>
-            <div className="description w-full lg:w-[50%]">
+            <div className="description w-full lg:w-[48.3%]">
               <p className="m-0 font-sans text-base font-medium leading-[27px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
                 {d}
               </p>
             </div>
           </div>
 
-          {/* Desktop/tablet logo grid */}
+          {/* Desktop/tablet 5-column logo grid */}
           <div
             data-aos="fade-up"
-            className="hidden flex-wrap items-center justify-between min-[768px]:flex"
+            className={cn(
+              "grid grid-cols-5 -mx-3.75 max-[767px]:hidden",
+              isShopifyHours
+                ? "gap-y-0 min-[768px]:max-[992px]:grid-cols-4"
+                : "gap-y-[50px] min-[768px]:max-[992px]:mx-[-15px] min-[768px]:max-[992px]:h-[390px] min-[768px]:max-[992px]:grid-cols-4 min-[768px]:max-[992px]:content-between min-[768px]:max-[992px]:gap-y-[30px]",
+            )}
           >
             {list.map((logo) => (
               <div
+                className={cn(
+                  "flex items-center justify-center mx-[15px] min-[768px]:max-[992px]:mx-[15px] max-[992px]:px-[15px]",
+                  isShopifyHours ? "min-h-[113px] max-[992px]:min-h-[95px]" : "min-h-[50px]",
+                )}
                 key={logo.src}
-                className="flex h-[100px] w-1/4 items-center justify-center p-4 min-[768px]:max-[992px]:h-[80px]"
               >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
                   width={logo.width}
                   height={logo.height}
-                  className="max-h-[50px] w-auto object-contain"
+                  className="h-auto w-auto object-contain"
+                  sizes="(max-width: 767px) 120px, 180px"
                 />
               </div>
             ))}
           </div>
-
-          {/* Mobile logo rows */}
-          <div data-aos="fade-up" className="flex flex-col gap-6 min-[768px]:hidden">
-            {mobileRows.map((row, rowIdx) => (
-              <div key={rowIdx} className="flex items-center justify-around gap-4">
-                {row.map((logo) => (
-                  <div key={logo.src} className="flex h-[60px] items-center justify-center">
-                    <Image
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={logo.width}
-                      height={logo.height}
-                      className="max-h-[35px] w-auto object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
         </Container>
+
+        {/* Mobile 3-row moving ticker */}
+        <div data-aos="fade-up" className="hidden flex-col max-[767px]:flex" aria-hidden="true">
+          {mobileRows.map((row, index) => (
+            <div
+              className={cn(
+                "flex w-max items-center",
+                index > 0 && "mt-2.5",
+                index === 0 && "mb-5",
+                index === 2 && "ml-[-25%]",
+              )}
+              key={index}
+            >
+              {[0, 1, 2].map((set) => (
+                <div
+                  className={cn(
+                    "flex shrink-0 items-center",
+                    index === 1 ? marqueeStyles.moveRight : marqueeStyles.moveLeft,
+                  )}
+                  key={set}
+                >
+                  {row.map((logo) => (
+                    <span
+                      className="mx-[30px] flex w-[120px] min-w-[120px] shrink-0 items-center justify-center [&_img]:h-auto [&_img]:w-auto"
+                      key={`${set}-${logo.src}`}
+                    >
+                      <Image
+                        src={logo.src}
+                        alt=""
+                        width={logo.width}
+                        height={logo.height}
+                        sizes="(max-width: 767px) 120px, 180px"
+                      />
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </section>
     );
   }

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/container";
 import { sharedUiCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
@@ -118,7 +119,7 @@ function ProjectCard({
               <h3
                 className={cn(
                   resolvedCategory ? "mt-2.5 max-[1199px]:mt-[3px]" : "mt-0",
-                  "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1199px]:text-sm max-[1199px]:font-semibold",
+                  "font-montreal-medium text-lg leading-5 font-normal text-ink capitalize max-[1199px]:text-sm",
                 )}
               >
                 {item.name}
@@ -400,7 +401,7 @@ function ProjectList({ decorative = false }: { decorative?: boolean }) {
           <span className="relative block w-full overflow-hidden pb-[70%] min-[992px]:pb-[56.25%] min-[1200px]:pb-[68%] min-[1600px]:pb-[56.25%]">
             <ProjectMedia project={project} />
           </span>
-          <span className="relative flex flex-col items-start justify-between border-y border-r border-[#45433d] px-[30px] py-5 font-display text-[30px] leading-[1.2] font-medium text-white max-[1380px]:p-5 max-[1380px]:text-2xl max-[767px]:min-h-[94px] max-[767px]:p-4 max-[767px]:pr-[35px] max-[767px]:text-lg max-[767px]:leading-[1.24]">
+          <span className="relative flex flex-col items-start justify-between border-y border-r border-[#45433d] px-[30px] py-5 font-montreal-medium text-[30px] leading-[1.2] font-normal text-white max-[1380px]:p-5 max-[1380px]:text-2xl max-[767px]:min-h-[94px] max-[767px]:p-4 max-[767px]:pr-[35px] max-[767px]:text-lg max-[767px]:leading-[1.24]">
             <span>{project.name}</span>
             <span className="mt-2.5 block font-montserrat text-[15px] font-semibold uppercase leading-[1.29] text-white/80 max-[1199px]:text-[11px] max-[767px]:mt-[7px] max-[767px]:text-xs">
               {project.technology}
@@ -434,7 +435,9 @@ export function SelectedWorkSection({
         data-aos="fade-up"
         className="flex items-end justify-between max-[992px]:flex-col max-[992px]:items-start"
       >
-        <h2 className="mr-5 max-w-[600px] font-display text-[43px] font-medium leading-[1.2] text-white min-[768px]:max-[992px]:m-0 min-[768px]:max-[992px]:max-w-full max-[767px]:m-0 max-[767px]:mb-4 max-[767px]:max-w-full max-[767px]:text-[24px]">{title}</h2>
+        <h2 className="mr-5 max-w-[600px] font-montreal-medium text-[43px] font-normal leading-[1.2] text-white min-[768px]:max-[992px]:m-0 min-[768px]:max-[992px]:max-w-full max-[767px]:m-0 max-[767px]:mb-4 max-[767px]:max-w-full max-[767px]:text-[24px]">
+          {title}
+        </h2>
         <p className="max-w-[580px] font-sans text-base leading-7 font-medium text-white min-[768px]:max-[992px]:mt-2.5 min-[768px]:max-[992px]:max-w-full max-[767px]:max-w-full max-[767px]:text-sm max-[767px]:leading-[180%]">
           {description}
         </p>
@@ -450,7 +453,13 @@ export function SelectedWorkSection({
         </div>
       </div>
       <div data-aos="fade-up" className="flex justify-center">
-        <Link className="min-h-[49px] rounded-[30px] bg-white px-6 py-[15px] font-sans text-base leading-[normal] font-bold text-[#181e18] normal-case transition-colors hover:bg-white/90 max-[992px]:min-h-[42px] max-[992px]:py-3 max-[992px]:text-sm" href={ctaHref}>{ctaLabel}</Link>
+        <ButtonLink
+          className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:min-h-[42px] max-[992px]:py-3 max-[992px]:text-sm"
+          variant="light"
+          href={ctaHref}
+        >
+          {ctaLabel}
+        </ButtonLink>
       </div>
     </section>
   );

@@ -165,7 +165,7 @@ export function ServiceOfferingsGridBlock({
                         ) : service.iconSvg ? (
                           <div className="mb-4 size-10">{service.iconSvg}</div>
                         ) : null}
-                        <h3 className="mb-2 font-display text-lg font-medium text-ink">
+                        <h3 className="mb-2 font-montreal-medium text-lg font-normal text-ink">
                           {formatBrText(service.title)}
                         </h3>
                         <p className="text-sm font-medium leading-relaxed text-muted">
@@ -237,7 +237,7 @@ export function ServiceOfferingsGridBlock({
               </span>
             </div>
           ) : null}
-          <h2 className="font-display text-[35px] font-medium leading-[48px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
+          <h2 className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
             {formatBrText(resolvedHeading, "max-[1199px]:hidden")}
           </h2>
           {resolvedDescription ? (
@@ -265,7 +265,7 @@ export function ServiceOfferingsGridBlock({
                   ) : item.iconSvg ? (
                     <div className="icon relative z-10 mb-4 h-[50px] w-[50px]">{item.iconSvg}</div>
                   ) : null}
-                  <h3 className="relative z-10 mt-2 mb-2.5 font-display text-[20px] font-medium leading-[28px] text-ink max-[767px]:text-lg">
+                  <h3 className="relative z-10 mt-2 mb-2.5 font-montreal-medium text-[20px] font-normal leading-[28px] text-ink max-[767px]:text-lg">
                     {formatBrText(item.title, "max-[767px]:hidden")}
                   </h3>
                   <p className="relative z-10 font-sans text-base font-medium leading-[27px] tracking-[0.32px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
@@ -324,7 +324,7 @@ export function CommerceSolutionsSection({
           data-aos="fade-up"
           className="mb-[54px] flex items-center justify-between gap-10 max-[992px]:mb-8 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-0"
         >
-          <h2 id="commerce-solutions-title" className="w-[40%] font-display text-[43px] font-medium leading-[1.2] text-ink max-[1199px]:text-[35px] max-[992px]:w-full max-[992px]:text-[28px] max-[767px]:text-[24px]">
+          <h2 id="commerce-solutions-title" className="w-[40%] font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[1199px]:text-[30px] max-[992px]:w-full max-[992px]:text-[28px] max-[767px]:text-[24px]">
             {title}
           </h2>
           <p className="w-[47%] font-sans text-base leading-[1.9] font-medium text-muted max-[992px]:mt-2.5 max-[992px]:w-full max-[767px]:text-sm">
@@ -352,14 +352,14 @@ export function CommerceSolutionsSection({
                       <button
                         id={triggerId}
                         type="button"
-                        className="relative flex w-full cursor-pointer items-start justify-between gap-5 border-0 bg-transparent p-0 pr-10 text-left font-display text-xl leading-7 font-medium text-ink max-[767px]:flex-col max-[767px]:gap-1 max-[767px]:text-base max-[767px]:leading-6"
+                        className="relative flex w-full cursor-pointer items-start justify-between gap-5 border-0 bg-transparent p-0 pr-10 text-left font-montreal-medium text-xl leading-7 font-normal text-ink max-[767px]:flex-col max-[767px]:gap-1 max-[767px]:text-base max-[767px]:leading-6"
                         aria-expanded={isOpen}
                         aria-controls={panelId}
                         onClick={() => setActiveIndex(isOpen ? -1 : index)}
                       >
                         <span className="block">
                           <span className="block">{item.title}</span>
-                          <span className="mt-2.5 block font-display text-sm leading-none font-medium text-ink max-[767px]:mt-[5px] max-[767px]:text-[13px] max-[767px]:leading-normal">
+                          <span className="mt-2.5 block font-montserrat text-sm leading-none font-medium text-ink max-[767px]:mt-[5px] max-[767px]:text-[13px] max-[767px]:leading-normal">
                             {item.summary}
                           </span>
                         </span>
@@ -374,8 +374,28 @@ export function CommerceSolutionsSection({
                       <div className="overflow-hidden">
                         <div className="border-t border-[#6e7590]/10 pt-4 max-[767px]:pt-2.5">
                           <p className="mb-[15px] text-sm leading-6 font-normal text-muted">{item.body}</p>
-                          <Link className="inline-flex items-center gap-2 text-sm leading-none font-bold text-brand-red uppercase transition-colors hover:text-ink focus-visible:text-ink" href={item.href}>
-                            {item.cta} →
+                          <Link
+                            className="btn-link-arrow inline-flex items-center gap-2.5 font-montserrat text-sm leading-none font-bold text-brand-red uppercase transition-colors hover:text-ink focus-visible:text-ink"
+                            href={item.href}
+                          >
+                            <span>{item.cta}</span>
+                            <svg
+                              aria-hidden="true"
+                              className="size-2.5 shrink-0"
+                              fill="none"
+                              height="10"
+                              viewBox="0 0 10 10"
+                              width="10"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M1.00008 9.00008L9.00008 1.00008M9.00008 1.00008H2.60008M9.00008 1.00008V7.40008"
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="1.5"
+                              />
+                            </svg>
                           </Link>
                         </div>
                       </div>
@@ -391,10 +411,13 @@ export function CommerceSolutionsSection({
   );
 }
 
+import { ShopifyStageServicesBlock, ShopifyStageServicesSection } from "./ShopifyStageServicesBlock";
+
 export {
   ServiceOfferingsGridBlock as FeaturesGridSection,
   ServiceOfferingsGridBlock as AgencyServicesSection,
-  ServiceOfferingsGridBlock as ShopifyStageServicesSection,
+  ShopifyStageServicesSection,
+  ShopifyStageServicesBlock,
   ServiceOfferingsGridBlock as AiServicesGridSection,
   ServiceOfferingsGridBlock as ThemeCustomizationServicesSection,
   ServiceOfferingsGridBlock as ShopifyMigrationServicesSection,
@@ -407,3 +430,4 @@ export {
   ServiceOfferingsGridBlock as ShopifyHoursTasksSection,
   ServiceOfferingsGridBlock as ShopifyAppsGridSection,
 };
+

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/container";
 import { sharedUiCopy } from "@/content/common";
@@ -65,8 +64,8 @@ export function QuoteRequestCTABlock({
             <h2
               id="cta-banner-title"
               className={cn(
-                "font-display text-[30px] font-normal leading-[43.2px] tracking-[-0.6px] text-white max-[1199px]:text-[26px] max-[1199px]:leading-9 max-[767px]:text-[20px] max-[767px]:leading-7",
-                isMobileAppCta && "!font-montreal-medium !font-normal !tracking-normal",
+                "font-montreal-medium text-[30px] font-normal leading-[43.2px] tracking-[-0.6px] text-white max-[1199px]:text-[26px] max-[1199px]:leading-9 max-[767px]:text-[20px] max-[767px]:leading-7",
+                isMobileAppCta && "!tracking-normal",
               )}
             >
               {formatBrText(finalHeading)}
@@ -77,12 +76,12 @@ export function QuoteRequestCTABlock({
               </p>
             ) : null}
           </div>
-          <Link
+          <ButtonLink
             href={finalCtaHref}
-            className="inline-flex min-h-[50px] items-center justify-center rounded-[30px] bg-white px-6 py-[15px] font-montserrat text-base font-bold uppercase text-[#121212] transition-colors duration-300 hover:bg-black hover:text-white"
+            variant="light"
           >
             {finalCtaLabel}
-          </Link>
+          </ButtonLink>
         </div>
       </Container>
     </section>
@@ -120,12 +119,12 @@ export function WhiteLabelFinalCtaSection({
             </p>
           </div>
           <div className="shrink-0 max-[992px]:w-full max-[992px]:pb-[10.4px] max-[992px]:text-center">
-            <Link
-              className="inline-flex min-h-[46px] items-center justify-center rounded-[30px] bg-brand-red px-8 py-3.5 text-sm font-bold text-white transition-colors duration-300 hover:bg-black max-[992px]:min-h-0 max-[992px]:py-3 max-[992px]:text-sm max-[992px]:leading-[18px]"
+            <ButtonLink
               href={ctaHref}
+              variant="primary"
             >
               {cta.label}
-            </Link>
+            </ButtonLink>
           </div>
         </div>
       </Container>

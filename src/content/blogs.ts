@@ -30,7 +30,7 @@ export type BlogArchivePaginationItem = {
 };
 
 export const blogsPageContent = {
-  heroTitle: "Blogs",
+  heroTitle: "Ecommerce News, Trends & Professional Resources",
   search: {
     action: "/blogs",
     label: "Search blogs",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import styles from "@/components/blocks/TechStackShowcaseBlock.module.css";
 import { Container } from "@/components/ui/container";
 import { whiteLabelShopifySectionCopy, whiteLabelShopifyToolRows } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
@@ -82,7 +83,7 @@ export function TechStackShowcaseBlock(props: TechStackShowcaseBlockProps = {}) 
               key={col.category}
             >
               <div className="technologies-item h-full rounded-[20px] border border-[rgba(40,40,40,0.10)] bg-white p-[30px_25px] max-[991px]:rounded-[16px] max-[991px]:p-5">
-                <h3 className="mb-[25px] font-display text-[20px] font-medium leading-[132%] text-[#AD5151] max-[991px]:mb-[15px] max-[991px]:text-[18px]">
+                <h3 className="mb-[25px] font-montreal-medium text-[20px] font-medium leading-[132%] text-[#AD5151] max-[991px]:mb-[15px] max-[991px]:text-[18px]">
                   {col.category}
                 </h3>
                 <div className="item-list flex flex-wrap gap-2.5">
@@ -120,7 +121,7 @@ export function IntegrationsSection({
           data-aos="fade-up"
           className="section_title mb-[57px] flex items-center justify-center min-[768px]:max-[992px]:mb-[30px] max-[767px]:mb-[29px]"
         >
-          <h2 className="m-0 max-w-[540px] font-display text-[43px] font-normal leading-[1.2] tracking-normal text-ink max-[1199px]:max-w-[400px] max-[1199px]:text-[35px] max-[1199px]:leading-[48.475px] max-[992px]:mb-2.5 max-[992px]:max-w-full max-[992px]:text-left max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
+          <h2 className="m-0 max-w-[540px] font-montreal-medium text-[43px] font-normal leading-[1.2] tracking-normal text-ink max-[1199px]:max-w-[400px] max-[1199px]:text-[35px] max-[1199px]:leading-[48.475px] max-[992px]:mb-2.5 max-[992px]:max-w-full max-[992px]:text-left max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
             {title}
           </h2>
         </div>
@@ -133,7 +134,14 @@ export function IntegrationsSection({
         {integrationLogoRows.map((row, index) => (
           <div className="flex w-full min-h-[50px] max-[767px]:min-h-[30px] items-center overflow-hidden" key={index}>
             {[0, 1, 2].map((set) => (
-              <div className="flex shrink-0 items-center animate-[marquee_25s_linear_infinite]" key={set} aria-hidden={set > 0 || undefined}>
+              <div
+                className={cn(
+                  "flex shrink-0 items-center",
+                  index === 0 ? styles.moveLeft : styles.moveRight,
+                )}
+                key={set}
+                aria-hidden={set > 0 || undefined}
+              >
                 {row.map((logo: any) => (
                   <span className="mx-[45px] flex items-center justify-center max-[767px]:mx-6 [&_img]:h-auto [&_img]:w-auto [&_img]:object-contain max-[767px]:[&_img]:max-h-[30px] max-[767px]:[&_img]:max-w-[120px]" key={`${set}-${logo.src}`}>
                     <Image src={logo.src} alt={logo.name || logo.alt || ""} width={logo.width || 120} height={logo.height || 40} className="h-auto max-h-[40px] w-auto object-contain" />
@@ -201,9 +209,7 @@ export function WhiteLabelToolsSection({
                 aria-hidden={grp > 0 || undefined}
                 className={cn(
                   "flex shrink-0 items-center",
-                  rIdx % 2 === 0
-                    ? "animate-[marquee_50s_linear_infinite]"
-                    : "animate-[marquee_50s_linear_infinite_reverse]",
+                  rIdx % 2 === 0 ? styles.forward : styles.reverse,
                 )}
               >
                 {row.map((item) => (
