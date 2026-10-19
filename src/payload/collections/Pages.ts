@@ -115,6 +115,7 @@ import { LetsBuildBlock } from "@/payload/blocks/LetsBuildBlock";
 import { TechnologiesWorkWithBlock } from "@/payload/blocks/TechnologiesWorkWithBlock";
 import { ServicesCaseStudiesBlock } from "@/payload/blocks/ServicesCaseStudiesBlock";
 import { MigrationProcessBlock } from "@/payload/blocks/MigrationProcessBlock";
+import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const Pages: CollectionConfig = {
@@ -124,8 +125,9 @@ export const Pages: CollectionConfig = {
     defaultColumns: ["title", "slug", "updatedAt"],
     livePreview: {
       url: ({ data }) => {
-        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-        return `${baseUrl}/api/draft?secret=${process.env.PAYLOAD_SECRET || ""}&slug=${data.slug || ""}`;
+        const slug = typeof data.slug === "string" ? data.slug : "";
+        const path = !slug || slug === "home" || slug === "index" ? "/" : `/${slug}`;
+        return previewDraftPath(path, slug);
       },
     },
   },
