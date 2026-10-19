@@ -10,7 +10,7 @@ export const ShopifyCroServicesBlock: Block = {
     {
       name: "items",
       type: "array",
-      dbName: "scs_items",
+      dbName: "scros_items",
       fields: [
         { name: "title", type: "text", required: true },
         { name: "description", type: "textarea", required: true },
@@ -19,7 +19,7 @@ export const ShopifyCroServicesBlock: Block = {
         {
           name: "deliverables",
           type: "array",
-          dbName: "scs_deliv",
+          dbName: "scros_deliv",
           fields: [{ name: "item", type: "text", required: true }],
         },
       ],

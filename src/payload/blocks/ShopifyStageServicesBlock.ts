@@ -12,7 +12,7 @@ export const ShopifyStageServicesBlock: Block = {
     {
       name: "items",
       type: "array",
-      dbName: "sss_items",
+      dbName: "sstg_items",
       fields: [
         { name: "tag", type: "text" },
         { name: "title", type: "text", required: true },
@@ -20,7 +20,7 @@ export const ShopifyStageServicesBlock: Block = {
         {
           name: "pills",
           type: "array",
-          dbName: "sss_pills",
+          dbName: "sstg_pills",
           fields: [{ name: "text", type: "text" }],
         },
         {
