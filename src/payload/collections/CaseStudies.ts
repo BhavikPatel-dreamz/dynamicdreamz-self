@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const CaseStudies: CollectionConfig = {
@@ -8,8 +9,8 @@ export const CaseStudies: CollectionConfig = {
     defaultColumns: ["title", "slug", "clientName", "industry", "technology"],
     livePreview: {
       url: ({ data }) => {
-        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-        return `${baseUrl}/api/draft?secret=${process.env.PAYLOAD_SECRET || ""}&path=/case-studies/${data.slug || ""}&slug=${data.slug || ""}`;
+        const slug = typeof data.slug === "string" ? data.slug : "";
+        return previewDraftPath(`/case-studies/${slug}`, slug);
       },
     },
   },
