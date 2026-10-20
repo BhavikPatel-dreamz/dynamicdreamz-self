@@ -301,27 +301,27 @@ All 12 core service pages were successfully seeded and verified against Neon Pos
 1. **`shopify-plus-agency`** (ID: 28, 11 sections):
    - Blocks: `service-hero-video` → `industry-brands` → `shopify-plus-proof` → `portfolio-showcase` → `shopify-stage-services` → `case-study-cards` → `industries-grid` → `pricing-models` → `happy-clients` → `evaluation-framework` → `faq-accordion`
 2. **`shopify-cro-agency`** (ID: 47, 11 sections):
-   - Blocks: `service-hero-video` → `industry-brands` → `shopify-cro-barriers` → `shopify-cro-revenue-impact` → `shopify-cro-services` → `shopify-cro-assessment` → `shopify-cro-process` → `shopify-cro-why` → `shopify-cro-engagement` → `portfolio-showcase` → `faq-accordion`
+   - Blocks: `service-hero-video` → `industry-brands` → `shopify-cro-barriers` → `shopify-cro-revenue-impact` → `shopify-cro-services` → `shopify-cro-assessment` → `shopify-cro-process` → `shopify-cro-why` → `shopify-cro-engagement` → `faq-accordion` → `cta-banner`
 3. **`shopify-certified-developers`** (ID: 25, 10 sections):
    - Blocks: `service-hero-video` → `industry-brands` → `verified-knowledge` → `credential-evidence` → `credential-tabs` → `certified-agency-support` → `certified-services` → `partner-directory-proof` → `faq-accordion` → `white-label-final-cta`
 4. **`shopify-experts`** (ID: 27, 11 sections):
    - Blocks: `service-hero-video` → `industry-brands` → `process-timeline` → `why-choose-shopify-migration` → `shopify-stage-services` → `theme-customization-services` → `ai-empowered-delivery` → `portfolio-showcase` → `pricing-models` → `happy-clients` → `faq-accordion`
 5. **`buy-shopify-development-hours`** (ID: 26, 8 sections):
-   - Blocks: `shopify-hours-hero` → `industry-brands` → `proof-counters` → `shopify-hours-comparison` → `shopify-hours-tasks` → `numbered-process-timeline` → `happy-clients` → `faq-accordion`
+   - Blocks: `shopify-hours-hero` → `theme-customization-services` → `shopify-team-boxes` → `shopify-hours-comparison` → `shopify-hours-tasks` → `numbered-process-timeline` → `brand-partners` → `faq-accordion`
 6. **`shopify-maintenance-services`** (ID: 122, 7 sections):
    - Blocks: `service-hero-video` → `industry-brands` → `agency-services` → `portfolio-showcase` → `pricing-models` → `happy-clients` → `faq-accordion`
 7. **`shopify-development-agency`** (ID: 101, 10 sections):
    - Blocks: `service-hero-video` → `industry-brands` → `shopify-stage-services` → `portfolio-showcase` → `shopify-team-boxes` → `pricing-models` → `shopify-horizontal-process` → `happy-clients` → `faq-accordion` → `cta-banner`
 8. **`shopify-apps`** (ID: 54, 3 sections):
-   - Blocks: `shopify-apps-hero` → `shopify-apps-grid` → `image-cta`
+   - Blocks: `shopify-apps-hero` → `shopify-apps-grid` → `cta-banner`
 9. **`risks-of-shopify-outsourcing`** (ID: 102, 5 sections):
    - Blocks: `hero` → `risks-shopify-topics` → `faq-accordion` → `image-cta` → `cta-banner`
 10. **`shopify-theme-customization`** (ID: 55, 13 sections):
     - Blocks: `service-hero-video` → `industry-brands` → `theme-customization-services` → `shopify-team-boxes` → `process-timeline` → `theme-customization-approach` → `shopify-themes-grid` → `ai-empowered-delivery` → `why-choose-shopify-migration` → `portfolio-showcase` → `pricing-models` → `happy-clients` → `faq-accordion`
 11. **`ai-services`** (ID: 29, 11 sections):
-    - Blocks: `service-hero-video` → `industry-brands` → `proof-counters` → `ai-services-grid` → `two-col-image-with-text` → `features-grid` → `recent-architecture-patterns` → `pricing-models` → `portfolio-showcase` → `happy-clients` → `faq-accordion`
+    - Blocks: `service-hero-video` → `industry-brands` → `theme-customization-services` → `ai-services-grid` → `shopify-team-boxes` → `evaluation-framework` → `city-why-choose-boxes` → `city-why-choose-boxes` → `tech-keyword` → `happy-clients` → `faq-accordion`
 12. **`full-stack-development`** (ID: 30, 11 sections):
-    - Blocks: `service-hero-video` → `industry-brands` → `two-col-image-with-text` → `agency-services` → `tech-keyword` → `technologies-grid` → `two-col-image-with-text` → `pricing-models` → `portfolio-showcase` → `happy-clients` → `faq-accordion`
+    - Blocks: `city-page-hero` → `industry-brands` → `theme-customization-services` → `shopify-stage-services` → `technologies-work-with` → `recent-architecture-patterns` → `services-case-studies` → `evaluation-framework` → `city-why-choose-boxes` → `happy-clients` → `faq-accordion`
 
 ---
 

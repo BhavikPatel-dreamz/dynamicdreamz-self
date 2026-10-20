@@ -131,7 +131,8 @@ import { WhiteLabelWebsiteDesignAdvantageIcon, WhiteLabelWebsiteDesignBenefitIco
 import { shopifyHoursMobileLogoRows } from "@/content/buy-shopify-development-hours";
 import { whiteLabelShopifyDeliveryComparison } from "@/content/white-label-shopify-development";
 import { sharedUiCopy } from "@/content/common";
-import { shopifyPlusAgencyIndustries } from "@/content/shopify-plus-agency";
+import { shopifyPlusAgencyIndustries, shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
+import { industryBrandLogos } from "@/content/industries";
 import { mobileAppPlatformLabels } from "@/content/shopify-mobile-app-development";
 import { appmakerHeroCoBranding } from "@/content/appmaker-shopify-mobile-app-development";
 import { risksShopifyOutsourcingTopics } from "@/content/risks-of-shopify-outsourcing";
@@ -2692,7 +2693,9 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             const rawTestimonials =
               clientBlock.items && clientBlock.items.length > 0
                 ? clientBlock.items
-                : clientBlock.testimonials ?? [];
+                : clientBlock.testimonials && clientBlock.testimonials.length > 0
+                  ? clientBlock.testimonials
+                  : shopifyPlusAgencyTestimonials.items;
             const mappedItems: HappyClientTestimonialItem[] = [];
 
             for (const testimonial of rawTestimonials) {
@@ -3791,15 +3794,27 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
           case "industry-brands": {
             const ibBlock = block as BlockIndustryBrands;
-            const items = (ibBlock.items ?? []).map((item) => ({
-              name: item.name,
-              src: resolveMediaUrl(item.logo),
-              alt: item.alt || item.name,
-              url: item.url,
-              href: item.url || (item as { href?: string }).href,
-              width: item.width || 120,
-              height: item.height || 40,
-            }));
+            const rawItems =
+              ibBlock.items && ibBlock.items.length > 0 ? ibBlock.items : null;
+            const items = rawItems
+              ? rawItems.map((item) => ({
+                  name: item.name,
+                  src: resolveMediaUrl(item.logo) || (item as { src?: string }).src || "",
+                  alt: item.alt || item.name,
+                  url: item.url,
+                  href: item.url || (item as { href?: string }).href,
+                  width: item.width || 120,
+                  height: item.height || 40,
+                }))
+              : industryBrandLogos.map((l) => ({
+                  name: l.alt,
+                  src: l.src,
+                  alt: l.alt,
+                  url: l.href,
+                  href: l.href,
+                  width: l.width,
+                  height: l.height,
+                }));
 
             return (
               <IndustryBrandsSection
