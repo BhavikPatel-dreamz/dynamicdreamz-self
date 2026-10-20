@@ -177,6 +177,7 @@ export async function getPayloadPostBySlug(
       collection: "posts",
       where: { slug: { equals: slug } },
       draft: options?.preview,
+      overrideAccess: Boolean(options?.preview),
       limit: 1,
     });
     return res.docs[0] || null;
@@ -210,6 +211,7 @@ export async function getPayloadCaseStudyBySlug(
       collection: "case-studies",
       where: { slug: { equals: slug } },
       draft: options?.preview,
+      overrideAccess: Boolean(options?.preview),
       limit: 1,
     });
     return res.docs[0] || null;
@@ -235,6 +237,7 @@ export async function getPayloadPageBySlug(
         ],
       },
       draft: options?.preview,
+      overrideAccess: Boolean(options?.preview),
       // Page blocks contain nested Media and collection relationships (for
       // example, Happy Clients -> Testimonial -> avatar/logo). Populate them
       // before BlockRenderer adapts the values into the existing React UI.

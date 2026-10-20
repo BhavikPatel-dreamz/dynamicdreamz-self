@@ -129,10 +129,17 @@ export const Pages: CollectionConfig = {
     defaultColumns: ["title", "slug", "updatedAt"],
     livePreview: {
       url: ({ data }) => {
-        const slug = typeof data.slug === "string" ? data.slug : "";
+        const rawSlug = typeof data?.slug === "string" ? data.slug.trim() : "";
+        const slug = rawSlug.replace(/^\/+|\/+$/g, "");
         const path = !slug || slug === "home" || slug === "index" ? "/" : `/${slug}`;
-        return previewDraftPath(path, slug);
+        return previewDraftPath(path, slug || "home");
       },
+    },
+    preview: (doc) => {
+      const rawSlug = typeof doc?.slug === "string" ? doc.slug.trim() : "";
+      const slug = rawSlug.replace(/^\/+|\/+$/g, "");
+      const path = !slug || slug === "home" || slug === "index" ? "/" : `/${slug}`;
+      return previewDraftPath(path, slug || "home");
     },
   },
   access: {
