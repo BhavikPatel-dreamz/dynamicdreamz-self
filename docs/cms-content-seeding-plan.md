@@ -312,7 +312,8 @@ Localized service landing pages targeting specific ecommerce hubs.
 ### Archetype 11: Company, Legal & Utility Pages
 
 - **`home`** (10 sections): `hero` (home) → `brand-partners` → `shopify-plus-agency-overview` → `white-label-partner-banner` → `commerce-solutions` → `selected-work-marquee` → `testimonials-carousel` → `integrations-partners` → `latest-insights` → `faq-accordion`
-- **`about-us`** (7 sections): `about-hero` → `about-story` → `about-timeline` → `about-founders` → `about-team` → `about-values` → `cta-banner`
+- **`about-us`** (6 sections): `about-hero` → `about-story` → `about-timeline` → `about-founders` → `about-team` → `about-values` (strictly no extraneous bottom CTA banner; 1:1 live parity)
+- **`life-dynamicdreamz`** (5 sections): `life-hero` → `work-culture` → `life-hiring` → `faq-accordion` → `life-gallery` (1:1 live parity)
 - **`contact-us`** (5 sections): `contact-hero` → `contact-form` → `contact-offices` → `contact-details` → `faq-accordion`
 - **`career`** (4 sections): `career-hero` → `career-opportunities` → `career-perks` → `career-apply`
 - **`our-work`** (4 sections): `our-work-hero` → `industry-brands` → `our-work-projects` → `our-work-case-studies`

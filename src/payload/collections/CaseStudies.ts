@@ -9,9 +9,17 @@ export const CaseStudies: CollectionConfig = {
     defaultColumns: ["title", "slug", "clientName", "industry", "technology"],
     livePreview: {
       url: ({ data }) => {
-        const slug = typeof data.slug === "string" ? data.slug : "";
-        return previewDraftPath(`/case-studies/${slug}`, slug);
+        const rawSlug = typeof data?.slug === "string" ? data.slug.trim() : "";
+        const slug = rawSlug.replace(/^\/+|\/+$/g, "");
+        const path = slug ? `/case-studies/${slug}` : "/case-studies";
+        return previewDraftPath(path, slug);
       },
+    },
+    preview: (doc) => {
+      const rawSlug = typeof doc?.slug === "string" ? doc.slug.trim() : "";
+      const slug = rawSlug.replace(/^\/+|\/+$/g, "");
+      const path = slug ? `/case-studies/${slug}` : "/case-studies";
+      return previewDraftPath(path, slug);
     },
   },
   access: {

@@ -10,9 +10,17 @@ export const Posts: CollectionConfig = {
     defaultColumns: ["title", "slug", "categories", "date"],
     livePreview: {
       url: ({ data }) => {
-        const slug = typeof data.slug === "string" ? data.slug : "";
-        return previewDraftPath(`/blogs/${slug}`, slug);
+        const rawSlug = typeof data?.slug === "string" ? data.slug.trim() : "";
+        const slug = rawSlug.replace(/^\/+|\/+$/g, "");
+        const path = slug ? `/blogs/${slug}` : "/blogs";
+        return previewDraftPath(path, slug);
       },
+    },
+    preview: (doc) => {
+      const rawSlug = typeof doc?.slug === "string" ? doc.slug.trim() : "";
+      const slug = rawSlug.replace(/^\/+|\/+$/g, "");
+      const path = slug ? `/blogs/${slug}` : "/blogs";
+      return previewDraftPath(path, slug);
     },
   },
   access: {

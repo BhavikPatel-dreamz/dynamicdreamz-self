@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { draftMode } from "next/headers";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { RenderBlocks, type CmsSectionBlock } from "@/components/RenderBlocks";
+import { DraftModeIndicator, RefreshRouteOnSave } from "@/components/preview";
 import { draftPreviewCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
 import { getPayloadPageBySlug } from "@/lib/payload";
@@ -147,20 +147,14 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
           }}
         />
         {draft.isEnabled ? (
-          <aside
-            aria-label="Draft mode indicator"
-            className="fixed right-4 bottom-4 z-50 flex items-center gap-2 rounded-lg bg-amber-500 px-4 py-2 text-xs font-bold text-white shadow-xl"
-          >
-            <span>{draftPreviewCopy.badge}</span>
-            <span aria-hidden="true">{draftPreviewCopy.separator}</span>
-            <Link
-              className="underline transition-opacity hover:opacity-80 focus-visible:opacity-80"
-              href="/api/exit-preview"
-              prefetch={false}
-            >
-              {draftPreviewCopy.exit}
-            </Link>
-          </aside>
+          <>
+            <RefreshRouteOnSave />
+            <DraftModeIndicator
+              badge={draftPreviewCopy.badge}
+              exitLabel={draftPreviewCopy.exit}
+              separator={draftPreviewCopy.separator}
+            />
+          </>
         ) : null}
         <RenderBlocks sections={pageSections} />
       </main>
@@ -178,20 +172,14 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
           }}
         />
         {draft.isEnabled ? (
-          <aside
-            aria-label="Draft mode indicator"
-            className="fixed right-4 bottom-4 z-50 flex items-center gap-2 rounded-lg bg-amber-500 px-4 py-2 text-xs font-bold text-white shadow-xl"
-          >
-            <span>{draftPreviewCopy.badge}</span>
-            <span aria-hidden="true">{draftPreviewCopy.separator}</span>
-            <Link
-              className="underline transition-opacity hover:opacity-80 focus-visible:opacity-80"
-              href="/api/exit-preview"
-              prefetch={false}
-            >
-              {draftPreviewCopy.exit}
-            </Link>
-          </aside>
+          <>
+            <RefreshRouteOnSave />
+            <DraftModeIndicator
+              badge={draftPreviewCopy.badge}
+              exitLabel={draftPreviewCopy.exit}
+              separator={draftPreviewCopy.separator}
+            />
+          </>
         ) : null}
         {serviceEntry.render()}
       </main>

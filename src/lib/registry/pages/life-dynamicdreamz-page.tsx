@@ -1,8 +1,8 @@
 import { SplitFaqSection } from "@/components/blocks/FaqSectionBlock";
 import { LifeGallerySection } from "@/components/blocks/CultureBentoGalleryBlock";
-import { LifeHeroSection } from "@/components/blocks/MissionVisionValuesBlock";
-import { LifeHiringSection } from "@/components/blocks/MissionVisionValuesBlock";
-import { WorkCultureSection } from "@/components/blocks/MissionVisionValuesBlock";
+import { LifeHeroSection } from "@/components/blocks/LifeHeroBlock";
+import { LifeHiringSection } from "@/components/blocks/LifeHiringBlock";
+import { WorkCultureSection } from "@/components/blocks/WorkCultureBlock";
 import { lifeFaqSection } from "@/content/life-dynamicdreamz";
 
 export function LifeDynamicDreamzPage() {

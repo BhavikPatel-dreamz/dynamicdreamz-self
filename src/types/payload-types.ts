@@ -1191,6 +1191,57 @@ export interface Page {
             blockType: 'about-values';
           }
         | {
+            titleBeforeTeamwork?: string | null;
+            teamwork?: string | null;
+            titleAfterTeamwork?: string | null;
+            lead?: string | null;
+            description: string;
+            image?: (number | null) | Media;
+            imageAlt?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'life-hero';
+          }
+        | {
+            title: string;
+            description: string;
+            values?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'work-culture';
+          }
+        | {
+            title: string;
+            description: string;
+            cta: string;
+            href: string;
+            image?: (number | null) | Media;
+            imageAlt?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'life-hiring';
+          }
+        | {
+            images?:
+              | {
+                  image?: (number | null) | Media;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'life-gallery';
+          }
+        | {
             eyebrow?: string | null;
             title: string;
             description: string;
@@ -4240,6 +4291,61 @@ export interface PagesSelect<T extends boolean = true> {
                     title?: T;
                     description?: T;
                     iconName?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'life-hero'?:
+          | T
+          | {
+              titleBeforeTeamwork?: T;
+              teamwork?: T;
+              titleAfterTeamwork?: T;
+              lead?: T;
+              description?: T;
+              image?: T;
+              imageAlt?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'work-culture'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              values?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'life-hiring'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              cta?: T;
+              href?: T;
+              image?: T;
+              imageAlt?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'life-gallery'?:
+          | T
+          | {
+              images?:
+                | T
+                | {
+                    image?: T;
+                    alt?: T;
                     id?: T;
                   };
               id?: T;
