@@ -40,7 +40,7 @@ import { RequestQuotePage } from "@/components/blocks/MultiStepQuoteRequestBlock
 import { CareerHeroSection } from "@/components/blocks/ServiceHeroBlock";
 import { CareerOpportunitiesSection } from "@/components/blocks/JobOpeningsListBlock";
 import { CareerBenefitIcon } from "@/lib/icons/career-benefit-icons";
-import { ThemeCustomizationServicesSection } from "@/components/blocks/ServiceOfferingsGridBlock";
+import { ThemeCustomizationServicesSection } from "@/components/blocks/ThemeCustomizationServicesBlock";
 import { CareerApplyNowPage } from "@/lib/registry/pages/career-apply-now";
 import { ServiceHeroVideoSection } from "@/components/blocks/ServiceHeroBlock";
 import { IndustryBrandsSection } from "@/components/blocks/ClientLogoMarqueeBlock";
@@ -5090,6 +5090,27 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     href: b.href || "",
                   }))
                 : undefined;
+            const isFullStackHero =
+              cphBlock.title?.includes("Full Stack Development") ||
+              cphBlock.tabletSlider?.slides?.some((s) =>
+                (s.alt || "").includes("Don J") || (s.src || "").includes("donjjewellery"),
+              );
+            const topBadge = isFullStackHero
+              ? {
+                  src: "/assets/services/full-stack-development/node-js-development-badge.webp",
+                  alt: "Node.js development by Dynamic Dreamz",
+                  width: 346,
+                  height: 212,
+                }
+              : undefined;
+            const bottomBadge = isFullStackHero
+              ? {
+                  src: "/assets/services/full-stack-development/next-js-development-badge.webp",
+                  alt: "Next.js development by Dynamic Dreamz",
+                  width: 260,
+                  height: 252,
+                }
+              : undefined;
             const tabletSlider = cphBlock.tabletSlider
               ? {
                   bgShapeSrc:
@@ -5104,6 +5125,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                         height: s.height || 2380,
                       }))
                     : [],
+                  topBadge,
+                  bottomBadge,
                 }
               : undefined;
 
