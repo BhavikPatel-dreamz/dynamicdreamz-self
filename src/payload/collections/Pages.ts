@@ -28,11 +28,16 @@ import { AboutTimelineBlock } from "@/payload/blocks/AboutTimelineBlock";
 import { AboutFoundersBlock } from "@/payload/blocks/AboutFoundersBlock";
 import { AboutTeamBlock } from "@/payload/blocks/AboutTeamBlock";
 import { AboutValuesBlock } from "@/payload/blocks/AboutValuesBlock";
+import { LifeHeroBlock } from "@/payload/blocks/LifeHeroBlock";
+import { WorkCultureBlock } from "@/payload/blocks/WorkCultureBlock";
+import { LifeHiringBlock } from "@/payload/blocks/LifeHiringBlock";
+import { LifeGalleryBlock } from "@/payload/blocks/LifeGalleryBlock";
 import { OurWorkHeroBlock } from "@/payload/blocks/OurWorkHeroBlock";
 import { OurWorkProjectsBlock } from "@/payload/blocks/OurWorkProjectsBlock";
 import { OurWorkCaseStudiesBlock } from "@/payload/blocks/OurWorkCaseStudiesBlock";
 import { ContactHeroBlock } from "@/payload/blocks/ContactHeroBlock";
 import { ContactFormBlock } from "@/payload/blocks/ContactFormBlock";
+import { FormBlock } from "@/payload/blocks/FormBlock";
 import { ContactOfficesBlock } from "@/payload/blocks/ContactOfficesBlock";
 import { ContactDetailsBlock } from "@/payload/blocks/ContactDetailsBlock";
 import { DiscoveryCallBlock } from "@/payload/blocks/DiscoveryCallBlock";
@@ -115,6 +120,7 @@ import { LetsBuildBlock } from "@/payload/blocks/LetsBuildBlock";
 import { TechnologiesWorkWithBlock } from "@/payload/blocks/TechnologiesWorkWithBlock";
 import { ServicesCaseStudiesBlock } from "@/payload/blocks/ServicesCaseStudiesBlock";
 import { MigrationProcessBlock } from "@/payload/blocks/MigrationProcessBlock";
+import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
 export const Pages: CollectionConfig = {
@@ -124,9 +130,17 @@ export const Pages: CollectionConfig = {
     defaultColumns: ["title", "slug", "updatedAt"],
     livePreview: {
       url: ({ data }) => {
-        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-        return `${baseUrl}/api/draft?secret=${process.env.PAYLOAD_SECRET || ""}&slug=${data.slug || ""}`;
+        const rawSlug = typeof data?.slug === "string" ? data.slug.trim() : "";
+        const slug = rawSlug.replace(/^\/+|\/+$/g, "");
+        const path = !slug || slug === "home" || slug === "index" ? "/" : `/${slug}`;
+        return previewDraftPath(path, slug || "home");
       },
+    },
+    preview: (doc) => {
+      const rawSlug = typeof doc?.slug === "string" ? doc.slug.trim() : "";
+      const slug = rawSlug.replace(/^\/+|\/+$/g, "");
+      const path = !slug || slug === "home" || slug === "index" ? "/" : `/${slug}`;
+      return previewDraftPath(path, slug || "home");
     },
   },
   access: {
@@ -196,11 +210,16 @@ export const Pages: CollectionConfig = {
         AboutFoundersBlock,
         AboutTeamBlock,
         AboutValuesBlock,
+        LifeHeroBlock,
+        WorkCultureBlock,
+        LifeHiringBlock,
+        LifeGalleryBlock,
         OurWorkHeroBlock,
         OurWorkProjectsBlock,
         OurWorkCaseStudiesBlock,
         ContactHeroBlock,
         ContactFormBlock,
+        FormBlock,
         ContactOfficesBlock,
         ContactDetailsBlock,
         DiscoveryCallBlock,

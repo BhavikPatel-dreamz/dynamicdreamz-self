@@ -31,10 +31,15 @@ import { AboutTimelineSection } from "@/components/blocks/CompanyMilestonesTimel
 import { AboutFoundersSection } from "@/components/blocks/LeadershipTeamGridBlock";
 import { AboutTeamSection } from "@/components/blocks/LeadershipTeamGridBlock";
 import { AboutValuesSection } from "@/components/blocks/MissionVisionValuesBlock";
+import { LifeHeroSection } from "@/components/blocks/LifeHeroBlock";
+import { WorkCultureSection } from "@/components/blocks/WorkCultureBlock";
+import { LifeHiringSection } from "@/components/blocks/LifeHiringBlock";
+import { LifeGallerySection } from "@/components/blocks/CultureBentoGalleryBlock";
 import { OurWorkHeroSection } from "@/components/blocks/ServiceHeroBlock";
 import { OurWorkProjectsSection } from "@/components/blocks/FullPortfolioFilterBlock";
 import { OurWorkCaseStudiesSection } from "@/components/blocks/CaseStudySpotlightBlock";
 import { ContactHeroSection, ContactFormSection, ContactOfficesSection, ContactDetailsSection } from "@/components/blocks/ContactOfficesAndFormBlock";
+import { FormBlock } from "@/components/blocks/FormBlock";
 import { BookDiscoveryCallPage } from "@/components/blocks/DiscoveryCallBookingBlock";
 import { RequestQuotePage } from "@/components/blocks/MultiStepQuoteRequestBlock";
 import { CareerHeroSection } from "@/components/blocks/ServiceHeroBlock";
@@ -131,7 +136,8 @@ import { WhiteLabelWebsiteDesignAdvantageIcon, WhiteLabelWebsiteDesignBenefitIco
 import { shopifyHoursMobileLogoRows } from "@/content/buy-shopify-development-hours";
 import { whiteLabelShopifyDeliveryComparison } from "@/content/white-label-shopify-development";
 import { sharedUiCopy } from "@/content/common";
-import { shopifyPlusAgencyIndustries } from "@/content/shopify-plus-agency";
+import { shopifyPlusAgencyIndustries, shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
+import { industryBrandLogos } from "@/content/industries";
 import { mobileAppPlatformLabels } from "@/content/shopify-mobile-app-development";
 import { appmakerHeroCoBranding } from "@/content/appmaker-shopify-mobile-app-development";
 import { risksShopifyOutsourcingTopics } from "@/content/risks-of-shopify-outsourcing";
@@ -641,6 +647,55 @@ export interface BlockAboutValues {
   }[];
 }
 
+export interface BlockLifeHero {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  titleBeforeTeamwork?: string;
+  teamwork?: string;
+  titleAfterTeamwork?: string;
+  lead?: string;
+  description?: string;
+  image?: CmsMedia | string | null;
+  imageAlt?: string;
+}
+
+export interface BlockWorkCulture {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  description?: string;
+  values?: readonly {
+    title: string;
+    description: string;
+    icon?: CmsMedia | string | null;
+    alt?: string;
+  }[];
+}
+
+export interface BlockLifeHiring {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  description?: string;
+  cta?: string;
+  href?: string;
+  image?: CmsMedia | string | null;
+  imageAlt?: string;
+}
+
+export interface BlockLifeGallery {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  images?: readonly {
+    image?: CmsMedia | string | null;
+    alt?: string;
+  }[];
+}
+
 export interface BlockOurWorkHero {
   __component?: string;
   blockType?: string;
@@ -693,6 +748,20 @@ export interface BlockContactForm {
   eyebrow?: string;
   title?: string;
   description?: string;
+  form?: any;
+}
+
+export interface BlockForm {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  form: any;
+  enableIntro?: boolean;
+  introContent?: any;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  containerWidth?: "standard" | "narrow" | "wide";
 }
 
 export interface BlockContactOffices {
@@ -2085,11 +2154,16 @@ export type CmsSectionBlock =
   | BlockAboutFounders
   | BlockAboutTeam
   | BlockAboutValues
+  | BlockLifeHero
+  | BlockWorkCulture
+  | BlockLifeHiring
+  | BlockLifeGallery
   | BlockOurWorkHero
   | BlockOurWorkProjects
   | BlockOurWorkCaseStudies
   | BlockContactHero
   | BlockContactForm
+  | BlockForm
   | BlockContactOffices
   | BlockContactDetails
   | BlockDiscoveryCall
@@ -2692,7 +2766,9 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             const rawTestimonials =
               clientBlock.items && clientBlock.items.length > 0
                 ? clientBlock.items
-                : clientBlock.testimonials ?? [];
+                : clientBlock.testimonials && clientBlock.testimonials.length > 0
+                  ? clientBlock.testimonials
+                  : shopifyPlusAgencyTestimonials.items;
             const mappedItems: HappyClientTestimonialItem[] = [];
 
             for (const testimonial of rawTestimonials) {
@@ -3311,6 +3387,68 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             );
           }
 
+          case "life-hero": {
+            const lhBlock = block as BlockLifeHero;
+            const imageUrl = resolveMediaUrl(lhBlock.image);
+            return (
+              <LifeHeroSection
+                description={lhBlock.description}
+                image={imageUrl}
+                imageAlt={lhBlock.imageAlt}
+                key={blockKey}
+                lead={lhBlock.lead}
+                teamwork={lhBlock.teamwork}
+                titleAfterTeamwork={lhBlock.titleAfterTeamwork}
+                titleBeforeTeamwork={lhBlock.titleBeforeTeamwork}
+              />
+            );
+          }
+
+          case "work-culture": {
+            const wcBlock = block as BlockWorkCulture;
+            const customValues = wcBlock.values?.map((v) => ({
+              title: v.title,
+              description: v.description,
+              icon: resolveMediaUrl(v.icon),
+              alt: v.alt,
+            }));
+            return (
+              <WorkCultureSection
+                description={wcBlock.description}
+                key={blockKey}
+                title={wcBlock.title}
+                values={customValues}
+              />
+            );
+          }
+
+          case "life-hiring": {
+            const lhBlock = block as BlockLifeHiring;
+            const imageUrl = resolveMediaUrl(lhBlock.image);
+            return (
+              <LifeHiringSection
+                cta={lhBlock.cta}
+                description={lhBlock.description}
+                href={lhBlock.href}
+                image={imageUrl}
+                imageAlt={lhBlock.imageAlt}
+                key={blockKey}
+                title={lhBlock.title}
+              />
+            );
+          }
+
+          case "life-gallery": {
+            const lgBlock = block as BlockLifeGallery;
+            const customImages = lgBlock.images?.map((img) => ({
+              src: resolveMediaUrl(img.image),
+              alt: img.alt || "",
+              width: 334,
+              height: 406,
+            }));
+            return <LifeGallerySection images={customImages} key={blockKey} />;
+          }
+
           case "our-work-hero": {
             const owhBlock = block as BlockOurWorkHero;
             const customShowcaseImages =
@@ -3400,8 +3538,26 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               <ContactFormSection
                 description={cfBlock.description}
                 eyebrow={cfBlock.eyebrow}
+                form={cfBlock.form}
                 key={blockKey}
                 title={cfBlock.title}
+              />
+            );
+          }
+
+          case "form-block":
+          case "form": {
+            const fbBlock = block as BlockForm;
+            return (
+              <FormBlock
+                containerWidth={fbBlock.containerWidth}
+                description={fbBlock.description}
+                enableIntro={fbBlock.enableIntro}
+                eyebrow={fbBlock.eyebrow}
+                form={fbBlock.form}
+                introContent={fbBlock.introContent}
+                key={blockKey}
+                title={fbBlock.title}
               />
             );
           }
@@ -3791,15 +3947,27 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
           case "industry-brands": {
             const ibBlock = block as BlockIndustryBrands;
-            const items = (ibBlock.items ?? []).map((item) => ({
-              name: item.name,
-              src: resolveMediaUrl(item.logo),
-              alt: item.alt || item.name,
-              url: item.url,
-              href: item.url || (item as { href?: string }).href,
-              width: item.width || 120,
-              height: item.height || 40,
-            }));
+            const rawItems =
+              ibBlock.items && ibBlock.items.length > 0 ? ibBlock.items : null;
+            const items = rawItems
+              ? rawItems.map((item) => ({
+                  name: item.name,
+                  src: resolveMediaUrl(item.logo) || (item as { src?: string }).src || "",
+                  alt: item.alt || item.name,
+                  url: item.url,
+                  href: item.url || (item as { href?: string }).href,
+                  width: item.width || 120,
+                  height: item.height || 40,
+                }))
+              : industryBrandLogos.map((l) => ({
+                  name: l.alt,
+                  src: l.src,
+                  alt: l.alt,
+                  url: l.href,
+                  href: l.href,
+                  width: l.width,
+                  height: l.height,
+                }));
 
             return (
               <IndustryBrandsSection

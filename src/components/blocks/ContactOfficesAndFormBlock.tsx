@@ -5,9 +5,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/container";
 import { PhoneInputClient } from "@/components/ui/PhoneInputClient";
+import { CmsFormClient } from "@/components/forms/CmsFormClient";
 import { contactPageContent } from "@/content/contact";
 import { contactFormCopy } from "@/content/forms";
 import { type ContactFormState, submitContactForm } from "@/lib/actions/contact";
+import type { Form as PayloadForm } from "@/types/payload-types";
 
 function PhoneIcon() {
   return (
@@ -286,12 +288,14 @@ export type ContactFormSectionProps = {
   eyebrow?: string;
   title?: string;
   description?: string;
+  form?: PayloadForm | number | string | null;
 };
 
 export function ContactFormSection({
   eyebrow = contactPageContent.formSection.eyebrow,
   title = contactPageContent.formSection.title,
   description = contactPageContent.formSection.description,
+  form,
 }: ContactFormSectionProps = {}) {
   return (
     <section
@@ -324,7 +328,11 @@ export function ContactFormSection({
             </p>
           </div>
           <div className="p-10 max-[1199px]:p-[30px] max-[767px]:px-5 max-[767px]:py-[30px]">
-            <ContactForm />
+            {form && typeof form === "object" ? (
+              <CmsFormClient form={form} />
+            ) : (
+              <ContactForm />
+            )}
           </div>
         </div>
       </Container>

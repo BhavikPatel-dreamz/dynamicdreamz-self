@@ -127,3 +127,16 @@ export const careerApplyFormCopy = {
   },
 } as const;
 
+export const cmsFormCopy = {
+  ariaLabel: "Website form",
+  defaultSubmit: "Submit",
+  submitting: "Submitting...",
+  defaultSuccess: "Thank you! Your message has been received.",
+  defaultError: "There was a problem submitting your request. Please try again.",
+  requiredMarker: "*",
+  selectPlaceholder: "Select an option",
+  countryPlaceholder: "Select country",
+  statePlaceholder: "Select state",
+} as const;
+
+

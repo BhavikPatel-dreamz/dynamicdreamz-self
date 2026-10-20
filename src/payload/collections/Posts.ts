@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 import { blogContentBlocks } from "@/payload/blocks/blog";
 
@@ -9,9 +10,17 @@ export const Posts: CollectionConfig = {
     defaultColumns: ["title", "slug", "categories", "date"],
     livePreview: {
       url: ({ data }) => {
-        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-        return `${baseUrl}/api/draft?secret=${process.env.PAYLOAD_SECRET || ""}&path=/blogs/${data.slug || ""}&slug=${data.slug || ""}`;
+        const rawSlug = typeof data?.slug === "string" ? data.slug.trim() : "";
+        const slug = rawSlug.replace(/^\/+|\/+$/g, "");
+        const path = slug ? `/blogs/${slug}` : "/blogs";
+        return previewDraftPath(path, slug);
       },
+    },
+    preview: (doc) => {
+      const rawSlug = typeof doc?.slug === "string" ? doc.slug.trim() : "";
+      const slug = rawSlug.replace(/^\/+|\/+$/g, "");
+      const path = slug ? `/blogs/${slug}` : "/blogs";
+      return previewDraftPath(path, slug);
     },
   },
   access: {
