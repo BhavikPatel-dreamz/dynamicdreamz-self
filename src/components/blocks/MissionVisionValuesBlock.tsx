@@ -1,10 +1,7 @@
 import type { ReactNode } from "react";
-import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { VideoModalClient } from "@/components/ui/VideoModalClient";
 import { aboutSectionCopy, aboutStory, coreValues } from "@/content/about";
-import { cn } from "@/lib/class-names";
-import { formatBrText } from "@/lib/text-formatting";
 
 function AboutValueIcon({ name }: { name: string }): ReactNode {
   switch (name) {
@@ -169,7 +166,4 @@ export function AboutStorySection({
   );
 }
 
-export const LifeHeroSection = MissionVisionValuesBlock;
-export const LifeHiringSection = MissionVisionValuesBlock;
-export const WorkCultureSection = MissionVisionValuesBlock;
 export const ResourcesStorySection = MissionVisionValuesBlock;

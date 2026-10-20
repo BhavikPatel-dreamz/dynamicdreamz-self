@@ -58,6 +58,7 @@ const nextConfig: NextConfig = {
     // App Router: emit imported CSS as <style> in HTML instead of render-blocking
     // <link rel="stylesheet"> (production only). Tailwind + next/font CSS is ~42 KiB.
     inlineCss: true,
+    cpus: 1,
   },
   reactCompiler: true,
   // Next.js always bundles `polyfill-module` (Array.flat, Object.hasOwn, …)

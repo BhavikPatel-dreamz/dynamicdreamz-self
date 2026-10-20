@@ -28,6 +28,10 @@ import { AboutTimelineBlock } from "@/payload/blocks/AboutTimelineBlock";
 import { AboutFoundersBlock } from "@/payload/blocks/AboutFoundersBlock";
 import { AboutTeamBlock } from "@/payload/blocks/AboutTeamBlock";
 import { AboutValuesBlock } from "@/payload/blocks/AboutValuesBlock";
+import { LifeHeroBlock } from "@/payload/blocks/LifeHeroBlock";
+import { WorkCultureBlock } from "@/payload/blocks/WorkCultureBlock";
+import { LifeHiringBlock } from "@/payload/blocks/LifeHiringBlock";
+import { LifeGalleryBlock } from "@/payload/blocks/LifeGalleryBlock";
 import { OurWorkHeroBlock } from "@/payload/blocks/OurWorkHeroBlock";
 import { OurWorkProjectsBlock } from "@/payload/blocks/OurWorkProjectsBlock";
 import { OurWorkCaseStudiesBlock } from "@/payload/blocks/OurWorkCaseStudiesBlock";
@@ -198,6 +202,10 @@ export const Pages: CollectionConfig = {
         AboutFoundersBlock,
         AboutTeamBlock,
         AboutValuesBlock,
+        LifeHeroBlock,
+        WorkCultureBlock,
+        LifeHiringBlock,
+        LifeGalleryBlock,
         OurWorkHeroBlock,
         OurWorkProjectsBlock,
         OurWorkCaseStudiesBlock,

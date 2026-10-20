@@ -31,6 +31,10 @@ import { AboutTimelineSection } from "@/components/blocks/CompanyMilestonesTimel
 import { AboutFoundersSection } from "@/components/blocks/LeadershipTeamGridBlock";
 import { AboutTeamSection } from "@/components/blocks/LeadershipTeamGridBlock";
 import { AboutValuesSection } from "@/components/blocks/MissionVisionValuesBlock";
+import { LifeHeroSection } from "@/components/blocks/LifeHeroBlock";
+import { WorkCultureSection } from "@/components/blocks/WorkCultureBlock";
+import { LifeHiringSection } from "@/components/blocks/LifeHiringBlock";
+import { LifeGallerySection } from "@/components/blocks/CultureBentoGalleryBlock";
 import { OurWorkHeroSection } from "@/components/blocks/ServiceHeroBlock";
 import { OurWorkProjectsSection } from "@/components/blocks/FullPortfolioFilterBlock";
 import { OurWorkCaseStudiesSection } from "@/components/blocks/CaseStudySpotlightBlock";
@@ -639,6 +643,55 @@ export interface BlockAboutValues {
     title: string;
     description: string;
     iconName: string;
+  }[];
+}
+
+export interface BlockLifeHero {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  titleBeforeTeamwork?: string;
+  teamwork?: string;
+  titleAfterTeamwork?: string;
+  lead?: string;
+  description?: string;
+  image?: CmsMedia | string | null;
+  imageAlt?: string;
+}
+
+export interface BlockWorkCulture {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  description?: string;
+  values?: readonly {
+    title: string;
+    description: string;
+    icon?: CmsMedia | string | null;
+    alt?: string;
+  }[];
+}
+
+export interface BlockLifeHiring {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  description?: string;
+  cta?: string;
+  href?: string;
+  image?: CmsMedia | string | null;
+  imageAlt?: string;
+}
+
+export interface BlockLifeGallery {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  images?: readonly {
+    image?: CmsMedia | string | null;
+    alt?: string;
   }[];
 }
 
@@ -2086,6 +2139,10 @@ export type CmsSectionBlock =
   | BlockAboutFounders
   | BlockAboutTeam
   | BlockAboutValues
+  | BlockLifeHero
+  | BlockWorkCulture
+  | BlockLifeHiring
+  | BlockLifeGallery
   | BlockOurWorkHero
   | BlockOurWorkProjects
   | BlockOurWorkCaseStudies
@@ -3312,6 +3369,68 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 values={avBlock.values}
               />
             );
+          }
+
+          case "life-hero": {
+            const lhBlock = block as BlockLifeHero;
+            const imageUrl = resolveMediaUrl(lhBlock.image);
+            return (
+              <LifeHeroSection
+                description={lhBlock.description}
+                image={imageUrl}
+                imageAlt={lhBlock.imageAlt}
+                key={blockKey}
+                lead={lhBlock.lead}
+                teamwork={lhBlock.teamwork}
+                titleAfterTeamwork={lhBlock.titleAfterTeamwork}
+                titleBeforeTeamwork={lhBlock.titleBeforeTeamwork}
+              />
+            );
+          }
+
+          case "work-culture": {
+            const wcBlock = block as BlockWorkCulture;
+            const customValues = wcBlock.values?.map((v) => ({
+              title: v.title,
+              description: v.description,
+              icon: resolveMediaUrl(v.icon),
+              alt: v.alt,
+            }));
+            return (
+              <WorkCultureSection
+                description={wcBlock.description}
+                key={blockKey}
+                title={wcBlock.title}
+                values={customValues}
+              />
+            );
+          }
+
+          case "life-hiring": {
+            const lhBlock = block as BlockLifeHiring;
+            const imageUrl = resolveMediaUrl(lhBlock.image);
+            return (
+              <LifeHiringSection
+                cta={lhBlock.cta}
+                description={lhBlock.description}
+                href={lhBlock.href}
+                image={imageUrl}
+                imageAlt={lhBlock.imageAlt}
+                key={blockKey}
+                title={lhBlock.title}
+              />
+            );
+          }
+
+          case "life-gallery": {
+            const lgBlock = block as BlockLifeGallery;
+            const customImages = lgBlock.images?.map((img) => ({
+              src: resolveMediaUrl(img.image),
+              alt: img.alt || "",
+              width: 334,
+              height: 406,
+            }));
+            return <LifeGallerySection images={customImages} key={blockKey} />;
           }
 
           case "our-work-hero": {
