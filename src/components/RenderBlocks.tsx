@@ -39,6 +39,7 @@ import { OurWorkHeroSection } from "@/components/blocks/ServiceHeroBlock";
 import { OurWorkProjectsSection } from "@/components/blocks/FullPortfolioFilterBlock";
 import { OurWorkCaseStudiesSection } from "@/components/blocks/CaseStudySpotlightBlock";
 import { ContactHeroSection, ContactFormSection, ContactOfficesSection, ContactDetailsSection } from "@/components/blocks/ContactOfficesAndFormBlock";
+import { FormBlock } from "@/components/blocks/FormBlock";
 import { BookDiscoveryCallPage } from "@/components/blocks/DiscoveryCallBookingBlock";
 import { RequestQuotePage } from "@/components/blocks/MultiStepQuoteRequestBlock";
 import { CareerHeroSection } from "@/components/blocks/ServiceHeroBlock";
@@ -747,6 +748,20 @@ export interface BlockContactForm {
   eyebrow?: string;
   title?: string;
   description?: string;
+  form?: any;
+}
+
+export interface BlockForm {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  form: any;
+  enableIntro?: boolean;
+  introContent?: any;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  containerWidth?: "standard" | "narrow" | "wide";
 }
 
 export interface BlockContactOffices {
@@ -2148,6 +2163,7 @@ export type CmsSectionBlock =
   | BlockOurWorkCaseStudies
   | BlockContactHero
   | BlockContactForm
+  | BlockForm
   | BlockContactOffices
   | BlockContactDetails
   | BlockDiscoveryCall
@@ -3522,8 +3538,26 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               <ContactFormSection
                 description={cfBlock.description}
                 eyebrow={cfBlock.eyebrow}
+                form={cfBlock.form}
                 key={blockKey}
                 title={cfBlock.title}
+              />
+            );
+          }
+
+          case "form-block":
+          case "form": {
+            const fbBlock = block as BlockForm;
+            return (
+              <FormBlock
+                containerWidth={fbBlock.containerWidth}
+                description={fbBlock.description}
+                enableIntro={fbBlock.enableIntro}
+                eyebrow={fbBlock.eyebrow}
+                form={fbBlock.form}
+                introContent={fbBlock.introContent}
+                key={blockKey}
+                title={fbBlock.title}
               />
             );
           }

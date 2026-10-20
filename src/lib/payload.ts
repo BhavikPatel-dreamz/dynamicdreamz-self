@@ -958,3 +958,51 @@ export async function getPayloadAuthorBySlug(slug: string) {
     return null;
   }
 }
+
+export async function getPayloadFormById(id: number | string) {
+  try {
+    const payload = await getPayload({ config });
+    return await payload.findByID({
+      collection: "forms",
+      id: typeof id === "string" && !isNaN(Number(id)) ? Number(id) : id,
+      depth: 2,
+    });
+  } catch (err) {
+    console.warn(`Payload getPayloadFormById(${id}) warning:`, err);
+    return null;
+  }
+}
+
+export async function getPayloadFormByTitle(title: string) {
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "forms",
+      where: {
+        title: { equals: title },
+      },
+      depth: 2,
+      limit: 1,
+    });
+    return res.docs[0] || null;
+  } catch (err) {
+    console.warn(`Payload getPayloadFormByTitle(${title}) warning:`, err);
+    return null;
+  }
+}
+
+export async function getPayloadForms(limit = 100) {
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "forms",
+      limit,
+      sort: "title",
+    });
+    return res.docs;
+  } catch (err) {
+    console.warn("Payload getPayloadForms warning:", err);
+    return [];
+  }
+}
+
