@@ -288,11 +288,11 @@ or separately approved assets:
   card grids, metric counters, logo marquees, testimonial sliders, accordions,
   video dialogs, CTA banners), DOM structure, and Tailwind styling—not just by
   filename.
-- **Safe Reuse & Extension**: Reuse a suitable existing component directly. If
-  an existing component is close but needs a minor variant or additional prop,
-  extend/modify it with optional typed props, variant styles, or slots.
-  **Zero Breakage**: Always ensure changes are strictly backward-compatible so
-  all existing consumers and pages remain completely intact.
+- **Safe Reuse & Direct Modification**: Reuse a suitable existing component directly. If
+  an existing component is close but needs a modification, modify it directly without
+  backward-compatibility layers (backward compatibility is not used in the future).
+  **Zero Breakage**: Always update all existing consumers and pages across the
+  codebase so everything remains completely intact and unbroken.
 - **Pragmatic Creation**: If no matching or adaptable component exists after a
   proper search, build a new component freely. There is no rigid rule forbidding
   new components when the visual design, semantics, or interaction are distinct.
