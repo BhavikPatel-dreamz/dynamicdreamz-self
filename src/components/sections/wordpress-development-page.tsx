@@ -2,11 +2,13 @@ import { AgencyServicesSection } from "@/components/sections/agency-services-sec
 import { CityPageHeroSection } from "@/components/sections/city-page-hero-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
+import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { WordPressCustomizationIcon } from "@/components/sections/wordpress/wordpress-customization-icons";
 import {
   wordpressDevelopmentCta,
+  wordpressDevelopmentEngagement,
   wordpressDevelopmentFaqs,
   wordpressDevelopmentHero,
   wordpressDevelopmentPortfolio,
@@ -35,6 +37,7 @@ export function WordPressDevelopmentPage() {
         hideCta
         id="services"
       />
+      <PricingTableSection content={wordpressDevelopmentEngagement} />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
         columns={4}

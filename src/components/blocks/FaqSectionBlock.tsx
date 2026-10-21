@@ -48,7 +48,9 @@ export function FaqSectionBlock({
 
   const isSkyBlue =
     idPrefix.startsWith("white-label-website-design") ||
-    idPrefix.startsWith("white-label-wordpress");
+    idPrefix.startsWith("white-label-wordpress") ||
+    idPrefix.startsWith("white-label-shopify") ||
+    idPrefix.startsWith("shopify-certified-developers");
   const isWhite = idPrefix.startsWith("food-beverage");
   const isPt0 = idPrefix.startsWith("risks-of-shopify-outsourcing");
   const isMobileAppFaq = idPrefix.startsWith("shopify-mobile-app");
@@ -73,9 +75,9 @@ export function FaqSectionBlock({
       id={sectionId ?? `${idPrefix}-section`}
     >
       <Container className={containerClass}>
-        <div className="flex justify-between gap-[105px] max-[1399px]:gap-8 max-[991px]:flex-col max-[991px]:gap-[30px]">
+        <div className="wrapper flex justify-between gap-[105px] max-[1399px]:gap-8 max-[991px]:flex-col max-[991px]:gap-[30px]">
           <div className="w-[41%] max-[1199px]:w-[44%] max-[991px]:w-full" data-aos="fade-up">
-            <header className="mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
+            <header className="header-text mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
               {eyebrow ? (
                 <div className="eyebrow relative mb-4 inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:before:top-[6px] max-[767px]:pl-6 max-[767px]:before:top-[4px] max-[767px]:before:w-[15px]">
                   <span className="font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-xs max-[767px]:text-[10px]">
@@ -99,7 +101,7 @@ export function FaqSectionBlock({
               ) : null}
             </header>
           </div>
-          <div className="w-[57%] max-w-[654px] grow max-[1199px]:w-[53%] max-[1199px]:max-w-none max-[991px]:w-full" data-aos="fade-up">
+          <div className="accordion-main w-[57%] max-w-[654px] grow max-[1199px]:w-[53%] max-[1199px]:max-w-none max-[991px]:w-full" data-aos="fade-up">
             <AccordionClient
               animateOnReveal={animateOnReveal}
               answerClassName={answerClassName}

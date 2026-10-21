@@ -7,13 +7,20 @@ import type { ThemeWhyChooseSectionProps } from "@/components/sections/theme-cus
 import type { IndustriesServedContent } from "@/components/sections/shopify-plus-agency/industries-served-section";
 import type { PillListContent } from "@/components/sections/pill-list-section";
 import type { LetsBuildContent } from "@/components/sections/lets-build-section";
+import { industryBrandLogos } from "@/content/industries";
 
 export const seoServicesSectionCopy = {
-  faqHeading: "FAQs",
+  faqHeading: "Frequently Asked Questions",
+} as const;
+
+export const seoServicesBrands = {
+  heading: "Trusted by \nLeading Brands",
+  slug: "seo-services",
+  items: industryBrandLogos,
 } as const;
 
 export const seoServicesHeroContent: ServiceHeroContent = {
-  title: "Reduce Ad Spend by 70% With Organic Marketing",
+  title: "SEO Services for Sustainable Organic Growth",
   description:
     "Our SEO services help businesses grow organically by enhancing visibility across search engines like Google. We offer strategic SEO optimization, which involves link building, technical improvements, content upgrades, and keyword research. We focus on increasing search rankings, attracting high-quality traffic, and driving long-term growth. Whether you are a service provider, local business, or eCommerce brand, our expert SEO services are designed to deliver measurable results.",
   secondaryDescription:

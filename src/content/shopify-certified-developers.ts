@@ -1,15 +1,14 @@
 import type { HeroBadge, ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-import type { WhiteLabelFinalCta } from "@/types/white-label-service";
 
 export const shopifyCertifiedDevelopersHero = {
   eyebrowSpans: ["Established in 2006", "Shopify Platinum Partner"] as const,
-  title: "Hire Shopify Certified Developers for work that needs to be done right.",
+  title: "Shopify Certified Developers with Verified Shopify Credentials",
   paragraphs: [
     "Build, customize or improve your Shopify store with developers who hold official Shopify credentials—and work within Dynamic Dreamz, a Shopify Platinum Partner agency with deep ecommerce experience.",
   ],
   cta: "Discuss your Shopify project",
-  ctaHref: "/request-quote",
+  ctaHref: "/book-a-discovery-call",
   secondaryCta: {
     label: "see our certifications",
     href: "#see_our_certifications",
@@ -52,7 +51,8 @@ export const shopifyCertifiedDevelopersHero = {
 } satisfies ServiceHeroVideoContent;
 
 export const verifiedShopifyKnowledge = {
-  heading: "Verified Shopify knowledge applied to real business requirements.",
+  eyebrow: "Shopify Certified",
+  heading: "Verified Shopify Knowledge Applied to Real Business Requirements.",
   description:
     "Certifications make expertise visible. They show where a developer has completed Shopify learning and demonstrated knowledge. At Dynamic Dreamz, those credentials are combined with hands-on delivery experience, technical review and structured QA.",
   items: [
@@ -81,9 +81,10 @@ export const verifiedShopifyKnowledge = {
 } as const;
 
 export const shopifyCredentialEvidence = {
-  heading: "Evidence you can see, not a generic expertise claim.",
+  eyebrow: "Certified Expertise",
+  heading: "Evidence You Can See, Not a Generic Expertise Claim.",
   description:
-    "Each credential represents a specific capability within the Shopify ecosystem. Showing the credential, its exact name and the number of credentialed developers gives merchants a clearer basis for evaluating the team.",
+    "Certifications make expertise visible. They show where a developer has completed Shopify learning and demonstrated knowledge. At Dynamic Dreamz, those credentials are combined with hands-on delivery experience, technical review and structured QA.",
   items: [
     {
       title: "Shopify Development Fundamentals",
@@ -124,7 +125,8 @@ export const shopifyCredentialEvidence = {
 } as const;
 
 export const shopifyCredentialTabs = {
-  heading: "Which Shopify credential is most relevant to your project?",
+  eyebrow: "Shopify Credentials",
+  heading: "Which Shopify Credential Is Most Relevant to Your Project?",
   description:
     "Select your requirement to understand which credentialed knowledge and practical capabilities are most useful.",
   items: [
@@ -238,7 +240,8 @@ export const shopifyCredentialTabs = {
 } as const;
 
 export const certifiedAgencySupport = {
-  heading: "Certified developers, supported by an experienced agency system.",
+  eyebrow: "Beyond Development",
+  heading: "Certified Developers, Supported by an Experienced Agency System.",
   paragraphs: [
     "Hiring through Dynamic Dreamz gives you more than access to one developer. Your project can also draw on technical review, QA, project coordination and specialist support where the scope requires it.",
     "This is especially useful for complex storefronts, B2B projects and ongoing work where continuity and accountability matter.",
@@ -268,7 +271,8 @@ export const certifiedAgencySupport = {
 } as const;
 
 export const certifiedDeveloperServices = {
-  heading: "What our Shopify Certified Developers can help you deliver.",
+  eyebrow: "What We Deliver",
+  heading: "What Our Shopify Certified Developers Can Help You Deliver",
   description:
     "A focused service summary captures relevant commercial searches without duplicating every Shopify service page on your website.",
   items: [
@@ -326,19 +330,19 @@ export const shopifyPartnerDirectoryProof = {
       label: "Shopify Partner tier",
     },
     {
-      kind: "rating",
-      value: "5.0",
-      label: "Current directory rating",
+      kind: "text",
+      value: "20+",
+      label: "Years of Experience",
     },
     {
       kind: "text",
-      value: "80+",
-      label: "Shopify directory reviews",
+      value: "150+",
+      label: "Experts",
     },
     {
       kind: "text",
-      value: "2013",
-      label: "Partner since September",
+      value: "2500+",
+      label: "Verified 5 star Reviews",
     },
   ],
 } as const;
@@ -439,13 +443,6 @@ export const shopifyCertifiedDevelopersFaqs = [
     ],
   },
 ] as const satisfies readonly FaqAccordionItem[];
-
-export const shopifyCertifiedDevelopersFinalCta = {
-  title: "Have a Shopify requirement that needs certified expertise?",
-  description:
-    "Share your store and project goals with Dynamic Dreamz. We’ll review the requirement and recommend the most relevant Shopify expertise and engagement approach.",
-  label: "discuss your shopify project",
-} as const satisfies WhiteLabelFinalCta;
 
 export const shopifyCertifiedDevelopersBrands = {
   slug: "shopify-certified-developers",

@@ -3,6 +3,7 @@ import { MagentoMigrationIcon } from "@/components/sections/magento-to-shopify/m
 import { MigrationPlatformIcon } from "@/components/sections/migration-platform-icons";
 import { ShopifyMigrationLandingTemplate } from "@/components/sections/shopify-migration-landing-template";
 import { WooCommerceMigrationIcon } from "@/components/sections/woocommerce-to-shopify/woocommerce-migration-icons";
+import { ThemeCustomizationApproachSection } from "@/components/sections/theme-customization-approach-section";
 import { pageMetadata } from "@/data/seo";
 import {
   createBigCommerceToShopifyMigrationPageSchema,
@@ -24,6 +25,8 @@ import {
   bigcommerceMigrationSectionCopy,
   bigcommerceProcessContent,
   bigcommerceTestimonials,
+  bigcommerceVsShopifyContent,
+  bigcommerceWhyChooseContent,
   bigcommerceWhyMigrateContent,
 } from "@/content/bigcommerce-to-shopify-migration";
 import {
@@ -34,6 +37,7 @@ import {
   ecwidMigrationSectionCopy,
   ecwidProcessContent,
   ecwidTestimonials,
+  ecwidThingsToConsiderContent,
 } from "@/content/ecwid-to-shopify-migration";
 import {
   etsyBenefitsContent,
@@ -81,6 +85,7 @@ import {
   squareMigrationSectionCopy,
   squareProcessContent,
   squareTestimonials,
+  squareWhyChooseContent,
   squareWhyMigrateContent,
 } from "@/content/square-to-shopify-migration";
 import {
@@ -129,6 +134,11 @@ export const shopifyMigrationsRegistry: readonly ServicePageEntry[] = [
             items: bigcommerceFaqs,
           }}
           hero={bigcommerceHeroContent}
+          comparison={
+            <ThemeCustomizationApproachSection
+              content={bigcommerceVsShopifyContent}
+            />
+          }
           process={bigcommerceProcessContent}
           secondaryServices={{
             boxes: bigcommerceDataSecuredContent.boxes.map((box) => ({
@@ -143,6 +153,7 @@ export const shopifyMigrationsRegistry: readonly ServicePageEntry[] = [
             variant: "green",
           }}
           testimonials={bigcommerceTestimonials}
+          whyChoose={bigcommerceWhyChooseContent}
           whyMigrate={{
             boxes: bigcommerceWhyMigrateContent.boxes.map((box) => ({
               description: box.description,
@@ -175,6 +186,18 @@ export const shopifyMigrationsRegistry: readonly ServicePageEntry[] = [
           }}
           hero={ecwidHeroContent}
           process={ecwidProcessContent}
+          secondaryServices={{
+            boxes: ecwidThingsToConsiderContent.boxes.map((box) => ({
+              description: box.description,
+              icon: <MigrationPlatformIcon name={box.iconName} />,
+              title: box.title,
+            })),
+            description: ecwidThingsToConsiderContent.description,
+            eyebrow: ecwidThingsToConsiderContent.eyebrow,
+            heading: ecwidThingsToConsiderContent.heading,
+            id: "things-to-consider",
+            variant: "transparent",
+          }}
           testimonials={ecwidTestimonials}
           whyMigrate={{
             boxes: ecwidBenefitsContent.boxes.map((box) => ({
@@ -367,6 +390,7 @@ export const shopifyMigrationsRegistry: readonly ServicePageEntry[] = [
           hero={squareHeroContent}
           process={squareProcessContent}
           testimonials={squareTestimonials}
+          whyChoose={squareWhyChooseContent}
           whyMigrate={{
             boxes: squareWhyMigrateContent.boxes.map((box) => ({
               description: box.description,

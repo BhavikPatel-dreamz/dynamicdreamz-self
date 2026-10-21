@@ -63,6 +63,38 @@ export const ecwidBenefitsContent = {
   ],
 };
 
+export const ecwidThingsToConsiderContent = {
+  eyebrow: "Things to Consider",
+  heading: "Things to Consider Before Migrate from Ecwid to Shopify",
+  description: "",
+  boxes: [
+    {
+      iconName: "better-marketing-sales-tools" as MigrationPlatformIconName,
+      title: "Data Migration and Cleanup",
+      description:
+        "Before Ecwid to Shopify migration, you must clean up your existing data Ecwid, which contains unwanted data, remove outdated products, and remove incorrect customer information. Clean and neat data ensures a faster and more accurate migration from Ecwid to Shopify.",
+    },
+    {
+      iconName: "extensive-customization" as MigrationPlatformIconName,
+      title: "Theme and Design Considerations",
+      description:
+        "It is crucial to decide whether you want to redesign your store or want your existing store's look of Ecwid. Shopify allows you to create a custom theme or choose from various pre designed themes.",
+    },
+    {
+      iconName: "advanced-ecommerce-features" as MigrationPlatformIconName,
+      title: "Feature Differences",
+      description:
+        "Some Ecwid features might be absent when you migrate to Shopify. But don't worry; the Shopify app store can help you with its vast collection of Shopify apps. You can list the features you rely on in Ecwid and check availability on Shopify.",
+    },
+    {
+      iconName: "powerful-app-ecosystem" as MigrationPlatformIconName,
+      title: "Integration with Third Party App",
+      description:
+        "As Shopify and Ecwid are both different platforms, it is evident that some Ecwid apps do not match with Shopify apps. So before migration, you must find suitable Shopify apps to maintain your store's functionality.",
+    },
+  ],
+};
+
 export const ecwidProcessContent: MigrationProcessContent = {
   eyebrow: "Migration process",
   heading: "Ecwid to Shopify Migration Process",

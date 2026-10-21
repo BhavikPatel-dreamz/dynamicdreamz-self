@@ -10,7 +10,7 @@ export const shopifyDevelopmentBangaloreContent = {
   },
   hero: {
     eyebrows: ["Shopify Development", "Bangalore / Bengaluru"],
-    title: "#1 Company For Shopify Development in Bangalore",
+    title: "Shopify Development Company in Bangalore",
     description:
       "Dynamic Dreamz is a trustworthy Shopify development company in Bangalore, offering expert Shopify solutions tailored to your unique needs. From Shopify migration to custom theme design, our Shopify developers ensure your online store performs at its best, enhancing your brand’s reach and driving more growth.",
     primaryCta: {

@@ -115,16 +115,24 @@ Core proof points from the live site:
   visual layout, UI pattern (e.g. hero banners, card grids, stat counters, logo
   sliders, review carousels, accordions, video modals, split CTA sections), DOM
   structure, and Tailwind styling classes.
-- Strict component reuse & slight extension: Prioritize reusing existing
+- Strict component reuse & direct modification: Prioritize reusing existing
   components (`ButtonLink`, `Container`, `FaqSection`, `AiAutomationSection`,
   `AiDiscoverySection`, `CtaBannerSection`, `ServiceHeroSection`, etc.) over
   writing new code or raw inline markup (e.g. never write raw inline `<a>` tags
   with button styling when `ButtonLink` exists). If an existing component can
-  support the requirement with a slight modification (e.g. adding an optional
-  typed prop, variant flag, slot, or optional style modifier), you may extend
-  the existing component safely.
-  CRITICAL: Every modification/extension must be backward-compatible so that all
-  existing pages and consumers remain unbroken.
+  support the requirement with a modification, modify it directly rather than
+  writing extra, duplicate, or one-off code.
+- Modify directly without backward compatibility (Zero Breakage Guarantee):
+  Backward compatibility is NOT used or needed in the future because this is an
+  internal, closed application rather than a public library or external package.
+  When modifying or refactoring existing components, blocks, types, schemas, or
+  utilities, modify them directly and cleanly. Do NOT add or retain
+  backward-compatibility layers, deprecated shims, legacy fallback aliases, or
+  awkward optional props designed solely to preserve obsolete signatures.
+  CRITICAL: Modifying directly without backward compatibility requires zero
+  breakage across the codebase. You MUST identify and update all existing
+  callers, pages, routes, and consumers in the same pass so that zero pages
+  break and the build remains 100% clean (`npm run lint` and `npm run build`).
 - 100% Visual parity trumps forced reuse (Unique blocks for unique sections):
   100% visual, layout, and interaction parity with the live site is NON-NEGOTIABLE.
   When migrating, seeding, or integrating pages into Payload CMS:
@@ -307,9 +315,9 @@ Treat `src/components/ui/**`, `src/components/layout/**`, and existing shared
 sections as the primary foundation for page implementation:
 1. **Search Deeply First**: Search by layout structure, visual pattern, and UI
    role—not just filename.
-2. **Reuse & Extend Safely**: If an existing component is similar, reuse it or
-   extend it with backward-compatible optional typed props/variants. Never break
-   existing page usages.
+2. **Reuse & Modify Directly**: If an existing component is similar, reuse it or
+   modify it directly without backward-compatibility layers. Update all existing
+   callers across the codebase so zero breakage occurs.
 3. **Build Pragmatically**: If no matching or adaptable component exists, build a
    new component without hesitation.
 4. **Generalize for Future Pages**: Whenever building a new component, ensure it
@@ -333,7 +341,8 @@ Production-ready means the page is complete enough to deploy:
 - No duplicate image/media files stored under different paths or names when one
   canonical project-owned asset can serve every usage.
 - No duplicate or near-equivalent components when an existing component can
-  satisfy the requirement directly or through a backward-compatible typed variant.
+  satisfy the requirement directly or through clean direct modification
+  (updating all callers with zero breakage).
 - All newly created components are generalized, cleanly typed, and decoupled from
   hardcoded page data for future reusability.
 - No visible page/business copy is hardcoded in `src/components/**` or

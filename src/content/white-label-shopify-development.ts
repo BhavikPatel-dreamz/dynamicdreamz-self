@@ -45,7 +45,7 @@ export const whiteLabelShopifyHero = {
     "Dynamic Dreamz provides **white label Shopify development services for agencies** that need additional capacity or specialist Shopify expertise. From Shopify and Shopify Plus to B2B, migrations, custom apps, iOS & Android mobile apps, integrations, CRO, automation and ongoing development, our team works behind your agency while you stay in control of the client relationship.",
   ],
   cta: "book an agency intro",
-  ctaHref: "/request-quote",
+  ctaHref: "/book-a-discovery-call",
   secondaryCta: {
     label: "see pricing",
     href: "#our_white_label_pricing",

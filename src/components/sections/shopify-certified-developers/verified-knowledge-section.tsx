@@ -12,6 +12,7 @@ export type VerifiedKnowledgeItem = {
 };
 
 export type VerifiedKnowledgeContent = {
+  eyebrow?: string;
   heading: string | readonly string[];
   description: string | readonly string[];
   items: readonly VerifiedKnowledgeItem[];
@@ -26,13 +27,14 @@ export function VerifiedKnowledgeSection({
 }: VerifiedKnowledgeSectionProps) {
   return (
     <section
-      className="py-20 max-[992px]:py-[50px]"
+      className="verified-shopify-knowledge-section py-20 max-[992px]:py-[50px]"
       aria-labelledby="verified-shopify-knowledge-title"
     >
       <Container>
         <SplitSectionHeading
           className="mb-[70px] max-[1199px]:mb-[50px] max-[992px]:mb-[30px]"
           description={content.description}
+          eyebrow={content.eyebrow}
           heading={content.heading}
           headingId="verified-shopify-knowledge-title"
           textClassName="w-[calc(54%-15px)] max-[1199px]:w-[calc(43%-15px)]"

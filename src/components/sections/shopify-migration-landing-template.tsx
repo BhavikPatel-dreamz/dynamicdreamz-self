@@ -41,6 +41,7 @@ export type ShopifyMigrationLandingTemplateProps = {
     }[];
     variant?: "yellow" | "transparent" | "green";
   };
+  comparison?: ReactNode;
   secondaryServices?: {
     id?: string;
     eyebrow?: string;
@@ -74,6 +75,7 @@ export function ShopifyMigrationLandingTemplate({
   hero,
   brands,
   whyMigrate,
+  comparison,
   secondaryServices,
   process,
   whyChoose,
@@ -107,6 +109,9 @@ export function ShopifyMigrationLandingTemplate({
         id={whyMigrate.id ?? "why-migrate"}
         variant={whyMigrate.variant ?? "yellow"}
       />
+
+      {/* 3b. Platform Comparison (if present) */}
+      {comparison}
 
       {/* 4. Secondary Migration Services (if present) */}
       {secondaryServices ? (

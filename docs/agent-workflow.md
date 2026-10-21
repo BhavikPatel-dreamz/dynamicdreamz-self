@@ -30,15 +30,17 @@ The agent should then read:
    media assets thoroughly across `src/components/**` and `public/assets/**`
    using visual structure, UI layout patterns, markup, and content/brand
    checks—not only filenames.
-3. Strict Component Reuse & Slight Extension First: ALWAYS prioritize reusing
+3. Strict Component Reuse & Direct Modification First: ALWAYS prioritize reusing
    existing components (`ButtonLink`, `Container`, `FaqSection`, `AiAutomationSection`,
    `AiDiscoverySection`, `CtaBannerSection`, `ServiceHeroSection`, etc.) over
    writing new code or raw inline markup (e.g. never write raw inline `<a>` tags
    with button styling when `ButtonLink` exists). If an existing component can
-   support the requirement with a slight modification (e.g. adding an optional
-   typed prop, variant, slot, or optional style modifier), MODIFY the existing
-   component slightly to support the use case instead of writing extra, duplicate,
-   or one-off code. Build new components only when no similar pattern exists.
+   support the requirement with a modification, MODIFY the existing component
+   directly to support the use case instead of writing extra, duplicate, or
+   one-off code. Do not add backward-compatibility layers (backward compatibility
+   is not used in the future); instead, update all existing usages across the
+   codebase so that zero breakage occurs. Build new components only when no
+   similar pattern exists.
 4. If migrating a legacy page, inspect the old URL as both a rendered page and
    View Page Source for content structure, headings, CTAs, metadata intent,
    images, links, schema, accessibility details, style details, and redirect
@@ -221,12 +223,13 @@ Follow this step-by-step workflow for every page or section build:
   - Portfolio / case study cards (`PortfolioProjectCard`, `BlogCard`)
 - **Search by DOM structure & styling**: Inspect `src/components/ui/`, `src/components/sections/`, and `src/components/layout/` for matching Tailwind class combinations, grid setups, responsive breakpoints, and HTML elements.
 
-### 2. Safe Component Adaptation & Backward-Compatible Extension
+### 2. Direct Component Modification & Zero Breakage (No Backward Compatibility Needed)
 - **Reuse Directly**: When an existing component matches the requirements 100%, reuse it directly.
-- **Modify / Extend Safely**: If an existing component provides 80–90% of what is needed and shares the same core visual layout, you may extend it:
-  - Add **optional, typed props** (e.g. `variant?: "default" | "compact"`, `hideReview?: boolean`, `columns?: 2 | 3`, `className?: string`, `iconAlt?: string`).
-  - Use sensible default values that preserve the original behavior for all existing callers.
-  - **ZERO BREAKAGE RULE**: You can modify existing components a little bit to reuse them, but you MUST NEVER break existing pages or usages. Verify all existing imports and props after extending a component.
+- **Modify Directly Without Backward-Compatibility Layers**: If an existing component provides 80–90% of what is needed and shares the same core visual layout, modify it directly:
+  - Backward compatibility is NOT used or needed in the future (this repository is an internal application, not an external public library or package).
+  - Do NOT create or retain backward-compatibility wrappers, deprecated shims, legacy fallback aliases, or obsolete props designed only to preserve outdated signatures.
+  - Modify props, markup, types, and logic cleanly and directly to meet the required design and functionality.
+  - **ZERO BREAKAGE RULE**: Modifying directly does NOT permit breakage. You MUST update all existing callers, pages, routes, and imports across the entire codebase in the same pass. Verify all usages with `npm run lint` and `npm run build`.
 
 ### 3. 100% Visual Parity Trumps Forced Reuse (Unique Blocks for Unique Sections)
 - Achieving 100% visual, layout, responsive, and interaction parity with the live site is NON-NEGOTIABLE.
@@ -253,11 +256,11 @@ Follow this step-by-step workflow for every page or section build:
   result must be identical wherever it is used. When a CMS page has the same
   ordered blocks and values as its coded baseline, the two rendered pages must
   match at every supported viewport and interaction state.
-- **Use typed adapters and safe fallbacks**: Extend existing components only with
-  backward-compatible typed CMS props. Resolve populated CMS content and media
-  first; retain local content and canonical local assets only as resilience
-  fallbacks for absent, invalid, or unavailable CMS data. Never ignore a
-  populated CMS block merely to recover visual parity.
+- **Use typed adapters and safe fallbacks**: Extend or modify existing components cleanly
+  with typed CMS props without unnecessary backward-compatibility wrappers. Resolve
+  populated CMS content and media first; retain local content and canonical local
+  assets only as resilience fallbacks for absent, invalid, or unavailable CMS
+  data. Never ignore a populated CMS block merely to recover visual parity.
 
 ### 4. Upload Media Everywhere with Local Asset Fallback (Future-Ready CDN Strategy)
 - In all Payload collections (`pages`, `posts`, `case-studies`, `testimonials`, `authors`), globals (`site-settings`, `navigation`), and modular blocks (`src/blocks/**`):
@@ -611,7 +614,7 @@ A task is complete only when:
 - The requested behavior/page exists.
 - It follows the project structure.
 - Existing suitable components were discovered (beyond name matching) and reused
-  or safely extended with backward-compatible optional props/variants without breaking existing pages.
+  or modified directly without backward-compatibility bloat, while updating all callers so zero breakage occurs.
 - Any newly built component is generalized, cleanly typed, and decoupled from hardcoded page copy for future reusability.
 - No visible page/business copy is hardcoded in `src/components/**` or
   `src/app/**`, and `npm run check:component-content` passes.

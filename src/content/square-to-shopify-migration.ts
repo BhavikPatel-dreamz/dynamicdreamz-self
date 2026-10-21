@@ -130,6 +130,55 @@ export const squareProcessContent: MigrationProcessContent = {
   ],
 };
 
+export const squareWhyChooseContent = {
+  eyebrow: "Why Dynamic Dreamz",
+  heading: "Why Choose Dynamic Dreamz for Migration Services?",
+  description:
+    "As a proud Shopify Plus Partner, we have been vetted and recognized by Shopify for our expertise in delivering Shopify solutions and exceptional results. Trust us to bring your business the full power of Shopify Plus with our migration from Magento to Shopify Plus​.",
+  items: [
+    {
+      title: "Proven Track Record",
+      description:
+        "With a proven track record, we have successfully migrated 100+ stores worldwide, helping businesses transition smoothly to Shopify.",
+    },
+    {
+      title: "Expertise",
+      description:
+        "We have proven experience in Square to Shopify migration, with a team of Shopify Experts skilled in handling migrations of all complexities.",
+    },
+    {
+      title: "Custom Solutions",
+      description:
+        "We understand that every business has unique requirements. That’s why we offer customized migration strategies tailored to your business size, type, and specific needs.",
+    },
+    {
+      title: "Smooth Data Transfer",
+      description:
+        "We ensure that all essential data, including products, customer details, and orders, are transferred accurately without any data loss.",
+    },
+    {
+      title: "SEO Expertise",
+      description:
+        "Our SEO experts ensure your new Shopify store maintains and improves its search engine visibility during migration.",
+    },
+    {
+      title: "Comprehensive Services",
+      description:
+        "From initial assessment to post launch support, we provide end to end migration services, taking care of every detail to ensure a successful upgrade.",
+    },
+    {
+      title: "Minimal Downtime",
+      description:
+        "We migrate your store with proper planning and carefully take every step so your migration process will completed with minimal downtime.",
+    },
+    {
+      title: "Post-Migration Support",
+      description:
+        "We also provide post migration support for your adjustments, additional features, or technical questions you may have.",
+    },
+  ],
+};
+
 export const squareTestimonials = {
   eyebrow: "Client Stories",
   heading: "Our Customers' Testimonials",

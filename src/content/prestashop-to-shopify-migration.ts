@@ -32,33 +32,33 @@ export type PrestaShopBenefitsBox = {
 
 export const prestashopBenefitsContent = {
   eyebrow: "Benefits",
-  heading: "Benefits of Moving from PrestaShop to Shopify",
-  description: "If you want to grow your business, switching from PrestaShop to Shopify is the best option for your business growth. Shopify's features are designed to streamline store management while enhancing your online presence.",
+  heading: "Data Mapping",
+  description:
+    "If you want to grow your business, switching from PrestaShop to Shopify is the best option for your business growth. Shopify’s features are designed to streamline store management while enhancing your online presence.",
   boxes: [
     {
+      iconName: "secure-reliable" as MigrationPlatformIconName,
+      title: "Data Mapping",
+      description:
+        "Ensure that all data from your PrestaShop store—like products, customer information, and order history—is correctly mapped for a seamless migration to Shopify.",
+    },
+    {
       iconName: "user-friendly-platform" as MigrationPlatformIconName,
-      title: "User Friendly Interface",
-      description: "Shopify's user friendly interface makes it easy to use for beginners and non technical users. Business and store owners can manage their stores, add products, and track orders better than the PrestaShop store.",
+      title: "SEO Considerations",
+      description:
+        "Meta titles, descriptions, and URLs are reviewed and updated during the migration to retain your current search engine rankings.",
     },
     {
       iconName: "extensive-customization" as MigrationPlatformIconName,
-      title: "Better Customization Options",
-      description: "Shopify provides more flexibility with custom themes, allowing you to fully personalize your store's look and functionality according to your brand's needs.",
-    },
-    {
-      iconName: "access-to-shopify-s-app-store" as MigrationPlatformIconName,
-      title: "App Integrations",
-      description: "Shopify's app store has a vast collection of apps that help enhance your store's features, offering tools for marketing, inventory management, customer service, and more.",
-    },
-    {
-      iconName: "secure-reliable" as MigrationPlatformIconName,
-      title: "Enhanced Security",
-      description: "Shopify ensures your store's security by providing SSL certificates and PCI compliance. Shopify prioritizes protecting your data and customers' data.",
+      title: "Design Preferences",
+      description:
+        "Before migration, you have to decide whether you want your current theme or need a new theme to enhance your store with Shopify's customization features.",
     },
     {
       iconName: "built-for-scalability" as MigrationPlatformIconName,
-      title: "Scalable Solutions",
-      description: "Shopify can grow with your business, allowing you to add more products, handle more traffic, and integrate advanced tools as your business expands.",
+      title: "Payment and Shipping",
+      description:
+        "Check your current PrestaShop store settings to ensure that the same or better payment gateways and shipping options. Shopify has multiple payment gateways and shipping options for your needs.",
     },
   ],
 };

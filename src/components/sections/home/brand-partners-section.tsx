@@ -43,7 +43,7 @@ export function BrandPartnersSection({
           className={cn(
             "flex items-end justify-between max-[992px]:flex-col max-[992px]:items-start",
             isShopifyHours
-              ? "mb-10 max-[767px]:mb-[30px]"
+              ? "section_title_with_eyebrow mb-10 max-[767px]:mb-[30px]"
               : "mb-[50px] min-[768px]:max-[992px]:mb-[30px] max-[767px]:mb-[55px] max-[767px]:text-center",
           )}
         >
@@ -60,7 +60,7 @@ export function BrandPartnersSection({
             </SectionHeading>
           </div>
           <SectionDescription
-            className="lg:w-[48.3%] w-full"
+            className={cn("lg:w-[48.3%] w-full", isShopifyHours && "section_text")}
             textClassName="text-left max-[767px]:text-sm"
           >
             {description}

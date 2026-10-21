@@ -68,6 +68,43 @@ export const bigcommerceWhyMigrateContent = {
   ],
 };
 
+export const bigcommerceVsShopifyContent = {
+  eyebrow: "Compare",
+  heading: "BigCommerce VS Shopify",
+  description:
+    "BigCommerce and Shopify are two leading ecommerce platforms, each with unique strengths. Compare pricing, features, customization, and scalability to determine which platform best fits your business needs.",
+  approaches: [
+    {
+      badge: "Shopify",
+      title: "Shopify",
+      description: "",
+      isHighlighted: true,
+      points: [
+        "Overall Rating: 4.5/5",
+        "Starting Price: $39/month",
+        "Free plan or free trial: 3-day free trial then Starter Plan for $5/month",
+        "Number of templates: 200++",
+        "Pros: AI powered Shopify Magic tool, Unlimited products, Huge app market, 100+ payment options, Mobile responsive store",
+        "Cons: Additional app costs, Limited customization options, Lacks built in features, Most templates cost extra",
+      ],
+    },
+    {
+      badge: "BigCommerce",
+      title: "BigCommerce",
+      description: "",
+      isHighlighted: false,
+      points: [
+        "Overall Rating: 4.3/5",
+        "Starting Price: $39/month",
+        "Free plan or free trial: 15-day free trial",
+        "Number of templates: 160++",
+        "Pros: 0% transaction fees on all plans, Unlimited products, Multiple storefronts, International shipping options, Mobile responsive store",
+        "Cons: Slow performance, Limited customization options, No AI tools, No free custom domain",
+      ],
+    },
+  ],
+};
+
 export type BigCommerceDataSecuredBox = {
   iconName: MigrationPlatformIconName;
   title: string;
@@ -193,6 +230,55 @@ export const bigcommerceProcessContent: MigrationProcessContent = {
       stepNumber: "06",
       title: "Go Live",
       description: "Finally, we make your Shopify store live by linking it to your domain. We aim to minimize downtime during the final steps, usually scheduling the transition during non business hours to avoid disruption.",
+    },
+  ],
+};
+
+export const bigcommerceWhyChooseContent = {
+  eyebrow: "Why Dynamic Dreamz",
+  heading: "Why Choose Dynamic Dreamz for Migration Services?",
+  description:
+    "As a proud Shopify Plus Partner, we have been vetted and recognized by Shopify for our expertise in delivering Shopify solutions and exceptional results. Trust us to bring your business the full power of Shopify Plus with our migration from Magento to Shopify Plus​.",
+  items: [
+    {
+      title: "Proven Track Record",
+      description:
+        "With a proven track record, we have successfully migrated 100+ stores worldwide, helping businesses transition smoothly to Shopify.",
+    },
+    {
+      title: "Expertise",
+      description:
+        "We have proven experience in BigCommerce to Shopify migration, with a team of Shopify Experts skilled in handling migrations of all complexities.",
+    },
+    {
+      title: "Custom Solutions",
+      description:
+        "We understand that every business has unique requirements. That’s why we offer customized migration strategies tailored to your business size, type, and specific needs.",
+    },
+    {
+      title: "Smooth Data Transfer",
+      description:
+        "We ensure that all essential data, including products, customer details, and orders, are transferred accurately without any data loss.",
+    },
+    {
+      title: "SEO Expertise",
+      description:
+        "Our SEO experts ensure your new Shopify store maintains and improves its search engine visibility during migration.",
+    },
+    {
+      title: "Comprehensive Services",
+      description:
+        "From initial assessment to post launch support, we provide end to end migration services, taking care of every detail to ensure a successful upgrade.",
+    },
+    {
+      title: "Minimal Downtime",
+      description:
+        "We migrate your store with proper planning and carefully take every step so your migration process will completed with minimal downtime.",
+    },
+    {
+      title: "Post-Migration Support",
+      description:
+        "We also provide post migration support for your adjustments, additional features, or technical questions you may have.",
     },
   ],
 };

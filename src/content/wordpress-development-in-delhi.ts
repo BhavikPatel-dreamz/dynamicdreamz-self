@@ -56,7 +56,7 @@ export const wordpressDevelopmentDelhiContent = {
 
   hero: {
     eyebrows: ["Shopify Development", "Delhi"],
-    title: "#1 Company For WordPress Development in Delhi",
+    title: "WordPress Development Company in Delhi",
     description:
       "Dynamic Dreamz is one of the best WordPress development companies in Delhi, specializing in designing custom WordPress websites that exactly match your business goals. Our team of experienced WordPress developers is excellent at custom WordPress solutions, like making WordPress themes and plugins that make your website stand out in today’s digital world.",
     primaryCta: {
@@ -163,7 +163,7 @@ export const wordpressDevelopmentDelhiContent = {
   counter: {
     eyebrow: "Wordpress Development Company in Delhi",
     heading:
-      "Choose Dynamic Dreamz as the Best WordPress Development Company in Delhi",
+      "Why Businesses in Delhi Work with Dynamic Dreamz for WordPress Development",
     description:
       "At Dynamic Dreamz, we put much effort into understanding the unique requirements of Delhi business. Our WordPress development services in Delhi are designed to develop websites that are not only attractive but also effortless for people to use and run quickly. We focus on making smooth designs, increasing user interaction, and following industry standards. Because we are always aiming for excellence, businesses all over Delhi choose us as their first preference for WordPress development services.",
     items: [

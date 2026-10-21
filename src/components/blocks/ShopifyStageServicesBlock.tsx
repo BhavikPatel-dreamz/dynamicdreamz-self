@@ -36,7 +36,7 @@ export function ShopifyStageServicesBlock({
   const finalDescription = description ?? content?.description ?? "";
   const finalItems = items ?? content?.items ?? [];
 
-  const isSixCards = sixCards ?? finalItems.length === 6;
+  const isSixCards = Boolean(sixCards && !lastColFull);
 
   return (
     <section
@@ -72,7 +72,7 @@ export function ShopifyStageServicesBlock({
           ) : null}
         </div>
 
-        <div className="wrapper grid grid-cols-[1.2fr_0.8fr_0.8fr] gap-[15px] max-[1199px]:grid-cols-2 max-[767px]:flex max-[767px]:flex-col">
+        <div className="wrapper grid grid-cols-[1.2fr_0.8fr_0.8fr] auto-rows-[minmax(210px,auto)] gap-[15px] max-[1199px]:grid-cols-2 max-[767px]:flex max-[767px]:flex-col">
           {finalItems.map((item, index) => {
             const isFirst = index === 0;
             const isFourth = index === 3;
@@ -87,9 +87,9 @@ export function ShopifyStageServicesBlock({
                 className={cn(
                   "item relative overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] p-[27px] transition-all max-[1399px]:p-5 max-[767px]:rounded-[16px]",
                   isFirst
-                    ? "row-span-2 min-h-[440px] bg-[#f7f4ea] flex flex-col justify-between max-[1199px]:row-span-1 max-[1199px]:min-h-0 max-[767px]:min-h-0"
+                    ? "row-span-2 min-h-[440px] bg-[#f7f4ea] flex flex-col justify-between max-[767px]:row-auto max-[767px]:min-h-0"
                     : isFourth && finalItems.length !== 5
-                      ? "col-span-2 bg-[#eff4ef] max-[1199px]:col-span-1 flex flex-col justify-between"
+                      ? "col-span-2 bg-[#eff4ef] flex flex-col justify-between"
                       : isFifth && isSixCards
                         ? "col-span-2 bg-white max-[1199px]:col-span-1 flex flex-col justify-between"
                         : isSeventh
@@ -108,7 +108,7 @@ export function ShopifyStageServicesBlock({
                       {item.tag}
                     </span>
                   ) : null}
-                  <h3 className="mb-3 font-display text-[20px] font-normal leading-[28.8px] text-ink max-[1199px]:text-[18px] max-[1199px]:leading-[24px]">
+                  <h3 className="mb-3 font-display text-[20px] font-normal leading-[28.8px] text-ink max-[1199px]:text-[18px] max-[1199px]:leading-[26px]">
                     {item.title}
                   </h3>
                   <div className="description">
@@ -133,13 +133,13 @@ export function ShopifyStageServicesBlock({
                 {item.cta ? (
                   <div className="bottom mt-5">
                     <Link
-                      className="group/arrow inline-flex items-center gap-2 font-montserrat text-sm font-bold uppercase tracking-[0.5px] text-[#ad5151] transition-colors hover:text-[#282828]"
+                      className="group/arrow inline-flex items-center gap-2.5 font-montserrat text-sm font-bold uppercase tracking-[0.5px] text-[#ad5151] transition-colors hover:text-[#282828]"
                       href={item.cta.href}
                     >
                       <span>{item.cta.label}</span>
                       <svg
                         aria-hidden="true"
-                        className="size-3 shrink-0 fill-current transition-transform duration-300 group-hover/arrow:translate-x-0.5 group-hover/arrow:-translate-y-0.5"
+                        className="size-2.5 shrink-0 fill-current transition-transform duration-300 group-hover/arrow:translate-x-0.5 group-hover/arrow:-translate-y-0.5"
                         viewBox="0 0 12 12"
                       >
                         <path d="M0.331035 10.2567C-0.0794748 10.6262 -0.112753 11.2585 0.256706 11.669C0.626165 12.0795 1.25845 12.1128 1.66896 11.7433L0.331035 10.2567ZM11.9986 2.05256C12.0276 1.50104 11.6041 1.03041 11.0526 1.00138L2.065 0.528352C1.51348 0.499324 1.04285 0.922889 1.01382 1.47441C0.984795 2.02593 1.40836 2.49656 1.95988 2.52559L9.94882 2.94606L9.52835 10.935C9.49933 11.4865 9.92289 11.9572 10.4744 11.9862C11.0259 12.0152 11.4966 11.5916 11.5256 11.0401L11.9986 2.05256ZM1.66896 11.7433L11.669 2.74329L10.331 1.25671L0.331035 10.2567L1.66896 11.7433Z" />

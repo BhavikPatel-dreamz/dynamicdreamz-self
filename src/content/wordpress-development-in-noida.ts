@@ -56,7 +56,7 @@ export const wordpressDevelopmentNoidaContent = {
 
   hero: {
     eyebrows: ["Wordpress Development", "Noida"],
-    title: "#1 Company For WordPress Development in Noida",
+    title: "WordPress Development Company in Noida",
     description:
       "Dynamic Dreamz is a leading WordPress development company in Noida dedicated to building custom WordPress websites that match your business goals. Our team of talented developers is an expert in delivering customized solutions, including WordPress theme and plugin development, to ensure your website stands out.",
     primaryCta: {
@@ -163,7 +163,7 @@ export const wordpressDevelopmentNoidaContent = {
   counter: {
     eyebrow: "Wordpress Development Company in Noida",
     heading:
-      "Choose Dynamic Dreamz as the Best WordPress Development Company in Noida",
+      "Why Businesses in Noida Work with Dynamic Dreamz for WordPress Development",
     description:
       "We understand the unique requirements of businesses in Noida. Our WordPress development services in Noida are developed to provide you with a website that is visually appealing and highly functional. We focus on making user-friendly designs that offer an excellent user experience, helping you engage your audience effectively. Our dedication to quality and attention to detail make us the preferred choice for WordPress development services in Noida.",
     items: [

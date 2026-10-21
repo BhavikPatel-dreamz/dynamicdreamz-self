@@ -31,7 +31,7 @@ export function PricingPackageSelector({
   const fillPercentage = (selectedIndex / (packages.length - 1)) * 100;
 
   return (
-    <div className="rounded-[25px] border-[1.5px] border-black/10 p-[39px_24px_24px] max-[767px]:p-[20px_15px]" data-pricing-selector>
+    <div className="pricing-slider-card rounded-[25px] border-[1.5px] border-black/10 p-[39px_24px_24px] max-[767px]:p-[20px_15px]" data-pricing-selector>
       <h3 className="border-b border-[#dedbd2] px-2.5 pb-[25px] text-center font-display text-xl leading-[28.8px] font-normal tracking-[-0.4px] max-[1199px]:text-lg max-[1199px]:leading-[26px]">
         {heading.prefix} <span className="text-brand-red">{heading.accent}</span>{" "}
         {heading.suffix}
@@ -39,33 +39,36 @@ export function PricingPackageSelector({
 
       <div
         aria-live="polite"
-        className="mt-[25px] grid grid-cols-3 gap-2.5 max-[1199px]:grid-cols-2"
+        className="stats-grid mt-[25px] grid grid-cols-3 gap-2.5 max-[1199px]:grid-cols-2"
         data-pricing-stats
       >
         <PricingStat label={shopifyHoursSectionCopy.pricing.hours}>
-          <strong>{selectedPackage.hours}{shopifyHoursSectionCopy.pricing.durationMinutes}</strong>
-          <span>{shopifyHoursSectionCopy.pricing.bulkHours}</span>
+          <div className="val flex items-center justify-center font-bold">
+            {selectedPackage.hours}<span>{shopifyHoursSectionCopy.pricing.durationMinutes}</span>
+          </div>
+          <div className="sub font-bold">{shopifyHoursSectionCopy.pricing.bulkHours}</div>
         </PricingStat>
         <PricingStat label={shopifyHoursSectionCopy.pricing.rate}>
-          <strong>${selectedPackage.rate}{shopifyHoursSectionCopy.pricing.perHour}</strong>
-          <del>${selectedPackage.previousRate}{shopifyHoursSectionCopy.pricing.perHour}</del>
+          <div className="val font-bold">${selectedPackage.rate}{shopifyHoursSectionCopy.pricing.perHour}</div>
+          <div className="sub-old font-medium text-brand-red line-through">${selectedPackage.previousRate}{shopifyHoursSectionCopy.pricing.perHour}</div>
         </PricingStat>
         <PricingStat
           className="max-[1199px]:col-span-2"
           label={shopifyHoursSectionCopy.pricing.cost}
         >
-          <strong>${selectedPackage.cost}</strong>
-          <del>${selectedPackage.previousCost}</del>
+          <div className="val font-bold">${selectedPackage.cost}</div>
+          <div className="sub-old font-medium text-brand-red line-through">${selectedPackage.previousCost}</div>
         </PricingStat>
       </div>
 
-      <div className="mt-[70px] pb-[35px] max-[767px]:mt-10">
+      <div className="slider-container custom-slider mt-[70px] pb-[35px] max-[767px]:mt-10">
         <label className="sr-only" htmlFor={inputId}>
           {shopifyHoursSectionCopy.pricing.packageLabel}
         </label>
-        <div className="relative h-1.5">
+        <div className="range-wrap relative h-1.5">
           <output
-            className="absolute -top-[43px] z-1 flex h-[35px] w-12 -translate-x-1/2 items-center justify-center rounded-[52px] border border-black/15 bg-white text-center text-[15.86px] leading-[19px] font-semibold tracking-[-0.317px] after:absolute after:top-[calc(100%-1px)] after:left-1/2 after:-translate-x-1/2 after:border-x-[5px] after:border-t-[6px] after:border-x-transparent after:border-t-white"
+            className="fake-thumb absolute -top-[43px] z-1 flex h-[35px] w-12 -translate-x-1/2 items-center justify-center rounded-[52px] border border-black/15 bg-white text-center text-[15.86px] leading-[19px] font-semibold tracking-[-0.317px] after:absolute after:top-[calc(100%-1px)] after:left-1/2 after:-translate-x-1/2 after:border-x-[5px] after:border-t-[6px] after:border-x-transparent after:border-t-white"
+            data-val={selectedPackage.hours}
             htmlFor={inputId}
             style={{ left: `${fillPercentage}%` }}
           >
@@ -73,7 +76,7 @@ export function PricingPackageSelector({
           </output>
           <input
             aria-valuetext={`${selectedPackage.hours} hours at $${selectedPackage.rate} per hour, total cost $${selectedPackage.cost}`}
-            className="absolute inset-0 h-1.5 w-full cursor-pointer appearance-none rounded-full bg-transparent [&::-moz-range-thumb]:size-4 [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-brand-red [&::-moz-range-track]:h-1.5 [&::-moz-range-track]:rounded-full [&::-moz-range-track]:bg-transparent [&::-webkit-slider-thumb]:mt-[-5px] [&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-0 [&::-webkit-slider-thumb]:bg-brand-red [&::-webkit-slider-runnable-track]:h-1.5 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-runnable-track]:bg-transparent"
+            className="slider absolute inset-0 h-1.5 w-full cursor-pointer appearance-none rounded-full bg-transparent [&::-moz-range-thumb]:size-4 [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-brand-red [&::-moz-range-track]:h-1.5 [&::-moz-range-track]:rounded-full [&::-moz-range-track]:bg-transparent [&::-webkit-slider-thumb]:mt-[-5px] [&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-0 [&::-webkit-slider-thumb]:bg-brand-red [&::-webkit-slider-runnable-track]:h-1.5 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-runnable-track]:bg-transparent"
             id={inputId}
             max={packages.length - 1}
             min={0}
@@ -86,7 +89,7 @@ export function PricingPackageSelector({
             value={selectedIndex}
           />
         </div>
-        <div className="mt-[15px] flex justify-between text-sm leading-[16.8px] font-semibold tracking-[-0.28px] text-ink/80 max-[475px]:text-[11px]">
+        <div className="slider-labels mt-[15px] flex justify-between text-sm leading-[16.8px] font-semibold tracking-[-0.28px] text-ink/80 max-[475px]:text-[11px]">
           {packages.map((item) => (
             <span key={item.hours}>{item.hours} {shopifyHoursSectionCopy.pricing.hoursSuffix}</span>
           ))}
@@ -95,7 +98,7 @@ export function PricingPackageSelector({
 
       <ButtonLink
         aria-label={`Buy ${selectedPackage.hours} Shopify development hours for $${selectedPackage.cost}`}
-        className="flex w-full max-w-none !py-[15px] !leading-[normal] max-[1199px]:!min-h-0 max-[1199px]:!py-3 max-[1199px]:!text-sm"
+        className="btn btn-red flex w-full max-w-none !py-[15px] !leading-[normal] max-[1199px]:!min-h-0 max-[1199px]:!py-3 max-[1199px]:!text-sm"
         external
         href={selectedPackage.purchaseHref}
         data-purchase-link
@@ -104,7 +107,7 @@ export function PricingPackageSelector({
       </ButtonLink>
       <div className="flex text-center">
         <Link
-          className="block w-full pt-5 text-center font-montserrat text-sm leading-[normal] font-bold text-ink uppercase underline decoration-[1.5px] underline-offset-[2px] transition-colors duration-500 hover:text-brand-red"
+          className="quote-link block w-full pt-5 text-center font-montserrat text-sm leading-[normal] font-bold text-ink uppercase underline decoration-[1.5px] underline-offset-[2px] transition-colors duration-500 hover:text-brand-red"
           href={quoteHref}
         >
           {quoteLabel}
@@ -125,9 +128,9 @@ function PricingStat({
 }) {
   return (
     <div
-      className={`flex min-h-[186px] flex-col items-center rounded-[10px] bg-white/60 px-[15px] py-[30px] text-center max-[767px]:min-h-[135px] max-[767px]:px-2.5 max-[767px]:py-5 ${className}`}
+      className={`stat-box flex min-h-[186px] flex-col items-center rounded-[10px] bg-white/60 px-[15px] py-[30px] text-center max-[767px]:min-h-[135px] max-[767px]:px-2.5 max-[767px]:py-5 ${className}`}
     >
-      <span className="mb-5 w-20 rounded-[20px] border border-[#555] px-2.5 py-[5px] text-[15px] leading-6 font-semibold text-muted max-[767px]:mb-[15px] max-[767px]:w-[75px] max-[767px]:py-[3px] max-[767px]:text-sm">
+      <span className="label mb-5 w-20 rounded-[20px] border border-[#555] px-2.5 py-[5px] text-[15px] leading-6 font-semibold text-muted max-[767px]:mb-[15px] max-[767px]:w-[75px] max-[767px]:py-[3px] max-[767px]:text-sm">
         {label}
       </span>
       <div className="flex flex-col text-xl leading-8 text-ink max-[767px]:text-base max-[767px]:leading-6 [&_del]:font-medium [&_del]:text-brand-red [&_span]:font-bold [&_strong]:font-bold">

@@ -3,6 +3,8 @@ import { fileURLToPath } from "node:url";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
+import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
+import nodemailer from "nodemailer";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
@@ -27,6 +29,11 @@ export default buildConfig({
     user: "users",
     importMap: {
       baseDir: path.resolve(dirname),
+    },
+    components: {
+      beforeDashboard: [
+        "./src/payload/components/DashboardLeadsWidget#DashboardLeadsWidget",
+      ],
     },
     livePreview: {
       breakpoints: [
@@ -80,6 +87,18 @@ export default buildConfig({
       formSubmissionOverrides: {
         admin: {
           group: "Leads & Inquiries",
+          components: {
+            views: {
+              list: {
+                Component: "./src/payload/components/LeadsInboxView#LeadsInboxView",
+              },
+            },
+          },
+        },
+        access: {
+          read: ({ req }) => Boolean(req.user),
+          update: ({ req }) => Boolean(req.user),
+          delete: ({ req }) => Boolean(req.user),
         },
         hooks: {
           afterChange: [
@@ -137,6 +156,26 @@ export default buildConfig({
     }),
   ],
   editor: lexicalEditor(),
+  email:
+    process.env.SMTP_USER && process.env.SMTP_PASS
+      ? nodemailerAdapter({
+          defaultFromAddress:
+            process.env.EMAIL_FROM || process.env.SMTP_USER || "hello@dynamicdreamz.com",
+          defaultFromName: process.env.EMAIL_FROM_NAME || "Dynamic Dreamz",
+          transport: nodemailer.createTransport({
+            host: process.env.SMTP_HOST || "smtp.gmail.com",
+            port: Number(process.env.SMTP_PORT) || 465,
+            secure: Number(process.env.SMTP_PORT ?? 465) === 465,
+            auth: {
+              user: process.env.SMTP_USER,
+              pass: (process.env.SMTP_PASS || "").replace(/\s+/g, ""),
+            },
+            connectionTimeout: 10000,
+            greetingTimeout: 10000,
+          }),
+          skipVerify: true,
+        })
+      : undefined,
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
     outputFile: path.resolve(dirname, "src/types/payload-types.ts"),

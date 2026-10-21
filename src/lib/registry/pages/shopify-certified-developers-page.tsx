@@ -7,11 +7,9 @@ import { PartnerDirectoryProofSection } from "@/components/blocks/CertifiedDevel
 import { ServiceHeroVideoSection } from "@/components/blocks/ServiceHeroBlock";
 import { SplitFaqSection } from "@/components/blocks/FaqSectionBlock";
 import { VerifiedKnowledgeSection } from "@/components/blocks/CertifiedDeveloperTabsBlock";
-import { WhiteLabelFinalCtaSection } from "@/components/blocks/QuoteRequestCTABlock";
 import {
   shopifyCertifiedDevelopersBrands,
   shopifyCertifiedDevelopersFaqs,
-  shopifyCertifiedDevelopersFinalCta,
   shopifyCertifiedDevelopersHero,
 } from "@/content/shopify-certified-developers";
 
@@ -32,10 +30,6 @@ export function ShopifyCertifiedDevelopersPage() {
       <SplitFaqSection
         idPrefix="shopify-certified-developers-faq"
         items={shopifyCertifiedDevelopersFaqs}
-      />
-      <WhiteLabelFinalCtaSection
-        cta={shopifyCertifiedDevelopersFinalCta}
-        variant="certifiedDevelopers"
       />
     </div>
   );

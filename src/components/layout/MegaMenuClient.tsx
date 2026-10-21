@@ -231,7 +231,7 @@ export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
               }}
             >
               <button
-                className="flex cursor-pointer items-center gap-1.5 border-0 bg-transparent p-0 text-[13px] leading-[normal] font-medium whitespace-nowrap text-[#282828] hover:text-[#ad5151] group-data-[active=true]/desktop-nav:text-[#ad5151] group-data-[open=true]/desktop-nav:text-[#ad5151] min-[1400px]:text-sm [&_svg]:transition-transform [&_svg]:duration-300 group-data-[open=true]/desktop-nav:[&_svg]:rotate-180"
+                className="flex cursor-pointer items-center gap-1.5 border-0 bg-transparent p-0 font-montserrat text-[13px] leading-[normal] font-medium whitespace-nowrap text-[#282828] hover:text-[#ad5151] group-data-[active=true]/desktop-nav:text-[#ad5151] group-data-[open=true]/desktop-nav:text-[#ad5151] min-[1400px]:text-sm [&_svg]:transition-transform [&_svg]:duration-300 group-data-[open=true]/desktop-nav:[&_svg]:rotate-180"
                 type="button"
                 aria-expanded={isOpen}
                 aria-haspopup="true"
@@ -251,7 +251,7 @@ export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
         <li className="py-9">
           <Link
             className={cn(
-              "flex items-center text-[13px] leading-[normal] font-medium whitespace-nowrap text-[#282828] hover:text-[#ad5151] min-[1400px]:text-sm",
+              "flex items-center font-montserrat text-[13px] leading-[normal] font-medium whitespace-nowrap text-[#282828] hover:text-[#ad5151] min-[1400px]:text-sm",
               normalizedPathname === siteConfig.contactPath && "text-[#ad5151]",
             )}
             href={siteConfig.contactPath}
@@ -392,7 +392,7 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
         <div className="flex min-h-[30px] items-center justify-between pb-2.5">
           <Link href="/" aria-label="Dynamic Dreamz home" onClick={closeMenu}>
             <Image
-              className="flex h-auto w-[225px] max-[768px]:w-[170px] max-[380px]:w-[150px]"
+              className="flex h-auto w-[225px] max-[767px]:w-[170px] max-[379px]:w-[150px]"
               src={siteConfig.logo}
               alt="Dynamic Dreamz - Shopify Platinum Partner"
               width={257}

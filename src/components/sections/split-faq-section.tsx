@@ -59,7 +59,9 @@ export function SplitFaqSection({
 
   const isSkyBlue =
     idPrefix.startsWith("white-label-website-design") ||
-    idPrefix.startsWith("white-label-wordpress");
+    idPrefix.startsWith("white-label-wordpress") ||
+    idPrefix.startsWith("white-label-shopify") ||
+    idPrefix.startsWith("shopify-certified-developers");
   const isWhite = idPrefix.startsWith("food-beverage");
   const isPt0 = idPrefix.startsWith("risks-of-shopify-outsourcing");
   const isMobileAppFaq = idPrefix.startsWith("shopify-mobile-app");
@@ -84,9 +86,9 @@ export function SplitFaqSection({
       id={sectionId ?? `${idPrefix}-section`}
     >
       <Container className={containerClass}>
-        <div className="flex justify-between gap-[105px] max-[1399px]:gap-8 max-[991px]:flex-col max-[991px]:gap-[30px]">
+        <div className="wrapper flex justify-between gap-[105px] max-[1399px]:gap-8 max-[991px]:flex-col max-[991px]:gap-[30px]">
           <div className="w-[41%] max-[1199px]:w-[44%] max-[991px]:w-full" data-aos="fade-up">
-            <header className="mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
+            <header className="header-text mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
               {eyebrow ? (
                 <Eyebrow as="span" className="mb-4">
                   {eyebrow}
@@ -108,7 +110,7 @@ export function SplitFaqSection({
               ) : null}
             </header>
           </div>
-          <div className="w-[57%] max-w-[654px] grow max-[1199px]:w-[53%] max-[1199px]:max-w-none max-[991px]:w-full" data-aos="fade-up">
+          <div className="accordion-main w-[57%] max-w-[654px] grow max-[1199px]:w-[53%] max-[1199px]:max-w-none max-[991px]:w-full" data-aos="fade-up">
             {lazyAccordion ? (
               <LazyFaqAccordion
                 animateOnReveal={animateOnReveal}

@@ -13,6 +13,7 @@ export type CredentialEvidenceItem = {
 };
 
 export type CredentialEvidenceContent = {
+  eyebrow?: string;
   heading: string | readonly string[];
   description: string | readonly string[];
   note?: string;
@@ -28,7 +29,7 @@ export function CredentialEvidenceSection({
 }: CredentialEvidenceSectionProps) {
   return (
     <section
-      className="scroll-mt-24 bg-[#fafaf7] py-[54px] max-[992px]:py-10"
+      className="evidence_you_can_see_section scroll-mt-24 bg-[#fafaf7] py-[54px] max-[992px]:py-10"
       id="see_our_certifications"
       aria-labelledby="shopify-credential-evidence-title"
     >
@@ -36,6 +37,7 @@ export function CredentialEvidenceSection({
         <SplitSectionHeading
           className="mb-[50px] max-[1199px]:mb-[30px]"
           description={content.description}
+          eyebrow={content.eyebrow}
           heading={content.heading}
           headingId="shopify-credential-evidence-title"
           textClassName="w-[56%]"
