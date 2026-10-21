@@ -1,4 +1,4 @@
-import { WordPressCityLandingTemplate } from "./templates";
+import { WordPressCityLandingTemplate } from "@/components/sections/wordpress-city-landing-template";
 import { wordpressDevelopmentAhmedabadContent } from "@/content/wordpress-development-in-ahmedabad";
 import { wordpressDevelopmentBangaloreContent } from "@/content/wordpress-development-in-bangalore";
 import { wordpressDevelopmentDelhiContent } from "@/content/wordpress-development-in-delhi";

@@ -1,0 +1,21 @@
+import { CtaBannerSection } from "@/components/sections/cta-banner-section";
+import { ResourcesBlogSection } from "@/components/sections/resources/resources-blog-section";
+import { ResourcesBrandStrip } from "@/components/sections/resources/resources-brand-strip";
+import { ResourcesHeroSection } from "@/components/sections/resources/resources-hero-section";
+import { ResourcesHubSection } from "@/components/sections/resources/resources-hub-section";
+import { ResourcesStorySection } from "@/components/sections/resources/resources-story-section";
+import { ResourcesTrustSection } from "@/components/sections/resources/resources-trust-section";
+
+export function ResourcesPage() {
+  return (
+    <div>
+      <ResourcesHeroSection />
+      <ResourcesHubSection />
+      <ResourcesBlogSection />
+      <ResourcesStorySection />
+      <ResourcesBrandStrip />
+      <ResourcesTrustSection />
+      <CtaBannerSection />
+    </div>
+  );
+}

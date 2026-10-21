@@ -3,7 +3,7 @@ import type {
   GeneratepressBenefitIconName,
   GeneratepressFeatureIconName,
   GeneratepressServiceIconName,
-} from "@/lib/icons/generatepress-icons";
+} from "@/components/sections/generatepress-theme-customization/generatepress-icons";
 
 export type GeneratepressFeatureItem = {
   iconName: GeneratepressFeatureIconName;

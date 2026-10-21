@@ -1,0 +1,102 @@
+import Image from "next/image";
+
+import styles from "@/components/sections/about/about-timeline-section.module.css";
+import { Container } from "@/components/ui/container";
+import { HorizontalDragScroll } from "@/components/ui/horizontal-drag-scroll";
+import { aboutSectionCopy, milestones } from "@/content/about";
+import { formatBrText } from "@/lib/text-formatting";
+
+export type AboutTimelineSectionProps = {
+  title?: string;
+  description?: string;
+  milestones?: readonly {
+    year: string;
+    description: string;
+    image: string;
+    alt: string;
+    width: number;
+    height: number;
+  }[];
+};
+
+export function AboutTimelineSection({
+  title = aboutSectionCopy.timelineTitle,
+  description = aboutSectionCopy.timelineDescription,
+  milestones: customMilestones,
+}: AboutTimelineSectionProps = {}) {
+  const activeMilestones =
+    customMilestones && customMilestones.length > 0
+      ? customMilestones
+      : milestones;
+
+  return (
+    <section data-about="timeline" aria-labelledby="about-timeline-title" className="overflow-hidden bg-[#fbf7ed] pt-[100px] pb-[60px] max-[992px]:py-[50px]">
+      <Container>
+        <div
+          data-aos="fade-up"
+          className="-mx-[15px] mb-[60px] flex items-center max-[992px]:mx-0 max-[992px]:mb-0 max-[992px]:block max-[992px]:text-center"
+        >
+          <div className="w-1/2 px-[15px] max-[992px]:mb-[10px] max-[992px]:w-full max-[992px]:p-0">
+            <h2 id="about-timeline-title" className="text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
+              {title}
+            </h2>
+          </div>
+          <div className="w-1/2 px-[15px] max-[992px]:w-full max-[992px]:p-0">
+            <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
+              {description}
+            </p>
+          </div>
+        </div>
+      </Container>
+
+      <div data-aos="fade-up" className="mx-auto w-full max-w-full">
+        <HorizontalDragScroll
+          className="h-[535px] w-full cursor-grab touch-pan-y overflow-x-auto overscroll-x-contain select-none active:cursor-grabbing min-[1200px]:w-[calc(100%+max(0px,50vw-590px))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          ariaLabel="Dynamic Dreamz company milestones. Scroll horizontally to explore the timeline."
+        >
+          <ol className="flex h-[535px] w-max snap-x snap-mandatory">
+          {activeMilestones.map((milestone, index) => {
+            const imageFirst = index % 2 === 0;
+            const isLast = !milestone.year;
+
+            return (
+              <li className="relative h-[535px] w-[410px] shrink-0 snap-start px-[15px] text-center max-[575px]:w-[320px]" key={milestone.year || `milestone-${index}`}>
+                {isLast ? (
+                  <div className="flex h-full items-center justify-center">
+                    <Image className="h-auto max-w-full" src={milestone.image} alt={milestone.alt} width={milestone.width} height={milestone.height} sizes="(max-width: 575px) 290px, 380px" draggable={false} />
+                  </div>
+                ) : (
+                <div className={`flex h-[535px] ${imageFirst ? "flex-col" : "flex-col-reverse"}`}>
+                <div className={`relative min-h-[220px] ${imageFirst ? "mb-[90px]" : "mt-[90px]"}`}>
+                  <Image
+                    className="absolute inset-x-0 top-0 mx-auto h-full w-auto max-w-full object-cover pt-[30px]"
+                    src={milestone.image}
+                    alt={milestone.alt}
+                    width={milestone.width}
+                    height={milestone.height}
+                    sizes="(max-width: 575px) 290px, 380px"
+                    draggable={false}
+                  />
+                </div>
+                <div className="relative h-[225px]">
+                  <span className={`${styles.marker} ${imageFirst ? styles.forwardMarker : styles.reverseMarker} ${index === 0 ? styles.firstMarker : ""} ${index === milestones.length - 2 ? styles.penultimateMarker : ""}`} aria-hidden="true">
+                    <Image className="relative z-10 size-[26px]" src="/assets/about/timeline/location-marker.svg" alt="" width={26} height={26} />
+                  </span>
+                    <div className="bg-[linear-gradient(97deg,#15c064_37.46%,#00d1ff_120.9%)] bg-clip-text text-[70px] leading-[86px] font-bold text-transparent max-[767px]:text-[50px]">
+                      {milestone.year}
+                    </div>
+                    <p className="line-clamp-5 h-[139px] text-base leading-7 font-normal text-muted max-[1199px]:text-[14px] max-[1199px]:leading-6 [&_strong]:font-bold [&_strong]:text-ink">
+                      {formatBrText(milestone.description)}
+                    </p>
+                  </div>
+                </div>
+                )}
+              </li>
+            );
+          })}
+          </ol>
+        </HorizontalDragScroll>
+      </div>
+    </section>
+  );
+}

@@ -2,7 +2,7 @@ import type {
   NeveBenefitIconName,
   NeveFeatureIconName,
   NeveServiceIconName,
-} from "@/lib/icons/neve-icons";
+} from "@/components/sections/neve-theme-customization/neve-icons";
 
 export type NeveFeatureItem = {
   iconName: NeveFeatureIconName;

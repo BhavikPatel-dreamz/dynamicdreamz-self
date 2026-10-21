@@ -1,5 +1,5 @@
-import type { HeroBadge, ServiceHeroVideoContent } from "@/types/blocks";
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
+import type { HeroBadge, ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import type { WhiteLabelFinalCta } from "@/types/white-label-service";
 
 export const shopifyCertifiedDevelopersHero = {

@@ -1,9 +1,9 @@
-import type { ClientLogoSliderItem } from "@/components/ui/CarouselSliderClient";
-import type { EvaluationFrameworkItem } from "@/types/blocks";
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
-import type { MagentoMigrationIconName } from "@/lib/icons/magento-migration-icons";
-import type { MigrationProcessContent } from "@/types/blocks";
-import type { ServiceHeroVideoContent } from "@/types/blocks";
+import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import type { EvaluationFrameworkItem } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { MagentoMigrationIconName } from "@/components/sections/magento-to-shopify/magento-migration-icons";
+import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
+import type { ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export { migrationSectionCopy as magentoMigrationSectionCopy } from "@/content/migration-common";

@@ -2,7 +2,7 @@ import type {
   InspiroBenefitIconName,
   InspiroFeatureIconName,
   InspiroServiceIconName,
-} from "@/lib/icons/inspiro-icons";
+} from "@/components/sections/inspiro-theme-customization/inspiro-icons";
 
 export type InspiroFeatureItem = {
   iconName: InspiroFeatureIconName;

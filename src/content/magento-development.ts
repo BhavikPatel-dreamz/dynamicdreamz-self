@@ -1,8 +1,8 @@
-import type { ClientLogoSliderItem } from "@/components/ui/CarouselSliderClient";
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
-import type { EvaluationFrameworkItem } from "@/types/blocks";
-import type { PricingEngagementItem } from "@/types/blocks";
-import type { MagentoServiceIconName } from "@/lib/icons/magento-service-icons";
+import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { EvaluationFrameworkItem } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
+import type { PricingEngagementItem } from "@/components/sections/shopify-plus-agency/pricing-table-section";
+import type { MagentoServiceIconName } from "@/components/sections/magento/magento-service-icons";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const magentoDevelopmentHero = {

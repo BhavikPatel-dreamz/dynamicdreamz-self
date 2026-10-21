@@ -1,8 +1,8 @@
-import type { CityWhyChooseBoxItem } from "@/types/blocks";
-import type { EvaluationFrameworkItem } from "@/types/blocks";
-import type { ThemeCustomizationBox } from "@/types/blocks";
-import type { TeamBoxItem } from "@/types/blocks";
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
+import type { CityWhyChooseBoxItem } from "@/components/sections/city-why-choose-boxes-section";
+import type { EvaluationFrameworkItem } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
+import type { ThemeCustomizationBox } from "@/components/sections/theme-customization-services-section";
+import type { TeamBoxItem } from "@/components/sections/shopify-team-boxes-section";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 
 export type AiServiceCardItem = {
   label: string;

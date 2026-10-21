@@ -3,7 +3,7 @@ import type {
   RoyalElementorKitBenefitIconName,
   RoyalElementorKitFeatureIconName,
   RoyalElementorKitServiceIconName,
-} from "@/lib/icons/royal-elementor-kit-icons";
+} from "@/components/sections/royal-elementor-kit-theme-customization/royal-elementor-kit-icons";
 
 export type RoyalElementorKitFeatureItem = {
   iconName: RoyalElementorKitFeatureIconName;

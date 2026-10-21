@@ -1,8 +1,8 @@
-import type { ClientLogoSliderItem } from "@/components/ui/CarouselSliderClient";
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
-import type { MigrationProcessContent } from "@/types/blocks";
-import type { ServiceHeroVideoContent } from "@/types/blocks";
-import type { WooCommerceMigrationIconName } from "@/lib/icons/woocommerce-migration-icons";
+import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
+import type { ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
+import type { WooCommerceMigrationIconName } from "@/components/sections/woocommerce-to-shopify/woocommerce-migration-icons";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export { migrationSectionCopy as woocommerceMigrationSectionCopy } from "@/content/migration-common";

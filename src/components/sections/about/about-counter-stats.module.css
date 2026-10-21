@@ -1,0 +1,17 @@
+.ribbon {
+  transform: translateY(0);
+  animation: odometer-roll 2s ease 100ms forwards;
+}
+
+@keyframes odometer-roll {
+  to {
+    transform: translateY(var(--odometer-end));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ribbon {
+    transform: translateY(var(--odometer-end));
+    animation: none;
+  }
+}
