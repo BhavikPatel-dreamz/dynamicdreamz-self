@@ -92,7 +92,7 @@ export function ServiceOfferingsGridBlock({
   const resolvedHeading = heading ?? content?.heading ?? "";
   const resolvedEyebrow = eyebrow ?? content?.eyebrow;
   const resolvedDescription = description ?? content?.description;
-  const resolvedItems = features ?? items ?? content?.items ?? [];
+  const resolvedItems = features ?? items ?? content?.items ?? content?.boxes ?? [];
   const cta = content?.cta;
 
   // If agency-services style (cardVariant === "services-box" or has content prop without features)
@@ -412,14 +412,19 @@ export function CommerceSolutionsSection({
 }
 
 import { ShopifyStageServicesBlock, ShopifyStageServicesSection } from "./ShopifyStageServicesBlock";
+import {
+  ThemeCustomizationServicesBlock,
+  ThemeCustomizationServicesSection,
+} from "./ThemeCustomizationServicesBlock";
 
 export {
   ServiceOfferingsGridBlock as FeaturesGridSection,
   ServiceOfferingsGridBlock as AgencyServicesSection,
   ShopifyStageServicesSection,
   ShopifyStageServicesBlock,
+  ThemeCustomizationServicesSection,
+  ThemeCustomizationServicesBlock,
   ServiceOfferingsGridBlock as AiServicesGridSection,
-  ServiceOfferingsGridBlock as ThemeCustomizationServicesSection,
   ServiceOfferingsGridBlock as ShopifyMigrationServicesSection,
   ServiceOfferingsGridBlock as ShopifyThemesGridSection,
   ServiceOfferingsGridBlock as ShopifyCroBarriersSection,
