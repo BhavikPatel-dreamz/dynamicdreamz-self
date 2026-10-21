@@ -1,3 +1,4 @@
+import { CityWhyChooseBoxesSection } from "@/components/sections/city-why-choose-boxes-section";
 import type { ServicePageEntry } from "./types";
 import { MagentoMigrationIcon } from "@/components/sections/magento-to-shopify/magento-migration-icons";
 import { MigrationPlatformIcon } from "@/components/sections/migration-platform-icons";
@@ -96,6 +97,8 @@ import {
   squarespaceMigrationSectionCopy,
   squarespaceProcessContent,
   squarespaceTestimonials,
+  squarespaceWhatAfterContent,
+  squarespaceWhyChooseContent,
   squarespaceWhyMigrateContent,
 } from "@/content/squarespace-to-shopify-migration";
 import {
@@ -406,7 +409,7 @@ export const shopifyMigrationsRegistry: readonly ServicePageEntry[] = [
         />
     ),
   },
-  {
+    {
     slug: "squarespace-to-shopify-migration",
     metadata: pageMetadata.squarespaceToShopifyMigration,
     getSchema: createSquarespaceToShopifyMigrationPageSchema,
@@ -435,7 +438,25 @@ export const shopifyMigrationsRegistry: readonly ServicePageEntry[] = [
             id: "benefits",
             variant: "transparent",
           }}
+          afterMigration={
+            <CityWhyChooseBoxesSection
+              columns={4}
+              content={{
+                eyebrow: squarespaceWhatAfterContent.eyebrow,
+                heading: squarespaceWhatAfterContent.heading,
+                description: squarespaceWhatAfterContent.description,
+                items: squarespaceWhatAfterContent.boxes.map((box) => ({
+                  title: box.title,
+                  description: box.description,
+                  iconNode: <MigrationPlatformIcon name={box.iconName} />,
+                })),
+              }}
+              id="after-migration"
+              theme="light"
+            />
+          }
           testimonials={squarespaceTestimonials}
+          whyChoose={squarespaceWhyChooseContent}
           whyMigrate={{
             boxes: squarespaceWhyMigrateContent.boxes.map((box) => ({
               description: box.description,

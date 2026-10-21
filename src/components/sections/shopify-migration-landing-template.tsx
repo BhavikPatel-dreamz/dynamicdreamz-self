@@ -54,6 +54,7 @@ export type ShopifyMigrationLandingTemplateProps = {
     }[];
     variant?: "yellow" | "transparent" | "green";
   };
+  afterMigration?: ReactNode;
   process: MigrationProcessContent;
   whyChoose?: EvaluationFrameworkContent;
   whyChooseId?: string;
@@ -77,6 +78,7 @@ export function ShopifyMigrationLandingTemplate({
   whyMigrate,
   comparison,
   secondaryServices,
+  afterMigration,
   process,
   whyChoose,
   whyChooseId = "why-choose-dynamic-dreamz",
@@ -126,6 +128,9 @@ export function ShopifyMigrationLandingTemplate({
           variant={secondaryServices.variant ?? "transparent"}
         />
       ) : null}
+
+      {/* 4b. After Migration Section (if present) */}
+      {afterMigration}
 
       {/* 5. Migration Process */}
       <MigrationProcessSection

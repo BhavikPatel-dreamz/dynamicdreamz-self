@@ -6065,9 +6065,9 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Squarespace to Shopify Migration (`/squarespace-to-shopify-migration`)
 
-Status: implemented and verified; live-visible content preserved
+Status: implemented and verified; 100% visual parity and live-visible content preserved
 
-Last reviewed: 2026-08-20
+Last reviewed: 2026-10-21
 
 Owner: SEO, Shopify migration specialists, leadership, and sales operations
 

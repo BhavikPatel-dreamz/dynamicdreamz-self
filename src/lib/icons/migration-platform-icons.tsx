@@ -29,6 +29,10 @@ export type MigrationPlatformIconName =
   | "greater-control-over-your-store"
   | "multiple-sales-channels"
   | "seo-and-marketing-tools"
+  | "seo-redirects"
+  | "app-integration"
+  | "store-testing"
+  | "performance-optimization"
 ;
 
 export function MigrationPlatformIcon({
@@ -288,6 +292,48 @@ export function MigrationPlatformIcon({
 <path d="M20.9992 21.0002L16.6992 16.7002" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
 <path d="M9 8.5L7 11L9 13.5" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
 <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+</svg>
+      );
+    case "seo-redirects":
+      return (
+        <svg aria-hidden="true" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 13.5L15 11L13 8.5" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M20.9992 21.0002L16.6992 16.7002" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M9 8.5L7 11L9 13.5" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+</svg>
+      );
+    case "app-integration":
+      return (
+        <svg aria-hidden="true" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 2H7C5.89543 2 5 2.89543 5 4V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V4C19 2.89543 18.1046 2 17 2Z" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M12 18H12.01" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+</svg>
+      );
+    case "store-testing":
+      return (
+        <svg aria-hidden="true" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.6 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V10.6" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M14.3047 19.5299L15.2277 19.1479" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M15 3V10.6" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M15.2287 16.8522L14.3047 16.4692" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M16.8517 15.2282L16.4688 14.3052" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M16.8517 20.772L16.4688 21.696" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M19.1484 15.2282L19.5314 14.3052" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M19.5304 21.696L19.1484 20.772" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M20.7734 16.8522L21.6954 16.4692" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M20.7734 19.1479L21.6954 19.5309" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M9 3V21" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M18 21C19.6569 21 21 19.6569 21 18C21 16.3431 19.6569 15 18 15C16.3431 15 15 16.3431 15 18C15 19.6569 16.3431 21 18 21Z" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+</svg>
+      );
+    case "performance-optimization":
+      return (
+        <svg aria-hidden="true" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.5 15.0005V20.0005C11.5 20.0005 14.53 19.4505 15.5 18.0005C16.58 16.3805 15.5 13.0005 15.5 13.0005" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M2 21.5003C2 21.5003 2.5 17.7603 4 16.5003C4.41088 16.1541 4.93516 15.9717 5.47223 15.9883C6.00929 16.005 6.52131 16.2193 6.91 16.5903C7.7 17.3703 7.71 18.6603 7 19.5003C5.74 21.0003 2 21.5003 2 21.5003Z" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M8.5 12.0002C9.03214 10.6197 9.7022 9.29631 10.5 8.05025C11.6652 6.18723 13.2876 4.6533 15.213 3.59434C17.1384 2.53538 19.3027 1.98662 21.5 2.00025C21.5 4.72025 20.72 9.50025 15.5 13.0002C14.2367 13.7987 12.8967 14.4687 11.5 15.0002L8.5 12.0002Z" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+<path d="M8.5 12.0006H3.5C3.5 12.0006 4.05 8.97057 5.5 8.00057C7.12 6.92057 10.5 8.05057 10.5 8.05057" stroke="#AD5151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
 </svg>
       );
     default:
