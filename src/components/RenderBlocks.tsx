@@ -138,7 +138,7 @@ import { whiteLabelShopifyDeliveryComparison } from "@/content/white-label-shopi
 import { sharedUiCopy } from "@/content/common";
 import { shopifyPlusAgencyIndustries, shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 import { industryBrandLogos } from "@/content/industries";
-import { mobileAppPlatformLabels } from "@/content/shopify-mobile-app-development";
+import { mobileAppPlatformLabels, shopifyMobileAppExploreWork } from "@/content/shopify-mobile-app-development";
 import { appmakerHeroCoBranding } from "@/content/appmaker-shopify-mobile-app-development";
 import { risksShopifyOutsourcingTopics } from "@/content/risks-of-shopify-outsourcing";
 import { siteMapLinks, type SiteMapLinkItem } from "@/content/site-map";
@@ -4837,7 +4837,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   description: smawBlock.description,
                   ctaHref: smawBlock.ctaHref || "/our-work",
                   ctaLabel:
-                    smawBlock.ctaLabel || "View All Mobile App Projects",
+                    smawBlock.ctaLabel || shopifyMobileAppExploreWork.ctaLabel,
+                  secondaryCta: shopifyMobileAppExploreWork.secondaryCta,
                   items: (smawBlock.items ?? []).map((i) => ({
                     name: i.name,
                     category: i.category,

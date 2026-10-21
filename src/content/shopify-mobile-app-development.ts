@@ -178,10 +178,15 @@ export const shopifyMobileAppExploreWork = {
   eyebrow: "Portfolio",
   heading: "Explore Our Work",
   description:
-    "For 20 years, we’ve worked on challenging and impactful projects for startups and leading global brands. Every website we create is designed around our clients’ goals.",
+    "For 20 years, we’ve worked on challenging and impactful projects for startups and leading global brands. Every mobile-app we create is designed around our clients’ goals.",
   ctaLabel: "View our work",
   ctaHref: "/our-work",
   ctaAriaLabel: "Dynamic Dreamz - View our work",
+  secondaryCta: {
+    label: "View Pricing",
+    href: "#our_white_label_pricing",
+    ariaLabel: "Dynamic Dreamz - View Pricing",
+  },
   items: [
     {
       id: "house-of-rare",
@@ -339,6 +344,41 @@ export const shopifyMobileAppExploreWork = {
 } as const;
 
 export const shopifyMobileAppWork = shopifyMobileAppExploreWork;
+
+export const shopifyMobileAppPricing = {
+  heading: "Choose the Right Shopify Engagement for Your Agency",
+  description:
+    "See the commercial model early. Start with one project, add flexible Shopify capacity, or build a dedicated delivery setup around your ongoing pipeline.",
+  items: [
+    {
+      label: "Project-Based",
+      badge: "Have One Project?",
+      price: "Custom Quote",
+      description:
+        "For complete Shopify Plus builds, migrations, redesigns, B2B requirements, custom apps, integrations and technically complex ecommerce projects.",
+      ctaLabel: "Send Brief — Get a Quote in 24 Hours",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Flexible Hourly Support",
+      badge: "Need Extra Shopify Capacity?",
+      price: "$25/hour",
+      description:
+        "For ongoing maintenance, enhancements, troubleshooting, performance improvements and changing Shopify Plus development requirements.",
+      ctaLabel: "Buy Shopify Development Hours",
+      ctaHref: "/buy-shopify-development-hours",
+    },
+    {
+      label: "Dedicated Developer / Team",
+      badge: "Need Ongoing Capacity?",
+      price: "From $2,000/month",
+      description:
+        "For brands with a steady Shopify roadmap, multiple storefronts or a need for a dedicated developer or wider delivery team.",
+      ctaLabel: "Discuss a Dedicated Team",
+      ctaHref: "/book-a-discovery-call",
+    },
+  ],
+} as const;
 
 export type ComparisonRow = {
   title: string;

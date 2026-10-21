@@ -77,7 +77,7 @@ export function ContactWidget({ whatsappNumber }: { whatsappNumber?: string | nu
     : siteConfig.whatsappHref;
 
   return (
-    <div className="whatsapp-widget fixed right-5 bottom-20 z-110 max-[767px]:bottom-[38px] [body:has(main[data-page=home])_&]:bottom-[15px] [body:has(main[data-page=home])_&]:max-[767px]:bottom-[10px] [&_a]:[transition:all_.3s_ease]">
+    <div className="whatsapp-widget fixed right-5 bottom-20 z-110 max-[991px]:bottom-[60px] max-[767px]:bottom-[38px] [body:has(main[data-page=home])_&]:bottom-[15px] [body:has(main[data-page=home])_&]:max-[767px]:bottom-[10px] [&_a]:[transition:all_.3s_ease]">
       <a
         className="whatsapp-widget flex min-w-[240px] max-[1199px]:min-w-[220px] max-[767px]:min-w-[200px] items-center rounded-[100px] bg-brand-green px-2.5 py-1.75 max-[767px]:p-[5px] text-white shadow-[0_10px_30px_rgb(0_0_0/15%)] transition-all duration-300 ease-[ease] [transition:all_.3s_ease] hover:-translate-y-0.75 hover:shadow-[0_15px_40px_rgb(0_0_0/20%)]"
         href={href}
@@ -112,7 +112,7 @@ export function ContactWidget({ whatsappNumber }: { whatsappNumber?: string | nu
           <small className="mb-[5px] text-[12px] font-semibold max-[767px]:mb-[3px] max-[767px]:text-[11px]">
             {siteChromeCopy.contactWidget.prompt}
           </small>
-          <strong className="text-[18px] font-bold leading-[1.1] max-[767px]:text-sm">{siteChromeCopy.contactWidget.cta}</strong>
+          <strong className="text-[18px] font-bold leading-[1.1] max-[1199px]:text-[16px] max-[767px]:text-sm">{siteChromeCopy.contactWidget.cta}</strong>
         </span>
       </a>
     </div>
@@ -145,7 +145,7 @@ export function SiteHeader({
     navigation && navigation.length > 0 ? navigation : primaryNavigation;
 
   return (
-    <header className="site-header fixed top-0 left-0 z-[111] w-full py-[15px] [&.header-up]:py-[12px] bg-white/60 backdrop-blur-[25px] transition-all duration-500 ease-in-out [body:has(main[data-page=home])_&:not(.header-up)]:bg-transparent [body:has(main[data-page=home])_&:not(.header-up)]:backdrop-blur-none [body:has(main[data-page=career-apply-now])_&]:hidden [body:has(main[data-page=request-quote])_&]:hidden [body:has(main[data-page=shopify-development-in-barcelona-spain])_&]:hidden [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [&.header-down]:-translate-y-full [&.header-down]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] [&.header-up]:translate-y-0 [&.header-up]:bg-white/60 [&.header-up]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] max-[768px]:[&:not(.header-up)]:bg-transparent">
+    <header className="site-header fixed top-0 left-0 z-[111] w-full py-[15px] min-[1200px]:py-0 max-[991px]:[&.header-up]:py-[12px] min-[1200px]:[&.header-up]:py-0 bg-white/60 backdrop-blur-[25px] transition-all duration-500 ease-in-out [body:has(main[data-page=home])_&:not(.header-up)]:bg-transparent [body:has(main[data-page=home])_&:not(.header-up)]:backdrop-blur-none [body:has(main[data-page=career-apply-now])_&]:hidden [body:has(main[data-page=request-quote])_&]:hidden [body:has(main[data-page=shopify-development-in-barcelona-spain])_&]:hidden [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [&.header-down]:-translate-y-full [&.header-down]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] [&.header-up]:translate-y-0 [&.header-up]:bg-white/60 [&.header-up]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] max-[991px]:[&:not(.header-up)]:bg-transparent">
       <HeaderScrollBehavior />
       <Container className="relative flex items-center justify-between gap-0 max-[1199px]:min-h-[34px]">
         <div className="flex items-center">
@@ -157,12 +157,12 @@ export function SiteHeader({
             aria-label="Dynamic Dreamz home"
           >
             <Image
-              className="h-auto w-[225px] max-[768px]:w-[170px] max-[380px]:w-[150px]"
+              className="h-auto w-[225px] max-[767px]:w-[170px] max-[379px]:w-[150px]"
               src={effectiveLogo}
               alt={effectiveLogoAlt}
               width={257}
               height={39}
-              sizes="(max-width: 380px) 150px, (max-width: 768px) 170px, 225px"
+              sizes="(max-width: 379px) 150px, (max-width: 767px) 170px, 225px"
               loading="eager"
               decoding="async"
               preload
@@ -172,7 +172,7 @@ export function SiteHeader({
           <DesktopNavigation navigation={effectiveNav} />
         </div>
 
-        <div className="header-btn shrink-0">
+        <div className="header-btn shrink-0 ml-5 min-[1400px]:ml-6">
           <ButtonLink
             className="py-3.75 max-[1399px]:px-5 max-[1399px]:py-3.25 max-[1399px]:text-[14px] max-[1199px]:px-[14px]! max-[1199px]:py-[9px]! max-[1199px]:text-[13px]! max-[379px]:px-[10px]! max-[379px]:py-[8px]! max-[379px]:text-[10px]!"
             variant="primary"

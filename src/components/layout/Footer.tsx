@@ -64,10 +64,16 @@ function SocialLinks({
   className?: string;
   socialLinks?: SocialLinkItem[] | null;
 }) {
-  if (socialLinks && socialLinks.length > 0) {
+  // Live site only displays 2 social links in the footer: LinkedIn and Instagram
+  const activeLinks = socialLinks?.filter((item) => {
+    const platform = item.platform.toLowerCase();
+    return platform.includes("linkedin") || platform.includes("instagram");
+  });
+
+  if (activeLinks && activeLinks.length > 0) {
     return (
       <div className={`flex items-center gap-2.5 ${className}`}>
-        {socialLinks.map((item) => {
+        {activeLinks.map((item) => {
           const isInsta = item.platform.toLowerCase().includes("instagram");
           return (
             <a
@@ -246,7 +252,7 @@ export function SiteFooter({
         <div>
           {effectiveNavigation.map((group) => (
             <details className="group/footer border-b border-ink/10" key={group.label}>
-              <summary className="flex cursor-pointer font-montreal-medium list-none items-center justify-between py-[18px] text-base leading-[1.66] font-medium [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer font-montreal-medium list-none items-center justify-between py-[18px] text-base leading-[1.66] font-normal text-ink [&::-webkit-details-marker]:hidden">
                 <span>{group.label}</span>
                 <span className="relative h-3 w-3 shrink-0" aria-hidden="true">
                   <span className="absolute top-[5px] left-0 h-0.5 w-3 bg-black" />
@@ -258,7 +264,7 @@ export function SiteFooter({
                   <ul className="m-0 list-none p-0 pb-[18px]">
                     {group.links.map((link) => (
                       <li className="leading-[30.4px]" key={`${link.label}-${link.href}`}>
-                        <Link className="text-sm leading-5 font-normal text-[#252c15] capitalize transition-colors duration-300 hover:text-brand-red focus-visible:text-ink" href={link.href}>{link.label}</Link>
+                        <Link className="text-sm leading-5 font-medium text-ink/80 capitalize transition-colors duration-300 hover:text-ink hover:opacity-100 focus-visible:text-ink" href={link.href}>{link.label}</Link>
                       </li>
                     ))}
                   </ul>
@@ -267,7 +273,7 @@ export function SiteFooter({
             </details>
           ))}
         </div>
-        <div className="mt-5">
+        <div className="mt-[30px]">
           <ContactDetails
             showSocial={false}
             email={effectiveEmail}
@@ -291,7 +297,7 @@ export function SiteFooter({
       </Container>
 
       <Container>
-        <div className="flex items-center justify-between pt-[30px] pb-[15px] max-[991px]:pt-[30px] max-[991px]:pb-5 max-[767px]:mt-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:gap-[15px] max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-[15px] max-[767px]:pb-[15px] max-[767px]:text-center">
+        <div className="flex items-center justify-between pt-[30px] pb-[15px] min-[992px]:max-[1199px]:pt-10 min-[992px]:max-[1199px]:pb-5 max-[991px]:pt-[30px] max-[991px]:pb-5 max-[767px]:mt-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:gap-[15px] max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-[15px] max-[767px]:pb-[15px] max-[767px]:text-center max-[359px]:gap-2.5">
           {effectiveCopyright ? (
             <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">{effectiveCopyright}</p>
           ) : (
@@ -299,12 +305,12 @@ export function SiteFooter({
           )}
 
           {effectiveBottomLinks && effectiveBottomLinks.length > 0 ? (
-            <div className="flex max-[767px]:mt-0">
+            <div className="flex max-[767px]:mt-0 max-[767px]:w-full max-[767px]:justify-center">
               {effectiveBottomLinks.map((link, idx) => (
                 <Link
                   key={`${link.label}-${link.href}`}
                   className={cn(
-                    "inline-block text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]",
+                    "inline-block text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]",
                     idx < effectiveBottomLinks.length - 1 && "relative mr-[14px] pr-[10px] after:absolute after:-top-[1px] after:right-[-4px] after:content-['|']",
                   )}
                   href={link.href}
@@ -316,9 +322,9 @@ export function SiteFooter({
               ))}
             </div>
           ) : (
-            <div className="flex max-[767px]:mt-0">
-              <Link className="relative mr-[14px] inline-block pr-[10px] text-sm leading-5 font-normal text-ink transition-colors duration-300 after:absolute after:-top-[1px] after:right-[-4px] after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.termsPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.terms}</Link>
-              <Link className="inline-block text-sm leading-5 font-normal text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.privacyPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.privacy}</Link>
+            <div className="flex max-[767px]:mt-0 max-[767px]:w-full max-[767px]:justify-center">
+              <Link className="relative mr-[14px] inline-block pr-[10px] text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 after:absolute after:-top-[1px] after:right-[-4px] after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.termsPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.terms}</Link>
+              <Link className="inline-block text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.privacyPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.privacy}</Link>
             </div>
           )}
         </div>
