@@ -91,7 +91,7 @@ export function ClientLogoMarqueeBlock({
             <div className="title w-full lg:w-[44%]">
               <h2
                 className={cn(
-                  "m-0 font-montreal-medium text-[43px] font-normal leading-[1.2] text-ink",
+                  "m-0 font-montreal-medium text-[35px] font-normal leading-[1.2] text-ink",
                   isShopifyHours
                     ? "font-sans text-[35px] font-normal leading-[1.4] tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]"
                     : "max-[1199px]:text-[35px] max-[1199px]:leading-[48px] max-[992px]:mb-2.5 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[33px]",
