@@ -84,7 +84,7 @@ export function ClientLogoMarqueeBlock({
             className={cn(
               "flex items-end justify-between max-[992px]:flex-col max-[992px]:items-start",
               isShopifyHours
-                ? "mb-10 max-[767px]:mb-[30px]"
+                ? "section_title_with_eyebrow mb-10 max-[767px]:mb-[30px]"
                 : "mb-[50px] min-[768px]:max-[992px]:mb-[30px] max-[767px]:mb-[55px] max-[767px]:text-center",
             )}
           >
@@ -100,7 +100,7 @@ export function ClientLogoMarqueeBlock({
                 {h}
               </h2>
             </div>
-            <div className="description w-full lg:w-[48.3%]">
+            <div className={cn("description w-full lg:w-[48.3%]", isShopifyHours && "section_text")}>
               <p className="m-0 font-sans text-base font-medium leading-[27px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
                 {d}
               </p>

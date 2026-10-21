@@ -1356,9 +1356,9 @@ Dedicated industry solution landing page for beauty and cosmetics brands seeking
 
 ## White Label Shopify Development Services (`/white-label-shopify-development-services`)
 
-Status: remigrated and verified against 2026-09-22 live site state; live-visible content preserved
+Status: remigrated and verified against 2026-10-21 live site state; section sequence aligned with live (Section 3: Shopify Team Behind It, Section 4: Support Scenarios), hero CTA set to /book-a-discovery-call, FAQ bg-sky-blue applied; live-visible content preserved
 
-Last reviewed: 2026-09-22
+Last reviewed: 2026-10-21
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -3233,7 +3233,7 @@ jurisdiction, effective date, or controller claim is introduced.
 
 Status: implemented and verified; live-visible content preserved; CMS-rendered dynamic block parity verified in Neon DB
 
-Last reviewed: 2026-10-14
+Last reviewed: 2026-10-21
 
 Owner: SEO, content, development, leadership, sales, and delivery operations
 
@@ -8126,11 +8126,11 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 ## Shopify Certified Developers (`/shopify-certified-developers`)
 
-Status: implemented and verified; live-visible content preserved; visual parity complete with live hero video, credentials, tabs, directory proof, split FAQs, and closing CTA; CMS-rendered dynamic block parity verified in Neon DB; repaired database record (removed unwanted brand-partners block and restored section 9 white-label-final-cta)
-Last reviewed: 2026-10-14
+Status: implemented and verified; exact 9-section order and live styling parity verified; removed phantom bottom closing CTA to match live termination at Split FAQ; verified eyebrows, CSS classes, proof stats (20+, 150+, 2500+), and CTA links (/book-a-discovery-call)
+Last reviewed: 2026-10-21
 Owner: SEO, Shopify development, UI/UX design, leadership, sales operations, and client success
 Primary audience: Shopify and Shopify Plus merchants, B2B and wholesale businesses, ecommerce leaders, and digital agencies evaluating credentialed Shopify development expertise.
-Decision stage: credential verification, capability matching, partner evaluation, technical scoping, and quote request
+Decision stage: credential verification, capability matching, partner evaluation, technical scoping, and discovery call booking
 
 ### Page role
 
@@ -8147,14 +8147,15 @@ Dedicated commercial and evidence page for Dynamic Dreamz's Shopify-credentialed
 ### Core answer and available evidence
 
 - Server-rendered H1 and introductory answer identify the credentialed team, agency model, Shopify Platinum Partner positioning, and project intent.
-- Hero section (`.hero-new-section`) includes eyebrow ("Established in 2006 • Shopify Platinum Partner"), two button CTAs, four partner/review badges (Shopify Platinum Partner, Clutch 130+ reviews, Trustpilot 4.9, Upwork Top Rated Plus), and right-column video wrapper playing `why-dynamic-dreamz.mp4`.
-- Four visible credential cards preserve the exact live credential names and counts: Shopify Development Fundamentals (20), Shopify B2B Foundations, Discovery and Solution Design (7), Liquid Storefronts for Theme Developers (15), and B2B on Shopify Launch and Customization (7).
-- Every credential card links to the live page's matching Credly badge URL and has a meaningful local image alternative.
-- The credential matcher gives direct storefront, Shopify B2B, existing-store, and ongoing-support guidance through an accessible tab interface while keeping every panel in server-rendered HTML.
-- Six visible delivery services cover custom themes, Liquid, Shopify B2B, existing-store improvements, app/API integration, and ongoing development.
-- The Partner Directory proof retains the visible live facts and links their source: Platinum Partner, 5.0 rating, 80+ directory reviews, and partner since September 2013.
-- Eight visible FAQs answer credential, partner, service, Shopify Plus, and agency-selection questions in a two-column split FAQ layout matching the live site.
-- White closing CTA with "discuss your shopify project" button.
+- Hero section (`.hero-new-section`) includes eyebrow ("Established in 2006 • Shopify Platinum Partner"), primary CTA linking to `/book-a-discovery-call`, secondary anchor CTA (`#see_our_certifications`), four partner/review badges (Shopify Platinum Partner, Clutch 130+ reviews, Trustpilot 4.9, Upwork Top Rated Plus), and right-column video wrapper playing `why-dynamic-dreamz.mp4`.
+- Section 2 client logo marquee (`.our-client-sec`) showcasing trusted brands.
+- Section 3 verified knowledge (`.verified-shopify-knowledge-section`) with 3 numbered capability columns and eyebrow "Shopify Certified".
+- Section 4 visible credential cards (`.evidence_you_can_see_section`, id "see_our_certifications") with eyebrow "Certified Expertise", Credly wings badge backgrounds, and 4 badges: Shopify Development Fundamentals (20), Shopify B2B Foundations, Discovery and Solution Design (7), Liquid Storefronts for Theme Developers (15), and B2B on Shopify Launch and Customization (7).
+- Section 5 credential matcher (`.which_shopify_credential_section`) with left split heading and eyebrow "Shopify Credentials", giving storefront, Shopify B2B, existing-store, and ongoing-support guidance.
+- Section 6 dark agency support section (`.certified_developers_section`) with eyebrow "Beyond Development", 2 lead paragraphs, and green checkmark proof points.
+- Section 7 delivery capabilities (`.certified-process-section`) with eyebrow "What We Deliver" and 6 cream/off-white alternating cards.
+- Section 8 official partner directory proof (`.shopifys_official_partner_section`) retaining visible live stats: Platinum Partner tier, 20+ Years of Experience, 150+ Experts, and 2500+ Verified 5 star Reviews.
+- Section 9 split FAQ (`.faq-sec.bg-sky-blue`) with 8 FAQs in two columns, leading straight into the global footer without a duplicate closing CTA block.
 
 ### Structured gap analysis
 
@@ -8163,7 +8164,8 @@ Dedicated commercial and evidence page for Dynamic Dreamz's Shopify-credentialed
 | P0 | implemented | Hero visual parity | Local used WhiteLabel hero illustration instead of live video hero with badges | Use `ServiceHeroVideoSection` with why-dynamic-dreamz video, eyebrow, and 4 badges | Verified exact visual parity across 1440px, 768px, and 390px viewports |
 | P0 | implemented | FAQ layout parity | Local used centered WhiteLabel FAQ card design instead of live two-column split FAQ | Replace with `SplitFaqSection` matching live `.faq-sec.bg-sky-blue` layout | Verified exact layout, styling, and accordion functionality |
 | P0 | implemented | Route and discovery | Canonical slashless route `/shopify-certified-developers` required production SEO | Provide complete metadata, Open Graph, Twitter, and structured data | Verified canonical, sitemap, robots, and JSON-LD schema |
-| P1 | implemented | Closing CTA styling | Background was warm off-white `#fafaf7` instead of live `#ffffff` | Set `variant="certifiedDevelopers"` to render clean `bg-white` with 560px content block | Verified responsive desktop, tablet, and mobile presentation |
+| P0 | implemented | Section count & sequence | Next.js had phantom Section 10 (`WhiteLabelFinalCtaSection`) not present on live site | Remove Section 10 and terminate page at Section 9 Split FAQ | Verified exact 9-section match with live site |
+| P1 | implemented | Eyebrows & proof stats | Missing section eyebrows on sections 3, 4, 5, 6, 7; Section 8 stats had rating 5.0 instead of live 20+, 150+, 2500+ | Add exact live eyebrows to all section headers; update stats in content model to 20+, 150+, 2500+ | Verified against live computed markup and styles |
 
 ### Visible content and copy improvements
 
@@ -8772,8 +8774,8 @@ Last reviewed: 2026-10-14
 
 ## Buy Shopify Development Hours (`/buy-shopify-development-hours`)
 
-Status: implemented and verified; live-visible content preserved; CMS-rendered dynamic block parity verified in Neon DB
-Last reviewed: 2026-10-14
+Status: implemented and verified; exact 8-section sequence and live styling parity verified; DOM hierarchy aligned across all sections (pricing card classes, comparison ribbon, engagement-section timeline, brand partners copy and split FAQ wrappers)
+Last reviewed: 2026-10-21
 Owner: SEO, Shopify development, delivery operations, finance, leadership, and sales operations
 Primary audience: Shopify and Shopify Plus merchants, growing brands, ecommerce teams, founders, and digital agencies that need flexible prepaid development capacity without a fixed monthly commitment.
 Decision stage: engagement-model comparison, package selection, pricing review, provider validation, purchase, and custom-quote request

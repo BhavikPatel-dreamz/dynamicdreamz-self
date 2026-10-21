@@ -118,6 +118,7 @@ export function SplitSectionHeading({
             className={cn("mb-4", eyebrowClassName)}
             lineThickness="thin"
             lineWidth="fixed"
+            tone={dark ? "inverse" : undefined}
           >
             {eyebrow}
           </Eyebrow>

@@ -32,10 +32,13 @@ export function WhiteLabelShopifyPage() {
       {/* 2. Stats Counter Section */}
       <WhiteLabelCounterSection counters={whiteLabelShopifyCounters} />
 
-      {/* 3. Scenario Tabs Section */}
+      {/* 3. Brand Protection / Team Behind It */}
+      <ShopifyTeamBehindItSection content={whiteLabelShopifyBrandProtection} />
+
+      {/* 4. Scenario Tabs Section */}
       <ShopifySupportScenariosSection content={whiteLabelShopifyScenarios} />
 
-      {/* 4. Portfolio Section */}
+      {/* 5. Portfolio Section */}
       <PortfolioShowcaseSection
         columns={4}
         content={whiteLabelShopifyPortfolio}
@@ -44,14 +47,11 @@ export function WhiteLabelShopifyPage() {
         variant="liveGrid"
       />
 
-      {/* 5. Pricing / Engagement Models */}
+      {/* 6. Pricing / Engagement Models */}
       <PricingTableSection content={whiteLabelShopifyPricing} />
 
-      {/* 6. Delivery Model Comparison Table */}
+      {/* 7. Delivery Model Comparison Table */}
       <DeliveryModelComparisonSection content={whiteLabelShopifyDeliveryComparison} />
-
-      {/* 7. Brand Protection / Team Behind It */}
-      <ShopifyTeamBehindItSection content={whiteLabelShopifyBrandProtection} />
 
       {/* 8. Shopify Technologies & Tools Marquee */}
       <WhiteLabelToolsSection />

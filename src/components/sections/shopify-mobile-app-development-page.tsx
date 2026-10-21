@@ -8,14 +8,12 @@ import { ShopifyMobileAppDtcSection } from "@/components/sections/shopify-mobile
 import { ShopifyMobileAppWorkSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-work-section";
 import { ShopifyMobileAppComparisonSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-comparison-section";
 import { ShopifyMobileAppExperienceSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-experience-section";
-import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import {
   shopifyMobileAppCaseStudies,
   shopifyMobileAppComparison,
   shopifyMobileAppCounters,
   shopifyMobileAppDevelopmentFaqs,
   shopifyMobileAppDtcBrands,
-  shopifyMobileAppEngagement,
   shopifyMobileAppExperience,
   shopifyMobileAppExploreWork,
   shopifyMobileAppFaqCopy,

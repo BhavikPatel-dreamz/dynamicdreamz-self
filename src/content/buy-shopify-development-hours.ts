@@ -15,7 +15,7 @@ export type ShopifyHoursPackage = {
 export const shopifyHoursSectionCopy = {
   brandsHeading: "Partnering with Ambitious Brands",
   brandsDescription:
-    "Selected brands our teams have supported across Shopify, Shopify Plus and digital commerce.",
+    "Supporting growing D2C and global brands across Shopify, Shopify Plus, and digital commerce.",
   pricing: {
     hours: "Hours",
     bulkHours: "Bulk hours",
@@ -120,7 +120,7 @@ export const shopifyHoursCommitments: ThemeCustomizationServicesContent = {
       number: "05",
       title: "Complete Transparency",
       description:
-        "Tasks is tracked, documented, and reported with clear visibility of hours remaining.",
+        "Tasks are tracked, documented and reported with clear visibility of hours remaining.",
     },
   ],
 };

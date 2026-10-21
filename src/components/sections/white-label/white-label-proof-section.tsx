@@ -78,7 +78,8 @@ export function WhiteLabelWhySection({
   const lastRowIndex = Math.ceil(reasons.length / 3) - 1;
   const isPistaBg = Boolean(
     eyebrow?.toLowerCase().includes("process") ||
-    eyebrow?.toLowerCase().includes("partnership")
+    eyebrow?.toLowerCase().includes("partnership") ||
+    eyebrow?.toLowerCase().includes("onboarding")
   );
 
   return (

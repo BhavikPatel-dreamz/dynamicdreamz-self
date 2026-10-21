@@ -28,6 +28,7 @@ export function BuyShopifyDevelopmentHoursPage() {
       <ShopifyHoursComparisonSection />
       <ShopifyHoursTasksSection />
       <NumberedProcessTimelineSection
+        className="engagement-section"
         description={shopifyHoursProcess.description}
         eyebrow={shopifyHoursProcess.eyebrow}
         heading={shopifyHoursProcess.heading}

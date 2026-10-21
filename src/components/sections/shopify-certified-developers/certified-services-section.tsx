@@ -10,6 +10,7 @@ export type CertifiedServicesItem = {
 };
 
 export type CertifiedServicesContent = {
+  eyebrow?: string;
   heading: string | readonly string[];
   description: string | readonly string[];
   items: readonly CertifiedServicesItem[];
@@ -24,13 +25,14 @@ export function CertifiedServicesSection({
 }: CertifiedServicesSectionProps) {
   return (
     <section
-      className="pt-20 pb-20 max-[992px]:py-[50px]"
+      className="certified-process-section pt-20 pb-20 max-[992px]:py-[50px]"
       aria-labelledby="certified-shopify-services-title"
     >
       <Container>
         <SplitSectionHeading
           className="mb-[50px] items-start max-[992px]:mb-[30px]"
           description={content.description}
+          eyebrow={content.eyebrow}
           heading={content.heading}
           headingId="certified-shopify-services-title"
           textClassName="w-[43%]"

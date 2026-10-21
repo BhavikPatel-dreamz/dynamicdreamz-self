@@ -24,6 +24,7 @@ function CheckIcon() {
 }
 
 export type CertifiedAgencySupportContent = {
+  eyebrow?: string;
   heading: string | readonly string[];
   paragraphs?: readonly string[];
   items: readonly {
@@ -41,13 +42,14 @@ export function CertifiedAgencySupportSection({
 }: CertifiedAgencySupportSectionProps) {
   return (
     <section
-      className="bg-[#192019] py-[60px] max-[992px]:py-10"
+      className="certified_developers_section bg-[#171E16] py-[60px] max-[992px]:py-10"
       aria-labelledby="certified-agency-support-title"
     >
       <Container>
         <SplitSectionHeading
           className="mb-[50px] items-start max-[1199px]:mb-[30px]"
           dark
+          eyebrow={content.eyebrow}
           heading={content.heading}
           headingId="certified-agency-support-title"
           paragraphs={content.paragraphs}
