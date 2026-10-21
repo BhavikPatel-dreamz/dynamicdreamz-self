@@ -1,10 +1,10 @@
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 import { siteConfig } from "@/data/site";
-import type { ClientLogoSliderItem } from "@/components/ui/CarouselSliderClient";
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
-import type { PortfolioShowcaseItem } from "@/types/blocks";
-import type { CaseStudyPreviewItem } from "@/types/blocks";
-import type { WhyChooseMigrationContent } from "@/types/blocks";
+import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { PortfolioShowcaseItem } from "@/components/sections/portfolio-showcase-section";
+import type { CaseStudyPreviewItem } from "@/components/sections/services-case-studies-section";
+import type { WhyChooseMigrationContent } from "@/components/sections/why-choose-shopify-migration-section";
 
 export const shopifyMigrationHero = {
   eyebrowSpans: ["Established in 2006", "Shopify Platinum Partner"] as const,

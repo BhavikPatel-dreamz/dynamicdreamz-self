@@ -2,7 +2,7 @@ import type {
   BlocksyBenefitIconName,
   BlocksyFeatureIconName,
   BlocksyServiceIconName,
-} from "@/lib/icons/blocksy-icons";
+} from "@/components/sections/blocksy-theme-customization/blocksy-icons";
 
 export type BlocksyFeatureItem = {
   iconName: BlocksyFeatureIconName;

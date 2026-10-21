@@ -19,8 +19,8 @@ import {
   ShopifyStoreToMobileAppIcon,
   TestingShieldIcon,
   UtilityBusinessAppsIcon,
-} from "@/lib/icons/mobile-app-icons";
-import { MobileAppLandingTemplate } from "./templates";
+} from "@/components/sections/mobile-application/mobile-app-icons";
+import { MobileAppLandingTemplate } from "@/components/sections/mobile-app-landing-template";
 import { pageMetadata } from "@/data/seo";
 import {
   createAndroidAppDevelopmentPageSchema,

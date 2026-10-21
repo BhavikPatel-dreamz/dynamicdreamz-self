@@ -1,17 +1,17 @@
 import type { ServicePageEntry } from "./types";
-import { AboutPage } from "./pages/about-page";
-import { BookDiscoveryCallPage } from "@/components/blocks/DiscoveryCallBookingBlock";
-import { CareerApplyNowPage } from "./pages/career-apply-now";
-import { CareerPage } from "./pages/career-page";
-import { ContactPage } from "./pages/contact-page";
-import { HomePage } from "./pages/home-page";
-import { LifeDynamicDreamzPage } from "./pages/life-dynamicdreamz-page";
-import { OurWorkPage } from "./pages/our-work-page";
-import { PrivacyPolicyPage } from "@/components/blocks/LegalRichTextBlock";
-import { RequestQuotePage } from "@/components/blocks/MultiStepQuoteRequestBlock";
-import { ResourcesPage } from "./pages/resources-page";
-import { SiteMapPage } from "@/components/blocks/LegalRichTextBlock";
-import { TermsOfServicePage } from "@/components/blocks/LegalRichTextBlock";
+import { AboutPage } from "@/components/sections/about-page";
+import { BookDiscoveryCallPage } from "@/components/sections/book-a-discovery-call-page";
+import { CareerApplyNowPage } from "@/components/sections/career-apply-now/career-apply-now-page";
+import { CareerPage } from "@/components/sections/career-page";
+import { ContactPage } from "@/components/sections/contact-page";
+import { HomePage } from "@/components/sections/home-page";
+import { LifeDynamicDreamzPage } from "@/components/sections/life-dynamicdreamz-page";
+import { OurWorkPage } from "@/components/sections/our-work-page";
+import { PrivacyPolicyPage } from "@/components/sections/privacy-policy-page";
+import { RequestQuotePage } from "@/components/sections/request-quote-page";
+import { ResourcesPage } from "@/components/sections/resources-page";
+import { SiteMapPage } from "@/components/sections/site-map-page";
+import { TermsOfServicePage } from "@/components/sections/terms-of-service-page";
 import { pageMetadata } from "@/data/seo";
 import {
   createAboutPageSchema,

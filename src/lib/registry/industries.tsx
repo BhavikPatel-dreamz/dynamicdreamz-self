@@ -1,5 +1,5 @@
 import type { ServicePageEntry } from "./types";
-import { IndustryLandingTemplate } from "./templates";
+import { IndustryLandingTemplate } from "@/components/sections/industry-landing-template";
 import { pageMetadata } from "@/data/seo";
 import {
   createBeautyCosmeticsPageSchema,

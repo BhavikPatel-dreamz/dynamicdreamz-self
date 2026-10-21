@@ -1,4 +1,4 @@
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 export const wordpressDevelopmentCompanyHero = {

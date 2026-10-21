@@ -1,4 +1,4 @@
-import { ShopifyCityLandingTemplate } from "./templates";
+import { ShopifyCityLandingTemplate } from "@/components/sections/shopify-city-landing-template";
 import { shopifyDevelopmentChennaiContent } from "@/content/shopify-development-company-in-chennai";
 import { shopifyDevelopmentBangaloreContent } from "@/content/shopify-development-in-bangalore";
 import { shopifyDevelopmentBarcelonaContent } from "@/content/shopify-development-in-barcelona-spain";

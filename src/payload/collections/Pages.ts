@@ -37,6 +37,7 @@ import { OurWorkProjectsBlock } from "@/payload/blocks/OurWorkProjectsBlock";
 import { OurWorkCaseStudiesBlock } from "@/payload/blocks/OurWorkCaseStudiesBlock";
 import { ContactHeroBlock } from "@/payload/blocks/ContactHeroBlock";
 import { ContactFormBlock } from "@/payload/blocks/ContactFormBlock";
+import { FormBlock } from "@/payload/blocks/FormBlock";
 import { ContactOfficesBlock } from "@/payload/blocks/ContactOfficesBlock";
 import { ContactDetailsBlock } from "@/payload/blocks/ContactDetailsBlock";
 import { DiscoveryCallBlock } from "@/payload/blocks/DiscoveryCallBlock";
@@ -218,6 +219,7 @@ export const Pages: CollectionConfig = {
         OurWorkCaseStudiesBlock,
         ContactHeroBlock,
         ContactFormBlock,
+        FormBlock,
         ContactOfficesBlock,
         ContactDetailsBlock,
         DiscoveryCallBlock,

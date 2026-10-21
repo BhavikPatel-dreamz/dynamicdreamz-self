@@ -1,5 +1,5 @@
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
-import type { PortfolioAppLink } from "@/types/blocks";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { PortfolioAppLink } from "@/components/ui/portfolio-project-card";
 import type { WhiteLabelProcessStep } from "@/types/white-label-service";
 
 export const mobileAppPlatformLabels = {

@@ -48,6 +48,7 @@ export async function generateMetadata({
   const pageSlug = slug && slug.length > 0 ? slug.join("/") : "home";
   const draft = await draftMode();
   const rawPage = await getPayloadPageBySlug(pageSlug, { preview: draft.isEnabled });
+  const serviceEntry = getServicePageEntry(pageSlug);
 
   if (rawPage) {
     const page = rawPage as unknown as PageData;
@@ -99,7 +100,6 @@ export async function generateMetadata({
     };
   }
 
-  const serviceEntry = getServicePageEntry(pageSlug);
   if (serviceEntry) {
     return serviceEntry.metadata;
   }
@@ -121,6 +121,7 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
   const page = rawPage as unknown as PageData | null;
   const pageSections = (page?.sections as readonly CmsSectionBlock[] | undefined) || [];
 
+  // If the page is populated in Payload CMS with modular sections, render from CMS:
   if (pageSections.length > 0) {
     const title = page?.seo?.metaTitle || `${page?.title || "Page"} | Dynamic Dreamz`;
     const description =
@@ -161,6 +162,7 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
     );
   }
 
+  // Otherwise, fall back to the complete verified local migrated page:
   if (serviceEntry) {
     const schema = serviceEntry.getSchema();
     return (

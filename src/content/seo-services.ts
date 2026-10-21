@@ -1,12 +1,12 @@
-import type { AgencyServicesContent } from "@/types/blocks";
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
-import type { ProofSectionContent } from "@/types/blocks";
-import type { ServiceHeroContent } from "@/types/blocks";
-import type { ShopifyThemeTechSectionProps } from "@/types/blocks";
-import type { ThemeWhyChooseSectionProps } from "@/types/blocks";
-import type { IndustriesServedContent } from "@/types/blocks";
-import type { PillListContent } from "@/types/blocks";
-import type { LetsBuildContent } from "@/types/blocks";
+import type { AgencyServicesContent } from "@/components/sections/agency-services-section";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { ProofSectionContent } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
+import type { ServiceHeroContent } from "@/components/sections/service-hero-section";
+import type { ShopifyThemeTechSectionProps } from "@/components/sections/shopify-theme-customization/shopify-theme-tech-section";
+import type { ThemeWhyChooseSectionProps } from "@/components/sections/theme-customization/theme-why-choose-section";
+import type { IndustriesServedContent } from "@/components/sections/shopify-plus-agency/industries-served-section";
+import type { PillListContent } from "@/components/sections/pill-list-section";
+import type { LetsBuildContent } from "@/components/sections/lets-build-section";
 
 export const seoServicesSectionCopy = {
   faqHeading: "FAQs",

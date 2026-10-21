@@ -2,7 +2,7 @@ import type {
   ExtendableBenefitIconName,
   ExtendableFeatureIconName,
   ExtendableServiceIconName,
-} from "@/lib/icons/extendable-icons";
+} from "@/components/sections/extendable-theme-customization/extendable-icons";
 
 export type ExtendableFeatureItem = {
   iconName: ExtendableFeatureIconName;

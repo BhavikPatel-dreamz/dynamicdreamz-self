@@ -3,7 +3,7 @@ import type {
   HelloBizBenefitIconName,
   HelloBizFeatureIconName,
   HelloBizServiceIconName,
-} from "@/lib/icons/hello-biz-icons";
+} from "@/components/sections/hello-biz-theme-customization/hello-biz-icons";
 
 export type HelloBizFeatureItem = {
   iconName: HelloBizFeatureIconName;

@@ -1,7 +1,7 @@
-import type { ClientLogoSliderItem } from "@/components/ui/CarouselSliderClient";
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
-import type { HeroBadge, ServiceHeroVideoContent } from "@/types/blocks";
-import type { OnlineStore20IconName } from "@/lib/icons/migrating-theme-to-online-store-2-0-icons";
+import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { HeroBadge, ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
+import type { OnlineStore20IconName } from "@/components/sections/migrating-theme-to-online-store-2-0-icons";
 
 export type ThemeMigrationBoxItem = {
   title: string;
