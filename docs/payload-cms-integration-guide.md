@@ -222,6 +222,8 @@ Payload CMS is the **content authority**; React is the **presentation authority*
 | **Categories** | `categories` | Blog taxonomy categories. |
 | **Authors** | `authors` | Blog post authors with avatars and bios. |
 | **Users** | `users` | Admin and editor accounts with authentication. |
+| **Forms** | `forms` | Dynamic custom forms powered by `@payloadcms/plugin-form-builder`. Configured with modular field blocks, on-screen Lexical confirmation or internal page redirect, and templated notification emails. |
+| **Form Submissions** | `form-submissions` | Captured form entries and inquiries across all forms with field/value arrays, timestamps, and automated forwarding to webhook. |
 
 ### Globals (`src/payload/globals/`)
 | Global | Slug | Purpose |
@@ -244,7 +246,77 @@ Payload CMS is the **content authority**; React is the **presentation authority*
 
 ---
 
-## 8. How to Add or Extend a Block (Developer Guide)
+## 8. Form Builder Plugin & Universal Form Handling (`@payloadcms/plugin-form-builder`)
+
+All dynamic and standard form handling is powered natively by `@payloadcms/plugin-form-builder` combined with our frontend React architecture:
+
+```mermaid
+flowchart TD
+    subgraph CMSAdmin["Payload Admin (/admin)"]
+        FormsColl["Forms Collection (Build fields, emails, redirects)"]
+        SubsColl["Form Submissions Collection (View lead entries)"]
+    end
+
+    subgraph PagesCollection["Pages Builder"]
+        FormBlockSchema["FormBlock (slug: 'form-block')"]
+        ContactFormBlockSchema["ContactFormBlock (optional 'form' relation)"]
+    end
+
+    subgraph FrontendApp["Next.js App Router Frontend"]
+        FormBlockComp["FormBlock.tsx (Server Component container)"]
+        CmsFormClientComp["CmsFormClient.tsx (Interactive Client Form)"]
+        ContactSectionComp["ContactOfficesAndFormBlock.tsx (Dual resolution)"]
+    end
+
+    subgraph SubmissionFlow["Submission & Notification Engine"]
+        ApiEndpoint["POST /api/form-submissions"]
+        LocalActions["Server Actions (contact.ts / quote.ts)"]
+        WebhookHook["formSubmissionOverrides.hooks.afterChange"]
+        ExternalWebhook["CRM / Lead Webhook (CONTACT_FORM_WEBHOOK_URL)"]
+    end
+
+    FormsColl --> FormBlockSchema
+    FormsColl --> ContactFormBlockSchema
+    FormBlockSchema --> FormBlockComp
+    FormBlockComp --> CmsFormClientComp
+    ContactFormBlockSchema --> ContactSectionComp
+    ContactSectionComp --> CmsFormClientComp
+    CmsFormClientComp --> ApiEndpoint
+    LocalActions --> SubsColl
+    ApiEndpoint --> SubsColl
+    SubsColl --> WebhookHook
+    WebhookHook --> ExternalWebhook
+```
+
+### 1. Configuration in `payload.config.ts`
+The plugin is configured with:
+- `fields`: Built-in fields enabled (`text`, `email`, `textarea`, `select`, `number`, `checkbox`, `country`, `state`, `message`). Payment fields are disabled.
+- `redirectRelationships: ['pages']`: Allows selecting internal pages as redirect targets upon submission.
+- `formSubmissionOverrides.hooks.afterChange`: Automatically forwards submissions to `CONTACT_FORM_WEBHOOK_URL` with bearer token authentication if configured.
+- `access`: `create: () => true` allows public frontend visitors to submit inquiries; `read` is restricted to authenticated admin users.
+
+### 2. Form Placement on Dynamic Pages
+1. **Generic `FormBlock` (`src/payload/blocks/FormBlock.ts`)**:
+   - Slug: `form-block`
+   - Editors can drop a form anywhere on any page via the `sections` field in `Pages`.
+   - Fields: `form` (relationship to `forms`), `enableIntro`, `introContent`, `eyebrow`, `title`, `description`, `containerWidth`.
+2. **`ContactFormBlock` (`src/payload/blocks/ContactFormBlock.ts`)**:
+   - Includes an optional `form` relationship field. If an editor selects a custom Form, the contact section renders the dynamic form. If left empty, it falls back to the default contact form.
+
+### 3. Frontend Component Architecture (`src/components/forms/CmsFormClient.tsx`)
+- Server-rendered container with client-interactive form boundary (`CmsFormClient`).
+- Supports half-width (2-column desktop) and full-width inputs matching the Dynamic Dreamz design system.
+- Built-in anti-spam honeypot (`name="website"`).
+- UTM attribution capture (`utm_source`, `utm_medium`, `utm_campaign`, etc.).
+- Lexical rich-text confirmation message or page redirect handling.
+- Fully typed display strings from `src/content/forms.ts` (`cmsFormCopy`).
+
+### 4. Dual-Recording in Server Actions
+The standard server actions (`submitContactForm` in `contact.ts` and `submitQuoteForm` in `quote.ts`) record incoming inquiries directly into Payload's `form-submissions` collection while maintaining external webhook forwarding.
+
+---
+
+## 9. How to Add or Extend a Block (Developer Guide)
 
 When a new page design requires a section that does not match any existing block:
 
@@ -327,14 +399,14 @@ npm run lint
 
 ---
 
-## 9. Non-Technical Operations Runbook
+## 10. Non-Technical Operations Runbook
 
 For non-technical team members, editors, and clients managing pages, menus, or blog posts via the Admin Panel:
 > Refer to the dedicated guide: **[`docs/wordpress-team-operations-runbook.md`](wordpress-team-operations-runbook.md)**.
 
 ---
 
-## 10. Quality Verification Suite
+## 11. Quality Verification Suite
 
 Always verify changes with the production quality gate commands:
 

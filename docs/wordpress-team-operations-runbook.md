@@ -19,10 +19,11 @@ With this setup, **100% of website content, pages, media, global navigation, and
 8. [Managing Case Studies & Portfolio](#8-managing-case-studies--portfolio)
 9. [Managing Client Testimonials & Reviews](#9-managing-client-testimonials--reviews)
 10. [Media Library & Asset Upload Guidelines](#10-media-library--asset-upload-guidelines)
-11. [SEO & Social Sharing Metadata](#11-seo--social-sharing-metadata)
-12. [Live Preview & Draft Mode](#12-live-preview--draft-mode)
-13. [Instant Cache Invalidation & Publishing](#13-instant-cache-invalidation--publishing)
-14. [Troubleshooting & Common FAQs](#14-troubleshooting--common-faqs)
+11. [Creating & Managing Forms (Form Builder)](#11-creating--managing-forms-form-builder)
+12. [SEO & Social Sharing Metadata](#12-seo--social-sharing-metadata)
+13. [Live Preview & Draft Mode](#13-live-preview--draft-mode)
+14. [Instant Cache Invalidation & Publishing](#14-instant-cache-invalidation--publishing)
+15. [Troubleshooting & Common FAQs](#15-troubleshooting--common-faqs)
 
 ---
 
@@ -37,6 +38,7 @@ With this setup, **100% of website content, pages, media, global navigation, and
 | **Portfolio / Projects (CPT)** | **Collections $\rightarrow$ Case Studies** | Manage client name, metrics, challenges, solutions, image galleries, and review quotes. |
 | **Client Testimonials** | **Collections $\rightarrow$ Testimonials** | Add quotes, star ratings, reviewer roles, company logos, and video review links. |
 | **Media Library** | **Collections $\rightarrow$ Media** | Drag-and-drop file uploads with automatic WebP conversion and SEO alt attributes. |
+| **Contact Form 7 / Gravity Forms** | **Collections $\rightarrow$ Forms & Form Submissions** | Create custom dynamic forms, configure input fields, setup notification emails or redirects, and view incoming leads. |
 | **Yoast / RankMath SEO** | **SEO Field Group (Built-in)** | Edit Meta Title, Meta Description, Canonical URL, and Social Share Image for any page or post. |
 
 ---
@@ -318,7 +320,58 @@ All image, icon, logo, and banner fields across Pages, Posts, Case Studies, and 
 
 ---
 
-## 11. SEO & Social Sharing Metadata
+## 11. Creating & Managing Forms (Form Builder)
+
+Dynamic Dreamz includes a full visual **Form Builder** powered by Payload CMS (`@payloadcms/plugin-form-builder`). You can create custom lead capture forms, configure fields, set up notification emails, and view incoming submissions directly in the Admin Panel.
+
+### A. Creating a New Form
+1. In the left navigation, click **Collections** $\rightarrow$ **Forms** (`forms`).
+2. Click **Create New Form**.
+3. Fill in the Form Details:
+   - **Title**: Internal name of the form (e.g., `Contact Us`, `Request a Quote`, `Landing Page Lead Capture`).
+   - **Submit Button Label**: Text displayed on the button (e.g., `Submit Inquiry`, `Get Free Audit`). Defaults to `Submit`.
+4. **Fields (Drag-and-Drop Form Inputs)**:
+   Click **Add Field** and select the input type:
+   - **Text (`text`)**: Standard text input for Name, Company, Website URL, etc.
+   - **Email (`email`)**: Validated email address input.
+   - **Textarea (`textarea`)**: Multi-line message or project description box.
+   - **Select (`select`)**: Dropdown menu. Click **Add Option** to provide Label and Value pairs.
+   - **Number (`number`)**: Numeric input (e.g., phone extension, budget amount).
+   - **Checkbox (`checkbox`)**: Consent or opt-in checkbox.
+   - **Country (`country`) / State (`state`)**: Regional selection dropdown.
+   - **Message (`message`)**: Informational rich-text note rendered directly inside the form.
+   > **Width Tip**: Set **Width** to `50` for two inputs side-by-side on desktop, or `100` for full-width inputs.
+5. **Confirmation Settings**:
+   - **Confirmation Type**: Choose between **Message** (displays on-screen rich text upon submission) or **Redirect** (forwards the user to a page).
+   - If **Message**: Write your thank-you message in the rich text box.
+   - If **Redirect**: Select an internal document from the `Pages` dropdown or enter a custom URL.
+6. **Notification Emails (Optional)**:
+   - Click **Add Email** to send automated email receipts or notifications.
+   - **Send To**: Destination email address (or dynamic token like `{{email}}` to email the submitter).
+   - **Subject**: Email subject line.
+   - **Message**: Email content. Use `{{*:table}}` to automatically include a summary table of all submitted values.
+7. Click **Save**.
+
+### B. Embedding Forms on Pages
+There are two ways to display forms on website pages:
+1. **Generic Form Section (`form-block`)**:
+   - Open any Page in **Collections $\rightarrow$ Pages**.
+   - Under **Page Layout Sections**, click **Add Section** and choose **Form Section**.
+   - Select your form from the **Select Form** dropdown.
+   - Optionally add an **Eyebrow**, **Section Title**, and **Section Description**.
+2. **Contact Form Section (`contact-form`)**:
+   - The dedicated contact section on `/contact-us` allows picking any custom Form from the Form Builder.
+   - If left blank, it automatically uses the canonical default contact form.
+
+### C. Viewing & Managing Form Submissions
+1. In the left navigation, click **Collections** $\rightarrow$ **Form Submissions** (`form-submissions`).
+2. You will see a list of every submission received with its associated Form, submission timestamp, and captured data.
+3. Click any submission to view the complete field responses, entered values, and UTM attribution parameters (`utm_source`, `utm_medium`, `utm_campaign`, etc.).
+4. Submissions are automatically forwarded to our CRM webhook if `CONTACT_FORM_WEBHOOK_URL` is configured.
+
+---
+
+## 12. SEO & Social Sharing Metadata
 
 Every Page, Post, and Case Study includes an **SEO Settings** group:
 
@@ -336,7 +389,7 @@ Every Page, Post, and Case Study includes an **SEO Settings** group:
 
 ---
 
-## 12. Live Preview & Draft Mode
+## 13. Live Preview & Draft Mode
 
 Payload 3.0 provides real-time side-by-side Live Preview:
 
@@ -348,7 +401,7 @@ Payload 3.0 provides real-time side-by-side Live Preview:
 
 ---
 
-## 13. Instant Cache Invalidation & Publishing
+## 14. Instant Cache Invalidation & Publishing
 
 Next.js uses Incremental Static Regeneration (ISR) for blistering page speed:
 
@@ -362,7 +415,7 @@ Next.js uses Incremental Static Regeneration (ISR) for blistering page speed:
 
 ---
 
-## 14. Troubleshooting & Common FAQs
+## 15. Troubleshooting & Common FAQs
 
 ### Q: I updated a navigation link in Globals, but I don't see it on the site.
 **A**:
