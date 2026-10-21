@@ -1,4 +1,4 @@
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 
 export const shopifyPlusAgencyHero = {
   title: "Shopify Plus Agency",

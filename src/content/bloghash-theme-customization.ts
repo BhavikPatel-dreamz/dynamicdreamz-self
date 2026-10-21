@@ -3,7 +3,7 @@ import type {
   BloghashBenefitIconName,
   BloghashFeatureIconName,
   BloghashServiceIconName,
-} from "@/lib/icons/bloghash-icons";
+} from "@/components/sections/bloghash-theme-customization/bloghash-icons";
 
 export type BloghashFeatureItem = {
   iconName: BloghashFeatureIconName;

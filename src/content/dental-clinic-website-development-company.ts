@@ -1,10 +1,10 @@
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
-import type { ServiceHeroVideoContent } from "@/types/blocks";
-import type { ClientLogoSliderItem } from "@/components/ui/CarouselSliderClient";
-import type { EvaluationFrameworkContent } from "@/types/blocks";
-import type { ThemeCustomizationServicesContent } from "@/types/blocks";
-import type { OurDevelopmentProcessContent } from "@/types/blocks";
-import type { PortfolioShowcaseItem } from "@/types/blocks";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
+import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import type { EvaluationFrameworkContent } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
+import type { ThemeCustomizationServicesContent } from "@/components/sections/theme-customization-services-section";
+import type { OurDevelopmentProcessContent } from "@/components/sections/our-development-process-section";
+import type { PortfolioShowcaseItem } from "@/components/sections/portfolio-showcase-section";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
 const heroContent: ServiceHeroVideoContent = {

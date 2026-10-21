@@ -1,12 +1,12 @@
-import type { ClientLogoSliderItem } from "@/components/ui/CarouselSliderClient";
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
-import type { ServiceHeroVideoContent } from "@/types/blocks";
-import type { CaseStudyPreviewItem } from "@/types/blocks";
-import type { ThemeCustomizationServicesContent } from "@/types/blocks";
-import type { IndustryCustomDevelopmentContent } from "@/types/blocks";
+import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
+import type { CaseStudyPreviewItem } from "@/components/sections/services-case-studies-section";
+import type { ThemeCustomizationServicesContent } from "@/components/sections/theme-customization-services-section";
+import type { IndustryCustomDevelopmentContent } from "@/components/sections/industry/industry-custom-development-section";
 import type { WhiteLabelTool } from "@/types/white-label-service";
-import type { PortfolioShowcaseItem } from "@/types/blocks";
-import type { WhyChooseMigrationContent } from "@/types/blocks";
+import type { PortfolioShowcaseItem } from "@/components/sections/portfolio-showcase-section";
+import type { WhyChooseMigrationContent } from "@/components/sections/why-choose-shopify-migration-section";
 
 // 1. Hero
 export const healthNutritionHero: ServiceHeroVideoContent = {

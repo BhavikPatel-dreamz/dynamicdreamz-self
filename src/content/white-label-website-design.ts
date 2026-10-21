@@ -1,8 +1,8 @@
-import type { CityPageHeroContent } from "@/types/blocks";
-import type { OurDevelopmentProcessContent } from "@/types/blocks";
-import type { ShopifyStageServicesContent } from "@/types/blocks";
-import type { ShopifyTeamBoxesContent } from "@/types/blocks";
-import type { CounterItem } from "@/types/blocks";
+import type { CityPageHeroContent } from "@/components/sections/city-page-hero-section";
+import type { OurDevelopmentProcessContent } from "@/components/sections/our-development-process-section";
+import type { ShopifyStageServicesContent } from "@/components/sections/shopify-stage-services-section";
+import type { ShopifyTeamBoxesContent } from "@/components/sections/shopify-team-boxes-section";
+import type { CounterItem } from "@/components/sections/white-label-shopify/white-label-counter-section";
 import type {
   WhiteLabelCard,
   WhiteLabelFaq,

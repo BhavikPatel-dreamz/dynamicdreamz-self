@@ -3,7 +3,7 @@ import type {
   KadenceBenefitIconName,
   KadenceFeatureIconName,
   KadenceServiceIconName,
-} from "@/lib/icons/kadence-icons";
+} from "@/components/sections/kadence-theme-customization/kadence-icons";
 
 export type KadenceFeatureItem = {
   iconName: KadenceFeatureIconName;

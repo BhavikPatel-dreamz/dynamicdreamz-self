@@ -2,7 +2,7 @@ import type {
   NewsbloggerBenefitIconName,
   NewsbloggerFeatureIconName,
   NewsbloggerServiceIconName,
-} from "@/lib/icons/newsblogger-icons";
+} from "@/components/sections/newsblogger-theme-customization/newsblogger-icons";
 
 export type NewsbloggerFeatureItem = {
   iconName: NewsbloggerFeatureIconName;

@@ -2,7 +2,7 @@ import type {
   GoBenefitIconName,
   GoFeatureIconName,
   GoServiceIconName,
-} from "@/lib/icons/go-icons";
+} from "@/components/sections/go-theme-customization/go-icons";
 
 export type GoFeatureItem = {
   iconName: GoFeatureIconName;

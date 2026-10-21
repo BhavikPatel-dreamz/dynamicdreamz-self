@@ -1,4 +1,4 @@
-import type { PricingEngagementContent } from "@/types/blocks";
+import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import type {
   WhiteLabelCard,
   WhiteLabelFaq,

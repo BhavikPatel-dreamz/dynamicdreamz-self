@@ -1,0 +1,34 @@
+.moveLeft,
+.moveRight {
+  animation-duration: 45s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.moveLeft {
+  animation-name: move-left;
+}
+
+.moveRight {
+  animation-name: move-right;
+}
+
+@keyframes move-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes move-right {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

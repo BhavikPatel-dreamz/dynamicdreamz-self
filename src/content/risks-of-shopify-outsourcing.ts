@@ -1,4 +1,4 @@
-import type { FaqAccordionItem } from "@/components/ui/AccordionClient";
+import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 
 export type RisksShopifyTopic = {
   id: string;
