@@ -5782,6 +5782,10 @@ export function createSquarespaceToShopifyMigrationPageSchema() {
     serviceType:
       "Seamless Squarespace store migration to Shopify without downtime and full data integrity",
     breadcrumbName: "Squarespace to Shopify Migration",
+    parentBreadcrumb: {
+      name: "Shopify Migration",
+      item: absoluteUrl(pageSeo.shopifyMigration.path),
+    },
     audienceType:
       "Squarespace merchants, ecommerce brands, and growing businesses migrating to Shopify or Shopify Plus",
     faqs: squarespaceFaqs.map((item) => ({

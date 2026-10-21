@@ -3,6 +3,7 @@ import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
 import type { ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
 import type { MigrationPlatformIconName } from "@/components/sections/migration-platform-icons";
+import type { EvaluationFrameworkContent } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
 import { migrationBrandLogos, migrationHeroBadges, migrationSectionCopy } from "@/content/migration-common";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
@@ -107,6 +108,40 @@ export const squarespaceBenefitsContent = {
   ],
 };
 
+export type SquarespaceWhatAfterBox = {
+  iconName: MigrationPlatformIconName;
+  title: string;
+  description: string;
+};
+
+export const squarespaceWhatAfterContent = {
+  eyebrow: "After Migration",
+  heading: "What After Squarespace to Shopify Migration",
+  description: "Once your migration from Squarespace to Shopify is finished, there are some important tasks to handle to ensure your store is fully functional and optimized.",
+  boxes: [
+    {
+      iconName: "seo-redirects" as MigrationPlatformIconName,
+      title: "SEO Redirects",
+      description: "We set up 301 redirects to guide old Squarespace URLs to their new Shopify store. It helps preserve your SEO rankings and ensures a smooth user experience.",
+    },
+    {
+      iconName: "app-integration" as MigrationPlatformIconName,
+      title: "App Integration",
+      description: "Install the required Shopify apps to achieve your Squarespace store’s features. Shopify’s app store has a wide range of apps that can enhance your store’s functionality and efficiency.",
+    },
+    {
+      iconName: "store-testing" as MigrationPlatformIconName,
+      title: "Store Testing",
+      description: "We verify that all products, customer data, and orders are migrated correctly. Test all elements of your store, from checkout processes to customer accounts, to make sure everything runs smoothly on Shopify.",
+    },
+    {
+      iconName: "performance-optimization" as MigrationPlatformIconName,
+      title: "Performance Optimization",
+      description: "We run speed tests and optimize your store’s loading time, confirming that your customers enjoy a quick and seamless browsing experience.",
+    },
+  ],
+};
+
 export const squarespaceProcessContent: MigrationProcessContent = {
   eyebrow: "Migration Process",
   heading: "Squarespace to Shopify Migration Process",
@@ -193,6 +228,30 @@ export const squarespaceProcessContent: MigrationProcessContent = {
       stepNumber: "06",
       title: "Go Live",
       description: "Finally, we make your Shopify store live by linking it to your domain. We aim to minimize downtime during the final steps, usually scheduling the transition during non business hours to avoid disruption.",
+    },
+  ],
+};
+
+export const squarespaceWhyChooseContent: EvaluationFrameworkContent = {
+  eyebrow: "Why Dynamic Dreamz",
+  heading: "Why Choose Dynamic Dreamz for Squarespace to Shopify Migration Service",
+  description: "Dynamic Dreamz specializes in helping businesses migrate from Squarespace to Shopify, providing a smooth and secure transition that keeps your business running seamlessly.",
+  items: [
+    {
+      title: "Experienced Team",
+      description: "Our migration experts have handled multiple migrations from various platforms to Shopify, making us experienced in managing technical factors without disrupting your business operations.",
+    },
+    {
+      title: "Comprehensive Data Migration",
+      description: "We migrate all your essential data, including products, orders, and customer information, ensuring your new Shopify store is complete and ready to run.",
+    },
+    {
+      title: "Custom Theme Development",
+      description: "Whether you want to keep your current design or create a fresh look, we develop custom themes that reflect your brand and improve your store’s functionality.",
+    },
+    {
+      title: "Reliable Support",
+      description: "We give ongoing support after your store goes live, ensuring that any issues are resolved promptly and helping you maximize the potential of your new Shopify store.",
     },
   ],
 };

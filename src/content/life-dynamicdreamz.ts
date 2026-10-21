@@ -96,6 +96,7 @@ export const hiringCallout = {
 } as const;
 
 export const lifeFaqSection = {
+  eyebrow: "FAQ",
   title: "Your FAQs answered",
   description:
     "Here, we have addressed your concerns and queries that you want to know.",

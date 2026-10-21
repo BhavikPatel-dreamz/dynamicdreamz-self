@@ -15,6 +15,7 @@ export function LifeDynamicDreamzPage() {
         description={lifeFaqSection.description}
         heading={lifeFaqSection.title}
         idPrefix="life-faq"
+        eyebrow={lifeFaqSection.eyebrow}
         items={lifeFaqSection.items}
       />
       <LifeGallerySection />

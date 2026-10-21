@@ -30,10 +30,25 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    meta: {
+      titleSuffix: " - Dynamic Dreamz",
+      icons: [
+        {
+          type: "image/png",
+          rel: "icon",
+          sizes: "192x192",
+          url: "/icon.png",
+        },
+      ],
+    },
     components: {
       beforeDashboard: [
         "./src/payload/components/DashboardLeadsWidget#DashboardLeadsWidget",
       ],
+      graphics: {
+        Logo: "./src/payload/components/Logo#Logo",
+        Icon: "./src/payload/components/Icon#Icon",
+      },
     },
     livePreview: {
       breakpoints: [

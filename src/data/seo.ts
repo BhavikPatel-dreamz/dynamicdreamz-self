@@ -1087,16 +1087,16 @@ export const pageSeo = {
   },
   squarespaceToShopifyMigration: {
     path: "/squarespace-to-shopify-migration",
-    title: "Squarespace to Shopify Migration | Take an Expert Guide",
+    title: "Squarespace to Shopify Migration Services",
     description:
-      "Looking for Squarespace to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.",
+      "Migrate Squarespace to Shopify with Dynamic Dreamz. Move store data, rebuild key features, preserve SEO, and launch your new Shopify store with confidence.",
     keywords: [
       "Squarespace to Shopify migration",
       "Squarespace to Shopify",
       "Shopify migration experts",
     ],
     openGraphType: "article",
-    modifiedTime: "2025-02-25T10:09:37+00:00",
+    modifiedTime: "2026-09-15T09:36:46+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,
