@@ -10,7 +10,7 @@ export const shopifyDevelopmentHyderabadContent = {
   },
   hero: {
     eyebrows: ["Shopify Development", "Hyderabad"],
-    title: "#1 Company For Shopify Development in Hyderabad",
+    title: "Shopify Development Company in Hyderabad",
     description:
       "Dynamic Dreamz is your trusted Shopify development company in Hyderabad. We offer top notch Shopify solutions tailored to your business needs. From Shopify migration to theme customization, our Shopify developers deliver services that can help you boost your online store.",
     primaryCta: {

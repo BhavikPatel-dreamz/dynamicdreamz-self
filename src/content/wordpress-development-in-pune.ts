@@ -138,7 +138,7 @@ export const wordpressDevelopmentPuneContent = {
 
   hero: {
     eyebrows: ["Wordpress Development", "Pune"],
-    title: "#1 Company for WordPress Development in Pune",
+    title: "WordPress Development Company in Pune",
     description:
       "Dynamic Dreamz is an exclusive WordPress development company in Pune that provides diverse WordPress solutions tailored to your business requirements. We are experts in creating custom WordPress websites that satisfy your business objectives and provide a strong online presence. Our experienced team ensures your WordPress website stays unique and operational, offering custom themes and specialized plugins.",
     primaryCta: {
@@ -245,7 +245,7 @@ export const wordpressDevelopmentPuneContent = {
   counter: {
     eyebrow: "Wordpress Development Company in Pune",
     heading:
-      "Why Choose Dynamic Dreamz as Your WordPress Development Company in Pune?",
+      "Why Businesses in Pune Work with Dynamic Dreamz for WordPress Development",
     description:
       "Dynamic Dreamz is committed to supporting Pune's expanding business environment, as a WordPress Development Agency in Pune. We understand the region's unique market dynamics and cater to businesses across industries with tailored WordPress development solutions. We recognize the unique market dynamics of the area and provide customized WordPress development solutions for companies in different sectors.",
     items: [

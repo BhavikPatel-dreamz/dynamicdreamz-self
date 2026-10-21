@@ -205,6 +205,41 @@ export const wordpressDevelopmentServices = {
   ],
 } as const;
 
+export const wordpressDevelopmentEngagement = {
+  heading: "Flexible WordPress Development Options",
+  description:
+    "Choose project-based development, flexible hourly support or an ongoing WordPress developer/team based on the amount and type of work you need.",
+  items: [
+    {
+      label: "Project-Based",
+      badge: "Have One Project?",
+      price: "Custom Quote",
+      description:
+        "For complete WordPress website builds, custom theme development, website redesigns, plugin development, third-party integrations, WooCommerce solutions and technically complex WordPress projects.",
+      ctaLabel: "Send Brief — Get a Quote in 24 Hours",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Flexible Hourly Support",
+      badge: "Need Extra WordPress Capacity?",
+      price: "$20/hour",
+      description:
+        "For ongoing WordPress maintenance, enhancements, troubleshooting, performance improvements, security updates and evolving website development requirements.",
+      ctaLabel: "Buy Wordpress Development Hours",
+      ctaHref: "/request-quote",
+    },
+    {
+      label: "Dedicated Developer / Team",
+      badge: "Need Ongoing Capacity?",
+      price: "From $2,000/month",
+      description:
+        "For brands with an evolving WordPress roadmap, multiple websites or a need for a dedicated developer or wider development team.",
+      ctaLabel: "Discuss a Dedicated Team",
+      ctaHref: "/book-a-discovery-call",
+    },
+  ],
+} as const;
+
 export const wordpressDevelopmentPortfolio = {
   eyebrow: "Portfolio",
   heading: "A sneak peek into our WordPress Development Expertise",
@@ -285,54 +320,45 @@ export const wordpressDevelopmentTestimonials = {
 
 export const wordpressDevelopmentFaqs: readonly FaqAccordionItem[] = [
   {
-    question: "What is WordPress?",
+    question: "Is WordPress the right choice for my business?",
     answer:
-      "WordPress is a popular content management system (CMS) that you can use to power your website on your hosting plan. WordPress makes creating a blog, landing page, online store, forum, or other website possible for users around the world.",
+      "WordPress is suitable for many business websites, content-heavy sites, membership platforms and ecommerce projects. The right choice depends on your content, functionality, integrations, editing requirements and long-term roadmap.",
   },
   {
-    question: "Is WordPress free?",
+    question: "How much will you charge for my WordPress website?",
     answer:
-      "WordPress itself is a free, open source web software, but to use it, you will need to invest in a web hosting plan. You can find hosting for as little as $1 per month on a shared hosting plan, but we recommend spending a bit more on a managed WordPress hosting plan to make setting up and maintaining your website easy.",
+      "The cost depends on the design, number of templates, custom functionality, content, integrations and overall complexity. We offer project-based development, flexible hourly support and ongoing WordPress development options based on the requirement.",
   },
   {
-    question: "Is WordPress the right choice for my business? Is it safe and secure?",
+    question: "How much time is required for WordPress website development?",
     answer:
-      "WordPress is a good choice for businesses of all sizes and industries, as it is a safe and secure platform and a user friendly content management system that offers a wide range of features. It is regularly updated to address security vulnerabilities, and it provides tools and features to help protect your website from threats.\n\nWordPress will be the right choice if your business is related to marketing or if it requires multiple teammates to work on the backend at a time.",
-  },
-  {
-    question: "How much will you charge as per my requirements for the WordPress Website?",
-    answer:
-      "The cost of the development mainly depends upon your requirements. The best way to get the best deal for your project is to make a list of your requirements before starting any project.\n\nAt Dynamic Dreamz, our pricing is based on the requirements and complexity of the project. We offer a variety of packages and custom quotes depending on the project’s demand.",
-  },
-  {
-    question: "How much time is required for my WordPress website development?",
-    answer:
-      "A proper website development using the WordPress content management system typically takes 4-5 weeks from start to finish. It may vary depending on the complexity of the work involved. Make sure to ask for an estimate or convey a deadline.",
+      "A typical WordPress website may take around 4 to 6 weeks from approved design and scope to launch. More complex WooCommerce, multilingual, plugin or integration-heavy projects can take longer depending on content readiness, approvals and QA.",
   },
   {
     question: "What is your level of experience in WordPress development?",
     answer:
-      "Experience matters most. You have to decide the experience level of WordPress developer you need based on your project’s requirements and budget. Dynamic Dreamz has been providing custom WordPress website development services since 2006.",
+      "Dynamic Dreamz has provided WordPress development services since 2006. Our team works across custom themes, theme customization, plugins, WooCommerce, multilingual websites, integrations, performance improvements and ongoing support.",
   },
   {
-    question: "Can I convert my WordPress site into a WooCommerce site or add more functionalities/ features to it in the future?",
+    question:
+      "Can you convert my WordPress site into a WooCommerce store or add more features later?",
     answer:
-      "Yes, you can switch to a WooCommerce site or add more functionalities/features. Dynamic Dreamz has a team of experts who can assist you with the conversion and customization process to ensure that your site meets your specific requirements.",
+      "Yes. We can add WooCommerce, custom functionality, plugins, third-party integrations, membership features, multilingual support and other improvements to an existing WordPress website.",
   },
   {
-    question: "Will my WordPress site be designed and optimized with SEO and conversion rate in mind?",
+    question: "Will my WordPress site be built with SEO and conversion in mind?",
     answer:
-      "Yes, your WordPress site will be designed and implemented with SEO and conversion rate optimization in mind. We constantly read up on and test out the best and latest SEO strategies on your site. It includes on page optimization, keyword research, and implementing conversion focused design elements. We will also monitor and track your site for the expected results.",
+      "We build responsive WordPress websites with clear heading structure, metadata support, crawl-friendly implementation, performance best practices and usability in mind. Full SEO campaigns, keyword research and ongoing SEO monitoring can be scoped separately when required.",
   },
   {
-    question: "Can you ensure 100% performance of my WordPress website?",
+    question: "Will my WordPress website be responsive and fast?",
     answer:
-      "We can ensure 100% performance of your WordPress website through regular maintenance, updates, testing, and quality assurance measures and implementing performance optimization techniques such as caching and optimizing images and code.\n\nWe also have a team of experienced WordPress developers and experts who can survey and troubleshoot any issues to ensure smooth and consistent performance.",
+      "Yes. We build responsive layouts and review images, caching, scripts, themes and plugins to improve loading performance where practical. Final speed depends on hosting, third-party tools, content and the overall site architecture.",
   },
   {
-    question: "Will you build my WordPress site with responsive features? Will it load fast?",
+    question: "Do you provide ongoing WordPress maintenance and support?",
     answer:
-      "Yes, we will build your WordPress site with responsive features. We will ensure a fast loading time by optimizing images and utilizing caching plugins. Also, your WordPress site will be both mobile and desktop friendly to reach a wide range of people.",
+      "Yes. We provide ongoing WordPress support for updates, backups, fixes, theme and plugin changes, performance work, new features, integrations and continuous development.",
   },
 ];
 

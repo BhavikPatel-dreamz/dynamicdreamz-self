@@ -8,6 +8,7 @@ import { ShopifyMobileAppDtcSection } from "@/components/sections/shopify-mobile
 import { ShopifyMobileAppWorkSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-work-section";
 import { ShopifyMobileAppComparisonSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-comparison-section";
 import { ShopifyMobileAppExperienceSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-experience-section";
+import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import {
   shopifyMobileAppCaseStudies,
   shopifyMobileAppComparison,
@@ -15,6 +16,7 @@ import {
   shopifyMobileAppDevelopmentCtaBanner,
   shopifyMobileAppDevelopmentFaqs,
   shopifyMobileAppDtcBrands,
+  shopifyMobileAppEngagement,
   shopifyMobileAppExperience,
   shopifyMobileAppExploreWork,
   shopifyMobileAppFaqCopy,
@@ -37,7 +39,10 @@ export function ShopifyMobileAppDevelopmentPage() {
       {/* 4. Explore Our Work (Portfolio Apps) */}
       <ShopifyMobileAppWorkSection content={shopifyMobileAppExploreWork} />
 
-      {/* 5. App Builder vs Custom Development Table */}
+      {/* 5. Engagement Models / Pricing */}
+      <PricingTableSection content={shopifyMobileAppEngagement} />
+
+      {/* 6. App Builder vs Custom Development Table */}
       <ShopifyMobileAppComparisonSection content={shopifyMobileAppComparison} />
 
       {/* 6. Shopping Moments / Experience */}

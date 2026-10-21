@@ -10,7 +10,7 @@ export const shopifyDevelopmentDelhiContent = {
   },
   hero: {
     eyebrows: ["Shopify Development", "Delhi"],
-    title: "#1 Company For Shopify Development in Delhi",
+    title: "Shopify Development Company in Delhi",
     description:
       "The best Shopify development company in Delhi is Dynamic Dreamz, which provides customized eCommerce solutions that fit your business requirements. From Shopify theme customization to app integration, we offer a range of services that ensure your Shopify store operates seamlessly and stands out in the competitive eCommerce market.",
     primaryCta: {

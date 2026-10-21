@@ -1,4 +1,5 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { ShopifyReasonsSection } from "@/components/sections/hire-shopify-developers/shopify-proof-sections";
 import { LetsBuildSection } from "@/components/sections/lets-build-section";
 import { PillListSection } from "@/components/sections/pill-list-section";
@@ -8,6 +9,7 @@ import { ShopifyThemeTechSection } from "@/components/sections/shopify-theme-cus
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { ThemeWhyChooseSection } from "@/components/sections/theme-customization/theme-why-choose-section";
 import {
+  seoServicesBrands,
   seoServicesFaqs,
   seoServicesHeroContent,
   seoServicesIndustries,
@@ -26,6 +28,11 @@ export function SeoServicesPage() {
       <ServiceHeroSection
         content={seoServicesHeroContent}
         variant="centered"
+      />
+      <IndustryBrandsSection
+        content={{ slug: seoServicesBrands.slug }}
+        heading={seoServicesBrands.heading}
+        items={seoServicesBrands.items}
       />
       <PillListSection
         content={seoServicesWhyChoose}

@@ -120,7 +120,7 @@ export const appmakerBrandLogos: readonly ClientLogoSliderItem[] = [
 ] as const;
 
 export const appmakerBrands = {
-  title: "TRUSTED BY LEADING BRANDS",
+  title: "Trusted by Leading Brands",
   items: appmakerBrandLogos,
 } as const;
 

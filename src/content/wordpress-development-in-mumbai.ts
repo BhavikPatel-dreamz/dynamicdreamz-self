@@ -56,7 +56,7 @@ export const wordpressDevelopmentMumbaiContent = {
 
   hero: {
     eyebrows: ["Wordpress Development", "Mumbai"],
-    title: "#1 WordPress Development Company in Mumbai",
+    title: "WordPress Development Company in Mumbai",
     description:
       "Dynamic Dreamz is a reliable WordPress development company in Mumbai and other cities in India, known for building fast, secure, and scalable websites tailored to business growth. You can expect custom solutions designed for performance and flexibility from a professional WordPress web development company.",
     primaryCta: {
@@ -163,7 +163,7 @@ export const wordpressDevelopmentMumbaiContent = {
   counter: {
     eyebrow: "Wordpress Development Company in Mumbai",
     heading:
-      "Why Dynamic Dreamz is the Best WordPress Development Company?",
+      "Why Businesses in Mumbai Work with Dynamic Dreamz for WordPress Development",
     description:
       "Dynamic Dreamz stands out as a trusted WordPress development company by combining technical expertise with a business-first approach. Our team builds custom WordPress solutions focused on performance, scalability, and long-term reliability rather than one-time delivery.",
     items: [
