@@ -28,6 +28,11 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    components: {
+      beforeDashboard: [
+        "./src/payload/components/DashboardLeadsWidget#DashboardLeadsWidget",
+      ],
+    },
     livePreview: {
       breakpoints: [
         {
@@ -80,6 +85,18 @@ export default buildConfig({
       formSubmissionOverrides: {
         admin: {
           group: "Leads & Inquiries",
+          components: {
+            views: {
+              list: {
+                Component: "./src/payload/components/LeadsInboxView#LeadsInboxView",
+              },
+            },
+          },
+        },
+        access: {
+          read: ({ req }) => Boolean(req.user),
+          update: ({ req }) => Boolean(req.user),
+          delete: ({ req }) => Boolean(req.user),
         },
         hooks: {
           afterChange: [
