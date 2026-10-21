@@ -37,8 +37,8 @@ function extractLeadDetails(doc: SubmissionDoc) {
     typeof doc.form === "object" && doc.form?.title
       ? doc.form.title
       : typeof doc.form === "string" || typeof doc.form === "number"
-      ? `Form #${doc.form}`
-      : "Inquiry Form";
+        ? `Form #${doc.form}`
+        : "Inquiry Form";
 
   return {
     id: doc.id,
@@ -322,7 +322,6 @@ export const DashboardLeadsWidget = async ({ payload }: { payload?: Payload }) =
           className="leads-widget-btn"
         >
           <span>Open Leads Inbox</span>
-          <span>→</span>
         </Link>
       </div>
 
