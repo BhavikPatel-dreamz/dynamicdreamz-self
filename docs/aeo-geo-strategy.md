@@ -5460,7 +5460,7 @@ Last reviewed: 2026-09-23
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-20
+Last reviewed: 2026-10-22
 
 Owner: SEO, Shopify migration specialists, leadership, and sales operations
 
@@ -6130,7 +6130,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-20
+Last reviewed: 2026-10-22
 
 Owner: SEO, Shopify migration specialists, leadership, and sales operations
 
@@ -6192,7 +6192,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-20
+Last reviewed: 2026-10-22
 
 Owner: SEO, Shopify migration specialists, leadership, and sales operations
 
@@ -6253,7 +6253,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-20
+Last reviewed: 2026-10-22
 
 Owner: SEO, Shopify migration specialists, leadership, and sales operations
 
@@ -6316,7 +6316,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-08-20
+Last reviewed: 2026-10-22
 
 Owner: SEO, Shopify migration specialists, leadership, and sales operations
 
@@ -6377,7 +6377,7 @@ Deferred under the live-UI preservation gate. The current server-rendered layout
 
 Status: implemented and verified; live-visible content preserved
 
-Last reviewed: 2026-09-02
+Last reviewed: 2026-10-22
 
 Owner: SEO, Shopify migration specialists, leadership, and sales operations
 

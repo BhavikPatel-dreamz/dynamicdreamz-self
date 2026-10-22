@@ -48,6 +48,8 @@ import {
   etsyMigrationSectionCopy,
   etsyProcessContent,
   etsyTestimonials,
+  etsyThingsToConsiderContent,
+  etsyWhyChooseContent,
   etsyWhyMigrateContent,
 } from "@/content/etsy-to-shopify-migration";
 import {
@@ -63,11 +65,13 @@ import {
 import {
   prestashopBenefitsContent,
   prestashopBrandLogos,
+  prestashopDataMappingContent,
   prestashopFaqs,
   prestashopHeroContent,
   prestashopMigrationSectionCopy,
   prestashopProcessContent,
   prestashopTestimonials,
+  prestashopWhyChooseContent,
 } from "@/content/prestashop-to-shopify-migration";
 import {
   salesforceBenefitsContent,
@@ -77,6 +81,8 @@ import {
   salesforceMigrationSectionCopy,
   salesforceProcessContent,
   salesforceTestimonials,
+  salesforceThingsToConsiderContent,
+  salesforceWhyChooseContent,
   salesforceWhyMigrateContent,
 } from "@/content/salesforce-to-shopify-migration";
 import {
@@ -108,6 +114,9 @@ import {
   wixMigrationSectionCopy,
   wixProcessContent,
   wixTestimonials,
+  wixThingsToConsiderContent,
+  wixWhatAfterContent,
+  wixWhyChooseContent,
   wixWhyMigrateContent,
 } from "@/content/wix-to-shopify-migration";
 import {
@@ -189,18 +198,23 @@ export const shopifyMigrationsRegistry: readonly ServicePageEntry[] = [
           }}
           hero={ecwidHeroContent}
           process={ecwidProcessContent}
-          secondaryServices={{
-            boxes: ecwidThingsToConsiderContent.boxes.map((box) => ({
-              description: box.description,
-              icon: <MigrationPlatformIcon name={box.iconName} />,
-              title: box.title,
-            })),
-            description: ecwidThingsToConsiderContent.description,
-            eyebrow: ecwidThingsToConsiderContent.eyebrow,
-            heading: ecwidThingsToConsiderContent.heading,
-            id: "things-to-consider",
-            variant: "transparent",
-          }}
+          beforeProcess={
+            <CityWhyChooseBoxesSection
+              columns={4}
+              content={{
+                eyebrow: ecwidThingsToConsiderContent.eyebrow,
+                heading: ecwidThingsToConsiderContent.heading,
+                description: ecwidThingsToConsiderContent.description,
+                items: ecwidThingsToConsiderContent.boxes.map((box) => ({
+                  title: box.title,
+                  description: box.description,
+                  iconNode: <MigrationPlatformIcon name={box.iconName} />,
+                })),
+              }}
+              id="things-to-consider"
+              theme="light"
+            />
+          }
           testimonials={ecwidTestimonials}
           whyMigrate={{
             boxes: ecwidBenefitsContent.boxes.map((box) => ({
@@ -246,7 +260,25 @@ export const shopifyMigrationsRegistry: readonly ServicePageEntry[] = [
             id: "benefits",
             variant: "transparent",
           }}
+          beforeProcess={
+            <CityWhyChooseBoxesSection
+              columns={4}
+              content={{
+                eyebrow: etsyThingsToConsiderContent.eyebrow,
+                heading: etsyThingsToConsiderContent.heading,
+                description: etsyThingsToConsiderContent.description,
+                items: etsyThingsToConsiderContent.boxes.map((box) => ({
+                  title: box.title,
+                  description: box.description,
+                  iconNode: <MigrationPlatformIcon name={box.iconName} />,
+                })),
+              }}
+              id="things-to-consider"
+              theme="light"
+            />
+          }
           testimonials={etsyTestimonials}
+          whyChoose={etsyWhyChooseContent}
           whyMigrate={{
             boxes: etsyWhyMigrateContent.boxes.map((box) => ({
               description: box.description,
@@ -314,7 +346,25 @@ export const shopifyMigrationsRegistry: readonly ServicePageEntry[] = [
           }}
           hero={prestashopHeroContent}
           process={prestashopProcessContent}
+          beforeProcess={
+            <CityWhyChooseBoxesSection
+              columns={4}
+              content={{
+                eyebrow: prestashopDataMappingContent.eyebrow,
+                heading: prestashopDataMappingContent.heading,
+                description: prestashopDataMappingContent.description,
+                items: prestashopDataMappingContent.boxes.map((box) => ({
+                  title: box.title,
+                  description: box.description,
+                  iconNode: <MigrationPlatformIcon name={box.iconName} />,
+                })),
+              }}
+              id="data-mapping"
+              theme="light"
+            />
+          }
           testimonials={prestashopTestimonials}
+          whyChoose={prestashopWhyChooseContent}
           whyMigrate={{
             boxes: prestashopBenefitsContent.boxes.map((box) => ({
               description: box.description,
@@ -359,7 +409,25 @@ export const shopifyMigrationsRegistry: readonly ServicePageEntry[] = [
             id: "benefits",
             variant: "transparent",
           }}
+          beforeProcess={
+            <CityWhyChooseBoxesSection
+              columns={4}
+              content={{
+                eyebrow: salesforceThingsToConsiderContent.eyebrow,
+                heading: salesforceThingsToConsiderContent.heading,
+                description: salesforceThingsToConsiderContent.description,
+                items: salesforceThingsToConsiderContent.boxes.map((box) => ({
+                  title: box.title,
+                  description: box.description,
+                  iconNode: <MigrationPlatformIcon name={box.iconName} />,
+                })),
+              }}
+              id="things-to-consider"
+              theme="light"
+            />
+          }
           testimonials={salesforceTestimonials}
+          whyChoose={salesforceWhyChooseContent}
           whyMigrate={{
             boxes: salesforceWhyMigrateContent.boxes.map((box) => ({
               description: box.description,
@@ -438,7 +506,7 @@ export const shopifyMigrationsRegistry: readonly ServicePageEntry[] = [
             id: "benefits",
             variant: "transparent",
           }}
-          afterMigration={
+          beforeProcess={
             <CityWhyChooseBoxesSection
               columns={4}
               content={{
@@ -489,7 +557,42 @@ export const shopifyMigrationsRegistry: readonly ServicePageEntry[] = [
           }}
           hero={wixHeroContent}
           process={wixProcessContent}
+          beforeProcess={
+            <CityWhyChooseBoxesSection
+              columns={4}
+              content={{
+                eyebrow: wixThingsToConsiderContent.eyebrow,
+                heading: wixThingsToConsiderContent.heading,
+                description: wixThingsToConsiderContent.description,
+                items: wixThingsToConsiderContent.boxes.map((box) => ({
+                  title: box.title,
+                  description: box.description,
+                  iconNode: <MigrationPlatformIcon name={box.iconName} />,
+                })),
+              }}
+              id="things-to-consider"
+              theme="light"
+            />
+          }
+          afterProcess={
+            <CityWhyChooseBoxesSection
+              columns={4}
+              content={{
+                eyebrow: wixWhatAfterContent.eyebrow,
+                heading: wixWhatAfterContent.heading,
+                description: wixWhatAfterContent.description,
+                items: wixWhatAfterContent.boxes.map((box) => ({
+                  title: box.title,
+                  description: box.description,
+                  iconNode: <MigrationPlatformIcon name={box.iconName} />,
+                })),
+              }}
+              id="after-migration"
+              theme="light"
+            />
+          }
           testimonials={wixTestimonials}
+          whyChoose={wixWhyChooseContent}
           whyMigrate={{
             boxes: wixWhyMigrateContent.boxes.map((box) => ({
               description: box.description,

@@ -425,7 +425,6 @@ export {
   ThemeCustomizationServicesSection,
   ThemeCustomizationServicesBlock,
   ServiceOfferingsGridBlock as AiServicesGridSection,
-  ServiceOfferingsGridBlock as ShopifyMigrationServicesSection,
   ServiceOfferingsGridBlock as ShopifyThemesGridSection,
   ServiceOfferingsGridBlock as ShopifyCroBarriersSection,
   ServiceOfferingsGridBlock as ShopifyCroServicesSection,

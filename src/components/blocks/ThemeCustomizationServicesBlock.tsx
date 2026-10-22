@@ -44,12 +44,12 @@ export function ThemeCustomizationServicesBlock({
   return (
     <section
       className={cn(
-        "theme-customization-services max-[992px]:py-[50px]",
+        "theme-customization-services py-20 max-[992px]:py-[50px]",
         finalVariant === "green"
-          ? "green bg-[#eff4ef] py-20"
+          ? "green bg-[#eff4ef]"
           : finalVariant === "yellow"
-            ? "yellow bg-[#fafaf7] py-20"
-            : "transparent bg-transparent pt-0 pb-20",
+            ? "yellow bg-[#fafaf7]"
+            : "transparent bg-transparent",
         className,
       )}
       id={finalId}
@@ -89,7 +89,7 @@ export function ThemeCustomizationServicesBlock({
                 <div
                   className={cn(
                     "icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&>svg]:h-auto",
-                    finalVariant === "transparent" ? "[&>svg]:size-10" : "[&>svg]:size-6",
+                    "[&>svg]:size-6",
                     box.iconWrapperClassName,
                   )}
                 >
@@ -97,8 +97,8 @@ export function ThemeCustomizationServicesBlock({
                     <Image
                       src={box.icon}
                       alt=""
-                      width={finalVariant === "transparent" ? 40 : 24}
-                      height={finalVariant === "transparent" ? 40 : 24}
+                      width={24}
+                      height={24}
                       className="object-contain"
                     />
                   ) : (

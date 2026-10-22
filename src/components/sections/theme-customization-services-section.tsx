@@ -23,12 +23,14 @@ export type ThemeCustomizationServicesContent = {
 };
 
 export type ThemeCustomizationServicesSectionProps = {
+  className?: string;
   content: ThemeCustomizationServicesContent;
   id?: string;
   variant?: "green" | "yellow" | "transparent";
 };
 
 export function ThemeCustomizationServicesSection({
+  className,
   content,
   id,
   variant = "green",
@@ -36,12 +38,13 @@ export function ThemeCustomizationServicesSection({
   return (
     <section
       className={cn(
-        "theme-customization-services max-[992px]:py-[50px]",
+        "theme-customization-services py-20 max-[992px]:py-[50px]",
         variant === "green"
-          ? "green bg-[#eff4ef] py-20"
+          ? "green bg-[#eff4ef]"
           : variant === "yellow"
-            ? "yellow bg-[#fafaf7] py-20"
-            : "transparent bg-transparent pt-0 pb-20",
+            ? "yellow bg-[#fafaf7]"
+            : "transparent bg-transparent",
+        className,
       )}
       id={id}
     >
@@ -65,7 +68,7 @@ export function ThemeCustomizationServicesSection({
                 <div
                   className={cn(
                     "icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&>svg]:h-auto",
-                    variant === "transparent" ? "[&>svg]:size-10" : "[&>svg]:size-6",
+                    "[&>svg]:size-6",
                     box.iconWrapperClassName,
                   )}
                 >

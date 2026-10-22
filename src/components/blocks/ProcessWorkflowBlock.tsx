@@ -231,7 +231,6 @@ export {
   ProcessWorkflowBlock as OurDevelopmentProcessSection,
   ProcessWorkflowBlock as NumberedProcessTimelineSection,
   ProcessWorkflowBlock as ShopifyMigrationNumberedGridSection,
-  ProcessWorkflowBlock as ThemeCustomizationApproachSection,
   ProcessWorkflowBlock as ShopifyCroProcessSection,
   ProcessWorkflowBlock as WhiteLabelProcessSection,
   ProcessWorkflowBlock as ShopifyAppProcessSection,

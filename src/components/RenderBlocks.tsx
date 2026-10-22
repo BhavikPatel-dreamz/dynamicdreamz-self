@@ -63,11 +63,11 @@ import { CertifiedAgencySupportSection } from "@/components/blocks/CertifiedDeve
 import { CertifiedServicesSection } from "@/components/blocks/CertifiedDeveloperTabsBlock";
 import { PartnerDirectoryProofSection } from "@/components/blocks/CertifiedDeveloperTabsBlock";
 import { WhiteLabelFinalCtaSection } from "@/components/blocks/QuoteRequestCTABlock";
-import { ShopifyMigrationServicesSection } from "@/components/blocks/ServiceOfferingsGridBlock";
+import { ShopifyMigrationServicesSection } from "@/components/sections/shopify-migration/shopify-migration-services-section";
 import { ShopifyMigrationNumberedGridSection } from "@/components/blocks/ProcessWorkflowBlock";
 import { SeoSafeMigrationSection } from "@/components/blocks/MigrationDataChecklistBlock";
 import { WhyChooseShopifyMigrationSection } from "@/components/blocks/WhyChooseUsBlock";
-import { ThemeCustomizationApproachSection } from "@/components/blocks/ProcessWorkflowBlock";
+import { ThemeCustomizationApproachSection } from "@/components/sections/theme-customization-approach-section";
 import { ShopifyThemesGridSection } from "@/components/blocks/ServiceOfferingsGridBlock";
 import { AiEmpoweredDeliverySection } from "@/components/blocks/PerformanceBenchmarksBlock";
 import { ShopifyCroBarriersSection } from "@/components/blocks/ServiceOfferingsGridBlock";

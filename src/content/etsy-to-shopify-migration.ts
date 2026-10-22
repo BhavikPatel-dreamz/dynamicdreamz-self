@@ -1,5 +1,6 @@
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { EvaluationFrameworkContent } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
 import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
 import type { ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
 import type { MigrationPlatformIconName } from "@/components/sections/migration-platform-icons";
@@ -244,3 +245,61 @@ export const etsyFaqs: readonly FaqAccordionItem[] = [
     answer: "Of course, we provide support after the migration. Whether you need adjustments or additional features or have questions, our team is here to help.",
   },
 ];
+
+export type EtsyThingsToConsiderBox = {
+  iconName: MigrationPlatformIconName;
+  title: string;
+  description: string;
+};
+
+export const etsyThingsToConsiderContent = {
+  eyebrow: "Consideration",
+  heading: "Things to Consider Before Etsy to Shopify Migration",
+  description: "Before migrating from Etsy to Shopify, several factors should be considered to ensure a smooth transition. Planning these elements helps prevent issues and makes the migration as efficient as possible.",
+  boxes: [
+    {
+      iconName: "data-transfer" as MigrationPlatformIconName,
+      title: "Data Transfer",
+      description: "Recognize the crucial data that should be migrated from your Etsy store to Shopify, including products, customer reviews, order history, and other important content.",
+    },
+    {
+      iconName: "seo-settings" as MigrationPlatformIconName,
+      title: "SEO Settings",
+      description: "For safety, back up your Etsy store's SEO settings, such as product titles, descriptions, and tags. This helps recreate and optimize your search visibility on Shopify.",
+    },
+    {
+      iconName: "extensive-customization" as MigrationPlatformIconName,
+      title: "Store Design",
+      description: "Decide whether you want a new custom theme for your store or want to replicate your Etsy store’s look and feel on Shopify.",
+    },
+    {
+      iconName: "payment-and-shipping" as MigrationPlatformIconName,
+      title: "Payment and Shipping Options",
+      description: "Both platforms offer different payment and shipping options. Review what works best for your business on Shopify and adjust your settings accordingly.",
+    },
+  ],
+};
+
+export const etsyWhyChooseContent: EvaluationFrameworkContent = {
+  eyebrow: "Why Dynamic Dreamz",
+  heading: "Why Choose Dynamic Dreamz for Etsy to Shopify Migration Service",
+  description: "Dynamic Dreamz has years of experience in migrating stores to Shopify, delivering a smooth and efficient process from start to finish.",
+  items: [
+    {
+      title: "Skilled Migration Experts",
+      description: "Our qualified team handles the migration’s technical factors to ensure your store's uninterrupted business operations.",
+    },
+    {
+      title: "Complete Data Transfer",
+      description: "We ensure a full migration, accurately moving all essential data, such as products, orders, and customer details, with zero data loss.",
+    },
+    {
+      title: "Custom Shopify Themes",
+      description: "We can help you ensure that your new Shopify store fits in with your brand identity by creating a new custom theme or adapting your existing design.",
+    },
+    {
+      title: "Ongoing Support",
+      description: "We are not stopping successful migration; we will also provide support even after your store goes live, solving queries quickly and seamlessly.",
+    },
+  ],
+};

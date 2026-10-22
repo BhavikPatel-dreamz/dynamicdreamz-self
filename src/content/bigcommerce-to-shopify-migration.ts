@@ -75,31 +75,89 @@ export const bigcommerceVsShopifyContent = {
     "BigCommerce and Shopify are two leading ecommerce platforms, each with unique strengths. Compare pricing, features, customization, and scalability to determine which platform best fits your business needs.",
   approaches: [
     {
-      badge: "Shopify",
-      title: "Shopify",
-      description: "",
+      logo: {
+        src: "/assets/bigcommerce-to-shopify-migration/shopify-logo.svg",
+        alt: "Shopify",
+        width: 140,
+        height: 40,
+      },
       isHighlighted: true,
       points: [
-        "Overall Rating: 4.5/5",
-        "Starting Price: $39/month",
-        "Free plan or free trial: 3-day free trial then Starter Plan for $5/month",
-        "Number of templates: 200++",
-        "Pros: AI powered Shopify Magic tool, Unlimited products, Huge app market, 100+ payment options, Mobile responsive store",
-        "Cons: Additional app costs, Limited customization options, Lacks built in features, Most templates cost extra",
+        {
+          label: "Overall Rating",
+          value: "4.5/5",
+          ratingImage: {
+            src: "/assets/bigcommerce-to-shopify-migration/star-rating-4-5.svg",
+            alt: "Rating Image",
+            width: 108,
+            height: 20,
+          },
+        },
+        {
+          label: "Starting Price",
+          value: "$39/month",
+        },
+        {
+          label: "Free plan or free trial",
+          value: "3-day free trial then Starter Plan for $5/month",
+        },
+        {
+          label: "Number of templates",
+          value: "200++",
+        },
+        {
+          label: "Pros",
+          value:
+            "AI powered Shopify Magic tool, Unlimited products, Huge app market, 100+ payment options, Mobile responsive store",
+        },
+        {
+          label: "Cons",
+          value:
+            "Additional app costs, Limited customization options, Lacks built in features, Most templates cost extra",
+        },
       ],
     },
     {
-      badge: "BigCommerce",
-      title: "BigCommerce",
-      description: "",
+      logo: {
+        src: "/assets/bigcommerce-to-shopify-migration/bigcommerce-logo.svg",
+        alt: "BigCommerce",
+        width: 178,
+        height: 40,
+      },
       isHighlighted: false,
       points: [
-        "Overall Rating: 4.3/5",
-        "Starting Price: $39/month",
-        "Free plan or free trial: 15-day free trial",
-        "Number of templates: 160++",
-        "Pros: 0% transaction fees on all plans, Unlimited products, Multiple storefronts, International shipping options, Mobile responsive store",
-        "Cons: Slow performance, Limited customization options, No AI tools, No free custom domain",
+        {
+          label: "Overall Rating",
+          value: "4.3/5",
+          ratingImage: {
+            src: "/assets/bigcommerce-to-shopify-migration/star-rating-4-3.svg",
+            alt: "Rating Image",
+            width: 108,
+            height: 20,
+          },
+        },
+        {
+          label: "Starting Price",
+          value: "$39/month",
+        },
+        {
+          label: "Free plan or free trial",
+          value: "15-day free trial",
+        },
+        {
+          label: "Number of templates",
+          value: "160++",
+        },
+        {
+          label: "Pros",
+          value:
+            "0% transaction fees on all plans, Unlimited products, Multiple storefronts, International shipping options, Mobile responsive store",
+        },
+        {
+          label: "Cons",
+          value:
+            "Slow performance, Limited customization options, No AI tools, No free custom domain",
+        },
       ],
     },
   ],

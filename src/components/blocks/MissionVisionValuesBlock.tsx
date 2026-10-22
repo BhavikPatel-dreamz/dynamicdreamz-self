@@ -70,7 +70,7 @@ export function MissionVisionValuesBlock({
     customValues && customValues.length > 0 ? customValues : coreValues;
 
   return (
-    <section className="theme-customization-services transparent bg-transparent pt-0 pb-20 max-[992px]:py-[50px]">
+    <section className="theme-customization-services transparent bg-transparent py-20 max-[992px]:py-[50px]">
       <Container>
         <div data-aos="fade-up" className="mb-10 flex items-end justify-between gap-10 max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-2.5">
           <div className="shrink-0 max-w-[500px]">
@@ -92,7 +92,7 @@ export function MissionVisionValuesBlock({
               data-aos="fade-up"
               key={value.title}
             >
-              <div className="icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&>svg]:size-10">
+              <div className="icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&>svg]:size-6">
                 <AboutValueIcon name={value.iconName} />
               </div>
               <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[1199px]:text-[18px]">
