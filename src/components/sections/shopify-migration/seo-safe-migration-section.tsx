@@ -50,7 +50,7 @@ export function SeoSafeMigrationSection({
             <div className="left-col w-[49%] max-[1199px]:w-[41%] max-[991px]:w-full">
               <div className="text-block">
                 {content.eyebrow && (
-                  <Eyebrow className="mb-2.5 text-[#ad5151]" lineThickness="thin">
+                  <Eyebrow className="mb-2.5" lineThickness="thin">
                     {content.eyebrow}
                   </Eyebrow>
                 )}

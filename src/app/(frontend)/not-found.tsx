@@ -9,7 +9,7 @@ export default function NotFound() {
       className="grid min-h-[760px] place-items-center px-0 pt-[150px] pb-20 text-center"
     >
       <Container>
-        <p className="mb-4 font-bold text-brand-red uppercase">{notFoundCopy.eyebrow}</p>
+        <p className="mb-4 font-bold text-[#535353] uppercase">{notFoundCopy.eyebrow}</p>
         <h1 className="mx-auto mb-6 max-w-[760px] text-[56px] leading-[1.1] max-[767px]:text-[34px]">
           {notFoundCopy.title}
         </h1>

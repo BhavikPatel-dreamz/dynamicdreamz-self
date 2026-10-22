@@ -186,12 +186,12 @@ export function JobOpeningsListBlock({
             {eyebrow && (
               <div className="mb-4 flex items-center gap-2">
                 <span className="h-[2px] w-6 bg-brand-red" />
-                <span className="text-xs font-bold tracking-widest text-brand-red uppercase">
+                <span className="text-xs font-bold tracking-widest text-[#535353] uppercase">
                   {eyebrow}
                 </span>
               </div>
             )}
-            <h2 id="career-opportunities-title" className="text-[35px] leading-[1.38] font-medium text-ink max-[992px]:text-[30px] max-[767px]:text-2xl">
+            <h2 id="career-opportunities-title" className="font-montreal-medium text-[35px] leading-[1.38] font-normal text-ink max-[992px]:text-[30px] max-[767px]:text-2xl">
               {title}
             </h2>
           </div>

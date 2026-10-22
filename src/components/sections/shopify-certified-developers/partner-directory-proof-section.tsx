@@ -44,7 +44,7 @@ export function PartnerDirectoryProofSection({
         >
           <header className="section-title mx-auto max-w-[875px] text-center">
             <h2
-              className="mb-[15px] font-sans text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[1199px]:text-[33px] max-[992px]:text-[32px] max-[992px]:leading-10 max-[575px]:text-2xl max-[575px]:leading-[33.24px]"
+              className="mb-[15px] font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-[-0.7px] text-ink max-[1199px]:text-[33px] max-[992px]:text-[32px] max-[992px]:leading-10 max-[575px]:text-2xl max-[575px]:leading-[33.24px]"
               id="shopify-partner-directory-title"
             >
               {content.heading}

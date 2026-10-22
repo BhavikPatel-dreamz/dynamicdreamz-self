@@ -49,7 +49,7 @@ export function LifeHiringBlock({
           </div>
 
           <div className="mt-[65px] w-[47%] max-[1199px]:mt-0 max-[1199px]:w-1/2 max-[992px]:w-full max-[992px]:text-center">
-            <h2 className="mb-[10px] text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
+            <h2 className="mb-[10px] font-montreal-medium text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
               {title}
             </h2>
             <p className="mb-[30px] text-[18px] leading-[34.2px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">

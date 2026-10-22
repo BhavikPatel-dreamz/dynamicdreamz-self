@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "neue_montrealmedium";
+  src: url("./fonts/neue--montreal-medium-webfont.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --color-ink: #282828;
   --color-muted: #535353;
@@ -13,10 +21,11 @@
   --color-blue-line: #bfd0de;
   --font-montserrat: var(--font-montserrat-local), Arial, sans-serif;
   --font-sans: var(--font-montserrat-local), Arial, sans-serif;
-  --font-display: var(--font-neue-montreal-local), Arial, sans-serif;
-  --font-montreal-medium: var(--font-neue-montreal-medium-local), var(--font-neue-montreal-local), sans-serif;
-  --font-montreal-semibold: var(--font-neue-montreal-local), sans-serif;
-  --montreal-medium: var(--font-neue-montreal-medium-local), var(--font-neue-montreal-local), sans-serif;
+  --font-heading: "neue_montrealmedium", var(--font-neue-montreal-medium-local), var(--font-neue-montreal-local), sans-serif;
+  --font-display: "neue_montrealmedium", var(--font-neue-montreal-medium-local), var(--font-neue-montreal-local), sans-serif;
+  --font-montreal-medium: "neue_montrealmedium", var(--font-neue-montreal-medium-local), var(--font-neue-montreal-local), sans-serif;
+  --font-montreal-semibold: "neue_montrealmedium", var(--font-neue-montreal-local), sans-serif;
+  --montreal-medium: "neue_montrealmedium", var(--font-neue-montreal-medium-local), var(--font-neue-montreal-local), sans-serif;
 }
 
 @layer base {
@@ -51,7 +60,7 @@
   h5,
   h6 {
     color: var(--color-ink);
-    font-family: var(--font-montreal-medium);
+    font-family: "neue_montrealmedium", sans-serif;
     font-weight: 400;
     letter-spacing: 0;
   }

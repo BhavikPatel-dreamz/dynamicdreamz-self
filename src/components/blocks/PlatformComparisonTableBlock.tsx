@@ -46,7 +46,7 @@ export function PlatformComparisonTableBlock({
           <div className="w-[44%] max-[991px]:w-full">
             {content.eyebrow && (
               <div className="eyebrow mb-3">
-                <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+                <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                   {content.eyebrow}
                 </span>
               </div>
@@ -168,7 +168,7 @@ export function RecentArchitecturePatternsSection({
         >
           <div className="w-[44%] max-[991px]:w-full">
             {content.eyebrow ? (
-              <span className="mb-4 block font-montserrat text-sm font-semibold uppercase text-brand-red">
+              <span className="mb-4 block font-montserrat text-sm font-semibold uppercase text-[#535353]">
                 {content.eyebrow}
               </span>
             ) : null}

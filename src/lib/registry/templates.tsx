@@ -968,7 +968,7 @@ function TechStackShowcaseBlock({
           {eyebrow && (
             <div className="mb-4 flex items-center gap-2">
               <span className="h-[2px] w-6 bg-brand-red" />
-              <span className="text-xs font-bold tracking-widest text-brand-red uppercase">{eyebrow}</span>
+              <span className="text-xs font-bold tracking-widest text-[#535353] uppercase">{eyebrow}</span>
             </div>
           )}
           <h2 className="text-[35px] leading-[1.38] font-medium text-ink max-[992px]:text-[30px] max-[767px]:text-2xl">{heading}</h2>

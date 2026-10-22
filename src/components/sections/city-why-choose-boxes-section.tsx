@@ -65,7 +65,7 @@ export function CityWhyChooseBoxesSection({
             )}
             <h2
               className={cn(
-                "font-sans text-[35px] font-bold leading-[48px] tracking-[-0.7px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]",
+                "font-montreal-medium text-[35px] font-normal leading-[48px] tracking-[-0.7px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]",
                 isDark ? "text-white" : "text-ink",
               )}
             >

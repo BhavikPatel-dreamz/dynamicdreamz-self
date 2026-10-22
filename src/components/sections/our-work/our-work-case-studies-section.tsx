@@ -31,7 +31,7 @@ export function OurWorkCaseStudiesSection({
               {eyebrow}
             </Eyebrow>
             <h2
-              className="m-0 font-montserrat text-[35px] font-bold leading-[1.38] text-[#090909] max-[1199px]:text-[28px] max-[992px]:mb-2.5 max-[767px]:text-2xl"
+              className="m-0 font-montreal-medium text-[35px] font-normal leading-[1.38] text-[#090909] max-[1199px]:text-[28px] max-[992px]:mb-2.5 max-[767px]:text-2xl"
               id="our-work-case-studies-title"
             >
               {title}

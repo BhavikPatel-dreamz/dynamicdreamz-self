@@ -50,7 +50,7 @@ export function ShopifyMigrationServicesSection({
           <div data-aos="fade-up" className="section_title_with_eyebrow mb-[50px] flex items-end justify-between gap-6 max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:items-start">
             <div className="title max-w-[620px]">
               {eyebrow && (
-                <Eyebrow className="mb-2.5 text-[#ad5151]" lineThickness="thin">
+                <Eyebrow className="mb-2.5" lineThickness="thin">
                   {eyebrow}
                 </Eyebrow>
               )}

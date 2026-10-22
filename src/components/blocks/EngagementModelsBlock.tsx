@@ -182,7 +182,7 @@ export function DeliveryModelComparisonSection({
           className="section_title mb-12 max-[991px]:mb-8"
         >
           {content.eyebrow ? (
-            <span className="mb-3 block font-montserrat text-sm font-semibold uppercase text-[#ad5151]">
+            <span className="mb-3 block font-montserrat text-sm font-semibold uppercase text-[#535353]">
               {content.eyebrow}
             </span>
           ) : null}

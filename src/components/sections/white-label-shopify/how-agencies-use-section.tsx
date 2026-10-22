@@ -32,7 +32,7 @@ export function HowAgenciesUseSection({
           className="section_title mb-12 max-[991px]:mb-8"
         >
           {content.eyebrow ? (
-            <Eyebrow className="mb-3 text-[#ad5151]">{content.eyebrow}</Eyebrow>
+            <Eyebrow className="mb-3">{content.eyebrow}</Eyebrow>
           ) : null}
           <div className="flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col">
             <h2 className="w-full max-w-[580px] font-display text-[35px] font-medium leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl">

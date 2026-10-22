@@ -21,7 +21,7 @@ export function CaseStudyCustomSections({ sections }: CaseStudyCustomSectionsPro
           <Container>
             <div className="mx-auto max-w-[900px]">
               {section.eyebrow ? (
-                <div className="relative mb-4 inline-flex items-center pl-10 text-[14px] font-semibold uppercase leading-[1.2] text-[#282828] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[767px]:pl-[23px] max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+                <div className="relative mb-4 inline-flex items-center pl-10 text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[767px]:pl-[23px] max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
                   <span>{section.eyebrow}</span>
                 </div>
               ) : null}

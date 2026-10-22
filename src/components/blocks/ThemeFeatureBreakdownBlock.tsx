@@ -41,7 +41,7 @@ export function ThemeFeatureBreakdownBlock({
                 </span>
               </div>
             )}
-            <h2 className="mb-0 text-[32px] font-normal leading-tight tracking-normal text-ink max-[1399px]:text-[28px] max-[991px]:text-2xl">
+            <h2 className="mb-0 font-montreal-medium text-[32px] font-normal leading-tight tracking-normal text-ink max-[1399px]:text-[28px] max-[991px]:text-2xl">
               {formatBrText(displayTitle)}
             </h2>
             {content.description && (

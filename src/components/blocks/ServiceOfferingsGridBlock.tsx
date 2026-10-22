@@ -122,7 +122,7 @@ export function ServiceOfferingsGridBlock({
             <div className="title max-w-[580px]">
               {resolvedEyebrow && (
                 <div className="eyebrow mb-3">
-                  <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+                  <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                     {resolvedEyebrow}
                   </span>
                 </div>
@@ -232,7 +232,7 @@ export function ServiceOfferingsGridBlock({
         >
           {resolvedEyebrow ? (
             <div className="mb-2.5">
-              <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+              <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                 {resolvedEyebrow}
               </span>
             </div>

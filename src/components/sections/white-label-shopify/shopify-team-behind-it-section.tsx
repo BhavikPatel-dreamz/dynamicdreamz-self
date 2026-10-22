@@ -52,7 +52,7 @@ export function ShopifyTeamBehindItSection({
           className="section_title mb-12 max-[991px]:mb-8"
         >
           {content.eyebrow ? (
-            <Eyebrow className="mb-3 text-[#ad5151]">{content.eyebrow}</Eyebrow>
+            <Eyebrow className="mb-3">{content.eyebrow}</Eyebrow>
           ) : null}
           <div className="flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col">
             <h2

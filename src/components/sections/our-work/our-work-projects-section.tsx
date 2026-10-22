@@ -40,7 +40,7 @@ export function OurWorkProjectsSection({
             <Eyebrow className="mb-5" lineThickness="thin" lineWidth="fixed">
               {eyebrow}
             </Eyebrow>
-            <h2 className="text-[35px] leading-[1.38] font-medium text-ink max-[992px]:text-[30px] max-[767px]:text-2xl" id="our-work-projects-title">
+            <h2 className="font-montreal-medium text-[35px] leading-[1.38] font-normal text-ink max-[992px]:text-[30px] max-[767px]:text-2xl" id="our-work-projects-title">
               {title}
             </h2>
           </div>
