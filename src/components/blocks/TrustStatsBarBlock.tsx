@@ -367,7 +367,7 @@ export function ResourcesTrustSection({
             {heading && (
               <h2
                 id="resources-trust-title"
-                className="mb-3 text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-[24px] max-[767px]:leading-[33.24px]"
+                className="mb-3 font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-[24px] max-[767px]:leading-[33.24px]"
               >
                 {heading}
               </h2>

@@ -159,7 +159,7 @@ function AuthorCard({ post }: BlogDetailPageProps) {
           ) : null}
           <div className="w-[calc(100%-245px)] max-[767px]:mt-[10px] max-[767px]:w-full">
             <div className="mb-1 flex items-center gap-2 max-[767px]:justify-center">
-              <h2 className="m-0 text-[20px] font-bold leading-[28.8px] text-[#282828]">{post.author.name.toUpperCase()}</h2>
+              <h2 className="m-0 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-[#282828]">{post.author.name.toUpperCase()}</h2>
               {post.author.linkedin ? (
                 <a
                   href={post.author.linkedin}
@@ -298,7 +298,7 @@ export function BlogDetailPage({ post, relatedPosts }: BlogDetailPageProps) {
 
       <Container>
         <div className="mt-[42px] mb-[24px] flex items-center justify-between border-y border-[#efefef] py-[11px]">
-          <h2 className="m-0 text-[18px] font-bold leading-7 text-[#282828] max-[767px]:text-[16px]">{blogDetailUiCopy.shareHeading}</h2>
+          <h2 className="m-0 font-montreal-medium text-[18px] font-normal leading-7 text-[#282828] max-[767px]:text-[16px]">{blogDetailUiCopy.shareHeading}</h2>
           <ShareLinks post={post} />
         </div>
       </Container>

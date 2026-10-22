@@ -123,7 +123,7 @@ export function ProcessWorkflowBlock({
                 <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[991px]:text-[18px] max-[991px]:leading-[26px]">
                   {item.title}
                 </h3>
-                <p className="font-sans text-sm font-medium leading-[22px] text-[#535353]">
+                <p className="font-sans text-sm font-normal leading-[22px] text-[#535353]">
                   {item.description}
                 </p>
               </div>
@@ -214,7 +214,7 @@ export function ShopifyHorizontalProcessSection({
                   <h3 className="mb-1.5 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-[#282828] max-[991px]:text-[18px] max-[991px]:leading-[26px]">
                     {item.title}
                   </h3>
-                  <p className="font-sans text-sm font-medium leading-[22px] text-[#535353]">
+                  <p className="font-sans text-sm font-normal leading-[22px] text-[#535353]">
                     {item.description}
                   </p>
                 </div>

@@ -165,10 +165,10 @@ export function ShopifySupportScenariosSection({
                 <span className="section-kicker mb-2.5 block text-xs font-bold uppercase tracking-[1.5px] text-[#AD5151]">
                   {panel.kicker}
                 </span>
-                <h3 className="mb-3 font-display text-xl font-medium leading-7 text-[#282828]">
+                <h3 className="mb-3 font-display text-xl font-normal leading-7 text-[#282828]">
                   {panel.heading}
                 </h3>
-                <p className="font-sans text-sm font-medium leading-6 text-[#535353]">
+                <p className="font-sans text-sm font-normal leading-6 text-[#535353]">
                   {panel.description}
                 </p>
                 <div className="service-features mt-4 flex flex-wrap gap-2">

@@ -103,7 +103,7 @@ export function EngagementModelsBlock({
                     {item.price}
                   </div>
                 ) : null}
-                <p className="plan_desc mb-6 font-sans text-sm font-medium leading-[24px] text-muted">
+                <p className="plan_desc mb-6 font-sans text-sm font-normal leading-[24px] text-muted">
                   {item.description}
                 </p>
                 {item.bullets && item.bullets.length > 0 && (

@@ -168,7 +168,7 @@ export function ServiceOfferingsGridBlock({
                         <h3 className="mb-2 font-montreal-medium text-lg font-normal text-ink">
                           {formatBrText(service.title)}
                         </h3>
-                        <p className="text-sm font-medium leading-relaxed text-muted">
+                        <p className="text-sm font-normal leading-relaxed text-muted">
                           {formatBrText(service.description)}
                         </p>
                         {service.bullets && service.bullets.length > 0 && (

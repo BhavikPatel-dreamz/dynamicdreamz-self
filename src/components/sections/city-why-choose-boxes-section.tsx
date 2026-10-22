@@ -27,6 +27,8 @@ export type CityWhyChooseBoxesSectionProps = {
   columns?: 3 | 4 | 5;
   eyebrowVariant?: "pill" | "dash";
   theme?: "light" | "dark" | "white" | "warm";
+  noPaddingBottom?: boolean;
+  className?: string;
 };
 
 const BG_THEME_MAP = {
@@ -41,31 +43,47 @@ export function CityWhyChooseBoxesSection({
   id,
   columns = 5,
   theme = "light",
+  noPaddingBottom,
+  className,
 }: CityWhyChooseBoxesSectionProps) {
   const isDark = theme === "dark";
   const defaultBg = BG_THEME_MAP[theme] ?? BG_THEME_MAP.light;
+  const isDynamic = columns === 3;
+  const isPb0 = noPaddingBottom || (isDynamic && theme === "white");
 
   return (
     <section
       id={id}
       className={cn(
-        "city-page-why-choose-boxes py-20 max-[992px]:py-[50px]",
+        isDynamic ? "city-page-why-choose-dynamic" : "city-page-why-choose-boxes",
+        isPb0
+          ? "pt-20 pb-0 max-[991px]:pt-[50px] max-[991px]:pb-0"
+          : "py-20 max-[991px]:py-[50px]",
         defaultBg,
+        className,
       )}
     >
       <Container>
-        <div className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col max-[991px]:gap-4" data-aos="fade-up">
-          <div className="title max-w-[620px]">
+        <div
+          className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-[30px]"
+          data-aos="fade-up"
+        >
+          <div
+            className={cn(
+              "title",
+              content.description ? "w-[44%] max-[991px]:w-full" : "w-full max-w-[800px]",
+            )}
+          >
             {content.eyebrow && (
               <div className="eyebrow mb-4">
-                <Eyebrow as="span" tone={isDark ? "inverse" : "ink"}>
+                <Eyebrow as="span" tone={isDark ? "inverse" : "muted"}>
                   {content.eyebrow}
                 </Eyebrow>
               </div>
             )}
             <h2
               className={cn(
-                "font-montreal-medium text-[35px] font-normal leading-[48px] tracking-[-0.7px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]",
+                "m-0 font-montreal-medium text-[35px] font-normal leading-[1.4] tracking-normal max-[991px]:mb-2.5 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[1.3]",
                 isDark ? "text-white" : "text-ink",
               )}
             >
@@ -73,10 +91,10 @@ export function CityWhyChooseBoxesSection({
             </h2>
           </div>
           {content.description ? (
-            <div className="section_text max-w-[560px]">
+            <div className="section_text w-[48.3%] max-[1199px]:w-1/2 max-[991px]:w-full">
               <p
                 className={cn(
-                  "text-base font-medium leading-[27px] max-[767px]:text-sm max-[767px]:leading-6",
+                  "m-0 text-base font-medium leading-7 max-[1199px]:text-sm max-[1199px]:leading-6 [&_br]:hidden",
                   isDark ? "text-white/80" : "text-[#535353]",
                 )}
               >
@@ -94,12 +112,12 @@ export function CityWhyChooseBoxesSection({
         >
           <div
             className={cn(
-              "wrapper grid gap-[15px] max-[767px]:grid-cols-1",
+              "wrapper grid gap-[15px]",
               columns === 4
-                ? "grid-cols-4 max-[1199px]:grid-cols-2"
+                ? "grid-cols-4 max-[1199px]:grid-cols-2 max-[767px]:grid-cols-1"
                 : columns === 3
-                  ? "grid-cols-3 max-[1199px]:grid-cols-3"
-                  : "grid-cols-5 max-[1199px]:grid-cols-3",
+                  ? "grid-cols-3 max-[1199px]:grid-cols-3 max-[767px]:grid-cols-1"
+                  : "grid-cols-5 max-[1199px]:grid-cols-3 max-[767px]:grid-cols-1",
             )}
           >
             {content.items.map((item) => (
@@ -107,15 +125,20 @@ export function CityWhyChooseBoxesSection({
                 key={typeof item.title === "string" ? item.title : item.title.join(" ")}
                 data-aos="fade-up"
                 className={cn(
-                  "why-choose-box flex flex-col justify-start rounded-[18px] p-5 transition-transform duration-300 hover:-translate-y-1",
+                  "why-choose-box p-5",
+                  columns === 3
+                    ? "rounded-[18px]"
+                    : "rounded-[20px]",
                   isDark
                     ? "border border-white/13 bg-white/[0.04]"
-                    : "border border-[rgba(40,40,40,0.11)] bg-white",
+                    : columns === 3
+                      ? "border border-[rgba(40,40,40,0.11)] bg-white"
+                      : "border border-[rgba(40,40,40,0.06)] bg-white",
                 )}
               >
                 <div className="why-choose-box-text">
                   {item.iconNode || item.icon ? (
-                    <div className="mb-2.5 size-6">
+                    <div className={cn("size-6 [&>svg]:size-6 [&>svg]:h-auto", columns === 3 ? "mb-2.5" : "mb-[15px]")}>
                       {item.iconNode ? (
                         item.iconNode
                       ) : item.icon ? (
@@ -130,13 +153,13 @@ export function CityWhyChooseBoxesSection({
                     </div>
                   ) : null}
                   {item.subtitle ? (
-                    <span className="mb-2.5 block font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-brand-red">
+                    <span className="mb-2.5 block font-montserrat text-[10px] font-bold uppercase leading-[1.4] tracking-[0.8px] text-brand-red">
                       {item.subtitle}
                     </span>
                   ) : null}
                   <h3
                     className={cn(
-                      "mb-2 font-sans text-base font-bold leading-[24px]",
+                      "mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] max-[991px]:text-[18px] max-[991px]:leading-[26px]",
                       isDark ? "text-white" : "text-ink",
                     )}
                   >
@@ -144,7 +167,7 @@ export function CityWhyChooseBoxesSection({
                   </h3>
                   <p
                     className={cn(
-                      "m-0 text-sm font-medium leading-[22px]",
+                      "m-0 font-sans text-sm font-normal leading-6",
                       isDark ? "text-white/80" : "text-[#535353]",
                     )}
                   >

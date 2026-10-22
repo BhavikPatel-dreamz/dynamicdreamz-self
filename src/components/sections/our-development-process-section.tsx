@@ -96,7 +96,7 @@ export function OurDevelopmentProcessSection({
               <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[991px]:text-[18px] max-[991px]:leading-[26px]">
                 {item.title}
               </h3>
-              <p className="text-sm font-medium leading-[22px] text-[#535353]">
+              <p className="text-sm font-normal leading-[22px] text-[#535353]">
                 {item.description}
               </p>
             </div>
