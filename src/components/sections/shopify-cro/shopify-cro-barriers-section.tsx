@@ -24,7 +24,7 @@ export type ShopifyCroBarriersSectionProps = {
 
 export function ShopifyCroBarriersSection({
   content = shopifyCroBarriers,
-  className = "conversion-cro-section bg-white py-20 max-[991px]:py-12",
+  className = "conversion-cro-section bg-white py-20 max-[991px]:py-[50px]",
 }: ShopifyCroBarriersSectionProps) {
   return (
     <section className={className}>

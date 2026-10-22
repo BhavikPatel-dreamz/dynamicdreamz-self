@@ -21,7 +21,7 @@ export function CareerApplyNowLeftColumn({
 }: CareerApplyNowLeftColumnProps = {}) {
   return (
     <div className="left-col w-[31%] max-[1199px]:w-[40%] max-[991px]:mb-[60px] max-[991px]:w-full max-[767px]:mb-10">
-      <h1 className="mb-8 border-b border-[#efefef] pb-8 text-[35px] font-normal leading-[46px] tracking-normal text-[#090909] max-[1299px]:text-[30px] max-[1299px]:leading-[40px] max-[991px]:mb-5 max-[991px]:pb-5 max-[991px]:text-center max-[767px]:text-[27px] max-[767px]:leading-[38px] max-[320px]:text-[23px] max-[320px]:leading-[33px]">
+      <h1 className="mb-8 border-b border-[#efefef] pb-8 font-montreal-medium text-[35px] font-normal leading-[46px] tracking-normal text-ink max-[1299px]:text-[30px] max-[1299px]:leading-[40px] max-[991px]:mb-5 max-[991px]:pb-5 max-[991px]:text-center max-[767px]:text-[27px] max-[767px]:leading-[38px] max-[320px]:text-[23px] max-[320px]:leading-[33px]">
         {heading}
       </h1>
       <div className="contact-us">
@@ -59,7 +59,7 @@ export function CareerApplyNowLeftColumn({
               </svg>
             </span>
             <span className="w-[calc(100%-62px)] max-[991px]:w-[calc(100%-51px)]">
-              <span className="mb-[15px] block text-base font-semibold uppercase leading-normal text-[#090909] max-[991px]:mb-2.5 max-[991px]:text-sm">
+              <span className="mb-[15px] block text-base font-semibold uppercase leading-normal text-ink max-[991px]:mb-2.5 max-[991px]:text-sm">
                 {phoneLabel}
               </span>
               <a
@@ -112,7 +112,7 @@ export function CareerApplyNowLeftColumn({
               </svg>
             </span>
             <span className="w-[calc(100%-62px)] max-[991px]:w-[calc(100%-51px)]">
-              <span className="mb-[15px] block text-base font-semibold uppercase leading-normal text-[#090909] max-[991px]:mb-2.5 max-[991px]:text-sm">
+              <span className="mb-[15px] block text-base font-semibold uppercase leading-normal text-ink max-[991px]:mb-2.5 max-[991px]:text-sm">
                 {emailLabel}
               </span>
               <a

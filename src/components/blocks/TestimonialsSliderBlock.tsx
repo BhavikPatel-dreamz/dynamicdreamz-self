@@ -35,6 +35,7 @@ export type TestimonialsSliderBlockProps = {
   variant?: "client-stories";
   className?: string;
   contentOnly?: boolean;
+  hasTopPadding?: boolean;
 };
 
 export type HappyClientSectionProps = TestimonialsSliderBlockProps;
@@ -70,7 +71,7 @@ function TestimonialCard({
             />
           </span>
         ) : null}
-        <h3 className="pointer-events-none absolute bottom-[15px] left-[15px] max-[1199px]:bottom-3 max-[1199px]:left-3 z-20 m-0 inline-block rounded-[5px] border-l-[3px] border-brand-red bg-black/80 px-[15px] py-[10px] max-[1199px]:px-[14px] max-[1199px]:py-[7px] text-left font-display text-[15px] font-semibold leading-[21px] text-white max-[1199px]:text-sm">
+        <h3 className="pointer-events-none absolute bottom-[15px] left-[15px] max-[1199px]:bottom-3 max-[1199px]:left-3 z-20 m-0 inline-block rounded-[5px] border-l-[3px] border-brand-red bg-black/80 px-[15px] py-[10px] max-[1199px]:px-[14px] max-[1199px]:py-[7px] text-left font-sans text-[15px] font-semibold leading-[21px] text-white max-[1199px]:text-sm">
           {testimonial.name}
           <span className="mt-[5px] block text-[12px] font-medium leading-normal">
             {testimonial.company}
@@ -122,6 +123,7 @@ export function TestimonialsSliderBlock({
   variant,
   className,
   contentOnly = false,
+  hasTopPadding = false,
 }: TestimonialsSliderBlockProps) {
   const sliderRef = useRef<Slider>(null);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -210,7 +212,10 @@ export function TestimonialsSliderBlock({
   return (
     <section
       className={cn(
-        "happy-client-sec overflow-hidden pt-20 pb-20 max-[991px]:py-[50px]",
+        "happy-client-sec overflow-hidden",
+        hasTopPadding
+          ? "pt-20 pb-20 max-[991px]:py-[50px]"
+          : "pt-0 pb-20 max-[991px]:pt-0 max-[991px]:pb-[50px]",
         isWhite ? "bg-white" : undefined,
         className,
       )}

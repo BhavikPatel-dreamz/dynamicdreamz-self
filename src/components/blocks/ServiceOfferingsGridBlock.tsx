@@ -122,7 +122,7 @@ export function ServiceOfferingsGridBlock({
             <div className="title max-w-[580px]">
               {resolvedEyebrow && (
                 <div className="eyebrow mb-3">
-                  <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+                  <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                     {resolvedEyebrow}
                   </span>
                 </div>
@@ -168,7 +168,7 @@ export function ServiceOfferingsGridBlock({
                         <h3 className="mb-2 font-montreal-medium text-lg font-normal text-ink">
                           {formatBrText(service.title)}
                         </h3>
-                        <p className="text-sm font-medium leading-relaxed text-muted">
+                        <p className="text-sm font-normal leading-relaxed text-muted">
                           {formatBrText(service.description)}
                         </p>
                         {service.bullets && service.bullets.length > 0 && (
@@ -232,7 +232,7 @@ export function ServiceOfferingsGridBlock({
         >
           {resolvedEyebrow ? (
             <div className="mb-2.5">
-              <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+              <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                 {resolvedEyebrow}
               </span>
             </div>
@@ -425,7 +425,6 @@ export {
   ThemeCustomizationServicesSection,
   ThemeCustomizationServicesBlock,
   ServiceOfferingsGridBlock as AiServicesGridSection,
-  ServiceOfferingsGridBlock as ShopifyMigrationServicesSection,
   ServiceOfferingsGridBlock as ShopifyThemesGridSection,
   ServiceOfferingsGridBlock as ShopifyCroBarriersSection,
   ServiceOfferingsGridBlock as ShopifyCroServicesSection,

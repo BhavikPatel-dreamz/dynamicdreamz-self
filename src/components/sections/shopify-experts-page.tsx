@@ -31,12 +31,14 @@ export function ShopifyExpertsPage() {
       />
       <AiEmpoweredDeliverySection content={shopifyExpertsContent.aiTools} />
       <PortfolioShowcaseSection
+        className="pt-0 max-[991px]:pt-0"
         content={shopifyExpertsContent.work}
         sectionId="our_work"
       />
       <PricingTableSection content={shopifyExpertsContent.pricing} />
       <div id="shopify-testimonials">
         <HappyClientSection
+          hasTopPadding={true}
           description={shopifyExpertsContent.testimonials.description}
           eyebrow={shopifyExpertsContent.testimonials.eyebrow}
           heading={shopifyExpertsContent.testimonials.heading}

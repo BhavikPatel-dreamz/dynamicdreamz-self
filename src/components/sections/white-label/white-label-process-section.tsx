@@ -87,7 +87,7 @@ export function WhiteLabelProcessSection({
               <h3 className="mb-6 font-montreal-medium text-base font-normal leading-[20.48px] text-ink max-[1199px]:mb-[22px] max-[767px]:mb-[15px]">
                 {step.title}
               </h3>
-              <p className="text-sm leading-[190%] font-medium text-muted">{step.description}</p>
+              <p className="text-sm leading-[190%] font-normal text-muted">{step.description}</p>
             </article>
           ))}
         </div>

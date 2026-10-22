@@ -5,7 +5,7 @@ import { ServiceHeroVideoSection } from "@/components/blocks/ServiceHeroBlock";
 import { ServicesCaseStudiesSection } from "@/components/blocks/CaseStudySpotlightBlock";
 import { SeoSafeMigrationSection } from "@/components/blocks/MigrationDataChecklistBlock";
 import { ShopifyMigrationNumberedGridSection } from "@/components/blocks/ProcessWorkflowBlock";
-import { ShopifyMigrationServicesSection } from "@/components/blocks/ServiceOfferingsGridBlock";
+import { ShopifyMigrationServicesSection } from "@/components/sections/shopify-migration/shopify-migration-services-section";
 import { SplitFaqSection } from "@/components/blocks/FaqSectionBlock";
 import { WhyChooseShopifyMigrationSection } from "@/components/blocks/WhyChooseUsBlock";
 import {

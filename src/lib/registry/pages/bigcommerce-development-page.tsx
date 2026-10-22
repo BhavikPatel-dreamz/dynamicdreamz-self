@@ -5,7 +5,7 @@ import { IndustryBrandsSection } from "@/components/blocks/ClientLogoMarqueeBloc
 import { OurDevelopmentProcessSection } from "@/components/blocks/ProcessWorkflowBlock";
 import { PortfolioShowcaseSection } from "@/components/blocks/PortfolioSnippetsBlock";
 import { HappyClientSection } from "@/components/blocks/TestimonialsSliderBlock";
-import { TextBoxSection } from "@/components/blocks/KeyBenefitsGridBlock";
+import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
 import { SplitFaqSection } from "@/components/blocks/FaqSectionBlock";
 import { ThemeCustomizationServicesSection } from "@/components/blocks/ServiceOfferingsGridBlock";
 import {

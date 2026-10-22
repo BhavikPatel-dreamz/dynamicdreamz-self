@@ -69,7 +69,7 @@ export function CaseStudySpotlightBlock({
   return (
     <section
       className={cn(
-        "see-the-work-sec bg-[#eff4ef] py-20 max-[991px]:py-[50px] max-[575px]:py-10",
+        "see-the-work-sec bg-[#eff4ef] py-10",
         className,
       )}
       data-section="case-studies"

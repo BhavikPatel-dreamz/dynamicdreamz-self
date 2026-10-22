@@ -18,20 +18,20 @@ export function OurWorkCaseStudiesSection({
 }: OurWorkCaseStudiesSectionProps = {}) {
   return (
     <section
-      className="see-the-work-sec bg-[#eff4ef] py-20 max-[992px]:py-10 max-[767px]:py-10"
+      className="see-the-work-sec bg-[#eff4ef] py-10"
       aria-labelledby="our-work-case-studies-title"
     >
       <Container className="max-[575px]:px-4">
         <div
           data-aos="fade-up"
-          className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[992px]:mb-[30px] max-[767px]:flex-col max-[767px]:items-start max-[767px]:gap-4"
+          className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-[30px] max-[767px]:flex-col max-[767px]:items-start max-[767px]:gap-4"
         >
           <div className="title w-[44%] max-[1399px]:w-[35%] max-[1199px]:w-[36%] max-[992px]:w-full">
-            <Eyebrow className="mb-3.75 max-[767px]:mb-5" tone="muted">
+            <Eyebrow className="mb-4" tone="muted">
               {eyebrow}
             </Eyebrow>
             <h2
-              className="m-0 font-montserrat text-[35px] font-bold leading-[1.38] text-[#090909] max-[1199px]:text-[28px] max-[992px]:mb-2.5 max-[767px]:text-2xl"
+              className="m-0 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1199px]:text-[28px] max-[992px]:mb-2.5 max-[767px]:text-2xl"
               id="our-work-case-studies-title"
             >
               {title}
@@ -79,7 +79,7 @@ export function OurWorkCaseStudiesSection({
                             {item.category}
                           </span>
                         </div>
-                        <h3 className="mb-3.5 font-display text-xl font-medium leading-[1.4] tracking-[-.48px] text-[#090909] line-clamp-2 transition-colors group-hover/title:text-[#ad5151]">
+                        <h3 className="mb-3.5 font-montreal-medium text-xl font-normal leading-[1.4] tracking-normal text-ink line-clamp-2 transition-colors group-hover/title:text-[#ad5151]">
                           {item.title}
                         </h3>
                       </Link>

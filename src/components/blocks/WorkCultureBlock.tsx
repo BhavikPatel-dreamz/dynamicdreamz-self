@@ -31,7 +31,7 @@ export function WorkCultureBlock({
       <Container>
         <header className="mx-auto mb-[50px] max-w-[620px] text-center max-[1199px]:mb-[30px]">
           <h2
-            className="mb-2 text-[35px] leading-[48.475px] font-bold tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
+            className="mb-2 font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
             id="work-culture-title"
           >
             {title}

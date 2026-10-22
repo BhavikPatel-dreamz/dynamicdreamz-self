@@ -44,7 +44,7 @@ export function ShopifyMobileAppWorkSection({
   return (
     <section
       id={id}
-      className="our-work-sec scroll-mt-20 bg-white pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]"
+      className="our-work-sec scroll-mt-20 bg-white py-20 max-[991px]:py-[50px]"
     >
       <Container>
         <SplitSectionHeading
@@ -52,7 +52,7 @@ export function ShopifyMobileAppWorkSection({
           eyebrow={content.eyebrow}
           heading={content.heading}
           description={content.description}
-          className="mb-10 max-[767px]:mb-[30px]"
+          className="mb-10 max-[991px]:mb-[30px]"
         />
 
         <div className="our-work-main flex flex-wrap justify-start gap-x-[15px] gap-y-[42px] max-[991px]:gap-y-[30px]">

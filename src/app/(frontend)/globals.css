@@ -1,5 +1,37 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "neue_montrealbold";
+  src: url("./fonts/neue--montreal-bold-webfont.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "neue_montrealmedium";
+  src: url("./fonts/neue--montreal-medium-webfont.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "neue_montrealregular";
+  src: url("./fonts/neue--montreal-regular-webfont.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "neue_montreallight";
+  src: url("./fonts/neue--montreal-light-webfont.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --color-ink: #282828;
   --color-muted: #535353;
@@ -11,12 +43,16 @@
   --color-dark-green: #192019;
   --color-soft-line: #dfdfdf;
   --color-blue-line: #bfd0de;
-  --font-montserrat: var(--font-montserrat-local), Arial, sans-serif;
-  --font-sans: var(--font-montserrat-local), Arial, sans-serif;
-  --font-display: var(--font-neue-montreal-local), Arial, sans-serif;
-  --font-montreal-medium: var(--font-neue-montreal-medium-local), var(--font-neue-montreal-local), sans-serif;
-  --font-montreal-semibold: var(--font-neue-montreal-local), sans-serif;
-  --montreal-medium: var(--font-neue-montreal-medium-local), var(--font-neue-montreal-local), sans-serif;
+  --font-montserrat: "Montserrat", var(--font-montserrat-local), Arial, sans-serif;
+  --font-sans: "Montserrat", var(--font-montserrat-local), Arial, sans-serif;
+  --font-heading: "neue_montrealmedium", var(--font-neue-montreal-medium-local), sans-serif;
+  --font-display: "neue_montrealmedium", var(--font-neue-montreal-medium-local), sans-serif;
+  --font-montreal-medium: "neue_montrealmedium", var(--font-neue-montreal-medium-local), sans-serif;
+  --font-montreal-semibold: "neue_montrealmedium", var(--font-neue-montreal-medium-local), sans-serif;
+  --montreal-medium: "neue_montrealmedium", var(--font-neue-montreal-medium-local), sans-serif;
+  --montreal-bold: "neue_montrealbold", var(--font-neue-montreal-local), sans-serif;
+  --montreal-regular: "neue_montrealregular", var(--font-neue-montreal-local), sans-serif;
+  --montreal-light: "neue_montreallight", var(--font-neue-montreal-local), sans-serif;
 }
 
 @layer base {
@@ -37,6 +73,27 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  p {
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+
+  .section_title_with_eyebrow p {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 1199px) {
+    .section_title_with_eyebrow p {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
   button,
   input,
   textarea,
@@ -51,7 +108,7 @@
   h5,
   h6 {
     color: var(--color-ink);
-    font-family: var(--font-montreal-medium);
+    font-family: "neue_montrealmedium", var(--font-neue-montreal-medium-local), sans-serif;
     font-weight: 400;
     letter-spacing: 0;
   }

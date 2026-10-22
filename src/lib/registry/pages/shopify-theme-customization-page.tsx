@@ -9,7 +9,7 @@ import { ShopifyTeamBoxesSection } from "@/components/blocks/WhyChooseUsBlock";
 import { ShopifyThemeServiceIcon } from "@/lib/icons/service-icons";
 import { ShopifyThemesGridSection } from "@/components/blocks/ServiceOfferingsGridBlock";
 import { SplitFaqSection } from "@/components/blocks/FaqSectionBlock";
-import { ThemeCustomizationApproachSection } from "@/components/blocks/ProcessWorkflowBlock";
+import { ThemeCustomizationApproachSection } from "@/components/sections/theme-customization-approach-section";
 import { ThemeCustomizationServicesSection } from "@/components/blocks/ServiceOfferingsGridBlock";
 import { WhyChooseShopifyMigrationSection } from "@/components/blocks/WhyChooseUsBlock";
 import { shopifyThemeCustomizationContent } from "@/content/shopify-theme-customization";
@@ -91,6 +91,7 @@ export function ShopifyThemeCustomizationPage() {
 
       {/* 12. Client Stories / Testimonials */}
       <HappyClientSection
+        hasTopPadding={true}
         description={shopifyThemeCustomizationContent.testimonials.description}
         eyebrow={shopifyThemeCustomizationContent.testimonials.eyebrow}
         heading={shopifyThemeCustomizationContent.testimonials.heading}

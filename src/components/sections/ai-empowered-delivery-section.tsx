@@ -56,7 +56,7 @@ export function AiEmpoweredDeliverySection({
             <div className="left-col w-[49%] max-[1199px]:w-[41%] max-[991px]:w-full">
               <div className="text-block">
                 {content.eyebrow ? (
-                  <Eyebrow className="mb-4" tone={isDark ? "inverse" : "ink"}>
+                  <Eyebrow className="mb-4" tone={isDark ? "inverse" : "muted"}>
                     {content.eyebrow}
                   </Eyebrow>
                 ) : null}

@@ -136,6 +136,7 @@ export function IndustryLandingTemplate({
       <WhyChooseShopifyMigrationSection content={whyChoose} />
       {testimonials ? (
         <HappyClientSection
+          hasTopPadding={true}
           description={testimonials.description}
           eyebrow={testimonials.eyebrow}
           heading={testimonials.heading}

@@ -51,6 +51,7 @@ export type AgencyServicesSectionProps = {
   cardVariant?: "default" | "services-box" | "webflow";
   eyebrow?: string;
   preserveBreaks?: boolean;
+  className?: string;
 };
 
 export function AgencyServicesSection({
@@ -62,11 +63,13 @@ export function AgencyServicesSection({
   cardVariant = "default",
   eyebrow,
   preserveBreaks = false,
+  className,
 }: AgencyServicesSectionProps) {
   const resolvedEyebrow = eyebrow ?? content.eyebrow;
   const sectionClass = cn(
     "what-we-provide-sec py-20 max-[992px]:py-[50px]",
     cardVariant === "services-box" && "pb-0 max-[992px]:pb-0",
+    className,
   );
 
   return (

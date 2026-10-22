@@ -34,7 +34,7 @@ export function Eyebrow<T extends ElementType = "p">({
   lineThickness = "regular",
   lineWidth = "responsive",
   linePosition = "flow",
-  tone = "ink",
+  tone = "muted",
   unstyled = false,
   ...props
 }: EyebrowProps<T>) {
@@ -55,9 +55,7 @@ export function Eyebrow<T extends ElementType = "p">({
         !unstyled && lineThickness === "thin" && "before:h-[2px]",
         !unstyled && lineWidth === "fixed" && "before:w-[30px]",
         !unstyled && lineWidth === "responsive" && "before:w-[30px] max-[767px]:before:w-[15px]",
-        !unstyled && tone === "ink" && "text-ink",
-        !unstyled && tone === "muted" && "text-muted",
-        !unstyled && tone === "inverse" && "text-white",
+        !unstyled && (tone === "inverse" ? "text-white" : "text-[#535353]"),
         className,
       )}
       {...props}

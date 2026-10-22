@@ -64,6 +64,7 @@ export function HireShopifyDevelopersPage() {
       <AiEmpoweredDeliverySection content={hireShopifyContent.aiTools} />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
+        className="pt-0 max-[991px]:pt-0"
         columns={4}
         content={hireShopifyContent.work}
         sectionId="our_work"
@@ -71,6 +72,7 @@ export function HireShopifyDevelopersPage() {
       <PricingTableSection content={hireShopifyContent.pricing} />
       <div id="shopify-testimonials">
         <HappyClientSection
+          hasTopPadding={true}
           description={hireShopifyContent.testimonials.description}
           eyebrow={hireShopifyContent.testimonials.eyebrow}
           heading={hireShopifyContent.testimonials.heading}

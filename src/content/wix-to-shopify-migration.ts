@@ -1,8 +1,9 @@
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { EvaluationFrameworkContent } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
+import type { MigrationPlatformIconName } from "@/components/sections/migration-platform-icons";
 import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
 import type { ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
-import type { MigrationPlatformIconName } from "@/components/sections/migration-platform-icons";
 import { migrationBrandLogos, migrationHeroBadges, migrationSectionCopy } from "@/content/migration-common";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
@@ -190,3 +191,89 @@ export const wixFaqs: readonly FaqAccordionItem[] = [
     answer: "There are no hidden costs applied in the migration process. We give you a transparent pricing structure and clearly outline all expenses upfront, including any extra costs for themes or apps you may want to execute on Shopify.",
   },
 ];
+
+export type WixThingsToConsiderBox = {
+  iconName: MigrationPlatformIconName;
+  title: string;
+  description: string;
+};
+
+export const wixThingsToConsiderContent = {
+  eyebrow: "Consideration",
+  heading: "Things to Consider Before Wix to Shopify Migration",
+  description: "Before migrating from Wix to Shopify, there are several fundamental aspects to consider to guarantee a smooth migration and avoid unexpected issues. Planning for these details will help ensure your store's success on Shopify.",
+  boxes: [
+    {
+      iconName: "seo-settings" as MigrationPlatformIconName,
+      title: "SEO Settings",
+      description: "Ensure that you review and move necessary SEO settings, such as meta titles, meta descriptions, and alt tags, to maintain and improve your search rankings.",
+    },
+    {
+      iconName: "extensive-customization" as MigrationPlatformIconName,
+      title: "Custom Designs",
+      description: "Consider whether you want to keep your current store design or accept a new custom Shopify theme. Preparing this in advance helps with the transition.",
+    },
+    {
+      iconName: "powerful-app-ecosystem" as MigrationPlatformIconName,
+      title: "App Compatibility",
+      description: "Wix apps cannot be directly transferred to Shopify. Before you start migration, determine the features you want to keep and explore similar apps available on Shopify.",
+    },
+    {
+      iconName: "payment-and-shipping" as MigrationPlatformIconName,
+      title: "Payment & Shipping Settings",
+      description: "Check your current payment and shipping setups to confirm that Shopify provides the same or similar options. Adjustments might be required to match your current settings.",
+    },
+  ],
+};
+
+export const wixWhatAfterContent = {
+  eyebrow: "After Migration",
+  heading: "What After Wix to Shopify Migration",
+  description: "After your migration from Wix to the Shopify store is complete, you’ll be required to make a few tests to ensure that your store is fully optimized and prepared for sale.",
+  boxes: [
+    {
+      iconName: "seo-redirects" as MigrationPlatformIconName,
+      title: "SEO & Redirects",
+      description: "Once the migration is done, ensure that all 301 redirects are proper so your previous URLs from the Wix store point correctly to their Shopify store. It helps maintain your search engine rankings.",
+    },
+    {
+      iconName: "app-integration" as MigrationPlatformIconName,
+      title: "App Setup",
+      description: "To match the functionality of your Wix store, integrate the necessary apps into your Shopify store. Shopify provides a vast app store to extend your store’s abilities.",
+    },
+    {
+      iconName: "store-testing" as MigrationPlatformIconName,
+      title: "Testing & Functionality",
+      description: "Thoroughly test your store to ensure that all features, including the checkout process, customer accounts, and payment gateways, are working properly.",
+    },
+    {
+      iconName: "performance-optimization" as MigrationPlatformIconName,
+      title: "Analytics & Tracking",
+      description: "Set up or migrate analytics tools like Google Analytics to track visitor data and sales on your new Shopify store.",
+    },
+  ],
+};
+
+export const wixWhyChooseContent: EvaluationFrameworkContent = {
+  eyebrow: "Why Dynamic Dreamz",
+  heading: "Why Choose Dynamic Dreamz for Wix to Shopify Migration Service",
+  description: "We make the process of migrating from Wix to Shopify smooth, secure, and efficient, with a priority on maintaining the integrity of your store.",
+  items: [
+    {
+      title: "Expertise",
+      description: "Our team of experts has years of experience in migrating stores to Shopify, providing a hassle free transition that keeps your business running smoothly.",
+    },
+    {
+      title: "Full Data Migration",
+      description: "We migrate all crucial data, including products, orders, and customers, guaranteeing that your new Shopify store has everything it requires to function flawlessly.",
+    },
+    {
+      title: "Custom Themes",
+      description: "Whether you want to keep your current design or construct a new one, we’ll design a custom theme that reflects your brand and improves the user experience.",
+    },
+    {
+      title: "Ongoing Support",
+      description: "Our responsibility doesn’t end when your store goes live. We offer ongoing support to guarantee that your store continues to perform optimally.",
+    },
+  ],
+};

@@ -4,6 +4,7 @@ import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { PortfolioProjectCard } from "@/components/ui/portfolio-project-card";
 import { sharedUiCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
+import { cn } from "@/lib/class-names";
 
 export type PortfolioShowcaseItem = {
   name: string;
@@ -46,6 +47,7 @@ export type PortfolioShowcaseSectionProps = {
   mobileColumns?: 1 | 2;
   titleColumnClassName?: string;
   textColumnClassName?: string;
+  className?: string;
 };
 
 export function PortfolioShowcaseSection({
@@ -66,6 +68,7 @@ export function PortfolioShowcaseSection({
   titleColumnClassName,
   textColumnClassName,
   variant = "default",
+  className,
 }: PortfolioShowcaseSectionProps) {
   const resolvedColumns = columns ?? 4;
   const resolvedEyebrow =
@@ -84,10 +87,10 @@ export function PortfolioShowcaseSection({
   const isShopifyPlusCategory = content.category === "SHOPIFY PLUS";
   const isLiveGrid = variant === "liveGrid";
   const sectionClassName = isShopifyPlusCategory
-    ? "our-work-sec bg-white pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]"
+    ? "our-work-sec bg-white pt-0 pb-20 max-[991px]:pt-0 max-[991px]:pb-[50px]"
     : isLiveGrid
-      ? "our-work-sec pt-20 pb-20 max-[992px]:pt-10 max-[767px]:pt-0"
-      : "our-work-sec py-20 max-[992px]:py-[50px]";
+      ? "our-work-sec pt-0 pb-20 max-[991px]:pt-0 max-[767px]:pt-0"
+      : "our-work-sec py-20 max-[991px]:py-[50px]";
 
   const gridColsClass =
     resolvedColumns === 4
@@ -103,7 +106,7 @@ export function PortfolioShowcaseSection({
           : "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1";
 
   return (
-    <section className={sectionClassName} data-section="portfolio" id={sectionId}>
+    <section className={cn(sectionClassName, className)} data-section="portfolio" id={sectionId}>
       <Container>
         <SplitSectionHeading
           description={content.description}

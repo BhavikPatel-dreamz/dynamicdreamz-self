@@ -40,6 +40,7 @@ export function WhiteLabelShopifyPage() {
 
       {/* 5. Portfolio Section */}
       <PortfolioShowcaseSection
+        className="pt-0 max-[991px]:pt-0"
         columns={4}
         content={whiteLabelShopifyPortfolio}
         headerLayout="split"
@@ -67,7 +68,10 @@ export function WhiteLabelShopifyPage() {
       />
 
       {/* 11. Client Stories Video Testimonials */}
-      <HappyClientSection eyebrow={whiteLabelShopifySectionCopy.testimonialsEyebrow} />
+      <HappyClientSection
+        hasTopPadding={true}
+        eyebrow={whiteLabelShopifySectionCopy.testimonialsEyebrow}
+      />
 
       {/* 12. FAQ Accordion */}
       <SplitFaqSection

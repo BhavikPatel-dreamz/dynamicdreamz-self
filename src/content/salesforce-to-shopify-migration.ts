@@ -1,8 +1,9 @@
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { EvaluationFrameworkContent } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
+import type { MigrationPlatformIconName } from "@/components/sections/migration-platform-icons";
 import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
 import type { ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
-import type { MigrationPlatformIconName } from "@/components/sections/migration-platform-icons";
 import { migrationBrandLogos, migrationHeroBadges, migrationSectionCopy } from "@/content/migration-common";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 
@@ -245,3 +246,61 @@ export const salesforceFaqs: readonly FaqAccordionItem[] = [
     answer: "Migrating platforms can involve challenges such as feature differences, layout adjustments, and data formatting. Our team handles these challenges by carefully mapping your data and customizing your Shopify store to fulfill your requirements, providing a smooth transition.",
   },
 ];
+
+export type SalesforceThingsToConsiderBox = {
+  iconName: MigrationPlatformIconName;
+  title: string;
+  description: string;
+};
+
+export const salesforceThingsToConsiderContent = {
+  eyebrow: "Things to Consider",
+  heading: "Things to Consider Before Migrate from Salesforce to Shopify",
+  description: "",
+  boxes: [
+    {
+      iconName: "data-mapping-cleanup" as MigrationPlatformIconName,
+      title: "Data Mapping and Cleanup",
+      description: "Before starting the migration process, ensure your data is clean and organized; this is the most important thing. This checking process contains incorrect orders, old product listings, or duplicate customer records. A clean dataset makes the migration process faster and smoother.",
+    },
+    {
+      iconName: "feature-compatibility" as MigrationPlatformIconName,
+      title: "Feature Compatibility",
+      description: "Shopify may not have some of the built-in features that Salesforce offers. However, Shopify's app store and custom development can fill these gaps. Plan to find alternatives or create a roadmap for custom features that satisfy your business requirements.",
+    },
+    {
+      iconName: "seo-considerations" as MigrationPlatformIconName,
+      title: "SEO Considerations",
+      description: "When swapping platforms, SEO can be affected. Ensure your product URLs, page titles, and meta descriptions are optimized on Shopify to keep your search engine rankings.",
+    },
+    {
+      iconName: "seo-redirects" as MigrationPlatformIconName,
+      title: "Redirect Strategy",
+      description: "Some URLs may change when you migrate to Shopify. Creating proper 301 redirects is crucial to ensure that customers who have bookmarked your old store or find it through search engines will be redirected to your new Shopify store smoothly.",
+    },
+  ],
+};
+
+export const salesforceWhyChooseContent: EvaluationFrameworkContent = {
+  eyebrow: "Why Dynamic Dreamz",
+  heading: "Why Choose Dynamic Dreamz for Salesforce to Shopify Migration Service",
+  description: "Dynamic Dreamz specializes in helping businesses migrate from Squarespace to Shopify, providing a smooth and secure transition that keeps your business running seamlessly.",
+  items: [
+    {
+      title: "Experienced Team",
+      description: "Our migration experts have handled multiple migrations from various platforms to Shopify, making us experienced in managing technical factors without disrupting your business operations.",
+    },
+    {
+      title: "Comprehensive Data Migration",
+      description: "We migrate all your essential data, including products, orders, and customer information, ensuring your new Shopify store is complete and ready to run.",
+    },
+    {
+      title: "Custom Theme Development",
+      description: "Whether you want to keep your current design or create a fresh look, we develop custom themes that reflect your brand and improve your store’s functionality.",
+    },
+    {
+      title: "Reliable Support",
+      description: "We give ongoing support after your store goes live, ensuring that any issues are resolved promptly and helping you maximize the potential of your new Shopify store.",
+    },
+  ],
+};

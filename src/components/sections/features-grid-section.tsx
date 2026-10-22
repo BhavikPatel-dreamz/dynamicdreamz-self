@@ -32,7 +32,7 @@ export function FeaturesGridSection({
   description,
   features,
   columns = 3,
-  className = "features-grid-sec py-20 max-[992px]:py-[50px]",
+  className = "features-grid-sec py-20 max-[991px]:py-[50px]",
   id = "features",
   titleAlign = "center",
 }: FeaturesGridSectionProps) {
@@ -49,16 +49,16 @@ export function FeaturesGridSection({
         <div
           data-aos="fade-up"
           className={cn(
-            "title mb-12 max-[767px]:mb-6",
+            "title mb-[50px] max-[991px]:mb-[30px]",
             titleAlign === "center" ? "mx-auto max-w-[850px] text-center" : "text-left",
           )}
         >
           {eyebrow ? (
-            <div className="mb-2.5">
+            <div className="mb-4">
               <Eyebrow>{eyebrow}</Eyebrow>
             </div>
           ) : null}
-          <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
             {formatBrText(heading, "max-[1199px]:hidden")}
           </h2>
           {description ? (

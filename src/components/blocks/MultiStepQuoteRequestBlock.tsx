@@ -206,7 +206,7 @@ export function QuoteTestimonials({
                         width={48}
                         height={48}
                       />
-                      <h3 className="m-0 font-display text-lg leading-[23px] font-medium text-[#090909] max-[767px]:text-base">
+                      <h3 className="m-0 font-montreal-medium text-lg leading-[23px] font-normal text-ink max-[767px]:text-base">
                         {testimonial.name}
                       </h3>
                     </div>

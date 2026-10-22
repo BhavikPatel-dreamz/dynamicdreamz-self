@@ -23,15 +23,15 @@ export function CaseStudyChallenge({ challenge }: CaseStudyChallengeProps) {
   }
 
   return (
-    <section id="explore" className="scroll-mt-20 py-20 max-[767px]:py-[50px]" aria-labelledby="challenge-heading">
+    <section id="explore" className="scroll-mt-20 py-20 max-[991px]:py-[50px]" aria-labelledby="challenge-heading">
       <Container>
-        <div className="mb-10 max-[767px]:mb-6">
-          <div className="relative mb-4 inline-flex items-center pl-10 text-[14px] font-semibold uppercase leading-[1.2] text-[#282828] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[767px]:pl-[23px] max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+        <div className="mb-10 max-[991px]:mb-[30px]">
+          <div className="relative mb-4 inline-flex items-center pl-10 text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[767px]:pl-[23px] max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
             <span>{eyebrow}</span>
           </div>
           <h2
             id="challenge-heading"
-            className="mb-4 font-display text-[35px] font-medium leading-[1.38] text-[#282828] max-[1199px]:text-[28px] max-[767px]:text-2xl"
+            className="mb-4 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1199px]:text-[28px] max-[767px]:text-2xl"
           >
             {heading}
           </h2>

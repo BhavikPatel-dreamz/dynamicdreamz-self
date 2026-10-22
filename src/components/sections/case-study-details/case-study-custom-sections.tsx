@@ -15,17 +15,17 @@ export function CaseStudyCustomSections({ sections }: CaseStudyCustomSectionsPro
       {sections.map((section, index) => (
         <section
           key={index}
-          className="border-t border-[rgba(40,40,40,0.11)] py-20 max-[767px]:py-[50px]"
+          className="border-t border-[rgba(40,40,40,0.11)] py-20 max-[991px]:py-[50px]"
           aria-label={section.heading}
         >
           <Container>
             <div className="mx-auto max-w-[900px]">
               {section.eyebrow ? (
-                <div className="relative mb-4 inline-flex items-center pl-10 text-[14px] font-semibold uppercase leading-[1.2] text-[#282828] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[767px]:pl-[23px] max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+                <div className="relative mb-4 inline-flex items-center pl-10 text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[767px]:pl-[23px] max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
                   <span>{section.eyebrow}</span>
                 </div>
               ) : null}
-              <h2 className="mb-4 font-display text-[35px] font-medium leading-[1.38] text-[#282828] max-[1199px]:text-[28px] max-[767px]:text-2xl">
+              <h2 className="mb-4 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1199px]:text-[28px] max-[767px]:text-2xl">
                 {section.heading}
               </h2>
               {section.lead ? (

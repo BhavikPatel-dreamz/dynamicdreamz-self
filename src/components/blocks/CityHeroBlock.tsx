@@ -346,6 +346,5 @@ export function CityHeroBlock(props: CityHeroBlockProps = {}) {
 
 export {
   CityHeroBlock as CityPageHeroSection,
-  CityHeroBlock as ShopifyHoursHeroSection,
   CityHeroBlock as CaseStudiesHero,
 };

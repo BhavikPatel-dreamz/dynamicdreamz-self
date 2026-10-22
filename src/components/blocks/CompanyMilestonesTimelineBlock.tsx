@@ -38,7 +38,7 @@ export function CompanyMilestonesTimelineBlock({
           className="-mx-[15px] mb-[60px] flex items-center max-[992px]:mx-0 max-[992px]:mb-0 max-[992px]:block max-[992px]:text-center"
         >
           <div className="w-1/2 px-[15px] max-[992px]:mb-[10px] max-[992px]:w-full max-[992px]:p-0">
-            <h2 id="about-timeline-title" className="text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
+            <h2 id="about-timeline-title" className="font-montreal-medium text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
               {title}
             </h2>
           </div>

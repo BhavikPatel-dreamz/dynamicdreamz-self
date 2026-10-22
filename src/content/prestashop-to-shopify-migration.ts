@@ -1,5 +1,6 @@
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
+import type { EvaluationFrameworkContent } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
 import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
 import type { ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
 import type { MigrationPlatformIconName } from "@/components/sections/migration-platform-icons";
@@ -32,33 +33,39 @@ export type PrestaShopBenefitsBox = {
 
 export const prestashopBenefitsContent = {
   eyebrow: "Benefits",
-  heading: "Data Mapping",
+  heading: "Benefits of Moving from PrestaShop to Shopify",
   description:
     "If you want to grow your business, switching from PrestaShop to Shopify is the best option for your business growth. Shopify’s features are designed to streamline store management while enhancing your online presence.",
   boxes: [
     {
-      iconName: "secure-reliable" as MigrationPlatformIconName,
-      title: "Data Mapping",
-      description:
-        "Ensure that all data from your PrestaShop store—like products, customer information, and order history—is correctly mapped for a seamless migration to Shopify.",
-    },
-    {
       iconName: "user-friendly-platform" as MigrationPlatformIconName,
-      title: "SEO Considerations",
+      title: "User Friendly Interface",
       description:
-        "Meta titles, descriptions, and URLs are reviewed and updated during the migration to retain your current search engine rankings.",
+        "Shopify's user friendly interface makes it easy to use for beginners and non technical users. Business and store owners can manage their stores, add products, and track orders better than the PrestaShop store.",
     },
     {
       iconName: "extensive-customization" as MigrationPlatformIconName,
-      title: "Design Preferences",
+      title: "Better Customization Options",
       description:
-        "Before migration, you have to decide whether you want your current theme or need a new theme to enhance your store with Shopify's customization features.",
+        "Shopify provides more flexibility with custom themes, allowing you to fully personalize your store's look and functionality according to your brand's needs.",
+    },
+    {
+      iconName: "app-integration" as MigrationPlatformIconName,
+      title: "App Integrations",
+      description:
+        "Shopify's app store has a vast collection of apps that help enhance your store's features, offering tools for marketing, inventory management, customer service, and more.",
+    },
+    {
+      iconName: "secure-reliable" as MigrationPlatformIconName,
+      title: "Enhanced Security",
+      description:
+        "Shopify ensures your store's security by providing SSL certificates and PCI compliance. Shopify prioritizes protecting your data and customers' data.",
     },
     {
       iconName: "built-for-scalability" as MigrationPlatformIconName,
-      title: "Payment and Shipping",
+      title: "Scalable Solutions",
       description:
-        "Check your current PrestaShop store settings to ensure that the same or better payment gateways and shipping options. Shopify has multiple payment gateways and shipping options for your needs.",
+        "Shopify can grow with your business, allowing you to add more products, handle more traffic, and integrate advanced tools as your business expands.",
     },
   ],
 };
@@ -109,8 +116,7 @@ export const prestashopProcessContent: MigrationProcessContent = {
         },
         {
           title: "Reviews",
-          description: "Comment",
-          items: ["User Name", "Rating", "Title"],
+          items: ["User Name", "Rating", "Title", "Comment"],
         },
         {
           title: "CMS Pages",
@@ -204,3 +210,82 @@ export const prestashopFaqs: readonly FaqAccordionItem[] = [
     answer: "Yes, all Shopify themes are responsive and mobile friendly. We ensure that your new Shopify store is optimized for mobile devices, providing a great shopping experience for customers on any device.",
   },
 ];
+
+export type PrestashopDataMappingBox = {
+  iconName: MigrationPlatformIconName;
+  title: string;
+  description: string;
+};
+
+export const prestashopDataMappingContent = {
+  eyebrow: "Benefits",
+  heading: "Data Mapping",
+  description:
+    "If you want to grow your business, switching from PrestaShop to Shopify is the best option for your business growth. Shopify’s features are designed to streamline store management while enhancing your online presence.",
+  boxes: [
+    {
+      iconName: "data-mapping-cleanup" as MigrationPlatformIconName,
+      title: "Data Mapping",
+      description:
+        "Ensure that all data from your PrestaShop store—like products, customer information, and order history—is correctly mapped for a seamless migration to Shopify.",
+    },
+    {
+      iconName: "seo-considerations" as MigrationPlatformIconName,
+      title: "SEO Considerations",
+      description:
+        "Meta titles, descriptions, and URLs are reviewed and updated during the migration to retain your current search engine rankings.",
+    },
+    {
+      iconName: "feature-compatibility" as MigrationPlatformIconName,
+      title: "Design Preferences",
+      description:
+        "Before migration, you have to decide whether you want your current theme or need a new theme to enhance your store with Shopify's customization features.",
+    },
+    {
+      iconName: "payment-and-shipping" as MigrationPlatformIconName,
+      title: "Payment and Shipping",
+      description:
+        "Check your current PrestaShop store settings to ensure that the same or better payment gateways and shipping options. Shopify has multiple payment gateways and shipping options for your needs.",
+    },
+  ],
+};
+
+export const prestashopWhyChooseContent: EvaluationFrameworkContent = {
+  eyebrow: "Why Dynamic Dreamz",
+  heading: "Why Choose Dynamic Dreamz for PrestaShop to Shopify Migration",
+  description: "Dynamic Dreamz is an expert in PrestaShop to Shopify migrations, providing a reliable and efficient service that makes your migration as smooth as possible.",
+  items: [
+    {
+      title: "Proven Track Record",
+      description: "With a proven track record, we have successfully migrated 100+ stores worldwide, helping businesses transition smoothly to Shopify.",
+    },
+    {
+      title: "Expert Migration Team",
+      description: "Our trained team has successfully migrated countless PrestaShop stores to Shopify, managing every technical detail with care and precision.",
+    },
+    {
+      title: "Custom Shopify Themes",
+      description: "If you need a fresh and new feel for your Shopify store, we develop custom Shopify themes based on your brand needs.",
+    },
+    {
+      title: "Smooth Data Transfer",
+      description: "We ensure that all essential data, including products, customer details, and orders, are transferred accurately without any data loss.",
+    },
+    {
+      title: "SEO Expertise",
+      description: "Our SEO experts ensure your new Shopify store maintains and improves its search engine visibility during migration.",
+    },
+    {
+      title: "Comprehensive Services",
+      description: "From initial assessment to post launch support, we provide end to end migration services, taking care of every detail to ensure a successful upgrade.",
+    },
+    {
+      title: "Minimal Downtime",
+      description: "We migrate your store with proper planning and carefully take every step so your migration process will completed with minimal downtime.",
+    },
+    {
+      title: "Post Migration Support",
+      description: "We also provide post migration support for your adjustments, additional features, or technical questions you may have.",
+    },
+  ],
+};

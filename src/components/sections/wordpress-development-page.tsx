@@ -32,6 +32,7 @@ export function WordPressDevelopmentPage() {
       <CityPageHeroSection content={wordpressDevelopmentHero} />
       <AgencyServicesSection
         cardVariant="services-box"
+        className="pb-0 max-[992px]:pb-0"
         content={servicesContent}
         headerLayout="split"
         hideCta

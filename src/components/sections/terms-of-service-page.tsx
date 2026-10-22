@@ -27,7 +27,7 @@ export function TermsOfServicePage({ content }: TermsOfServicePageProps = {}) {
         <Container>
           <h1
             id="terms-of-service-title"
-            className="inline-block max-w-full font-sans text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
+            className="inline-block max-w-full font-montreal-medium text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
           >
             {heroTitle}
           </h1>

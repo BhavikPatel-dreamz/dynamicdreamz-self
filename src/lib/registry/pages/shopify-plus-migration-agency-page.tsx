@@ -1,6 +1,6 @@
 import { ServiceHeroVideoSection } from "@/components/blocks/ServiceHeroBlock";
 import { IndustryBrandsSection } from "@/components/blocks/ClientLogoMarqueeBlock";
-import { ShopifyMigrationServicesSection } from "@/components/blocks/ServiceOfferingsGridBlock";
+import { ShopifyMigrationServicesSection } from "@/components/sections/shopify-migration/shopify-migration-services-section";
 import { ShopifyMigrationNumberedGridSection } from "@/components/blocks/ProcessWorkflowBlock";
 import { SeoSafeMigrationSection } from "@/components/blocks/MigrationDataChecklistBlock";
 import { EvaluationFrameworkSection } from "@/components/blocks/WhyChooseUsBlock";
@@ -80,6 +80,7 @@ export function ShopifyPlusMigrationAgencyPage() {
 
       {/* 9. Client Stories / Testimonials */}
       <HappyClientSection
+        hasTopPadding={true}
         description={plusAgencyTestimonials.description}
         eyebrow={plusAgencyTestimonials.eyebrow}
         heading={plusAgencyTestimonials.heading}

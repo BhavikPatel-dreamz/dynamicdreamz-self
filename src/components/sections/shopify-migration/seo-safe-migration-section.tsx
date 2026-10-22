@@ -50,11 +50,11 @@ export function SeoSafeMigrationSection({
             <div className="left-col w-[49%] max-[1199px]:w-[41%] max-[991px]:w-full">
               <div className="text-block">
                 {content.eyebrow && (
-                  <Eyebrow className="mb-2.5 text-[#ad5151]" lineThickness="thin">
+                  <Eyebrow className="mb-4" lineThickness="thin">
                     {content.eyebrow}
                   </Eyebrow>
                 )}
-                <h2 className="mb-2.5 font-display text-[35px] font-medium leading-[1.2] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
+                <h2 className="mb-2.5 font-montreal-medium text-[35px] font-normal leading-[1.2] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
                   {formatBrText(content.heading, "max-[767px]:hidden")}
                 </h2>
                 <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">
@@ -89,7 +89,7 @@ export function SeoSafeMigrationSection({
                     </div>
                     <div className="redirect flex w-[55%] items-center gap-[15px] px-2.5 max-[767px]:w-full max-[767px]:gap-2 max-[767px]:px-0">
                       <div className="url flex items-center gap-1.5 font-bold text-[#ad5151]">
-                        <h3 className="m-0 font-display text-sm font-bold text-[#ad5151]">
+                        <h3 className="m-0 font-montreal-medium text-sm font-normal text-[#ad5151]">
                           {row.statusCode ?? "301"}
                         </h3>
                         <span aria-hidden="true">→</span>

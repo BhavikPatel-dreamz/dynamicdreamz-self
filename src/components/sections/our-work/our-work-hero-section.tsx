@@ -129,15 +129,15 @@ export function OurWorkHeroSection({
   const logos = propProofLogos && propProofLogos.length > 0 ? propProofLogos : proofLogos;
 
   return (
-    <section className="hero-new-section overflow-hidden bg-cream pt-[91px] max-[992px]:pt-16">
+    <section className="hero-new-section overflow-hidden bg-cream pt-[91px] max-[991px]:pt-16">
       <Container className="container relative max-[991.98px]:max-w-none max-[991.98px]:px-0">
         <div className="wrapper flex flex-wrap justify-between max-[991.98px]:flex-col">
           <div className="left-col z-1 flex flex-col justify-center w-[44.697%] py-[60px] max-[1399px]:w-1/2 max-[1199px]:w-[57%] max-[991.98px]:w-full max-[991.98px]:px-[calc((100%-680px)/2)] max-[991.98px]:pt-[30px] max-[991.98px]:pb-10 max-[767.98px]:px-[calc((100%-500px)/2)] max-[575px]:px-5 max-[991.98px]:items-center max-[991.98px]:text-center">
             <div className="hero-content">
-              <Eyebrow align="responsive-center" className="mb-3.75 max-[767px]:mb-5" tone="muted">
+              <Eyebrow align="responsive-center" className="mb-4" tone="muted">
                 {heroContent.eyebrow}
               </Eyebrow>
-              <h1 className="max-w-[700px] text-ink max-[991.98px]:max-w-[680px] font-display text-[50px] leading-[60px] font-normal tracking-normal max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[768px]:text-[30px] max-[767px]:leading-[40px]">
+              <h1 className="max-w-[700px] text-ink max-[991.98px]:max-w-[680px] font-montreal-medium text-[50px] leading-[60px] font-normal tracking-normal max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[768px]:text-[30px] max-[767px]:leading-[40px]">
                 {heroContent.title}
               </h1>
               <p className="mt-2.5 max-w-[690px] text-base leading-[190%] font-medium text-muted max-[767px]:mt-4 max-[992px]:text-[14px] max-[992px]:leading-[25.2px]">

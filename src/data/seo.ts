@@ -858,9 +858,9 @@ export const pageSeo = {
   },
   shopifyMigration: {
     path: "/shopify-migration",
-    title: "Seamless Shopify Migration Services | Dynamic Dreamz",
+    title: "Shopify Migration Services | Dynamic Dreamz",
     description:
-      "We ensure a seamless transfer of your store, preserving data integrity and minimizing downtime. Expert Shopify migration services to boost ecommerce success.",
+      "Migrate Magento, WooCommerce, BigCommerce, Salesforce and other stores to Shopify or Shopify Plus. Dynamic Dreamz handles data, SEO redirects, QA and launch.",
     socialDescription:
       "Expert Shopify Migration Services: Efficiently Move Your Store with Ease and get the full potential of Shopify with our tailored migration solutions.",
     keywords: [
@@ -888,9 +888,9 @@ export const pageSeo = {
   },
   prestashopToShopifyMigration: {
     path: "/prestashop-to-shopify-migration",
-    title: "PrestaShop to Shopify Migration | Take an Expert Guide",
+    title: "PrestaShop to Shopify Migration Services",
     description:
-      "Looking for a PrestaShop to Shopify migration without downtime and data loss? Hire Shopify experts from Dynamic Dreamz for a smooth, successful store migration.",
+      "Migrate PrestaShop to Shopify with Dynamic Dreamz. We transfer store data, rebuild required features, configure apps, protect SEO, and support QA and launch.",
     socialDescription:
       "Are you looking for a PrestaShop to Shopify migration without downtime and data loss? Hire Shopify experts from Dynamic Dreamz for a smooth and successful migration.",
     keywords: [
@@ -1041,9 +1041,9 @@ export const pageSeo = {
   },
   bigcommerceToShopifyMigration: {
     path: "/bigcommerce-to-shopify-migration",
-    title: "BigCommerce to Shopify Migration | Take an Expert Guide",
+    title: "BigCommerce to Shopify Migration Services",
     description:
-      "Looking for BigCommerce to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.",
+      "Migrate BigCommerce to Shopify with Dynamic Dreamz. We handle store data, design, custom features, apps, integrations, SEO redirects, QA, and launch support.",
     keywords: [
       "BigCommerce to Shopify migration",
       "BigCommerce to Shopify",
@@ -1110,9 +1110,9 @@ export const pageSeo = {
   },
   ecwidToShopifyMigration: {
     path: "/ecwid-to-shopify-migration",
-    title: "Ecwid to Shopify Migration | Take an Expert Guide",
+    title: "Ecwid to Shopify Migration Services",
     description:
-      "Are you looking for Ecwid to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.",
+      "Migrate Ecwid to Shopify with Dynamic Dreamz. We move store data, recreate required functionality, configure apps, protect SEO, complete QA and support launch.",
     keywords: [
       "Ecwid to Shopify migration",
       "Ecwid to Shopify",
@@ -1133,9 +1133,9 @@ export const pageSeo = {
   },
   migratingThemeToOnlineStore20: {
     path: "/migrating-a-theme-to-online-store-2-0",
-    title: "Migrate Theme to Shopify Online Store 2.0 | Dynamic Dreamz",
+    title: "Shopify Online Store 2.0 Theme Migration",
     description:
-      "Migrate your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Retain custom functionality, update integrations, complete QA and launch with support.",
+      "Migrate your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Retain custom functionality, update integrations, complete QA, and launch with support.",
     socialDescription:
       "Migrate your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Retain custom functionality, update integrations, complete QA and launch with support.",
     keywords: [
@@ -1161,9 +1161,9 @@ export const pageSeo = {
   },
   salesforceToShopifyMigration: {
     path: "/salesforce-to-shopify-migration",
-    title: "Salesforce to Shopify Migration Service | Dynamic Dreamz",
+    title: "Salesforce to Shopify Migration Services",
     description:
-      "Need a reliable Salesforce to Shopify migration service? Dynamic Dreamz offers Secure, scalable, and fully optimized solutions for eCommerce Stores.",
+      "Migrate Salesforce to Shopify with Dynamic Dreamz. We plan data transfer, design, custom functionality, integrations, SEO redirects, testing and launch support.",
     keywords: [
       "Salesforce to Shopify migration",
       "Salesforce to Shopify",
@@ -1184,9 +1184,9 @@ export const pageSeo = {
   },
   etsyToShopifyMigration: {
     path: "/etsy-to-shopify-migration",
-    title: "Etsy to Shopify Migration | Take an Expert Guide",
+    title: "Etsy to Shopify Migration Services",
     description:
-      "Are you looking for Etsy to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.",
+      "Migrate from Etsy to Shopify with Dynamic Dreamz. We transfer product catalogs, content, configure Shopify storefronts, protect SEO, and support launch.",
     keywords: [
       "Etsy to Shopify migration",
       "Etsy to Shopify",
@@ -1207,9 +1207,9 @@ export const pageSeo = {
   },
   wixToShopifyMigration: {
     path: "/wix-to-shopify-migration",
-    title: "Wix to Shopify Migration | Take an Expert Guide",
+    title: "Wix to Shopify Migration Services",
     description:
-      "Are you looking for Wix to Shopify Migration without downtime and data loss? Hire a Shopify expert from Dynamic Dreamz for a smooth and successful migration.",
+      "Migrate Wix to Shopify with Dynamic Dreamz. We handle store data, design, apps, custom functionality, SEO redirects, QA and post-launch Shopify support.",
     keywords: [
       "Wix to Shopify migration",
       "Wix to Shopify",

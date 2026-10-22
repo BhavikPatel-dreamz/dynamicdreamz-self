@@ -37,7 +37,7 @@ export function ShopifyTeamBoxesSection({
   return (
     <section
       className={cn(
-        "shopify-dev-team bg-[#192019] py-20 text-white max-[992px]:py-[50px]",
+        "shopify-dev-team bg-[#192019] py-20 text-white max-[991px]:py-[50px]",
         className,
       )}
       id={id}

@@ -61,17 +61,17 @@ export function ProcessWorkflowBlock({
   return (
     <section
       id={id}
-      className={cn("our-development-process py-20 max-[992px]:py-[50px]", bg, className)}
+      className={cn("our-development-process py-20 max-[991px]:py-[50px]", bg, className)}
     >
       <Container>
         <div
           data-aos="fade-up"
-          className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col max-[991px]:gap-4"
+          className="section_title_with_eyebrow mb-10 flex flex-wrap items-start justify-between gap-6 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-4"
         >
           <div className="title max-w-[620px]">
             {resolvedEyebrow && (
-              <div className="eyebrow mb-3">
-                <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+              <div className="eyebrow mb-4">
+                <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                   {resolvedEyebrow}
                 </span>
               </div>
@@ -123,7 +123,7 @@ export function ProcessWorkflowBlock({
                 <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[991px]:text-[18px] max-[991px]:leading-[26px]">
                   {item.title}
                 </h3>
-                <p className="font-sans text-sm font-medium leading-[22px] text-[#535353]">
+                <p className="font-sans text-sm font-normal leading-[22px] text-[#535353]">
                   {item.description}
                 </p>
               </div>
@@ -172,7 +172,7 @@ export function ShopifyHorizontalProcessSection({
           <div className="title w-[44%] max-[991px]:w-full">
             {resolvedEyebrow && (
               <div className="eyebrow mb-3">
-                <span className="relative pl-10 font-montserrat text-sm font-semibold uppercase text-brand-red before:absolute before:left-0 before:top-2.5 before:h-0.5 before:w-7 before:bg-brand-red before:content-['']">
+                <span className="relative pl-10 font-montserrat text-sm font-semibold uppercase text-[#535353] before:absolute before:left-0 before:top-2.5 before:h-0.5 before:w-7 before:bg-brand-red before:content-['']">
                   {resolvedEyebrow}
                 </span>
               </div>
@@ -214,7 +214,7 @@ export function ShopifyHorizontalProcessSection({
                   <h3 className="mb-1.5 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-[#282828] max-[991px]:text-[18px] max-[991px]:leading-[26px]">
                     {item.title}
                   </h3>
-                  <p className="font-sans text-sm font-medium leading-[22px] text-[#535353]">
+                  <p className="font-sans text-sm font-normal leading-[22px] text-[#535353]">
                     {item.description}
                   </p>
                 </div>
@@ -231,7 +231,6 @@ export {
   ProcessWorkflowBlock as OurDevelopmentProcessSection,
   ProcessWorkflowBlock as NumberedProcessTimelineSection,
   ProcessWorkflowBlock as ShopifyMigrationNumberedGridSection,
-  ProcessWorkflowBlock as ThemeCustomizationApproachSection,
   ProcessWorkflowBlock as ShopifyCroProcessSection,
   ProcessWorkflowBlock as WhiteLabelProcessSection,
   ProcessWorkflowBlock as ShopifyAppProcessSection,

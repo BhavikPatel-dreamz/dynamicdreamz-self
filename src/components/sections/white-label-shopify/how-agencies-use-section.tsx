@@ -25,17 +25,17 @@ export function HowAgenciesUseSection({
   content = whiteLabelShopifyAgencyUseCases,
 }: HowAgenciesUseSectionProps) {
   return (
-    <section className="how_agencies_use_dynamic_dreamz_section bg-[#faf9f5] py-20 max-[991px]:py-12">
+    <section className="how_agencies_use_dynamic_dreamz_section bg-[#faf9f5] py-20 max-[991px]:py-[50px]">
       <Container>
         <div
           data-aos="fade-up"
-          className="section_title mb-12 max-[991px]:mb-8"
+          className="section_title mb-10 max-[991px]:mb-[30px]"
         >
           {content.eyebrow ? (
-            <Eyebrow className="mb-3 text-[#ad5151]">{content.eyebrow}</Eyebrow>
+            <Eyebrow className="mb-4">{content.eyebrow}</Eyebrow>
           ) : null}
           <div className="flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col">
-            <h2 className="w-full max-w-[580px] font-display text-[35px] font-medium leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl">
+            <h2 className="w-full max-w-[580px] font-montreal-medium text-[35px] font-normal leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl">
               {content.heading}
             </h2>
             {content.description ? (

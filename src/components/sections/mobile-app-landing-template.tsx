@@ -147,6 +147,7 @@ export function MobileAppLandingTemplate({
 
       {/* 11. Client Stories Testimonials */}
       <HappyClientSection
+        hasTopPadding={true}
         description={testimonials.description}
         eyebrow={testimonials.eyebrow}
         heading={testimonials.heading}

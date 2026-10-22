@@ -120,6 +120,7 @@ export function ShopifyThemeCustomizationTemplate({
       />
       <AgencyServicesSection
         cardVariant="services-box"
+        className="pb-0 max-[992px]:pb-0"
         columns={2}
         content={servicesContent}
         eyebrow={content.services.eyebrow}
@@ -132,6 +133,7 @@ export function ShopifyThemeCustomizationTemplate({
       {portfolioContent ? (
         <PortfolioShowcaseSection
           cardVariant="ourWorkRefresh"
+          className="pt-0 max-[991px]:pt-0"
           columns={4}
           content={portfolioContent}
           eyebrow={content.portfolio?.eyebrow}

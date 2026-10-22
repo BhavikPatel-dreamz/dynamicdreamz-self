@@ -60,7 +60,7 @@ function CareerJobCard({ job, location }: { job: CareerJob; location: CareerLoca
           />
           <a
             aria-label={`View the ${job.title} job description (PDF)`}
-            className="text-[#090909] transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red"
+            className="text-ink transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red"
             href={job.jobDescription}
             rel="noopener noreferrer"
             target="_blank"
@@ -73,7 +73,7 @@ function CareerJobCard({ job, location }: { job: CareerJob; location: CareerLoca
       <div className="job-details-wrap flex w-[68%] items-center justify-end max-[991px]:w-full max-[991px]:flex-col max-[991px]:items-start max-[991px]:justify-start">
         <div className="job-details flex items-center max-[991px]:w-full max-[991px]:flex-col max-[991px]:items-start">
           <div className="job-col max-[991px]:w-full max-[991px]:py-5">
-            <h4 className="m-0 font-display text-base font-normal leading-6 text-[#090909]">
+            <h4 className="m-0 font-montreal-medium text-base font-normal leading-6 text-ink">
               {careerSectionCopy.jobDetails[0].label}
             </h4>
             <p className="mt-0 font-montserrat text-base font-medium leading-normal text-[#535353]">
@@ -82,7 +82,7 @@ function CareerJobCard({ job, location }: { job: CareerJob; location: CareerLoca
           </div>
 
           <div className="job-col ml-[30px] border-l border-[#efefef] pl-[30px] max-[1199px]:ml-5 max-[1199px]:pl-5 max-[991px]:ml-0 max-[991px]:w-full max-[991px]:border-t max-[991px]:border-l-0 max-[991px]:py-5 max-[991px]:pl-0">
-            <h4 className="m-0 font-display text-base font-normal leading-6 text-[#090909]">
+            <h4 className="m-0 font-montreal-medium text-base font-normal leading-6 text-ink">
               {careerSectionCopy.jobDetails[1].label}
             </h4>
             <p className="mt-0 font-montserrat text-base font-medium leading-normal text-[#535353]">
@@ -91,7 +91,7 @@ function CareerJobCard({ job, location }: { job: CareerJob; location: CareerLoca
           </div>
 
           <div className="job-col ml-[30px] border-l border-[#efefef] pl-[30px] max-[1199px]:ml-5 max-[1199px]:pl-5 max-[991px]:ml-0 max-[991px]:w-full max-[991px]:border-t max-[991px]:border-l-0 max-[991px]:py-5 max-[991px]:pl-0">
-            <h4 className="m-0 font-display text-base font-normal leading-6 text-[#090909]">
+            <h4 className="m-0 font-montreal-medium text-base font-normal leading-6 text-ink">
               {careerSectionCopy.jobDetails[2].label}
             </h4>
             <p className="mt-0 font-montserrat text-base font-medium leading-normal text-[#535353]">
@@ -186,12 +186,12 @@ export function JobOpeningsListBlock({
             {eyebrow && (
               <div className="mb-4 flex items-center gap-2">
                 <span className="h-[2px] w-6 bg-brand-red" />
-                <span className="text-xs font-bold tracking-widest text-brand-red uppercase">
+                <span className="text-xs font-bold tracking-widest text-[#535353] uppercase">
                   {eyebrow}
                 </span>
               </div>
             )}
-            <h2 id="career-opportunities-title" className="text-[35px] leading-[1.38] font-medium text-ink max-[992px]:text-[30px] max-[767px]:text-2xl">
+            <h2 id="career-opportunities-title" className="font-montreal-medium text-[35px] leading-[1.38] font-normal text-ink max-[992px]:text-[30px] max-[767px]:text-2xl">
               {title}
             </h2>
           </div>

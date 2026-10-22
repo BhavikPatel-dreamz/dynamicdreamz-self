@@ -4,7 +4,6 @@ import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
 import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
-import nodemailer from "nodemailer";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
@@ -177,7 +176,7 @@ export default buildConfig({
           defaultFromAddress:
             process.env.EMAIL_FROM || process.env.SMTP_USER || "hello@dynamicdreamz.com",
           defaultFromName: process.env.EMAIL_FROM_NAME || "Dynamic Dreamz",
-          transport: nodemailer.createTransport({
+          transportOptions: {
             host: process.env.SMTP_HOST || "smtp.gmail.com",
             port: Number(process.env.SMTP_PORT) || 465,
             secure: Number(process.env.SMTP_PORT ?? 465) === 465,
@@ -187,8 +186,8 @@ export default buildConfig({
             },
             connectionTimeout: 10000,
             greetingTimeout: 10000,
-          }),
-          skipVerify: true,
+            socketTimeout: 15000,
+          },
         })
       : undefined,
   secret: process.env.PAYLOAD_SECRET || "",

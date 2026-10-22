@@ -100,7 +100,7 @@ export function WhiteLabelWebsiteDesignPage() {
       />
 
       {/* 10. Happy Clients */}
-      <HappyClientSection />
+      <HappyClientSection hasTopPadding={true} />
 
       {/* 11. FAQs */}
       <SplitFaqSection

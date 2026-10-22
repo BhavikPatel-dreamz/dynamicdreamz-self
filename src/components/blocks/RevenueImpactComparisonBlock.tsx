@@ -53,7 +53,7 @@ export function RevenueImpactComparisonBlock({
           <div className="w-[44%] max-[991px]:w-full">
             {content.eyebrow && (
               <div className="eyebrow mb-3">
-                <span className="font-montserrat text-sm font-semibold uppercase text-[#35F3A3]">
+                <span className="font-montserrat text-sm font-semibold uppercase text-white">
                   {content.eyebrow}
                 </span>
               </div>

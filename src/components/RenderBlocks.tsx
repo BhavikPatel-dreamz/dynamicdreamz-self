@@ -1,4 +1,5 @@
 import React from "react";
+import { getBlockBackgroundCategory } from "@/lib/section-spacing";
 import { CtaBannerSection } from "@/components/blocks/QuoteRequestCTABlock";
 import { SplitFaqSection } from "@/components/blocks/FaqSectionBlock";
 import { FeaturesGridSection } from "@/components/blocks/ServiceOfferingsGridBlock";
@@ -63,11 +64,11 @@ import { CertifiedAgencySupportSection } from "@/components/blocks/CertifiedDeve
 import { CertifiedServicesSection } from "@/components/blocks/CertifiedDeveloperTabsBlock";
 import { PartnerDirectoryProofSection } from "@/components/blocks/CertifiedDeveloperTabsBlock";
 import { WhiteLabelFinalCtaSection } from "@/components/blocks/QuoteRequestCTABlock";
-import { ShopifyMigrationServicesSection } from "@/components/blocks/ServiceOfferingsGridBlock";
+import { ShopifyMigrationServicesSection } from "@/components/sections/shopify-migration/shopify-migration-services-section";
 import { ShopifyMigrationNumberedGridSection } from "@/components/blocks/ProcessWorkflowBlock";
 import { SeoSafeMigrationSection } from "@/components/blocks/MigrationDataChecklistBlock";
 import { WhyChooseShopifyMigrationSection } from "@/components/blocks/WhyChooseUsBlock";
-import { ThemeCustomizationApproachSection } from "@/components/blocks/ProcessWorkflowBlock";
+import { ThemeCustomizationApproachSection } from "@/components/sections/theme-customization-approach-section";
 import { ShopifyThemesGridSection } from "@/components/blocks/ServiceOfferingsGridBlock";
 import { AiEmpoweredDeliverySection } from "@/components/blocks/PerformanceBenchmarksBlock";
 import { ShopifyCroBarriersSection } from "@/components/blocks/ServiceOfferingsGridBlock";
@@ -88,7 +89,7 @@ import { AgencyServicesSection } from "@/components/blocks/ServiceOfferingsGridB
 import { CityPageCounterSection } from "@/components/blocks/TrustStatsBarBlock";
 import { ShopifyTeamBehindItSection } from "@/components/blocks/WhiteLabelSolutionsBlock";
 import { CityWhyChooseBoxesSection } from "@/components/blocks/KeyBenefitsGridBlock";
-import { ShopifyHoursHeroSection } from "@/components/blocks/CityHeroBlock";
+import { ShopifyHoursHeroSection } from "@/components/sections/buy-shopify-development-hours/shopify-hours-hero-section";
 import { ShopifyHoursComparisonSection } from "@/components/blocks/EngagementModelsBlock";
 import { ShopifyHoursTasksSection } from "@/components/blocks/ServiceOfferingsGridBlock";
 import { NumberedProcessTimelineSection } from "@/components/blocks/ProcessWorkflowBlock";
@@ -2470,6 +2471,29 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
         const normalizedType = rawType.replace(/^sections\./, "");
         const blockKey = `${rawType || "block"}-${block.id || index}`;
 
+        const prevBlock = index > 0 ? sections[index - 1] : null;
+        const prevRawType = prevBlock
+          ? (prevBlock as { blockType?: string }).blockType ||
+            (prevBlock as { __component?: string }).__component ||
+            ""
+          : "";
+        const prevNormalizedType = prevRawType.replace(/^sections\./, "");
+        const prevVariant = prevBlock
+          ? (prevBlock as { variant?: string; theme?: string }).variant ||
+            (prevBlock as { variant?: string; theme?: string }).theme
+          : undefined;
+        const currentVariant =
+          (block as { variant?: string; theme?: string }).variant ||
+          (block as { variant?: string; theme?: string }).theme;
+
+        const currentBg = getBlockBackgroundCategory(normalizedType, currentVariant);
+        const prevBg = prevBlock
+          ? getBlockBackgroundCategory(prevNormalizedType, prevVariant)
+          : undefined;
+
+        const isConsecutiveWhite = index > 0 && currentBg === "white" && prevBg === "white";
+        const hasTopPadding = !isConsecutiveWhite;
+
         switch (normalizedType) {
           case "hero": {
             const heroBlock = block as BlockHero;
@@ -2837,6 +2861,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 variant={isClientStories ? "client-stories" : undefined}
                 description={clientBlock.description || undefined}
                 eyebrow={clientBlock.eyebrow}
+                hasTopPadding={hasTopPadding}
                 heading={clientBlock.heading || undefined}
                 items={mappedItems.length > 0 ? mappedItems : undefined}
                 key={blockKey}
@@ -4028,6 +4053,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
             return (
               <PortfolioShowcaseSection
+                className={isConsecutiveWhite ? "pt-0 max-[991px]:pt-0" : undefined}
                 cardVariant={cardVariant}
                 columns={(psBlock.columns as 2 | 3 | 4) || 4}
                 content={{
@@ -4135,6 +4161,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <EvaluationFrameworkSection
                 key={blockKey}
+                className={isConsecutiveWhite ? "pt-0 max-[991px]:pt-0" : undefined}
                 content={{
                   eyebrow: efBlock.eyebrow,
                   heading: efBlock.heading,

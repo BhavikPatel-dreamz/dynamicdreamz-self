@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React, { type ReactNode } from "react";
 import { Container } from "@/components/ui/container";
-import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
+import { CityWhyChooseBoxesSection } from "@/components/sections/city-why-choose-boxes-section";
 
 export type KeyBenefitItem = {
   subtitle?: string;
@@ -55,15 +55,6 @@ export type KeyBenefitsGridBlockProps = {
 export type ThemeWhyChooseSectionProps = KeyBenefitsGridBlockProps;
 export type CityWhyChooseBoxesSectionProps = KeyBenefitsGridBlockProps;
 
-const BG_THEME_MAP: Record<string, string> = {
-  dark: "bg-[#192019]",
-  light: "bg-[#eff4ef]",
-  white: "bg-white",
-  warm: "bg-[#fafaf7]",
-  green: "bg-[#edf2ee]",
-  yellow: "bg-[#fef9ee]",
-  gradient: "bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)]",
-};
 
 export function KeyBenefitsGridBlock({
   content: propContent,
@@ -79,6 +70,7 @@ export function KeyBenefitsGridBlock({
   id = "why-choose",
   columns,
   variant,
+  className,
   ...rest
 }: KeyBenefitsGridBlockProps) {
   const content = propContent ?? {
@@ -97,113 +89,28 @@ export function KeyBenefitsGridBlock({
   const isBoxesLayout = variant === "boxes" || (columns && columns >= 3) || theme !== undefined;
 
   if (isBoxesLayout) {
-    const activeTheme = theme ?? (backgroundVariant as "light" | "dark" | "white" | "warm") ?? "light";
-    const bgClass = BG_THEME_MAP[activeTheme] ?? BG_THEME_MAP.light;
-    const isDark = activeTheme === "dark";
+    const activeTheme = (theme ?? backgroundVariant ?? "light") as "light" | "dark" | "white" | "warm";
 
     return (
-      <section
+      <CityWhyChooseBoxesSection
         id={id}
-        className={cn("city-page-why-choose-boxes py-20 max-[992px]:py-[50px]", bgClass)}
-      >
-        <Container>
-          <div
-            className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col max-[991px]:gap-4"
-            data-aos="fade-up"
-          >
-            <div className="title max-w-[620px]">
-              {content.eyebrow && (
-                <div className="eyebrow mb-4">
-                  <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
-                    {content.eyebrow}
-                  </span>
-                </div>
-              )}
-              <h2
-                className={cn(
-                  "font-montreal-medium text-[35px] font-normal leading-[1.4] tracking-normal max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]",
-                  isDark ? "text-white" : "text-ink",
-                )}
-              >
-                {formatBrText(resolvedHeading)}
-              </h2>
-            </div>
-            {resolvedDesc && (
-              <div className="section_text max-w-[560px]">
-                <p
-                  className={cn(
-                    "text-base font-medium leading-[27px] max-[767px]:text-sm max-[767px]:leading-6",
-                    isDark ? "text-white/80" : "text-[#535353]",
-                  )}
-                >
-                  {formatBrText(resolvedDesc)}
-                </p>
-              </div>
-            )}
-          </div>
-
-          <div
-            className={cn(
-              "boxes-grid grid gap-6",
-              columns === 4
-                ? "grid-cols-4 max-[1199px]:grid-cols-2 max-[767px]:grid-cols-1"
-                : columns === 3
-                ? "grid-cols-3 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1"
-                : "grid-cols-5 max-[1399px]:grid-cols-3 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1",
-            )}
-            data-aos="fade-up"
-          >
-            {rawItems.map((item, idx) => (
-              <div
-                key={idx}
-                className={cn(
-                  "box-item flex flex-col justify-between rounded-[10px] p-6 shadow-sm transition-shadow hover:shadow-md",
-                  isDark ? "border border-white/10 bg-white/5" : "border border-[#efefef] bg-white",
-                )}
-              >
-                <div>
-                  {item.iconNode ? (
-                    <div className="mb-4 size-10">{item.iconNode}</div>
-                  ) : typeof item.icon === "string" ? (
-                    <div className="mb-4 size-10">
-                      <Image
-                        src={item.icon}
-                        alt={item.iconAlt ?? ""}
-                        width={40}
-                        height={40}
-                        className="size-full object-contain"
-                      />
-                    </div>
-                  ) : item.icon ? (
-                    <div className="mb-4">{item.icon}</div>
-                  ) : null}
-                  {item.subtitle && (
-                    <span className="mb-1 block text-xs font-semibold text-brand-red">
-                      {item.subtitle}
-                    </span>
-                  )}
-                  <h3
-                    className={cn(
-                      "mb-2 font-display text-lg font-medium",
-                      isDark ? "text-white" : "text-ink",
-                    )}
-                  >
-                    {formatBrText(item.title)}
-                  </h3>
-                  <p
-                    className={cn(
-                      "text-sm font-medium leading-relaxed",
-                      isDark ? "text-white/70" : "text-muted",
-                    )}
-                  >
-                    {formatBrText(item.description)}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+        columns={(columns as 3 | 4 | 5) ?? 5}
+        theme={activeTheme}
+        className={className}
+        content={{
+          eyebrow: content.eyebrow,
+          heading: resolvedHeading,
+          description: resolvedDesc,
+          items: rawItems.map((item: any) => ({
+            subtitle: item.subtitle,
+            title: item.title ?? item.heading ?? "",
+            description: item.description ?? item.content ?? item.text ?? "",
+            icon: typeof item.icon === "string" ? item.icon : undefined,
+            iconAlt: item.iconAlt ?? item.alt,
+            iconNode: item.iconNode || (typeof item.icon !== "string" ? item.icon : undefined),
+          })),
+        }}
+      />
     );
   }
 
@@ -279,7 +186,7 @@ export function KeyBenefitsGridBlock({
 
 export {
   KeyBenefitsGridBlock as ThemeWhyChooseSection,
-  KeyBenefitsGridBlock as CityWhyChooseBoxesSection,
+  CityWhyChooseBoxesSection,
   KeyBenefitsGridBlock as ShopifyReasonsSection,
   KeyBenefitsGridBlock as ShopifyAppBenefitsSection,
   KeyBenefitsGridBlock as TextBoxSection,

@@ -126,12 +126,12 @@ export function ContactFormSection({
           className="mx-auto max-w-[920px] overflow-hidden rounded-[30px] border border-[rgba(40,40,40,0.11)] bg-white shadow-[0_28px_70px_rgba(72,52,35,0.08)]"
         >
           <div className="border-b border-[rgba(40,40,40,0.11)] p-10 text-center max-[1199px]:p-[30px] max-[767px]:px-5 max-[767px]:py-[30px]">
-            <Eyebrow align="center" className="mb-2">
+            <Eyebrow align="center" className="mb-4">
               {eyebrow}
             </Eyebrow>
             <h2
               id="inquiry-title"
-              className="mt-2 mb-2 font-display text-[32px] leading-[42px] font-medium text-ink max-[991px]:text-[26px] max-[991px]:leading-[34px] max-[767px]:text-[22px] max-[767px]:leading-[30px]"
+              className="mt-0 mb-2.5 font-montreal-medium text-[32px] leading-[42px] font-normal text-ink max-[991px]:text-[26px] max-[991px]:leading-[34px] max-[767px]:text-[22px] max-[767px]:leading-[30px]"
             >
               {title}
             </h2>
@@ -186,12 +186,12 @@ export function ContactOfficesSection({
           className="mb-10 flex flex-wrap items-end justify-between max-[991px]:text-center"
         >
           <div className="w-full md:w-[48%]">
-            <Eyebrow align="responsive-center" className="mb-2">
+            <Eyebrow align="responsive-center" className="mb-4">
               {eyebrow}
             </Eyebrow>
             <h2
               id="offices-title"
-              className="font-display text-[35px] leading-[48px] font-medium text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-8"
+              className="font-montreal-medium text-[35px] leading-[48px] font-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-8"
             >
               {title}
             </h2>
@@ -266,12 +266,12 @@ export function ContactDetailsSection({
     >
       <Container>
         <div data-aos="fade-up" className="mb-10 text-center">
-          <Eyebrow align="center" className="mb-2">
+          <Eyebrow align="center" className="mb-4">
             {eyebrow}
           </Eyebrow>
           <h2
             id="contact-details-title"
-            className="font-display text-[32px] leading-[42px] font-medium text-ink max-[991px]:text-[28px] max-[767px]:text-2xl"
+            className="font-montreal-medium text-[32px] leading-[42px] font-normal text-ink max-[991px]:text-[28px] max-[767px]:text-2xl"
           >
             {title}
           </h2>

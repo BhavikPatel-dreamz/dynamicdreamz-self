@@ -2716,6 +2716,10 @@ export function createPrestashopToShopifyMigrationPageSchema() {
     serviceType:
       "End-to-end PrestaShop store migration to Shopify with zero downtime and full data integrity",
     breadcrumbName: "PrestaShop to Shopify Migration",
+    parentBreadcrumb: {
+      name: "Shopify Migration",
+      item: absoluteUrl(pageSeo.shopifyMigration.path),
+    },
     audienceType:
       "PrestaShop merchants, ecommerce brands, and direct-to-consumer businesses migrating to Shopify or Shopify Plus",
     faqs: prestashopFaqs.map((item) => ({
@@ -2755,6 +2759,10 @@ export function createSquareToShopifyMigrationPageSchema() {
     serviceType:
       "End-to-end Square store migration to Shopify with zero downtime and full data integrity",
     breadcrumbName: "Square to Shopify Migration",
+    parentBreadcrumb: {
+      name: "Shopify Migration",
+      item: absoluteUrl(pageSeo.shopifyMigration.path),
+    },
     audienceType:
       "Square merchants, ecommerce brands, and direct-to-consumer businesses migrating to Shopify or Shopify Plus",
     faqs: squareFaqs.map((item) => ({
@@ -5559,6 +5567,10 @@ export function createEcwidToShopifyMigrationPageSchema() {
     serviceType:
       "Seamless Ecwid store migration to Shopify without downtime and full data integrity",
     breadcrumbName: "Ecwid to Shopify Migration Service",
+    parentBreadcrumb: {
+      name: "Shopify Migration",
+      item: absoluteUrl(pageSeo.shopifyMigration.path),
+    },
     audienceType:
       "Ecwid store owners, ecommerce merchants, and brands migrating to Shopify or Shopify Plus",
     faqs: ecwidFaqs.map((item) => ({
@@ -5592,6 +5604,10 @@ export function createMigratingThemeToOnlineStore20PageSchema() {
     serviceType:
       "Shopify theme migration to Online Store 2.0, Liquid to JSON template conversion, app integration, SEO preservation, and store optimization",
     breadcrumbName: "Migrate Theme to Online Store 2.0",
+    parentBreadcrumb: {
+      name: "Shopify Migration",
+      item: absoluteUrl(pageSeo.shopifyMigration.path),
+    },
     audienceType:
       "Shopify merchants, ecommerce businesses, and store owners upgrading to Shopify Online Store 2.0",
     faqs: migratingThemeToOnlineStore20Content.faqs.items.map((item) => ({
@@ -5620,6 +5636,10 @@ export function createShopifyPlusMigrationAgencyPageSchema() {
     serviceType:
       "Full-service enterprise store migration to Shopify Plus with zero downtime and seamless platform transition",
     breadcrumbName: "Shopify Plus Migration Agency",
+    parentBreadcrumb: {
+      name: "Shopify Migration",
+      item: absoluteUrl(pageSeo.shopifyMigration.path),
+    },
     audienceType:
       "Enterprise merchants, high-growth ecommerce brands, and multi-store businesses migrating to Shopify Plus",
     faqs: plusAgencyFaqsContent.items.map((item) => ({
@@ -5671,6 +5691,10 @@ export function createMagentoToShopifyPlusMigrationPageSchema() {
     serviceType:
       "Enterprise Magento to Shopify Plus migration with zero downtime and seamless B2B integration",
     breadcrumbName: "Magento to Shopify Plus Migration",
+    parentBreadcrumb: {
+      name: "Shopify Migration",
+      item: absoluteUrl(pageSeo.shopifyMigration.path),
+    },
     audienceType:
       "Enterprise Magento merchants, high-growth ecommerce brands, and high-volume businesses migrating to Shopify Plus",
     faqs: magentoPlusFaqs.map((item) => ({
@@ -5697,6 +5721,10 @@ export function createMagentoToShopifyMigrationPageSchema() {
     serviceType:
       "Seamless Magento 1 store migration to Shopify without downtime and full data integrity",
     breadcrumbName: "Magento to Shopify Migration",
+    parentBreadcrumb: {
+      name: "Shopify Migration",
+      item: absoluteUrl(pageSeo.shopifyMigration.path),
+    },
     audienceType:
       "Magento merchants, enterprise ecommerce brands, and growing businesses migrating to Shopify or Shopify Plus",
     faqs: magentoFaqs.map((item) => ({
@@ -5723,6 +5751,10 @@ export function createBigCommerceToShopifyMigrationPageSchema() {
     serviceType:
       "Seamless BigCommerce store migration to Shopify without downtime and full data integrity",
     breadcrumbName: "BigCommerce to Shopify Migration",
+    parentBreadcrumb: {
+      name: "Shopify Migration",
+      item: absoluteUrl(pageSeo.shopifyMigration.path),
+    },
     audienceType:
       "BigCommerce merchants, ecommerce brands, and direct-to-consumer businesses migrating to Shopify or Shopify Plus",
     faqs: bigcommerceFaqs.map((item) => ({
@@ -5749,6 +5781,10 @@ export function createWooCommerceToShopifyMigrationPageSchema() {
     serviceType:
       "Seamless WooCommerce store migration to Shopify without downtime and full data integrity",
     breadcrumbName: "WooCommerce to Shopify Migration",
+    parentBreadcrumb: {
+      name: "Shopify Migration",
+      item: absoluteUrl(pageSeo.shopifyMigration.path),
+    },
     audienceType:
       "WooCommerce merchants, WordPress store owners, and growing ecommerce businesses migrating to Shopify or Shopify Plus",
     faqs: woocommerceFaqs.map((item) => ({
@@ -5812,6 +5848,10 @@ export function createSalesforceToShopifyMigrationPageSchema() {
     serviceType:
       "Seamless Salesforce store migration to Shopify without downtime and full data integrity",
     breadcrumbName: "Salesforce to Shopify Migration Service",
+    parentBreadcrumb: {
+      name: "Shopify Migration",
+      item: absoluteUrl(pageSeo.shopifyMigration.path),
+    },
     audienceType:
       "Salesforce Commerce Cloud merchants, enterprise brands, and growing ecommerce businesses migrating to Shopify or Shopify Plus",
     faqs: salesforceFaqs.map((item) => ({
@@ -5845,6 +5885,10 @@ export function createEtsyToShopifyMigrationPageSchema() {
     serviceType:
       "Seamless Etsy store migration to Shopify without downtime and full data integrity",
     breadcrumbName: "Etsy to Shopify Migration",
+    parentBreadcrumb: {
+      name: "Shopify Migration",
+      item: absoluteUrl(pageSeo.shopifyMigration.path),
+    },
     audienceType:
       "Etsy sellers, ecommerce brands, and direct-to-consumer businesses migrating to Shopify or Shopify Plus",
     faqs: etsyFaqs.map((item) => ({
@@ -5879,6 +5923,10 @@ export function createWixToShopifyMigrationPageSchema() {
     serviceType:
       "Seamless Wix store migration to Shopify without downtime and full data integrity",
     breadcrumbName: "Wix to Shopify Migration",
+    parentBreadcrumb: {
+      name: "Shopify Migration",
+      item: absoluteUrl(pageSeo.shopifyMigration.path),
+    },
     audienceType:
       "Wix sellers, ecommerce brands, and direct-to-consumer businesses migrating to Shopify or Shopify Plus",
     faqs: wixFaqs.map((item) => ({

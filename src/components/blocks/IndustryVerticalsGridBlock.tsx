@@ -40,8 +40,8 @@ export function IndustryVerticalsGridBlock({
 }: IndustryVerticalsGridBlockProps) {
   const sectionClass =
     variant === "grid"
-      ? "industries_box_section bg-white py-20 max-[992px]:py-[50px]"
-      : "industries-served-sec pt-0 pb-20 max-[992px]:pb-[50px]";
+      ? "industries_box_section bg-white pt-0 pb-20 max-[991px]:pt-0 max-[991px]:pb-[50px]"
+      : "industries-served-sec pt-0 pb-20 max-[991px]:pb-[50px]";
 
   return (
     <section
@@ -57,7 +57,7 @@ export function IndustryVerticalsGridBlock({
           <div className="w-[44%] max-[992px]:w-full">
             {content.eyebrow && (
               <div className="eyebrow mb-3">
-                <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+                <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                   {content.eyebrow}
                 </span>
               </div>

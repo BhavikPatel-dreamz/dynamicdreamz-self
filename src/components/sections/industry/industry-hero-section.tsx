@@ -75,12 +75,12 @@ export function IndustryHeroSection({
       <Container className="max-[575px]:px-4">
         <div className="industries-hero-content text-center">
           {resolvedShowEyebrow && resolvedEyebrow ? (
-            <span className="mb-1 block text-base leading-[19px] font-bold tracking-[-0.32px] text-black uppercase">
+            <span className="mb-1 block text-base leading-[19px] font-semibold tracking-[-0.32px] text-[#535353] uppercase">
               {resolvedEyebrow}
             </span>
           ) : null}
           <h1
-            className="mb-2.5 text-[50px] leading-[66px] font-bold tracking-[-1px] text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
+            className="mb-2.5 font-montreal-medium text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
             id={`${slug}-title`}
           >
             {resolvedTitle}

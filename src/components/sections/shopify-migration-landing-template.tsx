@@ -54,7 +54,8 @@ export type ShopifyMigrationLandingTemplateProps = {
     }[];
     variant?: "yellow" | "transparent" | "green";
   };
-  afterMigration?: ReactNode;
+  beforeProcess?: ReactNode;
+  afterProcess?: ReactNode;
   process: MigrationProcessContent;
   whyChoose?: EvaluationFrameworkContent;
   whyChooseId?: string;
@@ -78,7 +79,8 @@ export function ShopifyMigrationLandingTemplate({
   whyMigrate,
   comparison,
   secondaryServices,
-  afterMigration,
+  beforeProcess,
+  afterProcess,
   process,
   whyChoose,
   whyChooseId = "why-choose-dynamic-dreamz",
@@ -129,8 +131,8 @@ export function ShopifyMigrationLandingTemplate({
         />
       ) : null}
 
-      {/* 4b. After Migration Section (if present) */}
-      {afterMigration}
+      {/* 4b. Before Process Section (if present) */}
+      {beforeProcess}
 
       {/* 5. Migration Process */}
       <MigrationProcessSection
@@ -139,9 +141,13 @@ export function ShopifyMigrationLandingTemplate({
         variant="cards"
       />
 
+      {/* 5b. After Process Section (if present) */}
+      {afterProcess}
+
       {/* 6. Why Choose (if present) */}
       {whyChoose ? (
         <EvaluationFrameworkSection
+          className="pt-0 max-[991px]:pt-0"
           content={whyChoose}
           id={whyChooseId}
         />

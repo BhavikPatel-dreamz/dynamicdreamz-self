@@ -13,17 +13,17 @@ export function ShopifyHoursComparisonSection() {
   return (
     <section
       aria-labelledby="shopify-hours-comparison-title"
-      className="bulk-shopify-fulltime-resources bg-[#fafaf7] py-[75px] max-[1199px]:py-[60px] max-[767px]:py-[50px]"
+      className="bulk-shopify-fulltime-resources bg-[#fafaf7] py-[75px] max-[991px]:py-[50px]"
     >
       <Container>
         <div className="bulk-shopify-fulltime-resources-row flex items-center justify-between gap-0 max-[1199px]:flex-wrap">
           <div className="section_title_with_eyebrow flex-wrap bulk-shopify-fulltime-resources-title w-[calc(100%-800px)] pr-[68px] max-[1199px]:w-full max-[1199px]:pb-[50px] max-[1199px]:pr-0 max-[1199px]:text-center">
             <div className="title">
-              <Eyebrow className="mb-2 max-[1199px]:justify-center">
+              <Eyebrow className="mb-4 max-[1199px]:justify-center">
                 {shopifyHoursComparison.eyebrow}
               </Eyebrow>
               <h2
-                className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
+                className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
                 id="shopify-hours-comparison-title"
               >
                 {shopifyHoursComparison.heading}
@@ -102,12 +102,12 @@ export function ShopifyHoursTasksSection() {
   return (
     <section
       aria-labelledby="shopify-hours-tasks-title"
-      className="can-you-use-shopify-hours py-20 max-[1199px]:py-[60px] max-[767px]:py-[50px]"
+      className="can-you-use-shopify-hours py-20 max-[991px]:py-[50px]"
     >
       <Container>
         <div className="can-you-use-shopify-hours-row">
           <SplitSectionHeading
-            className="mb-[50px] max-[767px]:mb-[30px]"
+            className="mb-[50px] max-[991px]:mb-[30px]"
             description={shopifyHoursTasks.description}
             eyebrow={shopifyHoursTasks.eyebrow}
             heading={shopifyHoursTasks.heading}

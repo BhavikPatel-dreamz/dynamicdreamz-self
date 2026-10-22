@@ -46,7 +46,7 @@ export function PlatformComparisonTableBlock({
           <div className="w-[44%] max-[991px]:w-full">
             {content.eyebrow && (
               <div className="eyebrow mb-3">
-                <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+                <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                   {content.eyebrow}
                 </span>
               </div>
@@ -168,7 +168,7 @@ export function RecentArchitecturePatternsSection({
         >
           <div className="w-[44%] max-[991px]:w-full">
             {content.eyebrow ? (
-              <span className="mb-4 block font-montserrat text-sm font-semibold uppercase text-brand-red">
+              <span className="mb-4 block font-montserrat text-sm font-semibold uppercase text-[#535353]">
                 {content.eyebrow}
               </span>
             ) : null}
@@ -198,11 +198,11 @@ export function RecentArchitecturePatternsSection({
                     <span className="mb-[15px] block font-montserrat text-sm font-bold uppercase leading-5 text-[#AD5151]">
                       {item.label}
                     </span>
-                    <h3 className="font-montserrat text-[20px] font-bold leading-[130%] text-[#282828]">
+                    <h3 className="font-montreal-medium text-[20px] font-normal leading-[130%] text-[#282828]">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="mt-2.5 font-sans text-sm font-medium leading-[24px] text-[#535353]">
+                  <p className="mt-2.5 font-sans text-sm font-normal leading-[24px] text-[#535353]">
                     {item.description}
                   </p>
                 </div>

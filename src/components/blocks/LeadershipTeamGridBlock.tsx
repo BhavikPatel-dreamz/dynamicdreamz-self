@@ -46,12 +46,12 @@ export function LeadershipTeamGridBlock({
           {eyebrow && (
             <div className="mb-4 flex items-center justify-center gap-2">
               <span className="h-[2px] w-6 bg-brand-red" />
-              <span className="text-xs font-bold tracking-widest text-brand-red uppercase">
+              <span className="text-xs font-bold tracking-widest text-[#535353] uppercase">
                 {eyebrow}
               </span>
             </div>
           )}
-          <h2 id="about-founders-title" className="mb-6 text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
+          <h2 id="about-founders-title" className="mb-6 font-montreal-medium text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
             {title}
           </h2>
           <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">

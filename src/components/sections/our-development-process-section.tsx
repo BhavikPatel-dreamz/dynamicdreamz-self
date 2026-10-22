@@ -35,18 +35,18 @@ export function OurDevelopmentProcessSection({
     <section
       id={id}
       className={cn(
-        "our-development-process py-20 max-[992px]:py-[50px]",
+        "our-development-process py-20 max-[991px]:py-[50px]",
         bg,
       )}
     >
       <Container>
         <div
           data-aos="fade-up"
-          className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col max-[991px]:gap-4"
+          className="section_title_with_eyebrow mb-10 flex flex-wrap items-start justify-between gap-6 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-4"
         >
           <div className="title max-w-[620px]">
             {content.eyebrow && (
-              <div className="eyebrow mb-3">
+              <div className="eyebrow mb-4">
                 <Eyebrow>{content.eyebrow}</Eyebrow>
               </div>
             )}
@@ -96,7 +96,7 @@ export function OurDevelopmentProcessSection({
               <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[991px]:text-[18px] max-[991px]:leading-[26px]">
                 {item.title}
               </h3>
-              <p className="text-sm font-medium leading-[22px] text-[#535353]">
+              <p className="text-sm font-normal leading-[22px] text-[#535353]">
                 {item.description}
               </p>
             </div>

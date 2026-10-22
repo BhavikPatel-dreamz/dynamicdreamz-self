@@ -138,20 +138,20 @@ export function WhiteLabelSolutionsBlock(props: WhiteLabelSolutionsBlockProps = 
   const showCta = props.showCta ?? !props.hideCtas;
   const className = props.className;
   return (
-    <section className={cn("bg-[#192019] py-20 max-[992px]:py-[50px]", className)}>
+    <section className={cn("bg-[#192019] py-20 max-[991px]:py-[50px]", className)}>
       <Container className="max-[575px]:px-4">
         {eyebrow ? (
           <div
             data-aos="fade-up"
-            className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col max-[991px]:gap-4"
+            className="section_title_with_eyebrow mb-10 flex flex-wrap items-start justify-between gap-6 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-4"
           >
             <div className="title max-w-[620px]">
-              <div className="eyebrow mb-3">
-                <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+              <div className="eyebrow mb-4">
+                <span className="font-montserrat text-sm font-semibold uppercase text-white">
                   {eyebrow}
                 </span>
               </div>
-              <h2 className="font-display text-[35px] font-medium leading-[48px] tracking-[-0.7px] text-white max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
+              <h2 className="font-montreal-medium text-[35px] font-normal leading-[48px] tracking-normal text-white max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
                 {title}
               </h2>
             </div>

@@ -143,7 +143,7 @@ export function TrustStatsBarBlock({
   if (safeContent.stats && safeContent.stats.length > 0) {
     return (
       <section
-        className={cn("py-20 max-[767px]:pt-[30px] max-[767px]:pb-[60px]", className)}
+        className={cn("py-20 max-[991px]:py-[50px] max-[767px]:pt-[30px] max-[767px]:pb-[60px]", className)}
         aria-labelledby="proof-counter-title"
       >
         <Container>
@@ -176,19 +176,19 @@ export function TrustStatsBarBlock({
   const items = safeContent.items || [];
 
   return (
-    <section className={cn("city-page-counter py-20 max-[992px]:py-[50px]", className)}>
+    <section className={cn("city-page-counter py-20 max-[991px]:py-[50px]", className)}>
       <Container>
         {(safeContent.heading || safeContent.description) && (
           <div
             data-aos="fade-up"
-            className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col max-[991px]:gap-4"
+            className="section_title_with_eyebrow mb-10 flex flex-wrap items-start justify-between gap-6 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-4"
           >
             <div className="title max-w-[620px]">
               {safeContent.eyebrow && (
-                <div className="eyebrow mb-3">
+                <div className="eyebrow mb-4">
                   <span
                     className={cn(
-                      "font-montserrat text-sm font-semibold uppercase text-brand-red",
+                      "font-montserrat text-sm font-semibold uppercase text-[#535353]",
                       eyebrowVariant === "dash" &&
                         "relative pl-10 before:absolute before:left-0 before:top-2.5 before:h-0.5 before:w-7 before:bg-brand-red before:content-['']",
                     )}
@@ -308,12 +308,12 @@ export function WhiteLabelWhySection({
       <Container className="max-[575px]:px-4">
         {eyebrow && (
           <div data-aos="fade-up" className="mb-4 text-center">
-            <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+            <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
               {eyebrow}
             </span>
           </div>
         )}
-        <h2 data-aos="fade-up" className="mb-12 text-center font-display text-[35px] font-medium leading-tight text-ink max-[992px]:text-[30px] max-[767px]:text-2xl">
+        <h2 data-aos="fade-up" className="mb-12 text-center font-montreal-medium text-[35px] font-normal leading-tight text-ink max-[992px]:text-[30px] max-[767px]:text-2xl">
           {formatBrText(title)}
         </h2>
         <div data-aos="fade-up" className="grid grid-cols-3 gap-6 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1">
@@ -367,7 +367,7 @@ export function ResourcesTrustSection({
             {heading && (
               <h2
                 id="resources-trust-title"
-                className="mb-3 text-[35px] font-bold leading-[48.475px] tracking-[-0.7px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-[24px] max-[767px]:leading-[33.24px]"
+                className="mb-3 font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-[24px] max-[767px]:leading-[33.24px]"
               >
                 {heading}
               </h2>

@@ -40,7 +40,7 @@ export function ShopifyMigrationNumberedGridSection({
               {eyebrow && (
                 // Live `.eyebrow` is `display: inline-flex`, preserving the
                 // inline baseline gap; live margin-bottom is 16px.
-                <Eyebrow as="span" className="mb-4 text-[#ad5151]" lineThickness="thin">
+                <Eyebrow as="span" className="mb-4" lineThickness="thin">
                   {eyebrow}
                 </Eyebrow>
               )}

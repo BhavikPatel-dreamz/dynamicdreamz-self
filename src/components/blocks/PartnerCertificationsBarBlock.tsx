@@ -35,7 +35,7 @@ export function PartnerCertificationsBarBlock({
     return (
       <section
         className={cn(
-          "why_shopify_plus_brands_choose_section bg-white pt-20 pb-0 max-[992px]:pt-[50px]",
+          "why_shopify_plus_brands_choose_section bg-white py-20 max-[991px]:py-[50px]",
           className,
         )}
         data-section="why-shopify-plus"
@@ -46,7 +46,7 @@ export function PartnerCertificationsBarBlock({
             <div className="w-[44%] max-[992px]:w-full">
               {content.eyebrow && (
                 <div className="eyebrow mb-3">
-                  <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+                  <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                     {content.eyebrow}
                   </span>
                 </div>

@@ -27,17 +27,18 @@ export function PricingTableSection({
 }) {
   return (
     <section
-      className="white_label_wp_develop_plan_section shopify-plus-engagement mb-0 bg-[#edf2ee] py-20 max-[992px]:py-[50px]"
+      className="white_label_wp_develop_plan_section shopify-plus-engagement mb-0 bg-[#edf2ee] py-20 max-[991px]:py-[50px]"
       data-section="pricing"
       id="our_white_label_pricing"
     >
       <Container>
         <SplitSectionHeading
+          className="mb-10 max-[991px]:mb-[30px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
-          textColumnClassName="w-[48%] max-[992px]:w-full"
-          titleColumnClassName="w-[44%] max-[992px]:w-full"
+          textColumnClassName="w-[48%] max-[991px]:w-full"
+          titleColumnClassName="w-[44%] max-[991px]:w-full"
           variant="left"
         />
 

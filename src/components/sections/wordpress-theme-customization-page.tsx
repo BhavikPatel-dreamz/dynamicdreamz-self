@@ -147,6 +147,7 @@ export function WordPressThemeCustomizationPage() {
       {/* 9. Snippets of WordPress Theme Customization Portfolio */}
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
+        className="pt-0 max-[991px]:pt-0"
         columns={4}
         content={portfolioContent}
         sectionId="our_work"

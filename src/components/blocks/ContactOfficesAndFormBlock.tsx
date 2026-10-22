@@ -253,7 +253,7 @@ export function ContactHeroSection({
           {eyebrow && (
             <div className="mb-4 flex items-center justify-center gap-2">
               <span className="h-[2px] w-6 bg-brand-red" />
-              <span className="text-xs font-bold tracking-widest text-brand-red uppercase">
+              <span className="text-xs font-bold tracking-widest text-[#535353] uppercase">
                 {eyebrow}
               </span>
             </div>
@@ -312,7 +312,7 @@ export function ContactFormSection({
             {eyebrow && (
               <div className="mb-2 flex items-center justify-center gap-2">
                 <span className="h-[2px] w-6 bg-brand-red" />
-                <span className="text-xs font-bold tracking-widest text-brand-red uppercase">
+                <span className="text-xs font-bold tracking-widest text-[#535353] uppercase">
                   {eyebrow}
                 </span>
               </div>
@@ -381,7 +381,7 @@ export function ContactOfficesSection({
             {eyebrow && (
               <div className="mb-2 flex items-center gap-2 max-[991px]:justify-center">
                 <span className="h-[2px] w-6 bg-brand-red" />
-                <span className="text-xs font-bold tracking-widest text-brand-red uppercase">
+                <span className="text-xs font-bold tracking-widest text-[#535353] uppercase">
                   {eyebrow}
                 </span>
               </div>
@@ -466,14 +466,14 @@ export function ContactDetailsSection({
           {eyebrow && (
             <div className="mb-2 flex items-center justify-center gap-2">
               <span className="h-[2px] w-6 bg-brand-red" />
-              <span className="text-xs font-bold tracking-widest text-brand-red uppercase">
+              <span className="text-xs font-bold tracking-widest text-[#535353] uppercase">
                 {eyebrow}
               </span>
             </div>
           )}
           <h2
             id="contact-details-title"
-            className="font-display text-[32px] leading-[42px] font-medium text-ink max-[991px]:text-[28px] max-[767px]:text-2xl"
+            className="font-montreal-medium text-[32px] leading-[42px] font-normal text-ink max-[991px]:text-[28px] max-[767px]:text-2xl"
           >
             {title}
           </h2>
