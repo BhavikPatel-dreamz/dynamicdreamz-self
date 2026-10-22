@@ -80,6 +80,7 @@ export function ShopifyPlusMigrationAgencyPage() {
 
       {/* 9. Client Stories / Testimonials */}
       <HappyClientSection
+        hasTopPadding={true}
         description={plusAgencyTestimonials.description}
         eyebrow={plusAgencyTestimonials.eyebrow}
         heading={plusAgencyTestimonials.heading}

@@ -15,7 +15,7 @@ type ProofCounterSectionProps = {
 export function ProofCounterSection({ content }: ProofCounterSectionProps) {
   return (
     <section
-      className="py-20 max-[767px]:pt-[30px] max-[767px]:pb-[60px]"
+      className="py-20 max-[991px]:py-[50px] max-[767px]:pt-[30px] max-[767px]:pb-[60px]"
       aria-labelledby="proof-counter-title"
     >
       <Container>

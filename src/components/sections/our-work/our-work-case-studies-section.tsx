@@ -18,16 +18,16 @@ export function OurWorkCaseStudiesSection({
 }: OurWorkCaseStudiesSectionProps = {}) {
   return (
     <section
-      className="see-the-work-sec bg-[#eff4ef] py-20 max-[992px]:py-10 max-[767px]:py-10"
+      className="see-the-work-sec bg-[#eff4ef] py-10"
       aria-labelledby="our-work-case-studies-title"
     >
       <Container className="max-[575px]:px-4">
         <div
           data-aos="fade-up"
-          className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[992px]:mb-[30px] max-[767px]:flex-col max-[767px]:items-start max-[767px]:gap-4"
+          className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-[30px] max-[767px]:flex-col max-[767px]:items-start max-[767px]:gap-4"
         >
           <div className="title w-[44%] max-[1399px]:w-[35%] max-[1199px]:w-[36%] max-[992px]:w-full">
-            <Eyebrow className="mb-3.75 max-[767px]:mb-5" tone="muted">
+            <Eyebrow className="mb-4" tone="muted">
               {eyebrow}
             </Eyebrow>
             <h2

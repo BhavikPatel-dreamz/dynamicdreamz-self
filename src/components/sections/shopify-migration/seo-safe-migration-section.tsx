@@ -50,11 +50,11 @@ export function SeoSafeMigrationSection({
             <div className="left-col w-[49%] max-[1199px]:w-[41%] max-[991px]:w-full">
               <div className="text-block">
                 {content.eyebrow && (
-                  <Eyebrow className="mb-2.5" lineThickness="thin">
+                  <Eyebrow className="mb-4" lineThickness="thin">
                     {content.eyebrow}
                   </Eyebrow>
                 )}
-                <h2 className="mb-2.5 font-display text-[35px] font-medium leading-[1.2] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
+                <h2 className="mb-2.5 font-montreal-medium text-[35px] font-normal leading-[1.2] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
                   {formatBrText(content.heading, "max-[767px]:hidden")}
                 </h2>
                 <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">

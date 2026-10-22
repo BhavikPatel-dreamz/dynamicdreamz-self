@@ -42,22 +42,22 @@ export function ShopifyTeamBehindItSection({
   return (
     <section
       className={cn(
-        "our_shopify_team_behind_it_section bg-[#EFF4EF] py-20 max-[991px]:py-12",
+        "our_shopify_team_behind_it_section bg-[#EFF4EF] py-20 max-[991px]:py-[50px]",
         className,
       )}
     >
       <Container>
         <div
           data-aos="fade-up"
-          className="section_title mb-12 max-[991px]:mb-8"
+          className="section_title mb-10 max-[991px]:mb-[30px]"
         >
           {content.eyebrow ? (
-            <Eyebrow className="mb-3">{content.eyebrow}</Eyebrow>
+            <Eyebrow className="mb-4">{content.eyebrow}</Eyebrow>
           ) : null}
           <div className="flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col">
             <h2
               className={cn(
-                "w-full font-display text-[35px] font-medium leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl",
+                "w-full font-montreal-medium text-[35px] font-normal leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl",
                 content.description ? "max-w-[580px]" : "max-w-none",
               )}
             >

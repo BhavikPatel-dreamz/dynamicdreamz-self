@@ -15,7 +15,7 @@ export function CaseStudyCustomSections({ sections }: CaseStudyCustomSectionsPro
       {sections.map((section, index) => (
         <section
           key={index}
-          className="border-t border-[rgba(40,40,40,0.11)] py-20 max-[767px]:py-[50px]"
+          className="border-t border-[rgba(40,40,40,0.11)] py-20 max-[991px]:py-[50px]"
           aria-label={section.heading}
         >
           <Container>
@@ -25,7 +25,7 @@ export function CaseStudyCustomSections({ sections }: CaseStudyCustomSectionsPro
                   <span>{section.eyebrow}</span>
                 </div>
               ) : null}
-              <h2 className="mb-4 font-display text-[35px] font-medium leading-[1.38] text-[#282828] max-[1199px]:text-[28px] max-[767px]:text-2xl">
+              <h2 className="mb-4 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1199px]:text-[28px] max-[767px]:text-2xl">
                 {section.heading}
               </h2>
               {section.lead ? (

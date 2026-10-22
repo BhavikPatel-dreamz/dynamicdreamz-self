@@ -53,6 +53,7 @@ export function AiServicesPage() {
       />
       <TechKeywordSection content={aiServicesTechKeywords} />
       <HappyClientSection
+        hasTopPadding={true}
         description={aiServicesTestimonials.description}
         eyebrow={aiServicesTestimonials.eyebrow}
         heading={aiServicesTestimonials.heading}

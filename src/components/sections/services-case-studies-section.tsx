@@ -23,6 +23,7 @@ export type ServicesCaseStudiesSectionProps = {
   description?: string | readonly string[];
   items: readonly CaseStudyPreviewItem[];
   id?: string;
+  className?: string;
 };
 
 export function ServicesCaseStudiesSection({
@@ -31,6 +32,7 @@ export function ServicesCaseStudiesSection({
   description,
   items,
   id,
+  className,
 }: ServicesCaseStudiesSectionProps) {
   const isMobileApp =
     id === "shopify-mobile-app-case-studies" ||
@@ -41,7 +43,7 @@ export function ServicesCaseStudiesSection({
 
   return (
     <section
-      className="see-the-work-sec bg-[#eff4ef] py-20 max-[991px]:py-[50px] max-[575px]:py-10"
+      className={cn("see-the-work-sec bg-[#eff4ef] py-10", className)}
       id={id}
     >
       <Container className={containerClass}>

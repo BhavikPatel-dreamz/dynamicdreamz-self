@@ -1,4 +1,4 @@
-import { ShopifyHoursHeroSection } from "@/components/blocks/CityHeroBlock";
+import { ShopifyHoursHeroSection } from "@/components/sections/buy-shopify-development-hours/shopify-hours-hero-section";
 import { ShopifyHoursComparisonSection } from "@/components/blocks/EngagementModelsBlock";
 import { ShopifyHoursTasksSection } from "@/components/blocks/ServiceOfferingsGridBlock";
 import { BrandPartnersSection } from "@/components/blocks/ClientLogoMarqueeBlock";
@@ -21,6 +21,7 @@ export function BuyShopifyDevelopmentHoursPage() {
     <div>
       <ShopifyHoursHeroSection />
       <ThemeCustomizationServicesSection
+        className="pt-0 max-[991px]:pt-0"
         content={shopifyHoursCommitments}
         variant="transparent"
       />

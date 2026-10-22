@@ -35,7 +35,7 @@ export function PartnerCertificationsBarBlock({
     return (
       <section
         className={cn(
-          "why_shopify_plus_brands_choose_section bg-white pt-20 pb-0 max-[992px]:pt-[50px]",
+          "why_shopify_plus_brands_choose_section bg-white py-20 max-[991px]:py-[50px]",
           className,
         )}
         data-section="why-shopify-plus"

@@ -25,6 +25,7 @@ export type SplitFaqSectionProps = {
   itemClassName?: string;
   panelContentClassName?: string;
   iconVariant?: "default" | "circle-cross";
+  className?: string;
 };
 
 /**
@@ -54,6 +55,7 @@ export function SplitFaqSection({
   itemClassName,
   panelContentClassName,
   iconVariant = "circle-cross",
+  className,
 }: SplitFaqSectionProps) {
   const titleId = `${idPrefix}-title`;
 
@@ -61,7 +63,8 @@ export function SplitFaqSection({
     idPrefix.startsWith("white-label-website-design") ||
     idPrefix.startsWith("white-label-wordpress") ||
     idPrefix.startsWith("white-label-shopify") ||
-    idPrefix.startsWith("shopify-certified-developers");
+    idPrefix.startsWith("shopify-certified-developers") ||
+    idPrefix.startsWith("shopify-cro");
   const isWhite = idPrefix.startsWith("food-beverage");
   const isPt0 = idPrefix.startsWith("risks-of-shopify-outsourcing");
   const isMobileAppFaq = idPrefix.startsWith("shopify-mobile-app");
@@ -71,9 +74,10 @@ export function SplitFaqSection({
     : isWhite
     ? "bg-white"
     : "bg-[#fafaf7]";
-  const paddingClass = isPt0
-    ? "pt-0 pb-20 max-[767px]:pb-[50px]"
-    : "py-[60px] max-[991px]:py-10 max-[767px]:pb-5";
+  const paddingClass =
+    isPt0 || isWhite
+      ? "pt-0 pb-20 max-[991px]:py-10 max-[767px]:pb-5"
+      : "py-[60px] max-[991px]:py-10 max-[767px]:pb-5";
   const containerClass = isMobileAppFaq
     ? "min-[1400px]:max-w-[1408px] px-[15px]"
     : undefined;
@@ -81,7 +85,7 @@ export function SplitFaqSection({
   return (
     <section
       aria-labelledby={titleId}
-      className={cn("faq-sec", bgClass, paddingClass)}
+      className={cn("faq-sec", bgClass, paddingClass, className)}
       data-section="faq"
       id={sectionId ?? `${idPrefix}-section`}
     >

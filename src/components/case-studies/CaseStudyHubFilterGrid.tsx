@@ -110,16 +110,16 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
             </div>
           </div>
 
-          <div className="cs-section-title mt-[54px] flex flex-wrap items-end justify-between border-t border-black/10 pt-[54px] max-[992px]:mt-5 mb-10 max-[992px]:mb-[30px] max-[992px]:pt-5">
-            <div className="title w-[44%] max-[1399px]:w-[35%] max-[1199px]:w-[36%] max-[992px]:w-full">
+          <div className="cs-section-title mt-[54px] flex flex-wrap items-end justify-between border-t border-black/10 pt-[54px] max-[991px]:mt-5 mb-10 max-[991px]:mb-[30px] max-[991px]:pt-5">
+            <div className="title w-[44%] max-[1399px]:w-[35%] max-[1199px]:w-[36%] max-[991px]:w-full">
               {sectionTitle.eyebrow ? (
-                <Eyebrow className="mb-3.75 max-[767px]:mb-5" tone="muted">
+                <Eyebrow className="mb-4" tone="muted">
                   {sectionTitle.eyebrow}
                 </Eyebrow>
               ) : null}
-              <h2 className="m-0 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1199px]:text-[28px] max-[992px]:mb-2.5 max-[767px]:text-2xl">{sectionTitle.heading}</h2>
+              <h2 className="m-0 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1199px]:text-[28px] max-[991px]:mb-2.5 max-[767px]:text-2xl">{sectionTitle.heading}</h2>
             </div>
-            <div className="text w-[49%] max-[1399px]:w-[56%] max-[1199px]:w-[51%] max-[992px]:w-full"><p className="m-0 font-sans text-base font-medium leading-[30.4px] text-[#535353] max-[992px]:text-sm max-[992px]:leading-[26px]">{sectionTitle.description}</p></div>
+            <div className="text w-[49%] max-[1399px]:w-[56%] max-[1199px]:w-[51%] max-[991px]:w-full"><p className="m-0 font-sans text-base font-medium leading-[30.4px] text-[#535353] max-[991px]:text-sm max-[991px]:leading-[26px]">{sectionTitle.description}</p></div>
           </div>
 
           {visibleItems.length === 0 ? <div className="rounded-[20px] bg-white p-12 text-center text-lg text-[#535353]">{caseStudiesUiCopy.empty}</div> : <div className="cs-listing-main -mb-5 flex flex-wrap justify-between max-[992px]:mb-0">{visibleItems.map((item) => <CaseStudyCard key={item.slug} item={item} />)}</div>}

@@ -16,7 +16,7 @@ export function ShopifyPlusProofSection({
 }) {
   return (
     <section
-      className="why_shopify_plus_brands_choose_section bg-white pt-20 pb-0 max-[992px]:pt-[50px]"
+      className="why_shopify_plus_brands_choose_section bg-white py-20 max-[991px]:py-[50px]"
       data-section="why-shopify-plus"
       id="why-shopify-plus"
     >

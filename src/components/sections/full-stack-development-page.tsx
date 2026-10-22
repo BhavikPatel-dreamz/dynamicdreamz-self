@@ -65,6 +65,7 @@ export function FullStackDevelopmentPage() {
         theme="light"
       />
       <HappyClientSection
+        hasTopPadding={true}
         description={fullStackDevelopmentTestimonialsContent.description}
         eyebrow={fullStackDevelopmentTestimonialsContent.eyebrow}
         heading={fullStackDevelopmentTestimonialsContent.heading}

@@ -35,6 +35,7 @@ export type TestimonialsSliderBlockProps = {
   variant?: "client-stories";
   className?: string;
   contentOnly?: boolean;
+  hasTopPadding?: boolean;
 };
 
 export type HappyClientSectionProps = TestimonialsSliderBlockProps;
@@ -122,6 +123,7 @@ export function TestimonialsSliderBlock({
   variant,
   className,
   contentOnly = false,
+  hasTopPadding = false,
 }: TestimonialsSliderBlockProps) {
   const sliderRef = useRef<Slider>(null);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -210,7 +212,10 @@ export function TestimonialsSliderBlock({
   return (
     <section
       className={cn(
-        "happy-client-sec overflow-hidden pt-20 pb-20 max-[991px]:py-[50px]",
+        "happy-client-sec overflow-hidden",
+        hasTopPadding
+          ? "pt-20 pb-20 max-[991px]:py-[50px]"
+          : "pt-0 pb-20 max-[991px]:pt-0 max-[991px]:pb-[50px]",
         isWhite ? "bg-white" : undefined,
         className,
       )}

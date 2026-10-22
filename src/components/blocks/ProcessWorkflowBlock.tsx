@@ -61,16 +61,16 @@ export function ProcessWorkflowBlock({
   return (
     <section
       id={id}
-      className={cn("our-development-process py-20 max-[992px]:py-[50px]", bg, className)}
+      className={cn("our-development-process py-20 max-[991px]:py-[50px]", bg, className)}
     >
       <Container>
         <div
           data-aos="fade-up"
-          className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col max-[991px]:gap-4"
+          className="section_title_with_eyebrow mb-10 flex flex-wrap items-start justify-between gap-6 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-4"
         >
           <div className="title max-w-[620px]">
             {resolvedEyebrow && (
-              <div className="eyebrow mb-3">
+              <div className="eyebrow mb-4">
                 <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                   {resolvedEyebrow}
                 </span>

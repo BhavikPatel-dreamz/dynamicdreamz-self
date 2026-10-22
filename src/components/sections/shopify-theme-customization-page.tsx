@@ -91,6 +91,7 @@ export function ShopifyThemeCustomizationPage() {
 
       {/* 12. Client Stories / Testimonials */}
       <HappyClientSection
+        hasTopPadding={true}
         description={shopifyThemeCustomizationContent.testimonials.description}
         eyebrow={shopifyThemeCustomizationContent.testimonials.eyebrow}
         heading={shopifyThemeCustomizationContent.testimonials.heading}

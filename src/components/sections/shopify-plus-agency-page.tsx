@@ -47,6 +47,7 @@ export function ShopifyPlusAgencyPage() {
       />
       <ShopifyPlusProofSection content={shopifyPlusAgencyWhyChoose} />
       <PortfolioShowcaseSection
+        className="pt-0 max-[991px]:pt-0"
         content={{
           ...shopifyPlusAgencyPortfolio,
           platformMark: {
@@ -67,12 +68,17 @@ export function ShopifyPlusAgencyPage() {
         variant="grid"
       />
       <PricingTableSection content={shopifyPlusAgencyPricing} />
-      <HappyClientSection variant="client-stories"
+      <HappyClientSection
+        variant="client-stories"
+        hasTopPadding={true}
         description={shopifyPlusAgencyPageTestimonials.description}
         heading={shopifyPlusAgencyPageTestimonials.heading}
         items={shopifyPlusAgencyPageTestimonials.items}
       />
-      <EvaluationFrameworkSection content={shopifyPlusAgencyHowToChoose} />
+      <EvaluationFrameworkSection
+        className="pt-0 pb-20 max-[991px]:pt-0 max-[991px]:pb-[50px] mb-0"
+        content={shopifyPlusAgencyHowToChoose}
+      />
       <SplitFaqSection
         description={shopifyPlusAgencyFaqDescription}
         heading={shopifyPlusAgencyFaqHeading}

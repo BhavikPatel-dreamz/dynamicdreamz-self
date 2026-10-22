@@ -26,6 +26,7 @@ export function ShopifyMaintenanceServicesPage() {
       />
       <AgencyServicesSection
         cardVariant="services-box"
+        className="pb-0 max-[992px]:pb-0"
         content={shopifyMaintenanceServicesContent.services}
         id="services"
       />
@@ -39,6 +40,7 @@ export function ShopifyMaintenanceServicesPage() {
       />
       <PricingTableSection content={shopifyMaintenanceServicesContent.pricing} />
       <HappyClientSection
+        hasTopPadding={true}
         description={shopifyMaintenanceServicesContent.testimonials.description}
         eyebrow={shopifyMaintenanceServicesContent.testimonials.eyebrow}
         heading={shopifyMaintenanceServicesContent.testimonials.heading}

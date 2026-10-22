@@ -38,12 +38,15 @@ export function ThemeCustomizationServicesSection({
   return (
     <section
       className={cn(
-        "theme-customization-services py-20 max-[992px]:py-[50px]",
+        "theme-customization-services",
+        variant === "transparent"
+          ? "transparent bg-transparent pt-0 pb-20 max-[991px]:pt-0 max-[991px]:pb-[50px]"
+          : "py-20 max-[991px]:py-[50px]",
         variant === "green"
           ? "green bg-[#eff4ef]"
           : variant === "yellow"
             ? "yellow bg-[#fafaf7]"
-            : "transparent bg-transparent",
+            : undefined,
         className,
       )}
       id={id}

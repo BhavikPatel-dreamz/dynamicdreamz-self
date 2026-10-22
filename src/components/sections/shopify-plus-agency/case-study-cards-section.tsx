@@ -37,7 +37,7 @@ export function CaseStudyCardsSection({
 }) {
   return (
     <section
-      className={cn("see-the-work-sec bg-[#eff4ef] py-20 max-[992px]:py-[50px]", className)}
+      className={cn("see-the-work-sec mb-20 bg-[#eff4ef] py-10 max-[991px]:mb-[50px]", className)}
       data-section="case-studies"
       id="case-studies"
     >

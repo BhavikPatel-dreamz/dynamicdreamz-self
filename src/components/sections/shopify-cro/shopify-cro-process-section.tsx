@@ -25,7 +25,7 @@ export type ShopifyCroProcessSectionProps = {
 
 export function ShopifyCroProcessSection({
   content = shopifyCroProcess,
-  className = "white_label_process_step_box_section column-five bg-white py-20 max-[991px]:py-12",
+  className = "white_label_process_step_box_section column-five bg-white py-20 max-[991px]:py-[50px]",
 }: ShopifyCroProcessSectionProps) {
   return (
     <section className={className}>

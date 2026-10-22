@@ -37,6 +37,7 @@ export function WooCommerceDevelopmentPage() {
       />
       <AgencyServicesSection
         cardVariant="services-box"
+        className="pb-0 max-[992px]:pb-0"
         columns={2}
         content={servicesContent}
         headerLayout="split"

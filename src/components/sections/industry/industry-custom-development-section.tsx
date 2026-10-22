@@ -21,14 +21,14 @@ export function IndustryCustomDevelopmentSection({
 }: IndustryCustomDevelopmentSectionProps) {
   return (
     <section
-      className={cn("industry-custom-development bg-[#192019] py-20", className)}
+      className={cn("industry-custom-development bg-[#192019] py-20 max-[991px]:py-[50px]", className)}
       id={id}
     >
       <Container>
         <div className="wrapper mx-auto max-w-[900px]" data-aos="fade-up">
           <div className="title-block">
             {content.eyebrow ? (
-              <div className="eyebrow mb-6 relative pl-10 font-sans">
+              <div className="eyebrow mb-4 relative pl-10 font-sans">
                 <span
                   className="absolute left-0 top-1/2 -translate-y-1/2 w-[30px] h-[2px] bg-[#AD5151]"
                   aria-hidden="true"
@@ -38,7 +38,7 @@ export function IndustryCustomDevelopmentSection({
                 </span>
               </div>
             ) : null}
-            <h2 className="mb-4 font-display font-medium text-[35px] leading-[1.4] tracking-normal text-white max-[992px]:text-[30px] max-[992px]:leading-[1.4] max-[767px]:text-2xl max-[767px]:leading-[1.4]">
+            <h2 className="mb-4 font-montreal-medium font-normal text-[35px] leading-[1.4] tracking-normal text-white max-[992px]:text-[30px] max-[992px]:leading-[1.4] max-[767px]:text-2xl max-[767px]:leading-[1.4]">
               {content.heading}
             </h2>
             <p className="font-sans text-sm leading-6 text-white max-[767px]:text-sm max-[767px]:leading-6">

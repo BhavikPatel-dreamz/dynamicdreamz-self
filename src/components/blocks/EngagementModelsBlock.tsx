@@ -61,7 +61,7 @@ export function EngagementModelsBlock({
         >
           <div className="w-[44%] max-[992px]:w-full">
             {content.eyebrow && (
-              <div className="eyebrow mb-3">
+              <div className="eyebrow mb-4">
                 <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                   {content.eyebrow}
                 </span>
@@ -175,19 +175,19 @@ export function DeliveryModelComparisonSection({
   content = whiteLabelShopifyDeliveryComparison,
 }: DeliveryModelComparisonSectionProps = {}) {
   return (
-    <section className="choose_the_right_delivery_model_section bg-white py-20 max-[991px]:py-12">
+    <section className="choose_the_right_delivery_model_section bg-white py-20 max-[991px]:py-[50px]">
       <Container>
         <div
           data-aos="fade-up"
-          className="section_title mb-12 max-[991px]:mb-8"
+          className="section_title mb-10 max-[991px]:mb-[30px]"
         >
           {content.eyebrow ? (
-            <span className="mb-3 block font-montserrat text-sm font-semibold uppercase text-[#535353]">
+            <span className="mb-4 block font-montserrat text-sm font-semibold uppercase text-[#535353]">
               {content.eyebrow}
             </span>
           ) : null}
           <div className="flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col">
-            <h2 className="w-full max-w-[620px] font-display text-[35px] font-medium leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl">
+            <h2 className="w-full max-w-[620px] font-montreal-medium text-[35px] font-normal leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl">
               {content.heading}
             </h2>
             {content.description ? (

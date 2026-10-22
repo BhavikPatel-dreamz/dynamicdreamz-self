@@ -143,7 +143,7 @@ export function TrustStatsBarBlock({
   if (safeContent.stats && safeContent.stats.length > 0) {
     return (
       <section
-        className={cn("py-20 max-[767px]:pt-[30px] max-[767px]:pb-[60px]", className)}
+        className={cn("py-20 max-[991px]:py-[50px] max-[767px]:pt-[30px] max-[767px]:pb-[60px]", className)}
         aria-labelledby="proof-counter-title"
       >
         <Container>
@@ -176,16 +176,16 @@ export function TrustStatsBarBlock({
   const items = safeContent.items || [];
 
   return (
-    <section className={cn("city-page-counter py-20 max-[992px]:py-[50px]", className)}>
+    <section className={cn("city-page-counter py-20 max-[991px]:py-[50px]", className)}>
       <Container>
         {(safeContent.heading || safeContent.description) && (
           <div
             data-aos="fade-up"
-            className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col max-[991px]:gap-4"
+            className="section_title_with_eyebrow mb-10 flex flex-wrap items-start justify-between gap-6 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-4"
           >
             <div className="title max-w-[620px]">
               {safeContent.eyebrow && (
-                <div className="eyebrow mb-3">
+                <div className="eyebrow mb-4">
                   <span
                     className={cn(
                       "font-montserrat text-sm font-semibold uppercase text-[#535353]",

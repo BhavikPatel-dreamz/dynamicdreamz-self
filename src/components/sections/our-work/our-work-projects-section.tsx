@@ -30,14 +30,14 @@ export function OurWorkProjectsSection({
 }: OurWorkProjectsSectionProps = {}) {
   return (
     <section
-      className="scroll-mt-20 pt-20 pb-20 max-[992px]:pt-[50px] max-[992px]:pb-[50px]"
+      className="scroll-mt-20 py-20 max-[991px]:py-[50px]"
       id="our-work-projects"
       aria-labelledby="our-work-projects-title"
     >
       <Container className="max-[575px]:px-4">
-        <div data-aos="fade-up" className="mb-10 flex items-end justify-between gap-12 max-[992px]:items-start max-[767px]:mb-[30px] max-[767px]:flex-col max-[767px]:gap-4">
+        <div data-aos="fade-up" className="mb-10 flex items-end justify-between gap-12 max-[991px]:mb-[30px] max-[991px]:items-start max-[767px]:flex-col max-[767px]:gap-4">
           <div className="shrink-0">
-            <Eyebrow className="mb-5" lineThickness="thin" lineWidth="fixed">
+            <Eyebrow className="mb-4" lineThickness="thin" lineWidth="fixed">
               {eyebrow}
             </Eyebrow>
             <h2 className="font-montreal-medium text-[35px] leading-[1.38] font-normal text-ink max-[992px]:text-[30px] max-[767px]:text-2xl" id="our-work-projects-title">

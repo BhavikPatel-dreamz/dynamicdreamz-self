@@ -44,12 +44,15 @@ export function ThemeCustomizationServicesBlock({
   return (
     <section
       className={cn(
-        "theme-customization-services py-20 max-[992px]:py-[50px]",
+        "theme-customization-services",
+        finalVariant === "transparent"
+          ? "transparent bg-transparent pt-0 pb-20 max-[991px]:pt-0 max-[991px]:pb-[50px]"
+          : "py-20 max-[991px]:py-[50px]",
         finalVariant === "green"
           ? "green bg-[#eff4ef]"
           : finalVariant === "yellow"
             ? "yellow bg-[#fafaf7]"
-            : "transparent bg-transparent",
+            : undefined,
         className,
       )}
       id={finalId}

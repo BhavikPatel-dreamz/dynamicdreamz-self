@@ -17,7 +17,7 @@ export function ShopifyHoursHeroSection() {
   return (
     <section
       aria-labelledby="shopify-hours-hero-title"
-      className="inner-hero-sec hire-shopify-dev-flexi-hours relative mb-20 overflow-hidden rounded-b-[50px] bg-cream pt-[150px] pb-20 max-[1199px]:mb-[60px] max-[991px]:pt-[100px] max-[991px]:pb-10"
+      className="inner-hero-sec hire-shopify-dev-flexi-hours relative mb-20 overflow-hidden rounded-b-[50px] bg-cream pt-[150px] pb-0 max-[1199px]:mb-[60px] max-[991px]:pt-[100px] max-[991px]:pb-10"
     >
       <Container>
         <div data-aos="fade-up" className="hire-shopify-dev-flexi-hours-row flex flex-wrap items-center">
@@ -36,7 +36,7 @@ export function ShopifyHoursHeroSection() {
               </div>
             </div>
             <h1
-              className="mb-3 font-display text-[50px] leading-[60px] font-normal text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
+              className="mb-3 font-montreal-medium text-[50px] leading-[60px] font-normal text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
               id="shopify-hours-hero-title"
             >
               {titleStart}
