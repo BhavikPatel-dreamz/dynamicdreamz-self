@@ -63,7 +63,7 @@ export function PerformanceBenchmarksBlock({
                     <span
                       className={cn(
                         "font-montserrat text-sm font-semibold uppercase",
-                        isDark ? "text-white/80" : "text-brand-red",
+                        isDark ? "text-white" : "text-[#535353]",
                       )}
                     >
                       {content.eyebrow}

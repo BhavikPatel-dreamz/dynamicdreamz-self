@@ -46,7 +46,7 @@ export function PartnerCertificationsBarBlock({
             <div className="w-[44%] max-[992px]:w-full">
               {content.eyebrow && (
                 <div className="eyebrow mb-3">
-                  <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+                  <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                     {content.eyebrow}
                   </span>
                 </div>

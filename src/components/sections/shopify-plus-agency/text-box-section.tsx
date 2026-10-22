@@ -44,7 +44,7 @@ export function TextBoxSection({
               </p>
             ))}
             {subheading ? (
-              <h3 className="mt-8 mb-2.5 text-center font-montreal-medium text-[18px] font-medium leading-[34.2px] text-[#535353]">
+              <h3 className="mt-8 mb-2.5 text-center font-montreal-medium text-[18px] font-normal leading-[34.2px] text-ink">
                 {subheading}
               </h3>
             ) : null}

@@ -31,7 +31,7 @@ export function OurWorkCaseStudiesSection({
               {eyebrow}
             </Eyebrow>
             <h2
-              className="m-0 font-montreal-medium text-[35px] font-normal leading-[1.38] text-[#090909] max-[1199px]:text-[28px] max-[992px]:mb-2.5 max-[767px]:text-2xl"
+              className="m-0 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1199px]:text-[28px] max-[992px]:mb-2.5 max-[767px]:text-2xl"
               id="our-work-case-studies-title"
             >
               {title}
@@ -79,7 +79,7 @@ export function OurWorkCaseStudiesSection({
                             {item.category}
                           </span>
                         </div>
-                        <h3 className="mb-3.5 font-display text-xl font-medium leading-[1.4] tracking-[-.48px] text-[#090909] line-clamp-2 transition-colors group-hover/title:text-[#ad5151]">
+                        <h3 className="mb-3.5 font-montreal-medium text-xl font-normal leading-[1.4] tracking-normal text-ink line-clamp-2 transition-colors group-hover/title:text-[#ad5151]">
                           {item.title}
                         </h3>
                       </Link>

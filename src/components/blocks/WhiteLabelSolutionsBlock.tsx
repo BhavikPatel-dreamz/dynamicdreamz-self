@@ -147,11 +147,11 @@ export function WhiteLabelSolutionsBlock(props: WhiteLabelSolutionsBlockProps = 
           >
             <div className="title max-w-[620px]">
               <div className="eyebrow mb-3">
-                <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+                <span className="font-montserrat text-sm font-semibold uppercase text-white">
                   {eyebrow}
                 </span>
               </div>
-              <h2 className="font-display text-[35px] font-medium leading-[48px] tracking-[-0.7px] text-white max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
+              <h2 className="font-montreal-medium text-[35px] font-normal leading-[48px] tracking-normal text-white max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
                 {title}
               </h2>
             </div>

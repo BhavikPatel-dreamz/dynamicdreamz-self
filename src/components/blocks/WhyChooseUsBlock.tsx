@@ -431,7 +431,7 @@ export function ShopifyCroWhySection({
                   <div className="title">
                     {content?.eyebrow && (
                       <div className="eyebrow mb-4">
-                        <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+                        <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                           {content.eyebrow}
                         </span>
                       </div>

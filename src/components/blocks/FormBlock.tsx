@@ -47,7 +47,7 @@ export function FormBlock({
               </div>
             )}
             {displayTitle && (
-              <h2 className="mb-3 font-display text-[35px] font-medium leading-[1.25] tracking-[-0.7px] text-[#090909] max-[1199px]:text-[30px] max-[767px]:text-[26px]">
+              <h2 className="mb-3 font-montreal-medium text-[35px] font-normal leading-[1.25] tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-[26px]">
                 {displayTitle}
               </h2>
             )}

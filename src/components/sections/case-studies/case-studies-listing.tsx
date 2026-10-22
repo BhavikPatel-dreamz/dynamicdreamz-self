@@ -117,7 +117,7 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
                   {sectionTitle.eyebrow}
                 </Eyebrow>
               ) : null}
-              <h2 className="m-0 font-display text-[35px] font-medium leading-[1.38] text-[#090909] max-[1199px]:text-[28px] max-[992px]:mb-2.5 max-[767px]:text-2xl">{sectionTitle.heading}</h2>
+              <h2 className="m-0 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1199px]:text-[28px] max-[992px]:mb-2.5 max-[767px]:text-2xl">{sectionTitle.heading}</h2>
             </div>
             <div className="text w-[49%] max-[1399px]:w-[56%] max-[1199px]:w-[51%] max-[992px]:w-full"><p className="m-0 font-sans text-base font-medium leading-[30.4px] text-[#535353] max-[992px]:text-sm max-[992px]:leading-[26px]">{sectionTitle.description}</p></div>
           </div>
@@ -170,7 +170,7 @@ function CaseStudyCard({ item }: { item: CaseStudyItem }) {
                     {item.industry}
                   </span>
                 </div>
-                <h2 className="h3 mb-2.5 font-display text-[24px] font-medium leading-8 tracking-[-.48px] text-[#090909] transition-colors group-hover/title:text-[#ad5151] max-[767px]:text-[20px]">
+                <h2 className="h3 mb-2.5 font-montreal-medium text-[24px] font-normal leading-8 tracking-normal text-ink transition-colors group-hover/title:text-[#ad5151] max-[767px]:text-[20px]">
                   {item.title}
                 </h2>
               </Link>

@@ -289,12 +289,12 @@ export function PortfolioSnippetsBlock({
             {resolvedEyebrow && (
               <div className={cn("mb-5 flex items-center gap-2", eyebrowClassName)}>
                 <span className="h-[2px] w-6 bg-brand-red" />
-                <span className="text-xs font-bold tracking-widest text-brand-red uppercase">
+                <span className="text-xs font-bold tracking-widest text-[#535353] uppercase">
                   {resolvedEyebrow}
                 </span>
               </div>
             )}
-            <h2 className="text-[35px] leading-[1.38] font-medium text-ink max-[992px]:text-[30px] max-[767px]:text-2xl">
+            <h2 className="font-montreal-medium text-[35px] leading-[1.38] font-normal text-ink max-[992px]:text-[30px] max-[767px]:text-2xl">
               {headingText}
             </h2>
           </div>

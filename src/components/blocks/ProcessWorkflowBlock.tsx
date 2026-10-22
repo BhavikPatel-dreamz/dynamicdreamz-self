@@ -71,7 +71,7 @@ export function ProcessWorkflowBlock({
           <div className="title max-w-[620px]">
             {resolvedEyebrow && (
               <div className="eyebrow mb-3">
-                <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+                <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
                   {resolvedEyebrow}
                 </span>
               </div>
@@ -172,7 +172,7 @@ export function ShopifyHorizontalProcessSection({
           <div className="title w-[44%] max-[991px]:w-full">
             {resolvedEyebrow && (
               <div className="eyebrow mb-3">
-                <span className="relative pl-10 font-montserrat text-sm font-semibold uppercase text-brand-red before:absolute before:left-0 before:top-2.5 before:h-0.5 before:w-7 before:bg-brand-red before:content-['']">
+                <span className="relative pl-10 font-montserrat text-sm font-semibold uppercase text-[#535353] before:absolute before:left-0 before:top-2.5 before:h-0.5 before:w-7 before:bg-brand-red before:content-['']">
                   {resolvedEyebrow}
                 </span>
               </div>

@@ -188,7 +188,7 @@ export function TrustStatsBarBlock({
                 <div className="eyebrow mb-3">
                   <span
                     className={cn(
-                      "font-montserrat text-sm font-semibold uppercase text-brand-red",
+                      "font-montserrat text-sm font-semibold uppercase text-[#535353]",
                       eyebrowVariant === "dash" &&
                         "relative pl-10 before:absolute before:left-0 before:top-2.5 before:h-0.5 before:w-7 before:bg-brand-red before:content-['']",
                     )}
@@ -308,12 +308,12 @@ export function WhiteLabelWhySection({
       <Container className="max-[575px]:px-4">
         {eyebrow && (
           <div data-aos="fade-up" className="mb-4 text-center">
-            <span className="font-montserrat text-sm font-semibold uppercase text-brand-red">
+            <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
               {eyebrow}
             </span>
           </div>
         )}
-        <h2 data-aos="fade-up" className="mb-12 text-center font-display text-[35px] font-medium leading-tight text-ink max-[992px]:text-[30px] max-[767px]:text-2xl">
+        <h2 data-aos="fade-up" className="mb-12 text-center font-montreal-medium text-[35px] font-normal leading-tight text-ink max-[992px]:text-[30px] max-[767px]:text-2xl">
           {formatBrText(title)}
         </h2>
         <div data-aos="fade-up" className="grid grid-cols-3 gap-6 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1">
