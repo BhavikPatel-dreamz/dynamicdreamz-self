@@ -378,7 +378,7 @@ export function ShopifyCroEngagementSection({
                 <ButtonLink
                   href={item.cta?.href ?? "/request-quote"}
                   variant="primary"
-                  className="mt-9 w-full text-center text-sm uppercase max-[991px]:py-3"
+                  className="mt-9 w-full text-center"
                 >
                   {item.cta?.label ?? "Request Quote"}
                 </ButtonLink>

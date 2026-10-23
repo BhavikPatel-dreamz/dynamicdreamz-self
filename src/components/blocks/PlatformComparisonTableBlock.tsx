@@ -38,7 +38,7 @@ export function PlatformComparisonTableBlock({
         className,
       )}
     >
-      <Container className="px-[15px] min-[1400px]:max-w-[1408px]">
+      <Container variant="wide">
         <div
           data-aos="fade-up"
           className="mb-[50px] flex flex-wrap items-start justify-between gap-10 max-[767px]:mb-[30px]"

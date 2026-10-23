@@ -76,7 +76,7 @@ export function AgencyServicesSection({
     <section className={sectionClass} data-section="services" id={id}>
       <Container>
         <SplitSectionHeading
-          className="mb-0 gap-10 max-[992px]:gap-2.5"
+          className="mb-0"
           description={showDescription ? content.description : undefined}
           eyebrow={resolvedEyebrow}
           heading={content.heading}

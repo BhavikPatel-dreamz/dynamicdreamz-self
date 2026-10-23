@@ -139,7 +139,7 @@ export function QuoteForm({
           <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[992px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
             <FieldLabel htmlFor="quote-phone">{quoteFormCopy.labels.phone}</FieldLabel>
             <PhoneInput
-              className="h-[49px] max-[992px]:h-[44px]"
+              
               id="quote-phone"
               name="phone"
               placeholder={phonePlaceholder ?? undefined}

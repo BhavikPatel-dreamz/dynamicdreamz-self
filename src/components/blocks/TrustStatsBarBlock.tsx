@@ -256,7 +256,7 @@ export function WhiteLabelCounterSection({
 }: WhiteLabelCounterSectionProps = {}) {
   return (
     <section className="white_label_counter_section relative border-y border-[rgba(0,0,0,0.10)] bg-white py-0">
-      <Container className="min-[1400px]:max-w-[1408px] px-[15px] max-[1199px]:max-w-full max-[1199px]:px-0">
+      <Container variant="fullBleedTablet">
         <div
           data-aos="fade-up"
           className="stats_container flex flex-wrap items-center justify-between max-[991px]:relative max-[991px]:after:absolute max-[991px]:after:top-1/2 max-[991px]:after:left-0 max-[991px]:after:h-[1px] max-[991px]:after:w-full max-[991px]:after:-translate-y-1/2 max-[991px]:after:bg-[rgba(40,40,40,0.10)] max-[991px]:after:content-['']"
@@ -305,7 +305,7 @@ export function WhiteLabelWhySection({
 }: WhiteLabelWhySectionProps) {
   return (
     <section className={cn("white_label_why_partner_section py-20 max-[992px]:py-[50px]", className)} id={id}>
-      <Container className="max-[575px]:px-4">
+      <Container>
         {eyebrow && (
           <div data-aos="fade-up" className="mb-4 text-center">
             <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
@@ -358,7 +358,7 @@ export function ResourcesTrustSection({
       className={cn("trusted-web-sec py-20 max-[991px]:py-[50px]", className)}
       aria-labelledby="resources-trust-title"
     >
-      <Container className="min-[1440px]:!max-w-[1180px]">
+      <Container variant="narrow">
         {(heading || description) && (
           <div
             data-aos="fade-up"

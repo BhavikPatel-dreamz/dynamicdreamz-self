@@ -18,7 +18,7 @@ export function CaseStudySolutions({ solutions }: CaseStudySolutionsProps) {
     <section className="bg-[#192019] py-20 text-white max-[991px]:py-[50px]" aria-labelledby="solutions-heading">
       <Container>
         <div className="mx-auto max-w-[900px]">
-          <div className="mb-10 max-[991px]:mb-[30px]">
+          <div >
             <div className="relative mb-4 inline-flex items-center pl-10 text-[14px] font-semibold uppercase leading-[1.2] text-white before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[767px]:pl-[23px] max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
               <span>{eyebrow}</span>
             </div>

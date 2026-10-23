@@ -77,7 +77,7 @@ export function ShopifyMobileAppHeroSection({
           <div className="left-col z-1 w-[53%] min-[1400px]:w-[51%] py-[60px] max-[1199px]:w-full max-[1199px]:py-10 max-[1199px]:text-center max-[767px]:py-8">
             <div className="hero-content">
               {content.eyebrows && content.eyebrows.length > 0 && (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[767px]:pl-6 max-[767px]:before:w-[15px]">
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[1199px]:justify-center max-[767px]:mx-auto max-[767px]:justify-center max-[767px]:pl-6 max-[767px]:before:w-[15px]">
                   {content.eyebrows.map((item, idx) => (
                     <span
                       key={item}
@@ -104,7 +104,7 @@ export function ShopifyMobileAppHeroSection({
                 {content.description}
               </p>
 
-              <div className="btn-group mt-[30px] flex flex-wrap items-center gap-[15px] max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:items-stretch">
+              <div className="btn-group mt-[30px] flex flex-wrap items-center gap-[15px] max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:items-stretch max-[575px]:w-full [&_a]:max-[575px]:w-full">
                 <ButtonLink
                   href={content.primaryCta.href}
                   variant="primary"

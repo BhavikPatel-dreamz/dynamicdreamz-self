@@ -122,7 +122,7 @@ export function SplitFaqSection({
                 fallback={
                   <StaticFaqAccordion
                     answerClassName={answerClassName}
-                    iconClassName="right-0 size-[30px] max-[991px]:top-1/2 max-[991px]:right-0 max-[991px]:size-[26px] max-[991px]:-translate-y-1/2"
+                    
                     iconVariant={iconVariant}
                     idPrefix={idPrefix}
                     itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 max-[767px]:!py-5 last:!border-b-0", itemClassName)}
@@ -132,7 +132,7 @@ export function SplitFaqSection({
                     triggerClassName={cn("!pl-0 !pr-[37px] !py-0", triggerClassName)}
                   />
                 }
-                iconClassName="right-0 size-[30px] max-[991px]:top-1/2 max-[991px]:right-0 max-[991px]:size-[26px] max-[991px]:-translate-y-1/2"
+                
                 iconVariant={iconVariant}
                 idPrefix={idPrefix}
                 itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 max-[767px]:!py-5 last:!border-b-0", itemClassName)}
@@ -146,7 +146,7 @@ export function SplitFaqSection({
               <FaqAccordion
                 animateOnReveal={animateOnReveal}
                 answerClassName={answerClassName}
-                iconClassName="right-0 size-[30px] max-[991px]:top-1/2 max-[991px]:right-0 max-[991px]:size-[26px] max-[991px]:-translate-y-1/2"
+                
                 iconVariant={iconVariant}
                 idPrefix={idPrefix}
                 itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 max-[767px]:!py-5 last:!border-b-0", itemClassName)}

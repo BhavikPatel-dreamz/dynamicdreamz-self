@@ -213,7 +213,7 @@ export function ContactForm() {
         ) : null}
       </div>
 
-      <div className="flex items-center justify-between gap-5 max-[767px]:flex-col-reverse max-[767px]:items-center">
+      <div className="flex items-center justify-between gap-5 max-[767px]:flex-col-reverse max-[767px]:items-center [&_button]:max-[767px]:w-full">
         <div className="text-xs font-normal text-muted max-[767px]:text-center">
           <p>{contactFormCopy.note}</p>
         </div>
@@ -221,7 +221,7 @@ export function ContactForm() {
           type="submit"
           variant="primary"
           disabled={isPending}
-          className="min-h-[49px] max-[767px]:w-full"
+          
         >
           {isPending ? contactFormCopy.sending : contactFormCopy.submit}
         </Button>

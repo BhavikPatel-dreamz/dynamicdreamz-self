@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { cn } from "@/lib/class-names";
+
 type DeferredAutoplayVideoProps = {
   src: string;
   className?: string;
@@ -14,6 +16,7 @@ type DeferredAutoplayVideoProps = {
   decorative?: boolean;
   preload?: "none" | "metadata" | "auto";
   loadRootMargin?: string;
+  hidePosterOnMobile?: boolean;
 };
 
 export function DeferredAutoplayVideo({
@@ -27,6 +30,7 @@ export function DeferredAutoplayVideo({
   decorative = false,
   preload = "none",
   loadRootMargin = "600px",
+  hidePosterOnMobile = false,
 }: DeferredAutoplayVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hasSource, setHasSource] = useState(false);
@@ -109,7 +113,7 @@ export function DeferredAutoplayVideo({
       {poster ? (
         <Image
           aria-hidden={decorative || undefined}
-          className={posterClassName}
+          className={cn("object-cover", hidePosterOnMobile && "max-[767px]:hidden", posterClassName)}
           alt={decorative ? "" : (posterAlt ?? "")}
           fill
           sizes={posterSizes}

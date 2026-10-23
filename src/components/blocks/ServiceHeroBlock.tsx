@@ -186,7 +186,7 @@ export function ResourcesHeroSection({
       className={cn("inner-hero-sec pt-[210px] max-[991px]:pt-[140px]", className)}
       aria-labelledby="resources-title"
     >
-      <Container className="min-[1440px]:!max-w-[1180px]">
+      <Container variant="narrow">
         <div className="inner-hero-content text-center">
           <h1
             id="resources-title"

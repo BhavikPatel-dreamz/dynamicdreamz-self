@@ -423,7 +423,7 @@ export function WhyChooseShopifyMigrationSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-10 gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
+          
           dark
           description={content.description}
           eyebrow={content.eyebrow}

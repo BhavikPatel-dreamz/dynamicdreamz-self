@@ -35,12 +35,10 @@ export function EvaluationFrameworkSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[50px] gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
+          className="mb-[50px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
-          textColumnClassName="w-[48%] max-[992px]:w-full"
-          titleColumnClassName="w-[44%] max-[992px]:w-full"
           variant="left"
         />
 

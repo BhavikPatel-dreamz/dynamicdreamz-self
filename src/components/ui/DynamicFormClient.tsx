@@ -195,12 +195,12 @@ export function DynamicFormClient({
         </div>
       )}
 
-      <div className="mt-6">
+      <div className="mt-6 [&_button]:w-full [&_button]:sm:w-auto">
         <Button
           type="submit"
           variant="primary"
           disabled={isPending}
-          className="w-full sm:w-auto"
+          
         >
           {isPending ? submittingLabel : submitLabel}
         </Button>

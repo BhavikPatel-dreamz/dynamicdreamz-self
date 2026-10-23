@@ -202,7 +202,7 @@ export function FullPortfolioFilterBlock({
       id="our-work-projects"
       aria-labelledby="our-work-projects-title"
     >
-      <Container className="max-[575px]:px-4">
+      <Container>
         <div data-aos="fade-up" className="mb-10 flex items-end justify-between gap-12 max-[992px]:items-start max-[767px]:mb-[30px] max-[767px]:flex-col max-[767px]:gap-4">
           <div className="shrink-0">
             {eyebrow && (

@@ -72,7 +72,7 @@ export function IndustryHeroSection({
       aria-labelledby={`${slug}-title`}
       data-industry="hero"
     >
-      <Container className="max-[575px]:px-4">
+      <Container>
         <div className="industries-hero-content text-center">
           {resolvedShowEyebrow && resolvedEyebrow ? (
             <span className="mb-1 block text-base leading-[19px] font-semibold tracking-[-0.32px] text-[#535353] uppercase">
@@ -101,7 +101,7 @@ export function IndustryHeroSection({
           )}
           {resolvedShowCta ? (
             <ButtonLink
-              className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] max-[992px]:min-h-[42px] max-[992px]:py-3 max-[992px]:text-sm"
+              
               href={resolvedCtaHref}
               variant="primary"
             >

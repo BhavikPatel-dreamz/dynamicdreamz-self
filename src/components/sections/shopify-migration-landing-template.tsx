@@ -147,7 +147,7 @@ export function ShopifyMigrationLandingTemplate({
       {/* 6. Why Choose (if present) */}
       {whyChoose ? (
         <EvaluationFrameworkSection
-          className="pt-0 max-[991px]:pt-0"
+          className="pt-0"
           content={whyChoose}
           id={whyChooseId}
         />

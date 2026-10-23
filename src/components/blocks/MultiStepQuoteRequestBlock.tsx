@@ -109,7 +109,7 @@ function GoBackButton() {
 export function HeaderTwo() {
   return (
     <header className="header-two relative z-10 w-full py-[30px] max-[992px]:py-[26.5px]">
-      <Container className="min-[1300px]:!max-w-[1360px] min-[1300px]:!px-10">
+      <Container variant="form">
         <div className="flex items-center justify-between">
           <Link
             className="inline-flex shrink-0 -translate-y-[2.5px] max-[992px]:translate-y-0"
@@ -425,7 +425,7 @@ export function QuoteForm({
           <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[992px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
             <FieldLabel htmlFor="quote-phone">{quoteFormCopy.labels.phone}</FieldLabel>
             <PhoneInputClient
-              className="h-[49px] max-[992px]:h-[44px]"
+              
               id="quote-phone"
               name="phone"
               placeholder={phonePlaceholder ?? undefined}
@@ -538,7 +538,7 @@ export function MultiStepQuoteRequestBlock({
     <div className="overflow-x-clip">
       <HeaderTwo />
       <section className="request-quote-sec relative -mt-[111px] overflow-hidden p-0">
-        <Container className="min-[1300px]:!max-w-[1360px] min-[1300px]:!px-10">
+        <Container variant="form">
           <div className="request-quote-main">
             <div className="wrapper flex max-[992px]:flex-col-reverse">
               <div className="left-col-wrapper relative w-1/2 before:absolute before:top-0 before:right-0 before:-z-10 before:h-full before:w-[100vw] before:bg-[#fbf7ed] before:content-[''] max-[992px]:w-full max-[992px]:before:left-1/2 max-[992px]:before:right-1/2 max-[992px]:before:-ml-[50vw] max-[992px]:before:-mr-[50vw]">

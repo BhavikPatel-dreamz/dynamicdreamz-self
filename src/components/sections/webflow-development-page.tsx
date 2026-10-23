@@ -51,7 +51,7 @@ export function WebflowDevelopmentPage() {
       />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="pt-0 pb-0 max-[991px]:pt-0 max-[991px]:pb-0"
+        className="py-0"
         columns={4}
         content={webflowDevelopmentPortfolio}
         eyebrow={webflowDevelopmentPortfolio.eyebrow}

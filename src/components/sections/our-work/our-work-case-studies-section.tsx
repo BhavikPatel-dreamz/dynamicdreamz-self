@@ -21,7 +21,7 @@ export function OurWorkCaseStudiesSection({
       className="see-the-work-sec bg-[#eff4ef] py-10"
       aria-labelledby="our-work-case-studies-title"
     >
-      <Container className="max-[575px]:px-4">
+      <Container>
         <div
           data-aos="fade-up"
           className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-[30px] max-[767px]:flex-col max-[767px]:items-start max-[767px]:gap-4"

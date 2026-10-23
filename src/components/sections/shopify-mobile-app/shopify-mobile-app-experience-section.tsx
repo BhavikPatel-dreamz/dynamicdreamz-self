@@ -23,13 +23,13 @@ export function ShopifyMobileAppExperienceSection({
 }: ShopifyMobileAppExperienceSectionProps) {
   return (
     <section id="shopping_eperience" className="mobile-shopping-eperience-sec bg-[#FAFAF7] py-20 max-[991px]:py-[50px]">
-      <Container className="min-[1400px]:max-w-[1408px] px-[15px]">
+      <Container variant="wide">
         <SplitSectionHeading
           variant="services"
           eyebrow={content.eyebrow}
           heading={content.heading}
           description={content.description}
-          className="mb-[50px] max-[767px]:mb-[30px]"
+          className="mb-[50px]"
         />
 
         <div data-aos="fade-up" className="wrapper flex flex-wrap -mx-[10px] -mb-5">

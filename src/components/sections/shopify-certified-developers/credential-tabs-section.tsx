@@ -27,7 +27,7 @@ export function CredentialTabsSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[54px] max-[992px]:mb-[30px]"
+          className="mb-[54px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}

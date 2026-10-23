@@ -61,7 +61,7 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
               {title}
             </SectionHeading>
           </div>
-          <SectionDescription className="w-[48%] max-[1199px]:w-full">
+          <SectionDescription>
             {intro}
           </SectionDescription>
         </div>

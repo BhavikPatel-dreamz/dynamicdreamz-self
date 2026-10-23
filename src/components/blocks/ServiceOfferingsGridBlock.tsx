@@ -364,7 +364,7 @@ export function CommerceSolutionsSection({
                           </span>
                         </span>
                         <FaqCircleCrossIcon
-                          className="accordion-close-icon absolute top-1/2 right-0 size-[30px] -translate-y-1/2 shrink-0 max-[992px]:size-[26px]"
+                          
                           isOpen={isOpen}
                         />
                         <span className="sr-only">{isOpen ? homeSectionCopy.commerceAccordion.close : homeSectionCopy.commerceAccordion.open} {item.title}</span>

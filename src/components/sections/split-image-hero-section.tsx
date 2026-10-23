@@ -70,7 +70,7 @@ function SplitImageHeroText({
   return (
     <div className={className}>
       {eyebrow && (
-        <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+        <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[1199px]:justify-center max-[767px]:mx-auto max-[767px]:justify-center max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
           {Array.isArray(eyebrow) ? (
             eyebrow.map((item, index) => (
               <span
@@ -101,7 +101,7 @@ function SplitImageHeroText({
         </p>
       )}
       {secondaryCtaLabel && secondaryCtaHref ? (
-        <div className="btn-group flex flex-wrap items-center gap-2.5 pt-2.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:gap-2.5">
+        <div className="btn-group flex flex-wrap items-center gap-2.5 pt-2.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:gap-2.5 max-[575px]:w-full [&_a]:max-[575px]:w-full">
           {ctaLabel && (
             <ButtonLink
               aria-label={ctaAriaLabel ?? ctaLabel}
@@ -121,7 +121,7 @@ function SplitImageHeroText({
           </ButtonLink>
         </div>
       ) : ctaLabel ? (
-        <div className="btn-group flex items-center pt-2.5 max-[1199px]:justify-center max-[767px]:flex-col">
+        <div className="btn-group flex items-center pt-2.5 max-[1199px]:justify-center max-[767px]:flex-col max-[575px]:w-full [&_a]:max-[575px]:w-full">
           <ButtonLink
             aria-label={ctaAriaLabel ?? ctaLabel}
             href={ctaHref}

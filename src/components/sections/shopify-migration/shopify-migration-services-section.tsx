@@ -47,7 +47,7 @@ export function ShopifyMigrationServicesSection({
       <Container>
         {(eyebrow || heading || description) && (
           <SplitSectionHeading
-            className="mb-[50px] gap-6 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
+            className="mb-[50px]"
             description={typeof description === "string" || Array.isArray(description) ? description : undefined}
             eyebrow={eyebrow}
             heading={heading ?? ""}

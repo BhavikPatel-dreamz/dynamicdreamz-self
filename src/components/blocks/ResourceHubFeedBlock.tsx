@@ -100,7 +100,7 @@ export function ResourceHubFeedBlock({
         </div>
         <div data-aos="fade-up" className="mt-[50px] flex justify-center max-[767px]:mt-10">
           <ButtonLink
-            className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] max-[992px]:min-h-[42px] max-[992px]:py-3 max-[992px]:text-sm"
+            
             variant="outline"
             href={ctaHref}
           >

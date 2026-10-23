@@ -39,7 +39,7 @@ export function CultureBentoGalleryBlock({
 
   return (
     <section
-      className="overflow-hidden py-20 max-[992px]:py-[50px]"
+      className="overflow-hidden py-20 max-[992px]:py-[50px] max-[767px]:hidden"
       data-life="gallery"
       aria-label="Life at Dynamic Dreamz gallery"
     >

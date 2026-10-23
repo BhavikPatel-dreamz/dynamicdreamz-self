@@ -6,7 +6,7 @@ import { WhiteLabelWhySection } from "@/components/blocks/TrustStatsBarBlock";
 import { WhiteLabelToolsSection } from "@/components/blocks/TechStackShowcaseBlock";
 import { DeliveryModelComparisonSection } from "@/components/blocks/EngagementModelsBlock";
 import { HowAgenciesUseSection } from "@/components/blocks/WhiteLabelSolutionsBlock";
-import { ShopifySupportScenariosSection } from "@/components/blocks/WhiteLabelSolutionsBlock";
+import { ShopifySupportScenariosSection } from "@/components/sections/white-label-shopify/shopify-support-scenarios-section";
 import { ShopifyTeamBehindItSection } from "@/components/blocks/WhiteLabelSolutionsBlock";
 import { WhiteLabelCounterSection } from "@/components/blocks/TrustStatsBarBlock";
 import { ServiceHeroVideoSection } from "@/components/blocks/ServiceHeroBlock";
@@ -40,7 +40,7 @@ export function WhiteLabelShopifyPage() {
 
       {/* 5. Portfolio Section */}
       <PortfolioShowcaseSection
-        className="pt-0 max-[991px]:pt-0"
+        className="pt-0"
         columns={4}
         content={whiteLabelShopifyPortfolio}
         headerLayout="split"

@@ -100,7 +100,7 @@ export function PhoneInput({
   return (
     <div
       ref={containerRef}
-      className={`relative flex items-center w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-white transition-colors focus-within:border-[#090909] ${className}`}
+      className={`relative flex items-center w-full h-[49px] max-[991px]:h-[44px] rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-white transition-colors focus-within:border-[#090909] ${className}`}
     >
       <div className="relative flex h-full items-center shrink-0">
         <button

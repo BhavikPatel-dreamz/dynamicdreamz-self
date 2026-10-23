@@ -23,7 +23,7 @@ export function DesignReasonsSection({
         className,
       )}
     >
-      <Container className="max-[575px]:px-4">
+      <Container>
         <div className="flex items-center justify-between gap-[60px] max-[992px]:flex-col max-[992px]:items-stretch max-[992px]:gap-5">
           <div data-aos="fade-up" className="w-[47%] max-[992px]:w-full">
             <h2 className="mb-[15px] font-display text-[35px] leading-[1.38] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35]">

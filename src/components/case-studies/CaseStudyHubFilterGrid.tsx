@@ -97,7 +97,7 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
         <Container>
           <div className="cs-filter-main">
             <div className="mx-auto max-w-[1170px]">
-              <div className="cs-filter grid grid-cols-[minmax(260px,1fr)_260px_260px] items-center gap-3 rounded-[20px] border-[1.5px] border-[rgba(18,18,18,0.1)] bg-white p-[13px] shadow-[0_8px_30px_rgba(40,40,40,0.04)] max-[992px]:grid-cols-2 max-[992px]:gap-[13px] max-[767px]:grid-cols-1">
+              <div className="cs-filter grid grid-cols-[minmax(260px,1fr)_260px_260px] items-center gap-3 rounded-[20px] border-[1.5px] border-[rgba(18,18,18,0.1)] bg-white p-[13px] shadow-[0_8px_30px_rgba(40,40,40,0.04)] max-[992px]:grid-cols-2 max-[992px]:gap-[13px] max-[767px]:grid-cols-1 max-[767px]:gap-2.5 max-[767px]:p-[15px] max-[767px]:rounded-[10px]">
                 <label className="cs-search relative w-full max-[992px]:col-span-2 max-[767px]:col-span-1">
                   <span className="sr-only">{caseStudiesUiCopy.searchLabel}</span>
                   <input value={searchQuery} onChange={(event) => { setSearchQuery(event.target.value); setVisibleCount(BATCH_SIZE); }} type="search" placeholder={caseStudiesUiCopy.searchPlaceholder} className="h-[50px] max-[767px]:h-[44px] w-full rounded-[10px] border border-[rgba(40,40,40,0.12)] bg-[rgba(255,255,255,0.05)] pl-11 pr-4 font-sans text-sm font-medium text-[#282828] outline-none placeholder:text-[#282828]/80 focus:border-[#ad5151]" />
@@ -170,7 +170,7 @@ function CaseStudyCard({ item }: { item: CaseStudyItem }) {
                     {item.industry}
                   </span>
                 </div>
-                <h2 className="h3 mb-2.5 font-montreal-medium text-[24px] font-normal leading-8 tracking-normal text-ink transition-colors group-hover/title:text-[#ad5151] max-[767px]:text-[20px]">
+                <h2 className="h3 mb-2.5 font-montreal-medium text-[24px] font-normal leading-8 tracking-normal text-ink transition-colors group-hover/title:text-[#ad5151] max-[767px]:text-[20px] max-[767px]:leading-[28px]">
                   {item.title}
                 </h2>
               </Link>

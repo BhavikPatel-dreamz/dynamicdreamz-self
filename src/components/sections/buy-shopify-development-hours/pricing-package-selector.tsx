@@ -39,7 +39,7 @@ export function PricingPackageSelector({
 
       <div
         aria-live="polite"
-        className="stats-grid mt-[25px] grid grid-cols-3 gap-2.5 max-[1199px]:grid-cols-2"
+        className="stats-grid mt-[25px] grid grid-cols-3 gap-2.5 max-[1199px]:grid-cols-2 [&>*:last-child]:max-[1199px]:col-span-2"
         data-pricing-stats
       >
         <PricingStat label={shopifyHoursSectionCopy.pricing.hours}>
@@ -53,7 +53,6 @@ export function PricingPackageSelector({
           <div className="sub-old font-medium text-brand-red line-through">${selectedPackage.previousRate}{shopifyHoursSectionCopy.pricing.perHour}</div>
         </PricingStat>
         <PricingStat
-          className="max-[1199px]:col-span-2"
           label={shopifyHoursSectionCopy.pricing.cost}
         >
           <div className="val font-bold">${selectedPackage.cost}</div>
@@ -98,7 +97,7 @@ export function PricingPackageSelector({
 
       <ButtonLink
         aria-label={`Buy ${selectedPackage.hours} Shopify development hours for $${selectedPackage.cost}`}
-        className="btn btn-red flex w-full max-w-none !py-[15px] !leading-[normal] max-[1199px]:!min-h-0 max-[1199px]:!py-3 max-[1199px]:!text-sm"
+        className="w-full"
         external
         href={selectedPackage.purchaseHref}
         data-purchase-link

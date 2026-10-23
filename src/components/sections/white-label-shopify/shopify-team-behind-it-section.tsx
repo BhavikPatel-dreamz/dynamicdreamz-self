@@ -103,7 +103,7 @@ export function ShopifyTeamBehindItSection({
             {content.ctas.secondary ? (
               content.ctas.secondary.variant === "arrowLink" ? (
                 <TextArrowLink
-                  className="ml-5 max-[767px]:ml-0 max-[767px]:mt-5"
+                  
                   href={content.ctas.secondary.href}
                 >
                   {content.ctas.secondary.label}

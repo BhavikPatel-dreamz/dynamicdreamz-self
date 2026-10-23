@@ -40,7 +40,7 @@ export function WhiteLabelShopifyPage() {
 
       {/* 5. Portfolio Section */}
       <PortfolioShowcaseSection
-        className="pt-0 max-[991px]:pt-0"
+        className="pt-0"
         columns={4}
         content={whiteLabelShopifyPortfolio}
         headerLayout="split"

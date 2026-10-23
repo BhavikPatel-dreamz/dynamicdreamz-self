@@ -57,7 +57,7 @@ export function LifeHiringBlock({
             </p>
             <div className="h-[54px] max-[992px]:h-[52.4px]">
               <ButtonLink
-                className="!min-h-[49px] !px-6 !py-[15px] !text-base !leading-[normal] max-[992px]:!min-h-[42px] max-[992px]:!py-3 max-[992px]:!text-sm"
+                
                 href={href}
                 variant="primary"
               >

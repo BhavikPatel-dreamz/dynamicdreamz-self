@@ -37,7 +37,7 @@ export function WooCommerceDevelopmentPage() {
       />
       <AgencyServicesSection
         cardVariant="services-box"
-        className="pb-0 max-[992px]:pb-0"
+        className="pb-0"
         columns={2}
         content={servicesContent}
         headerLayout="split"
@@ -51,8 +51,6 @@ export function WooCommerceDevelopmentPage() {
         eyebrow={woocommerceDevelopmentPortfolio.eyebrow}
         headerLayout="split"
         sectionId="our_work"
-        textColumnClassName="w-[48.3%] max-[992px]:w-full"
-        titleColumnClassName="w-[44%] max-[992px]:w-full"
         variant="liveGrid"
       />
       <HappyClientSection

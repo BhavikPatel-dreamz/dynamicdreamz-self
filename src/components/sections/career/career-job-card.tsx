@@ -76,9 +76,8 @@ export function CareerJobCard({ job, location }: CareerJobCardProps) {
           </div>
         </div>
 
-        <div className="apply-btn ml-[63px] max-[1199px]:ml-5 max-[991px]:ml-0 max-[991px]:w-full">
+        <div className="apply-btn ml-[63px] max-[1199px]:ml-5 max-[991px]:ml-0 max-[991px]:w-full [&_a]:max-[991px]:w-full [&_a]:max-[991px]:text-center">
           <ButtonLink
-            className="max-[991px]:w-full max-[991px]:text-center"
             href={careerApplicationPath(job, location)}
             variant="primary"
           >

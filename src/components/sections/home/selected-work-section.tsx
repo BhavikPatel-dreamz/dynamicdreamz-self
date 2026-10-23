@@ -27,8 +27,8 @@ function ProjectMedia({ project }: { project: Project }) {
       <DeferredAutoplayVideo
         className="absolute inset-0 h-full w-full object-cover"
         decorative
+        hidePosterOnMobile
         poster={projectVideoPosters[project.media.src]}
-        posterClassName="object-cover max-[767px]:hidden"
         posterSizes="(max-width: 767px) calc(100vw - 50px), 50vw"
         preload="none"
         sourceMedia="(min-width: 768px)"
@@ -70,7 +70,7 @@ function ProjectList({ decorative = false }: { decorative?: boolean }) {
               {project.technology}
             </span>
             <span className="absolute right-[30px] top-1/2 -translate-y-1/2 max-[1380px]:right-5 max-[767px]:right-4" aria-hidden="true">
-              <DiagonalArrowIcon className="h-5 w-5 max-[767px]:h-[13px] max-[767px]:w-[13px]" />
+              <DiagonalArrowIcon  />
             </span>
           </span>
         </a>
@@ -94,14 +94,13 @@ export function SelectedWorkSection({
 }: SelectedWorkSectionProps = {}) {
   return (
     <section className="overflow-hidden bg-dark-green pt-[60px] pb-[52px] text-white max-[767px]:py-[30px]">
-      <Container
-        data-aos="fade-up"
-        className="flex items-end justify-between max-[992px]:flex-col max-[992px]:items-start"
-      >
-        <SectionHeading tone="inverse" className="mr-5 max-w-[600px] min-[768px]:max-[992px]:m-0 min-[768px]:max-[992px]:max-w-full max-[767px]:m-0 max-[767px]:mb-4 max-[767px]:max-w-full">{title}</SectionHeading>
-        <p className="max-w-[580px] text-base leading-7 font-medium text-white min-[768px]:max-[992px]:mt-2.5 min-[768px]:max-[992px]:max-w-full max-[767px]:max-w-full max-[767px]:text-sm max-[767px]:leading-[180%]">
-          {description}
-        </p>
+      <Container data-aos="fade-up">
+        <div className="flex items-end justify-between max-[992px]:flex-col max-[992px]:items-start [&_h2]:mr-5 [&_h2]:max-w-[600px] [&_h2]:min-[768px]:max-[992px]:m-0 [&_h2]:min-[768px]:max-[992px]:max-w-full [&_h2]:max-[767px]:m-0 [&_h2]:max-[767px]:mb-4 [&_h2]:max-[767px]:max-w-full [&_p]:max-w-[580px] [&_p]:min-[768px]:max-[992px]:mt-2.5 [&_p]:min-[768px]:max-[992px]:max-w-full [&_p]:max-[767px]:max-w-full">
+          <SectionHeading tone="inverse">{title}</SectionHeading>
+          <p className="text-base leading-7 font-medium text-white max-[767px]:text-sm max-[767px]:leading-[180%]">
+            {description}
+          </p>
+        </div>
       </Container>
       <div
         data-aos="fade-up"
@@ -114,7 +113,7 @@ export function SelectedWorkSection({
         </div>
       </div>
       <div data-aos="fade-up" className="flex justify-center">
-        <ButtonLink className="min-h-[49px] px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:min-h-[42px] max-[992px]:py-3 max-[992px]:text-sm" variant="light" href={ctaHref}>{ctaLabel}</ButtonLink>
+        <ButtonLink className="normal-case" variant="light" href={ctaHref}>{ctaLabel}</ButtonLink>
       </div>
     </section>
   );

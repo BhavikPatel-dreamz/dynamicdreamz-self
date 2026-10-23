@@ -17,7 +17,7 @@ export function WhiteLabelStatsSection({
 }: WhiteLabelStatsSectionProps) {
   return (
     <section className="white_label_counter_section relative border-y border-black/10 py-0">
-      <Container className="max-[1199px]:max-w-full max-[1199px]:px-0">
+      <Container variant="fullBleedTablet">
         <div className="stats_section">
           <div className="stats_container flex flex-wrap items-center justify-between">
             {stats.map((stat, index) => (
@@ -89,7 +89,7 @@ export function WhiteLabelWhySection({
         "pt-[70px] pb-[82px] max-[1199px]:py-20 max-[992px]:py-[50px]",
       )}
     >
-      <Container className="max-[575px]:px-4">
+      <Container>
         <div data-aos="fade-up" className="title-wrapper text-center">
           {eyebrow ? (
             <div className="mb-2.5 text-center text-[13px] font-bold uppercase tracking-[1.5px] text-[#e33d37]">

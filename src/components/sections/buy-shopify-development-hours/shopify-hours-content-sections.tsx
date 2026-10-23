@@ -19,7 +19,7 @@ export function ShopifyHoursComparisonSection() {
         <div className="bulk-shopify-fulltime-resources-row flex items-center justify-between gap-0 max-[1199px]:flex-wrap">
           <div className="section_title_with_eyebrow flex-wrap bulk-shopify-fulltime-resources-title w-[calc(100%-800px)] pr-[68px] max-[1199px]:w-full max-[1199px]:pb-[50px] max-[1199px]:pr-0 max-[1199px]:text-center">
             <div className="title">
-              <Eyebrow className="mb-4 max-[1199px]:justify-center">
+              <Eyebrow align="responsive-center" className="mb-4">
                 {shopifyHoursComparison.eyebrow}
               </Eyebrow>
               <h2
@@ -80,9 +80,8 @@ export function ShopifyHoursComparisonSection() {
                   >
                     {item.note}
                   </span>
-                  <div className="get-started-btn absolute -bottom-[50px] left-1/2 -translate-x-1/2 max-[767px]:static max-[767px]:mt-5 max-[767px]:translate-x-0">
+                  <div className="get-started-btn absolute -bottom-[50px] left-1/2 -translate-x-1/2 w-full max-w-[318px] max-[767px]:static max-[767px]:mt-5 max-[767px]:translate-x-0 max-[767px]:max-w-none [&_a]:w-full">
                     <ButtonLink
-                      className="min-w-[318px] max-[767px]:flex max-[767px]:w-full max-[767px]:min-w-0 max-[767px]:max-w-none"
                       href={item.href}
                     >
                       {item.cta}
@@ -107,7 +106,7 @@ export function ShopifyHoursTasksSection() {
       <Container>
         <div className="can-you-use-shopify-hours-row">
           <SplitSectionHeading
-            className="mb-[50px] max-[991px]:mb-[30px]"
+            className="mb-[50px]"
             description={shopifyHoursTasks.description}
             eyebrow={shopifyHoursTasks.eyebrow}
             heading={shopifyHoursTasks.heading}

@@ -3906,8 +3906,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     },
                     badges,
                   }}
-                  leftColClassName="left-col w-[51%] max-[1199px]:w-full max-[1199px]:text-center"
-                  rightColClassName="right-col w-[43.182%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[992px]:w-full"
                   videoLogoClassName="left-[-90px]"
                 />
               );

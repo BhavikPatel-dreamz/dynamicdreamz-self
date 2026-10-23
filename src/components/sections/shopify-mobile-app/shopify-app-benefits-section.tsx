@@ -33,7 +33,7 @@ export function ShopifyAppBenefitsSection({
       <Container>
         <SplitSectionHeading
           variant="centered"
-          className="mb-[50px] max-[991px]:mb-[30px]"
+          className="mb-[50px]"
           heading={content.heading}
           description={content.description}
         />

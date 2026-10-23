@@ -173,7 +173,7 @@ export function WordPressThemeCustomizationTemplate({
       {/* 7. Portfolio */}
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="pt-0 max-[991px]:pt-0"
+        className="pt-0"
         columns={4}
         content={content.portfolio}
         sectionId="our_work"

@@ -43,7 +43,7 @@ export function CaseStudyCardsSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[50px] gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
+          className="mb-[50px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}

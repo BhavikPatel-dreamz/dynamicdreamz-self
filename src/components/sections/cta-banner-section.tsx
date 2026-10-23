@@ -61,7 +61,7 @@ export function CtaBannerSection({
           <ButtonLink
             href={ctaHref}
             variant="light"
-            className="min-h-[50px] px-6 py-[15px] font-montserrat text-base font-bold uppercase text-[#121212] rounded-[30px]"
+            className="min-h-[50px] px-6 py-[15px] font-montserrat text-base font-bold uppercase text-[#121212] rounded-[30px] max-[575px]:w-full text-center"
           >
             {ctaLabel}
           </ButtonLink>

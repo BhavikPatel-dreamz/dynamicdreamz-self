@@ -81,7 +81,7 @@ function GooglePreferredBadge() {
 export function BlogArticleHero({ post }: { post: BlogPostDetail }) {
   return (
     <>
-      <Container className="max-[575px]:px-4">
+      <Container>
         <Link
           href={siteConfig.blogsPath}
           className="group mb-[42px] inline-flex items-center gap-2 rounded-sm text-[16px] font-bold text-[#15190f] transition-colors duration-300 hover:text-brand-red focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red"
@@ -92,7 +92,7 @@ export function BlogArticleHero({ post }: { post: BlogPostDetail }) {
       </Container>
 
       <header className="entry-header mb-5" aria-labelledby="blog-post-title">
-        <Container className="max-[575px]:px-4">
+        <Container>
           <div className="wrapper flex items-center justify-between max-[1199px]:flex-wrap">
             <div className="left-title w-[calc(100%-300px)] max-[1199px]:w-full">
               <h1
@@ -268,7 +268,7 @@ export function BlogDetailPage({ post, relatedPosts }: BlogDetailPageProps) {
         </div>
 
         <footer className="entry-footer mt-4">
-          <Container className="max-[575px]:px-4">
+          <Container>
             <div className="pb-0 text-[14px] font-medium leading-6 text-[#535353]">
               <span>{blogDetailUiCopy.postedInPrefix} </span>
               <Link className="underline underline-offset-2 transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href={post.categoryHref}>{post.category}</Link>

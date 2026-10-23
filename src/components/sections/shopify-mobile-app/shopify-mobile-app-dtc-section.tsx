@@ -36,15 +36,13 @@ export function ShopifyMobileAppDtcSection({
 
   return (
     <section className="shopify_mobile_app_development_for_dtc_brands bg-[#FAFAF7] py-20 max-[991px]:py-[50px]">
-      <Container className="min-[1400px]:max-w-[1408px] px-[15px]">
+      <Container variant="wide">
         <SplitSectionHeading
           variant="services"
           eyebrow={content.eyebrow}
           heading={content.heading}
           paragraphs={paragraphs}
-          titleColumnClassName="w-[42%] max-[1199px]:w-[48%] max-[992px]:w-full"
-          textColumnClassName="w-[48%] max-[992px]:w-full"
-          className="mb-[50px] max-[767px]:mb-[30px]"
+          className="mb-[50px]"
         />
 
         <div data-aos="fade-up" className="wrapper flex flex-wrap -mx-[10px] -mb-5 justify-center">

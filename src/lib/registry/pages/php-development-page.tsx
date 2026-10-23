@@ -43,7 +43,7 @@ export function PhpDevelopmentPage() {
       />
       <AgencyServicesSection
         cardVariant="services-box"
-        className="pt-0 max-[991px]:pt-0"
+        className="pt-0"
         columns={2}
         content={servicesContent}
         headerLayout="split"
@@ -60,8 +60,6 @@ export function PhpDevelopmentPage() {
         eyebrow={phpDevelopmentContent.portfolio.eyebrow}
         headerLayout="split"
         sectionId="our_work"
-        textColumnClassName="w-[48.3%] max-[992px]:w-full"
-        titleColumnClassName="w-[44%] max-[992px]:w-full"
         variant="liveGrid"
       />
       <HappyClientSection

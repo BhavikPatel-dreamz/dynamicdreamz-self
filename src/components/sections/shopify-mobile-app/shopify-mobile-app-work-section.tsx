@@ -52,7 +52,7 @@ export function ShopifyMobileAppWorkSection({
           eyebrow={content.eyebrow}
           heading={content.heading}
           description={content.description}
-          className="mb-10 max-[991px]:mb-[30px]"
+          
         />
 
         <div className="our-work-main flex flex-wrap justify-start gap-x-[15px] gap-y-[42px] max-[991px]:gap-y-[30px]">

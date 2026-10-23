@@ -130,7 +130,7 @@ export function OurWorkHeroSection({
 
   return (
     <section className="hero-new-section overflow-hidden bg-cream pt-[91px] max-[991px]:pt-16">
-      <Container className="container relative max-[991.98px]:max-w-none max-[991.98px]:px-0">
+      <Container className="relative" variant="fullBleedTablet">
         <div className="wrapper flex flex-wrap justify-between max-[991.98px]:flex-col">
           <div className="left-col z-1 flex flex-col justify-center w-[44.697%] py-[60px] max-[1399px]:w-1/2 max-[1199px]:w-[57%] max-[991.98px]:w-full max-[991.98px]:px-[calc((100%-680px)/2)] max-[991.98px]:pt-[30px] max-[991.98px]:pb-10 max-[767.98px]:px-[calc((100%-500px)/2)] max-[575px]:px-5 max-[991.98px]:items-center max-[991.98px]:text-center">
             <div className="hero-content">
@@ -143,14 +143,14 @@ export function OurWorkHeroSection({
               <p className="mt-2.5 max-w-[690px] text-base leading-[190%] font-medium text-muted max-[767px]:mt-4 max-[992px]:text-[14px] max-[992px]:leading-[25.2px]">
                 {heroContent.description}
               </p>
-              <div className="mt-6 flex max-[768px]:inline-flex gap-[15px] max-[767px]:w-full max-[768px]:flex-col max-[768px]:gap-2.5 lg:justify-start justify-center">
+              <div className="mt-6 flex flex-wrap justify-center gap-[15px] lg:justify-start max-[768px]:inline-flex max-[767px]:w-full max-[768px]:flex-col max-[768px]:gap-2.5 [&_a]:max-[767px]:w-auto [&_a]:max-w-max [&_a]:max-[575px]:max-w-full [&_a]:max-[768px]:mx-auto [&_a]:max-[575px]:w-full">
                 {heroContent.primaryCta ? (
-                  <ButtonLink className="max-[767px]:w-auto! max-w-max max-[575px]:max-w-full max-[768px]:mx-auto leading-[normal]! max-[575px]:w-full!" href={heroContent.primaryCta.href} variant="primary">
+                  <ButtonLink href={heroContent.primaryCta.href} variant="primary">
                     {heroContent.primaryCta.label}
                   </ButtonLink>
                 ) : null}
                 {heroContent.secondaryCta ? (
-                  <ButtonLink className="max-[767px]:w-auto! max-w-max max-[575px]:max-w-full max-[768px]:mx-auto leading-[normal]! max-[575px]:w-full!" href={heroContent.secondaryCta.href} variant="outline">
+                  <ButtonLink href={heroContent.secondaryCta.href} variant="outline">
                     {heroContent.secondaryCta.label}
                   </ButtonLink>
                 ) : null}

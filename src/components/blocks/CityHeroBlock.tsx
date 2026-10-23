@@ -235,7 +235,7 @@ export function CityHeroBlock(props: CityHeroBlockProps = {}) {
           >
             <div className="hero-content">
               {content.eyebrows && content.eyebrows.length > 0 && (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:justify-center max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[1199px]:justify-center max-[767px]:mx-auto max-[767px]:justify-center max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
                   {content.eyebrows.map((item: any, idx: number) => (
                     <span
                       key={item}
@@ -270,12 +270,11 @@ export function CityHeroBlock(props: CityHeroBlockProps = {}) {
                 </p>
               )}
               {(primaryCta || content.secondaryCta) && (
-                <div className="btn-group mt-6 flex items-center gap-3.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:gap-2.5">
+                <div className="btn-group mt-6 flex items-center gap-3.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:gap-2.5 [&_a]:max-[767px]:w-full [&_button]:max-[767px]:w-full">
                   {primaryCta && (
                     <Button
                       variant="primary"
                       href={primaryCta.href}
-                      className="max-[767px]:w-full"
                     >
                       {primaryCta.label}
                     </Button>
@@ -284,7 +283,6 @@ export function CityHeroBlock(props: CityHeroBlockProps = {}) {
                     <Button
                       variant="outline"
                       href={content.secondaryCta.href}
-                      className="max-[767px]:w-full"
                     >
                       {content.secondaryCta.label}
                     </Button>

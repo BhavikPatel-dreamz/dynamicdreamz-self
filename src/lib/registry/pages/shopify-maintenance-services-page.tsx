@@ -26,7 +26,7 @@ export function ShopifyMaintenanceServicesPage() {
       />
       <AgencyServicesSection
         cardVariant="services-box"
-        className="pb-0 max-[992px]:pb-0"
+        className="pb-0"
         content={shopifyMaintenanceServicesContent.services}
         id="services"
       />

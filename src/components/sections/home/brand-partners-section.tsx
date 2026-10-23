@@ -49,11 +49,8 @@ export function BrandPartnersSection({
         >
           <div className="title lg:w-[44%] w-full">
             <SectionHeading
-              unstyled={isShopifyHours}
               className={cn(
-                isShopifyHours
-                  ? "font-montreal-medium text-[35px] leading-[1.4] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]"
-                  : "min-[768px]:max-[992px]:mb-2.5 min-[768px]:max-[992px]:w-full max-[767px]:mb-2.5",
+                !isShopifyHours && "min-[768px]:max-[992px]:mb-2.5 min-[768px]:max-[992px]:w-full max-[767px]:mb-2.5",
               )}
             >
               {heading}
@@ -61,7 +58,7 @@ export function BrandPartnersSection({
           </div>
           <SectionDescription
             className={cn("lg:w-[48.3%] w-full", isShopifyHours && "section_text")}
-            textClassName="text-left max-[767px]:text-sm"
+            textClassName="text-left"
           >
             {description}
           </SectionDescription>

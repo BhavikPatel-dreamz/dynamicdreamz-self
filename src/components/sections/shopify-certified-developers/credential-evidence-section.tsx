@@ -35,7 +35,7 @@ export function CredentialEvidenceSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[50px] max-[1199px]:mb-[30px]"
+          className="mb-[50px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}

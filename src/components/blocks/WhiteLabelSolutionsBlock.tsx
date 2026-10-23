@@ -139,7 +139,7 @@ export function WhiteLabelSolutionsBlock(props: WhiteLabelSolutionsBlockProps = 
   const className = props.className;
   return (
     <section className={cn("bg-[#192019] py-20 max-[991px]:py-[50px]", className)}>
-      <Container className="max-[575px]:px-4">
+      <Container>
         {eyebrow ? (
           <div
             data-aos="fade-up"

@@ -42,7 +42,7 @@ export function CareerHeroSection({
           <div className="left-col z-1 flex w-[51%] flex-col justify-center py-[60px] max-[1199px]:w-1/2 max-[991px]:w-full max-[991px]:py-8 max-[991px]:text-center">
             <div className="hero-content">
               {eyebrow ? (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:justify-center max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[1199px]:justify-center max-[991px]:mx-auto max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
                   <span className="font-montserrat text-[14px] font-semibold uppercase leading-[1.2] max-[1199px]:text-[12px] max-[767px]:text-[10px]">{eyebrow}</span>
                 </div>
               ) : null}
@@ -87,7 +87,7 @@ export function CareerHeroSection({
             </div>
           </div>
 
-          <div className="right-col relative flex h-[580px] w-[48%] overflow-hidden max-[1199px]:w-[48%] max-[991px]:mt-6 max-[991px]:h-[260px] max-[991px]:w-full max-[767px]:h-[240px]">
+          <div className="right-col relative flex h-[580px] w-[48%] overflow-hidden max-[1199px]:w-[48%] max-[991px]:mt-6 max-[991px]:h-[260px] max-[991px]:w-full max-[767px]:hidden">
             <div className="scrolling_img_wrap relative h-full w-full overflow-hidden">
               <div className="scrolling_anim_img absolute inset-0 px-[68px] max-[1199px]:px-5 max-[991px]:relative max-[991px]:px-0">
                 <div className={cn("scrolling_track", styles.scrollingTrack)}>

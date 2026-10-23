@@ -25,10 +25,9 @@ export function ShopifyHoursHeroSection() {
             <div className="section_title_with_eyebrow mb-[10px]">
               {/* The live eyebrow sits inline inside the 24px `.title` line box,
                   so the same 14px/24px context is reproduced here. */}
-              <div className="title w-full text-[14px] leading-6">
+              <div className="title w-full text-[14px] leading-6 max-[991px]:flex max-[991px]:justify-center">
                 <Eyebrow
                   as="span"
-                  className="max-[767px]:flex-wrap"
                   items={shopifyHoursHero.eyebrows}
                   linePosition="overlay"
                   tone="muted"

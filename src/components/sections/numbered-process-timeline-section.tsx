@@ -35,7 +35,7 @@ export function NumberedProcessTimelineSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[60px] max-[767px]:mb-[30px]"
+          className="mb-[60px]"
           description={description}
           eyebrow={eyebrow}
           heading={heading}

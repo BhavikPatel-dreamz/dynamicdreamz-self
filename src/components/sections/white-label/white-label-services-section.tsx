@@ -28,7 +28,7 @@ export function WhiteLabelServicesSection({
 }: WhiteLabelServicesSectionProps) {
   return (
     <section className="bg-[#192019] py-20 max-[991px]:py-[50px]">
-      <Container className="max-[575px]:px-4">
+      <Container>
         {eyebrow ? (
           <div data-aos="fade-up" className="section_title_with_eyebrow mb-10 flex flex-wrap items-start justify-between gap-6 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-4">
             <div className="title max-w-[620px]">
@@ -63,7 +63,7 @@ export function WhiteLabelServicesSection({
         {showCta ? (
           <div data-aos="fade-up" className="text-center max-[992px]:pb-[10.4px]">
             <ButtonLink
-              className="max-[992px]:min-h-0 max-[992px]:py-3 max-[992px]:text-sm max-[992px]:leading-[18px]"
+              
               href={siteConfig.quotePath}
               variant="light"
             >

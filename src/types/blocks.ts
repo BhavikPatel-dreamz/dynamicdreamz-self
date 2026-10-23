@@ -653,8 +653,6 @@ export type PortfolioShowcaseSectionProps = {
   itemsClassName?: string;
   variant?: "default" | "liveGrid";
   sectionId?: string;
-  titleColumnClassName?: string;
-  textColumnClassName?: string;
 };
 
 export type CaseStudyPreviewItem = {

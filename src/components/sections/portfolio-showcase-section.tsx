@@ -44,8 +44,6 @@ export type PortfolioShowcaseSectionProps = {
   itemsClassName?: string;
   variant?: "default" | "liveGrid";
   sectionId?: string;
-  titleColumnClassName?: string;
-  textColumnClassName?: string;
   className?: string;
 };
 
@@ -62,8 +60,6 @@ export function PortfolioShowcaseSection({
   eyebrowClassName = "mb-4!",
   itemsClassName,
   sectionId = "portfolio-showcase",
-  titleColumnClassName,
-  textColumnClassName,
   variant = "default",
   className,
 }: PortfolioShowcaseSectionProps) {
@@ -104,8 +100,6 @@ export function PortfolioShowcaseSection({
           eyebrow={resolvedEyebrow}
           eyebrowClassName={eyebrowClassName}
           heading={content.heading}
-          textColumnClassName={textColumnClassName}
-          titleColumnClassName={titleColumnClassName}
           variant="portfolio"
         />
 
@@ -129,12 +123,12 @@ export function PortfolioShowcaseSection({
         </div>
 
         {!hideCta && (
-          <div className="mt-[51px] flex flex-wrap justify-center gap-4 max-[767px]:mt-10 max-[575px]:flex-col" data-aos="fade-up">
-            <ButtonLink href={resolvedCtaHref} variant="primary" className="max-[575px]:w-full text-center">
+          <div className="mt-[51px] flex flex-wrap justify-center gap-4 max-[767px]:mt-10 max-[575px]:flex-col [&_a]:max-[575px]:w-full" data-aos="fade-up">
+            <ButtonLink href={resolvedCtaHref} variant="primary" className="text-center">
               {resolvedCtaLabel}
             </ButtonLink>
             {content.secondaryCtaLabel && content.secondaryCtaHref ? (
-              <ButtonLink href={content.secondaryCtaHref} variant="outline" className="max-[575px]:w-full text-center">
+              <ButtonLink href={content.secondaryCtaHref} variant="outline" className="text-center">
                 {content.secondaryCtaLabel}
               </ButtonLink>
             ) : null}

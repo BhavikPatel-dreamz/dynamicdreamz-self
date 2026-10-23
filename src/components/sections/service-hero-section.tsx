@@ -242,8 +242,8 @@ export function ServiceHeroSection({
                   <div className="btn-group pt-2.5 flex flex-wrap items-center justify-center gap-[15px] max-[575px]:flex-col">
                     {content.ctaLabel && (
                       <ButtonLink
-                        className="max-[991px]:!px-5 max-[991px]:!py-3 max-[575px]:!w-full"
-                        aria-label={content.ctaLabel}
+                        
+                        aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
                         href={ctaHref}
                         variant="primary"
                       >
@@ -251,8 +251,8 @@ export function ServiceHeroSection({
                       </ButtonLink>
                     )}
                     <ButtonLink
-                      className="max-[991px]:!px-5 max-[991px]:!py-3 max-[575px]:!w-full"
-                      aria-label={content.secondaryCta.ariaLabel ?? content.secondaryCta.label}
+                      
+                      aria-label={content.secondaryCta.ariaLabel ?? `Dynamic Dreamz - ${content.secondaryCta.label}`}
                       href={content.secondaryCta.href}
                       variant="outline"
                     >
@@ -262,8 +262,8 @@ export function ServiceHeroSection({
                 ) : content.ctaLabel ? (
                   <div className="btn-group pt-2.5 flex justify-center">
                     <ButtonLink
-                      className="max-[991px]:!px-5 max-[991px]:!py-3 max-[575px]:!w-full"
-                      aria-label={content.ctaLabel}
+                      
+                      aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
                       href={ctaHref}
                       variant="primary"
                     >
@@ -325,7 +325,7 @@ export function ServiceHeroSection({
           <div className={cn(defaultLeftCol, leftColClassName)}>
             <div className="hero-content w-full">
               {content.eyebrows && content.eyebrows.length > 0 && (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:justify-center max-[767px]:flex max-[767px]:w-full max-[767px]:justify-start max-[767px]:pl-6 max-[767px]:text-left max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[1199px]:justify-center max-[767px]:mx-auto max-[767px]:justify-center max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
                   {content.eyebrows.map((item, idx) => (
                     <span
                       key={idx}
@@ -408,11 +408,11 @@ export function ServiceHeroSection({
                 </>
               ) : null}
               {content.secondaryCta ? (
-                <div className="btn-group pt-2.5 flex flex-wrap items-center max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:items-center">
+                <div className="services-hero-btn mt-2.5 flex flex-wrap items-center gap-5 max-[1199px]:justify-center max-[575px]:flex-col max-[575px]:items-center max-[575px]:gap-[13px] max-[575px]:w-full [&_a]:max-[575px]:w-full [&_button]:max-[575px]:w-full">
                   {content.ctaLabel && (
                     <ButtonLink
-                      className="max-[991px]:!px-5 max-[991px]:!py-3 max-[575px]:!w-full"
-                      aria-label={content.ctaLabel}
+                      
+                      aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
                       href={ctaHref}
                       variant="primary"
                     >
@@ -420,8 +420,8 @@ export function ServiceHeroSection({
                     </ButtonLink>
                   )}
                   <ButtonLink
-                    className="ml-2.5 max-[991px]:!px-5 max-[991px]:!py-3 max-[767px]:!ml-0 max-[767px]:!mt-2.5 max-[575px]:!w-full"
-                    aria-label={content.secondaryCta.ariaLabel ?? content.secondaryCta.label}
+                    
+                    aria-label={content.secondaryCta.ariaLabel ?? `Dynamic Dreamz - ${content.secondaryCta.label}`}
                     href={content.secondaryCta.href}
                     variant="outline"
                   >

@@ -28,7 +28,7 @@ export function TestimonialsSection({
               {title}
             </SectionHeading>
           </div>
-          <SectionDescription className="w-[48%] max-[1199px]:w-full">
+          <SectionDescription>
             {description}
           </SectionDescription>
         </div>

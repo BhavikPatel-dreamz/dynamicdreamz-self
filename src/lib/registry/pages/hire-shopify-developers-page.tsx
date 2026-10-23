@@ -64,7 +64,7 @@ export function HireShopifyDevelopersPage() {
       <AiEmpoweredDeliverySection content={hireShopifyContent.aiTools} />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="pt-0 max-[991px]:pt-0"
+        className="pt-0"
         columns={4}
         content={hireShopifyContent.work}
         sectionId="our_work"

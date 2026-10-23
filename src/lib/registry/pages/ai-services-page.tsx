@@ -27,7 +27,7 @@ export function AiServicesPage() {
     <>
       <ServiceHeroVideoSection
         content={aiServicesHero}
-        rightColClassName="max-[991px]:hidden"
+        
       />
       <IndustryBrandsSection
         content={aiServicesBrands}

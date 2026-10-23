@@ -69,7 +69,7 @@ export function ShopifyMobileAppDevelopmentPage() {
         sectionId="shopify-mobile-app-faq-section"
         eyebrow={shopifyMobileAppFaqCopy.eyebrow}
         heading={shopifyMobileAppFaqCopy.heading}
-        headingBrClassName="max-[991px]:hidden"
+        
         items={shopifyMobileAppDevelopmentFaqs}
       />
     </div>

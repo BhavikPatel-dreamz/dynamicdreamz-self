@@ -33,12 +33,10 @@ export function PricingTableSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-10 max-[991px]:mb-[30px]"
+          
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
-          textColumnClassName="w-[48%] max-[991px]:w-full"
-          titleColumnClassName="w-[44%] max-[991px]:w-full"
           variant="left"
         />
 

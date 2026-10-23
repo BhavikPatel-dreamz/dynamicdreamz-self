@@ -76,7 +76,7 @@ export function ShopifyTeamBoxesSection({
               )}
             </div>
             {content.cta || content.secondaryCta ? (
-              <div className="bottom-block btns_group mt-[30px] flex flex-wrap gap-3">
+              <div className="bottom-block btns_group mt-[30px] flex flex-wrap gap-3 max-[575px]:w-full max-[575px]:flex-col [&_a]:max-[575px]:w-full">
                 {content.cta ? (
                   <ButtonLink href={content.cta.href} variant="primary">
                     {content.cta.label}

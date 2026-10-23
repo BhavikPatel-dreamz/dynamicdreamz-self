@@ -200,7 +200,7 @@ export function ClientLogoMarqueeBlock({
       )}
       aria-label={showHeading ? undefined : ariaLabel}
     >
-      <Container className="max-[1199px]:max-w-full max-[1199px]:px-0">
+      <Container variant="fullBleedTablet">
         <div
           className={cn(
             "wrapper flex items-center justify-between max-[1199px]:flex-col max-[1199px]:items-start",

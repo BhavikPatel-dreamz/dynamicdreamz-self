@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Slider, { type Settings } from "react-slick";
+import "slick-carousel/slick/slick.css";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
@@ -29,6 +31,17 @@ export type ShopifySupportScenariosContent = {
   items: readonly ShopifySupportScenario[];
 };
 
+
+
+const mobileSliderSettings: Settings = {
+  dots: false,
+  arrows: false,
+  infinite: true,
+  speed: 400,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  swipeToSlide: true,
+};
 type ShopifySupportScenariosSectionProps = {
   content?: ShopifySupportScenariosContent;
 };
@@ -151,50 +164,51 @@ export function ShopifySupportScenariosSection({
           </div>
         </div>
 
-        {/* Mobile Horizontal Scroll Carousel (< 768px) */}
+        {/* Mobile Slider (< 768px) matching live Slick slider */}
         <div
           data-aos="fade-up"
-          className="scenario-mobile flex md:hidden overflow-x-auto gap-4 pb-4 -mx-4 px-4 snap-x snap-mandatory scrollbar-none"
+          className="scenario-mobile block md:hidden max-[767px]:mr-[calc(-100vw/2+508px/2)] max-[575px]:-mr-4 [&_.slick-list]:pr-[40px] [&_.slick-track]:flex"
         >
-          {content.items.map((panel) => (
-            <div
-              className="scenario-panel-card min-w-[85vw] flex-shrink-0 snap-center rounded-[20px] bg-[#EFF4EF] p-6 flex flex-col justify-between"
-              key={panel.id}
-            >
-              <div>
-                <span className="section-kicker mb-2.5 block text-xs font-bold uppercase tracking-[1.5px] text-[#AD5151]">
-                  {panel.kicker}
-                </span>
-                <h3 className="mb-3 font-display text-xl font-normal leading-7 text-[#282828]">
-                  {panel.heading}
-                </h3>
-                <p className="font-sans text-sm font-normal leading-6 text-[#535353]">
-                  {panel.description}
-                </p>
-                <div className="service-features mt-4 flex flex-wrap gap-2">
-                  {panel.features.map((feat) => (
-                    <div
-                      className="service-feature rounded-full border border-[rgba(40,40,40,0.10)] bg-white px-3 py-2 text-xs font-bold text-[#282828]"
-                      key={feat}
-                    >
-                      {feat}
+          <Slider {...mobileSliderSettings}>
+            {content.items.map((panel) => (
+              <div key={panel.id} className="pr-3 outline-none">
+                <div className="scenario-panel flex flex-col justify-between rounded-[20px] bg-[#EFF4EF] p-[25px_20px] min-h-[460px]">
+                  <div>
+                    <span className="section-kicker mb-2.5 block text-xs font-bold uppercase tracking-[1.5px] text-[#AD5151]">
+                      {panel.kicker}
+                    </span>
+                    <h3 className="mb-3 font-display text-[20px] font-medium leading-7 text-[#282828]">
+                      {panel.heading}
+                    </h3>
+                    <p className="font-sans text-xs font-medium leading-[22px] text-[#535353]">
+                      {panel.description}
+                    </p>
+                    <div className="service-features mt-4 flex flex-wrap gap-2">
+                      {panel.features.map((feat) => (
+                        <div
+                          className="service-feature w-[calc(50%-4px)] rounded-full border border-[rgba(40,40,40,0.10)] bg-white px-2.5 py-[9px] text-center text-[10px] font-bold leading-none text-[#282828]"
+                          key={feat}
+                        >
+                          {feat}
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-                <div className="scenario-meta my-4 font-sans text-xs font-medium leading-5 text-[#535353]">
-                  {panel.meta}
+                    <div className="scenario-meta my-4 font-sans text-xs font-medium leading-[22px] text-[#535353]">
+                      {panel.meta}
+                    </div>
+                  </div>
+                  <div className="btns_group mt-4 flex flex-col gap-2.5 max-[575px]:w-full [&_a]:w-full [&_a]:text-center">
+                    <ButtonLink href={panel.primaryCta.href} variant="primary">
+                      {panel.primaryCta.label}
+                    </ButtonLink>
+                    <ButtonLink href={panel.secondaryCta.href} variant="outline">
+                      {panel.secondaryCta.label}
+                    </ButtonLink>
+                  </div>
                 </div>
               </div>
-              <div className="btns_group mt-4 flex flex-col gap-3">
-                <ButtonLink href={panel.primaryCta.href} variant="primary">
-                  {panel.primaryCta.label}
-                </ButtonLink>
-                <ButtonLink href={panel.secondaryCta.href} variant="outline">
-                  {panel.secondaryCta.label}
-                </ButtonLink>
-              </div>
-            </div>
-          ))}
+            ))}
+          </Slider>
         </div>
       </Container>
     </section>

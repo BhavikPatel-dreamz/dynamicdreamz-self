@@ -84,7 +84,7 @@ export function ServiceHeroVideoSection({
           >
             <div className="hero-content w-full">
               {content.eyebrowSpans && content.eyebrowSpans.length > 0 ? (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:justify-center max-[767px]:flex max-[767px]:w-full max-[767px]:justify-start max-[767px]:pl-6 max-[767px]:text-left max-[767px]:before:hidden">
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[1199px]:justify-center max-[767px]:mx-auto max-[767px]:justify-center max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
                   {content.eyebrowSpans.map((span, idx) => (
                     <span
                       className={cn(
@@ -101,7 +101,7 @@ export function ServiceHeroVideoSection({
                   ))}
                 </div>
               ) : content.eyebrow ? (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:justify-center max-[767px]:flex max-[767px]:w-full max-[767px]:justify-start max-[767px]:pl-6 max-[767px]:text-left max-[767px]:before:hidden">
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[1199px]:justify-center max-[767px]:mx-auto max-[767px]:justify-center max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
                   <span className="relative inline-flex items-center font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[767px]:text-[10px] max-[767px]:before:absolute max-[767px]:before:-left-6 max-[767px]:before:top-1/2 max-[767px]:before:-translate-y-1/2 max-[767px]:before:inline-block max-[767px]:before:h-[2px] max-[767px]:before:w-[15px] max-[767px]:before:bg-brand-red max-[767px]:before:content-['']">
                     {content.eyebrow}
                   </span>
@@ -180,9 +180,9 @@ export function ServiceHeroVideoSection({
               ))}
 
               {content.cta && content.ctaHref ? (
-                <div className="btn-group flex items-center pt-2.5 max-[1199px]:justify-center max-[767px]:w-full max-[767px]:flex-col max-[767px]:items-center">
+                <div className="btn-group flex items-center gap-2.5 pt-2.5 max-[1199px]:justify-center max-[767px]:w-full max-[767px]:flex-col max-[767px]:items-center max-[767px]:gap-2.5 [&_a]:max-[767px]:w-full">
                   <ButtonLink
-                    className="min-h-[50px] px-5 py-[15px] max-[991px]:py-3 max-[991px]:px-5 font-montserrat text-base font-bold uppercase max-[767px]:w-full"
+                    className="px-5"
                     href={content.ctaHref}
                     variant="primary"
                   >
@@ -190,7 +190,7 @@ export function ServiceHeroVideoSection({
                   </ButtonLink>
                   {content.secondaryCta ? (
                     <ButtonLink
-                      className="ml-2.5 min-h-[50px] px-5 py-[15px] max-[991px]:py-3 max-[991px]:px-5 font-montserrat text-base font-bold uppercase max-[767px]:ml-0 max-[767px]:mt-2.5 max-[767px]:w-full"
+                      className="px-5"
                       href={content.secondaryCta.href}
                       variant="outline"
                     >
@@ -250,7 +250,7 @@ export function ServiceHeroVideoSection({
           ) : content.image ? (
             <div
               className={cn(
-                "right-col flex w-[43.182%] max-[1399px]:w-[48%] max-[1199px]:w-[50%] max-[1199px]:mx-auto max-[1199px]:mb-10 max-[767px]:hidden",
+                "right-col flex w-[43.182%] max-[1399px]:w-[48%] max-[1199px]:w-[50%] max-[1199px]:mx-auto max-[1199px]:mb-10 max-[991px]:hidden",
                 rightColClassName,
               )}
             >

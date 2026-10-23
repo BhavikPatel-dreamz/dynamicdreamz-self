@@ -134,7 +134,7 @@ export function PortfolioProjectCard({
             />
             <Overlay />
           </div>
-          <div className="mt-2.5 flex items-start justify-between gap-2 max-[767px]:gap-1.5">
+          <div className="mt-2.5 flex items-start justify-between gap-2 max-[767px]:mt-1 max-[767px]:gap-1.5">
             <div className="min-w-0 flex-1">
               {category ? (
                 <p className={cn("text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px] max-[1199px]:leading-[14px] max-[1199px]:font-bold max-[1199px]:tracking-[0.8px]", categoryClassName)}>
@@ -143,16 +143,16 @@ export function PortfolioProjectCard({
               ) : null}
               <h3
                 className={cn(
-                  category ? "mt-2.5 max-[1199px]:mt-2 max-[767px]:mt-1.5" : "mt-0",
+                  category ? "mt-2.5 max-[1199px]:mt-2 max-[767px]:mt-[3px]" : "mt-0",
                   variant === "default"
-                    ? "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-tight"
-                    : "font-montreal-medium text-lg leading-5 font-normal text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-tight",
+                    ? "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-5 max-[767px]:font-semibold"
+                    : "font-montreal-medium text-lg leading-5 font-normal text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-5 max-[767px]:font-semibold",
                 )}
               >
                 {name}
               </h3>
             </div>
-            <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red">
+            <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red max-[767px]:hidden">
               <Image
                 aria-hidden="true"
                 className="h-[9px] w-[9px] brightness-0 transition-[filter] duration-300 group-hover/project:brightness-100 group-focus/project:brightness-100"
@@ -181,7 +181,7 @@ export function PortfolioProjectCard({
             <Overlay persistent={Boolean(isAppProject)} />
             {isAppProject ? <AppStoreLinks appLinks={appLinks} /> : null}
           </div>
-          <div className="mt-2.5 flex items-start justify-between gap-2 max-[767px]:gap-1.5">
+          <div className="mt-2.5 flex items-start justify-between gap-2 max-[767px]:mt-1 max-[767px]:gap-1.5">
             <div className="min-w-0 flex-1">
               {category ? (
                 <p className={cn("text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px] max-[1199px]:leading-[14px] max-[1199px]:font-bold max-[1199px]:tracking-[0.8px]", categoryClassName)}>
@@ -190,17 +190,17 @@ export function PortfolioProjectCard({
               ) : null}
               <h3
                 className={cn(
-                  category ? "mt-2.5 max-[1199px]:mt-2 max-[767px]:mt-1.5" : "mt-0",
+                  category ? "mt-2.5 max-[1199px]:mt-2 max-[767px]:mt-[3px]" : "mt-0",
                   variant === "default"
-                    ? "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-tight"
-                    : "font-montreal-medium text-lg leading-5 font-normal text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-tight",
+                    ? "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-5 max-[767px]:font-semibold"
+                    : "font-montreal-medium text-lg leading-5 font-normal text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-5 max-[767px]:font-semibold",
                 )}
               >
                 {name}
               </h3>
             </div>
             {showArrow && (
-              <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red">
+              <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red max-[767px]:hidden">
                 <Image
                   aria-hidden="true"
                   className="h-[9px] w-[9px] brightness-0 transition-[filter] duration-300 group-hover/project:brightness-100 group-focus/project:brightness-100"

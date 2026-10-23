@@ -32,13 +32,13 @@ export function VerifiedKnowledgeSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[70px] max-[1199px]:mb-[50px] max-[992px]:mb-[30px]"
+          className="mb-[70px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
           headingId="verified-shopify-knowledge-title"
-          textClassName="w-[calc(54%-15px)] max-[1199px]:w-[calc(43%-15px)]"
-          titleClassName="w-[calc(46%-15px)] max-[1199px]:w-[calc(57%-15px)]"
+          textClassName="w-[calc(54%-15px)]"
+          titleClassName="w-[calc(46%-15px)]"
         />
         <div className="grid grid-cols-3 divide-x divide-[#333]/10 max-[992px]:grid-cols-1 max-[992px]:divide-x-0 max-[992px]:divide-y">
           {content.items.map((item) => (

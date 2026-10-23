@@ -32,7 +32,7 @@ export function ShopifyCroServicesSection({
     <section className={className}>
       <Container>
         <SplitSectionHeading
-          className="mb-10 max-[991px]:mb-[30px]"
+          
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}

@@ -213,9 +213,8 @@ export function MobileAppInteractiveShowcaseBlock({
                 {formatBrText(content.description)}
               </p>
 
-              <div className="btn-group flex items-center gap-3.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:gap-2.5">
+              <div className="btn-group flex items-center gap-3.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:gap-2.5 [&_a]:max-[767px]:w-full [&_button]:max-[767px]:w-full">
                 <Button
-                  className="max-[767px]:w-full"
                   aria-label={content.primaryCta.ariaLabel ?? content.primaryCta.label}
                   href={content.primaryCta.href}
                   variant="primary"
@@ -224,7 +223,6 @@ export function MobileAppInteractiveShowcaseBlock({
                 </Button>
                 {content.secondaryCta && (
                   <Button
-                    className="max-[767px]:w-full"
                     aria-label={content.secondaryCta.ariaLabel ?? content.secondaryCta.label}
                     href={content.secondaryCta.href}
                     variant="outline"

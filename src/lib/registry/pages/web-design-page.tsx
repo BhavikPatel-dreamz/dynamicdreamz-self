@@ -36,8 +36,6 @@ export function WebDesignPage() {
         columns={4}
         content={webDesignPortfolio}
         sectionId="our_work"
-        textColumnClassName="w-[48.3%] max-[992px]:w-full"
-        titleColumnClassName="w-[44%] max-[992px]:w-full"
         variant="liveGrid"
       />
       <HappyClientSection

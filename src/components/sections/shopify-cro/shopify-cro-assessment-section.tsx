@@ -48,7 +48,7 @@ export function ShopifyCroAssessmentSection({
             <ButtonLink
               href={content.cta.href}
               variant="primary"
-              className="px-8 text-sm uppercase max-[991px]:py-3"
+              className="px-8"
             >
               {content.cta.label}
             </ButtonLink>

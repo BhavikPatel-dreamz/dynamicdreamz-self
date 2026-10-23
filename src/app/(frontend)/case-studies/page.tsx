@@ -1,4 +1,4 @@
-import { OurWorkHeroSection } from "@/components/blocks/ServiceHeroBlock";
+import { OurWorkHeroSection } from "@/components/sections/our-work/our-work-hero-section";
 import { BrandPartnersBlock } from "@/components/blocks/ClientLogoMarqueeBlock";
 import { CaseStudiesListing } from "@/components/case-studies/CaseStudyHubFilterGrid";
 import { caseStudiesBrandLogos, caseStudiesContent } from "@/content/case-studies";

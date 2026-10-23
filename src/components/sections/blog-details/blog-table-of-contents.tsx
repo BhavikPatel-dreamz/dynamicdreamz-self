@@ -31,7 +31,7 @@ export function BlogTableOfContents({ items, title, toggleLabel }: BlogTableOfCo
     <section className="mt-0 mb-4 w-full border border-[#ddd] bg-[#f7f5ef] pt-5 pr-[26px] pb-1 pl-5" aria-label={title}>
       <button
         type="button"
-        className="flex w-full items-center justify-between gap-4 border-0 bg-transparent p-0 text-left font-montreal-medium text-[24px] font-normal leading-[31px] tracking-0 text-[#282828]"
+        className="flex w-full items-center justify-between gap-4 border-0 bg-transparent p-0 text-left font-montreal-medium text-[24px] max-[767px]:text-[20px] font-normal leading-[31px] max-[767px]:leading-[26px] tracking-0 text-[#282828]"
         aria-expanded={open}
         aria-controls="blog-table-of-contents-list"
         aria-label={toggleLabel}

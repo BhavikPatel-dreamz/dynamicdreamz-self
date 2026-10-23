@@ -56,7 +56,7 @@ export function WhiteLabelWordPressPage() {
       />
       <SplitFaqSection
         heading={whiteLabelWordPressSectionCopy.faqHeading}
-        headingClassName="!font-display !text-[35px] !font-medium !leading-[48.475px] !tracking-[-0.7px] text-ink max-[992px]:!text-[30px] max-[992px]:!leading-10 max-[767px]:!text-2xl max-[767px]:!leading-[33.24px] max-[767px]:!tracking-[-0.48px]"
+        
         idPrefix="white-label-wordpress-faq"
         items={whiteLabelWordPressFaqs}
       />

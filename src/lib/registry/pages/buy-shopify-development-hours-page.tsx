@@ -21,7 +21,7 @@ export function BuyShopifyDevelopmentHoursPage() {
     <div>
       <ShopifyHoursHeroSection />
       <ThemeCustomizationServicesSection
-        className="pt-0 max-[991px]:pt-0"
+        className="pt-0"
         content={shopifyHoursCommitments}
         variant="transparent"
       />

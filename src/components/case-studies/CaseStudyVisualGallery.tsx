@@ -108,7 +108,7 @@ export function CaseStudyKeyFeatures({ keyFeatures }: CaseStudyKeyFeaturesProps)
   return (
     <section className="bg-[#eff4ef] py-20 max-[991px]:py-[50px]" aria-labelledby="key-features-heading">
       <Container>
-        <div className="mb-10 max-[991px]:mb-[30px]">
+        <div >
           <div className="relative mb-4 inline-flex items-center pl-10 text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[767px]:pl-[23px] max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
             <span>{eyebrow}</span>
           </div>

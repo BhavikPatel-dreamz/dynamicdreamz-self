@@ -47,7 +47,7 @@ export function ShopifyPlusAgencyPage() {
       />
       <ShopifyPlusProofSection content={shopifyPlusAgencyWhyChoose} />
       <PortfolioShowcaseSection
-        className="pt-0 max-[991px]:pt-0"
+        className="pt-0"
         content={{
           ...shopifyPlusAgencyPortfolio,
           platformMark: {
@@ -76,7 +76,7 @@ export function ShopifyPlusAgencyPage() {
         items={shopifyPlusAgencyPageTestimonials.items}
       />
       <EvaluationFrameworkSection
-        className="pt-0 pb-20 max-[991px]:pt-0 max-[991px]:pb-[50px] mb-0"
+        className="pt-0 mb-0"
         content={shopifyPlusAgencyHowToChoose}
       />
       <SplitFaqSection

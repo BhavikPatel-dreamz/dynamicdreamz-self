@@ -37,7 +37,7 @@ export function HomeHeroSection({
 }: HomeHeroSectionProps = {}) {
   return (
     <section className="flex h-screen items-center justify-center overflow-hidden bg-[linear-gradient(180deg,#fbeed5_16.38%,rgb(251_238_213/0%)_100%)] pt-[90px] max-[992px]:pt-16">
-      <Container className="text-center max-[767px]:px-4">
+      <Container className="text-center">
         <div className="banner-badge mb-6">
           <div className="eyebrow mx-auto inline-flex items-center justify-center text-muted uppercase min-[768px]:max-[992px]:text-[13px] min-[768px]:max-[992px]:leading-[13px] max-[640px]:w-max max-[640px]:flex-col max-[640px]:items-stretch max-[640px]:gap-2.5 max-[640px]:text-xs max-[640px]:leading-none">
             <span className="relative mr-2.5 leading-[1.2] inline-flex items-center pr-2.5 text-sm font-semibold before:mr-3 before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] after:absolute after:right-[-2px] after:h-[3px] after:w-[3px] after:rounded-full after:bg-muted after:content-[''] max-[640px]:after:hidden max-[640px]:before:mr-2.5 max-[640px]:before:w-[25px]">
@@ -52,14 +52,14 @@ export function HomeHeroSection({
         <p className="mx-auto mb-[30px] max-w-[940px] text-base leading-7 font-medium text-muted max-[1199px]:leading-6 max-[767px]:mb-6 max-[767px]:max-w-[358px] max-[767px]:text-sm">
           {description}
         </p>
-        <div className="mx-auto flex max-w-[1100px] justify-center max-[767px]:flex-col max-[767px]:items-center max-[767px]:gap-3.5">
+        <div className="mx-auto flex max-w-[1100px] justify-center gap-[15px] max-[767px]:flex-col max-[767px]:items-center max-[767px]:gap-3.5 max-[575px]:w-full [&_a]:max-[575px]:w-full">
           {discoveryCta && discoveryCtaHref ? (
-            <ButtonLink className="px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:min-h-[42px] max-[992px]:px-6 max-[992px]:py-3 max-[992px]:text-sm max-[767px]:ml-0" variant="primary" href={discoveryCtaHref}>
+            <ButtonLink className="normal-case" variant="primary" href={discoveryCtaHref}>
               {discoveryCta}
             </ButtonLink>
           ) : null}
           {shopifyWorkCta && shopifyWorkCtaHref ? (
-            <ButtonLink className="min-[768px]:ml-[15px] px-6 py-[15px] text-base leading-[normal] normal-case max-[992px]:min-h-[42px] max-[992px]:px-6 max-[992px]:py-3 max-[992px]:text-sm max-[767px]:ml-0" variant="outline" href={shopifyWorkCtaHref}>
+            <ButtonLink className="normal-case" variant="outline" href={shopifyWorkCtaHref}>
               {shopifyWorkCta}
             </ButtonLink>
           ) : null}

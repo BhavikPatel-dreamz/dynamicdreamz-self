@@ -52,7 +52,7 @@ export function CompanyMilestonesTimelineBlock({
 
       <div data-aos="fade-up" className="mx-auto w-full max-w-full">
         <CarouselSliderClient
-          className="h-[535px] w-full cursor-grab touch-pan-y overflow-x-auto overscroll-x-contain select-none active:cursor-grabbing min-[1200px]:w-[calc(100%+max(0px,50vw-590px))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          variant="timeline"
           ariaLabel="Dynamic Dreamz company milestones. Scroll horizontally to explore the timeline."
         >
           <ol className="flex h-[535px] w-max snap-x snap-mandatory">

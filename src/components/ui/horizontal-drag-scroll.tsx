@@ -4,11 +4,29 @@ import { useRef, useState, type PointerEvent, type ReactNode } from "react";
 
 import { cn } from "@/lib/class-names";
 
-type HorizontalDragScrollProps = {
+export type HorizontalDragScrollVariant = "default" | "timeline" | "fullBleedAligned";
+
+const variantViewportStyles: Record<HorizontalDragScrollVariant, string> = {
+  default: "",
+  timeline:
+    "h-[535px] w-full overflow-x-auto min-[1200px]:w-[calc(100%+max(0px,50vw-590px))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+  fullBleedAligned:
+    "relative left-1/2 w-screen -translate-x-1/2 snap-x snap-mandatory [scroll-padding-inline-start:16px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[576px]:[scroll-padding-inline-start:calc((100vw-500px)/2)] min-[768px]:[scroll-padding-inline-start:calc((100vw-680px)/2)] min-[992px]:[scroll-padding-inline-start:calc((100vw-920px)/2)] min-[1200px]:[scroll-padding-inline-start:calc((100vw-1140px)/2)] min-[1400px]:[scroll-padding-inline-start:calc((100vw-1320px)/2)]",
+};
+
+const variantTrackStyles: Record<HorizontalDragScrollVariant, string> = {
+  default: "",
+  timeline: "",
+  fullBleedAligned:
+    "flex w-max items-stretch gap-5 px-4 py-[10px] min-[576px]:px-[calc((100vw-500px)/2)] min-[768px]:px-[calc((100vw-680px)/2)] min-[992px]:px-[calc((100vw-920px)/2)] min-[1200px]:px-[calc((100vw-1140px)/2)] min-[1400px]:px-[calc((100vw-1320px)/2)]",
+};
+
+export type HorizontalDragScrollProps = {
   children: ReactNode;
   className?: string;
   trackClassName?: string;
   ariaLabel: string;
+  variant?: HorizontalDragScrollVariant;
   pagination?: {
     itemCount: number;
     itemLabel: string;
@@ -34,6 +52,7 @@ export function HorizontalDragScroll({
   ariaLabel,
   pagination,
   controls,
+  variant = "default",
 }: HorizontalDragScrollProps) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const [activeItem, setActiveItem] = useState(0);
@@ -138,7 +157,7 @@ export function HorizontalDragScroll({
     <>
       <div
         ref={viewportRef}
-        className={cn("cursor-grab touch-pan-y overscroll-x-contain select-none active:cursor-grabbing", className)}
+        className={cn("cursor-grab touch-pan-y overscroll-x-contain select-none active:cursor-grabbing", variantViewportStyles[variant], className)}
         aria-label={ariaLabel}
         role="region"
         tabIndex={0}
@@ -155,7 +174,7 @@ export function HorizontalDragScroll({
         }}
         onDragStart={(event) => event.preventDefault()}
       >
-        {trackClassName ? <div className={trackClassName}>{children}</div> : children}
+        {(trackClassName || variantTrackStyles[variant]) ? <div className={cn(variantTrackStyles[variant], trackClassName)}>{children}</div> : children}
       </div>
       {pagination ? (
         <div className={pagination.className} aria-label={`${ariaLabel} pagination`} role="group">

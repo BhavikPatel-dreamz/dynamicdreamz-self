@@ -22,12 +22,10 @@ export function ShopifyPlusProofSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-10 max-[1199px]:mb-[30px]"
+          
           description={content.intro}
           eyebrow={content.eyebrow}
           heading={content.heading}
-          textColumnClassName="w-[48%] max-[992px]:w-full"
-          titleColumnClassName="w-[44%] max-[992px]:w-full"
           variant="left"
         />
         <div data-aos="fade-up" className="wrapper flex flex-wrap justify-between">

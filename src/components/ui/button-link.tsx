@@ -19,6 +19,8 @@ export type ButtonLinkProps = {
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "onClick"> &
   Omit<ButtonHTMLAttributes<HTMLButtonElement>, "onClick">;
 
+export type ButtonProps = ButtonLinkProps;
+
 const variantClasses: Record<ButtonVariant, string> = {
   primary: "text-white hover:text-[#4f4f4f] focus-visible:text-[#4f4f4f]",
   outline: "text-[#4f4f4f] hover:text-white focus-visible:text-white",
@@ -63,7 +65,7 @@ export function ButtonLink({
   const isAnchor = typeof href === "string" && href.startsWith("#");
 
   const commonClasses = cn(
-    "group/button relative z-[1] inline-block align-top overflow-hidden rounded-[30px] px-6 py-[15px] text-center font-montserrat text-base leading-[normal] font-bold text-[#4f4f4f] not-italic uppercase no-underline! transition-all duration-600 shrink-0 max-[991px]:text-[14px] max-[991px]:px-6 max-[991px]:py-3 disabled:pointer-events-none disabled:opacity-60",
+    "group/button relative z-[1] inline-block align-top overflow-hidden rounded-[30px] min-h-[49px] px-6 py-[15px] text-center font-montserrat text-base leading-[normal] font-bold text-[#4f4f4f] not-italic uppercase no-underline! transition-all duration-600 shrink-0 max-[991px]:min-h-[42px] max-[991px]:text-[14px] max-[991px]:px-5 max-[991px]:py-3 max-[767px]:min-h-[42px] max-[767px]:text-[14px] max-[767px]:px-5 max-[767px]:py-3 disabled:pointer-events-none disabled:opacity-60",
     variantClasses[variant],
     className,
   );
@@ -104,10 +106,10 @@ export function ButtonLink({
   if (isExternal) {
     return (
       <a
-        href={href}
-        target={target ?? "_blank"}
-        rel={rel ?? "noopener noreferrer"}
         className={commonClasses}
+        href={href}
+        rel={rel ?? (target === "_blank" ? "noopener noreferrer" : undefined)}
+        target={target}
         {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
         {innerContent}
@@ -118,8 +120,8 @@ export function ButtonLink({
   if (isAnchor) {
     return (
       <a
-        href={href}
         className={commonClasses}
+        href={href}
         {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
         {innerContent}
@@ -129,8 +131,10 @@ export function ButtonLink({
 
   return (
     <Link
-      href={href}
       className={commonClasses}
+      href={href}
+      rel={rel}
+      target={target}
       {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
     >
       {innerContent}
@@ -138,3 +142,4 @@ export function ButtonLink({
   );
 }
 
+export const Button = ButtonLink;

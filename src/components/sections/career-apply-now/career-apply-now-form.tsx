@@ -338,7 +338,7 @@ export function CareerApplyNowForm() {
               type="submit"
               variant="primary"
               disabled={isPending}
-              className="min-h-[49px] cursor-pointer px-8 py-[15px] text-center max-[767px]:w-full disabled:cursor-wait disabled:opacity-70"
+              className="cursor-pointer px-8 text-center disabled:cursor-wait disabled:opacity-70"
             >
               {isPending
                 ? careerApplyFormCopy.submitting

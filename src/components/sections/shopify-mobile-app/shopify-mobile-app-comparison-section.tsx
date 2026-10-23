@@ -25,13 +25,13 @@ export function ShopifyMobileAppComparisonSection({
 }: ShopifyMobileAppComparisonSectionProps) {
   return (
     <section className="why_build_a_custom_shopify_mobile_app bg-[#F7F4E9] py-20 max-[991px]:py-[50px]">
-      <Container className="min-[1400px]:max-w-[1408px] px-[15px]">
+      <Container variant="wide">
         <SplitSectionHeading
           variant="services"
           eyebrow={content.eyebrow}
           heading={content.heading}
           description={content.description}
-          className="mb-[50px] max-[767px]:mb-[30px]"
+          className="mb-[50px]"
         />
 
         <div data-aos="fade-up" className="table-main overflow-hidden rounded-[20px] border border-[rgba(0,0,0,0.10)] bg-white">
