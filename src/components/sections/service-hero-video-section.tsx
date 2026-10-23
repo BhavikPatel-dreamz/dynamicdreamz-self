@@ -234,10 +234,10 @@ export function ServiceHeroVideoSection({
 
           {content.video ? (
             <div className="right-col flex w-[43.182%] max-[1399px]:w-[40%] max-[1199px]:w-[60%] max-[1199px]:mx-auto max-[1199px]:mb-10 max-[991px]:hidden">
-              <div className="video-wrapper relative w-full min-h-[386px] overflow-hidden rounded-[20px]">
+              <div className="video-wrapper relative w-full min-h-[386px]">
                 <video
                   autoPlay
-                  className="w-full rounded-[20px] object-cover"
+                  className="w-full rounded-[20px]"
                   loop
                   muted
                   playsInline

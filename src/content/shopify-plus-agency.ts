@@ -49,7 +49,7 @@ export const shopifyPlusAgencyHero = {
     },
   ],
   videoLogo: {
-    src: "/assets/platforms/shopify-plus-white.svg",
+    src: "/assets/platforms/shopify-plus-black.svg",
     alt: "Shopify Plus",
     width: 143,
     height: 30,

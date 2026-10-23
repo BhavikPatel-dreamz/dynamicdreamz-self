@@ -20,44 +20,41 @@ export const seoServicesBrands = {
 } as const;
 
 export const seoServicesHeroContent: ServiceHeroContent = {
+  eyebrows: ["Established in 2006"],
   title: "SEO Services for Sustainable Organic Growth",
+  subheading:
+    "SEO can be a game-changing move if you do it in the right way. It can help you save a significant amount of money that you spend on ads.",
   description:
     "Our SEO services help businesses grow organically by enhancing visibility across search engines like Google. We offer strategic SEO optimization, which involves link building, technical improvements, content upgrades, and keyword research. We focus on increasing search rankings, attracting high-quality traffic, and driving long-term growth. Whether you are a service provider, local business, or eCommerce brand, our expert SEO services are designed to deliver measurable results.",
-  secondaryDescription:
-    "***SEO can be a game-changing move if you do it in the right way. It can help you save a significant amount of money that you spend on ads.***",
-  maxWidthClassName: "max-w-[880px]",
-  reviews: [
+  ctaLabel: "Book a Discovery Call",
+  ctaHref: "/request-quote",
+  badges: [
     {
-      platform: "Clutch",
-      reviewCount: "132 Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/clutch-wordmark.svg",
-      logoAlt: "Clutch Review Dynamic Dreamz",
-      logoWidth: 69,
-      logoHeight: 19,
+      name: "Clutch",
+      src: "/assets/proof/clutch-rating.svg",
       href: "https://clutch.co/profile/dynamic-dreamz",
+      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+      width: 111,
+      height: 44,
     },
     {
-      platform: "Upwork",
-      reviewCount: "2000+ Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/upwork-wordmark.svg",
-      logoAlt: "Upwork Review Dynamic Dreamz",
-      logoWidth: 78,
-      logoHeight: 23,
-      href: "https://www.upwork.com/agencies/dynamicdreamz/",
+      name: "Trustpilot",
+      src: "/assets/proof/trustpilot-rating.svg",
+      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+      width: 148,
+      height: 50,
     },
     {
-      platform: "GoodFirms",
-      reviewCount: "72 Reviews",
-      rating: "5.0",
-      logoSrc: "/assets/reviews/goodfirms-wordmark.svg",
-      logoAlt: "Goodfirms Review Dynamic Dreamz",
-      logoWidth: 105,
-      logoHeight: 16,
-      href: "https://www.goodfirms.co/company/dynamic-dreamz",
+      name: "Upwork",
+      src: "/assets/proof/upwork-top-rated-plus.svg",
+      href: "https://www.upwork.com/ag/dynamicdreamz/",
+      alt: "Dynamic Dreamz — Upwork Top Rated Plus",
+      width: 126,
+      height: 54,
     },
   ],
+  videoSrc: "/assets/home/why-dynamic-dreamz.mp4",
 };
 
 export const seoServicesWhyChoose: PillListContent = {

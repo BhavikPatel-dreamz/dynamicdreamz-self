@@ -27,7 +27,6 @@ export function SeoServicesPage() {
     <div>
       <ServiceHeroSection
         content={seoServicesHeroContent}
-        variant="centered"
       />
       <IndustryBrandsSection
         content={{ slug: seoServicesBrands.slug }}
