@@ -54,6 +54,7 @@ const nextConfig: NextConfig = {
   // robots, and JSON-LD output. `npm run check:urls` prevents policy drift.
   trailingSlash: false,
   experimental: {
+    agentUpgrade: "security",
     useTypeScriptCli: false,
     // App Router: emit imported CSS as <style> in HTML instead of render-blocking
     // <link rel="stylesheet"> (production only). Tailwind + next/font CSS is ~42 KiB.
