@@ -15,5 +15,14 @@ export const CareerApplyBlock: Block = {
     { name: "emailAddress", type: "text" },
     { name: "emailHref", type: "text" },
     { name: "note", type: "text" },
+    {
+      name: "form",
+      type: "relationship",
+      relationTo: "forms",
+      label: "Form (CMS Form Builder)",
+      admin: {
+        description: "Select the Career Apply Now form created in Form Builder.",
+      },
+    },
   ],
 };

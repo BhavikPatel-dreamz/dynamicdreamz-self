@@ -838,6 +838,7 @@ export interface BlockRequestQuoteHero {
     avatar?: CmsMedia | null;
   }[];
   budgetOptions?: readonly { option: string }[];
+  form?: any;
 }
 
 export interface BlockCareerHero {
@@ -896,6 +897,7 @@ export interface BlockCareerApply {
   emailAddress?: string;
   emailHref?: string;
   note?: string;
+  form?: any;
 }
 
 export interface BlockServiceHeroVideo {
@@ -3716,6 +3718,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 badges={customBadges}
                 budgetOptions={budgetOptions}
                 counters={counters}
+                form={rqBlock.form}
                 hero={hero}
                 key={blockKey}
                 testimonials={customTestimonials}
@@ -3818,6 +3821,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 emailAddress={caBlock.emailAddress}
                 emailHref={caBlock.emailHref}
                 emailLabel={caBlock.emailLabel}
+                form={caBlock.form}
                 heading={caBlock.heading}
                 key={blockKey}
                 note={caBlock.note}

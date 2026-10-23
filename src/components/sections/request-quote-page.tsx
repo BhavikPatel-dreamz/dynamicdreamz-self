@@ -1,5 +1,8 @@
 import { HeaderTwo } from "@/components/sections/request-quote/header-two";
 import { QuoteForm } from "@/components/sections/request-quote/quote-form";
+import { CmsFormClient } from "@/components/forms/CmsFormClient";
+import type { Form as PayloadForm } from "@/types/payload-types";
+import { requestQuoteContent } from "@/content/request-quote";
 import {
   QuoteBadgeItem,
   QuoteCounterItem,
@@ -17,6 +20,7 @@ export type RequestQuotePageProps = {
   badges?: readonly QuoteBadgeItem[];
   testimonials?: readonly QuoteTestimonialItem[];
   budgetOptions?: readonly string[];
+  form?: PayloadForm | number | string | null;
 };
 
 export function RequestQuotePage({
@@ -25,6 +29,7 @@ export function RequestQuotePage({
   badges,
   testimonials,
   budgetOptions,
+  form,
 }: RequestQuotePageProps = {}) {
   return (
     <div className="overflow-x-clip">
@@ -41,7 +46,19 @@ export function RequestQuotePage({
                   testimonials={testimonials}
                 />
               </div>
-              <QuoteForm budgetOptions={budgetOptions} />
+              {form && typeof form === "object" ? (
+                <div className="right-col w-1/2 py-[150px] pl-[46px] pb-[110px] max-[1199px]:pl-[30px] max-[992px]:w-full max-[992px]:pt-[150px] max-[992px]:pl-0 max-[992px]:pb-[50px] max-[767px]:pt-[145px] max-[767px]:pb-[50px]">
+                  <h2 className="mb-6 font-display text-[35px] leading-[48.475px] font-medium tracking-[-0.7px] text-ink max-[1199px]:text-[29px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px] max-[992px]:mb-10 max-[359px]:text-2xl">
+                    {hero?.title || (typeof form === "object" && form !== null && "title" in form && form.title ? form.title : requestQuoteContent.form.title)}
+                  </h2>
+                  <CmsFormClient
+                    form={form}
+                    submitButtonClassName="group/quote-submit relative inline-flex min-h-[49px] cursor-pointer items-center justify-center overflow-hidden rounded-[30px] border-2 border-brand-red bg-brand-red px-8 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-300 hover:bg-black hover:border-black disabled:cursor-wait disabled:opacity-70"
+                  />
+                </div>
+              ) : (
+                <QuoteForm budgetOptions={budgetOptions} />
+              )}
             </div>
           </div>
         </Container>

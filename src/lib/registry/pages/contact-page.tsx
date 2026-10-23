@@ -1,9 +1,11 @@
 import Link from "next/link";
 
+import { CmsFormClient } from "@/components/forms/CmsFormClient";
 import { ContactForm } from "@/components/blocks/ContactOfficesAndFormBlock";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/container";
 import { contactPageContent } from "@/content/contact";
+import { contactFormCopy } from "@/content/forms";
 
 function PhoneIcon() {
   return (
@@ -107,12 +109,14 @@ export type ContactFormSectionProps = {
   eyebrow?: string;
   title?: string;
   description?: string;
+  form?: any;
 };
 
 export function ContactFormSection({
   eyebrow = contactPageContent.formSection.eyebrow,
   title = contactPageContent.formSection.title,
   description = contactPageContent.formSection.description,
+  form,
 }: ContactFormSectionProps = {}) {
   return (
     <section
@@ -140,7 +144,15 @@ export function ContactFormSection({
             </p>
           </div>
           <div className="p-10 max-[1199px]:p-[30px] max-[767px]:px-5 max-[767px]:py-[30px]">
-            <ContactForm />
+            {form && typeof form === "object" ? (
+              <CmsFormClient
+                form={form}
+                submitButtonClassName="relative inline-flex min-h-[49px] shrink-0 cursor-pointer overflow-hidden rounded-[30px] border-2 border-brand-red bg-brand-red px-8 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-300 hover:border-[#4f4f4f] hover:bg-transparent hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70 max-[767px]:w-full max-[767px]:justify-center"
+                footerNote={<p>{contactFormCopy.note}</p>}
+              />
+            ) : (
+              <ContactForm />
+            )}
           </div>
         </div>
       </Container>
@@ -376,11 +388,15 @@ export function ContactDetailsSection({
   );
 }
 
-export function ContactPage() {
+export type ContactPageProps = {
+  form?: any;
+};
+
+export function ContactPage({ form }: ContactPageProps = {}) {
   return (
     <>
       <ContactHeroSection />
-      <ContactFormSection />
+      <ContactFormSection form={form} />
       <ContactOfficesSection />
       <ContactDetailsSection />
     </>

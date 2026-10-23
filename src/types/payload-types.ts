@@ -1420,6 +1420,10 @@ export interface Page {
             heroTitle?: string | null;
             heroDescription?: string | null;
             formTitle?: string | null;
+            /**
+             * Select the Request a Quote form created in Form Builder.
+             */
+            form?: (number | null) | Form;
             counters?:
               | {
                   label: string;
@@ -1516,6 +1520,10 @@ export interface Page {
             emailAddress?: string | null;
             emailHref?: string | null;
             note?: string | null;
+            /**
+             * Select the Career Apply Now form created in Form Builder.
+             */
+            form?: (number | null) | Form;
             id?: string | null;
             blockName?: string | null;
             blockType: 'career-apply';
@@ -4813,6 +4821,7 @@ export interface PagesSelect<T extends boolean = true> {
               heroTitle?: T;
               heroDescription?: T;
               formTitle?: T;
+              form?: T;
               counters?:
                 | T
                 | {
@@ -4913,6 +4922,7 @@ export interface PagesSelect<T extends boolean = true> {
               emailAddress?: T;
               emailHref?: T;
               note?: T;
+              form?: T;
               id?: T;
               blockName?: T;
             };

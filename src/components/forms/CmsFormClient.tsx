@@ -2,7 +2,8 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { cmsFormCopy } from "@/content/forms";
+import { PhoneInput } from "@/components/ui/phone-input";
+import { cmsFormCopy, contactFormCopy } from "@/content/forms";
 import type { Form as PayloadForm } from "@/types/payload-types";
 
 type FormFieldBlock = NonNullable<PayloadForm["fields"]>[number];
@@ -11,6 +12,7 @@ export type CmsFormClientProps = {
   form: PayloadForm | number | string | null | undefined;
   className?: string;
   submitButtonClassName?: string;
+  footerNote?: React.ReactNode;
   onSuccess?: () => void;
 };
 
@@ -116,6 +118,7 @@ export function CmsFormClient({
   form,
   className = "",
   submitButtonClassName = "",
+  footerNote,
   onSuccess,
 }: CmsFormClientProps) {
   const router = useRouter();
@@ -134,6 +137,38 @@ export function CmsFormClient({
       onSuccess?.();
     }
   }, [isSubmitted, onSuccess]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !formRef.current) return;
+    const searchParams = new URLSearchParams(window.location.search);
+    for (const [key, val] of searchParams.entries()) {
+      if (!val) continue;
+      const elements = Array.from(formRef.current.elements);
+      const match = elements.find((el) => {
+        const name = (el as HTMLInputElement).name;
+        if (!name) return false;
+        const normKey = key.toLowerCase().replace(/[^a-z0-9]/g, "");
+        const normName = name.toLowerCase().replace(/[^a-z0-9]/g, "");
+        return normKey === normName || normName.includes(normKey) || normKey.includes(normName);
+      }) as HTMLInputElement | HTMLSelectElement | undefined;
+
+      if (match) {
+        if (match.tagName === "SELECT") {
+          const select = match as HTMLSelectElement;
+          const option = Array.from(select.options).find(
+            (opt) =>
+              opt.value.toLowerCase() === val.toLowerCase() ||
+              opt.text.toLowerCase() === val.toLowerCase(),
+          );
+          if (option) {
+            select.value = option.value;
+          }
+        } else if (match.tagName === "INPUT" && (match as HTMLInputElement).type !== "file") {
+          match.value = val;
+        }
+      }
+    }
+  }, [parsedForm]);
 
   if (!parsedForm || !formId) {
     return null;
@@ -175,6 +210,16 @@ export function CmsFormClient({
 
       const submissionData: Array<{ field: string; value: string }> = [];
 
+      const searchParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
+      if (searchParams) {
+        for (const attr of ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"]) {
+          const val = searchParams.get(attr);
+          if (val) {
+            submissionData.push({ field: attr, value: val });
+          }
+        }
+      }
+
       for (const field of fields) {
         if ("name" in field && field.name) {
           if (field.blockType === "upload") {
@@ -211,11 +256,16 @@ export function CmsFormClient({
               }
             }
           } else {
-            const value = formData.get(field.name);
-            if (value !== null) {
+            const rawValue = formData.get(field.name);
+            if (rawValue !== null) {
+              const dialCode = formData.get(`${field.name}_dial_code`);
+              const finalValue =
+                dialCode && typeof dialCode === "string" && typeof rawValue === "string" && rawValue.trim() !== ""
+                  ? `${dialCode} ${rawValue}`
+                  : String(rawValue);
               submissionData.push({
                 field: field.name,
-                value: String(value),
+                value: finalValue,
               });
             }
           }
@@ -312,6 +362,12 @@ export function CmsFormClient({
           const fieldId = `form-${formId}-${(field as any).name}-${index}`;
           const isRequired = Boolean((field as any).required);
           const fieldLabel = (field as any).label || (field as any).name;
+          const fieldPlaceholder =
+            (field as any).placeholder ||
+            cmsFormCopy.placeholders[
+              (field as any).name as keyof typeof cmsFormCopy.placeholders
+            ] ||
+            "";
 
           return (
             <div key={field.id || index} className={colClass}>
@@ -357,6 +413,7 @@ export function CmsFormClient({
                       name={(field as any).name}
                       required={isRequired}
                       defaultValue={(field as any).defaultValue || ""}
+                      placeholder={fieldPlaceholder}
                       rows={4}
                       className="w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] p-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm"
                     />
@@ -398,30 +455,56 @@ export function CmsFormClient({
                       </select>
                     </div>
                   ) : field.blockType === "upload" ? (
-                    <div className="relative">
-                      <input
-                        id={fieldId}
-                        name={(field as any).name}
-                        type="file"
-                        required={isRequired}
-                        multiple={Boolean((field as any).multiple)}
-                        accept={
-                          Array.isArray((field as any).mimeTypes)
-                            ? (field as any).mimeTypes
-                                .map((m: any) => m.mimeType || m)
-                                .join(",")
-                            : undefined
-                        }
-                        className="h-[49px] w-full cursor-pointer rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-white px-3 py-2 text-base font-medium text-[#090909] file:mr-3 file:cursor-pointer file:rounded-[4px] file:border-0 file:bg-[#090909] file:px-3 file:py-1 file:text-xs file:font-semibold file:text-white file:transition-colors hover:file:bg-[#d92128] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[992px]:h-[44px]"
-                      />
-                      {(field as any).maxFileSize ? (
-                        <p className="mt-1 text-xs text-[#666]">
-                          {cmsFormCopy.maxFileSizePrefix}
-                          {Math.round((field as any).maxFileSize / (1024 * 1024))}
-                          {cmsFormCopy.megabytesUnit}
+                    <div className="upload_file">
+                      <div className="flex flex-wrap items-center">
+                        <input
+                          id={fieldId}
+                          name={(field as any).name}
+                          type="file"
+                          required={isRequired}
+                          multiple={Boolean((field as any).multiple)}
+                          accept={
+                            Array.isArray((field as any).mimeTypes)
+                              ? (field as any).mimeTypes
+                                  .map((m: any) => m.mimeType || m)
+                                  .join(",")
+                              : undefined
+                          }
+                          className="sr-only"
+                          onChange={(e) => {
+                            const fileName = e.target.files?.[0]?.name;
+                            const labelEl = document.getElementById(`${fieldId}-filename`);
+                            if (labelEl) {
+                              labelEl.textContent = fileName || cmsFormCopy.uploadNoFileChosen;
+                            }
+                          }}
+                        />
+                        <label
+                          htmlFor={fieldId}
+                          className="inline-block cursor-pointer rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[url('/assets/career/icons/upload-icon.svg')] bg-[position:6px_center] bg-no-repeat py-5 pr-5 pl-20 text-base font-medium leading-[23.28px] text-[#090909] transition-colors hover:border-[#090909] max-[991px]:py-4 max-[991px]:pl-16 max-[991px]:text-sm"
+                        >
+                          {cmsFormCopy.uploadButton}
+                        </label>
+                        <span className="ml-4 text-xs font-medium leading-[17.46px] text-[#090909] max-[1299px]:ml-2.5 max-[1299px]:text-[11px] max-[1199px]:mt-2.5 max-[1199px]:block max-[1199px]:w-full max-[1199px]:ml-0">
+                          {cmsFormCopy.uploadHelpText}
+                        </span>
+                      </div>
+                      <div className="no_file mt-[5px] text-xs font-medium leading-[17.46px] text-[#090909]">
+                        <p id={`${fieldId}-filename`} className="m-0">
+                          {cmsFormCopy.uploadNoFileChosen}
                         </p>
-                      ) : null}
+                      </div>
                     </div>
+                  ) : (field as any).name === "phone" || (field as any).name?.toLowerCase().includes("phone") ? (
+                    <PhoneInput
+                      id={fieldId}
+                      name={(field as any).name}
+                      required={isRequired}
+                      placeholder={fieldPlaceholder}
+                      defaultIso2="in"
+                      searchPlaceholder={contactFormCopy.phoneSearchPlaceholder}
+                      selectAriaLabel={contactFormCopy.phoneCountrySelectAriaLabel}
+                    />
                   ) : (
                     <input
                       id={fieldId}
@@ -435,6 +518,7 @@ export function CmsFormClient({
                       }
                       required={isRequired}
                       defaultValue={(field as any).defaultValue || ""}
+                      placeholder={fieldPlaceholder}
                       className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[992px]:h-[44px]"
                     />
                   )}
@@ -454,7 +538,18 @@ export function CmsFormClient({
         </div>
       )}
 
-      <div className="pt-2">
+      <div
+        className={
+          footerNote
+            ? "flex items-center justify-between gap-5 pt-2 max-[767px]:flex-col-reverse max-[767px]:items-center [&_button]:max-[767px]:w-full"
+            : "pt-2"
+        }
+      >
+        {footerNote && (
+          <div className="text-xs font-normal text-muted max-[767px]:text-center">
+            {footerNote}
+          </div>
+        )}
         <button
           type="submit"
           disabled={isSubmitting}

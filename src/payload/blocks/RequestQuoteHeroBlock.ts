@@ -11,6 +11,15 @@ export const RequestQuoteHeroBlock: Block = {
     { name: "heroDescription", type: "textarea" },
     { name: "formTitle", type: "text" },
     {
+      name: "form",
+      type: "relationship",
+      relationTo: "forms",
+      label: "Form (CMS Form Builder)",
+      admin: {
+        description: "Select the Request a Quote form created in Form Builder.",
+      },
+    },
+    {
       name: "counters",
       type: "array",
       dbName: "rq_cnts",

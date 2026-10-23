@@ -138,9 +138,21 @@ export const cmsFormCopy = {
   countryPlaceholder: "Select country",
   statePlaceholder: "Select state",
   uploadButton: "Choose File",
+  uploadNoFileChosen: "No file chosen",
+  uploadHelpText: "(Only doc, docx, pdf and txt file formats allowed. Max limit: 5MB)",
   uploadError: "Failed to upload file. Please try again.",
   maxFileSizePrefix: "Max file size: ",
   megabytesUnit: "MB",
+  placeholders: {
+    name: "Enter Your Name",
+    email: "Enter Your Email",
+    phone: "Mobile phone",
+    company: "Enter Your Company name",
+    website: "Enter Your Website URL",
+    websiteUrl: "Enter Your Website URL",
+    project: "Share your questions or comments here",
+    message: "Share your questions or comments here",
+  },
 } as const;
 
 

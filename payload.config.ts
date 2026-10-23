@@ -119,7 +119,7 @@ export default buildConfig({
                       condition: (data) =>
                         Boolean(
                           Array.isArray(data?.fields) &&
-                            data.fields.some((f: any) => f?.blockType === "upload"),
+                          data.fields.some((f: any) => f?.blockType === "upload"),
                         ),
                       description:
                         "When enabled, files uploaded by the user in this form will be physically attached to this email.",
@@ -211,22 +211,22 @@ export default buildConfig({
   email:
     process.env.SMTP_USER && process.env.SMTP_PASS
       ? nodemailerAdapter({
-          defaultFromAddress:
-            process.env.EMAIL_FROM || process.env.SMTP_USER || "hello@dynamicdreamz.com",
-          defaultFromName: process.env.EMAIL_FROM_NAME || "Dynamic Dreamz",
-          transportOptions: ({
-            host: process.env.SMTP_HOST || "smtp.gmail.com",
-            port: Number(process.env.SMTP_PORT) || 465,
-            secure: Number(process.env.SMTP_PORT ?? 465) === 465,
-            auth: {
-              user: process.env.SMTP_USER,
-              pass: (process.env.SMTP_PASS || "").replace(/\s+/g, ""),
-            },
-            connectionTimeout: 10000,
-            greetingTimeout: 10000,
-            socketTimeout: 15000,
-          } as any),
-        })
+        defaultFromAddress:
+          process.env.EMAIL_FROM || process.env.SMTP_USER || "hello@dynamicdreamz.com",
+        defaultFromName: process.env.EMAIL_FROM_NAME || "Dynamic Dreamz",
+        transportOptions: ({
+          host: process.env.SMTP_HOST || "smtp.gmail.com",
+          port: Number(process.env.SMTP_PORT) || 465,
+          secure: Number(process.env.SMTP_PORT ?? 465) === 465,
+          auth: {
+            user: process.env.SMTP_USER,
+            pass: (process.env.SMTP_PASS || "").replace(/\s+/g, ""),
+          },
+          connectionTimeout: 10000,
+          greetingTimeout: 10000,
+          socketTimeout: 15000,
+        } as any),
+      })
       : undefined,
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
@@ -236,7 +236,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI || "",
     },
-    push: true, // for development
+    push: process.env.PAYLOAD_DB_PUSH === "true" ? true : false, // true for development
   }),
   sharp,
 });

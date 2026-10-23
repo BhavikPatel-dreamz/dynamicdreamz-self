@@ -4,6 +4,8 @@ import React, { useActionState, useEffect, useRef } from "react";
 import { HeaderTwo } from "@/components/blocks/MultiStepQuoteRequestBlock";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/container";
+import { CmsFormClient } from "@/components/forms/CmsFormClient";
+import type { Form as PayloadForm } from "@/types/payload-types";
 import { careerApplyNowContent } from "@/content/career-apply-now";
 import { careerApplyFormCopy } from "@/content/forms";
 import { submitCareerApplication, type CareerApplyFormState } from "@/lib/actions/career";
@@ -479,6 +481,7 @@ export type CareerApplyNowPageProps = {
   emailAddress?: string;
   emailHref?: string;
   note?: string;
+  form?: PayloadForm | number | string | null;
 };
 
 export function CareerApplyNowPage({
@@ -489,6 +492,7 @@ export function CareerApplyNowPage({
   emailLabel,
   emailAddress,
   emailHref,
+  form,
 }: CareerApplyNowPageProps = {}) {
   return (
     <div className="overflow-x-clip">
@@ -506,7 +510,16 @@ export function CareerApplyNowPage({
                 emailAddress={emailAddress}
                 emailHref={emailHref}
               />
-              <CareerApplyNowForm />
+              {form && typeof form === "object" ? (
+                <div className="right-col w-[61%] max-[1199px]:w-[55%] max-[991px]:w-full">
+                  <CmsFormClient
+                    form={form}
+                    submitButtonClassName="group/career-submit relative inline-flex min-h-[49px] cursor-pointer items-center justify-center overflow-hidden rounded-[30px] border-2 border-brand-red bg-brand-red px-8 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-300 hover:bg-black hover:border-black disabled:cursor-wait disabled:opacity-70 max-[767px]:w-full"
+                  />
+                </div>
+              ) : (
+                <CareerApplyNowForm />
+              )}
             </div>
           </div>
         </Container>
