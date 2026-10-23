@@ -270,7 +270,7 @@ flowchart TD
 
     subgraph SubmissionFlow["Submission & Notification Engine"]
         ApiEndpoint["POST /api/form-submissions"]
-        LocalActions["Server Actions (contact.ts / quote.ts)"]
+        LocalActions["Server Actions (contact.ts / quote.ts / career.ts)"]
         WebhookHook["formSubmissionOverrides.hooks.afterChange"]
         ExternalWebhook["CRM / Lead Webhook (CONTACT_FORM_WEBHOOK_URL)"]
     end

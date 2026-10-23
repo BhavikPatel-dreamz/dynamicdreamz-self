@@ -27,6 +27,7 @@ function extractLeadDetails(doc: SubmissionDoc) {
     map["full_name"] ||
     map["applicant_name"] ||
     map["first_name"] ||
+    map["enteryourname"] ||
     "";
 
   const email = map["email"] || map["email address"] || "";

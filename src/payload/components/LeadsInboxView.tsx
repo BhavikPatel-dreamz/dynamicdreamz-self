@@ -64,10 +64,17 @@ function parseSubmission(doc: SubmissionDoc): ParsedLead {
     map["full_name"] ||
     map["applicant_name"] ||
     map["first_name"] ||
+    map["enteryourname"] ||
     "";
 
   const email = map["email"] || map["email address"] || map["email_address"] || "";
-  const phone = map["phone"] || map["mobile"] || map["mobile phone"] || map["phone_number"] || "";
+  const phone =
+    map["phone"] ||
+    map["mobile"] ||
+    map["mobile phone"] ||
+    map["phone_number"] ||
+    map["tel"] ||
+    "";
   const company = map["company"] || map["company name"] || map["business name"] || map["company_name"] || "";
   const website = map["website"] || map["websiteurl"] || map["website url"] || map["website_url"] || "";
   const budget = map["budget"] || map["estimated budget"] || map["estimated_budget"] || "";
@@ -78,10 +85,20 @@ function parseSubmission(doc: SubmissionDoc): ParsedLead {
     map["brief"] ||
     map["inquiry"] ||
     map["notes"] ||
+    map["enteryourmessage"] ||
     "";
-  const position = map["position"] || map["role"] || "";
+  const position =
+    map["position"] ||
+    map["role"] ||
+    map["positionappliedfor"] ||
+    map["position applied for"] ||
+    "";
   const location = map["location"] || "";
-  const experience = map["experience"] || "";
+  const experience =
+    map["experience"] ||
+    map["yearsofexp"] ||
+    map["years of exp"] ||
+    "";
 
   const statusRaw = (map["status"] || "new").toLowerCase();
   const validStatus: LeadStatus =
