@@ -3335,6 +3335,10 @@ export interface Form {
           };
           [k: string]: unknown;
         } | null;
+        /**
+         * When enabled, files uploaded by the user in this form will be physically attached to this email.
+         */
+        attachUploads?: boolean | null;
         id?: string | null;
       }[]
     | null;
@@ -6807,6 +6811,7 @@ export interface FormsSelect<T extends boolean = true> {
         emailFrom?: T;
         subject?: T;
         message?: T;
+        attachUploads?: T;
         id?: T;
       };
   updatedAt?: T;

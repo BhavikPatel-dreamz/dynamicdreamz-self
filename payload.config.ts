@@ -4,7 +4,7 @@ import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
 import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
-import { buildConfig } from "payload";
+import { buildConfig, type Field } from "payload";
 import sharp from "sharp";
 
 import { Users } from "./src/payload/collections/Users";
@@ -20,6 +20,7 @@ import { Pages } from "./src/payload/collections/Pages";
 import { Navigation } from "./src/payload/globals/Navigation";
 import { SiteSettings } from "./src/payload/globals/SiteSettings";
 import { mediaServerStorage } from "./adapter/src/index";
+import { attachFormUploadsToEmail } from "./src/payload/hooks/attachFormUploadsToEmail";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -97,9 +98,38 @@ export default buildConfig({
       },
       uploadCollections: ["documents"],
       redirectRelationships: ["pages"],
+      beforeEmail: attachFormUploadsToEmail as any,
       formOverrides: {
         admin: {
           group: "Leads & Inquiries",
+        },
+        fields: ({ defaultFields }) => {
+          return defaultFields.map((field) => {
+            if ("name" in field && field.name === "emails" && "fields" in field && Array.isArray(field.fields)) {
+              return {
+                ...field,
+                fields: [
+                  ...field.fields,
+                  {
+                    name: "attachUploads",
+                    type: "checkbox",
+                    defaultValue: true,
+                    label: "Attach uploaded files (CV, Resume, Documents)",
+                    admin: {
+                      condition: (data) =>
+                        Boolean(
+                          Array.isArray(data?.fields) &&
+                            data.fields.some((f: any) => f?.blockType === "upload"),
+                        ),
+                      description:
+                        "When enabled, files uploaded by the user in this form will be physically attached to this email.",
+                    },
+                  },
+                ],
+              } as Field;
+            }
+            return field;
+          });
         },
       },
       formSubmissionOverrides: {
