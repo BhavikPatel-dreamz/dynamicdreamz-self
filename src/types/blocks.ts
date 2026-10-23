@@ -653,8 +653,6 @@ export type PortfolioShowcaseSectionProps = {
   itemsClassName?: string;
   variant?: "default" | "liveGrid";
   sectionId?: string;
-  showMobileArrow?: boolean;
-  mobileColumns?: 1 | 2;
   titleColumnClassName?: string;
   textColumnClassName?: string;
 };

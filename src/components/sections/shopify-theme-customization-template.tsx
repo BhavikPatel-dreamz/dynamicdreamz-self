@@ -61,7 +61,6 @@ export type ShopifyThemeCustomizationTemplateProps = {
   slug: string;
   faqIdPrefix: string;
   brandsDensity?: "standard" | "compact" | "flexible";
-  portfolioItemsClassName?: string;
   children?: ReactNode;
 };
 
@@ -70,7 +69,6 @@ export function ShopifyThemeCustomizationTemplate({
   slug,
   faqIdPrefix,
   brandsDensity,
-  portfolioItemsClassName,
   children,
 }: ShopifyThemeCustomizationTemplateProps) {
   const brandsContent = {
@@ -139,9 +137,7 @@ export function ShopifyThemeCustomizationTemplate({
           eyebrow={content.portfolio?.eyebrow}
           headerLayout="split"
           hideCta={false}
-          itemsClassName={portfolioItemsClassName}
           sectionId="our_work"
-          showMobileArrow={true}
         />
       ) : null}
       <SplitFaqSection

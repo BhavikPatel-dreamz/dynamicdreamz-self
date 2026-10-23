@@ -324,7 +324,6 @@ export type ShopifyThemeCustomizationTemplateProps = {
   slug: string;
   faqIdPrefix: string;
   brandsDensity?: "standard" | "compact" | "flexible";
-  portfolioItemsClassName?: string;
   children?: ReactNode;
 };
 
@@ -333,7 +332,6 @@ export function ShopifyThemeCustomizationTemplate({
   slug,
   faqIdPrefix,
   brandsDensity,
-  portfolioItemsClassName,
   children,
 }: ShopifyThemeCustomizationTemplateProps) {
   return (
@@ -376,9 +374,7 @@ export function ShopifyThemeCustomizationTemplate({
           eyebrow={content.portfolio?.eyebrow}
           headerLayout="split"
           hideCta={false}
-          itemsClassName={portfolioItemsClassName}
           sectionId="our_work"
-          showMobileArrow={true}
         />
       ) : null}
       <FaqSectionBlock
@@ -539,7 +535,6 @@ export function WordPressThemeCustomizationTemplate({
         headerLayout="split"
         hideCta={false}
         sectionId="our_work"
-        showMobileArrow={true}
       />
       <FaqSectionBlock
         heading={content.faqsHeading}

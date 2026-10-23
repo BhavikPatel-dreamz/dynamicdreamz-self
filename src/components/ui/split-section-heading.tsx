@@ -86,10 +86,8 @@ export function SplitSectionHeading({
     <header
       className={cn(
         "flex items-end justify-between max-[991px]:flex-col",
-        services || leftAligned
+        services || leftAligned || portfolio
           ? "max-[991px]:items-start max-[991px]:text-left"
-          : portfolio
-            ? "items-end max-[991px]:items-end max-[991px]:text-center"
           : "max-[991px]:text-center",
         className,
       )}
@@ -110,7 +108,7 @@ export function SplitSectionHeading({
       >
         {eyebrow ? (
           <Eyebrow
-            align={portfolio ? "responsive-center" : "start"}
+            align="start"
             // Live `.eyebrow` is `display: inline-flex`, which keeps the inline
             // baseline gap that the live heading block measures (title 4185px →
             // eyebrow 4189px at 1440px). Live margin-bottom is 16px.

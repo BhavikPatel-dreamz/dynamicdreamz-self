@@ -176,7 +176,7 @@ export default buildConfig({
           defaultFromAddress:
             process.env.EMAIL_FROM || process.env.SMTP_USER || "hello@dynamicdreamz.com",
           defaultFromName: process.env.EMAIL_FROM_NAME || "Dynamic Dreamz",
-          transportOptions: {
+          transportOptions: ({
             host: process.env.SMTP_HOST || "smtp.gmail.com",
             port: Number(process.env.SMTP_PORT) || 465,
             secure: Number(process.env.SMTP_PORT ?? 465) === 465,
@@ -187,7 +187,7 @@ export default buildConfig({
             connectionTimeout: 10000,
             greetingTimeout: 10000,
             socketTimeout: 15000,
-          },
+          } as any),
         })
       : undefined,
   secret: process.env.PAYLOAD_SECRET || "",

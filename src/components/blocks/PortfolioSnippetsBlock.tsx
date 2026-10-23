@@ -46,8 +46,6 @@ export type PortfolioSnippetsBlockProps = {
   variant?: "default" | "liveGrid";
   sectionId?: string;
   id?: string;
-  showMobileArrow?: boolean;
-  mobileColumns?: 1 | 2;
   titleColumnClassName?: string;
   textColumnClassName?: string;
   className?: string;
@@ -60,16 +58,12 @@ function ProjectCard({
   category,
   categoryClassName,
   imageAspectClassName,
-  defaultPlatformMark,
-  showMobileArrow,
   cardVariant,
 }: {
   item: PortfolioShowcaseItem;
   category?: string;
   categoryClassName?: string;
   imageAspectClassName?: string;
-  defaultPlatformMark?: PortfolioPlatformMark;
-  showMobileArrow?: boolean;
   cardVariant?: "default" | "ourWorkRefresh";
 }) {
   const isAppProject = !item.href && item.appLinks && item.appLinks.length > 0;
@@ -98,19 +92,19 @@ function ProjectCard({
               alt={item.imageAlt}
               fill
               loading="lazy"
-              sizes="(max-width: 575px) calc(100vw - 32px), (max-width: 991px) calc(50vw - 28px), 370px"
+              sizes="(max-width: 575px) calc(50vw - 23px), (max-width: 991px) calc(50vw - 28px), (max-width: 1199px) calc(33vw - 20px), 370px"
             />
             <span
               className="pointer-events-none absolute inset-0 z-1 bg-[linear-gradient(0deg,rgba(0,0,0,0.4)_0%,rgba(0,0,0,0.4)_100%)] opacity-0 transition-opacity duration-300 group-hover/project:opacity-100 group-focus/project:opacity-100 group-focus-within/project:opacity-100"
               data-project-overlay
             />
           </div>
-          <div className="mt-2.5 flex items-start justify-between gap-3">
-            <div>
+          <div className="mt-2.5 flex items-start justify-between gap-2 max-[767px]:gap-1.5">
+            <div className="min-w-0 flex-1">
               {resolvedCategory ? (
                 <p
                   className={cn(
-                    "text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px]",
+                    "text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px] max-[1199px]:leading-[14px] max-[1199px]:font-bold max-[1199px]:tracking-[0.8px]",
                     categoryClassName,
                   )}
                 >
@@ -119,19 +113,16 @@ function ProjectCard({
               ) : null}
               <h3
                 className={cn(
-                  resolvedCategory ? "mt-2.5 max-[1199px]:mt-[3px]" : "mt-0",
-                  "font-montreal-medium text-lg leading-5 font-normal text-ink capitalize max-[1199px]:text-sm",
+                  resolvedCategory ? "mt-2.5 max-[1199px]:mt-2 max-[767px]:mt-1.5" : "mt-0",
+                  cardVariant === "default"
+                    ? "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-tight"
+                    : "font-montreal-medium text-lg leading-5 font-normal text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-tight",
                 )}
               >
                 {item.name}
               </h3>
             </div>
-            <span
-              className={cn(
-                "flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red",
-                !showMobileArrow && "max-[767px]:hidden",
-              )}
-            >
+            <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red">
               <Image
                 aria-hidden="true"
                 className="h-[9px] w-[9px] brightness-0 transition-[filter] duration-300 group-hover/project:brightness-100 group-focus/project:brightness-100"
@@ -157,7 +148,7 @@ function ProjectCard({
               alt={item.imageAlt}
               fill
               loading="lazy"
-              sizes="(max-width: 575px) calc(100vw - 32px), (max-width: 991px) calc(50vw - 28px), 370px"
+              sizes="(max-width: 575px) calc(50vw - 23px), (max-width: 991px) calc(50vw - 28px), (max-width: 1199px) calc(33vw - 20px), 370px"
             />
             <span
               className={cn(
@@ -195,12 +186,12 @@ function ProjectCard({
               </span>
             )}
           </div>
-          <div className="mt-2.5 flex items-start justify-between gap-3">
-            <div>
+          <div className="mt-2.5 flex items-start justify-between gap-2 max-[767px]:gap-1.5">
+            <div className="min-w-0 flex-1">
               {resolvedCategory ? (
                 <p
                   className={cn(
-                    "text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px]",
+                    "text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px] max-[1199px]:leading-[14px] max-[1199px]:font-bold max-[1199px]:tracking-[0.8px]",
                     categoryClassName,
                   )}
                 >
@@ -209,8 +200,8 @@ function ProjectCard({
               ) : null}
               <h3
                 className={cn(
-                  resolvedCategory ? "mt-2.5 max-[1199px]:mt-[3px]" : "mt-0",
-                  "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1199px]:text-sm max-[1199px]:font-semibold",
+                  resolvedCategory ? "mt-2.5 max-[1199px]:mt-2 max-[767px]:mt-1.5" : "mt-0",
+                  "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-tight",
                 )}
               >
                 {item.name}
@@ -236,8 +227,6 @@ export function PortfolioSnippetsBlock({
   eyebrowClassName = "mb-4!",
   itemsClassName,
   sectionId = "portfolio-showcase",
-  showMobileArrow = false,
-  mobileColumns = 1,
   titleColumnClassName,
   textColumnClassName,
   variant = "default",
@@ -265,16 +254,10 @@ export function PortfolioSnippetsBlock({
 
   const gridColsClass =
     resolvedColumns === 4
-      ? mobileColumns === 2
-        ? "grid-cols-4 max-[992px]:grid-cols-2 max-[767px]:grid-cols-2"
-        : "grid-cols-4 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
+      ? "grid-cols-4 max-[992px]:grid-cols-2 max-[767px]:grid-cols-2"
       : resolvedColumns === 2
-        ? mobileColumns === 2
-          ? "grid-cols-2 max-[767px]:grid-cols-2"
-          : "grid-cols-2 max-[767px]:grid-cols-1"
-        : mobileColumns === 2
-          ? "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-2"
-          : "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1";
+        ? "grid-cols-2 max-[767px]:grid-cols-2"
+        : "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-2";
 
   const headingText = Array.isArray(content.heading)
     ? content.heading.join(" ")
@@ -307,7 +290,7 @@ export function PortfolioSnippetsBlock({
           )}
         </div>
 
-        <div className={`mt-[42px] grid gap-x-[15px] gap-y-[60px] max-[992px]:mt-[50px] max-[992px]:gap-y-[30px] ${gridColsClass} ${itemsClassName ?? ""}`}>
+        <div className={`mt-[42px] grid gap-x-[15px] gap-y-[60px] max-[992px]:mt-[50px] max-[992px]:gap-y-[30px] max-[767px]:mt-[30px] ${gridColsClass} ${itemsClassName ?? ""}`}>
           {content.items.map((item: any) => (
             <ProjectCard
               key={item.name}
@@ -315,8 +298,6 @@ export function PortfolioSnippetsBlock({
               category={item.category ?? content.category}
               categoryClassName={categoryClassName}
               imageAspectClassName={imageAspectClassName ?? "pb-[115%]"}
-              defaultPlatformMark={defaultPlatformMark}
-              showMobileArrow={showMobileArrow}
               cardVariant={cardVariant}
             />
           ))}
@@ -326,14 +307,14 @@ export function PortfolioSnippetsBlock({
           <div className="mt-[51px] flex flex-wrap justify-center gap-4 max-[767px]:mt-10 max-[575px]:flex-col" data-aos="fade-up">
             <Link
               href={resolvedCtaHref}
-              className="inline-flex items-center justify-center rounded-[30px] bg-brand-red px-8 py-3.5 text-sm font-bold text-white transition-colors duration-300 hover:bg-black"
+              className="inline-flex items-center justify-center rounded-[30px] bg-brand-red px-8 py-3.5 text-sm font-bold text-white transition-colors duration-300 hover:bg-black max-[575px]:w-full text-center"
             >
               {resolvedCtaLabel}
             </Link>
             {content.secondaryCtaLabel && content.secondaryCtaHref ? (
               <Link
                 href={content.secondaryCtaHref}
-                className="inline-flex items-center justify-center rounded-[30px] border border-black/20 bg-transparent px-8 py-3.5 text-sm font-bold text-ink transition-colors duration-300 hover:border-black hover:bg-black hover:text-white"
+                className="inline-flex items-center justify-center rounded-[30px] border border-black/20 bg-transparent px-8 py-3.5 text-sm font-bold text-ink transition-colors duration-300 hover:border-black hover:bg-black hover:text-white max-[575px]:w-full text-center"
               >
                 {content.secondaryCtaLabel}
               </Link>

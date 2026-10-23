@@ -37,9 +37,7 @@ export function ShopifyDevelopmentAgencyPage() {
         columns={4}
         content={shopifyDevelopmentAgencyPortfolio}
         headerLayout="split"
-        mobileColumns={2}
         sectionId="our_work"
-        showMobileArrow={true}
         variant="liveGrid"
       />
       <ShopifyTeamBoxesSection content={shopifyDevelopmentAgencyTeam} />

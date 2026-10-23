@@ -71,7 +71,6 @@ export function ShopifyMobileAppWorkSection({
                 appLinks={project.appLinks}
                 variant="ourWorkRefresh"
                 showArrow={true}
-                showMobileArrow={true}
               />
             </div>
           ))}

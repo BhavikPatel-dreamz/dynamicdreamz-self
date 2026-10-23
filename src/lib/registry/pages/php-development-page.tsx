@@ -59,9 +59,7 @@ export function PhpDevelopmentPage() {
         ctaLabel={phpDevelopmentContent.portfolio.ctaLabel}
         eyebrow={phpDevelopmentContent.portfolio.eyebrow}
         headerLayout="split"
-        mobileColumns={2}
         sectionId="our_work"
-        showMobileArrow={true}
         textColumnClassName="w-[48.3%] max-[992px]:w-full"
         titleColumnClassName="w-[44%] max-[992px]:w-full"
         variant="liveGrid"

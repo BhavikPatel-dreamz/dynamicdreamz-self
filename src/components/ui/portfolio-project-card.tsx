@@ -26,7 +26,6 @@ export type PortfolioProjectCardProps = {
   imageAspectClassName?: string;
   eagerImage?: boolean;
   variant?: "default" | "ourWorkRefresh";
-  showMobileArrow?: boolean;
   showArrow?: boolean;
 };
 
@@ -45,7 +44,7 @@ function ProjectImage({
       alt={imageAlt}
       fill
       loading={eagerImage ? "eager" : "lazy"}
-      sizes="(max-width: 575px) calc(100vw - 32px), (max-width: 991px) calc(50vw - 28px), 370px"
+      sizes="(max-width: 575px) calc(50vw - 23px), (max-width: 991px) calc(50vw - 28px), (max-width: 1199px) calc(33vw - 20px), 370px"
     />
   );
 }
@@ -98,14 +97,15 @@ function AppStoreLinks({ appLinks }: { appLinks: readonly PortfolioAppLink[] }) 
 export function PortfolioProjectCard({
   name,
   category,
+  categoryClassName,
   href,
   image,
   imageAlt,
   appLinks,
   imageAspectClassName,
   eagerImage = false,
-  showMobileArrow = false,
   showArrow = false,
+  variant,
 }: PortfolioProjectCardProps) {
   const isAppProject = !href && appLinks?.length;
 
@@ -134,28 +134,25 @@ export function PortfolioProjectCard({
             />
             <Overlay />
           </div>
-          <div className="mt-2.5 flex items-start justify-between gap-3">
-            <div>
+          <div className="mt-2.5 flex items-start justify-between gap-2 max-[767px]:gap-1.5">
+            <div className="min-w-0 flex-1">
               {category ? (
-                <p className="text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px]">
+                <p className={cn("text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px] max-[1199px]:leading-[14px] max-[1199px]:font-bold max-[1199px]:tracking-[0.8px]", categoryClassName)}>
                   {category}
                 </p>
               ) : null}
               <h3
                 className={cn(
-                  category ? "mt-2.5 max-[1199px]:mt-[3px]" : "mt-0",
-                  "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1199px]:text-sm max-[1199px]:font-semibold",
+                  category ? "mt-2.5 max-[1199px]:mt-2 max-[767px]:mt-1.5" : "mt-0",
+                  variant === "default"
+                    ? "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-tight"
+                    : "font-montreal-medium text-lg leading-5 font-normal text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-tight",
                 )}
               >
                 {name}
               </h3>
             </div>
-            <span
-              className={cn(
-                "flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red",
-                !showMobileArrow && "max-[767px]:hidden",
-              )}
-            >
+            <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red">
               <Image
                 aria-hidden="true"
                 className="h-[9px] w-[9px] brightness-0 transition-[filter] duration-300 group-hover/project:brightness-100 group-focus/project:brightness-100"
@@ -184,29 +181,26 @@ export function PortfolioProjectCard({
             <Overlay persistent={Boolean(isAppProject)} />
             {isAppProject ? <AppStoreLinks appLinks={appLinks} /> : null}
           </div>
-          <div className="mt-2.5 flex items-start justify-between gap-3">
-            <div>
+          <div className="mt-2.5 flex items-start justify-between gap-2 max-[767px]:gap-1.5">
+            <div className="min-w-0 flex-1">
               {category ? (
-                <p className="text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px]">
+                <p className={cn("text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px] max-[1199px]:leading-[14px] max-[1199px]:font-bold max-[1199px]:tracking-[0.8px]", categoryClassName)}>
                   {category}
                 </p>
               ) : null}
               <h3
                 className={cn(
-                  category ? "mt-2.5 max-[1199px]:mt-[3px]" : "mt-0",
-                  "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1199px]:text-sm max-[1199px]:font-semibold",
+                  category ? "mt-2.5 max-[1199px]:mt-2 max-[767px]:mt-1.5" : "mt-0",
+                  variant === "default"
+                    ? "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-tight"
+                    : "font-montreal-medium text-lg leading-5 font-normal text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-tight",
                 )}
               >
                 {name}
               </h3>
             </div>
             {showArrow && (
-              <span
-                className={cn(
-                  "flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red",
-                  !showMobileArrow && "max-[767px]:hidden",
-                )}
-              >
+              <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red">
                 <Image
                   aria-hidden="true"
                   className="h-[9px] w-[9px] brightness-0 transition-[filter] duration-300 group-hover/project:brightness-100 group-focus/project:brightness-100"

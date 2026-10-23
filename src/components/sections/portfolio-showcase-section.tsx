@@ -1,7 +1,7 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
-import { PortfolioProjectCard } from "@/components/ui/portfolio-project-card";
+import { PortfolioProjectCard, type PortfolioAppLink } from "@/components/ui/portfolio-project-card";
 import { sharedUiCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
@@ -13,6 +13,7 @@ export type PortfolioShowcaseItem = {
   imageAlt: string;
   category?: string;
   platformMark?: { src: string; width: number; height: number };
+  appLinks?: readonly PortfolioAppLink[];
 };
 
 export type PortfolioShowcaseSectionProps = {
@@ -43,8 +44,6 @@ export type PortfolioShowcaseSectionProps = {
   itemsClassName?: string;
   variant?: "default" | "liveGrid";
   sectionId?: string;
-  showMobileArrow?: boolean;
-  mobileColumns?: 1 | 2;
   titleColumnClassName?: string;
   textColumnClassName?: string;
   className?: string;
@@ -63,8 +62,6 @@ export function PortfolioShowcaseSection({
   eyebrowClassName = "mb-4!",
   itemsClassName,
   sectionId = "portfolio-showcase",
-  showMobileArrow = false,
-  mobileColumns = 1,
   titleColumnClassName,
   textColumnClassName,
   variant = "default",
@@ -94,16 +91,10 @@ export function PortfolioShowcaseSection({
 
   const gridColsClass =
     resolvedColumns === 4
-      ? mobileColumns === 2
-        ? "grid-cols-4 max-[992px]:grid-cols-2 max-[767px]:grid-cols-2"
-        : "grid-cols-4 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
+      ? "grid-cols-4 max-[992px]:grid-cols-2 max-[767px]:grid-cols-2"
       : resolvedColumns === 2
-        ? mobileColumns === 2
-          ? "grid-cols-2 max-[767px]:grid-cols-2"
-          : "grid-cols-2 max-[767px]:grid-cols-1"
-        : mobileColumns === 2
-          ? "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-2"
-          : "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1";
+        ? "grid-cols-2 max-[767px]:grid-cols-2"
+        : "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-2";
 
   return (
     <section className={cn(sectionClassName, className)} data-section="portfolio" id={sectionId}>
@@ -118,7 +109,7 @@ export function PortfolioShowcaseSection({
           variant="portfolio"
         />
 
-        <div className={`mt-[42px] grid gap-x-[15px] gap-y-[60px] max-[992px]:mt-[50px] max-[992px]:gap-y-[30px] ${gridColsClass} ${itemsClassName ?? ""}`}>
+        <div className={`mt-[42px] grid gap-x-[15px] gap-y-[60px] max-[992px]:mt-[50px] max-[992px]:gap-y-[30px] max-[767px]:mt-[30px] ${gridColsClass} ${itemsClassName ?? ""}`}>
           {content.items.map((item) => (
             <PortfolioProjectCard
               category={item.category ?? content.category}
@@ -130,8 +121,8 @@ export function PortfolioShowcaseSection({
               imageAspectClassName={imageAspectClassName ?? "pb-[115%]"}
               key={item.name}
               name={item.name}
+              appLinks={item.appLinks}
               platformMark={item.platformMark ?? defaultPlatformMark}
-              showMobileArrow={showMobileArrow}
               variant={effectiveCardVariant}
             />
           ))}
@@ -139,11 +130,11 @@ export function PortfolioShowcaseSection({
 
         {!hideCta && (
           <div className="mt-[51px] flex flex-wrap justify-center gap-4 max-[767px]:mt-10 max-[575px]:flex-col" data-aos="fade-up">
-            <ButtonLink href={resolvedCtaHref} variant="primary">
+            <ButtonLink href={resolvedCtaHref} variant="primary" className="max-[575px]:w-full text-center">
               {resolvedCtaLabel}
             </ButtonLink>
             {content.secondaryCtaLabel && content.secondaryCtaHref ? (
-              <ButtonLink href={content.secondaryCtaHref} variant="outline">
+              <ButtonLink href={content.secondaryCtaHref} variant="outline" className="max-[575px]:w-full text-center">
                 {content.secondaryCtaLabel}
               </ButtonLink>
             ) : null}

@@ -103,7 +103,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="broadcast-faq"
         slug="broadcast-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -129,7 +128,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="craft-faq"
         slug="craft-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -217,7 +215,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="impact-faq"
         slug="impact-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -243,7 +240,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="origin-faq"
         slug="origin-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -257,7 +253,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="pipeline-faq"
         slug="pipeline-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -296,7 +291,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="publisher-faq"
         slug="publisher-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -310,7 +304,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="refresh-faq"
         slug="refresh-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -361,7 +354,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="spotlight-faq"
         slug="spotlight-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -375,7 +367,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="startup-faq"
         slug="startup-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -389,7 +380,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="stiletto-faq"
         slug="stiletto-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -403,7 +393,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="studio-faq"
         slug="studio-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -430,7 +419,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="trade-faq"
         slug="trade-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -456,7 +444,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="vision-faq"
         slug="vision-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -470,7 +457,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="warehouse-faq"
         slug="warehouse-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },
@@ -484,7 +470,6 @@ export const shopifyThemesRegistry: readonly ServicePageEntry[] = [
         faqIdPrefix="woodstock-faq"
         slug="woodstock-theme-customization"
         brandsDensity="compact"
-        portfolioItemsClassName="max-[1199px]:grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-1"
       />
     ),
   },

@@ -131,7 +131,6 @@ export function IndustryLandingTemplate({
         content={portfolio}
         hideCta={true}
         sectionId="our_work"
-        showMobileArrow={true}
       />
       <WhyChooseShopifyMigrationSection content={whyChoose} />
       {testimonials ? (

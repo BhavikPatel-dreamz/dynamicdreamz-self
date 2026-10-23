@@ -4078,9 +4078,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 headerLayout={psBlock.headerLayout || "split"}
                 hideCta={psBlock.hideCta}
                 key={blockKey}
-                mobileColumns={isLiveGrid ? 2 : undefined}
                 sectionId={psBlock.sectionId || "our_work"}
-                showMobileArrow={isLiveGrid ? true : undefined}
                 variant={isLiveGrid ? "liveGrid" : psBlock.variant || "default"}
               />
             );
