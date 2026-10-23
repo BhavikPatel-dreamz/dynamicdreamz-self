@@ -6,6 +6,13 @@ export type SubmissionDoc = {
   id: string | number;
   form?: { id: string | number; title?: string } | string | number | null;
   submissionData?: Array<{ id?: string; field: string; value: string }> | null;
+  submissionUploads?: Array<{
+    field: string;
+    value?: Array<{
+      relationTo: string;
+      value: any;
+    }>;
+  }> | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -30,6 +37,7 @@ export type ParsedLead = {
   location?: string;
   experience?: string;
   rawFields: Array<{ id?: string; field: string; value: string }>;
+  uploads: Array<{ field: string; filename: string; url: string }>;
   attribution: {
     source?: string;
     medium?: string;
@@ -88,6 +96,28 @@ function parseSubmission(doc: SubmissionDoc): ParsedLead {
       ? `Form #${doc.form}`
       : "Inquiry Form";
 
+  const uploads: Array<{ field: string; filename: string; url: string }> = [];
+  if (Array.isArray(doc.submissionUploads)) {
+    for (const item of doc.submissionUploads) {
+      if (Array.isArray(item.value)) {
+        for (const sub of item.value) {
+          const val = sub?.value;
+          if (val && typeof val === "object") {
+            const filename = (val as any).filename || (val as any).name || "Document";
+            const url =
+              (val as any).url ||
+              `https://media.dynamicdreamz.net/files/${sub.relationTo === "documents" ? "documents" : "uploads"}/${encodeURIComponent(filename)}`;
+            uploads.push({
+              field: item.field,
+              filename,
+              url,
+            });
+          }
+        }
+      }
+    }
+  }
+
   return {
     id: doc.id,
     formId: typeof doc.form === "object" ? doc.form?.id : doc.form ?? undefined,
@@ -106,6 +136,7 @@ function parseSubmission(doc: SubmissionDoc): ParsedLead {
     location,
     experience,
     rawFields: submissionData,
+    uploads,
     attribution: {
       source: map["utm_source"] || map["source"],
       medium: map["utm_medium"],
@@ -1523,6 +1554,54 @@ export const LeadsInboxView = (props: { data?: { docs?: SubmissionDoc[] } }) => 
                           Campaign: <strong>{selectedLead.attribution.campaign}</strong>
                         </span>
                       )}
+                    </div>
+                  </div>
+                )}
+
+                {/* Attached Documents / Resumes */}
+                {selectedLead.uploads && selectedLead.uploads.length > 0 && (
+                  <div style={{ marginTop: "16px", borderTop: "1px solid var(--theme-elevation-150)", paddingTop: "14px" }}>
+                    <span
+                      style={{
+                        fontSize: "0.75rem",
+                        fontWeight: 600,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.05em",
+                        color: "var(--theme-elevation-500)",
+                        display: "block",
+                        marginBottom: "8px",
+                      }}
+                    >
+                      Attachments ({selectedLead.uploads.length})
+                    </span>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+                      {selectedLead.uploads.map((up, idx) => (
+                        <a
+                          key={idx}
+                          href={up.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "8px",
+                            padding: "8px 12px",
+                            backgroundColor: "var(--theme-elevation-100)",
+                            border: "1px solid var(--theme-elevation-200)",
+                            borderRadius: "var(--style-radius-s, 4px)",
+                            color: "var(--theme-text)",
+                            textDecoration: "none",
+                            fontSize: "0.875rem",
+                            fontWeight: 500,
+                          }}
+                        >
+                          <span>📎</span>
+                          <span style={{ fontWeight: 600 }}>{up.field}:</span>
+                          <span style={{ color: "#d92128", textDecoration: "underline" }}>
+                            {up.filename}
+                          </span>
+                        </a>
+                      ))}
                     </div>
                   </div>
                 )}

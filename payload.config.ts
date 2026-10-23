@@ -9,6 +9,7 @@ import sharp from "sharp";
 
 import { Users } from "./src/payload/collections/Users";
 import { Media } from "./src/payload/collections/Media";
+import { Documents } from "./src/payload/collections/Documents";
 import { Categories } from "./src/payload/collections/Categories";
 import { Authors } from "./src/payload/collections/Authors";
 import { Testimonials } from "./src/payload/collections/Testimonials";
@@ -76,6 +77,7 @@ export default buildConfig({
   collections: [
     Users,
     Media,
+    Documents,
     Categories,
     Authors,
     Testimonials,
@@ -91,7 +93,9 @@ export default buildConfig({
     formBuilderPlugin({
       fields: {
         payment: false,
+        upload: true,
       },
+      uploadCollections: ["documents"],
       redirectRelationships: ["pages"],
       formOverrides: {
         admin: {
@@ -166,6 +170,10 @@ export default buildConfig({
           disablePayloadAccessControl: true,
           prefix: "uploads",
         },
+        documents: {
+          disablePayloadAccessControl: true,
+          prefix: "documents",
+        },
       },
     }),
   ],
@@ -198,7 +206,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI || "",
     },
-    push: false,
+    push: true,
   }),
   sharp,
 });

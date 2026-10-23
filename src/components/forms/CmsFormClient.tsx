@@ -177,12 +177,47 @@ export function CmsFormClient({
 
       for (const field of fields) {
         if ("name" in field && field.name) {
-          const value = formData.get(field.name);
-          if (value !== null) {
-            submissionData.push({
-              field: field.name,
-              value: String(value),
-            });
+          if (field.blockType === "upload") {
+            const files = formData.getAll(field.name);
+            const validFiles = files.filter(
+              (f): f is File => f instanceof File && f.size > 0,
+            );
+            if (validFiles.length > 0) {
+              const uploadCollection = (field as any).uploadCollection || "documents";
+              const uploadedIds: string[] = [];
+              for (const file of validFiles) {
+                const fileFormData = new FormData();
+                fileFormData.append("file", file);
+                const upRes = await fetch(`/api/${uploadCollection}`, {
+                  method: "POST",
+                  body: fileFormData,
+                });
+                if (!upRes.ok) {
+                  const upErr = await upRes.json().catch(() => null);
+                  throw new Error(
+                    upErr?.errors?.[0]?.message || cmsFormCopy.uploadError,
+                  );
+                }
+                const upDoc = await upRes.json();
+                if (upDoc?.doc?.id) {
+                  uploadedIds.push(String(upDoc.doc.id));
+                }
+              }
+              if (uploadedIds.length > 0) {
+                submissionData.push({
+                  field: field.name,
+                  value: uploadedIds.join(","),
+                });
+              }
+            }
+          } else {
+            const value = formData.get(field.name);
+            if (value !== null) {
+              submissionData.push({
+                field: field.name,
+                value: String(value),
+              });
+            }
           }
         }
       }
@@ -361,6 +396,31 @@ export function CmsFormClient({
                           </option>
                         ))}
                       </select>
+                    </div>
+                  ) : field.blockType === "upload" ? (
+                    <div className="relative">
+                      <input
+                        id={fieldId}
+                        name={(field as any).name}
+                        type="file"
+                        required={isRequired}
+                        multiple={Boolean((field as any).multiple)}
+                        accept={
+                          Array.isArray((field as any).mimeTypes)
+                            ? (field as any).mimeTypes
+                                .map((m: any) => m.mimeType || m)
+                                .join(",")
+                            : undefined
+                        }
+                        className="h-[49px] w-full cursor-pointer rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-white px-3 py-2 text-base font-medium text-[#090909] file:mr-3 file:cursor-pointer file:rounded-[4px] file:border-0 file:bg-[#090909] file:px-3 file:py-1 file:text-xs file:font-semibold file:text-white file:transition-colors hover:file:bg-[#d92128] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[992px]:h-[44px]"
+                      />
+                      {(field as any).maxFileSize ? (
+                        <p className="mt-1 text-xs text-[#666]">
+                          {cmsFormCopy.maxFileSizePrefix}
+                          {Math.round((field as any).maxFileSize / (1024 * 1024))}
+                          {cmsFormCopy.megabytesUnit}
+                        </p>
+                      ) : null}
                     </div>
                   ) : (
                     <input

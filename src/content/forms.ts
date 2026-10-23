@@ -137,6 +137,10 @@ export const cmsFormCopy = {
   selectPlaceholder: "Select an option",
   countryPlaceholder: "Select country",
   statePlaceholder: "Select state",
+  uploadButton: "Choose File",
+  uploadError: "Failed to upload file. Please try again.",
+  maxFileSizePrefix: "Max file size: ",
+  megabytesUnit: "MB",
 } as const;
 
 
