@@ -108,6 +108,9 @@ export default buildConfig({
             if ("name" in field && field.name === "emails" && "fields" in field && Array.isArray(field.fields)) {
               return {
                 ...field,
+                access: {
+                  read: () => true,
+                },
                 fields: [
                   ...field.fields,
                   {

@@ -43,7 +43,7 @@ export function CareerApplyNowPage({
                 emailAddress={emailAddress}
                 emailHref={emailHref}
               />
-              {form && typeof form === "object" ? (
+              {form ? (
                 <div className="right-col w-[61%] max-[1199px]:w-[55%] max-[991px]:w-full">
                   <CmsFormClient
                     form={form}

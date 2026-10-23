@@ -46,7 +46,7 @@ export function RequestQuotePage({
                   testimonials={testimonials}
                 />
               </div>
-              {form && typeof form === "object" ? (
+              {form ? (
                 <div className="right-col w-1/2 py-[150px] pl-[46px] pb-[110px] max-[1199px]:pl-[30px] max-[992px]:w-full max-[992px]:pt-[150px] max-[992px]:pl-0 max-[992px]:pb-[50px] max-[767px]:pt-[145px] max-[767px]:pb-[50px]">
                   <h2 className="mb-6 font-display text-[35px] leading-[48.475px] font-medium tracking-[-0.7px] text-ink max-[1199px]:text-[29px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px] max-[992px]:mb-10 max-[359px]:text-2xl">
                     {hero?.title || (typeof form === "object" && form !== null && "title" in form && form.title ? form.title : requestQuoteContent.form.title)}

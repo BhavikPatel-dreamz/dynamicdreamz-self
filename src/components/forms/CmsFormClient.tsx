@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useId, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { cmsFormCopy, contactFormCopy } from "@/content/forms";
@@ -123,11 +123,32 @@ export function CmsFormClient({
 }: CmsFormClientProps) {
   const router = useRouter();
   const formRef = useRef<HTMLFormElement>(null);
+  const reactId = useId();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const parsedForm = typeof form === "object" && form !== null ? form : null;
+  const isObjectForm = typeof form === "object" && form !== null;
+  const [asyncForm, setAsyncForm] = useState<PayloadForm | null>(null);
+
+  useEffect(() => {
+    if (typeof form === "number" || (typeof form === "string" && form.trim() !== "")) {
+      let isMounted = true;
+      fetch(`/api/forms/${form}`)
+        .then((res) => (res.ok ? res.json() : null))
+        .then((data) => {
+          if (isMounted && data && typeof data === "object") {
+            setAsyncForm(data);
+          }
+        })
+        .catch(() => {});
+      return () => {
+        isMounted = false;
+      };
+    }
+  }, [form]);
+
+  const parsedForm = isObjectForm ? form : asyncForm;
   const formId = parsedForm?.id;
   const fields = parsedForm?.fields || [];
   const submitLabel = parsedForm?.submitButtonLabel || cmsFormCopy.defaultSubmit;
@@ -199,9 +220,19 @@ export function CmsFormClient({
     try {
       const formData = new FormData(formRef.current);
 
-      // Honeypot check
-      const website = formData.get("website");
-      if (website && typeof website === "string" && website.trim() !== "") {
+      // Honeypot check: anti-bot trap
+      const hpVal = formData.get("_dd_hp_website");
+      const legacyWebsite = formData.get("website");
+      const formHasWebsiteField = fields.some(
+        (f) => "name" in f && f.name === "website",
+      );
+      if (
+        (hpVal && typeof hpVal === "string" && hpVal.trim() !== "") ||
+        (!formHasWebsiteField &&
+          legacyWebsite &&
+          typeof legacyWebsite === "string" &&
+          legacyWebsite.trim() !== "")
+      ) {
         // Pretend success for spam bots
         setIsSubmitted(true);
         setIsSubmitting(false);
@@ -330,11 +361,11 @@ export function CmsFormClient({
       aria-label={parsedForm.title || cmsFormCopy.ariaLabel}
       className={className}
     >
-      {/* Honeypot field for anti-spam */}
+      {/* Honeypot field for anti-spam bots */}
       <input
-        name="website"
+        name="_dd_hp_website"
         tabIndex={-1}
-        autoComplete="off"
+        autoComplete="new-password"
         className="sr-only"
         aria-hidden="true"
       />
@@ -359,7 +390,7 @@ export function CmsFormClient({
             ? "mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[992px]:mb-[15px] max-[767px]:mb-5 max-[767px]:w-full max-[767px]:px-0"
             : "mb-7 w-full px-[7px] max-[1199px]:mb-5 max-[992px]:mb-[15px] max-[767px]:mb-5 max-[767px]:px-0";
 
-          const fieldId = `form-${formId}-${(field as any).name}-${index}`;
+          const fieldId = `${reactId}-${(field as any).name}-${index}`;
           const isRequired = Boolean((field as any).required);
           const fieldLabel = (field as any).label || (field as any).name;
           const fieldPlaceholder =

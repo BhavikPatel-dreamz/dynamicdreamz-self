@@ -328,7 +328,7 @@ export function ContactFormSection({
             </p>
           </div>
           <div className="p-10 max-[1199px]:p-[30px] max-[767px]:px-5 max-[767px]:py-[30px]">
-            {form && typeof form === "object" ? (
+            {form ? (
               <CmsFormClient
                 form={form}
                 submitButtonClassName="relative inline-flex min-h-[49px] shrink-0 cursor-pointer overflow-hidden rounded-[30px] border-2 border-brand-red bg-brand-red px-8 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-300 hover:border-[#4f4f4f] hover:bg-transparent hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70 max-[767px]:w-full max-[767px]:justify-center"
