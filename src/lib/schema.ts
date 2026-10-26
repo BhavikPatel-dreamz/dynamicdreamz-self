@@ -954,12 +954,18 @@ const careerOfficeAddresses = {
 
 function organizationSchema() {
   return {
-    "@type": "Organization",
+    "@type": ["Organization", "ProfessionalService"],
     "@id": organizationId,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     url: homeUrl,
-    logo: absoluteUrl(siteConfig.logo),
+    logo: {
+      "@type": "ImageObject",
+      "@id": `${siteConfig.url}#logo`,
+      url: absoluteUrl(siteConfig.logo),
+      width: 257,
+      height: 39,
+    },
     description: organizationAnswerSummary,
     foundingDate: String(companyFacts.foundedYear),
     numberOfEmployees: {
@@ -980,6 +986,13 @@ function organizationSchema() {
       "https://partners.bigcommerce.com/directory/partner/1117527/dynamicdreamz",
       "https://github.com/dynamicdreamz",
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      bestRating: "5",
+      worstRating: "1",
+      reviewCount: "2500",
+    },
     areaServed: [
       "United States",
       "United Kingdom",
@@ -1143,6 +1156,7 @@ export function createHomePageSchema() {
       {
         "@type": "FAQPage",
         "@id": homeFaqId,
+        isPartOf: { "@id": webPageId },
         mainEntity: homeFaqs.map((item) => ({
           "@type": "Question",
           name: item.question,
@@ -1425,6 +1439,7 @@ export function createLifePageSchema() {
       {
         "@type": "FAQPage",
         "@id": lifeFaqId,
+        isPartOf: { "@id": lifePageId },
         mainEntity: lifeFaqSection.items.map((item) => ({
           "@type": "Question",
           name: item.question,
@@ -2230,6 +2245,7 @@ function createServicePageSchema({
       {
         "@type": "FAQPage",
         "@id": faqId,
+        isPartOf: { "@id": pageId },
         mainEntity: faqs.map((item) => ({
           "@type": "Question",
           name: cleanFaqSchemaText(item.question),
@@ -4477,6 +4493,7 @@ export function createRisksOfShopifyOutsourcingPageSchema() {
       {
         "@type": "FAQPage",
         "@id": risksShopifyOutsourcingFaqId,
+        isPartOf: { "@id": risksShopifyOutsourcingPageId },
         mainEntity: risksShopifyOutsourcingFaqs.map((item) => ({
           "@type": "Question",
           name: item.question,
@@ -6050,6 +6067,7 @@ export function createModularPageSchema({
     graph.push({
       "@type": "FAQPage",
       "@id": faqId,
+      isPartOf: { "@id": pageId },
       mainEntity: faqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,

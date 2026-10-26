@@ -34,7 +34,10 @@
 - Generated Client Revenue: $1B+
 - Partner Status: Official Shopify Platinum Partner, BigCommerce Certified Partner
 
-## Case Studies & Portfolio
+## Flagship Case Studies & Proof
+- **[Ranavat](https://www.dynamicdreamz.com/case-studies/ranavat):** 6+ year Shopify and Shopify Plus engineering partnership for luxury Ayurvedic beauty; scaled global multi-currency storefronts, customized subscription retention flows, and supported brand growth across 5,000+ SKU variants.
+- **[Bombay Shirt Company](https://www.dynamicdreamz.com/case-studies/bombay-shirt-company):** 5-year continuous Shopify engineering retainer delivering custom Fit Smart body-type sizing, 6-parameter custom shirt configurator, webhook OMS production sync, and personalized sizing profile retention.
+- **[DONJ Jewellery](https://www.dynamicdreamz.com/case-studies/don-j):** Enterprise replatforming from legacy WooCommerce to modular headless commerce with Next.js 16 and Medusa v2; achieved sub-1.5s page loads, sub-second live metal pricing calculations across 10,000+ custom diamond configurations, and zero catalog downtime.
 - [Case Studies Overview](https://www.dynamicdreamz.com/case-studies): Detailed breakdowns of enterprise migrations, custom feature developments, and revenue scaling for global brands.
 - [Our Work / Portfolio](https://www.dynamicdreamz.com/our-work): Curated showcase of Shopify, Shopify Plus, and mobile application builds.
 

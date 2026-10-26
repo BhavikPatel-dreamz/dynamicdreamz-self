@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 import {
   primaryNavigation,
@@ -173,6 +173,11 @@ export interface DesktopNavigationProps {
 }
 
 export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
+  const isMounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const navigationRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
@@ -242,7 +247,12 @@ export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
                 <ChevronIcon />
               </button>
 
-              <div id={menuId} aria-hidden={!isOpen} inert={!isOpen} className={cn(!isOpen && "hidden")}>
+              <div
+                id={menuId}
+                aria-hidden={isMounted && !isOpen ? true : undefined}
+                inert={isMounted && !isOpen ? true : undefined}
+                className={cn(!isOpen && "hidden")}
+              >
                 <MenuPanel group={group} />
               </div>
             </li>
@@ -297,6 +307,11 @@ export interface MobileNavigationProps {
 }
 
 export function MobileNavigation({ navigation, contactEmail }: MobileNavigationProps = {}) {
+  const isMounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
   const [isOpen, setIsOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -375,8 +390,9 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
         <HamburgerIcon />
       </button>
 
-      <div
-        className={cn(
+      {isMounted && (
+        <div
+          className={cn(
           "fixed top-0 left-0 z-[999] h-screen w-full -translate-x-full overflow-hidden bg-white px-5 pt-[30px] pb-[100px] outline-none transition-transform duration-800 [height:100dvh]",
           isOpen && "pointer-events-auto translate-x-0",
         )}
@@ -490,6 +506,7 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
           </ul>
         </nav>
       </div>
+      )}
     </div>
   );
 }

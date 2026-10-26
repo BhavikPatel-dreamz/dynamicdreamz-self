@@ -60,6 +60,14 @@ export function ClientLogoMarqueeBlock({
   sliderSlides,
   sliderAutoplayStartDelayMs,
 }: ClientLogoMarqueeBlockProps) {
+  const isMounted = React.useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+
+  const loopSets = isMounted ? [0, 1, 2] : [0];
+
   // If variant is home or shopifyHours, or when called as BrandPartnersSection without content
   const isHome = variant === "home" || (!variant && !content);
   const isShopifyHours = variant === "shopifyHours";
@@ -150,13 +158,14 @@ export function ClientLogoMarqueeBlock({
               )}
               key={index}
             >
-              {[0, 1, 2].map((set) => (
+              {loopSets.map((set) => (
                 <div
                   className={cn(
                     "flex shrink-0 items-center",
                     index === 1 ? marqueeStyles.moveRight : marqueeStyles.moveLeft,
                   )}
                   key={set}
+                  aria-hidden={set > 0 ? true : undefined}
                 >
                   {row.map((logo) => (
                     <span
