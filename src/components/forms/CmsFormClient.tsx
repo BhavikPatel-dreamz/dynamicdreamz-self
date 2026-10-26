@@ -303,14 +303,38 @@ export function CmsFormClient({
         }
       }
 
-      // Add attribution fields if present
+      // Add attribution and system navigation fields
       const attributionKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
       for (const key of attributionKeys) {
-        const val = formData.get(key);
-        if (val && typeof val === "string") {
-          submissionData.push({ field: key, value: val });
+        const fromForm = formData.get(key);
+        const fromUrl = searchParams?.get(key);
+        const finalVal =
+          (typeof fromForm === "string" && fromForm.trim() !== "" ? fromForm.trim() : null) ||
+          (fromUrl && fromUrl.trim() !== "" ? fromUrl.trim() : null) ||
+          "N/A";
+        // Avoid duplicate push if already present
+        const existingIdx = submissionData.findIndex((s) => s.field === key);
+        if (existingIdx >= 0) {
+          submissionData[existingIdx].value = finalVal;
+        } else {
+          submissionData.push({ field: key, value: finalVal });
         }
       }
+
+      submissionData.push({
+        field: "pagename",
+        value:
+          parsedForm?.title ||
+          (typeof document !== "undefined" && document.title ? document.title : "Career Apply Now"),
+      });
+
+      submissionData.push({
+        field: "_url",
+        value:
+          typeof window !== "undefined" && window.location.href
+            ? window.location.href
+            : "https://www.dynamicdreamz.com/career-apply-now",
+      });
 
       const response = await fetch("/api/form-submissions", {
         method: "POST",

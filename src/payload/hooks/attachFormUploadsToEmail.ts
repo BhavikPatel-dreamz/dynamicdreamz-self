@@ -45,6 +45,67 @@ function escapeHtml(str: string): string {
     .replace(/'/g, "&#039;");
 }
 
+function cleanEmptyParagraphs(html: string): string {
+  if (!html) return html;
+  return html.replace(/<p>\s*(?:&nbsp;)*\s*<\/p>/gi, "");
+}
+
+function cleanRemainingSystemTags(
+  html: string,
+  submissionData: Array<{ field: string; value: unknown }> | null | undefined,
+  req: PayloadRequest,
+): string {
+  const getVal = (name: string) => {
+    const item = submissionData?.find((s) => s.field === name);
+    return item && typeof item.value === "string" ? item.value : "";
+  };
+
+  const headerIp =
+    getVal("_remote_ip") ||
+    req.headers?.get?.("x-forwarded-for")?.split(",")?.[0]?.trim() ||
+    req.headers?.get?.("x-real-ip") ||
+    (req as any).ip ||
+    "127.0.0.1";
+
+  const city =
+    req.headers?.get?.("x-vercel-ip-city") ||
+    req.headers?.get?.("cf-ipcity") ||
+    "";
+  const region =
+    req.headers?.get?.("x-vercel-ip-country-region") ||
+    req.headers?.get?.("cf-region") ||
+    "";
+  const country =
+    req.headers?.get?.("x-vercel-ip-country") ||
+    req.headers?.get?.("cf-ipcountry") ||
+    "";
+  const cityState =
+    getVal("citystate") ||
+    [city, region, country].filter(Boolean).join(", ") ||
+    "N/A";
+
+  const referer =
+    getVal("_url") ||
+    req.headers?.get?.("referer") ||
+    "https://www.dynamicdreamz.com/career-apply-now";
+
+  const pageName = getVal("pagename") || "Career Apply Now";
+
+  return html
+    .replace(/(?:\{\{_remote_ip\}\}|_remote_ip)/g, escapeHtml(headerIp))
+    .replace(/(?:\{\{citystate\}\}|citystate)/g, escapeHtml(cityState))
+    .replace(/(?:\{\{pagename\}\}|pagename)/g, escapeHtml(pageName))
+    .replace(/(?:\{\{_url\}\}|_url)/g, escapeHtml(referer));
+}
+
+function applyEmailTypography(html: string): string {
+  if (!html) return html;
+  if (!html.includes('data-styled-wrapper="true"')) {
+    return `<div data-styled-wrapper="true" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; color: #1e293b;">${html}</div>`;
+  }
+  return html;
+}
+
 /**
  * Production-ready hook for @payloadcms/plugin-form-builder beforeEmail.
  *
@@ -166,7 +227,12 @@ export const attachFormUploadsToEmail = async (
     }
 
     if (uploadRefs.length === 0) {
-      return emails;
+      return emails.map((email) => ({
+        ...email,
+        html: applyEmailTypography(
+          cleanRemainingSystemTags(cleanEmptyParagraphs(email.html || ""), doc?.submissionData, req),
+        ),
+      }));
     }
 
     // 2. Resolve document records and build attachments
@@ -333,15 +399,20 @@ export const attachFormUploadsToEmail = async (
       // Respect the admin toggle: defaults to true if unset or newly created
       const isAttachEnabled = emailConfig ? emailConfig.attachUploads !== false : true;
 
-      // If admin disabled attachments for this email, leave email untouched
+      // If admin disabled attachments for this email, leave email untouched except typography & system tag cleanup
       if (!isAttachEnabled) {
-        return email;
+        return {
+          ...email,
+          html: applyEmailTypography(
+            cleanRemainingSystemTags(cleanEmptyParagraphs(email.html || ""), doc?.submissionData, req),
+          ),
+        };
       }
 
       const existingAttachments = ((email as any).attachments || []) as EmailAttachment[];
       const combinedAttachments = [...existingAttachments, ...physicalAttachments];
 
-      let updatedHtml = email.html || "";
+      let updatedHtml = cleanRemainingSystemTags(cleanEmptyParagraphs(email.html || ""), doc?.submissionData, req);
       if (updatedHtml.includes("</div>")) {
         // Insert right before the last closing </div> for cleaner document hierarchy
         const lastDivIndex = updatedHtml.lastIndexOf("</div>");
@@ -355,7 +426,7 @@ export const attachFormUploadsToEmail = async (
 
       return {
         ...email,
-        html: updatedHtml,
+        html: applyEmailTypography(updatedHtml),
         attachments: combinedAttachments,
       } as unknown as FormattedEmail;
     });

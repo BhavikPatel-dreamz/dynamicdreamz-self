@@ -1,5 +1,7 @@
 "use server";
 
+import { headers } from "next/headers";
+
 import { careerApplyFormCopy } from "@/content/forms";
 
 export type CareerApplyFormState = {
@@ -91,6 +93,31 @@ export async function submitCareerApplication(
 
   let cmsSubmitted = false;
 
+  let remoteIp = "";
+  let cityState = "";
+  let pageUrl = "https://www.dynamicdreamz.com/career-apply-now";
+  const pageName = "Career Apply Now";
+
+  try {
+    const headerList = await headers();
+    remoteIp =
+      headerList.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      headerList.get("x-real-ip") ||
+      "";
+    const city = headerList.get("x-vercel-ip-city") || headerList.get("cf-ipcity") || "";
+    const region =
+      headerList.get("x-vercel-ip-country-region") || headerList.get("cf-region") || "";
+    const country =
+      headerList.get("x-vercel-ip-country") || headerList.get("cf-ipcountry") || "";
+    cityState = [city, region, country].filter(Boolean).join(", ");
+    const referer = headerList.get("referer");
+    if (referer) {
+      pageUrl = referer;
+    }
+  } catch {
+    // Graceful fallback if headers() is unavailable
+  }
+
   // Record submission in Payload CMS form-submissions collection
   try {
     const { getPayload } = await import("payload");
@@ -111,11 +138,15 @@ export async function submitCareerApplication(
         { field: "phone", value: phone },
         { field: "experience", value: experience },
         { field: "message", value: message },
-        { field: "utm_source", value: fieldValue(formData, "utm_source") },
-        { field: "utm_medium", value: fieldValue(formData, "utm_medium") },
-        { field: "utm_campaign", value: fieldValue(formData, "utm_campaign") },
-        { field: "utm_term", value: fieldValue(formData, "utm_term") },
-        { field: "utm_content", value: fieldValue(formData, "utm_content") },
+        { field: "_remote_ip", value: remoteIp },
+        { field: "citystate", value: cityState },
+        { field: "pagename", value: pageName },
+        { field: "_url", value: pageUrl },
+        { field: "utm_source", value: fieldValue(formData, "utm_source") || "N/A" },
+        { field: "utm_medium", value: fieldValue(formData, "utm_medium") || "N/A" },
+        { field: "utm_campaign", value: fieldValue(formData, "utm_campaign") || "N/A" },
+        { field: "utm_term", value: fieldValue(formData, "utm_term") || "N/A" },
+        { field: "utm_content", value: fieldValue(formData, "utm_content") || "N/A" },
       ];
 
       let submissionUploads: Array<{
@@ -190,13 +221,17 @@ export async function submitCareerApplication(
       phone,
       experience,
       message,
+      remoteIp,
+      cityState,
+      pageName,
+      pageUrl,
       resumeFile: fileMeta,
       attribution: {
-        utmSource: fieldValue(formData, "utm_source"),
-        utmMedium: fieldValue(formData, "utm_medium"),
-        utmCampaign: fieldValue(formData, "utm_campaign"),
-        utmTerm: fieldValue(formData, "utm_term"),
-        utmContent: fieldValue(formData, "utm_content"),
+        utmSource: fieldValue(formData, "utm_source") || "N/A",
+        utmMedium: fieldValue(formData, "utm_medium") || "N/A",
+        utmCampaign: fieldValue(formData, "utm_campaign") || "N/A",
+        utmTerm: fieldValue(formData, "utm_term") || "N/A",
+        utmContent: fieldValue(formData, "utm_content") || "N/A",
       },
     };
 

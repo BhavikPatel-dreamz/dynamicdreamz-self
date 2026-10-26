@@ -152,6 +152,71 @@ export default buildConfig({
           delete: ({ req }) => Boolean(req.user),
         },
         hooks: {
+          beforeChange: [
+            async ({ data, req, operation }) => {
+              if (operation === "create" && data) {
+                const submissionData = Array.isArray(data.submissionData)
+                  ? [...data.submissionData]
+                  : [];
+
+                const getVal = (name: string) =>
+                  submissionData.find((s: any) => s?.field === name)?.value;
+
+                // Extract client IP
+                const headerIp =
+                  req.headers?.get?.("x-forwarded-for")?.split(",")?.[0]?.trim() ||
+                  req.headers?.get?.("x-real-ip") ||
+                  (req as any).ip ||
+                  "127.0.0.1";
+
+                // Extract city / state from geo headers
+                const city =
+                  req.headers?.get?.("x-vercel-ip-city") ||
+                  req.headers?.get?.("cf-ipcity") ||
+                  "";
+                const region =
+                  req.headers?.get?.("x-vercel-ip-country-region") ||
+                  req.headers?.get?.("cf-region") ||
+                  "";
+                const country =
+                  req.headers?.get?.("x-vercel-ip-country") ||
+                  req.headers?.get?.("cf-ipcountry") ||
+                  "";
+                const cityState =
+                  [city, region, country].filter(Boolean).join(", ") || "N/A";
+
+                const referer =
+                  req.headers?.get?.("referer") ||
+                  "https://www.dynamicdreamz.com/career-apply-now";
+
+                const defaults: Array<{ field: string; value: string }> = [
+                  { field: "_remote_ip", value: String(getVal("_remote_ip") || headerIp) },
+                  { field: "citystate", value: String(getVal("citystate") || cityState) },
+                  { field: "pagename", value: String(getVal("pagename") || "Career Apply Now") },
+                  { field: "_url", value: String(getVal("_url") || referer) },
+                  { field: "utm_source", value: String(getVal("utm_source") || "N/A") },
+                  { field: "utm_medium", value: String(getVal("utm_medium") || "N/A") },
+                  { field: "utm_campaign", value: String(getVal("utm_campaign") || "N/A") },
+                  { field: "utm_term", value: String(getVal("utm_term") || "N/A") },
+                  { field: "utm_content", value: String(getVal("utm_content") || "N/A") },
+                ];
+
+                for (const def of defaults) {
+                  const existingIdx = submissionData.findIndex((s: any) => s?.field === def.field);
+                  if (existingIdx >= 0) {
+                    if (!submissionData[existingIdx].value) {
+                      submissionData[existingIdx].value = def.value;
+                    }
+                  } else {
+                    submissionData.push(def);
+                  }
+                }
+
+                data.submissionData = submissionData;
+              }
+              return data;
+            },
+          ],
           afterChange: [
             async ({ doc, operation, req }) => {
               if (operation === "create") {
