@@ -25,7 +25,7 @@ export function DiscoveryCallBookingBlock({
             <div className="mb-5 flex items-center gap-2.5 max-[767px]:mb-4">
               <span
                 aria-hidden="true"
-                className="h-0.5 w-[30px] shrink-0 bg-brand-red max-[767px]:hidden"
+                className="h-0.5 w-[30px] shrink-0 bg-brand-red max-[767px]:w-[15px]"
               />
               <span className="text-sm font-medium leading-normal text-[#66635f]">
                 {content.eyebrow}

@@ -8,7 +8,7 @@ type InnerHeroSectionProps = {
 export function InnerHeroSection({ title, headingId }: InnerHeroSectionProps) {
   return (
     <section
-      className="relative overflow-hidden bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-40 pb-[85px] text-center max-[991px]:pt-[140px] max-[991px]:pb-[46px]"
+      className="inner-hero-sec relative overflow-hidden bg-[#fbeed5] pt-40 pb-[85px] text-center max-[991px]:pt-[140px] max-[991px]:pb-[46px]"
       aria-labelledby={headingId}
       data-blogs-hero
     >

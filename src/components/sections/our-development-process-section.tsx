@@ -80,13 +80,13 @@ export function OurDevelopmentProcessSection({
                         ? "max-[1199px]:border-l max-[1199px]:border-r-0"
                         : "max-[1199px]:border-l max-[1199px]:border-r",
                       // Mobile 1-col
-                      "max-[767px]:w-full max-[767px]:border-t max-[767px]:border-l max-[767px]:border-r max-[767px]:border-b-0 max-[767px]:p-[18px] max-[767px]:last:border-b",
+                      "max-[767px]:w-full max-[767px]:border-t! max-[767px]:border-l! max-[767px]:border-r! max-[767px]:border-b-0! max-[767px]:p-[18px] max-[767px]:last:border-b!",
                     )
                   : cn(
                       "item w-1/4 p-5 border-t border-r border-b border-[rgba(40,40,40,0.11)]",
                       idx === 0 && "border-l",
                       "max-[1199px]:w-1/2 max-[1199px]:[&:nth-child(odd)]:border-l max-[1199px]:[&:nth-child(n+3)]:border-t-0",
-                      "max-[767px]:w-full max-[767px]:border-t max-[767px]:border-l max-[767px]:border-r max-[767px]:border-b-0 max-[767px]:p-[18px] max-[767px]:last:border-b",
+                      "max-[767px]:w-full max-[767px]:border-t! max-[767px]:border-l! max-[767px]:border-r! max-[767px]:border-b-0! max-[767px]:p-[18px] max-[767px]:last:border-b!",
                     ),
               )}
             >

@@ -83,8 +83,8 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
             {item.displayDate}
           </time>
         </div>
-        <h3 className="font-display text-lg leading-[30px] font-medium text-ink max-[1199px]:text-base max-[1199px]:leading-[25px]" data-blogs-title>
-          <Link className="group-hover/archive-card:underline hover:underline focus-visible:underline" href={item.href}>
+        <h3 className="font-montreal-medium text-[20px] font-normal leading-7 text-ink transition-colors duration-300 group-hover/archive-card:text-brand-red max-[1199px]:text-[18px] max-[1199px]:leading-[26px] max-[767px]:text-base max-[767px]:leading-6" data-blogs-title>
+          <Link className="hover:text-brand-red focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red" href={item.href}>
             {item.title}
           </Link>
         </h3>

@@ -1,3 +1,4 @@
+
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { cn } from "@/lib/class-names";
@@ -62,7 +63,7 @@ export function CityPageCounterSection({
                 "item w-1/4 p-5 border-t border-r border-b border-[rgba(40,40,40,0.11)]",
                 idx === 0 && "border-l",
                 "max-[991px]:w-1/2 max-[991px]:[&:nth-child(odd)]:border-l max-[991px]:[&:nth-last-child(-n+2)]:border-t-0",
-                "max-[767px]:w-full max-[767px]:border-t max-[767px]:border-l max-[767px]:border-r max-[767px]:border-b-0 max-[767px]:p-[18px] max-[767px]:last:border-b",
+                "max-[767px]:w-full max-[767px]:border-t! max-[767px]:border-l! max-[767px]:border-r! max-[767px]:border-b-0! max-[767px]:p-[18px] max-[767px]:last:border-b!",
               )}
             >
               <h3 className="text-[28px] font-normal leading-tight text-ink mb-1.5 max-[767px]:text-[22px] max-[767px]:mb-1">

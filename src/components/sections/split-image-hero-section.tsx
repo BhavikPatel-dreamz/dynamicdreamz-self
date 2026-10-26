@@ -101,7 +101,7 @@ function SplitImageHeroText({
         </p>
       )}
       {secondaryCtaLabel && secondaryCtaHref ? (
-        <div className="btn-group flex flex-wrap items-center gap-2.5 pt-2.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:gap-2.5 max-[575px]:w-full [&_a]:max-[575px]:w-full">
+        <div className="btn-group flex flex-wrap items-center gap-2.5 pt-2.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:gap-2.5 max-[767px]:w-full [&_a]:max-[767px]:w-full [&_a]:text-center">
           {ctaLabel && (
             <ButtonLink
               aria-label={ctaAriaLabel ?? ctaLabel}
@@ -121,7 +121,7 @@ function SplitImageHeroText({
           </ButtonLink>
         </div>
       ) : ctaLabel ? (
-        <div className="btn-group flex items-center pt-2.5 max-[1199px]:justify-center max-[767px]:flex-col max-[575px]:w-full [&_a]:max-[575px]:w-full">
+        <div className="btn-group flex items-center pt-2.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:w-full [&_a]:max-[767px]:w-full [&_a]:text-center">
           <ButtonLink
             aria-label={ctaAriaLabel ?? ctaLabel}
             href={ctaHref}

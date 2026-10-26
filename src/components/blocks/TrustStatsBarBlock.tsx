@@ -218,7 +218,8 @@ export function TrustStatsBarBlock({
             <div
               key={item.label}
               className={cn(
-                "counter-box relative flex w-1/4 flex-col justify-center border-r border-[#d9d9d9] px-6 py-4 last:border-r-0 max-[991px]:w-1/2 max-[991px]:border-b max-[991px]:py-6 max-[767px]:w-full max-[767px]:border-r-0 max-[767px]:px-0",
+                "counter-box relative flex w-1/4 flex-col justify-center border-r border-[#d9d9d9] px-6 py-4 last:border-r-0 max-[991px]:w-1/2 max-[991px]:border-b max-[991px]:py-6 max-[767px]:w-full max-[767px]:border-r-0 max-[767px]:border-b max-[767px]:border-[#d9d9d9] max-[767px]:py-5 max-[767px]:px-0",
+                "max-[767px]:last:border-b-0",
                 idx % 2 === 1 && "max-[991px]:border-r-0",
                 idx >= items.length - 2 && "max-[991px]:border-b-0",
               )}

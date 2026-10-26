@@ -50,7 +50,7 @@ export function SplitSectionHeading({
   if (variant === "centered") {
     return (
       <header
-        className={cn("mx-auto mb-10 max-w-[840px] text-center max-[991px]:mb-[30px] max-[767px]:mb-[25px]", className)}
+        className={cn("mx-auto mb-10 max-w-[840px] text-center max-[991px]:mb-[30px]", className)}
         data-aos={aosAnimation || undefined}
       >
         <h2
@@ -85,7 +85,7 @@ export function SplitSectionHeading({
   return (
     <header
       className={cn(
-        "mb-10 flex items-end justify-between gap-10 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-2.5 max-[767px]:mb-[25px]",
+        "mb-10 flex items-end justify-between gap-10 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-2.5",
         services || leftAligned || portfolio
           ? "max-[991px]:items-start max-[991px]:text-left"
           : "max-[991px]:text-center",

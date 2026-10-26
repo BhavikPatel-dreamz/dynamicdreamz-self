@@ -172,7 +172,7 @@ export function SiteHeader({
           <DesktopNavigation navigation={effectiveNav} />
         </div>
 
-        <div className="header-btn shrink-0 ml-5 min-[1400px]:ml-6 [&_a]:py-3.75 max-[1399px]:[&_a]:px-5 max-[1399px]:[&_a]:py-3.25 max-[1399px]:[&_a]:text-[14px] max-[1199px]:[&_a]:px-[14px] max-[1199px]:[&_a]:py-[9px] max-[1199px]:[&_a]:text-[13px] max-[1199px]:[&_a]:min-h-0 max-[379px]:[&_a]:px-[10px] max-[379px]:[&_a]:py-[8px] max-[379px]:[&_a]:text-[10px]">
+        <div className="header-btn shrink-0 ml-5 min-[1400px]:ml-6 min-[1400px]:[&_a]:py-[15px] min-[1400px]:[&_a]:px-6 min-[1400px]:[&_a]:text-[16px] min-[1400px]:[&_a]:min-h-[49px] min-[1400px]:[&_a]:h-[49px] max-[1399px]:[&_a]:px-5 max-[1399px]:[&_a]:py-[13px] max-[1399px]:[&_a]:text-[14px] max-[1399px]:[&_a]:min-h-[44px] max-[1399px]:[&_a]:h-[44px] min-[992px]:max-[1199px]:[&_a]:px-[14px] min-[992px]:max-[1199px]:[&_a]:py-[9px] min-[992px]:max-[1199px]:[&_a]:text-[13px] min-[992px]:max-[1199px]:[&_a]:min-h-0 min-[992px]:max-[1199px]:[&_a]:h-auto max-[991px]:[&_a]:px-5 max-[991px]:[&_a]:py-[13px] max-[991px]:[&_a]:text-[14px] max-[991px]:[&_a]:min-h-[44px] max-[991px]:[&_a]:h-[44px] max-[379px]:[&_a]:px-[10px] max-[379px]:[&_a]:py-[8px] max-[379px]:[&_a]:text-[10px] max-[379px]:[&_a]:min-h-0 max-[379px]:[&_a]:h-auto">
           <ButtonLink
             variant="primary"
             href={effectiveCtaHref}

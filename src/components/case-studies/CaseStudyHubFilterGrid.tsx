@@ -70,17 +70,55 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
   const hasFilters = Boolean(searchQuery || selectedTech || selectedIndustry);
 
   useEffect(() => {
-    if (!hasMore || !sentinelRef.current) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting || loadingMore) return;
-      setLoadingMore(true);
-      window.setTimeout(() => {
-        setVisibleCount((count) => Math.min(count + BATCH_SIZE, filteredItems.length));
-        setLoadingMore(false);
-      }, 180);
-    }, { rootMargin: "320px" });
-    observer.observe(sentinelRef.current);
-    return () => observer.disconnect();
+    if (!hasMore) return;
+
+    let ticking = false;
+    function checkScroll() {
+      if (loadingMore || !hasMore) return;
+      const sentinel = sentinelRef.current;
+      if (!sentinel) return;
+      const rect = sentinel.getBoundingClientRect();
+      if (rect.top <= window.innerHeight + 400) {
+        setLoadingMore(true);
+        window.setTimeout(() => {
+          setVisibleCount((count) => Math.min(count + BATCH_SIZE, filteredItems.length));
+          setLoadingMore(false);
+        }, 200);
+      }
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          checkScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting && !loadingMore && hasMore) {
+          setLoadingMore(true);
+          window.setTimeout(() => {
+            setVisibleCount((count) => Math.min(count + BATCH_SIZE, filteredItems.length));
+            setLoadingMore(false);
+          }, 200);
+        }
+      },
+      { rootMargin: "400px 0px" },
+    );
+
+    if (sentinelRef.current) {
+      observer.observe(sentinelRef.current);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
   }, [filteredItems.length, hasMore, loadingMore]);
 
   function clearFilters() {
@@ -123,7 +161,20 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
           </div>
 
           {visibleItems.length === 0 ? <div className="rounded-[20px] bg-white p-12 text-center text-lg text-[#535353]">{caseStudiesUiCopy.empty}</div> : <div className="cs-listing-main -mb-5 flex flex-wrap justify-between max-[992px]:mb-0">{visibleItems.map((item) => <CaseStudyCard key={item.slug} item={item} />)}</div>}
-          <div ref={sentinelRef} className="flex min-h-10 items-center justify-center pt-8" aria-live="polite">{loadingMore && <span className="text-sm text-[#535353]">{caseStudiesUiCopy.loadingMore}</span>}{!hasMore && filteredItems.length > BATCH_SIZE && <span className="text-sm text-[#535353]">{caseStudiesUiCopy.end}</span>}</div>
+          <div ref={sentinelRef} className="flex min-h-14 items-center justify-center pt-8 pb-4" aria-live="polite">
+            {loadingMore && (
+              <div className="case-study-loading flex items-center justify-center">
+                <div
+                  id="cs-loading"
+                  className="size-14 animate-spin rounded-full border-[6px] border-[rgba(173,81,81,0.2)] border-t-[#ad5151]"
+                  aria-label={caseStudiesUiCopy.loadingMore}
+                />
+              </div>
+            )}
+            {!hasMore && filteredItems.length > BATCH_SIZE && (
+              <span className="text-sm text-[#535353]">{caseStudiesUiCopy.end}</span>
+            )}
+          </div>
         </Container>
       </div>
     </section>

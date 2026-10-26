@@ -38,6 +38,7 @@ export const blogsPageContent = {
     submitLabel: "Search",
     noResults: "No posts found.",
   },
+  allCategoryLabel: "All",
   categoriesLabel: "Filter blogs by category",
   categories: [
     { label: "Shopify", value: "shopify", href: "/blogs?category=shopify" },

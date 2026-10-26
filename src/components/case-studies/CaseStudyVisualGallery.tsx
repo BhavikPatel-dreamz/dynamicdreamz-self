@@ -124,7 +124,7 @@ export function CaseStudyKeyFeatures({ keyFeatures }: CaseStudyKeyFeaturesProps)
           {keyFeatures.items.map((item, index) => (
             <div
               key={`${item.number}-${index}`}
-              className="flex h-full flex-col justify-between overflow-hidden rounded-[18px] border border-[rgba(40,40,40,0.07)] bg-white p-[25px]"
+              className="flex h-full flex-col justify-between overflow-hidden rounded-[18px] border border-[rgba(40,40,40,0.07)] bg-white p-[25px] max-[767px]:p-5 max-[767px]:rounded-[12px]"
             >
               <div className="mb-[30px]">
                 <span className="block font-montserrat text-[26px] font-medium leading-none text-[#ad5151]">

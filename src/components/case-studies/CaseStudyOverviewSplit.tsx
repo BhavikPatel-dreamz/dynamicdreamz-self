@@ -46,7 +46,7 @@ export function CaseStudyChallenge({ challenge }: { challenge?: ChallengeType })
           {challenge.items.map((item, index) => (
             <div
               key={`${item.number}-${index}`}
-              className="flex flex-col justify-between border border-[rgba(40,40,40,0.11)] bg-white p-5 -ml-[1px] first:ml-0 max-[1199px]:-ml-0 max-[1199px]:-mt-[1px]"
+              className="flex flex-col justify-between border border-[rgba(40,40,40,0.11)] bg-white p-5 -ml-[1px] first:ml-0 max-[1199px]:-ml-0 max-[1199px]:-mt-[1px] max-[767px]:border-b-0 max-[767px]:last:border-b max-[767px]:-mt-[1px]"
             >
               <div className="mb-6">
                 <span className="block font-montserrat text-[26px] font-medium leading-none text-[#ad5151]">

@@ -243,7 +243,7 @@ export function ServiceHeroSection({
                     {content.ctaLabel && (
                       <ButtonLink
                         
-                        aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
+                        aria-label={content.ctaLabel}
                         href={ctaHref}
                         variant="primary"
                       >
@@ -263,7 +263,7 @@ export function ServiceHeroSection({
                   <div className="btn-group pt-2.5 flex justify-center">
                     <ButtonLink
                       
-                      aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
+                      aria-label={content.ctaLabel}
                       href={ctaHref}
                       variant="primary"
                     >
@@ -412,7 +412,7 @@ export function ServiceHeroSection({
                   {content.ctaLabel && (
                     <ButtonLink
                       
-                      aria-label={`Dynamic Dreamz - ${content.ctaLabel}`}
+                      aria-label={content.ctaLabel}
                       href={ctaHref}
                       variant="primary"
                     >

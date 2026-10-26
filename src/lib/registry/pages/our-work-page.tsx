@@ -14,7 +14,7 @@ export function OurWorkPage() {
     <>
       <OurWorkHeroSection
         fullBleedShowcaseAtTablet
-        layout="caseStudiesLive"
+        layout="ourWork"
         typography="liveMontserrat"
       />
       <IndustryBrandsSection content={brandSection} density="compact" mobileSpacing="standard" />

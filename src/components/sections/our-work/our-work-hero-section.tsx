@@ -106,7 +106,8 @@ export type HeroSectionContent = {
 export type OurWorkHeroSectionProps = {
   content?: HeroSectionContent;
   fullBleedShowcaseAtTablet?: boolean;
-  layout?: "default" | "caseStudiesLive";
+  layout?: "default" | "caseStudiesLive" | "ourWork";
+  hideShowcaseOnMobile?: boolean;
   typography?: "default" | "liveMontserrat";
   showcaseImages?: ShowcaseImageItem[];
   proofLogos?: ProofLogoItem[];
@@ -114,6 +115,8 @@ export type OurWorkHeroSectionProps = {
 
 export function OurWorkHeroSection({
   content,
+  layout = "default",
+  hideShowcaseOnMobile = layout !== "caseStudiesLive",
   showcaseImages: propShowcaseImages,
   proofLogos: propProofLogos,
 }: OurWorkHeroSectionProps = {}) {
@@ -186,9 +189,12 @@ export function OurWorkHeroSection({
           </div>
 
           <div
-            className="right-col relative flex w-[43.182%] shrink-0 overflow-hidden max-[1399px]:w-1/2 max-[1199px]:w-[43%] max-[991.98px]:h-[227px] max-[991.98px]:w-full max-[767px]:hidden max-[991.98px]:right-auto max-[991.98px]:left-1/2 max-[991.98px]:h-[227px]! max-[991.98px]:min-h-[227px] max-[991.98px]:w-screen max-[991.98px]:max-w-[100vw] max-[991.98px]:-translate-x-1/2"
+            className={cn(
+              "right-col relative flex w-[43.182%] shrink-0 overflow-hidden max-[1399px]:w-1/2 max-[1199px]:w-[43%] max-[991.98px]:h-[227px] max-[991.98px]:w-full max-[991.98px]:right-auto max-[991.98px]:left-1/2 max-[991.98px]:h-[227px]! max-[991.98px]:min-h-[227px] max-[991.98px]:w-screen max-[991.98px]:max-w-[100vw] max-[991.98px]:-translate-x-1/2",
+              hideShowcaseOnMobile && "max-[767.98px]:hidden",
+            )}
           >
-            <div className="scrolling_img_wrap relative w-full shrink-0 overflow-hidden">
+            <div className={cn("scrolling_img_wrap relative w-full shrink-0 overflow-hidden", hideShowcaseOnMobile && "max-[767.98px]:hidden")}>
               <div
                 className="scrolling_anim_img absolute top-0 max-[991.98px]:relative max-[991.98px]:left-0 max-[991.98px]:w-max left-0 h-full w-full px-[68px] max-[1199px]:px-5 max-[991.98px]:h-auto max-[991.98px]:px-0"
               >
