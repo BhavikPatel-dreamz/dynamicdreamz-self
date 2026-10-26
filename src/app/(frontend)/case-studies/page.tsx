@@ -1,5 +1,4 @@
 import { OurWorkHeroSection } from "@/components/sections/our-work/our-work-hero-section";
-import { BrandPartnersBlock } from "@/components/blocks/ClientLogoMarqueeBlock";
 import { CaseStudiesListing } from "@/components/case-studies/CaseStudyHubFilterGrid";
 import { caseStudiesBrandLogos, caseStudiesContent } from "@/content/case-studies";
 import { pageMetadata } from "@/data/seo";
@@ -8,11 +7,13 @@ import {
   getPayloadCaseStudies,
 } from "@/lib/payload";
 import { createCaseStudiesPageSchema, serializeJsonLd } from "@/lib/schema";
+import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 
 export const metadata = pageMetadata.caseStudies;
 
 const brandSection = {
   slug: "case-studies",
+  heading:"Trusted by Leading Brands",
   brands: {},
 } as const;
 
@@ -40,11 +41,10 @@ export default async function CaseStudiesRoute() {
           layout="caseStudiesLive"
           typography="liveMontserrat"
         />
-        <BrandPartnersBlock
+        <IndustryBrandsSection
           content={brandSection}
-          density="compact"
+          heading={brandSection.heading}
           items={caseStudiesBrandLogos}
-          mobileSpacing="standard"
         />
         <CaseStudiesListing content={content} />
       </div>
