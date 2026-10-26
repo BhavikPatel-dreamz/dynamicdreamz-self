@@ -33,6 +33,11 @@ function extractLeadDetails(doc: SubmissionDoc) {
   const email = map["email"] || map["email address"] || "";
   const company = map["company"] || map["company name"] || map["business name"] || "";
   const status = (map["status"] || "new").toLowerCase();
+  const isSeen =
+    map["is_seen"] === "true" ||
+    map["seen"] === "true" ||
+    map["is_read"] === "true" ||
+    map["read"] === "true";
 
   const formTitle =
     typeof doc.form === "object" && doc.form?.title
@@ -47,6 +52,7 @@ function extractLeadDetails(doc: SubmissionDoc) {
     email,
     company,
     status: ["new", "contacted", "in_progress", "closed"].includes(status) ? status : "new",
+    isSeen,
     formTitle,
     createdAt: doc.createdAt,
   };
@@ -64,6 +70,7 @@ async function getDashboardData(p: Payload) {
   const parsed = docs.map(extractLeadDetails);
 
   const newCount = parsed.filter((l) => l.status === "new").length;
+  const unreadCount = parsed.filter((l) => !l.isSeen).length;
 
   const now = Date.now();
   const oneWeekAgo = now - 7 * 24 * 60 * 60 * 1000;
@@ -82,11 +89,21 @@ async function getDashboardData(p: Payload) {
   return {
     totalDocs: res.totalDocs,
     newCount,
+    unreadCount,
     thisWeekCount,
     topFormName,
     topFormCount,
     recentLeads: parsed.slice(0, 3),
   };
+}
+
+function IconMail({ size = 15 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect width="20" height="16" x="2" y="4" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+    </svg>
+  );
 }
 
 export const DashboardLeadsWidget = async ({ payload }: { payload?: Payload }) => {
@@ -114,6 +131,7 @@ export const DashboardLeadsWidget = async ({ payload }: { payload?: Payload }) =
   const {
     totalDocs,
     newCount,
+    unreadCount,
     thisWeekCount,
     topFormName,
     topFormCount,
@@ -251,6 +269,14 @@ export const DashboardLeadsWidget = async ({ payload }: { payload?: Payload }) =
         .status-pill--new .status-pill-dot {
           background-color: var(--theme-warning-500, #f59e0b);
         }
+        [data-theme='dark'] .status-pill--new {
+          background-color: rgba(245, 158, 11, 0.16);
+          color: #fbbf24;
+          border-color: rgba(245, 158, 11, 0.3);
+        }
+        [data-theme='dark'] .status-pill--new .status-pill-dot {
+          background-color: #fbbf24;
+        }
         .status-pill--contacted {
           background-color: var(--theme-success-150, #dbeafe);
           color: var(--theme-success-800, #1e40af);
@@ -258,6 +284,14 @@ export const DashboardLeadsWidget = async ({ payload }: { payload?: Payload }) =
         }
         .status-pill--contacted .status-pill-dot {
           background-color: var(--theme-success-500, #3b82f6);
+        }
+        [data-theme='dark'] .status-pill--contacted {
+          background-color: rgba(59, 130, 246, 0.16);
+          color: #60a5fa;
+          border-color: rgba(59, 130, 246, 0.3);
+        }
+        [data-theme='dark'] .status-pill--contacted .status-pill-dot {
+          background-color: #60a5fa;
         }
         .status-pill--in_progress {
           background-color: rgba(147, 51, 234, 0.1);
@@ -322,7 +356,23 @@ export const DashboardLeadsWidget = async ({ payload }: { payload?: Payload }) =
           href="/admin/collections/form-submissions"
           className="leads-widget-btn"
         >
-          <span>Open Leads Inbox</span>
+          <IconMail size={15} />
+          <span>Open Leads Mailbox</span>
+          {unreadCount > 0 && (
+            <span
+              style={{
+                backgroundColor: "#2563eb",
+                color: "#ffffff",
+                fontSize: "0.75rem",
+                fontWeight: 700,
+                padding: "1px 7px",
+                borderRadius: "10px",
+                marginLeft: "4px",
+              }}
+            >
+              {unreadCount} new
+            </span>
+          )}
         </Link>
       </div>
 
@@ -566,10 +616,30 @@ export const DashboardLeadsWidget = async ({ payload }: { payload?: Payload }) =
                           fontSize: "0.9375rem",
                           fontWeight: 600,
                           color: "var(--theme-text)",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "6px",
                         }}
                       >
-                        {lead.name}
-                        {lead.company ? ` • ${lead.company}` : ""}
+                        {!lead.isSeen && (
+                          <span
+                            style={{
+                              width: "7px",
+                              height: "7px",
+                              borderRadius: "50%",
+                              backgroundColor: "#2563eb",
+                              display: "inline-block",
+                              flexShrink: 0,
+                            }}
+                            title="Unread"
+                          />
+                        )}
+                        <span>{lead.name}</span>
+                        {lead.company ? (
+                          <span style={{ fontWeight: 400, color: "var(--theme-elevation-500)" }}>
+                            • {lead.company}
+                          </span>
+                        ) : null}
                       </div>
                       <div
                         style={{
