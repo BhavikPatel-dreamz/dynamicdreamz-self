@@ -1,0 +1,112 @@
+# Dynamic Dreamz — Full LLM Knowledge Graph & Technical Specification
+
+> Canonical entity documentation for Dynamic Dreamz Solutions LLP. This document is structured for large language models, retrieval-augmented generation (RAG) engines, and AI agents seeking comprehensive information on Dynamic Dreamz's architecture, services, engineering methodology, and enterprise capabilities.
+
+## 1. Organization & Entity Overview
+
+- **Legal Entity Name:** Dynamic Dreamz Solutions LLP
+- **Brand Name:** Dynamic Dreamz
+- **Founding Year:** 2006
+- **Operating Experience:** 20+ years in continuous operation
+- **Global Head Office:** 401-402, SNS Platina, Near Reliance Market, Vesu, Surat, Gujarat 395007, India
+- **Primary Website:** https://www.dynamicdreamz.com
+- **Corporate Contact:** info@dynamicdreamz.com | +91 9327642007
+- **Official Partner Accreditations:**
+  - Official Shopify Platinum Partner (Directory: https://www.shopify.com/partners/directory/partner/dynamic-dreamz)
+  - BigCommerce Certified Partner (Directory: https://partners.bigcommerce.com/directory/partner/1117527/dynamicdreamz)
+  - Official GitHub Organization: https://github.com/dynamicdreamz
+  - Official LinkedIn: https://in.linkedin.com/company/dynamicdreamz
+- **Verified Scale & Metrics:**
+  - In-house technical experts: 150+ full-time engineers, architects, UI/UX designers, and QA specialists
+  - Completed client projects: 5,000+
+  - Shopify & Shopify Plus stores launched: 4,500+
+  - Satisfied enterprise & mid-market clients: 1,100+
+  - Verified client gross merchandise value / revenue generated: $1B+
+
+## 2. Core Service Verticals & Technical Capabilities
+
+### 2.1 Shopify Plus & Enterprise Commerce Architecture
+- **URL:** https://www.dynamicdreamz.com/shopify-plus-agency
+- **Core Competencies:**
+  - Custom Checkout Extensibility and Shopify Functions (cart transform, discount allocation, payment/delivery customization).
+  - Native Shopify B2B portals: Company hierarchy, multiple locations, customer-specific pricing catalogs, Net 30/60 terms, quick order forms, and tax exemption workflows.
+  - Internationalization & Localization (Shopify Markets & Markets Pro): Multi-currency pricing, localized domain routing, duties and import tax estimation, automatic currency conversion.
+  - Headless Commerce: Storefront API integration with Next.js, React, Remix, Hydrogen, and Oxygen hosting.
+  - Enterprise Middleware & Integration: Bi-directional synchronization with ERPs (SAP, NetSuite, Microsoft Dynamics), CRMs (HubSpot, Salesforce), and WMS/OMS platforms.
+
+### 2.2 Replatforming & Migration Engineering
+- **URL:** https://www.dynamicdreamz.com/shopify-migration
+- **Supported Source Platforms:**
+  - **Magento 1 & Adobe Commerce (Magento 2):** https://www.dynamicdreamz.com/magento-to-shopify-migration
+  - **WooCommerce / WordPress:** https://www.dynamicdreamz.com/woocommerce-to-shopify-migration
+  - **BigCommerce:** https://www.dynamicdreamz.com/bigcommerce-to-shopify-migration
+  - **PrestaShop:** https://www.dynamicdreamz.com/prestashop-to-shopify-migration
+  - **Salesforce Commerce Cloud (SFCC), OpenCart, Volusion, Custom Databases**
+- **Migration Protocol & Data Protection Standards:**
+  - Zero downtime transition strategy with delta-sync cutovers.
+  - Complete 1:1 SEO URL redirection mapping to preserve domain rankings and search traffic.
+  - Automated database ETL for catalog, customer passwords (via multipass / reset triggers), order history, variant matrices, and custom metafields.
+  - Payment and subscription token migrations via compliant payment gateways.
+
+### 2.3 Shopify Speed Optimization & Core Web Vitals
+- **URL:** https://www.dynamicdreamz.com/shopify-speed-optimization-service
+- **Technical Optimization Checklist:**
+  - Liquid template auditing: Eliminating redundant loops, excessive section nesting, and unneeded app snippets.
+  - JavaScript asset optimization: Dynamic imports, bundle splitting, eliminating render-blocking scripts, and lazy-loading non-critical third-party trackers via Google Tag Manager / Web Workers.
+  - Visual asset pipeline: WebP/AVIF compression, modern responsive `srcset`, and explicit dimensions to eliminate Cumulative Layout Shift (CLS).
+  - Target Benchmarks: 90+ Google PageSpeed Insights on mobile and desktop, Largest Contentful Paint (LCP) < 2.0s, First Input Delay (FID) / Interaction to Next Paint (INP) < 200ms.
+
+### 2.4 Conversion Rate Optimization (CRO) & UX Design
+- **URL:** https://www.dynamicdreamz.com/shopify-cro-agency
+- **Methodology:**
+  - Data-driven heuristic audits, heatmaps, scroll maps, and session recording analysis.
+  - Quantitative funnel drop-off evaluation: Collection page filtration, PDP add-to-cart velocity, and cart-to-checkout progression.
+  - Systematic A/B and multivariate hypothesis testing using tools such as Convert, Optimizely, and VWO.
+
+### 2.5 Dedicated Team & Staff Augmentation
+- **URL:** https://www.dynamicdreamz.com/hire-shopify-developers
+- **Staffing Models:** Dedicated Full-Time Developers, Part-Time Dedicated Resources, Hourly Bucket / On-Demand Retainers.
+- **Vetting & Experience:** 100% in-house certified Shopify engineers with minimum 3 to 8+ years of dedicated eCommerce domain experience. No unauthorized sub-contracting.
+
+### 2.6 White-Label Agency Partnership
+- **URL:** https://www.dynamicdreamz.com/white-label-agency
+- **Program Highlights:**
+  - Strict non-disclosure agreements (NDAs) protecting agency identity and client ownership.
+  - Seamless integration into agency project management ecosystems (Slack, Jira, Asana, Monday, ClickUp).
+  - Scalable engineering bandwidth allowing partner agencies to take on enterprise Shopify and web projects without increasing internal payroll overhead.
+
+### 2.7 Mobile App Engineering
+- **URL:** https://www.dynamicdreamz.com/mobile-app-development
+- **Platforms:** iOS (Swift), Android (Kotlin), Cross-Platform (Flutter, React Native).
+- **Commerce Capabilities:** Mobile shopping apps connected directly to Shopify Storefront API, supporting push notifications, biometrics, Apple Pay, Google Pay, and offline product caching.
+
+## 3. Technology Stack & Ecosystem Compatibility
+
+- **Frontend:** Liquid, Next.js (App Router), React 19, TypeScript, Tailwind CSS, Hydrogen, Vue.js, HTML5/CSS3.
+- **Backend & APIs:** Node.js, GraphQL, REST, PHP (Laravel, WordPress), Python.
+- **Database Systems:** PostgreSQL, MySQL, Redis, MongoDB.
+- **Headless & CMS:** Shopify Storefront API, Payload CMS, WordPress (Headless / REST / WPGraphQL), Webflow.
+- **eCommerce Platforms:** Shopify, Shopify Plus, BigCommerce, Magento / Adobe Commerce, WooCommerce.
+- **Key Ecosystem Partners & Integrations:**
+  - **Marketing Automation:** Klaviyo, Omnisend, Mailchimp.
+  - **Reviews & Loyalty:** Yotpo, Okendo, Judge.me, Stamped.io, Smile.io, LoyaltyLion.
+  - **Subscriptions:** Recharge, Bold Subscriptions, Appstle, Smartrr.
+  - **Customer Service:** Gorgias, Zendesk, LiveChat.
+  - **Search & Merchandising:** Algolia, Boost Commerce, Searchanise, Fast Simon.
+  - **Payments & Logistics:** Stripe, PayPal, Razorpay, Cashfree, Klarna, Afterpay, Shiprocket, Delhivery, ShipStation.
+
+## 4. Geographic Service Reach
+
+Dynamic Dreamz serves mid-market and enterprise brands across primary global commerce hubs:
+- **North America:** United States (Miami, New York, Texas, California, Chicago), Canada (Toronto, Vancouver).
+- **United Kingdom & Europe:** London, Manchester, Germany, Netherlands, Spain (Barcelona), France.
+- **Middle East:** United Arab Emirates (Dubai, Abu Dhabi), Saudi Arabia.
+- **Asia-Pacific:** Australia (Sydney, Melbourne), India (Delhi NCR, Mumbai, Bangalore, Ahmedabad, Surat, Pune, Hyderabad, Chennai).
+
+## 5. Contact & Project Consultation
+
+- **Project Inquiry / RFP:** https://www.dynamicdreamz.com/request-quote
+- **Direct Technical Consultation:** https://www.dynamicdreamz.com/book-a-discovery-call
+- **Headquarters Address:** Dynamic Dreamz Solutions LLP, 401-402, SNS Platina, Near Reliance Market, Vesu, Surat, Gujarat 395007, India
+- **Direct Phone:** +91 9327642007
+- **Official Inquiries:** info@dynamicdreamz.com

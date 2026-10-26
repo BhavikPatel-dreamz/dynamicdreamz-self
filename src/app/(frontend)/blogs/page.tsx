@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import { BlogsPage } from "@/components/blog/BlogHubFeed";
 import {
   BLOGS_PAGE_SIZE,
+  blogsMetadataCopy,
   filterBlogArchiveArticles,
   normalizeBlogArchiveCategory,
 } from "@/content/blogs";
@@ -11,8 +13,7 @@ import {
   getPayloadPosts,
 } from "@/lib/payload";
 import { createBlogsPageSchema, serializeJsonLd } from "@/lib/schema";
-
-export const metadata = pageMetadata.blogs;
+import { absoluteUrl } from "@/lib/seo";
 
 type BlogsRouteProps = {
   searchParams: Promise<{
@@ -25,6 +26,46 @@ type BlogsRouteProps = {
 function firstValue(value: string | string[] | undefined) {
   return Array.isArray(value) ? value[0] ?? "" : value ?? "";
 }
+
+export async function generateMetadata({ searchParams }: BlogsRouteProps): Promise<Metadata> {
+  const params = await searchParams;
+  const page = Number(firstValue(params.page));
+  const category = firstValue(params.category).trim();
+  const search = firstValue(params.s).trim();
+  const base = pageMetadata.blogs;
+
+  const validPage = Number.isInteger(page) && page > 1 ? page : 1;
+
+  let title = base.title;
+  if (category) {
+    const formattedCat = category.charAt(0).toUpperCase() + category.slice(1);
+    title = `${formattedCat}${blogsMetadataCopy.categorySuffix}`;
+  } else if (validPage > 1) {
+    title = `${blogsMetadataCopy.pagePrefix}${validPage}${blogsMetadataCopy.titleSuffix}`;
+  }
+
+  const queryParams = new URLSearchParams();
+  if (category) {
+    queryParams.set("category", category);
+  }
+  if (validPage > 1) {
+    queryParams.set("page", String(validPage));
+  }
+  const queryString = queryParams.toString();
+  const canonicalPath = queryString ? `/blogs?${queryString}` : "/blogs";
+
+  return {
+    ...base,
+    title,
+    alternates: {
+      canonical: absoluteUrl(canonicalPath),
+    },
+    robots: search
+      ? { index: false, follow: true }
+      : { index: true, follow: true },
+  };
+}
+
 
 export default async function BlogsRoute({ searchParams }: BlogsRouteProps) {
   const params = await searchParams;

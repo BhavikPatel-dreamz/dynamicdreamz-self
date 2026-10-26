@@ -49,6 +49,13 @@ export const blogsPageContent = {
   paginationLabel: "Blog archive pagination",
 } as const;
 
+export const blogsMetadataCopy = {
+  titleSuffix: " | Dynamic Dreamz",
+  pagePrefix: "Blog Articles - Page ",
+  categorySuffix: " Blogs & Guides | Dynamic Dreamz",
+} as const;
+
+
 export const blogArchiveArticles: readonly BlogArchiveArticle[] = blogPostIndexJson.map((post) => ({
   title: post.title,
   href: post.href,

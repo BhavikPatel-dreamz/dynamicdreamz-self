@@ -90,6 +90,12 @@ export const caseStudiesBrandLogos = [
   },
 ] as const;
 
+export const caseStudiesBrandSection = {
+  slug: "case-studies",
+  heading: "Trusted by Leading Brands",
+  brands: {},
+} as const;
+
 export const caseStudiesContent = {
   hero: {
     eyebrow: "CLIENT CASE STUDIES",

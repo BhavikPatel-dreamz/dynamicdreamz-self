@@ -977,6 +977,8 @@ function organizationSchema() {
       "https://www.trustpilot.com/review/dynamicdreamz.com",
       "https://www.goodfirms.co/company/dynamic-dreamz",
       "https://www.upwork.com/ag/dynamicdreamz/",
+      "https://partners.bigcommerce.com/directory/partner/1117527/dynamicdreamz",
+      "https://github.com/dynamicdreamz",
     ],
     areaServed: [
       "United States",
@@ -2092,6 +2094,7 @@ type ServicePageSchemaInput = {
     url?: string;
   }[];
   videos?: ReturnType<typeof videoObjectSchema>[];
+  areaServed?: string | readonly string[];
 };
 
 function cleanFaqSchemaText(text: string | readonly string[] | undefined | null): string {
@@ -2120,6 +2123,7 @@ function createServicePageSchema({
   faqs,
   offers,
   videos,
+  areaServed,
 }: ServicePageSchemaInput) {
   return {
     "@context": "https://schema.org",
@@ -2169,7 +2173,7 @@ function createServicePageSchema({
           "@type": "BusinessAudience",
           audienceType,
         },
-        areaServed: [
+        areaServed: areaServed ?? [
           "United States",
           "United Kingdom",
           "Europe",
@@ -2539,7 +2543,6 @@ export function createWordPressDevelopmentCompanyPageSchema() {
       "Businesses, ecommerce brands, and digital agencies seeking WordPress development services in India",
     faqs: wordpressDevelopmentCompanyFaqs,
     offers: wordpressDevelopmentCompanyServices.items,
-    videos: shopifyPlusTestimonialVideoSchema(wordpressDevelopmentCompanyPageUrl),
   });
 }
 
@@ -2558,7 +2561,6 @@ export function createWordPressDevelopmentPageSchema() {
       "Businesses, ecommerce brands, and digital agencies seeking custom WordPress web development services",
     faqs: wordpressDevelopmentFaqs,
     offers: wordpressDevelopmentServices.items,
-    videos: shopifyPlusTestimonialVideoSchema(wordpressDevelopmentPageUrl),
   });
 }
 
@@ -2576,7 +2578,6 @@ export function createHireWordPressDevelopersPageSchema() {
     audienceType:
       "Businesses and agencies seeking dedicated WordPress developers or WordPress development teams",
     faqs: hireWordPressFaqs,
-    videos: shopifyPlusTestimonialVideoSchema(hireWordPressDevelopersPageUrl),
   });
 }
 
@@ -2674,7 +2675,6 @@ export function createShopifyExpertsPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -2700,7 +2700,6 @@ export function createShopifyMigrationPageSchema() {
       title: item.title,
       description: item.description ?? "",
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -2743,7 +2742,6 @@ export function createPrestashopToShopifyMigrationPageSchema() {
         description: item.description,
       })),
     ],
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -2780,7 +2778,6 @@ export function createSquareToShopifyMigrationPageSchema() {
       title: step.title,
       description: step.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -2831,7 +2828,6 @@ export function createShopifyCroPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -3206,7 +3202,6 @@ export function createShopifyThemeCustomizationPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -4429,7 +4424,6 @@ export function createShopifyDevelopmentAgencyPageSchema() {
       "DTC brands, B2B merchants, store owners, and digital agencies seeking comprehensive Shopify development services",
     faqs: shopifyDevelopmentAgencyFaqs,
     offers: shopifyDevelopmentAgencyServices.items,
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -4519,7 +4513,6 @@ export function createWooCommerceDevelopmentPageSchema() {
       ].join(" "),
     })),
     offers: woocommerceDevelopmentServices.items,
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -4547,7 +4540,6 @@ export function createMagentoDevelopmentPageSchema() {
       ].join(" "),
     })),
     offers: magentoDevelopmentServices.items,
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -4573,7 +4565,6 @@ export function createWordPressThemeCustomizationPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -4600,7 +4591,6 @@ export function createAndroidAppDevelopmentPageSchema() {
       answer: item.answer,
     })),
     offers: androidAppDevelopmentSchemaOffers,
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -4626,7 +4616,6 @@ export function createMobileApplicationDevelopmentPageSchema() {
       title: item.title,
       description: item.description ?? "",
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -4653,7 +4642,6 @@ export function createIosAppDevelopmentPageSchema() {
       answer: item.answer,
     })),
     offers: iosAppDevelopmentSchemaOffers,
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -4680,7 +4668,6 @@ export function createCrossPlatformAppDevelopmentPageSchema() {
       answer: item.answer,
     })),
     offers: crossPlatformAppDevelopmentSchemaOffers,
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -4769,7 +4756,6 @@ export function createBigCommerceDevelopmentPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -4806,7 +4792,6 @@ export function createWebDesignPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -4832,7 +4817,6 @@ export function createWebflowDevelopmentPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5049,7 +5033,7 @@ export function createShopifyDevelopmentBarcelonaPageSchema() {
         description: item.description,
       })),
     ],
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Barcelona","Catalonia","Spain","Europe"],
   });
 }
 
@@ -5081,7 +5065,7 @@ export function createShopifyDevelopmentCompanyInChennaiPageSchema() {
         description: item.description,
       })),
     ],
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Chennai","Tamil Nadu","India"],
   });
 }
 
@@ -5107,7 +5091,6 @@ export function createShopifyMaintenanceServicesPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5133,7 +5116,6 @@ export function createDentalClinicWebsiteDevelopmentCompanyPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5159,7 +5141,7 @@ export function createShopifyDevelopmentInDelhiPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Delhi","Delhi NCR","India"],
   });
 }
 
@@ -5185,7 +5167,7 @@ export function createShopifyDevelopmentInHyderabadPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Hyderabad","Telangana","India"],
   });
 }
 
@@ -5211,7 +5193,7 @@ export function createWordPressDevelopmentInDelhiPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Delhi","Delhi NCR","India"],
   });
 }
 
@@ -5237,7 +5219,7 @@ export function createWordPressDevelopmentInNoidaPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Noida","Uttar Pradesh","Delhi NCR","India"],
   });
 }
 
@@ -5263,7 +5245,7 @@ export function createWordPressDevelopmentInPunePageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Pune","Maharashtra","India"],
   });
 }
 
@@ -5289,7 +5271,7 @@ export function createWordPressDevelopmentInAhmedabadPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Ahmedabad","Gujarat","India"],
   });
 }
 
@@ -5315,7 +5297,7 @@ export function createWordPressDevelopmentInBangalorePageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Bangalore","Bengaluru","Karnataka","India"],
   });
 }
 
@@ -5341,7 +5323,7 @@ export function createWordPressDevelopmentInMumbaiPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Mumbai","Maharashtra","India"],
   });
 }
 
@@ -5367,7 +5349,7 @@ export function createShopifyDevelopmentInPunePageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Pune","Maharashtra","India"],
   });
 }
 
@@ -5399,7 +5381,7 @@ export function createShopifyDevelopmentInBangalorePageSchema() {
         description: item.description,
       })),
     ],
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Bangalore","Bengaluru","Karnataka","India"],
   });
 }
 
@@ -5431,7 +5413,7 @@ export function createShopifyDevelopmentInTexasPageSchema() {
         description: item.description,
       })),
     ],
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Texas","United States"],
   });
 }
 
@@ -5457,7 +5439,7 @@ export function createShopifyDevelopmentInNewYorkPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["New York","New York City","United States"],
   });
 }
 
@@ -5489,7 +5471,7 @@ export function createShopifyDevelopmentInLosAngelesPageSchema() {
         description: item.description,
       })),
     ],
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Los Angeles","California","United States"],
   });
 }
 
@@ -5521,7 +5503,7 @@ export function createShopifyDevelopmentInMiamiPageSchema() {
         description: item.description,
       })),
     ],
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Miami","Florida","United States"],
   });
 }
 
@@ -5547,7 +5529,7 @@ export function createShopifyDevelopmentInMumbaiPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
+    areaServed: ["Mumbai","Maharashtra","India"],
   });
 }
 
@@ -5588,7 +5570,6 @@ export function createEcwidToShopifyMigrationPageSchema() {
       title: step.title,
       description: step.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5620,7 +5601,6 @@ export function createMigratingThemeToOnlineStore20PageSchema() {
         description: item.description,
       }),
     ),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5650,7 +5630,6 @@ export function createShopifyPlusMigrationAgencyPageSchema() {
       title: step.title,
       description: step.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5705,7 +5684,6 @@ export function createMagentoToShopifyPlusMigrationPageSchema() {
       title: step.title,
       description: step.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5735,7 +5713,6 @@ export function createMagentoToShopifyMigrationPageSchema() {
       title: step.title,
       description: step.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5765,7 +5742,6 @@ export function createBigCommerceToShopifyMigrationPageSchema() {
       title: step.title,
       description: step.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5802,7 +5778,6 @@ export function createWooCommerceToShopifyMigrationPageSchema() {
       title: step.title,
       description: step.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5832,7 +5807,6 @@ export function createSquarespaceToShopifyMigrationPageSchema() {
       title: step.title,
       description: step.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5869,7 +5843,6 @@ export function createSalesforceToShopifyMigrationPageSchema() {
       title: step.title,
       description: step.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5906,7 +5879,6 @@ export function createEtsyToShopifyMigrationPageSchema() {
       title: step.title,
       description: step.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5937,7 +5909,6 @@ export function createWixToShopifyMigrationPageSchema() {
       title: step.title,
       description: step.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -5969,7 +5940,6 @@ export function createAiServicesPageSchema() {
       title: item.title,
       description: item.description,
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -6000,7 +5970,6 @@ export function createFullStackDevelopmentPageSchema() {
       title: box.title,
       description: box.description ?? "",
     })),
-    videos: shopifyPlusTestimonialVideoSchema(),
   });
 }
 
@@ -6008,37 +5977,93 @@ export function createModularPageSchema({
   title,
   description,
   path,
+  sections = [],
 }: {
   title: string;
   description: string;
   path: string;
+  sections?: readonly unknown[];
 }) {
   const pageUrl = absoluteUrl(path);
   const pageId = `${pageUrl}#webpage`;
+  const breadcrumbId = `${pageUrl}#breadcrumb`;
+  const faqId = `${pageUrl}#faq`;
+
+  const faqBlock = sections.find(
+    (s): s is { blockType: "faq-accordion"; faqs?: Array<{ question?: string; answer?: string }> } =>
+      Boolean(s && typeof s === "object" && "blockType" in s && s.blockType === "faq-accordion"),
+  );
+
+  const faqs = (faqBlock?.faqs ?? []).filter(
+    (f): f is { question: string; answer: string } =>
+      Boolean(f && typeof f.question === "string" && typeof f.answer === "string"),
+  );
+
+  const breadcrumbItems = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: homeUrl,
+    },
+  ];
+
+  if (path && path !== "/") {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: 2,
+      name: title,
+      item: pageUrl,
+    });
+  }
+
+  const graph: Record<string, unknown>[] = [
+    organizationSchema(),
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: homeUrl,
+      name: siteConfig.name,
+      publisher: { "@id": organizationId },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "WebPage",
+      "@id": pageId,
+      url: pageUrl,
+      name: title,
+      description,
+      isPartOf: { "@id": websiteId },
+      about: { "@id": organizationId },
+      breadcrumb: { "@id": breadcrumbId },
+      ...(faqs.length > 0 ? { mainEntity: { "@id": faqId } } : {}),
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": breadcrumbId,
+      itemListElement: breadcrumbItems,
+    },
+  ];
+
+  if (faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": faqId,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: cleanFaqSchemaText(faq.answer),
+        },
+      })),
+    });
+  }
 
   return {
     "@context": "https://schema.org",
-    "@graph": [
-      organizationSchema(),
-      {
-        "@type": "WebSite",
-        "@id": websiteId,
-        url: homeUrl,
-        name: siteConfig.name,
-        publisher: { "@id": organizationId },
-        inLanguage: "en-US",
-      },
-      {
-        "@type": "WebPage",
-        "@id": pageId,
-        url: pageUrl,
-        name: title,
-        description,
-        isPartOf: { "@id": websiteId },
-        about: { "@id": organizationId },
-        inLanguage: "en-US",
-      },
-    ],
+    "@graph": graph,
   };
 }
 

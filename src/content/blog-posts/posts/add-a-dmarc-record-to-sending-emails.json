@@ -11,7 +11,7 @@
     "src": "/assets/blog/add-a-dmarc-record-to-sending-emails.webp",
     "width": 876,
     "height": 705,
-    "alt": "Authenticate-and-add-a-DMARC-record-to-continue-sending-emails-from-your-domain-3"
+    "alt": "Authenticate and add a DMARC record to continue sending emails from your domain"
   },
   "excerpt": "#Breaking: Google & Yahoo announce a brand new email authentication requirement for bulk email As a Shopify store owner, recently you must have received such an email from Shopify with subject line stating ‘Authenticate and add a DMARC record to continue sending emails from your domain’. If yes and you are not quite sure how [...]",
   "author": {
@@ -185,14 +185,14 @@
     {
       "type": "image",
       "src": "/assets/blog/inline/dmarc-record-image.webp",
-      "alt": "DMARC-record-Image",
+      "alt": "DMARC record Image",
       "width": 1418,
       "height": 394
     },
     {
       "type": "image",
       "src": "/assets/blog/inline/dmarc-record-tag.webp",
-      "alt": "DMARC-record-Tag",
+      "alt": "DMARC record Tag",
       "width": 1277,
       "height": 804
     },

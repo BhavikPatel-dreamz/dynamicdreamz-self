@@ -1,4 +1,4 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://dynamicdreamz-self.vercel.app"
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.dynamicdreamz.com";
 
 if (!siteUrl) {
   throw new Error("NEXT_PUBLIC_SITE_URL is not defined");

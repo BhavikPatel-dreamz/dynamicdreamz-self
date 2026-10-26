@@ -80,3 +80,9 @@ export const revalidateApiCopy = {
   invalidToken: "Invalid token",
 } as const;
 
+export const indexNowApiCopy = {
+  unauthorized: "Unauthorized request",
+  missingUrls: "Missing or invalid urlList",
+} as const;
+
+

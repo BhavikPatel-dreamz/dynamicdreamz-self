@@ -431,7 +431,7 @@ export const shopifyDevelopmentBarcelonaContent = {
       question:
         "What makes Dynamic Dreamz the best Shopify development company in Spain?",
       answer: [
-        "Dynamic Dreamz is a certified Shopify Platinum Partner that comes with 18+ years of experience, 150+ developers and designers & 5,000+ projects delivered worldwide.",
+        "Dynamic Dreamz is a certified Shopify Platinum Partner that comes with 20+ years of experience, 150+ developers and designers & 5,000+ projects delivered worldwide.",
         "",
         "Moreover, under one single roof, here you can get;",
       ],

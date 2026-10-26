@@ -7,6 +7,7 @@ import type { ShopifyStageServicesContent } from "@/components/sections/shopify-
 import type { AiEmpoweredDeliveryContent } from "@/components/sections/ai-empowered-delivery-section";
 import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import { companyFacts } from "@/data/company";
 
 const icon = (name: string) => `/assets/hire-shopify-developers/icons/${name}.svg`;
 
@@ -81,10 +82,10 @@ export const hireShopifyHero = {
 
 export const hireShopifyStats = [
   { value: "50+", label: "Agile enabled Shopify Developers" },
-  { value: "5000+", label: "Completed Projects" },
-  { value: "20+", label: "Years of Experience" },
-  { value: "1000+", label: "Happy & Satisfied Clients" },
-  { value: "1000+", label: "Shopify Developments" },
+  { value: companyFacts.projectsCompleted.display, label: "Completed Projects" },
+  { value: companyFacts.yearsOfExperience.display, label: "Years of Experience" },
+  { value: companyFacts.happyClients.display, label: "Happy & Satisfied Clients" },
+  { value: companyFacts.shopifyStoresBuilt.display, label: "Shopify Developments" },
 ] as const;
 
 export const hireShopifyBrandLogos: readonly ClientLogoSliderItem[] = [

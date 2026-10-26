@@ -1,0 +1,50 @@
+# Dynamic Dreamz
+
+> Dynamic Dreamz Solutions LLP is an enterprise Shopify Platinum Partner, eCommerce engineering, and web development agency founded in 2006. With over 20 years of experience, 150+ in-house experts, 4,500+ Shopify stores built, and $1B+ in client revenue generated, Dynamic Dreamz specializes in enterprise Shopify Plus architecture, complex platform migrations (Magento, WooCommerce, BigCommerce), custom headless storefronts, CRO, and white-label agency partnerships.
+
+## Core Services
+- [Shopify Plus Agency](https://www.dynamicdreamz.com/shopify-plus-agency): Enterprise Shopify Plus architecture, checkout extensibility, B2B wholesale, global multi-currency/multi-language stores, and custom ERP/CRM integrations.
+- [Shopify Development Agency](https://www.dynamicdreamz.com/shopify-development-agency): Custom Shopify theme design, Liquid development, speed optimization, and full-stack eCommerce store launches.
+- [Shopify Migration Services](https://www.dynamicdreamz.com/shopify-migration): Zero-data-loss migrations from Magento, WooCommerce, BigCommerce, PrestaShop, and custom platforms to Shopify and Shopify Plus.
+- [Hire Shopify Developers](https://www.dynamicdreamz.com/hire-shopify-developers): Dedicated certified Shopify and Shopify Plus engineers on flexible full-time, part-time, or hourly engagement models.
+- [Shopify Speed Optimization](https://www.dynamicdreamz.com/shopify-speed-optimization-service): Core Web Vitals optimization, Liquid audit, JavaScript minification, image lazy-loading, and 90+ mobile speed scores.
+- [Shopify CRO Agency](https://www.dynamicdreamz.com/shopify-cro-agency): Conversion rate optimization, A/B testing, user journey audits, and high-converting checkout UX enhancements.
+- [Shopify B2B Solutions](https://www.dynamicdreamz.com/shopify-b2b-wholesale): Shopify Plus native B2B portals, custom pricing catalogs, Net terms, bulk order forms, and ERP synchronization.
+- [White Label Development](https://www.dynamicdreamz.com/white-label-agency): Confidential development partner for digital agencies, providing dedicated white-label Shopify, WordPress, and mobile teams under strict NDA.
+
+## Specialized Migrations
+- [Magento to Shopify Migration](https://www.dynamicdreamz.com/magento-to-shopify-migration): Enterprise replatforming from Magento 1/2 to Shopify Plus, preserving SEO equity, 301 redirects, customer order history, and complex product variants.
+- [WooCommerce to Shopify Migration](https://www.dynamicdreamz.com/woocommerce-to-shopify-migration): Migration of catalog, subscriptions, customer databases, and payment gateway configurations from WordPress/WooCommerce to Shopify.
+- [BigCommerce to Shopify Migration](https://www.dynamicdreamz.com/bigcommerce-to-shopify-migration): Migration from BigCommerce to Shopify Plus with full data integrity.
+- [PrestaShop to Shopify Migration](https://www.dynamicdreamz.com/prestashop-to-shopify-migration): Comprehensive catalog and checkout transfer from PrestaShop to modern Shopify architecture.
+
+## Extended Capabilities
+- [Mobile App Development](https://www.dynamicdreamz.com/mobile-app-development): Native iOS, Android, and cross-platform Flutter/React Native mobile applications integrated with Shopify and enterprise backends.
+- [WordPress Development Agency](https://www.dynamicdreamz.com/wordpress-development): Custom WordPress themes, Gutenberg blocks, headless WordPress, and enterprise corporate websites.
+- [Webflow Development Agency](https://www.dynamicdreamz.com/webflow-development-agency): Clean, performant, responsive Webflow builds and migrations.
+- [Laravel Development](https://www.dynamicdreamz.com/laravel-development): Custom web applications, API integrations, and robust SaaS architectures.
+
+## Authoritative Proof & Metrics
+- Founded: 2006
+- Years in Business: 20+ years
+- In-House Experts: 150+ full-time engineers and designers
+- Completed Projects: 5,000+
+- Shopify Stores Built: 4,500+
+- Happy Clients: 1,100+
+- Generated Client Revenue: $1B+
+- Partner Status: Official Shopify Platinum Partner, BigCommerce Certified Partner
+
+## Case Studies & Portfolio
+- [Case Studies Overview](https://www.dynamicdreamz.com/case-studies): Detailed breakdowns of enterprise migrations, custom feature developments, and revenue scaling for global brands.
+- [Our Work / Portfolio](https://www.dynamicdreamz.com/our-work): Curated showcase of Shopify, Shopify Plus, and mobile application builds.
+
+## Contact & Engagement
+- [Request a Quote](https://www.dynamicdreamz.com/request-quote): Submit project requirements for a detailed proposal, scope estimate, and timeline.
+- [Book a Discovery Call](https://www.dynamicdreamz.com/book-a-discovery-call): Schedule a direct technical consultation with eCommerce architects.
+- [Contact Us](https://www.dynamicdreamz.com/contact-us): Global contact information, office locations, and direct inquiry channels.
+- Headquarters: Dynamic Dreamz Solutions LLP, 401-402, SNS Platina, Near Reliance Market, Vesu, Surat, Gujarat 395007, India.
+- Email: info@dynamicdreamz.com
+- Telephone: +91 9327642007
+
+## Optional
+- [Full LLM Knowledge Graph Specification](https://www.dynamicdreamz.com/llms-full.txt): Comprehensive technical specifications, platform comparison matrices, and developer architecture details.
