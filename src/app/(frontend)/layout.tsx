@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 import { AOSProvider } from "@/components/providers/AOSProvider";
+import { AttributionTracker } from "@/components/providers/AttributionTracker";
 import { ContactWidget, SiteHeader } from "@/components/layout/Header";
 import { SiteFooter } from "@/components/layout/Footer";
 import { siteChromeCopy } from "@/content/common";
@@ -105,6 +106,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       className={`${neueMontreal.variable} ${neueMontrealMedium.variable} ${montserrat.variable}`}
     >
       <body>
+        <AttributionTracker />
         <AOSProvider>
           <a
             className="fixed top-3 left-3 z-[1000] -translate-y-[170%] rounded-[30px] bg-ink px-4 py-2.5 font-bold text-white transition-transform duration-160 focus:translate-y-0"

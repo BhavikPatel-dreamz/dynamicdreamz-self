@@ -62,6 +62,7 @@ function cleanRemainingSystemTags(
 
   const headerIp =
     getVal("_remote_ip") ||
+    req.headers?.get?.("cf-connecting-ip") ||
     req.headers?.get?.("x-forwarded-for")?.split(",")?.[0]?.trim() ||
     req.headers?.get?.("x-real-ip") ||
     (req as any).ip ||
@@ -75,27 +76,91 @@ function cleanRemainingSystemTags(
     req.headers?.get?.("x-vercel-ip-country-region") ||
     req.headers?.get?.("cf-region") ||
     "";
-  const country =
+  const rawCountry =
     req.headers?.get?.("x-vercel-ip-country") ||
     req.headers?.get?.("cf-ipcountry") ||
     "";
+  let country = rawCountry;
+  if (rawCountry && rawCountry.length === 2) {
+    try {
+      country = new Intl.DisplayNames(["en"], { type: "region" }).of(rawCountry) || rawCountry;
+    } catch {}
+  }
   const cityState =
     getVal("citystate") ||
-    [city, region, country].filter(Boolean).join(", ") ||
-    "N/A";
+    [city, region, country].filter(Boolean).join("-") ||
+    "";
 
   const referer =
     getVal("_url") ||
     req.headers?.get?.("referer") ||
-    "https://www.dynamicdreamz.com/career-apply-now";
+    "https://www.dynamicdreamz.com";
 
-  const pageName = getVal("pagename") || "Career Apply Now";
+  const defaultPageName = referer.includes("quote")
+    ? "Request a Quote"
+    : referer.includes("career")
+      ? "Career Apply Now"
+      : "Dynamic Dreamz";
 
-  return html
+  const pageName = getVal("pagename") || defaultPageName;
+
+  const rawUtmSource = getVal("utm_source");
+  const rawFirstSource = getVal("first_source");
+  const finalUtmSource =
+    rawUtmSource && rawUtmSource !== "N/A"
+      ? rawUtmSource
+      : rawFirstSource && rawFirstSource !== "N/A"
+        ? rawFirstSource
+        : "N/A";
+
+  const rawUtmMedium = getVal("utm_medium");
+  const rawFirstMedium = getVal("first_medium");
+  const finalUtmMedium =
+    rawUtmMedium && rawUtmMedium !== "N/A"
+      ? rawUtmMedium
+      : rawFirstMedium && rawFirstMedium !== "N/A"
+        ? rawFirstMedium
+        : "N/A";
+
+  let cleaned = html
     .replace(/(?:\{\{_remote_ip\}\}|_remote_ip)/g, escapeHtml(headerIp))
     .replace(/(?:\{\{citystate\}\}|citystate)/g, escapeHtml(cityState))
     .replace(/(?:\{\{pagename\}\}|pagename)/g, escapeHtml(pageName))
-    .replace(/(?:\{\{_url\}\}|_url)/g, escapeHtml(referer));
+    .replace(/(?:\{\{_url\}\}|_url)/g, escapeHtml(referer))
+    .replace(/(?:\{\{utm_source\}\}|utm_source)/g, escapeHtml(finalUtmSource))
+    .replace(/(?:\{\{utm_medium\}\}|utm_medium)/g, escapeHtml(finalUtmMedium))
+    .replace(/(?:\{\{utm_campaign\}\}|utm_campaign)/g, escapeHtml(getVal("utm_campaign") || "N/A"))
+    .replace(/(?:\{\{utm_term\}\}|utm_term)/g, escapeHtml(getVal("utm_term") || "N/A"))
+    .replace(/(?:\{\{utm_content\}\}|utm_content)/g, escapeHtml(getVal("utm_content") || "N/A"))
+    .replace(/(?:\{\{first_source\}\}|first_source)/g, escapeHtml(rawFirstSource || finalUtmSource))
+    .replace(/(?:\{\{first_medium\}\}|first_medium)/g, escapeHtml(rawFirstMedium || finalUtmMedium))
+    .replace(/(?:\{\{referrer\}\}|referrer)/g, escapeHtml(getVal("referrer") || (referer && !referer.includes("request-quote") ? referer : "N/A")))
+    .replace(/(?:\{\{landing_page\}\}|landing_page)/g, escapeHtml(getVal("landing_page") || (referer && !referer.includes("request-quote") ? referer : "N/A")))
+    .replace(/(?:\{\{submission_page\}\}|submission_page)/g, escapeHtml(getVal("submission_page") || referer || "N/A"));
+
+  // WP CF7 "Exclude a line from output if all of its mail-tags are blank"
+  // Removes empty paragraphs or paragraphs that only have a label like "City : " or "Phone   :  "
+  cleaned = cleaned.replace(/<p>\s*[^<>\n:]+\s*:\s*<\/p>/gi, "");
+  cleaned = cleaned.replace(/<p>\s*<strong>[^<>\n:]+\s*:\s*<\/strong>\s*<\/p>/gi, "");
+
+  // Format Quote autoresponder paragraphs if present to match WP CF7 inline styling
+  if (cleaned.includes("Details Submited:")) {
+    cleaned = cleaned
+      .replace(/<p>Hello /g, '<p style="margin:0;">Hello ')
+      .replace(/<p>We have received /g, '<p style="margin:10px 0;">We have received ')
+      .replace(/<p><strong>Details Submited:<\/strong><\/p>/g, '<p style="margin:0 0 10px 0;"><strong>Details Submited:</strong></p>')
+      .replace(/<p><strong>Name:<\/strong>/g, '<p style="margin:0;"><strong>Name:</strong>')
+      .replace(/<p><strong>Email:<\/strong>/g, '<p style="margin:0;"><strong>Email:</strong>')
+      .replace(/<p><strong>Mobile Phone:<\/strong>/g, '<p style="margin:0;"><strong>Mobile Phone:</strong>')
+      .replace(/<p><strong>Company Name:<\/strong>/g, '<p style="margin:0;"><strong>Company Name:</strong>')
+      .replace(/<p><strong>Website URL:<\/strong>/g, '<p style="margin:0;"><strong>Website URL:</strong>')
+      .replace(/<p><strong>Budget:<\/strong>/g, '<p style="margin:0;"><strong>Budget:</strong>')
+      .replace(/<p><strong>Brief about the project:<\/strong>/g, '<p style="margin:0 0 10px 0;"><strong>Brief about the project:</strong>')
+      .replace(/<p>Talk to you soon,<\/p>/g, '<p style="margin:0;">Talk to you soon,</p>')
+      .replace(/<p><strong>Dynamic Dreamz<\/strong><\/p>/g, '<p style="margin:0;"><strong>Dynamic Dreamz</strong></p>');
+  }
+
+  return cleaned;
 }
 
 function applyEmailTypography(html: string): string {
@@ -357,7 +422,12 @@ export const attachFormUploadsToEmail = async (
     }
 
     if (resolvedFiles.length === 0) {
-      return emails;
+      return emails.map((email) => ({
+        ...email,
+        html: applyEmailTypography(
+          cleanRemainingSystemTags(cleanEmptyParagraphs(email.html || ""), doc?.submissionData, req),
+        ),
+      }));
     }
 
     // 3. Build email HTML section with clean clickable download links

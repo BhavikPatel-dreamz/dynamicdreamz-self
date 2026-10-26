@@ -1,5 +1,6 @@
 "use server";
 
+import { headers } from "next/headers";
 import { contactFormCopy } from "@/content/forms";
 
 export type ContactFormState = {
@@ -33,11 +34,13 @@ export async function submitContactForm(
     };
   }
 
-  const name = fieldValue(formData, "name");
-  const email = fieldValue(formData, "email");
-  const phone = fieldValue(formData, "phone");
-  const company = fieldValue(formData, "company");
-  const project = fieldValue(formData, "project", MAX_PROJECT_LENGTH);
+  const name = fieldValue(formData, "name") || fieldValue(formData, "EnterYourName");
+  const email = fieldValue(formData, "email") || fieldValue(formData, "Email");
+  const phone = fieldValue(formData, "phone") || fieldValue(formData, "tel");
+  const company = fieldValue(formData, "company") || fieldValue(formData, "Companyname");
+  const project =
+    fieldValue(formData, "project", MAX_PROJECT_LENGTH) ||
+    fieldValue(formData, "Briefabouttheproject", MAX_PROJECT_LENGTH);
 
   if (!name || !email) {
     return {
@@ -54,6 +57,46 @@ export async function submitContactForm(
   }
 
   let cmsSubmitted = false;
+
+  let remoteIp = "";
+  let cityState = "";
+  let pageUrl = "https://www.dynamicdreamz.com/contact-us";
+  const pageName = "contact-us";
+
+  try {
+    const headerList = await headers();
+    remoteIp =
+      headerList.get("cf-connecting-ip") ||
+      headerList.get("x-real-ip") ||
+      headerList.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      "";
+    const city = headerList.get("x-vercel-ip-city") || headerList.get("cf-ipcity") || "";
+    const region =
+      headerList.get("x-vercel-ip-country-region") || headerList.get("cf-region") || "";
+    const rawCountry =
+      headerList.get("x-vercel-ip-country") || headerList.get("cf-ipcountry") || "";
+    let country = rawCountry;
+    if (rawCountry && rawCountry.length === 2) {
+      try {
+        country = new Intl.DisplayNames(["en"], { type: "region" }).of(rawCountry) || rawCountry;
+      } catch {
+        // fallback to raw
+      }
+    }
+    cityState = [city, region, country].filter(Boolean).join("-");
+    const referer = headerList.get("referer");
+    if (referer) {
+      pageUrl = referer;
+    }
+  } catch {
+    // Graceful fallback if headers() is unavailable
+  }
+
+  const utmSource = fieldValue(formData, "utm_source") || "N/A";
+  const utmMedium = fieldValue(formData, "utm_medium") || "N/A";
+  const utmCampaign = fieldValue(formData, "utm_campaign") || "N/A";
+  const utmTerm = fieldValue(formData, "utm_term") || "N/A";
+  const utmContent = fieldValue(formData, "utm_content") || "N/A";
 
   // Record submission in Payload CMS form-submissions collection
   try {
@@ -77,11 +120,20 @@ export async function submitContactForm(
             { field: "phone", value: phone },
             { field: "company", value: company },
             { field: "project", value: project },
-            { field: "utm_source", value: fieldValue(formData, "utm_source") },
-            { field: "utm_medium", value: fieldValue(formData, "utm_medium") },
-            { field: "utm_campaign", value: fieldValue(formData, "utm_campaign") },
-            { field: "utm_term", value: fieldValue(formData, "utm_term") },
-            { field: "utm_content", value: fieldValue(formData, "utm_content") },
+            { field: "_remote_ip", value: remoteIp },
+            { field: "citystate", value: cityState },
+            { field: "pagename", value: pageName },
+            { field: "_url", value: pageUrl },
+            { field: "utm_source", value: utmSource },
+            { field: "utm_medium", value: utmMedium },
+            { field: "utm_campaign", value: utmCampaign },
+            { field: "utm_term", value: utmTerm },
+            { field: "utm_content", value: utmContent },
+            { field: "first_source", value: fieldValue(formData, "first_source") || utmSource },
+            { field: "first_medium", value: fieldValue(formData, "first_medium") || utmMedium },
+            { field: "landing_page", value: fieldValue(formData, "landing_page") || pageUrl },
+            { field: "submission_page", value: fieldValue(formData, "submission_page") || pageUrl },
+            { field: "referrer", value: fieldValue(formData, "referrer") || "N/A" },
           ],
         },
       });

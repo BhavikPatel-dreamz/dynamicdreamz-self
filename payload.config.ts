@@ -183,22 +183,33 @@ export default buildConfig({
                   req.headers?.get?.("cf-ipcountry") ||
                   "";
                 const cityState =
-                  [city, region, country].filter(Boolean).join(", ") || "N/A";
+                  [city, region, country].filter(Boolean).join(", ");
 
                 const referer =
                   req.headers?.get?.("referer") ||
-                  "https://www.dynamicdreamz.com/career-apply-now";
+                  "https://www.dynamicdreamz.com";
+
+                const defaultPageName = referer.includes("quote")
+                  ? "Request a Quote"
+                  : referer.includes("career")
+                    ? "Career Apply Now"
+                    : "Contact Us";
 
                 const defaults: Array<{ field: string; value: string }> = [
-                  { field: "_remote_ip", value: String(getVal("_remote_ip") || headerIp) },
-                  { field: "citystate", value: String(getVal("citystate") || cityState) },
-                  { field: "pagename", value: String(getVal("pagename") || "Career Apply Now") },
+                  { field: "_remote_ip", value: String(getVal("_remote_ip") || headerIp || "") },
+                  { field: "citystate", value: String(getVal("citystate") || cityState || "") },
+                  { field: "pagename", value: String(getVal("pagename") || defaultPageName) },
                   { field: "_url", value: String(getVal("_url") || referer) },
                   { field: "utm_source", value: String(getVal("utm_source") || "N/A") },
                   { field: "utm_medium", value: String(getVal("utm_medium") || "N/A") },
                   { field: "utm_campaign", value: String(getVal("utm_campaign") || "N/A") },
                   { field: "utm_term", value: String(getVal("utm_term") || "N/A") },
                   { field: "utm_content", value: String(getVal("utm_content") || "N/A") },
+                  { field: "first_source", value: String(getVal("first_source") || "N/A") },
+                  { field: "first_medium", value: String(getVal("first_medium") || "N/A") },
+                  { field: "referrer", value: String(getVal("referrer") || (referer !== "https://www.dynamicdreamz.com" ? referer : "N/A")) },
+                  { field: "landing_page", value: String(getVal("landing_page") || "N/A") },
+                  { field: "submission_page", value: String(getVal("submission_page") || referer || "N/A") },
                 ];
 
                 for (const def of defaults) {

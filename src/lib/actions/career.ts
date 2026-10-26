@@ -96,20 +96,29 @@ export async function submitCareerApplication(
   let remoteIp = "";
   let cityState = "";
   let pageUrl = "https://www.dynamicdreamz.com/career-apply-now";
-  const pageName = "Career Apply Now";
+  const pageName = "career-apply-now";
 
   try {
     const headerList = await headers();
     remoteIp =
-      headerList.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      headerList.get("cf-connecting-ip") ||
       headerList.get("x-real-ip") ||
+      headerList.get("x-forwarded-for")?.split(",")[0]?.trim() ||
       "";
     const city = headerList.get("x-vercel-ip-city") || headerList.get("cf-ipcity") || "";
     const region =
       headerList.get("x-vercel-ip-country-region") || headerList.get("cf-region") || "";
-    const country =
+    const rawCountry =
       headerList.get("x-vercel-ip-country") || headerList.get("cf-ipcountry") || "";
-    cityState = [city, region, country].filter(Boolean).join(", ");
+    let country = rawCountry;
+    if (rawCountry && rawCountry.length === 2) {
+      try {
+        country = new Intl.DisplayNames(["en"], { type: "region" }).of(rawCountry) || rawCountry;
+      } catch {
+        // fallback to raw
+      }
+    }
+    cityState = [city, region, country].filter(Boolean).join("-");
     const referer = headerList.get("referer");
     if (referer) {
       pageUrl = referer;
@@ -147,6 +156,11 @@ export async function submitCareerApplication(
         { field: "utm_campaign", value: fieldValue(formData, "utm_campaign") || "N/A" },
         { field: "utm_term", value: fieldValue(formData, "utm_term") || "N/A" },
         { field: "utm_content", value: fieldValue(formData, "utm_content") || "N/A" },
+        { field: "first_source", value: fieldValue(formData, "first_source") || fieldValue(formData, "utm_source") || "N/A" },
+        { field: "first_medium", value: fieldValue(formData, "first_medium") || fieldValue(formData, "utm_medium") || "N/A" },
+        { field: "landing_page", value: fieldValue(formData, "landing_page") || pageUrl },
+        { field: "submission_page", value: fieldValue(formData, "submission_page") || pageUrl },
+        { field: "referrer", value: fieldValue(formData, "referrer") || "N/A" },
       ];
 
       let submissionUploads: Array<{

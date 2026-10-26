@@ -13,6 +13,11 @@ const attributionFields = [
   "utm_campaign",
   "utm_term",
   "utm_content",
+  "first_source",
+  "first_medium",
+  "referrer",
+  "landing_page",
+  "submission_page",
 ] as const;
 
 const initialQuoteFormState: QuoteFormState = {
@@ -78,7 +83,27 @@ export function QuoteForm({
       const field = formRef.current?.elements.namedItem(name);
 
       if (field instanceof HTMLInputElement) {
-        field.value = searchParams.get(name) ?? "";
+        if (name === "referrer") {
+          const initialReferrer = sessionStorage.getItem("dd_initial_referrer");
+          field.value = document.referrer || initialReferrer || "N/A";
+        } else if (name === "submission_page") {
+          field.value = window.location.href;
+        } else if (name === "landing_page") {
+          const referringPage = sessionStorage.getItem("dd_referring_page");
+          const initialLanding = sessionStorage.getItem("dd_initial_landing_page");
+          field.value = referringPage || initialLanding || window.location.href;
+        } else if (name === "first_source") {
+          const storedSource = sessionStorage.getItem("dd_first_source") || sessionStorage.getItem("dd_utm_source");
+          const currentSource = searchParams.get("utm_source") || "";
+          field.value = storedSource || currentSource || "N/A";
+        } else if (name === "first_medium") {
+          const storedMedium = sessionStorage.getItem("dd_first_medium") || sessionStorage.getItem("dd_utm_medium");
+          const currentMedium = searchParams.get("utm_medium") || "";
+          field.value = storedMedium || currentMedium || "N/A";
+        } else {
+          const storedUtm = sessionStorage.getItem(`dd_${name}`);
+          field.value = searchParams.get(name) || storedUtm || "";
+        }
       }
     }
   }, []);

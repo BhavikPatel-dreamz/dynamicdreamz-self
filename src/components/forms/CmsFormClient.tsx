@@ -304,14 +304,67 @@ export function CmsFormClient({
       }
 
       // Add attribution and system navigation fields
-      const attributionKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+      const attributionKeys = [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "first_source",
+        "first_medium",
+        "referrer",
+        "landing_page",
+        "submission_page",
+      ];
       for (const key of attributionKeys) {
         const fromForm = formData.get(key);
         const fromUrl = searchParams?.get(key);
+        let fallbackVal = "N/A";
+        if (typeof window !== "undefined") {
+          if (key === "referrer") {
+            const initialReferrer = sessionStorage.getItem("dd_initial_referrer");
+            fallbackVal = document.referrer || initialReferrer || "N/A";
+          } else if (key === "submission_page" && window.location.href) {
+            fallbackVal = window.location.href;
+          } else if (key === "landing_page") {
+            const referringPage = sessionStorage.getItem("dd_referring_page");
+            const initialLanding = sessionStorage.getItem("dd_initial_landing_page");
+            fallbackVal = referringPage || initialLanding || window.location.href;
+          } else if (key === "utm_source") {
+            fallbackVal =
+              sessionStorage.getItem("dd_utm_source") ||
+              sessionStorage.getItem("dd_first_source") ||
+              searchParams?.get("utm_source") ||
+              "N/A";
+          } else if (key === "utm_medium") {
+            fallbackVal =
+              sessionStorage.getItem("dd_utm_medium") ||
+              sessionStorage.getItem("dd_first_medium") ||
+              searchParams?.get("utm_medium") ||
+              "N/A";
+          } else if (key === "first_source") {
+            fallbackVal =
+              sessionStorage.getItem("dd_first_source") ||
+              sessionStorage.getItem("dd_utm_source") ||
+              searchParams?.get("utm_source") ||
+              "N/A";
+          } else if (key === "first_medium") {
+            fallbackVal =
+              sessionStorage.getItem("dd_first_medium") ||
+              sessionStorage.getItem("dd_utm_medium") ||
+              searchParams?.get("utm_medium") ||
+              "N/A";
+          } else {
+            fallbackVal =
+              sessionStorage.getItem(`dd_${key}`) ||
+              sessionStorage.getItem(key) ||
+              "N/A";
+          }
+        }
         const finalVal =
           (typeof fromForm === "string" && fromForm.trim() !== "" ? fromForm.trim() : null) ||
           (fromUrl && fromUrl.trim() !== "" ? fromUrl.trim() : null) ||
-          "N/A";
+          fallbackVal;
         // Avoid duplicate push if already present
         const existingIdx = submissionData.findIndex((s) => s.field === key);
         if (existingIdx >= 0) {
