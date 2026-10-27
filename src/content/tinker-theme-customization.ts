@@ -26,7 +26,7 @@ export const tinkerThemeCustomizationContent = {
             name: "Supper Tails Logo",
             src: "/assets/clients/supertails.svg",
             href: "https://supertails.com/",
-            alt: "Supper Tails Logo",
+            alt: "Supertails Brand Logo",
             width: 164,
             height: 41
       },
@@ -34,7 +34,7 @@ export const tinkerThemeCustomizationContent = {
             name: "Eleven Eleven",
             src: "/assets/clients/eleven-eleven.svg",
             href: "https://11-11.in/",
-            alt: "Eleven Eleven",
+            alt: "11:11 Artisanal Fashion Brand Logo",
             width: 145,
             height: 20
       },
@@ -42,7 +42,7 @@ export const tinkerThemeCustomizationContent = {
             name: "bellavita logo",
             src: "/assets/clients/bellavita.svg",
             href: "https://bellavitaorganic.com/",
-            alt: "bellavita logo",
+            alt: "Bella Vita Organic Brand Logo",
             width: 135,
             height: 35
       },
@@ -50,7 +50,7 @@ export const tinkerThemeCustomizationContent = {
             name: "Bombay Shirt Company",
             src: "/assets/clients/bombay-shirt-company.svg",
             href: "https://www.bombayshirts.com/",
-            alt: "Bombay Shirt Company",
+            alt: "Bombay Shirt Company Brand Logo",
             width: 177,
             height: 32
       },
@@ -58,7 +58,7 @@ export const tinkerThemeCustomizationContent = {
             name: "Popclub",
             src: "/assets/clients/popclub_co.svg",
             href: "https://popclub.co/",
-            alt: "Popclub",
+            alt: "PopClub Brand Logo",
             width: 65,
             height: 41
       },
@@ -66,7 +66,7 @@ export const tinkerThemeCustomizationContent = {
             name: "SriSri Tattva Logo",
             src: "/assets/clients/sri-sri-tattva.svg",
             href: "https://www.srisritattva.com/",
-            alt: "SriSri Tattva Logo",
+            alt: "Sri Sri Tattva Brand Logo",
             width: 125,
             height: 44
       },
@@ -74,7 +74,7 @@ export const tinkerThemeCustomizationContent = {
             name: "tropicfeel logo",
             src: "/assets/clients/tropicfeel.svg",
             href: "https://shop.tropicfeel.com/",
-            alt: "tropicfeel logo",
+            alt: "Tropicfeel Brand Logo",
             width: 150,
             height: 32
       },
@@ -82,7 +82,7 @@ export const tinkerThemeCustomizationContent = {
             name: "Renee logo",
             src: "/assets/clients/renee.svg",
             href: "https://www.reneecosmetics.in/",
-            alt: "Renee logo",
+            alt: "Renée Cosmetics Brand Logo",
             width: 135,
             height: 28
       },
@@ -90,7 +90,7 @@ export const tinkerThemeCustomizationContent = {
             name: "Royce chocolate logo",
             src: "/assets/clients/royce-chocolate.svg",
             href: "https://royceindia.com/",
-            alt: "Royce chocolate logo",
+            alt: "Royce Chocolate Brand Logo",
             width: 135,
             height: 35
       },
@@ -98,7 +98,7 @@ export const tinkerThemeCustomizationContent = {
             name: "tego logo",
             src: "/assets/clients/tego.svg",
             href: "https://tego.fit/",
-            alt: "tego logo",
+            alt: "TEGO Fit Brand Logo",
             width: 104,
             height: 32
       },
@@ -106,7 +106,7 @@ export const tinkerThemeCustomizationContent = {
             name: "nekter-colored",
             src: "/assets/clients/nekter-colored.svg",
             href: "https://www.nekterjuicebar.com/",
-            alt: "nekter-colored",
+            alt: "Nékter Juice Bar Brand Logo",
             width: 150,
             height: 32
       },
@@ -114,7 +114,7 @@ export const tinkerThemeCustomizationContent = {
             name: "Rare Rabbit Logo",
             src: "/assets/clients/rare-rabbit.svg",
             href: "https://thehouseofrare.com/",
-            alt: "Rare Rabbit Logo",
+            alt: "Rare Rabbit Brand Logo",
             width: 150,
             height: 32
       }
@@ -282,42 +282,42 @@ export const tinkerThemeCustomizationContent = {
             category: "SHOPIFY",
             href: "https://atoleajewelry.com/",
             image: "/assets/our-work/projects/atolea-jewelry.webp",
-            imageAlt: "Atolea Jewelry Image"
+            imageAlt: "Atolea Jewelry Waterproof Shopify Storefront by Dynamic Dreamz"
       },
       {
             name: "Bombay Shirt Company",
             category: "SHOPIFY",
             href: "https://www.bombayshirts.com/",
             image: "/assets/fashion/portfolio/bombay-shirt-company-fashion.webp",
-            imageAlt: "Bombay Shirt Company Image"
+            imageAlt: "Bombay Shirt Company Custom Shopify Storefront by Dynamic Dreamz"
       },
       {
             name: "Sims Direct",
             category: "SHOPIFY",
             href: "https://simsdirect.com.au/",
             image: "/assets/our-work/projects/sims-direct.webp",
-            imageAlt: "Sims Direct Image"
+            imageAlt: "SimsDirect Travel SIM Cards Shopify Storefront built by Dynamic Dreamz"
       },
       {
             name: "Bonbon Lingerie",
             category: "SHOPIFY",
             href: "https://bonbonlingerie.com/",
             image: "/assets/our-work/projects/bonbon-lingerie.webp",
-            imageAlt: "Bonbon Lingerie Image"
+            imageAlt: "Bonbon Lingerie Luxury Shopify Storefront built by Dynamic Dreamz"
       },
       {
             name: "Pagerie",
             category: "SHOPIFY",
             href: "https://www.pagerie.com/",
             image: "/assets/pet-industry/portfolio/pagerie-dog-accessories.webp",
-            imageAlt: "Pagerie Image"
+            imageAlt: "Pagerie Luxury Pet Accessories Shopify Storefront by Dynamic Dreamz"
       },
       {
             name: "Weardiop",
             category: "SHOPIFY",
             href: "https://weardiop.com/",
             image: "/assets/our-work/projects/weardiop.webp",
-            imageAlt: "Weardiop Image"
+            imageAlt: "Weardiop Shopify Storefront built by Dynamic Dreamz"
       }
 ] as const,
   },

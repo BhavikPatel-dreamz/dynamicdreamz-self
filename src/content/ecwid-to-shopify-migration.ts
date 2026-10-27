@@ -17,7 +17,7 @@ export const ecwidHeroContent: ServiceHeroVideoContent = {
   ctaHref: "/request-quote",
   image: {
     src: "/assets/ecwid-to-shopify-migration/ecwid-to-shopify-migration-hero.svg",
-    alt: "Ecwid to Shopify Migration Service Image",
+    alt: "Ecwid to Shopify Storefront Migration",
     width: 469,
     height: 224,
   },

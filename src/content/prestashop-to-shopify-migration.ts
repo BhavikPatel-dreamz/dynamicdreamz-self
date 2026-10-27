@@ -18,7 +18,7 @@ export const prestashopHeroContent: ServiceHeroVideoContent = {
   ctaHref: "/request-quote",
   image: {
     src: "/assets/prestashop-to-shopify-migration/prestashop-to-shopify-migration-hero.svg",
-    alt: "PrestaShop to Shopify Migration Image",
+    alt: "PrestaShop to Shopify Storefront Migration",
     width: 469,
     height: 224,
   },

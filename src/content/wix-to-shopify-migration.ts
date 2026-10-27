@@ -18,7 +18,7 @@ export const wixHeroContent: ServiceHeroVideoContent = {
   ctaHref: "/request-quote",
   image: {
     src: "/assets/wix-to-shopify-migration/wix-to-shopify-migration-img.svg",
-    alt: "Wix to Shopify Migration Image",
+    alt: "Wix to Shopify Storefront Migration",
     width: 469,
     height: 224,
   },

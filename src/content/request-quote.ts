@@ -81,18 +81,21 @@ export const requestQuoteContent = {
     },
     {
       name: "Brandon",
+      company: "My Rezults",
       avatar: "/assets/testimonials/brandon.webp",
       quote:
         "Dynamic Dreamz excels in web development with unmatched responsiveness, professionalism,",
     },
     {
       name: "Shari Leidich",
+      company: "Max Sweets",
       avatar: "/assets/testimonials/shari-leidich.webp",
       quote:
         "We have been using dynamic dreamz for four, maybe five years now. I can't say anything but the most positive things. They are diligent, professional, competitively priced.",
     },
     {
       name: "Rebekah Wymer",
+      company: "Myla Jane",
       avatar: "/assets/testimonials/rebekah-wymer.webp",
       quote:
         "Hi, I’m Rebecca, owner of Myla Jane. I’ve worked with Dynamic Dreams on several web development projects, and they always do an excellent job.",

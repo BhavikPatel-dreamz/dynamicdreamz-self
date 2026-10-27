@@ -34,7 +34,7 @@ export const generatepressThemeCustomizationContent = {
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/generatepress-theme-customization/hero/generatepress-theme-customization-service-img.webp",
-      alt: "GeneratePress Theme Customization Service Image",
+      alt: "GeneratePress WordPress Theme Customization by Dynamic Dreamz",
       width: 601,
       height: 474,
     },

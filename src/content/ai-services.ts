@@ -62,7 +62,7 @@ export const aiServicesHero = {
   ] as const,
   image: {
     src: "/assets/services/ai-services/ai-development-services-hero.webp",
-    alt: "AI Development Services Image",
+    alt: "Dynamic Dreamz AI Development and Automation Services",
     width: 1140,
     height: 940,
     className: "mix-blend-darken",

@@ -34,7 +34,7 @@ export const oceanwpThemeCustomizationContent = {
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/oceanwp-theme-customization/hero/oceanwp-theme-customization-service-img.webp",
-      alt: "OceanWP Theme Customization Service Image",
+      alt: "OceanWP WordPress Theme Customization by Dynamic Dreamz",
       width: 601,
       height: 474,
     },

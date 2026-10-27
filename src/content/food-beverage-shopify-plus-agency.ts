@@ -9,7 +9,7 @@ export const foodBeverageHero = {
     "Hire a Food and Beverage Shopify Plus Agency to run an online food and beverage business to skyrocket your sales. You just do not need a good product; you also need an eCommerce store that is scalable, user-friendly, and performs well. Shopify Plus is the best option for food and beverage businesses trying to grow and reach a wider audience. We specialize in creating and optimizing Shopify Plus stores customized to food and beverage businesses' unique requirements. Whether you are launching a new store, migrating from another platform, or looking to optimize your existing Shopify Plus store, we have the Shopify experts to make it happen.",
   image: {
     src: "/assets/food-beverage-shopify-plus-agency/hero/food-and-beverage-shopify-plus-agency.webp",
-    alt: "food-and-beverage-shopify-plus-agency-img",
+    alt: "Food and Beverage Shopify Plus Storefront Development",
     width: 854,
     height: 529,
   },
@@ -27,7 +27,7 @@ export const foodBeverageWhyChoose = {
     "The food and beverage industry is very competitive, and having a well-optimized and visually attractive eCommerce store can make all the difference. Shopify Plus offers powerful features like scalable infrastructure, automated workflows, and advanced marketing tools, making it the ideal option for growing food & beverage brands. Our agency guarantees that your Shopify Plus store is created to sweeten customer experience, boost conversions, and scale effortlessly. With our expertise in Shopify Plus, we create smooth shopping experiences that turn visitors into loyal customers.",
   image: {
     src: "/assets/food-beverage-shopify-plus-agency/why-choose/why-choose-food-beverage-shopify-plus.webp",
-    alt: "Why Choose a Food & Beverage Shopify Plus Agency Image",
+    alt: "Food and Beverage Shopify Plus Agency Capabilities",
     width: 469,
     height: 500,
   },

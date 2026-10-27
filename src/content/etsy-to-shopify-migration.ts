@@ -18,7 +18,7 @@ export const etsyHeroContent: ServiceHeroVideoContent = {
   ctaHref: "/request-quote",
   image: {
     src: "/assets/etsy-to-shopify-migration/etsy-to-shopify-migration-hero.svg",
-    alt: "Etsy to Shopify Migration Image",
+    alt: "Etsy to Shopify Storefront Migration",
     width: 469,
     height: 224,
   },

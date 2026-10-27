@@ -18,7 +18,7 @@ export const salesforceHeroContent: ServiceHeroVideoContent = {
   ctaHref: "/request-quote",
   image: {
     src: "/assets/salesforce-to-shopify-migration/salesforce-shopify-migration-hero.svg",
-    alt: "Salesforce to Shopify Migration Service Image",
+    alt: "Salesforce Commerce Cloud to Shopify Migration",
     width: 469,
     height: 224,
   },

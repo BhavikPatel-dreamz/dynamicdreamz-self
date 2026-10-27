@@ -34,7 +34,7 @@ export const helloBizThemeCustomizationContent = {
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/hello-biz-theme-customization/hero/hello-biz-theme-customization-service-img.webp",
-      alt: "Hello Biz Theme Customization Service Image",
+      alt: "Hello Biz WordPress Theme Customization by Dynamic Dreamz",
       width: 1202,
       height: 948,
     },

@@ -34,7 +34,7 @@ export const kadenceThemeCustomizationContent = {
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/kadence-theme-customization/hero/kadence-theme-customization-service-img.webp",
-      alt: "Kadence Theme Customization Service Image",
+      alt: "Kadence WordPress Theme Customization by Dynamic Dreamz",
       width: 601,
       height: 474,
     },

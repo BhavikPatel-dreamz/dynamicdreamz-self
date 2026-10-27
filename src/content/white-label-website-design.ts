@@ -69,25 +69,25 @@ export const whiteLabelWebsiteDesignHero: CityPageHeroContent = {
     slides: [
       {
         src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-green-future-energy.webp",
-        alt: "greenfutureenergy",
+        alt: "Green Future Energy WordPress Website built by Dynamic Dreamz",
         width: 1600,
         height: 2380,
       },
       {
         src: "/assets/services/shopify-development-in-bangalore/hero/slide-bellavita.webp",
-        alt: "bellavita",
+        alt: "Bella Vita Organic Shopify Storefront built by Dynamic Dreamz",
         width: 1600,
         height: 2380,
       },
       {
         src: "/assets/services/wordpress-development-in-ahmedabad/hero/slide-the-huddle-sports-grill.webp",
-        alt: "thehuddlesportsgrill",
+        alt: "The Huddle Sports Grill WordPress Website by Dynamic Dreamz",
         width: 1600,
         height: 2380,
       },
       {
         src: "/assets/services/shopify-development-in-bangalore/hero/slide-kalki.webp",
-        alt: "kalki",
+        alt: "KALKI Fashion Ethnic Wear Shopify Storefront by Dynamic Dreamz",
         width: 1600,
         height: 2380,
       },

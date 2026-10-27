@@ -18,7 +18,7 @@ export const squarespaceHeroContent: ServiceHeroVideoContent = {
   ctaHref: "/request-quote",
   image: {
     src: "/assets/squarespace-to-shopify-migration/squarespace-shopify-migration-hero.svg",
-    alt: "Squarespace to Shopify Migration Image",
+    alt: "Squarespace to Shopify Storefront Migration",
     width: 469,
     height: 224,
   },

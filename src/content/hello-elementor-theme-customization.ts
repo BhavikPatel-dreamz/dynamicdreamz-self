@@ -34,7 +34,7 @@ export const helloElementorThemeCustomizationContent = {
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/hello-elementor-theme-customization/hero/hello-elementor-theme-customization-service-img.webp",
-      alt: "Hello Elementor Theme Customization Service Image",
+      alt: "Hello Elementor WordPress Theme Customization by Dynamic Dreamz",
       width: 601,
       height: 474,
     },

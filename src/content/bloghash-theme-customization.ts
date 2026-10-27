@@ -47,7 +47,7 @@ export const bloghashThemeCustomizationContent = {
     ctaAriaLabel: "Request a Quote",
     image: {
       src: "/assets/bloghash-theme-customization/hero/bloghash-theme-customization-service-img.webp",
-      alt: "BlogHash Theme Customization Service Image",
+      alt: "BlogHash WordPress Theme Customization by Dynamic Dreamz",
       width: 1202,
       height: 948,
     },

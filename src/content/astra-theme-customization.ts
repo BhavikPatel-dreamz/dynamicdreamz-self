@@ -34,7 +34,7 @@ export const astraThemeCustomizationContent = {
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/astra-theme-customization/hero/astra-theme-customization-service-img.webp",
-      alt: "Astra Theme Customization Service Image",
+      alt: "Astra WordPress Theme Customization by Dynamic Dreamz",
       width: 601,
       height: 474,
     },

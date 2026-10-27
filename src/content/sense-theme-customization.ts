@@ -13,7 +13,7 @@ export const senseThemeCustomizationContent = {
     secondaryCtaTarget: "_blank",
     image: {
       src: "/assets/sense-theme-customization/hero/sense-theme-customization-service-img.webp",
-      alt: "Sense Theme Customization Service Image",
+      alt: "Sense Shopify Theme Customization by Dynamic Dreamz",
       width: 1224,
       height: 948,
     },

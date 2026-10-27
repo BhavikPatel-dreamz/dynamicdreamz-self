@@ -17,7 +17,7 @@ export const squareHeroContent: ServiceHeroVideoContent = {
   ctaHref: "/request-quote",
   image: {
     src: "/assets/square-to-shopify-migration/square-to-shopify-migration-hero.svg",
-    alt: "Square to Shopify Migration Service Image",
+    alt: "Square to Shopify Storefront Migration",
     width: 469,
     height: 224,
   },

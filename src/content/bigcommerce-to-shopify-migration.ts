@@ -88,7 +88,7 @@ export const bigcommerceVsShopifyContent = {
           value: "4.5/5",
           ratingImage: {
             src: "/assets/bigcommerce-to-shopify-migration/star-rating-4-5.svg",
-            alt: "Rating Image",
+            alt: "Verified Customer Rating Stars",
             width: 108,
             height: 20,
           },
@@ -131,7 +131,7 @@ export const bigcommerceVsShopifyContent = {
           value: "4.3/5",
           ratingImage: {
             src: "/assets/bigcommerce-to-shopify-migration/star-rating-4-3.svg",
-            alt: "Rating Image",
+            alt: "Verified Customer Rating Stars",
             width: 108,
             height: 20,
           },

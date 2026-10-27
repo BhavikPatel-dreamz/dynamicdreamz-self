@@ -17,6 +17,6 @@ const industryBrandLinks = [
 
 export const industryBrandLogos = industryBrandLinks.map(({ src, href }) => ({
   ...getClientLogo(src),
-  ...(src.endsWith("nelter.svg") ? { alt: "Nékter Juice Bar logo" } : {}),
+  ...(src.endsWith("nelter.svg") ? { alt: "Nékter Juice Bar Brand Logo" } : {}),
   href,
 }));

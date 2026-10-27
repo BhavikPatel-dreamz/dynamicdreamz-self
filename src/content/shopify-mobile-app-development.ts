@@ -79,19 +79,19 @@ export const shopifyMobileAppHero = {
   slides: [
     {
       src: "/assets/services/shopify-mobile-app-development/hero/slide-bellavita.webp",
-      alt: "Bellavita",
+      alt: "Bella Vita Organic Mobile Shopping App by Dynamic Dreamz",
       width: 224,
       height: 487,
     },
     {
       src: "/assets/services/shopify-mobile-app-development/hero/slide-house-of-good-vibes.webp",
-      alt: "House of good",
+      alt: "House of Good Vibes Mobile eCommerce App by Dynamic Dreamz",
       width: 150,
       height: 325,
     },
     {
       src: "/assets/services/shopify-mobile-app-development/hero/slide-kalki.webp",
-      alt: "Kalki",
+      alt: "KALKI Fashion Mobile Shopping App by Dynamic Dreamz",
       width: 147,
       height: 325,
     },
@@ -193,7 +193,7 @@ export const shopifyMobileAppExploreWork = {
       name: "House of Rare",
       category: "React Native",
       image: "/assets/our-work/projects/house-of-rare.webp",
-      imageAlt: "House of Rare Image",
+      imageAlt: "House of Rare Luxury Fashion Mobile App by Dynamic Dreamz",
       appLinks: [
         {
           label: "Android App",
@@ -212,7 +212,7 @@ export const shopifyMobileAppExploreWork = {
       name: "Kalki Fashion",
       category: "React Native",
       image: "/assets/our-work/projects/kalki-india.webp",
-      imageAlt: "Kalki Fashion Image",
+      imageAlt: "KALKI Fashion Ethnic Wear Shopify Storefront by Dynamic Dreamz",
       appLinks: [
         {
           label: "Android App",
@@ -231,7 +231,7 @@ export const shopifyMobileAppExploreWork = {
       name: "RENÉE Cosmetics",
       category: "React Native",
       image: "/assets/our-work/projects/renee-cosmetics-app.webp",
-      imageAlt: "RENÉE Cosmetics Image",
+      imageAlt: "RENÉE Cosmetics Beauty Shopify Storefront by Dynamic Dreamz",
       appLinks: [
         {
           label: "Android App",
@@ -250,7 +250,7 @@ export const shopifyMobileAppExploreWork = {
       name: "Bellavita Organic",
       category: "React Native",
       image: "/assets/our-work/projects/bellavita-organic-app.webp",
-      imageAlt: "Bellavita Organic Image",
+      imageAlt: "Bella Vita Organic Beauty Storefront by Dynamic Dreamz",
       appLinks: [
         {
           label: "Android App",
@@ -269,7 +269,7 @@ export const shopifyMobileAppExploreWork = {
       name: "Bombay Shirt Company",
       category: "React Native",
       image: "/assets/fashion/portfolio/bombay-shirt-company-fashion.webp",
-      imageAlt: "Bombay Shirt Company Image",
+      imageAlt: "Bombay Shirt Company Custom Shopify Storefront by Dynamic Dreamz",
       appLinks: [
         {
           label: "Android App",
@@ -288,7 +288,7 @@ export const shopifyMobileAppExploreWork = {
       name: "Supertails",
       category: "React Native",
       image: "/assets/our-work/projects/supertails-app.webp",
-      imageAlt: "Supertails Image",
+      imageAlt: "Supertails Pet Supplies Shopify Storefront by Dynamic Dreamz",
       appLinks: [
         {
           label: "Android App",
@@ -307,7 +307,7 @@ export const shopifyMobileAppExploreWork = {
       name: "GNC India",
       category: "React Native",
       image: "/assets/our-work/projects/gnc-india.webp",
-      imageAlt: "GNC India Image",
+      imageAlt: "GNC India Health Supplements Shopify Storefront by Dynamic Dreamz",
       appLinks: [
         {
           label: "Android App",
@@ -326,7 +326,7 @@ export const shopifyMobileAppExploreWork = {
       name: "House of Good Vibes",
       category: "React Native",
       image: "/assets/our-work/projects/house-of-good-vibes.webp",
-      imageAlt: "House of Good Vibes Image",
+      imageAlt: "House of Good Vibes Apparel Mobile App by Dynamic Dreamz",
       appLinks: [
         {
           label: "Android App",

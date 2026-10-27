@@ -385,91 +385,91 @@ export const seoServicesIndustries: IndustriesServedContent = {
   items: [
     {
       image: "/assets/shopify-plus-agency/industries/beauty-cosmetics.webp",
-      imageAlt: "Beauty & Cosmetics Slide Image",
+      imageAlt: "Shopify Plus Beauty and Cosmetics eCommerce SEO Development",
       title: "Beauty & Cosmetics",
       description:
         "We help cosmetic and beauty brands attract potential customers with SEO strategies that boost organic rankings and direct customer queries to product pages.",
     },
     {
       image: "/assets/shopify-plus-agency/industries/fashion-apparel.webp",
-      imageAlt: "Fashion & Apparel Slide Image",
+      imageAlt: "Fashion and Apparel eCommerce SEO Optimization",
       title: "Fashion & Apparel",
       description:
         "Fashion is a dynamic, cutthroat industry. We help your fashion & apparel store stand out by enhancing product and category pages to turn searchers into consumers.",
     },
     {
       image: "/assets/shopify-plus-agency/industries/health-nutrition.webp",
-      imageAlt: "Health & Nutrition Slide Image",
+      imageAlt: "Shopify Plus Health and Nutrition Storefront Development",
       title: "Health & Nutrition",
       description:
         "Building trust is crucial in the health and nutrition industry. We help wellness businesses rank for informational queries and build credibility with clients.",
     },
     {
       image: "/assets/shopify-plus-agency/industries/food-beverages.webp",
-      imageAlt: "Food & Beverages Slide Image",
+      imageAlt: "Food and Beverage eCommerce SEO Development",
       title: "Food & Beverages",
       description:
         "Whether you operate a local restaurant or an online food shop, we help you connect with hungry customers who are looking for local eating places and food items.",
     },
     {
       image: "/assets/shopify-plus-agency/industries/pet-industry.webp",
-      imageAlt: "Pet Industry Slide Image",
+      imageAlt: "Pet Industry eCommerce Storefront SEO Development",
       title: "Pet Industry",
       description:
         "The pet market is developing rapidly. We optimize your store so pet owners searching for supplies, food, and grooming can easily find your business.",
     },
     {
       image: "/assets/seo-services/industries/ecommerce-online-stores.png",
-      imageAlt: "eCommerce & Online Stores Slide Image",
+      imageAlt: "Custom eCommerce Storefront SEO and Growth",
       title: "eCommerce & Online Stores",
       description:
         "Our specialized eCommerce SEO services ensure that your products rank for high-intent search terms, driving more conversions and sales without paid ads.",
     },
     {
       image: "/assets/seo-services/industries/real-estate.png",
-      imageAlt: "Real Estate Slide Image",
+      imageAlt: "Real Estate Website SEO and Lead Generation Development",
       title: "Real Estate",
       description:
         "Our SEO methods help real estate agents connect with local property seekers and sellers by boosting exposure for city and neighborhood-level searches.",
     },
     {
       image: "/assets/seo-services/industries/education-online-courses.png",
-      imageAlt: "Education & Online Courses Slide Image",
+      imageAlt: "Education and Online Course Platform SEO Optimization",
       title: "Education & Online Courses",
       description:
         "We assist colleges, training facilities, and e-learning platforms in ranking for educational queries that bring students directly to their courses.",
     },
     {
       image: "/assets/seo-services/industries/travel-hospitality.png",
-      imageAlt: "Travel & Hospitality Slide Image",
+      imageAlt: "Travel and Hospitality Website SEO Optimization",
       title: "Travel & Hospitality",
       description:
         "From local hotels to global tour operators, our SEO services help travel and hospitality companies capture travel bookings during key holiday seasons.",
     },
     {
       image: "/assets/seo-services/industries/finance-insurance.png",
-      imageAlt: "Finance & Insurance Slide Image",
+      imageAlt: "Finance and Insurance Digital Platform SEO Development",
       title: "Finance & Insurance",
       description:
         "With effective SEO methods, we help insurance and financial businesses build trust with their clients. By targeting high-intent keywords, we attract customers looking for financial guidance and security.",
     },
     {
       image: "/assets/seo-services/industries/legal-services.png",
-      imageAlt: "Legal Services Slide Image",
+      imageAlt: "Legal Services Website SEO Development",
       title: "Legal Services",
       description:
         "Online competition among law firms is exceptionally high. We create SEO strategies that help lawyers rank for particular practice areas and engage potential customers.",
     },
     {
       image: "/assets/seo-services/industries/local-businesses.png",
-      imageAlt: "Local Businesses Slide Image",
+      imageAlt: "Local Business Website SEO and Optimization",
       title: "Local Businesses",
       description:
         'For small businesses, local SEO is very crucial. To increase consumer traffic and regional leads, we help stores, salons, and service providers appear in "near me" searches.',
     },
     {
       image: "/assets/seo-services/industries/it-tech-startups.png",
-      imageAlt: "IT & Tech Startups Slide Image",
+      imageAlt: "IT and Tech Startup Website SEO Architecture",
       title: "IT & Tech Startups",
       description:
         "Online visibility is crucial for startups. We develop SEO strategies that help tech companies reach their ideal clients, attract investors, and scale faster.",
