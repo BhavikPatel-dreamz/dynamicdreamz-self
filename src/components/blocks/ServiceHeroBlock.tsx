@@ -256,7 +256,7 @@ export function AboutHeroSection({
                     <div className="text-counter mb-3 font-montserrat text-base font-bold uppercase leading-[18.4px] text-white/60 max-[1199px]:text-sm max-[767px]:mb-0 max-[767px]:text-[9px] max-[767px]:leading-[14px]">
                       {stat.label}
                     </div>
-                    <div className="counter-text flex items-center font-montreal-medium text-[45px] font-semibold leading-[45px] tracking-[-0.56px] text-white max-[1199px]:text-[40px] max-[1199px]:leading-[35px] max-[767px]:justify-center max-[767px]:text-[20px] max-[767px]:leading-[30px]">
+                    <div className="counter-text flex items-center font-montreal-bold text-[45px] font-semibold leading-[45px] tracking-[-0.56px] text-white max-[1199px]:text-[40px] max-[1199px]:leading-[35px] max-[767px]:justify-center max-[767px]:text-[20px] max-[767px]:leading-[30px]">
                       <span>{stat.value}</span>
                     </div>
                   </div>

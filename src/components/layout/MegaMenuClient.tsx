@@ -17,11 +17,11 @@ import { cn } from "@/lib/class-names";
 function ChevronIcon({ open = false }: { open?: boolean } = {}) {
   return (
     <svg
-      className={cn("h-2 w-[13px] transition-transform duration-300", open && "rotate-180")}
+      className={cn("transition-transform duration-300", open && "rotate-180")}
       aria-hidden="true"
       viewBox="0 0 10 6"
-      width="10"
-      height="6"
+      width="8"
+      height="8"
     >
       <path d="m1 1 4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.8" />
     </svg>

@@ -39,7 +39,7 @@ export function ResourceHubFeedBlock({
     <section className={cn("overflow-hidden bg-white py-20 max-[991px]:py-[50px]", className)}>
       <Container>
         <div data-aos="fade-up" className="mx-auto mb-[47px] max-w-[700px] text-center max-[991px]:mb-[30px]">
-          <h2 className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] mb-6 max-[767px]:mb-4">
+          <h2 className="font-montreal-medium text-[43px] font-normal leading-[1.2] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] mb-6 max-[767px]:mb-4">
             {title}
           </h2>
         </div>

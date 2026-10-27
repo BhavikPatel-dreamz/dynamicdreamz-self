@@ -48,7 +48,8 @@
   --font-heading: "neue_montrealmedium", var(--font-neue-montreal-medium-local), sans-serif;
   --font-display: "neue_montrealmedium", var(--font-neue-montreal-medium-local), sans-serif;
   --font-montreal-medium: "neue_montrealmedium", var(--font-neue-montreal-medium-local), sans-serif;
-  --font-montreal-semibold: "neue_montrealmedium", var(--font-neue-montreal-medium-local), sans-serif;
+  --font-montreal-semibold: "neue_montrealbold", var(--font-neue-montreal-local), sans-serif;
+  --font-montreal-bold: "neue_montrealbold", var(--font-neue-montreal-local), sans-serif;
   --montreal-medium: "neue_montrealmedium", var(--font-neue-montreal-medium-local), sans-serif;
   --montreal-bold: "neue_montrealbold", var(--font-neue-montreal-local), sans-serif;
   --montreal-regular: "neue_montrealregular", var(--font-neue-montreal-local), sans-serif;

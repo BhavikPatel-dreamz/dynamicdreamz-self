@@ -100,19 +100,19 @@ export const clientLogos: ImageItem[] = [
   { src: "/assets/clients/dr-trust.svg", alt: "Dr. Trust logo", width: 115, height: 38 },
   { src: "/assets/clients/sullen.svg", alt: "Sullen logo", width: 86, height: 43 },
   { src: "/assets/clients/tego.svg", alt: "Tego logo", width: 107, height: 42 },
-  { src: "/assets/clients/perfect-locks-black.svg", alt: "Perfect Locks logo", width: 161, height: 29 },
-  { src: "/assets/clients/sim-direct.svg", alt: "SIM Direct logo", width: 143, height: 49 },
-  { src: "/assets/clients/eleven-eleven.svg", alt: "Eleven Eleven logo", width: 160, height: 22 },
-  { src: "/assets/clients/popclub_co.svg", alt: "PopClub logo", width: 71, height: 45 },
-  { src: "/assets/clients/prolash.svg", alt: "Prolash logo", width: 164, height: 18 },
 ];
 
 const canonicalClientLogoAliases: ImageItem[] = [
   { src: "/assets/clients/royce-chocolate.svg", alt: "Royce Chocolate logo", width: 132, height: 38 },
   { src: "/assets/clients/sri-sri-tattva.svg", alt: "Sri Sri Tattva logo", width: 106, height: 40 },
   { src: "/assets/clients/perfect-locks.svg", alt: "Perfect Locks logo", width: 161, height: 29 },
+  { src: "/assets/clients/perfect-locks-black.svg", alt: "Perfect Locks logo", width: 161, height: 29 },
   { src: "/assets/clients/supertails.svg", alt: "Super Tails logo", width: 164, height: 41 },
   { src: "/assets/clients/popclub.svg", alt: "PopClub logo", width: 71, height: 45 },
+  { src: "/assets/clients/popclub_co.svg", alt: "PopClub logo", width: 71, height: 45 },
+  { src: "/assets/clients/sim-direct.svg", alt: "SIM Direct logo", width: 143, height: 49 },
+  { src: "/assets/clients/eleven-eleven.svg", alt: "Eleven Eleven logo", width: 160, height: 22 },
+  { src: "/assets/clients/prolash.svg", alt: "Prolash logo", width: 164, height: 18 },
 ];
 
 const clientLogoByPath = new Map(

@@ -47,7 +47,7 @@ export function CommerceSolutionsSection({
       <Container>
         <div
           data-aos="fade-up"
-          className="mb-[54px] flex items-center justify-between gap-10 max-[992px]:mb-8 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-0 [&_h2]:w-[40%] [&_h2]:max-[992px]:w-full [&_p]:w-[47%] [&_p]:max-[992px]:w-full [&_p]:max-[992px]:mt-2.5"
+          className="mb-[54px] flex items-end justify-between gap-10 max-[992px]:mb-8 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-0 [&_h2]:w-[40%] [&_h2]:max-[992px]:w-full [&_p]:w-[47%] [&_p]:max-[992px]:w-full [&_p]:max-[992px]:mt-2.5"
         >
           <SectionHeading id="commerce-solutions-title">{title}</SectionHeading>
           <p className="text-base leading-[1.9] font-medium text-muted max-[767px]:text-sm">

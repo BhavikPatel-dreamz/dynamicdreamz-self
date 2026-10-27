@@ -216,7 +216,7 @@ export function FaqAccordion({
         const mainAnswerContent = item.answer || item.answerParts ? (
           <p
             className={cn(
-              "text-sm leading-6 font-medium text-[#535353] last:mb-0",
+              "text-sm leading-6 font-normal text-[#535353] last:mb-0",
               item.listItems?.length && !isListBefore ? "mb-3" : "mb-0",
               answerClassName,
             )}
@@ -238,7 +238,7 @@ export function FaqAccordion({
         const secondaryAnswerContent = item.secondaryAnswer ? (
           <p
             className={cn(
-              "mt-4 text-sm leading-6 font-medium text-[#535353] last:mb-0",
+              "mt-4 text-sm leading-6 font-normal text-[#535353] last:mb-0",
               answerClassName,
             )}
           >
