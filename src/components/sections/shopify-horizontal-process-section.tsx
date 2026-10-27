@@ -59,7 +59,7 @@ export function ShopifyHorizontalProcessSection({
                   className="pointer-events-none absolute top-6 left-0 h-[1px] w-full bg-[rgba(40,40,40,0.14)] max-[1199px]:hidden max-[767px]:!block max-[767px]:top-11 max-[767px]:left-[22px] max-[767px]:h-full max-[767px]:w-[1px] last:hidden"
                 />
 
-                <div className="number relative z-[2] grid size-12 place-items-center rounded-full border border-[#ad5151]/40 bg-white font-montserrat text-base font-bold text-[#ad5151] shadow-xs max-[767px]:size-11 shrink-0">
+                <div className="number relative z-[2] grid size-12 place-items-center rounded-full border border-[#ad5151]/40 bg-white font-montserrat text-sm font-bold text-[#ad5151] shadow-xs max-[767px]:size-11 shrink-0">
                   <span>{stepNum}</span>
                 </div>
 

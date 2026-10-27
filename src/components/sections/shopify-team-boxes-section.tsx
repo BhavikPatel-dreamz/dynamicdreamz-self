@@ -63,14 +63,14 @@ export function ShopifyTeamBoxesSection({
               {Array.isArray(content.description) ? (
                 content.description.map((paragraph, idx) => (
                   <p
-                    className="font-sans text-base font-medium leading-7 text-white/80 max-[767px]:text-sm max-[767px]:leading-6"
+                    className="font-sans text-base font-medium leading-7 text-white max-[767px]:text-sm max-[767px]:leading-6"
                     key={idx}
                   >
                     {paragraph}
                   </p>
                 ))
               ) : (
-                <p className="font-sans text-base font-medium leading-7 text-white/80 max-[767px]:text-sm max-[767px]:leading-6">
+                <p className="font-sans text-base font-medium leading-7 text-white max-[767px]:text-sm max-[767px]:leading-6">
                   {content.description}
                 </p>
               )}
