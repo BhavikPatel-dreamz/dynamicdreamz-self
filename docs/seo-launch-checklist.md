@@ -1,15 +1,25 @@
-# SEO Launch Checklist
+# SEO, AEO & GEO Launch Checklist
 
-Use this checklist from the start of each page build. SEO is part of the page,
-not a final pass.
+Use this checklist from the start of each page build. SEO, AEO, and GEO are
+engineered into the page architecture, not applied as a final pass. This document
+implements the production standards and 12 audit gates from
+`docs/SEO-AEO-GEO-PLAYBOOK.md`.
 
 ## Sitewide Foundation
 
 - Root metadata has `metadataBase` set to the production domain.
 - Root metadata uses a title template such as `%s | Dynamic Dreamz`.
-- Search indexing is blocked by default (`noindex` metadata, `X-Robots-Tag`, empty sitemap). Set `ALLOW_SEARCH_INDEXING=true` before launch.
-- `src/app/robots.ts` allows crawl so Google can honor `noindex`. When indexing is enabled, it allows indexable public pages and points to the sitemap.
+- Search indexing is blocked by default in non-production environments (`noindex` metadata, `X-Robots-Tag`, empty sitemap). Set `ALLOW_SEARCH_INDEXING=true` for production launch.
+- `src/app/robots.ts` allows crawl so Google can honor `noindex`. When indexing is enabled, it allows indexable public pages, points to the sitemap, and explicitly permits AI answer/citation bots:
+  - `OAI-SearchBot`
+  - `ChatGPT-User`
+  - `PerplexityBot`
+  - `ClaudeBot`
+  - `Google-Extended`
+  - `Applebot-Extended`
 - `src/app/sitemap.ts` includes every indexable route.
+- `/llms.txt` and `/llms-full.txt` exist at the domain root, returning clean Markdown entity facts, credentials, core offerings, and canonical links under 600 tokens.
+- IndexNow route (`/api/indexnow`) and key verification file exist for instant multi-engine discovery.
 - `src/app/not-found.tsx` exists before launch.
 - `src/app/global-error.tsx` exists before launch if the app has meaningful
   client-side error boundaries.
@@ -66,29 +76,33 @@ a terminal slash. `next.config.ts` explicitly sets `trailingSlash: false`, so
 Never copy trailing slashes from the legacy live site and never hand-format a
 canonical or `og:url`.
 
-## Structured Data
+## Structured Data & Semantic Schema (`@graph`)
 
-Use JSON-LD only when it matches visible page content.
+All structured data must use a single unified `@graph` JSON-LD array where all
+entities link via `@id` pointers (as specified in `docs/SEO-AEO-GEO-PLAYBOOK.md`).
+Never output disconnected, isolated `<script type="application/ld+json">` tags.
 
-Sitewide:
+Sitewide `@graph` nodes:
 
-- Organization
-- WebSite
+- `Organization` (and `ProfessionalService`): Canonical entity definition (`@id: ".../#organization"`), legal name, foundingDate (2006), 150+ employees, areaServed, verified aggregate ratings, sameAs links to LinkedIn, Clutch, Trustpilot.
+- `WebSite`: Linked to organization via publisher (`@id: ".../#website"`).
 
 Common page types:
 
-- BreadcrumbList for pages below the homepage
-- Service or ProfessionalService for service landing pages
-- CollectionPage or ItemList for portfolio and case study indexes
-- Article or BlogPosting for blog posts
-- FAQPage only when the page visibly contains matching FAQ content
-- Person only for real team profile pages with approved details
-- VideoObject for visible YouTube/video testimonials or important page videos
+- `WebPage` (or specialized subtypes `AboutPage`, `CollectionPage`, `ContactPage`): Linked to `WebSite` via `isPartOf` and `Organization` via `about`.
+- `BreadcrumbList`: Linked for pages below the homepage.
+- `Service` or `ProfessionalService`: For service landing pages with `OfferCatalog`.
+- `CollectionPage` or `ItemList`: For portfolio and case study indexes.
+- `Article` or `BlogPosting`: For blog posts with author and datePublished/dateModified.
+- `FAQPage`: Linked via `isPartOf` to the `WebPage`, emitted only when the page visibly contains matching FAQ content.
+- `Person`: Real team profile pages with approved details.
+- `VideoObject`: Visible YouTube/video testimonials or important page videos
   when title, description, thumbnail, upload date, and embed/content URLs are
   known.
 
 Schema quality rules:
 
+- Verify 0 Rich Results errors and 0 Schema.org warnings.
 - Build every `VideoObject` through the shared `videoObjectSchema()` helper in
   `src/lib/schema.ts`. Never hand-author a `VideoObject` literal. The helper's
   input type makes `uploadDate` mandatory, so `npm run build` fails if a video
@@ -112,42 +126,36 @@ Schema quality rules:
 
 ## Content And On-Page SEO
 
-During migration, the live-visible page is the UI/content baseline. An SEO,
-AEO, GEO, or audit task does not authorize visible copy or design changes.
-Preserve live headings, paragraphs, labels, CTAs, proof, cards, taxonomy,
-section order, and default interactions unless the project owner explicitly
-approves the exact difference. Put recommended visible changes in
-`docs/page-content-improvements.md` as `suggested` or `deferred`.
+During migration, the live-visible page is the UI/content baseline. Visible
+copy changes will not be approved. An SEO, AEO, GEO, or audit task does not
+authorize visible copy or design changes. Preserve live headings, paragraphs,
+labels, CTAs, proof, cards, taxonomy, section order, and default interactions
+100% as-is from the live site.
 
-Metadata and other nonvisual search output may be improved when accurate, but
-structured data must still match visible content. If a checklist item requires
-a visible change to pass, report it as approval-dependent instead of silently
-changing the migration UI.
+Metadata and other nonvisual search output must be engineered to the highest
+standard, but structured data must still match visible content without
+introducing unsupported claims.
 
-- One clear `h1` per page.
+- One clear `h1` per page matching live site intent.
 - Headings follow a logical hierarchy.
 - First viewport makes the page topic obvious.
 - Primary keyword appears naturally in title, description, `h1`, intro, and at
   least one supporting heading where relevant.
-- Copy is written for buyers first, search engines second.
 - Service pages include proof, process, deliverables, related work, FAQs, and a
-  CTA.
+  CTA as present on the live site.
 - Case studies include client/brand, industry, technology, challenge, solution,
   and outcome where approved.
 - Blog pages include author/date only when accurate.
 - Internal links point to relevant services, case studies, contact, and blog
   resources.
 - External links use `rel="noopener noreferrer"` when opening a new tab.
-- Any suggested UI copy changes needed to improve SEO are recorded, but not
-  implemented without explicit project-owner approval, in
-  `docs/page-content-improvements.md` with page name, route, current issue,
-  suggested replacement, SEO reason, priority, and status.
-- Page copy improvement suggestions should cover visible content, not only meta
-  tags: `h1`, hero paragraph, section headings, service-card text, FAQ copy,
-  CTA labels, proof/stat copy, image alt text, and internal-link anchor text.
 
-## Technical SEO
+## Technical SEO & SSR DOM Architecture
 
+- The First-10KB Rule: Keep `<header>` DOM size under 4 KB; primary page metadata, `<h1>`, and core entity summary render as early as possible in the server-rendered HTML stream.
+- Single-Nav SSR Gate: Render exactly one semantic `<nav aria-label="Primary">` in the SSR HTML. Adapt its layout using responsive CSS. Never render dual mobile/desktop `<nav>` trees in static HTML, and never wrap crawlable links in `inert` or `aria-hidden="true"`.
+- Zero-Clone SSR Gate: Infinite marquees/carousels render each item strictly once in static SSR HTML. Duplicate nodes strictly on the client inside `useEffect` or animation controllers, attaching `aria-hidden="true"` to cloned tracks.
+- Staging & Preview Shield: All staging, preview, and QA URLs emit `X-Robots-Tag: noindex, nofollow` or equivalent meta robots tags.
 - No shipped page has `Create Next App` metadata.
 - No starter assets are used as brand assets.
 - No important text is only inside an image.
@@ -167,10 +175,23 @@ changing the migration UI.
 - Pages do not require client JavaScript for primary content to render.
 - Major content sections are Server Components by default; Client Components are
   limited to small interactive controls.
-- Canonicals match final production URLs.
+- Canonicals match final production URLs (lowercase, no trailing slash).
 - Redirects preserve important old URLs.
 - Twitter metadata includes approved `twitter:site` and `twitter:creator`
   handles when known; omit rather than inventing unknown handles.
+
+## AEO & GEO Engineering Standards
+
+- The Answer Capsule Rule: Immediately beneath primary `<h2>` or `<h3>` section headings, provide a 40-to-55-word self-contained summary paragraph without dangling pronouns before breaking into bullets, cards, or deep prose.
+- Question-Anchored Subheadings: Convert 30% to 50% of subheadings into natural-language, high-intent buyer questions.
+- Deterministic HTML Structures:
+  - Native `<table>` with `<thead>`, `<th>`, and `<tbody>` comparing tiers, deliverables, tech specs, or alternatives on commercial landing pages.
+  - Ordered lists (`<ol><li>`) for sequential onboarding and implementation workflows.
+  - Description lists (`<dl><dt><dd>`) for key-value company facts and SLAs.
+- Direct-First FAQ Architecture: FAQ answers start with a direct "Yes.", "No.", or concrete numerical range in sentence 1, addressing timeline, pricing, differentiation, and geography.
+- Fact Density & Quantitative Proof: Replace vague adjectives ("world-class", "seamless") with verifiable metrics; case study and portfolio cards display at least two hard data points (percentages, revenue, timeframes, counts).
+- Cross-Web Entity Consensus: Founding year (2006), headcount (150+), partner tier (Shopify Platinum Partner), and headquarters match 100% across the site, schema, and external `sameAs` directory profiles.
+- Strict Live-UI Preservation: During migration, visible copy is strictly preserved 100% as-is. Visible copy rewrites will not be approved. Achieve 100/100 AEO/GEO indexing through nonvisual technical architecture (SSR HTML, token optimization, `/llms.txt`, and rich connected `@graph` schema).
 
 ## Local Development Audit Rules
 
@@ -192,6 +213,9 @@ redirect correctly, and every indexable route must be present in the sitemap.
 
 ## Performance And Core Web Vitals
 
+- Preload Budget Cap: Limit `<link rel="preload">` in `<head>` to a maximum of 3 critical resources (1–2 primary variable `.woff2` fonts + 1 above-the-fold LCP image) to eliminate bandwidth contention.
+- LCP Image Optimization: The above-the-fold hero visual MUST use `loading="eager"`, `fetchpriority="high"`, and explicit `width` and `height` attributes. Never set `loading="lazy"` on above-the-fold images.
+- Icon Consolidation: Replace repetitive decorative `<img src="icon.svg">` tags in headers/cards with inline `<svg aria-hidden="true">` symbols or CSS sprites.
 - Use `next/image` for meaningful raster images.
 - Use local fonts through `next/font`.
 - Convert large PNG/JPEG source assets to WebP or AVIF when practical.
@@ -218,17 +242,21 @@ npm run lint
 npm run build
 ```
 
-Then manually check:
+Then manually verify against the 12 Pre-Release Audit Gates in `docs/SEO-AEO-GEO-PLAYBOOK.md`:
 
-- `/robots.txt`
-- `/sitemap.xml`
-- Homepage metadata
-- One service page metadata
-- One case study or portfolio page metadata
-- Mobile rendering around 390px
-- Desktop rendering around 1440px
-- Contact CTA paths
-- Header and footer links
-
-For launch, also run Lighthouse or equivalent checks for performance,
-accessibility, best practices, and SEO.
+- [ ] 1. Canonical Gate: `<link rel="canonical">` points to production `https://` URL (no trailing slash).
+- [ ] 2. Staging Shield Gate: Non-production environments emit `noindex, nofollow`.
+- [ ] 3. Single-Nav SSR Gate: Single semantic `<nav aria-label="Primary">` in SSR HTML; no `inert` or `aria-hidden="true"` on crawlable links.
+- [ ] 4. Zero-Clone SSR Gate: Marquees/carousels render items once in static SSR HTML.
+- [ ] 5. Preload Cap Gate: `<head>` contains `<= 3` `<link rel="preload">` tags; LCP image uses `loading="eager"` and `fetchpriority="high"`.
+- [ ] 6. Bot Access Gate: `/robots.txt` explicitly allows `OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`, `Google-Extended`, and `Applebot-Extended`.
+- [ ] 7. `/llms.txt` Gate: `/llms.txt` and `/llms-full.txt` return HTTP 200 with clean entity facts and links.
+- [ ] 8. Heading & Structure Gate: Exactly one `<h1>`; valid semantic heading hierarchy preserving live copy.
+- [ ] 9. Semantic Table Gate: Structured comparisons and tabular data rendered semantically with `<table>` elements where present on live pages.
+- [ ] 10. Quantitative Proof Gate: Hard data points present in schema and verified against approved company facts.
+- [ ] 11. Schema Graph Gate: Unified `@graph` JSON-LD validates with 0 errors and links all entities via `@id` URIs.
+- [ ] 12. Cross-Web Entity Gate: Founding year, headcount, partner tier, and HQ match across site and `sameAs` directories.
+- [ ] `/sitemap.xml` contains all indexable public pages.
+- [ ] Mobile rendering around 390px and Desktop rendering around 1440px verified.
+- [ ] Contact CTA paths, header, and footer links verified.
+- [ ] Lighthouse 100/100 score target across Performance, Accessibility, Best Practices, and SEO.

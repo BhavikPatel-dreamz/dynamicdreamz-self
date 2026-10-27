@@ -18,9 +18,8 @@ The agent should then read:
 3. `docs/agent-workflow.md`
 4. `docs/visual-parity-workflow.md`
 5. `docs/seo-launch-checklist.md`
-6. `docs/aeo-geo-strategy.md`
-7. `docs/page-content-improvements.md`
-8. Relevant local Next.js docs from `node_modules/next/dist/docs/`
+6. `docs/SEO-AEO-GEO-PLAYBOOK.md`
+7. Relevant local Next.js docs from `node_modules/next/dist/docs/`
 
 ## Working Loop
 
@@ -54,14 +53,13 @@ The agent should then read:
    states, and animation timings before touching UI code. Store temporary
    inspection artifacts in `scratch/` (do not commit heavy dumps to git).
 6. Decide the production structure before touching code.
-7. Before implementation, add or update the route's initial section in
-   `docs/aeo-geo-strategy.md` with its page role, target prompts, evidence,
-   known gaps, and planned recommendations.
-8. Apply the AEO/GEO live-UI preservation gate: implement accurate nonvisual
-   improvements, but keep live-visible copy, layout, labels, proof, and
-   interactions unchanged unless the project owner explicitly approved the
-   exact visible change in the current task. Queue unapproved visible proposals
-   in `docs/page-content-improvements.md`.
+7. Before implementation, evaluate the route against the 4 pillars and 12
+   Pre-Release Gates of `docs/SEO-AEO-GEO-PLAYBOOK.md` (SSR DOM architecture,
+   token budgets, quantitative proof, and unified `@graph` JSON-LD).
+   Implement technical nonvisual requirements directly in code.
+8. Apply the live-UI preservation gate: keep live-visible copy, layout, labels,
+   proof, headings, and interactions 100% unchanged from the live site. Visible
+   copy improvements are not permitted and will not be approved.
 9. Implement with reusable or generalized components, local typed data/content,
    and project-owned, deduplicated assets. Keep visible page/business copy out
    of `src/components/**` and `src/app/**`.
@@ -71,21 +69,19 @@ The agent should then read:
     consistent through the shared URL helpers.
 11. Add SEO metadata and structured data as part of the same change, not as a
     later cleanup.
-12. After implementation, complete the AEO/GEO audit and update that page
-    section with evidence needs, technical gaps, final recommendations,
-    priority, status, verification, and remaining improvements. Keep unresolved
-    work in that file for future page tasks.
+12. After implementation, audit the route against the 12 Pre-Release Gates and
+    4 Pillars in `docs/SEO-AEO-GEO-PLAYBOOK.md`. Verify SSR DOM hygiene (single
+    `<nav>`, zero marquee clones), Core Web Vitals (preload budget <=3, eager LCP),
+    and unified `@graph` schema validation with 0 errors.
 13. For visual work, run the visual parity workflow and compare live vs local
     desktop, tablet, mobile, hover, focus, active/open, scrolled, and animation
     states.
 14. Check responsive behavior, accessibility, performance risk, and broken links.
-15. If SEO/content quality can improve through visible copy changes, update
-    `docs/page-content-improvements.md` with page-specific suggestions marked
-    `suggested` or `deferred`; do not implement them without explicit approval.
+15. Verify that no visible page or business copy has been altered from the live site.
 16. Run `npm run check:urls`, `npm run check:component-content`, then the standard
     lint/build verification commands.
-17. Summarize changes, verification, visual capture notes, AEO/GEO status, and
-    any missing assets or content approvals.
+17. Summarize changes, verification, visual capture notes, SEO/AEO/GEO audit
+    status across the 12 gates, and any missing assets or blockers.
 
 ## Before Editing Code
 
@@ -328,68 +324,82 @@ other route ends in its final segment. Build absolute public URLs with
 The `check:urls` script rejects trailing-slash route literals and a config that
 does not explicitly set `trailingSlash: false`.
 
-## AEO And GEO Workflow
+## Universal SEO, AEO & GEO Engineering Workflow
 
-`docs/aeo-geo-strategy.md` is the permanent source of truth for sitewide and
-page-specific AEO/GEO findings. Update it during every new indexable page build,
-material page rewrite, structured-data change, or AEO/GEO audit.
+`docs/SEO-AEO-GEO-PLAYBOOK.md` is the engineering and content specification to
+achieve a 100/100 score across **Technical SEO**, **AEO (Answer Engine Optimization)**,
+and **GEO (Generative Engine Optimization / LLM Grounding)**.
+
+### The 4 Pillars (100 Points Total)
+
+Every page must satisfy or be scored against the 4 pillars defined in `docs/SEO-AEO-GEO-PLAYBOOK.md`:
+
+1. **Pillar 1: Technical SEO & SSR Architecture (25 pts)**
+   - **Canonical Governance**: Single canonical source of truth pointing strictly to the production domain; staging/preview environments return `noindex, nofollow`; strict lowercase and no-trailing-slash policy.
+   - **SSR HTML Payload & Token Budget**: First-10KB rule (`<header>` DOM under 4 KB; `h1` and entity summary early in HTML stream); single semantic `<nav aria-label="Primary">` in SSR HTML (no duplicate mobile/desktop trees; no `inert` or `aria-hidden="true"` on crawlable links); zero marquee DOM cloning in SSR HTML (items rendered once in SSR; cloning strictly client-side with `aria-hidden="true"`).
+   - **Core Web Vitals & Resource Prioritization**: Preload budget capped at `<= 3` critical resources in `<head>` (1–2 primary variable fonts + 1 LCP image); hero visual uses `loading="eager"` and `fetchpriority="high"`; inline SVGs/sprites for icons to avoid request waterfalls.
+   - **AI & Search Bot Crawlability**: `/robots.txt` explicitly allows traditional crawlers and AI answer/citation bots (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`, `Google-Extended`, `Applebot-Extended`); IndexNow integration (`/api/indexnow`).
+
+2. **Pillar 2: AEO — Answer Engine Optimization (25 pts)**
+   - **Answer Capsule Rule**: Immediately beneath every primary `<h2>` or `<h3>` section heading, provide a 40-to-55-word self-contained summary paragraph without dangling pronouns before breaking into cards, lists, or deep prose.
+   - **Heading Hierarchy & Intent Mapping**: Strict outline (one `h1`); 30% to 50% of subheadings structured as high-intent buyer questions.
+   - **Deterministic HTML Structures**: Native `<table>` with `<thead>`, `<th>`, and `<tbody>` for comparisons, pricing, and specs; ordered lists (`<ol>`) for sequential processes; description lists (`<dl>`) for key-value facts.
+   - **Direct-First FAQ Architecture**: Every FAQ answer begins with a direct "Yes.", "No.", or concrete numerical range in sentence 1, covering timeline, pricing, differentiation, and geography.
+
+3. **Pillar 3: GEO — Generative Engine Optimization & LLM Grounding (25 pts)**
+   - **Fact Density & Quantitative Proof**: Eliminate unbacked superlatives; every case study, portfolio card, or service claim must include at least two hard data points (percentages, timeframes, revenue, store counts, ratings).
+   - **Domain-Root LLM Manifests**: `/llms.txt` and `/llms-full.txt` live at domain root, returning clean Markdown entity facts and canonical URLs under 600 tokens.
+   - **Cross-Web Entity Consensus**: Synchronize exact brand name, founding year (2006), headcount (150+), headquarters, partner tiers (Shopify Platinum Partner), and core categories across website and external profiles (`sameAs`).
+   - **E-E-A-T & Information Gain**: Named human authorship, visible freshness timestamps with matching `datePublished`/`dateModified`, and original frameworks or architecture diagrams.
+
+4. **Pillar 4: Connected Semantic Schema (`@graph` JSON-LD) (25 pts)**
+   - **Unified `@graph` Array**: Single schema script linking `Organization`, `WebSite`, `WebPage`, `FAQPage`, `Service`, `BreadcrumbList`, etc. via `@id` pointers.
+   - **Zero Schema Errors**: 0 errors and 0 warnings in Google Rich Results / Schema validator.
 
 ### Live-UI Preservation Gate During Migration
 
 AEO/GEO work is nonvisual by default during the migration. A general request to
-implement, audit, or improve AEO/GEO or SEO does not authorize changes to the
+implement, audit, or improve SEO, AEO, or GEO does not authorize changes to the
 rendered live-site presentation or content.
 
 - Preserve visible headings, paragraphs, grammar, capitalization, labels, CTA
   text, proof/review values, counters, cards, taxonomy, section order, styling,
   animation, and default interaction states.
-- Implement accurate nonvisual improvements such as metadata, canonicals,
-  crawl/indexing controls, sitemap dates, server rendering, semantic HTML that
-  preserves appearance, accessibility metadata, and structured data that is
-  supported by the visible page and approved facts.
-- Do not use hidden content or schema to compensate for missing visible
-  evidence. Structured data must not contradict the live-visible page.
-- Record any better visible answer, heading, FAQ, CTA, proof text, or layout in
-  `docs/page-content-improvements.md` as `suggested` or `deferred`.
-- Implement a visible proposal only when the project owner explicitly approves
-  that exact change in the current task. Prior approval of technical/schema work
-  does not imply approval of visible content.
+- Implement accurate nonvisual engineering improvements: metadata, canonicals,
+  crawl/indexing bot controls, sitemap dates, server rendering, semantic HTML that
+  preserves appearance, single-nav SSR, zero-clone SSR, preload budget <=3, eager LCP,
+  accessibility metadata, and unified `@graph` JSON-LD schema supported by the visible
+  page and approved facts.
+- Strict live-content preservation: Visible copy improvements will not be approved.
+  Do not rewrite headings, paragraphs, FAQs, CTAs, proof points, or layout.
+- Do not use hidden content or schema to compensate for missing visible evidence.
+  Structured data must not contradict the live-visible page.
 - If a factual, policy, legal, accessibility, or trust issue cannot be fixed
   without changing the UI, mark it `blocked` or `deferred`, explain the risk,
   and request approval rather than silently changing the page.
 
-For each touched page:
+### The 12 Pre-Release Audit Gates
 
-1. Read the sitewide principles, current blockers, fact-governance rules,
-   crawler guidance, structured-data guidance, and acceptance criteria in the
-   strategy.
-2. Inspect the live reference, local rendered page, View Page Source, metadata,
-   visible answers, evidence, entity facts, internal links, media, and schema.
-3. Add the route using the future-page template in the strategy if no section
-   exists; otherwise update the existing route section in place.
-4. Record the page role, audience, decision stage, target prompts, current
-   strengths, evidence available, missing evidence, and page-specific risks.
-5. Record each recommendation with `P0`, `P1`, or `P2` priority and one of
-   `suggested`, `approved`, `in progress`, `implemented`, `deferred`, or
-   `blocked`.
-6. Include answer-copy, internal-link, entity, authorship, freshness, crawler,
-   structured-data, and measurement actions when they apply. Do not add a
-   category merely to fill the template.
-7. Keep unresolved recommendations in `docs/aeo-geo-strategy.md` across future
-   tasks. Never remove an open recommendation just because the page shipped;
-   change its status and add a concise reason or verification note.
-8. If no additional improvement is found, update `Last reviewed` and record
-   `No new AEO/GEO gaps found` with the verification performed.
+Before completing any route or migration task, audit against the 12 gates from
+`docs/SEO-AEO-GEO-PLAYBOOK.md`:
+
+1. **Canonical Gate**: `<link rel="canonical">` points to the exact production `https://` URL (no trailing slash).
+2. **Staging Shield Gate**: Non-production environments emit `noindex, nofollow`.
+3. **Single-Nav SSR Gate**: Only one semantic `<nav aria-label="Primary">` exists in SSR HTML; no crawlable links wrapped in `inert` or `aria-hidden="true"`.
+4. **Zero-Clone SSR Gate**: Marquees/carousels do not duplicate nodes in static SSR HTML.
+5. **Preload Cap Gate**: `<head>` contains `<= 3` `<link rel="preload">` tags; LCP image uses `loading="eager"` and `fetchpriority="high"`.
+6. **Bot Access Gate**: `/robots.txt` explicitly allows `OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`, `Google-Extended`, and `Applebot-Extended`.
+7. **`/llms.txt` Gate**: `https://www.yourdomain.com/llms.txt` and `/llms-full.txt` return HTTP 200 with clean entity facts and links.
+8. **Heading & Outline Gate**: Exactly one `<h1>`; valid semantic heading hierarchy preserving live copy.
+9. **Semantic Table Gate**: Tabular comparisons and specs rendered semantically with `<table>` where present on live pages.
+10. **Quantitative Proof Gate**: Hard data points present in schema and verified against approved facts.
+11. **Schema Graph Gate**: Unified `@graph` JSON-LD validates with 0 errors and links all entities via `@id` URIs.
+12. **Cross-Web Entity Gate**: Founding year (2006), headcount (150+), partner tier, and HQ match sitewide and in `sameAs` references.
 
 Document boundaries:
 
-- `docs/aeo-geo-strategy.md` owns AEO/GEO strategy, page readiness, prompts,
-  evidence, entity, crawler, schema, citation, and measurement recommendations.
-- `docs/page-content-improvements.md` owns exact visible-copy changes queued for
-  content approval or implementation. When a copy change originates in the
-  AEO/GEO audit, keep the strategy item and cross-reference it instead of moving
-  the finding out of the strategy.
-- `docs/seo-launch-checklist.md` owns the general SEO production gate.
+- `docs/SEO-AEO-GEO-PLAYBOOK.md` owns the engineering standards, 4 pillars, scoring matrix, and 12 pre-release gates for SEO, AEO, and GEO.
+- `docs/seo-launch-checklist.md` owns the general SEO production and launch gate.
 
 ## Local Single-Page SEO Audit Mode
 
@@ -437,10 +447,10 @@ Everything else is part of the 100% gate:
 - No production metadata, schema, image, video, script, CSS, canonical, or OG
   field depends on the old live site domain.
 
-If a 100% result would require visible content changes, write the exact proposal
-to `docs/page-content-improvements.md` as `suggested` or `deferred`. Do not lower
-the audit score silently and do not implement the proposal without explicit
-project-owner approval; report the item as an approval-dependent migration gap.
+Visible content is strictly preserved from the live site during migration; visible
+copy changes are not permitted and will not be approved. All 100/100 scoring is
+achieved via nonvisual technical SSR architecture, canonicals, tokens, `/llms.txt`,
+and unified `@graph` JSON-LD schema.
 
 ## Migration Workflow For Legacy Pages
 
@@ -621,12 +631,9 @@ A task is complete only when:
 - Existing assets across `public/assets/**` were discovered (beyond name matching) and reused via canonical paths; no redundant duplicate image files exist.
 - It uses local assets/content, not old-site runtime URLs.
 - SEO was handled for touched routes.
-- AEO/GEO work preserves the live-visible UI and content unless the exact
-  difference has explicit project-owner approval recorded for the current task.
-- Unapproved visible SEO/AEO/GEO suggestions remain documented as `suggested`
-  or `deferred`, not implemented.
-- The touched route's section in `docs/aeo-geo-strategy.md` was added or updated,
-  and every unresolved AEO/GEO item remains recorded with priority and status.
+- AEO/GEO work strictly preserves live-visible UI and content.
+- The touched route was audited against the 12 Pre-Release Gates and 4 Pillars of
+  `docs/SEO-AEO-GEO-PLAYBOOK.md`, and nonvisual technical requirements were implemented in code.
 - Visual parity evidence was recorded for UI changes, including responsive and
   animation checks, or the final response clearly explains why it could not be
   verified.

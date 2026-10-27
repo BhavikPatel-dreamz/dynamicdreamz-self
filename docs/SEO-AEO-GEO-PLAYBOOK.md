@@ -64,7 +64,7 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: [https://www.yourdomain.com/sitemap.xml](https://www.yourdomain.com/sitemap.xml)
+Sitemap: https://www.yourdomain.com/sitemap.xml
 ```
 
 ---
@@ -164,18 +164,18 @@ Inject and customize this validated template inside `<head>` or at the top of `<
 
 ```json
 {
-  "@context": "[https://schema.org](https://schema.org)",
+  "@context": "https://schema.org",
   "@graph": [
     {
       "@type": ["Organization", "ProfessionalService"],
-      "@id": "[https://www.yourdomain.com/#organization](https://www.yourdomain.com/#organization)",
+      "@id": "https://www.yourdomain.com/#organization",
       "name": "Brand Name",
       "legalName": "Brand Legal Name Pvt. Ltd.",
-      "url": "[https://www.yourdomain.com](https://www.yourdomain.com)",
+      "url": "https://www.yourdomain.com",
       "logo": {
         "@type": "ImageObject",
-        "@id": "[https://www.yourdomain.com/#logo](https://www.yourdomain.com/#logo)",
-        "url": "[https://www.yourdomain.com/logo.svg](https://www.yourdomain.com/logo.svg)",
+        "@id": "https://www.yourdomain.com/#logo",
+        "url": "https://www.yourdomain.com/logo.svg",
         "width": 250,
         "height": 40
       },
@@ -193,9 +193,9 @@ Inject and customize this validated template inside `<head>` or at the top of `<
         "Core Topic 3"
       ],
       "sameAs": [
-        "[https://www.linkedin.com/company/your-brand](https://www.linkedin.com/company/your-brand)",
-        "[https://clutch.co/profile/your-brand](https://clutch.co/profile/your-brand)",
-        "[https://www.trustpilot.com/review/yourdomain.com](https://www.trustpilot.com/review/yourdomain.com)"
+        "https://www.linkedin.com/company/your-brand",
+        "https://clutch.co/profile/your-brand",
+        "https://www.trustpilot.com/review/yourdomain.com"
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -207,33 +207,33 @@ Inject and customize this validated template inside `<head>` or at the top of `<
     },
     {
       "@type": "WebSite",
-      "@id": "[https://www.yourdomain.com/#website](https://www.yourdomain.com/#website)",
-      "url": "[https://www.yourdomain.com](https://www.yourdomain.com)",
+      "@id": "https://www.yourdomain.com/#website",
+      "url": "https://www.yourdomain.com",
       "name": "Brand Name",
       "publisher": {
-        "@id": "[https://www.yourdomain.com/#organization](https://www.yourdomain.com/#organization)"
+        "@id": "https://www.yourdomain.com/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "[https://www.yourdomain.com/current-page#webpage](https://www.yourdomain.com/current-page#webpage)",
-      "url": "[https://www.yourdomain.com/current-page](https://www.yourdomain.com/current-page)",
+      "@id": "https://www.yourdomain.com/current-page#webpage",
+      "url": "https://www.yourdomain.com/current-page",
       "name": "Exact Page Title (50-60 chars)",
       "description": "Exact Meta Description (140-160 chars) with primary entity and quantitative proof.",
       "isPartOf": {
-        "@id": "[https://www.yourdomain.com/#website](https://www.yourdomain.com/#website)"
+        "@id": "https://www.yourdomain.com/#website"
       },
       "about": {
-        "@id": "[https://www.yourdomain.com/#organization](https://www.yourdomain.com/#organization)"
+        "@id": "https://www.yourdomain.com/#organization"
       },
       "datePublished": "2025-01-15T08:00:00+00:00",
       "dateModified": "2026-10-26T08:00:00+00:00"
     },
     {
       "@type": "FAQPage",
-      "@id": "[https://www.yourdomain.com/current-page#faq](https://www.yourdomain.com/current-page#faq)",
+      "@id": "https://www.yourdomain.com/current-page#faq",
       "isPartOf": {
-        "@id": "[https://www.yourdomain.com/current-page#webpage](https://www.yourdomain.com/current-page#webpage)"
+        "@id": "https://www.yourdomain.com/current-page#webpage"
       },
       "mainEntity": [
         {

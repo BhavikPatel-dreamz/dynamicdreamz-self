@@ -13,10 +13,11 @@ ready, but they should not erase the recognizable Dynamic Dreamz site or change
 important search intent without an explicit reason.
 
 For AEO/GEO and SEO work during migration, "improvement" does not authorize a
-visible rewrite. Preserve the live rendered UI and content unless the project
-owner explicitly approves the exact visible change. Implement safe nonvisual
-improvements and keep proposed visible copy/design changes in the documented
-approval queue.
+visible rewrite. Preserve the live rendered UI and content 100%. Visible copy
+changes are not permitted and will not be approved. Implement safe nonvisual
+improvements (metadata, canonicals, robots AI directives, `/llms.txt`, and unified
+schema `@graph`) following the engineering specification in
+`docs/SEO-AEO-GEO-PLAYBOOK.md`.
 
 Live-site parity includes styles. Match the visual design closely: colors,
 typography, spacing scale, max widths, grids, section rhythm, button styles,
@@ -257,10 +258,9 @@ or separately approved assets:
 - Use the live site as the migration source. Preserve visible copy, CTA wording,
   heading wording and casing, section order, labels, proof text, link intent,
   image presentation, and default interaction content during migration.
-- A request to improve SEO, AEO, GEO, content quality, or an audit is not
-  approval to rewrite the visible page. Record the exact proposed replacement
-  in `docs/page-content-improvements.md` as `suggested` or `deferred`, and keep
-  the live copy until the project owner explicitly approves that exact change.
+- A request to improve SEO, AEO, GEO, content quality, or an audit does not
+  authorize rewriting or changing visible page copy or UI. Visible copy changes
+  will not be approved; keep the live copy and visual layout intact 100%.
 - Implement nonvisual improvements such as metadata, canonical URLs, robots,
   sitemap, crawlability, server rendering, schema, and appearance-preserving
   semantics/accessibility when they are accurate. Schema and metadata must not

@@ -34,9 +34,8 @@ Before implementing code, read these project docs in this order:
 2. `docs/agent-workflow.md`
 3. `docs/visual-parity-workflow.md`
 4. `docs/seo-launch-checklist.md`
-5. `docs/aeo-geo-strategy.md`
-6. `docs/page-content-improvements.md`
-7. The relevant bundled Next.js docs in `node_modules/next/dist/docs/`
+5. `docs/SEO-AEO-GEO-PLAYBOOK.md`
+6. The relevant bundled Next.js docs in `node_modules/next/dist/docs/`
 
 Use this one-prompt kickoff for future sessions:
 
@@ -68,23 +67,20 @@ Core proof points from the live site:
   source in shipped code.
 - Match the live site before redesigning. Any visible design, content, route, or
   CTA change from the live site should be intentional and called out.
-- During migration, implement AEO/GEO without changing the live-visible UI or
-  page copy by default. An AEO/GEO, SEO, content-quality, or audit request does
-  not authorize edits to visible headings, paragraphs, labels, CTA copy,
-  counters, proof/review text, cards, taxonomy, section order, styling,
-  animation, or default interaction states. Preserve the current live wording
-  and visual result, including imperfect grammar or outdated-looking phrasing,
-  unless the project owner explicitly approves the exact visible change in the
-  current task. Record proposed visible improvements in
-  `docs/page-content-improvements.md` as `suggested` or `deferred`; do not
-  implement them implicitly.
-- Nonvisual AEO/GEO work may improve metadata, canonicals, crawlability,
-  sitemap/robots output, server rendering, semantic markup that preserves the
-  rendered appearance, accessibility metadata, and structured data. Nonvisual
-  work is not permission to introduce unsupported or contradictory claims:
-  schema must still match visible content and approved facts. If a valid AEO,
-  SEO, accessibility, legal, or factual fix requires a visible change, stop at
-  a documented recommendation and request explicit approval.
+- Strict live-content preservation (Zero visible page/copy changes): Visible
+  headings, paragraphs, labels, CTA copy, counters, proof/review text, cards,
+  taxonomy, section order, styling, animation, and default interaction states
+  are strictly preserved as-is from the live site. Visible copy improvements
+  will not be approved. An SEO, AEO, GEO, audit, or content-quality request does
+  not authorize edits to visible UI or page copy; preserve the current live
+  wording and visual presentation 100%, including imperfect grammar or legacy
+  phrasing.
+- Nonvisual technical optimization only: Implement AEO/GEO and SEO strictly
+  through nonvisual engineering: metadata, canonicals, crawlability, robots AI
+  bot directives, `/llms.txt`, server rendering, semantic markup that preserves
+  rendered appearance, accessibility attributes, and unified `@graph` JSON-LD
+  structured data. Schema must accurately match visible content and approved
+  facts without contradicting the rendered page.
 - Copy/match the live page styling during migration, including desktop and
   mobile variants. Do not preserve old CSS technical debt blindly; translate the
   visual result into maintainable local styles.
@@ -266,19 +262,17 @@ Core proof points from the live site:
   excluding links to planned but not-yet-built routes. Report those links as
   "migration pending" instead of SEO failures. Before launch, broken internal
   links are never allowed.
-- For every new or materially updated indexable page, audit AEO and GEO in the
-  same task and add or update that route's page-specific section in
-  `docs/aeo-geo-strategy.md`. Keep unresolved AEO/GEO improvements in that file
-  with a priority and status; if the audit finds no new gap, record the review
-  date and result instead of silently skipping it.
-- When a page needs better SEO copy or visible UI content changes, update
-  `docs/page-content-improvements.md` with the page name, route, current issue,
-  suggested replacement copy, SEO reason, priority, and status. During
-  migration, add the item as `suggested` or `deferred` and leave the live UI
-  unchanged until the project owner explicitly approves that exact visible
-  change. The AEO/GEO strategy remains the source of truth for AEO/GEO
-  findings; use the content improvements file as the approval queue for exact
-  visible copy rather than moving or deleting the underlying recommendation.
+- For every new or materially updated indexable page, engineer and audit against
+  the 4 pillars and 12 Pre-Release Gates of `docs/SEO-AEO-GEO-PLAYBOOK.md`
+  (Technical SEO & SSR DOM Architecture, AEO Answer Engine Optimization,
+  GEO Generative Engine Optimization, and Connected Semantic Schema `@graph`).
+  Implement technical nonvisual requirements directly in code (canonical tags,
+  IndexNow, robots AI crawler directives, `/llms.txt`, single `<nav>` SSR,
+  zero-clone SSR, preload budget <=3, eager LCP, and unified `@graph` JSON-LD).
+  Because visible copy changes are not permitted and will not be approved,
+  achieve 100/100 search and retrieval readiness through flawless technical SSR
+  architecture, rich semantic schema, and full entity grounding while preserving
+  the live site's visible page copy and visual layout 100%.
 - Every image must have intentional alt handling. Use meaningful, page-specific
   alt text for all content images, preserving or improving the live site's alt
   text. Only truly decorative images may use empty alt text, and that choice

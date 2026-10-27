@@ -31,16 +31,15 @@ interaction behavior have been verified locally against the live site.
 During migration, an AEO/GEO or SEO task must preserve the live page's default
 visible result. Do not change visible wording, heading text, CTA labels,
 taxonomy, cards, counters, proof/review text, section order, spacing, styling,
-motion, or interaction defaults unless the project owner explicitly approves
-the exact visible change in the current task.
+motion, or interaction defaults. Visible copy changes are not permitted and will
+not be approved.
 
-Safe nonvisual work includes accurate metadata, canonicals, robots/sitemap,
-crawlability, schema that matches visible content, server-rendering
-improvements, and semantic/accessibility changes that do not alter the default
-appearance. Put any recommended visible improvement in
-`docs/page-content-improvements.md` as `suggested` or `deferred`. If a required
-fix cannot be made without a visible difference, document it and request
-approval before editing UI code.
+Safe nonvisual work includes accurate metadata, canonicals, robots AI bot
+directives, `/llms.txt`, crawlability, schema that matches visible content,
+server-rendering improvements, and semantic/accessibility changes that do not
+alter the default appearance (following `docs/SEO-AEO-GEO-PLAYBOOK.md`). If a
+required fix cannot be made without a visible difference, document it and
+request approval before editing UI code.
 
 ## CMS Block Rendering Parity Gate
 
