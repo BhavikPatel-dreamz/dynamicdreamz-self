@@ -13,6 +13,16 @@ import { siteConfig } from "@/data/site";
 export function absoluteUrl(path = "") {
   if (!path || path === "/") return siteConfig.url;
 
+  if (path.startsWith("http://") || path.startsWith("https://")) {
+    try {
+      const url = new URL(path);
+      const pathname = url.pathname === "/" ? "" : url.pathname.replace(/\/+$/, "");
+      return `${siteConfig.url}${pathname}${url.search}${url.hash}`;
+    } catch {
+      // ignore invalid URLs and fall through
+    }
+  }
+
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
   const suffixIndex = normalizedPath.search(/[?#]/);
   const pathname = suffixIndex === -1 ? normalizedPath : normalizedPath.slice(0, suffixIndex);

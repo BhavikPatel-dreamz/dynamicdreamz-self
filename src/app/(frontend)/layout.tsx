@@ -76,7 +76,7 @@ const neueMontrealMedium = localFont({
   ],
   variable: "--font-neue-montreal-medium-local",
   display: "swap",
-  preload: false,
+  preload: true,
 });
 
 const montserrat = localFont({

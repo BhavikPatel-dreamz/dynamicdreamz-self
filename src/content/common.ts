@@ -48,6 +48,7 @@ export const siteChromeCopy = {
   contactWidget: {
     prompt: "Have a project in mind?",
     cta: "Let's talk",
+    ariaLabel: "Have a project in mind? Let's talk - Chat with Dynamic Dreamz on WhatsApp",
   },
   footer: {
     copyrightPrefix: "© 2026",

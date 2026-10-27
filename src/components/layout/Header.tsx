@@ -83,7 +83,7 @@ export function ContactWidget({ whatsappNumber }: { whatsappNumber?: string | nu
         href={href}
         target="_blank"
         rel="nofollow noopener noreferrer"
-        aria-label="Chat with Dynamic Dreamz on WhatsApp"
+        aria-label={siteChromeCopy.contactWidget.ariaLabel}
       >
         <span className="flex size-[55px] shrink-0 items-center justify-center max-[1199px]:size-10">
           <svg

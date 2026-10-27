@@ -68,10 +68,19 @@ export function AOSProvider({ children }: AOSProviderProps) {
       }
     }
 
-    scanAndObserve();
+    let scheduledFrame: number | null = null;
+    function scheduleScan() {
+      if (scheduledFrame !== null) return;
+      scheduledFrame = requestAnimationFrame(() => {
+        scheduledFrame = null;
+        scanAndObserve();
+      });
+    }
+
+    scheduleScan();
 
     const mutationObserver = new MutationObserver(() => {
-      scanAndObserve();
+      scheduleScan();
     });
 
     mutationObserver.observe(document.body, {
@@ -80,6 +89,7 @@ export function AOSProvider({ children }: AOSProviderProps) {
     });
 
     return () => {
+      if (scheduledFrame !== null) cancelAnimationFrame(scheduledFrame);
       observer.disconnect();
       mutationObserver.disconnect();
     };

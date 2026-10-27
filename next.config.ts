@@ -177,13 +177,23 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/case-study",
-        destination: "/case-studies",
+        source: "/case-study/rootedhuman",
+        destination: "/case-studies/rooted-human",
         permanent: true,
       },
       {
-        source: "/case-study/:slug*",
-        destination: "/case-studies/:slug*",
+        source: "/case-study/factsandsupps",
+        destination: "/case-studies/facts-and-supps",
+        permanent: true,
+      },
+      {
+        source: "/case-study/candy-prom",
+        destination: "/case-studies/candy-prom-and-evening",
+        permanent: true,
+      },
+      {
+        source: "/case-study/beauti-software",
+        destination: "/case-studies/beauty-software",
         permanent: true,
       },
       {
@@ -204,6 +214,16 @@ const nextConfig: NextConfig = {
       {
         source: "/case-studies/beauti-software",
         destination: "/case-studies/beauty-software",
+        permanent: true,
+      },
+      {
+        source: "/case-study",
+        destination: "/case-studies",
+        permanent: true,
+      },
+      {
+        source: "/case-study/:slug*",
+        destination: "/case-studies/:slug*",
         permanent: true,
       },
       {
@@ -232,8 +252,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/blog/:slug",
-        destination: "/blogs/:slug",
+        source: "/blog/what-are-the-risks-of-shopify-outsourcing-get-details-now",
+        destination: "/blogs/risks-of-shopify-outsourcing",
+        permanent: true,
+      },
+      {
+        source: "/blog/transform-your-store-with-a-complete-magento-web-development-guide",
+        destination: "/blogs/magento-web-development",
         permanent: true,
       },
       {
@@ -244,6 +269,11 @@ const nextConfig: NextConfig = {
       {
         source: "/blogs/transform-your-store-with-a-complete-magento-web-development-guide",
         destination: "/blogs/magento-web-development",
+        permanent: true,
+      },
+      {
+        source: "/blog/:slug",
+        destination: "/blogs/:slug",
         permanent: true,
       },
       {

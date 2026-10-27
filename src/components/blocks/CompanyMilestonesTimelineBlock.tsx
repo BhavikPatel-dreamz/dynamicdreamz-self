@@ -1,7 +1,10 @@
 import Image from "next/image";
 import styles from "@/components/blocks/CompanyMilestonesTimelineBlock.module.css";
 import { Container } from "@/components/ui/container";
-import { CarouselSliderClient } from "@/components/ui/CarouselSliderClient";
+import dynamic from "next/dynamic";
+const CarouselSliderClient = dynamic(
+  () => import("@/components/ui/CarouselSliderClient").then((m) => m.CarouselSliderClient)
+);
 import { aboutSectionCopy, milestones } from "@/content/about";
 import { formatBrText } from "@/lib/text-formatting";
 

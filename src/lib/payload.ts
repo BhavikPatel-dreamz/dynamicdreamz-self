@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { getPayload } from "payload";
 import config from "@payload-config";
 import {
@@ -27,7 +28,7 @@ import type {
 import type { CaseStudyDetail, CaseStudyItem } from "@/types/case-study";
 import caseStudiesItemsJson from "@/content/case-studies-items.json";
 
-export async function getPayloadNavigation() {
+export const getPayloadNavigation = cache(async function getPayloadNavigation() {
   try {
     const payload = await getPayload({ config });
     return await payload.findGlobal({ slug: "navigation" });
@@ -35,9 +36,9 @@ export async function getPayloadNavigation() {
     console.warn("Payload getPayloadNavigation warning:", err);
     return null;
   }
-}
+});
 
-export async function getPayloadSiteSettings() {
+export const getPayloadSiteSettings = cache(async function getPayloadSiteSettings() {
   try {
     const payload = await getPayload({ config });
     return await payload.findGlobal({ slug: "site-settings" });
@@ -45,7 +46,7 @@ export async function getPayloadSiteSettings() {
     console.warn("Payload getPayloadSiteSettings warning:", err);
     return null;
   }
-}
+});
 
 export function adaptPayloadNavToPrimary(
   headerNav?: Navigation["headerNav"],
@@ -221,7 +222,7 @@ export async function getPayloadCaseStudyBySlug(
   }
 }
 
-export async function getPayloadPageBySlug(
+export const getPayloadPageBySlug = cache(async function getPayloadPageBySlug(
   slug: string,
   options?: { preview?: boolean },
 ) {
@@ -249,7 +250,7 @@ export async function getPayloadPageBySlug(
     console.warn(`Payload getPayloadPageBySlug(${slug}) warning:`, err);
     return null;
   }
-}
+});
 
 export type MediaOrId =
   | number

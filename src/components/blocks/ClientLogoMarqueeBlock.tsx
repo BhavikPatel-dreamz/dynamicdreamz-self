@@ -4,11 +4,16 @@ import Image from "next/image";
 import React from "react";
 import marqueeStyles from "./ClientLogoMarqueeBlock.module.css";
 import { Container } from "@/components/ui/container";
-import {
-  ClientLogoSlider,
-  type ClientLogoSliderItem,
-  type ClientLogoSliderSlides,
+import dynamic from "next/dynamic";
+import type {
+  ClientLogoSliderItem,
+  ClientLogoSliderSlides,
 } from "@/components/ui/CarouselSliderClient";
+
+const ClientLogoSlider = dynamic(
+  () => import("@/components/ui/CarouselSliderClient").then((m) => m.ClientLogoSlider),
+  { ssr: false },
+);
 import {
   clientLogos,
   homeSectionCopy,
