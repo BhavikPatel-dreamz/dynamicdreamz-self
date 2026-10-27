@@ -1,94 +1,10 @@
 import caseStudiesItemsJson from "@/content/case-studies-items.json";
 import type { CaseStudyItem } from "@/types/case-study";
+import { globalBrandLogos } from "@/content/brands";
 
 export type { CaseStudyItem } from "@/types/case-study";
 
-export const caseStudiesBrandLogos = [
-  {
-    src: "/assets/case-studies/brands/supertails.svg",
-    alt: "Supertails Brand Logo",
-    width: 164,
-    height: 41,
-    href: "https://supertails.com/",
-  },
-  {
-    src: "/assets/clients/eleven-eleven.svg",
-    alt: "11:11 Artisanal Fashion Brand Logo",
-    width: 145,
-    height: 22,
-    href: "https://11-11.in/",
-  },
-  {
-    src: "/assets/clients/bellavita.svg",
-    alt: "Bella Vita Organic Brand Logo",
-    width: 170,
-    height: 25,
-    href: "https://bellavitaorganic.com/",
-  },
-  {
-    src: "/assets/clients/bombay-shirt-company.svg",
-    alt: "Bombay Shirt Company Brand Logo",
-    width: 204,
-    height: 26,
-    href: "https://www.bombayshirts.com/",
-  },
-  {
-    src: "/assets/clients/popclub_co.svg",
-    alt: "PopClub Brand Logo",
-    width: 65,
-    height: 41,
-    href: "https://popclub.co/",
-  },
-  {
-    src: "/assets/case-studies/brands/sri-sri-tattva.svg",
-    alt: "Sri Sri Tattva Brand Logo",
-    width: 106,
-    height: 40,
-    href: "https://www.srisritattva.com/",
-  },
-  {
-    src: "/assets/clients/tropicfeel.svg",
-    alt: "Tropicfeel Brand Logo",
-    width: 150,
-    height: 32,
-    href: "https://shop.tropicfeel.com/",
-  },
-  {
-    src: "/assets/clients/renee.svg",
-    alt: "Renée Cosmetics Brand Logo",
-    width: 93,
-    height: 30,
-    href: "https://www.reneecosmetics.in/",
-  },
-  {
-    src: "/assets/clients/royce-chocolate-black.svg",
-    alt: "Royce Chocolate Brand Logo",
-    width: 132,
-    height: 38,
-    href: "https://royceindia.com/",
-  },
-  {
-    src: "/assets/clients/tego.svg",
-    alt: "TEGO Fit Brand Logo",
-    width: 101,
-    height: 40,
-    href: "https://tego.fit/",
-  },
-  {
-    src: "/assets/clients/nelter.svg",
-    alt: "Nékter Juice Bar Brand Logo",
-    width: 104,
-    height: 41,
-    href: "https://www.nekterjuicebar.com/",
-  },
-  {
-    src: "/assets/clients/rare-rabbit.svg",
-    alt: "Rare Rabbit Brand Logo",
-    width: 122,
-    height: 84,
-    href: "https://thehouseofrare.com/",
-  },
-] as const;
+export const caseStudiesBrandLogos = globalBrandLogos;
 
 export const caseStudiesBrandSection = {
   slug: "case-studies",

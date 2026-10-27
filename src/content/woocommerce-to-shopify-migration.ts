@@ -1,4 +1,5 @@
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import { globalBrandLogos } from "@/content/brands";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import type { MigrationProcessContent } from "@/components/sections/migration-process-section";
 import type { ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
@@ -63,92 +64,7 @@ export const woocommerceHeroContent: ServiceHeroVideoContent = {
   ],
 };
 
-export const woocommerceBrandLogos: readonly ClientLogoSliderItem[] = [
-  {
-    href: "https://supertails.com/",
-    src: "/assets/clients/supertails.svg",
-    alt: "Supertails Brand Logo",
-    width: 164,
-    height: 41,
-  },
-  {
-    href: "https://11-11.in/",
-    src: "/assets/clients/eleven-eleven.svg",
-    alt: "11:11 Artisanal Fashion Brand Logo",
-    width: 145,
-    height: 20,
-  },
-  {
-    href: "https://bellavitaorganic.com/",
-    src: "/assets/clients/bella-vita.svg",
-    alt: "Bella Vita Organic Brand Logo",
-    width: 166,
-    height: 24,
-  },
-  {
-    href: "https://www.bombayshirts.com/",
-    src: "/assets/clients/bombay-shirt-company.svg",
-    alt: "Bombay Shirt Company Brand Logo",
-    width: 204,
-    height: 26,
-  },
-  {
-    href: "https://popclub.co/",
-    src: "/assets/clients/popclub.svg",
-    alt: "",
-    width: 65,
-    height: 41,
-  },
-  {
-    href: "https://www.srisritattva.com/",
-    src: "/assets/clients/sri-sri-tattva.svg",
-    alt: "Sri Sri Tattva Brand Logo",
-    width: 106,
-    height: 40,
-  },
-  {
-    href: "https://shop.tropicfeel.com/",
-    src: "/assets/clients/tropicfeel.svg",
-    alt: "Tropicfeel Brand Logo",
-    width: 150,
-    height: 32,
-  },
-  {
-    href: "https://www.reneecosmetics.in/",
-    src: "/assets/clients/renee.svg",
-    alt: "Renée Cosmetics Brand Logo",
-    width: 93,
-    height: 30,
-  },
-  {
-    href: "https://royceindia.com/",
-    src: "/assets/clients/royce-chocolate.svg",
-    alt: "Royce Chocolate Brand Logo",
-    width: 132,
-    height: 38,
-  },
-  {
-    href: "https://tego.fit/",
-    src: "/assets/clients/tego.svg",
-    alt: "TEGO Fit Brand Logo",
-    width: 101,
-    height: 40,
-  },
-  {
-    href: "https://www.nekterjuicebar.com/",
-    src: "/assets/clients/nekter-colored.svg",
-    alt: "Nékter Juice Bar Brand Logo",
-    width: 66,
-    height: 64,
-  },
-  {
-    href: "https://thehouseofrare.com/",
-    src: "/assets/clients/rare-rabbit.svg",
-    alt: "Rare Rabbit Brand Logo",
-    width: 122,
-    height: 84,
-  },
-];
+export const woocommerceBrandLogos: readonly ClientLogoSliderItem[] = globalBrandLogos;
 
 export const woocommerceWhyMigrateContent = {
   eyebrow: "Why Upgrade",

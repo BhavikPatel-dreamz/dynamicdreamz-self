@@ -1,4 +1,4 @@
-import { getClientLogo, type ImageItem } from "@/content/home";
+import { globalBrandLogos } from "@/content/brands";
 
 export const resourcesSectionCopy = {
   storyCategoryLabel: "Shopify",
@@ -870,22 +870,7 @@ export const resourcesStory = {
   ],
 } as const;
 
-const resourceClientLogoPaths = [
-  "/assets/clients/supertails.svg",
-  "/assets/clients/eleven-eleven.svg",
-  "/assets/clients/bella-vita.svg",
-  "/assets/clients/bombay-shirt-company.svg",
-  "/assets/clients/popclub.svg",
-  "/assets/clients/sri-sri-tattva.svg",
-  "/assets/clients/tropicfeel.svg",
-  "/assets/clients/renee.svg",
-  "/assets/clients/royce-chocolate.svg",
-  "/assets/clients/tego.svg",
-  "/assets/clients/nelter.svg",
-  "/assets/clients/rare-rabbit.svg",
-] as const;
-
-export const resourcesClientLogos: ImageItem[] = resourceClientLogoPaths.map(getClientLogo);
+export const resourcesClientLogos = globalBrandLogos;
 
 export const resourcesStats = [
   { value: 18, suffix: "+", label: "Years of Experience" },

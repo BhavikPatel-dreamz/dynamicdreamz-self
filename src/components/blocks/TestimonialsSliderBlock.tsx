@@ -73,7 +73,7 @@ function TestimonialCard({
         ) : null}
         <h3 className="pointer-events-none absolute bottom-[15px] left-[15px] max-[1199px]:bottom-3 max-[1199px]:left-3 z-20 m-0 inline-block rounded-[5px] border-l-[3px] border-brand-red bg-black/80 px-[15px] py-[10px] max-[1199px]:px-[14px] max-[1199px]:py-[7px] text-left font-sans text-[15px] font-semibold leading-[21px] text-white max-[1199px]:text-sm">
           {testimonial.name}
-          <span className="mt-[5px] block text-[12px] font-medium leading-normal">
+          <span className="mt-[5px] block text-[15px] font-medium leading-normal max-[1199px]:text-xs">
             {testimonial.company}
           </span>
         </h3>

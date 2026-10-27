@@ -56,92 +56,9 @@ export const shopifyPlusAgencyHero = {
   },
 } as const;
 
-export const shopifyPlusAgencyBrandLogos = [
-  {
-    src: "/assets/clients/supertails.svg",
-    alt: "Supertails Brand Logo",
-    width: 164,
-    height: 41,
-    href: "https://supertails.com/",
-  },
-  {
-    src: "/assets/clients/eleven-eleven.svg",
-    alt: "11:11 Artisanal Fashion Brand Logo",
-    width: 145,
-    height: 20,
-    href: "https://11-11.in/",
-  },
-  {
-    src: "/assets/clients/bellavita.svg",
-    alt: "Bella Vita Organic Brand Logo",
-    width: 166,
-    height: 24,
-    href: "https://bellavitaorganic.com/",
-  },
-  {
-    src: "/assets/clients/bombay-shirt-company.svg",
-    alt: "Bombay Shirt Company Brand Logo",
-    width: 204,
-    height: 26,
-    href: "https://www.bombayshirts.com/",
-  },
-  {
-    src: "/assets/clients/popclub_co.svg",
-    alt: "PopClub Brand Logo",
-    width: 65,
-    height: 41,
-    href: "https://popclub.co/",
-  },
-  {
-    src: "/assets/clients/sri-sri-tattva.svg",
-    alt: "Sri Sri Tattva Brand Logo",
-    width: 106,
-    height: 40,
-    href: "https://www.srisritattva.com/",
-  },
-  {
-    src: "/assets/clients/tropicfeel.svg",
-    alt: "Tropicfeel Brand Logo",
-    width: 150,
-    height: 32,
-    href: "https://shop.tropicfeel.com/",
-  },
-  {
-    src: "/assets/clients/renee.svg",
-    alt: "Renée Cosmetics Brand Logo",
-    width: 93,
-    height: 30,
-    href: "https://www.reneecosmetics.in/",
-  },
-  {
-    src: "/assets/clients/royce-chocolate.svg",
-    alt: "Royce Chocolate Brand Logo",
-    width: 132,
-    height: 38,
-    href: "https://royceindia.com/",
-  },
-  {
-    src: "/assets/clients/tego.svg",
-    alt: "TEGO Fit Brand Logo",
-    width: 101,
-    height: 40,
-    href: "https://tego.fit/",
-  },
-  {
-    src: "/assets/clients/nekter-colored.svg",
-    alt: "Nékter Juice Bar Brand Logo",
-    width: 66,
-    height: 64,
-    href: "https://www.nekterjuicebar.com/",
-  },
-  {
-    src: "/assets/clients/rare-rabbit.svg",
-    alt: "Rare Rabbit Brand Logo",
-    width: 122,
-    height: 84,
-    href: "https://thehouseofrare.com/",
-  },
-] as const;
+import { globalBrandLogos } from "@/content/brands";
+
+export const shopifyPlusAgencyBrandLogos = globalBrandLogos;
 
 export const shopifyPlusAgencyBrandTrustHeading = "Trusted by Leading Brands";
 
@@ -215,7 +132,7 @@ export const shopifyPlusAgencyServices = {
   heading: "Shopify Plus Services for High-Growth Brands",
   eyebrow: "End-to-End Shopify Plus",
   description:
-    "Dynamic Dreamz provides end-to-end Shopify Plus development for brands that need scalable storefronts, complex integrations, migration support and ongoing technical capacity. The service content remains detailed so enterprise buyers can understand exactly where our Shopify Plus team can support them.",
+    "Dynamic Dreamz provides end-to-end Shopify Plus development for brands that need scalable storefronts, complex integrations, migration support and ongoing technical capacity.",
   items: [
     {
       tag: "Core Capability",
@@ -596,7 +513,7 @@ export const shopifyPlusAgencyTestimonials = {
       name: "Thommas Linnrose",
       company: "Art Copenhagen",
       quote:
-        "Their support has allowed us to focus on growing our brand instead of worrying about technical issues and using time on this. Their support has allowed us to focus on growing our brand instead of worrying about technical issues and using time on this.",
+        "Their support has allowed us to focus on growing our brand instead of worrying about technical issues and using time on this.",
       videoId: "_9uT-dRcQvo",
       image: "/assets/testimonials/thommas-linnrose.webp",
       imageAlt: "Thommas Linnrose, Founder of Art Copenhagen",

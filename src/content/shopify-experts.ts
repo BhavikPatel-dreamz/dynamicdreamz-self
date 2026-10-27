@@ -7,7 +7,7 @@ import type { ThemeCustomizationServicesContent } from "@/components/sections/th
 import type { AiEmpoweredDeliveryContent } from "@/components/sections/ai-empowered-delivery-section";
 import type { PricingEngagementContent } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import type { PortfolioShowcaseItem } from "@/components/sections/portfolio-showcase-section";
-import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import { globalBrandLogos } from "@/content/brands";
 
 export const shopifyExpertsContent = {
   hero: {
@@ -63,78 +63,7 @@ export const shopifyExpertsContent = {
     heading: "Trusted by Leading Brands",
     ariaLabel: "Brands that trust Dynamic Dreamz for Shopify development",
     slug: "shopify-experts",
-    items: [
-      {
-        src: "/assets/clients/ranavat.svg",
-        href: "https://www.ranavat.com/",
-        alt: "Ranavat Brand Logo",
-        width: 174,
-        height: 19,
-      },
-      {
-        src: "/assets/clients/prolash.svg",
-        href: "https://prolash.com/",
-        alt: "Prolash Brand Logo",
-        width: 204,
-        height: 22,
-      },
-      {
-        src: "/assets/clients/tropicfeel.svg",
-        href: "https://shop.tropicfeel.com/",
-        alt: "Tropicfeel Brand Logo",
-        width: 150,
-        height: 32,
-      },
-      {
-        src: "/assets/clients/perfect-locks.svg",
-        href: "https://www.perfectlocks.com/",
-        alt: "Perfect Locks Brand Logo",
-        width: 175,
-        height: 32,
-      },
-      {
-        src: "/assets/clients/bombay-shirt-company.svg",
-        href: "https://www.bombayshirts.com/",
-        alt: "Bombay Shirt Company Brand Logo",
-        width: 204,
-        height: 26,
-      },
-      {
-        src: "/assets/clients/kayfi.svg",
-        href: "https://kayfi.com/",
-        alt: "Kayfi Brand Logo",
-        width: 90,
-        height: 49,
-      },
-      {
-        src: "/assets/clients/simsdirect.svg",
-        href: "https://simsdirect.com.au/",
-        alt: "SimsDirect Brand Logo",
-        width: 143,
-        height: 49,
-      },
-      {
-        src: "/assets/clients/kvaser.svg",
-        href: "https://www.kvaser.com/",
-        alt: "Kvaser Brand Logo",
-        width: 135,
-        height: 25,
-      },
-      {
-        src: "/assets/clients/nelter.svg",
-        href: "https://www.nekterjuicebar.com/",
-        alt: "Nékter Juice Bar Brand Logo",
-        width: 66,
-        height: 64,
-      },
-      {
-        src: "/assets/clients/circuit-city.svg",
-        href: "https://circuitcity.com/",
-        alt: "Circuit City Brand Logo",
-        width: 64,
-        height: 64,
-      },
-    ] as readonly ClientLogoSliderItem[],
+    items: globalBrandLogos,
   },
 
   process: {

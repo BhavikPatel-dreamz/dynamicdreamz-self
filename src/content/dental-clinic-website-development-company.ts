@@ -1,6 +1,7 @@
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import type { ServiceHeroVideoContent } from "@/components/sections/service-hero-video-section";
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
+import { globalBrandLogos } from "@/content/brands";
 import type { EvaluationFrameworkContent } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
 import type { ThemeCustomizationServicesContent } from "@/components/sections/theme-customization-services-section";
 import type { OurDevelopmentProcessContent } from "@/components/sections/our-development-process-section";
@@ -48,78 +49,7 @@ const heroContent: ServiceHeroVideoContent = {
   ],
 };
 
-const brandsItems: readonly ClientLogoSliderItem[] = [
-  {
-    src: "/assets/clients/ranavat.svg",
-    href: "https://www.ranavat.com/",
-    alt: "Ranavat Brand Logo",
-    width: 174,
-    height: 19,
-  },
-  {
-    src: "/assets/clients/prolash.svg",
-    href: "https://prolash.com/",
-    alt: "Prolash Brand Logo",
-    width: 204,
-    height: 22,
-  },
-  {
-    src: "/assets/clients/tropicfeel.svg",
-    href: "https://shop.tropicfeel.com/",
-    alt: "Tropicfeel Brand Logo",
-    width: 150,
-    height: 32,
-  },
-  {
-    src: "/assets/clients/perfect-locks.svg",
-    href: "https://www.perfectlocks.com/",
-    alt: "Perfect Locks Brand Logo",
-    width: 175,
-    height: 32,
-  },
-  {
-    src: "/assets/clients/bombay-shirt-company.svg",
-    href: "https://www.bombayshirts.com/",
-    alt: "Bombay Shirt Company Brand Logo",
-    width: 204,
-    height: 26,
-  },
-  {
-    src: "/assets/clients/kayfi.svg",
-    href: "https://kayfi.com/",
-    alt: "Kayfi Brand Logo",
-    width: 90,
-    height: 49,
-  },
-  {
-    src: "/assets/clients/simsdirect.svg",
-    href: "https://simsdirect.com.au/",
-    alt: "SimsDirect Brand Logo",
-    width: 143,
-    height: 49,
-  },
-  {
-    src: "/assets/clients/kvaser.svg",
-    href: "https://www.kvaser.com/",
-    alt: "Kvaser Brand Logo",
-    width: 135,
-    height: 25,
-  },
-  {
-    src: "/assets/clients/nekter-colored.svg",
-    href: "https://www.nekterjuicebar.com/",
-    alt: "Nékter Juice Bar Brand Logo",
-    width: 66,
-    height: 64,
-  },
-  {
-    src: "/assets/clients/circuit-city.svg",
-    href: "https://circuitcity.com/",
-    alt: "Circuit City Brand Logo",
-    width: 64,
-    height: 64,
-  },
-];
+const brandsItems: readonly ClientLogoSliderItem[] = globalBrandLogos;
 
 const benefitsContent: EvaluationFrameworkContent = {
   eyebrow: "Why Dynamic Dreamz",

@@ -92,9 +92,9 @@ export const clientLogos: ImageItem[] = [
   { src: "/assets/clients/kvaser.svg", alt: "Kvaser logo", width: 141, height: 26 },
   { src: "/assets/clients/bombay-shirt-company.svg", alt: "Bombay Shirt Company logo", width: 172, height: 22 },
   { src: "/assets/clients/lstroetmann.svg", alt: "Lstroetmann logo", width: 172, height: 31 },
-  { src: "/assets/case-studies/brands/supertails.svg", alt: "Super Tails logo", width: 164, height: 41 },
+  { src: "/assets/clients/supertails.svg", alt: "Super Tails logo", width: 164, height: 41 },
   { src: "/assets/clients/mr-supplement.svg", alt: "MR Supplement logo", width: 225, height: 13 },
-  { src: "/assets/case-studies/brands/sri-sri-tattva.svg", alt: "Sri Sri Tattva logo", width: 106, height: 40 },
+  { src: "/assets/clients/sri-sri-tattva.svg", alt: "Sri Sri Tattva logo", width: 106, height: 40 },
   { src: "/assets/clients/sleepy-cat.svg", alt: "Sleepy Cat logo", width: 123, height: 41 },
   { src: "/assets/clients/myra.svg", alt: "Myra logo", width: 131, height: 44 },
   { src: "/assets/clients/dr-trust.svg", alt: "Dr. Trust logo", width: 115, height: 38 },
@@ -113,6 +113,8 @@ const canonicalClientLogoAliases: ImageItem[] = [
   { src: "/assets/clients/sim-direct.svg", alt: "SIM Direct logo", width: 143, height: 49 },
   { src: "/assets/clients/eleven-eleven.svg", alt: "Eleven Eleven logo", width: 160, height: 22 },
   { src: "/assets/clients/prolash.svg", alt: "Prolash logo", width: 164, height: 18 },
+  { src: "/assets/clients/nekter-colored.svg", alt: "Nékter Juice Bar logo", width: 66, height: 64 },
+  { src: "/assets/clients/bellavita.svg", alt: "Bella Vita logo", width: 166, height: 24 },
 ];
 
 const clientLogoByPath = new Map(

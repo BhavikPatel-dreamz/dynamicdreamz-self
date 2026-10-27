@@ -1,5 +1,6 @@
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
+import { globalBrandLogos } from "@/content/brands";
 
 export const wordpressDevelopmentCompanyHero = {
   eyebrows: ["Established in 2006", "Wordpress Development Agency"],
@@ -110,104 +111,7 @@ export const wordpressDevelopmentCompanyBrands = {
     heading: "Trusted by Leading Brands",
     brands: { ariaLabel: "Trusted by Leading Brands" },
   },
-  items: [
-    {
-      name: "Supertails",
-      href: "https://supertails.com/",
-      src: "/assets/clients/supertails.svg",
-      alt: "Supertails Brand Logo",
-      width: 164,
-      height: 41,
-    },
-    {
-      name: "11-11",
-      href: "https://11-11.in/",
-      src: "/assets/clients/eleven-eleven.svg",
-      alt: "11:11 Artisanal Fashion Brand Logo",
-      width: 145,
-      height: 20,
-    },
-    {
-      name: "Bella Vita",
-      href: "https://bellavitaorganic.com/",
-      src: "/assets/clients/bellavita.svg",
-      alt: "Bella Vita Organic Brand Logo",
-      width: 166,
-      height: 24,
-    },
-    {
-      name: "Bombay Shirt Company",
-      href: "https://www.bombayshirts.com/",
-      src: "/assets/clients/bombay-shirt-company.svg",
-      alt: "Bombay Shirt Company Brand Logo",
-      width: 204,
-      height: 26,
-    },
-    {
-      name: "Popclub",
-      href: "https://popclub.co/",
-      src: "/assets/clients/popclub.svg",
-      alt: "PopClub Brand Logo",
-      width: 65,
-      height: 41,
-    },
-    {
-      name: "Sri Sri Tattva",
-      href: "https://www.srisritattva.com/",
-      src: "/assets/clients/sri-sri-tattva.svg",
-      alt: "Sri Sri Tattva Brand Logo",
-      width: 106,
-      height: 40,
-    },
-    {
-      name: "Tropicfeel",
-      href: "https://shop.tropicfeel.com/",
-      src: "/assets/clients/tropicfeel.svg",
-      alt: "Tropicfeel Brand Logo",
-      width: 150,
-      height: 32,
-    },
-    {
-      name: "Renee",
-      href: "https://www.reneecosmetics.in/",
-      src: "/assets/clients/renee.svg",
-      alt: "Renée Cosmetics Brand Logo",
-      width: 93,
-      height: 30,
-    },
-    {
-      name: "Royce Chocolate",
-      href: "https://royceindia.com/",
-      src: "/assets/clients/royce-chocolate.svg",
-      alt: "Royce Chocolate Brand Logo",
-      width: 132,
-      height: 38,
-    },
-    {
-      name: "Tego",
-      href: "https://tego.fit/",
-      src: "/assets/clients/tego.svg",
-      alt: "TEGO Fit Brand Logo",
-      width: 101,
-      height: 40,
-    },
-    {
-      name: "Nekter",
-      href: "https://www.nekterjuicebar.com/",
-      src: "/assets/clients/nekter-colored.svg",
-      alt: "Nékter Juice Bar Brand Logo",
-      width: 66,
-      height: 64,
-    },
-    {
-      name: "Rare Rabbit",
-      href: "https://thehouseofrare.com/",
-      src: "/assets/clients/rare-rabbit.svg",
-      alt: "Rare Rabbit Brand Logo",
-      width: 122,
-      height: 84,
-    },
-  ],
+  items: globalBrandLogos,
 } as const;
 
 export const wordpressDevelopmentCompanyServices = {

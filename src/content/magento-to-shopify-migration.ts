@@ -1,3 +1,4 @@
+import { globalBrandLogos } from "@/content/brands";
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { EvaluationFrameworkItem } from "@/components/sections/shopify-plus-agency/evaluation-framework-section";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
@@ -64,78 +65,7 @@ export const magentoHeroContent: ServiceHeroVideoContent = {
   ],
 };
 
-export const magentoBrandLogos: readonly ClientLogoSliderItem[] = [
-  {
-    href: "https://www.ranavat.com/",
-    src: "/assets/clients/ranavat.svg",
-    alt: "Ranavat Brand Logo",
-    width: 174,
-    height: 19,
-  },
-  {
-    href: "https://prolash.com/",
-    src: "/assets/clients/prolash.svg",
-    alt: "Prolash Brand Logo",
-    width: 204,
-    height: 22,
-  },
-  {
-    href: "https://shop.tropicfeel.com/",
-    src: "/assets/clients/tropicfeel.svg",
-    alt: "Tropicfeel Brand Logo",
-    width: 150,
-    height: 32,
-  },
-  {
-    href: "https://www.perfectlocks.com/",
-    src: "/assets/clients/perfect-locks.svg",
-    alt: "Perfect Locks Brand Logo",
-    width: 175,
-    height: 32,
-  },
-  {
-    href: "https://www.bombayshirts.com/",
-    src: "/assets/clients/bombay-shirt-company.svg",
-    alt: "Bombay Shirt Company Brand Logo",
-    width: 204,
-    height: 26,
-  },
-  {
-    href: "https://kayfi.com/",
-    src: "/assets/clients/kayfi.svg",
-    alt: "Kayfi Brand Logo",
-    width: 90,
-    height: 49,
-  },
-  {
-    href: "https://simsdirect.com.au/",
-    src: "/assets/clients/simsdirect.svg",
-    alt: "SimsDirect Brand Logo",
-    width: 143,
-    height: 49,
-  },
-  {
-    href: "https://www.kvaser.com/",
-    src: "/assets/clients/kvaser.svg",
-    alt: "Kvaser Brand Logo",
-    width: 135,
-    height: 25,
-  },
-  {
-    href: "https://www.nekterjuicebar.com/",
-    src: "/assets/clients/nekter-colored.svg",
-    alt: "Nékter Juice Bar Brand Logo",
-    width: 66,
-    height: 64,
-  },
-  {
-    href: "https://circuitcity.com/",
-    src: "/assets/clients/circuit-city.svg",
-    alt: "Circuit City Brand Logo",
-    width: 64,
-    height: 64,
-  },
-];
+export const magentoBrandLogos: readonly ClientLogoSliderItem[] = globalBrandLogos;
 
 export const magentoWhyMigrateContent = {
   eyebrow: "Why migrate",

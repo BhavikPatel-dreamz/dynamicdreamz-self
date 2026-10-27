@@ -78,7 +78,7 @@ export function ClientLogoSlider({
   className = "",
   itemClassName = "",
   imageSizes = "(max-width: 767px) 120px, 180px",
-  fadeEdges = true,
+  fadeEdges = false,
   pauseOnHover = false,
   density = "regular",
   mobileSpacing = "standard",
@@ -146,7 +146,7 @@ export function ClientLogoSlider({
             <div key={`${item.alt}-${index}`} className="outline-none">
               <div
                 className={cn(
-                  "flex items-center justify-center px-4 grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100",
+                  "flex items-center justify-center px-4 transition-all duration-300",
                   variant === "industry" ? "h-16" : "h-20",
                   itemClassName,
                 )}
@@ -174,7 +174,7 @@ export function ClientLogoSlider({
             <div
               key={`${item.alt}-${index}`}
               className={cn(
-                "flex items-center justify-center px-4 grayscale opacity-70",
+                "flex items-center justify-center px-4",
                 variant === "industry" ? "h-16" : "h-20",
                 itemClassName,
               )}

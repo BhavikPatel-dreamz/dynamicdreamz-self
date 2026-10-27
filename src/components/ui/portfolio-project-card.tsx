@@ -105,7 +105,7 @@ export function PortfolioProjectCard({
   imageAspectClassName,
   eagerImage = false,
   showArrow = false,
-  variant,
+  variant: _variant,
 }: PortfolioProjectCardProps) {
   const isAppProject = !href && appLinks?.length;
 
@@ -137,16 +137,14 @@ export function PortfolioProjectCard({
           <div className="mt-2.5 flex items-start justify-between gap-2 max-[767px]:mt-1 max-[767px]:gap-1.5">
             <div className="min-w-0 flex-1">
               {category ? (
-                <p className={cn("text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px] max-[1199px]:leading-[14px] max-[1199px]:font-bold max-[1199px]:tracking-[0.8px]", categoryClassName)}>
+                <p className={cn("font-montserrat text-[10px] leading-[14px] font-bold uppercase tracking-[0.8px] text-brand-red", categoryClassName)}>
                   {category}
                 </p>
               ) : null}
               <h3
                 className={cn(
                   category ? "mt-2.5 max-[1199px]:mt-2 max-[767px]:mt-[3px]" : "mt-0",
-                  variant === "default"
-                    ? "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-5 max-[767px]:font-semibold"
-                    : "font-montreal-medium text-lg leading-5 font-normal text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-5 max-[767px]:font-semibold",
+                  "font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-5 max-[767px]:font-semibold",
                 )}
               >
                 {name}
@@ -184,16 +182,14 @@ export function PortfolioProjectCard({
           <div className="mt-2.5 flex items-start justify-between gap-2 max-[767px]:mt-1 max-[767px]:gap-1.5">
             <div className="min-w-0 flex-1">
               {category ? (
-                <p className={cn("text-xs leading-4 font-semibold tracking-[1px] text-brand-red uppercase max-[1199px]:text-[10px] max-[1199px]:leading-[14px] max-[1199px]:font-bold max-[1199px]:tracking-[0.8px]", categoryClassName)}>
+                <p className={cn("font-montserrat text-[10px] leading-[14px] font-bold uppercase tracking-[0.8px] text-brand-red", categoryClassName)}>
                   {category}
                 </p>
               ) : null}
               <h3
                 className={cn(
                   category ? "mt-2.5 max-[1199px]:mt-2 max-[767px]:mt-[3px]" : "mt-0",
-                  variant === "default"
-                    ? "font-sans text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-5 max-[767px]:font-semibold"
-                    : "font-montreal-medium text-lg leading-5 font-normal text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-5 max-[767px]:font-semibold",
+                  "font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-5 max-[767px]:font-semibold",
                 )}
               >
                 {name}

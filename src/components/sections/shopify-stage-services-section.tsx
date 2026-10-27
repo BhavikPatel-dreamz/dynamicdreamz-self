@@ -95,7 +95,7 @@ export function ShopifyStageServicesSection({
                     {item.title}
                   </h3>
                   <div className="description">
-                    <p className="font-sans text-sm font-medium leading-[24px] text-[#535353]">
+                    <p className="font-sans text-sm font-normal leading-[24px] text-[#535353]">
                       {item.description}
                     </p>
                   </div>

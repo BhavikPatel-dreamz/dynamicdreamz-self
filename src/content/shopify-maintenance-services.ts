@@ -35,6 +35,8 @@ export const shopifyMaintenancePricing = {
   ],
 } as const;
 
+import { globalBrandLogos } from "@/content/brands";
+
 export const shopifyMaintenanceServicesContent = {
   sectionCopy: {
     faqHeading: "Frequently Asked Questions",
@@ -91,88 +93,7 @@ export const shopifyMaintenanceServicesContent = {
   },
   brands: {
     title: "Trusted by Leading Brands",
-    items: [
-      {
-        name: "Ranavat",
-        href: "https://www.ranavat.com/",
-        src: "/assets/clients/ranavat.svg",
-        alt: "Ranavat Brand Logo",
-        width: 174,
-        height: 19,
-      },
-      {
-        name: "Prolash",
-        href: "https://prolash.com/",
-        src: "/assets/clients/prolash.svg",
-        alt: "Prolash Brand Logo",
-        width: 204,
-        height: 22,
-      },
-      {
-        name: "Tropicfeel",
-        href: "https://shop.tropicfeel.com/",
-        src: "/assets/clients/tropicfeel.svg",
-        alt: "Tropicfeel Brand Logo",
-        width: 150,
-        height: 32,
-      },
-      {
-        name: "Perfect Locks",
-        href: "https://www.perfectlocks.com/",
-        src: "/assets/clients/perfect-locks.svg",
-        alt: "Perfect Locks Brand Logo",
-        width: 175,
-        height: 32,
-      },
-      {
-        name: "Bombay Shirt Company",
-        href: "https://www.bombayshirts.com/",
-        src: "/assets/clients/bombay-shirt-company.svg",
-        alt: "Bombay Shirt Company Brand Logo",
-        width: 204,
-        height: 26,
-      },
-      {
-        name: "Kayfi",
-        href: "https://kayfi.com/",
-        src: "/assets/clients/kayfi.svg",
-        alt: "Kayfi Brand Logo",
-        width: 90,
-        height: 49,
-      },
-      {
-        name: "Sims Direct",
-        href: "https://simsdirect.com.au/",
-        src: "/assets/clients/sim-direct.svg",
-        alt: "SimsDirect Brand Logo",
-        width: 143,
-        height: 49,
-      },
-      {
-        name: "Kvaser",
-        href: "https://www.kvaser.com/",
-        src: "/assets/clients/kvaser.svg",
-        alt: "Kvaser Brand Logo",
-        width: 135,
-        height: 25,
-      },
-      {
-        name: "Nekter Juice Bar",
-        href: "https://www.nekterjuicebar.com/",
-        src: "/assets/clients/nekter-colored.svg",
-        alt: "Nékter Juice Bar Brand Logo",
-        width: 66,
-        height: 64,
-      },
-      {
-        name: "Circuit City",
-        href: "https://circuitcity.com/",
-        src: "/assets/clients/circuit-city.svg",
-        alt: "Circuit City Brand Logo",
-        width: 64,
-        height: 64,
-      },
-    ],
+    items: globalBrandLogos,
   },
   services: {
     heading: "What Our Shopify Maintenance Services Include",

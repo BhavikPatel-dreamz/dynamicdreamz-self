@@ -67,7 +67,7 @@ export function PartnerCertificationsBarBlock({
           <div data-aos="fade-up" className="wrapper flex flex-wrap justify-between">
             <div className="left-col w-1/2 max-[767px]:w-full">
               <div className="text-block h-full border-y border-[#2828281c] py-[30px] pr-[30px] max-[1399px]:py-5 max-[1399px]:pr-[30px] max-[1199px]:pr-5 max-[767px]:border-0 max-[767px]:p-0">
-                <p className="m-0 font-sans text-base font-medium leading-[28px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
+                <p className="m-0 font-sans text-sm font-normal leading-6 text-muted">
                   {content.text}
                 </p>
               </div>
@@ -86,7 +86,7 @@ export function PartnerCertificationsBarBlock({
                       >
                         {String(index + 1).padStart(2, "0")}.
                       </span>
-                      <h3 className="m-0 font-display text-base font-medium leading-6 text-ink max-[1399px]:text-sm max-[1399px]:leading-[22px] max-[767px]:max-w-[171px]">
+                      <h3 className="m-0 font-montserrat text-base font-medium leading-6 text-ink max-[1399px]:text-sm max-[1399px]:leading-[22px] max-[767px]:max-w-[171px]">
                         {stat}
                       </h3>
                     </div>

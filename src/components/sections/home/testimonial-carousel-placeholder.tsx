@@ -24,7 +24,7 @@ function TestimonialSsrSlide({ testimonial }: { testimonial: Testimonial }) {
           <div className="user_thumb_wrap flex flex-1 items-center">
             <Image className="mr-3.5 h-[60px] w-[60px] shrink-0 rounded-full object-cover max-[767px]:h-12 max-[767px]:w-12" src={testimonial.avatar} alt={`${testimonial.name}, ${testimonial.company}`} width={60} height={60} />
             <div className="user_content_wrap flex min-w-0 flex-col">
-              <strong className="mb-1.5 text-xl leading-[1.295] font-semibold max-[767px]:text-base max-[767px]:leading-[normal]">{testimonial.name}</strong>
+              <strong className="mb-1.5 text-[#282828] text-xl leading-[1.295] font-semibold max-[767px]:text-base max-[767px]:leading-[normal]">{testimonial.name}</strong>
               <span className="text-lg leading-[1.295] font-medium text-muted max-[767px]:text-sm">{testimonial.company}</span>
             </div>
           </div>

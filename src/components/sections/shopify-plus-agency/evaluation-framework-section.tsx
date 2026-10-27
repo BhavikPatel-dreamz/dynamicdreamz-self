@@ -63,7 +63,7 @@ export function EvaluationFrameworkSection({
                   ) : null}
                 </div>
                 <div className="spa-text">
-                  <p className="m-0 font-sans text-sm font-medium leading-[22px] text-[#535353]">
+                  <p className="m-0 font-sans text-sm font-normal leading-[22px] text-[#535353]">
                     {formatBrText(item.description)}
                   </p>
                 </div>

@@ -1,4 +1,4 @@
-import { clientLogos, proofLogos } from "@/content/home";
+import { proofLogos } from "@/content/home";
 import type { AiEmpoweredDeliveryContent } from "@/components/sections/ai-empowered-delivery-section";
 import type { WhyChooseMigrationContent } from "@/components/sections/why-choose-shopify-migration-section";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
@@ -27,11 +27,13 @@ export const upgradeShopifyPlusHero = {
   })),
 } as const;
 
+import { globalBrandLogos } from "@/content/brands";
+
 export const upgradeShopifyPlusBrands = {
   heading: "Trusted by Leading Brands",
   description:
     "Selected brands our teams have supported across Shopify, Shopify Plus and digital commerce.",
-  items: clientLogos,
+  items: globalBrandLogos,
 } as const;
 
 export const upgradeShopifyPlusKeepWhatWorks: AiEmpoweredDeliveryContent = {

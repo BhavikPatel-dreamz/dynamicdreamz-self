@@ -1,3 +1,4 @@
+import { globalBrandLogos } from "@/content/brands";
 export const studioThemeCustomizationContent = {
   hero: {
     eyebrow: ["Shopify Platinum Partner", "Theme Customization"] as const,
@@ -21,104 +22,7 @@ export const studioThemeCustomizationContent = {
   },
   brands: {
     title: "Trusted by\nLeading Brands",
-    items: [
-      {
-            name: "Supper Tails Logo",
-            src: "/assets/clients/supertails.svg",
-            href: "https://supertails.com/",
-            alt: "Supertails Brand Logo",
-            width: 164,
-            height: 41
-      },
-      {
-            name: "Eleven Eleven",
-            src: "/assets/clients/eleven-eleven.svg",
-            href: "https://11-11.in/",
-            alt: "11:11 Artisanal Fashion Brand Logo",
-            width: 145,
-            height: 20
-      },
-      {
-            name: "bellavita logo",
-            src: "/assets/clients/bellavita.svg",
-            href: "https://bellavitaorganic.com/",
-            alt: "Bella Vita Organic Brand Logo",
-            width: 135,
-            height: 35
-      },
-      {
-            name: "Bombay Shirt Company",
-            src: "/assets/clients/bombay-shirt-company.svg",
-            href: "https://www.bombayshirts.com/",
-            alt: "Bombay Shirt Company Brand Logo",
-            width: 177,
-            height: 32
-      },
-      {
-            name: "Popclub",
-            src: "/assets/clients/popclub_co.svg",
-            href: "https://popclub.co/",
-            alt: "PopClub Brand Logo",
-            width: 65,
-            height: 41
-      },
-      {
-            name: "SriSri Tattva Logo",
-            src: "/assets/clients/sri-sri-tattva.svg",
-            href: "https://www.srisritattva.com/",
-            alt: "Sri Sri Tattva Brand Logo",
-            width: 125,
-            height: 44
-      },
-      {
-            name: "tropicfeel logo",
-            src: "/assets/clients/tropicfeel.svg",
-            href: "https://shop.tropicfeel.com/",
-            alt: "Tropicfeel Brand Logo",
-            width: 150,
-            height: 32
-      },
-      {
-            name: "Renee logo",
-            src: "/assets/clients/renee.svg",
-            href: "https://www.reneecosmetics.in/",
-            alt: "Renée Cosmetics Brand Logo",
-            width: 135,
-            height: 28
-      },
-      {
-            name: "Royce chocolate logo",
-            src: "/assets/clients/royce-chocolate.svg",
-            href: "https://royceindia.com/",
-            alt: "Royce Chocolate Brand Logo",
-            width: 135,
-            height: 35
-      },
-      {
-            name: "tego logo",
-            src: "/assets/clients/tego.svg",
-            href: "https://tego.fit/",
-            alt: "TEGO Fit Brand Logo",
-            width: 104,
-            height: 32
-      },
-      {
-            name: "nekter-colored",
-            src: "/assets/clients/nekter-colored.svg",
-            href: "https://www.nekterjuicebar.com/",
-            alt: "Nékter Juice Bar Brand Logo",
-            width: 150,
-            height: 32
-      },
-      {
-            name: "Rare Rabbit Logo",
-            src: "/assets/clients/rare-rabbit.svg",
-            href: "https://thehouseofrare.com/",
-            alt: "Rare Rabbit Brand Logo",
-            width: 150,
-            height: 32
-      }
-],
+    items: globalBrandLogos,
   },
   features: {
     eyebrow: "Features",
