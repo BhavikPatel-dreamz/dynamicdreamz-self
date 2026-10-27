@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import { VideoModalClient } from "@/components/ui/VideoModalClient";
 import { Container, Eyebrow } from "@/components/ui/container";
 import { sharedUiCopy } from "@/content/common";
-import { homeSectionCopy, testimonials as defaultBrandTestimonials, type Testimonial } from "@/content/home-client";
+import { testimonials as defaultBrandTestimonials, type Testimonial } from "@/content/home-client";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
@@ -411,49 +411,10 @@ export function BrandTestimonialSlider({
   );
 }
 
-export type TestimonialsSectionProps = {
-  eyebrow?: string;
-  title?: string;
-  description?: string;
-  items?: readonly Testimonial[];
-};
-
-export function TestimonialsSection({
-  title = homeSectionCopy.testimonialsTitle,
-  description = homeSectionCopy.testimonialsDescription,
-  eyebrow,
-  items,
-}: TestimonialsSectionProps = {}) {
-  return (
-    <section className="brand_testimonial bg-[#f7f4e9] py-[60px] max-[767px]:py-[50px]" aria-labelledby="testimonials-title">
-      <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title_with_eyebrow mb-[100px] flex flex-wrap items-end justify-between gap-8 max-[1199px]:mb-10 max-[991px]:mb-[30px] max-[992px]:gap-0"
-        >
-          <div className="title w-[42%] max-[1199px]:w-full max-[1199px]:mb-2.5">
-            {eyebrow ? (
-              <Eyebrow as="span" className="mb-4">
-                {eyebrow}
-              </Eyebrow>
-            ) : null}
-            <h2 id="testimonials-title" className="m-0 font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
-              {title}
-            </h2>
-          </div>
-          <div className="w-[48%] max-[1199px]:w-full">
-            <p className="font-sans text-base leading-7 font-medium text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
-              {description}
-            </p>
-          </div>
-        </div>
-        <div data-aos="fade-up">
-          <BrandTestimonialSlider items={items} />
-        </div>
-      </Container>
-    </section>
-  );
-}
+export {
+  TestimonialsSection,
+  type TestimonialsSectionProps,
+} from "@/components/sections/home/testimonials-section";
 
 export {
   TestimonialsSliderBlock as HappyClientSection,

@@ -93,7 +93,7 @@ export function CommerceSolutionsSection({
                         <span className="sr-only">{isOpen ? homeSectionCopy.commerceAccordion.close : homeSectionCopy.commerceAccordion.open} {item.title}</span>
                       </button>
                     </h3>
-                    <div id={panelId} role="region" aria-labelledby={triggerId} aria-hidden={!isOpen} inert={!isOpen} className={cn("grid grid-rows-[0fr] transition-[grid-template-rows,margin-top] duration-300", isOpen && "mt-4 max-[767px]:mt-2.5 grid-rows-[1fr]")}>
+                    <div id={panelId} role="region" aria-labelledby={triggerId} className={cn("grid grid-rows-[0fr] transition-[grid-template-rows,margin-top] duration-300", isOpen && "mt-4 max-[767px]:mt-2.5 grid-rows-[1fr]")}>
                       <div className="overflow-hidden">
                         <div className="border-t border-[#6e7590]/10 pt-4 max-[767px]:pt-2.5">
                           <p className="mb-[15px] text-sm leading-6 font-normal text-muted">{item.body}</p>

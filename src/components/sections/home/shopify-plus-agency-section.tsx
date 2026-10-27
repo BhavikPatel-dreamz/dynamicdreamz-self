@@ -82,9 +82,9 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
                   <div className="mb-2 w-1/2 px-1 max-[767px]:w-full" key={counter.value}>
                     <div className={`flex h-full min-h-[136px] flex-col justify-between rounded-[20px] p-[18px] max-[767px]:rounded-xl ${counterToneClasses[tone]}`}>
                       <div>
-                        <span className="font-montreal-medium block text-[35px] leading-[1.4] font-semibold text-ink max-[767px]:text-[24px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px]">
+                        <h3 className="h2 font-montreal-medium block text-[35px] leading-[1.4] font-semibold text-ink max-[767px]:text-[24px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px]">
                           {counter.value}
-                        </span>
+                        </h3>
                         <span className="mt-[5px] mb-[25px] max-[767px]:mb-5 block text-xs leading-none font-semibold text-[#4d5577] uppercase">{counter.label}</span>
                       </div>
                       {counter.note ? <p className="text-xs leading-none font-medium text-muted">{counter.note}</p> : null}

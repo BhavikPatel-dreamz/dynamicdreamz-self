@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import { Button, ButtonLink } from "@/components/ui/Button";
 import { Container, Eyebrow } from "@/components/ui/container";
-import { shopifyPlusAgencyContent } from "@/content/home";
 import { shopifyCroAssessment, shopifyCroWhyDynamicDreamz } from "@/content/shopify-cro-agency";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
@@ -232,110 +231,12 @@ export function WhyChooseUsBlock({
   );
 }
 
-export const counterToneClasses = {
-  green: "bg-[#eff4ef]",
-  stone: "bg-[#f4f2ef]",
-  peach: "bg-[#f6eee5]",
-  lime: "bg-[#f0f6e5]",
-} as const;
-
-export type ShopifyPlusAgencyCounter = {
-  value: string;
-  label: string;
-  note?: string;
-  tone?: "green" | "stone" | "peach" | "lime";
-};
-
-export type ShopifyPlusAgencyContent = {
-  eyebrow?: string;
-  title?: string;
-  intro?: string;
-  paragraphs?: readonly string[];
-  counters?: readonly ShopifyPlusAgencyCounter[];
-  videoSrc?: string;
-};
-
-export type ShopifyPlusAgencySectionProps = {
-  content?: ShopifyPlusAgencyContent;
-};
-
-export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionProps = {}) {
-  const eyebrow = content?.eyebrow ?? shopifyPlusAgencyContent.eyebrow;
-  const title = content?.title ?? shopifyPlusAgencyContent.title;
-  const intro = content?.intro ?? shopifyPlusAgencyContent.intro;
-  const paragraphs = content?.paragraphs && content.paragraphs.length > 0 ? content.paragraphs : shopifyPlusAgencyContent.paragraphs;
-  const counters = content?.counters && content.counters.length > 0 ? content.counters : shopifyPlusAgencyContent.counters;
-  const videoSrc = content?.videoSrc || shopifyPlusAgencyContent.videoSrc;
-
-  return (
-    <section className="bg-[#fbeed5] py-[43px] max-[992px]:py-[30px]" aria-labelledby="shopify-plus-agency-title">
-      <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between gap-8 max-[1199px]:mb-5 max-[992px]:gap-0"
-        >
-          <div className="title w-[42%] max-[1199px]:w-full max-[1199px]:mb-2.5">
-            <Eyebrow as="span" className="mb-4">
-              {eyebrow}
-            </Eyebrow>
-            <h2 id="shopify-plus-agency-title" className="m-0 font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
-              {title}
-            </h2>
-          </div>
-          <div className="w-[48%] max-[1199px]:w-full">
-            <p className="font-sans text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
-              {intro}
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-wrap justify-between gap-8 rounded-[30px] bg-[#fafaf7] p-8 max-[1199px]:rounded-[20px] max-[1199px]:p-6 max-[992px]:gap-0">
-          <div data-aos="fade-up" className="w-[46.816%] max-[992px]:w-full">
-            <div className="mb-5 max-w-[575px]">
-              {paragraphs.map((paragraph, index) => (
-                <p className={index === 0 ? "mb-3.75 text-sm leading-6 font-normal text-muted" : "text-sm leading-[1.8] font-normal text-muted"} key={paragraph}>
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-            <div className="mx-[-4px] mb-[-8px] flex flex-wrap">
-              {counters.map((counter) => {
-                const tone = counter.tone && counter.tone in counterToneClasses ? counter.tone : "green";
-                return (
-                  <div className="mb-2 w-1/2 px-1 max-[767px]:w-full" key={counter.value}>
-                    <div className={`flex h-full min-h-[136px] flex-col justify-between rounded-[20px] p-[18px] max-[767px]:rounded-xl ${counterToneClasses[tone]}`}>
-                      <div>
-                        <h3 className="font-montreal-medium m-0 block text-[35px] leading-[1.4] font-normal text-ink max-[767px]:text-[24px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px]">
-                          {counter.value}
-                        </h3>
-                        <span className="mt-[5px] mb-[25px] block font-montserrat text-xs leading-none font-semibold text-[#4d5577] uppercase max-[767px]:mb-5">{counter.label}</span>
-                      </div>
-                      {counter.note ? <p className="text-xs leading-none font-medium text-muted">{counter.note}</p> : null}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div
-            data-aos="fade-up"
-            className="relative w-1/2 min-h-[380px] overflow-hidden rounded-[20px] max-[992px]:mt-5 max-[992px]:w-full max-[992px]:min-h-0 max-[992px]:aspect-[1.37] max-[767px]:rounded-xl"
-          >
-            <video
-              className="absolute inset-0 h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster="/assets/about/hero-video-poster.webp"
-              src={videoSrc}
-            />
-          </div>
-        </div>
-      </Container>
-    </section>
-  );
-}
+export {
+  ShopifyPlusAgencySection,
+  type ShopifyPlusAgencyCounter,
+  type ShopifyPlusAgencyContent,
+  type ShopifyPlusAgencySectionProps,
+} from "@/components/sections/home/shopify-plus-agency-section";
 
 export type ShopifyCroAssessmentContent = {
   heading: string | readonly string[];

@@ -46,7 +46,7 @@ export function HomeHeroSection({
             <span className="leading-[1.2] text-sm font-semibold">{partnerBadge}</span>
           </div>
         </div>
-        <h1 className="mx-auto mb-5 max-w-[1100px] text-[56px] leading-[1.14] font-normal text-ink min-[768px]:max-[992px]:text-[38px] min-[768px]:max-[992px]:leading-12 max-[767px]:mb-4 max-[767px]:max-w-[358px] max-[767px]:text-[27px] max-[767px]:leading-[37px]">
+        <h1 className="mx-auto mb-5 max-w-[1100px] font-montreal-medium text-[56px] leading-[1.14] font-normal text-ink min-[768px]:max-[992px]:text-[38px] min-[768px]:max-[992px]:leading-12 max-[767px]:mb-4 max-[767px]:max-w-[358px] max-[767px]:text-[27px] max-[767px]:leading-[37px]">
           {title}
         </h1>
         <p className="mx-auto mb-[30px] max-w-[940px] text-base leading-7 font-medium text-muted max-[1199px]:leading-6 max-[767px]:mb-6 max-[767px]:max-w-[358px] max-[767px]:text-sm">

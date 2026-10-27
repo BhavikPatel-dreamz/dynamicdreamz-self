@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import React from "react";
 
 import styles from "@/components/sections/home/selected-work-section.module.css";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -92,6 +95,12 @@ export function SelectedWorkSection({
   ctaLabel = homeSectionCopy.ctaViewWork,
   ctaHref = homeSectionCopy.ctaViewWorkHref,
 }: SelectedWorkSectionProps = {}) {
+  const isMounted = React.useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+
   return (
     <section className="overflow-hidden bg-dark-green pt-[60px] pb-[52px] text-white max-[767px]:py-[30px]">
       <Container data-aos="fade-up">
@@ -109,7 +118,7 @@ export function SelectedWorkSection({
       >
         <div className={cn("flex w-[calc(500%+5px)] min-[1600px]:w-[calc(425%+5px)] max-[767px]:w-max", styles.projectMotion)}>
           <ProjectList />
-          <ProjectList decorative />
+          {isMounted ? <ProjectList decorative /> : null}
         </div>
       </div>
       <div data-aos="fade-up" className="flex justify-center">

@@ -11,7 +11,7 @@ export const homeSectionCopy = {
   heroTitle: "Shopify Plus & Enterprise Shopify Solutions",
   brandPartnersHeading: "Partnering with Ambitious Brands",
   brandPartnersDescription:
-    "Selected brands our teams have supported across Shopify, Shopify Plus and digital commerce.",
+    "Supporting growing D2C and global brands across Shopify, Shopify Plus, and digital commerce.",
   agencyOverviewTitle: "Globally Trusted Web & App Development Agency",
   agencyOverviewDescription:
     "With sharp custom design, smooth development, and long-term support, build a brand that scales worldwide.",

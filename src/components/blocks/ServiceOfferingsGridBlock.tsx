@@ -2,12 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/container";
-import { FaqCircleCrossIcon } from "@/components/ui/AccordionClient";
 import { sharedUiCopy } from "@/content/common";
-import { commerceSolutions, homeSectionCopy } from "@/content/home-client";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
 
@@ -292,124 +290,11 @@ export function ServiceOfferingsGridBlock({
   );
 }
 
-export type CommerceSolutionItem = {
-  title: string;
-  summary: string;
-  body: string;
-  href: string;
-  cta: string;
-};
-
-export type CommerceSolutionsSectionProps = {
-  title?: string;
-  description?: string;
-  solutions?: readonly CommerceSolutionItem[];
-};
-
-export function CommerceSolutionsSection({
-  title = homeSectionCopy.commerceSolutionsTitle,
-  description = homeSectionCopy.commerceSolutionsDescription,
-  solutions = commerceSolutions,
-}: CommerceSolutionsSectionProps = {}) {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const items = solutions && solutions.length > 0 ? solutions : commerceSolutions;
-  const half = Math.ceil(items.length / 2);
-  const columns = [items.slice(0, half), items.slice(half)];
-
-  return (
-    <section className="py-[60px] max-[992px]:py-[50px] max-[767px]:py-10" aria-labelledby="commerce-solutions-title">
-      <Container>
-        <div
-          data-aos="fade-up"
-          className="mb-[54px] flex items-center justify-between gap-10 max-[992px]:mb-8 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-0"
-        >
-          <h2 id="commerce-solutions-title" className="w-[40%] font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[1199px]:text-[30px] max-[992px]:w-full max-[992px]:text-[28px] max-[767px]:text-[24px]">
-            {title}
-          </h2>
-          <p className="w-[47%] font-sans text-base leading-[1.9] font-medium text-muted max-[992px]:mt-2.5 max-[992px]:w-full max-[767px]:text-sm">
-            {description}
-          </p>
-        </div>
-        <div className="grid grid-cols-2 items-start gap-3 max-[992px]:grid-cols-1" data-commerce-accordion>
-          {columns.map((column, columnIndex) => (
-            <div data-aos="fade-up" className="grid gap-3" key={columnIndex}>
-              {column.map((item, itemIndex) => {
-                const index = columnIndex * half + itemIndex;
-                const isOpen = activeIndex === index;
-                const panelId = `commerce-solution-panel-${index}`;
-                const triggerId = `commerce-solution-trigger-${index}`;
-
-                return (
-                  <article
-                    className={cn(
-                      "relative rounded-[15px] border border-[#6e7590]/10 p-5 shadow-[2px_2px_4px_rgb(83_83_83/5%)] max-[767px]:p-[15px]",
-                      isOpen ? "bg-[#eff4ef]" : "bg-white",
-                    )}
-                    key={item.title}
-                  >
-                    <h3 className="m-0">
-                      <button
-                        id={triggerId}
-                        type="button"
-                        className="relative flex w-full cursor-pointer items-start justify-between gap-5 border-0 bg-transparent p-0 pr-10 text-left font-montreal-medium text-xl leading-7 font-normal text-ink max-[767px]:flex-col max-[767px]:gap-1 max-[767px]:text-base max-[767px]:leading-6"
-                        aria-expanded={isOpen}
-                        aria-controls={panelId}
-                        onClick={() => setActiveIndex(isOpen ? -1 : index)}
-                      >
-                        <span className="block">
-                          <span className="block">{item.title}</span>
-                          <span className="mt-2.5 block font-montserrat text-sm leading-none font-medium text-ink max-[767px]:mt-[5px] max-[767px]:text-[13px] max-[767px]:leading-normal">
-                            {item.summary}
-                          </span>
-                        </span>
-                        <FaqCircleCrossIcon
-                          
-                          isOpen={isOpen}
-                        />
-                        <span className="sr-only">{isOpen ? homeSectionCopy.commerceAccordion.close : homeSectionCopy.commerceAccordion.open} {item.title}</span>
-                      </button>
-                    </h3>
-                    <div id={panelId} role="region" aria-labelledby={triggerId} aria-hidden={!isOpen} inert={!isOpen} className={cn("grid grid-rows-[0fr] transition-[grid-template-rows,margin-top] duration-300", isOpen && "mt-4 max-[767px]:mt-2.5 grid-rows-[1fr]")}>
-                      <div className="overflow-hidden">
-                        <div className="border-t border-[#6e7590]/10 pt-4 max-[767px]:pt-2.5">
-                          <p className="mb-[15px] text-sm leading-6 font-normal text-muted">{item.body}</p>
-                          <Link
-                            className="btn-link-arrow inline-flex items-center gap-2.5 font-montserrat text-sm leading-none font-bold text-brand-red uppercase transition-colors hover:text-ink focus-visible:text-ink"
-                            href={item.href}
-                          >
-                            <span>{item.cta}</span>
-                            <svg
-                              aria-hidden="true"
-                              className="size-2.5 shrink-0"
-                              fill="none"
-                              height="10"
-                              viewBox="0 0 10 10"
-                              width="10"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M1.00008 9.00008L9.00008 1.00008M9.00008 1.00008H2.60008M9.00008 1.00008V7.40008"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="1.5"
-                              />
-                            </svg>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
-}
+export {
+  CommerceSolutionsSection,
+  type CommerceSolutionItem,
+  type CommerceSolutionsSectionProps,
+} from "@/components/sections/home/commerce-solutions-section";
 
 import { ShopifyStageServicesBlock, ShopifyStageServicesSection } from "./ShopifyStageServicesBlock";
 import {

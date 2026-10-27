@@ -75,22 +75,32 @@ export const proofLogos: (ImageItem & { href: string })[] = [
 ];
 
 export const clientLogos: ImageItem[] = [
-  { src: "/assets/clients/royce-chocolate-black.svg", alt: "Royce Chocolate logo", width: 132, height: 38 },
-  { src: "/assets/clients/jacadi-paris.svg", alt: "Jacadi Paris logo", width: 106, height: 44 },
   { src: "/assets/clients/rare-rabbit.svg", alt: "Rare Rabbit logo", width: 101, height: 70 },
-  { src: "/assets/clients/bella-vita.svg", alt: "Bella Vita logo", width: 166, height: 24 },
-  { src: "/assets/case-studies/brands/sri-sri-tattva.svg", alt: "Sri Sri Tattva logo", width: 106, height: 40 },
-  { src: "/assets/clients/renee.svg", alt: "Renee logo", width: 93, height: 30 },
-  { src: "/assets/clients/nelter.svg", alt: "Nelter logo", width: 109, height: 41 },
+  { src: "/assets/clients/jacadi-paris.svg", alt: "Jacadi Paris logo", width: 106, height: 44 },
   { src: "/assets/clients/tropicfeel.svg", alt: "Tropicfeel logo", width: 137, height: 29 },
-  { src: "/assets/clients/ranavat.svg", alt: "Ranavat logo", width: 172, height: 19 },
-  { src: "/assets/clients/perfect-locks-black.svg", alt: "Perfect Locks logo", width: 161, height: 29 },
-  { src: "/assets/clients/bombay-shirt-company.svg", alt: "Bombay Shirt Company logo", width: 172, height: 22 },
   { src: "/assets/clients/kalki.svg", alt: "KALKI logo", width: 108, height: 33 },
+  { src: "/assets/clients/dorel.svg", alt: "Dorel logo", width: 96, height: 49 },
+  { src: "/assets/clients/bella-vita.svg", alt: "Bella Vita logo", width: 166, height: 24 },
+  { src: "/assets/clients/aetrex.svg", alt: "Aetrex logo", width: 139, height: 38 },
+  { src: "/assets/clients/renee.svg", alt: "Renee logo", width: 93, height: 30 },
+  { src: "/assets/clients/royce-chocolate-black.svg", alt: "Royce Chocolate logo", width: 132, height: 38 },
+  { src: "/assets/clients/zouk.svg", alt: "Zouk logo", width: 101, height: 34 },
+  { src: "/assets/clients/ranavat.svg", alt: "Ranavat logo", width: 172, height: 19 },
+  { src: "/assets/clients/r-for-rabbit.svg", alt: "R For Rabbit logo", width: 127, height: 72 },
+  { src: "/assets/clients/nelter.svg", alt: "Nelter logo", width: 109, height: 41 },
+  { src: "/assets/clients/xyxx.svg", alt: "xyxx logo", width: 116, height: 46 },
   { src: "/assets/clients/kvaser.svg", alt: "Kvaser logo", width: 141, height: 26 },
-  { src: "/assets/clients/tego.svg", alt: "Tego logo", width: 107, height: 42 },
-  { src: "/assets/clients/sleepy-cat.svg", alt: "Sleepy Cat logo", width: 123, height: 41 },
+  { src: "/assets/clients/bombay-shirt-company.svg", alt: "Bombay Shirt Company logo", width: 172, height: 22 },
+  { src: "/assets/clients/lstroetmann.svg", alt: "Lstroetmann logo", width: 172, height: 31 },
   { src: "/assets/case-studies/brands/supertails.svg", alt: "Super Tails logo", width: 164, height: 41 },
+  { src: "/assets/clients/mr-supplement.svg", alt: "MR Supplement logo", width: 225, height: 13 },
+  { src: "/assets/case-studies/brands/sri-sri-tattva.svg", alt: "Sri Sri Tattva logo", width: 106, height: 40 },
+  { src: "/assets/clients/sleepy-cat.svg", alt: "Sleepy Cat logo", width: 123, height: 41 },
+  { src: "/assets/clients/myra.svg", alt: "Myra logo", width: 131, height: 44 },
+  { src: "/assets/clients/dr-trust.svg", alt: "Dr. Trust logo", width: 115, height: 38 },
+  { src: "/assets/clients/sullen.svg", alt: "Sullen logo", width: 86, height: 43 },
+  { src: "/assets/clients/tego.svg", alt: "Tego logo", width: 107, height: 42 },
+  { src: "/assets/clients/perfect-locks-black.svg", alt: "Perfect Locks logo", width: 161, height: 29 },
   { src: "/assets/clients/sim-direct.svg", alt: "SIM Direct logo", width: 143, height: 49 },
   { src: "/assets/clients/eleven-eleven.svg", alt: "Eleven Eleven logo", width: 160, height: 22 },
   { src: "/assets/clients/popclub_co.svg", alt: "PopClub logo", width: 71, height: 45 },
@@ -116,9 +126,9 @@ export function getClientLogo(src: string): ImageItem {
 }
 
 export const mobileClientLogoRows = [
-  [clientLogos[8], clientLogos[12], clientLogos[19], clientLogos[7], clientLogos[9], clientLogos[3]],
-  [clientLogos[10], clientLogos[6], clientLogos[0], clientLogos[13], clientLogos[18], clientLogos[14], clientLogos[16]],
-  [clientLogos[15], clientLogos[4], clientLogos[17], clientLogos[5], clientLogos[11], clientLogos[1], clientLogos[2]],
+  [clientLogos[0], clientLogos[1], clientLogos[2], clientLogos[3], clientLogos[4], clientLogos[5], clientLogos[6], clientLogos[7]],
+  [clientLogos[8], clientLogos[9], clientLogos[10], clientLogos[11], clientLogos[12], clientLogos[13], clientLogos[14], clientLogos[15]],
+  [clientLogos[16], clientLogos[17], clientLogos[18], clientLogos[19], clientLogos[20], clientLogos[21], clientLogos[22], clientLogos[23], clientLogos[24]],
 ];
 
 export const companyStats = [
