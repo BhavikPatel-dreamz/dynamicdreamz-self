@@ -49,7 +49,7 @@ import { CareerHeroSection } from "@/components/blocks/ServiceHeroBlock";
 const CareerOpportunitiesSection = dynamic(() => import("@/components/blocks/JobOpeningsListBlock").then((m) => m.CareerOpportunitiesSection));
 import { CareerBenefitIcon } from "@/lib/icons/career-benefit-icons";
 const ThemeCustomizationServicesSection = dynamic(() => import("@/components/blocks/ThemeCustomizationServicesBlock").then((m) => m.ThemeCustomizationServicesSection));
-const CareerApplyNowPage = dynamic(() => import("@/lib/registry/pages/career-apply-now").then((m) => m.CareerApplyNowPage));
+const CareerApplyNowPage = dynamic(() => import("@/components/sections/career-apply-now/career-apply-now-page").then((m) => m.CareerApplyNowPage));
 import { ServiceHeroVideoSection } from "@/components/blocks/ServiceHeroBlock";
 const IndustryBrandsSection = dynamic(() => import("@/components/blocks/ClientLogoMarqueeBlock").then((m) => m.IndustryBrandsSection));
 import { ShopifyPlusProofSection } from "@/components/blocks/PartnerCertificationsBarBlock";

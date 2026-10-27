@@ -34,6 +34,7 @@ export function ShopifyDevelopmentAgencyPage() {
       />
       <ShopifyStageServicesSection content={shopifyDevelopmentAgencyServices} />
       <PortfolioShowcaseSection
+        className="pt-20"
         columns={4}
         content={shopifyDevelopmentAgencyPortfolio}
         headerLayout="split"
