@@ -99,7 +99,7 @@ export function StaticFaqAccordion({
           <article
             data-aos="fade-up"
             className={cn(
-              "mb-5 rounded-[10px] border-[1.3px] border-[#efefef] bg-white last:mb-0",
+              "mb-5 rounded-[10px] border-[1.3px] border-[#efefef] bg-white last:mb-0",index == 0 && "!pt-0",
               itemClassName,
             )}
             data-faq-item

@@ -1,7 +1,11 @@
 import type { ShopifyTeamBoxesContent } from "@/components/sections/shopify-team-boxes-section";
 import type { ThemeCustomizationServicesContent } from "@/components/sections/theme-customization-services-section";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
-import { getClientLogo, type ImageItem } from "@/content/home";
+import {
+  clientLogos,
+  mobileClientLogoRows,
+  type ImageItem,
+} from "@/content/home";
 
 export type ShopifyHoursPackage = {
   hours: number;
@@ -235,62 +239,10 @@ export const shopifyHoursProcess = {
   ],
 } as const;
 
-const logo = (src: string, alt?: string): ImageItem => ({
-  ...getClientLogo(`/assets/clients/${src}.svg`),
-  ...(alt ? { alt } : {}),
-});
+export const shopifyHoursClientLogos: readonly ImageItem[] = clientLogos;
 
-export const shopifyHoursClientLogos = [
-  logo("royce-chocolate", "Royce Chocolate logo"),
-  logo("jacadi-paris", "Jacadi Paris logo"),
-  logo("rare-rabbit", "Rare Rabbit logo"),
-  logo("bella-vita", "Bella Vita logo"),
-  logo("sri-sri-tattva", "Sri Sri Tattva logo"),
-  logo("renee", "Renee logo"),
-  logo("nelter", "Nelter logo"),
-  logo("tropicfeel", "Tropicfeel logo"),
-  logo("ranavat", "Ranavat logo"),
-  logo("perfect-locks", "Perfect Locks logo"),
-  logo("bombay-shirt-company", "Bombay Shirt Company logo"),
-  logo("kalki", "KALKI logo"),
-  logo("kvaser", "Kvaser logo"),
-  logo("tego", "Tego logo"),
-  logo("sleepy-cat", "Sleepy Cat logo"),
-  logo("supertails", "Super Tails logo"),
-  logo("sim-direct", "SIM Direct logo"),
-  logo("eleven-eleven", "Eleven Eleven logo"),
-  logo("popclub", "PopClub logo"),
-  logo("prolash", "Prolash logo"),
-] as const;
-
-export const shopifyHoursMobileLogoRows = [
-  [
-    shopifyHoursClientLogos[8],
-    shopifyHoursClientLogos[12],
-    shopifyHoursClientLogos[19],
-    shopifyHoursClientLogos[7],
-    shopifyHoursClientLogos[9],
-    shopifyHoursClientLogos[3],
-  ],
-  [
-    shopifyHoursClientLogos[0],
-    shopifyHoursClientLogos[1],
-    shopifyHoursClientLogos[2],
-    shopifyHoursClientLogos[4],
-    shopifyHoursClientLogos[5],
-    shopifyHoursClientLogos[6],
-    shopifyHoursClientLogos[10],
-  ],
-  [
-    shopifyHoursClientLogos[11],
-    shopifyHoursClientLogos[13],
-    shopifyHoursClientLogos[14],
-    shopifyHoursClientLogos[15],
-    shopifyHoursClientLogos[16],
-    shopifyHoursClientLogos[17],
-    shopifyHoursClientLogos[18],
-  ],
-] as const;
+export const shopifyHoursMobileLogoRows: readonly (readonly ImageItem[])[] =
+  mobileClientLogoRows;
 
 export const shopifyHoursFaqs = [
   {

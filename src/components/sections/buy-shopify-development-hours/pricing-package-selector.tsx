@@ -102,11 +102,11 @@ export function PricingPackageSelector({
         href={selectedPackage.purchaseHref}
         data-purchase-link
       >
-        {shopifyHoursSectionCopy.pricing.purchasePrefix}${selectedPackage.cost}
+        {shopifyHoursSectionCopy.pricing.purchasePrefix}{selectedPackage.cost}
       </ButtonLink>
       <div className="flex text-center">
         <Link
-          className="quote-link block w-full pt-5 text-center font-montserrat text-sm leading-[normal] font-bold text-ink uppercase underline decoration-[1.5px] underline-offset-[2px] transition-colors duration-500 hover:text-brand-red"
+          className="quote-link block w-full pt-5 text-center font-montserrat text-sm leading-[normal] font-bold text-ink uppercase underline decoration-[8.5%] transition-colors duration-500 hover:text-brand-red"
           href={quoteHref}
         >
           {quoteLabel}

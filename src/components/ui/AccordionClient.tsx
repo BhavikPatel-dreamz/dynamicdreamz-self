@@ -249,7 +249,7 @@ export function FaqAccordion({
         return (
           <article
             className={cn(
-              "mb-5 rounded-[10px] border-[1.3px] border-[#efefef] bg-white last:mb-0",
+              "mb-5 rounded-[10px] border-[1.3px] border-[#efefef] bg-white last:mb-0",index == 0 && "!pt-0",
               animateOnReveal && "aos-init transition-[opacity,transform] motion-reduce:opacity-100 motion-reduce:transition-none motion-reduce:[transform:translate3d(0,0,0)]",
               animateOnReveal && isRevealed && "aos-animate",
               isRevealed

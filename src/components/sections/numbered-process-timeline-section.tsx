@@ -43,7 +43,7 @@ export function NumberedProcessTimelineSection({
           variant="left"
         />
 
-        <ol data-aos="fade-up" className="relative grid grid-cols-5 before:absolute before:top-[129px] before:right-[4%] before:left-[4%] before:border-t-[1.5px] before:border-dashed before:border-brand-red max-[767px]:grid-cols-1 max-[767px]:border-l-[1.5px] max-[767px]:border-brand-red max-[767px]:pl-2.5 max-[767px]:[border-image:repeating-linear-gradient(to_bottom,#ad5151_0,#ad5151_6px,transparent_6px,transparent_12px)_1] max-[767px]:before:hidden">
+        <ol data-aos="fade-up" className="relative grid grid-cols-5 before:absolute before:top-[129px] before:right-0 before:left-0 before:border-t-[1.5px] before:border-dashed before:border-brand-red max-[767px]:grid-cols-1 max-[767px]:border-l-[1.5px] max-[767px]:border-brand-red max-[767px]:pl-2.5 max-[767px]:[border-image:repeating-linear-gradient(to_bottom,#ad5151_0,#ad5151_6px,transparent_6px,transparent_12px)_1] max-[767px]:before:hidden">
           {items.map((item, index) => {
             const label = typeof item === "string" ? item : item.text;
 
@@ -63,7 +63,7 @@ export function NumberedProcessTimelineSection({
                   ) : (
                     <>
                       <span className="sr-only">{label}</span>
-                      <span aria-hidden="true">
+                      <span aria-hidden="true" className="text-[#282828]">
                         {item.lines[0]}
                         <br className="max-[767px]:hidden" />
                         {item.lines[1]}
