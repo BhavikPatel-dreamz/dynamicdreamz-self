@@ -13,9 +13,9 @@ import type {
 export const whiteLabelWordPressSectionCopy = {
   reasonsTitle:
     [
-    "Why Agencies Choose Dynamic Dreamz",
-    "for White Label WordPress Development",
-  ],
+      "Why Agencies Choose Dynamic Dreamz",
+      "for White Label WordPress Development",
+    ],
   servicesTitle: "White Label WordPress Development Services",
   servicesCta: "Let me give you a hand to help you",
   pricingTitle: "Choose the Right Wordpress Development Engagement.",
@@ -156,7 +156,7 @@ export const whiteLabelWordPressReasons: readonly WhiteLabelCard[] = [
   {
     title: "Optimized for SEO & Performance",
     description:
-      "We are experienced in custom themes, plugins, page builders, and hosting solutions.",
+      "We build WordPress sites with responsive implementation, clean structure, performance-conscious    development and technical SEO fundamentals such as headings, metadata support and crawl-friendly templates.",
   },
   {
     title: "Reliable Ongoing Support",

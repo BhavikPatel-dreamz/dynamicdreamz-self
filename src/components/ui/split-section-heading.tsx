@@ -53,6 +53,20 @@ export function SplitSectionHeading({
         className={cn("mx-auto mb-10 max-w-[840px] text-center max-[991px]:mb-[30px]", className)}
         data-aos={aosAnimation || undefined}
       >
+        {eyebrow ? (
+          <div className="mb-4 flex justify-center">
+            <Eyebrow
+              align="center"
+              as="span"
+              className={cn(eyebrowClassName)}
+              lineThickness="thin"
+              lineWidth="fixed"
+              tone={dark ? "inverse" : undefined}
+            >
+              {eyebrow}
+            </Eyebrow>
+          </div>
+        ) : null}
         <h2
           className={cn(
             "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
@@ -68,8 +82,8 @@ export function SplitSectionHeading({
             {body.map((paragraph) => (
               <p
                 className={cn(
-                  "mt-2.5 font-sans text-sm font-normal leading-6",
-                  dark ? "text-white/80" : "text-muted",
+                  "mt-2.5 font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6",
+                  dark && "text-white/80",
                 )}
                 key={paragraph}
               >

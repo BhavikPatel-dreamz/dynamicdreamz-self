@@ -65,7 +65,7 @@ export function WhiteLabelServiceAccordion({
                     height={52}
                     aria-hidden="true"
                   />
-                  <span className="flex-1 font-sans text-lg leading-[27px] font-bold text-white max-[1199px]:leading-[26px] max-[767px]:text-base max-[767px]:leading-6">
+                  <span className="flex-1 font-sans text-lg leading-[27px] font-sm text-white max-[1199px]:leading-[26px] max-[767px]:text-base max-[767px]:leading-6">
                     {service.title}
                   </span>
                   <span

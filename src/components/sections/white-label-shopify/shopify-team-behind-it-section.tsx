@@ -1,6 +1,6 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { TextArrowLink } from "@/components/ui/text-arrow-link";
 import { whiteLabelShopifyBrandProtection } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
@@ -47,29 +47,12 @@ export function ShopifyTeamBehindItSection({
       )}
     >
       <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title mb-10 max-[991px]:mb-[30px]"
-        >
-          {content.eyebrow ? (
-            <Eyebrow className="mb-4">{content.eyebrow}</Eyebrow>
-          ) : null}
-          <div className="flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col">
-            <h2
-              className={cn(
-                "w-full font-montreal-medium text-[35px] font-normal leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl",
-                content.description ? "max-w-[580px]" : "max-w-none",
-              )}
-            >
-              {content.heading}
-            </h2>
-            {content.description ? (
-              <p className="w-full max-w-[540px] font-sans text-base font-medium leading-7 text-[#535353]">
-                {content.description}
-              </p>
-            ) : null}
-          </div>
-        </div>
+        <SplitSectionHeading
+          variant="services"
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          description={content.description}
+        />
 
         <div
           data-aos="fade-up"

@@ -1,6 +1,6 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { whiteLabelShopifyDeliveryComparison } from "@/content/white-label-shopify-development";
 
 export type DeliveryModelComparisonContent = {
@@ -35,24 +35,12 @@ export function DeliveryModelComparisonSection({
   return (
     <section className="choose_the_right_delivery_model_section bg-white py-20 max-[991px]:py-[50px]">
       <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title mb-10 max-[991px]:mb-[30px]"
-        >
-          {content.eyebrow ? (
-            <Eyebrow className="mb-4">{content.eyebrow}</Eyebrow>
-          ) : null}
-          <div className="flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col">
-            <h2 className="w-full max-w-[620px] font-montreal-medium text-[35px] font-normal leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl">
-              {content.heading}
-            </h2>
-            {content.description ? (
-              <p className="w-full max-w-[500px] font-sans text-base font-medium leading-7 text-[#535353]">
-                {content.description}
-              </p>
-            ) : null}
-          </div>
-        </div>
+        <SplitSectionHeading
+          variant="centered"
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          description={content.description}
+        />
 
         <div className="compare-wrap -mx-4 overflow-x-auto px-4 scrollbar-thin">
           <div
@@ -66,7 +54,7 @@ export function DeliveryModelComparisonSection({
                     <th
                       className={`p-4 text-left text-sm font-bold uppercase tracking-wider ${
                         col.isWinner
-                          ? "border-t border-x border-[#AD5151] bg-[#F7F4E9] text-[#282828]"
+                          ? "border-t border-x border-b border-t-[#AD5151] border-x-[#AD5151] border-b-[rgba(0,0,0,0.10)] bg-[#F7F4E9] text-[#282828]"
                           : "border-b border-[rgba(0,0,0,0.10)] bg-[#FAFAF7] text-[#282828]"
                       } ${idx === 0 ? "w-[20%]" : ""}`}
                       key={col.label}

@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { TextArrowLink } from "@/components/ui/text-arrow-link";
 import { whiteLabelShopifyAgencyUseCases } from "@/content/white-label-shopify-development";
 
@@ -25,26 +25,14 @@ export function HowAgenciesUseSection({
   content = whiteLabelShopifyAgencyUseCases,
 }: HowAgenciesUseSectionProps) {
   return (
-    <section className="how_agencies_use_dynamic_dreamz_section bg-[#faf9f5] py-20 max-[991px]:py-[50px]">
+    <section className="how_agencies_use_dynamic_dreamz_section py-20 max-[991px]:py-[50px]">
       <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title mb-10 max-[991px]:mb-[30px]"
-        >
-          {content.eyebrow ? (
-            <Eyebrow className="mb-4">{content.eyebrow}</Eyebrow>
-          ) : null}
-          <div className="flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col">
-            <h2 className="w-full max-w-[580px] font-montreal-medium text-[35px] font-normal leading-[1.3] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl">
-              {content.heading}
-            </h2>
-            {content.description ? (
-              <p className="w-full max-w-[540px] font-sans text-base font-medium leading-7 text-[#535353]">
-                {content.description}
-              </p>
-            ) : null}
-          </div>
-        </div>
+        <SplitSectionHeading
+          variant="services"
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          description={content.description}
+        />
 
         <div
           data-aos="fade-up"
@@ -56,7 +44,7 @@ export function HowAgenciesUseSection({
               key={card.tag}
             >
               <div>
-                <span className="mb-5 block font-montserrat text-sm font-bold uppercase tracking-wider text-[#AD5151] max-[1399px]:text-xs">
+                <span className="mb-5 block font-montserrat text-sm font-bold uppercase text-[#AD5151] max-[1399px]:text-xs">
                   {card.tag}
                 </span>
                 <h3 className="mb-2.5 font-display text-[22px] font-medium leading-[1.35] text-[#282828] max-[1399px]:text-lg max-[991px]:text-base">

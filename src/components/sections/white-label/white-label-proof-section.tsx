@@ -1,10 +1,10 @@
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import {
   whiteLabelShopifyReasons,
   whiteLabelShopifySectionCopy,
 } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
-import { formatBrText } from "@/lib/text-formatting";
 import type { WhiteLabelCard, WhiteLabelStat } from "@/types/white-label-service";
 
 type WhiteLabelStatsSectionProps = {
@@ -79,7 +79,8 @@ export function WhiteLabelWhySection({
   const isPistaBg = Boolean(
     eyebrow?.toLowerCase().includes("process") ||
     eyebrow?.toLowerCase().includes("partnership") ||
-    eyebrow?.toLowerCase().includes("onboarding")
+    eyebrow?.toLowerCase().includes("onboarding") ||
+    !eyebrow
   );
 
   return (
@@ -90,16 +91,12 @@ export function WhiteLabelWhySection({
       )}
     >
       <Container>
-        <div data-aos="fade-up" className="title-wrapper text-center">
-          {eyebrow ? (
-            <div className="mb-2.5 text-center text-[13px] font-bold uppercase tracking-[1.5px] text-[#e33d37]">
-              <span>{eyebrow}</span>
-            </div>
-          ) : null}
-          <h2 className="mb-5 text-center font-display text-[35px] leading-[48.475px] font-medium tracking-[-0.7px] text-ink max-[1199px]:mb-[60px] max-[992px]:mb-10 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]">
-            {formatBrText(title, "max-[1199px]:hidden")}
-          </h2>
-        </div>
+        <SplitSectionHeading
+          variant="centered"
+          eyebrow={eyebrow}
+          heading={title || ""}
+          className="mb-5 max-[1199px]:mb-[60px] max-[992px]:mb-10 max-[767px]:mb-[30px]"
+        />
         <div data-aos="fade-up" className="grid grid-cols-3 max-[767px]:grid-cols-1 max-[767px]:gap-5">
           {reasons.map((reason, index) => {
             const isEmpty = reason === null;
@@ -131,10 +128,10 @@ export function WhiteLabelWhySection({
               >
                 {reason ? (
                   <>
-                    <h3 className="mb-3.5 font-display text-lg leading-[1.28] font-medium text-brand-red max-[992px]:mb-2.5">
+                    <h3 className="mb-3.5 text-lg leading-[1.28] font-bold text-[#ad5151] max-[992px]:mb-2.5">
                       {reason.title}
                     </h3>
-                    <p className="font-sans text-base leading-[30.4px] font-medium text-muted max-[1199px]:leading-[26px] max-[992px]:text-[15px] max-[992px]:leading-[22px]">
+                    <p className="font-sans text-sm leading-[24px] font-medium text-muted max-[1199px]:leading-[26px] max-[992px]:text-[15px] max-[992px]:leading-[22px]">
                       {reason.description}
                     </p>
                   </>

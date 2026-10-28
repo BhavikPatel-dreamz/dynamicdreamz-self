@@ -29,7 +29,7 @@ export function DesignReasonsAccordion({ items }: DesignReasonsAccordionProps) {
               aria-expanded={isOpen}
               onClick={() => setOpenIndex(isOpen ? null : index)}
             >
-              <span className="flex-1 pr-2.5 text-lg leading-[1.28] font-bold text-brand-red max-[767px]:text-base">
+              <span className="flex-1 pr-2.5 text-lg leading-[1.28] font-semibold text-brand-red max-[767px]:text-base">
                 {item.title}
               </span>
               <span className="relative flex size-8 shrink-0 items-center justify-center rounded-lg bg-dark-green/5" aria-hidden="true">

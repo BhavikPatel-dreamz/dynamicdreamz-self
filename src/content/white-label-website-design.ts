@@ -191,7 +191,7 @@ export const whiteLabelWebsiteDesignAiEnginesContent: ShopifyStageServicesConten
       title: "Smarter customer support",
       description:
         "Embed AI chat and support tools that reduce ticket volume and keep visitors engaged on-site.",
-      pills: ["Tidio", "Tidio"],
+      pills: ["Tidio"],
     },
     {
       title: "Workflow automation",
