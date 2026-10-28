@@ -103,8 +103,8 @@ export function ThemeCustomizationServicesSection({
                   )}
                 </div>
               ) : box.number ? (
-                <div className="number">
-                  <span className="mb-5 flex size-[34px] items-center justify-center rounded-full bg-[#fbefd7] font-montserrat text-[10px] font-bold text-brand-red max-[991px]:mb-3 max-[992px]:mb-3">
+                <div className="number mb-[15px]">
+                  <span className="font-montserrat font-medium text-brand-red">
                     {box.number}
                   </span>
                 </div>
@@ -127,8 +127,8 @@ export function ThemeCustomizationServicesSection({
         </div>
 
         {/* Live template always renders `.bottom-text` (margin-top: 20px), even when empty. */}
-        <div className="bottom-text mt-5 font-sans text-sm font-medium text-[#535353] [&:has(.btn)]:text-center [&:has(a)]:text-center" data-aos="fade-up">
-          {content.bottomNote ? <p>{formatBrText(content.bottomNote)}</p> : null}
+        <div className="bottom-text mt-5 font-sans text-[#535353] [&:has(.btn)]:text-center [&:has(a)]:text-center" data-aos="fade-up">
+          {content.bottomNote ? <p className="font-medium">{formatBrText(content.bottomNote)}</p> : null}
         </div>
       </Container>
     </section>
