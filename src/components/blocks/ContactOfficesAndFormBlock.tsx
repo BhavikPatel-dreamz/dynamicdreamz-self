@@ -4,6 +4,7 @@ import { useActionState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { PhoneInputClient } from "@/components/ui/PhoneInputClient";
 import { CmsFormClient } from "@/components/forms/CmsFormClient";
 import { contactPageContent } from "@/content/contact";
@@ -406,32 +407,14 @@ export function ContactOfficesSection({
       aria-labelledby="offices-title"
     >
       <Container>
-        <div
-          data-aos="fade-up"
-          className="mb-10 flex flex-wrap items-end justify-between max-[991px]:text-center"
-        >
-          <div className="w-full md:w-[48%]">
-            {eyebrow && (
-              <div className="mb-2 flex items-center gap-2 max-[991px]:justify-center">
-                <span className="h-[2px] w-6 bg-brand-red" />
-                <span className="text-xs font-bold tracking-widest text-[#535353] uppercase">
-                  {eyebrow}
-                </span>
-              </div>
-            )}
-            <h2
-              id="offices-title"
-              className="font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-8"
-            >
-              {title}
-            </h2>
-          </div>
-          <div className="w-full md:w-[48%] md:text-right max-[991px]:mt-3">
-            <p className="text-base leading-7 font-medium text-muted max-[767px]:text-sm max-[767px]:leading-6">
-              {description}
-            </p>
-          </div>
-        </div>
+        <SplitSectionHeading
+          description={description}
+          eyebrow={eyebrow}
+          heading={title}
+          headingId="offices-title"
+          textColumnClassName="w-full md:w-[48%] md:text-right max-[991px]:mt-3"
+          titleColumnClassName="w-full md:w-[48%]"
+        />
         <div className="grid grid-cols-2 gap-[30px] max-[991px]:gap-5 max-[767px]:grid-cols-1">
           {activeOffices.map((office) => (
             <article

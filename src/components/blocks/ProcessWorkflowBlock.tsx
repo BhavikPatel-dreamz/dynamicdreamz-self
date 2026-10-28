@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
-import { formatBrText } from "@/lib/text-formatting";
 
 export type ProcessStepItem = {
   step: string;
@@ -64,30 +64,14 @@ export function ProcessWorkflowBlock({
       className={cn("our-development-process py-20 max-[991px]:py-[50px]", bg, className)}
     >
       <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title_with_eyebrow mb-10 flex flex-wrap items-start justify-between gap-6 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-4"
-        >
-          <div className="title max-w-[620px]">
-            {resolvedEyebrow && (
-              <div className="eyebrow mb-4">
-                <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
-                  {resolvedEyebrow}
-                </span>
-              </div>
-            )}
-            <h2 className="font-montreal-medium text-[35px] font-normal leading-[1.4] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-              {formatBrText(resolvedHeading)}
-            </h2>
-          </div>
-          {resolvedDesc && (
-            <div className="section_text max-w-[560px]">
-              <p className="font-sans text-base font-medium leading-[27px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
-                {formatBrText(resolvedDesc)}
-              </p>
-            </div>
-          )}
-        </div>
+        <SplitSectionHeading
+          description={resolvedDesc}
+          eyebrow={resolvedEyebrow}
+          heading={resolvedHeading}
+          textColumnClassName="max-w-[560px]"
+          titleColumnClassName="max-w-[620px]"
+          variant="left"
+        />
 
         <div data-aos="fade-up" className="wrapper flex flex-wrap">
           {resolvedSteps.map((item: any, idx: number) => {
@@ -165,30 +149,13 @@ export function ShopifyHorizontalProcessSection({
       className={cn("shopify-development-process bg-white py-20 max-[991px]:py-[50px] max-[767px]:py-10", className)}
     >
       <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title_with_eyebrow mb-12 flex flex-wrap items-start justify-between gap-6 max-[991px]:mb-8 max-[991px]:flex-col max-[991px]:gap-4"
-        >
-          <div className="title w-[44%] max-[991px]:w-full">
-            {resolvedEyebrow && (
-              <div className="eyebrow mb-3">
-                <span className="relative pl-10 font-montserrat text-sm font-semibold uppercase text-[#535353] before:absolute before:left-0 before:top-2.5 before:h-0.5 before:w-7 before:bg-brand-red before:content-['']">
-                  {resolvedEyebrow}
-                </span>
-              </div>
-            )}
-            <h2 className="font-montreal-medium text-[35px] font-normal leading-[1.4] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-              {formatBrText(resolvedHeading)}
-            </h2>
-          </div>
-          {resolvedDesc && (
-            <div className="section_text w-[48%] max-[991px]:w-full">
-              <p className="font-sans text-base font-medium leading-[27px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
-                {formatBrText(resolvedDesc)}
-              </p>
-            </div>
-          )}
-        </div>
+        <SplitSectionHeading
+          className="mb-12 max-[991px]:mb-8"
+          description={resolvedDesc}
+          eyebrow={resolvedEyebrow}
+          heading={resolvedHeading}
+          variant="left"
+        />
 
         <div data-aos="fade-up" className="wrapper flex flex-wrap max-[991px]:row-gap-[30px]">
           {resolvedSteps.map((item: any, idx: number) => {

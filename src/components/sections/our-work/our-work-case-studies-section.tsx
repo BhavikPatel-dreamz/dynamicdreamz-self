@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { ourWorkCaseStudies, ourWorkPage } from "@/content/our-work";
 
 export type OurWorkCaseStudiesSectionProps = {
@@ -22,27 +22,15 @@ export function OurWorkCaseStudiesSection({
       aria-labelledby="our-work-case-studies-title"
     >
       <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-[30px] max-[767px]:flex-col max-[767px]:items-start max-[767px]:gap-4"
-        >
-          <div className="title w-[44%] max-[1399px]:w-[35%] max-[1199px]:w-[36%] max-[992px]:w-full">
-            <Eyebrow className="mb-4" tone="muted">
-              {eyebrow}
-            </Eyebrow>
-            <h2
-              className="m-0 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1199px]:text-[28px] max-[992px]:mb-2.5 max-[767px]:text-2xl"
-              id="our-work-case-studies-title"
-            >
-              {title}
-            </h2>
-          </div>
-          <div className="text w-[49%] max-[1399px]:w-[56%] max-[1199px]:w-[51%] max-[992px]:w-full">
-            <p className="m-0 font-sans text-base font-medium leading-[30.4px] text-[#535353] max-[992px]:text-sm max-[992px]:leading-[26px]">
-              {description}
-            </p>
-          </div>
-        </div>
+        <SplitSectionHeading
+          description={description}
+          eyebrow={eyebrow}
+          heading={title}
+          headingId="our-work-case-studies-title"
+          titleColumnClassName="w-[44%] max-[1399px]:w-[35%] max-[1199px]:w-[36%] max-[992px]:w-full"
+          textColumnClassName="w-[49%] max-[1399px]:w-[56%] max-[1199px]:w-[51%] max-[992px]:w-full"
+          variant="left"
+        />
 
         <div className="cs-listing-main three-col flex flex-wrap justify-between gap-y-5">
           {ourWorkCaseStudies.map((item) => (

@@ -5,6 +5,7 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
@@ -113,30 +114,14 @@ export function ServiceOfferingsGridBlock({
         id={id}
       >
         <Container>
-          <div
-            data-aos="fade-up"
-            className="mb-0 flex flex-wrap items-start justify-between gap-10 max-[992px]:gap-2.5"
-          >
-            <div className="title max-w-[580px]">
-              {resolvedEyebrow && (
-                <div className="eyebrow mb-3">
-                  <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
-                    {resolvedEyebrow}
-                  </span>
-                </div>
-              )}
-              <h2 className="font-montreal-medium text-[35px] font-normal leading-[1.3] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
-                {formatBrText(resolvedHeading, preserveBreaks ? undefined : "max-[1199px]:hidden")}
-              </h2>
-            </div>
-            {showDescription && resolvedDescription && (
-              <div className="description max-w-[520px]">
-                <p className="font-sans text-base font-medium leading-[27px] text-[#535353] max-[767px]:text-sm">
-                  {formatBrText(resolvedDescription, preserveBreaks ? undefined : "max-[1199px]:hidden")}
-                </p>
-              </div>
-            )}
-          </div>
+          <SplitSectionHeading
+            className="mb-0"
+            description={showDescription ? resolvedDescription : undefined}
+            eyebrow={resolvedEyebrow}
+            heading={resolvedHeading}
+            preserveBreaks={preserveBreaks}
+            variant="services"
+          />
 
           <div className="services-provide-main mt-[50px] max-[991px]:mt-[30px]">
             <div className={cn("wrapper grid gap-4 max-[991px]:block", colGridClass)}>

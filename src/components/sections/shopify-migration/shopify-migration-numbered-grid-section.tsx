@@ -1,7 +1,6 @@
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
-import { formatBrText } from "@/lib/text-formatting";
 import type { NumberedGridItem } from "@/content/shopify-migration";
 
 export type { NumberedGridItem };
@@ -35,27 +34,12 @@ export function ShopifyMigrationNumberedGridSection({
     >
       <Container>
         {(eyebrow || heading || description) && (
-          <div data-aos="fade-up" className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-[30px]">
-            <div className="title w-[44%] text-[14px] leading-6 max-[991px]:w-full">
-              {eyebrow && (
-                // Live `.eyebrow` is `display: inline-flex`, preserving the
-                // inline baseline gap; live margin-bottom is 16px.
-                <Eyebrow as="span" className="mb-4" lineThickness="thin">
-                  {eyebrow}
-                </Eyebrow>
-              )}
-              <h2 className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[991px]:mb-2.5 max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-                {formatBrText(heading, "max-[767px]:hidden")}
-              </h2>
-            </div>
-            {description && (
-              <div className="section_text w-[48.3%] max-[1199px]:w-1/2 max-[991px]:w-full">
-                <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">
-                  {formatBrText(description)}
-                </p>
-              </div>
-            )}
-          </div>
+          <SplitSectionHeading
+            description={description}
+            eyebrow={eyebrow}
+            heading={heading}
+            variant="left"
+          />
         )}
 
         {/* Live keeps three equal columns down to 767px, then stacks. */}

@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import {
   whiteLabelShopifySectionCopy,
@@ -139,51 +140,15 @@ export function WhiteLabelSolutionsBlock(props: WhiteLabelSolutionsBlockProps = 
   return (
     <section className={cn("bg-[#192019] py-20 max-[991px]:py-[50px]", className)}>
       <Container>
-        {eyebrow ? (
-          <div
-            data-aos="fade-up"
-            className="section_title_with_eyebrow mb-10 flex flex-wrap items-start justify-between gap-6 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-4"
-          >
-            <div className="title max-w-[620px]">
-              <div className="eyebrow mb-4">
-                <span className="font-montserrat text-sm font-semibold uppercase text-white">
-                  {eyebrow}
-                </span>
-              </div>
-              <h2 className="font-montreal-medium text-[35px] font-normal leading-[48px] tracking-normal text-white max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-                {title}
-              </h2>
-            </div>
-            {description ? (
-              <div className="section_text max-w-[560px]">
-                <p className="text-base font-medium leading-[27px] text-white/80 max-[767px]:text-sm max-[767px]:leading-6">
-                  {description}
-                </p>
-              </div>
-            ) : null}
-          </div>
-        ) : (
-          <>
-            <h2
-              data-aos="fade-up"
-              className={
-                description
-                  ? "mb-5 text-center font-display text-[35px] font-medium leading-[48px] text-white max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]"
-                  : "mb-16 text-center font-display text-[35px] font-medium leading-[48px] text-white max-[1199px]:mb-[50px] max-[992px]:mb-10 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-[30px] max-[767px]:text-2xl max-[767px]:leading-[33px]"
-              }
-            >
-              {title}
-            </h2>
-            {description ? (
-              <p
-                data-aos="fade-up"
-                className="mx-auto mb-16 max-w-[605px] text-center font-sans text-base font-medium leading-[30px] text-white/80 max-[1199px]:mb-[50px] max-[992px]:mb-10 max-[992px]:text-[15px] max-[992px]:leading-[26px] max-[767px]:mb-[30px]"
-              >
-                {description}
-              </p>
-            ) : null}
-          </>
-        )}
+        <SplitSectionHeading
+          dark
+          description={description}
+          eyebrow={eyebrow}
+          heading={title || ""}
+          textColumnClassName="max-w-[560px]"
+          titleColumnClassName="max-w-[620px]"
+          variant={eyebrow ? "left" : "centered"}
+        />
 
         <WhiteLabelServiceAccordion flushEnd={!showCta} idPrefix={idPrefix} services={services} />
 

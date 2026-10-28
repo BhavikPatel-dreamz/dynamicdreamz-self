@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { VideoModalClient } from "@/components/ui/VideoModalClient";
 import { aboutSectionCopy, aboutStory, coreValues } from "@/content/about";
 
@@ -72,18 +73,11 @@ export function MissionVisionValuesBlock({
   return (
     <section className="theme-customization-services transparent bg-transparent py-20 max-[992px]:py-[50px]">
       <Container>
-        <div data-aos="fade-up" className="mb-10 flex items-end justify-between gap-10 max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-2.5">
-          <div className="shrink-0 max-w-[500px]">
-            <h2 className="text-[35px] leading-[1.38] font-medium text-ink max-[992px]:text-[30px] max-[767px]:text-2xl">
-              {title}
-            </h2>
-          </div>
-          {description && (
-            <p className="max-w-[600px] text-base leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[26px]">
-              {description}
-            </p>
-          )}
-        </div>
+        <SplitSectionHeading
+          description={description}
+          heading={title}
+          variant="left"
+        />
 
         <div className="wrapper grid grid-cols-3 gap-4 max-[1199px]:grid-cols-2 max-[767px]:flex max-[767px]:flex-col">
           {activeValues.map((value) => (

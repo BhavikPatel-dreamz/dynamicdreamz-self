@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import marqueeStyles from "./ClientLogoMarqueeBlock.module.css";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import dynamic from "next/dynamic";
 import type {
   ClientLogoSliderItem,
@@ -92,33 +93,16 @@ export function ClientLogoMarqueeBlock({
         )}
       >
         <Container>
-          <div
-            data-aos="fade-up"
+          <SplitSectionHeading
             className={cn(
-              "flex items-end justify-between max-[992px]:flex-col max-[992px]:items-start",
               isShopifyHours
-                ? "section_title_with_eyebrow mb-10 max-[767px]:mb-[30px]"
-                : "mb-[50px] min-[768px]:max-[992px]:mb-[30px] max-[767px]:mb-[55px] max-[767px]:text-center",
+                ? "mb-10 max-[767px]:mb-[30px]"
+                : "mb-[50px] min-[768px]:max-[992px]:mb-[30px] max-[767px]:mb-[55px]",
             )}
-          >
-            <div className="title w-full lg:w-[44%]">
-              <h2
-                className={cn(
-                  "m-0 font-montreal-medium text-[35px] font-normal leading-[1.2] text-ink",
-                  isShopifyHours
-                    ? "font-montreal-medium text-[35px] font-normal leading-[1.4] tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]"
-                    : "max-[1199px]:text-[35px] max-[1199px]:leading-[48px] max-[992px]:mb-2.5 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[33px]",
-                )}
-              >
-                {h}
-              </h2>
-            </div>
-            <div className={cn("description w-full lg:w-[48.3%]", isShopifyHours && "section_text")}>
-              <p className="m-0 font-sans text-base font-medium leading-[27px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
-                {d}
-              </p>
-            </div>
-          </div>
+            description={d}
+            heading={h}
+            variant="left"
+          />
 
           {/* Desktop/tablet 5-column logo grid */}
           <div

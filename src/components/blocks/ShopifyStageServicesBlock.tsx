@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
 
-import { Container, Eyebrow } from "@/components/ui/container";
+import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
-import { formatBrText } from "@/lib/text-formatting";
 import type { ShopifyStageServicesContent, StageServiceItem } from "@/types/blocks";
 
 export type ShopifyStageServicesSectionProps = {
@@ -49,28 +49,13 @@ export function ShopifyStageServicesBlock({
       id={id}
     >
       <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title_with_eyebrow mb-[50px] flex flex-wrap items-end justify-between gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
-        >
-          <div className="title w-[44%] max-[992px]:w-full">
-            {finalEyebrow ? (
-              <Eyebrow as="span" className="mb-4">
-                {finalEyebrow}
-              </Eyebrow>
-            ) : null}
-            <h2 className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
-              {formatBrText(finalHeading)}
-            </h2>
-          </div>
-          {finalDescription ? (
-            <div className="w-[48.3%] max-[1199px]:w-1/2 max-[992px]:w-full">
-              <p className="font-sans text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
-                {formatBrText(finalDescription)}
-              </p>
-            </div>
-          ) : null}
-        </div>
+        <SplitSectionHeading
+          className="mb-[50px]"
+          description={finalDescription}
+          eyebrow={finalEyebrow}
+          heading={finalHeading}
+          variant="left"
+        />
 
         <div className="wrapper grid grid-cols-[1.2fr_0.8fr_0.8fr] auto-rows-[minmax(210px,auto)] gap-[15px] max-[1199px]:grid-cols-2 max-[767px]:flex max-[767px]:flex-col">
           {finalItems.map((item, index) => {

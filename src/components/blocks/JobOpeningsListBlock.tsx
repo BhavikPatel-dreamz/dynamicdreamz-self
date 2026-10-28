@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import {
   careerApplicationPath,
   careerJobs,
@@ -181,26 +182,13 @@ export function JobOpeningsListBlock({
       id="current-opportunities"
     >
       <Container>
-        <div data-aos="fade-up" className="mb-10 flex items-end justify-between gap-10 max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-2.5">
-          <div className="shrink-0 max-w-[500px]">
-            {eyebrow && (
-              <div className="mb-4 flex items-center gap-2">
-                <span className="h-[2px] w-6 bg-brand-red" />
-                <span className="text-xs font-bold tracking-widest text-[#535353] uppercase">
-                  {eyebrow}
-                </span>
-              </div>
-            )}
-            <h2 id="career-opportunities-title" className="font-montreal-medium text-[35px] leading-[1.38] font-normal text-ink max-[992px]:text-[30px] max-[767px]:text-2xl">
-              {title}
-            </h2>
-          </div>
-          {description && (
-            <p className="max-w-[600px] text-base leading-[30.4px] font-medium text-muted max-[767px]:text-sm max-[767px]:leading-[26px]">
-              {description}
-            </p>
-          )}
-        </div>
+        <SplitSectionHeading
+          description={description}
+          eyebrow={eyebrow}
+          heading={title}
+          headingId="career-opportunities-title"
+          variant="left"
+        />
 
         <div className="current-openings-wrap mt-10 max-[767px]:mt-6">
           <div

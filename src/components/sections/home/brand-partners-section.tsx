@@ -4,8 +4,7 @@ import React from "react";
 import { ClientLogo } from "@/components/sections/home/client-logo";
 import styles from "@/components/sections/home/brand-partners-section.module.css";
 import { Container } from "@/components/ui/container";
-import { SectionDescription } from "@/components/ui/section-description";
-import { SectionHeading } from "@/components/ui/section-heading";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import {
   clientLogos,
   homeSectionCopy,
@@ -47,31 +46,16 @@ export function BrandPartnersSection({
       )}
     >
       <Container>
-        <div
-          data-aos="fade-up"
+        <SplitSectionHeading
           className={cn(
-            "flex items-end justify-between max-[992px]:flex-col max-[992px]:items-start",
             isShopifyHours
-              ? "section_title_with_eyebrow mb-10 max-[767px]:mb-[30px]"
-              : "mb-[50px] min-[768px]:max-[992px]:mb-[30px] max-[767px]:mb-[55px] max-[767px]:text-center",
+              ? "mb-10 max-[767px]:mb-[30px]"
+              : "mb-[50px] min-[768px]:max-[992px]:mb-[30px] max-[767px]:mb-[55px]",
           )}
-        >
-          <div className="title lg:w-[44%] w-full">
-            <SectionHeading
-              className={cn(
-                !isShopifyHours && "min-[768px]:max-[992px]:mb-2.5 min-[768px]:max-[992px]:w-full max-[767px]:mb-2.5",
-              )}
-            >
-              {heading}
-            </SectionHeading>
-          </div>
-          <SectionDescription
-            className={cn("lg:w-[48.3%] w-full", isShopifyHours && "section_text")}
-            textClassName="text-left"
-          >
-            {description}
-          </SectionDescription>
-        </div>
+          description={description}
+          heading={heading}
+          variant="left"
+        />
         <div
           data-aos="fade-up"
           className={cn(

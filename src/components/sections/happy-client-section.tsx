@@ -1,12 +1,10 @@
 import type { HappyClientTestimonialItem } from "@/components/sections/happy-client-card";
 import { HappyClientCarousel } from "@/components/sections/happy-client-carousel";
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import { shopifyPlusAgencyTestimonials } from "@/content/shopify-plus-agency";
 import { cn } from "@/lib/class-names";
-
-import { formatBrText } from "@/lib/text-formatting";
 
 export type { HappyClientTestimonialItem };
 
@@ -48,19 +46,12 @@ export function HappyClientSection({
       id="client-testimonials"
     >
       <Container>
-        <div className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:items-start max-[991px]:gap-3" data-aos="fade-up">
-          <div className="title w-[44%] max-[991px]:w-full">
-            {eyebrow ? <Eyebrow className="mb-4">{eyebrow}</Eyebrow> : null}
-            <h2 className="font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-              {formatBrText(heading)}
-            </h2>
-          </div>
-          <div className="section_text w-[48.3%] max-[991px]:w-full">
-            <p className="happy-client-desc text-base font-medium leading-7 text-[#535353] max-[992px]:text-sm max-[992px]:leading-6">
-              {formatBrText(description)}
-            </p>
-          </div>
-        </div>
+        <SplitSectionHeading
+          description={description}
+          eyebrow={eyebrow}
+          heading={heading}
+          variant="left"
+        />
         <div data-aos="fade-up">
           <HappyClientCarousel
             ariaLabel={carouselAriaLabel}

@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import styles from "@/components/blocks/TechStackShowcaseBlock.module.css";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { whiteLabelShopifySectionCopy, whiteLabelShopifyToolRows } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
@@ -50,30 +51,12 @@ export function TechStackShowcaseBlock(props: TechStackShowcaseBlockProps = {}) 
       id={id}
     >
       <Container>
-        <div
-          data-aos="fade-up"
-          className="mb-10 flex flex-wrap items-start justify-between gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
-        >
-          <div className="w-[44%] max-[992px]:w-full">
-            {content.eyebrow && (
-              <div className="eyebrow mb-3">
-                <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
-                  {content.eyebrow}
-                </span>
-              </div>
-            )}
-            <h2 className="font-montreal-medium text-[35px] font-normal leading-[1.3] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
-              {formatBrText(content.heading)}
-            </h2>
-          </div>
-          {content.description && (
-            <div className="w-[48%] max-[992px]:w-full">
-              <p className="font-sans text-base font-medium leading-[28px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
-                {formatBrText(content.description)}
-              </p>
-            </div>
-          )}
-        </div>
+        <SplitSectionHeading
+          description={content.description}
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          variant="left"
+        />
 
         <div data-aos="fade-up" className="technologies-wrapper -mx-[7.5px] -mb-[15px] flex flex-wrap">
           {(content.categories || []).map((col: any) => (

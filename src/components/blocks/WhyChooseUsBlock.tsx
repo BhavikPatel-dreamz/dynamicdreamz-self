@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Button, ButtonLink } from "@/components/ui/Button";
 import { Container, Eyebrow } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyCroAssessment, shopifyCroWhyDynamicDreamz } from "@/content/shopify-cro-agency";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
@@ -66,28 +67,13 @@ export function WhyChooseUsBlock({
         id={id}
       >
         <Container>
-          <div
-            data-aos="fade-up"
-            className="mb-[50px] flex flex-wrap items-start justify-between gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
-          >
-            <div className="w-[44%] max-[992px]:w-full">
-              {content.eyebrow && (
-                <Eyebrow as="span" className="mb-4">
-                  {content.eyebrow}
-                </Eyebrow>
-              )}
-              <h2 className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
-                {formatBrText(content.heading)}
-              </h2>
-            </div>
-            {content.description && (
-              <div className="w-[48%] max-[992px]:w-full">
-                <p className="font-sans text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
-                  {formatBrText(content.description)}
-                </p>
-              </div>
-            )}
-          </div>
+          <SplitSectionHeading
+            className="mb-[50px]"
+            description={content.description}
+            eyebrow={content.eyebrow}
+            heading={content.heading}
+            variant="left"
+          />
 
           <div
             className="spa-wrapper flex flex-wrap border-t border-l border-[#2828281c]"

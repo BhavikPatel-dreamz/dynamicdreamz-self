@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import { shopifyPlusAgencyIndustries } from "@/content/shopify-plus-agency";
 import { cn } from "@/lib/class-names";
-import { formatBrText } from "@/lib/text-formatting";
 
 export type IndustryVerticalItem = {
   image: string;
@@ -50,30 +50,13 @@ export function IndustryVerticalsGridBlock({
       id="industries-served"
     >
       <Container>
-        <div
-          data-aos="fade-up"
-          className="mb-[50px] flex flex-wrap items-start justify-between gap-10 max-[992px]:mb-[30px] max-[992px]:gap-2.5"
-        >
-          <div className="w-[44%] max-[992px]:w-full">
-            {content.eyebrow && (
-              <div className="eyebrow mb-3">
-                <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
-                  {content.eyebrow}
-                </span>
-              </div>
-            )}
-            <h2 className="font-montreal-medium text-[35px] font-normal leading-[1.3] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
-              {formatBrText(content.heading)}
-            </h2>
-          </div>
-          {content.description && (
-            <div className="w-[48%] max-[992px]:w-full">
-              <p className="font-sans text-base font-medium leading-[28px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
-                {formatBrText(content.description)}
-              </p>
-            </div>
-          )}
-        </div>
+        <SplitSectionHeading
+          className="mb-[50px]"
+          description={content.description}
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          variant="left"
+        />
 
         {variant === "grid" ? (
           <div

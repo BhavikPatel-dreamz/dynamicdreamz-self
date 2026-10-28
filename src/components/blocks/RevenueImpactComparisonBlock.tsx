@@ -1,9 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyCroRevenueImpact } from "@/content/shopify-cro-agency";
-import { cn } from "@/lib/class-names";
-import { formatBrText } from "@/lib/text-formatting";
 
 export type ShopifyCroMetric = {
   label: string;
@@ -46,28 +45,14 @@ export function RevenueImpactComparisonBlock({
   return (
     <section className={className}>
       <Container>
-        <div
-          data-aos="fade-up"
-          className="mb-[66px] flex flex-wrap items-start justify-between gap-10 max-[991px]:mb-10 max-[991px]:flex-col max-[991px]:gap-3"
-        >
-          <div className="w-[44%] max-[991px]:w-full">
-            {content.eyebrow && (
-              <div className="eyebrow mb-3">
-                <span className="font-montserrat text-sm font-semibold uppercase text-white">
-                  {content.eyebrow}
-                </span>
-              </div>
-            )}
-            <h2 className="font-montreal-medium text-[35px] font-normal leading-[1.3] text-white max-[1199px]:text-[30px] max-[767px]:text-2xl">
-              {formatBrText(content.heading)}
-            </h2>
-          </div>
-          <div className="w-[48%] max-[991px]:w-full">
-            <p className="font-sans text-base font-medium leading-[28px] text-white/80 max-[767px]:text-sm max-[767px]:leading-6">
-              {formatBrText(content.description)}
-            </p>
-          </div>
-        </div>
+        <SplitSectionHeading
+          className="mb-[66px]"
+          dark
+          description={content.description}
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          variant="left"
+        />
 
         <div
           data-aos="fade-up"

@@ -1,8 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { DeferredAutoplayVideo } from "@/components/ui/deferred-autoplay-video";
-import { Eyebrow } from "@/components/ui/eyebrow";
-import { SectionDescription } from "@/components/ui/section-description";
-import { SectionHeading } from "@/components/ui/section-heading";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyPlusAgencyContent } from "@/content/home";
 
 const counterToneClasses = {
@@ -49,22 +47,15 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
   return (
     <section className="bg-[#fbeed5] py-[43px] max-[992px]:py-[30px]" aria-labelledby="shopify-plus-agency-title">
       <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between gap-8 max-[1199px]:mb-5 max-[992px]:gap-0"
-        >
-          <div className="title w-[42%] max-[1199px]:w-full max-[1199px]:mb-2.5">
-            <Eyebrow as="span" className="mb-4">
-              {eyebrow}
-            </Eyebrow>
-            <SectionHeading id="shopify-plus-agency-title" className="m-0">
-              {title}
-            </SectionHeading>
-          </div>
-          <SectionDescription>
-            {intro}
-          </SectionDescription>
-        </div>
+        <SplitSectionHeading
+          className="gap-8 max-[1199px]:mb-5 max-[992px]:gap-0"
+          description={intro}
+          eyebrow={eyebrow}
+          heading={title}
+          headingId="shopify-plus-agency-title"
+          titleColumnClassName="w-[42%] max-[1199px]:w-full max-[1199px]:mb-2.5"
+          variant="left"
+        />
 
         <div className="flex flex-wrap justify-between gap-8 rounded-[30px] bg-[#fafaf7] p-8 max-[1199px]:rounded-[20px] max-[1199px]:p-6 max-[992px]:gap-0">
           <div data-aos="fade-up" className="w-[46.816%] max-[992px]:w-full">

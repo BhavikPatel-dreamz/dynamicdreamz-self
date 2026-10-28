@@ -7,7 +7,7 @@ import styles from "@/components/sections/home/selected-work-section.module.css"
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { DeferredAutoplayVideo } from "@/components/ui/deferred-autoplay-video";
-import { SectionHeading } from "@/components/ui/section-heading";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { homeSectionCopy, projects, type Project } from "@/content/home";
 import { cn } from "@/lib/class-names";
 
@@ -104,12 +104,14 @@ export function SelectedWorkSection({
   return (
     <section className="overflow-hidden bg-dark-green pt-[60px] pb-[52px] text-white max-[767px]:py-[30px]">
       <Container data-aos="fade-up">
-        <div className="flex items-end justify-between max-[992px]:flex-col max-[992px]:items-start [&_h2]:mr-5 [&_h2]:max-w-[600px] [&_h2]:min-[768px]:max-[992px]:m-0 [&_h2]:min-[768px]:max-[992px]:max-w-full [&_h2]:max-[767px]:m-0 [&_h2]:max-[767px]:mb-4 [&_h2]:max-[767px]:max-w-full [&_p]:max-w-[580px] [&_p]:min-[768px]:max-[992px]:mt-2.5 [&_p]:min-[768px]:max-[992px]:max-w-full [&_p]:max-[767px]:max-w-full">
-          <SectionHeading tone="inverse">{title}</SectionHeading>
-          <p className="text-base leading-7 font-medium text-white max-[767px]:text-sm max-[767px]:leading-[180%]">
-            {description}
-          </p>
-        </div>
+        <SplitSectionHeading
+          dark
+          description={description}
+          heading={title}
+          titleColumnClassName="mr-5 max-w-[600px] max-[992px]:m-0 max-[992px]:max-w-full"
+          textColumnClassName="max-w-[580px] max-[992px]:mt-2.5 max-[992px]:max-w-full"
+          variant="left"
+        />
       </Container>
       <div
         data-aos="fade-up"

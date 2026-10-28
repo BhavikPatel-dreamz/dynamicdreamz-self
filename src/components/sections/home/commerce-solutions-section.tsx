@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { Container } from "@/components/ui/container";
 import { FaqCircleCrossIcon } from "@/components/ui/faq-accordion";
-import { SectionHeading } from "@/components/ui/section-heading";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { commerceSolutions, homeSectionCopy } from "@/content/home-client";
 import { cn } from "@/lib/class-names";
 
@@ -45,15 +45,15 @@ export function CommerceSolutionsSection({
   return (
     <section className="py-[60px] max-[992px]:py-[50px] max-[767px]:py-10" aria-labelledby="commerce-solutions-title">
       <Container>
-        <div
-          data-aos="fade-up"
-          className="mb-[54px] flex items-end justify-between gap-10 max-[992px]:mb-8 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-0 [&_h2]:w-[40%] [&_h2]:max-[992px]:w-full [&_p]:w-[47%] [&_p]:max-[992px]:w-full [&_p]:max-[992px]:mt-2.5"
-        >
-          <SectionHeading id="commerce-solutions-title">{title}</SectionHeading>
-          <p className="text-base leading-[1.9] font-medium text-muted max-[767px]:text-sm">
-            {description}
-          </p>
-        </div>
+        <SplitSectionHeading
+          className="mb-[54px] max-[992px]:mb-8"
+          description={description}
+          heading={title}
+          headingId="commerce-solutions-title"
+          titleColumnClassName="w-[40%] max-[992px]:w-full"
+          textColumnClassName="w-[47%] max-[992px]:w-full max-[992px]:mt-2.5"
+          variant="left"
+        />
         <div className="grid grid-cols-2 items-start gap-3 max-[992px]:grid-cols-1" data-commerce-accordion>
           {columns.map((column, columnIndex) => (
             <div data-aos="fade-up" className="grid gap-3" key={columnIndex}>

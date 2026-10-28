@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
 
@@ -64,45 +64,14 @@ export function CityWhyChooseBoxesSection({
       )}
     >
       <Container>
-        <div
-          className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between max-[991px]:mb-[30px]"
-          data-aos="fade-up"
-        >
-          <div
-            className={cn(
-              "title",
-              content.description ? "w-[44%] max-[991px]:w-full" : "w-full max-w-[800px]",
-            )}
-          >
-            {content.eyebrow && (
-              <div className="eyebrow mb-4">
-                <Eyebrow as="span" tone={isDark ? "inverse" : "muted"}>
-                  {content.eyebrow}
-                </Eyebrow>
-              </div>
-            )}
-            <h2
-              className={cn(
-                "m-0 font-montreal-medium text-[35px] font-normal leading-[1.4] tracking-normal max-[991px]:mb-2.5 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[1.3]",
-                isDark ? "text-white" : "text-ink",
-              )}
-            >
-              {formatBrText(content.heading)}
-            </h2>
-          </div>
-          {content.description ? (
-            <div className="section_text w-[48.3%] max-[1199px]:w-1/2 max-[991px]:w-full">
-              <p
-                className={cn(
-                  "m-0 text-base font-medium leading-7 max-[1199px]:text-sm max-[1199px]:leading-6 [&_br]:hidden",
-                  isDark ? "text-white/80" : "text-[#535353]",
-                )}
-              >
-                {formatBrText(content.description)}
-              </p>
-            </div>
-          ) : null}
-        </div>
+        <SplitSectionHeading
+          dark={isDark}
+          description={content.description}
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          titleColumnClassName={!content.description ? "w-full max-w-[800px]" : undefined}
+          variant="left"
+        />
 
         <div
           className={cn(

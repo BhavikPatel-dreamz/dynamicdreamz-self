@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { resourcesSectionCopy, resourcesStats } from "@/content/resources";
 import { whiteLabelShopifyCounters } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
@@ -137,7 +138,6 @@ function ResourcesCounterGrid({ stats = resourcesStats }: { stats?: readonly Ani
 export function TrustStatsBarBlock({
   content = {},
   className,
-  eyebrowVariant = "dash",
 }: TrustStatsBarBlockProps = {}) {
   const safeContent = content || {};
   if (safeContent.stats && safeContent.stats.length > 0) {
@@ -179,38 +179,14 @@ export function TrustStatsBarBlock({
     <section className={cn("city-page-counter py-20 max-[991px]:py-[50px]", className)}>
       <Container>
         {(safeContent.heading || safeContent.description) && (
-          <div
-            data-aos="fade-up"
-            className="section_title_with_eyebrow mb-10 flex flex-wrap items-start justify-between gap-6 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-4"
-          >
-            <div className="title max-w-[620px]">
-              {safeContent.eyebrow && (
-                <div className="eyebrow mb-4">
-                  <span
-                    className={cn(
-                      "font-montserrat text-sm font-semibold uppercase text-[#535353]",
-                      eyebrowVariant === "dash" &&
-                        "relative pl-10 before:absolute before:left-0 before:top-2.5 before:h-0.5 before:w-7 before:bg-brand-red before:content-['']",
-                    )}
-                  >
-                    {safeContent.eyebrow}
-                  </span>
-                </div>
-              )}
-              {safeContent.heading && (
-                <h2 className="font-montreal-medium text-[35px] font-normal leading-[1.4] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-                  {safeContent.heading}
-                </h2>
-              )}
-            </div>
-            {safeContent.description && (
-              <div className="section_text max-w-[560px]">
-                <p className="text-base font-medium leading-[27px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
-                  {safeContent.description}
-                </p>
-              </div>
-            )}
-          </div>
+          <SplitSectionHeading
+            description={safeContent.description}
+            eyebrow={safeContent.eyebrow}
+            heading={safeContent.heading || ""}
+            textColumnClassName="max-w-[560px]"
+            titleColumnClassName="max-w-[620px]"
+            variant="left"
+          />
         )}
 
         <div data-aos="fade-up" className="wrapper flex flex-wrap">

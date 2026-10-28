@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
 
@@ -53,28 +53,12 @@ export function ThemeCustomizationServicesSection({
       id={id}
     >
       <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title_with_eyebrow mb-10 flex flex-wrap items-end justify-between gap-10 max-[991px]:mb-[30px] max-[992px]:mb-[30px] max-[991px]:flex-col max-[992px]:flex-col max-[991px]:items-start max-[992px]:items-start max-[991px]:gap-2.5 max-[992px]:gap-2.5"
-        >
-          <div className="title w-[44%] max-[991px]:w-full max-[992px]:w-full">
-            {content.eyebrow ? (
-              <Eyebrow as="span" className="mb-4">
-                {content.eyebrow}
-              </Eyebrow>
-            ) : null}
-            <h2 className="font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal text-ink max-[1199px]:text-[30px] max-[1199px]:leading-[42px] max-[991px]:mb-[10px] max-[992px]:mb-[10px] max-[767px]:text-2xl max-[768px]:text-2xl max-[767px]:leading-[31.2px] max-[768px]:leading-[31.2px]">
-              {formatBrText(content.heading)}
-            </h2>
-          </div>
-          {content.description ? (
-            <div className="section_text w-[48.3%] max-[1199px]:w-1/2 max-[991px]:w-full max-[992px]:w-full">
-              <p className="font-sans text-base font-medium leading-7 text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
-                {formatBrText(content.description)}
-              </p>
-            </div>
-          ) : null}
-        </div>
+        <SplitSectionHeading
+          description={content.description}
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          variant="left"
+        />
 
         <div className="wrapper grid grid-cols-3 gap-4 max-[1199px]:grid-cols-2 max-[767px]:flex max-[768px]:flex max-[767px]:flex-col max-[768px]:flex-col max-[767px]:gap-4 max-[768px]:gap-4">
           {content.boxes.map((box, idx) => (

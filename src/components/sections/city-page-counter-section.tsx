@@ -1,6 +1,6 @@
 
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
 
 export type CityPageCounterItem = {
@@ -34,26 +34,14 @@ export function CityPageCounterSection({
       )}
     >
       <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title_with_eyebrow mb-10 flex flex-wrap items-start justify-between gap-6 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-4"
-        >
-          <div className="title max-w-[620px]">
-            {content.eyebrow && (
-              <div className="eyebrow mb-4">
-                <Eyebrow>{content.eyebrow}</Eyebrow>
-              </div>
-            )}
-            <h2 className="font-montreal-medium text-[35px] font-normal leading-[1.4] tracking-normal text-ink max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-              {content.heading}
-            </h2>
-          </div>
-          <div className="section_text max-w-[560px]">
-            <p className="text-base font-medium leading-[27px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
-              {content.description}
-            </p>
-          </div>
-        </div>
+        <SplitSectionHeading
+          description={content.description}
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          textColumnClassName="max-w-[560px]"
+          titleColumnClassName="max-w-[620px]"
+          variant="left"
+        />
 
         <div data-aos="fade-up" className="wrapper flex flex-wrap">
           {content.items.map((item, idx) => (
