@@ -124,7 +124,7 @@ export function AiEmpoweredDeliverySection({
                 <div className="seo-checks mt-5 flex flex-wrap">
                   <div className="seo-col w-full">
                     <div className="code border-l-2 border-[#ad5151] bg-[rgba(173,81,81,0.07)] p-[7px_12px]">
-                      <p className="font-sans text-sm font-medium leading-relaxed text-[#282828]">
+                      <p className="font-sans text-sm font-medium leading-relaxed text-[#535353]">
                         {content.callout}
                       </p>
                     </div>

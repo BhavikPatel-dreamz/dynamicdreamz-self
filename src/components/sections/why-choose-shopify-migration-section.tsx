@@ -447,11 +447,11 @@ export function WhyChooseShopifyMigrationSection({
                 </div>
                 <div className="text">
                   {item.title ? (
-                    <h3 className="mb-[5px] font-montreal-medium text-lg font-medium leading-normal text-ink">
+                    <h3 className="mb-[5px] font-montreal-medium text-[20px] font-medium leading-normal text-ink">
                       {item.title}
                     </h3>
                   ) : null}
-                  <p className="whitespace-pre-line font-sans text-sm font-medium leading-6 text-[#535353]">
+                  <p className="whitespace-pre-line font-sans text-sm font-regular leading-6 text-[#535353]">
                     {item.description}
                   </p>
                 </div>
@@ -484,7 +484,7 @@ export function WhyChooseShopifyMigrationSection({
                 <h3 className="mb-2.5 font-display text-[30px] font-medium leading-[35px] text-ink max-[1199px]:text-[24px] max-[1199px]:leading-[28px] max-[767px]:text-[20px] max-[767px]:leading-[24px]">
                   {content.partnerHeading}
                 </h3>
-                <p className="font-sans text-sm font-medium leading-6 text-[#535353]">
+                <p className="font-sans text-sm font-regular leading-6 text-[#535353]">
                   {content.partnerDescription}
                 </p>
                 <div className="boxes-wrapper mt-9 grid grid-cols-4 gap-2 max-[1199px]:grid-cols-2 max-[991px]:mt-[30px]">
@@ -503,10 +503,10 @@ export function WhyChooseShopifyMigrationSection({
                         )}
                         key={stat.label}
                       >
-                        <span className="block font-montserrat text-[32px] font-semibold leading-tight text-ink max-[1399px]:text-[28px]">
+                        <span className="block font-display text-[32px] font-semibold leading-tight text-ink max-[1399px]:text-[28px]">
                           {stat.value}
                         </span>
-                        <p className="mt-1 font-sans text-xs font-medium uppercase leading-[150%] text-[#535353]">
+                        <p className="mt-1 font-sans text-xs font-regular uppercase leading-[150%] text-[#535353]">
                           {stat.label}
                         </p>
                       </div>

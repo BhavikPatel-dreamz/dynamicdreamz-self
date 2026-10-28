@@ -30,7 +30,7 @@ export function CertifiedServicesSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[50px] items-start"
+          className="mb-[50px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}

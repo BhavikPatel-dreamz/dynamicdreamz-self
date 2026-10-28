@@ -97,7 +97,7 @@ export function ThemeCustomizationApproachSection({
                   ) : (
                     <>
                       {item.badge && (
-                        <span className="mb-2.5 block font-montserrat text-xs font-medium uppercase tracking-[0.5px] text-[#ad5151]">
+                        <span className="mb-2.5 block font-montserrat text-sm font-medium uppercase tracking-[0.5px] text-[#ad5151]">
                           {item.badge}
                         </span>
                       )}
@@ -107,7 +107,7 @@ export function ThemeCustomizationApproachSection({
                         </h3>
                       )}
                       {item.description && (
-                        <p className="font-sans text-sm font-medium leading-[22px] text-[#535353]">
+                        <p className="font-sans text-sm font-regular leading-[22px] text-[#535353]">
                           {item.description}
                         </p>
                       )}

@@ -3,7 +3,7 @@ import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "reac
 
 import { cn } from "@/lib/class-names";
 
-export type ButtonVariant = "primary" | "outline" | "dark" | "light";
+export type ButtonVariant = "primary"| "primaryDark" | "outline" | "dark" | "light";
 
 export type ButtonLinkProps = {
   children: ReactNode;
@@ -23,6 +23,7 @@ export type ButtonProps = ButtonLinkProps;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary: "text-white hover:text-[#4f4f4f] focus-visible:text-[#4f4f4f]",
+  primaryDark: "text-white",
   outline: "text-[#4f4f4f] hover:text-white focus-visible:text-white",
   dark: "bg-white text-white hover:text-[#121212] focus-visible:text-[#121212]",
   light: "text-[#4f4f4f] hover:text-white focus-visible:text-white",
@@ -30,6 +31,7 @@ const variantClasses: Record<ButtonVariant, string> = {
 
 const borderClasses: Record<ButtonVariant, string> = {
   primary: "border-[#ad5151] group-hover/button:border-[#4f4f4f] group-focus-visible/button:border-[#4f4f4f]",
+  primaryDark: "border-[#ad5151] group-hover/button:border-white group-focus-visible/button:border-white",
   outline: "border-current group-hover/button:border-[#ad5151] group-focus-visible/button:border-[#ad5151]",
   dark: "border-[#121212]",
   light: "border-white",
@@ -37,6 +39,7 @@ const borderClasses: Record<ButtonVariant, string> = {
 
 const fillClasses: Record<ButtonVariant, string> = {
   primary: "translate-x-0 bg-[#ad5151] group-hover/button:translate-x-full group-focus-visible/button:translate-x-full",
+  primaryDark: "translate-x-0 bg-[#ad5151] group-hover/button:translate-x-full group-focus-visible/button:translate-x-full",
   outline: "-translate-x-full bg-[#ad5151] group-hover/button:translate-x-0 group-focus-visible/button:translate-x-0",
   dark: "translate-x-0 bg-[#121212] group-hover/button:translate-x-full group-focus-visible/button:translate-x-full",
   light: "translate-x-0 bg-white group-hover/button:translate-x-full group-focus-visible/button:translate-x-full",

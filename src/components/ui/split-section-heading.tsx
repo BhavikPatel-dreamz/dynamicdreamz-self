@@ -152,8 +152,8 @@ export function SplitSectionHeading({
                   ? "font-sans xl:text-base text-sm font-medium leading-7 max-[767px]:leading-6"
                   : portfolio
                     ? "font-sans text-[16px] font-medium leading-7 max-[991px]:mt-3.75 max-[991px]:text-sm max-[991px]:leading-[24px] max-[767px]:text-sm max-[767px]:leading-6"
-                    : "font-sans text-base font-medium leading-7 max-[1199px]:text-sm max-[1199px]:leading-6",
-                dark ? "text-[#ffffff]" : "text-muted",
+                    : "font-sans text-base font-medium leading-7 max-[1199px]:text-sm max-[1199px]:leading-6 not-last:mb-2.5",
+                dark ? "text-white" : "text-muted",
               )}
               key={paragraph}
             >
