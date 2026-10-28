@@ -137,27 +137,27 @@ export const iosAppDevelopmentWhatWeBuildBoxes: readonly ThemeCustomizationBox[]
     {
       title: "Consumer Applications",
       description:
-        "Lifestyle, content, community, membership, wellness and customer-facing mobile applications.",
+        "Lifestyle, content, community, membership, wellness and customer-facing digital products.",
     },
     {
       title: "Booking & Service Apps",
       description:
-        "Appointments, account management, service requests, reminders and customer communication.",
+        "Appointments, account management, service requests, reminders and location-aware workflows.",
     },
     {
       title: "Marketplace & Platform Apps",
       description:
-        "Buyer/seller interactions, listings, multi-role access, profiles and search experiences.",
+        "Multi-role iOS experiences connecting users, vendors, providers or other participant groups.",
     },
     {
       title: "Ecommerce Apps",
       description:
-        "Product discovery, search, accounts, checkout, push notifications and customer loyalty on iOS.",
+        "Shopping applications with catalog, account, cart, checkout and retention features.",
     },
     {
       title: "Shopify iOS Apps",
       description:
-        "Turn Shopify stores into dedicated iOS apps with native UI and API integrations.",
+        "Custom iPhone and iPad shopping apps connected to Shopify and supported third-party services.",
     },
   ];
 
@@ -174,42 +174,42 @@ export const iosAppDevelopmentLifecycleServicesBoxes: readonly ThemeCustomizatio
     {
       title: "Prototyping, Wireframes & Mockups",
       description:
-        "Visualize application flows and interface direction before committing to development.",
+        "Visualize application flows and interface direction before development begins.",
     },
     {
       title: "Native iOS App Development",
       description:
-        "Develop iPhone and iPad applications using Swift and SwiftUI with clean architecture.",
+        "Develop iPhone and iPad applications using Swift and SwiftUI when native Apple development is the right fit.",
     },
     {
       title: "Mobile UI/UX Design",
       description:
-        "Design clear, responsive iOS interfaces around product goals and user expectations.",
+        "Design clear, responsive iOS interfaces around product goals and Apple interaction patterns.",
     },
     {
       title: "Backend & API Development",
       description:
-        "Build and integrate the APIs, databases, authentication and admin tools your app requires.",
+        "Build or connect authentication, databases, payments, notifications, analytics and business systems.",
     },
     {
       title: "App Testing & Quality Assurance",
       description:
-        "Structured manual and automated testing across real devices, network states and edge cases.",
+        "Validate important journeys, devices, OS versions, performance and integration behavior before release.",
     },
     {
       title: "App Maintenance & Support",
       description:
-        "Keep dependencies fresh, resolve defects, improve performance and support new iOS updates.",
+        "Continue with compatibility updates, bug fixes, new features, analytics and ongoing releases.",
     },
     {
       title: "Existing App Customization",
       description:
-        "Add features, refactor existing codebases, improve UI and resolve legacy technical debt.",
+        "Modernize an existing iOS app, add features, improve UI or update its technical foundation.",
     },
     {
       title: "Shopify & Cross-Platform Extensions",
       description:
-        "Connect to Shopify Storefront APIs or extend cross-platform roadmaps where appropriate.",
+        "Connect iOS to Shopify or use React Native / Flutter where a shared iOS and Android roadmap makes more sense.",
     },
   ];
 
@@ -353,14 +353,14 @@ export const iosAppDevelopmentPricing: PricingEngagementContent = {
       badge: "Ongoing Product Capacity",
       price: "From $2,000/month",
       description:
-        "For ongoing feature delivery, product iterations, backend integration or roadmap acceleration.",
+        "For businesses that need steady mobile or full-stack development capacity and team continuity.",
       bullets: [
-        "Dedicated iOS engineers",
-        "Direct collaboration",
-        "Sprint-based planning",
-        "Full-stack team support",
+        "Dedicated development capacity",
+        "Long-term roadmap delivery",
+        "Team continuity",
+        "Full-stack support when needed",
       ],
-      ctaLabel: "Discuss Team Capacity",
+      ctaLabel: "Discuss Dedicated Capacity",
       ctaHref: "/request-quote",
     },
     {
@@ -368,14 +368,14 @@ export const iosAppDevelopmentPricing: PricingEngagementContent = {
       badge: "Maintenance & Enhancements",
       price: "$20/hour",
       description:
-        "For released apps needing bug fixes, dependency updates, OS compatibility and small additions.",
+        "For releases, OS updates, fixes, integrations, analytics and feature improvements after launch.",
       bullets: [
-        "OS & dependency updates",
-        "Bug fixes & improvements",
-        "Performance checks",
-        "No long-term lock-in",
+        "App updates",
+        "New features",
+        "Bug fixes & performance",
+        "Release support",
       ],
-      ctaLabel: "Request Support Hours",
+      ctaLabel: "Discuss Support",
       ctaHref: "/request-quote",
     },
   ],

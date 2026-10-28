@@ -44,10 +44,10 @@ export function TechKeywordSection({
             </div>
           </div>
           <div className="tech-keyword-copy max-[767px]:mt-4">
-            <p className="font-sans text-base font-normal leading-7 text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
+            <p className="text-[#535353] font-normal text-[#535353] max-[767px]:text-sm">
               {content.introText ? `${content.introText} ` : null}
               {content.highlightedText ? (
-                <strong className="font-semibold text-ink">
+                <strong className="font-bold">
                   {content.highlightedText}
                 </strong>
               ) : null}

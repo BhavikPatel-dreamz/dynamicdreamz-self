@@ -80,7 +80,7 @@ export function AiEmpoweredDeliverySection({
                 </p>
                 {content.cta ? (
                   <div className="btn-wrap">
-                    <ButtonLink href={content.cta.href} variant="primary">
+                    <ButtonLink href={content.cta.href} variant="primaryDark">
                       {content.cta.label}
                     </ButtonLink>
                   </div>
