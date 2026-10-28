@@ -1,10 +1,33 @@
 import Image from "next/image";
 
-import { ButtonLink } from "@/components/ui/button-link";
+import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/container";
 import { hiringCallout } from "@/content/life-dynamicdreamz";
 
-export function LifeHiringSection() {
+export type LifeHiringSectionProps = {
+  title?: string;
+  description?: string;
+  cta?: string;
+  href?: string;
+  image?: { url?: string | null; alt?: string | null } | string | null;
+  imageAlt?: string;
+};
+
+export function LifeHiringSection({
+  title = hiringCallout.title,
+  description = hiringCallout.description,
+  cta = hiringCallout.cta,
+  href = hiringCallout.href,
+  image,
+  imageAlt,
+}: LifeHiringSectionProps = {}) {
+  const imageUrl =
+    (typeof image === "object" && image?.url) ||
+    (typeof image === "string" ? image : hiringCallout.image.src);
+  const altText =
+    imageAlt ||
+    (typeof image === "object" && image?.alt ? image.alt : hiringCallout.image.alt);
+
   return (
     <section className="py-20 max-[992px]:py-[50px]" data-life="hiring">
       <Container>
@@ -16,8 +39,8 @@ export function LifeHiringSection() {
             <div className="pb-[5px] max-[992px]:pb-[10.4px] min-[1200px]:ml-[-60px]">
               <Image
                 className="h-auto w-full"
-                src={hiringCallout.image.src}
-                alt={hiringCallout.image.alt}
+                src={imageUrl}
+                alt={altText}
                 width={hiringCallout.image.width}
                 height={hiringCallout.image.height}
                 sizes="(max-width: 991px) calc(100vw - 40px), 605px"
@@ -26,19 +49,18 @@ export function LifeHiringSection() {
           </div>
 
           <div className="mt-[65px] w-[47%] max-[1199px]:mt-0 max-[1199px]:w-1/2 max-[992px]:w-full max-[992px]:text-center">
-            <h2 className="mb-[10px] text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
-              {hiringCallout.title}
+            <h2 className="mb-[10px] font-montreal-medium text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
+              {title}
             </h2>
             <p className="mb-[30px] text-[18px] leading-[34.2px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
-              {hiringCallout.description}
+              {description}
             </p>
             <div className="h-[54px] max-[992px]:h-[52.4px]">
               <ButtonLink
-                
-                href={hiringCallout.href}
+                href={href}
                 variant="primary"
               >
-                {hiringCallout.cta}
+                {cta}
               </ButtonLink>
             </div>
           </div>

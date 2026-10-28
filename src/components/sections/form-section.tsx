@@ -1,9 +1,9 @@
 import React from "react";
-import { Container } from "@/components/ui/container";
 import { CmsFormClient } from "@/components/forms/CmsFormClient";
+import { Container } from "@/components/ui/container";
 import type { Form as PayloadForm } from "@/types/payload-types";
 
-export type FormBlockProps = {
+export type FormSectionProps = {
   form: PayloadForm | number | string | null | undefined;
   enableIntro?: boolean;
   introContent?: any;
@@ -13,13 +13,13 @@ export type FormBlockProps = {
   containerWidth?: "standard" | "narrow" | "wide";
 };
 
-export function FormBlock({
+export function FormSection({
   form,
   eyebrow,
   title,
   description,
   containerWidth = "standard",
-}: FormBlockProps) {
+}: FormSectionProps) {
   const containerClass =
     containerWidth === "narrow"
       ? "max-w-[840px]"
@@ -66,3 +66,5 @@ export function FormBlock({
     </section>
   );
 }
+
+export const FormBlock = FormSection;

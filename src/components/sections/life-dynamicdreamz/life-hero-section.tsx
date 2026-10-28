@@ -40,7 +40,32 @@ function TeamworkUnderline() {
   );
 }
 
-export function LifeHeroSection() {
+export type LifeHeroSectionProps = {
+  titleBeforeTeamwork?: string;
+  teamwork?: string;
+  titleAfterTeamwork?: string;
+  lead?: string;
+  description?: string;
+  image?: { url?: string | null; alt?: string | null } | string | null;
+  imageAlt?: string;
+};
+
+export function LifeHeroSection({
+  titleBeforeTeamwork = lifeHero.titleBeforeTeamwork,
+  teamwork = lifeHero.teamwork,
+  titleAfterTeamwork = lifeHero.titleAfterTeamwork,
+  lead = lifeHero.lead,
+  description = lifeHero.description,
+  image,
+  imageAlt,
+}: LifeHeroSectionProps = {}) {
+  const imageUrl =
+    (typeof image === "object" && image?.url) ||
+    (typeof image === "string" ? image : lifeHero.image.src);
+  const altText =
+    imageAlt ||
+    (typeof image === "object" && image?.alt ? image.alt : lifeHero.image.alt);
+
   return (
     <section
       className="overflow-hidden bg-white pt-[230px] pb-0 max-[992px]:pt-[140px]"
@@ -49,14 +74,14 @@ export function LifeHeroSection() {
       <Container>
         <div className="mx-auto max-w-[900px] text-center">
           <h1 className="mb-6 inline-block text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[992px]:text-[40px] max-[992px]:leading-[60px] max-[767px]:text-[30px]">
-            {lifeHero.titleBeforeTeamwork}{" "}
+            {titleBeforeTeamwork}{" "}
             <span className="relative whitespace-nowrap">
-              {lifeHero.teamwork}
+              {teamwork}
               <TeamworkUnderline />
             </span>{" "}
-            {lifeHero.titleAfterTeamwork}{" "}
+            {titleAfterTeamwork}{" "}
             <span className="relative whitespace-nowrap">
-              {lifeHero.lead}
+              {lead}
               <Image
                 aria-hidden="true"
                 alt=""
@@ -68,7 +93,7 @@ export function LifeHeroSection() {
             </span>
           </h1>
           <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
-            {lifeHero.description}
+            {description}
           </p>
         </div>
 
@@ -78,8 +103,8 @@ export function LifeHeroSection() {
         >
           <Image
             className="h-auto w-full rounded-[15px]"
-            src={lifeHero.image.src}
-            alt={lifeHero.image.alt}
+            src={imageUrl}
+            alt={altText}
             width={lifeHero.image.width}
             height={lifeHero.image.height}
             sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 991px) 680px, (max-width: 1399px) 1140px, 1320px"

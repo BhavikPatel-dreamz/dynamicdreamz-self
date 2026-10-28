@@ -1,10 +1,40 @@
 import Image from "next/image";
-
 import { lifeGallery } from "@/content/life-dynamicdreamz";
-
 import styles from "./life-gallery-section.module.css";
 
-export function LifeGallerySection() {
+export type LifeGallerySectionProps = {
+  images?: readonly {
+    src?: string;
+    image?: { url?: string | null; alt?: string | null } | string | null;
+    alt?: string;
+    width?: number;
+    height?: number;
+  }[];
+};
+
+export function LifeGallerySection({
+  images,
+}: LifeGallerySectionProps = {}) {
+  const activeImages =
+    images && images.length > 0
+      ? images.map((img, idx) => {
+          const src =
+            (typeof img.image === "object" && img.image?.url) ||
+            (typeof img.image === "string" ? img.image : img.src) ||
+            lifeGallery[idx]?.src ||
+            "";
+          const alt =
+            img.alt ||
+            (typeof img.image === "object" && img.image?.alt
+              ? img.image.alt
+              : lifeGallery[idx]?.alt) ||
+            "";
+          const width = img.width || lifeGallery[idx]?.width || 334;
+          const height = img.height || lifeGallery[idx]?.height || 406;
+          return { src, alt, width, height };
+        })
+      : lifeGallery;
+
   return (
     <section
       className="overflow-hidden py-20 max-[992px]:py-[50px] max-[767px]:hidden"
@@ -19,7 +49,7 @@ export function LifeGallerySection() {
               aria-hidden={duplicate || undefined}
               key={duplicate ? "duplicate" : "original"}
             >
-              {lifeGallery.map((image) => (
+              {activeImages.map((image) => (
                 <div
                   className={styles.slide}
                   key={`${duplicate ? "duplicate-" : ""}${image.src}`}
