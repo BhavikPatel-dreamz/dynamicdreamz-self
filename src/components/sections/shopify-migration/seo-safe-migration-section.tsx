@@ -57,13 +57,13 @@ export function SeoSafeMigrationSection({
                 <h2 className="mb-2.5 font-montreal-medium text-[35px] font-normal leading-[1.2] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
                   {formatBrText(content.heading, "max-[767px]:hidden")}
                 </h2>
-                <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">
+                <p className="font-sans font-small leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">
                   {formatBrText(content.description)}
                 </p>
                 <div className="meta-wrapp mt-5 flex flex-wrap gap-[7px]">
                   {content.tags.map((tag) => (
                     <span
-                      className="inline-flex items-center rounded-[30px] border border-[rgba(23,30,22,0.1)] bg-white px-[12.5px] py-[5.5px] font-montserrat text-xs font-bold uppercase leading-none tracking-normal text-[#282828]"
+                      className="inline-flex items-center rounded-[30px] border border-[rgba(23,30,22,0.1)] bg-white px-[12.5px] py-[5.5px] font-montserrat text-xs font-bold uppercase leading-none tracking-normal text-[#535353]"
                       key={tag}
                     >
                       {tag}
@@ -82,20 +82,20 @@ export function SeoSafeMigrationSection({
                   >
                     <div className="url-map w-[45%] px-2.5 max-[767px]:w-full max-[767px]:px-0">
                       <div className="code">
-                        <p className="font-mono text-sm font-medium text-ink max-[767px]:mb-2.5">
+                        <p className="text-sm font-medium text-[#535353] max-[767px]:mb-2.5">
                           {row.source}
                         </p>
                       </div>
                     </div>
                     <div className="redirect flex w-[55%] items-center gap-[15px] px-2.5 max-[767px]:w-full max-[767px]:gap-2 max-[767px]:px-0">
                       <div className="url flex items-center gap-1.5 font-bold text-[#ad5151]">
-                        <h3 className="m-0 font-montreal-medium text-sm font-normal text-[#ad5151]">
+                        <h3 className="m-0 font-montreal-medium text-[20px] font-normal text-[#282828]">
                           {row.statusCode ?? "301"}
                         </h3>
                         <span aria-hidden="true">→</span>
                       </div>
                       <div className="code">
-                        <p className="font-mono text-sm font-medium text-ink">
+                        <p className="text-sm font-medium text-[#535353]">
                           {row.target}
                         </p>
                       </div>
@@ -111,7 +111,7 @@ export function SeoSafeMigrationSection({
                     key={check}
                   >
                     <div className="code border-l-2 border-[#ad5151] bg-[#ad5151]/[0.07] px-3 py-[7px]">
-                      <p className="font-sans text-xs font-medium text-ink md:text-sm">
+                      <p className="font-sans text-xs font-medium text-[#535353] md:text-sm">
                         {check}
                       </p>
                     </div>

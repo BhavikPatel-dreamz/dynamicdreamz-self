@@ -68,14 +68,14 @@ export function WhiteLabelProcessSection({
             {formatBrText(title)}
           </h2>
         )}
-        <div data-aos="fade-up" className="flex max-[992px]:flex-wrap">
+        <div data-aos="fade-up" className="partnership_steps flex max-[991px]:flex-wrap">
           {steps.map((step, index) => (
             <article
-              data-aos="fade-up"
+              style={{ zIndex: steps.length - index }}
               className={cn(
-                "step_card relative flex-1 bg-[#fafaf7] p-[60px_22px_40px] text-center odd:bg-cream max-[1199px]:p-[50px_20px_30px] max-[992px]:w-full max-[992px]:flex-none max-[992px]:p-[40px_20px_30px] max-[767px]:p-[30px_15px_20px]",
+                "step_card relative flex-1 bg-[#fafaf7] p-[60px_22px_40px] text-center odd:bg-cream max-[1199px]:p-[50px_20px_30px] max-[991px]:w-full max-[991px]:flex-none max-[991px]:p-[40px_20px_30px] max-[767px]:p-[30px_15px_20px]",
                 index < steps.length - 1 &&
-                  "step-card-after after:absolute after:top-1/2 after:right-[-15px] after:z-1 after:size-[30px] after:-translate-y-1/2 after:rotate-45 after:bg-[#fafaf7] odd:after:bg-cream max-[992px]:after:top-auto max-[992px]:after:right-auto max-[992px]:after:bottom-[-15px] max-[992px]:after:left-1/2 max-[992px]:after:-translate-x-1/2 max-[992px]:after:translate-y-0 max-[767px]:after:bottom-[-10px] max-[767px]:after:size-[25px]",
+                  "before:content-[''] before:w-[30px] before:h-[30px] before:absolute before:top-1/2 before:right-[-4px] before:[transform:rotate(45deg)_translateY(-50%)] before:z-1 before:bg-[#fafaf7] odd:before:bg-cream max-[991px]:before:top-auto max-[991px]:before:right-auto max-[991px]:before:bottom-[-25px] max-[991px]:before:left-1/2 max-[991px]:before:[transform:rotate(45deg)_translateX(-50%)] max-[767px]:before:w-[25px] max-[767px]:before:h-[25px] max-[767px]:before:bottom-[-20px]",
               )}
               key={step.title}
             >
@@ -87,7 +87,7 @@ export function WhiteLabelProcessSection({
               <h3 className="mb-6 font-montreal-medium text-base font-normal leading-[20.48px] text-ink max-[1199px]:mb-[22px] max-[767px]:mb-[15px]">
                 {step.title}
               </h3>
-              <p className="text-sm leading-[190%] font-normal text-muted">{step.description}</p>
+              <p className="text-sm leading-[190%] font-medium text-muted">{step.description}</p>
             </article>
           ))}
         </div>

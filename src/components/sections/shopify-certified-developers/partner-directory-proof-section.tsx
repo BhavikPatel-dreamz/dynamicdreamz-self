@@ -80,7 +80,7 @@ export function PartnerDirectoryProofSection({
                         {item.value}
                       </h3>
                     )}
-                    <p className="mt-[15px] border-t-[1.5px] border-ink/10 pt-[15px] text-sm leading-[21px] font-bold text-ink uppercase max-[1199px]:text-xs max-[575px]:mt-2.5 max-[575px]:pt-2.5">
+                    <p className="mt-[15px] border-t-[1.5px] border-ink/10 pt-[15px] text-sm leading-[21px] font-semibold text-[#535353] uppercase max-[1199px]:text-xs max-[575px]:mt-2.5 max-[575px]:pt-2.5">
                       {item.label}
                     </p>
                   </div>

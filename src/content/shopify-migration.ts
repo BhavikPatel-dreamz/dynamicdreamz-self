@@ -279,7 +279,7 @@ export const shopifyMigrationProcess = {
     },
     {
       number: "05",
-      title: "05 QA & SEO Validation",
+      title: "QA & SEO Validation",
       description:
         "Test migrated data, functionality, responsive experience, redirects, analytics, metadata and key technical SEO signals.",
     },
@@ -339,32 +339,33 @@ export const shopifyMigrationWhyChoose: WhyChooseMigrationContent = {
     "Get migration, Shopify development, integrations, QA and post-launch support from one experienced Shopify partner.",
   items: [
     {
-      icon: "certified",
+      icon: "shopify-bag",
       title: "Shopify Platinum Partner",
       description:
         "Shopify is a core ecommerce capability with dedicated experience across Shopify and Shopify Plus delivery.",
     },
     {
-      icon: "expertise",
+      icon: "certified",
       title: "Shopify-Certified Expertise",
       description:
-        "Credential-led Shopify development capability for projects that need architectural and technical certainty.",
+        "Credential-led Shopify development capability for projects that need deeper Liquid, storefront, B2B and platform knowledge.",
     },
     {
-      icon: "team",
+      icon: "custom-build",
       title: "Cross-Functional Team",
       description:
-        "Design, Shopify, QA, mobile and full-stack resources can support you beyond the initial theme build.",
+        "Design, Shopify, QA, mobile and full-stack resources can support migration requirements beyond theme code.",
     },
     {
-      icon: "support",
+      icon: "long-term-support",
       title: "Ongoing Shopify Support",
       description:
-        "Continue after launch with new features, CRO, integrations, theme upgrades and technical support.",
+        "Continue after launch with new features, CRO, integrations, maintenance, performance work and recurring development.",
     },
   ],
   partnerLogo: "/assets/proof/shopify-platinum-partner.svg",
   partnerLogoAlt: "Dynamic Dreamz - Shopify Platinum Partner",
+  logoHref: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
   partnerHeading: "20+ Years of Ecommerce Delivery",
   partnerDescription:
     "Dynamic Dreamz combines long-term web and ecommerce experience with a broader 150+ expert in-house team and more than 5,000 delivered projects.",
@@ -470,6 +471,7 @@ export const shopifyMigrationCaseStudies = {
       imageAlt: "First Aid Distributions Shopify Storefront Migration",
       technology: "Shopify Migration",
       industry: "Health & Nutrition",
+      tags: ["Data Migration", "Third-Party API Integration"],
     },
     {
       title:
@@ -480,6 +482,7 @@ export const shopifyMigrationCaseStudies = {
         "Daniel Walters Eyewear BigCommerce to Shopify Migration with Dawn Theme Redesign",
       technology: "Shopify Migration",
       industry: "Jewellery & Accessories",
+      tags: ["Eyewear", "Jewellery & Accessories"],
     },
     {
       title:
@@ -490,6 +493,7 @@ export const shopifyMigrationCaseStudies = {
         "SleepyCat WooCommerce to Shopify Plus Migration with Custom Bundle Builder",
       technology: "Shopify Migration",
       industry: "Home & Living",
+      tags: ["Mattress & Sleep", "WooCommerce to Shopify"],
     },
   ] satisfies readonly CaseStudyPreviewItem[],
 };

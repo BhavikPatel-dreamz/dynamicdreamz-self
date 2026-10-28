@@ -66,7 +66,7 @@ export function ShopifyMigrationServicesSection({
               key={item.title}
             >
               <Link
-                className="migration-box group relative flex h-full w-full flex-col justify-between rounded-[15px] border border-[#d9d9d9] bg-white p-5 transition-transform duration-300 ease-in-out hover:-translate-y-[3px]"
+                className="migration-box relative flex h-full w-full flex-col justify-between rounded-[15px] border border-[#d9d9d9] bg-white p-5 transition-transform duration-300 ease-in-out hover:-translate-y-[3px]"
                 href={item.href}
               >
                 <div>
@@ -89,7 +89,7 @@ export function ShopifyMigrationServicesSection({
                   )}
                 </div>
 
-                <div className="btn-link-arrow mt-5 inline-flex items-center font-montserrat text-sm font-bold uppercase leading-none text-[#ad5151] transition-colors group-hover:text-ink">
+                <div className="btn-link-arrow mt-5 inline-flex items-center font-montserrat text-sm font-bold uppercase leading-none text-[#ad5151] transition-colors hover:text-ink">
                   <span>{item.ctaLabel ?? "Explore migration"}</span>
                   <svg
                     aria-hidden="true"

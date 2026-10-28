@@ -46,7 +46,7 @@ export function ShopifyMobileAppExperienceSection({
                 <h3 className="mb-[15px] font-montreal-medium text-[20px] font-medium leading-7 text-[#282828] max-[1399px]:text-[18px] max-[1399px]:leading-[26px] max-[767px]:mb-2.5">
                   {item.title}
                 </h3>
-                <p className="font-sans text-[15px] font-medium leading-[26px] text-[#535353]">
+                <p className="font-sans text-[14px] font-small leading-[26px] text-[#535353]">
                   {item.description}
                 </p>
               </div>

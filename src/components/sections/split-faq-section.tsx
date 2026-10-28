@@ -70,7 +70,7 @@ export function SplitFaqSection({
   const isMobileAppFaq = idPrefix.startsWith("shopify-mobile-app");
 
   const bgClass = isSkyBlue
-    ? "bg-sky-blue"
+    ? "bg-[#FAFAF7]"
     : isWhite
     ? "bg-white"
     : "bg-[#fafaf7]";

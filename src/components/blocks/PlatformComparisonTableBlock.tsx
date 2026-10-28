@@ -99,7 +99,7 @@ export function PlatformComparisonTableBlock({
                         className={`bg-white p-[16px_20px] align-middle text-sm leading-[22px] text-[#282828] ${borderBottom} max-[767px]:p-[12px_16px] max-[767px]:text-xs`}
                       >
                         <strong>{row.title}</strong>
-                        <span className="table-sub mt-2.5 block text-xs font-medium leading-5 text-[#535353] max-[767px]:mt-1">
+                        <span className="table-sub mt-2.5 block text-xs font-medium leading-5 text-[#282828] max-[767px]:mt-1">
                           {row.subtitle}
                         </span>
                       </td>

@@ -72,7 +72,7 @@ function AppStoreLinks({ appLinks }: { appLinks: readonly PortfolioAppLink[] }) 
       {appLinks.map((link, index) => (
         <a
           className={cn(
-            "inline-flex items-center px-[27px] text-base leading-[25.2px] font-bold text-white max-[1199px]:px-[15px] max-[1199px]:text-sm max-[1199px]:leading-[18px] max-[575px]:text-[0px] max-[575px]:px-[11px] max-[359px]:px-2.5",
+            "inline-flex items-center whitespace-nowrap px-[15px] text-[15px] font-bold leading-[25.2px] text-white max-[1399px]:text-[12px] max-[1199px]:px-[15px] max-[1199px]:text-sm max-[1199px]:leading-[18px] max-[575px]:px-[11px] max-[575px]:text-[0px] max-[359px]:px-2.5",
             index > 0 && "border-l-[1.5px] border-white",
           )}
           href={link.href}
@@ -81,7 +81,7 @@ function AppStoreLinks({ appLinks }: { appLinks: readonly PortfolioAppLink[] }) 
           target="_blank"
         >
           <Image
-            className="mr-2.5 h-[30px] w-[30px] max-[1199px]:h-7 max-[1199px]:w-7 max-[575px]:mr-0 max-[575px]:h-6 max-[575px]:w-6"
+            className="mr-2.5 h-[30px] w-[30px] max-[1399px]:mr-[5px] max-[1399px]:h-[22px] max-[1399px]:w-[22px] max-[1199px]:h-7 max-[1199px]:w-7 max-[575px]:mr-0 max-[575px]:h-6 max-[575px]:w-6"
             src={link.icon}
             alt=""
             width={39}

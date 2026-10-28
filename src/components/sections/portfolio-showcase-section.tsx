@@ -82,7 +82,7 @@ export function PortfolioShowcaseSection({
   const sectionClassName = isShopifyPlusCategory
     ? "our-work-sec bg-white pt-0 pb-20 max-[991px]:pt-0 max-[991px]:pb-[50px]"
     : isLiveGrid
-      ? "our-work-sec pt-0 pb-20 max-[991px]:pt-0 max-[767px]:pt-0"
+      ? "our-work-sec pt-20 pb-20 max-[991px]:pt-0 max-[767px]:pt-0"
       : "our-work-sec py-20 max-[991px]:py-[50px]";
 
   const gridColsClass =

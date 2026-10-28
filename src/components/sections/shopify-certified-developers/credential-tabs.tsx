@@ -67,7 +67,7 @@ export function CredentialTabs({
               aria-controls={panelId}
               aria-selected={isActive}
               className={cn(
-                "cursor-pointer border-t-0 border-r border-b border-l-0 border-ink/15 px-2.5 py-[26px] text-center text-base leading-none font-normal last:border-r-0 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#2f72d2] max-[992px]:text-sm max-[575px]:w-full max-[575px]:rounded-none max-[575px]:border-r-0 max-[575px]:py-5",
+                "cursor-pointer border-t-0 border-r border-b border-l-0 border-ink/15 px-2.5 py-[26px] text-center text-[16px] leading-none font-semibold last:border-r-0 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#2f72d2] max-[992px]:text-sm max-[575px]:w-full max-[575px]:rounded-none max-[575px]:border-r-0 max-[575px]:py-5",
                 isActive
                   ? "rounded-tr-[29px] bg-brand-red text-white max-[575px]:rounded-none"
                   : "bg-white text-ink",
@@ -105,13 +105,13 @@ export function CredentialTabs({
             tabIndex={0}
           >
             <div className="w-[36%] max-[992px]:mb-5 max-[992px]:w-full">
-              <span className="mb-2.5 block text-xs leading-[18px] font-bold text-brand-red uppercase">
+              <span className="mb-2.5 block text-[10px] leading-[18px] font-bold text-brand-red uppercase">
                 {item.eyebrow}
               </span>
               <h3 className="mb-2.5 text-[28px] leading-[39.2px] font-normal tracking-normal text-ink max-[575px]:text-[22px] max-[575px]:leading-[30px]">
                 {item.title}
               </h3>
-              <p className="text-sm leading-[26.6px] font-medium text-muted">
+              <p className="text-sm leading-[26.6px] font-small text-muted">
                 {item.description}
               </p>
             </div>
@@ -121,10 +121,10 @@ export function CredentialTabs({
                   className="rounded-[20px] border border-[#d0d0ce] bg-[#fafaf7] p-[35px_25px] shadow-[2px_2px_0_rgba(40,40,40,0.2)] max-[575px]:p-5"
                   key={detail.label}
                 >
-                  <h4 className="mb-2.5 text-sm leading-[18px] font-normal text-brand-red uppercase">
+                  <h4 className="mb-2.5 text-[10px] leading-[18px] font-bold text-brand-red uppercase">
                     {detail.label}
                   </h4>
-                  <p className="text-sm leading-[26.6px] font-medium text-muted">
+                  <p className="text-sm leading-[26.6px] font-small text-muted">
                     {detail.value}
                   </p>
                 </article>
