@@ -66,7 +66,7 @@ export function ShopifyCroServicesSection({
                     className="size-full object-contain"
                   />
                 </div>
-                <h3 className="h4 mb-5 font-display text-[20px] font-medium leading-[26px] text-ink">
+                <h3 className="h4 mb-5 font-display text-lg font-small leading-[26px] text-ink">
                   {item.title}
                 </h3>
                 <p className="m-0 font-sans text-sm font-medium leading-[190%] text-muted">

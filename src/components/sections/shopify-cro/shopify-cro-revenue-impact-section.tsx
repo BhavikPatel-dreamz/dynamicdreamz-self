@@ -104,7 +104,7 @@ export function ShopifyCroRevenueImpactSection({
                 </div>
 
                 <div className="revenue-card-total mt-[27px] rounded-[20px] border border-white/20 bg-white/5 p-3.5 text-center">
-                  <span className="mb-1 block font-sans text-base font-medium leading-[124%] text-white">
+                  <span className="uppercase mb-1 block font-sans text-base font-medium leading-[124%] text-white">
                     {content.before.totalLabel}
                   </span>
                   <h2 className="m-0 font-display text-[40px] font-normal leading-none tracking-[1.2px] text-white max-[991px]:text-[26px]">
@@ -124,7 +124,12 @@ export function ShopifyCroRevenueImpactSection({
                   {content.after.badge}
                 </span>
 
-                <div className="revenue-card-list">
+                <span
+                  className="roundgradient pointer-events-none absolute inset-0 z-0 rounded-[20px] before:absolute before:right-0 before:top-0 before:z-0 before:h-[165px] before:w-[165px] before:rounded-[20px] before:bg-[url('/assets/shopify-cro-agency/impact/roundgradient-top.webp')] before:bg-contain before:bg-right-top before:bg-no-repeat before:content-[''] after:absolute after:left-0 after:top-[70px] after:z-0 after:h-[332px] after:w-[175px] after:rounded-[20px] after:bg-[url('/assets/shopify-cro-agency/impact/roundgradient-left.webp')] after:bg-contain after:bg-left after:bg-no-repeat after:content-['']"
+                  aria-hidden="true"
+                />
+
+                <div className="revenue-card-list relative z-10">
                   {content.after.metrics.map((item) => (
                     <div
                       key={item.label}
@@ -151,8 +156,8 @@ export function ShopifyCroRevenueImpactSection({
                   ))}
                 </div>
 
-                <div className="revenue-card-total revenue-card-total-success mt-[27px] rounded-[20px] border-[1.5px] border-[#35F3A3] bg-transparent p-3.5 text-center">
-                  <span className="mb-1 block font-sans text-base font-medium leading-[124%] text-white">
+                <div className="revenue-card-total revenue-card-total-success relative z-10 mt-[27px] rounded-[20px] border-[1.5px] border-[#35F3A3] bg-transparent p-3.5 text-center">
+                  <span className="uppercase mb-1 block font-sans text-base font-medium leading-[124%] text-white">
                     {content.after.totalLabel}
                   </span>
                   <h2 className="m-0 flex items-center justify-center gap-2.5 font-display text-[40px] font-normal leading-none tracking-[1.2px] text-[#35F3A3] max-[991px]:text-[26px]">

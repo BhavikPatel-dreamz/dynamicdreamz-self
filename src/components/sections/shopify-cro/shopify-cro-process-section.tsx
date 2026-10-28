@@ -62,7 +62,7 @@ export function ShopifyCroProcessSection({
                     />
                     {!isLast && (
                       <svg
-                        className="pointer-events-none absolute top-1/2 left-[97px] -z-10 h-[13px] w-[136px] -translate-y-1/2 overflow-visible max-[1199px]:w-[100px] max-[991px]:hidden"
+                        className="pointer-events-none absolute top-1/2 left-[97px] -z-10 h-[13px] w-[204px] -translate-y-1/2 overflow-visible max-[1399px]:w-[185px] max-[1199px]:w-[160px] max-[991px]:hidden"
                         viewBox="0 0 204 13"
                         preserveAspectRatio="none"
                         aria-hidden="true"
@@ -81,10 +81,10 @@ export function ShopifyCroProcessSection({
                       className="absolute top-1/2 -left-[26px] hidden size-2.5 -translate-y-1/2 rounded-full bg-[#AD5151] max-[767px]:block"
                     />
                   </div>
-                  <h3 className="mb-2.5 font-display text-lg font-medium leading-[1.28] text-ink max-[767px]:text-base">
+                  <h3 className="mb-2.5 font-display text-[20px] font-small leading-[1.28] text-ink max-[767px]:text-base">
                     {step.title}
                   </h3>
-                  <p className="m-0 font-sans text-sm font-medium leading-[190%] text-muted">
+                  <p className="m-0 font-sans text-sm font-small leading-[190%] text-muted">
                     {step.description}
                   </p>
                 </div>

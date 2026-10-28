@@ -42,7 +42,7 @@ export function ShopifyCroWhySection({
                 {content.paragraphs.map((p, idx) => (
                   <p
                     key={idx}
-                    className="mb-6 font-sans text-base font-medium leading-[190%] text-muted last:mb-0 max-[767px]:text-sm"
+                    className="mb-6 font-sans text-sm font-small leading-[190%] text-muted last:mb-0 max-[767px]:text-sm"
                   >
                     {p}
                   </p>

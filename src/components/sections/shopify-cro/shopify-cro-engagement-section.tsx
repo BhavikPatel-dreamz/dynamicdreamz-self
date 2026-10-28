@@ -46,9 +46,9 @@ export function ShopifyCroEngagementSection({
               data-aos="fade-up"
               className="shopify-cro-engagement-card mb-4 w-[calc(50%-8px)] max-[767px]:w-full"
             >
-              <div className="shopify-cro-engagement-box flex h-full flex-col justify-between rounded-[30px] border border-black/10 bg-white p-[25px] shadow-none">
+              <div className="shopify-cro-engagement-box flex h-full flex-col justify-between rounded-[30px] border border-[rgba(40,40,40,0.10)] bg-white p-[25px] shadow-none">
                 <div>
-                  <div className="content-box relative mb-[26px] pb-[26px] before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:bg-gradient-to-r before:from-transparent before:via-[#AD5151] before:to-transparent">
+                  <div className="content-box relative mb-[26px] pb-[26px] before:absolute before:bottom-0 before:left-0 before:h-[1.5px] before:w-full before:bg-[linear-gradient(90deg,rgba(173,81,81,0)_0%,#AD5151_50.18%,rgba(173,81,81,0)_100%)]">
                     <span className="icon mb-6 inline-block size-10">
                       <Image
                         src={item.icon}
@@ -58,10 +58,10 @@ export function ShopifyCroEngagementSection({
                         className="size-full object-contain"
                       />
                     </span>
-                    <h3 className="mb-2.5 font-display text-2xl font-medium leading-[30px] text-ink max-[767px]:text-xl">
+                    <h3 className="mb-2.5 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[1199px]:text-[18px] max-[1199px]:leading-[26px]">
                       {item.title}
                     </h3>
-                    <p className="m-0 font-sans text-base font-medium leading-[190%] text-muted">
+                    <p className="m-0 font-sans text-sm font-normal leading-6 text-muted">
                       {item.description}
                     </p>
                   </div>
@@ -71,7 +71,7 @@ export function ShopifyCroEngagementSection({
                       {item.features.map((feature) => (
                         <li
                           key={feature}
-                          className="mb-3 border-b-[1.5px] border-black/10 bg-[url('/assets/shopify-cro-agency/engagement/checkbox-list.svg')] bg-[length:16px] bg-[left_top_0] bg-no-repeat pb-[13px] pl-[33px] font-sans text-base font-medium leading-[190%] text-muted last:mb-0 last:border-b-0 last:pb-0 max-[767px]:text-sm"
+                          className="mb-3 border-b-[1.5px] border-[rgba(40,40,40,0.10)] bg-[url('/assets/shopify-cro-agency/engagement/checkbox-list.svg')] bg-[length:16px] bg-[left_top_2px] bg-no-repeat pb-[13px] pl-[33px] font-sans text-sm font-medium leading-5 text-muted last:mb-0 last:border-b-0 last:pb-0"
                         >
                           {feature}
                         </li>

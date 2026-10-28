@@ -200,8 +200,7 @@ export const shopifyCroProcess = {
   heading: "Our Shopify CRO Process",
   description:
     [
-    "Our proven CRO process combines data, user insights, and continuous experimentation",
-    "to optimize every customer interaction and maximize Shopify conversions.",
+    "Our proven CRO process combines data, user insights, and continuous experimentation to optimize every customer interaction and maximize Shopify conversions.",
   ],
   steps: [
     {
