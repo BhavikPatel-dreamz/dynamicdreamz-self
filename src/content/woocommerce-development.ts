@@ -167,10 +167,9 @@ export const woocommerceDevelopmentPortfolio = {
   heading: "Glimpses of Our Woocommerce Development Services",
   description:
     [
-    "Dynamic Dreamz isn't just about talk; we're about results. Explore a carefully curated",
-    "selection of our successful WooCommerce projects.",
+    "Dynamic Dreamz isn't just about talk; we're about results. Explore a carefully curated selection of our successful WooCommerce projects."
   ],
-  eyebrow: "Woocommerce",
+  eyebrow: "Portfolio",
   category: "Woocommerce",
   platformMark: {
     src: "/assets/our-work/platforms/woocommerce-img.svg",
@@ -215,8 +214,7 @@ export const woocommerceDevelopmentTestimonials = {
   heading: "Don't Just Take Our Word For It",
   description:
     [
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
-      "Happy clients make happy stories. Check out how our services empower them to evolve.",
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve."
     ],
   items: shopifyPlusAgencyTestimonials.items,
 } as const;

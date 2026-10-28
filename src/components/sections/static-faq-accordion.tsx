@@ -54,7 +54,7 @@ export function StaticFaqAccordion({
                   width={18}
                 />
                 {listItem.label ? (
-                  <strong className="font-semibold text-ink">{listItem.label} </strong>
+                  <strong className="font-bold text-[#535353]">{listItem.label} </strong>
                 ) : null}
                 {listItem.text}
               </li>

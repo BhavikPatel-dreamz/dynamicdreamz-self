@@ -134,7 +134,7 @@ export function PortfolioProjectCard({
             />
             <Overlay />
           </div>
-          <div className="mt-2.5 flex items-start justify-between gap-2 max-[767px]:mt-1 max-[767px]:gap-1.5">
+          <div className="mt-3.5 flex items-end justify-between gap-2 max-[767px]:mt-1 max-[767px]:gap-1.5">
             <div className="min-w-0 flex-1">
               {category ? (
                 <p className={cn("font-montserrat text-[10px] leading-[14px] font-bold uppercase tracking-[0.8px] text-brand-red", categoryClassName)}>
@@ -179,7 +179,7 @@ export function PortfolioProjectCard({
             <Overlay persistent={Boolean(isAppProject)} />
             {isAppProject ? <AppStoreLinks appLinks={appLinks} /> : null}
           </div>
-          <div className="mt-2.5 flex items-start justify-between gap-2 max-[767px]:mt-1 max-[767px]:gap-1.5">
+          <div className="mt-3.5 flex items-end justify-between gap-2 max-[767px]:mt-1 max-[767px]:gap-1.5">
             <div className="min-w-0 flex-1">
               {category ? (
                 <p className={cn("font-montserrat text-[10px] leading-[14px] font-bold uppercase tracking-[0.8px] text-brand-red", categoryClassName)}>

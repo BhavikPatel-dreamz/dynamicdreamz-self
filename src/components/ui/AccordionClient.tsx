@@ -193,7 +193,7 @@ export function FaqAccordion({
           >
             {item.listItems.map((listItem) => (
               <li
-                className="relative pl-[30px] text-base leading-7 font-medium text-[#535353] max-[1199px]:pl-[26px] max-[1199px]:text-sm max-[1199px]:leading-6"
+                className="relative pl-[30px] text-sm leading-7 font-medium text-[#535353] max-[1199px]:pl-[26px] max-[1199px]:text-sm max-[1199px]:leading-6"
                 key={`${listItem.label ?? "item"}-${listItem.text}`}
               >
                 <Image
@@ -205,7 +205,7 @@ export function FaqAccordion({
                   width={18}
                 />
                 {listItem.label ? (
-                  <strong className="font-semibold text-ink">{listItem.label} </strong>
+                  <strong className="font-bold text-[#535353]">{listItem.label} </strong>
                 ) : null}
                 {listItem.text}
               </li>
