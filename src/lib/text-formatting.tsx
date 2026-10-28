@@ -89,7 +89,7 @@ function parseInlineFormatting(
     const mdBoldMatch = part.match(/^\*\*([^*]+)\*\*$/);
     if (mdBoldMatch) {
       elements.push(
-        <strong className="font-semibold text-ink" key={`md-b-${i}`}>
+        <strong className="font-bold text-[#535353]" key={`md-b-${i}`}>
           {mdBoldMatch[1]}
         </strong>,
       );

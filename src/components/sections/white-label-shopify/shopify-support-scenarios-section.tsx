@@ -105,7 +105,7 @@ export function ShopifySupportScenariosSection({
                   role="tab"
                   type="button"
                 >
-                  <strong className="mb-2 block font-sans text-base font-semibold leading-none text-[#282828]">
+                  <strong className="mb-2 block text-base font-semibold leading-none text-[#282828]">
                     {tab.title}
                   </strong>
                   <span className="block font-sans text-xs font-medium leading-5 text-[#535353]">
@@ -125,13 +125,13 @@ export function ShopifySupportScenariosSection({
                 role="tabpanel"
               >
                 <div>
-                  <span className="section-kicker mb-3 block text-xs font-bold uppercase tracking-[1.5px] text-[#AD5151]">
+                  <span className="section-kicker mb-3 block text-[13px] font-bold uppercase text-[#AD5151]">
                     {activePanel.kicker}
                   </span>
                   <h3 className="mb-4 max-w-[530px] font-display text-[28px] font-medium leading-[1.4] tracking-[-0.56px] text-[#282828] max-[991px]:text-xl max-[991px]:leading-7">
                     {activePanel.heading}
                   </h3>
-                  <p className="max-w-[650px] font-sans text-base font-medium leading-7 text-[#535353] max-[991px]:text-sm max-[991px]:leading-6">
+                  <p className="max-w-[650px] font-sans text-sm font-medium leading-6 text-[#535353] max-[991px]:text-sm max-[991px]:leading-6">
                     {activePanel.description}
                   </p>
                   <div className="service-features mt-6 flex flex-wrap gap-3">
