@@ -1,8 +1,6 @@
 import { globalBrandLogos } from "@/content/brands";
 
 export const resourcesSectionCopy = {
-  storyCategoryLabel: "Shopify",
-  storyCategoryHref: "/blogs?category=shopify",
   blogsTitle: "Shopify Blogs",
   trustTitle: "A Trusted Web & Mobile Development Company Since 2006",
   trustDescription:
@@ -39,18 +37,15 @@ export type ResourceArticle = {
 export const resourcesHero = {
   title: "Everything You Need to Know About Shopify, eCommerce, and Digital Growth!",
   description: [
-    "Have you ever wondered what really makes only some Shopify stores scale like never before, and that too effortlessly,",
-    "while others keep facing struggles just to have some conversions? Or you're just curious about the web design,",
-    "some smart integrations, or simply the speed, which literally can completely transform an online business?",
-    "If yes, then you're in the right place.",
+    "Explore practical Shopify, ecommerce and digital-growth resources created for merchants, ecommerce teams and digital agencies. Find guides on Shopify development, Shopify Plus, migrations, CRO, performance, AI, integrations and platform strategy.",
   ],
 } as const;
 
 export const resourcesHub = {
   title: "Shopify Resource Hub",
   points: [
-    "This resource hub of ours is built for all the Shopify merchants/shopify experts, all the digital enthusiasts, and even the eCommerce founders, who want to understand all the Hows and Whys behind successful online stores. Here, you're gonna find all the Shopify migration guides to Shopify Plus Agency, numerous store performance tips that are required for design inspiration, latest marketing insights, and numerous growth strategies in one single place!",
-    "So, get your hands on the resourceful content to stay ahead of trends, access proven tactics, & learn directly from our Shopify Platinum Partner team that has already powered 1,000+ stores & helped brands generate over $1 billion in sales.",
+    "This resource hub brings together practical guides, platform updates and implementation insights from the Dynamic Dreamz team. Use it to research Shopify and Shopify Plus, migrations, ecommerce performance, CRO, AI and related development topics.",
+    "Dynamic Dreamz is a Shopify Platinum Partner with 20+ years of ecommerce and technology experience, 150+ experts and 5,000+ projects delivered across ecommerce, web, mobile and custom development.",
     "So, click and join the detailed list for exclusive insights on Shopify Mobile App Development and more, expert tips, and actionable resources of DynamicDreamz, because it's basically designed to help your Shopify store grow smarter, faster & stronger.",
   ],
   categories: [
@@ -145,6 +140,39 @@ export const resourcesHub = {
 } as const;
 
 export const resourceArticles = [
+  {
+    "href": "/blogs/free-vs-paid-shopify-themes",
+    "image": "/assets/blog/free-vs-paid-shopify-themes.webp",
+    "width": 2560,
+    "height": 1935,
+    "categoryHref": "/blogs/category/shopify",
+    "category": "Shopify",
+    "displayDate": "August 11, 2026",
+    "date": "2026-08-11",
+    "title": "Free vs Paid Shopify Themes: Which One Is Right for Your Store?"
+  },
+  {
+    "href": "/blogs/shopify-development-tools",
+    "image": "/assets/blog/shopify-development-tools.webp",
+    "width": 2560,
+    "height": 1935,
+    "categoryHref": "/blogs/category/shopify",
+    "category": "Shopify",
+    "displayDate": "August 11, 2026",
+    "date": "2026-08-11",
+    "title": "7 Must-Have Shopify Development Tools for Agencies & Developers"
+  },
+  {
+    "href": "/blogs/shopify-cro-checklist",
+    "image": "/assets/blog/shopify-cro-checklist.webp",
+    "width": 2560,
+    "height": 1930,
+    "categoryHref": "/blogs/category/shopify",
+    "category": "Shopify",
+    "displayDate": "August 11, 2026",
+    "date": "2026-08-11",
+    "title": "Shopify CRO Checklist: 10 Urgent CRO Steps You Should Know Right Now"
+  },
   {
     "href": "/blogs/shopify-vs-woocommerce",
     "image": "/assets/blog/shopify-vs-woocommerce.webp",

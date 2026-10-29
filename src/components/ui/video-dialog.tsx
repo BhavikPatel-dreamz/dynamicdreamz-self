@@ -72,7 +72,14 @@ export function VideoDialog({
         </div>
         {overlay ? (
           <div className={cn("image-text min-h-13.5 flex flex-col items-center justify-center text-center z-10 lg:px-[30px] lg:pt-[30px] lg:pb-[50px] sm:p-7.5 px-5 py-3", overlayClassName)} aria-hidden="true">
-            <Image className="aspect-[auto_940/38] w-auto h-auto" src={overlay} alt="" width={overlayWidth ?? 940} height={overlayHeight ?? 38} />
+            <Image
+              className="w-auto h-auto max-w-full"
+              style={overlayWidth ? { maxWidth: `${overlayWidth}px` } : undefined}
+              src={overlay}
+              alt=""
+              width={overlayWidth ?? 940}
+              height={overlayHeight ?? 38}
+            />
             {overlayCaption ? (
               <p className="mt-2.5 text-base text-white max-[991px]:hidden">{overlayCaption}</p>
             ) : null}

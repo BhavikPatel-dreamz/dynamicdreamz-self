@@ -92,24 +92,35 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
 
   if (variant === "resources") {
     return (
-      <article className="blog-col group/resource-card h-[405.67px] w-[calc(100cqw-50px)] shrink-0 snap-start min-[768px]:h-[389.39px] min-[768px]:w-[calc((100cqw-25px)/2)] min-[1200px]:h-[405.3px] min-[1200px]:w-[calc((100cqw-50px)/3)]">
-        <div className="blog-inner flex h-full flex-col border border-ink/10 bg-white p-5">
-          <Link className="relative mb-7 block overflow-hidden pt-[55%]" href={item.href}>
-            <Image
-              className="object-cover transition-transform duration-300 group-hover/resource-card:scale-[1.03]"
-              src={item.image ?? "/assets/og/homepage.png"}
-              alt={item.title}
-              fill
-              sizes="(max-width: 767px) calc(100vw - 90px), (max-width: 1199px) calc((100vw - 113px) / 2), 324px"
-            />
-          </Link>
-          <div className="flex items-center justify-between gap-3 pb-6 text-[14px] leading-[1.9] font-medium text-muted uppercase">
-            <Link className="transition-colors hover:text-brand-red focus-visible:text-brand-red" href={categoryHref}>{category}</Link>
-            <time className="shrink-0" dateTime={item.date}>{item.displayDate}</time>
+      <article
+        data-carousel-item
+        className="blog-col group/resource-card flex shrink-0 snap-start w-[calc(100vw-32px)] min-[576px]:w-[500px] min-[768px]:w-[327.5px] min-[992px]:w-[447.5px] min-[1200px]:w-[363.33px] min-[1400px]:w-[423.33px]"
+      >
+        <div className="blog-inner flex h-full w-full flex-col border border-[rgba(33,33,33,0.1)] bg-white p-5">
+          <div className="blog-img relative mb-7 block overflow-hidden pb-[55%]">
+            <Link className="absolute inset-0 block h-full w-full" href={item.href}>
+              <Image
+                className="object-cover transition-transform duration-300 group-hover/resource-card:scale-[1.03]"
+                src={item.image ?? "/assets/og/homepage.png"}
+                alt={item.title}
+                fill
+                sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) calc((100vw - 75px) / 2), 425px"
+              />
+            </Link>
           </div>
-          <h3 className="line-clamp-4 text-[18px] leading-[1.5] font-normal tracking-normal text-ink">
-            <Link className="hover:underline hover:underline-offset-2 focus-visible:underline focus-visible:underline-offset-2" href={item.href}>{item.title}</Link>
-          </h3>
+          <div className="blog-content flex flex-1 flex-col">
+            <div className="blog-cate-wrap flex items-center gap-2 pb-6 text-[14px] leading-[1.9] font-medium uppercase text-muted">
+              <Link className="transition-colors hover:text-brand-red focus-visible:text-brand-red" href={categoryHref}>
+                <span className="blog-cate text-ink transition-colors hover:text-brand-red">{category}</span>
+              </Link>
+              <span className="blog-date text-[#535353]">{item.displayDate}</span>
+            </div>
+            <div className="blog-title">
+              <h3 className="text-[18px] leading-[1.5] font-normal tracking-[-0.32px] text-ink transition-colors duration-300 ease-in-out group-hover/resource-card:text-brand-red">
+                <Link href={item.href}>{item.title}</Link>
+              </h3>
+            </div>
+          </div>
         </div>
       </article>
     );

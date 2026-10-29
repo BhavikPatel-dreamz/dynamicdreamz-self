@@ -8,7 +8,7 @@ export function ResourcesTrustSection() {
       <Container>
         <div className="resources-trust-intro mx-auto mb-[70px] max-w-[650px] text-center">
           <h2 id="resources-trust-title" className="mb-3 text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-[24px] max-[767px]:leading-[33.24px]">{resourcesSectionCopy.trustTitle}</h2>
-          <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[992px]:text-[16px] max-[992px]:leading-[30.4px]">{resourcesSectionCopy.trustDescription}</p>
+          <p className="text-muted">{resourcesSectionCopy.trustDescription}</p>
         </div>
         <ResourcesCounterGrid />
       </Container>

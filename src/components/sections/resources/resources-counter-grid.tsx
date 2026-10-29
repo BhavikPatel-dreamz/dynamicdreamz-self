@@ -55,10 +55,10 @@ export function ResourcesCounterGrid({ stats = resourcesStats }: ResourcesCounte
       {stats.map((stat, index) => (
         <li data-aos="fade-up" className="resources-counter-card relative flex min-h-[193px] flex-col items-center justify-center overflow-hidden rounded-[10px] border border-[#efefef] bg-white px-5 text-center shadow-[0_39px_50px_rgba(74,74,74,0.05)] after:absolute after:top-0 after:right-0 after:size-[193px] after:bg-[url('/assets/backgrounds/counter-ellipse.webp')] after:bg-contain after:bg-no-repeat max-[767px]:mx-[30px]" key={stat.label}>
           <span className="sr-only">{stat.value}{stat.suffix}</span>
-          <span aria-hidden="true" className="relative z-[1] text-[60px] leading-[75.3px] font-extrabold tracking-[-1.2px]">
+          <span aria-hidden="true" className="relative z-[1] text-[60px] leading-[75.3px] font-extrabold tracking-[-1.2px] text-black">
             {values[index]}{stat.suffix}
           </span>
-          <span className="relative z-[1] text-[16px] leading-[1.5] font-semibold text-muted">{stat.label}</span>
+          <span className="relative z-[1] leading-[1.5] text-muted">{stat.label}</span>
         </li>
       ))}
     </ul>

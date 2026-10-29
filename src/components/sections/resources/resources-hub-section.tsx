@@ -10,7 +10,7 @@ export function ResourcesHubSection() {
       <Container>
         <div className="resources-listing-row flex items-start gap-[84px] max-[1199px]:gap-[50px] max-[992px]:flex-col">
           <div className="resolurces-listing-wrapper w-[560px] shrink-0 max-[1199px]:w-[450px] max-[992px]:w-full">
-            <h2 id="resources-hub-title" className="relative mb-3 pl-5 text-[35px] leading-[49px] font-normal tracking-normal text-ink before:absolute before:top-1/2 before:left-0 before:h-[34px] before:w-[5px] before:-translate-y-1/2 before:bg-[linear-gradient(111.61deg,#15c064_-0.6%,#00d1ff_92.42%)] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-[24px] max-[767px]:leading-[33.24px]">{resourcesHub.title}</h2>
+            <h2 id="resources-hub-title" className="relative mb-6 pl-5 text-[35px] leading-[49px] font-normal tracking-normal text-ink before:absolute before:top-1/2 before:left-0 before:h-[34px] before:w-[5px] before:-translate-y-1/2 before:bg-[linear-gradient(111.61deg,#15c064_-0.6%,#00d1ff_92.42%)] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-[24px] max-[767px]:leading-[33.24px]">{resourcesHub.title}</h2>
             <ul>
               {resourcesHub.points.map((point) => (
                 <li className="relative mb-8 pl-[35px] text-[16px] leading-[1.9] font-medium text-muted last:mb-0" key={point}>
