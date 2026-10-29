@@ -71,11 +71,13 @@ export function BigCommerceDevelopmentPage() {
         id="services"
       />
       <ThemeCustomizationServicesSection
+        className="mt-20"
         content={whyChoosePlatformContent}
         id="why-choose-bigcommerce"
         variant="yellow"
       />
       <OurDevelopmentProcessSection
+        isBgTransparent={true}
         content={bigCommerceDevelopmentProcess}
       />
       <ThemeCustomizationServicesSection

@@ -7,7 +7,7 @@ export const bigCommerceDevelopmentHero = {
   eyebrows: ["ESTABLISHED IN 2006"],
   title: "BigCommerce Development Company",
   description:
-    "Dynamic Dreamz is the best BigCommerce development company, focusing on creating high performing eCommerce stores. Our skilled development team offers custom BigCommerce stores to meet your business requirements. These stores ensure your clients get a smooth online buying experience and help you profitably achieve your eCommerce store objectives.",
+    "Dynamic Dreamz provides BigCommerce development for brands and businesses that need custom storefronts, theme customization, integrations, private apps and ongoing support. Our team builds responsive, maintainable BigCommerce stores around approved design and business requirements.",
   ctaLabel: "REQUEST A QUOTE",
   ctaHref: "/request-quote",
   badges: [
@@ -221,13 +221,13 @@ export const bigCommerceWhyChooseAgency = {
   eyebrow: "Why Dynamic Dreamz",
   heading: "Why Choose Dynamic Dreamz",
   description:
-    "At Dynamic Dreamz, One of the best BigCommerce Development Company, we are proud of ourselves for providing top notch BigCommerce solutions tailored to fulfill your unique business requirements. With years of experience, skills, and dedication to excellence, we ensure your WordPress website is visually attractive, positively functional, secure, and optimized for performance.",
+    "Dynamic Dreamz provides BigCommerce development around your store requirements, approved design, integrations and long-term ecommerce roadmap. Our team focuses on maintainable implementation, responsive UX, QA and ongoing support.",
   boxes: [
     {
       iconKey: "expertise-in-custom-development",
       title: "Expertise in Custom Development",
       description:
-        "We specialize in developing custom BigCommerce websites that suit your business goals. Whether it's a custom plugin, custom theme, or complex integration, our WordPress developers have the skills to make your dream come true.",
+        "Whether it is a custom app, theme customization or a complex integration, our BigCommerce developers build solutions around your store and operational requirements.",
     },
     {
       iconKey: "focus-on-security",
@@ -257,7 +257,7 @@ export const bigCommerceWhyChooseAgency = {
       iconKey: "ongoing-support-and-maintenance",
       title: "Ongoing Support and Maintenance",
       description:
-        "As the best BigCommerce Development Company, our responsibility with your website doesn't end with the launch of the website. We offer support and maintenance services to keep your WordPress website safe, up to date, and performing at its peak.",
+        "We provide ongoing support and maintenance to keep your BigCommerce store stable, current and aligned with changing business requirements.",
     },
   ] as const satisfies readonly BigCommerceWhyChooseBox[],
 } as const;
@@ -267,10 +267,8 @@ export const bigCommerceDevelopmentPortfolio = {
   heading: "Insights into Our BigCommerce Development",
   description:
     [
-    "Delving into our BigCommerce Development, we unveil a tapestry of expertise",
-    "and innovation. Our meticulous approach crafts customer centric eCommerce",
-    "solutions, integrating design and functionality.",
-  ],
+      "Delving into our BigCommerce Development, we unveil a tapestry of expertise and innovation. Our meticulous approach crafts customer centric eCommerce solutions, integrating design and functionality."
+    ],
   category: "BIGCOMMERCE",
   platformMark: {
     src: "/assets/our-work/platforms/big-commerce-icon.svg",

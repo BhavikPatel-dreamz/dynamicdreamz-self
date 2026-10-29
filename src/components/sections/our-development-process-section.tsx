@@ -17,6 +17,7 @@ export type OurDevelopmentProcessContent = {
 
 export type OurDevelopmentProcessSectionProps = {
   content: OurDevelopmentProcessContent;
+  isBgTransparent?: boolean
   id?: string;
   eyebrowVariant?: "pill" | "dash";
   columns?: 3 | 4;
@@ -26,10 +27,11 @@ export function OurDevelopmentProcessSection({
   content,
   id,
   columns,
+  isBgTransparent
 }: OurDevelopmentProcessSectionProps) {
   const is3Col = columns === 3 || content.steps.length === 6;
   const isHireProcess = content.heading?.toLowerCase().includes("hiring");
-  const bg = isHireProcess ? "bg-transparent" : "bg-[#fafaf7]";
+  const bg = isHireProcess || isBgTransparent ? "bg-transparent" : "bg-[#fafaf7]";
 
   return (
     <section
