@@ -109,7 +109,7 @@ export const webflowDevelopmentServices: ShopifyStageServicesContent = {
   eyebrow: "Our Services",
   heading: "Our Webflow Development Services",
   description:
-    "At Dynamic Dreamz, we offer the best Webflow development services designed for growing brands, startups, and enterprises that need more than just a good-looking website. Our webflow development experts focus on performance, scalability, and ease of management — so your site works as hard as your business does.",
+    "At Dynamic Dreamz, we provide Webflow development services for growing brands, startups and businesses that need custom design implementation, CMS, integrations, migrations and ongoing support.",
   items: [
     {
       tag: "CUSTOM DEVELOPMENT",
@@ -211,7 +211,7 @@ export const webflowDevelopmentGrowth: WebflowGrowthContent = {
       iconKey: "conversion",
       title: "Conversion-Focused Design",
       description:
-        "Our Webflow development approach prioritizes clean structure, optimized assets, and fast load times. The result? Better Core Web Vitals, improved SEO performance, and smoother user experiences across devices.",
+        "We structure page hierarchy, content flow and calls to action around the user journey, helping visitors understand the offer and move toward the next step without adding unnecessary friction.",
     },
     {
       iconKey: "future-ready",
@@ -323,8 +323,10 @@ export const webflowDevelopmentFaqs: readonly FaqAccordionItem[] = [
   },
   {
     question: "Why should I choose Webflow over WordPress or other platforms?",
-    answer:
-      "Webflow, provided by the best Webflow development agency, tends to offer a next-level design flexibility, much cleaner code output, faster performance & easier content management, and that too without the need for heavy plugins.\n\nAnd for your kind of knowledge, these days it’s quite ideal for businesses that require speed, scalability, and control without constant maintenance overhead.",
+    answer:[
+      "Webflow, provided by the best Webflow development agency, tends to offer a next-level design flexibility, much cleaner code output, faster performance & easier content management, and that too without the need for heavy plugins.",
+      "And for your kind of knowledge, these days it’s quite ideal for businesses that require speed, scalability, and control without constant maintenance overhead."
+    ],
   },
   {
     question: "Can you convert my existing design into Webflow?",
@@ -349,7 +351,7 @@ export const webflowDevelopmentFaqs: readonly FaqAccordionItem[] = [
   {
     question: "Do you offer ongoing Webflow support and maintenance?",
     answer:
-      "Yes, at DynamicDreamz We provide ongoing Webflow support, updates, performance optimization, and feature enhancements after launch.",
+      "Yes, at [DynamicDreamz](/) We provide ongoing Webflow support, updates, performance optimization, and feature enhancements after launch.",
   },
   {
     question: "Who owns the Webflow website after completion?",

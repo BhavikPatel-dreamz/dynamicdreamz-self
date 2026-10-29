@@ -16,13 +16,6 @@ export const hireWordPressHero = {
   },
   badges: [
     {
-      src: "/assets/proof/shopify-platinum-partner.svg",
-      alt: "Dynamic Dreamz - Shopify Platinum Partner",
-      width: 136,
-      height: 44,
-      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
-    },
-    {
       src: "/assets/proof/clutch-rating.svg",
       alt: "Dynamic Dreamz on Clutch — 4.9 rating",
       width: 111,

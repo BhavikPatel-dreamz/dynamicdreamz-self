@@ -53,6 +53,7 @@ export function HireWordPressDevelopersPage() {
       />
       <OurDevelopmentProcessSection
         content={hireWordPressProcess}
+        isBgTransparent
       />
       <PricingTableSection content={hireWordPressPricing} />
       <PortfolioShowcaseSection

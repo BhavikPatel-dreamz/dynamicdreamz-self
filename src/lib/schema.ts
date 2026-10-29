@@ -4828,7 +4828,7 @@ export function createWebflowDevelopmentPageSchema() {
       "Businesses, startups, enterprises, and digital agencies seeking custom Webflow websites and dedicated Webflow developers",
     faqs: webflowDevelopmentFaqs.map((item) => ({
       question: item.question,
-      answer: item.answer,
+      answer: cleanFaqSchemaText(item.answer),
     })),
     offers: webflowDevelopmentServices.items.map((item) => ({
       title: item.title,

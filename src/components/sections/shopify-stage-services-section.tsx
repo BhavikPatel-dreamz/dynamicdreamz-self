@@ -68,23 +68,23 @@ export function ShopifyStageServicesSection({
               <article
                 data-aos="fade-up"
                 className={cn(
-                  "item relative overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] p-[27px] transition-all max-[1399px]:p-5 max-[767px]:rounded-[16px]",
+                  "item relative overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] p-[27px] transition-all max-[1399px]:p-5 max-[767px]:rounded-[16px] flex flex-col",
                   isFirst
-                    ? "row-span-2 min-h-[440px] bg-[#f7f4ea] flex flex-col justify-between max-[767px]:row-auto max-[767px]:min-h-0"
+                    ? "row-span-2 min-h-[440px] bg-[#f7f4ea] justify-between max-[767px]:row-auto max-[767px]:min-h-0"
                     : isFourth
                       ? cn(
                           "bg-[#eff4ef] flex flex-col justify-between",
                           content.items.length !== 5 && "col-span-2",
                         )
                       : isFifth && isSixCards
-                        ? "col-span-2 bg-white max-[1199px]:col-span-1 flex flex-col justify-between"
+                        ? "col-span-2 bg-white max-[1199px]:col-span-1 "
                         : isSeventh
-                          ? "bg-white max-[1199px]:row-span-2 max-[1199px]:bg-[#eef4ef] flex flex-col justify-between"
+                          ? "bg-white max-[1199px]:row-span-2 max-[1199px]:bg-[#eef4ef]"
                           : isEighth
-                            ? "col-span-2 bg-[rgba(239,244,239,1)] max-[1199px]:col-span-1 max-[1199px]:bg-transparent flex flex-col justify-between"
+                            ? "col-span-2 bg-[rgba(239,244,239,1)] max-[1199px]:col-span-1 max-[1199px]:bg-transparent"
                             : lastColFull && isLast
                               ? "col-span-2 max-[1199px]:col-span-1 bg-white flex flex-col justify-between"
-                              : "bg-white flex flex-col justify-between",
+                              : "bg-white ",
                 )}
                 key={item.title}
               >
