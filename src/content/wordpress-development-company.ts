@@ -15,13 +15,6 @@ export const wordpressDevelopmentCompanyHero = {
   },
   badges: [
     {
-      src: "/assets/proof/shopify-platinum-partner.svg",
-      alt: "Dynamic Dreamz - Shopify Platinum Partner",
-      width: 136,
-      height: 44,
-      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
-    },
-    {
       src: "/assets/proof/clutch-rating.svg",
       alt: "Dynamic Dreamz on Clutch — 4.9 rating",
       width: 111,
@@ -120,8 +113,11 @@ export const wordpressDevelopmentCompanyServices = {
     "Start Your Business with",
     "WordPress Development Services",
   ],
-  description:
-    "Take advantage of the WordPress development services from Dynamic Dreamz, a WordPress Website development company in India. We are expertly crafting customized WordPress solutions to ensure your digital success.",
+  description: [
+    "Take advantage of the WordPress development services from Dynamic Dreamz,",
+    "a WordPress Website development company in India. We are expertly",
+    "crafting customized WordPress solutions to ensure your digital success.",
+  ],
   items: [
     {
       icon: "/assets/services/wordpress/wordpress-theme-customization.svg",
@@ -248,8 +244,7 @@ export const wordpressDevelopmentCompanyWhyWordPress = {
   heading: "Why Businesses Choose WordPress",
   description:
     [
-    "WordPress is holding its name in the leading platform for web development because of its robust features like flexibility, scalability, and ease of use. WordPress offers tools and facilities for everyone, from small businesses to large enterprises. Let’s Choose Dynamic Dreamz",
-    "as a WordPress development company in India.",
+    "WordPress is holding its name in the leading platform for web development because of its robust features like flexibility, scalability, and ease of use. WordPress offers tools and facilities for everyone, from small businesses to large enterprises. Let’s Choose Dynamic Dreamz as a WordPress development company in India.",
   ],
   boxes: [
     {
@@ -307,7 +302,7 @@ export const wordpressDevelopmentCompanyProcess = {
   eyebrow: "Our Process",
   heading: "Our WordPress Website Development Process",
   description:
-    "As the best WordPress development company in India, we develop WordPress websites that hold customers' attention, win their hearts, and build an enduring relationship.",
+    "Our WordPress development process is structured around clear requirements, approved design, development, QA and launch.",
   steps: [
     {
       step: "Step 01",
@@ -377,9 +372,7 @@ export const wordpressDevelopmentCompanyPortfolio = {
   heading: "Our Successful WordPress Projects",
   description:
     [
-      "500+ WordPress websites meticulously crafted and counting. Our expertise",
-      "accelerates growth and redefines shopping experiences for clients,",
-      "making us the best WordPress development company in India.",
+      "Explore selected WordPress projects delivered for businesses and agencies across business websites, content platforms and ecommerce.",
     ],
   category: "WORDPRESS",
   ctaLabel: "View our work",
@@ -446,8 +439,7 @@ export const wordpressDevelopmentCompanyTestimonials = {
   heading: "Our Customers' Testimonials",
   description:
     [
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
-      "Happy clients make happy stories: Check out how our services empower them to evolve.",
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories: Check out how our services empower them to evolve.",
     ],
   items: shopifyPlusAgencyTestimonials.items,
 } as const;

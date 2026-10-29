@@ -169,7 +169,7 @@ export const hireShopifyReasons = [
     iconKey: "experience",
     title: "Experience says it all",
     description:
-      "With more than eighteen years of significant experience in Shopify development, we are an established Shopify development agency.",
+      "Dynamic Dreamz brings 20+ years of ecommerce and web development experience, supported by a dedicated Shopify team working across storefronts, integrations, migrations and ongoing development.",
     icon: icon("experience"),
     iconAlt: "Shopify development experience",
   },
@@ -209,11 +209,11 @@ export const hireShopifyAdvantages = [
   },
   {
     iconKey: "cost-savings",
-    title: "Save 50% on your development cost",
+    title: "Flexible Engagement Models",
     description:
-      "Our agency offers competitive prices. Our pricing standards are flexible and convenient for all kinds of customers.",
+      "Choose project-based work, flexible Shopify development hours or dedicated monthly capacity based on your workload, budget and delivery requirements.",
     icon: icon("development-savings"),
-    iconAlt: "Development cost savings",
+    iconAlt: "Flexible engagement models",
   },
   {
     iconKey: "integrity",
@@ -441,10 +441,6 @@ export const hireShopifyCapabilities = {
       title: "Shopify Plus Mobile App Development",
       description:
         "Build high-performance iOS and Android shopping apps integrated with Shopify Plus, including real-time products, customer accounts, checkout, push notifications and loyalty features.",
-      cta: {
-        label: "Explore Shopify Mobile Apps",
-        href: "/shopify-mobile-app-development",
-      },
     },
   ],
 } satisfies ShopifyStageServicesContent;

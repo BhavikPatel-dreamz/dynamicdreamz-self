@@ -52,7 +52,7 @@ export function LifeHiringSection({
             <h2 className="mb-[10px] font-montreal-medium text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
               {title}
             </h2>
-            <p className="mb-[30px] text-[18px] leading-[34.2px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
+            <p className="mb-[30px] text-sm leading-[24px] font-small text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
               {description}
             </p>
             <div className="h-[54px] max-[992px]:h-[52.4px]">

@@ -36,7 +36,7 @@ export function WorkCultureSection({
           >
             {title}
           </h2>
-          <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
+          <p className="text-sm leading-[24px] font-small text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
             {description}
           </p>
         </header>

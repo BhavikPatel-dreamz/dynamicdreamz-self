@@ -23,7 +23,7 @@ export const lifeHero = {
   titleAfterTeamwork: "Takes the",
   lead: "Lead",
   description:
-    "Dynamic Dreamz gives ample of opportunities to amplify your potential and let you maintain work life balance. We are deeply committed to create an inclusive workplace irrespective of caste, creed and religion. We are an equal opportunity employer.",
+    "Dynamic Dreamz gives you ample opportunities to develop your potential while maintaining a healthy work-life balance. We are deeply committed to create an inclusive workplace irrespective of caste, creed and religion. We are an equal opportunity employer.",
   image: {
     src: "/assets/life-dynamicdreamz/dynamic-dreamz-team.webp",
     alt: "Dynamic Dreamz team gathered at a company event",
@@ -109,7 +109,7 @@ export const lifeFaqSection = {
     {
       question: "Are there opportunities for professional development and growth?",
       answer:
-        "There are ample of opportunities for the professional development and growth as we provide our services to clients across spectrum of industry verticals and we leverage cutting-edge technologies hence as an employee you will get an extensive exposure of different domain and technologies.",
+        "There are ample opportunities for professional development and growth because our teams work with clients across different industries and technologies. This gives employees exposure to varied domains, project types and technical challenges.",
     },
     {
       question: "What kind of projects will I get to work on?",

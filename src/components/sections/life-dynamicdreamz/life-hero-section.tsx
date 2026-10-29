@@ -92,7 +92,7 @@ export function LifeHeroSection({
               />
             </span>
           </h1>
-          <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
+          <p className="text-[16px] leading-[28px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
             {description}
           </p>
         </div>

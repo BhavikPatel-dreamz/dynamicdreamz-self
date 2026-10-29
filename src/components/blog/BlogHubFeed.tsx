@@ -32,7 +32,7 @@ type BlogsArchiveSectionProps = {
 
 function SearchIcon() {
   return (
-    <svg aria-hidden="true" className="size-5" viewBox="0 0 57 56" fill="none">
+    <svg aria-hidden="true" className="size-7" viewBox="0 0 57 56" fill="none">
       <circle cx="25" cy="25" r="10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
       <line x1="32" y1="32" x2="42" y2="42" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -139,7 +139,7 @@ export function BlogsArchiveSection({
                   <input type="hidden" name="category" value={activeCategory} />
                 ) : null}
                 <button
-                  className="search-btn absolute top-1/2 right-1.5 flex size-[34px] -translate-y-1/2 cursor-pointer items-center justify-center rounded-md border-0 bg-brand-red text-white transition-colors duration-300 hover:bg-brand-red-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red"
+                  className="search-btn absolute top-1/2 right-1.5 flex size-[40px] -translate-y-1/2 cursor-pointer items-center justify-center rounded-md border-0 bg-brand-red text-white transition-colors duration-300 hover:bg-brand-red-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red"
                   type="submit"
                   aria-label={search.submitLabel}
                   title={search.submitLabel}
@@ -180,7 +180,7 @@ export function BlogsArchiveSection({
                   if (item.current) {
                     return (
                       <span
-                        className="rounded-md bg-[#090909] px-[11.2px] py-[6.5px] text-base leading-[21px] font-medium tracking-[0.48px] text-white"
+                        className="rounded-md bg-[#ad5151hire-shopify-] px-[11.2px] py-[6.5px] text-base leading-[21px] font-medium tracking-[0.48px] text-white"
                         aria-current="page"
                         key={item.label + "-" + index}
                       >
