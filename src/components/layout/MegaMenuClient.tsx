@@ -13,6 +13,7 @@ import {
 import { siteChromeCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
+import { isNavigationLinkActive } from "./FooterMenuItem";
 
 function ChevronIcon({ open = false }: { open?: boolean } = {}) {
   return (
@@ -66,10 +67,15 @@ function MenuIcon({ item }: { item: MegaMenuItem }) {
   );
 }
 
-function MenuCopy({ item }: { item: MegaMenuItem }) {
+function MenuCopy({ item, active = false }: { item: MegaMenuItem; active?: boolean }) {
   return (
-    <span className="block min-w-0">
-      <strong className="flex items-center text-sm leading-none font-bold text-[#282828]">
+    <span className={cn("menu-copy block min-w-0", active && "active")}>
+      <strong
+        className={cn(
+          "flex items-center text-sm leading-none font-bold text-[#282828] transition-colors duration-150",
+          active && "text-[#ad5151]",
+        )}
+      >
         {item.label}
         {item.badge ? (
           <span className="ml-1.5 rounded-sm bg-[#f5ebeb] px-1.5 py-px text-[11px] leading-[146.2%] font-bold tracking-[0.24px] text-[#ad5151]">
@@ -84,17 +90,30 @@ function MenuCopy({ item }: { item: MegaMenuItem }) {
   );
 }
 
-function MenuItem({ item, work = false }: { item: MegaMenuItem; work?: boolean }) {
+function MenuItem({
+  item,
+  work = false,
+  pathname,
+}: {
+  item: MegaMenuItem;
+  work?: boolean;
+  pathname?: string;
+}) {
+  const isItemActive = pathname ? isNavigationLinkActive(item.href, pathname) : false;
+
   if (work) {
     return (
       <li>
         <Link
-          className="group/item flex h-full min-h-[172px] flex-col rounded-[15px] border border-[#f0f0f0] p-5 transition-colors duration-150 hover:bg-[#f7f4e9] focus-visible:bg-[#f7f4e9]"
+          className={cn(
+            "group/item flex h-full min-h-[172px] flex-col rounded-[15px] border border-[#f0f0f0] p-5 transition-colors duration-150 hover:bg-[#f7f4e9] focus-visible:bg-[#f7f4e9]"
+          )}
           href={item.href}
+          aria-current={isItemActive ? "page" : undefined}
         >
           <MenuIcon item={item} />
           <span className="mt-[15px] block">
-            <MenuCopy item={item} />
+            <MenuCopy item={item} active={isItemActive} />
           </span>
           <span className="mt-2.5 inline-flex items-center text-xs leading-[166.182%] font-bold tracking-[-0.24px] text-[#ad5151] uppercase transition-colors duration-300 group-hover/item:text-[#282828] group-focus-visible/item:text-[#282828]">
             {item.ctaLabel}
@@ -108,11 +127,14 @@ function MenuItem({ item, work = false }: { item: MegaMenuItem; work?: boolean }
   return (
     <li>
       <Link
-        className="flex min-h-16 items-start gap-[11px] rounded-[11px] px-3 py-2 transition-colors duration-[160ms] hover:bg-[#f7f4e9] focus-visible:bg-[#f7f4e9] min-[1200px]:max-[1400px]:p-2.5"
+        className={cn(
+          "flex min-h-16 items-start gap-[11px] rounded-[11px] px-3 py-2 transition-colors duration-[160ms] hover:bg-[#f7f4e9] focus-visible:bg-[#f7f4e9] min-[1200px]:max-[1400px]:p-2.5"
+        )}
         href={item.href}
+        aria-current={isItemActive ? "page" : undefined}
       >
         <MenuIcon item={item} />
-        <MenuCopy item={item} />
+        <MenuCopy item={item} active={isItemActive} />
       </Link>
     </li>
   );
@@ -133,7 +155,7 @@ const gridColumnClasses: Record<PrimaryNavigationGroup["columns"], string> = {
   3: "grid-cols-3",
 };
 
-function MenuPanel({ group }: { group: PrimaryNavigationGroup }) {
+function MenuPanel({ group, pathname }: { group: PrimaryNavigationGroup; pathname?: string }) {
   const isWorkMenu = group.variant === "work";
 
   return (
@@ -145,7 +167,7 @@ function MenuPanel({ group }: { group: PrimaryNavigationGroup }) {
     >
       <ul className={cn("grid gap-x-2", gridColumnClasses[group.columns])}>
         {group.items.map((item) => (
-          <MenuItem item={item} key={item.label} work={isWorkMenu} />
+          <MenuItem item={item} key={item.label} pathname={pathname} work={isWorkMenu} />
         ))}
       </ul>
 
@@ -215,9 +237,6 @@ export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
         {groups.map((group, index) => {
           const isOpen = openGroup === group.slug;
           const menuId = `desktop-${group.slug}-menu`;
-          const isActive = group.items.some(
-            (item) => normalizedPathname === item.href.replace(/\/$/, ""),
-          );
 
           return (
             <li
@@ -225,7 +244,6 @@ export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
                 "group/desktop-nav relative py-9 pr-4 min-[1400px]:pr-6",
                 index === 0 && "static",
               )}
-              data-active={isActive}
               data-open={isOpen}
               key={group.slug}
               onMouseEnter={() => setOpenGroup(group.slug)}
@@ -236,7 +254,7 @@ export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
               }}
             >
               <button
-                className="flex cursor-pointer items-center gap-1.5 border-0 bg-transparent p-0 font-montserrat text-[13px] leading-[normal] font-medium whitespace-nowrap text-[#282828] hover:text-[#ad5151] group-data-[active=true]/desktop-nav:text-[#ad5151] group-data-[open=true]/desktop-nav:text-[#ad5151] min-[1400px]:text-sm [&_svg]:transition-transform [&_svg]:duration-300 group-data-[open=true]/desktop-nav:[&_svg]:rotate-180"
+                className="flex cursor-pointer items-center gap-1.5 border-0 bg-transparent p-0 font-montserrat text-[13px] leading-[normal] font-medium whitespace-nowrap text-[#282828] hover:text-[#ad5151] group-data-[open=true]/desktop-nav:text-[#ad5151] min-[1400px]:text-sm [&_svg]:transition-transform [&_svg]:duration-300 group-data-[open=true]/desktop-nav:[&_svg]:rotate-180"
                 type="button"
                 aria-expanded={isOpen}
                 aria-haspopup="true"
@@ -253,7 +271,7 @@ export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
                 inert={isMounted && !isOpen ? true : undefined}
                 className={cn(!isOpen && "hidden")}
               >
-                <MenuPanel group={group} />
+                <MenuPanel group={group} pathname={normalizedPathname} />
               </div>
             </li>
           );
@@ -262,10 +280,10 @@ export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
           <Link
             className={cn(
               "flex items-center font-montserrat text-[13px] leading-[normal] font-medium whitespace-nowrap text-[#282828] hover:text-[#ad5151] min-[1400px]:text-sm",
-              normalizedPathname === siteConfig.contactPath && "text-[#ad5151]",
+              isNavigationLinkActive(siteConfig.contactPath, normalizedPathname) && "text-[#ad5151]",
             )}
             href={siteConfig.contactPath}
-            aria-current={normalizedPathname === siteConfig.contactPath ? "page" : undefined}
+            aria-current={isNavigationLinkActive(siteConfig.contactPath, normalizedPathname) ? "page" : undefined}
           >
             {siteChromeCopy.contactUs}
           </Link>
@@ -317,6 +335,8 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
   const toggleRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const normalizedPathname = pathname === "/" ? pathname : pathname.replace(/\/$/, "");
   const groups = navigation && navigation.length > 0 ? navigation : primaryNavigation;
   const email = contactEmail || siteConfig.email;
 
@@ -435,7 +455,11 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
               return (
                 <li className="border-b border-[#f0f0f0] py-6" key={group.slug}>
                   <button
-                    className={cn(topLevelLinkClass, "cursor-pointer transition-colors", isGroupOpen && "text-[#ad5151]")}
+                    className={cn(
+                      topLevelLinkClass,
+                      "cursor-pointer transition-colors",
+                      isGroupOpen && "text-[#ad5151]",
+                    )}
                     type="button"
                     aria-expanded={isGroupOpen}
                     aria-controls={submenuId}
@@ -456,23 +480,30 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
                   >
                     <div className="overflow-hidden">
                       <ul className="pt-2.5">
-                        {group.items.map((item) => (
-                          <li key={item.label}>
-                            <Link
-                              className="flex w-fit items-center gap-[11px] py-[9px] text-sm leading-none font-medium text-[#282828] hover:text-[#ad5151] focus-visible:text-[#ad5151]"
-                              href={item.href}
-                              onClick={closeMenu}
-                            >
-                              <MobileItemIcon item={item} />
-                              <span>{item.label}</span>
-                              {item.badge ? (
-                                <span className="rounded-sm bg-[#f5ebeb] px-1.5 py-px text-[11px] leading-[146.2%] font-bold tracking-[0.24px] text-[#ad5151]">
-                                  {item.badge}
-                                </span>
-                              ) : null}
-                            </Link>
-                          </li>
-                        ))}
+                        {group.items.map((item) => {
+                          const isItemActive = isNavigationLinkActive(item.href, normalizedPathname);
+                          return (
+                            <li key={item.label}>
+                              <Link
+                                className={cn(
+                                  "flex w-fit items-center gap-[11px] py-[9px] text-sm leading-none font-medium text-[#282828] hover:text-[#ad5151] focus-visible:text-[#ad5151]",
+                                  isItemActive && "text-[#ad5151] font-semibold",
+                                )}
+                                href={item.href}
+                                aria-current={isItemActive ? "page" : undefined}
+                                onClick={closeMenu}
+                              >
+                                <MobileItemIcon item={item} />
+                                <span>{item.label}</span>
+                                {item.badge ? (
+                                  <span className="rounded-sm bg-[#f5ebeb] px-1.5 py-px text-[11px] leading-[146.2%] font-bold tracking-[0.24px] text-[#ad5151]">
+                                    {item.badge}
+                                  </span>
+                                ) : null}
+                              </Link>
+                            </li>
+                          );
+                        })}
                       </ul>
 
                       {group.promo ? (
@@ -498,7 +529,17 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
             })}
 
             <li className="border-b border-[#f0f0f0] py-6">
-              <Link className={topLevelLinkClass} href={siteConfig.contactPath} onClick={closeMenu}>{siteChromeCopy.contactUs}</Link>
+              <Link
+                className={cn(
+                  topLevelLinkClass,
+                  isNavigationLinkActive(siteConfig.contactPath, normalizedPathname) && "text-[#ad5151]",
+                )}
+                href={siteConfig.contactPath}
+                aria-current={isNavigationLinkActive(siteConfig.contactPath, normalizedPathname) ? "page" : undefined}
+                onClick={closeMenu}
+              >
+                {siteChromeCopy.contactUs}
+              </Link>
             </li>
             <li className="py-6">
               <a className="block text-sm leading-[normal] font-semibold text-[#d92128] underline" href={`mailto:${email}`} onClick={closeMenu}>{email}</a>

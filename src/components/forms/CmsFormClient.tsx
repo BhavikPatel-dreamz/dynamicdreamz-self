@@ -5,13 +5,13 @@ import { useRouter } from "next/navigation";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { cmsFormCopy, contactFormCopy } from "@/content/forms";
 import type { Form as PayloadForm } from "@/types/payload-types";
+import { Button } from "../ui/button-link";
 
 type FormFieldBlock = NonNullable<PayloadForm["fields"]>[number];
 
 export type CmsFormClientProps = {
   form: PayloadForm | number | string | null | undefined;
   className?: string;
-  submitButtonClassName?: string;
   footerNote?: React.ReactNode;
   onSuccess?: () => void;
 };
@@ -117,7 +117,6 @@ function renderLexicalRichText(data: any): React.ReactNode {
 export function CmsFormClient({
   form,
   className = "",
-  submitButtonClassName = "",
   footerNote,
   onSuccess,
 }: CmsFormClientProps) {
@@ -141,7 +140,7 @@ export function CmsFormClient({
             setAsyncForm(data);
           }
         })
-        .catch(() => {});
+        .catch(() => { });
       return () => {
         isMounted = false;
       };
@@ -473,7 +472,7 @@ export function CmsFormClient({
           const fieldPlaceholder =
             (field as any).placeholder ||
             cmsFormCopy.placeholders[
-              (field as any).name as keyof typeof cmsFormCopy.placeholders
+            (field as any).name as keyof typeof cmsFormCopy.placeholders
             ] ||
             "";
 
@@ -574,8 +573,8 @@ export function CmsFormClient({
                           accept={
                             Array.isArray((field as any).mimeTypes)
                               ? (field as any).mimeTypes
-                                  .map((m: any) => m.mimeType || m)
-                                  .join(",")
+                                .map((m: any) => m.mimeType || m)
+                                .join(",")
                               : undefined
                           }
                           className="sr-only"
@@ -654,20 +653,17 @@ export function CmsFormClient({
         }
       >
         {footerNote && (
-          <div className="text-xs font-normal text-muted max-[767px]:text-center">
-            {footerNote}
+          <div className="max-[767px]:text-center">
+            <p className="text-xs font-normal text-[#090909]">
+              {footerNote}
+            </p>
           </div>
         )}
-        <button
+        <Button
           type="submit"
-          disabled={isSubmitting}
-          className={
-            submitButtonClassName ||
-            "inline-flex h-[52px] min-w-[180px] cursor-pointer items-center justify-center rounded-[5px] bg-[#090909] px-8 text-base font-semibold text-white transition-all duration-300 hover:bg-[#d92128] disabled:cursor-not-allowed disabled:opacity-60 max-[767px]:w-full"
-          }
-        >
+          disabled={isSubmitting}>
           {isSubmitting ? cmsFormCopy.submitting : submitLabel}
-        </button>
+        </Button>
       </div>
     </form>
   );

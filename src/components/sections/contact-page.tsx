@@ -82,7 +82,7 @@ export function ContactHeroSection({
           </Eyebrow>
           <h1
             id="contact-page-title"
-            className="font-display text-[50px] leading-[60px] font-medium tracking-[-1px] text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
+            className="font-display text-[50px] leading-[60px] font-medium text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
           >
             {title}
           </h1>
@@ -148,8 +148,7 @@ export function ContactFormSection({
             {form ? (
               <CmsFormClient
                 form={form}
-                submitButtonClassName="relative inline-flex min-h-[49px] shrink-0 cursor-pointer overflow-hidden rounded-[30px] border-2 border-brand-red bg-brand-red px-8 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-300 hover:border-[#4f4f4f] hover:bg-transparent hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70 max-[767px]:w-full max-[767px]:justify-center"
-                footerNote={<p>{contactFormCopy.note}</p>}
+                footerNote={contactFormCopy.note}
               />
             ) : (
               <ContactForm />
@@ -212,14 +211,14 @@ export function ContactOfficesSection({
               <h3 className="font-display text-2xl leading-normal font-medium text-ink max-[991px]:text-lg">
                 {office.city}
               </h3>
-              <address className="my-5 text-base leading-[26px] font-medium not-italic text-muted max-[991px]:my-3.5 max-[991px]:text-sm max-[991px]:leading-6">
+              <address className="my-5 leading-[26px] not-italic text-muted max-[991px]:my-3.5 max-[991px]:text-sm max-[991px]:leading-6">
                 {office.address}
               </address>
               <ul className="space-y-5 max-[991px]:space-y-3.5">
                 <li>
                   <a
                     href={office.phoneHref}
-                    className="flex items-center text-base font-medium text-muted transition-colors duration-300 hover:text-ink max-[991px]:text-sm"
+                    className="flex items-center font-medium text-muted transition-colors duration-300 hover:text-ink max-[991px]:text-sm"
                   >
                     <span className="mr-2.5 shrink-0">
                       <PhoneIcon />

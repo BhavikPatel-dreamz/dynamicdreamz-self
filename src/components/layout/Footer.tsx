@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { FooterBottomLink, FooterMenuItem } from "./FooterMenuItem";
 import { Container } from "@/components/ui/container";
 import { siteChromeCopy } from "@/content/common";
 import { footerAwards, footerNavigation } from "@/data/navigation";
@@ -142,9 +143,12 @@ function FooterMenu({ index, navigation }: { index: number; navigation: Navigati
       <h3 className="mb-2.5 font-montreal-medium text-lg leading-7.5 font-medium">{group.label}</h3>
       <ul className="m-0 list-none p-0">
         {group.links.map((link, linkIndex) => (
-          <li className={linkIndex > 0 ? "mt-2" : undefined} key={`${link.label}-${link.href}`}>
-            <Link className="text-sm leading-[166.182%] font-medium tracking-[-0.28px] text-ink/80 capitalize transition-colors duration-300 hover:text-ink focus-visible:text-ink" href={link.href}>{link.label}</Link>
-          </li>
+          <FooterMenuItem
+            className={linkIndex > 0 ? "mt-2" : undefined}
+            href={link.href}
+            key={`${link.label}-${link.href}`}
+            label={link.label}
+          />
         ))}
       </ul>
     </nav>
@@ -267,9 +271,13 @@ export function SiteFooter({
                   <div className="min-h-0 overflow-hidden">
                     <ul className="m-0 list-none p-0 pb-[18px]">
                       {group.links.map((link) => (
-                        <li className="leading-[30.4px]" key={`${link.label}-${link.href}`}>
-                          <Link className="text-sm leading-5 font-medium text-ink/80 capitalize transition-colors duration-300 hover:text-ink hover:opacity-100 focus-visible:text-ink" href={link.href}>{link.label}</Link>
-                        </li>
+                        <FooterMenuItem
+                          className="leading-[30.4px]"
+                          href={link.href}
+                          isMobile
+                          key={`${link.label}-${link.href}`}
+                          label={link.label}
+                        />
                       ))}
                     </ul>
                   </div>
@@ -313,24 +321,23 @@ export function SiteFooter({
           {effectiveBottomLinks && effectiveBottomLinks.length > 0 ? (
             <div className="flex max-[767px]:mt-0 max-[767px]:w-full max-[767px]:justify-center">
               {effectiveBottomLinks.map((link, idx) => (
-                <Link
+                <FooterBottomLink
                   key={`${link.label}-${link.href}`}
                   className={cn(
                     "inline-block text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]",
                     idx < effectiveBottomLinks.length - 1 && "relative mr-[14px] pr-[10px] after:absolute after:-top-[1px] after:right-[-4px] after:content-['|']",
                   )}
                   href={link.href}
+                  label={link.label}
                   target="_blank"
                   rel="noopener noreferrer"
-                >
-                  {link.label}
-                </Link>
+                />
               ))}
             </div>
           ) : (
             <div className="flex max-[767px]:mt-0 max-[767px]:w-full max-[767px]:justify-center">
-              <Link className="relative mr-[14px] inline-block pr-[10px] text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 after:absolute after:-top-[1px] after:right-[-4px] after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.termsPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.terms}</Link>
-              <Link className="inline-block text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.privacyPath} target="_blank" rel="noopener noreferrer">{siteChromeCopy.footer.privacy}</Link>
+              <FooterBottomLink className="relative mr-[14px] inline-block pr-[10px] text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 after:absolute after:-top-[1px] after:right-[-4px] after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.termsPath} label={siteChromeCopy.footer.terms} target="_blank" rel="noopener noreferrer" />
+              <FooterBottomLink className="inline-block text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.privacyPath} label={siteChromeCopy.footer.privacy} target="_blank" rel="noopener noreferrer" />
             </div>
           )}
         </div>

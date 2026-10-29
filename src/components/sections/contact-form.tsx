@@ -192,8 +192,8 @@ export function ContactForm() {
       </div>
 
       <div className="flex items-center justify-between gap-5 max-[767px]:flex-col-reverse max-[767px]:items-center">
-        <div className="text-xs font-normal text-muted max-[767px]:text-center">
-          <p>{contactFormCopy.note}</p>
+        <div className="max-[767px]:text-center">
+          <p className="text-xs font-normal text-[#090909]">{contactFormCopy.note}</p>
         </div>
         <button
           className="group/contact-submit relative inline-flex min-h-[49px] shrink-0 cursor-pointer overflow-hidden rounded-[30px] border-2 border-brand-red px-6 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-600 hover:border-[#4f4f4f] hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70 max-[767px]:w-full max-[767px]:justify-center"
