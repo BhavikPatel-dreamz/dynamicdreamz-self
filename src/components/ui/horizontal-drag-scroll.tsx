@@ -124,6 +124,7 @@ export function HorizontalDragScroll({
     if (!viewport) return;
 
     function handleWheel(event: WheelEvent) {
+      if (!viewport) return;
       if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
         const canScrollRight = event.deltaY > 0 && viewport.scrollLeft + viewport.clientWidth < viewport.scrollWidth - 1;
         const canScrollLeft = event.deltaY < 0 && viewport.scrollLeft > 1;

@@ -47,7 +47,6 @@ export function CareerApplyNowPage({
                 <div className="right-col w-[61%] max-[1199px]:w-[55%] max-[991px]:w-full">
                   <CmsFormClient
                     form={form}
-                    submitButtonClassName="group/career-submit relative inline-flex min-h-[49px] cursor-pointer items-center justify-center overflow-hidden rounded-[30px] border-2 border-brand-red bg-brand-red px-8 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-300 hover:bg-black hover:border-black disabled:cursor-wait disabled:opacity-70 max-[767px]:w-full"
                   />
                 </div>
               ) : (

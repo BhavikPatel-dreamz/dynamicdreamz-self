@@ -53,7 +53,6 @@ export function RequestQuotePage({
                   </h2>
                   <CmsFormClient
                     form={form}
-                    submitButtonClassName="group/quote-submit relative inline-flex min-h-[49px] cursor-pointer items-center justify-center overflow-hidden rounded-[30px] border-2 border-brand-red bg-brand-red px-8 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-300 hover:bg-black hover:border-black disabled:cursor-wait disabled:opacity-70"
                   />
                 </div>
               ) : (
