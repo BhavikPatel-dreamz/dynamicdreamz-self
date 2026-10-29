@@ -50,7 +50,6 @@ export function MagentoDevelopmentPage() {
         id="services"
       />
       <EvaluationFrameworkSection
-        className="pt-0"
         content={magentoDevelopmentCapabilities}
         id="capabilities"
       />

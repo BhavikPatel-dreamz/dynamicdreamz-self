@@ -93,7 +93,7 @@ export function ShopifyMobileAppHeroSection({
                 </div>
               )}
 
-              <h1 className="mb-5 font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
+              <h1 className="mb-3 font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
                 {content.title}{" "}
                 <i className="font-normal not-italic text-[#ad5151]">
                   {content.titleAccent}

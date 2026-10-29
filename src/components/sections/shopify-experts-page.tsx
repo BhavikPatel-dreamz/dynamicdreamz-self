@@ -27,6 +27,7 @@ export function ShopifyExpertsPage() {
         lastColFull
       />
       <ThemeCustomizationServicesSection
+        isRoundedNumber={true}
         content={shopifyExpertsContent.whyBrandsChoose}
       />
       <AiEmpoweredDeliverySection content={shopifyExpertsContent.aiTools} />

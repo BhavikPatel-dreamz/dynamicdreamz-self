@@ -4,9 +4,9 @@ export const wordpressDevelopmentHero = {
   eyebrows: ["Established in 2006", "Wordpress Development Agency"],
   title: "WordPress Web Development Services",
   description:
-    "Transform your online presence with our expert WordPress development services. We craft custom sites and refine themes to match your unique requirements perfectly. Our focus is on creating a website that showcases your brand identity and fulfills your objectives. Let’s bring your digital dreams to life together.",
+    "Transform your online presence with experienced WordPress development services from Dynamic Dreamz. We build custom WordPress websites, customize themes, develop plugins, create WooCommerce solutions and improve existing WordPress websites to match your business requirements, brand and long-term goals.",
   secondaryDescription:
-    "Our white label WordPress services offer custom development and design, enabling you to deliver top tier websites under your brand.",
+    "Need WordPress support for your agency? Our white label WordPress team can work behind your brand for development, customization and ongoing project support.",
   primaryCta: {
     label: "REQUEST A QUOTE",
     href: "/request-quote",
@@ -16,13 +16,6 @@ export const wordpressDevelopmentHero = {
     href: "#our_work",
   },
   badges: [
-    {
-      src: "/assets/proof/shopify-platinum-partner.svg",
-      alt: "Dynamic Dreamz - Shopify Platinum Partner",
-      width: 136,
-      height: 44,
-      href: "https://www.shopify.com/partners/directory/partner/dynamic-dreamz",
-    },
     {
       src: "/assets/proof/clutch-rating.svg",
       alt: "Dynamic Dreamz on Clutch — 4.9 rating",
@@ -126,15 +119,16 @@ export type WordPressServiceItem = {
 export const wordpressDevelopmentServices = {
   eyebrow: "Our Services",
   heading: "What We Provide",
-  description: "Expertly crafting customized WordPress solutions to ensure digital success.",
+  description: "Custom WordPress development tailored to your design, functionality, ecommerce and long-term website requirements.",
   items: [
     {
       icon: "/assets/services/wordpress/wordpress-theme-customization.svg",
       iconAlt: "WordPress Icon",
       iconKey: "wordpress-theme-customization",
       title: "WordPress Theme Customization Service",
+      href: "/wordpress-theme-customization-services",
       description:
-        "Our expert WordPress developers can customize popular WordPress themes such as Gutenberg, Elementer, Divi Builder, Flatsome UX Builder, etc., to cater to your diverse business requirements. Boost your online presence with our custom WordPress website service. We create unique sites tailored to your brand. Our team ensures your website is easy to use and looks great. Let us help you shine online with our simple, effective solutions.",
+        "Customize Gutenberg, Elementor, Divi Builder, Flatsome UX Builder and other WordPress themes or page builders to match your design, content and functionality requirements.",
     },
     {
       icon: "/assets/shopify-theme-customization/services/responsive-design.svg",
@@ -142,7 +136,7 @@ export const wordpressDevelopmentServices = {
       iconKey: "wordpress-custom-theme-development",
       title: "WordPress Custom Theme Development Service",
       description:
-        "Can’t you find any of the WordPress themes appealing? We are here to help you with our WordPress custom theme development service. We will craft a completely novel theme that will distinguish your website from competitors and meet your specific needs. We also create user engaging subscription based Learning Management Systems (LMS) using WordPress.",
+        "When an off-the-shelf theme is not the right fit, we can build a custom WordPress theme around your approved design, brand requirements and content structure. We can also develop WordPress-based learning and membership experiences where required.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-plugin-development.svg",
@@ -150,7 +144,7 @@ export const wordpressDevelopmentServices = {
       iconKey: "wordpress-plugin-development",
       title: "WordPress Plugin Development Service",
       description:
-        "Boost your WordPress website with personalized plugins designed to suit your requirements. Our skilled team creates plugins to enrich functionality and ensure smooth integration. Elevate your site’s efficiency and user interaction with our specialized plugin development solutions.",
+        "Extend your WordPress website with custom plugins and functionality built around your workflow, including third-party APIs, business systems, payment services and other integrations.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-multi-language-website.svg",
@@ -158,7 +152,7 @@ export const wordpressDevelopmentServices = {
       iconKey: "wordpress-multi-language-website-development",
       title: "WordPress Multi Language Website Development Service",
       description:
-        "Expand your reach with our WordPress multi language website development service. We create sites in English, Spanish, French, German, and many other languages using the WPML plugin for seamless language integration. Enhance the presence of your business by catering to the global audience with a fully translated, user friendly website.",
+        "Build multilingual WordPress websites using WPML or another suitable translation workflow, with language-specific content, navigation and templates for international audiences.",
     },
     {
       icon: "/assets/services/wordpress/woocommerce-development.svg",
@@ -167,7 +161,7 @@ export const wordpressDevelopmentServices = {
       title: "WooCommerce Development Service",
       href: "/woocommerce-development",
       description:
-        "Our WooCommerce development service tailors robust eCommerce solutions to your business needs. From seamless integration to custom plugin development, we optimize your online store for scalability and performance. With user friendly interfaces and secure payment gateways, we ensure a seamless shopping experience, driving sales and customer satisfaction.",
+        "Build or improve WooCommerce stores with product and checkout customization, payment and shipping integrations, custom functionality, plugin work and ongoing ecommerce support.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-white-label-development.svg",
@@ -176,7 +170,7 @@ export const wordpressDevelopmentServices = {
       title: "WordPress White Label Development Service",
       href: "/white-label-wordpress-development-services",
       description:
-        "Our white label WordPress development service enables agencies to offer expert solutions under their brand. From custom themes to plugin development, we deliver seamless, rebranded solutions tailored to your clients’ needs. Expand your service offerings without the overhead, and let us be your silent partner in digital success.",
+        "Digital and creative agencies can use our WordPress team behind their own brand for design implementation, development, QA and ongoing technical support.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-cms-development.svg",
@@ -184,7 +178,7 @@ export const wordpressDevelopmentServices = {
       iconKey: "wordpress-cms-development",
       title: "WordPress CMS Development Service",
       description:
-        "Experience seamless content management with our Headless WordPress service. Manage your site with WordPress’s powerful admin interface while delivering a dynamic, high performance front end using Next.js. Benefit from a decoupled architecture that enhances speed, flexibility, and scalability. Perfect for developers and content creators seeking modern web development with robust, user friendly content management systems.",
+        "Use WordPress as a flexible CMS for traditional websites or as the content layer behind a modern front end such as Next.js when a headless architecture is appropriate for the project.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-optimization-speed-up.svg",
@@ -192,7 +186,7 @@ export const wordpressDevelopmentServices = {
       iconKey: "wordpress-optimization-and-speed-up",
       title: "WordPress Optimization and Speed up Service",
       description:
-        "Boost your WordPress site’s rankings and user experience with our WordPress optimization services. We optimize loading times, streamline code, and improve SEO rankings. From image optimization to caching solutions, we ensure your site operates at peak efficiency, driving increased traffic and conversions. We fine tune every aspect for maximum performance. Let us optimize your site for better visibility and success!",
+        "Improve WordPress performance by reviewing themes, plugins, images, scripts, caching and front-end implementation while keeping site stability, usability and Core Web Vitals in mind.",
     },
     {
       icon: "/assets/services/wordpress/wordpress-maintenance.svg",
@@ -200,7 +194,7 @@ export const wordpressDevelopmentServices = {
       iconKey: "wordpress-maintenance",
       title: "WordPress Maintenance Service",
       description:
-        "Keep your WordPress site running around the clock with our maintenance services. We handle core updates, backups, theme updates, security checks, and more, so you can focus on your business. Let us take care of the technical stuff for you!",
+        "Keep an existing WordPress website supported with updates, backups, troubleshooting, theme and plugin changes, testing, security checks and ongoing development.",
     },
   ],
 } as const;
@@ -245,12 +239,14 @@ export const wordpressDevelopmentPortfolio = {
   heading: "A sneak peek into our WordPress Development Expertise",
   description:
     [
-      "500+ WordPress websites meticulously crafted and counting. Our expertise accelerates",
-      "growth and redefines shopping experiences for clients.",
+      "500+ WordPress websites crafted and counting. Explore selected WordPress projects delivered by our development team.",
     ],
   category: "WORDPRESS",
   ctaLabel: "VIEW OUR WORK",
   ctaHref: "/our-work",
+  secondaryCtaLabel: "View Pricing",
+  secondaryCtaHref: "#our_white_label_pricing",
+  secondaryCtaAriaLabel: "Dynamic Dreamz - View Pricing",
   platformMark: {
     src: "/assets/platforms/wordpress-woocommerce-white.svg",
     width: 89,
@@ -313,8 +309,7 @@ export const wordpressDevelopmentTestimonials = {
   heading: "Don't Just Take Our Word For It",
   description:
     [
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
-      "Happy clients make happy stories. Check out how our services empower them to evolve.",
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve.",
     ],
 } as const;
 

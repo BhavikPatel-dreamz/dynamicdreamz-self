@@ -27,6 +27,7 @@ export type ThemeCustomizationServicesSectionProps = {
   className?: string;
   content: ThemeCustomizationServicesContent;
   id?: string;
+  isRoundedNumber?: boolean;
   variant?: "green" | "yellow" | "transparent";
 };
 
@@ -35,6 +36,7 @@ export function ThemeCustomizationServicesSection({
   content,
   id,
   variant = "green",
+  isRoundedNumber,
 }: ThemeCustomizationServicesSectionProps) {
   return (
     <section
@@ -86,13 +88,18 @@ export function ThemeCustomizationServicesSection({
                     box.icon
                   )}
                 </div>
-              ) : box.number ? (
+              ) : box.number && !isRoundedNumber ? (
+                <div className="number">
+                  <span className="mb-5 flex size-[34px] items-center justify-center rounded-full bg-[#fbefd7] font-montserrat text-[10px] font-bold text-brand-red max-[991px]:mb-3 max-[992px]:mb-3">
+                    {box.number}
+                  </span>
+                </div>
+              ) : box.number && isRoundedNumber ? (
                 <div className="number mb-[15px]">
                   <span className="font-montserrat font-medium text-brand-red">
                     {box.number}
                   </span>
-                </div>
-              ) : null}
+                </div>) : null}
               <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[1199px]:text-[18px] max-[1199px]:leading-[26px]">
                 {formatBrText(box.title)}
                 {box.badge ? (
