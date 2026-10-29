@@ -98,7 +98,7 @@ export const mobileAppWorkflowDelivery: AiEmpoweredDeliveryContent = {
   eyebrow: "More Than Ecommerce Apps",
   heading: "Build the App Around the Workflow—Not Around a Fixed Template.",
   description:
-    "Your mobile product may start with a new idea, an existing business process or a need to reach customers directly on their phones. We build custom applications designed around your workflow, business logic and data requirements.",
+    "Your mobile product may start with a new idea, an existing business process or a website that needs a stronger mobile experience. We shape the application around users, data, integrations and business outcomes. Shopify and ecommerce are one capability; custom utility and business applications are equally part of our mobile development work.",
   cta: {
     label: "Discuss Your App Requirement",
     href: "/request-quote",
@@ -139,32 +139,32 @@ export const mobileAppWhatWeBuildBoxes: readonly Omit<ThemeCustomizationBox, "ic
   {
     title: "Utility & Business Apps",
     description:
-      "Internal tools, operational workflows, customer portals, tracking, task management and business processes.",
+      "Workflow tools, calculators, dashboards, field-service apps, internal operations and task-driven products.",
   },
   {
     title: "Consumer Mobile Apps",
     description:
-      "Mobile products for services, on-demand experiences, accounts, content, digital membership and customer retention.",
+      "Customer-facing applications for services, content, communities, memberships, lifestyle and digital products.",
   },
   {
     title: "Booking & Service Apps",
     description:
-      "Appointments, service scheduling, location-aware experiences, notifications and real-time interaction.",
+      "Appointments, scheduling, service requests, notifications, account management and location-aware workflows.",
   },
   {
     title: "Marketplace & Platform Apps",
     description:
-      "Multi-sided workflows connecting users, providers, products, requests, payments and admin visibility.",
+      "Multi-user products connecting customers, providers, vendors or other participant groups.",
   },
   {
     title: "Ecommerce Mobile Apps",
     description:
-      "Dedicated iOS and Android shopping apps built for speed, personalized accounts, push marketing and repeat orders.",
+      "Shopping apps with products, accounts, cart, checkout, loyalty, subscriptions and marketing integrations.",
   },
   {
     title: "Shopify Store to Mobile App",
     description:
-      "Native or cross-platform mobile apps connected with an existing Shopify store, catalog, cart and customer accounts.",
+      "A custom iOS and Android experience connected to an existing Shopify store and its commerce data.",
   },
 ];
 
@@ -180,32 +180,32 @@ export const mobileAppLifecycleServicesBoxes: readonly Omit<ThemeCustomizationBo
   {
     title: "Product Discovery, Wireframes & UI/UX",
     description:
-      "User flows, wireframes, interaction design and mobile UI created for clarity, speed and touch interaction.",
+      "Translate business goals into user flows, wireframes, clickable prototypes and a mobile-first interface system.",
   },
   {
     title: "iOS App Development",
     description:
-      "Native applications for iPhone and iPad using Swift and SwiftUI, built around Apple platform standards.",
+      "Build iPhone and iPad applications using native Apple technology or a suitable shared architecture.",
   },
   {
     title: "Android App Development",
     description:
-      "Native Android applications using Kotlin and modern Android architecture across phones and tablets.",
+      "Develop Android applications using native Kotlin/Compose or a suitable shared architecture.",
   },
   {
     title: "Cross-Platform App Development",
     description:
-      "Shared codebases using React Native or Flutter when cross-platform delivery fits the product and roadmap.",
+      "Use React Native or Flutter when a shared iOS and Android foundation is the right technical and commercial fit.",
   },
   {
     title: "Backend, APIs & Integrations",
     description:
-      "Custom APIs, third-party integrations, authentication, push notifications, payment gateways and database architecture.",
+      "Connect authentication, payments, CRM, ERP, maps, notifications, analytics, AI services and custom backends.",
   },
   {
     title: "QA, App Store / Play Store Launch & Support",
     description:
-      "Device testing, performance verification, App Store / Google Play release handling and post-launch iteration.",
+      "Test important journeys, support release preparation and continue with app updates and new features.",
   },
 ];
 
@@ -292,6 +292,11 @@ export const mobileAppPortfolio: MobileAppWorkContent = {
   ctaLabel: "View our work",
   ctaHref: "/our-work",
   ctaAriaLabel: "Dynamic Dreamz - View our work",
+  secondaryCta: {
+    label: "View Pricing",
+    href: "#our_white_label_pricing",
+    ariaLabel: "Dynamic Dreamz - View Pricing"
+  }
 };
 
 // 9. Engagement & Pricing (PricingTableSection)
