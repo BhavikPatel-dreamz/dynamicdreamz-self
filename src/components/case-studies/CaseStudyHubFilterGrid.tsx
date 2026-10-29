@@ -151,6 +151,7 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
 
           <SplitSectionHeading
             className="cs-section-title mt-[54px] border-t border-black/10 pt-[54px] max-[991px]:mt-5 max-[991px]:pt-5"
+            pClassName="font-semibold"
             description={sectionTitle.description}
             eyebrow={sectionTitle.eyebrow}
             heading={sectionTitle.heading}
@@ -170,9 +171,6 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
                 />
               </div>
             )}
-            {!hasMore && filteredItems.length > BATCH_SIZE && (
-              <span className="text-sm text-[#535353]">{caseStudiesUiCopy.end}</span>
-            )}
           </div>
         </Container>
       </div>
@@ -181,7 +179,7 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
 }
 
 function FilterMenu({ id, label, value, options, open, onToggle, onSelect }: { id: string; label: string; value: string; options: readonly string[]; open: boolean; onToggle: () => void; onSelect: (value: string) => void }) {
-  return <div className="dropdown_menu relative min-w-[190px]"><button type="button" className="flex h-[50px] max-[767px]:h-[44px] w-full items-center justify-between rounded-[10px] border border-[rgba(40,40,40,0.12)] bg-[rgba(254,254,254,0.93)] px-4 py-3 text-left font-montserrat text-sm font-semibold text-[#282828] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151]" aria-haspopup="listbox" aria-expanded={open} aria-controls={id} onClick={onToggle}><span className="truncate">{value || label}</span><svg aria-hidden="true" viewBox="0 0 10 6" className={`size-2.5 transition-transform ${open ? "rotate-180" : ""}`} fill="none"><path d="m1 1 4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg></button>{open && <ul id={id} role="listbox" className="absolute top-[calc(100%+5px)] left-0 z-30 max-h-[272px] w-full overflow-y-auto rounded-[5px] border border-[#efefef] bg-white py-3 shadow-[2px_6px_19px_rgba(0,0,0,0.08)]">{["", ...options].map((option) => <li key={option || label} role="option" aria-selected={value === option} onClick={() => onSelect(option)} className={`cursor-pointer px-4 py-2.5 text-sm font-medium text-[#282828]/80 transition-colors hover:bg-[#f4f4f4] ${value === option ? "bg-[#f4f4f4] font-semibold" : ""}`}>{option || label}</li>)}</ul>}</div>;
+  return <div className="dropdown_menu relative min-w-[190px]"><button type="button" className="flex h-[50px] max-[767px]:h-[44px] w-full items-center justify-between rounded-[10px] border border-[rgba(40,40,40,0.12)] bg-[rgba(254,254,254,0.93)] px-4 py-3 text-left font-montserrat text-sm font-semibold text-[#282828cc] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151]" aria-haspopup="listbox" aria-expanded={open} aria-controls={id} onClick={onToggle}><span className="truncate">{value || label}</span><svg aria-hidden="true" viewBox="0 0 10 6" className={`size-2.5 transition-transform ${open ? "rotate-180" : ""}`} fill="none"><path d="m1 1 4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg></button>{open && <ul id={id} role="listbox" className="absolute top-[calc(100%+5px)] left-0 z-30 max-h-[272px] w-full overflow-y-auto rounded-[5px] border border-[#efefef] bg-white py-3 shadow-[2px_6px_19px_rgba(0,0,0,0.08)]">{["", ...options].map((option) => <li key={option || label} role="option" aria-selected={value === option} onClick={() => onSelect(option)} className={`cursor-pointer px-4 py-2.5 text-sm font-medium text-[#282828]/80 transition-colors hover:bg-[#f4f4f4] ${value === option ? "bg-[#f4f4f4] font-semibold" : ""}`}>{option || label}</li>)}</ul>}</div>;
 }
 
 function CaseStudyCard({ item }: { item: CaseStudyItem }) {
@@ -224,7 +222,7 @@ function CaseStudyCard({ item }: { item: CaseStudyItem }) {
                   {item.title}
                 </h2>
               </Link>
-              <p className="m-0 font-sans text-[13px] font-medium leading-[1.75] text-[#535353] max-[767px]:text-sm max-[767px]:leading-[26.6px]">
+              <p className="m-0 font-sans text-sm font-normal leading-[1.75] text-[#535353] max-[767px]:text-sm max-[767px]:leading-[26.6px]">
                 {item.excerpt}
               </p>
               {item.tags.length > 0 && (

@@ -1,7 +1,6 @@
 export const caseStudiesUiCopy = {
   empty: "No case studies match your search criteria. Try adjusting your search or filter.",
   loadingMore: "Loading more case studies…",
-  end: "You’ve reached the end of the case studies.",
   searchLabel: "Search case studies",
   searchPlaceholder: "Search case studies…",
   allTechnologies: "All Technologies",

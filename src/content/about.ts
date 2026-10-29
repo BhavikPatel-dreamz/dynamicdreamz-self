@@ -6,8 +6,7 @@ export const aboutSectionCopy = {
   foundersEyebrow: "Our Team",
   foundersTitle: "The People Behind Dynamic Dreamz",
   foundersDescription: [
-    "Leaders who drive creativity and technical excellence.",
-    "Turning every project into a smooth, successful digital experience.",
+    "Leaders who drive creativity and technical excellence. Turning every project into a smooth, successful digital experience.",
   ],
   timelineTitle: "How we started",
   timelineDescription:

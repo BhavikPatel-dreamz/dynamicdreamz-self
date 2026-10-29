@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type PointerEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type PointerEvent, type ReactNode } from "react";
 
 import { cn } from "@/lib/class-names";
 
@@ -9,7 +9,7 @@ export type HorizontalDragScrollVariant = "default" | "timeline" | "fullBleedAli
 const variantViewportStyles: Record<HorizontalDragScrollVariant, string> = {
   default: "",
   timeline:
-    "h-[535px] w-full overflow-x-auto min-[1200px]:w-[calc(100%+max(0px,50vw-590px))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+    "h-[535px] w-full max-w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
   fullBleedAligned:
     "relative left-1/2 w-screen -translate-x-1/2 snap-x snap-mandatory [scroll-padding-inline-start:16px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[576px]:[scroll-padding-inline-start:calc((100vw-500px)/2)] min-[768px]:[scroll-padding-inline-start:calc((100vw-680px)/2)] min-[992px]:[scroll-padding-inline-start:calc((100vw-920px)/2)] min-[1200px]:[scroll-padding-inline-start:calc((100vw-1140px)/2)] min-[1400px]:[scroll-padding-inline-start:calc((100vw-1320px)/2)]",
 };
@@ -119,9 +119,31 @@ export function HorizontalDragScroll({
     setActiveItem(index);
   }
 
+  useEffect(() => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+
+    function handleWheel(event: WheelEvent) {
+      if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+        const canScrollRight = event.deltaY > 0 && viewport.scrollLeft + viewport.clientWidth < viewport.scrollWidth - 1;
+        const canScrollLeft = event.deltaY < 0 && viewport.scrollLeft > 1;
+        if (canScrollRight || canScrollLeft) {
+          event.preventDefault();
+          viewport.scrollLeft += event.deltaY;
+        }
+      }
+    }
+
+    viewport.addEventListener("wheel", handleWheel, { passive: false });
+    return () => {
+      viewport.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
   function startDrag(event: PointerEvent<HTMLDivElement>) {
     const viewport = viewportRef.current;
     if (!viewport || !event.isPrimary || event.button !== 0) return;
+    if (event.pointerType === "touch") return;
 
     dragState.current = {
       active: true,
@@ -140,7 +162,11 @@ export function HorizontalDragScroll({
     if (Math.abs(distance) >= dragThreshold && !dragState.current.moved) {
       dragState.current.moved = true;
       viewport.style.scrollSnapType = "none";
-      viewport.setPointerCapture(event.pointerId);
+      try {
+        viewport.setPointerCapture(event.pointerId);
+      } catch {
+        // Pointer capture can throw InvalidPointerId if the pointer is already released
+      }
     }
     viewport.scrollLeft = dragState.current.scrollLeft - distance;
   }
@@ -150,7 +176,13 @@ export function HorizontalDragScroll({
     const viewport = viewportRef.current;
     if (!viewport) return;
     viewport.style.scrollSnapType = dragState.current.scrollSnapType;
-    if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+    try {
+      if (viewport.hasPointerCapture(event.pointerId)) {
+        viewport.releasePointerCapture(event.pointerId);
+      }
+    } catch {
+      // Ignore release capture errors
+    }
   }
 
   return (

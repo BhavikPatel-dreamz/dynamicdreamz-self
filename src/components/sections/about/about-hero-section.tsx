@@ -23,7 +23,7 @@ export function AboutHeroSection({
             <h1 className="mb-3 text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10">
               {title}
             </h1>
-            <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">{description}</p>
+            <p className="text-[16px] leading-7 font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">{description}</p>
           </div>
         </Container>
       </section>

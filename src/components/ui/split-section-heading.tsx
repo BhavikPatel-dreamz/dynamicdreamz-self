@@ -14,6 +14,7 @@ export type SplitSectionHeadingProps = {
   titleColumnClassName?: string;
   textClassName?: string;
   textColumnClassName?: string;
+  pClassName?: string;
   dark?: boolean;
   variant?: "centered" | "default" | "portfolio" | "services" | "left";
   preserveBreaks?: boolean;
@@ -37,6 +38,7 @@ export function SplitSectionHeading({
   titleColumnClassName,
   textClassName,
   textColumnClassName,
+  pClassName,
   dark = false,
   variant = "default",
   preserveBreaks = false,
@@ -83,7 +85,7 @@ export function SplitSectionHeading({
               <p
                 className={cn(
                   "mt-2.5 font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6",
-                  dark && "text-white/80",
+                  dark && "text-white/80", pClassName
                 )}
                 key={paragraph}
               >
@@ -110,8 +112,8 @@ export function SplitSectionHeading({
       <div
         className={cn(
           titleColumnClassName ??
-            // Live `.section_title_with_eyebrow .title` is 44% wide until 991px.
-            (portfolio ? "w-[50%]" : "w-[44%]"),
+          // Live `.section_title_with_eyebrow .title` is 44% wide until 991px.
+          (portfolio ? "w-[50%]" : "w-[44%]"),
           // Live `.title` is a 14px/24px block. Its line box is the strut the
           // inline-flex `.eyebrow` aligns to, which produces the live 4px gap
           // between the title box and the eyebrow.
@@ -152,8 +154,8 @@ export function SplitSectionHeading({
         <div
           className={cn(
             textColumnClassName ??
-              // Live `.section_title_with_eyebrow .section_text` is 48.3% (50% ≤1199px).
-              "w-[48.3%] max-[1199px]:w-1/2",
+            // Live `.section_title_with_eyebrow .section_text` is 48.3% (50% ≤1199px).
+            "w-[48.3%] max-[1199px]:w-1/2",
             "max-[991px]:w-full",
             textClassName,
           )}
@@ -167,7 +169,7 @@ export function SplitSectionHeading({
                   : portfolio
                     ? "font-sans text-[16px] font-medium leading-7 max-[991px]:mt-3.75 max-[991px]:text-sm max-[991px]:leading-[24px] max-[767px]:text-sm max-[767px]:leading-6"
                     : "font-sans text-base font-medium leading-7 max-[1199px]:text-sm max-[1199px]:leading-6 not-last:mb-2.5",
-                dark ? "text-white" : "text-muted",
+                dark ? "text-white" : "text-muted", pClassName
               )}
               key={paragraph}
             >

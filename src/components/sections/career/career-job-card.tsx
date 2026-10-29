@@ -52,7 +52,7 @@ export function CareerJobCard({ job, location }: CareerJobCardProps) {
             <h4 className="m-0 font-montreal-medium text-base font-normal leading-6 text-ink">
               {careerSectionCopy.jobDetails[0].label}
             </h4>
-            <p className="mt-0 font-montserrat text-base font-medium leading-normal text-[#535353]">
+            <p className="mt-0 font-montserrat leading-normal text-[#535353]">
               {job.experience}
             </p>
           </div>
@@ -61,7 +61,7 @@ export function CareerJobCard({ job, location }: CareerJobCardProps) {
             <h4 className="m-0 font-montreal-medium text-base font-normal leading-6 text-ink">
               {careerSectionCopy.jobDetails[1].label}
             </h4>
-            <p className="mt-0 font-montserrat text-base font-medium leading-normal text-[#535353]">
+            <p className="mt-0 font-montserrat leading-normal text-[#535353]">
               {job.jobType}
             </p>
           </div>
@@ -70,7 +70,7 @@ export function CareerJobCard({ job, location }: CareerJobCardProps) {
             <h4 className="m-0 font-montreal-medium text-base font-normal leading-6 text-ink">
               {careerSectionCopy.jobDetails[2].label}
             </h4>
-            <p className="mt-0 font-montserrat text-base font-medium leading-normal text-[#535353]">
+            <p className="mt-0 font-montserrat leading-normal text-[#535353]">
               {job.postedOn}
             </p>
           </div>

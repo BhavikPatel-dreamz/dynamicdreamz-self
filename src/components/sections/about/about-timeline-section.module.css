@@ -52,6 +52,8 @@
 }
 
 .penultimateMarker::before {
+  top: -5px;
+  bottom: auto;
   width: calc(100% + 170px);
   transform: rotate(-11deg);
 }

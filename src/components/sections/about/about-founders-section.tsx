@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { aboutSectionCopy, founders, type AboutPerson } from "@/content/about";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 
 function LinkedInIcon() {
   return (
@@ -32,26 +33,11 @@ export function AboutFoundersSection({
   return (
     <section data-about="founders" aria-labelledby="about-founders-title" className="pt-20 max-[1199px]:pt-[60px]">
       <Container>
-        <header
-          data-aos="fade-up"
-          className="mx-auto mb-10 max-w-[680px] text-center max-[1199px]:mb-[30px] max-[992px]:mb-5"
-        >
-          <Eyebrow align="center" className="mb-4" lineThickness="thin" lineWidth="fixed">
-            {eyebrow}
-          </Eyebrow>
-          <h2 id="about-founders-title" className="mb-6 text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[1199px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
-            {title}
-          </h2>
-          <p className="text-[18px] leading-[34.2px] font-medium text-muted max-[1199px]:text-base max-[1199px]:leading-[30.4px]">
-            {descriptions?.[0]}
-            {descriptions?.[1] ? (
-              <>
-                <br />
-                {descriptions[1]}
-              </>
-            ) : null}
-          </p>
-        </header>
+        <SplitSectionHeading 
+        heading={title}
+        description={descriptions}
+        eyebrow={eyebrow}
+        />
 
         <div className="-mx-2 flex flex-wrap max-[767px]:mx-0">
           {activeFounders.map((founder) => (

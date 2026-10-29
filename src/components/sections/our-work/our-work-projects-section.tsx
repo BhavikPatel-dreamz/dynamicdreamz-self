@@ -43,6 +43,7 @@ export function OurWorkProjectsSection({
           headingId="our-work-projects-title"
           textColumnClassName="max-w-[690px]"
           titleColumnClassName="shrink-0"
+          pClassName="!leading-6 !font-normal !text-sm"
           variant="left"
         />
         <OurWorkFilterController filters={ourWorkPage.filters} counts={projectCounts} />
