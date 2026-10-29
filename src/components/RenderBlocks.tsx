@@ -4087,7 +4087,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               tag: item.tag,
               title: item.title,
               description: item.description,
-              pills: item.pills?.map((p) => p.text || "").filter(Boolean),
+              pills: Array.from(new Set(item.pills?.map((p) => p.text || "").filter(Boolean))),
               cta: item.cta?.label
                 ? { label: item.cta.label, href: item.cta.href || "" }
                 : null,

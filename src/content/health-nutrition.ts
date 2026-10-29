@@ -79,6 +79,7 @@ export const healthNutritionCaseStudies = {
         "GNC India: Conversion-Focused Shopify Redesign with Goal-Based Navigation & Trust Signals",
       href: "/case-studies/gnc-india",
       image: "/assets/case-studies/gnc-india.webp",
+      tags:["Shopify Store Development","Shopify Theme Customization"],
       imageAlt:
         "GNC India: Conversion-Focused Shopify Redesign with Goal-Based Navigation & Trust Signals",
       technology: "Shopify / Shopify Plus",
@@ -89,6 +90,7 @@ export const healthNutritionCaseStudies = {
         "Rooted Human: Custom Shopify Dawn Theme Store for Women’s Wellness Supplements",
       href: "/case-studies/rooted-human",
       image: "/assets/case-studies/rooted-human.webp",
+      tags:["Subscription & Bundles","Women's Wellness"],
       imageAlt:
         "Rooted Human: Custom Shopify Dawn Theme Store for Women’s Wellness Supplements",
       technology: "Shopify / Shopify Plus",
@@ -99,6 +101,7 @@ export const healthNutritionCaseStudies = {
         "Essential Whitening: Custom Shopify 2.0 Store with B2B Pricing Tiers for Dental Professionals",
       href: "/case-studies/essential-whitening",
       image: "/assets/case-studies/essential-whitening.webp",
+      tags:["B2B Pricing Tiers","Dental Industry"],
       imageAlt:
         "Essential Whitening: Custom Shopify 2.0 Store with B2B Pricing Tiers for Dental Professionals",
       technology: "Shopify Custom Apps & Integrations",
@@ -369,25 +372,25 @@ export const healthNutritionWhyChoose: WhyChooseMigrationContent = {
     "Delivering since 2006, with ecommerce specialists working alongside UI/UX designers, full-stack developers, mobile engineers and QA when a requirement crosses platform boundaries.",
   items: [
     {
-      icon: "design",
+      icon: "certified",
       title: "Industry-led Solution Design",
       description:
         "Architecture, design and engineering shaped by the nuances of health, nutrition and supplement ecommerce.",
     },
     {
-      icon: "expertise",
+      icon: "shopify-bag",
       title: "Strong Shopify Capability, Broader Technology Depth",
       description:
         "Deep expertise in Shopify and Shopify Plus, complemented by full-stack, mobile and integration engineering.",
     },
     {
-      icon: "team",
+      icon: "custom-build",
       title: "Custom-first when Needed",
       description:
         "Willingness and capability to build custom solutions when standard apps or platform features are not enough.",
     },
     {
-      icon: "support",
+      icon: "long-term-support",
       title: "Long-term Development Support",
       description:
         "Ongoing partnership for feature releases, performance optimization, CRO experiments and technical support.",

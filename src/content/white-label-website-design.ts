@@ -179,7 +179,7 @@ export const whiteLabelWebsiteDesignAiEnginesContent: ShopifyStageServicesConten
   eyebrow: "Built for AI",
   heading: "Websites Built for Search, AI Discovery and Modern User Experiences",
   description:
-    "Great design is only half the job. We help your clients' websites perform better through AI-powered tools, smarter automation, and the technical foundations that AI search engines need to discover and recommend them.",
+    "Great design is only half the job. We help your clients’ websites perform better through suitable AI-assisted tools, automation, technical SEO fundamentals and clear content structure so search engines and AI-powered discovery systems can better understand the business and its services.",
   items: [
     {
       title: "AI-assisted content",

@@ -71,8 +71,11 @@ export function ShopifyStageServicesSection({
                   "item relative overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] p-[27px] transition-all max-[1399px]:p-5 max-[767px]:rounded-[16px]",
                   isFirst
                     ? "row-span-2 min-h-[440px] bg-[#f7f4ea] flex flex-col justify-between max-[767px]:row-auto max-[767px]:min-h-0"
-                    : isFourth && content.items.length !== 5
-                      ? "col-span-2 bg-[#eff4ef] flex flex-col justify-between"
+                    : isFourth
+                      ? cn(
+                          "bg-[#eff4ef] flex flex-col justify-between",
+                          content.items.length !== 5 && "col-span-2",
+                        )
                       : isFifth && isSixCards
                         ? "col-span-2 bg-white max-[1199px]:col-span-1 flex flex-col justify-between"
                         : isSeventh
@@ -101,7 +104,7 @@ export function ShopifyStageServicesSection({
                   </div>
                   {item.pills && item.pills.length > 0 ? (
                     <ul className="mt-[18px] flex flex-wrap gap-[7px]">
-                      {item.pills.map((pill) => (
+                      {Array.from(new Set(item.pills)).map((pill) => (
                         <li
                           className="inline-flex items-center rounded-[50px] border border-[rgba(40,40,40,0.08)] bg-[rgba(255,255,255,0.75)] px-[11px] py-[7px] font-montserrat text-[10px] font-semibold uppercase leading-normal text-[#565656]"
                           key={pill}

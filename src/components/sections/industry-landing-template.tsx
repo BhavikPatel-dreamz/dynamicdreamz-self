@@ -114,6 +114,7 @@ export function IndustryLandingTemplate({
       <ThemeCustomizationServicesSection
         content={challenges}
         variant="transparent"
+        className="pt-20"
       />
       <ThemeCustomizationServicesSection
         content={solutions}

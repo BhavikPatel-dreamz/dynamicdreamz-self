@@ -16,7 +16,7 @@ export const beautyCosmeticsHero: ServiceHeroVideoContent = {
   eyebrowSpans: ["Industry Solutions", "Beauty & Cosmetics"],
   title: "Ecommerce Solutions for Beauty & Cosmetics Brands",
   paragraphs: [
-    "We help skincare, cosmetics, haircare and fragrance brands build scalable Shopify stores, quizzes, subscriptions, mobile apps and custom integrations.",
+    "We build beauty ecommerce around discovery, trust and repeat purchase—from Shopify and Shopify Plus storefronts to product finders, subscriptions, mobile apps and custom integrations.",
   ],
   cta: "Discuss Your Project",
   ctaHref: "/request-quote",
@@ -88,7 +88,7 @@ export const beautyCosmeticsCaseStudies: {
       imageAlt: "EDDUS & Co: Custom Shopify Dawn Theme Store for Clean, Refillable Skincare",
       technology: "Shopify / Shopify Plus",
       industry: "Beauty & Cosmetics",
-      tags: ["Clean Beauty", "Shopify Store Development"],
+      tags: ["Dawn Theme Customization", "Refillable Packaging Brand"],
       ctaLabel: "View Case study",
     },
     {
@@ -98,7 +98,7 @@ export const beautyCosmeticsCaseStudies: {
       imageAlt: "RENÉE Cosmetics: End-to-End Figma-to-Shopify Dawn Theme Store for a Bold Beauty Brand",
       technology: "Shopify / Shopify Plus",
       industry: "Beauty & Cosmetics",
-      tags: ["Beauty & Cosmetics", "Figma to Shopify"],
+      tags: ["Figma to Shopify", "Shopify Development"],
       ctaLabel: "View Case study",
     },
     {

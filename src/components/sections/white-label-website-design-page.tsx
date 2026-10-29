@@ -87,6 +87,7 @@ export function WhiteLabelWebsiteDesignPage() {
           })),
         }}
         variant="transparent"
+        className="pt-20"
       />
 
       {/* 9. White Label Services */}
