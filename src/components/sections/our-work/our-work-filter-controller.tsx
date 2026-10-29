@@ -73,7 +73,7 @@ export function OurWorkFilterController({ filters, counts }: OurWorkFilterContro
                   aria-pressed={activeFilter === filter.id}
                   onClick={() => showPlatform(filter.id)}
                 >
-                  <span className={activeFilter === filter.id ? "text-white" : "text-[#090909]"}>
+                  <span className={activeFilter === filter.id ? "text-white" : "text-[#535353]"}>
                     {filter.label}
                   </span>
                 </button>

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
+import { TextArrowLink } from "@/components/ui/text-arrow-link";
 import { ourWorkCaseStudies, ourWorkPage } from "@/content/our-work";
 
 export type OurWorkCaseStudiesSectionProps = {
@@ -18,7 +19,7 @@ export function OurWorkCaseStudiesSection({
 }: OurWorkCaseStudiesSectionProps = {}) {
   return (
     <section
-      className="see-the-work-sec bg-[#eff4ef] py-10"
+      className="see-the-work-sec bg-[#eff4ef] py-20"
       aria-labelledby="our-work-case-studies-title"
     >
       <Container>
@@ -83,24 +84,12 @@ export function OurWorkCaseStudiesSection({
                       </div>
                     </div>
                     <div className="cs-visit mt-5 border-t border-[rgba(40,40,40,0.08)] pt-5">
-                      <Link
-                        className="group/visit inline-flex items-center gap-2 font-montserrat text-sm font-bold uppercase text-[#ad5151] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ad5151]"
+                      <TextArrowLink
+                        className="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ad5151]"
                         href={`/case-studies/${item.slug}`}
                       >
                         {ourWorkPage.ui.viewCaseStudy}
-                        <svg
-                          aria-hidden="true"
-                          viewBox="0 0 12 12"
-                          className="size-3 transition-transform group-hover/visit:translate-x-1"
-                        >
-                          <path
-                            d="m.33 10.26 11.34-9.26M11.99 2.05 11.05 11.04M11.99 2.05 2.07 1.53"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.2"
-                          />
-                        </svg>
-                      </Link>
+                      </TextArrowLink>
                     </div>
                   </div>
                 </div>

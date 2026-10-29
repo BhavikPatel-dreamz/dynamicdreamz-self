@@ -28,7 +28,7 @@ export function TextArrowLink({
         href.startsWith("tel:")));
 
   const commonClasses = cn(
-    "text-arrow-link inline-flex items-center text-sm font-bold uppercase leading-none text-[#AD5151] transition-colors hover:text-[#282828]",
+    "text-arrow-link inline-flex items-center font-montserrat text-sm font-bold uppercase leading-none text-[#AD5151] transition-colors hover:text-[#282828]",
     className,
   );
 
