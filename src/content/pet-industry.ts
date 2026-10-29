@@ -117,7 +117,7 @@ export const petIndustrySolutions: ThemeCustomizationServicesContent = {
   eyebrow: "Solutions We Build",
   heading: "What We Build for Pet Brands",
   description:
-    "From high-performing Shopify storefronts to autoship, custom recommendation flows and dedicated mobile apps.",
+    "Shopify is a major part of our ecommerce work, but the solution can also include mobile apps, integrations, other commerce platforms and custom full-stack development when the requirement needs it",
   boxes: [
     {
       number: "01",

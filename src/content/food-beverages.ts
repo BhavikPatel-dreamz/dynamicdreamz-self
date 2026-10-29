@@ -16,7 +16,7 @@ export const foodBeveragesHero: ServiceHeroVideoContent = {
   eyebrowSpans: ["Industry Solutions", "Food & Beverages"],
   title: "Ecommerce & Ordering Solutions for Food & Beverage Brands",
   paragraphs: [
-    "We help food, beverage, restaurant and FMCG brands build high-converting storefronts, repeat ordering journeys, subscriptions, local delivery and operational integrations.",
+    "We build digital commerce for food and beverage brands that need subscriptions, bundles, repeat ordering, multi-location pickup, local fulfillment and connected operational systems.",
   ],
   cta: "Discuss Your Project",
   ctaHref: "/request-quote",
@@ -88,7 +88,7 @@ export const foodBeveragesCaseStudies: {
       imageAlt: "Atlantic Naturals: Organic Supplement Shopify Store with Wellness Quiz & Trust-First Design",
       technology: "Shopify / Shopify Plus",
       industry: "Food & Beverages",
-      tags: ["Organic Supplements", "Shopify Store Development"],
+      tags: ["Quiz Builder Integration", "Trust-First UX Design"],
       ctaLabel: "View Case study",
     },
     {
@@ -123,15 +123,15 @@ export const foodBeveragesChallenges: ThemeCustomizationServicesContent = {
   boxes: [
     {
       number: "01",
-      title: "Freshness and Perishability Require Delivery Rules",
+      title: "Perishable Products Limit where You can Ship",
       description:
-        "Cut-off times, dispatch days, shipping zones and temperature constraints must be handled clearly before checkout.",
+        "Shelf life, cold chain and dispatch cut-offs mean fulfillment rules have to be built around the product.",
     },
     {
       number: "02",
-      title: "Multi-Location Operations complicate Inventory",
+      title: "Pickup and Local Delivery need Real Logic",
       description:
-        "Local pickup, store-specific availability and regional delivery demand accurate operational data.",
+        "Location selection, time slots, inventory and delivery zones can determine the entire checkout journey.",
     },
     {
       number: "03",

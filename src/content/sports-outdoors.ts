@@ -163,7 +163,7 @@ export const sportsOutdoorsSolutions: ThemeCustomizationServicesContent = {
 // 5. Custom Development
 export const sportsOutdoorsCustomDev: IndustryCustomDevelopmentContent = {
   eyebrow: "Custom Development",
-  heading: "Custom Health Commerce where Standard Apps Stop",
+  heading: "Custom Sports Commerce Where Standard Apps Stop",
   description:
     "Sports and outdoor products are often selected by use case and technical compatibility rather than visual preference alone. We can build fit tools, comparison, product finders, kit builders and connected operational logic.",
   items: [

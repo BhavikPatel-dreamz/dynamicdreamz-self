@@ -26,6 +26,7 @@ export type SplitFaqSectionProps = {
   panelContentClassName?: string;
   iconVariant?: "default" | "circle-cross";
   className?: string;
+  IsSkyBlue?:boolean
 };
 
 /**
@@ -56,26 +57,25 @@ export function SplitFaqSection({
   panelContentClassName,
   iconVariant = "circle-cross",
   className,
+  IsSkyBlue,
 }: SplitFaqSectionProps) {
   const titleId = `${idPrefix}-title`;
 
   const isSkyBlue =
+    IsSkyBlue ||
     idPrefix.startsWith("white-label-website-design") ||
     idPrefix.startsWith("white-label-wordpress") ||
     idPrefix.startsWith("white-label-shopify") ||
     idPrefix.startsWith("shopify-certified-developers") ||
     idPrefix.startsWith("shopify-cro");
-  const isWhite = idPrefix.startsWith("food-beverage");
   const isPt0 = idPrefix.startsWith("risks-of-shopify-outsourcing");
   const isMobileAppFaq = idPrefix.startsWith("shopify-mobile-app");
 
   const bgClass = isSkyBlue
-    ? "bg-[#FAFAF7]"
-    : isWhite
-    ? "bg-white"
-    : "bg-[#fafaf7]";
+    ? "bg-[#fafaf7]"
+    : "bg-white"
   const paddingClass =
-    isPt0 || isWhite
+    isPt0
       ? "pt-0 pb-20 max-[991px]:py-10 max-[767px]:pb-5"
       : "py-[60px] max-[991px]:py-10 max-[767px]:pb-5";
   const containerClass = isMobileAppFaq

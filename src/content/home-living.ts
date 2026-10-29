@@ -314,7 +314,7 @@ export const homeLivingTechnologies = {
 // 8. Portfolio
 export const homeLivingPortfolio = {
   eyebrow: "Portfolio",
-  heading: "Selected Fashion & Apparel Experience",
+  heading: "Selected Home & Living Experience",
   items: [
     {
       name: "Capital Tiles",
@@ -413,7 +413,7 @@ export const homeLivingTestimonials: {
 
 // 11. FAQs
 export const homeLivingFaqEyebrow = "Frequently Asked Questions";
-export const homeLivingFaqHeading = "What Fashion Brands Ask before the Next Launch";
+export const homeLivingFaqHeading = "What Home & Living Brands Ask before the Next Launch";
 
 export const homeLivingFaqs: readonly FaqAccordionItem[] = [
   {

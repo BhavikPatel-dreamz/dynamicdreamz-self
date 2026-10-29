@@ -123,19 +123,19 @@ export const beautyCosmeticsChallenges: ThemeCustomizationServicesContent = {
   boxes: [
     {
       number: "01",
-      title: "Shade, Skin Type & Routine Complexity",
+      title: "Shoppers cannot test a Product Online",
       description:
-        "Customers need confidence in colour, formula and compatibility before they commit to a beauty purchase.",
+        "Shade, texture, skin type and product fit create uncertainty. Guided discovery, quizzes and clearer collection UX reduce that friction.",
     },
     {
       number: "02",
-      title: "Retention Drives Unit Economics",
+      title: "One-time Buyers need a Reason to Return",
       description:
-        "Repeat purchases, subscriptions, refills and loyalty matter as much as first-order acquisition.",
+        "Skincare and haircare run out on a cycle. Replenishment, subscriptions, loyalty and regimen bundles can turn the first order into repeat revenue.",
     },
     {
       number: "03",
-      title: "Campaign and Launch Velocity",
+      title: "Launch Calendars Move Quickly",
       description:
         "New drops, gifting seasons and collaborations need flexible landing pages, merchandising and a storefront that stays fast under campaign traffic.",
     },

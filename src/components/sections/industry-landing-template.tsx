@@ -109,6 +109,7 @@ export function IndustryLandingTemplate({
           eyebrow={caseStudies.eyebrow}
           heading={caseStudies.heading}
           items={caseStudies.items}
+          className="py-20"
         />
       ) : null}
       <ThemeCustomizationServicesSection
@@ -148,6 +149,7 @@ export function IndustryLandingTemplate({
         heading={faq.heading}
         idPrefix={faq.idPrefix}
         items={faq.items}
+        IsSkyBlue
       />
       {children}
     </>
