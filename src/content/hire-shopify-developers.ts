@@ -15,8 +15,7 @@ export const hireShopifySectionCopy = {
   industriesHeading: "Industries that we have Served",
   industriesDescription:
     [
-    "Dynamic Dreamz has massive experience across multiple industries,",
-    "helping businesses like yours succeed online. Our expertise spans sectors such as:",
+    "Dynamic Dreamz has massive experience across multiple industries, helping businesses like yours succeed online. Our expertise spans sectors such as:",
   ],
   portfolioHeading: "Work of our Shopify Developers that show our Expertise",
   portfolioDescription:

@@ -349,8 +349,7 @@ export const shopifyDevelopmentHyderabadContent = {
     heading: "Our Work",
     description:
       [
-      "Lots of Shopify stores are precisely crafted and counting.  Our expertise",
-      "accelerates evolution and redefines shopping experiences for customers.",
+      "Lots of Shopify stores are precisely crafted and counting.  Our expertise accelerates evolution and redefines shopping experiences for customers.",
     ],
     ctaHref: "/our-work",
     items: [
@@ -417,8 +416,7 @@ export const shopifyDevelopmentHyderabadContent = {
     heading: "Don't Just Take Our Word For It",
     description:
       [
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
-      "Happy clients make happy stories. Check out how our services empower them to evolve.",
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve.",
     ],
     items: shopifyPlusAgencyTestimonials.items,
   },

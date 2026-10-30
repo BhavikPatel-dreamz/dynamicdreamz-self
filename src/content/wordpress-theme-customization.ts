@@ -449,8 +449,7 @@ export const wordPressThemeCustomizationContent = {
     heading: "Snippets of WordPress Theme Customization Portfolio",
     description:
       [
-      "Explore our portfolio showcasing successful WordPress theme customization projects,",
-      "highlighting how we customize, secure, and enhance stores for peak performance.",
+      "Explore our portfolio showcasing successful WordPress theme customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     category: "WORDPRESS",
     ctaLabel: "View our work",
@@ -528,8 +527,7 @@ export const wordPressThemeCustomizationContent = {
     heading: "Don't Just Take Our Word For It",
     description:
       [
-      "Our clients' success speaks for itself. Read testimonials from satisfied clients who have benefited from",
-      "our WordPress theme customization services and see how we can help you achieve similar results.",
+      "Our clients' success speaks for itself. Read testimonials from satisfied clients who have benefited from our WordPress theme customization services and see how we can help you achieve similar results.",
     ],
     items: shopifyPlusAgencyTestimonials.items,
   },

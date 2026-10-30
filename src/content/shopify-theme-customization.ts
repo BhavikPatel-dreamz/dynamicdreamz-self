@@ -547,8 +547,7 @@ export const shopifyThemeCustomizationPortfolio = {
   heading: "Snippets of Shopify Theme Customization Portfolio",
   description:
     [
-      "Explore our portfolio showcasing successful Shopify customization projects,",
-      "highlighting how we customize, secure, and enhance stores for peak performance.",
+      "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
   ctaLabel: "View our work",
   ctaHref: "/our-work",

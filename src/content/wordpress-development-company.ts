@@ -114,9 +114,7 @@ export const wordpressDevelopmentCompanyServices = {
     "WordPress Development Services",
   ],
   description: [
-    "Take advantage of the WordPress development services from Dynamic Dreamz,",
-    "a WordPress Website development company in India. We are expertly",
-    "crafting customized WordPress solutions to ensure your digital success.",
+    "Take advantage of the WordPress development services from Dynamic Dreamz, a WordPress Website development company in India. We are expertly crafting customized WordPress solutions to ensure your digital success.",
   ],
   items: [
     {

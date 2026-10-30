@@ -310,8 +310,7 @@ export const bigCommerceDevelopmentTestimonials = {
   heading: "Don't Just Take Our Word For It",
   description:
     [
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
-      "Happy clients make happy stories: Check out how our services empower them to evolve.",
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories: Check out how our services empower them to evolve.",
     ],
   items: shopifyPlusAgencyTestimonials.items,
 } as const;

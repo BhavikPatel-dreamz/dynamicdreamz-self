@@ -122,7 +122,7 @@ export function PortfolioShowcaseSection({
           ))}
         </div>
 
-        {!hideCta && (
+        {!hideCta && content?.ctaHref && content?.ctaLabel ? (
           <div className="mt-[51px] flex flex-wrap justify-center gap-4 max-[767px]:mt-10 max-[575px]:flex-col [&_a]:max-[575px]:w-full" data-aos="fade-up">
             <ButtonLink href={resolvedCtaHref} variant="primary" className="text-center">
               {resolvedCtaLabel}
@@ -133,7 +133,7 @@ export function PortfolioShowcaseSection({
               </ButtonLink>
             ) : null}
           </div>
-        )}
+        ) : null}
       </Container>
     </section>
   );

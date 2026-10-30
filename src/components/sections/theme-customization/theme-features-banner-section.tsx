@@ -39,7 +39,7 @@ export function ThemeFeaturesBannerSection({
             </h2>
             {content.description && (
               <div className="section-description mt-2.5">
-                <p className="m-0 text-sm font-medium leading-[24px] text-[#535353]">
+                <p className="m-0 text-[#535353]">
                   {content.description}
                 </p>
               </div>

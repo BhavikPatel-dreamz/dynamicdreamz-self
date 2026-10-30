@@ -238,9 +238,7 @@ export const wordpressDevelopmentBangaloreContent = {
     heading: "Our Successful WordPress Projects",
     description:
       [
-      "500+ WordPress websites meticulously crafted and counting. Our expertise",
-      "accelerates growth and redefines shopping experiences for clients,",
-      "making us the best WordPress development company in India.",
+      "500+ WordPress websites meticulously crafted and counting. Our expertise accelerates growth and redefines shopping experiences for clients, making us the best WordPress development company in India.",
     ],
     items: [
       {
@@ -375,9 +373,7 @@ export const wordpressDevelopmentBangaloreContent = {
     ],
     description:
       [
-      "Dynamic Dreamz provides end-to-end WordPress development services in Bangalore to support",
-      "your business’s success in the competitive landscape. We create custom-made websites",
-      "and provide ongoing support, offering solutions that enhance your online presence.",
+      "Dynamic Dreamz provides end-to-end WordPress development services in Bangalore to support your business’s success in the competitive landscape. We create custom-made websites and provide ongoing support, offering solutions that enhance your online presence.",
     ],
     items: whyChooseItems,
   },

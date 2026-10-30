@@ -216,8 +216,7 @@ export const phpDevelopmentContent = {
     title: "Glimpses of Our PHP/MySQL Development Services",
     subtitle:
       [
-    "Dynamic Dreamz isn't just about talk; we're about results. Explore a carefully",
-    "curated selection of our successful PHP/MySQL Development projects.",
+    "Dynamic Dreamz isn't just about talk; we're about results. Explore a carefully curated selection of our successful PHP/MySQL Development projects.",
   ],
     ctaLabel: "View our work",
     ctaHref: "/our-work",
@@ -271,8 +270,7 @@ export const phpDevelopmentContent = {
     heading: "Don't Just Take Our Word For It",
     description:
       [
-      "We have faith in our work, but what truly matters is the outcomes we deliver to our clients.",
-      "Happy clients make happy stories. Check out how our services empower them to succeed.",
+      "We have faith in our work, but what truly matters is the outcomes we deliver to our clients. Happy clients make happy stories. Check out how our services empower them to succeed.",
     ],
   },
   faqHeading: "Frequently Asked Questions",

@@ -100,8 +100,7 @@ export const extendableThemeCustomizationContent = {
     heading: "Our Extendable Theme \nCustomization Services",
     description:
       [
-      "We offer complete customization services to ensure your Extendable theme meets your exact requirements.",
-      "Here is a list of our Extendable theme customization services:",
+      "We offer complete customization services to ensure your Extendable theme meets your exact requirements. Here is a list of our Extendable theme customization services:",
     ],
     items: [
       {
@@ -207,8 +206,7 @@ export const extendableThemeCustomizationContent = {
     heading: "Why Choose Dynamic Dreamz",
     description:
       [
-      "At Dynamic Dreamz, we specialize in WordPress theme customization and web development,",
-      "ensuring your website is both visually appealing and functional.",
+      "At Dynamic Dreamz, we specialize in WordPress theme customization and web development ensuring your website is both visually appealing and functional.",
     ],
     items: [
       {

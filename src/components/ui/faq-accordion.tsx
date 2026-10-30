@@ -224,7 +224,7 @@ export function FaqAccordion({
             <p
               className={cn(
                 "text-sm leading-6 font-medium text-[#535353] last:mb-0",
-                ansIndex > 0 ? "mt-4" : item.listItems?.length && !isListBefore ? "mb-3" : "mb-0",
+                item.listItems?.length && !isListBefore ? "mb-3" : "mb-0",
                 answerClassName,
               )}
               key={ansIndex}

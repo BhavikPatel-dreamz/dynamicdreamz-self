@@ -74,9 +74,7 @@ export const seoServicesWhatWeProvide: AgencyServicesContent = {
   heading: "Our SEO Services",
   description:
     [
-    "**We don't just offer SEO—we live it.** Our SEO company helps you build an SEO strategy that works perfectly for",
-    "your online business goals. Regardless of the type of business you operate — whether a small local shop or a large",
-    "eCommerce brand —we deliver customized SEO services that provide long-lasting results.",
+    "**We don't just offer SEO—we live it.** Our SEO company helps you build an SEO strategy that works perfectly for your online business goals. Regardless of the type of business you operate — whether a small local shop or a large eCommerce brand —we deliver customized SEO services that provide long-lasting results.",
   ],
   items: [
     {
@@ -182,8 +180,7 @@ export const seoServicesOutcomesContent: ProofSectionContent = {
   heading: "SEO Services Designed to Deliver Outcomes",
   description:
     [
-    "Our SEO optimization **process is designed for real growth**. Each step is conducted by an",
-    "**SEO expert or specialist** who understands how to optimize your website for search engines.",
+    "Our SEO optimization **process is designed for real growth**. Each step is conducted by an **SEO expert or specialist** who understands how to optimize your website for search engines.",
   ],
   items: [
     {
@@ -328,8 +325,7 @@ export const seoServicesWhyChooseUs: ThemeWhyChooseSectionProps["content"] = {
   title: "Why Choose Us",
   subtitle:
     [
-    "Choosing the right SEO company can be the difference between growth and standing still.",
-    "Here’s why we’re the best SEO agency for your business:",
+    "Choosing the right SEO company can be the difference between growth and standing still. Here’s why we’re the best SEO agency for your business:",
   ],
   items: [
     {

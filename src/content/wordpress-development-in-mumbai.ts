@@ -241,8 +241,7 @@ export const wordpressDevelopmentMumbaiContent = {
   ],
     description:
       [
-      "Partnering with an experienced WordPress development company ensures scalable, high-performing websites.",
-      "Dynamic Dreamz delivers tailored solutions backed by structured processes and reliable long-term support.",
+      "Partnering with an experienced WordPress development company ensures scalable, high-performing websites. Dynamic Dreamz delivers tailored solutions backed by structured processes and reliable long-term support.",
     ],
     items: whyChooseItems,
   },
@@ -324,8 +323,7 @@ export const wordpressDevelopmentMumbaiContent = {
     heading: "Our Customers’ Testimonials",
     description:
       [
-      "We take pride in the work we deliver, but the real measure of success lies in the results our clients achieve.",
-      "Discover how our solutions help businesses grow and evolve.",
+      "We take pride in the work we deliver, but the real measure of success lies in the results our clients achieve. Discover how our solutions help businesses grow and evolve.",
     ],
     items: shopifyPlusAgencyTestimonials.items,
   },

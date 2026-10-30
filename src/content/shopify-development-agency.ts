@@ -393,9 +393,7 @@ export const shopifyDevelopmentAgencyFaqs: readonly FaqAccordionItem[] = [
     question: "How much does Shopify development cost with Dynamic Dreamz?",
     answer:
       [
-      "Cost depends on scope and engagement model. We offer project-based",
-      "custom quotes, flexible Shopify development support from **$25/hour**, and dedicated Shopify developer or team",
-      "options from **$2,000/month**.",
+      "Cost depends on scope and engagement model. We offer project-based custom quotes, flexible Shopify development support from **$25/hour**, and dedicated Shopify developer or team options from **$2,000/month**.",
     ],
   },
   {
@@ -407,8 +405,7 @@ export const shopifyDevelopmentAgencyFaqs: readonly FaqAccordionItem[] = [
     question: "Does Dynamic Dreamz provide ongoing Shopify maintenance and  support?",
     answer:
       [
-      "Yes. We support live Shopify stores with fixes, theme updates, new",
-      "features, app changes, CRO implementation, performance improvements, integrations and ongoing development capacity.",
+      "Yes. We support live Shopify stores with fixes, theme updates, new features, app changes, CRO implementation, performance improvements, integrations and ongoing development capacity.",
     ],
   },
   {

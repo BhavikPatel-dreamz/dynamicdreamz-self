@@ -247,9 +247,7 @@ export const wordpressDevelopmentNoidaContent = {
     heading: "Our Successful WordPress Projects",
     description:
       [
-      "500+ WordPress websites meticulously crafted and counting. Our expertise",
-      "accelerates growth and redefines shopping experiences for clients,",
-      "making us the best WordPress development company in India.",
+      "500+ WordPress websites meticulously crafted and counting. Our expertise accelerates growth and redefines shopping experiences for clients, making us the best WordPress development company in India.",
     ],
     items: [
       {
@@ -316,8 +314,7 @@ export const wordpressDevelopmentNoidaContent = {
     heading: "Our Customers' Testimonials",
     description:
       [
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
-      "Happy clients make happy stories. Check out how our services empower them to evolve.",
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve.",
     ],
     items: shopifyPlusAgencyTestimonials.items,
   },

@@ -216,9 +216,7 @@ const portfolioContent = {
   heading: "Our Development Expertise for Dental Clinic Website's",
   description:
     [
-    "Explore our portfolio of WordPress solutions created especially for the dental industry.",
-    "Our work shows creative designs, smooth processes, and personalized features that take",
-    "dental practices to new heights online, from attractive websites to optimized WooCommerce stores.",
+    "Explore our portfolio of WordPress solutions created especially for the dental industry. Our work shows creative designs, smooth processes, and personalized features that take dental practices to new heights online, from attractive websites to optimized WooCommerce stores.",
   ],
   ctaLabel: "View our work",
   ctaHref: "/our-work",
@@ -231,8 +229,7 @@ const testimonialsContent = {
   heading: "Don't Just Take Our Word For It",
   description:
     [
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
-      "Happy clients make happy stories. Check out how our services empower them to evolve.",
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve.",
     ],
   items: shopifyPlusAgencyTestimonials.items,
 };

@@ -401,8 +401,7 @@ export const shopifyDevelopmentBangaloreContent = {
     heading: "Our Work",
     description:
       [
-      "Lots of Shopify stores are precisely crafted and counting. Our expertise",
-      "accelerates evolution and redefines shopping experiences for customers.",
+      "Lots of Shopify stores are precisely crafted and counting. Our expertise accelerates evolution and redefines shopping experiences for customers.",
     ],
     ctaHref: "/our-work",
     items: [
