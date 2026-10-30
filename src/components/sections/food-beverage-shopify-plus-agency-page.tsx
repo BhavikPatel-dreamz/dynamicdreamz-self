@@ -38,6 +38,7 @@ export function FoodBeverageShopifyPlusAgencyPage() {
         image={foodBeverageWhyChoose.image}
       />
       <AgencyServicesSection
+        className="bg-[linear-gradient(97deg,#E8F9EF_28.5%,#E6FAFD_91.82%)] pb-8"
         content={foodBeverageServices}
         headerLayout="split"
         columns={2}

@@ -42,17 +42,12 @@ export function AppmakerShopifyMobileAppPage() {
 
       {/* 6. FAQ Section */}
       <SplitFaqSection
+        bgOffWhite
         idPrefix="appmaker-faq"
         heading={faqCopy.heading}
         items={faqs}
       />
 
-      {/* 7. Bottom CTA Banner */}
-      <CtaBannerSection
-        ctaHref={ctaBanner.ctaHref}
-        ctaLabel={ctaBanner.ctaLabel}
-        heading={ctaBanner.heading}
-      />
     </div>
   );
 }

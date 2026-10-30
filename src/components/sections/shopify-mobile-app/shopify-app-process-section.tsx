@@ -52,7 +52,7 @@ export function ShopifyAppProcessSection({
                     />
                   </div>
                 ) : null}
-                <h3 className="mb-[5px] font-display text-[16px] font-medium leading-[26.72px] tracking-[0.32px] text-ink">
+                <h3 className="mb-[5px] font-display text-[20px] font-medium leading-[26.72px] text-ink">
                   {formatBrText(step.title)}
                 </h3>
                 <p className="font-sans text-[16px] font-medium leading-[27.2px] tracking-[0.32px] text-[#535353]">

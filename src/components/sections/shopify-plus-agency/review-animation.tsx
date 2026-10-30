@@ -100,7 +100,7 @@ function ReviewCircle({
               : "[transform:translateY(30px)] opacity-0",
           )}
         >
-          <div className="review_animation_text mb-6 text-center text-base leading-normal font-bold text-black max-[767px]:mb-[10px] max-[767px]:text-sm">{sharedUiCopy.reviewedOn}</div>
+          <div className="review_animation_text mb-6 text-center text-base leading-normal text-black max-[767px]:mb-[10px] max-[767px]:text-sm">{sharedUiCopy.reviewedOn}</div>
           <div className="review_animation_box_logo mb-5 max-[767px]:mb-0">
             <Image
               className="mx-auto h-auto w-auto max-[767px]:max-h-10 max-[767px]:max-w-[130px]"
@@ -136,7 +136,7 @@ function ReviewCircle({
           )}
         >
           <a
-            className="inline-block rounded-[60.664px] px-[18px] py-2 text-[19.413px] leading-normal font-bold text-white max-[767px]:text-sm"
+            className="inline-block rounded-[60.664px] px-[18px] py-2 text-[19.413px] leading-normal text-white max-[767px]:text-sm"
             href={review.pillHref}
             rel="nofollow"
             style={{
@@ -146,13 +146,20 @@ function ReviewCircle({
             target="_blank"
           >
             {review.pillLabel}
-            <Image
-              className="ml-[10px] inline h-auto w-auto max-[767px]:ml-[5px] max-[767px]:w-[10px]"
-              src="/assets/icons/arrow-up-right.svg"
-              alt=""
-              width={12}
-              height={12}
-            />
+            <svg
+              aria-hidden="true"
+              className="ml-[10px] inline h-[15px] w-[14px] align-middle max-[767px]:ml-[5px] max-[767px]:w-[10px]"
+              fill="none"
+              height={15}
+              viewBox="0 0 14 15"
+              width={14}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.46591 10.6542C1.99448 11.1304 1.99834 11.8986 2.47453 12.37C2.95072 12.8415 3.71892 12.8376 4.19034 12.3614L2.46591 10.6542ZM13.9261 2.02222C13.9227 1.35216 13.3768 0.811687 12.7067 0.815054L1.78734 0.869921C1.11727 0.873288 0.576804 1.41922 0.580171 2.08928C0.583538 2.75935 1.12946 3.29982 1.79953 3.29645L11.5057 3.24768L11.5544 12.9538C11.5578 13.6239 12.1037 14.1643 12.7738 14.161C13.4439 14.1576 13.9843 13.6117 13.981 12.9416L13.9261 2.02222ZM3.32812 11.5078L4.19034 12.3614L13.575 2.88192L12.7128 2.02832L11.8506 1.17472L2.46591 10.6542L3.32812 11.5078Z"
+                fill="white"
+              />
+            </svg>
           </a>
         </div>
       </div>

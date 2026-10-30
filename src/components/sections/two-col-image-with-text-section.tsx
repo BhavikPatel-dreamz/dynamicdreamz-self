@@ -41,7 +41,7 @@ export function TwoColImageWithTextSection({
       id={id}
     >
       <Container>
-        <div data-aos="fade-up" className="wrapper flex flex-wrap items-center justify-between">
+        <div data-aos="fade-up" className="wrapper flex flex-wrap items-start justify-between">
           <div
             data-aos="fade-up"
             className={cn(
@@ -80,7 +80,7 @@ export function TwoColImageWithTextSection({
                   </p>
                 ))
               ) : (
-                <p className="font-sans text-base font-medium leading-[27px] text-[#535353] m-0">
+                <p className="font-sans text-[#535353] m-0">
                   {description}
                 </p>
               )}

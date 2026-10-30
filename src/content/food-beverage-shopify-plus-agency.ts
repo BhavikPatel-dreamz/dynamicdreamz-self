@@ -84,7 +84,7 @@ export const foodBeverageServices: AgencyServicesContent = {
       title: "Shopify Plus Maintenance Service",
       description:
         "We ensure your store runs smoothly with ongoing maintenance, updates, and performance optimization.",
-      icon: "/assets/shopify-theme-customization/services/theme-selection-and-installation.svg",
+      icon: "/assets/services/wordpress/wordpress-maintenance.svg",
       iconAlt: "Support and Maintenance Service Icon",
     },
   ],

@@ -75,7 +75,7 @@ function StepItem({
             <h3 className="mb-2.5 font-montreal-medium text-[20px] font-medium leading-[28px] text-ink max-[992px]:text-lg max-[992px]:leading-[26px]">
               {formatBrText(step.title, "max-[767px]:hidden")}
             </h3>
-            <p className="text-base font-medium leading-[27.2px] tracking-[0.02em] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
+            <p className="text-[#535353] max-[767px]:text-sm">
               {formatBrText(step.description, "max-[767px]:hidden")}
             </p>
           </div>
@@ -125,7 +125,7 @@ export function MigrationProcessSection({
   const resolvedClassName =
     variant === "cards"
       ? "py-[50px]"
-      : "migration-process-step-sec mb-20 max-[992px]:mb-[50px]";
+      : "migration-process-step-sec py-20 max-[992px]:py-[50px]";
 
   if (variant === "cards") {
     return (
