@@ -105,7 +105,7 @@ export const savorThemeCustomizationContent = {
         title: "Minimal Maintenance Cost",
         description:
           "Once you customize, the theme requires minimal ongoing updates.",
-        icon: "/assets/dawn-theme-customization/benefits/zero-maintenance-cost.svg",
+        icon: "/assets/fabric-theme-customization/benefits/minimal-maintenance-cost.svg",
         iconAlt: "Minimal Maintenance Cost",
       },
     ] as const,

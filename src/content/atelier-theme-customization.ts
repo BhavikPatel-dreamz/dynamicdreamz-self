@@ -97,7 +97,7 @@ export const atelierThemeCustomizationContent = {
       {
             title: "Minimal Maintenance Cost",
             description: "After using our theme customization services, you will get minimal maintenance costs.",
-            icon: "/assets/dawn-theme-customization/benefits/zero-maintenance-cost.svg",
+            icon: "/assets/fabric-theme-customization/benefits/minimal-maintenance-cost.svg",
             iconAlt: "Minimal Maintenance Cost"
       }
 ] as const,

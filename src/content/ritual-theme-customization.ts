@@ -97,7 +97,7 @@ export const ritualThemeCustomizationContent = {
       {
             title: "Minimal Maintenance Cost",
             description: "Once you use theme customization services, enjoy long-term performance without frequent maintenance.",
-            icon: "/assets/dawn-theme-customization/benefits/zero-maintenance-cost.svg",
+            icon: "/assets/fabric-theme-customization/benefits/minimal-maintenance-cost.svg",
             iconAlt: "Minimal Maintenance Cost"
       }
 ] as const,

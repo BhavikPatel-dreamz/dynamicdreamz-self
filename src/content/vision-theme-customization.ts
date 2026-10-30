@@ -169,7 +169,7 @@ export const visionThemeCustomizationContent = {
       {
         "title": "Minimal Maintenance Cost",
         "description": "Once you customize your theme with the help of our theme customization service, your theme needs minimal ongoing technical support.",
-        "icon": "/assets/dawn-theme-customization/benefits/zero-maintenance-cost.svg",
+        "icon": "/assets/fabric-theme-customization/benefits/minimal-maintenance-cost.svg",
         "iconAlt": "Minimal Maintenance Cost"
       }
     ]

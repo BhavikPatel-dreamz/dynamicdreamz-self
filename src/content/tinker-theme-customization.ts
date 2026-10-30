@@ -97,7 +97,7 @@ export const tinkerThemeCustomizationContent = {
       {
             title: "Minimal Maintenance Cost",
             description: "After our customization, your store will lower the cost of maintenance.",
-            icon: "/assets/dawn-theme-customization/benefits/zero-maintenance-cost.svg",
+            icon: "/assets/fabric-theme-customization/benefits/minimal-maintenance-cost.svg",
             iconAlt: "Minimal Maintenance Cost"
       }
 ] as const,

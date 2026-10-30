@@ -105,7 +105,7 @@ export const vesselThemeCustomizationContent = {
         title: "Minimal Maintenance Cost",
         description:
           "Post-customization, the store requires minimal maintenance, saving time and resources.",
-        icon: "/assets/dawn-theme-customization/benefits/zero-maintenance-cost.svg",
+        icon: "/assets/fabric-theme-customization/benefits/minimal-maintenance-cost.svg",
         iconAlt: "Minimal Maintenance Cost",
       },
     ] as const,

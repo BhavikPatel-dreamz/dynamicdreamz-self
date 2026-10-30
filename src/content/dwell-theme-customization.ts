@@ -98,7 +98,7 @@ export const dwellThemeCustomizationContent = {
         title: "Minimal Maintenance Cost",
         description:
           "After the customization, you can see that your website needs minimal maintenance and saves your cost.",
-        icon: "/assets/dawn-theme-customization/benefits/zero-maintenance-cost.svg",
+        icon: "/assets/fabric-theme-customization/benefits/minimal-maintenance-cost.svg",
         iconAlt: "Minimal Maintenance Cost",
       },
     ] as const,

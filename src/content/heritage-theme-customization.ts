@@ -97,7 +97,7 @@ export const heritageThemeCustomizationContent = {
       {
             title: "Minimal Maintenance Cost",
             description: "After using our theme customization services, you can reduce your store maintenance cost, and your store will run smoothly.",
-            icon: "/assets/dawn-theme-customization/benefits/zero-maintenance-cost.svg",
+            icon: "/assets/fabric-theme-customization/benefits/minimal-maintenance-cost.svg",
             iconAlt: "Minimal Maintenance Cost"
       }
 ] as const,
