@@ -46,7 +46,7 @@ export function EvaluationFrameworkSection({
           {content.items.map((item, index) => (
             <div
               className="spa-col w-1/4 max-[991px]:w-1/2 max-[767px]:w-full"
-              key={typeof item.title === "string" ? item.title : Array.isArray(item.title) ? item.title.join(" ") : String(index)}
+              key={index}
             >
               <article className="spa-item flex h-full flex-col border-r border-b border-[#2828281c] p-6 max-[1399px]:p-5">
                 <div className="spa-title">

@@ -48,7 +48,6 @@ export function WebflowDevelopmentPage() {
       <ThemeCustomizationServicesSection
         content={growthContent}
         variant="transparent"
-        className="pt-20"
       />
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"

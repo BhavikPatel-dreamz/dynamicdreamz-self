@@ -260,7 +260,7 @@ export function ServiceHeroVideoSection({
                   alt={content.image.alt}
                   width={content.image.width ?? 493}
                   height={content.image.height ?? 292}
-                  className={cn("w-full h-auto block mix-blend-darken", content.image.className, imageClassName)}
+                  className={cn("block mix-blend-darken", content.image.className, imageClassName)}
                   priority
                 />
               </div>

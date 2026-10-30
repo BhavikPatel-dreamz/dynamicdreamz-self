@@ -95,6 +95,7 @@ export function MigratingThemeToOnlineStore20Page() {
 
       {/* 8. FAQs */}
       <SplitFaqSection
+        bgOffWhite
         heading={migratingThemeToOnlineStore20Content.faqs.heading}
         idPrefix="theme-20-faq"
         items={migratingThemeToOnlineStore20Content.faqs.items}

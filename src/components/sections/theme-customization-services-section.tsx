@@ -43,7 +43,7 @@ export function ThemeCustomizationServicesSection({
       className={cn(
         "theme-customization-services",
         variant === "transparent"
-          ? "transparent bg-transparent pt-0 pb-20 max-[991px]:pt-0 max-[992px]:pt-0 max-[991px]:pb-[50px] max-[992px]:pb-[50px]"
+          ? "transparent bg-transparent py-20 max-[991px]:pt-0 max-[992px]:pt-0 max-[991px]:pb-[50px] max-[992px]:pb-[50px]"
           : "py-20 max-[991px]:py-[50px] max-[992px]:py-[50px]",
         variant === "green"
           ? "green bg-[#eff4ef]"

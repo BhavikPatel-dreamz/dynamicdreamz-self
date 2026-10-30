@@ -142,12 +142,12 @@ export function WordPressThemeCustomizationPage() {
       <EvaluationFrameworkSection
         content={whyChooseContent}
         id="why-choose"
+        className="pb-0"
       />
 
       {/* 9. Snippets of WordPress Theme Customization Portfolio */}
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
-        className="pt-0"
         columns={4}
         content={portfolioContent}
         sectionId="our_work"
