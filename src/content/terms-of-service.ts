@@ -13,8 +13,7 @@ export const termsOfServiceContent = {
     {
       title: "Services We Provide",
       paragraphs: [
-        "Dynamic Dreamz offers web design, web development, Shopify & WordPress development, eCommerce solutions, mobile app development, and related digital services.",
-        "All work is performed as per the agreed scope, proposal, or written communication shared with you.",
+        "Dynamic Dreamz offers web design, web development, Shopify & WordPress development, eCommerce solutions, mobile app development, and related digital services.\nAll work is performed as per the agreed scope, proposal, or written communication shared with you.",
       ],
     },
     {
@@ -33,8 +32,7 @@ export const termsOfServiceContent = {
     {
       title: "Payments & Billing",
       paragraphs: [
-        "Payments must be made based on the milestones or schedules mutually agreed upon.",
-        "Once a payment is made through Razorpay or any other mode, it is considered final and confirmed.",
+        "Payments must be made based on the milestones or schedules mutually agreed upon.\nOnce a payment is made through Razorpay or any other mode, it is considered final and confirmed.",
         "Invoices must be cleared on or before the due date mentioned.",
       ],
     },
@@ -70,8 +68,7 @@ export const termsOfServiceContent = {
     {
       title: "Confidentiality",
       paragraphs: [
-        "Both parties agree to maintain confidentiality of project details, documents, credentials, and business information exchanged during the course of the project.",
-        "We follow strict internal processes to keep your data secure.",
+        "Both parties agree to maintain confidentiality of project details, documents, credentials, and business information exchanged during the course of the project.\nWe follow strict internal processes to keep your data secure.",
       ],
     },
     {
@@ -88,8 +85,7 @@ export const termsOfServiceContent = {
     {
       title: "Quality Assurance & Support",
       paragraphs: [
-        "We test all work before delivery.",
-        "Any bugs reported within the agreed support period will be fixed at no additional cost, provided they fall within the original project scope.",
+        "We test all work before delivery.\nAny bugs reported within the agreed support period will be fixed at no additional cost, provided they fall within the original project scope.",
         "Requests outside the scope are treated as new tasks and billed separately.",
       ],
     },
@@ -108,8 +104,7 @@ export const termsOfServiceContent = {
     {
       title: "Governing Law",
       paragraphs: [
-        "These terms are governed by the laws of India.",
-        "Any disputes will be handled under the jurisdiction of the appropriate courts in India.",
+        "These terms are governed by the laws of India.\nAny disputes will be handled under the jurisdiction of the appropriate courts in India.",
       ],
     },
     {

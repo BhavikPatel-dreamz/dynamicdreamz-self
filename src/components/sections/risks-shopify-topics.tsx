@@ -62,15 +62,15 @@ export function RisksShopifyTopics({ items }: RisksShopifyTopicsProps) {
             {items.map((item) => (
               <article className="mb-[60px] last:mb-0" id={item.id} key={item.id}>
                 {item.introParagraphs?.map((paragraph) => (
-                  <p className="mb-4 text-base font-medium leading-[30.4px] tracking-[0.32px] text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-[26px]" key={paragraph}>
+                  <p className="mb-4 text-base font-small leading-[30.4px] tracking-[0.32px] text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-[26px]" key={paragraph}>
                     {paragraph}
                   </p>
                 ))}
-                <h2 className="relative mb-5 pl-5 text-[28px] font-medium leading-[1.37] text-[#282828] before:absolute before:top-[5px] before:left-0 before:block before:h-[34px] before:w-[5px] before:bg-[linear-gradient(111.61deg,#15c064_-0.6%,#00d1ff_92.42%)] max-[1199px]:text-2xl max-[767px]:text-[21px] max-[767px]:leading-[1.45]">
+                <h2 className="relative mb-5 pl-5 text-[35px] font-small leading-[1.4] text-[#282828] before:absolute before:top-[5px] before:left-0 before:block before:h-[34px] before:w-[5px] before:bg-[linear-gradient(111.61deg,#15c064_-0.6%,#00d1ff_92.42%)] max-[1199px]:text-2xl max-[767px]:text-[21px] max-[767px]:leading-[1.45]">
                   {item.heading}
                 </h2>
                 {item.paragraphs.map((paragraph) => (
-                  <p className="mb-4 text-base font-medium leading-[30.4px] tracking-[0.32px] text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-[26px]" key={paragraph}>
+                  <p className="mb-4 text-base font-small leading-[30.4px] tracking-[0.32px] text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-[26px]" key={paragraph}>
                     {paragraph}
                   </p>
                 ))}
@@ -84,7 +84,7 @@ export function RisksShopifyTopics({ items }: RisksShopifyTopicsProps) {
                   </ul>
                 ) : null}
                 {item.closingParagraphs?.map((paragraph) => (
-                  <p className="mb-4 text-base font-medium leading-[30.4px] tracking-[0.32px] text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-[26px]" key={paragraph}>
+                  <p className="mb-4 text-base font-small leading-[30.4px] tracking-[0.32px] text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-[26px]" key={paragraph}>
                     {paragraph}
                   </p>
                 ))}

@@ -60,10 +60,10 @@ export function ThankYouPage({
           </h1>
           <p
             className={cn(
-              "mt-4 text-base font-medium leading-[27.68px] text-[#535353] max-[767px]:mt-3",
+              "mt-4 text-sm font-small leading-[24px] text-[#535353] max-[767px]:mt-3",
               isBelowContact ? "mb-0" : "mb-6 max-[767px]:mb-5",
             )}
-          >
+          > 
             {descriptionLine1} <br className="max-[767px]:hidden" />
             {descriptionLine2}
           </p>

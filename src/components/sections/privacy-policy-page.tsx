@@ -68,8 +68,8 @@ export function PrivacyPolicyPage({ content }: PrivacyPolicyPageProps = {}) {
           {sections.map((section) => {
             const Heading = section.level === 3 ? "h3" : "h2";
             const headingClass = section.level === 3
-              ? "mb-2.5 font-sans text-lg leading-[28.8px] font-bold tracking-[-0.36px] text-ink max-[767px]:text-base max-[767px]:leading-[26px]"
-              : "mb-6 font-sans text-2xl leading-[31.2px] font-bold tracking-[-0.48px] text-ink max-[767px]:text-xl max-[767px]:leading-[31.2px]";
+              ? "mb-2.5 text-lg leading-[28.8px] font-small tracking-[-0.36px] text-ink max-[767px]:text-base max-[767px]:leading-[26px]"
+              : "mb-6 text-2xl leading-[31.2px] font-small tracking-[-0.48px] text-ink max-[767px]:text-xl max-[767px]:leading-[31.2px]";
 
             return (
               <div key={section.title}>

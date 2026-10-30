@@ -27,7 +27,7 @@ export function ImageCtaSection({
           <h2 className="font-display text-[28px] font-medium leading-[137%] tracking-[-0.32px] text-white max-[767px]:text-[22px]">
             {heading}
           </h2>
-          <p className="mb-[34px] text-base font-medium leading-[190%] text-white max-[767px]:text-sm max-[767px]:leading-[26px]">
+          <p className="mb-[34px] text-base font-small leading-[190%] text-white max-[767px]:text-sm max-[767px]:leading-[26px]">
             {description}
           </p>
           <ButtonLink className="text-white" href={ctaHref} variant="outline">
