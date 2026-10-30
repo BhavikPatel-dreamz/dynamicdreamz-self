@@ -83,7 +83,7 @@ export function ShopifyMigrationServicesSection({
                     {item.title}
                   </h3>
                   {item.description && (
-                    <p className="font-sans text-sm font-normal leading-6 text-[#535353]">
+                    <p className="font-sans text-sm font-medium leading-6 text-[#535353]">
                       {item.description}
                     </p>
                   )}

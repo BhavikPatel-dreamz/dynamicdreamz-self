@@ -75,7 +75,7 @@ export const plusAgencyServicesContent = {
         "/assets/shopify-migration/services/magento-to-shopify-plus-migration.svg",
       imageAlt: "Magento to Shopify Plus Storefront Migration",
       href: "/magento-to-shopify-plus-migration",
-      ctaLabel: "Explore migration",
+      ctaLabel: "Magento Plus migration",
     },
     {
       title: "WooCommerce to Shopify Plus Migration",
@@ -85,7 +85,7 @@ export const plusAgencyServicesContent = {
         "/assets/shopify-migration/services/woocommerce-to-shopify-migration.svg",
       imageAlt: "WooCommerce to Shopify Storefront Migration",
       href: "/woocommerce-to-shopify-migration",
-      ctaLabel: "Explore migration",
+      ctaLabel: "WooCommerce migration",
     },
     {
       title: "BigCommerce to Shopify Plus Migration",
@@ -95,7 +95,7 @@ export const plusAgencyServicesContent = {
         "/assets/shopify-migration/services/bigcommerce-to-shopify-migration.svg",
       imageAlt: "BigCommerce to Shopify Storefront Migration",
       href: "/bigcommerce-to-shopify-migration",
-      ctaLabel: "Explore migration",
+      ctaLabel: "BigCommerce migration",
     },
     {
       title: "Salesforce Commerce Cloud to Shopify Migration",
@@ -105,7 +105,7 @@ export const plusAgencyServicesContent = {
         "/assets/shopify-migration/services/salesforce-to-shopify-migration.svg",
       imageAlt: "Salesforce Commerce Cloud to Shopify Migration",
       href: "/salesforce-to-shopify-migration",
-      ctaLabel: "Explore migration",
+      ctaLabel: "Salesforce migration",
     },
     {
       title: "PrestaShop to Shopify Migration",
@@ -115,7 +115,7 @@ export const plusAgencyServicesContent = {
         "/assets/shopify-migration/services/prestashop-to-shopify-migration.svg",
       imageAlt: "PrestaShop to Shopify Storefront Migration",
       href: "/prestashop-to-shopify-migration",
-      ctaLabel: "Explore migration",
+      ctaLabel: "PrestaShop migration",
     },
     {
       title: "Custom / Legacy Platform to Shopify Plus",
@@ -125,7 +125,7 @@ export const plusAgencyServicesContent = {
         "/assets/shopify-migration/services/custom-to-shopify-migration.svg",
       imageAlt: "Custom to Shopify Migration",
       href: "/contact-us",
-      ctaLabel: "Explore migration",
+      ctaLabel: "Custom Migration",
     },
   ] satisfies readonly MigrationServiceCard[],
 };
@@ -274,25 +274,25 @@ export const plusAgencyWhyChooseContent: WhyChooseMigrationContent = {
     "Get migration, Shopify development, integrations, QA and post-launch support from one experienced Shopify partner.",
   items: [
     {
-      icon: "certified",
+      icon: "shopify-bag",
       title: "Shopify Platinum Partner",
       description:
         "Shopify is a core ecommerce capability with dedicated experience across Shopify and Shopify Plus delivery.",
     },
     {
-      icon: "expertise",
+      icon: "certified",
       title: "Shopify-Certified Expertise",
       description:
         "Credential-led Shopify development capability for projects that need deeper Liquid, storefront, B2B and platform knowledge.",
     },
     {
-      icon: "team",
+      icon: "custom-build",
       title: "Cross-Functional Team",
       description:
         "Design, Shopify, QA, mobile and full-stack resources can support migration requirements beyond theme code.",
     },
     {
-      icon: "support",
+      icon: "long-term-support",
       title: "Ongoing Shopify Support",
       description:
         "Continue after launch with new features, CRO, integrations, maintenance, performance work and recurring development.",

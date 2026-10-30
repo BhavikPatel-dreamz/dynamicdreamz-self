@@ -149,7 +149,7 @@ export function IndustryLandingTemplate({
         heading={faq.heading}
         idPrefix={faq.idPrefix}
         items={faq.items}
-        IsSkyBlue
+        bgOffWhite
       />
       {children}
     </>

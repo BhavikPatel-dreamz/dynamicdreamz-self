@@ -97,6 +97,7 @@ export function ShopifyPlusMigrationAgencyPage() {
 
       {/* 11. FAQs */}
       <SplitFaqSection
+        bgOffWhite
         description={plusAgencyFaqsContent.description}
         eyebrow={plusAgencyFaqsContent.eyebrow}
         heading={plusAgencyFaqsContent.heading}
