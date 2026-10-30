@@ -522,7 +522,7 @@ export function CmsFormClient({
                       defaultValue={(field as any).defaultValue || ""}
                       placeholder={fieldPlaceholder}
                       rows={4}
-                      className="w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] p-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm"
+                      className="w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] p-4 text-base font-medium text-[#090909] resize-none placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm"
                     />
                   ) : field.blockType === "select" ? (
                     <div className="relative">

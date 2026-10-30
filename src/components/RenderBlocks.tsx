@@ -3687,10 +3687,11 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 : undefined;
 
             const hero =
-              rqBlock.heroTitle || rqBlock.heroDescription
+              rqBlock.heroTitle || rqBlock.heroDescription || rqBlock.formTitle
                 ? {
                     title: rqBlock.heroTitle || "",
                     description: rqBlock.heroDescription || "",
+                    formTitle: rqBlock.formTitle || "",
                   }
                 : undefined;
 
