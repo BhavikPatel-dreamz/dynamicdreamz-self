@@ -253,32 +253,32 @@ export type EtsyThingsToConsiderBox = {
 };
 
 export const etsyThingsToConsiderContent = {
-  eyebrow: "Consideration",
+  eyebrow: "Things to Consider",
   heading: "Things to Consider Before Etsy to Shopify Migration",
-  description: "Before migrating from Etsy to Shopify, several factors should be considered to ensure a smooth transition. Planning these elements helps prevent issues and makes the migration as efficient as possible.",
+  description: "Before migrating from Etsy to Shopify, several factors should be considered to ensure a smooth transition. Planning these elements helps prevent issues later.",
   boxes: [
     {
       iconName: "data-transfer" as MigrationPlatformIconName,
       title: "Data Transfer",
-      description: "Recognize the crucial data that should be migrated from your Etsy store to Shopify, including products, customer reviews, order history, and other important content.",
+      description: "Recognize the crucial data that should be migrated from your Etsy store to your Shopify store. Carefully examine the data you want to migrate, such as products, customer information, and order history.",
     },
     {
-      iconName: "seo-settings" as MigrationPlatformIconName,
+      iconName: "etsy-seo-settings" as MigrationPlatformIconName,
       title: "SEO Settings",
-      description: "For safety, back up your Etsy store's SEO settings, such as product titles, descriptions, and tags. This helps recreate and optimize your search visibility on Shopify.",
+      description: "For safety, back up your Etsy store's SEO settings, such as product titles and descriptions. We will surely finish your migration by maintaining the store's search engine rankings without fail.",
     },
     {
       iconName: "extensive-customization" as MigrationPlatformIconName,
       title: "Store Design",
-      description: "Decide whether you want a new custom theme for your store or want to replicate your Etsy store’s look and feel on Shopify.",
+      description: "Decide whether you want a new custom theme for your store or want to use the current store's look. Shopify offers plenty of configuration flexibility, so now is a good time to refresh your brand with a custom theme design.",
     },
     {
       iconName: "payment-and-shipping" as MigrationPlatformIconName,
       title: "Payment and Shipping Options",
-      description: "Both platforms offer different payment and shipping options. Review what works best for your business on Shopify and adjust your settings accordingly.",
+      description: "Both platforms offer different payment and shipping integrations. Check Shopify's integrations and choose according to your store's needs to match your Etsy store.",
     },
   ],
-};
+};  
 
 export const etsyWhyChooseContent: EvaluationFrameworkContent = {
   eyebrow: "Why Dynamic Dreamz",
@@ -287,19 +287,19 @@ export const etsyWhyChooseContent: EvaluationFrameworkContent = {
   items: [
     {
       title: "Skilled Migration Experts",
-      description: "Our qualified team handles the migration’s technical factors to ensure your store's uninterrupted business operations.",
+      description: "Our qualified team handles the migration’s technical factors while confirming your store remains functional, letting you focus on running your business.",
     },
     {
       title: "Complete Data Transfer",
-      description: "We ensure a full migration, accurately moving all essential data, such as products, orders, and customer details, with zero data loss.",
+      description: "We ensure a full migration, accurately moving all essential data, such as products, orders, and customer details.",
     },
     {
       title: "Custom Shopify Themes",
-      description: "We can help you ensure that your new Shopify store fits in with your brand identity by creating a new custom theme or adapting your existing design.",
+      description: "We can help you ensure that your new Shopify store fits in with your brand, whether you want to keep the theme you used on Etsy or want a new custom theme.",
     },
     {
       title: "Ongoing Support",
-      description: "We are not stopping successful migration; we will also provide support even after your store goes live, solving queries quickly and seamlessly.",
+      description: "We are not stopping successful migration; we will also provide ongoing support.",
     },
   ],
 };

@@ -199,19 +199,19 @@ export type WixThingsToConsiderBox = {
 };
 
 export const wixThingsToConsiderContent = {
-  eyebrow: "Consideration",
+  eyebrow: "Things to Consider",
   heading: "Things to Consider Before Wix to Shopify Migration",
-  description: "Before migrating from Wix to Shopify, there are several fundamental aspects to consider to guarantee a smooth migration and avoid unexpected issues. Planning for these details will help ensure your store's success on Shopify.",
+  description: "Before migrating from Wix to Shopify, there are several fundamental aspects to consider to guarantee a smooth migration and avoid unexpected issues. Proper planning and awareness of detail will help you create the most out of Shopify’s platform.",
   boxes: [
     {
       iconName: "seo-settings" as MigrationPlatformIconName,
       title: "SEO Settings",
-      description: "Ensure that you review and move necessary SEO settings, such as meta titles, meta descriptions, and alt tags, to maintain and improve your search rankings.",
+      description: "Ensure that you review and move necessary SEO settings, such as meta titles, meta descriptions, and URLs so that your store's search rankings remain unchanged.",
     },
     {
       iconName: "extensive-customization" as MigrationPlatformIconName,
       title: "Custom Designs",
-      description: "Consider whether you want to keep your current store design or accept a new custom Shopify theme. Preparing this in advance helps with the transition.",
+      description: "Consider whether you want to keep your current store design or accept this opportunity to refresh the look of your store on Shopify. Custom themes can be tailored for Shopify.",
     },
     {
       iconName: "powerful-app-ecosystem" as MigrationPlatformIconName,

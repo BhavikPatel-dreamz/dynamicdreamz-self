@@ -116,7 +116,8 @@ export const prestashopProcessContent: MigrationProcessContent = {
         },
         {
           title: "Reviews",
-          items: ["User Name", "Rating", "Title", "Comment"],
+          description:"Comment",
+          items: ["User Name", "Rating", "Title"],
         },
         {
           title: "CMS Pages",

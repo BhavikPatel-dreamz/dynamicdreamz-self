@@ -196,19 +196,19 @@ export const magentoPlusProcessContent = {
     {
       iconName: "custom-design",
       title: "Custom Design",
-      description: "We design a custom Shopify theme matching your brand.",
+      description: "We also offer to build a custom Shopify theme that matches your brand for more customization needs.",
     },
     {
       iconName: "development",
       title: "Development",
       description:
-        "We develop your store with custom features and third-party apps.",
+        "After you approve the new custom design, we will start developing your Shopify store.",
     },
     {
       iconName: "data-migration",
       title: "Data Migration",
       description:
-        "We securely transfer all your products, customer details, order history, and other important data to Shopify Plus with zero loss.",
+        "We securely transfer all essential data from the Magento store to the Shopify Plus store.",
     },
     {
       iconName: "testing",
@@ -249,22 +249,22 @@ export const magentoPlusWhyChooseContent = {
     {
       title: "Smooth Data Transfer",
       description:
-        "We securely migrate all your critical data, including customer profiles, product catalogs, order history, and SEO settings, with zero data loss.",
+        "We ensure that all essential data, including products, customer details, and orders, are transferred accurately without any data loss.",
     },
     {
       title: "SEO Expertise",
       description:
-        "Our migration process includes 301 redirects, metadata retention, and URL mapping to protect your search engine rankings and traffic.",
+        "Our SEO experts ensure your new Shopify store maintains and improves its search engine visibility during migration.",
     },
     {
       title: "Comprehensive Services",
       description:
-        "We handle everything from initial planning and store setup to third-party integrations and custom app development.",
+        "From initial assessment to post launch support, we provide end to end migration services, taking care of every detail to ensure a successful upgrade.",
     },
     {
       title: "Minimal Downtime",
       description:
-        "We ensure minimum downtime during the migration, keeping your business running without disrupting the customer experience.",
+        "We migrate your store with proper planning and carefully take every step so your migration process will completed with minimal downtime.",
     },
     {
       title: "Post-Migration Support",
@@ -311,12 +311,12 @@ export const magentoPlusFaqs: readonly FaqAccordionItem[] = [
   {
     question: "Is Shopify Plus secure?",
     answer:
-      "Yes, Shopify Plus is very secure. It provides Level 1 PCI DSS compliance, an SSL certificate, and built-in protection. This guarantees that your customer data and transactions are completely protected from threats.",
+      "Yes, Shopify Plus is PCI-compliant and highly secure, guaranteeing that your store meets with industry data protection regulations. It offers enterprise-grade security features, including fraud analysis, encryption, and 24/7 monitoring. You can concentrate on expanding your business with Shopify Plus, free from worries about security violations or legal issues.",
   },
   {
     question: "Do you offer post-migration support?",
     answer:
-      "Yes, we provide ongoing post-launch support to resolve any issues and train your team on Shopify Plus management. Our team is always ready to ensure your store continues to operate smoothly.",
+      "Absolutely! We offer post-migration support, which is a key part of our migration service. We provide continuous technical support to ensure your store resumes to perform optimally after launch. Your business success is our priority.",
   },
   {
     question: "Can I migrate only specific parts of my store?",

@@ -150,7 +150,7 @@ export function ThemeCustomizationApproachSection({
                             <span>{point}</span>
                           ) : hasRating ? (
                             <>
-                              <strong className="font-bold text-[#282828]">
+                              <strong className="font-bold text-[#535353]">
                                 {point.label}:
                               </strong>
                               <span className="rating-img inline-flex">
@@ -166,7 +166,7 @@ export function ThemeCustomizationApproachSection({
                             </>
                           ) : (
                             <>
-                              <strong className="font-bold text-[#282828]">
+                              <strong className="font-bold text-[#535353]">
                                 {point.label}:
                               </strong>{" "}
                               <span>{point.value}</span>

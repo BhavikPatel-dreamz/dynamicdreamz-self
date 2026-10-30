@@ -126,6 +126,7 @@ export function ShopifyMigrationLandingTemplate({
             description: secondaryServices.description,
             boxes: secondaryServices.boxes,
           }}
+          className="pt-20"
           id={secondaryServices.id ?? "benefits"}
           variant={secondaryServices.variant ?? "transparent"}
         />
@@ -147,7 +148,7 @@ export function ShopifyMigrationLandingTemplate({
       {/* 6. Why Choose (if present) */}
       {whyChoose ? (
         <EvaluationFrameworkSection
-          className="pt-0"
+          className=""
           content={whyChoose}
           id={whyChooseId}
         />
@@ -167,6 +168,7 @@ export function ShopifyMigrationLandingTemplate({
         idPrefix={faq.idPrefix}
         items={faq.items}
         sectionId="faqs"
+        bgOffWhite
       />
 
       {children}

@@ -90,6 +90,7 @@ export function MagentoToShopifyPlusMigrationPage() {
 
       {/* 6. Why Choose Dynamic Dreamz for Migration Services? */}
       <EvaluationFrameworkSection
+      className="pt-0"
         content={magentoPlusWhyChooseContent}
         id="why-choose-dynamic-dreamz"
       />
@@ -104,6 +105,7 @@ export function MagentoToShopifyPlusMigrationPage() {
 
       {/* 8. Frequently Asked Questions */}
       <SplitFaqSection
+        bgOffWhite
         idPrefix="magento-plus-migration-faq"
         items={magentoPlusFaqs}
         sectionId="faqs"

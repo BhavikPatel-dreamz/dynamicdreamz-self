@@ -2415,6 +2415,22 @@ function renderCustomBoxIcon(iconName?: string) {
     "greater-control-over-your-store",
     "multiple-sales-channels",
     "seo-and-marketing-tools",
+    "seo-redirects",
+    "app-integration",
+    "store-testing",
+    "performance-optimization",
+    "data-mapping-cleanup",
+    "feature-compatibility",
+    "seo-considerations",
+    "payment-and-shipping",
+    "data-transfer",
+    "seo-settings",
+    "link",
+    "ecwid-data-cleanup",
+    "theme-design-considerations",
+    "feature-differences",
+    "integration-with-third-party-app",
+    "etsy-seo-settings",
   ];
   if (migrationPlatformNames.includes(iconName)) {
     return (

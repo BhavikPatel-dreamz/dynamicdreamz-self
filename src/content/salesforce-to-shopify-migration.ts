@@ -274,7 +274,7 @@ export const salesforceThingsToConsiderContent = {
       description: "When swapping platforms, SEO can be affected. Ensure your product URLs, page titles, and meta descriptions are optimized on Shopify to keep your search engine rankings.",
     },
     {
-      iconName: "seo-redirects" as MigrationPlatformIconName,
+      iconName: "link" as MigrationPlatformIconName,
       title: "Redirect Strategy",
       description: "Some URLs may change when you migrate to Shopify. Creating proper 301 redirects is crucial to ensure that customers who have bookmarked your old store or find it through search engines will be redirected to your new Shopify store smoothly.",
     },

@@ -231,16 +231,16 @@ export function BlogContentRenderer({ blocks, className }: BlogContentRendererPr
           case "table":
             return (
               <div
-                className="my-6 overflow-x-auto max-[1199px]:whitespace-nowrap"
+                className="tbl-reponsive my-6 w-full overflow-x-auto whitespace-nowrap"
                 key={index}
               >
-                <table className="w-full border-collapse text-[16px] font-medium">
+                <table className="w-full border-collapse text-left text-[16px] font-medium">
                   {block.headers && block.headers.length > 0 ? (
                     <thead>
                       <tr>
                         {block.headers.map((header, hIdx) => (
                           <th
-                            className="border border-[#dfdfdf] bg-[#f7f7f7] p-3 text-left font-bold text-[#282828]"
+                            className="border border-[#000] px-5 py-3 text-left font-bold text-[#282828]"
                             key={hIdx}
                           >
                             <InlineNodes nodes={Array.isArray(header) ? header : [header]} />
@@ -254,7 +254,11 @@ export function BlogContentRenderer({ blocks, className }: BlogContentRendererPr
                       <tr key={rIdx}>
                         {row.map((cell, cIdx) => (
                           <td
-                            className="border border-[#dfdfdf] p-3 text-[#535353]"
+                            className={cn(
+                              "border border-[#000] px-5 py-3 text-left text-[#535353]",
+                              !block.headers && rIdx === 0 && "font-bold text-[#282828]",
+                              cIdx === 0 && "font-bold text-[#282828]"
+                            )}
                             key={cIdx}
                           >
                             <InlineNodes nodes={cell} />

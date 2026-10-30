@@ -249,8 +249,7 @@ export const shopifyMaintenanceServicesContent = {
     heading: "What Clients Say About Dynamic Dreamz",
     description:
       [
-      "Our clients' success speaks for itself. Read testimonials from satisfied clients who have benefited",
-      "from our Shopify maintenance services and see how we can help you achieve similar results.",
+      "Our clients' success speaks for itself. Read testimonials from satisfied clients who have benefited from our Shopify maintenance services and see how we can help you achieve similar results.",
     ],
     items: shopifyPlusAgencyTestimonials.items,
   },

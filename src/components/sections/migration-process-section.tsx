@@ -54,11 +54,10 @@ function StepItem({
         className={`migration-step-box border-[#efefef] ${isFirst ? "" : "border-t-[1.5px]"}`}
       >
         <article
-          className={`migration-step-details flex items-center max-[767px]:items-start ${
-            isLast
+          className={`migration-step-details flex items-center max-[767px]:items-start ${isLast
               ? "pt-8 pb-0 max-[767px]:pt-5"
               : "py-8 max-[767px]:py-5"
-          }`}
+            }`}
         >
           {/* Desktop Step Counter */}
           <div className="icon mr-[46px] w-[75px] min-w-[75px] text-center max-[767px]:mr-[15px] max-[767px]:min-w-[55px]">
@@ -124,7 +123,7 @@ export function MigrationProcessSection({
 }: MigrationProcessSectionProps) {
   const resolvedClassName =
     variant === "cards"
-      ? "py-[50px]"
+      ? "py-20"
       : "migration-process-step-sec py-20 max-[992px]:py-[50px]";
 
   if (variant === "cards") {
@@ -176,9 +175,9 @@ export function MigrationProcessSection({
                   className={cn(
                     "step rounded-[20px] border border-[rgba(40,40,40,0.11)] bg-white p-[25px] max-[991px]:p-5",
                     isStep1or2 &&
-                      "w-full min-[1200px]:w-[calc(33.3333%-11px)] max-[1199px]:w-[calc(50%-8px)] max-[767px]:w-full max-[767px]:mb-4",
+                    "w-full min-[1200px]:w-[calc(33.3333%-11px)] max-[1199px]:w-[calc(50%-8px)] max-[767px]:w-full max-[767px]:mb-4",
                     isStep3 &&
-                      "w-full min-[1200px]:w-[calc(33.3333%-11px)] max-[1199px]:w-full max-[767px]:w-full max-[767px]:mb-4",
+                    "w-full min-[1200px]:w-[calc(33.3333%-11px)] max-[1199px]:w-full max-[767px]:w-full max-[767px]:mb-4",
                     isStep4 && "w-full max-[767px]:mb-4",
                     isStep5 && "w-full max-[767px]:mb-4",
                     isStep6 && "w-full max-[767px]:mb-0",
@@ -208,9 +207,9 @@ export function MigrationProcessSection({
                       className={cn(
                         "boxes-wrapper mt-[30px] gap-2.5 max-[991px]:mt-5",
                         isStep4 &&
-                          "grid grid-cols-2 max-[1199px]:grid-cols-1 max-[767px]:block",
+                        "grid grid-cols-2 max-[1199px]:grid-cols-1 max-[767px]:block",
                         isStep5 &&
-                          "grid grid-cols-4 max-[1199px]:grid-cols-2 max-[767px]:block",
+                        "grid grid-cols-4 max-[1199px]:grid-cols-2 max-[767px]:block",
                         isStep6 && "grid grid-cols-2 max-[767px]:block",
                       )}
                     >
@@ -224,15 +223,8 @@ export function MigrationProcessSection({
                               {box.title}
                             </h4>
                           ) : null}
-                          {box.description ? (
-                            <div className="box-description">
-                              <p className="m-0 font-montserrat text-sm font-normal leading-[22px] text-[#535353]">
-                                {box.description}
-                              </p>
-                            </div>
-                          ) : null}
                           {box.items && box.items.length > 0 ? (
-                            <div className="box-description">
+                            <div className="box-description ">
                               <ul className="m-0 grid grid-cols-3 gap-2.5 p-0 list-none max-[1199px]:grid-cols-5 max-[991px]:grid-cols-4 max-[767px]:grid-cols-2 max-[575px]:block">
                                 {box.items.map((item, iIdx) => (
                                   <li
@@ -243,6 +235,13 @@ export function MigrationProcessSection({
                                   </li>
                                 ))}
                               </ul>
+                            </div>
+                          ) : null}
+                          {box.description ? (
+                            <div className="box-description">
+                              <p className={`m-0 ${box.items && box.items.length > 0 && "mt-2"} font-montserrat text-sm font-normal leading-[22px] text-[#535353]`}>
+                                {box.description}
+                              </p>
                             </div>
                           ) : null}
                         </div>
@@ -269,9 +268,8 @@ export function MigrationProcessSection({
       <Container>
         <div
           data-aos="fade-up"
-          className={`title ${
-            isCentered ? "text-center mx-auto max-w-[850px]" : ""
-          } max-[767px]:mb-6`}
+          className={`title ${isCentered ? "text-center mx-auto max-w-[850px]" : ""
+            } max-[767px]:mb-6`}
         >
           <h2 className="mb-1.5 font-montreal-medium text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px] text-center">
             {formatBrText(content.heading, "max-[1199px]:hidden")}
