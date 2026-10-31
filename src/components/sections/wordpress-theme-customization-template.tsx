@@ -155,6 +155,7 @@ export function WordPressThemeCustomizationTemplate({
 
       {/* 4. Services */}
       <AgencyServicesSection
+        className="pb-20"
         cardVariant="services-box"
         columns={2}
         content={servicesContent}
@@ -190,6 +191,7 @@ export function WordPressThemeCustomizationTemplate({
 
       {/* 9. Frequently Asked Questions */}
       <SplitFaqSection
+        bgOffWhite
         heading={content.faqsHeading}
         idPrefix={faqIdPrefix}
         items={content.faqs}

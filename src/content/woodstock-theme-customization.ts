@@ -68,7 +68,7 @@ export const woodstockThemeCustomizationContent = {
       {
             "title": "Multiple Third-Party Apps",
             "description": "Easily add multiple Shopify apps and tools to improve your Shopify store functionality.",
-            "icon": "/assets/dawn-theme-customization/benefits/multiple-third-party-plugins.svg",
+            "icon": "/assets/expanse-theme-customization/benefits/multiple-third-party-apps.svg",
             "iconAlt": "Multiple Third-Party Apps"
       },
       {

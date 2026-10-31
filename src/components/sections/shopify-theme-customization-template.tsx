@@ -144,6 +144,7 @@ export function ShopifyThemeCustomizationTemplate({
         heading={content.faqsHeading}
         idPrefix={faqIdPrefix}
         items={content.faqs}
+        bgOffWhite
       />
       {children}
     </div>

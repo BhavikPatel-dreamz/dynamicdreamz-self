@@ -105,9 +105,9 @@ export const royalElementorKitThemeCustomizationContent = {
     ]
   },
   "services": {
-    "eyebrow": "Services",
+    "eyebrow": "Our Services",
     "heading": "Our Royal Elementor Kit Theme \n Customization Services",
-    "description": "",
+    "description": "We deliver professional Royal Elementor Kit theme customization services to help you build a high-performing and visually attractive WordPress website.",
     "items": [
       {
         "iconName": "theme-installation",

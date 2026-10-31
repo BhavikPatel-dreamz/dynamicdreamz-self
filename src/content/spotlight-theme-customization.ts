@@ -67,7 +67,7 @@ export const spotlightThemeCustomizationContent = {
       {
             title: "Multiple Third-party Apps",
             description: "Smoothly integrate advanced tools and features using multiple third-party apps.",
-            icon: "/assets/dawn-theme-customization/benefits/multiple-third-party-plugins.svg",
+            icon: "/assets/expanse-theme-customization/benefits/multiple-third-party-apps.svg",
             iconAlt: "Multiple Third-party Apps"
       },
       {

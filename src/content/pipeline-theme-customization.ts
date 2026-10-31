@@ -169,7 +169,7 @@ export const pipelineThemeCustomizationContent = {
       {
         "title": "Minimum Maintenance Cost",
         "description": "With our theme customization you can get minimum maintenance cost. Once your theme is customized, it requires minimal ongoing maintenance.",
-        "icon": "/assets/dawn-theme-customization/benefits/zero-maintenance-cost.svg",
+        "icon": "/assets/pipeline-theme-customization/benefits/minimum-maintenance-cost.svg",
         "iconAlt": "Minimum Maintenance Cost"
       }
     ]
