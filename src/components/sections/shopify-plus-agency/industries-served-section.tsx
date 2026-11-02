@@ -37,7 +37,6 @@ export function IndustriesServedSection({
     <section className={sectionClass} data-section="industries" id="industries-served">
       <Container>
         <SplitSectionHeading
-          className="mb-[50px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}

@@ -29,13 +29,12 @@ export function EvaluationFrameworkSection({
 }: EvaluationFrameworkSectionProps) {
   return (
     <section
-      className={cn("how-to-choose-spa-sec bg-white py-20 max-[992px]:py-[50px]", className)}
+      className={cn("how-to-choose-spa-sec bg-white py-20 max-[768px]:py-[50px]", className)}
       data-section="evaluation-framework"
       id={id}
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[50px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}

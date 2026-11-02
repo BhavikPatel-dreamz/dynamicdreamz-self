@@ -22,7 +22,6 @@ export function ShopifyPlusProofSection({
     >
       <Container>
         <SplitSectionHeading
-          
           description={content.intro}
           eyebrow={content.eyebrow}
           heading={content.heading}
@@ -40,7 +39,7 @@ export function ShopifyPlusProofSection({
             <div className="list-box flex h-full flex-wrap border-y border-l border-[#2828281c] py-[30px] pr-0 pl-10 max-[1399px]:py-5 max-[1399px]:pl-5 max-[1200px]:pl-2.5 max-[992px]:pl-5 max-[768px]:border-0 max-[768px]:p-0">
               {content.stats.map((stat, index) => (
                 <div
-                  className="list-col mb-5 w-1/2 px-2.5 max-[1399px]:mb-[15px] max-[768px]:mb-[15px] max-[768px]:w-full max-[768px]:border-b max-[768px]:border-[#2828281c] max-[768px]:p-0 max-[768px]:pb-[15px] max-[768px]:last:mb-0 max-[768px]:last:border-b-0 max-[768px]:last:pb-0 [&:nth-last-child(-n+2)]:mb-0"
+                  className="list-col mb-5 w-1/2 px-2.5 max-[1399px]:mb-[15px] max-[768px]:mb-[15px] max-[768px]:w-1/2 max-[768px]:border-b max-[768px]:border-[#2828281c] max-[768px]:p-0 max-[768px]:pb-[15px] max-[768px]:last:mb-0 max-[768px]:[&:nth-last-child(-n+2)]:border-b-0 max-[768px]:last:pb-0 [&:nth-last-child(-n+2)]:mb-0"
                   key={stat}
                 >
                   <div className="flex flex-col list-none">

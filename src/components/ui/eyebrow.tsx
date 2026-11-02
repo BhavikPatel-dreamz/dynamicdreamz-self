@@ -43,7 +43,8 @@ export function Eyebrow<T extends ElementType = "p">({
   return (
     <Component
       className={cn(
-        !unstyled && "items-center text-[14px] leading-[1.2] font-semibold uppercase before:block before:shrink-0 before:bg-brand-red before:content-[''] max-[1200px]:text-[12px] max-[768px]:text-[10px] max-[768px]:flex-wrap",
+        !unstyled && "items-center text-[14px] leading-[1.2] font-semibold uppercase before:block before:shrink-0 before:bg-brand-red before:content-[''] max-[1200px]:text-[12px] max-[768px]:text-[10px]",
+        !unstyled && Boolean(items && items.length > 1) && "max-[768px]:flex-wrap",
         !unstyled && (Component === "span" ? "inline-flex" : "flex"),
         !unstyled && align === "center" && "justify-center",
         !unstyled && align === "responsive-center" && "justify-start max-[1200px]:justify-center",
