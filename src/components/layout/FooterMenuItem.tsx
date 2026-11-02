@@ -57,7 +57,7 @@ export function FooterMenuItem({
           isActive
             ? "text-ink font-medium opacity-100"
             : isMobile
-              ? "text-ink/80 font-normal hover:text-ink hover:opacity-100 focus-visible:text-ink"
+              ? "text-[#252c15] font-normal hover:text-ink hover:opacity-100 focus-visible:text-ink"
               : "text-ink/80 font-medium hover:text-ink focus-visible:text-ink",
         )}
         href={href}

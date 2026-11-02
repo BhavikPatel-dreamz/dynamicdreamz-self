@@ -103,7 +103,7 @@ export function SplitSectionHeading({
       className={cn(
         "mb-10 flex items-end justify-between gap-10 max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:gap-2.5",
         services || leftAligned || portfolio
-          ? "max-[992px]:items-start max-[992px]:text-left"
+          ? "max-[992px]:items-start max-[992px]:text-left max-[992px]:gap-0"
           : "max-[992px]:text-center",
         className,
       )}

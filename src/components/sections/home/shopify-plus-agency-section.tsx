@@ -53,7 +53,7 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
           eyebrow={eyebrow}
           heading={title}
           headingId="shopify-plus-agency-title"
-          titleColumnClassName="w-[42%] max-[1199px]:w-full max-[1199px]:mb-2.5"
+          titleColumnClassName="w-[42%] max-[1199px]:w-full max-[1199px]:mb-0 max-[992px]:mb-0"
           variant="left"
         />
 
@@ -71,7 +71,7 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
                 const tone = counter.tone && counter.tone in counterToneClasses ? counter.tone : "green";
                 return (
                   <div className="mb-2 w-1/2 px-1 max-[767px]:w-full" key={counter.value}>
-                    <div className={`flex h-full min-h-[136px] flex-col justify-between rounded-[20px] p-[18px] max-[767px]:rounded-xl ${counterToneClasses[tone]}`}>
+                    <div className={`flex h-full min-h-[136px] max-[767px]:min-h-0 flex-col justify-between max-[767px]:justify-start rounded-[20px] p-[18px] max-[767px]:rounded-xl ${counterToneClasses[tone]}`}>
                       <div>
                         <h3 className="h2 font-montreal-bold block text-[35px] leading-[1.4] font-semibold text-ink max-[767px]:text-[24px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px]">
                           {counter.value}

@@ -125,7 +125,7 @@ export function SplitFaqSection({
                     
                     iconVariant={iconVariant}
                     idPrefix={idPrefix}
-                    itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 max-[767px]:!py-5 last:!border-b-0", itemClassName)}
+                    itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 first:!pt-0 max-[767px]:!py-5 max-[767px]:first:!pt-0 last:!border-b-0", itemClassName)}
                     items={items}
                     panelContentClassName={cn("!px-0 !pt-5 !pb-0", panelContentClassName)}
                     questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[28px] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
@@ -135,7 +135,7 @@ export function SplitFaqSection({
                 
                 iconVariant={iconVariant}
                 idPrefix={idPrefix}
-                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 max-[767px]:!py-5 last:!border-b-0", itemClassName)}
+                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 first:!pt-0 max-[767px]:!py-5 max-[767px]:first:!pt-0 last:!border-b-0", itemClassName)}
                 items={items}
                 panelContentClassName={cn("!px-0 !pt-5 !pb-0", panelContentClassName)}
                 questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[28px] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
@@ -149,7 +149,7 @@ export function SplitFaqSection({
                 
                 iconVariant={iconVariant}
                 idPrefix={idPrefix}
-                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 max-[767px]:!py-5 last:!border-b-0", itemClassName)}
+                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 first:!pt-0 max-[767px]:!py-5 max-[767px]:first:!pt-0 last:!border-b-0", itemClassName)}
                 items={items}
                 panelContentClassName={cn("!px-0 !pt-5 !pb-0", panelContentClassName)}
                 questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[28px] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
