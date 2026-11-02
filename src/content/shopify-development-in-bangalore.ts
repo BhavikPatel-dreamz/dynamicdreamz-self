@@ -206,14 +206,14 @@ export const shopifyDevelopmentBangaloreContent = {
         title: "Shopify Plus Store Development",
         description:
           "As the best Shopify website development company in Bangalore, we specialize in integrating advanced Shopify Plus features to deliver a smooth and high performance Shopify store that enhances user experience, drives conversions, and scales effortlessly as your business grows.",
-        icon: "/assets/services/shopify-development-in-bangalore/services/shopify-plus-store-development.svg",
+        icon: "/assets/services/shopify-development-in-delhi/services/shopify-plus-store-development.svg",
         iconAlt: "Shopify Plus Store Development Icon",
       },
       {
         title: "Custom Shopify Theme Design & Customization",
         description:
           "We help you build a unique brand identity by designing custom themes that reflect your business’s essence. Whether it’s redesigning an existing theme or creating one from scratch, our team ensures your store is visually appealing, responsive, and optimized for better user engagement and conversions.",
-        icon: "/assets/services/shopify-development-in-bangalore/services/custom-shopify-theme-design-customization.svg",
+        icon: "/assets/services/shopify-development-in-delhi/services/shopify-theme-customization.svg",
         iconAlt: "Custom Shopify Theme Design Icon",
         href: "/shopify-theme-customization",
       },
@@ -235,7 +235,7 @@ export const shopifyDevelopmentBangaloreContent = {
         title: "Seamless Shopify Migration",
         description:
           "Ready to move your store to Shopify? As one of the best Shopify experts in Bangalore, our Shopify migration services provide a smooth transition, transferring all your important data, such as products, customer information, and order history, to Shopify.",
-        icon: "/assets/services/shopify-development-in-bangalore/services/seamless-shopify-migration.svg",
+        icon: "/assets/services/shopify-development-in-delhi/services/shopify-migration-services.svg",
         iconAlt: "Seamless Shopify Migration Icon",
         href: "/shopify-migration",
       },
@@ -243,7 +243,7 @@ export const shopifyDevelopmentBangaloreContent = {
         title: "Shopify Store Maintenance & Support",
         description:
           "Our team provides continuous maintenance and support services to keep your Shopify store running smoothly. From regular updates and security patches to troubleshooting and performance optimization, we offer the support required to ensure your store stays secure, up to date, and prepared to satisfy your business demands.",
-        icon: "/assets/services/shopify-development-in-bangalore/services/shopify-store-maintenance-support.svg",
+        icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Store Maintenance Icon",
         href: "/buy-shopify-development-hours",
       },
@@ -251,7 +251,7 @@ export const shopifyDevelopmentBangaloreContent = {
         title: "Shopify 2.0 Upgrade & Migration",
         description:
           "Upgrade to Shopify 2.0 for enhanced performance, better store management, and a more flexible and feature rich platform. Our Shopify 2.0 migration services help you unlock new features, access better apps, and provide an even better shopping experience for your customers.",
-        icon: "/assets/services/shopify-development-in-bangalore/services/shopify-2-0-upgrade-migration.svg",
+        icon: "/assets/services/shopify-development-in-delhi/services/shopify-2-0-upgrades.svg",
         iconAlt: "Shopify 2.0 Upgrade Icon",
         href: "/migrating-a-theme-to-online-store-2-0",
       },

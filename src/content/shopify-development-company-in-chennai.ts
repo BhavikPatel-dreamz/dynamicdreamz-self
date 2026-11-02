@@ -193,14 +193,14 @@ export const shopifyDevelopmentChennaiContent = {
         title: "Shopify Plus Store Development",
         description:
           "As the best Shopify website development company in Bangalore, we specialize in integrating advanced Shopify Plus features to deliver a smooth and high performance Shopify store that enhances user experience, drives conversions, and scales effortlessly as your business grows.",
-        icon: "/assets/services/shopify-development-in-bangalore/services/shopify-plus-store-development.svg",
+        icon: "/assets/services/shopify-development-in-delhi/services/shopify-plus-store-development.svg",
         iconAlt: "Shopify Plus Store Development Icon",
       },
       {
         title: "Shopify Theme Customization Service",
         description:
           "Enhance your Shopify store look with our Shopify theme customization service. To ensure your Shopify store stays ahead of the market competition, we customize your store theme to match your brand’s essence. Our Shopify expert works as per your requirements to design the layout and functionality of your store. It makes your store visually attractive and easy to use.",
-        icon: "/assets/services/shopify-development-in-bangalore/services/custom-shopify-theme-design-customization.svg",
+        icon: "/assets/services/shopify-development-in-delhi/services/shopify-theme-customization.svg",
         iconAlt: "Shopify Theme Customization Service Icon",
         link: "/shopify-theme-customization",
       },
@@ -222,7 +222,7 @@ export const shopifyDevelopmentChennaiContent = {
         title: "Shopify Migration Service",
         description:
           "Want to move on to Shopify? Our Shopify migration service smoothly transfers data from your existing platform to Shopify. As the best Shopify development company in India, We transfer your customer data, products, and content without harming your Shopify store’s SEO ranking and functionality. Our only goal is to make the migration process effortless so you can enjoy the benefits of the Shopify platform without any downtime.",
-        icon: "/assets/services/shopify-development-in-bangalore/services/seamless-shopify-migration.svg",
+        icon: "/assets/services/shopify-development-in-delhi/services/shopify-migration-services.svg",
         iconAlt: "Shopify Migration Service Icon",
         link: "/shopify-migration",
       },
@@ -230,7 +230,7 @@ export const shopifyDevelopmentChennaiContent = {
         title: "Shopify Maintenance Service",
         description:
           "Use our Shopify maintenance service to keep your store operating efficiently. We offer continuous assistance, upgrades, and troubleshooting to guarantee that your store stays safe, quick, and equipped with the newest features. With the peace of mind that comes with our maintenance services, you can concentrate on expanding your company while we handle the technical details.",
-        icon: "/assets/services/shopify-development-in-bangalore/services/shopify-store-maintenance-support.svg",
+        icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Maintenance Service Icon",
         link: "/buy-shopify-development-hours",
       },
@@ -238,7 +238,7 @@ export const shopifyDevelopmentChennaiContent = {
         title: "Shopify 2.0 Migration Service",
         description:
           "Upgrade with our migration service to the most recent Shopify 2.0 framework. We assist you in utilizing Shopify 2.0’s new features and improvements, which include enhanced developer tools, more flexible theme customization options, and better performance. Our migration service ensures everything goes smoothly. So, you can give your customers an even better shopping experience.",
-        icon: "/assets/services/shopify-development-in-bangalore/services/shopify-2-0-upgrade-migration.svg",
+        icon: "/assets/services/shopify-development-in-delhi/services/shopify-2-0-upgrades.svg",
         iconAlt: "Shopify 2.0 Migration Service Icon",
         link: "/blogs/migrating-a-theme-to-online-store-2-0",
       },
