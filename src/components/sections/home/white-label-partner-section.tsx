@@ -32,12 +32,12 @@ export function WhiteLabelPartnerSection({ content }: WhiteLabelPartnerSectionPr
       <Container>
         <div
           data-aos="fade-up"
-          className="flex items-center justify-between gap-8 rounded-[30px] border-[1.5px] border-[#1920191a] bg-[#eff4ef] p-[40px_32px_32px] max-[1199px]:rounded-[20px] max-[1199px]:p-[30px] max-[992px]:flex-col max-[992px]:items-start max-[767px]:p-5"
+          className="flex items-center justify-between gap-8 rounded-[30px] border-[1.5px] border-[#1920191a] bg-[#eff4ef] p-[40px_32px_32px] max-[1199px]:flex-wrap max-[1199px]:gap-0 max-[1199px]:rounded-[20px] max-[1199px]:p-[30px] max-[767px]:p-5"
         >
-          <div className="max-w-[868px]">
+          <div className="max-w-[868px] max-[1439px]:max-w-[720px] max-[1199px]:max-w-full max-[1199px]:w-full max-[1199px]:mb-5">
             <span className="eyebrow mb-2 inline-block rounded-[50px] bg-ink px-2.5 py-[6.5px] text-center text-xs leading-none font-bold text-white uppercase">{eyebrow}</span>
             <SectionHeading id="white-label-partner-title" className="mb-2.5">{title}</SectionHeading>
-            <p className="mb-3.75 text-base leading-7 font-medium text-muted max-[1199px]:text-sm max-[1199px]:leading-6">
+            <p className="mb-3.75 text-base leading-7 font-medium text-muted max-[1199px]:text-[14px] max-[1199px]:leading-[24px]">
               {description}
             </p>
             <div className="flex flex-wrap gap-2">
@@ -46,7 +46,7 @@ export function WhiteLabelPartnerSection({ content }: WhiteLabelPartnerSectionPr
               ))}
             </div>
           </div>
-          <ButtonLink className="btn-explore" variant="primary" href={ctaHref}>
+          <ButtonLink className="btn-explore shrink-0 max-[1199px]:shrink-0 max-[1199px]:inline-flex max-[379px]:py-3 max-[379px]:px-5" variant="primary" href={ctaHref}>
             {ctaLabel}
           </ButtonLink>
         </div>

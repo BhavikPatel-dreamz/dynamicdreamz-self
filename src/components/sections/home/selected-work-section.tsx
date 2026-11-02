@@ -108,6 +108,7 @@ export function SelectedWorkSection({
           dark
           description={description}
           heading={title}
+          className="!mb-0"
           titleColumnClassName="mr-5 max-w-[600px] max-[992px]:m-0 max-[992px]:max-w-full"
           textColumnClassName="max-w-[580px] max-[992px]:mt-2.5 max-[992px]:max-w-full"
           variant="left"
@@ -115,7 +116,7 @@ export function SelectedWorkSection({
       </Container>
       <div
         data-aos="fade-up"
-        className="w-full overflow-hidden py-[57px] pb-[51px] max-[767px]:overflow-x-auto max-[767px]:px-0 max-[767px]:pt-[34px] max-[767px]:pb-[30px] max-[767px]:[container-type:inline-size] max-[767px]:[scrollbar-width:none] max-[767px]:snap-x max-[767px]:snap-mandatory max-[767px]:[&::-webkit-scrollbar]:hidden"
+        className="w-full overflow-hidden py-[57px] pb-[51px] max-[992px]:pt-[34px] max-[992px]:pb-[30px] max-[767px]:overflow-x-auto max-[767px]:px-0 max-[767px]:pt-[34px] max-[767px]:pb-[30px] max-[767px]:[container-type:inline-size] max-[767px]:[scrollbar-width:none] max-[767px]:snap-x max-[767px]:snap-mandatory max-[767px]:[&::-webkit-scrollbar]:hidden"
         aria-label="Selected ecommerce work"
       >
         <div className={cn("flex w-[calc(500%+5px)] min-[1600px]:w-[calc(425%+5px)] max-[767px]:w-max", styles.projectMotion)}>

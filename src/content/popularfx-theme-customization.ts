@@ -105,9 +105,9 @@ export const popularfxThemeCustomizationContent = {
     ]
   },
   "services": {
-    "eyebrow": "Services",
+    "eyebrow": "Our Services",
     "heading": "Our WordPress Theme \n Customization Services",
-    "description": "",
+    "description": "We provide expert PopularFX theme customization services to create a fully optimized and feature-rich website.",
     "items": [
       {
         "iconName": "theme-installation",

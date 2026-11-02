@@ -19,9 +19,9 @@ export function InsightsSection({
   className,
 }: InsightsSectionProps = {}) {
   return (
-    <section className={cn("overflow-hidden bg-white py-20 max-[991px]:py-[50px]", className)}>
+    <section className={cn("overflow-hidden bg-white py-20 max-[992px]:py-[50px]", className)}>
       <Container>
-        <div data-aos="fade-up" className="mx-auto mb-[47px] max-w-[700px] text-center max-[991px]:mb-[30px]">
+        <div data-aos="fade-up" className="mx-auto mb-[47px] max-w-[700px] text-center max-[992px]:mb-[30px]">
           <SectionHeading size="xl" className="mb-6">{title}</SectionHeading>
         </div>
         <div data-aos="fade-up" className="grid grid-cols-3 gap-4 max-[992px]:flex max-[992px]:flex-col max-[992px]:gap-0">
@@ -29,7 +29,7 @@ export function InsightsSection({
             <BlogCard item={insight} variant="home" isLast={insightIndex === insights.length - 1} key={insight.href} />
           ))}
         </div>
-        <div data-aos="fade-up" className="mt-[50px] flex justify-center max-[767px]:mt-10">
+        <div data-aos="fade-up" className="mt-[50px] flex justify-center max-[992px]:mt-[30px] max-[767px]:mt-[25px]">
           <ButtonLink className="normal-case" variant="dark" href={ctaHref}>{ctaLabel}</ButtonLink>
         </div>
       </Container>

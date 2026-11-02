@@ -11,7 +11,7 @@ import { cn } from "@/lib/class-names";
 
 function ArrowIcon() {
   return (
-    <svg className="h-3 w-3" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+    <svg className="h-2.5 w-2.5 shrink-0" viewBox="0 0 12 12" fill="none" aria-hidden="true">
       <path d="M1 11 11 1m0 0H2.5M11 1v8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -75,19 +75,20 @@ export function CommerceSolutionsSection({
                       <button
                         id={triggerId}
                         type="button"
-                        className="relative flex w-full cursor-pointer items-start justify-between gap-5 border-0 bg-transparent p-0 pr-10 text-left font-display text-xl leading-7 font-medium text-ink max-[767px]:flex-col max-[767px]:gap-1 max-[767px]:text-base max-[767px]:leading-6"
+                        className="relative block w-full cursor-pointer border-0 bg-transparent p-0 pr-[45px] max-[992px]:pr-[38px] max-[767px]:pr-[42px] text-left font-display text-xl leading-7 font-medium text-ink max-[767px]:text-base max-[767px]:leading-6"
                         aria-expanded={isOpen}
                         aria-controls={panelId}
                         onClick={() => setActiveIndex(isOpen ? -1 : index)}
                       >
-                        <span className="block">
-                          <span className="block">{item.title}</span>
-                          <span className="mt-2.5 block font-display text-sm leading-none font-medium text-ink max-[767px]:mt-[5px] max-[767px]:text-[13px] max-[767px]:leading-normal">
+                        <span className="block w-full">
+                          <span className="block w-full">{item.title}</span>
+                          <span className="mt-2.5 block font-display text-sm leading-normal font-medium text-ink max-[767px]:mt-[5px] max-[767px]:text-[13px]">
                             {item.summary}
                           </span>
                         </span>
                         <FaqCircleCrossIcon
                           
+                          className="absolute right-0 top-1/2 -translate-y-1/2 size-[30px] max-[992px]:size-[26px] max-[767px]:size-[26px] shrink-0"
                           isOpen={isOpen}
                         />
                         <span className="sr-only">{isOpen ? homeSectionCopy.commerceAccordion.close : homeSectionCopy.commerceAccordion.open} {item.title}</span>
@@ -97,7 +98,7 @@ export function CommerceSolutionsSection({
                       <div className="overflow-hidden">
                         <div className="border-t border-[#6e7590]/10 pt-4 max-[767px]:pt-2.5">
                           <p className="mb-[15px] text-sm leading-6 font-normal text-muted">{item.body}</p>
-                          <Link className="inline-flex items-center gap-2 text-sm leading-none font-bold text-brand-red uppercase transition-colors hover:text-ink focus-visible:text-ink" href={item.href}>
+                          <Link className="inline-flex items-center gap-2.5 text-sm leading-none font-bold text-brand-red uppercase transition-colors hover:text-ink focus-visible:text-ink" href={item.href}>
                             {item.cta}
                             <ArrowIcon />
                           </Link>

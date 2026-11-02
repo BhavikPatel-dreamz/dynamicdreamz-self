@@ -107,6 +107,7 @@ export const wordpressThemesRegistry: readonly ServicePageEntry[] = [
       <WordPressThemeCustomizationTemplate
         content={bloghashThemeCustomizationContent}
         faqIdPrefix="bloghash-faq"
+        benefitsVariant="yellow"
         renderBenefitIcon={(name) => (
           <BloghashBenefitIcon
             name={name as Parameters<typeof BloghashBenefitIcon>[0]["name"]}

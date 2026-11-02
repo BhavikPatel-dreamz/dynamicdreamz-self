@@ -27,7 +27,7 @@ export function IntegrationsSection({
       <Container>
         <div
           data-aos="fade-up"
-          className="section_title mx-auto mb-[57px] max-w-[540px] text-center max-[1199px]:max-w-[400px] max-[992px]:max-w-full max-[992px]:text-left max-[1199px]:mb-10 min-[768px]:max-[992px]:mb-[30px] max-[767px]:mb-[29px]"
+          className="section_title mx-auto mb-[57px] max-w-[540px] text-center max-[1199px]:max-w-[400px] max-[992px]:max-w-full max-[1199px]:mb-10 min-[768px]:max-[992px]:mb-[30px] max-[767px]:mb-[29px]"
         >
           <SectionHeading size="xl" className="m-0">
             {title}

@@ -52,7 +52,7 @@ export function SplitSectionHeading({
   if (variant === "centered") {
     return (
       <header
-        className={cn("mx-auto mb-10 max-w-[840px] text-center max-[991px]:mb-[30px]", className)}
+        className={cn("mx-auto mb-10 max-w-[840px] text-center max-[992px]:mb-[30px]", className)}
         data-aos={aosAnimation || undefined}
       >
         {eyebrow ? (
@@ -71,7 +71,7 @@ export function SplitSectionHeading({
         ) : null}
         <h2
           className={cn(
-            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
+            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
             dark ? "text-white" : "text-ink",
             titleClassName,
           )}
@@ -101,10 +101,10 @@ export function SplitSectionHeading({
   return (
     <header
       className={cn(
-        "mb-10 flex items-end justify-between gap-10 max-[991px]:mb-[30px] max-[991px]:flex-col max-[991px]:gap-2.5",
+        "mb-10 flex items-end justify-between gap-10 max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:gap-2.5",
         services || leftAligned || portfolio
-          ? "max-[991px]:items-start max-[991px]:text-left"
-          : "max-[991px]:text-center",
+          ? "max-[992px]:items-start max-[992px]:text-left"
+          : "max-[992px]:text-center",
         className,
       )}
       data-aos={aosAnimation || undefined}
@@ -118,7 +118,7 @@ export function SplitSectionHeading({
           // inline-flex `.eyebrow` aligns to, which produces the live 4px gap
           // between the title box and the eyebrow.
           "text-[14px] leading-6",
-          "max-[991px]:w-full",
+          "max-[992px]:w-full",
           titleClassName,
         )}
       >
@@ -139,7 +139,7 @@ export function SplitSectionHeading({
         ) : null}
         <h2
           className={cn(
-            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[991px]:mb-[10px] max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
+            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[992px]:mb-[10px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
             dark ? "text-white" : "text-ink",
           )}
           id={headingId}
@@ -156,7 +156,7 @@ export function SplitSectionHeading({
             textColumnClassName ??
             // Live `.section_title_with_eyebrow .section_text` is 48.3% (50% ≤1199px).
             "w-[48.3%] max-[1199px]:w-1/2",
-            "max-[991px]:w-full",
+            "max-[992px]:w-full",
             textClassName,
           )}
         >
@@ -167,7 +167,7 @@ export function SplitSectionHeading({
                 services || leftAligned
                   ? "font-sans xl:text-base text-sm font-medium leading-7 max-[767px]:leading-6"
                   : portfolio
-                    ? "font-sans text-[16px] font-medium leading-7 max-[991px]:mt-3.75 max-[991px]:text-sm max-[991px]:leading-[24px] max-[767px]:text-sm max-[767px]:leading-6"
+                    ? "font-sans text-[16px] font-medium leading-7 max-[992px]:mt-3.75 max-[992px]:text-sm max-[992px]:leading-[24px] max-[767px]:text-sm max-[767px]:leading-6"
                     : "font-sans text-base font-medium leading-7 max-[1199px]:text-sm max-[1199px]:leading-6 not-last:mb-2.5",
                 dark ? "text-white" : "text-muted", pClassName
               )}

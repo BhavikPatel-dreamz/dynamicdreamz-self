@@ -237,9 +237,8 @@ export const inspiroThemeCustomizationContent = {
     heading: "Snippets of WordPress Theme Customization Portfolio",
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
-    viewAllText: "View our work",
-    viewAllHref: "/our-work",
-    viewAllAriaLabel: "Dynamic Dreamz - View our work",
+    ctaLabel: "View our work",
+    ctaHref: "/our-work",
     items: [
       {
         name: "Quite Events",

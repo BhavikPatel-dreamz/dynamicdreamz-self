@@ -42,7 +42,7 @@ export function BrandPartnersSection({
         "trusted_leading_brands overflow-hidden",
         isShopifyHours
           ? "py-20 max-[992px]:py-[60px] max-[767px]:min-h-[365px] max-[767px]:pt-10 max-[767px]:pb-[50px]"
-          : "min-h-[640.78px] py-20 min-[768px]:max-[992px]:min-h-[614.78px] min-[768px]:max-[992px]:py-[50px] max-[767px]:min-h-[443.69px] max-[767px]:pt-10 max-[767px]:pb-[50px]",
+          : "py-20 max-[992px]:pb-20 max-[992px]:pt-[50px] max-[767px]:pt-10 max-[767px]:pb-[50px]",
       )}
     >
       <Container>
@@ -62,7 +62,7 @@ export function BrandPartnersSection({
             "grid grid-cols-5 -mx-3.75 max-[767px]:hidden",
             isShopifyHours
               ? "gap-y-0 min-[768px]:max-[992px]:grid-cols-4"
-              : "gap-y-[50px] min-[768px]:max-[992px]:mx-[-15px] min-[768px]:max-[992px]:h-[390px] min-[768px]:max-[992px]:grid-cols-4 min-[768px]:max-[992px]:content-between min-[768px]:max-[992px]:gap-y-[30px]",
+              : "gap-y-[50px] min-[768px]:max-[992px]:mx-[-15px] min-[768px]:max-[992px]:grid-cols-4 min-[768px]:max-[992px]:gap-y-[30px]",
           )}
         >
           {items.map((logo) => (

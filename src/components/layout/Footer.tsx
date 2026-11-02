@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FooterBottomLink, FooterMenuItem } from "./FooterMenuItem";
+import { MobileFooterAccordion } from "./mobile-footer-accordion";
 import { Container } from "@/components/ui/container";
 import { siteChromeCopy } from "@/content/common";
 import { footerAwards, footerNavigation } from "@/data/navigation";
@@ -119,7 +120,7 @@ function ContactDetails({
   const hrefPhone = phoneHref || siteConfig.phoneHref;
 
   return (
-    <div className="border-t border-ink/10 pt-[15px] max-[991px]:border-0 max-[991px]:pt-0">
+    <div className="border-t border-ink/10 pt-[15px] max-[992px]:border-0 max-[992px]:pt-0">
       <address className="flex flex-col gap-[15px] not-italic">
         <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={`mailto:${displayEmail}`}>
           <span className="mr-2.5 flex w-[18px] shrink-0 items-center justify-center text-[#111111]"><MailIcon /></span>
@@ -223,13 +224,13 @@ export function SiteFooter({
   return (
     <footer className="bg-cream text-ink pt-15 max-[1199px]:pt-10 max-[767px]:pb-[70px]">
       <Container>
-        {/* Desktop 1200px+ */}
-        <div className="hidden min-[1200px]:flex min-[1200px]:justify-between">
-          <div className="w-[172px]"><FooterMenu index={0} navigation={effectiveNavigation} /></div>
+        {/* Desktop (1200px+) and Tablet (992px - 1199px) */}
+        <div className="hidden min-[992px]:flex min-[992px]:flex-wrap min-[992px]:justify-between">
+          <div className="w-[240px] min-[1200px]:w-[172px]"><FooterMenu index={0} navigation={effectiveNavigation} /></div>
           <div className="w-[200px] min-[1400px]:w-[238px]"><FooterMenu index={1} navigation={effectiveNavigation} /></div>
           <div className="w-[200px] min-[1400px]:w-[235px]"><FooterMenu index={2} navigation={effectiveNavigation} /></div>
           <div className="w-[259px]"><PartnershipMenus navigation={effectiveNavigation} /></div>
-          <div className="w-[220px]">
+          <div className="w-[220px] max-[1199px]:mt-[38px]">
             <MoreServices
               navigation={effectiveNavigation}
               email={effectiveEmail}
@@ -240,51 +241,9 @@ export function SiteFooter({
           </div>
         </div>
 
-        {/* Tablet 992px - 1199px */}
-        <div className="hidden grid-cols-3 gap-x-10 gap-y-[38px] min-[992px]:max-[1199px]:grid">
-          <FooterMenu index={0} navigation={effectiveNavigation} />
-          <FooterMenu index={1} navigation={effectiveNavigation} />
-          <FooterMenu index={2} navigation={effectiveNavigation} />
-          <PartnershipMenus navigation={effectiveNavigation} />
-          <MoreServices
-            navigation={effectiveNavigation}
-            email={effectiveEmail}
-            phoneDisplay={effectivePhone}
-            phoneHref={effectivePhoneHref}
-            socialLinks={effectiveSocial}
-          />
-        </div>
-
         {/* Mobile < 992px */}
         <div className="block min-[992px]:hidden">
-          <div>
-            {effectiveNavigation.map((group) => (
-              <details className="group/footer border-b border-ink/10" key={group.label}>
-                <summary className="flex cursor-pointer font-montreal-medium list-none items-center justify-between py-[18px] text-base leading-[1.66] font-normal text-ink [&::-webkit-details-marker]:hidden">
-                  <span>{group.label}</span>
-                  <span className="relative h-3 w-3 shrink-0" aria-hidden="true">
-                    <span className="absolute top-[5px] left-0 h-0.5 w-3 bg-black" />
-                    <span className="absolute top-0 left-[5px] h-3 w-0.5 bg-black transition-opacity duration-300 group-open/footer:opacity-0" />
-                  </span>
-                </summary>
-                <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-200 ease-in-out group-open/footer:grid-rows-[1fr]">
-                  <div className="min-h-0 overflow-hidden">
-                    <ul className="m-0 list-none p-0 pb-[18px]">
-                      {group.links.map((link) => (
-                        <FooterMenuItem
-                          className="leading-[30.4px]"
-                          href={link.href}
-                          isMobile
-                          key={`${link.label}-${link.href}`}
-                          label={link.label}
-                        />
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </details>
-            ))}
-          </div>
+          <MobileFooterAccordion navigation={effectiveNavigation} />
           <div className="mt-[30px]">
             <ContactDetails
               showSocial={false}
@@ -298,20 +257,20 @@ export function SiteFooter({
       </Container>
 
       <Container aria-label="Partner and review profiles">
-        <div className="grid grid-cols-6 gap-3 pt-[50px] max-[991px]:grid-cols-3 max-[991px]:gap-5 max-[991px]:pt-[35px] max-[767px]:grid-cols-2 max-[767px]:gap-4 max-[767px]:pt-[30px]">
+        <div className="grid grid-cols-6 gap-3 pt-[50px] max-[1199px]:grid-cols-3 max-[1199px]:gap-5 max-[1199px]:pt-[35px] max-[767px]:grid-cols-2 max-[767px]:gap-4 max-[767px]:pt-[30px]">
           {footerAwards.map((award) => (
-            <a className="flex h-[81px] items-center justify-center rounded-[20px] bg-white px-[18px] py-4 max-[991px]:rounded-[10px] max-[767px]:h-[60px] max-[767px]:border max-[767px]:border-[#efefef]/20 max-[767px]:px-[13px] max-[767px]:py-[5px]" href={award.href} target="_blank" rel="nofollow noopener noreferrer" key={award.src} aria-label={award.alt}>
+            <a className="flex h-[81px] items-center justify-center rounded-[20px] bg-white px-[18px] py-4 max-[1199px]:rounded-[10px] max-[767px]:h-[60px] max-[767px]:border max-[767px]:border-[#efefef]/20 max-[767px]:px-[13px] max-[767px]:py-[5px]" href={award.href} target="_blank" rel="nofollow noopener noreferrer" key={award.src} aria-label={award.alt}>
               <Image src={award.src} alt={award.alt} width={award.width} height={award.height} className="max-[767px]:h-10 object-contain"/>
             </a>
           ))}
         </div>
-        <div className="hidden max-[991px]:block">
+        <div className="hidden max-[992px]:block">
           <SocialLinks className="mt-[30px] justify-center" socialLinks={effectiveSocial} />
         </div>
       </Container>
 
       <Container>
-        <div className="flex items-center justify-between pt-[30px] pb-[15px] min-[992px]:max-[1199px]:pt-10 min-[992px]:max-[1199px]:pb-5 max-[991px]:pt-[30px] max-[991px]:pb-5 max-[767px]:mt-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:gap-[15px] max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-[15px] max-[767px]:pb-[15px] max-[767px]:text-center max-[359px]:gap-2.5">
+        <div className="flex items-center justify-between pt-[30px] pb-[15px] min-[992px]:pt-10 min-[992px]:pb-5 max-[992px]:pt-[30px] max-[992px]:pb-5 max-[767px]:mt-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:gap-[15px] max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-[15px] max-[767px]:pb-[15px] max-[767px]:text-center max-[359px]:gap-2.5">
           {effectiveCopyright ? (
             <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">{effectiveCopyright}</p>
           ) : (

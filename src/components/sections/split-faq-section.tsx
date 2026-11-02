@@ -76,8 +76,8 @@ export function SplitFaqSection({
     : "bg-white"
   const paddingClass =
     isPt0
-      ? "pt-0 pb-20 max-[991px]:py-10 max-[767px]:pb-5"
-      : "py-[60px] max-[991px]:py-10 max-[767px]:pb-5";
+      ? "pt-0 pb-20 max-[992px]:py-[60px] max-[767px]:pt-10 max-[767px]:pb-5"
+      : "py-[60px] max-[767px]:pt-10 max-[767px]:pb-5";
   const containerClass = isMobileAppFaq
     ? "min-[1400px]:max-w-[1408px] px-[15px]"
     : undefined;
@@ -90,8 +90,8 @@ export function SplitFaqSection({
       id={sectionId ?? `${idPrefix}-section`}
     >
       <Container className={containerClass}>
-        <div className="wrapper flex justify-between gap-[105px] max-[1399px]:gap-8 max-[991px]:flex-col max-[991px]:gap-[30px]">
-          <div className="w-[41%] max-[1199px]:w-[44%] max-[991px]:w-full" data-aos="fade-up">
+        <div className="wrapper flex justify-between gap-[105px] max-[1399px]:gap-8 max-[992px]:flex-col max-[992px]:gap-2.5">
+          <div className="w-[41%] max-[1199px]:w-[44%] max-[992px]:w-full" data-aos="fade-up">
             <header className="header-text mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
               {eyebrow ? (
                 <Eyebrow as="span" className="mb-4">
@@ -114,7 +114,7 @@ export function SplitFaqSection({
               ) : null}
             </header>
           </div>
-          <div className="accordion-main w-[57%] max-w-[654px] grow max-[1199px]:w-[53%] max-[1199px]:max-w-none max-[991px]:w-full" data-aos="fade-up">
+          <div className="accordion-main w-[57%] max-w-[654px] grow max-[1199px]:w-[53%] max-[1199px]:max-w-none max-[992px]:w-full" data-aos="fade-up">
             {lazyAccordion ? (
               <LazyFaqAccordion
                 animateOnReveal={animateOnReveal}

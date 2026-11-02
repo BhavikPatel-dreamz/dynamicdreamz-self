@@ -123,7 +123,7 @@ export function StaticFaqAccordion({
               </h3>
               <FaqCircleCrossIcon
                 className={cn(
-                  "absolute top-1/2 right-0 size-[30px] -translate-y-1/2 max-[767px]:size-[26px]",
+                  "absolute top-1/2 right-0 size-[30px] -translate-y-1/2 max-[992px]:size-[26px]",
                   iconClassName,
                 )}
                 isOpen={isOpen}
