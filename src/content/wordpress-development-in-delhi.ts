@@ -247,7 +247,7 @@ export const wordpressDevelopmentDelhiContent = {
     heading: "Our Successful WordPress Projects",
     description:
       [
-      "500+ WordPress websites meticulously crafted and counting. Our expertise accelerates growth and redefines shopping experiences for clients, making us the best WordPress development company in India.",
+      "Explore selected WordPress projects delivered for businesses and agencies across different industries.",
     ],
     items: [
       {
