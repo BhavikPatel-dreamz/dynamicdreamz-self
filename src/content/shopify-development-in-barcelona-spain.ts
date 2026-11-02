@@ -12,6 +12,8 @@ export const shopifyDevelopmentBarcelonaContent = {
   hero: {
     eyebrows: ["Shopify Development", "Spain"],
     title: "Shopify Development in Spain That's Built To Convert",
+    subtitle:
+      "Whenever you look for a trusted Shopify development company in Spain, look no further than Dynamic Dreamz. Our Shopify experts build powerful, conversion-focused stores tailored to your brand's unique identity from Houston and Dallas to Austin, San Antonio, and beyond.",
     description:
       "Dynamic Dreamz provides Shopify development services for businesses in Barcelona Spain, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Barcelona Spain and internationally.",
     primaryCta: {
@@ -431,7 +433,7 @@ export const shopifyDevelopmentBarcelonaContent = {
       question:
         "What makes Dynamic Dreamz the best Shopify development company in Spain?",
       answer: [
-        "Dynamic Dreamz is a certified Shopify Platinum Partner that comes with 20+ years of experience, 150+ developers and designers & 5,000+ projects delivered worldwide.",
+        "Dynamic Dreamz is a certified Shopify Platinum Partner that comes with 18+ years of experience, 150+ developers and designers & 5,000+ projects delivered worldwide.",
         "",
         "Moreover, under one single roof, here you can get;",
       ],

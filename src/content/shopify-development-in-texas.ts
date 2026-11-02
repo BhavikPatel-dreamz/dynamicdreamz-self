@@ -270,25 +270,25 @@ export const shopifyDevelopmentTexasContent = {
       "We, a Shopify Plus agency trusted by Texas businesses, build solutions that capture interest, win trust, and create partnerships that last.Every project begins with understanding you- your business, your goals, and the outcomes you're working toward.",
     steps: [
       {
-        step: "01",
+        step: "Step 01",
         title: "Discovery & Planning",
         description:
           "We dig deep into your requirements, map out the full scope, and create a clear development plan that keeps everyone aligned from day one. No guesswork, no surprises, just a solid roadmap built around your goals.",
       },
       {
-        step: "02",
+        step: "Step 02",
         title: "Design and Development",
         description:
           "Great design is the foundation of a great business. We combine clean aesthetics with purposeful functionality, building Shopify stores that are visually compelling, easy to navigate, and built to convert. Simplicity and performance always drive our design decisions.",
       },
       {
-        step: "03",
+        step: "Step 03",
         title: "Testing & Launch",
         description:
           "Before your store goes live, we put it through rigorous testing, performance, responsiveness, browser compatibility, and user experience. We only launch when everything is exactly right.",
       },
       {
-        step: "04",
+        step: "Step 04",
         title: "Post-Launch Support",
         description:
           "Your launch is just the beginning. We stay by your side after go-live, monitoring performance, resolving any issues, and ensuring your store continues to grow and evolve with your business.",
@@ -428,7 +428,7 @@ export const shopifyDevelopmentTexasContent = {
         "What makes Dynamic Dreamz the best Shopify development company in Texas?",
       answer:
         [
-        "Dynamic Dreamz is a certified Shopify Platinum Partner that comes with 20+ years of experience, 150+ developers and designers & 5,000+ projects delivered worldwide.",
+        "Dynamic Dreamz is a certified Shopify Platinum Partner that comes with 18+ years of experience, 150+ developers and designers & 5,000+ projects delivered worldwide.",
         "",
         "Moreover, under one single roof, here you can get;",
       ],

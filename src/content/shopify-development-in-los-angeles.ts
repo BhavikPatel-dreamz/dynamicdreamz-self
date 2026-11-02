@@ -245,7 +245,7 @@ export const shopifyDevelopmentLosAngelesContent = {
           "Your store needs consistent care to stay at its best. Dynamic Dreamz provides ongoing maintenance, from security updates and performance tuning to bug fixes and feature enhancements, so your Shopify store keeps running smoothly long after launch.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Maintenance & Support Icon",
-        href: "/buy-shopify-hours",
+        href: "/buy-shopify-development-hours",
       },
       {
         title: "Shopify 2.0 Migration",
@@ -253,6 +253,7 @@ export const shopifyDevelopmentLosAngelesContent = {
           "Still on an older Shopify theme? Upgrading to Shopify 2.0 unlocks a more flexible editing experience, better app compatibility, and improved performance. Our team handles the entire migration, cleanly, efficiently, and without disrupting your live store.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-2-0-upgrades.svg",
         iconAlt: "Shopify 2.0 Migration Icon",
+        href: "/migrating-a-theme-to-online-store-2-0",
       },
       {
         title: "White Label Shopify Development",
@@ -272,25 +273,25 @@ export const shopifyDevelopmentLosAngelesContent = {
       "We, a Shopify Plus agency Los Angeles, build solutions that capture interest, win trust, and create partnerships that last.",
     steps: [
       {
-        step: "01",
+        step: "Step 01",
         title: "Discovery & Planning",
         description:
           "Every project begins with understanding you, your business, your goals, and the outcomes you're working toward. We dig deep into your requirements, map out the full scope, and create a clear development plan that keeps everyone aligned from day one.",
       },
       {
-        step: "02",
+        step: "Step 02",
         title: "Design and Development",
         description:
           "Great design is the foundation of a great business. We combine clean aesthetics with purposeful functionality, building Shopify stores that are visually compelling, easy to navigate, and built to convert. Simplicity and performance always drive our design decisions.",
       },
       {
-        step: "03",
+        step: "Step 03",
         title: "Testing & Launch",
         description:
           "Before anything goes live, we put it through rigorous quality checks. Every feature, every flow, every interaction is tested across devices and browsers to ensure your store is completely secure, bug-free, and ready to deliver a seamless experience from day one.",
       },
       {
-        step: "04",
+        step: "Step 04",
         title: "Post-Launch Support",
         description:
           "Our relationship doesn't end at launch. We provide ongoing support to keep your Shopify store running at its best, monitoring performance, rolling out updates, and being there whenever you need us. Because long-term success is what we're really building toward.",
@@ -455,7 +456,7 @@ export const shopifyDevelopmentLosAngelesContent = {
       question:
         "How do I get started with Shopify development in Los Angeles?",
       answer:
-        "It’s quite simple, just reach out to team Dynamic Dreamz , who are Shopify experts in Los Angeles. With your project requirements, our team will schedule a consultation to understand your goals. From there only, we’ll put together a customized plan & will provide guidance for you through every step of the development process, from discovery all the way to launch.",
+        "It’s quite simple, just reach out to team [Dynamic Dreamz](/), who are Shopify experts in Los Angeles. With your project requirements, our team will schedule a consultation to understand your goals. From there only, we’ll put together a customized plan & will provide guidance for you through every step of the development process, from discovery all the way to launch.",
     },
   ],
 
